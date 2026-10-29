@@ -93,8 +93,8 @@ These manuals are made again from the pages each time a new version of Exponenti
 - On a new site the manuals are built in the background in the first half hour. Meanwhile the list of manuals says
   **Manuals are being built (n of 52)**.
 
-Your administrator runs the update with `./console exp:help:content build-manuals -s admin --release`, and builds
-the e-books with `./console exp:help:content ebooks -s admin` (add `--language=ger-DE` for the German edition). See
+Your administrator runs the update with `./console exp:help:content build-manuals --apply -s admin --release`, and builds
+the e-books with `./console exp:help:content ebooks --apply -s admin` (add `--language=ger-DE` for the German edition). See
 [help maintained as content](../features/6.0/help-content.md#manuals-from-the-markdown-help).
 
 ## The help as DITA

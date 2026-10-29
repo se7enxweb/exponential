@@ -1001,7 +1001,7 @@ class expVelocityFrankenPHP extends expVelocity
 
         $auto = $this->frankenSetting( 'AutoInstall', 'enabled' );
         if ( $auto !== 'enabled' && $auto !== 'true' )
-            return "no FrankenPHP binary at $binary -- run exp:velocity install (AutoInstall is disabled)";
+            return "no FrankenPHP binary at $binary -- run exp:velocity install --apply (AutoInstall is disabled)";
 
         $installed = $this->install();
         return $installed['ok'] ? true : $installed['message'];
@@ -1402,7 +1402,7 @@ class expVelocityFrankenPHP extends expVelocity
         $binary = $this->binary();
         if ( !is_file( $binary ) )
         {
-            fwrite( STDERR, "no FrankenPHP binary at $binary -- run exp:velocity install\n" );
+            fwrite( STDERR, "no FrankenPHP binary at $binary -- run exp:velocity install --apply\n" );
             return 1;
         }
         if ( $sub === 'validate' || $sub === 'adapt' )

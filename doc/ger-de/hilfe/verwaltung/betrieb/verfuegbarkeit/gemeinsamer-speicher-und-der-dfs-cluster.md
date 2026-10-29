@@ -69,7 +69,7 @@ Override-Datei stehen, nicht in einer Extension oder einem Siteaccess.
 |---|---|
 | `php bin/php/clusterize.php` | verschiebt die Dateien aus `var/` in den Cluster (einmal, bei der Einrichtung); `-u` verschiebt sie zurück |
 | `php bin/php/dfscleanup.php -S` und `-B` | prüft den Mount gegen die Tabelle und umgekehrt; `-D` löscht, was nicht existiert |
-| `php bin/php/clusterpurge.php --dry-run` | zeigt die abgelaufenen Cluster-Dateien, die es entfernen würde; ohne `--dry-run` entfernt es sie |
+| `php bin/php/clusterpurge.php` | zeigt die abgelaufenen Cluster-Dateien, die es entfernen würde; mit `--apply` entfernt es sie |
 
 Führen Sie `dfscleanup.php` zuerst mit `-S` und `-B` aus und lesen Sie das Ergebnis, bevor Sie `-D` hinzufügen.
 `clusterpurge.php` ist auch der Cronjob-Teil `cluster_maintenance`; die ausgelieferten Einstellungen halten ihn von den

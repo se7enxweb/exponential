@@ -49,7 +49,7 @@ Source: [4. Choosing an install method](../../../../install/04-choosing-an-insta
 
    | | Setup wizard | Kickstarter | Console install |
    |---|---|---|---|
-   | Entry point | any page while `CheckValidity=true` | `php bin/php/console exp:kickstarter run --force` | `php bin/php/console exp:install` |
+   | Entry point | any page while `CheckValidity=true` | `php bin/php/console exp:kickstarter run --apply --force` | `php bin/php/console exp:install --apply` |
    | Answers from | the forms | `kickstart.ini` | command-line options with defaults |
    | Dry run | no | `run --dry-run` | `--dry-run` and `--print` |
    | Guard | starts only while `CheckValidity=true` | `--force` needed for `CreateSites` | refuses over an installation unless `--force` |

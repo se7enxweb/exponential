@@ -88,7 +88,7 @@ least downtime, how do you verify, and what if it goes wrong?
 
    (`./console exp:maintenance on` is the same; see [Maintenance mode](../operations/maintenance-mode.md)).
 3. Take the final database and file backup, transfer it, restore it on your platform.
-4. Clear caches; with Velocity, clear its response cache (`php bin/php/console exp:velocity cache clear --allow-root-user`).
+4. Clear caches; with Velocity, clear its response cache (`php bin/php/console exp:velocity cache clear --apply --allow-root-user`).
 5. Test on your platform through a hosts-file entry before DNS changes.
 6. Switch DNS. Keep the old host in maintenance mode, not deleted.
 

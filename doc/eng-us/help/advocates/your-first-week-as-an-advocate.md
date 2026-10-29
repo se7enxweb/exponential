@@ -50,7 +50,7 @@ Install it on your own machine. One command installs a complete site on SQLite, 
 
 ```bash
 ./console exp:install --dry-run    # checks, installs nothing
-./console exp:install              # installs the site on SQLite
+./console exp:install --apply              # installs the site on SQLite
 ```
 
 Then follow [Getting started](../getting-started.md) and the [tour of the administration](../admin-tour.md). Open

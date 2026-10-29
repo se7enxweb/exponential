@@ -571,7 +571,7 @@ connections side by side.
 A complete backup is the database **and** the files: `var/storage` (uploads and image variations),
 `settings/override` and `settings/siteaccess`. Switch on maintenance mode for a restore
 (`php bin/php/maintenance.php on --allow-root-user`), and clear every cache afterwards
-(`php bin/php/ezcache.php --clear-all --allow-root-user` and, with Velocity, `php bin/php/console exp:velocity cache clear --allow-root-user`).
+(`php bin/php/ezcache.php --clear-all --allow-root-user` and, with Velocity, `php bin/php/console exp:velocity cache clear --apply --allow-root-user`).
 The full procedure is in [chapter 10, backups and restore](../install/10-after-installing.md#109-backups-and-restore).
 
 | Database | Backup | Restore |

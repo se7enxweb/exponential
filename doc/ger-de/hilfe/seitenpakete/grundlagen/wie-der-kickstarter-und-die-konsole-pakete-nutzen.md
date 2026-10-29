@@ -26,7 +26,7 @@ Pakete vor einem echten Lauf prüfen.
 
 ## Dieselben Schritte, kein Browser
 
-Der Kickstarter (`php bin/php/console exp:kickstarter run`, auch `php bin/php/kickstarter.php run`) führt die Schritte aus
+Der Kickstarter (`php bin/php/console exp:kickstarter run --apply`, auch `php bin/php/kickstarter.php run --apply`) führt die Schritte aus
 `kernel/setup/steps/ezstep_data.php` von Welcome bis Final aus, und jeder Schritt liest seinen Abschnitt der `kickstart.ini` im
 Wurzelverzeichnis der Installation. `exp:install` (`bin/php/install.php`) macht aus seinen Optionen dieselben Abschnitte und führt dieselben
 Schritte aus. Der Paketcode ist also der Code des Web-Assistenten, beschrieben in
@@ -50,8 +50,8 @@ installierende Seitenpaket, angegeben mit seinem Bezeichner). `php bin/php/conso
 **exp:install:**
 
 ```bash
-php bin/php/console exp:install --package=sevenx_multisite
-php bin/php/console exp:install --package=cjw_multisite --languages=ger-DE
+php bin/php/console exp:install --apply --package=sevenx_multisite
+php bin/php/console exp:install --apply --package=cjw_multisite --languages=ger-DE
 ```
 
 `--package=<name>` ist standardmäßig `sevenx_multisite` und wird zu `[site_types] Site_package` der erzeugten Konfiguration. Ohne jede

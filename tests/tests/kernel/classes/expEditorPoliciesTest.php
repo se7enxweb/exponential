@@ -196,4 +196,67 @@ class expEditorPoliciesTest extends PHPUnit\Framework\TestCase
                 $this->assertNotSame( $over['module'] . '/' . $over['function'], $name, 'a policy is both needed and an over-grant' );
         }
     }
+
+    /**
+     * bin/php/addeditorpolicies.php is a dry run by default: no flag and --dry-run (kept as a synonym) do not write,
+     * --apply writes, both together are refused.
+     */
+    public function testCommandWritesOnlyWithApply()
+    {
+        $this->assertFalse( \Exponential\Runnable\Command::applyRequested( array( 'apply' => false, 'dry-run' => false ) ), 'default: dry run' );
+        $this->assertFalse( \Exponential\Runnable\Command::applyRequested( array( 'apply' => null, 'dry-run' => null ) ), 'options not given at all' );
+        $this->assertFalse( \Exponential\Runnable\Command::applyRequested( array() ) );
+        $this->assertFalse( \Exponential\Runnable\Command::applyRequested( array( 'apply' => false, 'dry-run' => true ) ), '--dry-run: dry run' );
+        $this->assertTrue( \Exponential\Runnable\Command::applyRequested( array( 'apply' => true, 'dry-run' => false ) ), '--apply writes' );
+        $this->assertNull( \Exponential\Runnable\Command::applyRequested( array( 'apply' => true, 'dry-run' => true ) ), 'both: usage error' );
+
+        self::assertWritesOnlyOutsideADryRun( $this, 'kernel/private/classes/commands/addeditorpolicies.php',
+                                              array( '\\expEditorPolicies::apply(', '\\expEditorPolicies::narrow(' ) );
+    }
+
+    public function testCommandRefusesApplyTogetherWithDryRun()
+    {
+        list( $code, $out ) = self::runCommand( 'addeditorpolicies', array( '--apply', '--dry-run' ) );
+        $this->assertSame( 2, $code, $out );
+        $this->assertStringContainsString( '--apply and --dry-run exclude each other', $out );
+    }
+
+    /**
+     * The command's options and that every write call (each of $writes) sits in an "if ( !$dryRun )" branch, with
+     * $dryRun the opposite of applyRequested(): without --apply nothing reaches the database.
+     */
+    public static function assertWritesOnlyOutsideADryRun( PHPUnit\Framework\TestCase $test, $file, array $writes )
+    {
+        $code = file_get_contents( $file );
+        $test->assertStringContainsString( '"[apply][dry-run]', $code, 'the command takes --apply and --dry-run' );
+        $test->assertStringContainsString( '$apply = self::applyRequested( $options );', $code );
+        $test->assertStringContainsString( '$script->shutdown( 2 );', $code, 'both flags: exit 2' );
+        $test->assertStringContainsString( '$dryRun = !$apply;', $code );
+        $lines = explode( "\n", $code );
+        $found = 0;
+        foreach ( $lines as $number => $line )
+        {
+            foreach ( $writes as $write )
+            {
+                if ( strpos( $line, $write ) === false )
+                    continue;
+                $found++;
+                $before = implode( "\n", array_slice( $lines, max( 0, $number - 3 ), min( 3, $number ) ) );
+                $test->assertStringContainsString( 'if ( !$dryRun )', $before, "$file:" . ( $number + 1 ) . " writes outside a dry-run check" );
+            }
+        }
+        $test->assertGreaterThan( 0, $found, "no write call found in $file" );
+    }
+
+    /** Runs bin/php/<name>.php in a child process; array( exit code, output ). */
+    public static function runCommand( $name, array $arguments )
+    {
+        $line = array_merge( array( PHP_BINARY, 'bin/php/' . $name . '.php', '--allow-root-user' ), $arguments );
+        $process = proc_open( $line, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes, eZSys::rootDir(),
+                              array( 'PATH' => getenv( 'PATH' ) ?: '/usr/bin:/bin' ) );
+        $out = stream_get_contents( $pipes[1] ) . stream_get_contents( $pipes[2] );
+        fclose( $pipes[1] );
+        fclose( $pipes[2] );
+        return array( proc_close( $process ), $out );
+    }
 }

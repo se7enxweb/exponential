@@ -29,7 +29,7 @@ aliases.
 - **Search** narrows the list by name, id, tag or directory; the **Groups** buttons show one group.
 - The cache files are in `var/`, which Apache with PHP-FPM and Velocity share: clearing a cache here reaches both.
   Two things do not: Velocity keeps settings in memory (restart it after clearing the INI caches) and answers pages
-  from its own response cache for a few seconds (clear it in the last group or with `./console exp:velocity cache clear`).
+  from its own response cache for a few seconds (clear it in the last group or with `./console exp:velocity cache clear --apply`).
 
 ## 1. The overview
 
@@ -83,7 +83,7 @@ The column says when each cache was last cleared and, from the audit trail, by w
 - **INI and settings** (`global_ini`, `ini`, `active_extensions`, `sslzones`): a running Velocity has read the
   settings into memory. After clearing them, run `./console exp:velocity restart --allow-root-user`.
 - **Content, templates and the HTTP cache**: Velocity's response cache can still answer a page made before the
-  clear, for its lifetime (a few seconds on the demonstration server). Clear it with the button or `./console exp:velocity cache clear`.
+  clear, for its lifetime (a few seconds on the demonstration server). Clear it with the button or `./console exp:velocity cache clear --apply`.
 - **OPcache and APCu** belong to the server process that answered; the other server keeps its own.
 
 ## 5. From a shell
@@ -93,7 +93,7 @@ php bin/php/ezcache.php --clear-id=template-block,content --allow-root-user   on
 php bin/php/ezcache.php --clear-tag=template --allow-root-user                 by tag
 php bin/php/ezcache.php --clear-all --allow-root-user                          everything
 ./console exp:cache clear --id=content --dry-run --allow-root-user             what would be cleared, with sizes
-./console exp:velocity cache clear                                            Velocity's response cache
+./console exp:velocity cache clear --apply                                            Velocity's response cache
 ./console exp:velocity restart --allow-root-user                               Velocity, after settings changed
 ```
 

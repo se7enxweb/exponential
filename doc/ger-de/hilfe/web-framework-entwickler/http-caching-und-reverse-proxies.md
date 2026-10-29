@@ -72,7 +72,7 @@ Velocity kann wiederholte Requests für öffentliche Seiten innerhalb des Server
 Worker gewählt wird: bedingte Requests (`304`), `ETag`, `Age`, Stale-While-Revalidate und Invalidierung, wie ein kleiner
 in den Server eingebauter Reverse Proxy. Er ist ausgeschaltet, bis eine Einstellung ihn aktiviert
 ([Velocity-Response-Cache](../../funktionen/6.0/velocity-antwort-cache.md)). Leeren Sie ihn bei einem Deployment als
-Letztes: `./console exp:velocity cache clear`.
+Letztes: `./console exp:velocity cache clear --apply`.
 
 ## Hinter einem Proxy oder CDN
 

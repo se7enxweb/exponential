@@ -7515,6 +7515,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>טויבא &gt; עבדא ד cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>לא חד פלגא ד cron רהט עדכיל: סדרא דעבדא, מעלא, מודענותא ומחוינא דבציא מסכין. רהטון php bin/php/installcrontab.php --add --apply, או אוספון סרטא ד --show ל crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14384,6 +14388,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>הדא מקימנותא חויא גליא הי: כל אנש מצא ידע למלתא דעברא דמדברנא דילה, ומלא דעברא דמדברנא לא מצין דמשתחלפן או מתחדתן. לא עלון הרכא מדם דיחידיא.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>מאנא דילוכון</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>עבדנותא דשלמותא</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15303,6 +15315,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>מנו שחלף, על או אתכלי, לכל חושבנא; צללא ומפקא.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>מודענותא דעללא</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>מנו עלילא, עללא ועללא דלא אצלחו לכל יומא; פלטא דמפלחנא מן כל דוכא.</translation>
     </message>
 </context>
 <context>
@@ -33608,6 +33628,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>מותבא דגמרו זבנהון דמעבדנא ד PHP מתשקלין ב PHP בנפשה (session.gc_maxlifetime), ולא בפאתא הדא ולא בפלגא דעבדא ד session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>מותבא עלילא דכל מפלחנא מתחוין, ומתפלטין, במודענותא דעללא, דפלחא עם כל מעבדנא דמותבא.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>פתחא דמודענותא דעללא</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37932,6 +37960,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>לעלם לא אית</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>עבדנותא דשלמותא</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>עללא אחריא דילוכון, נסיונא דלא אצלחו ושוחלפא במלתא דעברא, במונעא דברידא ובעללא בתרתין דרגא.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>עללא אחריא, נסיונא דלא אצלחו ושוחלפא דשלמותא דהנא חושבנא.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>בוחנא דעבדנותא</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count עללא דלא אצלחו</translation>
     </message>
 </context>
 <context>
@@ -51022,6 +51070,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab לא אתכתב (%reason). וספו שרבתא הלין ל crontab דמפלחנא דאתרא מתרהט בה, או סדרא ומעליא ומודענותא ומחוינא דבציא לא מתרהטין לעלם:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>אקמתא מן דריש מתעבדא עם kickstarter (%file, הידין php bin/php/kickstarter.php run --apply) או עם אקמתא חדתא.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56814,6 +56866,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>מדברנא דברידא סלא %count שליחותא במרהטא אחריא. בחון משמשנא דברידא וטויבא ד site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count גדשא מסכין ולא חד רהטא דעבדא ד cron דמודענותא אתרשם. אוספון פלגא ד cron „frequent” ל crontab, או רהטון exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63078,6 +63134,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>גבון אתרא או פלגותא אחרתא בגבינא דקטרא</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>בלחוד מדברנא דמרכבתא מצא לשוחלפא דמרא: רהטון ./console exp:content-check --fix-permissions --apply איך root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64611,6 +64671,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>סריקא</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>קלידא דחתמא עתיק יתיר מן שנתא: שחלפון לה עם exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70321,6 +70385,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>לא אשתדר</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>עבדא ד cron דמודענותא רשם הרכא כל רהטא דילה. אוספון פלגא frequent ל crontab, או רהטון exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>פלחון בכונסול: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76494,6 +76566,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>לא חד.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>עם אפליקאציא דשוררא</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>עם רמזא בברידא</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>עם רמזא דדוערא</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>עם קלידא דעללא</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>עם חושבנא בריא</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>עבדנותא דשלמותא</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>מתחויא איך מצדתא דילה; מונעא מתנטר איך דאמרין טויבא דנטורותא דידעתא דאתרא.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>לא אתרשם</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>דוכתא</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>בקורבא</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76737,6 +76849,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>דוברא דמאנא</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>עם אפליקאציא דשוררא</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>עם רמזא בברידא</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>עם רמזא דדוערא</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>עם קלידא דעללא</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>עם חושבנא בריא</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>עבדנותא דשלמותא</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>לא אתרשם</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>דוכתא</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>בקורבא</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76816,6 +76964,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>חזיא דמותבא דהנא מפלחנא</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>חושבנא דילוכון %login על %site השא אתפלח לעללא מן דוכתא דמנה לא על בזבנא אחריא:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>דוכתא בקורבא</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76854,6 +77010,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser על %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>מודענותא דעללא</translation>
     </message>
 </context>
 <context>
@@ -77500,6 +77660,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>לא ידיעא</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>חמיא דחושבנא דילוכון</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>רמזא דדוערא אתפלח לעללא לחושבנא דילוכון %login על %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>רמזא דדוערא אתפלח</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>חושבנא</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>מונעא בקורבא</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>בעו מלתא דעברא חדתא דתעלון תוב, או אתחברו עם מדברנא דאתרא.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>בעתא דמלתא דעברא חדתא</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>כל רמזא דדוערא פלח חד זבנא. אן אובדתון תליפון דילוכון, טיבו תוב אפליקאציא דשוררא ונטורו רמזא חדתא דדוערא בדוכתא שלימתא.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>נסיונא דעללא דלא אצלחו לחושבנא דילוכון</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>מן השא ולהל, עללא בעא רמזא לבר מן מלתא דעברא דילוכון. אן אחתון עבדתון הדא, לא סניקיתון למעבד מדם.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>אן אחתון הויתון וטעיתון מלתא דעברא דילוכון, בעו חדא חדתא. אן לא, גבון מלתא דעברא חילתניתא יתיר ופעלו עללא בתרתין דרגא.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>אן לא אחתון הויתון, אנש מצא דידע מלתא דעברא דילוכון: שחלפוה השא ובצו איכא חושבנא דילוכון עלילא.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>רמזא דדוערא דפשו</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>בוחנא דמאנא דילוכון</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>זוהרא דשלמותא</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>אנש נסא למעל לחושבנא דילוכון %login על %site עם מלתא דעברא לא תריצתא %count זבנא חד בתר חד.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>הוא גדשא דשלמותא בחושבנא דילוכון %login על %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>הנא זוהרא דשלמותא על חושבנא דילוכון. משתדר על כל שוחלפא איך הנא ולא מצא דמתבטל.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>זבנא</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>עללא בתרתין דרגא אתבטל לחושבנא דילוכון %login על %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>עללא בתרתין דרגא אתבטל</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>עללא בתרתין דרגא אתפעל לחושבנא דילוכון %login על %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>עללא בתרתין דרגא אתפעל</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>חושבנא דילוכון %login על %site אתקפל בתר סגיאא עללא דלא אצלחו.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>חושבנא דילוכון השא נטיר בלחוד במלתא דעברא דילוכון. אן לא אחתון עבדתון הדא, פעלו תוב עללא בתרתין דרגא בתר דשחלפתון מלתא דעברא דילוכון.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>חושבנא דילוכון אתקפל</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>עבדנותא דשלמותא</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>עבדנותא דשלמותא ד %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>עלילא</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>נסיונא דעללא דלא אצלח</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>פליטא</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>מותבא אתפלטו</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>עללא מן מאנא חדתא</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>עללא מן דוכתא חדתא</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>איתיותא אשתררת („שררו דאנתון הויתון”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>בוחנא דאיתיותא לא אצלח</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>עלילא עם קלידא דעללא</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>עללא עם קלידא דעללא לא אצלח</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>עללא אתכלי: רמזא דעללא בתרתין דרגא חסירא או לא תריצא</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>רמזא דעללא בתרתין דרגא לא תריצא</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>חושבנא אתקפל בתר עללא דלא אצלחו</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>חושבנא אתפתח</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>מלתא דעברא אשתחלפת</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>שוחלפא דמלתא דעברא לא אצלח</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>מלתא דעברא אתטיבת מן דריש</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>מלתא דעברא חדתא אתבעית</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>מונעא דברידא אשתחלף</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>שמא דמפלחנא אשתחלף</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>עללא בתרתין דרגא אתפעל</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>עללא בתרתין דרגא אתבטל</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>רמזא דדוערא אתפלח</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>רמזא חדתא דדוערא</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>מלתא דעברא דאפליקאציא אתברית</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>מלתא דעברא דאפליקאציא אתבטלת</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>קלידא דעללא אתוסף</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>קלידא דעללא אשתקל</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>חושבנא אתפעל</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>חושבנא אתבטל</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>כל</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>עללא ומותבא</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>שוחלפא דחושבנא</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>סניק לחפיטותא</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>מן לותכון</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>מן מפלחנא</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>מן %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>אורחא</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>חירנא</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>מרכבתא דפולחנא</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>מאנא</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>אתרא גוניא</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>מדינתא</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>מותבא</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>אינין</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>אורחא דשודרא</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>נסיונא דלא אצלחו</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>רמזא דפשו</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>מעבדנא דעללא</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>עבדנותא דשלמותא</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>עבדנותא דשלמותא ד %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>עללא ושוחלפא בשלמותא דחושבנא דילוכון. אן חזיתון מדם דלא עבדתון, שחלפו מלתא דעברא דילוכון ופלטו מאנא דלא ידעיתון.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>עללא ושוחלפא בשלמותא דהנא חושבנא.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>מאנא דילוכון</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>שוחלפא דמלתא דעברא</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>לבסתר לחושבנא</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>עבדנותא דשלמותא לא מתרשמא</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>מתקריא מן רושמא דבוקיא דמפלחנא, דפתורא דילה expuser_audit חסירא או לא מסתמכא בהנא בית ידעתא. רהטון php update/common/scripts/6.0/createuseraudittable.php, או חודתא דבית ידעתא ד 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days יומתא אחריא</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>עללא ב %days יומתא אחריא</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>עבדנותא אחריתא דשלמותא</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>מחויא</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>לא אצלח</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>אתכלי</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>עדכיל לא אתרשמת עבדנותא דשלמותא.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>גדשא דשלמותא מתנטרין %days יומתא.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>גדשא דשלמותא מתנטרין עדמא דמדברנא שקל להון.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>מחתא דידעתא דעללא דילי</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>מותבא וגדשא דשלמותא דילוכון איך פנקיתא ד JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>עלילא</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>נסיונא דעללא דלא אצלח</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>פליטא</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>מותבא אתפלטו</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>עללא מן מאנא חדתא</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>עללא מן דוכתא חדתא</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>איתיותא אשתררת („שררו דאנתון הויתון”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>בוחנא דאיתיותא לא אצלח</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>עלילא עם קלידא דעללא</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>עללא עם קלידא דעללא לא אצלח</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>עללא אתכלי: רמזא דעללא בתרתין דרגא חסירא או לא תריצא</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>רמזא דעללא בתרתין דרגא לא תריצא</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>חושבנא אתקפל בתר עללא דלא אצלחו</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>חושבנא אתפתח</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>מלתא דעברא אשתחלפת</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>שוחלפא דמלתא דעברא לא אצלח</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>מלתא דעברא אתטיבת מן דריש</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>מלתא דעברא חדתא אתבעית</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>מונעא דברידא אשתחלף</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>שמא דמפלחנא אשתחלף</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>עללא בתרתין דרגא אתפעל</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>עללא בתרתין דרגא אתבטל</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>רמזא דדוערא אתפלח</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>רמזא חדתא דדוערא</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>מלתא דעברא דאפליקאציא אתברית</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>מלתא דעברא דאפליקאציא אתבטלת</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>קלידא דעללא אתוסף</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>קלידא דעללא אשתקל</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>חושבנא אתפעל</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>חושבנא אתבטל</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>כל</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>עללא ומותבא</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>שוחלפא דחושבנא</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>סניק לחפיטותא</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>עבדנותא דשלמותא</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>עבדנותא דשלמותא ד %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>עללא ושוחלפא בשלמותא דחושבנא דילוכון. אן חזיתון מדם דלא עבדתון, שחלפו מלתא דעברא דילוכון ופלטו מאנא דלא ידעיתון.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>מאנא דילוכון</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>שוחלפא דמלתא דעברא</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>עבדנותא דשלמותא עדכיל לא מתרשמא בהנא אתרא.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>עללא ב %days יומתא אחריא</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>נסיונא דלא אצלחו</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>עדכיל לא אתרשמת עבדנותא דשלמותא.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>מחתא דידעתא דעללא דילי</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>מותבא וגדשא דשלמותא דילוכון איך פנקיתא ד JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>מלתא דעברא</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>מלתא דעברא ורמזא דעללא בתרתין דרגא</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>מצעיותא ד REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>מצעיותא ד SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>עללא חד זבנא</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>עלילא קדם דמותבא נתרשמון</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>מודענותא דעללא</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>מנו עלילא באתרא, כמא זבנא חושבנא עאלין ולא מצלחין, ופלטא דמפלחנא מן כל דוכא. פלח עם כל מעבדנא דמותבא.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>מותבא אתפלט. מאנא סניק למעל תוב.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login אתפלט מן %count מותבא.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>ל %login לא הוא מותבא רהטא.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>לא חד חושבנא אית לה הנא ID, שמא דמפלחנא או מונעא דברידא.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>הנו מותבא דאחתון מפלחיתון. לשולמה, פלטו.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>הו מותבא כבר שלם הוא.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>פאתא עבר זבנה. מדם לא אשתחלף; בבעותא נסו תוב.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>מותבא לא מתרשמין בהנא אתרא (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>פתורא expuser_session חסירא</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>מותבא מתרשמין מא דאתברי: php update/common/scripts/6.0/createusersessiontable.php, או חודתא דבית ידעתא ד 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>השא ואדיום</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>מותבא רהטא</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>מפלחנא עלילא</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>עללא אדיום</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>נסיונא דלא אצלחו אדיום</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>פלטא דמפלחנא מן כל דוכא</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>כל מותבא דחושבנא שלם בבעותא דבתרה, אף אילין דמתנטרין ב „דכרוני”. פלחו בה אמתי דחושבנא מצא דנהוא באידיא לא תריצתא; והידין טיבו מן דריש מלתא דעברא דילה.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID דמפלחנא, שמא דמפלחנא או מונעא דברידא</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>פלטא מן כל דוכא</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>עלילא השא</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>%limit אילין דאתפלחו אחריאית מתחוין.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>מפלחנא</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>מאנא</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>מונעא</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>עלילא</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>פעילא אחריאית</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>סוערנא</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>הנא מאנא</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>לא אתרשם</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>פלטא</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>לא חד מותבא עלילא.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days יומתא אחריא</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>עללא ונסיונא דלא אצלחו מתמנין מן רושמא דבוקיא דמפלחנא, דליתוהי; מותבא חדתא מתמנין.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>יומא</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>עללא</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>נסיונא דלא אצלחו</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>מותבא חדתא</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>מעבדנא דמותבא: %handler. מותבא מתקרין מן פתורא expuser_session, מטל הנא מודענותא פלחא עם כל מעבדנא.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>זוהרא דשלמותא לחושבנא דילוכון</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>הוא גדשא דשלמותא בחושבנא דילוכון %login: %event. אן לא אחתון הויתון, חמו חושבנא דילוכון ב %url.</translation>
     </message>
 </context>
 </TS>

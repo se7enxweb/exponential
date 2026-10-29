@@ -2,13 +2,14 @@
 title: exp:adddefaultstates
 audience: developer, admin
 category: examples
-summary: The command exp:adddefaultstates (bin/php/adddefaultstates.php).
+summary: Give every content object the default state of each state group it has no state of (dry run unless --apply).
 keywords: exp:adddefaultstates, adddefaultstates, console, command, CLI, adddefaultstates.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:adddefaultstates
 
+Give every content object the default state of each state group it has no state of (dry run unless --apply).
 
 Script `bin/php/adddefaultstates.php`, code in `kernel/private/classes/commands/adddefaultstates.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -16,6 +17,29 @@ Script `bin/php/adddefaultstates.php`, code in `kernel/private/classes/commands/
 ./console exp:adddefaultstates --help
 php bin/php/adddefaultstates.php --help
 ```
+
+## Help text
+
+```text
+Adds default states to content objects: every object that has no state of a state group gets
+the group's default state (the state with priority 0). Objects with a state of the group are left
+alone, so the script can run again. Prints PASS or FAIL at the end.
+Without --apply nothing is written: the script lists per state group how many objects would get
+its default state. --dry-run means the same as no flag; --apply together with --dry-run is a usage
+error (exit 2).
+
+Example: php bin/php/adddefaultstates.php
+         php bin/php/adddefaultstates.php --apply
+```
+
+## Options
+
+| Option | Value | Help |
+|---|---|---|
+| `--apply` |  | Add the states (the default is a dry run that lists them and changes nothing) |
+| `--dry-run` |  | The default: list how many objects would get a default state, change nothing |
+
+Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 
 ## Related
 

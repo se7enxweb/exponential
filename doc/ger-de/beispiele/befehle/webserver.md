@@ -28,7 +28,8 @@ php bin/php/webserver.php --help
 | `--docroot` | erforderlich | configure/reconfigure: das Dokumentenverzeichnis, das für die Engine gespeichert wird |
 | `--https-port` | erforderlich | configure/reconfigure: der HTTPS-Port, der gespeichert wird (frankenphp oder qbix; php hat kein TLS) |
 | `--reconfigure` |  | start: Engine, Port, Dokumentenverzeichnis und HTTPS-Port vor dem Start erneut ermitteln und speichern |
-| `--dry-run` |  | configure/reconfigure: zeigen, was geschrieben würde, ohne es zu schreiben |
+| `--apply` |  | configure und die schreibenden Befehle (config set\|unset, cache clear, layout migrate, site\|conf\|mod, ssl renew, install): die Änderung vornehmen; ohne die Option sind sie ein Probelauf |
+| `--dry-run` |  | der Standard von configure und den schreibenden Befehlen (beibehalten für Skripte); start: die Konfiguration zeigen, die er schreiben würde, ohne sie zu schreiben oder auszuführen |
 | `--all` |  | start, stop, restart, graceful, kill oder status für jede Engine, eine nach der anderen |
 | `--force` |  | install: erneut herunterladen, auch wenn die Binärdatei schon da ist |
 | `--check` |  | install: den Hash der installierten Binärdatei erneut gegen ihre SHA-256 prüfen |

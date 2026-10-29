@@ -1,7 +1,7 @@
 # Preloading caches: warm a site before visitors arrive
 
 This guide explains the cache preloader of Exponential: **Setup > Preload** (`/setup/preload`) and the command
-`php bin/php/preload.php`. They are the same run. It requests the pages of a site as an anonymous visitor would, so
+`php bin/php/preload.php --apply`. They are the same run. It requests the pages of a site as an anonymous visitor would, so
 the caches are warm before the first visitor arrives, and it lists the links that are broken with the pages that link
 to them.
 
@@ -87,13 +87,13 @@ warm already makes none.
 php bin/php/preload.php --siteaccess=site --dry-run
 
 # warm the site of the siteaccess "site"
-php bin/php/preload.php --siteaccess=site
+php bin/php/preload.php --apply --siteaccess=site
 
 # a small run: the starting pages and the pages they link to, at most 20
-php bin/php/preload.php --siteaccess=site --max-pages=20 --max-depth=1
+php bin/php/preload.php --apply --siteaccess=site --max-pages=20 --max-depth=1
 
 # with the image check
-php bin/php/preload.php --siteaccess=site --images
+php bin/php/preload.php --apply --siteaccess=site --images
 ```
 
 | Option | Meaning |
@@ -121,7 +121,7 @@ Exit codes: 0 when the run finished or was stopped (broken links are a finding, 
 For cron, after the nightly cache clear for example:
 
 ```
-30 4 * * * cd /path/to/exponential && php bin/php/preload.php --siteaccess=site -q
+30 4 * * * cd /path/to/exponential && php bin/php/preload.php --apply --siteaccess=site -q
 ```
 
 The page shows this line for the choices in its form. The command needs the PHP command line and the curl extension;

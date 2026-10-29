@@ -31,12 +31,12 @@ GET THE CODE (a fixed release)
 INSTALL (SQLite, one command)
   php bin/php/console exp:install --print   --url=http://127.0.0.1:8087
   php bin/php/console exp:install --dry-run --url=http://127.0.0.1:8087
-  php bin/php/console exp:install           --url=http://127.0.0.1:8087 [--package=sevenx_multisite_clean]
+  php bin/php/console exp:install --apply           --url=http://127.0.0.1:8087 [--package=sevenx_multisite_clean]
   cat var/log/initial-admin-password        then sign in, change it, and: rm var/log/initial-admin-password
 
 SERVE
   php bin/php/console exp:velocity start | status | stop
-  php bin/php/console exp:velocity config set PHPServerSettings Port 8091     a second site on one machine
+  php bin/php/console exp:velocity config set --apply PHPServerSettings Port 8091     a second site on one machine
 
 WHEN SOMETHING BREAKS
   tail -n 50 var/log/error.log           the reference ERR-... of an error page is in here

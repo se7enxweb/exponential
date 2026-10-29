@@ -26,8 +26,8 @@ installation is set up with the defaults; an installation that exists gets them 
    adds a comment, and presses **Approve** or **Deny** (each asks for a confirmation). Then "Verify it's you" asks
    (the users group, `collaboration/action other CollaborationAction_Accept CollaborationAction_Deny
    CollaborationAction_Defer`): the decision is held until the approver confirms with the password, a passkey or a
-   code, and is then carried out as pressed. Content approvals are not asked
-   ([Passkeys and "Verify it's you"](passkeys-and-verify-its-you.md)).
+   code, and is then carried out as pressed. Content approvals are not asked; the approval of an account by the
+   section based setup is ([Passkeys and "Verify it's you"](passkeys-and-verify-its-you.md)).
 5. **Approve**: the workflow continues at once (not at the next run of the workflow cronjob): the account is published
    below Editors and can sign in. **Deny**: the version is a draft of the editor again, nothing is published, the
    account cannot sign in. The editor can change the draft and send it again, which asks for approval again.
@@ -49,6 +49,87 @@ The setup wizard and the kickstarter call `expUserApproval::ensure()` after the 
 
 The role gives nothing else below Editors: the accounts of other editors stay out of an editor's reach (the member
 management guard keeps them so), and an editor sees no other editor in the list of the group.
+
+`site.ini [UserSettings] AccountApprovalMode` chooses what the setup step creates: `group` (the default, the event
+above), `section` (the alternative below) or `none`.
+
+## Two ways: by group (the default) or by section
+
+The approval of new staff accounts can be set up in two ways. **Choose one.** Both on the same trigger would ask the
+approvers twice for one account, so the command refuses the second way while the first is there, and warns the other
+way round.
+
+| | By group (default) | By section (optional) |
+| --- | --- | --- |
+| Event | *Approve user accounts* (`event_expuserapprove`) | the plain *Approve* event (`event_ezapprove`) the kernel has always had |
+| What decides | the group the account is placed in | the section of the account: a section **Staff** (identifier `staff`) for *Administrator users* and *Editors* |
+| Moving a member into Editors, adding a location there | refused for whoever would wait | not covered: a move publishes nothing (keep `content/move` and the member management guard as they are) |
+| Requesters' role | created (*Editor account requests*) | not created: give the requesters `content/create` in Editors yourself, or keep the role of the group based setup |
+| Settings | groups that need approval, approvers, groups without approval, mail on or off | sections, approving users and groups, groups without approval, languages, *new objects only* |
+| Mail with the link to the item in the administration | yes | yes (for an account or user group) |
+| "Verify it's you", decision carried out at once, audit log | yes | yes (for an account or user group) |
+| Set up by | the setup step, `bin/php/adduserapproval.php --apply` | `bin/php/adduserapproval.php --mode=section --apply`, or the setup step with `AccountApprovalMode=section` |
+
+**Choose by group** when the placement must decide (accounts can be moved or get a second location), when groups
+other than staff need approval, or when the editors should get exactly the policy to create accounts in Editors. It is
+what a new installation gets.
+
+**Choose by section** when you prefer only the stock approval event, when sections already drive your policies
+(for example a *Staff* section that anonymous users and members cannot read), or when you want the approval event's
+own options, such as languages. Note that the accounts of Administrator users and Editors then leave the section
+*Users*: policies limited to that section no longer cover them. The command lists such policies before it changes
+anything.
+
+### The section based setup
+
+```bash
+php bin/php/adduserapproval.php --mode=section            # dry run: what it would do
+php bin/php/adduserapproval.php --mode=section --apply    # do it; checks the result, prints PASS or FAIL
+```
+
+It creates, when they are missing: the section **Staff** (navigation part *Users*), assigns it at the *Administrator
+users* and *Editors* nodes to every object below them that had the group's section (a new account placed there later
+gets it from its group), and the plain *Approve* event, first in the workflow that content/publish (before) runs (or in
+a new workflow **Approve new staff accounts** with that trigger):
+
+| Approval event setting | Value |
+| --- | --- |
+| Sections | Staff |
+| Groups who approve | Administrator users |
+| User groups without approval | Administrator users |
+| Version | new objects only (the first version: editing an existing account asks nothing) |
+| Languages | all |
+
+| Option | Default | |
+| --- | --- | --- |
+| `--apply` | | make the changes; without it the section setup only lists them |
+| `--staff=<group>` | Administrator users, Editors | a group whose accounts go into the section Staff, repeatable |
+| `--approvers=<group>` | Administrator users | an approving group, repeatable |
+| `--exempt=<group>` | Administrator users | a group whose members need no approval, repeatable |
+| `--admin-id=<id>` | 14 | the creator of the workflow |
+
+It refuses (FAIL, nothing changed) while the event *Approve user accounts* runs on content/publish (before). To switch
+from the group based approval: remove that event from its workflow at Setup > Workflows, then run the command. To
+switch back: remove the approval event of section Staff from the workflow and run `bin/php/adduserapproval.php --apply`. The
+section can stay; it changes nothing by itself.
+
+What the plain approval event adds for a user account or user group (`expUserApproval::sectionRequested()`,
+`decided()`, `modeOfItem()`): every approver gets the same mail as with the group based event, whether or not they
+subscribed to collaboration notifications; Approve and Deny ask "Verify it's you", are carried out at once and are
+recorded as `access.user.approval.approve` and `.deny` with `mode: section` in the audit log and the user audit log.
+
+### More examples with the same mechanism
+
+Both ways are ordinary workflow events, so other groups and situations are set up at Setup > Workflows:
+
+- **Self-registered members approved by moderators.** Group based: add *Members* to the groups that need approval of
+  the event *Approve user accounts* and a *Moderators* group to the groups who approve. Section based: give *Members*
+  a section of its own (for example *Community*), add it to the sections of an approval event and *Moderators* to its
+  approving groups. The anonymous registration then waits for a moderator.
+- **Two approvers for a new administrator.** Add a second event after the first one in the same workflow, with other
+  approvers (for example a *Security* group); the account is published only when both approved. With the section
+  based setup, give *Administrator users* a section of their own (for example *Admins*) and a second approval event
+  for it.
 
 ## The event's settings
 
@@ -93,23 +174,32 @@ https:// and the SiteURL of `RegistrationAdminSiteAccess`, else that siteaccess'
 The link only opens the approval item. Approve and deny are the buttons of the item in the administration: there is no
 one-click link, no key and no token in the mail.
 
+The collaboration notifications that people subscribe to (My account > Notification settings > Collaboration) use the
+same address since 6.0.15: the templates `notification/handler/ezcollaboration/view/plain.tpl`,
+`ezapprove/approve.tpl` and `ezapprove/author.tpl` link to `{$collaboration_item.admin_url}`
+(`eZCollaborationItem::adminURL()`), not to the SiteURL of the siteaccess that published the content or ran the
+notification cronjob, where the item cannot be opened. An override of these templates that builds the link itself
+keeps working as before.
+
 ## The audit log
 
 | Event | When | Actor | Object, target, after |
 | --- | --- | --- | --- |
 | `access.user.approval.request` | the event holds an account for approval | who published | the account; the approval item; version, groups, number of approvers, mails sent, workflow, process |
-| `access.user.approval.approve` | an approver approves | the approver | the account; the approval item; version, process, who asked |
-| `access.user.approval.deny` | an approver denies | the approver | the account; the approval item; version, process, who asked |
+| `access.user.approval.approve` | an approver approves | the approver | the account; the approval item; version, process, who asked, mode (`group` or `section`) |
+| `access.user.approval.deny` | an approver denies | the approver | the account; the approval item; version, process, who asked, mode (`group` or `section`) |
 | `access.user.approval.refused` | a move or new location into a required group is refused | who tried | the account or group; the target node; workflow, event |
 
-All four are on by default, in the `access` channel. `access.user.create` is recorded when the account's draft is
+All four are on by default, in the `access` channel, for both ways (the section based request carries `mode:
+section`). As `access.user.*` events about an account they are also kept in the user audit log (Users > the account >
+Audit, [user-audit.md](../../features/6.0/user-audit.md)). `access.user.create` is recorded when the account's draft is
 stored, `access.user.change` and the others of [member-management.md](member-management.md) as before.
 
 ## What to do on an installation that exists
 
 ```bash
-php bin/php/adduserapproval.php --dry-run        # what it would create and add
-php bin/php/adduserapproval.php                  # do it; checks the result, prints PASS or FAIL
+php bin/php/adduserapproval.php                  # dry run: what it would create and add
+php bin/php/adduserapproval.php --apply          # do it; checks the result, prints PASS or FAIL
 ```
 
 The command creates the workflow, its event and the trigger when they are missing. When content/publish (before)
@@ -146,7 +236,9 @@ from the workflow, or remove the role from Editors (they can then no longer crea
 - Removing a user or group removes it from every such event's lists.
 
 Code: `kernel/classes/workflowtypes/event/expuserapprove/expuserapprovetype.php` (the event),
-`kernel/classes/user/expuserapproval.php` (settings, guard, mail, decision, setup), the hook in
+`kernel/classes/user/expuserapproval.php` (settings, guard, mail, decision, setup),
+`kernel/classes/user/expuserapprovalsection.php` (the section based setup), the hooks in
+`kernel/classes/workflowtypes/event/ezapprove/ezapprovetype.php` and
 `kernel/classes/collaborationhandlers/ezapprove/ezapprovecollaborationhandler.php`, the command
 `kernel/private/classes/commands/adduserapproval.php`, templates
 `design/standard/templates/workflow/eventtype/{edit,view}/event_expuserapprove.tpl` and

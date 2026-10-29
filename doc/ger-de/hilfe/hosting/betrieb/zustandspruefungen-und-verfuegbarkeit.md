@@ -107,7 +107,7 @@ Der **Watchdog** ist ein systemd-Timer, der die Standard-Engine wieder startet, 
 Absturz, ein Abbruch wegen Speichermangels, ein Neustart, dessen Aufrufer beendet wurde):
 
 ```bash
-./console exp:velocity watchdog install --allow-root-user   # service and timer, enabled
+./console exp:velocity watchdog install --apply --allow-root-user   # service and timer, enabled
 ./console exp:velocity watchdog status --allow-root-user    # timer, markers, last check and last start
 ```
 

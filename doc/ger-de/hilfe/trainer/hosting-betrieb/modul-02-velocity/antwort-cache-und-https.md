@@ -99,7 +99,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, ausgeliefert von Velocity auf d
    ```
 
 2. Zeigen Sie den Zustand des Caches: `php bin/php/console exp:velocity cache stats`.
-3. Leeren Sie ihn: `php bin/php/console exp:velocity cache clear`, und wiederholen Sie dann Schritt 1 einmal.
+3. Leeren Sie ihn: `php bin/php/console exp:velocity cache clear --apply`, und wiederholen Sie dann Schritt 1 einmal.
 4. Erzeugen Sie für die Übung ein selbstsigniertes Paar in einem Verzeichnis Ihrer Installation:
 
    ```bash
@@ -111,9 +111,9 @@ Verwenden Sie Ihre eigene Schulungsinstallation, ausgeliefert von Velocity auf d
 5. Verweisen Sie Velocity auf das Paar und schalten Sie HTTPS ein:
 
    ```bash
-   php bin/php/console exp:velocity config set HTTPSSettings Certificate var/training-tls/cert.pem
-   php bin/php/console exp:velocity config set HTTPSSettings Key var/training-tls/key.pem
-   php bin/php/console exp:velocity config set HTTPSSettings Enabled true
+   php bin/php/console exp:velocity config set --apply HTTPSSettings Certificate var/training-tls/cert.pem
+   php bin/php/console exp:velocity config set --apply HTTPSSettings Key var/training-tls/key.pem
+   php bin/php/console exp:velocity config set --apply HTTPSSettings Enabled true
    php bin/php/console exp:velocity restart
    ```
 

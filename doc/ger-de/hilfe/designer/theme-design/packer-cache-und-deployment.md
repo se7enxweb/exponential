@@ -60,7 +60,7 @@ Installationen, die den Anwendungsserver Velocity verwenden, haben einen Befehl,
 
 - Laden Sie hart neu (Umschalttaste mit dem Neuladen-Knopf oder „Cache leeren und hart neu laden“ der Entwicklerwerkzeuge), wenn ein
   Browser noch die alte Datei zeigt.
-- Auf Websites mit Velocity ist dessen Antwort-Cache getrennt: `./console exp:velocity cache clear`.
+- Auf Websites mit Velocity ist dessen Antwort-Cache getrennt: `./console exp:velocity cache clear --apply`.
 - Öffnen Sie die Seiten in einem privaten Fenster, abgemeldet, um zu sehen, was Besucher sehen.
 
 ## Verwandte Seiten

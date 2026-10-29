@@ -124,7 +124,7 @@ In einem Terminal, im Wurzelverzeichnis Ihrer Schulungsinstallation:
 8. Leeren Sie den Antwort-Cache von Velocity:
 
    ```bash
-   php bin/php/console exp:velocity cache clear
+   php bin/php/console exp:velocity cache clear --apply
    ```
 
 9. Öffnen Sie im Browser **Setup > Cache-Verwaltung** und lesen Sie die Spalte der letzten Leerung: Welche Leerungen

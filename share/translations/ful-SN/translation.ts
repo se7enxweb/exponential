@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Teeltugol &gt; Cronjobs</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Alaa geɗal cronjob golliiɗal tawo: tolno golle, ko naatnaa, tintine e doggol yiylo ina ndaara. Waɗ php bin/php/installcrontab.php --add --apply, walla ɓeydu diidi --show ɗii e crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Jooɗorde ndee ko demo yaaraaɓe: ko kala ina waawi anndude finnde toppitiiɗo, e finnde toppitiiɓe waylataa walla hesɗitintaa. Hoto winndu huunde suuɗaaɗe ɗoo.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jaaɓirde maaɗa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Golle kisal</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Moy waylii, moy naati walla moy salaa, e konte kala; sooɓ e yaltin.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Jaŋtol naatgol</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Ɓe naatii, naatgol e ko waɗaaki ñalnde kala; yaltin kuutoro ka nokkuuje fof.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Sessions ɗe wakkati ɗum e handler PHP ittetee PHP hoore mum (session.gc_maxlifetime), naa hello ndee walla feccere cronjob session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Jaŋtol naatgol ina hollira sessions naatɗe kuutoro kala, ina yaltina ɗe kadi; ina golla e handler session kala.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Uddit jaŋtol naatgol</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ konte maaɗa.</translation>
     <message>
         <source>None yet</source>
         <translation>Alaa haa jooni</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Golle kisal</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Naatgol maa sakkitorɗe, eeɗannde waɗaaki e bayle e finnde maa, ñiiɓirde iimeel maa e naatgol e jahal ɗiɗi.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Naatgol sakkitorɗe, eeɗannde waɗaaki e bayle kisal konte ndee.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Ƴeewto golle</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Naatgol waɗaaki: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ Yiy hello ko haani ngam anndude ɓuri.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab binndaaka (%reason). Ɓeydu setar ɗin e crontab kuutoro ngo lowre ndee dogoo, naa daaɗe, naattingol, tintinol e index yiylo ɗon doga abada:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Fawtitagol ina waɗee e Kickstarter (%file, caggal ɗuum php bin/php/kickstarter.php run --apply) walla e fawgol kesol.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Transport iimeel salii tonngooji %count e dogugol sakitiingol. Ƴeewu serveur iimeel e site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Huunde waɗnde %count ina ndaara, alaa dogdu cronjob tintinol winndaa. Ɓeydu geɗal cronjob &quot;frequent&quot; e crontab, walla waɗ exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Suɓo lowre walla taƴre wooɗnde bee suɓoowo nokkuure</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Hooreejo sistem tan waawi waylude jom mum: waɗ ./console exp:content-check --fix-permissions --apply wano root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>empty</source>
         <translation>koɗo</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Coktirgal siifannde ɓurii hitaande: waylu ɗum e exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>not sent</source>
         <translation>neldaaka</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Cronjob tintinol ina winnda ɗoo dogdu mum kala. Ɓeydu geɗal frequent e crontab, walla waɗ exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Huutoro konsol: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>None.</source>
         <translation>Alaa.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>e app authenticator</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>e code neldaaɗo e iimeel</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>e code artirgol</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>e passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>e konte caggal</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Golle kisal</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Ina hollira wano lewru mum; ñiiɓirde ndee ina mooftee no teelte reentaade keɓe lowre ndee mbiyri.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Winndaaka</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Nokku</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ko ɓadii</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>Manage devices</source>
         <translation>Toppit jaaɓirde</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>e app authenticator</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>e code neldaaɗo e iimeel</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>e code artirgol</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>e passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>e konte caggal</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Golle kisal</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Winndaaka</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Nokku</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ko ɓadii</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>View the sessions of this user</source>
         <translation>Ndaar session kuutoro oo</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Konte maa %login e %site huutoraama jooni ngam naatde diga nokku ka o naataano diga mum ko ɓooyaani:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Nokku ko ɓadii</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser e %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Jaŋtol naatgol</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>unknown</source>
         <translation>anndaaka</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Reen konte maa</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Code artirgol huutoraama ngam naatde e konte maa %login e %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Code artirgol huutoraama</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konte</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Ñiiɓirde ko ɓadii</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Ɗaɓɓu finnde kesre ngam naattude, walla jokkondir e hooreeɓe lowre ndee.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Ɗaɓɓu finnde kesre</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Code artirgol kala ina golla laawol gootol tan. So a waasii telefon maa, fawtu app authenticator maa, mooftaa code artirgol kese ɗee ka nokku kisɗo.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Eeɗannde naatgol waɗaaki e konte maa</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Gila jooni, naatgol maa ɗaɓɓay code e dow finnde maa. So ko an waɗi ɗuum, a hatojinaaka waɗde hay huunde.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>So ko an e a yejjitii finnde maa, ɗaɓɓu kesre. So wonaa an, suɓo finnde ɓurnde semmbe, huuɓnaa naatgol e jahal ɗiɗi.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>So wonaa an waɗi ɗuum, goɗɗo ina waawi anndude finnde maa: waylu nde jooni, ƴeewtaa ka konte maa naatii.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Code artirgol heddiiɗe</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Ƴeewto jaaɓirde maaɗa</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Jeertino kisal</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Goɗɗo eeɗii naatde e konte maa %login e %site e finnde nde feewaani laabi %count ɗi ɗiɗɗondiri.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Huunde waɗnde kisal waɗii e konte maa %login e %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Ɗum ko jeertino kisal fii konte maa. Ina neldee e bayle ɗee fof, ina waawaa ñifeede.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waktu</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Naatgol e jahal ɗiɗi ñifaama e konte maa %login e %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Naatgol e jahal ɗiɗi ñifaama</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Naatgol e jahal ɗiɗi huuɓnaama e konte maa %login e %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Naatgol e jahal ɗiɗi huuɓnaama</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Konte maa %login e %site uddaama caggal naatgol keewngol waɗaangal.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Jooni konte maa ina reenaa e finnde maa tan. So wonaa an waɗi ɗuum, huuɓnitu naatgol e jahal ɗiɗi caggal nde mbaylu-ɗaa finnde maa.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Konte maa uddaama</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Golle kisal</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Golle kisal %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Naatii</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Eeɗannde naatgol waɗaaki</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Yaltii</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessions yaltinaama</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Naatgol diga jawle kesel</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Naatgol diga nokku kesal</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Neɗɗo teeŋtinaama (&quot;Hoolu ko an&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ƴeewndo neɗɗo waɗaaki</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Naatii e passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Naatgol e passkey waɗaaki</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Naatgol salaama: code jahal ɗiɗi alaa walla feewaani</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Code jahal ɗiɗi feewaani</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konte uddaama caggal naatgol waɗaaki</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konte udditaama</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Finnde waylaama</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Waylugol finnde waɗaaki</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Finnde fawtitaama</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Finnde kesre ɗaɓɓaama</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Ñiiɓirde iimeel waylaama</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Innde kuutoro waylaama</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Naatgol e jahal ɗiɗi ina huuɓi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Naatgol e jahal ɗiɗi ina ñifi</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Code artirgol huutoraama ndee laawol</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Code artirgol kese</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Finnde app tagaama</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Finnde app haaytaama</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey ɓeydaama</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey ittaama</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konte huuɓnaama</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konte ñifaama</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Fof</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Naatgol e sessions</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Bayle konte</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Ina sokli hakkilaare</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>ko an waɗi</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ko kuutoro oo waɗi</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>ko %login waɗi</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Laawol</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Navigateur</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Jawle</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Nokku</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Leydi</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessions</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Ko hondun</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Laawol neldugol</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Eeɗannde waɗaaki</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Code heddiiɗe</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Handler naatgol</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Golle kisal</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Golle kisal %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Naatgol e bayle e kisal konte maa. So a yiyii huunde nde waɗaa, waylu finnde maa, yaltinaa jaaɓirde ɗe a anndaa.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Naatgol e bayle e kisal konte ndee.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jaaɓirde maaɗa</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Waylu finnde</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Rutto e konte</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Golle kisal ndee winndaaka</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Ina janngee diga daartol taskaano huutorɓe, ko taabal mum expuser_audit alaa walla jaɓaaka e base de données ndee. Waɗ php update/common/scripts/6.0/createuseraudittable.php, walla kesɗitingol base de données 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Balɗe %days sakkitorɗe</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Naatgol e nder balɗe %days sakkitorɗe</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Golle kisal sakkitorɗe</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Hollu</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>waɗaaki</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>salaama</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Alaa golle kisal winndaaɗe tawo.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Huuɗe waɗnde kisal ina mooftee balɗe %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Huuɗe waɗnde kisal ina mooftee haa hooreejo itta ɗe.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Telchin keɓe naatgol am</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sessions maa e huuɗe waɗnde kisal maa wano fichier JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Naatii</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Eeɗannde naatgol waɗaaki</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Yaltii</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessions yaltinaama</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Naatgol diga jawle kesel</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Naatgol diga nokku kesal</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Neɗɗo teeŋtinaama (&quot;Hoolu ko an&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ƴeewndo neɗɗo waɗaaki</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Naatii e passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Naatgol e passkey waɗaaki</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Naatgol salaama: code jahal ɗiɗi alaa walla feewaani</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Code jahal ɗiɗi feewaani</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konte uddaama caggal naatgol waɗaaki</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konte udditaama</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Finnde waylaama</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Waylugol finnde waɗaaki</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Finnde fawtitaama</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Finnde kesre ɗaɓɓaama</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Ñiiɓirde iimeel waylaama</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Innde kuutoro waylaama</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Naatgol e jahal ɗiɗi ina huuɓi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Naatgol e jahal ɗiɗi ina ñifi</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Code artirgol huutoraama ndee laawol</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Code artirgol kese</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Finnde app tagaama</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Finnde app haaytaama</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey ɓeydaama</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey ittaama</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konte huuɓnaama</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konte ñifaama</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Fof</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Naatgol e sessions</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Bayle konte</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Ina sokli hakkilaare</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Golle kisal</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Golle kisal %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Naatgol e bayle e kisal konte maa. So a yiyii huunde nde waɗaa, waylu finnde maa, yaltinaa jaaɓirde ɗe a anndaa.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jaaɓirde maaɗa</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Waylu finnde</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Golle kisal ndee winndaaka e lowre ndee tawo.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Naatgol e nder balɗe %days sakkitorɗe</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Eeɗannde waɗaaki</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Alaa golle kisal winndaaɗe tawo.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Telchin keɓe naatgol am</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sessions maa e huuɗe waɗnde kisal maa wano fichier JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Finnde</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Finnde e code jahal ɗiɗi</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Jokkorde REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Jokkorde SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Naatgol gootol (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Naatii hade sessions fuɗɗaade winndeede</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Jaŋtol naatgol</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Ɓe naatii e lowre ndee, laabi jelu ɗi konteeji naatata e ɗi ɗi waɗaaki, e yaltingol kuutoro ka nokkuuje fof. Ina golla e handler session kala.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Session ndee yaltinaama. Jawle ndee ina foti naattude.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login yaltinaama e sessions %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login alaa session dogoowo.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Alaa konte jogiiɗo ID oo, innde kuutoro ndee walla ñiiɓirde iimeel ndee.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Ɗum ko session nde njogo-ɗaa e huutoraade. Ngam timminde nde, yaltu.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Session ndee gasii ko adii.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Waktu hello ngoo ɓennii. Alaa ko waylaa; useni, eeɗito.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sessions winndaaka e lowre ndee (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Taabal expuser_session alaa</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sessions ina winndee so tagaama tan: php update/common/scripts/6.0/createusersessiontable.php, walla kesɗitingol base de données 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Jooni e hannde</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sessions dogooje</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Huutorɓe naatɓe</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Naatgol hannde</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Eeɗannde waɗaaki hannde</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Yaltin kuutoro ka nokkuuje fof</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Session konte ndee kala ina gasa e ɗaɓɓaande mum garoore, hay ɗe &quot;Yejjitaa kam&quot; mooftata. Huutoro ɗum so konte ina waawi wonde e juuɗe ɗe feewaani; caggal ɗuum fawtito finnde mum.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID kuutoro, innde kuutoro walla ñiiɓirde iimeel</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Yaltu ka fof</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Naatii jooni</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>%limit huutoraaɗe sakkitorɗe ɗee ina hollaa.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Kuutoro</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Jawle</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Ñiiɓirde</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Naatii</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Golle sakkitorɗe</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Golle</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Jawle ngel</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Winndaaka</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Yaltu</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Alaa session naatnde.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Balɗe %days sakkitorɗe</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Naatgol e eeɗannde waɗaaki ina limee diga daartol taskaano huutorɓe, ngol alaa; sessions kese ɗee ina limee.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Ñalawma</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Naatgol</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Eeɗannde waɗaaki</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Sessions kese</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Handler session: %handler. Sessions ina janngee diga taabal expuser_session, ɗuum waɗi jaŋtol ngol ina golla e handler kala.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Jeertino kisal fii konte maa</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Huunde waɗnde kisal waɗii e konte maa %login: %event. So wonaa an, reen konte maa e %url.</translation>
     </message>
 </context>
 </TS>

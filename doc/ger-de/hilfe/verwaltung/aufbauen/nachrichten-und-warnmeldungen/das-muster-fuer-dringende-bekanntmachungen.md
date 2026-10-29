@@ -92,7 +92,7 @@ ihrer Zeit versteckt ([Cronjobs](../../../../anleitungen/cronjobs.md)). Eine Bek
 | View-Cache von Inhaltsseiten | eine Bekanntmachung im Pagelayout liegt außerhalb des View-Caches der Inhalte | in Ordnung |
 | Cache-Blöcke im Pagelayout | eine zwischengespeicherte Liste von Bekanntmachungen bleibt, bis der Block abläuft | geben Sie dem Block einen kurzen Ablauf oder einen Ablauf für den Teilbaum des Ordners Notices ([View-Cache und Cache-Blöcke](../../../ersteller/website-ersteller/view-cache-und-cache-bloecke.md)) |
 | Statischer Cache | statische Seiten behalten die alte Bekanntmachung, bis sie erneuert werden | nehmen Sie die Hauptseiten in `AlwaysUpdateArray[]` auf, oder erzeugen Sie neu |
-| Antwort-Cache von Velocity, CDN | Kopien bis zum Ende ihrer Lebensdauer | leeren: `./console exp:velocity cache clear`; CDN-Purge |
+| Antwort-Cache von Velocity, CDN | Kopien bis zum Ende ihrer Lebensdauer | leeren: `./console exp:velocity cache clear --apply`; CDN-Purge |
 
 Proben Sie: Veröffentlichen Sie eine Test-Bekanntmachung und messen Sie, wie lange es dauert, bis ein anonymer Besucher
 sie überall sieht.

@@ -69,7 +69,7 @@ Statusleiste, die sagt, ob der Workflow-Cronjob eingeplant ist und wann er als N
 einen Prozess nach einer Bestätigung; es werden keine Inhalte gelöscht
 ([Workflows, 7](../../../anleitungen/workflows.md#7-prozesse-sicher-abbrechen-und-aufräumen)).
 
-Eine Beispiel-Einrichtung für Freigaben lässt sich mit `./console exp:collaborationsampledata` anlegen und wieder
+Eine Beispiel-Einrichtung für Freigaben lässt sich mit `./console exp:collaborationsampledata --apply` anlegen und wieder
 entfernen, was bei der Schulung von Freigebenden hilft
 ([Workflows, 3.6](../../../anleitungen/workflows.md#36-die-beispielfreigaben)).
 

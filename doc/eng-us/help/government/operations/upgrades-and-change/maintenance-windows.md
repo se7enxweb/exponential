@@ -64,7 +64,7 @@ Switching on empties the caches in front of `index.php`; under Velocity the resp
 1. Check the site from an allowed address.
 2. **Bring the site back online** on **Setup > Maintenance**, or `php bin/php/maintenance.php off --allow-root-user`.
 3. Clear the caches in front of the site if content or code changed; under Velocity:
-   `./console exp:velocity cache clear --allow-root-user`.
+   `./console exp:velocity cache clear --apply --allow-root-user`.
 4. `curl -s -o /dev/null -w '%{http_code}\n' https://www.example.gov/` answers 200 through every server.
 5. Run the cronjob parts you paused (**Setup > Cronjobs**).
 

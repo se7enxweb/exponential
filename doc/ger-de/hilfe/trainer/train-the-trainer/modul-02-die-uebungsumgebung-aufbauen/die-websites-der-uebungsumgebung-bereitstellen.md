@@ -44,7 +44,7 @@ Nach dieser Lektion können die Teilnehmenden:
 2. Starten Sie eine Website und führen Sie `status` aus (3 Minuten). Der Status listet jede Adresse auf, die man
    öffnen kann: die Pfade der Website, den Login der Administration, Setup > Systeminformationen und Setup > Caches.
 3. Zeigen Sie den Portwechsel (3 Minuten):
-   `php bin/php/console exp:velocity config set PHPServerSettings Port 8091`, dann neu starten.
+   `php bin/php/console exp:velocity config set --apply PHPServerSettings Port 8091`, dann neu starten.
 
 ### Häufige Fragen
 
@@ -79,9 +79,9 @@ Auf dem Rechner mit der Installation aus Lektion 2.3:
    erzeugten Passwort an.
 5. Stoppen Sie den Server: `php bin/php/console exp:velocity stop`.
 6. Verlegen Sie die Installation auf einen anderen Port:
-   `php bin/php/console exp:velocity config set PHPServerSettings Port 8091`, starten Sie dann erneut und prüfen Sie
+   `php bin/php/console exp:velocity config set --apply PHPServerSettings Port 8091`, starten Sie dann erneut und prüfen Sie
    mit `status`.
-7. Stellen Sie den Port mit `php bin/php/console exp:velocity config unset PHPServerSettings Port` zurück und stoppen
+7. Stellen Sie den Port mit `php bin/php/console exp:velocity config unset --apply PHPServerSettings Port` zurück und stoppen
    Sie den Server.
 
 ## Erwartetes Ergebnis

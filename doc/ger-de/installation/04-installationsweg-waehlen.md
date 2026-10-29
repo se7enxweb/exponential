@@ -81,7 +81,7 @@ Daraus ergeben sich zwei Folgen:
 
 | | Setup-Assistent | Kickstarter | Konsoleninstallation |
 |---|---|---|---|
-| Einstiegspunkt | jede Seite der Website, solange `[SiteAccessSettings] CheckValidity=true` gilt | `php bin/php/console exp:kickstarter run --force` (auch `php bin/php/kickstarter.php run --force`) | `php bin/php/console exp:install` (auch `php bin/php/install.php`) |
+| Einstiegspunkt | jede Seite der Website, solange `[SiteAccessSettings] CheckValidity=true` gilt | `php bin/php/console exp:kickstarter run --apply --force` (auch `php bin/php/kickstarter.php run --apply --force`) | `php bin/php/console exp:install --apply` (auch `php bin/php/install.php --apply`) |
 | Antworten kommen aus | den Formularen, eine Seite pro Schritt | `kickstart.ini` im Installationsverzeichnis, ein Abschnitt pro Schritt | Kommandozeilenoptionen, jede mit einem Standardwert |
 | Braucht während der Installation einen Webserver | ja | nein | nein |
 | Braucht vorab eine geschriebene Datei | nein (`kickstart.ini` optional) | ja: `kickstart.ini` (`exp:kickstarter ini` schreibt sie) | nein |
@@ -127,7 +127,7 @@ temporäre `kickstart.ini` um, führt `expKickstarter` im selben Prozess aus, en
 eine zuvor vorhandene `kickstart.ini` wieder her. Jede Option hat einen Standardwert, sodass
 
 ```bash
-php bin/php/console exp:install
+php bin/php/console exp:install --apply
 ```
 
 allein das Site-Paket `sevenx_multisite` auf SQLite (`var/storage/sqlite3/exponential.db`) installiert, mit dem
@@ -290,13 +290,13 @@ aktiven Themes), HTTP 503 und einem `Retry-After`-Header, bevor die Einstellunge
 | Mehrere Umgebungen, die sich nur in Hostnamen und Zugangsdaten unterscheiden | der Kickstarter mit einer `kickstart.ini` pro Umgebung oder `exp:install` mit Optionen pro Umgebung | beide sind deterministisch |
 | Kein Internetzugang auf dem Server | der Kickstarter oder der Assistent mit den Paketen bereits in `var/storage/packages/` | das Site-Paket wird aus dem lokalen Repository genommen, wenn der Index nicht erreichbar ist |
 | Die Einstellungen für eine bestehende Datenbank neu erzeugen | der Kickstarter mit `DatabaseAction=skip` oder `exp:install --db-action=skip --force` | `skip` schreibt die Einstellungen und lässt die Daten unberührt |
-| Neuinstallation über eine bestehende Installation | `exp:kickstarter run --force` oder `exp:install --force`, nach einer Sicherung | beide sagen klar, dass sie die Datenbank ersetzen |
+| Neuinstallation über eine bestehende Installation | `exp:kickstarter run --apply` oder `exp:install --force`, nach einer Sicherung | beide sagen klar, dass sie die Datenbank ersetzen |
 
 ### Entscheidungshilfe
 
 1. **Haben Sie Shell-Zugang?** Nein: Verwenden Sie den Assistenten. Ja: Weiter.
 2. **Muss eine Person jede Antwort prüfen, bevor irgendetwas geschieht?** Ja: Schreiben Sie `kickstart.ini` mit
-   `exp:kickstarter ini`, prüfen Sie die Datei, dann `exp:kickstarter run --dry-run` und `run --force`.
+   `exp:kickstarter ini`, prüfen Sie die Datei, dann `exp:kickstarter run --dry-run` und `run --apply`.
 3. **Ist die Installation Teil eines Skripts, einer Pipeline oder eines Container-Starts?** Ja: Verwenden Sie
    `exp:install` mit ausdrücklichen Optionen, das Passwort in `EXP_INSTALL_DB_PASSWORD`, und prüfen Sie den
    Exit-Status.
@@ -347,7 +347,7 @@ solange dieser läuft):
 set -euo pipefail
 cd /srv/exponential
 if ! grep -q '^\[DatabaseSettings\]' settings/override/site.ini.append.php 2>/dev/null; then
-    php bin/php/console exp:install \
+    php bin/php/console exp:install --apply \
         --db=mysql --db-host="${DB_HOST}" --db-name="${DB_NAME}" --db-user="${DB_USER}" \
         --url="${SITE_URL}" --email="${ADMIN_EMAIL}" --password="${ADMIN_PASSWORD}"
 fi
@@ -372,7 +372,7 @@ Gegenstand von [Kapitel 8](08-die-website-ausliefern.md).
 
 ```bash
 php bin/php/console exp:install --dry-run          # configuration and packages, nothing written
-php bin/php/console exp:install --force --title="CI build ${CI_PIPELINE_ID:-local}"
+php bin/php/console exp:install --apply --force --title="CI build ${CI_PIPELINE_ID:-local}"
 test -f settings/siteaccess/site/site.ini.append.php
 tail -n 20 var/log/setup.log
 ```

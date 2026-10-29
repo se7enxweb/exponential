@@ -17,7 +17,7 @@ and approve or deny it in the administration, as they approve content.
 - An editor cannot move a member into Editors or give an account a location there: that would skip the approval.
 - Everything is recorded in the audit trail: request, approval, denial, refused attempts.
 - Which groups need approval, who approves and who needs none are the settings of the workflow event *Approve user
-  accounts* at Setup > Workflows. A new installation has them; an existing one runs `php bin/php/adduserapproval.php`.
+  accounts* at Setup > Workflows. A new installation has them; an existing one runs `php bin/php/adduserapproval.php --apply`.
 
 ## For editors
 
@@ -51,7 +51,16 @@ Setup > Workflows > *Approve new editor accounts* > the event *Approve user acco
 - **Send the approvers an e-mail** (default on)
 
 The address in the mail is the administration's: set `site.ini [UserSettings] RegistrationAdminBaseURL` when it has a
-host of its own (for example `https://admin.example.com`).
+host of its own (for example `https://admin.example.com`). The collaboration notifications link there too.
+
+## Or by section
+
+Instead of the event above, you can use the kernel's plain *Approve* event: a section **Staff** for Administrator
+users and Editors, and an approval event for that section (approvers and no approval for Administrator users, new
+objects only). `php bin/php/adduserapproval.php --mode=section` shows what it would do, `--apply` does it. The
+approvers get the same mail with the link, and Approve and Deny are verified and recorded in the same way. Choose one of
+the two ways, never both: an account would be asked for twice, so the command refuses while the event *Approve user
+accounts* runs. When to choose which: [Two ways](../../bc/6.0/user-account-approval.md#two-ways-by-group-the-default-or-by-section).
 
 More: the technical note [Approval of new user accounts](../../bc/6.0/user-account-approval.md), the guide
 [Approving new editor accounts](../../guides/approving-new-editor-accounts.md), and

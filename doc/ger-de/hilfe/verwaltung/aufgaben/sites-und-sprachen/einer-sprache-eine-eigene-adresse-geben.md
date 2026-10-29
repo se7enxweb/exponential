@@ -41,7 +41,7 @@ und [Sprachadressen: Pfad oder Host](../../sprachen/sprachadressen-pfad-oder-hos
 4. Zuordnung: für einen Pfad `MatchOrder=uri` mit `URIMatchType=element` (mitgeliefert); für einen Host
    `HostMatchMapItems[]=fr.example.gov;fr` mit `MatchOrder=host` oder `host;uri`, dazu DNS, Webserver und Zertifikat.
 5. Leeren Sie die Caches: `php bin/php/ezcache.php --clear-tag=ini,content`; mit Velocity auch
-   `./console exp:velocity cache clear`.
+   `./console exp:velocity cache clear --apply`.
 
 ## Prüfen
 

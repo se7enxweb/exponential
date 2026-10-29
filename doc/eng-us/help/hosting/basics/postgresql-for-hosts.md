@@ -99,7 +99,7 @@ The installers write this to `settings/override/site.ini.append.php`. A console 
 environment so it stays out of the shell history:
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=pgsql \
+EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=pgsql \
     --db-host=127.0.0.1 --db-name=<customer> --db-user=<customer> --allow-root-user
 ```
 

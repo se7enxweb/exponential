@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>സജ്ജീകരണം &gt; ക്രോൺ ജോബുകൾ</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>ഇതുവരെ ഒരു ക്രോൺജോബ് ഭാഗവും പ്രവർത്തിച്ചിട്ടില്ല: ജോബ് ക്യൂ, ഇംപോർട്ടുകൾ, അറിയിപ്പുകൾ, തിരയൽ സൂചിക എന്നിവ കാത്തിരിക്കുന്നു. php bin/php/installcrontab.php --add --apply പ്രവർത്തിപ്പിക്കുക, അല്ലെങ്കിൽ --show കാണിക്കുന്ന വരികൾ crontab ഫയലിൽ ചേർക്കുക.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>ഈ ഇൻസ്റ്റലേഷൻ ഒരു പൊതു ഡെമോ ആണ്: ഇതിന്റെ അഡ്മിനിസ്ട്രേറ്റർ പാസ്വേഡ് ആർക്കും അറിയാൻ സാധ്യതയുണ്ട്, കൂടാതെ അഡ്മിനിസ്ട്രേറ്റർ പാസ്വേഡുകൾ മാറ്റാനോ പുനഃസജ്ജമാക്കാനോ കഴിയില്ല. സ്വകാര്യമായ ഒന്നും ഇവിടെ നൽകരുത്.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>നിങ്ങളുടെ ഉപകരണങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>സുരക്ഷാ പ്രവർത്തനം</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15300,6 +15312,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>ഓരോ അക്കൗണ്ടിലും ആരാണ് മാറ്റം വരുത്തിയത്, സൈൻ ഇൻ ചെയ്തത് അല്ലെങ്കിൽ നിരസിക്കപ്പെട്ടത്; ഫിൽട്ടർ ചെയ്യുക, കയറ്റുമതി ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>സൈൻ ഇൻ റിപ്പോർട്ട്</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>ആരൊക്കെ സൈൻ ഇൻ ചെയ്തിട്ടുണ്ട്, ദിവസേനയുള്ള സൈൻ ഇന്നുകളും പരാജയങ്ങളും; ഒരു ഉപയോക്താവിനെ എല്ലായിടത്തുനിന്നും സൈൻ ഔട്ട് ചെയ്യുക.</translation>
     </message>
 </context>
 <context>
@@ -33605,6 +33625,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP ഹാൻഡ്‌ലറിന്റെ കാലഹരണപ്പെട്ട സെഷനുകൾ നീക്കം ചെയ്യുന്നത് PHP തന്നെയാണ് (session.gc_maxlifetime); ഈ പേജോ session_gc ക്രോൺജോബ് ഭാഗമോ അല്ല.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>എല്ലാ ഉപയോക്താക്കളുടെയും സൈൻ ഇൻ ചെയ്ത സെഷനുകൾ സൈൻ ഇൻ റിപ്പോർട്ടിൽ ലിസ്റ്റ് ചെയ്യുകയും അവിടെനിന്ന് സൈൻ ഔട്ട് ചെയ്യുകയും ചെയ്യുന്നു; അത് എല്ലാ സെഷൻ ഹാൻഡ്‌ലറുമായും പ്രവർത്തിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>സൈൻ ഇൻ റിപ്പോർട്ട് തുറക്കുക</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37929,6 +37957,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>ഇതുവരെ ഒന്നുമില്ല</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>സുരക്ഷാ പ്രവർത്തനം</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>നിങ്ങളുടെ സമീപകാല സൈൻ ഇന്നുകൾ, പരാജയപ്പെട്ട ശ്രമങ്ങൾ, നിങ്ങളുടെ പാസ്‌വേഡ്, ഇമെയിൽ വിലാസം, ദ്വി-ഘട്ട സൈൻ ഇൻ എന്നിവയിലെ മാറ്റങ്ങൾ.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>ഈ അക്കൗണ്ടിന്റെ സമീപകാല സൈൻ ഇന്നുകൾ, പരാജയപ്പെട്ട ശ്രമങ്ങൾ, സുരക്ഷാ മാറ്റങ്ങൾ.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>പ്രവർത്തനം അവലോകനം ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count പരാജയപ്പെട്ട സൈൻ ഇന്നുകൾ</translation>
     </message>
 </context>
 <context>
@@ -51019,6 +51067,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab എഴുതിയില്ല (%reason). സൈറ്റ് ഏത് ഉപയോക്താവായി പ്രവർത്തിക്കുന്നുവോ ആ ഉപയോക്താവിന്റെ crontab-ൽ ഈ വരികൾ ചേർക്കുക, അല്ലെങ്കിൽ ക്യൂ, ഇറക്കുമതികൾ, അറിയിപ്പുകൾ, തിരയൽ സൂചിക എന്നിവ ഒരിക്കലും പ്രവർത്തിക്കില്ല:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>വീണ്ടും ഇൻസ്റ്റാൾ ചെയ്യുന്നത് കിക്ക്സ്റ്റാർട്ടർ ഉപയോഗിച്ച് (%file, തുടർന്ന് php bin/php/kickstarter.php run --apply) അല്ലെങ്കിൽ ഒരു പുതിയ ഇൻസ്റ്റാളേഷൻ വഴിയാണ്.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56811,6 +56863,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>കഴിഞ്ഞ റണ്ണിൽ മെയിൽ ട്രാൻസ്പോർട്ട് %count സന്ദേശങ്ങൾ നിരസിച്ചു. മെയിൽ സെർവറും site.ini MailSettings-ഉം പരിശോധിക്കുക.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count ഇവന്റുകൾ കാത്തിരിക്കുന്നു, അറിയിപ്പ് ക്രോൺജോബിന്റെ ഒരു പ്രവർത്തനവും രേഖപ്പെടുത്തിയിട്ടില്ല. &quot;frequent&quot; എന്ന ക്രോൺജോബ് ഭാഗം crontab ഫയലിൽ ചേർക്കുക, അല്ലെങ്കിൽ exp:notification:run --apply പ്രവർത്തിപ്പിക്കുക.</translation>
     </message>
 </context>
 <context>
@@ -63067,6 +63123,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>നോഡ് പിക്കർ ഉപയോഗിച്ച് മറ്റൊരു സൈറ്റോ വിഭാഗമോ തിരഞ്ഞെടുക്കുക</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>സിസ്റ്റം അഡ്മിനിസ്ട്രേറ്റർക്ക് മാത്രമേ ഉടമയെ മാറ്റാൻ കഴിയൂ: root ആയി ./console exp:content-check --fix-permissions --apply പ്രവർത്തിപ്പിക്കുക.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64600,6 +64660,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>ശൂന്യം</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>സൈനിംഗ് കീ ഒരു വർഷത്തിലേറെ പഴക്കമുള്ളതാണ്: exp:audit key rotate --apply ഉപയോഗിച്ച് അത് മാറ്റുക.</translation>
     </message>
 </context>
 <context>
@@ -70310,6 +70374,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>അയച്ചിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>അറിയിപ്പ് ക്രോൺജോബ് അതിന്റെ ഓരോ പ്രവർത്തനവും ഇവിടെ രേഖപ്പെടുത്തുന്നു. frequent ഭാഗം crontab ഫയലിൽ ചേർക്കുക, അല്ലെങ്കിൽ exp:notification:run --apply പ്രവർത്തിപ്പിക്കുക.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>കൺസോൾ ഉപയോഗിക്കുക: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76483,6 +76555,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>ഒന്നുമില്ല.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ഒരു ഓതന്റിക്കേറ്റർ ആപ്പ് ഉപയോഗിച്ച്</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ഇമെയിൽ വഴി ലഭിച്ച കോഡ് ഉപയോഗിച്ച്</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ഒരു വീണ്ടെടുക്കൽ കോഡ് ഉപയോഗിച്ച്</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ഒരു പാസ്കീ ഉപയോഗിച്ച്</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ഒരു ബാഹ്യ അക്കൗണ്ട് ഉപയോഗിച്ച്</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>സുരക്ഷാ പ്രവർത്തനം</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>അതിന്റെ നെറ്റ്‌വർക്ക് ആയി കാണിക്കുന്നു; സൈറ്റിന്റെ ഡാറ്റ സംരക്ഷണ ക്രമീകരണങ്ങൾ പറയുന്നതുപോലെ വിലാസം സൂക്ഷിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>രേഖപ്പെടുത്തിയിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ലൊക്കേഷൻ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ഏകദേശം</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76726,6 +76838,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>ഉപകരണങ്ങൾ നിയന്ത്രിക്കുക</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ഒരു ഓതന്റിക്കേറ്റർ ആപ്പ് ഉപയോഗിച്ച്</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ഇമെയിൽ വഴി ലഭിച്ച കോഡ് ഉപയോഗിച്ച്</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ഒരു വീണ്ടെടുക്കൽ കോഡ് ഉപയോഗിച്ച്</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ഒരു പാസ്കീ ഉപയോഗിച്ച്</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ഒരു ബാഹ്യ അക്കൗണ്ട് ഉപയോഗിച്ച്</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>സുരക്ഷാ പ്രവർത്തനം</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>രേഖപ്പെടുത്തിയിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ലൊക്കേഷൻ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ഏകദേശം</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76805,6 +76953,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>ഈ ഉപയോക്താവിന്റെ സെഷനുകൾ കാണുക</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site സൈറ്റിലെ നിങ്ങളുടെ അക്കൗണ്ട് %login ഉപയോഗിച്ച്, അടുത്തിടെ സൈൻ ഇൻ ചെയ്തിട്ടില്ലാത്ത ഒരു സ്ഥലത്തുനിന്ന് ഇപ്പോൾ സൈൻ ഇൻ ചെയ്തു:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>ഏകദേശ ലൊക്കേഷൻ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76843,6 +76999,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os-ൽ %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>സൈൻ ഇൻ റിപ്പോർട്ട്</translation>
     </message>
 </context>
 <context>
@@ -77489,6 +77649,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>അജ്ഞാതം</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ട് സുരക്ഷിതമാക്കുക</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site സൈറ്റിലെ നിങ്ങളുടെ അക്കൗണ്ട് %login ലേക്ക് സൈൻ ഇൻ ചെയ്യാൻ ഒരു വീണ്ടെടുക്കൽ കോഡ് ഉപയോഗിച്ചു.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>ഒരു വീണ്ടെടുക്കൽ കോഡ് ഉപയോഗിച്ചു</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>അക്കൗണ്ട്</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ഏകദേശ വിലാസം</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>വീണ്ടും സൈൻ ഇൻ ചെയ്യാൻ ഒരു പുതിയ പാസ്‌വേഡ് അഭ്യർത്ഥിക്കുക, അല്ലെങ്കിൽ സൈറ്റിന്റെ അഡ്മിനിസ്ട്രേറ്റർമാരെ ബന്ധപ്പെടുക.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>പുതിയ പാസ്‌വേഡ് അഭ്യർത്ഥിക്കുക</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>ഓരോ വീണ്ടെടുക്കൽ കോഡും ഒരിക്കൽ മാത്രമേ പ്രവർത്തിക്കൂ. നിങ്ങളുടെ ഫോൺ നഷ്ടപ്പെട്ടെങ്കിൽ, നിങ്ങളുടെ ഓതന്റിക്കേറ്റർ ആപ്പ് വീണ്ടും സജ്ജമാക്കി പുതിയ വീണ്ടെടുക്കൽ കോഡുകൾ സുരക്ഷിതമായ സ്ഥലത്ത് സൂക്ഷിക്കുക.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ടിൽ പരാജയപ്പെട്ട സൈൻ ഇൻ ശ്രമങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>ഇനിമുതൽ സൈൻ ഇൻ ചെയ്യുമ്പോൾ നിങ്ങളുടെ പാസ്‌വേഡിനൊപ്പം ഒരു കോഡും ചോദിക്കും. ഇത് നിങ്ങൾ ചെയ്തതാണെങ്കിൽ, നിങ്ങൾ ഒന്നും ചെയ്യേണ്ടതില്ല.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>അത് നിങ്ങളായിരുന്നുവെങ്കിൽ, നിങ്ങൾ പാസ്‌വേഡ് മറന്നുപോയെങ്കിൽ, പുതിയത് അഭ്യർത്ഥിക്കുക. അല്ലെങ്കിൽ, കൂടുതൽ ശക്തമായ ഒരു പാസ്‌വേഡ് തിരഞ്ഞെടുത്ത് ദ്വി-ഘട്ട സൈൻ ഇൻ ഓണാക്കുക.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>ഇത് നിങ്ങളല്ലെങ്കിൽ, ആർക്കെങ്കിലും നിങ്ങളുടെ പാസ്‌വേഡ് അറിയാമായിരിക്കും: ഇപ്പോൾതന്നെ അത് മാറ്റുക, നിങ്ങളുടെ അക്കൗണ്ട് എവിടെയൊക്കെ സൈൻ ഇൻ ചെയ്തിട്ടുണ്ടെന്ന് പരിശോധിക്കുക.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>ശേഷിക്കുന്ന വീണ്ടെടുക്കൽ കോഡുകൾ</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>നിങ്ങളുടെ ഉപകരണങ്ങൾ അവലോകനം ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>സുരക്ഷാ മുന്നറിയിപ്പ്</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>%site സൈറ്റിലെ നിങ്ങളുടെ അക്കൗണ്ട് %login ലേക്ക് ആരോ തെറ്റായ പാസ്‌വേഡ് ഉപയോഗിച്ച് തുടർച്ചയായി %count തവണ സൈൻ ഇൻ ചെയ്യാൻ ശ്രമിച്ചു.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site സൈറ്റിലെ നിങ്ങളുടെ അക്കൗണ്ട് %login ൽ ഒരു സുരക്ഷാ ഇവന്റ് ഉണ്ടായി.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>ഇത് നിങ്ങളുടെ അക്കൗണ്ടിനെക്കുറിച്ചുള്ള ഒരു സുരക്ഷാ മുന്നറിയിപ്പാണ്. ഇത്തരം ഓരോ മാറ്റത്തിനും ഇത് അയയ്ക്കും, ഇത് ഓഫാക്കാൻ കഴിയില്ല.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>സമയം</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site സൈറ്റിലെ നിങ്ങളുടെ അക്കൗണ്ട് %login നായി ദ്വി-ഘട്ട സൈൻ ഇൻ ഓഫാക്കി.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>ദ്വി-ഘട്ട സൈൻ ഇൻ ഓഫാക്കി</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site സൈറ്റിലെ നിങ്ങളുടെ അക്കൗണ്ട് %login നായി ദ്വി-ഘട്ട സൈൻ ഇൻ ഓണാക്കി.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>ദ്വി-ഘട്ട സൈൻ ഇൻ ഓണാക്കി</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>നിരവധി പരാജയപ്പെട്ട സൈൻ ഇന്നുകൾക്കുശേഷം %site സൈറ്റിലെ നിങ്ങളുടെ അക്കൗണ്ട് %login ലോക്ക് ചെയ്തു.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ട് ഇപ്പോൾ നിങ്ങളുടെ പാസ്‌വേഡ് കൊണ്ട് മാത്രമാണ് സംരക്ഷിക്കപ്പെടുന്നത്. ഇത് നിങ്ങൾ ചെയ്തതല്ലെങ്കിൽ, പാസ്‌വേഡ് മാറ്റിയശേഷം ദ്വി-ഘട്ട സൈൻ ഇൻ വീണ്ടും ഓണാക്കുക.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ട് ലോക്ക് ചെയ്തു</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>സുരക്ഷാ പ്രവർത്തനം</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name എന്നയാളുടെ സുരക്ഷാ പ്രവർത്തനം</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>സൈൻ ഇൻ ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>പരാജയപ്പെട്ട സൈൻ ഇൻ ശ്രമം</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>സൈൻ ഔട്ട് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>സെഷനുകൾ സൈൻ ഔട്ട് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>പുതിയ ഉപകരണത്തിൽനിന്ന് സൈൻ ഇൻ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>പുതിയ ലൊക്കേഷനിൽനിന്ന് സൈൻ ഇൻ</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ഐഡന്റിറ്റി സ്ഥിരീകരിച്ചു (“ഇത് നിങ്ങളാണെന്ന് സ്ഥിരീകരിക്കുക”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ഐഡന്റിറ്റി പരിശോധന പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>പാസ്കീ ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>പാസ്കീ സൈൻ ഇൻ പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>സൈൻ ഇൻ നിരസിച്ചു: ദ്വി-ഘട്ട കോഡ് ഇല്ല അല്ലെങ്കിൽ തെറ്റാണ്</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>തെറ്റായ ദ്വി-ഘട്ട കോഡ്</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>പരാജയപ്പെട്ട സൈൻ ഇന്നുകൾക്കുശേഷം അക്കൗണ്ട് ലോക്ക് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>അക്കൗണ്ട് അൺലോക്ക് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>പാസ്‌വേഡ് മാറ്റി</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>പാസ്‌വേഡ് മാറ്റം പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>പാസ്‌വേഡ് റീസെറ്റ് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>പുതിയ പാസ്‌വേഡ് അഭ്യർത്ഥിച്ചു</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ഇമെയിൽ വിലാസം മാറ്റി</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ഉപയോക്തൃനാമം മാറ്റി</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ദ്വി-ഘട്ട സൈൻ ഇൻ ഓണാക്കി</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ദ്വി-ഘട്ട സൈൻ ഇൻ ഓഫാക്കി</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>വീണ്ടെടുക്കൽ കോഡ് ഉപയോഗിച്ചു</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>പുതിയ വീണ്ടെടുക്കൽ കോഡുകൾ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ആപ്പ് പാസ്‌വേഡ് സൃഷ്ടിച്ചു</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ആപ്പ് പാസ്‌വേഡ് അസാധുവാക്കി</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>പാസ്കീ ചേർത്തു</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>പാസ്കീ നീക്കം ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>അക്കൗണ്ട് പ്രവർത്തനക്ഷമമാക്കി</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>അക്കൗണ്ട് പ്രവർത്തനരഹിതമാക്കി</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>എല്ലാം</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>സൈൻ ഇന്നുകളും സെഷനുകളും</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>അക്കൗണ്ട് മാറ്റങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ശ്രദ്ധ ആവശ്യമാണ്</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>നിങ്ങൾ ചെയ്തത്</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ഉപയോക്താവ് ചെയ്തത്</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>ചെയ്തത്: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>രീതി</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>ബ്രൗസർ</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>ഓപ്പറേറ്റിംഗ് സിസ്റ്റം</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ഉപകരണം</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>സ്ഥലം</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>രാജ്യം</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>സെഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>ഏതൊക്കെ</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>അയച്ച മാർഗം</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>പരാജയപ്പെട്ട ശ്രമങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>ശേഷിക്കുന്ന കോഡുകൾ</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>സൈൻ ഇൻ ഹാൻഡ്‌ലർ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>സുരക്ഷാ പ്രവർത്തനം</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name എന്നയാളുടെ സുരക്ഷാ പ്രവർത്തനം</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ടിന്റെ സൈൻ ഇന്നുകളും സുരക്ഷയിലെ മാറ്റങ്ങളും. നിങ്ങൾ ചെയ്യാത്ത എന്തെങ്കിലും കണ്ടാൽ, നിങ്ങളുടെ പാസ്‌വേഡ് മാറ്റുകയും നിങ്ങൾ തിരിച്ചറിയാത്ത ഉപകരണങ്ങൾ സൈൻ ഔട്ട് ചെയ്യുകയും ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>ഈ അക്കൗണ്ടിന്റെ സൈൻ ഇന്നുകളും സുരക്ഷയിലെ മാറ്റങ്ങളും.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>നിങ്ങളുടെ ഉപകരണങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>പാസ്‌വേഡ് മാറ്റുക</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>അക്കൗണ്ടിലേക്ക് മടങ്ങുക</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>സുരക്ഷാ പ്രവർത്തനം രേഖപ്പെടുത്തുന്നില്ല</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>ഇത് ഉപയോക്തൃ ഓഡിറ്റ് ലോഗിൽനിന്നാണ് വായിക്കുന്നത്, അതിന്റെ പട്ടിക expuser_audit ഇല്ല അല്ലെങ്കിൽ ഈ ഡാറ്റാബേസിൽ പിന്തുണയ്ക്കുന്നില്ല. php update/common/scripts/6.0/createuseraudittable.php പ്രവർത്തിപ്പിക്കുക, അല്ലെങ്കിൽ 6.0.15 ന്റെ ഡാറ്റാബേസ് അപ്ഡേറ്റ് പ്രവർത്തിപ്പിക്കുക.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>കഴിഞ്ഞ %days ദിവസം</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>കഴിഞ്ഞ %days ദിവസത്തെ സൈൻ ഇന്നുകൾ</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>സമീപകാല സുരക്ഷാ പ്രവർത്തനം</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>കാണിക്കുക</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>നിരസിച്ചു</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ഇതുവരെ ഒരു സുരക്ഷാ പ്രവർത്തനവും രേഖപ്പെടുത്തിയിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>സുരക്ഷാ ഇവന്റുകൾ %days ദിവസം സൂക്ഷിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>ഒരു അഡ്മിനിസ്ട്രേറ്റർ നീക്കം ചെയ്യുന്നതുവരെ സുരക്ഷാ ഇവന്റുകൾ സൂക്ഷിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>എന്റെ സൈൻ ഇൻ ഡാറ്റ ഡൗൺലോഡ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>നിങ്ങളുടെ സെഷനുകളും സുരക്ഷാ ഇവന്റുകളും ഒരു JSON ഫയലായി.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>സൈൻ ഇൻ ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>പരാജയപ്പെട്ട സൈൻ ഇൻ ശ്രമം</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>സൈൻ ഔട്ട് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>സെഷനുകൾ സൈൻ ഔട്ട് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>പുതിയ ഉപകരണത്തിൽനിന്ന് സൈൻ ഇൻ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>പുതിയ ലൊക്കേഷനിൽനിന്ന് സൈൻ ഇൻ</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ഐഡന്റിറ്റി സ്ഥിരീകരിച്ചു (“ഇത് നിങ്ങളാണെന്ന് സ്ഥിരീകരിക്കുക”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ഐഡന്റിറ്റി പരിശോധന പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>പാസ്കീ ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>പാസ്കീ സൈൻ ഇൻ പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>സൈൻ ഇൻ നിരസിച്ചു: ദ്വി-ഘട്ട കോഡ് ഇല്ല അല്ലെങ്കിൽ തെറ്റാണ്</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>തെറ്റായ ദ്വി-ഘട്ട കോഡ്</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>പരാജയപ്പെട്ട സൈൻ ഇന്നുകൾക്കുശേഷം അക്കൗണ്ട് ലോക്ക് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>അക്കൗണ്ട് അൺലോക്ക് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>പാസ്‌വേഡ് മാറ്റി</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>പാസ്‌വേഡ് മാറ്റം പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>പാസ്‌വേഡ് റീസെറ്റ് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>പുതിയ പാസ്‌വേഡ് അഭ്യർത്ഥിച്ചു</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ഇമെയിൽ വിലാസം മാറ്റി</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ഉപയോക്തൃനാമം മാറ്റി</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ദ്വി-ഘട്ട സൈൻ ഇൻ ഓണാക്കി</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ദ്വി-ഘട്ട സൈൻ ഇൻ ഓഫാക്കി</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>വീണ്ടെടുക്കൽ കോഡ് ഉപയോഗിച്ചു</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>പുതിയ വീണ്ടെടുക്കൽ കോഡുകൾ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ആപ്പ് പാസ്‌വേഡ് സൃഷ്ടിച്ചു</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ആപ്പ് പാസ്‌വേഡ് അസാധുവാക്കി</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>പാസ്കീ ചേർത്തു</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>പാസ്കീ നീക്കം ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>അക്കൗണ്ട് പ്രവർത്തനക്ഷമമാക്കി</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>അക്കൗണ്ട് പ്രവർത്തനരഹിതമാക്കി</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>എല്ലാം</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>സൈൻ ഇന്നുകളും സെഷനുകളും</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>അക്കൗണ്ട് മാറ്റങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ശ്രദ്ധ ആവശ്യമാണ്</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>സുരക്ഷാ പ്രവർത്തനം</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name എന്നയാളുടെ സുരക്ഷാ പ്രവർത്തനം</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ടിന്റെ സൈൻ ഇന്നുകളും സുരക്ഷയിലെ മാറ്റങ്ങളും. നിങ്ങൾ ചെയ്യാത്ത എന്തെങ്കിലും കണ്ടാൽ, നിങ്ങളുടെ പാസ്‌വേഡ് മാറ്റുകയും നിങ്ങൾ തിരിച്ചറിയാത്ത ഉപകരണങ്ങൾ സൈൻ ഔട്ട് ചെയ്യുകയും ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>നിങ്ങളുടെ ഉപകരണങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>പാസ്‌വേഡ് മാറ്റുക</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>ഈ സൈറ്റിൽ സുരക്ഷാ പ്രവർത്തനം ഇതുവരെ രേഖപ്പെടുത്തുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>കഴിഞ്ഞ %days ദിവസത്തെ സൈൻ ഇന്നുകൾ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>പരാജയപ്പെട്ട ശ്രമങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ഇതുവരെ ഒരു സുരക്ഷാ പ്രവർത്തനവും രേഖപ്പെടുത്തിയിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>എന്റെ സൈൻ ഇൻ ഡാറ്റ ഡൗൺലോഡ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>നിങ്ങളുടെ സെഷനുകളും സുരക്ഷാ ഇവന്റുകളും ഒരു JSON ഫയലായി.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>പാസ്‌വേഡ്</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>പാസ്‌വേഡും ദ്വി-ഘട്ട കോഡും</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ഇന്റർഫേസ്</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ഇന്റർഫേസ്</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>സിംഗിൾ സൈൻ-ഓൺ</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>സെഷനുകൾ രേഖപ്പെടുത്തുന്നതിനുമുമ്പ് സൈൻ ഇൻ ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>സൈൻ ഇൻ റിപ്പോർട്ട്</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>സൈറ്റിൽ ആരൊക്കെ സൈൻ ഇൻ ചെയ്തിട്ടുണ്ട്, അക്കൗണ്ടുകൾ എത്ര തവണ സൈൻ ഇൻ ചെയ്യുന്നു, പരാജയപ്പെടുന്നു, ഒരു ഉപയോക്താവിനെ എല്ലായിടത്തുനിന്നും സൈൻ ഔട്ട് ചെയ്യൽ. ഇത് എല്ലാ സെഷൻ ഹാൻഡ്‌ലറുമായും പ്രവർത്തിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>സെഷൻ സൈൻ ഔട്ട് ചെയ്തു. ഉപകരണം വീണ്ടും സൈൻ ഇൻ ചെയ്യണം.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login എന്നയാളെ %count സെഷനുകളിൽനിന്ന് സൈൻ ഔട്ട് ചെയ്തു.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login എന്നയാൾക്ക് പ്രവർത്തിക്കുന്ന സെഷനൊന്നും ഉണ്ടായിരുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>ഈ ID, ഉപയോക്തൃനാമം അല്ലെങ്കിൽ ഇമെയിൽ വിലാസമുള്ള അക്കൗണ്ടൊന്നുമില്ല.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ഇത് നിങ്ങൾ ഉപയോഗിക്കുന്ന സെഷനാണ്. ഇത് അവസാനിപ്പിക്കാൻ സൈൻ ഔട്ട് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ആ സെഷൻ ഇതിനകം അവസാനിച്ചിരുന്നു.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>പേജിന്റെ കാലാവധി കഴിഞ്ഞിരുന്നു. ഒന്നും മാറ്റിയിട്ടില്ല; ദയവായി വീണ്ടും ശ്രമിക്കുക.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ഈ സൈറ്റിൽ സെഷനുകൾ രേഖപ്പെടുത്തുന്നില്ല (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session പട്ടിക ഇല്ല</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>അത് സൃഷ്ടിച്ചാലുടൻ സെഷനുകൾ രേഖപ്പെടുത്തും: php update/common/scripts/6.0/createusersessiontable.php, അല്ലെങ്കിൽ 6.0.15 ന്റെ ഡാറ്റാബേസ് അപ്ഡേറ്റ്.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>ഇപ്പോഴും ഇന്നും</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>പ്രവർത്തിക്കുന്ന സെഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>സൈൻ ഇൻ ചെയ്ത ഉപയോക്താക്കൾ</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>ഇന്നത്തെ സൈൻ ഇന്നുകൾ</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>ഇന്നത്തെ പരാജയപ്പെട്ട ശ്രമങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>ഒരു ഉപയോക്താവിനെ എല്ലായിടത്തുനിന്നും സൈൻ ഔട്ട് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>അക്കൗണ്ടിന്റെ ഓരോ സെഷനും അതിന്റെ അടുത്ത അഭ്യർത്ഥനയിൽ അവസാനിക്കും, “എന്നെ ഓർക്കുക” വഴി സൂക്ഷിച്ചവയും. ഒരു അക്കൗണ്ട് തെറ്റായ കൈകളിൽ ആയിരിക്കാമെന്ന് തോന്നുമ്പോൾ ഇത് ഉപയോഗിക്കുക; തുടർന്ന് അതിന്റെ പാസ്‌വേഡ് റീസെറ്റ് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ഉപയോക്തൃ ID, ഉപയോക്തൃനാമം അല്ലെങ്കിൽ ഇമെയിൽ വിലാസം</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>എല്ലായിടത്തുനിന്നും സൈൻ ഔട്ട് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ഇപ്പോൾ സൈൻ ഇൻ ചെയ്തവ</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>ഏറ്റവും അടുത്തിടെ ഉപയോഗിച്ച %limit എണ്ണം കാണിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ഉപയോക്താവ്</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ഉപകരണം</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>വിലാസം</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>സൈൻ ഇൻ ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>അവസാനം സജീവം</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>പ്രവർത്തനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ഈ ഉപകരണം</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>രേഖപ്പെടുത്തിയിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>സൈൻ ഔട്ട് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ഒരു സെഷനും സൈൻ ഇൻ ചെയ്തിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>കഴിഞ്ഞ %days ദിവസം</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>സൈൻ ഇന്നുകളും പരാജയപ്പെട്ട ശ്രമങ്ങളും ഉപയോക്തൃ ഓഡിറ്റ് ലോഗിൽനിന്നാണ് എണ്ണുന്നത്, അത് ഇല്ല; പുതിയ സെഷനുകൾ എണ്ണുന്നുണ്ട്.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>ദിവസം</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>സൈൻ ഇന്നുകൾ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>പരാജയപ്പെട്ട ശ്രമങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>പുതിയ സെഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>സെഷൻ ഹാൻഡ്‌ലർ: %handler. സെഷനുകൾ expuser_session പട്ടികയിൽനിന്നാണ് വായിക്കുന്നത്, അതിനാൽ റിപ്പോർട്ട് എല്ലാ ഹാൻഡ്‌ലറുമായും പ്രവർത്തിക്കുന്നു.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ടിനായുള്ള സുരക്ഷാ മുന്നറിയിപ്പ്</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ട് %login ൽ ഒരു സുരക്ഷാ ഇവന്റ് ഉണ്ടായി: %event. ഇത് നിങ്ങളല്ലെങ്കിൽ, %url എന്ന വിലാസത്തിൽ നിങ്ങളുടെ അക്കൗണ്ട് സുരക്ഷിതമാക്കുക.</translation>
     </message>
 </context>
 </TS>

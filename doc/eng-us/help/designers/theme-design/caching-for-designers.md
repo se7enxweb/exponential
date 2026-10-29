@@ -28,7 +28,7 @@ levels; most of them work without the designer doing anything, but templates can
 | Cache-blocks | parts of templates you wrap in `{cache-block}` | when keys change, on expiry, on content publish (unless told otherwise) |
 | Compiled templates | templates turned into PHP | when the template file changes (with development checks) or on clear |
 | Packed assets | merged CSS and JS | a new file per source change |
-| Velocity response cache | whole responses, on installations with the Velocity server | `./console exp:velocity cache clear` |
+| Velocity response cache | whole responses, on installations with the Velocity server | `./console exp:velocity cache clear --apply` |
 
 ## The view cache
 

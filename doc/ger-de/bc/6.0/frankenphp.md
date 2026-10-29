@@ -69,7 +69,7 @@ bleibt der Standard `qbix` (es liefert die Live-Website aus); FrankenPHP läuft 
 `--engine=frankenphp` angesprochen. Um stattdessen FrankenPHP zum Standard zu machen:
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Engine frankenphp --allow-root-user
 ```
 
 `config set` schreibt nach `settings/override/velocity.ini.append.php`. Sie können diese Datei auch von Hand bearbeiten
@@ -882,7 +882,7 @@ php bin/php/console exp:velocity install --engine=frankenphp [--force|--check|--
 
 # config
 php bin/php/console exp:velocity config get  FrankenPHPSettings Port --allow-root-user
-php bin/php/console exp:velocity config set  ServerSettings Engine frankenphp --allow-root-user
+php bin/php/console exp:velocity config set --apply  ServerSettings Engine frankenphp --allow-root-user
 php bin/php/console exp:velocity config paths --allow-root-user
 
 # inspect the binary / caddyfile

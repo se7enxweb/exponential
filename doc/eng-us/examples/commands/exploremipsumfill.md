@@ -2,14 +2,14 @@
 title: exp:exploremipsumfill
 audience: developer, admin
 category: examples
-summary: Fill a translation of objects in a test language (Lorem Ipsum, qlo-ZZ) with lorem ipsum text.
+summary: Fill a translation of objects in a test language (Lorem Ipsum, qlo-ZZ) with lorem ipsum text (dry run unless --apply).
 keywords: exp:exploremipsumfill, exploremipsumfill, console, command, CLI, exploremipsumfill.php, exp:loremipsum
 type: generated
 generated: exp:help:examples
 ---
 # exp:exploremipsumfill
 
-Fill a translation of objects in a test language (Lorem Ipsum, qlo-ZZ) with lorem ipsum text.
+Fill a translation of objects in a test language (Lorem Ipsum, qlo-ZZ) with lorem ipsum text (dry run unless --apply).
 
 Script `bin/php/exploremipsumfill.php`, code in `kernel/private/classes/commands/exploremipsumfill.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -28,10 +28,12 @@ Text lines, text blocks, rich text and keywords get lorem ipsum; every other att
 the value of the language it is copied from. One published version per object. The language
 must be a test language (TestLanguage=true in its share/locale file) and already added on
 Setup > Languages; the command never adds one.
+Without --apply nothing is written: the command prints what it would write. --dry-run means
+the same as no flag; --apply together with --dry-run is a usage error (exit 2).
 
-  php bin/php/exploremipsumfill.php <object id>[,...] [--dry-run]
-  php bin/php/exploremipsumfill.php --subtree=<node id> [--limit=50] [--dry-run]
-  ./console exp:loremipsum <object id> --language=qlo-ZZ --from=eng-GB
+  php bin/php/exploremipsumfill.php <object id>[,...] [--apply]
+  php bin/php/exploremipsumfill.php --subtree=<node id> [--limit=50] [--apply]
+  ./console exp:loremipsum <object id> --language=qlo-ZZ --from=eng-GB --apply
 
 Exit code: 0 done (or a dry run), 1 refused or failed, 2 usage error.
 Guide: doc/eng-us/guides/test-language-lorem-ipsum.md
@@ -41,11 +43,12 @@ Guide: doc/eng-us/guides/test-language-lorem-ipsum.md
 
 | Option | Value | Help |
 |---|---|---|
+| `--apply` |  |  |
+| `--dry-run` |  |  |
 | `--language` | required | the test language to fill (default:  |
 | `--from` | required |  |
 | `--subtree` | required |  |
 | `--limit` | required |  |
-| `--dry-run` |  |  |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

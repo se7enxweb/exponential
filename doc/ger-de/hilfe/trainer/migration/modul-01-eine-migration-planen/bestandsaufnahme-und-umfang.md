@@ -80,7 +80,7 @@ die Abfragen für Version, Datentypen, Passwort-Hash-Typen, Zeichensatz und Clus
 
 ## Praktische Übung
 
-Verwenden Sie Ihre eigene Schulungsinstallation, installiert mit `php bin/php/console exp:install` wie in
+Verwenden Sie Ihre eigene Schulungsinstallation, installiert mit `php bin/php/console exp:install --apply` wie in
 [Installation über die Kommandozeile](../../../../installation/07-installation-ueber-die-konsole.md). Sie steht für „die alte Website“.
 Die Standardinstallation verwendet SQLite mit der Datenbank in `var/storage/sqlite3/exponential.db`; öffnen Sie sie
 nur lesend.

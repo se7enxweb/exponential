@@ -113,6 +113,15 @@ class expMailLayoutMailsTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    /** The variables of a security alert (expUserSecurityAlerts::variables()) */
+    private static function alert( $user, $kind )
+    {
+        return array( 'user' => $user, 'alert' => $kind, 'time' => 1793000000, 'ip' => '203.0.113.x', 'method' => 'totp', 'left' => 7,
+                      'attempts' => 5, 'security_url' => 'https://www.example.invalid/user/security',
+                      'sessions_url' => 'https://www.example.invalid/user/sessions', 'password_url' => 'https://www.example.invalid/user/forgotpassword',
+                      'site_name' => 'ML Site' );
+    }
+
     /** The mail templates with sample variables: template, variables, a text the subject contains */
     private static function cases( $login = 'ml-test', $name = 'Jane' )
     {
@@ -137,6 +146,13 @@ class expMailLayoutMailsTest extends PHPUnit\Framework\TestCase
                 array( 'user' => $user, 'changed_at' => 1793000000, 'ip' => '203.0.113.7', 'sessions_ended' => 1, 'other_sessions_signed_out' => true, 'site_name' => 'ML Site' ),
                 'was changed' ),
             'new sign-in' => array( 'design/standard/templates/user/new_signin_mail.tpl', $signin, 'New sign-in' ),
+            'new sign-in, new place' => array( 'design/standard/templates/user/new_signin_mail.tpl',
+                $signin + array( 'location' => 'Berlin, Germany', 'new_device' => false, 'new_location' => true,
+                                 'security_url' => 'https://www.example.invalid/user/security' ), 'New sign-in' ),
+            'security alert 2fa off' => array( 'design/standard/templates/user/security_alert_mail.tpl', self::alert( $user, 'twofactor_off' ), 'turned off' ),
+            'security alert recovery' => array( 'design/standard/templates/user/security_alert_mail.tpl', self::alert( $user, 'recovery_used' ), 'recovery code' ),
+            'security alert failures' => array( 'design/standard/templates/user/security_alert_mail.tpl', self::alert( $user, 'failures' ), 'Failed sign-in' ),
+            'security alert locked' => array( 'design/standard/templates/user/security_alert_mail.tpl', self::alert( $user, 'locked' ), 'locked' ),
             'new sign-in admin' => array( 'design/standard/templates/user/new_signin_admin_mail.tpl',
                 $signin + array( 'admin_url' => 'https://admin.example.invalid/user/sessions/7' ), 'New sign-in of' ),
             'confirm' => array( 'design/standard/templates/mailpreferences/mail/confirm.tpl',

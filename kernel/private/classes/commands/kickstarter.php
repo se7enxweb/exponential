@@ -7,7 +7,7 @@
  * The original header of bin/php/kickstarter.php:
  *
  *
- * @description Kickstarter runner. Supports "ini" generation and full "run" setup subcommands.
+ * @description Kickstarter runner: "ini" writes kickstart.ini, "run" installs from it (a dry run unless --apply)
  * @package   kernel
  * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
  * @license   For full copyright and license information view LICENSE file.
@@ -124,15 +124,21 @@ function showKickstarterHelp( $cli )
     $cli->output( '' );
     $cli->output( 'Commands:' );
     $cli->output( '  ini                  Interactive kickstart.ini generator' );
-    $cli->output( '  run                  Run the setup wizard. Use --dry-run to test the database and remote packages (stops after SiteDetails) or --force to install.' );
+    $cli->output( '  run                  Run the setup wizard. Without --apply it is a dry run: it shows the plan and tests the database' );
+    $cli->output( '                       and remote packages (stops after SiteDetails, changes nothing); --apply installs.' );
     $cli->output( '  help, --help, -h     Show this help' );
     $cli->output( '' );
+    $cli->output( 'Examples: ./bin/php/kickstarter.php run' );
+    $cli->output( '          ./bin/php/kickstarter.php run --apply' );
+    $cli->output( '' );
     $cli->output( 'Run options:' );
+    $cli->output( '  --apply              Install (the default is a dry run that changes nothing)' );
     $cli->output( '  --start-step=<step>  First step to run (default: welcome)' );
     $cli->output( '                       A run cannot resume an earlier one: a later start is refused when a step' );
     $cli->output( '                       needs results of steps before it, and the message names where to start' );
     $cli->output( '  --stop-step=<step>   Last step to run (default: final)' );
-    $cli->output( '  --dry-run            Validate kickstart.ini, then run DatabaseChoice..SiteDetails to test the database and remote packages (writes no password, sends no mail, installs nothing)' );
+    $cli->output( '  --dry-run            The default: validate kickstart.ini, show the plan, then run DatabaseChoice..SiteDetails to test the database and remote packages (writes no password, sends no mail, installs nothing)' );
+    $cli->output( '  --force              Accepted with --apply for scripts that passed it; --force without --apply is a usage error (exit 2), as is --apply with --dry-run' );
     $cli->output( '  --list-steps         List all setup steps and exit' );
     $cli->output( '' );
     $cli->output( 'Every run is also logged to var/log/kickstart.log (passwords masked); earlier runs are kept as' );

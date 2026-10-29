@@ -51,7 +51,7 @@ theme; ship icons; and package, license and release a theme without ever moving 
 ## Lab setup
 
 - **One installation per learner**, because learners create extensions, change settings and activate and deactivate
-  extensions. Install each with `php bin/php/console exp:install`
+  extensions. Install each with `php bin/php/console exp:install --apply`
   ([7. The console install](../../../install/07-console-install.md)) using a package with demo content, so folders,
   articles and images exist ([Choosing the site package for a class](../train-the-trainer/module-02-building-the-lab/choosing-the-site-package-for-class.md)).
   How to build, serve and reset a lab:

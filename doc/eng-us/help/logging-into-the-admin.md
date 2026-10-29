@@ -157,6 +157,8 @@ More: [Security hardening](security-hardening.md).
 - [Logging into the Editor](logging-into-the-editor.md)
 - [Your account and signing in](accounts-and-sign-in.md)
 - [A tour of the administration](admin-tour.md)
+- [Setting up accounts for editors and administrators](setting-up-editor-and-admin-accounts.md)
+- [The user audit log](the-user-audit-log.md)
 
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and

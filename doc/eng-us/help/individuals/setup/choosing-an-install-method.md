@@ -46,7 +46,7 @@ With PHP and Composer installed and the code fetched ([Getting the code](../../.
 
 ```bash
 php bin/php/console exp:install --dry-run
-php bin/php/console exp:install
+php bin/php/console exp:install --apply
 ```
 
 The defaults are SQLite and the default site package `sevenx_multisite`, with demo content to explore

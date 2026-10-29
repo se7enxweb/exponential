@@ -91,7 +91,8 @@ class eZScriptClusterPurge
             self::monitor( "iteration start" );
             foreach( $filesList as $file )
             {
-                $cli->output( "- $file" );
+                $cli->output( ( $this->optDryRun ? "- would purge " : "- " ) . $file );
+                $this->listed++;
                 if ( $this->optDryRun == false )
                 {
                     self::monitor( "purge" );
@@ -203,6 +204,12 @@ class eZScriptClusterPurge
     }
 
     private $options = array();
+
+    /**
+     * The number of expired files run() listed (and, outside a dry run, purged).
+     * @var int
+     */
+    public $listed = 0;
 
     const LOG_FILE = 'clusterpurge.log';
 }

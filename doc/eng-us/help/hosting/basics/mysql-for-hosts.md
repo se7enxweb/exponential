@@ -80,7 +80,7 @@ ConnectRetries=0
 ```
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=mysql \
+EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=mysql \
     --db-host=127.0.0.1 --db-name=<customer> --db-user=<customer> --allow-root-user
 ```
 

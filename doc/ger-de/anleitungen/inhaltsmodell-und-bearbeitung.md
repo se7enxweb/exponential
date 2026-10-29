@@ -214,7 +214,7 @@ Um mehrere neue Elemente auf einmal anzulegen, verwenden Sie **Mehrere neu anleg
    Knoten darunter lagen und seine Sprachen. Filtern Sie nach Benutzer, Typ oder Datum; **Wiederherstellen** stellt
    ein Element zurück (`/content/restore/<object id>`).
 3. **Papierkorb leeren** löscht alles endgültig, unabhängig vom Filter. In der Shell geschieht dasselbe mit
-   `./console exp:trashpurge --allow-root-user`: Das ist endgültig, führen Sie es also nicht auf einer Site aus, die
+   `./console exp:trashpurge --apply --allow-root-user`: Das ist endgültig, führen Sie es also nicht auf einer Site aus, die
    Ihnen wichtig ist.
 
 Vertiefung: [Papierkorb: wer und wo](../funktionen/6.0/papierkorb-wer-und-wo.md), [Upgrade-Hinweise zum Papierkorb](../bc/6.0/papierkorb.md).

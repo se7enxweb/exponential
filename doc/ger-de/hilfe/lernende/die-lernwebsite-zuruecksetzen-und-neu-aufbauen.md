@@ -64,7 +64,7 @@ Nach [Datenbankunterstützung](../datenbankunterstuetzung.md#backup-und-wiederhe
    Kopieren Sie niemals eine Datenbankdatei, die in Benutzung ist.
 3. Kopieren Sie die gesicherten Ordner zurück.
 4. Leeren Sie alle Caches: `php bin/php/ezcache.php --clear-all --allow-root-user`, und mit Velocity außerdem
-   `php bin/php/console exp:velocity cache clear --allow-root-user`.
+   `php bin/php/console exp:velocity cache clear --apply --allow-root-user`.
 5. Schalten Sie den Wartungsmodus wieder aus (siehe [Wartungsmodus](../../anleitungen/wartungsmodus.md)).
 
 ## Mit einer frischen Installation neu anfangen
@@ -75,7 +75,7 @@ tun würde:
 
 ```bash
 php bin/php/console exp:install --dry-run --random-password --url=http://localhost:8087
-php bin/php/console exp:install --force --random-password --url=http://localhost:8087
+php bin/php/console exp:install --apply --force --random-password --url=http://localhost:8087
 ```
 
 `--dry-run` prüft die Konfiguration und die Pakete und installiert nichts. Danach ersetzt der echte Lauf die

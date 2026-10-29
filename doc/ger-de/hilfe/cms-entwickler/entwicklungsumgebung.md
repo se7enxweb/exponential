@@ -51,7 +51,7 @@ zurückschicken ([Mit Git entwickeln](../mit-git-entwickeln.md), [Den Code holen
 ## Schritt 2: mit einem Befehl installieren
 
 ```bash
-php bin/php/console exp:install
+php bin/php/console exp:install --apply
 ```
 
 Ohne Optionen installiert das das Seitenpaket `sevenx_multisite` auf SQLite in `eng-US` und gibt die Adresse der

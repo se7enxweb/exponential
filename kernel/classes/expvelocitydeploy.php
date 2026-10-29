@@ -131,7 +131,7 @@ class expVelocityDeploy
         $velocity = $this->velocity;
         $steps[] = array(
             'id' => 'velocity-cache', 'label' => 'Velocity response cache',
-            'command' => 'exp:velocity cache clear', 'skip' => '',
+            'command' => 'exp:velocity cache clear --apply', 'skip' => '',
             'run' => function () use ( $velocity ) {
                 $r = $velocity->clearCache();
                 return array( $r['ok'], $r['message'] );

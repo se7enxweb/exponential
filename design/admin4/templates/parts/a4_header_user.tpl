@@ -56,6 +56,8 @@
                 <li><a href={'/user/password/'|ezurl}><span class="a4-icon a4-bi-key" aria-hidden="true"></span>{'Change password'|i18n( 'design/admin/pagelayout' )|wash}</a></li>
                 {/if}
                 <li><a href={'/mailpreferences/settings'|ezurl}><span class="a4-icon a4-bi-envelope" aria-hidden="true"></span>{'My e-mail preferences'|i18n( 'design/admin/pagelayout' )|wash}</a></li>
+                <li><a href={'/user/sessions'|ezurl}><span class="a4-icon a4-bi-laptop" aria-hidden="true"></span>{'Your devices'|i18n( 'design/admin/pagelayout' )|wash}</a></li>
+                <li><a href={'/user/security'|ezurl}><span class="a4-icon a4-bi-shield-lock" aria-hidden="true"></span>{'Security activity'|i18n( 'design/admin/pagelayout' )|wash}</a></li>
                 {if $a4_user_help}<li><a href={'/exphelp/dashboard'|ezurl}><span class="a4-icon a4-bi-question-circle" aria-hidden="true"></span>{'Help center'|i18n( 'design/admin/pagelayout' )|wash}</a></li>{/if}
             {/if}
             </ul>

@@ -46,7 +46,7 @@ als Exponential fortgeführt ([Wer ist 7x?](../wer-ist-7x.md)).
 
 ## Ihre erste Stunde
 
-1. **Installieren** (10 Minuten): `./console exp:install` richtet eine Site auf SQLite ein
+1. **Installieren** (10 Minuten): `./console exp:install --apply` richtet eine Site auf SQLite ein
    ([Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 2. **Orientieren** (10 Minuten): [Exponential für Web-Framework-Entwickler](exponential-fuer-framework-entwickler.md) und
    Ihre Umstiegsseite ([Symfony](umstieg-von-symfony.md), [Laravel](umstieg-von-laravel.md),

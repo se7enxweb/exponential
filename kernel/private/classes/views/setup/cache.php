@@ -226,7 +226,7 @@ class Cache extends \Exponential\Runnable\ModuleView
             $r = \expCacheManager::clearVelocityCache();
             $cacheCleared['velocity'] = $feedback( $r );
             $result = self::result( $r['ok'], $r['message'], array( 'names' => array( \ezpI18n::tr( 'design/admin/setup/cache', 'Velocity response cache' ) ),
-                                                                    'command' => './console exp:velocity cache clear' ), $start );
+                                                                    'command' => './console exp:velocity cache clear --apply' ), $start );
         }
     }
 

@@ -4,7 +4,7 @@ audience: bundler, hosting, developer
 category: bundling
 order: 220
 summary: How to keep the installation of a bundle as a reviewed kickstart.ini template with placeholders, render it at install time with mode 0600, run a dry run and the install, and remove it afterwards - with a complete SQLite template and a PostgreSQL variant.
-keywords: kickstart.ini, template, placeholder, envsubst, umask 077, 0600, dry run, run --force, SQLite, PostgreSQL, DatabaseAction, Site_package, bundle, starter kit
+keywords: kickstart.ini, template, placeholder, envsubst, umask 077, 0600, dry run, run --apply, SQLite, PostgreSQL, DatabaseAction, Site_package, bundle, starter kit
 type: help
 ---
 # kickstart.ini templates for bundles
@@ -116,7 +116,7 @@ cd /srv/exponential
 umask 077
 envsubst < deploy/kickstart.ini.template > kickstart.ini
 php bin/php/console exp:kickstarter run --dry-run
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
 rm -f kickstart.ini
 ```
 

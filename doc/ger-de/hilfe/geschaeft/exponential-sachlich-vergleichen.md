@@ -89,7 +89,7 @@ In einer laufenden Installation kann ein Administrator die Datenbank-Engine unte
 
 > **Tipp**
 > Bieten Sie dem Käufer eine Testinstallation an, über die er selbst verfügt. Ein einziger Befehl installiert eine
-> funktionierende Site auf SQLite, ohne Datenbankserver: `./console exp:install` ([Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md)).
+> funktionierende Site auf SQLite, ohne Datenbankserver: `./console exp:install --apply` ([Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 
 ## Keine Herstellerbindung, Punkt für Punkt
 

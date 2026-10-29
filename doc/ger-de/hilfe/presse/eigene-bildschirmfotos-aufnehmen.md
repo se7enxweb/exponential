@@ -27,7 +27,7 @@ Die Dokumentation beschreibt eine vollständige Installation mit einem Befehl, m
 nötig ist ([Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md)):
 
 ```bash
-./console exp:install
+./console exp:install --apply
 ```
 
 Führen Sie ihn in einer Kopie des Codes aus, die Sie so bekommen haben, wie

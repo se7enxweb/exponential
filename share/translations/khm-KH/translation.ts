@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>ការរៀបចំ &gt; Cronjobs</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>មិនទាន់មានផ្នែកការងារ cron ណាមួយដំណើរការនៅឡើយទេ: ជួរការងារ ការនាំចូល ការជូនដំណឹង និងលិបិក្រមស្វែងរកកំពុងរង់ចាំ។ សូមដំណើរការ php bin/php/installcrontab.php --add --apply ឬបន្ថែមបន្ទាត់របស់ --show ទៅក្នុង crontab ។</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>ការដំឡើងនេះជាការបង្ហាញសាធារណៈ: អ្នកណាក៏អាចដឹងពាក្យសម្ងាត់អ្នកគ្រប់គ្រងរបស់វា ហើយពាក្យសម្ងាត់អ្នកគ្រប់គ្រងមិនអាចផ្លាស់ប្តូរ ឬកំណត់ឡើងវិញបានទេ។ សូមកុំបញ្ចូលអ្វីដែលជាឯកជននៅទីនេះ។</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ឧបករណ៍របស់អ្នក</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>សកម្មភាពសុវត្ថិភាព</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>អ្នកណាបានកែប្រែ ចូល ឬត្រូវបានបដិសេធ តាមគណនីនីមួយៗ ព្រមទាំងត្រង និងនាំចេញ។</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>របាយការណ៍ការចូល</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>អ្នកណាកំពុងចូល ការចូល និងការបរាជ័យក្នុងមួយថ្ងៃ ហើយចាកចេញអ្នកប្រើម្នាក់ពីគ្រប់ទីកន្លែង។</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>វគ្គដែលផុតកំណត់របស់កម្មវិធីគ្រប់គ្រង PHP ត្រូវបានដកចេញដោយ PHP ខ្លួនវាផ្ទាល់ (session.gc_maxlifetime) មិនមែនដោយទំព័រនេះ ឬផ្នែកការងារ cron session_gc ទេ។</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>វគ្គដែលបានចូលរបស់អ្នកប្រើគ្រប់រូបត្រូវបានរាយ និងអាចចាកចេញបាន នៅលើរបាយការណ៍ការចូល ដែលដំណើរការជាមួយឧបករណ៍គ្រប់គ្រងវគ្គគ្រប់ប្រភេទ។</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>បើករបាយការណ៍ការចូល</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>មិនទាន់មាន</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>សកម្មភាពសុវត្ថិភាព</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>ការចូលថ្មីៗ ការប៉ុនប៉ងដែលបរាជ័យ និងការផ្លាស់ប្តូរពាក្យសម្ងាត់ អាសយដ្ឋានអ៊ីមែល និងការចូលពីរជំហានរបស់អ្នក។</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>ការចូលថ្មីៗ ការប៉ុនប៉ងដែលបរាជ័យ និងការផ្លាស់ប្តូរសុវត្ថិភាពរបស់គណនីនេះ។</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>ពិនិត្យសកម្មភាព</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>ការចូលបរាជ័យ %count ដង</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab មិនត្រូវបានសរសេរទេ (%reason)។ សូមបន្ថែមបន្ទាត់ទាំងនេះទៅក្នុង crontab របស់អ្នកប្រើដែលគេហទំព័រដំណើរការជា បើមិនដូច្នោះទេ ជួរ ការនាំចូល ការជូនដំណឹង និងលិបិក្រមស្វែងរកនឹងមិនដំណើរការឡើយ:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>ការដំឡើងឡើងវិញធ្វើឡើងដោយ Kickstarter (%file បន្ទាប់មក php bin/php/kickstarter.php run --apply) ឬដោយការដំឡើងថ្មីទាំងស្រុង។</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>ប្រព័ន្ធដឹកជញ្ជូនអ៊ីមែលបានបដិសេធសារ %count ក្នុងការដំណើរការចុងក្រោយ។ សូមពិនិត្យម៉ាស៊ីនមេអ៊ីមែល និង site.ini MailSettings។</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>មានព្រឹត្តិការណ៍ %count កំពុងរង់ចាំ ហើយគ្មានការដំណើរការណាមួយនៃការងារ cron ការជូនដំណឹងត្រូវបានកត់ត្រាទេ។ សូមបន្ថែមផ្នែកការងារ cron &quot;frequent&quot; ទៅក្នុង crontab ឬដំណើរការ exp:notification:run --apply ។</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>ជ្រើសរើសគេហទំព័រ ឬផ្នែកផ្សេងដោយប្រើកម្មវិធីជ្រើសរើសថ្នាំង</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>មានតែអ្នកគ្រប់គ្រងប្រព័ន្ធប៉ុណ្ណោះដែលអាចប្តូរម្ចាស់បាន: សូមដំណើរការ ./console exp:content-check --fix-permissions --apply ជា root ។</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>ទទេ</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>សោចុះហត្ថលេខាមានអាយុលើសពីមួយឆ្នាំហើយ: សូមបង្វិលវាដោយប្រើ exp:audit key rotate --apply ។</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>មិនបានផ្ញើ</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>ការងារ cron ការជូនដំណឹងកត់ត្រាការដំណើរការនីមួយៗរបស់វានៅទីនេះ។ សូមបន្ថែមផ្នែក frequent ទៅក្នុង crontab ឬដំណើរការ exp:notification:run --apply ។</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>ប្រើកុងសូល: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>គ្មាន។</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ដោយកម្មវិធីផ្ទៀងផ្ទាត់</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ដោយកូដតាមអ៊ីមែល</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ដោយកូដស្តារ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ដោយកូនសោសម្ងាត់</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ដោយគណនីខាងក្រៅ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>សកម្មភាពសុវត្ថិភាព</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>បង្ហាញជាបណ្តាញរបស់វា អាសយដ្ឋានត្រូវបានរក្សាទុកតាមការកំណត់ការពារទិន្នន័យរបស់គេហទំព័រ។</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>មិនបានកត់ត្រា</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ទីកន្លែង</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ប្រហាក់ប្រហែល</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>គ្រប់គ្រងឧបករណ៍</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ដោយកម្មវិធីផ្ទៀងផ្ទាត់</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ដោយកូដតាមអ៊ីមែល</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ដោយកូដស្តារ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ដោយកូនសោសម្ងាត់</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ដោយគណនីខាងក្រៅ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>សកម្មភាពសុវត្ថិភាព</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>មិនបានកត់ត្រា</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ទីកន្លែង</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ប្រហាក់ប្រហែល</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>មើលវគ្គរបស់អ្នកប្រើនេះ</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>គណនី %login របស់អ្នកនៅលើ %site ទើបតែត្រូវបានប្រើដើម្បីចូលពីទីកន្លែងដែលវាមិនបានចូលពីទីនោះថ្មីៗនេះ:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>ទីកន្លែងប្រហាក់ប្រហែល</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser លើ %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>របាយការណ៍ការចូល</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>មិនស្គាល់</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>ការពារគណនីរបស់អ្នក</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>កូដស្តារមួយត្រូវបានប្រើដើម្បីចូលគណនី %login របស់អ្នកនៅលើ %site ។</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>កូដស្តារមួយត្រូវបានប្រើ</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>គណនី</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>អាសយដ្ឋានប្រហាក់ប្រហែល</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>សូមស្នើសុំពាក្យសម្ងាត់ថ្មីដើម្បីចូលម្តងទៀត ឬទាក់ទងអ្នកគ្រប់គ្រងគេហទំព័រ។</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>ស្នើសុំពាក្យសម្ងាត់ថ្មី</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>កូដស្តារនីមួយៗប្រើបានតែម្តងប៉ុណ្ណោះ។ ប្រសិនបើអ្នកបាត់ទូរសព្ទ សូមរៀបចំកម្មវិធីផ្ទៀងផ្ទាត់របស់អ្នកឡើងវិញ ហើយរក្សាទុកកូដស្តារថ្មីនៅកន្លែងសុវត្ថិភាព។</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>ការប៉ុនប៉ងចូលគណនីរបស់អ្នកដែលបរាជ័យ</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>ចាប់ពីពេលនេះតទៅ ការចូលនឹងសុំកូដមួយបន្ថែមលើពាក្យសម្ងាត់របស់អ្នក។ ប្រសិនបើអ្នកបានធ្វើវា អ្នកមិនចាំបាច់ធ្វើអ្វីទេ។</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>ប្រសិនបើជាអ្នក ហើយអ្នកភ្លេចពាក្យសម្ងាត់ សូមស្នើសុំពាក្យសម្ងាត់ថ្មី។ ប្រសិនបើមិនមែន សូមជ្រើសរើសពាក្យសម្ងាត់ដែលរឹងមាំជាងនេះ ហើយបើកការចូលពីរជំហាន។</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>ប្រសិនបើមិនមែនជាអ្នក អាចមានអ្នកផ្សេងដឹងពាក្យសម្ងាត់របស់អ្នក: សូមប្តូរវាឥឡូវនេះ ហើយពិនិត្យមើលថាគណនីរបស់អ្នកបានចូលនៅកន្លែងណាខ្លះ។</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>កូដស្តារដែលនៅសល់</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>ពិនិត្យឧបករណ៍របស់អ្នក</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>ការព្រមានសុវត្ថិភាព</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>មាននរណាម្នាក់បានព្យាយាមចូលគណនី %login របស់អ្នកនៅលើ %site ដោយប្រើពាក្យសម្ងាត់ខុស %count ដងជាប់ៗគ្នា។</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>មានព្រឹត្តិការណ៍សុវត្ថិភាពមួយនៅលើគណនី %login របស់អ្នកនៅលើ %site ។</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>នេះជាការព្រមានសុវត្ថិភាពអំពីគណនីរបស់អ្នក។ វាត្រូវបានផ្ញើសម្រាប់រាល់ការផ្លាស់ប្តូរបែបនេះ ហើយមិនអាចបិទបានទេ។</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ពេលវេលា</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>ការចូលពីរជំហានត្រូវបានបិទសម្រាប់គណនី %login របស់អ្នកនៅលើ %site ។</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>ការចូលពីរជំហានត្រូវបានបិទ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>ការចូលពីរជំហានត្រូវបានបើកសម្រាប់គណនី %login របស់អ្នកនៅលើ %site ។</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>ការចូលពីរជំហានត្រូវបានបើក</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>គណនី %login របស់អ្នកនៅលើ %site ត្រូវបានចាក់សោ បន្ទាប់ពីការចូលបរាជ័យច្រើនដងពេក។</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>ឥឡូវនេះគណនីរបស់អ្នកត្រូវបានការពារដោយពាក្យសម្ងាត់តែប៉ុណ្ណោះ។ ប្រសិនបើអ្នកមិនបានធ្វើវាទេ សូមបើកការចូលពីរជំហានម្តងទៀត បន្ទាប់ពីអ្នកបានប្តូរពាក្យសម្ងាត់។</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>គណនីរបស់អ្នកត្រូវបានចាក់សោ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>សកម្មភាពសុវត្ថិភាព</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>សកម្មភាពសុវត្ថិភាពរបស់ %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>បានចូល</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ការប៉ុនប៉ងចូលដែលបរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>បានចាកចេញ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>វគ្គត្រូវបានចាកចេញ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ការចូលពីឧបករណ៍ថ្មី</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ការចូលពីទីកន្លែងថ្មី</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>អត្តសញ្ញាណត្រូវបានបញ្ជាក់ (&quot;ផ្ទៀងផ្ទាត់ថាជាអ្នក&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ការពិនិត្យអត្តសញ្ញាណបរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>បានចូលដោយកូនសោសម្ងាត់</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ការចូលដោយកូនសោសម្ងាត់បរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ការចូលត្រូវបានបដិសេធ: កូដពីរជំហានបាត់ ឬខុស</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>កូដពីរជំហានខុស</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>គណនីត្រូវបានចាក់សោបន្ទាប់ពីការចូលបរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>គណនីត្រូវបានដោះសោ</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>ពាក្យសម្ងាត់ត្រូវបានប្តូរ</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ការប្តូរពាក្យសម្ងាត់បរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>ពាក្យសម្ងាត់ត្រូវបានកំណត់ឡើងវិញ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>បានស្នើសុំពាក្យសម្ងាត់ថ្មី</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>អាសយដ្ឋានអ៊ីមែលត្រូវបានប្តូរ</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ឈ្មោះអ្នកប្រើត្រូវបានប្តូរ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ការចូលពីរជំហានត្រូវបានបើក</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ការចូលពីរជំហានត្រូវបានបិទ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>កូដស្តារត្រូវបានប្រើ</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>កូដស្តារថ្មី</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ពាក្យសម្ងាត់កម្មវិធីត្រូវបានបង្កើត</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ពាក្យសម្ងាត់កម្មវិធីត្រូវបានដកហូត</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>កូនសោសម្ងាត់ត្រូវបានបន្ថែម</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>កូនសោសម្ងាត់ត្រូវបានដកចេញ</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>គណនីត្រូវបានបើក</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>គណនីត្រូវបានបិទ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ការចូល និងវគ្គ</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ការផ្លាស់ប្តូរគណនី</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ត្រូវការការយកចិត្តទុកដាក់</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>ដោយអ្នក</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ដោយអ្នកប្រើ</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>ដោយ %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>វិធីសាស្ត្រ</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>កម្មវិធីរុករក</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>ប្រព័ន្ធប្រតិបត្តិការ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ឧបករណ៍</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>ទីកន្លែង</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>ប្រទេស</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>វគ្គ</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>មួយណា</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>ឆានែល</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ការប៉ុនប៉ងដែលបរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>កូដដែលនៅសល់</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>ឧបករណ៍គ្រប់គ្រងការចូល</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>សកម្មភាពសុវត្ថិភាព</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>សកម្មភាពសុវត្ថិភាពរបស់ %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ការចូល និងការផ្លាស់ប្តូរសុវត្ថិភាពនៃគណនីរបស់អ្នក។ ប្រសិនបើអ្នកឃើញអ្វីដែលអ្នកមិនបានធ្វើ សូមប្តូរពាក្យសម្ងាត់របស់អ្នក ហើយចាកចេញពីឧបករណ៍ដែលអ្នកមិនស្គាល់។</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>ការចូល និងការផ្លាស់ប្តូរសុវត្ថិភាពនៃគណនីនេះ។</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ឧបករណ៍របស់អ្នក</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>ប្តូរពាក្យសម្ងាត់</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>ត្រឡប់ទៅគណនី</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>សកម្មភាពសុវត្ថិភាពមិនត្រូវបានកត់ត្រាទេ</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>វាត្រូវបានអានពីកំណត់ហេតុសវនកម្មអ្នកប្រើ ដែលតារាង expuser_audit របស់វាមិនមាន ឬមិនត្រូវបានគាំទ្រនៅលើមូលដ្ឋានទិន្នន័យនេះ។ សូមដំណើរការ php update/common/scripts/6.0/createuseraudittable.php ឬការធ្វើបច្ចុប្បន្នភាពមូលដ្ឋានទិន្នន័យនៃ 6.0.15 ។</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days ថ្ងៃចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ការចូលក្នុង %days ថ្ងៃចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>សកម្មភាពសុវត្ថិភាពថ្មីៗ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>បង្ហាញ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>បរាជ័យ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ត្រូវបានបដិសេធ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>មិនទាន់មានសកម្មភាពសុវត្ថិភាពត្រូវបានកត់ត្រានៅឡើយទេ។</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>ព្រឹត្តិការណ៍សុវត្ថិភាពត្រូវបានរក្សាទុករយៈពេល %days ថ្ងៃ។</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>ព្រឹត្តិការណ៍សុវត្ថិភាពត្រូវបានរក្សាទុករហូតដល់អ្នកគ្រប់គ្រងដកវាចេញ។</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ទាញយកទិន្នន័យការចូលរបស់ខ្ញុំ</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>វគ្គ និងព្រឹត្តិការណ៍សុវត្ថិភាពរបស់អ្នកជាឯកសារ JSON ។</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>បានចូល</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ការប៉ុនប៉ងចូលដែលបរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>បានចាកចេញ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>វគ្គត្រូវបានចាកចេញ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ការចូលពីឧបករណ៍ថ្មី</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ការចូលពីទីកន្លែងថ្មី</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>អត្តសញ្ញាណត្រូវបានបញ្ជាក់ (&quot;ផ្ទៀងផ្ទាត់ថាជាអ្នក&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ការពិនិត្យអត្តសញ្ញាណបរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>បានចូលដោយកូនសោសម្ងាត់</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ការចូលដោយកូនសោសម្ងាត់បរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ការចូលត្រូវបានបដិសេធ: កូដពីរជំហានបាត់ ឬខុស</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>កូដពីរជំហានខុស</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>គណនីត្រូវបានចាក់សោបន្ទាប់ពីការចូលបរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>គណនីត្រូវបានដោះសោ</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>ពាក្យសម្ងាត់ត្រូវបានប្តូរ</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ការប្តូរពាក្យសម្ងាត់បរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>ពាក្យសម្ងាត់ត្រូវបានកំណត់ឡើងវិញ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>បានស្នើសុំពាក្យសម្ងាត់ថ្មី</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>អាសយដ្ឋានអ៊ីមែលត្រូវបានប្តូរ</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ឈ្មោះអ្នកប្រើត្រូវបានប្តូរ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ការចូលពីរជំហានត្រូវបានបើក</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ការចូលពីរជំហានត្រូវបានបិទ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>កូដស្តារត្រូវបានប្រើ</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>កូដស្តារថ្មី</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ពាក្យសម្ងាត់កម្មវិធីត្រូវបានបង្កើត</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ពាក្យសម្ងាត់កម្មវិធីត្រូវបានដកហូត</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>កូនសោសម្ងាត់ត្រូវបានបន្ថែម</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>កូនសោសម្ងាត់ត្រូវបានដកចេញ</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>គណនីត្រូវបានបើក</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>គណនីត្រូវបានបិទ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ការចូល និងវគ្គ</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ការផ្លាស់ប្តូរគណនី</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ត្រូវការការយកចិត្តទុកដាក់</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>សកម្មភាពសុវត្ថិភាព</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>សកម្មភាពសុវត្ថិភាពរបស់ %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ការចូល និងការផ្លាស់ប្តូរសុវត្ថិភាពនៃគណនីរបស់អ្នក។ ប្រសិនបើអ្នកឃើញអ្វីដែលអ្នកមិនបានធ្វើ សូមប្តូរពាក្យសម្ងាត់របស់អ្នក ហើយចាកចេញពីឧបករណ៍ដែលអ្នកមិនស្គាល់។</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ឧបករណ៍របស់អ្នក</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>ប្តូរពាក្យសម្ងាត់</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>សកម្មភាពសុវត្ថិភាពមិនទាន់ត្រូវបានកត់ត្រានៅលើគេហទំព័រនេះនៅឡើយទេ។</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ការចូលក្នុង %days ថ្ងៃចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ការប៉ុនប៉ងដែលបរាជ័យ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>មិនទាន់មានសកម្មភាពសុវត្ថិភាពត្រូវបានកត់ត្រានៅឡើយទេ។</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ទាញយកទិន្នន័យការចូលរបស់ខ្ញុំ</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>វគ្គ និងព្រឹត្តិការណ៍សុវត្ថិភាពរបស់អ្នកជាឯកសារ JSON ។</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>ពាក្យសម្ងាត់</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>ពាក្យសម្ងាត់ និងកូដពីរជំហាន</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>ចំណុចប្រទាក់ REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>ចំណុចប្រទាក់ SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ការចូលតែម្តង (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>បានចូលមុនពេលវគ្គត្រូវបានកត់ត្រា</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>របាយការណ៍ការចូល</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>អ្នកណាកំពុងចូលគេហទំព័រ គណនីចូល និងបរាជ័យញឹកញាប់ប៉ុណ្ណា ហើយចាកចេញអ្នកប្រើម្នាក់ពីគ្រប់ទីកន្លែង។ វាដំណើរការជាមួយឧបករណ៍គ្រប់គ្រងវគ្គគ្រប់ប្រភេទ។</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>វគ្គត្រូវបានចាកចេញ។ ឧបករណ៍ត្រូវចូលម្តងទៀត។</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login ត្រូវបានចាកចេញពីវគ្គ %count ។</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login មិនមានវគ្គកំពុងដំណើរការទេ។</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>គ្មានគណនីណាមាន ID ឈ្មោះអ្នកប្រើ ឬអាសយដ្ឋានអ៊ីមែលនោះទេ។</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>នេះគឺជាវគ្គដែលអ្នកកំពុងប្រើ។ ដើម្បីបញ្ចប់វា សូមចាកចេញ។</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>វគ្គនោះបានបញ្ចប់រួចហើយ។</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ទំព័របានផុតកំណត់។ គ្មានអ្វីត្រូវបានផ្លាស់ប្តូរទេ សូមព្យាយាមម្តងទៀត។</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>វគ្គមិនត្រូវបានកត់ត្រានៅលើគេហទំព័រនេះទេ (site.ini [UserSessionSettings] Tracking=disabled)។</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>តារាង expuser_session មិនមាន</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>វគ្គនឹងត្រូវបានកត់ត្រានៅពេលតារាងត្រូវបានបង្កើត: php update/common/scripts/6.0/createusersessiontable.php ឬការធ្វើបច្ចុប្បន្នភាពមូលដ្ឋានទិន្នន័យនៃ 6.0.15 ។</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>ឥឡូវនេះ និងថ្ងៃនេះ</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>វគ្គកំពុងដំណើរការ</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>អ្នកប្រើដែលបានចូល</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>ការចូលថ្ងៃនេះ</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>ការប៉ុនប៉ងបរាជ័យថ្ងៃនេះ</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>ចាកចេញអ្នកប្រើម្នាក់ពីគ្រប់ទីកន្លែង</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>រាល់វគ្គនៃគណនីនឹងបញ្ចប់នៅសំណើបន្ទាប់របស់វា រួមទាំងវគ្គដែលរក្សាដោយ &quot;ចងចាំខ្ញុំ&quot; ផងដែរ។ សូមប្រើវានៅពេលគណនីមួយអាចស្ថិតនៅក្នុងដៃខុស បន្ទាប់មកកំណត់ពាក្យសម្ងាត់របស់វាឡើងវិញ។</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID អ្នកប្រើ ឈ្មោះអ្នកប្រើ ឬអាសយដ្ឋានអ៊ីមែល</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ចាកចេញគ្រប់ទីកន្លែង</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>បានចូលឥឡូវនេះ</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>វគ្គ %limit ដែលបានប្រើថ្មីៗបំផុតត្រូវបានបង្ហាញ។</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>អ្នកប្រើ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ឧបករណ៍</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>អាសយដ្ឋាន</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>បានចូល</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>សកម្មចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>សកម្មភាព</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ឧបករណ៍នេះ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>មិនបានកត់ត្រា</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ចាកចេញ</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>គ្មានវគ្គណាបានចូលទេ។</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days ថ្ងៃចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>ការចូល និងការប៉ុនប៉ងបរាជ័យត្រូវបានរាប់ពីកំណត់ហេតុសវនកម្មអ្នកប្រើ ដែលមិនមាន ចំណែកវគ្គថ្មីនៅតែត្រូវបានរាប់។</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>ថ្ងៃ</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>ការចូល</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ការប៉ុនប៉ងដែលបរាជ័យ</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>វគ្គថ្មី</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>ឧបករណ៍គ្រប់គ្រងវគ្គ: %handler ។ វគ្គត្រូវបានអានពីតារាង expuser_session ដូច្នេះរបាយការណ៍ដំណើរការជាមួយឧបករណ៍គ្រប់គ្រងគ្រប់ប្រភេទ។</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>ការព្រមានសុវត្ថិភាពសម្រាប់គណនីរបស់អ្នក</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>មានព្រឹត្តិការណ៍សុវត្ថិភាពមួយនៅលើគណនី %login របស់អ្នក: %event ។ ប្រសិនបើមិនមែនជាអ្នក សូមការពារគណនីរបស់អ្នកនៅ %url ។</translation>
     </message>
 </context>
 </TS>

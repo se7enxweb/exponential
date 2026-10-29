@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # audit.ini
 
-Die ausgelieferten Einstellungen von `settings/audit.ini`: 33 Blöcke, 161 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/audit.ini`: 34 Blöcke, 166 Einstellungen.
 
 > Audit: was in Exponential geschieht, als JSON-Zeilen pro Kanal festgehalten, per Hash verkettet,  
 > rotiert, archiviert und signiert. Anleitung: doc/eng-us/bc/6.0/audit.md  
@@ -52,6 +52,7 @@ Die ausgelieferten Einstellungen von `settings/audit.ini`: 33 Blöcke, 161 Einst
 | [AuditArchiveSettings](AuditArchiveSettings.md) | 5 |
 | [AuditIndexSettings](AuditIndexSettings.md) | 5 |
 | [AuditConsoleSettings](AuditConsoleSettings.md) | 5 |
+| [UserAuditSettings](UserAuditSettings.md) | 5 |
 | [AuditCompatSettings](AuditCompatSettings.md) | 3 |
 | [AuditBridgeSettings](AuditBridgeSettings.md) | 1 |
 

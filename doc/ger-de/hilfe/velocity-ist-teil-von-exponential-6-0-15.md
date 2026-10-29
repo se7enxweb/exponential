@@ -143,7 +143,7 @@ Die Einzelheiten stehen unter [Velocity-Engines](../bc/6.0/velocity-engines.md).
 ./console exp:velocity deploy --allow-root-user       # after a change: autoloads, settings, caches, PHP-FPM, Velocity
 ./console exp:velocity start --allow-root-user        # start the configured engine
 ./console exp:velocity restart --allow-root-user      # restart it, so workers load changed classes
-./console exp:velocity cache clear --allow-root-user  # empty Velocity's response cache
+./console exp:velocity cache clear --apply --allow-root-user  # empty Velocity's response cache
 ```
 
 `deploy --dry-run` listet auf, was es tun würde, und tut sonst nichts; `deploy --kernel` erstellt zusätzlich die

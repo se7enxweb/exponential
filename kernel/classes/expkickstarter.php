@@ -106,7 +106,7 @@ class expKickstarter
         if ( $createSitesIndex !== false && $startIndex <= $createSitesIndex && $stopIndex >= $createSitesIndex && !$this->force )
         {
             $this->cli->error( 'The CreateSites step will modify the database and site settings.' );
-            $this->cli->output( 'Re-run with --force to confirm you want to install the site package.' );
+            $this->cli->output( 'Re-run with --apply to confirm you want to install the site package.' );
             $this->script->shutdown( 1 );
         }
 
@@ -183,7 +183,8 @@ class expKickstarter
         if ( !empty( $this->options['dry-run'] ) )
         {
             $this->cli->output( '' );
-            $this->cli->output( 'Dry-run completed: database and remote packages verified. Stopped after ' . self::DRY_RUN_STOP . ', nothing written.' );
+            $this->cli->output( 'PASS: kickstart.ini checked, database and remote packages verified, stopped after ' . self::DRY_RUN_STOP
+                                . ' (dry run, nothing changed; --apply writes)' );
             $this->script->shutdown( 0 );
         }
 
@@ -217,13 +218,24 @@ class expKickstarter
         {
             $this->script->shutdown( 1 );
         }
-        $this->force = !empty( $this->options['force'] );
-
         if ( !empty( $this->options['help'] ) )
         {
+            $this->cli = eZCLI::instance();
             $this->showRunHelp();
             $this->script->shutdown( 0 );
         }
+
+        // Without --apply a run is the dry run: it shows the plan and changes nothing. Checked before
+        // initialize(), so a usage error ends the run before any database access.
+        $problem = self::applyProblem( $this->options );
+        if ( $problem !== null )
+        {
+            eZCLI::instance()->error( 'FAIL: ' . $problem );
+            $this->script->shutdown( 2 );
+        }
+        $this->options = self::withApplyDefault( $this->options );
+        // --apply is the confirmation the CreateSites step needs (it was --force alone before 6.0.15)
+        $this->force = !empty( $this->options['apply'] );
 
         $this->script->initialize();
 
@@ -255,7 +267,88 @@ class expKickstarter
     /** The option string of "run": its own options and the eZScript standard ones. */
     public static function runOptionConfig()
     {
-        return '[start-step:][stop-step:][dry-run][list-steps][h|help][force]' . self::STANDARD_OPTIONS;
+        return '[apply][start-step:][stop-step:][dry-run][list-steps][h|help][force]' . self::STANDARD_OPTIONS;
+    }
+
+    /**
+     * Why the run options cannot be used, null when they can: --apply together with --dry-run, or --force without
+     * --apply (--force installed on its own before; a script that still passes it alone must not get a dry run that
+     * looks like a success). Exit code 2.
+     *
+     * @param array $options as parseRunOptions() returns them
+     * @return string|null
+     */
+    public static function applyProblem( array $options )
+    {
+        $apply = \Exponential\Runnable\Command::applyRequested( $options );
+        if ( $apply === null )
+            return '--apply and --dry-run exclude each other; without --apply the run changes nothing';
+        if ( !$apply && !empty( $options['force'] ) && empty( $options['list-steps'] ) )
+            return '--force no longer installs on its own: add --apply (exp:kickstarter run --apply); without --apply the run is a dry run';
+        return null;
+    }
+
+    /**
+     * The options with the dry run as the default: without --apply, 'dry-run' is set (a --list-steps run only lists).
+     *
+     * @param array $options as parseRunOptions() returns them
+     * @return array
+     */
+    public static function withApplyDefault( array $options )
+    {
+        $options['apply'] = !empty( $options['apply'] );
+        if ( !$options['apply'] && empty( $options['list-steps'] ) )
+            $options['dry-run'] = true;
+        return $options;
+    }
+
+    /**
+     * What a run with --apply would do, from kickstart.ini, for the dry run: the database (and whether it is emptied
+     * first), the package, the languages, the siteaccesses and the files and settings it writes. Passwords are never
+     * shown.
+     *
+     * @param eZINI $ini kickstart.ini
+     * @return string[] lines
+     */
+    public static function planLines( $ini )
+    {
+        $get = function ( $group, $name, $default = '' ) use ( $ini ) {
+            return $ini->hasVariable( $group, $name ) ? $ini->variable( $group, $name ) : $default;
+        };
+        $type = (string)$get( 'database_choice', 'Type', '?' );
+        $database = (string)$get( 'site_details', 'Database', $get( 'database_init', 'Database', '?' ) );
+        $server = (string)$get( 'database_init', 'Server', '' );
+        $port = (string)$get( 'database_init', 'Port', '' );
+        $user = (string)$get( 'database_init', 'User', '' );
+        $action = (string)$get( 'site_details', 'DatabaseAction', 'remove' );
+        $where = $server !== '' && strpos( $type, 'sqlite' ) === false ? ' at ' . $server . ( $port !== '' ? ':' . $port : '' ) : '';
+        $lines = array();
+        $lines[] = "database      $type $database$where" . ( $user !== '' ? ", user $user" : '' );
+        if ( $action === 'remove' )
+            $lines[] = "              would DROP every table of $database and its data (DatabaseAction=remove), then install afresh";
+        else if ( $action === 'skip' )
+            $lines[] = "              would install into $database without emptying it first (DatabaseAction=skip)";
+        else
+            $lines[] = "              would install into $database, keeping what is there (DatabaseAction=$action)";
+        $languages = (array)$get( 'language_options', 'Languages', array() );
+        $lines[] = 'package       ' . $get( 'site_types', 'Site_package', '?' ) . ', ' . $get( 'language_options', 'Primary', 'eng-US' )
+                 . ( $languages ? ' + ' . implode( ',', $languages ) : '' );
+        $access = (string)$get( 'site_access', 'Access', 'url' );
+        $suffix = $access === 'port' ? 'Port' : ( $access === 'hostname' ? 'Hostname' : '' );
+        $names = array();
+        foreach ( array( 'Access', 'AdminAccess', 'EditorAccess' ) as $key )
+        {
+            $name = (string)$get( 'site_details', $key, '' );
+            $value = $suffix !== '' ? (string)$get( 'site_details', $key . $suffix, '' ) : '';
+            if ( $name !== '' || $value !== '' )
+                $names[] = ( $name !== '' ? $name : $key ) . ( $value !== '' ? " ($value)" : '' );
+        }
+        $lines[] = 'siteaccesses  ' . ( $names ? implode( ', ', $names ) : '(defaults)' ) . ", told apart by $access";
+        $lines[] = 'would write   settings/override/site.ini.append.php and the other override settings, settings/siteaccess/<each siteaccess>,';
+        $lines[] = '              var/log/initial-admin-password when the password is generated, the cron job of the installation';
+        $lines[] = '              (unless [CrontabSettings] Install=disabled), var/log/kickstart.log';
+        $lines[] = 'administrator ' . $get( 'site_admin', 'Email', '?' ) . ' (password not shown)';
+        return $lines;
     }
 
     /**
@@ -374,13 +467,22 @@ class expKickstarter
         $this->cli->output( '       ./bin/php/kickstarter.php run [options]' );
         $this->cli->output( '' );
         $this->cli->output( 'Run the Exponential CMS setup wizard using kickstart.ini.' );
+        $this->cli->output( 'Without --apply nothing is written: the run shows what it would install (the database, and whether' );
+        $this->cli->output( 'it is emptied first, the package, the siteaccesses, the files) and checks the database and the remote' );
+        $this->cli->output( 'packages. --dry-run means the same as no flag; --apply together with --dry-run is a usage error, and so' );
+        $this->cli->output( 'is --force without --apply (exit 2).' );
+        $this->cli->output( '' );
+        $this->cli->output( 'Examples: ./bin/php/kickstarter.php run' );
+        $this->cli->output( '          ./bin/php/kickstarter.php run --apply' );
         $this->cli->output( '' );
         $this->cli->output( 'Options:' );
+        $this->cli->output( '  --apply              Install: run the steps from --start-step to --stop-step (all of them by default)' );
         $this->cli->output( '  --start-step=<step>  First step to run (default: welcome)' );
         $this->cli->output( '                       A run cannot resume an earlier one: a later start is refused when a step' );
         $this->cli->output( '                       needs results of steps before it, and the message names where to start' );
         $this->cli->output( '  --stop-step=<step>   Last step to run (default: final)' );
-        $this->cli->output( '  --dry-run            Validate kickstart.ini, then run DatabaseChoice..SiteDetails to test the database and remote packages (writes no password, sends no mail, installs nothing)' );
+        $this->cli->output( '  --dry-run            The default: validate kickstart.ini, show the plan, then run DatabaseChoice..SiteDetails to test the database and remote packages (writes no password, sends no mail, installs nothing)' );
+        $this->cli->output( '  --force              Accepted with --apply for scripts that passed it; --apply alone installs' );
         $this->cli->output( '  --list-steps         List all setup steps and exit' );
         $this->cli->output( '  --help, -h           Show this help' );
         $this->cli->output( '' );
@@ -410,6 +512,12 @@ class expKickstarter
         }
         $this->cli->output( 'Sections found: ' . implode( ', ', array_keys( $groups ) ) );
         $this->listSteps();
+        $this->cli->output( '' );
+        $this->cli->output( 'With --apply the run would install:' );
+        foreach ( self::planLines( $kickstartIni ) as $line )
+            $this->cli->output( '  ' . $line );
+        $this->cli->output( '' );
+        $this->cli->output( 'Now checking the database and the remote packages (DatabaseChoice..SiteDetails), writing nothing:' );
         return 0;
     }
 
@@ -792,15 +900,16 @@ class expKickstarter
         $script = getcwd() . '/bin/php/exphelpcontent.php';
         if ( !is_file( $script ) || !function_exists( 'proc_open' ) )
         {
-            $this->cli->output( 'Help manuals: not queued here (run ./console exp:help:content build-manuals -s admin --queue)' );
+            $this->cli->output( 'Help manuals: not queued here (run ./console exp:help:content build-manuals -s admin --queue --apply)' );
             return;
         }
         $rootUser = function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 ? array( '--allow-root-user' ) : array();
-        $command = array_merge( array( PHP_BINARY, $script, 'build-manuals', '--queue', '-s', 'admin' ), $rootUser );
+        // --apply: without it the command only says it would queue the job
+        $command = array_merge( array( PHP_BINARY, $script, 'build-manuals', '--queue', '--apply', '-s', 'admin' ), $rootUser );
         $process = proc_open( $command, array( 0 => array( 'file', '/dev/null', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'redirect', 1 ) ), $pipes, getcwd() );
         if ( !is_resource( $process ) )
         {
-            $this->cli->output( 'Help manuals: could not be queued; run ./console exp:help:content build-manuals -s admin --queue later' );
+            $this->cli->output( 'Help manuals: could not be queued; run ./console exp:help:content build-manuals -s admin --queue --apply later' );
             return;
         }
         $last = '';
@@ -813,7 +922,7 @@ class expKickstarter
         $code = proc_close( $process );
         if ( $code !== 0 )
         {
-            $this->cli->output( "Help manuals: could not be queued ($last); the site works without them, run ./console exp:help:content build-manuals -s admin --queue later" );
+            $this->cli->output( "Help manuals: could not be queued ($last); the site works without them, run ./console exp:help:content build-manuals -s admin --queue --apply later" );
             return;
         }
         $this->cli->output( 'Help manuals: built in the background over the next 20 to 30 minutes (./console exp:help:content report -s admin shows how far)' );

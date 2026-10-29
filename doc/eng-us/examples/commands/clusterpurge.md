@@ -2,14 +2,14 @@
 title: exp:clusterpurge
 audience: developer, admin
 category: examples
-summary: Physically purge the cluster files of the given scopes (--scopes=scope1,scope2).
+summary: Physically purge the cluster files of the given scopes (--scopes=scope1,scope2; dry run unless --apply).
 keywords: exp:clusterpurge, clusterpurge, console, command, CLI, clusterpurge.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:clusterpurge
 
-Physically purge the cluster files of the given scopes (--scopes=scope1,scope2).
+Physically purge the cluster files of the given scopes (--scopes=scope1,scope2; dry run unless --apply).
 
 Script `bin/php/clusterpurge.php`, code in `kernel/private/classes/commands/clusterpurge.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -22,7 +22,8 @@ php bin/php/clusterpurge.php --help
 
 | Option | Value | Help |
 |---|---|---|
-| `--dry-run` |  | Test mode, output the list of affected files without removing them |
+| `--apply` |  | Purge the files (the default is a dry run that lists them and purges nothing) |
+| `--dry-run` |  | The default, kept for scripts that pass it: list the affected files without removing them |
 | `--iteration-sleep` | required | Amount of seconds to sleep between each iteration when performing a purge operation, can be a float. Default is one second. |
 | `--iteration-limit` | required | Amount of items to remove in each iteration when performing a purge operation. Default is 100. |
 | `--memory-monitoring` |  | Generates memory monitoring output. If set, memory usage will be logged in var/log/clusterpurge.log. |

@@ -111,7 +111,7 @@ anonymous visitors without a cookie to tell them apart (for example by location)
 
 ## After a change
 
-- After a template, stylesheet or settings change: `php bin/php/console exp:velocity cache clear --allow-root-user`.
+- After a template, stylesheet or settings change: `php bin/php/console exp:velocity cache clear --apply --allow-root-user`.
   `exp:velocity deploy` clears it as its last step
   ([Static cache and the Velocity response cache](../../creators/website-creators/static-cache-and-velocity.md#after-a-change)).
 - Static cache files are refreshed on publish; remove all with `php bin/php/cache.php static clear --allow-root-user`.

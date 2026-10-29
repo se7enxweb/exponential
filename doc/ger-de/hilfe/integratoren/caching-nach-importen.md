@@ -79,7 +79,7 @@ einmal, und jeder Besucher bezahlt für den Neuaufbau.
 
 | Ebene | Leeren |
 |---|---|
-| Der Antwort-Cache von Velocity (wenn Velocity die Website ausliefert) | `php bin/php/console exp:velocity cache clear` |
+| Der Antwort-Cache von Velocity (wenn Velocity die Website ausliefert) | `php bin/php/console exp:velocity cache clear --apply` |
 | Der HTTP-Cache | Cache-ID `exphttpcache` ([HTTP-Cache](../../bc/6.0/httpcache.md)) |
 | Ein CDN oder Reverse Proxy, den Sie betreiben | Seine eigene Purge-API, angestoßen durch `content/cache`-Ereignisse ([Beispiel](event-listener-fuer-integrationen.md#beispiel-ein-cdn-leeren-wenn-caches-geleert-werden)) |
 | Browser | Cache-Header Ihrer Seiten; nichts zu leeren |
@@ -111,7 +111,7 @@ php bin/php/ezcache.php --clear-id=template-block --allow-root-user
 # after installing a package with classes and content (indexing was delayed)
 php bin/php/updatesearchindex.php --allow-root-user
 php bin/php/ezcache.php --clear-id=content,template-block,classid,sortkey --allow-root-user
-php bin/php/console exp:velocity cache clear
+php bin/php/console exp:velocity cache clear --apply
 
 # after a repair that changed content tables directly
 php bin/php/ezcache.php --clear-id=content,template-block,urlalias --allow-root-user

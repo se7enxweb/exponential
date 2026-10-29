@@ -1,6 +1,6 @@
 <?php
 /**
- * @description Content checks: build the reference index, list the unused assets and the broken relations below a node, list the missing files, scan the storage files (report only, unless --fix, --quarantine or --fix-permissions without --dry-run)
+ * @description Content checks: build the reference index, list the unused assets and the broken relations below a node, list the missing files, scan the storage files (report only; --fix, --quarantine and --fix-permissions are a dry run unless --apply)
  * @alias exp:content-check
  *
  * File containing the exp:content-check command (doc/eng-us/features/6.0/content-checks.md, "On the command line").
@@ -20,23 +20,25 @@ class Contentcheck extends \Exponential\Runnable\Command
         $cli = $this->cli();
         $this->script(
             array(
-                'description' => "Content checks (report only, except --fix, --quarantine and --fix-permissions without --dry-run)\n" .
+                'description' => "Content checks (report only; --fix, --quarantine and --fix-permissions are a dry run unless --apply)\n" .
                                  "\n" .
                                  "./console exp:content-check --build-index           build the reference index (also the cronjob part contentcheck)\n" .
                                  "./console exp:content-check --unreferenced --node=2  the unused assets below node 2\n" .
                                  "./console exp:content-check --broken --node=2        the broken relations below node 2, and the layouts'\n" .
                                  "./console exp:content-check --why=123,456           what uses objects 123 and 456\n" .
                                  "./console exp:content-check --storage               scan the storage files: orphans and file problems\n" .
-                                 "./console exp:content-check --storage --quarantine --dry-run   which orphans would be quarantined\n" .
-                                 "./console exp:content-check --storage --quarantine            move them to the quarantine\n" .
-                                 "./console exp:content-check --storage --fix-permissions [--dry-run]   set owner and mode of used files\n" .
+                                 "./console exp:content-check --storage --quarantine            which orphans would be quarantined\n" .
+                                 "./console exp:content-check --storage --quarantine --apply    move them to the quarantine\n" .
+                                 "./console exp:content-check --storage --fix-permissions [--apply]   set owner and mode of used files\n" .
                                  "./console exp:content-check --missing-files --node=2  files missing from the storage, stale image aliases\n" .
-                                 "./console exp:content-check --missing-files --fix=regenerate --dry-run   what regenerating would do\n" .
-                                 "./console exp:content-check --fix=restore --items=123-4,125-2          restore two field versions\n" .
-                                 "./console exp:content-check --fix=replace --items=123-4 --replace-with=photo.jpg\n" .
+                                 "./console exp:content-check --missing-files --fix=regenerate   what regenerating would do\n" .
+                                 "./console exp:content-check --fix=restore --items=123-4,125-2 --apply  restore two field versions\n" .
+                                 "./console exp:content-check --fix=replace --items=123-4 --replace-with=photo.jpg --apply\n" .
                                  "\n" .
-                                 "--fix (regenerate, restore, replace, remove, review) is the only option that changes anything; with\n" .
-                                 "--dry-run it shows the plan and changes nothing. Without --items it takes every finding of --missing-files.\n" .
+                                 "--fix (regenerate, restore, replace, remove, review), --quarantine and --fix-permissions are the only\n" .
+                                 "options that change anything, and only with --apply: without it they show the plan and change nothing.\n" .
+                                 "--dry-run means the same as no --apply; --apply together with --dry-run is a usage error (exit 2).\n" .
+                                 "Without --items --fix takes every finding of --missing-files.\n" .
                                  "The lists are those of the user given by --login (default admin): what that user may read.\n" .
                                  "Exit code: 0 nothing found, 1 something found, 2 error.",
                 'use-session'    => false,
@@ -44,7 +46,7 @@ class Contentcheck extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[build-index][unreferenced][broken][missing-files][problems:][versions:][fix:][items:][replace-with:][node:][why:][login:][json][storage][quarantine][fix-permissions][dry-run]', '', array(
+        $options = $this->startup( '[build-index][unreferenced][broken][missing-files][problems:][versions:][fix:][items:][replace-with:][node:][why:][login:][json][storage][quarantine][fix-permissions][apply][dry-run]', '', array(
             'missing-files' => 'List the fields below --node whose files are missing, and images with missing or stale aliases',
             'problems'      => 'With --missing-files: missing,alias_missing,alias_stale,alias_absent (default: the first three)',
             'versions'      => 'With --missing-files: published,draft (default: both)',
@@ -61,8 +63,21 @@ class Contentcheck extends \Exponential\Runnable\Command
             'storage'      => 'Scan the storage files (all of it, in batches) and keep the result for the storage view',
             'quarantine'   => 'With --storage: move the orphan files of the scan to the quarantine (each checked again)',
             'fix-permissions' => 'With --storage: set the expected owner and mode of used files with a wrong one',
-            'dry-run'      => 'With --fix, --quarantine or --fix-permissions: show what would be done, change nothing'
+            'apply'        => 'With --fix, --quarantine or --fix-permissions: do it (the default is a dry run that shows the plan)',
+            'dry-run'      => 'The default, kept for scripts that pass it: show what would be done, change nothing'
         ) );
+
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $this->shutdown( 2 );
+            return;
+        }
+        $dryRun = !$apply;
+        // fix() and storage() read the option: without --apply they plan and change nothing
+        $options['dry-run'] = $dryRun;
+        $writes = !empty( $options['fix'] ) || !empty( $options['quarantine'] ) || !empty( $options['fix-permissions'] );
 
         $login = !empty( $options['login'] ) ? (string)$options['login'] : 'admin';
         $user = \eZUser::fetchByName( $login );
@@ -219,6 +234,8 @@ class Contentcheck extends \Exponential\Runnable\Command
             foreach ( $report['why'] as $id => $why )
                 $cli->output( sprintf( '  object %-8d %s', $id, $why === null ? 'UNUSED: nothing found that uses it' : 'used: ' . $why ) );
         }
+        if ( $writes && $dryRun )
+            $cli->output( 'PASS: the plan above (dry run, nothing changed; --apply writes)' );
         $this->shutdown( isset( $report['fix'] ) && $report['fix']['failed'] ? 2 : ( $found ? 1 : 0 ) );
     }
 

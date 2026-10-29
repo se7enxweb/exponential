@@ -3,7 +3,7 @@
 `exp:install` installs Exponential with one command and no file to write first. It turns its options into the same
 configuration a `kickstart.ini` would hold, runs the kickstarter's installation steps in the same process, and prints a
 summary with the site address, the administration login and the administrator's password. Every option has a default,
-so `php bin/php/console exp:install` on its own installs the `sevenx_multisite` site package on SQLite.
+so `php bin/php/console exp:install --apply` on its own installs the `sevenx_multisite` site package on SQLite.
 
 This chapter documents every option with its default and its checks, the dry-run and print modes, the exit status,
 complete examples for each database system, how the administrator password is chosen, what the command writes and
@@ -58,7 +58,7 @@ php bin/php/console exp:install --dry-run
 php bin/php/install.php --dry-run
 ```
 
-Many installations add a shortcut in the root, `ln -s bin/php/console console`, after which `./console exp:install`
+Many installations add a shortcut in the root, `ln -s bin/php/console console`, after which `./console exp:install --apply`
 is the same command. The shortcut is not part of the distributed files; create it yourself if you want it. Run the
 console from the installation root, the directory that holds `index.php`. More:
 [The console](../bc/6.0/console.md).
@@ -189,7 +189,7 @@ Run the command as the user the web server's PHP runs as. The installation creat
 page view ([chapter 12](12-troubleshooting.md#123-permissions-and-ownership)). For example:
 
 ```bash
-sudo -u www-data php bin/php/console exp:install --url=https://www.example.com
+sudo -u www-data php bin/php/console exp:install --apply --url=https://www.example.com
 ```
 
 ## 7.4 What the configuration looks like
@@ -336,7 +336,7 @@ A public demonstration site publishes its administrator password. With the envir
 (demo mode, since 6.0.15) `exp:install` installs a well-known `--password` as it is instead of replacing it:
 
 ```bash
-EXP_DEMO_MODE=1 ./console exp:install --db=sqlite --password='publishing' --url=https://demo.example.com
+EXP_DEMO_MODE=1 ./console exp:install --apply --db=sqlite --password='publishing' --url=https://demo.example.com
 ```
 
 Only the administrator password of the new installation is relaxed: a well-known one and one shorter than
@@ -382,7 +382,7 @@ A script can therefore rely on `$?`:
 
 ```bash
 php bin/php/console exp:install --dry-run --db=mysql --db-user=exponential \
-  && php bin/php/console exp:install --force --db=mysql --db-user=exponential \
+  && php bin/php/console exp:install --apply --force --db=mysql --db-user=exponential \
   || echo "installation failed, see var/log/setup.log"
 ```
 
@@ -424,14 +424,14 @@ or certificate configuration like the other two ([chapter 8](08-serving-the-site
 ### SQLite (the default)
 
 ```bash
-php bin/php/console exp:install
+php bin/php/console exp:install --apply
 ```
 
 Installs into `var/storage/sqlite3/exponential.db`. No database server is needed, which makes this the quickest way to
 a working site. With an address and an administrator:
 
 ```bash
-php bin/php/console exp:install \
+php bin/php/console exp:install --apply \
     --url=https://www.example.com \
     --title="Example" \
     --email=webmaster@example.com \
@@ -447,7 +447,7 @@ The database and the user must exist ([chapter 6, MySQL example](06-kickstarter.
 
 ```bash
 EXP_INSTALL_DB_PASSWORD='a-long-random-password' \
-php bin/php/console exp:install \
+php bin/php/console exp:install --apply \
     --db=mysql --db-host=127.0.0.1 --db-port=3306 \
     --db-name=exponential --db-user=exponential \
     --url=https://www.example.com --email=webmaster@example.com
@@ -456,7 +456,7 @@ php bin/php/console exp:install \
 Through a local socket:
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install \
+EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install --apply \
     --db=mariadb --db-socket=/var/lib/mysql/mysql.sock --db-name=exponential --db-user=exponential
 ```
 
@@ -469,7 +469,7 @@ was created for.
 The database must exist and `pgcrypto` must be available in it ([chapter 6, PostgreSQL example](06-kickstarter.md#663-postgresql)).
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install \
+EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install --apply \
     --db=pgsql --db-host=db.internal --db-name=exponential --db-user=exponential \
     --url=https://intranet.example.com --email=it@example.com
 ```
@@ -480,7 +480,7 @@ Needs the PHP `mongodb` extension, the `mongodb/mongodb` library and a database 
 ([chapter 9](09-databases.md#95-mongodb)).
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install \
+EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install --apply \
     --db=mongodb --db-host=127.0.0.1 --db-port=27017 --db-name=exponential --db-user=exponential \
     --url=https://www.example.com
 ```
@@ -496,10 +496,10 @@ Needs the PHP `oci8` extension and the `ezoracle` extension in `extension/`, whi
 new site.
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install \
+EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install --apply \
     --db=oracle --db-host=127.0.0.1 --db-port=1521 --db-name=FREEPDB1 --db-user=EXPONENTIAL
 # a TNS alias instead of host, port and service:
-EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install --db=oracle --db-name=@EXPDB --db-user=EXPONENTIAL
+EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install --apply --db=oracle --db-name=@EXPDB --db-user=EXPONENTIAL
 ```
 
 The first form connects to `127.0.0.1:1521/FREEPDB1` (Easy Connect); the second hands `EXPDB` to the Oracle client,
@@ -509,18 +509,18 @@ which looks it up in its `tnsnames.ora`.
 
 ```bash
 # site on www.example.com, admin on admin.example.com, editor on edit.example.com
-php bin/php/console exp:install --access=host --host=www.example.com --admin-host=admin.example.com \
+php bin/php/console exp:install --apply --access=host --host=www.example.com --admin-host=admin.example.com \
     --url=https://www.example.com
 
 # site on 8080, admin on 8081, editor on 8082 (7.8)
-php bin/php/console exp:install --access=port --port=8080 --admin-port=8081
+php bin/php/console exp:install --apply --access=port --port=8080 --admin-port=8081
 ```
 
 ### Reinstall over an existing installation
 
 ```bash
 php bin/php/console exp:install --dry-run --db=mysql --db-name=exponential --db-user=exponential   # check first
-php bin/php/console exp:install --force   --db=mysql --db-name=exponential --db-user=exponential   # replaces it
+php bin/php/console exp:install --apply --force   --db=mysql --db-name=exponential --db-user=exponential   # replaces it
 ```
 
 **This destroys the content of the database `exponential`.** Back it up first
@@ -529,7 +529,7 @@ php bin/php/console exp:install --force   --db=mysql --db-name=exponential --db-
 ### Regenerate the settings, keep the data
 
 ```bash
-php bin/php/console exp:install --force --db-action=skip --db=mysql --db-name=exponential --db-user=exponential \
+php bin/php/console exp:install --apply --force --db-action=skip --db=mysql --db-name=exponential --db-user=exponential \
     --url=https://www.example.com
 ```
 

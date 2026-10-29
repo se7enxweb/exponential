@@ -77,7 +77,7 @@ Auf Red Hat Enterprise Linux 9 und seinen Nachbauten ist das Standard-PHP 8.0: S
 
 ```bash
 composer require se7enxweb/exponential-velocity:~0.0.4.44
-php bin/php/console exp:velocity config set ServerSettings Engine qbix
+php bin/php/console exp:velocity config set --apply ServerSettings Engine qbix
 php bin/php/console exp:velocity start
 php bin/php/console exp:velocity status
 curl -sI http://127.0.0.1:8088/ | head -1
@@ -109,8 +109,8 @@ gelassen hat (`php bin/php/maintenance.php status`, dann `off`).
 ```bash
 php bin/php/console exp:velocity config list                    # every setting; * marks the ones you set
 php bin/php/console exp:velocity config get ServerSettings Workers
-php bin/php/console exp:velocity config set ServerSettings Workers 16
-php bin/php/console exp:velocity config unset ServerSettings Workers
+php bin/php/console exp:velocity config set --apply ServerSettings Workers 16
+php bin/php/console exp:velocity config unset --apply ServerSettings Workers
 php bin/php/console exp:velocity config paths
 ```
 
@@ -135,11 +135,11 @@ Debian aufgebaut (`vc.conf`, `ports.conf`, `envvars`, `conf-`, `mods-` und `site
 Um Besuchern direkt auf den Standardports gegenüberzustehen:
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Host 0.0.0.0 --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings Port 80 --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings HTTPSPort 443 --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings User <customer> --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings Group <customer> --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Host 0.0.0.0 --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Port 80 --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings HTTPSPort 443 --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings User <customer> --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Group <customer> --allow-root-user
 php bin/php/console exp:velocity restart --allow-root-user
 ```
 
@@ -166,9 +166,9 @@ absichtlich gestoppt hat, kein Neustart im Gange ist und er nicht gerade zurück
 neu ([Velocity-Engines, Der Watchdog](../../../bc/6.0/velocity-engines.md#der-watchdog-expvelocity-watchdog)):
 
 ```bash
-php bin/php/console exp:velocity watchdog install --allow-root-user   # vc-watchdog.service + .timer
+php bin/php/console exp:velocity watchdog install --apply --allow-root-user   # vc-watchdog.service + .timer
 php bin/php/console exp:velocity watchdog status --allow-root-user
-php bin/php/console exp:velocity watchdog remove --allow-root-user
+php bin/php/console exp:velocity watchdog remove --apply --allow-root-user
 ```
 
 | Einstellung (`[WatchdogSettings]`) | Ausgeliefert | Bedeutung |

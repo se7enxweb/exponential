@@ -53,7 +53,7 @@ Expected: a number of extension clones, and the last three commits of one of the
 ## Step 2: install with one command
 
 ```bash
-php bin/php/console exp:install
+php bin/php/console exp:install --apply
 ```
 
 With no options this installs the `sevenx_multisite` site package on **SQLite**, in `eng-US`, and prints a summary

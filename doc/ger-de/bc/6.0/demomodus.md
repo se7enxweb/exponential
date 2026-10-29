@@ -262,7 +262,7 @@ SQLite ausführt und die neue Website einwechselt. Mit dem Demo-Modus sollte es 
    durch ein zufälliges zu ersetzen und danach zurückzusetzen:
 
    ```sh
-   EXP_DEMO_MODE=1 php bin/php/install.php --db=sqlite --password='<the published demo password>' ...
+   EXP_DEMO_MODE=1 php bin/php/install.php --apply --db=sqlite --password='<the published demo password>' ...
    ```
 
    Der Schritt zum Zurücksetzen nach der Installation (`exp:resetuserpassword`) wird dann nicht mehr gebraucht und

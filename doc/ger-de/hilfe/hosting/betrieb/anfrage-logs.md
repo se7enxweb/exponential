@@ -111,7 +111,7 @@ Keep[security]=10
 MaxAgeDays[security]=365
 ```
 
-Die Bereinigung läuft, wenn der Cronjob-Teil `logs` läuft (er ist in keinem Standard-Teil) oder wenn `./console exp:logs --prune`
+Die Bereinigung läuft, wenn der Cronjob-Teil `logs` läuft (er ist in keinem Standard-Teil) oder wenn `./console exp:logs --apply --prune`
 aufgerufen wird; siehe [Log-Viewer und Log-Rotation](log-viewer-und-log-rotation.md).
 
 ## Die Logs im Support nutzen

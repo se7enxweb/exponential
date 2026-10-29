@@ -251,6 +251,50 @@ class expVelocityConfig
     }
 
     /**
+     * What set() would write, without writing: the same checks, the value before and after, and the file.
+     *
+     * @param string $block
+     * @param string $variable
+     * @param string $value
+     * @return array ok, message
+     */
+    public function planSet( $block, $variable, $value )
+    {
+        if ( !$this->isKnown( $block, $variable ) )
+        {
+            return array( 'ok' => false, 'message' =>
+                "[$block] $variable is not a setting velocity.ini defines; " .
+                "run 'config list' to see what is" );
+        }
+        $before = $this->get( $block, $variable );
+        $same = !empty( $before['ok'] ) && (string)$before['value'] === (string)$value && !empty( $before['overridden'] );
+        return array( 'ok' => true, 'message' =>
+            ( $same ? "[$block] $variable is '$value' already; set would write it again" : "would set [$block] $variable to '$value'" ) .
+            ( ( !empty( $before['ok'] ) && (string)$before['value'] !== (string)$value ) ? " (now '" . $before['value'] . "')" : '' ) .
+            ' in ' . self::OVERRIDE_DIR . '/' . self::OVERRIDE_FILE );
+    }
+
+    /**
+     * What unsetVariable() would remove, without writing.
+     *
+     * @param string $block
+     * @param string $variable
+     * @return array ok, message
+     */
+    public function planUnset( $block, $variable )
+    {
+        if ( !$this->override()->hasVariable( $block, $variable ) )
+        {
+            return array( 'ok' => false, 'message' =>
+                "[$block] $variable is not overridden here; nothing to remove" );
+        }
+        $now = $this->get( $block, $variable );
+        return array( 'ok' => true, 'message' =>
+            "would remove [$block] $variable" . ( !empty( $now['ok'] ) ? " ('" . $now['value'] . "')" : '' ) .
+            ' from ' . self::OVERRIDE_DIR . '/' . self::OVERRIDE_FILE . '; the packaged value would apply again' );
+    }
+
+    /**
      * Remove a setting from the override, returning it to the packaged value.
      *
      * @param string $block

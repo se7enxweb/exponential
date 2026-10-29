@@ -50,7 +50,7 @@ Do not change `ContentObjectLocale` on a site with content without reading the w
 2. Copy `settings/siteaccess/site` to `settings/siteaccess/site_fr` and set the block above.
 3. In `settings/override/site.ini.append.php` add `site_fr` to `[SiteAccessSettings] AvailableSiteAccessList[]` and
    `RelatedSiteAccessList[]`, and set up matching by path or host (see "Language addresses: path or host").
-4. Clear the caches: `php bin/php/ezcache.php --clear-tag=ini,content`, and `./console exp:velocity cache clear`
+4. Clear the caches: `php bin/php/ezcache.php --clear-tag=ini,content`, and `./console exp:velocity cache clear --apply`
    when Velocity serves the site.
 5. Translate, starting with the front page and the menu.
 

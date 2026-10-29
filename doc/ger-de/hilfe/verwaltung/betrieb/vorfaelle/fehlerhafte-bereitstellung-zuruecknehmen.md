@@ -39,7 +39,7 @@ Viele „fehlerhafte Bereitstellungen“ sind unvollständige Bereitstellungen, 
 |---|---|
 | `Class ... not found` | `php bin/php/ezpgenerateautoloads.php -e`, dann die Caches leeren |
 | Altes Verhalten noch sichtbar | PHP-FPM oder Velocity führen noch den alten Code aus: `./console exp:velocity deploy --allow-root-user` (lädt das richtige PHP-FPM neu und startet Velocity in der richtigen Reihenfolge neu) |
-| Seiten sehen nach einer Template-Änderung alt aus | `./console exp:cache clear --id=template --allow-root-user` und `./console exp:velocity cache clear --allow-root-user` |
+| Seiten sehen nach einer Template-Änderung alt aus | `./console exp:cache clear --id=template --allow-root-user` und `./console exp:velocity cache clear --apply --allow-root-user` |
 | Eine neue Einstellung wirkt nicht | `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`, dann neu laden |
 
 ## Code und Einstellungen zurücknehmen

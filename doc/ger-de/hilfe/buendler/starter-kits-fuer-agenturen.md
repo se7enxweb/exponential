@@ -63,7 +63,7 @@ for f in packages/*.ezpkg; do php ezpm.php import "$f"; done
 umask 077
 envsubst < deploy/kickstart.ini.template > kickstart.ini
 php bin/php/console exp:kickstarter run --dry-run
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
 rm -f kickstart.ini
 ```
 

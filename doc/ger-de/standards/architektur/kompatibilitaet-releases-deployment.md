@@ -161,7 +161,7 @@ Reihenfolge laufen:
    `velocity.ini [DeploySettings] PhpFpmService`, ausgeliefert mit `auto`), und starten Sie Velocity neu
    (`./console exp:velocity restart`), dessen Worker die beim Aufwärmen geladenen Klassen behalten.
 5. **Die Seiten-Caches zuletzt leeren**: den Cache der Inhaltsansichten (`--clear-id=content`), den HTTP-Cache und den
-   Antwort-Cache von Velocity (`./console exp:velocity cache clear`). Werden sie vor Schritt 4 geleert, kann alter Code
+   Antwort-Cache von Velocity (`./console exp:velocity cache clear --apply`). Werden sie vor Schritt 4 geleert, kann alter Code
    eine Seite erneut zwischenspeichern.
 
 `./console exp:velocity deploy` führt all das in der richtigen Reihenfolge aus (vierzehn Schritte, PASS, FAIL oder SKIP

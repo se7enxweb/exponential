@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Конфигурација &gt; Cron-задачи</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Ниту еден дел од cron-задачите сè уште не е извршен: редицата на задачи, увозите, известувањата и индексот за пребарување чекаат. Извршете php bin/php/installcrontab.php --add --apply или додајте ги редовите од --show во crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Оваа инсталација е јавно демо: секој може да ја знае лозинката на администраторот, а лозинките на администраторите не можат да се менуваат или ресетираат. Не внесувајте ништо приватно овде.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ваши уреди</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Безбедносна активност</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Кој менувал, се најавил или бил одбиен, по сметка; филтрирање и извоз.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Извештај за најави</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Кој е најавен, најави и неуспеси по ден; одјавување корисник насекаде.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Истечените сесии на PHP управувачот ги отстранува самиот PHP (session.gc_maxlifetime), а не оваа страница или делот session_gc од cron-задачата.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Најавените сесии на сите корисници се наведени и одјавени во извештајот за најави, кој работи со секој ракувач со сесии.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Отвори го извештајот за најави</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>Сè уште нема</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Безбедносна активност</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Вашите неодамнешни најави, неуспешни обиди и промени на лозинката, адресата на е-пошта и најавата во два чекора.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Неодамнешните најави, неуспешни обиди и безбедносни промени на оваа сметка.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Прегледај ја активноста</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Неуспешни најави: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab не беше запишан (%reason). Додадете ги овие линии во crontab на корисникот под кој работи сајтот, инаку редицата, увозите, известувањата и индексот за пребарување никогаш нема да се извршуваат:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Повторната инсталација се врши со kickstarter (%file, потоа php bin/php/kickstarter.php run --apply) или со нова инсталација.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Транспортот за пошта одби %count пораки при последното извршување. Проверете го серверот за пошта и site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Настани на чекање: %count, а не е забележано ниедно извршување на cron-задачата за известувања. Додајте го делот од cron-задачите &quot;frequent&quot; во crontab или извршете exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>Изберете друг сајт или секција со избирачот на јазли</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Само системскиот администратор може да го промени сопственикот: извршете ./console exp:content-check --fix-permissions --apply како root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>празно</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Клучот за потпишување е постар од една година: заменете го со exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>не се испратени</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Cron-задачата за известувања овде го бележи секое свое извршување. Додајте го делот frequent во crontab или извршете exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Користете ја конзолата: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>Нема.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>со апликација за автентикација</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>со код по е-пошта</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>со код за враќање</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>со клуч за пристап</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>со надворешна сметка</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Безбедносна активност</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Прикажано како мрежа; адресата се чува како што пропишуваат поставките за заштита на податоците на сајтот.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Не е забележано</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Локација</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>приближно</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>Управувај со уредите</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>со апликација за автентикација</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>со код по е-пошта</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>со код за враќање</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>со клуч за пристап</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>со надворешна сметка</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Безбедносна активност</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Не е забележано</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Локација</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>приближно</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>Прикажи ги сесиите на овој корисник</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Вашата сметка %login на %site штотуку беше искористена за најава од место од кое неодамна не се најавувала:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Приближна локација</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser на %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Извештај за најави</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>непознато</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Заштити ја сметката</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>За најава на Вашата сметка %login на %site беше искористен код за враќање.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Искористен е код за враќање</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Сметка</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Приближна адреса</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Побарајте нова лозинка за повторно да се најавите или обратете се до администраторите на сајтот.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Побарај нова лозинка</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Секој код за враќање работи само еднаш. Ако сте го изгубиле телефонот, повторно поставете ја апликацијата за автентикација и чувајте ги новите кодови за враќање на безбедно место.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Неуспешни обиди за најава на Вашата сметка</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Отсега најавата бара код покрај Вашата лозинка. Ако тоа сте го направиле Вие, не треба ништо да правите.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Ако сте биле Вие и сте ја заборавиле лозинката, побарајте нова. Ако не, изберете посилна лозинка и вклучете ја најавата во два чекора.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Ако тоа не сте биле Вие, некој можеби ја знае Вашата лозинка: веднаш сменете ја и проверете каде е најавена Вашата сметка.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Преостанати кодови за враќање</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Прегледај ги уредите</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Безбедносно предупредување</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Некој се обиде да се најави на Вашата сметка %login на %site со погрешна лозинка. Број на последователни обиди: %count.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>На Вашата сметка %login на %site се случи безбедносен настан.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Ова е безбедносно предупредување за Вашата сметка. Се испраќа при секоја таква промена и не може да се исклучи.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Време</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Најавата во два чекора е исклучена за Вашата сметка %login на %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Најавата во два чекора е исклучена</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Најавата во два чекора е вклучена за Вашата сметка %login на %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Најавата во два чекора е вклучена</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Вашата сметка %login на %site е заклучена по премногу неуспешни најави.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Вашата сметка сега е заштитена само со лозинката. Ако тоа не сте го направиле Вие, сменете ја лозинката и потоа повторно вклучете ја најавата во два чекора.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Вашата сметка е заклучена</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Безбедносна активност</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Безбедносна активност: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Најавен</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Неуспешен обид за најава</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Одјавен</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Сесиите се одјавени</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Најава од нов уред</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Најава од нова локација</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Идентитетот е потврден („Потврдете дека сте Вие“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Проверката на идентитетот не успеа</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Најава со клуч за пристап</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Најавата со клуч за пристап не успеа</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Најавата е одбиена: кодот за најава во два чекора недостасува или е погрешен</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Погрешен код за најава во два чекора</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Сметката е заклучена по неуспешни најави</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Сметката е отклучена</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Лозинката е сменета</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Промената на лозинката не успеа</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Лозинката е ресетирана</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Побарана е нова лозинка</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Адресата на е-пошта е сменета</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Корисничкото име е сменето</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Најавата во два чекора е вклучена</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Најавата во два чекора е исклучена</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Искористен код за враќање</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Нови кодови за враќање</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Создадена лозинка за апликација</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Отповикана лозинка за апликација</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Додаден клуч за пристап</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Отстранет клуч за пристап</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Сметката е овозможена</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Сметката е оневозможена</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Сите</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Најави и сесии</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Промени на сметката</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Бара внимание</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>од Вас</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>од корисникот</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>од %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Метод</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Прелистувач</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Оперативен систем</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Уред</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Место</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Земја</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Сесии</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Кои</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Канал</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Неуспешни обиди</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Преостанати кодови</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Ракувач со најава</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Безбедносна активност</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Безбедносна активност: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Најави и промени во безбедноста на Вашата сметка. Ако видите нешто што не сте го направиле, сменете ја лозинката и одјавете ги уредите што не ги препознавате.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Најави и промени во безбедноста на оваа сметка.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ваши уреди</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Смени ја лозинката</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Назад кон сметката</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Безбедносната активност не се бележи</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Се чита од ревизорскиот дневник на корисници, чија табела expuser_audit недостасува или не е поддржана во оваа база на податоци. Извршете php update/common/scripts/6.0/createuseraudittable.php или ажурирање на базата на податоци на 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Последни денови: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Најави во последните денови: %days</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Неодамнешна безбедносна активност</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Прикажи</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>неуспешно</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>одбиено</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Сè уште не е забележана безбедносна активност.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Безбедносните настани се чуваат одреден број денови: %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Безбедносните настани се чуваат додека администратор не ги отстрани.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Преземи ги моите податоци за најава</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Вашите сесии и безбедносни настани како JSON-датотека.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Најавен</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Неуспешен обид за најава</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Одјавен</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Сесиите се одјавени</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Најава од нов уред</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Најава од нова локација</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Идентитетот е потврден („Потврдете дека сте Вие“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Проверката на идентитетот не успеа</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Најава со клуч за пристап</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Најавата со клуч за пристап не успеа</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Најавата е одбиена: кодот за најава во два чекора недостасува или е погрешен</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Погрешен код за најава во два чекора</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Сметката е заклучена по неуспешни најави</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Сметката е отклучена</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Лозинката е сменета</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Промената на лозинката не успеа</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Лозинката е ресетирана</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Побарана е нова лозинка</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Адресата на е-пошта е сменета</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Корисничкото име е сменето</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Најавата во два чекора е вклучена</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Најавата во два чекора е исклучена</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Искористен код за враќање</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Нови кодови за враќање</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Создадена лозинка за апликација</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Отповикана лозинка за апликација</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Додаден клуч за пристап</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Отстранет клуч за пристап</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Сметката е овозможена</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Сметката е оневозможена</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Сите</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Најави и сесии</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Промени на сметката</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Бара внимание</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Безбедносна активност</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Безбедносна активност: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Најави и промени во безбедноста на Вашата сметка. Ако видите нешто што не сте го направиле, сменете ја лозинката и одјавете ги уредите што не ги препознавате.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ваши уреди</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Смени ја лозинката</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Безбедносната активност сè уште не се бележи на овој сајт.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Најави во последните денови: %days</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Неуспешни обиди</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Сè уште не е забележана безбедносна активност.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Преземи ги моите податоци за најава</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Вашите сесии и безбедносни настани како JSON-датотека.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Лозинка</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Лозинка и код за најава во два чекора</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-интерфејс</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-интерфејс</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Единствена најава (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Најавен пред да почне бележењето на сесиите</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Извештај за најави</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Кој е најавен на сајтот, колку често сметките се најавуваат и колку често не успеваат, и одјавување корисник насекаде. Работи со секој ракувач со сесии.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Сесијата е одјавена. Уредот мора повторно да се најави.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Корисникот %login е одјавен од сесиите. Број на сесии: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Корисникот %login немаше активна сесија.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Ниедна сметка нема таков ID, корисничко име или адреса на е-пошта.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Ова е сесијата што ја користите. За да ја завршите, одјавете се.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Таа сесија веќе беше завршена.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Страницата истече. Ништо не е променето; обидете се повторно.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Сесиите не се бележат на овој сајт (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Табелата expuser_session недостасува</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Сесиите се бележат штом таа ќе се создаде: php update/common/scripts/6.0/createusersessiontable.php или ажурирање на базата на податоци на 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Сега и денес</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Активни сесии</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Најавени корисници</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Најави денес</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Неуспешни обиди денес</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Одјавување корисник насекаде</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Секоја сесија на сметката завршува при своето следно барање, вклучително и оние што ги чува „Запомни ме“. Користете го ова кога сметката можеби е во погрешни раце; потоа ресетирајте ја нејзината лозинка.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID на корисник, корисничко име или адреса на е-пошта</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Одјави насекаде</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Сега најавени</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Прикажани се последно користените (најмногу %limit).</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Корисник</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Уред</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адреса</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Најавен</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Последна активност</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Дејства</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Овој уред</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Не е забележано</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Одјави</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Ниедна сесија не е најавена.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Последни денови: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Најавите и неуспешните обиди се бројат од ревизорскиот дневник на корисници, кој не постои; новите сесии се бројат.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Ден</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Најави</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Неуспешни обиди</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Нови сесии</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Ракувач со сесии: %handler. Сесиите се читаат од табелата expuser_session, па извештајот работи со секој ракувач.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Безбедносно предупредување за Вашата сметка</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>На Вашата сметка %login се случи безбедносен настан: %event. Ако тоа не сте биле Вие, заштитете ја Вашата сметка на %url.</translation>
     </message>
 </context>
 </TS>

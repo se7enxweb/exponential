@@ -74,7 +74,7 @@ einem kleinen virtuellen Server passt. Was eine Website von jedem Hoster braucht
 
 ## Günstig anfangen
 
-`./console exp:install` „installiert das Multisite-Paket auf **SQLite**, in `eng-US`“, mit einer Website und einer
+`./console exp:install --apply` „installiert das Multisite-Paket auf **SQLite**, in `eng-US`“, mit einer Website und einer
 Administration, und gibt die Anmeldeadressen aus
 ([Exponential mit einem Befehl installieren](../../../funktionen/6.0/installation-mit-einem-befehl.md)). Ein Ehrenamtlicher kann
 so das ganze Produkt auf einem Laptop ausprobieren, bevor irgendetwas gekauft wird.

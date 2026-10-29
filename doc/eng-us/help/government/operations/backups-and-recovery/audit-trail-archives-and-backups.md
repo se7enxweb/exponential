@@ -74,7 +74,7 @@ The path is an example; agree the period with your records officer and legal cou
 ```bash
 ./console exp:audit verify --allow-root-user                # live files; exit 1 when a chain is broken
 ./console exp:audit verify --archives --allow-root-user     # also every archive and its signed manifest
-./console exp:audit restore --channel=content --date=2026-06-02 --allow-root-user
+./console exp:audit restore --apply --channel=content --date=2026-06-02 --allow-root-user
 ```
 
 `restore` decompresses an archived day into `<LogDir>/restored/` for reading and checks it against the manifest; it

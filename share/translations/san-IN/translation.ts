@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>स्थापना &gt; Cron कार्याणि</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>अद्यापि कोऽपि cron कार्यभागः न सञ्चालितः: कार्यपङ्क्तिः, आयाताः, सूचनाः अन्वेषणसूचिः च प्रतीक्षन्ते। php bin/php/installcrontab.php --add --apply सञ्चालयतु, अथवा --show इत्यस्य पङ्क्तीः crontab मध्ये योजयतु।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>इयं स्थापना सार्वजनिकं प्रदर्शनम् अस्ति: कोऽपि अस्याः प्रशासकगुप्तशब्दं जानीयात्, प्रशासकगुप्तशब्दाश्च परिवर्तयितुं पुनःस्थापयितुं वा न शक्यन्ते। अत्र किमपि निजं मा प्रविशतु।</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>भवतः उपकरणानि</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षागतिविधिः</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>प्रतिखातं कः परिवर्तितवान्, कः प्रविष्टवान्, कः वा निराकृतः; छाननं निर्यातः च।</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>प्रवेशप्रतिवेदनम्</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>कः प्रविष्टः अस्ति, प्रतिदिनं प्रवेशाः विफलताः च; उपयोक्तुः सर्वत्र निर्गमनम्।</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP-सम्भालकस्य कालातीतसत्राणि PHP स्वयम् अपसारयति (session.gc_maxlifetime), न एतत् पृष्ठं न च session_gc क्रॉन्-कार्यांशः।</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>सर्वेषाम् उपयोक्तॄणां प्रविष्टानि सत्राणि प्रवेशप्रतिवेदने सूचीबद्धानि भवन्ति, ततः एव निर्गम्यन्ते च; एतत् प्रतिवेदनं प्रत्येकेन सत्रहैण्डलरेण सह कार्यं करोति।</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>प्रवेशप्रतिवेदनस्य उद्घाटनम्</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>अद्यापि कापि नास्ति</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षागतिविधिः</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>भवतः अद्यतनाः प्रवेशाः, विफलप्रयासाः, भवतः गुप्तशब्दे विद्युत्पत्रसङ्केते द्विचरणप्रवेशे च परिवर्तनानि।</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>अस्य खातस्य अद्यतनाः प्रवेशाः, विफलप्रयासाः सुरक्षापरिवर्तनानि च।</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>गतिविधेः समीक्षा</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>विफलप्रवेशाः: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab न लिखितम् (%reason)। इमाः पङ्क्तीः तस्य उपयोक्तुः crontab मध्ये योजयतु यस्य रूपेण जालस्थलं चलति, अन्यथा पङ्क्तिः, आयाताः, सूचनाः, अन्वेषणसूचिः च कदापि न चलन्ति:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>पुनःस्थापनं किकस्टार्टर-साधनेन (%file, ततः php bin/php/kickstarter.php run --apply) नूतनस्थापनेन वा क्रियते।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>मेलप्रवाहः अन्तिमे सञ्चालने %count सन्देशान् प्रत्याख्यातवान्। मेलसेवकं site.ini MailSettings च परीक्षताम्।</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count घटनाः प्रतीक्षन्ते, सूचनानां cron कार्यस्य च किमपि सञ्चालनं न अभिलिखितम्। cron कार्यभागं &quot;frequent&quot; crontab मध्ये योजयतु, अथवा exp:notification:run --apply सञ्चालयतु।</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>ग्रन्थिचयनकेन अन्यत् जालस्थलं विभागं वा चिनोतु</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>केवलं प्रणालीप्रशासकः स्वामिनं परिवर्तयितुं शक्नोति: root रूपेण ./console exp:content-check --fix-permissions --apply सञ्चालयतु।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>रिक्तम्</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>हस्ताक्षरकुञ्जी वर्षात् अधिकं पुराणी अस्ति: exp:audit key rotate --apply इत्यनेन तां परिवर्तयतु।</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>अप्रेषितम्</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>सूचनानां cron कार्यं स्वस्य प्रत्येकं सञ्चालनम् अत्र अभिलिखति। frequent भागं crontab मध्ये योजयतु, अथवा exp:notification:run --apply सञ्चालयतु।</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>आदेशपटलस्य उपयोगं करोतु: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>कोऽपि नास्ति।</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>प्रमाणक-अनुप्रयोगेण</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>विद्युत्पत्रेण प्राप्तेन सङ्केतेन</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>पुनःप्राप्तिसङ्केतेन</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>प्रवेशकुञ्ज्या</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>बाह्यखातेन</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षागतिविधिः</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>तस्य जालरूपेण दर्शितम्; सङ्केतः जालस्थलस्य दत्तांशसंरक्षणविन्यासानुसारं रक्ष्यते।</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>न अभिलिखितम्</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>स्थानम्</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>आनुमानिकम्</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>उपकरणानि प्रबन्धयतु</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>प्रमाणक-अनुप्रयोगेण</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>विद्युत्पत्रेण प्राप्तेन सङ्केतेन</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>पुनःप्राप्तिसङ्केतेन</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>प्रवेशकुञ्ज्या</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>बाह्यखातेन</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षागतिविधिः</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>न अभिलिखितम्</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>स्थानम्</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>आनुमानिकम्</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>अस्य उपयोक्तुः सत्राणि दर्शनम्</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site इत्यत्र भवतः खातम् %login अधुना एव तादृशात् स्थानात् प्रवेशाय उपयुक्तम्, यस्मात् अद्यतनकाले प्रवेशः न अभवत्:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>आनुमानिकं स्थानम्</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os मध्ये %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>प्रवेशप्रतिवेदनम्</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>अज्ञातम्</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>स्वखातस्य सुरक्षणम्</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site इत्यत्र भवतः खाते %login प्रवेष्टुं पुनःप्राप्तिसङ्केतः उपयुक्तः।</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>पुनःप्राप्तिसङ्केतः उपयुक्तः</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>खातम्</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>आनुमानिकः सङ्केतः</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>पुनः प्रवेष्टुं नूतनं गुप्तशब्दं याचताम्, अथवा जालस्थलस्य प्रशासकैः सह सम्पर्कं करोतु।</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>नूतनगुप्तशब्दस्य याचना</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>प्रत्येकः पुनःप्राप्तिसङ्केतः एकवारम् एव कार्यं करोति। यदि भवतः दूरभाषः नष्टः, तर्हि स्वं प्रमाणक-अनुप्रयोगं पुनः विन्यस्यतु नूतनान् पुनःप्राप्तिसङ्केतान् च सुरक्षिते स्थाने रक्षतु।</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>भवतः खाते विफलाः प्रवेशप्रयासाः</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>इतः परं प्रवेशसमये भवतः गुप्तशब्दात् अतिरिक्तं सङ्केतः अपि याच्यते। यदि एतत् भवता कृतम्, तर्हि किमपि कर्तव्यं नास्ति।</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>यदि भवान् एव आसीत् स्वं गुप्तशब्दं च विस्मृतवान्, तर्हि नूतनं याचताम्। अन्यथा दृढतरं गुप्तशब्दं चिनोतु द्विचरणप्रवेशं च सक्रियं करोतु।</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>यदि एतत् भवता न कृतम्, तर्हि कश्चित् भवतः गुप्तशब्दं जानाति इति सम्भवति: तम् इदानीम् एव परिवर्तयतु, भवतः खातं कुत्र कुत्र प्रविष्टम् इति च परीक्षताम्।</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>अवशिष्टाः पुनःप्राप्तिसङ्केताः</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>स्वोपकरणानां समीक्षा</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>सुरक्षाचेतावनी</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>कश्चित् %site इत्यत्र भवतः खाते %login अशुद्धेन गुप्तशब्देन क्रमशः %count वारं प्रवेष्टुं प्रयत्नम् अकरोत्।</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site इत्यत्र भवतः खाते %login एका सुरक्षाघटना अभवत्।</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>एषा भवतः खातविषये सुरक्षाचेतावनी अस्ति। प्रत्येकस्मिन् एतादृशे परिवर्तने एषा प्रेष्यते, निष्क्रियीकर्तुं च न शक्यते।</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>समयः</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site इत्यत्र भवतः खातस्य %login कृते द्विचरणप्रवेशः निष्क्रियीकृतः।</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>द्विचरणप्रवेशः निष्क्रियीकृतः</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site इत्यत्र भवतः खातस्य %login कृते द्विचरणप्रवेशः सक्रियीकृतः।</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>द्विचरणप्रवेशः सक्रियीकृतः</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site इत्यत्र भवतः खातम् %login अत्यधिकविफलप्रवेशानन्तरम् आवृतम्।</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>भवतः खातम् इदानीं केवलं भवतः गुप्तशब्देन रक्षितम् अस्ति। यदि एतत् भवता न कृतम्, तर्हि गुप्तशब्दपरिवर्तनानन्तरं द्विचरणप्रवेशं पुनः सक्रियं करोतु।</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>भवतः खातम् आवृतम्</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षागतिविधिः</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>सुरक्षागतिविधिः: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>प्रविष्टः</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>विफलः प्रवेशप्रयासः</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>निर्गतः</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>सत्राणि निर्गमितानि</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>नूतनोपकरणात् प्रवेशः</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>नूतनस्थानात् प्रवेशः</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>परिचयः पुष्टः (&quot;पुष्टिं करोतु यत् भवान् एव&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>परिचयपरीक्षणं विफलम्</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>प्रवेशकुञ्ज्या प्रविष्टः</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>प्रवेशकुञ्ज्या प्रवेशः विफलः</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>प्रवेशः निराकृतः: द्विचरणप्रवेशस्य सङ्केतः अनुपस्थितः अशुद्धः वा</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>द्विचरणप्रवेशस्य अशुद्धः सङ्केतः</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>विफलप्रवेशानन्तरं खातम् आवृतम्</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>खातम् अनावृतम्</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>गुप्तशब्दः परिवर्तितः</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>गुप्तशब्दपरिवर्तनं विफलम्</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>गुप्तशब्दः पुनःस्थापितः</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>नूतनगुप्तशब्दः याचितः</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>विद्युत्पत्रसङ्केतः परिवर्तितः</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>उपयोक्तृनाम परिवर्तितम्</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>द्विचरणप्रवेशः सक्रियीकृतः</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>द्विचरणप्रवेशः निष्क्रियीकृतः</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>पुनःप्राप्तिसङ्केतः उपयुक्तः</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>नूतनाः पुनःप्राप्तिसङ्केताः</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>अनुप्रयोगगुप्तशब्दः निर्मितः</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>अनुप्रयोगगुप्तशब्दः प्रतिसंहृतः</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>प्रवेशकुञ्जी योजिता</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>प्रवेशकुञ्जी अपसारिता</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>खातं सक्रियीकृतम्</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>खातं निष्क्रियीकृतम्</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>सर्वम्</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>प्रवेशाः सत्राणि च</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>खातपरिवर्तनानि</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>अवधानम् अपेक्षितम्</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>भवता</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>उपयोक्त्रा</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>%login द्वारा</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>पद्धतिः</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>जालविचरकः</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>प्रचालनतन्त्रम्</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>उपकरणम्</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>स्थानम्</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>देशः</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>सत्राणि</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>कानि</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>माध्यमम्</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>विफलप्रयासाः</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>अवशिष्टाः सङ्केताः</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>प्रवेशहैण्डलरः</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षागतिविधिः</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>सुरक्षागतिविधिः: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>भवतः खातस्य सुरक्षायाः प्रवेशाः परिवर्तनानि च। यदि भवान् किमपि पश्यति यत् भवता न कृतम्, तर्हि स्वं गुप्तशब्दं परिवर्तयतु, यानि उपकरणानि भवान् न अभिजानाति तानि च निर्गमयतु।</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>अस्य खातस्य सुरक्षायाः प्रवेशाः परिवर्तनानि च।</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>भवतः उपकरणानि</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>गुप्तशब्दपरिवर्तनम्</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>खातं प्रति प्रत्यागमनम्</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>सुरक्षागतिविधिः न अभिलिख्यते</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>सा उपयोक्तृलेखापरीक्षणाभिलेखात् पठ्यते, यस्य सारणी expuser_audit अनुपस्थिता अस्ति अथवा अस्मिन् दत्तांशकोशे न समर्थिता। php update/common/scripts/6.0/createuseraudittable.php सञ्चालयतु, अथवा 6.0.15 इत्यस्य दत्तांशकोशाद्यतनं सञ्चालयतु।</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>अन्तिमाः %days दिवसाः</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>अन्तिमेषु %days दिवसेषु प्रवेशाः</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>अद्यतनी सुरक्षागतिविधिः</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दर्शनम्</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>विफलम्</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>निराकृतम्</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>अद्यापि काचित् सुरक्षागतिविधिः न अभिलिखिता।</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>सुरक्षाघटनाः %days दिवसान् यावत् रक्ष्यन्ते।</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>यावत् प्रशासकः ताः न अपसारयति, तावत् सुरक्षाघटनाः रक्ष्यन्ते।</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>मम प्रवेशदत्तांशस्य अवरोपणम्</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>भवतः सत्राणि सुरक्षाघटनाः च JSON सञ्चिकारूपेण।</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>प्रविष्टः</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>विफलः प्रवेशप्रयासः</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>निर्गतः</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>सत्राणि निर्गमितानि</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>नूतनोपकरणात् प्रवेशः</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>नूतनस्थानात् प्रवेशः</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>परिचयः पुष्टः (&quot;पुष्टिं करोतु यत् भवान् एव&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>परिचयपरीक्षणं विफलम्</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>प्रवेशकुञ्ज्या प्रविष्टः</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>प्रवेशकुञ्ज्या प्रवेशः विफलः</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>प्रवेशः निराकृतः: द्विचरणप्रवेशस्य सङ्केतः अनुपस्थितः अशुद्धः वा</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>द्विचरणप्रवेशस्य अशुद्धः सङ्केतः</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>विफलप्रवेशानन्तरं खातम् आवृतम्</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>खातम् अनावृतम्</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>गुप्तशब्दः परिवर्तितः</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>गुप्तशब्दपरिवर्तनं विफलम्</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>गुप्तशब्दः पुनःस्थापितः</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>नूतनगुप्तशब्दः याचितः</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>विद्युत्पत्रसङ्केतः परिवर्तितः</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>उपयोक्तृनाम परिवर्तितम्</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>द्विचरणप्रवेशः सक्रियीकृतः</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>द्विचरणप्रवेशः निष्क्रियीकृतः</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>पुनःप्राप्तिसङ्केतः उपयुक्तः</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>नूतनाः पुनःप्राप्तिसङ्केताः</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>अनुप्रयोगगुप्तशब्दः निर्मितः</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>अनुप्रयोगगुप्तशब्दः प्रतिसंहृतः</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>प्रवेशकुञ्जी योजिता</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>प्रवेशकुञ्जी अपसारिता</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>खातं सक्रियीकृतम्</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>खातं निष्क्रियीकृतम्</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>सर्वम्</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>प्रवेशाः सत्राणि च</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>खातपरिवर्तनानि</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>अवधानम् अपेक्षितम्</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षागतिविधिः</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>सुरक्षागतिविधिः: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>भवतः खातस्य सुरक्षायाः प्रवेशाः परिवर्तनानि च। यदि भवान् किमपि पश्यति यत् भवता न कृतम्, तर्हि स्वं गुप्तशब्दं परिवर्तयतु, यानि उपकरणानि भवान् न अभिजानाति तानि च निर्गमयतु।</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>भवतः उपकरणानि</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>गुप्तशब्दपरिवर्तनम्</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>अस्मिन् जालस्थले सुरक्षागतिविधिः अद्यापि न अभिलिख्यते।</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>अन्तिमेषु %days दिवसेषु प्रवेशाः</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>विफलप्रयासाः</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>अद्यापि काचित् सुरक्षागतिविधिः न अभिलिखिता।</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>मम प्रवेशदत्तांशस्य अवरोपणम्</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>भवतः सत्राणि सुरक्षाघटनाः च JSON सञ्चिकारूपेण।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>गुप्तशब्दः</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>गुप्तशब्दः द्विचरणप्रवेशस्य सङ्केतः च</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST अन्तरफलकम्</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP अन्तरफलकम्</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>एकल-प्रवेशः</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>सत्राभिलेखनात् पूर्वं प्रविष्टः</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>प्रवेशप्रतिवेदनम्</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>जालस्थले कः प्रविष्टः अस्ति, खातानि कतिवारं प्रविशन्ति कतिवारं च विफलानि भवन्ति, उपयोक्तुः सर्वत्र निर्गमनं च। एतत् प्रत्येकेन सत्रहैण्डलरेण सह कार्यं करोति।</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>सत्रं निर्गमितम्। उपकरणेन पुनः प्रवेष्टव्यम्।</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login इत्यस्य %count सत्राणि निर्गमितानि।</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login इत्यस्य किमपि प्रचलत् सत्रं न आसीत्।</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>एतेन ID, उपयोक्तृनाम्ना विद्युत्पत्रसङ्केतेन वा युक्तं किमपि खातं नास्ति।</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>एतत् भवता उपयुज्यमानं सत्रम् अस्ति। तत् समापयितुं निर्गमनं करोतु।</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>तत् सत्रं पूर्वम् एव समाप्तम् आसीत्।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>पृष्ठस्य कालावधिः समाप्ता आसीत्। किमपि न परिवर्तितम्; कृपया पुनः प्रयतताम्।</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>अस्मिन् जालस्थले सत्राणि न अभिलिख्यन्ते (site.ini [UserSessionSettings] Tracking=disabled)।</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>सारणी expuser_session अनुपस्थिता</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>तस्याः निर्माणानन्तरं सत्राणि अभिलिख्यन्ते: php update/common/scripts/6.0/createusersessiontable.php, अथवा 6.0.15 इत्यस्य दत्तांशकोशाद्यतनम्।</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>इदानीम् अद्य च</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>प्रचलन्ति सत्राणि</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>प्रविष्टाः उपयोक्तारः</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>अद्य प्रवेशाः</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>अद्य विफलप्रयासाः</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>उपयोक्तुः सर्वत्र निर्गमनम्</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>खातस्य प्रत्येकं सत्रं तस्य अग्रिमे अनुरोधे समाप्यते, &quot;माम् स्मरतु&quot; द्वारा रक्षितानि सत्राणि अपि। यदा खातम् अनुचितहस्तेषु स्यात् तदा एतत् उपयुज्यताम्; ततः तस्य गुप्तशब्दं पुनःस्थापयतु।</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>उपयोक्तृ-ID, उपयोक्तृनाम विद्युत्पत्रसङ्केतः वा</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>सर्वत्र निर्गमनम्</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>इदानीं प्रविष्टाः</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>सद्यः उपयुक्तानि %limit दर्शितानि।</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>उपयोक्ता</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>उपकरणम्</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>सङ्केतः</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>प्रविष्टः</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>अन्तिमसक्रियता</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>क्रियाः</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>इदम् उपकरणम्</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>न अभिलिखितम्</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>निर्गमः</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>किमपि सत्रं प्रविष्टं नास्ति।</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>अन्तिमाः %days दिवसाः</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>प्रवेशाः विफलप्रयासाः च उपयोक्तृलेखापरीक्षणाभिलेखात् गण्यन्ते, यः अत्र नास्ति; नूतनानि सत्राणि गण्यन्ते।</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>दिनम्</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>प्रवेशाः</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>विफलप्रयासाः</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>नूतनानि सत्राणि</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>सत्रहैण्डलरः: %handler। सत्राणि expuser_session सारणीतः पठ्यन्ते, अतः प्रतिवेदनं प्रत्येकेन हैण्डलरेण सह कार्यं करोति।</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>भवतः खातस्य कृते सुरक्षाचेतावनी</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>भवतः खाते %login सुरक्षाघटना अभवत्: %event। यदि सः भवान् न आसीत्, तर्हि %url इत्यत्र स्वखातं सुरक्षितं करोतु।</translation>
     </message>
 </context>
 </TS>

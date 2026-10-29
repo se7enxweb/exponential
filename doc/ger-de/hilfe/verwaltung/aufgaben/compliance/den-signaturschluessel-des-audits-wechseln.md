@@ -32,7 +32,7 @@ Tagen) und sofort, wenn er gelesen worden sein könnte
 2. Wechseln Sie:
 
    ```bash
-   ./console exp:audit key rotate --allow-root-user
+   ./console exp:audit key rotate --apply --allow-root-user
    ```
 
    Der neue Schlüssel wird aktiv; alte Schlüssel bleiben für die Archive, die sie signiert haben;
@@ -45,7 +45,7 @@ Tagen) und sofort, wenn er gelesen worden sein könnte
 ## Prüfen, ob es funktioniert hat
 
 - `./console exp:audit status --allow-root-user` zeigt die ID und den Fingerabdruck des neuen Signaturschlüssels.
-- Nach dem nächsten Checkpoint (`./console exp:audit checkpoint --allow-root-user`, um jetzt einen zu erstellen) meldet
+- Nach dem nächsten Checkpoint (`./console exp:audit checkpoint --apply --allow-root-user`, um jetzt einen zu erstellen) meldet
   `./console exp:audit verify --allow-root-user` den Zustand als unversehrt.
 
 Entfernen Sie alte Schlüssel nicht, solange damit signierte Archive bestehen; `exp:audit purge` nennt die Schlüssel, die

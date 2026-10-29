@@ -7,7 +7,7 @@
  * The original header of bin/php/install.php:
  *
  *
- * @description One-command installation, SQLite by default, no kickstart.ini needed
+ * @description One-command installation, SQLite by default, no kickstart.ini needed (a dry run unless --apply)
  * @package   kernel
  * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
  * @license   GNU General Public License v2.0 (or any later version)
@@ -118,9 +118,9 @@ class Install extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $forward = array( '--force' );
-        if ( $flags['dry-run'] )
-            $forward = array( '--dry-run' );
+        // bin/php/install.php has checked --apply and --dry-run (applyRequested(), exit 2 for both) and set
+        // $flags['dry-run'] to the opposite of --apply: the kickstarter installs only with --apply
+        $forward = $flags['dry-run'] ? array( '--dry-run' ) : array( '--apply' );
         if ( $flags['allow-root-user'] )
             $forward[] = '--allow-root-user';
 

@@ -66,7 +66,7 @@ Klassifizierung klassifiziert nur. Blockieren ist Aufgabe von request-shield, de
 `404.log` und `security.log` behalten 5 komprimierte Archive von bis zu 10 MB, gelöscht nach 30 Tagen (404) und 90
 Tagen (security) ([Protokollrotation](../../../funktionen/6.0/log-rotation.md)). Ändern Sie das je Protokoll in
 `settings/override/logviewer.ini.append.php`, `[RotationSettings] MaxAgeDays[security]=<days>`. Das Löschen nach Alter
-läuft mit `./console exp:logs --prune` oder dem Cronjob-Teil `logs` (`php runcronjobs.php logs`).
+läuft mit `./console exp:logs --apply --prune` oder dem Cronjob-Teil `logs` (`php runcronjobs.php logs`).
 
 ## Auf das Gesehene reagieren
 

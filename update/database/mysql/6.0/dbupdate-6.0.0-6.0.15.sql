@@ -636,6 +636,23 @@ CREATE TABLE IF NOT EXISTS expuser_session (
 ) ENGINE=InnoDB;
 
 --
+-- What a signed-in session adds to its row of expuser_session (doc/eng-us/features/6.0/user-sessions.md): the host
+-- the sign-in was made on, the country and place a local GeoIP database names (empty without one) and the second
+-- step of the sign-in (totp, email, recovery). One row per session, removed with it. Without the table the sessions
+-- are tracked as before, without these details; update/common/scripts/6.0/createusersessiontable.php creates it on
+-- any engine. Written with IF NOT EXISTS, so running this statement again changes nothing.
+CREATE TABLE IF NOT EXISTS expuser_session_info (
+  auth_detail varchar(32) NOT NULL DEFAULT '',
+  country varchar(2) NOT NULL DEFAULT '',
+  host varchar(255) NOT NULL DEFAULT '',
+  location varchar(128) NOT NULL DEFAULT '',
+  session_id int(11) NOT NULL DEFAULT '0',
+  user_id int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( session_id ),
+  KEY expuser_session_info_user ( user_id )
+) ENGINE=InnoDB;
+
+--
 -- ezuser.login: one account per login.
 --
 -- A new installation has the unique index ezuser_login from the kernel schema.

@@ -63,7 +63,7 @@ an error page.
 ## After the fix
 
 1. Clear the caches the fix needs; under Velocity its response cache **after** any restart:
-   `./console exp:velocity cache clear --allow-root-user`.
+   `./console exp:velocity cache clear --apply --allow-root-user`.
 2. Confirm from outside; check the error digest for an hour.
 3. Record cause, timeline and fix; hold a [post-incident review](post-incident-review.md) for severity 1.
 

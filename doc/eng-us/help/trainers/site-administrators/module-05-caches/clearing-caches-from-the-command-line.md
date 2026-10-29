@@ -121,7 +121,7 @@ In a terminal, in the root of your training installation:
 8. Clear Velocity's response cache:
 
    ```bash
-   php bin/php/console exp:velocity cache clear
+   php bin/php/console exp:velocity cache clear --apply
    ```
 
 9. Open **Setup > Cache management** in the browser and read the last-cleared column: which clears were made from a

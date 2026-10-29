@@ -110,7 +110,7 @@ Keep[security]=10
 MaxAgeDays[security]=365
 ```
 
-The prune runs when the cronjob part `logs` runs (it is in no default part) or when `./console exp:logs --prune` is
+The prune runs when the cronjob part `logs` runs (it is in no default part) or when `./console exp:logs --apply --prune` is
 called; see [Log viewer and rotation](log-viewer-and-rotation.md).
 
 ## Using the logs in support

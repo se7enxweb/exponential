@@ -48,7 +48,7 @@ or nginx has none of its own ([Application servers](application-servers.md)).
 
 | Layer | Key (in short) | Invalidated by |
 |---|---|---|
-| Velocity response cache | the request of an anonymous visitor; lifetime `[CacheSettings] DefaultTtl` (30 seconds shipped) unless the page's `Cache-Control` says otherwise | lifetime, `./console exp:velocity cache clear` |
+| Velocity response cache | the request of an anonymous visitor; lifetime `[CacheSettings] DefaultTtl` (30 seconds shipped) unless the page's `Cache-Control` says otherwise | lifetime, `./console exp:velocity cache clear --apply` |
 | Role-aware HTTP cache | the content view and the permission context (anonymous, a shared role context, or private) | content change purges (`ContentChangePurges=all` by default), `--clear-id=exphttpcache` |
 | Content view cache | the node, the view and its parameters, and the user's access context | `eZContentCacheManager` on publish, `--clear-tag=content` |
 | Template block cache | the keys written in `{cache-block}`, and its expiry | expiry, `--clear-id=template-block` |

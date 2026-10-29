@@ -7856,6 +7856,74 @@ $schema = array (
       ),
     ),
   ),
+  'expuser_session_info' =>
+  array (
+    'name' => 'expuser_session_info',
+    'fields' =>
+    array (
+      'auth_detail' =>
+      array (
+        'length' => 32,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'country' =>
+      array (
+        'length' => 2,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'host' =>
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'location' =>
+      array (
+        'length' => 128,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'session_id' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'user_id' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' =>
+    array (
+      'PRIMARY' =>
+      array (
+        'type' => 'primary',
+        'fields' =>
+        array (
+          0 => 'session_id',
+        ),
+      ),
+      'expuser_session_info_user' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'user_id',
+        ),
+      ),
+    ),
+  ),
   'expuser_audit' =>
   array (
     'name' => 'expuser_audit',

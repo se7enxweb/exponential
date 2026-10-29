@@ -1857,7 +1857,7 @@ How it works across servers: every lock file (`.<channel>.lock`, `.keys.lock`, `
 daily marker live in the shared LogDir. The chain head is read from the file under the lock at every append, never
 from memory. So any number of servers write one chain per channel, and the cronjob part may run on all of them: one
 run at a time does the work, and the daily tasks run once a day for the cluster. **Generate the keys once before the
-other servers record** (`./console exp:audit checkpoint` on one server), then share or copy
+other servers record** (`./console exp:audit checkpoint --apply` on one server), then share or copy
 `settings/override/audit.ini.append.php` to every server. Two servers with different keys would write different
 genesis values and fail verification. What was checked on the reference installation: the configuration loads and every part accepts it,
 and ten concurrent writers to one channel keep the chain intact (test B2). A multi-server cluster itself was not
@@ -2181,6 +2181,12 @@ only with `Reads=enabled`).
 | `access.session.revoke` | a user's other sessions end after a password change (`[PasswordSettings] EndOtherSessions`): deleted at once by the database session handler, or one session signed out on its next request because its password stamp is out of date | – → count; reason password_change or password_changed | `classes/exppasswordpolicy.php:endOtherSessions`, `classes/exppasswordpolicy.php:endStaleSession` | revoke | notice | on | yes | access | at once |
 | `access.session.revoke` (sessions page) | a user signs out one session or all other sessions at user/sessions, or an administrator with user/sessions signs out a user's sessions at user/sessions/<id> (doc/eng-us/features/6.0/user-sessions.md) | – → count, sessions (row ids), scope (one, others, all), by (user, admin), actor_id; reason user_request or admin | `user/expusersessiontracker.php:auditRevoke` | revoke | notice | on | yes | access | at once |
 | `access.session.new_device` | a sign-in comes from a browser, system and device kind the account has not used within `[UserSessionSettings] RetentionDays`; the "New sign-in" mail goes out | – → session, browser, os, device, method | `user/expusersessiontracker.php:newDevice` | new_device | notice | on | yes | access | at once |
+| `access.session.new_location` | a sign-in comes from a country the account has not signed in from within `[UserSessionSettings] RetentionDays` (only with a local GeoIP database, `GeoIPDatabase`); it goes into the "New sign-in" mail | – → session, country, location, method | `user/expusersessiontracker.php:newDevice` | new_location | notice | on | yes | access | at once |
+| `access.user.two_factor.enroll` | two-step sign-in is turned on for an account (sevenx_authentication_2fa) | – → method | `user/expsigninsecondfactor.php:audit` | enroll | notice | on | yes | access | at once |
+| `access.user.two_factor.remove` | two-step sign-in is turned off or reset | – → method | `user/expsigninsecondfactor.php:audit` | remove | warning | on | yes | access | at once |
+| `access.user.two_factor.recovery_used` | a recovery code signs in in place of the app's code | – → left | `user/expsigninsecondfactor.php:audit` | use | warning | on | yes | access | at once |
+| `access.user.two_factor.recovery_issued` | an account gets a new set of recovery codes | – → count | `user/expsigninsecondfactor.php:audit` | issue | notice | on | yes | access | at once |
+| `access.user.two_factor.verify.failed` | a wrong code at the second step of a web sign-in | – → method | `user/expsigninsecondfactor.php:audit` | verify | notice | on | yes | access | at once |
 | `access.user.lock` | failed logins reach `[UserSettings] MaxNumberOfFailedLogin` | attempts → attempts, enabled | `datatypes/ezuser/ezuser.php:setFailedLoginAttempts` | lock | warning | on | yes | access | at once |
 | `access.user.unlock` | the failed-login counter is reset by an administrator | attempts → 0 | `datatypes/ezuser/ezuser.php:setFailedLoginAttempts` | unlock | notice | on | yes | access | at once |
 | `access.permission.refused` | a module view is refused by policy | – → the policy asked (module/function), limitation that failed | `lib/ezutils/classes/ezmodule.php:handleError` | access | notice | on | yes | access | at once |
@@ -2301,6 +2307,7 @@ only with `Reads=enabled`).
 | `commerce.discount.change` | discount groups or rules change | rule → rule | `ezdiscountrule.php:store`, `ezdiscountrule.php:removeByID`, `ezdiscountsubrule.php:store`, `ezdiscountsubrule.php:remove` | change | info | on | yes | commerce | buffered |
 | `data.export.csv` | content is exported as CSV | – → node, rows, columns | `commands/ezcsvexport.php:run`, `views/content/subitemsexport.php:run` | export | info | on | yes | commerce | buffered |
 | `data.export.package` | a package is exported | – → name, file, format (xml or json), sha256 | `views/package/export.php:run` | export | info | on | yes | commerce | buffered |
+| `data.export.json` | a user downloads the own sign-in data (user/security) | – → sessions, events, file, source | `views/user/security.php:download` | export | info | on | yes | commerce | buffered |
 | `data.export.pdf` | a PDF export is generated | – | `views/content/pdf.php:expModuleViewContentPdfPassthrough` | export | info | off | no | commerce | buffered |
 | `data.import.csv` | CSV is imported | – → rows, created | `commands/ezcsvimport.php:run` | import | info | on | yes | commerce | buffered |
 | `data.import.dba` | a .dba file is imported | – → tables, rows | `commands/ezimportdbafile.php:run` | import | info | on | yes | commerce | buffered |

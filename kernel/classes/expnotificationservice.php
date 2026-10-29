@@ -475,7 +475,7 @@ class expNotificationService
         switch ( $p[1] )
         {
             case 'notification_never_ran':
-                return ezpI18n::tr( $d, '%count events wait and no run of the notification cronjob is recorded. Add the cronjob part "frequent" to the crontab, or run exp:notification:run.', null, array( '%count' => $p[2] ) );
+                return ezpI18n::tr( $d, '%count events wait and no run of the notification cronjob is recorded. Add the cronjob part "frequent" to the crontab, or run exp:notification:run --apply.', null, array( '%count' => $p[2] ) );
             case 'notification_not_run_recently':
                 return ezpI18n::tr( $d, '%count events wait and the last run was more than an hour ago (%time). Is the notification cronjob running?', null, array( '%count' => $p[2], '%time' => date( 'Y-m-d H:i', $p[3] ) ) );
             case 'notification_no_run_recorded':

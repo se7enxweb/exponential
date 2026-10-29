@@ -2,14 +2,14 @@
 title: exp:installcrontab
 audience: developer, admin
 category: examples
-summary: "Show, add or remove the cron job of the installation: the crontab lines that run its cronjob parts (--dry-run says what would change)."
+summary: "Show, add or remove the cron job of the installation: the crontab lines that run its cronjob parts (--add and --remove: dry run unless --apply)."
 keywords: exp:installcrontab, installcrontab, console, command, CLI, installcrontab.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:installcrontab
 
-Show, add or remove the cron job of the installation: the crontab lines that run its cronjob parts (--dry-run says what would change).
+Show, add or remove the cron job of the installation: the crontab lines that run its cronjob parts (--add and --remove: dry run unless --apply).
 
 Script `bin/php/installcrontab.php`, code in `kernel/private/classes/commands/installcrontab.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -30,21 +30,25 @@ when it is active), the schedules [AdminSettings] CrontabSchedule_<part>. --add 
 or appends it and keeps every other line; a part another line of the crontab runs already is left
 out. Run it as the owner of the installation or as root (crontab -u <owner>); otherwise, or without a
 crontab command, it prints the lines to add by hand. Prints PASS or FAIL at the end.
+--add and --remove change nothing without --apply: they show the block and the lines of the crontab
+that would change. --dry-run is still accepted and means the same as no flag; --apply together with
+--dry-run is a usage error (exit 2).
 
 Example: php bin/php/installcrontab.php --show
-         php bin/php/installcrontab.php --add --dry-run
          php bin/php/installcrontab.php --add
-         php bin/php/installcrontab.php --remove
+         php bin/php/installcrontab.php --add --apply
+         php bin/php/installcrontab.php --remove --apply
 ```
 
 ## Options
 
 | Option | Value | Help |
 |---|---|---|
+| `--apply` |  | With --add or --remove: write the crontab (the default shows what would change) |
+| `--dry-run` |  | The default, kept for scripts that pass it: show what would change, change nothing |
 | `--show` |  | The planned lines, the block in the crontab and the last runs (the default) |
 | `--add` |  | Add or update the block |
 | `--remove` |  | Remove the block |
-| `--dry-run` |  | With --add or --remove: show what would change, change nothing |
 | `--admin-siteaccess` | required | The siteaccess of the admin parts (default: [CrontabSettings] AdminSiteAccess, else admin) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

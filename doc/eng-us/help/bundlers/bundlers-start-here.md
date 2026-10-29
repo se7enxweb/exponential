@@ -38,7 +38,7 @@ installation inside your bundle repeatable and safe, and how to keep the people 
   ([Choosing the base](choosing-the-base.md)).
 - **Pin versions.** A release tag never changes; build from tags and keep your lock file
   ([Versions, tags and pinning](versions-tags-and-pinning.md)).
-- **Install unattended.** `php bin/php/console exp:install` or the kickstarter (`kickstart.ini`) do the whole
+- **Install unattended.** `php bin/php/console exp:install --apply` or the kickstarter (`kickstart.ini`) do the whole
   installation without a browser ([The three installers](the-three-installers.md)).
 - **Never ship a known password.** The installers generate a random administrator password when none is given and
   write it to `var/log/initial-admin-password`; public demos are the only exception, with `EXP_DEMO_MODE=1`

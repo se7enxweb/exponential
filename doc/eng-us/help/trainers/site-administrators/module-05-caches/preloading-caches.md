@@ -47,7 +47,7 @@ Source: [Preloading caches](../../../../guides/preloading-caches.md).
    with **Site to warm**, **Page limit** (250, 1 to 5000), **Link depth** (3, 0 to 10) and
    **Also check the images on each page**, then **Start preloading** and **Dry run**, and the last runs.
 3. **One run at a time** (1 minute). A second run, from the page, the shell or cron, is refused while one runs.
-4. **The shell** (2 minutes). `php bin/php/preload.php --siteaccess=site`, with `--dry-run`, `--max-pages`,
+4. **The shell** (2 minutes). `php bin/php/preload.php --apply --siteaccess=site`, with `--dry-run`, `--max-pages`,
    `--max-depth`, `--images`, `-q`. Its last three lines summarize the run; exit code 0 means finished.
 
 ### Common questions
@@ -80,7 +80,7 @@ On your training installation, signed in as an administrator, with a terminal in
 7. In the terminal, run a small preload with the image check:
 
    ```bash
-   php bin/php/preload.php --siteaccess=site --max-pages=20 --max-depth=1 --images
+   php bin/php/preload.php --apply --siteaccess=site --max-pages=20 --max-depth=1 --images
    ```
 
 8. Read its last three lines.

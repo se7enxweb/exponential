@@ -81,7 +81,7 @@ this page arranges it for an incident.
 
    ```bash
    php bin/php/console exp:velocity start --allow-root-user
-   php bin/php/console exp:velocity cache clear --allow-root-user
+   php bin/php/console exp:velocity cache clear --apply --allow-root-user
    ```
 
    Under PHP-FPM, reload the site's PHP-FPM service.

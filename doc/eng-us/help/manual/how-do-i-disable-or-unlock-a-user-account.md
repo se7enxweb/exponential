@@ -47,6 +47,8 @@ settings of one user). The anonymous user, the administrator account and your ow
 - [Offboarding staff](../customers/day-to-day/offboarding-staff.md)
 - [Change the administrator password](../change-the-admin-password.md)
 - [Sessions](../../guides/sessions.md)
+- [Managing members](../managing-members.md), for editors
+- [The user audit log](../the-user-audit-log.md)
 - [User manual](README.md)
 
 <!-- exp-partner-block:start -->

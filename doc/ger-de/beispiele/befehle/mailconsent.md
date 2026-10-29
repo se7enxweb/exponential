@@ -2,14 +2,14 @@
 title: exp:mailconsent
 audience: developer, admin
 category: examples
-summary: "Das Einwilligungsprotokoll der E-Mail-Einstellungen: auflisten, als CSV exportieren, nach Aufbewahrungsfrist bereinigen."
+summary: "Das Einwilligungsprotokoll der E-Mail-Einstellungen: auflisten, als CSV exportieren, nach Aufbewahrungsfrist aufräumen (Probelauf, außer mit --apply)."
 keywords: Konsole, Befehl, exp:mailconsent, mailconsent, console, command, CLI, mailconsent.php, exp:mail:consent
 type: generated
 generated: exp:help:examples
 ---
 # exp:mailconsent
 
-Das Einwilligungsprotokoll der E-Mail-Einstellungen: auflisten, als CSV exportieren, nach Aufbewahrungsfrist bereinigen.
+Das Einwilligungsprotokoll der E-Mail-Einstellungen: auflisten, als CSV exportieren, nach Aufbewahrungsfrist aufräumen (Probelauf, außer mit --apply).
 
 Skript `bin/php/mailconsent.php`, Code in `kernel/private/classes/commands/mailconsent.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -28,12 +28,15 @@ E-mail consent log
   list                      the newest rows (time, person, category, action, old -> new, source)
   export                    the rows as CSV (--output, or the screen); the CSV holds addresses and IPs
   cleanup                   retention: remove the rows of people who are gone after RetentionDays, expired
-                            confirmations and old suppression entries (--dry-run counts)
+                            confirmations and old suppression entries; counts only, --apply removes
 Filters: --user, --email, --category, --action, --source, --from, --to (YYYY-MM-DD).
+cleanup without --apply removes nothing: it counts what it would remove. --dry-run is still
+accepted and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).
 
 ./console exp:mail:consent list --category=newsletter --limit=20
 ./console exp:mail:consent export --from=2026-01-01 --output=var/tmp/consent.csv
-./console exp:mail:consent cleanup --dry-run
+./console exp:mail:consent cleanup
+./console exp:mail:consent cleanup --apply
 ```
 
 ## Optionen
@@ -50,7 +53,8 @@ Filters: --user, --email, --category, --action, --source, --from, --to (YYYY-MM-
 | `--limit` | erforderlich | list: wie viele (Standard 50) |
 | `--offset` | erforderlich | list: so viele überspringen |
 | `--output` | erforderlich | export: die Datei (Modus 0600) |
-| `--dry-run` |  | cleanup: nur zählen |
+| `--apply` |  | cleanup: die Zeilen entfernen (Standard zählt sie und entfernt nichts) |
+| `--dry-run` |  | cleanup: der Standard, beibehalten für Skripte, die die Option übergeben: nur zählen |
 | `--addresses` |  | list: Adressen zeigen, statt sie zu verbergen |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

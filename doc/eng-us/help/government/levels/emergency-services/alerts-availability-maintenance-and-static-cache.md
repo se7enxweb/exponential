@@ -31,7 +31,7 @@ the pages linked; test each on your own installation before an incident tests it
 |---|---|---|---|
 | View cache | stores rendered content pages | publishing (the object and related pages), **Clear cache** on a node | [Caches](../../../../guides/caches.md) |
 | Static cache | pages stored as plain files the web server sends without starting Exponential | publishing refreshes touched pages; **Setup > Cache management**, *Static content cache* | [Static cache generator](../../../../features/6.0/static-cache-generator.md) |
-| Velocity response cache | responses held by the Velocity web server | `./console exp:velocity cache clear` | [Velocity response cache](../../../../features/6.0/velocity-response-cache.md) |
+| Velocity response cache | responses held by the Velocity web server | `./console exp:velocity cache clear --apply` | [Velocity response cache](../../../../features/6.0/velocity-response-cache.md) |
 | CDN or reverse proxy | copies at the edge | the CDN's purge | [HTTP caching and CDNs](../../../creators/website-creators/http-caching-and-cdns.md) |
 
 ## The static cache
@@ -56,7 +56,7 @@ refreshes them.
 | Publish the Incident update | the on-call publisher |
 | View cache of the object and related pages cleared | automatic |
 | Static pages touched by the publish, and `AlwaysUpdateArray[]` pages, refreshed | automatic, during the publish (unless `CronjobCacheClear=enabled` defers it to the `staticcache_cleanup` cronjob part) |
-| Velocity response cache | expires by its lifetime, or clear it: `./console exp:velocity cache clear` |
+| Velocity response cache | expires by its lifetime, or clear it: `./console exp:velocity cache clear --apply` |
 | CDN | expires by its lifetime, or purge |
 | Check logged out, on a phone, with a fresh browser | the publisher or a second person |
 

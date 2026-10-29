@@ -105,7 +105,7 @@ Installation.
 7. Ordnen Sie, was Sie gesehen haben, einer Zeile der Tabelle *Welche Seite sieht der Besucher?* im Runbook für eine
    nicht erreichbare Website zu und nennen Sie die Ursache.
 8. Beheben Sie es mit der Maßnahme des Runbooks und leeren Sie dann den Antwort-Cache:
-   `php bin/php/console exp:velocity cache clear`.
+   `php bin/php/console exp:velocity cache clear --apply`.
 9. Messen Sie die Website: `php bin/php/console exp:benchmark --requests=20`. Notieren Sie Median und p90.
 10. Prüfen Sie: Startseite, Anmeldung an der Administration und eine Testveröffentlichung in Ihrem Kursbereich.
 11. Schreiben Sie eine Störungsnotiz in fünf Zeilen: Beginn, Erkennung, Ursache, Behebung, Ende und was eine

@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Fametrahana &gt; Asa cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Mbola tsy nisy ampahany asa cron nandeha: miandry ny filaharan&apos;asa, ny fanafarana, ny fampandrenesana ary ny fanondroana fikarohana. Alefaso ny php bin/php/installcrontab.php --add --apply, na ampio ao amin&apos;ny crontab ireo andalana avy amin&apos;ny --show.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Fampisehoana ho an'ny besinimaro ity fametrahana ity: izay rehetra afaka mahafantatra ny teny miafin'ny mpitantana azy, ary tsy azo ovaina na averina amin'ny laharana voalohany ny teny miafin'ny mpitantana. Aza mampiditra zavatra tsy ho an'ny besinimaro eto.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ny fitaovanao</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Asa momba ny fiarovana</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Iza no nanova, niditra na nolavina, isaky ny kaonty; sivano sy avoahy.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Tatitra momba ny fidirana</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Iza no tafiditra, ny fidirana sy ny tsy fahombiazana isan&apos;andro; avoahy na aiza na aiza ny mpampiasa iray.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Ny fotoam-pidirana lany daty an'ny mpikarakara PHP dia esorin'ny PHP mihitsy (session.gc_maxlifetime), fa tsy ity pejy ity na ny ampahany asa cron session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Voatanisa ao amin&apos;ny tatitra momba ny fidirana ny fotoam-pidirana misokatra an&apos;ny mpampiasa tsirairay, ary azo avoaka ao, ary miasa amin&apos;ny mpitantana fotoam-pidirana rehetra io tatitra io.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Sokafy ny tatitra momba ny fidirana</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ mba hampandehanana ny kaontinao.</translation>
     <message>
         <source>None yet</source>
         <translation>Mbola tsy misy</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Asa momba ny fiarovana</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Ny fidiranao farany, ny andrana tsy nahomby ary ny fanovana ny teny miafinao, ny adiresy mailakao ary ny fidirana roa dingana.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Ny fidirana farany, ny andrana tsy nahomby ary ny fanovana momba ny fiarovana amin&apos;ity kaonty ity.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Jereo ny asa</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Fidirana tsy nahomby: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ Jereo ny pejin'ny fepetra raha mila fanazavana fanampiny.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Tsy voasoratra ny crontab (%reason). Ampio ireto andalana ireto ao amin'ny crontab an'ny mpampiasa ampiasain'ny tranonkala, raha tsy izany dia tsy handeha mihitsy ny filaharana, ny fampidirana, ny fampandrenesana ary ny fanondroana fikarohana:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Ny fametrahana indray dia atao amin&apos;ny kickstarter (%file, avy eo php bin/php/kickstarter.php run --apply) na amin&apos;ny fametrahana vaovao.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Nolavin'ny fitaterana mailaka ny hafatra %count tamin'ny fandefasana farany. Hamarino ny mpizara mailaka sy ny site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Zava-mitranga %count no miandry ary tsy misy fandehanan&apos;ny asa cron fampandrenesana voarakitra. Ampio ao amin&apos;ny crontab ny ampahany asa cron &quot;frequent&quot;, na alefaso ny exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>Choose another site or section with the node picker</source>
         <translation>Safidio tranonkala na fizarana hafa amin'ny mpisafidy fihaonana</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Ny mpitantana ny rafitra ihany no afaka manova ny tompony: alefaso ho root ny ./console exp:content-check --fix-permissions --apply.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>empty</source>
         <translation>foana</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Mihoatra ny herintaona ny fanalahidy fanaovan-tsonia: ovay amin&apos;ny exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>not sent</source>
         <translation>tsy nalefa</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Rakitin&apos;ny asa cron fampandrenesana eto ny fandehanany tsirairay. Ampio ao amin&apos;ny crontab ny ampahany frequent, na alefaso ny exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Ampiasao ny console: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>None.</source>
         <translation>Tsy misy.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>amin&apos;ny app mpanamarina</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>amin&apos;ny kaody alefa amin&apos;ny mailaka</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>amin&apos;ny kaody famerenana</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>amin&apos;ny fanalahidin&apos;ny fidirana</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>amin&apos;ny kaonty ivelany</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Asa momba ny fiarovana</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Aseho ho tambajotra; tehirizina araka ny fikirana fiarovana angona an&apos;ny tranonkala ny adiresy.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Tsy voarakitra</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Toerana</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>tombantombana</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>Manage devices</source>
         <translation>Tantano ny fitaovana</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>amin&apos;ny app mpanamarina</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>amin&apos;ny kaody alefa amin&apos;ny mailaka</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>amin&apos;ny kaody famerenana</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>amin&apos;ny fanalahidin&apos;ny fidirana</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>amin&apos;ny kaonty ivelany</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Asa momba ny fiarovana</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Tsy voarakitra</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Toerana</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>tombantombana</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>View the sessions of this user</source>
         <translation>Jereo ny fotoam-pidiran'ity mpampiasa ity</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Vao avy nampiasaina hidirana avy amin&apos;ny toerana iray tsy nidirany vao haingana ny kaontinao %login ao amin&apos;ny %site:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Toerana tombantombana</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser amin'ny %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Tatitra momba ny fidirana</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>unknown</source>
         <translation>tsy fantatra</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Arovy ny kaontinao</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Nisy kaody famerenana nampiasaina hidirana ao amin&apos;ny kaontinao %login ao amin&apos;ny %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Nisy kaody famerenana nampiasaina</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kaonty</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Adiresy tombantombana</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Angataho teny miafina vaovao mba hidirana indray, na mifandraisa amin&apos;ny mpitantana ny tranonkala.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Angataho teny miafina vaovao</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Indray mandeha ihany no mandeha ny kaody famerenana tsirairay. Raha very ny findainao, amboary indray ny app mpanamarina anao ary tehirizo amin&apos;ny toerana azo antoka ireo kaody famerenana vaovao.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Andrana fidirana tsy nahomby tamin&apos;ny kaontinao</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Manomboka izao, mangataka kaody ankoatra ny teny miafinao ny fidirana. Raha ianao no nanao izany, tsy mila manao na inona na inona ianao.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Raha ianao izany ary hadinonao ny teny miafinao, angataho vaovao. Raha tsy izany, misafidiana teny miafina matanjaka kokoa ary alefaso ny fidirana roa dingana.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Raha tsy ianao izany, mety misy olona mahafantatra ny teny miafinao: ovay izao ary jereo hoe aiza no tafiditra ny kaontinao.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Kaody famerenana sisa</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Jereo ny fitaovanao</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Fampitandremana momba ny fiarovana</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Nisy olona nanandrana niditra tao amin&apos;ny kaontinao %login ao amin&apos;ny %site tamin&apos;ny teny miafina diso %count indray mandeha nisesy.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Nisy zava-mitranga momba ny fiarovana tamin&apos;ny kaontinao %login ao amin&apos;ny %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Fampitandremana momba ny fiarovana ny kaontinao ity. Alefa isaky ny fanovana toy izao izy ary tsy azo atsahatra.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ora</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Natsahatra ny fidirana roa dingana ho an&apos;ny kaontinao %login ao amin&apos;ny %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Natsahatra ny fidirana roa dingana</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Nalefa ny fidirana roa dingana ho an&apos;ny kaontinao %login ao amin&apos;ny %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Nalefa ny fidirana roa dingana</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Nohidiana ny kaontinao %login ao amin&apos;ny %site taorian&apos;ny fidirana tsy nahomby be loatra.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Ny teny miafinao irery ihany no miaro ny kaontinao izao. Raha tsy ianao no nanao izany, alefaso indray ny fidirana roa dingana rehefa avy nanova ny teny miafinao ianao.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Nohidiana ny kaontinao</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Asa momba ny fiarovana</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Asa momba ny fiarovana an&apos;i %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Tafiditra</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Andrana fidirana tsy nahomby</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Nivoaka</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Navoaka ny fotoam-pidirana</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Fidirana avy amin&apos;ny fitaovana vaovao</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Fidirana avy amin&apos;ny toerana vaovao</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Voamarina ny maha-izy azy (&quot;Hamarino fa ianao izany&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Tsy nahomby ny fanamarinana ny maha-izy azy</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Niditra tamin&apos;ny fanalahidin&apos;ny fidirana</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Tsy nahomby ny fidirana tamin&apos;ny fanalahidin&apos;ny fidirana</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Nolavina ny fidirana: tsy misy na diso ny kaody roa dingana</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kaody roa dingana diso</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Nohidiana ny kaonty taorian&apos;ny fidirana tsy nahomby</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Novahana ny kaonty</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Novaina ny teny miafina</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Tsy nahomby ny fanovana ny teny miafina</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Naverina ny teny miafina</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Nangatahina teny miafina vaovao</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Novaina ny adiresy mailaka</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Novaina ny anaran&apos;ny mpampiasa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Nalefa ny fidirana roa dingana</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Natsahatra ny fidirana roa dingana</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Nampiasaina ny kaody famerenana</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kaody famerenana vaovao</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Noforonina ny teny miafina app</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Nofoanana ny teny miafina app</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Nampiana fanalahidin&apos;ny fidirana</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Nesorina ny fanalahidin&apos;ny fidirana</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Nalefa ny kaonty</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Natsahatra ny kaonty</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Rehetra</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Fidirana sy fotoam-pidirana</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Fanovana ny kaonty</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Mila fiheverana</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>nataonao</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>nataon&apos;ny mpampiasa</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>nataon&apos;i %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Fomba</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Mpitety</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Rafitra fiasa</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Fitaovana</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Toerana nidirana</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Firenena</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Fotoam-pidirana</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Iza amin&apos;ireo</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Fantsona</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Andrana tsy nahomby</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Kaody sisa</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Mpitantana fidirana</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Asa momba ny fiarovana</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Asa momba ny fiarovana an&apos;i %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Ny fidirana sy ny fanovana momba ny fiarovana ny kaontinao. Raha mahita zavatra tsy nataonao ianao, ovay ny teny miafinao ary avoahy ireo fitaovana tsy fantatrao.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Ny fidirana sy ny fanovana momba ny fiarovana an&apos;ity kaonty ity.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ny fitaovanao</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Ovay ny teny miafina</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Miverina any amin&apos;ny kaonty</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Tsy voarakitra ny asa momba ny fiarovana</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Vakiana avy amin&apos;ny diarin&apos;ny fanaraha-maso ny mpampiasa izy, izay tsy misy na tsy tohanana amin&apos;ity tahiry angona ity ny tabilaony expuser_audit. Alefaso ny php update/common/scripts/6.0/createuseraudittable.php, na ny fanavaozana ny tahiry angona an&apos;ny 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ireo %days andro farany</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Fidirana nandritra ireo %days andro farany</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Asa farany momba ny fiarovana</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Asehoy</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>tsy nahomby</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>nolavina</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Mbola tsy misy asa momba ny fiarovana voarakitra.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Tehirizina mandritra ny %days andro ny zava-mitranga momba ny fiarovana.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Tehirizina mandra-pesorin&apos;ny mpitantana iray ny zava-mitranga momba ny fiarovana.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Alaivo ny angona momba ny fidirako</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ny fotoam-pidiranao sy ny zava-mitranga momba ny fiarovana ho rakitra JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Tafiditra</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Andrana fidirana tsy nahomby</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Nivoaka</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Navoaka ny fotoam-pidirana</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Fidirana avy amin&apos;ny fitaovana vaovao</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Fidirana avy amin&apos;ny toerana vaovao</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Voamarina ny maha-izy azy (&quot;Hamarino fa ianao izany&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Tsy nahomby ny fanamarinana ny maha-izy azy</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Niditra tamin&apos;ny fanalahidin&apos;ny fidirana</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Tsy nahomby ny fidirana tamin&apos;ny fanalahidin&apos;ny fidirana</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Nolavina ny fidirana: tsy misy na diso ny kaody roa dingana</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kaody roa dingana diso</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Nohidiana ny kaonty taorian&apos;ny fidirana tsy nahomby</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Novahana ny kaonty</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Novaina ny teny miafina</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Tsy nahomby ny fanovana ny teny miafina</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Naverina ny teny miafina</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Nangatahina teny miafina vaovao</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Novaina ny adiresy mailaka</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Novaina ny anaran&apos;ny mpampiasa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Nalefa ny fidirana roa dingana</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Natsahatra ny fidirana roa dingana</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Nampiasaina ny kaody famerenana</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kaody famerenana vaovao</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Noforonina ny teny miafina app</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Nofoanana ny teny miafina app</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Nampiana fanalahidin&apos;ny fidirana</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Nesorina ny fanalahidin&apos;ny fidirana</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Nalefa ny kaonty</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Natsahatra ny kaonty</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Rehetra</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Fidirana sy fotoam-pidirana</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Fanovana ny kaonty</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Mila fiheverana</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Asa momba ny fiarovana</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Asa momba ny fiarovana an&apos;i %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Ny fidirana sy ny fanovana momba ny fiarovana ny kaontinao. Raha mahita zavatra tsy nataonao ianao, ovay ny teny miafinao ary avoahy ireo fitaovana tsy fantatrao.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ny fitaovanao</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Ovay ny teny miafina</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Mbola tsy voarakitra amin&apos;ity tranonkala ity ny asa momba ny fiarovana.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Fidirana nandritra ireo %days andro farany</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Andrana tsy nahomby</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Mbola tsy misy asa momba ny fiarovana voarakitra.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Alaivo ny angona momba ny fidirako</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ny fotoam-pidiranao sy ny zava-mitranga momba ny fiarovana ho rakitra JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Teny miafina</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Teny miafina sy kaody roa dingana</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Fifandraisana REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Fifandraisana SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Fidirana tokana</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Niditra talohan&apos;ny nandraketana ny fotoam-pidirana</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Tatitra momba ny fidirana</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Iza no tafiditra ao amin&apos;ny tranonkala, impiry no miditra sy tsy mahomby ny kaonty, ary ny famoahana mpampiasa iray na aiza na aiza. Miasa amin&apos;ny mpitantana fotoam-pidirana rehetra izy.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Navoaka ny fotoam-pidirana. Tsy maintsy miditra indray ilay fitaovana.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Navoaka tamin&apos;ny fotoam-pidirana %count i %login.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Tsy nanana fotoam-pidirana mandeha i %login.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Tsy misy kaonty manana izany ID, anaran&apos;ny mpampiasa na adiresy mailaka izany.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Ity no fotoam-pidirana ampiasainao. Mba hamaranana azy, mivoaha.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Efa nifarana io fotoam-pidirana io.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Lany daty ny pejy. Tsy nisy niova; azafady, andramo indray.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Tsy voarakitra amin&apos;ity tranonkala ity ny fotoam-pidirana (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tsy misy ny tabilao expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Voarakitra ny fotoam-pidirana rehefa voaforona izy: php update/common/scripts/6.0/createusersessiontable.php, na ny fanavaozana ny tahiry angona an&apos;ny 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Izao sy anio</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Fotoam-pidirana mandeha</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Mpampiasa tafiditra</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Fidirana anio</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Andrana tsy nahomby anio</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Avoahy na aiza na aiza ny mpampiasa iray</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Mifarana amin&apos;ny fangatahana manaraka azy ny fotoam-pidirana tsirairay an&apos;ny kaonty, ao anatin&apos;izany ireo tazonin&apos;ny &quot;Tadidio aho&quot;. Ampiasao izany rehefa mety ho latsaka eny an-tanana diso ny kaonty iray; avy eo averino ny teny miafiny.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID mpampiasa, anaran&apos;ny mpampiasa na adiresy mailaka</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Mivoaha na aiza na aiza</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Tafiditra izao</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Aseho ireo %limit nampiasaina farany.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mpampiasa</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Fitaovana</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adiresy</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Tafiditra</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Nihetsika farany</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Hetsika</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ity fitaovana ity</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Tsy voarakitra</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Mivoaha</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Tsy misy fotoam-pidirana tafiditra.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ireo %days andro farany</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Isaina avy amin&apos;ny diarin&apos;ny fanaraha-maso ny mpampiasa, izay tsy misy, ny fidirana sy ny andrana tsy nahomby; mbola isaina ihany ny fotoam-pidirana vaovao.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Andro</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Fidirana</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Andrana tsy nahomby</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Fotoam-pidirana vaovao</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Mpitantana fotoam-pidirana: %handler. Vakiana avy amin&apos;ny tabilao expuser_session ny fotoam-pidirana, ka miasa amin&apos;ny mpitantana rehetra ny tatitra.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Fampitandremana momba ny fiarovana ny kaontinao</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Nisy zava-mitranga momba ny fiarovana tamin&apos;ny kaontinao %login: %event. Raha tsy ianao izany, arovy ny kaontinao ao amin&apos;ny %url.</translation>
     </message>
 </context>
 </TS>

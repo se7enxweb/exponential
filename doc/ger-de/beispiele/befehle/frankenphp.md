@@ -33,6 +33,8 @@ php bin/php/frankenphp.php --help
 | `--keep-global` | erforderlich |  |
 | `--https` |  |  |
 | `--no-https` |  |  |
+| `--apply` |  | die schreibenden Befehle (config set\|unset, cache clear, install ...): die Änderung vornehmen; ohne die Option sind sie ein Probelauf, wie bei exp:velocity |
+| `--dry-run` |  | der Standard der schreibenden Befehle; wird an exp:velocity weitergegeben |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>सेटआप &gt; Cronjobs</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>दासिम मोनसेबो क्रनजब बाहागो चलावजायाखै: खामानि लाइन, इम्पोर्टफोर, खौसिनायफोर आरो नायनाय इन्डेक्स नेथ्रोमदों. php bin/php/installcrontab.php --add --apply चलाव, नङाब्ला --show नि सारिफोरखौ crontab आव जोराव.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>बे इन्स्टलेसनआ गासैयारि डेमोसे: जाहोन्बो बेनि अडमिनिस्ट्रेटर पासओयार्डखौ बुझो, आरो अडमिनिस्ट्रेटर पासओयार्ड सोलोंथाय नाया फिन सेट खालामनो हायाखै. बेयाव गोबां गाबनाय खालामनाय ग्रा.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>नोंथांनि यन्त्रफोर</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरखा खामानि</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>एकाउन्ट फ्रामबोआव सोर सोलायदों, लगइन खालामदों एबा नेवसिजादों; फिल्टार आरो एक्सपोर्ट खालाम।</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>लगइन रिपर्ट</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>सोर लगइन जादों, सान गोनांथि लगइन आरो फेलफोर; मोनसे बेबहार खालामग्राखौ जायगा जायगानिफ्राय लगआउट खालाम.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP हैन्डलारनि सोमोय खुनायनाय सेसनफोरखौ PHP गावनै आगाय खालामो (session.gc_maxlifetime), बे फोथा नैबा session_gc cronjob गोबामआ मा।</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>बेबहार खालामग्रा गासैनि लगइन जानाय सेसनफोरखौ लगइन रिपर्टआव दिन्थियो आरो बेनिफ्रायनो लगआउट खालामो; बे रिपर्टआ गासै सेसन हैन्डलारनैलाय खामानि मावो.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>लगइन रिपर्ट खेव</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>दिनै मुं</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरखा खामानि</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>नोंथांनि गोदान लगइनफोर, फेल जानाय नाजानायफोर आरो नोंथांनि पासओयार्ड, इ-मेइल ठिकाना आरो बाहागो निफ्राय लगइनआव जानाय सोलायनायफोर.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>बे एकाउन्टनि गोदान लगइनफोर, फेल जानाय नाजानायफोर आरो सुरखा सोलायनायफोर.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>खामानिखौ नायफिन</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>फेल जानाय लगइन: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>क्रनटेब लिरनाय जाया (%reason). साइट चलानाय बेबहार खालामग्रानि क्रनटेबआव बे लाइनफोरखौ जोराव, नाथाय लाइन, इम्पोर्ट, खौसिनाय आरो नायनाय इन्डेक्स गासैबो चलाया:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>फिन इन्स्टल खालामनायखौ किकस्टार्टारजों (%file, उनाव php bin/php/kickstarter.php run --apply) नङाब्ला गोदान इन्स्टलजों खालामो.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>जेबेसेनि चलानायआव इ-मेइल ट्रान्सपोर्टआ %count बिबान नाजा. इ-मेइल सार्भार आरो site.ini MailSettings नायो.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count घटना नेथ्रोमदों आरो खौसिनाय क्रनजबनि मोनसेबो चलावनाय रैखाजायाखै. क्रनजब बाहागो &quot;frequent&quot; खौ crontab आव जोराव, नङाब्ला exp:notification:run --apply चलाव.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>नोड सायख्राग्राजों मेया साइट नङा सेक्सन सायख्रा</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>सिस्टेम अडमिनिस्ट्रेटरसोल गाहाम मानसिखौ सोलायनो हायो: root बादि ./console exp:content-check --fix-permissions --apply चलाव.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>खालि</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>सही कीआ मोनसे बोसोरनिख्रुइ बांसिन गोजाम जाबाय: exp:audit key rotate --apply जों बेखौ सोलाय.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>बाहायाखै</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>खौसिनाय क्रनजबआ बेनि गासै चलावनायखौ बेयाव रैखायो. बाहागो frequent खौ crontab आव जोराव, नङाब्ला exp:notification:run --apply चलाव.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>कनसोल बाहाय: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>मुं.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>सिनायथि एपजों</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>इ-मेइलजों मोननाय कडजों</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>फिन मोननाय कडजों</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>पासकीजों</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>बाहेरनि एकाउन्टजों</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरखा खामानि</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>बेनि नेटवर्क बादि दिन्थिनाय; ठिकानाखौ साइटनि डेटा रैखाथि सेटिंआव बुंनाय बादि दोनो.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>रैखाजायाखै</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>थान</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>खम खम</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>यन्त्रफोर बेसेद खालाम</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>सिनायथि एपजों</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>इ-मेइलजों मोननाय कडजों</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>फिन मोननाय कडजों</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>पासकीजों</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>बाहेरनि एकाउन्टजों</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरखा खामानि</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>रैखाजायाखै</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>थान</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>खम खम</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>बे बेबहारग्रानि सेसन नाय</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site आव नोंथांनि एकाउन्ट %login जों दानो मोनसे थाननिफ्राय लगइन खालामनाय जादों, जेराव गोदान सोमोयाव लगइन जायाखैमोन:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>खम खम थान</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os आव %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>लगइन रिपर्ट</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>सिन्हाखै</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>नोंथांनि एकाउन्टखौ रैखा</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site आव नोंथांनि एकाउन्ट %login आव लगइन खालामनो मोनसे फिन मोननाय कड बाहायनाय जादों.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>मोनसे फिन मोननाय कड बाहायनाय जादों</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>एकाउन्ट</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>खम खम ठिकाना</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>फिन लगइन खालामनो गोदान पासओयार्ड नाग, नङाब्ला साइटनि अडमिनिस्ट्रेटरफोरजों सोमोन्दो खालाम.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>गोदान पासओयार्ड नाग</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>गासै फिन मोननाय कडआ मोनथेवल&apos; खामानि मावो. नोंथांनि फोनआ गोमाब्ला, नोंथांनि सिनायथि एपखौ फिन सेट खालाम आरो गोदान फिन मोननाय कडफोरखौ मोनसे रैखाथि थानाव दोन.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>नोंथांनि एकाउन्टआव फेल जानाय लगइन नाजानायफोर</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>दिनिनिफ्राय लगइन खालामनाय सोमोयाव नोंथांनि पासओयार्डनि अनगायै मोनसे कडबो नागोन. बेखौ नोंथाङो खालामनायब्ला, नोंथाङा जेबो खालामनांगौ.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>बेयो नोंथाङोसो जायोब्ला आरो नोंथाङा नोंथांनि पासओयार्ड बावगारनायब्ला, गोदान पासओयार्ड नाग. नङाब्ला, गेलेमसिन पासओयार्ड सायख्रा आरो बाहागो निफ्राय लगइनखौ चालु खालाम.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>बेखौ नोंथाङा खालामाखैब्ला, सोरबा नोंथांनि पासओयार्डखौ मिथिनो हाया: बेखौ दानो सोलाय आरो नोंथांनि एकाउन्टआ बबेयाव लगइन जादों बेखौ नाय.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>गोनां फिन मोननाय कडफोर</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>नोंथांनि यन्त्रफोरखौ नायफिन</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>सुरखा सांग्रांथि</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>सोरबा %site आव नोंथांनि एकाउन्ट %login आव गाज्रि पासओयार्डजों गोरोबै %count खेप लगइन खालामनो नाजाखो.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site आव नोंथांनि एकाउन्ट %login आव मोनसे सुरखा घटना जाखो.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>बेयो नोंथांनि एकाउन्टनि सायाव मोनसे सुरखा सांग्रांथि. बेखौ बेबादि गासै सोलायनायआव दैथायो आरो बेखौ बन्द खालामनो हाया.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>सोमोय</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site आव नोंथांनि एकाउन्ट %login नि थाखाय बाहागो निफ्राय लगइनखौ बन्द खालामनाय जादों.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>बाहागो निफ्राय लगइनखौ बन्द खालामनाय जादों</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site आव नोंथांनि एकाउन्ट %login नि थाखाय बाहागो निफ्राय लगइनखौ चालु खालामनाय जादों.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>बाहागो निफ्राय लगइनखौ चालु खालामनाय जादों</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site आव नोंथांनि एकाउन्ट %login आ गोबाव फेल जानाय लगइननि उनाव लक जादों.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>नोंथांनि एकाउन्टआ दा नोंथांनि पासओयार्डजोंसोल रैखाथि. बेखौ नोंथाङा खालामाखैब्ला, नोंथांनि पासओयार्ड सोलायनायनि उनाव बाहागो निफ्राय लगइनखौ फिन चालु खालाम.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>नोंथांनि एकाउन्टआ लक जादों</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरखा खामानि</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>सुरखा खामानि: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>लगइन जादों</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>फेल जानाय लगइन नाजानाय</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>लगआउट जादों</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>सेसनफोर लगआउट जादों</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>गोदान डिभाइसनिफ्राय लगइन</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>गोदान थाननिफ्राय लगइन</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>सिनायथि थार खालामनाय जादों (&quot;नों जानाय निश्चित खालाम&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>सिनायथि नायनाय फेल जादों</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>पासकीजों लगइन जादों</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>पासकीजों लगइन फेल जादों</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>लगइन नाजा खालामनाय: बाहागो निफ्राय लगइननि कडआ गैया नङाब्ला गाज्रि</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>बाहागो निफ्राय लगइननि गाज्रि कड</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>फेल जानाय लगइननि उनाव एकाउन्ट लक जादों</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>एकाउन्ट आनलक जादों</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>पासओयार्ड सोलायनाय जादों</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>पासओयार्ड सोलायनाय फेल जादों</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>पासओयार्ड रिसेट जादों</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>गोदान पासओयार्ड नागनाय जादों</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>इ-मेइल ठिकाना सोलायनाय जादों</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>बेबहारग्रानि मुं सोलायनाय जादों</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>बाहागो निफ्राय लगइन चालु जादों</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>बाहागो निफ्राय लगइन बन्द जादों</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>फिन मोननाय कड बाहायनाय जादों</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>गोदान फिन मोननाय कडफोर</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>एप पासओयार्ड सर्जि</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>एप पासओयार्ड नाजा खालाम</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>पासकी जोरावनाय जादों</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>पासकी आगायनाय जादों</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>एकाउन्ट चालु जानाय</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>एकाउन्ट बन्द जानाय</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>जोबोद</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>लगइन आरो सेसनफोर</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>एकाउन्ट सोलायनायफोर</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>मोन गोसो होनांगौ</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>नोंथाङो खालामनाय</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>बेबहार खालामग्राया खालामनाय</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>खालामग्रा: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>आदब</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>ब्राउजार</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>सिस्टेम</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>डिभाइस</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>जायगा</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>देश</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>सेसनफोर</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>बबे</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>लामा</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>फेल जानाय नाजानायफोर</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>गोनां कडफोर</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>लगइन हैन्डलार</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरखा खामानि</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>सुरखा खामानि: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>नोंथांनि एकाउन्टनि सुरखाजों सोमोन्दो थानाय लगइन आरो सोलायनायफोर. नोंथाङा खालामाखै जेबो मुवा नुयोब्ला, नोंथांनि पासओयार्ड सोलाय आरो नोंथाङा सिनायै डिभाइसफोरखौ लगआउट खालाम.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>बे एकाउन्टनि सुरखाजों सोमोन्दो थानाय लगइन आरो सोलायनायफोर.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>नोंथांनि यन्त्रफोर</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>पासओयार्ड सोलोंथाय</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>एकाउन्टआव खेबसे</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>सुरखा खामानि रैखाजाया</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>बेखौ बेबहार खालामग्रानि अडिट लगनिफ्राय फरायो, जेनि expuser_audit टेबुलआ गैया नङाब्ला बे डेटाबेसआव थाखो होनाय गैया. php update/common/scripts/6.0/createuseraudittable.php चलाव, नङाब्ला 6.0.15 नि डेटाबेस आपडेट चलाव.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>उननि %days सान</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>उननि %days सानाव लगइनफोर</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>गोदान सुरखा खामानि</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>नायनो हो</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>फेल जादों</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>नाजा खालामनाय</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>दासिम जेबो सुरखा खामानि रैखाजायाखै.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>सुरखा घटनाफोरखौ %days सान सिम दोनो.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>मोनसे अडमिनिस्ट्रेटरआ आगायै सिम सुरखा घटनाफोरखौ दोनो.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>आंनि लगइन डेटा डाउनल&apos;ड खालाम</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>नोंथांनि सेसनफोर आरो सुरखा घटनाफोर मोनसे JSON फाइल बादि.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>लगइन जादों</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>फेल जानाय लगइन नाजानाय</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>लगआउट जादों</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>सेसनफोर लगआउट जादों</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>गोदान डिभाइसनिफ्राय लगइन</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>गोदान थाननिफ्राय लगइन</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>सिनायथि थार खालामनाय जादों (&quot;नों जानाय निश्चित खालाम&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>सिनायथि नायनाय फेल जादों</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>पासकीजों लगइन जादों</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>पासकीजों लगइन फेल जादों</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>लगइन नाजा खालामनाय: बाहागो निफ्राय लगइननि कडआ गैया नङाब्ला गाज्रि</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>बाहागो निफ्राय लगइननि गाज्रि कड</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>फेल जानाय लगइननि उनाव एकाउन्ट लक जादों</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>एकाउन्ट आनलक जादों</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>पासओयार्ड सोलायनाय जादों</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>पासओयार्ड सोलायनाय फेल जादों</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>पासओयार्ड रिसेट जादों</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>गोदान पासओयार्ड नागनाय जादों</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>इ-मेइल ठिकाना सोलायनाय जादों</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>बेबहारग्रानि मुं सोलायनाय जादों</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>बाहागो निफ्राय लगइन चालु जादों</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>बाहागो निफ्राय लगइन बन्द जादों</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>फिन मोननाय कड बाहायनाय जादों</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>गोदान फिन मोननाय कडफोर</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>एप पासओयार्ड सर्जि</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>एप पासओयार्ड नाजा खालाम</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>पासकी जोरावनाय जादों</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>पासकी आगायनाय जादों</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>एकाउन्ट चालु जानाय</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>एकाउन्ट बन्द जानाय</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>जोबोद</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>लगइन आरो सेसनफोर</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>एकाउन्ट सोलायनायफोर</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>मोन गोसो होनांगौ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरखा खामानि</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>सुरखा खामानि: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>नोंथांनि एकाउन्टनि सुरखाजों सोमोन्दो थानाय लगइन आरो सोलायनायफोर. नोंथाङा खालामाखै जेबो मुवा नुयोब्ला, नोंथांनि पासओयार्ड सोलाय आरो नोंथाङा सिनायै डिभाइसफोरखौ लगआउट खालाम.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>नोंथांनि यन्त्रफोर</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>पासओयार्ड सोलोंथाय</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>बे साइटआव सुरखा खामानि दासिम रैखाजाया.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>उननि %days सानाव लगइनफोर</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>फेल जानाय नाजानायफोर</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>दासिम जेबो सुरखा खामानि रैखाजायाखै.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>आंनि लगइन डेटा डाउनल&apos;ड खालाम</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>नोंथांनि सेसनफोर आरो सुरखा घटनाफोर मोनसे JSON फाइल बादि.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>पासओयार्ड</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>पासओयार्ड आरो बाहागो निफ्राय लगइननि कड</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST इन्टारफेस</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP इन्टारफेस</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>सिंगल साइन-अन</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>सेसनफोर रैखानायनि सिगां लगइन जादों</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>लगइन रिपर्ट</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>साइटआव सोर लगइन जादों, एकाउन्टफोरा बेसेबा खेप लगइन खालामो आरो बेसेबा खेप फेल जायो, आरो मोनसे बेबहार खालामग्राखौ जायगा जायगानिफ्राय लगआउट खालामनाय. बेयो गासै सेसन हैन्डलारनैलाय खामानि मावो.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>सेसनआ लगआउट जादों. डिभाइसआ फिन लगइन खालामनांगोन.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login खौ %count सेसननिफ्राय लगआउट खालामनाय जादों.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login नि मोनसेबो चलावगासिनो थानाय सेसन गोनां नङाखैमोन.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>बे ID, बेबहारग्रानि मुं नङाब्ला इ-मेइल ठिकाना गोनां मोनसेबो एकाउन्ट गैया.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>बेयो नोंथाङा बाहायगासिनो थानाय सेसन. बेखौ जोबनो लगआउट खालाम.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>बै सेसनआ सिगांनोसो जोबबाय.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>बिखंथाइनि सोमोयआ जोबबाय. जेबो सोलायाखै; नाजा फिन नाजा.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>बे साइटआव सेसनफोर रैखाजाया (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session टेबुलआ गैया</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>बेखौ सोरजिनायनि उनावनो सेसनफोर रैखाजागोन: php update/common/scripts/6.0/createusersessiontable.php, नङाब्ला 6.0.15 नि डेटाबेस आपडेट.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>दा आरो दिनै</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>चलावगासिनो थानाय सेसनफोर</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>लगइन जानाय बेबहार खालामग्राफोर</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>दिनैनि लगइनफोर</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>दिनैनि फेल जानाय नाजानायफोर</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>मोनसे बेबहार खालामग्राखौ जायगा जायगानिफ्राय लगआउट खालाम</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>एकाउन्टनि गासै सेसनआ बेनि उननि बिनायाव जोबो, &quot;आंखौ मोन थाङो&quot; जों दोनाय सेसनफोरबो. मोनसे एकाउन्टआ गाज्रि आखायाव थानो हायोब्ला बेखौ बाहाय; उनाव बेनि पासओयार्डखौ रिसेट खालाम.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>बेबहार खालामग्रानि ID, बेबहारग्रानि मुं नङाब्ला इ-मेइल ठिकाना</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>जायगा जायगानिफ्राय लगआउट खालाम</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>दा लगइन जादों</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>गोदान सोमोयाव बाहायनाय %limit खौ दिन्थिनाय जादों.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>बेबहार खालामग्रा</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>डिभाइस</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ठिकाना</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>लगइन जादों</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>आखुनि सक्रिय</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>खामानि</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>बे डिभाइस</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>रैखाजायाखै</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>लगआउट</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>मोनसेबो सेसन लगइन जायाखै.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>उननि %days सान</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>लगइन आरो फेल जानाय नाजानायफोरखौ बेबहार खालामग्रानि अडिट लगनिफ्राय सानो, जेया गैया; गोदान सेसनफोरखौ सानो.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>सान</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>लगइनफोर</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>फेल जानाय नाजानायफोर</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>गोदान सेसनफोर</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>सेसन हैन्डलार: %handler. सेसनफोरखौ expuser_session टेबुलनिफ्राय फरायो, बेनिखाय रिपर्टआ गासै हैन्डलारनैलाय खामानि मावो.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>नोंथांनि एकाउन्टनि थाखाय सुरखा सांग्रांथि</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>नोंथांनि एकाउन्ट %login आव मोनसे सुरखा घटना जाखो: %event. बेयो नोंथाङा नङाब्ला, %url आव नोंथांनि एकाउन्टखौ रैखा.</translation>
     </message>
 </context>
 </TS>

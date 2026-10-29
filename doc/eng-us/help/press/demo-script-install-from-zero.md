@@ -48,7 +48,7 @@ Requirements: [Requirements](../../install/02-requirements.md). The full creator
 | 3 | `cd exponential` and `git switch -c my-demo` | "My own branch on top of main, the development line." (For the release: `git switch -c my-demo v6.0.14`.) |
 | 4 | `composer install` | "Composer fetches the extensions and libraries. Exponential needs this step before it can run." |
 | 5 | `php bin/php/console exp:install --dry-run` | "A dry run checks the configuration and the packages and installs nothing." |
-| 6 | `php bin/php/console exp:install` | "Without options: the multisite package, on SQLite, in American English, with no database server." |
+| 6 | `php bin/php/console exp:install --apply` | "Without options: the multisite package, on SQLite, in American English, with no database server." |
 | 7 | Show the first line of output only | "It says what it is about to do." Then cut to the end |
 | 8 | Show the summary with the password lines blurred | "Site address, administration login, user name, database, package and siteaccesses. The generated password is printed once and written to a file only the owner can read." |
 | 9 | Serve the site: your web server, or `php bin/php/console exp:velocity start` | "The installer does not start a web server; I serve the folder." |
@@ -96,7 +96,7 @@ Commands shown:
   git clone https://github.com/se7enxweb/exponential.git exponential
   composer install
   php bin/php/console exp:install --dry-run
-  php bin/php/console exp:install
+  php bin/php/console exp:install --apply
 Install in one command: <link to "Installing Exponential in one command">
 Change the generated password after the first sign-in: <link to "The default administrator password">
 ```

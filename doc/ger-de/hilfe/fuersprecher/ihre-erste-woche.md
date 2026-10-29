@@ -50,7 +50,7 @@ Datenbankserver ([Exponential mit einem Befehl installieren](../../funktionen/6.
 
 ```bash
 ./console exp:install --dry-run    # checks, installs nothing
-./console exp:install              # installs the site on SQLite
+./console exp:install --apply              # installs the site on SQLite
 ```
 
 Folgen Sie dann [Erste Schritte](../erste-schritte.md) und dem [Rundgang durch die Administration](../rundgang-durch-die-administration.md).

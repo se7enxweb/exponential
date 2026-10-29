@@ -53,7 +53,7 @@ Velocity), muss die geänderte Kernel-Datei `kernel/content/ezcontentoperationco
 ```
 php bin/php/ezpgenerateautoloads.php -k        # or: ./console exp:velocity deploy --kernel
 ./console exp:help:content ebooks -s <admin siteaccess> --dry-run
-./console exp:help:content ebooks -s <admin siteaccess>
+./console exp:help:content ebooks --apply -s <admin siteaccess>
 ./console exp:help:content review -s <admin siteaccess>
 ```
 

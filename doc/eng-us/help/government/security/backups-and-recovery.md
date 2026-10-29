@@ -74,7 +74,7 @@ Not every loss needs a full restore:
 | a page moved to the trash | **Restore** in the trash (`content/trash`) ([The trash view](../../../bc/6.0/trash.md)) |
 | an earlier text of a page | **Make a new draft** from the old version on the versions page ([Versions of an object](../../../guides/content-history.md)) |
 | a user account removed | only a restore: user objects never go to the trash; prefer **Deactivate and move** for leavers |
-| an archived audit day | `./console exp:audit restore --channel=<channel> --date=<YYYY-MM-DD> --allow-root-user` |
+| an archived audit day | `./console exp:audit restore --apply --channel=<channel> --date=<YYYY-MM-DD> --allow-root-user` |
 
 ## Related pages
 

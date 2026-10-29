@@ -30,7 +30,7 @@ the script below has fewer, so you can breathe.
 | 3 | Still here | "Code since 1999. 15 releases since Jan 2024. A company and a nonprofit." | 1:10 |
 | 4 | What is new | Velocity, Layouts, Exponential Intelligence (drafts only), help built in | 2:10 |
 | 5 | Free, really | "Code: GNU GPL. Docs: GNU FDL. Every pull request is merged." | 3:30 |
-| 6 | Try it | `./console exp:install` and the community links | 4:20 |
+| 6 | Try it | `./console exp:install --apply` and the community links | 4:20 |
 
 Accessibility of the slides: [Accessible slides and visuals](accessible-slides-and-visuals.md).
 

@@ -46,6 +46,7 @@ Anyone who may read the account in the user tree. Following a role to its own pa
 ## Related pages
 
 - [Roles and policies](../../guides/roles-and-policies.md)
+- [What the Editor role allows](../what-the-editor-role-allows.md)
 - [How do I give a group edit rights on one section only?](how-do-i-give-a-group-edit-rights-on-one-section.md)
 - [How do I move a user to another group, or put them in two groups?](how-do-i-move-a-user-to-another-group.md)
 - [Sections, roles and policies](../cms-developers/sections-roles-and-policies.md)

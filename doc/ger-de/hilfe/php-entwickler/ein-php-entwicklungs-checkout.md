@@ -41,7 +41,7 @@ Entwicklungswerkzeuge, die Git-Hooks und eine PHP-8.0-Binärdatei für Kompatibi
 git clone https://github.com/se7enxweb/exponential.git exp-dev
 cd exp-dev
 composer install
-php bin/php/console exp:install --package=sevenx_multisite_clean --url=http://127.0.0.1:8088
+php bin/php/console exp:install --apply --package=sevenx_multisite_clean --url=http://127.0.0.1:8088
 ```
 
 `composer install` führt danach `bin/php/ezpgenerateautoloads.php` aus (`"post-install-cmd"` in `composer.json`).

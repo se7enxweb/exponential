@@ -46,11 +46,11 @@ VersionHistoryClass[meeting]=200
 ```
 
 Then clear the INI cache (`php bin/php/ezcache.php --clear-tag=ini`) and, when Velocity serves the site,
-`./console exp:velocity cache clear`. The new limit applies from the next version made.
+`./console exp:velocity cache clear --apply`. The new limit applies from the next version made.
 
 ## Lowering a limit
 
-Lowering a value does not remove versions at once. `php bin/php/cleanupversions.php` removes the archived versions
+Lowering a value does not remove versions at once. `php bin/php/cleanupversions.php --apply` removes the archived versions
 that exceed the limits:
 
 ```bash

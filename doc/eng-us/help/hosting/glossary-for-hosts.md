@@ -23,7 +23,7 @@ the documentation is [doc/eng-us/glossary.md](../../glossary.md).
 | `exp:velocity deploy` | runs every step a PHP code change needs, in order, with PASS or FAIL per step | [Deploying changes](operations/deploying-changes.md) |
 | ezupdate | the extension that checks for and applies updates | [Automated updates with ezupdate](operations/automated-updates-with-ezupdate.md) |
 | FrankenPHP | Caddy with PHP built in; a production-ready alternative engine, run through Velocity | [FrankenPHP](servers/frankenphp.md) |
-| Kickstarter | installs from a reviewed `kickstart.ini`; `exp:kickstarter run --force` | [The kickstarter for hosts](provisioning/kickstarter.md) |
+| Kickstarter | installs from a reviewed `kickstart.ini`; `exp:kickstarter run --apply` | [The kickstarter for hosts](provisioning/kickstarter.md) |
 | Log viewer | **Setup > Log files** and `./console exp:logs`: lists, follows, searches and rotates the logs, with personal data masked | [Log viewer and rotation](operations/log-viewer-and-rotation.md) |
 | Maintenance mode | a 503 page for visitors while work is done; `php bin/php/maintenance.php` with `on`, `off` or `status`, marker `var/maintenance.json` | [Maintenance mode](operations/maintenance-mode.md) |
 | `ManagedByDeployment` | per-siteaccess switch that stops the administration from writing settings, templates and packages | [Hardening for hosts](security/hardening-for-hosts.md) |

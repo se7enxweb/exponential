@@ -99,7 +99,7 @@ A log that fills the disk can take a site down. Exponential rotates every log fo
 - When a log grows beyond `site.ini [FileSettings] LogFileMaxSize` (2 MB shipped), it is rotated to `.1`, `.2`, `.3`.
 - `LogFileRotateCount` (3 shipped) is how many archives are kept. With the defaults a log takes at most 8 MB on disk
   ([Operating a site](../../../guides/operating-a-site.md#php-deprecations-and-log-file-sizes)).
-- Rotation on demand: `php bin/php/console exp:logs --rotate-all`; old archives: `--prune`; both with `--dry-run`.
+- Rotation on demand: `php bin/php/console exp:logs --apply --rotate-all`; old archives: `--prune`; both with `--dry-run`.
 
 Decide with your operator how long logs must be kept for your business and your legal obligations, and set the
 rotation to match. The hosting section covers retention:

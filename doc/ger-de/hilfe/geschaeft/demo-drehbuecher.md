@@ -37,7 +37,7 @@ Siteaccesses `site` und `admin` ([Exponential mit einem Befehl installieren](../
 
 ```bash
 ./console exp:install --dry-run    # checks the configuration and installs nothing
-./console exp:install              # installs the multisite package on SQLite
+./console exp:install --apply              # installs the multisite package on SQLite
 ```
 
 - Der Administrator ist `admin` mit einem erzeugten Passwort, das in der Zusammenfassung ausgegeben und in

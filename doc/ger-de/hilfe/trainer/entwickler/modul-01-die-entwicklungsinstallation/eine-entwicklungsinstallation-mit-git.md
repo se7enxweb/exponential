@@ -35,7 +35,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 - Composer so einstellen, dass die Pakete `se7enxweb/*` als Git-Klone installiert werden;
 - den Kernel klonen, einen eigenen Branch beginnen und `composer install` ausführen;
-- eine Website mit `php bin/php/console exp:install` installieren und das erzeugte Administratorpasswort finden;
+- eine Website mit `php bin/php/console exp:install --apply` installieren und das erzeugte Administratorpasswort finden;
 - den eingebauten Webserver mit `exp:velocity start` starten und sich an der Administration anmelden;
 - erklären, warum die Entwicklungsinstallation nie Einstellungen oder Daten mit einer Live-Website teilt.
 
@@ -113,7 +113,7 @@ Schulungsserver).
    php bin/php/console exp:install --print --url=http://127.0.0.1:8087 --title="Developer course"
    ```
 
-6. Installieren Sie: `php bin/php/console exp:install --url=http://127.0.0.1:8087 --title="Developer course"`.
+6. Installieren Sie: `php bin/php/console exp:install --apply --url=http://127.0.0.1:8087 --title="Developer course"`.
 7. Kopieren Sie das Passwort aus der Zusammenfassung an einen sicheren Ort.
 8. Starten Sie den Webserver: `php bin/php/console exp:velocity start`.
 9. Öffnen Sie die Anmeldeadresse der Administration aus der Zusammenfassung und melden Sie sich als `admin` an.

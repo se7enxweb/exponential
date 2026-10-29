@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>אייַנריכטונג &gt; cron־אויפֿגאַבעס</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>קיין טייל פֿון די cron־אויפֿגאַבעס איז נאָך ניט געלאָפֿן: די ריי פֿון אויפֿגאַבעס, די אימפּאָרטן, די אָנזאָגן און דער זוך־אינדעקס וואַרטן. פֿירט אויס php bin/php/installcrontab.php --add --apply, אָדער לייגט צו די שורות פֿון --show צו דער crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>די אינסטאַלאַציע איז אַן עפֿנטלעכע דעמאָ: יעדער קען וויסן איר אַדמיניסטראַטאָר־פּאַראָל, און מען קען ניט ענדערן אָדער צוריקשטעלן די אַדמיניסטראַטאָר־פּאַראָלן. גיט דאָ ניט אַרייַן גאָרנישט פּריוואַטס.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>אייַערע מכשירים</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>זיכערהייט־אַקטיוויטעט</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>ווער האָט געענדערט, זיך אַרייַנלאָגירט אָדער איז אָפּגעוואָרפֿן געוואָרן, לויט קאָנטע; פֿילטרירן און עקספּאָרטירן.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>אַרייַנלאָגיר־באַריכט</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>ווער איז אַרייַנלאָגירט, אַרייַנלאָגירונגען און דורכפֿאַלן פּער טאָג; אַרויסלאָגירן אַ באַניצער אומעטום.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>אויסגעלאָפֿענע סעסיעס פֿונעם PHP־באַהאַנדלער נעמט אַוועק PHP אַליין (session.gc_maxlifetime), ניט די זייַט און ניט דער טייל session_gc פֿון דער cron־אויפֿגאַבע.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>די אַרייַנלאָגירטע סעסיעס פֿון אַלע באַניצער ווערן אויסגערעכנט, און אַרויסלאָגירט, אינעם אַרייַנלאָגיר־באַריכט, וואָס אַרבעט מיט יעדן סעסיע־באַהאַנדלער.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>עפֿענען דעם אַרייַנלאָגיר־באַריכט</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>נאָך קיינער ניט</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>זיכערהייט־אַקטיוויטעט</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>אייַערע לעצטע אַרייַנלאָגירונגען, דורכגעפֿאַלענע פּרוּוון און ענדערונגען אין אייַער פּאַראָל, בליצפּאָסט־אַדרעס און צוויי־שטאַפּלדיקער אַרייַנלאָגירונג.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>די לעצטע אַרייַנלאָגירונגען, דורכגעפֿאַלענע פּרוּוון און זיכערהייט־ענדערונגען פֿון דער דאָזיקער קאָנטע.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>איבערקוקן די אַקטיוויטעט</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count דורכגעפֿאַלענע אַרייַנלאָגירונגען</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>דער crontab איז ניט געשריבן געוואָרן (%reason). לייגט צו די דאָזיקע שורות צום crontab פֿון דעם באַניצער אונטער וועלכן דאָס וועבזייַטל לויפֿט, אַנדערש וועלן די ריי, די אימפּאָרטן, די אָנזאָגן און דער זוך־אינדעקס קיין מאָל ניט לויפֿן:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>איבער־אינסטאַלירן טוט מען מיטן kickstarter (%file, דערנאָך php bin/php/kickstarter.php run --apply) אָדער מיט אַ נייַער אינסטאַלאַציע.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>דער בליצפּאָסט־טראַנספּאָרט האָט אָפּגעזאָגט %count מעלדונגען אינעם לעצטן לויף. קאָנטראָלירט דעם בליצפּאָסט־סערווער און site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count געשעענישן וואַרטן און קיין לויף פֿון דער אָנזאָג־cron־אויפֿגאַבע איז ניט פֿאַרשריבן. לייגט צו דעם טייל &quot;frequent&quot; פֿון די cron־אויפֿגאַבעס צו דער crontab, אָדער פֿירט אויס exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>אויסקלייַבן אַן אַנדער וועבזייַטל אָדער אָפּטייל מיטן קנופּ־אויסקלייַבער</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>נאָר דער סיסטעם־אַדמיניסטראַטאָר קען ענדערן דעם באַזיצער: פֿירט אויס ./console exp:content-check --fix-permissions --apply ווי root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>ליידיק</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>דער חתימה־שליסל איז עלטער ווי אַ יאָר: בייַט אים מיט exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>ניט געשיקט</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>די אָנזאָג־cron־אויפֿגאַבע פֿאַרשרייַבט דאָ יעדן לויף אירן. לייגט צו דעם טייל frequent צו דער crontab, אָדער פֿירט אויס exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>ניצט די קאָנסאָל: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>קיינער.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>מיט אַן אויטענטיפֿיקאַציע־אַפּליקאַציע</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>מיט אַ קאָד דורך בליצפּאָסט</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>מיט אַ צוריקשטעל־קאָד</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>מיט אַ צוטריט־שליסל</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>מיט אַ דרויסנדיקער קאָנטע</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>זיכערהייט־אַקטיוויטעט</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>געוויזן ווי זייַן נעץ; די אַדרעס ווערט געהאַלטן אַזוי ווי די דאַטן־שוץ־באַשטימונגען פֿונעם וועבזייַטל זאָגן.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ניט פֿאַרצייכנט</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>אָרט</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>בערך</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>פֿאַרוואַלטן מכשירים</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>מיט אַן אויטענטיפֿיקאַציע־אַפּליקאַציע</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>מיט אַ קאָד דורך בליצפּאָסט</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>מיט אַ צוריקשטעל־קאָד</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>מיט אַ צוטריט־שליסל</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>מיט אַ דרויסנדיקער קאָנטע</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>זיכערהייט־אַקטיוויטעט</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ניט פֿאַרצייכנט</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>אָרט</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>בערך</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>ווייַזן די סעסיעס פֿון דעם דאָזיקן באַניצער</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>אייַער קאָנטע %login אויף %site איז אָט געניצט געוואָרן צו זיך אַרייַנלאָגירן פֿון אַן אָרט פֿון וואַנעט זי האָט זיך די לעצטע צייַט ניט אַרייַנלאָגירט:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>בערך־אָרט</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser אויף %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>אַרייַנלאָגיר־באַריכט</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>אומבאַקאַנט</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>פֿאַרזיכערן אייַער קאָנטע</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>מען האָט געניצט אַ צוריקשטעל־קאָד צו זיך אַרייַנלאָגירן אין אייַער קאָנטע %login אויף %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>מען האָט געניצט אַ צוריקשטעל־קאָד</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>קאָנטע</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>בערך־אַדרעס</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>בעט אַ נייַ פּאַראָל כּדי זיך ווידער אַרייַנצולאָגירן, אָדער ווענדט זיך צו די אַדמיניסטראַטאָרן פֿונעם וועבזייַטל.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>בעטן אַ נייַ פּאַראָל</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>יעדער צוריקשטעל־קאָד אַרבעט איין מאָל. אויב איר האָט פֿאַרלוירן אייַער טעלעפֿאָן, שטעלט ווידער אייַן אייַער אויטענטיפֿיקאַציע־אַפּליקאַציע און היט אויף די נייַע צוריקשטעל־קאָדן אויף אַ זיכער אָרט.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>דורכגעפֿאַלענע פּרוּוון זיך אַרייַנצולאָגירן אין אייַער קאָנטע</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>פֿון איצט אָן בעט די אַרייַנלאָגירונג אַ קאָד אַחוץ אייַער פּאַראָל. אויב איר האָט דאָס געטאָן, דאַרפֿט איר גאָרנישט טאָן.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>אויב דאָס זענט איר געווען און איר האָט פֿאַרגעסן אייַער פּאַראָל, בעט אַ נייַ. אויב ניט, קלייַבט אויס אַ שטאַרקער פּאַראָל און צינדט אָן די צוויי־שטאַפּלדיקע אַרייַנלאָגירונג.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>אויב דאָס זענט ניט איר געווען, קען עמעצער וויסן אייַער פּאַראָל: ענדערט עס תּיכף און קאָנטראָלירט וווּ אייַער קאָנטע איז אַרייַנלאָגירט.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>איבערגעבליבענע צוריקשטעל־קאָדן</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>איבערקוקן אייַערע מכשירים</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>זיכערהייט־וואָרענונג</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>עמעצער האָט פּרוּווט זיך אַרייַנלאָגירן אין אייַער קאָנטע %login אויף %site מיט אַ פֿאַלשן פּאַראָל %count מאָל נאָך אַנאַנד.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>עס איז געווען אַ זיכערהייט־געשעעניש אין אייַער קאָנטע %login אויף %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>דאָס איז אַ זיכערהייט־וואָרענונג וועגן אייַער קאָנטע. זי ווערט געשיקט בייַ יעדער אַזאַ ענדערונג און מען קען זי ניט אויסלעשן.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>צייַט</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>די צוויי־שטאַפּלדיקע אַרייַנלאָגירונג איז אויסגעלאָשן געוואָרן פֿאַר אייַער קאָנטע %login אויף %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>די צוויי־שטאַפּלדיקע אַרייַנלאָגירונג איז אויסגעלאָשן געוואָרן</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>די צוויי־שטאַפּלדיקע אַרייַנלאָגירונג איז אָנגעצונדן געוואָרן פֿאַר אייַער קאָנטע %login אויף %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>די צוויי־שטאַפּלדיקע אַרייַנלאָגירונג איז אָנגעצונדן געוואָרן</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>אייַער קאָנטע %login אויף %site איז פֿאַרשלאָסן געוואָרן נאָך צו פֿיל דורכגעפֿאַלענע אַרייַנלאָגירונגען.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>אייַער קאָנטע איז איצט באַשיצט נאָר מיט אייַער פּאַראָל. אויב איר האָט דאָס ניט געטאָן, צינדט ווידער אָן די צוויי־שטאַפּלדיקע אַרייַנלאָגירונג נאָכדעם ווי איר האָט געענדערט אייַער פּאַראָל.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>אייַער קאָנטע איז פֿאַרשלאָסן געוואָרן</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>זיכערהייט־אַקטיוויטעט</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>זיכערהייט־אַקטיוויטעט פֿון %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>אַרייַנלאָגירט</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>דורכגעפֿאַלענער אַרייַנלאָגיר־פּרוּוו</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>אַרויסלאָגירט</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>סעסיעס אַרויסלאָגירט</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>אַרייַנלאָגירונג פֿון אַ נייַעם מכשיר</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>אַרייַנלאָגירונג פֿון אַ נייַעם אָרט</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>אידענטיטעט באַשטעטיקט („באַשטעטיקט אַז דאָס זענט איר“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>אידענטיטעט־קאָנטראָל דורכגעפֿאַלן</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>אַרייַנלאָגירט מיט אַ צוטריט־שליסל</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>אַרייַנלאָגירונג מיט אַ צוטריט־שליסל דורכגעפֿאַלן</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>אַרייַנלאָגירונג אָפּגעוואָרפֿן: קאָד פֿון דער צוויי־שטאַפּלדיקער אַרייַנלאָגירונג פֿעלט אָדער איז פֿאַלש</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>פֿאַלשער קאָד פֿון דער צוויי־שטאַפּלדיקער אַרייַנלאָגירונג</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>קאָנטע פֿאַרשלאָסן נאָך דורכגעפֿאַלענע אַרייַנלאָגירונגען</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>קאָנטע אויפֿגעשלאָסן</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>פּאַראָל געענדערט</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ענדערן דאָס פּאַראָל דורכגעפֿאַלן</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>פּאַראָל צוריקגעשטעלט</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>נייַ פּאַראָל געבעטן</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>בליצפּאָסט־אַדרעס געענדערט</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>באַניצער־נאָמען געענדערט</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>צוויי־שטאַפּלדיקע אַרייַנלאָגירונג אָנגעצונדן</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>צוויי־שטאַפּלדיקע אַרייַנלאָגירונג אויסגעלאָשן</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>צוריקשטעל־קאָד געניצט</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>נייַע צוריקשטעל־קאָדן</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>אַפּליקאַציע־פּאַראָל געשאַפֿן</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>אַפּליקאַציע־פּאַראָל אָפּגערופֿן</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>צוטריט־שליסל צוגעגעבן</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>צוטריט־שליסל אַוועקגענומען</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>קאָנטע אַקטיווירט</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>קאָנטע דעאַקטיווירט</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>אַלע</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>אַרייַנלאָגירונגען און סעסיעס</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>קאָנטע־ענדערונגען</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>פֿאָדערט אויפֿמערקזאַמקייט</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>פֿון אייַך</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>פֿונעם באַניצער</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>פֿון %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>מעטאָד</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>בלעטערער</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>אָפּערירסיסטעם</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>מכשיר</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>אָרט</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>לאַנד</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>סעסיעס</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>וועלכע</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>קאַנאַל</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>דורכגעפֿאַלענע פּרוּוון</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>איבערגעבליבענע קאָדן</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>אַרייַנלאָגיר־באַהאַנדלער</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>זיכערהייט־אַקטיוויטעט</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>זיכערהייט־אַקטיוויטעט פֿון %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>אַרייַנלאָגירונגען און ענדערונגען אין דער זיכערהייט פֿון אייַער קאָנטע. אויב איר זעט עפּעס וואָס איר האָט ניט געטאָן, ענדערט אייַער פּאַראָל און לאָגירט אויס די מכשירים וואָס איר דערקענט ניט.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>אַרייַנלאָגירונגען און ענדערונגען אין דער זיכערהייט פֿון דער דאָזיקער קאָנטע.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>אייַערע מכשירים</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>ענדערן דאָס פּאַראָל</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>צוריק צו דער קאָנטע</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>די זיכערהייט־אַקטיוויטעט ווערט ניט פֿאַרשריבן</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>זי ווערט געלייענט פֿונעם באַניצער־רעוויזיע־זשורנאַל, וועמענס טאַבעלע expuser_audit פֿעלט אָדער ווערט ניט געשטיצט אויף דער דאָזיקער דאַטנבאַזע. פֿירט אויס php update/common/scripts/6.0/createuseraudittable.php, אָדער די דאַטנבאַזע־דערהייַנטיקונג פֿון 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>די לעצטע %days טעג</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>אַרייַנלאָגירונגען אין די לעצטע %days טעג</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>לעצטע זיכערהייט־אַקטיוויטעט</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ווייַזן</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>דורכגעפֿאַלן</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>אָפּגעוואָרפֿן</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>נאָך קיין זיכערהייט־אַקטיוויטעט ניט פֿאַרשריבן.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>זיכערהייט־געשעענישן ווערן געהאַלטן %days טעג.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>זיכערהייט־געשעענישן ווערן געהאַלטן ביז אַן אַדמיניסטראַטאָר נעמט זיי אַוועק.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>אַראָפּלאָדן מייַנע אַרייַנלאָגיר־דאַטן</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>אייַערע סעסיעס און זיכערהייט־געשעענישן ווי אַ JSON־טעקע.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>אַרייַנלאָגירט</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>דורכגעפֿאַלענער אַרייַנלאָגיר־פּרוּוו</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>אַרויסלאָגירט</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>סעסיעס אַרויסלאָגירט</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>אַרייַנלאָגירונג פֿון אַ נייַעם מכשיר</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>אַרייַנלאָגירונג פֿון אַ נייַעם אָרט</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>אידענטיטעט באַשטעטיקט („באַשטעטיקט אַז דאָס זענט איר“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>אידענטיטעט־קאָנטראָל דורכגעפֿאַלן</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>אַרייַנלאָגירט מיט אַ צוטריט־שליסל</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>אַרייַנלאָגירונג מיט אַ צוטריט־שליסל דורכגעפֿאַלן</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>אַרייַנלאָגירונג אָפּגעוואָרפֿן: קאָד פֿון דער צוויי־שטאַפּלדיקער אַרייַנלאָגירונג פֿעלט אָדער איז פֿאַלש</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>פֿאַלשער קאָד פֿון דער צוויי־שטאַפּלדיקער אַרייַנלאָגירונג</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>קאָנטע פֿאַרשלאָסן נאָך דורכגעפֿאַלענע אַרייַנלאָגירונגען</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>קאָנטע אויפֿגעשלאָסן</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>פּאַראָל געענדערט</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ענדערן דאָס פּאַראָל דורכגעפֿאַלן</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>פּאַראָל צוריקגעשטעלט</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>נייַ פּאַראָל געבעטן</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>בליצפּאָסט־אַדרעס געענדערט</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>באַניצער־נאָמען געענדערט</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>צוויי־שטאַפּלדיקע אַרייַנלאָגירונג אָנגעצונדן</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>צוויי־שטאַפּלדיקע אַרייַנלאָגירונג אויסגעלאָשן</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>צוריקשטעל־קאָד געניצט</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>נייַע צוריקשטעל־קאָדן</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>אַפּליקאַציע־פּאַראָל געשאַפֿן</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>אַפּליקאַציע־פּאַראָל אָפּגערופֿן</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>צוטריט־שליסל צוגעגעבן</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>צוטריט־שליסל אַוועקגענומען</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>קאָנטע אַקטיווירט</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>קאָנטע דעאַקטיווירט</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>אַלע</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>אַרייַנלאָגירונגען און סעסיעס</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>קאָנטע־ענדערונגען</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>פֿאָדערט אויפֿמערקזאַמקייט</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>זיכערהייט־אַקטיוויטעט</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>זיכערהייט־אַקטיוויטעט פֿון %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>אַרייַנלאָגירונגען און ענדערונגען אין דער זיכערהייט פֿון אייַער קאָנטע. אויב איר זעט עפּעס וואָס איר האָט ניט געטאָן, ענדערט אייַער פּאַראָל און לאָגירט אויס די מכשירים וואָס איר דערקענט ניט.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>אייַערע מכשירים</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>ענדערן דאָס פּאַראָל</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>די זיכערהייט־אַקטיוויטעט ווערט נאָך ניט פֿאַרשריבן אויף דעם וועבזייַטל.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>אַרייַנלאָגירונגען אין די לעצטע %days טעג</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>דורכגעפֿאַלענע פּרוּוון</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>נאָך קיין זיכערהייט־אַקטיוויטעט ניט פֿאַרשריבן.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>אַראָפּלאָדן מייַנע אַרייַנלאָגיר־דאַטן</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>אייַערע סעסיעס און זיכערהייט־געשעענישן ווי אַ JSON־טעקע.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>פּאַראָל</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>פּאַראָל און קאָד פֿון דער צוויי־שטאַפּלדיקער אַרייַנלאָגירונג</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST־אינטערפֿייס</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP־אינטערפֿייס</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>איינמאָליקע אַרייַנלאָגירונג</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>אַרייַנלאָגירט איידער סעסיעס זענען פֿאַרשריבן געוואָרן</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>אַרייַנלאָגיר־באַריכט</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>ווער איז אַרייַנלאָגירט אויפֿן וועבזייַטל, ווי אָפֿט קאָנטעס לאָגירן זיך אַרייַן און פֿאַלן דורך, און אַרויסלאָגירן אַ באַניצער אומעטום. אַרבעט מיט יעדן סעסיע־באַהאַנדלער.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>די סעסיע איז אַרויסלאָגירט געוואָרן. דער מכשיר מוז זיך ווידער אַרייַנלאָגירן.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login איז אַרויסלאָגירט געוואָרן פֿון %count סעסיעס.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login האָט ניט געהאַט קיין לויפֿנדיקע סעסיע.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>קיין קאָנטע האָט ניט אָט דעם ID, באַניצער־נאָמען אָדער בליצפּאָסט־אַדרעס.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>דאָס איז די סעסיע וואָס איר ניצט. כּדי זי צו ענדיקן, לאָגירט זיך אויס.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>יענע סעסיע האָט זיך שוין געענדיקט.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>דער בלאַט איז אויסגעלאָפֿן. גאָרנישט איז געענדערט געוואָרן; פּרוּווט נאָך אַ מאָל.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>סעסיעס ווערן ניט פֿאַרשריבן אויף דעם וועבזייַטל (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>די טאַבעלע expuser_session פֿעלט</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>סעסיעס ווערן פֿאַרשריבן ווי נאָר זי איז געשאַפֿן: php update/common/scripts/6.0/createusersessiontable.php, אָדער די דאַטנבאַזע־דערהייַנטיקונג פֿון 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>איצט און הייַנט</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>לויפֿנדיקע סעסיעס</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>אַרייַנלאָגירטע באַניצער</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>אַרייַנלאָגירונגען הייַנט</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>דורכגעפֿאַלענע פּרוּוון הייַנט</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>אַרויסלאָגירן אַ באַניצער אומעטום</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>יעדע סעסיע פֿון דער קאָנטע ענדיקט זיך בייַ איר נעקסטער בקשה, אויך די וואָס ווערן געהאַלטן דורך „געדענקט מיך“. ניצט עס ווען אַ קאָנטע קען זייַן אין פֿאַלשע הענט; דערנאָך שטעלט צוריק איר פּאַראָל.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>באַניצער־ID, באַניצער־נאָמען אָדער בליצפּאָסט־אַדרעס</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>אַרויסלאָגירן אומעטום</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>איצט אַרייַנלאָגירט</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>די %limit לעצט געניצטע ווערן געוויזן.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>באַניצער</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>מכשיר</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>אַדרעס</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>אַרייַנלאָגירט</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>לעצט אַקטיוו</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>אַקציעס</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>דער דאָזיקער מכשיר</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ניט פֿאַרצייכנט</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>אַרויסלאָגירן</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>קיין סעסיע איז ניט אַרייַנלאָגירט.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>די לעצטע %days טעג</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>אַרייַנלאָגירונגען און דורכגעפֿאַלענע פּרוּוון ווערן געציילט פֿונעם באַניצער־רעוויזיע־זשורנאַל, וואָס איז ניטאָ; די נייַע סעסיעס יאָ.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>טאָג</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>אַרייַנלאָגירונגען</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>דורכגעפֿאַלענע פּרוּוון</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>נייַע סעסיעס</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>סעסיע־באַהאַנדלער: %handler. די סעסיעס ווערן געלייענט פֿון דער טאַבעלע expuser_session, דערפֿאַר אַרבעט דער באַריכט מיט יעדן באַהאַנדלער.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>זיכערהייט־וואָרענונג וועגן אייַער קאָנטע</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>עס איז געווען אַ זיכערהייט־געשעעניש אין אייַער קאָנטע %login: %event. אויב דאָס זענט ניט איר געווען, פֿאַרזיכערט אייַער קאָנטע אויף %url.</translation>
     </message>
 </context>
 </TS>

@@ -14326,6 +14326,14 @@ Let wel: Die pakkette sal nie gedeïnstalleer word nie.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Hierdie installasie is &apos;n openbare demonstrasie: enigiemand mag die administrateurwagwoord ken, en administrateurwagwoorde kan nie verander of teruggestel word nie. Moenie enigiets privaat hier invoer nie.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>U toestelle</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sekuriteitsaktiwiteit</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15245,6 +15253,14 @@ Let wel: Die pakkette sal nie gedeïnstalleer word nie.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Wie het verander, aangemeld of is geweier, per rekening; filter en uitvoer.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Aanmeldverslag</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Wie aangemeld is, aanmeldings en mislukkings per dag; meld &apos;n gebruiker oral af.</translation>
     </message>
 </context>
 <context>
@@ -33550,6 +33566,14 @@ Let wel: Die pakkette sal nie gedeïnstalleer word nie.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Sessies van die PHP-hanteerder wat uitgetel het, word deur PHP self verwyder (session.gc_maxlifetime), nie deur hierdie bladsy of die session_gc-cronjob-deel nie.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Die aangemelde sessies van alle gebruikers word in die aanmeldverslag gelys en daar afgemeld; dit werk met elke sessiehanteerder.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Open die aanmeldverslag</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37874,6 +37898,26 @@ u rekening te aktiveer.</translation>
     <message>
         <source>None yet</source>
         <translation>Nog geen</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sekuriteitsaktiwiteit</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>U onlangse aanmeldings, mislukte pogings en veranderings aan u wagwoord, e-posadres en tweestap-aanmelding.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Die onlangse aanmeldings, mislukte pogings en sekuriteitsveranderings van hierdie rekening.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Gaan aktiwiteit na</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count mislukte aanmeldings</translation>
     </message>
 </context>
 <context>
@@ -50964,6 +51008,10 @@ Raadpleeg die vereistebladsy vir meer inligting.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Die crontab is nie geskryf nie (%reason). Voeg hierdie reëls by die crontab van die gebruiker waaronder die werf loop, anders loop die tou, die invoere, die kennisgewings en die soekindeks nooit nie:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Herinstallering word met die kickstarter gedoen (%file, dan php bin/php/kickstarter.php run --apply) of met &apos;n nuwe installering.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56756,6 +56804,10 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Die poskanaal het in die laaste uitvoering %count boodskappe geweier. Gaan die posbediener en site.ini MailSettings na.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count gebeurtenisse wag en geen lopie van die kennisgewing-cronjob is aangeteken nie. Voeg die cronjob-deel &quot;frequent&quot; by die crontab, of voer exp:notification:run --apply uit.</translation>
     </message>
 </context>
 <context>
@@ -63012,6 +63064,10 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Kies nog &apos;n werf of seksie met die noduskieser</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Slegs die stelseladministrateur kan die eienaar verander: voer ./console exp:content-check --fix-permissions --apply as root uit.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64545,6 +64601,10 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     <message>
         <source>empty</source>
         <translation>leeg</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Die ondertekeningsleutel is meer as &apos;n jaar oud: vervang dit met exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70255,6 +70315,14 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     <message>
         <source>not sent</source>
         <translation>nie gestuur nie</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Die kennisgewing-cronjob teken elkeen van sy lopies hier aan. Voeg die deel frequent by die crontab, of voer exp:notification:run --apply uit.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Gebruik die konsole: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76145,6 +76213,10 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>Setup &gt; Cronjobs</source>
         <translation>Opstelling &gt; Cronjobs</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Geen cronjob-deel het nog geloop nie: die werktou, die invoere, die kennisgewings en die soekindeks wag. Voer php bin/php/installcrontab.php --add --apply uit, of voeg die reëls van --show by die crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76483,6 +76555,46 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>None.</source>
         <translation>Geen.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>met &apos;n verifikasie-program</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>met &apos;n kode per e-pos</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>met &apos;n herwinningskode</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>met &apos;n wagwoordsleutel</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>met &apos;n eksterne rekening</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sekuriteitsaktiwiteit</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Word as sy netwerk gewys; die adres word bewaar soos die databeskermingsinstellings van die werf bepaal.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nie aangeteken nie</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ligging</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>benaderd</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76726,6 +76838,42 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>Manage devices</source>
         <translation>Bestuur toestelle</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>met &apos;n verifikasie-program</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>met &apos;n kode per e-pos</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>met &apos;n herwinningskode</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>met &apos;n wagwoordsleutel</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>met &apos;n eksterne rekening</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sekuriteitsaktiwiteit</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nie aangeteken nie</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ligging</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>benaderd</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76805,6 +76953,14 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>View the sessions of this user</source>
         <translation>Bekyk die sessies van hierdie gebruiker</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>U rekening %login op %site is sopas gebruik om aan te meld vanaf &apos;n plek waarvandaan dit nie onlangs aangemeld het nie:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Benaderde ligging</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76843,6 +76999,10 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser op %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Aanmeldverslag</translation>
     </message>
 </context>
 <context>
@@ -77521,6 +77681,788 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     <message>
         <source>unknown</source>
         <translation>onbekend</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Beveilig u rekening</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>&apos;n Herwinningskode is gebruik om by u rekening %login op %site aan te meld.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>&apos;n Herwinningskode is gebruik</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Rekening</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Benaderde adres</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Vra &apos;n nuwe wagwoord aan om weer aan te meld, of kontak die administrateurs van die werf.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Vra &apos;n nuwe wagwoord aan</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Elke herwinningskode werk net een keer. As u u foon verloor het, stel u verifikasie-program weer op en bewaar die nuwe herwinningskodes op &apos;n veilige plek.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Mislukte aanmeldpogings op u rekening</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Van nou af vra die aanmelding benewens u wagwoord ook &apos;n kode. As u dit gedoen het, hoef u niks te doen nie.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>As dit u was en u u wagwoord vergeet het, vra &apos;n nuwe een aan. Indien nie, kies &apos;n sterker wagwoord en skakel tweestap-aanmelding aan.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>As dit nie u was nie, ken iemand dalk u wagwoord: verander dit nou en gaan na waar u rekening aangemeld is.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Oorblywende herwinningskodes</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Gaan u toestelle na</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Sekuriteitswaarskuwing</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Iemand het %count keer agtereenvolgens probeer om met &apos;n verkeerde wagwoord by u rekening %login op %site aan te meld.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Daar was &apos;n sekuriteitsgebeurtenis op u rekening %login op %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Dit is &apos;n sekuriteitswaarskuwing oor u rekening. Dit word vir elke sodanige verandering gestuur en kan nie afgeskakel word nie.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tyd</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Tweestap-aanmelding is vir u rekening %login op %site afgeskakel.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Tweestap-aanmelding is afgeskakel</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Tweestap-aanmelding is vir u rekening %login op %site aangeskakel.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Tweestap-aanmelding is aangeskakel</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>U rekening %login op %site is ná te veel mislukte aanmeldings gesluit.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>U rekening word nou net deur u wagwoord beskerm. As u dit nie gedoen het nie, skakel tweestap-aanmelding weer aan nadat u u wagwoord verander het.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>U rekening is gesluit</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Sekuriteitsaktiwiteit</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sekuriteitsaktiwiteit van %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Aangemeld</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Mislukte aanmeldpoging</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Afgemeld</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessies afgemeld</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Aanmelding vanaf &apos;n nuwe toestel</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Aanmelding vanaf &apos;n nuwe ligging</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identiteit bevestig (&quot;Bevestig dat dit u is&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identiteitskontrole het misluk</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Met &apos;n wagwoordsleutel aangemeld</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Aanmelding met wagwoordsleutel het misluk</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Aanmelding geweier: tweestapkode ontbreek of is verkeerd</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Verkeerde tweestapkode</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Rekening gesluit ná mislukte aanmeldings</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Rekening ontsluit</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Wagwoord verander</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Wagwoordverandering het misluk</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Wagwoord teruggestel</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Nuwe wagwoord aangevra</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-posadres verander</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Gebruikernaam verander</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Tweestap-aanmelding aangeskakel</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Tweestap-aanmelding afgeskakel</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Herwinningskode gebruik</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nuwe herwinningskodes</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>App-wagwoord geskep</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App-wagwoord herroep</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Wagwoordsleutel bygevoeg</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Wagwoordsleutel verwyder</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Rekening geaktiveer</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Rekening gedeaktiveer</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Almal</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Aanmeldings en sessies</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Rekeningveranderings</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Vereis aandag</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>deur u</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>deur die gebruiker</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>deur %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Metode</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Blaaier</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Stelsel</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Toestel</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Plek</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessies</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Watter</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanaal</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mislukte pogings</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Oorblywende kodes</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Aanmeldhanteerder</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sekuriteitsaktiwiteit</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sekuriteitsaktiwiteit van %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Aanmeldings en veranderings aan die sekuriteit van u rekening. As u iets sien wat u nie gedoen het nie, verander u wagwoord en meld die toestelle af wat u nie herken nie.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Aanmeldings en veranderings aan die sekuriteit van hierdie rekening.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>U toestelle</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Verander wagwoord</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Terug na die rekening</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Die sekuriteitsaktiwiteit word nie aangeteken nie</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Dit word uit die gebruikersouditlog gelees, waarvan die tabel expuser_audit ontbreek of nie op hierdie databasis ondersteun word nie. Voer php update/common/scripts/6.0/createuseraudittable.php uit, of die databasisbywerking van 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Die afgelope %days dae</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Aanmeldings in die afgelope %days dae</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Onlangse sekuriteitsaktiwiteit</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Wys</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>misluk</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>geweier</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Nog geen sekuriteitsaktiwiteit aangeteken nie.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Sekuriteitsgebeurtenisse word %days dae lank bewaar.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Sekuriteitsgebeurtenisse word bewaar totdat &apos;n administrateur dit verwyder.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Laai my aanmelddata af</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>U sessies en sekuriteitsgebeurtenisse as &apos;n JSON-lêer.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Aangemeld</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Mislukte aanmeldpoging</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Afgemeld</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessies afgemeld</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Aanmelding vanaf &apos;n nuwe toestel</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Aanmelding vanaf &apos;n nuwe ligging</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identiteit bevestig (&quot;Bevestig dat dit u is&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identiteitskontrole het misluk</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Met &apos;n wagwoordsleutel aangemeld</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Aanmelding met wagwoordsleutel het misluk</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Aanmelding geweier: tweestapkode ontbreek of is verkeerd</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Verkeerde tweestapkode</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Rekening gesluit ná mislukte aanmeldings</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Rekening ontsluit</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Wagwoord verander</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Wagwoordverandering het misluk</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Wagwoord teruggestel</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Nuwe wagwoord aangevra</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-posadres verander</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Gebruikernaam verander</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Tweestap-aanmelding aangeskakel</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Tweestap-aanmelding afgeskakel</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Herwinningskode gebruik</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nuwe herwinningskodes</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>App-wagwoord geskep</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App-wagwoord herroep</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Wagwoordsleutel bygevoeg</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Wagwoordsleutel verwyder</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Rekening geaktiveer</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Rekening gedeaktiveer</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Almal</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Aanmeldings en sessies</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Rekeningveranderings</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Vereis aandag</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sekuriteitsaktiwiteit</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sekuriteitsaktiwiteit van %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Aanmeldings en veranderings aan die sekuriteit van u rekening. As u iets sien wat u nie gedoen het nie, verander u wagwoord en meld die toestelle af wat u nie herken nie.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>U toestelle</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Verander wagwoord</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Die sekuriteitsaktiwiteit word nog nie op hierdie werf aangeteken nie.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Aanmeldings in die afgelope %days dae</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mislukte pogings</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Nog geen sekuriteitsaktiwiteit aangeteken nie.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Laai my aanmelddata af</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>U sessies en sekuriteitsgebeurtenisse as &apos;n JSON-lêer.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Wagwoord</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Wagwoord en tweestapkode</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-koppelvlak</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-koppelvlak</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Enkelaanmelding</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Aangemeld voordat sessies aangeteken is</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Aanmeldverslag</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Wie op die werf aangemeld is, hoe dikwels rekeninge aanmeld en daarin misluk, en om &apos;n gebruiker oral af te meld. Dit werk met elke sessiehanteerder.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Die sessie is afgemeld. Die toestel moet weer aanmeld.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login is uit %count sessies afgemeld.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login het geen lopende sessie gehad nie.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Geen rekening het daardie ID, gebruikernaam of e-posadres nie.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Dit is die sessie wat u gebruik. Meld af om dit te beëindig.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Daardie sessie het reeds geëindig.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Die bladsy het verval. Niks is verander nie; probeer asseblief weer.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sessies word nie op hierdie werf aangeteken nie (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Die tabel expuser_session ontbreek</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sessies word aangeteken sodra dit geskep is: php update/common/scripts/6.0/createusersessiontable.php, of die databasisbywerking van 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Nou en vandag</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Lopende sessies</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Aangemelde gebruikers</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Aanmeldings vandag</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Mislukte pogings vandag</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Meld &apos;n gebruiker oral af</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Elke sessie van die rekening eindig by sy volgende versoek, ook dié wat deur &quot;Onthou my&quot; behou word. Gebruik dit wanneer &apos;n rekening dalk in die verkeerde hande is; stel dan sy wagwoord terug.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Gebruiker-ID, gebruikernaam of e-posadres</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Meld oral af</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Nou aangemeld</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Die %limit mees onlangs gebruikte word gewys.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Gebruiker</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Toestel</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Aangemeld</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Laas aktief</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aksies</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Hierdie toestel</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nie aangeteken nie</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Meld af</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Geen sessie is aangemeld nie.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Die afgelope %days dae</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Aanmeldings en mislukte pogings word uit die gebruikersouditlog getel, wat nie bestaan nie; die nuwe sessies word wel getel.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Dag</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Aanmeldings</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mislukte pogings</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Nuwe sessies</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Sessiehanteerder: %handler. Die sessies word uit die tabel expuser_session gelees, dus werk die verslag met elke hanteerder.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Sekuriteitswaarskuwing vir u rekening</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Daar was &apos;n sekuriteitsgebeurtenis op u rekening %login: %event. As dit nie u was nie, beveilig u rekening by %url.</translation>
     </message>
 </context>
 </TS>

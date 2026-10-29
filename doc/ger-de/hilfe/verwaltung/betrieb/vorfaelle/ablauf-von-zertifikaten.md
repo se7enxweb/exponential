@@ -40,7 +40,7 @@ echte verwendbar ist ([Velocity: HTTPS und Zertifikate](../../../../funktionen/6
 
 ```bash
 ./console exp:velocity ssl show --allow-root-user
-./console exp:velocity ssl renew www.example.gov --allow-root-user
+./console exp:velocity ssl renew --apply www.example.gov --allow-root-user
 ```
 
 Der laufende Server übernimmt eine Erneuerung innerhalb einer Minute, ohne Neustart. Mit Let's Encrypt läuft die

@@ -116,7 +116,7 @@ line. On several nodes with their own `var/` directories, each node has its own 
 - **Velocity.** The generated site configuration names the marker as the response cache's pause file, so "neither
   Velocity's cache nor the application's HTTP cache answers" during the window (Velocity 0.0.4.34 or later). The
   command clears Velocity's response cache when it switches; when Apache serves the administration page, clear it
-  yourself after switching off: `./console exp:velocity cache clear --allow-root-user`.
+  yourself after switching off: `./console exp:velocity cache clear --apply --allow-root-user`.
 - **A CDN or reverse proxy** does not store the maintenance page (`no-store`), "but it may still hold pages from before
   the window. Purge it when the window changed content."
 

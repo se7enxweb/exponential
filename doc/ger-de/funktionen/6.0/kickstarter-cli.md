@@ -16,7 +16,7 @@ php bin/php/console exp:kickstarter ini
 php bin/php/console exp:kickstarter run --dry-run
 
 # 3. install (needs --force because it can drop the database)
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
 ```
 
 Die Schritte ansehen, bevor Sie sie ausführen:

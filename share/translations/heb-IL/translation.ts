@@ -14328,6 +14328,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Nothing new</source>
         <translation>אין חדש</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>המכשירים שלך</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>פעילות אבטחה</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15247,6 +15255,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>מי שינה, נכנס או נדחה, לפי חשבון; סינון וייצוא.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>דוח כניסות</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>מי מחובר, כניסות וכישלונות לפי יום; ניתוק משתמש מכל המכשירים.</translation>
     </message>
 </context>
 <context>
@@ -33552,6 +33568,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>הפעלות שפג תוקפן של מטפל ה־PHP מוסרות על ידי PHP עצמו (session.gc_maxlifetime), ולא על ידי עמוד זה או על ידי חלק המשימה המתוזמנת session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>ההפעלות המחוברות של כל המשתמשים מוצגות, וניתן לנתק אותן, בדוח הכניסות, שפועל עם כל מטפל הפעלות.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>פתיחת דוח הכניסות</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37876,6 +37900,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>עדיין אין</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>פעילות אבטחה</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>הכניסות האחרונות, הניסיונות שנכשלו והשינויים בסיסמה, בכתובת הדוא&quot;ל ובאימות הדו־שלבי.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>הכניסות האחרונות, הניסיונות שנכשלו ושינויי האבטחה של חשבון זה.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>סקירת הפעילות</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count כניסות שנכשלו</translation>
     </message>
 </context>
 <context>
@@ -50966,6 +51010,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>ה־crontab לא נכתב (%reason). יש להוסיף שורות אלה ל־crontab של המשתמש שתחתיו האתר רץ, אחרת התור, הייבוא, ההתראות ואינדקס החיפוש לעולם לא ירוצו:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>התקנה מחדש מתבצעת באמצעות ה־kickstarter (%file, ואז php bin/php/kickstarter.php run --apply) או בהתקנה חדשה.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56758,6 +56806,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>מנגנון שליחת הדואר דחה %count הודעות בהרצה האחרונה. יש לבדוק את שרת הדואר ואת site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count אירועים ממתינים ולא נרשמה אף הרצה של המשימה המתוזמנת של ההתראות. יש להוסיף את חלק המשימות &quot;frequent&quot; לקובץ ה־crontab, או להריץ exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63014,6 +63066,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>בחירת אתר או מדור אחר באמצעות בורר הצמתים</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>רק מנהל המערכת יכול לשנות את הבעלים: יש להריץ ./console exp:content-check --fix-permissions --apply כ־root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64547,6 +64603,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>ריק</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>מפתח החתימה ישן מיותר משנה: יש להחליף אותו באמצעות exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -68807,6 +68867,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>לא נשלח</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>המשימה המתוזמנת של ההתראות רושמת כאן כל הרצה שלה. יש להוסיף את החלק frequent לקובץ ה־crontab, או להריץ exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>יש להשתמש במסוף: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76147,6 +76215,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Setup &gt; Cronjobs</source>
         <translation>הגדרות &gt; משימות מתוזמנות</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>אף חלק של המשימות המתוזמנות עדיין לא רץ: תור המשימות, הייבואים, ההתראות ואינדקס החיפוש ממתינים. יש להריץ php bin/php/installcrontab.php --add --apply, או להוסיף את השורות של --show לקובץ ה־crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>אין.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>באמצעות אפליקציית אימות</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>באמצעות קוד בדוא&quot;ל</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>באמצעות קוד שחזור</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>באמצעות מפתח גישה</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>באמצעות חשבון חיצוני</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>פעילות אבטחה</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>מוצג כרשת שלו; הכתובת נשמרת כפי שקובעות הגדרות הגנת הנתונים של האתר.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>לא נרשם</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>מיקום</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>משוער</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>ניהול מכשירים</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>באמצעות אפליקציית אימות</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>באמצעות קוד בדוא&quot;ל</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>באמצעות קוד שחזור</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>באמצעות מפתח גישה</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>באמצעות חשבון חיצוני</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>פעילות אבטחה</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>לא נרשם</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>מיקום</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>משוער</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>הצגת ההפעלות של משתמש זה</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>החשבון שלך %login ב־%site שימש זה עתה לכניסה ממקום שלא נכנסו ממנו לאחרונה:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>מיקום משוער</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser ב-%os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>דוח כניסות</translation>
     </message>
 </context>
 <context>
@@ -77523,6 +77683,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>לא ידוע</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>אבטחת החשבון</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>נעשה שימוש בקוד שחזור לכניסה לחשבון שלך %login ב־%site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>נעשה שימוש בקוד שחזור</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>חשבון</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>כתובת משוערת</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>ניתן לבקש סיסמה חדשה כדי להיכנס שוב, או לפנות למנהלי האתר.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>בקשת סיסמה חדשה</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>כל קוד שחזור פועל פעם אחת. במקרה של אובדן הטלפון, יש להגדיר מחדש את אפליקציית האימות ולשמור את קודי השחזור החדשים במקום בטוח.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>ניסיונות כניסה שנכשלו לחשבון שלך</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>מעתה, הכניסה מבקשת קוד בנוסף לסיסמה. אם הפעולה בוצעה על ידך, אין צורך לעשות דבר.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>אם זה היה מצדך והסיסמה נשכחה, ניתן לבקש סיסמה חדשה. אם לא, יש לבחור סיסמה חזקה יותר ולהפעיל אימות דו־שלבי.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>אם הפעולה לא בוצעה על ידך, ייתכן שמישהו יודע את הסיסמה: יש לשנות אותה עכשיו ולבדוק היכן החשבון מחובר.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>קודי שחזור שנותרו</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>סקירת המכשירים שלך</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>התראת אבטחה</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>מישהו ניסה להיכנס לחשבון שלך %login ב־%site עם סיסמה שגויה %count פעמים ברציפות.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>אירע אירוע אבטחה בחשבון שלך %login ב־%site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>זוהי התראת אבטחה לגבי החשבון שלך. היא נשלחת בכל שינוי כזה ולא ניתן לכבות אותה.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>שעה</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>האימות הדו־שלבי כובה עבור החשבון שלך %login ב־%site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>האימות הדו־שלבי כובה</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>האימות הדו־שלבי הופעל עבור החשבון שלך %login ב־%site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>האימות הדו־שלבי הופעל</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>החשבון שלך %login ב־%site ננעל לאחר יותר מדי כניסות שנכשלו.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>החשבון שלך מוגן כעת בסיסמה בלבד. אם הפעולה לא בוצעה על ידך, יש להפעיל שוב את האימות הדו־שלבי לאחר שינוי הסיסמה.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>החשבון שלך ננעל</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>פעילות אבטחה</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>פעילות האבטחה של %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>התחברות</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ניסיון כניסה שנכשל</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>התנתקות</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>הפעלות נותקו</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>כניסה ממכשיר חדש</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>כניסה ממיקום חדש</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>הזהות אומתה (&quot;אימות זהות&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>בדיקת הזהות נכשלה</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>כניסה באמצעות מפתח גישה</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>הכניסה באמצעות מפתח גישה נכשלה</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>הכניסה נדחתה: קוד האימות הדו־שלבי חסר או שגוי</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>קוד אימות דו־שלבי שגוי</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>החשבון ננעל לאחר כניסות שנכשלו</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>נעילת החשבון בוטלה</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>הסיסמה שונתה</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>שינוי הסיסמה נכשל</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>הסיסמה אופסה</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>התבקשה סיסמה חדשה</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>כתובת הדוא&quot;ל שונתה</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>שם המשתמש שונה</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>האימות הדו־שלבי הופעל</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>האימות הדו־שלבי כובה</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>נעשה שימוש בקוד שחזור</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>קודי שחזור חדשים</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>נוצרה סיסמת אפליקציה</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>סיסמת אפליקציה בוטלה</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>נוסף מפתח גישה</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>הוסר מפתח גישה</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>החשבון הופעל</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>החשבון הושבת</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>הכול</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>כניסות והפעלות</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>שינויים בחשבון</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>דורש תשומת לב</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>על ידך</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>על ידי המשתמש</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>על ידי %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>שיטה</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>דפדפן</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>מערכת הפעלה</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>מכשיר</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>מקום</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>מדינה</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>הפעלות</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>אילו</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>ערוץ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ניסיונות שנכשלו</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>קודים שנותרו</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>מטפל הכניסה</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>פעילות אבטחה</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>פעילות האבטחה של %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>כניסות ושינויים באבטחת החשבון שלך. אם מופיע כאן משהו שלא נעשה על ידך, יש לשנות את הסיסמה ולנתק את המכשירים הלא מוכרים.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>כניסות ושינויים באבטחת חשבון זה.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>המכשירים שלך</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>שינוי סיסמה</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>חזרה לחשבון</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>פעילות האבטחה אינה נרשמת</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>היא נקראת מיומן הביקורת של המשתמשים, שהטבלה שלו expuser_audit חסרה או אינה נתמכת במסד נתונים זה. יש להריץ php update/common/scripts/6.0/createuseraudittable.php, או את עדכון מסד הנתונים של 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days הימים האחרונים</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>כניסות ב־%days הימים האחרונים</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>פעילות אבטחה אחרונה</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>הצגה</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>נכשל</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>נדחה</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>עדיין לא נרשמה פעילות אבטחה.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>אירועי אבטחה נשמרים %days ימים.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>אירועי אבטחה נשמרים עד שמנהל מערכת מסיר אותם.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>הורדת נתוני הכניסה שלי</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ההפעלות ואירועי האבטחה שלך כקובץ JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>התחברות</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ניסיון כניסה שנכשל</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>התנתקות</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>הפעלות נותקו</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>כניסה ממכשיר חדש</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>כניסה ממיקום חדש</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>הזהות אומתה (&quot;אימות זהות&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>בדיקת הזהות נכשלה</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>כניסה באמצעות מפתח גישה</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>הכניסה באמצעות מפתח גישה נכשלה</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>הכניסה נדחתה: קוד האימות הדו־שלבי חסר או שגוי</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>קוד אימות דו־שלבי שגוי</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>החשבון ננעל לאחר כניסות שנכשלו</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>נעילת החשבון בוטלה</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>הסיסמה שונתה</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>שינוי הסיסמה נכשל</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>הסיסמה אופסה</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>התבקשה סיסמה חדשה</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>כתובת הדוא&quot;ל שונתה</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>שם המשתמש שונה</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>האימות הדו־שלבי הופעל</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>האימות הדו־שלבי כובה</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>נעשה שימוש בקוד שחזור</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>קודי שחזור חדשים</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>נוצרה סיסמת אפליקציה</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>סיסמת אפליקציה בוטלה</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>נוסף מפתח גישה</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>הוסר מפתח גישה</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>החשבון הופעל</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>החשבון הושבת</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>הכול</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>כניסות והפעלות</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>שינויים בחשבון</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>דורש תשומת לב</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>פעילות אבטחה</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>פעילות האבטחה של %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>כניסות ושינויים באבטחת החשבון שלך. אם מופיע כאן משהו שלא נעשה על ידך, יש לשנות את הסיסמה ולנתק את המכשירים הלא מוכרים.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>המכשירים שלך</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>שינוי סיסמה</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>פעילות האבטחה עדיין אינה נרשמת באתר זה.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>כניסות ב־%days הימים האחרונים</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ניסיונות שנכשלו</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>עדיין לא נרשמה פעילות אבטחה.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>הורדת נתוני הכניסה שלי</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ההפעלות ואירועי האבטחה שלך כקובץ JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>סיסמה</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>סיסמה וקוד אימות דו־שלבי</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>ממשק REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>ממשק SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>כניסה יחידה</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>התחברות לפני שהחל רישום ההפעלות</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>דוח כניסות</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>מי מחובר לאתר, באיזו תדירות חשבונות נכנסים ונכשלים בכך, וניתוק משתמש מכל המכשירים. פועל עם כל מטפל הפעלות.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ההפעלה נותקה. המכשיר יצטרך להתחבר מחדש.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login נותק מ־%count הפעלות.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>ל־%login לא הייתה הפעלה פעילה.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>אין חשבון עם מזהה, שם משתמש או כתובת דוא&quot;ל אלה.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>זוהי ההפעלה שבשימושך. כדי לסיים אותה, יש להתנתק.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>הפעלה זו כבר הסתיימה.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>תוקף הדף פג. דבר לא שונה; נא לנסות שוב.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>הפעלות אינן נרשמות באתר זה (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>הטבלה expuser_session חסרה</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>הפעלות נרשמות ברגע שהיא נוצרת: php update/common/scripts/6.0/createusersessiontable.php, או עדכון מסד הנתונים של 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>עכשיו והיום</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>הפעלות פעילות</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>משתמשים מחוברים</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>כניסות היום</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>ניסיונות שנכשלו היום</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>ניתוק משתמש מכל המכשירים</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>כל הפעלה של החשבון מסתיימת בבקשה הבאה שלה, גם אלה שנשמרו באמצעות &quot;זכור אותי&quot;. יש להשתמש בכך כשחשבון עלול להיות בידיים הלא נכונות; לאחר מכן יש לאפס את הסיסמה שלו.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>מזהה משתמש, שם משתמש או כתובת דוא&quot;ל</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>התנתקות מכל המכשירים</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>מחוברים כעת</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>מוצגות %limit ההפעלות שהיו בשימוש לאחרונה.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>משתמש</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>מכשיר</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>כתובת</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>התחברות</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>פעילות אחרונה</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>פעולות</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>מכשיר זה</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>לא נרשם</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>התנתקות</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>אין הפעלה מחוברת.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days הימים האחרונים</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>הכניסות והניסיונות שנכשלו נספרים מיומן הביקורת של המשתמשים, שאינו קיים; ההפעלות החדשות כן נספרות.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>יום</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>כניסות</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ניסיונות שנכשלו</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>הפעלות חדשות</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>מטפל הפעלות: %handler. ההפעלות נקראות מהטבלה expuser_session, ולכן הדוח פועל עם כל מטפל.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>התראת אבטחה לגבי החשבון שלך</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>אירע אירוע אבטחה בחשבון שלך %login: %event. אם הפעולה לא בוצעה על ידך, יש לאבטח את החשבון בכתובת %url.</translation>
     </message>
 </context>
 </TS>

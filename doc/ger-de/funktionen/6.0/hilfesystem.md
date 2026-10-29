@@ -38,12 +38,12 @@ Eine neue Installation gibt der Rolle Editor `exphelp/read`. Auf einer Installat
 vergeben Sie sie mit
 
 ```sh
-php bin/php/addexphelpreadpolicy.php --dry-run      # lists what it would grant
-php bin/php/addexphelpreadpolicy.php                # the Editor role
-php bin/php/addexphelpreadpolicy.php --role=Editor --role=5
+php bin/php/addexphelpreadpolicy.php                # Probelauf: listet, was es gewähren würde
+php bin/php/addexphelpreadpolicy.php --apply        # die Rolle Editor
+php bin/php/addexphelpreadpolicy.php --apply --role=Editor --role=5
 ```
 
-(`./console exp:help-grant` führt denselben Befehl aus.) Rollen, die die Hilfe bereits lesen dürfen, bleiben
+(`./console exp:help-grant --apply` führt denselben Befehl aus.) Rollen, die die Hilfe bereits lesen dürfen, bleiben
 unverändert, sodass er erneut laufen kann. Von Hand: Rollen und Richtlinien, die Rolle, Neue Richtlinie, Modul
 `exphelp`, Funktion `read`. Die Schaltfläche Hilfe erscheint nur für Benutzer, die sie haben.
 

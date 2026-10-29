@@ -33,7 +33,7 @@ Wählen Sie eine Möglichkeit:
    **Setup > Seiten vorladen** gelistet):
 
    ```bash
-   php bin/php/preload.php --siteaccess=site --allow-root-user
+   php bin/php/preload.php --apply --siteaccess=site --allow-root-user
    ```
 
 2. **Jede veröffentlichte Seite**, geeignet für einen Cron-Eintrag:

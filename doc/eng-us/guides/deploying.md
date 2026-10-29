@@ -2,7 +2,7 @@
 
 This guide is for the person who puts a site on a server: an operator, or a developer who runs their own. It takes a freshly installed Exponential site to a server that visitors reach over HTTPS. Then it shows how to ship a code change safely and how to keep the site fast. Read it top to bottom. Every command exists in the installation; where a result is shown, it is what the command prints.
 
-You need a Linux server, shell access in the installation directory (the folder that holds `index.php` and `console`), and a site that already runs. If you have no site yet, run `./console exp:install` first ([Getting started](getting-started.md), [Installing in one command](../features/6.0/install-in-one-command.md)).
+You need a Linux server, shell access in the installation directory (the folder that holds `index.php` and `console`), and a site that already runs. If you have no site yet, run `./console exp:install --apply` first ([Getting started](getting-started.md), [Installing in one command](../features/6.0/install-in-one-command.md)).
 
 Commands use `./console`, the shortcut for `bin/php/console`. The examples add `--allow-root-user` because they are run as root; leave it off when you run as the site user.
 
@@ -95,7 +95,7 @@ Velocity is a PHP application server that ships with Exponential. It needs no Ap
 ### 4.1 Select the engine and start it
 
 ```bash
-./console exp:velocity config set ServerSettings Engine qbix --allow-root-user
+./console exp:velocity config set --apply ServerSettings Engine qbix --allow-root-user
 ./console exp:velocity start --allow-root-user
 ./console exp:velocity status --allow-root-user
 ```
@@ -112,7 +112,7 @@ Errors     var/vc/qbix/log/site-error.log
 Plain HTTP is on `Port` (8088 shipped), HTTPS on `HTTPSPort` (8080 shipped), both bound to `Host` (`127.0.0.1` shipped). Open `http://127.0.0.1:8088/` on the same machine. To serve the network, set `Host`:
 
 ```bash
-./console exp:velocity config set ServerSettings Host 0.0.0.0 --allow-root-user
+./console exp:velocity config set --apply ServerSettings Host 0.0.0.0 --allow-root-user
 ./console exp:velocity restart --allow-root-user
 ```
 
@@ -133,7 +133,7 @@ Ports below 1024 need root; the usual setup is Velocity on its own ports behind 
 ./console exp:velocity config list ServerSettings --allow-root-user
 ```
 
-`layout` shows the configuration tree in the style of Apache on Debian (`/etc/vc` with `sites-available`, `sites-enabled`, `conf-available` and so on). Sites, snippets and modules are switched on and off like `a2ensite`: `./console exp:velocity site enable <name> --allow-root-user` ([on-disk layout](../bc/6.0/velocity-ondisk-layout.md)). The server also has a control panel ([Velocity control panel](../features/6.0/velocity-control-panel.md)).
+`layout` shows the configuration tree in the style of Apache on Debian (`/etc/vc` with `sites-available`, `sites-enabled`, `conf-available` and so on). Sites, snippets and modules are switched on and off like `a2ensite`: `./console exp:velocity site enable --apply <name> --allow-root-user` ([on-disk layout](../bc/6.0/velocity-ondisk-layout.md)). The server also has a control panel ([Velocity control panel](../features/6.0/velocity-control-panel.md)).
 
 Depth: [Velocity web server](../features/6.0/velocity-web-server.md), [persistent workers](../features/6.0/velocity-persistent-worker-server.md), [worker pool](../specifications/6.0/velocity-worker-pool.md), [engine settings](../specifications/6.0/velocity-engine-settings.md).
 
@@ -169,9 +169,9 @@ To run all three engines side by side, give each its own port and use `--engine=
 For Velocity with a certificate you already have (a PEM file with certificate and key; both settings may name the same file):
 
 ```bash
-./console exp:velocity config set HTTPSSettings Certificate /etc/ssl/example.com/fullchain.pem --allow-root-user
-./console exp:velocity config set HTTPSSettings Key /etc/ssl/example.com/privkey.pem --allow-root-user
-./console exp:velocity config set HTTPSSettings Enabled true --allow-root-user
+./console exp:velocity config set --apply HTTPSSettings Certificate /etc/ssl/example.com/fullchain.pem --allow-root-user
+./console exp:velocity config set --apply HTTPSSettings Key /etc/ssl/example.com/privkey.pem --allow-root-user
+./console exp:velocity config set --apply HTTPSSettings Enabled true --allow-root-user
 ./console exp:velocity restart --allow-root-user
 curl -skI https://127.0.0.1:8080/ | head -1
 ```
@@ -209,7 +209,7 @@ Edits to a template or a stylesheet need less: clear the caches without a restar
 
 ```bash
 ./console exp:cache clear --id=template --allow-root-user
-./console exp:velocity cache clear --allow-root-user
+./console exp:velocity cache clear --apply --allow-root-user
 ```
 
 Never run only `exp:cache clear --all` and then forget the web server: FPM and Velocity keep the old classes in memory until they are reloaded.
@@ -225,7 +225,7 @@ Work down this list; each item is a switch or a command that exists, and `exp:ca
 It prints one line per layer, for example `httpcache  the HTTP cache is on: ... entries`, `querycache  the SQL query cache is on`, `velocity  response cache ...: N files`, and `php  OPcache not enabled for this server` when the opcode cache is off for the command line (normal; it matters for the web process).
 
 1. **Opcode cache.** On PHP-FPM keep `opcache.enable=1` in the pool's PHP configuration. Velocity passes its own opcode cache options to the server process; the shipped values are in `[PHPSettings]` of `settings/velocity.ini`. Measured effect and how to profile: [Velocity and the opcode cache](../features/6.0/velocity-opcode-cache-and-profile.md).
-2. **Response cache (Velocity).** `[CacheSettings] Enabled=enabled`, `DefaultTtl=30` seconds. A page served from it never reaches PHP. Clear it after a template change with `./console exp:velocity cache clear --allow-root-user`. See [Velocity response cache](../features/6.0/velocity-response-cache.md).
+2. **Response cache (Velocity).** `[CacheSettings] Enabled=enabled`, `DefaultTtl=30` seconds. A page served from it never reaches PHP. Clear it after a template change with `./console exp:velocity cache clear --apply --allow-root-user`. See [Velocity response cache](../features/6.0/velocity-response-cache.md).
 3. **HTTP cache.** The role-aware page cache for any engine: `./console exp:cache httpcache status --allow-root-user` ([HTTP cache](../bc/6.0/httpcache.md)).
 4. **SQL query cache.** On by default; `./console exp:cache querycache status --allow-root-user` ([SQL query cache](../bc/6.0/sql-query-cache.md)).
 5. **Static files.** Velocity serves them with a long `StaticMaxAge` and can precompress them (`[ServerSettings] StaticMaxAge`, `PrecompressStatic`) ([static files and images](../features/6.0/velocity-static-files-and-images.md)).

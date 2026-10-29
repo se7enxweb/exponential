@@ -45,7 +45,7 @@ Einzelheiten. Antworten zur Lizenzierung sind keine Rechtsberatung.
 
 | Frage | Antwort |
 |---|---|
-| Wie installieren wir ohne Browser? | `php bin/php/console exp:install` oder der Kickstarter ([Die drei Installer](die-drei-installer.md)). |
+| Wie installieren wir ohne Browser? | `php bin/php/console exp:install --apply` oder der Kickstarter ([Die drei Installer](die-drei-installer.md)). |
 | Können wir eine installierte Website ausliefern? | Nicht für echte Websites: Installieren Sie beim ersten Start ([Erster Start und einmalige Installation](erster-start-und-einmalige-installation.md)). |
 | Wie lautet das Administratorpasswort? | Der Installer erzeugt es, sofern Sie kein zulässiges übergeben; es steht in `var/log/initial-admin-password` ([Standardzugangsdaten](standardzugangsdaten-und-erste-anmeldung.md)). |
 | Können wir `publish` wie in alten Anleitungen verwenden? | Nur in einer öffentlichen Demo mit `EXP_DEMO_MODE=1` ([Demo-Modus in Bundles](demomodus-in-bundles.md)). |

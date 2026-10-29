@@ -75,7 +75,7 @@ des Override- und des Template-Caches ([Templates und Design](../../anleitungen/
 | Ursache | Was Sie tun | Quelle |
 |---|---|---|
 | Der Browser zeigt seine eigene Kopie | Mit gedrückter Umschalttaste neu laden oder ein privates Fenster verwenden | [Welchen Cache leere ich?](../handbuch/welchen-cache-leere-ich.md#was-schiefgehen-kann) |
-| Der Antwort-Cache von Velocity antwortet für einige Sekunden | `php bin/php/console exp:velocity cache clear`, oder warten | [Caches](../../anleitungen/caches.md#4-velocity) |
+| Der Antwort-Cache von Velocity antwortet für einige Sekunden | `php bin/php/console exp:velocity cache clear --apply`, oder warten | [Caches](../../anleitungen/caches.md#4-velocity) |
 | Ein laufendes Velocity hält Einstellungen im Speicher | `php bin/php/console exp:velocity restart --allow-root-user` nach dem Leeren der INI-Caches | [Caches](../../anleitungen/caches.md#4-velocity) |
 | Eine Änderung der Einstellungen auf einem Server mit PHP-FPM | Das PHP des Webservers muss neu laden; fragen Sie die Person, die bereitstellt | [Welchen Cache leere ich?](../handbuch/welchen-cache-leere-ich.md#was-schiefgehen-kann) |
 

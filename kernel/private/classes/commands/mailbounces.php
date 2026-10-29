@@ -1,6 +1,6 @@
 <?php
 /**
- * @description Read the bounce mailbox: hard bounces and spam complaints go on the suppression list
+ * @description Read the bounce mailbox: hard bounces and spam complaints go on the suppression list (dry run unless --apply)
  * @alias exp:mail:bounces
  *
  * File containing the exp:mail:bounces command.
@@ -26,8 +26,12 @@ class Mailbounces extends \Exponential\Runnable\Command
                                  "HardStatusCodes[]) and spam complaints (feedback loop reports) put the address on the\n" .
                                  "suppression list. Soft bounces and other mail are counted only. No address is shown in full.\n" .
                                  "\n" .
-                                 "./console exp:mail:bounces                      read the mailbox\n" .
-                                 "./console exp:mail:bounces --dry-run            show what it would do; nothing is changed\n" .
+                                 "Without --apply nothing is changed: the messages are read and reported, no address is suppressed,\n" .
+                                 "no message is marked or deleted and the status is not written. --dry-run is still accepted and\n" .
+                                 "means the same as no flag; --apply together with --dry-run is a usage error (exit 2).\n" .
+                                 "\n" .
+                                 "./console exp:mail:bounces                      show what reading the mailbox would do\n" .
+                                 "./console exp:mail:bounces --apply              read the mailbox and suppress the addresses\n" .
                                  "./console exp:mail:bounces --file=dsn.eml       read saved messages (a file or a directory of .eml)\n" .
                                  "./console exp:mail:bounces --status             the last run\n" .
                                  "\n" .
@@ -37,12 +41,20 @@ class Mailbounces extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[dry-run][file:][status][json]', '',
-            array( 'dry-run' => 'Report only: nothing is suppressed, no message is changed, the status is not written',
+        $options = $this->startup( '[apply][dry-run][file:][status][json]', '',
+            array( 'apply'   => 'Suppress the addresses, handle the messages and write the status (the default is a dry run)',
+                   'dry-run' => 'The default, kept for scripts that pass it: report only, nothing is suppressed, no message is changed, the status is not written',
                    'file'    => 'Read these saved messages (.eml file, or a directory of them) instead of the mailbox',
                    'status'  => 'Show the last run and stop',
                    'json'    => 'One JSON object instead of the text' ) );
-        $dryRun = !empty( $options['dry-run'] );
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $this->shutdown( 2 );
+            return;
+        }
+        $dryRun = !$apply;
         try
         {
             if ( !empty( $options['status'] ) )
@@ -106,7 +118,15 @@ class Mailbounces extends \Exponential\Runnable\Command
             foreach ( $r['items'] as $item )
                 if ( $item['kind'] === 'hard' || $item['kind'] === 'complaint' )
                     $would += count( $item['addresses'] );
-            $cli->output( sprintf( 'Dry run: %d address(es) reported by bounces and complaints; nothing was changed', $would ) );
+            if ( !$r['ok'] )
+            {
+                $cli->error( 'FAIL: ' . $r['error'] );
+                $this->shutdown( 1 );
+                return;
+            }
+            $cli->output( sprintf( 'PASS: %d address(es) reported by bounces and complaints would be suppressed where they are not yet (dry run, nothing changed; --apply writes)', $would ) );
+            $this->shutdown( 0 );
+            return;
         }
         if ( !$r['ok'] )
         {
@@ -114,7 +134,7 @@ class Mailbounces extends \Exponential\Runnable\Command
             $this->shutdown( 1 );
             return;
         }
-        $cli->output( 'PASS' );
+        $cli->output( sprintf( 'PASS: %d address(es) newly suppressed', $c['suppressed'] ) );
         $this->shutdown( 0 );
     }
 

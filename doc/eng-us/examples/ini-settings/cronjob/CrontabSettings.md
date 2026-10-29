@@ -23,8 +23,8 @@ Never edit `settings/cronjob.ini` itself: an update replaces it. Put the setting
 > crontab lines that run the parts below, in the crontab of the system user that owns the  
 > installation directory (never root's crontab), between the marker lines  
 > "# BEGIN Exponential cronjobs: <root>" and "# END Exponential cronjobs: <root>".  
-> bin/php/installcrontab.php --show, --add, --remove (with --dry-run) does the same on an  
-> installation that exists. Without a crontab (a container, no crontab command, another user)  
+> bin/php/installcrontab.php --show, --add, --remove does the same on an installation that  
+> exists (--add and --remove show what would change; with --apply they write). Without a crontab (a container, no crontab command, another user)  
 > the installer prints the lines to add and carries on.  
 > Guide: doc/eng-us/bc/6.0/installer-crontab.md  
 >

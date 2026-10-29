@@ -14326,6 +14326,14 @@ Notă: pachetele nu vor fi dezinstalate.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Această instalare este o demonstrație publică: oricine poate cunoaște parola de administrator, iar parolele de administrator nu pot fi modificate sau resetate. Nu introduceți aici nimic privat.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dispozitivele dumneavoastră</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitate de securitate</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15245,6 +15253,14 @@ Notă: pachetele nu vor fi dezinstalate.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Cine a modificat, s-a conectat sau a fost refuzat, pe cont; filtrare și export.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Raport de conectări</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Cine este conectat, conectări și eșecuri pe zi; deconectarea unui utilizator de pretutindeni.</translation>
     </message>
 </context>
 <context>
@@ -33550,6 +33566,14 @@ Notă: pachetele nu vor fi dezinstalate.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Sesiunile expirate ale handlerului PHP sunt eliminate chiar de PHP (session.gc_maxlifetime), nu de această pagină sau de partea session_gc a activității cron.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Sesiunile conectate ale tuturor utilizatorilor sunt listate, și deconectate, în raportul de conectări, care funcționează cu orice handler de sesiuni.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Deschidere raport de conectări</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37874,6 +37898,26 @@ activa contul.</translation>
     <message>
         <source>None yet</source>
         <translation>Niciuna încă</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitate de securitate</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Conectările dumneavoastră recente, încercările eșuate și modificările parolei, adresei de e-mail și conectării în doi pași.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Conectările recente, încercările eșuate și modificările de securitate ale acestui cont.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Verificare activitate</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Conectări eșuate: %count</translation>
     </message>
 </context>
 <context>
@@ -50964,6 +51008,10 @@ Pentru mai multe informații, consultați pagina cu cerințe.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab-ul nu a fost scris (%reason). Adăugați aceste linii în crontab-ul utilizatorului sub care rulează site-ul, altfel coada, importurile, notificările și indexul de căutare nu vor rula niciodată:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Reinstalarea se face cu kickstarterul (%file, apoi php bin/php/kickstarter.php run --apply) sau cu o instalare nouă.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56756,6 +56804,10 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Transportul de e-mail a refuzat mesaje la ultima rulare: %count. Verificați serverul de e-mail și site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Evenimente în așteptare: %count, și nu este înregistrată nicio rulare a activității cron de notificare. Adăugați partea activității cron &quot;frequent&quot; în crontab sau rulați exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63012,6 +63064,10 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>Choose another site or section with the node picker</source>
         <translation>Alegere alt site sau altă secțiune cu selectorul de noduri</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Doar administratorul de sistem poate schimba proprietarul: rulați ./console exp:content-check --fix-permissions --apply ca root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64545,6 +64601,10 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>empty</source>
         <translation>gol</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Cheia de semnare are mai mult de un an: înlocuiți-o cu exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70255,6 +70315,14 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>not sent</source>
         <translation>netrimis</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Activitatea cron de notificare înregistrează aici fiecare rulare a sa. Adăugați partea frequent în crontab sau rulați exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Folosiți consola: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76145,6 +76213,10 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>Setup &gt; Cronjobs</source>
         <translation>Configurare &gt; Activități cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Nicio parte a activității cron nu a rulat încă: coada de activități, importurile, notificările și indexul de căutare așteaptă. Rulați php bin/php/installcrontab.php --add --apply sau adăugați liniile afișate de --show în crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76483,6 +76555,46 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>None.</source>
         <translation>Niciuna.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>cu o aplicație de autentificare</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>cu un cod prin e-mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>cu un cod de recuperare</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>cu o cheie de acces</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>cu un cont extern</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitate de securitate</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Afișată ca rețeaua sa; adresa este păstrată conform setărilor de protecție a datelor ale site-ului.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Neînregistrat</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Loc</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>aproximativ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76726,6 +76838,42 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>Manage devices</source>
         <translation>Gestionare dispozitive</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>cu o aplicație de autentificare</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>cu un cod prin e-mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>cu un cod de recuperare</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>cu o cheie de acces</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>cu un cont extern</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitate de securitate</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Neînregistrat</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Loc</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>aproximativ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76805,6 +76953,14 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>View the sessions of this user</source>
         <translation>Vizualizare sesiuni ale acestui utilizator</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Contul dumneavoastră %login de pe %site tocmai a fost folosit pentru conectare dintr-un loc din care nu s-a mai conectat în ultima vreme:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Loc aproximativ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76843,6 +76999,10 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser pe %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Raport de conectări</translation>
     </message>
 </context>
 <context>
@@ -77521,6 +77681,788 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>unknown</source>
         <translation>necunoscut</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Securizare cont</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Un cod de recuperare a fost folosit pentru conectarea la contul dumneavoastră %login de pe %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>A fost folosit un cod de recuperare</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Cont</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Adresă aproximativă</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Solicitați o parolă nouă pentru a vă conecta din nou sau contactați administratorii site-ului.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Solicitare parolă nouă</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Fiecare cod de recuperare funcționează o singură dată. Dacă v-ați pierdut telefonul, configurați din nou aplicația de autentificare și păstrați noile coduri de recuperare într-un loc sigur.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Încercări de conectare eșuate la contul dumneavoastră</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>De acum înainte, conectarea cere un cod pe lângă parolă. Dacă dumneavoastră ați făcut această modificare, nu trebuie să faceți nimic.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Dacă ați fost dumneavoastră și v-ați uitat parola, solicitați una nouă. Dacă nu, alegeți o parolă mai puternică și activați conectarea în doi pași.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Dacă nu ați fost dumneavoastră, este posibil ca altcineva să vă cunoască parola: schimbați-o acum și verificați unde este conectat contul dumneavoastră.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Coduri de recuperare rămase</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Verificare dispozitive</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Alertă de securitate</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Cineva a încercat să se conecteze la contul dumneavoastră %login de pe %site cu o parolă greșită de %count ori la rând.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>A avut loc un eveniment de securitate în contul dumneavoastră %login de pe %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Aceasta este o alertă de securitate despre contul dumneavoastră. Este trimisă la fiecare modificare de acest fel și nu poate fi dezactivată.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ora</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Conectarea în doi pași a fost dezactivată pentru contul dumneavoastră %login de pe %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Conectarea în doi pași a fost dezactivată</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Conectarea în doi pași a fost activată pentru contul dumneavoastră %login de pe %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Conectarea în doi pași a fost activată</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Contul dumneavoastră %login de pe %site a fost blocat după prea multe conectări eșuate.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Contul dumneavoastră este acum protejat doar de parolă. Dacă nu dumneavoastră ați făcut această modificare, activați din nou conectarea în doi pași după ce v-ați schimbat parola.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Contul dumneavoastră a fost blocat</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitate de securitate</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Activitatea de securitate a utilizatorului %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Conectat</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Încercare de conectare eșuată</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Deconectat</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesiuni deconectate</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Conectare de pe un dispozitiv nou</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Conectare dintr-un loc nou</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitate confirmată („Confirmați că sunteți dumneavoastră”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Verificarea identității a eșuat</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Conectat cu o cheie de acces</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Conectarea cu cheia de acces a eșuat</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Conectare refuzată: codul conectării în doi pași lipsește sau este greșit</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Cod greșit al conectării în doi pași</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Cont blocat după conectări eșuate</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Cont deblocat</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Parolă schimbată</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Schimbarea parolei a eșuat</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Parolă resetată</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Parolă nouă solicitată</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Adresă de e-mail schimbată</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Nume de utilizator schimbat</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Conectare în doi pași activată</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Conectare în doi pași dezactivată</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Cod de recuperare folosit</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Coduri de recuperare noi</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Parolă de aplicație creată</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Parolă de aplicație revocată</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Cheie de acces adăugată</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Cheie de acces eliminată</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Cont activat</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Cont dezactivat</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Toate</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Conectări și sesiuni</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Modificări ale contului</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Necesită atenție</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>de dumneavoastră</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>de utilizator</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>de %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Metodă</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Browser web</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Dispozitiv</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Loc</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Țară</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesiuni</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Care</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Canal</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Încercări eșuate</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Coduri rămase</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Handler de conectare</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitate de securitate</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Activitatea de securitate a utilizatorului %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Conectări și modificări ale securității contului dumneavoastră. Dacă vedeți ceva ce nu ați făcut, schimbați-vă parola și deconectați dispozitivele pe care nu le recunoașteți.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Conectări și modificări ale securității acestui cont.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dispozitivele dumneavoastră</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Modificare parolă</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Înapoi la cont</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Activitatea de securitate nu este înregistrată</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Este citită din jurnalul de audit al utilizatorilor, al cărui tabel expuser_audit lipsește sau nu este acceptat de această bază de date. Rulați php update/common/scripts/6.0/createuseraudittable.php sau actualizarea bazei de date din versiunea 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ultimele %days zile</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Conectări în ultimele %days zile</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Activitate de securitate recentă</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Afișare</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>eșuat</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>refuzat</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Nu a fost înregistrată încă nicio activitate de securitate.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Evenimentele de securitate sunt păstrate %days zile.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Evenimentele de securitate sunt păstrate până când un administrator le elimină.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Descărcare date de conectare proprii</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sesiunile și evenimentele dumneavoastră de securitate, ca fișier JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Conectat</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Încercare de conectare eșuată</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Deconectat</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesiuni deconectate</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Conectare de pe un dispozitiv nou</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Conectare dintr-un loc nou</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitate confirmată („Confirmați că sunteți dumneavoastră”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Verificarea identității a eșuat</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Conectat cu o cheie de acces</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Conectarea cu cheia de acces a eșuat</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Conectare refuzată: codul conectării în doi pași lipsește sau este greșit</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Cod greșit al conectării în doi pași</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Cont blocat după conectări eșuate</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Cont deblocat</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Parolă schimbată</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Schimbarea parolei a eșuat</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Parolă resetată</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Parolă nouă solicitată</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Adresă de e-mail schimbată</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Nume de utilizator schimbat</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Conectare în doi pași activată</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Conectare în doi pași dezactivată</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Cod de recuperare folosit</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Coduri de recuperare noi</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Parolă de aplicație creată</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Parolă de aplicație revocată</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Cheie de acces adăugată</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Cheie de acces eliminată</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Cont activat</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Cont dezactivat</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Toate</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Conectări și sesiuni</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Modificări ale contului</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Necesită atenție</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitate de securitate</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Activitatea de securitate a utilizatorului %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Conectări și modificări ale securității contului dumneavoastră. Dacă vedeți ceva ce nu ați făcut, schimbați-vă parola și deconectați dispozitivele pe care nu le recunoașteți.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dispozitivele dumneavoastră</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Modificare parolă</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Activitatea de securitate nu este încă înregistrată pe acest site.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Conectări în ultimele %days zile</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Încercări eșuate</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Nu a fost înregistrată încă nicio activitate de securitate.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Descărcare date de conectare proprii</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sesiunile și evenimentele dumneavoastră de securitate, ca fișier JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Parolă</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Parolă și cod de conectare în doi pași</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interfață REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interfață SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Autentificare unică (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Conectat înainte de înregistrarea sesiunilor</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Raport de conectări</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Cine este conectat la site, cât de des se conectează conturile și cât de des eșuează, precum și deconectarea unui utilizator de pretutindeni. Funcționează cu orice handler de sesiuni.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sesiunea a fost deconectată. Dispozitivul trebuie să se conecteze din nou.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login a fost deconectat din sesiuni: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login nu avea nicio sesiune activă.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Niciun cont nu are acest ID, acest nume de utilizator sau această adresă de e-mail.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Aceasta este sesiunea pe care o folosiți. Pentru a o încheia, deconectați-vă.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Sesiunea respectivă se încheiase deja.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Pagina expirase. Nu a fost modificat nimic; vă rugăm să încercați din nou.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sesiunile nu sunt înregistrate pe acest site (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabelul expuser_session lipsește</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sesiunile sunt înregistrate după ce acesta este creat: php update/common/scripts/6.0/createusersessiontable.php sau actualizarea bazei de date din versiunea 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Acum și astăzi</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sesiuni active</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Utilizatori conectați</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Conectări astăzi</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Încercări eșuate astăzi</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Deconectarea unui utilizator de pretutindeni</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Fiecare sesiune a contului se încheie la următoarea sa cerere, inclusiv cele păstrate prin „Memorare date de conectare”. Folosiți această opțiune când un cont ar putea fi pe mâini greșite; apoi resetați-i parola.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID de utilizator, nume de utilizator sau adresă de e-mail</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Deconectare de pretutindeni</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Conectați acum</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Sunt afișate cele mai recent folosite %limit.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Utilizator</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Dispozitiv</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresă</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Conectat</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ultima activitate</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acțiuni</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Acest dispozitiv</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Neînregistrat</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Deconectare</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Nicio sesiune nu este conectată.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ultimele %days zile</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Conectările și încercările eșuate sunt numărate din jurnalul de audit al utilizatorilor, care lipsește; sesiunile noi sunt numărate.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Zi</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Conectări</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Încercări eșuate</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Sesiuni noi</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Handler de sesiuni: %handler. Sesiunile sunt citite din tabelul expuser_session, astfel încât raportul funcționează cu orice handler.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Alertă de securitate pentru contul dumneavoastră</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>A avut loc un eveniment de securitate în contul dumneavoastră %login: %event. Dacă nu ați fost dumneavoastră, securizați-vă contul la %url.</translation>
     </message>
 </context>
 </TS>

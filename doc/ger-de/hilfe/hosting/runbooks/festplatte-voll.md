@@ -65,15 +65,15 @@ Platz da ist.
 ```bash
 ./console exp:logs --archives                 # each log with its archives and their sizes
 ./console exp:logs --prune --dry-run          # the archives beyond the site.ini [FileSettings] limits
-./console exp:logs --prune                    # remove them
-./console exp:logs --compress                 # compress the archives from .2 on
+./console exp:logs --apply --prune                    # remove them
+./console exp:logs --apply --compress                 # compress the archives from .2 on
 ```
 
 **Ein Log, das schnell wächst.** Finden Sie heraus, warum, bevor Sie es leeren; ein Log, das um Megabyte pro Minute wächst, ist ein
 Symptom. `./console exp:logs --list` zeigt Zeilen pro Minute je Datei. Dann:
 
 ```bash
-./console exp:logs --truncate=debug           # rotate it (the content stays in .1)
+./console exp:logs --apply --truncate=debug           # rotate it (the content stays in .1)
 ```
 
 **Die Logs von Velocity** liegen unter `var/vc/qbix/log` und rotieren mit einem Datum im Namen; alte können nach Ihrer Log-Richtlinie

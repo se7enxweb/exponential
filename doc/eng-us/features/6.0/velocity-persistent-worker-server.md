@@ -132,8 +132,8 @@ Change and read settings with the command instead of editing by hand:
 ```bash
 ./console exp:velocity config list ServerSettings
 ./console exp:velocity config get ServerSettings Workers
-./console exp:velocity config set ServerSettings Workers 8
-./console exp:velocity config unset ServerSettings Workers
+./console exp:velocity config set --apply ServerSettings Workers 8
+./console exp:velocity config unset --apply ServerSettings Workers
 ./console exp:velocity config paths      # which of the three look-alike files is the real one
 ```
 
@@ -165,7 +165,7 @@ two). `status` says which caches get APCu and why.
 Clear every cache after a template or stylesheet change:
 
 ```bash
-./console exp:velocity cache clear
+./console exp:velocity cache clear --apply
 ```
 
 For the Setup > Caches buttons from the command line see

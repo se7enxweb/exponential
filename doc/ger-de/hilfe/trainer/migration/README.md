@@ -41,7 +41,7 @@ Plattform oder einem anderen System planen und einen vollständigen Migrationspl
 
 ## Übungsumgebung
 
-- Eine Schulungsinstallation pro Person, installiert mit `php bin/php/console exp:install`
+- Eine Schulungsinstallation pro Person, installiert mit `php bin/php/console exp:install --apply`
   ([Installation über die Kommandozeile](../../../installation/07-installation-ueber-die-konsole.md)). Die Standardinstallation verwendet
   SQLite in `var/storage/sqlite3/exponential.db`, das die Teilnehmenden mit `sqlite3 -readonly` nur lesend öffnen.
 - Die Erweiterungen, die die `composer.json` im Wurzelverzeichnis verlangt, insbesondere xrowextract, aktiv auf der

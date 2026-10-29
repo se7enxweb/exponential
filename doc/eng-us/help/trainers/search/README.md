@@ -31,7 +31,7 @@ and set up a search backend, read the search statistics and work through a check
 | Format | Classroom or online; hands-on |
 | Level | Intermediate; Module 4 is advanced |
 | Prerequisites | [Site administration](../site-administrators/README.md) (at least the modules on caches and cronjobs); a terminal |
-| Lab | One training installation per learner, installed with `php bin/php/console exp:install` and served with `exp:velocity start`; for Module 4 an installation on MySQL or PostgreSQL, a Java runtime and the ezfind package (see the module's preparation list) |
+| Lab | One training installation per learner, installed with `php bin/php/console exp:install --apply` and served with `exp:velocity start`; for Module 4 an installation on MySQL or PostgreSQL, a Java runtime and the ezfind package (see the module's preparation list) |
 
 ## Modules
 

@@ -2,14 +2,14 @@
 title: exp:mailbounces
 audience: developer, admin
 category: examples
-summary: "Liest das Postfach für Rückläufer: Hard Bounces und Spam-Beschwerden kommen auf die Sperrliste."
+summary: "Liest das Bounce-Postfach: harte Bounces und Spam-Beschwerden kommen auf die Sperrliste (Probelauf, außer mit --apply)."
 keywords: Konsole, Befehl, exp:mailbounces, mailbounces, console, command, CLI, mailbounces.php, exp:mail:bounces
 type: generated
 generated: exp:help:examples
 ---
 # exp:mailbounces
 
-Liest das Postfach für Rückläufer: Hard Bounces und Spam-Beschwerden kommen auf die Sperrliste.
+Liest das Bounce-Postfach: harte Bounces und Spam-Beschwerden kommen auf die Sperrliste (Probelauf, außer mit --apply).
 
 Skript `bin/php/mailbounces.php`, Code in `kernel/private/classes/commands/mailbounces.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -30,8 +30,12 @@ override): hard bounces (delivery status notifications with a permanent failure 
 HardStatusCodes[]) and spam complaints (feedback loop reports) put the address on the
 suppression list. Soft bounces and other mail are counted only. No address is shown in full.
 
-./console exp:mail:bounces                      read the mailbox
-./console exp:mail:bounces --dry-run            show what it would do; nothing is changed
+Without --apply nothing is changed: the messages are read and reported, no address is suppressed,
+no message is marked or deleted and the status is not written. --dry-run is still accepted and
+means the same as no flag; --apply together with --dry-run is a usage error (exit 2).
+
+./console exp:mail:bounces                      show what reading the mailbox would do
+./console exp:mail:bounces --apply              read the mailbox and suppress the addresses
 ./console exp:mail:bounces --file=dsn.eml       read saved messages (a file or a directory of .eml)
 ./console exp:mail:bounces --status             the last run
 
@@ -42,7 +46,8 @@ Ends with PASS, SKIP (the reader is disabled or not configured) or FAIL (exit 1)
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--dry-run` |  | Nur berichten: nichts wird gesperrt, keine Nachricht geändert, der Status nicht geschrieben |
+| `--apply` |  | Die Adressen sperren, die Nachrichten behandeln und den Status schreiben (Standard ist ein Probelauf) |
+| `--dry-run` |  | Der Standard, beibehalten für Skripte, die die Option übergeben: nur berichten, nichts sperren, keine Nachricht ändern, den Status nicht schreiben |
 | `--file` | erforderlich | Diese gespeicherten Nachrichten (.eml-Datei oder ein Verzeichnis davon) statt des Postfachs lesen |
 | `--status` |  | Den letzten Lauf zeigen und aufhören |
 | `--json` |  | Ein JSON-Objekt statt des Textes |

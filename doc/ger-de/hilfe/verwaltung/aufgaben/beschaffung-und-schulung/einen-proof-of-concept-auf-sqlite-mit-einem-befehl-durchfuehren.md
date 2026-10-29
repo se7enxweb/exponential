@@ -41,7 +41,7 @@ Produkt kennenzulernen) oder während der Bewertung. Der Befehl stammt aus
    `site` und `admin`:
 
    ```bash
-   ./console exp:install
+   ./console exp:install --apply
    ```
 
 3. Lesen Sie die Zusammenfassung: Sie gibt die Adressen der Site und der Administration und den Benutzernamen aus. Das

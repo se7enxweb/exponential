@@ -75,7 +75,8 @@ class expUserAccountOverviewTest extends PHPUnit\Framework\TestCase
     public function testOwnAccountActions()
     {
         $actions = $this->overview( array( 'twofactor' => array( 'active' => true, 'method' => 'email' ), 'passkeys' => array( 'total' => 2 ),
-            'apikeys' => array( 'active' => 2, 'total' => 3 ), 'can_create_apikeys' => true, 'sessions' => array( 'active' => 2 ) ) )->actions();
+            'apikeys' => array( 'active' => 2, 'total' => 3 ), 'can_create_apikeys' => true, 'sessions' => array( 'active' => 2 ),
+            'security' => array( 'failures' => 3 ) ) )->actions();
         $this->assertSame( expUserAccountOverview::ACTIONS, self::keys( $actions ) );
         $by = array_column( $actions, null, 'key' );
         $this->assertSame( array( 'link', 'user/passkeys', 'count', 'ok', 2 ), array( $by['passkeys']['how'], $by['passkeys']['url'],
@@ -85,6 +86,9 @@ class expUserAccountOverviewTest extends PHPUnit\Framework\TestCase
         // "Your devices": the user's own page with the running sessions counted
         $this->assertSame( array( 'link', 'user/sessions', 2, 'info' ), array( $by['sessions']['how'], $by['sessions']['url'],
             $by['sessions']['status']['active'], $by['sessions']['status']['level'] ) );
+        // "Security activity": the user's own, with the failed sign-ins of the last days
+        $this->assertSame( array( 'link', 'user/security', 'failures', 'warn', 3 ), array( $by['security']['how'], $by['security']['url'],
+            $by['security']['status']['key'], $by['security']['status']['level'], $by['security']['status']['failures'] ) );
         $this->assertSame( array( 'post', 'EditButton', '' ), array( $by['profile']['how'], $by['profile']['button'], $by['profile']['url'] ) );
         $this->assertSame( 'ChangePasswordButton', $by['password']['button'] );
         $this->assertSame( 'ChangeSettingButton', $by['settings']['button'] );
@@ -110,10 +114,15 @@ class expUserAccountOverviewTest extends PHPUnit\Framework\TestCase
     {
         $actions = $this->overview( array( 'own' => false, 'access' => self::allAccess( false ),
             'twofactor' => array( 'active' => false, 'method' => 'disabled' ), 'apikeys' => array( 'active' => 0, 'total' => 1 ),
-            'sessions' => array( 'active' => 1 ) ) )->actions();
-        $this->assertSame( array( 'profile', 'password', 'settings', 'twofactor', 'sessions', 'apikeys', 'mail' ), self::keys( $actions ) );
+            'sessions' => array( 'active' => 1 ), 'security' => array( 'failures' => 0 ) ) )->actions();
+        $this->assertSame( array( 'profile', 'password', 'settings', 'twofactor', 'sessions', 'security', 'apikeys', 'mail' ), self::keys( $actions ) );
         $by = array_column( $actions, null, 'key' );
         $this->assertSame( array( 'user/sessions/42', 'none' ), array( $by['sessions']['url'], $by['sessions']['status']['level'] ) );
+        $this->assertSame( array( 'user/security/42', 'none' ), array( $by['security']['url'], $by['security']['status']['level'] ) );
+        $noSecurity = self::allAccess( false );
+        $noSecurity['sessions_admin'] = false;
+        $this->assertNotContains( 'security', self::keys( $this->overview( array( 'own' => false, 'access' => $noSecurity,
+            'security' => array( 'failures' => 0 ) ) )->actions() ) );
         // without the policy user/sessions there is no card for another user's sessions
         $noSessions = self::allAccess( false );
         $noSessions['sessions_admin'] = false;

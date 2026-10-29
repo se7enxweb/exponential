@@ -2,14 +2,14 @@
 title: exp:notificationrun
 audience: developer, admin
 category: examples
-summary: "Führt den Benachrichtigungsfilter aus: sendet die Benachrichtigungen der anstehenden Ereignisse und die fälligen Zusammenfassungen (--dry-run: nur auflisten)."
+summary: "Den Benachrichtigungsfilter ausführen: die Benachrichtigungen der wartenden Ereignisse und die fälligen Zusammenfassungen senden (Probelauf, außer mit --apply)."
 keywords: Konsole, Befehl, exp:notificationrun, notificationrun, console, command, CLI, notificationrun.php, exp:notification:run, exp:notify:run
 type: generated
 generated: exp:help:examples
 ---
 # exp:notificationrun
 
-Führt den Benachrichtigungsfilter aus: sendet die Benachrichtigungen der anstehenden Ereignisse und die fälligen Zusammenfassungen (--dry-run: nur auflisten).
+Den Benachrichtigungsfilter ausführen: die Benachrichtigungen der wartenden Ereignisse und die fälligen Zusammenfassungen senden (Probelauf, außer mit --apply).
 
 Skript `bin/php/notificationrun.php`, Code in `kernel/private/classes/commands/notificationrun.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -31,22 +31,25 @@ every handler (subtree, collaboration, general digest), messages are sent or kep
 events nothing waits for are removed. The run is locked (a second one is refused while one runs),
 recorded (exp:notification:status shows it) and audited.
 
---dry-run lists what would be sent (subject, number of recipients, masked addresses) and changes
-nothing: the pass runs in a transaction that is rolled back and no mail is handed to the transport.
+Without --apply the command lists what would be sent (subject, number of recipients, masked
+addresses) and changes nothing: the pass runs in a transaction that is rolled back and no mail is
+handed to the transport. --apply sends. --dry-run is still accepted and means the same as no flag;
+--apply together with --dry-run is a usage error (exit 2).
 --mail-file-dir=<dir> forces the file transport for this process: the mail is written to <dir>
 instead of being sent, whatever site.ini says. Use it for every trial.
 --at=<time> sets the time of the time event (a date or timestamp), to try digest windows.
 
-./console exp:notification:run --dry-run
-./console exp:notification:run --mail-file-dir=var/tmp/notification-mail
 ./console exp:notification:run
+./console exp:notification:run --apply --mail-file-dir=var/tmp/notification-mail
+./console exp:notification:run --apply
 ```
 
 ## Optionen
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--dry-run` |  | Auflisten, was gesendet würde, und nichts ändern |
+| `--apply` |  | Die Nachrichten senden, die Ereignisse markieren und entfernen (Standard listet, was gesendet würde) |
+| `--dry-run` |  | Der Standard, beibehalten für Skripte, die die Option übergeben: auflisten, was gesendet würde, nichts ändern |
 | `--at` | erforderlich | Der Zeitpunkt des Zeitereignisses: ein Datum (2026-10-05 08:00) oder ein Zeitstempel, Standard jetzt |
 | `--event` | erforderlich | Nur diese Ereignisse (IDs, durch Kommas getrennt); dann wird kein Zeitereignis erzeugt |
 | `--no-time-event` |  | Kein Zeitereignis erzeugen: nur die anstehenden Ereignisse werden verarbeitet (durch diesen Lauf wird keine Zusammenfassung fällig) |

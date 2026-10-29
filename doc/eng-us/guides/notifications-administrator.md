@@ -167,7 +167,7 @@ Three safe ways, from the lightest:
 
 1. **Dry run**: `./console exp:notification:run --dry-run`. It runs inside a transaction that is rolled back and hands nothing
    to the mail transport. Addresses are masked (`n***@nottest.invalid`) unless you add `--addresses`.
-2. **File transport**: `./console exp:notification:run --mail-file-dir=var/tmp/notification-mail` makes a real run (events are
+2. **File transport**: `./console exp:notification:run --apply --mail-file-dir=var/tmp/notification-mail` makes a real run (events are
    handled and removed, digests sent) but the mail is written to files in that directory, for this process only. Open a
    file to see exactly what would go out.
 3. **Only one event**: add `--event=<id>` (find the id with `exp:notification:events list`) so a run does not touch the

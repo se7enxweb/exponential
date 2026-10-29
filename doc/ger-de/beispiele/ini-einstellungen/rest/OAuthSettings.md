@@ -86,9 +86,9 @@ AllowTokenInBody=enabled
 ## AuthorizeRequiresPolicy
 
 > enabled oder disabled. Enabled (der Standard): Ein angemeldeter Benutzer darf einen OAuth-Client unter oauth/authorize nur  
-> mit der Richtlinie oauth/authorize autorisieren (wahlweise nach Siteaccess eingeschränkt); ohne sie erhält der Client error=access\_denied.  
-> disabled: Jeder angemeldete Benutzer darf Clients autorisieren, wie vor 6.0.15. Verwenden Sie es nur kurz während eines  
-> Upgrades, bis "php bin/php/addoauthauthorizepolicy.php" die Richtlinie gewährt hat (doc/eng-us/bc/6.0/oauth-authorize-policy.md).  
+> mit der Richtlinie oauth/authorize (optional nach Siteaccess eingeschränkt) autorisieren; ohne sie erhält der Client error=access\_denied.  
+> disabled: Jeder angemeldete Benutzer darf Clients autorisieren, wie vor 6.0.15. Nutzen Sie es nur kurz während eines  
+> Upgrades, bis "php bin/php/addoauthauthorizepolicy.php --apply" die Richtlinie gewährt hat (doc/eng-us/bc/6.0/oauth-authorize-policy.md).  
 
 Standard: `enabled`.
 

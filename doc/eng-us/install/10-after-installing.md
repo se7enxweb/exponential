@@ -452,7 +452,7 @@ php bin/php/cache.php opcache status --allow-root-user
 After a template or stylesheet change clear it (no restart needed):
 
 ```bash
-php bin/php/console exp:velocity cache clear --allow-root-user
+php bin/php/console exp:velocity cache clear --apply --allow-root-user
 php bin/php/console exp:velocity cache stats --allow-root-user
 ```
 

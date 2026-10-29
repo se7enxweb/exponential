@@ -2,14 +2,14 @@
 title: exp:mailconsent
 audience: developer, admin
 category: examples
-summary: "The consent log of the e-mail preferences: list, export as CSV, retention cleanup."
+summary: "The consent log of the e-mail preferences: list, export as CSV, retention cleanup (dry run unless --apply)."
 keywords: exp:mailconsent, mailconsent, console, command, CLI, mailconsent.php, exp:mail:consent
 type: generated
 generated: exp:help:examples
 ---
 # exp:mailconsent
 
-The consent log of the e-mail preferences: list, export as CSV, retention cleanup.
+The consent log of the e-mail preferences: list, export as CSV, retention cleanup (dry run unless --apply).
 
 Script `bin/php/mailconsent.php`, code in `kernel/private/classes/commands/mailconsent.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -26,12 +26,15 @@ E-mail consent log
   list                      the newest rows (time, person, category, action, old -> new, source)
   export                    the rows as CSV (--output, or the screen); the CSV holds addresses and IPs
   cleanup                   retention: remove the rows of people who are gone after RetentionDays, expired
-                            confirmations and old suppression entries (--dry-run counts)
+                            confirmations and old suppression entries; counts only, --apply removes
 Filters: --user, --email, --category, --action, --source, --from, --to (YYYY-MM-DD).
+cleanup without --apply removes nothing: it counts what it would remove. --dry-run is still
+accepted and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).
 
 ./console exp:mail:consent list --category=newsletter --limit=20
 ./console exp:mail:consent export --from=2026-01-01 --output=var/tmp/consent.csv
-./console exp:mail:consent cleanup --dry-run
+./console exp:mail:consent cleanup
+./console exp:mail:consent cleanup --apply
 ```
 
 ## Options
@@ -48,7 +51,8 @@ Filters: --user, --email, --category, --action, --source, --from, --to (YYYY-MM-
 | `--limit` | required | list: how many (default 50) |
 | `--offset` | required | list: skip this many |
 | `--output` | required | export: the file (mode 0600) |
-| `--dry-run` |  | cleanup: count only |
+| `--apply` |  | cleanup: remove the rows (the default counts them and removes nothing) |
+| `--dry-run` |  | cleanup: the default, kept for scripts that pass it: count only |
 | `--addresses` |  | list: show addresses instead of hiding them |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
