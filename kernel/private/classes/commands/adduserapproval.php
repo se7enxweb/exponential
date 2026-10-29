@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of bin/php/adduserapproval.php.
- * @description Set up the approval of new accounts in a user group (default: new Editors wait for the Administrator users): the workflow event on content/publish before and the role that lets the requesters create such accounts (--dry-run lists it first)
+ * @description Set up the approval of new accounts in a user group (default: new Editors wait for the Administrator users): the workflow event on content/publish before and the role that lets the requesters create such accounts (--dry-run lists it first); --mode=section sets up the optional alternative, a section Staff with the plain approval event (a dry run unless --apply)
  * Guide: doc/eng-us/bc/6.0/user-account-approval.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
