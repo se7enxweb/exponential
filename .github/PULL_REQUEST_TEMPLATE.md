@@ -4,8 +4,8 @@
 
 ## Checklist
 
-- [ ] **I have signed the 7x Contributor Licensing Agreement (CLA)**, or my employer has, and it has been sent to 7x.
-      **I understand that by signing and submitting, I assign the copyright in this contribution to 7x, which becomes its owner, and give up control over it:** 7x may
+- [ ] **I have signed the Contributor Licensing Agreement (CLA) of the Exponential Foundation and 7x**, or my employer has, and it has been sent to the Exponential Foundation and 7x.
+      **I understand that by signing and submitting, I assign the copyright in this contribution to the Exponential Foundation and 7x, which become its owners, and give up control over it:** The Exponential Foundation and 7x may
       use, change, relicense and distribute it in any way, also commercially and under other licenses, without asking
       or paying me, and I cannot withdraw it or set conditions on it.
       A contribution to the core kernel (this repository, se7enxweb/exponential) is merged only once the signed CLA

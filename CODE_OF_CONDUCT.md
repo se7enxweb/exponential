@@ -92,7 +92,7 @@ community spaces) are welcome on the same terms as any other contribution:
 
 Contributions to the core kernel of Exponential need a signed Contributor Licensing Agreement (CLA) before they can
 be merged. By signing the CLA and submitting a contribution to the core kernel, you assign (transfer) the copyright in
-that contribution to 7x; your own custom extensions are not affected. The details are in
+that contribution to the Exponential Foundation and 7x; your own custom extensions are not affected. The details are in
 [CONTRIBUTING.md, Copyright assignment (CLA)](CONTRIBUTING.md#copyright-assignment-cla).
 
 * Be honest about authorship. Sign the CLA only for contributions you have the right to assign, and do not submit

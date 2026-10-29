@@ -37,7 +37,7 @@ habits make that time count, for them and for you.
   `main` is never rewritten; a later fix is a new pull request.
 - **Know what the CLA gives away before a kernel pull request.** The kernel (`se7enxweb/exponential`) merges a code
   contribution only once its author's signed Contributor Licensing Agreement has been received. By signing and
-  submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it: 7x may use, change, relicense and distribute
+  submitting, you assign the copyright in your contribution to the Exponential Foundation and 7x, which become its owners, and give up control over it: the Exponential Foundation and 7x may use, change, relicense and distribute
   it in any way, without asking or paying you, and you cannot withdraw it. Your own extensions are not affected. Tick the checkbox in the pull request template ([Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)).
 
 ## Do not

@@ -12,7 +12,7 @@ type: help
 Before reading further, the most important sentence, quoted from `CONTRIBUTING.md`:
 
 > **By signing the CLA and submitting a contribution to the core kernel, you assign (transfer) the copyright in that
-> contribution to 7x. 7x becomes the copyright owner.** You **give up control**: 7x may use, change, relicense and
+> contribution to the Exponential Foundation and 7x. They become the copyright owners.** You **give up control**: the Exponential Foundation and 7x may use, change, relicense and
 > distribute your contribution in any way, including commercially and under other licenses, **without asking you and
 > without paying you**. You **cannot withdraw it or set conditions on it**. **Your own custom extensions are not
 > affected.**
@@ -60,12 +60,12 @@ Source: `CONTRIBUTING.md`, "What it does not cover".
 
 | Question | Answer, from `CONTRIBUTING.md` |
 |---|---|
-| Do I give away my copyright? | Yes, for the contribution: you assign it to 7x |
+| Do I give away my copyright? | Yes, for the contribution: you assign it to the Exponential Foundation and 7x |
 | Can I take it back? | No |
-| Can 7x relicense it? | Yes, including in commercial products |
+| Can the Exponential Foundation and 7x relicense it? | Yes, including in commercial products |
 | Is a one-line fix a contribution? | For small fixes "in most cases we do not need you to sign a CLA", but sign anyway for pull requests to the kernel repository: a merge needs a CLA on file |
 | I work for a company | The company usually owns the copyright: it signs, or confirms permission or a waiver (§6) |
-| Does the CLA replace the GPL? | No. The contribution is released under the GPL like the rest; the CLA additionally assigns copyright to 7x |
+| Does the CLA replace the GPL? | No. The contribution is released under the GPL like the rest; the CLA additionally assigns copyright to the Exponential Foundation and 7x |
 
 The code of conduct adds: "Be honest about authorship. Sign the CLA only for contributions you have the right to
 assign, and do not submit someone else's work as your own" (`CODE_OF_CONDUCT.md`).

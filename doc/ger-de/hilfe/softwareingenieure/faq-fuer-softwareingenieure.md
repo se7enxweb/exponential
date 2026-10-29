@@ -91,7 +91,7 @@ Hinweisen, was falsch war.
 
 **Welche Lizenz?** Die GNU GPL, Version 2 oder später, für den Code; die GNU FDL 1.3 für die Dokumentation.
 
-**Was verlangt ein Beitrag zum Kernel?** Eine unterschriebene CLA, die das Urheberrecht am Beitrag an 7x überträgt; Ihre
+**Was verlangt ein Beitrag zum Kernel?** Eine unterschriebene CLA, die das Urheberrecht am Beitrag an die Exponential Foundation und 7x überträgt; Ihre
 eigenen Erweiterungen sind nicht betroffen ([Beiträge an das Projekt](upstream-beitragen.md)).
 
 **Wie melde ich eine Schwachstelle?** Vertraulich, an die Adresse in `SECURITY.md`

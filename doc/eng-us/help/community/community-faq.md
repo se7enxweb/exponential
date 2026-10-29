@@ -40,7 +40,7 @@ Yes: bug reports, confirmations, translations, help pages, testing and answers
 ([Ways to contribute](contributing/ways-to-contribute.md)).
 
 **Do I have to sign something?**
-For code contributed to the kernel repository, yes: the CLA, which assigns the copyright in the contribution to 7x.
+For code contributed to the kernel repository, yes: the CLA, which assigns the copyright in the contribution to the Exponential Foundation and 7x.
 Your own extensions and sites are not affected ([The CLA explained](contributing/the-cla-explained.md)).
 
 **Will my pull request be merged?**

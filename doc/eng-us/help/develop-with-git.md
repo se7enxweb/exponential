@@ -264,7 +264,7 @@ Push with force only to your own pull request branch. After the merge, `main` is
 
 **Copyright assignment (CLA).** The Exponential Foundation and 7x merge a code contribution to
 the core kernel (`se7enxweb/exponential`), sent in any form (pull request, patch, issue or mail), only after you have
-signed the Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other
+signed the Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to the Exponential Foundation and 7x, which become its owners, and give up control over it:** The Exponential Foundation and 7x may use, change, relicense and distribute it in any way, also under other
 licenses and in commercial products, without asking or paying you, and you cannot withdraw it or set conditions on it.
 Your own custom extensions, and the branch of your own site, are not affected. See
 [Copyright assignment (CLA)](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#copyright-assignment-cla)

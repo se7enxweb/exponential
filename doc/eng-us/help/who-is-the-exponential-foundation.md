@@ -381,7 +381,7 @@ clones with their full history" (README, "Installation"; [Develop with Git](deve
   later license" ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
 - **Copyright assignment (CLA).** The Exponential Foundation and 7x require a signed Contributor
   Licensing Agreement for every code contribution to the core kernel, in any form, before it is merged. By signing
-  and submitting, the contributor assigns the copyright in the contribution to 7x, which becomes its owner, and gives up control over it: 7x may use, change, relicense and distribute
+  and submitting, the contributor assigns the copyright in the contribution to the Exponential Foundation and 7x, which become its owners, and gives up control over it: the Exponential Foundation and 7x may use, change, relicense and distribute
   it in any way, also commercially and under other licenses, without asking or paying the contributor, who cannot
   withdraw it or set conditions on it. Users' own
   custom extensions are not affected

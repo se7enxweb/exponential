@@ -235,9 +235,11 @@ A clear, single notice protects that window:
 Exponential is written by many people. Their contributions reach the kernel in two ways:
 
 - **Code contributions to the kernel** (the repository se7enxweb/exponential) are merged after the author has signed
-  the **7x Contributor Licensing Agreement (CLA)**, version 1.0.1. As the agreement reads today, it assigns the copyright
-  in the contribution to 7x. 7x holds those rights as one of the two holders named in the notice. The text of the
-  CLA did not change on 2026-10-29; read it before you sign: [The CLA explained](community/contributing/the-cla-explained.md),
+  the **Contributor Licensing Agreement (CLA)**. It assigns the copyright in the contribution to the **Exponential
+  Foundation and 7x**, which become its owners, the Foundation named first as in the notice (owner decision of
+  29 October 2026; until then the agreement, version 1.0.1, assigned it to 7x alone). The two holders of the notice
+  are thereby also the holders of every merged contribution. The agreement form on the CLA page is being updated to
+  this assignment; read it before you sign: [The CLA explained](community/contributing/the-cla-explained.md),
   `CONTRIBUTING.md`.
 - **Documentation contributions** are accepted under the GNU Free Documentation License 1.3 or later (see
   [The license of this documentation](../README-LICENSE.md)).
@@ -462,6 +464,10 @@ AS's work is dated separately, 1999 to 2014.
 **Does the order of the names mean the Foundation owns more?**
 No share is implied by the order. Both are holders. The Foundation is named first for the reasons
 [above](#why-the-exponential-foundation-is-named-first).
+
+**To whom do I assign my contribution under the CLA?**
+To the Exponential Foundation and 7x together, which become its owners and may use, change, relicense and distribute
+it. Since 29 October 2026 the CLA names both, in the same order as the notice. Your own extensions are not affected.
 
 **Did the license change on 29 October 2026?**
 No. Only the holder notice changed. The license is still the GNU General Public License, version 2 or any later

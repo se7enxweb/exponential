@@ -3,7 +3,7 @@ title: The CLA for students
 audience: student
 category: learning
 order: 44
-summary: What the Contributor Licensing Agreement means for a student - when it is required (code contributions to the core kernel), what you give up (the copyright is assigned to 7x), what it does not cover (your own extensions, sites and work you only publish yourself), how to sign, and questions about employers, schools and small fixes.
+summary: What the Contributor Licensing Agreement means for a student - when it is required (code contributions to the core kernel), what you give up (the copyright is assigned to the Exponential Foundation and 7x), what it does not cover (your own extensions, sites and work you only publish yourself), how to sign, and questions about employers, schools and small fixes.
 keywords: CLA, contributor licensing agreement, copyright, assignment, 7x, kernel, pull request, own extension, GPL, student, school, employer, sign
 type: help
 ---
@@ -26,7 +26,7 @@ page is not legal advice ([Copyright assignment (CLA)](../../../../CONTRIBUTING.
 7x and the Exponential Foundation require a signed CLA for every code contribution to the core kernel of
 Exponential, the repository [se7enxweb/exponential](https://github.com/se7enxweb/exponential), before it can be
 merged. "By signing the CLA and submitting a contribution to the core kernel, you assign (transfer) the copyright in
-that contribution to 7x. 7x becomes the copyright owner." You give up control: 7x may use, change, relicense and
+that contribution to the Exponential Foundation and 7x. They become the copyright owners." You give up control: the Exponential Foundation and 7x may use, change, relicense and
 distribute the contribution in any way, including commercially, without asking or paying you, and you cannot withdraw
 it. **Your own custom extensions are not affected.**
 
@@ -76,7 +76,7 @@ GPL still applies when you hand an extension to others ([Contribute extensions b
 **Can I take a contribution back later?** No. You cannot withdraw it or set conditions on it.
 
 **Does the CLA replace the GPL?** No. Your contribution is released under the GPL like the rest of Exponential; for the
-kernel, the CLA additionally assigns its copyright to 7x.
+kernel, the CLA additionally assigns its copyright to the Exponential Foundation and 7x.
 
 **Do I need it for a translation or a documentation fix?** They are contributions to the kernel repository, and
 `CONTRIBUTING.md` lists "documentation files, translations" among the kinds of code the CLA page names. Sign it, or ask

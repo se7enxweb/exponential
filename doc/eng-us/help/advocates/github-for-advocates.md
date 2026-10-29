@@ -59,7 +59,7 @@ How to write a good issue: [Reporting bugs well](reporting-bugs-well.md). Which 
 - **Code**: fork, branch, commit, pull request ([Develop with Git](../develop-with-git.md#contribute-a-change-with-a-pull-request)).
 - **Copyright assignment (CLA)**: a code contribution to the kernel
   (`se7enxweb/exponential`), in any form, is merged only once its author's signed Contributor Licensing Agreement
-  has been received. By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it: 7x may use, change,
+  has been received. By signing and submitting, you assign the copyright in your contribution to the Exponential Foundation and 7x, which become its owners, and give up control over it: the Exponential Foundation and 7x may use, change,
   relicense and distribute it in any way, without asking or paying you, and you cannot withdraw it
   ([Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)). Your own extensions are
   not affected.

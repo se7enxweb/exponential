@@ -188,9 +188,9 @@ are your own: your server, your time, and the services you choose to buy, from 7
 lock-in risks are listed one by one, with the reason each does not apply, on
 [Comparing Exponential factually](help/business/comparing-exponential-factually.md).
 
-There is one condition you should know before you contribute code to the kernel: 7x and the Foundation require a
+There is one condition you should know before you contribute code to the kernel: the Foundation and 7x require a
 signed Contributor Licensing Agreement, and by signing and submitting, you assign the copyright in that contribution
-to 7x, which may then use, change, relicense and distribute it without asking or paying you. Your own extensions are
+to the Exponential Foundation and 7x, which may then use, change, relicense and distribute it without asking or paying you. Your own extensions are
 not affected ([Copyright assignment (CLA)](../../CONTRIBUTING.md#copyright-assignment-cla),
 [The CLA explained](help/community/contributing/the-cla-explained.md)). We say this plainly because you should decide
 with all the facts.
@@ -212,7 +212,7 @@ The copyright notice of the kernel reads "Copyright (C) 1998 - 2026 Exponential 
 (C) 1999 - 2014 eZ Systems AS", and the code carries the work of hundreds of contributors over the years
 ([Who is 7x?, 7x and the Exponential Foundation](help/who-is-7x.md#7x-and-the-exponential-foundation),
 [Contributors and friends of the project](help/who-is-7x.md#contributors-and-friends-of-the-project)). New code
-contributions to the kernel are assigned to 7x through the CLA described above. In one sentence: 7x leads the project,
+contributions to the kernel are assigned to the Exponential Foundation and 7x through the CLA described above. In one sentence: 7x leads the project,
 7x and the Foundation hold the copyright, and the license is the GPL
 ([Common errors in coverage](help/press/common-errors-in-coverage.md)).
 

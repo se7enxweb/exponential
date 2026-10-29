@@ -56,8 +56,8 @@ veröffentlicht, GPL v2 oder später.
 
 **Übertragung des Urheberrechts (CLA).** Bevor ein Beitrag zum Kernel angenommen werden kann, verlangen 7x und die
 Exponential Foundation von dessen Rechteinhaber ein unterzeichnetes Contributor Licensing Agreement. **Mit der
-Unterzeichnung und Einreichung überträgt die Stelle das Urheberrecht an dem Beitrag auf 7x, das dessen Inhaber wird,
-und gibt die Kontrolle darüber auf:** 7x darf ihn auf jede Weise nutzen, ändern, neu lizenzieren und verbreiten, auch
+Unterzeichnung und Einreichung überträgt die Stelle das Urheberrecht an dem Beitrag auf die Exponential Foundation und 7x, die dessen Inhaber werden,
+und gibt die Kontrolle darüber auf:** Die Exponential Foundation und 7x dürfen ihn auf jede Weise nutzen, ändern, neu lizenzieren und verbreiten, auch
 unter anderen Lizenzen und in kommerziellen Produkten, ohne die Stelle zu fragen oder zu bezahlen; die Stelle kann ihn
 weder zurückziehen noch Bedingungen daran knüpfen. Ihre internen Freigaben müssen das akzeptieren und regeln, wer
 unterzeichnen darf: Wenn die Stelle die Rechte an der Arbeit ihrer Mitarbeitenden hat, unterzeichnet die Stelle oder

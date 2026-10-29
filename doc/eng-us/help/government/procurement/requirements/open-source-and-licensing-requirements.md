@@ -55,7 +55,7 @@ license that meets it rather than for "open source" as a label.
 | Network use | Visiting a website is not distribution; nothing obliges the operator to publish the code it runs | [Licensing questions](../../../project/licensing-faq.md) |
 | Source | Public repositories on GitHub under `se7enxweb`, installable with Composer | [Getting the code](../../../../install/03-getting-the-code.md) |
 | Documentation | GNU Free Documentation License 1.3 or later | [The license of this documentation](../../../../README-LICENSE.md), [GFDL 1.3](https://www.gnu.org/licenses/fdl-1.3.html) |
-| Copyright | "Exponential Foundation and 7x" and eZ Systems AS for 1999 to 2014, plus contributors; kernel contributors assign the copyright in their contributions to 7x under the CLA ([CONTRIBUTING.md](../../../../../../CONTRIBUTING.md#copyright-assignment-cla)) | [Licensing questions](../../../project/licensing-faq.md) |
+| Copyright | "Exponential Foundation and 7x" and eZ Systems AS for 1999 to 2014, plus contributors; kernel contributors assign the copyright in their contributions to the Exponential Foundation and 7x under the CLA ([CONTRIBUTING.md](../../../../../../CONTRIBUTING.md#copyright-assignment-cla)) | [Licensing questions](../../../project/licensing-faq.md) |
 | Extension licenses | Each extension states its license in `ezinfo.php` and `extension.xml` | [Source control and releases](../../../../standards/source-control-and-releases.md), [Package licenses and versions](../../../../features/6.0/package-licenses-and-versions.md) |
 | Third-party services | Some extensions call outside services when activated (analytics, CAPTCHA, social sign-in) | [Privacy standards](../../../../standards/privacy.md) |
 

@@ -43,7 +43,8 @@ unbezahlt. Diese Gewohnheiten sorgen dafür, dass diese Zeit etwas bringt, für 
 - **Wissen Sie vor einem Pull Request an den Kernel, was Sie mit dem CLA abgeben.** Der Kernel
   (`se7enxweb/exponential`) übernimmt einen Code-Beitrag erst, wenn das unterzeichnete Contributor Licensing Agreement
   seines Autors eingegangen ist. Mit der Unterzeichnung und der Einreichung übertragen Sie das Urheberrecht an Ihrem
-  Beitrag auf 7x, das damit sein Inhaber wird, und geben die Kontrolle darüber auf: 7x darf ihn auf jede Weise
+  Beitrag auf die Exponential Foundation und 7x, die damit seine Inhaber werden, und geben die Kontrolle darüber auf:
+  Die Exponential Foundation und 7x dürfen ihn auf jede Weise
   verwenden, ändern, neu lizenzieren und verbreiten, ohne Sie zu fragen oder zu bezahlen, und Sie können ihn nicht
   zurückziehen. Ihre eigenen Erweiterungen sind davon nicht berührt. Haken Sie das Kästchen in der Vorlage des Pull
   Requests an ([Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla), auf Englisch).

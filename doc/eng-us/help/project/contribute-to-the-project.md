@@ -52,7 +52,7 @@ request to 7x's repository, where it is reviewed and, when merged, released to e
    prefer a new option over a changed default, and expect several rounds of review before it is accepted and merged.
 7. **Copyright assignment (CLA).** The Exponential Foundation and 7x merge a code
    contribution to the core kernel (`se7enxweb/exponential`), sent in any form (pull request, patch, code in an
-   issue, or mail), only after you have signed the Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in
+   issue, or mail), only after you have signed the Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to the Exponential Foundation and 7x, which become its owners, and give up control over it:** The Exponential Foundation and 7x may use, change, relicense and distribute it in
    any way, also under other licenses and in commercial products, without asking or paying you, and you cannot
    withdraw it or set conditions on it. See
    [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) and the
@@ -70,7 +70,7 @@ pull request. While it is open, you squash it and rebase it onto `main` as the r
 Contribute under the same terms as everyone else: the GNU GPL version 2 or later. The website's FAQ asks for this so
 that contributions stay compatible with the rest of the code and the project can move to later versions of the GPL as
 a whole; `CONTRIBUTING.md` says the same. For the kernel, the CLA additionally assigns
-the copyright in your contribution to 7x, which may then use, change and relicense it without asking or paying you. If you cannot license a contribution
+the copyright in your contribution to the Exponential Foundation and 7x, which may then use, change and relicense it without asking or paying you. If you cannot license a contribution
 that way, do not submit it ([Licensing questions](licensing-faq.md#may-i-contribute-code-under-gpl-version-3-only-or-gpl-version-2-only)).
 
 ## Test changes before they are released

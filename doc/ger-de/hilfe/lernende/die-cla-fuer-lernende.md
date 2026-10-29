@@ -3,7 +3,7 @@ title: Die CLA für Lernende
 audience: student
 category: learning
 order: 44
-summary: Was das Contributor Licensing Agreement für Lernende bedeutet - wann es erforderlich ist (Codebeiträge zum Kernel), was Sie abgeben (das Urheberrecht wird an 7x übertragen), was es nicht umfasst (Ihre eigenen Erweiterungen, Websites und Arbeiten, die Sie nur selbst veröffentlichen), wie Sie unterzeichnen, und Fragen zu Arbeitgebern, Schulen und kleinen Korrekturen.
+summary: Was das Contributor Licensing Agreement für Lernende bedeutet - wann es erforderlich ist (Codebeiträge zum Kernel), was Sie abgeben (das Urheberrecht wird an die Exponential Foundation und 7x übertragen), was es nicht umfasst (Ihre eigenen Erweiterungen, Websites und Arbeiten, die Sie nur selbst veröffentlichen), wie Sie unterzeichnen, und Fragen zu Arbeitgebern, Schulen und kleinen Korrekturen.
 keywords: CLA, contributor licensing agreement, urheberrecht, übertragung, 7x, kernel, pull request, eigene erweiterung, GPL, lernende, schule, arbeitgeber, unterzeichnen, copyright, assignment, own extension, student, school, employer, sign
 type: help
 ---
@@ -26,7 +26,8 @@ selbst, und diese Seite ist keine Rechtsberatung ([Übertragung des Urheberrecht
 7x und die Exponential Foundation verlangen für jeden Codebeitrag zum Kernel von Exponential, dem Repository
 [se7enxweb/exponential](https://github.com/se7enxweb/exponential), eine unterzeichnete CLA, bevor er gemergt werden
 kann. „Indem Sie die CLA unterzeichnen und einen Beitrag zum Kernel einreichen, übertragen Sie das Urheberrecht an
-diesem Beitrag an 7x. 7x wird Inhaber des Urheberrechts.“ Sie geben die Kontrolle ab: 7x darf den Beitrag auf jede
+diesem Beitrag an die Exponential Foundation und 7x. Sie werden Inhaber des Urheberrechts.“ Sie geben die Kontrolle
+ab: Die Exponential Foundation und 7x dürfen den Beitrag auf jede
 Weise nutzen, ändern, neu lizenzieren und verbreiten, auch kommerziell, ohne Sie zu fragen oder zu bezahlen, und Sie
 können ihn nicht zurückziehen. **Ihre eigenen Erweiterungen sind davon nicht betroffen.**
 
@@ -82,7 +83,7 @@ Repository; die CLA gilt nicht. Die GPL gilt weiterhin, wenn Sie eine Erweiterun
 **Kann ich einen Beitrag später zurücknehmen?** Nein. Sie können ihn weder zurückziehen noch an Bedingungen knüpfen.
 
 **Ersetzt die CLA die GPL?** Nein. Ihr Beitrag wird wie der Rest von Exponential unter der GPL veröffentlicht; für den
-Kernel überträgt die CLA zusätzlich sein Urheberrecht an 7x.
+Kernel überträgt die CLA zusätzlich sein Urheberrecht an die Exponential Foundation und 7x.
 
 **Brauche ich sie für eine Übersetzung oder eine Korrektur der Dokumentation?** Das sind Beiträge zum
 Kernel-Repository, und `CONTRIBUTING.md` führt „Dokumentationsdateien, Übersetzungen“ unter den Arten von Code auf, die

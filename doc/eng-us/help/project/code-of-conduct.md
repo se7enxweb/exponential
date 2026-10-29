@@ -36,7 +36,7 @@ conduct used by many open source projects, with four additions written for Expon
 | Contributor Covenant 2.1 | The pledge, the standards of behavior, enforcement and the four steps of consequences |
 | Partners and commercial conduct | Honesty with customers, fair competition, conflicts of interest, licenses, customer data |
 | AI-generated contributions | Responsibility, disclosure, rights to what you submit, no unchecked floods |
-| The contributor agreement (CLA) | Kernel contributions are a copyright assignment to 7x; honest authorship |
+| The contributor agreement (CLA) | Kernel contributions are a copyright assignment to the Exponential Foundation and 7x; honest authorship |
 | Trainers and advocates | Accurate teaching, no false "official" claims, disclosure, safe and accessible events, privacy |
 
 ## Who it applies to
@@ -89,7 +89,7 @@ requests, issues or answers, and never post an unverified security report in pub
 ### The contributor agreement (CLA)
 
 Contributions to the core kernel need a signed CLA before they are merged. By signing it and submitting a kernel
-contribution, you assign the copyright in that contribution to 7x; your own custom extensions are not affected. Sign
+contribution, you assign the copyright in that contribution to the Exponential Foundation and 7x; your own custom extensions are not affected. Sign
 only for work you have the right to assign. Details:
 [CONTRIBUTING.md, Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla).
 

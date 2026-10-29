@@ -12,7 +12,8 @@ type: help
 Bevor Sie weiterlesen, der wichtigste Satz, zitiert aus `CONTRIBUTING.md`:
 
 > **Wenn Sie das CLA unterschreiben und einen Beitrag zum Kern-Kernel einreichen, übertragen Sie das Urheberrecht an
-> diesem Beitrag an 7x. 7x wird Inhaber des Urheberrechts.** Sie **geben die Kontrolle ab**: 7x darf Ihren Beitrag
+> diesem Beitrag an die Exponential Foundation und 7x. Sie werden Inhaber des Urheberrechts.** Sie **geben die
+> Kontrolle ab**: Die Exponential Foundation und 7x dürfen Ihren Beitrag
 > auf jede Weise nutzen, ändern, neu lizenzieren und verbreiten, auch kommerziell und unter anderen Lizenzen,
 > **ohne Sie zu fragen und ohne Sie zu bezahlen**. Sie **können ihn nicht zurückziehen und keine Bedingungen daran
 > knüpfen**. **Ihre eigenen individuellen Erweiterungen sind nicht betroffen.**
@@ -63,12 +64,12 @@ Quelle: `CONTRIBUTING.md`, „What it does not cover“.
 
 | Frage | Antwort, aus `CONTRIBUTING.md` |
 |---|---|
-| Gebe ich mein Urheberrecht ab? | Ja, für den Beitrag: Sie übertragen es an 7x |
+| Gebe ich mein Urheberrecht ab? | Ja, für den Beitrag: Sie übertragen es an die Exponential Foundation und 7x |
 | Kann ich es zurücknehmen? | Nein |
-| Darf 7x ihn neu lizenzieren? | Ja, auch in kommerziellen Produkten |
+| Dürfen die Exponential Foundation und 7x ihn neu lizenzieren? | Ja, auch in kommerziellen Produkten |
 | Ist eine einzeilige Korrektur ein Beitrag? | Für kleine Korrekturen „müssen Sie in den meisten Fällen kein CLA unterschreiben“, unterschreiben Sie aber trotzdem für Pull Requests an das Kernel-Repository: Ein Merge braucht ein vorliegendes CLA |
 | Ich arbeite für ein Unternehmen | Meist gehört dem Unternehmen das Urheberrecht: Es unterschreibt oder bestätigt eine Erlaubnis oder einen Verzicht (§6) |
-| Ersetzt das CLA die GPL? | Nein. Der Beitrag wird wie alles andere unter der GPL veröffentlicht; das CLA überträgt zusätzlich das Urheberrecht an 7x |
+| Ersetzt das CLA die GPL? | Nein. Der Beitrag wird wie alles andere unter der GPL veröffentlicht; das CLA überträgt zusätzlich das Urheberrecht an die Exponential Foundation und 7x |
 
 Der Verhaltenskodex ergänzt: „Seien Sie ehrlich zur Autorschaft. Unterschreiben Sie das CLA nur für Beiträge, die Sie
 übertragen dürfen, und reichen Sie nicht die Arbeit anderer als Ihre eigene ein“ (`CODE_OF_CONDUCT.md`).

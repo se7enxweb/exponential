@@ -7,9 +7,9 @@ Thank you for considering contributing to Exponential! We appreciate the time an
 ## Copyright assignment (CLA)
 
 > **By signing the CLA and submitting a contribution to the core kernel, you assign (transfer) the copyright in that
-> contribution to 7x. 7x becomes the copyright owner.**
+> contribution to the Exponential Foundation and 7x. They become the copyright owners.**
 >
-> You **give up control**: 7x may use, change, relicense and distribute your contribution in any way, including
+> You **give up control**: the Exponential Foundation and 7x may use, change, relicense and distribute your contribution in any way, including
 > commercially and under other licenses, **without asking you and without paying you**. You **cannot withdraw it or
 > set conditions on it**.
 >
@@ -19,11 +19,12 @@ The agreement form on the CLA page is being updated to this assignment; sign the
 
 Read the agreement before you sign it; this summary does not replace it and is not legal advice.
 
-**Who requires it, and for what.** 7x and the Exponential Foundation require a signed Contributor Licensing
+**Who requires it, and for what.** The Exponential Foundation and 7x require a signed Contributor Licensing
 Agreement (CLA) for every code contribution to the core kernel of Exponential, before that contribution can be
 merged. The core kernel is the repository [se7enxweb/exponential](https://github.com/se7enxweb/exponential):
 `kernel/`, `lib/`, `bin/`, `design/`, `settings/`, `doc/`, the extensions shipped inside it, and everything else in
-this repository. The agreement itself is made with 7x.
+this repository. The agreement is made with the Exponential Foundation and 7x (owner decision of 2026-10-29: the
+assignment goes to both, the Foundation named first, as in the copyright notice).
 
 - **Every form of submission counts**: a GitHub pull request, a patch, code attached to or pasted into an issue, and
   code sent by mail or any other way. The agreement defines a submission as "any form of electronic, verbal, or
@@ -72,13 +73,13 @@ yourself is not.
 
 ### FAQ
 
-**Do I give away my copyright?** Yes. You assign it to 7x. Once you sign the CLA and submit a contribution, 7x owns
-the copyright in it and may use, change, relicense and distribute it as it decides, without asking or paying you.
+**Do I give away my copyright?** Yes. You assign it to the Exponential Foundation and 7x. Once you sign the CLA and submit a contribution, the
+Exponential Foundation and 7x own the copyright in it and may use, change, relicense and distribute it as they decide, without asking or paying you.
 
 **Can I take my contribution back?** No. You cannot withdraw it or set conditions on it.
 
-**Can 7x relicense my contribution?** Yes. As the copyright owner, 7x may distribute it under other licenses and in
-commercial products.
+**Can the Exponential Foundation and 7x relicense my contribution?** Yes. As the copyright owners, they may distribute it
+under other licenses and in commercial products.
 
 **Why is it needed?** "Before we can consider the contributions you provide to us, we must agree on what rights you
 are offering to us" (preamble of the agreement), and "We cannot accept your contributions unless we have a signed
@@ -98,7 +99,7 @@ submit code back to the kernel, or hand code to 7x to include in the project.
 you sign again only for a new legal entity.
 
 **Does the CLA replace the GPL?** No. Your contribution is released under the GPL like the rest of Exponential (see
-[Licensing](#licensing)); for the kernel, the CLA additionally assigns its copyright to 7x.
+[Licensing](#licensing)); for the kernel, the CLA additionally assigns its copyright to the Exponential Foundation and 7x.
 
 ## Licensing of code improvements to Exponential
 Exponential is licensed under the GPLv2 or later license, commonly known as the GNU General Public License, version 2 or any later version, grants users the freedom to modify and distribute software. When it comes to code improvements, contributors must ensure that any modifications made to the project are also released under the same GPLv2 or later license. This means that enhancements, bug fixes, or any changes to the codebase must be open-sourced, allowing others to benefit from and build upon these improvements. The "or later" clause allows the project to upgrade to future versions of the GPL, providing flexibility and ensuring alignment with the principles of free software. It's essential for contributors to understand and comply with these licensing requirements to maintain the open nature of the project.

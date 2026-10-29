@@ -37,7 +37,7 @@ erscheinen 1.042 übernommene Pull Requests (19. Oktober 2026) ([Exponential in 
 | Solange ein Pull Request offen ist, fasst sein Autor ihn zusammen und rebased ihn auf `main`, wie es die Prüfungen verlangen; nach dem Merge wird `main` nie umgeschrieben, und spätere Korrekturen kommen als neue Pull Requests | ebenda; [Code reviews](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#code-reviews) |
 | Die Testsuite läuft bei jedem Pull Request | [CI](../../bc/6.0/ci.md) |
 | Beiträge stehen unter der GPL v2 oder später | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
-| Code-Beiträge zum Kernel brauchen vor dem Merge eine unterzeichnete Contributor Licensing Agreement (CLA); mit Unterzeichnung und Einreichung übertragen Mitwirkende das Urheberrecht an 7x und geben die Kontrolle ab: 7x darf einen Beitrag auf jede Weise verwenden, ändern, neu lizenzieren und verbreiten, ohne sie zu fragen oder zu bezahlen, und sie können ihn nicht zurückziehen; die eigenen Erweiterungen der Anwender sind nicht betroffen | [Übertragung des Urheberrechts (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) |
+| Code-Beiträge zum Kernel brauchen vor dem Merge eine unterzeichnete Contributor Licensing Agreement (CLA); mit Unterzeichnung und Einreichung übertragen Mitwirkende das Urheberrecht an die Exponential Foundation und 7x und geben die Kontrolle ab: 7x darf einen Beitrag auf jede Weise verwenden, ändern, neu lizenzieren und verbreiten, ohne sie zu fragen oder zu bezahlen, und sie können ihn nicht zurückziehen; die eigenen Erweiterungen der Anwender sind nicht betroffen | [Übertragung des Urheberrechts (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) |
 | 1.042 übernommene Pull Requests in der Historie (19. Oktober 2026) | [Exponential in Zahlen](exponential-in-zahlen.md) |
 
 ## Was Sie nicht behaupten sollten
@@ -47,7 +47,7 @@ erscheinen 1.042 übernommene Pull Requests (19. Oktober 2026) ([Exponential in 
 | „Keine Code-Prüfung“ | 7x prüft jeden Pull Request in vielen Runden, und sein Autor überarbeitet ihn, fasst ihn zusammen und rebased ihn vor dem Merge; die CI-Tests laufen bei jedem Pull Request |
 | „Alles kommt ins Release“ | Probleme werden vor dem Merge im Pull Request behoben oder danach in neuen Pull Requests |
 | „Tausende Mitwirkende“ | Zählen Sie aus der Historie, mit Datum |
-| „Mitwirkende behalten das Urheberrecht an ihrem Code“ | Das tun sie nicht: Mitwirkende am Kernel übertragen das Urheberrecht unter der CLA an 7x; 7x darf ihn neu lizenzieren und verbreiten, ohne sie zu fragen, und sie können ihn nicht zurückziehen |
+| „Mitwirkende behalten das Urheberrecht an ihrem Code“ | Das tun sie nicht: Mitwirkende am Kernel übertragen das Urheberrecht unter der CLA an die Exponential Foundation und 7x; die Exponential Foundation und 7x dürfen ihn neu lizenzieren und verbreiten, ohne sie zu fragen, und sie können ihn nicht zurückziehen |
 
 ## Blickwinkel und Ideen für Überschriften
 

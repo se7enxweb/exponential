@@ -35,7 +35,7 @@ The kernel's notice names the "Exponential Foundation and 7x" for the years from
 the rule: contributors agree to release their code under the same license as Exponential.
 
 For code contributions to the core kernel, the Exponential Foundation and 7x also require a signed Contributor
-Licensing Agreement (CLA) before the contribution is merged, and **by signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it.** 7x may use, change, relicense and distribute your contribution in any way, also under
+Licensing Agreement (CLA) before the contribution is merged, and **by signing and submitting, you assign the copyright in your contribution to the Exponential Foundation and 7x, which become its owners, and give up control over it.** The Exponential Foundation and 7x may use, change, relicense and distribute your contribution in any way, also under
 other licenses and in commercial products, without asking or paying you; you cannot withdraw it or set conditions. Your own extensions and designs are not affected. See
 [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla).
 

@@ -27,8 +27,8 @@ tragen. Dieses Kapitel geht einen Pull Request von Anfang bis Ende durch. Es gil
    **Für den Kernel: Übertragung des Urheberrechts (CLA).** Die Exponential Foundation und 7x übernehmen einen
    Code-Beitrag zum Kern-Kernel, der in beliebiger Form eingereicht wird (Pull Request, Patch, Issue oder E-Mail), erst,
    nachdem Sie das Contributor Licensing Agreement unterzeichnet haben. **Mit der Unterzeichnung und der Einreichung
-   übertragen Sie das Urheberrecht an Ihrem Beitrag auf 7x, das damit sein Inhaber wird, und geben die Kontrolle
-   darüber auf:** 7x darf ihn auf jede Weise verwenden, ändern, neu lizenzieren und verbreiten, auch unter anderen
+   übertragen Sie das Urheberrecht an Ihrem Beitrag auf die Exponential Foundation und 7x, die dessen Inhaber werden, und geben die Kontrolle
+   darüber auf:** Die Exponential Foundation und 7x dürfen ihn auf jede Weise verwenden, ändern, neu lizenzieren und verbreiten, auch unter anderen
    Lizenzen und in kommerziellen Produkten, ohne Sie zu fragen oder zu bezahlen, und Sie können ihn weder zurückziehen
    noch Bedingungen daran knüpfen. Wie Sie unterzeichnen:
    [Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla) (auf Englisch). Für die

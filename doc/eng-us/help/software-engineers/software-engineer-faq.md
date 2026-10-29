@@ -87,7 +87,7 @@ branch ([CI gates](ci-gates.md#properties-every-engineer-should-know)).
 
 **What license?** The GNU GPL, version 2 or later, for the code; the GNU FDL 1.3 for the documentation.
 
-**What does contributing to the kernel require?** A signed CLA, which assigns the copyright in the contribution to 7x;
+**What does contributing to the kernel require?** A signed CLA, which assigns the copyright in the contribution to the Exponential Foundation and 7x;
 your own extensions are not affected ([Contributing upstream](contributing-upstream.md)).
 
 **How do I report a vulnerability?** Privately, to the address in `SECURITY.md` ([Security engineering overview](security-engineering-overview.md#reporting-and-fixing-vulnerabilities)).

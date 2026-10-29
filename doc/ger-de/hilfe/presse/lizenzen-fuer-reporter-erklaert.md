@@ -54,7 +54,7 @@ Hinweise auf Urheberrecht und Lizenz erhalten bleiben und geänderte Fassungen u
 
 „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ und „Copyright (C) 1999 - 2014 eZ Systems AS“ für den
 übernommenen Code ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)). Beiträge werden
-unter der GPL veröffentlicht, und wer zum Kernel beiträgt, überträgt das Urheberrecht an seinen Beiträgen an 7x
+unter der GPL veröffentlicht, und wer zum Kernel beiträgt, überträgt das Urheberrecht an seinen Beiträgen an die Exponential Foundation und 7x
 ([Übertragung des Urheberrechts (CLA)](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#copyright-assignment-cla)). Schreiben Sie „Die Exponential Foundation und 7x halten das Urheberrecht
 gemeinsam“, nie „7x gehört Exponential“.
 

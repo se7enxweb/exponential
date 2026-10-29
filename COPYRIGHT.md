@@ -49,8 +49,8 @@ The full story, the reasons and the rules for new files and extensions are in th
 ## Contributors
 
 Exponential is written by many contributors, recorded in the git history and on the about page of every installation
-(/ezinfo/about). Code contributions to this repository are accepted under the 7x Contributor Licensing Agreement (see
-[CONTRIBUTING.md](CONTRIBUTING.md)); documentation contributions under the GNU Free Documentation License 1.3 or later
+(/ezinfo/about). Code contributions to this repository are accepted under the Contributor Licensing Agreement, which
+assigns their copyright to the Exponential Foundation and 7x together (see [CONTRIBUTING.md](CONTRIBUTING.md)); documentation contributions under the GNU Free Documentation License 1.3 or later
 ([doc/eng-us/README-LICENSE.md](doc/eng-us/README-LICENSE.md)).
 
 ## Third-party notices

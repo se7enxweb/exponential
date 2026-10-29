@@ -241,9 +241,11 @@ Ein klarer, einziger Hinweis schützt dieses Fenster:
 Exponential wird von vielen Menschen geschrieben. Ihre Beiträge kommen auf zwei Wegen in den Kernel:
 
 - **Code-Beiträge zum Kernel** (Repository se7enxweb/exponential) werden übernommen, nachdem die Autorin oder der Autor
-  das **7x Contributor Licensing Agreement (CLA)**, Version 1.0.1, unterschrieben hat. Nach seinem heutigen Wortlaut
-  überträgt es das Copyright am Beitrag an 7x. 7x hält diese Rechte als einer der beiden im Hinweis genannten
-  Rechteinhaber. Der Text des CLA hat sich am 29.10.2026 nicht geändert; lesen Sie ihn, bevor Sie unterschreiben
+  das **Contributor Licensing Agreement (CLA)** unterschrieben hat. Es überträgt das Copyright am Beitrag an die
+  **Exponential Foundation und 7x**, die damit seine Eigentümer werden, die Foundation zuerst genannt wie im Hinweis
+  (Entscheidung des Eigentümers vom 29. Oktober 2026; bis dahin übertrug die Vereinbarung, Version 1.0.1, es an 7x
+  allein). Die beiden Rechteinhaber des Hinweises sind damit auch die Rechteinhaber jedes übernommenen Beitrags. Das
+  Formular auf der CLA-Seite wird auf diese Übertragung umgestellt; lesen Sie es, bevor Sie unterschreiben
   (`CONTRIBUTING.md`).
 - **Beiträge zur Dokumentation** werden unter der GNU Free Documentation License 1.3 oder später angenommen (siehe
   [Die Lizenz dieser Dokumentation](../README-LIZENZ.md)).
@@ -436,6 +438,11 @@ Die Arbeit von eZ Systems AS ist getrennt datiert, 1999 bis 2014.
 **Heißt die Reihenfolge, dass der Foundation mehr gehört?**
 Die Reihenfolge sagt nichts über Anteile. Beide sind Rechteinhaber. Die Foundation steht aus den
 [oben](#warum-die-exponential-foundation-zuerst-genannt-wird) genannten Gründen zuerst.
+
+**Wem übertrage ich meinen Beitrag mit dem CLA?**
+Der Exponential Foundation und 7x gemeinsam; sie werden seine Eigentümer und dürfen ihn nutzen, ändern, neu
+lizenzieren und verbreiten. Seit dem 29. Oktober 2026 nennt das CLA beide, in derselben Reihenfolge wie der Hinweis.
+Ihre eigenen Erweiterungen sind nicht betroffen.
 
 **Hat sich am 29. Oktober 2026 die Lizenz geändert?**
 Nein. Nur der Hinweis auf die Rechteinhaber hat sich geändert. Die Lizenz ist weiterhin die GNU General Public License,

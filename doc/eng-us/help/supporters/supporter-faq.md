@@ -28,7 +28,7 @@ Code: GPL v2 or later (CONTRIBUTING.md). Documentation: GFDL 1.3 or later.
 
 **Do I have to sign anything, and what do I give up?**
 For code contributions to the core kernel, yes: a Contributor Licensing Agreement (CLA), once, before the first
-merge. By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it: 7x may use, change, relicense
+merge. By signing and submitting, you assign the copyright in your contribution to the Exponential Foundation and 7x, which become its owners, and give up control over it: the Exponential Foundation and 7x may use, change, relicense
 and distribute it in any way, without asking or paying you, and you cannot take it back. Your own extensions are not affected.
 [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)
 
