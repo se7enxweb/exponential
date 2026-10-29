@@ -70,7 +70,7 @@ Quellen: [Die leere Variante und sevenx_site](../seitenpakete/sevenx-multisite/d
 Die Seite zu cjw_multisite zeigt dieses Beispiel:
 
 ```bash
-php bin/php/console exp:install --package=cjw_multisite --languages=eng-US,ger-DE
+php bin/php/console exp:install --apply --package=cjw_multisite --languages=eng-US,ger-DE
 ```
 
 Fügen Sie die Optionen Ihrer ersten Installation hinzu (`--random-password`, `--url=...`) und `--force`, wenn Sie eine

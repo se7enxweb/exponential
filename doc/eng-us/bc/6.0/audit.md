@@ -1857,7 +1857,7 @@ How it works across servers: every lock file (`.<channel>.lock`, `.keys.lock`, `
 daily marker live in the shared LogDir. The chain head is read from the file under the lock at every append, never
 from memory. So any number of servers write one chain per channel, and the cronjob part may run on all of them: one
 run at a time does the work, and the daily tasks run once a day for the cluster. **Generate the keys once before the
-other servers record** (`./console exp:audit checkpoint` on one server), then share or copy
+other servers record** (`./console exp:audit checkpoint --apply` on one server), then share or copy
 `settings/override/audit.ini.append.php` to every server. Two servers with different keys would write different
 genesis values and fail verification. What was checked on the reference installation: the configuration loads and every part accepts it,
 and ten concurrent writers to one channel keep the chain intact (test B2). A multi-server cluster itself was not

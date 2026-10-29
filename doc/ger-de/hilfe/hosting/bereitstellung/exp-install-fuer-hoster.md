@@ -29,7 +29,7 @@ ist [Kapitel 7](../../../installation/07-installation-ueber-die-konsole.md).
 `exp:install` ist eine Oberfläche für den Kickstarter. Es verwandelt seine Optionen in eine temporäre `kickstart.ini`, führt
 `expKickstarter` im selben Prozess aus, entfernt die temporäre Datei und legt eine `kickstart.ini`, die vorher da war, wieder zurück
 ([4.2](../../../installation/04-installationsweg-waehlen.md#die-konsoleninstallation)). Jede Option hat einen Standard, sodass
-`php bin/php/console exp:install` allein das Seitenpaket `sevenx_multisite` auf SQLite mit dem Administrator `admin` und einem
+`php bin/php/console exp:install --apply` allein das Seitenpaket `sevenx_multisite` auf SQLite mit dem Administrator `admin` und einem
 erzeugten Passwort installiert.
 
 ## Die Optionen, die ein Hoster setzt
@@ -97,7 +97,7 @@ darauf verlassen:
 
 ```bash
 php bin/php/console exp:install --dry-run --db=pgsql --db-user=<db user> --url=https://www.example.com \
-  && php bin/php/console exp:install --db=pgsql --db-user=<db user> --url=https://www.example.com \
+  && php bin/php/console exp:install --apply --db=pgsql --db-user=<db user> --url=https://www.example.com \
   || echo "installation failed, see var/log/setup.log"
 ```
 
@@ -110,29 +110,29 @@ genutzt wird.
 
 ```bash
 # 1. SQLite 3 (the default): no database server
-php bin/php/console exp:install --url=https://www.example.com --email=<contact>
+php bin/php/console exp:install --apply --url=https://www.example.com --email=<contact>
 
 # 2. PostgreSQL
-php bin/php/console exp:install --db=pgsql --db-host=<db host> --db-name=<db> --db-user=<db user> \
+php bin/php/console exp:install --apply --db=pgsql --db-host=<db host> --db-name=<db> --db-user=<db user> \
   --url=https://www.example.com --email=<contact>
 
 # 3. MongoDB (a database user is required)
-php bin/php/console exp:install --db=mongodb --db-host=<db host> --db-name=<db> --db-user=<db user> \
+php bin/php/console exp:install --apply --db=mongodb --db-host=<db host> --db-name=<db> --db-user=<db user> \
   --url=https://www.example.com --email=<contact>
 
 # 4. MariaDB and 6. MySQL (same driver)
-php bin/php/console exp:install --db=mysql --db-host=<db host> --db-name=<db> --db-user=<db user> \
+php bin/php/console exp:install --apply --db=mysql --db-host=<db host> --db-name=<db> --db-user=<db user> \
   --url=https://www.example.com --email=<contact>
 
 # 5. Oracle (service name becomes host:port/service)
-php bin/php/console exp:install --db=oracle --db-host=<db host> --db-name=<service> --db-user=<db user> \
+php bin/php/console exp:install --apply --db=oracle --db-host=<db host> --db-name=<service> --db-user=<db user> \
   --url=https://www.example.com --email=<contact>
 ```
 
 Hinweise je Engine stehen in [7.9](../../../installation/07-installation-ueber-die-konsole.md#79-beispiele-nach-datenbank) und auf den Datenbankseiten dieses
 Bereichs, von [SQLite für Hoster](../grundlagen/sqlite-fuer-hoster.md) bis [MySQL für Hoster](../grundlagen/mysql-fuer-hoster.md).
 
-**Eine öffentliche Demo bereitstellen.** `EXP_DEMO_MODE=1 ./console exp:install --password=<the published password> ...` installiert das veröffentlichte Administratorpasswort unverändert, auch ein bekanntes oder kurzes (`publish`, `publishing`); ohne die Variable wird es durch ein erzeugtes in `var/log/initial-admin-password` ersetzt, was ein Aufbau einer Demo als Fehler behandeln sollte. Stellen Sie die Website eines Kunden nie mit der Variablen bereit. [Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](../server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md).
+**Eine öffentliche Demo bereitstellen.** `EXP_DEMO_MODE=1 ./console exp:install --apply --password=<the published password> ...` installiert das veröffentlichte Administratorpasswort unverändert, auch ein bekanntes oder kurzes (`publish`, `publishing`); ohne die Variable wird es durch ein erzeugtes in `var/log/initial-admin-password` ersetzt, was ein Aufbau einer Demo als Fehler behandeln sollte. Stellen Sie die Website eines Kunden nie mit der Variablen bereit. [Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](../server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md).
 
 ## Verwandte Seiten
 

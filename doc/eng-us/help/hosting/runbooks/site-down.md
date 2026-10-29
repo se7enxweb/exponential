@@ -86,7 +86,7 @@ directly.
 ## After the incident
 
 - [ ] Clear the caches the fix needs, and with Velocity its response cache **after** any restart
-      (`php bin/php/console exp:velocity cache clear --allow-root-user`).
+      (`php bin/php/console exp:velocity cache clear --apply --allow-root-user`).
 - [ ] Verify: front page, administration, a sign-in, a publish.
 - [ ] Write the incident note: start, detection, cause, fix, end, what prevents a repeat.
 - [ ] Tell the customer.

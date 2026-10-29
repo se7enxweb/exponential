@@ -18,7 +18,7 @@ Kommandozeile und unter **Setup > Logdateien** ([der Log-Betrachter](log-betrach
   sodass zwei Anfragen, die das Protokoll beide zu groß fanden, es einmal rotieren. Das neue, leere Protokoll wird sofort
   mit Eigentümer, Gruppe und Modus des alten angelegt (dem Eigentümer, wenn die Rotation als root läuft), sodass keiner
   der beiden Benutzer ein Protokoll erhält, in das der andere nicht schreiben kann.
-- **Bei Bedarf**: `./console exp:logs --rotate=error,debug`, `--rotate-all` und `--prune` für die Archive jenseits der
+- **Bei Bedarf**: `./console exp:logs --apply --rotate=error,debug`, `--rotate-all` und `--prune` für die Archive jenseits der
   Grenzen; jeweils mit `--dry-run`.
 - **Optionale Kompression** der Archive ab `.2` (`LogFileCompress=enabled`, standardmäßig aus). `.1` wird nie
   komprimiert: Eine Anfrage, die das Protokoll kurz vor der Rotation geöffnet hat, schreibt vielleicht noch hinein.
@@ -65,18 +65,18 @@ Größengrenze von 10 MB, bereinigt nach 30 (404) und 90 (security) Tagen ([Anfr
 
 ```bash
 ./console exp:logs --archives                    # each log with its archives, their sizes, and the limits
-./console exp:logs --rotate=error,debug          # rotate these now, whatever their size
-./console exp:logs --rotate=var/site/log/storage.log
-./console exp:logs --rotate-all                  # every log that is not empty
+./console exp:logs --apply --rotate=error,debug          # rotate these now, whatever their size
+./console exp:logs --apply --rotate=var/site/log/storage.log
+./console exp:logs --apply --rotate-all                  # every log that is not empty
 ./console exp:logs --rotate-all --dry-run        # what would be rotated
 ./console exp:logs --prune --dry-run             # archives beyond LogFileRotateCount and LogFileMaxAge, and bare .gz files
-./console exp:logs --prune                       # remove them (all logs)
-./console exp:logs --prune=error,debug           # only these logs
-./console exp:logs --compress                    # compress the plain archives from .2 on
-./console exp:logs --truncate=debug              # empty a log by rotating it (its content stays in debug.log.1)
-./console exp:logs --truncate=debug --in-place   # empty it in place, keeping no copy
-./console exp:logs --rotate-all --force          # also the logs under their MaxSize
-./console exp:logs --prune --days=7              # an age limit for this run instead of MaxAgeDays
+./console exp:logs --apply --prune                       # remove them (all logs)
+./console exp:logs --apply --prune=error,debug           # only these logs
+./console exp:logs --apply --compress                    # compress the plain archives from .2 on
+./console exp:logs --apply --truncate=debug              # empty a log by rotating it (its content stays in debug.log.1)
+./console exp:logs --apply --truncate=debug --in-place   # empty it in place, keeping no copy
+./console exp:logs --apply --rotate-all --force          # also the logs under their MaxSize
+./console exp:logs --apply --prune --days=7              # an age limit for this run instead of MaxAgeDays
 ./console exp:logs --archives --json             # the same as JSON
 ```
 

@@ -48,7 +48,7 @@ git clone https://github.com/se7enxweb/exponential.git exponential
 cd exponential
 composer install
 ./console exp:install --dry-run          # checks configuration and packages, installs nothing
-./console exp:install --url=http://localhost:8087
+./console exp:install --apply --url=http://localhost:8087
 ./console exp:velocity start --engine=php
 ```
 

@@ -35,7 +35,7 @@ Nothing in this module changes the look of a page; it is about reading before wr
 ## Preparing this module
 
 - One training installation per learner with shell access in the installation root, installed for example with
-  `php bin/php/console exp:install` ([7. The console install](../../../../install/07-console-install.md)); see
+  `php bin/php/console exp:install --apply` ([7. The console install](../../../../install/07-console-install.md)); see
   [Module 2: Building the training lab](../../train-the-trainer/module-02-building-the-lab/README.md) of Train the
   trainer.
 - Each installation served in a browser (for example with `php bin/php/console exp:velocity start`).

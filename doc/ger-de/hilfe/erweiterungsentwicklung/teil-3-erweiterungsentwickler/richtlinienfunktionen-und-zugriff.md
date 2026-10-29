@@ -122,8 +122,8 @@ Einen Link auszublenden ist eine Höflichkeit; der Schutz ist das `'functions'` 
 
 Rollen werden in der Administration eingerichtet. Für eine Erweiterung, deren Funktion bei der Installation gewährt
 werden muss (zum Beispiel der Rolle Editor), liefern Sie einen Befehl mit oder dokumentieren den Schritt. Das eigene
-Beispiel des Kernels ist `./console exp:addexphelpreadpolicy`, das `exphelp/read` gewährt und die Rollen mit
-`--dry-run` zuerst auflistet.
+Beispiel des Kernels ist `./console exp:addexphelpreadpolicy`, das die Rollen auflistet, denen es `exphelp/read`
+gewähren würde, und es mit `--apply` gewährt.
 
 ## Einen Benutzer prüfen
 

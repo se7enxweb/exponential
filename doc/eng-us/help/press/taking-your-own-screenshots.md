@@ -27,7 +27,7 @@ The documentation describes a complete installation in one command, with SQLite 
 needed ([Installing Exponential in one command](../../features/6.0/install-in-one-command.md)):
 
 ```bash
-./console exp:install
+./console exp:install --apply
 ```
 
 Run it in a copy of the code that you got as

@@ -58,10 +58,10 @@ Rückfallsprache hinzu, wenn sie in den gewählten Sprachen fehlt (`fallback_loc
 
 ```bash
 # English site plus German translation siteaccess
-./console exp:install --package=cjw_multisite --languages=eng-US,ger-DE
+./console exp:install --apply --package=cjw_multisite --languages=eng-US,ger-DE
 
 # German as the main site, English as the translation
-./console exp:install --package=cjw_multisite --language=ger-DE --languages=eng-US
+./console exp:install --apply --package=cjw_multisite --language=ger-DE --languages=eng-US
 ```
 
 `--language` und `--languages` sind in [Die Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md) beschrieben; der

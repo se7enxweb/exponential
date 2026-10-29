@@ -2,14 +2,14 @@
 title: exp:kickstarter
 audience: developer, admin
 category: examples
-summary: Kickstarter runner. Supports "ini" generation and full "run" setup subcommands.
+summary: "Kickstarter runner: 'ini' writes kickstart.ini, 'run' installs from it (a dry run unless --apply)."
 keywords: exp:kickstarter, kickstarter, console, command, CLI, kickstarter.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:kickstarter
 
-Kickstarter runner. Supports "ini" generation and full "run" setup subcommands.
+Kickstarter runner: "ini" writes kickstart.ini, "run" installs from it (a dry run unless --apply).
 
 Script `bin/php/kickstarter.php`, code in `kernel/private/classes/commands/kickstarter.php`. Run it from the installation root, as the user the web server runs as:
 

@@ -118,7 +118,7 @@ On your training installation, with a terminal in the root and a private browser
 7. Clear the response cache and reload:
 
    ```bash
-   php bin/php/console exp:velocity cache clear
+   php bin/php/console exp:velocity cache clear --apply
    ```
 
 8. Open **Setup > Cache management**, group **Pages, queries and the server**, and read the rows for the HTTP cache,

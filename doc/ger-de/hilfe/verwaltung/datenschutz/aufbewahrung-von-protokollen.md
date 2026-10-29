@@ -73,7 +73,7 @@ Altersgrenzen wirken, wenn eine Bereinigung läuft:
 ```bash
 ./console exp:logs --archives --allow-root-user          # each log, its archives, sizes and limits
 ./console exp:logs --prune --dry-run --allow-root-user   # what would go
-./console exp:logs --prune --allow-root-user             # remove it
+./console exp:logs --apply --prune --allow-root-user             # remove it
 ```
 
 Oder der Cronjob-Teil `logs` (in keiner Standardgruppe, fügen Sie ihn also hinzu), als Benutzer der Website:

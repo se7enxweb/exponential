@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of bin/php/cleanuppolicies.php, moved into a class (#207 stage 1). The file bin/php/cleanuppolicies.php is one call to it.
- * @description Remove policies of modules that no longer exist (--dry-run lists them first)
+ * @description Remove policies of modules that no longer exist (dry run unless --apply)
  * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
@@ -27,142 +27,131 @@ class Cleanuppolicies extends \Exponential\Runnable\Command
 {
     public function run()
     {
-        // the script's variables were globals; functions of the script read them with "global"
-        foreach ( array( 'cli', 'db', 'limitation', 'module', 'moduleExists', 'modules', 'optDryRun', 'options', 'policies', 'policy', 'removedPolicies', 'rows', 'script', 'total' ) as $__name )
-            ${$__name} = &$GLOBALS[$__name];
-        unset( $__name );
-
         $cli = $this->cli();
 
         $script = $this->script(
             array(
                 'description' => "Remove from database policies defined on module which do not exist in a modules folder\n"
-                    . "according to settings from module.ini/[ModuleSettings]/ExtensionRepositories\n\nExample: ./bin/php/cleanuppolicies.php --dry-run",
+                    . "according to settings from module.ini/[ModuleSettings]/ExtensionRepositories.\n"
+                    . "Without --apply nothing is written: the script lists the policies it would remove. --dry-run is\n"
+                    . "still accepted and means the same as no flag; --apply together with --dry-run is a usage error\n"
+                    . "(exit 2). With --apply the script waits 10 seconds before it removes anything (-n: do not wait)\n"
+                    . "and checks afterwards that none is left. Prints PASS or FAIL at the end.\n\n"
+                    . "Example: ./bin/php/cleanuppolicies.php\n"
+                    . "         ./bin/php/cleanuppolicies.php --apply -n",
                 'use-session' => false,
                 'use-modules' => true,
                 'use-extensions' => true
             )
         );
         $options = $this->startup(
-            "[dry-run][n]",
+            "[apply][dry-run][n]",
             '',
             array(
-                'dry-run' => "Test mode, output the list of affected policies without removing them",
-                'n' => "Do not wait"
+                'apply' => "Remove the policies (the default is a dry run that lists them and changes nothing)",
+                'dry-run' => "The default, kept for scripts that pass it: list the policies that would be removed, change nothing",
+                'n' => "With --apply: do not wait 10 seconds before removing"
             )
         );
 
-        $optDryRun = (bool) $options['dry-run'];
-
-        if ( !$optDryRun && !isset( $options['n'] ) )
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
         {
-            $cli->warning( "This cleanup script is going to remove policies defined on module that do not exist." );
-            $cli->warning();
-            $cli->warning( "You have 10 seconds to break the script (press Ctrl-C)" );
-            sleep( 10 );
-            $cli->output();
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $script->shutdown( 2 );
         }
-
-        $rows =  \eZPersistentObject::fetchObjectList( \eZPolicy::definition(),
-            array(),
-            null,
-            false,
-            null,
-            false, false,
-            array( array( 'operation' => 'count( * )',
-                          'name' => 'count' ) ) );
-        $total = $rows[0]['count'];
-        if ( !$optDryRun )
-        {
-            $cli->output( "{$total} policies to check... (In the progess bar, 'R' means that the policy was removed)" );
-        }
-        else
-        {
-            $cli->output( "{$total} policies to check..." );
-        }
-
-        if ( !$optDryRun )
-        {
-            $script->setIterationData( 'R', '.' );
-            $script->resetIteration( $total );
-        }
-
-        $limitation = array( 'offset' => 0, 'limit' => 100 );
-
-        $db = \eZDB::instance();
+        $dryRun = !$apply;
 
         $modules = \eZModule::globalPathList();
+        $orphans = self::orphanPolicies( $modules );
+        $cli->output( self::policyCount() . ' policies checked' );
+        foreach ( $orphans as $policy )
+        {
+            $cli->output( sprintf( '%s policy %d of role %d: module \'%s\' does not exist',
+                                   $dryRun ? 'would remove' : 'remove      ',
+                                   $policy->attribute( 'id' ), $policy->attribute( 'role_id' ), $policy->attribute( 'module_name' ) ) );
+        }
 
-        $removedPolicies = 0;
+        if ( $orphans && !$dryRun )
+        {
+            if ( !$options['n'] )
+            {
+                $cli->warning( "This cleanup script is going to remove the policies listed above." );
+                $cli->warning( "You have 10 seconds to break the script (press Ctrl-C)" );
+                sleep( 10 );
+            }
+            foreach ( $orphans as $policy )
+            {
+                if ( !$dryRun )
+                    $policy->removeThis();
+            }
+            \eZRole::expireCache();
+            // Check what was stored: no policy of a missing module is left.
+            $left = count( self::orphanPolicies( $modules ) );
+            if ( $left )
+            {
+                $cli->error( "FAIL: $left polic" . ( $left === 1 ? 'y' : 'ies' ) . " of missing modules still there" );
+                $script->shutdown( 1 );
+            }
+        }
+
+        $count = count( $orphans );
+        $cli->output();
+        if ( $dryRun )
+            $cli->output( "PASS: $count polic" . ( $count === 1 ? 'y' : 'ies' ) . " would be removed (dry run, nothing changed; --apply writes)" );
+        else
+            $cli->output( "PASS: $count polic" . ( $count === 1 ? 'y' : 'ies' ) . " removed" );
+        $script->shutdown();
+    }
+
+    /** @return int the number of policies */
+    protected static function policyCount()
+    {
+        $rows = \eZPersistentObject::fetchObjectList( \eZPolicy::definition(), array(), null, false, null, false, false,
+                                                     array( array( 'operation' => 'count( * )', 'name' => 'count' ) ) );
+        return (int)$rows[0]['count'];
+    }
+
+    /**
+     * The policies whose module is in none of the module directories, read in pages of 100 by ID; nothing is changed.
+     *
+     * @param array $modules the module directories, eZModule::globalPathList()
+     * @return \eZPolicy[]
+     */
+    public static function orphanPolicies( array $modules )
+    {
+        $orphans = array();
+        $offset = 0;
         while ( true )
         {
-            $policies = \eZPersistentObject::fetchObjectList(
-                \eZPolicy::definition(),
-                null,
-                null,
-                null,
-                $limitation,
-                true
-            );
+            $policies = \eZPersistentObject::fetchObjectList( \eZPolicy::definition(), null, null, array( 'id' => 'asc' ),
+                                                             array( 'offset' => $offset, 'length' => 100 ), true );
             if ( empty( $policies ) )
-            {
                 break;
-            }
             foreach ( $policies as $policy )
             {
-                if ( $policy->attribute('module_name') === '*' )
-                {
-                    continue;
-                }
-
-                $moduleExists = false;
-                foreach ( $modules as $module )
-                {
-                    if ( file_exists( $module . '/' . $policy->attribute('module_name') ) )
-                    {
-                        $moduleExists = true;
-                        break;
-                    }
-                }
-                if ( !$moduleExists )
-                {
-                    if ( !$optDryRun )
-                    {
-                        $policy->removeThis();
-                    }
-                    $removedPolicies++;
-                }
-                if ( $optDryRun )
-                {
-                    if ( !$moduleExists )
-                    {
-                        $cli->output( "Policy defined on module '" . $policy->attribute('module_name') . "' can be removed" );
-                    }
-                }
-                else
-                {
-                    $script->iterate( $cli, !$moduleExists );
-                }
+                $module = (string)$policy->attribute( 'module_name' );
+                if ( $module !== '*' && !self::moduleExists( $module, $modules ) )
+                    $orphans[] = $policy;
             }
-            $limitation['offset'] += $limitation['limit'] - $removedPolicies;
+            $offset += count( $policies );
         }
+        return $orphans;
+    }
 
-        $cli->output();
-
-        if ( $optDryRun && $removedPolicies > 0 )
+    /**
+     * @param string $module a module name
+     * @param array $modules the module directories
+     * @return bool whether one of them holds the module
+     */
+    public static function moduleExists( $module, array $modules )
+    {
+        foreach ( $modules as $directory )
         {
-            $cli->output( "{$removedPolicies} policies can be removed" );
+            if ( file_exists( $directory . '/' . $module ) )
+                return true;
         }
-        else if ( $removedPolicies > 0 )
-        {
-            $cli->output( "Removed {$removedPolicies} policies" );
-        }
-        else
-        {
-            $cli->output( "No policies found to remove" );
-        }
-
-        $script->shutdown();
+        return false;
     }
 }
 

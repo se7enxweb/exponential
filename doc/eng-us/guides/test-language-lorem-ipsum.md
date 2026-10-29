@@ -49,8 +49,8 @@ object gets one new published version. The same object and attribute always get 
 
 ```bash
 php bin/php/exploremipsumfill.php 123 --dry-run              # what would be written, nothing changes
-php bin/php/exploremipsumfill.php 123,124                    # two objects
-php bin/php/exploremipsumfill.php --subtree=2 --limit=20     # a node and the objects below it, at most 20
+php bin/php/exploremipsumfill.php --apply 123,124                    # two objects
+php bin/php/exploremipsumfill.php --apply --subtree=2 --limit=20     # a node and the objects below it, at most 20
 ./console exp:loremipsum 123 --from=ger-DE                   # copy the other attributes from German
 ```
 
@@ -70,7 +70,7 @@ Add `--allow-root-user` when you run it as root. Exit code 0 done (or a dry run)
 2. **Remove `qlo-ZZ` from every `SiteLanguageList[]`** you added it to, and clear the INI cache.
 3. **Setup > Languages**: select *Lorem Ipsum* and click *Remove selected*. Its slot is free again.
 4. Clear the content cache (`php bin/php/ezcache.php --clear-tag=content`) and, on Velocity,
-   `./console exp:velocity cache clear`.
+   `./console exp:velocity cache clear --apply`.
 
 Compare the list of content languages before and after: it should be the same as before you started. See
 [removing translations and languages safely](content-languages.md#9-removing-translations-and-languages-safely).

@@ -97,7 +97,7 @@ Velocity hält Einstellungen und Klassen in seinen Workern: Starten Sie es nach 
 ## Ganze Seiten: HTTP-Cache und Velocity
 
 Der HTTP-Cache und der Antwort-Cache von Velocity halten ganze Antworten; eine Seite, die aus ihnen kommt, erreicht PHP
-nie. Leeren Sie den von Velocity nach Template-Änderungen mit `./console exp:velocity cache clear`, und zwar immer
+nie. Leeren Sie den von Velocity nach Template-Änderungen mit `./console exp:velocity cache clear --apply`, und zwar immer
 **nachdem** die PHP-Worker den neuen Code ausführen, sonst wird eine vom alten Code gerenderte Seite erneut
 zwischengespeichert ([HTTP-Cache](../../bc/6.0/httpcache.md),
 [Antwort-Cache von Velocity](../../funktionen/6.0/velocity-antwort-cache.md)). Der statische Cache ist in neuen

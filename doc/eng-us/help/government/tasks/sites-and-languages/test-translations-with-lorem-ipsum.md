@@ -21,7 +21,7 @@ This task is for administrators and site builders, on a test installation. Backg
 
    ```bash
    php bin/php/exploremipsumfill.php --subtree=2 --limit=20 --dry-run
-   php bin/php/exploremipsumfill.php --subtree=2 --limit=20
+   php bin/php/exploremipsumfill.php --apply --subtree=2 --limit=20
    ```
 
    (`./console exp:loremipsum` is the same command.) It fills only test languages.

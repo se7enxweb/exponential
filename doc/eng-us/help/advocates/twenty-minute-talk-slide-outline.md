@@ -53,7 +53,7 @@ you are likely to hear.
 | 13 | Free software | GPL + GFDL | Code and docs are free | [Talking points: open source](talking-points-open-source-and-licensing.md) |
 | 14 | Every pull request is merged | A merged PR screenshot (public) | The project's rule | [How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows) |
 | 15 | Join | Forums, Telegram, eZpedia, GitHub, Projects | Only documented channels | [The community channels](community-channels.md) |
-| 16 | Try it | `./console exp:install` + links | One command, SQLite | [Install in one command](../../features/6.0/install-in-one-command.md) |
+| 16 | Try it | `./console exp:install --apply` + links | One command, SQLite | [Install in one command](../../features/6.0/install-in-one-command.md) |
 
 ## The live demo segment
 

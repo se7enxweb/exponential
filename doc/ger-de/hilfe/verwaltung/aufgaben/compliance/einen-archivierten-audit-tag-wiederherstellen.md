@@ -37,7 +37,7 @@ lesen, stellen Sie ihn wieder her
 2. Stellen Sie wieder her:
 
    ```bash
-   ./console exp:audit restore --channel=access --date=<YYYY-MM-DD> --allow-root-user
+   ./console exp:audit restore --apply --channel=access --date=<YYYY-MM-DD> --allow-root-user
    ```
 
    Der Tag wird nach `<LogDir>/restored/` entpackt und gegen den sha256 des Manifests geprüft. `--to=<dir>` schreibt ihn

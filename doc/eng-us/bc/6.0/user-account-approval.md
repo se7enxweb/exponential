@@ -68,7 +68,7 @@ way round.
 | Settings | groups that need approval, approvers, groups without approval, mail on or off | sections, approving users and groups, groups without approval, languages, *new objects only* |
 | Mail with the link to the item in the administration | yes | yes (for an account or user group) |
 | "Verify it's you", decision carried out at once, audit log | yes | yes (for an account or user group) |
-| Set up by | the setup step, `bin/php/adduserapproval.php` | `bin/php/adduserapproval.php --mode=section --apply`, or the setup step with `AccountApprovalMode=section` |
+| Set up by | the setup step, `bin/php/adduserapproval.php --apply` | `bin/php/adduserapproval.php --mode=section --apply`, or the setup step with `AccountApprovalMode=section` |
 
 **Choose by group** when the placement must decide (accounts can be moved or get a second location), when groups
 other than staff need approval, or when the editors should get exactly the policy to create accounts in Editors. It is
@@ -110,7 +110,7 @@ a new workflow **Approve new staff accounts** with that trigger):
 
 It refuses (FAIL, nothing changed) while the event *Approve user accounts* runs on content/publish (before). To switch
 from the group based approval: remove that event from its workflow at Setup > Workflows, then run the command. To
-switch back: remove the approval event of section Staff from the workflow and run `bin/php/adduserapproval.php`. The
+switch back: remove the approval event of section Staff from the workflow and run `bin/php/adduserapproval.php --apply`. The
 section can stay; it changes nothing by itself.
 
 What the plain approval event adds for a user account or user group (`expUserApproval::sectionRequested()`,
@@ -198,8 +198,8 @@ stored, `access.user.change` and the others of [member-management.md](member-man
 ## What to do on an installation that exists
 
 ```bash
-php bin/php/adduserapproval.php --dry-run        # what it would create and add
-php bin/php/adduserapproval.php                  # do it; checks the result, prints PASS or FAIL
+php bin/php/adduserapproval.php                  # dry run: what it would create and add
+php bin/php/adduserapproval.php --apply          # do it; checks the result, prints PASS or FAIL
 ```
 
 The command creates the workflow, its event and the trigger when they are missing. When content/publish (before)

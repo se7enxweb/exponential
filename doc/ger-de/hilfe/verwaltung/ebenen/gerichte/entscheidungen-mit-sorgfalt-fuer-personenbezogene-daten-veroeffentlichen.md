@@ -105,7 +105,7 @@ warum. Jeder Schritt wird im Audit-Protokoll aufgezeichnet ([Audit-Protokoll](..
 | Archivierte Versionen | entfernen Sie sie wie oben beschrieben |
 | Der Papierkorb | ein Objekt im Papierkorb enthält weiterhin seine Dateien; leeren Sie ihn, wenn die Entscheidung gelöscht werden muss |
 | Suchindex | Verbergen und Entfernen aktualisieren den Index; mit eZ Find prüfen Sie, dass die Entscheidung aus der Suche verschwunden ist |
-| Caches | das Veröffentlichen leert den Ansichts-Cache des Objekts; wenn Sie den statischen Cache, den Antwort-Cache von Velocity (`./console exp:velocity cache clear`) oder ein CDN verwenden, leeren Sie auch diese ([Caches](../../../../anleitungen/caches.md), [Antwort-Cache von Velocity](../../../../funktionen/6.0/velocity-antwort-cache.md)) |
+| Caches | das Veröffentlichen leert den Ansichts-Cache des Objekts; wenn Sie den statischen Cache, den Antwort-Cache von Velocity (`./console exp:velocity cache clear --apply`) oder ein CDN verwenden, leeren Sie auch diese ([Caches](../../../../anleitungen/caches.md), [Antwort-Cache von Velocity](../../../../funktionen/6.0/velocity-antwort-cache.md)) |
 | Sicherungen | die Entscheidung bleibt in Sicherungen, bis diese ablaufen; Ihre Aufbewahrungsregeln entscheiden |
 | Kopien anderswo | Suchmaschinen, Archive und Personen, die sie heruntergeladen haben; verlangen Sie die Entfernung, wo das Gesetz es vorsieht |
 

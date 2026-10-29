@@ -40,7 +40,7 @@ statement.
 Source script: [Demo script: install from zero](../../../press/demo-script-install-from-zero.md).
 
 1. Show the requirements of the machine used ([Requirements](../../../../install/02-requirements.md)).
-2. Run the one-command installation on SQLite: `./console exp:install`
+2. Run the one-command installation on SQLite: `./console exp:install --apply`
    ([Installing in one command](../../../../features/6.0/install-in-one-command.md)).
 3. Show that the generated administrator password is printed once and written to `var/log/initial-admin-password`,
    then change it at the first sign-in.

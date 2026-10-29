@@ -145,7 +145,7 @@ Der Empfänger muss Duplikate anhand der Ereignis-ID erkennen.
 ```bash
 php bin/php/console exp:audit sinks list --allow-root-user          # ready? spooled? channels
 php bin/php/console exp:audit sinks test webhook --allow-root-user  # one test record, exit 0 when delivered
-php bin/php/console exp:audit sinks flush --allow-root-user         # send what is spooled now
+php bin/php/console exp:audit sinks flush --apply --allow-root-user         # send what is spooled now
 ```
 
 ## Grenzen

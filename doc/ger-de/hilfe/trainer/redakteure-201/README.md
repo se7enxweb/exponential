@@ -55,7 +55,7 @@ möglicherweise nicht verwendet; lassen Sie sie dann weg.
 ## Übungsumgebung
 
 - Eine Schulungsinstallation, die von jedem Rechner der Teilnehmenden erreichbar ist (zum Beispiel installiert mit
-  `php bin/php/console exp:install`, [7. Die Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md));
+  `php bin/php/console exp:install --apply`, [7. Die Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md));
   wie man sie aufbaut und zurücksetzt: [Modul 2: Die Übungsumgebung aufbauen](../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/README.md)
   von Train the Trainer.
 - Ein Editor-Konto pro Person, dazu Konten für Freigebende und Prüfende für die Partnerübungen; E-Mail-Adressen unter

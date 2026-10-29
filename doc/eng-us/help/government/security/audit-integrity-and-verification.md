@@ -79,7 +79,7 @@ The signing and pseudonym keys are in `settings/override/audit.ini.append.php` (
 generated on first use ([4.6 Keys](../../../bc/6.0/audit.md#46-keys)):
 
 - back the file up as a secret; without the signing keys, old archives cannot be verified (`unknown_key`);
-- rotate the signing key once a year, and at once if it may have been read: `./console exp:audit key rotate --allow-root-user`;
+- rotate the signing key once a year, and at once if it may have been read: `./console exp:audit key rotate --apply --allow-root-user`;
   old keys stay for their archives;
 - keys can come from a secrets store with `[AuditKeySettings] GenerateKeys=disabled`.
 

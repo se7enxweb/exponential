@@ -81,15 +81,15 @@ Installieren Sie es als `settings/override/velocity.ini.append.php` (führen Sie
 zusammen), oder setzen Sie die Werte einzeln, was dieselbe Datei schreibt:
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Engine qbix --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings Host 0.0.0.0 --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings Port 80 --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings HTTPSPort 443 --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings User example --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings Group example --allow-root-user
-php bin/php/console exp:velocity config set HTTPSSettings Certificate /etc/ssl/example.com/fullchain.pem --allow-root-user
-php bin/php/console exp:velocity config set HTTPSSettings Key /etc/ssl/example.com/privkey.pem --allow-root-user
-php bin/php/console exp:velocity config set HTTPSSettings Enabled true --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Engine qbix --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Host 0.0.0.0 --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Port 80 --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings HTTPSPort 443 --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings User example --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Group example --allow-root-user
+php bin/php/console exp:velocity config set --apply HTTPSSettings Certificate /etc/ssl/example.com/fullchain.pem --allow-root-user
+php bin/php/console exp:velocity config set --apply HTTPSSettings Key /etc/ssl/example.com/privkey.pem --allow-root-user
+php bin/php/console exp:velocity config set --apply HTTPSSettings Enabled true --allow-root-user
 php bin/php/console exp:velocity config list --allow-root-user      # * marks what you set
 php bin/php/console exp:velocity restart --allow-root-user
 php bin/php/console exp:velocity status --allow-root-user
@@ -177,9 +177,9 @@ und deaktivieren Sie wie mit `a2ensite`, `a2enconf` und `a2enmod`:
 
 ```bash
 php bin/php/console exp:velocity layout --allow-root-user                 # every path, what is enabled, the files in use
-php bin/php/console exp:velocity site enable example.com --allow-root-user
-php bin/php/console exp:velocity conf enable reverse-proxy --allow-root-user
-php bin/php/console exp:velocity mod disable http2 --allow-root-user
+php bin/php/console exp:velocity site enable --apply example.com --allow-root-user
+php bin/php/console exp:velocity conf enable --apply reverse-proxy --allow-root-user
+php bin/php/console exp:velocity mod disable --apply http2 --allow-root-user
 php bin/php/console exp:velocity ctl configtest --allow-root-user         # the engine's own check of the tree
 ```
 

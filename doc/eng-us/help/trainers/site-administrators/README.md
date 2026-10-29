@@ -33,7 +33,7 @@ check an upgrade.
 | Format | Classroom or online; hands-on in the browser and on a terminal |
 | Level | Intermediate |
 | Prerequisites | Editors 101 (or the same experience as an editor); basic command line |
-| Lab | One training installation per learner, installed with `php bin/php/console exp:install` (see [Installing from the command line](../../../install/07-console-install.md)) and served with `exp:velocity start`; the learner needs the administrator account of their own installation and a terminal on its machine |
+| Lab | One training installation per learner, installed with `php bin/php/console exp:install --apply` (see [Installing from the command line](../../../install/07-console-install.md)) and served with `exp:velocity start`; the learner needs the administrator account of their own installation and a terminal on its machine |
 
 ## Modules
 

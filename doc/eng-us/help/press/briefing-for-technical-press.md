@@ -66,7 +66,7 @@ Velocity's own facts and figures, with their measuring conditions, are on [Cover
   history" ([Git first](../who-is-the-exponential-foundation.md#git-first)).
 - **Three ways to get the code**: `git clone` plus `composer install` (recommended), `composer create-project`, or
   `composer require` ([Getting the code](../../install/03-getting-the-code.md#32-three-ways-to-get-the-code)).
-- **One-command install** on the development line: `./console exp:install` builds a complete site on SQLite
+- **One-command install** on the development line: `./console exp:install --apply` builds a complete site on SQLite
   ([Install in one command](../../features/6.0/install-in-one-command.md)).
 - **Published tags never change** ([Published versions never change](published-versions-never-change.md)).
 

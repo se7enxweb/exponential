@@ -74,7 +74,7 @@ read:
 
 ```bash
 ./console exp:audit key list --allow-root-user
-./console exp:audit key rotate --allow-root-user
+./console exp:audit key rotate --apply --allow-root-user
 ```
 
 The old keys stay for their archives; back up the file again after a rotation. Retention never removes a signing key

@@ -57,7 +57,7 @@ developers; they tell you which of those guides answers which question, and in w
 The plan below assumes you have an account in the administration with at least the Editor role, and a demonstration
 or test installation that you are allowed to change. If you have no installation yet, ask an administrator or a
 developer for one: a complete demonstration site is installed with one command,
-`./console exp:install`, on SQLite and without a database server
+`./console exp:install --apply`, on SQLite and without a database server
 ([Installing Exponential in one command](../../features/6.0/install-in-one-command.md)).
 
 ### Day 1: know the product and the people behind it

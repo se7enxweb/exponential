@@ -23,7 +23,7 @@ erklärt. Das allgemeine Glossar der Dokumentation ist [doc/eng-us/glossary.md](
 | `exp:velocity deploy` | führt jeden Schritt, den eine Änderung am PHP-Code braucht, in der richtigen Reihenfolge aus, mit PASS oder FAIL pro Schritt | [Änderungen ausrollen](betrieb/aenderungen-ausrollen.md) |
 | ezupdate | die Erweiterung, die nach Updates sucht und sie einspielt | [Automatische Updates mit ezupdate](betrieb/automatische-updates-mit-ezupdate.md) |
 | FrankenPHP | Caddy mit eingebautem PHP; eine produktionsreife alternative Engine, betrieben über Velocity | [FrankenPHP](server/frankenphp.md) |
-| Kickstarter | installiert aus einer geprüften `kickstart.ini`; `exp:kickstarter run --force` | [Der Kickstarter für Hoster](bereitstellung/der-kickstarter-fuer-hoster.md) |
+| Kickstarter | installiert aus einer geprüften `kickstart.ini`; `exp:kickstarter run --apply` | [Der Kickstarter für Hoster](bereitstellung/der-kickstarter-fuer-hoster.md) |
 | Log-Viewer | **Setup > Logdateien** und `./console exp:logs`: listet, verfolgt, durchsucht und rotiert die Logs, mit maskierten personenbezogenen Daten | [Log-Viewer und Log-Rotation](betrieb/log-viewer-und-log-rotation.md) |
 | Wartungsmodus | eine 503-Seite für Besucher, während gearbeitet wird; `php bin/php/maintenance.php` mit `on`, `off` oder `status`, Markierung `var/maintenance.json` | [Wartungsmodus](betrieb/wartungsmodus.md) |
 | `ManagedByDeployment` | Schalter pro Siteaccess, der verhindert, dass die Administration Einstellungen, Templates und Pakete schreibt | [Härtung für Hoster](sicherheit/haertung-fuer-hoster.md) |

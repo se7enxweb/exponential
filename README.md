@@ -215,7 +215,7 @@ raises the ceiling further; it is not what makes the application quick.
 
 ```bash
 ./console exp:velocity deploy          --allow-root-user   # after a change: autoloads, settings, caches, PHP-FPM, Velocity
-./console exp:velocity cache clear     --allow-root-user   # empty Velocity's response cache
+./console exp:velocity cache clear --apply --allow-root-user   # empty Velocity's response cache
 ./bin/php/console exp:velocity start     --allow-root-user
 ./bin/php/console exp:velocity status    --allow-root-user
 ./bin/php/console exp:velocity restart   --allow-root-user
@@ -241,9 +241,9 @@ The same commands drive three servers, chosen with `[ServerSettings] Engine` in
   shipped default because it always works.
 
 ```bash
-./bin/php/console exp:velocity config set ServerSettings Engine qbix --allow-root-user   # every real site
+./bin/php/console exp:velocity config set --apply ServerSettings Engine qbix --allow-root-user   # every real site
 ./bin/php/console exp:velocity start   --allow-root-user
-./bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user   # the alternative
+./bin/php/console exp:velocity config set --apply ServerSettings Engine frankenphp --allow-root-user   # the alternative
 ./bin/php/console exp:velocity install --allow-root-user   # fetch and verify the FrankenPHP binary
 ./bin/php/console exp:velocity start --all --allow-root-user   # all three side by side, for tests
 ```
@@ -583,7 +583,7 @@ The shortest path needs only PHP and Composer (SQLite, no database server):
 ```bash
 composer create-project se7enxweb/exponential exponential
 cd exponential
-php bin/php/console exp:install --random-password --url=http://localhost:8087
+php bin/php/console exp:install --apply --random-password --url=http://localhost:8087
 php bin/php/console exp:velocity start --engine=php
 ```
 

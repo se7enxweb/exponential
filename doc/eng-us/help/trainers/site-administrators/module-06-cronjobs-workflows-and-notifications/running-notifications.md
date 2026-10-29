@@ -104,7 +104,7 @@ Use your own training installation. In a terminal at the installation root; all 
 6. Rehearse a real run that writes mail to files instead of sending it:
 
    ```bash
-   php bin/php/console exp:notification:run --mail-file-dir=var/tmp/notification-mail
+   php bin/php/console exp:notification:run --apply --mail-file-dir=var/tmp/notification-mail
    ```
 
 7. Open the directory `var/tmp/notification-mail` and read one file, if a message was made: recipient, subject and

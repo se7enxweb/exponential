@@ -1,14 +1,14 @@
 <?php
 /**
- * @description The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives
+ * @description The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives (dry run unless --apply)
  * @alias exp:logs
  *
  * File containing the exp:logs command (doc/eng-us/features/6.0/log-viewer.md, "On the command line"). It uses the same
  * classes and settings (logviewer.ini) as Setup > Log files: the same files (the allow-list of directories), the
  * same masking, the same limits. The command line is the server's operator, so no policy is checked; one
  * system.log.read is recorded per run that reads a file. --rotate, --rotate-all, --prune, --compress and --truncate change
- * files (expLogManager, doc/eng-us/features/6.0/log-rotation.md) and are recorded as system.log.rotate, system.log.delete and
- * system.log.truncate.
+ * files (expLogManager, doc/eng-us/features/6.0/log-rotation.md), only with --apply (without it they print the plan), and
+ * are recorded as system.log.rotate, system.log.delete and system.log.truncate.
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -47,12 +47,15 @@ class Explogs extends \Exponential\Runnable\Command
                                  "\n" .
                                  "Log management (doc/eng-us/features/6.0/log-rotation.md):\n" .
                                  "./console exp:logs --archives                              each log with its archives and their sizes\n" .
-                                 "./console exp:logs --rotate=error,debug                    rotate these logs now (keys as in --archives, or ids)\n" .
-                                 "./console exp:logs --rotate-all                            rotate every log that is not empty\n" .
-                                 "./console exp:logs --prune --dry-run                       the archives beyond site.ini [FileSettings] limits\n" .
-                                 "./console exp:logs --prune=error                           remove them (all logs, or these)\n" .
-                                 "./console exp:logs --compress                              compress the archives from .2 on\n" .
-                                 "./console exp:logs --truncate=debug [--in-place]           empty a log (rotated, or in place)\n" .
+                                 "./console exp:logs --rotate=error,debug --apply            rotate these logs now (keys as in --archives, or ids)\n" .
+                                 "./console exp:logs --rotate-all --apply                    rotate every log that is not empty\n" .
+                                 "./console exp:logs --prune                                 the archives beyond site.ini [FileSettings] limits\n" .
+                                 "./console exp:logs --prune=error --apply                   remove them (all logs, or these)\n" .
+                                 "./console exp:logs --compress --apply                      compress the archives from .2 on\n" .
+                                 "./console exp:logs --truncate=debug [--in-place] --apply   empty a log (rotated, or in place)\n" .
+                                 "--rotate, --rotate-all, --prune, --compress and --truncate change files only with --apply; without it\n" .
+                                 "they print the plan. --dry-run means the same as no --apply; --apply together with --dry-run is a usage\n" .
+                                 "error (exit 2).\n" .
                                  "\n" .
                                  "Exit code: 0 something listed or found, 1 nothing found, 2 error.",
                 'use-session'    => false,
@@ -60,7 +63,7 @@ class Explogs extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[list][archives][rotate:][rotate-all][force][prune;][days:][compress;][truncate:][in-place][dry-run][tail:][lines:][follow][interval:][search:][regex][case][file:][scope:][rotations][level:][from:][to:][sa:][uri:][ip:][cursor:][limit:][reference:][related:][unmask][json][color:]', '', array(
+        $options = $this->startup( '[list][archives][rotate:][rotate-all][force][prune;][days:][compress;][truncate:][in-place][apply][dry-run][tail:][lines:][follow][interval:][search:][regex][case][file:][scope:][rotations][level:][from:][to:][sa:][uri:][ip:][cursor:][limit:][reference:][related:][unmask][json][color:]', '', array(
             'list'       => 'List the log files the viewer may open, by group, with size, time and lines a minute',
             'archives'   => 'List the logs that can be rotated, with their archives (.1 .. .N, .gz) and sizes, and the limits',
             'rotate'     => 'Rotate these logs now, whatever their size: keys (error,debug,site-storage) or ids (var/log/error.log), comma separated',
@@ -71,7 +74,8 @@ class Explogs extends \Exponential\Runnable\Command
             'compress'   => 'Compress the plain archives from .2 on: of every log, or of these keys',
             'truncate'   => 'Empty these logs: rotate them (the content stays in .1), or with --in-place empty the file itself',
             'in-place'   => 'With --truncate: empty the file in place, keeping no copy',
-            'dry-run'    => 'With --rotate, --rotate-all, --prune, --compress or --truncate: only print the plan',
+            'apply'      => 'With --rotate, --rotate-all, --prune, --compress or --truncate: change the files (the default is a dry run that prints the plan)',
+            'dry-run'    => 'The default, kept for scripts that pass it: only print the plan',
             'tail'       => 'The last entries of a file (its path relative to the root, e.g. var/log/error.log)',
             'lines'      => 'With --tail: how many entries (default 20)',
             'follow'     => 'With --tail: go on printing what the file gains, polling with backoff (Ctrl-C ends)',
@@ -97,6 +101,15 @@ class Explogs extends \Exponential\Runnable\Command
             'color'      => 'Color the levels: auto (default: when the output is a terminal), always, never'
         ) );
 
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $this->shutdown( 2 );
+            return;
+        }
+        $dryRun = !$apply;
+
         $config = \expLogViewerConfig::instance();
         if ( !$config->enabled( 'LogViewerSettings', 'LogViewer' ) )
         {
@@ -112,7 +125,6 @@ class Explogs extends \Exponential\Runnable\Command
 
         try
         {
-            $dryRun = !empty( $options['dry-run'] );
             $listOf = function ( $value ) {
                 return is_string( $value ) && $value !== '' ? self::names( $value ) : 'all';
             };
@@ -205,7 +217,9 @@ class Explogs extends \Exponential\Runnable\Command
     {
         $cli = $this->cli();
         $plan = $manager->plan( $names, $op, $opts );
-        $result = $dryRun ? null : $manager->apply( $plan );
+        $result = null;
+        if ( !$dryRun )
+            $result = $manager->apply( $plan );
         $steps = $dryRun ? $plan['steps'] : $result['steps'];
         $code = $plan['unknown'] ? 2 : ( $steps ? 0 : 1 );
         $bytes = 0;
@@ -241,6 +255,8 @@ class Explogs extends \Exponential\Runnable\Command
             $cli->error( 'FAIL: not a log that can be managed: ' . $name . ' (see --archives)' );
         $cli->output( $steps ? sprintf( '%d step(s), %s%s', count( $steps ), self::bytes( $bytes ), $dryRun ? ' (dry run: nothing changed)' : '' )
                              : 'Nothing to ' . $op );
+        if ( $dryRun && $code !== 2 )
+            $cli->output( 'PASS: ' . count( $steps ) . " $op step(s) planned (dry run, nothing changed; --apply writes)" );
         return $code;
     }
 

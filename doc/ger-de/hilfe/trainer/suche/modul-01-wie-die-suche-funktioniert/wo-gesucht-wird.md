@@ -84,7 +84,7 @@ Admin-Suche braucht ein Konto mit Zugang zur Administration.
 
 ## Praktische Übung
 
-Verwenden Sie Ihre eigene Schulungsinstallation (installiert mit `php bin/php/console exp:install`, siehe
+Verwenden Sie Ihre eigene Schulungsinstallation (installiert mit `php bin/php/console exp:install --apply`, siehe
 [Installation über die Kommandozeile](../../../../installation/07-installation-ueber-die-konsole.md)), als Administrator in der
 Administration angemeldet.
 

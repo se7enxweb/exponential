@@ -2,14 +2,14 @@
 title: exp:addexphelpreadpolicy
 audience: developer, admin
 category: examples
-summary: Grant exphelp/read (the help system) to the Editor role or the roles named (--dry-run lists them first).
+summary: Grant exphelp/read (the help system) to the Editor role or the roles named (dry run unless --apply).
 keywords: exp:addexphelpreadpolicy, addexphelpreadpolicy, console, command, CLI, addexphelpreadpolicy.php, exp:help-grant
 type: generated
 generated: exp:help:examples
 ---
 # exp:addexphelpreadpolicy
 
-Grant exphelp/read (the help system) to the Editor role or the roles named (--dry-run lists them first).
+Grant exphelp/read (the help system) to the Editor role or the roles named (dry run unless --apply).
 
 Script `bin/php/addexphelpreadpolicy.php`, code in `kernel/private/classes/commands/addexphelpreadpolicy.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -25,17 +25,22 @@ php bin/php/addexphelpreadpolicy.php --help
 Grant the policy exphelp/read, reading the help system, to the Editor role or to the roles
 named with --role, so editors see the Help control and the help pages. New installations give it
 to the Editor role; administrators have it through their */* policy. Roles that have it already
-are left alone; the script can run again.
+are left alone; the script can run again. Prints PASS or FAIL at the end.
+Without --apply nothing is written: the script lists the roles it would grant the policy to.
+--dry-run is still accepted and means the same as no flag; --apply together with --dry-run is a
+usage error (exit 2).
 
-Example: php bin/php/addexphelpreadpolicy.php --dry-run
-         php bin/php/addexphelpreadpolicy.php --role=Editor --role=5
+Example: php bin/php/addexphelpreadpolicy.php
+         php bin/php/addexphelpreadpolicy.php --apply
+         php bin/php/addexphelpreadpolicy.php --apply --role=Editor --role=5
 ```
 
 ## Options
 
 | Option | Value | Help |
 |---|---|---|
-| `--dry-run` |  | List what would be granted, change nothing |
+| `--apply` |  | Write the changes (the default is a dry run that lists them and changes nothing) |
+| `--dry-run` |  | The default, kept for scripts that pass it: list what would be granted, change nothing |
 | `--role` | required | This role (ID or name), may be repeated; the Editor role when none is named |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

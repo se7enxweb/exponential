@@ -143,7 +143,7 @@ Do these on the old site while it still runs its old code, before you take the d
 - **Optional clean-ups that make the dump smaller:** remove internal drafts (set `content.ini [ContentSettings]
   InternalDraftsCleanUpLimit` and `InternalDraftsDuration` low and run the `internal_drafts_cleanup.php` cron job), old
   archived versions, expired sessions. The same tools exist in Exponential afterwards:
-  `php runcronjobs.php --script=internal_drafts_cleanup.php`, `php bin/php/cleanupversions.php`,
+  `php runcronjobs.php --script=internal_drafts_cleanup.php`, `php bin/php/cleanupversions.php --apply`,
   `php update/common/scripts/cleanup.php session`.
 - **Back up** the database and the whole old directory, including `var/`. The commands are in
   [11.1](11-upgrading.md#111-before-you-start). Restore the backup once on a scratch machine.
@@ -408,7 +408,7 @@ The vendor's direct-upgrade page says to skip the 4.4 section identifier script 
 4.5 and 4.6 pages of the vendor set `define( 'STORAGE_BACKEND', 'dfsmysqli' )` inside `index_cluster.php`; that name
 is not read any more, and the old `index_cluster_*` and `index_image_*` files are to be removed from the document root
 (4.7 notes). The tools for a DFS site: `php bin/php/clusterize.php` (`-u` moves files back to the plain file system),
-`php bin/php/dfscleanup.php` (consistency between `ezdfsfile` and the mount), `php bin/php/clusterpurge.php`.
+`php bin/php/dfscleanup.php` (consistency between `ezdfsfile` and the mount), `php bin/php/clusterpurge.php --apply`.
 
 ## 14.7 Settings and siteaccesses
 

@@ -24,7 +24,7 @@ Juli 2026 installiert sich eine vollständige Website mit einem Befehl.
 
 „Diese Seite ist für alle, die in wenigen Minuten eine funktionierende Exponential-Website möchten, ohne eine
 `kickstart.ini` zu schreiben und ohne Datenbankserver“
-([Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md)). `./console exp:install`
+([Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md)). `./console exp:install --apply`
 installiert das Multisite-Paket auf SQLite in amerikanischem Englisch, mit einer Website und einer Administration, und
 gibt die Anmeldeadressen und eine Zusammenfassung aus. Optionen wählen stattdessen MySQL, PostgreSQL, MongoDB oder
 Oracle.
@@ -40,7 +40,7 @@ Oracle.
 
 | Fakt | Quelle |
 |---|---|
-| Ein Befehl: `./console exp:install`, gleichbedeutend mit `php bin/php/install.php` | [Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md) |
+| Ein Befehl: `./console exp:install --apply`, gleichbedeutend mit `php bin/php/install.php --apply` | [Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | Standard: SQLite, `eng-US`, die Siteaccesses `site` und `admin` | ebenda |
 | Datenbankoptionen: `sqlite` (Standard), `mysql`/`mariadb`, `pgsql`, `mongodb`, `oracle` | [Eine Datenbank wählen](../../funktionen/6.0/installation-mit-einem-befehl.md#eine-datenbank-wählen) |
 | Der Kickstarter installiert für automatisierte Einrichtungen aus einer Konfigurationsdatei | [Kickstarter-CLI](../../funktionen/6.0/kickstarter-cli.md) |

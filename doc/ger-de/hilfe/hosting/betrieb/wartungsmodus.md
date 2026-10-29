@@ -119,7 +119,7 @@ ein und aus.
 - **Velocity.** Die erzeugte Konfiguration der Website nennt die Markierung als Pausendatei des Antwort-Caches, sodass während des
   Fensters weder der Cache von Velocity noch der HTTP-Cache der Anwendung antwortet (Velocity 0.0.4.34 oder später). Der Befehl
   leert den Antwort-Cache von Velocity, wenn er umschaltet; wenn Apache die Seite der Administration ausliefert, leeren Sie ihn
-  nach dem Ausschalten selbst: `./console exp:velocity cache clear --allow-root-user`.
+  nach dem Ausschalten selbst: `./console exp:velocity cache clear --apply --allow-root-user`.
 - **Ein CDN oder Reverse Proxy** speichert die Wartungsseite nicht (`no-store`), hält aber vielleicht noch Seiten von vor dem
   Fenster. Leeren Sie ihn, wenn das Fenster Inhalte geändert hat.
 

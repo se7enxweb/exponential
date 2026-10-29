@@ -83,7 +83,7 @@ On MongoDB the setup wizard's configuration step can take one to three minutes. 
 `request_terminate_timeout` before you start, or install from the console:
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=mongodb \
+EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=mongodb \
     --db-host=127.0.0.1 --db-name=exponential --db-user=exponential --allow-root-user
 ```
 

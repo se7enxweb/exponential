@@ -28,7 +28,8 @@ php bin/php/webserver.php --help
 | `--docroot` | required | configure/reconfigure: the document root to persist for the engine |
 | `--https-port` | required | configure/reconfigure: the HTTPS port to persist (frankenphp or qbix; php has no TLS) |
 | `--reconfigure` |  | start: resolve and persist the engine/port/docroot/HTTPS port again before running |
-| `--dry-run` |  | configure/reconfigure: show what would be written, without writing it |
+| `--apply` |  | configure, and the commands that write (config set\|unset, cache clear, layout migrate, site\|conf\|mod, ssl renew, install): make the change; without it they are a dry run |
+| `--dry-run` |  | the default of configure and the commands that write (kept for scripts); start: show the configuration it would write, without writing or running it |
 | `--all` |  | start, stop, restart, graceful, kill or status every engine, one after the other |
 | `--force` |  | install: download again even if the binary is already there |
 | `--check` |  | install: re-hash the installed binary against its SHA-256 |

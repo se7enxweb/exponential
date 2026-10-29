@@ -61,8 +61,8 @@ class expNotificationJob
         touch( $dir . '/' . $id . '.jsonl' );
 
         $args = array( $php, 'bin/php/notificationrun.php', '--job=' . $id, '--source=web', '--no-colors' );
-        if ( $dry )
-            $args[] = '--dry-run';
+        // the command is a dry run unless --apply: "Run now" sends, "Dry run" lists
+        $args[] = $dry ? '--dry-run' : '--apply';
         if ( $siteaccess !== '' )
             $args[] = '--siteaccess=' . $siteaccess;
         if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 )

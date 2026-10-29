@@ -114,7 +114,7 @@ dem Siteaccess nicht aktiv ist.
 - **Cache-Blöcke.** Teile in `{cache-block}` behalten ihre Ausgabe, bis sich ihre Schlüssel ändern oder sie ablaufen; leeren Sie
   `--clear-id=template-block`.
 - **Velocity.** Auf Installationen, die den Anwendungsserver Velocity verwenden, ist sein Antwort-Cache getrennt:
-  `./console exp:velocity cache clear`.
+  `./console exp:velocity cache clear --apply`.
 
 ## Kurzreferenz
 

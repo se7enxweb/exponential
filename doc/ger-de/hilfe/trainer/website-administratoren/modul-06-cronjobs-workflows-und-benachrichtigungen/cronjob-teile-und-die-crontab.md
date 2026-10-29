@@ -92,7 +92,7 @@ zeigt das.
 
 ## Praktische Übung
 
-Verwenden Sie Ihre eigene Schulungsinstallation (zum Beispiel eine, die mit `php bin/php/console exp:install`
+Verwenden Sie Ihre eigene Schulungsinstallation (zum Beispiel eine, die mit `php bin/php/console exp:install --apply`
 installiert wurde, siehe [Die Installation über die Konsole](../../../../installation/07-installation-ueber-die-konsole.md)). Arbeiten Sie
 in einem Terminal im Wurzelverzeichnis der Installation.
 

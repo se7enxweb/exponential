@@ -38,7 +38,7 @@
     <ul>{foreach $cache_result.names as $cp_name}<li>{$cp_name|wash}</li>{/foreach}</ul>
     {/if}
     {if $cache_result.restart}<p>{'A running Velocity still holds the old settings in memory: restart it with %command.'|i18n( 'design/admin/setup/cache',, hash( '%command', '<code>./console exp:velocity restart</code>' ) )}</p>{/if}
-    {if $cache_result.response_cache}<p>{'Velocity\'s response cache may serve pages made before this for a few seconds more; clear it below or with %command.'|i18n( 'design/admin/setup/cache',, hash( '%command', '<code>./console exp:velocity cache clear</code>' ) )}</p>{/if}
+    {if $cache_result.response_cache}<p>{'Velocity\'s response cache may serve pages made before this for a few seconds more; clear it below or with %command.'|i18n( 'design/admin/setup/cache',, hash( '%command', '<code>./console exp:velocity cache clear --apply</code>' ) )}</p>{/if}
     {if $cache_result.command}<p>{'From a shell:'|i18n( 'design/admin/setup/cache' )} <code>{$cache_result.command|wash}</code></p>{/if}
 </div>
 {/if}
@@ -204,7 +204,7 @@
         <li>
             <div class="a4-setup-server-text"><strong>{'Velocity response cache'|i18n( 'design/admin/setup/cache' )}</strong>
                 <span class="a4-badge">{'%files files, %size'|i18n( 'design/admin/setup/cache',, hash( '%files', $velocity_cache.files|wash, '%size', $velocity_cache.size|wash ) )}</span>
-                <small>{'Pages Velocity answers without PHP, for a few seconds each.'|i18n( 'design/admin/setup/cache' )} {if $velocity_cache.cleared}{'Last cleared %time.'|i18n( 'design/admin/setup/cache',, hash( '%time', $velocity_cache.cleared|wash ) )}{/if} <code>./console exp:velocity cache clear</code></small></div>
+                <small>{'Pages Velocity answers without PHP, for a few seconds each.'|i18n( 'design/admin/setup/cache' )} {if $velocity_cache.cleared}{'Last cleared %time.'|i18n( 'design/admin/setup/cache',, hash( '%time', $velocity_cache.cleared|wash ) )}{/if} <code>./console exp:velocity cache clear --apply</code></small></div>
             <div class="a4-actions">
                 <input class="a4-btn a4-btn-small" type="submit" name="ClearVelocityCacheButton" value="{'Clear Velocity\'s response cache'|i18n( 'design/admin/setup/cache' )}" />
             </div>
@@ -394,7 +394,7 @@
             <li>{'By tag'|i18n( 'design/admin/setup/cache' )}<code>php bin/php/ezcache.php --clear-tag=template --allow-root-user</code></li>
             <li>{'Everything'|i18n( 'design/admin/setup/cache' )}<code>php bin/php/ezcache.php --clear-all --allow-root-user</code></li>
             <li>{'What would be cleared, with sizes, without clearing'|i18n( 'design/admin/setup/cache' )}<code>./console exp:cache clear --id=content --dry-run --allow-root-user</code></li>
-            <li>{'Velocity\'s response cache'|i18n( 'design/admin/setup/cache' )}<code>./console exp:velocity cache clear</code></li>
+            <li>{'Velocity\'s response cache'|i18n( 'design/admin/setup/cache' )}<code>./console exp:velocity cache clear --apply</code></li>
             <li>{'Velocity, after settings changed'|i18n( 'design/admin/setup/cache' )}<code>./console exp:velocity restart --allow-root-user</code></li>
         </ul>
     </div>

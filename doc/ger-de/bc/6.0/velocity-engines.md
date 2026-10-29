@@ -229,11 +229,11 @@ wegen Speichermangels oder ein Stopp durch ein anderes Werkzeug.
 Er ist aus, bis Sie ihn installieren (root, systemd):
 
 ```
-./console exp:velocity watchdog install --allow-root-user   # vc-watchdog.service + .timer, conf-available/watchdog.conf, enabled
+./console exp:velocity watchdog install --apply --allow-root-user   # vc-watchdog.service + .timer, conf-available/watchdog.conf, enabled
 ./console exp:velocity watchdog status --allow-root-user    # timer, markers, last check and last start
 ./console exp:velocity watchdog run --allow-root-user       # one check now (--json for a script)
-./console exp:velocity conf disable watchdog --allow-root-user   # pause it (conf enable: resume)
-./console exp:velocity watchdog remove --allow-root-user    # timer off, units and configuration file removed
+./console exp:velocity conf disable --apply watchdog --allow-root-user   # pause it (conf enable: resume)
+./console exp:velocity watchdog remove --apply --allow-root-user    # timer off, units and configuration file removed
 ```
 
 Alle `Interval` Sekunden (standardmäßig 45) führt der Timer eine Prüfung der Standard-Engine aus (oder der mit
@@ -485,7 +485,7 @@ der Startseite mitbringen).
 ## FrankenPHP
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Engine frankenphp --allow-root-user
 php bin/php/console exp:velocity install --allow-root-user     # optional: start installs it
 php bin/php/console exp:velocity start --allow-root-user
 ```

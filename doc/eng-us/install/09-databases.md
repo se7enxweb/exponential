@@ -120,7 +120,7 @@ write queue that makes concurrent publishing wait its turn instead of failing. M
 not touch the database at all, because three cache layers answer them first. This section explains each part, so
 you can judge for yourself where the limits lie.
 
-The installer's default (`php bin/php/console exp:install`, the setup wizard's preselected choice, `settings/setup.ini`
+The installer's default (`php bin/php/console exp:install --apply`, the setup wizard's preselected choice, `settings/setup.ini`
 `[DatabaseSettings] DefaultType=sqlite3`) is SQLite. Requirements:
 
 - The PHP extension `sqlite3` (`php -m | grep -i sqlite3` prints `sqlite3`).
@@ -310,7 +310,7 @@ away from it with three layers, from the outermost:
 
 | Layer | Setting | What a hit costs | Cleared by |
 |---|---|---|---|
-| **Velocity response cache** | `settings/velocity.ini` `[CacheSettings] Enabled=enabled`, `DefaultTtl=30` | Answered by the Velocity parent process: no PHP worker, no database. Anonymous visitors only; signed-in visitors are never served from it. | `php bin/php/console exp:velocity cache clear --allow-root-user` |
+| **Velocity response cache** | `settings/velocity.ini` `[CacheSettings] Enabled=enabled`, `DefaultTtl=30` | Answered by the Velocity parent process: no PHP worker, no database. Anonymous visitors only; signed-in visitors are never served from it. | `php bin/php/console exp:velocity cache clear --apply --allow-root-user` |
 | **Content view cache** | `site.ini` `[ContentSettings] ViewCaching=enabled` | The rendered main area of a content page is read from a file; the page layout around it still runs. | `php bin/php/ezcache.php --clear-id=content --allow-root-user`, and automatically on publish |
 | **Template-block cache** | `site.ini` `[TemplateSettings] TemplateCache=enabled` | `{cache-block}` sections of the page layout (menus, footers) are read from files. | `php bin/php/ezcache.php --clear-id=template-block --allow-root-user` |
 
@@ -457,7 +457,7 @@ php bin/php/maintenance.php on --message="Restoring" --allow-root-user
 sqlite3 var/storage/sqlite3/exponential.db ".restore '/backup/exponential-2026-10-05.db'"
 php bin/php/maintenance.php off --allow-root-user
 php bin/php/ezcache.php --clear-all --allow-root-user
-php bin/php/console exp:velocity cache clear --allow-root-user
+php bin/php/console exp:velocity cache clear --apply --allow-root-user
 ```
 
 `.restore` copies the backup into the live database page by page under a write lock. It prints nothing when it
@@ -597,7 +597,7 @@ ConnectRetries=0
 Install with the console (the password from the environment, so it stays out of the shell history):
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=mysql \
+EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=mysql \
     --db-host=127.0.0.1 --db-name=exponential --db-user=exponential --allow-root-user
 ```
 
@@ -678,7 +678,7 @@ UsePersistentConnection=disabled
 ```
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=pgsql \
+EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=pgsql \
     --db-host=127.0.0.1 --db-name=exponential --db-user=exponential --allow-root-user
 ```
 
@@ -756,7 +756,7 @@ process, so a Velocity worker reuses its connections.
    `request_terminate_timeout` before you start, or install from the console:
 
    ```bash
-   EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=mongodb \
+   EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=mongodb \
        --db-host=127.0.0.1 --db-name=exponential --db-user=exponential --allow-root-user
    ```
 
@@ -822,7 +822,7 @@ commands, also grant `SELECT_CATALOG_ROLE`.
 ### Install
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=oracle \
+EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=oracle \
     --db-host=127.0.0.1 --db-port=1521 --db-name=FREEPDB1 --db-user=exponential --allow-root-user
 ```
 
@@ -1036,7 +1036,7 @@ how the Oracle and MongoDB support were added. The work list (a driver on `sqlsr
 lacks, a schema handler, SQL and update files, installer entries, tests) is in
 [Database support](../help/database-support.md#microsoft-sql-server-possible-with-additional-work).
 
-**SQLite for public demos.** SQLite is the usual database of a public demo that is rebuilt from scratch every few hours: `EXP_DEMO_MODE=1 ./console exp:install --db=sqlite --password=<the published password>` installs one in about a minute, with nothing to drop between builds. Demo mode itself does not depend on the database engine ([Demo mode](../bc/6.0/demo-mode.md)).
+**SQLite for public demos.** SQLite is the usual database of a public demo that is rebuilt from scratch every few hours: `EXP_DEMO_MODE=1 ./console exp:install --apply --db=sqlite --password=<the published password>` installs one in about a minute, with nothing to drop between builds. Demo mode itself does not depend on the database engine ([Demo mode](../bc/6.0/demo-mode.md)).
 
 ## References
 

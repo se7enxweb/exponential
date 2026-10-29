@@ -77,7 +77,7 @@ runs beside it and is reached explicitly with `--engine=frankenphp`. To make
 FrankenPHP the default instead:
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Engine frankenphp --allow-root-user
 ```
 
 `config set` writes to `settings/override/velocity.ini.append.php`. You can also
@@ -961,7 +961,7 @@ php bin/php/console exp:velocity install --engine=frankenphp [--force|--check|--
 
 # config
 php bin/php/console exp:velocity config get  FrankenPHPSettings Port --allow-root-user
-php bin/php/console exp:velocity config set  ServerSettings Engine frankenphp --allow-root-user
+php bin/php/console exp:velocity config set --apply  ServerSettings Engine frankenphp --allow-root-user
 php bin/php/console exp:velocity config paths --allow-root-user
 
 # inspect the binary / caddyfile

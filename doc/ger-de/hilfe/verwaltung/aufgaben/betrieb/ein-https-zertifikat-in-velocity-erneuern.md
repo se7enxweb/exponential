@@ -45,7 +45,7 @@ openssl s_client -connect www.example.gov:443 -servername www.example.gov </dev/
 
 | Quelle | Tun |
 |---|---|
-| Let's Encrypt oder eine andere ACME-CA | normalerweise nichts: Die Erneuerung läuft in einem Hintergrundauftrag, wenn ein Drittel der Laufzeit übrig ist (`renewAt` 0.33), mit wachsenden Pausen nach Fehlschlägen. Um sie zu erzwingen: `./console exp:velocity ssl renew www.example.gov --allow-root-user` |
+| Let's Encrypt oder eine andere ACME-CA | normalerweise nichts: Die Erneuerung läuft in einem Hintergrundauftrag, wenn ein Drittel der Laufzeit übrig ist (`renewAt` 0.33), mit wachsenden Pausen nach Fehlschlägen. Um sie zu erzwingen: `./console exp:velocity ssl renew --apply www.example.gov --allow-root-user` |
 | Ihre eigenen Dateien (vom Zertifikatsdienst Ihrer Organisation) | legen Sie die neuen `fullchain.pem` und `privkey.pem` unter die konfigurierten Pfade; Velocity prüft die Dateien alle `watchInterval` (60 Sekunden) und präsentiert der nächsten Verbindung ein gültiges neues Paar |
 
 Erneuerung schlägt fehl mit „Invalid response from .../.well-known/acme-challenge/...“: Port 80 erreicht diesen Server

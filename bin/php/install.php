@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 /**
- * @description One-command installation, SQLite by default, no kickstart.ini needed
+ * @description One-command installation, SQLite by default, no kickstart.ini needed (a dry run unless --apply)
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -57,7 +57,7 @@ $options = array(
     'first-name'     => 'Administrator',
     'last-name'      => 'User',
 );
-$flags = array( 'force' => false, 'dry-run' => false, 'print' => false, 'help' => false, 'allow-root-user' => false,
+$flags = array( 'apply' => false, 'force' => false, 'dry-run' => false, 'print' => false, 'help' => false, 'allow-root-user' => false,
                 'random-password' => false, 'no-crontab' => false );
 
 foreach ( $argvIn as $arg )
@@ -85,6 +85,21 @@ if ( $flags['help'] )
     installUsage();
     exit( 0 );
 }
+
+// Without --apply the run is a dry run: it shows the plan, checks the database and the packages and installs
+// nothing. --dry-run means the same; with --apply it is a usage error, as --force without --apply is (--force
+// alone installed before 6.0.15: a script that still passes it must not get a dry run that looks like a success).
+// Checked here, before anything is written or a database is touched.
+require_once 'autoload.php';
+$apply = \Exponential\Runnable\Command::applyRequested( $flags );
+if ( $apply === null || ( !$apply && $flags['force'] && !$flags['print'] ) )
+{
+    fwrite( STDERR, 'FAIL: ' . ( $apply === null
+        ? '--apply and --dry-run exclude each other; without --apply the script changes nothing'
+        : '--force no longer installs on its own: add --apply (exp:install --apply --force); without --apply the run is a dry run' ) . "\n" );
+    exit( 2 );
+}
+$flags['dry-run'] = !$apply;
 
 // Database type and its defaults.
 $db = strtolower( trim( $options['db'] ) );
@@ -283,8 +298,8 @@ $installed = is_file( $overrideFile ) && preg_match( '/^\s*\[DatabaseSettings\]/
 if ( $installed && !$flags['force'] && !$flags['dry-run'] )
 {
     fwrite( STDERR, "This directory already holds an installation (settings/override/site.ini.append.php).\n"
-        . "exp:install would replace its database and settings. Re-run with --force to do that,\n"
-        . "or with --dry-run to check the configuration only.\n" );
+        . "exp:install would replace its database and settings. Re-run with --apply --force to do that,\n"
+        . "or without --apply to check the configuration only.\n" );
     exit( 1 );
 }
 
@@ -389,7 +404,7 @@ register_shutdown_function( function () use ( $kickstart, $aside, $sections, $lo
            . "  Change it after the first login and delete that file.\n";
 } );
 
-echo "exp:install: {$options['package']} on $db"
+echo "exp:install" . ( $flags['dry-run'] ? ' (dry run, --apply installs)' : '' ) . ": {$options['package']} on $db"
     . ( $db === 'sqlite' ? " ($dbName)" : " ({$dbName} at {$options['db-host']}" . ( $dbPort !== '' ? ":$dbPort" : '' ) . ')' )
     . ", $url, access by " . ( $accessType === 'hostname' ? 'host' : $accessType )
     . ", administrator admin / " . ( $passwordGiven ? '(as given)' : '(generated, shown at the end)' ) . "\n";
@@ -400,9 +415,14 @@ function installUsage()
 Usage: ./console exp:install [options]
 
 Installs Exponential in one command: no kickstart.ini to write first.
-Everything has a default, so "./console exp:install" alone installs the
-multisite package on SQLite with the administrator admin and a generated
+Everything has a default, so "./console exp:install --apply" alone installs
+the multisite package on SQLite with the administrator admin and a generated
 password, shown once at the end.
+
+Without --apply nothing is installed: the run shows what it would install
+(the database, and that it would be emptied first with --db-action=remove,
+the package, the siteaccesses, the files), checks the database and the remote
+packages, and ends with "PASS: ... (dry run, nothing changed; --apply writes)".
 
 Database (default: SQLite, no server needed)
   --db=<type>            sqlite (default), mysql, pgsql, mongodb or oracle
@@ -463,9 +483,13 @@ Administrator (login: admin)
   --last-name=<name>     default User
 
 Run
-  --force                install over an existing installation (replaces its
-                         database and settings)
-  --dry-run              check the configuration and the packages, install nothing
+  --apply                install (the default is a dry run that changes nothing)
+  --force                with --apply: install over an existing installation
+                         (replaces its database and settings); --force
+                         without --apply is a usage error (exit 2)
+  --dry-run              the default: check the configuration and the
+                         packages, install nothing; with --apply a usage
+                         error (exit 2)
   --print                show the configuration that would be used and stop
   --no-crontab           do not write the cron job; print its lines instead
                          (the default writes them to the crontab of the user
@@ -474,10 +498,11 @@ Run
 
 Examples
   ./console exp:install
-  ./console exp:install --db=mysql --db-name=site --db-user=site --db-password=secret
-  ./console exp:install --db=pgsql --db-host=db.local --db-user=exp --db-password=secret
-  ./console exp:install --db=mongodb --db-name=exponential --url=https://www.example.com
-  ./console exp:install --access=host --host=www.example.com --admin-host=admin.example.com
+  ./console exp:install --apply
+  ./console exp:install --apply --db=mysql --db-name=site --db-user=site --db-password=secret
+  ./console exp:install --apply --db=pgsql --db-host=db.local --db-user=exp --db-password=secret
+  ./console exp:install --apply --db=mongodb --db-name=exponential --url=https://www.example.com
+  ./console exp:install --apply --access=host --host=www.example.com --admin-host=admin.example.com
 
 TXT;
 }

@@ -119,7 +119,7 @@ self-signed certificate stands in until the real one is usable again."
 ```bash
 php bin/php/console exp:velocity ssl show --allow-root-user          # served certificate, every known one by expiry
 php bin/php/console exp:velocity ssl show --json --allow-root-user   # for monitoring: watch daysLeft
-php bin/php/console exp:velocity ssl renew example.com --allow-root-user
+php bin/php/console exp:velocity ssl renew --apply example.com --allow-root-user
 ```
 
 "A 90-day CA certificate is renewed when about 30 days are left, so one with fewer than 14 days left means renewal has

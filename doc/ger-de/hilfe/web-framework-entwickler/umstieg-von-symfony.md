@@ -60,7 +60,7 @@ frischen Prozess bekommt (Velocity hält Worker vor, wie es RoadRunner tun würd
 
 ## Ihre erste Woche
 
-1. Installieren Sie eine Entwicklungskopie (`./console exp:install`) und lesen Sie [Exponential für Web-Framework-Entwickler](exponential-fuer-framework-entwickler.md).
+1. Installieren Sie eine Entwicklungskopie (`./console exp:install --apply`) und lesen Sie [Exponential für Web-Framework-Entwickler](exponential-fuer-framework-entwickler.md).
 2. Tag zwei: [Der Request-Lebenszyklus](der-request-lebenszyklus.md), [Siteaccesses](siteaccesses-hosts-und-mandanten.md),
    [Konfiguration](konfiguration-ini-dateien.md).
 3. Tag drei: [Aufgabe: ein kleines CRUD-Modul bauen](ihr-erstes-modul-schritt-fuer-schritt.md).

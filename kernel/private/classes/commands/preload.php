@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of bin/php/preload.php, moved into a class (#207 stage 1). The file bin/php/preload.php is one call to it.
- * @description Warm the page caches of a site: request its section pages, then follow its links, and report the broken ones
+ * @description Warm the page caches of a site: request its section pages, then follow its links, and report the broken ones (dry run unless --apply)
  * Guide: doc/eng-us/guides/preloading-caches.md
  */
 /*
@@ -45,19 +45,33 @@ class Preload extends \Exponential\Runnable\Command
                                 "Requests the section pages of a site, then follows its links, so the caches are warm\n" .
                                 "before a visitor arrives, and reports the broken links with the pages that link to them.\n" .
                                 "The site is the one of --siteaccess (or --target). One preload runs at a time; the run is\n" .
-                                "listed in Setup > Preload.\n\n" .
-                                "Usage: php bin/php/preload.php --siteaccess=<name> [--max-pages=<n>] [--max-depth=<n>] [--images] [--dry-run]",
+                                "listed in Setup > Preload.\n" .
+                                "Without --apply nothing is requested: the script prints the address, the starting pages and\n" .
+                                "the limits. --dry-run means the same as no flag; --apply together with --dry-run is a usage\n" .
+                                "error (exit 2).\n\n" .
+                                "Usage: php bin/php/preload.php --siteaccess=<name> [--max-pages=<n>] [--max-depth=<n>] [--images] [--apply]\n\n" .
+                                "Example: php bin/php/preload.php --siteaccess=site\n" .
+                                "         php bin/php/preload.php --siteaccess=site --apply",
             'use-session'    => false,
             'use-modules'    => true,
             'use-extensions' => true,
         ) );
-        $options = $this->startup( '[target:][max-pages:][max-depth:][images][dry-run]', '', array(
+        $options = $this->startup( '[apply][dry-run][target:][max-pages:][max-depth:][images]', '', array(
+            'apply'     => 'request the pages (the default is a dry run that prints the plan and requests nothing)',
             'target'    => 'the siteaccess whose site is preloaded (default: the one of --siteaccess)',
             'max-pages' => 'most pages to request (default ' . self::SHELL_MAX_PAGES . ', at most ' . \expPreloadJob::MAX_PAGES_LIMIT . ')',
             'max-depth' => 'most links to follow from a starting page (default ' . \expPreloadJob::DEFAULT_MAX_DEPTH . ')',
             'images'    => 'also request the images the warmed pages show, and report the missing ones',
-            'dry-run'   => 'print the address, the starting pages and the limits, and request nothing',
+            'dry-run'   => 'the default, kept for scripts that pass it: print the plan, request nothing',
         ) );
+
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $script->shutdown( 2 );
+        }
+        $dryRun = !$apply;
 
         $siteaccess = $options['target'] !== null ? (string)$options['target']
                     : ( isset( $GLOBALS['eZCurrentAccess']['name'] ) ? (string)$GLOBALS['eZCurrentAccess']['name'] : '' );
@@ -73,9 +87,11 @@ class Preload extends \Exponential\Runnable\Command
         ) );
         $plan = \expPreloadJob::plan( $siteaccess, $runOptions );
 
-        if ( $options['dry-run'] )
+        if ( $dryRun )
         {
             $this->printPlan( $plan );
+            if ( $plan['base_url'] !== '' )
+                $cli->output( 'PASS: ' . count( $plan['start_urls'] ) . ' starting page(s) would be requested (dry run, nothing changed; --apply writes)' );
             $script->shutdown( $plan['base_url'] === '' ? 1 : 0 );
         }
 
@@ -83,7 +99,9 @@ class Preload extends \Exponential\Runnable\Command
                     . ( $siteaccess !== '' ? ' (siteaccess ' . $siteaccess . ')' : '' ) );
 
         $id = \expPreloadHistory::newID();
-        $exit = \expPreloadJob::execute( $id, $siteaccess, $runOptions, array( $this, 'printEvent' ), 'shell' );
+        $exit = 1;
+        if ( !$dryRun )
+            $exit = \expPreloadJob::execute( $id, $siteaccess, $runOptions, array( $this, 'printEvent' ), 'shell' );
 
         $status = \expPreloadJob::history()->read( $id );
         if ( $status !== false && $exit !== 2 )

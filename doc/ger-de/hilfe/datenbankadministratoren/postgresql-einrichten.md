@@ -99,7 +99,7 @@ Die Aliase `postgresql` und `pgsql` nennen denselben Treiber.
 ## Installieren
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=pgsql \
+EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=pgsql \
     --db-host=127.0.0.1 --db-name=exponential --db-user=exponential --allow-root-user
 ```
 

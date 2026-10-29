@@ -59,7 +59,7 @@ be cleared afterwards and what to check before the site reopens. Sources:
 
    ```bash
    php bin/php/console exp:velocity start --allow-root-user
-   php bin/php/console exp:velocity cache clear --allow-root-user
+   php bin/php/console exp:velocity cache clear --apply --allow-root-user
    php bin/php/maintenance.php off --allow-root-user
    ```
 

@@ -142,8 +142,8 @@ accounts* hält es zurück, bis ein Administrator es freigibt.
 
 ```bash
 php bin/php/addmembermanagement.php --dry-run     # was angelegt, hinzugefügt und zugewiesen würde
-php bin/php/addmembermanagement.php               # ausführen; prüft das Ergebnis, gibt PASS oder FAIL aus
-php bin/php/addmembermanagement.php --rule=editors_manage_members
+php bin/php/addmembermanagement.php --apply               # ausführen; prüft das Ergebnis, gibt PASS oder FAIL aus
+php bin/php/addmembermanagement.php --apply --rule=editors_manage_members
 ```
 
 Das Skript legt die Rolle an, wenn sie fehlt, fügt die geplanten Richtlinien hinzu, die die Rolle nicht genau in

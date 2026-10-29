@@ -46,7 +46,7 @@ class SetupRunCommandAuditTest extends PHPUnit\Framework\TestCase
             $this->markTestSkipped( 'exec() is disabled' );
         $this->run->setValue( null, array( 'id' => '20261012-120000-abcdef', 'finished' => false, 'current' => null ) );
         expMaintenance::clearResponseCaches( $this->root );
-        $this->assertSame( "'20261012-120000-abcdef' exp:velocity cache clear --allow-root-user", file_get_contents( $this->root . '/given.txt' ) );
+        $this->assertSame( "'20261012-120000-abcdef' exp:velocity cache clear --apply --allow-root-user", file_get_contents( $this->root . '/given.txt' ) );
     }
 
     public function testTheCacheClearOutsideASetupRunCarriesNoId()
@@ -56,7 +56,7 @@ class SetupRunCommandAuditTest extends PHPUnit\Framework\TestCase
         putenv( 'EXP_SETUP_RUN' );
         $this->run->setValue( null, null );
         expMaintenance::clearResponseCaches( $this->root );
-        $this->assertSame( 'false exp:velocity cache clear --allow-root-user', file_get_contents( $this->root . '/given.txt' ) );
+        $this->assertSame( 'false exp:velocity cache clear --apply --allow-root-user', file_get_contents( $this->root . '/given.txt' ) );
     }
 
     public function testACommandStartedByASetupRunLooksNoUserUp()

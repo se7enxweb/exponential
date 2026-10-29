@@ -80,7 +80,7 @@ den Server nicht unten lässt. Wenn ein Neustart nicht fertig wird:
 
 ## Nach dem Vorfall
 
-- [ ] Leeren Sie nach dem Start den Antwort-Cache von Velocity: `php bin/php/console exp:velocity cache clear --allow-root-user`.
+- [ ] Leeren Sie nach dem Start den Antwort-Cache von Velocity: `php bin/php/console exp:velocity cache clear --apply --allow-root-user`.
 - [ ] Wenn die Ursache ein Absturz war, erwägen Sie den Watchdog (`exp:velocity watchdog install`, als root)
       ([Velocity für Hoster](../server/velocity-fuer-hoster.md)).
 - [ ] Wenn die Ursache eine Änderung war (ein Ausrollen, eine geänderte Einstellung), halten Sie sie fest und korrigieren Sie das Verfahren

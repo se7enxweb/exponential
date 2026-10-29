@@ -84,7 +84,7 @@ php bin/php/console exp:velocity deploy --allow-root-user
 | `./console exp:cache <group> [action]` | every Setup > Caches action, plus static, HTTP, query and Velocity caches; ends with `PASS` or `FAIL` |
 | `./console exp:cache clear --tag=ini --dry-run` | what would be cleared, with sizes, changing nothing |
 | `./console exp:cache status` | every group in one screen |
-| `php bin/php/console exp:velocity cache clear` | Velocity's response cache |
+| `php bin/php/console exp:velocity cache clear --apply` | Velocity's response cache |
 | `php bin/php/console exp:velocity restart` | Velocity, after settings changed |
 
 Run them as the site's user, so what they recreate stays writable for the web server; as root they need
@@ -125,18 +125,18 @@ Schedule it for every customer site, or `var/` grows. See [Cron jobs](../operati
 | Tool | What it does | When |
 |---|---|---|
 | `php bin/php/console exp:warm` (`bin/php/warm.php`) | requests every published page so no visitor pays for a render; `--limit`, `--verbose`, `--json` | after a clear, and on a timer shorter than the cache window |
-| `php bin/php/preload.php --siteaccess=<site>` (Setup > Preload Sites) | crawls a site from its section pages up to a page limit and link depth, warms view cache, image aliases and compiled templates, lists broken links | after a deploy or a nightly clear; one run at a time |
+| `php bin/php/preload.php --apply --siteaccess=<site>` (Setup > Preload Sites) | crawls a site from its section pages up to a page limit and link depth, warms view cache, image aliases and compiled templates, lists broken links | after a deploy or a nightly clear; one run at a time |
 | `[DeploySettings] WarmUpURL[]` | pages requested once each by a background process at the end of `exp:velocity deploy` | always, for the front page and the admin login |
 
 Examples from the sources:
 
 ```bash
 php bin/php/preload.php --siteaccess=site --dry-run
-php bin/php/preload.php --siteaccess=site --max-pages=20 --max-depth=1
+php bin/php/preload.php --apply --siteaccess=site --max-pages=20 --max-depth=1
 ```
 
 ```text
-30 4 * * * cd /path/to/exponential && php bin/php/preload.php --siteaccess=site -q
+30 4 * * * cd /path/to/exponential && php bin/php/preload.php --apply --siteaccess=site -q
 */4 * * * * cd /path/to/exponential && php bin/php/warm.php --allow-root-user >> var/log/cache-warm.log 2>&1
 ```
 

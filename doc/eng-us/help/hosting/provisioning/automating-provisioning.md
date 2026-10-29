@@ -74,7 +74,7 @@ Pass the database password through the environment and test first:
 export EXP_INSTALL_DB_PASSWORD='<from your secret store>'
 php bin/php/console exp:install --dry-run --db=pgsql --db-host=<db host> --db-name=<db> --db-user=<db user> \
   --url=https://www.example.com --email=<contact> --package=sevenx_multisite_clean
-php bin/php/console exp:install --db=pgsql --db-host=<db host> --db-name=<db> --db-user=<db user> \
+php bin/php/console exp:install --apply --db=pgsql --db-host=<db host> --db-name=<db> --db-user=<db user> \
   --url=https://www.example.com --email=<contact> --package=sevenx_multisite_clean
 ```
 

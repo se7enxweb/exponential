@@ -71,7 +71,7 @@ Aus [10.9, Wiederherstellung](../../../installation/10-nach-der-installation.md#
 
    ```bash
    php bin/php/console exp:velocity start --allow-root-user
-   php bin/php/console exp:velocity cache clear --allow-root-user
+   php bin/php/console exp:velocity cache clear --apply --allow-root-user
    php bin/php/maintenance.php off --allow-root-user
    ```
 

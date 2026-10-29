@@ -66,9 +66,9 @@ recorded; everything else works.
 ```
 php bin/php/ezpgenerateautoloads.php -k        # or: ./console exp:velocity deploy --kernel
 ./console exp:help:content install -s <admin siteaccess> --dry-run
-./console exp:help:content install -s <admin siteaccess>     # tables, the editor's exphelp/context
-./console exp:help:content install -s <admin siteaccess>     # No change.
-./console exp:help:content check -s <admin siteaccess> --fix # records the help_ids of the Released topics
+./console exp:help:content install --apply -s <admin siteaccess>     # tables, the editor's exphelp/context
+./console exp:help:content install --apply -s <admin siteaccess>     # No change.
+./console exp:help:content check --apply -s <admin siteaccess> --fix # records the help_ids of the Released topics
 ```
 
 A server that keeps PHP running (PHP-FPM, Exponential Velocity) must load the changed kernel file

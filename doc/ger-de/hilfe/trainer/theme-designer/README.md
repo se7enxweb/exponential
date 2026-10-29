@@ -54,7 +54,7 @@ ein Theme paketieren, lizenzieren und veröffentlichen, ohne je einen veröffent
 ## Einrichtung der Übungsumgebung
 
 - **Eine Installation pro Teilnehmerin oder Teilnehmer**, denn die Teilnehmenden legen Erweiterungen an, ändern
-  Einstellungen und schalten Erweiterungen ein und aus. Installieren Sie jede mit `php bin/php/console exp:install`
+  Einstellungen und schalten Erweiterungen ein und aus. Installieren Sie jede mit `php bin/php/console exp:install --apply`
   ([7. Die Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md)) mit einem Paket mit Demo-Inhalten,
   damit Ordner, Artikel und Bilder vorhanden sind ([Das Seitenpaket für eine Schulung wählen](../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/das-seitenpaket-fuer-den-kurs-waehlen.md)).
   Wie Sie eine Übungsumgebung bauen, bereitstellen und zurücksetzen:

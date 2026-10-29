@@ -43,7 +43,7 @@ after almost 18 years; 7x continued it as Exponential ([Who is 7x?](../who-is-7x
 
 ## Your first hour
 
-1. **Install** (10 minutes): `./console exp:install` gives a site on SQLite
+1. **Install** (10 minutes): `./console exp:install --apply` gives a site on SQLite
    ([Installing in one command](../../features/6.0/install-in-one-command.md)).
 2. **Orient** (10 minutes): [Exponential for web framework developers](exponential-for-framework-developers.md) and
    your "coming from" page ([Symfony](coming-from-symfony.md), [Laravel](coming-from-laravel.md),

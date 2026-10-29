@@ -37,7 +37,7 @@ the version history. Sources: [Versions of an object](../../../../guides/content
 | `VersionHistoryClass[<class id>]` | `VersionHistoryClass[1]=75` (class 1 is Folder) | a limit for one class |
 
 Set your own limits in `settings/override/content.ini.append.php` if documents must keep every version, for example
-for the File class or a Publication class, and clear the INI cache. The cleanup command `./console exp:cleanupversions`
+for the File class or a Publication class, and clear the INI cache. The cleanup command `./console exp:cleanupversions --apply`
 removes old versions; read its `--help` first ([Content model and editing](../../../../guides/content-model-and-editing.md#3-create-and-edit-an-object)).
 
 ## Replace in place or publish a new document?

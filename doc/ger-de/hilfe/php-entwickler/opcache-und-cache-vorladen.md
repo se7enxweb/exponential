@@ -66,8 +66,8 @@ Lesen Sie die vollständige Liste in `settings/velocity.ini` und den Hintergrund
 ## Der Vorlader für den Site-Cache
 
 ```bash
-php bin/php/preload.php                                   # the default siteaccess
-php bin/php/console exp:preload --siteaccess=<siteaccess>
+php bin/php/preload.php --apply                                   # the default siteaccess
+php bin/php/console exp:preload --apply --siteaccess=<siteaccess>
 ```
 
 Ein Lauf beginnt bei den Abschnittsseiten einer Site, folgt ihren Links bis zu einer Seitengrenze und einer Linktiefe

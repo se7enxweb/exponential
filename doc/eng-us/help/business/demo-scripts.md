@@ -35,7 +35,7 @@ One command installs a complete site on SQLite, with no database server, in `eng
 
 ```bash
 ./console exp:install --dry-run    # checks the configuration and installs nothing
-./console exp:install              # installs the multisite package on SQLite
+./console exp:install --apply              # installs the multisite package on SQLite
 ```
 
 - The administrator is `admin` with a generated password, printed in the summary and written to

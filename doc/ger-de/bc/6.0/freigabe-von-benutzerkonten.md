@@ -75,7 +75,7 @@ erste da ist, und warnt im umgekehrten Fall.
 | Einstellungen | Gruppen mit Freigabepflicht, Freigebende, Gruppen ohne Freigabe, Mail an oder aus | Abschnitte, freigebende Benutzer und Gruppen, Gruppen ohne Freigabe, Sprachen, *nur neue Objekte* |
 | Mail mit dem Link zum Element in der Administration | ja | ja (für ein Konto oder eine Benutzergruppe) |
 | „Identität bestätigen“, Entscheidung sofort ausgeführt, Prüfprotokoll | ja | ja (für ein Konto oder eine Benutzergruppe) |
-| Eingerichtet von | dem Einrichtungsschritt, `bin/php/adduserapproval.php` | `bin/php/adduserapproval.php --mode=section --apply`, oder dem Einrichtungsschritt mit `AccountApprovalMode=section` |
+| Eingerichtet von | dem Einrichtungsschritt, `bin/php/adduserapproval.php --apply` | `bin/php/adduserapproval.php --mode=section --apply`, oder dem Einrichtungsschritt mit `AccountApprovalMode=section` |
 
 **Nach Gruppe**, wenn die Platzierung entscheiden soll (Konten können verschoben werden oder einen zweiten Ort
 bekommen), wenn auch andere Gruppen als die Mitarbeiter eine Freigabe brauchen, oder wenn die Redakteure genau die
@@ -118,7 +118,7 @@ content/publish (vorher) ausführt (oder in einem neuen Workflow **Approve new s
 Er verweigert (FAIL, nichts geändert), solange das Ereignis *Benutzerkonten freigeben* an content/publish (vorher)
 läuft. Zum Wechsel von der Freigabe nach Gruppe: das Ereignis unter Setup > Workflows aus seinem Workflow entfernen,
 dann den Befehl ausführen. Zurück: das Freigabe-Ereignis des Abschnitts Staff aus dem Workflow entfernen und
-`bin/php/adduserapproval.php` ausführen. Der Abschnitt kann bleiben; er ändert von selbst nichts.
+`bin/php/adduserapproval.php --apply` ausführen. Der Abschnitt kann bleiben; er ändert von selbst nichts.
 
 Was das einfache Freigabe-Ereignis für ein Benutzerkonto oder eine Benutzergruppe dazugibt
 (`expUserApproval::sectionRequested()`, `decided()`, `modeOfItem()`): jeder Freigebende bekommt dieselbe Mail wie beim
@@ -203,8 +203,8 @@ Audit, [benutzer-auditprotokoll.md](../../funktionen/6.0/benutzer-auditprotokoll
 ## Auf einer bestehenden Installation
 
 ```bash
-php bin/php/adduserapproval.php --dry-run        # was es anlegen und hinzufügen würde
-php bin/php/adduserapproval.php                  # ausführen; prüft das Ergebnis, gibt PASS oder FAIL aus
+php bin/php/adduserapproval.php                  # Probelauf: was es anlegen und hinzufügen würde
+php bin/php/adduserapproval.php --apply          # ausführen; prüft das Ergebnis, gibt PASS oder FAIL aus
 ```
 
 Der Befehl legt Workflow, Ereignis und Trigger an, wenn sie fehlen. Führt content/publish (vorher) schon einen anderen

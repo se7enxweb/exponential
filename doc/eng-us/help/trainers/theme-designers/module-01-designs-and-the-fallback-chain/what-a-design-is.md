@@ -97,7 +97,7 @@ of the same path further down the chain, for every page. A file in `override/tem
 
 ## Hands-on exercise
 
-Use your own training installation (for example installed with `php bin/php/console exp:install`, see
+Use your own training installation (for example installed with `php bin/php/console exp:install --apply`, see
 [7. The console install](../../../../install/07-console-install.md)). Work in the installation root, the directory
 that holds `index.php`. Nothing in this exercise changes a file.
 

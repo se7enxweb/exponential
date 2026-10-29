@@ -15,7 +15,7 @@ siehe [Was beibehalten wurde und was sich geändert hat](#was-beibehalten-wurde-
 
 | | |
 |---|---|
-| Was sich geändert hat | Neuer Befehl `bin/php/cleanuprss.php` (`./console exp:cleanuprss`), Cronjob-Teil `cleanuprss`, Klasse `expCleanupRSS`, Einstellungen `content.ini [RSSImportCleanupSettings]`. |
+| Was sich geändert hat | Neuer Befehl `bin/php/cleanuprss.php` (`./console exp:cleanuprss --apply`), Cronjob-Teil `cleanuprss`, Klasse `expCleanupRSS`, Einstellungen `content.ini [RSSImportCleanupSettings]`. |
 | Wer betroffen ist | Niemand, bis Sie es einschalten. Benutzer der Erweiterung bccleanuprss: Ihre Einstellungsdatei `bccleanuprss.ini` wird nicht gelesen. |
 | Wie Sie es prüfen | `php bin/php/cleanuprss.php --dry-run --allow-root-user` gibt aus, was es entfernen würde, oder warum es nichts entfernt. |
 | Wie Sie es einschalten | Setzen Sie `Enabled`, `ClassIdentifiers[]` und `KeepPerFeed`, machen Sie einen Probelauf und planen Sie dann den Cronjob-Teil ein. |
@@ -35,7 +35,7 @@ siehe [Was beibehalten wurde und was sich geändert hat](#was-beibehalten-wurde-
 
 2. Leeren Sie den INI-Cache: `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`
 3. Machen Sie einen Probelauf und lesen Sie die Liste: `php bin/php/cleanuprss.php --dry-run --allow-root-user`
-4. Führen Sie es aus: `php bin/php/cleanuprss.php --allow-root-user`
+4. Führen Sie es aus: `php bin/php/cleanuprss.php --apply --allow-root-user`
 5. Planen Sie es nächtlich ein: `php runcronjobs.php cleanuprss` in Ihrer crontab.
 
 ## Es tut nichts, bis Sie ihm sagen, was es entfernen soll
@@ -106,9 +106,9 @@ Cronjob `trashpurge.php`, oder setzen Sie es auf `false`, sobald Sie der Klassen
 
 ```
 php bin/php/cleanuprss.php --dry-run --allow-root-user
-php bin/php/cleanuprss.php --allow-root-user
-php bin/php/cleanuprss.php --keep=50 --allow-root-user
-php bin/php/cleanuprss.php -s my_siteaccess --allow-root-user
+php bin/php/cleanuprss.php --apply --allow-root-user
+php bin/php/cleanuprss.php --apply --keep=50 --allow-root-user
+php bin/php/cleanuprss.php --apply -s my_siteaccess --allow-root-user
 ./console exp:cleanuprss --dry-run --allow-root-user     # the same script through the console
 ```
 

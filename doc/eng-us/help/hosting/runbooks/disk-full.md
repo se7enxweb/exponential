@@ -65,15 +65,15 @@ space.
 ```bash
 ./console exp:logs --archives                 # each log with its archives and their sizes
 ./console exp:logs --prune --dry-run          # the archives beyond the site.ini [FileSettings] limits
-./console exp:logs --prune                    # remove them
-./console exp:logs --compress                 # compress the archives from .2 on
+./console exp:logs --apply --prune                    # remove them
+./console exp:logs --apply --compress                 # compress the archives from .2 on
 ```
 
 **A log that grows fast.** Find out why before you empty it; a log that grows by megabytes a minute is a symptom.
 `./console exp:logs --list` shows lines a minute per file. Then:
 
 ```bash
-./console exp:logs --truncate=debug           # rotate it (the content stays in .1)
+./console exp:logs --apply --truncate=debug           # rotate it (the content stays in .1)
 ```
 
 **Velocity's logs** are under `var/vc/qbix/log` and rotate with a date in the name; old ones can be archived or

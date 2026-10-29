@@ -78,7 +78,7 @@ und sofort, wenn er gelesen worden sein könnte:
 
 ```bash
 ./console exp:audit key list --allow-root-user
-./console exp:audit key rotate --allow-root-user
+./console exp:audit key rotate --apply --allow-root-user
 ```
 
 Die alten Schlüssel bleiben für ihre Archive erhalten; sichern Sie die Datei nach einer Rotation erneut. Die

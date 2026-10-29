@@ -86,7 +86,7 @@ Worker festhängt, `exp:velocity kill` und dann `start`.
 ## Nach dem Vorfall
 
 - [ ] Leeren Sie die Caches, die die Abhilfe braucht, und mit Velocity seinen Antwort-Cache **nach** jedem Neustart
-      (`php bin/php/console exp:velocity cache clear --allow-root-user`).
+      (`php bin/php/console exp:velocity cache clear --apply --allow-root-user`).
 - [ ] Prüfen Sie: Startseite, Administration, eine Anmeldung, eine Veröffentlichung.
 - [ ] Schreiben Sie die Notiz zum Vorfall: Beginn, Erkennung, Ursache, Abhilfe, Ende, was eine Wiederholung verhindert.
 - [ ] Informieren Sie den Kunden.

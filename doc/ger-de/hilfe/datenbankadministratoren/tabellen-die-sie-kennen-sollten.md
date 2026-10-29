@@ -117,7 +117,7 @@ innerhalb der Grenzen von `VersionManagement` beschnitten.
 
 | Bedarf | Verwenden Sie |
 |---|---|
-| Alte Versionen entfernen | `php bin/php/cleanupversions.php` |
+| Alte Versionen entfernen | `php bin/php/cleanupversions.php --apply` |
 | URL-Aliase neu aufbauen | `php bin/php/updateniceurls.php`, `exp:verify_aliases` |
 | Den Suchindex neu aufbauen | `php bin/php/updatesearchindex.php --clean` |
 | Abgelaufene Sessions entfernen | `php bin/php/ezsessiongc.php` |

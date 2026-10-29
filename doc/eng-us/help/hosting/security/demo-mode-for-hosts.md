@@ -71,7 +71,7 @@ published administrator password even though it is a well-known word and shorter
 of replacing it with a random one:
 
 ```sh
-EXP_DEMO_MODE=1 ./console exp:install --db=sqlite --password='<the published demo password>' ...
+EXP_DEMO_MODE=1 ./console exp:install --apply --db=sqlite --password='<the published demo password>' ...
 ```
 
 Any non-empty password works, so both `publish` (seven characters) and `publishing` do; an empty one is still

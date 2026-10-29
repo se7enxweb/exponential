@@ -64,7 +64,7 @@ From [Database support](../database-support.md#backup-and-restore):
    Never copy a database file that is in use.
 3. Copy back the folders you saved.
 4. Clear every cache: `php bin/php/ezcache.php --clear-all --allow-root-user`, and with Velocity also
-   `php bin/php/console exp:velocity cache clear --allow-root-user`.
+   `php bin/php/console exp:velocity cache clear --apply --allow-root-user`.
 5. Switch maintenance mode off again (see [Maintenance mode](../../guides/maintenance-mode.md)).
 
 ## Start over with a fresh install
@@ -74,7 +74,7 @@ From [Database support](../database-support.md#backup-and-restore):
 
 ```bash
 php bin/php/console exp:install --dry-run --random-password --url=http://localhost:8087
-php bin/php/console exp:install --force --random-password --url=http://localhost:8087
+php bin/php/console exp:install --apply --force --random-password --url=http://localhost:8087
 ```
 
 `--dry-run` checks the configuration and the packages and installs nothing. Then the real run replaces the study

@@ -14,7 +14,7 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
- * @description Copy a content subtree to a new location (--src-node-id, --dst-node-id)
+ * @description Copy a content subtree to a new location (--src-node-id, --dst-node-id; dry run unless --apply)
  * @long-description Recursively copies a subtree of content objects from a source node to a destination node. Object relations and URL aliases are updated. Supports --dry-run to preview the operation before committing.
  *
  */
@@ -280,14 +280,20 @@ class Ezsubtreecopy extends \Exponential\Runnable\Command
         $cli = $this->cli();
         $script = $this->script( array( 'description' => ( "\n" .
                                                                  "This script will make a copy of a content object subtree and place it in a specified\n" .
-                                                                 "location.\n\nExample: ./bin/php/ezsubtreecopy.php --src-node-id=2 --dst-node-id=5\n" ),
+                                                                 "location.\n" .
+                                                                 "Without --apply nothing is copied: the script lists the nodes of the subtree it would copy.\n" .
+                                                                 "--dry-run means the same as no flag; --apply together with --dry-run is a usage error (exit 2).\n\n" .
+                                                                 "Example: ./bin/php/ezsubtreecopy.php --src-node-id=2 --dst-node-id=5\n" .
+                                                                 "         ./bin/php/ezsubtreecopy.php --src-node-id=2 --dst-node-id=5 --apply\n" ),
                                               'use-session' => false,
                                               'use-modules' => true,
                                               'use-extensions' => true,
                                               'user' => true ) );
-        $scriptOptions = $this->startup( "[src-node-id:][dst-node-id:][all-versions][keep-creator][keep-time]",
+        $scriptOptions = $this->startup( "[apply][dry-run][src-node-id:][dst-node-id:][all-versions][keep-creator][keep-time]",
                                               "",
-                                              array( 'src-node-id' => "Source subtree parent node ID.",
+                                              array( 'apply' => "Copy the subtree (the default is a dry run that lists it and copies nothing)",
+                                                     'dry-run' => "The default: list the nodes that would be copied, change nothing",
+                                                     'src-node-id' => "Source subtree parent node ID.",
                                                      'dst-node-id' => "Destination node ID.",
                                                      'all-versions' => "Copy all versions for each contentobject being copied.",
                                                      'keep-creator'=> "Do not change the creator (user) for the copied content objects.",
@@ -297,6 +303,13 @@ class Ezsubtreecopy extends \Exponential\Runnable\Command
                                               array( 'user' => true )
                                              );
 
+        $apply = self::applyRequested( $scriptOptions );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $script->shutdown( 2 );
+        }
+        $dryRun = !$apply;
         $srcNodeID   = $scriptOptions[ 'src-node-id' ] ? $scriptOptions[ 'src-node-id' ] : false;
         $dstNodeID   = $scriptOptions[ 'dst-node-id' ] ? $scriptOptions[ 'dst-node-id' ] : false;
         $allVersions = $scriptOptions[ 'all-versions' ];
@@ -344,6 +357,17 @@ class Ezsubtreecopy extends \Exponential\Runnable\Command
         $sourceNodeIDList = array();
         foreach ( $sourceNodeList as $sourceNode )
             $sourceNodeIDList[] = $sourceNode->attribute( 'node_id' );
+
+        if ( $dryRun )
+        {
+            $cli->output( 'would copy ' . $countNodeList . ' node(s) below "' . $destinationNode->attribute( 'name' ) . '" (node ' . (int)$dstNodeID . ')'
+                          . ( $allVersions ? ', all versions' : '' ) . ( $keepCreator ? ', creator kept' : '' ) . ( $keepTime ? ', times kept' : '' ) . ':' );
+            foreach ( $sourceNodeList as $sourceNode )
+                $cli->output( sprintf( '  node %d  %s', $sourceNode->attribute( 'node_id' ), $sourceNode->attribute( 'name' ) ) );
+            $cli->output( "PASS: $countNodeList node(s) would be copied (dry run, nothing changed; --apply writes)" );
+            $script->shutdown();
+            return;
+        }
 
         $cli->output( "Copying subtree:" );
 
@@ -625,7 +649,12 @@ class Ezsubtreecopy extends \Exponential\Runnable\Command
             }
         }
 
-        $cli->output( "Done." );
+        if ( count( $syncNodeIDListNew ) < $countNodeList )
+        {
+            $cli->error( 'FAIL: ' . count( $syncNodeIDListNew ) . " of $countNodeList node(s) copied" );
+            $script->shutdown( 1 );
+        }
+        $cli->output( 'PASS: ' . count( $syncNodeIDListNew ) . ' node(s) copied' );
 
         $script->shutdown();
     }

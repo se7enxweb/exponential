@@ -9271,8 +9271,8 @@
         <translation>Cronjobs</translation>
     </message>
     <message>
-        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
-        <translation>Noch kein Cronjob-Teil ist gelaufen: Die Job-Warteschlange, die Importe, die Benachrichtigungen und der Suchindex warten. Führen Sie php bin/php/installcrontab.php --add aus, oder tragen Sie die Zeilen von --show in die Crontab ein.</translation>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Noch kein Cronjob-Teil ist gelaufen: Die Job-Warteschlange, die Importe, die Benachrichtigungen und der Suchindex warten. Führen Sie php bin/php/installcrontab.php --add --apply aus, oder tragen Sie die Zeilen von --show in die Crontab ein.</translation>
     </message>
     <message>
         <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
@@ -57939,8 +57939,8 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <translation>Der Einrichtungsassistent installiert Exponential auf einer neuen Website. Auf einer installierten Website läuft er nicht, und ihn zu öffnen ändert nichts: Die Website bleibt online.</translation>
     </message>
     <message>
-        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php) or with a fresh installation.</source>
-        <translation>Neu installiert wird mit dem Kickstarter (%file, dann php bin/php/kickstarter.php) oder mit einer frischen Installation.</translation>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Neu installiert wird mit dem Kickstarter (%file, dann php bin/php/kickstarter.php run --apply) oder mit einer frischen Installation.</translation>
     </message>
     <message>
         <source>Reinstall this site?</source>
@@ -65205,8 +65205,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Dateien eines Cluster-Dateihandlers können hier nicht geändert werden.</translation>
     </message>
     <message>
-        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions as root.</source>
-        <translation>Nur der Systemadministrator kann den Eigentümer ändern: ./console exp:content-check --fix-permissions als root ausführen.</translation>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Nur der Systemadministrator kann den Eigentümer ändern: ./console exp:content-check --fix-permissions --apply als root ausführen.</translation>
     </message>
     <message>
         <source>This server process does not own the file, so it cannot change its mode.</source>
@@ -66339,8 +66339,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>%count Digest-Nachrichten sind überfällig; ein Lauf sendet sie.</translation>
     </message>
     <message>
-        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run.</source>
-        <translation>%count Ereignisse warten und es ist kein Lauf des Benachrichtigungs-Cronjobs verzeichnet. Den Cronjob-Teil &quot;frequent&quot; in die Crontab eintragen oder exp:notification:run ausführen.</translation>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count Ereignisse warten und es ist kein Lauf des Benachrichtigungs-Cronjobs verzeichnet. Den Cronjob-Teil &quot;frequent&quot; in die Crontab eintragen oder exp:notification:run --apply ausführen.</translation>
     </message>
     <message>
         <source>%count events wait and the last run was more than an hour ago (%time). Is the notification cronjob running?</source>
@@ -72293,8 +72293,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Der Audit-Cronjob ist seit über einer Stunde nicht gelaufen (zuletzt: %time). Rotation, Archive, Sinks und der Index warten darauf.</translation>
     </message>
     <message>
-        <source>The signing key is over a year old: rotate it with exp:audit key rotate.</source>
-        <translation>Der Signaturschlüssel ist über ein Jahr alt: wechseln Sie ihn mit exp:audit key rotate.</translation>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Der Signaturschlüssel ist über ein Jahr alt: wechseln Sie ihn mit exp:audit key rotate --apply.</translation>
     </message>
     <message>
         <source>Today / 7 days. Families:</source>
@@ -76091,8 +76091,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Der Benachrichtigungs-Cronjob erledigt das nach Zeitplan (Teil frequent oder php runcronjobs.php notification). &quot;Jetzt ausführen&quot; startet denselben Durchlauf im Hintergrund; die Vorschau listet, was gesendet würde, und ändert nichts.</translation>
     </message>
     <message>
-        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run.</source>
-        <translation>Der Benachrichtigungs-Cronjob verzeichnet hier jeden seiner Läufe. Den Teil frequent in die Crontab eintragen oder exp:notification:run ausführen.</translation>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Der Benachrichtigungs-Cronjob verzeichnet hier jeden seiner Läufe. Den Teil frequent in die Crontab eintragen oder exp:notification:run --apply ausführen.</translation>
     </message>
     <message>
         <source>The run failed or stopped. See the lines above.</source>
@@ -76103,8 +76103,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Typ</translation>
     </message>
     <message>
-        <source>Use the console: ./console exp:notification:run</source>
-        <translation>Nutzen Sie die Konsole: ./console exp:notification:run</translation>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Nutzen Sie die Konsole: ./console exp:notification:run --apply</translation>
     </message>
     <message>
         <source>User</source>

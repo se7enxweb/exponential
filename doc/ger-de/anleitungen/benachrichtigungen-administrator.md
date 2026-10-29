@@ -167,7 +167,7 @@ Drei sichere Wege, vom leichtesten an:
 
 1. **Probelauf**: `./console exp:notification:run --dry-run`. Er läuft in einer Transaktion, die zurückgerollt wird, und übergibt nichts
    an den Mail-Transport. Adressen werden maskiert (`n***@nottest.invalid`), außer Sie ergänzen `--addresses`.
-2. **Datei-Transport**: `./console exp:notification:run --mail-file-dir=var/tmp/notification-mail` führt einen echten Lauf aus (Ereignisse werden
+2. **Datei-Transport**: `./console exp:notification:run --apply --mail-file-dir=var/tmp/notification-mail` führt einen echten Lauf aus (Ereignisse werden
    behandelt und entfernt, Digests gesendet), aber die E-Mails werden als Dateien in dieses Verzeichnis geschrieben, nur für diesen Prozess. Öffnen Sie eine
    Datei, um genau zu sehen, was hinausginge.
 3. **Nur ein Ereignis**: Ergänzen Sie `--event=<id>` (die ID finden Sie mit `exp:notification:events list`), damit ein Lauf die

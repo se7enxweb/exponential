@@ -51,15 +51,16 @@ Not needed as a policy: `user/forgotpassword`, `user/activate`, `user/success` a
 
 ## What to do when you upgrade
 
-Run the script with `--dry-run` first. It lists every policy it would add, and the reason a policy is left out
-(the role has it already, in any form, also limited or as `module/*`; or the module is not installed):
+Run the script without options first: it is a dry run. It lists every policy it would add, and the reason a policy
+is left out (the role has it already, in any form, also limited or as `module/*`; or the module is not installed),
+and ends with `PASS: ... (dry run, nothing changed; --apply writes)`. Then run it with `--apply`:
 
 ```bash
-php bin/php/addanonymouspublicpolicies.php --dry-run
-php bin/php/addanonymouspublicpolicies.php
+php bin/php/addanonymouspublicpolicies.php            # dry run: what it would add
+php bin/php/addanonymouspublicpolicies.php --apply    # adds it
 ```
 
-It adds only what is missing, without limitations, expires the role cache, checks what was stored and prints `PASS`
+With `--apply` it adds only what is missing, without limitations, expires the role cache, checks what was stored and prints `PASS`
 or `FAIL`. A second run adds nothing.
 
 - `--skip=user/register` keeps registration closed on a site that removed the policy on purpose (the script

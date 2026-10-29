@@ -69,9 +69,9 @@ help_id wird erfasst; alles andere funktioniert.
 ```
 php bin/php/ezpgenerateautoloads.php -k        # oder: ./console exp:velocity deploy --kernel
 ./console exp:help:content install -s <Admin-Siteaccess> --dry-run
-./console exp:help:content install -s <Admin-Siteaccess>     # Tabellen, exphelp/context für Redakteure
-./console exp:help:content install -s <Admin-Siteaccess>     # No change.
-./console exp:help:content check -s <Admin-Siteaccess> --fix # erfasst die help_ids der veröffentlichten Themen
+./console exp:help:content install --apply -s <Admin-Siteaccess>     # Tabellen, exphelp/context für Redakteure
+./console exp:help:content install --apply -s <Admin-Siteaccess>     # No change.
+./console exp:help:content check --apply -s <Admin-Siteaccess> --fix # erfasst die help_ids der veröffentlichten Themen
 ```
 
 Ein Server, der PHP am Laufen hält (PHP-FPM, Exponential Velocity), muss die geänderte Kernel-Datei

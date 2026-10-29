@@ -282,11 +282,11 @@ Installation. Sie unterscheiden sich darin, woher die Antworten kommen, und das 
   `CheckValidity=false` in `settings/override/site.ini.append.php` schreibt. Sie beantworten eine Seite pro Schritt,
   jede mit einer Erklärung. Er benötigt zuerst einen funktionierenden Webserver. Am besten geeignet für eine erste
   Installation und für Hosts ohne Shell-Zugang.
-- **Der Kickstarter** (`php bin/php/console exp:kickstarter run --force`) führt dieselben Schritte auf der
+- **Der Kickstarter** (`php bin/php/console exp:kickstarter run --apply --force`) führt dieselben Schritte auf der
   Kommandozeile aus und liest jede Antwort aus `kickstart.ini` im Installationsverzeichnis. Die Datei ist die
   Spezifikation der Installation: Sie kann geprüft, aufbewahrt und wiederverwendet werden. Am besten geeignet für
   wiederholbare und unbeaufsichtigte Installationen.
-- **Die Konsoleninstallation** (`php bin/php/console exp:install`) erstellt die Kickstart-Konfiguration aus
+- **Die Konsoleninstallation** (`php bin/php/console exp:install --apply`) erstellt die Kickstart-Konfiguration aus
   Kommandozeilenoptionen, von denen jede einen Standardwert hat, und führt damit den Kickstarter aus. Am besten
   geeignet für die schnellste Installation und für Skripte, CI und Container.
 

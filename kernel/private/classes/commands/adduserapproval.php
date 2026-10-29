@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of bin/php/adduserapproval.php.
- * @description Set up the approval of new accounts in a user group (default: new Editors wait for the Administrator users): the workflow event on content/publish before and the role that lets the requesters create such accounts (--dry-run lists it first); --mode=section sets up the optional alternative, a section Staff with the plain approval event (a dry run unless --apply)
+ * @description Set up the approval of new accounts in a user group (default: new Editors wait for the Administrator users): the workflow event on content/publish before and the role that lets the requesters create such accounts; --mode=section sets up the optional alternative, a section Staff with the plain approval event (both a dry run unless --apply)
  * Guide: doc/eng-us/bc/6.0/user-account-approval.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -25,15 +25,17 @@ class Adduserapproval extends \Exponential\Runnable\Command
                     . "the groups that require approval. By default an editor who creates an account in Editors waits for the\n"
                     . "Administrator users, who get a mail with the link to the approval item. What exists is left alone, so the\n"
                     . "script can run again. Groups are remote:<remote id>, node:<node id> or name:<top-level group name>.\n"
-                    . "Prints PASS or FAIL at the end.\n\n"
+                    . "Prints PASS or FAIL at the end. Without --apply nothing is written, in either mode: the script lists\n"
+                    . "what it would create and change. --dry-run is still accepted and means the same as no flag; --apply\n"
+                    . "together with --dry-run is a usage error (exit 2).\n\n"
                     . "--mode=section sets up the optional alternative instead, with the plain approval event: the section\n"
                     . "\"" . \expUserApprovalSection::SECTION_NAME . "\" for Administrator users and Editors, and the approval event (section Staff,\n"
                     . "approvers and the group without approval Administrator users, new objects only) on content/publish\n"
-                    . "before. It is a dry run unless --apply is given, and it refuses while the event \"Approve user accounts\"\n"
-                    . "runs on that trigger: choose one of the two, never both.\n\n"
-                    . "Example: php bin/php/adduserapproval.php --dry-run\n"
-                    . "         php bin/php/adduserapproval.php\n"
-                    . "         php bin/php/adduserapproval.php --required=name:Partners --approvers=name:Partner\\ desk --no-role\n"
+                    . "before. It refuses while the event \"Approve user accounts\" runs on that trigger: choose one of the\n"
+                    . "two, never both.\n\n"
+                    . "Example: php bin/php/adduserapproval.php\n"
+                    . "         php bin/php/adduserapproval.php --apply\n"
+                    . "         php bin/php/adduserapproval.php --apply --required=name:Partners --approvers=name:Partner\\ desk --no-role\n"
                     . "         php bin/php/adduserapproval.php --mode=section            (dry run)\n"
                     . "         php bin/php/adduserapproval.php --mode=section --apply",
                 'use-session' => false,
@@ -42,12 +44,12 @@ class Adduserapproval extends \Exponential\Runnable\Command
             )
         );
         $options = $this->startup(
-            "[dry-run][mode:][apply][staff:*][exempt:*][required:*][approvers:*][requesters:*][no-role][admin-id:]",
+            "[apply][dry-run][mode:][staff:*][exempt:*][required:*][approvers:*][requesters:*][no-role][admin-id:]",
             '',
             array(
-                'dry-run' => "List what would be created and changed; change nothing",
+                'apply' => "Make the changes, in either mode (the default is a dry run that lists them and changes nothing)",
+                'dry-run' => "The default, kept for scripts that pass it: list what would be created and changed, change nothing",
                 'mode' => "group (default: the event \"Approve user accounts\") or section (the section Staff and the plain approval event)",
-                'apply' => "--mode=section only: make the changes (without it the section setup is a dry run)",
                 'staff' => "--mode=section: a group whose accounts go into the section Staff (default Administrator users and Editors), may be repeated",
                 'exempt' => "--mode=section: a group whose members need no approval (default Administrator users), may be repeated",
                 'required' => "A group whose new accounts need approval (default Editors), may be repeated",
@@ -57,6 +59,13 @@ class Adduserapproval extends \Exponential\Runnable\Command
                 'admin-id' => "The user the workflow is created by (default 14)"
             )
         );
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $script->shutdown( 2 );
+        }
+        $dryRun = !$apply;
         $mode = $options['mode'] ? strtolower( (string)$options['mode'] ) : 'group';
         if ( !in_array( $mode, array( 'group', 'section' ), true ) )
         {
@@ -65,10 +74,9 @@ class Adduserapproval extends \Exponential\Runnable\Command
         }
         if ( $mode === 'section' )
         {
-            $this->runSection( $cli, $script, $options );
+            $this->runSection( $cli, $script, $options, $dryRun );
             return;
         }
-        $dryRun = (bool)$options['dry-run'];
         $planOptions = array( 'role' => !$options['no-role'] );
         foreach ( array( 'required', 'approvers', 'requesters' ) as $name )
         {
@@ -125,7 +133,7 @@ class Adduserapproval extends \Exponential\Runnable\Command
 
         if ( $dryRun )
         {
-            $cli->output( "PASS: $count change(s) would be made (dry run, nothing changed)" );
+            $cli->output( "PASS: $count change(s) would be made (dry run, nothing changed; --apply writes)" );
             // shutdown() without an exit code does not end the script
             $script->shutdown();
             return;
@@ -151,10 +159,11 @@ class Adduserapproval extends \Exponential\Runnable\Command
 
     /**
      * --mode=section: the section Staff and the plain approval event; a dry run unless --apply.
+     *
+     * @param bool $dryRun true without --apply: list the changes, make none
      */
-    protected function runSection( $cli, $script, array $options )
+    protected function runSection( $cli, $script, array $options, $dryRun )
     {
-        $dryRun = !$options['apply'] || $options['dry-run'];
         $planOptions = array();
         foreach ( array( 'staff', 'approvers', 'exempt' ) as $name )
         {
@@ -204,7 +213,7 @@ class Adduserapproval extends \Exponential\Runnable\Command
             $cli->output( '  ' . $line );
         if ( $dryRun )
         {
-            $cli->output( "PASS: $count change(s) would be made (dry run, nothing changed; --apply makes them)" );
+            $cli->output( "PASS: $count change(s) would be made (dry run, nothing changed; --apply writes)" );
             $script->shutdown();
             return;
         }

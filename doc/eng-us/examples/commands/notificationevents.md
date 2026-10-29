@@ -2,14 +2,14 @@
 title: exp:notificationevents
 audience: developer, admin
 category: examples
-summary: List the notification events, or remove the old ones.
+summary: List the notification events, or remove the old ones (dry run unless --apply).
 keywords: exp:notificationevents, notificationevents, console, command, CLI, notificationevents.php, exp:notification:events, exp:notify:events
 type: generated
 generated: exp:help:examples
 ---
 # exp:notificationevents
 
-List the notification events, or remove the old ones.
+List the notification events, or remove the old ones (dry run unless --apply).
 
 Script `bin/php/notificationevents.php`, code in `kernel/private/classes/commands/notificationevents.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -31,10 +31,12 @@ Notification events
 An event has no date of its own; its age is read from what it is about (the published version, the
 collaboration item, the time of a time event). Events whose age cannot be told, because the content
 is gone, are listed as unknown and removed only with --include-unknown.
+cleanup without --apply removes nothing: it counts what it would remove. --dry-run is still
+accepted and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).
 
 ./console exp:notification:events list --status=pending --limit=20
-./console exp:notification:events cleanup --older-than=30d --dry-run
 ./console exp:notification:events cleanup --older-than=30d
+./console exp:notification:events cleanup --older-than=30d --apply
 ```
 
 ## Options
@@ -45,7 +47,8 @@ is gone, are listed as unknown and removed only with --include-unknown.
 | `--limit` | required | list: how many (default 50) |
 | `--older-than` | required | cleanup: 90s, 15m, 12h, 30d, 2w or a date (2026-09-01) |
 | `--include-unknown` |  | cleanup: also remove events whose age cannot be told |
-| `--dry-run` |  | cleanup: count, remove nothing |
+| `--apply` |  | cleanup: remove the events (the default counts them and removes nothing) |
+| `--dry-run` |  | cleanup: the default, kept for scripts that pass it: count, remove nothing |
 | `--json` |  | list: JSON |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

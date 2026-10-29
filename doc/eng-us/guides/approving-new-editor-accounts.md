@@ -14,7 +14,7 @@ for the test, mail written to files instead of sent (step 2).
 A new installation has it. On one that exists, run from the installation root:
 
 ```bash
-php bin/php/adduserapproval.php --dry-run --allow-root-user
+php bin/php/adduserapproval.php --allow-root-user            # dry run
 ```
 
 Expected on an installation without it:
@@ -30,12 +30,12 @@ requests           Editors (node 14, object 13)
   would add policy content/read Node=14
   would add policy content/create Class=4 Node=14 ParentClass=3
   would assign the role to Editors (no limitation)
-PASS: 7 change(s) would be made (dry run, nothing changed)
+PASS: 7 change(s) would be made (dry run, nothing changed; --apply writes)
 ```
 
 On one that has it: `has everything: workflow, trigger, event, role, policies, assignments` and `PASS: 0 change(s)`.
 If content/publish (before) runs another workflow already, the line says so and the event goes first into that
-workflow. Run it without `--dry-run` to make the changes; it ends with `PASS: the approval of new accounts is set up`.
+workflow. Run it with `--apply` to make the changes; it ends with `PASS: the approval of new accounts is set up`.
 Then clear the INI cache and, on Velocity, deploy the kernel:
 
 ```bash
@@ -113,7 +113,7 @@ At Setup > Workflows > *Approve new editor accounts* > **Edit**, the event's for
 *Remove selected*: the groups whose new accounts need approval, the users and the groups who approve, and the groups
 that need no approval; and the checkbox for the e-mail. Store the workflow. For a group that is not Editors, the
 requesters also need `content/create` there: give their role a policy as the role *Editor account requests* does, or
-run `adduserapproval.php --required=... --approvers=... --requesters=...`.
+run `adduserapproval.php --apply --required=... --approvers=... --requesters=...`.
 
 Examples with the same mechanism: self-registered members approved by moderators, and two approvers for a new
 administrator, are in [Two ways](../bc/6.0/user-account-approval.md#more-examples-with-the-same-mechanism).
@@ -143,7 +143,7 @@ no approval       Administrator users (node 13, object 12)
   would assign the section to Administrator users and below (3 object(s))
   would assign the section to Editors and below (2 object(s))
   would add the approval event first into the workflow "Approve new editor accounts" that content/publish/before runs
-PASS: 4 change(s) would be made (dry run, nothing changed; --apply makes them)
+PASS: 4 change(s) would be made (dry run, nothing changed; --apply writes)
 ```
 
 The numbers count the group and the accounts in it. A `check:` line names each policy limited to the section the accounts leave (*Users*); look at those roles. While the
@@ -161,7 +161,7 @@ to the item in the administration, **Verify it's you** asks, and Approve or Deny
 
 | What you see | Why, and what to do |
 | --- | --- |
-| The editor cannot create a user in Editors (*Access denied*) | The role *Editor account requests* is missing or not assigned to Editors: run `adduserapproval.php` |
+| The editor cannot create a user in Editors (*Access denied*) | The role *Editor account requests* is missing or not assigned to Editors: run `adduserapproval.php --apply` |
 | The account was published without approval | The editor is an approver or in a group without approval, or the event is not in the workflow that content/publish (before) runs: check Setup > Triggers and the event |
 | No mail | Approvers without an e-mail address get none; `[MailSettings]` transport; with *Send the approvers an e-mail* off there is none. The approval item is there anyway (Collaboration) |
 | The link points to the wrong host | Set `[UserSettings] RegistrationAdminBaseURL` |

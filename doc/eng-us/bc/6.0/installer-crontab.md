@@ -16,7 +16,7 @@ step (`eZStepFinal`, code `kernel/classes/expcrontabsetup.php`). The site packag
 `plain_site`) need nothing of their own: the kernel step runs for every package.
 
 - **Whose crontab**: the crontab of the system user that owns the installation directory. When the installer runs as
-  that user (the web server user in the wizard, `runuser -u <owner> -- php bin/php/console exp:install` on a shell),
+  that user (the web server user in the wizard, `runuser -u <owner> -- php bin/php/console exp:install --apply` on a shell),
   it writes its own crontab; when it runs as root it writes `crontab -u <owner>`. It never writes root's crontab for a
   site, and never the crontab of another user: an installation owned by root, or an installer running as a third user,
   gets the lines printed instead.
@@ -95,9 +95,9 @@ Switched off, the installer prints the lines instead of writing them.
 ```bash
 php bin/php/installcrontab.php --show            # the planned lines, the block in the crontab, the last runs
 php bin/php/installcrontab.php --add --dry-run   # what --add would change
-php bin/php/installcrontab.php --add             # write or update the block
+php bin/php/installcrontab.php --add --apply             # write or update the block
 php bin/php/installcrontab.php --remove --dry-run
-php bin/php/installcrontab.php --remove          # take the block out, nothing else
+php bin/php/installcrontab.php --remove --apply          # take the block out, nothing else
 ```
 
 Run it as the owner of the installation, or as root with `--allow-root-user` (it then writes `crontab -u <owner>`).
@@ -144,7 +144,7 @@ Nothing changes on an installation that exists until you run the command. Check 
 ```bash
 php bin/php/installcrontab.php --show
 php bin/php/installcrontab.php --add --dry-run
-php bin/php/installcrontab.php --add
+php bin/php/installcrontab.php --add --apply
 ```
 
 If your crontab runs the parts already, `--add` leaves those parts out (or writes nothing). Then open the dashboard: the

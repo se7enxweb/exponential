@@ -382,7 +382,7 @@ Rules that follow from the persistent model:
 - A class or INI change reaches Velocity only after a restart (`./console exp:velocity restart` or
   `exp:velocity deploy`), because the workers inherit what the warm-up loaded.
 - Cached pages **must** be invalidated through the kernel's cache clear (`eZContentCacheManager`, `eZCache`), and
-  Velocity's response cache is cleared with `./console exp:velocity cache clear` after a deploy.
+  Velocity's response cache is cleared with `./console exp:velocity cache clear --apply` after a deploy.
 
 ## Known exceptions and debt
 

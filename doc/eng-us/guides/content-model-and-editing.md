@@ -197,7 +197,7 @@ creating, check the new items appear under their parent. Depth: [multi-node edit
 2. Open `/content/trash`. Each row shows who trashed the item, where it was, how many nodes were below it and its
    languages. Filter by user, type or date; **Restore** puts an item back (`/content/restore/<object id>`).
 3. **Empty trash** deletes everything for good, whatever the filter. From the shell the same is
-   `./console exp:trashpurge --allow-root-user`: it is permanent, so do not run it on a site you care about.
+   `./console exp:trashpurge --apply --allow-root-user`: it is permanent, so do not run it on a site you care about.
 
 Depth: [trash: who and where](../features/6.0/trash-who-and-where.md), [trash upgrade notes](../bc/6.0/trash.md).
 

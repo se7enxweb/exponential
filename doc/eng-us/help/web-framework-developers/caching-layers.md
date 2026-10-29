@@ -33,7 +33,7 @@ reason "my change does not show" is one of these layers ([Caches](../../standard
 | Content view cache (`content`) | rendered content views, per permission context | publishing the node and related content (`eZContentCacheManager`) |
 | Template block cache (`template-block`) | `{cache-block}` fragments | publishing (by default), expiry |
 | Role-aware HTTP cache (`exphttpcache`) | whole pages per permission context; off until `httpcache.ini Enabled=enabled` | content changes ([The role-aware HTTP cache](../../bc/6.0/httpcache.md)) |
-| Velocity response cache | public pages inside the server process; off until enabled | its own rules, `./console exp:velocity cache clear` ([Velocity response cache](../../features/6.0/velocity-response-cache.md)) |
+| Velocity response cache | public pages inside the server process; off until enabled | its own rules, `./console exp:velocity cache clear --apply` ([Velocity response cache](../../features/6.0/velocity-response-cache.md)) |
 | Others | `urlalias`, `imagealias`, `translation`, `design_base`, `user_info_cache`, `querycache` ... | their ids and tags |
 
 Content view caching is `site.ini [ContentSettings] ViewCaching` (`enabled` shipped). The full list with ids and tags:

@@ -26,7 +26,7 @@ From a checkout of Exponential with its requirements met
 ([Requirements](../../../install/02-requirements.md)):
 
 ```bash
-./console exp:install
+./console exp:install --apply
 ```
 
 That installs the multisite package on SQLite in `eng-US` with the siteaccesses `site` and `admin` and prints the

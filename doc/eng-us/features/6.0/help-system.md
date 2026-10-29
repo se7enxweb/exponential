@@ -36,12 +36,12 @@ Anonymous role does not, and the help is never shown to visitors who are not sig
 Editor role `exphelp/read`. On an installation from before the help system, grant it with
 
 ```sh
-php bin/php/addexphelpreadpolicy.php --dry-run      # lists what it would grant
-php bin/php/addexphelpreadpolicy.php                # the Editor role
-php bin/php/addexphelpreadpolicy.php --role=Editor --role=5
+php bin/php/addexphelpreadpolicy.php                # dry run: lists what it would grant
+php bin/php/addexphelpreadpolicy.php --apply        # the Editor role
+php bin/php/addexphelpreadpolicy.php --apply --role=Editor --role=5
 ```
 
-(`./console exp:help-grant` runs the same command.) Roles that already read the help are left alone, so it can run
+(`./console exp:help-grant --apply` runs the same command.) Roles that already read the help are left alone, so it can run
 again. By hand: Roles and policies, the role, New policy, module `exphelp`, function `read`.
 The Help button appears only for users who have it.
 

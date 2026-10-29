@@ -70,7 +70,7 @@ branch, the published password. The essential lines are:
 
 ```sh
 export EXP_DEMO_MODE=1
-php bin/php/install.php --db=sqlite --url="$URL" --password="$DEMO_PASSWORD" --email=demo@example.invalid
+php bin/php/install.php --apply --db=sqlite --url="$URL" --password="$DEMO_PASSWORD" --email=demo@example.invalid
 [ -e var/log/initial-admin-password ] && fail "the installer generated an administrator password"
 ```
 

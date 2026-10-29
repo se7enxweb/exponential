@@ -99,7 +99,7 @@ On your training installation, packer on.
    php bin/php/ezcache.php --clear-id=template-block
    ```
 
-   If your lab is served by Velocity, also clear its response cache: `php bin/php/console exp:velocity cache clear`.
+   If your lab is served by Velocity, also clear its response cache: `php bin/php/console exp:velocity cache clear --apply`.
 5. Reload with a hard reload. Check the breadcrumb.
 6. Read the stylesheet link again and compare its name with step 3.
 7. If your lab runs on Velocity, run `php bin/php/console exp:velocity deploy --packer --dry-run` and read the list of

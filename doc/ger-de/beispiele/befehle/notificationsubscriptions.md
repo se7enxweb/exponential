@@ -2,14 +2,14 @@
 title: exp:notificationsubscriptions
 audience: developer, admin
 category: examples
-summary: Listet die Teilbaum-Benachrichtigungsabonnements pro Benutzer und Teilbaum auf oder entfernt die, deren Inhalt nicht mehr existiert.
+summary: Die Teilbaum-Benachrichtigungsabonnements je Benutzer und Teilbaum auflisten oder die entfernen, deren Inhalt fehlt (Probelauf, außer mit --apply).
 keywords: Konsole, Befehl, exp:notificationsubscriptions, notificationsubscriptions, console, command, CLI, notificationsubscriptions.php, exp:notification:subscriptions, exp:notify:subscriptions
 type: generated
 generated: exp:help:examples
 ---
 # exp:notificationsubscriptions
 
-Listet die Teilbaum-Benachrichtigungsabonnements pro Benutzer und Teilbaum auf oder entfernt die, deren Inhalt nicht mehr existiert.
+Die Teilbaum-Benachrichtigungsabonnements je Benutzer und Teilbaum auflisten oder die entfernen, deren Inhalt fehlt (Probelauf, außer mit --apply).
 
 Skript `bin/php/notificationsubscriptions.php`, Code in `kernel/private/classes/commands/notificationsubscriptions.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -27,11 +27,15 @@ Was `--help` ausgibt, so wie der Befehl es schreibt:
 ```text
 Notification subscriptions
   list                      the subtree subscriptions: user, node, path, class, last change below the node
-  remove-missing            remove the subscriptions whose node no longer exists (--dry-run counts)
+  remove-missing            remove the subscriptions whose node no longer exists (lists them; --apply removes)
+
+remove-missing without --apply removes nothing: it lists what it would remove. --dry-run is still
+accepted and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).
 
 ./console exp:notification:subscriptions list --user=editor --limit=20
 ./console exp:notification:subscriptions list --missing
-./console exp:notification:subscriptions remove-missing --dry-run
+./console exp:notification:subscriptions remove-missing
+./console exp:notification:subscriptions remove-missing --apply
 ```
 
 ## Optionen
@@ -45,7 +49,8 @@ Notification subscriptions
 | `--limit` | erforderlich | wie viele (Standard 50) |
 | `--offset` | erforderlich | so viele überspringen |
 | `--addresses` |  | auch die E-Mail-Adresse des Benutzers zeigen (standardmäßig verborgen) |
-| `--dry-run` |  | remove-missing: zählen, nichts entfernen |
+| `--apply` |  | remove-missing: die Abonnements entfernen (Standard listet sie und entfernt nichts) |
+| `--dry-run` |  | remove-missing: der Standard, beibehalten für Skripte, die die Option übergeben: auflisten, nichts entfernen |
 | `--json` |  | list: JSON |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

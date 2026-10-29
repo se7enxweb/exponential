@@ -382,13 +382,13 @@ RegistrationActionTTL=604800
 
 ## AccountApprovalMode
 
-> How the setup (setup wizard, kickstarter) sets up the approval of new editor  
-> accounts: group (the default: the workflow event "Approve user accounts",  
-> decided by the group an account is placed in), section (the section Staff for  
-> Administrator users and Editors and the plain approval event on it) or none.  
-> Choose one, never both: an account would be asked for twice. An installation  
-> that exists: bin/php/adduserapproval.php \[--mode=section\].  
-> Guide: doc/eng-us/bc/6.0/user-account-approval.md  
+> Wie das Setup (Setup-Assistent, Kickstarter) die Freigabe neuer Redakteurskonten  
+> einrichtet: group (der Standard: das Workflow-Ereignis "Approve user accounts",  
+> entschieden nach der Gruppe, in die ein Konto kommt), section (der Abschnitt Staff für  
+> Administrator users und Editors und das einfache Freigabe-Ereignis darauf) oder none.  
+> Wählen Sie eines, nie beides: Ein Konto würde zweimal angefragt. Eine bestehende  
+> Installation: bin/php/adduserapproval.php --apply \[--mode=section\].  
+> Anleitung: doc/eng-us/bc/6.0/user-account-approval.md  
 
 Standard: `group`.
 

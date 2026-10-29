@@ -2,14 +2,14 @@
 title: exp:kickstarter
 audience: developer, admin
 category: examples
-summary: Kickstarter-Runner. Unterstützt die Unterbefehle "ini" zum Erzeugen und "run" für die vollständige Einrichtung.
+summary: "Kickstarter: 'ini' schreibt kickstart.ini, 'run' installiert daraus (ein Probelauf, außer mit --apply)."
 keywords: Konsole, Befehl, exp:kickstarter, kickstarter, console, command, CLI, kickstarter.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:kickstarter
 
-Kickstarter-Runner. Unterstützt die Unterbefehle "ini" zum Erzeugen und "run" für die vollständige Einrichtung.
+Kickstarter: "ini" schreibt kickstart.ini, "run" installiert daraus (ein Probelauf, außer mit --apply).
 
 Skript `bin/php/kickstarter.php`, Code in `kernel/private/classes/commands/kickstarter.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

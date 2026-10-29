@@ -121,7 +121,7 @@ Cronjob-Teil und einem Test läuft. Der Rumpf eines solchen Importers steht unte
 | `php bin/php/updatesearchindex.php` | Den Suchindex nach einer Massenänderung neu aufbauen |
 | `php bin/php/ezcache.php --clear-id=<ids>` | Caches nach einer Massenänderung leeren ([welche](caching-nach-importen.md)) |
 | `php bin/php/expcontentjob.php list` | Inhaltsjobs (große Löschungen, Kopien, Verschiebungen) ausführen, auflisten, fortsetzen und abbrechen |
-| `php bin/php/ezsubtreeremove.php` | Teilbäume über die Knoten-ID entfernen, in den Papierkorb, außer mit `--ignore-trash` |
+| `php bin/php/ezsubtreeremove.php --apply` | Teilbäume über die Knoten-ID entfernen, in den Papierkorb, außer mit `--ignore-trash` |
 | `php bin/php/console exp:logs` | Die Protokolldateien durchsuchen und verfolgen |
 | `php bin/php/console exp:audit tail` | Das Audit-Protokoll lesen |
 | `php bin/php/maintenance.php on\|off\|status` | Die Website für ein Migrationsfenster vom Netz nehmen |

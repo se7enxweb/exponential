@@ -387,7 +387,7 @@ RegistrationActionTTL=604800
 > decided by the group an account is placed in), section (the section Staff for  
 > Administrator users and Editors and the plain approval event on it) or none.  
 > Choose one, never both: an account would be asked for twice. An installation  
-> that exists: bin/php/adduserapproval.php \[--mode=section\].  
+> that exists: bin/php/adduserapproval.php --apply \[--mode=section\].  
 > Guide: doc/eng-us/bc/6.0/user-account-approval.md  
 
 Default: `group`.

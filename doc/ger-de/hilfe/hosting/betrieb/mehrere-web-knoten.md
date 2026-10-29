@@ -92,7 +92,7 @@ Caches auf einem Knoten die anderen erreicht:
 - **Mit dem DFS-Cluster** sind Cache-Dateien und `expiry.php` (die Zeitstempel, die Caches ungültig machen) Cluster-Dateien, sodass
   ein Leeren auf einem Knoten von allen gesehen wird ([Cluster (DFS)](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md#cluster-dfs)).
 - **Die Caches vor PHP** sind lokal: der HTTP-Cache in `var/<site>/cache/exphttpcache` und der Antwort-Cache von Velocity. Leeren
-  Sie sie nach einer Änderung auf jedem Knoten (`./console exp:velocity cache clear` für Velocity;
+  Sie sie nach einer Änderung auf jedem Knoten (`./console exp:velocity cache clear --apply` für Velocity;
   [Caches](../../../anleitungen/caches.md)).
 - **Ein gemeinsames Cache-Backend.** Die Erweiterung `sevenx_valkey_cache` hält Template-Blöcke, den Content-View-Cache und den
   kompilierten INI-Cache in Redis oder Valkey, was INI-Caches für Cluster sicher macht

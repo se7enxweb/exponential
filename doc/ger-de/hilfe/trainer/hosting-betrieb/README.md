@@ -33,7 +33,7 @@ wiederherstellen und ihre Leistung messen und verbessern.
 | Form | Präsenz oder online; praxisorientiert im Terminal |
 | Niveau | Fortgeschrittene bis Experten |
 | Voraussetzungen | [Website-Administration](../website-administratoren/README.md) (mindestens die Module zu Caches, Cronjobs, Logs und Upgrades); Grundlagen der Linux-Kommandozeile, eines Webservers und von PHP |
-| Übungsumgebung | Ein Linux-Rechner oder eine virtuelle Maschine pro Person mit root-Zugang, PHP 8.0 oder neuer, Composer 2 und Git; eine Schulungsinstallation, angelegt mit `php bin/php/console exp:install` und ausgeliefert mit `exp:velocity start`; für die Lektionen 1.2, 1.3 und 3.3 außerdem Apache oder nginx mit PHP-FPM und ein MariaDB- oder PostgreSQL-Server |
+| Übungsumgebung | Ein Linux-Rechner oder eine virtuelle Maschine pro Person mit root-Zugang, PHP 8.0 oder neuer, Composer 2 und Git; eine Schulungsinstallation, angelegt mit `php bin/php/console exp:install --apply` und ausgeliefert mit `exp:velocity start`; für die Lektionen 1.2, 1.3 und 3.3 außerdem Apache oder nginx mit PHP-FPM und ein MariaDB- oder PostgreSQL-Server |
 
 ## Module
 

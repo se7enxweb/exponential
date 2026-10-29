@@ -47,11 +47,11 @@ VersionHistoryClass[meeting]=200
 ```
 
 Leeren Sie dann den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`) und, wenn Velocity die Website ausliefert,
-`./console exp:velocity cache clear`. Die neue Grenze gilt ab der nächsten erzeugten Version.
+`./console exp:velocity cache clear --apply`. Die neue Grenze gilt ab der nächsten erzeugten Version.
 
 ## Eine Grenze senken
 
-Das Senken eines Werts entfernt Versionen nicht sofort. `php bin/php/cleanupversions.php` entfernt die archivierten
+Das Senken eines Werts entfernt Versionen nicht sofort. `php bin/php/cleanupversions.php --apply` entfernt die archivierten
 Versionen, die die Grenzen überschreiten:
 
 ```bash

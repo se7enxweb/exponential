@@ -966,7 +966,7 @@ response cache. The rules are safe with them because of three guarantees:
 **After changing rules, clear the page caches.** A page stored before a rule
 existed is served without asking it. `exp:velocity deploy` does this;
 otherwise run `php bin/php/ezcache.php --clear-id=content,exphttpcache --allow-root-user`
-and `./console exp:velocity cache clear`.
+and `./console exp:velocity cache clear --apply`.
 
 The content **view cache** (`ViewCaching`) stores a node's rendered view, not
 the response. It runs after the rules and is unaffected by them.
