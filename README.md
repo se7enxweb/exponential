@@ -76,11 +76,11 @@ The 6.0.15 line also brings, among much else (the full list is in the
 - **Packages end to end** on Setup > Packages: every upload validated, installs in the background or as drafts, a
   JSON package format next to the classic one ([packages guide](doc/eng-us/guides/packages.md),
   [JSON format](doc/eng-us/bc/6.0/package-json-format.md)).
-- **219 locales**, 170 of them new: content in Bengali, Urdu, Persian, Vietnamese, Swahili, Romanian, Tibetan,
-  Yiddish, Latin and nearly every other written language of the world, with their dates, numbers and currencies;
-  the administration in English and German complete and partly in 24 more, Hebrew, Latin and (for fun) Klingon as
-  first drafts ([languages](doc/eng-us/languages.md)); right-to-left languages get `dir="rtl"` in content and in the
-  administration ([right to left](doc/eng-us/features/6.0/right-to-left.md)).
+- **More than 360 locales**, over 300 of them new: content in Bengali, Urdu, Persian, Vietnamese, Swahili, Romanian,
+  Tibetan, Yiddish, Latin and nearly every other written language of the world, with their dates, numbers and
+  currencies, for every inhabited country and territory; the administration in more than 150 languages, all of them
+  complete (the current totals are at the top of [languages](doc/eng-us/languages.md)); right-to-left languages get
+  `dir="rtl"` in content and in the administration ([right to left](doc/eng-us/features/6.0/right-to-left.md)).
 - **MariaDB, MySQL, PostgreSQL, SQLite, Oracle and MongoDB** on one kernel, PHP 8.0 to 8.5, and the bundled
   application server Exponential Velocity, part of Exponential as of 6.0.15 (required at `~0.0.4.55`, which runs on PHP 8.0 as well, answers HEAD over HTTP/2 with its
   headers only and drains its connections when it stops).

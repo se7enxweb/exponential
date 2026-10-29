@@ -50,7 +50,7 @@ ist seine byteorientierte Kodierung und die Kodierung des Webs.
 - Der Zeichensatz der Datenbankverbindung ist `settings/site.ini [DatabaseSettings] Charset=utf-8` (der Kommentar
   darüber besagt, dass ein leerer Wert auf `i18n.ini` zurückfällt).
 - Übersetzungskataloge sind XML, deklariert als `encoding="utf-8"`.
-- 339 der 359 Locale-Dateien in `share/locale/` deklarieren `[Charset] Preferred=utf-8`. Die übrigen 20 sind ältere
+- 348 der 368 Locale-Dateien in `share/locale/` deklarieren `[Charset] Preferred=utf-8`. Die übrigen 20 sind ältere
   Dateien, die noch eine veraltete Codepage nennen (zum Beispiel `iso-8859-1`, `iso-8859-15`, `koi8-u`, `cp1251`). Der
   interne Zeichensatz der Site kommt weiterhin aus `i18n.ini`; die Namen der Codepages bleiben aus
   Kompatibilitätsgründen erhalten.

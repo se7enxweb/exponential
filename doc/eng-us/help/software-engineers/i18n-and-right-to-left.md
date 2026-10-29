@@ -32,8 +32,8 @@ and the full language list in [Languages in Exponential](../../languages.md).
 | Interface translation | the administration's and templates' text in a language | `share/translations/<locale>/translation.ts` |
 | Siteaccess | which languages a site shows and in which order of fallback | siteaccess settings |
 
-The README counts 219 locales in the 6.0.15 line; the administration is complete in English and German and partly
-translated into more ([Languages in Exponential](../../languages.md)).
+The README counts more than 360 locales in the 6.0.15 line; the administration is translated into more than 150
+languages, all of them complete ([Languages in Exponential](../../languages.md) has the current totals).
 
 ## Content languages and the 62 limit
 
