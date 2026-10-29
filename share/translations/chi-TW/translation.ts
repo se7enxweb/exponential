@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>系統頁面也可以加入書籤：開啟該頁面（設定、稽核記錄、使用者清單等），然後選擇其上方的「將此頁面加入書籤」。這類書籤會顯示齒輪圖示。</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>您已無權在此開啟此頁面。請移除書籤，或向系統管理員要求存取權。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56391,6 +56395,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>書籤已重新命名為「%name」。</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>此頁面在此網站存取（%siteaccess）中已停用。請在含有此頁面的網站存取中開啟書籤。</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>此頁面的模組未在此安裝或啟用。</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>此頁面已不存在：其模組沒有這樣的檢視。</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>您的任何角色都不允許您開啟此頁面。</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>您無權使用此網站存取。</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>您無權讀取此頁面顯示的內容。</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>此類頁面無法加入書籤：它只對表單執行動作，或是僅存在於某一時刻的頁面。</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>此頁面的位址遺失。</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>目前無法開啟此頁面。</translation>
     </message>
 </context>
 <context>

@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Tizim sahifalarini ham xatchoʻpga qoʻshish mumkin: sahifani oching (Sozlash, audit jurnali, foydalanuvchilar roʻyxati ...) va uning tepasidagi "Bu sahifani xatchoʻpga qoʻshish"ni tanlang. Bunday xatchoʻplarda tishli gʻildirak belgisi boʻladi.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Siz endi bu sahifani bu yerda ocha olmaysiz. Xatchoʻpni olib tashlang yoki administratordan kirish ruxsatini soʻrang.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ shu xatdagi yoʻriqnomaga amal qiling.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Xatchoʻp nomi "%name" ga oʻzgartirildi.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Bu sahifa ushbu sayt kirish nuqtasida (%siteaccess) oʻchirilgan. Xatchoʻpni bu sahifa mavjud boʻlgan sayt kirish nuqtasida oching.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Bu sahifaning moduli bu yerda oʻrnatilmagan yoki yoqilmagan.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Bu sahifa endi mavjud emas: uning modulida bunday koʻrinish yoʻq.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Rollaringizdan hech biri Sizga bu sahifani ochishga ruxsat bermaydi.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Sizda bu sayt kirish nuqtasidan foydalanish uchun ruxsat yoʻq.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Sizda bu sahifa koʻrsatadigan kontentni oʻqish uchun ruxsat yoʻq.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Bunday turdagi sahifani xatchoʻpga qoʻshib boʻlmaydi: u faqat forma bilan ishlaydi yoki faqat bir lahzalik sahifa.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Bu sahifaning manzili yoʻq.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Bu sahifani hozir ochib boʻlmaydi.</translation>
     </message>
 </context>
 <context>

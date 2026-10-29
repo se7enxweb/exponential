@@ -2297,6 +2297,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Do záložek lze přidat i systémové stránky: otevřete stránku (Nastavení, auditní stopu, seznam uživatelů ...) a nad ní zvolte „Přidat stránku do záložek“. Takové záložky mají ikonu ozubeného kola.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Tuto stránku zde již nesmíte otevřít. Odstraňte záložku, nebo požádejte správce o přístup.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -49305,6 +49309,42 @@ a aktivujte svůj účet.</translation>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>Záložka byla přejmenována na „%name“.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Tato stránka je v tomto přístupu k webu (%siteaccess) vypnutá. Otevřete záložku v přístupu k webu, který ji má.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Modul této stránky zde není nainstalován nebo není povolen.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Tato stránka již neexistuje: její modul takové zobrazení nemá.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Žádná z vašich rolí vám nedovoluje tuto stránku otevřít.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Tento přístup k webu nesmíte používat.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Obsah, který tato stránka zobrazuje, nesmíte číst.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Tento druh stránky nelze přidat do záložek: pouze provádí akci s formulářem, nebo je to stránka jediného okamžiku.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Adresa této stránky chybí.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Tuto stránku nyní nelze otevřít.</translation>
     </message>
 </context>
 <context>

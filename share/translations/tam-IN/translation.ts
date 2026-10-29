@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>கணினிப் பக்கங்களையும் புத்தகக்குறியிடலாம்: பக்கத்தைத் திறந்து (அமைவு, தணிக்கைப் பதிவு, பயனர்களின் பட்டியல் ...) அதன் மேலே உள்ள “இந்தப் பக்கத்தைப் புத்தகக்குறியிடு” என்பதைத் தேர்ந்தெடுங்கள். அத்தகைய புத்தகக்குறிகளுக்கு ஒரு பல்சக்கரச் சின்னம் இருக்கும்.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>இந்தப் பக்கத்தை இங்கே திறக்க இனி உங்களுக்கு அனுமதி இல்லை. புத்தகக்குறியை நீக்குங்கள், அல்லது அணுகலுக்காக ஒரு நிர்வாகியிடம் கேளுங்கள்.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56391,6 +56395,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>புத்தகக்குறியின் பெயர் “%name” என மாற்றப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>இந்த தள அணுகலில் (%siteaccess) இந்தப் பக்கம் முடக்கப்பட்டுள்ளது. இந்தப் பக்கம் உள்ள ஒரு தள அணுகலில் புத்தகக்குறியைத் திறங்கள்.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>இந்தப் பக்கத்தின் தொகுதிக்கூறு இங்கே நிறுவப்படவில்லை அல்லது இயக்கப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>இந்தப் பக்கம் இனி இல்லை: இதன் தொகுதிக்கூறில் அத்தகைய காட்சி இல்லை.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>உங்கள் பங்குகளில் எதுவும் இந்தப் பக்கத்தைத் திறக்க உங்களை அனுமதிக்கவில்லை.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>இந்த தள அணுகலைப் பயன்படுத்த உங்களுக்கு அனுமதி இல்லை.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>இந்தப் பக்கம் காட்டும் உள்ளடக்கத்தைப் படிக்க உங்களுக்கு அனுமதி இல்லை.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>இந்த வகைப் பக்கத்தைப் புத்தகக்குறியிட முடியாது: இது ஒரு படிவத்தில் மட்டுமே செயல்படுகிறது, அல்லது ஒரு கணத்திற்கு மட்டுமே உரிய பக்கம்.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>இந்தப் பக்கத்தின் முகவரி இல்லை.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>இந்தப் பக்கத்தை இப்போது திறக்க முடியாது.</translation>
     </message>
 </context>
 <context>

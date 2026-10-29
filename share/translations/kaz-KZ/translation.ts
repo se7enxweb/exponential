@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Жүйелік беттерді де бетбелгіге қосуға болады: бетті (Баптау, аудит журналы, пайдаланушылар тізімі ...) ашып, оның үстіндегі «Бетті бетбелгіге қосу» тармағын таңдаңыз. Мұндай бетбелгілерде тісті доңғалақ белгішесі бар.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Сіз бұл бетті бұл жерде енді аша алмайсыз. Бетбелгіні алып тастаңыз немесе әкімшіден кіру рұқсатын сұраңыз.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Бетбелгінің аты «%name» болып өзгертілді.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Бұл бет осы сайтқа кіру нүктесінде (%siteaccess) өшірілген. Бетбелгіні бұл бет бар сайтқа кіру нүктесінде ашыңыз.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Бұл беттің модулі мұнда орнатылмаған немесе қосылмаған.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Бұл бет енді жоқ: оның модулінде мұндай көрініс жоқ.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Сіздің рөлдеріңіздің ешқайсысы бұл бетті ашуға рұқсат бермейді.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Сіз бұл сайтқа кіру нүктесін пайдалана алмайсыз.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Сіз бұл бет көрсететін мазмұнды оқи алмайсыз.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Мұндай бетті бетбелгіге қосу мүмкін емес: ол тек пішінмен әрекет етеді немесе бір сәттік бет болып табылады.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Бұл беттің мекенжайы жоқ.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Бұл бетті қазір ашу мүмкін емес.</translation>
     </message>
 </context>
 <context>

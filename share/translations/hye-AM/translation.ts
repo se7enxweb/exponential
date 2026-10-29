@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Համակարգային էջերը ևս կարելի է ավելացնել էջանիշերում. բացեք էջը (Կարգաբերում, աուդիտի մատյան, օգտատերերի ցուցակ ...) և դրա վերևում ընտրեք «Ավելացնել էջը էջանիշերում»։ Այդպիսի էջանիշերն ունեն հանդերձանքի պատկերակ։</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Դուք այլևս չեք կարող բացել այս էջն այստեղ։ Հեռացրեք էջանիշը կամ մուտք խնդրեք ադմինիստրատորից։</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Էջանիշի անունը փոխվել է՝ «%name»։</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Այս էջն անջատված է կայքի այս մուտքի կետում (%siteaccess)։ Բացեք էջանիշը կայքի այնպիսի մուտքի կետում, որտեղ այս էջը կա։</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Այս էջի մոդուլն այստեղ տեղադրված կամ միացված չէ։</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Այս էջն այլևս գոյություն չունի, քանի որ նրա մոդուլը նման դիտում չունի։</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Ձեր դերերից ոչ մեկը թույլ չի տալիս Ձեզ բացել այս էջը։</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Դուք չեք կարող օգտագործել կայքի այս մուտքի կետը։</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Դուք չեք կարող կարդալ այն բովանդակությունը, որը ցույց է տալիս այս էջը։</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Այս տեսակի էջը հնարավոր չէ ավելացնել էջանիշերում, քանի որ այն միայն գործողություն է կատարում ձևի վրա կամ մեկ պահի էջ է։</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Այս էջի հասցեն բացակայում է։</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Այս էջը հիմա հնարավոր չէ բացել։</translation>
     </message>
 </context>
 <context>

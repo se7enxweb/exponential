@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Ek systeemsiden kinne jo oan jo blêdwizers tafoegje: iepenje de side (Ynstelle, it kontrôlespoar, in list mei brûkers ...) en kies dêrboppe Dizze side as blêdwizer bewarje. Sokke blêdwizers hawwe in tangrieddyikoan.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Jo meie dizze side hjir net mear iepenje. Helje de blêdwizer fuort, of freegje in behearder om tagong.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ te aktivearjen.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>De blêdwizer is omneamd ta "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Dizze side is útskeakele yn dizze websidetagong (%siteaccess). Iepenje de blêdwizer yn in websidetagong dy't de side wol hat.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>De module fan dizze side is hjir net ynstallearre of net ynskeakele.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Dizze side bestiet net mear: de module hat sa'n werjefte net.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Gjin fan jo rollen stiet jo ta dizze side te iepenjen.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Jo meie dizze websidetagong net brûke.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Jo meie de ynhâld dy't dizze side toant net lêze.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Dit soarte side kin net oan jo blêdwizers tafoege wurde: it docht allinnich wat mei in formulier, of it is in side fan ien momint.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>It adres fan dizze side ûntbrekt.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Dizze side kin no net iepene wurde.</translation>
     </message>
 </context>
 <context>

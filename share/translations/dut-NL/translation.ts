@@ -2306,6 +2306,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Ook systeempagina&apos;s kun je aan je favorieten toevoegen: open de pagina (Setup, de audittrail, een lijst met gebruikers ...) en kies daarboven Pagina aan favorieten toevoegen. Zulke favorieten hebben een tandwielpictogram.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Je mag deze pagina hier niet meer openen. Verwijder de favoriet of vraag een beheerder om toegang.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -49248,6 +49252,42 @@ te activeren.</translation>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>De favoriet is hernoemd naar &quot;%name&quot;.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Deze pagina is uitgeschakeld in deze siteaccess (%siteaccess). Open de favoriet in een siteaccess die haar heeft.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>De module van deze pagina is hier niet geïnstalleerd of niet ingeschakeld.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Deze pagina bestaat niet meer: haar module heeft zo'n weergave niet.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Geen van je rollen staat je toe deze pagina te openen.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Je mag deze siteaccess niet gebruiken.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Je mag de inhoud die deze pagina toont niet lezen.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Dit soort pagina kan niet aan je favorieten worden toegevoegd: ze werkt alleen op een formulier, of is een pagina van één moment.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Het adres van deze pagina ontbreekt.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Deze pagina kan nu niet worden geopend.</translation>
     </message>
 </context>
 <context>

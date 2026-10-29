@@ -2305,6 +2305,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Systemsidor kan också bokmärkas: öppna sidan (Konfiguration, granskningsloggen, en lista med användare ...) och välj Bokmärk den här sidan ovanför den. Sådana bokmärken har en kugghjulsikon.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Du får inte längre öppna den här sidan här. Ta bort bokmärket eller be en administratör om åtkomst.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -49326,6 +49330,42 @@ det här felet. Försök inte skicka betalningen igen.</translation>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>Bokmärket bytte namn till &quot;%name&quot;.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Den här sidan är avstängd i den här webbplatsingången (%siteaccess). Öppna bokmärket i en webbplatsingång som har den.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Modulen för den här sidan är inte installerad eller inte aktiverad här.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Den här sidan finns inte längre: dess modul har ingen sådan vy.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Ingen av dina roller tillåter dig att öppna den här sidan.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Du får inte använda den här webbplatsingången.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Du får inte läsa innehållet som den här sidan visar.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Den här typen av sida kan inte bokmärkas: den agerar bara på ett formulär eller gäller bara för ett ögonblick.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Adressen till den här sidan saknas.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Den här sidan kan inte öppnas just nu.</translation>
     </message>
 </context>
 <context>

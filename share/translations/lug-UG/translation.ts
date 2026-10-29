@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Empapula ez'enkola nazo zisobola okuteekebwako obubonero: ggulawo olupapula (Okuteekateeka, ebyafaayo by'okwekenneenya, olukalala lw'abakozesa ...) olonde Teeka akabonero ku lupapula luno waggulu waalwo. Obubonero obwo bulina akabonero k'ekyuma ekiwuubaala.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Tokyakkirizibwa kuggulawo lupapula luno wano. Ggyamu akabonero, oba saba omuddukanya akuwe olukusa okuyingira.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ ensobi eno. Bambi tokemba kuddamu kuweereza kusasula.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Akabonero kaweereddwa erinnya eppya «%name».</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Olupapula luno luggaddwa mu mulyango gw'omukutu guno (%siteaccess). Ggulawo akabonero mu mulyango gw'omukutu ogulina olupapula luno.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Moduli y'olupapula luno teteekeddwamu oba tekoleezeddwa wano.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Olupapula luno terukyaliwo: moduli yaalwo terina ndabika ng'eyo.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Tewali buvunaanyizibwa bwo bukukkiriza kuggulawo lupapula luno.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Tolina lukusa lw'okukozesa mulyango gw'omukutu guno.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Tolina lukusa lw'okusoma birimu olupapula luno bye lulaga.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Olupapula olw'engeri eno terusobola kuteekebwako kabonero: lukola ku foomu yokka, oba lupapula lwa kaseera kamu.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Endagiriro y'olupapula luno teriiwo.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Olupapula luno terusobola kuggulwawo kaakano.</translation>
     </message>
 </context>
 <context>

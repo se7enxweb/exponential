@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>صفحه‌های سیستم را هم می‌توان نشانک‌گذاری کرد: صفحه را باز کنید (راه‌اندازی، ردگیری ممیزی، فهرستی از کاربران ...) و در بالای آن «نشانک‌گذاری این صفحه» را انتخاب کنید. این نشانک‌ها نماد چرخ‌دنده دارند.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>شما دیگر اجازهٔ باز کردن این صفحه را در اینجا ندارید. نشانک را بردارید، یا از یک مدیر دسترسی بخواهید.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>نام نشانک به «%name» تغییر کرد.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>این صفحه در این دسترسی سایت (%siteaccess) غیرفعال است. نشانک را در دسترسی سایتی باز کنید که این صفحه را دارد.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ماژول این صفحه در اینجا نصب یا فعال نشده است.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>این صفحه دیگر وجود ندارد: ماژول آن چنین نمایی ندارد.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>هیچ‌یک از نقش‌های شما اجازهٔ باز کردن این صفحه را به شما نمی‌دهد.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>شما اجازهٔ استفاده از این دسترسی سایت را ندارید.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>شما اجازهٔ خواندن محتوایی را که این صفحه نشان می‌دهد ندارید.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>این نوع صفحه را نمی‌توان نشانک‌گذاری کرد: فقط روی یک فورم عمل می‌کند، یا صفحه‌ای لحظه‌ای است.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>آدرس این صفحه موجود نیست.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>این صفحه را فعلاً نمی‌توان باز کرد.</translation>
     </message>
 </context>
 <context>

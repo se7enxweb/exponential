@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Trang hệ thống cũng có thể được đánh dấu: mở trang (Thiết lập, nhật ký kiểm tra, một danh sách người dùng ...) rồi chọn Đánh dấu trang này ở phía trên. Các dấu trang như vậy có biểu tượng bánh răng.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Bạn không còn được phép mở trang này ở đây. Hãy xóa dấu trang hoặc yêu cầu quản trị viên cấp quyền truy cập.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ tài khoản của bạn.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Dấu trang đã được đổi tên thành "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Trang này đã bị tắt trong điểm truy cập trang này (%siteaccess). Hãy mở dấu trang trong một điểm truy cập trang có trang này.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Mô-đun của trang này chưa được cài đặt hoặc chưa được bật ở đây.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Trang này không còn tồn tại: mô-đun của nó không có chế độ xem như vậy.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Không vai trò nào của bạn cho phép bạn mở trang này.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Bạn không có quyền sử dụng điểm truy cập trang này.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Bạn không có quyền đọc nội dung mà trang này hiển thị.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Không thể đánh dấu loại trang này: nó chỉ xử lý một biểu mẫu, hoặc chỉ có giá trị trong một thời điểm.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Thiếu địa chỉ của trang này.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Hiện không thể mở trang này.</translation>
     </message>
 </context>
 <context>

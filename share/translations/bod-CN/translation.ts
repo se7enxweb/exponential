@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>མ་ལག་གི་ཤོག་ངོས་ཀྱང་དེབ་རྟགས་སུ་འཇོག་ཐུབ། ཤོག་ངོས་དེ་ཁ་ཕྱེ་ནས་ (སྒྲིག་བཀོད། ཞིབ་བཤེར་ཟིན་ཐོ། སྤྱོད་མཁན་གྱི་ཐོ་གཞུང་སོགས།) དེའི་སྟེང་གི་ "ཤོག་ངོས་འདི་དེབ་རྟགས་སུ་འཇོག" འདེམས། དེ་འདྲའི་དེབ་རྟགས་ལ་ཆ་རྟགས་ཀྱི་པར་རིས་ཡོད།</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ཁྱེད་ཀྱིས་ཤོག་ངོས་འདི་ད་ནས་བཟུང་འདིར་ཁ་ཕྱེ་མི་ཆོག དེབ་རྟགས་ཕྱིར་འདོན་བྱ། ཡང་ན་དོ་དམ་པ་ལས་འཛུལ་ཆོག་ཞུ།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>དེབ་རྟགས་ཀྱི་མིང་ "%name" ལ་བསྒྱུར་ཟིན།</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ཤོག་ངོས་འདི་དྲ་ཚིགས་འཛུལ་སྒོ་འདི (%siteaccess) ནང་སྤྱོད་མཚམས་བཞག་ཡོད། ཤོག་ངོས་འདི་ཡོད་པའི་དྲ་ཚིགས་འཛུལ་སྒོ་ཞིག་ཏུ་དེབ་རྟགས་ཁ་ཕྱེ།</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ཤོག་ངོས་འདིའི་ཚན་པ་འདིར་སྒྲིག་འཇུག་མ་བྱས་པའམ་སྤྱོད་འགོ་མ་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ཤོག་ངོས་འདི་ད་ནས་མེད། དེའི་ཚན་པར་མཐོང་སྣང་དེ་འདྲ་མེད།</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ཁྱེད་ཀྱི་འགན་ཁུར་གང་གིས་ཀྱང་ཤོག་ངོས་འདི་ཁ་ཕྱེ་བར་ཆོག་མཆན་མི་སྤྲོད།</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ཁྱེད་ཀྱིས་དྲ་ཚིགས་འཛུལ་སྒོ་འདི་བེད་སྤྱོད་བྱེད་མི་ཆོག</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ཁྱེད་ཀྱིས་ཤོག་ངོས་འདིས་སྟོན་པའི་ནང་དོན་ཀློག་མི་ཆོག</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>རིགས་འདིའི་ཤོག་ངོས་དེབ་རྟགས་སུ་འཇོག་མི་ཐུབ། དེས་རེའུ་མིག་ཁོ་ན་ལ་བྱ་བ་སྒྲུབ་པའམ། སྐད་ཅིག་གཅིག་གི་ཤོག་ངོས་ཤིག་ཡིན།</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ཤོག་ངོས་འདིའི་ཁ་བྱང་ཆད་ཡོད།</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ཤོག་ངོས་འདི་ད་ལྟ་ཁ་ཕྱེ་མི་ཐུབ།</translation>
     </message>
 </context>
 <context>

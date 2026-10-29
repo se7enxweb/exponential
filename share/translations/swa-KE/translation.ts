@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Kurasa za mfumo pia zinaweza kuwekewa alamisho: fungua ukurasa (Usanidi, kumbukumbu za ukaguzi, orodha ya watumiaji ...) na uchague Weka alamisho kwa ukurasa huu juu yake. Alamisho hizo zina aikoni ya gia.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Huwezi tena kufungua ukurasa huu hapa. Ondoa alamisho, au mwombe msimamizi akupe ufikiaji.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56391,6 +56395,42 @@ akaunti yako.</translation>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>Alamisho imebadilishwa jina kuwa &quot;%name&quot;.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Ukurasa huu umezimwa katika siteaccess hii (%siteaccess). Fungua alamisho katika siteaccess ambayo ina ukurasa huu.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Moduli ya ukurasa huu haijasakinishwa au haijawezeshwa hapa.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Ukurasa huu haupo tena: moduli yake haina mwonekano kama huo.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Hakuna jukumu lako hata moja linalokuruhusu kufungua ukurasa huu.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Huna ruhusa ya kutumia siteaccess hii.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Huna ruhusa ya kusoma maudhui ambayo ukurasa huu unaonyesha.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Aina hii ya ukurasa haiwezi kuwekewa alamisho: inashughulikia fomu tu, au ni ukurasa wa muda mfupi tu.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Anwani ya ukurasa huu haipo.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Ukurasa huu hauwezi kufunguliwa sasa.</translation>
     </message>
 </context>
 <context>

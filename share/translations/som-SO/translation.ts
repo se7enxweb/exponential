@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Bogagga nidaamka sidoo kale waa la calaamadeyn karaa: fur bogga (Habeyn, raadraaca hubinta, liiska isticmaalayaasha ...) oo dooro “Calaamadee boggan” oo ka sarreeya. Calaamadahaas waxay leeyihiin astaanta giirka.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Mar dambe uma haysatid ogolaansho aad boggan halkan ku furto. Ka saar calaamadda, ama maamule ka codso gelitaan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56391,6 +56395,42 @@ hawlgeliso akoonkaaga.</translation>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>Calaamadda waxaa loo beddelay “%name”.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Boggan waa laga damiyay gelitaankan goobta (%siteaccess). Calaamadda ka fur gelitaan goob oo boggan leh.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Module-ka boggan halkan laguma rakibin ama lama awood gelin.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Boggan mar dambe ma jiro: module-kiisu ma laha muuqaal sidaas ah.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Doorarkaaga midkoodna kuuma oggola inaad furto boggan.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Ogolaansho uma haysatid inaad isticmaasho gelitaankan goobta.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Ogolaansho uma haysatid inaad akhrido nuxurka boggani muujinayo.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Bog noocan ah lama calaamadayn karo: wuxuu kaliya ka shaqeeyaa foom, ama waa bog hal mar oo keliya ah.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Cinwaanka boggan ma jiro.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Boggan hadda lama furi karo.</translation>
     </message>
 </context>
 <context>

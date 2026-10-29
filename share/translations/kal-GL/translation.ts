@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Systemip quppernerai aamma nalunaaqutanut ilanngunneqarsinnaapput: qupperneq ammaruk (Aaqqissuussineq, misissuinermut malunnaatit, atuisut allattorsimaffiat ...) qulaanilu »Nalunaaqutanut ilaguk« toqqaruk. Nalunaaqutat taamaattut aaqqissuussinermut ikoneqartarput.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Quppernermik uuminnga maani ammaanissamut akuersissuteqarunnaarputit. Nalunaaqutaq piiaruk, imaluunniit aqutsisumut iserfigisinnaanissamik qinnuigit.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56332,6 +56336,42 @@ ilitsersuutit malikkit.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Nalunaaqutap aqqa nutaaq: »%name«.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Qupperneq una nittartakkamut isaariami matumani (%siteaccess) atorunnaarsitaavoq. Nalunaaqutaq nittartakkamut isaariami quppernermik uuminnga pigisalimmi ammaruk.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Quppernerup matuma modulia maani ikkunneqarsimanngilaq imaluunniit atuutilersinneqarsimanngilaq.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Qupperneq una atorunnaarpoq: modulia takutitsinermik taamaattumik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Atuuffitit arlaannaattaluunniit qupperneq una ammarnissaanut akuersissutiginngilaatit.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Nittartakkamut isaariaq una atorsinnaanngilat.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Imarisat qupperneq una takutitaa atuarsinnaanngilatit.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Qupperneq taamaattoq nalunaaqutaliiffigineqarsinnaanngilaq: immersugassiamut kisimi sunniuteqarpoq, imaluunniit qupperneruvoq sivikitsuinnarmut atuuttoq.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Quppernerup matuma najugaa amigaatigineqarpoq.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Qupperneq una maannakkut ammarneqarsinnaanngilaq.</translation>
     </message>
 </context>
 <context>

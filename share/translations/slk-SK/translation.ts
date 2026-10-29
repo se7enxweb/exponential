@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Do záložiek môžete pridať aj systémové stránky: otvorte stránku (Nastavenie, záznam auditu, zoznam používateľov …) a nad ňou vyberte „Pridať stránku do záložiek“. Takéto záložky majú ikonu ozubeného kolieska.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Túto stránku tu už nemôžete otvoriť. Odstráňte záložku alebo požiadajte správcu o prístup.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56332,6 +56336,42 @@ svoje konto.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Záložka bola premenovaná na „%name“.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Táto stránka je v tomto prístupe k lokalite (%siteaccess) vypnutá. Otvorte záložku v prístupe k lokalite, ktorý ju má.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Modul tejto stránky tu nie je nainštalovaný alebo povolený.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Táto stránka už neexistuje: jej modul nemá takéto zobrazenie.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Žiadna z vašich rolí vám neumožňuje otvoriť túto stránku.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Tento prístup k lokalite nemôžete používať.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Obsah, ktorý táto stránka zobrazuje, nemôžete čítať.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Tento druh stránky nemožno pridať medzi záložky: iba spracúva formulár alebo platí len na jeden okamih.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Adresa tejto stránky chýba.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Túto stránku teraz nemožno otvoriť.</translation>
     </message>
 </context>
 <context>

@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Rûpelên pergalê jî dikarin li nîşankeran werin zêdekirin: rûpelê vekin (Sazkirin, şopa kontrolê, lîsteyeke bikarhêneran ...) û li jorê wê &quot;Rûpelê li nîşankeran zêde kirin&quot; hilbijêrin. Nîşankerên weha îkoneke çerxa diranan hene.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Hûn êdî nikarin vê rûpelê li vir vekin. Nîşankerê rakin, an jî ji rêveberekî gihîştinê bixwazin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56391,6 +56395,42 @@ bişopînin.</translation>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>Navê nîşankerê bû &quot;%name&quot;.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Ev rûpel di vê gihîştina malperê de (%siteaccess) hatiye girtin. Nîşankerê di gihîştineke malperê de vekin ku ev rûpel tê de heye.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Modula vê rûpelê li vir nehatiye sazkirin an jî ne çalak e.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Ev rûpel êdî tune ye: di modula wê de dîtineke wiha tune ye.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Ti rolên we destûrê nadin ku hûn vê rûpelê vekin.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Hûn nikarin vê gihîştina malperê bi kar bînin.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Hûn nikarin naveroka ku ev rûpel nîşan dide bixwînin.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Ev cure rûpel nikare li nîşankeran were zêdekirin: ew tenê li ser formekê kar dike, an jî rûpeleke yek kêliyê ye.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Navnîşana vê rûpelê tune ye.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Ev rûpel niha nayê vekirin.</translation>
     </message>
 </context>
 <context>

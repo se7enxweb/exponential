@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>सिस्टम पन्ना के भी बुकमार्क कइल जा सकेला: पन्ना खोलीं (सेटअप, ऑडिट ट्रेल, उपयोगकर्ता के सूची ...) आ ओकरा ऊपर "एह पन्ना के बुकमार्क करीं" चुनीं। अइसन बुकमार्क पर गियर आइकन रहेला।</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>अब रउआ एह पन्ना के इहाँ ना खोल सकत बानी। बुकमार्क हटाईं, भा कवनो प्रशासक से पहुँच माँगीं।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>बुकमार्क के नाँव बदल के "%name" कर दिहल गइल।</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>एह साइट एक्सेस (%siteaccess) में ई पन्ना बंद बा। बुकमार्क के ओह साइट एक्सेस में खोलीं जवना में ई पन्ना होखे।</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>एह पन्ना के मॉड्यूल इहाँ इंस्टॉल नइखे भा चालू नइखे।</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ई पन्ना अब नइखे: एकरा मॉड्यूल में अइसन कवनो दृश्य नइखे।</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>रउआ कवनो भूमिका रउआ के एह पन्ना के खोले के अनुमति ना देला।</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>रउआ एह साइट एक्सेस के इस्तेमाल ना कर सकत बानी।</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>एह पन्ना पर देखावल सामग्री रउआ ना पढ़ सकत बानी।</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>अइसन पन्ना के बुकमार्क ना कइल जा सकेला: ई खाली कवनो फॉर्म पर काम करेला, भा ई एक पल के पन्ना हवे।</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>एह पन्ना के पता नइखे।</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ई पन्ना अबहीं ना खोलल जा सकेला।</translation>
     </message>
 </context>
 <context>

@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>システムページもブックマークできます。ページ（システム設定、監査証跡、ユーザーの一覧 ...）を開き、その上にある「このページをブックマーク」を選択してください。このようなブックマークには歯車アイコンが表示されます。</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ここでこのページを開く権限がなくなりました。ブックマークを削除するか、管理者にアクセス権を依頼してください。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56332,6 +56336,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>ブックマークの名前が「%name」に変更されました。</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>このページはこのサイトアクセス（%siteaccess）では無効になっています。このページがあるサイトアクセスでブックマークを開いてください。</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>このページのモジュールは、ここではインストールされていないか、有効になっていません。</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>このページはもう存在しません。このページのモジュールにはそのようなビューがありません。</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>このページを開くことを許可するロールがありません。</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>このサイトアクセスを使用する権限がありません。</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>このページに表示されるコンテンツを読む権限がありません。</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>この種類のページはブックマークできません。フォームに対して動作するだけのページか、一時的なページです。</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>このページのアドレスがありません。</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>このページは現在開けません。</translation>
     </message>
 </context>
 <context>

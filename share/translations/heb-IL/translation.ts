@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>ניתן להוסיף לסימניות גם עמודי מערכת: יש לפתוח את העמוד (הגדרות, יומן הביקורת, רשימת משתמשים ...) ולבחור מעליו "הוספת העמוד לסימניות". לסימניות כאלה יש סמל של גלגל שיניים.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>אין עוד הרשאה לפתוח כאן עמוד זה. יש להסיר את הסימנייה או לבקש גישה ממנהל מערכת.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56334,6 +56338,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>שם הסימנייה שונה ל־"%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>עמוד זה מושבת בגישת אתר זו (%siteaccess). יש לפתוח את הסימנייה בגישת אתר שבה העמוד זמין.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>המודול של עמוד זה אינו מותקן או אינו מופעל כאן.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>עמוד זה כבר אינו קיים: למודול שלו אין תצוגה כזו.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>אף אחד מהתפקידים שלך אינו מתיר לפתוח עמוד זה.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>אין לך הרשאה להשתמש בגישת אתר זו.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>אין לך הרשאה לקרוא את התוכן שעמוד זה מציג.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>לא ניתן להוסיף עמוד מסוג זה לסימניות: הוא פועל רק על טופס, או שהוא עמוד של רגע אחד.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>כתובת העמוד חסרה.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>לא ניתן לפתוח עמוד זה כעת.</translation>
     </message>
 </context>
 <context>

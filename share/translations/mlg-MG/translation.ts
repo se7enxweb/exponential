@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Azo asiana marika koa ny pejy rafitra: sokafy ilay pejy (Fametrahana, ny fanarahan-dalana, lisitry ny mpampiasa ...) ary safidio ny Ampio marika ity pejy ity eo ambonin'izy io. Misy sarin'ny kodiarana nify ireo marika ireo.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Tsy afaka manokatra ity pejy ity eto intsony ianao. Esory ny marika, na angataho amin'ny mpitantana ny alalana hiditra.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ mba hampandehanana ny kaontinao.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Novana "%name" ny anaran'ny marika.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Novonoina ity pejy ity amin'ity fidirana amin'ny tranonkala ity (%siteaccess). Sokafy ny marika amin'ny fidirana amin'ny tranonkala izay manana azy.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Tsy napetraka na tsy alefa eto ny môdilin'ity pejy ity.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Tsy misy intsony ity pejy ity: tsy manana fijery toy izany ny môdiliny.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Tsy misy amin'ireo anjara asanao mamela anao hanokatra ity pejy ity.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Tsy manana alalana hampiasa ity fidirana amin'ny tranonkala ity ianao.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Tsy manana alalana hamaky ny votoaty asehon'ity pejy ity ianao.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Tsy azo asiana marika ity karazana pejy ity: miasa amin'ny taratasy fenoina fotsiny izy, na pejy vetivety.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Tsy misy ny adiresin'ity pejy ity.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Tsy azo sokafana izao ity pejy ity.</translation>
     </message>
 </context>
 <context>

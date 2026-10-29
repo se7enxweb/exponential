@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Maaari ring i-bookmark ang mga pahina ng system: buksan ang pahina (Setup, ang audit trail, listahan ng mga user ...) at piliin ang I-bookmark ang pahinang ito sa itaas nito. May icon na gear ang mga ganoong bookmark.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Hindi mo na maaaring buksan dito ang pahinang ito. Alisin ang bookmark, o humingi ng access sa administrator.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ ang iyong account.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Pinalitan ng pangalan ang bookmark bilang "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Naka-disable ang pahinang ito sa siteaccess na ito (%siteaccess). Buksan ang bookmark sa siteaccess na mayroon nito.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Hindi naka-install o hindi naka-enable dito ang module ng pahinang ito.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Wala na ang pahinang ito: walang ganitong view ang module nito.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Wala sa iyong mga tungkulin ang nagpapahintulot sa iyong buksan ang pahinang ito.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Hindi mo maaaring gamitin ang siteaccess na ito.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Hindi mo maaaring basahin ang nilalamang ipinapakita ng pahinang ito.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Hindi maaaring i-bookmark ang ganitong uri ng pahina: kumikilos lamang ito sa isang form, o pahina ito ng isang sandali lamang.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Nawawala ang address ng pahinang ito.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Hindi mabubuksan ang pahinang ito ngayon.</translation>
     </message>
 </context>
 <context>

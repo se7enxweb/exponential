@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Ulgam sahypalaryny hem bellige alyp bolýar: sahypany açyň (Sazlama, audit žurnaly, ulanyjylaryň sanawy ...) we onuň ýokarsyndaky «Bu sahypany bellige al» saýlawyny saýlaň. Şeýle bellikleriň dişli nyşany bar.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Bu sahypany mundan beýläk şu ýerde açmaga rugsadyňyz ýok. Belligi aýyryň ýa-da administratordan giriş rugsadyny soraň.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ bu ýalňyşlyk barada habar beriň. Tölegi gaýtadan ibermäge synanyşmaň.</
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Belligiň ady «%name» diýip üýtgedildi.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Bu sahypa şu saýta giriş nokadynda (%siteaccess) öçürilen. Belligi bu sahypa bar bolan saýta giriş nokadynda açyň.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Bu sahypanyň moduly bu ýerde gurnalmadyk ýa-da işjeňleşdirilmedik.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Bu sahypa indi ýok: onuň modulynda beýle görnüş ýok.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Rollaryňyzyň hiç biri size bu sahypany açmaga rugsat bermeýär.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Siziň bu saýta giriş nokadyny ulanmaga rugsadyňyz ýok.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Siziň bu sahypanyň görkezýän mazmunyny okamaga rugsadyňyz ýok.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Bu görnüşdäki sahypany bellige goşup bolmaýar: ol diňe bir forma bilen işleýär ýa-da diňe bir pursatlyk sahypadyr.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Bu sahypanyň salgysy ýok.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Bu sahypany häzir açyp bolmaýar.</translation>
     </message>
 </context>
 <context>

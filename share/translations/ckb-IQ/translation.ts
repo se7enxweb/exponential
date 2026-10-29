@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>پەڕەکانی سیستەمیش دەکرێت نیشانە بکرێن: پەڕەکە بکەرەوە (دامەزراندن، تۆماری چاودێری، لیستی بەکارهێنەران ...) و لە سەرووییەوە "نیشانەکردنی ئەم پەڕەیە" هەڵبژێرە. ئەم جۆرە نیشانانە ئایکۆنی چەرخی ددانەیان هەیە.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>چیتر ناتوانن لێرە ئەم پەڕەیە بکەنەوە. نیشانەکە لابەرن، یان لە بەڕێوەبەرێک داوای دەستگەیشتن بکەن.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>ناوی نیشانەکە گۆڕدرا بۆ "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ئەم پەڕەیە لەم دەستگەیشتنی ماڵپەڕەدا (%siteaccess) ناچالاککراوە. نیشانەکە لە دەستگەیشتنێکی ماڵپەڕدا بکەنەوە کە ئەم پەڕەیەی تێدایە.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>مۆدیولی ئەم پەڕەیە لێرە دانەمەزراوە یان چالاک نەکراوە.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ئەم پەڕەیە چیتر بوونی نییە: مۆدیولەکەی پیشاندانێکی وای نییە.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>هیچ کام لە ڕۆڵەکانتان ڕێگەتان پێ نادات ئەم پەڕەیە بکەنەوە.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ناتوانن ئەم دەستگەیشتنی ماڵپەڕە بەکاربهێنن.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ناتوانن ئەو ناوەڕۆکە بخوێننەوە کە ئەم پەڕەیە پیشانی دەدات.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ئەم جۆرە پەڕەیە ناتوانرێت نیشانە بکرێت: تەنها کار لەسەر فۆرمێک دەکات، یان پەڕەی یەک ساتە.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ناونیشانی ئەم پەڕەیە نییە.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ئێستا ناتوانرێت ئەم پەڕەیە بکرێتەوە.</translation>
     </message>
 </context>
 <context>

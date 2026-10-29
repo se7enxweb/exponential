@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>ܐܦ ܦܐܬ̈ܐ ܕܣܝܣܛܡܐ ܡܨܝܢ ܕܗܘܝܢ ܓܘ ܢܝ̈ܫܢܐ: ܦܬܘܚܘܢ ܦܐܬܐ (ܛܘܝܒܐ، ܥܩܒܐ ܕܒܘܩܝܐ، ܪܫܝܡܬܐ ܕܡܦܠ̈ܚܢܐ ...) ܘܓܒܘܢ «ܢܝܫܢܐ ܠܗܕܐ ܦܐܬܐ» ܠܥܠ ܡܢܗ. ܐܝܟ ܗܠܝܢ ܢܝ̈ܫܢܐ ܐܝܬ ܠܗܘܢ ܨܘܪܬܐ ܕܓܝܓܠܐ.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ܠܝܬ ܠܘܟܘܢ ܬܘܒ ܐܦܣܢܘܬܐ ܠܦܬܚܐ ܕܗܕܐ ܦܐܬܐ ܗܪܟܐ. ܫܩܘܠܘܢ ܢܝܫܢܐ، ܐܘ ܒܥܘܢ ܡܥܠܢܐ ܡܢ ܡܕܒܪܢܐ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>ܫܡܐ ܕܢܝܫܢܐ ܐܫܬܚܠܦ ܠ «%name».</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ܗܕܐ ܦܐܬܐ ܒܛܝܠܬܐ ܝܠܗ ܓܘ ܗܢܐ ܡܥܠܢܐ ܕܐܬܪܐ (%siteaccess). ܦܬܘܚܘܢ ܢܝܫܢܐ ܓܘ ܡܥܠܢܐ ܕܐܬܪܐ ܕܐܝܬ ܠܗ ܗܕܐ ܦܐܬܐ.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ܡܘܕܘܠ ܕܗܕܐ ܦܐܬܐ ܠܐ ܝܠܗ ܡܬܩܢܐ ܐܘ ܡܦܥܠܐ ܗܪܟܐ.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ܗܕܐ ܦܐܬܐ ܠܐ ܐܝܬܝܗ ܬܘܒ: ܠܡܘܕܘܠ ܕܝܠܗ ܠܝܬ ܚܙܝܐ ܗܕܟܐ.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ܠܐ ܚܕ ܡܢ ܕܘܪ̈ܐ ܕܝܠܘܟܘܢ ܝܗܒ ܠܘܟܘܢ ܐܦܣܢܘܬܐ ܠܦܬܚܐ ܕܗܕܐ ܦܐܬܐ.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ܠܝܬ ܠܘܟܘܢ ܐܦܣܢܘܬܐ ܠܦܠܚܢܐ ܕܗܢܐ ܡܥܠܢܐ ܕܐܬܪܐ.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ܠܝܬ ܠܘܟܘܢ ܐܦܣܢܘܬܐ ܠܩܪܝܢܐ ܕܡܠܝܘܬܐ ܕܗܕܐ ܦܐܬܐ ܡܚܘܝܐ.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ܗܢܐ ܙܢܐ ܕܦܐܬܐ ܠܐ ܡܨܝܐ ܕܡܬܪܫܡܐ ܒܢܝܫܢܐ: ܦܠܚܐ ܠܚܘܕ ܥܠ ܛܘܦܣܐ، ܐܘ ܦܐܬܐ ܕܚܕ ܪܦܦܐ ܝܠܗ.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ܡܘܢܥܐ ܕܗܕܐ ܦܐܬܐ ܚܣܝܪܐ ܝܠܗ.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ܗܕܐ ܦܐܬܐ ܠܐ ܡܨܝܐ ܕܡܬܦܬܚܐ ܗܫܐ.</translation>
     </message>
 </context>
 <context>

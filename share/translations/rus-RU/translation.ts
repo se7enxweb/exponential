@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Системные страницы тоже можно добавлять в закладки: откройте страницу (Настройка, журнал аудита, список пользователей ...) и выберите над ней «Добавить страницу в закладки». У таких закладок значок шестеренки.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Вы больше не можете открывать эту страницу здесь. Удалите закладку или попросите администратора предоставить доступ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56332,6 +56336,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Закладка переименована в «%name».</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Эта страница отключена в этом доступе к сайту (%siteaccess). Откройте закладку в доступе к сайту, в котором она есть.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Модуль этой страницы здесь не установлен или не включен.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Эта страница больше не существует: в ее модуле нет такого представления.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Ни одна из ваших ролей не позволяет открыть эту страницу.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Вам не разрешено использовать этот доступ к сайту.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Вам не разрешено читать содержимое, которое показывает эта страница.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Страницу такого типа нельзя добавить в закладки: она только обрабатывает форму или действительна лишь в один момент.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Адрес этой страницы отсутствует.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Сейчас эту страницу нельзя открыть.</translation>
     </message>
 </context>
 <context>

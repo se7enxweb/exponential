@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Woate ŋu awɔ dzesiɖoƒe na sistɛm ƒe axawo hã: ʋu axa la (Ɖoɖowɔwɔ, dzodzro ŋutinya, zãlawo ƒe lisiti ...) eye nàtia «Wɔ dzesiɖoƒe na axa sia» le eŋgɔ. Dzesiɖoƒe siawo si dzesi si nye kpe ƒe ɖɔlinu le.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Mɔɖeɖe megali asiwò be yeaʋu axa sia le afi sia o. Ɖe dzesiɖoƒe la ɖa, alo bia dziɖula be wòaɖe mɔ na wò.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ Taflatse, megada asi ɖe ga ɖoɖo ƒe ɖoɖo ɖa ake o.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Wotrɔ dzesiɖoƒe la ƒe ŋkɔ be "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Wotɔ te axa sia le nyatakakaɖoƒe ƒe mɔnu sia (%siteaccess) me. Ʋu dzesiɖoƒe la le nyatakakaɖoƒe ƒe mɔnu si me axa la le la me.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Womeɖo axa sia ƒe mɔdul la ɖi o, alo womena wòawɔ dɔ le afi sia o.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Axa sia megali o: kpɔƒe sia tɔgbe meli le eƒe mɔdul la me o.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Wò dɔdeasiwo dometɔ aɖeke meɖe mɔ na wò be nàʋu axa sia o.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Mɔ meli na wò be nàzã nyatakakaɖoƒe ƒe mɔnu sia o.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Mɔ meli na wò be nàxlẽ emenu siwo axa sia ɖena fiana o.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Womate ŋu awɔ dzesiɖoƒe na axa sia tɔgbi o: ewɔa dɔ ɖe agbalẽvi aɖe ŋu ko, alo enye axa si li na ɣeyiɣi kpui aɖe ko.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Axa sia ƒe adrɛs mele o.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Womate ŋu aʋu axa sia fifia o.</translation>
     </message>
 </context>
 <context>

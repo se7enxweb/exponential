@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Sistem səhifələrini də əlfəcinlərə əlavə etmək olar: səhifəni açın (Quraşdırma, audit izi, istifadəçi siyahısı ...) və onun üstündəki "Bu səhifəni əlfəcinlərə əlavə et" seçimini seçin. Belə əlfəcinlərdə dişli çarx nişanı olur.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Artıq bu səhifəni burada aça bilməzsiniz. Əlfəcini çıxarın və ya administratordan giriş istəyin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ həmin məktubdakı göstərişlərə əməl edin.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Əlfəcinin adı "%name" olaraq dəyişdirildi.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Bu səhifə bu sayt girişində (%siteaccess) söndürülüb. Əlfəcini bu səhifənin olduğu sayt girişində açın.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Bu səhifənin modulu burada quraşdırılmayıb və ya aktivləşdirilməyib.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Bu səhifə artıq mövcud deyil: onun modulunda belə görünüş yoxdur.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Rollarınızdan heç biri bu səhifəni açmağa icazə vermir.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Bu sayt girişindən istifadə edə bilməzsiniz.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Bu səhifənin göstərdiyi məzmunu oxuya bilməzsiniz.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Bu növ səhifəni əlfəcinlərə əlavə etmək olmaz: o, yalnız forma üzərində işləyir və ya bir anlıq səhifədir.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Bu səhifənin ünvanı çatışmır.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Bu səhifəni indi açmaq olmur.</translation>
     </message>
 </context>
 <context>

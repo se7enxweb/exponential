@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Também é possível adicionar páginas do sistema aos marcadores: abra a página (Configuração, o registo de auditoria, uma lista de utilizadores ...) e escolha «Adicionar página aos marcadores» acima dela. Esses marcadores têm um ícone de roda dentada.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Já não é possível abrir esta página aqui. Remova o marcador ou peça acesso a um administrador.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56332,6 +56336,42 @@ a conta.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>O nome do marcador foi alterado para «%name».</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Esta página está desativada neste acesso ao site (%siteaccess). Abra o marcador num acesso ao site que a tenha.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>O módulo desta página não está instalado ou não está ativado aqui.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Esta página já não existe: o respetivo módulo não tem essa vista.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Nenhuma das suas funções permite abrir esta página.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Não tem permissão para utilizar este acesso ao site.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Não tem permissão para ler o conteúdo que esta página mostra.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Este tipo de página não pode ser adicionado aos marcadores: apenas atua sobre um formulário ou é uma página momentânea.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Falta o endereço desta página.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Esta página não pode ser aberta agora.</translation>
     </message>
 </context>
 <context>

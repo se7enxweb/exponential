@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Mapeji esisitimu anogona kuiswawo mumabhukumaki: vhurai peji (Gadziriro, rekodhi yeongororo, rondedzero yevashandisi ...) mosarudza Isa peji iri mumabhukumaki pamusoro payo. Mabhukumaki akadaro ane mufananidzo wegiya.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Hamuchabvumidzwi kuvhura peji iri pano. Bvisai bhukumaki, kana kuti kumbirai mvumo kuna maneja.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ akaundi yenyu.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Bhukumaki yakatumidzwa zita idzva rinonzi “%name”.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Peji iri rakadzimwa munzira yekupinda pasaiti iyi (%siteaccess). Vhurai bhukumaki munzira yekupinda pasaiti ine peji iri.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Modhiyuru yepeji iri haina kuiswa kana kubatidzwa pano.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Peji iri harichisipo: modhiyuru yaro haina maonero akadaro.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Hapana chinzvimbo chenyu chinokubvumidzai kuvhura peji iri.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Hamubvumidzwi kushandisa nzira yekupinda pasaiti iyi.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Hamubvumidzwi kuverenga zvirimo zvinoratidzwa nepeji iri.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Peji rerudzi urwu harigoni kuiswa bhukumaki: rinongoshanda pafomu chete, kana kuti ipeji rinoshanda kwechinguva chidiki chete.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Kero yepeji iri haipo.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Peji iri harigoni kuvhurwa izvozvi.</translation>
     </message>
 </context>
 <context>

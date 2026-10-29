@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Grāmatzīmēm var pievienot arī sistēmas lapas: atveriet lapu (Iestatīšana, audita žurnāls, lietotāju saraksts ...) un virs tās izvēlieties „Pievienot lapu grāmatzīmēm“. Šādām grāmatzīmēm ir zobrata ikona.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Jūs šeit vairs nedrīkstat atvērt šo lapu. Noņemiet grāmatzīmi vai lūdziet administratoram piekļuvi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56332,6 +56336,42 @@ tajā sniegtos norādījumus.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Grāmatzīme ir pārdēvēta par „%name“.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Šī lapa ir izslēgta šajā vietnes piekļuvē (%siteaccess). Atveriet grāmatzīmi vietnes piekļuvē, kurā šī lapa ir.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Šīs lapas modulis šeit nav instalēts vai nav iespējots.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Šī lapa vairs nepastāv: tās modulim nav šāda skata.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Neviena no jūsu lomām neļauj jums atvērt šo lapu.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Jūs nedrīkstat izmantot šo vietnes piekļuvi.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Jūs nedrīkstat lasīt saturu, ko rāda šī lapa.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Šāda veida lapai nevar pievienot grāmatzīmi: tā tikai apstrādā veidlapu vai ir vienreizēja lapa.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Šīs lapas adreses nav.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Šo lapu pašlaik nevar atvērt.</translation>
     </message>
 </context>
 <context>

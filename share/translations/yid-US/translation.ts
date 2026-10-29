@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>מען קען אויך צוגעבן סיסטעם־בלעטער צו די בוכצייכנס: עפֿנט דעם בלאַט (אייַנריכטונג, דער קאָנטראָל־זשורנאַל, אַ רשימה פֿון באַניצער ...) און קלייַבט אויס „צוגעבן דעם בלאַט צו בוכצייכנס“ אויבן. אַזעלכע בוכצייכנס האָבן אַ רעדל־בילדל.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>איר מעגט מער ניט עפֿענען דעם בלאַט דאָ. נעמט אַוועק דעם בוכצייכן, אָדער בעט אַן אַדמיניסטראַטאָר וועגן צוטריט.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>דער בוכצייכן איז איבערגערופֿן געוואָרן „%name“.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>דער בלאַט איז דעאַקטיווירט אין דעם וועבזייַטל־צוטריט (%siteaccess). עפֿנט דעם בוכצייכן אין אַ וועבזייַטל־צוטריט וואָס האָט אים.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>דער מאָדול פֿון דעם בלאַט איז דאָ ניט אינסטאַלירט אָדער ניט אַקטיווירט.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>דער בלאַט עקזיסטירט מער ניט: זייַן מאָדול האָט ניט אַזאַ אָנבליק.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>קיין איינע פֿון אייַערע ראָלעס דערלויבט אייַך ניט צו עפֿענען דעם בלאַט.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>איר מעגט ניט ניצן דעם וועבזייַטל־צוטריט.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>איר מעגט ניט לייענען דעם אינהאַלט וואָס דער בלאַט ווייַזט.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>אַזאַ מין בלאַט קען מען ניט צולייגן צו די בוכצייכנס: ער אַרבעט נאָר אויף אַ פֿאָרמולאַר, אָדער איז אַ בלאַט פֿון איין מאָמענט.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>דער אַדרעס פֿון דעם בלאַט פֿעלט.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>מען קען איצט ניט עפֿענען דעם בלאַט.</translation>
     </message>
 </context>
 <context>

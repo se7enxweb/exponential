@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Kaca sistem ogé tiasa dimarkahan: buka kacana (Panyetélan, jejak audit, daptar pamaké ...) lajeng pilih Markahan kaca ieu di luhurna. Markah sapertos kitu miboga ikon roda gigi.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Anjeun teu gaduh idin deui pikeun muka kaca ieu di dieu. Hapus markahna, atanapi pénta aksés ka pangurus.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56393,6 +56397,42 @@ akun anjeun.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Markah dirobih ngaranna jadi "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Kaca ieu dipareuman dina aksés situs ieu (%siteaccess). Buka markahna dina aksés situs anu gaduh kaca ieu.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Modul kaca ieu teu acan dipasang atanapi teu aktip di dieu.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Kaca ieu tos teu aya: modulna teu gaduh tampilan sapertos kitu.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Teu aya peran anjeun anu ngidinan anjeun muka kaca ieu.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Anjeun teu gaduh idin pikeun ngagunakeun aksés situs ieu.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Anjeun teu gaduh idin pikeun maca eusi anu dipidangkeun ku kaca ieu.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Kaca jinis ieu teu tiasa dimarkahan: kaca ieu ngan ukur ngolah formulir, atanapi mangrupa kaca sakedapan.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Alamat kaca ieu teu aya.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Kaca ieu teu tiasa dibuka ayeuna.</translation>
     </message>
 </context>
 <context>
