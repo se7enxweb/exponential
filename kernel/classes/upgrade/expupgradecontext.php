@@ -79,6 +79,17 @@ class expUpgradeContext
     }
 
     /**
+     * Sets an option for the steps that follow (expUpgrade sets finish-needed before the finish stage).
+     *
+     * @param string $name
+     * @param mixed $value
+     */
+    public function setOption( $name, $value )
+    {
+        $this->options[$name] = $value;
+    }
+
+    /**
      * The kernel schema, read once.
      *
      * @return array name => definition

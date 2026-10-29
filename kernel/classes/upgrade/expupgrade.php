@@ -267,6 +267,11 @@ class expUpgrade
             $outcome = array();
             foreach ( $stages as $stageName )
             {
+                // the finish stage has work when this run changed something (a dry run: would change something), or
+                // when it is run on its own
+                if ( $stageName === 'finish' )
+                    $context->setOption( 'finish-needed', $mode !== 'status' && ( $stages === array( 'finish' )
+                                                          || ( $apply ? $report['summary']['applied'] > 0 : $report['summary']['pending'] + $report['summary']['failed'] > 0 ) ) );
                 $stageReport = array( 'stage' => $stageName, 'state' => 'done', 'pending' => 0, 'steps' => array() );
                 foreach ( $registry->stageSteps( array( $stageName ) ) as $step )
                 {

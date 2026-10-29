@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 6b46d9fc07327c0fe9cb81e5b1e79674  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-1982b7b4652f4ba9273abf54e41db813  autoload/ezp_kernel.php
+0726bbce515578ff12814f614f5ec89d  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -151,6 +151,7 @@ d030d05ebafed911ddf792cf4ffce3fa  bin/php/updateniceurls.php
 1fc5a41753c936b4fdf1847dd6d717ca  bin/php/upgrade.php
 ca849e4f31d7b54f236cdad690ad255b  bin/php/upgradebackup.php
 62f9309218c21b735feda4df645a1d24  bin/php/upgradedatabase.php
+cc299df4a4a1c8b5993653e497f18744  bin/php/upgradefinish.php
 dfbc700eb61a2eb499cc99891557bd1f  bin/php/upgradescripts.php
 f50179047bc0dcfdc125151c687da2ea  bin/php/upgradestatus.php
 2a30a44e014b2c7f107086c6240ef0d0  bin/php/upgradesteps.php
@@ -23241,11 +23242,12 @@ cd54fa40fed2f285f3992b4a8a4634aa  kernel/classes/uiswitch/expuiswitchdesignprovi
 be939cdaec3f7a64802683939dcd7c6b  kernel/classes/uiswitch/expuiswitchlanguageprovider.php
 f3e123acabebb7cd6c72627fc0419402  kernel/classes/uiswitch/expuiswitchprovider.php
 20500f7b2073d61636cb8c7261e58578  kernel/classes/uiswitch/expuiswitchproviderinterface.php
-25e86d24d043ffa313ae9a4347580ee5  kernel/classes/upgrade/expupgrade.php
+c47786573266b636c1aaa48a1980094f  kernel/classes/upgrade/expupgrade.php
 2b50726c25b9badf00550ddd5e440f10  kernel/classes/upgrade/expupgradebackup.php
 7365f7d70bbae065277b50eae8aca98c  kernel/classes/upgrade/expupgradebasestep.php
 188b078dd585d46ae133c084873215a6  kernel/classes/upgrade/expupgradecatalog.php
-4d3892f3accb1fcc138e9293996c0d41  kernel/classes/upgrade/expupgradecontext.php
+6ad2eba18ba36ca69b0354b6fb392e27  kernel/classes/upgrade/expupgradecontext.php
+7223215ce1c13ac84653b6a588e62457  kernel/classes/upgrade/expupgradefinishstep.php
 8a11c442b72c54638b43c1035a8b987b  kernel/classes/upgrade/expupgradelock.php
 cfa92316d2c1d9a0f636c818ae62052f  kernel/classes/upgrade/expupgraderecord.php
 e93a0726df4720602b49a87cdb2d98ab  kernel/classes/upgrade/expupgraderegistry.php
@@ -23260,6 +23262,8 @@ ba8de1be0f105fb678630f8fd1736edd  kernel/classes/upgrade/steps/expupgradestepaud
 ab42951d8dfda9ca9d00783901f3ee4c  kernel/classes/upgrade/steps/expupgradestepbookmarkviewtable.php
 2a6bcdce9be1233603fc504656f73b75  kernel/classes/upgrade/steps/expupgradestepdatatabletables.php
 4ba029ea2c49f7789d207e06463dcc43  kernel/classes/upgrade/steps/expupgradestepeditorpolicies.php
+c0e6171dd63161a8c9f401106afdfd04  kernel/classes/upgrade/steps/expupgradestepfinishdeploy.php
+32d5ab759aa7b06984bfd88d1438b572  kernel/classes/upgrade/steps/expupgradestepfinishsmoke.php
 573650cdebd7d101617d1a5fdb7cecaa  kernel/classes/upgrade/steps/expupgradestephelpcontenttables.php
 01c688e4b3233c450661ddf7883da38a  kernel/classes/upgrade/steps/expupgradestephelpreadpolicy.php
 2602bc1b1d54f8dd8a1e7264446b9ac7  kernel/classes/upgrade/steps/expupgradestepmailpreferencetables.php
@@ -23633,8 +23637,9 @@ fb5e9a16c6103e4cc55d5376f4d6fac1  kernel/private/classes/commands/syscard.php
 bb15b3247ce0fdc1054094583bb9fdfa  kernel/private/classes/commands/updatesearchindex.php
 c64a48053d6dad80b89eef46f2a3fe7c  kernel/private/classes/commands/upgrade.php
 a6e6094c1173343e924cd36da8a28d02  kernel/private/classes/commands/upgradebackup.php
-03ac85264d793414929010e5da030b14  kernel/private/classes/commands/upgradebase.php
+9bb06785dbc431f8247ca267c4244d50  kernel/private/classes/commands/upgradebase.php
 b4eb79b4c9adfbd93f54644936790613  kernel/private/classes/commands/upgradedatabase.php
+50bd4124dd615e1340c103088c74e997  kernel/private/classes/commands/upgradefinish.php
 b379963d5d5bd735f7bdfe0479e2b27a  kernel/private/classes/commands/upgradescripts.php
 57bde18621cd3b248a2f1d75c11b02db  kernel/private/classes/commands/upgradestatus.php
 f5812b143b4d575520d2a852c9e4f786  kernel/private/classes/commands/upgradesteps.php
@@ -24740,7 +24745,7 @@ af0b62d748bba41c371d96991d3aea96  settings/transfer.ini
 45add5bfcd26422edd3d6525dc832767  settings/transform.ini
 074de6a07b41cfcc25307f4e9156daa6  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
-453946bb421a05c292e1668aac92f91f  settings/upgrade.ini
+2dc2054bb1002618e21f37f24b61b7a0  settings/upgrade.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
 c9367f1773b93f33e799247c43697cdc  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
@@ -26948,7 +26953,7 @@ c019cebab4555dd22110b0984146e8c2  tests/tests/kernel/classes/uiswitch/expUISwitc
 68e7667ba121abeb9d36fd8d734c3249  tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php
 f1df3a6b0e8d4e048219c7ebb80ceaaf  tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php
 cec5fbb54ca85b64799fb51a87f5d380  tests/tests/kernel/classes/updatesql/UpdateSqlStorageEngineTest.php
-b416b863a80a7af0704b32fcb7df5a8c  tests/tests/kernel/classes/upgrade/expUpgradeCommandContractTest.php
+8663af176dd3b22a0616f905d22ee88d  tests/tests/kernel/classes/upgrade/expUpgradeCommandContractTest.php
 67ef59181f65e0514360390b03440c6a  tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php
 6fe8e87b68838aff774d60ef6241d38f  tests/tests/kernel/classes/urlalias/eZURLAliasMLHistoryLiveTest.php
 c18a432021e5a648ddcaaffb8177b9bb  tests/tests/kernel/classes/urlalias/eZURLAliasMLMongoStorePathTest.php

@@ -26,10 +26,12 @@ class expUpgradeCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:upgrade:scripts' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending]',
         'exp:upgrade:verify' => '[stages:][format:]',
         'exp:upgrade:backup' => '[backup-dir:][format:]',
+        'exp:upgrade:finish' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][no-deploy][url:*]',
     );
 
     /** command => entry point in bin/php */
     const ENTRY = array(
+        'exp:upgrade:finish' => 'upgradefinish',
         'exp:upgrade' => 'upgrade',
         'exp:upgrade:status' => 'upgradestatus',
         'exp:upgrade:steps' => 'upgradesteps',

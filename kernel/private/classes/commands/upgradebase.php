@@ -31,11 +31,12 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
     public static function contract()
     {
         return array(
-            'exp:upgrade' => '[stages:]' . self::RUN_OPTIONS,
+            'exp:upgrade' => '[stages:]' . self::RUN_OPTIONS . '[no-deploy][url:*]',
             'exp:upgrade:status' => '[stages:][only:*][format:][fail-on-pending]',
             'exp:upgrade:steps' => '[stage:][engine:][format:]',
             'exp:upgrade:database' => self::RUN_OPTIONS,
             'exp:upgrade:scripts' => self::RUN_OPTIONS,
+            'exp:upgrade:finish' => self::RUN_OPTIONS . '[no-deploy][url:*]',
             'exp:upgrade:verify' => '[stages:][format:]',
             'exp:upgrade:backup' => '[backup-dir:][format:]',
         );
@@ -57,6 +58,8 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
             'force-order' => 'Run a stage although an earlier stage has pending steps',
             'fail-on-pending' => 'Exit 1 when steps are still pending (for CI)',
             'engine' => 'Only the steps for this engine: mysql, postgresql, sqlite, oracle, mongodb',
+            'no-deploy' => 'Finish without exp:velocity deploy: extension autoloads and the INI, template and content caches only',
+            'url' => 'The addresses the smoke check requests after the deploy (a comma list or repeated); default the front page of SiteURL',
         );
     }
 
@@ -140,6 +143,8 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
             'backup-dir' => !empty( $options['backup-dir'] ) ? (string)$options['backup-dir'] : null,
             'force-order' => !empty( $options['force-order'] ),
             'fail-on-pending' => !empty( $options['fail-on-pending'] ),
+            'no-deploy' => !empty( $options['no-deploy'] ),
+            'url' => isset( $options['url'] ) ? \expUpgrade::listOption( $options['url'] ) : array(),
             'command' => $this->name(),
             'progress' => function ( $line ) use ( $cli, $quiet ) {
                 if ( !$quiet )
