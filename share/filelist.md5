@@ -357,7 +357,7 @@ b85be7774f406553186dbc720d2914a9  design/admin/override/templates/embed_image.tp
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-4552e058ec4059e2269e64366707aca4  design/admin/stylesheets/components.css
+fb8ebabbddffcc8ad323225476efb7c8  design/admin/stylesheets/components.css
 74c4546c22cf2c24230dfa64314f4740  design/admin/stylesheets/content.css
 57a6c6137002ae3eeaf1e05958ecb19a  design/admin/stylesheets/core.css
 e4286f3980c415c880cdb413793a0eea  design/admin/stylesheets/ezinfo.css
@@ -1117,9 +1117,9 @@ b85be7774f406553186dbc720d2914a9  design/admin4/override/templates/embed_image.t
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-b59bf8da3c6d75df7106061c8ebc2f43  design/admin4/stylesheets/admin4.css
+ece53eaf55647d66edc03aff9866c96b  design/admin4/stylesheets/admin4.css
 60043ca1b3b05084022afe6127dc974f  design/admin4/stylesheets/base.css
-4552e058ec4059e2269e64366707aca4  design/admin4/stylesheets/components.css
+fb8ebabbddffcc8ad323225476efb7c8  design/admin4/stylesheets/components.css
 005d3f98e2671b2f9ea348032aaae860  design/admin4/stylesheets/core.css
 79bfd7f0041431e3d99f1f446678dbc0  design/admin4/stylesheets/editor_content.css
 e26094514c3dac416b5fb6be0a9d9e21  design/admin4/stylesheets/ezinfo.css
@@ -1129,7 +1129,7 @@ b371e41cc093bf4cf1ea006576c67d35  design/admin4/stylesheets/modules/people.css
 2187f18407108e51cab7914f1eb788ba  design/admin4/stylesheets/modules/setup.css
 b8a9bc23a795b8d48a9dcf70d4dcead9  design/admin4/stylesheets/modules/structure.css
 3f6cb52db7363b1107114a1554b38a99  design/admin4/stylesheets/modules/workflow.css
-ad0d3d6d0c22941702563cb18908880a  design/admin4/stylesheets/packagecompare.css
+62655eab02017f2ff9eac6379e50922d  design/admin4/stylesheets/packagecompare.css
 1f9526457e76eaf166766b7160e70a51  design/admin4/stylesheets/theme/modalwindow.css
 729301f6f8de6eabf3973961e25d7fda  design/admin4/stylesheets/visual-templateview.css
 022eb4fed292327e7a10f4812af68540  design/admin4/templates/ajaxuploader/browse.tpl
@@ -1371,7 +1371,7 @@ c6caf8a9fa0db2771a975b122bcb5226  design/admin4/templates/navigator/google.tpl
 c49f6538ab403d0457921734f2327d39  design/admin4/templates/node/removenode.tpl
 cc3560235bfe3988d0e9b1cfe0b55ea5  design/admin4/templates/node/removeobject.tpl
 2f5bd72b8c887844a74775e01433d813  design/admin4/templates/node/top_node_full.tpl
-bd4b56bfbe7669e97ac87866af922555  design/admin4/templates/node/view/a4_full_body.tpl
+76a173a2822e2d34b34556bee8e80622  design/admin4/templates/node/view/a4_full_body.tpl
 b9de9cc67bede1896335b38e94a945eb  design/admin4/templates/node/view/admin_preview.tpl
 dc142438409e90d072cf19d700673a82  design/admin4/templates/node/view/ajaxuploader_preview.tpl
 b9a3fa9fe69402b67871fc1aac68fcad  design/admin4/templates/node/view/browse_thumbnail.tpl
@@ -1462,6 +1462,7 @@ bd11b16d338d1a4518dcc188cae3e9e6  design/admin4/templates/parts/a4_mega_menu_che
 a91b09336a2d08443c69b434cabf2081  design/admin4/templates/parts/a4_phone_user.tpl
 d4696f13eec2ef1d087413002e35c015  design/admin4/templates/parts/a4_preference_attributes.tpl
 f23c9e1796dd3ab29e1af6ef0039b859  design/admin4/templates/parts/a4_tabs_height.tpl
+9e79777eabd82a8566ea687b33306870  design/admin4/templates/parts/a4_tabs_switch.tpl
 e7cbcc8548bbdec86d4686f2b042bb78  design/admin4/templates/parts/a4_topmenu_items.tpl
 54851d580ce5e5052a843ac97c96163b  design/admin4/templates/parts/audit/menu.tpl
 e6fe56c836e1e8315b4d7aa9e9fb4b74  design/admin4/templates/parts/audit_timeline.tpl
@@ -1663,7 +1664,7 @@ d7ec81c1eac154a81f53a3fdec0533bd  design/admin4/templates/visual/templateedit_er
 8dc2270f6ee32b7d818c1ca708dca016  design/admin4/templates/visual/templateview_buttons.tpl
 4a1e28e545c8c08938ef7208329ac5e8  design/admin4/templates/visual/toolbar.tpl
 d190f4681a00dda7ab660a83f478cfad  design/admin4/templates/visual/toolbarlist.tpl
-1da54f9195f48abcddeb765ef469cfe6  design/admin4/templates/window_controls.tpl
+0947f74bcaba2adf9056ea3c6ce155c3  design/admin4/templates/window_controls.tpl
 edb9f6881ad25d91f2bf5a75c5cd7b56  design/admin4/templates/window_controls_extratabs.tpl
 b4481aa8c6dd7b66accd2fea3c4480ba  design/admin4/templates/windows.tpl
 6de7723b1c0bc39a3383cffd028dfd0e  design/admin4/templates/windows_extratabs.tpl
@@ -26308,7 +26309,7 @@ ec49c5c06e3a15e982c7da75b6d0af54  tests/tests/design/AdminLegacyControlsTest.php
 b91ebdadc3ad541ef7590c9f79877960  tests/tests/design/AdminMenuPolicyListTest.php
 8bd26f4d83a90026832a3696b7335882  tests/tests/design/AdminNewsletterPreviewTest.php
 4e03fd4b653ac220610d62cb9b415422  tests/tests/design/AdminNodeBinary.php
-c5ba40edcb5d244b8934f41ab6f8ccbe  tests/tests/design/AdminNodeTabsHeightTest.php
+75ee4f92f0651a69f8d56d56cf2aff91  tests/tests/design/AdminNodeTabsHeightTest.php
 f439d02bf7ee68ecca6ccd30ffe60170  tests/tests/design/AdminNodeUploadButtonTest.php
 914f2c2438b457ddc7a6a4ba6df72f48  tests/tests/design/AdminNoticesTest.php
 91fc8ff0be7f6a3bdbe8de38be0a5d5a  tests/tests/design/AdminOauthadminPagesTest.php
@@ -26340,7 +26341,7 @@ cdc564cefe111d41b225a7d0a1604c44  tests/tests/design/AdminSetupTabsLeftMenuTest.
 a31d6e4f131f60cea18c2952c1dbb03a  tests/tests/design/AdminSidebarDrawerTest.php
 2f2e16d4973b83b8ce685cc1cf2a1b24  tests/tests/design/AdminSiteAccessMenuTest.php
 f9a721f86fb1326e5582c3afe58c4fa5  tests/tests/design/AdminStoredValueEscapingTest.php
-e1dce2443800b6c645826bbf86c5a0e0  tests/tests/design/AdminStylingRulesTest.php
+ed300758a7a825d664fbb8f191924adc  tests/tests/design/AdminStylingRulesTest.php
 d909f7a7e48a8c41f5e1e16aa8f2d149  tests/tests/design/AdminSubitemsPriorityDragTest.php
 f7ac963fcf5507d76f586eaa634c782c  tests/tests/design/AdminSubitemsTranslationsTest.php
 f0c37580307c0934ffc1da326ab7313d  tests/tests/design/AdminSubitemsWithoutExpUITest.php
