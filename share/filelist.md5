@@ -23191,7 +23191,7 @@ fcb8f52f2118ee9e605f129c6723ff9d  kernel/classes/transfer/expkerneltransfertask.
 3e015343c58fde0e208b1f68b7e4a6a6  kernel/classes/transfer/expkerneltransfertool.php
 df88021792b0b11ae5e52e4fb8714679  kernel/classes/uiswitch/expuiswitch.php
 cd54fa40fed2f285f3992b4a8a4634aa  kernel/classes/uiswitch/expuiswitchdesignprovider.php
-f395e6c4bf8caa1211ed8ca77d443ff8  kernel/classes/uiswitch/expuiswitchlanguagecatalogue.php
+147fcf07475e128dd5d0b23794dac5d4  kernel/classes/uiswitch/expuiswitchlanguagecatalogue.php
 be939cdaec3f7a64802683939dcd7c6b  kernel/classes/uiswitch/expuiswitchlanguageprovider.php
 f3e123acabebb7cd6c72627fc0419402  kernel/classes/uiswitch/expuiswitchprovider.php
 20500f7b2073d61636cb8c7261e58578  kernel/classes/uiswitch/expuiswitchproviderinterface.php

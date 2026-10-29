@@ -1015,9 +1015,9 @@ class expUISwitchLanguageCatalogue
                 return false;
             if ( class_exists( 'eZINI' ) )
             {
-                $mode = eZFile::fileMode( octdec( (string)eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) ) );
-                if ( $mode > 0 && ( @fileperms( $file ) & 0777 ) !== $mode )
-                    @chmod( $file, $mode );
+                $permissions = octdec( (string)eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) );
+                if ( $permissions > 0 && ( @fileperms( $file ) & 0777 ) !== eZFile::fileMode( $permissions ) )
+                    @chmod( $file, eZFile::fileMode( $permissions ) );
             }
             return true;
         }
