@@ -53,8 +53,15 @@ Guide: doc/eng-us/guides/upgrading-with-the-console.md
 | `--backup-dir` | erforderlich | Wohin die Sicherung geht (Standard var/backup/upgrade); darin wird ein Verzeichnis <Zeit> angelegt |
 | `--force-order` |  | Eine Stufe ausführen, obwohl eine frühere Stufe offene Schritte hat |
 | `--fail-on-pending` |  | Exit-Code 1, wenn noch Schritte offen sind (für CI) |
+| `--force-no-backup` |  | Mit --no-backup auf einer Produktions-Installation: trotzdem ohne Sicherung schreiben |
 | `--no-deploy` |  | Ohne exp:velocity deploy abschließen: nur die Autoloads der Erweiterungen und die INI-, Template- und Inhalts-Caches |
 | `--url` | erforderlich | Die Adressen, die die Rauchprobe nach dem Deploy abruft (Komma-Liste oder wiederholt); Standard die Startseite von SiteURL |
+| `--to` | erforderlich | Die Code-Stufe bringt die Checkouts auf diesen Tag, Branch oder Commit (Standard: den Upstream des Branches) |
+| `--repos` | erforderlich | Weitere Git-Checkouts, die die Code-Stufe bewegt, Pfade in der Installation (Komma-Liste oder wiederholt) |
+| `--update` | erforderlich | composer update für diese Pakete, mit ihren Abhängigkeiten (Komma-Liste oder wiederholt) |
+| `--composer` | erforderlich | Das Composer-Programm oder composer.phar (Standard: composer im PATH, sonst composer.phar in der Wurzel) |
+| `--no-audit` |  | Die Sicherheitsprüfung der Bibliotheken (composer audit) vorher und nachher überspringen |
+| `--allow-vendor-changes` |  | Die Bibliotheken installieren, obwohl Composer lokale Änderungen in vendor/ meldet |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

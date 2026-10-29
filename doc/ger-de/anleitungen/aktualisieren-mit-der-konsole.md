@@ -33,8 +33,8 @@ Ein Upgrade besteht aus fünf Stufen, die immer in dieser Reihenfolge laufen. Je
 
 | # | Stufe | Befehl | Was sie tut |
 |---|---|---|---|
-| 1 | code | `exp:upgrade:status --stages=code` | die Git-Checkouts der Installation (in 6.0.15 noch ohne Schritte: den Code aktualisieren, wie es [Upgrade](aktualisieren.md), Teil C, beschreibt) |
-| 2 | libraries | `exp:upgrade:status --stages=libraries` | Composer (in 6.0.15 noch ohne Schritte: `composer install` wie in Teil C) |
+| 1 | code | `exp:upgrade:code` | der Git-Checkout der Installation (und jeder `--repos`-Checkout) auf `--to` oder seinen Upstream gebracht, nur Fast-Forward, über git_manager |
+| 2 | libraries | `exp:upgrade:libraries` | `vendor/` enthält, was `composer.lock` nennt (`composer install`, oder vorher `--update` benannter Pakete), mit Sicherheitsprüfung |
 | 3 | database | `exp:upgrade:database` | die Tabellen, Spalten, Indizes und Zeilen, die das Release braucht, auf jeder Datenbank-Engine |
 | 4 | scripts | `exp:upgrade:scripts` | die PHP-Upgrade-Schritte: die Update-Skripte und die Setup-Befehle, über ihre Klassen |
 | 5 | finish | `exp:upgrade:finish` | `exp:velocity deploy --kernel` (Autoloads, Caches, PHP-FPM, Velocity), danach ein Abruf der Startseite |
@@ -113,6 +113,79 @@ Was läuft, wählen Sie mit `--stages=database,scripts`, `--only=<Schritt-ID>` u
 Komma-Liste oder wiederholt). `--no-deploy` schließt nur mit den Autoloads der Erweiterungen und den INI-, Template-
 und Inhalts-Caches ab, wenn Sie später selbst bereitstellen.
 
+Hat die Code-Stufe den Code bewegt, laufen die Stufen danach in einem neuen PHP-Prozess mit denselben Optionen: Der
+Prozess, der begonnen hat, hat die alten Klassen und die alte Liste der Schritte geladen, der neue liest den neuen
+Code. Der Bericht beider ist ein Bericht, und er sagt es.
+
+## Die Code-Stufe
+
+```bash
+./console exp:upgrade:code --to=v6.0.16                 # Probelauf: holt (fetch), listet die kommenden Commits
+./console exp:upgrade --apply --to=v6.0.16              # das ganze Upgrade auf dieses Release
+./console exp:upgrade:code --apply --repos=extension/myext
+```
+
+Der Git-Checkout der Installation wird auf `--to` (einen Tag, einen Branch oder einen Commit) gebracht oder, ohne die
+Option, auf den Upstream seines Branches, über git_manager (`extension/git_manager`), nur per Fast-Forward. Die
+Submodule, die die Installation aufzeichnet, folgen. `--repos` nennt weitere Checkouts in der Installation, jeder
+geht auf seinen eigenen Upstream oder `--to`. Ein Checkout wird verweigert, wenn:
+
+- er lokale Änderungen in versionierten Dateien hat;
+- er Commits hat, die dem Ziel fehlen (kein Fast-Forward);
+- der Prozess nicht sein Eigentümer ist (führen Sie das Upgrade als der Benutzer aus, dem die Dateien gehören,
+  `sudo -u <Eigentümer>`).
+
+`exp:upgrade:status` liest die Remote-Tracking-Refs, wie der letzte Fetch sie hinterlassen hat. Probelauf und Lauf
+holen zuerst, nur die Refs, nie das Arbeitsverzeichnis, und nur als Eigentümer. Vor der ersten Bewegung macht
+git_manager auf MySQL und MariaDB seine eigene Sicherung (auf den anderen Engines enthält die Sicherung des Upgrades
+die Datenbank), und die Commits, auf denen jeder Checkout stand, werden in `code.json` der Upgrade-Sicherung
+geschrieben. Ohne git_manager, oder wenn die Installation kein Git-Checkout ist, gilt die Stufe nicht: Aktualisieren
+Sie den Code, wie es [Upgrade](aktualisieren.md), Teil C, beschreibt.
+
+## Die Bibliotheken-Stufe
+
+```bash
+./console exp:upgrade:libraries                         # Probelauf: die abweichenden Pakete, die Prüfung
+./console exp:upgrade:libraries --apply
+./console exp:upgrade:libraries --apply --update=guzzlehttp/guzzle
+```
+
+`6.0.15-libraries-install` vergleicht `composer.lock` mit dem, was laut `vendor/composer/installed.json` installiert
+ist, und führt `composer install` aus, mit den Dev-Paketen nur, wenn `vendor/` sie hatte. `6.0.15-libraries-update`
+führt vorher `composer update <Pakete> --with-dependencies` aus, nur für die mit `--update` genannten Pakete;
+committen Sie danach die neue `composer.lock`. `composer audit` läuft vor und nach der Installation und meldet
+Sicherheitshinweise und aufgegebene Pakete; es hält den Lauf nie an (`--no-audit` überspringt es). `--composer=` nennt
+das Composer-Programm oder `composer.phar`.
+
+Die Installation wird verweigert, und nichts wird installiert, wenn:
+
+- Composer lokale Änderungen in `vendor/` meldet (`composer status`);
+- ein Paket, das sie ändern würde, ein eigener Git-Checkout ist (eine Erweiterung, die per Git und nicht per
+  Composer aktualisiert wird: bewegen Sie sie stattdessen mit der Code-Stufe und `--repos=`);
+- der Prozess nicht der Eigentümer der Installation ist.
+
+`--allow-vendor-changes` installiert über die ersten beiden hinweg.
+
+## Zurückrollen
+
+```bash
+./console exp:upgrade:rollback                                      # die Sicherungen
+./console exp:upgrade:rollback 20261029-101500                      # was ein Zurückrollen darauf wiederherstellt
+./console exp:upgrade:rollback 20261029-101500 --apply
+./console exp:upgrade:rollback 20261029-101500 --apply --parts=database,settings
+./console exp:upgrade:finish --apply                                # live machen
+```
+
+Ein Zurückrollen ist nie automatisch und läuft nie ohne `--apply`. Es stellt die Teile wieder her, die die Sicherung
+enthält, in dieser Reihenfolge:
+
+| Teil | Stellt wieder her |
+|---|---|
+| database | SQLite: die Kopie über die Backup-API von SQLite zurückgeschrieben; MySQL und MariaDB: `database.sql` über `mysql`; PostgreSQL: `database.sql` über `psql`. Tabellen, die nach der Sicherung entstanden, werden gelöscht. MongoDB und Oracle: von Hand (`mongorestore --drop`, `impdp`) |
+| settings | `settings/override` über das der Installation zurückkopiert (später hinzugekommene Dateien bleiben) |
+| libraries | `composer.json` und `composer.lock` zurückkopiert, dann `composer install` |
+| code | jeder Checkout aus `code.json` zurück auf seinen Commit (`git reset --keep`, verweigert bei lokalen Änderungen in den Dateien, die es zurückbewegen würde) |
+
 ## Die Sicherung
 
 `./console exp:upgrade:backup` macht dieselbe Sicherung für sich allein. Sie landet in `var/backup/upgrade/<Zeit>/`
@@ -126,7 +199,11 @@ und Inhalts-Caches ab, wenn Sie später selbst bereitstellen.
 | MongoDB | `mongodb/` aus `mongodump` |
 | Oracle | keine: machen Sie eine mit `expdp` und starten Sie mit `--no-backup` |
 
-`settings/override` wird daneben kopiert, und `manifest.json` sagt, was vorhanden ist. Das Passwort der Verbindung
+`settings/override`, `composer.json`, `composer.lock` und `vendor/composer/installed.json` werden daneben kopiert,
+und `manifest.json` sagt, was vorhanden ist, mit den Tabellen, die die Datenbank hatte (ein Zurückrollen löscht die
+später entstandenen). Auf einer Installation, deren Einstellungen sie als Produktion ausweisen
+(`site.ini [AdminEnvironment] Level=production`, oder `Level=auto` mit `EXP_ENV` gleich `prod`, `production` oder
+`live`), wird `--no-backup` mit Exit-Code 2 verweigert, außer zusätzlich ist `--force-no-backup` angegeben. Das Passwort der Verbindung
 erreicht das Dump-Werkzeug in einer Datei, die nur ihr Eigentümer lesen kann (MySQL, MongoDB), oder in seiner
 Umgebung (PostgreSQL), nie auf einer Befehlszeile. Die Dateien kann nur ihr Eigentümer lesen. Die Sicherung ist der
 Weg zurück: Kein Schritt lässt sich für sich allein rückgängig machen.
@@ -158,7 +235,10 @@ Aufzeichnung als erledigt führt, dessen Wirkung aber jetzt fehlt (eine Tabelle 
 entfernt). Findet er welche, endet er mit Exit-Code 1. Führen Sie ihn nach einer Wiederherstellung oder aus der
 Überwachung aus.
 
-Jeder ausgeführte Schritt wird außerdem in `var/log/upgrade.log` geschrieben.
+Jeder ausgeführte Schritt wird außerdem in `var/log/upgrade.log` geschrieben, und in das Auditprotokoll:
+`system.upgrade.step` für jeden ausgeführten oder gescheiterten Schritt, `system.upgrade.backup` für die Sicherung,
+`system.upgrade.run` am Ende eines Laufs mit `--apply`, `system.upgrade.rollback` für ein Zurückrollen
+([das Audit](../bc/6.0/audit.md)).
 
 ## In einer Pipeline
 
@@ -175,7 +255,7 @@ Code-Version), die Sicherung, jede Stufe mit jedem Schritt (`id`, `stage`, `vers
 |---|---|
 | 0 | nichts offen, oder alles ausgeführt |
 | 1 | ein Schritt ist gescheitert, die Sperre oder die Sicherung wurde verweigert, eine Stufe kam außer der Reihe, oder mit `--fail-on-pending` sind Schritte offen; `exp:upgrade:verify`: Abweichungen |
-| 2 | Bedienfehler (ein unbekannter Optionswert, eine unbekannte Stufe oder ein unbekannter Schritt; `--apply` mit `--dry-run`) |
+| 2 | Bedienfehler (ein unbekannter Optionswert, eine unbekannte Stufe, ein unbekannter Schritt, eine unbekannte Sicherung oder ein unbekannter Teil; `--apply` mit `--dry-run`; `--no-backup` auf Produktion ohne `--force-no-backup`) |
 | 3 | die Datenbank ist nicht erreichbar |
 | 4 | interner Fehler |
 
@@ -183,6 +263,9 @@ Code-Version), die Sicherung, jede Stufe mit jedem Schritt (`id`, `stage`, `vers
 
 | Schritt | Stufe | Ersetzt |
 |---|---|---|
+| `6.0.15-code-update` | code | `git pull` von Hand, über git_manager, nur Fast-Forward |
+| `6.0.15-libraries-update` | libraries | `composer update <Paket>` von Hand (nur mit `--update`) |
+| `6.0.15-libraries-install` | libraries | `composer install` von Hand, mit `composer audit` |
 | `6.0.15-upgrade-record-table` | database | (neu) die Aufzeichnungstabelle `expupgrade_step` |
 | `6.0.15-user-password-hash-width` | database | `ezuser.password_hash` in der SQL-Update-Datei auf 255 verbreitert |
 | `6.0.15-trash-columns` | database | `ezcontentobject_trash.trashed`, `trashed_by`, `trashed_via` und ihr Index |

@@ -49,6 +49,7 @@ something. Dry run unless --apply.
 | `--backup-dir` | erforderlich | Wohin die Sicherung geht (Standard var/backup/upgrade); darin wird ein Verzeichnis <Zeit> angelegt |
 | `--force-order` |  | Eine Stufe ausführen, obwohl eine frühere Stufe offene Schritte hat |
 | `--fail-on-pending` |  | Exit-Code 1, wenn noch Schritte offen sind (für CI) |
+| `--force-no-backup` |  | Mit --no-backup auf einer Produktions-Installation: trotzdem ohne Sicherung schreiben |
 | `--no-deploy` |  | Ohne exp:velocity deploy abschließen: nur die Autoloads der Erweiterungen und die INI-, Template- und Inhalts-Caches |
 | `--url` | erforderlich | Die Adressen, die die Rauchprobe nach dem Deploy abruft (Komma-Liste oder wiederholt); Standard die Startseite von SiteURL |
 

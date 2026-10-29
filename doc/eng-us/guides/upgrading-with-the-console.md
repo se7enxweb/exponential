@@ -31,8 +31,8 @@ An upgrade is made of five stages that always run in this order. Each one is a c
 
 | # | Stage | Command | What it does |
 |---|---|---|---|
-| 1 | code | `exp:upgrade:status --stages=code` | the installation's git checkouts (no steps in 6.0.15 yet: update the code as [Upgrading](upgrading.md), part C, says) |
-| 2 | libraries | `exp:upgrade:status --stages=libraries` | Composer (no steps in 6.0.15 yet: `composer install` as part C says) |
+| 1 | code | `exp:upgrade:code` | the installation's git checkout (and each `--repos` checkout) moved to `--to` or to its upstream, fast-forward only, through git_manager |
+| 2 | libraries | `exp:upgrade:libraries` | `vendor/` made to hold what `composer.lock` names (`composer install`, or `--update` of named packages first), with a security audit |
 | 3 | database | `exp:upgrade:database` | the tables, columns, indexes and rows the release needs, on every engine |
 | 4 | scripts | `exp:upgrade:scripts` | the PHP upgrade steps: the update scripts and the setup commands, through their classes |
 | 5 | finish | `exp:upgrade:finish` | `exp:velocity deploy --kernel` (autoloads, caches, PHP-FPM, Velocity), then a request to the front page |
@@ -108,6 +108,76 @@ Choose what runs with `--stages=database,scripts`, `--only=<step id>` and `--ski
 repeated). `--no-deploy` finishes with the extension autoloads and the INI, template and content caches only, when
 you deploy yourself later.
 
+When the code stage moved the code, the stages after it run in a new PHP process with the same options: the process
+that started has the old classes and the old list of steps loaded, the new one reads the new code. The report of
+both is one report, and it says so.
+
+## The code stage
+
+```bash
+./console exp:upgrade:code --to=v6.0.16                 # dry run: fetches, lists the commits to come
+./console exp:upgrade --apply --to=v6.0.16              # the whole upgrade to that release
+./console exp:upgrade:code --apply --repos=extension/myext
+```
+
+The installation's git checkout moves to `--to` (a tag, a branch or a commit) or, without it, to the upstream of its
+branch, through git_manager (`extension/git_manager`). It moves fast-forward only, and the submodules the
+installation records follow it. `--repos` names more checkouts inside the installation, each moved to its own
+upstream or `--to`. A checkout is refused when:
+
+- it has local changes in tracked files;
+- it has commits the target lacks (not a fast-forward);
+- the process is not its owner (run the upgrade as the user that owns the files, `sudo -u <owner>`).
+
+`exp:upgrade:status` reads the remote-tracking refs as the last fetch left them. A dry run and a run fetch first, the
+refs only, never the working tree, and only as the owner. Before the first move, git_manager makes its own backup on
+MySQL and MariaDB (on the other engines the upgrade's backup holds the database), and the commits every checkout was
+on are written to `code.json` in the upgrade's backup. Without git_manager, or when the installation is not a git
+checkout, the stage does not apply: update the code as [Upgrading](upgrading.md), part C, says.
+
+## The libraries stage
+
+```bash
+./console exp:upgrade:libraries                         # dry run: the packages that differ, the audit
+./console exp:upgrade:libraries --apply
+./console exp:upgrade:libraries --apply --update=guzzlehttp/guzzle
+```
+
+`6.0.15-libraries-install` compares `composer.lock` with what `vendor/composer/installed.json` says is installed
+and runs `composer install`, with the dev packages only when `vendor/` had them. `6.0.15-libraries-update` runs
+`composer update <packages> --with-dependencies` first, only for the packages named with `--update`; commit the new
+`composer.lock` afterwards. `composer audit` runs before and after the install and reports security advisories and
+abandoned packages; it never stops the run (`--no-audit` skips it). `--composer=` names the Composer binary or
+`composer.phar`.
+
+The install is refused, and nothing is installed, when:
+
+- Composer reports local changes in `vendor/` (`composer status`);
+- a package it would change is a git checkout of its own (an extension updated by git, not by Composer: move it
+  with the code stage and `--repos=` instead);
+- the process is not the owner of the installation.
+
+`--allow-vendor-changes` installs over the first two.
+
+## Rolling back
+
+```bash
+./console exp:upgrade:rollback                                      # the backups
+./console exp:upgrade:rollback 20261029-101500                      # what a rollback to it restores
+./console exp:upgrade:rollback 20261029-101500 --apply
+./console exp:upgrade:rollback 20261029-101500 --apply --parts=database,settings
+./console exp:upgrade:finish --apply                                # make it live
+```
+
+A rollback is never automatic and never runs without `--apply`. It restores the parts the backup has, in this order:
+
+| Part | Restores |
+|---|---|
+| database | SQLite: the copy written back through SQLite's backup API; MySQL and MariaDB: `database.sql` through `mysql`; PostgreSQL: `database.sql` through `psql`. Tables made after the backup are dropped. MongoDB and Oracle: by hand (`mongorestore --drop`, `impdp`) |
+| settings | `settings/override` copied back over the installation's (files added since stay) |
+| libraries | `composer.json` and `composer.lock` copied back, then `composer install` |
+| code | every checkout of `code.json` moved back to its commit (`git reset --keep`, refused over local changes in the files it would move) |
+
 ## The backup
 
 `./console exp:upgrade:backup` makes the same backup on its own. It goes into `var/backup/upgrade/<time>/`
@@ -121,7 +191,11 @@ you deploy yourself later.
 | MongoDB | `mongodb/` from `mongodump` |
 | Oracle | none: make one with `expdp` and run with `--no-backup` |
 
-`settings/override` is copied next to it, and `manifest.json` says what is there. The password of the connection
+`settings/override`, `composer.json`, `composer.lock` and `vendor/composer/installed.json` are copied next to it, and
+`manifest.json` says what is there, with the tables the database had (a rollback drops the ones made later). On an
+installation whose settings call it production (`site.ini [AdminEnvironment] Level=production`, or `Level=auto` with
+`EXP_ENV` set to `prod`, `production` or `live`), `--no-backup` is refused with exit 2 unless `--force-no-backup` is
+given too. The password of the connection
 reaches the dump tool in a file only its owner can read (MySQL, MongoDB) or in its environment (PostgreSQL), never
 on a command line. The files are readable by their owner only. The backup is the way back: no step can be
 undone on its own.
@@ -150,7 +224,9 @@ message. The table is created by the first step, `6.0.15-upgrade-record-table`.
 effect is missing now (a table dropped, a policy removed by hand). It exits 1 when it finds any. Run it after a
 restore, or from monitoring.
 
-Every applied step is also written to `var/log/upgrade.log`.
+Every applied step is also written to `var/log/upgrade.log`, and to the audit log: `system.upgrade.step` for each
+step applied or failed, `system.upgrade.backup` for the backup, `system.upgrade.run` at the end of a run with
+`--apply`, `system.upgrade.rollback` for a rollback ([the audit](../bc/6.0/audit.md)).
 
 ## In a pipeline
 
@@ -167,7 +243,7 @@ version), the backup, every stage with every step (`id`, `stage`, `version`, `st
 |---|---|
 | 0 | nothing pending, or everything applied |
 | 1 | a step failed, the lock or the backup was refused, a stage was out of order, or steps are pending with `--fail-on-pending`; `exp:upgrade:verify`: drift |
-| 2 | usage error (an unknown option value, stage or step; `--apply` with `--dry-run`) |
+| 2 | usage error (an unknown option value, stage, step, backup or part; `--apply` with `--dry-run`; `--no-backup` on production without `--force-no-backup`) |
 | 3 | the database is not reachable |
 | 4 | internal error |
 
@@ -175,6 +251,9 @@ version), the backup, every stage with every step (`id`, `stage`, `version`, `st
 
 | Step | Stage | Replaces |
 |---|---|---|
+| `6.0.15-code-update` | code | `git pull` by hand, through git_manager, fast-forward only |
+| `6.0.15-libraries-update` | libraries | `composer update <package>` by hand (only with `--update`) |
+| `6.0.15-libraries-install` | libraries | `composer install` by hand, with `composer audit` |
 | `6.0.15-upgrade-record-table` | database | (new) the record table `expupgrade_step` |
 | `6.0.15-user-password-hash-width` | database | `ezuser.password_hash` widened to 255 in the SQL update file |
 | `6.0.15-trash-columns` | database | `ezcontentobject_trash.trashed`, `trashed_by`, `trashed_via` and their index |

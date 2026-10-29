@@ -47,6 +47,7 @@ something. Dry run unless --apply.
 | `--backup-dir` | required | Where the backup goes (default var/backup/upgrade); a directory <time> is made in it |
 | `--force-order` |  | Run a stage although an earlier stage has pending steps |
 | `--fail-on-pending` |  | Exit 1 when steps are still pending (for CI) |
+| `--force-no-backup` |  | With --no-backup on a production installation: write without a backup all the same |
 | `--no-deploy` |  | Finish without exp:velocity deploy: extension autoloads and the INI, template and content caches only |
 | `--url` | required | The addresses the smoke check requests after the deploy (a comma list or repeated); default the front page of SiteURL |
 

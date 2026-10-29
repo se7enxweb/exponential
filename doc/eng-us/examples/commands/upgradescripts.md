@@ -46,6 +46,7 @@ Guide: doc/eng-us/guides/upgrading-with-the-console.md
 | `--backup-dir` | required | Where the backup goes (default var/backup/upgrade); a directory <time> is made in it |
 | `--force-order` |  | Run a stage although an earlier stage has pending steps |
 | `--fail-on-pending` |  | Exit 1 when steps are still pending (for CI) |
+| `--force-no-backup` |  | With --no-backup on a production installation: write without a backup all the same |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

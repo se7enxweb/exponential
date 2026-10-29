@@ -51,8 +51,15 @@ Guide: doc/eng-us/guides/upgrading-with-the-console.md
 | `--backup-dir` | required | Where the backup goes (default var/backup/upgrade); a directory <time> is made in it |
 | `--force-order` |  | Run a stage although an earlier stage has pending steps |
 | `--fail-on-pending` |  | Exit 1 when steps are still pending (for CI) |
+| `--force-no-backup` |  | With --no-backup on a production installation: write without a backup all the same |
 | `--no-deploy` |  | Finish without exp:velocity deploy: extension autoloads and the INI, template and content caches only |
 | `--url` | required | The addresses the smoke check requests after the deploy (a comma list or repeated); default the front page of SiteURL |
+| `--to` | required | The code stage moves the checkouts to this tag, branch or commit (default: the upstream of the branch) |
+| `--repos` | required | More git checkouts the code stage moves, paths inside the installation (a comma list or repeated) |
+| `--update` | required | composer update these packages, with their dependencies (a comma list or repeated) |
+| `--composer` | required | The Composer binary or composer.phar (default: composer on the PATH, else composer.phar in the root) |
+| `--no-audit` |  | Skip the security audit of the libraries (composer audit) before and after |
+| `--allow-vendor-changes` |  | Install the libraries although Composer reports local changes in vendor/ |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

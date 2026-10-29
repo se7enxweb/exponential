@@ -115,8 +115,11 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:updatesearchindex](updatesearchindex.md) |  | Reindex all content objects in the search engine |
 | [exp:upgrade](upgrade.md) |  | Upgrade the installation in one call: every stage in order (dry run unless --apply) |
 | [exp:upgradebackup](upgradebackup.md) | exp:upgrade:backup | Upgrade backup: the backup exp:upgrade makes before it writes, on its own (database dump and settings overrides) |
+| [exp:upgradecode](upgradecode.md) | exp:upgrade:code | Upgrade stage 1, code: the git checkouts moved to the target release, fast-forward only, through git_manager (dry run unless --apply) |
 | [exp:upgradedatabase](upgradedatabase.md) | exp:upgrade:database | Upgrade stage 3, database: the schema and data steps on every engine (dry run unless --apply) |
 | [exp:upgradefinish](upgradefinish.md) | exp:upgrade:finish | Upgrade stage 5, finish: deploy the changes (exp:velocity deploy --kernel) and check the site answers (dry run unless --apply) |
+| [exp:upgradelibraries](upgradelibraries.md) | exp:upgrade:libraries | Upgrade stage 2, libraries: Composer install from composer.lock (or update of named packages) with a security audit (dry run unless --apply) |
+| [exp:upgraderollback](upgraderollback.md) | exp:upgrade:rollback | Upgrade rollback: put the database, settings, libraries and code back to a backup of exp:upgrade (dry run unless --apply) |
 | [exp:upgradescripts](upgradescripts.md) | exp:upgrade:scripts | Upgrade stage 4, scripts: the PHP upgrade steps, policies and repairs (dry run unless --apply) |
 | [exp:upgradestatus](upgradestatus.md) | exp:upgrade:status | Upgrade status: every upgrade step with its state (done, pending, not-needed, failed, unknown) |
 | [exp:upgradesteps](upgradesteps.md) | exp:upgrade:steps | Upgrade steps: the registered steps with id, stage, version, engines and description |

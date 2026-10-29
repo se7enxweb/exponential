@@ -48,6 +48,7 @@ Guide: doc/eng-us/guides/upgrading-with-the-console.md
 | `--backup-dir` | erforderlich | Wohin die Sicherung geht (Standard var/backup/upgrade); darin wird ein Verzeichnis <Zeit> angelegt |
 | `--force-order` |  | Eine Stufe ausführen, obwohl eine frühere Stufe offene Schritte hat |
 | `--fail-on-pending` |  | Exit-Code 1, wenn noch Schritte offen sind (für CI) |
+| `--force-no-backup` |  | Mit --no-backup auf einer Produktions-Installation: trotzdem ohne Sicherung schreiben |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

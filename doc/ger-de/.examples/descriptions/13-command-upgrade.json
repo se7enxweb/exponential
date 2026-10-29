@@ -3,6 +3,10 @@
         "en": "Upgrade the installation in one call: every stage in order (dry run unless --apply)",
         "de": "Aktualisiert die Installation in einem Aufruf: jede Stufe der Reihe nach (Probelauf ohne --apply)"
     },
+    "command:upgrade --allow-vendor-changes": {
+        "en": "Install the libraries although Composer reports local changes in vendor/",
+        "de": "Die Bibliotheken installieren, obwohl Composer lokale Änderungen in vendor/ meldet"
+    },
     "command:upgrade --apply": {
         "en": "Make the changes (the default is a dry run that lists them and changes nothing)",
         "de": "Die Änderungen vornehmen (ohne die Option ein Probelauf, der sie auflistet und nichts ändert)"
@@ -10,6 +14,10 @@
     "command:upgrade --backup-dir": {
         "en": "Where the backup goes (default var/backup/upgrade); a directory <time> is made in it",
         "de": "Wohin die Sicherung geht (Standard var/backup/upgrade); darin wird ein Verzeichnis <Zeit> angelegt"
+    },
+    "command:upgrade --composer": {
+        "en": "The Composer binary or composer.phar (default: composer on the PATH, else composer.phar in the root)",
+        "de": "Das Composer-Programm oder composer.phar (Standard: composer im PATH, sonst composer.phar in der Wurzel)"
     },
     "command:upgrade --dry-run": {
         "en": "The default, accepted for scripts that pass it: list what would change, change nothing",
@@ -19,6 +27,10 @@
         "en": "Exit 1 when steps are still pending (for CI)",
         "de": "Exit-Code 1, wenn noch Schritte offen sind (für CI)"
     },
+    "command:upgrade --force-no-backup": {
+        "en": "With --no-backup on a production installation: write without a backup all the same",
+        "de": "Mit --no-backup auf einer Produktions-Installation: trotzdem ohne Sicherung schreiben"
+    },
     "command:upgrade --force-order": {
         "en": "Run a stage although an earlier stage has pending steps",
         "de": "Eine Stufe ausführen, obwohl eine frühere Stufe offene Schritte hat"
@@ -26,6 +38,10 @@
     "command:upgrade --format": {
         "en": "text (default) or json (the machine output exp-upgrade/1)",
         "de": "text (Standard) oder json (die Maschinenausgabe exp-upgrade/1)"
+    },
+    "command:upgrade --no-audit": {
+        "en": "Skip the security audit of the libraries (composer audit) before and after",
+        "de": "Die Sicherheitsprüfung der Bibliotheken (composer audit) vorher und nachher überspringen"
     },
     "command:upgrade --no-backup": {
         "en": "Write without making a backup first",
@@ -39,6 +55,10 @@
         "en": "Only these steps (step ids, a comma list or repeated); an optional step runs only when named here",
         "de": "Nur diese Schritte (Schritt-IDs, als Komma-Liste oder wiederholt); ein optionaler Schritt läuft nur, wenn er hier genannt ist"
     },
+    "command:upgrade --repos": {
+        "en": "More git checkouts the code stage moves, paths inside the installation (a comma list or repeated)",
+        "de": "Weitere Git-Checkouts, die die Code-Stufe bewegt, Pfade in der Installation (Komma-Liste oder wiederholt)"
+    },
     "command:upgrade --skip": {
         "en": "Never these steps (step ids, a comma list or repeated)",
         "de": "Diese Schritte nie (Schritt-IDs, als Komma-Liste oder wiederholt)"
@@ -46,6 +66,14 @@
     "command:upgrade --stages": {
         "en": "Only these stages, a comma list of code, libraries, database, scripts, finish (in that order)",
         "de": "Nur diese Stufen, eine Komma-Liste aus code, libraries, database, scripts, finish (in dieser Reihenfolge)"
+    },
+    "command:upgrade --to": {
+        "en": "The code stage moves the checkouts to this tag, branch or commit (default: the upstream of the branch)",
+        "de": "Die Code-Stufe bringt die Checkouts auf diesen Tag, Branch oder Commit (Standard: den Upstream des Branches)"
+    },
+    "command:upgrade --update": {
+        "en": "composer update these packages, with their dependencies (a comma list or repeated)",
+        "de": "composer update für diese Pakete, mit ihren Abhängigkeiten (Komma-Liste oder wiederholt)"
     },
     "command:upgrade --url": {
         "en": "The addresses the smoke check requests after the deploy (a comma list or repeated); default the front page of SiteURL",
@@ -62,6 +90,22 @@
     "command:upgradebackup --format": {
         "en": "text (default) or json (the machine output exp-upgrade/1)",
         "de": "text (Standard) oder json (die Maschinenausgabe exp-upgrade/1)"
+    },
+    "command:upgradecode": {
+        "en": "Upgrade stage 1, code: the git checkouts moved to the target release, fast-forward only, through git_manager (dry run unless --apply)",
+        "de": "Upgrade-Stufe 1, Code: die Git-Checkouts auf das Ziel-Release gebracht, nur Fast-Forward, über git_manager (Probelauf ohne --apply)"
+    },
+    "command:upgradecode --force-no-backup": {
+        "en": "With --no-backup on a production installation: write without a backup all the same",
+        "de": "Mit --no-backup auf einer Produktions-Installation: trotzdem ohne Sicherung schreiben"
+    },
+    "command:upgradecode --repos": {
+        "en": "More git checkouts the code stage moves, paths inside the installation (a comma list or repeated)",
+        "de": "Weitere Git-Checkouts, die die Code-Stufe bewegt, Pfade in der Installation (Komma-Liste oder wiederholt)"
+    },
+    "command:upgradecode --to": {
+        "en": "The code stage moves the checkouts to this tag, branch or commit (default: the upstream of the branch)",
+        "de": "Die Code-Stufe bringt die Checkouts auf diesen Tag, Branch oder Commit (Standard: den Upstream des Branches)"
     },
     "command:upgradedatabase": {
         "en": "Upgrade stage 3, database: the schema and data steps on every engine (dry run unless --apply)",
@@ -82,6 +126,10 @@
     "command:upgradedatabase --fail-on-pending": {
         "en": "Exit 1 when steps are still pending (for CI)",
         "de": "Exit-Code 1, wenn noch Schritte offen sind (für CI)"
+    },
+    "command:upgradedatabase --force-no-backup": {
+        "en": "With --no-backup on a production installation: write without a backup all the same",
+        "de": "Mit --no-backup auf einer Produktions-Installation: trotzdem ohne Sicherung schreiben"
     },
     "command:upgradedatabase --force-order": {
         "en": "Run a stage although an earlier stage has pending steps",
@@ -123,6 +171,10 @@
         "en": "Exit 1 when steps are still pending (for CI)",
         "de": "Exit-Code 1, wenn noch Schritte offen sind (für CI)"
     },
+    "command:upgradefinish --force-no-backup": {
+        "en": "With --no-backup on a production installation: write without a backup all the same",
+        "de": "Mit --no-backup auf einer Produktions-Installation: trotzdem ohne Sicherung schreiben"
+    },
     "command:upgradefinish --force-order": {
         "en": "Run a stage although an earlier stage has pending steps",
         "de": "Eine Stufe ausführen, obwohl eine frühere Stufe offene Schritte hat"
@@ -151,6 +203,38 @@
         "en": "The addresses the smoke check requests after the deploy (a comma list or repeated); default the front page of SiteURL",
         "de": "Die Adressen, die die Rauchprobe nach dem Deploy abruft (Komma-Liste oder wiederholt); Standard die Startseite von SiteURL"
     },
+    "command:upgradelibraries": {
+        "en": "Upgrade stage 2, libraries: Composer install from composer.lock (or update of named packages) with a security audit (dry run unless --apply)",
+        "de": "Upgrade-Stufe 2, Bibliotheken: composer install aus composer.lock (oder ein Update benannter Pakete) mit Sicherheitsprüfung (Probelauf ohne --apply)"
+    },
+    "command:upgradelibraries --allow-vendor-changes": {
+        "en": "Install the libraries although Composer reports local changes in vendor/",
+        "de": "Die Bibliotheken installieren, obwohl Composer lokale Änderungen in vendor/ meldet"
+    },
+    "command:upgradelibraries --composer": {
+        "en": "The Composer binary or composer.phar (default: composer on the PATH, else composer.phar in the root)",
+        "de": "Das Composer-Programm oder composer.phar (Standard: composer im PATH, sonst composer.phar in der Wurzel)"
+    },
+    "command:upgradelibraries --force-no-backup": {
+        "en": "With --no-backup on a production installation: write without a backup all the same",
+        "de": "Mit --no-backup auf einer Produktions-Installation: trotzdem ohne Sicherung schreiben"
+    },
+    "command:upgradelibraries --no-audit": {
+        "en": "Skip the security audit of the libraries (composer audit) before and after",
+        "de": "Die Sicherheitsprüfung der Bibliotheken (composer audit) vorher und nachher überspringen"
+    },
+    "command:upgradelibraries --update": {
+        "en": "composer update these packages, with their dependencies (a comma list or repeated)",
+        "de": "composer update für diese Pakete, mit ihren Abhängigkeiten (Komma-Liste oder wiederholt)"
+    },
+    "command:upgraderollback": {
+        "en": "Upgrade rollback: put the database, settings, libraries and code back to a backup of exp:upgrade (dry run unless --apply)",
+        "de": "Upgrade zurückrollen: Datenbank, Einstellungen, Bibliotheken und Code auf eine Sicherung von exp:upgrade zurücksetzen (Probelauf ohne --apply)"
+    },
+    "command:upgraderollback --parts": {
+        "en": "Only these parts, a comma list of database, settings, libraries, code (default: what the backup has)",
+        "de": "Nur diese Teile, eine Komma-Liste aus database, settings, libraries, code (Standard: was die Sicherung enthält)"
+    },
     "command:upgradescripts": {
         "en": "Upgrade stage 4, scripts: the PHP upgrade steps, policies and repairs (dry run unless --apply)",
         "de": "Upgrade-Stufe 4, Skripte: die PHP-Upgrade-Schritte, Richtlinien und Reparaturen (Probelauf ohne --apply)"
@@ -170,6 +254,10 @@
     "command:upgradescripts --fail-on-pending": {
         "en": "Exit 1 when steps are still pending (for CI)",
         "de": "Exit-Code 1, wenn noch Schritte offen sind (für CI)"
+    },
+    "command:upgradescripts --force-no-backup": {
+        "en": "With --no-backup on a production installation: write without a backup all the same",
+        "de": "Mit --no-backup auf einer Produktions-Installation: trotzdem ohne Sicherung schreiben"
     },
     "command:upgradescripts --force-order": {
         "en": "Run a stage although an earlier stage has pending steps",
