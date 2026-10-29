@@ -15238,6 +15238,14 @@ Huomautus: pakettien asennusta ei poisteta.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Tilit, joita kukaan ei käytä tai jotka kaipaavat tarkistusta; poista ne käytöstä, avaa niiden lukitus tai vie ne.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Käyttäjien valvontaloki</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kuka muutti, kirjautui tai hylättiin, tileittäin; suodata ja vie.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>Open the page</source>
         <translation>Avaa sivu</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, yhteensä %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Kirjautumistunnus tai käyttäjän ID: tili, jota tapahtuma koski, tai käyttäjä, joka toimi.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Tili</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Toiminto</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Jälkeen</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Mikä tahansa tulos</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ennen</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Tekijä</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Tyhjennä</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Valmis</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Tapahtumia säilytetään %days päivää.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Tapahtumia säilytetään, kunnes ne poistetaan käsin.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Tapahtumat</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Kaikki toiminnot</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Kaikki tämän tilin tapahtumat</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Vie luettelo CSV-muodossa (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Epäonnistui</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Alkaen</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Rajaa luetteloa</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Mikään tapahtuma ei vastaa hakua.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Sivua kohden</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Tallennus on poistettu käytöstä tiedostossa audit.ini ([UserAuditSettings] UserAudit); luettelo näyttää aiemmin tallennetut tapahtumat.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Hylätty</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Tulos</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Näytä</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Käyttäjien valvontalokin taulu puuttuu. Luo se komennolla php update/common/scripts/6.0/createuseraudittable.php; siihen asti valvontatiedostot säilyttävät jokaisen tapahtuman.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Tämä sivu tarvitsee SQL-tietokannan; se ei ole käytettävissä, kun tietokantana on MongoDB. Valvontatiedostot säilyttävät jokaisen tapahtuman.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Asti</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Käyttäjien valvontaloki</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Käyttäjä</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Milloin</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Missä</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kuka muutti, loi, otti käyttöön, poisti käytöstä, siirsi tai poisti minkäkin tilin, kuka kirjautui tai hylättiin ja mitkä roolit määritettiin: yksi rivi tapahtumaa kohden, kentät ennen ja jälkeen. Salasanoja ja salaisuuksia ei koskaan tallenneta.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ryhmä</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>järjestelmä</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>tuntematon</translation>
     </message>
 </context>
 </TS>

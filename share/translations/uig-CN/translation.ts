@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>ھېچكىم ئىشلەتمەيدىغان ياكى دىققەت قىلىشقا تېگىشلىك ھېساباتلار؛ ئۇلارنى چەكلەڭ، قۇلۇپىنى ئېچىڭ ياكى چىقىرىڭ.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ئىشلەتكۈچى تەكشۈرۈش خاتىرىسى</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ھەر بىر ھېسابات بويىچە كىم ئۆزگەرتتى، كىم كىردى ياكى رەت قىلىندى؛ سۈزۈش ۋە چىقىرىش.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>بەتنى ئاچ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from – %to، جەمئىي %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>كىرىش ئىسمى ياكى ئىشلەتكۈچى ID: ھادىسە مۇناسىۋەتلىك ھېسابات ياكى مەشغۇلات قىلغان ئىشلەتكۈچى.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ھېسابات</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>مەشغۇلات</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>كېيىن</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ھەممە نەتىجە</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ئىلگىرى</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>قىلغۇچى</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>تازىلا</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>تاماملاندى</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ھادىسىلەر %days كۈن ساقلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ھادىسىلەر قولدا چىقىرىۋېتىلگۈچە ساقلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ھادىسىلەر</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ھەممە مەشغۇلات</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>بۇ ھېساباتنىڭ ھەممە ھادىسىلىرى</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>تىزىملىكنى CSV قىلىپ چىقار (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>مەغلۇپ بولدى</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>باشلىنىش</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>تىزىملىكنى تارايتىش</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ماس كېلىدىغان ھادىسە يوق.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ھەر بەتتە</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>خاتىرىلەش audit.ini ھۆججىتىدە تاقالغان ([UserAuditSettings] UserAudit)؛ تىزىملىك ئىلگىرى خاتىرىلەنگەنلەرنى كۆرسىتىدۇ.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>رەت قىلىندى</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نەتىجە</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>كۆرسەت</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ئىشلەتكۈچى تەكشۈرۈش خاتىرىسىنىڭ جەدۋىلى يوق. ئۇنى php update/common/scripts/6.0/createuseraudittable.php ئارقىلىق قۇرۇڭ؛ ئۇنىڭغىچە تەكشۈرۈش ھۆججەتلىرى ھەر بىر ھادىسىنى ساقلايدۇ.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>بۇ بەتكە SQL ساندان كېرەك؛ ئۇ MongoDB ئۈستىدە ئىشلىمەيدۇ. تەكشۈرۈش ھۆججەتلىرى ھەر بىر ھادىسىنى ساقلايدۇ.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ئاخىرلىشىش</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ئىشلەتكۈچى تەكشۈرۈش خاتىرىسى</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ئىشلەتكۈچى</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ۋاقىت</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ئورۇن</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>كىم قايسى ھېساباتنى ئۆزگەرتتى، قۇردى، قوزغاتتى، چەكلىدى، يۆتكىدى ياكى چىقىرىۋەتتى، كىم كىردى ياكى رەت قىلىندى ۋە قايسى روللار تەقسىم قىلىندى: ھەر بىر ھادىسە ئۈچۈن بىر قۇر، ئۆزگىرىشتىن ئىلگىرىكى ۋە كېيىنكى قىممەتلەر بىلەن. ئىم ۋە مەخپىي ئۇچۇرلار ھەرگىز خاتىرىلەنمەيدۇ.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>گۇرۇپپا</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>سىستېما</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامەلۇم</translation>
     </message>
 </context>
 </TS>

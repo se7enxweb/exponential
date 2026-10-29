@@ -15295,6 +15295,14 @@ Fakatokanga: ʻE ʻikai toʻo ʻa e fokotuʻu ʻo e ngaahi pēkeisi.</translatio
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Ngaahi ʻakauni ʻoku ʻikai fakaʻaongaʻi ʻe ha taha pe ʻoku fie vakai ki ai; taʻofi, tatala pe ʻave atu kinautolu.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Lēkooti ʻaotita ʻo e kau fakaʻaongaʻi</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ko hai naʻe liliu, hū pe naʻe fakafisingaʻi, ʻi he ʻakauni taki taha; sivi mo ʻave atu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Fakaava ʻa e peesi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ki he %to ʻi he %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Ko ha hingoa hū pe ID ʻo ha tokotaha fakaʻaongaʻi: ko e ʻakauni naʻe fekauʻaki mo e meʻa hoko pe ko e tokotaha fakaʻaongaʻi naʻá ne fai ʻa e ngāue.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ʻAkauni</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ngāue</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>ʻAfiʻi</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Ola kotoa pē</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ʻImuʻa</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Fai ʻe</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Fakamaʻa</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Kuo lavaʻi</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ʻOku tauhi ʻa e ngaahi meʻa hoko ʻi he ʻaho ʻe %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ʻOku tauhi ʻa e ngaahi meʻa hoko kae ʻoua kuo toʻo ʻaki ha nima.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ngaahi meʻa hoko</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Ngāue kotoa pē</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Ngaahi meʻa hoko kotoa ʻo e ʻakauni ko ʻeni</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ʻAve atu ʻa e lisi ko e CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Kuo failʻaki</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Mei he</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Fakasiʻisiʻi ʻa e lisi</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ʻOku ʻikai ha meʻa hoko ʻoku tatau.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ʻI he peesi taki taha</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Kuo taʻofi ʻa e lēkooti ʻi he audit.ini ([UserAuditSettings] UserAudit); ʻoku fakahā ʻe he lisi ʻa e meʻa naʻe lēkooti kimuʻa.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Kuo fakafisingaʻi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ola</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Fakahā</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ʻOku ʻikai ha tēpile ʻo e lēkooti ʻaotita ʻo e kau fakaʻaongaʻi. Faʻu ia ʻaki ʻa e php update/common/scripts/6.0/createuseraudittable.php; kae ʻoua ke toki fai ia, ʻoku tauhi ʻe he ngaahi faile ʻaotita ʻa e meʻa hoko kotoa pē.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ʻOku fiemaʻu ʻe he peesi ko ʻeni ha pangikē fakamatala SQL; ʻoku ʻikai maʻu ia ʻi he MongoDB. ʻOku tauhi ʻe he ngaahi faile ʻaotita ʻa e meʻa hoko kotoa pē.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ki</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Lēkooti ʻaotita ʻo e kau fakaʻaongaʻi</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Tokotaha fakaʻaongaʻi</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Taimi</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Feituʻu</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ko hai naʻá ne liliu, faʻu, fakaʻaongaʻi, taʻofi, hiki pe toʻo ʻa e ʻakauni fē, ko hai naʻe hū pe naʻe fakafisingaʻi, pea ko e ngaahi fatongia fē naʻe vahe: laine ʻe taha ki he meʻa hoko taki taha, mo e ngaahi funga tohi kimuʻa mo e hili. ʻOku ʻikai teitei lēkooti ʻa e ngaahi lea fufū mo e ngaahi meʻa fufū.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>kulupu</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>founga</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ʻikai ʻilo</translation>
     </message>
 </context>
 </TS>

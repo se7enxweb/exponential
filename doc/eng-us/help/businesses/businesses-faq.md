@@ -79,7 +79,7 @@ Yes, through the REST API ("A headless CRUD REST API", `README.md`), which check
 See [Mobile and headless](mobile-and-headless/README.md).
 
 **How many languages?**
-359 locale files can be chosen as content languages and siteaccess locales, 43 of them written right to left; the
+368 locale files can be chosen as content languages and siteaccess locales, 43 of them written right to left; the
 administration translations are all complete (the current totals are at the top of the languages page) ([Languages in Exponential](../../languages.md)).
 See [Multilingual businesses](multilingual/README.md).
 

@@ -82,7 +82,7 @@ Ja, über die REST API („A headless CRUD REST API“, `README.md`), die diesel
 responsiven Website. Siehe [Mobil und headless](mobil-und-headless/README.md).
 
 **Wie viele Sprachen?**
-359 Locale-Dateien lassen sich als Inhaltssprachen und Siteaccess-Locales wählen, 43 davon werden von rechts nach
+368 Locale-Dateien lassen sich als Inhaltssprachen und Siteaccess-Locales wählen, 43 davon werden von rechts nach
 links geschrieben; die Administration hat viele Übersetzungen (die aktuellen Gesamtzahlen stehen am Anfang der Seite Sprachen)
 ([Sprachen in Exponential](../../sprachen.md)). Siehe [Mehrsprachige Unternehmen](mehrsprachig/README.md).
 

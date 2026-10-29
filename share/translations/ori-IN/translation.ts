@@ -15293,6 +15293,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>କେହି ବ୍ୟବହାର କରୁନଥିବା କିମ୍ବା ଦେଖିବା ଆବଶ୍ୟକ ଥିବା ଖାତା; ସେଗୁଡ଼ିକୁ ଅକ୍ଷମ କରନ୍ତୁ, ଅନଲକ୍ କରନ୍ତୁ କିମ୍ବା ରପ୍ତାନି କରନ୍ତୁ।</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ଉପଯୋଗକର୍ତ୍ତା ଅଡିଟ୍ ଲଗ୍</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ପ୍ରତି ଖାତା ଅନୁସାରେ କିଏ ପରିବର୍ତ୍ତନ କଲେ, ସାଇନ୍ ଇନ୍ କଲେ ବା ପ୍ରତ୍ୟାଖ୍ୟାତ ହେଲେ; ଫିଲ୍ଟର୍ ଓ ରପ୍ତାନି କରନ୍ତୁ।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>ପୃଷ୍ଠା ଖୋଲନ୍ତୁ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ଠାରୁ %to ପର୍ଯ୍ୟନ୍ତ, ମୋଟ %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>ଏକ ଲଗଇନ୍ କିମ୍ବା ଉପଯୋଗକର୍ତ୍ତା ID: ଇଭେଣ୍ଟଟି ଯେଉଁ ଖାତା ବିଷୟରେ ଥିଲା କିମ୍ବା ଯେଉଁ ଉପଯୋଗକର୍ତ୍ତା କାର୍ଯ୍ୟ କଲେ।</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ଖାତା</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>କାର୍ଯ୍ୟ</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>ପରେ</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ଯେକୌଣସି ଫଳାଫଳ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ପୂର୍ବରୁ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>କର୍ତ୍ତା</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>ସଫା କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ସମ୍ପନ୍ନ</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ଇଭେଣ୍ଟଗୁଡ଼ିକ %days ଦିନ ପାଇଁ ରଖାଯାଏ।</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ଇଭେଣ୍ଟଗୁଡ଼ିକ ହାତରେ ହଟାଯିବା ପର୍ଯ୍ୟନ୍ତ ରଖାଯାଏ।</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ଇଭେଣ୍ଟ</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ସମସ୍ତ କାର୍ଯ୍ୟ</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ଏହି ଖାତାର ସମସ୍ତ ଇଭେଣ୍ଟ</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ତାଲିକାକୁ CSV ଭାବରେ ରପ୍ତାନି କରନ୍ତୁ (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ବିଫଳ ହେଲା</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ଠାରୁ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>ତାଲିକା ସୀମିତ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>କୌଣସି ଇଭେଣ୍ଟ ମେଳ ଖାଉନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ପ୍ରତି ପୃଷ୍ଠା</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini ([UserAuditSettings] UserAudit) ରେ ରେକର୍ଡିଂ ବନ୍ଦ ଅଛି; ତାଲିକା ପୂର୍ବରୁ ରେକର୍ଡ ହୋଇଥିବା ତଥ୍ୟ ଦେଖାଏ।</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ପ୍ରତ୍ୟାଖ୍ୟାତ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ଫଳାଫଳ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ଦେଖାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ଉପଯୋଗକର୍ତ୍ତା ଅଡିଟ୍ ଲଗ୍‌ର ଟେବୁଲ୍ ନାହିଁ। ଏହାକୁ php update/common/scripts/6.0/createuseraudittable.php ସହିତ ସୃଷ୍ଟି କରନ୍ତୁ; ସେପର୍ଯ୍ୟନ୍ତ ଅଡିଟ୍ ଫାଇଲ୍‌ଗୁଡ଼ିକ ପ୍ରତ୍ୟେକ ଇଭେଣ୍ଟ ରଖେ।</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ଏହି ପୃଷ୍ଠା ପାଇଁ ଏକ SQL ଡାଟାବେସ୍ ଆବଶ୍ୟକ; ଏହା MongoDB ରେ ଉପଲବ୍ଧ ନୁହେଁ। ଅଡିଟ୍ ଫାଇଲ୍‌ଗୁଡ଼ିକ ପ୍ରତ୍ୟେକ ଇଭେଣ୍ଟ ରଖେ।</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ପର୍ଯ୍ୟନ୍ତ</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ଉପଯୋଗକର୍ତ୍ତା ଅଡିଟ୍ ଲଗ୍</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ଉପଯୋଗକର୍ତ୍ତା</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>କେବେ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>କେଉଁଠି</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>କିଏ କେଉଁ ଖାତାକୁ ପରିବର୍ତ୍ତନ, ସୃଷ୍ଟି, ସକ୍ଷମ, ଅକ୍ଷମ, ସ୍ଥାନାନ୍ତର କିମ୍ବା ହଟାଇଲେ, କିଏ ସାଇନ୍ ଇନ୍ କଲେ ବା ପ୍ରତ୍ୟାଖ୍ୟାତ ହେଲେ, ଏବଂ କେଉଁ ଭୂମିକା ନ୍ୟସ୍ତ କରାଗଲା: ପ୍ରତି ଇଭେଣ୍ଟ ପାଇଁ ଗୋଟିଏ ଧାଡ଼ି, ପୂର୍ବ ଓ ପରର ଫିଲ୍ଡ ସହିତ। ପାସୱାର୍ଡ ଓ ଗୋପନ ତଥ୍ୟ କେବେ ରେକର୍ଡ କରାଯାଏ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ଗୋଷ୍ଠୀ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ସିଷ୍ଟମ୍</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ଅଜଣା</translation>
     </message>
 </context>
 </TS>

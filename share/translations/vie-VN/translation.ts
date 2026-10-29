@@ -15295,6 +15295,14 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Các tài khoản không ai dùng hoặc cần xem xét; vô hiệu hóa, mở khóa hoặc xuất chúng.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Nhật ký kiểm tra người dùng</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ai đã thay đổi, đăng nhập hoặc bị từ chối, theo từng tài khoản; lọc và xuất.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>Open the page</source>
         <translation>Mở trang</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from đến %to trong tổng số %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Tên đăng nhập hoặc ID người dùng: tài khoản mà sự kiện liên quan đến hoặc người dùng đã thực hiện.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Tài khoản</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Hành động</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Sau</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Mọi kết quả</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Trước</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Người thực hiện</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Xóa</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Hoàn tất</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Sự kiện được lưu giữ trong %days ngày.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Sự kiện được lưu giữ cho đến khi được gỡ bỏ thủ công.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Sự kiện</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Mọi hành động</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Mọi sự kiện của tài khoản này</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Xuất danh sách dưới dạng CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Thất bại</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Từ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Thu hẹp danh sách</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Không có sự kiện nào khớp.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Mỗi trang</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Việc ghi nhận đã bị tắt trong audit.ini ([UserAuditSettings] UserAudit); danh sách hiển thị những gì đã được ghi nhận trước đó.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Bị từ chối</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Kết quả</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Hiển thị</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Thiếu bảng của nhật ký kiểm tra người dùng. Hãy tạo bảng bằng php update/common/scripts/6.0/createuseraudittable.php; cho đến lúc đó, các tệp kiểm tra vẫn lưu giữ mọi sự kiện.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Trang này cần cơ sở dữ liệu SQL; trang không khả dụng trên MongoDB. Các tệp kiểm tra lưu giữ mọi sự kiện.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Đến</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Nhật ký kiểm tra người dùng</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Người dùng</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Thời gian</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Nơi</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ai đã thay đổi, tạo, bật, tắt, di chuyển hoặc gỡ bỏ tài khoản nào, ai đã đăng nhập hoặc bị từ chối, và vai trò nào đã được gán: mỗi sự kiện một dòng, kèm các trường trước và sau. Mật khẩu và thông tin bí mật không bao giờ được ghi lại.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>nhóm</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>hệ thống</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>không xác định</translation>
     </message>
 </context>
 </TS>

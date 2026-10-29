@@ -15295,6 +15295,14 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Herregoota nama tokkollee hin fayyadamne yookiin ilaalamuu barbaadan; dhaabi, banii yookiin al ergi.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Galmee odiitii fayyadamtootaa</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Eenyutu jijjiire, seene yookiin dhorkame, herrega tokkoon tokkoon; calaqqisuu fi al erguu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>Open the page</source>
         <translation>Fuula bani</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hanga %to, %count keessaa</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Maqaa seensaa yookiin ID fayyadamaa: herrega taateen ilaallate yookiin fayyadamaa tarkaanfii fudhate.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Herrega</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Tarkaanfii</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Booda</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Bu&apos;aa kamiyyuu</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Dura</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Raawwataa</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Qulqulleessi</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Milkaa&apos;e</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Taatewwan guyyoota %days olkaa&apos;amu.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Taatewwan hanga harkaan haqamanitti olkaa&apos;amu.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Taatewwan</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Tarkaanfii kamiyyuu</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Taatewwan herrega kanaa hunda</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Tarree akka CSV tti al ergi (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Hin milkoofne</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Irraa</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Tarree calaqqisuu</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Taateen walsimu hin jiru.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Fuula tokkotti</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Galmeessuun audit.ini keessatti dhaabbateera ([UserAuditSettings] UserAudit); tarreen kan dura galmaa&apos;e agarsiisa.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Dhorkame</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Bu&apos;aa</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Agarsiisi</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Gabateen galmee odiitii fayyadamtootaa hin jiru. php update/common/scripts/6.0/createuseraudittable.php fayyadamaa uumaa; hanga sanaatti faayiloonni odiitii taatee hunda olkaa&apos;u.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Fuulli kun kuusaa deetaa SQL barbaada; MongoDB irratti hin argamu. Faayiloonni odiitii taatee hunda olkaa&apos;u.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hanga</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Galmee odiitii fayyadamtootaa</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Fayyadamaa</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Yeroo</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Bakka</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Eenyutu herrega kam jijjiire, uume, dandeessise, dhaabe, socho&apos;se yookiin haqe, eenyutu seene yookiin dhorkame, akkasumas gaheewwan kamtu ramadame: taatee tokkoof sarara tokko, dirreewwan dura fi booda wajjin. Jechoonni icciitii fi iccitiiwwan gonkumaa hin galmaa&apos;an.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>garee</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sirna</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>hin beekamu</translation>
     </message>
 </context>
 </TS>

@@ -15295,6 +15295,14 @@ Catetan: Pakét moal dicabut pamasanganana.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Akun nu teu dianggo ku saha waé atanapi nu kedah diparios; pareuman, buka konci, atanapi ékspor.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Log audit pamaké</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Saha nu ngarobih, asup atanapi ditolak, per akun; saring sareng ékspor.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77344,6 +77352,153 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>Open the page</source>
         <translation>Buka kaca</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from dugi ka %to ti %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Ngaran login atanapi ID pamaké: akun anu dimaksud ku kajadian atanapi pamaké anu ngalakukeunana.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akun</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Tindakan</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Saatos</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Sadaya hasil</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Sateuacan</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ku</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Beresihan</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Réngsé</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Kajadian disimpen salami %days dinten.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Kajadian disimpen dugi ka dikaluarkeun sacara manual.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Kajadian</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Sadaya tindakan</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Sadaya kajadian akun ieu</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Ékspor daptar salaku CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gagal</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ti</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Saring daptar</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Teu aya kajadian anu cocog.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per kaca</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Ngarékam dipareuman dina audit.ini ([UserAuditSettings] UserAudit); daptar némbongkeun naon anu parantos karékam sateuacanna.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ditolak</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Hasil</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Témbongkeun</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabél log audit pamaké teu aya. Jieun ku php update/common/scripts/6.0/createuseraudittable.php; dugi ka harita, berkas audit nyimpen unggal kajadian.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Kaca ieu peryogi basis data SQL; teu sayogi dina MongoDB. Berkas audit nyimpen unggal kajadian.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ka</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Log audit pamaké</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Pamaké</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Iraha</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Dimana</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Saha nu ngarobih, nyieun, ngaktipkeun, mareuman, mindahkeun atanapi ngaluarkeun akun mana, saha nu asup atanapi ditolak, sareng peran mana anu dipasihkeun: hiji baris per kajadian, kalayan widang sateuacan sareng saatosna. Sandi sareng rusiah henteu kantos dirékam.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grup</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>teu dipikanyaho</translation>
     </message>
 </context>
 </TS>

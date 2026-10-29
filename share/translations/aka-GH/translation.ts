@@ -15295,6 +15295,14 @@ Makyerɛ: Wɔrenyi boa no afi mu a wɔde ahyɛ mu.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Akawnt a obiara nnye di dwuma anaa deɛ ɛhia hwɛ; to mu, bue anaa yi kɔ abɔnten.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Nhwehwɛmu kwan a ɛfa adefoɔ ho</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Nea ɔsesaa adeɛ, ɔhyɛɛ mu anaa wɔpoo no, akawnt biara so; twa so na yi kɔ abɔnten.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     <message>
         <source>Open the page</source>
         <translation>Bue krataafa no</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from kɔsi %to wɔ %count mu</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Din a wode bɛhyɛne anaa ɔdefoɔ ID: akawnt a asɛm no fa ho anaa ɔdefoɔ a ɔyɛɛ adeɛ no.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akawnt</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Adeyɛ</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Akyi</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Nsonoeɛ biara</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ansa</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ɔyɛfoɔ</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Pepa</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Ɛyɛɛ yiye</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Wɔkora nsɛm a esiiɛ no nna %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Wɔkora nsɛm a esiiɛ no kosi sɛ obi de ne nsa bɛyi afi mu.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Nsɛm a esiiɛ</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Adeyɛ biara</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Nsɛm a esiiɛ wɔ akawnt yi so nyinaa</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Yi nsɛm no nyinaa kɔ abɔnten sɛ CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ɛnyɛɛ yiye</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Firi</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Ma nsɛm no nsua</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Asɛm biara nhyia.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Krataafa biara so</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Wɔato kyerɛwtohɔ mu wɔ audit.ini mu ([UserAuditSettings] UserAudit); nea wɔkyerɛw too hɔ kane no na ɛda adi ha.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Wɔapo</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Nsonoeɛ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Kyerɛ</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Ɔdefoɔ nhwehwɛmu kwan no tebol nni hɔ. Fa php update/common/scripts/6.0/createuseraudittable.php yɛ bi; kosi saa bere no, nhwehwɛmu fael no kora asɛm biara.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Krataafa yi hia SQL data korabea; ɛnni MongoDB so. Nhwehwɛmu fael no kora asɛm biara.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kɔsi</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Nhwehwɛmu kwan a ɛfa adefoɔ ho</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Ɔdefoɔ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Bere</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Baabi</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Nea ɔsesaa, ɔyɛɛ, ɔbuee, ɔtoo mu, ɔtwee anaa ɔyii akawnt bɛn, nea ɔhyɛɛ mu anaa wɔpoo no, ne dwumadie a wɔde maeɛ: asɛm a esiiɛ biara nya nsensanee baako, ne mmeaeɛ no sɛnea na ɛte ansa ne akyi. Wɔnkyerɛw ahintasɛm ne kokoamsɛm biara da.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>kuo</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>wonnim</translation>
     </message>
 </context>
 </TS>

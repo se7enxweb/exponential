@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>ዋላ ሓደ ዘይጥቀመሎም ወይ ኣቓልቦ ዘድልዮም ሕሳባት፤ ኣጥፍኡዎም፣ ክፈትዎም ወይ ስደድዎም።</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>መዝገብ ኦዲት ተጠቀምቲ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>መን ከም ዝቐየረ፣ ዝኣተወ ወይ ዝተኣገደ፣ ብነፍሲ ወከፍ ሕሳብ፤ ምጽራይን ናብ ወጻኢ ምስዳድን።</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>እቲ ገጽ ክፈት</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ክሳብ %to ካብ %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>መእተዊ ስም ወይ መለለዪ ተጠቃሚ: እቲ ፍጻመ ዝምልከቶ ሕሳብ ወይ ነቲ ተግባር ዝፈጸመ ተጠቃሚ።</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ሕሳብ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ተግባር</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>ድሕሪ</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ዝኾነ ውጽኢት</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ቅድሚ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ፈጻሚ</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>ኣጽሪ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ተፈጺሙ</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ፍጻመታት ንመዓልታት %days ይዕቀቡ።</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ፍጻመታት ብኢድ ክሳብ ዝእለዩ ይዕቀቡ።</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ፍጻመታት</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ዝኾነ ተግባር</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ኩሎም ፍጻመታት ናይዚ ሕሳብ</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ዝርዝር ከም CSV ናብ ወጻኢ ስደድ (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ኣይተዓወተን</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ካብ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>ምጽባብ ዝርዝር</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ዝሰማማዕ ፍጻመ የለን።</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ኣብ ነፍሲ ወከፍ ገጽ</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>ምምዝጋብ ኣብ audit.ini ጠፊኡ ኣሎ ([UserAuditSettings] UserAudit)፤ እቲ ዝርዝር ቅድም ዝተመዝገበ የርኢ።</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ተኣጊዱ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ውጽኢት</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ኣርኢ</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ሰሌዳ መዝገብ ኦዲት ተጠቀምቲ የለን። ብ php update/common/scripts/6.0/createuseraudittable.php ፍጠርዎ፤ ክሳብ ሽዑ ፋይላት ኦዲት ነፍሲ ወከፍ ፍጻመ ይሕዙ።</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>እዚ ገጽ ዳታቤዝ SQL የድልዮ፤ ኣብ MongoDB ኣይርከብን። ፋይላት ኦዲት ነፍሲ ወከፍ ፍጻመ ይሕዙ።</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ክሳብ</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>መዝገብ ኦዲት ተጠቀምቲ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ተጠቃሚ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>መዓስ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ኣበይ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>መን ኣየናይ ሕሳብ ከም ዝቐየረ፣ ዝፈጠረ፣ ዘንቀሐ፣ ዘጥፍአ፣ ዘግዓዘ ወይ ዘውጽአ፣ መን ከም ዝኣተወ ወይ ዝተኣገደ፣ ከምኡውን ኣየኖት ተራታት ከም ዝተመደቡ: ንነፍሲ ወከፍ ፍጻመ ሓደ መስመር፣ ምስ ቅድሚን ድሕሪን ዝነበሩ መዳያት። መሕለፊ ቃላትን ምስጢራትን ፈጺሞም ኣይምዝገቡን።</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ጉጅለ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ሲስተም</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ዘይፍለጥ</translation>
     </message>
 </context>
 </TS>

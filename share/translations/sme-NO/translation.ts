@@ -15295,6 +15295,14 @@ Muitte: Páhkaid sajáiduhttin ii sihkkojuvvo.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kontot maid oktage ii geavat dahje mat dárbbašit geahčadit; heaittit, rabas dahje olggosfievrit daid.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Geavaheaddjiid revišuvdnalogga</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Gii rievdadii, čálihii sisa dahje hilgojuvvui, kontto mielde; sillo ja fievrrit olggos.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>Open the page</source>
         <translation>Rahpat siidu</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to, oktiibuot %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Geavaheaddjinamma dahje geavaheaddji ID: konto maid dáhpáhus guoskkai, dahje geavaheaddji gii doaimmai.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Doaibma</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Maŋŋil</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Buot bohtosat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ovdal</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Dahkki</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Guorrut</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Dahkkon</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Dáhpáhusat vurkejuvvojit %days beaivvi.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Dáhpáhusat vurkejuvvojit dassážii go dat sihkkojuvvojit gieđain.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Dáhpáhusat</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Buot doaimmat</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Dán kontto buot dáhpáhusat</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Fievrrit listtu olggos CSV-fiilan (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ii lihkostuvvan</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Rájes</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Ráddje listtu</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Ii oktage dáhpáhus heive.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Siidui</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Registreren lea jáddaduvvon audit.ini-fiillas ([UserAuditSettings] UserAudit); listu čájeha dan mii registrerejuvvui ovdal.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Hilgojuvvon</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Bohtosat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Čájet</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Geavaheaddjiid revišuvdnaloggatabealla váilu. Ráhkat dan dáinna: php update/common/scripts/6.0/createuseraudittable.php; dassážii revišuvdnafiillat vurkejit buot dáhpáhusaid.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Dát siidu dárbbaša SQL-diehtovuođu; dat ii leat olámuttus MongoDB:s. Revišuvdnafiillat vurkejit buot dáhpáhusaid.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Rádjái</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Geavaheaddjiid revišuvdnalogga</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Geavaheaddji</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Goas</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Gos</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Gii rievdadii, ráhkadii, doaimmahii, jáddadii, sirddii dahje sihkui man kontto, gii čálihii sisa dahje hilgojuvvui, ja makkár rollat juhkkojuvvojedje: okta linnjá juohke dáhpáhussii, gieddiiguin ovdal ja maŋŋil. Beassansánit ja čiegusvuođat eai goassege registrerejuvvo.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>joavku</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>vuogádat</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>amas</translation>
     </message>
 </context>
 </TS>

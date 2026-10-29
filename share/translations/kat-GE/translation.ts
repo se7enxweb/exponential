@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>ანგარიშები, რომლებსაც არავინ იყენებს ან რომლებიც ყურადღებას საჭიროებს; მათი გამორთვა, განბლოკვა ან ექსპორტი.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>მომხმარებლების აუდიტის ჟურნალი</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ვინ შეცვალა, შევიდა სისტემაში ან ვის ეთქვა უარი, ანგარიშების მიხედვით; ფილტრაცია და ექსპორტი.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>გვერდის გახსნა</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to, სულ %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>მომხმარებლის სახელი ან მომხმარებლის ID: ანგარიში, რომელსაც მოვლენა ეხებოდა, ან მომხმარებელი, რომელმაც მოქმედება შეასრულა.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ანგარიში</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>მოქმედება</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>შემდეგ</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ნებისმიერი შედეგი</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>მანამდე</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>შემსრულებელი</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>გასუფთავება</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>შესრულდა</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>მოვლენები ინახება %days დღის განმავლობაში.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>მოვლენები ინახება, სანამ ხელით არ წაიშლება.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>მოვლენები</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ყველა მოქმედება</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ამ ანგარიშის ყველა მოვლენა</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>სიის ექსპორტი CSV ფორმატში (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ვერ შესრულდა</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>თარიღიდან</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>სიის შევიწროება</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>შესაბამისი მოვლენა არ არის.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>გვერდზე</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>ჩაწერა გამორთულია audit.ini ფაილში ([UserAuditSettings] UserAudit); სიაში ნაჩვენებია ის, რაც ადრე ჩაიწერა.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>უარყოფილია</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>შედეგი</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ჩვენება</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>მომხმარებლების აუდიტის ჟურნალის ცხრილი არ არსებობს. შექმენით ის ბრძანებით php update/common/scripts/6.0/createuseraudittable.php; მანამდე აუდიტის ფაილები ყველა მოვლენას ინახავს.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ამ გვერდს SQL მონაცემთა ბაზა სჭირდება; ის მიუწვდომელია, როცა გამოიყენება MongoDB. აუდიტის ფაილები ყველა მოვლენას ინახავს.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>თარიღამდე</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>მომხმარებლების აუდიტის ჟურნალი</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>მომხმარებელი</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>როდის</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>სად</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>ვინ შეცვალა, შექმნა, ჩართო, გამორთო, გადაიტანა ან წაშალა რომელი ანგარიში, ვინ შევიდა სისტემაში ან ვის ეთქვა უარი და რომელი როლები მიენიჭა: თითო სტრიქონი თითო მოვლენაზე, ველების წინა და შემდგომი მნიშვნელობებით. პაროლები და საიდუმლოებები არასოდეს ჩაიწერება.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ჯგუფი</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>სისტემა</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>უცნობი</translation>
     </message>
 </context>
 </TS>

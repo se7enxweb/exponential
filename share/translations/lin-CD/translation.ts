@@ -15295,6 +15295,14 @@ Nkomba: Ba-paquet ekolongolama na système te.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Ba-compte oyo moto moko te asalelaka to oyo esengi botalisi; bomá, pelisá lisusu to bimisá yango.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Journal ya audit ya basaleli</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Nani abongolaki, akɔtaki to bapekisaki ye, na compte moko moko; filtre mpe bimisá.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>Open the page</source>
         <translation>Bɔkɔla lokasa</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from tii %to na kati ya %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Nkómbó ya kokɔta to id ya mosaleli: compte oyo likambo etalaki to mosaleli oyo asalaki.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Compte</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Likambo esalemi</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Sima</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Mbuma nyonso</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Liboso</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Esalemi na</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Pɛtɔlá</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Esalemi</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Makambo ebombamaka mikolo %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Makambo ebombamaka tii bakolongola yango na lobɔkɔ.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Makambo</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Likambo nyonso</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Makambo nyonso ya compte oyo</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Bimisá liste lokola CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Esalemi te</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Euti na</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Filtre ya liste</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Likambo moko te ekokani.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na lokasa moko</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Kokoma ekangami na audit.ini ([UserAuditSettings] UserAudit); liste ezali kolakisa oyo ekomamaki liboso.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Bapekisaki</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Mbuma</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Lakisá</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tableau ya journal ya audit ya basaleli ezali te. Salá yango na php update/common/scripts/6.0/createuseraudittable.php; tii wana, ba fichiers ya audit ebombaka likambo nyonso.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Lokasa oyo esengeli na base de données SQL; ezali te na MongoDB. Ba fichiers ya audit ebombaka likambo nyonso.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Tii</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Journal ya audit ya basaleli</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mosaleli</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Ntango</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Esika</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Nani abongolaki, asalaki, apelisaki, abomaki, atambwisaki to alongolaki compte nini, nani akɔtaki to bapekisaki ye, mpe mikumba nini bapesaki: molɔngɔ moko mpo na likambo moko moko, na ba champs liboso mpe sima. Maloba ya sekele mpe makambo ya sekele ekomamaka soki moke te.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>lisanga</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>système</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>eyebani te</translation>
     </message>
 </context>
 </TS>

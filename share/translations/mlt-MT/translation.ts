@@ -15238,6 +15238,14 @@ Nota: il-pakketti mhux se jiġu ddiżinstallati.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kontijiet li ħadd ma juża jew li jeħtieġu attenzjoni; iddiżattivahom, iżblokkahom jew esportahom.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Reġistru tal-awditu tal-utenti</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Min biddel, daħal jew ġie miċħud, għal kull kont; iffiltra u esporta.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>Open the page</source>
         <translation>Iftaħ il-paġna</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from sa %to minn %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Isem tad-dħul jew ID tal-utent: il-kont li l-avveniment kien dwaru jew l-utent li aġixxa.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kont</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Azzjoni</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Wara</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Kull riżultat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Qabel</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Magħmul minn</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Neħħi</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Sar</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>L-avvenimenti jinżammu għal %days jum.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>L-avvenimenti jinżammu sakemm jitneħħew manwalment.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Avvenimenti</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Kull azzjoni</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>L-avvenimenti kollha ta&apos; dan il-kont</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Esporta l-lista bħala CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Falla</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Minn</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Illimita l-lista</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>L-ebda avveniment ma jaqbel.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Għal kull paġna</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Ir-reġistrazzjoni hija mitfija f&apos;audit.ini ([UserAuditSettings] UserAudit); il-lista turi dak li ġie rreġistrat qabel.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Miċħud</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Riżultat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Uri</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>It-tabella tar-reġistru tal-awditu tal-utenti hija nieqsa. Oħloqha permezz ta&apos; php update/common/scripts/6.0/createuseraudittable.php; sa dakinhar il-fajls tal-awditu jżommu kull avveniment.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Din il-paġna teħtieġ database SQL; mhijiex disponibbli fuq MongoDB. Il-fajls tal-awditu jżommu kull avveniment.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Sa</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Reġistru tal-awditu tal-utenti</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Utent</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Meta</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Fejn</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Min biddel, ħoloq, attiva, iddiżattiva, ċaqlaq jew neħħa liema kont, min daħal jew ġie miċħud, u liema rwoli ġew assenjati: linja waħda għal kull avveniment, bil-oqsma qabel u wara. Il-passwords u s-sigrieti qatt ma jiġu rreġistrati.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grupp</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistema</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>mhux magħruf</translation>
     </message>
 </context>
 </TS>

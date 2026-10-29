@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>করনাসু ব্যবহার তৌদবা নত্রগা ফংনা ঙমবা একাউন্টশিং; বন্দ তৌবিয়ু, আনলক তৌবিয়ু নত্রগা এক্সপোর্ট তৌবিয়ু.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ইউজর অডিট লগ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>একাউন্ট অমমমগী মতাংদা কনানা হোংদোকখিবগে, কনানা লগইন তৌখিবগে নত্রগা কনাবু য়াদখিবগে; ফিল্টর তৌবা অমসুং এক্সপোর্ট তৌবা.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>পেজ অসি ফাংবা</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, পুম্নমক %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>লগইন মমিং নত্রগা ইউজর ID: ঘটনা অসি মরী লৈনবা একাউন্ট, নত্রগা থবক পাংথোকখিবা ইউজর.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>একাউন্ট</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>কাম</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>মখলদা</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>রেজল্ট খুদিংমক</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>মখাদা</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>তৌবা মী</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>ফাহনবা</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ফাংখ্রে</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ঘটনাশিং অসি নুমিৎ %days ফাওবা থম্মী.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ঘটনাশিং অসি খুৎনা থোক্কনবা ফাওবা থম্মী.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ঘটনাশিং</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>কাম খুদিংমক</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>একাউন্ট অসিগী ঘটনা পুম্নমক</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>লিস্ট অসি CSV ওইনা এক্সপোর্ট তৌবা (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ঙমদ্রে</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>হৌবা নুমিৎ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>লিস্ট অসি অপিকপা তৌবা</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>মান্নবা ঘটনা অমত্তা লৈতে.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>পেজ অমদা</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini দা রেকর্দিং বন্দ তৌরে ([UserAuditSettings] UserAudit); লিস্ট অসিনা হান্নদা রেকর্দ তৌখিবা অদু উৎলি.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>য়াদখ্রে</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>রেজল্ট</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ফংবা</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ইউজর অডিট লগকী টেবল অদু লৈতে. মসিবু php update/common/scripts/6.0/createuseraudittable.php শিজিন্নদুনা সেম্বিয়ু; মতম অদু ফাওবা অডিট ফাইলশিংনা ঘটনা খুদিংমক থম্মী.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>পেজ অসিগীদমক SQL দেতাবেস অমা মথৌ তাই; MongoDB দা মসি ফংদে. অডিট ফাইলশিংনা ঘটনা খুদিংমক থম্মী.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>লোইবা নুমিৎ</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ইউজর অডিট লগ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ইউজর</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>মতম</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>মফম</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>কনানা কররম্বা একাউন্ট হোংদোকখিবগে, সেমখিবগে, চালু তৌখিবগে, বন্দ তৌখিবগে, থোংনখিবগে নত্রগা থোক্কনখিবগে, কনানা লগইন তৌখিবগে নত্রগা কনাবু য়াদখিবগে, অমসুং কররম্বা ভূমিকাশিং পীখিবগে: ঘটনা অমমমগীদমক লাইন অমা, মখাদা অমসুং মখলদগী ফিল্দশিংগা লোয়নবা. পাসওয়র্দ অমসুং অরোনবা ৱাশিং কদাইদসু রেকর্দ তৌদে.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>মরুপ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>সিস্টেম</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ফংদে</translation>
     </message>
 </context>
 </TS>

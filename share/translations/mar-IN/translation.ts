@@ -15293,6 +15293,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>कोणीही न वापरलेली किंवा लक्ष देण्याजोगी खाती; ती अक्षम करा, अनलॉक करा किंवा निर्यात करा.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>वापरकर्ता ऑडिट लॉग</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>प्रत्येक खात्यासाठी कोणी बदल केला, कोणी साइन इन केले किंवा कोणाला नाकारले गेले; फिल्टर करा आणि निर्यात करा.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>पृष्ठ उघडा</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count पैकी %from ते %to</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>लॉगिन किंवा वापरकर्ता ID: इव्हेंट ज्या खात्याबद्दल होता ते खाते, किंवा क्रिया करणारा वापरकर्ता.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>खाते</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>क्रिया</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>नंतर</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>कोणताही निकाल</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>आधी</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>कर्ता</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>साफ करा</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>पूर्ण झाले</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>इव्हेंट %days दिवस ठेवले जातात.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>हाताने काढून टाकेपर्यंत इव्हेंट ठेवले जातात.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>इव्हेंट्स</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>सर्व क्रिया</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>या खात्याचे सर्व इव्हेंट</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>सूची CSV म्हणून निर्यात करा (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>अयशस्वी</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>पासून</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>सूची मर्यादित करा</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>कोणताही इव्हेंट जुळत नाही.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>प्रति पृष्ठ</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini मध्ये रेकॉर्डिंग बंद आहे ([UserAuditSettings] UserAudit); सूची आधी रेकॉर्ड केलेले दाखवते.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>नाकारले</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>निकाल</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दाखवा</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>वापरकर्ता ऑडिट लॉगचे टेबल अस्तित्वात नाही. ते php update/common/scripts/6.0/createuseraudittable.php वापरून तयार करा; तोपर्यंत ऑडिट फायली प्रत्येक इव्हेंट ठेवतात.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>या पृष्ठाला SQL डेटाबेस आवश्यक आहे; MongoDB वर हे उपलब्ध नाही. ऑडिट फायली प्रत्येक इव्हेंट ठेवतात.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>पर्यंत</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>वापरकर्ता ऑडिट लॉग</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>वापरकर्ता</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>केव्हा</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>कोठे</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>कोणी कोणते खाते बदलले, तयार केले, सक्षम केले, अक्षम केले, हलवले किंवा काढून टाकले, कोणी साइन इन केले किंवा कोणाला नाकारले गेले, आणि कोणत्या भूमिका नियुक्त केल्या: प्रत्येक इव्हेंटसाठी एक ओळ, आधीच्या आणि नंतरच्या फील्डसह. पासवर्ड आणि गुपिते कधीही रेकॉर्ड केली जात नाहीत.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>गट</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>सिस्टम</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>अज्ञात</translation>
     </message>
 </context>
 </TS>

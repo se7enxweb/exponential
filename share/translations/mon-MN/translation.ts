@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Хэн ч ашигладаггүй эсвэл анхаарал шаардсан бүртгэлүүд; тэдгээрийг идэвхгүй болгох, нээх эсвэл экспортлох.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Хэрэглэгчийн аудитын бүртгэл</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Бүртгэл тус бүрээр хэн өөрчилсөн, хэн нэвтэрсэн эсвэл хэнд татгалзсан; шүүх болон экспортлох.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Хуудсыг нээх</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to, нийт %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Нэвтрэх нэр эсвэл хэрэглэгчийн ID: үйл явдал хамаарах бүртгэл эсвэл үйлдэл хийсэн хэрэглэгч.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Бүртгэл</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Үйлдэл</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Дараа нь</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Бүх үр дүн</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Өмнө нь</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Гүйцэтгэгч</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Цэвэрлэх</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Амжилттай</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Үйл явдлыг %days хоног хадгална.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Үйл явдлыг гараар устгах хүртэл хадгална.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Үйл явдлууд</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Бүх үйлдэл</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Энэ бүртгэлийн бүх үйл явдал</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Жагсаалтыг CSV хэлбэрээр экспортлох (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Амжилтгүй</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Эхлэх</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Жагсаалтыг нарийсгах</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Тохирох үйл явдал алга.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Нэг хуудсанд</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini файлд бичлэг хийхийг унтраасан ([UserAuditSettings] UserAudit); жагсаалт өмнө нь бичигдсэнийг харуулна.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Татгалзсан</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Үр дүн</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Харуулах</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Хэрэглэгчийн аудитын бүртгэлийн хүснэгт байхгүй байна. Үүнийг php update/common/scripts/6.0/createuseraudittable.php ашиглан үүсгэнэ үү; тэр болтол аудитын файлууд үйл явдал бүрийг хадгална.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Энэ хуудсанд SQL өгөгдлийн сан шаардлагатай; MongoDB дээр ашиглах боломжгүй. Аудитын файлууд үйл явдал бүрийг хадгална.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Хүртэл</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Хэрэглэгчийн аудитын бүртгэл</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Хэрэглэгч</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Хэзээ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Хаана</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Хэн аль бүртгэлийг өөрчилсөн, үүсгэсэн, идэвхжүүлсэн, идэвхгүй болгосон, зөөсөн эсвэл хассан, хэн нэвтэрсэн эсвэл хэнд татгалзсан, ямар үүрэг оноосон: үйл явдал бүрт нэг мөр, талбаруудын өмнөх болон дараах утгатай. Нууц үг болон нууц мэдээллийг хэзээ ч бүртгэдэггүй.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>бүлэг</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>систем</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>үл мэдэгдэх</translation>
     </message>
 </context>
 </TS>

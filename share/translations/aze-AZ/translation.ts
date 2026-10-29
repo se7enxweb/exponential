@@ -15295,6 +15295,14 @@ Qeyd: Paketlərin quraşdırılması silinməyəcək.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Heç kimin istifadə etmədiyi və ya nəzərdən keçirilməli hesablar; onları deaktivləşdirin, kilidini açın və ya ixrac edin.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>İstifadəçi audit jurnalı</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Hər hesab üzrə kim dəyişdi, daxil oldu və ya rədd edildi; filtrləyin və ixrac edin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     <message>
         <source>Open the page</source>
         <translation>Səhifəni aç</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, cəmi %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Giriş adı və ya istifadəçi ID-si: hadisənin aid olduğu hesab və ya əməliyyatı icra edən istifadəçi.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Hesab</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Əməliyyat</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Sonra</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>İstənilən nəticə</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Əvvəl</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>İcra edən</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Təmizlə</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>İcra edildi</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Hadisələr %days gün saxlanılır.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Hadisələr əl ilə silinənə qədər saxlanılır.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Hadisələr</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Bütün əməliyyatlar</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Bu hesabın bütün hadisələri</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Siyahını CSV kimi ixrac et (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Uğursuz oldu</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Nə vaxtdan</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Siyahını daralt</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Uyğun hadisə yoxdur.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Hər səhifədə</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Qeydə alma audit.ini faylında söndürülüb ([UserAuditSettings] UserAudit); siyahı əvvəllər qeydə alınanları göstərir.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rədd edildi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Nəticə</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Göstər</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>İstifadəçi audit jurnalının cədvəli yoxdur. Onu php update/common/scripts/6.0/createuseraudittable.php ilə yaradın; o vaxta qədər audit faylları hər hadisəni saxlayır.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Bu səhifə SQL verilənlər bazası tələb edir; MongoDB ilə işləmir. Audit faylları hər hadisəni saxlayır.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Nə vaxtadək</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>İstifadəçi audit jurnalı</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>İstifadəçi</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Nə vaxt</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Harada</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kimin hansı hesabı dəyişdiyi, yaratdığı, aktivləşdirdiyi, deaktiv etdiyi, köçürdüyü və ya sildiyi, kimin daxil olduğu və ya rədd edildiyi və hansı rolların təyin edildiyi: hər hadisə üçün bir sətir, sahələrin əvvəlki və sonrakı dəyərləri ilə. Şifrələr və gizli məlumatlar heç vaxt qeydə alınmır.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>qrup</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>naməlum</translation>
     </message>
 </context>
 </TS>

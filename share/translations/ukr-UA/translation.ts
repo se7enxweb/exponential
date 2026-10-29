@@ -15238,6 +15238,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Облікові записи, якими ніхто не користується або які варто перевірити; вимкнути, розблокувати чи експортувати їх.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Журнал аудиту користувачів</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Хто вносив зміни, входив у систему або отримав відмову, за кожним обліковим записом; фільтрування й експорт.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Відкрити сторінку</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from – %to з %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Логін або ID користувача: обліковий запис, якого стосується подія, або користувач, який виконав дію.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Обліковий запис</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Дія</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Після</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Будь-який результат</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>До</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Виконавець</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Очистити</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Виконано</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Термін зберігання подій у днях: %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Події зберігаються, доки їх не вилучать вручну.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Події</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Будь-яка дія</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Усі події цього облікового запису</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Експортувати список у CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Помилка</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>З</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Звузити список</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Немає подій, що відповідають умовам.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>На сторінку</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Запис подій вимкнено в audit.ini ([UserAuditSettings] UserAudit); у списку показано те, що було записано раніше.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Відхилено</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Результат</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Показати</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Таблиця журналу аудиту користувачів відсутня. Створіть її командою php update/common/scripts/6.0/createuseraudittable.php; доти всі події зберігаються у файлах аудиту.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Для цієї сторінки потрібна база даних SQL; у MongoDB вона недоступна. Усі події зберігаються у файлах аудиту.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>По</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Журнал аудиту користувачів</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Користувач</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Коли</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Де</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Хто змінив, створив, увімкнув, вимкнув, перемістив або вилучив який обліковий запис, хто ввійшов у систему або отримав відмову і які ролі було призначено: один рядок на подію, зі значеннями полів до і після. Паролі та секрети ніколи не записуються.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>група</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>система</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>невідомо</translation>
     </message>
 </context>
 </TS>

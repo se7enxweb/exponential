@@ -15238,6 +15238,14 @@ Nóta: Ní dhíshuiteálfar na pacáistí.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Cuntais nach n-úsáideann aon duine nó ar gá breathnú orthu; díchumasaigh, díghlasáil nó easpórtáil iad.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Loga iniúchta úsáideoirí</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Cé a d&apos;athraigh, a shínigh isteach nó a diúltaíodh, de réir cuntais; scag agus easpórtáil.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <message>
         <source>Open the page</source>
         <translation>Oscail an leathanach</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from go %to as %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Ainm logála isteach nó aitheantas úsáideora: an cuntas lenar bhain an imeacht nó an t-úsáideoir a rinne an gníomh.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Cuntas</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Gníomh</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Ina dhiaidh</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Toradh ar bith</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Roimhe</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Le</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Glan</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Déanta</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Coinnítear imeachtaí ar feadh %days lá.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Coinnítear imeachtaí go dtí go mbaintear iad de láimh.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Imeachtaí</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Gníomh ar bith</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Gach imeacht den chuntas seo</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Easpórtáil an liosta mar CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Theip</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ó</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Caolaigh an liosta</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Níl aon imeacht ag teacht leis.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>In aghaidh an leathanaigh</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Tá an taifeadadh casta as in audit.ini ([UserAuditSettings] UserAudit); taispeánann an liosta an méid a taifeadadh roimhe sin.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Diúltaithe</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Toradh</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Taispeáin</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tá tábla loga iniúchta na n-úsáideoirí ar iarraidh. Cruthaigh é le php update/common/scripts/6.0/createuseraudittable.php; go dtí sin coinníonn na comhaid iniúchta gach imeacht.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Teastaíonn bunachar sonraí SQL ón leathanach seo; níl sé ar fáil ar MongoDB. Coinníonn na comhaid iniúchta gach imeacht.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Go dtí</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Loga iniúchta úsáideoirí</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Úsáideoir</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Cathain</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Cá háit</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Cé a d&apos;athraigh, a chruthaigh, a chumasaigh, a dhíchumasaigh, a bhog nó a bhain cén cuntas, cé a shínigh isteach nó a diúltaíodh, agus cé na róil a sannadh: líne amháin in aghaidh an imeachta, leis na réimsí roimhe agus ina dhiaidh. Ní thaifeadtar pasfhocail ná rúin riamh.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grúpa</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>córas</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>anaithnid</translation>
     </message>
 </context>
 </TS>

@@ -15293,6 +15293,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>هغه حسابونه چې څوک یې نه کاروي یا کتنه غواړي؛ هغه غیرفعال کړئ، خلاص یې کړئ یا یې صادر کړئ.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>د کارنانو د پلټنې لاګ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>چا بدلون راوست، ننوت یا رد شو، د هر حساب له مخې؛ فلټر او صادرول.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>پاڼه پرانیستل</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>له %count څخه %from تر %to</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>کارن‌نوم یا د کارن ID: هغه حساب چې پېښه یې په اړه وه یا هغه کارن چې کړنه یې وکړه.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>حساب</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>کړنه</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>وروسته</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>هره پایله</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>مخکې</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ترسره کوونکی</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>پاکول</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ترسره شو</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>پېښې د %days ورځو لپاره ساتل کېږي.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>پېښې تر هغه ساتل کېږي چې په لاس لرې شي.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>پېښې</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>هره کړنه</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>د دې حساب ټولې پېښې</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>د لېست صادرول د CSV په بڼه (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>له</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>لېست محدودول</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>هېڅ پېښه سمون نه خوري.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>په هره پاڼه کې</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>ثبتول په audit.ini کې بند دي ([UserAuditSettings] UserAudit)؛ لېست هغه څه ښيي چې مخکې ثبت شوي.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>رد شوی</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>پایله</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ښودل</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>د کارنانو د پلټنې لاګ جدول نشته. هغه د php update/common/scripts/6.0/createuseraudittable.php په مرسته جوړ کړئ؛ تر هغه وخته د پلټنې دوتنې هره پېښه ساتي.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>دې پاڼې ته SQL ډېټابېس اړین دی؛ په MongoDB کې شتون نه لري. د پلټنې دوتنې هره پېښه ساتي.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>تر</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>د کارنانو د پلټنې لاګ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>کارن</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>کله</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>چېرته</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>چا کوم حساب بدل کړ، جوړ کړ، فعال کړ، غیرفعال کړ، ولېږداوه یا لرې کړ، څوک ننوت یا رد شو، او کوم رولونه وټاکل شول: د هرې پېښې لپاره یوه کرښه، د ساحو له مخکې او وروسته ارزښتونو سره. پټنومونه او رازونه هېڅکله نه ثبتېږي.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ډله</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>سیستم</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامعلوم</translation>
     </message>
 </context>
 </TS>

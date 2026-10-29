@@ -15238,6 +15238,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Учетные записи, которыми никто не пользуется или которые требуют внимания; их можно отключить, разблокировать или экспортировать.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Журнал аудита пользователей</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Кто вносил изменения, входил в систему или получил отказ, по каждой учетной записи; фильтрация и экспорт.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Открыть страницу</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from – %to из %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Имя пользователя или ID пользователя: учетная запись, которой касается событие, или пользователь, выполнивший действие.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Учетная запись</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Действие</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>После</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Любой результат</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>До</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Исполнитель</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Сбросить</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Выполнено</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Срок хранения событий в днях: %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>События хранятся, пока их не удалят вручную.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>События</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Любое действие</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Все события этой учетной записи</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Экспортировать список в CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Не удалось</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>С</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Сузить список</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Нет подходящих событий.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>На странице</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Запись событий отключена в audit.ini ([UserAuditSettings] UserAudit); в списке показано то, что было записано ранее.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Отклонено</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Результат</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Показать</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Таблица журнала аудита пользователей отсутствует. Создайте ее командой php update/common/scripts/6.0/createuseraudittable.php; до тех пор все события сохраняются в файлах аудита.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Для этой страницы нужна база данных SQL; в MongoDB она недоступна. Все события сохраняются в файлах аудита.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>По</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Журнал аудита пользователей</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Пользователь</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Когда</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Где</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Кто изменил, создал, включил, отключил, переместил или удалил какую учетную запись, кто вошел в систему или получил отказ и какие роли были назначены: одна строка на событие, со значениями полей до и после. Пароли и секретные данные никогда не записываются.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>группа</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>система</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>неизвестно</translation>
     </message>
 </context>
 </TS>

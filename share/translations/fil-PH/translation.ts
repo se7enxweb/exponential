@@ -15295,6 +15295,14 @@ Paalala: Hindi ia-uninstall ang mga package.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Mga account na walang gumagamit o kailangang tingnan; i-disable, i-unlock o i-export ang mga ito.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Audit log ng mga user</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Sino ang nagbago, nag-log in o tinanggihan, ayon sa account; i-filter at i-export.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     <message>
         <source>Open the page</source>
         <translation>Buksan ang pahina</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hanggang %to ng %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Isang login o user ID: ang account na tinutukoy ng event o ang user na gumawa ng aksyon.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Account ng user</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aksyon</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Pagkatapos</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Anumang resulta</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Bago</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ginawa ni</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>I-clear</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Tapos na</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Itinatago ang mga event nang %days araw.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Itinatago ang mga event hanggang alisin ang mga ito nang mano-mano.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Mga event</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Lahat ng aksyon</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Lahat ng event ng account na ito</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>I-export ang listahan bilang CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nabigo</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Mula sa</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Paliitin ang listahan</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Walang tumutugmang event.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Bawat pahina</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Naka-off ang pagtatala sa audit.ini ([UserAuditSettings] UserAudit); ipinapakita ng listahan ang mga naitala dati.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Tinanggihan</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resulta</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ipakita</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Nawawala ang table ng audit log ng mga user. Gawin ito gamit ang php update/common/scripts/6.0/createuseraudittable.php; hanggang doon, itinatago ng mga audit file ang bawat event.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Kailangan ng page na ito ng SQL database; hindi ito available sa MongoDB. Itinatago ng mga audit file ang bawat event.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hanggang</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Audit log ng mga user</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Gumagamit</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kailan</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Saan</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Sino ang nagbago, gumawa, nag-enable, nag-disable, naglipat o nag-alis ng aling account, sino ang nag-log in o tinanggihan, at aling mga tungkulin ang itinalaga: isang linya bawat event, kasama ang mga field bago at pagkatapos. Hindi kailanman itinatala ang mga password at lihim.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grupo</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistema</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>hindi alam</translation>
     </message>
 </context>
 </TS>

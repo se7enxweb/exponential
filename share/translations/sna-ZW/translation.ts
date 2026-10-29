@@ -15295,6 +15295,14 @@ Chenjerai: Mapakeji acho haazobviswi pakuiswa.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Maakaundi asingashandiswi kana anoda kutariswa; dzimai, vhurai kana kuaburitsa kunze.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Rekodhi yeongororo yevashandisi</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ndiani akachinja, akapinda kana akarambidzwa, paakaundi imwe neimwe; kusefa nekuburitsa kunze.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     <message>
         <source>Open the page</source>
         <translation>Vhura peji</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from kusvika %to pa %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Zita rekupinda kana ID yemushandisi: akaundi yaive nechiitiko kana mushandisi akaita chiito.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akaundi</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Chiito</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Shure</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Mhedzisiro ipi neipi</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Pamberi</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Akaita</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Bvisa</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Zvaitwa</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Zviitiko zvinochengetwa kwemazuva %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Zviitiko zvinochengetwa kusvikira zvabviswa nemaoko.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Zviitiko</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Chiito chipi nechipi</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Zviitiko zvese zveakaundi iyi</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Buritsa rondedzero kunze mufomati ye CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Zvakundikana</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kubva</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Kusefa rondedzero</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Hapana chiitiko chinoenderana.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Papeji rimwe nerimwe</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Kurekodha kwakadzimwa mu audit.ini ([UserAuditSettings] UserAudit); rondedzero inoratidza zvakarekodhwa kare.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Zvarambidzwa</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Mhedzisiro</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ratidza</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tafura yerekodhi yeongororo yevashandisi haipo. Igadzirei ne php update/common/scripts/6.0/createuseraudittable.php; kusvika ipapo mafaira eongororo anochengeta chiitiko chimwe nechimwe.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Peji iri rinoda dhatabhesi ye SQL; harisi kuwanikwa pa MongoDB. Mafaira eongororo anochengeta chiitiko chimwe nechimwe.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kusvika</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Rekodhi yeongororo yevashandisi</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mushandisi</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Rini</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kupi</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ndiani akachinja, akagadzira, akabatidza, akadzima, akatama kana akabvisa akaundi ipi, ndiani akapinda kana akarambidzwa, uye zvinzvimbo zvipi zvakapihwa: mutsara mumwe pachiitiko chimwe nechimwe, neminda pamberi uye shure. Mapasiwedhi nezvakavanzika hazvimborekodhwa.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>boka</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>hurongwa</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>hazvizivikanwi</translation>
     </message>
 </context>
 </TS>

@@ -15295,6 +15295,14 @@ Catatan: Paket tidak akan dicopot.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Akun yang tidak digunakan siapa pun atau yang perlu diperiksa; nonaktifkan, buka kunci, atau ekspor.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Log audit pengguna</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Siapa yang mengubah, masuk, atau ditolak, per akun; filter dan ekspor.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
     <message>
         <source>Open the page</source>
         <translation>Buka halaman</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to dari %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Nama login atau ID pengguna: akun yang menjadi subjek peristiwa atau pengguna yang melakukan tindakan.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akun</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Tindakan</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Sesudah</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Semua hasil</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Sebelum</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Oleh</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Bersihkan</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Berhasil</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Peristiwa disimpan selama %days hari.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Peristiwa disimpan sampai dihapus secara manual.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Peristiwa</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Semua tindakan</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Semua peristiwa akun ini</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Ekspor daftar sebagai CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gagal</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Dari</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Persempit daftar</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Tidak ada peristiwa yang cocok.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per halaman</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Pencatatan dinonaktifkan di audit.ini ([UserAuditSettings] UserAudit); daftar menampilkan apa yang tercatat sebelumnya.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ditolak</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Hasil</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Tampilkan</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabel log audit pengguna tidak ada. Buat tabel dengan php update/common/scripts/6.0/createuseraudittable.php; sampai saat itu, berkas audit menyimpan setiap peristiwa.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Halaman ini memerlukan basis data SQL; halaman ini tidak tersedia di MongoDB. Berkas audit menyimpan setiap peristiwa.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Sampai</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Log audit pengguna</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Pengguna</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Waktu</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Lokasi</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Siapa yang mengubah, membuat, mengaktifkan, menonaktifkan, memindahkan, atau menghapus akun mana, siapa yang masuk atau ditolak, dan peran apa yang ditetapkan: satu baris per peristiwa, dengan bidang sebelum dan sesudah. Kata sandi dan rahasia tidak pernah dicatat.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grup</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>tidak diketahui</translation>
     </message>
 </context>
 </TS>

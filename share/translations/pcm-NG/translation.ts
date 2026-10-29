@@ -15295,6 +15295,14 @@ Note: Dem no go uninstall di packages.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Accounts wey nobody dey use or wey need make you look dem; switch dem off, unlock dem or export dem.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Audit log for users</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Who change am, log in or dem refuse, for each account; filter am and export am.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77344,6 +77352,153 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>Open the page</source>
         <translation>Open di page</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from reach %to out of %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Login or user id: di account wey di event concern or di user wey do am.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Di account</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Wetin dem do</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>After e change</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Any result at all</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Before e change</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Who do am</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Clear am</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>E work</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Dem dey keep events for %days days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Dem dey keep events until person remove dem by hand.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Di events</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>All di actions</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>All di events of dis account</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Export di list as CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>E no work</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Start from</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Make di list small</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>No event match.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>For each page</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Recording don off for audit.ini ([UserAuditSettings] UserAudit); di list dey show wetin dem record before.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Dem refuse am</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Di result</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show am</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Di table for di user audit log no dey. Create am wit php update/common/scripts/6.0/createuseraudittable.php; till den, di audit files go keep every event.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Dis page need SQL database; e no dey for MongoDB. Di audit files dey keep every event.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Reach</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Audit log for users</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Di user</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Wen</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Where e happen</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Who change, create, enable, disable, move or remove which account, who log in or dem refuse, and which roles dem give: one line for each event, wit di fields before and after. Dem no dey ever record passwords and secrets.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>na group</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>na system</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>dem no know am</translation>
     </message>
 </context>
 </TS>

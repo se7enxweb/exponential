@@ -15295,6 +15295,14 @@ Oharra: paketeak ez dira desinstalatuko.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Inork erabiltzen ez dituen edo begirada bat behar duten kontuak; desgaitu, desblokeatu edo esportatu.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Erabiltzaileen auditoretza-erregistroa</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Nork aldatu duen, saioa hasi duen edo baztertua izan den, kontuka; iragazi eta esportatu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>Open the page</source>
         <translation>Ireki orria</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, guztira %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Saio-izen bat edo erabiltzaile-ID bat: gertaerak zerikusia zuen kontua edo jardun zuen erabiltzailea.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kontua</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ekintza</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Ondoren</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Edozein emaitza</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Aurretik</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Nork</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Garbitu</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Eginda</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Gertaerak %days egunez gordetzen dira.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Gertaerak eskuz kendu arte gordetzen dira.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Gertaerak</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Ekintza guztiak</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Kontu honen gertaera guztiak</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Esportatu zerrenda CSV gisa (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Huts egin du</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Noiztik</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Murriztu zerrenda</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Ez dago bat datorren gertaerarik.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Orriko</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Erregistratzea desaktibatuta dago audit.ini fitxategian ([UserAuditSettings] UserAudit); zerrendak lehenago erregistratutakoa erakusten du.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Baztertua</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Emaitza</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Erakutsi</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Erabiltzaileen auditoretza-erregistroaren taula falta da. Sortu ezazu komando honekin: php update/common/scripts/6.0/createuseraudittable.php; ordura arte, auditoretza-fitxategiek gertaera guztiak gordetzen dituzte.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Orri honek SQL datu-base bat behar du; MongoDB erabiltzean ez dago erabilgarri. Auditoretza-fitxategiek gertaera guztiak gordetzen dituzte.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Noiz arte</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Erabiltzaileen auditoretza-erregistroa</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Erabiltzailea</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Noiz</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Non</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Nork aldatu, sortu, gaitu, desgaitu, lekuz aldatu edo kendu duen zein kontu, nork hasi duen saioa edo nor baztertu den eta zein rol esleitu diren: lerro bat gertaera bakoitzeko, aurreko eta ondorengo eremuekin. Pasahitzak eta sekretuak ez dira inoiz erregistratzen.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>taldea</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistema</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ezezaguna</translation>
     </message>
 </context>
 </TS>

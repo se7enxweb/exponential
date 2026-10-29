@@ -15241,6 +15241,14 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>pagh lo&apos;bogh lo&apos;wI&apos; De&apos;mey, pagh bejnIS; tIchu&apos;Ha&apos;, tIngaQHa&apos;moH, pagh tIlel.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>lo&apos;wI&apos; &apos;olghach wanI&apos; tetlh</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Hoch lo&apos;wI&apos; De&apos;vaD: &apos;Iv choHpu&apos;, &apos;Iv &apos;elpu&apos;, &apos;Iv Qo&apos;lu&apos;pu&apos;; yISay&apos;moH &apos;ej yIlel.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77369,6 +77377,153 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Open the page</source>
         <translation>nav yIpoSmoH</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from vo&apos; %to ghoS; Hoch: %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>&apos;elmeH pong ghap lo&apos;wI&apos; ngu&apos;meH mI&apos;: wanI&apos; lo&apos;wI&apos; De&apos; ghap vangpu&apos;bogh lo&apos;wI&apos;.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>lo&apos;wI&apos; De&apos;</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>vangghach</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>tlha&apos;</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Hoch ngoD</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>nung</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>vangwI&apos;</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>yIchImmoH</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>rIn</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>%days jaj wanI&apos;mey pollu&apos;.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ghopDu&apos;mo&apos; teqlu&apos;pa&apos; wanI&apos;mey pollu&apos;.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>wanI&apos;mey</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Hoch vangghach</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>lo&apos;wI&apos; De&apos;vam wanI&apos;mey Hoch</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>CSV ghItlh Segh: tetlh yIlel (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Hal</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>tetlh yISay&apos;moH</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>wanI&apos; pagh tu&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>wa&apos; navDaq</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini ghItlhDaq qonghach chu&apos;Ha&apos;lu&apos;ta&apos; ([UserAuditSettings] UserAudit); qonlu&apos;pu&apos;bogh wanI&apos;mey &apos;agh tetlh.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Qo&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ngoD</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>yI&apos;ang</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>lo&apos;wI&apos; &apos;olghach wanI&apos; tetlh ngaSbogh tetlh tu&apos;lu&apos;be&apos;. php update/common/scripts/6.0/createuseraudittable.php yIlo&apos; &apos;ej yIchenmoH; chenmoHlu&apos;pa&apos; Hoch wanI&apos; pol &apos;olghach ghItlhmey.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>SQL De&apos; pa&apos; poQ navvam; MongoDB lo&apos;lu&apos;taHvIS lo&apos;laHbe&apos;lu&apos;. Hoch wanI&apos; pol &apos;olghach ghItlhmey.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ghoch</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>lo&apos;wI&apos; &apos;olghach wanI&apos; tetlh</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>lo&apos;wI&apos;</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ghorgh</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>nuqDaq</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>&apos;Iv lo&apos;wI&apos; De&apos; choHpu&apos;, chenmoHpu&apos;, chu&apos;pu&apos;, chu&apos;Ha&apos;pu&apos;, vIHmoHpu&apos;, teqpu&apos; je? &apos;Iv &apos;elpu&apos; ghap Qo&apos;lu&apos;pu&apos;? nuq patlhmey nobpu&apos;lu&apos;? wa&apos; tlhegh wa&apos; wanI&apos;vaD, nungbogh Dotlh tlha&apos;bogh Dotlh je. pegh mu&apos;mey peghmey je not qonlu&apos;.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ghom</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>pat</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>Sovlu&apos;be&apos;</translation>
     </message>
 </context>
 </TS>

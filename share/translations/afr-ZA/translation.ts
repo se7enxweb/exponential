@@ -15238,6 +15238,14 @@ Let wel: Die pakkette sal nie gedeïnstalleer word nie.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Rekeninge wat niemand gebruik nie of wat aandag nodig het; deaktiveer, ontsluit of voer hulle uit.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Gebruikersouditlog</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Wie het verander, aangemeld of is geweier, per rekening; filter en uitvoer.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     <message>
         <source>Open the page</source>
         <translation>Open die bladsy</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from tot %to van %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>&apos;n Aanmeldnaam of gebruikers-ID: die rekening waaroor die gebeurtenis gegaan het, of die gebruiker wat opgetree het.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Rekening</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aksie</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Na</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Enige resultaat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Voor</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Deur</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Stel terug</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Voltooi</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Gebeurtenisse word %days dae lank bewaar.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Gebeurtenisse word bewaar totdat hulle met die hand verwyder word.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Gebeurtenisse</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Elke aksie</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Alle gebeurtenisse van hierdie rekening</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Voer die lys as CSV uit (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Misluk</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Van</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Verfyn die lys</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Geen gebeurtenis pas nie.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per bladsy</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Opname is in audit.ini afgeskakel ([UserAuditSettings] UserAudit); die lys wys wat voorheen opgeneem is.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Geweier</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultaat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Wys</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Die tabel van die gebruikersouditlog ontbreek. Skep dit met php update/common/scripts/6.0/createuseraudittable.php; tot dan hou die ouditlêers elke gebeurtenis.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Hierdie bladsy het &apos;n SQL-databasis nodig; dit is nie op MongoDB beskikbaar nie. Die ouditlêers hou elke gebeurtenis.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Tot</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Gebruikersouditlog</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Gebruiker</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Wanneer</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Waar</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Wie watter rekening verander, geskep, geaktiveer, gedeaktiveer, geskuif of verwyder het, wie aangemeld het of geweier is, en watter rolle toegeken is: een reël per gebeurtenis, met die velde voor en na. Wagwoorde en geheime word nooit opgeneem nie.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>groep</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>stelsel</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>onbekend</translation>
     </message>
 </context>
 </TS>

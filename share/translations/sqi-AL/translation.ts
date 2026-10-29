@@ -15238,6 +15238,14 @@ Shënim: paketat nuk do të çinstalohen.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Llogari që nuk i përdor askush ose që duan një kontroll; çaktivizojini, zhbllokojini ose eksportojini.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Regjistri i auditimit të përdoruesve</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kush ndryshoi, u identifikua ose u refuzua, sipas llogarisë; filtrim dhe eksport.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>Open the page</source>
         <translation>Hap faqen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from deri në %to nga %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Një emër identifikimi ose ID përdoruesi: llogaria së cilës i përkiste ngjarja ose përdoruesi që veproi.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Llogaria</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Veprimi</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Pas</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Çdo rezultat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Para</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kryer nga</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Pastro</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>U krye</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Ngjarjet ruhen për %days ditë.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Ngjarjet ruhen derisa të hiqen me dorë.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ngjarjet</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Çdo veprim</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Të gjitha ngjarjet e kësaj llogarie</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Eksporto listën si CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Dështoi</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Nga</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Ngushtoni listën</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Asnjë ngjarje nuk përputhet.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Për faqe</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Regjistrimi është i çaktivizuar në audit.ini ([UserAuditSettings] UserAudit); lista tregon atë që u regjistrua më parë.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>U refuzua</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultati</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Shfaq</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabela e regjistrit të auditimit të përdoruesve mungon. Krijojeni me php update/common/scripts/6.0/createuseraudittable.php; deri atëherë skedarët e auditimit ruajnë çdo ngjarje.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Kjo faqe kërkon një bazë të dhënash SQL; nuk është e disponueshme në MongoDB. Skedarët e auditimit ruajnë çdo ngjarje.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Deri</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Regjistri i auditimit të përdoruesve</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Përdoruesi</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kur</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ku</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kush ndryshoi, krijoi, aktivizoi, çaktivizoi, zhvendosi ose hoqi cilën llogari, kush u identifikua ose u refuzua dhe cilat role u caktuan: një rresht për çdo ngjarje, me fushat para dhe pas. Fjalëkalimet dhe të dhënat sekrete nuk regjistrohen kurrë.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grup</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistemi</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>i panjohur</translation>
     </message>
 </context>
 </TS>
