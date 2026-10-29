@@ -2314,7 +2314,8 @@
         "vertScrollState": "OPML attribute name (code identifier)",
         "xmlUrl": "OPML attribute name (code identifier)",
         "Tablet": "loanword used in Kurmanji for the device",
-        "WebDAV": "protocol name"
+        "WebDAV": "protocol name",
+        "Font": "Kurmanji writes the typeface as font, spelled the same (fonta standard, fontên lêzêdekirî)"
     },
     "lat-VA": {
         "#level1 - #level2": "only PDF level placeholders and a separator; nothing to translate",

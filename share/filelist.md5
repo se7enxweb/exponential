@@ -21548,6 +21548,8 @@ acf6de35119a2b77b584d087c3e6441c  extension/expimageeditor/settings/expimageedit
 67c99bdf880296d07611e798fc4ceed8  extension/expimageeditor/tests/phpunit/unit/expImageEditorStoreTest.php
 1b9be054c4e0042471c5879e0e580dee  extension/expimageeditor/translations/afr-ZA/translation.ts
 6d5a0df32a53293d133d16946061553f  extension/expimageeditor/translations/amh-ET/translation.ts
+d5a6dcc00a5d6c740c0d214949b42d3f  extension/expimageeditor/translations/ara-SA/translation.ts
+6551c8369c7764a521e307a4b2bd5c5b  extension/expimageeditor/translations/arc-IQ/translation.ts
 ea806b30a8a0b84da90d97663c9aacd9  extension/expimageeditor/translations/ast-ES/translation.ts
 a61f0d9cab040f26cb69d5bd2052b2a0  extension/expimageeditor/translations/aze-AZ/translation.ts
 2a01da2603ac26ca0ef6f5a1e2d9d45c  extension/expimageeditor/translations/bam-ML/translation.ts
@@ -21561,6 +21563,7 @@ b490c9b29601be612fcd5d8ab7b38362  extension/expimageeditor/translations/bul-BG/t
 83483accad34fc015e2c11763b89ba70  extension/expimageeditor/translations/che-RU/translation.ts
 359399de8f3ef67c53756a64fb63c495  extension/expimageeditor/translations/chi-CN/translation.ts
 b637b7f41b824bd0115b7d6b727ba674  extension/expimageeditor/translations/chi-TW/translation.ts
+3edf4c4f9c8c06b5e088e9f2f9277e1c  extension/expimageeditor/translations/ckb-IQ/translation.ts
 a755472580cbd7af6d106c83ee8ded71  extension/expimageeditor/translations/cro-HR/translation.ts
 8811183e1a7295031a1769aa20aacb33  extension/expimageeditor/translations/cym-GB/translation.ts
 b0dbd50af1e9c42cf69f8dcad98f2483  extension/expimageeditor/translations/cze-CZ/translation.ts
@@ -21581,6 +21584,7 @@ cec38c809c0e3fff396bd17e3b110e04  extension/expimageeditor/translations/eus-ES/t
 8e59608c17051150debdeab5b3b35eaa  extension/expimageeditor/translations/ewe-GH/translation.ts
 c13e0a9de10b447b628e0d28dfc4b909  extension/expimageeditor/translations/fao-FO/translation.ts
 ebfc347aa58a94cfbb448de01ea305fb  extension/expimageeditor/translations/fas-AF/translation.ts
+af90ad975ddda0134d336f47006d8f2a  extension/expimageeditor/translations/fas-IR/translation.ts
 ba0668c97df56e2bf37f5e41a1ce5ea5  extension/expimageeditor/translations/fil-PH/translation.ts
 c4647e760884907b8145ec92ccfbd839  extension/expimageeditor/translations/fin-FI/translation.ts
 5658c2651b42f26751c09148190273d8  extension/expimageeditor/translations/fre-FR/translation.ts
@@ -21591,8 +21595,10 @@ eef52c515846e69e48f92a8ebfa341f7  extension/expimageeditor/translations/ger-DE/t
 ab72ee993675a62ede41ad803520e188  extension/expimageeditor/translations/glg-ES/translation.ts
 85a4a9a7871f2d7e95219e7824c142d1  extension/expimageeditor/translations/guj-IN/translation.ts
 964ddcc141b8d14211488c51a7232a24  extension/expimageeditor/translations/hau-NG/translation.ts
+9c42c25ede1882d74df8c442e206f28f  extension/expimageeditor/translations/heb-IL/translation.ts
 1b580e4e23d8dd09428ac419cb034480  extension/expimageeditor/translations/hsb-DE/translation.ts
 b44bd0379478cc7b98ff3b7db09c2802  extension/expimageeditor/translations/hun-HU/translation.ts
+96ff650980b6316bfa0139ba3f04d243  extension/expimageeditor/translations/huy-IL/translation.ts
 046d1ee4b0a676691b8f296e4f9246fb  extension/expimageeditor/translations/hye-AM/translation.ts
 2f385350599c9d4642ede48112e09a05  extension/expimageeditor/translations/ibo-NG/translation.ts
 e988ddd7d0cfebfbc326f0660dda75f6  extension/expimageeditor/translations/ind-ID/translation.ts
@@ -21610,6 +21616,7 @@ a60c5191fb1dc308630fa51d1c3695de  extension/expimageeditor/translations/kat-GE/t
 6c23af578ad384f50f79da60d89eedef  extension/expimageeditor/translations/kok-IN/translation.ts
 25dca2f00230a429139a869f599dffe6  extension/expimageeditor/translations/kor-KP/translation.ts
 9f88ae46e57398ed29d46cc489344db6  extension/expimageeditor/translations/kor-KR/translation.ts
+4e63bbac3befcbf092828b188f9e449f  extension/expimageeditor/translations/kur-TR/translation.ts
 52770d68904db3011784e6134ee6b1f5  extension/expimageeditor/translations/lao-LA/translation.ts
 709fc06edaeb34205b75db1e1e9475d7  extension/expimageeditor/translations/lat-VA/translation.ts
 b594bc779b31aed5b026cbad2c84a497  extension/expimageeditor/translations/lav-LV/translation.ts
@@ -21631,6 +21638,7 @@ b15e475b021f02342102b7ab315aa425  extension/expimageeditor/translations/pan-IN/t
 d9daad4c67cced42b9ad018ea9f456d5  extension/expimageeditor/translations/pol-PL/translation.ts
 eeb7eca4d21b8e5c6c4a846ae6e110ae  extension/expimageeditor/translations/por-BR/translation.ts
 ebc8b3341289d6dff341b085c4bd47a7  extension/expimageeditor/translations/por-PT/translation.ts
+a5d09ebddcabe0172d4b47674442e1a6  extension/expimageeditor/translations/pus-AF/translation.ts
 d2d1e4f0aeedbdf75049352e74fc9a90  extension/expimageeditor/translations/que-PE/translation.ts
 00cba8556ce0c68775bf57cc84e71e78  extension/expimageeditor/translations/roh-CH/translation.ts
 96faef7b16f0f85014fbd577352bde05  extension/expimageeditor/translations/ron-RO/translation.ts
@@ -21645,6 +21653,7 @@ e991c9b3c88e7e6727fb52c4eba88435  extension/expimageeditor/translations/som-SO/t
 fc7a20856461d0c3d4ee105f09f4d6fa  extension/expimageeditor/translations/sqi-AL/translation.ts
 90057a82bd8d39c91fff523b6f79df46  extension/expimageeditor/translations/srp-RS/translation.ts
 d32de88eadf47735269ee01b2c264cbf  extension/expimageeditor/translations/swe-SE/translation.ts
+64e6f1de91755e62cb47869db9825355  extension/expimageeditor/translations/syr-IQ/translation.ts
 f4cacbebbddb31f43097746d2ca5198b  extension/expimageeditor/translations/tam-IN/translation.ts
 a3710fc57b2260c92b6172a6d619ea6f  extension/expimageeditor/translations/tat-RU/translation.ts
 9aee4bbcbe0419995652c70b3cbd78b1  extension/expimageeditor/translations/tel-IN/translation.ts
@@ -21660,6 +21669,7 @@ cb80c07421ab0219e486d54d73cdb32d  extension/expimageeditor/translations/urd-PK/t
 fb194c8446aa862f0c94ab24fd769eac  extension/expimageeditor/translations/vie-VN/translation.ts
 055152e3fc7edc92b9900f3dc4c7f9e7  extension/expimageeditor/translations/wol-SN/translation.ts
 0c8ca6472ebbd4a7d00768b22588da8b  extension/expimageeditor/translations/xho-ZA/translation.ts
+7d78548b2dd5637c4acd65719683e7fe  extension/expimageeditor/translations/yid-US/translation.ts
 167d5ab017146bdfcb6ecee88c26b90e  extension/expimageeditor/translations/yor-NG/translation.ts
 bd06e147e7f5207f35d5fd376b47ce6b  extension/expimageeditor/translations/zgh-MA/translation.ts
 2cfaa05857cef00fef681637021bbd7c  extension/expimageeditor/translations/zul-ZA/translation.ts
@@ -27456,7 +27466,7 @@ cc257dca00808ffe07d4164621875303  tests/tests/lib/ezi18n/eZTSTranslatorFallbackC
 b0715963de3bd65a0ef5404825df4b8e  tests/tests/lib/ezi18n/expSpanishTuFormTest.php
 9d100c37c28b005fb55aa5877fcbbd2a  tests/tests/lib/ezi18n/expTranslationMeaningTest.php
 6746733c4fb12006e53d3fe3bbea79c1  tests/tests/lib/ezi18n/expTranslationQualityTest.php
-22d43e6c2658b1f6fcd9f11bfb621720  tests/tests/lib/ezi18n/translation-identical-allowlist.json
+2af36b0199cc7350083f2d1adaca9c9e  tests/tests/lib/ezi18n/translation-identical-allowlist.json
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
 e20e34d1b6a2efc798e50ebbabee680d  tests/tests/lib/ezimage/data/svg/badge.svg
 b8c98ff2af8dc8e9def7bfe094faeb8b  tests/tests/lib/ezimage/data/svg/chart.svg
