@@ -2037,6 +2037,17 @@ class expHelpExamplesGenerator
         $result = array( 'description' => '', 'options' => array(), 'arguments' => '' );
         $tokens = array_values( array_filter( token_get_all( $code ), function ( $t ) { return !is_array( $t ) || !in_array( $t[0], array( T_WHITESPACE, T_COMMENT, T_DOC_COMMENT ), true ); } ) );
         $count = count( $tokens );
+        // string constants of the class (const OPTIONS = '[a][b:]' . '[c]';): startup( self::OPTIONS, ... ) reads them
+        $constants = array();
+        for ( $i = 0; $i + 2 < $count; ++$i )
+        {
+            if ( is_array( $tokens[$i] ) && $tokens[$i][0] === T_CONST && is_array( $tokens[$i + 1] ) && $tokens[$i + 1][0] === T_STRING && $tokens[$i + 2] === '=' )
+            {
+                list( $value, ) = self::readStringExpression( $tokens, $i + 3 );
+                if ( $value !== null )
+                    $constants[$tokens[$i + 1][1]] = $value;
+            }
+        }
         for ( $i = 0; $i < $count; ++$i )
         {
             $t = $tokens[$i];
@@ -2051,6 +2062,12 @@ class expHelpExamplesGenerator
                  && isset( $tokens[$i + 1] ) && $tokens[$i + 1] === '(' && !$result['options'] )
             {
                 list( $config, $next ) = self::readStringExpression( $tokens, $i + 2 );
+                if ( $config === null && isset( $tokens[$i + 4] ) && is_array( $tokens[$i + 2] ) && in_array( strtolower( $tokens[$i + 2][1] ), array( 'self', 'static' ), true ) &&
+                     is_array( $tokens[$i + 3] ) && $tokens[$i + 3][0] === T_DOUBLE_COLON && is_array( $tokens[$i + 4] ) && isset( $constants[$tokens[$i + 4][1]] ) )
+                {
+                    $config = $constants[$tokens[$i + 4][1]];
+                    $next = $i + 5;
+                }
                 if ( $config === null || strpos( $config, '[' ) === false )
                     continue;
                 $arguments = '';

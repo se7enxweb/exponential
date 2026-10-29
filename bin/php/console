@@ -772,8 +772,12 @@ $findNearest = function( $typed, array $all )
 // ══════════════════════════════════════════════════════════════════════════════
 
 $runCommand = function( array $cmd, array $forwardArgs, $invokedAs = null )
-              use ( $rootDir, $dim, $gray, $orange, $abort )
+              use ( $rootDir, $dim, $gray, $orange, $abort, &$quietMode )
 {
+    // -q / --quiet is the command's too (eZScript's standard option): a PHP command or cron part gets it
+    if ( $quietMode && $cmd['type'] !== 'shell' && !in_array( '-q', $forwardArgs, true ) && !in_array( '--quiet', $forwardArgs, true ) )
+        $forwardArgs[] = '--quiet';
+
     // The name the command was called by (an alias too), for a command that shows more under an alias
     // (exp:info and exp:about are exp:expfetch with more facts).
     putenv( 'EXP_CONSOLE_COMMAND=' . ( $invokedAs !== null ? $invokedAs : $cmd['name'] ) );
@@ -820,7 +824,8 @@ $runCommand = function( array $cmd, array $forwardArgs, $invokedAs = null )
             fwrite( STDERR, "\n  " . $cmd['name'] . ': ' . $full . "\n" );
     }
 
-    // Dispatch notice to stderr — never corrupts piped stdout
+    // Dispatch notice to stderr — never corrupts piped stdout; none with -q
+    if ( !$quietMode )
     fwrite( STDERR,
         "\n  " . $gray( '▶' )
       . '  ' . $dim( 'running' ) . ' '
