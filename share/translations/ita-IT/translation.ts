@@ -2305,6 +2305,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Anche le pagine di sistema si possono aggiungere ai preferiti: apri la pagina (Impostazioni, il registro di audit, un elenco di utenti ...) e scegli Aggiungi la pagina ai preferiti sopra di essa. Questi preferiti hanno un&apos;icona a forma di ingranaggio.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Non puoi più aprire questa pagina qui. Rimuovi il preferito oppure chiedi l'accesso a un amministratore.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -49406,6 +49410,42 @@ per attivare il tuo account.</translation>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>Il preferito è stato rinominato in &quot;%name&quot;.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Questa pagina è disattivata in questo siteaccess (%siteaccess). Apri il preferito in un siteaccess che la contiene.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Il modulo di questa pagina non è installato o non è attivato qui.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Questa pagina non esiste più: il suo modulo non ha questa vista.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Nessuno dei tuoi ruoli ti consente di aprire questa pagina.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Non puoi usare questo siteaccess.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Non puoi leggere il contenuto mostrato da questa pagina.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Questo tipo di pagina non può essere aggiunto ai preferiti: agisce solo su un modulo da compilare, oppure è una pagina di un solo momento.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Manca l'indirizzo di questa pagina.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Questa pagina non può essere aperta ora.</translation>
     </message>
 </context>
 <context>

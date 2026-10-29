@@ -2305,6 +2305,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Les pages système peuvent aussi être ajoutées aux signets : ouvrez la page (Administration, la piste d'audit, une liste d'utilisateurs...) et choisissez « Ajouter aux signets » au-dessus. Ces signets portent une icône d'engrenage.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Vous n'avez plus le droit d'ouvrir cette page ici. Supprimez le signet ou demandez l'accès à un administrateur.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -49363,6 +49367,42 @@ votre compte.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Le signet a été renommé en « %name ».</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Cette page est désactivée dans ce siteaccess (%siteaccess). Ouvrez le signet dans un siteaccess qui la propose.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Le module de cette page n'est pas installé ou pas activé ici.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Cette page n'existe plus : son module ne comporte pas cette vue.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Aucun de vos rôles ne vous permet d'ouvrir cette page.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Vous n'avez pas le droit d'utiliser ce siteaccess.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Vous n'avez pas le droit de lire le contenu affiché par cette page.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Ce type de page ne peut pas être ajouté aux signets : il agit uniquement sur un formulaire, ou il s'agit d'une page éphémère.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>L'adresse de cette page est manquante.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Cette page ne peut pas être ouverte pour le moment.</translation>
     </message>
 </context>
 <context>

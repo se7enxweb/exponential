@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Gellir rhoi tudalennau system ar nod tudalen hefyd: agorwch y dudalen (Gosod, y llwybr archwilio, rhestr o ddefnyddwyr ...) a dewiswch Rhoi'r dudalen hon ar nod tudalen uwch ei phen. Mae gan nodau tudalen o'r fath eicon cog.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ni chewch agor y dudalen hon yma mwyach. Tynnwch y nod tudalen, neu gofynnwch i weinyddwr am fynediad.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ eich cyfrif.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Ailenwyd y nod tudalen yn "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Mae'r dudalen hon wedi'i diffodd yn y mynediad hwn i'r wefan (%siteaccess). Agorwch y nod tudalen mewn mynediad i'r wefan sydd â'r dudalen.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Nid yw modiwl y dudalen hon wedi'i osod na'i alluogi yma.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Nid yw'r dudalen hon yn bodoli mwyach: nid oes gan ei modiwl y fath olwg.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Nid yw'r un o'ch rolau yn caniatáu i chi agor y dudalen hon.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Ni chewch ddefnyddio'r mynediad hwn i'r wefan.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Ni chewch ddarllen y cynnwys y mae'r dudalen hon yn ei ddangos.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Ni ellir rhoi nod tudalen ar y math hwn o dudalen: dim ond ar ffurflen y mae'n gweithredu, neu mae'n dudalen am un eiliad.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Mae cyfeiriad y dudalen hon ar goll.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Ni ellir agor y dudalen hon ar hyn o bryd.</translation>
     </message>
 </context>
 <context>

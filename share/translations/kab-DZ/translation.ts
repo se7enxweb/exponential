@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Isebtar n unagraw zemrent daɣen ad ttwacerḍen: ldi asebter (Asbadu, aɣmis n usenqed, tabdart n yiseqdacen ...) syin fren «Creḍ asebter-a» nnig-s. Ticraḍ-a ɣur-sent tignit n tmuɣli.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ur tezmireḍ ara ad teldiḍ asebter-a da ugar. Ssuffeɣ tacreḍt, neɣ suter anekcum ɣer unedbal.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ amiḍan-ik.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Tacreḍt tettwasnifel isem-is ɣer "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Asebter-a yensa deg unekcum-a ɣer usmel (%siteaccess). Ldi tacreḍt deg unekcum ɣer usmel i yesɛan asebter-a.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Amudil n usebter-a ur yettwasebded ara neɣ ur yettwarmed ara da.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Asebter-a ulac-it ugar: amudil-is ur yesɛi ara timeẓri am tagi.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Ula d yiwet seg temlilin-ik ur ak-tettaǧǧa ad teldiḍ asebter-a.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Ur tezmireḍ ara ad tesqedceḍ anekcum-a ɣer usmel.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Ur tezmireḍ ara ad teɣreḍ agbur i d-yesskan usebter-a.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Anaw-a n usebter ur yettwacreḍ ara: yettmahal kan ɣef tferkit, neɣ d asebter n yiwet n tallit kan.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Tansa n usebter-a ulac-itt.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Asebter-a ur yettwaldi ara tura.</translation>
     </message>
 </context>
 <context>

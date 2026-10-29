@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>També pots afegir pàgines del sistema a les adreces d'interès: obre la pàgina (Configuració, el registre d'auditoria, una llista d'usuaris ...) i tria «Afegeix la pàgina a les adreces d'interès» a sobre. Aquestes adreces d'interès tenen una icona d'engranatge.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ja no pots obrir aquesta pàgina aquí. Treu l'adreça d'interès o demana accés a un administrador.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56320,6 +56324,42 @@ d&apos;aquest error. No tornis a enviar el pagament.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>S'ha canviat el nom de l'adreça d'interès a «%name».</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Aquesta pàgina està desactivada en aquest accés al lloc (%siteaccess). Obre l'adreça d'interès en un accés al lloc que la tingui.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>El mòdul d'aquesta pàgina no està instal·lat o no està activat aquí.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Aquesta pàgina ja no existeix: el seu mòdul no té aquesta vista.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Cap dels teus rols no et permet obrir aquesta pàgina.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>No pots utilitzar aquest accés al lloc.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>No pots llegir el contingut que mostra aquesta pàgina.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Aquest tipus de pàgina no es pot afegir a les adreces d'interès: només actua sobre un formulari o és una pàgina d'un sol moment.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Falta l'adreça d'aquesta pàgina.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Ara no es pot obrir aquesta pàgina.</translation>
     </message>
 </context>
 <context>

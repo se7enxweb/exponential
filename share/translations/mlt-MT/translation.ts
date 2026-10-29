@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Il-paġni tas-sistema jistgħu jiżdiedu mal-favoriti wkoll: iftaħ il-paġna (Konfigurazzjoni, it-traċċa tal-awditu, lista ta' utenti ...) u agħżel “Żid il-paġna mal-favoriti” fuqha. Dawn il-favoriti għandhom ikona ta' rota.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>M'għadekx tista' tiftaħ din il-paġna hawn. Neħħi l-favorit, jew itlob aċċess lil amministratur.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56320,6 +56324,42 @@ il-kont tiegħek.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Il-favorit ingħata l-isem “%name”.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Din il-paġna hija mitfija f'dan l-aċċess għas-sit (%siteaccess). Iftaħ il-favorit f'aċċess għas-sit li għandu din il-paġna.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Il-modulu ta' din il-paġna mhuwiex installat jew mhuwiex attivat hawn.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Din il-paġna m'għadhiex teżisti: il-modulu tagħha m'għandux veduta bħal din.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>L-ebda wieħed mir-rwoli tiegħek ma jippermettilek tiftaħ din il-paġna.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Ma tistax tuża dan l-aċċess għas-sit.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Ma tistax taqra l-kontenut li turi din il-paġna.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Dan it-tip ta' paġna ma jistax jiżdied mal-favoriti: jaġixxi biss fuq formola, jew huwa paġna ta' mument wieħed.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>L-indirizz ta' din il-paġna nieqes.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Din il-paġna ma tistax tinfetaħ issa.</translation>
     </message>
 </context>
 <context>

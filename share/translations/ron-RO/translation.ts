@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Și paginile de sistem pot fi adăugate la marcaje: deschideți pagina (Configurare, pista de audit, o listă de utilizatori ...) și alegeți „Adăugare pagină la marcaje” deasupra ei. Aceste marcaje au o pictogramă în formă de roată dințată.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Nu mai aveți voie să deschideți această pagină aici. Eliminați marcajul sau cereți acces unui administrator.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56320,6 +56324,42 @@ activa contul.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Marcajul a fost redenumit în „%name”.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Această pagină este dezactivată în acest acces la site (%siteaccess). Deschideți marcajul într-un acces la site care o are.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Modulul acestei pagini nu este instalat sau nu este activat aici.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Această pagină nu mai există: modulul ei nu are o astfel de vizualizare.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Niciunul dintre rolurile dumneavoastră nu vă permite să deschideți această pagină.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Nu aveți voie să folosiți acest acces la site.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Nu aveți voie să citiți conținutul pe care îl afișează această pagină.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Acest tip de pagină nu poate fi adăugat la marcaje: doar acționează asupra unui formular sau este o pagină de moment.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Adresa acestei pagini lipsește.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Această pagină nu poate fi deschisă acum.</translation>
     </message>
 </context>
 <context>

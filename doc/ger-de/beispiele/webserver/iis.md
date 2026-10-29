@@ -14,6 +14,20 @@ IIS-Modul **URL Rewrite**. [`web.config`](../../../eng-us/examples/web-servers/w
 Installation enthält alles: den PHP-Handler, die Umschreiberegeln von `.htaccess_root`, die Anforderungsfilterung und
 die Sicherheits-Header.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](nginx.md), [LiteSpeed](litespeed.md), [Caddy](caddy.md), [IIS](iis.md),
+> [Velocity](velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../../hilfe/hosting/control-panels/plesk.md), [cPanel](../../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../../hilfe/hosting/control-panels/ispconfig.md).
+
 > **Hinweis:** Dieses Beispiel ist abgeleitet, nicht unter IIS getestet: Geprüft wurde nur, ob das XML wohlgeformt ist
 > (`xmllint`). Seine Umschreiberegeln sind die von `.htaccess_root`, deren Verhalten unter Apache und nginx getestet
 > wurde. Testen Sie es auf Ihrem Server mit den Anfragen unten, bevor Sie sich darauf verlassen, und vergleichen Sie es

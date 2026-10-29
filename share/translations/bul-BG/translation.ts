@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>В отметките могат да се добавят и системни страници: отворете страницата (Инсталация, одитната следа, списък с потребители ...) и изберете над нея „Добави страницата в отметките“. Такива отметки имат икона на зъбно колело.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Вече нямате право да отваряте тази страница тук. Изтрийте отметката или помолете администратор за достъп.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56320,6 +56324,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Отметката беше преименувана на „%name“.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Тази страница е изключена в този достъп до сайта (%siteaccess). Отворете отметката в достъп до сайта, в който я има.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Модулът на тази страница не е инсталиран или не е разрешен тук.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Тази страница вече не съществува: модулът ѝ няма такъв изглед.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Никоя от ролите ви не ви позволява да отворите тази страница.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Нямате право да използвате този достъп до сайта.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Нямате право да четете съдържанието, което показва тази страница.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Този вид страница не може да се добави в отметките: тя само обработва формуляр или е страница за един момент.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Адресът на тази страница липсва.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Тази страница не може да бъде отворена в момента.</translation>
     </message>
 </context>
 <context>

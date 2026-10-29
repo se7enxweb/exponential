@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Skipanarsíður kunnu eisini setast í bókamerki: opna síðuna (Uppseting, endurskoðanarslóðin, ein listi av brúkarum ...) og vel Set hesa síðuna í bókamerki omanfyri hana. Slík bókamerki hava eitt tannhjólstekn.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Tú hevur ikki leingur loyvi til at opna hesa síðuna her. Tak bókamerkið burtur, ella bið ein umsitara um atgongd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ hesi villu. Royn ikki at senda gjaldið aftur.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Bókamerkið varð umnevnt til "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Henda síðan er óvirkjað í hesi atgongd til vevstað (%siteaccess). Opna bókamerkið í eini atgongd til vevstað, sum hevur hana.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Modulið hjá hesi síðu er ikki lagt inn ella ikki virkjað her.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Henda síðan er ikki til longur: modulið hjá henni hevur einki slíkt sýni.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Eingin av tínum leiklutum gevur tær loyvi til at opna hesa síðuna.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Tú hevur ikki loyvi til at nýta hesa atgongd til vevstað.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Tú hevur ikki loyvi til at lesa innihaldið, sum henda síðan vísir.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Hetta slag av síðu kann ikki setast í bókamerki: hon virkar bara á eitt oyðublað, ella er hon ein síða, ið bert er til eina løtu.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Adressan á hesi síðu manglar.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Henda síðan kann ikki opnast júst nú.</translation>
     </message>
 </context>
 <context>

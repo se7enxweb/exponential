@@ -2574,6 +2574,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -57365,6 +57369,42 @@ your account.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>The bookmark was renamed to "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>The module of this page is not installed or not enabled here.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>This page no longer exists: its module has no such view.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>None of your roles allows you to open this page.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>You may not use this siteaccess.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>You may not read the content this page shows.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>The address of this page is missing.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>This page cannot be opened now.</translation>
     </message>
 </context>
 <context>

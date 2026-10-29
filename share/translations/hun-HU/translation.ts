@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Rendszeroldalakat is felvehet a könyvjelzők közé: nyissa meg az oldalt (Rendszer, az auditnapló, egy felhasználólista ...), és válassza felette az „Oldal hozzáadása a könyvjelzőkhöz” lehetőséget. Az ilyen könyvjelzőket fogaskerék ikon jelöli.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ezt az oldalt itt már nem nyithatja meg. Távolítsa el a könyvjelzőt, vagy kérjen hozzáférést egy rendszergazdától.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56320,6 +56324,42 @@ a fiókja aktiválásához.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>A könyvjelző új neve: „%name”.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Ez az oldal le van tiltva ebben a webhely-hozzáférésben (%siteaccess). Nyissa meg a könyvjelzőt egy olyan webhely-hozzáférésben, amelyben elérhető.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Az oldal modulja itt nincs telepítve vagy nincs engedélyezve.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Ez az oldal már nem létezik: a moduljának nincs ilyen nézete.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Egyik szerepköre sem engedi meg, hogy megnyissa ezt az oldalt.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Ezt a webhely-hozzáférést nem használhatja.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Nem olvashatja az oldalon megjelenített tartalmat.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Az ilyen oldal nem vehető fel a könyvjelzők közé: csak egy űrlapon végez műveletet, vagy csupán egy pillanatra szóló oldal.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Az oldal címe hiányzik.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Az oldal most nem nyitható meg.</translation>
     </message>
 </context>
 <context>

@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>И системске странице могу да се додају у обележиваче: отворите страницу (Подешавање, евиденција ревизије, списак корисника ...) и изаберите изнад ње „Додај страницу у обележиваче“. Такви обележивачи имају иконицу зупчаника.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ову страницу више не смете да отварате овде. Уклоните обележивач или затражите приступ од администратора.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56320,6 +56324,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Обележивач је преименован у „%name“.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Ова страница је искључена у овом приступу сајту (%siteaccess). Отворите обележивач у приступу сајту који је има.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Модул ове странице овде није инсталиран или није омогућен.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Ова страница више не постоји: њен модул нема такав приказ.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Ниједна од ваших улога вам не дозвољава да отворите ову страницу.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Не смете да користите овај приступ сајту.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Не смете да читате садржај који ова страница приказује.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Ова врста странице не може да се дода у обележиваче: она само обрађује образац или важи само у једном тренутку.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Адреса ове странице недостаје.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Ова страница тренутно не може да се отвори.</translation>
     </message>
 </context>
 <context>

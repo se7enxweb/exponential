@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Wobetumi asie nhyehyɛeɛ nkrataafa nso: bue krataafa no (Ahosiesie, nhwehwɛmu kyerɛwtohɔ, adefoɔ din krataa ...) na paw "Fa krataafa yi si nsɛnkyerɛnne mu" a ɛwɔ soro no. Nsɛnkyerɛnne a ɛte saa wɔ gear mfonini.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Wonni kwan sɛ wobue krataafa yi wɔ ha bio. Yi nsɛnkyerɛnne no fi mu, anaa bisa ɔhwɛfoɔ kwan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ Mesrɛ wo, nsan nsoma sika no bio.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Wɔasesa nsɛnkyerɛnne no din ayɛ "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Wɔato krataafa yi mu wɔ wɛbsaet kwan yi (%siteaccess) mu. Bue nsɛnkyerɛnne no wɔ wɛbsaet kwan a krataafa no wɔ mu.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Wɔmfaa krataafa yi modul no nhyɛɛ mu wɔ ha, anaa ɛnyɛ adwuma wɔ ha.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Krataafa yi nni hɔ bio: ne modul no nni nhwɛeɛ a ɛte saa.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Wo dwumadie biara mma wo kwan sɛ wobue krataafa yi.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Wonni kwan sɛ wode wɛbsaet kwan yi di dwuma.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Wonni kwan sɛ wokenkan emu nsɛm a krataafa yi kyerɛ.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Wontumi mfa krataafa a ɛte sei nsi nsɛnkyerɛnne mu: ɛyɛ adwuma wɔ fɔm bi so nko ara, anaa ɛyɛ krataafa a ɛwɔ hɔ bere tiaa bi pɛ.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Krataafa yi adrɛse nni hɔ.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Wontumi mmue krataafa yi seesei.</translation>
     </message>
 </context>
 <context>

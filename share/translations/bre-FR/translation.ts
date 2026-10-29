@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Pajennoù reizhiad a c'haller lakaat en ho sinedoù ivez: digorit ar bajenn (Kefluniañ, roll an aodit, ur roll implijerien ...) ha diuzit Lakaat ar bajenn-mañ e sinedoù a-us dezhi. Ur skeudennig dantenn zo gant ar sinedoù-se.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ne c'hallit ken digeriñ ar bajenn-mañ amañ. Lamit kuit ar sined, pe goulennit un haeziñ ouzh ur merour.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ Arabat klask adkas ar paeamant.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Adanvet eo bet ar sined e "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Diweredekaet eo ar bajenn-mañ en haeziñ al lec'hienn %siteaccess. Digorit ar sined en un haeziñ al lec'hienn ma'z eus anezhi.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Mollad ar bajenn-mañ n'eo ket staliet pe gweredekaet amañ.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>N'eus ket eus ar bajenn-mañ ken: n'eus gwel ebet evel-se en he mollad.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Hini ebet eus ho rolloù n'ho aotre da zigeriñ ar bajenn-mañ.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>N'hallit ket implijout an haeziñ al lec'hienn-mañ.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>N'hallit ket lenn an endalc'had diskouezet gant ar bajenn-mañ.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Ar seurt pajenn-mañ ne c'haller ket lakaat e sinedoù: ne ra nemet war ur furmskrid, pe ur bajenn evit ur prantad berr eo.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Chomlec'h ar bajenn-mañ a vank.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Ne c'haller ket digeriñ ar bajenn-mañ bremañ.</translation>
     </message>
 </context>
 <context>

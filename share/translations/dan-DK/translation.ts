@@ -2327,6 +2327,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Der kan også sættes bogmærke ved systemsider: åbn siden (Opsætning, revisionssporet, en liste over brugere ...), og vælg Sæt bogmærke ved denne side over den. Sådanne bogmærker har et tandhjulsikon.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Du må ikke længere åbne denne side her. Fjern bogmærket, eller bed en administrator om adgang.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56764,6 +56768,42 @@ din konto.</translation>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>Bogmærket blev omdøbt til &quot;%name&quot;.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Denne side er slået fra i denne siteaccess (%siteaccess). Åbn bogmærket i en siteaccess, der har den.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Modulet for denne side er ikke installeret eller ikke aktiveret her.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Denne side findes ikke længere: dens modul har ingen sådan visning.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Ingen af dine roller giver dig lov til at åbne denne side.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Du må ikke bruge denne siteaccess.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Du må ikke læse det indhold, som denne side viser.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Denne slags side kan ikke få et bogmærke: den handler kun på en formular, eller er en side for et enkelt øjeblik.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Adressen på denne side mangler.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Denne side kan ikke åbnes lige nu.</translation>
     </message>
 </context>
 <context>

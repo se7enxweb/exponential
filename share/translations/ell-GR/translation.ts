@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Και οι σελίδες συστήματος μπορούν να προστεθούν στους σελιδοδείκτες: ανοίξτε τη σελίδα (Ρυθμίσεις συστήματος, το ίχνος ελέγχου, μια λίστα χρηστών ...) και επιλέξτε «Προσθήκη σελίδας στους σελιδοδείκτες» πάνω από αυτήν. Αυτοί οι σελιδοδείκτες έχουν εικονίδιο γραναζιού.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Δεν έχετε πλέον δικαίωμα να ανοίξετε αυτή τη σελίδα εδώ. Αφαιρέστε τον σελιδοδείκτη ή ζητήστε πρόσβαση από έναν διαχειριστή.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56320,6 +56324,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Ο σελιδοδείκτης μετονομάστηκε σε «%name».</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Αυτή η σελίδα είναι απενεργοποιημένη σε αυτή την πρόσβαση ιστότοπου (%siteaccess). Ανοίξτε τον σελιδοδείκτη σε μια πρόσβαση ιστότοπου που την περιλαμβάνει.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Η λειτουργική μονάδα αυτής της σελίδας δεν είναι εγκατεστημένη ή ενεργοποιημένη εδώ.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Αυτή η σελίδα δεν υπάρχει πλέον: η λειτουργική μονάδα της δεν έχει τέτοια προβολή.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Κανένας από τους ρόλους σας δεν σας επιτρέπει να ανοίξετε αυτή τη σελίδα.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Δεν έχετε δικαίωμα να χρησιμοποιήσετε αυτή την πρόσβαση ιστότοπου.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Δεν έχετε δικαίωμα να διαβάσετε το περιεχόμενο που εμφανίζει αυτή η σελίδα.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Αυτό το είδος σελίδας δεν μπορεί να προστεθεί στους σελιδοδείκτες: απλώς εκτελεί μια ενέργεια σε μια φόρμα ή είναι σελίδα μίας στιγμής.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Η διεύθυνση αυτής της σελίδας λείπει.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Αυτή η σελίδα δεν μπορεί να ανοίξει τώρα.</translation>
     </message>
 </context>
 <context>

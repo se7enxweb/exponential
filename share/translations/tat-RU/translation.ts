@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Система битләрен дә кыстыргычка өстәп була: битне ачыгыз (Көйләү, аудит журналы, кулланучылар исемлеге ...) һәм аның өстендә «Бу битне кыстыргычка өстәү» дигәнне сайлагыз. Андый кыстыргычларда тешле тәгәрмәч билгесе була.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Сез бу битне монда инде ача алмыйсыз. Кыстыргычны алып ташлагыз яки администратордан керү рөхсәте сорагыз.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Кыстыргычның исеме «%name» итеп үзгәртелде.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Бу бит бу сайтка керү ноктасында (%siteaccess) сүндерелгән. Кыстыргычны бу бит булган сайтка керү ноктасында ачыгыз.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Бу битнең модуле монда урнаштырылмаган яки кабызылмаган.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Бу бит инде юк: аның модулендә мондый күренеш юк.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Сезнең бер ролегез дә бу битне ачарга рөхсәт итми.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Сездә бу сайтка керү ноктасын кулланырга рөхсәт юк.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Сездә бу бит күрсәтә торган эчтәлекне укырга рөхсәт юк.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Мондый битне кыстыргычка өстәп булмый: ул бары тик форма белән генә эшли, яки бер мизгеллек бит.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Бу битнең адресы юк.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Бу битне хәзер ачып булмый.</translation>
     </message>
 </context>
 <context>

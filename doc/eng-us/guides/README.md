@@ -3,6 +3,19 @@
 This page is the table of contents of the guides. Read it if you are new to Exponential, or if you know the system
 and want the shortest way to one result.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 A guide is a tutorial. You follow it from top to bottom and need no prior knowledge. At the end you have a working
 result: an installed site, a published page, a changed template, a site behind a real web server, a cache cleared on
 purpose. Every step is a command or a click path, with the output to expect. Where a topic needs more depth, the

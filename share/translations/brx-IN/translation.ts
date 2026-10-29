@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>सिस्टेम फोथाफोरखौबो बुकमार्क खालानो हायो: फोथाखौ खोल (सेटआप, अडिट ट्रेल, बेबहार खालामग्रानि तालिका ...) आरो बेनि उफ्राव "बे फोथाखौ बुकमार्क खालाम" सायख्रा. बे बुकमार्कआव गियार आइकन दं.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>नोंथाङै दिनैनिफ्राय बे फोथाखौ बेयाव खोलनो हायाखै. बुकमार्कखौ आगाय, एवा अडमिनिस्ट्रेटरनिफ्राय प्रबेश होनो.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>बुकमार्कनि मुं "%name" नो सोलायनाय जादों.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>बे साइट-प्रबेशआव (%siteaccess) बे फोथाखौ बन्द खालामनाय जादों. बुकमार्कखौ बे फोथा दंनाय साइट-प्रबेश मोनसेयाव खोल.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>बे फोथानि मडुलखौ बेयाव इन्स्टल खालामनाय जाया एवा चालु खालामनाय जाया.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>बे फोथा दिनैनिफ्राय गैया: बेनि मडुलआव बेबादि भिउ गैया.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>नोंथांनि बाहागोफोरनि मोनसेबो नोंथांखौ बे फोथाखौ खोलनो गनायथि होआ.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>नोंथाङै बे साइट-प्रबेशखौ बाहायनो हायाखै.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>बे फोथाया दिन्थिनाय बिषयबस्तुखौ नोंथाङै फरायनो हायाखै.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>बेबादि फोथाखौ बुकमार्क खालामनो हाया: बेयो फर्म मोनसेनि सायाव थाखोन हाबा मावो, एवा बेयो मोनसे मुहुर्तनि फोथा.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>बे फोथानि ठिकाना दैया.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>बे फोथाखौ दानो खोलनो हाया.</translation>
     </message>
 </context>
 <context>

@@ -2318,6 +2318,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>pat navmey DaqawlaH je: nav yIpoSmoH (SeHlaw, 'olghach He, lo'wI'pu' tetlh ...) 'ej Dung "navvam yIqaw" yIwIv. qawmeH Daqmeyvetlh ghajlu' rutlh Degh.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>naDev navvam DapoSmoHmeH chaw' Daghajbe'choH. qawmeH Daq yIteq, qoj loHwI'vaD 'el chaw' yItlhob.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56323,6 +56327,42 @@ yIlob.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>qawmeH Daq pong chu': "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>yoS lojmItvamDaq (%siteaccess) navvam chu'Ha'lu'ta'. navvam ghajbogh yoS lojmItDaq qawmeH Daq yIpoSmoH.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>naDev navvam ngoq 'ay' jomlu'be' qoj chu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>navvam tu'lu'be'choH: HaStavetlh Hutlh ngoq 'ay'Daj.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>navvam DapoSmoHmeH chaw' Dunobbe' patlhmeylIj.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>yoS lojmItvam Dalo'meH chaw' Daghajbe'.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>De' cha'bogh navvam DalaDmeH chaw' Daghajbe'.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>navmey Seghvam qawmeH DaqmeyDaq chellu'laHbe': ghItlh neH ruch, qoj poH ngajDaq neH taH.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>navvam Daq tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>DaH navvam poSmoHlu'laHbe'.</translation>
     </message>
 </context>
 <context>

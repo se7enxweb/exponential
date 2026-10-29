@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>ਸਿਸਟਮ ਸਫ਼ਿਆਂ ਨੂੰ ਵੀ ਬੁੱਕਮਾਰਕ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ: ਸਫ਼ਾ ਖੋਲ੍ਹੋ (ਸੈੱਟਅੱਪ, ਆਡਿਟ ਟ੍ਰੇਲ, ਵਰਤੋਂਕਾਰਾਂ ਦੀ ਸੂਚੀ ...) ਅਤੇ ਉਸਦੇ ਉੱਪਰ “ਇਸ ਸਫ਼ੇ ਨੂੰ ਬੁੱਕਮਾਰਕ ਕਰੋ” ਚੁਣੋ। ਅਜਿਹੇ ਬੁੱਕਮਾਰਕਾਂ ਦਾ ਗੇਅਰ ਆਈਕਾਨ ਹੁੰਦਾ ਹੈ।</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ਤੁਸੀਂ ਹੁਣ ਇੱਥੇ ਇਹ ਪੰਨਾ ਨਹੀਂ ਖੋਲ੍ਹ ਸਕਦੇ। ਬੁੱਕਮਾਰਕ ਹਟਾਓ, ਜਾਂ ਪਹੁੰਚ ਲਈ ਕਿਸੇ ਪ੍ਰਸ਼ਾਸਕ ਨੂੰ ਬੇਨਤੀ ਕਰੋ।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56379,6 +56383,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>ਬੁੱਕਮਾਰਕ ਦਾ ਨਾਂ ਬਦਲ ਕੇ “%name” ਕੀਤਾ ਗਿਆ।</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ਇਹ ਪੰਨਾ ਇਸ ਸਾਈਟ ਐਕਸੈਸ (%siteaccess) ਵਿੱਚ ਬੰਦ ਹੈ। ਬੁੱਕਮਾਰਕ ਨੂੰ ਉਸ ਸਾਈਟ ਐਕਸੈਸ ਵਿੱਚ ਖੋਲ੍ਹੋ ਜਿਸ ਵਿੱਚ ਇਹ ਪੰਨਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ਇਸ ਪੰਨੇ ਦਾ ਮੌਡਿਊਲ ਇੱਥੇ ਇੰਸਟਾਲ ਨਹੀਂ ਹੈ ਜਾਂ ਚਾਲੂ ਨਹੀਂ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ਇਹ ਪੰਨਾ ਹੁਣ ਮੌਜੂਦ ਨਹੀਂ ਹੈ: ਇਸ ਦੇ ਮੌਡਿਊਲ ਵਿੱਚ ਅਜਿਹਾ ਕੋਈ ਵਿਊ ਨਹੀਂ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ਤੁਹਾਡਾ ਕੋਈ ਵੀ ਰੋਲ ਤੁਹਾਨੂੰ ਇਹ ਪੰਨਾ ਖੋਲ੍ਹਣ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਦਿੰਦਾ।</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ਤੁਹਾਨੂੰ ਇਹ ਸਾਈਟ ਐਕਸੈਸ ਵਰਤਣ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ਤੁਹਾਨੂੰ ਇਸ ਪੰਨੇ ਵੱਲੋਂ ਦਿਖਾਈ ਜਾਂਦੀ ਸਮੱਗਰੀ ਪੜ੍ਹਨ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ਇਸ ਕਿਸਮ ਦੇ ਪੰਨੇ ਨੂੰ ਬੁੱਕਮਾਰਕ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ: ਇਹ ਸਿਰਫ਼ ਕਿਸੇ ਫ਼ਾਰਮ ਉੱਤੇ ਕਾਰਵਾਈ ਕਰਦਾ ਹੈ, ਜਾਂ ਇਹ ਪਲ ਭਰ ਦਾ ਪੰਨਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ਇਸ ਪੰਨੇ ਦਾ ਪਤਾ ਮੌਜੂਦ ਨਹੀਂ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ਇਹ ਪੰਨਾ ਹੁਣ ਖੋਲ੍ਹਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ।</translation>
     </message>
 </context>
 <context>

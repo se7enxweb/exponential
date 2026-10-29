@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>ໜ້າລະບົບກໍສາມາດບຸກມາກໄດ້ເຊັ່ນກັນ: ເປີດໜ້າ (ຕັ້ງຄ່າລະບົບ, ບັນທຶກການກວດສອບ, ລາຍການຜູ້ໃຊ້ ...) ແລ້ວເລືອກ ບຸກມາກໜ້ານີ້ ຂ້າງເທິງມັນ. ບຸກມາກດັ່ງກ່າວມີໄອຄອນເຟືອງ.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ທ່ານບໍ່ສາມາດເປີດໜ້ານີ້ຢູ່ບ່ອນນີ້ໄດ້ອີກຕໍ່ໄປ. ກະລຸນາເອົາບຸກມາກອອກ ຫຼື ຂໍສິດເຂົ້າເຖິງຈາກຜູ້ເບິ່ງແຍງລະບົບ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>ບຸກມາກຖືກປ່ຽນຊື່ເປັນ "%name" ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ໜ້ານີ້ຖືກປິດໄວ້ໃນການເຂົ້າເຖິງໄຊນີ້ (%siteaccess). ກະລຸນາເປີດບຸກມາກໃນການເຂົ້າເຖິງໄຊທີ່ມີໜ້ານີ້.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ໂມດູນຂອງໜ້ານີ້ບໍ່ໄດ້ຖືກຕິດຕັ້ງ ຫຼື ບໍ່ໄດ້ເປີດໃຊ້ຢູ່ບ່ອນນີ້.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ໜ້ານີ້ບໍ່ມີຢູ່ອີກຕໍ່ໄປ: ໂມດູນຂອງມັນບໍ່ມີມຸມມອງນີ້.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ບໍ່ມີບົດບາດໃດຂອງທ່ານທີ່ອະນຸຍາດໃຫ້ທ່ານເປີດໜ້ານີ້.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ທ່ານບໍ່ມີສິດໃຊ້ການເຂົ້າເຖິງໄຊນີ້.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ທ່ານບໍ່ມີສິດອ່ານເນື້ອຫາທີ່ໜ້ານີ້ສະແດງ.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ບໍ່ສາມາດບຸກມາກໜ້າປະເພດນີ້ໄດ້: ມັນພຽງແຕ່ດຳເນີນການກັບແບບຟອມ ຫຼື ເປັນໜ້າຊົ່ວຄາວ.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ບໍ່ມີທີ່ຢູ່ຂອງໜ້ານີ້.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ບໍ່ສາມາດເປີດໜ້ານີ້ໄດ້ໃນຕອນນີ້.</translation>
     </message>
 </context>
 <context>

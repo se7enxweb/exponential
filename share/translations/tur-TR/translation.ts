@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Sistem sayfalarına da yer işareti konabilir: sayfayı açın (Kurulum, denetim izi, bir kullanıcı listesi ...) ve üstündeki Bu sayfaya yer işareti koy seçeneğini seçin. Bu tür yer işaretlerinde bir dişli simgesi bulunur.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Bu sayfayı artık burada açma izniniz yok. Yer işaretini kaldırın veya bir yöneticiden erişim isteyin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56379,6 +56383,42 @@ o e-postadaki yönergeleri izleyin.</translation>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>Yer işaretinin adı &quot;%name&quot; olarak değiştirildi.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Bu sayfa bu site erişiminde (%siteaccess) kapalı. Yer işaretini bu sayfanın bulunduğu bir site erişiminde açın.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Bu sayfanın modülü burada yüklü veya etkin değil.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Bu sayfa artık yok: modülünde böyle bir görünüm yok.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Rollerinizin hiçbiri bu sayfayı açmanıza izin vermiyor.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Bu site erişimini kullanma izniniz yok.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Bu sayfanın gösterdiği içeriği okuma izniniz yok.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Bu tür bir sayfa yer işaretlerine eklenemez: yalnızca bir form üzerinde işlem yapar veya yalnızca bir an için geçerlidir.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Bu sayfanın adresi eksik.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Bu sayfa şu anda açılamıyor.</translation>
     </message>
 </context>
 <context>

@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>सिस्टम सफे बी बुकमार्क कीते जाई सकदे न: सफा खोह्लो (सेटअप, ऑडिट ट्रेल, प्रयोक्ताएं दी सूची ...) ते उदे उप्पर "इस सफे गी बुकमार्क करो" चुनो। ऐसे बुकमार्कें पर गियर आइकन होंदा ऐ।</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>हून तुस इस सफे गी इत्थै नेईं खोह्ली सकदे। बुकमार्क कड्ढो, जां कुसै प्रशासक कोला पुज्जने दी मंजूरी मंगो।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>बुकमार्क दा नांऽ बदली करी "%name" करी दित्ता गेआ।</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>एह् सफा इस साइटएक्सेस (%siteaccess) च बंद ऐ। बुकमार्क उस साइटएक्सेस च खोह्लो जिस च एह् सफा ऐ।</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>इस सफे दा मॉड्यूल इत्थै इंस्टाल नेईं कीता दा जां चालू नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>एह् सफा हून नेईं ऐ: इसदे मॉड्यूल च ऐसा कोई दृश्य नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>तुंदी कोई बी भूमका तुसेंगी इस सफे गी खोह्लने दी अजाजत नेईं दिंदी।</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>तुस इस साइटएक्सेस दा इस्तेमाल नेईं करी सकदे।</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>तुस ओह् सामग्री नेईं पढ़ी सकदे जेह्ड़ी एह् सफा दसदा ऐ।</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>इस चाल्ली दे सफे गी बुकमार्क नेईं कीता जाई सकदा: एह् सिर्फ कुसै फार्म पर कम्म करदा ऐ, जां एह् इक पल दा सफा ऐ।</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>इस सफे दा पता गुम ऐ।</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>एह् सफा हून नेईं खोह्लेआ जाई सकदा।</translation>
     </message>
 </context>
 <context>

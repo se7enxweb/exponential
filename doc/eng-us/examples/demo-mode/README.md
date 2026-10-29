@@ -15,6 +15,19 @@ password (`publish` or `publishing`), and the administration shows a **Demo mode
 every PHP process of the demo, and no process of any other site. The files here show how, one per place PHP runs.
 What demo mode does, and its risks: [Demo mode](../../bc/6.0/demo-mode.md).
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../web-servers/nginx.md), [LiteSpeed](../web-servers/litespeed.md),
+> [Caddy](../web-servers/caddy.md), [IIS](../web-servers/iis.md), [Velocity](../web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../../help/hosting/panels/plesk.md), [cPanel](../../help/hosting/panels/cpanel.md), [DirectAdmin](../../help/hosting/panels/directadmin.md), [ISPConfig](../../help/hosting/panels/ispconfig.md).
+
 > **Warning:** Copy these files only into the configuration of a demo whose content, users and settings are all
 > throwaway. Never into a shared pool, a server-wide configuration, a base image or a template other sites are built
 > from.

@@ -2318,6 +2318,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>אף פאתא דסיסטמא מצין דהוין גו נישנא: פתוחון פאתא (טויבא, עקבא דבוקיא, רשימתא דמפלחנא ...) וגבון „נישנא להדא פאתא” לעל מנה. איך הלין נישנא אית להון צורתא דגיגלא.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>לית לוכון תוב אפסנותא לפתחא דהדא פאתא הרכא. שקולון נישנא, או בעון מעלנא מן מדברנא.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56382,6 +56386,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>שמא דנישנא אשתחלף ל „%name”.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>הדא פאתא בטילתא ילה גו הנא מעלנא דאתרא (%siteaccess). פתוחון נישנא גו מעלנא דאתרא דאית לה הדא פאתא.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>מודול דהדא פאתא לא ילה מתקנא או מפעלא הרכא.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>הדא פאתא לא איתיה תוב: למודול דילה לית חזיא הדכא.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>לא חד מן דורא דילוכון יהב לוכון אפסנותא לפתחא דהדא פאתא.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>לית לוכון אפסנותא לפלחנא דהנא מעלנא דאתרא.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>לית לוכון אפסנותא לקרינא דמליותא דהדא פאתא מחויא.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>הנא זנא דפאתא לא מציא דמתרשמא בנישנא: פלחא לחוד על טופסא, או פאתא דחד רפפא ילה.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>מונעא דהדא פאתא חסירא ילה.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>הדא פאתא לא מציא דמתפתחא השא.</translation>
     </message>
 </context>
 <context>

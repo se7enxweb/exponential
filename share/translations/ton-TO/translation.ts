@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>ʻE lava foki ke fakaʻilonga peesi ʻa e ngaahi peesi ʻo e founga: fakaava ʻa e peesi (Fokotuʻu, ʻa e lēkooti ʻaotita, ha lisi ʻo e kau fakaʻaongaʻi ...) pea fili ʻa e «Fakaʻilonga peesi ʻa e peesi ni» ʻi ʻolunga ʻo ia. ʻOku ʻi he ngaahi fakaʻilonga peesi pehē ha fakaʻilonga heʻeni ngaahi nifo.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ʻOku ʻikai toe haʻo ngofua ke fakaava ʻa e peesi ko ʻeni ʻi heni. Toʻo ʻa e fakaʻilonga peesi, pe kole ki ha tokotaha pule ke ʻomi haʻo ngofua ke hū.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ Kātaki ʻo fetuʻutaki ki he tokotaha pule ʻo e uepisaiti pea fakahā ange
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Kuo liliu ʻa e hingoa ʻo e fakaʻilonga peesi ki he «%name».</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Kuo taʻofi ʻa e peesi ko ʻeni ʻi he hūʻanga uepisaiti ko ʻeni (%siteaccess). Fakaava ʻa e fakaʻilonga peesi ʻi ha hūʻanga uepisaiti ʻoku ʻi ai ʻa e peesi ni.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ʻOku ʻikai fokotuʻu pe fakaʻaongaʻi ʻi heni ʻa e mōtiule ʻo e peesi ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ʻOku ʻikai toe ʻi ai ʻa e peesi ko ʻeni: ʻoku ʻikai ha vakaiʻanga pehē ʻi hono mōtiule.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ʻOku ʻikai ha taha ʻi hoʻo ngaahi fatongia ʻoku ne ʻomi haʻo ngofua ke fakaava ʻa e peesi ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ʻOku ʻikai haʻo ngofua ke ngāueʻaki ʻa e hūʻanga uepisaiti ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ʻOku ʻikai haʻo ngofua ke lau ʻa e meʻa ʻi loto ʻoku fakahaaʻi ʻe he peesi ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ʻOku ʻikai lava ke fakaʻilongaʻi ʻa e faʻahinga peesi ko ʻeni: ʻoku ngāue pē ia ki ha foomu, pe ko ha peesi ia ki ha momeniti pē ʻe taha.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ʻOku ʻikai ʻi ai ʻa e tuʻasila ʻo e peesi ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ʻOku ʻikai lava ke fakaava ʻa e peesi ko ʻeni ʻi he taimi ni.</translation>
     </message>
 </context>
 <context>

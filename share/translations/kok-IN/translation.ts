@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>सिस्टीम पानां लेगीत बुकमार्क करूं येतात: पान उकतें करात (सेटअप, ऑडिट ट्रेल, वापरपी यादी ...) आनी ताचे वयर "हें पान बुकमार्क करात" निवडात. अशा बुकमार्कांक गियराचें चिन्न आसता.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>तुमकां हें पान आतां हांगा उकतें करूंक मेळना. बुकमार्क काडात, वा प्रवेशा खातीर प्रशासकाक विचारात.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>बुकमार्काचें नांव बदलून "%name" केलें.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>हें पान ह्या साइटअॅक्सेसांत (%siteaccess) अक्षम आसा. जांतूं हें पान आसा अशा साइटअॅक्सेसांत बुकमार्क उकतो करात.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ह्या पानाचें मॉड्यूल हांगा इन्स्टॉल केल्लें ना वा सक्षम केल्लें ना.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>हें पान आतां अस्तित्वांत ना: ताच्या मॉड्यूलांत अशें दृश्य ना.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>तुमच्या खंयच्याच भूमिकेन तुमकां हें पान उकतें करपाक परवानगी दिना.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>तुमकां हो साइटअॅक्सेस वापरूंक मेळना.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>हें पान दाखयता तो आशय तुमकां वाचूंक मेळना.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>अशा प्रकारच्या पानाक बुकमार्क करूंक जायना: तें फकत एका फॉर्माचेर काम करता, वा तें एका खिणाचें पान.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ह्या पानाचो पत्तो उणो आसा.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>हें पान आतां उकतें करूंक जायना.</translation>
     </message>
 </context>
 <context>

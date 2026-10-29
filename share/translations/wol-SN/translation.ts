@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Mën nga denc xëti sistem it ci màndarga: ubbil xët bi (Defar, téereb saytu bi, limu jëfandikukat yi ...) te tànn Denc xët wii ci màndarga ci kawam. Màndarga yooyu am nañu nataalu jumtukaay.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Amatoo sañ-sañ ubbi xët wii fii. Dindil màndarga ji, walla laajal saytukat sañ-sañu dugg.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ juumte bii. Bu jéemaat yónnee fey bi.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Soppi nañu turu màndarga bi, mu di «%name».</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Xët wii dañu koo fey ci buntu sit bii (%siteaccess). Ubbil màndarga ji ci buntu sit bu am xët wii.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Modilu xët wii sampuñu ko walla taaluñu ko fii.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Xët wii nekkatul: modil bi amul wone bu ni mel.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Benn ci say wàll mayu la nga ubbi xët wii.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Amuloo sañ-sañ jëfandikoo buntu sit bii.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Amuloo sañ-sañ jàng li ci biir bi xët wii di wone.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Xët wu mel nii mënul am màndarga: dafay liggéey rekk ci benn formileer, walla xët la wu benn saa rekk.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Adreesu xët wii amul.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Xët wii mënul ubbiku léegi.</translation>
     </message>
 </context>
 <context>

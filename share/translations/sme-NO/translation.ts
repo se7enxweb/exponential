@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Vuogádatsiiddut sáhttet maiddái girjemearkkaid: raba siidu (Ásaheapmi, dárkkistanlogga, geavaheaddjilistu ...) ja vállje Girjemearke dán siiddu das bajábealde. Dákkár girjemearkkain lea ráhtaikona.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Dus ii leat šat lohpi rahpat dán siiddu dáppe. Váldde eret girjemearkka, dahje bivdde hálddašeaddjis beassanlobi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ du konto.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Girjemearka ođđa namma lea "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Dát siidu lea heaittihuvvon dán neahttabáikebeassamis (%siteaccess). Raba girjemearkka neahttabáikebeassamis mas dát siidu lea.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Dán siiddu moduvla ii leat sajáiduhttojuvvon dahje doaibmahuvvon dáppe.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Dát siidu ii leat šat: dan moduvllas ii leat dakkár oaidnu.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Ii oktage du rollain atte dutnje lobi rahpat dán siiddu.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Dus ii leat lohpi geavahit dán neahttabáikebeassama.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Dus ii leat lohpi lohkat sisdoalu maid dát siidu čájeha.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Dákkár siidui ii sáhte lasihit girjemearkka: dat doaibmá dušše skovis, dahje lea siidu mii gusto dušše oanehis bottaža.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Dán siiddu čujuhus váilu.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Dán siiddu ii sáhte rahpat dál.</translation>
     </message>
 </context>
 <context>

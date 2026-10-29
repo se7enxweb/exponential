@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>સિસ્ટમ પૃષ્ઠોને પણ બુકમાર્ક કરી શકાય છે: પૃષ્ઠ ખોલો (સેટઅપ, ઑડિટ ટ્રેઇલ, વપરાશકર્તાઓની સૂચિ ...) અને તેની ઉપર “આ પૃષ્ઠને બુકમાર્ક કરો” પસંદ કરો. આવા બુકમાર્કમાં ગિયર ચિહ્ન હોય છે.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>તમે હવે અહીં આ પૃષ્ઠ ખોલી શકતા નથી. બુકમાર્ક દૂર કરો, અથવા સંચાલક પાસે ઍક્સેસ માંગો.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56379,6 +56383,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>બુકમાર્કનું નામ બદલીને “%name” કરવામાં આવ્યું.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>આ પૃષ્ઠ આ સાઇટઍક્સેસ (%siteaccess) માં અક્ષમ છે. બુકમાર્કને એવા સાઇટઍક્સેસમાં ખોલો જેમાં આ પૃષ્ઠ હોય.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>આ પૃષ્ઠનું મૉડ્યૂલ અહીં ઇન્સ્ટૉલ નથી અથવા સક્ષમ નથી.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>આ પૃષ્ઠ હવે અસ્તિત્વમાં નથી: તેના મૉડ્યૂલમાં આવું કોઈ દૃશ્ય નથી.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>તમારી કોઈ પણ ભૂમિકા તમને આ પૃષ્ઠ ખોલવાની મંજૂરી આપતી નથી.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>તમે આ સાઇટઍક્સેસનો ઉપયોગ કરી શકતા નથી.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>આ પૃષ્ઠ જે સામગ્રી બતાવે છે તે તમે વાંચી શકતા નથી.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>આ પ્રકારના પૃષ્ઠને બુકમાર્ક કરી શકાતું નથી: તે ફક્ત ફૉર્મ પર કાર્ય કરે છે, અથવા તે એક ક્ષણ માટેનું પૃષ્ઠ છે.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>આ પૃષ્ઠનું સરનામું ખૂટે છે.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>આ પૃષ્ઠ અત્યારે ખોલી શકાતું નથી.</translation>
     </message>
 </context>
 <context>

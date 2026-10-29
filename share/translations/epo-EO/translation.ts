@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Ankaŭ sistemaj paĝoj povas esti legosignitaj: malfermu la paĝon (Agordado, la aŭdita spuro, listo de uzantoj ...) kaj elektu Legosigni ĉi tiun paĝon super ĝi. Tiaj legosignoj havas ikonon de dentrado.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Vi ne plu rajtas malfermi ĉi tiun paĝon ĉi tie. Forprenu la legosignon, aŭ petu aliron de administranto.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ vian konton.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>La legosigno estis renomita al "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Ĉi tiu paĝo estas malŝaltita en ĉi tiu retejaliro (%siteaccess). Malfermu la legosignon en retejaliro, kiu havas ĝin.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>La modulo de ĉi tiu paĝo ne estas instalita aŭ ne estas ŝaltita ĉi tie.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Ĉi tiu paĝo ne plu ekzistas: ĝia modulo ne havas tian vidon.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Neniu el viaj roloj permesas al vi malfermi ĉi tiun paĝon.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Vi ne rajtas uzi ĉi tiun retejaliron.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Vi ne rajtas legi la enhavon, kiun ĉi tiu paĝo montras.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Tia paĝo ne povas esti legosignita: ĝi nur agas sur formularo, aŭ estas paĝo de unu momento.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>La adreso de ĉi tiu paĝo mankas.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Ĉi tiu paĝo ne povas esti malfermita nun.</translation>
     </message>
 </context>
 <context>

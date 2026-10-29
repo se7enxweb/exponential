@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Namakhasi esistimu angaphawulwa: vulani ikhasi (Ukumisa, umkhondo wokucwaningwa, uhlu lwabasebenzisi ...) bese nikhetha okuthi Phawula leli khasi ngaphezu kwalo. Izimpawu ezinjalo zinesithonjana segiya.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Anisakwazi ukuvula leli khasi lapha. Susani uphawu lokufunda, noma nicele imvume yokufinyelela kumlawuli.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56379,6 +56383,42 @@ isebenze i-akhawunti yenu.</translation>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>Uphawu lokufunda luqanjwe kabusha lwaba “%name”.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Leli khasi licishiwe kulokhu kufinyelela isayithi (%siteaccess). Vulani uphawu lokufunda ekufinyeleleni isayithi okunaleli khasi.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Imojuli yaleli khasi ayifakiwe noma ayinikwanga amandla lapha.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Leli khasi alisekho: imojuli yalo ayinakho ukubuka okunjalo.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Ayikho neyodwa yezindima zenu enivumela ukuthi nivule leli khasi.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Aninayo imvume yokusebenzisa lokhu kufinyelela isayithi.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Aninayo imvume yokufunda okuqukethwe okuboniswa yileli khasi.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Lolu hlobo lwekhasi alinakwenziwa uphawu lokufunda: lisebenza kuphela efomini, noma liyikhasi lomzuzwana owodwa.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Ikheli laleli khasi alikho.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Leli khasi alikwazi ukuvulwa manje.</translation>
     </message>
 </context>
 <context>

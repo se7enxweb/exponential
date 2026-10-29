@@ -4,6 +4,20 @@ Diese Anleitung ist für alle, die eine Exponential-Website installieren oder be
 Entwickler, die Installationen per Skript aufsetzen. Zwei Dateien im Wurzelverzeichnis jeder Installation werden aus
 mitgelieferten Vorlagen kopiert, und eine davon wird danach bearbeitet:
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
+> [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+
 | Mitgelieferte Vorlage | Datei, die die Website nutzt | Wofür |
 |---|---|---|
 | `.htaccess_root` | `.htaccess` | Die Rewrite- und Schutzregeln für Apache und LiteSpeed |
@@ -84,6 +98,7 @@ Erst ansehen:
 
 ```text
 Installation: /var/www/example
+Faster: Apache reads .htaccess on every request; put these rules in the virtual host with AllowOverride None instead (doc/eng-us/examples/web-servers/apache-virtual-host.md).
 Would copy .htaccess_root to .htaccess (mode 0644, owner www-data:www-data)
 PASS: dry run, nothing changed; --apply copies
 ```
@@ -96,6 +111,7 @@ Dann kopieren. `-v` gibt die Kopie so aus wie `cp -v`:
 
 ```text
 Installation: /var/www/example
+Faster: Apache reads .htaccess on every request; put these rules in the virtual host with AllowOverride None instead (doc/eng-us/examples/web-servers/apache-virtual-host.md).
 '.htaccess_root' -> '.htaccess'
 PASS: .htaccess_root copied to .htaccess (mode 0644, owner www-data:www-data)
 Apache and LiteSpeed read .htaccess on the next request; nginx, Caddy and IIS never read it, and Velocity has the rules of .htaccess_root built in.
@@ -105,6 +121,7 @@ Ein zweiter Lauf ändert nichts:
 
 ```text
 Installation: /var/www/example
+Faster: Apache reads .htaccess on every request; put these rules in the virtual host with AllowOverride None instead (doc/eng-us/examples/web-servers/apache-virtual-host.md).
 PASS: .htaccess is already a copy of .htaccess_root; nothing to do
 ```
 
@@ -117,6 +134,33 @@ Welche Webserver die Datei lesen:
 | OpenLiteSpeed | nur die Rewrite-Regeln, nur mit `autoLoadHtaccess` und erst nach einem Neustart | die Regeln in den virtuellen Host übernehmen: [LiteSpeed](../beispiele/webserver/litespeed.md) |
 | Exponential Velocity | nein, die Regeln von `.htaccess_root` sind eingebaut | nichts; kopieren Sie sie trotzdem, wenn Apache denselben Baum ausliefern kann |
 | nginx, Caddy, IIS | nein | die Beispielkonfigurationen unter [Webserver-Beispiele](../beispiele/webserver/README.md) verwenden |
+
+### Gemessen: .htaccess gegen Regeln im virtuellen Host
+
+Mit `AllowOverride All` sucht Apache bei jeder Anfrage in jedem Verzeichnis des Pfads nach einer `.htaccess` und
+liest und wertet die gefundenen Regeln aus, bei jeder Anfrage. Mit `AllowOverride None` und denselben Regeln in der
+Konfiguration des virtuellen Hosts liest er sie einmal beim Start. Um zu sehen, was das kostet, lieferten zwei
+Wegwerf-Instanzen von Apache 2.4 dasselbe Verzeichnis mit den Regeln der mitgelieferten `.htaccess_root` aus: die eine
+als `.htaccess` mit `AllowOverride All`, die andere mit den Regeln im `<Directory>`-Block ihrer Konfiguration und
+`AllowOverride None`. PHP war nicht beteiligt, gemessen ist also die Arbeit von Apache selbst; `ab -k -c 8`, 20.000
+Anfragen pro Runde, 9 abwechselnde Runden, der Median:
+
+| Anfrage | `.htaccess`, `AllowOverride All` | Regeln in der Konfiguration, `AllowOverride None` | Unterschied |
+|---|---|---|---|
+| Ein statisches Bild vier Verzeichnisse tief (`/var/storage/images/media/images/x/photo.png`) | 988 Anfragen/s | 1.419 Anfragen/s | 44 % mehr Anfragen pro Sekunde |
+| Eine Seitenadresse, umgeschrieben auf `index.php` (`/some/page/of/the/site`) | 1.079 Anfragen/s | 1.303 Anfragen/s | 21 % mehr Anfragen pro Sekunde |
+
+Der Server war während der Messung mit anderer Arbeit ausgelastet (Load Average um 50), einzelne Runden schwankten
+also; das Bild war ohne `.htaccess` in jeder Runde schneller, die Seitenadresse in fünf von neun, in den übrigen etwa gleich schnell. Tiefere Pfade
+(Bilder, der Speicher, Assets von Extensions) zahlen mehr, weil es mehr Verzeichnisse zu durchsuchen gibt. Messen Sie
+auf Ihrem eigenen Server genauso vor und nach dem Umstellen.
+
+Zum Umstellen: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../beispiele/webserver/apache-virtueller-host.md)
+in Ihren virtuellen Host (mit dem statischen Cache auch die aus
+[`staticcache_offload.conf`](../../eng-us/examples/staticcache_offload.conf)), setzen Sie dort `AllowOverride None`,
+prüfen Sie mit `apachectl configtest`, laden Sie Apache neu (`systemctl reload apache2`, auf Systemen im Stil von
+Red Hat `httpd`) und testen Sie die Website. Behalten Sie `exp:setup:htaccess` für den Vergleich nach einem Upgrade:
+sein Diff zeigt die Regeln, die eine neue Version geändert hat.
 
 ### Auf die Regeln für den statischen Cache umstellen
 
@@ -131,6 +175,7 @@ Unterschied und lehnt ab:
 
 ```text
 Installation: /var/www/example
+Faster: Apache reads .htaccess on every request; put these rules in the virtual host with AllowOverride None instead (doc/eng-us/examples/web-servers/apache-virtual-host.md).
 .htaccess differs from .htaccess_root_static (- what .htaccess has, + what .htaccess_root_static has):
   --- .htaccess
   +++ .htaccess_root_static

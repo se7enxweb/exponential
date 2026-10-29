@@ -23,6 +23,8 @@
  *  IX-08 — records not indexed yet are merged into the first page; the PHP filter agrees with the SQL filter
  *  IX-09 — fetch( 'audit', ... ) as a user without audit/read is empty; as the administrator it has events (A3)
  *  IX-10 — retention (KeepDays) removes old rows of the given channels only
+ *  IX-11 — the newest page of several channels (the dashboard block) is the merge of each channel's, also when (on
+ *          SQLite) it comes from the window of the newest rows; page() without the total gives the same rows
  *
  * Run: sudo -u alpha php vendor/bin/phpunit tests/tests/kernel/classes/audit/expAuditIndexTest.php
  *
@@ -376,6 +378,47 @@ class expAuditIndexTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( expAuditFunctionCollection::fetchCanRead( 'content' )['result'] );
         $e = expAuditFunctionCollection::fetchEvent( $events[0]['id'] )['result'];
         $this->assertSame( $events[0]['id'], $e['id'] );
+    }
+
+    /** IX-11 */
+    public function testNewestPageOfSeveralChannels()
+    {
+        // a year ahead: the newest rows of the index, so the window of the newest rows holds them
+        $this->write( 60, time() + 365 * 86400 );
+        $this->indexer()->run();
+        $q = new expAuditQuery();
+        // every severity: the fixture writes mostly info rows; the channel list is the filter, as the dashboard's is
+        $f = expAuditQuery::normalise( array() );
+        $two = array( 't4access', 't4system' );
+        // the expected order: each channel on its own, merged, newest first
+        $expected = array();
+        foreach ( $two as $channel )
+            foreach ( (array)$q->fetch( $f, array( $channel ), 0, 500 ) as $r )
+                $expected[] = $r;
+        usort( $expected, function ( $a, $b ) { return array( (int)$b['time_ms'], $b['id'] ) <=> array( (int)$a['time_ms'], $a['id'] ); } );
+        $ids = array_column( $expected, 'id' );
+        $this->assertGreaterThan( 12, count( $ids ) );
+        $this->assertSame( array_slice( $ids, 0, 10 ), array_column( (array)$q->fetch( $f, $two, 0, 10 ), 'id' ), 'first page' );
+        $this->assertSame( array_slice( $ids, 10, 2 ), array_column( (array)$q->fetch( $f, $two, 10, 2 ), 'id' ), 'a later page' );
+        // more than there are: the window has too few, the full query runs and gives every row
+        $this->assertSame( $ids, array_column( (array)$q->fetch( $f, $two, 0, 500 ), 'id' ), 'every row' );
+        $this->assertSame( count( $ids ), $q->count( $f, $two ) );
+        $recent = new class() extends expAuditQuery {
+            public function recent( $where, $offset, $limit ) { return $this->fetchFromRecent( $where, $offset, $limit, 'id' ); }
+        };
+        if ( expAuditIndexSchema::type( eZDB::instance() ) === 'sqlite' )
+        {
+            $this->assertSame( array_slice( $ids, 0, 10 ), array_column( (array)$recent->recent( $q->where( $f, $two ), 0, 10 ), 'id' ), 'the page from the window' );
+            $this->assertNull( $recent->recent( $q->where( $f, $two ), 0, 500 ), 'too few in the window: the full query' );
+        }
+        else
+            $this->assertNull( $recent->recent( $q->where( $f, $two ), 0, 10 ), 'other engines run the query as before' );
+        // the dashboard block's page: the same rows without the count of every matching row
+        $with = expAuditConsole::page( $f, $two, 0, 10 );
+        $without = expAuditConsole::page( $f, $two, 0, 10, false );
+        $this->assertSame( array_column( $with['rows'], 'id' ), array_column( $without['rows'], 'id' ) );
+        $this->assertSame( count( $expected ), $with['total'] );
+        $this->assertNull( $without['total'] );
     }
 
     /** IX-10 */
