@@ -53,6 +53,15 @@ jeder Code gilt nur einmal. Nach zu vielen falschen Codes endet die Anmeldung, u
 Passwort. Wie Sie sie einrichten, erklärt
 [Ihr Konto und die Anmeldung](konten-und-anmeldung.md#zweistufige-anmeldung).
 
+## Ihre erste Anmeldung
+
+Ein Administrator legt Ihr Konto in der Gruppe **Editors** an und gibt Ihnen die Adresse, Ihren Benutzernamen und ein
+vorläufiges Passwort (das Passwort auf einem zweiten Weg, etwa am Telefon). Bei Ihrer ersten Anmeldung bittet die
+Website Sie, das vorläufige Passwort vor allem anderen zu ersetzen: Geben Sie es als aktuelles Passwort ein, wählen
+Sie Ihr eigenes und bestätigen Sie noch einmal mit dem vorläufigen. Jeden Schritt mit Bildschirmfotos zeigt
+[Konten für Redakteure und Administratoren einrichten](konten-fuer-redakteure-und-administratoren-einrichten.md#9-die-erste-anmeldung-des-redakteurs).
+Was Ihr Konto danach erlaubt, beschreibt [Was die Redakteursrolle erlaubt](was-die-redakteursrolle-erlaubt.md).
+
 ## Nach der Anmeldung
 
 Der Editor öffnet sich mit seinem **Dashboard**: einer Begrüßung mit Ihrem Namen, Schaltflächen zur
@@ -120,6 +129,8 @@ zuerst Ihren Entwurf. Melden Sie sich an einem gemeinsam genutzten Computer imme
 - [Erste Schritte](erste-schritte.md)
 - [Ihr Konto und die Anmeldung](konten-und-anmeldung.md)
 - [Anmelden in der Administration](anmelden-in-der-administration.md), für Administratoren
+- [Konten für Redakteure und Administratoren einrichten](konten-fuer-redakteure-und-administratoren-einrichten.md), für Administratoren
+- [Mitglieder verwalten](mitglieder-verwalten.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
