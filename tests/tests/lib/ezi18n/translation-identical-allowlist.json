@@ -1714,6 +1714,10 @@
         "xmlUrl": "OPML attribute name, code identifier"
     },
     "ger-DE": {
+        "Zoom: %1 %": "Zoom is the usual German term",
+        "Ellipse": "German word spelled the same",
+        "Sepia": "German word spelled the same",
+        "Original": "German word spelled the same",
         "Schema": "the same word in German (a database schema)",
         "Passkeys": "the same word in German (the WebAuthn sign-in credential, as browsers and operating systems name it)",
         "live": "the same word in German (a synchronisation that runs live)",
@@ -5502,6 +5506,10 @@
         "xmlUrl": "code identifier"
     },
     "cat-ES": {
+        "Zoom: %1 %": "zoom is the usual Catalan term",
+        "Rectangle": "Catalan word spelled the same",
+        "Contrast": "Catalan word spelled the same",
+        "Original": "Catalan word spelled the same",
         "#level1 - #level2": "placeholders only",
         "#levelIndex1:#levelIndex2": "placeholders only",
         "%count SQL": "abbreviation with placeholder",
@@ -5811,6 +5819,8 @@
         "xmlUrl": "code identifier"
     },
     "ser-SR": {
+        "Font": "font is the usual Serbian term",
+        "Original": "Serbian (Latin) word spelled the same",
         "#level1 - #level2": "placeholders only",
         "#levelIndex1:#levelIndex2": "placeholders only",
         "%count SQL": "placeholder and abbreviation SQL",
@@ -6166,6 +6176,8 @@
         "xmlUrl": "identifier"
     },
     "por-PT": {
+        "Zoom: %1 %": "zoom is the usual Portuguese term",
+        "Original": "Portuguese word spelled the same",
         "#level1 - #level2": "placeholders and separator only",
         "#levelIndex1:#levelIndex2": "placeholders only",
         "%count SQL": "abbreviation with placeholder",
@@ -6338,6 +6350,7 @@
         "Tablet": "same word in European Portuguese (a tablet computer)"
     },
     "afr-ZA": {
+        "Sepia": "Afrikaans word spelled the same",
         "#level1 - #level2": "placeholders only",
         "#levelIndex1:#levelIndex2": "placeholders only",
         "%child_count item": "same spelling in afr-ZA",
@@ -7070,6 +7083,7 @@
         "JSON: %url": "format name and placeholder only"
     },
     "hau-NG": {
+        "Sepia": "loanword, no reliable native term yet; kept until a native speaker review",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
         "%count SQL": "code term",
@@ -7593,6 +7607,8 @@
         "JSON: %url": "format name plus placeholder only"
     },
     "yor-NG": {
+        "%1 × %2 pixels": "loanword, no reliable native term yet; kept until a native speaker review",
+        "Sepia": "loanword, no reliable native term yet; kept until a native speaker review",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
         "%count SQL": "code term",
@@ -8097,6 +8113,9 @@
         "WebDAV": "protocol name"
     },
     "ibo-NG": {
+        "Opacity (%)": "loanword, no reliable native term yet; kept until a native speaker review",
+        "Ellipse": "loanword, no reliable native term yet; kept until a native speaker review",
+        "Sepia": "loanword, no reliable native term yet; kept until a native speaker review",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
         "%count SQL": "code term",
@@ -8298,6 +8317,7 @@
         "WebDAV": "protocol name"
     },
     "zul-ZA": {
+        "Sepia": "loanword, no reliable native term yet; kept until a native speaker review",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
         "%count SQL": "code term",
@@ -8443,6 +8463,8 @@
         "WebDAV": "protocol name"
     },
     "som-SO": {
+        "%1 × %2 pixels": "loanword, no reliable native term yet; kept until a native speaker review",
+        "Sepia": "loanword, no reliable native term yet; kept until a native speaker review",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
         "%count SQL": "code term",
@@ -8636,6 +8658,7 @@
         "JSON: %url": "format name plus placeholder only"
     },
     "xho-ZA": {
+        "Sepia": "loanword, no reliable native term yet; kept until a native speaker review",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
         "%count SQL": "code term",
@@ -21661,6 +21684,8 @@
         "Plugin": "technical term, same in Breton"
     },
     "oci-FR": {
+        "Rectangle": "Occitan word spelled the same",
+        "Contrast": "Occitan word spelled the same",
         "ID %id": "acronym and placeholder",
         "Participants": "same word in Occitan",
         "Version": "word spelled the same in Occitan",
@@ -22261,6 +22286,8 @@
         "Div": "HTML element name (div), code"
     },
     "roh-CH": {
+        "%1 × %2 pixels": "Romansh plural spelled the same",
+        "%1 objects": "Romansh plural spelled the same",
         "Objects": "same word in Romansh plural",
         "Containers": "loanword used the same in Romansh",
         "container": "loanword used the same in Romansh",

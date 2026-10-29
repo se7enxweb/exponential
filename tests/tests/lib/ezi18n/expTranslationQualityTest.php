@@ -8,8 +8,8 @@
  */
 
 /**
- * The translations of the administration that are kept complete (LANGUAGES; the kernel's catalogue and those of ezoe
- * and ezjscore, which ship with it) must stay usable: a finished translation keeps the
+ * The translations of the administration that are kept complete (LANGUAGES; the kernel's catalogue and those of ezoe,
+ * ezjscore and expimageeditor, which ship with it) must stay usable: a finished translation keeps the
  * placeholders (%1, %name ...), the HTML tags and entities, the leading and trailing whitespace and the number of
  * line breaks of its source, is not empty, and is not the English text itself unless that is right in the language
  * (a product name, a code, a word spelled the same: translation-identical-allowlist.json, each entry with its
@@ -167,7 +167,7 @@ class expTranslationQualityTest extends PHPUnit\Framework\TestCase
         {
             $files = array_merge(
                 glob( $root . '/share/translations/' . $language . '/translation.ts' ),
-                glob( $root . '/extension/{ezoe,ezjscore}/translations/' . $language . '/translation.ts', GLOB_BRACE )
+                glob( $root . '/extension/{ezoe,ezjscore,expimageeditor}/translations/' . $language . '/translation.ts', GLOB_BRACE )
             );
             foreach ( $files as $file )
                 $rows[substr( $file, strlen( $root ) + 1 )] = array( $file, $language );
