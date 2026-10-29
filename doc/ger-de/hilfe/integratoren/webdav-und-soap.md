@@ -4,14 +4,14 @@ audience: integrator, developer, admin
 category: integration
 order: 120
 summary: Die beiden älteren Protokolle, die Exponential noch spricht - WebDAV, um Inhalte als Laufwerk einzubinden, und ein SOAP-1.1-Server, dem Erweiterungen Funktionen hinzufügen - wie Sie jedes einschalten, wie sie authentifizieren, ihre bekannten Lücken und wann Sie sie in einer neuen Integration verwenden.
-keywords: WebDAV, SOAP, Laufwerk, ältere Protokolle, Authentifizierung, webdav.php, webdav.ini, EnableWebDAV, StartNode, FolderClasses, index_soap.php, soap.php, soap.ini, EnableSOAP, SOAPExtensions, registerFunction, eZSOAPServer, eZSOAPClient, legacy protocols
+keywords: WebDAV, SOAP, Laufwerk, ältere Protokolle, Authentifizierung, index_webdav.php, webdav.php, webdav.ini, EnableWebDAV, StartNode, FolderClasses, index_soap.php, soap.php, soap.ini, EnableSOAP, SOAPExtensions, registerFunction, eZSOAPServer, eZSOAPClient, legacy protocols
 type: help
 ---
 # WebDAV und SOAP
 
 Diese Seite richtet sich an Integratoren, die auf eine Anforderung treffen wie "Redakteure speichern Dateien von ihrem
 Desktop direkt in die Website" oder "unsere Middleware spricht SOAP". Exponential liefert einen WebDAV-Server
-(`webdav.php`) und einen SOAP-1.1-Server (`index_soap.php`, vor 6.0.15 `soap.php`) mit. Beide sind **standardmäßig aus**, beide haben bekannte
+(`index_webdav.php`) und einen SOAP-1.1-Server (`index_soap.php`; vor 6.0.15 hießen sie `webdav.php` und `soap.php`) mit. Beide sind **standardmäßig aus**, beide haben bekannte
 Lücken, und beide lohnen sich nur, wenn die Gegenseite nichts Neueres verwenden kann. Ihren Stand gegenüber den
 Standards beschreibt [Standards für APIs und Protokolle](../../standards/apis-und-protokolle.md#webdav-rfc-4918).
 
@@ -24,7 +24,12 @@ Standards beschreibt [Standards für APIs und Protokolle](../../standards/apis-u
 
 ## WebDAV
 
-Der Einstiegspunkt ist `webdav.php` im Wurzelverzeichnis der Installation. Er führt den WebDAV-Server der Zeta
+> **Wichtig: Das Einstiegsskript wurde in 6.0.15 umbenannt**
+> Der WebDAV-Server ist `index_webdav.php` (bis 6.0.14 `webdav.php`). `webdav.php` leitet nur noch dorthin weiter,
+> schreibt einmal am Tag eine Warnung und wird in einer späteren Hauptversion entfernt. Ändern Sie Ihren virtuellen
+> Host (HTTP **und** HTTPS) und die Rewrite-Regeln, und testen Sie sie: [Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](../../bc/6.0/webdav-einstiegsskript-index-webdav.md).
+
+Der Einstiegspunkt ist `index_webdav.php` im Wurzelverzeichnis der Installation. Er führt den WebDAV-Server der Zeta
 Components (`zetacomponents/webdav ~1.2`) mit dem Inhalts-Backend
 `kernel/private/classes/webdav/ezwebdavcontentbackend.php` und Basic-Authentifizierung gegen Exponential-Benutzer aus
 (`ezwebdavcontentbackendauth.php`).
@@ -51,9 +56,13 @@ FolderClasses[]=folder
 | Bekannte Lücken | Sperren (Klasse 2) sind unvollständig: Die Methoden des Lock-Authorizers sind leer; ob LOCK und UNLOCK mit echten Clients funktionieren, ist nicht geprüft. Die Regressionsaufzeichnungen laufen nicht in der CI |
 
 > **Hinweis**
-> Ihr Webserver muss WebDAV-Anfragen an `webdav.php` leiten (eine Rewrite-Regel oder ein eigener virtueller Host).
-> Testen Sie mit dem Client, den Ihr Kunde wirklich verwenden wird, bevor Sie es zusagen; Desktop-Clients gehen
-> unterschiedlich mit Sperren um.
+> Ihr Webserver muss WebDAV-Anfragen an `index_webdav.php` leiten: auf dem Haupthost eine Regel wie
+> `RewriteRule ^index_webdav\.php - [L]` (in `.htaccess_root` auskommentiert mitgeliefert) oder ein eigener virtueller
+> Host wie `webdav.example.com`, der jede Anfrage dorthin schickt. Die Regeln für Apache, Plesk, nginx und IIS und ein
+> Test mit `curl -X PROPFIND` (erwartet: `207 Multi-Status`) stehen auf
+> [der Seite zur Änderung](../../bc/6.0/webdav-einstiegsskript-index-webdav.md). Velocity liefert WebDAV nicht aus;
+> verwenden Sie dafür Apache oder nginx mit PHP-FPM. Testen Sie mit dem Client, den Ihr Kunde wirklich verwenden wird,
+> bevor Sie es zusagen; Desktop-Clients gehen unterschiedlich mit Sperren um.
 
 ### Berechtigungen (seit 6.0.15)
 

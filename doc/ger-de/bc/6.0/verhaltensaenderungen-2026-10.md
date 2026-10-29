@@ -131,8 +131,18 @@ werden. Aufrufe über HTTP sind unverändert. Siehe [SOAP-Aufrufe über HTTPS](.
 | Mit dem MySQLi-Cluster-Backend (`eZDFSFileHandlerMySQLiBackend`) unter PHP 8.1 und neuer wird auf eine Cache-Datei, die ein anderer Prozess erzeugt, wieder gewartet, statt sie ein zweites Mal zu erzeugen: `startCacheGeneration()` gibt die verbleibende Erzeugungszeit zurück, und eine abgelaufene Erzeugung wird übernommen. Ein fehlgeschlagenes `SELECT ... FOR UPDATE` am Ende einer Erzeugung rollt zurück und meldet den Fehler statt eines `TypeError`. | Sites im Cluster unter Last: weniger doppelte Erzeugungen desselben View-Caches. | Nichts. |
 | Die Tests der Gruppe `database` laufen auf Wegwerf-Datenbanken `exp_test_<pid>_<hex>` unter MySQL/MariaDB, und die Live-Tests verwenden `EXP_TEST_SITEACCESS` oder `DefaultAccess` (sie verwendeten `admin`). `tests/runtests.php --db-per-test --dsn=…` leert nur eine Datenbank mit `test`, `tests` oder `testdb` als Wort des Namens. | `vendor/bin/phpunit --group database` ohne ein Konto mit `CREATE` und `DROP` auf `exp\_test\_%` überspringt mit dem Grund. | Für die Testläufe: `EXP_TEST_DB_USER` und `EXP_TEST_DB_PASSWORD`, siehe [Testen](love/testen.md). |
 
+## Das WebDAV-Einstiegsskript heißt index_webdav.php (29. Oktober 2026)
+
+> **Ändern Sie Ihre vhost- und Rewrite-Regeln.** Die vollständigen Regeln vorher/nachher für Apache, Plesk, nginx und
+> IIS und das Testverfahren: [Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](webdav-einstiegsskript-index-webdav.md).
+
+| Änderung | Wie prüfen | Was tun |
+|---|---|---|
+| Der WebDAV-Server ist `index_webdav.php`, benannt wie `index_rest.php`, `index_treemenu.php` und `index_cluster.php`. `webdav.php` bindet ihn nur noch ein, schreibt einmal am Tag eine Warnung in `warning.log` und wird in einer späteren Hauptversion entfernt. `.htaccess_root` und `.htaccess_root_static` tragen eine auskommentierte Regel `#RewriteRule ^index_webdav\.php - [L]`. | `grep -rn 'webdav\.php'` über die virtuellen Hosts (HTTP **und** HTTPS), `.htaccess`, die zusätzlichen Anweisungen von Plesk, die nginx- und IIS-Konfigurationen; `grep 'old name of the WebDAV entry script' var/log/warning.log`. | `index_webdav.php` in jeder Regel nennen (`RewriteRule`, nginx-`location` und `fastcgi_param SCRIPT_FILENAME`, IIS-Regeln, Freigabelisten der Skripte im Wurzelverzeichnis), dann testen: `curl -i -X OPTIONS` (`DAV: 1`) und `curl -i -X PROPFIND -H 'Depth: 1'` (`207 Multi-Status`) gegen `/index_webdav.php/`. Unter `/webdav.php/...` eingebundene Clients funktionieren über den Shim weiter; binden Sie sie unter `/index_webdav.php/...` neu ein. WebDAV fragt weiterhin standardmäßig nie nach einem zweiten Anmeldeschritt. |
+
 ## Verwandte Seiten
 
+- [Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](webdav-einstiegsskript-index-webdav.md)
 - [Chronik vom Oktober 2026](../../geschichte/2026/2026-10.md)
 - [Verhaltensänderungen vom 16. bis 30. September 2026](verhaltensaenderungen-2026-09b.md)
 - [Verhaltensänderungen vom Juli und August 2026](verhaltensaenderungen-2026-07-08.md)

@@ -262,6 +262,15 @@ the 443 host), let the proxy send `X-Forwarded-Proto` and the original `Host`, a
 `site.ini [HTTPHeaderSettings] TrustedProxies[]`. See
 [chapter 8, section 8.8](../../install/08-serving-the-site.md#88-behind-a-reverse-proxy).
 
+## WebDAV
+
+This virtual host does not route WebDAV (off by default). To serve it, add `RewriteRule ^index_webdav\.php - [L]`
+inside the `<Directory>` block, before the catch-all, in the **HTTPS** host (the port 80 host only redirects), or a
+virtual host of its own (`webdav.example.com`) with `RewriteRule . /index_webdav.php [L]`. Since 6.0.15 the script
+is `index_webdav.php`; rules written for `webdav.php` keep working through a forwarding shim until a later major
+version. Before/after and the test (`curl -X PROPFIND -H 'Depth: 1'`, expect `207 Multi-Status`):
+[The WebDAV entry script is now index_webdav.php](../../bc/6.0/webdav-entry-script-index-webdav.md#apache-the-virtual-hosts-http-and-https).
+
 ## Check it
 
 ```bash

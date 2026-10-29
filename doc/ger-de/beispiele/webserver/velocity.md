@@ -20,6 +20,12 @@ einer Dateiendung); nach einem Upgrade gilt sie mit dem Neustart, den `exp:veloc
 
 Alles wird in `velocity.ini` eingestellt; der Baum `/etc/vc` wird bei jedem Start daraus erzeugt.
 
+**WebDAV liefert Velocity nicht aus.** Seine Einstiegsskripte sind `index.php`, `index_rest.php` und
+`index_treemenu.php`; der WebDAV-Server, seit 6.0.15 `index_webdav.php` (früher `webdav.php`), gehört unter keinem der
+beiden Namen dazu. Liefern Sie WebDAV über Apache oder nginx mit PHP-FPM aus, am besten auf einem eigenen Host wie
+`webdav.example.com`; für die Umbenennung muss in `velocity.ini` nichts geändert werden. Siehe
+[Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](../../bc/6.0/webdav-einstiegsskript-index-webdav.md).
+
 ## 1. Die Einstellungen
 
 [`velocity.ini.append.php.example`](../../../eng-us/examples/web-servers/velocity.ini.append.php.example) ist ein

@@ -270,6 +270,16 @@ dem Handler und den Regeln des Hosts für 443), lassen Sie den Proxy `X-Forwarde
 senden und tragen Sie die Adresse des Proxys in `site.ini [HTTPHeaderSettings] TrustedProxies[]` ein. Siehe
 [Kapitel 8, Abschnitt 8.8](../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy).
 
+## WebDAV
+
+Dieser virtuelle Host leitet WebDAV nicht weiter (standardmäßig aus). Um es auszuliefern, fügen Sie
+`RewriteRule ^index_webdav\.php - [L]` im Block `<Directory>` vor der Auffangregel ein, im **HTTPS**-Host (der Host
+für Port 80 leitet nur weiter), oder einen eigenen virtuellen Host (`webdav.example.com`) mit
+`RewriteRule . /index_webdav.php [L]`. Seit 6.0.15 heißt das Skript `index_webdav.php`; Regeln für `webdav.php`
+funktionieren über einen weiterleitenden Shim bis zu einer späteren Hauptversion weiter. Vorher/nachher und der Test
+(`curl -X PROPFIND -H 'Depth: 1'`, erwartet: `207 Multi-Status`):
+[Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](../../bc/6.0/webdav-einstiegsskript-index-webdav.md#apache-die-virtuellen-hosts-http-und-https).
+
 ## Prüfen
 
 ```bash

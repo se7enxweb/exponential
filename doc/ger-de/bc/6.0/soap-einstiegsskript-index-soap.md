@@ -49,7 +49,7 @@ meldet sich über SOAP wie bisher mit einem App-Passwort an. Siehe
   Regel wie `^index(_[a-z]+)?\.php$` alle, und ein Scanner oder ein Audit erkennt einen Front-Controller an seinem
   Namen.
 - **Der WebDAV-Server folgt demselben Muster** in derselben Version (`webdav.php` wird zu `index_webdav.php`); siehe
-  dessen eigene Seite in diesem Verzeichnis.
+  [Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](webdav-einstiegsskript-index-webdav.md).
 
 ## Was vorerst weiter funktioniert
 
@@ -272,6 +272,7 @@ Ersetzen Sie `www.example.com` durch diesen Namen.
 
 ## Verwandte Seiten
 
+- [Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](webdav-einstiegsskript-index-webdav.md)
 - [WebDAV und SOAP](../../hilfe/integratoren/webdav-und-soap.md)
 - [Syndizierung zwischen Installationen](../../hilfe/integratoren/syndizierung-zwischen-installationen.md)
 - [Apache .htaccess](../../beispiele/webserver/apache-htaccess.md) und [nginx](../../beispiele/webserver/nginx.md)

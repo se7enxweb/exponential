@@ -1514,6 +1514,7 @@ return array(
       'expWebAuthnCbor'                                              => 'kernel/classes/webauthn/expwebauthncbor.php',
       'expWebAuthnChallenge'                                         => 'kernel/classes/webauthn/expwebauthnchallenge.php',
       'expWebAuthnCose'                                              => 'kernel/classes/webauthn/expwebauthncose.php',
+      'expWebDAVEntryScript'                                         => 'kernel/private/classes/webdav/expwebdaventryscript.php',
       'expWebDAVPathFactory'                                         => 'kernel/private/classes/webdav/expwebdavpathfactory.php',
       'expWorkflowEventWizard'                                       => 'kernel/setup/expworkfloweventwizard.php',
       'ezpAccessDenied'                                              => 'kernel/private/classes/exceptions/kernel/accessdenied.php',

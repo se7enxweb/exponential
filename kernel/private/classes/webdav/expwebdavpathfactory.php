@@ -8,7 +8,7 @@
  */
 
 /**
- * The path factory of webdav.php: paths inside the server are plain (decoded) text, URIs are encoded.
+ * The path factory of index_webdav.php: paths inside the server are plain (decoded) text, URIs are encoded.
  *
  * A path such as "/site/Content/Annual report 2026.docx" stays decoded everywhere inside the server and the
  * backend, so the paths of requests, of PROPFIND responses and of the lock plugin's own PROPFIND and PROPPATCH

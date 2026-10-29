@@ -48,7 +48,7 @@ over SOAP with an app password, as before. See
   controllers in the root. With the SOAP server named like them, a rule such as `^index(_[a-z]+)?\.php$` describes all
   of them, and a scanner or an audit can tell a front controller from a stray script by its name.
 - **The WebDAV server follows the same pattern** in the same release (`webdav.php` becomes `index_webdav.php`); see
-  its own page in this directory.
+  [the WebDAV entry script is now index_webdav.php](webdav-entry-script-index-webdav.md).
 
 ## What keeps working for now
 
@@ -261,6 +261,7 @@ Run these from a machine that is allowed to reach the SOAP server, against the H
 
 ## Related pages
 
+- [The WebDAV entry script is now index_webdav.php](webdav-entry-script-index-webdav.md)
 - [WebDAV and SOAP](../../help/integrators/webdav-and-soap.md)
 - [Syndication between installations](../../help/integrators/syndication-between-installations.md)
 - [Apache .htaccess](../../examples/web-servers/apache-htaccess.md) and [nginx](../../examples/web-servers/nginx.md)

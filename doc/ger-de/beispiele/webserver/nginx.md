@@ -222,6 +222,16 @@ als `HTTP_X_FORWARDED_PROTO` an); der Kernel glaubt ihm nur, wenn er von einer A
 `site.ini [HTTPHeaderSettings] TrustedProxies[]` steht
 ([Kapitel 8, Abschnitt 8.8](../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy)).
 
+## WebDAV
+
+Diese Datei leitet WebDAV nicht weiter (standardmäßig aus). Um es auszuliefern, fügen Sie vor der Auffangregel eine
+`location ^~ /index_webdav.php` mit `fastcgi_param SCRIPT_FILENAME $document_root/index_webdav.php` und
+`SCRIPT_NAME /index_webdav.php` hinzu, oder einen eigenen `server` für einen WebDAV-Host. Seit 6.0.15 heißt das Skript
+`index_webdav.php`; ein Block für `webdav.php` funktioniert über einen weiterleitenden Shim bis zu einer späteren
+Hauptversion weiter, ändern Sie aber **beides**, die `location` und `SCRIPT_FILENAME`. Vorher/nachher und der Test
+(`curl -X PROPFIND -H 'Depth: 1'`, erwartet: `207 Multi-Status`):
+[Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](../../bc/6.0/webdav-einstiegsskript-index-webdav.md#nginx).
+
 ## Prüfen
 
 ```bash

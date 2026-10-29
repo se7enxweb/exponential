@@ -57,9 +57,9 @@ Implementation
 ==============
 
 The entry point in the WebDAV system is kept, namely all WebDAV requests are
-processed by webdav.php.
+processed by index_webdav.php.
 
-In webdav.php the class eZWebDAVContentBackend is instantiated, instead of the
+In index_webdav.php the class eZWebDAVContentBackend is instantiated, instead of the
 old implementation which resides in the eZWebDAVContentServer class. The
 class eZWebDAVContentBackendAuth handles authentication and authorization
 for WebDAV.
@@ -157,7 +157,9 @@ Server Configuration
 ====================
 
 The Exponential installation must be configured to process all WebDAV requests
-through webdav.php.
+through index_webdav.php (named webdav.php until 6.0.14; webdav.php now only
+forwards to it and will be removed in a later major version, see
+doc/eng-us/bc/6.0/webdav-entry-script-index-webdav.md).
 
 In addition, WebDAV support must be enabled in webdav.ini::
 
@@ -175,7 +177,7 @@ WebDAV Logging is enabled by (in webdav.ini or in overwrites)::
  [GeneralSettings]
  Logging=enable
 
-The locations of the WebDAV log files are var/log/webdav.log (from webdav.php)
+The locations of the WebDAV log files are var/log/webdav.log (from index_webdav.php)
 and var/log/<siteaccess>/log/webdav.log (from ezwebdavcontentbackend.php).
 
 For multiple siteaccesses, the setting PathPrefix should be used in site.ini

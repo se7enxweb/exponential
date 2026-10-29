@@ -154,7 +154,8 @@ class expUserSessionTracker
         $script = basename( (string)eZSys::serverVariable( 'SCRIPT_NAME', true ) );
         if ( $script === 'index_soap.php' || $script === 'soap.php' )
             return 'soap';
-        if ( $script === 'webdav.php' )
+        // index_webdav.php, or webdav.php, its old name kept as a forwarding shim
+        if ( $script === 'index_webdav.php' || $script === 'webdav.php' )
             return 'webdav';
         if ( $script === 'index_rest.php' )
             return 'rest';

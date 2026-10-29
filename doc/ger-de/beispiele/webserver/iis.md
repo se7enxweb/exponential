@@ -206,6 +206,15 @@ der Liste wäre auch eine Seite wie `/about/settings` verborgen. Die Liste `file
 Halten Sie die Werte gleich mit `site.ini [HTTPHeaderSettings] SecurityHeaders[]` oder entfernen Sie den Header an
 einer der beiden Stellen, damit eine Seite nie zwei verschiedene Werte trägt.
 
+## WebDAV
+
+Diese `web.config` leitet WebDAV nicht weiter (standardmäßig aus). Um es auszuliefern, fügen Sie vor der Auffangregel
+eine Regel für `^index_webdav\.php` mit `<action type="None" />` hinzu, oder eine eigene Site, die alles nach
+`index_webdav.php` umschreibt, und lassen das eigene WebDAV-Modul von IIS dafür aus. Seit 6.0.15 heißt das Skript
+`index_webdav.php`; eine Regel für `webdav.php` funktioniert über einen weiterleitenden Shim bis zu einer späteren
+Hauptversion weiter. Vorher/nachher und der Test:
+[Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](../../bc/6.0/webdav-einstiegsskript-index-webdav.md#microsoft-iis-webconfig).
+
 ## Prüfen
 
 ```powershell

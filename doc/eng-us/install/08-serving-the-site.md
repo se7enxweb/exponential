@@ -131,6 +131,15 @@ What can go wrong: a `200` for the `.git` or kernel request means the rules are 
 `.htaccess` or `AllowOverride`, an nginx block that is not this chapter's); stop and fix that before the site is
 reachable from outside. A `404` for every asset under `design/` means the document root is not the installation root.
 
+**WebDAV is not in this list.** It is off by default, and the shipped rules send `/index_webdav.php` to `index.php`
+like any other script. To serve WebDAV, uncomment `RewriteRule ^index_webdav\.php - [L]` in `.htaccess` (or write the
+same rule into the HTTPS virtual host), or give WebDAV a host of its own that sends every request to
+`index_webdav.php`. Velocity and the FrankenPHP configuration do not serve WebDAV; use Apache or nginx with PHP-FPM
+for it. **Since 6.0.15 the script is `index_webdav.php`, not `webdav.php`:** rules written for the old name keep
+working through a forwarding shim that will be removed in a later major version. The rules for each server and the
+test (`curl -X PROPFIND -H 'Depth: 1'`, expect `207 Multi-Status`) are in
+[The WebDAV entry script is now index_webdav.php](../bc/6.0/webdav-entry-script-index-webdav.md).
+
 ---
 
 ## 8.3 Exponential Velocity, the recommended way

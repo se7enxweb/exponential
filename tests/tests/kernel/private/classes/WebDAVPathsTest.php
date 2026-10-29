@@ -1,6 +1,6 @@
 <?php
 /**
- * The paths of the WebDAV server (webdav.php): the siteaccess PathPrefix every operation resolves its Content paths
+ * The paths of the WebDAV server (index_webdav.php): the siteaccess PathPrefix every operation resolves its Content paths
  * with (eZWebDAVContentBackend::pathWithPrefix()), the key of the stored properties (locks) of a resource
  * (eZWebDAVContentBackend::propertyStoragePath()) and the encoding of URIs in responses
  * (expWebDAVPathFactory::encodePathElements()). No database.

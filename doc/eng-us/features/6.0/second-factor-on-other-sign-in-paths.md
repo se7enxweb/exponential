@@ -37,7 +37,7 @@ On a path that is not in `Guard[]` a password alone signs in as before; the tabl
 | Path | Password alone, account needs a second step | What signs in |
 |---|---|---|
 | REST, `AuthenticationStyle=ezpRestBasicAuthStyle` | `401` with `WWW-Authenticate: Basic realm="Exponential REST"` and `{"error":"second_factor_required","error_description":"..."}`; `403` with `second_factor_setup_required` while the account has no second step yet | an app password (made for `rest`) as the password; a personal API key (`Authorization: Bearer expk_...`); an OAuth token |
-| WebDAV (`webdav.php`) | `401` with the server's `WWW-Authenticate` and the reason in `X-Exp-Sign-In-Refused` | an app password (made for `webdav`) as the password |
+| WebDAV (`index_webdav.php`, formerly `webdav.php`) | `401` with the server's `WWW-Authenticate` and the reason in `X-Exp-Sign-In-Refused` | an app password (made for `webdav`) as the password |
 | SOAP (`index_soap.php`; `soap.php` before 6.0.15) | `401` (`403` for `second_factor_setup_required`) with `WWW-Authenticate: Basic realm="Exponential SOAP"`, `X-Exp-Sign-In-Refused` and a SOAP fault (`faultcode` `SOAP-ENV:Client`, `<detail><reason>`) | an app password (made for `soap`) as the password |
 | expservices `expsession::login` | `{"ok":false,"error":{"code":401,"message":"...","reason":"second_factor_required"}}` | username, password and `otp` (the authenticator code) |
 
