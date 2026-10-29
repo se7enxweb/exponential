@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Stelselbladsye kan ook geboekmerk word: maak die bladsy oop (Opstelling, die ouditspoor, 'n lys gebruikers ...) en kies “Boekmerk hierdie bladsy” daarbo. Sulke boekmerke het 'n ratikoon.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>U mag nie meer hierdie bladsy hier oopmaak nie. Verwyder die boekmerk, of vra 'n administrateur vir toegang.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13824,32 +13828,20 @@ Let wel: Die pakkette sal nie gedeïnstalleer word nie.</translation>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Evalueer Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Word ’n lid van die Exponential-gemeenskap, wissel uit en dra by&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Kopiereg &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; en ander.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>Aangedryf deur &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;. Vir meer inligting sien &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Kopiereg &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; en ander.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> Vir meer inligting sien &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
-        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Kopiereg &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; en ander.</translation>
+        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Evalueer Exponential (Van 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Word ’n lid van die Exponential-gemeenskap, kry ondersteuning en dra by&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Kopiereg &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; en ander.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56332,6 +56324,42 @@ u rekening te aktiveer.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Die boekmerk is hernoem na “%name”.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Hierdie bladsy is in hierdie werftoegang (%siteaccess) afgeskakel. Maak die boekmerk oop in 'n werftoegang wat dit het.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Die module van hierdie bladsy is nie hier geïnstalleer of geaktiveer nie.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Hierdie bladsy bestaan nie meer nie: sy module het nie so 'n aansig nie.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Geen van u rolle laat u toe om hierdie bladsy oop te maak nie.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>U mag nie hierdie werftoegang gebruik nie.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>U mag nie die inhoud lees wat hierdie bladsy wys nie.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Hierdie soort bladsy kan nie geboekmerk word nie: dit werk net op 'n vorm, of is 'n bladsy van een oomblik.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Die adres van hierdie bladsy ontbreek.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Hierdie bladsy kan nie nou oopgemaak word nie.</translation>
     </message>
 </context>
 <context>

@@ -2,6 +2,19 @@
 
 This guide is for the person who puts a site on a server: an operator, or a developer who runs their own. It takes a freshly installed Exponential site to a server that visitors reach over HTTPS. Then it shows how to ship a code change safely and how to keep the site fast. Read it top to bottom. Every command exists in the installation; where a result is shown, it is what the command prints.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 You need a Linux server, shell access in the installation directory (the folder that holds `index.php` and `console`), and a site that already runs. If you have no site yet, run `./console exp:install --apply` first ([Getting started](getting-started.md), [Installing in one command](../features/6.0/install-in-one-command.md)).
 
 Commands use `./console`, the shortcut for `bin/php/console`. The examples add `--allow-root-user` because they are run as root; leave it off when you run as the site user.

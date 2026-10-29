@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Sistema-orriak ere laster-marka daitezke: ireki orria (Konfigurazioa, ikuskaritza-erregistroa, erabiltzaileen zerrenda bat ...) eta aukeratu gainean "Egin laster-marka orri honetarako". Laster-marka horiek engranaje-ikono bat dute.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ezin duzu orri hau hemen ireki jada. Kendu laster-marka edo eskatu sarbidea administratzaile bati.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Oharra: paketeak ez dira desinstalatuko.</translation>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;Probatu Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Egin zaitez Exponential Community-ko kide, partekatu eta lagundu&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; eta beste batzuk.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>&lt;span class="edition-info"&gt;%edition&lt;/span&gt; bidez martxan. Informazio gehiagorako ikusi &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; eta beste batzuk.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> Informazio gehiagorako ikusi &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; eta beste batzuk.</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;Probatu Exponential (7x-en eskutik)&lt;/a&gt; - &lt;a href="%share_link"&gt;Egin zaitez Exponential Community-ko kide, jaso laguntza eta lagundu&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; eta beste batzuk.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ aktibatzeko.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Laster-markaren izena "%name" izatera aldatu da.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Orri hau desgaituta dago gune-sarbide honetan (%siteaccess). Ireki laster-marka orri hau duen gune-sarbide batean.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Orri honen modulua ez dago instalatuta edo gaituta hemen.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Orri hau ez dago jada: bere moduluak ez du halako ikuspegirik.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Zure roletako batek ere ez dizu orri hau irekitzen uzten.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Ezin duzu gune-sarbide hau erabili.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Ezin duzu irakurri orri honek erakusten duen edukia.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Mota honetako orriei ezin zaie laster-markarik egin: inprimaki baten gainean bakarrik jarduten dute, edo une bateko orriak dira.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Orri honen helbidea falta da.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Ezin da orri hau orain ireki.</translation>
     </message>
 </context>
 <context>

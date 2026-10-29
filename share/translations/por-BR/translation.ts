@@ -2470,6 +2470,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Páginas do sistema também podem ser adicionadas aos favoritos: abra a página (Configuração, a trilha de auditoria, uma lista de usuários ...) e escolha Adicionar página aos favoritos acima dela. Esses favoritos têm um ícone de engrenagem.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Você não pode mais abrir esta página aqui. Remova o favorito ou peça acesso a um administrador.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -15090,32 +15094,20 @@ Nota: Os pacotes não serão desinstalados.</translation>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Avalie o Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Torne-se membro da Comunidade Exponential, troque experiências e contribua&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; e outros.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>Desenvolvido com &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;. Para mais informações, veja &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; e outros.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> Para mais informações, veja &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
-        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; e outros.</translation>
+        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Avalie o Exponential (da 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Torne-se membro da Comunidade Exponential, obtenha suporte e contribua&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; e outros.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -58305,6 +58297,42 @@ este erro. Não tente reenviar o pagamento.</translation>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>O favorito foi renomeado para &quot;%name&quot;.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Esta página está desativada neste acesso ao site (%siteaccess). Abra o favorito em um acesso ao site que tenha esta página.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>O módulo desta página não está instalado ou não está habilitado aqui.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Esta página não existe mais: o módulo dela não tem essa visualização.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Nenhum dos seus papéis permite que você abra esta página.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Você não tem permissão para usar este acesso ao site.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Você não tem permissão para ler o conteúdo que esta página mostra.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Este tipo de página não pode ser adicionado aos favoritos: ela apenas age sobre um formulário ou é uma página de um único momento.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>O endereço desta página está faltando.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Esta página não pode ser aberta agora.</translation>
     </message>
 </context>
 <context>

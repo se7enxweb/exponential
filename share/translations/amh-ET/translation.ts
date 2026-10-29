@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>የስርዓት ገጾችም በዕልባት ሊያዙ ይችላሉ፦ ገጹን ይክፈቱ (ዝግጅት፣ የኦዲት መዝገብ፣ የተጠቃሚዎች ዝርዝር ...) እና ከላዩ «ይህን ገጽ በዕልባት ያዝ»ን ይምረጡ። እንደዚህ ያሉ ዕልባቶች የማርሽ አዶ አላቸው።</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ይህን ገጽ ከአሁን በኋላ እዚህ መክፈት አይችሉም። ዕልባቱን ያስወግዱ፣ ወይም አስተዳዳሪን መዳረሻ ይጠይቁ።</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13883,32 +13887,20 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Exponential Enterprise Edition ይገምግሙ&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;የExponential ማኅበረሰብ አባል ይሁኑ፣ ይለዋወጡ እና ያበርክቱ&lt;/a&gt;። &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; የቅጂ መብት &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; እና ሌሎች።</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>በ&lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt; የተሰራ። ለተጨማሪ መረጃ &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; ይመልከቱ።</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; የቅጂ መብት &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; እና ሌሎች።</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> ለተጨማሪ መረጃ &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; ይመልከቱ።</translation>
     </message>
     <message>
-        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; የቅጂ መብት &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; እና ሌሎች።</translation>
+        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Exponential (ከ7x) ይገምግሙ&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;የExponential ማኅበረሰብ አባል ይሁኑ፣ ድጋፍ ያግኙ እና ያበርክቱ&lt;/a&gt;።</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; የቅጂ መብት &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; እና ሌሎች።</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56391,6 +56383,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>ዕልባቱ ወደ «%name» ዳግም ተሰይሟል።</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ይህ ገጽ በዚህ የጣቢያ መዳረሻ (%siteaccess) ውስጥ ተሰናክሏል። ዕልባቱን ገጹ ባለበት የጣቢያ መዳረሻ ውስጥ ይክፈቱ።</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>የዚህ ገጽ ሞጁል እዚህ አልተጫነም ወይም አልነቃም።</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ይህ ገጽ ከአሁን በኋላ የለም፦ ሞጁሉ እንደዚህ ያለ እይታ የለውም።</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ከሚናዎችዎ አንዳቸውም ይህን ገጽ እንዲከፍቱ አይፈቅዱልዎትም።</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ይህን የጣቢያ መዳረሻ መጠቀም አይችሉም።</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ይህ ገጽ የሚያሳየውን ይዘት ማንበብ አይችሉም።</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>እንዲህ ያለ ገጽ በዕልባት ሊያዝ አይችልም፦ በቅጽ ላይ ብቻ ይሠራል፣ ወይም የአንድ ቅጽበት ገጽ ነው።</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>የዚህ ገጽ አድራሻ ጠፍቷል።</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ይህ ገጽ አሁን ሊከፈት አይችልም።</translation>
     </message>
 </context>
 <context>

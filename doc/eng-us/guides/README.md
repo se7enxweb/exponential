@@ -3,6 +3,19 @@
 This page is the table of contents of the guides. Read it if you are new to Exponential, or if you know the system
 and want the shortest way to one result.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 A guide is a tutorial. You follow it from top to bottom and need no prior knowledge. At the end you have a working
 result: an installed site, a published page, a changed template, a site behind a real web server, a cache cleared on
 purpose. Every step is a command or a click path, with the output to expect. Where a topic needs more depth, the
@@ -104,6 +117,8 @@ Read them in this order the first time. Each one also stands on its own.
 | [Personal API keys](api-keys.md) | A key made on the site with only the scopes it needs, REST called with it from curl and Python, a key rotated and revoked; as an administrator: keys allowed for a role, every key seen and revoked, the audit read | 20 minutes |
 | [REST API v1 and v2: one extension](rest-api-v1-and-v2.md) | Which URL answers at v1 and v2 from the one `ezprestapi` extension, a client authenticated with OAuth2 or a key, the API called with curl, `rest.ini` read, an installation moved off the deprecated `ezprestapiprovider` | 20 minutes |
 | [Upgrading](upgrading.md) | An installation of 4.x, 5.x or an earlier 6.0.x moved to the current 6.0 line, and checked | 20 minutes for a small site |
+| [Upgrading with the console](upgrading-with-the-console.md) | The state of every upgrade step read, a dry run, the upgrade applied with a backup in one call, a failure resumed, drift found, the same from a pipeline | 15 minutes |
+| [Upgrade steps for extensions](upgrade-steps-for-extensions.md) | A table, a column and a default row of an extension made upgrade steps, registered, tested fresh, old, twice and half applied | 30 minutes |
 | [The upgrade check](upgrade-check.md) | The files and the database compared with the release on Setup > Upgrade check, every kind of finding read and dealt with, the report downloaded, the same check run from a shell | 15 minutes |
 | [Missing files and image aliases](missing-files.md) | Files missing from the storage and stale image aliases found below a node with the target "Missing files" of the broken relations, each row read and resolved after a preview (regenerated, restored, uploaded again, its reference removed or marked for review), the same from a shell with a dry run first | 15 minutes |
 | [Finding an error by its reference](finding-an-error-by-its-reference.md) | The log lines of a failed request found from the ERR- reference its error page showed, the rest of the request and the audit of that minute read, the same from a shell, without exposing personal data | 10 minutes |

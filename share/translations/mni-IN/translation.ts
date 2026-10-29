@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>সিস্টেম পেজশিংসু বুকমার্ক তৌজরি: পেজ অদু ফোংবিয়ু (সেটআপ, অডিট ট্রেইল, ইউজর তালিকা ...) অদুগা মগী মতাংদা "পেজ অসি বুকমার্ক তৌবা" সিলেক্ট তৌবিয়ু. অসী মরীকপা বুকমার্কদা গিয়র আইকন অমা লৈ.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>পেজ অসি মফম অসিদা হৌজিক হাংদোকপা ঙমলরোইদ্রে. বুকমার্ক থোক্কদবিয়ু, নত্রগা এদমিনিষ্ট্রেটর অমদা একসেস হায়জবিয়ু.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;Exponential Enterprise Edition ইন্দ্রি ফংবা&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential কমিউনিটিগী মেম্বর ওইনা, ফোংদোকনা অদুগা ফাংহনবিয়ু&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; কপিরাইট &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; অদুগা অতোপ্পাশিং.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>&lt;span class="edition-info"&gt;%edition&lt;/span&gt; নে চলহনবা. অতৈ তথ্যগী লাগি &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; ফংবিয়ু.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; কপিরাইট &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; অদুগা অতোপ্পাশিং.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> অতৈ তথ্যগী লাগি &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; ফংবিয়ু.</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; কপিরাইট &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; অদুগা অতোপ্পাশিং.</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;Exponential (7x গী) ইন্দ্রি ফংবা&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential কমিউনিটিগী মেম্বর ওইনা, ফংজেল ফংনা অদুগা ফাংহনবিয়ু&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; কপিরাইট &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; অদুগা অতোপ্পাশিং.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>বুকমার্কগী মমিং "%name" ওইনা সুধরখ্রে.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>পেজ অসি সাইট একসেস অসিদা (%siteaccess) বন্দ তৌরে. পেজ অসি লৈবা সাইট একসেস অমদা বুকমার্ক হাংদোকপিয়ু.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>পেজ অসিগী মডিউল মফম অসিদা ইনস্টল তৌদ্রি নত্রগা ইনেবল তৌদ্রি.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>পেজ অসি হৌজিক লৈরোইদ্রে: মসিগী মডিউলদা অসুম্বা ভিউ অমত্তা লৈতে.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>নঙ্গী ভূমিকাশিং অমত্তনা পেজ অসি হাংদোকপগী অনুমতি পীদে.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>সাইট একসেস অসি শিজিন্নবগী অনুমতি লৈতে.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>পেজ অসিনা উৎলিবা কন্টেন্ট পাবগী অনুমতি লৈতে.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>পেজ মখল অসি বুকমার্ক তৌবা ঙমদে: মসিনা ফোর্ম অমদা খক্তমক থবক পাংথোকই, নত্রগা মতম খরগী পেজ অমনি.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>পেজ অসিগী ঠিকানা লৈতে.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>পেজ অসি হৌজিক হাংদোকপা ঙমদে.</translation>
     </message>
 </context>
 <context>

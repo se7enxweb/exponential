@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Systemip quppernerai aamma nalunaaqutanut ilanngunneqarsinnaapput: qupperneq ammaruk (Aaqqissuussineq, misissuinermut malunnaatit, atuisut allattorsimaffiat ...) qulaanilu »Nalunaaqutanut ilaguk« toqqaruk. Nalunaaqutat taamaattut aaqqissuussinermut ikoneqartarput.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Quppernermik uuminnga maani ammaanissamut akuersissuteqarunnaarputit. Nalunaaqutaq piiaruk, imaluunniit aqutsisumut iserfigisinnaanissamik qinnuigit.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13824,32 +13828,20 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Exponential Enterprise Edition misiliuk&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Exponential Community-mi ilaasortanngorit, paasissutissanik paarlaasseqatigiigit peqataallutillu&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; allallu.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>&lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt; atorlugu ingerlanneqarpoq. Paasisaqarnerorusukkuit takuuk &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; allallu.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> Paasisaqarnerorusukkuit takuuk &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
-        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; allallu.</translation>
+        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Exponential misiliuk (7x-imit)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Exponential Community-mi ilaasortanngorit, ikiorneqarit peqataagillu&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; allallu.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56332,6 +56324,42 @@ ilitsersuutit malikkit.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Nalunaaqutap aqqa nutaaq: »%name«.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Qupperneq una nittartakkamut isaariami matumani (%siteaccess) atorunnaarsitaavoq. Nalunaaqutaq nittartakkamut isaariami quppernermik uuminnga pigisalimmi ammaruk.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Quppernerup matuma modulia maani ikkunneqarsimanngilaq imaluunniit atuutilersinneqarsimanngilaq.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Qupperneq una atorunnaarpoq: modulia takutitsinermik taamaattumik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Atuuffitit arlaannaattaluunniit qupperneq una ammarnissaanut akuersissutiginngilaatit.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Nittartakkamut isaariaq una atorsinnaanngilat.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Imarisat qupperneq una takutitaa atuarsinnaanngilatit.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Qupperneq taamaattoq nalunaaqutaliiffigineqarsinnaanngilaq: immersugassiamut kisimi sunniuteqarpoq, imaluunniit qupperneruvoq sivikitsuinnarmut atuuttoq.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Quppernerup matuma najugaa amigaatigineqarpoq.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Qupperneq una maannakkut ammarneqarsinnaanngilaq.</translation>
     </message>
 </context>
 <context>

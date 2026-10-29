@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Bogagga nidaamka sidoo kale waa la calaamadeyn karaa: fur bogga (Habeyn, raadraaca hubinta, liiska isticmaalayaasha ...) oo dooro “Calaamadee boggan” oo ka sarreeya. Calaamadahaas waxay leeyihiin astaanta giirka.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Mar dambe uma haysatid ogolaansho aad boggan halkan ku furto. Ka saar calaamadda, ama maamule ka codso gelitaan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13883,32 +13887,20 @@ Fiiro gaar ah: Xirmooyinka lama saari doono rakibaaddooda.</translation>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Tijaabi Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Ku biir bulshada Exponential, is-weydaarsiga oo wax ku darso&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Xuquuqda daabacaadda &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; iyo kuwo kale.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>Waxaa shaqaysiiya &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;. Macluumaad dheeraad ah eeg &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Xuquuqda daabacaadda &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; iyo kuwo kale.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> Macluumaad dheeraad ah eeg &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
-        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Xuquuqda daabacaadda &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; iyo kuwo kale.</translation>
+        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Tijaabi Exponential (Ka timid 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Ku biir bulshada Exponential, hel taageero oo wax ku darso&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Xuquuqda daabacaadda &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; iyo kuwo kale.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56391,6 +56383,42 @@ hawlgeliso akoonkaaga.</translation>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>Calaamadda waxaa loo beddelay “%name”.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Boggan waa laga damiyay gelitaankan goobta (%siteaccess). Calaamadda ka fur gelitaan goob oo boggan leh.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Module-ka boggan halkan laguma rakibin ama lama awood gelin.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Boggan mar dambe ma jiro: module-kiisu ma laha muuqaal sidaas ah.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Doorarkaaga midkoodna kuuma oggola inaad furto boggan.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Ogolaansho uma haysatid inaad isticmaasho gelitaankan goobta.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Ogolaansho uma haysatid inaad akhrido nuxurka boggani muujinayo.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Bog noocan ah lama calaamadayn karo: wuxuu kaliya ka shaqeeyaa foom, ama waa bog hal mar oo keliya ah.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Cinwaanka boggan ma jiro.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Boggan hadda lama furi karo.</translation>
     </message>
 </context>
 <context>

@@ -10,6 +10,19 @@ covers how a `kickstart.ini` pre-fills or skips pages, what the wizard writes, a
 stopped half-way. Keep it open beside the browser during your first install: every page below lists what it asks,
 what it checks and what it means when it refuses an answer.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 [Contents](README.md) · Previous: [4. Choosing an install method](04-choosing-an-install-method.md) · Next: [6. The kickstarter](06-kickstarter.md)
 
 ## 5.1 How the wizard starts

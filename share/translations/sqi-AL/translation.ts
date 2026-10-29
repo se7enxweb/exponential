@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Edhe faqet e sistemit mund të shtohen te faqeshënuesit: hapni faqen (Konfigurimi, gjurma e auditimit, një listë përdoruesish ...) dhe zgjidhni „Shto faqen te faqeshënuesit“ mbi të. Këta faqeshënues kanë një ikonë ingranazhi.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Nuk keni më leje ta hapni këtë faqe këtu. Hiqni faqeshënuesin ose kërkoni qasje nga një administrator.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13824,32 +13828,20 @@ Shënim: paketat nuk do të çinstalohen.</translation>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Vlerësoni Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Bëhuni anëtar i komunitetit Exponential, shkëmbeni dhe kontribuoni&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; dhe të tjerë.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>Mundësuar nga &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;. Për më shumë informacion shihni &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; dhe të tjerë.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> Për më shumë informacion shihni &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
-        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; dhe të tjerë.</translation>
+        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Vlerësoni Exponential (nga 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Bëhuni anëtar i komunitetit Exponential, merrni mbështetje dhe kontribuoni&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; dhe të tjerë.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56332,6 +56324,42 @@ llogarinë tuaj.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Faqeshënuesi u riemërtua në „%name“.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Kjo faqe është e çaktivizuar në këtë qasje në sajt (%siteaccess). Hapeni faqeshënuesin në një qasje në sajt që e ka atë.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Moduli i kësaj faqeje nuk është i instaluar ose i aktivizuar këtu.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Kjo faqe nuk ekziston më: moduli i saj nuk ka një pamje të tillë.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Asnjë nga rolet tuaja nuk ju lejon ta hapni këtë faqe.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Nuk keni leje ta përdorni këtë qasje në sajt.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Nuk keni leje ta lexoni përmbajtjen që shfaq kjo faqe.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Ky lloj faqeje nuk mund të shtohet te faqeshënuesit: ajo vetëm vepron mbi një formular ose është e vlefshme vetëm për një çast.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Adresa e kësaj faqeje mungon.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Kjo faqe nuk mund të hapet tani.</translation>
     </message>
 </context>
 <context>

@@ -19,6 +19,7 @@ Where an extension plugs into the kernel through settings: INI settings that nam
 | [ezoe.ini](ezoe-ezoe.md) | ezoe | 3 | UploadExtensionCheck, Plugins, ExternalPlugins |
 | [audit.ini](audit.md) | kernel | 25 | Sinks, Sinks, Sinks, Sinks, Sinks, Classes ... |
 | [binaryfile.ini](binaryfile.md) | kernel | 2 | Repositories, ExtensionRepositories |
+| [bookmark.ini](bookmark.md) | kernel | 1 | TypeClass |
 | [browse.ini](browse.md) | kernel | 3 | Class, Class, Class |
 | [collaboration.ini](collaboration.md) | kernel | 1 | Repositories |
 | [content.ini](content.md) | kernel | 33 | VersionHistoryClass, ExtensionDirectories, ExtensionDirectories, ExtensionDirectories, AvailableClasses, AvailableClasses ... |

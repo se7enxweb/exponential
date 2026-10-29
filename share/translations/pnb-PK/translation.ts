@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>سسٹم صفحے وی بک مارک کیتے جا سکدے نیں: صفحہ کھولو (سیٹ اپ، آڈٹ ٹریل، ورتݨ والیاں دی لسٹ ...) تے ایہدے اُتے "ایس صفحے نوں بک مارک کرو" چݨو۔ اجیہے بک مارکاں تے گیئر دا آئیکن ہندا اے۔</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>تسیں ہݨ ایتھے ایہہ صفحہ نہیں کھول سکدے۔ بک مارک ہٹاؤ، یا کسے منتظم کولوں رسائی منگو۔</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;Exponential Enterprise Edition دا جائزہ لوو&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential Community دے ممبر بݨو، تبادلہ کرو تے حصہ پاؤ&lt;/a&gt;۔ &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; کاپی رائٹ &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; تے ہور۔</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>&lt;span class="edition-info"&gt;%edition&lt;/span&gt; ولوں چلایا جاندا اے۔ ہور جانکاری لئی &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; ویکھو۔</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; کاپی رائٹ &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; تے ہور۔</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> ہور جانکاری لئی &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; ویکھو۔</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; کاپی رائٹ &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; تے ہور۔</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;Exponential (From 7x) دا جائزہ لوو&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential Community دے ممبر بݨو، مدد لوو تے حصہ پاؤ&lt;/a&gt;۔</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; کاپی رائٹ &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; تے ہور۔</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>بک مارک دا ناں بدل کے "%name" کر دتا گیا۔</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ایہہ صفحہ اس سائٹ رسائی (%siteaccess) وچ بند اے۔ بک مارک اوس سائٹ رسائی وچ کھولو جیہدے وچ ایہہ صفحہ اے۔</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>اس صفحے دا ماڈیول ایتھے انسٹال نہیں اے یا چالو نہیں اے۔</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ایہہ صفحہ ہݨ موجود نہیں اے: ایہدے ماڈیول وچ ایہو جیہا کوئی منظر نہیں اے۔</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>تہاڈا کوئی وی کردار تہانوں ایہہ صفحہ کھولن دی اجازت نہیں دیندا۔</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>تہانوں ایہہ سائٹ رسائی ورتن دی اجازت نہیں اے۔</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>تہانوں اوہ مواد پڑھن دی اجازت نہیں اے جیہڑا ایہہ صفحہ وکھاندا اے۔</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ایس قسم دا صفحہ بک مارک نہیں کیتا جا سکدا: ایہہ صرف کسے فارم اُتے کم کردا اے، یا اک پل دا صفحہ اے۔</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>اس صفحے دا پتہ موجود نہیں اے۔</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ایہہ صفحہ ہݨ کھولیا نہیں جا سکدا۔</translation>
     </message>
 </context>
 <context>

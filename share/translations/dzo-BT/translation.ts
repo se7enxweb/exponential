@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>རིམ་ལུགས་ཤོག་ལེབ་ཚུ་ཡང་དཔེ་རྟགས་བཞག་ཚུགས། ཤོག་ལེབ་འདི་ཁ་ཕྱེ་ཞིནམ་ལས་ (སྒྲིག་བཙུགས་ རྩིས་ཞིབ་ཀྱི་ཤུལ་ ལག་ལེན་པའི་ཐོ་ཡིག ...) དེ་གི་གོང་ལུ་ "ཤོག་ལེབ་འདི་དཔེ་རྟགས་བཞག" སེལ་འཐུ་འབད། དཔེ་རྟགས་དེ་བཟུམ་གྱི་ཚུ་ལུ་འཁོར་ལོའི་ངོ་རྟགས་ཡོད།</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ཁྱོད་རང་གིས་ཤོག་ལེབ་འདི་ད་ལྟོ་ལས་ནཱ་ལུ་ཁ་ཕྱེ་མི་ཆོགཔ་ཨིན། དཔེ་རྟགས་བཏོན་གཏང་ ཡང་ན་ འཛིན་སྐྱོང་པ་ལུ་འཛུལ་ཞུགས་གི་དོན་ལུ་ཞུ།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;Exponential Enterprise Edition ཚོད་ལྟ་འབད།&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential སྤྱི་ཚོགས་ཀྱི་ཚོགས་མི་ཅིག་འགྱུར་ཞིནམ་ལས་ བརྗེ་སོར་དང་ཕན་གྲོགས་འབད།&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; པར་དབང་ &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; དང་གཞན་ཚུ་ལུ་ཡོད།</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>&lt;span class="edition-info"&gt;%edition&lt;/span&gt; གིས་ སྐུལ་སྤེལ་འབད་ཡོདཔ། གནས་ཚུལ་ཁ་སྐོང་གི་དོན་ལུ་ &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; ལུ་བལྟ།</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; པར་དབང་ &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; དང་གཞན་ཚུ་ལུ་ཡོད།</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> གནས་ཚུལ་ཁ་སྐོང་གི་དོན་ལུ་ &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; ལུ་བལྟ།</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; པར་དབང་ &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; དང་གཞན་ཚུ་ལུ་ཡོད།</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;Exponential (7x ལས།) ཚོད་ལྟ་འབད།&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential སྤྱི་ཚོགས་ཀྱི་ཚོགས་མི་ཅིག་འགྱུར་ཞིནམ་ལས་ རོགས་པ་ཐོབ་ཅི་ཕན་གྲོགས་འབད།&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; པར་དབང་ &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; དང་གཞན་ཚུ་ལུ་ཡོད།</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>དཔེ་རྟགས་ཀྱི་མིང་འདི་ "%name" ལུ་བསྒྱུར་བཅོས་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ཤོག་ལེབ་འདི་ དྲྭ་ཚིགས་འཛུལ་སྒོ་འདི (%siteaccess) ནང་ ལག་ལེན་མ་འཐབ་བཅུག་ཡོདཔ་ཨིན། ཤོག་ལེབ་འདི་ཡོད་མི་ དྲྭ་ཚིགས་འཛུལ་སྒོ་ཅིག་ནང་ དཔེ་རྟགས་ཁ་ཕྱེ།</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ཤོག་ལེབ་འདི་གི་ཚན་པ་ ནཱ་ལུ་གཞི་བཙུགས་མ་འབད་ ཡང་ན་ ལག་ལེན་འཐབ་བཅུག་མེདཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ཤོག་ལེབ་འདི་ ད་ལྟོ་མེདཔ་ཨིན། དེ་གི་ཚན་པ་ནང་ མཐོང་སྣང་དེ་བཟུམ་མེད།</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ཁྱོད་རའི་འགན་ཁུར་གང་རུང་གིས་ཡང་ ཤོག་ལེབ་འདི་ཁ་ཕྱེ་ནིའི་གནང་བ་མི་བྱིན།</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ཁྱོད་རང་གིས་ དྲྭ་ཚིགས་འཛུལ་སྒོ་འདི་ལག་ལེན་འཐབ་མི་ཆོག</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ཁྱོད་རང་གིས་ ཤོག་ལེབ་འདི་གིས་སྟོན་མི་ནང་དོན་ལྷག་མི་ཆོག</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ཤོག་ལེབ་འདི་བཟུམ་ དཔེ་རྟགས་བཞག་མི་ཚུགས། དེ་གིས་ འགེངས་ཤོག་གུ་རྐྱངམ་ཅིག་ལཱ་འབདཝ་ཨིན་ ཡང་ན་ སྐད་ཅིག་གཅིག་གི་ཤོག་ལེབ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ཤོག་ལེབ་འདི་གི་ཁ་བྱང་མེདཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ཤོག་ལེབ་འདི་ད་ལྟ་ཁ་ཕྱེ་མི་ཚུགས།</translation>
     </message>
 </context>
 <context>

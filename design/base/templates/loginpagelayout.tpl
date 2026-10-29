@@ -117,7 +117,7 @@ div#maincontent-design { width: 100%; } /* This is needed to avoid width bug in 
         <div id="footer">
             <div id="footer-design">
 
-                <address>{"Powered by %linkStartTag Exponential&reg;&trade; open source content management system %linkEndTag and development framework."|i18n("design/base",,hash('%linkStartTag',"<a href='http://ez.no'>",'%linkEndTag',"</a>" ))}<br />{ezini('SiteSettings','MetaDataArray','site.ini').copyright}
+                <address>{"Powered by %linkStartTag Exponential&reg;&trade; open source content management system %linkEndTag and development framework."|i18n("design/base",,hash('%linkStartTag',"<a href='https://exponential.earth'>",'%linkEndTag',"</a>" ))}<br /><a href="https://exponential.earth">Exponential</a> Copyright &copy; 1998-2026 <a href="https://foundation.exponential.earth">Exponential Foundation</a> and <a href="https://se7enx.com">7x</a><br />{ezini('SiteSettings','MetaDataArray','site.ini').copyright}
                 </address>
 
             </div>{* id="footer-design" *}

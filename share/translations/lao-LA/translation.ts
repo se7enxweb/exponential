@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>ໜ້າລະບົບກໍສາມາດບຸກມາກໄດ້ເຊັ່ນກັນ: ເປີດໜ້າ (ຕັ້ງຄ່າລະບົບ, ບັນທຶກການກວດສອບ, ລາຍການຜູ້ໃຊ້ ...) ແລ້ວເລືອກ ບຸກມາກໜ້ານີ້ ຂ້າງເທິງມັນ. ບຸກມາກດັ່ງກ່າວມີໄອຄອນເຟືອງ.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ທ່ານບໍ່ສາມາດເປີດໜ້ານີ້ຢູ່ບ່ອນນີ້ໄດ້ອີກຕໍ່ໄປ. ກະລຸນາເອົາບຸກມາກອອກ ຫຼື ຂໍສິດເຂົ້າເຖິງຈາກຜູ້ເບິ່ງແຍງລະບົບ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;ທົດລອງ Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;ເປັນສະມາຊິກຂອງ Exponential Community, ແລກປ່ຽນ ແລະປະກອບສ່ວນ&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; ລິຂະສິດ &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; ແລະອື່ນໆ.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>ຂັບເຄື່ອນໂດຍ &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. ສຳລັບຂໍ້ມູນເພີ່ມເຕີມ ເບິ່ງ &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; ລິຂະສິດ &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; ແລະອື່ນໆ.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> ສຳລັບຂໍ້ມູນເພີ່ມເຕີມ ເບິ່ງ &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; ລິຂະສິດ &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; ແລະຜູ້ອື່ນໆ.</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;ທົດລອງ Exponential (ຈາກ 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;ເປັນສະມາຊິກຂອງຊຸມຊົນ Exponential, ຮັບການຊ່ວຍເຫຼືອ ແລະປະກອບສ່ວນ&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; ລິຂະສິດ &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; ແລະຜູ້ອື່ນໆ.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>ບຸກມາກຖືກປ່ຽນຊື່ເປັນ "%name" ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ໜ້ານີ້ຖືກປິດໄວ້ໃນການເຂົ້າເຖິງໄຊນີ້ (%siteaccess). ກະລຸນາເປີດບຸກມາກໃນການເຂົ້າເຖິງໄຊທີ່ມີໜ້ານີ້.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ໂມດູນຂອງໜ້ານີ້ບໍ່ໄດ້ຖືກຕິດຕັ້ງ ຫຼື ບໍ່ໄດ້ເປີດໃຊ້ຢູ່ບ່ອນນີ້.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ໜ້ານີ້ບໍ່ມີຢູ່ອີກຕໍ່ໄປ: ໂມດູນຂອງມັນບໍ່ມີມຸມມອງນີ້.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ບໍ່ມີບົດບາດໃດຂອງທ່ານທີ່ອະນຸຍາດໃຫ້ທ່ານເປີດໜ້ານີ້.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ທ່ານບໍ່ມີສິດໃຊ້ການເຂົ້າເຖິງໄຊນີ້.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ທ່ານບໍ່ມີສິດອ່ານເນື້ອຫາທີ່ໜ້ານີ້ສະແດງ.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ບໍ່ສາມາດບຸກມາກໜ້າປະເພດນີ້ໄດ້: ມັນພຽງແຕ່ດຳເນີນການກັບແບບຟອມ ຫຼື ເປັນໜ້າຊົ່ວຄາວ.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ບໍ່ມີທີ່ຢູ່ຂອງໜ້ານີ້.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ບໍ່ສາມາດເປີດໜ້ານີ້ໄດ້ໃນຕອນນີ້.</translation>
     </message>
 </context>
 <context>

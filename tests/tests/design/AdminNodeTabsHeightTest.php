@@ -190,7 +190,7 @@ class AdminNodeTabsHeightTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( 'current_user', $part );
         // inside the box, after the tabs
         $body = self::read( 'design/admin4/templates/node/view/a4_full_body.tpl' );
-        $this->assertStringContainsString( "<div id=\"window-controls\" class=\"tab-block a4-node-tabs\">\n{include uri='design:window_controls.tpl'}\n{include uri='design:parts/a4_tabs_height.tpl'}\n</div>", $body );
+        $this->assertStringContainsString( "<div id=\"window-controls\" class=\"tab-block a4-node-tabs\">\n{include uri='design:window_controls.tpl' tabs_switch_elsewhere=true()}\n{include uri='design:parts/a4_tabs_height.tpl'}\n</div>", $body );
     }
 
     /** TH-03 */

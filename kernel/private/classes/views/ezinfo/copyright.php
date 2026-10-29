@@ -33,7 +33,7 @@ class Copyright extends \Exponential\Runnable\ModuleView
         // The parts of the notice: the plain notice below is made from them, and a design can word
         // them in the interface language (design:ezinfo/copyright.tpl gets them as copyright_info)
         $copyrightInfo = array( 'years'           => '1998-2026',
-                                'holder'          => '7x / Exponential Foundation',
+                                'holder'          => 'Exponential Foundation and 7x',
                                 'original_years'  => '1999-2014',
                                 'original_holder' => 'eZ Systems AS',
                                 'license'         => 'GNU General Public License',
@@ -42,7 +42,7 @@ class Copyright extends \Exponential\Runnable\ModuleView
                                 'version'         => \ExponentialSDK::version( true ) );
 
         $text = <<<COPYRIGHT
-        <p>Copyright (C) {$copyrightInfo['years']} {$copyrightInfo['holder']}. All rights reserved.</p>
+        <p>Exponential Copyright &copy; {$copyrightInfo['years']} {$copyrightInfo['holder']}</p>
 
         <p>Exponential is free software: you may redistribute it and/or modify it
         under the terms of the "GNU General Public License" version 2 as published

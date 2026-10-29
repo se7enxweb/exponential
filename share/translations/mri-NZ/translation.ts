@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Ka taea hoki te tohuwāhi i ngā whārangi pūnaha: huakina te whārangi (Whakaritenga, te ara arotake, tētahi rārangi kaiwhakamahi ...) ka kōwhiri i “Tohuwāhi i tēnei whārangi” i runga ake. He tohu kaputīrino tō aua tohuwāhi.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Kua kore e taea e koe te huaki i tēnei whārangi i konei. Tangohia te tohuwāhi, me tono rānei ki tētahi kaiwhakahaere kia whai urunga koe.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Kia mōhio: kāore e tangohia te tāutanga o ngā mōkihi.</translation>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;Arotakehia a Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Hono atu ki te Hapori Exponential, whakawhitiwhiti, tāpae hoki&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Mana pupuri &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; me ētahi atu.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>Ka whakahaerehia e &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. Mō ētahi atu mōhiohio tirohia &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Mana pupuri &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; me ētahi atu.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> Mō ētahi atu mōhiohio tirohia &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Mana pupuri &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; me ētahi atu.</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;Arotakehia a Exponential (Mai i a 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Hono atu ki te Hapori Exponential, whiwhi tautoko, tāpae hoki&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Mana pupuri &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; me ētahi atu.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ i tō pūkete.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Kua whakaingoatia anōtia te tohuwāhi ki “%name”.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Kua whakawetohia tēnei whārangi i tēnei urunga pae (%siteaccess). Huakina te tohuwāhi i tētahi urunga pae kei reira tēnei whārangi.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Kāore te kōwae o tēnei whārangi i tāutahia, i whakahohea rānei i konei.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Kua kore tēnei whārangi: kāore he tirohanga pērā i tōna kōwae.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Kāore tētahi o ō tūranga e whakaae ana kia huakina e koe tēnei whārangi.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Kāore ō whakaaetanga ki te whakamahi i tēnei urunga pae.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Kāore ō whakaaetanga ki te pānui i te ihirangi e whakaaturia ana e tēnei whārangi.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Kāore e taea te tohuwāhi tēnei momo whārangi: ka mahi noa iho ki tētahi puka, he whārangi rānei mō te wā poto anake.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Kei te ngaro te wāhitau o tēnei whārangi.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Kāore e taea te huaki i tēnei whārangi ināianei.</translation>
     </message>
 </context>
 <context>
