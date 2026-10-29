@@ -88,6 +88,12 @@ class expHelpExamplesGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'value' => '', 'help' => 'Change nothing' ), $help['options']['dry-run'] );
         $this->assertSame( 'required', $help['options']['limit']['value'] );
         $this->assertSame( '[FILE]', $help['arguments'] );
+
+        // a repeatable option ([exclude:*]) keeps its name, its value and its help
+        $help = expHelpExamplesGenerator::scriptHelp( '<?php $script->startup(); $options = $script->getOptions( "[apply][exclude:*][file:+]", "", array( "exclude" => "Never these", "file" => "A file" ) );' );
+        $this->assertSame( array( 'apply', 'exclude', 'file' ), array_keys( $help['options'] ) );
+        $this->assertSame( array( 'value' => 'required', 'help' => 'Never these' ), $help['options']['exclude'] );
+        $this->assertSame( array( 'value' => 'required', 'help' => 'A file' ), $help['options']['file'] );
     }
 
     /** HE-03 */

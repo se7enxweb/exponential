@@ -45,7 +45,7 @@ Lists and checks the rules of a siteaccess and explains their decision for an ad
 | `--host` | erforderlich | Hostname, den der Besucher verwendet hat |
 | `--ip` | erforderlich | Client-Adresse |
 | `--scheme` | erforderlich | http oder https (Standard https) |
-| `--header:*` |  |  |
+| `--header` | erforderlich | Ein Request-Header, Name:Wert; kann mehrmals angegeben werden |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

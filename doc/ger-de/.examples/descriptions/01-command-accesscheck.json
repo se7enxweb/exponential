@@ -35,9 +35,17 @@
         "en": "List what would be granted, change nothing",
         "de": "Auflisten, was gewährt würde, nichts ändern"
     },
+    "command:addexphelpreadpolicy --role": {
+        "en": "This role (ID or name), may be repeated; the Editor role when none is named",
+        "de": "Diese Rolle (ID oder Name), kann wiederholt werden; die Rolle Editor, wenn keine genannt ist"
+    },
     "command:addoauthauthorizepolicy": {
         "en": "Grant oauth/authorize to the roles that let users sign in (6.0.15 upgrade; --dry-run lists them first)",
         "de": "Gewährt oauth/authorize den Rollen, mit denen sich Benutzer anmelden (Upgrade auf 6.0.15; --dry-run listet sie zuerst auf)"
+    },
+    "command:addoauthauthorizepolicy --role": {
+        "en": "Only this role (ID or name), may be repeated; a listed role without user/login gets an unlimited policy",
+        "de": "Nur diese Rolle (ID oder Name), kann wiederholt werden; eine genannte Rolle ohne user/login erhält eine unbeschränkte Richtlinie"
     },
     "command:audit": {
         "en": "Audit log: tail, show one event, verify the hash chains, list the channels",
@@ -207,6 +215,10 @@
         "en": "Output: table (default), json or csv",
         "de": "Ausgabe: table (Standard), json oder csv"
     },
+    "command:benchmark --header": {
+        "en": "An extra request header, \"Name: value\"; repeat it for more",
+        "de": "Ein zusätzlicher Request-Header, \"Name: Wert\"; für weitere wiederholen"
+    },
     "command:benchmark --http": {
         "en": "HTTP version: 1.1 or 2 (default: what curl negotiates)",
         "de": "HTTP-Version: 1.1 oder 2 (Standard: was curl aushandelt)"
@@ -247,6 +259,10 @@
         "en": "How many pages of the menu the default list takes (default 3)",
         "de": "Wie viele Seiten des Menüs die Standardliste nimmt (Standard 3)"
     },
+    "command:benchmark --probe": {
+        "en": "kernel, micro: only these probes; repeat it for more",
+        "de": "kernel, micro: nur diese Messungen; für weitere wiederholen"
+    },
     "command:benchmark --repeat": {
         "en": "kernel: runs of every probe (default 20); micro: measured iterations of every probe (default 30)",
         "de": "kernel: Läufe jeder Messung (Standard 20); micro: gemessene Iterationen jeder Messung (Standard 30)"
@@ -254,6 +270,10 @@
     "command:benchmark --requests": {
         "en": "Requests per URL and server (default 100)",
         "de": "Anfragen pro URL und Server (Standard 100)"
+    },
+    "command:benchmark --resolve": {
+        "en": "host:port:address, as curl --resolve, to reach a host at another address",
+        "de": "host:port:adresse, wie curl --resolve, um einen Host unter einer anderen Adresse zu erreichen"
     },
     "command:benchmark --rounds": {
         "en": "Split the requests into rounds, alternating the server order (default 2)",
@@ -282,6 +302,10 @@
     "command:benchmark --tool": {
         "en": "curl (default, built in), ab, wrk or oha when installed",
         "de": "curl (Standard, eingebaut), ab, wrk oder oha, wenn installiert"
+    },
+    "command:benchmark --url": {
+        "en": "A URL or path to measure; repeat it for more",
+        "de": "Eine zu messende URL oder ein Pfad; für weitere wiederholen"
     },
     "command:benchmark --urls-file": {
         "en": "A file with one URL or path per line (# starts a comment)",
@@ -582,6 +606,22 @@
     "command:dfscleanup -S": {
         "en": "Check files on DFS share against files in the database",
         "de": "Prüft die Dateien auf der DFS-Freigabe gegen die Dateien in der Datenbank"
+    },
+    "command:expbackfillordersiteaccess": {
+        "en": "Infer the siteaccess of orders placed before ezorder.siteaccess was recorded (dry run unless --apply)",
+        "de": "Leitet den Siteaccess von Bestellungen ab, die vor der Erfassung von ezorder.siteaccess aufgegeben wurden (Probelauf ohne --apply)"
+    },
+    "command:expbackfillordersiteaccess --apply": {
+        "en": "Write the inferred siteaccesses (the default is a dry run that changes nothing)",
+        "de": "Schreibt die abgeleiteten Siteaccesses (standardmäßig ein Probelauf, der nichts ändert)"
+    },
+    "command:expbackfillordersiteaccess --exclude": {
+        "en": "Never choose these siteaccesses: a comma list, and the option may be repeated (--exclude=a,b --exclude=c).\nA name not in AvailableSiteAccessList is a warning, not an error",
+        "de": "Diese Siteaccesses nie wählen: eine durch Kommas getrennte Liste, die Option kann wiederholt werden (--exclude=a,b --exclude=c).\nEin Name, der nicht in AvailableSiteAccessList steht, ergibt eine Warnung, keinen Fehler"
+    },
+    "command:expbackfillordersiteaccess --prefer-deepest-root": {
+        "en": "Off by default. Only for public sites with nested roots (a shop inside another site's tree):\nof several sites that serve every product, take the one whose root is deepest when it is the only one that deep",
+        "de": "Standardmäßig aus. Nur für öffentliche Sites mit verschachtelten Wurzeln (ein Shop im Baum einer anderen Site):\nVon mehreren Sites, die jedes Produkt ausliefern, die mit der tiefsten Wurzel nehmen, wenn sie als einzige so tief liegt"
     },
     "command:expcontentjob": {
         "en": "Run, list, resume and cancel content jobs: large subtree removes and copies in batches",

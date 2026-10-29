@@ -34,7 +34,7 @@ Example: php bin/php/addoauthauthorizepolicy.php --dry-run
 | Option | Value | Help |
 |---|---|---|
 | `--dry-run` |  | List what would be granted, change nothing |
-| `--role:*` |  |  |
+| `--role` | required | Only this role (ID or name), may be repeated; a listed role without user/login gets an unlimited policy |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

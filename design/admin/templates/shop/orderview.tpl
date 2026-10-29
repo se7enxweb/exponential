@@ -26,6 +26,8 @@
 {/if}
 
 <p class="exp-order-siteaccess"><b>{'Siteaccess'|i18n( 'design/admin/content/job' )}:</b> {if $order.siteaccess_name}{$order.siteaccess_name|wash}{if ne( $order.store_name, $order.siteaccess_name )} ({$order.store_name|wash}){/if}{else}<span class="a4-muted">{'Unknown'|i18n( 'design/admin/settings' )}</span>{/if}</p>
+{if $order.siteaccess_url}<p class="exp-order-siteaccess-url"><b>{'Site URL'|i18n( 'design/admin/rss/edit_export' )}:</b> <a href="{$order.siteaccess_url|wash}" target="_blank" rel="noopener" title="{'Open the site'|i18n( 'design/admin/pagelayout' )}">{$order.siteaccess_url|wash}</a></p>{/if}
+{def $site_urls = $order.siteaccess_product_urls}
 
 <b>{'Product items'|i18n( 'design/admin/shop/orderview' )}</b>
 <table class="list" width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -43,7 +45,7 @@
 <tr>
     {if and( $ProductItem:item.item_object.contentobject, $ProductItem:item.item_object.contentobject.main_node )}
     {let node_url=$ProductItem:item.item_object.contentobject.main_node.url_alias}
-    <td>{$ProductItem:item.item_object.contentobject.class_identifier|class_icon( small,$ProductItem:item.item_object.contentobject.class_name )}&nbsp;{if $:node_url}<a href={$:node_url|ezurl}>{/if}{$ProductItem:item.item_object.contentobject.name|wash}{if $:node_url}</a>{/if}</td>
+    <td>{$ProductItem:item.item_object.contentobject.class_identifier|class_icon( small,$ProductItem:item.item_object.contentobject.class_name )}&nbsp;{if $:node_url}<a href={$:node_url|ezurl}>{/if}{$ProductItem:item.item_object.contentobject.name|wash}{if $:node_url}</a>{/if}{if is_set( $site_urls[$ProductItem:item.item_object.contentobject.id] )} <a class="exp-order-site-link" href="{$site_urls[$ProductItem:item.item_object.contentobject.id]|wash}" target="_blank" rel="noopener" title="{'View on site (new window)'|i18n( 'design/admin/node/view/full' )}">{'View on site'|i18n( 'design/admin/node/view/full' )}</a>{/if}</td>
     {/let}
     {else}
     <td>{false()|class_icon( small )}&nbsp;{$ProductItem:item.item_object.name|wash}</td>

@@ -463,6 +463,10 @@
         "en": "Report problems in the settings; exits 1 when there are any",
         "de": "Probleme in den Einstellungen melden; Exit-Code 1, wenn es welche gibt"
     },
+    "command:ezrequestrules --header": {
+        "en": "A request header, Name:Value; may be given more than once",
+        "de": "Ein Request-Header, Name:Wert; kann mehrmals angegeben werden"
+    },
     "command:ezrequestrules --host": {
         "en": "Host name the visitor used",
         "de": "Hostname, den der Besucher verwendet hat"
