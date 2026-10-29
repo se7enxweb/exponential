@@ -28,6 +28,8 @@
     <li><div><a href={'/user/password/'|ezurl} title="{'Change password for <%username>.'|i18n( 'design/admin/pagelayout',, hash( '%username', $current_user.contentobject.name ) )|wash}">{'Change password'|i18n( 'design/admin/pagelayout' )}</a></div></li>
     {/if}
     <li><div><a href={'/mailpreferences/settings'|ezurl} title="{'Choose which e-mail you get.'|i18n( 'design/admin/pagelayout' )}">{'My e-mail preferences'|i18n( 'design/admin/pagelayout' )}</a></div></li>
+    <li><div><a href={'/user/sessions'|ezurl}>{'Your devices'|i18n( 'design/admin/pagelayout' )}</a></div></li>
+    <li><div><a href={'/user/security'|ezurl}>{'Security activity'|i18n( 'design/admin/pagelayout' )}</a></div></li>
     </ul>
 {else}
     <p><span class="a4-icon a4-bi-person-circle is-large a4-middle a4-muted" aria-hidden="true"></span> <bdi>{$current_user.contentobject.name|wash}</bdi></p>

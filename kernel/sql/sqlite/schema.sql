@@ -870,6 +870,15 @@ CREATE TABLE `expuser_session` (
 ,  `user_agent` varchar(512) NOT NULL DEFAULT ''
 ,  `user_id` integer NOT NULL DEFAULT '0'
 );
+CREATE TABLE `expuser_session_info` (
+  `auth_detail` varchar(32) NOT NULL DEFAULT ''
+,  `country` varchar(2) NOT NULL DEFAULT ''
+,  `host` varchar(255) NOT NULL DEFAULT ''
+,  `location` varchar(128) NOT NULL DEFAULT ''
+,  `session_id` integer NOT NULL DEFAULT '0'
+,  `user_id` integer NOT NULL DEFAULT '0'
+,  PRIMARY KEY (`session_id`)
+);
 CREATE TABLE `expuser_audit` (
   `actor_id` integer NOT NULL DEFAULT '0'
 ,  `actor_login` varchar(150) NOT NULL DEFAULT ''
@@ -1433,6 +1442,7 @@ CREATE INDEX exp_data_sync_link_object ON exp_data_sync_link ( sync_id, object_i
 CREATE UNIQUE INDEX expuser_session_token ON expuser_session ( token_hash );
 CREATE INDEX expuser_session_user ON expuser_session ( user_id, ended );
 CREATE INDEX expuser_session_active ON expuser_session ( ended, last_active );
+CREATE INDEX expuser_session_info_user ON expuser_session_info ( user_id );
 CREATE UNIQUE INDEX expuser_audit_event ON expuser_audit ( event_id );
 CREATE INDEX expuser_audit_target ON expuser_audit ( target_id, created );
 CREATE INDEX expuser_audit_actor ON expuser_audit ( actor_id, created );

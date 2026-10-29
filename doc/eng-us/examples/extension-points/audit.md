@@ -27,7 +27,7 @@ Sinks[]=expExampleSink    # your class or value, added to the list
 
 ## AuditChannel_access Sinks
 
-Shipped: a list of 1: `syslog`. [The setting](../ini-settings/audit/AuditChannel_access.md#sinks).
+Shipped: a list of 2: `syslog`, `useraudit`. [The setting](../ini-settings/audit/AuditChannel_access.md#sinks).
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -87,7 +87,7 @@ Classes[]=expExampleClasse    # your class or value, added to the list
 
 ## AuditSinkSettings SinkClasses
 
-Shipped: a hash of 3: `syslog=expAuditSyslogSink`, `webhook=expAuditWebhookSink`, `mail=expAuditMailSink`. [The setting](../ini-settings/audit/AuditSinkSettings.md#sinkclasses).
+Shipped: a hash of 4: `syslog=expAuditSyslogSink`, `webhook=expAuditWebhookSink`, `mail=expAuditMailSink`, `useraudit=expAuditUserAuditSink`. [The setting](../ini-settings/audit/AuditSinkSettings.md#sinkclasses).
 
 ```ini
 <?php /* #?ini charset="utf-8"?

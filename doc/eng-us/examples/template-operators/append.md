@@ -28,10 +28,10 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/class/classlist.tpl` line 106:
+The first use in the templates of this installation, `design/admin/templates/children_detailed.tpl` line 217:
 
 ```tpl
-<td>{def $others = array()}{foreach $class.ingroup_list as $link}{if ne( $link.group_id, $group.id )}{set $others = $others|append( $link )}{/if}{/foreach}
+{set $create_ordered_groups = $create_ordered_groups|append( $create_group )}
 ```
 
 ## Related
