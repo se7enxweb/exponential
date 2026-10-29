@@ -36,7 +36,7 @@ keine: Sie zeigen, wie Sie messen und entscheiden.
 ## Exponential in einer Minute, für Hoster
 
 - **Es ist eine PHP-Anwendung.** Exponential ist „ein professionelles PHP-Anwendungsframework mit fortgeschrittener
-  CMS-Funktionalität (Content-Management-System)“ (`README.md`). Es läuft auf PHP 8.0 bis 8.5, auf fast jedem
+  CMS-Funktionalität (Content-Management-System)“ (`README.md`). Es läuft auf PHP 7.4 bis 8.5, auf fast jedem
   Betriebssystem, auf dem PHP 8 läuft ([Betriebssystemunterstützung](../betriebssystemunterstuetzung.md)).
 - **Es ist freie Software.** Der Code steht unter der GPL v2 oder später und kostet nichts; Sie können es für beliebig
   viele Kunden installieren. Die Dokumentation, einschließlich dieser Seite, steht unter der GNU FDL 1.3

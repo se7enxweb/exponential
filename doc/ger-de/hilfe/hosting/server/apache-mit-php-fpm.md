@@ -32,7 +32,7 @@ das Ergebnis prüfen. Die Quelle ist [Kapitel 8, Apache mit PHP-FPM](../../../in
 - Die Rewrite-Regeln werden mit Exponential als `.htaccess_root` ausgeliefert; Apache (und LiteSpeed) lesen sie direkt.
 - [Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md#webserver) führt Apache httpd 2.4 mit PHP-FPM (oder mod_php) als Stufe 1.
   PHP-FPM wird mod_php vorgezogen, das PHP an das Prefork-Modell von Apache bindet ([PHP-SAPIs](../../betriebssystemunterstuetzung.md#php-sapis)).
-- Es betreibt Exponential auf PHP 8.0 und neuer und ist damit die Antwort auf Maschinen mit dem Standard-PHP 8.0 von Red Hat Enterprise
+- Es betreibt Exponential auf PHP 7.4 und neuer und ist damit die Antwort auf Maschinen mit dem Standard-PHP 8.0 von Red Hat Enterprise
   Linux 9 und seinen Nachbauten.
 
 ## Schritt für Schritt

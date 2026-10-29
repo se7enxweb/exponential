@@ -16,7 +16,7 @@ Kapitel hier.
 | Kapitel | Inhalt |
 |---|---|
 | [1. Einführung: Was Sie installieren](01-einfuehrung.md) | Der Kernel, Extensions, Siteaccesses (site, admin, editor) und Designs; die drei Installationsmethoden; Konventionen und Glossar |
-| [2. Voraussetzungen](02-voraussetzungen.md) | PHP 8.0 bis 8.5, jede PHP-Erweiterung und wozu sie dient, die php.ini-Einstellungen, die das Setup prüft, Datenbanken, Composer, Webserver, Betriebssysteme, Dimensionierung; die Übersichten [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md) und [Unterstützte Betriebssysteme](../hilfe/betriebssystemunterstuetzung.md) |
+| [2. Voraussetzungen](02-voraussetzungen.md) | PHP 7.4 bis 8.5, jede PHP-Erweiterung und wozu sie dient, die php.ini-Einstellungen, die das Setup prüft, Datenbanken, Composer, Webserver, Betriebssysteme, Dimensionierung; die Übersichten [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md) und [Unterstützte Betriebssysteme](../hilfe/betriebssystemunterstuetzung.md) |
 | [3. Den Code beschaffen](03-den-code-beschaffen.md) | Versionen und Tags, Git-Klone mit Historie (empfohlen), `composer create-project`, Installation unter PHP 8.0 bis 8.3, das Velocity-Paket, Extensions als Pakete, ein Rundgang durch das Installationsverzeichnis |
 
 ### Teil II: Installieren

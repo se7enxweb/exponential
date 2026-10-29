@@ -1,22 +1,22 @@
 ---
-title: "Unterstützte PHP-Versionen: 8.0 bis 8.5"
+title: "Unterstützte PHP-Versionen: 7.4 bis 8.5"
 audience: php-developer, developer
 category: php-development
 order: 50
-summary: Welche PHP-Versionen Exponential 6 unterstützt und wie jede getestet wird - PHP 8.0 als älteste, 8.5 als neueste, die Einschränkung in composer.json, die CI-Jobs je Version, die Unterschiede unter 8.0 und was Sie in Ihrer eigenen Erweiterung angeben.
+summary: Welche PHP-Versionen Exponential 6 unterstützt und wie jede getestet wird - PHP 7.4 als älteste (8.0 für Velocity), 8.5 als neueste, die Einschränkung in composer.json, die CI-Jobs je Version, die Unterschiede unter 8.0 und was Sie in Ihrer eigenen Erweiterung angeben.
 keywords: unterstützte PHP-Versionen, PHP-Einschränkung, CI-Matrix, PHPUnit-Versionen, PHP 8.0, PHP 8.1, PHP 8.2, PHP 8.3, PHP 8.4, PHP 8.5, supported PHP versions, composer.json, php constraint, RHEL 9, CI matrix, PHPUnit versions, Velocity 0.0.4.54, PHP 7.4
 type: help
 ---
-# Unterstützte PHP-Versionen: 8.0 bis 8.5
+# Unterstützte PHP-Versionen: 7.4 bis 8.5
 
 Diese Seite richtet sich an PHP-Entwickler, die wissen müssen, unter welchen PHP-Versionen ihr Code laufen muss.
-Exponential 6 läuft unter PHP 8.0 bis 8.5. Die älteste Version bestimmt, welche Syntax und welche Funktionen Sie
+Exponential 6 läuft unter PHP 7.4 bis 8.5. Die älteste Version bestimmt, welche Syntax und welche Funktionen Sie
 verwenden dürfen; die neueste bestimmt, welche Deprecations Sie vermeiden müssen.
 
 ## Inhalt
 
 1. [Der Bereich](#der-bereich)
-2. [Warum PHP 8.0 die älteste ist](#warum-php-80-die-älteste-ist)
+2. [Warum PHP 7.4 die älteste ist](#warum-php-74-die-älteste-ist)
 3. [Wie jede Version getestet wird](#wie-jede-version-getestet-wird)
 4. [Was unter PHP 8.0 anders ist](#was-unter-php-80-anders-ist)
 5. [Die Geschichte der Anforderung](#die-geschichte-der-anforderung)
@@ -27,7 +27,7 @@ verwenden dürfen; die neueste bestimmt, welche Deprecations Sie vermeiden müss
 `composer.json` gibt an:
 
 ```json
-"php": "^8.0 || ^8.1 || ^8.2 || ^8.3 || ^8.4 || ^8.5 || ^8.6 || ^8.7 || ^8.8"
+"php": "^7.4 || ^8.0 || ^8.1 || ^8.2 || ^8.3 || ^8.4 || ^8.5 || ^8.6 || ^8.7 || ^8.8"
 ```
 
 Die Bereiche für 8.6 bis 8.8 sind vorausschauend; diese Versionen gibt es noch nicht, und sie werden nicht getestet
@@ -35,21 +35,32 @@ Die Bereiche für 8.6 bis 8.8 sind vorausschauend; diese Versionen gibt es noch 
 PHP-Erweiterungen sind `dom`, `libxml`, `mbstring`, `pcre`, `json`, `iconv`, `reflection`, `session`, `spl` und
 `simplexml`; Datenbank- und Bilderweiterungen stehen unter `suggest`.
 
-Exponential Velocity, der Anwendungsserver, läuft ab seinem Release 0.0.4.54 unter PHP 8.0 bis 8.5 und wird mit
-`~0.0.4.55` vorausgesetzt, sodass der Kernel, die mitgelieferten Erweiterungen und der Server ein gemeinsames Minimum
-haben ([Velocity ist Teil von Exponential 6.0.15](../velocity-ist-teil-von-exponential-6-0-15.md)).
+Exponential Velocity, der Anwendungsserver, läuft ab seinem Release 0.0.4.54 unter PHP 8.0 bis 8.5
+([Velocity ist Teil von Exponential 6.0.15](../velocity-ist-teil-von-exponential-6-0-15.md)). Der Kernel verlangt ihn
+zusammen mit den anderen Paketen, die PHP 8 brauchen, über das Metapaket `se7enxweb/exponential-php-floor`, dessen
+Version für PHP 7.4 sie auslässt ([Warum Exponential PHP 7.4 unterstützt](../warum-exponential-php-7-4-unterstuetzt.md)).
 
-## Warum PHP 8.0 die älteste ist
+## Warum PHP 7.4 die älteste ist
 
-PHP 8.0 ist das Standard-PHP von Red Hat Enterprise Linux 9, AlmaLinux 9 und Rocky Linux 9. Es zu unterstützen heißt,
-dass eine Site auf diesen Systemen keine PHP-Pakete von Drittanbietern braucht. Der Preis für Entwickler ist eine Regel:
-keine Syntax und keine ungeschützten Funktionen im Code, die neuer als 8.0 sind
-([Code schreiben, der unter PHP 8.0 läuft](code-der-unter-php-8-0-laeuft.md)).
+PHP 7.4 wird ab 6.0.15 für Organisationen unterstützt, die das PHP ihrer Server noch nicht ändern können:
+Hosting-Verträge, zertifizierte Images, Betriebssystem-Releases mit langer Laufzeit. PHP 8.0 ist wichtig, weil es das
+Standard-PHP von Red Hat Enterprise Linux 9, AlmaLinux 9 und Rocky Linux 9 ist, sodass eine Site auf diesen Systemen
+keine PHP-Pakete von Drittanbietern braucht. Die Gründe und die Kompromisse stehen in
+[Warum Exponential PHP 7.4 unterstützt](../warum-exponential-php-7-4-unterstuetzt.md).
+
+Der Preis für Entwickler ist eine Regel: keine Syntax und keine ungeschützten Funktionen im Kernel, die neuer als 7.4
+sind. Das heißt: keine Union Types, kein Nullsafe-Operator, kein `match`, keine benannten Argumente, keine Constructor
+Promotion, kein `mixed`, keine Rückgabetypen `static`, keine Enums und kein `readonly`; typisierte Eigenschaften und
+Arrow Functions sind erlaubt. Funktionen aus PHP 8.0 und 8.1 wie `str_contains()` dürfen verwendet werden, weil
+`symfony/polyfill-php80` und `symfony/polyfill-php81` sie unter 7.4 definieren
+([Code schreiben, der unter PHP 8.0 läuft](code-der-unter-php-8-0-laeuft.md) nennt den Rest). `make lint74` prüft die
+geänderten Dateien, `make lint74-all` jede Datei.
 
 ## Wie jede Version getestet wird
 
 | Prüfung | PHP | Wo |
 |---|---|---|
+| Syntax jeder PHP-Datei, produktives `composer install --no-dev`, Boot-Smoke-Test (`tests/bin/bootsmoke.php`) | 7.4 | `quality.yml`, Job `php74` |
 | Syntax jeder PHP-Datei, produktives `composer install --no-dev`, Boot-Smoke-Test (`tests/bin/bootsmoke.php`) | 8.0 | `quality.yml`, Job `php80` |
 | PHPCompatibility mit `testVersion` `8.0-` | statisch | `phpcs.xml.dist` (eine Warnung in der CI) |
 | PHP-Syntax geänderter Dateien | 8.3 | `quality.yml` |
@@ -83,18 +94,20 @@ Die vollständige Tabelle mit den Dateien finden Sie unter [Unterstützung für 
 
 | Release | Anforderung |
 |---|---|
-| bis 6.0.7 | PHP 7.4 noch installierbar; Sites unter 7.4 müssen bei 6.0.7 bleiben |
+| bis 6.0.7 | PHP 7.4 und 8.1 |
 | 6.0.8 (April 2025) | Composer verlangt PHP 8.1 oder neuer; erste Unterstützung für 8.4 |
 | 6.0.11 (Dezember 2025) | Unterstützung für PHP 8.5 |
-| 6.0.15 | PHP 8.0 wieder als älteste Version unterstützt, in der CI geprüft |
+| 6.0.15 | PHP 8.0 wieder unterstützt, in der CI geprüft; dann PHP 7.4 wieder als älteste Version unterstützt, mit dem Metapaket `se7enxweb/exponential-php-floor` und einem CI-Job `php74` |
 
 Jeder Schritt ist unter [Unterstützung für PHP 8](../../bc/6.0/php8.md) aufgeführt.
 
 ## Was Sie in Ihrer Erweiterung angeben
 
-- Geben Sie in der `composer.json` Ihrer Erweiterung `"php": "^8.0"` (oder eine Liste wie die des Kernels) an, sofern
-  Ihre Erweiterung nicht wirklich mehr braucht. Ein höheres Minimum blockiert die Installation mit dem Standard-PHP von
-  RHEL 9, und der CI-Job `php80` des Kernels schlägt fehl, wenn ein benötigtes Paket sein Minimum anhebt.
+- Geben Sie in der `composer.json` Ihrer Erweiterung `"php": "^7.4 || ^8.0"` (oder eine Liste wie die des Kernels)
+  an, sofern Ihre Erweiterung nicht wirklich mehr braucht; `"php": "^8.0"` ist die nächste Wahl. Ein höheres Minimum
+  blockiert die Installation mit dem Standard-PHP von RHEL 9, und die CI-Jobs `php74` und `php80` des Kernels schlagen
+  fehl, wenn ein Paket, das der Kernel direkt verlangt, sein Minimum über ihres anhebt. Ein Paket, das PHP 8 brauchen
+  muss, gehört in die passenden Versionen von `se7enxweb/exponential-php-floor`, nicht in das `require` des Kernels.
 - Wenn Sie eine neuere PHP-Funktion brauchen, sichern Sie sie so ab wie der Kernel, statt das Minimum anzuheben.
 - Testen Sie unter der ältesten und der neuesten Version, die Sie angeben.
 

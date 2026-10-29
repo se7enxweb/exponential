@@ -45,7 +45,7 @@ Inhaltstypen zu und zeigt einen Probelauf, bevor etwas veröffentlicht wird
 
 - **Alte Versionen bekommen keine Sicherheitskorrekturen.** „5.x, 4.x, 3.x and older“ werden nicht unterstützt; 6.0
   ist die gepflegte Linie (`SECURITY.md`). Eine Website aus den Jahren von eZ Publish läuft ohne Korrekturen.
-- **Aktuelles PHP.** Exponential unterstützt PHP 8.0 bis 8.5 (`README.md`), sodass die Website auch auf ein
+- **Aktuelles PHP.** Exponential unterstützt PHP 7.4 bis 8.5 (`README.md`), sodass die Website auch auf ein
   unterstütztes PHP wechseln kann.
 - **Ein gemeinsames Erbe in der Datenbank.** Bei Websites mit 4.x und 5.x Legacy werden das Inhaltsmodell und ein
   Großteil der Datenbank übernommen; die Kapitel erklären, was sich ändert und was nicht

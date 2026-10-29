@@ -53,7 +53,7 @@ Sources: `README.md` ("What does Exponential provide", "License", "Requirements"
 | Releases 6.0.0 (1 January 2024) to 6.0.14 (7 June 2026); 6.0.15 in development | [Who is 7x?](../who-is-7x.md#the-60x-releases) |
 | Six supported databases: SQLite 3 (the default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | `README.md`, [Database support](../database-support.md) |
 | "almost any" operating system "that runs PHP 8.0 or later" | [Operating system support](../os-support.md) |
-| PHP 8.0 to 8.5 supported | `README.md`, "What version of PHP is required" |
+| PHP 7.4 to 8.5 supported | `README.md`, "What version of PHP is required" |
 | 368 locale files, 43 of them right to left; administration translations (the current totals are at the top of the languages page) | [Languages in Exponential](../../languages.md) |
 | "The recommended way is to get the kernel and every se7enxweb extension as Git clones with their full history" | `README.md`, "Installation"; [Develop with Git](../develop-with-git.md) |
 | "A published tag is never changed" | `SECURITY.md` |
@@ -151,7 +151,7 @@ Each sentence below can be backed by the source in brackets. Do not say the brac
 >    ever as drafts that a person publishes. [README]
 > 5. It is free to use under the GNU General Public License, version 2 or later, and its documentation is free under
 >    the GNU Free Documentation License. [README, Free documentation]
-> 6. It runs on almost any operating system with PHP 8.0 or later, behind Apache, Nginx and other web servers, or on
+> 6. It runs on almost any operating system with PHP 7.4 or later, behind Apache, Nginx and other web servers, or on
 >    its own Velocity server. [Operating system support, README]
 > 7. It supports six databases, with SQLite as the default, so a site needs no database server at all.
 >    [Database support]
@@ -171,7 +171,7 @@ Each sentence below can be backed by the source in brackets. Do not say the brac
 | **Editorial lead** | Drafts, versions, approval workflows and a writing assistant that never publishes on its own | [Publishing, versions and the trash](../publishing-and-versions.md), [Workflows](../../guides/workflows.md), [Exponential Intelligence](../../features/6.0/extensions/expai.md) |
 | **IT and operations** | Your OS, your web server, your database; a documented hardening guide and audit trail | [Operating system support](../os-support.md), [Database support](../database-support.md), [Security hardening](../security-hardening.md) |
 | **Security officer** | CSP, two-step sign-in, tamper-evident audit, private disclosure, clear release policy | [Content Security Policy](../../features/6.0/content-security-policy.md), [The audit trail](../../features/6.0/audit-trail.md), `SECURITY.md` |
-| **Developer** | Git clones with full history, Composer packages, extensions, a REST API, PHP 8.0 to 8.5 | [Develop with Git](../develop-with-git.md), [REST API v1 and v2](../../guides/rest-api-v1-and-v2.md), [Extensions](../../guides/extensions.md) |
+| **Developer** | Git clones with full history, Composer packages, extensions, a REST API, PHP 7.4 to 8.5 | [Develop with Git](../develop-with-git.md), [REST API v1 and v2](../../guides/rest-api-v1-and-v2.md), [Extensions](../../guides/extensions.md) |
 | **Owner of an older site** | A maintained continuation, with documented migration paths | Installation chapters [11](../../install/11-upgrading.md), [14](../../install/14-migrating-from-4x.md), [15](../../install/15-migrating-from-5x-legacy.md), [16](../../install/16-migrating-from-ez-platform-and-ibexa.md) |
 
 ## Words to use and words to avoid

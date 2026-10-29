@@ -20,7 +20,7 @@ This page is for designers scanning a changelog. Most entries do not concern a t
 | Design settings (`design.ini`, `site.ini [DesignSettings]`) | Loading of stylesheets and scripts | `design.ini` marks `CSSFileList[]` deprecated in favor of `FrontendCSSFileList[]` |
 | JavaScript libraries | Your scripts may rely on old APIs | jQuery 4 and the removal of YUI (1 and 2 October 2026) |
 | Security headers and the Content Security Policy | Inline scripts may be reported or blocked | The administration's CSP, report-only by default |
-| PHP versions | Your PHP code must run on them | "PHP 8.0 is the oldest supported version" (5 October 2026) |
+| PHP versions | Your PHP code must run on them | "PHP 8.0 is the oldest supported version" (5 October 2026), then PHP 7.4 (29 October 2026), then PHP 7.4 (29 October 2026) |
 | Accessibility changes | Expectations of the product rise | Contrast or focus changes in the shared components |
 
 ## Step by step

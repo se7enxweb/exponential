@@ -88,7 +88,7 @@ Quellen: „At a glance“ und „Versions, checked against the code“ unter [D
 
 ## Betriebssystem
 
-Exponential läuft auf „fast jedem“ System, „auf dem PHP 8.0 oder neuer läuft“.
+Exponential läuft auf „fast jedem“ System, „auf dem PHP 7.4 oder neuer läuft“.
 [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) ordnet die Systeme in vier Stufen:
 
 | Stufe | Bedeutung | Beispiele aus den Quellen |

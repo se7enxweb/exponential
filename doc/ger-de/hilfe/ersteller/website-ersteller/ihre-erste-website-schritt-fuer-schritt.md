@@ -28,7 +28,7 @@ Datenbankserver), das Standard-Seitenpaket und Velocity. Für eine echte Website
 
 ## Bevor Sie beginnen
 
-Sie brauchen PHP 8.1 oder neuer auf der Kommandozeile, Composer 2 und Git
+Sie brauchen PHP 7.4 oder neuer auf der Kommandozeile, Composer 2 und Git
 ([Anforderungen](../../../installation/02-voraussetzungen.md)). Führen Sie jeden Befehl im Wurzelverzeichnis der Installation
 aus, dem Verzeichnis mit `index.php`, und zwar als Ihr eigener Benutzer (nicht `root`).
 
@@ -116,7 +116,7 @@ wieder aus derselben Liste.
 
 | Sie sehen | Tun Sie |
 |---|---|
-| `composer install` lehnt Ihr PHP ab | installieren Sie PHP 8.1 oder neuer ([2.2 PHP](../../../installation/02-voraussetzungen.md#22-php)) |
+| `composer install` lehnt Ihr PHP ab | installieren Sie PHP 7.4 oder neuer ([2.2 PHP](../../../installation/02-voraussetzungen.md#22-php)) |
 | Die Installation stoppt bei `SystemCheck` | lesen Sie die ausgegebene Lösung; meist eine fehlende PHP-Erweiterung oder ein Rechteproblem |
 | Eine Wartungsseite statt der Website | `php bin/php/maintenance.php status`, dann `off` |
 | Fehler über Dateien, die nicht geschrieben werden können | Sie haben einen Befehl als `root` ausgeführt; siehe [12. Fehlerbehebung](../../../installation/12-fehlerbehebung.md) |

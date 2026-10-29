@@ -73,8 +73,8 @@ wieder her und wenden Sie die Datei erneut von Anfang an an.
 **Was ist mit MongoDB und Oracle?** MongoDB braucht keine SQL-Update-Datei; die Dateien für Oracle kommen mit der
 Erweiterung `ezoracle`.
 
-**Kann eine Website auf PHP 7.4 aktualisiert werden?** Eine Website, die auf PHP 7.4 bleiben muss, bleibt auf 6.0.7;
-die aktuelle Linie braucht PHP 8.0 oder neuer, Velocity eingeschlossen.
+**Kann eine Website auf PHP 7.4 aktualisiert werden?** Ja, ab 6.0.15: Die aktuelle Linie läuft unter PHP 7.4, ohne
+Velocity, Layouts und einige Erweiterungen, die PHP 8 brauchen ([Warum Exponential PHP 7.4 unterstützt](../../../warum-exponential-php-7-4-unterstuetzt.md)).
 
 **Gibt es eine Automatisierung?** Die Erweiterung `ezupdate` kann Updates anwenden; siehe
 [Automatische Updates mit ezupdate](../../../hosting/betrieb/automatische-updates-mit-ezupdate.md).

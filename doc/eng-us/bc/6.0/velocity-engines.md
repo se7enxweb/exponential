@@ -7,7 +7,7 @@ PHP changes to a site that Velocity serves. Velocity drives one of three web ser
 
 ## Velocity is part of Exponential as of 6.0.15
 
-As of 6.0.15 the root `composer.json` **requires** `se7enxweb/exponential-velocity ~0.0.4.55`; before, it only
+As of 6.0.15 the root `composer.json` **requires** `se7enxweb/exponential-velocity ~0.0.4.55` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later); before, it only
 suggested it. What that changes for an existing installation:
 
 | | |

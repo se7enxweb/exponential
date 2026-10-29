@@ -106,7 +106,7 @@ Three facts decide how a migration to these targets works:
 ### Target B: Exponential 6.0, alone or as Exponential Platform Legacy
 
 **Exponential 6.0** is the legacy kernel in this repository: Composer package `se7enxweb/exponential`, type
-`ezpublish-legacy`, `lib/version.php` 6.0.15, PHP 8.0 to 8.5, five database engines, INI settings, TPL templates,
+`ezpublish-legacy`, `lib/version.php` 6.0.15, PHP 7.4 to 8.5, five database engines, INI settings, TPL templates,
 the legacy administration interface and Exponential Velocity as its own web server ([chapter 1](01-introduction.md)).
 
 **Exponential Platform Legacy** (`se7enxweb/exponential-platform-legacy`) is the hybrid: the README of its 2.5 line

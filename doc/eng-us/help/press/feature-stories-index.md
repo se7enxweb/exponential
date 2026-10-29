@@ -81,7 +81,7 @@ and headline ideas, and who to ask. Pick the area your audience cares about.
 | [Story: SQLite by default](story-sqlite-by-default.md) | A CMS that needs no database server |
 | [Story: MongoDB as a database](story-mongodb.md) | A document database under a content model |
 | [Story: operating systems](story-operating-systems.md) | Linux, BSD, macOS and Windows in tiers |
-| [Story: current PHP](story-current-php.md) | Old code base, PHP 8.0 to 8.5 |
+| [Story: current PHP](story-current-php.md) | Old code base, PHP 7.4 to 8.5 |
 | [Story: install in one command](story-install-in-one-command.md) | From nothing to a site with one command |
 | [Story: Git first](story-git-first.md) | Installing and updating with Git |
 

@@ -26,7 +26,7 @@ page gives both, with sources.
 
 ## The story in one paragraph
 
-"Exponential 6.0.x runs on almost any operating system that has PHP 8.0 or later and a web server. It is plain PHP
+"Exponential 6.0.x runs on almost any operating system that has PHP 7.4 or later and a web server. It is plain PHP
 files plus a database; it has no compiled code of its own" ([Operating system support](../os-support.md)). It runs
 behind "any web server that can rewrite a URL", or under its own Velocity server
 ([README](https://github.com/se7enxweb/exponential/blob/main/README.md#the-traditional-options)), on six databases from SQLite to Oracle

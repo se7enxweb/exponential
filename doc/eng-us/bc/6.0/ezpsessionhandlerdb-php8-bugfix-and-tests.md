@@ -11,7 +11,7 @@ covered by a PHPUnit 13 test suite that runs without a live database or the Expo
 | | |
 |---|---|
 | What changed | `read()` returns `''` instead of `false`; `gc()` compares with `time()`; the `gc()` timeout guard measures the real elapsed time; `setSaveHandler()` no longer calls `session_module_name( 'user' )` (6.0.15). |
-| Who is affected | Every installation with database sessions on PHP 8.0 or newer. |
+| Who is affected | Every installation with database sessions on PHP 7.4 or newer. |
 | How to check | Count expired rows: `SELECT COUNT(*) FROM ezsession WHERE expiration_time < UNIX_TIMESTAMP();` (MySQL). Before the fix this number only grew. |
 | How to fix | Update. Expired rows left from before are removed by the next garbage collection run. |
 

@@ -88,7 +88,7 @@ with a hint.
 
 ## A PHP 8.0 binary
 
-PHP 8.0 is the oldest supported version. The pre-commit hook and `make lint80` find it as `EXP_PHP80`, `php8.0` or
+PHP 7.4 is the oldest supported version (`make lint74` checks it), PHP 8.0 the stock PHP of RHEL 9. The pre-commit hook and `make lint80` find PHP 8.0 as `EXP_PHP80`, `php8.0` or
 `php80` on the `PATH`, or `/opt/plesk/php/8.0/bin/php`:
 
 ```bash

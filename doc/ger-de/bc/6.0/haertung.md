@@ -1011,7 +1011,7 @@ Korrektur übertragen ließe, falls das Minimum je gesenkt würde.
 **Modernstes Konstrukt über alle Korrekturen hinweg: PHP 7.1** (Nullable-Typhinweis `?array` in `ezorder.php`; kurze
 Array-Destrukturierung in `eztimetype.php`).
 
-Da das Projekt bereits PHP 8.1 verlangt, das vier Hauptversionen über PHP 7.1 liegt, gibt es **keinerlei Auswirkung auf
+Da das Projekt PHP 7.4 oder neuer verlangt (als dies geschrieben wurde 8.1; ab 6.0.15 wieder 7.4), was über PHP 7.1 liegt, gibt es **keinerlei Auswirkung auf
 das erklärte Minimum** und **keinerlei Auswirkung auf eine unterstützte Installation**.
 
 ### Korrekturen von Veraltungswarnungen unter PHP 8.4 — erfordern sie PHP 8.4?

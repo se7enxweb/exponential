@@ -45,7 +45,7 @@ Fakten aus dieser Tabelle, die ein Planer braucht:
 
 | Release | Warum es für die Planung wichtig ist | Quelle |
 |---|---|---|
-| 6.0.7 | Das letzte Release für PHP 7.4 | [11. Upgrade](../../installation/11-aktualisieren.md#schritt-3-die-checkliste-jedes-durchlaufenen-zeitraums-lesen) |
+| 6.0.7 | Das letzte Release für PHP 7.4 bis 6.0.15 | [11. Upgrade](../../installation/11-aktualisieren.md#schritt-3-die-checkliste-jedes-durchlaufenen-zeitraums-lesen) |
 | 6.0.8 | Benötigt PHP 8.1 | ebenda |
 | 6.0.10 | Das erste Release mit dem Namen Exponential: der Produktname in Templates, Übersetzungen und Overrides | ebenda, [Das Produkt heißt Exponential](../../funktionen/6.0/umbenennung-in-exponential.md) |
 | 6.0.13 | Sicherheitskorrekturen und Prüfungen der Sortierspalten | ebenda |
@@ -96,7 +96,7 @@ zusammengetragen. Kurz gesagt:
 | Ältere Linien | 5.x, 4.x, 3.x und ältere werden nicht unterstützt | SECURITY.md |
 | Veröffentlichte 6.0.x-Tags | Behoben durch ein Upgrade auf die neueste 6.0.x | SECURITY.md |
 | Sicherheitsmeldungen | Vertraulich; „Eine erste Antwort können Sie innerhalb eines Werktags erwarten“ | SECURITY.md |
-| PHP | 8.0 ist die älteste unterstützte Version; 8.1 bis 8.5 werden unterstützt; die CI testet 8.1 bis 8.5 und prüft, dass 8.0 startet | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
+| PHP | 7.4 ist die älteste unterstützte Version (ab 6.0.15); 8.0 bis 8.5 werden unterstützt; die CI testet 8.1 bis 8.5 und prüft, dass 8.0 startet | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 
 Zwei Folgen für die Planung:
 
@@ -130,7 +130,7 @@ Wählen Sie mit dieser Tabelle zwischen „jetzt“, „nächstes Zeitfenster“
 |---|---|---|
 | Für Ihre Linie gibt es ein Sicherheits-Release | Upgrade im nächstmöglichen Zeitfenster | Korrekturen erreichen Sie nur über das nächste Release (SECURITY.md) |
 | Sie betreiben 6.0.x und sind ein oder zwei Releases zurück | Ein Routine-Upgrade planen | Teil C des [Upgrade-Leitfadens](../../anleitungen/aktualisieren.md) behandelt es |
-| Sie betreiben 6.0.7 oder älter auf PHP 7.4 | Zuerst den PHP-Umstieg planen | 6.0.8 benötigt PHP 8.1 |
+| Sie betreiben 6.0.7 oder älter auf PHP 7.4 | Unter PHP 7.4 auf 6.0.15 wechseln, dann den PHP-Umstieg planen | 6.0.8 bis 6.0.14 benötigen PHP 8.1 |
 | Sie betreiben 5.4 oder 5.90 | Ein Projekt planen | Teil B, dann Teil C; Datenbank-Update-Dateien für jeden Schritt |
 | Sie betreiben 3.10 bis 5.3 | Ein Migrationsprojekt planen | Teil A, dann B, dann C; lesen Sie [14. Migration von der Linie 4.x](../../installation/14-migration-von-4x.md) |
 | Sie haben eigene Patches in Kernel-Dateien | Zeit für das Mergen einplanen | Halten Sie sie auf Ihrem eigenen Git-Branch ([Mit Git entwickeln](../mit-git-entwickeln.md#auf-dem-neuesten-stand-bleiben)) |

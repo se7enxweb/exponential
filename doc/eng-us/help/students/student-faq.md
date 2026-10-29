@@ -27,7 +27,7 @@ No. It is free software under the GNU GPL version 2 or later, and the help is fr
 [Free documentation](../free-documentation.md)).
 
 **What do I need on my computer?**
-PHP 8.0 to 8.5 and Composer. No database server: SQLite is the default
+PHP 7.4 to 8.5 and Composer. No database server: SQLite is the default
 ([Your first site: three ways](your-first-site-three-ways.md#what-you-need-on-your-computer)).
 
 **What is the fastest way to a study site?**

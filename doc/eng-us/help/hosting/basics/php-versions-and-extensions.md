@@ -30,12 +30,12 @@ PHPs (web and command line) must agree. The source is
 
 | PHP | Status |
 |---|---|
-| 8.0 | The oldest supported version; the kernel runs on it under Apache with mod_php or PHP-FPM. It is the stock PHP of RHEL 9, AlmaLinux 9 and Rocky Linux 9. Velocity runs on it from its release 0.0.4.54 (until then it needed 8.1). |
+| 8.0 | Supported; the kernel runs on it under Apache with mod_php or PHP-FPM. It is the stock PHP of RHEL 9, AlmaLinux 9 and Rocky Linux 9. Velocity runs on it from its release 0.0.4.54 (until then it needed 8.1). |
 | 8.1 to 8.4 | Supported, Velocity included. |
 | 8.5 | Supported; the newest version tested. |
-| 7.4 and older | Not supported by 6.0.8 and later; a site that must stay on 7.4 stays on 6.0.7. |
+| 7.4 | Supported again from 6.0.15, without the features that need PHP 8; not by 6.0.8 to 6.0.14. |
 
-`composer.json` declares `"php": "^8.0 || ^8.1 || ^8.2 || ^8.3 || ^8.4 || ^8.5 || ^8.6 || ^8.7 || ^8.8"`. The
+`composer.json` declares `"php": "^7.4 || ^8.0 || ^8.1 || ^8.2 || ^8.3 || ^8.4 || ^8.5 || ^8.6 || ^8.7 || ^8.8"`. The
 versions after 8.5 are accepted by the constraint but have not been released or tested.
 
 > **Tip**

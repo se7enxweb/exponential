@@ -114,7 +114,7 @@ Three different numbers exist for each database, and they are easy to mix up:
 Use a server version your vendor still supports with security fixes. The floors exist so that the wizard does not
 refuse an old server outright; they are not a promise that a server of that age works with the current drivers.
 
-**PHP.** Exponential 6.0.x runs on PHP 8.0 to 8.5 (`composer.json`, `"php": "^8.0 || ... || ^8.8"`). The database
+**PHP.** Exponential 6.0.x runs on PHP 7.4 to 8.5 (`composer.json`, `"php": "^7.4 || ... || ^8.8"`). The database
 drivers follow that range, with one exception: the MongoDB adapter needs PHP 8.2 or later. Velocity, the recommended
 web server, needs PHP 8.1. See [chapter 2](../install/02-requirements.md#22-php).
 
@@ -620,7 +620,7 @@ the legacy toolkit's tests run against a live server with a throw-away database 
 | 5. Oracle | no | Oracle-specific kernel tests skip on other engines; the `ezoracle` extension has no workflow of its own in the installed copy (not verified upstream) |
 | 6. MySQL | yes, database tests | the job "Database tests (mysql, PHP 8.3)" with a `mysql:8.0` service |
 
-PHP 8.0, the oldest supported version, is checked by the Quality workflow with a syntax check of every PHP file and a
+PHP 7.4, the oldest supported version, and PHP 8.0 are checked by the Quality workflow with a syntax check of every PHP file and a
 boot smoke test without a database. The test suites and how to run them locally are described in
 [Continuous integration](../specifications/6.0/continuous-integration.md).
 

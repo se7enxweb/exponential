@@ -12,11 +12,11 @@ laufende Datenbank und ohne den Kernel von Exponential läuft.
 | | |
 |---|---|
 | Was sich geändert hat | `read()` gibt `''` statt `false` zurück; `gc()` vergleicht mit `time()`; der Timeout-Schutz von `gc()` misst die tatsächlich vergangene Zeit; `setSaveHandler()` ruft `session_module_name( 'user' )` nicht mehr auf (6.0.15). |
-| Wer betroffen ist | Jede Installation mit Sitzungen in der Datenbank unter PHP 8.0 oder neuer. |
+| Wer betroffen ist | Jede Installation mit Sitzungen in der Datenbank unter PHP 7.4 oder neuer. |
 | Wie Sie es prüfen | Zählen Sie abgelaufene Zeilen: `SELECT COUNT(*) FROM ezsession WHERE expiration_time < UNIX_TIMESTAMP();` (MySQL). Vor der Korrektur wuchs diese Zahl nur. |
 | Wie Sie es beheben | Aktualisieren. Von früher übrig gebliebene abgelaufene Zeilen entfernt der nächste Lauf der Garbage Collection. |
 
-Betroffene Klasse: `lib/ezsession/classes/ezpsessionhandlerdb.php`. Erfordert PHP 8.0 oder neuer; die Tests verwenden
+Betroffene Klasse: `lib/ezsession/classes/ezpsessionhandlerdb.php`. Erfordert PHP 7.4 oder neuer; die Tests verwenden
 PHPUnit 13.0.0.
 
 ## Fehler 1: `read()` gab `false` statt `''` zurück

@@ -45,7 +45,7 @@ From [Release and upgrade planning, deciding when to upgrade](../../leadership/r
 |---|---|
 | A security release exists for your line | Upgrade in the next possible window |
 | You run 6.0.x and are one or two releases behind | Plan a routine upgrade |
-| You run 6.0.7 or older on PHP 7.4 | Plan the PHP move first; 6.0.8 needs PHP 8.1 |
+| You run 6.0.7 or older on PHP 7.4 | Move to 6.0.15 on PHP 7.4, then plan the PHP move; 6.0.8 to 6.0.14 need PHP 8.1 |
 | You run 5.x or older | Plan a project ([Upgrading](../../../guides/upgrading.md)) |
 | You have your own changes in kernel files | Plan time for merging them |
 

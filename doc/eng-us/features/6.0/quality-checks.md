@@ -116,7 +116,7 @@ PHP 8.3, JavaScript syntax of the changed scripts (`node --check` with Node.js 2
 (their own job, on PHP 8.4) block; the code style of the changed files, including type declarations and PHP 8.0
 compatibility, is reported as a warning.
 
-The job `php80` is the check for the oldest supported version, PHP 8.0 (the stock PHP of RHEL 9), in one place:
+The job `php74` checks the oldest supported version, PHP 7.4, the same way; the job `php80` is the check for PHP 8.0 (the stock PHP of RHEL 9), in one place:
 
 1. `make lint80-all`: `php -l` with PHP 8.0 on every PHP file in git (blocking).
 2. `composer install --no-dev` with PHP 8.0. It passes `--ignore-platform-req=php`, because `composer.json` and

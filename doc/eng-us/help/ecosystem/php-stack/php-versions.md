@@ -20,8 +20,8 @@ type: help
 
 | PHP | Exponential 6 | Source |
 |---|---|---|
-| 7.4 | Up to 6.0.7 only | `README.md` |
-| 8.0 | The oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 runs it, under Velocity too from 0.0.4.54 | `README.md`, [PHP 8.0 support](../../../bc/6.0/php-8.0-support.md) |
+| 7.4 | Up to 6.0.7, and again from 6.0.15 | `README.md` |
+| 8.0 | Supported, so the stock PHP of Red Hat Enterprise Linux 9 runs it, under Velocity too from 0.0.4.54 | `README.md`, [PHP 8.0 support](../../../bc/6.0/php-8.0-support.md) |
 | 8.1 to 8.5 | Supported, Velocity included | `README.md` |
 | 8.6 and later | Allowed by `composer.json` (up to 8.8); the project aims at "PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9" | `composer.json`, `README.md` |
 

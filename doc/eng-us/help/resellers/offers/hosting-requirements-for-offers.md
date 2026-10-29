@@ -3,7 +3,7 @@ title: Hosting requirements for your offers
 audience: reseller, hosting
 category: reselling
 order: 210
-summary: The server requirements a reseller must check before selling an Exponential offer - PHP 8.0 to 8.5 and its extensions, php.ini values, the six databases in the official order, Composer, the engine, image conversion, writable directories - and the questions to ask a hosting supplier.
+summary: The server requirements a reseller must check before selling an Exponential offer - PHP 7.4 to 8.5 and its extensions, php.ini values, the six databases in the official order, Composer, the engine, image conversion, writable directories - and the questions to ask a hosting supplier.
 keywords: requirements, hosting requirements, PHP 8, extensions, php.ini, memory_limit, database, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Composer, Velocity, ImageMagick, GD, supplier questions
 type: help
 ---
@@ -25,7 +25,7 @@ your price list, check that every server it runs on meets these requirements. Th
 
 | Need | Minimum | Recommended | Checked by |
 |---|---|---|---|
-| PHP | 8.0 | The newest 8.x the system offers; 8.5 is the newest tested | `composer.json` and the setup wizard (`settings/setup.ini`, `[phpversion] MinimumVersion=8.0.0`) |
+| PHP | 7.4 (8.0 for Velocity, 8.1 for Layouts) | The newest 8.x the system offers; 8.5 is the newest tested | `composer.json` and the setup wizard (`settings/setup.ini`, `[phpversion] MinimumVersion=7.4.0`) |
 | PHP extensions | `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`, `zlib`, one database extension, `gd` or ImageMagick | Plus `curl`, `gd`, `openssl`, `pcntl`, `opcache` | Composer and the setup wizard's critical tests |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` set, `file_uploads` on, `allow_url_fopen` on | More memory for imports and image work | The setup wizard's critical tests |
 | Composer | 2.x | A current 2.x | You |

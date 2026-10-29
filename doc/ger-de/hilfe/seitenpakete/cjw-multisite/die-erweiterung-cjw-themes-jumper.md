@@ -134,7 +134,7 @@ Ohne die Startinhalte hat das Design wenig zu zeichnen: Es erwartet die Klassen 
 
 Aus dem README der Erweiterung:
 
-- [ ] Exponential 6 mit dem Design `standard`, PHP 8.0 oder neuer.
+- [ ] Exponential 6 mit dem Design `standard`, PHP 7.4 oder neuer.
 - [ ] `explayouts` und `ezjscore` (jQuery) für die Seiten und Blöcke.
 - [ ] Die PHP-Erweiterung `imagick` für die Bildaliase `cjw_*`.
 - [ ] Wahlweise: `cjw_tmv`, der Veranstaltungs-Feed von TMV, für die Seiten der Veranstaltungscontainer. Exponential 6.0.15 verlangt

@@ -3,7 +3,7 @@ title: "Story: current PHP"
 audience: press
 category: press-media
 order: 72
-summary: A feature story about keeping an old PHP code base on current PHP - PHP 8.0 to 8.5 supported, PHP 7.4 sites on 6.0.7, the CI matrix, the aims beyond PHP 9, and the forks of libraries patched along the way - with dates, sources and the claims to avoid.
+summary: A feature story about keeping an old PHP code base on current PHP - PHP 8.0 to 8.5 supported, PHP 7.4 supported again from 6.0.15, the CI matrix, the aims beyond PHP 9, and the forks of libraries patched along the way - with dates, sources and the claims to avoid.
 keywords: story, PHP, PHP 8, PHP 8.4, PHP 8.5, PHP 7.4, compatibility, modernization, CI, Zeta Components, upgrades, technical debt
 type: help
 ---
@@ -22,8 +22,8 @@ steady, visible maintenance.
 
 ## The story in one paragraph
 
-Exponential 6 supports PHP 8.0 to 8.5; PHP 8.0 is kept so that the stock PHP of Red Hat Enterprise Linux 9 runs it,
-and sites on PHP 7.4 can stay on 6.0.7. "Current releases are primarily aimed at easing the requirements to support
+Exponential 6 supports PHP 7.4 to 8.5; PHP 8.0 is kept so that the stock PHP of Red Hat Enterprise Linux 9 runs it,
+and PHP 7.4 is supported again from 6.0.15 for sites that cannot move yet. "Current releases are primarily aimed at easing the requirements to support
 current versions of the PHP language like PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9" (README). The continuous
 integration runs the test suite on PHP 8.1 to 8.5 and checks that PHP 8.0 still boots on every push and pull request
 ([PHP versions](../who-is-the-exponential-foundation.md#php-versions)).

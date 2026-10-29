@@ -63,7 +63,7 @@ testen und die Live-Website auf Releases zu halten
 
 ## Welche PHP-Versionen werden unterstützt?
 
-PHP 8.0 bis 8.5, auch mit Velocity (ab seinem Release 0.0.4.54); PHP 7.4 nur bis 6.0.7
+PHP 8.0 bis 8.5, auch mit Velocity (ab seinem Release 0.0.4.54); PHP 7.4 wieder ab 6.0.15
 ([2. Anforderungen](../../../installation/02-voraussetzungen.md#versionen)).
 
 ## Verwandte Seiten

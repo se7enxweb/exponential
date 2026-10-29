@@ -34,7 +34,7 @@ Jeder Fakt hat eine Quelle, die ein Kunde prüfen kann.
 |---|---|
 | Exponential ist ein professionelles PHP-Anwendungsframework mit fortgeschrittener CMS-Funktionalität (Content-Management-System) | `README.md` |
 | Freie Software unter der GNU GPL v2 oder später; keine Lizenzgebühr | `COPYRIGHT.md`, `README.md` |
-| Läuft auf PHP 8.0 bis 8.5 | [Kapitel 2](../../../installation/02-voraussetzungen.md) |
+| Läuft auf PHP 7.4 bis 8.5 | [Kapitel 2](../../../installation/02-voraussetzungen.md) |
 | Sechs unterstützte Datenbanken: SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Datenbankunterstützung](../../datenbankunterstuetzung.md) |
 | Läuft auf fast jedem Betriebssystem, das PHP 8 ausführt | [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) |
 | Bringt seinen eigenen Webserver und seine eigene Engine mit, Exponential Velocity, mit eigenen HTTPS-Zertifikaten | [Kapitel 8](../../../installation/08-die-website-ausliefern.md), [HTTPS-Zertifikate](../../../funktionen/6.0/velocity-https-zertifikate.md) |

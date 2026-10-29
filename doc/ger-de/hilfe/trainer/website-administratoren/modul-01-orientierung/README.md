@@ -36,7 +36,7 @@ Einstellungsseite und `exp:ini`.
 
 ## Dieses Modul vorbereiten
 
-- Ein Rechner pro Person mit einem Terminal, PHP 8.1 oder neuer, Composer 2 und Git sowie dem Exponential-Code des
+- Ein Rechner pro Person mit einem Terminal, PHP 7.4 oder neuer, Composer 2 und Git sowie dem Exponential-Code des
   Release, das Sie unterrichten (siehe [Die Installation über die Konsole](../../../../installation/07-installation-ueber-die-konsole.md)).
 - Ist das Netzwerk langsam, bereiten Sie die Schulungsinstallationen vorab vor und starten Sie sie im Kurs nur noch.
 - Ein ausgedrucktes Exemplar der [Kurzübersicht zur Übungsumgebung](../../kurzkarte-fuer-die-uebungsumgebung.md).

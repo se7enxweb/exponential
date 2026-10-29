@@ -92,7 +92,7 @@ Adapter ein, wenn Ihr System diese Schnittstellen erwartet.
 
 - [ ] Wird sie gebraucht, oder erledigt das der Kernel oder eine mitgelieferte Erweiterung bereits?
 - [ ] Ihre Lizenz ist mit der GNU GPL, Version 2 oder später, vereinbar.
-- [ ] Sie unterstützt PHP 8.0 (die älteste unterstützte Version), oder sie ist optional und abgesichert.
+- [ ] Sie unterstützt PHP 7.4 (die älteste unterstützte Version), oder sie ist optional und abgesichert, oder sie wird nur für neueres PHP über `se7enxweb/exponential-php-floor` verlangt.
 - [ ] Sie wird gepflegt und auf Packagist veröffentlicht.
 - [ ] Die Bedingung nennt eine veröffentlichte Version.
 - [ ] Ihre Sicherheitshinweise werden verfolgt (`composer audit` empfiehlt die Anleitung zur Härtung).

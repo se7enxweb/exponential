@@ -42,7 +42,7 @@ These statements are sourced and safe in any material:
 
 ```text
 Exponential is free software under the GNU General Public License, version 2 or later: no license fee.
-It runs on PHP 8.0 to 8.5 and on six databases, SQLite 3 by default.
+It runs on PHP 7.4 to 8.5 and on six databases, SQLite 3 by default.
 One installation serves many sites and languages.
 An online store is built in.
 Security reports get a first answer within one business day; fixes come in the next 6.0.x release.

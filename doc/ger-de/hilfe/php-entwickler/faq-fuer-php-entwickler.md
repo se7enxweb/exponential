@@ -24,7 +24,7 @@ den Einzelheiten.
 ## Plattform und Sprache
 
 **Welche PHP-Versionen muss mein Code unterstützen?**
-PHP 8.0 bis 8.5. PHP 8.0 ist die älteste, weil es das Standard-PHP von RHEL 9 ist
+PHP 7.4 bis 8.5. PHP 8.0 ist die älteste, weil es das Standard-PHP von RHEL 9 ist
 ([Unterstützte PHP-Versionen: 8.0 bis 8.5](unterstuetzte-php-versionen.md)).
 
 **Darf ich Enums, readonly-Eigenschaften oder `foo(...)` verwenden?**

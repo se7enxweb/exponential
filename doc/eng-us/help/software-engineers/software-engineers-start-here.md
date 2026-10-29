@@ -34,7 +34,7 @@ sources do not answer a question, the pages say so instead of guessing.
 **Exponential** is a free and open source PHP content management system and application framework, licensed under
 the GNU GPL, version 2 or later. Its README calls it "a professional PHP application framework with advanced CMS
 (content management system) functionality", whose most notable feature is "its fully customizable and extendable
-content model". The kernel (`kernel/`, `lib/`) runs on PHP 8.0 to 8.5, stores content in SQLite 3 (the default),
+content model". The kernel (`kernel/`, `lib/`) runs on PHP 7.4 to 8.5, stores content in SQLite 3 (the default),
 PostgreSQL, MongoDB, MariaDB, Oracle or MySQL, renders through its own template language, and is extended through
 extensions in `extension/`. Since 6.0.15 it ships its own application server, Exponential Velocity, next to Apache or
 nginx with PHP-FPM and FrankenPHP. The code base was developed from 1999, first under the name eZ Publish, a product

@@ -7,7 +7,7 @@ Webservern mit denselben Verben (`start`, `stop`, `graceful`, `restart`, `kill`,
 
 ## Velocity ist seit 6.0.15 Teil von Exponential
 
-Seit 6.0.15 **verlangt** die `composer.json` im Wurzelverzeichnis `se7enxweb/exponential-velocity ~0.0.4.55`; vorher
+Seit 6.0.15 **verlangt** die `composer.json` im Wurzelverzeichnis `se7enxweb/exponential-velocity ~0.0.4.55` (über `se7enxweb/exponential-php-floor`, auf PHP 8.0 und neuer); vorher
 schlug sie das Paket nur vor. Was sich dadurch für eine bestehende Installation ändert:
 
 | | |

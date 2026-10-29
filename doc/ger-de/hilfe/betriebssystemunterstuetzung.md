@@ -3,7 +3,7 @@ title: Unterstützte Betriebssysteme
 audience: admin, developer
 category: install-upgrade
 order: 11
-summary: Exponential 6.0.x läuft auf fast jedem Betriebssystem mit PHP 8.0 oder neuer und einem Webserver. Diese Seite ordnet sie ehrlich in Stufen ein (hier getestet, bekanntermaßen lauffähig, voraussichtlich lauffähig, heute nicht möglich), von Linux, den BSDs, macOS und Windows bis zu IBM i, Haiku und dem Commodore 64, mit den Webservern und PHP-SAPIs, die es ausliefern.
+summary: Exponential 6.0.x läuft auf fast jedem Betriebssystem mit PHP 7.4 oder neuer und einem Webserver. Diese Seite ordnet sie ehrlich in Stufen ein (hier getestet, bekanntermaßen lauffähig, voraussichtlich lauffähig, heute nicht möglich), von Linux, den BSDs, macOS und Windows bis zu IBM i, Haiku und dem Commodore 64, mit den Webservern und PHP-SAPIs, die es ausliefern.
 keywords: Betriebssystem, Plattform, Systemvoraussetzungen, Anforderungen, Container, Prozessorarchitektur, Webserver, operating system, OS, platform, Linux, RHEL, AlmaLinux, Rocky Linux, CentOS Stream, Fedora, Debian, Ubuntu, SUSE, openSUSE, Arch, Alpine, Gentoo, Slackware, NixOS, Amazon Linux, Plesk, cPanel, FreeBSD, OpenBSD, NetBSD, DragonFly, macOS, Windows, IIS, WSL2, illumos, Solaris, OpenIndiana, AIX, HP-UX, IBM i, Docker, Podman, Kubernetes, ARM, Raspberry Pi, Graviton, RISC-V, Android, Termux, Haiku, Apache, nginx, Caddy, LiteSpeed, Velocity, FrankenPHP, PHP-FPM, SAPI, requirements
 featured: true
 context: setup/info
@@ -13,7 +13,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren, die einen Rechner für Exponential auswählen, und an Entwickler, die wissen
 möchten, ob ihr eigener Computer es ausführen kann. Die kurze Antwort: **Exponential 6.0.x läuft auf fast jedem
-Betriebssystem, das PHP 8.0 oder neuer und einen Webserver hat.** Es besteht aus einfachen PHP-Dateien und einer
+Betriebssystem, das PHP 7.4 oder neuer und einen Webserver hat.** Es besteht aus einfachen PHP-Dateien und einer
 Datenbank; es hat keinen eigenen kompilierten Code, keine eigene Architektur und hängt von keiner bestimmten
 C-Bibliothek ab.
 
@@ -45,7 +45,7 @@ das dabei.
 
 | Bedarf | Minimum | Warum |
 |---|---|---|
-| PHP | **8.0** (`composer.json`: `"php": "^8.0 || ^8.1 || ... || ^8.8"`; der Einrichtungsassistent: `[phpversion] MinimumVersion=8.0.0`) | der Kernel; 8.0 ist das Standard-PHP von RHEL 9 und seinen Nachbauten |
+| PHP | **8.0** (`composer.json`: `"php": "^8.0 || ^8.1 || ... || ^8.8"`; der Einrichtungsassistent: `[phpversion] MinimumVersion=7.4.0`) | der Kernel; 8.0 ist das Standard-PHP von RHEL 9 und seinen Nachbauten |
 | PHP für Velocity | **8.0**, mit `sockets` (`pcntl` und `openssl` empfohlen); 8.1 vor Velocity 0.0.4.54 | Velocity, der empfohlene Webserver, ist ein PHP-Programm |
 | PHP-Erweiterungen | `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`, `pcre`, `json`, `session`, `zlib`, eine Datenbankerweiterung, `gd` oder ImageMagick | die kritischen Tests des Einrichtungsassistenten und `composer.json` |
 | Eine Datenbank | SQLite 3 braucht nur die Erweiterung `sqlite3`; die anderen brauchen ihren Server irgendwo im Netzwerk | siehe [Unterstützte Datenbanken](datenbankunterstuetzung.md) |

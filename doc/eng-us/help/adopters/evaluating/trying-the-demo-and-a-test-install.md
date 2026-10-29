@@ -27,7 +27,7 @@ The help names a live demonstration installation as a source of its facts
 
 A test installation shows the software on your own machine, with your own content:
 
-1. Install PHP 8.0 or later and Composer.
+1. Install PHP 7.4 or later and Composer.
 2. Follow [Install in one command](../../../features/6.0/install-in-one-command.md); SQLite is the default and needs no
    database server.
 3. Serve it with Velocity or PHP's built-in server ([Serving the site](../../../install/08-serving-the-site.md)).

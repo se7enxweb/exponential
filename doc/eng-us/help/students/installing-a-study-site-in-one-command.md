@@ -29,7 +29,7 @@ to the getting-started guide.
 php -v
 ```
 
-Expected: a line beginning `PHP 8.`. Exponential 6.0 runs on PHP 8.0 to 8.5
+Expected: a line beginning `PHP 8.`. Exponential 6.0 runs on PHP 7.4 to 8.5
 ([Requirements](../../INSTALL.md#2-requirements)). Set `memory_limit` (at least `64M`) and `date.timezone` in
 `php.ini` before you go on.
 

@@ -1042,7 +1042,7 @@ exactly how far back each fix would be portable if the minimum were ever lowered
 **Most modern construct across the entire patch set: PHP 7.1** (`?array` nullable
 type hint in `ezorder.php`; short array destructuring in `eztimetype.php`).
 
-Since the project already requires PHP 8.1, which is four major versions above PHP 7.1,
+Since the project requires PHP 7.4 or later (8.1 when this was written; 7.4 again from 6.0.15), which is above PHP 7.1,
 there is **zero impact on the declared minimum** and **zero impact on any supported
 installation**.
 

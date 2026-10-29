@@ -75,7 +75,7 @@ Momentaufnahme ihrer Entstehungszeit. Mehrere ihrer Punkte sind heute im Reposit
 
 | Punkt der Roadmap | Was das Repository zeigt |
 |---|---|
-| Unterstützung für PHP 8.4 und 8.5 | Exponential 6.0.15 läuft unter PHP 8.0 bis 8.5 ([Anforderungen](../../installation/02-voraussetzungen.md)) |
+| Unterstützung für PHP 8.4 und 8.5 | Exponential 6.0.15 läuft unter PHP 7.4 bis 8.5 ([Anforderungen](../../installation/02-voraussetzungen.md)) |
 | PHP 8.6 | `composer.json` erlaubt bereits PHP bis 8.8, und die README nennt 8.6 als Ziel; die Schätzung der Roadmap war 2026/Q3 |
 | Dokumentation zusammengeführt | Die Dokumentation liegt jetzt in `doc/` des Repositorys, und diese Hilfe zeigt sie in der Administration ([Hilfesystem](../../funktionen/6.0/hilfesystem.md)), unter der GNU FDL |
 | Composer-basierte Paketverwaltung in der Administration | **Setup > Aktualisierungen und Pakete** aus der Erweiterung `ezupdate` findet, prüft und installiert Composer-Pakete von Paketservern ([Mit Git aktualisieren: Aktualisierungen und Pakete](../mit-git-aktualisieren.md#b4-die-erweiterungen-mit-aktualisierungen-und-pakete-aktualisieren)) |

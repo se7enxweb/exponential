@@ -139,7 +139,7 @@ Seiten zur Führung sind für Exponential 6 geschrieben, den Kernel, zu dem dies
 
 | Schicht | Fakten | Lesen |
 |---|---|---|
-| PHP | 8.0 bis 8.5, auch für Velocity (ab seinem Release 0.0.4.54); 7.4 nur bis 6.0.7 | [Die Support-Zusage](../wer-ist-die-exponential-foundation.md#php-versionen) |
+| PHP | 8.0 bis 8.5, auch für Velocity (ab seinem Release 0.0.4.54); 7.4 wieder ab 6.0.15 | [Die Support-Zusage](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | Datenbank | In der Reihenfolge der Empfehlung: SQLite 3 (der Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
 | Betriebssystem | „fast jedes, auf dem PHP 8.0 oder höher läuft“, eingeteilt in vier Stufen | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
 | Webserver | Exponential Velocity (empfohlen), FrankenPHP (produktionsreife Alternative), Apache oder nginx mit PHP-FPM und weitere | [Kapitel 8: Die Site ausliefern](../../installation/08-die-website-ausliefern.md) |
@@ -201,7 +201,7 @@ Nutzen Sie diese als Ausgangspunkt. Jeder Satz ist nur aus den oben genannten Qu
 
 > Exponential ist ein Open-Source-Content-Management-System in PHP mit einem Inhaltsmodell, das Sie selbst festlegen,
 > mit Versionen, Freigabe-Workflows, Multisite, vielen Sprachen und einem eingebauten Shop. Es steht unter der GPL v2
-> oder höher, wird mit Composer oder als Git-Klone installiert und läuft auf PHP 8.0 bis 8.5 mit sechs unterstützten
+> oder höher, wird mit Composer oder als Git-Klone installiert und läuft auf PHP 7.4 bis 8.5 mit sechs unterstützten
 > Datenbanken, allen voran SQLite. Das Unternehmen 7x leitet seine Entwicklung, und die gemeinnützige Exponential
 > Foundation betreibt das Projekt.
 

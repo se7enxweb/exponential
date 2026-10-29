@@ -356,7 +356,7 @@ zu sehen oder zu ändern, oder allein das Lesen des Verlaufs.
 
 ## Voraussetzungen und die Serverprüfung
 
-Erforderlich sind PHP 8.1 oder neuer mit `mbstring`, `ctype` und `json` sowie
+Erforderlich sind PHP 8.0 oder neuer (unter PHP 7.4 installiert Composer das Release 2.5.18) mit `mbstring`, `ctype` und `json` sowie
 beschreibbare Ordner `var` und Cache. Einzelne Funktionen brauchen mehr: `dom` und
 `xmlreader` zum Importieren von XML, `zip` für ZIP-Downloads und -Archive, `dom`,
 `zlib`, `proc_open()`, `tar` und `gzip` sowie einen beschreibbaren Speicherordner für

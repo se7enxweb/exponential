@@ -11,7 +11,7 @@ womöglich trotzdem anpassen, meist Klassen, die `eZPersistentObject` oder `eZDa
 | | |
 |---|---|
 | Was sich geändert hat | PHP-8-Syntax und -Prüfungen im ganzen Kernel; seit 6.0.8 verlangt Composer PHP 8.1 oder neuer. Seit 6.0.15 läuft der Code wieder unter PHP 8.0, der ältesten unterstützten Version ([Unterstützung für PHP 8.0](php-8.0-unterstuetzung.md)). |
-| Wer betroffen ist | Websites, die noch unter PHP 7.4 laufen (müssen bei 6.0.7 bleiben); Autoren von Erweiterungen mit dynamischen Eigenschaften, ungeprüftem `count()` oder `null`, das an String-Funktionen übergeben wird. |
+| Wer betroffen ist | Websites, die noch unter PHP 7.4 laufen (6.0.8 bis 6.0.14 brauchen PHP 8.1; 6.0.15 läuft wieder unter 7.4); Autoren von Erweiterungen mit dynamischen Eigenschaften, ungeprüftem `count()` oder `null`, das an String-Funktionen übergeben wird. |
 | Wie Sie es prüfen | Schalten Sie auf einer Entwicklungskopie die Debug-Ausgabe ein und suchen Sie nach Hinweisen „Deprecated“ aus den Dateien Ihrer Erweiterung. |
 | Wie Sie es beheben | Folgen Sie „Was das für Ihren eigenen Code bedeutet“ unten. |
 
@@ -32,6 +32,7 @@ womöglich dieselbe Behandlung brauchen.
 | 6.0.11 (Dez. 2025) | 8.5 | Nullable-Typen, wo PHP 8.5 sie verlangt; Zeta Components auf Releases angehoben, die PHP 8.5 unterstützen; die README nennt die Unterstützung für PHP 8.5. |
 | 6.0.13 (Feb. 2026) | 8.4 | Deprecations des Datentyps Zeit und von `eZOrder::fetchList()` behoben, siehe [die Spezifikation zur Härtung](../../spezifikationen/6.0/sicherheitshaertung-6.0.13.md). |
 | 6.0.15 (Okt. 2026) | 8.0 | PHP 8.0 ist die älteste unterstützte Version (RHEL 9): `array_is_list()` wird definiert, wenn es fehlt (`lib/phpcompat.php`), `fputcsv()` unter 8.0 ohne `$eol`, die Funktionen zum HTML-Escaping erhalten die Standard-Flags von PHP 8.1 ausdrücklich, sodass `wash` auch unter 8.0 einfache Anführungszeichen escapt, eine Syntaxprüfung und ein Boot-Test für PHP 8.0 in der CI. Siehe [Unterstützung für PHP 8.0](php-8.0-unterstuetzung.md). |
+| 6.0.15 (Okt. 2026) | 7.4 | PHP 7.4 wird wieder unterstützt, als Brücke: Der Kernel wird darauf geparst und läuft, Composer wählt die Pakete pro PHP-Version über `se7enxweb/exponential-php-floor`, CI-Job `php74` ([Warum Exponential PHP 7.4 unterstützt](../../hilfe/warum-exponential-php-7-4-unterstuetzt.md)) |
 | 6.0.13 (Apr. 2026) | 8.x | Der Session-Handler: `read()` gibt für eine unbekannte Sitzung eine leere Zeichenkette zurück, `gc()` verwendet `time()` und eine Startzeit, und die globale Variable des aktuellen Siteaccess wird vor der Verwendung geprüft. |
 
 ## So prüfen Sie Ihre Installation
@@ -56,7 +57,7 @@ zeigt die PHP-Versionen, die das aktuelle Release akzeptiert.
 - **Heben Sie Ihre PHP-Anforderung an.** Setzen Sie die PHP-Anforderung Ihrer eigenen `composer.json` auf `^8.0` oder
   neuer, die älteste Version, die das Produkt seit 6.0.15 wieder unterstützt (6.0.8 bis 6.0.14 verlangten `^8.1`).
   Exponential Velocity läuft ab seinem Release 0.0.4.54 ebenfalls unter 8.0. Websites, die noch unter PHP 7.4
-  laufen, müssen bei 6.0.7 bleiben.
+  laufen, können 6.0.15 wieder verwenden; 6.0.8 bis 6.0.14 brauchen PHP 8.1.
 
 Das PHP-Handbuch führt jede inkompatible Änderung pro Version auf:
 

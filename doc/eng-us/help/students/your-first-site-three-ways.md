@@ -27,7 +27,7 @@ can pick the right one in five minutes. All of them are documented in
 | Way | Needs | Good for | Limits | Page |
 |---|---|---|---|---|
 | **The public demo** | A browser | A first look at the site and the administration | Shared with everyone, reset regularly, administrator passwords cannot be changed; no terminal | [Trying the public demo](trying-the-public-demo.md) |
-| **One command** (`exp:install`) | PHP 8.0 or newer, Composer | Every learning path; fast to rebuild | Runs on your computer, so you set it up yourself | [Installing a study site in one command](installing-a-study-site-in-one-command.md) |
+| **One command** (`exp:install`) | PHP 7.4 or newer, Composer | Every learning path; fast to rebuild | Runs on your computer, so you set it up yourself | [Installing a study site in one command](installing-a-study-site-in-one-command.md) |
 | **The setup wizard** | PHP, Composer, a browser | Learners who prefer clicking to commands | Slower to repeat than one command | [Installing with the setup wizard](installing-with-the-setup-wizard.md) |
 | **Git clones** | The above, plus Git | The developer path, and contributing | A larger download (the kernel has its full history) | [Installing from Git clones for study](installing-from-git-clones-for-study.md) |
 

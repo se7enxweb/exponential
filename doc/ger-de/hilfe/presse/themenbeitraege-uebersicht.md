@@ -82,7 +82,7 @@ Entwicklungsversion“ ([Über 6.0.15 berichten, solange es in Entwicklung ist](
 | [Thema: SQLite als Standard](thema-sqlite-als-standard.md) | Ein CMS, das keinen Datenbankserver braucht |
 | [Thema: MongoDB als Datenbank](thema-mongodb-als-datenbank.md) | Eine Dokumentendatenbank unter einem Inhaltsmodell |
 | [Thema: Betriebssysteme](thema-betriebssysteme.md) | Linux, BSD, macOS und Windows in Stufen |
-| [Thema: aktuelles PHP](thema-aktuelles-php.md) | Alte Codebasis, PHP 8.0 bis 8.5 |
+| [Thema: aktuelles PHP](thema-aktuelles-php.md) | Alte Codebasis, PHP 7.4 bis 8.5 |
 | [Thema: Installation mit einem Befehl](thema-installation-mit-einem-befehl.md) | Aus dem Nichts zu einer Website mit einem Befehl |
 | [Thema: Git zuerst](thema-git-zuerst.md) | Installieren und aktualisieren mit Git |
 

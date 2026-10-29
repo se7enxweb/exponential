@@ -25,7 +25,7 @@ Standard: `8.0.0`.
 <?php /* #?ini charset="utf-8"?
 # settings/override/setup.ini.append.php
 [phpversion]
-MinimumVersion=8.0.0
+MinimumVersion=7.4.0
 */ ?>
 ```
 

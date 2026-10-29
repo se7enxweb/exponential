@@ -26,7 +26,7 @@ ist dieselbe Arbeit, auf ein Wochenende verteilt.
 
 ## Vor dem Samstag
 
-- [ ] Ein Computer mit PHP 8.0 oder neuer und Composer, oder Zugang zu einem Hoster mit dem Einrichtungsassistenten
+- [ ] Ein Computer mit PHP 7.4 oder neuer und Composer, oder Zugang zu einem Hoster mit dem Einrichtungsassistenten
   ([Anforderungen auf einen Blick](../../hosting/grundlagen/anforderungen-auf-einen-blick.md)).
 - [ ] Ihre Seitenliste und Texte in einem Dokument, auch als grobe Entwürfe.
 - [ ] Fünf bis zehn Bilder, bereits ausgewählt.

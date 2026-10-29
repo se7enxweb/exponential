@@ -84,7 +84,7 @@ the software (development, support, hosting); its prices are on its own website.
 
 ## Where it runs
 
-PHP 8.0 to 8.5; six databases (SQLite 3 is the default, then PostgreSQL, MongoDB, MariaDB, Oracle and MySQL); Linux,
+PHP 7.4 to 8.5; six databases (SQLite 3 is the default, then PostgreSQL, MongoDB, MariaDB, Oracle and MySQL); Linux,
 BSD, macOS and Windows in documented tiers; Apache, Nginx and other web servers, or the bundled Velocity
 ([Database support](../database-support.md), [Operating system support](../os-support.md),
 [PHP versions](../who-is-the-exponential-foundation.md#php-versions)).

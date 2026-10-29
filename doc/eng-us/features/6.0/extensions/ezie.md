@@ -10,7 +10,7 @@ that made tools fail, and closed two security holes. If you tried the editor bef
 
 ## Requirements
 
-Exponential 6, PHP 8.1 or later, GD2 or ImageMagick, and an Exponential edit form (admin, or a design that loads the
+Exponential 6, PHP 7.4 or later, GD2 or ImageMagick, and an Exponential edit form (admin, or a design that loads the
 edit form scripts). It uses jQuery, jQuery UI, the Jcrop and colorpicker plugins and the Zeta Components image
 conversion.
 

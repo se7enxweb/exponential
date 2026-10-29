@@ -24,7 +24,7 @@ ls index.php autoload.php kickstart.ini-dist
 
 You need:
 
-- **PHP 8.1 or later** on your `$PATH`.
+- **PHP 7.4 or later** on your `$PATH`.
 - A database server already running and reachable (MySQL, PostgreSQL, SQLite 3, or MongoDB).
 - The `var/cache/ini/` directory must be writable because `kickstart.ini` is cached there.
 

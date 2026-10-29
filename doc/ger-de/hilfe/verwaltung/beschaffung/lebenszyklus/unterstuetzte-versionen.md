@@ -57,7 +57,7 @@ solche Websites auf 6.0: [14. Migration von der Linie 4.x](../../../../installat
 jener Zeit liefen auf der Codebasis von eZ Publish, die ihr Hersteller nach fast achtzehn Jahren eingestellt hat;
 Exponential führt diese Codebasis fort ([Wer ist 7x?](../../../wer-ist-7x.md)).
 
-Eine Website, die auf PHP 7.4 bleiben muss, kann höchstens 6.0.7 betreiben, das nicht mehr die gepflegte Linie ist
+Eine Website, die auf PHP 7.4 bleiben muss, kann ab 6.0.15 wieder die gepflegte Linie betreiben, ohne die Funktionen, die PHP 8 brauchen
 ([2. Anforderungen](../../../../installation/02-voraussetzungen.md#versionen)).
 
 ## Erweiterungen

@@ -21,7 +21,7 @@ four tiers and says plainly which are tested and which are only expected to work
 
 ## The story in one paragraph
 
-Exponential runs on "almost any [operating system] that runs PHP 8.0 or later", and its documentation sorts them into
+Exponential runs on "almost any [operating system] that runs PHP 7.4 or later", and its documentation sorts them into
 four tiers: **tested here** (the project runs it every day or its CI tests on it), **known to work**, **expected to
 work** ("a reasoned expectation, not a test result") and **not possible today** ([Operating system support](../os-support.md)).
 Tier 1 is the project's own development server on AlmaLinux 9 and the CI on Ubuntu; tier 2 includes the Red Hat family,

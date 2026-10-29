@@ -31,7 +31,7 @@ vorbereiten, durchführen und auswerten, mit Material, das korrekt, barrierefrei
 | Format | Präsenz oder online; praxisnah |
 | Niveau | Einsteiger bis Fortgeschrittene |
 | Voraussetzungen | Sicherer Umgang mit Browser und Terminal; Erfahrung mit Exponential hilft, ist aber nicht nötig |
-| Übungsumgebung | Eine Schulungsinstallation pro Teilnehmer (Modul 2 baut sie auf); PHP 8.1 oder neuer, Composer 2 und Git |
+| Übungsumgebung | Eine Schulungsinstallation pro Teilnehmer (Modul 2 baut sie auf); PHP 7.4 oder neuer, Composer 2 und Git |
 
 ## Module
 

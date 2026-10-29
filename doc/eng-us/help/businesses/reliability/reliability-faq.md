@@ -39,7 +39,7 @@ The repository's history goes back to 2 September 2002; the code started as eZ P
 No. "A published tag is never changed" ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)). A fix comes as the next version.
 
 **Which PHP versions are supported?**
-PHP 8.0 is the oldest supported version, 8.1 to 8.5 are supported, and Velocity runs on 8.0 or later (from its release 0.0.4.54)
+PHP 7.4 is the oldest supported version (from 6.0.15), 8.0 to 8.5 are supported, and Velocity runs on 8.0 or later (from its release 0.0.4.54)
 ([README, "What version of PHP is required"](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required)).
 
 **Is there an official end-of-life date or support contract?**

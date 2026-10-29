@@ -3,7 +3,7 @@ title: "Thema: aktuelles PHP"
 audience: press
 category: press-media
 order: 72
-summary: Ein Themenbeitrag darüber, wie eine alte PHP-Codebasis auf aktuellem PHP gehalten wird - PHP 8.0 bis 8.5 unterstützt, Websites mit PHP 7.4 auf 6.0.7, die CI-Matrix, die Ziele über PHP 9 hinaus und die unterwegs gepatchten Forks von Bibliotheken - mit Daten, Quellen und den Aussagen, die Sie vermeiden sollten.
+summary: Ein Themenbeitrag darüber, wie eine alte PHP-Codebasis auf aktuellem PHP gehalten wird - PHP 8.0 bis 8.5 unterstützt, PHP 7.4 ab 6.0.15 wieder unterstützt, die CI-Matrix, die Ziele über PHP 9 hinaus und die unterwegs gepatchten Forks von Bibliotheken - mit Daten, Quellen und den Aussagen, die Sie vermeiden sollten.
 keywords: Thema, PHP, PHP 8, PHP 8.4, PHP 8.5, PHP 7.4, Kompatibilität, Modernisierung, CI, Zeta Components, Upgrades, technische Schulden, story, compatibility, modernization, upgrades, technical debt
 type: help
 ---
@@ -22,8 +22,8 @@ eine Geschichte über beständige, sichtbare Pflege.
 
 ## Das Thema in einem Absatz
 
-Exponential 6 unterstützt PHP 8.0 bis 8.5; PHP 8.0 wird beibehalten, damit das mitgelieferte PHP von Red Hat Enterprise
-Linux 9 es ausführen kann, und Websites mit PHP 7.4 können auf 6.0.7 bleiben. „Current releases are primarily aimed at
+Exponential 6 unterstützt PHP 7.4 bis 8.5; PHP 8.0 wird beibehalten, damit das mitgelieferte PHP von Red Hat Enterprise
+Linux 9 es ausführen kann, und PHP 7.4 wird ab 6.0.15 wieder für Websites unterstützt, die noch nicht umziehen können. „Current releases are primarily aimed at
 easing the requirements to support current versions of the PHP language like PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond
 php9“ (README) – aktuelle Releases sollen vor allem die Unterstützung aktueller PHP-Versionen bis über PHP 9 hinaus
 erleichtern. Die kontinuierliche Integration führt die Testsuite auf PHP 8.1 bis 8.5 aus und prüft bei jedem Push und

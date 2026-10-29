@@ -79,7 +79,7 @@ verfolgen, ändern und von dem aus Sie Beiträge zurückgeben können.
 
 | | |
 |---|---|
-| Version | **PHP 8.0 bis 8.5**. `composer.json` deklariert `^8.0` (und akzeptiert spätere 8.x-Versionen). PHP 8.0 ist die älteste unterstützte Version, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 (und AlmaLinux 9, Rocky Linux 9) Exponential unter Apache, PHP-FPM oder Velocity ausführt. Verwenden Sie das neueste PHP, das Ihr System anbietet. Siehe [Unterstützung für PHP 8.0](bc/6.0/php-8.0-unterstuetzung.md). |
+| Version | **PHP 8.0 bis 8.5**. `composer.json` deklariert `^8.0` (und akzeptiert spätere 8.x-Versionen). PHP 7.4 ist ab 6.0.15 die älteste unterstützte Version, und PHP 8.0 gehört dazu, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 (und AlmaLinux 9, Rocky Linux 9) Exponential unter Apache, PHP-FPM oder Velocity ausführt. Verwenden Sie das neueste PHP, das Ihr System anbietet. Siehe [Unterstützung für PHP 8.0](bc/6.0/php-8.0-unterstuetzung.md). |
 | Exponential Velocity | läuft ab seinem Release 0.0.4.54 auf **PHP 8.0 bis 8.5** (bis dahin brauchte es 8.1), mit der Extension `sockets` (`pcntl` und `openssl` für den Worker-Pool und HTTPS). Unter RHEL 9 führt das mitgelieferte PHP 8.0 es aus; siehe [Unterstützung für PHP 8.0](bc/6.0/php-8.0-unterstuetzung.md#exponential-velocity-unter-php-80). |
 | Release-Tags | `v6.0.8` bis `v6.0.14` erfordern PHP 8.1; unter PHP 8.0 installieren Sie die Linie 6.0.15 (`dev-main`, die Composer auch als `6.0.x-dev` kennt), bis deren Tag veröffentlicht ist. |
 | 64-Bit-PHP | nötig für mehr als 30 Sprachen (`composer.json`, `suggest`). |
@@ -124,7 +124,7 @@ Serverversionen, die der Assistent prüft, stehen in `kernel/setup/ezsetupcommon
 SQLite 3.0.1, MongoDB 4.0, Oracle 19); die praktischen Mindestversionen, die die aktuellen Treiber brauchen, liegen
 höher (SQLite 3.33, PostgreSQL 13, MongoDB 6.0), siehe
 [Datenbankunterstützung](hilfe/datenbankunterstuetzung.md#versionen-am-code-überprüft). Exponential läuft auf fast jedem
-Betriebssystem mit PHP 8.0 oder neuer: siehe [Unterstützung von Betriebssystemen](hilfe/betriebssystemunterstuetzung.md).
+Betriebssystem mit PHP 7.4 oder neuer: siehe [Unterstützung von Betriebssystemen](hilfe/betriebssystemunterstuetzung.md).
 
 ### Webserver
 

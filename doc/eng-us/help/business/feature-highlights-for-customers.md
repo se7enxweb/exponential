@@ -76,7 +76,7 @@ customer asks for more than a page says, the honest answer is "the documentation
 | An online shop | The built-in shop with a dashboard and order statuses | **Store** tab | [Store dashboard](../../features/6.0/store-dashboard.md) |
 | Content for apps and other systems | REST API v1 and v2 | (show a request in a terminal) | [REST API v1 and v2](../../guides/rest-api-v1-and-v2.md) |
 | Their preferred database | SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | **Setup > System information**, Database card | [Database support](../database-support.md) |
-| Their preferred hosting | Almost any operating system with PHP 8.0 or later; many web servers | (a document) | [Operating system support](../os-support.md) |
+| Their preferred hosting | Almost any operating system with PHP 7.4 or later; many web servers | (a document) | [Operating system support](../os-support.md) |
 | Fewer surprises in operations | Log viewer, error references, content checks, upgrade check | **Setup > Log files**, **Setup > Upgrade check** | [Log viewer](../../features/6.0/log-viewer.md), [Content checks](../../features/6.0/content-checks.md), [Upgrade check](../../guides/upgrade-check.md) |
 | Big changes that do not time out | Content jobs in the background | Remove or move a large subtree | [Content jobs](../../features/6.0/content-jobs.md) |
 
@@ -270,7 +270,7 @@ third-party integrations. Treat each integration as a scoping question
 
 **What to say.** Six databases are supported, "in order of preference: 1. SQLite 3 (the default) · 2. PostgreSQL ·
 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL" ([Database support](../database-support.md)). The operating system can
-be "almost any that runs PHP 8.0 or later", sorted into four honest tiers ([Operating system support](../os-support.md)).
+be "almost any that runs PHP 7.4 or later", sorted into four honest tiers ([Operating system support](../os-support.md)).
 A site can move to another database with documented tools
 ([Moving a site to another database](../database-support.md#moving-a-site-to-another-database)).
 

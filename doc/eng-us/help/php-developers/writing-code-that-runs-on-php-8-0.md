@@ -3,14 +3,14 @@ title: Writing code that runs on PHP 8.0
 audience: php-developer, developer
 category: php-development
 order: 60
-summary: The rules for PHP code that must run on PHP 8.0, the oldest supported version - the syntax you may not use, how lib/phpcompat.php and function_exists() guards work, arguments added in later versions, the HTML escaping flags, and how to check your code with PHP 8.0 and PHPCompatibility.
+summary: The rules for PHP code that must run on PHP 8.0, the stock PHP of RHEL 9 (and on 7.4 for the kernel) - the syntax you may not use, how lib/phpcompat.php and function_exists() guards work, arguments added in later versions, the HTML escaping flags, and how to check your code with PHP 8.0 and PHPCompatibility.
 keywords: PHP 8.0, compatibility, phpcompat.php, function_exists, PHP_VERSION_ID, array_is_list, fputcsv, fsync, enums, readonly, never, first-class callable, htmlspecialchars flags, PHPCompatibility, testVersion, lint80
 type: help
 ---
 # Writing code that runs on PHP 8.0
 
 This page is for PHP developers who write kernel code or extensions that ship with Exponential. Every such file must
-run on PHP 8.0, the oldest supported version, and on 8.5, the newest. The rules are short, and the tools check them,
+run on PHP 8.0, the stock PHP of RHEL 9, and on 8.5, the newest; the kernel itself also runs on PHP 7.4 from 6.0.15 ([Supported PHP versions](supported-php-versions.md#why-php-74-is-the-oldest)). The rules are short, and the tools check them,
 but CI runs PHPUnit only on 8.1 and later: on 8.0 your code is checked by syntax and boot only, so get it right as you
 write it.
 

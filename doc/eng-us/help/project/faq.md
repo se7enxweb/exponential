@@ -71,7 +71,7 @@ usual integration work. See [Velocity is part of Exponential 6.0.15](../velocity
 ### Does Exponential include a web server?
 
 Yes, as of 6.0.15. The Velocity Internet / Web Application Server is part of Exponential: the root `composer.json`
-requires `se7enxweb/exponential-velocity ~0.0.4.55`, so every installation has it, on PHP 8.0 and later. The project
+requires `se7enxweb/exponential-velocity ~0.0.4.55` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later), so every installation has it, on PHP 8.0 and later. The project
 calls this a turning point, a cornerstone and a capstone: a new level of application system integration that puts
 even greater features in the core product, out of the box, by default. Velocity is the recommended engine for every
 stage and FrankenPHP is a production-ready alternative; Apache and nginx with PHP-FPM keep working as before. The
@@ -162,9 +162,18 @@ To follow releases, or every change as it is made, see [Update with Git](../upda
 
 ### Which PHP versions does it support?
 
-Exponential 6.0.15 runs on PHP 8.0 to 8.5, and so does the Velocity application server from its release 0.0.4.54
+Exponential 6.0.15 runs on PHP 7.4 to 8.5, and the Velocity application server on 8.0 to 8.5 from its release 0.0.4.54
 ([Requirements](../../install/02-requirements.md)). The website's community page says "PHP 8.1 through PHP 8.5" for
-the 6.0.14 release; the repository's requirements, which also cover PHP 8.0, are the reference.
+the 6.0.14 release; the repository's requirements, which also cover PHP 7.4 and 8.0, are the reference.
+
+### Can I run Exponential on PHP 7.4?
+
+Yes, from 6.0.15, for sites that cannot change the PHP of their server yet. The kernel and the bundled extensions run
+on PHP 7.4; Velocity, Netgen Layouts, two-factor authentication and a few other extensions need PHP 8 and are not
+installed there. Composer picks the right packages by itself through the metapackage
+`se7enxweb/exponential-php-floor`. PHP 7.4 gets no security fixes from the PHP project any more, so run it only
+where your operating system vendor or host still patches it, and plan the move to PHP 8. The whole story, with a
+table per feature: [Why Exponential supports PHP 7.4](../why-exponential-supports-php-7-4.md).
 
 ### How do I host my first site?
 
@@ -173,7 +182,7 @@ The website's article
 recommends hosting providers that offer Exponential already installed, so you can start with content instead of
 server setup. Its requirements are those of an older release and not the reference: it names 6.0.10 as the current
 version, asks for PHP 8.3 or higher and for a LAMP stack with MySQL 5.7 or MariaDB 10.2. The repository says
-otherwise: 6.0.10 to 6.0.14 require PHP 8.1 or later in their `composer.json`, the 6.0.15 line runs on PHP 8.0 to 8.5,
+otherwise: 6.0.10 to 6.0.14 require PHP 8.1 or later in their `composer.json`, the 6.0.15 line runs on PHP 7.4 to 8.5,
 and no database server is needed, because SQLite 3 is the default; PostgreSQL, MongoDB, MariaDB, Oracle and MySQL are
 the alternatives ([Requirements](../../install/02-requirements.md)). Apache, nginx with PHP-FPM, LiteSpeed and the
 Velocity application server all serve it. If you install it yourself, the [installation book](../../install/README.md) covers every step, and

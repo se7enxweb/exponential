@@ -86,7 +86,7 @@ No source counts installations, users or customers ([What the sources do not say
 No customer list is published. Name an organization as a user only with its consent ([Privacy in your coverage](privacy-in-coverage.md)).
 
 **Where does it run?**
-PHP 8.0 to 8.5; SQLite, PostgreSQL, MongoDB, MariaDB, Oracle or MySQL; Linux, BSD, macOS and Windows in documented tiers
+PHP 7.4 to 8.5; SQLite, PostgreSQL, MongoDB, MariaDB, Oracle or MySQL; Linux, BSD, macOS and Windows in documented tiers
 ([Fact sheet for journalists](fact-sheet-for-journalists.md)).
 
 ## Security

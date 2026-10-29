@@ -23,7 +23,7 @@ This page is for PHP developers who want a quick answer. Each answer links to th
 ## Platform and language
 
 **Which PHP versions must my code support?**
-PHP 8.0 to 8.5. PHP 8.0 is the oldest because it is the stock PHP of RHEL 9
+PHP 7.4 to 8.5. PHP 8.0 is the oldest because it is the stock PHP of RHEL 9
 ([Supported PHP versions: 8.0 to 8.5](supported-php-versions.md)).
 
 **Can I use enums, readonly properties or `foo(...)`?**

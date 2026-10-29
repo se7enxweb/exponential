@@ -27,7 +27,7 @@ today". Build images on a tier 1 or tier 2 system ([The four tiers](../os-suppor
 Hat Enterprise Linux and its rebuilds, for Debian and Ubuntu, and for Plesk are in
 [2.9 Operating system notes](../../install/02-requirements.md#29-operating-system-notes).
 
-PHP: Exponential 6.0.15 runs on PHP 8.0 to 8.5; "Velocity, the recommended web server, needs PHP 8.1"
+PHP: Exponential 6.0.15 runs on PHP 7.4 to 8.5 (Velocity 8.0 to 8.5); "Velocity, the recommended web server, needs PHP 8.1"
 ([Database support](../database-support.md#versions-checked-against-the-code)). The required PHP extensions are in
 [2.3](../../install/02-requirements.md#23-php-extensions).
 

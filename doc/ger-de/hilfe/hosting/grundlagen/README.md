@@ -41,7 +41,7 @@ Zurück zum Anfang der Hilfe zum Hosting: [Hosting-Anbieter: hier beginnen](../h
 |---|---|
 | [Was das Hosting von Exponential umfasst](was-das-hosting-von-exponential-umfasst.md) | Die Teile, die ein Hoster bereitstellt (PHP, Datenbank, Webserver oder Velocity, Cron, E-Mail, Speicher, Backups), und wer meist was übernimmt |
 | [Anforderungen auf einen Blick](anforderungen-auf-einen-blick.md) | Eine Tabelle mit allem, was ein Server braucht, mit Minimum, Empfehlung und dem, was es prüft |
-| [PHP-Versionen und Erweiterungen](php-versionen-und-erweiterungen.md) | PHP 8.0 bis 8.5, die benötigten und empfohlenen Erweiterungen und die Paketnamen je Systemfamilie |
+| [PHP-Versionen und Erweiterungen](php-versionen-und-erweiterungen.md) | PHP 7.4 bis 8.5, die benötigten und empfohlenen Erweiterungen und die Paketnamen je Systemfamilie |
 | [PHP-Einstellungen für Exponential](php-einstellungen-fuer-exponential.md) | `php.ini`-Werte, die der Installer prüft, die Werte für einen Pool, OPcache und die Funktionen, die Sie nicht deaktivieren dürfen |
 | [Datenbanken in der offiziellen Reihenfolge](datenbanken-in-der-offiziellen-reihenfolge.md) | Die sechs unterstützten Datenbanken, in Reihenfolge, nebeneinander, und wie Sie wählen, was Sie anbieten |
 | [SQLite für Hoster](sqlite-fuer-hoster.md) | Die Standarddatenbank: eine Datei, ihre Berechtigungen, Backups und Grenzen |

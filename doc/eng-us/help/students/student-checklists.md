@@ -25,7 +25,7 @@ Copy the list you need into your notes and tick it off.
 
 - [ ] I chose a learning path ([Choosing a learning path](choosing-a-learning-path.md)).
 - [ ] I started a study journal ([Keeping a study journal](keeping-a-study-journal.md)).
-- [ ] I have PHP 8.0 or newer and Composer, or I start with the public demo
+- [ ] I have PHP 7.4 or newer and Composer, or I start with the public demo
       ([Your first site: three ways](your-first-site-three-ways.md)).
 - [ ] I have a password manager for the passwords the installer prints.
 

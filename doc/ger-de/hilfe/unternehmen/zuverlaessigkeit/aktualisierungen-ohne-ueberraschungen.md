@@ -48,7 +48,7 @@ Aus [Release- und Upgrade-Planung, entscheiden, wann aktualisiert wird](../../fu
 |---|---|
 | Für Ihre Linie gibt es ein Sicherheits-Release | Aktualisieren Sie im nächstmöglichen Wartungsfenster |
 | Sie betreiben 6.0.x und liegen ein bis zwei Releases zurück | Planen Sie eine routinemäßige Aktualisierung |
-| Sie betreiben 6.0.7 oder älter unter PHP 7.4 | Planen Sie zuerst den Wechsel von PHP; 6.0.8 braucht PHP 8.1 |
+| Sie betreiben 6.0.7 oder älter unter PHP 7.4 | Wechseln Sie unter PHP 7.4 auf 6.0.15 und planen Sie dann den Wechsel von PHP; 6.0.8 bis 6.0.14 brauchen PHP 8.1 |
 | Sie betreiben 5.x oder älter | Planen Sie ein Projekt ([Upgrade](../../../anleitungen/aktualisieren.md)) |
 | Sie haben eigene Änderungen in Kernel-Dateien | Planen Sie Zeit ein, um sie zusammenzuführen |
 

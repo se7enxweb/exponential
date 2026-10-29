@@ -28,7 +28,7 @@ Sie alles, was Sie dort eintippen, als öffentlich.
 
 Eine Testinstallation zeigt die Software auf Ihrem eigenen Rechner, mit Ihren eigenen Inhalten:
 
-1. Installieren Sie PHP 8.0 oder neuer und Composer.
+1. Installieren Sie PHP 7.4 oder neuer und Composer.
 2. Folgen Sie [Installation mit einem Befehl](../../../funktionen/6.0/installation-mit-einem-befehl.md); SQLite ist der Standard
    und braucht keinen Datenbankserver.
 3. Liefern Sie sie mit Velocity oder dem eingebauten Server von PHP aus ([Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)).

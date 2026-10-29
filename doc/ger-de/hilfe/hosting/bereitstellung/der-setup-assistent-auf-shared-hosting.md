@@ -34,7 +34,7 @@ jede Entscheidung auf einer Seite mit einer Erklärung zeigt. Wenn Sie für den 
 
 | Element | Warum |
 |---|---|
-| PHP 8.0 oder später mit den erforderlichen Erweiterungen; Apache mit `mod_rewrite` und PHP-FPM ist die klassische Einrichtung für Shared Hosting | [Anforderungen auf einen Blick](../grundlagen/anforderungen-auf-einen-blick.md) |
+| PHP 7.4 oder später mit den erforderlichen Erweiterungen; Apache mit `mod_rewrite` und PHP-FPM ist die klassische Einrichtung für Shared Hosting | [Anforderungen auf einen Blick](../grundlagen/anforderungen-auf-einen-blick.md) |
 | Der Code, mit `vendor/` (den Abhängigkeiten), im Webspace des Kunden | der Assistent kann Composer nicht ausführen; laden Sie ein vollständiges Release hoch |
 | `settings/`, `var/` und `design/` für den Benutzer beschreibbar, als der PHP läuft | der Systemtest prüft `[directory_permissions] CheckList` ([Beschreibbare Verzeichnisse und Berechtigungen](../grundlagen/beschreibbare-verzeichnisse-und-berechtigungen.md)) |
 | `.htaccess` an seinem Platz: eine Kopie der mitgelieferten `.htaccess_root` | die Rewrite-Regeln, die verhindern, dass interne Dateien ausgeliefert werden |

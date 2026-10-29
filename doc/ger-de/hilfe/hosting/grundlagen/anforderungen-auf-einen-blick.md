@@ -31,7 +31,7 @@ diese Seite ist seine Zusammenfassung für Hoster.
 
 | Bedarf | Minimum | Empfohlen | Geprüft von |
 |---|---|---|---|
-| PHP | 8.0 | das neueste 8.x, das das System anbietet; 8.5 ist das neueste getestete | Composer (`composer.json` `require.php`) und der Setup-Assistent (`settings/setup.ini`, `[phpversion] MinimumVersion=8.0.0`) |
+| PHP | 7.4 (8.0 für Velocity, 8.1 für Layouts) | das neueste 8.x, das das System anbietet; 8.5 ist das neueste getestete | Composer (`composer.json` `require.php`) und der Setup-Assistent (`settings/setup.ini`, `[phpversion] MinimumVersion=7.4.0`) |
 | PHP für Exponential Velocity | 8.0 mit `sockets` (8.1 vor Release 0.0.4.54) | zusätzlich mit `pcntl` und `openssl` | Composer (das Velocity-Paket verlangt `"php": ">=8.0"` und `ext-sockets`) |
 | PHP-Erweiterungen | siehe [unten](#erforderliche-php-erweiterungen) | zusätzlich `curl`, `gd`, `openssl`, `pcntl`, `opcache` | Composer (`ext-*`) und die kritischen Tests des Setup-Assistenten |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` gesetzt, `file_uploads` an, `allow_url_fopen` an | mehr Speicher für Importe und Bildarbeit; Upload-Grenzen für Ihre Kunden bemessen | die kritischen Tests des Setup-Assistenten |

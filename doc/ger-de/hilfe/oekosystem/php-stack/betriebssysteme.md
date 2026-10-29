@@ -9,8 +9,8 @@ type: help
 ---
 # Betriebssysteme im Ökosystem
 
-Exponential läuft auf "almost any [operating system] that runs PHP 8.0 or later", also auf fast jedem Betriebssystem,
-auf dem PHP 8.0 oder neuer läuft (`README.md`, "Requirements"). Die Hilfe ordnet sie in vier Stufen
+Exponential läuft auf "almost any [operating system] that runs PHP 7.4 or later", also auf fast jedem Betriebssystem,
+auf dem PHP 7.4 oder neuer läuft (`README.md`, "Requirements"). Die Hilfe ordnet sie in vier Stufen
 ([Unterstützte Betriebssysteme](../../betriebssystemunterstuetzung.md)).
 
 ## Inhalt

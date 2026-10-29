@@ -39,7 +39,7 @@ Ablauf, um alles für die nächste Gruppe zurückzusetzen.
 
 ## Dieses Modul vorbereiten
 
-- Ein Rechner pro Teilnehmer mit Terminal, PHP 8.1 oder neuer, Composer 2 und Git; Netzzugang zu GitHub und
+- Ein Rechner pro Teilnehmer mit Terminal, PHP 7.4 oder neuer, Composer 2 und Git; Netzzugang zu GitHub und
   Packagist oder der Code im Voraus vorbereitet.
 - Genug Speicherplatz für zwei oder drei Installationen pro Teilnehmer.
 - Eine gedruckte Liste der Befehle der Lektionen 2.3 und 2.4.

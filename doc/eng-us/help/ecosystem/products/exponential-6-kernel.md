@@ -40,7 +40,7 @@ abstraction layer, clustering and a plugin API. A tour for buyers: [Feature tour
 | 6.0.14 was released on 7 June 2026; 6.0.15 is in development on `main` | same |
 | 6.0 is the maintained line; fixes are published with the next 6.0.x release | `SECURITY.md` |
 | A published tag is never changed | `SECURITY.md` |
-| PHP 8.0 to 8.5 are supported | `README.md`, [PHP versions](../php-stack/php-versions.md) |
+| PHP 7.4 to 8.5 are supported | `README.md`, [PHP versions](../php-stack/php-versions.md) |
 
 The 6.0.15 line adds, among much else, Velocity, the admin4 design, an audit trail, Exponential Layouts, Exponential
 Intelligence, content jobs, the LoveStack features of Mugo Web and the help system

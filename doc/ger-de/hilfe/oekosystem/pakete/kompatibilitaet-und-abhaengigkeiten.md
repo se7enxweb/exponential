@@ -27,7 +27,7 @@ Legacy-Kernel, was ihre Anforderungen zeigen ([Exponential Platform DXP](../prod
 
 | Dimension | Wo Sie prüfen | Seite |
 |---|---|---|
-| PHP-Version | `require.php` des Pakets und des Kernels (PHP 8.0 bis 8.5 für 6.0.15) | [PHP-Versionen](../php-stack/php-versionen.md) |
+| PHP-Version | `require.php` des Pakets und des Kernels (PHP 7.4 bis 8.5 für 6.0.15) | [PHP-Versionen](../php-stack/php-versionen.md) |
 | Kernel-Version | `require."se7enxweb/exponential"` oder die README | [Der Kernel von Exponential 6](../produkte/exponential-6-kernel.md) |
 | Datenbank | Ob die Erweiterung SQL verwendet, das Ihrer Datenbank fehlt | [Datenbanken](../php-stack/datenbanken.md) |
 | Engine | Persistente Worker halten Klassen im Speicher; nach Änderungen neu starten | [Exponential Velocity](../produkte/exponential-velocity.md) |

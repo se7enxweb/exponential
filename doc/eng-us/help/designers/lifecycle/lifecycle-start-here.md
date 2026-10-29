@@ -46,7 +46,7 @@ browsers keep moving; each of them changes something every year. Maintenance is 
 | [Following Exponential releases](following-exponential-releases.md) | Where changes are announced |
 | [Reading a changelog as a designer](reading-a-changelog-as-a-designer.md) | What matters to a theme |
 | [A compatibility matrix](compatibility-matrix.md) | Theme versions against Exponential and PHP |
-| [PHP version compatibility](php-version-compatibility.md) | PHP 8.0 and later |
+| [PHP version compatibility](php-version-compatibility.md) | PHP 7.4 and later |
 | [Declaring compatibility](declaring-compatibility.md) | Where users read it |
 | [An upgrade test environment](upgrade-test-environment.md) | A safe place to test |
 | [Upgrade testing, step by step](upgrade-test-step-by-step.md) | The routine |

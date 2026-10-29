@@ -35,7 +35,7 @@ information, and the two ways to read and change INI settings: the settings page
 
 ## Preparing this module
 
-- One machine per learner with a terminal, PHP 8.1 or later, Composer 2 and Git, and the Exponential code of the
+- One machine per learner with a terminal, PHP 7.4 or later, Composer 2 and Git, and the Exponential code of the
   release you teach (see [The console install](../../../../install/07-console-install.md)).
 - If the network is slow, prepare the training installations in advance and only start them in class.
 - A printed copy of the [Lab quick card](../../lab-quick-card.md).

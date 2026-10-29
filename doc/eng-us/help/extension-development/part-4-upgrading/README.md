@@ -34,7 +34,7 @@ If you read only one page of this part, read [The upgrade checklist](the-upgrade
 start right away:
 
 1. Copy the extension into `extension/` of a development installation (never a live site first).
-2. Run `php -l` on every PHP file with the oldest PHP you want to support (8.0 is the oldest Exponential 6 supports).
+2. Run `php -l` on every PHP file with the oldest PHP you want to support (7.4 is the oldest Exponential 6 supports, 8.0 with Velocity).
 3. Activate it, open its pages with the debug output on, and write down every error, warning and "Deprecated" line
    that names one of its files.
 4. Fix those, one kind at a time, with the chapters of this part.

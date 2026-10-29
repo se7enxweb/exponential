@@ -62,7 +62,7 @@ Bewerten Sie die Kandidaten mit dem [Bewertungsbogen für Anbieter](../vorlagen/
 | Tatsache | Quelle |
 |---|---|
 | Die GPL erlaubt Ihnen, die Software überall zu betreiben und jedes Unternehmen damit zu beauftragen, daran zu arbeiten | [Lizenzen für Käufer erklärt: GPL-Code, GFDL-Dokumentation](../../geschaeft/lizenzen-fuer-kaeufer.md) |
-| Exponential läuft auf fast jedem Betriebssystem mit PHP 8.0 oder neuer | [Unterstützte Betriebssysteme](../../betriebssystemunterstuetzung.md) |
+| Exponential läuft auf fast jedem Betriebssystem mit PHP 7.4 oder neuer | [Unterstützte Betriebssysteme](../../betriebssystemunterstuetzung.md) |
 | Sechs Datenbanken werden unterstützt, an erster Stelle SQLite 3, das keinen Server braucht | [Datenbankunterstützung](../../datenbankunterstuetzung.md) |
 | Apache, nginx, LiteSpeed, Caddy, IIS und andere funktionieren, oder das mitgelieferte Velocity | `README.md`, „How Exponential is served“ |
 | Der Code und seine vollständige Historie sind öffentlich | [Mit Git entwickeln: vom Benutzer zum Entwickler](../../mit-git-entwickeln.md) |

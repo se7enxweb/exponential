@@ -39,7 +39,7 @@ Eine Unterstützung ist nicht impliziert. LoveStack ist die Distribution von Mug
 verwendet den Namen nur, um zu sagen, woher eine Funktion stammt.
 
 **Welche PHP-Versionen?**
-Exponential 6: PHP 8.1 bis 8.5. Die `composer.json` von LoveStack (beim für die Portierung verwendeten Commit):
+Exponential 6: PHP 7.4 bis 8.5. Die `composer.json` von LoveStack (beim für die Portierung verwendeten Commit):
 PHP 7.3–7.4 und 8.1–8.3.
 
 **Verliere ich `ezenum`-Inhalte, wenn ich von LoveStack umziehe?**

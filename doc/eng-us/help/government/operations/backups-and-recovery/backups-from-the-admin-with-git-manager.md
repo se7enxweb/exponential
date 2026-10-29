@@ -27,7 +27,7 @@ feature page is [git_manager](../../../../features/6.0/extensions/git_manager.md
 
 `git_manager` is an extension (required by the installation's `composer.json`) that adds two tools to the
 administration: a git dashboard and a **backup manager** at **Setup > Backup** (`/git_manager/backup`). Backups are
-timestamped sets of archives of the database and files. It needs PHP 8.1 or later, GnuPG for encrypted backups and
+timestamped sets of archives of the database and files. It needs PHP 7.4 or later, GnuPG for encrypted backups and
 `mysqldump` for database backups.
 
 | Type | Creates | Use for |

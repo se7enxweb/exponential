@@ -32,7 +32,7 @@ der Websites aktuell hält, verkauft Sicherheit; einer, der das nicht tut, verka
 | 5.x, 4.x, 3.x und älter | Nein |
 
 „A published tag is never changed“ (ein veröffentlichter Tag wird nie geändert): Eine Fehlerbehebung erreicht eine
-Website nur über ein Update. PHP 8.0 bis 8.5 werden für die Linie 6.0.15 unterstützt; PHP 7.4 nur bis 6.0.7
+Website nur über ein Update. PHP 7.4 bis 8.5 werden für die Linie 6.0.15 unterstützt; PHP 7.4 wieder ab 6.0.15
 ([Release-Linie und Unterstützung](../../kunden/gesund-halten/release-linie-und-support.md)). Das Projekt veröffentlicht
 keinen Release-Kalender und kein Ende der Unterstützung für 6.0.
 

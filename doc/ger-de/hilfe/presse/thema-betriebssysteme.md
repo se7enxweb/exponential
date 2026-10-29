@@ -22,7 +22,7 @@ funktionieren.
 
 ## Das Thema in einem Absatz
 
-Exponential läuft auf „almost any [operating system] that runs PHP 8.0 or later“, und seine Dokumentation ordnet diese
+Exponential läuft auf „almost any [operating system] that runs PHP 7.4 or later“, und seine Dokumentation ordnet diese
 in vier Stufen ein: **hier getestet** (das Projekt betreibt es täglich oder seine CI testet darauf), **funktioniert
 nachweislich**, **sollte funktionieren** („a reasoned expectation, not a test result“) und **heute nicht möglich**
 ([Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md)). Stufe 1 ist der eigene Entwicklungsserver des Projekts auf

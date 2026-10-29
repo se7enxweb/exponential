@@ -149,9 +149,9 @@ mit einem Anbieter.
 
 | Einwand | Antwort | Quelle |
 |---|---|---|
-| „Es braucht ein altes PHP.“ | PHP 8.0 ist die älteste unterstützte Version; 8.1 bis 8.5 werden unterstützt; `composer.json` erlaubt bis 8.8. | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
+| „Es braucht ein altes PHP.“ | PHP 7.4 ist die älteste unterstützte Version (ab 6.0.15); 8.0 bis 8.5 werden unterstützt; `composer.json` erlaubt bis 8.8. | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | „Wir betreiben Red Hat Enterprise Linux 9 mit seinem mitgelieferten PHP.“ | PHP 8.0, das mitgelieferte PHP von RHEL 9 und seinen Nachbauten, betreibt es unter Apache, PHP-FPM oder Velocity (ab Velocity 0.0.4.54). | `README.md`, [Unterstützung für PHP 8.0](../../bc/6.0/php-8.0-unterstuetzung.md) |
-| „Wir sind noch auf PHP 7.4.“ | 6.0.7 ist das letzte Release für PHP 7.4; 7x „empfiehlt dringend ein Upgrade“. | `README.md` |
+| „Wir sind noch auf PHP 7.4.“ | 6.0.15 unterstützt PHP 7.4 wieder, als Brücke; 7x empfiehlt weiterhin den Wechsel auf PHP 8. | `README.md` |
 | „Die Oberfläche wirkt veraltet.“ | admin4 mit hellem und dunklem Modus; jQuery 4 und TinyMCE 8 in der 6.0.15-Linie; AdminUI als alternatives Erscheinungsbild. | [Das Design admin4](../../funktionen/6.0/admin4-design.md), [Oktober 2026](../../geschichte/2026/2026-10.md), [AdminUI](../../funktionen/6.0/exp-adminui.md) |
 | „Wir brauchen eine Headless-Auslieferung.“ | Eine REST-API in den Versionen 1 und 2. Für ein Symfony-Projekt mit GraphQL bietet die Familie Exponential Platform DXP. | [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md), [Welches Produkt zu Ihnen passt](../wer-ist-die-exponential-foundation.md#welches-produkt-zu-ihnen-passt) |
 
@@ -232,7 +232,7 @@ Manche Einwände treffen zu. Sagen Sie das, und bieten Sie die Alternative an, d
 | Ein veröffentlichtes SLA des Projekts | Es gibt keines | Ein Servicevertrag mit einem Anbieter |
 | Mehr als 62 Inhaltssprachen in einer Installation | Nicht möglich | Auf mehrere Installationen aufteilen oder den tatsächlichen Bedarf prüfen ([Die Grenze von 62](../../sprachen.md#11-die-grenze-von-62-inhaltssprachen)) |
 | Velocity auf Shared Hosting | Meist nicht möglich | Apache oder LiteSpeed mit `.htaccess` (`README.md`) |
-| PHP 7.4 mit neuen Funktionen | Nein; für PHP 7.4 endet es bei 6.0.7 | PHP aktualisieren ([PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen)) |
+| PHP 7.4 mit neuen Funktionen | Ja, ab 6.0.15, ohne die Funktionen, die PHP 8 brauchen | PHP aktualisieren ([PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen)) |
 
 ## Neue Einwände festhalten
 

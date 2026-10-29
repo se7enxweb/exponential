@@ -29,7 +29,7 @@ sie verwenden und warum sie das Sicherungssystem der Organisation ergänzt, aber
 `git_manager` ist eine Extension (von der `composer.json` der Installation vorausgesetzt), die der Administration
 zwei Werkzeuge hinzufügt: ein Git-Dashboard und eine **Sicherungsverwaltung** unter **Setup > Backup**
 (`/git_manager/backup`). Datensicherungen sind mit Zeitstempel versehene Sätze von Archiven der Datenbank und der
-Dateien. Sie braucht PHP 8.1 oder neuer, GnuPG für verschlüsselte Datensicherungen und `mysqldump` für
+Dateien. Sie braucht PHP 7.4 oder neuer, GnuPG für verschlüsselte Datensicherungen und `mysqldump` für
 Datenbanksicherungen.
 
 | Typ | Erstellt | Verwendung |

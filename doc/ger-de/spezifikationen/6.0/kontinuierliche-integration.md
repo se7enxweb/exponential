@@ -52,7 +52,7 @@ verlangt `mongodb/mongodb`, löst die Abhängigkeiten mit
 eingecheckte Lock-Datei kann er nicht verwenden: Die Dev-Abhängigkeiten unterscheiden sich je PHP-Version, und eine eingefrorene Lock-Datei
 brach bei jedem späteren Neu-Pinnen von `composer.json`.
 
-PHP 8.0, die älteste unterstützte Version, ist nicht in dieser Matrix: PHPUnit 10 und neuer
+PHP 7.4 und PHP 8.0 sind nicht in dieser Matrix: PHPUnit 10 und neuer
 brauchen 8.1, und die Tests sind für diese Versionen geschrieben. PHP 8.0 wird stattdessen vom Job `php80`
 in `.github/workflows/quality.yml` abgedeckt: `php -l` mit 8.0 auf jeder PHP-Datei, ein
 `composer install` für den Produktivbetrieb auf 8.0 und der Start-Rauchtest `tests/bin/bootsmoke.php`

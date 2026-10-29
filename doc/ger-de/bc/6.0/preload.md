@@ -39,7 +39,7 @@ Sie brauchen:
 
 | Werkzeug | Prüfen mit | Warum |
 |---|---|---|
-| PHP 8.1+ | `php -v` | Führt das Skript aus |
+| PHP 7.4+ | `php -v` | Führt das Skript aus |
 | curl | `curl --version` | Phase 1 — ruft die Seiten der Bereiche ab |
 | wget | `wget --version` | Phase 2 — durchsucht die ganze Website |
 

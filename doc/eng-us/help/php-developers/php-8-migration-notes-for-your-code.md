@@ -3,7 +3,7 @@ title: PHP 8 migration notes for your code
 audience: php-developer, developer
 category: php-development
 order: 70
-summary: What to change in older PHP code so it runs cleanly on PHP 8.0 to 8.5 under Exponential 6 - dynamic properties, count() on non-arrays, null passed to string functions, SPL return types, nullable parameters, removed functions - and how to find each one.
+summary: What to change in older PHP code so it runs cleanly on PHP 7.4 to 8.5 under Exponential 6 - dynamic properties, count() on non-arrays, null passed to string functions, SPL return types, nullable parameters, removed functions - and how to find each one.
 keywords: PHP 8 migration, deprecations, dynamic properties, AllowDynamicProperties, count, is_countable, null to string functions, ReturnTypeWillChange, nullable types, implicit nullable, E_STRICT, utf8_decode, eZPersistentObject, eZDataType, upgrade
 type: help
 ---

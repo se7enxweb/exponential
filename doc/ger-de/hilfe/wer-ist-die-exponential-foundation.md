@@ -323,8 +323,8 @@ genannten Stelle schriftlich festgehalten; zusammen beschreiben sie, wie sich da
 
 | PHP | Exponential 6 | Quelle |
 |---|---|---|
-| 7.4 | Nur bis 6.0.7 („PHP 7 Support is deprecated but still available from our older stable and usable past releases up to version 6.0.7“) | README |
-| 8.0 | Die älteste unterstützte Version, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 es ausführt, ab dem Velocity-Release 0.0.4.54 auch unter Velocity (bis dahin brauchte Velocity 8.1) | README, [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md) |
+| 7.4 | Bis 6.0.7 und wieder ab 6.0.15 („PHP 7.4 is supported again from 6.0.15, as a bridge for organizations that cannot change the PHP of their servers yet“); siehe [Warum Exponential PHP 7.4 unterstützt](warum-exponential-php-7-4-unterstuetzt.md) | README |
+| 8.0 | Unterstützt, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 es ausführt, ab dem Velocity-Release 0.0.4.54 auch unter Velocity (bis dahin brauchte Velocity 8.1) | README, [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md) |
 | 8.1 bis 8.5 | Unterstützt, auch für Velocity | README |
 | 8.6 und neuer | Durch die `php`-Anforderung in `composer.json` zugelassen (bis 8.8); das Projekt zielt auf „PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9“ | composer.json, README |
 

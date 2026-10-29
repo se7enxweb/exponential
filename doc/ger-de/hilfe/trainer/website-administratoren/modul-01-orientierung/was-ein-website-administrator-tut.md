@@ -27,7 +27,7 @@ Administratorkonto haben, bevor irgendetwas anderes geschieht.
 | Dauer | 30 Minuten (10 Präsentation, 20 Übung) |
 | Niveau | Fortgeschrittene |
 | Zielgruppe | Neue Website-Administratoren, Intranet-Administratoren, Support-Mitarbeiter |
-| Voraussetzungen | Redakteure 101 oder vergleichbare Erfahrung in der Redaktion; ein Terminal auf einem Rechner mit PHP 8.1 oder neuer |
+| Voraussetzungen | Redakteure 101 oder vergleichbare Erfahrung in der Redaktion; ein Terminal auf einem Rechner mit PHP 7.4 oder neuer |
 
 ## Lernziele
 

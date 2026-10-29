@@ -63,7 +63,7 @@ datatypes, workflow events) have hardly changed since. What has changed:
 
 | Then | In Exponential 6 |
 |---|---|
-| PHP 4 and PHP 5 code (`function ClassName()` constructors, `each()`, `create_function()`) | PHP 8.0 to 8.5; see [Part 4](../part-4-upgrading/README.md) |
+| PHP 4 and PHP 5 code (`function ClassName()` constructors, `each()`, `create_function()`) | PHP 7.4 to 8.5; see [Part 4](../part-4-upgrading/README.md) |
 | `include_once( 'kernel/classes/...' )` lines at the top of files | Autoloading; regenerate with `php bin/php/ezpgenerateautoloads.php -e` |
 | Inline `<script>` and `onclick=""` in templates | Forbidden in the administration by its Content Security Policy |
 | YUI and older jQuery | jQuery 4 and the `Exp` namespace of expui |

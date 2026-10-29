@@ -76,7 +76,7 @@ For people without a shell, or who prefer the browser:
 
 ## PHP and the operating system
 
-- Exponential 6.0.15 runs on PHP 8.0 and later; 8.5 is the newest tested
+- Exponential 6.0.15 runs on PHP 7.4 and later; 8.5 is the newest tested
   ([Requirements at a glance](../../hosting/basics/requirements-at-a-glance.md)).
 - When your host announces the end of a PHP version, test your site on the newer one first (a copy, or the host's
   per-site PHP switch) ([PHP versions and extensions](../../hosting/basics/php-versions-and-extensions.md)).

@@ -61,7 +61,7 @@ Score the candidates with the [Vendor evaluation scorecard](../templates/vendor-
 | Fact | Source |
 |---|---|
 | The GPL lets you run the software anywhere and hire any company to work on it | [Licensing explained for buyers](../../business/licensing-for-buyers.md) |
-| Exponential runs on almost any operating system with PHP 8.0 or later | [Operating system support](../../os-support.md) |
+| Exponential runs on almost any operating system with PHP 7.4 or later | [Operating system support](../../os-support.md) |
 | Six databases are supported, SQLite 3 first, needing no server | [Database support](../../database-support.md) |
 | Apache, nginx, LiteSpeed, Caddy, IIS and others work, or the bundled Velocity | `README.md`, "How Exponential is served" |
 | The code and its full history are public | [Develop with Git](../../develop-with-git.md) |

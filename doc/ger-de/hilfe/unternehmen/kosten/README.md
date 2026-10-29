@@ -75,7 +75,7 @@ Ein leeres Formular für die Berechnung steht im Bereich Vorlagen:
 | „Using Exponential under the terms of the GNU GPL is free of charge.“ (Die Nutzung von Exponential unter den Bedingungen der GNU GPL ist kostenlos.) | `README.md`, Abschnitt „License“ |
 | Die Lizenz ist die GPL Version 2 oder neuer; das Ausführen des Programms „is not restricted“ (ist nicht eingeschränkt) | `COPYRIGHT.md`, `LICENSE.md` Abschnitt 0, [Lizenzierung für Käufer erklärt](../../geschaeft/lizenzen-fuer-kaeufer.md) |
 | SQLite 3 ist die Standarddatenbank und braucht keinen Datenbankserver | `README.md`, „Requirements“; [Datenbankunterstützung](../../datenbankunterstuetzung.md) |
-| Es läuft auf fast jedem Betriebssystem mit PHP 8.0 oder neuer | `README.md`, „Requirements“; [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) |
+| Es läuft auf fast jedem Betriebssystem mit PHP 7.4 oder neuer | `README.md`, „Requirements“; [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) |
 | Exponential Velocity, ein mitgelieferter Anwendungsserver, braucht außer PHP nichts weiter installiert | `README.md`, „Requirements“ und „How Exponential is served“ |
 | 6.0 ist die gepflegte Linie; Sicherheitskorrekturen kommen mit dem nächsten Release 6.0.x, und veröffentlichte Versionen ändern sich nie | `SECURITY.md` |
 

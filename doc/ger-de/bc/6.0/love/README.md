@@ -50,7 +50,7 @@ LoveStack wird von Mugo Web unter <https://github.com/mugoweb/ezpublish-legacy> 
 [`mugoweb/ezpublish-legacy`](https://packagist.org/packages/mugoweb/ezpublish-legacy) veröffentlicht. Als die
 Portierung gemacht wurde (12. Oktober 2026), war das neueste Release `v2025.03.1-1` (1. März 2025), der neueste
 Commit stammte vom 23. Februar 2026, und die `composer.json` unterstützte PHP 7.3–7.4 und 8.1–8.3. Exponential 6
-unterstützt PHP 8.1 bis 8.5.
+unterstützt PHP 7.4 bis 8.5.
 
 Beide Projekte stehen unter der GNU GPL Version 2 (Exponential: Version 2 oder später). Code in Exponential, der von
 einer Änderung in LoveStack abgeleitet ist, behält jeden vorhandenen Urheberrechtshinweis und nennt den

@@ -40,7 +40,7 @@ Back to the start of the hosting help: [Hosting companies: start here](../hostin
 |---|---|
 | [What hosting Exponential involves](what-hosting-exponential-involves.md) | The parts a host provides (PHP, database, web server or Velocity, cron, mail, storage, backups) and who usually does what |
 | [Requirements at a glance](requirements-at-a-glance.md) | One table of everything a server needs, with the minimum, the recommendation and what checks it |
-| [PHP versions and extensions](php-versions-and-extensions.md) | PHP 8.0 to 8.5, the required and recommended extensions, and the package names per system family |
+| [PHP versions and extensions](php-versions-and-extensions.md) | PHP 7.4 to 8.5, the required and recommended extensions, and the package names per system family |
 | [PHP settings for Exponential](php-settings-for-exponential.md) | `php.ini` values the installer checks, the values to give a pool, OPcache, and the functions not to disable |
 | [Databases in the official order](databases-in-the-official-order.md) | The six supported databases, in order, side by side, and how to choose what to offer |
 | [SQLite for hosts](sqlite-for-hosts.md) | The default database: one file, its permissions, backups and limits |
