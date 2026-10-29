@@ -4,6 +4,19 @@ This guide is for the person who installs or runs an Exponential site: an admini
 developer who scripts installations. Two files at the root of every installation are copied from templates that ship
 with it, and one of them is edited afterwards:
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 | Template that ships | File the site uses | What it is for |
 |---|---|---|
 | `.htaccess_root` | `.htaccess` | The rewrite and protection rules for Apache and LiteSpeed |
@@ -82,6 +95,7 @@ Look first:
 
 ```text
 Installation: /var/www/example
+Faster: Apache reads .htaccess on every request; put these rules in the virtual host with AllowOverride None instead (doc/eng-us/examples/web-servers/apache-virtual-host.md).
 Would copy .htaccess_root to .htaccess (mode 0644, owner www-data:www-data)
 PASS: dry run, nothing changed; --apply copies
 ```
@@ -94,6 +108,7 @@ Then copy. `-v` prints the copy the way `cp -v` does:
 
 ```text
 Installation: /var/www/example
+Faster: Apache reads .htaccess on every request; put these rules in the virtual host with AllowOverride None instead (doc/eng-us/examples/web-servers/apache-virtual-host.md).
 '.htaccess_root' -> '.htaccess'
 PASS: .htaccess_root copied to .htaccess (mode 0644, owner www-data:www-data)
 Apache and LiteSpeed read .htaccess on the next request; nginx, Caddy and IIS never read it, and Velocity has the rules of .htaccess_root built in.
@@ -103,6 +118,7 @@ Running it again changes nothing:
 
 ```text
 Installation: /var/www/example
+Faster: Apache reads .htaccess on every request; put these rules in the virtual host with AllowOverride None instead (doc/eng-us/examples/web-servers/apache-virtual-host.md).
 PASS: .htaccess is already a copy of .htaccess_root; nothing to do
 ```
 
@@ -116,6 +132,32 @@ Which web servers read the file:
 | Exponential Velocity | no, it has the rules of `.htaccess_root` built in | nothing: copy it anyway if Apache may serve the same tree |
 | nginx, Caddy, IIS | no | use the example configurations in [the web server examples](../examples/web-servers/README.md) |
 
+### Measured: .htaccess against rules in the virtual host
+
+With `AllowOverride All`, Apache looks for a `.htaccess` in every directory of the path of each request, then reads
+and evaluates the rules it finds, on every request. With `AllowOverride None` and the same rules in the
+configuration of the virtual host, it parses them once at start. To see what that costs, two throwaway Apache 2.4
+instances served the same directory with the rules of the shipped `.htaccess_root`: one as `.htaccess` with
+`AllowOverride All`, the other with the rules in the `<Directory>` block of its configuration and `AllowOverride
+None`. No PHP was involved, so this is Apache's own work; `ab -k -c 8`, 20,000 requests per round, 9 interleaved
+rounds, the median:
+
+| Request | `.htaccess`, `AllowOverride All` | Rules in the configuration, `AllowOverride None` | Difference |
+|---|---|---|---|
+| A static image four directories deep (`/var/storage/images/media/images/x/photo.png`) | 988 requests/s | 1,419 requests/s | 44% more requests per second |
+| A page address rewritten to `index.php` (`/some/page/of/the/site`) | 1,079 requests/s | 1,303 requests/s | 21% more requests per second |
+
+The server was busy with other work while it measured (load average around 50), so single rounds varied; the image
+was faster without `.htaccess` in every round, the page address in five of nine, with about the same speed in the others. Deeper paths (images, the storage,
+extension assets) pay more, because there are more directories to look in. On your own server, measure the same way
+before and after you switch.
+
+To switch: copy the rules of the [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into
+your virtual host (with the static cache, also those of
+[`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None` in it, check with
+`apachectl configtest`, reload Apache (`systemctl reload apache2`, or `httpd` on Red Hat style systems) and test the
+site. Keep `exp:setup:htaccess` for the comparison after an upgrade: its diff shows the rules a new release changed.
+
 ### Switching to the static cache rules
 
 When you generate a static cache (Setup > Cache > Static content cache), `.htaccess_root_static` serves those pages
@@ -128,6 +170,7 @@ other file. Because `.htaccess` now exists and differs, the command shows the di
 
 ```text
 Installation: /var/www/example
+Faster: Apache reads .htaccess on every request; put these rules in the virtual host with AllowOverride None instead (doc/eng-us/examples/web-servers/apache-virtual-host.md).
 .htaccess differs from .htaccess_root_static (- what .htaccess has, + what .htaccess_root_static has):
   --- .htaccess
   +++ .htaccess_root_static
