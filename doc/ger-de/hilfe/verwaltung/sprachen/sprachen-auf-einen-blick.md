@@ -38,7 +38,7 @@ Stellen.
 
 ## Die Zahlen
 
-- **Locales**: 359 Locale-Dateien werden in `share/locale/` mitgeliefert; jede kann zu einer Inhaltssprache werden
+- **Locales**: 368 Locale-Dateien werden in `share/locale/` mitgeliefert; jede kann zu einer Inhaltssprache werden
   ([Sprachen in Exponential](../../../sprachen.md)).
 - **Von rechts nach links**: 43 davon tragen `TextDirection=rtl` (gezählt in `share/locale/`; die Liste steht in
   Abschnitt 9 von [Sprachen in Exponential](../../../sprachen.md#9-sprachen-die-von-rechts-nach-links-geschrieben-werden)).

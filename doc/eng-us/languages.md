@@ -1925,7 +1925,7 @@ The page is read only.
 
 | `i18n.ini [TranslationSettings]` | Default | Meaning |
 |---|---|---|
-| `FallbackLanguages[<locale>]` | 100 entries | The translation a locale falls back to; `eng-GB` or `untranslated` for the source texts. |
+| `FallbackLanguages[<locale>]` | 143 entries | The translation a locale falls back to; `eng-GB` or `untranslated` for the source texts. |
 | `FallbackRules[]` | empty | Classes implementing `expI18nFallbackRuleInterface`, asked after `FallbackLanguages[]`. |
 | `AutomaticLanguageFallback` | `enabled` | The same-language fallback for locales without translation and configuration. |
 | `AutomaticFallbackExclude[]` | `eng` | Languages or locales the automatic fallback leaves alone. |

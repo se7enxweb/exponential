@@ -48,7 +48,7 @@ is its byte-oriented encoding and the encoding of the web.
 - The database connection charset is `settings/site.ini [DatabaseSettings] Charset=utf-8` (the comment above it says
   an empty value falls back to `i18n.ini`).
 - Translation catalogues are XML declared as `encoding="utf-8"`.
-- 339 of the 359 locale files in `share/locale/` declare `[Charset] Preferred=utf-8`. The remaining 20 are older
+- 348 of the 368 locale files in `share/locale/` declare `[Charset] Preferred=utf-8`. The remaining 20 are older
   files that still name a legacy code page (for example `iso-8859-1`, `iso-8859-15`, `koi8-u`, `cp1251`). The site's
   internal charset still comes from `i18n.ini`; the code page names are kept for compatibility.
 - The test `tests/tests/lib/ezlocale/expLocaleFilesTest.php` checks that every locale file's names are valid UTF-8

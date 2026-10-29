@@ -145,7 +145,7 @@ Entscheiden Sie für jeden öffentlichen Siteaccess:
 
 Aus [Sprachen in Exponential](../../sprachen.md):
 
-- **359 Locale-Dateien** (352 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten), 43
+- **368 Locale-Dateien** (361 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten), 43
   davon von rechts nach links geschrieben, können als Inhaltssprachen und Locales von Siteaccesses gewählt werden.
 - **Übersetzungen der Administration** (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../../sprachen.md)), aufgeführt in
   [Sprachen in Exponential](../../sprachen.md).

@@ -2000,7 +2000,7 @@ und jeder Extension. Die Seite ist schreibgeschützt.
 
 | `i18n.ini [TranslationSettings]` | Standard | Bedeutung |
 |---|---|---|
-| `FallbackLanguages[<locale>]` | 100 Einträge | Die Übersetzung, auf die eine Locale zurückfällt; `eng-GB` oder `untranslated` für die Quelltexte. |
+| `FallbackLanguages[<locale>]` | 143 Einträge | Die Übersetzung, auf die eine Locale zurückfällt; `eng-GB` oder `untranslated` für die Quelltexte. |
 | `FallbackRules[]` | leer | Klassen, die `expI18nFallbackRuleInterface` implementieren, abgefragt nach `FallbackLanguages[]`. |
 | `AutomaticLanguageFallback` | `enabled` | Der Fallback innerhalb derselben Sprache für Locales ohne Übersetzung und Konfiguration. |
 | `AutomaticFallbackExclude[]` | `eng` | Sprachen oder Locales, die der automatische Fallback in Ruhe lässt. |
