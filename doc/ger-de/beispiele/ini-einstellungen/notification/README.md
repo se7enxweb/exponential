@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # notification.ini
 
-Die ausgelieferten Einstellungen von `settings/notification.ini`: 6 Blöcke, 17 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/notification.ini`: 6 Blöcke, 18 Einstellungen.
 
 > Exponential-Konfigurationsdatei für Benachrichtigungen.  
 >
@@ -30,7 +30,7 @@ Die ausgelieferten Einstellungen von `settings/notification.ini`: 6 Blöcke, 17 
 | [NotificationEventTypeSettings](NotificationEventTypeSettings.md) | 3 |
 | [NotificationEventHandlerSettings](NotificationEventHandlerSettings.md) | 3 |
 | [TransportSettings](TransportSettings.md) | 2 |
-| [MailSettings](MailSettings.md) | 1 |
+| [MailSettings](MailSettings.md) | 2 |
 
 - [Alle Beispiele](../../README.md)
 
