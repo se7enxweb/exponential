@@ -195,7 +195,8 @@ class AdminFontStackTest extends PHPUnit\Framework\TestCase
             }
             $this->assertDoesNotMatchRegularExpression( '/@import[^;]*(font|googleapis)/i', $css, "$path imports no font" );
         }
-        $this->assertSame( array( 'design/admin4/stylesheets/core.css' ), $faces );
+        // base.css is what admin4 loads; core.css stays for the standard layouts that name it (popup, print, redirect)
+        $this->assertSame( array( 'design/admin4/stylesheets/base.css', 'design/admin4/stylesheets/core.css' ), $faces );
 
         foreach ( array( 'design/admin4/templates', 'design/admin4l/templates' ) as $dir )
         {
@@ -212,7 +213,8 @@ class AdminFontStackTest extends PHPUnit\Framework\TestCase
 
     public function testTheBodyAndTheEditorContentUseTheFontToken()
     {
-        $core = AdminFiles::read( self::root() . '/design/admin4/stylesheets/core.css' );
+        // base.css's own body font was dead (admin4.css sets it again for body): the effective rule is admin4.css's
+        $core = AdminFiles::read( self::root() . '/design/admin4/stylesheets/admin4.css' );
         $this->assertMatchesRegularExpression( '/^body\b[^{]*\{[^}]*font-family:\s*var\(--a4-font[,)]/m', $core );
         $editor = AdminFiles::read( self::root() . '/design/admin4/stylesheets/editor_content.css' );
         $this->assertMatchesRegularExpression( '/body:is\(\.mceContentBody, \.mce-content-body\) \{[^}]*font-family:\s*var\(--a4-font\)/', $editor );

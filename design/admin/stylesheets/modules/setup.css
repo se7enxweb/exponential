@@ -82,12 +82,12 @@ html.a4-js .a4-setup-nojs-only { display: none; }
 }
 .a4-setup-check > .a4-badge { justify-self: start; }
 .a4-setup-check-text { min-width: 0; overflow-wrap: anywhere; }
-.a4-setup-check-text strong { font-weight: 650; }
+.a4-setup-check-text strong { font-weight: var(--a4-weight-heading); }
 .a4-setup-check-text p { margin-top: 2px; color: var(--a4-muted); font-size: var(--a4-text-s); }
 .a4-setup-check-text p.a4-setup-fix { color: var(--a4-ink); }
-.a4-setup-check-text p.a4-setup-fix::before { content: "\2192\00a0"; color: var(--a4-accent-text); font-weight: 700; }
+.a4-setup-check-text p.a4-setup-fix::before { content: "\2192\00a0"; color: var(--a4-accent-text); font-weight: var(--a4-weight-bold); }
 details.a4-setup-ok-checks { margin-top: var(--a4-space-2); }
-details.a4-setup-ok-checks > summary { padding: var(--a4-space-1) 0; color: var(--a4-muted); font-size: var(--a4-text-s); font-weight: 650; cursor: pointer; }
+details.a4-setup-ok-checks > summary { padding: var(--a4-space-1) 0; color: var(--a4-muted); font-size: var(--a4-text-s); font-weight: var(--a4-weight-heading); cursor: pointer; }
 details.a4-setup-ok-checks > ul { margin-top: var(--a4-space-2); }
 @media (max-width: 600px) {
   .a4-setup-check { grid-template-columns: minmax(0, 1fr); }
@@ -102,7 +102,7 @@ details.a4-setup-ok-checks > ul { margin-top: var(--a4-space-2); }
   margin: 0;
   font-size: var(--a4-text-s);
 }
-.a4-setup-bars dt { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
+.a4-setup-bars dt { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-heading); }
 .a4-setup-bars dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
 @media (max-width: 560px) {
   .a4-setup-bars { grid-template-columns: minmax(0, 1fr) minmax(60px, 1fr); }
@@ -127,7 +127,7 @@ textarea.a4-setup-report {
 
 /* Label and value rows inside a card (narrower than .a4-facts.is-rows: the label column fits its text up to 14em) */
 .a4-setup-rows { display: grid; grid-template-columns: fit-content(14em) minmax(0, 1fr); gap: var(--a4-space-1) var(--a4-space-3); margin: 0; }
-.a4-setup-rows dt { min-width: 0; margin: 0; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; overflow-wrap: break-word; }
+.a4-setup-rows dt { min-width: 0; margin: 0; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-heading); overflow-wrap: break-word; }
 .a4-setup-rows dd { min-width: 0; margin: 0; overflow-wrap: anywhere; word-break: break-word; }
 @media (max-width: 600px) {
   .a4-setup-rows { grid-template-columns: minmax(0, 1fr); gap: 0 var(--a4-space-3); }
@@ -137,7 +137,7 @@ textarea.a4-setup-report {
 /* ---- setup/cache: Caches ------------------------------------------------------------------------------------ */
 
 .a4-setup-cache form { margin: 0; }
-.a4-setup-cache .a4-figure.is-date strong { font-size: var(--a4-text-l); line-height: 1.3; }
+.a4-setup-cache .a4-figure.is-date strong { font-size: var(--a4-text-l); line-height: var(--a4-leading-tight); }
 
 /* One group of caches: a card with its table and, at its foot, the clear button of the group */
 .a4-setup-group { margin: 0 0 var(--a4-space-4); }
@@ -149,7 +149,7 @@ textarea.a4-setup-report {
 .a4-setup-caches td { font-size: var(--a4-text-s); overflow-wrap: anywhere; }
 .a4-setup-caches td.a4-setup-check-cell { width: 34px; }
 .a4-setup-caches td.a4-setup-check-cell input { width: 18px; height: 18px; margin: 2px 0 0; cursor: pointer; }
-.a4-setup-caches .a4-setup-cache-name { font-weight: 650; }
+.a4-setup-caches .a4-setup-cache-name { font-weight: var(--a4-weight-heading); }
 .a4-setup-caches .a4-setup-cache-holds,
 .a4-setup-caches .a4-setup-cache-meta,
 .a4-setup-caches .a4-setup-cleared-by { display: block; margin-top: 2px; color: var(--a4-muted); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
@@ -170,7 +170,7 @@ textarea.a4-setup-report {
   .a4-setup-caches th:nth-child(n), .a4-setup-caches td:nth-child(n) { width: 100%; padding: 2px 0; border: 0; }
   .a4-setup-caches td.a4-setup-check-cell { position: absolute; top: 10px; inset-inline-start: var(--a4-space-1); width: auto; }
   .a4-setup-caches td.a4-num { text-align: start; }
-  .a4-setup-caches td[data-label]::before { content: attr(data-label) ": "; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
+  .a4-setup-caches td[data-label]::before { content: attr(data-label) ": "; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-heading); }
 }
 
 /* The in-place confirmation: a details element whose summary is the button and whose body names what goes */
@@ -239,7 +239,7 @@ details.a4-setup-confirm[open] > summary { border-color: var(--a4-accent); }
   white-space: pre-wrap;
   word-break: break-word;
 }
-.a4-setup-console-phase, .a4-setup-console-done { color: var(--a4-info); font-weight: 700; }
+.a4-setup-console-phase, .a4-setup-console-done { color: var(--a4-info); font-weight: var(--a4-weight-bold); }
 .a4-setup-console-ok { color: var(--a4-ok); }
 .a4-setup-console-warn { color: var(--a4-warn); }
 .a4-setup-console-error { color: var(--a4-bad); }
@@ -261,8 +261,8 @@ ol.a4-setup-numbered .a4-pre { margin: var(--a4-space-2) 0 0; }
 
 .a4-setup-upgrade .a4-intro p + p { margin-top: var(--a4-space-1); }
 .a4-setup-upgrade .a4-notice p { margin-top: var(--a4-space-1); }
-.a4-setup-time { font-size: var(--a4-text-s); font-weight: 600; font-variant-numeric: tabular-nums; }
-.a4-setup-upgrade .a4-figure.is-text strong { font-size: var(--a4-text-l); line-height: 1.35; }
+.a4-setup-time { font-size: var(--a4-text-s); font-weight: var(--a4-weight-strong); font-variant-numeric: tabular-nums; }
+.a4-setup-upgrade .a4-figure.is-text strong { font-size: var(--a4-text-l); line-height: var(--a4-leading-tight); }
 
 /* The two checks, side by side, their run button at the bottom */
 .a4-setup-upgrade-check { display: flex; flex-direction: column; gap: var(--a4-space-2); }
@@ -280,7 +280,7 @@ ol.a4-setup-numbered .a4-pre { margin: var(--a4-space-2) 0 0; }
 .a4-setup-upgrade .a4-table td.a4-setup-sums { color: var(--a4-muted); font-family: var(--a4-mono); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
 .a4-setup-upgrade .a4-table td.a4-setup-sums span[title] { color: var(--a4-ink); white-space: nowrap; }
 .a4-setup-sum { display: inline-block; margin-inline-end: var(--a4-space-2); white-space: nowrap; }
-.a4-setup-sum-label { font-family: var(--a4-font); font-size: var(--a4-text-xs); font-weight: 650; letter-spacing: .03em; text-transform: uppercase; }
+.a4-setup-sum-label { font-family: var(--a4-font); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-heading); letter-spacing: var(--a4-tracking); text-transform: uppercase; }
 
 /* Names in a row of small tags */
 .a4-setup-taglist { margin-top: var(--a4-space-2); }
@@ -299,7 +299,7 @@ ol.a4-setup-numbered .a4-pre { margin: var(--a4-space-2) 0 0; }
 .a4-setup-status-main { display: flex; flex-direction: column; flex: 1 1 320px; gap: var(--a4-space-1); min-width: 0; }
 .a4-setup-current { color: var(--a4-muted); font-family: var(--a4-mono); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
 .a4-setup-progress { max-width: 520px; margin: var(--a4-space-1) 0 2px; }
-.a4-setup-progress > span { transition: width .4s ease; }
+.a4-setup-progress > span { transition: width .4s ease; }   /* real progress, slower than a hover: not a token */
 .a4-setup-card { margin: 0 0 var(--a4-space-4); }
 .a4-setup-card + .a4-setup-card { margin-top: 0; }
 
@@ -326,7 +326,7 @@ ul.a4-setup-points li + li { margin-top: var(--a4-space-1); }
 .a4-setup-preload td.a4-setup-run { min-width: 16em; }
 .a4-setup-preload td.a4-setup-url { min-width: 14em; font-family: var(--a4-mono); font-size: var(--a4-text-xs); overflow-wrap: anywhere; word-break: break-word; }
 .a4-setup-preload tr.a4-setup-detail-row > td { background-color: var(--a4-soft); }
-details.a4-setup-failures > summary { color: var(--a4-bad); font-weight: 650; cursor: pointer; }
+details.a4-setup-failures > summary { color: var(--a4-bad); font-weight: var(--a4-weight-heading); cursor: pointer; }
 
 /* ---- setup/extensions: Extensions ---------------------------------------------------------------------------- */
 
@@ -357,16 +357,16 @@ details.a4-setup-warnings > summary { cursor: pointer; }
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-ok-bg);
   color: var(--a4-ok);
-  font-weight: 700;
+  font-weight: var(--a4-weight-bold);
   font-variant-numeric: tabular-nums;
 }
-.a4-setup-ext.is-inactive .a4-setup-ext-num { background-color: var(--a4-line); color: var(--a4-muted); font-weight: 600; }
+.a4-setup-ext.is-inactive .a4-setup-ext-num { background-color: var(--a4-line); color: var(--a4-muted); font-weight: var(--a4-weight-strong); }
 .a4-setup-ext .a4-grip { width: 40px; min-height: 28px; }
 .a4-setup-ext .a4-grip[aria-pressed="true"] { border-style: solid; border-color: var(--a4-accent); color: var(--a4-accent-text); }
 .a4-setup-ext-main { min-width: 0; }
 .a4-setup-ext-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--a4-space-1) var(--a4-space-2); }
 .a4-setup-ext-title h3 { margin: 0; font-size: var(--a4-text-m); }
-.a4-setup-ext-title h3 code { color: var(--a4-ink); font-size: var(--a4-text-m); font-weight: 700; }
+.a4-setup-ext-title h3 code { color: var(--a4-ink); font-size: var(--a4-text-m); font-weight: var(--a4-weight-heading); }
 .a4-setup-ext-label { color: var(--a4-muted); overflow-wrap: anywhere; }
 .a4-setup-ext-desc { max-width: 90ch; margin: var(--a4-space-1) 0 0; color: var(--a4-muted); overflow-wrap: anywhere; }
 .a4-setup-ext-badges { margin-top: var(--a4-space-1); }
@@ -377,7 +377,7 @@ details.a4-setup-warnings > summary { cursor: pointer; }
   .a4-setup-ext-actions { grid-column: 1 / -1; justify-content: flex-start; }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .a4-setup-ext { transition: border-color .15s ease, box-shadow .15s ease; }
+  .a4-setup-ext { transition: border-color var(--a4-duration) ease, box-shadow var(--a4-duration) ease; }
 }
 
 /* What an extension lacks or warns about, one dot per line */
@@ -390,14 +390,14 @@ details.a4-setup-warnings > summary { cursor: pointer; }
 .a4-setup-problems li.is-warn::before { background-color: var(--a4-warn); }
 .a4-setup-problems li.is-info { color: var(--a4-muted); }
 details.a4-setup-more { margin: var(--a4-space-2) 0 0; font-size: var(--a4-text-s); }
-details.a4-setup-more > summary { width: max-content; max-width: 100%; color: var(--a4-accent-text); font-weight: 600; cursor: pointer; }
+details.a4-setup-more > summary { width: max-content; max-width: 100%; color: var(--a4-accent-text); font-weight: var(--a4-weight-strong); cursor: pointer; }
 details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 
 /* The review before saving: what changes, and the lines of the settings file */
 .a4-setup-review { margin: 0 0 var(--a4-space-4); border: 2px solid var(--a4-accent); }
 .a4-setup-review-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: var(--a4-space-3); margin: var(--a4-space-3) 0; }
 .a4-setup-review-cols > div { min-width: 0; padding: var(--a4-space-2) var(--a4-space-3); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); }
-.a4-setup-review-cols h3 { color: var(--a4-muted); font-size: var(--a4-text-s); letter-spacing: .04em; text-transform: uppercase; }
+.a4-setup-review-cols h3 { color: var(--a4-muted); font-size: var(--a4-text-s); letter-spacing: var(--a4-tracking); text-transform: uppercase; }
 .a4-setup-review-cols ul { margin: var(--a4-space-1) 0 0; padding: 0; list-style: none; }
 .a4-setup-review-cols li { margin: 2px 0 0; overflow-wrap: anywhere; }
 .a4-setup-review .a4-actions { margin-top: var(--a4-space-3); }
@@ -412,13 +412,13 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   color: var(--a4-ink);
   font-family: var(--a4-mono);
   font-size: var(--a4-text-xs);
-  line-height: 1.55;
+  line-height: var(--a4-leading);
 }
 .a4-setup-line { display: block; width: max-content; min-width: 100%; white-space: pre; }
 .a4-setup-line em { margin-inline-start: var(--a4-space-2); font-style: normal; }
 .a4-setup-lines .is-added { background-color: var(--a4-ok-bg); color: var(--a4-ok); }
 .a4-setup-lines .is-moved { background-color: var(--a4-accent-soft); color: var(--a4-accent-text); }
-.a4-setup-ack { display: flex; align-items: flex-start; gap: var(--a4-space-2); margin: var(--a4-space-3) 0 0; color: var(--a4-bad); font-weight: 600; white-space: normal; }
+.a4-setup-ack { display: flex; align-items: flex-start; gap: var(--a4-space-2); margin: var(--a4-space-3) 0 0; color: var(--a4-bad); font-weight: var(--a4-weight-strong); white-space: normal; }
 .a4-setup-ack span { min-width: 0; overflow-wrap: anywhere; }
 .a4-setup-ack input { flex: 0 0 auto; width: 18px; height: 18px; margin: 1px 0 0; accent-color: var(--a4-bad); }
 
@@ -429,7 +429,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-maint .a4-meta,
 .a4-setup-hint { overflow-wrap: anywhere; }
 .a4-setup-hint { color: var(--a4-muted); font-size: var(--a4-text-xs); }
-.a4-setup-maint .a4-check .a4-setup-hint { font-weight: 400; }
+.a4-setup-maint .a4-check .a4-setup-hint { font-weight: normal; }
 
 /* The state: online (ok) or in maintenance (.is-on, warn), with the one action it calls for */
 .a4-setup-state {
@@ -448,7 +448,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-state.is-on { border-color: var(--a4-warn-line); background-color: var(--a4-warn-bg); box-shadow: inset 5px 0 0 var(--a4-warn); }
 :where([dir="rtl"]) .a4-setup-state.is-on { box-shadow: inset -5px 0 0 var(--a4-warn); }
 .a4-setup-state-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1) var(--a4-space-3); }
-.a4-setup-state-title { flex: 1 1 14ch; min-width: 0; margin: 0; padding: 0; border: 0; background: none; color: var(--a4-ok); font-size: var(--a4-text-xl); font-weight: 700; line-height: 1.25; }
+.a4-setup-state-title { flex: 1 1 14ch; min-width: 0; margin: 0; padding: 0; border: 0; background: none; color: var(--a4-ok); font-size: var(--a4-text-xl); font-weight: var(--a4-weight-heading); line-height: var(--a4-leading-tight); }
 .a4-setup-state.is-on .a4-setup-state-title { color: var(--a4-warn); }
 .a4-setup-state-text { max-width: 70ch; margin: var(--a4-space-1) 0 0; color: var(--a4-ink); }
 .a4-setup-state .a4-dot { width: 12px; height: 12px; background-color: var(--a4-ok); box-shadow: 0 0 0 4px var(--a4-ok-line); }
@@ -480,11 +480,11 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   background-color: var(--a4-soft);
   color: var(--a4-ink);
   font-size: var(--a4-text-xs);
-  font-weight: 700;
+  font-weight: var(--a4-weight-bold);
 }
 .a4-setup-step-body { display: flex; flex-direction: column; gap: var(--a4-space-1); min-width: 0; }
 .a4-setup-step-body > label,
-.a4-setup-step-title { margin: 0; padding: 0; color: var(--a4-ink); font-size: var(--a4-text-m); font-weight: 650; }
+.a4-setup-step-title { margin: 0; padding: 0; color: var(--a4-ink); font-size: var(--a4-text-m); font-weight: var(--a4-weight-heading); }
 .a4-setup-step-body textarea { resize: vertical; }
 .a4-setup-step-body textarea.is-code { font-family: var(--a4-mono); font-size: var(--a4-text-s); }
 .a4-input.a4-setup-minutes { width: 9em; }
@@ -501,17 +501,17 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   cursor: pointer;
 }
 .a4-setup-preset:hover { border-color: var(--a4-accent); color: var(--a4-accent-text); }
-.a4-setup-preset[aria-pressed="true"] { border-color: var(--a4-accent-strong); background-color: var(--a4-accent-strong); color: var(--a4-on-accent); font-weight: 650; }
+.a4-setup-preset[aria-pressed="true"] { border-color: var(--a4-accent-strong); background-color: var(--a4-accent-strong); color: var(--a4-on-accent); font-weight: var(--a4-weight-heading); }
 .a4-setup-access { display: flex; flex-direction: column; gap: var(--a4-space-1); margin: 0; padding: 0; list-style: none; }
 .a4-setup-access li { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--a4-space-1) var(--a4-space-2); margin: 0; padding: var(--a4-space-2) var(--a4-space-2); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); }
-.a4-setup-access li strong { font-weight: 650; }
+.a4-setup-access li strong { font-weight: var(--a4-weight-heading); }
 .a4-setup-access code { color: var(--a4-ink); }
-.a4-setup-ipcheck { margin: 0; color: var(--a4-bad); font-size: var(--a4-text-s); font-weight: 650; }
+.a4-setup-ipcheck { margin: 0; color: var(--a4-bad); font-size: var(--a4-text-s); font-weight: var(--a4-weight-heading); }
 .a4-setup-counter { align-self: flex-end; color: var(--a4-muted); font-size: var(--a4-text-xs); font-variant-numeric: tabular-nums; }
 
 /* The confirmation before the site goes offline */
 .a4-setup-danger-box { margin: var(--a4-space-4) 0 0; padding: var(--a4-space-3) var(--a4-space-4); border: 1px solid var(--a4-bad-line); border-radius: var(--a4-radius-s); background-color: var(--a4-bad-bg); }
-.a4-setup-danger-box .a4-check { color: var(--a4-bad); font-weight: 600; }
+.a4-setup-danger-box .a4-check { color: var(--a4-bad); font-weight: var(--a4-weight-strong); }
 .a4-setup-danger-box .a4-check input { accent-color: var(--a4-bad); }
 .a4-setup-confirm-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2) var(--a4-space-4); margin: var(--a4-space-3) 0 0; }
 .a4-setup-confirm-row .a4-meta { color: var(--a4-bad); }
@@ -532,7 +532,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 /* Commands with a copy button (Maintenance, Cronjobs) */
 .a4-setup-cmds { display: flex; flex-direction: column; gap: var(--a4-space-2); margin: 0; padding: 0; list-style: none; }
 .a4-setup-cmd-row { display: flex; align-items: center; gap: var(--a4-space-2); margin: 0; }
-.a4-setup-cmd-label { flex: 0 0 7.5em; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
+.a4-setup-cmd-label { flex: 0 0 7.5em; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-heading); }
 .a4-setup-cmd {
   flex: 1 1 auto;
   min-width: 0;
@@ -561,7 +561,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   .a4-setup-maint .a4-table tr { display: block; padding: var(--a4-space-2) 0; border-bottom: 1px solid var(--a4-line); }
   .a4-setup-maint .a4-table tr:last-child { border-bottom: 0; }
   .a4-setup-maint .a4-table td { display: flex; gap: var(--a4-space-2); padding: var(--a4-space-1) var(--a4-space-3); border: 0; }
-  .a4-setup-maint .a4-table td::before { content: attr(data-label); flex: 0 0 8.5em; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
+  .a4-setup-maint .a4-table td::before { content: attr(data-label); flex: 0 0 8.5em; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-heading); }
 }
 @container a4-setup-maint (max-width: 560px) {
   .a4-setup-state { grid-template-columns: minmax(0, 1fr); padding: var(--a4-space-3); }
@@ -587,7 +587,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-paths code { color: var(--a4-ink); overflow-wrap: anywhere; }
 .a4-setup-cron .a4-figures { margin-bottom: var(--a4-space-5); }
 .a4-setup-cron .a4-figure.is-last { grid-column: span 2; }
-.a4-setup-cron .a4-figure.is-last strong { font-size: var(--a4-text-m); line-height: 1.35; overflow-wrap: anywhere; }
+.a4-setup-cron .a4-figure.is-last strong { font-size: var(--a4-text-m); line-height: var(--a4-leading-tight); overflow-wrap: anywhere; }
 @media (max-width: 520px) {
   .a4-setup-cron .a4-figure.is-last { grid-column: 1 / -1; }
 }
@@ -632,7 +632,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-cron .a4-setup-compact .a4-badges { margin: 0; }
 .a4-setup-cron .a4-setup-compact .a4-table > tbody > tr > th[scope="row"] {
   width: 1%; min-width: 8em; max-width: 14em;
-  color: var(--a4-ink); font-size: var(--a4-text-s); font-weight: 500;
+  color: var(--a4-ink); font-size: var(--a4-text-s); font-weight: var(--a4-weight-medium);
   letter-spacing: normal; text-transform: none; white-space: normal;
 }
 .a4-setup-cron .a4-setup-compact-part { display: block; }
@@ -685,7 +685,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-scripts > summary::before { content: "\25B8"; flex: 0 0 auto; color: var(--a4-muted); }
 .a4-setup-scripts[open] > summary::before { content: "\25BE"; }
 .a4-setup-scripts[open] > summary { padding-bottom: var(--a4-space-1); }
-.a4-setup-scripts-count { flex: 0 0 auto; font-weight: 650; }
+.a4-setup-scripts-count { flex: 0 0 auto; font-weight: var(--a4-weight-heading); }
 .a4-setup-scripts > summary:hover .a4-setup-scripts-count { color: var(--a4-accent-text); }
 .a4-setup-scripts-names { min-width: 0; overflow: hidden; color: var(--a4-muted); font-family: var(--a4-mono); font-size: var(--a4-text-xs); text-overflow: ellipsis; white-space: nowrap; }
 .a4-setup-scripts[open] .a4-setup-scripts-names { visibility: hidden; }
@@ -693,13 +693,13 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-script { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--a4-space-1) var(--a4-space-3); margin: 0; padding: var(--a4-space-2) 0; border-top: 1px dashed var(--a4-line); }
 .a4-setup-script:first-child { border-top: 0; }
 .a4-setup-script-main { flex: 1 1 260px; min-width: 0; }
-.a4-setup-script-name { color: var(--a4-ink); font-weight: 650; overflow-wrap: anywhere; }
+.a4-setup-script-name { color: var(--a4-ink); font-weight: var(--a4-weight-heading); overflow-wrap: anywhere; }
 .a4-setup-script-desc { margin: 2px 0 0; }
 /* The link to what a script's documentation says (cronjob.ini [ScriptDocumentation], or @link in its header). */
 .a4-setup-script-doc { margin: 2px 0 0; font-size: var(--a4-text-xs); }
 .a4-setup-cron .a4-setup-doc-link { white-space: nowrap; font-size: var(--a4-text-xs); }
 .a4-setup-script-where { margin: 2px 0 0; color: var(--a4-muted); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
-.a4-setup-script-where.is-missing { color: var(--a4-bad); font-weight: 650; }
+.a4-setup-script-where.is-missing { color: var(--a4-bad); font-weight: var(--a4-weight-heading); }
 .a4-setup-script-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); }
 .a4-setup-cron .a4-pager { margin: var(--a4-space-3) 0 0; }
 
@@ -716,7 +716,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
         moduleextension, modulewizard, settingsextension, templateoperator, workflowevent): .a4-setup-wz ---------- */
 
 .a4-setup-wz h2 { margin: 0 0 2px; font-size: var(--a4-text-l); }
-.a4-setup-wz h3 { margin: var(--a4-space-4) 0 var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-s); letter-spacing: .04em; text-transform: uppercase; }
+.a4-setup-wz h3 { margin: var(--a4-space-4) 0 var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-s); letter-spacing: var(--a4-tracking); text-transform: uppercase; }
 .a4-setup-wz pre { max-width: 100%; overflow-x: auto; font-family: var(--a4-mono); white-space: pre; }
 .a4-setup-wz label,
 .a4-setup-wz label * { white-space: normal; }
@@ -729,7 +729,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-wz .a4-field { padding-bottom: var(--a4-space-3); }
 .a4-setup-wz .a4-field textarea { font-family: var(--a4-mono); font-size: var(--a4-text-s); resize: vertical; }
 .a4-setup-wz .a4-actions { padding: 2px 0 var(--a4-space-3); }
-.a4-setup-wz .a4-table .is-bad { color: var(--a4-bad); font-weight: 600; }
+.a4-setup-wz .a4-table .is-bad { color: var(--a4-bad); font-weight: var(--a4-weight-strong); }
 
 .a4-setup-wz-grid { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--a4-space-5); }
 .a4-setup-wz-col { flex: 1 1 26rem; min-width: 0; }
@@ -741,10 +741,10 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-wz-pick:hover { background-color: var(--a4-soft); }
 .a4-setup-wz-pick input { flex: 0 0 auto; margin-top: var(--a4-space-1); accent-color: var(--a4-accent-strong); }
 .a4-setup-wz-pick > span { flex: 1 1 auto; min-width: 0; }
-.a4-setup-wz-pick-label { display: block; font-weight: 600; }
+.a4-setup-wz-pick-label { display: block; font-weight: var(--a4-weight-strong); }
 .a4-setup-wz-pick .a4-meta { display: block; }
 .a4-setup-wz-pick.is-locked { opacity: .75; }
-.a4-setup-wz-count { color: var(--a4-accent-text); font-size: var(--a4-text-xs); font-weight: 600; }
+.a4-setup-wz-count { color: var(--a4-accent-text); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-strong); }
 
 .a4-setup-wz-types { padding-top: var(--a4-space-1); }
 .a4-setup-wz-types code { padding: 1px var(--a4-space-1); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); font-size: var(--a4-text-xs); }
@@ -757,8 +757,8 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   background-color: var(--a4-accent-strong);
   color: var(--a4-on-accent);
   font-size: var(--a4-text-xs);
-  font-weight: 700;
-  letter-spacing: .05em;
+  font-weight: var(--a4-weight-bold);
+  letter-spacing: var(--a4-tracking);
   text-transform: uppercase;
   vertical-align: .1em;
 }
@@ -772,12 +772,12 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-wz-view,
 .a4-setup-wz-use { padding: var(--a4-space-2) 0; border-top: 1px solid var(--a4-line); }
 .a4-setup-wz-method code,
-.a4-setup-wz-view code.a4-setup-wz-address { display: block; padding-bottom: 2px; font-weight: 600; }
+.a4-setup-wz-view code.a4-setup-wz-address { display: block; padding-bottom: 2px; font-weight: var(--a4-weight-strong); }
 .a4-setup-wz-use pre { margin: var(--a4-space-1) 0 var(--a4-space-1); padding: var(--a4-space-2) var(--a4-space-2); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); }
 .a4-setup-wz-ref,
 .a4-setup-wz-cols { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--a4-space-2); padding: var(--a4-space-1) 0; border-top: 1px solid var(--a4-line); }
-.a4-setup-wz-ref code { flex: 0 0 10rem; font-weight: 600; }
-.a4-setup-wz-cols code { flex: 0 0 9rem; font-weight: 600; }
+.a4-setup-wz-ref code { flex: 0 0 10rem; font-weight: var(--a4-weight-strong); }
+.a4-setup-wz-cols code { flex: 0 0 9rem; font-weight: var(--a4-weight-strong); }
 .a4-setup-wz-ref .a4-meta,
 .a4-setup-wz-cols .a4-meta { flex: 1 1 12rem; min-width: 0; }
 .a4-setup-wz-setting { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); padding: var(--a4-space-1) 0; }
@@ -787,12 +787,12 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-wz-match:hover { background-color: var(--a4-soft); }
 .a4-setup-wz-match.is-current { background-color: var(--a4-info-bg); }
 .a4-setup-wz-match input { flex: 0 0 auto; }
-.a4-setup-wz-match code { flex: 0 0 auto; font-weight: 600; }
+.a4-setup-wz-match code { flex: 0 0 auto; font-weight: var(--a4-weight-strong); }
 .a4-setup-wz-match .a4-meta { flex: 1 1 10rem; min-width: 0; }
-.a4-setup-wz-group { display: block; padding-top: var(--a4-space-3); color: var(--a4-accent-text); font-size: var(--a4-text-xs); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.a4-setup-wz-group { display: block; padding-top: var(--a4-space-3); color: var(--a4-accent-text); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-heading); letter-spacing: var(--a4-tracking); text-transform: uppercase; }
 .a4-setup-wz-facts { display: flex; flex-direction: column; gap: var(--a4-space-1); padding-bottom: var(--a4-space-2); }
 .a4-setup-wz-fact { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); }
-.a4-setup-wz-fact b { flex: 0 0 7rem; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600; letter-spacing: .03em; text-transform: uppercase; }
+.a4-setup-wz-fact b { flex: 0 0 7rem; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-strong); letter-spacing: var(--a4-tracking); text-transform: uppercase; }
 .a4-setup-wz-fact span { flex: 1 1 12rem; min-width: 0; }
 .a4-setup-wz-summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--a4-space-5); padding: 0 0 var(--a4-space-4); }
 .a4-setup-wz-summary b { font-size: var(--a4-text-xl); }
@@ -810,10 +810,10 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   border: 1px solid var(--a4-line);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-soft);
-  font-weight: 700;
-  line-height: 1;
+  font-weight: var(--a4-weight-bold);
+  line-height: var(--a4-leading-none);
 }
-.a4-setup-wz-file-path { min-width: 0; font-weight: 600; overflow-wrap: anywhere; }
+.a4-setup-wz-file-path { min-width: 0; font-weight: var(--a4-weight-strong); overflow-wrap: anywhere; }
 .a4-setup-wz-file pre { max-height: 28rem; margin: 0; padding: var(--a4-space-3) var(--a4-space-4); overflow: auto; border-top: 1px solid var(--a4-line); background-color: var(--a4-soft); color: var(--a4-ink); font-size: var(--a4-text-s); line-height: var(--a4-leading); }
 .a4-setup-wz-file.is-collapsed pre { display: none; }
 
@@ -851,10 +851,10 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-wz-nokey { color: var(--a4-bad); }
 .a4-setup-wz-map { overflow-x: auto; }
 .a4-setup-wz-map table { min-width: 34rem; }
-.a4-setup-wz-map th { color: var(--a4-muted); font-weight: 600; }
+.a4-setup-wz-map th { color: var(--a4-muted); font-weight: var(--a4-weight-strong); }
 .a4-setup-wz-chips { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); max-width: 100%; padding-top: var(--a4-space-1); }
 .a4-setup-wz-chip { padding: 1px var(--a4-space-1); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
-.a4-setup-wz-chip b { font-weight: 600; }
+.a4-setup-wz-chip b { font-weight: var(--a4-weight-strong); }
 .a4-setup-wz-chip.is-key,
 .a4-setup-wz-chip.is-accent { border-color: var(--a4-accent); background-color: transparent; color: var(--a4-accent-text); }
 .a4-setup-wz-chip.is-accent { white-space: nowrap; }
@@ -870,7 +870,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-wz-attrs th,
 .a4-setup-wz-attrs td { padding: var(--a4-space-1) var(--a4-space-2); border-bottom: 1px solid var(--a4-line); color: var(--a4-ink); text-align: start; vertical-align: top; }
 .a4-setup-wz-matrix th,
-.a4-setup-wz-attrs th { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600; text-transform: uppercase; }
+.a4-setup-wz-attrs th { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-strong); text-transform: uppercase; }
 .a4-setup-wz-matrix td.a4-setup-wz-tick { width: 5.5rem; text-align: center; }
 .a4-setup-wz-matrix tr.is-chosen td { background-color: var(--a4-accent-soft); }
 .a4-setup-wz-none,
@@ -883,7 +883,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-wz-status:hover { background-color: var(--a4-soft); }
 .a4-setup-wz-status input { flex: 0 0 auto; margin-top: var(--a4-space-1); }
 .a4-setup-wz-status > span { flex: 1 1 auto; min-width: 0; }
-.a4-setup-wz-status code { display: block; font-weight: 600; }
+.a4-setup-wz-status code { display: block; font-weight: var(--a4-weight-strong); }
 .a4-setup-wz-status .a4-meta { display: block; }
 .a4-setup-wz-left { display: flex; gap: var(--a4-space-4); padding-top: var(--a4-space-2); }
 .a4-setup-wz-triggers { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); padding-bottom: var(--a4-space-2); }
@@ -901,8 +901,8 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-rad-point .a4-title-row { align-items: baseline; }
 .a4-setup-rad-point h3 { margin: 0; font-size: var(--a4-text-l); }
 .a4-setup-rad-point-what { padding: var(--a4-space-1) 0 var(--a4-space-2); white-space: normal; }
-.a4-setup-rad-open { font-weight: 600; text-decoration: none; }
-.a4-setup-rad-legend dt { padding-top: var(--a4-space-2); font-weight: 600; }
+.a4-setup-rad-open { font-weight: var(--a4-weight-strong); text-decoration: none; }
+.a4-setup-rad-legend dt { padding-top: var(--a4-space-2); font-weight: var(--a4-weight-strong); }
 .a4-setup-rad-legend dd { margin: 0; color: var(--a4-muted); white-space: normal; }
 
 /* The filter of the list, on its own line */
@@ -930,7 +930,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-rad-survey-link > span { min-width: 0; }
 .a4-setup-rad-survey-link b { display: block; }
 .a4-setup-rad-survey-link .a4-meta { display: block; white-space: normal; }
-.a4-setup-rad-survey-count { flex: 0 0 auto; color: var(--a4-accent-text); font-size: var(--a4-text-xl); font-weight: 700; line-height: 1; }
+.a4-setup-rad-survey-count { flex: 0 0 auto; color: var(--a4-accent-text); font-size: var(--a4-text-xl); font-weight: var(--a4-weight-bold); line-height: var(--a4-leading-none); }
 .a4-setup-rad-survey-groups { margin: var(--a4-space-2) 0 0; }
 .a4-setup-rad-survey-groups li { margin: 0; padding: 0; }
 .a4-setup-rad-survey-groups li.is-inside a { border-style: dashed; }
@@ -955,8 +955,8 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-survey-summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--a4-space-5) var(--a4-space-6); padding: 0 0 var(--a4-space-4); }
 .a4-setup-survey-summary > span,
 .a4-setup-survey-figure { display: flex; flex-direction: column; gap: 2px; }
-.a4-setup-survey-summary b { font-size: var(--a4-text-xl); line-height: 1.1; }
-.a4-setup-survey-label { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
+.a4-setup-survey-summary b { font-size: var(--a4-text-xl); line-height: var(--a4-leading-tight); }
+.a4-setup-survey-label { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-strong); letter-spacing: var(--a4-tracking); text-transform: uppercase; }
 .a4-page a.a4-setup-survey-figure { padding-bottom: 2px; border-bottom: 2px solid transparent; color: var(--a4-ink); text-decoration: none; }
 .a4-page a.a4-setup-survey-figure:hover { border-bottom-color: var(--a4-accent); }
 .a4-setup-survey-figure.is-bad b { color: var(--a4-bad); }
@@ -979,8 +979,8 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 }
 .a4-page a.a4-setup-survey-tab:hover { border-color: var(--a4-line-strong); }
 .a4-page a.a4-setup-survey-tab.is-current { border-color: var(--a4-accent); box-shadow: inset 0 0 0 1px var(--a4-accent); }
-.a4-setup-survey-tab-title { font-weight: 600; }
-.a4-setup-survey-tab-count { color: var(--a4-accent-text); font-weight: 700; }
+.a4-setup-survey-tab-title { font-weight: var(--a4-weight-strong); }
+.a4-setup-survey-tab-count { color: var(--a4-accent-text); font-weight: var(--a4-weight-bold); }
 
 /* The kinds of finding, each with its severity on the left edge */
 .a4-setup-survey-kinds { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); padding: 0 0 var(--a4-space-4); }
@@ -1002,14 +1002,14 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-survey-kind.is-odd { border-inline-start-color: var(--a4-ok); }
 .a4-setup-survey-kind.is-note { border-inline-start-color: var(--a4-line-strong); }
 .a4-page a.a4-setup-survey-kind.is-current { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); }
-.a4-setup-survey-kind b { font-weight: 700; }
+.a4-setup-survey-kind b { font-weight: var(--a4-weight-bold); }
 
 /* How to fix a finding, inside its row */
 .a4-setup-survey-fix { margin: var(--a4-space-1) 0 2px; padding: var(--a4-space-2) var(--a4-space-2); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); }
-.a4-setup-survey-fix-head { display: block; padding-bottom: var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.a4-setup-survey-fix-head { display: block; padding-bottom: var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-heading); letter-spacing: var(--a4-tracking); text-transform: uppercase; }
 .a4-setup-survey-fix ol { margin: 0; padding-inline-start: var(--a4-space-4); }
 .a4-setup-survey-fix li { padding: 2px 0; white-space: normal; }
-.a4-setup-survey .a4-table .a4-setup-survey-value { font-weight: 600; }
+.a4-setup-survey .a4-table .a4-setup-survey-value { font-weight: var(--a4-weight-strong); }
 .a4-setup-survey .a4-table .a4-setup-survey-where { color: var(--a4-muted); font-size: var(--a4-text-s); }
 .a4-setup-survey .a4-dot { display: inline-block; width: 9px; height: 9px; vertical-align: .05em; }
 .a4-setup-survey-pages { clear: both; padding: var(--a4-space-3) 0 0; }
@@ -1060,7 +1060,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   display: flex;
   align-items: flex-start;
   gap: var(--a4-space-3);
-  transition: border-color .15s ease, box-shadow .15s ease;
+  transition: border-color var(--a4-duration) ease, box-shadow var(--a4-duration) ease;
 }
 .a4-setup-tile:hover { border-color: var(--a4-accent); }
 .a4-setup-tile-icon {
@@ -1077,7 +1077,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 }
 .a4-setup-tile-icon .a4-icon { width: 1.25em; height: 1.25em; }
 .a4-setup-tile-body { display: grid; gap: 2px; min-width: 0; }
-.a4-setup-tile-link { color: var(--a4-ink); font-weight: 650; overflow-wrap: anywhere; }
+.a4-setup-tile-link { color: var(--a4-ink); font-weight: var(--a4-weight-heading); overflow-wrap: anywhere; }
 a.a4-setup-tile-link, a.a4-setup-tile-link:visited { color: var(--a4-ink); text-decoration: none; }
 /* the whole card is the link's target; the focus ring is drawn around the card */
 a.a4-setup-tile-link::after { content: ""; position: absolute; inset: 0; border-radius: var(--a4-radius-s); }
@@ -1085,7 +1085,7 @@ a.a4-setup-tile-link:hover, a.a4-setup-tile-link:focus-visible { color: var(--a4
 a.a4-setup-tile-link:focus-visible { outline: 2px solid transparent; }
 a.a4-setup-tile-link:focus-visible::after { outline: 3px solid var(--a4-ring); outline-offset: 1px; }
 .a4-setup-tile-text { display: grid; gap: 2px; color: var(--a4-muted); font-size: var(--a4-text-s); }
-.a4-setup-tile-figure { color: var(--a4-ink); font-size: var(--a4-text-xs); font-variant-numeric: tabular-nums; font-weight: 600; }
+.a4-setup-tile-figure { color: var(--a4-ink); font-size: var(--a4-text-xs); font-variant-numeric: tabular-nums; font-weight: var(--a4-weight-strong); }
 /* a figure that asks for a look, such as paused cronjob parts */
 .a4-setup-tile-figure.is-attention { color: var(--a4-bad); }
 .a4-setup-tile.is-disabled { box-shadow: none; background-color: var(--a4-soft); }
@@ -1107,9 +1107,9 @@ label.a4-package-option-label {
 
 /* The navigator in the left menu: each file with its size, last change and line rate */
 .a4-setup-lognav { margin-top: var(--a4-space-4); }
-.a4-setup-lognav-count { color: var(--a4-muted); font-weight: 400; }
+.a4-setup-lognav-count { color: var(--a4-muted); font-weight: normal; }
 .a4-setup-lognav-items .a4-setup-lognav-link { display: block; min-width: 0; }
-.a4-setup-lognav-name { display: block; overflow-wrap: anywhere; font-family: var(--a4-mono); font-size: var(--a4-text-xs); font-weight: 650; }
+.a4-setup-lognav-name { display: block; overflow-wrap: anywhere; font-family: var(--a4-mono); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-heading); }
 .a4-setup-lognav-dir { display: block; overflow-wrap: anywhere; color: var(--a4-muted); font-size: var(--a4-text-xs); }
 .a4-setup-lognav-meta {
   display: flex;
@@ -1117,7 +1117,7 @@ label.a4-package-option-label {
   gap: 0 var(--a4-space-2);
   color: var(--a4-muted);
   font-size: var(--a4-text-xs);
-  font-weight: 400;
+  font-weight: normal;
   font-variant-numeric: tabular-nums;
 }
 
@@ -1225,7 +1225,7 @@ label.a4-package-option-label {
   border: 1px solid transparent;
   border-radius: var(--a4-radius-s);
   font-family: var(--a4-font);
-  font-weight: 700;
+  font-weight: var(--a4-weight-bold);
   text-align: center;
 }
 .a4-setup-log-level.is-error { background-color: var(--a4-bad-bg); color: var(--a4-bad); }
@@ -1298,8 +1298,8 @@ label.a4-package-option-label {
 /* Setup > System information, Siteaccesses (#552): the resolution map and one card per siteaccess. Shared components
    (.a4-fold, .a4-table, .a4-card, .a4-tag) do the rest. */
 .a4-setup-sa-entries { display: grid; gap: var(--a4-space-1); margin: 0; padding: 0; list-style: none; }
-.a4-setup-sa-entries li.is-current { font-weight: 650; }
-.a4-setup-sa-rules th[scope="row"] { font-weight: 400; white-space: nowrap; }
+.a4-setup-sa-entries li.is-current { font-weight: var(--a4-weight-heading); }
+.a4-setup-sa-rules th[scope="row"] { font-weight: normal; white-space: nowrap; }
 .a4-setup-sa-list .a4-card.is-current { border-color: var(--a4-accent); box-shadow: inset 4px 0 0 var(--a4-accent), var(--a4-shadow-s); }
 :where([dir="rtl"]) .a4-setup-sa-list .a4-card.is-current { box-shadow: inset -4px 0 0 var(--a4-accent), var(--a4-shadow-s); }
 .a4-setup-sa-list .a4-card-head { flex-wrap: wrap; gap: var(--a4-space-2); }
@@ -1408,7 +1408,7 @@ label.a4-package-option-label {
   .a4-setup-oauth-keys tbody tr:last-child { border-bottom: 0; }
   .a4-setup-oauth-keys tbody td { display: block; grid-column: 2; border-bottom: 0; }
   .a4-setup-oauth-keys tbody td:first-child { grid-column: 1; grid-row: 1 / span 6; width: auto; }
-  .a4-setup-oauth-keys td[data-label]::before { content: attr(data-label); display: block; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; letter-spacing: .04em; text-transform: uppercase; }
+  .a4-setup-oauth-keys td[data-label]::before { content: attr(data-label); display: block; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-heading); letter-spacing: var(--a4-tracking); text-transform: uppercase; }
   .a4-setup-oauth-keys .a4-setup-oauth-key-actions { text-align: start; }
 }
 
