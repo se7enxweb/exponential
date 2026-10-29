@@ -954,3 +954,48 @@ BEGIN
     END IF;
 END
 $$;
+
+--
+-- expuser_audit: the user audit log (doc/eng-us/features/6.0/user-audit.md). One row per
+-- security event about a user account or a user group (a change with its fields before and
+-- after, a sign-in, a refused attempt, a role assignment): who, when, where (siteaccess, host,
+-- the address as the audit's privacy rules leave it), whom and what. Filled from the audit
+-- records of the access channel; read on user/audit. Never a password, a hash or a secret.
+-- Created only when the table is missing, so running this block again changes nothing.
+--
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'expuser_audit' ) THEN
+        IF NOT EXISTS ( SELECT 1 FROM information_schema.sequences WHERE sequence_schema = current_schema() AND sequence_name = 'expuser_audit_id_seq' ) THEN
+            CREATE SEQUENCE expuser_audit_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+        END IF;
+        CREATE TABLE expuser_audit (
+          actor_id integer DEFAULT 0 NOT NULL,
+          actor_login character varying(150) DEFAULT ''::character varying NOT NULL,
+          client_ip character varying(64) DEFAULT ''::character varying NOT NULL,
+          created integer DEFAULT 0 NOT NULL,
+          event_id character varying(26) DEFAULT ''::character varying NOT NULL,
+          event_name character varying(128) DEFAULT ''::character varying NOT NULL,
+          host character varying(255) DEFAULT ''::character varying NOT NULL,
+          id integer DEFAULT nextval('expuser_audit_id_seq'::text) NOT NULL,
+          module_view character varying(128) DEFAULT ''::character varying NOT NULL,
+          reason character varying(64) DEFAULT ''::character varying NOT NULL,
+          request_id character varying(40) DEFAULT ''::character varying NOT NULL,
+          result character varying(16) DEFAULT ''::character varying NOT NULL,
+          siteaccess character varying(64) DEFAULT ''::character varying NOT NULL,
+          target_id integer DEFAULT 0 NOT NULL,
+          target_login character varying(150) DEFAULT ''::character varying NOT NULL,
+          target_type character varying(16) DEFAULT ''::character varying NOT NULL,
+          time_ms bigint DEFAULT 0 NOT NULL,
+          value_after text,
+          value_before text
+        );
+        ALTER TABLE ONLY expuser_audit ADD CONSTRAINT expuser_audit_pkey PRIMARY KEY ( id );
+        CREATE UNIQUE INDEX expuser_audit_event ON expuser_audit USING btree ( event_id );
+        CREATE INDEX expuser_audit_target ON expuser_audit USING btree ( target_id, created );
+        CREATE INDEX expuser_audit_actor ON expuser_audit USING btree ( actor_id, created );
+        CREATE INDEX expuser_audit_name ON expuser_audit USING btree ( event_name, created );
+        CREATE INDEX expuser_audit_created ON expuser_audit USING btree ( created );
+    END IF;
+END
+$$;

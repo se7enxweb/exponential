@@ -40,12 +40,13 @@ class expAuditSinkRegistry
     /** @var int|null Fixed clock (tests) */
     public static $now = null;
 
-    /** @return array name => class: the configured sinks (the shipped three when nothing is configured) */
+    /** @return array name => class: the configured sinks (the shipped four when nothing is configured) */
     public static function classes()
     {
         $classes = expAuditConfig::hash( 'AuditSinkSettings', 'SinkClasses' );
         if ( !$classes )
-            $classes = array( 'syslog' => 'expAuditSyslogSink', 'webhook' => 'expAuditWebhookSink', 'mail' => 'expAuditMailSink' );
+            $classes = array( 'syslog' => 'expAuditSyslogSink', 'webhook' => 'expAuditWebhookSink', 'mail' => 'expAuditMailSink',
+                              'useraudit' => 'expAuditUserAuditSink' );
         return $classes;
     }
 
