@@ -298,9 +298,9 @@ class eZRedirectManagerSafeURITest extends PHPUnit\Framework\TestCase
             'state/edit' => \Exponential\View\Kernel\State\Edit::cancelURI( null, 'ez_lock', $o ),
             'state/group_edit' => \Exponential\View\Kernel\State\GroupEdit::cancelURI( null, $o ),
             'role/edit' => \Exponential\View\Kernel\Role\Edit::cancelURI( null, $o ),
-            'class/edit' => \Exponential\View\Kernel\Class\Edit::cancelURI( null, false, $o ),
-            'class/edit from a group' => \Exponential\View\Kernel\Class\Edit::cancelURI( null, '3', $o ),
-            'class/groupedit' => \Exponential\View\Kernel\Class\Groupedit::cancelURI( null, $o ),
+            'class/edit' => \Exponential\View\Kernel\ContentClass\Edit::cancelURI( null, false, $o ),
+            'class/edit from a group' => \Exponential\View\Kernel\ContentClass\Edit::cancelURI( null, '3', $o ),
+            'class/groupedit' => \Exponential\View\Kernel\ContentClass\Groupedit::cancelURI( null, $o ),
         );
     }
 

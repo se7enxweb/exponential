@@ -178,7 +178,7 @@ class eZAutoloadGenerator
     /**
      * Constructs class to generate autoload arrays.
      */
-    function __construct( ezpAutoloadGeneratorOptions|null $options = null )
+    function __construct( ?ezpAutoloadGeneratorOptions $options = null )
     {
         if ( $options === null )
         {
