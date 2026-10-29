@@ -35,7 +35,7 @@ eine andere Installation ihn importieren, per Cron im Gleichschritt gehalten. Di
    |  cronjob part export_feed                          ^  cronjob part import_feed
    v                                                    |
  cached XML + binary files, one file per object  --->  SOAP request to the main installation
- served through soap.php (EnableSOAP=true)
+ served through index_soap.php (EnableSOAP=true)
 ```
 
 - **Syndizierung in eine Richtung**: gemeinsame Inhalte oder Authentifizierungsdaten zwischen getrennten Datenbanken
@@ -59,6 +59,14 @@ Auf **beiden** Installationen:
    SOAPExtensions[]=syndication
    ```
 
+3. Lassen Sie den SOAP-Server durch den Webserver der exportierenden Seite. Er heißt seit Exponential 6.0.15
+   `index_soap.php` (vorher `soap.php`; dieser Name leitet nur noch weiter): Nehmen Sie in der `.htaccess` das
+   Kommentarzeichen vor `RewriteRule ^index_soap\.php - [L]` weg, oder ergänzen Sie die Zeile im HTTPS-Virtual-Host,
+   oder eine `location = /index_soap.php` in nginx. `curl -i https://<host>/index_soap.php` muss mit „only understand
+   POST methods“ antworten, nicht mit `404` oder einer Seite der Website. Die Zeilen für jeden Server und den
+   vollständigen Test finden Sie unter
+   [Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../bc/6.0/soap-einstiegsskript-index-soap.md).
+
 Auf der **Hauptinstallation**: Öffnen Sie `/syndication/menu`, wählen Sie **Export**, dann **New Feed** und schließen
 Sie den Assistenten ab. Eine Teilbaumquelle schließt die Wurzel des Teilbaums ein. Planen Sie den Export-Teil ein;
 alle 3 Minuten wird empfohlen:
@@ -68,7 +76,8 @@ php runcronjobs.php export_feed
 ```
 
 Auf der **zweiten Installation**: Öffnen Sie `/syndication/menu`, wählen Sie **Import**, geben Sie die Serveradresse
-des Feeds und den Knoten an, der die Inhalte aufnimmt, und führen Sie den Import-Teil zuerst von Hand aus:
+des Feeds (`https://export.example.com/index_soap.php`, oder `.../soap.php`, wenn die Hauptinstallation 6.0.14 oder
+älter betreibt) und den Knoten an, der die Inhalte aufnimmt, und führen Sie den Import-Teil zuerst von Hand aus:
 
 ```bash
 php runcronjobs.php import_feed
@@ -81,8 +90,8 @@ Prüfen Sie den ersten Import und planen Sie ihn dann ein. Nach dem ersten Lauf 
 Seit 1.2.0 sendet der Import einen Login und ein Passwort, sodass der SOAP-Endpunkt der exportierenden Website hinter
 einer HTTP-Zugriffskontrolle liegen kann. Geben Sie sie in der Serveradresse an (`https://<login>:<password>@<host>/`)
 oder in den Feldern **Login** und **Password** im ersten Schritt des Imports. Der Port ist für `https` standardmäßig
-443. Halten Sie diese Zugangsdaten aus der Versionskontrolle heraus und beschränken Sie `soap.php` am Webserver auf die
-Adressen der importierenden Installationen.
+443. Halten Sie diese Zugangsdaten aus der Versionskontrolle heraus und beschränken Sie `index_soap.php` (und `soap.php`,
+solange ein Import es noch aufruft) am Webserver auf die Adressen der importierenden Installationen.
 
 ## Betreiben
 

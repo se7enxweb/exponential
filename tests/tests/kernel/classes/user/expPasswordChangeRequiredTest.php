@@ -235,7 +235,7 @@ class expPasswordChangeRequiredTest extends PHPUnit\Framework\TestCase
         $this->assertLessThan( $signIn, $refusal, 'refused before the request is signed in' );
         $this->assertStringContainsString( 'new expRestPasswordChangeRequiredStatus()', self::file( 'kernel/private/rest/classes/controllers/auth.php' ) );
         $this->assertStringContainsString( "refusesSignIn( \$user, 'webdav' )", self::file( 'kernel/private/classes/webdav/ezwebdavcontentbackendauth.php' ) );
-        $this->assertStringContainsString( "refusesSignIn( \$soapUser, 'soap' )", self::file( 'soap.php' ) );
+        $this->assertStringContainsString( "refusesSignIn( \$soapUser, 'soap' )", self::file( 'index_soap.php' ) );
         $this->assertFalse( expPasswordChangeRequired::refusesSignIn( null, 'rest' ) );
     }
 

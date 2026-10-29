@@ -104,7 +104,17 @@ RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^.+/[^/]+\.(php[0-9]?|phtml|phar)$ - [R=404,L]
 RewriteRule ^api/ index_rest.php [L]
 RewriteRule ^index_rest\.php - [L]
+# The SOAP server (settings/soap.ini EnableSOAP=true) is index_soap.php since
+# Exponential 6.0.15; soap.php, its old name, only forwards to it. Uncomment
+# when SOAP is switched on, and let the SOAP clients call index_soap.php:
+#RewriteRule ^index_soap\.php - [L]
 RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
+# WebDAV (settings/webdav.ini [GeneralSettings] EnableWebDAV=true): the server is
+# index_webdav.php, reached as https://www.example.com/index_webdav.php/<siteaccess>/.
+# Uncomment to let it answer on this host, or give it a host of its own that sends
+# every request to index_webdav.php. webdav.php, its old name, only forwards to it
+# and will be removed in a later major version: name index_webdav.php in new rules.
+#RewriteRule ^index_webdav\.php - [L]
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* - [L]
 # SVG images are sanitized on upload; served from the storage they also run
 # nothing and load nothing when opened directly (needs mod_headers).
@@ -231,7 +241,9 @@ RewriteRule .* index.php
 | `RewriteRule (^\|/)\.(?!well-known(/\|$)) - [R=404,L]` | any path with a segment that starts with a dot answers 404, except `.well-known` | `.git/config`, `.env`, a package's `.cache`, an extension's own `.htaccess` |
 | `RewriteCond %{REQUEST_FILENAME} -f` + `RewriteRule ^.+/[^/]+\.(php[0-9]?\|phtml\|phar)$ - [R=404,L]` | an existing script below the root answers 404 | no library, installer, package setting or stray script runs because its path was asked for; only the front controllers at the root run |
 | `RewriteRule ^api/ index_rest.php [L]`, `^index_rest\.php - [L]` | the REST API | `index_rest.php` is the REST front controller |
+| `#RewriteRule ^index_soap\.php - [L]` (commented) | the SOAP server, when `soap.ini [GeneralSettings] EnableSOAP=true` | `index_soap.php` is the SOAP front controller since 6.0.15; `soap.php` only forwards to it. Uncomment the line with SOAP on, or SOAP requests end at `index.php`; see [the SOAP entry script is now index_soap.php](../../bc/6.0/soap-entry-script-index-soap.md) |
 | `RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]` | the administration's tree menu, with or without a siteaccess in front | a light front controller for the tree's JSON |
+| `#RewriteRule ^index_webdav\.php - [L]` (commented) | WebDAV on this host, once uncommented | `index_webdav.php` is the WebDAV server since 6.0.15; `webdav.php` only forwards to it ([what to change](../../bc/6.0/webdav-entry-script-index-webdav.md)) |
 | `^var/([^/]+/)?storage/images(-versioned)?/.*` | stored image variations are sent as files | images in content |
 | the `<FilesMatch "(?i)\.svgz?$">` block | an SVG is sent with `Content-Security-Policy: sandbox ...` | an SVG opened directly runs nothing and loads nothing |
 | `^var/([^/]+/)?storage/pdf/...\.pdf$` | stored PDF exports | Setup > PDF export |

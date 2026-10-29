@@ -187,6 +187,9 @@ engine current as well: [Security updates and disclosure](security-updates-and-d
 
 - [ ] Rewrite rules: a current `.htaccess_root` copy, the derived nginx block, or Velocity; the outside check returns
       no file.
+- [ ] SOAP only where a customer needs it: `index_soap.php` let through (it was `soap.php` before 6.0.15) and limited
+      to the callers' addresses; `soap.php` refused once nothing calls it
+      ([the SOAP entry script is now index_soap.php](../../../bc/6.0/soap-entry-script-index-soap.md)).
 - [ ] `settings/override/` mode `0640` or stricter, out of version control, backed up encrypted.
 - [ ] Provisioning removes `kickstart.ini` and `var/log/initial-admin-password`, and never leaves a known password.
 - [ ] `DebugOutput=disabled`; PHP `display_errors=Off`, `expose_php=Off`.

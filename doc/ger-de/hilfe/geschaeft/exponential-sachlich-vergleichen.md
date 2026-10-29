@@ -143,7 +143,7 @@ ausgefüllt; die anderen Spalten überlassen Sie dem Käufer.
 | Published releases immutable      | Yes                                                 |          |          | SECURITY.md  |
 | Security reporting                | Private, first answer within one business day       |          |          | SECURITY.md  |
 | Multisite from one installation   | Yes (siteaccesses)                                  |          |          | README.md    |
-| Content languages                 | 359 locale files; at most 62 per installation       |          |          | doc/eng-us/languages.md |
+| Content languages                 | 368 locale files; at most 62 per installation       |          |          | doc/eng-us/languages.md |
 | Administration translations       | all complete (totals: languages page)               |          |          | doc/eng-us/languages.md |
 | Visual page builder               | Exponential Layouts                                 |          |          | layouts-editor |
 | Audit trail                       | Tamper-evident, on by default                       |          |          | audit-trail  |
@@ -190,7 +190,7 @@ Manche Käufer kennen die Geschichte. Wählen Sie den Ton der Seiten zur Geschic
 | „Wir sind besser als X.“ | „Das leistet Exponential, und so können Sie es prüfen.“ | Keine Quelle kann eine Rangfolge belegen. |
 | „X bindet Sie an sich.“ | „Mit Exponential behalten Sie den Code unter der GPL und Ihre Inhalte in einer Standarddatenbank.“ | Beschreiben Sie Exponential, nicht andere. |
 | „Es ist das schnellste CMS.“ | „Die README dokumentiert 0,36 ms je gecachter Seite auf einer Maschine mit 12 Kernen, reproduzierbar mit mitgelieferten Skripten; messen wir das auf Ihrer Hardware.“ | Zahlen brauchen ihren Kontext ([Benchmarks](../../anleitungen/benchmarking.md)). |
-| „Es unterstützt jede Sprache.“ | „359 Locale-Dateien für Inhalte; Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../../sprachen.md)).“ | Genau und belegt. |
+| „Es unterstützt jede Sprache.“ | „368 Locale-Dateien für Inhalte; Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../../sprachen.md)).“ | Genau und belegt. |
 | „Es ist das neue eZ Publish.“ | „Exponential führt die Codebasis von eZ Publish fort, einem Produkt, das sein Hersteller nach fast 18 Jahren eingestellt hat.“ | Das Produkt heißt Exponential. |
 | „Wir garantieren Support.“ | „Sicherheitsmeldungen erhalten innerhalb eines Werktags eine erste Antwort (SECURITY.md); die Bedingungen für Dienstleistungen legt Ihr Anbieter fest.“ | Nur was schriftlich festgehalten ist. |
 | „Hunderte Unternehmen setzen es ein.“ | „Die Quellen zählen keine Anwender. Die Historie zeigt über die Jahre Hunderte von Mitwirkenden.“ | [Mitwirkende](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts) |

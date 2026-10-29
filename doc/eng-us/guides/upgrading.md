@@ -243,6 +243,11 @@ The three changes people most often meet:
 - Security headers, `HttpOnly`/`SameSite` session cookies and a stricter upload check are on by default
   (September and October 2026): if a host frames your admin, set the header deliberately.
 
+**If WebDAV is on**: since 6.0.15 its entry script is `index_webdav.php`. `webdav.php` only forwards to it and will be
+removed in a later major version. Change the virtual host (the HTTPS one too) and the rewrite rules, then test with
+`curl -i -X PROPFIND -H 'Depth: 1' https://www.example.com/index_webdav.php/` (expect `207 Multi-Status`):
+[The WebDAV entry script is now index_webdav.php](../bc/6.0/webdav-entry-script-index-webdav.md).
+
 For what changed by month, the story is in the [chronicle](../history/2026/); every single change is in the
 [ledger of the root repository](../history/ledger/exponential-root.md).
 

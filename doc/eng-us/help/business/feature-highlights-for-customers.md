@@ -58,7 +58,7 @@ customer asks for more than a page says, the honest answer is "the documentation
 |---|---|---|---|
 | Editors who arrange pages without a developer | Exponential Layouts: layouts, zones, blocks and rules | **Layouts** tab, **Open** a layout | [The layouts editor](../layouts-editor.md) |
 | Several sites, brands or countries from one installation | Siteaccesses (one per site, language or the administration), per-site settings, cross-site links | The globe button in the header, **Open the site or another siteaccess** | [Siteaccess host and language matching](../../features/6.0/siteaccess-host-and-language-matching.md), [Per-site settings](../../features/6.0/multi-site-ini-overrides.md), [Cross-site links](../../features/6.0/multisite-cross-site-links.md) |
-| Content in many languages | 359 locale files (352 languages and countries) as content languages; translations per item | An item's language badges and **Translations** tab | [Languages in Exponential](../../languages.md), [Languages](../languages.md) |
+| Content in many languages | 368 locale files (361 languages and countries) as content languages; translations per item | An item's language badges and **Translations** tab | [Languages in Exponential](../../languages.md), [Languages](../languages.md) |
 | An administration in the editors' own language | administration translations (the current totals are at the top of [Languages in Exponential](../../languages.md)) | Right column, **Interface** box, **Interface language** | [Languages in Exponential, support levels](../../languages.md#2-support-levels) |
 | Hebrew, Arabic, Persian or Urdu | Right-to-left in content and administration (`dir="rtl"`) | Choose a right-to-left interface language | [Right to left](../../features/6.0/right-to-left.md) |
 | Faster writing, with a human in charge | Exponential Intelligence (`expai`): writes drafts only | The **Intelligence** tab of an item; the edit form | [Exponential Intelligence](../../features/6.0/extensions/expai.md) |
@@ -129,7 +129,7 @@ made with `./console exp:install --apply`, the sites of the multisite package
 
 ## Many languages, including right to left
 
-**What to say.** "359 locale files (352 languages and countries ...) can be chosen as content languages and
+**What to say.** "368 locale files (361 languages and countries ...) can be chosen as content languages and
 siteaccess locales; administration translations exist (the current totals are at the top of the languages page)" ([Languages in Exponential](../../languages.md)).
 Each translation of an item is published on its own ([Languages](../languages.md#translate-an-item)). When the interface
 language is written right to left, "the administration turns around" and content in a right-to-left language is marked

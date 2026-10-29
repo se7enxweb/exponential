@@ -5,7 +5,9 @@ Server Configuration
 ====================
 
 The Exponential installation must be configured to process all WebDAV requests
-through webdav.php.
+through index_webdav.php (named webdav.php until 6.0.14; webdav.php now only
+forwards to it and will be removed in a later major version, see
+doc/eng-us/bc/6.0/webdav-entry-script-index-webdav.md).
 
 See http://ez.no/doc/ez_publish/technical_manual/4_0/features/webdav for
 more information about how to activate WebDAV support on an Exponential
@@ -27,7 +29,7 @@ WebDAV Logging is enabled by (in webdav.ini or in overwrites)::
  [GeneralSettings]
  Logging=enable
 
-The locations of the WebDAV log files are var/log/webdav.log (from webdav.php)
+The locations of the WebDAV log files are var/log/webdav.log (from index_webdav.php)
 and var/log/<siteaccess>/log/webdav.log (from ezwebdavcontentbackend.php).
 
 For multiple siteaccesses, the setting PathPrefix and PathPrefixExclude should

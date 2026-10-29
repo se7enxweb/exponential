@@ -110,7 +110,8 @@ installiert sein. Mit Solr über `ezfind` können auch Dateiinhalte indiziert we
 
 ## WebDAV
 
-Der Kernel enthält einen WebDAV-Einstiegspunkt (`webdav.php`) mit seinen Einstellungen in `settings/webdav.ini`. Er ist
+Der Kernel enthält einen WebDAV-Einstiegspunkt (`index_webdav.php`; bis 6.0.14 `webdav.php`, siehe
+[die Änderung](../../../bc/6.0/webdav-einstiegsskript-index-webdav.md)) mit seinen Einstellungen in `settings/webdav.ini`. Er ist
 standardmäßig ausgeschaltet (`EnableWebDAV=false`) und beginnt bei Knoten 2. Uploads über WebDAV durchlaufen dieselben
 Bildprüfungen wie andere Uploads (Changelog 6.0.15). Diese Hilfe hat keine Anleitung Schritt für Schritt dafür; wenn
 Mitarbeiter die Bibliothek als Netzlaufwerk einbinden möchten, bitten Sie Ihren Partner, es auf Ihrer Installation zu

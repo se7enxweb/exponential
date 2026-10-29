@@ -175,8 +175,18 @@ Bewusst nicht geändert:
 |---|---|
 | Einen der Befehle ohne Optionen ausführen: Er listet, was er ändern würde, und endet mit `PASS: ... (dry run, nothing changed; --apply writes)`. | In jedem Skript, jeder Crontab-Zeile und jeder Anleitung, die einen dieser Befehle ausführt, um die Änderung vorzunehmen, `--apply` ergänzen; ein Aufruf mit `--dry-run` allein bleibt ein Probelauf. Vor allem: ein Skript, das eine Demo oder einen Test mit `exp:install`, `collaborationsampledata` oder `preload` neu aufbaut (die Beispiele im [Demomodus](../../beispiele/demomodus/README.md) übergeben `--apply` und brechen ab, wenn nichts installiert wurde), und eine Crontab-Zeile eines Betreibers, die einen Befehl direkt aufruft (der Crontab-Block einer Installation führt nur `runcronjobs.php` aus und ist nicht betroffen). Ein Skript gegen eine ältere Version ohne `--apply` ausführen: Vor dem 28. Oktober 2026 lehnen die Befehle die Option als unbekannt ab. |
 
+## Das WebDAV-Einstiegsskript heißt index_webdav.php (29. Oktober 2026)
+
+> **Ändern Sie Ihre vhost- und Rewrite-Regeln.** Die vollständigen Regeln vorher/nachher für Apache, Plesk, nginx und
+> IIS und das Testverfahren: [Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](webdav-einstiegsskript-index-webdav.md).
+
+| Änderung | Wie prüfen | Was tun |
+|---|---|---|
+| Der WebDAV-Server ist `index_webdav.php`, benannt wie `index_rest.php`, `index_treemenu.php` und `index_cluster.php`. `webdav.php` bindet ihn nur noch ein, schreibt einmal am Tag eine Warnung in `warning.log` und wird in einer späteren Hauptversion entfernt. `.htaccess_root` und `.htaccess_root_static` tragen eine auskommentierte Regel `#RewriteRule ^index_webdav\.php - [L]`. | `grep -rn 'webdav\.php'` über die virtuellen Hosts (HTTP **und** HTTPS), `.htaccess`, die zusätzlichen Anweisungen von Plesk, die nginx- und IIS-Konfigurationen; `grep 'old name of the WebDAV entry script' var/log/warning.log`. | `index_webdav.php` in jeder Regel nennen (`RewriteRule`, nginx-`location` und `fastcgi_param SCRIPT_FILENAME`, IIS-Regeln, Freigabelisten der Skripte im Wurzelverzeichnis), dann testen: `curl -i -X OPTIONS` (`DAV: 1`) und `curl -i -X PROPFIND -H 'Depth: 1'` (`207 Multi-Status`) gegen `/index_webdav.php/`. Unter `/webdav.php/...` eingebundene Clients funktionieren über den Shim weiter; binden Sie sie unter `/index_webdav.php/...` neu ein. WebDAV fragt weiterhin standardmäßig nie nach einem zweiten Anmeldeschritt. |
+
 ## Verwandte Seiten
 
+- [Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](webdav-einstiegsskript-index-webdav.md)
 - [Chronik vom Oktober 2026](../../geschichte/2026/2026-10.md)
 - [Verhaltensänderungen vom 16. bis 30. September 2026](verhaltensaenderungen-2026-09b.md)
 - [Verhaltensänderungen vom Juli und August 2026](verhaltensaenderungen-2026-07-08.md)

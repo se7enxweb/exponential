@@ -81,7 +81,7 @@ time a content management system, a digital experience platform and an e-commerc
 | Layer | What is in the box | Read more |
 |---|---|---|
 | Server | Exponential Velocity: HTTP/1.1, HTTP/2 over TLS, WebSockets, its own HTTPS certificates, a response cache, static files and images | [Velocity web server](../features/6.0/velocity-web-server.md) |
-| Application platform | The Exponential kernel: content classes and objects, versions, roles and policies, multisite, 219 locales, REST, cronjobs, the console | [README](https://github.com/se7enxweb/exponential/blob/main/README.md) |
+| Application platform | The Exponential kernel: content classes and objects, versions, roles and policies, multisite, more than 360 locales, REST, cronjobs, the console | [README](https://github.com/se7enxweb/exponential/blob/main/README.md) |
 | Rapid development | The RAD tools: a catalogue of extension points, wizards that write a working extension, a survey and a health check | [RAD tools](../features/6.0/rad-tools.md) |
 | Content management | The administration (Admin 4), the online editor, publishing and versions, the trash, the audit trail | [Help for editors and users](README.md) |
 | Digital experience | Exponential Layouts (a visual page builder with zones, blocks and rules), multisite and multilingual sites, the Exponential Intelligence writing assistant that writes drafts only | [The layouts editor](layouts-editor.md) |

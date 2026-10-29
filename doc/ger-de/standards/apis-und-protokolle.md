@@ -27,8 +27,8 @@ Tests liegen und was fehlt.
 | REST über HTTP | HTTP-Semantik, RFC 9110 | **Teilweise erfüllt** | `ezprestapi`-Routen `/api/ezp/v1`, `/api/ezp/v2`; Statusklassen in `kernel/private/rest/classes/` |
 | JSON | RFC 8259 | **Erfüllt** | `ezpRestJsonView` (`application/json`, UTF-8), Aufrufschnittstelle von `ezjscore` |
 | OpenAPI-Beschreibung | 3.x | **Nicht anwendbar** (Kernel) | kein OpenAPI-Dokument für die REST-API des Kernels; Velocity veröffentlicht eines für seine eigenen Handler |
-| WebDAV | RFC 4918 | **Teilweise erfüllt** | `webdav.php`, `kernel/private/classes/webdav/` auf Basis von `zetacomponents/webdav`; Sperr-Eigentümerschaft nicht implementiert |
-| SOAP | 1.1 (W3C Note) | **Teilweise erfüllt** | `lib/ezsoap/`, `soap.php`, `settings/soap.ini [GeneralSettings] EnableSOAP=false`; keine WSDL |
+| WebDAV | RFC 4918 | **Teilweise erfüllt** | `index_webdav.php`, `kernel/private/classes/webdav/` auf Basis von `zetacomponents/webdav`; Sperr-Eigentümerschaft nicht implementiert |
+| SOAP | 1.1 (W3C Note) | **Teilweise erfüllt** | `lib/ezsoap/`, `index_soap.php`, `settings/soap.ini [GeneralSettings] EnableSOAP=false`; keine WSDL |
 | XML-RPC | Spezifikation von 1999 | **Nicht anwendbar** | nicht implementiert |
 | RSS-Export und -Import | RSS 1.0, RSS 2.0 (Export); 0.91 bis 2.0 (Import) | **Erfüllt** | `kernel/classes/ezrssexport.php`, `ezrssimport.php` |
 | Atom | RFC 4287 | **Teilweise erfüllt** | nur Export (`rss_version` `ATOM`); kein Atom-Import |
@@ -214,12 +214,13 @@ PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK und UNLOCK. Klasse 1 ist der Grundu
 
 ### Wie Exponential es erfüllt
 
-- Einstiegspunkt `webdav.php` im Installationsverzeichnis; er verwendet den WebDAV-Server der Zeta Components
+- Einstiegspunkt `index_webdav.php` im Installationsverzeichnis (bis 6.0.14 `webdav.php`, jetzt ein weiterleitender
+  Shim, siehe [die Änderung](../bc/6.0/webdav-einstiegsskript-index-webdav.md)); er verwendet den WebDAV-Server der Zeta Components
   (`zetacomponents/webdav ~1.2` in `composer.json`) mit dem Inhalts-Backend
   `kernel/private/classes/webdav/ezwebdavcontentbackend.php` und dem Authentifizierungs-Backend
   `ezwebdavcontentbackendauth.php` (Basic-Authentifizierung gegen Exponential-Benutzer).
 - `settings/webdav.ini` (`[GeneralSettings]`, `[FolderSettings]`).
-- Das Sperr-Plugin ist registriert (`ezcWebdavLockPluginConfiguration` in `webdav.php`), und das Backend deklariert
+- Das Sperr-Plugin ist registriert (`ezcWebdavLockPluginConfiguration` in `index_webdav.php`), und das Backend deklariert
   `ezcWebdavLockBackend`.
 - Aufzeichnungen von Anfragen und Antworten für COPY, DELETE, GET, HEAD, MKCOL, MOVE, OPTIONS, PROPFIND, PROPPATCH und
   PUT liegen in `tests/tests/kernel/private/webdav/regression/`.
@@ -250,7 +251,7 @@ Ausgabe 2007). WSDL beschreibt SOAP-Dienste.
 
 - Bibliothek `lib/ezsoap/classes/` (Client, Server, Envelope, Codec, Fault). `eZSOAPEnvelope` verwendet die
   SOAP-1.1-Namensräume `http://schemas.xmlsoap.org/soap/envelope/` und `.../soap/encoding/`.
-- Server-Einstiegspunkt `soap.php`; standardmäßig aus: `settings/soap.ini [GeneralSettings] EnableSOAP=false`.
+- Server-Einstiegspunkt `index_soap.php` (vor 6.0.15 `soap.php`, jetzt ein Shim, das dorthin weiterleitet); standardmäßig aus: `settings/soap.ini [GeneralSettings] EnableSOAP=false`.
   Funktionen werden von Extensions hinzugefügt (`[ExtensionSettings] SOAPExtensions[]`). Die Extension `syndication`,
   die die Wurzel-`composer.json` verlangt, ist ein SOAP-Client und -Server zwischen Installationen.
 - Der Client prüft TLS-Zertifikate standardmäßig: `tests/tests/lib/ezsoap/eZSOAPClientTlsOptionsTest.php`

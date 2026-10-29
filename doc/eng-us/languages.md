@@ -10,16 +10,16 @@ and `settings/i18n.ini`, no extension) has:
 | What | How many |
 |---|---:|
 | Languages of the administration: translations in `share/translations` | **155**, 155 of them complete |
-| Locales: `share/locale/*.ini` files | **359**: 352 languages and countries, 1 test language, 6 variants |
+| Locales: `share/locale/*.ini` files | **368**: 361 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **150** |
 | of them shown translated by the administration (own translation, fallback or English) | **150** |
 | of them not translated ([list](#the-languages-not-translated-yet)) | **0** |
-| Countries and territories of the locales | **238** |
-| of them with the administration in their language (green on the map) | **238** |
-| Codes of ISO 3166-1 (`settings/country.ini`) without a locale | **13**: 4 by design, 9 not yet (list below the map) |
+| Countries and territories of the locales | **247** |
+| of them with the administration in their language (green on the map) | **247** |
+| Codes of ISO 3166-1 (`settings/country.ini`) without a locale | **4**, all of them by design: uninhabited or withdrawn (list below the map) |
 | Locales written right to left | **43** |
 
-![World map: 238 countries and territories in green, where a shipped locale shows the administration in its language, and 3 uninhabited territories without a locale by design; the others in grey](images/languages/coverage-map.webp)
+![World map: 247 countries and territories in green, where a shipped locale shows the administration in its language, and 3 uninhabited territories without a locale by design; the others in grey](images/languages/coverage-map.webp)
 
 A country is green when a locale ships for it whose language the administration shows translated: with a
 translation of its own or the first translation of its fallback chain (`i18n.ini [TranslationSettings]`,
@@ -29,7 +29,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 The uninhabited territories without a locale by design are green too: Antarctica (`AQ`), Bouvet Island (`BV`) and Heard Island and McDonald Islands (`HM`).
 Exponential serves these territories in every language; no local conventions exist.
 
-<details><summary>The 238 countries and territories in green</summary>
+<details><summary>The 247 countries and territories in green</summary>
 
 | Country or territory | Code | Locales and the translation they show |
 |---|---|---|
@@ -77,6 +77,8 @@ Exponential serves these territories in every language; no local conventions exi
 | Chad | TD | `ara-TD` → `ara-SA`, `fre-TD` → `fre-FR` |
 | Chile | CL | `esl-CL` → `esl-ES` |
 | China | CN | `bod-CN`, `chi-CN`, `uig-CN` |
+| Christmas Island | CX | `eng-CX` → `eng-AU` |
+| Cocos (Keeling) Islands | CC | `eng-CC` → `eng-AU` |
 | Colombia | CO | `esl-CO` → `esl-ES` |
 | Comoros | KM | `ara-KM` → `ara-SA`, `fre-KM` → `fre-FR` |
 | Congo | CG | `fre-CG` → `fre-FR` |
@@ -106,6 +108,7 @@ Exponential serves these territories in every language; no local conventions exi
 | Fiji | FJ | `eng-FJ` (source texts) |
 | Finland | FI | `fin-FI` |
 | France | FR | `bre-FR`, `fre-FR`, `oci-FR` |
+| French Guiana | GF | `fre-GF` → `fre-FR` |
 | French Polynesia | PF | `fre-PF` → `fre-FR` |
 | French Southern Territories | TF | `fre-TF` → `fre-FR` |
 | Gabon | GA | `fre-GA` → `fre-FR` |
@@ -169,12 +172,14 @@ Exponential serves these territories in every language; no local conventions exi
 | Martinique | MQ | `fre-MQ` → `fre-FR` |
 | Mauritania | MR | `ara-MR` → `ara-SA`, `fre-MR` → `fre-FR` |
 | Mauritius | MU | `fre-MU` → `fre-FR` |
+| Mayotte | YT | `fre-YT` → `fre-FR` |
 | Mexico | MX | `esl-MX` |
 | Micronesia, Federated States of | FM | `eng-FM` (source texts) |
 | Moldova, Republic of | MD | `ron-MD` → `ron-RO`, `rus-MD` → `rus-RU` |
 | Monaco | MC | `fre-MC` → `fre-FR` |
 | Mongolia | MN | `mon-MN` |
 | Montenegro | ME | `srp-ME` → `srp-RS` |
+| Montserrat | MS | `eng-MS` (source texts) |
 | Morocco | MA | `ara-MA` → `ara-SA`, `fre-MA` → `fre-FR`, `zgh-MA` |
 | Mozambique | MZ | `por-MZ` → `por-PT` |
 | Myanmar | MM | `mya-MM` |
@@ -188,6 +193,7 @@ Exponential serves these territories in every language; no local conventions exi
 | Niger | NE | `fre-NE` → `fre-FR` |
 | Nigeria | NG | `eng-NG` (source texts), `hau-NG`, `ibo-NG`, `pcm-NG`, `yor-NG` |
 | Niue | NU | `eng-NU` (source texts) |
+| Norfolk Island | NF | `eng-NF` → `eng-AU` |
 | North Macedonia | MK | `mkd-MK` |
 | Northern Mariana Islands | MP | `eng-MP` (source texts) |
 | Norway | NO | `nno-NO` → `nor-NO`, `nor-NO`, `sme-NO` |
@@ -205,6 +211,7 @@ Exponential serves these territories in every language; no local conventions exi
 | Portugal | PT | `por-PT` |
 | Puerto Rico | PR | `esl-PR` → `esl-ES` |
 | Qatar | QA | `ara-QA` → `ara-SA` |
+| Reunion | RE | `fre-RE` → `fre-FR` |
 | Romania | RO | `ron-RO` |
 | Russian Federation | RU | `che-RU`, `rus-RU`, `tat-RU` |
 | Rwanda | RW | `fre-RW` → `fre-FR`, `kin-RW` |
@@ -236,6 +243,7 @@ Exponential serves these territories in every language; no local conventions exi
 | Sri Lanka | LK | `sin-LK`, `tam-LK` → `tam-IN` |
 | Sudan | SD | `ara-SD` → `ara-SA` |
 | Suriname | SR | `dut-SR` → `dut-NL` |
+| Svalbard and Jan Mayen | SJ | `nor-SJ` → `nor-NO` |
 | Sweden | SE | `swe-SE` |
 | Switzerland | CH | `fre-CH` → `fre-FR`, `ger-CH` → `ger-DE`, `ita-CH` → `ita-IT`, `roh-CH` |
 | Syrian Arab Republic | SY | `ara-SY` → `ara-SA`, `syr-SY` → `syr-IQ` |
@@ -257,6 +265,7 @@ Exponential serves these territories in every language; no local conventions exi
 | Ukraine | UA | `ukr-UA` |
 | United Arab Emirates | AE | `ara-AE` → `ara-SA` |
 | United Kingdom | GB | `cym-GB`, `eng-GB` (source texts), `gla-GB` |
+| United States Minor Outlying Islands | UM | `eng-UM` (source texts) |
 | United States of America | US | `eng-US`, `esl-US` → `esl-ES`, `haw-US`, `yid-US` |
 | Uruguay | UY | `esl-UY` → `esl-ES` |
 | Uzbekistan | UZ | `uzb-UZ` |
@@ -281,7 +290,7 @@ Exponential serves these territories in every language; no local conventions exi
 
 </details>
 
-<details><summary>The 13 codes of ISO 3166-1 without a locale</summary>
+<details><summary>The 4 codes of ISO 3166-1 without a locale</summary>
 
 | Country or territory | Code | Why |
 |---|---|---|
@@ -289,15 +298,6 @@ Exponential serves these territories in every language; no local conventions exi
 | Antarctica | AQ | No locale by design: uninhabited, CLDR defines no locale for it (shown green: Exponential serves these territories in every language; no local conventions exist) |
 | Bouvet Island | BV | No locale by design: uninhabited, CLDR defines no locale for it (shown green: Exponential serves these territories in every language; no local conventions exist) |
 | Heard Island and McDonald Islands | HM | No locale by design: uninhabited, CLDR defines no locale for it (shown green: Exponential serves these territories in every language; no local conventions exist) |
-| Cocos (Keeling) Islands | CC | No locale yet |
-| Christmas Island | CX | No locale yet |
-| French Guiana | GF | No locale yet |
-| Montserrat | MS | No locale yet |
-| Norfolk Island | NF | No locale yet |
-| Reunion | RE | No locale yet |
-| Svalbard and Jan Mayen | SJ | No locale yet |
-| United States Minor Outlying Islands | UM | No locale yet |
-| Mayotte | YT | No locale yet |
 
 </details>
 
@@ -308,7 +308,7 @@ The one place that says which languages Exponential supports, at which level, an
 were taken on 15 October 2026, those of the administration translations on 26 October 2026 (Exponential 6.0.15).
 
 <!-- generated: exp:i18n coverage translations (start) -->
-In short: **359 locale files** (352 languages and countries, the test language Lorem Ipsum and 6 variations, 43 of
+In short: **368 locale files** (361 languages and countries, the test language Lorem Ipsum and 6 variations, 43 of
 them written right to left) can be chosen as content languages and siteaccess locales; **155 administration
 translations** exist, all of them complete: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian (`sqi-AL`), Amharic
 (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`), Asturian (`ast-ES`),

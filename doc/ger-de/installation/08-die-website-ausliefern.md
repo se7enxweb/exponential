@@ -139,6 +139,16 @@ Was schiefgehen kann: Ein `200` für die `.git`- oder die Kernel-Anfrage bedeute
 und beheben Sie das, bevor die Website von außen erreichbar ist. Ein `404` für jedes Asset unter `design/` bedeutet,
 dass das Document Root nicht das Installationsverzeichnis ist.
 
+**WebDAV steht nicht in dieser Liste.** Es ist standardmäßig aus, und die mitgelieferten Regeln schicken
+`/index_webdav.php` wie jedes andere Skript an `index.php`. Um WebDAV auszuliefern, kommentieren Sie
+`RewriteRule ^index_webdav\.php - [L]` in `.htaccess` ein (oder schreiben dieselbe Regel in den HTTPS-Host), oder Sie
+geben WebDAV einen eigenen Host, der jede Anfrage an `index_webdav.php` schickt. Velocity und die
+FrankenPHP-Konfiguration liefern WebDAV nicht aus; verwenden Sie dafür Apache oder nginx mit PHP-FPM. **Seit 6.0.15
+heißt das Skript `index_webdav.php`, nicht `webdav.php`:** Regeln für den alten Namen funktionieren über einen
+weiterleitenden Shim weiter, der in einer späteren Hauptversion entfernt wird. Die Regeln für jeden Server und der Test
+(`curl -X PROPFIND -H 'Depth: 1'`, erwartet: `207 Multi-Status`) stehen in
+[Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](../bc/6.0/webdav-einstiegsskript-index-webdav.md).
+
 ---
 
 ## 8.3 Exponential Velocity, der empfohlene Weg

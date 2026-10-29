@@ -58,7 +58,7 @@ Diese Regeln schützen den Kunden, Ihr Unternehmen und das Projekt. Nach denselb
    Changelog zeigen, in dem es steht. Steht es in keiner Quelle, sagen Sie es nicht, oder Sie sagen: „Die Quellen
    sagen dazu nichts, wir finden es heraus.“
 2. **Keine erfundenen Zahlen.** Keine Preise, Kundenzahlen, Marktanteile, Reaktionszeiten oder Leistungswerte, die
-   nicht in einer Quelle stehen. Nennt eine Quelle eine Zahl (zum Beispiel 359 Locale-Dateien in
+   nicht in einer Quelle stehen. Nennt eine Quelle eine Zahl (zum Beispiel 368 Locale-Dateien in
    [Sprachen in Exponential](../../sprachen.md)), zitieren Sie sie mit Datum und Quelle.
 3. **Keine erfundenen Kunden oder Zitate.** Eine Kundengeschichte braucht die schriftliche Erlaubnis des Kunden
    ([Fallstudien und Content-Marketing schreiben](fallstudien-und-content-marketing.md)).
@@ -194,7 +194,7 @@ License      GPL v2 or later, free of charge; help under GNU FDL 1.3      [READM
 Databases    SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL [Database support]
 OS           Almost any that runs PHP 8.0 or later                         [Operating system support]
 PHP          8.0 to 8.5                                                    [README]
-Languages    359 locale files, 43 right to left; all translations complete [Languages in Exponential]
+Languages    368 locale files, 43 right to left; all translations complete [Languages in Exponential]
 Highlights   Multisite, layouts editor, Exponential Intelligence (drafts only),
              audit trail, Content Security Policy, Velocity server, help system [README, 6.0.15 changelog]
 Security     Private reporting per SECURITY.md; first answer within one

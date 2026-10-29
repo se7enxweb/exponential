@@ -19,6 +19,12 @@ extension); after an upgrade it takes effect with the restart that `exp:velocity
 
 Everything is configured in `velocity.ini`; the `/etc/vc` tree is generated from it on every start.
 
+**WebDAV is not served by Velocity.** Its entry scripts are `index.php`, `index_rest.php` and `index_treemenu.php`;
+the WebDAV server, `index_webdav.php` since 6.0.15 (formerly `webdav.php`), is not among them, under either name. Serve
+WebDAV through Apache or nginx with PHP-FPM, best on a host of its own such as `webdav.example.com`; nothing in
+`velocity.ini` needs to change for the rename. See
+[The WebDAV entry script is now index_webdav.php](../../bc/6.0/webdav-entry-script-index-webdav.md).
+
 ## 1. The settings
 
 [`velocity.ini.append.php.example`](velocity.ini.append.php.example) is an override for a public site on the standard
@@ -164,6 +170,10 @@ shortened to an example installation, the static path list cut):
     }
 }
 ```
+
+`scripts` lists every script the server runs. The SOAP server (`index_soap.php`, called `soap.php` before 6.0.15) is
+not on it, and was not before either: serve SOAP through the Apache or nginx front end of the installation (see
+[the SOAP entry script is now index_soap.php](../../bc/6.0/soap-entry-script-index-soap.md)).
 
 Do not edit a generated file: change `velocity.ini` and restart. To keep a file of your own, remove its
 `"_generated"` marker; it is then never overwritten, like a dpkg conffile. Enable and disable like `a2ensite`,

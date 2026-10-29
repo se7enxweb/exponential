@@ -168,8 +168,18 @@ Deliberately not changed:
 |---|---|
 | Run one of the commands without options: it lists what it would change and ends with `PASS: ... (dry run, nothing changed; --apply writes)`. | Add `--apply` to every script, crontab line and runbook that runs one of these commands to make the change; a call with `--dry-run` alone stays a dry run. In particular: a demo or test rebuild script that runs `exp:install`, `collaborationsampledata` or `preload` (the examples in [demo mode](../../examples/demo-mode/README.md) pass `--apply` and stop when nothing was installed), and an operator's crontab line that calls a command directly (the crontab block of an installation runs only `runcronjobs.php` and is not affected). Run a script against an older version without `--apply`: before 28 October 2026 the commands refuse it as an unknown option. |
 
+## The WebDAV entry script is index_webdav.php (29 October 2026)
+
+> **Change your vhost and rewrite rules.** Full before/after rules for Apache, Plesk, nginx and IIS, and the test
+> procedure: [The WebDAV entry script is now index_webdav.php](webdav-entry-script-index-webdav.md).
+
+| Change | How to check | What to do |
+|---|---|---|
+| The WebDAV server is `index_webdav.php`, named like `index_rest.php`, `index_treemenu.php` and `index_cluster.php`. `webdav.php` only includes it, writes one warning a day to `warning.log`, and will be removed in a later major version. `.htaccess_root` and `.htaccess_root_static` carry a commented rule `#RewriteRule ^index_webdav\.php - [L]`. | `grep -rn 'webdav\.php'` over the virtual hosts (HTTP **and** HTTPS), `.htaccess`, Plesk's additional directives, nginx and IIS configurations; `grep 'old name of the WebDAV entry script' var/log/warning.log`. | Name `index_webdav.php` in every rule (`RewriteRule`, nginx `location` and `fastcgi_param SCRIPT_FILENAME`, IIS rules, allowlists of root scripts), then test: `curl -i -X OPTIONS` (`DAV: 1`) and `curl -i -X PROPFIND -H 'Depth: 1'` (`207 Multi-Status`) against `/index_webdav.php/`. Clients mounted at `/webdav.php/...` keep working through the shim; mount them again at `/index_webdav.php/...`. WebDAV still never asks for a second sign-in step by default. |
+
 ## Related pages
 
+- [The WebDAV entry script is now index_webdav.php](webdav-entry-script-index-webdav.md)
 - [October 2026 chronicle](../../history/2026/2026-10.md)
 - [Behaviour changes of 16 to 30 September 2026](behaviour-changes-2026-09b.md)
 - [Behaviour changes of July and August 2026](behaviour-changes-2026-07-08.md)

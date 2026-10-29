@@ -202,6 +202,14 @@ segment *anywhere* in a path, so it lists only names no page of a site can have 
 values equal to `site.ini [HTTPHeaderSettings] SecurityHeaders[]`, or remove the header from one of the two, so a page
 never carries two different values.
 
+## WebDAV
+
+This `web.config` does not route WebDAV (off by default). To serve it, add a rule for `^index_webdav\.php` with
+`<action type="None" />` before the catch-all, or a site of its own that rewrites everything to `index_webdav.php`,
+and keep IIS's own WebDAV module off for it. Since 6.0.15 the script is `index_webdav.php`; a rule written for
+`webdav.php` keeps working through a forwarding shim until a later major version. Before/after and the test:
+[The WebDAV entry script is now index_webdav.php](../../bc/6.0/webdav-entry-script-index-webdav.md#microsoft-iis-webconfig).
+
 ## Check it
 
 ```powershell

@@ -129,6 +129,14 @@ server {
         fastcgi_param SCRIPT_NAME /index_rest.php;
         fastcgi_pass unix:/run/php-fpm/www.sock;
     }
+    # The SOAP server (soap.ini EnableSOAP=true) is index_soap.php since
+    # Exponential 6.0.15; soap.php only forwards to it. Uncomment with SOAP on:
+    #location = /index_soap.php {
+    #    include fastcgi_params;
+    #    fastcgi_param SCRIPT_FILENAME $document_root/index_soap.php;
+    #    fastcgi_param SCRIPT_NAME /index_soap.php;
+    #    fastcgi_pass unix:/run/php-fpm/www.sock;
+    #}
     location ~ ^/([^/]+/)?content/treemenu {
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME $document_root/index_treemenu.php;
@@ -189,6 +197,11 @@ server {
   `RewriteRule .* index.php`.
 - Die Front-Controller werden in `SCRIPT_FILENAME` genannt; die Anfrage wird nicht umgeschrieben, daher trägt
   `REQUEST_URI` (aus `fastcgi_params`) weiterhin die Adresse, die der Besucher angefordert hat, wie bei Apache.
+- Der SOAP-Server heißt seit Exponential 6.0.15 `index_soap.php` (vorher `soap.php`, jetzt ein Shim, das dorthin
+  weiterleitet). Seine Location ist auskommentiert, weil SOAP standardmäßig aus ist; nehmen Sie die Kommentarzeichen
+  weg, wenn Sie SOAP einschalten, und ändern Sie eine `location = /soap.php` einer älteren Konfiguration entsprechend.
+  Den Test mit `curl` finden Sie unter
+  [Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../bc/6.0/soap-einstiegsskript-index-soap.md#testen).
 - Die Locations für statische Dateien haben kein `fastcgi_pass`, dort läuft also kein PHP, und die Skript-Regel davor
   sorgt dafür, dass eine `.php` unterhalb eines Verzeichnisses für statische Dateien auch nicht als Text ausgeliefert
   wird. Die Skript-Regel antwortet für jeden solchen Pfad mit 404, ob er existiert oder nicht; das ist etwas strenger
@@ -208,6 +221,16 @@ Endet TLS an einem Load Balancer vor nginx, behalten Sie einen `server` auf dem 
 als `HTTP_X_FORWARDED_PROTO` an); der Kernel glaubt ihm nur, wenn er von einer Adresse kommt, die in
 `site.ini [HTTPHeaderSettings] TrustedProxies[]` steht
 ([Kapitel 8, Abschnitt 8.8](../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy)).
+
+## WebDAV
+
+Diese Datei leitet WebDAV nicht weiter (standardmäßig aus). Um es auszuliefern, fügen Sie vor der Auffangregel eine
+`location ^~ /index_webdav.php` mit `fastcgi_param SCRIPT_FILENAME $document_root/index_webdav.php` und
+`SCRIPT_NAME /index_webdav.php` hinzu, oder einen eigenen `server` für einen WebDAV-Host. Seit 6.0.15 heißt das Skript
+`index_webdav.php`; ein Block für `webdav.php` funktioniert über einen weiterleitenden Shim bis zu einer späteren
+Hauptversion weiter, ändern Sie aber **beides**, die `location` und `SCRIPT_FILENAME`. Vorher/nachher und der Test
+(`curl -X PROPFIND -H 'Depth: 1'`, erwartet: `207 Multi-Status`):
+[Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](../../bc/6.0/webdav-einstiegsskript-index-webdav.md#nginx).
 
 ## Prüfen
 

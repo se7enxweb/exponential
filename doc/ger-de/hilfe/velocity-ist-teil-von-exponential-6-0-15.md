@@ -86,7 +86,7 @@ Experience Platform und ein E-Commerce-System ist:
 | Schicht | Was mitgeliefert wird | Weiterlesen |
 |---|---|---|
 | Server | Exponential Velocity: HTTP/1.1, HTTP/2 über TLS, WebSockets, eigene HTTPS-Zertifikate, ein Antwort-Cache, statische Dateien und Bilder | [Velocity-Webserver](../funktionen/6.0/velocity-webserver.md) |
-| Anwendungsplattform | Der Kernel von Exponential: Inhaltsklassen und Objekte, Versionen, Rollen und Richtlinien, Multisite, 219 Locales, REST, Cronjobs, die Konsole | [README](https://github.com/se7enxweb/exponential/blob/main/README.md) |
+| Anwendungsplattform | Der Kernel von Exponential: Inhaltsklassen und Objekte, Versionen, Rollen und Richtlinien, Multisite, mehr als 360 Locales, REST, Cronjobs, die Konsole | [README](https://github.com/se7enxweb/exponential/blob/main/README.md) |
 | Schnelle Entwicklung | Die RAD-Werkzeuge: ein Katalog der Erweiterungspunkte, Assistenten, die eine funktionierende Erweiterung schreiben, eine Bestandsaufnahme und eine Zustandsprüfung | [RAD-Werkzeuge](../funktionen/6.0/rad-werkzeuge.md) |
 | Content-Management | Die Administration (Admin 4), der Online-Editor, Veröffentlichen und Versionen, der Papierkorb, das Prüfprotokoll | [Hilfe für Redakteure und Benutzer](README.md) |
 | Digital Experience | Exponential Layouts (ein visueller Seitenbaukasten mit Zonen, Blöcken und Regeln), Multisite und mehrsprachige Sites, der Schreibassistent Exponential Intelligence, der nur Entwürfe schreibt | [Der Layout-Editor](layout-editor.md) |

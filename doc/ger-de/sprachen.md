@@ -10,16 +10,16 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 | Was | Anzahl |
 |---|---:|
 | Sprachen der Administration: Übersetzungen in `share/translations` | **155**, davon 155 vollständig |
-| Locales: Dateien `share/locale/*.ini` | **359**: 352 Sprachen und Länder, 1 Testsprache, 6 Varianten |
+| Locales: Dateien `share/locale/*.ini` | **368**: 361 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **150** |
 | davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **150** |
 | davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **0** |
-| Länder und Gebiete der Locales | **238** |
-| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **238** |
-| Codes aus ISO 3166-1 (`settings/country.ini`) ohne Locale | **13**: 4 mit Absicht, 9 noch nicht (Liste unter der Karte) |
+| Länder und Gebiete der Locales | **247** |
+| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **247** |
+| Codes aus ISO 3166-1 (`settings/country.ini`) ohne Locale | **4**, alle mit Absicht: unbewohnt oder zurückgezogen (Liste unter der Karte) |
 | Locales, die von rechts nach links geschrieben werden | **43** |
 
-![Weltkarte: 238 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt, dazu 3 unbewohnte Gebiete ohne Locale mit Absicht; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
+![Weltkarte: 247 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt, dazu 3 unbewohnte Gebiete ohne Locale mit Absicht; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
 
 Ein Land ist grün, wenn für es eine Locale mitgeliefert wird, deren Sprache die Administration übersetzt zeigt:
 mit einer eigenen Übersetzung oder der ersten Übersetzung ihrer Fallback-Kette (`i18n.ini [TranslationSettings]`,
@@ -29,7 +29,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 Ebenfalls grün sind die unbewohnten Gebiete ohne Locale mit Absicht: Antarktis (`AQ`), Bouvetinsel (`BV`) und Heard- und McDonald-Inseln (`HM`).
 Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es keine.
 
-<details><summary>Die 238 Länder und Gebiete in Grün</summary>
+<details><summary>Die 247 Länder und Gebiete in Grün</summary>
 
 | Land oder Gebiet | Code | Locales und die Übersetzung, die sie zeigen |
 |---|---|---|
@@ -38,6 +38,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Alandinseln | AX | `swe-AX` → `swe-SE` |
 | Albanien | AL | `sqi-AL` |
 | Algerien | DZ | `ara-DZ` → `ara-SA`, `fre-DZ` → `fre-FR`, `kab-DZ` |
+| Amerikanisch-Ozeanien | UM | `eng-UM` (Quelltexte) |
 | Amerikanisch-Samoa | AS | `eng-AS` (Quelltexte) |
 | Amerikanische Jungferninseln | VI | `eng-VI` (Quelltexte) |
 | Andorra | AD | `cat-AD` → `cat-ES` |
@@ -94,6 +95,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Fidschi | FJ | `eng-FJ` (Quelltexte) |
 | Finnland | FI | `fin-FI` |
 | Frankreich | FR | `bre-FR`, `fre-FR`, `oci-FR` |
+| Französisch-Guayana | GF | `fre-GF` → `fre-FR` |
 | Französisch-Polynesien | PF | `fre-PF` → `fre-FR` |
 | Französische Süd- und Antarktisgebiete | TF | `fre-TF` → `fre-FR` |
 | Gabun | GA | `fre-GA` → `fre-FR` |
@@ -138,6 +140,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Kenia | KE | `eng-KE` (Quelltexte), `kik-KE`, `swa-KE` |
 | Kirgistan | KG | `kir-KG`, `rus-KG` → `rus-RU` |
 | Kiribati | KI | `eng-KI` (Quelltexte) |
+| Kokosinseln | CC | `eng-CC` → `eng-AU` |
 | Kolumbien | CO | `esl-CO` → `esl-ES` |
 | Komoren | KM | `ara-KM` → `ara-SA`, `fre-KM` → `fre-FR` |
 | Kongo (Republik Kongo) | CG | `fre-CG` → `fre-FR` |
@@ -167,12 +170,14 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Martinique | MQ | `fre-MQ` → `fre-FR` |
 | Mauretanien | MR | `ara-MR` → `ara-SA`, `fre-MR` → `fre-FR` |
 | Mauritius | MU | `fre-MU` → `fre-FR` |
+| Mayotte | YT | `fre-YT` → `fre-FR` |
 | Mexiko | MX | `esl-MX` |
 | Mikronesien | FM | `eng-FM` (Quelltexte) |
 | Moldau (Republik Moldau) | MD | `ron-MD` → `ron-RO`, `rus-MD` → `rus-RU` |
 | Monaco | MC | `fre-MC` → `fre-FR` |
 | Mongolei | MN | `mon-MN` |
 | Montenegro | ME | `srp-ME` → `srp-RS` |
+| Montserrat | MS | `eng-MS` (Quelltexte) |
 | Mosambik | MZ | `por-MZ` → `por-PT` |
 | Namibia | NA | `eng-NA` (Quelltexte) |
 | Nauru | NR | `eng-NR` (Quelltexte) |
@@ -186,6 +191,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Niue | NU | `eng-NU` (Quelltexte) |
 | Nordkorea | KP | `kor-KP` |
 | Nördliche Marianen | MP | `eng-MP` (Quelltexte) |
+| Norfolkinsel | NF | `eng-NF` → `eng-AU` |
 | Norwegen | NO | `nno-NO` → `nor-NO`, `nor-NO`, `sme-NO` |
 | Oman | OM | `ara-OM` → `ara-SA` |
 | Österreich | AT | `ger-AT` → `ger-DE` |
@@ -202,6 +208,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Portugal | PT | `por-PT` |
 | Puerto Rico | PR | `esl-PR` → `esl-ES` |
 | Republik Südafrika | ZA | `afr-ZA`, `eng-ZA` (Quelltexte), `xho-ZA`, `zul-ZA` |
+| Réunion | RE | `fre-RE` → `fre-FR` |
 | Ruanda | RW | `fre-RW` → `fre-FR`, `kin-RW` |
 | Rumänien | RO | `ron-RO` |
 | Russland | RU | `che-RU`, `rus-RU`, `tat-RU` |
@@ -237,6 +244,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Südkorea | KR | `kor-KR` |
 | Südsudan | SS | `eng-SS` (Quelltexte) |
 | Suriname | SR | `dut-SR` → `dut-NL` |
+| Svalbard und Jan Mayen | SJ | `nor-SJ` → `nor-NO` |
 | Swasiland | SZ | `eng-SZ` (Quelltexte) |
 | Syrien | SY | `ara-SY` → `ara-SA`, `syr-SY` → `syr-IQ` |
 | Tadschikistan | TJ | `tgk-TJ` |
@@ -267,6 +275,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Vereinigtes Königreich | GB | `cym-GB`, `eng-GB` (Quelltexte), `gla-GB` |
 | Vietnam | VN | `vie-VN` |
 | Wallis und Futuna | WF | `fre-WF` → `fre-FR` |
+| Weihnachtsinsel | CX | `eng-CX` → `eng-AU` |
 | Westsahara | EH | `ara-EH` → `ara-SA` |
 | Zaire | CD | `fre-CD` → `fre-FR`, `lin-CD` |
 | Zentralafrikanische Republik | CF | `fre-CF` → `fre-FR` |
@@ -281,7 +290,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 
 </details>
 
-<details><summary>Die 13 Codes aus ISO 3166-1 ohne Locale</summary>
+<details><summary>Die 4 Codes aus ISO 3166-1 ohne Locale</summary>
 
 | Land oder Gebiet | Code | Warum |
 |---|---|---|
@@ -289,15 +298,6 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Antarktis | AQ | Keine Locale, mit Absicht: unbewohnt, CLDR definiert keine Locale dafür (grün dargestellt: Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es keine) |
 | Bouvetinsel | BV | Keine Locale, mit Absicht: unbewohnt, CLDR definiert keine Locale dafür (grün dargestellt: Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es keine) |
 | Heard- und McDonald-Inseln | HM | Keine Locale, mit Absicht: unbewohnt, CLDR definiert keine Locale dafür (grün dargestellt: Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es keine) |
-| Kokosinseln | CC | Noch keine Locale |
-| Weihnachtsinsel | CX | Noch keine Locale |
-| Französisch-Guayana | GF | Noch keine Locale |
-| Montserrat | MS | Noch keine Locale |
-| Norfolkinsel | NF | Noch keine Locale |
-| Réunion | RE | Noch keine Locale |
-| Svalbard und Jan Mayen | SJ | Noch keine Locale |
-| Amerikanisch-Ozeanien | UM | Noch keine Locale |
-| Mayotte | YT | Noch keine Locale |
 
 </details>
 
@@ -309,7 +309,7 @@ hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzung
 26. Oktober 2026 (Exponential 6.0.15).
 
 <!-- generated: exp:i18n coverage translations (start) -->
-Kurz gefasst: **359 Locale-Dateien** (352 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
+Kurz gefasst: **368 Locale-Dateien** (361 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
 von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **155
 Übersetzungen der Administrationsoberfläche**, alle vollständig: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian
 (`sqi-AL`), Amharic (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`), Asturian
