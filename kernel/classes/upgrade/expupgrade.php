@@ -183,6 +183,8 @@ class expUpgrade
             'mode' => $mode,
             'installation' => array( 'engine' => '', 'database_version' => null, 'kernel_version' => self::kernelVersion() ),
             'backup' => null,
+            'caption' => null,
+            'verify' => null,
             'stages' => array(),
             'summary' => array_fill_keys( self::STATES, 0 ) + array( 'applied' => 0 ),
             'errors' => array(),
@@ -232,9 +234,12 @@ class expUpgrade
                 if ( !$registry->get( $id ) )
                     $report['errors'][] = "no step $id (./console exp:upgrade:steps lists them)";
             // a production installation is never written without a backup, unless the operator insists
-            if ( $apply && !empty( $options['no-backup'] ) && empty( $options['force-no-backup'] ) && self::isProduction() )
-                $report['errors'][] = 'this installation is production ([AdminEnvironment] Level, EXP_ENV): --no-backup is refused, '
-                                    . 'make the backup or add --force-no-backup';
+            // --no-caption and --no-backup are the same (the caption is the backup); so are their --force-* forms
+            $noCaption = !empty( $options['no-backup'] ) || !empty( $options['no-caption'] );
+            $forced = !empty( $options['force-no-backup'] ) || !empty( $options['force-no-caption'] );
+            if ( $apply && $noCaption && !$forced && self::isProduction() )
+                $report['errors'][] = 'this installation is production ([AdminEnvironment] Level, EXP_ENV): --no-caption is refused, '
+                                    . 'take the caption or add --force-no-caption';
             if ( $report['errors'] )
             {
                 $report['exit'] = self::EXIT_USAGE;
@@ -265,9 +270,9 @@ class expUpgrade
 
             $records = expUpgradeRecord::all( $db );
             $locked = false;
-            $backedUp = !empty( $options['no-backup'] );
-            if ( !empty( $options['no-backup'] ) && $apply )
-                $report['warnings'][] = 'no backup made (--no-backup)';
+            $backedUp = $noCaption;
+            if ( $noCaption && $apply )
+                $report['warnings'][] = 'no backup made (--no-caption): no caption to roll back to';
             $stop = false;
             $outcome = array();
             foreach ( $stages as $stageName )
@@ -338,16 +343,23 @@ class expUpgrade
                             }
                             if ( !$backedUp )
                             {
+                                // the pre-upgrade caption: git_manager's full caption with the upgrade's part, the way back
                                 if ( $progress )
-                                    $progress( 'backup ...' );
-                                $backup = expUpgradeBackup::create( $db, isset( $options['backup-dir'] ) ? $options['backup-dir'] : null, $context->option( 'root' ) );
-                                $report['backup'] = array( 'dir' => $backup['dir'], 'ok' => $backup['ok'], 'files' => $backup['files'], 'messages' => $backup['messages'] );
-                                $context->setOption( 'backup-path', $backup['dir'] );
-                                self::audit( 'system.upgrade.backup', array( 'object' => array( 'type' => 'backup', 'id' => basename( $backup['dir'] ) ),
-                                                                             'result' => $backup['ok'] ? 'success' : 'failure', 'x' => array( 'files' => $backup['files'] ) ) );
-                                if ( !$backup['ok'] )
+                                    $progress( 'caption ...' );
+                                $from = (string)$report['installation']['database_version'] ?: self::kernelVersion();
+                                $to = isset( $options['to'] ) && $options['to'] ? (string)$options['to'] : self::kernelVersion();
+                                $context->setOption( 'caption-from', $from );
+                                $context->setOption( 'caption-to', $to );
+                                $caption = expUpgradeCaption::take( 'pre', "upgrade {$from}→{$to} " . date( 'Ymd-His' ) . ' pre', $context );
+                                $report['caption'] = array( 'id' => $caption['id'], 'ok' => $caption['ok'], 'source' => $caption['source'], 'label' => $caption['label'],
+                                                            'dir' => $caption['dir'], 'messages' => $caption['messages'] );
+                                $report['backup'] = array( 'dir' => $caption['dir'], 'ok' => $caption['ok'], 'files' => array(), 'messages' => $caption['messages'] );
+                                $context->setOption( 'backup-path', $caption['dir'] );
+                                self::audit( 'system.upgrade.backup', array( 'object' => array( 'type' => 'caption', 'id' => $caption['id'] ),
+                                                                             'result' => $caption['ok'] ? 'success' : 'failure', 'x' => array( 'source' => $caption['source'] ) ) );
+                                if ( !$caption['ok'] )
                                 {
-                                    $report['errors'][] = 'the backup failed, nothing was changed: ' . implode( '; ', $backup['messages'] ) . ' (--no-backup runs without one)';
+                                    $report['errors'][] = 'the caption failed, nothing was changed: ' . implode( '; ', $caption['messages'] ) . ' (--no-caption runs without one)';
                                     $report['exit'] = self::EXIT_FAILED;
                                     expUpgradeLock::release();
                                     return $report;
@@ -402,6 +414,9 @@ class expUpgrade
             }
             if ( $locked )
                 expUpgradeLock::release();
+            // the pre caption was taken before step 0 made the record table: record it now that the table is there
+            if ( !empty( $report['caption']['ok'] ) )
+                expUpgradeRecord::writeCaption( $db, $report['caption']['id'], 'pre', $report['caption']['label'], $report['caption']['source'] );
             if ( $apply && $report['summary']['applied'] > 0 )
                 $report['installation']['database_version'] = $engine === 'mongodb' ? null : expUpgradeStepSiteVersion::stored( $db );
 
@@ -441,6 +456,7 @@ class expUpgrade
         $merged['errors'] = array_merge( $first['errors'], $second['errors'] );
         $merged['warnings'] = array_values( array_unique( array_merge( $first['warnings'], $second['warnings'] ) ) );
         $merged['backup'] = $first['backup'] ?: $second['backup'];
+        $merged['caption'] = !empty( $first['caption'] ) ? $first['caption'] : ( isset( $second['caption'] ) ? $second['caption'] : null );
         if ( !empty( $second['installation']['engine'] ) )
             $merged['installation'] = $second['installation'];
         $merged['exit'] = max( (int)$first['exit'], (int)$second['exit'] );

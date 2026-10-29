@@ -21,7 +21,7 @@ namespace Exponential\Command\Kernel
 abstract class UpgradeBase extends \Exponential\Runnable\Command
 {
     /** Options shared by the commands that run stages. */
-    const RUN_OPTIONS = '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup]';
+    const RUN_OPTIONS = '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption]';
 
     /** Options of the code stage. */
     const CODE_OPTIONS = '[to:][repos:*]';
@@ -40,7 +40,7 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
     public static function contract()
     {
         return array(
-            'exp:upgrade' => '[stages:]' . self::RUN_OPTIONS . self::FINISH_OPTIONS . self::CODE_OPTIONS . self::LIBRARIES_OPTIONS,
+            'exp:upgrade' => '[stages:]' . self::RUN_OPTIONS . self::FINISH_OPTIONS . self::CODE_OPTIONS . self::LIBRARIES_OPTIONS . '[no-verify][rollback-on-fail][post-caption][no-tests]',
             'exp:upgrade:status' => '[stages:][only:*][format:][fail-on-pending]',
             'exp:upgrade:steps' => '[stage:][engine:][format:]',
             'exp:upgrade:code' => self::RUN_OPTIONS . self::CODE_OPTIONS,
@@ -48,9 +48,10 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
             'exp:upgrade:database' => self::RUN_OPTIONS,
             'exp:upgrade:scripts' => self::RUN_OPTIONS,
             'exp:upgrade:finish' => self::RUN_OPTIONS . self::FINISH_OPTIONS,
-            'exp:upgrade:verify' => '[stages:][format:]',
+            'exp:upgrade:verify' => '[stages:][format:][after][url:*][no-tests][since:]',
+            'exp:upgrade:captions' => '[format:][verify:][prune][apply][dry-run][backup-dir:]',
             'exp:upgrade:backup' => '[backup-dir:][format:]',
-            'exp:upgrade:rollback' => '[apply][dry-run][parts:][backup-dir:][format:]',
+            'exp:upgrade:rollback' => '[apply][dry-run][parts:][backup-dir:][format:][no-caption][force-no-caption][no-verify][url:*][no-tests][allow-vendor-changes]',
         );
     }
 
@@ -79,7 +80,17 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
             'composer' => 'The Composer binary or composer.phar (default: composer on the PATH, else composer.phar in the root)',
             'no-audit' => 'Skip the security audit of the libraries (composer audit) before and after',
             'allow-vendor-changes' => 'Install the libraries although Composer reports local changes in vendor/',
-            'parts' => 'Only these parts, a comma list of database, settings, libraries, code (default: what the backup has)',
+            'parts' => 'Only these parts, a comma list of database, storage, settings, libraries, code (default: what the caption has)',
+            'no-caption' => 'Write without taking a caption first (the same as --no-backup); refused on production without --force-no-caption',
+            'force-no-caption' => 'With --no-caption on a production installation: write without a caption all the same',
+            'no-verify' => 'Skip the verification after the upgrade (exp:upgrade:verify --after)',
+            'rollback-on-fail' => 'When the upgrade or its verification fails, roll back to the pre-upgrade caption at once',
+            'post-caption' => 'After a passed verification, take a post caption: the last known good state',
+            'no-tests' => 'Leave the test suite upgrade-smoke out of the verification',
+            'after' => 'The verification after an upgrade: steps, smoke addresses, tests, error log, autoloads',
+            'since' => 'The error log is read from this moment on: a Unix time (default an hour ago)',
+            'verify' => 'Check this caption: its checksums and a restore of its dump into a throwaway database',
+            'prune' => 'Remove the captions of exp:upgrade beyond [UpgradeSettings] CaptionKeep, CaptionKeepDays, CaptionKeepUpgrades',
         );
     }
 
@@ -152,6 +163,8 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
             'force-order' => !empty( $options['force-order'] ),
             'fail-on-pending' => !empty( $options['fail-on-pending'] ),
             'force-no-backup' => !empty( $options['force-no-backup'] ),
+            'no-caption' => !empty( $options['no-caption'] ),
+            'force-no-caption' => !empty( $options['force-no-caption'] ),
             'no-deploy' => !empty( $options['no-deploy'] ),
             'url' => isset( $options['url'] ) ? \expUpgrade::listOption( $options['url'] ) : array(),
             'to' => isset( $options['to'] ) && $options['to'] ? (string)$options['to'] : '',
@@ -220,7 +233,9 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
         if ( $i['engine'] !== '' )
             $cli->output( sprintf( 'Code %s, database %s%s', $i['kernel_version'], $i['engine'],
                                    $i['database_version'] !== null && $i['database_version'] !== '' ? ', version ' . $i['database_version'] : '' ) );
-        if ( $report['backup'] )
+        if ( !empty( $report['caption'] ) )
+            $cli->output( 'Caption: ' . $report['caption']['id'] . ' (' . $report['caption']['source'] . ') ' . $report['caption']['label'] . ( $report['caption']['ok'] ? '' : ' (FAILED)' ) );
+        else if ( $report['backup'] )
             $cli->output( 'Backup: ' . $report['backup']['dir'] . ( $report['backup']['ok'] ? '' : ' (FAILED)' ) );
         foreach ( $report['stages'] as $stage )
         {
@@ -244,6 +259,22 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
             $cli->output( 'WARN ' . $w );
         foreach ( $report['errors'] as $e )
             $cli->error( 'FAIL: ' . $e );
+        if ( !empty( $report['verify'] ) )
+        {
+            $cli->output( 'Verification after the upgrade: ' . ( $report['verify']['ok'] ? 'PASS' : 'FAIL' ) );
+            $this->printVerify( $report['verify'] );
+            $cli->output();
+        }
+        if ( !empty( $report['post_caption'] ) )
+            $cli->output( 'Post caption: ' . $report['post_caption']['id'] . ( $report['post_caption']['ok'] ? '' : ' (FAILED: ' . implode( '; ', $report['post_caption']['messages'] ) . ')' ) );
+        if ( !empty( $report['rollback'] ) && isset( $report['rollback']['caption'] ) )
+            $cli->output( 'Rolled back to ' . $report['rollback']['caption'] . ': ' . ( empty( $report['rollback']['errors'] ) ? 'done' : 'FAILED: ' . implode( '; ', $report['rollback']['errors'] ) ) );
+        if ( !empty( $report['captions'] ) )
+        {
+            $cli->output( 'The captions to roll back to, newest first:' );
+            $this->printCaptions( $report['captions'] );
+            $cli->output();
+        }
         $s = $report['summary'];
         $cli->output( sprintf( 'Summary: %d pending, %d done, %d not needed, %d failed, %d unknown%s', $s['pending'], $s['done'], $s['not-needed'],
                                $s['failed'], $s['unknown'], $s['applied'] ? ", {$s['applied']} applied now" : '' ) );
@@ -251,6 +282,45 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
             $cli->output( 'PASS' );
         else
             $cli->output( 'FAIL (exit ' . $report['exit'] . ')' );
+    }
+
+    /**
+     * The result of expUpgradeVerifyAfter as text.
+     *
+     * @param array $after
+     */
+    protected function printVerify( array $after )
+    {
+        $words = array( 'PASS', 'FAIL', 'SKIP' );
+        foreach ( $after['checks'] as $name => $check )
+        {
+            $word = $check['ok'] === true ? $words[0] : ( $check['ok'] === false ? $words[1] : $words[2] );
+            $this->output( sprintf( '  %-5s %-9s %s', $word, $name, $check['detail'] ) );
+            foreach ( array_slice( $check['items'], 0, 10 ) as $item )
+                $this->output( '              ' . $item );
+        }
+    }
+
+    /**
+     * Captions as text, newest first, with the rollback command of each.
+     *
+     * @param array[] $captions expUpgradeCaption::all()
+     * @param int $max
+     */
+    protected function printCaptions( array $captions, $max = 0 )
+    {
+        if ( !$captions )
+        {
+            $this->output( '  no captions' );
+            return;
+        }
+        foreach ( $max ? array_slice( $captions, 0, $max ) : $captions as $c )
+        {
+            $this->output( sprintf( '  %-24s %-11s %s  %9s  %-10s %s', $c['id'], $c['kind'], date( 'Y-m-d H:i', $c['created'] ),
+                                    class_exists( 'BackupManager' ) ? \BackupManager::formatBytes( $c['size'] ) : $c['size'] . ' B',
+                                    $c['engine'] ?: '-', $c['label'] ) );
+            $this->output( '      ' . $c['rollback'] );
+        }
     }
 
     /**

@@ -95,6 +95,35 @@ class expUpgradeRecord
     }
 
     /**
+     * Records a caption (expUpgradeCaption::take()): a row "caption:<id>" with the stage "caption", the kind as its
+     * state (pre, post, safety, manual) and the label and source as its message.
+     *
+     * @param eZDBInterface $db
+     * @param string $id
+     * @param string $kind
+     * @param string $label
+     * @param string $source
+     * @return bool false when the table does not exist
+     */
+    public static function writeCaption( $db, $id, $kind, $label, $source )
+    {
+        if ( self::exists( $db ) !== true )
+            return false;
+        $stepId = 'caption:' . $id;
+        $values = array( 'step_id' => $stepId, 'stage' => 'caption', 'version' => '', 'state' => (string)$kind, 'applied_at' => time(),
+                         'duration_ms' => 0, 'applied_by' => self::by(), 'engine' => expKernelTableSchema::type( $db ), 'checksum' => '',
+                         'message' => mb_substr( "$label ($source)", 0, 1000 ) );
+        $sql = array();
+        foreach ( $values as $v )
+            $sql[] = is_int( $v ) ? (string)$v : "'" . $db->escapeString( (string)$v ) . "'";
+        $db->begin();
+        $db->query( 'DELETE FROM ' . self::TABLE . " WHERE step_id = '" . $db->escapeString( $stepId ) . "'" );
+        $db->query( 'INSERT INTO ' . self::TABLE . ' ( ' . implode( ', ', array_keys( $values ) ) . ' ) VALUES ( ' . implode( ', ', $sql ) . ' )' );
+        $db->commit();
+        return true;
+    }
+
+    /**
      * The SHA-256 of the file that defines the step's class, so a record says which code applied it.
      *
      * @param expUpgradeStep $step

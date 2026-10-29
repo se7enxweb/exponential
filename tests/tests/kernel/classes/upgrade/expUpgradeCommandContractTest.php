@@ -19,21 +19,23 @@ class expUpgradeCommandContractTest extends PHPUnit\Framework\TestCase
 
     /** The snapshot. Add, never change or remove. */
     const COMMANDS = array(
-        'exp:upgrade' => '[stages:][apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-deploy][url:*][to:][repos:*][update:*][composer:][no-audit][allow-vendor-changes]',
+        'exp:upgrade' => '[stages:][apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption][no-deploy][url:*][to:][repos:*][update:*][composer:][no-audit][allow-vendor-changes][no-verify][rollback-on-fail][post-caption][no-tests]',
         'exp:upgrade:status' => '[stages:][only:*][format:][fail-on-pending]',
         'exp:upgrade:steps' => '[stage:][engine:][format:]',
-        'exp:upgrade:code' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][to:][repos:*]',
-        'exp:upgrade:libraries' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][update:*][composer:][no-audit][allow-vendor-changes]',
-        'exp:upgrade:database' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup]',
-        'exp:upgrade:scripts' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup]',
-        'exp:upgrade:verify' => '[stages:][format:]',
+        'exp:upgrade:code' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption][to:][repos:*]',
+        'exp:upgrade:libraries' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption][update:*][composer:][no-audit][allow-vendor-changes]',
+        'exp:upgrade:database' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption]',
+        'exp:upgrade:scripts' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption]',
+        'exp:upgrade:verify' => '[stages:][format:][after][url:*][no-tests][since:]',
+        'exp:upgrade:captions' => '[format:][verify:][prune][apply][dry-run][backup-dir:]',
         'exp:upgrade:backup' => '[backup-dir:][format:]',
-        'exp:upgrade:finish' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-deploy][url:*]',
-        'exp:upgrade:rollback' => '[apply][dry-run][parts:][backup-dir:][format:]',
+        'exp:upgrade:finish' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption][no-deploy][url:*]',
+        'exp:upgrade:rollback' => '[apply][dry-run][parts:][backup-dir:][format:][no-caption][force-no-caption][no-verify][url:*][no-tests][allow-vendor-changes]',
     );
 
     /** command => entry point in bin/php */
     const ENTRY = array(
+        'exp:upgrade:captions' => 'upgradecaptions',
         'exp:upgrade:code' => 'upgradecode',
         'exp:upgrade:libraries' => 'upgradelibraries',
         'exp:upgrade:rollback' => 'upgraderollback',
@@ -99,7 +101,7 @@ class expUpgradeCommandContractTest extends PHPUnit\Framework\TestCase
     public function testReportKeys()
     {
         $report = expUpgrade::report( 'dry-run', array( 'command' => 'exp:upgrade' ) );
-        foreach ( array( 'format', 'command', 'mode', 'installation', 'backup', 'stages', 'summary', 'errors', 'warnings', 'exit' ) as $key )
+        foreach ( array( 'format', 'command', 'mode', 'installation', 'backup', 'caption', 'verify', 'stages', 'summary', 'errors', 'warnings', 'exit' ) as $key )
             $this->assertArrayHasKey( $key, $report );
         foreach ( array( 'engine', 'database_version', 'kernel_version' ) as $key )
             $this->assertArrayHasKey( $key, $report['installation'] );

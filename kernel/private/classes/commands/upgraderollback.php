@@ -1,6 +1,6 @@
 <?php
 /**
- * @description Upgrade rollback: put the database, settings, libraries and code back to a backup of exp:upgrade (dry run unless --apply)
+ * @description Upgrade rollback: put the database, storage, settings, libraries and code back to a caption (dry run unless --apply)
  * @alias exp:upgrade:rollback
  *
  * File containing the exp:upgrade:rollback command.
@@ -24,22 +24,29 @@ class Upgraderollback extends UpgradeBase
     {
         $this->script( array(
             'description' => "Upgrade rollback\n" .
-                             "Without a backup name: the backups exp:upgrade made (var/backup/upgrade/). With one: what a\n" .
-                             "rollback to it restores, and with --apply restores it: the database (SQLite copy, MySQL/MariaDB\n" .
-                             "and PostgreSQL dump; tables made later are dropped), settings/override, composer.lock with\n" .
-                             "composer install, and the git checkouts moved back to their commits (git reset --keep).\n" .
-                             "Never automatic. Afterwards run ./console exp:upgrade:finish --apply.\n" .
+                             "Without a caption id: the captions, newest first (as exp:upgrade:captions). With one: what a\n" .
+                             "rollback to it restores, and with --apply: a safety caption of the current state first (so the\n" .
+                             "rollback can be undone), then the parts: the database (tables made later are dropped), the\n" .
+                             "storage (var/), settings/override, composer.lock with composer install, the git checkouts\n" .
+                             "(git reset --keep), then the verification of exp:upgrade:verify --after. Never automatic.\n" .
+                             "Afterwards run ./console exp:upgrade:finish --apply.\n" .
                              "\n" .
                              "./console exp:upgrade:rollback\n" .
-                             "./console exp:upgrade:rollback 20261029-101500\n" .
-                             "./console exp:upgrade:rollback 20261029-101500 --apply --parts=database,settings",
+                             "./console exp:upgrade:rollback 2026-10-29_10-15-00\n" .
+                             "./console exp:upgrade:rollback 2026-10-29_10-15-00 --apply --parts=database,settings",
         ) + self::SCRIPT );
-        return (array)$this->startup( '[apply][dry-run][parts:][backup-dir:][format:]', '[BACKUP]', array(
+        return (array)$this->startup( '[apply][dry-run][parts:][backup-dir:][format:][no-caption][force-no-caption][no-verify][url:*][no-tests][allow-vendor-changes]', '[CAPTION]', array(
             'apply' => 'Make the changes (the default is a dry run that lists them and changes nothing)',
             'dry-run' => 'The default, accepted for scripts that pass it: list what would change, change nothing',
-            'parts' => 'Only these parts, a comma list of database, settings, libraries, code (default: what the backup has)',
+            'parts' => 'Only these parts, a comma list of database, storage, settings, libraries, code (default: what the caption has)',
             'backup-dir' => 'Where the backup goes (default var/backup/upgrade); a directory <time> is made in it',
             'format' => 'text (default) or json (the machine output exp-upgrade/1)',
+            'no-caption' => 'Write without taking a caption first (the same as --no-backup); refused on production without --force-no-caption',
+            'force-no-caption' => 'With --no-caption on a production installation: write without a caption all the same',
+            'no-verify' => 'Skip the verification after the upgrade (exp:upgrade:verify --after)',
+            'url' => 'The addresses the smoke check requests after the deploy (a comma list or repeated); default the front page of SiteURL',
+            'no-tests' => 'Leave the test suite upgrade-smoke out of the verification',
+            'allow-vendor-changes' => 'Install the libraries although Composer reports local changes in vendor/',
         ) );
     }
 
@@ -54,18 +61,14 @@ class Upgraderollback extends UpgradeBase
         $dir = !empty( $options['backup-dir'] ) ? (string)$options['backup-dir'] : null;
         if ( !$arguments )
         {
-            $list = \expUpgradeBackup::all( $dir );
-            $report = \expUpgrade::report( 'backups', array( 'command' => $this->name() ) );
-            $report['backups'] = $list;
+            $report = \expUpgrade::report( 'captions', array( 'command' => $this->name() ) );
+            $report['captions'] = \expUpgradeCaption::all( $dir );
             if ( $format === 'json' )
                 $this->cli()->output( json_encode( $report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) );
             else
             {
-                foreach ( $list as $name => $m )
-                    $this->output( sprintf( '%-22s %-10s %-14s %s', $name, isset( $m['engine'] ) ? $m['engine'] : '?',
-                                            isset( $m['database_version'] ) ? (string)$m['database_version'] : '',
-                                            !empty( $m['complete'] ) ? implode( ', ', isset( $m['files'] ) ? $m['files'] : array() ) : 'INCOMPLETE' ) );
-                $this->output( count( $list ) . ' backup(s)' );
+                $this->printCaptions( $report['captions'] );
+                $this->output( count( $report['captions'] ) . ' caption(s)' );
             }
             $this->shutdown( 0 );
             return;
@@ -74,6 +77,12 @@ class Upgraderollback extends UpgradeBase
             'apply' => $apply,
             'parts' => !empty( $options['parts'] ) ? (string)$options['parts'] : array(),
             'backup-dir' => $dir,
+            'no-caption' => !empty( $options['no-caption'] ),
+            'force-no-caption' => !empty( $options['force-no-caption'] ),
+            'no-verify' => !empty( $options['no-verify'] ),
+            'url' => isset( $options['url'] ) ? \expUpgrade::listOption( $options['url'] ) : array(),
+            'no-tests' => !empty( $options['no-tests'] ),
+            'allow-vendor-changes' => !empty( $options['allow-vendor-changes'] ),
             'command' => $this->name(),
         ) );
         if ( $format === 'json' )
@@ -82,7 +91,10 @@ class Upgraderollback extends UpgradeBase
             $this->shutdown( $report['exit'] );
             return;
         }
-        $this->output( 'Exponential upgrade rollback to ' . $report['rollback']['backup'] . ( $apply ? '' : ': dry run, nothing is changed (--apply restores)' ) );
+        $this->output( 'Exponential upgrade rollback to ' . $report['rollback']['caption'] . ( $apply ? '' : ': dry run, nothing is changed (--apply restores)' ) );
+        if ( $report['rollback']['safety_caption'] )
+            $this->output( 'Safety caption of the state before the rollback: ' . $report['rollback']['safety_caption']['id']
+                           . ' (./console exp:upgrade:rollback ' . $report['rollback']['safety_caption']['id'] . ' --apply undoes the rollback)' );
         foreach ( $report['rollback']['parts'] as $part => $lines )
         {
             $this->output();
@@ -91,6 +103,12 @@ class Upgraderollback extends UpgradeBase
                 $this->output( ( $apply ? '  ' : '  would ' ) . $line );
         }
         $this->output();
+        if ( $report['verify'] )
+        {
+            $this->output( 'Verification after the rollback: ' . ( $report['verify']['ok'] ? 'PASS' : 'FAIL' ) );
+            $this->printVerify( $report['verify'] );
+            $this->output();
+        }
         foreach ( $report['warnings'] as $w )
             $this->output( 'WARN ' . $w );
         foreach ( $report['errors'] as $e )

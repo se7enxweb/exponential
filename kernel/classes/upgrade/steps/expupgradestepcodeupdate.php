@@ -195,7 +195,7 @@ class expUpgradeStepCodeUpdate extends expUpgradeBaseStep
     }
 
     /**
-     * git_manager's backup (unless no-backup) and the commits every checkout is on now (code.json).
+     * The commits every checkout is on now (code.json), in the pre-upgrade caption.
      *
      * @param expUpgradeContext $context
      * @param array $states
@@ -217,17 +217,7 @@ class expUpgradeStepCodeUpdate extends expUpgradeBaseStep
             throw new RuntimeException( "cannot write $dir/code.json, nothing was moved" );
         @chmod( "$dir/code.json", 0600 );
         $lines[] = "the commits before the move: $dir/code.json";
-        // git_manager's caption dumps MySQL/MariaDB only; on the other engines the upgrade's own backup holds the database
-        if ( !$context->option( 'no-backup', false ) && class_exists( 'BackupManager' ) && $context->engine() !== 'mysql' )
-            $lines[] = 'git_manager backup: not made (it dumps MySQL/MariaDB only); the upgrade backup holds the database';
-        else if ( !$context->option( 'no-backup', false ) && class_exists( 'BackupManager' ) )
-        {
-            $manager = new BackupManager();
-            $result = $manager->createFullCaption( 'exp:upgrade: before the code moves to ' . (string)( $context->option( 'to', '' ) ?: 'the upstream' ) );
-            if ( empty( $result['success'] ) )
-                throw new RuntimeException( 'the git_manager backup failed, nothing was moved: ' . ( isset( $result['message'] ) ? $result['message'] : '' ) );
-            $lines[] = 'git_manager backup: ' . $result['message'];
-        }
+        // the database and storage are in the pre-upgrade caption exp:upgrade took before the first write
         return $lines;
     }
 }

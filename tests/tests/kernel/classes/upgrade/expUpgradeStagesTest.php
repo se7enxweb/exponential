@@ -24,7 +24,7 @@ class expUpgradeStagesTest extends PHPUnit\Framework\TestCase
     public static function setUpBeforeClass(): void
     {
         self::$root = dirname( __DIR__, 5 );
-        foreach ( array( 'expupgradestep', 'expupgraderegistry', 'expupgrade', 'expupgradecomposer', 'expupgradebackup', 'expupgradelock', 'expupgraderollback' ) as $f )
+        foreach ( array( 'expupgradestep', 'expupgraderegistry', 'expupgrade', 'expupgradecomposer', 'expupgradebackup', 'expupgradelock', 'expupgraderollback', 'expupgradecaption' ) as $f )
             require_once self::$root . "/kernel/classes/upgrade/$f.php";
         require_once self::$root . '/kernel/private/classes/runnable/runnable.php';
         require_once self::$root . '/kernel/private/classes/runnable/command.php';
@@ -131,10 +131,10 @@ class expUpgradeStagesTest extends PHPUnit\Framework\TestCase
     {
         $args = \Exponential\Command\Kernel\Upgrade::childArguments( array( 'libraries', 'database' ),
             array( 'skip' => array( 'a,b' ), 'url' => array( 'https://x/' ), 'no-deploy' => true, 'composer' => '/c', 'to' => 'v6.0.16', 'apply' => true ), true );
-        $this->assertSame( array( '--stages=libraries,database', '--apply', '--format=json', '--no-deploy', '--no-backup', '--force-no-backup',
+        $this->assertSame( array( '--stages=libraries,database', '--apply', '--format=json', '--no-verify', '--no-deploy', '--no-backup', '--force-no-backup',
                                   '--composer=/c', '--to=v6.0.16', '--skip=a,b', '--url=https://x/' ), $args );
         $args = \Exponential\Command\Kernel\Upgrade::childArguments( array( 'finish' ), array(), false );
-        $this->assertSame( array( '--stages=finish', '--apply', '--format=json' ), $args, 'no backup made yet: the new process makes it' );
+        $this->assertSame( array( '--stages=finish', '--apply', '--format=json', '--no-verify' ), $args, 'no backup made yet: the new process makes it' );
     }
 
     /** US-04 */
@@ -172,14 +172,14 @@ class expUpgradeStagesTest extends PHPUnit\Framework\TestCase
         @rmdir( $this->dir . '/20261029-101500' );
         $this->assertSame( expUpgrade::EXIT_USAGE, $r['exit'] );
         $this->assertStringContainsString( 'unknown part nope', $r['errors'][0] );
-        $this->assertSame( array( 'database', 'settings', 'libraries', 'code' ), expUpgradeRollback::PARTS );
+        $this->assertSame( array( 'database', 'storage', 'settings', 'libraries', 'code' ), expUpgradeRollback::PARTS );
     }
 
     /** US-06 */
     public function testAuditEventsAreKnown()
     {
         $source = file_get_contents( self::$root . '/kernel/classes/audit/expaudittaxonomy.php' );
-        foreach ( array( 'system.upgrade.run', 'system.upgrade.step', 'system.upgrade.backup', 'system.upgrade.rollback' ) as $name )
+        foreach ( array( 'system.upgrade.run', 'system.upgrade.step', 'system.upgrade.backup', 'system.upgrade.rollback', 'system.upgrade.caption', 'system.upgrade.verify' ) as $name )
             $this->assertStringContainsString( "'$name' =>", $source );
     }
 }

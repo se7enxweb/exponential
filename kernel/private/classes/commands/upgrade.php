@@ -37,7 +37,7 @@ class Upgrade extends UpgradeBase
                              "2 usage error, 3 database not reachable, 4 internal error.\n" .
                              "Guide: doc/eng-us/guides/upgrading-with-the-console.md",
         ) + self::SCRIPT );
-        return (array)$this->startup( '[stages:][apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-deploy][url:*][to:][repos:*][update:*][composer:][no-audit][allow-vendor-changes]', '', array(
+        return (array)$this->startup( '[stages:][apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption][no-deploy][url:*][to:][repos:*][update:*][composer:][no-audit][allow-vendor-changes][no-verify][rollback-on-fail][post-caption][no-tests]', '', array(
             'stages' => 'Only these stages, a comma list of code, libraries, database, scripts, finish (in that order)',
             'apply' => 'Make the changes (the default is a dry run that lists them and changes nothing)',
             'dry-run' => 'The default, accepted for scripts that pass it: list what would change, change nothing',
@@ -49,6 +49,8 @@ class Upgrade extends UpgradeBase
             'force-order' => 'Run a stage although an earlier stage has pending steps',
             'fail-on-pending' => 'Exit 1 when steps are still pending (for CI)',
             'force-no-backup' => 'With --no-backup on a production installation: write without a backup all the same',
+            'no-caption' => 'Write without taking a caption first (the same as --no-backup); refused on production without --force-no-caption',
+            'force-no-caption' => 'With --no-caption on a production installation: write without a caption all the same',
             'no-deploy' => 'Finish without exp:velocity deploy: extension autoloads and the INI, template and content caches only',
             'url' => 'The addresses the smoke check requests after the deploy (a comma list or repeated); default the front page of SiteURL',
             'to' => 'The code stage moves the checkouts to this tag, branch or commit (default: the upstream of the branch)',
@@ -57,6 +59,10 @@ class Upgrade extends UpgradeBase
             'composer' => 'The Composer binary or composer.phar (default: composer on the PATH, else composer.phar in the root)',
             'no-audit' => 'Skip the security audit of the libraries (composer audit) before and after',
             'allow-vendor-changes' => 'Install the libraries although Composer reports local changes in vendor/',
+            'no-verify' => 'Skip the verification after the upgrade (exp:upgrade:verify --after)',
+            'rollback-on-fail' => 'When the upgrade or its verification fails, roll back to the pre-upgrade caption at once',
+            'post-caption' => 'After a passed verification, take a post caption: the last known good state',
+            'no-tests' => 'Leave the test suite upgrade-smoke out of the verification',
         ) );
     }
 
@@ -66,29 +72,123 @@ class Upgrade extends UpgradeBase
         $format = $this->format( $options );
         $stages = $this->stageOption( $options );
         $run = $this->runOptions( $options );
+        $started = time();
+        $this->finish( $this->complete( $this->runAll( $stages, $run, $options ), $options, $started ), $format );
+    }
+
+    /**
+     * The stages. The code stage first: when it moved the code, the stages after it run in a new process; this one
+     * has the old classes and the old step registry loaded, the new one reads the new code (and so does Velocity only
+     * after the finish stage restarts it).
+     *
+     * @return array the report
+     */
+    protected function runAll( array $stages, array $run, array $options )
+    {
         $rest = array_values( array_diff( $stages, array( 'code' ) ) );
         if ( !$run['apply'] || !in_array( 'code', $stages, true ) || !$rest )
-        {
-            $this->finish( \expUpgrade::run( $stages, $run ), $format );
-            return;
-        }
-        // The code stage first. When it moved the code, the stages after it run in a new process: this one has the
-        // old classes and the old step registry loaded, the new one reads the new code (and so does Velocity only
-        // after the finish stage restarts it).
+            return \expUpgrade::run( $stages, $run );
         $report = \expUpgrade::run( array( 'code' ), $run );
         if ( $report['exit'] !== \expUpgrade::EXIT_OK )
-        {
-            $this->finish( $report, $format );
-            return;
-        }
+            return $report;
         if ( $report['summary']['applied'] === 0 )
-        {
-            $this->finish( \expUpgrade::mergeReports( $report, \expUpgrade::run( $rest, $run ) ), $format );
-            return;
-        }
+            return \expUpgrade::mergeReports( $report, \expUpgrade::run( $rest, $run ) );
         $child = $this->continueInNewProcess( $rest, $options, $report['backup'] !== null );
         $report['warnings'][] = 'the code moved: the stages ' . implode( ', ', $rest ) . ' ran in a new process with the new code';
-        $this->finish( \expUpgrade::mergeReports( $report, $child ), $format );
+        return \expUpgrade::mergeReports( $report, $child );
+    }
+
+    /**
+     * After an applied run: the verification (exp:upgrade:verify --after, in a new process so it uses the new code);
+     * on a failure exit 1, the captions with their rollback commands, and with --rollback-on-fail the rollback to the
+     * pre-upgrade caption; after a passed verification with --post-caption a post caption.
+     *
+     * @param array $report
+     * @param array $options
+     * @param int $started
+     * @return array
+     */
+    protected function complete( array $report, array $options, $started )
+    {
+        if ( !self::applyRequested( $options ) )
+            return $report;
+        $changed = $report['summary']['applied'] > 0 || $report['summary']['failed'] > 0;
+        if ( $changed && empty( $options['no-verify'] ) && $report['exit'] !== \expUpgrade::EXIT_USAGE )
+        {
+            $args = array( '--after', '--format=json', '--since=' . $started );
+            if ( !empty( $options['url'] ) )
+                $args[] = '--url=' . implode( ',', \expUpgrade::listOption( $options['url'] ) );
+            if ( !empty( $options['no-tests'] ) )
+                $args[] = '--no-tests';
+            $verify = $this->subCommand( 'upgradeverify', $args );
+            $report['verify'] = $verify && isset( $verify['after'] ) ? $verify['after']
+                              : array( 'ok' => false, 'checks' => array( 'run' => array( 'ok' => false, 'detail' => 'the verification did not run', 'items' => array() ) ) );
+            if ( !$report['verify']['ok'] )
+            {
+                $report['errors'][] = 'the verification after the upgrade failed: '
+                                    . implode( ', ', array_keys( array_filter( $report['verify']['checks'], function ( $c ) { return $c['ok'] === false; } ) ) );
+                $report['exit'] = max( $report['exit'], \expUpgrade::EXIT_FAILED );
+            }
+        }
+        if ( $report['exit'] !== \expUpgrade::EXIT_OK && $report['exit'] !== \expUpgrade::EXIT_USAGE )
+        {
+            $report['captions'] = array_slice( \expUpgradeCaption::all( !empty( $options['backup-dir'] ) ? $options['backup-dir'] : null ), 0, 10 );
+            $pre = !empty( $report['caption']['ok'] ) ? $report['caption']['id'] : '';
+            if ( !empty( $options['rollback-on-fail'] ) && $pre !== '' )
+            {
+                $args = array( $pre, '--apply', '--format=json' );
+                if ( !empty( $options['no-tests'] ) )
+                    $args[] = '--no-tests';
+                if ( !empty( $options['url'] ) )
+                    $args[] = '--url=' . implode( ',', \expUpgrade::listOption( $options['url'] ) );
+                $rollback = $this->subCommand( 'upgraderollback', $args );
+                $report['rollback'] = array( 'caption' => $pre, 'errors' => $rollback ? $rollback['errors'] : array( 'the rollback did not run' ),
+                                             'parts' => $rollback ? $rollback['rollback']['parts'] : array(),
+                                             'safety_caption' => $rollback ? $rollback['rollback']['safety_caption'] : null );
+            }
+            else if ( !empty( $options['rollback-on-fail'] ) )
+                $report['warnings'][] = '--rollback-on-fail: no pre-upgrade caption to roll back to';
+        }
+        else if ( !empty( $options['post-caption'] ) && $changed )
+        {
+            $context = new \expUpgradeContext( \eZDB::instance(), true, array( 'root' => rtrim( \eZSys::rootDir(), '/' ), 'mode' => 'apply',
+                                                                              'repos' => isset( $options['repos'] ) ? \expUpgrade::listOption( $options['repos'] ) : array(),
+                                                                              'backup-dir' => !empty( $options['backup-dir'] ) ? $options['backup-dir'] : null ) );
+            $to = !empty( $options['to'] ) ? (string)$options['to'] : \expUpgrade::kernelVersion();
+            $context->setOption( 'caption-to', $to );
+            $post = \expUpgradeCaption::take( 'post', 'upgrade ' . ( isset( $report['caption']['label'] ) ? preg_replace( '/ \S+ pre$/', '', $report['caption']['label'] ) : "→$to" )
+                                                      . ' ' . date( 'Ymd-His' ) . ' post', $context );
+            $report['post_caption'] = array( 'id' => $post['id'], 'ok' => $post['ok'], 'source' => $post['source'], 'messages' => $post['messages'] );
+        }
+        return $report;
+    }
+
+    /**
+     * Runs another exp:upgrade command in a new PHP process and returns its JSON report (null when it gave none).
+     *
+     * @param string $script bin/php/<script>.php
+     * @param string[] $args
+     * @return array|null
+     */
+    protected function subCommand( $script, array $args )
+    {
+        $access = class_exists( 'eZSiteAccess' ) ? \eZSiteAccess::current() : null;
+        if ( is_array( $access ) && !empty( $access['name'] ) )
+            $args[] = '--siteaccess=' . $access['name'];
+        if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 )
+            $args[] = '--allow-root-user';
+        $root = rtrim( \eZSys::rootDir(), '/' );
+        $process = proc_open( array_merge( array( PHP_BINARY, "$root/bin/php/$script.php" ), array_values( $args ) ),
+                              array( 0 => array( 'pipe', 'r' ), 1 => array( 'pipe', 'w' ), 2 => STDERR ), $pipes, $root );
+        if ( !is_resource( $process ) )
+            return null;
+        fclose( $pipes[0] );
+        $output = (string)stream_get_contents( $pipes[1] );
+        fclose( $pipes[1] );
+        proc_close( $process );
+        $start = strpos( $output, '{' );
+        $data = $start === false ? null : json_decode( substr( $output, $start ), true );
+        return is_array( $data ) ? $data : null;
     }
 
     /**
@@ -145,8 +245,9 @@ class Upgrade extends UpgradeBase
      */
     public static function childArguments( array $stages, array $options, $backedUp )
     {
-        $args = array( '--stages=' . implode( ',', $stages ), '--apply', '--format=json' );
-        foreach ( array( 'force-order', 'fail-on-pending', 'force-no-backup', 'no-deploy', 'no-audit', 'allow-vendor-changes', 'no-backup' ) as $flag )
+        // the first process verifies, after the merged run; the new one only runs the stages
+        $args = array( '--stages=' . implode( ',', $stages ), '--apply', '--format=json', '--no-verify' );
+        foreach ( array( 'force-order', 'fail-on-pending', 'force-no-backup', 'no-deploy', 'no-audit', 'allow-vendor-changes', 'no-backup', 'no-caption', 'force-no-caption', 'no-tests' ) as $flag )
             if ( !empty( $options[$flag] ) )
                 $args[] = "--$flag";
         if ( $backedUp && empty( $options['no-backup'] ) )
