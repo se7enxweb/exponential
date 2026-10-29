@@ -646,10 +646,11 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '24px', $found['.pagenavigator a']['min-width'] );
         $this->assertSame( '24px', $found['.pagenavigator a']['min-height'] );
         // the node view's tabs switch: a 36 x 24px control with a visible label in both templates that draw it
-        $this->assertSame( '36px', $found['.tab-block .show-hide-tabs']['width'] );
-        $this->assertSame( '24px', $found['.tab-block .show-hide-tabs']['height'] );
+        // (in the tab box, or after the languages of the node view's meta line: parts/a4_tabs_switch.tpl)
+        $this->assertSame( '36px', $found[':is(.tab-block, .a4-node-tabs-switch) .show-hide-tabs']['width'] );
+        $this->assertSame( '24px', $found[':is(.tab-block, .a4-node-tabs-switch) .show-hide-tabs']['height'] );
         $this->assertArrayHasKey( '.a4-tabs-switch-label', $found );
-        foreach ( array( 'window_controls.tpl', 'node/top_node_full.tpl' ) as $template )
+        foreach ( array( 'window_controls.tpl', 'node/top_node_full.tpl', 'parts/a4_tabs_switch.tpl' ) as $template )
         {
             $this->assertStringContainsString( '<span class="a4-tabs-switch-label" aria-hidden="true">{\'Tabs\'|i18n( \'design/admin/parts/my/menu\' )}</span>',
                 AdminFiles::read( self::$root . "/design/admin4/templates/$template" ), $template );

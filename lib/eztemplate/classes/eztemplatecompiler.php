@@ -343,6 +343,9 @@ class eZTemplateCompiler
         // the signed-in user's interface choices (expUISwitch: another design, ...); only when one is applied
         if ( !empty( $GLOBALS['expUISwitchVariantKey'] ) )
             $cacheFileKey .= '-' . $GLOBALS['expUISwitchVariantKey'];
+        // Debug compiles its comments into the template (eZTemplate::appendDebugNodes): its own files, so switching
+        // Debug or changing TemplatesWithoutDebugComments needs no template cache clear; empty with Debug off
+        $cacheFileKey .= eZTemplate::debugCommentsCompilationKey();
 
         $cacheFileName = $extraName . md5( $cacheFileKey ) . '.php';
         return $cacheFileName;
@@ -2214,9 +2217,9 @@ $rbracket
                         $code .=
                             "\$tpl->createLocalVariablesList();\n" .
                             "\$tpl->appendTemplateFetch( $uriText );\n" . // Make sure the template file is recorded, like in loadURIRoot
-                            "if ( eZTemplate::showTemplatePathComments() )\n{\n    \$$textName .= eZTemplate::templatePathComment( 'START', $templatePathText, $templateSourceText );\n}\n" .
+                            "if ( eZTemplate::showTemplatePathComments() && eZTemplate::templateAllowsDebugComments( $templatePathText ) )\n{\n    \$$textName .= eZTemplate::templatePathComment( 'START', $templatePathText, $templateSourceText );\n}\n" .
                             "include( '" . eZTemplateCompiler::TemplatePrefix() . "' . $phpScriptText );\n" .
-                            "if ( eZTemplate::showTemplatePathComments() )\n{\n    \$$textName .= eZTemplate::templatePathComment( 'STOP', $templatePathText, $templateSourceText );\n}\n" .
+                            "if ( eZTemplate::showTemplatePathComments() && eZTemplate::templateAllowsDebugComments( $templatePathText ) )\n{\n    \$$textName .= eZTemplate::templatePathComment( 'STOP', $templatePathText, $templateSourceText );\n}\n" .
                             "\$tpl->unsetLocalVariables();\n" .
                             "\$tpl->destroyLocalVariablesList();\n" .
                             "list( \$rootNamespace, \$currentNamespace ) = array_pop( \$namespaceStack );\n";

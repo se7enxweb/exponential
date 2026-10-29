@@ -50,8 +50,13 @@ class expI18nCoverageMap
     /** The markers of the generated part of a page */
     const START_PATTERN = '/^<!-- generated: exp:i18n coverage (\d{4}-\d{2}-\d{2}) \(start\) -->$/m';
 
-    /** The largest mean difference per channel (0 to 1) between a WebP copy and its map rendered again */
-    const RASTER_TOLERANCE = 0.01;
+    /** The raster check (rasterDifference()): a pixel of a WebP copy differs from its map rendered again when one
+     * of its channels does by more than this share of the range; green and grey land, and land and sea, differ by
+     * far more */
+    const RASTER_FUZZ = 0.1;
+    /** ... and counts only in an area at least a disk of this radius (pixels) across: thinner differences are those
+     * of the renderer (anti-aliasing, borders, strokes), not of the map; an island circle (radius 6) is wider */
+    const RASTER_GRAIN = 3;
     const END = '<!-- generated: exp:i18n coverage (end) -->';
 
     /** The markers of the generated section of the languages not translated */
@@ -1135,7 +1140,8 @@ class expI18nCoverageMap
 
     /**
      * The differences between the files and build(): a list of messages, empty when everything is current. A WebP
-     * copy must exist and, when Imagick can render SVG, look like its map rendered again (RASTER_TOLERANCE).
+     * copy must exist and, when Imagick can render SVG, show no area in another colour than its map rendered again
+     * (rasterDifference()).
      *
      * @param string $date
      * @param bool $raster false: only check that the WebP copies exist
@@ -1160,8 +1166,10 @@ class expI18nCoverageMap
             elseif ( $raster && self::canRasterize() )
             {
                 $difference = self::rasterDifference( $this->svg( $language ), $file );
-                if ( $difference === null || $difference > self::RASTER_TOLERANCE )
-                    $problems[] = $paths['raster'] . ' does not show the current map: run ./console exp:i18n coverage --raster';
+                if ( $difference === null )
+                    $problems[] = $paths['raster'] . ' does not show the current map (another size, or unreadable): run ./console exp:i18n coverage --raster';
+                elseif ( $difference > 0 )
+                    $problems[] = $paths['raster'] . ' does not show the current map (' . $difference . ' pixels in another colour): run ./console exp:i18n coverage --raster';
             }
         }
         return $problems;
@@ -1255,12 +1263,19 @@ class expI18nCoverageMap
     }
 
     /**
-     * How far a WebP copy is from its map rendered again: the mean absolute difference per channel, 0 to 1; null when
-     * the sizes differ or a picture cannot be read.
+     * How far a WebP copy is from its map rendered again: the number of pixels of the map (the legend below it left
+     * out) in areas of another colour; null when the sizes differ or a picture cannot be read.
+     *
+     * Only areas count that differ by more than RASTER_FUZZ and are at least a disk of radius RASTER_GRAIN across:
+     * a territory, an island circle or a sea drawn in another colour. Renderers of SVG (librsvg in its versions,
+     * ImageMagick's own) differ along every edge and border, by their anti-aliasing and stroke widths, and in the
+     * text of the legend, whose fonts are those installed on the machine; none of that says whether the copy shows
+     * the current map, and all of it is thinner than the grain. The legend is left out because its glyphs depend on
+     * the fonts; its text is checked word for word in the SVG.
      *
      * @param string $svg
      * @param string $webpFile
-     * @return float|null
+     * @return int|null
      */
     public static function rasterDifference( $svg, $webpFile )
     {
@@ -1272,15 +1287,39 @@ class expI18nCoverageMap
             $expected = new Imagick();
             $expected->readImageBlob( $blob );
             $actual = new Imagick( $webpFile );
-            if ( $expected->getImageWidth() !== $actual->getImageWidth() || $expected->getImageHeight() !== $actual->getImageHeight() )
+            $width = $expected->getImageWidth();
+            $height = $expected->getImageHeight() - self::LEGEND_HEIGHT;
+            if ( $width !== $actual->getImageWidth() || $expected->getImageHeight() !== $actual->getImageHeight() || $height < 1 )
                 return null;
-            $result = $expected->compareImages( $actual, Imagick::METRIC_MEANABSOLUTEERROR );
-            $expected->clear();
-            $actual->clear();
-            $range = Imagick::getQuantumRange();
-            $quantum = isset( $range['quantumRangeLong'] ) ? (float)$range['quantumRangeLong'] : 65535.0;
-            // Imagick 3 gives the difference normalized (0 to 1) or in quantum units, depending on its version
-            return (float)$result[1] > 1 ? (float)$result[1] / $quantum : (float)$result[1];
+            $range = (float)Imagick::getQuantumRange()['quantumRangeLong'];
+            $pictures = array();
+            foreach ( array( $expected, $actual ) as $image )
+            {
+                // the map on white, as a page shows it; transparent sea and white sea are the same picture
+                $image->setImageBackgroundColor( new ImagickPixel( 'white' ) );
+                $flat = $image->mergeImageLayers( Imagick::LAYERMETHOD_FLATTEN );
+                $flat->cropImage( $width, $height, 0, 0 );
+                $flat->setImagePage( 0, 0, 0, 0 );
+                $flat->setImageColorspace( Imagick::COLORSPACE_SRGB );
+                $pictures[] = $flat;
+                $image->clear();
+            }
+            list( $mask, $other ) = $pictures;
+            $mask->compositeImage( $other, Imagick::COMPOSITE_DIFFERENCE, 0, 0 );
+            $other->clear();
+            // a pixel differs when one of its channels does by more than the fuzz; then the thin differences go
+            $mask->thresholdImage( self::RASTER_FUZZ * $range );
+            $mask->transformImageColorspace( Imagick::COLORSPACE_GRAY );
+            $mask->thresholdImage( 0.01 * $range );
+            $mask->morphology( Imagick::MORPHOLOGY_OPEN, 1, ImagickKernel::fromBuiltIn( Imagick::KERNEL_DISK, (string)self::RASTER_GRAIN ) );
+            $pixels = 0;
+            foreach ( $mask->getImageHistogram() as $pixel )
+            {
+                if ( $pixel->getColorValue( Imagick::COLOR_RED ) > 0.5 )
+                    $pixels += $pixel->getColorCount();
+            }
+            $mask->clear();
+            return $pixels;
         }
         catch ( Exception $e )
         {

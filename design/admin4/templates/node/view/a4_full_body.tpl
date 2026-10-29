@@ -165,12 +165,13 @@
                  state_href=concat( 'content/view/full/', $node.node_id, '/(language)/', $language.locale )|ezurl( 'no' )}
     {/foreach}
     </span>
+    {include uri='design:parts/a4_tabs_switch.tpl'}
 </p>
 </div>
 
 {* ---- The tabs (unchanged template: extensions add theirs) ---- *}
 <div id="window-controls" class="tab-block a4-node-tabs">
-{include uri='design:window_controls.tpl'}
+{include uri='design:window_controls.tpl' tabs_switch_elsewhere=true()}
 {include uri='design:parts/a4_tabs_height.tpl'}
 </div>
 

@@ -18,6 +18,9 @@
  *         changed file is reported
  *  CM-05  the generated part renders in the help viewer's renderer: the summary table, the image and the two
  *         collapsible lists, nothing of the markers shown
+ *  CM-08  the raster check: a WebP copy differs from its map when one island circle or one country is drawn in the
+ *         other colour, or when the size differs; edges, borders and the legend's fonts, which differ from one SVG
+ *         renderer to the next, do not count
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -167,6 +170,26 @@ class expI18nCoverageMapTest extends PHPUnit\Framework\TestCase
             foreach ( isset( $entry['successors'] ) ? $entry['successors'] : array() as $successor )
                 $this->assertArrayHasKey( $successor, $data['countries'], "$successor, successor of $iso, has a locale" );
         }
+    }
+
+    /** CM-08 */
+    public function testTheRasterCheckSeesARecolouredTerritoryButNotTheRenderer()
+    {
+        if ( !expI18nCoverageMap::canRasterize() )
+            $this->markTestSkipped( 'Imagick cannot render SVG to WebP here' );
+        $root = dirname( __DIR__, 5 );
+        $webp = $root . '/' . expI18nCoverageMap::PAGES['eng-us']['raster'];
+        $svg = ( new expI18nCoverageMap( $root ) )->svg( 'eng-us' );
+        // one island circle (radius 6) and one country drawn grey instead of green: the copy no longer shows the map
+        foreach ( array( '<circle data-iso="AD" ', '<path data-iso="DE" ' ) as $element )
+        {
+            $this->assertSame( 1, substr_count( $svg, $element ), "$element is drawn once" );
+            $difference = expI18nCoverageMap::rasterDifference( str_replace( $element, $element . 'fill="' . expI18nCoverageMap::OTHER . '" ', $svg ), $webp );
+            $this->assertIsInt( $difference );
+            $this->assertGreaterThan( 0, $difference, "$element recoloured" );
+        }
+        // a map of another size is never the same picture
+        $this->assertNull( expI18nCoverageMap::rasterDifference( preg_replace( '/ width="\d+" height="\d+"/', ' width="1000" height="571"', $svg, 1 ), $webp ) );
     }
 
     /** CM-07 */

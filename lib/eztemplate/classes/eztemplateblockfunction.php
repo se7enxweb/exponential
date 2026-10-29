@@ -136,6 +136,8 @@ class eZTemplateBlockFunction
                 $newNodes = array_merge( $newNodes, $children );
             }
             $newNodes[] = eZTemplateNodeTool::createAssignFromOutputVariableNode( 'blockText' );
+            // a captured value keeps no debug comments of Debug or ShowTemplatePathComments (eZTemplate::capturedText)
+            $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "if ( eZTemplate::debugCommentsEnabled() ) \$blockText = eZTemplate::capturedText( \$blockText );" );
             if ( $functionName == $this->AppendBlockName )
             {
                 $data = array( eZTemplateNodeTool::createVariableElement( $variableName, $name, $scope ) );
@@ -255,6 +257,8 @@ class eZTemplateBlockFunction
                     }
                 }
                 $text = implode( '', $childTextElements );
+                if ( eZTemplate::debugCommentsEnabled() )
+                    $text = eZTemplate::capturedText( $text );
                 if ( $functionName == $this->AppendBlockName )
                 {
                     $textArray = array();

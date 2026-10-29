@@ -54,11 +54,15 @@
 {set $valid_tabs = $valid_tabs|append( $additional_tabs )
      $additional_tabs_count = $additional_tabs|count()}
 
+{* the tabs switch; a template that draws it elsewhere passes tabs_switch_elsewhere (node/view/a4_full_body.tpl:
+   after the languages of the meta line, parts/a4_tabs_switch.tpl) *}
+{if is_set( $tabs_switch_elsewhere )|not}
 <span class="a4-tabs-switch-label" aria-hidden="true">{'Tabs'|i18n( 'design/admin/parts/my/menu' )}</span>
 {if $tabs_disabled}
     <div class="button-left"><a id="maincontent-show" class="show-hide-tabs" href={'/user/preferences/set/admin_navigation_content/1'|ezurl} title="{'Enable &quot;Tabs&quot; by default while browsing content.'|i18n( 'design/admin/parts/my/menu' )}" role="button" aria-pressed="false" aria-label="{'Show tabs'|i18n( 'design/admin/node/view/full' )|wash}" data-title-show="{'Enable &quot;Tabs&quot; by default while browsing content.'|i18n( 'design/admin/parts/my/menu' )}" data-title-hide="{'Disable &quot;Tabs&quot; by default while browsing content.'|i18n( 'design/admin/parts/my/menu' )}">&nbsp;</a></div>
 {else}
     <div class="button-left"><a id="maincontent-hide" class="show-hide-tabs" href={'/user/preferences/set/admin_navigation_content/0'|ezurl} title="{'Disable &quot;Tabs&quot; by default while browsing content.'|i18n( 'design/admin/parts/my/menu' )}" role="button" aria-pressed="true" aria-label="{'Show tabs'|i18n( 'design/admin/node/view/full' )|wash}" data-title-show="{'Enable &quot;Tabs&quot; by default while browsing content.'|i18n( 'design/admin/parts/my/menu' )}" data-title-hide="{'Disable &quot;Tabs&quot; by default while browsing content.'|i18n( 'design/admin/parts/my/menu' )}">&nbsp;</a></div>
+{/if}
 {/if}
 
 {if $valid_tabs|contains( $node_tab_index )|not()}

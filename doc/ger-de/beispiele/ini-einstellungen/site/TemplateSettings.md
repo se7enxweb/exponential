@@ -3,7 +3,7 @@ title: site.ini [TemplateSettings]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [TemplateSettings] in site.ini: AutoloadPathList, ExtensionAutoloadPath, Debug, ShowXHTMLCode, ShowMethodDebug, ShowUsedTemplates, ShowTemplatePathComments, NodeTreeCaching ..."
-keywords: Einstellung, site.ini, TemplateSettings, INI, setting, AutoloadPathList, ExtensionAutoloadPath, Debug, ShowXHTMLCode, ShowMethodDebug, ShowUsedTemplates, ShowTemplatePathComments, NodeTreeCaching, TemplateCompile, ShareCompiledTemplates, SharedCompiledTemplatesDir, TemplateOptimization, UseFormatting, TemplateCache, DelayedCacheBlockCleanup, TemplateCompression, DevelopmentMode, CompileComments, CompileAccumulators, CompileTimingPoints, CompileResourceFallback, CompileNodePlacements, CompileExecution, CompileAlwaysGenerate, CompileIncludeNodeTree
+keywords: Einstellung, site.ini, TemplateSettings, INI, setting, AutoloadPathList, ExtensionAutoloadPath, Debug, ShowXHTMLCode, ShowMethodDebug, ShowUsedTemplates, ShowTemplatePathComments, TemplatesWithoutDebugComments, NodeTreeCaching, TemplateCompile, ShareCompiledTemplates, SharedCompiledTemplatesDir, TemplateOptimization, UseFormatting, TemplateCache, DelayedCacheBlockCleanup, TemplateCompression, DevelopmentMode, CompileComments, CompileAccumulators, CompileTimingPoints, CompileResourceFallback, CompileNodePlacements, CompileExecution, CompileAlwaysGenerate, CompileIncludeNodeTree
 type: generated
 generated: exp:help:examples
 ---
@@ -137,6 +137,27 @@ Standard: `disabled`.
 # settings/override/site.ini.append.php
 [TemplateSettings]
 ShowTemplatePathComments=disabled
+*/ ?>
+```
+
+## TemplatesWithoutDebugComments
+
+> Templates, die Debug und ShowTemplatePathComments nie in Kommentare einschließen, mit ihrem Pfad unterhalb  
+> von templates/ (eine Datei dieses Pfads in jedem Design und jeder Erweiterung), etwa  
+> <h1 class="title"{include uri='design:parts/exp_content_direction.tpl' ...}>, das in einen Start-Tag schreibt.  
+> Die meisten Templates brauchen keinen Eintrag: Die Kommentare werden aus jeder gerenderten Ausgabe genommen, wo  
+> sie sie zerstören würden (in einem Tag oder Attributwert, in <script>, <style>, <title> und <textarea> und  
+> überall in einer Ausgabe, die kein HTML ist: XML, JSON, Klartext), und ein set-block, der einen Wert statt HTML  
+> erfasst (einen Namen, eine URL, Attribute, nichts), bekommt keine. Tragen Sie ein Template ein, dessen Ausgabe  
+> auf anderem Weg in die Seite gelangt, etwa über einen Operator, der sie vor der Ausgabe verändert.  
+
+Standard: `parts/exp_content_direction.tpl`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[TemplateSettings]
+TemplatesWithoutDebugComments[]=parts/my_attributes.tpl
 */ ?>
 ```
 
