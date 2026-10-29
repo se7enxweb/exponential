@@ -51,7 +51,7 @@
 {if $status.running}
 <p>{'A run is in progress (process %pid, since %time).'|i18n( 'design/admin/notification/status',, hash( '%pid', $status.running.pid, '%time', $status.running.since|l10n( 'shortdatetime' ) ) )}</p>
 {/if}
-<p>{'Use the console: ./console exp:notification:run'|i18n( 'design/admin/notification/status' )}</p>
+<p>{'Use the console: ./console exp:notification:run --apply'|i18n( 'design/admin/notification/status' )}</p>
 </div></div></div></div>
 <div class="controlbar"><div class="block">
 <form method="post" action={'notification/runfilter'|ezurl}>
@@ -75,7 +75,7 @@
 {else}
 <div class="context-attributes">
 <p><b>{'No run is recorded yet'|i18n( 'design/admin/notification/status' )}</b></p>
-<p>{'The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run.'|i18n( 'design/admin/notification/status' )}</p>
+<p>{'The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.'|i18n( 'design/admin/notification/status' )}</p>
 </div>
 {/if}
 </div></div></div>
