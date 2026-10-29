@@ -82,8 +82,8 @@
 .package-compare .pcmp-text-missing { color: var(--a4-muted); font-style: italic; background: repeating-linear-gradient(135deg, var(--a4-soft), var(--a4-soft) 6px, var(--a4-soft) 6px, var(--a4-soft) 12px); }
 .package-compare .pcmp-text-same { max-height: 10em; border: 0; background: none; padding: 0; }
 .package-compare .pcmp-empty { color: var(--a4-muted); font-style: italic; }
-.package-compare del { background: var(--a4-bad-bg); color: var(--a4-bad); text-decoration: line-through; text-decoration-color: var(--a4-bad-line); border-radius: var(--a4-radius-s); }
-.package-compare ins { background: var(--a4-ok-bg); color: var(--a4-ok); text-decoration: underline; text-decoration-color: var(--a4-ok-line); border-radius: var(--a4-radius-s); }
+.package-compare del { background: var(--a4-bad-bg); color: var(--a4-bad); text-decoration: line-through; text-decoration-color: var(--a4-bad-line); border-radius: calc(var(--a4-radius-s) / 4); }
+.package-compare ins { background: var(--a4-ok-bg); color: var(--a4-ok); text-decoration: underline; text-decoration-color: var(--a4-ok-line); border-radius: calc(var(--a4-radius-s) / 4); }   /* a quarter of the radius: a mark on one character stays a box, the full radius makes it a blob */
 .package-compare .pcmp-legend del,
 .package-compare .pcmp-legend ins { padding: 0 0.25em; }
 .package-compare .pcmp-text-removed del,

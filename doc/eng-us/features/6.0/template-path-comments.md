@@ -60,6 +60,23 @@ and at which line the problem sits, not only that one exists.
   anything that parses the HTML strictly. Keep the key `disabled` in production and on any siteaccess that serves
   feeds.
 - The comment text replaces `--` by `- -` and removes `>`, so a path can never end the comment early.
+- A template that prints into a start tag, such as `parts/exp_content_direction.tpl` in
+  `<h1 class="context-title"{include ...}>`, gets no comments: one inside the tag would end it early and show a stray
+  `>` in the page. Such templates are listed in `site.ini [TemplateSettings] TemplatesWithoutDebugComments[]` by their
+  path below `templates/`; add your own there. The list applies to `Debug=enabled` too. Clear the content cache
+  after changing the list.
+- Everywhere else no list is needed: each rendered output (`eZTemplate::fetch()`) is checked once, and a comment that
+  landed inside a start or end tag, an attribute value, `<script>`, `<style>`, `<title>`, `<textarea>` or another
+  comment is taken out (`eZTemplate::removeMisplacedDebugComments()`). Output that is not HTML (XML, JSON, plain text
+  such as a text mail, CSV or iCal) gets none. A `set-block` or `append-block` that captures a value rather than HTML
+  (a name, a URL, attributes, plain text, nothing) gets no comments either (`eZTemplate::capturedText()`), so a test
+  of it for `''`, a template name built from it and an attribute filled with it work as with the comments off;
+  captured HTML keeps its comments. The list is only needed for output that reaches the page some other way; its
+  default is `parts/exp_content_direction.tpl`.
+- With `Debug=enabled` the comments are compiled into the template; such templates are compiled into files of their
+  own (the file name carries the state of `Debug`, `ShowXHTMLCode` and the list), so switching `Debug` or changing the
+  list needs no template cache clear. The list is read once per request into a lookup array, and each template's
+  verdict is kept, so the check per include costs a key lookup.
 - Cached output keeps the comments it was rendered with. Clear the content and template caches when you switch the
   key.
 - A request from one siteaccess no longer reads another siteaccess's override list (a later fix, see the
