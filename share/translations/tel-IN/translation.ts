@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>సిస్టమ్ పేజీలను కూడా బుక్‌మార్క్ చేయవచ్చు: పేజీని తెరవండి (సెటప్, ఆడిట్ ట్రెయిల్, వినియోగదారుల జాబితా ...) మరియు దాని పైన ఉన్న “ఈ పేజీని బుక్‌మార్క్ చేయండి”ని ఎంచుకోండి. అటువంటి బుక్‌మార్క్‌లకు గేర్ చిహ్నం ఉంటుంది.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>మీరు ఇకపై ఈ పేజీని ఇక్కడ తెరవలేరు. బుక్‌మార్క్‌ను తొలగించండి, లేదా యాక్సెస్ కోసం నిర్వాహకుడిని అడగండి.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56379,6 +56383,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>బుక్‌మార్క్ పేరు “%name”గా మార్చబడింది.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ఈ సైట్‌యాక్సెస్‌లో (%siteaccess) ఈ పేజీ నిలిపివేయబడింది. ఈ పేజీ ఉన్న సైట్‌యాక్సెస్‌లో బుక్‌మార్క్‌ను తెరవండి.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ఈ పేజీ యొక్క మాడ్యూల్ ఇక్కడ ఇన్‌స్టాల్ చేయబడలేదు లేదా ప్రారంభించబడలేదు.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ఈ పేజీ ఇకపై లేదు: దాని మాడ్యూల్‌లో అటువంటి వీక్షణ లేదు.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>మీ పాత్రలలో ఏదీ ఈ పేజీని తెరవడానికి మిమ్మల్ని అనుమతించదు.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ఈ సైట్‌యాక్సెస్‌ను ఉపయోగించడానికి మీకు అనుమతి లేదు.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ఈ పేజీ చూపే కంటెంట్‌ను చదవడానికి మీకు అనుమతి లేదు.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ఈ రకమైన పేజీని బుక్‌మార్క్ చేయలేరు: ఇది ఒక ఫారంపై మాత్రమే పని చేస్తుంది, లేదా ఒక క్షణానికి మాత్రమే చెందిన పేజీ.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ఈ పేజీ చిరునామా లేదు.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ఈ పేజీని ఇప్పుడు తెరవడం సాధ్యం కాదు.</translation>
     </message>
 </context>
 <context>

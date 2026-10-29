@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>سیستمي پاڼې هم نښو ته زیاتېدای شي: پاڼه پرانیزئ (جوړونه، د پلټنې رېکارډ، د کارنانو لېست ...) او له هغې پورته «دا پاڼه نښو ته زیاتول» وټاکئ. داسې نښې د ګیئر نښان لري.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>تاسو نور دا پاڼه دلته نشئ پرانیستلای. نښه لرې کړئ، یا له یوه مدیر څخه د لاسرسي غوښتنه وکړئ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56379,6 +56383,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>د نښې نوم &quot;%name&quot; ته بدل شو.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>دا پاڼه په دې د سایټ لاسرسي (%siteaccess) کې بنده ده. نښه په داسې د سایټ لاسرسي کې پرانیزئ چې دا پاڼه لري.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>د دې پاڼې ماډیول دلته نه دی نصب شوی یا نه دی فعال شوی.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>دا پاڼه نور شتون نه لري: د هغې ماډیول داسې لید نه لري.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ستاسو هېڅ رول تاسو ته د دې پاڼې د پرانیستلو اجازه نه درکوي.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>تاسو د دې د سایټ لاسرسي د کارولو اجازه نه لرئ.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>تاسو د هغې منځپانګې د لوستلو اجازه نه لرئ چې دا پاڼه یې ښيي.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>دا ډول پاڼه په نښو کې نشي زیاتېدای: دا یوازې په یوه فورمه عمل کوي، یا د یوې شېبې پاڼه ده.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>د دې پاڼې پته نشته.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>دا پاڼه اوس نشي پرانیستل کېدای.</translation>
     </message>
 </context>
 <context>

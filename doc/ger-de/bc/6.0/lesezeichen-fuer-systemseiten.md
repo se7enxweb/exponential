@@ -54,8 +54,25 @@ if ( $uri !== false && $check['result'] )
     expBookmarkView::createNew( eZUser::currentUserID(), $uri, 'Upgrade-Prüfung', $folderID );
 ```
 
+## Arten, Einstellungen und Gründe
+
+Hinzugekommen mit den gespeicherten Suchen und den ausgegrauten Lesezeichen:
+
+| Wo | Was |
+|---|---|
+| `settings/bookmark.ini` | Neu: `[ViewBookmarkSettings] NonBookmarkableViews[]`, `QueryParameters[]`, `ModuleIcons[]`, `DefaultIcon`; `[BookmarkTypeSettings] TypeList[]`, `TypeClass[]` |
+| Moduldefinitionen | Ein Eintrag einer Ansicht in `$ViewList` kann `'bookmarkable' => false` tragen (`user/logout` tut es) |
+| `expBookmarkType` (abstrakt), `expBookmarkTypeSystemPage`, `expBookmarkTypeSearch` | Die Arten: `identifier()`, `accepts( $module, $view )`, `queryParameters()`, `icon( $uri )`, `label()` |
+| `expBookmarkView` | Neu: `bookmarkable( $uri )` (`result`, `reason`), `queryOf()`, `pathOf()`, `canonicalQuery( $module, $view, $query )`, `configuredQueryParameters()`, `moduleIcon()`, `types()`, `typeFor()`, `reasonText( $reason )`. `moduleURI()` behält die Schlüssel des Query-Strings der Art der Ansicht (vorher verwarf es jeden Query-String); `parts()` übergeht den Query-String; `pageState()` nimmt den Query-String der Anfrage als drittes Argument (Standard `$_SERVER['QUERY_STRING']`) und ist auf einer Ansicht, die nicht gemerkt werden kann, nicht verfügbar; `handleAction()` lehnt eine solche Ansicht ab |
+| `expBookmarkView::decorateRows()` | Eine Zeile einer Systemseite hat auch `reason`, `reason_text`, `bookmark_type`, `type_label` und `icon`; eine Ansicht, die nicht mehr gemerkt werden darf, hat `can_open` falsch mit dem Grund `not-bookmarkable`. Der `type` der Zeile bleibt `bookmark` |
+| `expBookmarkPage::viewItem()` | Einträge haben auch `icon`, `reason` und `reason_text`; der Typ (`class_name`) ist die Bezeichnung der Art der Zeile, wenn sie eine hat |
+| Templates | `bookmark_tree.tpl` und die Karten von `bookmark.tpl` zeichnen `a4-bi-<icon>` statt des Zahnrads und zeigen `reason_text`; `design/admin3/templates/pagelayout.tpl` bindet die Schaltfläche auch ein |
+
+Eine gespeicherte Adresse kann jetzt auf einen Query-String enden (`content/search?SearchText=news`); Code, der
+`module_uri` direkt liest und an `/` trennt, sollte `expBookmarkView::parts()` oder `pathOf()` verwenden.
+
 ## Tests
 
-- `tests/tests/kernel/classes/bookmarks/expBookmarkViewTest.php`: Adressen, Namen, Einträge, Suche und Sortierung (ohne Datenbank)
+- `tests/tests/kernel/classes/bookmarks/expBookmarkViewTest.php`: Adressen, Query-Strings, Namen, Einträge, Suche und Sortierung, die ausgeschlossenen Ansichten, die Arten (auch die einer Erweiterung), die Symbole und die Gründe (ohne Datenbank)
 - `tests/tests/kernel/classes/bookmarks/BookmarkViewSchemaSqlTest.php`: die Tabelle überall, wo sie steht; das SQLite-Update zweimal
 - `tests/tests/kernel/classes/bookmarks/BookmarkViewsTest.php`: das Modell auf einer laufenden Installation (ohne eine oder ohne die Tabelle übersprungen)

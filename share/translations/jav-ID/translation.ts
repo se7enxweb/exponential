@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Kaca sistem uga bisa ditetengeri: bukak kacane (Panyiapan, jejak audit, dhaptar panganggo ...) banjur pilih Tetengeri kaca iki ing ndhuwure. Tetenger kaya mengkono duwe ikon roda gigi.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Panjenengan ora oleh maneh mbukak kaca iki ing kene. Copot tetenger, utawa nyuwuna akses marang pangurus.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ akun panjenengan.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Tetenger diganti jenenge dadi "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Kaca iki dipateni ing akses situs iki (%siteaccess). Bukak tetenger ing akses situs sing nduweni kaca iki.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Modul kaca iki durung dipasang utawa durung diaktifake ing kene.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Kaca iki wis ora ana: modulé ora duwe tampilan kaya ngono.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Ora ana peran Panjenengan sing ngidini Panjenengan mbukak kaca iki.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Panjenengan ora oleh nggunakake akses situs iki.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Panjenengan ora oleh maca isi sing dituduhake kaca iki.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Jinis kaca iki ora bisa ditetengeri: kaca iki mung tumindak marang formulir, utawa kaca sing mung ana sedhela.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Alamat kaca iki ora ana.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Kaca iki ora bisa dibukak saiki.</translation>
     </message>
 </context>
 <context>

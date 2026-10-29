@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Системин агӀонаш а билгалонашка тӀетоха мега: агӀо схьаде (ДӀахӀоттор, талламан лар, декъашхойн могӀам ...) а, цуьнан лакхахь «ХӀара агӀо билгалонашка тӀетоха» харжа а. Иштта билгалонашна шесттаӀий сурт ю.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Шуна хӀинца хӀара агӀо кхузахь схьаелла бакъо яц. Билгало дӀадаккха, я администраторах тӀекхачар деха.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Билгало «%name» цӀе хийцина.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ХӀара агӀо хӀокху сайте тӀекхачарехь (%siteaccess) дӀасайина ю. Билгало схьаелла хӀара агӀо йолчу сайте тӀекхачарехь.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ХӀокху агӀонан модуль кхузахь дӀахӀоттийна яц я латийна яц.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ХӀара агӀо хӀинца яц: цуьнан модулехь иштта хьажар дац.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Шун цхьана а ролехо шуна хӀара агӀо схьаелла ца магайо.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Шуна хӀара сайте тӀекхачар лело бакъо яц.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ХӀокху агӀоно гойту чулацам деша шуна бакъо яц.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ХӀокху тайпана агӀо билгалонашка тӀетоха йиш яц: иза формица бен болх ца бо, я цхьана хенан агӀо ю.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ХӀокху агӀонан адрес дац.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ХӀара агӀо хӀинца схьаелла йиш яц.</translation>
     </message>
 </context>
 <context>

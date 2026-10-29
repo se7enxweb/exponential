@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Hiki ke kaha hoʻomanaʻo ʻia nā ʻaoʻao ʻōnaehana pū kekahi: e wehe i ka ʻaoʻao (Hoʻonohonoho, ke ala nānā, papa helu o nā mea hoʻohana ...) a koho i Kaha hoʻomanaʻo i kēia ʻaoʻao ma luna ona. He hōʻailona ʻōmaʻomaʻo kaʻa ko ia mau kaha hoʻomanaʻo.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ʻAʻole hiki hou iā ʻoe ke wehe i kēia ʻaoʻao ma ʻaneʻi. E wehe i ke kaha hoʻomanaʻo, a i ʻole e noi i luna hoʻomalu no ke komo.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ kēia hewa. Mai hoʻāʻo e hoʻouna hou i ka uku.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Ua hoʻololi ʻia ka inoa o ke kaha hoʻomanaʻo i "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Ua hoʻopio ʻia kēia ʻaoʻao ma kēia siteaccess (%siteaccess). E wehe i ke kaha hoʻomanaʻo ma kekahi siteaccess i loaʻa ai kēia ʻaoʻao.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ʻAʻole i hoʻokomo ʻia a ʻaʻole i hoʻā ʻia ka mōkule o kēia ʻaoʻao ma ʻaneʻi.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ʻAʻole i loaʻa hou kēia ʻaoʻao: ʻaʻohe hiʻona pēlā o kona mōkule.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ʻAʻohe o kou mau kuleana e ʻae iā ʻoe e wehe i kēia ʻaoʻao.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ʻAʻole ʻae ʻia ʻoe e hoʻohana i kēia siteaccess.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ʻAʻole ʻae ʻia ʻoe e heluhelu i ka ʻike i hōʻike ʻia e kēia ʻaoʻao.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ʻAʻole hiki ke kaha hoʻomanaʻo ʻia kēia ʻano ʻaoʻao: hana wale nō ia ma luna o kekahi palapala hoʻopiha, a i ʻole he ʻaoʻao ia no ka manawa pōkole wale nō.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Ua nalo ka helu ʻaoʻao o kēia ʻaoʻao.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ʻAʻole hiki ke wehe ʻia kēia ʻaoʻao i kēia manawa.</translation>
     </message>
 </context>
 <context>

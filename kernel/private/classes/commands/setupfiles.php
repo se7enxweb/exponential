@@ -20,6 +20,9 @@ class Setupfiles extends \Exponential\Runnable\Command
 {
     const VERBS = array( 'htaccess', 'config', 'status' );
 
+    /** Printed by exp:setup:htaccess: the faster alternative to a .htaccess. */
+    const VHOST_NOTICE = 'Faster: Apache reads .htaccess on every request; put these rules in the virtual host with AllowOverride None instead (doc/eng-us/examples/web-servers/apache-virtual-host.md).';
+
     /** Lines of a diff shown without -v. */
     const DIFF_LINES = 40;
 
@@ -112,6 +115,8 @@ class Setupfiles extends \Exponential\Runnable\Command
                            'mode' => isset( $options['mode'] ) ? $options['mode'] : null );
         $installation = 'Installation: ' . $root;
         $cli->output( $installation );
+        if ( $verb === 'htaccess' )
+            $cli->output( self::VHOST_NOTICE );
 
         switch ( $plan['state'] )
         {

@@ -105,7 +105,7 @@ class AdminVisibilityStatusTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'rotate(-45deg)', $r['.a4-mark.is-disabled::after']['transform'] );
         // a locked account: a filled square
         $this->assertSame( 'var(--a4-warn)', $r['.a4-mark.is-locked']['color'] );
-        $this->assertSame( '2px', $r['.a4-mark.is-locked']['border-radius'] );
+        $this->assertSame( 'calc(var(--a4-radius-s) / 4)', $r['.a4-mark.is-locked']['border-radius'], 'a square, not a disc' );
         $this->assertSame( 'currentColor', $r['.a4-mark.is-locked']['background-color'] );
 
         $f = self::rules( true );
@@ -188,7 +188,7 @@ class AdminVisibilityStatusTest extends PHPUnit\Framework\TestCase
             $this->assertSame( 2, substr_count( $tree, '<span class="a4-mark is-hidden-by-parent" aria-hidden="true" title=' ), $design );
         }
         // admin4 keeps that text for screen readers instead of display: none
-        $pagelayout = AdminBaseStylesheetsTest::rules( preg_replace( '#/\*.*?\*/#s', '', self::file( 'design/admin4/stylesheets/pagelayout.css' ) ) );
+        $pagelayout = AdminBaseStylesheetsTest::rules( preg_replace( '#/\*.*?\*/#s', '', self::file( 'design/admin4/stylesheets/base.css' ) ) );
         $hiddenText = $pagelayout['div#contentstructure span.node-hidden, div#contentstructure span.node-hiddenbyparent'];
         $this->assertArrayNotHasKey( 'display', $hiddenText );
         $this->assertSame( 'absolute', $hiddenText['position'] );

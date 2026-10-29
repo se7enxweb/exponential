@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Teke systemowe boki daju se ako cytańske znamjenja składowaś: wócyńśo bok (Zarědowanje, auditowy slěd, lisćina wužywarjow ...) a wubjeŕśo nad nim „Bok ako cytańske znamje składowaś“. Take cytańske znamjenja maju symbol zubatego kólaska.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Toś ten bok njesmějośo how wěcej wócyniś. Wótpórajśo cytańske znamje abo pšosćo administratora wó pśistup.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56320,6 +56324,42 @@ Wašo konto aktiwěrowali.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Cytańske znamje jo se pśemjeniło na „%name“.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Toś ten bok jo w toś tom pśistupje k sedłu (%siteaccess) wótšaltowany. Wócyńśo cytańske znamje w pśistupje k sedłu, kótaryž ten bok ma.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Modul toś togo boka njejo how instalěrowany abo zmóžnjony.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Toś ten bok wěcej njeeksistěrujo: jogo modul taki naglěd njama.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Žedna z Wašych rolow Wam njedowólujo, toś ten bok wócyniś.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Toś ten pśistup k sedłu njesmějośo wužywaś.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Wopśimjeśe, kótarež toś ten bok pokazujo, njesmějośo cytaś.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Toś ten drug boka njedajo se ako cytańske znamje składowaś: wón jano wobźěłujo formular abo jo bok jadnogo wokognuśa.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Adresa toś togo boka feluje.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Toś ten bok njedajo se něnto wócyniś.</translation>
     </message>
 </context>
 <context>

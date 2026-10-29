@@ -114,26 +114,26 @@ ul.tabs li a, ul.tabs li span.disabled
 
 ul.tabs li a:hover
 {
-    color:black;
+    color: var(--a4-ink);
 }
 
 #header-topmenu ul li.selected a, ul.tabs li.selected a
 {
     background: #444 none;
-    border-radius: 5px;
+    border-radius: var(--a4-radius-s);
     color:#f5f3dd;
     text-decoration: none;
 }
 
 .tab-content
 {
-    border: 1px solid #ccc;
-    background-color: #f5f5f5;
+    border: 1px solid var(--a4-line);
+    background-color: var(--a4-soft);
 }
 
 .tabs-content.disabled
 {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--a4-line);
 }
 
 /* CSS Media Query's to adjust layout based on screen width */
@@ -195,7 +195,7 @@ a.show-hide-tabs:hover
 .tab-block
 {
     padding-top: 0.8em;
-    border-top: 1px dashed #ddd;
+    border-top: 1px dashed var(--a4-line);
 }
 
 .tab-block .button-left
@@ -220,14 +220,14 @@ a.show-hide-tabs:hover
 
 #controlbar-top .box-bc
 {
-    border: 1px solid #ccc;
-    background: #f4f4f4;
+    border: 1px solid var(--a4-line);
+    background: var(--a4-soft);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#e4e3e4));
     background-image: -moz-linear-gradient(top,  #fdfdfd, #e4e3e4);
     background-image: -ms-linear-gradient(top,  #fdfdfd,  #e4e3e4);
     background-image: -o-linear-gradient(top,  #fdfdfd,  #e4e3e4);
     background-image: linear-gradient(top,  #fdfdfd,  #e4e3e4);
-    border-radius: 3px;
+    border-radius: var(--a4-radius-s);
     background-clip: padding-box;
     -moz-box-shadow: 0 4px 4px #aaa;
     -webkit-box-shadow: 0 4px 4px #aaa;
@@ -242,7 +242,7 @@ a.show-hide-tabs:hover
 
 .box-header
 {
-    border-top: 1px dashed #ccc;
+    border-top: 1px dashed var(--a4-line);
     font-size:1.5em;
 }
 .box-header select, .box-header input.button
@@ -273,7 +273,7 @@ font-size:13px;
 
 .menu-block li a
 {
-    border-radius: 3px;
+    border-radius: var(--a4-radius-s);
     background-clip: padding-box;
 }
 
@@ -287,22 +287,22 @@ p.versions
 }
 p.versions a
 {
-    color:#005b7f;
+    color: #005b7f;
     font-size: 1em;
 }
 
 p.versions a:hover
 {
-    color:black;
+    color: var(--a4-ink);
 }
 
 
 p.table-preferences
 {
-    border-radius: 3px;
-    border-bottom-right-radius: 3px;
-    border: 1px solid #CCCCCC;
-    background-color: #f0f0f0;
+    border-radius: var(--a4-radius-s);
+    border-bottom-right-radius: var(--a4-radius-s);
+    border: 1px solid var(--a4-line);
+    background-color: var(--a4-soft);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#e4e3e4));
     background-image: -moz-linear-gradient(top,  #fdfdfd,  #e4e3e4);
     background-image: -ms-linear-gradient(top,  #fdfdfd,  #e4e3e4);
@@ -313,7 +313,7 @@ p.table-preferences
 
 p.table-preferences > a, p.table-preferences > span
 {
-    border: solid #CCC;
+    border: solid var(--a4-line);
     border-width: 0 1px 0 0;
     padding-right: 1em;
     line-height: 1.5em;
@@ -326,10 +326,10 @@ p.table-preferences :last-child
 
 input.button, input.defaultbutton, input.button-disabled
 {
-    color: #44484d;
-    background: #fff;
-    border: 1px solid #cfd1d3;
-    border-radius: 3px;
+    color: var(--a4-ink);
+    background: var(--a4-card);
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
     font-size: 1em;
     margin-left: 5px;
     padding: 3px 6px;
@@ -337,17 +337,17 @@ input.button, input.defaultbutton, input.button-disabled
     -moz-transition: all 300ms ease;
     -ms-transition: all 300ms ease;
     -o-transition: all 300ms ease;
-    transition: all 300ms ease;
+    transition: all var(--a4-duration-slow) ease;
 }
 
 input.defaultbutton, input.button-disabled, input.button[disabled="disabled"]
 {
-    background-color: #f5f5f5;
+    background-color: var(--a4-soft);
 }
 
 input.button:hover, input.button:focus {
     background-color: rgba(0, 0, 0, 0.1);
-    color: black;
+    color: var(--a4-ink);
 }
 
 input.defaultbutton
@@ -368,13 +368,13 @@ input.defaultbutton:active {
     -moz-box-shadow: inset 0 0 3px #000;
     -webkit-box-shadow: inset 0 0 3px #000;
     box-shadow: inset 0 0 3px #000;
-    color: #ff8300;
+    color: #ffc48a;
 }
 
 input.button-disabled, input.button[disabled="disabled"]
 {
-    color: #999;
-    background: #fff;
+    color: var(--a4-muted);
+    background: var(--a4-card);
 
     background-image: url('../../images/3/diagonal_pattern.png');
 
@@ -384,12 +384,12 @@ input.button-disabled, input.button[disabled="disabled"]
 /* DASHBOARD */
 #ez-version
 {
-    color: #E24602;
+    color: var(--a4-accent-text);
 }
 
 #Exponential-community-project-is-innovative-and-cutting-edge
 {
-    color: #ff5500;
+    color: var(--a4-accent-text);
     font-style: italic;
 }
 
@@ -418,7 +418,7 @@ div.community-activity
     padding: 1em 1em;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
-    border-radius: 10px;
+    border-radius: var(--a4-radius-s);
 }
 
 div.community-activity div.loading
@@ -448,8 +448,8 @@ div.community-activity #feed-elements ul li p
 {
     margin: 1.5em 0 0.5em 0;
     overflow-x: auto;
-    border-top: 1px dashed #ccc;
-    border-bottom: 1px dashed #ccc;
+    border-top: 1px dashed var(--a4-line);
+    border-bottom: 1px dashed var(--a4-line);
     padding-bottom: 1em;
 }
 
@@ -499,18 +499,18 @@ div.pagenavigator span.pages span.other, div.pagenavigator span.pages span.curre
     font-size: 1em;
     margin-left: 1px;
     margin-right: 1px;
-    background-color: #fff;
-    border: 1px solid #CBCBCB;
+    background-color: var(--a4-card);
+    border: 1px solid var(--a4-line);
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
-    border-radius: 2px;
+    border-radius: var(--a4-radius-s);
     padding: 0.3em 0.5em;
     text-decoration: none;
 }
 
 div.pagenavigator span.pages span.current
 {
-    background-color: #f4f4f4;
+    background-color: var(--a4-soft);
 }
 
 div.alphabetical
@@ -541,23 +541,55 @@ div.alphabetical
 
 
 /* MISC */
+/* LIST TABLES, the shape of admin4's (admin4.css): the header row on --a4-head-bg with ink text in place of the grey
+   bar with white text, column separators (none before the first column), rounded top corners; the even data rows on
+   --a4-zebra, the hovered row on --a4-info-bg. A collapsed table ignores a cell's radius, so the cells are separate
+   with no spacing; the header cells draw only a bottom line, the data cells none, so no line doubles. */
 table.list th, table.special th
 {
-    color: #FFF;   /* white on the grey header row: 5.0:1 (#EEE was 4.4:1) */
-    background-color: #6F6E6B;
-    padding-top:0;
-    padding-bottom:0;
-    border-left: 1px solid #a9a9a9;
+    color: var(--a4-ink);
+    background-color: var(--a4-head-bg);
+    padding-top: 0;
+    padding-bottom: 0;
+    border-left: 0;
+    border-inline-start: 1px solid var(--a4-line-strong);
+    border-bottom: 1px solid var(--a4-line);
+    font-weight: var(--a4-weight-heading);
+}
+table.list th a, table.special th a { color: var(--a4-ink); }
+table.list tr > th:first-child, table.special tr > th:first-child { border-inline-start: 0; }
+table.list, table.special
+{
+    border-collapse: separate;
+    border-spacing: 0;
+}
+table.list > :is(thead, tbody):first-of-type > tr:first-child > th:first-child,
+table.special > :is(thead, tbody):first-of-type > tr:first-child > th:first-child { border-start-start-radius: var(--a4-radius-s); }
+table.list > :is(thead, tbody):first-of-type > tr:first-child > th:last-child,
+table.special > :is(thead, tbody):first-of-type > tr:first-child > th:last-child { border-start-end-radius: var(--a4-radius-s); }
+table.list tr.bglight, table.list tr.bgdark,
+table.list tr.bglight td, table.list tr.bgdark td, table.list tr.bgdark th[scope="row"] { background-color: transparent; }
+table.list:not(.a4-plain) > tbody > tr:where(:nth-child(even of :has(> td):not([hidden]))) > :is(td, th[scope="row"]) { background-color: var(--a4-zebra); }
+table.list:not(.a4-plain) > tbody > tr:hover > :is(td, th[scope="row"]) { background-color: var(--a4-info-bg); }
+table.list td { border-color: var(--a4-line); }
+
+/* A page section's title row (div.context-block's .box-header: the page title, Sub items, Relations ...) has a solid
+   line under it, as in admin4, so the sections of a page read at a glance */
+div.context-block .box-header
+{
+    margin-bottom: var(--a4-space-3);
+    padding-bottom: var(--a4-space-2);
+    border-bottom: 1px solid var(--a4-line);
 }
 
 #leftmenu-design ul
 {
-    color: #333;
+    color: var(--a4-ink);
 }
 
 .settings .current
 {
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold);
 }
 
 
@@ -595,7 +627,7 @@ table.list th, table.special th
     display: inline;
     font-family: sans-serif;
     font-size: 12.672px;
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold);
     line-height: 15px;
 }
 
@@ -707,13 +739,13 @@ table.list th, table.special th
 
 #ezap-message-publishing h1:before {
     content: "\021BB";
-    color: #555;
+    color: var(--a4-muted);
 }
 
 #ezap-message-finished h1:before, #ezap-message-deferred h1:before {
     content: "\02713";
-    color: #3e8d29;
-    font-weight: bold;
+    color: var(--a4-ok);
+    font-weight: var(--a4-weight-bold);
 }
 
 #ezap-error {

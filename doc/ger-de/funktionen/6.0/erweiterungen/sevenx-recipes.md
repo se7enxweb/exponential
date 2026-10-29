@@ -7,6 +7,20 @@ registrierten Rezeptversionen des Pakets nach und kopiert die Dateien und die Ko
 **Rezept-Slots** in das Projekt: Konfiguration, den Front-Controller, das Setup für den Web-Build, die
 Legacy-Einstellungen und die Installationsskripte.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
+> [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../../../hilfe/hosting/control-panels/plesk.md), [cPanel](../../../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../../../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../../../hilfe/hosting/control-panels/ispconfig.md).
+
 Warum das hilft: Ein neues Projekt erhält die funktionierende Konfiguration der Exponential-Plattform (Sicherheit,
 Siteaccess, Legacy-Einstellungen, den Web-Build, das Skript für die Legacy-Links) mit einem einzigen `composer require`,
 statt sie von Hand aus einem Referenzprojekt zu kopieren.

@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>คุณสามารถบุ๊กมาร์กหน้าระบบได้เช่นกัน: เปิดหน้านั้น (ตั้งค่าระบบ ประวัติการตรวจสอบ รายการผู้ใช้ ...) แล้วเลือก "บุ๊กมาร์กหน้านี้" ที่อยู่ด้านบน บุ๊กมาร์กเหล่านี้มีไอคอนรูปเฟือง.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>คุณไม่สามารถเปิดหน้านี้ที่นี่ได้อีกต่อไป กรุณานำบุ๊กมาร์กออก หรือขอสิทธิ์การเข้าถึงจากผู้ดูแลระบบ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>เปลี่ยนชื่อบุ๊กมาร์กเป็น "%name" แล้ว.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>หน้านี้ถูกปิดใช้งานในการเข้าถึงไซต์นี้ (%siteaccess) กรุณาเปิดบุ๊กมาร์กในการเข้าถึงไซต์ที่มีหน้านี้</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>โมดูลของหน้านี้ไม่ได้ติดตั้งหรือไม่ได้เปิดใช้งานที่นี่</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>หน้านี้ไม่มีอยู่แล้ว: โมดูลของหน้านี้ไม่มีมุมมองดังกล่าว</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ไม่มีบทบาทใดของคุณที่อนุญาตให้คุณเปิดหน้านี้</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>คุณไม่มีสิทธิ์ใช้การเข้าถึงไซต์นี้</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>คุณไม่มีสิทธิ์อ่านเนื้อหาที่หน้านี้แสดง</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ไม่สามารถบุ๊กมาร์กหน้าประเภทนี้ได้: หน้านี้ทำงานกับฟอร์มเท่านั้น หรือเป็นหน้าที่ใช้ได้เพียงชั่วขณะ</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ไม่มีที่อยู่ของหน้านี้</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ไม่สามารถเปิดหน้านี้ได้ในขณะนี้</translation>
     </message>
 </context>
 <context>

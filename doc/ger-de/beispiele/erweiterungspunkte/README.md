@@ -19,6 +19,7 @@ Wo eine Erweiterung sich über Einstellungen in den Kernel einklinkt: INI-Einste
 | [ezoe.ini](ezoe-ezoe.md) | ezoe | 3 | UploadExtensionCheck, Plugins, ExternalPlugins |
 | [audit.ini](audit.md) | Kernel | 25 | Sinks, Sinks, Sinks, Sinks, Sinks, Classes ... |
 | [binaryfile.ini](binaryfile.md) | Kernel | 2 | Repositories, ExtensionRepositories |
+| [bookmark.ini](bookmark.md) | Kernel | 1 | TypeClass |
 | [browse.ini](browse.md) | Kernel | 3 | Class, Class, Class |
 | [collaboration.ini](collaboration.md) | Kernel | 1 | Repositories |
 | [content.ini](content.md) | Kernel | 33 | VersionHistoryClass, ExtensionDirectories, ExtensionDirectories, ExtensionDirectories, AvailableClasses, AvailableClasses ... |

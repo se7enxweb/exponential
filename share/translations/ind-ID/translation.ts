@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Halaman sistem juga dapat ditandai: buka halaman tersebut (Penyiapan, jejak audit, daftar pengguna ...) lalu pilih Tandai halaman ini di atasnya. Penanda seperti itu memiliki ikon roda gigi.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Anda tidak lagi diizinkan membuka halaman ini di sini. Keluarkan penanda, atau minta akses kepada administrator.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ akun Anda.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Penanda telah diganti namanya menjadi "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Halaman ini dinonaktifkan di akses situs ini (%siteaccess). Buka penanda di akses situs yang memiliki halaman ini.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Modul halaman ini tidak terpasang atau tidak diaktifkan di sini.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Halaman ini sudah tidak ada: modulnya tidak memiliki tampilan tersebut.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Tidak ada peran Anda yang mengizinkan Anda membuka halaman ini.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Anda tidak diizinkan menggunakan akses situs ini.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Anda tidak diizinkan membaca konten yang ditampilkan halaman ini.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Jenis halaman ini tidak dapat ditandai: halaman ini hanya bertindak atas sebuah formulir, atau merupakan halaman sesaat.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Alamat halaman ini tidak ada.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Halaman ini tidak dapat dibuka sekarang.</translation>
     </message>
 </context>
 <context>

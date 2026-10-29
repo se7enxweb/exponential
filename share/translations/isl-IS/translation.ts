@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Einnig má setja kerfissíður í bókamerki: opnaðu síðuna (Uppsetning, úttektarslóðin, listi yfir notendur ...) og veldu „Setja síðuna í bókamerki“ fyrir ofan hana. Slík bókamerki eru með tannhjólstákni.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Þú mátt ekki lengur opna þessa síðu hér. Fjarlægðu bókamerkið eða biddu kerfisstjóra um aðgang.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56320,6 +56324,42 @@ reikninginn þinn.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Bókamerkið var endurnefnt í „%name“.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Þessi síða er óvirk í þessum vefaðgangi (%siteaccess). Opnaðu bókamerkið í vefaðgangi sem hefur hana.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Eining þessarar síðu er ekki uppsett eða ekki virk hér.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Þessi síða er ekki lengur til: eining hennar hefur enga slíka sýn.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Ekkert hlutverka þinna leyfir þér að opna þessa síðu.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Þú mátt ekki nota þennan vefaðgang.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Þú mátt ekki lesa efnið sem þessi síða sýnir.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Ekki er hægt að setja síðu af þessu tagi í bókamerki: hún vinnur aðeins á eyðublaði eða er aðeins til eitt augnablik.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Vistfang þessarar síðu vantar.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Ekki er hægt að opna þessa síðu núna.</translation>
     </message>
 </context>
 <context>

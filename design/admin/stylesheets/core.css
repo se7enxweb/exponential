@@ -196,7 +196,7 @@ table.list td.na-rate, table.special td.na-rate
 {
     text-align: end;
     font-style: italic;
-    color: #C0C0C0;
+    color: var(--a4-muted, #595959);
 }
 
 table.list tr.bglight
@@ -284,7 +284,7 @@ dt, dd
 
 dt
 {
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold, bold);
 }
 
 dd
@@ -304,7 +304,7 @@ form
 
 label
 {
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold, bold);
     padding-inline-end: 0.5em;
     display: block;
     white-space: nowrap;
@@ -330,7 +330,7 @@ textarea
 
 optgroup
 {
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold, bold);
     font-style: normal;
 }
 
@@ -348,7 +348,7 @@ input.button, button, input.defaultbutton, input.button-disabled
 
 input.defaultbutton
 {
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold, bold);
     padding-inline-start: 0.45em;
     padding-inline-end: 0.45em;
     color: #094564;
@@ -357,7 +357,7 @@ input.defaultbutton
 input.button-disabled, input.button[disabled="disabled"]
 {
     cursor: default;
-    color: #888;
+    color: var(--a4-muted, #666);
 }
 
 input.disabled[type="image"]
@@ -396,7 +396,7 @@ fieldset.block
 
 legend
 {
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold, bold);
     color: #000000;
     padding: 0 0.35em 0 0.35em;
     font-size:1.1em;
@@ -753,7 +753,7 @@ table.multioption input.box
 
 .multioption label
 {
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold, bold);
     padding: 0.5em 0;
 }
 

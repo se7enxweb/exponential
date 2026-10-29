@@ -15,6 +15,8 @@ $ViewList['logout'] = array(
     'functions' => array( 'login' ),
     'script' => 'logout.php',
     'ui_context' => 'authentication',
+    // a bookmark of it would log out (bookmark.ini [ViewBookmarkSettings] lists it too)
+    'bookmarkable' => false,
     'params' => array( ) );
 
 $ViewList['login'] = array(

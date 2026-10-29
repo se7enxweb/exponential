@@ -80,7 +80,7 @@ class AdminLeftColumnFontTest extends PHPUnit\Framework\TestCase
     public function testTheLeftColumnKeepsTheBodysFontSize()
     {
         $found = false;
-        foreach ( self::rules( 'design/admin4/stylesheets/pagelayout.css' ) as $rule )
+        foreach ( self::rules( 'design/admin4/stylesheets/base.css' ) as $rule )
         {
             if ( $rule[0] !== '.sidebar.left' )
             {

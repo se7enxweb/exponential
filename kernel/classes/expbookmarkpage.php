@@ -176,13 +176,17 @@ class expBookmarkPage
      * @param array $row a bookmark row with 'uri' and 'can_open' (expBookmarkView::decorateRows())
      * @param int $position
      * @param string $viewLabel the type shown for system pages (and used by the type order and the search)
-     * @return array the keys of item(), with 'kind' => 'view', 'uri', 'module' and 'view'
+     * @return array the keys of item(), with 'kind' => 'view', 'uri', 'module', 'view', 'icon', 'reason' and
+     *               'reason_text' (why it is greyed, expBookmarkView::reasonText()); the type is the label of its kind
+     *               ('type_label' of the row) when the row has one
      */
     static function viewItem( array $row, $position, $viewLabel = 'System page' )
     {
         $uri = isset( $row['uri'] ) ? (string) $row['uri'] : '';
         $state = $uri === '' ? 'gone' : ( empty( $row['can_open'] ) ? 'denied' : 'ok' );
-        $parts = explode( '/', $uri );
+        $parts = explode( '/', (string) preg_replace( '/[?#].*$/s', '', $uri ) );
+        if ( isset( $row['type_label'] ) && (string) $row['type_label'] !== '' )
+            $viewLabel = (string) $row['type_label'];
         return array( 'id' => (int) $row['id'],
                       'node_id' => 0,
                       'folder_id' => (int) $row['folder_id'],
@@ -198,6 +202,9 @@ class expBookmarkPage
                       'uri' => $uri,
                       'module' => (string) $parts[0],
                       'view' => isset( $parts[1] ) ? (string) $parts[1] : '',
+                      'icon' => isset( $row['icon'] ) ? (string) $row['icon'] : 'gear',
+                      'reason' => isset( $row['reason'] ) ? (string) $row['reason'] : ( $state === 'ok' ? 'open' : 'empty' ),
+                      'reason_text' => isset( $row['reason_text'] ) ? (string) $row['reason_text'] : '',
                       'state' => $state );
     }
 

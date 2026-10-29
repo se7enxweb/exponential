@@ -89,7 +89,7 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
         $small = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), 'screen and (min-width: 1024px) and (max-width: 1279.98px)' ) );
         // html body:has(...) outweighs pagelayout.css's body:has(.sidebar.right.show) margin
         $this->assertSame( '0', $small['html body:has(.sidebar.right.show)']['margin-inline-end'] );
-        $this->assertStringContainsString( "body:has(.sidebar.right.show) {\n        margin-inline-end: calc(15rem + 0.5rem);", self::css( 'pagelayout.css' ) );
+        $this->assertStringContainsString( "body:has(.sidebar.right.show) {\n        margin-inline-end: calc(15rem + 0.5rem);", self::css( 'base.css' ) );
     }
 
     public function testTheContentColumnStopsGrowing()
@@ -130,7 +130,7 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
 
     public function testLongWordsBreakBetweenSyllables()
     {
-        $pagelayout = AdminBaseStylesheetsTest::rules( self::css( 'pagelayout.css' ) );
+        $pagelayout = AdminBaseStylesheetsTest::rules( self::css( 'base.css' ) );
         $tree = $pagelayout['div#contentstructure ul#content_tree_menu li'];
         $this->assertSame( 'break-word', $tree['overflow-wrap'], '"anywhere" broke words mid-syllable' );
         $this->assertSame( 'auto', $tree['hyphens'] );
@@ -183,7 +183,7 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
         $css = self::css( 'admin4.css' );
         // nothing moves a tab, at any width and whether its column is open or not: no translate or transform, and
         // an inset only of 0 (pagelayout.css sets inset-inline-start/end: 0 from 1024px)
-        foreach ( array( 'admin4.css', 'pagelayout.css' ) as $file )
+        foreach ( array( 'admin4.css', 'base.css' ) as $file )
         {
             foreach ( AdminBaseStylesheetsTest::rules( self::css( $file ) ) as $selector => $declarations )
             {

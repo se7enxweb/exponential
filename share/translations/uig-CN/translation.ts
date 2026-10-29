@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>سىستېما بەتلىرىنىمۇ خەتكۈچلىگىلى بولىدۇ: بەتنى ئېچىڭ (ئورنىتىش، تەكشۈرۈش خاتىرىسى، ئىشلەتكۈچىلەر تىزىمى ...) ۋە ئۇنىڭ ئۈستىدىكى "بۇ بەتنى خەتكۈچلە" نى تاللاڭ. بۇنداق خەتكۈچلەردە چىشلىق چاقنىڭ بەلگىسى بولىدۇ.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>بۇ بەتنى بۇ يەردە ئەمدى ئېچىش ھوقۇقىڭىز يوق. خەتكۈچنى چىقىرىۋېتىڭ، ياكى باشقۇرغۇچىدىن زىيارەت ھوقۇقى سوراڭ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>خەتكۈچنىڭ ئىسمى "%name" غا ئۆزگەرتىلدى.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>بۇ بەت بۇ تور بېكەت زىيارىتىدە (%siteaccess) چەكلەنگەن. خەتكۈچنى بۇ بەت بار بولغان تور بېكەت زىيارىتىدە ئېچىڭ.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>بۇ بەتنىڭ مودۇلى بۇ يەردە ئورنىتىلمىغان ياكى قوزغىتىلمىغان.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>بۇ بەت ئەمدى مەۋجۇت ئەمەس: ئۇنىڭ مودۇلىدا بۇنداق كۆرۈنۈش يوق.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>روللىرىڭىزنىڭ ھېچقايسىسى سىزنىڭ بۇ بەتنى ئېچىشىڭىزغا يول قويمايدۇ.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>بۇ تور بېكەت زىيارىتىنى ئىشلىتىش ھوقۇقىڭىز يوق.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>بۇ بەت كۆرسىتىدىغان مەزمۇننى ئوقۇش ھوقۇقىڭىز يوق.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>بۇ خىلدىكى بەتنى خەتكۈچكە قوشقىلى بولمايدۇ: ئۇ پەقەت بىر جەدۋەل ئۈستىدىلا ئىشلەيدۇ، ياكى پەقەت بىر دەملىك بەت.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>بۇ بەتنىڭ ئادرېسى يوق.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>بۇ بەتنى ھازىر ئاچقىلى بولمايدۇ.</translation>
     </message>
 </context>
 <context>

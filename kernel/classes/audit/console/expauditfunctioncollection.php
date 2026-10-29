@@ -80,7 +80,8 @@ class expAuditFunctionCollection
         $f = self::filters( $params );
         if ( isset( $f['channel'] ) && !expAuditConsole::channelAllowed( $f['channel'], $channels ) )
             return array( 'result' => array() );
-        $page = expAuditConsole::page( $f, $channels, max( 0, (int)$offset ), min( 100, max( 1, (int)$limit ) ) );
+        // the events only: the total of every matching row is not shown and was the slow part (seconds on a large index)
+        $page = expAuditConsole::page( $f, $channels, max( 0, (int)$offset ), min( 100, max( 1, (int)$limit ) ), false );
         $out = array();
         foreach ( $page['rows'] as $row )
             $out[] = expAuditConsole::view( $row );

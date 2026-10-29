@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Fuulonni sirnaas mallatteeffamuu danda'u: fuula banaa (Qopheessa, hordoffii sakatta'iinsaa, tarree fayyadamtootaa ...), achiis olitti Fuula kana mallatteessi filadhaa. Mallattooleen akkasii mallattoo geerii qabu.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Kana booda fuula kana as banuu hin dandeessan. Mallattoo baasaa, yookiin bulchaa tokko seensa gaafadhaa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ herrega keessan hojii irra oolchaa.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Mallattoon gara "%name" tti maqaa jijjiirrameera.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Fuulli kun seensa marsariitii kana (%siteaccess) keessatti dhaamsameera. Mallattoo seensa marsariitii fuula kana qabu keessatti banaa.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Moojuliin fuula kanaa asitti hin fe'amne yookiin hojii irra hin oolfamne.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Fuulli kun kana booda hin jiru: moojuliin isaa mul'ata akkasii hin qabu.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Gaheewwan keessan keessaa tokkollee fuula kana akka bantan isin hin hayyamu.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Seensa marsariitii kana fayyadamuuf hayyama hin qabdan.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Qabiyyee fuulli kun agarsiisu dubbisuuf hayyama hin qabdan.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Gosni fuulaa kun mallattoo gochuu hin danda'u: unka tokko irratti qofa hojjeta, yookiin fuula yeroo gabaabaa ti.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Teessoon fuula kanaa hin jiru.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Fuulli kun amma banamuu hin danda'u.</translation>
     </message>
 </context>
 <context>

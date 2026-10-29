@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Er paginas dal sistem pon vegnir mess en ils segnapaginas: avrai la pagina (Configuraziun, il protocol d'audit, ina glista d'utilisaders ...) e tscherni survart Metter questa pagina en ils segnapaginas. Talas segnapaginas han ina icona d'in rodel dentau.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Vus na dastgais betg pli avrir questa pagina qua. Allontanai il segnapagina u dumandai in administratur per access.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ quest sbagl. Na empruvai betg da trametter danovamain il pajament.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Il segnapagina è vegnì renominà en "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Questa pagina è deactivada en quest access a la website (%siteaccess). Avri il segnapagina en in access a la website che la cuntegna.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Il modul da questa pagina n'è betg installà u betg activà qua.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Questa pagina n'exista betg pli: ses modul n'ha nagina tala vista.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Nagina da Vossas rollas na Vus permetta d'avrir questa pagina.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Vus na dastgais betg utilisar quest access a la website.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Vus na dastgais betg leger il cuntegn che questa pagina mussa.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Quest tip da pagina na po betg vegnir agiuntà als segnapaginas: ella agescha mo sin in formular u è ina pagina d'in mument.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>L'adressa da questa pagina manca.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Questa pagina na po ussa betg vegnir averta.</translation>
     </message>
 </context>
 <context>

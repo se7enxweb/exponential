@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>ସିଷ୍ଟମ୍ ପୃଷ୍ଠାଗୁଡ଼ିକୁ ମଧ୍ୟ ବୁକମାର୍କ କରାଯାଇପାରିବ: ପୃଷ୍ଠାଟି ଖୋଲନ୍ତୁ (ସେଟଅପ୍, ଅଡିଟ୍ ଟ୍ରେଲ୍, ଉପଯୋଗକର୍ତ୍ତାମାନଙ୍କ ଏକ ତାଲିକା ...) ଏବଂ ଏହା ଉପରେ “ଏହି ପୃଷ୍ଠାକୁ ବୁକମାର୍କ କରନ୍ତୁ” ବାଛନ୍ତୁ। ଏଭଳି ବୁକମାର୍କରେ ଏକ ଗିଅର୍ ଆଇକନ୍ ଥାଏ।</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ଆପଣ ଏହି ପୃଷ୍ଠାକୁ ଆଉ ଏଠାରେ ଖୋଲିପାରିବେ ନାହିଁ। ବୁକମାର୍କ ହଟାନ୍ତୁ, କିମ୍ବା ପ୍ରବେଶ ପାଇଁ ଜଣେ ପ୍ରଶାସକଙ୍କୁ ଅନୁରୋଧ କରନ୍ତୁ।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56379,6 +56383,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>ବୁକମାର୍କର ନାମ “%name” କୁ ବଦଳାଯାଇଛି।</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ଏହି ପୃଷ୍ଠା ଏହି ସାଇଟ୍ ଆକ୍ସେସ୍‌ରେ (%siteaccess) ବନ୍ଦ ଅଛି। ଏହି ପୃଷ୍ଠା ଥିବା ଏକ ସାଇଟ୍ ଆକ୍ସେସ୍‌ରେ ବୁକମାର୍କ ଖୋଲନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ଏହି ପୃଷ୍ଠାର ମଡ୍ୟୁଲ୍ ଏଠାରେ ସଂସ୍ଥାପିତ ହୋଇନାହିଁ କିମ୍ବା ସକ୍ଷମ ହୋଇନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ଏହି ପୃଷ୍ଠା ଆଉ ନାହିଁ: ଏହାର ମଡ୍ୟୁଲ୍‌ରେ ଏପରି କୌଣସି ଦୃଶ୍ୟ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ଆପଣଙ୍କର କୌଣସି ଭୂମିକା ଆପଣଙ୍କୁ ଏହି ପୃଷ୍ଠା ଖୋଲିବାକୁ ଅନୁମତି ଦିଏ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ଆପଣଙ୍କୁ ଏହି ସାଇଟ୍ ଆକ୍ସେସ୍ ବ୍ୟବହାର କରିବାର ଅନୁମତି ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ଏହି ପୃଷ୍ଠା ଦେଖାଉଥିବା ବିଷୟବସ୍ତୁ ପଢ଼ିବାର ଅନୁମତି ଆପଣଙ୍କୁ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ଏହି ପ୍ରକାରର ପୃଷ୍ଠାକୁ ବୁକମାର୍କ କରାଯାଇପାରିବ ନାହିଁ: ଏହା କେବଳ ଏକ ଫର୍ମ ଉପରେ କାର୍ଯ୍ୟ କରେ, କିମ୍ବା ଏହା ଏକ କ୍ଷଣିକ ପୃଷ୍ଠା।</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ଏହି ପୃଷ୍ଠାର ଠିକଣା ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ଏହି ପୃଷ୍ଠାକୁ ବର୍ତ୍ତମାନ ଖୋଲାଯାଇପାରିବ ନାହିଁ।</translation>
     </message>
 </context>
 <context>

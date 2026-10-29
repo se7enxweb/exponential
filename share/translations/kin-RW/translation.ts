@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Impapuro za sisitemu na zo zishobora gushyirwa mu bimenyetso: mufungure urupapuro (Gutunganya, igenzura ry'ibyakozwe, urutonde rw'abakoresha ...) muhitemo Gushyira uru rupapuro mu bimenyetso hejuru yarwo. Ibimenyetso nk'ibyo bifite agashushondanga k'igikoresho.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ntimukigifite uburenganzira bwo gufungura uru rupapuro hano. Mukureho ikimenyetso, cyangwa mubaze umuyobozi uburenganzira bwo kwinjira.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ iri kosa. Nyamuneka ntimugerageze kongera kohereza ubwishyu.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Ikimenyetso cyahinduwe izina kikitwa "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Uru rupapuro rwafunzwe muri ubu buryo bwo kugera ku rubuga (%siteaccess). Mufungure ikimenyetso mu buryo bwo kugera ku rubuga burimo uru rupapuro.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Modire y'uru rupapuro ntiyashyizwemo cyangwa ntifunguye hano.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Uru rupapuro ntirukibaho: modire yarwo ntifite igaragaza nk'iryo.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Nta ruhare rwanyu na rumwe rubemerera gufungura uru rupapuro.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Ntimwemerewe gukoresha ubu buryo bwo kugera ku rubuga.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Ntimwemerewe gusoma ibirimo uru rupapuro rwerekana.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Urupapuro rw'ubu bwoko ntirushobora gushyirwa mu bimenyetso: rukora gusa ku ifishi, cyangwa ni urupapuro rw'akanya gato.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Aderesi y'uru rupapuro irabura.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Uru rupapuro ntirushobora gufungurwa ubu.</translation>
     </message>
 </context>
 <context>

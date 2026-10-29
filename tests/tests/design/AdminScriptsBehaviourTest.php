@@ -228,8 +228,8 @@ class AdminScriptsBehaviourTest extends PHPUnit\Framework\TestCase
     {
         $head = self::read( 'design/admin4/templates/page_head_style.tpl' );
         $this->assertStringNotContainsString( '$admin_theme', $head );
-        $this->assertSame( 2, substr_count( $head, "'theme/rounded.css'," ) );
-        $this->assertFileExists( self::root() . '/design/admin4/stylesheets/theme/rounded.css' );
+        $this->assertSame( 2, substr_count( $head, "'base.css'," ) );
+        $this->assertFileExists( self::root() . '/design/admin4/stylesheets/base.css' );
     }
 
     public function testPageScriptsReadEventKey()

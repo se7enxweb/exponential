@@ -469,6 +469,7 @@ PHP;
         list( $code, $out ) = $this->runScript( 'setupfiles', array( 'htaccess' ) );
         $this->assertSame( 0, $code, $out );
         $this->assertStringContainsString( 'Would copy .htaccess_root to .htaccess', $out );
+        $this->assertStringContainsString( 'put these rules in the virtual host with AllowOverride None', $out, 'the faster alternative is named' );
         $this->assertFileDoesNotExist( $this->dir . '/.htaccess', 'the dry run writes nothing' );
         list( $code, $out ) = $this->runScript( 'setupfiles', array( 'htaccess', '--apply', '-v' ) );
         $this->assertSame( 0, $code, $out );

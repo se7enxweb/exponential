@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Sistema-orriak ere laster-marka daitezke: ireki orria (Konfigurazioa, ikuskaritza-erregistroa, erabiltzaileen zerrenda bat ...) eta aukeratu gainean "Egin laster-marka orri honetarako". Laster-marka horiek engranaje-ikono bat dute.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ezin duzu orri hau hemen ireki jada. Kendu laster-marka edo eskatu sarbidea administratzaile bati.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ aktibatzeko.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Laster-markaren izena "%name" izatera aldatu da.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Orri hau desgaituta dago gune-sarbide honetan (%siteaccess). Ireki laster-marka orri hau duen gune-sarbide batean.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Orri honen modulua ez dago instalatuta edo gaituta hemen.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Orri hau ez dago jada: bere moduluak ez du halako ikuspegirik.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Zure roletako batek ere ez dizu orri hau irekitzen uzten.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Ezin duzu gune-sarbide hau erabili.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Ezin duzu irakurri orri honek erakusten duen edukia.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Mota honetako orriei ezin zaie laster-markarik egin: inprimaki baten gainean bakarrik jarduten dute, edo une bateko orriak dira.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Orri honen helbidea falta da.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Ezin da orri hau orain ireki.</translation>
     </message>
 </context>
 <context>

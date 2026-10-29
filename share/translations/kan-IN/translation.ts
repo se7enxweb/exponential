@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>ಸಿಸ್ಟಮ್ ಪುಟಗಳನ್ನೂ ಬುಕ್‌ಮಾರ್ಕ್ ಮಾಡಬಹುದು: ಪುಟವನ್ನು ತೆರೆಯಿರಿ (ಸೆಟಪ್, ಆಡಿಟ್ ಟ್ರೇಲ್, ಬಳಕೆದಾರರ ಪಟ್ಟಿ ...) ಮತ್ತು ಅದರ ಮೇಲಿರುವ “ಈ ಪುಟವನ್ನು ಬುಕ್‌ಮಾರ್ಕ್ ಮಾಡು” ಆರಿಸಿ. ಅಂತಹ ಬುಕ್‌ಮಾರ್ಕ್‌ಗಳಿಗೆ ಗೇರ್ ಐಕಾನ್ ಇರುತ್ತದೆ.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ನೀವು ಇನ್ನು ಮುಂದೆ ಇಲ್ಲಿ ಈ ಪುಟವನ್ನು ತೆರೆಯುವಂತಿಲ್ಲ. ಬುಕ್‌ಮಾರ್ಕ್ ಅನ್ನು ತೆಗೆದುಹಾಕಿ, ಅಥವಾ ಪ್ರವೇಶಕ್ಕಾಗಿ ನಿರ್ವಾಹಕರನ್ನು ಕೇಳಿ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56379,6 +56383,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>ಬುಕ್‌ಮಾರ್ಕ್ ಅನ್ನು “%name” ಎಂದು ಮರುಹೆಸರಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ಈ ಸೈಟ್‌ಆಕ್ಸೆಸ್‌ನಲ್ಲಿ (%siteaccess) ಈ ಪುಟವನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ. ಈ ಪುಟ ಇರುವ ಸೈಟ್‌ಆಕ್ಸೆಸ್‌ನಲ್ಲಿ ಬುಕ್‌ಮಾರ್ಕ್ ಅನ್ನು ತೆರೆಯಿರಿ.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ಈ ಪುಟದ ಮಾಡ್ಯೂಲ್ ಅನ್ನು ಇಲ್ಲಿ ಸ್ಥಾಪಿಸಲಾಗಿಲ್ಲ ಅಥವಾ ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ಈ ಪುಟ ಇನ್ನು ಮುಂದೆ ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲ: ಅದರ ಮಾಡ್ಯೂಲ್‌ನಲ್ಲಿ ಅಂತಹ ನೋಟವಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ನಿಮ್ಮ ಯಾವುದೇ ಪಾತ್ರವು ಈ ಪುಟವನ್ನು ತೆರೆಯಲು ನಿಮಗೆ ಅನುಮತಿ ನೀಡುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ನೀವು ಈ ಸೈಟ್‌ಆಕ್ಸೆಸ್ ಅನ್ನು ಬಳಸುವಂತಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ಈ ಪುಟ ತೋರಿಸುವ ವಿಷಯವನ್ನು ನೀವು ಓದುವಂತಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ಈ ರೀತಿಯ ಪುಟವನ್ನು ಬುಕ್‌ಮಾರ್ಕ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ: ಇದು ಫಾರ್ಮ್ ಮೇಲೆ ಮಾತ್ರ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ, ಅಥವಾ ಇದು ಒಂದು ಕ್ಷಣದ ಪುಟವಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ಈ ಪುಟದ ವಿಳಾಸ ಕಾಣೆಯಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ಈ ಪುಟವನ್ನು ಈಗ ತೆರೆಯಲು ಸಾಧ್ಯವಿಲ್ಲ.</translation>
     </message>
 </context>
 <context>

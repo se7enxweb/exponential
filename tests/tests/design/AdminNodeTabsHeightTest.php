@@ -155,7 +155,7 @@ class AdminNodeTabsHeightTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'max: Math.max(min, Math.round(Math.min(em * 60, window.innerHeight * 0.85))),', $js );
         $this->assertStringContainsString( 'def: Math.round(em * 20),', $js );
         $this->assertStringContainsString( "shown: Math.round(em * (box.classList.contains('layouts-active') ? 22 : 20))", $js );
-        $base = self::css( 'pagelayout.css' );
+        $base = self::css( 'base.css' );
         $this->assertMatchesRegularExpression( '/#window-controls \{[^}]*height: 20em;/', $base );
         $this->assertMatchesRegularExpression( '/#window-controls\.layouts-active \{[^}]*height: 22em;/', $base );
 

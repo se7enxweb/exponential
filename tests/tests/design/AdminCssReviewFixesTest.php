@@ -82,14 +82,14 @@ class AdminCssReviewFixesTest extends PHPUnit\Framework\TestCase
 
     public function testTheRowMenuIconsSurviveForcedColours()
     {
-        $forced = AdminBaseStylesheetsTest::rules( self::css( 'theme/admin_datatable.css' ), true );
+        $forced = AdminBaseStylesheetsTest::rules( self::css( 'base.css' ), true );
         $list = '.crankfield::before, .crankfield-disabled::before, a:hover > .crankfield::before, a:focus-visible > .crankfield::before, .thumbview > .thumbfield::before';
         $this->assertArrayHasKey( $list, $forced, 'the mask icons are drawn with background-color, which forced colours replace with Canvas' );
         $this->assertSame( 'none', $forced[$list]['forced-color-adjust'] );
         $this->assertSame( 'CanvasText', $forced[$list]['background-color'] );
         $this->assertSame( 'GrayText', $forced['.crankfield-disabled::before']['background-color'], 'disabled stays recognisable' );
         // every crank and thumbnail mask icon of the stylesheet is in the block (the sort carets are in admin4.css)
-        $plain = self::css( 'theme/admin_datatable.css' );
+        $plain = self::css( 'base.css' );
         preg_match_all( '/([^{}]+)\{[^{}]*\bmask:/', preg_replace( '/@media[^{]*\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/s', '', $plain ), $masks );
         foreach ( $masks[1] as $selectors )
         {
@@ -106,7 +106,7 @@ class AdminCssReviewFixesTest extends PHPUnit\Framework\TestCase
 
     public function testTheRowMenuButtonIsATwentyFourPixelTarget()
     {
-        $rules = AdminBaseStylesheetsTest::rules( self::css( 'theme/admin_datatable.css' ) );
+        $rules = AdminBaseStylesheetsTest::rules( self::css( 'base.css' ) );
         $this->assertSame( '16px', $rules['.crankfield, .crankfield-disabled']['height'], 'the icon itself does not grow' );
         $this->assertSame( '""', $rules['.crankfield::after']['content'] );
         $this->assertSame( 'absolute', $rules['.crankfield::after']['position'] );
@@ -117,7 +117,7 @@ class AdminCssReviewFixesTest extends PHPUnit\Framework\TestCase
 
     public function testThePopupMenusUseTheDynamicViewportHeight()
     {
-        foreach ( array( 'admin4.css', 'pagelayout.css' ) as $file )
+        foreach ( array( 'admin4.css', 'base.css' ) as $file )
         {
             $css = self::css( $file );
             preg_match_all( '/max-height:\s*calc\(100vh([^;]*)\);(\s*)(max-height:\s*calc\(100dvh([^;]*)\);)?/', $css, $m, PREG_SET_ORDER );
@@ -127,20 +127,20 @@ class AdminCssReviewFixesTest extends PHPUnit\Framework\TestCase
                 $this->assertSame( $pair[1], $pair[4], "$file: the dvh line repeats the vh one" );
             }
         }
-        $this->assertStringContainsString( 'calc(100dvh - 2 * var(--a4-space-3))', self::css( 'pagelayout.css' ), 'the context menu' );
+        $this->assertStringContainsString( 'calc(100dvh - 2 * var(--a4-space-3))', self::css( 'base.css' ), 'the context menu' );
     }
 
     public function testNothingFixesAndCentresAnAncestorOfALegacyModalWindow()
     {
         // :has(.modal-window) matched every ancestor div of one and made it fixed and shifted by 50%
-        $this->assertStringNotContainsString( ':has(.modal-window)', self::css( 'pagelayout.css' ) );
+        $this->assertStringNotContainsString( ':has(.modal-window)', self::css( 'base.css' ) );
         $this->assertStringNotContainsString( ':has(.modal-window)', self::css( 'admin4.css' ) );
         $this->assertStringNotContainsString( 'modal-window', self::file( 'design/admin4/templates/pagelayout.tpl' ) );
     }
 
     public function testTheDatatableStylesheetDefinesTheCrankAndThumbFieldsOnce()
     {
-        $css = self::file( 'design/admin4/stylesheets/theme/admin_datatable.css' );
+        $css = self::file( 'design/admin4/stylesheets/base.css' );
         $this->assertSame( 2, substr_count( $css, 'three-dots-vertical.svg' ), 'the -webkit-mask and the mask of one rule' );
         $this->assertSame( 1, substr_count( $css, '.thumbview:hover span' ) );
         $this->assertSame( 1, preg_match_all( '/^\.crankfield,\s*\.crankfield-disabled\s*\{\s*height: 16px;/m', $css ) );
@@ -148,7 +148,7 @@ class AdminCssReviewFixesTest extends PHPUnit\Framework\TestCase
 
     public function testTheIcoMoonFontIsLoadedLean()
     {
-        $css = self::file( 'design/admin4/stylesheets/core.css' );
+        $css = self::file( 'design/admin4/stylesheets/base.css' );
         preg_match( '/@font-face\s*\{[^}]*IcoMoon[^}]*\}/s', $css, $face );
         $this->assertNotEmpty( $face, '@font-face IcoMoon' );
         $this->assertStringContainsString( "IcoMoon.woff", $face[0] );
@@ -166,9 +166,9 @@ class AdminCssReviewFixesTest extends PHPUnit\Framework\TestCase
     public function testNoBaseTextIsSetInAPercentageBelowTwelvePixels()
     {
         // 85% of the 13px body is 11px
-        $core = AdminBaseStylesheetsTest::rules( self::css( 'core.css' ) );
+        $core = AdminBaseStylesheetsTest::rules( self::css( 'base.css' ) );
         $this->assertSame( 'var(--a4-text-xs)', $core['.small']['font-size'] );
-        $table = AdminBaseStylesheetsTest::rules( self::css( 'theme/admin_datatable.css' ) );
+        $table = AdminBaseStylesheetsTest::rules( self::css( 'base.css' ) );
         $this->assertSame( 'var(--a4-text-xs)', $table['.admin-dt caption']['font-size'] );
     }
 

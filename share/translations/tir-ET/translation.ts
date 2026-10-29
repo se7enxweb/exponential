@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>ገጻት ስርዓት እውን ምልክት ገጽ ክኾኑ ይኽእሉ እዮም፦ ነቲ ገጽ ክፈቱ (ምድላው፣ መሰረታዊ መዝገብ፣ ዝርዝር ተጠቀምቲ ...) እሞ ኣብ ልዕሊኡ "ነዚ ገጽ ምልክት ገጽ ግበሮ" ምረጹ። ከምዚ ዝኣመሰሉ ምልክታት ገጽ ምልክት መርገጺ ኣለዎም።</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ነዚ ገጽ ኣብዚ ደጊምኩም ክትከፍትዎ ፍቓድ የብልኩምን። ነቲ ምልክት ገጽ ኣውጽእዎ፣ ወይ ካብ ኣመሓዳሪ ፍቓድ ምእታው ሕተቱ።</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>ስም እቲ ምልክት ገጽ ናብ "%name" ተቐይሩ።</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>እዚ ገጽ ኣብዚ ምእታው መርበብ (%siteaccess) ጠፊኡ ኣሎ። ነቲ ምልክት ገጽ ኣብ ነዚ ገጽ ዘለዎ ምእታው መርበብ ክፈትዎ።</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ሞጁል ናይዚ ገጽ ኣብዚ ኣይተጻዕነን ወይ ኣይነቕሐን።</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>እዚ ገጽ ደጊሙ የለን: ሞጁሉ ከምዚ ዝበለ ትርኢት የብሉን።</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ካብ ተራታትኩም ሓደ እኳ ነዚ ገጽ ክትከፍቱ ኣየፍቅደልኩምን።</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ነዚ ምእታው መርበብ ክትጥቀሙሉ ፍቓድ የብልኩምን።</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ነቲ እዚ ገጽ ዘርእዮ ትሕዝቶ ከተንብብዎ ፍቓድ የብልኩምን።</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ከምዚ ዓይነት ገጽ ብምልክት ገጽ ክሕዝ ኣይክኣልን: ኣብ ቅጥዒ ጥራይ እዩ ዝሰርሕ፣ ወይ ናይ ሓንቲ ህሞት ገጽ እዩ።</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ኣድራሻ ናይዚ ገጽ የለን።</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>እዚ ገጽ ሕጂ ክኽፈት ኣይክእልን።</translation>
     </message>
 </context>
 <context>

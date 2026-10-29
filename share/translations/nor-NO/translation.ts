@@ -2355,6 +2355,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Systemsider kan også bokmerkes: åpne siden (Oppsett, revisjonssporet, en liste over brukere ...) og velg Bokmerk denne siden over den. Slike bokmerker har et tannhjulikon.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Du kan ikke lenger åpne denne siden her. Fjern bokmerket, eller be en administrator om tilgang.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -57613,6 +57617,42 @@ denne feilen. Ikke prøv å sende betalingen på nytt.</translation>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>Bokmerket fikk det nye navnet &quot;%name&quot;.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Denne siden er slått av i denne nettstedstilgangen (%siteaccess). Åpne bokmerket i en nettstedstilgang som har den.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Modulen til denne siden er ikke installert eller ikke aktivert her.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Denne siden finnes ikke lenger: modulen har ingen slik visning.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Ingen av rollene dine gir deg lov til å åpne denne siden.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Du har ikke lov til å bruke denne nettstedstilgangen.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Du har ikke lov til å lese innholdet denne siden viser.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Denne typen side kan ikke bokmerkes: den utfører bare en handling på et skjema, eller er en side for ett øyeblikk.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Adressen til denne siden mangler.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Denne siden kan ikke åpnes nå.</translation>
     </message>
 </context>
 <context>

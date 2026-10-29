@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Ruranap raphinkunatapas yuyarinaman yapayta atinki: raphita kichay (Wakichiy, chiqaqchay qillqa, apaykachaqkunap sinrun...) hinaspa hawanpi «Kay raphita yuyarinaman yapay» nisqata akllay. Chhayna yuyarinakunaqa t'ullu muyu siq'ayuq.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Kay raphitaqa manañam kaypi kichayta atinkichu. Yuyarinata hurquy, icha huk kamachiqman yaykunapaq saqillayta mañakuy.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ llamk'achinaykipaq.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Yuyarinap sutinqa «%name» nisqaman hukchasqa karqan.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Kay raphiqa kay web yaykunapi (%siteaccess) wañuchisqa kachkan. Yuyarinata kichay kay raphiyuq web yaykunapi.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Kay raphip mudulunqa manam kaypi churasqachu icha manam llamk'achisqachu.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Kay raphiqa manañam kanchu: mudulunpiqa manam chay hina qhawana kanchu.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Mana mayqin ruwanaykipas kay raphita kichanaykipaq saqisunkichu.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Mana saqillayniyki kanchu kay web yaykunata llamk'achinaykipaq.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Mana saqillayniyki kanchu kay raphi rikuchisqan ukhunta ñawinchanaykipaq.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Kay hina raphitaqa mana yuyarinaman yapakuyta atikunchu: huk formulariollapim ruwan, icha huk ratillapaq raphim.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Kay raphip riqsichiqnin mana kanchu.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Kay raphitaqa kunanqa mana kichakuyta atikunchu.</translation>
     </message>
 </context>
 <context>

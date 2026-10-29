@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>سسٹم صفحات کو بھی بک مارک کیا جا سکتا ہے: صفحہ کھولیں (سیٹ اپ، آڈٹ ٹریل، صارفین کی فہرست ...) اور اس کے اوپر “اس صفحے کو بک مارک کریں” منتخب کریں۔ ایسے بک مارکس پر گیئر کا آئیکن ہوتا ہے۔</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>اب آپ یہ صفحہ یہاں نہیں کھول سکتے۔ بک مارک ہٹائیں، یا کسی منتظم سے رسائی کی درخواست کریں۔</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56379,6 +56383,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>بک مارک کا نام تبدیل کر کے “%name” کر دیا گیا۔</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>یہ صفحہ اس سائٹ ایکسیس (%siteaccess) میں بند ہے۔ بک مارک کو ایسی سائٹ ایکسیس میں کھولیں جس میں یہ صفحہ موجود ہو۔</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>اس صفحے کا ماڈیول یہاں انسٹال یا فعال نہیں ہے۔</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>یہ صفحہ اب موجود نہیں: اس کے ماڈیول میں ایسا کوئی منظر نہیں ہے۔</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>آپ کا کوئی بھی کردار آپ کو یہ صفحہ کھولنے کی اجازت نہیں دیتا۔</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>آپ کو یہ سائٹ ایکسیس استعمال کرنے کی اجازت نہیں ہے۔</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>آپ کو وہ مواد پڑھنے کی اجازت نہیں ہے جو یہ صفحہ دکھاتا ہے۔</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>اس قسم کے صفحے کو بک مارک نہیں کیا جا سکتا: یہ صرف کسی فارم پر عمل کرتا ہے، یا صرف ایک لمحے کا صفحہ ہے۔</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>اس صفحے کا پتہ موجود نہیں ہے۔</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>یہ صفحہ ابھی نہیں کھولا جا سکتا۔</translation>
     </message>
 </context>
 <context>

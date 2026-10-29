@@ -217,14 +217,16 @@ class expAuditConsole
      * @param string[]|null $channels
      * @param int $offset
      * @param int $limit
+     * @param bool $withTotal false: no count of every matching row (total is null), for a caller that shows only
+     *        the page, such as the dashboard block; on a large index the count is the slow part
      * @return array rows (index rows), total, source (index | files), unindexed (rows from the files on top)
      */
-    public static function page( array $f, $channels, $offset, $limit )
+    public static function page( array $f, $channels, $offset, $limit, $withTotal = true )
     {
         if ( self::indexUsable() )
         {
             $query = new expAuditQuery();
-            $total = $query->count( $f, $channels );
+            $total = $withTotal ? $query->count( $f, $channels ) : 0;
             $rows = $query->fetch( $f, $channels, $offset, $limit );
             if ( $total !== null && $rows !== null )
             {
@@ -242,7 +244,7 @@ class expAuditConsole
                         $total += count( $extra );
                     }
                 }
-                return array( 'rows' => $rows, 'total' => $total, 'source' => 'index', 'unindexed' => count( $extra ),
+                return array( 'rows' => $rows, 'total' => $withTotal ? $total : null, 'source' => 'index', 'unindexed' => count( $extra ),
                               'fulltext' => $query->fullTextKind() );
             }
         }

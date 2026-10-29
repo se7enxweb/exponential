@@ -1,6 +1,6 @@
 /* The package comparison, package/compare/<name> (templates/package/compare.tpl, loaded there with
    ezcss_require). Scoped to .package-compare; the page also carries .package-view-full, so the
-   package view's own badges, filter form, link buttons and pager (content.css) apply unchanged.
+   package view's own badges, filter form, link buttons and pager (base.css) apply unchanged.
    Status colours: new green, changed amber, only on the site red, identical grey, class missing
    purple - each also has its own glyph and label, so none depends on colour alone. Removed text
    is struck through, added text underlined, for the same reason. */
@@ -13,17 +13,17 @@
 
 /* Status chips: the summary bar (links that filter) and the badges in the list and viewer */
 .package-compare .pcmp-summary { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0 0 0.75em; }
-.package-compare a.pcmp-chip { display: inline-flex; align-items: center; gap: 0.4em; padding: 0.25em 0.65em; border: 1px solid var(--a4-line); border-radius: 999px; background: var(--a4-surface); color: var(--a4-ink); text-decoration: none; line-height: 1.4; }
+.package-compare a.pcmp-chip { display: inline-flex; align-items: center; gap: 0.4em; padding: 0.25em 0.65em; border: 1px solid var(--a4-line); border-radius: 999px; background: var(--a4-surface); color: var(--a4-ink); text-decoration: none; line-height: var(--a4-leading); }
 .package-compare a.pcmp-chip:hover,
 .package-compare a.pcmp-chip:focus { filter: brightness(0.95); }
 .package-compare a.pcmp-chip:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
-.package-compare .pcmp-chip-count { font-weight: bold; font-variant-numeric: tabular-nums; }
+.package-compare .pcmp-chip-count { font-weight: var(--a4-weight-bold); font-variant-numeric: tabular-nums; }
 .package-compare a.pcmp-chip-zero { opacity: 0.6; }
-.package-compare a.pcmp-chip-active { box-shadow: inset 0 0 0 2px currentColor; font-weight: bold; }
+.package-compare a.pcmp-chip-active { box-shadow: inset 0 0 0 2px currentColor; font-weight: var(--a4-weight-bold); }
 .package-compare a.pcmp-chip-all.pcmp-chip-active { background: var(--a4-accent-strong); border-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
 
-.package-compare .pcmp-glyph { display: inline-block; min-width: 1.1em; text-align: center; font-weight: bold; font-family: var(--a4-font); }
-.package-compare .pcmp-status { display: inline-flex; align-items: center; gap: 0.2em; padding: 0 0.5em; border: 1px solid; border-radius: 3px; font-size: var(--a4-text-xs); line-height: 1.6; white-space: nowrap; }
+.package-compare .pcmp-glyph { display: inline-block; min-width: 1.1em; text-align: center; font-weight: var(--a4-weight-bold); font-family: var(--a4-font); }
+.package-compare .pcmp-status { display: inline-flex; align-items: center; gap: 0.2em; padding: 0 0.5em; border: 1px solid; border-radius: var(--a4-radius-s); font-size: var(--a4-text-xs); line-height: var(--a4-leading); white-space: nowrap; }
 
 .package-compare .pcmp-status-new { background: var(--a4-ok-bg); border-color: var(--a4-ok-line); color: var(--a4-ok); }
 .package-compare .pcmp-status-changed { background: var(--a4-warn-bg); border-color: var(--a4-warn-line); color: var(--a4-warn); }
@@ -43,7 +43,7 @@
 .package-compare td.pcmp-col-summary { color: var(--a4-ink); min-width: 10em; }
 
 /* The item opened */
-.package-compare .pcmp-viewer { margin: 0 0 1em; border: 1px solid var(--a4-line); border-radius: 3px; overflow: hidden; }
+.package-compare .pcmp-viewer { margin: 0 0 1em; border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); overflow: hidden; }
 .package-compare .pcmp-viewer-head { display: flex; flex-wrap: wrap; gap: 0.5em 1em; align-items: flex-start; justify-content: space-between; padding: 0.6em 0.75em; background: var(--a4-soft); border-bottom: 1px solid var(--a4-line); }
 .package-compare .pcmp-viewer-title { flex: 1 1 20em; min-width: 0; }
 .package-compare .pcmp-viewer-title h2 { font-size: 1.1em; margin: 0.35em 0 0.2em; white-space: pre-line; overflow-wrap: anywhere; }
@@ -52,7 +52,7 @@
 .package-compare .pcmp-viewer-body { padding: 0.75em; }
 .package-compare .pcmp-note { margin: 0 0 0.6em; padding: 0.4em 0.6em; background: var(--a4-info-bg); border-left: 3px solid var(--a4-info); }
 .package-compare dl.pcmp-facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.2em 1em; margin: 0 0 0.6em; }
-.package-compare dl.pcmp-facts dt { font-weight: bold; color: var(--a4-ink); margin: 0; }
+.package-compare dl.pcmp-facts dt { font-weight: var(--a4-weight-heading); color: var(--a4-ink); margin: 0; }
 .package-compare dl.pcmp-facts dd { margin: 0; overflow-wrap: anywhere; }
 .package-compare .pcmp-legend { display: flex; flex-wrap: wrap; gap: 0.25em 1.5em; margin: 0 0 0.75em; font-size: var(--a4-text-xs); color: var(--a4-muted); }
 
@@ -60,14 +60,14 @@
 .package-compare h3.pcmp-section-title { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3em 0.75em; font-size: 1em; margin: 0.5em 0; padding-bottom: 0.25em; border-bottom: 1px solid var(--a4-line); }
 .package-compare .pcmp-section-count { color: var(--a4-muted); font-weight: normal; font-size: var(--a4-text-xs); margin-left: auto; }
 
-.package-compare .pcmp-row { margin: 0 0 0.75em; padding: 0.5em; border: 1px solid var(--a4-line); border-left-width: 4px; border-radius: 3px; background: var(--a4-card); }
+.package-compare .pcmp-row { margin: 0 0 0.75em; padding: 0.5em; border: 1px solid var(--a4-line); border-left-width: 4px; border-radius: var(--a4-radius-s); background: var(--a4-card); }
 .package-compare .pcmp-row-changed { border-left-color: var(--a4-warn); }
 .package-compare .pcmp-row-package_only { border-left-color: var(--a4-ok); }
 .package-compare .pcmp-row-site_only { border-left-color: var(--a4-bad); }
 .package-compare .pcmp-row-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2em 0.75em; margin: 0 0 0.4em; }
 .package-compare .pcmp-row-identifier,
 .package-compare .pcmp-row-datatype { color: var(--a4-muted); font-size: var(--a4-text-xs); }
-.package-compare .pcmp-state { display: inline-block; padding: 0 0.45em; border-radius: 3px; font-size: var(--a4-text-xs); font-weight: normal; line-height: 1.6; }
+.package-compare .pcmp-state { display: inline-block; padding: 0 0.45em; border-radius: var(--a4-radius-s); font-size: var(--a4-text-xs); font-weight: normal; line-height: var(--a4-leading); }
 .package-compare .pcmp-state-changed { background: var(--a4-warn-bg); color: var(--a4-warn); }
 .package-compare .pcmp-state-package_only { background: var(--a4-ok-bg); color: var(--a4-ok); }
 .package-compare .pcmp-state-site_only { background: var(--a4-bad-bg); color: var(--a4-bad); }
@@ -77,13 +77,13 @@
 /* Side by side on a wide screen, one above the other on a narrow one */
 .package-compare .pcmp-sides { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.6em; }
 .package-compare .pcmp-side { min-width: 0; }
-.package-compare .pcmp-side-label { font-size: var(--a4-text-xs); font-weight: bold; color: var(--a4-muted); text-transform: uppercase; letter-spacing: 0.03em; margin: 0 0 0.2em; }
-.package-compare .pcmp-text { display: block; margin: 0; padding: 0.45em 0.6em; max-height: 22em; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font-family: inherit; font-size: 0.95em; line-height: 1.5; background: var(--a4-surface); border: 1px solid var(--a4-line); border-radius: 3px; }
+.package-compare .pcmp-side-label { font-size: var(--a4-text-xs); font-weight: var(--a4-weight-heading); color: var(--a4-muted); text-transform: uppercase; letter-spacing: var(--a4-tracking); margin: 0 0 0.2em; }
+.package-compare .pcmp-text { display: block; margin: 0; padding: 0.45em 0.6em; max-height: 22em; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font-family: inherit; font-size: 0.95em; line-height: var(--a4-leading); background: var(--a4-surface); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); }
 .package-compare .pcmp-text-missing { color: var(--a4-muted); font-style: italic; background: repeating-linear-gradient(135deg, var(--a4-soft), var(--a4-soft) 6px, var(--a4-soft) 6px, var(--a4-soft) 12px); }
 .package-compare .pcmp-text-same { max-height: 10em; border: 0; background: none; padding: 0; }
 .package-compare .pcmp-empty { color: var(--a4-muted); font-style: italic; }
-.package-compare del { background: var(--a4-bad-bg); color: var(--a4-bad); text-decoration: line-through; text-decoration-color: var(--a4-bad-line); border-radius: 2px; }
-.package-compare ins { background: var(--a4-ok-bg); color: var(--a4-ok); text-decoration: underline; text-decoration-color: var(--a4-ok-line); border-radius: 2px; }
+.package-compare del { background: var(--a4-bad-bg); color: var(--a4-bad); text-decoration: line-through; text-decoration-color: var(--a4-bad-line); border-radius: var(--a4-radius-s); }
+.package-compare ins { background: var(--a4-ok-bg); color: var(--a4-ok); text-decoration: underline; text-decoration-color: var(--a4-ok-line); border-radius: var(--a4-radius-s); }
 .package-compare .pcmp-legend del,
 .package-compare .pcmp-legend ins { padding: 0 0.25em; }
 .package-compare .pcmp-text-removed del,
@@ -102,7 +102,7 @@
 .package-compare table.pcmp-same-list th code { display: block; color: var(--a4-muted); font-size: var(--a4-text-xs); }
 .package-compare table.pcmp-same-list td { vertical-align: top; }
 
-.package-compare ul.pcmp-places { margin: 0; padding: 0.45em 0.6em 0.45em 1.6em; background: var(--a4-surface); border: 1px solid var(--a4-line); border-radius: 3px; }
+.package-compare ul.pcmp-places { margin: 0; padding: 0.45em 0.6em 0.45em 1.6em; background: var(--a4-surface); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); }
 .package-compare ul.pcmp-places li { overflow-wrap: anywhere; margin: 0.1em 0; }
 
 .package-compare summary:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
@@ -143,12 +143,12 @@
 .package-compare table.pcmp-items th.sortable a.sort-link:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 
 /* Importing: the bulk bar, the row selection and buttons, the value ticks of the opened item */
-.package-compare .pcmp-bulk { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4em 0.6em; margin: 0 0 0.5em; padding: 0.45em 0.6em; background: var(--a4-soft); border: 1px solid var(--a4-line); border-radius: 3px; }
+.package-compare .pcmp-bulk { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4em 0.6em; margin: 0 0 0.5em; padding: 0.45em 0.6em; background: var(--a4-soft); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); }
 .package-compare .pcmp-bulk input { margin: 0; }
 .package-compare .pcmp-bulk-note { color: var(--a4-muted); font-size: var(--a4-text-xs); flex: 1 1 16em; }
 .package-compare table.pcmp-items .pcmp-col-select { width: 1%; text-align: center; }
 .package-compare table.pcmp-items .pcmp-col-select input { margin: 0; }
-.package-compare button.pvf-link-button { display: inline-block; padding: 0.1em 0.55em; border: 1px solid var(--a4-line); border-radius: 3px; background: var(--a4-surface); color: var(--a4-ink); font: inherit; line-height: inherit; cursor: pointer; }
+.package-compare button.pvf-link-button { display: inline-block; padding: 0.1em 0.55em; border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background: var(--a4-surface); color: var(--a4-ink); font: inherit; line-height: inherit; cursor: pointer; }
 .package-compare button.pvf-link-button:hover,
 .package-compare button.pvf-link-button:focus { background: var(--a4-soft); }
 .package-compare button.pvf-link-button:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
@@ -160,18 +160,18 @@
 .package-compare label.pcmp-import-tick input { margin: 0; }
 
 /* The confirmation and the result */
-.package-compare .pcmp-import { margin: 0 0 1em; padding: 0.75em; border: 2px solid var(--a4-line-strong); border-radius: 3px; background: var(--a4-soft); }
+.package-compare .pcmp-import { margin: 0 0 1em; padding: 0.75em; border: 2px solid var(--a4-line-strong); border-radius: var(--a4-radius-s); background: var(--a4-soft); }
 .package-compare .pcmp-import-result { border-color: var(--a4-ok); }
 .package-compare .pcmp-import h2 { font-size: 1.15em; margin: 0 0 0.4em; }
 .package-compare .pcmp-import-lead { margin: 0 0 0.6em; }
 .package-compare .pcmp-import-lead strong { display: block; }
 .package-compare ol.pcmp-import-list { margin: 0 0 0.75em; padding: 0; list-style: none; }
-.package-compare li.pcmp-import-entry { margin: 0 0 0.5em; padding: 0.5em 0.6em; background: var(--a4-surface); border: 1px solid var(--a4-line); border-left: 4px solid var(--a4-ok); border-radius: 3px; }
+.package-compare li.pcmp-import-entry { margin: 0 0 0.5em; padding: 0.5em 0.6em; background: var(--a4-surface); border: 1px solid var(--a4-line); border-left: 4px solid var(--a4-ok); border-radius: var(--a4-radius-s); }
 .package-compare li.pcmp-result-skipped { border-left-color: var(--a4-line); background: var(--a4-soft); }
 .package-compare li.pcmp-result-failed { border-left-color: var(--a4-bad); }
 .package-compare .pcmp-import-entry-head { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3em 0.6em; }
 .package-compare .pcmp-import-name { overflow-wrap: anywhere; white-space: pre-line; min-width: 0; }
-.package-compare .pcmp-result { display: inline-block; padding: 0 0.5em; border-radius: 3px; font-size: var(--a4-text-xs); line-height: 1.6; margin-left: auto; }
+.package-compare .pcmp-result { display: inline-block; padding: 0 0.5em; border-radius: var(--a4-radius-s); font-size: var(--a4-text-xs); line-height: var(--a4-leading); margin-left: auto; }
 .package-compare .pcmp-result-badge-done { background: var(--a4-ok-bg); color: var(--a4-ok); }
 .package-compare .pcmp-result-badge-failed { background: var(--a4-bad-bg); color: var(--a4-bad); }
 .package-compare .pcmp-result-badge-skipped { background: var(--a4-soft); color: var(--a4-muted); }

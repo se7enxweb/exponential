@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>ⵜⵙⵏⴰⵡⵉⵏ ⵏ ⵓⵏⴳⴰⵔⴰⵡ ⵜⵣⵎⵔⵏⵜ ⴰⴷ ⵜⵜⵓⵔⵏⵓⵏⵜ ⵖⵔ ⵜⵉⵛⵔⴹⵉⵏ ⵜⵓⵍⴰ: ⵔⵎⵙ ⵜⵙⵏⴰ (ⴰⵙⵔⵙ, ⴰⵖⵎⵉⵙ ⵏ ⵓⵙⵏⵇⴷ, ⵜⴰⵍⴳⴰⵎⵜ ⵏ ⵉⵏⵙⵙⵎⵔⵙⵏ ...) ⴷ ⵙⵜⵉ «ⵔⵏⵓ ⵜⵙⵏⴰ ⴰⴷ ⵖⵔ ⵜⵉⵛⵔⴹⵉⵏ» ⴼⵍⵍⴰⵙ. ⵜⵉⵛⵔⴹⵉⵏ ⵏⵏⴰ ⵖⵓⵔⵙⵏⵜ ⵜⴰⵙⵖⵓⵏⵜ ⵏ ⵓⵎⵓⵜⵓⵔ.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ⵓⵔ ⵙⵓⵍ ⵖⵓⵔⴽ ⵜⵓⵔⴰⴳⵜ ⴰⴷ ⵜⵔⵥⵎⴷ ⵜⴰⵙⵏⴰ ⴰⴷ ⵖⵉⴷ. ⴽⴽⵙ ⵜⴰⵛⵔⴹⵜ, ⵏⵖ ⵜⵜⵔ ⴰⴽⵛⵛⵓⵎ ⵙⴳ ⵓⵏⴱⴰⴹ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>ⵉⵙⵎ ⵏ ⵜⵛⵔⴹⵜ ⵉⵜⵜⵓⵙⵏⴼⵍ ⵖⵔ "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ⵜⴰⵙⵏⴰ ⴰⴷ ⵜⵏⵙⴰ ⴳ ⵓⴽⵛⵛⵓⵎ ⵖⵔ ⵓⵙⵎⵍ ⴰⴷ (%siteaccess). ⵔⵥⵎ ⵜⴰⵛⵔⴹⵜ ⴳ ⵓⴽⵛⵛⵓⵎ ⵖⵔ ⵓⵙⵎⵍ ⵍⵍⵉ ⴳ ⵜⵍⵍⴰ ⵜⵙⵏⴰ ⴰⴷ.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ⴰⵎⵓⴷⵉⵍ ⵏ ⵜⵙⵏⴰ ⴰⴷ ⵓⵔ ⵉⵜⵜⵓⵙⵔⵙ ⵏⵖ ⵓⵔ ⵢⵓⵔⵎⵉⴷ ⵖⵉⴷ.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ⵜⴰⵙⵏⴰ ⴰⴷ ⵓⵔ ⵙⵓⵍ ⵜⵍⵍⵉ: ⴰⵎⵓⴷⵉⵍ ⵏⵏⵙ ⵓⵔ ⵖⵓⵔⵙ ⵜⴰⵎⵥⵕⵉ ⵣⵓⵏ ⵜⴰⴷ.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ⵓⵍⴰ ⵢⴰⵏ ⴳ ⵉⴷⵡⵡⵓⵔⵏ ⵏⵏⴽ ⵓⵔ ⴽ ⵉⴼⴽⵉ ⵜⵓⵔⴰⴳⵜ ⴰⴷ ⵜⵔⵥⵎⴷ ⵜⴰⵙⵏⴰ ⴰⴷ.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ⵓⵔ ⵖⵓⵔⴽ ⵜⵓⵔⴰⴳⵜ ⴰⴷ ⵜⵙⵙⵎⵔⵙⴷ ⴰⴽⵛⵛⵓⵎ ⵖⵔ ⵓⵙⵎⵍ ⴰⴷ.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ⵓⵔ ⵖⵓⵔⴽ ⵜⵓⵔⴰⴳⵜ ⴰⴷ ⵜⵖⵔⴷ ⴰⴳⴱⵓⵔ ⵍⵍⵉ ⵜⵙⴽⴰⵏ ⵜⴰⵙⵏⴰ ⴰⴷ.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ⵜⴰⵙⵏⴰ ⵣⵓⵏ ⵜⴰⴷ ⵓⵔ ⵜⵣⵎⵉⵔ ⴰⴷ ⵜⵉⵍⵉ ⵖⵓⵔⵙ ⵜⴰⵛⵔⴹⵜ: ⵜⵅⴷⴷⵎ ⵖⴰⵙ ⴼ ⵜⴰⴼⵔⴽⵉⵜ, ⵏⵖ ⵜⴳⴰ ⵜⴰⵙⵏⴰ ⵏ ⵢⴰⵏ ⵓⵣⵎⵣ ⵓⵃⴷⵓ.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ⵜⴰⵏⵙⴰ ⵏ ⵜⵙⵏⴰ ⴰⴷ ⵓⵔ ⵜⵍⵍⵉ.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ⵓⵔ ⵉⵣⵎⵉⵔ ⵢⴰⵏ ⴰⴷ ⵉⵔⵥⵎ ⵜⴰⵙⵏⴰ ⴰⴷ ⴷⵖⵉ.</translation>
     </message>
 </context>
 <context>

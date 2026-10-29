@@ -38,7 +38,7 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
     /** The POPUP MENU block of admin4's pagelayout.css, comments removed */
     private static function menuCss()
     {
-        $css = AdminFiles::read( self::root() . '/design/admin4/stylesheets/pagelayout.css' );
+        $css = AdminFiles::read( self::root() . '/design/admin4/stylesheets/base.css' );
         $start = strpos( $css, '/* POPUP MENU' );
         $end = strpos( $css, '/* BOX MODEL */' );
         self::assertNotFalse( $start, 'pagelayout.css has no POPUP MENU block' );
@@ -68,14 +68,14 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
     public function testAdmin4MenuRowsAreCompactButAtLeast24PxAndKeepTheirFocusRing()
     {
         $css = self::menuCss();
-        // compact rows: 14px text, line-height 1.35 and 4px above and below (about 27px), but never below the
+        // compact rows: 14px text, line-height --a4-leading-tight and 4px above and below (about 27px), but never below the
         // 24px target size of WCAG 2.2 (2.5.8)
         $this->assertSame( 1, preg_match( '/div\.popupmenu a\s*\{[^}]*min-height:\s*var\((--a4-space-\d)\)/', $css, $match ),
             'Menu rows need a min-height from the --a4-space-* tokens' );
         $this->assertGreaterThanOrEqual( 24, self::spaceTokenPx( $match[1] ),
             'Menu rows must be at least 24px high (WCAG 2.2 target size)' );
-        $this->assertMatchesRegularExpression( '/div\.popupmenu a\s*\{[^}]*padding:\s*var\(--a4-space-1\) var\(--a4-space-3\);[^}]*line-height:\s*1\.35;/', $css,
-            'Menu rows are compact: 4px above and below the text at line-height 1.35' );
+        $this->assertMatchesRegularExpression( '/div\.popupmenu a\s*\{[^}]*padding:\s*var\(--a4-space-1\) var\(--a4-space-3\);[^}]*line-height:\s*var\(--a4-leading-tight\);/', $css,
+            'Menu rows are compact: 4px above and below the text at line-height --a4-leading-tight' );
         $this->assertMatchesRegularExpression( '/div\.popupmenu h3\s*\{[^}]*padding:\s*var\(--a4-space-1\) var\(--a4-space-3\);/', $css,
             'The title row is as compact as the items' );
         $this->assertMatchesRegularExpression( '/div\.popupmenu hr\s*\{[^}]*margin:\s*calc\(var\(--a4-space-1\) \/ 2\) 0;/', $css,

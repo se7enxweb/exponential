@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Ẹ tún lè fi àmì sí àwọn ojú ìwé ẹ̀rọ: ẹ ṣí ojú ìwé náà (Ìgbékalẹ̀, àkọsílẹ̀ àyẹ̀wò, àtòjọ àwọn olùlò ...) kí ẹ sì yan Fi àmì sí ojú ìwé yìí lókè rẹ̀. Irú àwọn àmì ojú ìwé bẹ́ẹ̀ ní àmì gíà.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ẹ kò ní àṣẹ mọ́ láti ṣí ojú ìwé yìí níbí. Ẹ yọ àmì ojú ìwé náà kúrò, tàbí kí ẹ béèrè ìwọlé lọ́wọ́ alákòóso.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56379,6 +56383,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>A ti yí orúkọ àmì ojú ìwé náà padà sí “%name”.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Wọ́n ti pa ojú ìwé yìí ní ìwọlé sáìtì yìí (%siteaccess). Ẹ ṣí àmì ojú ìwé náà ní ìwọlé sáìtì tí ó ní ojú ìwé yìí.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Mọ́dùùlù ojú ìwé yìí kò sí lórí ẹ̀rọ tàbí a kò mú un ṣiṣẹ́ níbí.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Ojú ìwé yìí kò sí mọ́: mọ́dùùlù rẹ̀ kò ní irú ìwòran bẹ́ẹ̀.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Kò sí ọ̀kan nínú àwọn ipa yín tí ó fún yín láàyè láti ṣí ojú ìwé yìí.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Ẹ kò ní àṣẹ láti lo ìwọlé sáìtì yìí.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Ẹ kò ní àṣẹ láti ka àkóónú tí ojú ìwé yìí ń fi hàn.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>A kò lè fi àmì ojú ìwé sí irú ojú ìwé yìí: ó kàn ń ṣiṣẹ́ lórí fọ́ọ̀mù kan ni, tàbí ojú ìwé ìṣẹ́jú kan ni.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Àdírẹ́sì ojú ìwé yìí kò sí.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>A kò lè ṣí ojú ìwé yìí báyìí.</translation>
     </message>
 </context>
 <context>

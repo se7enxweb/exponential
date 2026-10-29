@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Tamién se puen amestar a los marcadores páxines del sistema: abri la páxina (Configuración, el rexistru d'auditoría, una llista d'usuarios...) y esbilla "Amestar esta páxina a los marcadores" enriba d'ella. Esos marcadores lleven un iconu d'engranaxe.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Yá nun pues abrir esta páxina equí. Quita'l marcador o pidi accesu a un alministrador.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -56381,6 +56385,42 @@ si esbillesti l'opción "%3" de "%4" </translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>El marcador renomóse a "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Esta páxina ta desactivada nesti accesu al sitiu (%siteaccess). Abri'l marcador nun accesu al sitiu que la tenga.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>El módulu d'esta páxina nun ta instalao nin activao equí.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Esta páxina yá nun esiste: el so módulu nun tien una vista asina.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Nengún de los tos roles te permite abrir esta páxina.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Nun pues usar esti accesu al sitiu.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Nun pues lleer el conteníu qu'amuesa esta páxina.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Esti tipu de páxina nun se pue amestar a los marcadores: namái actúa sobre un formulariu, o ye una páxina d'un momentu.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Falta la direición d'esta páxina.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Agora nun se pue abrir esta páxina.</translation>
     </message>
 </context>
 <context>
