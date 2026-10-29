@@ -248,7 +248,8 @@
     ],
     "lib/eztemplate/classes/eztemplate.php": [
       "tests/tests/lib/eztemplate/eZTemplateVanishedCompiledTemplateTest.php",
-      "tests/tests/lib/eztemplate/eZTemplateEngineRenderTest.php"
+      "tests/tests/lib/eztemplate/eZTemplateEngineRenderTest.php",
+      "tests/tests/lib/templatebridge/expTemplateCheckerTest.php"
     ],
     "lib/ezfile/classes/ezlog.php": [
       "tests/tests/lib/ezfile/expLogRotatorTest.php",
@@ -261,7 +262,8 @@
     ],
     "lib/ezutils/classes/expdebugbarreport.php": [
       "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php",
-      "tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php"
+      "tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php",
+      "tests/tests/lib/smarty/expSmartyDebugBarTest.php"
     ],
     "design/standard/stylesheets/expdebugbar-toolbar.css": [
       "tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php"
@@ -2101,6 +2103,232 @@
     ],
     "kernel/classes/expvelocitydeploy.php": [
       "tests/tests/kernel/private/classes/commands/expApplyFlagDeployCommandsTest.php"
+    ],
+    "lib/smarty/classes/*": [
+      "tests/tests/lib/smarty/expSmartyTemplateRenderTest.php",
+      "tests/tests/lib/smarty/expSmartyParameterOperatorTest.php",
+      "tests/tests/lib/smarty/expSmartySecurityTest.php",
+      "tests/tests/lib/smarty/expSmartyDebugBarTest.php"
+    ],
+    "lib/eztemplate/classes/eztemplatefileresource.php": [
+      "tests/tests/lib/smarty/expSmartyTemplateRenderTest.php",
+      "tests/tests/lib/eztemplate/eZTemplateEngineRenderTest.php"
+    ],
+    "lib/smarty/classes/expsmartyconverter.php": [
+      "tests/tests/lib/smarty/expSmartyTemplateRenderTest.php",
+      "tests/tests/lib/smarty/expSmartyOperatorParityTest.php",
+      "tests/tests/lib/smarty/expSmartyReverseConverterTest.php",
+      "tests/tests/lib/smarty/expSmartyParameterOperatorTest.php",
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php"
+    ],
+    "lib/smarty/classes/expsmartyreverseconverter.php": [
+      "tests/tests/lib/smarty/expSmartyReverseConverterTest.php",
+      "tests/tests/lib/smarty/expSmartyParameterOperatorTest.php",
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php"
+    ],
+    "lib/templatebridge/classes/*": [
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php"
+    ],
+    "bin/php/exptemplateconvert*.php": [
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php"
+    ],
+    "kernel/private/classes/commands/exptemplateconvert*.php": [
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php"
+    ],
+    "settings/smarty.ini": [
+      "tests/tests/lib/smarty/expSmartyTemplateRenderTest.php",
+      "tests/tests/lib/smarty/expSmartyParameterOperatorTest.php",
+      "tests/tests/lib/smarty/expSmartySecurityTest.php",
+      "tests/tests/lib/smarty/expSmartyOperatorParityTest.php"
+    ],
+    "design/admin4/stylesheets/pagelayout.css": [
+      "tests/tests/design/AdminHeaderTest.php",
+      "tests/tests/design/AdminVisibilityStatusTest.php",
+      "tests/tests/design/AdminLeftColumnFontTest.php",
+      "tests/tests/design/AdminCssReviewFixesTest.php",
+      "tests/tests/design/AdminResponsiveTest.php"
+    ],
+    "design/admin4/stylesheets/core.css": [
+      "tests/tests/design/AdminCssReviewFixesTest.php"
+    ],
+    "design/admin4/stylesheets/theme/admin_datatable.css": [
+      "tests/tests/design/AdminCssReviewFixesTest.php"
+    ],
+    "design/admin4/stylesheets/content.css": [
+      "tests/tests/design/AdminRightToLeftTest.php",
+      "tests/tests/design/AdminContentEditAttributeKindsTest.php"
+    ],
+    "lib/smarty/classes/expsmartyrenderer.php": [
+      "tests/tests/lib/smarty/expSmartyTemplateRenderTest.php",
+      "tests/tests/lib/smarty/expSmartyOperatorParityTest.php",
+      "tests/tests/lib/smarty/expSmartyParameterOperatorTest.php",
+      "tests/tests/lib/smarty/expSmartySecurityTest.php",
+      "tests/tests/lib/smarty/expSmartyDebugBarTest.php"
+    ],
+    "lib/smarty/classes/expsmartysecurity.php": [
+      "tests/tests/lib/smarty/expSmartySecurityTest.php",
+      "tests/tests/lib/smarty/expSmartyOperatorParityTest.php"
+    ],
+    "lib/eztemplate/classes/eztemplatecacheblock.php": [
+      "tests/tests/lib/smarty/expSmartyDebugBarTest.php",
+      "tests/tests/kernel/classes/debugbar/expRenderStatsCacheBlockTest.php"
+    ],
+    "kernel/classes/debugbar/exprenderstats.php": [
+      "tests/tests/lib/smarty/expSmartyDebugBarTest.php"
+    ],
+    "lib/twig/classes/exptwigrenderer.php": [
+      "tests/tests/lib/twig/expTwigTemplateRenderTest.php",
+      "tests/tests/lib/twig/expTwigOperatorParityTest.php",
+      "tests/tests/lib/twig/expTwigSecurityTest.php",
+      "tests/tests/lib/twig/expTwigDebugBarTest.php",
+      "tests/tests/lib/twig/expTwigReverseConverterTest.php"
+    ],
+    "lib/twig/classes/exptwigextension.php": [
+      "tests/tests/lib/twig/expTwigTemplateRenderTest.php",
+      "tests/tests/lib/twig/expTwigOperatorParityTest.php",
+      "tests/tests/lib/twig/expTwigSecurityTest.php",
+      "tests/tests/lib/twig/expTwigDebugBarTest.php"
+    ],
+    "lib/twig/classes/exptwigtagtokenparser.php": [
+      "tests/tests/lib/twig/expTwigTemplateRenderTest.php",
+      "tests/tests/lib/twig/expTwigOperatorParityTest.php"
+    ],
+    "lib/twig/classes/exptwigtagnode.php": [
+      "tests/tests/lib/twig/expTwigTemplateRenderTest.php",
+      "tests/tests/lib/twig/expTwigOperatorParityTest.php",
+      "tests/tests/lib/twig/expTwigDebugBarTest.php"
+    ],
+    "lib/twig/classes/exptwigcapturenode.php": [
+      "tests/tests/lib/twig/expTwigTemplateRenderTest.php"
+    ],
+    "lib/twig/classes/exptwigcapturevisitor.php": [
+      "tests/tests/lib/twig/expTwigTemplateRenderTest.php"
+    ],
+    "lib/twig/classes/exptwigobjectproxy.php": [
+      "tests/tests/lib/twig/expTwigTemplateRenderTest.php",
+      "tests/tests/lib/twig/expTwigSecurityTest.php",
+      "tests/tests/lib/templatebridge/expTemplateBridgeTest.php"
+    ],
+    "lib/twig/classes/exptwigoperator.php": [
+      "tests/tests/lib/twig/expTwigTemplateRenderTest.php"
+    ],
+    "lib/twig/classes/exptwigsecurity.php": [
+      "tests/tests/lib/twig/expTwigSecurityTest.php",
+      "tests/tests/lib/twig/expTwigOperatorParityTest.php"
+    ],
+    "lib/twig/classes/exptwigenvironment.php": [
+      "tests/tests/lib/twig/expTwigTemplateRenderTest.php"
+    ],
+    "lib/twig/classes/exptwigconverter.php": [
+      "tests/tests/lib/twig/expTwigOperatorParityTest.php",
+      "tests/tests/lib/twig/expTwigReverseConverterTest.php",
+      "tests/tests/lib/twig/expTwigTemplateRenderTest.php",
+      "tests/tests/lib/templatebridge/expTemplateConvertAllEnginesTest.php",
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php"
+    ],
+    "lib/twig/classes/exptwigreverseconverter.php": [
+      "tests/tests/lib/twig/expTwigReverseConverterTest.php",
+      "tests/tests/lib/templatebridge/expTemplateConvertAllEnginesTest.php",
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php"
+    ],
+    "lib/twig/classes/exptwigtemplatechecker.php": [
+      "tests/tests/lib/templatebridge/expTemplateCheckerTest.php"
+    ],
+    "lib/smarty/classes/expsmartytemplatechecker.php": [
+      "tests/tests/lib/templatebridge/expTemplateCheckerTest.php"
+    ],
+    "lib/templatebridge/classes/exptemplatebridge.php": [
+      "tests/tests/lib/templatebridge/expTemplateBridgeTest.php",
+      "tests/tests/lib/twig/expTwigOperatorParityTest.php",
+      "tests/tests/lib/smarty/expSmartyOperatorParityTest.php",
+      "tests/tests/lib/smarty/expSmartyParameterOperatorTest.php"
+    ],
+    "lib/templatebridge/classes/exptemplatevalues.php": [
+      "tests/tests/lib/templatebridge/expTemplateBridgeTest.php",
+      "tests/tests/lib/twig/expTwigTemplateRenderTest.php",
+      "tests/tests/lib/smarty/expSmartyTemplateRenderTest.php"
+    ],
+    "lib/templatebridge/classes/exptemplateobjectproxy.php": [
+      "tests/tests/lib/templatebridge/expTemplateBridgeTest.php"
+    ],
+    "lib/templatebridge/classes/exptemplatevoid.php": [
+      "tests/tests/lib/templatebridge/expTemplateBridgeTest.php"
+    ],
+    "lib/templatebridge/classes/exptemplateengines.php": [
+      "tests/tests/lib/twig/expTwigTemplateRenderTest.php",
+      "tests/tests/lib/smarty/expSmartyTemplateRenderTest.php"
+    ],
+    "lib/templatebridge/classes/exptemplateengineinfo.php": [
+      "tests/tests/lib/twig/expTwigSecurityTest.php",
+      "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php"
+    ],
+    "lib/templatebridge/classes/exptemplatechainconverter.php": [
+      "tests/tests/lib/templatebridge/expTemplateConvertAllEnginesTest.php",
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php"
+    ],
+    "lib/templatebridge/classes/exptemplatechecker.php": [
+      "tests/tests/lib/templatebridge/expTemplateCheckerTest.php",
+      "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php"
+    ],
+    "lib/templatebridge/classes/exptemplatecheckformatter.php": [
+      "tests/tests/lib/templatebridge/expTemplateCheckerTest.php",
+      "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php"
+    ],
+    "lib/templatebridge/classes/exptemplateenginechecker.php": [
+      "tests/tests/lib/templatebridge/expTemplateCheckerTest.php"
+    ],
+    "lib/templatebridge/classes/exptpltemplatechecker.php": [
+      "tests/tests/lib/templatebridge/expTemplateCheckerTest.php"
+    ],
+    "lib/templatebridge/classes/exptemplatedesignconverter.php": [
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php",
+      "tests/tests/lib/templatebridge/expTemplateConvertAllEnginesTest.php",
+      "tests/tests/lib/twig/expTwigReverseConverterTest.php"
+    ],
+    "kernel/private/classes/commands/exptemplatecheck.php": [
+      "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php",
+      "tests/tests/lib/templatebridge/expTemplateCheckerTest.php"
+    ],
+    "kernel/private/classes/commands/exptemplateengines.php": [
+      "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php"
+    ],
+    "kernel/private/classes/commands/exptemplateconvertdiff.php": [
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php",
+      "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php"
+    ],
+    "settings/twig.ini": [
+      "tests/tests/lib/twig/expTwigTemplateRenderTest.php",
+      "tests/tests/lib/twig/expTwigOperatorParityTest.php",
+      "tests/tests/lib/twig/expTwigSecurityTest.php",
+      "tests/tests/lib/twig/expTwigDebugBarTest.php"
+    ],
+    "kernel/private/classes/commands/exptemplateconvert.php": [
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php",
+      "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php"
+    ],
+    "kernel/private/classes/commands/exptemplateconverttpltostpl.php": [
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php",
+      "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php"
+    ],
+    "kernel/private/classes/commands/exptemplateconvertstpltotpl.php": [
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php",
+      "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php"
+    ],
+    "kernel/private/classes/commands/exptemplateconverttpltotwig.php": [
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php",
+      "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php"
+    ],
+    "kernel/private/classes/commands/exptemplateconverttwigtotpl.php": [
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php",
+      "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php"
+    ],
+    "kernel/private/classes/commands/exptemplateconvertstpltotwig.php": [
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php",
+      "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php"
+    ],
+    "kernel/private/classes/commands/exptemplateconverttwigtostpl.php": [
+      "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php",
+      "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php"
     ]
   },
   "generated": {
