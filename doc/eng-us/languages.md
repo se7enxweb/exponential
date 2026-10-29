@@ -16,6 +16,7 @@ and `settings/i18n.ini`, no extension) has:
 | of them not translated ([list](#the-languages-not-translated-yet)) | **0** |
 | Countries and territories of the locales | **247** |
 | of them with the administration in their language (green on the map) | **247** |
+| Codes of ISO 3166-1 (`settings/country.ini`) without a locale | **4**, all of them by design: uninhabited or withdrawn (list below the map) |
 | Locales written right to left | **43** |
 
 ![World map: 247 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
@@ -283,6 +284,17 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 
 | Country or territory | Code | Locales |
 |---|---|---|
+
+</details>
+
+<details><summary>The 4 codes of ISO 3166-1 without a locale</summary>
+
+| Country or territory | Code | Why |
+|---|---|---|
+| Netherlands Antilles | AN | No locale by design: code withdrawn in 2010; its successors Bonaire, Sint Eustatius and Saba (BQ), Curaçao (CW) and Sint Maarten (SX) each have a locale of their own |
+| Antarctica | AQ | No locale by design: uninhabited, CLDR defines no locale for it |
+| Bouvet Island | BV | No locale by design: uninhabited, CLDR defines no locale for it |
+| Heard Island and McDonald Islands | HM | No locale by design: uninhabited, CLDR defines no locale for it |
 
 </details>
 
@@ -1896,6 +1908,12 @@ chain whose last step has no translation (it shows the English source texts; the
 `ara-SA` this way on purpose, waiting for that translation, and end in `untranslated`, so they are not reported).
 The extension coverage is cached in `var/<site>/cache/i18n/fallback-report.json` and rebuilt when a file or a
 setting changes; the first run reads every extension catalogue and takes a few seconds.
+
+`coverage` also lists the codes of `settings/country.ini` (ISO 3166-1) that no locale names. The ones without a locale
+by design are named, with the reason, in `expI18nCoverageMap::NO_LOCALE_BY_DESIGN`: Antarctica (`AQ`), Bouvet Island
+(`BV`) and Heard Island and McDonald Islands (`HM`) are uninhabited and CLDR defines no locale for them; the
+Netherlands Antilles (`AN`) code was withdrawn in 2010, and its successors `BQ`, `CW` and `SX` have locales. Any
+other code without a locale is listed as "not yet", and the test `expI18nCoverageMapTest` fails on it.
 
 **Setup > Interface languages** (`setup/languages`, policy `setup/system_info`, next to Languages in the Setup
 menu) shows the same list in the administration: every locale with the translation it shows, the coverage of the

@@ -65,7 +65,8 @@ class expI18nCoverageMapTest extends PHPUnit\Framework\TestCase
         // an override must not count: the result is that of a default installation
         $this->write( 'settings/override/i18n.ini.append.php', "<?php /*\n[TranslationSettings]\nFallbackLanguages[swa-KE]=ger-DE\n*/ ?>\n" );
         $this->write( 'settings/country.ini', "[DE]\nName=Germany\n[AT]\nName=Austria\n[FR]\nName=France\n[CA]\nName=Canada\n[SA]\nName=Saudi Arabia\n"
-                                              . "[EG]\nName=Egypt\n[GB]\nName=United Kingdom\n[KE]\nName=Kenya\n[RS]\nName=Serbia\n" );
+                                              . "[EG]\nName=Egypt\n[GB]\nName=United Kingdom\n[KE]\nName=Kenya\n[RS]\nName=Serbia\n"
+                                              . "[AQ]\nName=Antarctica\n[AN]\n# Obsolete\nName=Netherlands Antilles\n[MS]\nName=Montserrat\n[QO]\nName=Outlying Oceania\n" );
         $this->write( 'share/locale/ger-DE.ini', "[RegionalSettings]\n[LanguageSettings]\nLanguageName=Deutsch\nInternationalLanguageName=German\n[HTTP]\nContentLanguage=de-DE\n"
                                                 . "[CountryNames]\nCountries[DE]=Deutschland\nCountries[AT]=Österreich\nCountries[KE]=Kenia\n" );
         $paths = '';
@@ -126,6 +127,62 @@ class expI18nCoverageMapTest extends PHPUnit\Framework\TestCase
         $data = $map->data();
         $this->assertSame( $data['translations']['total'], count( glob( $root . '/share/translations/*/translation.ts' ) ) - 1, 'every translation but the source texts' );
         $this->assertSame( count( glob( $root . '/share/locale/*.ini' ) ), $data['locales']['files'] );
+        // every code of settings/country.ini has a locale, but those without one by design
+        $this->assertSame( array(), $data['without']['missing'], 'codes of settings/country.ini without a locale: add one, or list the code in expI18nCoverageMap::NO_LOCALE_BY_DESIGN with the reason' );
+        $this->assertSame( array( 'AN', 'AQ', 'BV', 'HM' ), array_keys( $data['without']['design'] ) );
+        foreach ( expI18nCoverageMap::NO_LOCALE_BY_DESIGN as $iso => $entry )
+        {
+            $this->assertArrayNotHasKey( $iso, $data['countries'], "$iso has a locale: take it out of NO_LOCALE_BY_DESIGN" );
+            foreach ( isset( $entry['successors'] ) ? $entry['successors'] : array() as $successor )
+                $this->assertArrayHasKey( $successor, $data['countries'], "$successor, successor of $iso, has a locale" );
+        }
+    }
+
+    /** CM-07 */
+    public function testTheCodesWithoutALocaleAreListedByDesignOrAsNotYet()
+    {
+        $map = new expI18nCoverageMap( $this->dir );
+        $data = $map->data();
+        $this->assertSame( array( 'AN' => expI18nCoverageMap::NO_LOCALE_BY_DESIGN['AN'], 'AQ' => expI18nCoverageMap::NO_LOCALE_BY_DESIGN['AQ'] ), $data['without']['design'] );
+        $this->assertSame( array( 'MS' ), $data['without']['missing'], 'a code with a locale and a user-assigned code (QO) are left out' );
+        $english = $map->withoutLocale( 'eng-us' );
+        $this->assertSame( array( 'AN', 'AQ', 'MS' ), array_column( $english, 'code' ) );
+        $this->assertSame( array( true, true, false ), array_column( $english, 'design' ) );
+        $this->assertSame( 'No locale by design: code withdrawn in 2010; its successors are BQ (BQ), CW (CW) and SX (SX), still without a locale: BQ, CW, SX', $english[0]['why'] );
+        $this->assertSame( 'No locale by design: uninhabited, CLDR defines no locale for it', $english[1]['why'] );
+        $this->assertSame( 'No locale yet', $english[2]['why'] );
+        $german = $map->withoutLocale( 'ger-de' );
+        $this->assertSame( 'Niederländische Antillen', $german[0]['name'], 'a withdrawn code ger-DE.ini does not name' );
+        $this->assertSame( 'Keine Locale, mit Absicht: unbewohnt, CLDR definiert keine Locale dafür', $german[1]['why'] );
+
+        $files = $map->build( '2026-10-26' );
+        $page = $files['doc/eng-us/languages.md'];
+        $this->assertStringContainsString( '| Codes of ISO 3166-1 (`settings/country.ini`) without a locale | **3**: 2 by design, 1 not yet (list below the map) |', $page );
+        $this->assertStringContainsString( "<details><summary>The 3 codes of ISO 3166-1 without a locale</summary>\n\n| Country or territory | Code | Why |\n|---|---|---|\n| Netherlands Antilles | AN | No locale by design: code withdrawn in 2010;", $page );
+        $this->assertStringContainsString( "| Antarctica | AQ | No locale by design: uninhabited, CLDR defines no locale for it |\n| Montserrat | MS | No locale yet |\n\n</details>", $page );
+        $this->assertStringContainsString( '| Codes aus ISO 3166-1 (`settings/country.ini`) ohne Locale | **3**: 2 mit Absicht, 1 noch nicht (Liste unter der Karte) |', $files['doc/ger-de/sprachen.md'] );
+        $this->assertStringContainsString( '| Niederländische Antillen | AN | Keine Locale, mit Absicht: Code 2010 zurückgezogen; seine Nachfolger sind', $files['doc/ger-de/sprachen.md'] );
+
+        // with locales for the successors and Montserrat, only the codes by design are left, named as such
+        foreach ( array( 'dut-BQ' => 'nl-BQ', 'dut-CW' => 'nl-CW', 'dut-SX' => 'nl-SX', 'eng-MS' => 'en-MS' ) as $code => $http )
+            $this->write( "share/locale/$code.ini", "[RegionalSettings]\nLanguageName=$code\nInternationalLanguageName=$code\n[HTTP]\nContentLanguage=$http\n" );
+        $this->write( 'settings/country.ini', file_get_contents( $this->dir . '/settings/country.ini' ) . "[BQ]\nName=Caribbean Netherlands\n[CW]\nName=Curaçao\n[SX]\nName=Sint Maarten\n" );
+        expUISwitchLanguageCatalogue::resetMemory();
+        $map = new expI18nCoverageMap( $this->dir );
+        $this->assertSame( array(), $map->data()['without']['missing'] );
+        $this->assertSame( 'No locale by design: code withdrawn in 2010; its successors Caribbean Netherlands (BQ), Curaçao (CW) and Sint Maarten (SX) each have a locale of their own',
+                           $map->withoutLocale( 'eng-us' )[0]['why'] );
+        $files = $map->build( '2026-10-26' );
+        $this->assertStringContainsString( '| Codes of ISO 3166-1 (`settings/country.ini`) without a locale | **2**, all of them by design: uninhabited or withdrawn (list below the map) |', $files['doc/eng-us/languages.md'] );
+        $this->assertStringContainsString( '| **2**, alle mit Absicht: unbewohnt oder zurückgezogen (Liste unter der Karte) |', $files['doc/ger-de/sprachen.md'] );
+
+        // without any code left, no section and a plain 0
+        $this->write( 'settings/country.ini', "[DE]\nName=Germany\n" );
+        $map = new expI18nCoverageMap( $this->dir );
+        $this->assertSame( array(), $map->withoutLocale( 'eng-us' ) );
+        $page = $map->build( '2026-10-26' )['doc/eng-us/languages.md'];
+        $this->assertStringContainsString( '| Codes of ISO 3166-1 (`settings/country.ini`) without a locale | **0** |', $page );
+        $this->assertStringNotContainsString( 'codes of ISO 3166-1 without a locale</summary>', $page );
     }
 
     /** CM-02 */
@@ -324,7 +381,7 @@ class expI18nCoverageMapTest extends PHPUnit\Framework\TestCase
         $html = $renderer->render( $page, 'languages.md' )['html'];
         $this->assertStringContainsString( '<img', $html );
         $this->assertStringContainsString( 'https://example.invalid/exphelp/asset/images/languages/coverage-map.webp', $html );
-        $this->assertSame( 3, substr_count( $html, '<details class="a4-help-details"' ), 'countries in green, the others, the languages not translated' );
+        $this->assertSame( 4, substr_count( $html, '<details class="a4-help-details"' ), 'countries in green, the others, the codes without a locale, the languages not translated' );
         $this->assertStringContainsString( 'id="the-languages-not-translated-yet"', $html );
         $this->assertStringContainsString( 'The 8 countries and territories in green', $html );
         $this->assertStringContainsString( '<table', $html );

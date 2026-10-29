@@ -16,6 +16,7 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 | davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **0** |
 | Länder und Gebiete der Locales | **247** |
 | davon mit der Administration in ihrer Sprache (grün auf der Karte) | **247** |
+| Codes aus ISO 3166-1 (`settings/country.ini`) ohne Locale | **4**, alle mit Absicht: unbewohnt oder zurückgezogen (Liste unter der Karte) |
 | Locales, die von rechts nach links geschrieben werden | **43** |
 
 ![Weltkarte: 247 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
@@ -283,6 +284,17 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 
 | Land oder Gebiet | Code | Locales |
 |---|---|---|
+
+</details>
+
+<details><summary>Die 4 Codes aus ISO 3166-1 ohne Locale</summary>
+
+| Land oder Gebiet | Code | Warum |
+|---|---|---|
+| Niederländische Antillen | AN | Keine Locale, mit Absicht: Code 2010 zurückgezogen; seine Nachfolger Bonaire, Saint Eustatius and Saba (BQ), Curaçao (CW) und Land Sint Maarten (SX) haben je eine eigene Locale |
+| Antarktis | AQ | Keine Locale, mit Absicht: unbewohnt, CLDR definiert keine Locale dafür |
+| Bouvetinsel | BV | Keine Locale, mit Absicht: unbewohnt, CLDR definiert keine Locale dafür |
+| Heard- und McDonald-Inseln | HM | Keine Locale, mit Absicht: unbewohnt, CLDR definiert keine Locale dafür |
 
 </details>
 
@@ -1970,6 +1982,13 @@ die arabischen Länder fallen absichtlich auf diese Weise auf `ara-SA` zurück, 
 enden bei `untranslated`, daher werden sie nicht gemeldet). Die Abdeckung der Extensions wird in
 `var/<site>/cache/i18n/fallback-report.json` gecacht und neu erstellt, wenn sich eine Datei oder eine Einstellung
 ändert; der erste Lauf liest jeden Extension-Katalog und dauert einige Sekunden.
+
+`coverage` listet auch die Codes aus `settings/country.ini` (ISO 3166-1), die keine Locale nennt. Die Codes, die mit
+Absicht keine Locale haben, stehen mit dem Grund in `expI18nCoverageMap::NO_LOCALE_BY_DESIGN`: die Antarktis (`AQ`),
+die Bouvetinsel (`BV`) und die Heard- und McDonald-Inseln (`HM`) sind unbewohnt, und CLDR definiert für sie keine
+Locale; der Code der Niederländischen Antillen (`AN`) wurde 2010 zurückgezogen, seine Nachfolger `BQ`, `CW` und `SX`
+haben Locales. Jeder andere Code ohne Locale wird als „noch nicht“ geführt, und der Test `expI18nCoverageMapTest`
+schlägt dann fehl.
 
 **Setup > Oberflächensprachen** (`setup/languages`, Richtlinie `setup/system_info`, neben Sprachen im Menü Setup) zeigt
 dieselbe Liste in der Administrationsoberfläche: jede Locale mit der Übersetzung, die sie zeigt, die Abdeckung des
