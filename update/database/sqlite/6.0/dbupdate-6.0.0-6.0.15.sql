@@ -643,3 +643,35 @@ CREATE TABLE IF NOT EXISTS exphelp_feedback (
 );
 CREATE INDEX IF NOT EXISTS exphelp_feedback_object ON exphelp_feedback ( object_id, created );
 CREATE INDEX IF NOT EXISTS exphelp_feedback_created ON exphelp_feedback ( created );
+
+-- expuser_audit: the user audit log (doc/eng-us/features/6.0/user-audit.md). One row per security event about a user
+-- account or a user group (a change with its fields before and after, a sign-in, a refused attempt, a role
+-- assignment): who, when, where (siteaccess, host, the address as the audit's privacy rules leave it), whom and what.
+-- Filled from the audit records of the access channel; read on user/audit. Never a password, a hash or a secret.
+-- Written with IF NOT EXISTS, so running these statements again changes nothing.
+CREATE TABLE IF NOT EXISTS expuser_audit (
+  actor_id integer NOT NULL DEFAULT '0',
+  actor_login varchar(150) NOT NULL DEFAULT '',
+  client_ip varchar(64) NOT NULL DEFAULT '',
+  created integer NOT NULL DEFAULT '0',
+  event_id varchar(26) NOT NULL DEFAULT '',
+  event_name varchar(128) NOT NULL DEFAULT '',
+  host varchar(255) NOT NULL DEFAULT '',
+  id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  module_view varchar(128) NOT NULL DEFAULT '',
+  reason varchar(64) NOT NULL DEFAULT '',
+  request_id varchar(40) NOT NULL DEFAULT '',
+  result varchar(16) NOT NULL DEFAULT '',
+  siteaccess varchar(64) NOT NULL DEFAULT '',
+  target_id integer NOT NULL DEFAULT '0',
+  target_login varchar(150) NOT NULL DEFAULT '',
+  target_type varchar(16) NOT NULL DEFAULT '',
+  time_ms integer NOT NULL DEFAULT '0',
+  value_after longtext,
+  value_before longtext
+);
+CREATE UNIQUE INDEX IF NOT EXISTS expuser_audit_event ON expuser_audit ( event_id );
+CREATE INDEX IF NOT EXISTS expuser_audit_target ON expuser_audit ( target_id, created );
+CREATE INDEX IF NOT EXISTS expuser_audit_actor ON expuser_audit ( actor_id, created );
+CREATE INDEX IF NOT EXISTS expuser_audit_name ON expuser_audit ( event_name, created );
+CREATE INDEX IF NOT EXISTS expuser_audit_created ON expuser_audit ( created );
