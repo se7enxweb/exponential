@@ -55,11 +55,37 @@ class eZTemplateCacheBlock
         $nodeID = $subtreeExpiry ? eZTemplateCacheBlock::decodeNodeID( $subtreeExpiry ) : false;
         $cachePath = eZTemplateCacheBlock::cachePath( eZTemplateCacheBlock::keyString( $keys ), $nodeID );
         // A compiled {cache-block keys=...} passes array( keys, placement, siteaccess ): the debug bar names the
-        // template and shows the keys. Custom code (content/treemenu) passes keys of its own.
-        $placement = !empty( $GLOBALS['eZDebugEnabled'] ) && count( $keys ) === 3 && isset( $keys[1] ) && is_string( $keys[1] )
-                     && preg_match( '/^\d+_\d+_\d+_\d+_./', $keys[1] ) ? $keys[1] : false;
-        return eZTemplateCacheBlock::handle( $cachePath, $nodeID, $ttl, $useGlobalExpiry, $placement,
-                                             $placement !== false ? $keys[0] : $keys );
+        // template and shows the keys. A Smarty or Twig {expcacheblock} passes the same, or array( placement,
+        // siteaccess ) without keys, with the placement stpl:<file>:<id> or twig:<file>:<id>. Custom code (content/treemenu) passes keys of its own.
+        $placement = false;
+        $blockKeys = $keys;
+        if ( !empty( $GLOBALS['eZDebugEnabled'] ) )
+        {
+            if ( count( $keys ) === 3 && isset( $keys[1] ) && is_string( $keys[1] ) &&
+                 ( preg_match( '/^\d+_\d+_\d+_\d+_./', $keys[1] ) || self::isSmartyPlacement( $keys[1] ) ) )
+            {
+                $placement = $keys[1];
+                $blockKeys = $keys[0];
+            }
+            else if ( count( $keys ) === 2 && isset( $keys[0] ) && is_string( $keys[0] ) && self::isSmartyPlacement( $keys[0] ) )
+            {
+                $placement = $keys[0];
+                $blockKeys = null;
+            }
+        }
+        return eZTemplateCacheBlock::handle( $cachePath, $nodeID, $ttl, $useGlobalExpiry, $placement, $blockKeys );
+    }
+
+    /**
+     * Whether $placement is the placement of an {expcacheblock} of another engine: stpl:<template file>:<block id>
+     * (expSmartyCacheBlock) or twig:<template file>:<block id> (expTwigRenderer::cacheBlockStart()).
+     *
+     * @param string $placement
+     * @return bool
+     */
+    static function isSmartyPlacement( $placement )
+    {
+        return ( strncmp( $placement, 'stpl:', 5 ) === 0 || strncmp( $placement, 'twig:', 5 ) === 0 ) && strrpos( $placement, ':' ) > 5;
     }
 
     /**

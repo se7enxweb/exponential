@@ -1654,8 +1654,13 @@ class expDebugBarReport
                . '</th><th>' . self::h( 'Expiry' ) . '</th><th>' . self::h( 'Keys' ) . '</th></tr>';
         foreach ( $blocks as $block )
         {
-            $where = $block['template'] === null ? '<em>' . self::h( 'unknown (custom code, or a template compiled before)' ) . '</em>'
-                : self::renderingValue( self::relativePath( $block['template'] ) . ':' . (int)$block['line'] );
+            // a .tpl block by its line, a Smarty {expcacheblock} by its id
+            if ( $block['template'] === null )
+                $where = '<em>' . self::h( 'unknown (custom code, or a template compiled before)' ) . '</em>';
+            else if ( $block['line'] === null && isset( $block['block_id'] ) )
+                $where = self::renderingValue( self::relativePath( $block['template'] ) . ' id=' . $block['block_id'] );
+            else
+                $where = self::renderingValue( self::relativePath( $block['template'] ) . ':' . (int)$block['line'] );
             $expiry = array();
             if ( $block['ttl'] !== null )
                 $expiry[] = self::t( '%seconds s', array( '%seconds' => $block['ttl'] ) );

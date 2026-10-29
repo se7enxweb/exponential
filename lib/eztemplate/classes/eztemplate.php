@@ -1130,7 +1130,8 @@ class eZTemplate
         {
             eZDebug::writeNotice( "eZTemplate: Loading template \"$template\" with resource \"$res\"" );
         }
-        if ( isset( $this->Resources[$res] ) and is_object( $this->Resources[$res] ) )
+        // a URI without a resource (a plain file name) has none: the default resource (null is no array offset in PHP 8.5)
+        if ( $res !== null and isset( $this->Resources[$res] ) and is_object( $this->Resources[$res] ) )
         {
             return $this->Resources[$res];
         }

@@ -279,7 +279,19 @@ class expRenderStats
             return;
         $template = null;
         $line = null;
-        if ( is_string( $placement ) && $placement !== '' )
+        $blockId = null;
+        if ( is_string( $placement ) && ( strncmp( $placement, 'stpl:', 5 ) === 0 || strncmp( $placement, 'twig:', 5 ) === 0 ) )
+        {
+            // a Smarty or Twig {expcacheblock}: stpl:<template file>:<block id>, twig:<template file>:<block id> (the file
+            // may itself hold colons)
+            $colon = strrpos( $placement, ':' );
+            if ( $colon > 5 )
+            {
+                $template = substr( $placement, 5, $colon - 5 );
+                $blockId = substr( $placement, $colon + 1 );
+            }
+        }
+        else if ( is_string( $placement ) && $placement !== '' )
         {
             // start line _ start column _ end line _ end column _ template (which may itself hold underscores)
             $parts = explode( '_', $placement, 5 );
@@ -289,7 +301,7 @@ class expRenderStats
                 $template = $parts[4];
             }
         }
-        self::$cacheBlocks[] = array( 'template' => $template, 'line' => $line, 'path' => (string)$path, 'keys' => self::keysText( $keys ),
+        self::$cacheBlocks[] = array( 'template' => $template, 'line' => $line, 'block_id' => $blockId, 'path' => (string)$path, 'keys' => self::keysText( $keys ),
                                       'node_id' => $nodeID === false || $nodeID === null ? null : (int)$nodeID,
                                       'ttl' => $ttl === null || (int)$ttl <= 0 ? null : (int)$ttl,
                                       'state' => $hit ? 'hit' : ( $generateMs !== null ? 'generated' : 'pending' ),
@@ -351,7 +363,8 @@ class expRenderStats
     }
 
     /**
-     * @return array list of template, line, path, keys (text or null), node_id, ttl, state (hit, generated, pending:
+     * @return array list of template, line (null for a Smarty block), block_id (the id= of a Smarty {expcacheblock},
+     *               null for a .tpl block), path, keys (text or null), node_id, ttl, state (hit, generated, pending:
      *               not found and not stored, as an old compiled template does not report it), lookup_ms,
      *               generate_ms (inclusive of nested blocks), size
      */
