@@ -331,6 +331,45 @@ class expReauth
             $http->removeSessionVariable( self::FAILURES_KEY );
     }
 
+    /**
+     * After a web sign-in: the sign-in counts as a confirmation when it asked for at least one combination "Verify
+     * it's you" would offer this account (a password sign-in of an account that has only a password; the password
+     * and the authenticator app's code of the two-step sign-in; a passkey of an account without a password), so the
+     * user is not asked again right away for the same. A sign-in that asked for less (the password of an account with
+     * a passkey) counts for nothing.
+     *
+     * @param eZUser $user
+     * @param string[] $used the ways the sign-in asked for (METHOD_*)
+     * @return bool counted
+     */
+    public static function markFreshAfterSignIn( eZUser $user, array $used )
+    {
+        $settings = self::settings();
+        if ( empty( $settings['enabled'] ) )
+            return false;
+        if ( !self::signInCounts( self::methods( $user ), $settings['factors'], $used ) )
+            return false;
+        self::markFresh( $user, 'signin:' . implode( '+', $used ), $settings['minutes'] );
+        return true;
+    }
+
+    /**
+     * Whether a sign-in with the ways $used covers one of the combinations offered to an account with $available.
+     * Pure.
+     *
+     * @param string[] $available methods()
+     * @param array[] $factors parseFactors()
+     * @param string[] $used
+     * @return bool
+     */
+    public static function signInCounts( array $available, array $factors, array $used )
+    {
+        foreach ( self::combinations( $available, $factors ) as $combination )
+            if ( !array_diff( $combination, $used ) )
+                return true;
+        return false;
+    }
+
     /** Forgets a confirmation. */
     public static function forget()
     {

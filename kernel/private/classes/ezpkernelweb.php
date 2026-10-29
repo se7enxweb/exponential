@@ -1035,6 +1035,11 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                         if ( $moduleResult === null && class_exists( 'expPasswordChangeRequired' ) )
                             $moduleResult = expPasswordChangeRequired::moduleResult( $this->module, $functionName );
 
+                        // The passkey policy ([PasskeySettings] Policy, doc/eng-us/guides/passkeys.md): an account that
+                        // must have a passkey adds one first; "preferred" suggests it once per session
+                        if ( $moduleResult === null && class_exists( 'expPasskeyPolicy' ) )
+                            $moduleResult = expPasskeyPolicy::moduleResult( $this->module, $functionName );
+
                         // "Verify it's you" before a sensitive action ([ReauthSettings]; doc/eng-us/guides/verify-its-you.md):
                         // only here, on the web pages, never on REST, SOAP, WebDAV or the command line
                         if ( $moduleResult === null && class_exists( 'expReauth' ) )

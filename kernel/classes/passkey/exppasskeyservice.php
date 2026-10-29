@@ -87,7 +87,7 @@ class expPasskeyService
             array( 'id' => $this->settings->rpId(), 'name' => $this->settings->rpName() ),
             array( 'id' => $handle, 'name' => (string)$user->attribute( 'login' ), 'displayName' => $display !== '' ? $display : (string)$user->attribute( 'login' ) ),
             $challenge, $this->settings->algorithms(), $exclude, $this->settings->userVerification(),
-            1000 * $this->settings->challengeSeconds() );
+            1000 * $this->settings->challengeSeconds(), $this->settings->attestation() );
     }
 
     /**
@@ -313,12 +313,49 @@ class expPasskeyService
      */
     public function remove( eZUser $user, $id )
     {
+        return $this->removeChecked( $user, $id ) === null;
+    }
+
+    /**
+     * Removes one of the user's own passkeys, unless it is the last one and the account could not sign in without it
+     * (expPasskeyPolicy::mayRemove(): no password, the password sign-in off, or the policy requires a passkey).
+     *
+     * @param eZUser $user
+     * @param int $id
+     * @return string|null null when removed, else why not: 'owner' (not the user's), 'last', 'store'
+     */
+    public function removeChecked( eZUser $user, $id )
+    {
         $passkey = expPasskey::fetch( (int)$id );
-        if ( !$passkey || (int)$passkey->attribute( 'user_id' ) !== (int)$user->attribute( 'contentobject_id' ) )
+        $userID = (int)$user->attribute( 'contentobject_id' );
+        if ( !$passkey || (int)$passkey->attribute( 'user_id' ) !== $userID )
+            return 'owner';
+        if ( class_exists( 'expPasskeyPolicy' )
+             && !expPasskeyPolicy::mayRemove( expPasskeyPolicy::forUser( $user ), expPasskey::countByUser( $userID ), expPasskeyPolicy::hasPassword( $user ) ) )
+            return 'last';
+        if ( !expPasskey::inTransaction( function () use ( $passkey ) { $passkey->remove(); } ) )
+            return 'store';
+        self::audit( 'access.passkey.remove', $user, $passkey );
+        return null;
+    }
+
+    /**
+     * An administrator revokes a passkey of another account (user/passkeys/<user id>, policy user/passkeys_manage): a
+     * lost or stolen device. Always allowed, the last one too: the administrator can set a password. Recorded as
+     * access.passkey.revoke on the account, with the administrator as the actor.
+     *
+     * @param eZUser $account
+     * @param int $id
+     * @return bool
+     */
+    public function revoke( eZUser $account, $id )
+    {
+        $passkey = expPasskey::fetch( (int)$id );
+        if ( !$passkey || (int)$passkey->attribute( 'user_id' ) !== (int)$account->attribute( 'contentobject_id' ) )
             return false;
         if ( !expPasskey::inTransaction( function () use ( $passkey ) { $passkey->remove(); } ) )
             return false;
-        self::audit( 'access.passkey.remove', $user, $passkey );
+        self::audit( 'access.passkey.revoke', $account, $passkey, array( 'by' => (int)eZUser::currentUserID() ) );
         return true;
     }
 

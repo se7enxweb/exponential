@@ -30,6 +30,9 @@
 </div>
 {/if}
 
+{if first_set( $passkey_only_hint, false() )}
+<div class="a4-login-alert" role="status"><p>{'Accounts that sign in with passkeys only cannot use a password here: choose "Sign in with a passkey".'|i18n( 'design/standard/user/passkeys' )}</p></div>
+{/if}
 {if first_set( $passkey_warning, false() )}
 <div class="a4-login-alert message-warning" role="alert">
     <p class="a4-login-alert-title">{'Could not sign in with the passkey'|i18n( 'design/standard/user/passkeys' )}</p>

@@ -56,6 +56,7 @@ class expUserSecurityActivity
         'access.user.app_password.revoke' => array( 'app_password_revoke', 'key', 'info', 'account' ),
         'access.passkey.add' => array( 'passkey_add', 'key', 'warn', 'account' ),
         'access.passkey.remove' => array( 'passkey_remove', 'key', 'warn', 'account' ),
+        'access.passkey.revoke' => array( 'passkey_remove', 'key', 'warn', 'account' ),
         'access.user.enable' => array( 'enabled', 'person-check', 'info', 'account' ),
         'access.user.disable' => array( 'disabled', 'lock', 'bad', 'account' ),
     );
