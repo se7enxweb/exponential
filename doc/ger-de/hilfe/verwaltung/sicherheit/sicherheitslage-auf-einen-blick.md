@@ -51,6 +51,7 @@ bevor sie die Einzelheiten lesen. Jeder Status stammt aus der eigenen Erklärung
 | Einrichtungsassistent auf einer installierten Website geschlossen | `expSetupWizardGuard` |
 | Unterhalb des Document-Root wird kein PHP ausgeführt; Punktdateien abgewiesen | `.htaccess_root` |
 | Debug-Ausgabe aus | `[DebugSettings] DebugOutput=disabled` |
+| Geheimnisse in `config.php` in Konsolenausgaben und Diffs maskiert; jede Änderung in ein Verzeichnis mit Modus `0700` gesichert | `exp:config:*`, `exp:setup:*` ([von der Konsole](../../../anleitungen/setup-dateien-von-der-konsole.md)) |
 
 ## Standardmäßig aus: Ihre Entscheidungen
 

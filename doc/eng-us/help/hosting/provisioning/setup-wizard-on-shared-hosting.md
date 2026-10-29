@@ -47,6 +47,18 @@ only method that shows each decision on a page with an explanation". When you ca
 > to do this for you" ([5.3.13](../../../install/05-setup-wizard.md#5313-site-security)). Put it there in advance and
 > the page is skipped.
 
+The host's provisioning can do that with the console, before the customer opens the wizard. As root, the copy needs
+`--allow-root-user` and should be given to the account's user:
+
+```bash
+cd /path/to/the/installation
+php bin/php/console exp:setup:htaccess --apply --allow-root-user --owner=<account-user>:<account-group>
+php bin/php/console exp:setup:config --apply --allow-root-user --owner=<account-user>:<account-group>   # optional
+```
+
+Without `--owner`, a new file gets the owner of the template it is copied from, never root. Details:
+[Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md).
+
 ## What the customer does
 
 1. Opens the site's address. While `[SiteAccessSettings] CheckValidity=true` (the shipped value), "whatever path you
@@ -93,6 +105,7 @@ file after the install; it holds passwords in clear text.
 - [One-click installers](one-click-installers.md)
 - [Shared hosting](../models/shared-hosting.md)
 - [Apache with PHP-FPM](../servers/apache-with-php-fpm.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

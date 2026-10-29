@@ -68,7 +68,9 @@ test result: treat ISPConfig as at most tier 3 until you have tested it.
 `.htaccess` files are read (`AllowOverride`) and `mod_rewrite` is on. Under nginx there is no `.htaccess`; the
 Exponential rules must go into the server's configuration. The project ships no nginx file: chapter 8 gives a server
 block that is "derived, not shipped" and asks you to "test it on your site before you rely on it"
-([8.6](../../../install/08-serving-the-site.md#86-nginx-with-php-fpm)).
+([8.6](../../../install/08-serving-the-site.md#86-nginx-with-php-fpm)). Under Apache, `php bin/php/console
+exp:setup:htaccess --apply`, run as the site's shell user, copies `.htaccess_root` into place; under nginx that copy
+protects nothing ([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)).
 
 > **Warning**
 > "Never serve the installation with a generic configuration such as nginx's 'serve the file if it exists, else
@@ -111,6 +113,7 @@ If everything passes, tell the project, so ISPConfig can be placed in a tier
 - [Control panels: overview](README.md), [Webmin](webmin.md)
 - [nginx with PHP-FPM](../servers/nginx-with-php-fpm.md), [Apache with PHP-FPM](../servers/apache-with-php-fpm.md)
 - [Requirements at a glance](../basics/requirements-at-a-glance.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

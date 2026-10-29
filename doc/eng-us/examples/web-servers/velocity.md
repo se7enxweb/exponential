@@ -19,6 +19,11 @@ extension); after an upgrade it takes effect with the restart that `exp:velocity
 
 Everything is configured in `velocity.ini`; the `/etc/vc` tree is generated from it on every start.
 
+Velocity does not read `.htaccess`. Copy it anyway (`./console exp:setup:htaccess --apply`) when Apache may serve the
+same tree, for example behind a panel or during a move. `config.php` is read by each worker once: after
+`./console exp:setup:config --apply` or `./console exp:config:set <NAME> <value> --apply`, run `./console
+exp:velocity restart`. See [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md).
+
 **WebDAV is not served by Velocity.** Its entry scripts are `index.php`, `index_rest.php` and `index_treemenu.php`;
 the WebDAV server, `index_webdav.php` since 6.0.15 (formerly `webdav.php`), is not among them, under either name. Serve
 WebDAV through Apache or nginx with PHP-FPM, best on a host of its own such as `webdav.example.com`; nothing in
@@ -262,6 +267,7 @@ the unit passed `systemd-analyze verify`; the site file shape is a generated fil
   [8.3.10 The configuration tree](../../install/08-serving-the-site.md#8310-the-configuration-tree-etcvc-debian-style),
   [8.3.11 Running Velocity as a service](../../install/08-serving-the-site.md#8311-running-velocity-as-a-service).
 - [Velocity engines](../../bc/6.0/velocity-engines.md) and [FrankenPHP](frankenphp.md).
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md).
 - [Chapter 13, section 13.12: Velocity-specific hardening](../../install/13-security-hardening.md#1312-velocity-specific-hardening).
 - [Web server examples](README.md) and [all examples](../README.md).
 - [Free documentation](../../help/free-documentation.md): this page is free to copy, translate and improve.

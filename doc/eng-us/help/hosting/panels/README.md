@@ -71,6 +71,12 @@ Whatever the panel, an Exponential site needs ([Chapter 2](../../../install/02-r
 | Scheduled `runcronjobs.php` | the panel's cron page |
 | HTTPS | the panel's certificate management |
 
+With a shell (the panel's terminal or SSH), run as the site's own system user, the console puts the shipped templates
+into place: `php bin/php/console exp:setup:htaccess --apply` (`.htaccess_root` to `.htaccess`) and `php bin/php/console
+exp:setup:config --apply` (`config.php-RECOMMENDED` to `config.php`). As root, add `--allow-root-user`, and
+`--owner=<user>:<group>` when the files must belong to the site's user. Without a shell, the panel's file manager does
+the same copy. See [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md).
+
 ## Velocity on a panel server
 
 Panels manage Apache or nginx and their PHP-FPM pools. Velocity is a separate long-running process, so on a panel
@@ -88,6 +94,7 @@ See [Velocity beside Apache or nginx](../servers/velocity-beside-apache-or-nginx
 
 - [Hosting companies: start here](../hosting-companies-start-here.md)
 - [Shared hosting](../models/shared-hosting.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Operating system support](../../os-support.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 

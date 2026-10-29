@@ -67,6 +67,8 @@ A practical way to start: generate the FrankenPHP Caddyfile on a test machine wi
 
 ## The routing every Caddy configuration needs
 
+Caddy never reads `.htaccess`, so `./console exp:setup:htaccess --apply` changes nothing for it; the routing lives in
+the Caddyfile ([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)).
 The generated Caddyfile implements `.htaccess_root` like this
 ([FrankenPHP, What it contains](../../../bc/6.0/frankenphp.md#what-it-contains-verified-output)):
 
@@ -106,6 +108,7 @@ own; follow its documentation. Whoever terminates TLS, Exponential must learn th
 - [nginx with PHP-FPM](nginx-with-php-fpm.md)
 - [Choosing a web server](choosing-a-web-server.md)
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

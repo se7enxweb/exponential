@@ -349,6 +349,20 @@ Seiten, der geleert wird, bevor PHP den neuen Code ausführt, füllt sich wieder
 [Kapitel 8](08-die-website-ausliefern.md#8314-eine-änderung-bereitstellen-expvelocity-deploy) und
 [Velocity-Engines](../bc/6.0/velocity-engines.md).
 
+**Vergleichen Sie Ihre Dateien mit den neuen Vorlagen.** Eine Release kann `.htaccess_root`,
+`.htaccess_root_static` und `config.php-RECOMMENDED` ändern; Ihre `.htaccess` und `config.php` bleiben, wie sie sind:
+
+```bash
+php bin/php/console exp:setup:status                     # ist .htaccess noch eine Kopie einer Vorlage?
+php bin/php/console exp:setup:htaccess                   # der Diff zwischen Ihrer .htaccess und der neuen Vorlage
+php bin/php/console exp:setup:htaccess --force --apply   # die neuen Regeln übernehmen (vorher Sicherung), wenn der Diff nichts Eigenes enthält
+php bin/php/console exp:config:list                      # Einstellungen, die neu in config.php-RECOMMENDED sind, erscheinen als (not set)
+```
+
+Setzen Sie die neuen Einstellungen, die Sie möchten, mit `exp:config:set <NAME> <value> --apply`; die Einstellungen,
+die Sie hatten, behalten ihre Werte. Siehe
+[.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md).
+
 ### Schritt 2: das Datenbank-Update anwenden
 
 Die Datei für die Linie ist `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql`, für MySQL, PostgreSQL und
@@ -530,6 +544,7 @@ Version enthält, öffnen Sie ihr Changelog: [6.0.0 bis 6.0.15](../../changelogs
 In diesem Repository:
 
 - [Upgrade](../anleitungen/aktualisieren.md): die Schritt-für-Schritt-Anleitung, die dieses Kapitel erweitert.
+- [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md): beide Dateien mit den neuen Vorlagen vergleichen.
 - Release Notes: [Changelogs von 6.0](../../changelogs/6.0/6.0.15.md) ([6.0.0](../../changelogs/6.0/6.0.0.md) bis
   [6.0.14](../../changelogs/6.0/6.0.14.md)), die [Release Notes der Extensions](../../changelogs/extensions/README.md),
   [alle Changelogs](../../changelogs/README.md).

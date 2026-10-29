@@ -145,6 +145,9 @@ the installed site. Stop it again with `./console exp:velocity stop --engine=php
 If you ran step 3 with another `--url`, use the Site address that the installer printed.
 
 For production use Apache with PHP-FPM, or Velocity's own `qbix` or `frankenphp` engines: [Velocity engines](../bc/6.0/velocity-engines.md).
+Apache needs the shipped rewrite rules as `.htaccess`: `./console exp:setup:htaccess --apply` copies them, and
+`./console exp:setup:status` shows where `.htaccess` and `config.php` stand
+([Setting up .htaccess and config.php from the console](setup-files-from-the-console.md)).
 If a page is an error, nothing is hidden by the cache yet; read `var/log/error.log` and see
 [Repairing an installation](../bc/6.0/repair.md).
 
@@ -232,6 +235,7 @@ and [Extension loading order](../features/6.0/extension-loading-order.md).
 | Keep the site healthy | [Operating a site](operating-a-site.md), [Security and audit](security-and-audit.md) |
 | Move to a newer release | [Upgrading](upgrading.md) |
 | Change settings from the command line | [exp:ini](../features/6.0/exp-ini-command.md) |
+| Put `.htaccess` and `config.php` into place, change a `config.php` setting | [Setting up .htaccess and config.php from the console](setup-files-from-the-console.md) |
 | Keep an eye on changes made in the admin | [Audit trail](../features/6.0/audit-trail.md) |
 | Run recurring jobs | [Cronjobs console](../features/6.0/cronjobs-console.md) |
 | See what changed and when | [Chronicle by month](../history/README.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) |

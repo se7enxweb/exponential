@@ -547,7 +547,9 @@ cp .htaccess_root .htaccess
 ```
 
 and "If you do not have shell access, you will have to copy the file using an FTP client or ask your hosting provider
-to do this for you." Nothing is written by this page. Web server configuration is in
+to do this for you." Nothing is written by this page. With shell access, `./console exp:setup:htaccess --apply` does
+the same copy with the template's mode and owner, and refuses (with a diff) to replace a `.htaccess` that differs; see
+[Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md). Web server configuration is in
 [chapter 8](08-serving-the-site.md) and hardening in [chapter 13](13-security-hardening.md).
 
 ### 5.3.14 Registration
@@ -651,7 +653,8 @@ Two cautions:
 - The settings cache keeps a compiled copy of `kickstart.ini` in `var/cache/ini/kickstart-*.php`. When `config.php`
   switches off the INI modification-time check (`define( 'EZP_INI_FILEMTIME_CHECK', false );`, offered in
   `config.php-RECOMMENDED` for speed), an edited `kickstart.ini` is not noticed. After editing `kickstart.ini` by hand
-  for the browser wizard, delete those files. (The kickstarter deletes them itself.)
+  for the browser wizard, delete those files. (The kickstarter deletes them itself.) `./console exp:config:get
+  EZP_INI_FILEMTIME_CHECK` says whether the check is off.
 
 To answer every page yourself, move `kickstart.ini` away before starting the wizard.
 

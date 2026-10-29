@@ -77,7 +77,7 @@ site's user so the files stay writable for the web server.
 
 | Setup | What to use |
 |---|---|
-| Apache with `.htaccess` | copy `.htaccess_root_static` to `.htaccess` instead of `.htaccess_root`; it is `.htaccess_root` plus the offload rules |
+| Apache with `.htaccess` | copy `.htaccess_root_static` to `.htaccess` instead of `.htaccess_root`; it is `.htaccess_root` plus the offload rules. From the console: `./console exp:setup:htaccess --static --apply` (add `--force` to replace an existing `.htaccess`; it is backed up first) |
 | Apache virtual host | the rules of [doc/eng-us/examples/staticcache_offload.conf](../../../examples/staticcache_offload.conf) in the `<Directory>` section of the **public** site's vhost |
 | other servers | reproduce the same conditions (method, empty query string, no session cookie, file exists) |
 
@@ -121,6 +121,7 @@ Installations upgraded from older releases may have overrides that relied on the
 - [Velocity response cache](velocity-response-cache.md)
 - [Apache with PHP-FPM](../servers/apache-with-php-fpm.md)
 - [Static cache generator](../../../features/6.0/static-cache-generator.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

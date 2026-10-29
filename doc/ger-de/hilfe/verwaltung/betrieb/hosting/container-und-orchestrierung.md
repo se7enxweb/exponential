@@ -73,6 +73,13 @@ Benutzer-ID einmal für Image und Volume fest
 ([Container: Docker und Podman](../../../hosting/modelle/container-docker-und-podman.md)). Halten Sie Zugangsdaten aus
 dem Image selbst heraus.
 
+`config.php` gehört zum Code, solange sie kein Geheimnis enthält: Bringen Sie sie im Build des Images mit
+`php bin/php/console exp:setup:config --apply --allow-root-user --owner=www-data:www-data` an ihren Platz und setzen
+Sie Werte mit `exp:config:set`. Ein Passwort (`CLUSTER_STORAGE_PASS`) wird beim Start aus den Secrets der Plattform
+gesetzt. Für den Änderungsantrag dokumentiert `php bin/php/console exp:config:list --only-set --format=json`, was ein
+Image setzt, mit maskierten Geheimnissen
+([.htaccess und config.php von der Konsole aus einrichten](../../../../anleitungen/setup-dateien-von-der-konsole.md)).
+
 ## Ein Container oder mehrere
 
 | | Ein Container | Mehrere Replikate |
@@ -117,6 +124,7 @@ Container erleichtern manche Pflichten des öffentlichen Sektors, wenn Sie sie d
 - [Hosting](README.md): Übersicht dieses Ordners
 - [Container: Docker und Podman](../../../hosting/modelle/container-docker-und-podman.md), [Kubernetes](../../../hosting/modelle/kubernetes.md)
 - [Hosting in der Behörden- und souveränen Cloud](verwaltungs-und-souveraene-cloud.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

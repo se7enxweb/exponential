@@ -51,7 +51,7 @@ to `index.php` ([13.2](../../../install/13-security-hardening.md#132-what-the-we
 
 | Web server | What the host does |
 |---|---|
-| Apache, LiteSpeed with `.htaccess` | `cp .htaccess_root .htaccess`; compare after every upgrade and merge new rules |
+| Apache, LiteSpeed with `.htaccess` | `cp .htaccess_root .htaccess` or `./console exp:setup:htaccess --apply`; compare after every upgrade and merge new rules (`./console exp:setup:htaccess` prints the diff and exits 1 while the file differs, a drift check for monitoring) |
 | nginx | the derived server block of [8.6](../../../install/08-serving-the-site.md#86-nginx-with-php-fpm), with the dot-file and script rules ahead of every static location |
 | Velocity | nothing; `FollowSymlinks=disabled` (the default) also refuses links out of the root |
 | any | never a generic "serve the file if it exists" configuration |
@@ -81,6 +81,20 @@ the session password stamp) and, when set, Velocity's dashboard token
   old unsubscribe links stop matching and every user is signed out once.
 - Remove `kickstart.ini` and `var/log/initial-admin-password` after provisioning
   ([First sign-in and default passwords](first-sign-in-and-default-passwords.md)).
+
+`config.php` in the installation root can hold the cluster database password (`CLUSTER_STORAGE_PASS`). Treat it like
+`settings/override/`:
+
+- Mode `0640` with the web server's group (`chmod 0640 config.php`); later edits with `exp:config:set` keep that
+  mode. Setting a secret in a `config.php` every user can read prints a `WARN:` line.
+- Never in version control: `/config.php` in the project's `.gitignore` (the Exponential repository tracks only
+  `config.php-RECOMMENDED`).
+- The console masks the values of names with `PASS`, `SECRET`, `KEY`, `TOKEN`, `CREDENTIAL` or `PWD` as `********`;
+  `--show-secrets` shows them, so do not paste such output into a ticket.
+- `exp:setup:*` and `exp:config:*` back up every file they replace or edit to `var/backup/setup/<time>/` or
+  `var/backup/config/<time>/` (directories `0700`, never deleted by the commands). Include `var/backup/` in what you
+  protect and clean it up
+  ([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md#10-security)).
 
 ## Debug output
 
@@ -191,6 +205,7 @@ engine current as well: [Security updates and disclosure](security-updates-and-d
       to the callers' addresses; `soap.php` refused once nothing calls it
       ([the SOAP entry script is now index_soap.php](../../../bc/6.0/soap-entry-script-index-soap.md)).
 - [ ] `settings/override/` mode `0640` or stricter, out of version control, backed up encrypted.
+- [ ] `config.php` mode `0640`, out of version control; `var/backup/` protected and cleaned.
 - [ ] Provisioning removes `kickstart.ini` and `var/log/initial-admin-password`, and never leaves a known password.
 - [ ] `DebugOutput=disabled`; PHP `display_errors=Off`, `expose_php=Off`.
 - [ ] Administration on its own host name, restricted by network, VPN or the shield's browser check.
@@ -215,6 +230,7 @@ the recurring review is the [Security review checklist](../checklists/security-r
 - [Chapter 13: Security hardening for production](../../../install/13-security-hardening.md)
 - [New server checklist](../checklists/new-server.md)
 - [Compromised site](../runbooks/compromised-site.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

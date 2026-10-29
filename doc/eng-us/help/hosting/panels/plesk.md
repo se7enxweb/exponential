@@ -76,6 +76,23 @@ cd /var/www/vhosts/<domain>/<docroot>
 cp .htaccess_root .htaccess
 ```
 
+Or let the console do the copy, and put `config.php` into place the same way. In Plesk's **SSH Terminal** (or an SSH
+login) as the subscription's system user, with the domain's PHP:
+
+```bash
+cd /var/www/vhosts/<domain>/<docroot>
+/opt/plesk/php/<version>/bin/php bin/php/console exp:setup:status
+/opt/plesk/php/<version>/bin/php bin/php/console exp:setup:htaccess --apply    # .htaccess_root -> .htaccess
+/opt/plesk/php/<version>/bin/php bin/php/console exp:setup:config --apply      # config.php-RECOMMENDED -> config.php
+```
+
+The files then belong to the subscription's user, as everything else in the docroot. Run as root, every command needs
+`--allow-root-user`; a new file gets the template's owner (never root), and `--owner=<subscription-user>:psacln` sets
+it explicitly. Nothing is written without `--apply`, and an existing file that differs is shown as a diff and kept
+unless you add `--force` (the old one goes to `var/backup/setup/<time>/` first). Plesk's **File Manager** can do the
+plain copy too, but it does not keep the mode and shows no diff. All of it:
+[Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md).
+
 The PHP values the setup wizard checks (`memory_limit` 64M or more, `max_execution_time` 30 or more,
 `date.timezone`, `file_uploads`, `allow_url_fopen`) are set in the domain's PHP settings
 ([2.5](../../../install/02-requirements.md#25-phpini-settings)). The MongoDB porting notes set FPM directives such as
@@ -192,7 +209,7 @@ The development server runs Velocity next to Plesk's Apache on the same installa
 ## Checklist
 
 - [ ] Domain's PHP version 8.0 or later (Velocity included); "FPM application served by Apache".
-- [ ] Document root = installation root; `.htaccess` copied from `.htaccess_root`.
+- [ ] Document root = installation root; `.htaccess` copied from `.htaccess_root` (`exp:setup:status` says so).
 - [ ] With SOAP on: `index_soap.php` let through in **Additional directives for HTTPS** (or `.htaccess`), not only the
       old `soap.php` ([the SOAP entry script is now index_soap.php](../../../bc/6.0/soap-entry-script-index-soap.md#plesk)).
 - [ ] Composer, console and cron use `/opt/plesk/php/<version>/bin/php`.
@@ -208,6 +225,7 @@ The development server runs Velocity next to Plesk's Apache on the same installa
 - [Control panels: overview](README.md)
 - [Apache with PHP-FPM](../servers/apache-with-php-fpm.md), [Velocity beside Apache or nginx](../servers/velocity-beside-apache-or-nginx.md)
 - [Chapter 8: Serving the site](../../../install/08-serving-the-site.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

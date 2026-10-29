@@ -37,6 +37,13 @@ Verzeichnis spart. Die Datei behält ihren historischen Namen.
 Sie verwenden ein Hosting-Panel wie Plesk? Es schreibt den virtuellen Host selbst: Bearbeiten Sie seine Dateien nicht,
 bleiben Sie stattdessen bei `.htaccess` ([Apache .htaccess](apache-htaccess.md)) und lesen Sie
 [Kapitel 8, Abschnitt 8.5.3](../../installation/08-die-website-ausliefern.md#853-plesk).
+Dort bringt `./console exp:setup:htaccess --apply` die Datei `.htaccess_root` als `.htaccess` an ihren Platz
+([.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)).
+
+Mit diesem virtuellen Host (`AllowOverride None`) wird eine `.htaccess` im Wurzelverzeichnis nicht gelesen, aber das
+Kopieren schadet nicht und hält die Regeln in Kraft, falls der Baum je mit `AllowOverride All` ausgeliefert wird. Nach
+einem Upgrade zeigt `./console exp:setup:htaccess` den Diff zwischen Ihrer `.htaccess` und der neuen `.htaccess_root`;
+das ist zugleich die Liste der Regeln, die Sie in diesen virtuellen Host übernehmen müssen.
 
 ## Die Datei
 

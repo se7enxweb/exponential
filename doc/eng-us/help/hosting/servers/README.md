@@ -79,7 +79,10 @@ Whatever serves the site, the same rules apply ([Chapter 8, How a request is ser
 
 - The **document root is the installation root**, the directory that holds `index.php`.
 - The routing is written down once, in `.htaccess_root`. Velocity's engines and the generated FrankenPHP
-  configuration implement the same list rule for rule.
+  configuration implement the same list rule for rule. Apache (with `AllowOverride All`) and LiteSpeed Enterprise
+  read it as `.htaccess`, which `./console exp:setup:htaccess --apply` copies into place; OpenLiteSpeed reads only
+  its rewrite rules (with `autoLoadHtaccess`, after a restart); nginx, Caddy and IIS never read it
+  ([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)).
 - No PHP file runs because its path was asked for, except the front controllers at the root (`index.php`,
   `index_rest.php`, `index_treemenu.php`, and `index_soap.php` when SOAP is on; it was `soap.php` before 6.0.15, see
   [the SOAP entry script is now index_soap.php](../../../bc/6.0/soap-entry-script-index-soap.md)).
@@ -111,6 +114,7 @@ reachable from outside.
 - [Chapter 8: Serving the site](../../../install/08-serving-the-site.md)
 - [Operating system support](../../os-support.md)
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

@@ -80,7 +80,10 @@ Was auch immer die Website ausliefert, es gelten dieselben Regeln
 
 - Der **Document Root ist das Wurzelverzeichnis der Installation**, das Verzeichnis, das `index.php` enthält.
 - Das Routing ist einmal aufgeschrieben, in `.htaccess_root`. Die Engines von Velocity und die erzeugte Konfiguration von FrankenPHP
-  setzen dieselbe Liste Regel für Regel um.
+  setzen dieselbe Liste Regel für Regel um. Apache (mit `AllowOverride All`) und LiteSpeed Enterprise lesen sie als
+  `.htaccess`, die `./console exp:setup:htaccess --apply` an ihren Platz kopiert; OpenLiteSpeed liest nur ihre
+  Rewrite-Regeln (mit `autoLoadHtaccess`, nach einem Neustart); nginx, Caddy und IIS lesen sie nie
+  ([.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)).
 - Keine PHP-Datei läuft, weil ihr Pfad angefragt wurde, außer den Front-Controllern in der Wurzel (`index.php`, `index_rest.php`,
   `index_treemenu.php` und, wenn SOAP an ist, `index_soap.php`; vor 6.0.15 hieß es `soap.php`, siehe
   [Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../../bc/6.0/soap-einstiegsskript-index-soap.md)).
@@ -112,6 +115,7 @@ die Website von außen erreichbar ist.
 - [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
 - [Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md)
 - [Velocity-Engines](../../../bc/6.0/velocity-engines.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

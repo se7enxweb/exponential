@@ -45,8 +45,13 @@ Ihre eigene LiteSpeed-Version.
    cp .htaccess_root .htaccess
    ```
 
-   Nutzen Sie stattdessen `.htaccess_root_static` nur, wenn die Website einen erzeugten statischen Cache ausliefert
-   ([Statischer Cache](../leistung/statischer-cache.md)).
+   oder, als Benutzer der Website, `./console exp:setup:htaccess --apply`
+   ([.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)).
+   LiteSpeed Enterprise liest die Datei bei der nächsten Anfrage. OpenLiteSpeed liest nur die Rewrite-Regeln, nur mit
+   eingeschaltetem `autoLoadHtaccess` und erst nach einem Neustart; setzen Sie die Regeln dort besser in den
+   virtuellen Host ([LiteSpeed-Beispiel](../../../beispiele/webserver/litespeed.md)).
+   Nutzen Sie stattdessen `.htaccess_root_static` (`--static`) nur, wenn die Website einen erzeugten statischen Cache
+   ausliefert ([Statischer Cache](../leistung/statischer-cache.md)).
 3. **PHP:** 8.0 oder neuer mit den erforderlichen Erweiterungen ([Kapitel 2](../../../installation/02-voraussetzungen.md#23-php-extensions)),
    `memory_limit` mindestens 64M (die Untergrenze des Setup-Assistenten; geben Sie der Produktion mehr), `date.timezone` gesetzt,
    `file_uploads` an ([Kapitel 2, Einstellungen der php.ini](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini)).
@@ -94,7 +99,7 @@ muss `X-Forwarded-Proto` setzen ([Kapitel 8, Hinter einem Reverse Proxy](../../.
 - [ ] PHP für Web und Kommandozeile hat dieselbe Version mit denselben Erweiterungen.
 - [ ] Die Prüfungen des Routings und die Tests oben bestehen auf einem Staging-Konto.
 - [ ] Die Auswirkungen von `open_basedir` auf das Vorladen und andere Läufe im Hintergrund sind bekannt und für den Support dokumentiert.
-- [ ] Nach jedem Upgrade wird `.htaccess` aus der neuen `.htaccess_root` aufgefrischt.
+- [ ] Nach jedem Upgrade wird `.htaccess` aus der neuen `.htaccess_root` aufgefrischt (`./console exp:setup:htaccess` zeigt den Diff; `--force --apply` kopiert nach einer Sicherung).
 
 **Demomodus auf LiteSpeed.** LiteSpeed liest `SetEnv` in `.htaccess` wie Apache und gibt es an `lsphp` weiter: `SetEnv EXP_DEMO_MODE 1` in der `.htaccess` einer öffentlichen Demo schaltet den Demomodus für ihre Web-Anfragen ein, und `security.log` zeigt dann `demo/mode on ... sapi=litespeed`. [Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md).
 
@@ -104,6 +109,7 @@ muss `X-Forwarded-Proto` setzen ([Kapitel 8, Hinter einem Reverse Proxy](../../.
 - [Shared Hosting](../modelle/shared-hosting.md)
 - [Einen Webserver wählen](einen-webserver-waehlen.md)
 - [Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

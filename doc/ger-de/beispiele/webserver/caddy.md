@@ -16,6 +16,10 @@ Caddyfiles, das `exp:velocity` für seine FrankenPHP-Engine erzeugt (`kernel/cla
 `caddyfileText()`), wobei PHP an PHP-FPM statt an das eingebaute PHP von FrankenPHP übergeben wird, ergänzt um die
 ersten beiden Regeln von `.htaccess_root`.
 
+Caddy liest `.htaccess` nie: `./console exp:setup:htaccess --apply` schützt eine Caddy-Site nicht, das Caddyfile tut
+es. `./console exp:setup:config --apply` bringt `config.php` trotzdem an ihren Platz; siehe
+[.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
+
 > **Warnung:** Verwenden Sie für Exponential weder `php_fastcgi` von Caddy noch `php_server` von FrankenPHP. Beide
 > liefern jede vorhandene Datei aus, bevor sie auf `index.php` zurückfallen: `settings/site.ini`,
 > `settings/override/*.ini.append.php`, die SQLite-Datenbank und die Logs wären herunterladbar.
@@ -170,4 +174,5 @@ teilt, ist das, was Velocity mit seiner Engine `frankenphp` ausliefert.
   [FrankenPHP als Web-Engine von Exponential](../../bc/6.0/frankenphp.md) (auf Englisch).
 - [Kapitel 13, Abschnitt 13.2: Was der Webserver niemals ausliefern darf](../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf).
 - [PHP-FPM-Pool](php-fpm.md), [Webserver-Beispiele](README.md) und [alle Beispiele](../README.md).
+- [.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md): welche Server `.htaccess` lesen, und `config.php`.
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert werden.

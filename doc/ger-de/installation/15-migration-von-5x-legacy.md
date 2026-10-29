@@ -744,6 +744,13 @@ ausgeliefert, wie sie sind, und vom ezjscore-Packer zusammengefasst. Wie Sie es 
 PHP-FPM und den Rewrite-Regeln aus `.htaccess_root` ([8.5](08-die-website-ausliefern.md#85-apache-mit-php-fpm)). Verwenden Sie
 den 5.x-Virtual-Host nicht weiter: Seine Rewrite-Regeln zeigen auf `web/` und auf den Front-Controller von Symfony.
 
+Die Rewrite-Regeln legen Sie mit `./console exp:setup:htaccess --apply` an (eine Kopie von `.htaccess_root`, oder
+`cp .htaccess_root .htaccess`). Vergleichen Sie die aus `ezpublish_legacy/` kopierte `config.php` ebenso mit der neuen
+Vorlage: `./console exp:setup:status`, `./console exp:setup:config` (der Diff, nichts wird geändert) und
+`./console exp:config:list` (Einstellungen, die neu in `config.php-RECOMMENDED` sind, erscheinen als `(not set)`);
+eine setzen Sie mit `./console exp:config:set <NAME> <value> --apply`. Siehe
+[.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md).
+
 ## 15.19 Prüfen
 
 ```bash

@@ -112,6 +112,12 @@ platform's managed database, **2. PostgreSQL** first if it offers several
   (`EXP_INSTALL_DB_PASSWORD`) ([4.6](../../../install/04-choosing-an-install-method.md#46-unattended-installs-ci-and-containers)).
 - Every later release: new code, the same persistent `var/` and database, the schema update files when an upgrade
   calls for them, then a cache clear ([Deploying changes](../operations/deploying-changes.md)).
+- `.htaccess` and `config.php` in the build or at start, unattended: `./console exp:setup:htaccess --apply`,
+  `./console exp:setup:config --apply`, then `./console exp:config:set <NAME> <value> --apply` with values from the
+  platform's environment variables (`--value="$CLUSTER_DB_PASS"` for a secret). Each command asks nothing, ends with
+  `PASS:` or `FAIL:`, exits 0, 1 or 2 and changes nothing on a second run. A build step that runs as root needs
+  `--allow-root-user` and, so the files do not belong to root, `--owner=www-data:www-data`
+  ([In scripts, containers and CI](../../../guides/setup-files-from-the-console.md#11-in-scripts-containers-and-ci)).
 
 ## Questions to ask a platform
 
@@ -131,6 +137,7 @@ platform's managed database, **2. PostgreSQL** first if it offers several
 - [Choosing a hosting model](choosing-a-hosting-model.md), [Containers: Docker and Podman](containers-docker-and-podman.md)
 - [Writable directories and permissions](../basics/writable-directories-and-permissions.md)
 - [Storage layout](../operations/storage-layout.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

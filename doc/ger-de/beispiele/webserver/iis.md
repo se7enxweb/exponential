@@ -20,6 +20,10 @@ die Sicherheits-Header.
 > nach jedem Upgrade mit `.htaccess_root`. Was über Windows bekannt ist, steht unter
 > [Betriebssystemunterstützung](../../hilfe/betriebssystemunterstuetzung.md).
 
+IIS liest `.htaccess` nie: `exp:setup:htaccess` schützt eine IIS-Site nicht, `web.config` tut es. `config.php` wird auf
+jedem Server gleich an ihren Platz gebracht und bearbeitet, mit `exp:setup:config` und `exp:config:set`; siehe
+[.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
+
 ## Installieren
 
 1. Installieren Sie IIS mit dem Feature **CGI** (es bringt FastCGI mit), das Modul
@@ -229,4 +233,5 @@ foreach ($p in '/.git/config','/.env','/kernel/classes/ezini.php','/extension/ez
 - [Apache .htaccess](apache-htaccess.md): die Regeln, eine nach der anderen erklärt.
 - [Kapitel 13, Abschnitt 13.2: Was der Webserver niemals ausliefern darf](../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf).
 - [Betriebssystemunterstützung](../../hilfe/betriebssystemunterstuetzung.md), [Webserver-Beispiele](README.md) und [alle Beispiele](../README.md).
+- [.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md): welche Server `.htaccess` lesen, und `config.php`.
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite dürfen Sie frei kopieren, übersetzen und verbessern.

@@ -67,6 +67,8 @@ PHP 8. Test your own stack.
 
 ## Routing to reproduce
 
+IIS never reads `.htaccess`, so `exp:setup:htaccess` does not protect an IIS site
+([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)).
 Whatever IIS rule set you write must do what `.htaccess_root` does
 ([Chapter 8, How a request is served](../../../install/08-serving-the-site.md#82-how-a-request-is-served)):
 
@@ -100,7 +102,8 @@ Run the four routing checks of [Web servers and engines](README.md#what-every-se
 
 ## Alternatives on Windows machines
 
-- **Apache with FastCGI PHP** on Windows: the shipped `.htaccess_root` applies directly.
+- **Apache with FastCGI PHP** on Windows: the shipped `.htaccess_root` applies directly (copied with
+  `php bin/php/console exp:setup:htaccess --apply`).
 - **WSL2** runs the Linux tiers and is the simpler path for development on Windows.
 - **A Linux virtual machine or container** on the Windows host, if the plan can be built that way
   ([Containers, Docker and Podman](../models/containers-docker-and-podman.md)).
@@ -119,6 +122,7 @@ Run the four routing checks of [Web servers and engines](README.md#what-every-se
 - [Operating systems for hosts](../basics/operating-systems-for-hosts.md)
 - [Operating system support](../../os-support.md)
 - [Chapter 8: Serving the site](../../../install/08-serving-the-site.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

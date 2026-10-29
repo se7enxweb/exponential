@@ -136,6 +136,11 @@ What the chapter explains about it:
   ([First sign-in and default passwords](../security/first-sign-in-and-default-passwords.md)).
 - Never bake `settings/override` into an image: it holds the database credentials
   ([13.3 Secrets in settings/override](../../../install/13-security-hardening.md#133-secrets-in-settingsoverride)).
+- `config.php` can be made in the image (`exp:setup:config --apply --allow-root-user --owner=www-data:www-data` in the
+  build step), but a password in it, such as `CLUSTER_STORAGE_PASS`, is set at start from the environment:
+  `php bin/php/console exp:config:set CLUSTER_STORAGE_PASS --value="$CLUSTER_DB_PASS" --apply --allow-root-user`. The
+  output shows it as `********`. In CI, `exp:config:list --only-set --format=json` shows what an image or a running
+  container sets ([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md#11-in-scripts-containers-and-ci)).
 
 ## Operations inside containers
 
@@ -164,6 +169,7 @@ What the chapter explains about it:
 - [Kubernetes](kubernetes.md), [Platform as a service](platform-as-a-service.md)
 - [exp:install](../provisioning/exp-install.md), [Automating provisioning](../provisioning/automating-provisioning.md)
 - [Installing in one command](../../../features/6.0/install-in-one-command.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

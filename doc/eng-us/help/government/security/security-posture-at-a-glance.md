@@ -50,6 +50,7 @@ statement, [Security standards](../../../standards/security.md); the words "Part
 | Setup wizard closed on an installed site | `expSetupWizardGuard` |
 | No PHP executed below the document root; dot files refused | `.htaccess_root` |
 | Debug output off | `[DebugSettings] DebugOutput=disabled` |
+| Secrets in `config.php` masked in console output and diffs; every edit backed up to a `0700` directory | `exp:config:*`, `exp:setup:*` ([from the console](../../../guides/setup-files-from-the-console.md#10-security)) |
 
 ## Off by default: your decisions
 

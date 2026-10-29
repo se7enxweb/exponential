@@ -313,7 +313,9 @@ Every log file (error.log, warning.log, deprecated.log, storage.log, the cronjob
 larger than `site.ini [FileSettings] LogFileMaxSize` (default 2097152 bytes, 2 MB) into `.1`, `.2`, `.3`;
 `LogFileRotateCount` (default 3) is how many are kept, 0 turns the rotation off. With the defaults a log takes at
 most 8 MB on disk. The constants `EZPUBLISH_LOG_MAX_FILE_SIZE`, `CUSTOM_LOG_MAX_FILE_SIZE` and their `*_ROTATE_FILES`
-in `config.php` still win over these settings.
+in `config.php` still win over these settings; `./console exp:config:list --only-set` shows whether `config.php` sets
+them, and `./console exp:config:unset EZPUBLISH_LOG_MAX_FILE_SIZE --apply` hands the size back to `site.ini` (see
+[Setting up .htaccess and config.php from the console](setup-files-from-the-console.md)).
 
 Upgrading: both are on after the upgrade. Log files are rotated at 2 MB instead of 200 KB (set
 `LogFileMaxSize=204800` for the old size), and deprecations no longer appear in `warning.log` or the debug list
@@ -349,7 +351,17 @@ php bin/php/ezpgenerateautoloads.php -e --allow-root-user
 php bin/php/ezcache.php --clear-all --allow-root-user
 ```
 
-Depth: [Repair from the browser](../features/6.0/repair-from-the-browser.md), [repair (upgrade page)](../bc/6.0/repair.md).
+When every page fails with a PHP parse error in `config.php`, the console still starts and says so ("Warning:
+config.php does not compile: ..."). Fix the line it names, copy back the last backup from `var/backup/config/` or
+`var/backup/setup/`, or start again from the template:
+
+```bash
+./console exp:setup:status                       # names the syntax error
+./console exp:setup:config --force --apply       # replaces config.php with config.php-RECOMMENDED, backup first
+```
+
+Depth: [Repair from the browser](../features/6.0/repair-from-the-browser.md), [repair (upgrade page)](../bc/6.0/repair.md),
+[Setting up .htaccess and config.php from the console](setup-files-from-the-console.md#9-when-something-goes-wrong).
 
 ## 10. A weekly checklist
 
@@ -363,6 +375,7 @@ Depth: [Repair from the browser](../features/6.0/repair-from-the-browser.md), [r
 
 - Running on the Velocity server: [Velocity persistent-worker server](../features/6.0/velocity-persistent-worker-server.md) and [Velocity engines](../bc/6.0/velocity-engines.md).
 - Installing a new site: [Installing in one command](../features/6.0/install-in-one-command.md) and [Kickstarter](../features/6.0/kickstarter-cli.md).
+- `.htaccess` and `config.php`: [Setting up .htaccess and config.php from the console](setup-files-from-the-console.md).
 - What changed, month by month: the [Velocity chronicle](../history/velocity/README.md).
 - Other guides: [Deploying](deploying.md) (servers, HTTPS, shipping a change), [Security and audit](security-and-audit.md) (hardening, roles, the audit trail), [Upgrading](upgrading.md).
 - Words used here: [Glossary](../glossary.md).

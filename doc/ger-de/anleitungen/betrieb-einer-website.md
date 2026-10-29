@@ -313,7 +313,9 @@ Jede Logdatei (error.log, warning.log, deprecated.log, storage.log, die Cronjob-
 größer ist als `site.ini [FileSettings] LogFileMaxSize` (Standard 2097152 Byte, 2 MB), und zwar nach `.1`, `.2`, `.3`;
 `LogFileRotateCount` (Standard 3) gibt an, wie viele aufbewahrt werden, 0 schaltet die Rotation aus. Mit den Standardwerten belegt ein Log
 höchstens 8 MB auf der Festplatte. Die Konstanten `EZPUBLISH_LOG_MAX_FILE_SIZE`, `CUSTOM_LOG_MAX_FILE_SIZE` und ihre `*_ROTATE_FILES`
-in `config.php` haben weiterhin Vorrang vor diesen Einstellungen.
+in `config.php` haben weiterhin Vorrang vor diesen Einstellungen; `./console exp:config:list --only-set` zeigt, ob
+`config.php` sie setzt, und `./console exp:config:unset EZPUBLISH_LOG_MAX_FILE_SIZE --apply` gibt die Größe an
+`site.ini` zurück (siehe [.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md)).
 
 Upgrade: Beides ist nach dem Upgrade eingeschaltet. Logdateien werden bei 2 MB statt bei 200 KB rotiert (setzen Sie
 `LogFileMaxSize=204800` für die alte Größe), und Deprecations erscheinen nicht mehr in `warning.log` oder in der Debug-Liste
@@ -349,7 +351,17 @@ php bin/php/ezpgenerateautoloads.php -e --allow-root-user
 php bin/php/ezcache.php --clear-all --allow-root-user
 ```
 
-Vertiefung: [Reparatur aus dem Browser](../funktionen/6.0/reparatur-im-browser.md), [Reparatur (Upgrade-Seite)](../bc/6.0/reparatur.md).
+Wenn jede Seite mit einem PHP-Parse-Fehler in `config.php` scheitert, startet die Konsole trotzdem und meldet ihn
+(„Warning: config.php does not compile: ..."). Korrigieren Sie die genannte Zeile, kopieren Sie die letzte Sicherung
+aus `var/backup/config/` oder `var/backup/setup/` zurück, oder beginnen Sie neu mit der Vorlage:
+
+```bash
+./console exp:setup:status                       # nennt den Syntaxfehler
+./console exp:setup:config --force --apply       # ersetzt config.php durch config.php-RECOMMENDED, vorher Sicherung
+```
+
+Vertiefung: [Reparatur aus dem Browser](../funktionen/6.0/reparatur-im-browser.md), [Reparatur (Upgrade-Seite)](../bc/6.0/reparatur.md),
+[.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md).
 
 ## 10. Eine wöchentliche Checkliste
 
@@ -363,6 +375,7 @@ Vertiefung: [Reparatur aus dem Browser](../funktionen/6.0/reparatur-im-browser.m
 
 - Betrieb auf dem Velocity-Server: [Velocity-Server mit persistenten Workern](../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) und [Velocity-Engines](../bc/6.0/velocity-engines.md).
 - Eine neue Site installieren: [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md) und [Kickstarter](../funktionen/6.0/kickstarter-cli.md).
+- `.htaccess` und `config.php`: [.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md).
 - Was sich geändert hat, Monat für Monat: die [Velocity-Chronik](../geschichte/velocity/README.md).
 - Weitere Anleitungen: [Bereitstellung](bereitstellung.md) (Server, HTTPS, eine Änderung ausliefern), [Sicherheit und Audit](sicherheit-und-audit.md) (Härtung, Rollen, das Audit-Protokoll), [Upgrade](aktualisieren.md).
 - Hier verwendete Begriffe: [Glossar](../glossar.md).

@@ -58,9 +58,20 @@ Aktionen und Anbieter von Geltungsbereichen sind Klassen, die in `settings/ini.i
 sind. **Setup > RAD** unter `/setup/radsurvey/(show)/inicommand` listet jede mit ihrem Eigentümer auf. Dieselbe
 Editorklasse (`expIniEditor`) steht hinter dem Reiter für Einstellungen der [Debug-Leiste](exp-debug-leiste.md).
 
+## Siehe auch: config.php
+
+`exp:ini` bearbeitet die INI-Dateien in `settings/` und in Erweiterungen. Die Konstanten in `config.php`
+(Dateimodi, INI-Prüfungen, Cluster-Speicher, Log-Rotation), die gelesen werden, bevor irgendeine INI-Datei gelesen
+wird, haben eigene Befehle: `exp:config:list`, `exp:config:get`, `exp:config:set` und `exp:config:unset`, dazu
+`exp:setup:config`, das die Datei an ihren Platz bringt. Sie folgen denselben Regeln: ein Probelauf ohne `--apply`,
+eine Sicherung jeder geänderten Datei (nach `var/backup/config/<Zeit>/`) und maskierte Geheimnisse. Siehe
+[.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md) und
+[Konsolenbefehle für .htaccess und config.php](befehle-fuer-htaccess-und-config-php.md).
+
 ## Verwandte Seiten
 
 - [Konsole](../../bc/6.0/konsole.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md): `exp:config:*` für `config.php`
 - [Platzierungen von INI-Überschreibungen](../../spezifikationen/6.0/ini-override-platzierungen.md)
 - [Audit-Ereignismodell](../../spezifikationen/6.0/audit-ereignismodell.md)
 - [eZINI erhält Kommentare beim Speichern](../../bc/6.0/ezini-behaelt-kommentare.md)

@@ -35,6 +35,12 @@ it plainly: "Test it on your site before you rely on it, and compare it with `.h
 > Treat the block below as a starting point you own. When a new release changes `.htaccess_root`, your nginx block
 > does not change with it. Put "compare nginx rules with `.htaccess_root`" on the upgrade checklist of every nginx plan.
 
+nginx never reads `.htaccess`, so `./console exp:setup:htaccess --apply` protects nothing here. It still helps with the
+comparison: keep a `.htaccess` copied by it, and after an upgrade `./console exp:setup:htaccess` prints the diff
+between that copy and the new `.htaccess_root` (exit 1 while they differ), which is the list of rules to carry into the
+server block. `config.php` is set up the same way on every server: `./console exp:setup:config --apply` and
+`./console exp:config:set` ([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)).
+
 ## The server block
 
 Adjust the root and the PHP-FPM socket (one socket per customer pool on a shared machine). This is chapter 8's block:
@@ -186,6 +192,7 @@ What can go wrong:
 - [Velocity beside Apache or nginx](velocity-beside-apache-or-nginx.md)
 - [Choosing a web server](choosing-a-web-server.md)
 - [Chapter 8: Serving the site](../../../install/08-serving-the-site.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

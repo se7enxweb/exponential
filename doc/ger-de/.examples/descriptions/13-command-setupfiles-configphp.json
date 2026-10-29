@@ -1,0 +1,86 @@
+{
+    "command:configphp": {
+        "en": "List, read, set and unset the define() settings of config.php, typed and checked with php -l, documented by config.php-RECOMMENDED (set and unset: dry run unless --apply)",
+        "de": "Listet, liest, setzt und entfernt die define()-Einstellungen der config.php, mit Typ und mit php -l geprüft, beschrieben durch config.php-RECOMMENDED (set und unset: Probelauf ohne --apply)"
+    },
+    "command:configphp --allow-unknown": {
+        "en": "set: add a setting config.php-RECOMMENDED does not document",
+        "de": "set: eine Einstellung hinzufügen, die config.php-RECOMMENDED nicht beschreibt"
+    },
+    "command:configphp --apply": {
+        "en": "set, unset: write config.php (the default shows the diff)",
+        "de": "set, unset: die config.php schreiben (ohne die Option wird nur der Diff gezeigt)"
+    },
+    "command:configphp --dry-run": {
+        "en": "The default, kept for scripts that pass it: show the diff, change nothing",
+        "de": "Der Standard, erhalten für Skripte, die die Option übergeben: den Diff zeigen, nichts ändern"
+    },
+    "command:configphp --file": {
+        "en": "The config file (default: <root>/config.php)",
+        "de": "Die Konfigurationsdatei (Standard: <root>/config.php)"
+    },
+    "command:configphp --format": {
+        "en": "list, get: text (default) or json",
+        "de": "list, get: text (Standard) oder json"
+    },
+    "command:configphp --only-set": {
+        "en": "list: only the settings config.php sets",
+        "de": "list: nur die Einstellungen, die config.php setzt"
+    },
+    "command:configphp --recommended": {
+        "en": "The documented settings (default: <root>/config.php-RECOMMENDED)",
+        "de": "Die beschriebenen Einstellungen (Standard: <root>/config.php-RECOMMENDED)"
+    },
+    "command:configphp --root": {
+        "en": "The installation root (default: the installation this command belongs to)",
+        "de": "Das Wurzelverzeichnis der Installation (Standard: die Installation, zu der der Befehl gehört)"
+    },
+    "command:configphp --show-secrets": {
+        "en": "Show the values of passwords, secrets, keys and tokens",
+        "de": "Die Werte von Passwörtern, Geheimnissen, Schlüsseln und Tokens anzeigen"
+    },
+    "command:configphp --type": {
+        "en": "set: the type of the value: bool, int, octal, float, string, null",
+        "de": "set: der Typ des Werts: bool, int, octal, float, string, null"
+    },
+    "command:configphp --value": {
+        "en": "set: the value (instead of the argument after the name), for one that starts with \"-\"",
+        "de": "set: der Wert (statt des Arguments nach dem Namen), für einen Wert, der mit \"-\" beginnt"
+    },
+    "command:setupfiles": {
+        "en": "Copy .htaccess_root (or .htaccess_root_static) to .htaccess and config.php-RECOMMENDED to config.php, with a diff, a backup and --force for an existing file (dry run unless --apply)",
+        "de": "Kopiert .htaccess_root (oder .htaccess_root_static) nach .htaccess und config.php-RECOMMENDED nach config.php, mit Diff, Sicherung und --force für eine vorhandene Datei (Probelauf ohne --apply)"
+    },
+    "command:setupfiles --apply": {
+        "en": "Write: copy the file (the default only shows what would be copied)",
+        "de": "Schreiben: die Datei kopieren (ohne die Option wird nur gezeigt, was kopiert würde)"
+    },
+    "command:setupfiles --dry-run": {
+        "en": "The default, kept for scripts that pass it: show what would be copied, change nothing",
+        "de": "Der Standard, erhalten für Skripte, die die Option übergeben: zeigen, was kopiert würde, nichts ändern"
+    },
+    "command:setupfiles --force": {
+        "en": "Replace an existing file that differs from the template (it is backed up first)",
+        "de": "Eine vorhandene Datei ersetzen, die von der Vorlage abweicht (sie wird vorher gesichert)"
+    },
+    "command:setupfiles --mode": {
+        "en": "Mode of the written file, such as 0644 (default: an existing file keeps its mode, a new one gets the template's)",
+        "de": "Modus der geschriebenen Datei, etwa 0644 (Standard: eine vorhandene Datei behält ihren Modus, eine neue bekommt den der Vorlage)"
+    },
+    "command:setupfiles --owner": {
+        "en": "Owner of the written file, user or user:group (only root can give it to another user)",
+        "de": "Eigentümer der geschriebenen Datei, benutzer oder benutzer:gruppe (nur root kann sie einem anderen Benutzer geben)"
+    },
+    "command:setupfiles --root": {
+        "en": "The installation root (default: the installation this command belongs to)",
+        "de": "Das Wurzelverzeichnis der Installation (Standard: die Installation, zu der der Befehl gehört)"
+    },
+    "command:setupfiles --show-secrets": {
+        "en": "config: show the values of passwords, secrets, keys and tokens in the diff",
+        "de": "config: die Werte von Passwörtern, Geheimnissen, Schlüsseln und Tokens im Diff anzeigen"
+    },
+    "command:setupfiles --static": {
+        "en": "htaccess: copy .htaccess_root_static, the rules that serve the static cache, instead of .htaccess_root",
+        "de": "htaccess: .htaccess_root_static kopieren, die Regeln, die den statischen Cache ausliefern, statt .htaccess_root"
+    }
+}

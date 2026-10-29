@@ -57,6 +57,15 @@ sind PHP-Konstanten, die in diesen Dateien definiert werden. Eine gleichnamige U
 nichts. Umgekehrt gilt für `EXP_DEMO_MODE`: Eine gleichnamige Konstante in `config.php` zu definieren, bewirkt nichts;
 der Demo-Modus kommt nur aus der Umgebung.
 
+Die beiden Dateien haben unterschiedliche Aufgaben. `config.env.php` enthält nur, was sich je Maschine unterscheidet,
+den Namen der Umgebung `EXP_ENV`; sie wird von Hand aus `config.env.php.example` kopiert und von der Konsole nicht
+angefasst. `config.php` enthält die Konstanten der Installation (Dateimodi, INI-Prüfungen, Cluster-Speicher,
+Log-Rotation); sie wird mit `./console exp:setup:config --apply` an ihren Platz gebracht und mit
+`./console exp:config:list`, `exp:config:get`, `exp:config:set` und `exp:config:unset` gelesen und geändert. Um einen
+Wert aus einer Umgebungsvariablen in `config.php` zu übernehmen, setzen Sie ihn beim Deployment oder beim Start des
+Containers: `./console exp:config:set CLUSTER_STORAGE_HOST "$CLUSTER_DB_HOST" --apply`. Siehe
+[.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md).
+
 ## Wo eine Umgebungsvariable gesetzt wird
 
 | Wo PHP läuft | Wie |
@@ -77,6 +86,7 @@ Beispiele für den Demo-Modus, eines pro Ort: [Beispiele zum Demo-Modus](../beis
 - [Demo-Modus](../bc/6.0/demomodus.md), [FAQ zum Demo-Modus](../hilfe/demomodus-faq.md)
 - [Kapitel 2: Voraussetzungen](../installation/02-voraussetzungen.md), [Kapitel 13: Sicherheitshärtung](../installation/13-sicherheitshaertung.md)
 - [Velocity-Engines](../bc/6.0/velocity-engines.md)
+- [.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md): `config.php` von der Kommandozeile
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
