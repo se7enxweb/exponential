@@ -38,7 +38,7 @@ aktiv sind.
 
 | Funktion | Wer sie nutzt | Lesen Sie |
 |---|---|---|
-| Mehrsprachige Inhalte, mit 219 Locales | Übersetzer, Redaktion | [Sprachen](../../sprachen.md), [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md) |
+| Mehrsprachige Inhalte, mit 359 Locale-Dateien | Übersetzer, Redaktion | [Sprachen](../../sprachen.md), [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md) |
 | Sprachen mit Schreibrichtung von rechts nach links | Redaktion | [Von rechts nach links](../../../funktionen/6.0/rechts-nach-links.md) |
 | Mehrere Websites aus einer Installation | Betreiber, Administrator | [Multisite-Einrichtung](../../ersteller/website-ersteller/multisite-einrichten.md) |
 

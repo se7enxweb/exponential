@@ -24,7 +24,7 @@ templates and stylesheets say, so the design has to add a few things
 
 ## Which languages
 
-40 locale files in `share/locale/` carry `TextDirection=rtl`: Arabic for many countries, Hebrew, Yiddish, Persian and
+43 locale files in `share/locale/` carry `TextDirection=rtl`: Arabic for many countries, Hebrew, Yiddish, Persian and
 Dari, Urdu, Pashto, Western Punjabi, Sindhi, Kashmiri, Uyghur, Central Kurdish (Sorani), Syriac, N'Ko and Dhivehi
 ([Languages in Exponential, section 9](../../../languages.md#9-right-to-left-languages)). Languages written in the Latin
 script, such as Kurmanji Kurdish, are left to right.

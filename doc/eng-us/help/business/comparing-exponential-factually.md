@@ -140,8 +140,8 @@ the other columns for the buyer.
 | Published releases immutable      | Yes                                                 |          |          | SECURITY.md  |
 | Security reporting                | Private, first answer within one business day       |          |          | SECURITY.md  |
 | Multisite from one installation   | Yes (siteaccesses)                                  |          |          | README.md    |
-| Content languages                 | 268 locale files; at most 62 per installation       |          |          | doc/eng-us/languages.md |
-| Administration translations       | 32, ten complete                                    |          |          | doc/eng-us/languages.md |
+| Content languages                 | 359 locale files; at most 62 per installation       |          |          | doc/eng-us/languages.md |
+| Administration translations       | all complete (totals: languages page)               |          |          | doc/eng-us/languages.md |
 | Visual page builder               | Exponential Layouts                                 |          |          | layouts-editor |
 | Audit trail                       | Tamper-evident, on by default                       |          |          | audit-trail  |
 | Writing assistant                 | Drafts only, region per provider                    |          |          | expai        |
@@ -160,7 +160,7 @@ Say these yourself. Each is documented.
 | Shared hosting that forbids long-running processes | Velocity usually cannot run; Apache or LiteSpeed with `.htaccess` still serve the site | `README.md`, "When a traditional server is still the right answer" |
 | Strict isolation of several customers on one server | Run one Velocity instance per site as its own system user | same |
 | More than 62 content languages in one installation | The limit is 62 (30 on 32-bit PHP) | [Languages in Exponential](../../languages.md#11-the-limit-of-62-content-languages) |
-| An administration fully translated into a language that is not complete today | Only ten administration translations are complete; others are partial or content only | [Support levels](../../languages.md#2-support-levels) |
+| An administration fully translated into a language that is not complete today | Every shipped administration translation is complete; a language without one shows English (the current totals are at the top of the languages page) | [Support levels](../../languages.md#2-support-levels) |
 | A requirement for CI-tested MariaDB or Oracle | Both are supported, neither is run in the project's CI | [Test coverage](../database-support.md#test-coverage-ci) |
 | A demand for a published support policy or SLA document | The project publishes no single support policy; commitments are in the places listed on the Foundation page; contract terms come from a service provider | [The support commitment](../who-is-the-exponential-foundation.md#the-support-commitment) |
 
@@ -187,7 +187,7 @@ Some buyers know the history. Use the tone of the history pages: factual, source
 | "We are better than X." | "Here is what Exponential does, and how you can check it." | No source can prove a ranking. |
 | "X locks you in." | "With Exponential you keep the code under the GPL and your content in a standard database." | Describe Exponential, not others. |
 | "It is the fastest CMS." | "The README documents 0.36 ms per cached page on a 12-core machine, reproducible with shipped scripts; let us measure on your hardware." | Figures need their context ([Benchmarking](../../guides/benchmarking.md)). |
-| "It supports every language." | "268 locale files for content; administration translations (the current totals are at the top of [Languages in Exponential](../../languages.md))." | Exact and sourced. |
+| "It supports every language." | "359 locale files for content; administration translations (the current totals are at the top of [Languages in Exponential](../../languages.md))." | Exact and sourced. |
 | "It is the new eZ Publish." | "Exponential continues the code base of eZ Publish, a product its creator discontinued after almost 18 years." | The product's name is Exponential. |
 | "We guarantee support." | "Security reports get a first answer within one business day (SECURITY.md); service terms come from your provider." | Only what is written down. |
 | "Hundreds of companies use it." | "The sources do not count users. The history shows hundreds of contributors over the years." | [Contributors](../who-is-7x.md#contributors-and-friends-of-the-project) |

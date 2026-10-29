@@ -48,7 +48,7 @@ is its byte-oriented encoding and the encoding of the web.
 - The database connection charset is `settings/site.ini [DatabaseSettings] Charset=utf-8` (the comment above it says
   an empty value falls back to `i18n.ini`).
 - Translation catalogues are XML declared as `encoding="utf-8"`.
-- 233 of the 268 locale files in `share/locale/` declare `[Charset] Preferred=utf-8`. The remaining 35 are older
+- 339 of the 359 locale files in `share/locale/` declare `[Charset] Preferred=utf-8`. The remaining 20 are older
   files that still name a legacy code page (for example `iso-8859-1`, `iso-8859-15`, `koi8-u`, `cp1251`). The site's
   internal charset still comes from `i18n.ini`; the code page names are kept for compatibility.
 - The test `tests/tests/lib/ezlocale/expLocaleFilesTest.php` checks that every locale file's names are valid UTF-8
@@ -195,7 +195,7 @@ the isolate characters U+2066 to U+2069.
 
 **How Exponential complies.** Browsers run the algorithm; Exponential gives them correct direction information:
 
-- The direction comes only from `share/locale/<code>.ini [LanguageSettings] TextDirection=rtl`. 40 locale files carry
+- The direction comes only from `share/locale/<code>.ini [LanguageSettings] TextDirection=rtl`. 43 locale files carry
   it (Arabic, Hebrew, Yiddish, Persian, Urdu and others), counted in `share/locale/` for this page.
 - `eZLocale::textDirection()`, `eZLocale::isRightToLeft()` and `eZLocale::textDirectionOf()` expose it;
   `$site.text_direction` carries it to templates.
@@ -214,10 +214,6 @@ the isolate characters U+2066 to U+2069.
 **Known gaps** (from [Right-to-left languages](../features/6.0/right-to-left.md), "Follow-ups"): several extension
 stylesheets still use physical left and right. Site designs (front-end themes) are not covered by that work.
 
-> **Note** [Right-to-left languages](../features/6.0/right-to-left.md) says 28 locale files carry
-> `TextDirection=rtl`, [Languages in Exponential](../languages.md) says 40. The count made for this page in
-> `share/locale/` is 40.
-
 ## Translation catalogues: Qt Linguist `.ts`
 
 **What it is.** The `.ts` format is the XML translation source format of Qt Linguist (The Qt Company), here in
@@ -227,7 +223,7 @@ version 2.0 (`<TS version="2.0">`).
 
 - The interface texts of templates (`'text'|i18n( 'context' )`) and PHP (`ezpI18n::tr()`) are looked up in
   `share/translations/<code>/translation.ts` and in an extension's `translations/<code>/translation.ts`.
-- 33 directories exist in `share/translations/` (32 languages plus `untranslated`, the template for new ones).
+- 156 directories exist in `share/translations/` (155 languages plus `untranslated`, the template for new ones).
 - `eZTSTranslator` (`lib/ezi18n/classes/eztstranslator.php`) validates each file against
   `schemas/translation/ts.rng` and caches it as PHP (`eztranslationcache.php`).
 - Language fallbacks: `settings/i18n.ini [TranslationSettings]` (`FallbackLanguages[]`,
@@ -260,7 +256,7 @@ neutral wording ("label: %count") instead of a plural.
 
 1. A stock MySQL or MariaDB connection uses 3-byte `utf8`; full Unicode needs `utf8mb4` configured by the
    administrator.
-2. 35 locale files still name a legacy code page in `[Charset] Preferred`.
+2. 20 locale files still name a legacy code page in `[Charset] Preferred`.
 3. No plural forms in the translation system.
 4. ICU is optional; without `intl` the country and language lists sort by bytes.
 5. Internal locale codes are not BCP 47 and use some ISO 639-2 bibliographic codes; `.ts` `language` attributes are

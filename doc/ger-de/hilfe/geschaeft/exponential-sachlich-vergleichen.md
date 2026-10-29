@@ -143,8 +143,8 @@ ausgefüllt; die anderen Spalten überlassen Sie dem Käufer.
 | Published releases immutable      | Yes                                                 |          |          | SECURITY.md  |
 | Security reporting                | Private, first answer within one business day       |          |          | SECURITY.md  |
 | Multisite from one installation   | Yes (siteaccesses)                                  |          |          | README.md    |
-| Content languages                 | 268 locale files; at most 62 per installation       |          |          | doc/eng-us/languages.md |
-| Administration translations       | 32, ten complete                                    |          |          | doc/eng-us/languages.md |
+| Content languages                 | 359 locale files; at most 62 per installation       |          |          | doc/eng-us/languages.md |
+| Administration translations       | all complete (totals: languages page)               |          |          | doc/eng-us/languages.md |
 | Visual page builder               | Exponential Layouts                                 |          |          | layouts-editor |
 | Audit trail                       | Tamper-evident, on by default                       |          |          | audit-trail  |
 | Writing assistant                 | Drafts only, region per provider                    |          |          | expai        |
@@ -163,7 +163,7 @@ Sprechen Sie diese Punkte selbst an. Jeder ist dokumentiert.
 | Shared Hosting, das lang laufende Prozesse verbietet | Velocity kann dort meist nicht laufen; Apache oder LiteSpeed mit `.htaccess` liefern die Site trotzdem aus | `README.md`, „When a traditional server is still the right answer“ |
 | Strikte Trennung mehrerer Kunden auf einem Server | Betreiben Sie je Site eine eigene Velocity-Instanz unter einem eigenen Systembenutzer | ebenda |
 | Mehr als 62 Inhaltssprachen in einer Installation | Die Grenze liegt bei 62 (30 unter 32-Bit-PHP) | [Sprachen in Exponential](../../sprachen.md#11-die-grenze-von-62-inhaltssprachen) |
-| Eine vollständig übersetzte Administration in einer Sprache, die heute nicht vollständig ist | Nur zehn Übersetzungen der Administration sind vollständig; die übrigen sind teilweise vorhanden oder gelten nur für Inhalte | [Unterstützungsstufen](../../sprachen.md#2-unterstützungsstufen) |
+| Eine vollständig übersetzte Administration in einer Sprache, die heute nicht vollständig ist | Jede mitgelieferte Übersetzung der Administration ist vollständig; eine Sprache ohne eigene zeigt Englisch (die aktuellen Gesamtzahlen stehen am Anfang der Seite Sprachen) | [Unterstützungsstufen](../../sprachen.md#2-unterstützungsstufen) |
 | Die Anforderung, MariaDB oder Oracle in der CI zu testen | Beide werden unterstützt, keine von beiden läuft in der CI des Projekts | [Testabdeckung](../datenbankunterstuetzung.md#testabdeckung-ci) |
 | Die Forderung nach einer veröffentlichten Support-Richtlinie oder einem SLA-Dokument | Das Projekt veröffentlicht keine einzelne Support-Richtlinie; die Zusagen stehen an den Stellen, die auf der Seite der Foundation aufgeführt sind; Vertragsbedingungen kommen von einem Dienstleister | [Die Support-Zusage](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung) |
 
@@ -190,7 +190,7 @@ Manche Käufer kennen die Geschichte. Wählen Sie den Ton der Seiten zur Geschic
 | „Wir sind besser als X.“ | „Das leistet Exponential, und so können Sie es prüfen.“ | Keine Quelle kann eine Rangfolge belegen. |
 | „X bindet Sie an sich.“ | „Mit Exponential behalten Sie den Code unter der GPL und Ihre Inhalte in einer Standarddatenbank.“ | Beschreiben Sie Exponential, nicht andere. |
 | „Es ist das schnellste CMS.“ | „Die README dokumentiert 0,36 ms je gecachter Seite auf einer Maschine mit 12 Kernen, reproduzierbar mit mitgelieferten Skripten; messen wir das auf Ihrer Hardware.“ | Zahlen brauchen ihren Kontext ([Benchmarks](../../anleitungen/benchmarking.md)). |
-| „Es unterstützt jede Sprache.“ | „268 Locale-Dateien für Inhalte; Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../../sprachen.md)).“ | Genau und belegt. |
+| „Es unterstützt jede Sprache.“ | „359 Locale-Dateien für Inhalte; Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../../sprachen.md)).“ | Genau und belegt. |
 | „Es ist das neue eZ Publish.“ | „Exponential führt die Codebasis von eZ Publish fort, einem Produkt, das sein Hersteller nach fast 18 Jahren eingestellt hat.“ | Das Produkt heißt Exponential. |
 | „Wir garantieren Support.“ | „Sicherheitsmeldungen erhalten innerhalb eines Werktags eine erste Antwort (SECURITY.md); die Bedingungen für Dienstleistungen legt Ihr Anbieter fest.“ | Nur was schriftlich festgehalten ist. |
 | „Hunderte Unternehmen setzen es ein.“ | „Die Quellen zählen keine Anwender. Die Historie zeigt über die Jahre Hunderte von Mitwirkenden.“ | [Mitwirkende](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts) |

@@ -101,7 +101,7 @@ can confuse. Decide product by product category if necessary.
 |---|---|---|
 | Content languages per installation | at most 62 on 64-bit PHP, 30 on 32-bit PHP | [Languages, section 11](../../../languages.md#11-the-limit-of-62-content-languages) |
 | A language added and never used | still takes its place until removed | same |
-| Administration in the editor's own language | complete for 19 translations; partial or English for the rest | [Languages, section 2](../../../languages.md#2-support-levels) |
+| Administration in the editor's own language | complete in every shipped translation; English for a language without one | [Languages, section 2](../../../languages.md#2-support-levels) |
 | Changing the default content language of a site with content | can hide objects that do not exist in the new language | [10.14 Multi-language sites](../../../install/10-after-installing.md#1014-multi-language-sites) |
 
 ## The decision table

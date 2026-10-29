@@ -36,8 +36,8 @@ beantworten.
 
 | Sagen Sie | Quelle |
 |---|---|
-| „268 Locale-Dateien können als Inhaltssprachen genutzt werden.“ | [Sprachen in Exponential](../../sprachen.md), [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
-| „40 davon werden von rechts nach links geschrieben.“ | [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
+| „359 Locale-Dateien können als Inhaltssprachen genutzt werden.“ | [Sprachen in Exponential](../../sprachen.md), [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
+| „43 davon werden von rechts nach links geschrieben.“ | [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
 | „Es gibt Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../../sprachen.md)).“ | ebenda |
 | „Jede Übersetzung eines Inhalts wird einzeln veröffentlicht, und Kennzeichen zeigen, was es gibt und was fehlt.“ | [Sprachen](../sprachen.md) |
 | „Jede redaktionelle Person wählt die Sprache ihrer eigenen Administration.“ | [Sprachen](../sprachen.md) |
@@ -59,7 +59,7 @@ Fassung mit Zeitangaben: [Demo-Skripte, Teil 3: Sprachen und von rechts nach lin
 
 ## Sagen Sie nicht
 
-- „Exponential gibt es in 268 Sprachen.“ Sagen Sie: „268 Locale-Dateien als Inhaltssprachen; Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../../sprachen.md)).“
+- „Exponential gibt es in 359 Sprachen.“ Sagen Sie: „359 Locale-Dateien als Inhaltssprachen; Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../../sprachen.md)).“
 - „Alle Übersetzungen sind perfekt.“ Mehrere vollständige Übersetzungen wurden maschinell unterstützt erstellt; ein
   Gegenlesen ist „der schnellste Gewinn“ ([Sprachen in Exponential, Abschnitt 8](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)).
 - „Sie können so viele Inhaltssprachen nutzen, wie Sie möchten.“ Es gibt eine dokumentierte Grenze von 62 Inhaltssprachen

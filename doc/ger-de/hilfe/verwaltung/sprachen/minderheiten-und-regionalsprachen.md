@@ -27,7 +27,7 @@ Kapazität für Übersetzungen.
 
 ## Ist die Locale vorhanden?
 
-`share/locale/` liefert 268 Locale-Dateien mit, darunter viele Regional- und Minderheitensprachen, zum Beispiel
+`share/locale/` liefert 359 Locale-Dateien mit, darunter viele Regional- und Minderheitensprachen, zum Beispiel
 Walisisch (`cym-GB`), Baskisch (`eus-ES`), Galicisch (`glg-ES`), Irisch (`gle-IE`), Schottisch-Gälisch (`gla-GB`),
 Bretonisch (`bre-FR`), Okzitanisch (`oci-FR`), Westfriesisch (`fry-NL`), Nordsamisch (`sme-NO`), Rätoromanisch
 (`roh-CH`), Luxemburgisch (`ltz-LU`), Maori (`mri-NZ`), Hawaiisch (`haw-US`) und Grönländisch (`kal-GL`). Die

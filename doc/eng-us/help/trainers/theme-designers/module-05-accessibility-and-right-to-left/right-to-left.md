@@ -42,7 +42,7 @@ After this lesson, learners can:
 Sources: [Right-to-left languages in the administration](../../../../features/6.0/right-to-left.md) and
 [Right-to-left sites](../../../creators/website-creators/right-to-left-sites.md).
 
-1. **The source** (4 minutes). `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl`; 28 locale files
+1. **The source** (4 minutes). `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl`; 43 locale files
    carry it. In templates: `$site.text_direction` for the interface locale of the siteaccess, and
    `$code|locale().is_right_to_left` for any locale code.
 2. **The page** (3 minutes). The administration pagelayouts print:

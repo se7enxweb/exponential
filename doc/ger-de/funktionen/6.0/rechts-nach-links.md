@@ -17,7 +17,7 @@ weiter unten).
 
 | Baustein | Was er tut |
 |---|---|
-| `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl` | Die einzige Quelle. Eine Locale-Datei ohne den Schlüssel oder mit einem anderen Wert gilt als links nach rechts. 40 Locale-Dateien tragen ihn. |
+| `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl` | Die einzige Quelle. Eine Locale-Datei ohne den Schlüssel oder mit einem anderen Wert gilt als links nach rechts. 43 Locale-Dateien tragen ihn. |
 | `eZLocale::textDirection()` | `'rtl'` oder `'ltr'` für ein Locale-Objekt. |
 | `eZLocale::isRightToLeft()` | `true` für eine Locale mit Schreibrichtung von rechts nach links. |
 | `eZLocale::textDirectionOf( 'heb-IL' )` | Statisch: die Richtung eines Locale-Codes, `'ltr'` für einen unbekannten Code. |

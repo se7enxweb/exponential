@@ -38,7 +38,7 @@ Counted again on 19 October 2026 with the command in the third column; the first
 | Public repositories of the GitHub account se7enxweb | 1,025, of which 95 are not forks | `gh repo list se7enxweb --limit 1100` |
 | Changes in the history since December 2023 | 6,556 in 53 repositories, 1,037 by the se7enxweb team (18 October 2026) | [Ecosystem](../../history/ecosystem.md) |
 | Commit authors before 2016 | 194 different names | `git log --until=2016-01-01 --format=%an` |
-| Locale files (content languages and countries) | 268, of which 40 are right to left | [Languages](../../languages.md) |
+| Locale files (content languages and countries) | 359, of which 43 are right to left | [Languages](../../languages.md) |
 | Administration translations | 71, all of them complete (26 October 2026) | [Languages](../../languages.md) |
 | Supported databases | 6 | README, "Requirements" |
 | Supported PHP versions | 8.0 to 8.5 | README; [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |

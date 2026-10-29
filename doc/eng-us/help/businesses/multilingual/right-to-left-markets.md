@@ -28,7 +28,7 @@ to build, and what a native reader must check before launch. The technical guide
 
 ## Which languages
 
-[Languages in Exponential, section 9](../../../languages.md#9-right-to-left-languages) lists 40 locale files written
+[Languages in Exponential, section 9](../../../languages.md#9-right-to-left-languages) lists 43 locale files written
 right to left. Among them:
 
 | Language | Locales | Script |
@@ -45,9 +45,8 @@ The direction of a locale comes from one line in its locale file, `[LanguageSett
 without it is left to right. Kurdish (Kurmanji) and Uzbek in Latin script are left to right.
 
 > **Note**
-> The site builders' page and the administration feature page say 28 locale files carry the setting; the reference
-> page [Languages in Exponential](../../../languages.md#9-right-to-left-languages), which counts the locale files of
-> 18 October 2026, lists 40 (40 files in `share/locale/` carry the line). Quote the reference page.
+> The count grows when locales are added. Quote the reference page
+> [Languages in Exponential](../../../languages.md#9-right-to-left-languages) and give the date of its figures.
 
 ## What works by itself
 

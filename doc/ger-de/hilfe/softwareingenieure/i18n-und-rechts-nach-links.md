@@ -67,7 +67,7 @@ Rückfälle entscheiden, was ein Besucher sieht, wenn eine Übersetzung fehlt
 
 ## Rechts-nach-links
 
-Die Schreibrichtung hat eine Quelle: `share/locale/<locale>.ini [LanguageSettings] TextDirection=rtl` (40
+Die Schreibrichtung hat eine Quelle: `share/locale/<locale>.ini [LanguageSettings] TextDirection=rtl` (43
 Gebietsschema-Dateien tragen sie). `eZLocale::textDirection()`, `isRightToLeft()` und das statische
 `textDirectionOf( 'heb-IL' )` lesen sie. Ist die Oberflächensprache rechts nach links, setzt die Administration
 `dir="rtl"` an `<html>` und spiegelt ihr Layout; Inhalte in einer Inhaltssprache mit Schreibrichtung rechts nach links

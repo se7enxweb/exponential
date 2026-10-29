@@ -45,7 +45,7 @@ Nach dieser Lektion können die Teilnehmenden:
 Quellen: [Rechts-nach-links-Sprachen in der Administration](../../../../funktionen/6.0/rechts-nach-links.md) und
 [Rechts-nach-links-Websites](../../../ersteller/website-ersteller/websites-von-rechts-nach-links.md).
 
-1. **Die Quelle** (4 Minuten). `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl`; 28 Locale-Dateien
+1. **Die Quelle** (4 Minuten). `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl`; 43 Locale-Dateien
    tragen diese Einstellung. In Templates: `$site.text_direction` für die Oberflächen-Locale des Siteaccess und
    `$code|locale().is_right_to_left` für einen beliebigen Locale-Code.
 2. **Die Seite** (3 Minuten). Die Pagelayouts der Administration geben Folgendes aus:

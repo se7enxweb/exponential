@@ -32,7 +32,7 @@ address and design settings ([Content languages](../../../guides/content-languag
 
 ## Which languages are possible?
 
-Any language with a locale. The project counts 268 locale files, 40 of them right to left
+Any language with a locale. The project counts 359 locale files, 43 of them right to left
 ([Who is the Exponential Foundation?](../../who-is-the-exponential-foundation.md#languages-and-accessibility)). More than
 30 languages on one site need a 64-bit PHP, because the languages of an object are kept as bits of one integer
 ([2. Requirements](../../../install/02-requirements.md#versions)).

@@ -53,7 +53,7 @@ These rules protect the customer, your company and the project. They are the sam
 1. **Every claim has a source.** If you say it, you can point to the help page, the README or a changelog that says
    it. If no source says it, you do not say it, or you say "the sources do not state that, we will find out".
 2. **No invented numbers.** No prices, customer counts, market shares, response times or performance figures that
-   are not written in a source. Where a source gives a number (for example 268 locale files in
+   are not written in a source. Where a source gives a number (for example 359 locale files in
    [Languages in Exponential](../../languages.md)), quote it with its date and source.
 3. **No invented customers or quotes.** A customer story needs the customer's written permission
    ([Writing case studies and content marketing](case-studies-and-content-marketing.md)).
@@ -185,7 +185,7 @@ License      GPL v2 or later, free of charge; help under GNU FDL 1.3      [READM
 Databases    SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL [Database support]
 OS           Almost any that runs PHP 8.0 or later                         [Operating system support]
 PHP          8.0 to 8.5                                                    [README]
-Languages    268 locale files, 40 right to left; 32 admin translations     [Languages in Exponential]
+Languages    359 locale files, 43 right to left; all translations complete [Languages in Exponential]
 Highlights   Multisite, layouts editor, Exponential Intelligence (drafts only),
              audit trail, Content Security Policy, Velocity server, help system [README, 6.0.15 changelog]
 Security     Private reporting per SECURITY.md; first answer within one

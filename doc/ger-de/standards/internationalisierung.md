@@ -50,7 +50,7 @@ ist seine byteorientierte Kodierung und die Kodierung des Webs.
 - Der Zeichensatz der Datenbankverbindung ist `settings/site.ini [DatabaseSettings] Charset=utf-8` (der Kommentar
   darüber besagt, dass ein leerer Wert auf `i18n.ini` zurückfällt).
 - Übersetzungskataloge sind XML, deklariert als `encoding="utf-8"`.
-- 233 der 268 Locale-Dateien in `share/locale/` deklarieren `[Charset] Preferred=utf-8`. Die übrigen 35 sind ältere
+- 339 der 359 Locale-Dateien in `share/locale/` deklarieren `[Charset] Preferred=utf-8`. Die übrigen 20 sind ältere
   Dateien, die noch eine veraltete Codepage nennen (zum Beispiel `iso-8859-1`, `iso-8859-15`, `koi8-u`, `cp1251`). Der
   interne Zeichensatz der Site kommt weiterhin aus `i18n.ini`; die Namen der Codepages bleiben aus
   Kompatibilitätsgründen erhalten.
@@ -208,7 +208,7 @@ Anzeigereihenfolge gemischten Texts von links nach rechts und von rechts nach li
 **Wie Exponential den Standard erfüllt.** Browser führen den Algorithmus aus; Exponential gibt ihnen korrekte
 Richtungsinformationen:
 
-- Die Richtung kommt ausschließlich aus `share/locale/<code>.ini [LanguageSettings] TextDirection=rtl`. 40
+- Die Richtung kommt ausschließlich aus `share/locale/<code>.ini [LanguageSettings] TextDirection=rtl`. 43
   Locale-Dateien tragen sie (Arabisch, Hebräisch, Jiddisch, Persisch, Urdu und weitere), für diese Seite in
   `share/locale/` gezählt.
 - `eZLocale::textDirection()`, `eZLocale::isRightToLeft()` und `eZLocale::textDirectionOf()` stellen sie bereit;
@@ -232,10 +232,6 @@ Richtungsinformationen:
 Stylesheets von Extensions verwenden noch physisches links und rechts. Site-Designs (Frontend-Themes) sind von dieser
 Arbeit nicht abgedeckt.
 
-> **Hinweis** [Rechts-nach-links-Sprachen](../funktionen/6.0/rechts-nach-links.md) sagt, dass 28 Locale-Dateien
-> `TextDirection=rtl` tragen, [Sprachen in Exponential](../sprachen.md) sagt 40. Die für diese Seite in
-> `share/locale/` durchgeführte Zählung ergibt 40.
-
 ## Übersetzungskataloge: Qt Linguist `.ts`
 
 **Was es ist.** Das Format `.ts` ist das XML-Quellformat für Übersetzungen von Qt Linguist (The Qt Company), hier in
@@ -246,7 +242,7 @@ Version 2.0 (`<TS version="2.0">`).
 - Die Oberflächentexte von Templates (`'text'|i18n( 'context' )`) und PHP (`ezpI18n::tr()`) werden in
   `share/translations/<code>/translation.ts` und in der `translations/<code>/translation.ts` einer Extension
   nachgeschlagen.
-- In `share/translations/` existieren 33 Verzeichnisse (32 Sprachen plus `untranslated`, die Vorlage für neue).
+- In `share/translations/` existieren 156 Verzeichnisse (155 Sprachen plus `untranslated`, die Vorlage für neue).
 - `eZTSTranslator` (`lib/ezi18n/classes/eztstranslator.php`) validiert jede Datei gegen `schemas/translation/ts.rng`
   und cacht sie als PHP (`eztranslationcache.php`).
 - Sprachrückfälle: `settings/i18n.ini [TranslationSettings]` (`FallbackLanguages[]`,
@@ -279,7 +275,7 @@ empfiehlt eine neutrale Formulierung ("label: %count") statt eines Plurals.
 
 1. Eine Standardverbindung zu MySQL oder MariaDB verwendet 3-Byte-`utf8`; vollständiges Unicode braucht ein vom
    Administrator konfiguriertes `utf8mb4`.
-2. 35 Locale-Dateien nennen in `[Charset] Preferred` noch eine veraltete Codepage.
+2. 20 Locale-Dateien nennen in `[Charset] Preferred` noch eine veraltete Codepage.
 3. Keine Pluralformen im Übersetzungssystem.
 4. ICU ist optional; ohne `intl` sortieren die Länder- und Sprachlisten nach Bytes.
 5. Interne Locale-Codes sind nicht BCP 47 und verwenden einige bibliografische Codes nach ISO 639-2; die Attribute

@@ -26,7 +26,7 @@ wenn die Schreibrichtung nicht isoliert ist. Die folgenden Fakten stammen aus
 
 ## Woher die Schreibrichtung kommt
 
-Die einzige Quelle ist die Locale-Datei: `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl`; 28
+Die einzige Quelle ist die Locale-Datei: `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl`; 43
 Locale-Dateien enthalten diesen Eintrag. Templates können `$site.text_direction` abfragen oder das
 `is_right_to_left` eines Locale.
 

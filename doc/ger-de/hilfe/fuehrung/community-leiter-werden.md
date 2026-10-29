@@ -106,7 +106,7 @@ wertvoll.
   ([Das Hilfesystem](../../funktionen/6.0/hilfesystem.md)).
 - Eine Änderung an der Dokumentation wird unter der GNU Free Documentation License 1.3 oder einer späteren Version
   angenommen, damit sie für alle frei bleibt ([Freie Dokumentation](../freie-dokumentation.md#anderen-helfen)).
-- Übersetzungen zählen: Die Administration hat viele Übersetzungen (die aktuellen Gesamtzahlen stehen am Anfang der Seite Sprachen), und Inhalte können in 268
+- Übersetzungen zählen: Die Administration hat viele Übersetzungen (die aktuellen Gesamtzahlen stehen am Anfang der Seite Sprachen), und Inhalte können in 359
   Locales verfasst werden ([Sprachen in Exponential](../../sprachen.md)). Eine Übersetzung zu vervollständigen ist ein
   Beitrag, den jeder zweisprachige Redakteur leisten kann.
 - Gute erste Dokumentationsaufgaben: eine Seite, die Sie verwirrt hat, ein fehlendes Beispiel, eine Schritt-für-Schritt-

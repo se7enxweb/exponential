@@ -38,7 +38,7 @@ unter [Wer ist 7x?, 7x in Zahlen](../wer-ist-7x.md#7x-in-zahlen).
 | Öffentliche Repositorys des GitHub-Kontos se7enxweb | 1.025, davon 95 keine Forks | `gh repo list se7enxweb --limit 1100` |
 | Änderungen in der Geschichte seit Dezember 2023 | 6.556 in 53 Repositorys, 1.037 davon vom Team se7enxweb (18. Oktober 2026) | [Ökosystem](../../geschichte/oekosystem.md) |
 | Commit-Autoren vor 2016 | 194 verschiedene Namen | `git log --until=2016-01-01 --format=%an` |
-| Locale-Dateien (Inhaltssprachen und Länder) | 268, davon 40 von rechts nach links | [Sprachen](../../sprachen.md) |
+| Locale-Dateien (Inhaltssprachen und Länder) | 359, davon 43 von rechts nach links | [Sprachen](../../sprachen.md) |
 | Übersetzungen der Administration | 71, alle vollständig (26. Oktober 2026) | [Sprachen](../../sprachen.md) |
 | Unterstützte Datenbanken | 6 | README, „Requirements“ |
 | Unterstützte PHP-Versionen | 8.0 bis 8.5 | README; [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |

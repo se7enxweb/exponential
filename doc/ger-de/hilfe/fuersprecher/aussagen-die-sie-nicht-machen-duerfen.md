@@ -39,7 +39,7 @@ gibt es in der Dokumentation keine Quelle; die rechte Spalte sagt, was Sie statt
 | „Marktanteil“, „am beliebtesten“, „Nummer eins“ | Keine Quelle | Lassen Sie es weg |
 | Jede Zahl, die Sie im Kopf haben, aber nicht finden | Zahlen ändern sich mit Releases | Schlagen Sie sie unter [Wo die Fakten stehen](wo-die-fakten-stehen.md) nach |
 
-Die Zahlen, die **dokumentiert** sind (etwa 268 Locale-Dateien, 15 Releases 6.0.x, 66 benötigte Pakete), haben ein
+Die Zahlen, die **dokumentiert** sind (etwa 359 Locale-Dateien, 15 Releases 6.0.x, 66 benötigte Pakete), haben ein
 Datum; Zahlen ändern sich, also zitieren Sie die Seite, nicht Ihr Gedächtnis ([Wer ist 7x?, 7x in Zahlen](../wer-ist-7x.md#7x-in-zahlen)).
 
 ## Sicherheit und Compliance

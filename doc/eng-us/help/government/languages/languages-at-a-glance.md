@@ -37,9 +37,9 @@ other pages of this section explain each topic for public bodies.
 
 ## What the numbers are
 
-- **Locales**: 268 locale files ship in `share/locale/`; each one can become a content language
+- **Locales**: 359 locale files ship in `share/locale/`; each one can become a content language
   ([Languages in Exponential](../../../languages.md)).
-- **Right to left**: 40 of them carry `TextDirection=rtl` (counted in `share/locale/`; the list is in section 9 of
+- **Right to left**: 43 of them carry `TextDirection=rtl` (counted in `share/locale/`; the list is in section 9 of
   [Languages in Exponential](../../../languages.md#9-right-to-left-languages)).
 - **Content languages per installation**: at most 62 on 64-bit PHP (see "The 62 language limit").
 - **Administration translations**: the directories of `share/translations/`, with very different completeness; the
