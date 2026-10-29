@@ -293,6 +293,7 @@ class expRolePolicySentence
             'user/hygiene'               => 'check user accounts, and disable, enable and unlock them',
             'user/deactivate'            => 'deactivate user accounts and move them to the group of deactivated users, and move them back',
             'user/sessions'              => 'see where other users are signed in, and sign them out',
+            'user/audit'                 => 'read and export the user audit log of every account',
             'setup/administrate'         => 'use the setup pages',
             'setup/managecache'          => 'clear caches',
             'setup/system_info'          => 'view the system information',

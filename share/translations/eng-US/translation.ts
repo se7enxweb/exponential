@@ -15618,6 +15618,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Accounts nobody uses or that need a look; disable, unlock or export them.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>User audit log</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Who changed, signed in or was refused, per account; filter and export.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Open the page</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from to %to of %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>A login or a user id: the account the event was about or the user who acted.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Account</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Action</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>After</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Any result</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Before</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>By</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Clear</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Done</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Events are kept for %days days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Events are kept until they are removed by hand.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Events</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Every action</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Every event of this account</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Export the list as CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Failed</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>From</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Narrow the list</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>No event matches.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per page</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Refused</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Result</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>To</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>User audit log</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>User</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>When</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Where</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>group</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>system</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>unknown</translation>
     </message>
 </context>
 </TS>

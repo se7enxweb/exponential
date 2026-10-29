@@ -1456,6 +1456,38 @@ CREATE TABLE expuser_session (
 
 
 
+CREATE TABLE expuser_audit (
+  actor_id int(11) NOT NULL default '0',
+  actor_login varchar(150) NOT NULL default '',
+  client_ip varchar(64) NOT NULL default '',
+  created int(11) NOT NULL default '0',
+  event_id varchar(26) NOT NULL default '',
+  event_name varchar(128) NOT NULL default '',
+  host varchar(255) NOT NULL default '',
+  id int(11) NOT NULL auto_increment,
+  module_view varchar(128) NOT NULL default '',
+  reason varchar(64) NOT NULL default '',
+  request_id varchar(40) NOT NULL default '',
+  result varchar(16) NOT NULL default '',
+  siteaccess varchar(64) NOT NULL default '',
+  target_id int(11) NOT NULL default '0',
+  target_login varchar(150) NOT NULL default '',
+  target_type varchar(16) NOT NULL default '',
+  time_ms bigint(20) NOT NULL default '0',
+  value_after longtext,
+  value_before longtext,
+  PRIMARY KEY  (id),
+  UNIQUE KEY expuser_audit_event (event_id),
+  KEY expuser_audit_target (target_id,created),
+  KEY expuser_audit_actor (actor_id,created),
+  KEY expuser_audit_name (event_name,created),
+  KEY expuser_audit_created (created)
+) ENGINE=InnoDB;
+
+
+
+
+
 CREATE TABLE exphelp_help_id (
   help_id varchar(80) NOT NULL default '',
   object_id int(11) NOT NULL default '0',

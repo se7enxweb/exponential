@@ -7856,6 +7856,194 @@ $schema = array (
       ),
     ),
   ),
+  'expuser_audit' =>
+  array (
+    'name' => 'expuser_audit',
+    'fields' =>
+    array (
+      'actor_id' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'actor_login' =>
+      array (
+        'length' => 150,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'client_ip' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'created' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'event_id' =>
+      array (
+        'length' => 26,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'event_name' =>
+      array (
+        'length' => 128,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'host' =>
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'id' =>
+      array (
+        'type' => 'auto_increment',
+        'default' => false,
+      ),
+      'module_view' =>
+      array (
+        'length' => 128,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'reason' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'request_id' =>
+      array (
+        'length' => 40,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'result' =>
+      array (
+        'length' => 16,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'siteaccess' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'target_id' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'target_login' =>
+      array (
+        'length' => 150,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'target_type' =>
+      array (
+        'length' => 16,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'time_ms' =>
+      array (
+        'length' => 20,
+        'type' => 'bigint',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'value_after' =>
+      array (
+        'type' => 'longtext',
+        'default' => NULL,
+      ),
+      'value_before' =>
+      array (
+        'type' => 'longtext',
+        'default' => NULL,
+      ),
+    ),
+    'indexes' =>
+    array (
+      'PRIMARY' =>
+      array (
+        'type' => 'primary',
+        'fields' =>
+        array (
+          0 => 'id',
+        ),
+      ),
+      'expuser_audit_event' =>
+      array (
+        'type' => 'unique',
+        'fields' =>
+        array (
+          0 => 'event_id',
+        ),
+      ),
+      'expuser_audit_target' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'target_id',
+          1 => 'created',
+        ),
+      ),
+      'expuser_audit_actor' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'actor_id',
+          1 => 'created',
+        ),
+      ),
+      'expuser_audit_name' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'event_name',
+          1 => 'created',
+        ),
+      ),
+      'expuser_audit_created' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'created',
+        ),
+      ),
+    ),
+  ),
   'exphelp_help_id' =>
   array (
     'name' => 'exphelp_help_id',

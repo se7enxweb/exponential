@@ -836,6 +836,15 @@ CREATE SEQUENCE expuser_session_id_seq
 
 
 
+CREATE SEQUENCE expuser_audit_id_seq
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+
+
 CREATE SEQUENCE exphelp_feedback_id_seq
     START 1
     INCREMENT 1
@@ -2664,6 +2673,30 @@ CREATE TABLE expuser_session (
 
 
 
+CREATE TABLE expuser_audit (
+    actor_id integer DEFAULT 0 NOT NULL,
+    actor_login character varying(150) DEFAULT ''::character varying NOT NULL,
+    client_ip character varying(64) DEFAULT ''::character varying NOT NULL,
+    created integer DEFAULT 0 NOT NULL,
+    event_id character varying(26) DEFAULT ''::character varying NOT NULL,
+    event_name character varying(128) DEFAULT ''::character varying NOT NULL,
+    host character varying(255) DEFAULT ''::character varying NOT NULL,
+    id integer DEFAULT nextval('expuser_audit_id_seq'::text) NOT NULL,
+    module_view character varying(128) DEFAULT ''::character varying NOT NULL,
+    reason character varying(64) DEFAULT ''::character varying NOT NULL,
+    request_id character varying(40) DEFAULT ''::character varying NOT NULL,
+    result character varying(16) DEFAULT ''::character varying NOT NULL,
+    siteaccess character varying(64) DEFAULT ''::character varying NOT NULL,
+    target_id integer DEFAULT 0 NOT NULL,
+    target_login character varying(150) DEFAULT ''::character varying NOT NULL,
+    target_type character varying(16) DEFAULT ''::character varying NOT NULL,
+    time_ms bigint DEFAULT 0 NOT NULL,
+    value_after text,
+    value_before text
+);
+
+
+
 CREATE TABLE exphelp_help_id (
     help_id character varying(80) DEFAULT ''::character varying NOT NULL,
     object_id integer DEFAULT 0 NOT NULL,
@@ -4182,6 +4215,26 @@ CREATE INDEX expuser_session_active ON expuser_session USING btree (ended, last_
 
 
 
+CREATE UNIQUE INDEX expuser_audit_event ON expuser_audit USING btree (event_id);
+
+
+
+CREATE INDEX expuser_audit_target ON expuser_audit USING btree (target_id, created);
+
+
+
+CREATE INDEX expuser_audit_actor ON expuser_audit USING btree (actor_id, created);
+
+
+
+CREATE INDEX expuser_audit_name ON expuser_audit USING btree (event_name, created);
+
+
+
+CREATE INDEX expuser_audit_created ON expuser_audit USING btree (created);
+
+
+
 CREATE INDEX exphelp_help_id_object ON exphelp_help_id USING btree (object_id);
 
 
@@ -5285,6 +5338,11 @@ ALTER TABLE ONLY exp_data_sync_link
 
 ALTER TABLE ONLY expuser_session
     ADD CONSTRAINT expuser_session_pkey PRIMARY KEY (id);
+
+
+
+ALTER TABLE ONLY expuser_audit
+    ADD CONSTRAINT expuser_audit_pkey PRIMARY KEY (id);
 
 
 

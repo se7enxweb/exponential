@@ -23,6 +23,7 @@ SELECT setval('expbookmark_folder_id_seq', max(id)) , 'expbookmark_folder' as ta
 SELECT setval('expapikey_id_seq', max(id)) , 'expapikey' as tablename FROM expapikey;
 SELECT setval('exppasskey_id_seq', max(id)) , 'exppasskey' as tablename FROM exppasskey;
 SELECT setval('expuser_session_id_seq', max(id)) , 'expuser_session' as tablename FROM expuser_session;
+SELECT setval('expuser_audit_id_seq', max(id)) , 'expuser_audit' as tablename FROM expuser_audit;
 SELECT setval('exphelp_feedback_id_seq', max(id)) , 'exphelp_feedback' as tablename FROM exphelp_feedback;
 SELECT setval('ezcontentbrowserecent_id_seq', max(id)) , 'ezcontentbrowserecent' as tablename FROM ezcontentbrowserecent;
 SELECT setval('ezcontentclass_id_seq', max(id)) , 'ezcontentclass' as tablename FROM ezcontentclass;

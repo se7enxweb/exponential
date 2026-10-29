@@ -51,6 +51,7 @@
     'roles_and_policies', 'Roles and policies'|i18n( 'design/admin/parts/user/menu' ),
     'unactivated',        'Unactivated users'|i18n( 'design/admin/parts/user/menu' ),
     'user_hygiene',       'Check user accounts'|i18n( 'design/admin/parts/user/menu' ),
+    'user_audit',         'User audit log'|i18n( 'design/admin/parts/user/menu' ),
 )}
 
 {* Left menu width control. *}
