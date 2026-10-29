@@ -22825,7 +22825,7 @@ ebea9ff791c432014b1a03333c67a8ed  kernel/classes/debugbar/expdebugbarsummary.php
 d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
 e024c259b0132ce6c550ebed48974a8b  kernel/classes/expanonymouspublicpolicies.php
 0dc063d43d781562aceed1ea6df05f57  kernel/classes/expbenchmark.php
-0f21cab2bd8703ec564d77e3042723f2  kernel/classes/expbenchmarkhttp.php
+9c45970642709c8be60e509806186d4d  kernel/classes/expbenchmarkhttp.php
 a2ea960d7ab9f69ae0ed376317e58ebd  kernel/classes/expbenchmarkkernel.php
 0c75a7bca2a0dce8da13908f7a1ee322  kernel/classes/expbenchmarkmicro.php
 996ddac5e94625098229ed3846d288ad  kernel/classes/expbookmarkpage.php
@@ -23012,7 +23012,7 @@ f305bb4e3607dc4a202b51a847db9af1  kernel/classes/ezsection.php
 fdfd9b8f7952710061316b8c7d7c4d4c  kernel/classes/ezserializedobjectnamelist.php
 c4f1f1ebaf9e2c9a9d64c5d90b6adcc4  kernel/classes/ezshippingmanager.php
 fbbe18daf7682e22bd63b2771e0710e0  kernel/classes/ezshopaccounthandler.php
-27e7cbd7e1d30ecb73edf29cb5b58f63  kernel/classes/ezsiteaccess.php
+e098b8f448439ba6a835223a17739669  kernel/classes/ezsiteaccess.php
 ebcba5714a295eef01ac74d076b1f321  kernel/classes/ezsitedata.php
 8500b77a23ed8d674edc1ef590fe56c1  kernel/classes/ezsiteinstaller.php
 d5472916c1f931c0dec703689a6e41ef  kernel/classes/ezsslzone.php
@@ -23370,7 +23370,7 @@ f96a90033dfa982c5532d6e86250f804  kernel/common/ezpsiteaccessurloperator.php
 017b674d3da82376774e263117ee3ce8  kernel/common/ezsimpletagsoperator.php
 ad308266dddccbf004a6a749d3231b2a  kernel/common/eztemplateautoload.php
 9ceb4c9f830f1adb379fb9ebcd1aad62  kernel/common/eztemplatedesignresource.php
-9a8a326aaf46c622ad345e92a192ab41  kernel/common/eztemplatesstatisticsreporter.php
+5510fd5456848a1819289da2a055516e  kernel/common/eztemplatesstatisticsreporter.php
 b13aefe62a3e0030247f06a02f133148  kernel/common/eztocoperator.php
 c1b77acfcb295ee03ada1972e12a84d6  kernel/common/eztopmenuoperator.php
 84fe1fae52b9b8b9f029ff975ce1e09b  kernel/common/eztreemenuoperator.php
@@ -26542,7 +26542,7 @@ a986db475d0da16b07622a5bb52b3ef2  tests/tests/kernel/classes/eZPHP8RemovedFuncti
 040731f5b03020b7d1f2581049904dd8  tests/tests/kernel/classes/eZPendingActionsTest.php
 24550e9f3df4c845e43ccf1ecce61800  tests/tests/kernel/classes/eZPersistentObjectShortNameTest.php
 af2328d092a107a74a930bb217ed1d9e  tests/tests/kernel/classes/eZPhp85NoEffectCallsTest.php
-ac59faa36dd49a5a0b4751814db11085  tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php
+f391be0f79dedc7e73905c059d03526e  tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php
 c9c4cb539a1a23f7edb9104a225c117c  tests/tests/kernel/classes/eZPolicySaveTemporaryTest.php
 4ab6d50e1369ffc790e40c356d0cb3df  tests/tests/kernel/classes/eZPolicyTest.php
 74a56404c3de4b8aaa885226b2d8f530  tests/tests/kernel/classes/eZProductCollectionItemOptionTest.php
