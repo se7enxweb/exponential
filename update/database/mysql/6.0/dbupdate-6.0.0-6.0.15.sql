@@ -656,11 +656,23 @@ CREATE TABLE IF NOT EXISTS expuser_session (
 -- ezprest_authcode: PKCE (RFC 7636) for the OAuth authorization code flow.
 -- oauth/authorize stores the code_challenge and code_challenge_method of the request with the code; the token end
 -- point checks the code_verifier against them. Without these columns no authorization code can be issued.
--- Run once; a second run stops at "Duplicate column name", which means the columns are there.
+-- Added only when missing (both columns come together), so the lines can run again; a database without the
+-- REST tables gets nothing.
 --
-ALTER TABLE ezprest_authcode
-  ADD COLUMN code_challenge varchar(128) default NULL,
-  ADD COLUMN code_challenge_method varchar(10) default NULL;
+SET @exp_pkce_sql := IF(
+    ( SELECT COUNT(*) FROM information_schema.TABLES
+      WHERE TABLE_SCHEMA = DATABASE()
+        AND TABLE_NAME = 'ezprest_authcode' ) = 1
+    AND
+    ( SELECT COUNT(*) FROM information_schema.COLUMNS
+      WHERE TABLE_SCHEMA = DATABASE()
+        AND TABLE_NAME = 'ezprest_authcode'
+        AND COLUMN_NAME = 'code_challenge' ) = 0,
+    'ALTER TABLE ezprest_authcode ADD COLUMN code_challenge varchar(128) default NULL, ADD COLUMN code_challenge_method varchar(10) default NULL',
+    'DO 0' );
+PREPARE exp_pkce_stmt FROM @exp_pkce_sql;
+EXECUTE exp_pkce_stmt;
+DEALLOCATE PREPARE exp_pkce_stmt;
 
 -- Passkeys (doc/eng-us/guides/passkeys.md).
 --
@@ -690,6 +702,7 @@ CREATE TABLE IF NOT EXISTS exppasskey (
   PRIMARY KEY ( id ),
   UNIQUE KEY exppasskey_credential ( credential_hash ),
   KEY exppasskey_user ( user_id )
+) ENGINE=InnoDB;
 
 -- Help maintained as content (doc/eng-us/features/6.0/help-content.md): exphelp_help_id records every help_id that
 -- was Released and the object it belongs to, so the validator reports a help_id that was renamed or reused (clients
