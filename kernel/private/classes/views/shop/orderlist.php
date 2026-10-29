@@ -61,6 +61,13 @@ class Orderlist extends \Exponential\Runnable\ModuleView
 
         $http = \eZHTTPTool::instance();
 
+        // The siteaccess (store or site) the orders were placed in, as the view parameter (siteaccess)/<name>, '-'
+        // for the orders without one (expOrderSiteaccess). The filter form sends it as SiteaccessFilter (GET), which
+        // wins; the links of the page (paging, sorting, the form's action) carry it as the view parameter.
+        $siteaccessFilter = \expOrderSiteaccess::filterFromRequest(
+            $http->hasGetVariable( 'SiteaccessFilter' ) ? $http->getVariable( 'SiteaccessFilter' ) : null,
+            isset( $userParameters['siteaccess'] ) ? $userParameters['siteaccess'] : null );
+
         // The RemoveButton is not present in the orderlist, but is here for backwards
         // compatibility. Simply replace the ArchiveButton for the RemoveButton will
         // do the trick.
@@ -110,16 +117,18 @@ class Orderlist extends \Exponential\Runnable\ModuleView
             }
         }
 
-        $orderArray = \eZOrder::activeSorted( $offset, $limit, $sortField, $sortOrder );
-        $orderCount = \eZOrder::activeCount();
+        $orderArray = \eZOrder::activeSorted( $offset, $limit, $sortField, $sortOrder, \eZOrder::SHOW_NORMAL, $siteaccessFilter );
+        $orderCount = \eZOrder::activeCount( \eZOrder::SHOW_NORMAL, $siteaccessFilter );
 
         $tpl->setVariable( 'order_list', $orderArray );
         $tpl->setVariable( 'order_list_count', $orderCount );
         $tpl->setVariable( 'limit', $limit );
+        $tpl->setVariable( 'siteaccess_filter', \expOrderSiteaccess::templateFilter( $siteaccessFilter ) );
 
-        $viewParameters = array( 'offset' => $offset,
-                                 'sort'   => $sortField,
-                                 'dir'    => $sortOrder );
+        $viewParameters = array( 'offset'     => $offset,
+                                 'sort'       => $sortField,
+                                 'dir'        => $sortOrder,
+                                 'siteaccess' => \expOrderSiteaccess::parameterFromFilter( $siteaccessFilter ) );
         $tpl->setVariable( 'view_parameters', $viewParameters );
         // sort_field keeps the names it always had (created, user_name, order_nr) for
         // site designs that show their own sort selector.

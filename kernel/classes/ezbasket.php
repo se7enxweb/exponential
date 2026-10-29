@@ -464,7 +464,10 @@ class eZBasket extends eZPersistentObject
                                      'created' => $time,
                                      'status_id' => eZOrderStatus::PENDING,
                                      'status_modified' => $time,
-                                     'status_modifier_id' => $userID
+                                     'status_modifier_id' => $userID,
+                                     // the siteaccess (store or site) the order is placed in; on the command line
+                                     // the one the script runs in, through REST the one REST runs in
+                                     'siteaccess' => expOrderSiteaccess::current()
                                      ) );
 
         $db = eZDB::instance();

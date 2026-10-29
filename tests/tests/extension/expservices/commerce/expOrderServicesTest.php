@@ -83,7 +83,10 @@ class expOrderServicesTest extends expCommerceTestCase
         $this->assertCount( 1, $o['items'] );
         $this->assertSame( 2, $o['items'][0]['count'] );
         $this->assertEqualsWithDelta( 20.0, $o['total_inc_vat'], 0.01 );
-        $items = $this->ok( 'expOrderServices', 'items', array( $id ) );
+        // the siteaccess the order was placed in (Exponential 6.0.15), null when not known
+        $this->assertArrayHasKey( 'siteaccess', $o );
+        $this->assertTrue( $o['siteaccess'] === null || is_string( $o['siteaccess'] ) );
+        $items =$this->ok( 'expOrderServices', 'items', array( $id ) );
         $this->assertCount( 1, $items );
         $this->assertIsArray( $this->ok( 'expOrderServices', 'orderItems', array( $id ) ) );
         $this->assertIsArray( $this->ok( 'expOrderServices', 'history', array( $id ) ) );

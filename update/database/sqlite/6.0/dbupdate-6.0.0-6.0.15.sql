@@ -120,6 +120,18 @@ CREATE INDEX "idx_ezrss_export_opml_item_ezrss_export_opml_rsseid" ON "ezrss_exp
 ALTER TABLE ezrss_export ADD COLUMN podcast_head longtext;
 
 --
+-- ezorder.siteaccess: the siteaccess (store or site) an order was placed in
+-- (doc/eng-us/features/6.0/order-siteaccess.md). The shop records it when the
+-- basket becomes an order; the order view and the order lists show it and
+-- filter by it. Orders placed before keep '' and are shown as unknown: which
+-- siteaccess they came from is not recorded; bin/php/expbackfillordersiteaccess.php
+-- infers it from the content tree where it can (dry run unless --apply).
+-- Until the column is there the kernel stores and reads orders without it.
+-- Run once; a second run stops at "duplicate column name", which means the column is there.
+--
+ALTER TABLE ezorder ADD COLUMN siteaccess varchar(255) NOT NULL DEFAULT '';
+
+--
 -- The order statuses of a whole order lifecycle.
 --
 -- An installation shipped with three statuses, Pending, Processing and

@@ -231,6 +231,28 @@ class ezpSiteAccessMenu
     }
 
     /**
+     * Whether a siteaccess is an administration: one of AdminSiteAccessList[] when that list names any; else one
+     * whose design is an administration design (expClassicMenuSiteAccessInspector::isAdminDesign(): SiteDesign, and
+     * AdditionalSiteDesignList[] where $info has site_designs, the editor falls back to the admin designs), or that
+     * names a FrontSiteAccess (only an administration has a site of its own to link to). The menu groups by it; the
+     * order siteaccess backfill (expOrderSiteaccessBackfill) leaves the administrations out by it.
+     *
+     * @param string $name
+     * @param string[] $adminList AdminSiteAccessList[]
+     * @param array $info hash site_design, front_site_access and, optional, site_designs (see siteAccessInfo())
+     * @return bool
+     */
+    public static function isAdministration( $name, array $adminList, array $info )
+    {
+        if ( $adminList )
+            return in_array( (string)$name, $adminList, true );
+        $designs = isset( $info['site_designs'] ) && is_array( $info['site_designs'] )
+                 ? $info['site_designs'] : array( isset( $info['site_design'] ) ? (string)$info['site_design'] : '' );
+        return expClassicMenuSiteAccessInspector::isAdminDesign( array_map( 'strtolower', array_map( 'strval', $designs ) ) )
+            || ( isset( $info['front_site_access'] ) && (string)$info['front_site_access'] !== '' );
+    }
+
+    /**
      * One entry: null when the siteaccess has no address
      */
     private static function item( $name, $current, array $adminList, $info, $url )
@@ -240,9 +262,7 @@ class ezpSiteAccessMenu
             return null;
         $data = (array)call_user_func( $info, $name ) + array( 'site_name' => '', 'locale' => '', 'lang' => '',
                                                               'site_design' => '', 'front_site_access' => '' );
-        $admin = $adminList
-               ? in_array( $name, $adminList, true )
-               : ( stripos( (string)$data['site_design'], 'admin' ) === 0 || (string)$data['front_site_access'] !== '' );
+        $admin = self::isAdministration( $name, $adminList, $data );
         return array(
             'identifier' => $name,
             'name' => (string)$data['site_name'] !== '' ? (string)$data['site_name'] : $name,

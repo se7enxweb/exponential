@@ -1,5 +1,6 @@
 {let can_apply=false()}
-<form name="orderlist" method="post" action={concat( '/shop/orderlist', $view_parameters.offset|gt(0)|choose( '', concat( '/(offset)/', $view_parameters.offset ) ), '/(sort)/', $order_sort.field, '/(dir)/', $order_sort.direction )|ezurl}>
+{include uri='design:shop/siteaccessfilter.tpl' page_uri='/shop/orderlist' siteaccess_filter=$siteaccess_filter}
+<form name="orderlist" method="post" action={concat( '/shop/orderlist', $view_parameters.offset|gt(0)|choose( '', concat( '/(offset)/', $view_parameters.offset ) ), '/(sort)/', $order_sort.field, '/(dir)/', $order_sort.direction, $siteaccess_filter.suffix )|ezurl}>
 
 <div class="context-block">
 
@@ -24,12 +25,13 @@
 <table class="list" cellspacing="0">
 <tr>
     <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/shop/orderlist' )}" title="{'Invert selection.'|i18n( 'design/admin/shop/orderlist' )}" data-a4-toggle-checkboxes="OrderIDArray[]" data-a4-form="orderlist" /></th>
-    {include uri='design:parts/sortheader.tpl' key='id' label='ID'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='tight'}
-    {include uri='design:parts/sortheader.tpl' key='customer' label='Customer'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='wide'}
-    {include uri='design:parts/sortheader.tpl' key='total_ex_vat' label='Total (ex. VAT)'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='tight'}
-    {include uri='design:parts/sortheader.tpl' key='total_inc_vat' label='Total (inc. VAT)'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='tight'}
-    {include uri='design:parts/sortheader.tpl' key='created' label='Time'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='wide'}
-    {include uri='design:parts/sortheader.tpl' key='status' label='Status'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='wide'}
+    {include uri='design:parts/sortheader.tpl' key='id' label='ID'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' suffix=$siteaccess_filter.suffix cell_class='tight'}
+    {include uri='design:parts/sortheader.tpl' key='customer' label='Customer'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' suffix=$siteaccess_filter.suffix cell_class='wide'}
+    {include uri='design:parts/sortheader.tpl' key='total_ex_vat' label='Total (ex. VAT)'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' suffix=$siteaccess_filter.suffix cell_class='tight'}
+    {include uri='design:parts/sortheader.tpl' key='total_inc_vat' label='Total (inc. VAT)'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' suffix=$siteaccess_filter.suffix cell_class='tight'}
+    {include uri='design:parts/sortheader.tpl' key='created' label='Time'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' suffix=$siteaccess_filter.suffix cell_class='wide'}
+    {include uri='design:parts/sortheader.tpl' key='siteaccess' label='Siteaccess'|i18n( 'design/admin/content/job' ) sort=$order_sort page_uri='/shop/orderlist' suffix=$siteaccess_filter.suffix cell_class='wide'}
+    {include uri='design:parts/sortheader.tpl' key='status' label='Status'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' suffix=$siteaccess_filter.suffix cell_class='wide'}
 </tr>
 {section var=Orders loop=$order_list sequence=array( bglight, bgdark )}
 
@@ -60,6 +62,7 @@
     <td class="number" align="right">{$Orders.item.total_inc_vat|l10n( 'currency', $locale, $symbol )}</td>
 
     <td>{$Orders.item.created|l10n( shortdatetime )}</td>
+    <td>{if $Orders.item.siteaccess_name}{$Orders.item.siteaccess_name|wash}{else}<span class="a4-muted">{'Unknown'|i18n( 'design/admin/settings' )}</span>{/if}</td>
     <td>
     {let order_status_list=$Orders.status_modification_list}
 
