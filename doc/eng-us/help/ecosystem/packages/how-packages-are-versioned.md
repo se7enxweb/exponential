@@ -34,7 +34,7 @@ Composer and Packagist compare each position as a number.
 
 The kernel's constraints use `~`, which "lets the last position float: `~6.0.8` accepts `6.0.9` and `6.0.10` but not
 `6.1.0`" ([The default extension distribution](../../../features/6.0/default-extension-distribution.md)). Velocity, for
-example, is required at `~0.0.4.55` (`README.md`).
+example, is required at `~0.0.4.57` (`README.md`).
 
 ## Versions inside an extension
 

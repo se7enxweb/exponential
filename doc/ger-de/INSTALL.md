@@ -187,12 +187,12 @@ php bin/php/console --version
 
 Die erste Zeile nennt die Version, zum Beispiel `console (Exponential) 6.0.15stable`.
 
-**Exponential Velocity.** `composer.json` verlangt es in `~0.0.4.55`, sodass `composer install` es auf jedem
+**Exponential Velocity.** `composer.json` verlangt es in `~0.0.4.57`, sodass `composer install` es auf jedem
 unterstützten PHP installiert, auch auf 8.0. Bis zu seinem Release 0.0.4.54 brauchte es PHP 8.1 und wurde nur
 vorgeschlagen; eine in dieser Zeit erstellte Installation fügt es hinzu mit:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.55
+composer require se7enxweb/exponential-velocity:~0.0.4.57
 ```
 
 ## 4. Eine Installationsmethode wählen

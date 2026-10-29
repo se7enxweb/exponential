@@ -68,7 +68,7 @@ ein Tag kann vor seinen Hinweisen existieren.
 ## Tilde-Bedingungen
 
 Die `composer.json` im Wurzelverzeichnis legt Erweiterungen mit `~` fest, zum Beispiel
-`"se7enxweb/ezoracle": "~2.3.7"`. "Die Versionsbedingungen verwenden `~`, wodurch die letzte Stelle frei bleibt:
+`"se7enxweb/ezoracle": "~2.3.8"`. "Die Versionsbedingungen verwenden `~`, wodurch die letzte Stelle frei bleibt:
 `~6.0.8` akzeptiert `6.0.9` und `6.0.10`, aber nicht `6.1.0`"
 ([Standardauswahl an Erweiterungen](../../funktionen/6.0/standard-extension-auslieferung.md#wie-es-funktioniert)).
 

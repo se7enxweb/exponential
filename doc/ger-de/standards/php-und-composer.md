@@ -45,7 +45,7 @@ zwei Jahre Sicherheitskorrekturen.
   [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md). PHP-Funktionen, die neuer als 8.0 sind, werden in
   `lib/phpcompat.php` definiert, das `autoload.php` nur lädt, wenn `PHP_VERSION_ID < 80100`.
 - Exponential Velocity, der Anwendungsserver, läuft ab seinem Release 0.0.4.54 auf PHP 8.0 bis 8.5 und steht mit
-  `~0.0.4.55` in `require` (bis dahin brauchte es PHP 8.1 und stand nur in `suggest`).
+  `~0.0.4.57` in `require` (bis dahin brauchte es PHP 8.1 und stand nur in `suggest`).
 - Erforderliche PHP-Erweiterungen in `composer.json`: `dom`, `libxml`, `mbstring`, `pcre`, `json`, `iconv`,
   `reflection`, `session`, `spl`, `simplexml`. Datenbank- und Bilderweiterungen stehen in `suggest`.
 

@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Integratoren, deren Landschaft **mehrere Exponential-Installationen** umfasst, die Inhalte
 teilen müssen: eine Konzernwebsite und die Websites ihrer Mitglieder, ein Portalnetzwerk, ein zentraler Produktkatalog,
 der in mehreren Shops veröffentlicht wird. Die Erweiterung `syndication` (von der `composer.json` im
-Wurzelverzeichnis als `~1.3.10` verlangt) exportiert einen Teil des Inhaltsbaums einer Installation als Feed und lässt
+Wurzelverzeichnis als `~1.3.14` verlangt) exportiert einen Teil des Inhaltsbaums einer Installation als Feed und lässt
 eine andere Installation ihn importieren, per Cron im Gleichschritt gehalten. Die Funktionsseite ist
 [syndication](../../funktionen/6.0/erweiterungen/syndication.md); jede Option steht in der
 [Spezifikation](../../spezifikationen/6.0/syndikation.md).

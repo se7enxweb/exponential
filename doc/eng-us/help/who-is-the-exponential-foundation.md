@@ -128,7 +128,7 @@ The "State" column is the state on 18 October 2026, with its source.
 | [Exponential Platform Legacy](#exponential-platform-legacy) | Symfony platform plus Exponential 6 (dual kernel) | Sites that keep Exponential 6 and add Symfony | 2.5.x to 5.0.x lines (README) |
 | [Exponential Platform Nexus](#exponential-platform-nexus) | Platform plus Exponential 6, Netgen Layouts and Media Site, with demo content | Agencies and teams who want a complete site fast | 1.0.0.x to 1.3.0.x lines (README) |
 | [Exponential Platform DXP](#exponential-platform-dxp) | Symfony-only DXP meta package, the freedom-enabled continuation of Ibexa DXP OSS | New Symfony projects | "Stable; Open Source" (its composer.json) |
-| [Exponential Velocity](#exponential-velocity) | A web and application server written in PHP | Anyone serving Exponential, and other PHP applications | Required at `~0.0.4.55` (README; it runs on PHP 8.0 since release 0.0.4.54) |
+| [Exponential Velocity](#exponential-velocity) | A web and application server written in PHP | Anyone serving Exponential, and other PHP applications | Required at `~0.0.4.57` (README; it runs on PHP 8.0 since release 0.0.4.54) |
 | [Exponential Intelligence](#exponential-intelligence) | A writing assistant in the administration | Editors and the people who manage them | Required since 6.0.15, `~0.0.1.18` in composer.json |
 | [Exponential Layouts](#exponential-layouts) | A visual page builder: layouts, zones, blocks and rules | Editors and designers | Required since 6.0.15, `~1.4.43` in composer.json |
 | [AdminUI](#adminui) | An alternative administration interface | Editors who prefer it | Required since 6.0.15, `~1.0.0.50` in composer.json |
@@ -234,7 +234,7 @@ production" (README, "Engines"). FrankenPHP is "the production-ready alternative
 development default.
 
 **Where it stands.** First commits in July 2026, first release `v0.0.1` in September 2026, part of Exponential since
-22 September 2026 ([Velocity chronicle](../history/velocity/README.md)); the README names it as required at `~0.0.4.55`; it runs on PHP 8.0 since release 0.0.4.54.
+22 September 2026 ([Velocity chronicle](../history/velocity/README.md)); the README names it as required at `~0.0.4.57`; it runs on PHP 8.0 since release 0.0.4.54.
 
 ### Exponential Intelligence
 

@@ -145,7 +145,7 @@ test (`curl -X PROPFIND -H 'Depth: 1'`, expect `207 Multi-Status`) are in
 ## 8.3 Exponential Velocity, the recommended way
 
 **Velocity is part of Exponential as of 6.0.15.** The root `composer.json` requires
-`se7enxweb/exponential-velocity ~0.0.4.55`, so the `composer install` of [chapter 3](03-getting-the-code.md#34-the-velocity-package)
+`se7enxweb/exponential-velocity ~0.0.4.57`, so the `composer install` of [chapter 3](03-getting-the-code.md#34-the-velocity-package)
 has already installed it, on the same PHP as the kernel (8.0 and later, the stock PHP 8.0 of Red Hat Enterprise Linux 9
 included). There is nothing extra to download before the first `exp:velocity start`. This is the turning point of the
 6.0 line: the Internet / Web Application Server is a cornerstone of the core product, so serving, caching, HTTPS and
@@ -189,16 +189,16 @@ and `php` (PHP's built-in development server).
 
 ### 8.3.1 Install the engine package
 
-Exponential's `composer.json` requires the engine at `~0.0.4.55`, so `composer install` installs it on every
+Exponential's `composer.json` requires the engine at `~0.0.4.57`, so `composer install` installs it on every
 supported PHP, 8.0 included. Until its release 0.0.4.54 the engine needed PHP 8.1 and was only suggested; an
 installation made in that time adds it with Composer:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.55
+composer require se7enxweb/exponential-velocity:~0.0.4.57
 ```
 
 It lands in `vendor/se7enxweb/exponential-velocity` (the former package name `se7enxweb/qbix-webserver` is still
-found). The tilde constraint follows the engine's last version position, so `~0.0.4.55` accepts later `0.0.4.x`
+found). The tilde constraint follows the engine's last version position, so `~0.0.4.57` accepts later `0.0.4.x`
 releases.
 
 The package's `composer.json` requires PHP 8.0 (`"php": ">=8.0"`, from release 0.0.4.54; it was `>=8.1`) and the
