@@ -1,9 +1,12 @@
 <?php
 /**
- * Weights, durations, letter spacing and component radius of admin4's own stylesheets come from the tokens of
+ * Weights, durations, letter spacing and component radius of the admin designs' stylesheets come from the tokens of
  * components.css (--a4-weight-*, --a4-duration*, --a4-tracking, --a4-radius-s), never as raw numbers: one scale for
- * the whole administration, so a change of the scale is one line. Checked on admin4.css, components.css, base.css
- * and modules/*.css, outside comments and outside the definitions of custom properties.
+ * the whole administration, so a change of the scale is one line. Checked on every stylesheet of admin4, the classic
+ * admin (design/admin) and admin3 (admin4l and the editor design load admin4's) and on the admin stylesheets of the
+ * extensions in this repository, outside comments and outside the definitions of custom properties. A stylesheet
+ * that is also loaded without components.css (core.css: the standard popup, print and setup layouts) names the raw
+ * value as the token's fallback, var(--a4-weight-bold, bold).
  *
  * Allowed on purpose: 0, 50% and 999px as a radius; a negative letter spacing (the tracking of large headings);
  * the two progress bars' .4s (a bar grows in steps of real progress, slower than a hover); 0s and .01ms (the
@@ -29,18 +32,50 @@ class AdminTokenUsageTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @return array file name => CSS without comments
+     * Every stylesheet of every admin design: admin4 (all of its own, the module stylesheets included), the classic
+     * admin (design/admin: its base files and themes; its components.css and modules/*.css are admin4's copies,
+     * checked equal elsewhere) and admin3, plus the admin stylesheets that extensions in this repository ship for
+     * these designs. admin4l and the editor design have no stylesheets of their own: they load admin4's.
+     *
+     * @return array file path below the root => CSS without comments
      */
     private static function stylesheets()
     {
-        $dir = self::root() . '/design/admin4/stylesheets';
-        $files = array_merge( array( "$dir/admin4.css", "$dir/components.css", "$dir/base.css" ), AdminFiles::files( "$dir/modules/*.css" ) );
+        $root = self::root();
+        $files = array_merge(
+            AdminFiles::files( "$root/design/admin4/stylesheets/*.css" ),
+            AdminFiles::files( "$root/design/admin4/stylesheets/theme/*.css" ),
+            AdminFiles::files( "$root/design/admin4/stylesheets/modules/*.css" ),
+            array_diff( AdminFiles::files( "$root/design/admin/stylesheets/*.css" ), array( "$root/design/admin/stylesheets/components.css" ) ),
+            AdminFiles::files( "$root/design/admin/stylesheets/theme/*.css" ),
+            AdminFiles::files( "$root/design/admin3/stylesheets/*.css" ),
+            AdminFiles::files( "$root/design/admin3/stylesheets/theme/*.css" ),
+            AdminFiles::files( "$root/extension/*/design/admin{,3,4,4l}/stylesheets/*.css", GLOB_BRACE )
+        );
         $css = array();
         foreach ( $files as $file )
         {
-            $css[substr( $file, strlen( $dir ) + 1 )] = preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( $file ) );
+            $css[substr( $file, strlen( $root ) + 1 )] = preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( $file ) );
         }
         return $css;
+    }
+
+    /** The scan reaches every admin design and the extensions' admin stylesheets */
+    public function testTheScanCoversEveryAdminDesign()
+    {
+        $names = array_keys( self::stylesheets() );
+        foreach ( array( 'design/admin4/stylesheets/base.css', 'design/admin4/stylesheets/core.css', 'design/admin4/stylesheets/theme/modalwindow.css',
+                         'design/admin/stylesheets/pagelayout.css', 'design/admin/stylesheets/content.css', 'design/admin/stylesheets/theme/rounded.css',
+                         'design/admin/stylesheets/theme/admin_datatable.css', 'design/admin3/stylesheets/pagelayout.css',
+                         'design/admin3/stylesheets/theme/rounded.css', 'extension/expimageeditor/design/admin4/stylesheets/expimageeditor.css' ) as $name )
+        {
+            $this->assertContains( $name, $names );
+        }
+        foreach ( array( 'admin4l', 'editor' ) as $design )
+        {
+            $this->assertDirectoryDoesNotExist( self::root() . "/design/$design/stylesheets",
+                "$design loads admin4's stylesheets; a stylesheet of its own needs to be added to this scan" );
+        }
     }
 
     /**

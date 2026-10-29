@@ -186,6 +186,107 @@ class AdminTokenContrastTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * The classic admin (design/admin) and admin3 read the same tokens: their components.css is admin4's copy, so
+     * every pair above holds there too (admin4l and the editor design load admin4's stylesheets)
+     */
+    public function testEveryAdminDesignReadsTheSameTokens()
+    {
+        $root = dirname( __DIR__, 3 );
+        $admin4 = AdminFiles::read( $root . '/design/admin4/stylesheets/components.css' );
+        $classic = AdminFiles::read( $root . '/design/admin/stylesheets/components.css' );
+        foreach ( array( ':root', 'html[data-a4-theme="dark"]:not(:where([data-a4-modes="light"]))' ) as $selector )
+        {
+            $tokens = self::tokens( $admin4, $selector );
+            $this->assertNotEmpty( $tokens, $selector );
+            $this->assertSame( $tokens, self::tokens( $classic, $selector ), "design/admin's tokens ($selector) are admin4's" );
+        }
+        foreach ( array( 'admin4l', 'editor' ) as $design )
+        {
+            $this->assertDirectoryDoesNotExist( "$root/design/$design/stylesheets", "$design draws with admin4's stylesheets and tokens" );
+        }
+    }
+
+    /**
+     * The list tables of every admin design have admin4's header: --a4-head-bg with --a4-ink (4.5:1, checked
+     * above) in place of the classic grey bar with light text (#eee on #6f6e6b was 4.4:1), separators, rounded top
+     * corners, zebra and hover rows from the tokens; the datatable theme and expui's tables (the bridge) likewise;
+     * and a line under a page section's heading
+     */
+    public function testTheListTablesOfEveryDesignTakeTheHeaderToken()
+    {
+        $root = dirname( __DIR__, 3 );
+        foreach ( array( 'design/admin4/stylesheets/admin4.css', 'design/admin/stylesheets/theme/rounded.css', 'design/admin3/stylesheets/theme/rounded.css' ) as $file )
+        {
+            $css = preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( "$root/$file" ) );
+            preg_match_all( '/(?:^|\})\s*table\.list th, table\.special th\s*\{([^}]*)\}/', $css, $m );
+            $this->assertNotEmpty( $m[1], "$file: table.list th" );
+            $last = end( $m[1] );
+            $this->assertMatchesRegularExpression( '/background-color:\s*var\(--a4-head-bg\)/', $last, "$file: the header row" );
+            $this->assertMatchesRegularExpression( '/(?<![\w-])color:\s*var\(--a4-ink\)/', $last, "$file: the header text" );
+            $this->assertMatchesRegularExpression( '/border-inline-start:\s*1px solid var\(--a4-line-strong\)/', $last, "$file: the separators" );
+            $this->assertStringContainsString( 'border-start-start-radius: var(--a4-radius-s)', $css, "$file: the rounded corners" );
+            $this->assertMatchesRegularExpression( '/\{ background-color: var\(--a4-zebra\); \}/', $css, "$file: zebra rows" );
+            $this->assertMatchesRegularExpression( '/tr:hover > :is\(td, th\[scope="row"\]\) \{ background-color: var\(--a4-info-bg\); \}/', $css, "$file: the hovered row" );
+            $this->assertMatchesRegularExpression( '/div\.context-block \.box-header\s*\{[^}]*border-bottom:\s*1px solid var\(--a4-line\)/', $css, "$file: the section heading's line" );
+        }
+        $datatable = preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( "$root/design/admin/stylesheets/theme/admin_datatable.css" ) );
+        $this->assertMatchesRegularExpression( '/\.admin-dt th \{[^}]*background-color: var\(--a4-head-bg\)/', $datatable );
+        $this->assertMatchesRegularExpression( '/\.admin-dt th,\.admin-dt th a \{[^}]*color: var\(--a4-ink\)/', $datatable );
+        foreach ( array( 'design/admin/stylesheets/pagelayout.css', 'design/admin3/stylesheets/pagelayout.css' ) as $file )
+        {
+            $css = AdminFiles::read( "$root/$file" );
+            $this->assertStringContainsString( '--exp-dt-head: var(--a4-head-bg);', $css, "$file: expui's table header" );
+            $this->assertStringContainsString( '--exp-dt-head-ink: var(--a4-ink);', $css, "$file: expui's table header text" );
+        }
+    }
+
+    /**
+     * The classic admin and admin3 have no dark mode: a raw text colour in their content area (not the dark frame:
+     * header, top menu, footer, login page) reaches 4.5:1 on the rule's own raw background, or on white when the rule
+     * sets none. White text without a background of its own sits on a fill set elsewhere; a disabled control is
+     * exempt (WCAG 1.4.3). Greys come from --a4-ink and --a4-muted.
+     */
+    public function testTheClassicDesignsHaveNoLowContrastRawTextColour()
+    {
+        $root = dirname( __DIR__, 3 );
+        $frame = '/#header|topmenu|#footer|login|^\s*#page\s*$|#page\s*,|#search|#logo|#columns\s*$|\.navbar|#leftmenu-design\s*$|#rightmenu-design\s*$|#debug|\.debug|code|pre\b|#mainmenu|#toolbar|disabled/i';
+        $files = array_merge(
+            array_diff( AdminFiles::files( "$root/design/admin/stylesheets/*.css" ), array( "$root/design/admin/stylesheets/components.css" ) ),
+            AdminFiles::files( "$root/design/admin/stylesheets/theme/*.css" ),
+            AdminFiles::files( "$root/design/admin3/stylesheets/*.css" ),
+            AdminFiles::files( "$root/design/admin3/stylesheets/theme/*.css" )
+        );
+        $failures = array();
+        $checked = 0;
+        foreach ( $files as $file )
+        {
+            $css = preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( $file ) );
+            preg_match_all( '/([^{}]*)\{([^{}]*)\}/', $css, $rules, PREG_SET_ORDER );
+            foreach ( $rules as $rule )
+            {
+                $selector = trim( preg_replace( '/^.*@media[^{]*$/s', '', $rule[1] ) );
+                if ( $selector === '' || preg_match( $frame, $selector ) || !preg_match( '/(?<![\w-])color\s*:\s*(#[0-9a-f]{3}(?:[0-9a-f]{3})?)\b/i', $rule[2], $colour ) )
+                {
+                    continue;
+                }
+                $own = preg_match( '/(?<![\w-])background(?:-color)?\s*:\s*[^;]*?(#[0-9a-f]{3}(?:[0-9a-f]{3})?)\b/i', $rule[2], $back );
+                if ( !$own && self::luminance( $colour[1] ) > 0.99 )
+                {
+                    continue;
+                }
+                $checked++;
+                $ratio = self::ratio( $colour[1], $own ? $back[1] : '#ffffff' );
+                if ( $ratio < 4.5 )
+                {
+                    $failures[] = sprintf( '%s: %s { color: %s } on %s is %.2F:1', substr( $file, strlen( $root ) + 1 ), preg_replace( '/\s+/', ' ', $selector ), $colour[1], $own ? $back[1] : 'white', $ratio );
+                }
+            }
+        }
+        $this->assertGreaterThan( 20, $checked, 'the scan found raw text colours' );
+        $this->assertSame( array(), $failures, 'use var(--a4-ink), var(--a4-muted) or a state token' );
+    }
+
+    /**
      * Resolves a custom property of the expui bridge (html:root in admin4.css, with the dark mode's override) to a
      * colour: var(--a4-x) is looked up in the mode's tokens
      */
