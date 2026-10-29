@@ -56,7 +56,7 @@ Exponential reichen aus, um Muster zu erkennen; Ihr Netzwerkteam hat die vollst�
   ([Velocity-Antwortcache](../../../../funktionen/6.0/velocity-antwort-cache.md)); mit dem statischen Cache beantwortet
   der Webserver öffentliche Seiten als Dateien ([Statischer Cache](../verfuegbarkeit/statischer-cache.md)).
 - **Wärmen Sie** die meistbesuchten Seiten nach dem Leeren eines Caches vor:
-  `php bin/php/preload.php --siteaccess=site --allow-root-user`.
+  `php bin/php/preload.php --apply --siteaccess=site --allow-root-user`.
 - Der **Wartungsmodus** mit einer kurzen Meldung ist das letzte Mittel für eine Website, die die Last nicht bewältigt;
   er antwortet, bevor Einstellungen oder die Datenbank berührt werden.
 

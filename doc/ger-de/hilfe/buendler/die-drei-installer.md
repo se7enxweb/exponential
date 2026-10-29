@@ -31,8 +31,8 @@ unterscheiden sich nur darin, woher die Antworten kommen"
 | Oberfläche | Gestartet durch | Antworten aus |
 |---|---|---|
 | Einrichtungsassistent | Aufruf der Website im Browser, solange `[SiteAccessSettings] CheckValidity=true` gilt | Browser-Formularen (vorbelegt durch `kickstart.ini`, falls vorhanden) |
-| Kickstarter | `php bin/php/console exp:kickstarter run` oder `php bin/php/kickstarter.php run` | `kickstart.ini` im Wurzelverzeichnis der Installation |
-| Konsoleninstallation | `php bin/php/console exp:install` oder `php bin/php/install.php` | Kommandozeilenoptionen, jede mit einem Standardwert |
+| Kickstarter | `php bin/php/console exp:kickstarter run --apply` oder `php bin/php/kickstarter.php run --apply` | `kickstart.ini` im Wurzelverzeichnis der Installation |
+| Konsoleninstallation | `php bin/php/console exp:install --apply` oder `php bin/php/install.php --apply` | Kommandozeilenoptionen, jede mit einem Standardwert |
 
 ## Im Vergleich
 

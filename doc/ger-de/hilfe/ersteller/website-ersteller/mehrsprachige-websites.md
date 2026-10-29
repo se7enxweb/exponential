@@ -62,7 +62,7 @@ Aus [Deutsch zu einer englischen Website hinzufügen](../../../anleitungen/inhal
 3. **Registrieren Sie ihn** in `AvailableSiteAccessList[]` und `RelatedSiteAccessList[]` und richten Sie die Zuordnung
    ein: ein Pfad (`/de`) oder ein Host ([Sprachumschalter und Sprach-URLs](sprachumschalter-und-sprach-urls.md)).
 4. **Caches leeren**: `php bin/php/ezcache.php --clear-tag=ini,content --allow-root-user` (und den Antwort-Cache von
-   Velocity, `./console exp:velocity cache clear`, wenn Velocity die Website ausliefert).
+   Velocity, `./console exp:velocity cache clear --apply`, wenn Velocity die Website ausliefert).
 5. **Übersetzen**, beginnend mit der Startseite und den Menüordnern.
 6. **Gemeinsam genutzte Objekte als immer verfügbar markieren** (Medienordner, Benutzer), damit sie ohne Übersetzung
    angezeigt werden.

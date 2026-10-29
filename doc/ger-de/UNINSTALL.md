@@ -268,7 +268,7 @@ bevor Sie irgendetwas entfernen. Ein Export, den Sie nicht zurückgespielt haben
 
    ```bash
    php bin/php/installcrontab.php --remove --dry-run --allow-root-user
-   php bin/php/installcrontab.php --remove --allow-root-user
+   php bin/php/installcrontab.php --remove --apply --allow-root-user
    crontab -l | grep -n "$(pwd)"
    ```
 
@@ -294,7 +294,7 @@ bevor Sie irgendetwas entfernen. Ein Export, den Sie nicht zurückgespielt haben
   (`./console exp:velocity layout --allow-root-user` zeigt jede Datei, die es verwendet):
 
   ```bash
-  ./console exp:velocity site disable <name> --allow-root-user
+  ./console exp:velocity site disable --apply <name> --allow-root-user
   ```
 
 - **Apache, nginx oder ein Hosting-Panel:** entfernen Sie den virtuellen Host oder den Server-Block der Website, ihren
@@ -336,7 +336,7 @@ Um eine Extension zu entfernen und die Installation zu behalten:
 2. Entfernen Sie sie aus `ActiveExtensions[]` oder `ActiveAccessExtensions[]` in
    `settings/override/site.ini.append.php` und in den Siteaccesses.
 3. Entfernen Sie ihre Tabellen, wenn sie einen Deinstallationsbefehl hat (zum Beispiel
-   `./console exp:help:content uninstall` für die als Inhalt gepflegte Hilfe); lesen Sie ihre eigene Dokumentation zu
+   `./console exp:help:content uninstall --apply` für die als Inhalt gepflegte Hilfe); lesen Sie ihre eigene Dokumentation zu
    den Tabellen, die sie angelegt hat.
 4. Entfernen Sie ihren Code: `composer remove se7enxweb/<package>`, wenn Composer sie installiert hat, oder ihr
    Verzeichnis unter `extension/`.

@@ -34,7 +34,7 @@ Installationshandbuch: [10.3 Cronjobs](../installation/10-nach-der-installation.
   `./console cron:<part>` ist dasselbe über die Konsole, `./console crontab:list` und `crontab:edit` zeigen und bearbeiten
   die Crontab.
 - Alles funktioniert ohne JavaScript; mit JavaScript starten Ausführungen an Ort und Stelle, und die Ausgabe wird übertragen, während der Job arbeitet.
-- Eine neue Installation bekommt ihre Crontab-Zeilen vom Installationsprogramm; `php bin/php/installcrontab.php --add`
+- Eine neue Installation bekommt ihre Crontab-Zeilen vom Installationsprogramm; `php bin/php/installcrontab.php --add --apply`
   schreibt sie bei einer bestehenden ([Abschnitt 12](#12-planen-mit-der-crontab)).
 
 ## Inhalt
@@ -415,7 +415,7 @@ DocumentationBase=https://intranet.example.com/operations/
 
 Seit 6.0.15 schreiben die Installationsprogramme die Crontab einer neuen Installation selbst, in die Crontab des
 Benutzers, dem sie gehört, zwischen die Zeilen `# BEGIN Exponential cronjobs: <Wurzel>` und
-`# END Exponential cronjobs: <Wurzel>`; bei einer bestehenden Installation tut `php bin/php/installcrontab.php --add`
+`# END Exponential cronjobs: <Wurzel>`; bei einer bestehenden Installation tut `php bin/php/installcrontab.php --add --apply`
 dasselbe (`--show`, `--remove`, `--dry-run`). Die Seite erkennt diese Zeilen wie jede andere. Der Dashboard-Block
 **Cronjobs** zeigt, wann jeder Teil zuletzt lief, und warnt, wenn einer überfällig ist. Alles dazu:
 [Die Installationsprogramme schreiben den Cronjob](../bc/6.0/crontab-bei-der-installation.md).

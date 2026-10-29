@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of bin/php/addanonymouspublicpolicies.php.
- * @description Give the Anonymous role the public policies it lacks: user/register, rss/feed, tags/view, the newsletter's public views (--dry-run lists them first)
+ * @description Give the Anonymous role the public policies it lacks: user/register, rss/feed, tags/view, the newsletter's public views (dry run unless --apply)
  * Guide: doc/eng-us/bc/6.0/anonymous-public-policies.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -23,27 +23,37 @@ class Addanonymouspublicpolicies extends \Exponential\Runnable\Command
                     . "it lacks: user/register (a new installation takes it out of PolicyOmitList[]), rss/feed, and where\n"
                     . "the module exists tags/view (eztags) and newsletter subscribe, configure, unsubscribe and archive\n"
                     . "(cjw_newsletter). A policy the role has in any form (also limited, or module/*) is left alone, so\n"
-                    . "the script can run again. Prints PASS or FAIL at the end.\n\n"
-                    . "Example: php bin/php/addanonymouspublicpolicies.php --dry-run\n"
-                    . "         php bin/php/addanonymouspublicpolicies.php --only=user/register\n"
-                    . "         php bin/php/addanonymouspublicpolicies.php --skip=user/register --role=Visitors",
+                    . "the script can run again. Prints PASS or FAIL at the end.\n"
+                    . "Without --apply nothing is written: the script lists what it would add. --dry-run is still accepted\n"
+                    . "and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).\n\n"
+                    . "Example: php bin/php/addanonymouspublicpolicies.php\n"
+                    . "         php bin/php/addanonymouspublicpolicies.php --apply\n"
+                    . "         php bin/php/addanonymouspublicpolicies.php --apply --only=user/register\n"
+                    . "         php bin/php/addanonymouspublicpolicies.php --apply --skip=user/register --role=Visitors",
                 'use-session' => false,
                 'use-modules' => true,
                 'use-extensions' => true
             )
         );
         $options = $this->startup(
-            "[dry-run][role:][only:*][skip:*]",
+            "[apply][dry-run][role:][only:*][skip:*]",
             '',
             array(
-                'dry-run' => "List what would be added, change nothing",
+                'apply' => "Write the changes (the default is a dry run that lists them and changes nothing)",
+                'dry-run' => "The default, kept for scripts that pass it: list what would be added, change nothing",
                 'role' => "The role to complete (ID or name); default Anonymous",
                 'only' => "Only this policy (module/function), may be repeated",
                 'skip' => "Never this policy (module/function), may be repeated; e.g. --skip=user/register keeps registration closed"
             )
         );
 
-        $dryRun = (bool)$options['dry-run'];
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $script->shutdown( 2 );
+        }
+        $dryRun = !$apply;
         $roleName = $options['role'] ? (string)$options['role'] : \expAnonymousPublicPolicies::ROLE_NAME;
         $only = $options['only'] ? array_map( 'strval', (array)$options['only'] ) : array();
         $skip = $options['skip'] ? array_map( 'strval', (array)$options['skip'] ) : array();
@@ -103,7 +113,7 @@ class Addanonymouspublicpolicies extends \Exponential\Runnable\Command
 
         $cli->output();
         if ( $dryRun )
-            $cli->output( "PASS: $granted polic" . ( $granted === 1 ? 'y' : 'ies' ) . " would be added to $label (dry run, nothing changed)" );
+            $cli->output( "PASS: $granted polic" . ( $granted === 1 ? 'y' : 'ies' ) . " would be added to $label (dry run, nothing changed; --apply writes)" );
         else
             $cli->output( "PASS: $granted polic" . ( $granted === 1 ? 'y' : 'ies' ) . " added to $label" );
         $script->shutdown();

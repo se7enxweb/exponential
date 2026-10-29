@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Ukuseta &gt; Iicronjob</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Akukho nxalenye yomsebenzi we-cron eqhubile okwangoku: umgca wemisebenzi, ukungeniswa, izaziso kunye nesalathiso sokukhangela ziyalinda. Qhubani php bin/php/installcrontab.php --add --apply, okanye nongeze imigca ye --show kwi-crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Qaphela: Amapakethe akazi kukhutshwa.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Olu faka-nkqubo yidemo yesidlangalala: nabani na angayazi inombolo yokuvula yomlawuli, kwaye iinombolo zokuvula zabalawuli azinakutshintshwa okanye zisetwe kwakhona. Musani ukufaka nantoni na yangasese apha.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Izixhobo zenu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Imisebenzi yokhuseleko</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15300,6 +15312,14 @@ Qaphela: Amapakethe akazi kukhutshwa.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Ngubani otshintshileyo, ongenileyo okanye owaliweyo, kwiakhawunti nganye; ukuhluza nokuthumela ngaphandle.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Ingxelo yokungena</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Ngubani ongenileyo, ukungena nokungaphumeleli ngosuku ngalunye; khupha umsebenzisi kuyo yonke indawo.</translation>
     </message>
 </context>
 <context>
@@ -33605,6 +33625,14 @@ Qaphela: Amapakethe akazi kukhutshwa.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Iiseshoni zomphathi we-PHP eziphelelwe lixesha zisuswa yi-PHP ngokwayo (session.gc_maxlifetime), hayi sisi sihlandlo okanye yinxalenye ye-cronjob ye-session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Iiseshoni ezingenileyo zabo bonke abasebenzisi ziyadweliswa, kwaye ziyakhutshwa, kwingxelo yokungena, esebenza nasiphi na isilawuli seseshoni.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Vula ingxelo yokungena</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37929,6 +37957,26 @@ iakhawunti yenu isebenze.</translation>
     <message>
         <source>None yet</source>
         <translation>Akukabikho</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Imisebenzi yokhuseleko</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Ukungena kwenu kwamva nje, imizamo engaphumelelanga kunye notshintsho kwinombolo yenu yokuvula, idilesi ye-imeyile nokungena ngamanyathelo amabini.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Ukungena kwamva nje, imizamo engaphumelelanga notshintsho lokhuseleko lwale akhawunti.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Hlola imisebenzi</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Ukungena okungaphumelelanga: %count</translation>
     </message>
 </context>
 <context>
@@ -51019,6 +51067,10 @@ Jongani iphepha lezinto ezifunekayo ukuze nifumane ulwazi oluthe kratya.</transl
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>I-crontab ayibhalwanga (%reason). Yongezani le migca kwi-crontab yomsebenzisi isayithi esebenza ngaye, kungenjalo umgca, ungeniso, izaziso kunye nesalathisi sokukhangela azisoze zisebenze:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Ukufaka kwakhona kwenziwa nge-Kickstarter (%file, emva koko php bin/php/kickstarter.php run --apply) okanye ngofakelo olutsha.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56811,6 +56863,10 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Uthutho lweemeyile lwala iimeyile ezingu-%count kwisiqhubo sokugqibela. Jonga iseva yeemeyile kunye ne-site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Iziganeko ezingama-%count ziyalinda kwaye akukho kuqhuba komsebenzi we-cron wezaziso okurekhodiweyo. Yongezani inxalenye yomsebenzi we-cron “frequent” kwi-crontab, okanye niqhube exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63067,6 +63123,10 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>Choose another site or section with the node picker</source>
         <translation>Khethani enye isayithi okanye iseshoni ngomkhethi wendawo yomthi</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Ngumlawuli wenkqubo kuphela onokutshintsha umnini: qhubani ./console exp:content-check --fix-permissions --apply njenge root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64600,6 +64660,10 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     <message>
         <source>empty</source>
         <translation>ayinanto</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Isitshixo sokusayina sidlule unyaka omnye ubudala: sitshintsheni nge exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70310,6 +70374,14 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     <message>
         <source>not sent</source>
         <translation>ayithunyelwanga</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Umsebenzi we-cron wezaziso urekhoda apha konke ukuqhuba kwawo. Yongezani inxalenye frequent kwi-crontab, okanye niqhube exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Sebenzisani ikhonsoli: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76483,6 +76555,46 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>None.</source>
         <translation>Akukho.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>nge-app yokuqinisekisa</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ngekhowudi ethunyelwe nge-imeyile</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ngekhowudi yokubuyisela</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>nge-passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ngeakhawunti yangaphandle</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Imisebenzi yokhuseleko</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Iboniswa njengenethiwekhi yayo; idilesi igcinwa ngokuthetha kwemimiselo yokhuseleko lwedatha yesayithi.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ayirekhodwanga</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Indawo</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>malunga</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76726,6 +76838,42 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>Manage devices</source>
         <translation>Lawula izixhobo</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>nge-app yokuqinisekisa</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ngekhowudi ethunyelwe nge-imeyile</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ngekhowudi yokubuyisela</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>nge-passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ngeakhawunti yangaphandle</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Imisebenzi yokhuseleko</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ayirekhodwanga</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Indawo</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>malunga</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76805,6 +76953,14 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>View the sessions of this user</source>
         <translation>Jonga iiseshoni zalo msebenzisi</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Iakhawunti yenu %login kwi %site isandula ukusetyenziswa ukungena isuka kwindawo engazange ingene kuyo kutshanje:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Indawo eqikelelweyo</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76843,6 +76999,10 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser kwi-%os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Ingxelo yokungena</translation>
     </message>
 </context>
 <context>
@@ -77489,6 +77649,788 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     <message>
         <source>unknown</source>
         <translation>akwaziwa</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Khuselani iakhawunti yenu</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Ikhowudi yokubuyisela isetyenzisiwe ukungena kwiakhawunti yenu %login kwi %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Ikhowudi yokubuyisela isetyenzisiwe</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Iakhawunti</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Idilesi eqikelelweyo</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Celani inombolo yokuvula entsha ukuze ningene kwakhona, okanye nithethe nabalawuli besayithi.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Cela inombolo yokuvula entsha</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Ikhowudi nganye yokubuyisela isebenza kanye kuphela. Ukuba nilahlekelwe yifowuni yenu, misani kwakhona i-app yenu yokuqinisekisa kwaye nigcine iikhowudi ezintsha zokubuyisela kwindawo ekhuselekileyo.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Imizamo yokungena engaphumelelanga kwiakhawunti yenu</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Ukusukela ngoku, ukungena kucela ikhowudi ngaphezu kwenombolo yenu yokuvula. Ukuba nguni nenze oku, akukho nto nifanele niyenze.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Ukuba ibinguni kwaye nilibele inombolo yenu yokuvula, celani entsha. Ukuba akunjalo, khethani inombolo yokuvula eyomeleleyo kwaye nivule ukungena ngamanyathelo amabini.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Ukuba ibingeyonina, mhlawumbi kukho umntu oyaziyo inombolo yenu yokuvula: yitshintsheni ngoku kwaye nijonge apho iakhawunti yenu ingene khona.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Iikhowudi zokubuyisela eziseleyo</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Hlola izixhobo zenu</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Isilumkiso sokhuseleko</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Umntu uzame ukungena kwiakhawunti yenu %login kwi %site ngenombolo yokuvula engachanekanga amaxesha angama-%count ngokulandelelana.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Kubekho isiganeko sokhuseleko kwiakhawunti yenu %login kwi %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Esi sisilumkiso sokhuseleko malunga neakhawunti yenu. Sithunyelwa kulo lonke utshintsho olunjalo kwaye asinakuvalwa.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ixesha</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Ukungena ngamanyathelo amabini kuvaliwe kwiakhawunti yenu %login kwi %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Ukungena ngamanyathelo amabini kuvaliwe</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Ukungena ngamanyathelo amabini kuvuliwe kwiakhawunti yenu %login kwi %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Ukungena ngamanyathelo amabini kuvuliwe</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Iakhawunti yenu %login kwi %site itshixiwe emva kokungena okungaphumelelanga okuninzi kakhulu.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Iakhawunti yenu ngoku ikhuselwe yinombolo yenu yokuvula yodwa. Ukuba ayinguni nenze oku, vulani kwakhona ukungena ngamanyathelo amabini emva kokuba nitshintshe inombolo yenu yokuvula.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Iakhawunti yenu itshixiwe</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Imisebenzi yokhuseleko</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Imisebenzi yokhuseleko ka %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Ungenile</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Umzamo wokungena ongaphumelelanga</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Uphumile</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Iiseshoni zikhutshiwe</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Ukungena kwisixhobo esitsha</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Ukungena kwindawo entsha</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Ubuni buqinisekisiwe (“Qinisekisani ukuba ngabo nina”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ukuhlolwa kobuni akuphumelelanga</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Ungene nge-passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Ukungena nge-passkey akuphumelelanga</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Ukungena kwaliwe: ikhowudi yenyathelo lesibini ayikho okanye ayichanekanga</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Ikhowudi yenyathelo lesibini engachanekanga</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Iakhawunti itshixiwe emva kokungena okungaphumelelanga</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Iakhawunti ivuliwe</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Inombolo yokuvula itshintshiwe</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Ukutshintsha inombolo yokuvula akuphumelelanga</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Inombolo yokuvula isetwe kwakhona</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Inombolo yokuvula entsha iceliwe</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Idilesi ye-imeyile itshintshiwe</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Igama lomsebenzisi litshintshiwe</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Ukungena ngamanyathelo amabini kuvuliwe</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Ukungena ngamanyathelo amabini kuvaliwe</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Ikhowudi yokubuyisela isetyenzisiwe</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Iikhowudi ezintsha zokubuyisela</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Inombolo yokuvula ye-app yenziwe</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Inombolo yokuvula ye-app irhoxisiwe</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>I-passkey yongeziwe</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>I-passkey isusiwe</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Iakhawunti ivuliwe ukuba isebenze</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Iakhawunti ikhubaziwe</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Zonke</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Ukungena neeseshoni</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Utshintsho lweakhawunti</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Kufuna ingqwalasela</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>ninguni</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ngumsebenzisi</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>ngu %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Indlela</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Isikhangeli</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Inkqubo yokusebenza</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Isixhobo</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Indawo</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Ilizwe</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Iiseshoni</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Ziphi</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Indlela yokuthumela</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Imizamo engaphumelelanga</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Iikhowudi eziseleyo</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Isilawuli sokungena</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Imisebenzi yokhuseleko</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Imisebenzi yokhuseleko ka %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Ukungena notshintsho kukhuseleko lweakhawunti yenu. Ukuba nibona into eningayenzanga, tshintshani inombolo yenu yokuvula kwaye nikhuphe izixhobo eningaziqondiyo.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Ukungena notshintsho kukhuseleko lwale akhawunti.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Izixhobo zenu</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Tshintsha inombolo yokuvula</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Buyela kwiakhawunti</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Imisebenzi yokhuseleko ayirekhodwa</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Ifundwa kwilogu yophicotho yabasebenzisi, ethe itheyibhile yayo expuser_audit ayikho okanye ayixhaswa kolu gcino-datha. Qhubani php update/common/scripts/6.0/createuseraudittable.php, okanye uhlaziyo logcino-datha lwe 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Iintsuku ezingama-%days ezidlulileyo</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Ukungena kwiintsuku ezingama-%days ezidlulileyo</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Imisebenzi yokhuseleko yamva nje</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Bonisa</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>akuphumelelanga</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>kwaliwe</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Akukabikho misebenzi yokhuseleko erekhodiweyo.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Iziganeko zokhuseleko zigcinwa iintsuku ezingama-%days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Iziganeko zokhuseleko zigcinwa de umlawuli azisuse.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Khuphela idatha yam yokungena</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Iiseshoni zenu neziganeko zokhuseleko njengefayile ye-JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Ungenile</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Umzamo wokungena ongaphumelelanga</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Uphumile</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Iiseshoni zikhutshiwe</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Ukungena kwisixhobo esitsha</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Ukungena kwindawo entsha</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Ubuni buqinisekisiwe (“Qinisekisani ukuba ngabo nina”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ukuhlolwa kobuni akuphumelelanga</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Ungene nge-passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Ukungena nge-passkey akuphumelelanga</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Ukungena kwaliwe: ikhowudi yenyathelo lesibini ayikho okanye ayichanekanga</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Ikhowudi yenyathelo lesibini engachanekanga</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Iakhawunti itshixiwe emva kokungena okungaphumelelanga</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Iakhawunti ivuliwe</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Inombolo yokuvula itshintshiwe</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Ukutshintsha inombolo yokuvula akuphumelelanga</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Inombolo yokuvula isetwe kwakhona</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Inombolo yokuvula entsha iceliwe</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Idilesi ye-imeyile itshintshiwe</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Igama lomsebenzisi litshintshiwe</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Ukungena ngamanyathelo amabini kuvuliwe</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Ukungena ngamanyathelo amabini kuvaliwe</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Ikhowudi yokubuyisela isetyenzisiwe</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Iikhowudi ezintsha zokubuyisela</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Inombolo yokuvula ye-app yenziwe</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Inombolo yokuvula ye-app irhoxisiwe</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>I-passkey yongeziwe</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>I-passkey isusiwe</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Iakhawunti ivuliwe ukuba isebenze</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Iakhawunti ikhubaziwe</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Zonke</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Ukungena neeseshoni</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Utshintsho lweakhawunti</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Kufuna ingqwalasela</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Imisebenzi yokhuseleko</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Imisebenzi yokhuseleko ka %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Ukungena notshintsho kukhuseleko lweakhawunti yenu. Ukuba nibona into eningayenzanga, tshintshani inombolo yenu yokuvula kwaye nikhuphe izixhobo eningaziqondiyo.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Izixhobo zenu</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Tshintsha inombolo yokuvula</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Imisebenzi yokhuseleko ayikarekhodwa kule sayithi.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Ukungena kwiintsuku ezingama-%days ezidlulileyo</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Imizamo engaphumelelanga</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Akukabikho misebenzi yokhuseleko erekhodiweyo.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Khuphela idatha yam yokungena</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Iiseshoni zenu neziganeko zokhuseleko njengefayile ye-JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Inombolo yokuvula</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Inombolo yokuvula nekhowudi yenyathelo lesibini</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Isikhombisi se-REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Isikhombisi se-SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Ukungena kanye (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Ungene ngaphambi kokuba iiseshoni zirekhodwe</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Ingxelo yokungena</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Ngubani ongenileyo kwisayithi, kukangaphi iiakhawunti zingena nokusilela, nokukhupha umsebenzisi kuyo yonke indawo. Isebenza nasiphi na isilawuli seseshoni.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Iseshoni ikhutshiwe. Isixhobo kufuneka singene kwakhona.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>U %login ukhutshiwe kwiiseshoni ezingama-%count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>U %login ebengenayo iseshoni esebenzayo.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Akukho akhawunti ene-ID, igama lomsebenzisi okanye idilesi ye-imeyile enjalo.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Le yiseshoni eniyisebenzisayo. Ukuyiphelisa, phumani.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Loo seshoni ibisele iphelile.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Iphepha belisele liphelelwe lixesha. Akukho nto itshintshiweyo; nceda nizame kwakhona.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Iiseshoni azirekhodwa kule sayithi (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Itheyibhile expuser_session ayikho</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Iiseshoni zirekhodwa xa sele yenziwe: php update/common/scripts/6.0/createusersessiontable.php, okanye uhlaziyo logcino-datha lwe 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Ngoku nanamhlanje</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Iiseshoni ezisebenzayo</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Abasebenzisi abangenileyo</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Ukungena kwanamhlanje</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Imizamo engaphumelelanga yanamhlanje</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Khupha umsebenzisi kuyo yonke indawo</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Yonke iseshoni yeakhawunti iphela kwisicelo sayo esilandelayo, kuquka nezo zigcinwe ngu “Ndikhumbule”. Sebenzisani oku xa iakhawunti isenokuba sezandleni ezingalunganga; emva koko nisete kwakhona inombolo yayo yokuvula.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>I-ID yomsebenzisi, igama lomsebenzisi okanye idilesi ye-imeyile</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Khupha kuyo yonke indawo</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Ungenile ngoku</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Kuboniswa ezingama-%limit ezisetyenziswe kutshanje.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Umsebenzisi</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Isixhobo</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Idilesi</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Ungenile</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ugqibele ukusebenza</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Izenzo</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Esi sixhobo</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ayirekhodwanga</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Khupha</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Akukho seshoni ingenileyo.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Iintsuku ezingama-%days ezidlulileyo</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Ukungena nemizamo engaphumelelanga kubalwa kwilogu yophicotho yabasebenzisi, engekhoyo; kubalwa iiseshoni ezintsha.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Usuku</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Ukungena</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Imizamo engaphumelelanga</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Iiseshoni ezintsha</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Isilawuli seseshoni: %handler. Iiseshoni zifundwa kwitheyibhile expuser_session, ngoko ingxelo isebenza nasiphi na isilawuli.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Isilumkiso sokhuseleko seakhawunti yenu</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Kubekho isiganeko sokhuseleko kwiakhawunti yenu %login: %event. Ukuba ibingeyonina, khuselani iakhawunti yenu kwi %url.</translation>
     </message>
 </context>
 </TS>

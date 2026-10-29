@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Gutunganya &gt; Ibikorwa bya cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Nta gice ca cronjob kirakora: urutonde rw&apos;ibikorwa, ivyinjizwa, amamenyesha n&apos;urutonde rw&apos;irondera birarindiriye. Mukoreshe php bin/php/installcrontab.php --add --apply, canke mwongere imirongo ya --show muri crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Ikitonderwa: Amapaki ntazokurwamwo.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Iri shiramwo ni iryo kwerekana rusangi: umuntu wese arashobora kumenya ijambo ry'ibanga ry'umuyobozi waryo, kandi amajambo y'ibanga y'abayobozi ntashobora guhindurwa canke gusubizwa. Ntimwandike hano ikintu c'ibanga.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ibikoresho vyanyu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ibikorwa vy&apos;umutekano</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Ikitonderwa: Amapaki ntazokurwamwo.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Uwahinduye, uwinjiye canke uwanswe, kuri buri konti; kuyungurura no gusohora hanze.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Icegeranyo co kwinjira</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Abinjiye, kwinjira n&apos;ivyananiranye ku musi; gusohora umukoresha hose.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Ikitonderwa: Amapaki ntazokurwamwo.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Ibihe vyo kwinjira vyarengeje igihe vy'umukoresha wa PHP bikurwaho na PHP ubwayo (session.gc_maxlifetime), atari n'uru rupapuro canke igice ca cronjob session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Ibihe vyo kwinjira vy&apos;abakoresha bose biboneka, kandi bisohorwa, ku cegeranyo co kwinjira, gikora n&apos;umushinzwe igihe co kwinjira uwo ari we wese.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Kwugurura icegeranyo co kwinjira</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ konti yanyu.</translation>
     <message>
         <source>None yet</source>
         <translation>Nta n'imwe kugeza ubu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ibikorwa vy&apos;umutekano</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Kwinjira kwanyu guheruka, ukugerageza kwananiranye n&apos;ihinduka ry&apos;ijambo ry&apos;ibanga ryanyu, aderese ya imeyili no kwinjira mu ntambwe zibiri.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Kwinjira guheruka, ukugerageza kwananiranye n&apos;ihinduka ry&apos;umutekano w&apos;iyi konti.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Gusuzuma ibikorwa</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Kwinjira kwananiranye: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ Murabe urupapuro rw'ivyasabwe kugira muronke andi makuru.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab ntiyanditswe (%reason). Mwongere iyi mirongo kuri crontab y'umukoresha urubuga rukoreshwamwo, naho ukwo umurongo, ivyinjijwe, imenyesha n'urutonde rw'irondera ntibizokora na rimwe:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Gusubira gushiramwo bikorwa na Kickstarter (%file, hanyuma php bin/php/kickstarter.php run --apply) canke no gushiramwo bushasha.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Uburyo bwo kurungika imeyili bwanse ubutumwa %count mu gikorwa ca nyuma. Murabe serivere y'imeyili na site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Ibikorwa %count birarindiriye kandi nta ikoreshwa rya cronjob y&apos;amamenyesha ryanditswe. Mwongere igice ca cronjob &quot;frequent&quot; muri crontab, canke mukoreshe exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>Choose another site or section with the node picker</source>
         <translation>Muhitemwo urundi rubuga canke ikindi gice mukoresheje uwuhitamwo ihuriro</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Umuyobozi wa sisitemu wenyene ni we ashobora guhindura nyene ico kintu: mukoreshe ./console exp:content-check --fix-permissions --apply nka root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     <message>
         <source>empty</source>
         <translation>ubusa</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Urufunguzo rwo gushiraho umukono rumaze imyaka irenga umwe: muruhindure mukoresheje exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     <message>
         <source>not sent</source>
         <translation>ntivyarungitswe</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Cronjob y&apos;amamenyesha yandika ng&apos;aha igihe cose ikoreshejwe. Mwongere igice frequent muri crontab, canke mukoreshe exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Mukoreshe konsole: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>None.</source>
         <translation>Nta na kimwe.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>hakoreshejwe porogaramu yo kwemeza</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>hakoreshejwe kode yarungitswe kuri imeyili</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>hakoreshejwe kode yo kugarura</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>hakoreshejwe urufunguzo rwo kwinjira (passkey)</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>hakoreshejwe konti yo hanze</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ibikorwa vy&apos;umutekano</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Biboneka nk&apos;urusobe rwayo; aderese ibikwa nk&apos;uko ingene vyateguwe vyo gukingira amakuru vy&apos;urubuga bibivuga.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ntivyanditswe</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ahantu</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>hafi</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>Manage devices</source>
         <translation>Gutunganya ibikoresho</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>hakoreshejwe porogaramu yo kwemeza</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>hakoreshejwe kode yarungitswe kuri imeyili</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>hakoreshejwe kode yo kugarura</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>hakoreshejwe urufunguzo rwo kwinjira (passkey)</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>hakoreshejwe konti yo hanze</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ibikorwa vy&apos;umutekano</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ntivyanditswe</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ahantu</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>hafi</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>View the sessions of this user</source>
         <translation>Kuraba ibihe vyo kwinjira vy'uyu mukoresha</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Konti yanyu %login kuri %site imaze gukoreshwa kwinjira ivuye ahantu itaherutse kwinjirira:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Ahantu hagereranijwe</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser kuri %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Icegeranyo co kwinjira</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     <message>
         <source>unknown</source>
         <translation>ntivyizwi</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Mukingire konti yanyu</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Kode yo kugarura yakoreshejwe kwinjira muri konti yanyu %login kuri %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Kode yo kugarura yakoreshejwe</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konti</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Aderese igereranijwe</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Musabe ijambo ry&apos;ibanga rishasha kugira ngo musubire kwinjira, canke muvugane n&apos;abayobozi b&apos;urubuga.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Gusaba ijambo ry&apos;ibanga rishasha</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Kode yo kugarura imwe imwe ikora rimwe gusa. Nimba mwatakaje terefone yanyu, musubire mushireho porogaramu yanyu yo kwemeza kandi mubike kode nshasha zo kugarura ahantu hizigirwa.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Ukugerageza kwinjira kwananiranye kuri konti yanyu</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Kuva ubu, kwinjira bisaba kode hiyongereyeko ijambo ry&apos;ibanga ryanyu. Nimba ari mwebwe mwavyikoze, nta co mutegerezwa gukora.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Nimba ari mwebwe kandi mwibagiye ijambo ry&apos;ibanga ryanyu, musabe irishasha. Nimba atari mwebwe, muhitemwo ijambo ry&apos;ibanga rikomeye kuruta kandi mutangize kwinjira mu ntambwe zibiri.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Nimba atari mwebwe, hari uwushobora kuba azi ijambo ry&apos;ibanga ryanyu: murihindure ubu nyene kandi murabe aho konti yanyu yinjiye.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Kode zo kugarura zisigaye</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Gusuzuma ibikoresho vyanyu</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Integuza y&apos;umutekano</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Hari uwagerageje kwinjira muri konti yanyu %login kuri %site akoresheje ijambo ry&apos;ibanga ritari ryo incuro %count zikurikirana.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Habaye igikorwa c&apos;umutekano kuri konti yanyu %login kuri %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Iyi ni integuza y&apos;umutekano yerekeye konti yanyu. Irungikwa ku ihinduka ryose nk&apos;iryo kandi ntishobora guhagarikwa.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Igihe</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Kwinjira mu ntambwe zibiri vyahagaritswe kuri konti yanyu %login kuri %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Kwinjira mu ntambwe zibiri vyahagaritswe</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Kwinjira mu ntambwe zibiri vyatangijwe kuri konti yanyu %login kuri %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Kwinjira mu ntambwe zibiri vyatangijwe</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Konti yanyu %login kuri %site yugaritswe inyuma yo kwinjira kwananiranye incuro nyinshi cane.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Konti yanyu ubu ikingiwe n&apos;ijambo ry&apos;ibanga ryanyu ryonyene. Nimba atari mwebwe mwavyikoze, musubire mutangize kwinjira mu ntambwe zibiri inyuma yo guhindura ijambo ry&apos;ibanga ryanyu.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Konti yanyu yugaritswe</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Ibikorwa vy&apos;umutekano</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ibikorwa vy&apos;umutekano vya %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Yinjiye</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Ukugerageza kwinjira kwananiranye</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Yasohotse</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Ibihe vyo kwinjira vyasohowe</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Kwinjira bivuye ku gikoresho gishasha</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Kwinjira bivuye ahantu hashasha</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Akaranga kemejwe (&quot;Emeza ko ari mwebwe&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Igenzura ry&apos;akaranga ryananiranye</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Yinjiye akoresheje urufunguzo rwo kwinjira</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Kwinjira n&apos;urufunguzo rwo kwinjira vyananiranye</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Kwinjira vyanswe: kode y&apos;intambwe ya kabiri irabuze canke si yo</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kode y&apos;intambwe ya kabiri si yo</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konti yugaritswe inyuma yo kwinjira kwananiranye</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konti yuguruwe</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Ijambo ry&apos;ibanga ryahinduwe</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Guhindura ijambo ry&apos;ibanga vyananiranye</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Ijambo ry&apos;ibanga ryasubiwemwo</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Ijambo ry&apos;ibanga rishasha ryasabwe</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Aderese ya imeyili yahinduwe</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Izina ry&apos;umukoresha ryahinduwe</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kwinjira mu ntambwe zibiri vyatangijwe</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kwinjira mu ntambwe zibiri vyahagaritswe</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kode yo kugarura yakoreshejwe</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kode nshasha zo kugarura</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Ijambo ry&apos;ibanga rya porogaramu ryaremwe</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Ijambo ry&apos;ibanga rya porogaramu ryatesheje agaciro</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Urufunguzo rwo kwinjira rwongeweko</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Urufunguzo rwo kwinjira rwakuweho</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konti yatangijwe</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konti yahagaritswe</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Vyose</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Kwinjira n&apos;ibihe vyo kwinjira</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Ihinduka rya konti</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Bikeneye kwitwararikwa</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>vyakozwe namwe</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>vyakozwe n&apos;umukoresha</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>vyakozwe na %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Uburyo</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Mucukumbuzi</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sisitemu ikoresha</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Igikoresho</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Ahantu</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Igihugu</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Ibihe vyo kwinjira</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Ibihe</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Inzira yarungitswemwo</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ukugerageza kwananiranye</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Kode zisigaye</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Umushinzwe kwinjira</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ibikorwa vy&apos;umutekano</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ibikorwa vy&apos;umutekano vya %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Kwinjira n&apos;ihinduka ry&apos;umutekano wa konti yanyu. Nimba mubonye ikintu mutakoze, muhindure ijambo ry&apos;ibanga ryanyu kandi musohore ibikoresho mutazi.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Kwinjira n&apos;ihinduka ry&apos;umutekano w&apos;iyi konti.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ibikoresho vyanyu</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Guhindura ijambo ry&apos;ibanga</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Gusubira kuri konti</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Ibikorwa vy&apos;umutekano ntibiriko birandikwa</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Bisomwa mu gitabo c&apos;ikurikiranwa ry&apos;abakoresha, gifise imbonerahamwe expuser_audit ibuze canke idashigikiwe kuri ubu bubiko bw&apos;amakuru. Mukoreshe php update/common/scripts/6.0/createuseraudittable.php, canke ivugurura ry&apos;ububiko bw&apos;amakuru rya 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Imisi %days iheze</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Kwinjira mu misi %days iheze</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Ibikorwa vy&apos;umutekano biheruka</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Kwerekana</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>vyananiranye</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>vyanswe</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Nta bikorwa vy&apos;umutekano biranditswe.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Ibikorwa vy&apos;umutekano bibikwa imisi %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Ibikorwa vy&apos;umutekano bibikwa gushika umuyobozi abikuyeho.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Kumanura amakuru yanje yo kwinjira</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ibihe vyanyu vyo kwinjira n&apos;ibikorwa vy&apos;umutekano nk&apos;idosiye ya JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Yinjiye</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Ukugerageza kwinjira kwananiranye</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Yasohotse</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Ibihe vyo kwinjira vyasohowe</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Kwinjira bivuye ku gikoresho gishasha</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Kwinjira bivuye ahantu hashasha</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Akaranga kemejwe (&quot;Emeza ko ari mwebwe&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Igenzura ry&apos;akaranga ryananiranye</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Yinjiye akoresheje urufunguzo rwo kwinjira</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Kwinjira n&apos;urufunguzo rwo kwinjira vyananiranye</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Kwinjira vyanswe: kode y&apos;intambwe ya kabiri irabuze canke si yo</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kode y&apos;intambwe ya kabiri si yo</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konti yugaritswe inyuma yo kwinjira kwananiranye</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konti yuguruwe</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Ijambo ry&apos;ibanga ryahinduwe</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Guhindura ijambo ry&apos;ibanga vyananiranye</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Ijambo ry&apos;ibanga ryasubiwemwo</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Ijambo ry&apos;ibanga rishasha ryasabwe</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Aderese ya imeyili yahinduwe</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Izina ry&apos;umukoresha ryahinduwe</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kwinjira mu ntambwe zibiri vyatangijwe</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kwinjira mu ntambwe zibiri vyahagaritswe</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kode yo kugarura yakoreshejwe</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kode nshasha zo kugarura</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Ijambo ry&apos;ibanga rya porogaramu ryaremwe</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Ijambo ry&apos;ibanga rya porogaramu ryatesheje agaciro</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Urufunguzo rwo kwinjira rwongeweko</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Urufunguzo rwo kwinjira rwakuweho</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konti yatangijwe</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konti yahagaritswe</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Vyose</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Kwinjira n&apos;ibihe vyo kwinjira</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Ihinduka rya konti</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Bikeneye kwitwararikwa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ibikorwa vy&apos;umutekano</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ibikorwa vy&apos;umutekano vya %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Kwinjira n&apos;ihinduka ry&apos;umutekano wa konti yanyu. Nimba mubonye ikintu mutakoze, muhindure ijambo ry&apos;ibanga ryanyu kandi musohore ibikoresho mutazi.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ibikoresho vyanyu</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Guhindura ijambo ry&apos;ibanga</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Ibikorwa vy&apos;umutekano ntibirandikwa kuri uru rubuga.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Kwinjira mu misi %days iheze</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ukugerageza kwananiranye</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Nta bikorwa vy&apos;umutekano biranditswe.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Kumanura amakuru yanje yo kwinjira</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ibihe vyanyu vyo kwinjira n&apos;ibikorwa vy&apos;umutekano nk&apos;idosiye ya JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Ijambo ry&apos;ibanga</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Ijambo ry&apos;ibanga na kode y&apos;intambwe ya kabiri</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interface ya REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interface ya SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Kwinjira rimwe (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Yinjiye imbere y&apos;uko ibihe vyo kwinjira vyandikwa</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Icegeranyo co kwinjira</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Abinjiye ku rubuga, incuro konti zinjira n&apos;izo binanirwa, no gusohora umukoresha hose. Gikora n&apos;umushinzwe igihe co kwinjira uwo ari we wese.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Igihe co kwinjira casohowe. Igikoresho kitegerezwa gusubira kwinjira.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login yasohowe mu bihe vyo kwinjira %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login nta gihe co kwinjira gikora yari afise.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Nta konti ifise iyo ID, iryo zina ry&apos;umukoresha canke iyo aderese ya imeyili.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Iki ni co gihe co kwinjira muriko murakoresha. Kugira ngo mukirangize, musohoke.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ico gihe co kwinjira cari carangiye.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Igihe c&apos;uru rupapuro cari carangiye. Nta kintu cahindutse; turabasavye mwongere mugerageze.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Ibihe vyo kwinjira ntibyandikwa kuri uru rubuga (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Imbonerahamwe expuser_session irabuze</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Ibihe vyo kwinjira vyandikwa ikimara kuremwa: php update/common/scripts/6.0/createusersessiontable.php, canke ivugurura ry&apos;ububiko bw&apos;amakuru rya 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Ubu n&apos;uyu musi</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Ibihe vyo kwinjira bikora</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Abakoresha binjiye</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Kwinjira kw&apos;uyu musi</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Ukugerageza kwananiranye kw&apos;uyu musi</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Gusohora umukoresha hose</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Igihe cose co kwinjira ca konti kirangira ku gisabwa gikurikira, harimwo n&apos;ivyagumijwe na Nyibuka. Mubikoreshe igihe konti ishobora kuba iri mu minwe itari yo; hanyuma musubiremwo ijambo ryayo ry&apos;ibanga.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID y&apos;umukoresha, izina ry&apos;umukoresha canke aderese ya imeyili</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Gusohora hose</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Yinjiye ubu</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Herekanwa %limit vyakoreshejwe vuba.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Umukoresha</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Igikoresho</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Aderese</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Yinjiye</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Igikorwa giheruka</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ibikorwa</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Iki gikoresho</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ntivyanditswe</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Gusohora</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Nta gihe co kwinjira kiriho.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Imisi %days iheze</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Kwinjira n&apos;ukugerageza kwananiranye biharurwa mu gitabo c&apos;ikurikiranwa ry&apos;abakoresha, kitariho; ibihe bishasha vyo kwinjira ni vyo biharurwa.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Umusi</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Kwinjira</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ukugerageza kwananiranye</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Ibihe bishasha vyo kwinjira</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Umushinzwe igihe co kwinjira: %handler. Ibihe vyo kwinjira bisomwa mu mbonerahamwe expuser_session, ni co gituma icegeranyo gikora n&apos;umushinzwe uwo ari we wese.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Integuza y&apos;umutekano yerekeye konti yanyu</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Habaye igikorwa c&apos;umutekano kuri konti yanyu %login: %event. Nimba atari mwebwe, mukingire konti yanyu kuri %url.</translation>
     </message>
 </context>
 </TS>

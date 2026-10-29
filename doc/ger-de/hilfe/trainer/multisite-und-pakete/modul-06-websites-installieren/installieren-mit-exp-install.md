@@ -33,7 +33,7 @@ Editor, prüfen sie, bevor etwas geschrieben wird, und lesen, was der Befehl mel
 
 Nach dieser Lektion können die Teilnehmenden:
 
-- mit `php bin/php/console exp:install` und den Optionen für die Host-Zuordnung installieren;
+- mit `php bin/php/console exp:install --apply` und den Optionen für die Host-Zuordnung installieren;
 - die Konfiguration mit `--print` und den ganzen Lauf mit `--dry-run` prüfen;
 - die Zusammenfassung lesen, das erzeugte Passwort finden und die Passwortdatei nach der ersten Anmeldung entfernen;
 - den Schutz vor dem Überschreiben einer Installation, `--force` und `--db-action` erklären.

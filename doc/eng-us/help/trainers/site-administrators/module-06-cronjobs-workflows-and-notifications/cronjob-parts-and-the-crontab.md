@@ -85,7 +85,7 @@ it is found in. When several settings files append the same directory, the scrip
 
 ## Hands-on exercise
 
-Use your own training installation (for example one installed with `php bin/php/console exp:install`, see
+Use your own training installation (for example one installed with `php bin/php/console exp:install --apply`, see
 [The console install](../../../../install/07-console-install.md)). Work in a terminal at the installation root.
 
 1. Open `settings/cronjob.ini` read-only (`less settings/cronjob.ini`) and find `[CronjobPart-frequent]`. Write down

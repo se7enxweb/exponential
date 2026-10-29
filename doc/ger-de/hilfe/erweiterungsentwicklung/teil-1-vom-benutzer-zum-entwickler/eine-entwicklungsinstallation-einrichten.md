@@ -56,7 +56,7 @@ Erwartet: eine Anzahl von Erweiterungsklonen und die letzten drei Commits eines 
 ## Schritt 2: mit einem Befehl installieren
 
 ```bash
-php bin/php/console exp:install
+php bin/php/console exp:install --apply
 ```
 
 Ohne Optionen installiert dies das Seitenpaket `sevenx_multisite` auf **SQLite**, in `eng-US`, und gibt eine

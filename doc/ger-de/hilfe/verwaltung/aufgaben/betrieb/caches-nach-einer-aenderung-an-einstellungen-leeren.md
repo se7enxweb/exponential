@@ -50,7 +50,7 @@ gelesen haben, also kommt es auf die Reihenfolge an
 
    ```bash
    php bin/php/ezcache.php --clear-tag=content --allow-root-user
-   ./console exp:velocity cache clear --allow-root-user
+   ./console exp:velocity cache clear --apply --allow-root-user
    ```
 
 ## Prüfen, ob es funktioniert hat

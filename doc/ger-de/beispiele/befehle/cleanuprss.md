@@ -2,14 +2,14 @@
 title: exp:cleanuprss
 audience: developer, admin
 category: examples
-summary: Kürzt per RSS importierte Inhalte und behält die neuesten Einträge jedes aktiven Imports.
+summary: Kürzt per RSS importierte Inhalte und behält die neuesten Einträge jedes aktiven Imports (Probelauf, außer mit --apply).
 keywords: Konsole, Befehl, exp:cleanuprss, cleanuprss, console, command, CLI, cleanuprss.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:cleanuprss
 
-Kürzt per RSS importierte Inhalte und behält die neuesten Einträge jedes aktiven Imports.
+Kürzt per RSS importierte Inhalte und behält die neuesten Einträge jedes aktiven Imports (Probelauf, außer mit --apply).
 
 Skript `bin/php/cleanuprss.php`, Code in `kernel/private/classes/commands/cleanuprss.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -28,15 +28,20 @@ Keeps the newest items of each active RSS import and removes the rest.
 
 Configured in content.ini [RSSImportCleanupSettings]; it removes nothing
 until that names the classes it is allowed to remove.
+Without --apply nothing is removed: the script lists the items it would remove.
+--dry-run is still accepted and means the same as no flag; --apply together with
+--dry-run is a usage error (exit 2). The cronjob part cleanuprss removes as before.
 
-./bin/php/cleanuprss.php --dry-run
+./bin/php/cleanuprss.php
+./bin/php/cleanuprss.php --apply
 ```
 
 ## Optionen
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--dry-run` |  | Auflisten, was entfernt würde, und nichts entfernen |
+| `--apply` |  | Die Einträge entfernen (Standard ist ein Probelauf, der sie auflistet und nichts entfernt) |
+| `--dry-run` |  | Der Standard, beibehalten für Skripte, die die Option übergeben: auflisten, was entfernt würde, nichts entfernen |
 | `--keep` | erforderlich | So viele Einträge pro Feed behalten statt der konfigurierten Anzahl |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

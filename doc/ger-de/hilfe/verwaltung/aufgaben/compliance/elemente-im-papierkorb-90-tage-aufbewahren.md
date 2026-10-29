@@ -51,7 +51,7 @@ dass der Papierkorb personenbezogene Daten für immer hält, und lässt dennoch 
 
 ## Prüfen, ob es funktioniert hat
 
-- Auf der Kommandozeile dieselbe Bereinigung zum Test: `php bin/php/trashpurge.php --trashed-days=90`, zuerst auf einer
+- Auf der Kommandozeile dieselbe Bereinigung zum Test: `php bin/php/trashpurge.php --apply --trashed-days=90`, zuerst auf einer
   Kopie.
 - `var/log/trashpurge.log` (Setup > Logdateien) zeigt jeden Lauf; der Papierkorb behält Elemente, die jünger als 90 Tage
   sind.

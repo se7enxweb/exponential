@@ -15,7 +15,7 @@ Diese Seite richtet sich an Entwickler, die jedes Teil einmal sehen möchten, so
 `/expdemo/edit/<id>`. **Setup > RAD** kann Ihnen danach einen Großteil dieses Grundgerüsts schreiben; wer es zuerst von
 Hand macht, sieht, was die Assistenten schreiben ([RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md)).
 
-Zeitbedarf: etwa eine Stunde auf einer Entwicklungsinstallation (`./console exp:install` richtet in wenigen Minuten
+Zeitbedarf: etwa eine Stunde auf einer Entwicklungsinstallation (`./console exp:install --apply` richtet in wenigen Minuten
 eine auf SQLite ein: [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 
 ## Inhalt

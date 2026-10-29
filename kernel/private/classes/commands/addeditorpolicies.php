@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of bin/php/addeditorpolicies.php.
- * @description Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account (--dry-run lists them first)
+ * @description Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account (dry run unless --apply)
  * Guide: doc/eng-us/bc/6.0/editor-role-policies.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -31,20 +31,24 @@ class Addeditorpolicies extends \Exponential\Runnable\Command
                     . "versionread, versionremove, remove, translate, bookmark, pendinglist, dashboard, view_embed, hide,\n"
                     . "restore, reverserelatedlist): it also grants emptying everybody's trash, the languages, the URL\n"
                     . "aliases and everybody's content jobs. --keep-content-wildcard leaves it. Lists what the role still\n"
-                    . "holds that an editor role should not (WARN lines). Prints PASS or FAIL at the end.\n\n"
-                    . "Example: php bin/php/addeditorpolicies.php --dry-run\n"
-                    . "         php bin/php/addeditorpolicies.php --only=content/restore\n"
-                    . "         php bin/php/addeditorpolicies.php --skip=ezmultiupload/* --role=Redakteur",
+                    . "holds that an editor role should not (WARN lines). Prints PASS or FAIL at the end.\n"
+                    . "Without --apply nothing is written: the script lists what it would remove and add. --dry-run is\n"
+                    . "still accepted and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).\n\n"
+                    . "Example: php bin/php/addeditorpolicies.php\n"
+                    . "         php bin/php/addeditorpolicies.php --apply\n"
+                    . "         php bin/php/addeditorpolicies.php --apply --only=content/restore\n"
+                    . "         php bin/php/addeditorpolicies.php --apply --skip=ezmultiupload/* --role=Redakteur",
                 'use-session' => false,
                 'use-modules' => true,
                 'use-extensions' => true
             )
         );
         $options = $this->startup(
-            "[dry-run][role:][only:*][skip:*][keep-content-wildcard]",
+            "[apply][dry-run][role:][only:*][skip:*][keep-content-wildcard]",
             '',
             array(
-                'dry-run' => "List what would be removed and added, change nothing",
+                'apply' => "Write the changes (the default is a dry run that lists them and changes nothing)",
+                'dry-run' => "The default, kept for scripts that pass it: list what would be removed and added, change nothing",
                 'keep-content-wildcard' => "Leave a content/* of the role as it is (not replaced by single functions)",
                 'role' => "The role to complete (ID or name); default Editor",
                 'only' => "Only this policy (module/function), may be repeated",
@@ -52,7 +56,13 @@ class Addeditorpolicies extends \Exponential\Runnable\Command
             )
         );
 
-        $dryRun = (bool)$options['dry-run'];
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $script->shutdown( 2 );
+        }
+        $dryRun = !$apply;
         $roleName = $options['role'] ? (string)$options['role'] : \expEditorPolicies::ROLE_NAME;
         $only = $options['only'] ? array_map( 'strval', (array)$options['only'] ) : array();
         $skip = $options['skip'] ? array_map( 'strval', (array)$options['skip'] ) : array();
@@ -177,7 +187,7 @@ class Addeditorpolicies extends \Exponential\Runnable\Command
         $replaced = $narrowed ? 'content/* ' . ( $dryRun ? 'would be' : 'was' ) . ' replaced by ' . count( $narrowPlan['add'] )
                                 . ' content function' . ( count( $narrowPlan['add'] ) === 1 ? '' : 's' ) . '; ' : '';
         if ( $dryRun )
-            $cli->output( "PASS: {$replaced}$granted polic" . ( $granted === 1 ? 'y' : 'ies' ) . " would be added to $label (dry run, nothing changed)" );
+            $cli->output( "PASS: {$replaced}$granted polic" . ( $granted === 1 ? 'y' : 'ies' ) . " would be added to $label (dry run, nothing changed; --apply writes)" );
         else
             $cli->output( "PASS: {$replaced}$granted polic" . ( $granted === 1 ? 'y' : 'ies' ) . " added to $label" );
         $script->shutdown();

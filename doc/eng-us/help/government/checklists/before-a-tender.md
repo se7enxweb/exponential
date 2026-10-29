@@ -41,7 +41,7 @@ It points to the procurement section of this help for each step.
 
 ## Market and evidence
 
-- [ ] A test installation tried by your own team: `./console exp:install` on SQLite ([Installing Exponential in one command](../../../features/6.0/install-in-one-command.md)).
+- [ ] A test installation tried by your own team: `./console exp:install --apply` on SQLite ([Installing Exponential in one command](../../../features/6.0/install-in-one-command.md)).
 - [ ] The standards pages read: [accessibility](../../../standards/accessibility.md), [security](../../../standards/security.md), [privacy](../../../standards/privacy.md).
 - [ ] Supported versions and release policy understood ([Supported versions](../procurement/lifecycle/supported-versions.md)).
 - [ ] Possible suppliers and partners known ([Partners: start here](../../partners/partners-start-here.md)); market consultation done within your rules.

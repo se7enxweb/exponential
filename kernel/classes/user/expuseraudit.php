@@ -291,6 +291,19 @@ class expUserAudit
             $db->query( 'INSERT INTO ' . self::TABLE . ' ( ' . implode( ', ', $columns ) . ' ) VALUES ( ' . implode( ', ', $values ) . ' )' );
         }
         $db->commit();
+        // the security alerts of the rows stored for the first time (two-step sign-in changed, recovery code used,
+        // failed sign-ins, the account locked); never twice for a row delivered again from the spool
+        if ( class_exists( 'expUserSecurityAlerts' ) )
+        {
+            try
+            {
+                expUserSecurityAlerts::notify( array_values( $rows ) );
+            }
+            catch ( Throwable $e )
+            {
+                eZDebug::writeError( 'User audit: the security alerts failed: ' . $e->getMessage(), __METHOD__ );
+            }
+        }
         return count( $records );
     }
 

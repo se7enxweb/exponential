@@ -36,7 +36,7 @@ morning; or a correction published right before a press release.
 
 | Tool | What it does |
 |---|---|
-| `php bin/php/preload.php --siteaccess=site --allow-root-user` | requests the section pages first, then follows the links of the site; one preload runs at a time, every run listed on **Setup > Preload Sites** |
+| `php bin/php/preload.php --apply --siteaccess=site --allow-root-user` | requests the section pages first, then follows the links of the site; one preload runs at a time, every run listed on **Setup > Preload Sites** |
 | `php bin/php/warm.php --allow-root-user` | warms every published page; suits a cron entry every few minutes |
 | **Setup > Preload Sites** | the same in the browser: choose the site, a page limit (default 250) and a link depth (default 3) |
 | `[DeploySettings] WarmUpURL[]` | pages `exp:velocity deploy` requests in the background as its last step |
@@ -58,7 +58,7 @@ After a restore, or when you cleared everything by hand, run a preload:
 
 ```bash
 php bin/php/ezcache.php --clear-all --allow-root-user
-php bin/php/preload.php --siteaccess=site --allow-root-user
+php bin/php/preload.php --apply --siteaccess=site --allow-root-user
 ```
 
 To keep every published page warm, a cron line such as the one in the guide:

@@ -33,7 +33,7 @@ archivierte Version entfernt, um Platz zu schaffen. Hintergrund:
 
    Die mitgelieferten Werte sind `DefaultVersionHistoryLimit=45` und `VersionHistoryClass[1]=75`.
 2. Leeren Sie den INI-Cache: `php bin/php/ezcache.php --clear-tag=ini`; mit Velocity auch
-   `./console exp:velocity cache clear`.
+   `./console exp:velocity cache clear --apply`.
 
 ## Prüfen
 
@@ -45,7 +45,7 @@ Beschlusses listet seine Seite **Versionen** weiterhin die frühen Versionen.
 | Problem | Hinweis |
 |---|---|
 | Versionen bereits entfernt | die neue Grenze gilt ab jetzt; entfernte Versionen sind weg |
-| Eine Grenze später senken | entfernt keine Versionen, bis `php bin/php/cleanupversions.php` läuft; sichern Sie vorher |
+| Eine Grenze später senken | entfernt keine Versionen, bis `php bin/php/cleanupversions.php --apply` läuft; sichern Sie vorher |
 
 ## Verwandte Seiten
 

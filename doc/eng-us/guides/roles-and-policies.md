@@ -222,7 +222,7 @@ them. From 6.0.15 on that needs the policy *OAuth / Authorize* (`oauth/authorize
 siteaccesses; a user without it is sent back to the application with `error=access_denied`.
 
 - New installations give it to the **Editor** role; administrators have it through full access.
-- On an upgraded site run `php bin/php/addoauthauthorizepolicy.php --dry-run`, then without `--dry-run`: every role
+- On an upgraded site run `php bin/php/addoauthauthorizepolicy.php` (a dry run), then with `--apply`: every role
   that lets users sign in gets the policy for the same siteaccesses, so nobody loses what they could do before.
   The whole story, and how to keep the old behavior for a while, is in
   [the upgrade note](../bc/6.0/oauth-authorize-policy.md).

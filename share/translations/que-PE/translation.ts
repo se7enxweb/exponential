@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Wakichiy &gt; Cron llamk'aykuna</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Manaraq mayqin cron llamk&apos;aypa partin purinchu: llamk&apos;aykunap suyana sinrun, apamuykuna, willakuykuna, maskay indicepas suyachkanku. Purichiy php bin/php/installcrontab.php --add --apply, utaq --show nisqap siqinkunata crontab nisqaman yapay.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Yuyay: q'ipikunaqa manam churasqata hurqusqa kanqachu.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Kay churayqa llapaman rikuchiy: pipas kamachiq pakasqa simita yachayta atin, kamachiqpa pakasqa simintapas manam t'ikrayta nitaq musuqmanta churayta atikunchu. Kaypi ama imapas pakasqatachu churaychu.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Aparatukuna</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Amachay ruraykuna</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Yuyay: q'ipikunaqa manam churasqata hurqusqa kanqachu.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Pim tikrarqan, yaykurqan utaq mana chaskisqa karqan, sapa kuwintapi; suysuy hinaspa apachiy.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Yaykuykunamanta willakuy</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Pikuna yaykusqa kachkanku, sapa p&apos;unchaw yaykuykuna mana atipasqakunapas; huk apaykachaqta llapa ladumanta lluqsichiy.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Yuyay: q'ipikunaqa manam churasqata hurqusqa kanqachu.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP ruraqpa pachan tukusqa tinkuykunataqa PHP kikin hurqun (session.gc_maxlifetime), mana kay raphichu nitaq cron llamk'ay session_gc rakichu.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Sapa apaykachaqpa yaykusqa tinkuyninkunaqa yaykuykunamanta willakuypi qillqasqa kachkan, chaypitaq lluqsichiyta atikun; chay willakuyqa sapa tinkuy ruraqwan llamk&apos;an.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Yaykuykunamanta willakuyta kichay</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ llamk'achinaykipaq.</translation>
     <message>
         <source>None yet</source>
         <translation>Manaraq</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Amachay ruraykuna</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Qayna yaykusqaykikuna, mana atipasqa kallpachakuykuna, pakasqa simiykipi, antañiqi riqsichiqniykipi, iskay purinapi yaykuyniykipipas hukchaykuna.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Kay kuwintap qayna yaykuyninkuna, mana atipasqa kallpachakuykuna, amachay hukchayninkunapas.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Ruraykunata qhaway</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Mana atipasqa yaykuykuna: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ Aswan willaypaq mañasqakunap raphinta qhaway.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab mana qillqasqachu (%reason). Kay siq'ikunata webpa purinan apaykachaqpa crontab nisqanman yapay, mana chayqa suyana sinru, apamuykuna, willakuykuna hinallataq maskay yupay mana hayk'aqpas purinqachu:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Musuqmanta churanapaqqa kickstarter nisqawan (%file, chaymanta php bin/php/kickstarter.php run --apply) utaq musuq churaywan ruwakun.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Antañiqi apaqqa qhipa purichiypi %count willakuykunata mana chaskirqanchu. Antañiqi sirwidurta hinaspa site.ini MailSettings nisqata qhaway.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count pasakuy suyachkan, manataq willakuy cron llamk&apos;aypa purisqanqa qillqasqachu. Cron llamk&apos;aypa &quot;frequent&quot; nisqa partinta crontab nisqaman yapay, utaq exp:notification:run --apply purichiy.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Huk webta utaq rakita khipu akllanawan akllay</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Sistemap kamachiqllanmi dueñota hukchayta atin: ./console exp:content-check --fix-permissions --apply root hina purichiy.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>empty</source>
         <translation>ch'usaq</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Firmana llaveqa huk watamanta aswan machuñam: exp:audit key rotate --apply nisqawan t&apos;ikray.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>not sent</source>
         <translation>mana kachasqa</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Willakuy cron llamk&apos;ayqa sapa purisqanta kaypi qillqan. frequent nisqa partita crontab nisqaman yapay, utaq exp:notification:run --apply purichiy.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Consolata llamk&apos;achiy: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>None.</source>
         <translation>Manan imapas.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>chiqaqchaq app-wan</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>antañiqiwan chayamuq yupaywan</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>kutichina yupaywan</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>yaykuna kichanawan</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>hawa kuwintawan</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Amachay ruraykuna</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Llikan hina rikuchisqa; riqsichiqqa web willakuna amachay allichayninkuna nisqanman hina waqaychasqa.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Mana qillqasqa</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Tiyana</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>yaqa</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>Manage devices</source>
         <translation>Aparatukunata kamachiy</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>chiqaqchaq app-wan</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>antañiqiwan chayamuq yupaywan</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>kutichina yupaywan</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>yaykuna kichanawan</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>hawa kuwintawan</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Amachay ruraykuna</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Mana qillqasqa</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Tiyana</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>yaqa</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>View the sessions of this user</source>
         <translation>Kay apaykachaqpa tinkuyninkunata qhaway</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Kuwintayki (%login, %site nisqapi) kunallan huk maymantam yaykunapaq llamk&apos;achisqa karqan, chaymantaqa kay qayna p&apos;unchawkunapi mana yaykurqanchu:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Yaqa tiyana</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser, %os nisqapi</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Yaykuykunamanta willakuy</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>unknown</source>
         <translation>mana riqsisqa</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Kuwintaykita amachay</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Huk kutichina yupaywanmi kuwintaykiman yaykurqanku (%login, %site nisqapi).</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Huk kutichina yupaymi llamk&apos;achisqa karqan</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kuwinta</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Yaqa riqsichiq</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Musuq pakasqa simita mañakuy huktawan yaykunaykipaq, utaq webpa kamachiqninkunawan rimay.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Musuq pakasqa simita mañakuy</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Sapa kutichina yupayqa huk kutillam llamk&apos;an. Tilifunuykita chinkachirqanki chayqa, chiqaqchaq app-niykita huktawan allichay, musuq kutichina yupaykunatataq allin amachasqa kitipi waqaychay.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Kuwintaykiman mana atipasqa yaykuy kallpachakuykuna</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Kunanmantaqa yaykunapaq pakasqa simiykimanta aswan huk yupaytam mañakunqa. Qam kayta ruwarqanki chayqa, manam imatapas ruwanaykichu.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Qam karqanki, pakasqa simiykitataq qunqarqanki chayqa, musuqta mañakuy. Mana chayqa, aswan kallpasapa pakasqa simita akllay, iskay purinapi yaykuytataq llamk&apos;achiy.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Mana qamchu karqanki chayqa, pipas pakasqa simiykita yachanman: kunallan hukchay, maypichus kuwintayki yaykusqa kachkan chaytapas qhaway.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Puchuq kutichina yupaykuna</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Aparatuykikunata qhaway</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Amachay willakuy</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Pipas kuwintaykiman (%login, %site nisqapi) pantasqa pakasqa simiwan yaykuyta munarqan, %count kutita qatiqninpi.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Kuwintaykipi (%login, %site nisqapi) huk amachay pasakuy karqan.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Kayqa kuwintaykimanta amachay willakuymi. Sapa kay hina hukchaypaq kachakun, manataq samachiyta atikunchu.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Pacha</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Iskay purinapi yaykuyqa kuwintaykipaq (%login, %site nisqapi) samachisqa karqan.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Iskay purinapi yaykuyqa samachisqa karqan</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Iskay purinapi yaykuyqa kuwintaykipaq (%login, %site nisqapi) llamk&apos;achisqa karqan.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Iskay purinapi yaykuyqa llamk&apos;achisqa karqan</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Kuwintayki (%login, %site nisqapi) achka mana atipasqa yaykuykuna qhipata wichqasqa karqan.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Kunanqa kuwintayki pakasqa simiykillawan amachasqa. Mana qamchu kayta ruwarqanki chayqa, pakasqa simiykita hukchaspaqa iskay purinapi yaykuyta huktawan llamk&apos;achiy.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Kuwintayki wichqasqa karqan</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Amachay ruraykuna</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Amachay ruraykuna: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Yaykusqa</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Mana atipasqa yaykuy kallpachakuy</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Lluqsisqa</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Tinkuykuna lluqsichisqa</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Musuq aparatumanta yaykuy</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Musuq tiyanamanta yaykuy</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Pi kasqan chiqaqchasqa («Qam kasqaykita chiqaqchay»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Pi kasqanta qhaway mana atipasqa</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Yaykuna kichanawan yaykusqa</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Yaykuna kichanawan yaykuy mana atipasqa</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Yaykuy mana chaskisqa: iskay purinap yupayninqa mana kanchu utaq pantasqa</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Iskay purinap pantasqa yupaynin</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kuwinta mana atipasqa yaykuykuna qhipata wichqasqa</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kuwinta kichasqa</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Pakasqa simi hukchasqa</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Pakasqa simi hukchay mana atipasqa</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Pakasqa simi musuqyachisqa</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Musuq pakasqa simi mañakusqa</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Antañiqi riqsichiq hukchasqa</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Apaykachaqpa sutin hukchasqa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Iskay purinapi yaykuy llamk&apos;achisqa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Iskay purinapi yaykuy samachisqa</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kutichina yupay llamk&apos;achisqa</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Musuq kutichina yupaykuna</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>App pakasqa simi paqarichisqa</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App pakasqa simi chinkachisqa</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Yaykuna kichana yapasqa</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Yaykuna kichana hurqusqa</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Kuwinta llamk&apos;achisqa</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kuwinta samachisqa</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tukuy</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Yaykuykuna tinkuykunapas</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Kuwinta hukchaykuna</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Qhawanapaq</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>qampa ruwasqan</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>apaykachaqpa ruwasqan</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>%login-pa ruwasqan</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Imayna</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Web puriq</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Llamk&apos;ay sistema</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Aparatu</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Kiti</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Suyu</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Tinkuykuna</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Mayqinkuna</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kachana ñan</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mana atipasqa kallpachakuykuna</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Puchuq yupaykuna</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Yaykuy ruraq</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Amachay ruraykuna</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Amachay ruraykuna: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Kuwintaykip amachayninpi yaykuykuna hukchaykunapas. Mana ruwasqaykita rikunki chayqa, pakasqa simiykita hukchay, mana riqsisqayki aparatukunatataq lluqsichiy.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Kay kuwintap amachayninpi yaykuykuna hukchaykunapas.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Aparatukuna</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Pakasqa simita t&apos;ikray</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Kuwintaman kutiy</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Amachay ruraykunaqa mana qillqasqachu</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Apaykachaqkunap chiqaqchay qillqanmanta ñawinchasqa; chaypa expuser_audit tablanqa mana kanchu utaq kay willakuna waqaychanapi mana yanapasqachu. Purichiy php update/common/scripts/6.0/createuseraudittable.php, utaq 6.0.15 nisqap willakuna waqaychana musuqyachiynin.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Qhipa %days p&apos;unchawkuna</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Qhipa %days p&apos;unchawpi yaykuykuna</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Qayna amachay ruraykuna</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rikuchiy</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>mana atipasqa</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>mana chaskisqa</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Manaraq amachay ruraykuna qillqasqachu.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Amachay pasakuykunaqa %days p&apos;unchaw waqaychasqa kanku.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Amachay pasakuykunaqa huk kamachiq hurqunankama waqaychasqa kanku.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Yaykuy willakunayta uraqay</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Tinkuykunayki amachay pasakuykunaykipas JSON willañiqi hina.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Yaykusqa</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Mana atipasqa yaykuy kallpachakuy</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Lluqsisqa</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Tinkuykuna lluqsichisqa</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Musuq aparatumanta yaykuy</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Musuq tiyanamanta yaykuy</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Pi kasqan chiqaqchasqa («Qam kasqaykita chiqaqchay»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Pi kasqanta qhaway mana atipasqa</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Yaykuna kichanawan yaykusqa</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Yaykuna kichanawan yaykuy mana atipasqa</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Yaykuy mana chaskisqa: iskay purinap yupayninqa mana kanchu utaq pantasqa</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Iskay purinap pantasqa yupaynin</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kuwinta mana atipasqa yaykuykuna qhipata wichqasqa</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kuwinta kichasqa</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Pakasqa simi hukchasqa</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Pakasqa simi hukchay mana atipasqa</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Pakasqa simi musuqyachisqa</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Musuq pakasqa simi mañakusqa</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Antañiqi riqsichiq hukchasqa</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Apaykachaqpa sutin hukchasqa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Iskay purinapi yaykuy llamk&apos;achisqa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Iskay purinapi yaykuy samachisqa</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kutichina yupay llamk&apos;achisqa</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Musuq kutichina yupaykuna</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>App pakasqa simi paqarichisqa</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App pakasqa simi chinkachisqa</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Yaykuna kichana yapasqa</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Yaykuna kichana hurqusqa</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Kuwinta llamk&apos;achisqa</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kuwinta samachisqa</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tukuy</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Yaykuykuna tinkuykunapas</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Kuwinta hukchaykuna</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Qhawanapaq</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Amachay ruraykuna</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Amachay ruraykuna: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Kuwintaykip amachayninpi yaykuykuna hukchaykunapas. Mana ruwasqaykita rikunki chayqa, pakasqa simiykita hukchay, mana riqsisqayki aparatukunatataq lluqsichiy.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Aparatukuna</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Pakasqa simita t&apos;ikray</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Kay webpiqa amachay ruraykuna manaraq qillqasqachu.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Qhipa %days p&apos;unchawpi yaykuykuna</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mana atipasqa kallpachakuykuna</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Manaraq amachay ruraykuna qillqasqachu.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Yaykuy willakunayta uraqay</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Tinkuykunayki amachay pasakuykunaykipas JSON willañiqi hina.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Pakasqa simi</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Pakasqa simi iskay purinap yupayninpas</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST tinkuchiq</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP tinkuchiq</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Huklla yaykuy</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Tinkuykuna manaraq qillqasqa kachkaptin yaykusqa</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Yaykuykunamanta willakuy</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Pikuna webman yaykusqa kachkanku, hayk&apos;a kutitataq kuwintakuna yaykunku mana atipaspapas, huk apaykachaqta llapa ladumanta lluqsichiypas. Sapa tinkuy ruraqwan llamk&apos;an.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Tinkuyqa lluqsichisqa karqan. Aparatuqa huktawan yaykunan tiyan.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login lluqsichisqa karqan; tinkuykuna: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login mana purichkaq tinkuyniyuqchu karqan.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Mana mayqin kuwintapas chay ID, apaykachaqpa sutin utaq antañiqi riqsichiqniyuqchu.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Kayqa llamk&apos;achisqayki tinkuymi. Tukuchinaykipaqqa lluqsiy.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Chay tinkuyqa ñam tukusqaña karqan.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>P&apos;anqaqa tukusqa pachayuqña karqan. Mana imapas hukchasqachu; ama hina kaspa, huktawan ruway.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Kay webpiqa tinkuykuna mana qillqasqachu (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session tablaqa mana kanchu</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Paqarichisqa kaptinmi tinkuykuna qillqasqa kanqa: php update/common/scripts/6.0/createusersessiontable.php, utaq 6.0.15 nisqap willakuna waqaychana musuqyachiynin.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Kunan, kunan p&apos;unchawpas</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Purichkaq tinkuykuna</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Yaykusqa apaykachaqkuna</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Kunan p&apos;unchaw yaykuykuna</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Kunan p&apos;unchaw mana atipasqa kallpachakuykuna</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Huk apaykachaqta llapa ladumanta lluqsichiy</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Kuwintap sapa tinkuyninqa qatiq mañakuyninpi tukukun, «Yuyaykuway» nisqawan waqaychasqakunapas. Kayta llamk&apos;achiy huk kuwinta mana allin makipi kanman chayqa; chaymantataq pakasqa siminta musuqyachiy.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Apaykachaqpa ID-n, apaykachaqpa sutin utaq antañiqi riqsichiq</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Llapa ladumanta lluqsichiy</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Kunan yaykusqa</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Qhipa llamk&apos;achisqa tinkuykuna rikuchisqa: %limit.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Apaykachaq</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Aparatu</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Riqsichiq</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Yaykusqa</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Qhipa kuyuy</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ruraykuna</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Kay aparatu</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Mana qillqasqa</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Lluqsiy</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Mana mayqin tinkuypas yaykusqachu.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Qhipa %days p&apos;unchawkuna</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Yaykuykuna mana atipasqa kallpachakuykunapas apaykachaqkunap chiqaqchay qillqanmanta yupasqa, chayqa mana kanchu; musuq tinkuykunaqa yupasqallam.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>P&apos;unchaw</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Yaykuykuna</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mana atipasqa kallpachakuykuna</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Musuq tinkuykuna</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Tinkuy ruraq: %handler. Tinkuykunaqa expuser_session tablamanta ñawinchasqa, chaymi willakuyqa sapa ruraqwan llamk&apos;an.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Kuwintaykimanta amachay willakuy</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Kuwintaykipi (%login) huk amachay pasakuy karqan: %event. Mana qamchu karqanki chayqa, kuwintaykita kaypi amachay: %url.</translation>
     </message>
 </context>
 </TS>

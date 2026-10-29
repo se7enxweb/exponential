@@ -24,7 +24,7 @@ complete site installs with one command.
 
 "This page is for anyone who wants a working Exponential site in a few minutes, without writing a `kickstart.ini` and
 without a database server" ([Installing Exponential in one command](../../features/6.0/install-in-one-command.md)).
-`./console exp:install` installs the multisite package on SQLite in American English, with a site and an
+`./console exp:install --apply` installs the multisite package on SQLite in American English, with a site and an
 administration, and prints the login addresses and a summary. Options choose MySQL, PostgreSQL, MongoDB or Oracle
 instead.
 
@@ -39,7 +39,7 @@ instead.
 
 | Fact | Source |
 |---|---|
-| One command: `./console exp:install`, the same as `php bin/php/install.php` | [Installing Exponential in one command](../../features/6.0/install-in-one-command.md) |
+| One command: `./console exp:install --apply`, the same as `php bin/php/install.php --apply` | [Installing Exponential in one command](../../features/6.0/install-in-one-command.md) |
 | Default: SQLite, `eng-US`, siteaccesses `site` and `admin` | same |
 | Database options: `sqlite` (default), `mysql`/`mariadb`, `pgsql`, `mongodb`, `oracle` | [Choose a database](../../features/6.0/install-in-one-command.md#choose-a-database) |
 | The Kickstarter installs from a configuration file for automated setups | [Kickstarter CLI](../../features/6.0/kickstarter-cli.md) |

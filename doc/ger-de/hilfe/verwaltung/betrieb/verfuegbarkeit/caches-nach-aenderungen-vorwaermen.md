@@ -38,7 +38,7 @@ Morgen; oder eine Korrektur, die direkt vor einer Pressemitteilung veröffentlic
 
 | Werkzeug | Was es tut |
 |---|---|
-| `php bin/php/preload.php --siteaccess=site --allow-root-user` | ruft zuerst die Bereichsseiten ab und folgt dann den Links der Website; es läuft jeweils nur ein Vorladevorgang, jeder Lauf wird unter **Setup > Seiten vorladen** aufgeführt |
+| `php bin/php/preload.php --apply --siteaccess=site --allow-root-user` | ruft zuerst die Bereichsseiten ab und folgt dann den Links der Website; es läuft jeweils nur ein Vorladevorgang, jeder Lauf wird unter **Setup > Seiten vorladen** aufgeführt |
 | `php bin/php/warm.php --allow-root-user` | wärmt jede veröffentlichte Seite auf; eignet sich für einen Cronjob alle paar Minuten |
 | **Setup > Seiten vorladen** | dasselbe im Browser: Wählen Sie die Website, eine Seitenobergrenze (Standard 250) und eine Linktiefe (Standard 3) |
 | `[DeploySettings] WarmUpURL[]` | Seiten, die `exp:velocity deploy` als letzten Schritt im Hintergrund abruft |
@@ -60,7 +60,7 @@ Führen Sie nach einer Wiederherstellung oder wenn Sie alles von Hand geleert ha
 
 ```bash
 php bin/php/ezcache.php --clear-all --allow-root-user
-php bin/php/preload.php --siteaccess=site --allow-root-user
+php bin/php/preload.php --apply --siteaccess=site --allow-root-user
 ```
 
 Um jede veröffentlichte Seite warm zu halten, eine Cron-Zeile wie die in der Anleitung:

@@ -836,6 +836,29 @@ END
 $$;
 
 --
+-- What a signed-in session adds to its row of expuser_session (doc/eng-us/features/6.0/user-sessions.md): the host
+-- the sign-in was made on, the country and place a local GeoIP database names (empty without one) and the second
+-- step of the sign-in (totp, email, recovery). One row per session, removed with it. Without the table the sessions
+-- are tracked as before, without these details; update/common/scripts/6.0/createusersessiontable.php creates it on
+-- any engine. Created only when the table is missing, so running this block again changes nothing.
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'expuser_session_info' ) THEN
+        CREATE TABLE expuser_session_info (
+          auth_detail character varying(32) DEFAULT ''::character varying NOT NULL,
+          country character varying(2) DEFAULT ''::character varying NOT NULL,
+          host character varying(255) DEFAULT ''::character varying NOT NULL,
+          location character varying(128) DEFAULT ''::character varying NOT NULL,
+          session_id integer DEFAULT 0 NOT NULL,
+          user_id integer DEFAULT 0 NOT NULL
+        );
+        ALTER TABLE ONLY expuser_session_info ADD CONSTRAINT expuser_session_info_pkey PRIMARY KEY ( session_id );
+        CREATE INDEX expuser_session_info_user ON expuser_session_info USING btree ( user_id );
+    END IF;
+END
+$$;
+
+--
 -- ezuser.login: one account per login.
 --
 -- A new installation has the unique index ezuser_login from the kernel schema.

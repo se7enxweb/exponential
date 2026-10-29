@@ -94,7 +94,7 @@ work today, each with the page that describes it:
 
 | The problem | What is already there | Read more |
 |---|---|---|
-| Getting a working site | `./console exp:install` installs a multisite package on SQLite and prints the addresses and the login: "a working Exponential site in a few minutes, without writing a `kickstart.ini` and without a database server" | [Installing Exponential in one command](features/6.0/install-in-one-command.md) |
+| Getting a working site | `./console exp:install --apply` installs a multisite package on SQLite and prints the addresses and the login: "a working Exponential site in a few minutes, without writing a `kickstart.ini` and without a database server" | [Installing Exponential in one command](features/6.0/install-in-one-command.md) |
 | Choosing a database | Six supported databases, in order of preference: SQLite 3 (the default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL; documented tools move a site between them | [Database support](help/database-support.md) |
 | Choosing a machine | Operating systems in documented tiers, Apache, Nginx and others, or the bundled Velocity server | [Operating system support](help/os-support.md) |
 | Many languages | Locale files for content, many of them right to left, and administration translations; the totals are at the top of the languages page | [Languages in Exponential](languages.md) |

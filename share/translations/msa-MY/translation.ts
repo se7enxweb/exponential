@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Persediaan &gt; Tugas cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Belum ada bahagian tugas cron yang dijalankan: baris gilir kerja, import, pemberitahuan dan indeks carian sedang menunggu. Jalankan php bin/php/installcrontab.php --add --apply, atau tambah baris daripada --show ke dalam crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Nota: Pakej tersebut tidak akan dinyahpasang.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Pemasangan ini ialah demo awam: sesiapa sahaja mungkin mengetahui kata laluan pentadbirnya, dan kata laluan pentadbir tidak boleh diubah atau ditetapkan semula. Jangan masukkan apa-apa yang peribadi di sini.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Peranti anda</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktiviti keselamatan</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Nota: Pakej tersebut tidak akan dinyahpasang.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Siapa yang mengubah, log masuk atau ditolak, mengikut akaun; tapis dan eksport.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Laporan log masuk</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Siapa yang sedang log masuk, log masuk dan kegagalan setiap hari; log keluarkan pengguna di semua tempat.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Nota: Pakej tersebut tidak akan dinyahpasang.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Sesi tamat masa bagi pengendali PHP dialih keluar oleh PHP sendiri (session.gc_maxlifetime), bukan oleh halaman ini atau bahagian tugas cron session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Sesi log masuk setiap pengguna disenaraikan, dan boleh dilog keluar, dalam laporan log masuk, yang berfungsi dengan setiap pengendali sesi.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Buka laporan log masuk</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ akaun anda.</translation>
     <message>
         <source>None yet</source>
         <translation>Belum ada</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktiviti keselamatan</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Log masuk terkini anda, cubaan yang gagal dan perubahan pada kata laluan, alamat e-mel dan log masuk dua langkah anda.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Log masuk terkini, cubaan yang gagal dan perubahan keselamatan akaun ini.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Semak aktiviti</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count log masuk gagal</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ Lihat halaman keperluan untuk maklumat lanjut.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab tidak ditulis (%reason). Tambahkan baris ini ke crontab pengguna yang menjalankan laman, jika tidak, baris gilir, import, pemberitahuan dan indeks carian tidak akan berjalan:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Pemasangan semula dilakukan dengan kickstarter (%file, kemudian php bin/php/kickstarter.php run --apply) atau dengan pemasangan baharu.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Pengangkutan mel menolak %count mesej dalam larian terakhir. Semak pelayan mel dan site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count peristiwa sedang menunggu dan tiada larian tugas cron pemberitahuan yang direkodkan. Tambah bahagian tugas cron &quot;frequent&quot; ke dalam crontab, atau jalankan exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>Choose another site or section with the node picker</source>
         <translation>Pilih laman atau seksyen lain dengan pemilih nod</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Hanya pentadbir sistem boleh menukar pemilik: jalankan ./console exp:content-check --fix-permissions --apply sebagai root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
     <message>
         <source>empty</source>
         <translation>kosong</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Kunci tandatangan sudah berusia lebih daripada setahun: tukar dengan exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
     <message>
         <source>not sent</source>
         <translation>tidak dihantar</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Tugas cron pemberitahuan merekodkan setiap lariannya di sini. Tambah bahagian frequent ke dalam crontab, atau jalankan exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Gunakan konsol: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>None.</source>
         <translation>Tiada.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>dengan aplikasi pengesah</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>dengan kod melalui e-mel</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>dengan kod pemulihan</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>dengan kunci laluan</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>dengan akaun luaran</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktiviti keselamatan</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Ditunjukkan sebagai rangkaiannya; alamat disimpan mengikut tetapan perlindungan data laman.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Tidak direkodkan</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lokasi</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>anggaran</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>Manage devices</source>
         <translation>Urus peranti</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>dengan aplikasi pengesah</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>dengan kod melalui e-mel</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>dengan kod pemulihan</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>dengan kunci laluan</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>dengan akaun luaran</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktiviti keselamatan</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Tidak direkodkan</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lokasi</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>anggaran</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>View the sessions of this user</source>
         <translation>Lihat sesi pengguna ini</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Akaun anda %login di %site baru sahaja digunakan untuk log masuk dari tempat yang tidak digunakan untuk log masuk sejak kebelakangan ini:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Anggaran lokasi</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser pada %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Laporan log masuk</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
     <message>
         <source>unknown</source>
         <translation>tidak diketahui</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Lindungi akaun anda</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Kod pemulihan telah digunakan untuk log masuk ke akaun anda %login di %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Kod pemulihan telah digunakan</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akaun</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Anggaran alamat</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Minta kata laluan baharu untuk log masuk semula, atau hubungi pentadbir laman.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Minta kata laluan baharu</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Setiap kod pemulihan hanya berfungsi sekali. Jika anda kehilangan telefon, sediakan semula aplikasi pengesah anda dan simpan kod pemulihan baharu di tempat yang selamat.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Cubaan log masuk yang gagal pada akaun anda</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Mulai sekarang, log masuk meminta kod selain kata laluan anda. Jika anda yang melakukannya, anda tidak perlu berbuat apa-apa.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Jika itu anda dan anda terlupa kata laluan, minta kata laluan baharu. Jika bukan, pilih kata laluan yang lebih kukuh dan hidupkan log masuk dua langkah.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Jika ini bukan anda, mungkin seseorang mengetahui kata laluan anda: tukar sekarang dan semak di mana akaun anda sedang log masuk.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Baki kod pemulihan</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Semak peranti anda</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Amaran keselamatan</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Seseorang cuba log masuk ke akaun anda %login di %site dengan kata laluan yang salah sebanyak %count kali berturut-turut.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Berlaku peristiwa keselamatan pada akaun anda %login di %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Ini ialah amaran keselamatan tentang akaun anda. Amaran ini dihantar bagi setiap perubahan seperti ini dan tidak boleh dimatikan.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Masa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Log masuk dua langkah telah dimatikan untuk akaun anda %login di %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Log masuk dua langkah telah dimatikan</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Log masuk dua langkah telah dihidupkan untuk akaun anda %login di %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Log masuk dua langkah telah dihidupkan</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Akaun anda %login di %site telah dikunci selepas terlalu banyak log masuk yang gagal.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Akaun anda kini dilindungi oleh kata laluan sahaja. Jika anda tidak melakukannya, hidupkan semula log masuk dua langkah selepas anda menukar kata laluan.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Akaun anda telah dikunci</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktiviti keselamatan</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktiviti keselamatan %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Log masuk</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Cubaan log masuk gagal</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Log keluar</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesi dilog keluar</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Log masuk dari peranti baharu</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Log masuk dari lokasi baharu</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identiti disahkan (&quot;Sahkan bahawa ini anda&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Semakan identiti gagal</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Log masuk dengan kunci laluan</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Log masuk dengan kunci laluan gagal</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Log masuk ditolak: kod dua langkah tiada atau salah</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kod dua langkah salah</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akaun dikunci selepas log masuk gagal</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Akaun dibuka kunci</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Kata laluan ditukar</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Penukaran kata laluan gagal</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Kata laluan ditetapkan semula</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Kata laluan baharu diminta</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Alamat e-mel ditukar</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Nama pengguna ditukar</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Log masuk dua langkah dihidupkan</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Log masuk dua langkah dimatikan</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kod pemulihan digunakan</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kod pemulihan baharu</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Kata laluan aplikasi dicipta</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Kata laluan aplikasi dibatalkan</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Kunci laluan ditambah</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Kunci laluan dialih keluar</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Akaun didayakan</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Akaun dinyahdayakan</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Semua</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Log masuk dan sesi</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Perubahan akaun</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Perlu perhatian</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>oleh anda</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>oleh pengguna</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>oleh %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Kaedah</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Pelayar</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem pengendalian</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Peranti</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Tempat</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Negara</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesi</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Yang mana</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Saluran</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Cubaan gagal</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Baki kod</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Pengendali log masuk</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktiviti keselamatan</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktiviti keselamatan %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Log masuk dan perubahan pada keselamatan akaun anda. Jika anda melihat sesuatu yang tidak anda lakukan, tukar kata laluan anda dan log keluarkan peranti yang tidak anda kenali.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Log masuk dan perubahan pada keselamatan akaun ini.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Peranti anda</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Tukar kata laluan</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Kembali ke akaun</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Aktiviti keselamatan tidak direkodkan</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Aktiviti ini dibaca daripada log audit pengguna, yang jadualnya expuser_audit tiada atau tidak disokong pada pangkalan data ini. Jalankan php update/common/scripts/6.0/createuseraudittable.php, atau kemas kini pangkalan data 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days hari terakhir</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Log masuk dalam %days hari terakhir</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Aktiviti keselamatan terkini</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Tunjukkan</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>gagal</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ditolak</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Belum ada aktiviti keselamatan yang direkodkan.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Peristiwa keselamatan disimpan selama %days hari.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Peristiwa keselamatan disimpan sehingga pentadbir mengalih keluarnya.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Muat turun data log masuk saya</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sesi dan peristiwa keselamatan anda sebagai fail JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Log masuk</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Cubaan log masuk gagal</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Log keluar</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesi dilog keluar</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Log masuk dari peranti baharu</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Log masuk dari lokasi baharu</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identiti disahkan (&quot;Sahkan bahawa ini anda&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Semakan identiti gagal</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Log masuk dengan kunci laluan</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Log masuk dengan kunci laluan gagal</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Log masuk ditolak: kod dua langkah tiada atau salah</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kod dua langkah salah</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akaun dikunci selepas log masuk gagal</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Akaun dibuka kunci</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Kata laluan ditukar</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Penukaran kata laluan gagal</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Kata laluan ditetapkan semula</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Kata laluan baharu diminta</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Alamat e-mel ditukar</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Nama pengguna ditukar</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Log masuk dua langkah dihidupkan</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Log masuk dua langkah dimatikan</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kod pemulihan digunakan</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kod pemulihan baharu</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Kata laluan aplikasi dicipta</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Kata laluan aplikasi dibatalkan</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Kunci laluan ditambah</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Kunci laluan dialih keluar</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Akaun didayakan</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Akaun dinyahdayakan</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Semua</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Log masuk dan sesi</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Perubahan akaun</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Perlu perhatian</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktiviti keselamatan</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktiviti keselamatan %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Log masuk dan perubahan pada keselamatan akaun anda. Jika anda melihat sesuatu yang tidak anda lakukan, tukar kata laluan anda dan log keluarkan peranti yang tidak anda kenali.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Peranti anda</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Tukar kata laluan</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Aktiviti keselamatan belum direkodkan di laman ini.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Log masuk dalam %days hari terakhir</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Cubaan gagal</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Belum ada aktiviti keselamatan yang direkodkan.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Muat turun data log masuk saya</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sesi dan peristiwa keselamatan anda sebagai fail JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Kata laluan</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Kata laluan dan kod dua langkah</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Antara muka REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Antara muka SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Log masuk tunggal</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Log masuk sebelum sesi direkodkan</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Laporan log masuk</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Siapa yang log masuk ke laman, berapa kerap akaun log masuk dan gagal log masuk, serta log keluarkan pengguna di semua tempat. Laporan ini berfungsi dengan setiap pengendali sesi.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sesi telah dilog keluar. Peranti itu perlu log masuk semula.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login telah dilog keluar daripada %count sesi.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login tiada sesi yang berjalan.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Tiada akaun dengan ID, nama pengguna atau alamat e-mel tersebut.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Ini ialah sesi yang sedang anda gunakan. Untuk menamatkannya, log keluar.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Sesi tersebut telah pun tamat.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Halaman telah tamat tempoh. Tiada apa-apa yang diubah; sila cuba lagi.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sesi tidak direkodkan di laman ini (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Jadual expuser_session tiada</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sesi direkodkan sebaik sahaja jadual itu dicipta: php update/common/scripts/6.0/createusersessiontable.php, atau kemas kini pangkalan data 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Sekarang dan hari ini</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sesi yang berjalan</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Pengguna yang log masuk</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Log masuk hari ini</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Cubaan gagal hari ini</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Log keluarkan pengguna di semua tempat</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Setiap sesi akaun tamat pada permintaan seterusnya, termasuk sesi yang dikekalkan oleh Ingat saya. Gunakan ini apabila akaun mungkin berada di tangan yang salah; kemudian tetapkan semula kata laluannya.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID pengguna, nama pengguna atau alamat e-mel</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Log keluar di semua tempat</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Sedang log masuk</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>%limit yang terakhir digunakan ditunjukkan.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Pengguna</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Peranti</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Alamat</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Log masuk</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Terakhir aktif</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Tindakan</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Peranti ini</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Tidak direkodkan</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Log keluar</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Tiada sesi yang log masuk.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days hari terakhir</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Log masuk dan cubaan gagal dikira daripada log audit pengguna, yang tiada; sesi baharu tetap dikira.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Hari</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Log masuk</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Cubaan gagal</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Sesi baharu</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Pengendali sesi: %handler. Sesi dibaca daripada jadual expuser_session, jadi laporan berfungsi dengan setiap pengendali.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Amaran keselamatan untuk akaun anda</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Berlaku peristiwa keselamatan pada akaun anda %login: %event. Jika itu bukan anda, lindungi akaun anda di %url.</translation>
     </message>
 </context>
 </TS>

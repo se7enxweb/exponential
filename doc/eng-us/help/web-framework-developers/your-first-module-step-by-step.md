@@ -14,7 +14,7 @@ Django admin model would produce them. You build an extension `expdemo` with a t
 `/expdemo/list` and an edit form at `/expdemo/edit/<id>`. **Setup > RAD** can write much of this boilerplate for you
 afterwards; doing it by hand first shows what the wizards write ([RAD tools](../../features/6.0/rad-tools.md)).
 
-Time: about an hour on a development installation (`./console exp:install` gives one on SQLite in minutes:
+Time: about an hour on a development installation (`./console exp:install --apply` gives one on SQLite in minutes:
 [Installing in one command](../../features/6.0/install-in-one-command.md)).
 
 ## Contents

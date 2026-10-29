@@ -1,6 +1,6 @@
 <?php
 /**
- * @description List the notification events, or remove the old ones
+ * @description List the notification events, or remove the old ones (dry run unless --apply)
  * @alias exp:notification:events
  * @alias exp:notify:events
  *
@@ -29,23 +29,34 @@ class Notificationevents extends \Exponential\Runnable\Command
                                  "An event has no date of its own; its age is read from what it is about (the published version, the\n" .
                                  "collaboration item, the time of a time event). Events whose age cannot be told, because the content\n" .
                                  "is gone, are listed as unknown and removed only with --include-unknown.\n" .
+                                 "cleanup without --apply removes nothing: it counts what it would remove. --dry-run is still\n" .
+                                 "accepted and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).\n" .
                                  "\n" .
                                  "./console exp:notification:events list --status=pending --limit=20\n" .
-                                 "./console exp:notification:events cleanup --older-than=30d --dry-run\n" .
-                                 "./console exp:notification:events cleanup --older-than=30d",
+                                 "./console exp:notification:events cleanup --older-than=30d\n" .
+                                 "./console exp:notification:events cleanup --older-than=30d --apply",
                 'use-session'    => false,
                 'use-modules'    => true,
                 'use-extensions' => true
             )
         );
         $options = $this->startup(
-            '[status:][limit:][older-than:][include-unknown][dry-run][json]', '',
+            '[status:][limit:][older-than:][include-unknown][apply][dry-run][json]', '',
             array( 'status'          => 'list, cleanup --older-than: pending or handled (default both)',
                    'limit'           => 'list: how many (default 50)',
                    'older-than'      => 'cleanup: 90s, 15m, 12h, 30d, 2w or a date (2026-09-01)',
                    'include-unknown' => 'cleanup: also remove events whose age cannot be told',
-                   'dry-run'         => 'cleanup: count, remove nothing',
+                   'apply'           => 'cleanup: remove the events (the default counts them and removes nothing)',
+                   'dry-run'         => 'cleanup: the default, kept for scripts that pass it: count, remove nothing',
                    'json'            => 'list: JSON' ) );
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $this->shutdown( 2 );
+            return;
+        }
+        $dryRun = !$apply;
         $args = isset( $options['arguments'] ) ? array_values( $options['arguments'] ) : array();
         $action = $args ? strtolower( (string)$args[0] ) : 'list';
         $status = null;
@@ -93,14 +104,14 @@ class Notificationevents extends \Exponential\Runnable\Command
                     return;
                 }
             }
-            $dry = !empty( $options['dry-run'] );
-            $r = \expNotificationService::cleanup( $age, $status, !empty( $options['include-unknown'] ), $dry );
+            $dry = $dryRun;
+            $r = \expNotificationService::cleanup( $age, $status, !empty( $options['include-unknown'] ), $dryRun );
             $cli->output( sprintf( '%s%d handled event(s) with nothing left to send', $dry ? 'Would remove: ' : 'Removed: ', $r['handled'] ) );
             if ( $age !== null )
                 $cli->output( sprintf( '%s%d event(s) older than %s (%d newer kept, %d of unknown age %s)', $dry ? 'Would remove: ' : 'Removed: ',
                                        $r['removed'], $options['older-than'], $r['kept'], $r['unknown'],
                                        !empty( $options['include-unknown'] ) ? 'included' : 'left alone' ) );
-            $cli->output( 'PASS' );
+            $cli->output( $dry ? 'PASS: cleanup counted (dry run, nothing changed; --apply writes)' : 'PASS: cleanup done' );
             $this->shutdown( 0 );
             return;
         }

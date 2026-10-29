@@ -104,7 +104,7 @@ Auf Ihrer Schulungsinstallation, Packer eingeschaltet.
    ```
 
    Wenn Ihre Übungsumgebung von Velocity bereitgestellt wird, leeren Sie auch dessen Antwort-Cache:
-   `php bin/php/console exp:velocity cache clear`.
+   `php bin/php/console exp:velocity cache clear --apply`.
 5. Laden Sie hart neu. Prüfen Sie den Breadcrumb.
 6. Lesen Sie den Stylesheet-Link erneut und vergleichen Sie seinen Namen mit Schritt 3.
 7. Wenn Ihre Übungsumgebung auf Velocity läuft, führen Sie `php bin/php/console exp:velocity deploy --packer --dry-run`

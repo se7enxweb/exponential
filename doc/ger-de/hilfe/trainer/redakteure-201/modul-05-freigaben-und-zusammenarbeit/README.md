@@ -39,8 +39,8 @@ zu zweit durchgeführt.
 
     ```bash
     ./console exp:collaborationsampledata --dry-run --allow-root-user
-    ./console exp:collaborationsampledata --allow-root-user
-    ./console exp:collaborationsampledata --remove --allow-root-user
+    ./console exp:collaborationsampledata --apply --allow-root-user
+    ./console exp:collaborationsampledata --apply --remove --allow-root-user
     ```
 
 - Der Workflow-Cronjob muss laufen (prüfen Sie **Setup** > **Workflow-Prozesse**: Die Statusleiste sagt, wann er das

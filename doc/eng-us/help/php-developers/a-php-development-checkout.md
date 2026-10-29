@@ -41,7 +41,7 @@ the git hooks and a PHP 8.0 binary for compatibility checks.
 git clone https://github.com/se7enxweb/exponential.git exp-dev
 cd exp-dev
 composer install
-php bin/php/console exp:install --package=sevenx_multisite_clean --url=http://127.0.0.1:8088
+php bin/php/console exp:install --apply --package=sevenx_multisite_clean --url=http://127.0.0.1:8088
 ```
 
 `composer install` runs `bin/php/ezpgenerateautoloads.php` afterwards (`"post-install-cmd"` in `composer.json`).

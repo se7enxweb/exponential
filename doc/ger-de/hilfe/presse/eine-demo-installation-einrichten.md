@@ -60,10 +60,10 @@ Auf der Entwicklungslinie installiert ein Befehl das Multisite-Paket auf SQLite 
 
 ```bash
 php bin/php/console exp:install --dry-run    # checks the configuration, installs nothing
-php bin/php/console exp:install              # installs
+php bin/php/console exp:install --apply              # installs
 ```
 
-- Viele Installationen legen die Abkürzung `ln -s bin/php/console console` an, danach ist `./console exp:install`
+- Viele Installationen legen die Abkürzung `ln -s bin/php/console console` an, danach ist `./console exp:install --apply`
   derselbe Befehl; die Abkürzung wird nicht mitgeliefert ([Die Installation über die Konsole](../../installation/07-installation-ueber-die-konsole.md)).
 - Ohne Optionen ist der Administrator `admin` mit einem erzeugten Passwort aus 24 Zeichen, das in der Zusammenfassung
   ausgegeben und in `var/log/initial-admin-password` geschrieben wird. **Nehmen Sie diese Zusammenfassung nicht auf**:
@@ -136,7 +136,7 @@ der Umgebungsvariablen `EXP_DEMO_MODE=1`.
   erzeugen (beliebige Länge, auch `publish`; ein leeres wird abgelehnt):
 
   ```bash
-  EXP_DEMO_MODE=1 php bin/php/console exp:install --password='<the password you publish>'
+  EXP_DEMO_MODE=1 php bin/php/console exp:install --apply --password='<the password you publish>'
   ```
 
 - Behalten Sie die Variable danach für das PHP, die Cronjobs und die Konsole der Website. Solange sie gesetzt ist, kann

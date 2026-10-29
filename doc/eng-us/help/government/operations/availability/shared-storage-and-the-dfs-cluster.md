@@ -66,7 +66,7 @@ which settings are read.
 |---|---|
 | `php bin/php/clusterize.php` | moves the files of `var/` into the cluster (once, at setup); `-u` moves them back |
 | `php bin/php/dfscleanup.php -S` and `-B` | checks the mount against the table and the other way; `-D` deletes what does not exist |
-| `php bin/php/clusterpurge.php --dry-run` | shows the expired cluster files it would remove; without `--dry-run` removes them |
+| `php bin/php/clusterpurge.php` | shows the expired cluster files it would remove; with `--apply` removes them |
 
 Run `dfscleanup.php` with `-S` and `-B` first and read the result before you add `-D`. `clusterpurge.php` is also the
 cronjob part `cluster_maintenance`; the shipped settings keep it off the buttons of **Setup > Cronjobs** because it is

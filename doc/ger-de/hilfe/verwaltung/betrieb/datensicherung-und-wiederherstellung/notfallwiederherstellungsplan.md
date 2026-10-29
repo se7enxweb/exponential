@@ -71,7 +71,7 @@ php bin/php/console exp:velocity stop --allow-root-user
 php bin/php/ezcache.php --clear-all --allow-root-user
 php bin/php/ezpgenerateautoloads.php -e
 php bin/php/console exp:velocity start --allow-root-user
-php bin/php/console exp:velocity cache clear --allow-root-user
+php bin/php/console exp:velocity cache clear --apply --allow-root-user
 ./console exp:audit verify --allow-root-user
 php bin/php/maintenance.php off --allow-root-user
 ```

@@ -22,9 +22,9 @@
  * refused.
  *
  * The setup step adds the missing policies after the site package's roles (ensure()); the upgrade command
- * bin/php/addeditorpolicies.php adds them on an installation that exists (plan() and apply()). The policies are added
- * to the Editor role, so the role's assignment limits them as it limits the rest of the role (Content and Media for
- * the Editors group). A policy the editor already has counts, whether it is in the Editor role or in another role
+ * bin/php/addeditorpolicies.php --apply adds them on an installation that exists (plan() and apply(); without --apply it
+ * only lists them). The policies are added to the Editor role, so the role's assignment limits them as it limits the
+ * rest of the role (Content and Media for the Editors group). A policy the editor already has counts, whether it is in the Editor role or in another role
  * assigned to the same users or groups (the Member role gives user/password on the site packages).
  *
  * overGrants() names what an editor role should not hold: functions that work on the whole installation and not on

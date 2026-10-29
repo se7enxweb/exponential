@@ -23,7 +23,7 @@ FrankenPHP is the Caddy web server with PHP built in, as one binary. There are t
 ## Through Velocity
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Engine frankenphp --allow-root-user
 php bin/php/console exp:velocity install --allow-root-user     # optional: start installs it when missing
 php bin/php/console exp:velocity start --allow-root-user
 php bin/php/console exp:velocity ctl caddyfile --allow-root-user   # print the generated configuration

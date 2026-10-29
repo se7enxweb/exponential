@@ -54,7 +54,7 @@ git log --oneline -10
 
 # A complete site on SQLite in one command (in an installed copy)
 ./console exp:install --dry-run
-./console exp:install
+./console exp:install --apply
 
 # The help from the command line
 ./console exp:help search "extension"

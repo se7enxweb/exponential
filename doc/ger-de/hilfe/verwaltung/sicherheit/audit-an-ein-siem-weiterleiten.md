@@ -87,7 +87,7 @@ Webhook-Signatur; in PHP lautet die Prüfung `expAuditWebhookSink::verify( $body
 
 - Leiten Sie mindestens die täglich signierten Prüfpunkte (`system.audit.checkpoint`) weiter: Mit ihnen können Sie
   später beweisen, dass die lokale Kette nicht neu berechnet wurde.
-- Überwachen Sie den Zwischenspeicher: `./console exp:audit sinks flush --allow-root-user` sendet, was wartet; die
+- Überwachen Sie den Zwischenspeicher: `./console exp:audit sinks flush --apply --allow-root-user` sendet, was wartet; die
   Betriebskarte des Dashboards zeigt die Ziele.
 - Denken Sie daran, dass die Datenschutzeinstellungen vor der Weiterleitung greifen: Adressen gekürzt, Sitzungen gehasht.
   Stimmen Sie die Aufbewahrung im SIEM mit Ihrer oder Ihrem Datenschutzbeauftragten ab.

@@ -90,7 +90,7 @@ Hoster [Änderungen bereitstellen](../hosting/betrieb/aenderungen-ausrollen.md).
 
 | Änderung | Schritte |
 |---|---|
-| Ein vorhandenes Template | `./console exp:cache clear --id=template --allow-root-user`, dann `./console exp:velocity cache clear --allow-root-user` |
+| Ein vorhandenes Template | `./console exp:cache clear --id=template --allow-root-user`, dann `./console exp:velocity cache clear --apply --allow-root-user` |
 | Ein neues Template oder eine neue Override-Regel | `ini`, `template-override` und `content` leeren, dann den Cache von Velocity |
 | Ein Stylesheet oder Skript | mit `--packer` bereitstellen oder die Caches für Packer und Template-Blöcke leeren; fügen Sie Asset-Links nie `?v=` hinzu |
 | Eine INI-Datei | `--clear-tag=ini`, Velocity neu starten |

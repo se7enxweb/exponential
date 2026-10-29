@@ -55,7 +55,7 @@ Schreiben Sie Namen von Menüs und Schaltflächen so, wie sie erscheinen, fett, 
 ## Code, Befehle und Dateien
 
 - Bezeichner im Code, Dateinamen, Paketnamen und Befehle in Code-Schrift, wenn Ihr Medium das kann: `eZContentObject`,
-  `SECURITY.md`, `expai`, `./console exp:install`.
+  `SECURITY.md`, `expai`, `./console exp:install --apply`.
 - Übersetzen oder „korrigieren“ Sie Namen aus dem Code nie ([Warum es Exponential heißt](warum-es-exponential-heisst.md)).
 - Paketnamen werden klein geschrieben, wie in `composer.json`.
 

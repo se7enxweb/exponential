@@ -67,7 +67,7 @@ sollte, von der Website versandter Spam, ein Audit-Alarm wie `admin_role_granted
    Inhalte.
 3. Aktualisieren Sie auf die neueste 6.0.x, wenn die Lücke eine bekannte sein könnte.
 4. Ändern Sie Zugangsdaten: Administratorpasswörter, Datenbankpasswort, API-Schlüssel und Tokens; wechseln Sie den
-   Audit-Signaturschlüssel, wenn er gelesen worden sein könnte (`./console exp:audit key rotate --allow-root-user`).
+   Audit-Signaturschlüssel, wenn er gelesen worden sein könnte (`./console exp:audit key rotate --apply --allow-root-user`).
 5. Beenden Sie Sitzungen: Passwortänderungen melden andere Sitzungen ab; entfernen Sie mit dem Datenbank-Session-Handler
    alle Sitzungen unter **Setup > Sitzungen**.
 6. Leeren Sie alle Caches (`php bin/php/ezcache.php --clear-all --allow-root-user`; Velocity neu starten und seinen

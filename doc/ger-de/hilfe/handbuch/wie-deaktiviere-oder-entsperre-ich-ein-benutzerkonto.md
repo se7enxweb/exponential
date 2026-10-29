@@ -50,6 +50,8 @@ nie geändert.
 - [Wenn Mitarbeiter ausscheiden](../kunden/alltag/ausscheiden-von-mitarbeitenden.md)
 - [Das Administratorpasswort ändern](../administratorpasswort-aendern.md)
 - [Sitzungen](../../anleitungen/sitzungen.md)
+- [Mitglieder verwalten](../mitglieder-verwalten.md), für Redakteure
+- [Das Benutzer-Auditprotokoll](../das-benutzer-auditprotokoll.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

@@ -9,7 +9,7 @@ changes for a site that runs it, and what to do after the deploy.
 | Part | What it does | Where |
 |---|---|---|
 | DITA export | the Released manuals, topics and glossary as DITA 1.3 bookmaps, DITAVAL files and topics, checked after writing | `./console exp:help:content dita`; **Download DITA** on a manual's page and **Download all as DITA** on the list of manuals |
-| Stored e-books | the EPUB and PDF of every Released manual as file objects below E-books (`help-ebooks`), a new version per new build, rebuilt when an object of the help is set to Released | `./console exp:help:content ebooks`; the state assignment; the manual's page lists them |
+| Stored e-books | the EPUB and PDF of every Released manual as file objects below E-books (`help-ebooks`), a new version per new build, rebuilt when an object of the help is set to Released | `./console exp:help:content ebooks --apply`; the state assignment; the manual's page lists them |
 | Overdue reviews | topics whose review date has passed, or that have been in Review longer than `ReviewMaxDays` without a change | the help's dashboard, for who can act on them; `./console exp:help:content review` |
 
 Nothing here changes a site that has not installed help as content (`exp:help:content install`): the dashboard shows
@@ -48,7 +48,7 @@ must load the changed kernel file `kernel/content/ezcontentoperationcollection.p
 ```
 php bin/php/ezpgenerateautoloads.php -k        # or: ./console exp:velocity deploy --kernel
 ./console exp:help:content ebooks -s <admin siteaccess> --dry-run
-./console exp:help:content ebooks -s <admin siteaccess>
+./console exp:help:content ebooks --apply -s <admin siteaccess>
 ./console exp:help:content review -s <admin siteaccess>
 ```
 

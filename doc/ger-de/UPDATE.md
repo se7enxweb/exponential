@@ -182,13 +182,13 @@ Sorgen Sie dann dafür, dass die laufenden PHP-Prozesse den neuen Code laden, un
 systemctl reload <your-php-fpm-service>                     # Apache oder nginx mit PHP-FPM
 ./console exp:velocity deploy --dry-run --allow-root-user    # Velocity: zeigt jeden Schritt
 ./console exp:velocity deploy --allow-root-user              # Velocity: Autoloads, Caches, Reload, Neustart, in Reihenfolge
-./console exp:velocity cache clear --allow-root-user         # der Antwort-Cache von Velocity
+./console exp:velocity cache clear --apply --allow-root-user         # der Antwort-Cache von Velocity
 ```
 
 Leeren Sie den Content-View-Cache **nach** dem Reload (`php bin/php/ezcache.php --clear-tag=content --allow-root-user`):
 eine Seite, die der alte Code zwischen dem Leeren und dem Reload erzeugt, würde sonst erneut zwischengespeichert. Bauen
 Sie nach einer Aktualisierung auch die Handbücher der Hilfe neu:
-`./console exp:help:content build-manuals -s admin --release`.
+`./console exp:help:content build-manuals --apply -s admin --release`.
 
 ## 7. Die Aktualisierung prüfen
 
@@ -229,7 +229,7 @@ das nächste Release, nicht über eine geflickte Kopie dieses Releases.
 |---|---|
 | Eine weiße Seite nach dem Codewechsel | `var/log/error.log`; Schritt 6 erneut ausführen; `vendor/` muss zu `composer.lock` passen (`composer install`) |
 | `Class ... not found` | `php bin/php/ezpgenerateautoloads.php -e`, dann `php bin/php/ezcache.php --clear-all --allow-root-user` |
-| Eine Änderung erscheint unter Velocity nicht | `./console exp:velocity restart --allow-root-user`, dann `./console exp:velocity cache clear --allow-root-user` |
+| Eine Änderung erscheint unter Velocity nicht | `./console exp:velocity restart --allow-root-user`, dann `./console exp:velocity cache clear --apply --allow-root-user` |
 | Eine SQL-Datei ist mittendrin fehlgeschlagen | die Sicherung aus Schritt 2 zurückspielen und die Datei noch einmal von vorn einspielen |
 | Bibliotheken fehlen nach einem fehlgeschlagenen Composer-Lauf | [Eine Installation reparieren](bc/6.0/reparatur.md) |
 

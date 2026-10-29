@@ -37,12 +37,12 @@ Look outside the installation too: backups written to the same disk, the databas
 php bin/php/ezcache.php --clear-all --allow-root-user   # caches are regenerated
 ./console exp:logs --archives                           # see the log archives
 ./console exp:logs --prune --dry-run                    # what pruning would remove
-./console exp:logs --prune
-./console exp:logs --compress
+./console exp:logs --apply --prune
+./console exp:logs --apply --compress
 ```
 
 A log growing by megabytes a minute is a symptom: find out why before emptying it with
-`./console exp:logs --truncate=<key>` (the content stays in the `.1` archive). Warm the caches again when there is
+`./console exp:logs --apply --truncate=<key>` (the content stays in the `.1` archive). Warm the caches again when there is
 space: `php bin/php/warm.php --allow-root-user`.
 
 ## What never to remove

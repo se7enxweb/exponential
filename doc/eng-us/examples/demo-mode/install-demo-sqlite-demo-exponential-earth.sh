@@ -99,7 +99,9 @@ chmod 755 var/ezupdate/composer.phar
 "$PHP" var/ezupdate/composer.phar --version --no-interaction >/dev/null || fail "var/ezupdate/composer.phar does not run"
 
 echo "install on SQLite"
-"$PHP" bin/php/console exp:install --db=sqlite --url="$URL" --password="$ADMIN_PASSWORD" --title="Exponential demo" --force
+"$PHP" bin/php/console exp:install --apply --force --db=sqlite --url="$URL" --password="$ADMIN_PASSWORD" --title="Exponential demo"
+# without --apply exp:install is a dry run that installs nothing: never swap such a build in
+[ -f settings/override/site.ini.append.php ] || fail "exp:install installed nothing (is --apply given?)"
 
 # In demo mode the installer takes the demo password as given. If it generated one instead (it then writes
 # var/log/initial-admin-password), demo mode did not reach it: stop, keep the live site, and do not reset the
@@ -217,12 +219,12 @@ done
 # sample data for the collaboration inbox (approval workflow, editors, articles waiting/approved/denied with
 # comment threads); marked "Sample:", removable with --remove
 echo "collaboration sample data"
-"$PHP" bin/php/collaborationsampledata.php 2>&1 | tail -n 2 || echo "collaboration sample data: failed (the site still works)"
+"$PHP" bin/php/collaborationsampledata.php --apply 2>&1 | tail -n 2 || echo "collaboration sample data: failed (the site still works)"
 
 # warm-up with the preloader: a fresh install has no image aliases or view caches yet (they are made on the
 # first render), so the site is preloaded once now instead of by the first visitors
 echo "preload"
-"$PHP" bin/php/preload.php --siteaccess=site --no-colors 2>&1 | tail -n 3 || echo "preload: failed (the site still works, only not warmed)"
+"$PHP" bin/php/preload.php --apply --siteaccess=site --no-colors 2>&1 | tail -n 3 || echo "preload: failed (the site still works, only not warmed)"
 date +%s > "$WORK/last-success"
 echo "=== $(date '+%F %T') done: $URL serves build $STAMP"
 

@@ -2,14 +2,14 @@
 title: exp:addexphelpreadpolicy
 audience: developer, admin
 category: examples
-summary: Gewährt der Rolle Editor oder den genannten Rollen exphelp/read (das Hilfesystem) (--dry-run listet sie zuerst auf).
+summary: Gewährt exphelp/read (das Hilfesystem) der Rolle Editor oder den genannten Rollen (Probelauf, außer mit --apply).
 keywords: Konsole, Befehl, exp:addexphelpreadpolicy, addexphelpreadpolicy, console, command, CLI, addexphelpreadpolicy.php, exp:help-grant
 type: generated
 generated: exp:help:examples
 ---
 # exp:addexphelpreadpolicy
 
-Gewährt der Rolle Editor oder den genannten Rollen exphelp/read (das Hilfesystem) (--dry-run listet sie zuerst auf).
+Gewährt exphelp/read (das Hilfesystem) der Rolle Editor oder den genannten Rollen (Probelauf, außer mit --apply).
 
 Skript `bin/php/addexphelpreadpolicy.php`, Code in `kernel/private/classes/commands/addexphelpreadpolicy.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -27,17 +27,22 @@ Was `--help` ausgibt, so wie der Befehl es schreibt:
 Grant the policy exphelp/read, reading the help system, to the Editor role or to the roles
 named with --role, so editors see the Help control and the help pages. New installations give it
 to the Editor role; administrators have it through their */* policy. Roles that have it already
-are left alone; the script can run again.
+are left alone; the script can run again. Prints PASS or FAIL at the end.
+Without --apply nothing is written: the script lists the roles it would grant the policy to.
+--dry-run is still accepted and means the same as no flag; --apply together with --dry-run is a
+usage error (exit 2).
 
-Example: php bin/php/addexphelpreadpolicy.php --dry-run
-         php bin/php/addexphelpreadpolicy.php --role=Editor --role=5
+Example: php bin/php/addexphelpreadpolicy.php
+         php bin/php/addexphelpreadpolicy.php --apply
+         php bin/php/addexphelpreadpolicy.php --apply --role=Editor --role=5
 ```
 
 ## Optionen
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--dry-run` |  | Auflisten, was gewährt würde, nichts ändern |
+| `--apply` |  | Die Änderungen schreiben (Standard ist ein Probelauf, der sie auflistet und nichts ändert) |
+| `--dry-run` |  | Der Standard, beibehalten für Skripte, die die Option übergeben: auflisten, was gewährt würde, nichts ändern |
 | `--role` | erforderlich | Diese Rolle (ID oder Name), kann wiederholt werden; die Rolle Editor, wenn keine genannt ist |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

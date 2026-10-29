@@ -2,14 +2,14 @@
 title: exp:mailbounces
 audience: developer, admin
 category: examples
-summary: "Read the bounce mailbox: hard bounces and spam complaints go on the suppression list."
+summary: "Read the bounce mailbox: hard bounces and spam complaints go on the suppression list (dry run unless --apply)."
 keywords: exp:mailbounces, mailbounces, console, command, CLI, mailbounces.php, exp:mail:bounces
 type: generated
 generated: exp:help:examples
 ---
 # exp:mailbounces
 
-Read the bounce mailbox: hard bounces and spam complaints go on the suppression list.
+Read the bounce mailbox: hard bounces and spam complaints go on the suppression list (dry run unless --apply).
 
 Script `bin/php/mailbounces.php`, code in `kernel/private/classes/commands/mailbounces.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -28,8 +28,12 @@ override): hard bounces (delivery status notifications with a permanent failure 
 HardStatusCodes[]) and spam complaints (feedback loop reports) put the address on the
 suppression list. Soft bounces and other mail are counted only. No address is shown in full.
 
-./console exp:mail:bounces                      read the mailbox
-./console exp:mail:bounces --dry-run            show what it would do; nothing is changed
+Without --apply nothing is changed: the messages are read and reported, no address is suppressed,
+no message is marked or deleted and the status is not written. --dry-run is still accepted and
+means the same as no flag; --apply together with --dry-run is a usage error (exit 2).
+
+./console exp:mail:bounces                      show what reading the mailbox would do
+./console exp:mail:bounces --apply              read the mailbox and suppress the addresses
 ./console exp:mail:bounces --file=dsn.eml       read saved messages (a file or a directory of .eml)
 ./console exp:mail:bounces --status             the last run
 
@@ -40,7 +44,8 @@ Ends with PASS, SKIP (the reader is disabled or not configured) or FAIL (exit 1)
 
 | Option | Value | Help |
 |---|---|---|
-| `--dry-run` |  | Report only: nothing is suppressed, no message is changed, the status is not written |
+| `--apply` |  | Suppress the addresses, handle the messages and write the status (the default is a dry run) |
+| `--dry-run` |  | The default, kept for scripts that pass it: report only, nothing is suppressed, no message is changed, the status is not written |
 | `--file` | required | Read these saved messages (.eml file, or a directory of them) instead of the mailbox |
 | `--status` |  | Show the last run and stop |
 | `--json` |  | One JSON object instead of the text |

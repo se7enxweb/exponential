@@ -383,7 +383,7 @@ class expVelocityConfigLayout
 
         $enabledSite = "$dir/sites-enabled/$site.conf";
         if ( !is_file( $enabledSite ) )
-            return array( 'ok' => false, 'message' => "site $site is disabled (exp:velocity site enable $site)",
+            return array( 'ok' => false, 'message' => "site $site is disabled (exp:velocity site enable $site --apply)",
                           'confDir' => $dir, 'actions' => $this->actions );
 
         // The split must lose nothing: its pieces, merged the way the engine
@@ -790,6 +790,38 @@ class expVelocityConfigLayout
     }
 
     // ── a2ensite and friends ─────────────────────────────────────────────
+
+    /**
+     * What toggle() would do, without linking or unlinking anything.
+     *
+     * @param string $pair site, conf or mod
+     * @param string $name file name without .conf
+     * @param bool $enable
+     * @return array result
+     */
+    public function planToggle( $pair, $name, $enable )
+    {
+        $map = array( 'site' => 'sites', 'conf' => 'conf', 'mod' => 'mods' );
+        $dir = $this->confDir();
+        if ( $dir === null || !isset( $map[$pair] ) )
+            return array( 'ok' => false, 'message' => $dir === null ? 'layout disabled' : "unknown kind $pair" );
+        if ( !preg_match( '/^[A-Za-z0-9._-]+$/', $name ) )
+            return array( 'ok' => false, 'message' => "invalid name $name" );
+        $p = $map[$pair];
+        $available = "$dir/$p-available/$name.conf";
+        $link = "$dir/$p-enabled/$name.conf";
+        if ( $enable )
+        {
+            if ( !is_file( $available ) )
+                return array( 'ok' => false, 'message' => "no $p-available/$name.conf" );
+            if ( is_link( $link ) || file_exists( $link ) )
+                return array( 'ok' => true, 'message' => "$pair $name already enabled; nothing to do" );
+            return array( 'ok' => true, 'message' => "would link $link -> ../$p-available/$name.conf (enable $pair $name)" );
+        }
+        if ( !is_link( $link ) )
+            return array( 'ok' => true, 'message' => is_file( $link ) ? "$link is a file, not a link; it would be left alone" : "$pair $name already disabled; nothing to do" );
+        return array( 'ok' => true, 'message' => "would remove the link $link (disable $pair $name)" );
+    }
 
     /**
      * Enable or disable a site, conf or mod, as a2ensite/a2dissite do.

@@ -34,7 +34,7 @@ classroom image, a workshop laptop, a trade-show kiosk, a public demo site.
 ## A fast, self-contained install
 
 ```bash
-php bin/php/console exp:install
+php bin/php/console exp:install --apply
 ```
 
 installs "the multisite package on **SQLite**, in `eng-US`, with the siteaccesses `site` and `admin` reached by URL"
@@ -53,7 +53,7 @@ shipped engine `php` "needs nothing an installation might lack" and suits develo
 ## Resetting between groups
 
 - With `exp:install`: run it again with `--force`; the default database action `remove` empties the database first.
-- With the kickstarter: "The same `kickstart.ini` with `DatabaseAction=remove` and `run --force` replaces the database
+- With the kickstarter: "The same `kickstart.ini` with `DatabaseAction=remove` and `run --apply` replaces the database
   and the settings again. Use it to reset a test or training site" ([6.10](../../install/06-kickstarter.md#610-re-running-and-resuming)).
 - With images: restore the image snapshot.
 

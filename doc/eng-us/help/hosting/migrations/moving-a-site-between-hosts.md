@@ -75,7 +75,7 @@ Source of the list: [10.9 Backups and restore](../../../install/10-after-install
    ```
 
 7. **Start the engine** (or reload PHP-FPM), clear Velocity's response cache if it serves the site
-   (`php bin/php/console exp:velocity cache clear --allow-root-user`).
+   (`php bin/php/console exp:velocity cache clear --apply --allow-root-user`).
 8. **Test** through a hosts-file entry, then switch DNS.
 9. **Leave the old machine in maintenance mode** until the DNS change has reached everyone. Maintenance mode lives
    in `var/maintenance.json` on the old machine, which the file backup above does not include, so the target is not

@@ -2,14 +2,14 @@
 title: exp:collaborationsampledata
 audience: developer, admin
 category: examples
-summary: Build sample content for the collaboration tool (approvals, comments, groups), or remove it again.
+summary: Build sample content for the collaboration tool (approvals, comments, groups), or remove it again (dry run unless --apply).
 keywords: exp:collaborationsampledata, collaborationsampledata, console, command, CLI, collaborationsampledata.php, exp:collaboration:sample-data
 type: generated
 generated: exp:help:examples
 ---
 # exp:collaborationsampledata
 
-Build sample content for the collaboration tool (approvals, comments, groups), or remove it again.
+Build sample content for the collaboration tool (approvals, comments, groups), or remove it again (dry run unless --apply).
 
 Script `bin/php/collaborationsampledata.php`, code in `kernel/private/classes/commands/collaborationsampledata.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -30,18 +30,22 @@ section and articles that wait for approval, were approved or were denied, with 
 Everything is made through the kernel's own approval workflow and handler, and is marked
 (names start with "Sample: ", remote ids with "sample-collab-") so --remove deletes exactly it.
 The command is idempotent: what exists is left as it is.
+Without --apply nothing is changed: the command lists what it would create (or, with --remove,
+delete). --dry-run means the same as no flag; --apply together with --dry-run is a usage error
+(exit 2).
 
-./console exp:collaboration:sample-data --dry-run
 ./console exp:collaboration:sample-data
-./console exp:collaboration:sample-data --remove
+./console exp:collaboration:sample-data --apply
+./console exp:collaboration:sample-data --remove --apply
 ```
 
 ## Options
 
 | Option | Value | Help |
 |---|---|---|
+| `--apply` |  | Make the changes (the default is a dry run that shows them and changes nothing) |
+| `--dry-run` |  | The default, kept for scripts that pass it: show what would be done and change nothing |
 | `--remove` |  | Delete the sample data (and only that) |
-| `--dry-run` |  | Show what would be done and change nothing |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

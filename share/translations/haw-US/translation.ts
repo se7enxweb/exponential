@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Hoʻonohonoho &gt; Nā hana cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>ʻAʻohe ʻāpana hana cron i holo i kēia manawa: ke kali nei ka laina kali hana, nā lawe mai, nā hoʻolaha a me ka papa kuhi ʻimi. E holo i ka php bin/php/installcrontab.php --add --apply, a i ʻole e hoʻohui i nā laina o --show i ka crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>He hōʻike ākea kēia hoʻonohonoho: hiki i kekahi ke ʻike i kāna ʻōlelo huna luna hoʻomalu, a ʻaʻole hiki ke hoʻololi a hoʻonoho hou i nā ʻōlelo huna luna hoʻomalu. Mai hoʻokomo i kekahi mea pilikino ma ʻaneʻi.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Kāu mau hāmeʻa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Nā hana palekana</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>ʻO wai ka mea i hoʻololi, i komo, a i hōʻole ʻia paha, ma kēlā me kēia moʻokāki; kānana a hoʻokuʻu.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Hōʻike ʻeʻe</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>ʻO wai ka mea i ʻeʻe ʻia, nā ʻeʻe a me nā hāʻule i kēlā me kēia lā; e hoʻohaʻalele i kekahi mea hoʻohana ma nā wahi a pau.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Wehe ʻia nā hālāwai pau manawa o ka mea lawelawe PHP e PHP iho (session.gc_maxlifetime), ʻaʻole e kēia ʻaoʻao a i ʻole ka ʻāpana hana cron session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Ua papa helu ʻia nā hālāwai i ʻeʻe ʻia o kēlā me kēia mea hoʻohana, a hiki ke hoʻohaʻalele ʻia, ma ka hōʻike ʻeʻe, e hana pū ana me kēlā me kēia mea lawelawe hālāwai.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Wehe i ka hōʻike ʻeʻe</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ i kāu moʻokāki.</translation>
     <message>
         <source>None yet</source>
         <translation>ʻAʻohe a i kēia manawa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Nā hana palekana</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Kāu mau ʻeʻe hou, nā hoʻāʻo i hāʻule a me nā loli i kāu ʻōlelo huna, kāu helu leka uila a me kāu ʻeʻe pae ʻelua.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Nā ʻeʻe hou, nā hoʻāʻo i hāʻule a me nā loli palekana o kēia moʻokāki.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Loiloi i nā hana</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Nā ʻeʻe i hāʻule: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ E nānā i ka ʻaoʻao koi no ka ʻike hou aku.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>ʻAʻole i kākau ʻia ka crontab (%reason). E hoʻohui i kēia mau laina i ka crontab o ka mea hoʻohana e holo ana ke kahua ma lalo ona, a i ʻole ʻaʻole e holo ka laina kali, nā lawe mai, nā hoʻolaha a me ka papa kuhi ʻimi:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Hana ʻia ka hoʻouka hou ʻana me ka kickstarter (%file, a laila php bin/php/kickstarter.php run --apply) a i ʻole me kekahi hoʻouka hou loa.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Ua hōʻole ka lawe leka uila i nā leka %count i ka holo hope loa. E nānā i ke kikowaena leka uila a me site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Ke kali nei nā hanana he %count a ʻaʻohe holo o ka hana cron hoʻolaha i hoʻopaʻa ʻia. E hoʻohui i ka ʻāpana hana cron &quot;frequent&quot; i ka crontab, a i ʻole e holo i ka exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>Choose another site or section with the node picker</source>
         <translation>Koho i kahua a māhele ʻē aʻe me ka mea koho hīpuʻu</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Na ka luna hoʻomalu ʻōnaehana wale nō e hoʻololi i ka mea nona: e holo i ka ./console exp:content-check --fix-permissions --apply ma ke ʻano he root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>empty</source>
         <translation>ʻaʻohe mea</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Ua ʻoi aku ka makahiki o ke kī pūlima ma mua o hoʻokahi makahiki: e hoʻololi iā ia me ka exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>not sent</source>
         <translation>ʻaʻole i hoʻouna ʻia</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Hoʻopaʻa ka hana cron hoʻolaha i kēlā me kēia holo ʻana ona ma ʻaneʻi. E hoʻohui i ka ʻāpana frequent i ka crontab, a i ʻole e holo i ka exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>E hoʻohana i ka papa kauoha: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>None.</source>
         <translation>ʻAʻohe.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>me kekahi noi hōʻoia</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>me kekahi code ma ka leka uila</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>me kekahi code hoʻihoʻi</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>me kekahi kī komo</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>me kekahi moʻokāki o waho</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Nā hana palekana</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Hōʻike ʻia ma ke ʻano he pūnaewele; mālama ʻia ka helu wahi e like me ka ʻōlelo a nā hoʻonohonoho pale ʻikepili o ke kahua.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ʻAʻole i hoʻopaʻa ʻia</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Wahi</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>kokoke</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>Manage devices</source>
         <translation>Mālama i nā hāmeʻa</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>me kekahi noi hōʻoia</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>me kekahi code ma ka leka uila</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>me kekahi code hoʻihoʻi</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>me kekahi kī komo</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>me kekahi moʻokāki o waho</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Nā hana palekana</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ʻAʻole i hoʻopaʻa ʻia</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Wahi</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>kokoke</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>View the sessions of this user</source>
         <translation>Nānā i nā kau o kēia mea hoʻohana</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Ua hoʻohana ʻia kāu moʻokāki %login ma %site i kēia manawa e ʻeʻe mai kahi wahi āna i ʻeʻe ʻole ai i kēia mau lā:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Wahi kokoke</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser ma %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Hōʻike ʻeʻe</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>unknown</source>
         <translation>ʻike ʻole ʻia</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>E hoʻopalekana i kāu moʻokāki</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Ua hoʻohana ʻia kekahi code hoʻihoʻi e ʻeʻe i kāu moʻokāki %login ma %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Ua hoʻohana ʻia kekahi code hoʻihoʻi</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Moʻokāki</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Helu wahi kokoke</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>E noi i ʻōlelo huna hou e ʻeʻe hou ai, a i ʻole e kamaʻilio me nā luna hoʻomalu o ke kahua.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Noi i ʻōlelo huna hou</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Hoʻokahi wale nō hana ʻana o kēlā me kēia code hoʻihoʻi. Inā ua nalowale kāu kelepona, e hoʻonohonoho hou i kāu noi hōʻoia a e mālama i nā code hoʻihoʻi hou ma kahi palekana.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Nā hoʻāʻo ʻeʻe i hāʻule ma kāu moʻokāki</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Mai kēia manawa aku, noi ka ʻeʻe ʻana i kekahi code me kāu ʻōlelo huna. Inā nāu kēia, ʻaʻohe mea āu e hana ai.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Inā ʻo ʻoe ia a ua poina iā ʻoe kāu ʻōlelo huna, e noi i kekahi hou. Inā ʻaʻole, e koho i ʻōlelo huna ikaika aʻe a e hoʻā i ka ʻeʻe pae ʻelua.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Inā ʻaʻole ʻo ʻoe kēia, ua ʻike paha kekahi i kāu ʻōlelo huna: e hoʻololi iā ia i kēia manawa a e nānā i nā wahi i ʻeʻe ʻia ai kāu moʻokāki.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Nā code hoʻihoʻi i koe</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Loiloi i kāu mau hāmeʻa</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Kāhea palekana</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Ua hoʻāʻo kekahi e ʻeʻe i kāu moʻokāki %login ma %site me kekahi ʻōlelo huna hewa he %count manawa ma ka lālani.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Ua loaʻa kekahi hanana palekana ma kāu moʻokāki %login ma %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>He kāhea palekana kēia no kāu moʻokāki. Hoʻouna ʻia ia no kēlā me kēia loli like a ʻaʻole hiki ke hoʻopio ʻia.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Manawa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Ua hoʻopio ʻia ka ʻeʻe pae ʻelua no kāu moʻokāki %login ma %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Ua hoʻopio ʻia ka ʻeʻe pae ʻelua</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Ua hoʻā ʻia ka ʻeʻe pae ʻelua no kāu moʻokāki %login ma %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Ua hoʻā ʻia ka ʻeʻe pae ʻelua</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Ua laka ʻia kāu moʻokāki %login ma %site ma hope o nā ʻeʻe i hāʻule he nui loa.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Ua pale ʻia kāu moʻokāki e kāu ʻōlelo huna wale nō i kēia manawa. Inā ʻaʻole nāu kēia, e hoʻā hou i ka ʻeʻe pae ʻelua ma hope o kou hoʻololi ʻana i kāu ʻōlelo huna.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Ua laka ʻia kāu moʻokāki</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Nā hana palekana</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Nā hana palekana o %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ʻEʻe ʻia</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Hoʻāʻo ʻeʻe i hāʻule</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ua haʻalele</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Ua hoʻohaʻalele ʻia nā hālāwai</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ʻEʻe mai kekahi hāmeʻa hou</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ʻEʻe mai kekahi wahi hou</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Ua hōʻoia ʻia ka ʻike pilikino (&quot;Hōʻoia ʻo ʻoe nō&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ua hāʻule ka hōʻoia ʻike pilikino</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Ua ʻeʻe me kekahi kī komo</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Ua hāʻule ka ʻeʻe me ke kī komo</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Ua hōʻole ʻia ka ʻeʻe: ua nele a hewa paha ka code pae ʻelua</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Code pae ʻelua hewa</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Ua laka ʻia ka moʻokāki ma hope o nā ʻeʻe i hāʻule</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Ua wehe ʻia ka laka o ka moʻokāki</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Ua hoʻololi ʻia ka ʻōlelo huna</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Ua hāʻule ka hoʻololi ʻōlelo huna</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Ua hoʻonohonoho hou ʻia ka ʻōlelo huna</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Ua noi ʻia kekahi ʻōlelo huna hou</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Ua hoʻololi ʻia ka helu leka uila</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Ua hoʻololi ʻia ka inoa mea hoʻohana</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Ua hoʻā ʻia ka ʻeʻe pae ʻelua</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Ua hoʻopio ʻia ka ʻeʻe pae ʻelua</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Ua hoʻohana ʻia kekahi code hoʻihoʻi</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nā code hoʻihoʻi hou</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Ua hana ʻia kekahi ʻōlelo huna polokalamu</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Ua hoʻopau ʻia kekahi ʻōlelo huna polokalamu</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Ua hoʻohui ʻia kekahi kī komo</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Ua wehe ʻia kekahi kī komo</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Ua hoʻā ʻia ka moʻokāki</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Ua hoʻopio ʻia ka moʻokāki</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>A pau</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Nā ʻeʻe a me nā hālāwai</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Nā loli moʻokāki</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Pono ka nānā ʻana</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>nāu</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>na ka mea hoʻohana</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>na %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Ala</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Mea kele</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>ʻŌnaehana hana</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Hāmeʻa</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Kahi</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>ʻĀina</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Nā hālāwai</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>ʻO ka hea</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Ala hoʻouna</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Nā hoʻāʻo i hāʻule</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Nā code i koe</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Mea lawelawe ʻeʻe</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Nā hana palekana</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Nā hana palekana o %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Nā ʻeʻe a me nā loli i ka palekana o kāu moʻokāki. Inā ʻike ʻoe i kekahi mea āu i hana ʻole ai, e hoʻololi i kāu ʻōlelo huna a e hoʻohaʻalele i nā hāmeʻa āu i ʻike ʻole ai.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Nā ʻeʻe a me nā loli i ka palekana o kēia moʻokāki.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Kāu mau hāmeʻa</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Hoʻololi i ka ʻōlelo huna</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Hoʻi i ka moʻokāki</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>ʻAʻole i hoʻopaʻa ʻia nā hana palekana</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Heluhelu ʻia lākou mai ka moʻolelo loiloi mea hoʻohana, ua nele kona pakuhi expuser_audit a i ʻole ʻaʻole i kākoʻo ʻia ma kēia waihona ʻikepili. E holo i ka php update/common/scripts/6.0/createuseraudittable.php, a i ʻole i ka hōʻano hou waihona ʻikepili o 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Nā lā %days i hala</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Nā ʻeʻe i nā lā %days i hala</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Nā hana palekana hou</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Hōʻike</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ua hāʻule</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ua hōʻole ʻia</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ʻAʻohe hana palekana i hoʻopaʻa ʻia i kēia manawa.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Mālama ʻia nā hanana palekana no nā lā %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Mālama ʻia nā hanana palekana a hiki i ka wā e wehe ai kekahi luna hoʻomalu iā lākou.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Hoʻoiho i kaʻu ʻikepili ʻeʻe</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Kāu mau hālāwai a me nā hanana palekana ma ke ʻano he waihona JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ʻEʻe ʻia</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Hoʻāʻo ʻeʻe i hāʻule</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ua haʻalele</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Ua hoʻohaʻalele ʻia nā hālāwai</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ʻEʻe mai kekahi hāmeʻa hou</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ʻEʻe mai kekahi wahi hou</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Ua hōʻoia ʻia ka ʻike pilikino (&quot;Hōʻoia ʻo ʻoe nō&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ua hāʻule ka hōʻoia ʻike pilikino</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Ua ʻeʻe me kekahi kī komo</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Ua hāʻule ka ʻeʻe me ke kī komo</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Ua hōʻole ʻia ka ʻeʻe: ua nele a hewa paha ka code pae ʻelua</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Code pae ʻelua hewa</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Ua laka ʻia ka moʻokāki ma hope o nā ʻeʻe i hāʻule</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Ua wehe ʻia ka laka o ka moʻokāki</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Ua hoʻololi ʻia ka ʻōlelo huna</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Ua hāʻule ka hoʻololi ʻōlelo huna</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Ua hoʻonohonoho hou ʻia ka ʻōlelo huna</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Ua noi ʻia kekahi ʻōlelo huna hou</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Ua hoʻololi ʻia ka helu leka uila</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Ua hoʻololi ʻia ka inoa mea hoʻohana</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Ua hoʻā ʻia ka ʻeʻe pae ʻelua</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Ua hoʻopio ʻia ka ʻeʻe pae ʻelua</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Ua hoʻohana ʻia kekahi code hoʻihoʻi</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nā code hoʻihoʻi hou</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Ua hana ʻia kekahi ʻōlelo huna polokalamu</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Ua hoʻopau ʻia kekahi ʻōlelo huna polokalamu</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Ua hoʻohui ʻia kekahi kī komo</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Ua wehe ʻia kekahi kī komo</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Ua hoʻā ʻia ka moʻokāki</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Ua hoʻopio ʻia ka moʻokāki</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>A pau</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Nā ʻeʻe a me nā hālāwai</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Nā loli moʻokāki</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Pono ka nānā ʻana</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Nā hana palekana</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Nā hana palekana o %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Nā ʻeʻe a me nā loli i ka palekana o kāu moʻokāki. Inā ʻike ʻoe i kekahi mea āu i hana ʻole ai, e hoʻololi i kāu ʻōlelo huna a e hoʻohaʻalele i nā hāmeʻa āu i ʻike ʻole ai.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Kāu mau hāmeʻa</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Hoʻololi i ka ʻōlelo huna</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>ʻAʻole i hoʻopaʻa ʻia nā hana palekana ma kēia kahua i kēia manawa.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Nā ʻeʻe i nā lā %days i hala</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Nā hoʻāʻo i hāʻule</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ʻAʻohe hana palekana i hoʻopaʻa ʻia i kēia manawa.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Hoʻoiho i kaʻu ʻikepili ʻeʻe</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Kāu mau hālāwai a me nā hanana palekana ma ke ʻano he waihona JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>ʻŌlelo huna</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>ʻŌlelo huna a me ka code pae ʻelua</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Pilina REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Pilina SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ʻEʻe hoʻokahi</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Ua ʻeʻe ma mua o ka hoʻopaʻa ʻia ʻana o nā hālāwai</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Hōʻike ʻeʻe</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>ʻO wai ka mea i ʻeʻe i ke kahua, pehea ka pinepine o ka ʻeʻe ʻana a me ka hāʻule ʻana o nā moʻokāki, a me ka hoʻohaʻalele ʻana i kekahi mea hoʻohana ma nā wahi a pau. Hana pū ia me kēlā me kēia mea lawelawe hālāwai.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Ua hoʻohaʻalele ʻia ka hālāwai. Pono e ʻeʻe hou ka hāmeʻa.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Ua hoʻohaʻalele ʻia ʻo %login mai nā hālāwai he %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>ʻAʻohe hālāwai e holo ana o %login.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>ʻAʻohe moʻokāki me ia ID, inoa mea hoʻohana a helu leka uila paha.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ʻO kēia ka hālāwai āu e hoʻohana nei. No ka hoʻopau ʻana, e haʻalele.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ua pau mua ia hālāwai.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Ua pau ka manawa o ka ʻaoʻao. ʻAʻohe mea i hoʻololi ʻia; e ʻoluʻolu, e hoʻāʻo hou.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ʻAʻole i hoʻopaʻa ʻia nā hālāwai ma kēia kahua (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Ua nele ka pakuhi expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Hoʻopaʻa ʻia nā hālāwai ke hana ʻia ia: php update/common/scripts/6.0/createusersessiontable.php, a i ʻole ka hōʻano hou waihona ʻikepili o 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>I kēia manawa a me kēia lā</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Nā hālāwai e holo ana</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Nā mea hoʻohana i ʻeʻe ʻia</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Nā ʻeʻe o kēia lā</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Nā hoʻāʻo i hāʻule o kēia lā</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Hoʻohaʻalele i kekahi mea hoʻohana ma nā wahi a pau</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Pau kēlā me kēia hālāwai o ka moʻokāki ma kāna noi aʻe, me nā hālāwai i mālama ʻia e &quot;E hoʻomanaʻo iaʻu&quot;. E hoʻohana i kēia inā aia paha kekahi moʻokāki ma nā lima hewa; a laila e hoʻonohonoho hou i kāna ʻōlelo huna.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID mea hoʻohana, inoa mea hoʻohana a helu leka uila paha</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Haʻalele ma nā wahi a pau</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ʻEʻe ʻia i kēia manawa</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Hōʻike ʻia nā %limit i hoʻohana hope loa ʻia.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mea hoʻohana</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Hāmeʻa</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Helu wahi</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ʻEʻe ʻia</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Hana hope loa</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Nā hana</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Kēia hāmeʻa</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ʻAʻole i hoʻopaʻa ʻia</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Haʻalele</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ʻAʻohe hālāwai i ʻeʻe ʻia.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Nā lā %days i hala</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Helu ʻia nā ʻeʻe a me nā hoʻāʻo i hāʻule mai ka moʻolelo loiloi mea hoʻohana, ʻaʻole naʻe ia ma laila; helu ʻia nō nā hālāwai hou.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Lā</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Nā ʻeʻe</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Nā hoʻāʻo i hāʻule</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Nā hālāwai hou</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Mea lawelawe hālāwai: %handler. Heluhelu ʻia nā hālāwai mai ka pakuhi expuser_session, no laila hana ka hōʻike me kēlā me kēia mea lawelawe.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Kāhea palekana no kāu moʻokāki</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Ua loaʻa kekahi hanana palekana ma kāu moʻokāki %login: %event. Inā ʻaʻole ʻo ʻoe, e hoʻopalekana i kāu moʻokāki ma %url.</translation>
     </message>
 </context>
 </TS>

@@ -96,8 +96,8 @@ Use your own training installation, served by Velocity with the `qbix` engine.
 3. Set a small dynamic pool:
 
    ```bash
-   php bin/php/console exp:velocity config set ServerSettings Workers 8
-   php bin/php/console exp:velocity config set ServerSettings SpareWorkers 2
+   php bin/php/console exp:velocity config set --apply ServerSettings Workers 8
+   php bin/php/console exp:velocity config set --apply ServerSettings SpareWorkers 2
    ```
 
 4. Restart: `php bin/php/console exp:velocity restart`.

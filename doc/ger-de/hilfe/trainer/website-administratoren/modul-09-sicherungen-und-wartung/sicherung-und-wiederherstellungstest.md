@@ -133,7 +133,7 @@ Läuft die Website auf Velocity, brauchen Sie dessen Befehle zum Stoppen und Sta
 
     ```bash
     php bin/php/console exp:velocity start
-    php bin/php/console exp:velocity cache clear
+    php bin/php/console exp:velocity cache clear --apply
     php bin/php/maintenance.php off
     ```
 

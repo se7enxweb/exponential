@@ -38,7 +38,7 @@ der mit dem Namen `php-fpm`.
 | Eine ezjscore-Serverfunktion oder die Einstellungen des Packers | `exp:velocity deploy --packer` |
 | Ein Stylesheet oder Skript eines Designs | `exp:velocity deploy --packer` (die gepackten Dateien und die Template-Blöcke, die sie verlinken) |
 | Eine INI-Datei | `exp:velocity deploy` (es leert die INI-Caches und startet Velocity neu) |
-| Nur ein Template | kein Deployment: `php bin/php/ezcache.php --clear-tag=template --allow-root-user` (bei einer neuen Template-Datei zusätzlich `--clear-id=template-override`), danach `./console exp:velocity cache clear` |
+| Nur ein Template | kein Deployment: `php bin/php/ezcache.php --clear-tag=template --allow-root-user` (bei einer neuen Template-Datei zusätzlich `--clear-id=template-override`), danach `./console exp:velocity cache clear --apply` |
 | Inhalte | nichts: Das Veröffentlichen lässt ablaufen, was es berührt |
 
 ```bash

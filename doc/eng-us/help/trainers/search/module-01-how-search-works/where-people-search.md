@@ -81,7 +81,7 @@ an account with access to the administration.
 
 ## Hands-on exercise
 
-Use your own training installation (installed with `php bin/php/console exp:install`, see
+Use your own training installation (installed with `php bin/php/console exp:install --apply`, see
 [Installing from the command line](../../../../install/07-console-install.md)), signed in to the administration as
 an administrator.
 

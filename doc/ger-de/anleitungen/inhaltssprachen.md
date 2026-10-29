@@ -431,7 +431,7 @@ Oberflächenübersetzungen da. Führen Sie die Befehle im Wurzelverzeichnis der 
 
 | Befehl | Wann |
 |---|---|
-| `php bin/php/ezcache.php --clear-id=content_language` | Die zwischengespeicherte Liste der Inhaltssprachen: nach dem Entfernen einer Sprache und nachdem die Tabelle von Hand oder durch ein Skript geändert wurde; danach `./console exp:velocity cache clear`, damit auch die Seiten auf Port 8080 sie verwerfen |
+| `php bin/php/ezcache.php --clear-id=content_language` | Die zwischengespeicherte Liste der Inhaltssprachen: nach dem Entfernen einer Sprache und nachdem die Tabelle von Hand oder durch ein Skript geändert wurde; danach `./console exp:velocity cache clear --apply`, damit auch die Seiten auf Port 8080 sie verwerfen |
 | `php bin/php/ezcache.php --clear-tag=ini` | Nach einer Änderung an einer `SiteLanguageList` oder einer beliebigen Einstellung in `[RegionalSettings]` |
 | `php bin/php/ezcache.php --clear-tag=content` | Nach einer Änderung an Sprachen oder Übersetzungen, damit Listen und Seiten neu gezeichnet werden (das Hinzufügen oder Entfernen einer Sprache über die Seite erledigt das selbst) |
 | `./console exp:updateniceurls --update-nodes` oder `php bin/php/updateniceurls.php -s admin` | Die URL-Aliase aller Knoten neu aufbauen, zum Beispiel nachdem ein Skript viele Übersetzungen hinzugefügt hat; Aliase werden je Sprache geführt |
@@ -442,7 +442,7 @@ Oberflächenübersetzungen da. Führen Sie die Befehle im Wurzelverzeichnis der 
 | `./console exp:loremipsum <object id> --dry-run` | Die Übersetzung von Objekten in der Testsprache Lorem Ipsum mit Lorem-ipsum-Text füllen, sobald diese hinzugefügt ist; [Anleitung](testsprache-lorem-ipsum.md) |
 
 Velocity (der Anwendungsserver auf Port 8080) hält einen eigenen Antwort-Cache: Führen Sie nach jedem dieser Befehle
-auch `./console exp:velocity cache clear` aus.
+auch `./console exp:velocity cache clear --apply` aus.
 
 ## 11. Abläufe Schritt für Schritt
 
@@ -460,7 +460,7 @@ Die Site hat einen öffentlichen Siteaccess, `site`, mit `SiteLanguageList[]=eng
    URL-Element `/de` oder einen Hostnamen, siehe
    [10.2](../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site)).
 3. **Leeren Sie die Caches**: `php bin/php/ezcache.php --clear-tag=ini,content`, dann
-   `./console exp:velocity cache clear`. Die deutsche Karte zeigt jetzt *Zuerst gezeigt von 1* und den Chip
+   `./console exp:velocity cache clear --apply`. Die deutsche Karte zeigt jetzt *Zuerst gezeigt von 1* und den Chip
    `site_de`.
 4. **Übersetzen Sie.** Beginnen Sie mit der Startseite und den Ordnern des Hauptmenüs (Abschnitt 7). Solange eine
    Seite nicht übersetzt ist, zeigt `site_de` ihre englische Übersetzung, weil `eng-US` die zweite Sprache seiner
@@ -534,7 +534,7 @@ und `content/create` des Benutzers.
 Setzen Sie `Locale` für die Oberfläche und `SiteLanguageList` für die Inhalte.
 
 **Die Seite sieht auf Port 8080 anders aus als über Apache.** Velocity speichert Antworten zwischen und hält
-PHP-Klassen geladen: Führen Sie `./console exp:velocity cache clear` aus und nach einem Update des Kernels
+PHP-Klassen geladen: Führen Sie `./console exp:velocity cache clear --apply` aus und nach einem Update des Kernels
 `./console exp:velocity deploy`.
 
 ## Quellen

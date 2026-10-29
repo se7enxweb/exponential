@@ -40,7 +40,7 @@ ist dieselbe Arbeit, auf ein Wochenende verteilt.
 
    ```bash
    php bin/php/console exp:install --dry-run
-   php bin/php/console exp:install
+   php bin/php/console exp:install --apply
    ```
 
    Für eine echte Website ist später das saubere Paket ohne Demo-Inhalte der bessere Anfang

@@ -20,6 +20,9 @@ class expPasskeyLogin extends eZUser
      */
     public static function signIn( eZUser $user )
     {
+        // listed on "Your devices" as a sign-in with a passkey
+        if ( class_exists( 'expUserSessionTracker' ) )
+            expUserSessionTracker::setMethodHint( 'password', 'passkey' );
         static::loginSucceeded( $user );
     }
 }

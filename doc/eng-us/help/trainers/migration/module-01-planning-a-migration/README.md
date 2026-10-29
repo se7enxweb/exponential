@@ -33,7 +33,7 @@ specific sources can build on it.
 
 ## Preparing this module
 
-- [ ] One training installation per learner, installed with `php bin/php/console exp:install` (SQLite), with shell
+- [ ] One training installation per learner, installed with `php bin/php/console exp:install --apply` (SQLite), with shell
       access ([The console install](../../../../install/07-console-install.md)).
 - [ ] The `sqlite3` command line tool on the training machines (lesson 1.2).
 - [ ] The migration hub and the checklist opened once on the projector, and the product versions in the hub checked

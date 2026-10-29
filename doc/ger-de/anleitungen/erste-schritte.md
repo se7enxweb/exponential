@@ -72,7 +72,7 @@ Wenn Sie als `root` arbeiten, ergänzen Sie `--allow-root-user` bei den Skripten
 ### 3.1 Der eine Befehl
 
 ```bash
-./console exp:install --random-password --url=http://localhost:8087
+./console exp:install --apply --random-password --url=http://localhost:8087
 ```
 
 Dieser Befehl installiert das Multisite-Site-Paket auf SQLite, in `eng-US`, mit den Siteaccesses `site` (der öffentlichen Site) und
@@ -103,7 +103,7 @@ Kopieren Sie jetzt die Zeilen Admin, Username und Password. Eine Kopie der verwe
 ### 3.2 Andere Datenbanken
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='YOUR_PASSWORD' ./console exp:install --db=mysql --db-host=127.0.0.1 \
+EXP_INSTALL_DB_PASSWORD='YOUR_PASSWORD' ./console exp:install --apply --db=mysql --db-host=127.0.0.1 \
     --db-name=mysite --db-user=root --db-action=remove --random-password --url=http://localhost:8087
 ```
 
@@ -117,7 +117,7 @@ Für dieselbe Installation auf mehreren Servern schreiben Sie die Antworten einm
 ```bash
 php bin/php/console exp:kickstarter ini        # writes kickstart.ini after a few questions
 php bin/php/console exp:kickstarter run --dry-run
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
 ```
 
 `--dry-run` prüft die Antworten und die Pakete und schreibt nichts. Siehe

@@ -30,7 +30,7 @@ Pick one:
 1. **Section pages first, then links** (one run at a time; every run is listed on **Setup > Preload Sites**):
 
    ```bash
-   php bin/php/preload.php --siteaccess=site --allow-root-user
+   php bin/php/preload.php --apply --siteaccess=site --allow-root-user
    ```
 
 2. **Every published page**, suitable for a cron entry:

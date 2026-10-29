@@ -91,7 +91,7 @@ composer install
   history (on `main` that is 67 repositories, a few minutes), and fetches the libraries into `vendor/` as archives.
 
 Then install the site as usual: [Choosing an install method](../install/04-choosing-an-install-method.md) or the
-one command `php bin/php/console exp:install` from [the console install](../install/07-console-install.md).
+one command `php bin/php/console exp:install --apply` from [the console install](../install/07-console-install.md).
 
 **Prefer `composer create-project`?** It can make clones too, but you need two options together:
 

@@ -5,7 +5,7 @@
 > earlier version. The current guide is [Preloading caches](../../guides/preloading-caches.md).
 
 Read this page if you clear caches on deploy and want the first visitors to get fast pages. `bin/php/preload.php`
-(also `php bin/php/console exp:preload`, new in Exponential 6.0.15) fetches your pages before any visitor does, so
+(also `php bin/php/console exp:preload --apply`, new in Exponential 6.0.15) fetches your pages before any visitor does, so
 the page caches are warm, and it reports every broken link with the pages that link to it.
 
 ## In short
@@ -49,10 +49,10 @@ script reads `SiteURL` from `settings/site.ini` to know where to connect.
 
 ```bash
 # Warm caches for the default siteaccess configured in site.ini
-php bin/php/preload.php
+php bin/php/preload.php --apply
 
 # Or run it through the console (identical result)
-php bin/php/console exp:preload
+php bin/php/console exp:preload --apply
 ```
 
 That is all you need for most sites.
@@ -65,10 +65,10 @@ front-end user site, an admin site, or a mobile site). If you have more than one
 you can target a specific one:
 
 ```bash
-php bin/php/preload.php --siteaccess=sevenx_site_user
+php bin/php/preload.php --apply --siteaccess=sevenx_site_user
 
 # Same command via the console dispatcher
-php bin/php/console exp:preload --siteaccess=sevenx_site_user
+php bin/php/console exp:preload --apply --siteaccess=sevenx_site_user
 ```
 
 Not sure what your siteaccess names are? Check:
@@ -242,7 +242,7 @@ crontab -e
 Add a line like this (runs every 6 hours, logs output):
 
 ```
-0 */6 * * * cd /path/to/exponential-root && php bin/php/preload.php --siteaccess=sevenx_site_user >> /var/log/ezpreload.log 2>&1
+0 */6 * * * cd /path/to/exponential-root && php bin/php/preload.php --apply --siteaccess=sevenx_site_user >> /var/log/ezpreload.log 2>&1
 ```
 
 Replace `/path/to/exponential-root` with the actual path to your site and
@@ -258,7 +258,7 @@ The most common workflow:
 php bin/php/console exp:ezcache --clear-all --allow-root-user
 
 # 2. Immediately re-warm them
-php bin/php/console exp:preload --siteaccess=sevenx_site_user --allow-root-user
+php bin/php/console exp:preload --apply --siteaccess=sevenx_site_user --allow-root-user
 ```
 
 
@@ -267,7 +267,7 @@ php bin/php/console exp:preload --siteaccess=sevenx_site_user --allow-root-user
 **Redirect to a log file** (useful in CI/CD or when running unattended):
 
 ```bash
-php bin/php/preload.php --siteaccess=sevenx_site_user > var/log/preload.log 2>&1
+php bin/php/preload.php --apply --siteaccess=sevenx_site_user > var/log/preload.log 2>&1
 ```
 
 Colors are automatically suppressed when stdout is not a terminal — the log
@@ -312,7 +312,7 @@ Exponential's startup system warns when you run as `root`. Append
 `--allow-root-user` to acknowledge:
 
 ```bash
-php bin/php/preload.php --allow-root-user
+php bin/php/preload.php --apply --allow-root-user
 ```
 
 **Phase 2 produces only a few URLs**  

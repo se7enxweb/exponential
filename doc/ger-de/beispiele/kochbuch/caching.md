@@ -13,7 +13,7 @@ Eine Seite von Exponential kann aus vier Schichten beantwortet werden, von auße
 
 | Schicht | Was sie enthält | Geleert |
 |---|---|---|
-| Der Response-Cache von Velocity | vollständige Antworten, für einige Sekunden | `./console exp:velocity cache clear` |
+| Der Response-Cache von Velocity | vollständige Antworten, für einige Sekunden | `./console exp:velocity cache clear --apply` |
 | Der HTTP-Cache (standardmäßig deaktiviert) | vollständige Seiten je Berechtigungskontext | `--clear-id=exphttpcache`; läuft beim Veröffentlichen ab |
 | Der **View-Cache** | der gerenderte Inhalt einer Knotenansicht, je Benutzerrolle und Ansichtsparametern | läuft beim Veröffentlichen für den Knoten, seine Eltern und Relationen ab |
 | **cache-block** | ein Teil eines Templates (ein Menü, eine Fußzeile) | über sein `expiry`, `subtree_expiry` oder den Ablauf der Inhalte |
@@ -116,7 +116,7 @@ php bin/php/ezcache.php --clear-id=template-block,content --allow-root-user   # 
 php bin/php/ezcache.php --clear-tag=template --allow-root-user                 # every cache with a tag
 php bin/php/ezcache.php --clear-all --allow-root-user                          # everything
 ./console exp:cache clear --id=content --dry-run --allow-root-user             # what would go, with sizes
-./console exp:velocity cache clear                                            # Velocity's response cache
+./console exp:velocity cache clear --apply                                            # Velocity's response cache
 ```
 
 Nach einer **Template**-Änderung: nichts, solange der Template-Cache deaktiviert ist; ist er aktiviert,

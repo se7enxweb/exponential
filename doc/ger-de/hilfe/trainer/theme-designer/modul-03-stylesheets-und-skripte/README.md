@@ -43,7 +43,7 @@ damit ihr Theme unter der mitgelieferten Content Security Policy laufen kann.
   auskommentiert ist und `DevelopmentMode` auf `disabled` steht, sodass der Packer zu Beginn von Lektion 3.2
   eingeschaltet ist.
 - Wenn die Übungsumgebung auf Velocity läuft, schreiben Sie für Lektion 3.3
-  `php bin/php/console exp:velocity cache clear` an die Tafel.
+  `php bin/php/console exp:velocity cache clear --apply` an die Tafel.
 
 ## Zeitplan
 

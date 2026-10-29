@@ -146,7 +146,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **INI file**: a settings file (`site.ini`, `content.ini`, ...) in blocks of `Key=Value`; read in order, a later file winning: defaults, siteaccess, extensions, override. [INI override placements](specifications/6.0/ini-override-placements.md), [exp:ini](features/6.0/exp-ini-command.md).
 - **install type**: a named installer of **Exponential Platform** (`exponential-oss`, `ibexa-oss`, `exponential-media`, `exponential-cjw`) run by `exponential:install <type>`. [Platform SQLite installer](specifications/6.0/platform-sqlite-installer.md).
 - **installation name**: the name shown on non-production pages so staging is never taken for production. [Installation name](features/6.0/installation-name-in-pages.md).
-- **installer / install**: `./console exp:install` installs a whole site in one command. [Install in one command](features/6.0/install-in-one-command.md).
+- **installer / install**: `./console exp:install --apply` installs a whole site in one command. [Install in one command](features/6.0/install-in-one-command.md).
 - **interface language**: the language the administration itself is shown in, chosen per user in the right toolbar (policy `uiswitch/language`); it sets the locale for that user's requests and never changes the content languages. [Interface language](features/6.0/ui-switch.md), [settings](guides/ui-switch-settings.md).
 
 ## J
@@ -193,7 +193,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **OPcache**: PHP's compiled code cache; Velocity keeps rewritten cache files in it. [Opcode cache and profile](features/6.0/velocity-opcode-cache-and-profile.md).
 - **operator (template)**: a function applied with a pipe (`$text|wash`). [String template operators](features/6.0/string-template-operators.md), [role and policy operators](features/6.0/role-and-policy-template-operators.md), [owsimpleoperator](features/6.0/extensions/owsimpleoperator.md), [swark](features/6.0/extensions/swark.md).
 - **OPML**: a list of feeds, exportable from the RSS module. [OPML exports](bc/6.0/opml.md).
-- **Oracle**: a supported database, through the `ezoracle` extension; install with `./console exp:install --db=oracle`. [Database drivers and installers](specifications/6.0/database-drivers-2026-09.md#oracle).
+- **Oracle**: a supported database, through the `ezoracle` extension; install with `./console exp:install --apply --db=oracle`. [Database drivers and installers](specifications/6.0/database-drivers-2026-09.md#oracle).
 - **override**: a rule that says "for this class, node or section use this template instead of the default", kept in `override.ini`. [Template editor](features/6.0/template-editor-overrides.md), [override order](features/6.0/template-override-ordering.md).
 
 ## P

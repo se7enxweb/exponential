@@ -107,7 +107,7 @@ php bin/php/ezcache.php --clear-tag=content --allow-root-user
 Expected from the first command: `Template file valid: ...`. Then open a Note on the site. With
 `site.ini [TemplateSettings] ShowUsedTemplates=enabled` (or the template path comments) the list of used templates names
 `full/note.tpl` for `node/view/full.tpl`. Later edits to the same file need only `--clear-tag=template` (or nothing,
-while the template cache is off). Under Velocity, also clear its response cache: `./console exp:velocity cache clear`.
+while the template cache is off). Under Velocity, also clear its response cache: `./console exp:velocity cache clear --apply`.
 
 Checked for this page (2026-10-18): `bin/php/eztemplatecheck.php` reports the template valid (syntax); the match keys
 are those `eZNodeviewfunctions::generateNodeViewData()` sets.

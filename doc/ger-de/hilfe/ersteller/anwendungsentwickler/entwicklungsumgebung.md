@@ -37,7 +37,7 @@ in einem eigenen Git-Repository.
 git clone https://github.com/se7enxweb/exponential.git exp-dev
 cd exp-dev
 composer install
-php bin/php/console exp:install --package=sevenx_multisite_clean --url=http://127.0.0.1:8088
+php bin/php/console exp:install --apply --package=sevenx_multisite_clean --url=http://127.0.0.1:8088
 ```
 
 SQLite, ein erzeugtes Administratorpasswort wird einmal angezeigt ([Die Installation per Konsole](../../../installation/07-installation-ueber-die-konsole.md)).
@@ -47,7 +47,7 @@ Eine Neuinstallation mit demselben Befehl (`--force`) liefert in Minuten einen s
 
 ```bash
 composer require se7enxweb/exponential-velocity
-php bin/php/console exp:velocity config set ServerSettings Engine qbix
+php bin/php/console exp:velocity config set --apply ServerSettings Engine qbix
 php bin/php/console exp:velocity start
 ```
 

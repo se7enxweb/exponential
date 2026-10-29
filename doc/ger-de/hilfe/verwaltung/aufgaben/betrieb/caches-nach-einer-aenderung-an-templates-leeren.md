@@ -36,7 +36,7 @@ Dann die Seiten-Caches:
 
 ```bash
 php bin/php/ezcache.php --clear-tag=content --allow-root-user
-./console exp:velocity cache clear --allow-root-user
+./console exp:velocity cache clear --apply --allow-root-user
 ```
 
 Im Browser: **Setup > Cache-Verwaltung** hat die Gruppen *Templates* (Template-Cache, Template-Block-Cache,

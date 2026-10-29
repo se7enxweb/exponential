@@ -14326,6 +14326,14 @@ Pastaba: paketai nebus pašalinti iš įdiegtų (neįdiegiami).</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Ši diegtis yra viešas demonstracinis variantas: bet kas gali žinoti jos administratoriaus slaptažodį, o administratorių slaptažodžių pakeisti ar iš naujo nustatyti negalima. Neįveskite čia jokių privačių duomenų.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jūsų įrenginiai</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Saugos veikla</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15245,6 +15253,14 @@ Pastaba: paketai nebus pašalinti iš įdiegtų (neįdiegiami).</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Kas keitė, prisijungė ar buvo atmestas, pagal paskyrą; filtruoti ir eksportuoti.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Prisijungimų ataskaita</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Kas prisijungęs, prisijungimai ir nesėkmės per dieną; naudotojo atjungimas visur.</translation>
     </message>
 </context>
 <context>
@@ -33550,6 +33566,14 @@ Pastaba: paketai nebus pašalinti iš įdiegtų (neįdiegiami).</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Pasibaigusio galiojimo PHP tvarkyklės seansus pašalina pats PHP (session.gc_maxlifetime), o ne šis puslapis ar session_gc cronjob dalis.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Visų naudotojų prisijungę seansai rodomi prisijungimų ataskaitoje ir ten gali būti atjungti; ataskaita veikia su bet kuria seansų tvarkykle.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Atverti prisijungimų ataskaitą</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37874,6 +37898,26 @@ savo paskyrą.</translation>
     <message>
         <source>None yet</source>
         <translation>Kol kas nėra</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Saugos veikla</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Jūsų naujausi prisijungimai, nesėkmingi bandymai ir slaptažodžio, el. pašto adreso bei dviejų žingsnių prisijungimo pakeitimai.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Šios paskyros naujausi prisijungimai, nesėkmingi bandymai ir saugos pakeitimai.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Peržiūrėti veiklą</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Nesėkmingi prisijungimai: %count</translation>
     </message>
 </context>
 <context>
@@ -50964,6 +51008,10 @@ Daugiau informacijos rasite reikalavimų puslapyje.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab nebuvo įrašytas (%reason). Įrašykite šias eilutes į naudotojo, kurio vardu veikia svetainė, crontab, kitaip eilė, importai, pranešimai ir paieškos indeksas niekada nebus vykdomi:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Iš naujo įdiegiama naudojant kickstarter (%file, tada php bin/php/kickstarter.php run --apply) arba atliekant naują įdiegimą.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56756,6 +56804,10 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Pašto transportas paskutinio vykdymo metu atmetė %count laiškų. Patikrinkite pašto serverį ir site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Laukia įvykių: %count, o pranešimų cron užduoties paleidimų neužregistruota. Įrašykite cron užduoties dalį „frequent“ į crontab arba paleiskite exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63012,6 +63064,10 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Pasirinkite kitą svetainę ar skyrių naudodami mazgo parinkiklį</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Savininką gali pakeisti tik sistemos administratorius: paleiskite ./console exp:content-check --fix-permissions --apply kaip root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64545,6 +64601,10 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>empty</source>
         <translation>tuščia</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Pasirašymo raktas senesnis nei metai: pakeiskite jį komanda exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70255,6 +70315,14 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>not sent</source>
         <translation>neišsiųsta</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Pranešimų cron užduotis čia registruoja kiekvieną savo paleidimą. Įrašykite dalį frequent į crontab arba paleiskite exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Naudokite konsolę: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76145,6 +76213,10 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>Setup &gt; Cronjobs</source>
         <translation>Sąranka &gt; Cron užduotys</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Dar nė viena cron užduoties dalis nebuvo paleista: laukia užduočių eilė, importavimai, pranešimai ir paieškos indeksas. Paleiskite php bin/php/installcrontab.php --add --apply arba įrašykite --show išvestas eilutes į crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76483,6 +76555,46 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>None.</source>
         <translation>Nėra.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>su autentifikavimo programėle</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>su kodu el. paštu</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>su atkūrimo kodu</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>su prieigos raktu</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>su išorine paskyra</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Saugos veikla</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Rodomas jo tinklas; adresas saugomas taip, kaip nurodo svetainės duomenų apsaugos nustatymai.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Neužregistruota</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Vieta</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>apytikriai</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76726,6 +76838,42 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>Manage devices</source>
         <translation>Tvarkyti įrenginius</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>su autentifikavimo programėle</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>su kodu el. paštu</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>su atkūrimo kodu</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>su prieigos raktu</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>su išorine paskyra</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Saugos veikla</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Neužregistruota</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Vieta</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>apytikriai</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76805,6 +76953,14 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>View the sessions of this user</source>
         <translation>Rodyti šio naudotojo seansus</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Jūsų paskyra %login svetainėje %site ką tik buvo panaudota prisijungti iš vietos, iš kurios pastaruoju metu nebuvo jungiamasi:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Apytikrė vieta</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76843,6 +76999,10 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser operacinėje sistemoje %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Prisijungimų ataskaita</translation>
     </message>
 </context>
 <context>
@@ -77521,6 +77681,788 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>unknown</source>
         <translation>nežinomas</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Apsaugoti paskyrą</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Prisijungiant prie jūsų paskyros %login svetainėje %site buvo panaudotas atkūrimo kodas.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Buvo panaudotas atkūrimo kodas</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Paskyra</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Apytikris adresas</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Paprašykite naujo slaptažodžio, kad galėtumėte vėl prisijungti, arba susisiekite su svetainės administratoriais.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Paprašyti naujo slaptažodžio</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Kiekvienas atkūrimo kodas veikia vieną kartą. Jei pametėte telefoną, iš naujo nustatykite autentifikavimo programėlę ir laikykite naujus atkūrimo kodus saugioje vietoje.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Nesėkmingi bandymai prisijungti prie jūsų paskyros</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Nuo šiol jungiantis bus prašoma ne tik slaptažodžio, bet ir kodo. Jei tai padarėte jūs, nieko daryti nereikia.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Jei tai buvote jūs ir pamiršote slaptažodį, paprašykite naujo. Jei ne, pasirinkite stipresnį slaptažodį ir įjunkite dviejų žingsnių prisijungimą.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Jei tai buvote ne jūs, kažkas gali žinoti jūsų slaptažodį: pakeiskite jį dabar ir patikrinkite, kur jūsų paskyra prisijungusi.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Likę atkūrimo kodai</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Peržiūrėti savo įrenginius</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Saugos įspėjimas</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Kažkas bandė prisijungti prie jūsų paskyros %login svetainėje %site su neteisingu slaptažodžiu kelis kartus iš eilės: %count.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Jūsų paskyroje %login svetainėje %site įvyko saugos įvykis.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Tai saugos įspėjimas apie jūsų paskyrą. Jis siunčiamas apie kiekvieną tokį pakeitimą ir negali būti išjungtas.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Laikas</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Dviejų žingsnių prisijungimas buvo išjungtas jūsų paskyrai %login svetainėje %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Dviejų žingsnių prisijungimas buvo išjungtas</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Dviejų žingsnių prisijungimas buvo įjungtas jūsų paskyrai %login svetainėje %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Dviejų žingsnių prisijungimas buvo įjungtas</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Jūsų paskyra %login svetainėje %site buvo užrakinta po per daug nesėkmingų prisijungimų.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Jūsų paskyrą dabar saugo tik slaptažodis. Jei to nedarėte jūs, pakeitę slaptažodį vėl įjunkite dviejų žingsnių prisijungimą.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Jūsų paskyra buvo užrakinta</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Saugos veikla</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Naudotojo %name saugos veikla</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Prisijungta</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Nesėkmingas bandymas prisijungti</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Atsijungta</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Seansai atjungti</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Prisijungimas iš naujo įrenginio</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Prisijungimas iš naujos vietos</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Tapatybė patvirtinta („Patvirtinkite, kad tai jūs“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Tapatybės patikra nepavyko</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Prisijungta su prieigos raktu</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Prisijungimas su prieigos raktu nepavyko</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Prisijungimas atmestas: dviejų žingsnių kodo nėra arba jis neteisingas</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Neteisingas dviejų žingsnių kodas</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Paskyra užrakinta po nesėkmingų prisijungimų</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Paskyra atrakinta</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Slaptažodis pakeistas</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Slaptažodžio pakeisti nepavyko</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Slaptažodis atkurtas</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Paprašyta naujo slaptažodžio</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>El. pašto adresas pakeistas</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Naudotojo vardas pakeistas</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Dviejų žingsnių prisijungimas įjungtas</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Dviejų žingsnių prisijungimas išjungtas</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Panaudotas atkūrimo kodas</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nauji atkūrimo kodai</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Programėlės slaptažodis sukurtas</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Programėlės slaptažodis atšauktas</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Prieigos raktas pridėtas</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Prieigos raktas pašalintas</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Paskyra įjungta</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Paskyra išjungta</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Visi</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Prisijungimai ir seansai</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Paskyros pakeitimai</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Reikia dėmesio</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>atlikote jūs</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>atliko naudotojas</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>atliko %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Būdas</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Naršyklė</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Operacinė sistema</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Įrenginys</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Vieta</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Šalis</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Seansai</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Kurie</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanalas</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Nesėkmingi bandymai</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Likę kodai</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Prisijungimo tvarkyklė</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Saugos veikla</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Naudotojo %name saugos veikla</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Prisijungimai ir jūsų paskyros saugos pakeitimai. Jei matote ką nors, ko nedarėte, pakeiskite slaptažodį ir atjunkite įrenginius, kurių neatpažįstate.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Prisijungimai ir šios paskyros saugos pakeitimai.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jūsų įrenginiai</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Keisti slaptažodį</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Atgal į paskyrą</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Saugos veikla neregistruojama</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Ji skaitoma iš naudotojų audito žurnalo, kurio lentelės expuser_audit nėra arba ši duomenų bazė jos nepalaiko. Paleiskite php update/common/scripts/6.0/createuseraudittable.php arba 6.0.15 versijos duomenų bazės naujinimą.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Paskutinės dienos: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Prisijungimai per paskutines dienas (%days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Naujausia saugos veikla</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rodyti</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>nepavyko</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>atmesta</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Saugos veiklos dar neužregistruota.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Saugos įvykiai saugomi dienų: %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Saugos įvykiai saugomi, kol administratorius juos pašalina.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Atsisiųsti mano prisijungimo duomenis</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Jūsų seansai ir saugos įvykiai kaip JSON failas.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Prisijungta</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Nesėkmingas bandymas prisijungti</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Atsijungta</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Seansai atjungti</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Prisijungimas iš naujo įrenginio</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Prisijungimas iš naujos vietos</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Tapatybė patvirtinta („Patvirtinkite, kad tai jūs“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Tapatybės patikra nepavyko</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Prisijungta su prieigos raktu</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Prisijungimas su prieigos raktu nepavyko</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Prisijungimas atmestas: dviejų žingsnių kodo nėra arba jis neteisingas</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Neteisingas dviejų žingsnių kodas</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Paskyra užrakinta po nesėkmingų prisijungimų</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Paskyra atrakinta</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Slaptažodis pakeistas</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Slaptažodžio pakeisti nepavyko</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Slaptažodis atkurtas</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Paprašyta naujo slaptažodžio</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>El. pašto adresas pakeistas</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Naudotojo vardas pakeistas</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Dviejų žingsnių prisijungimas įjungtas</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Dviejų žingsnių prisijungimas išjungtas</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Panaudotas atkūrimo kodas</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nauji atkūrimo kodai</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Programėlės slaptažodis sukurtas</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Programėlės slaptažodis atšauktas</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Prieigos raktas pridėtas</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Prieigos raktas pašalintas</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Paskyra įjungta</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Paskyra išjungta</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Visi</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Prisijungimai ir seansai</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Paskyros pakeitimai</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Reikia dėmesio</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Saugos veikla</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Naudotojo %name saugos veikla</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Prisijungimai ir jūsų paskyros saugos pakeitimai. Jei matote ką nors, ko nedarėte, pakeiskite slaptažodį ir atjunkite įrenginius, kurių neatpažįstate.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jūsų įrenginiai</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Keisti slaptažodį</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Šioje svetainėje saugos veikla dar neregistruojama.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Prisijungimai per paskutines dienas (%days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Nesėkmingi bandymai</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Saugos veiklos dar neužregistruota.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Atsisiųsti mano prisijungimo duomenis</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Jūsų seansai ir saugos įvykiai kaip JSON failas.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Slaptažodis</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Slaptažodis ir dviejų žingsnių kodas</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST sąsaja</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP sąsaja</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Vieningas prisijungimas</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Prisijungta prieš pradedant registruoti seansus</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Prisijungimų ataskaita</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Kas prisijungęs prie svetainės, kaip dažnai paskyros prisijungia ir kaip dažnai nesėkmingai, bei naudotojo atjungimas visur. Veikia su bet kuria seansų tvarkykle.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Seansas atjungtas. Įrenginys turi prisijungti iš naujo.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login atjungtas nuo seansų: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Naudotojas %login neturėjo veikiančio seanso.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Nė viena paskyra neturi tokio ID, naudotojo vardo ar el. pašto adreso.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Tai seansas, kurį naudojate. Norėdami jį baigti, atsijunkite.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Tas seansas jau buvo pasibaigęs.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Puslapio galiojimas buvo pasibaigęs. Niekas nepakeista; bandykite dar kartą.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Šioje svetainėje seansai neregistruojami (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Nėra lentelės expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Seansai registruojami, kai tik ji sukuriama: php update/common/scripts/6.0/createusersessiontable.php arba 6.0.15 versijos duomenų bazės naujinimas.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Dabar ir šiandien</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Veikiantys seansai</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Prisijungę naudotojai</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Prisijungimai šiandien</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Nesėkmingi bandymai šiandien</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Atjungti naudotoją visur</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Kiekvienas paskyros seansas baigiasi per kitą jo užklausą, taip pat ir tie, kuriuos išlaiko „Prisiminti mane“. Naudokite tai, kai paskyra gali būti patekusi į netinkamas rankas; po to atkurkite jos slaptažodį.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Naudotojo ID, naudotojo vardas arba el. pašto adresas</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Atjungti visur</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Prisijungę dabar</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Rodomi naujausiai naudoti, ne daugiau kaip %limit.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Naudotojas</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Įrenginys</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresas</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Prisijungta</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Paskutinį kartą aktyvus</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Veiksmai</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Šis įrenginys</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Neužregistruota</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Atjungti</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Nėra prisijungusių seansų.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Paskutinės dienos: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Prisijungimai ir nesėkmingi bandymai skaičiuojami iš naudotojų audito žurnalo, kurio nėra; nauji seansai skaičiuojami.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Diena</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Prisijungimai</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Nesėkmingi bandymai</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Nauji seansai</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Seansų tvarkyklė: %handler. Seansai skaitomi iš lentelės expuser_session, todėl ataskaita veikia su bet kuria tvarkykle.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Saugos įspėjimas apie jūsų paskyrą</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Jūsų paskyroje %login įvyko saugos įvykis: %event. Jei tai buvote ne jūs, apsaugokite paskyrą adresu %url.</translation>
     </message>
 </context>
 </TS>

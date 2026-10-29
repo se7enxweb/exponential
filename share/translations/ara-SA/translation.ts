@@ -14326,6 +14326,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Nothing new</source>
         <translation>لا جديد</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>أجهزتك</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>نشاط الأمان</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15245,6 +15253,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>من غيّر أو سجّل الدخول أو رُفض، لكل حساب؛ مع التصفية والتصدير.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>تقرير تسجيل الدخول</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>من سجّل الدخول، وعمليات تسجيل الدخول والإخفاقات في كل يوم؛ تسجيل خروج مستخدم من كل مكان.</translation>
     </message>
 </context>
 <context>
@@ -33550,6 +33566,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>يزيل PHP نفسه الجلسات المنتهية لمعالج PHP (session.gc_maxlifetime)، لا هذه الصفحة ولا جزء مهمة cron المسمّى session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>تُدرج الجلسات المسجّلة الدخول لكل المستخدمين، ويُسجَّل خروجها، في تقرير تسجيل الدخول الذي يعمل مع كل معالج جلسات.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>فتح تقرير تسجيل الدخول</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37874,6 +37898,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>لا شيء بعد</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>نشاط الأمان</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>عمليات تسجيل الدخول الأخيرة والمحاولات الفاشلة والتغييرات على كلمة المرور وعنوان البريد الإلكتروني وتسجيل الدخول بخطوتين.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>عمليات تسجيل الدخول الأخيرة والمحاولات الفاشلة والتغييرات الأمنية لهذا الحساب.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>مراجعة النشاط</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>عمليات تسجيل الدخول الفاشلة: %count</translation>
     </message>
 </context>
 <context>
@@ -50964,6 +51008,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>لم يُكتب الـ crontab (%reason). أضف هذه الأسطر إلى الـ crontab الخاص بالمستخدم الذي يعمل الموقع باسمه، وإلا فلن تعمل قائمة الانتظار والاستيرادات والإشعارات وفهرس البحث أبدًا:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>تتم إعادة التثبيت باستخدام الـ kickstarter (%file، ثم php bin/php/kickstarter.php run --apply) أو بتثبيت جديد.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56756,6 +56804,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>رفض ناقل البريد %count من الرسائل في التشغيل الأخير. تحقق من خادم البريد ومن site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>هناك %count حدث في الانتظار ولم يُسجَّل أي تشغيل لمهمة cron الخاصة بالإشعارات. أضف جزء مهام cron &quot;frequent&quot; إلى الـ crontab، أو شغّل exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63012,6 +63064,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>اختر موقعًا أو قسمًا آخر باستخدام منتقي العقد</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>مسؤول النظام وحده يستطيع تغيير المالك: شغّل ./console exp:content-check --fix-permissions --apply بصلاحيات root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64545,6 +64601,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>فارغ</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>عمر مفتاح التوقيع أكثر من سنة: استبدله بالأمر exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -68805,6 +68865,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>لم يُرسل</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>تسجّل مهمة cron الخاصة بالإشعارات هنا كل تشغيل لها. أضف الجزء frequent إلى الـ crontab، أو شغّل exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>استخدم سطر الأوامر: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76145,6 +76213,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Setup &gt; Cronjobs</source>
         <translation>الإعداد &gt; مهام cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>لم يُشغَّل أي جزء من مهام cron بعد: قائمة انتظار المهام والاستيرادات والإشعارات وفهرس البحث في الانتظار. شغّل php bin/php/installcrontab.php --add --apply، أو أضف أسطر --show إلى الـ crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76483,6 +76555,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>لا شيء.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>بتطبيق مصادقة</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>برمز عبر البريد الإلكتروني</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>برمز استرداد</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>بمفتاح مرور</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>بحساب خارجي</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>نشاط الأمان</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>تُعرض شبكته؛ ويُحفظ العنوان وفق إعدادات حماية البيانات في الموقع.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>غير مسجّل</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>الموقع الجغرافي</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>تقريبي</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76726,6 +76838,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>إدارة الأجهزة</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>بتطبيق مصادقة</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>برمز عبر البريد الإلكتروني</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>برمز استرداد</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>بمفتاح مرور</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>بحساب خارجي</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>نشاط الأمان</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>غير مسجّل</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>الموقع الجغرافي</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>تقريبي</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76805,6 +76953,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>عرض جلسات هذا المستخدم</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>استُخدم حسابك %login على %site للتو لتسجيل الدخول من مكان لم يُسجَّل الدخول منه مؤخرًا:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>الموقع الجغرافي التقريبي</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76843,6 +76999,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser على %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>تقرير تسجيل الدخول</translation>
     </message>
 </context>
 <context>
@@ -77521,6 +77681,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>غير معروف</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>تأمين حسابك</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>استُخدم رمز استرداد لتسجيل الدخول إلى حسابك %login على %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>استُخدم رمز استرداد</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>الحساب</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>العنوان التقريبي</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>اطلب كلمة مرور جديدة لتسجيل الدخول مجددًا، أو تواصل مع مسؤولي الموقع.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>طلب كلمة مرور جديدة</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>كل رمز استرداد يعمل مرة واحدة. إذا فقدت هاتفك، فأعد إعداد تطبيق المصادقة واحفظ رموز الاسترداد الجديدة في مكان آمن.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>محاولات تسجيل دخول فاشلة إلى حسابك</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>من الآن فصاعدًا، يطلب تسجيل الدخول رمزًا إضافة إلى كلمة مرورك. إذا كنت أنت من فعل ذلك، فلا داعي لأي إجراء.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>إذا كنت أنت ونسيت كلمة مرورك، فاطلب كلمة مرور جديدة. وإن لم تكن أنت، فاختر كلمة مرور أقوى وفعّل تسجيل الدخول بخطوتين.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>إذا لم تكن أنت، فقد يعرف أحدهم كلمة مرورك: غيّرها الآن وتحقق من الأماكن التي سُجّل فيها الدخول إلى حسابك.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>رموز الاسترداد المتبقية</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>مراجعة أجهزتك</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>تنبيه أمني</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>حاول أحدهم تسجيل الدخول إلى حسابك %login على %site بكلمة مرور خاطئة %count مرة متتالية.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>وقع حدث أمني على حسابك %login على %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>هذا تنبيه أمني بشأن حسابك. يُرسل عند كل تغيير من هذا النوع ولا يمكن إيقافه.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>الوقت</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>أُوقف تسجيل الدخول بخطوتين لحسابك %login على %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>أُوقف تسجيل الدخول بخطوتين</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>شُغّل تسجيل الدخول بخطوتين لحسابك %login على %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>شُغّل تسجيل الدخول بخطوتين</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>قُفل حسابك %login على %site بعد عدد كبير جدًا من محاولات تسجيل الدخول الفاشلة.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>أصبح حسابك محميًا بكلمة مرورك وحدها الآن. إذا لم تكن أنت من فعل ذلك، فشغّل تسجيل الدخول بخطوتين مجددًا بعد تغيير كلمة مرورك.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>قُفل حسابك</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>نشاط الأمان</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>نشاط الأمان لـ %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>تسجيل الدخول</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>محاولة تسجيل دخول فاشلة</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>تسجيل الخروج</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>سُجّل الخروج من الجلسات</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>تسجيل دخول من جهاز جديد</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>تسجيل دخول من موقع جغرافي جديد</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>تأكيد الهوية (&quot;التحقق من هويتك&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>فشل التحقق من الهوية</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>تسجيل الدخول بمفتاح مرور</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>فشل تسجيل الدخول بمفتاح مرور</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>رُفض تسجيل الدخول: رمز تسجيل الدخول بخطوتين مفقود أو خاطئ</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>رمز تسجيل الدخول بخطوتين خاطئ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>قُفل الحساب بعد محاولات تسجيل دخول فاشلة</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>فُتح قفل الحساب</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>تغيّرت كلمة المرور</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>فشل تغيير كلمة المرور</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>أُعيد تعيين كلمة المرور</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>طُلبت كلمة مرور جديدة</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>تغيّر عنوان البريد الإلكتروني</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>تغيّر اسم المستخدم</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>شُغّل تسجيل الدخول بخطوتين</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>أُوقف تسجيل الدخول بخطوتين</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>استُخدم رمز استرداد</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>رموز استرداد جديدة</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>أُنشئت كلمة مرور تطبيق</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>أُلغيت كلمة مرور تطبيق</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>أُضيف مفتاح مرور</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>أُزيل مفتاح مرور</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>فُعّل الحساب</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>عُطّل الحساب</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>الكل</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>عمليات تسجيل الدخول والجلسات</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>تغييرات الحساب</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>يحتاج إلى انتباه</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>بواسطتك</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>بواسطة المستخدم</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>بواسطة %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>الطريقة</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>المتصفح</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>نظام التشغيل</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>الجهاز</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>المكان</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>البلد</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>الجلسات</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>أيّها</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>القناة</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>المحاولات الفاشلة</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>الرموز المتبقية</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>معالج تسجيل الدخول</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>نشاط الأمان</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>نشاط الأمان لـ %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>عمليات تسجيل الدخول والتغييرات على أمان حسابك. إذا رأيت شيئًا لم تفعله، فغيّر كلمة مرورك وسجّل خروج الأجهزة التي لا تعرفها.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>عمليات تسجيل الدخول والتغييرات على أمان هذا الحساب.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>أجهزتك</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>تغيير كلمة المرور</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>رجوع إلى الحساب</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>نشاط الأمان غير مسجّل</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>يُقرأ من سجل تدقيق المستخدمين، وجدوله expuser_audit مفقود أو غير مدعوم في قاعدة البيانات هذه. شغّل php update/common/scripts/6.0/createuseraudittable.php، أو تحديث قاعدة البيانات للإصدار 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>آخر %days يوم</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>عمليات تسجيل الدخول في آخر %days يوم</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>نشاط الأمان الأخير</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>إظهار</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>فشل</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>مرفوض</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>لم يُسجَّل أي نشاط أمان بعد.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>تُحفظ الأحداث الأمنية لمدة %days يوم.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>تُحفظ الأحداث الأمنية إلى أن يزيلها أحد المسؤولين.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>تنزيل بيانات تسجيل الدخول الخاصة بي</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>جلساتك وأحداثك الأمنية في ملف JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>تسجيل الدخول</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>محاولة تسجيل دخول فاشلة</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>تسجيل الخروج</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>سُجّل الخروج من الجلسات</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>تسجيل دخول من جهاز جديد</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>تسجيل دخول من موقع جغرافي جديد</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>تأكيد الهوية (&quot;التحقق من هويتك&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>فشل التحقق من الهوية</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>تسجيل الدخول بمفتاح مرور</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>فشل تسجيل الدخول بمفتاح مرور</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>رُفض تسجيل الدخول: رمز تسجيل الدخول بخطوتين مفقود أو خاطئ</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>رمز تسجيل الدخول بخطوتين خاطئ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>قُفل الحساب بعد محاولات تسجيل دخول فاشلة</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>فُتح قفل الحساب</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>تغيّرت كلمة المرور</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>فشل تغيير كلمة المرور</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>أُعيد تعيين كلمة المرور</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>طُلبت كلمة مرور جديدة</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>تغيّر عنوان البريد الإلكتروني</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>تغيّر اسم المستخدم</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>شُغّل تسجيل الدخول بخطوتين</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>أُوقف تسجيل الدخول بخطوتين</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>استُخدم رمز استرداد</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>رموز استرداد جديدة</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>أُنشئت كلمة مرور تطبيق</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>أُلغيت كلمة مرور تطبيق</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>أُضيف مفتاح مرور</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>أُزيل مفتاح مرور</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>فُعّل الحساب</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>عُطّل الحساب</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>الكل</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>عمليات تسجيل الدخول والجلسات</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>تغييرات الحساب</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>يحتاج إلى انتباه</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>نشاط الأمان</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>نشاط الأمان لـ %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>عمليات تسجيل الدخول والتغييرات على أمان حسابك. إذا رأيت شيئًا لم تفعله، فغيّر كلمة مرورك وسجّل خروج الأجهزة التي لا تعرفها.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>أجهزتك</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>تغيير كلمة المرور</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>نشاط الأمان غير مسجّل في هذا الموقع بعد.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>عمليات تسجيل الدخول في آخر %days يوم</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>المحاولات الفاشلة</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>لم يُسجَّل أي نشاط أمان بعد.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>تنزيل بيانات تسجيل الدخول الخاصة بي</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>جلساتك وأحداثك الأمنية في ملف JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>كلمة المرور</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>كلمة المرور ورمز تسجيل الدخول بخطوتين</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>واجهة REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>واجهة SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>تسجيل الدخول الموحّد</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>سُجّل الدخول قبل بدء تسجيل الجلسات</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>تقرير تسجيل الدخول</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>من سجّل الدخول إلى الموقع، وكم مرة تسجّل الحسابات الدخول وتفشل فيه، وتسجيل خروج مستخدم من كل مكان. يعمل مع كل معالج جلسات.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>سُجّل الخروج من الجلسة. يجب على الجهاز تسجيل الدخول مجددًا.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>سُجّل خروج %login من %count جلسة.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>لم تكن لـ %login أي جلسة جارية.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>لا يوجد حساب بهذا المعرّف أو اسم المستخدم أو عنوان البريد الإلكتروني.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>هذه هي الجلسة التي تستخدمها. لإنهائها، سجّل الخروج.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>كانت تلك الجلسة قد انتهت بالفعل.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>انتهت صلاحية الصفحة. لم يتغيّر شيء؛ يرجى المحاولة مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>لا تُسجَّل الجلسات في هذا الموقع (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>الجدول expuser_session مفقود</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>تُسجَّل الجلسات بمجرد إنشائه: php update/common/scripts/6.0/createusersessiontable.php، أو تحديث قاعدة البيانات للإصدار 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>الآن واليوم</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>الجلسات الجارية</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>المستخدمون المسجّلو الدخول</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>عمليات تسجيل الدخول اليوم</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>المحاولات الفاشلة اليوم</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>تسجيل خروج مستخدم من كل مكان</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>تنتهي كل جلسة للحساب عند طلبها التالي، بما فيها الجلسات المحفوظة بخيار &quot;تذكّرني&quot;. استخدم ذلك عندما يُحتمل أن يكون الحساب في أيدٍ غير أمينة؛ ثم أعد تعيين كلمة مروره.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>معرّف المستخدم أو اسم المستخدم أو عنوان البريد الإلكتروني</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>تسجيل الخروج من كل مكان</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>المسجّلون الدخول الآن</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>تُعرض آخر %limit جلسة مستخدمة.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>المستخدم</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>الجهاز</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>العنوان</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>تسجيل الدخول</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>آخر نشاط</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>الإجراءات</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>هذا الجهاز</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>غير مسجّل</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>تسجيل الخروج</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>لا توجد جلسة مسجّلة الدخول.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>آخر %days يوم</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>تُحسب عمليات تسجيل الدخول والمحاولات الفاشلة من سجل تدقيق المستخدمين، وهو غير موجود؛ أما الجلسات الجديدة فتُحسب.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>اليوم</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>عمليات تسجيل الدخول</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>المحاولات الفاشلة</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>الجلسات الجديدة</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>معالج الجلسات: %handler. تُقرأ الجلسات من الجدول expuser_session، لذا يعمل التقرير مع كل معالج.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>تنبيه أمني بشأن حسابك</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>وقع حدث أمني على حسابك %login: %event. إذا لم تكن أنت، فأمّن حسابك على %url.</translation>
     </message>
 </context>
 </TS>

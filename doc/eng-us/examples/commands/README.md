@@ -15,13 +15,13 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | Command | Aliases | What it does |
 |---|---|---|
 | [exp:accesscheck](accesscheck.md) | exp:access:check | Check what a user may do with a node or object (content/read, edit, ...) and which limitation refuses it |
-| [exp:addanonymouspublicpolicies](addanonymouspublicpolicies.md) |  | Give the Anonymous role the public policies it lacks: user/register, rss/feed, tags/view, the newsletter's public views (--dry-run lists them first) |
-| [exp:adddefaultstates](adddefaultstates.md) |  |  |
-| [exp:addeditorpolicies](addeditorpolicies.md) |  | Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account (--dry-run lists them first) |
-| [exp:addexphelpreadpolicy](addexphelpreadpolicy.md) | exp:help-grant | Grant exphelp/read (the help system) to the Editor role or the roles named (--dry-run lists them first) |
-| [exp:addmembermanagement](addmembermanagement.md) |  | Set up member management from membermanagement.ini: the role that lets a group (default Editors) manage the accounts of another (default Members), never Administrator users or Editors (--dry-run lists it first) |
-| [exp:addoauthauthorizepolicy](addoauthauthorizepolicy.md) |  | Grant oauth/authorize to the roles that let users sign in (6.0.15 upgrade; --dry-run lists them first) |
-| [exp:adduserapproval](adduserapproval.md) |  | Set up the approval of new accounts in a user group (default: new Editors wait for the Administrator users): the workflow event on content/publish before and the role that lets the requesters create such accounts (--dry-run lists it first) |
+| [exp:addanonymouspublicpolicies](addanonymouspublicpolicies.md) |  | Give the Anonymous role the public policies it lacks: user/register, rss/feed, tags/view, the newsletter's public views (dry run unless --apply) |
+| [exp:adddefaultstates](adddefaultstates.md) |  | Give every content object the default state of each state group it has no state of (dry run unless --apply) |
+| [exp:addeditorpolicies](addeditorpolicies.md) |  | Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account (dry run unless --apply) |
+| [exp:addexphelpreadpolicy](addexphelpreadpolicy.md) | exp:help-grant | Grant exphelp/read (the help system) to the Editor role or the roles named (dry run unless --apply) |
+| [exp:addmembermanagement](addmembermanagement.md) |  | Set up member management from membermanagement.ini: the role that lets a group (default Editors) manage the accounts of another (default Members), never Administrator users or Editors (dry run unless --apply) |
+| [exp:addoauthauthorizepolicy](addoauthauthorizepolicy.md) |  | Grant oauth/authorize to the roles that let users sign in (6.0.15 upgrade; dry run unless --apply) |
+| [exp:adduserapproval](adduserapproval.md) |  | Set up the approval of new accounts in a user group (default: new Editors wait for the Administrator users): the workflow event on content/publish before and the role that lets the requesters create such accounts; --mode=section sets up the optional alternative, a section Staff with the plain approval event (both a dry run unless --apply) |
 | [exp:audit](audit.md) |  | Audit log: tail, show one event, verify the hash chains, list the channels |
 | [exp:benchmark](benchmark.md) | exp:bench | Measure this installation: page timings over HTTP, A/B between servers, kernel probes, regression check |
 | [exp:cache](cache.md) |  | Clear and inspect caches by tag, id or all: content, static, HTTP, Velocity, OPcache, APCu |
@@ -30,13 +30,13 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:checkcodestyle](checkcodestyle.md) |  |  |
 | [exp:checkdbfiles](checkdbfiles.md) |  | Verify the database update files against the upgrade path; reports missing or stray files |
 | [exp:checkmanifest](checkmanifest.md) |  |  |
-| [exp:cleanuppolicies](cleanuppolicies.md) |  | Remove policies of modules that no longer exist (--dry-run lists them first) |
-| [exp:cleanuprss](cleanuprss.md) |  | Trim RSS-imported content, keeping the newest items of each active import |
-| [exp:cleanupversions](cleanupversions.md) |  | Remove archived content versions beyond the VersionManagement limits (-n: do not wait) |
+| [exp:cleanuppolicies](cleanuppolicies.md) |  | Remove policies of modules that no longer exist (dry run unless --apply) |
+| [exp:cleanuprss](cleanuprss.md) |  | Trim RSS-imported content, keeping the newest items of each active import (dry run unless --apply) |
+| [exp:cleanupversions](cleanupversions.md) |  | Remove archived content versions beyond the VersionManagement limits (dry run unless --apply; -n: do not wait) |
 | [exp:clusterize](clusterize.md) |  | Move var files into the database cluster storage (-u moves them back) |
-| [exp:clusterpurge](clusterpurge.md) |  | Physically purge the cluster files of the given scopes (--scopes=scope1,scope2) |
-| [exp:collaborationsampledata](collaborationsampledata.md) | exp:collaboration:sample-data | Build sample content for the collaboration tool (approvals, comments, groups), or remove it again |
-| [exp:contentcheck](contentcheck.md) | exp:content-check | Content checks: build the reference index, list the unused assets and the broken relations below a node, list the missing files, scan the storage files (report only, unless --fix, --quarantine or --fix-permissions without --dry-run) |
+| [exp:clusterpurge](clusterpurge.md) |  | Physically purge the cluster files of the given scopes (--scopes=scope1,scope2; dry run unless --apply) |
+| [exp:collaborationsampledata](collaborationsampledata.md) | exp:collaboration:sample-data | Build sample content for the collaboration tool (approvals, comments, groups), or remove it again (dry run unless --apply) |
+| [exp:contentcheck](contentcheck.md) | exp:content-check | Content checks: build the reference index, list the unused assets and the broken relations below a node, list the missing files, scan the storage files (report only; --fix, --quarantine and --fix-permissions are a dry run unless --apply) |
 | [exp:convertezenumtoezselection](convertezenumtoezselection.md) |  |  |
 | [exp:convertprice2multiprice](convertprice2multiprice.md) |  | Convert content objects with 'price' datatype attributes to 'multiprice' |
 | [exp:dfscleanup](dfscleanup.md) |  | Check database and DFS files against each other (-S, -B) and delete nonexistent ones (-D) |
@@ -44,10 +44,10 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:expcontentjob](expcontentjob.md) |  | Run, list, resume and cancel content jobs: large subtree removes and copies in batches |
 | [exp:expfetch](expfetch.md) | exp:info, exp:about | The system card: the Exponential "e" next to the facts of this installation, its engine and its machine, with health hints (exp:info adds an inventory, exp:about the project) |
 | [exp:exphelp](exphelp.md) | exp:help | The help system on the command line: build and describe the index of doc/, search it, show a page's metadata, check its links and images |
-| [exp:exphelpcontent](exphelpcontent.md) | exp:help:content | Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall |
+| [exp:exphelpcontent](exphelpcontent.md) | exp:help:content | Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall (the changing actions are a dry run unless --apply) |
 | [exp:exphelpexamples](exphelpexamples.md) | exp:help:examples | Generate the reference examples of the help below doc/eng-us/examples/ from the code: template operators and functions, fetch functions, module views, policies, INI settings, datatypes, workflow events, cronjobs, console commands and extension points |
-| [exp:explogs](explogs.md) | exp:logs | The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives |
-| [exp:exploremipsumfill](exploremipsumfill.md) | exp:loremipsum | Fill a translation of objects in a test language (Lorem Ipsum, qlo-ZZ) with lorem ipsum text |
+| [exp:explogs](explogs.md) | exp:logs | The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives (dry run unless --apply) |
+| [exp:exploremipsumfill](exploremipsumfill.md) | exp:loremipsum | Fill a translation of objects in a test language (Lorem Ipsum, qlo-ZZ) with lorem ipsum text (dry run unless --apply) |
 | [exp:explovestack](explovestack.md) | exp:lovestack | Check an installation coming from LoveStack (read-only), and record its database as Exponential's (migrate) |
 | [exp:exppatterncatalogue](exppatterncatalogue.md) |  |  |
 | [exp:exprepair](exprepair.md) |  | Repair queue of the missing-libraries error page: --create-key, --disable, --status, --run |
@@ -75,8 +75,8 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:ezsqldumpisbndata](ezsqldumpisbndata.md) |  | Dump the ISBN group and range tables as SQL to a file or standard output |
 | [exp:ezsqldumpschema](ezsqldumpschema.md) |  | Dump the database schema to a file or standard output (--type, --user) |
 | [exp:ezsqlinsertschema](ezsqlinsertschema.md) |  | Insert a database schema and data from a .dba file into a database (--type, --user) |
-| [exp:ezsubtreecopy](ezsubtreecopy.md) |  | Copy a content subtree to a new location (--src-node-id, --dst-node-id) |
-| [exp:ezsubtreeremove](ezsubtreeremove.md) |  | Remove content subtrees by node ID, to the trash unless --ignore-trash is given |
+| [exp:ezsubtreecopy](ezsubtreecopy.md) |  | Copy a content subtree to a new location (--src-node-id, --dst-node-id; dry run unless --apply) |
+| [exp:ezsubtreeremove](ezsubtreeremove.md) |  | Remove content subtrees by node ID, to the trash unless --ignore-trash is given (dry run unless --apply) |
 | [exp:eztc](eztc.md) |  | Compile the templates of a siteaccess into the template cache (--force recompiles all) |
 | [exp:eztemplatecheck](eztemplatecheck.md) |  | Check the syntax of the templates of a siteaccess or of a design directory |
 | [exp:ezwebincommon](ezwebincommon.md) |  | Helper library of ezwebininstall and ezwebinupgrade, not meant to be run directly |
@@ -86,30 +86,30 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:frankenphp](frankenphp.md) | exp:fp | Control the FrankenPHP engine of the Exponential web server |
 | [exp:i18n](i18n.md) |  | The translation fallbacks: per locale the chain of translations it falls back to, and how much of the kernel and of each extension it shows translated; --check for CI |
 | [exp:ini](ini.md) |  | Read and change INI settings in every scope: get, set, add, rem, clear, toggle, copy, move, where, list, scopes |
-| [exp:install](install.md) | exp:names | One-command installation, SQLite by default, no kickstart.ini needed |
-| [exp:installcrontab](installcrontab.md) |  | Show, add or remove the cron job of the installation: the crontab lines that run its cronjob parts (--dry-run says what would change) |
-| [exp:kickstarter](kickstarter.md) |  | Kickstarter runner. Supports "ini" generation and full "run" setup subcommands |
-| [exp:mailbounces](mailbounces.md) | exp:mail:bounces | Read the bounce mailbox: hard bounces and spam complaints go on the suppression list |
-| [exp:mailconsent](mailconsent.md) | exp:mail:consent | The consent log of the e-mail preferences: list, export as CSV, retention cleanup |
+| [exp:install](install.md) | exp:names | One-command installation, SQLite by default, no kickstart.ini needed (a dry run unless --apply) |
+| [exp:installcrontab](installcrontab.md) |  | Show, add or remove the cron job of the installation: the crontab lines that run its cronjob parts (--add and --remove: dry run unless --apply) |
+| [exp:kickstarter](kickstarter.md) |  | Kickstarter runner: "ini" writes kickstart.ini, "run" installs from it (a dry run unless --apply) |
+| [exp:mailbounces](mailbounces.md) | exp:mail:bounces | Read the bounce mailbox: hard bounces and spam complaints go on the suppression list (dry run unless --apply) |
+| [exp:mailconsent](mailconsent.md) | exp:mail:consent | The consent log of the e-mail preferences: list, export as CSV, retention cleanup (dry run unless --apply) |
 | [exp:mailgate](mailgate.md) | exp:mail:gate | Test the mail gate: who of the given addresses would get a mail of a category, and what the decorated mail looks like |
 | [exp:mailpreferences](mailpreferences.md) | exp:mail:preferences | Show and change the e-mail preferences of a user or an address: categories, master switch, frequency, export, erase |
 | [exp:mailstatus](mailstatus.md) | exp:mail:status | Show the e-mail preference system: tables, gate, footer, categories, suppression, consent log, the gate's last decisions and problems |
 | [exp:mailsuppression](mailsuppression.md) | exp:mail:suppression | The suppression list of the e-mail gate: list, check, add and lift entries (only hashes are stored) |
 | [exp:maintenance](maintenance.md) |  | Take the site offline for maintenance and back: on, off or status |
 | [exp:makestaticcache](makestaticcache.md) |  | Crawl the public siteaccesses and generate static pages (--site, --max-pages, --max-depth) |
-| [exp:notificationevents](notificationevents.md) | exp:notification:events, exp:notify:events | List the notification events, or remove the old ones |
-| [exp:notificationrun](notificationrun.md) | exp:notification:run, exp:notify:run | Run the notification filter: send the notifications of the pending events and the due digests (--dry-run: only list them) |
+| [exp:notificationevents](notificationevents.md) | exp:notification:events, exp:notify:events | List the notification events, or remove the old ones (dry run unless --apply) |
+| [exp:notificationrun](notificationrun.md) | exp:notification:run, exp:notify:run | Run the notification filter: send the notifications of the pending events and the due digests (dry run unless --apply) |
 | [exp:notificationstatus](notificationstatus.md) | exp:notification:status, exp:notify:status | Show the notification system: pending events, digest items, subscriptions, the last runs and problems |
-| [exp:notificationsubscriptions](notificationsubscriptions.md) | exp:notification:subscriptions, exp:notify:subscriptions | List the subtree notification subscriptions per user and subtree, or remove those whose content is gone |
+| [exp:notificationsubscriptions](notificationsubscriptions.md) | exp:notification:subscriptions, exp:notify:subscriptions | List the subtree notification subscriptions per user and subtree, or remove those whose content is gone (dry run unless --apply) |
 | [exp:phar](phar.md) |  | Build and inspect the engine archive dist/engine.phar (verbs build, check, clean, info) |
-| [exp:preload](preload.md) |  | Warm the page caches of a site: request its section pages, then follow its links, and report the broken ones |
+| [exp:preload](preload.md) |  | Warm the page caches of a site: request its section pages, then follow its links, and report the broken ones (dry run unless --apply) |
 | [exp:preloadjob](preloadjob.md) |  |  |
 | [exp:publish_content](publish_content.md) |  |  |
 | [exp:resetuserpassword](resetuserpassword.md) |  | Reset a user password with admin authentication or root bypass |
 | [exp:services](services.md) | exp:services:compile, exp:services:list, exp:services:show, exp:services:check | Compile, list, show and check the kernel service container (verbs compile, list, show, check) |
 | [exp:solr](solr.md) | exp:search | Control the Solr search server, once it is installed and configured |
 | [exp:systeminfo](systeminfo.md) | exp:system:info | The facts and health checks of Setup > System information, as text or JSON (--json, --sizes) |
-| [exp:trashpurge](trashpurge.md) |  | Permanently delete all objects in the trash |
+| [exp:trashpurge](trashpurge.md) |  | Permanently delete all objects in the trash (dry run unless --apply) |
 | [exp:updateisbn13](updateisbn13.md) |  | Update the ISBN range data in the database from an XML file (--url is required) |
 | [exp:updateniceurls](updateniceurls.md) |  | Import old URL aliases and update the URL aliases of all nodes (--update-nodes) |
 | [exp:updatesearchindex](updatesearchindex.md) |  | Reindex all content objects in the search engine |

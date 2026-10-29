@@ -52,11 +52,15 @@ ausgegraut oder gar nicht angezeigt.
 | [Sprachen](sprachen.md) | Inhalte übersetzen und die Sprache der Administration selbst wählen |
 | [Der Layout-Editor](layout-editor.md) | Die Blöcke einer Seite in Zonen anordnen und das Layout veröffentlichen |
 
-## Ihr Konto
+## Konten, Rollen und Mitglieder
 
 | Seite | Wobei sie Ihnen hilft |
 |---|---|
 | [Ihr Konto und die Anmeldung](konten-und-anmeldung.md) | An- und abmelden, das Passwort ändern, die Anmeldung in zwei Schritten einschalten |
+| [Konten für Redakteure und Administratoren einrichten](konten-fuer-redakteure-und-administratoren-einrichten.md) | Das Konto eines Redakteurs in der Gruppe Editors anlegen, prüfen und so übergeben, dass nur der Redakteur das Passwort kennt; dasselbe für die wenigen Administratoren |
+| [Was die Redakteursrolle erlaubt](was-die-redakteursrolle-erlaubt.md) | Wissen, was ein Redakteur darf und was bei den Administratoren bleibt |
+| [Mitglieder verwalten](mitglieder-verwalten.md) | Als Redakteur die Konten der Mitglieder der Website anlegen, ändern, deaktivieren, verschieben und entfernen |
+| [Das Benutzer-Auditprotokoll](das-benutzer-auditprotokoll.md) | Herausfinden, wer was mit einem Konto getan hat, wann und von wo |
 
 ## Schneller arbeiten und Hilfe bekommen
 

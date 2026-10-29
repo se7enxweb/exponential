@@ -76,7 +76,7 @@ Image, von dem Ihre Hoster starten), bevor der Setup-Assistent, der Kickstarter 
 |---|---|
 | Setup-Assistent | die Seite **Site Paket** führt jeden Eintrag `type="site"` Ihres Index mit seinem Vorschaubild auf ([5.3.8](../../../installation/05-setup-assistent.md#538-site-paket)) |
 | Kickstarter | `kickstart.ini`, Abschnitt `[site_types]`, Schlüssel `Site_package` ([6.4](../../../installation/06-kickstarter.md#64-referenz-zu-kickstartini)) |
-| Installation über die Konsole | `php bin/php/console exp:install --package=<name>` ([7.3](../../../installation/07-installation-ueber-die-konsole.md#73-optionen)) |
+| Installation über die Konsole | `php bin/php/console exp:install --apply --package=<name>` ([7.3](../../../installation/07-installation-ueber-die-konsole.md#73-optionen)) |
 
 ```ini
 # kickstart.ini
@@ -86,7 +86,7 @@ Site_package=acme_site
 ```
 
 ```bash
-php bin/php/console exp:install --package=acme_site --url=https://www.example.com
+php bin/php/console exp:install --apply --package=acme_site --url=https://www.example.com
 ```
 
 Der Kickstarter zieht den entfernten Eintrag des Index vor, nutzt aber ein Paket, das bereits importiert ist; um eine frische Kopie zu

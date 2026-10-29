@@ -40,7 +40,7 @@ same work cut into a weekend.
 
    ```bash
    php bin/php/console exp:install --dry-run
-   php bin/php/console exp:install
+   php bin/php/console exp:install --apply
    ```
 
    For a real site later, the clean package without demo content is the better start

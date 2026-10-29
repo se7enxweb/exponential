@@ -78,7 +78,7 @@ solange er läuft" ([4.6](../../installation/04-installationsweg-waehlen.md#46-u
 set -euo pipefail
 cd /srv/exponential
 if ! grep -q '^\[DatabaseSettings\]' settings/override/site.ini.append.php 2>/dev/null; then
-    php bin/php/console exp:install \
+    php bin/php/console exp:install --apply \
         --db=mysql --db-host="${DB_HOST}" --db-name="${DB_NAME}" --db-user="${DB_USER}" \
         --url="${SITE_URL}" --email="${ADMIN_EMAIL}" --password="${ADMIN_PASSWORD}"
 fi

@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>سیٹ اَپ &gt; کرون جاب</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>وُنہِ تام چھُنہٕ کانٛہہ cron حِصہٕ چلیومُت: کٲم قطار، دَرآمَد، اِطلاعات تہٕ ژھارنہٕ ہُنٛد اِنڈیکس چھِ اِنتِظار کران۔ php bin/php/installcrontab.php --add --apply چلٲوِو، یا --show ہِنٛد لایِنہٕ crontab منٛز شامِل کٔرِو۔</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>یہ اِنسٹالیشَن چھِ اکھ عوامی ڈیمو: کانٛہہ تہِ ہیکہِ تَمہِ ہُنٛد مُنتظِم پاس ورڈ زٲنتھ، تہٕ مُنتظِم پاس ورڈ ہیکن نہ بَدلاونہٕ یا رِسیٹ کرنہٕ یِتھ۔ ییٚتہِ مَہ لیکھِو کینہہ نِجی۔</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>توٚہہ ہٕنٛد آلہٕ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>حِفاظتی سرگرمی</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>ہر اَکاوُنٹس منٛز کٔمۍ کوٚر تبدیل، کٔمۍ کوٚر لاگ اِن یا کٔمِس آو انکار کرنہٕ؛ فِلٹَر تہٕ بَرآمَد کٔرِو۔</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>لاگ اِن رِپورٹ</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>کُس چھُ لاگ اِن، روزانہ لاگ اِن تہٕ ناکامیاہ؛ کانٛسہِ صارِفس ہر جایہِ پؠٹھہٕ لاگ آوُٹ کٔرِو۔</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP ہینڈلَرُک مُدَت ختم سیشَن ہٹاوِ PHP پانہٕ (session.gc_maxlifetime)، نہ زِ یہ صَفحہ یا session_gc کرون جابُک حِصہٕ۔</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>ہر صارِف سٕندۍ لاگ اِن سیشَن چھِ لاگ اِن رِپورٹس منٛز ہاونہٕ یِوان تہٕ تَتیٚ پؠٹھہٕ لاگ آوُٹ کرنہٕ یِوان؛ یہ رِپورٹ چھےٚ ہر سیشَن ہینڈلرس سٟتۍ کٲم کران۔</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>لاگ اِن رِپورٹ کھولِو</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>اَجُن کانٛہہ نہٕ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>حِفاظتی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>توٚہہ ہِنٛد حالیہ لاگ اِن، ناکام کوشِشہٕ تہٕ توٚہہ ہٕنٛدِس پاس ورڈس، ای میل پَتس تہٕ دُمَرحلہٕ لاگ اِنس منٛز تبدیلیاہ۔</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>اَمہِ اَکاوُنٹُک حالیہ لاگ اِن، ناکام کوشِشہٕ تہٕ حِفاظتی تبدیلیاہ۔</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>سرگرمی ہُنٛد جایزٕ ہیٚیِو</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>ناکام لاگ اِن: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab آو نہ لیکھنہٕ (%reason)۔ یِم لایِن شامِل کٔرِو تَتھ صارِفچ crontab منز یِتھ تحتہِ سایِٹ چلان چھیٚ، نَتہٕ قطار، دَرآمَد، اِطلاعات تہٕ ژھارنہٕ ہُنٛد اِنڈیکس چھِ کَنہِ نہ چلان:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>دوبارٕ اِنسٹال چھُ کِک سٹارٹَرٕ سٟتۍ (%file، پَتہٕ php bin/php/kickstarter.php run --apply) یا نۆو اِنسٹالیشن سٟتۍ سپدان۔</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>آخری رَن منز میل ٹرانسپورٹن %count پیغام رَد کٔرِے۔ میل سَروَر تہٕ site.ini MailSettings وُچھِو۔</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count واقعات چھِ اِنتِظار منٛز تہٕ اِطلاع cron کٲمہِ ہُنٛد کانٛہہ رَن چھُنہٕ درج۔ cron حِصہٕ &quot;frequent&quot; crontab منٛز شامِل کٔرِو، یا exp:notification:run --apply چلٲوِو۔</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>نوڈ پِکَرَس سان بییہِ سایِٹ یا سیکشَن ژُنِو</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>صِرف سِسٹَم مُنتظِم ہیٚکہِ مالِک بَدلٲوِتھ: root ہِنٛدِ پاٹھۍ ./console exp:content-check --fix-permissions --apply چلٲوِو۔</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>خالی</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>دَستخَط کی چھےٚ اکہِ ؤری کھوتہٕ زیادٕ پرٲنۍ: exp:audit key rotate --apply سٟتۍ بَدلٲوِو یہ۔</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>روانہ کرنہٕ آمُت نہ</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>اِطلاع cron کٲم چھےٚ پَنُن ہر رَن یِتھ درج کران۔ حِصہٕ frequent crontab منٛز شامِل کٔرِو، یا exp:notification:run --apply چلٲوِو۔</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>کنسول ورتٲوِو: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>کانٛہہ نہٕ۔</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>تَصدیٖقی ایپہِ سٟتۍ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ای میلہِ ذٔریعہٕ آمتِس کوڈس سٟتۍ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>بحالی کوڈس سٟتۍ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>پاس کی سٟتۍ</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>بیٚیِس اَکاوُنٹس سٟتۍ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>حِفاظتی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>اَمہِ کِس نیٹ ورکس ہِنٛدِ پاٹھۍ ہاونہٕ آمُت؛ پَتہٕ چھُ سایِٹ کیٚن ڈیٹا حِفاظتی ترتیباتن مُطٲبِق رَٹنہٕ یِوان۔</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>درج نہٕ کرنہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>جاے</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>تَقریٖبَن</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>آلہٕ سنبھٲلِو</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>تَصدیٖقی ایپہِ سٟتۍ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ای میلہِ ذٔریعہٕ آمتِس کوڈس سٟتۍ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>بحالی کوڈس سٟتۍ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>پاس کی سٟتۍ</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>بیٚیِس اَکاوُنٹس سٟتۍ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>حِفاظتی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>درج نہٕ کرنہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>جاے</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>تَقریٖبَن</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>یمِ صارِفک سیشَن وُچھِو</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site پؠٹھ توٚہہ ہٕنٛدِ اَکاوُنٹہٕ %login سٟتۍ آو وُنی وُنی اَکہِ تِتھ جایہِ پؠٹھہٕ لاگ اِن کرنہٕ، یَتہِ پؠٹھہٕ حالَس منٛز لاگ اِن آسہٕ نہٕ سپُد مُت:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>تَقریٖبی جاے</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os پؠٹھ %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>لاگ اِن رِپورٹ</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>نامعلوم</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>پَنُن اَکاوُنٹ محفوظ کٔرِو</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site پؠٹھ توٚہہ ہٕنٛدِس اَکاوُنٹس %login منٛز لاگ اِن کرنہٕ خٲطرٕ آو اکھ بحالی کوڈ ورتاونہٕ۔</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>اکھ بحالی کوڈ آو ورتاونہٕ</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>اَکاوُنٹ</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>تَقریٖبی پَتہٕ</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>دوبارٕ لاگ اِن کرنہٕ خٲطرٕ نۆو پاس ورڈ مَنٛگِو، یا سایِٹ کیٚن مُنتظِمَن سٟتۍ رابطہٕ کٔرِو۔</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>نۆو پاس ورڈ مَنٛگِو</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>ہر بحالی کوڈ چھُ صِرف اکہِ لٹہِ کٲم کران۔ اگر توٚہہ ہُنٛد فون گۆو رٲوِتھ، تیٚلہِ کٔرِو پَنٕنۍ تَصدیٖقی ایپ دوبارٕ سیٹ تہٕ نۆو بحالی کوڈ تھٲوِو کُنہِ محفوظ جایہِ۔</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>توٚہہ ہٕنٛدِس اَکاوُنٹس پؠٹھ ناکام لاگ اِن کوشِشہٕ</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>وُنیٚ پؠٹھہٕ لاگ اِن کرنہٕ وِزِ یِیہِ توٚہہ ہٕنٛدِس پاس ورڈس علاوٕ اکھ کوڈ تہِ مَنٛگنہٕ۔ اگر یہ توٚہہ کوٚر، تیٚلہِ چھُنہٕ توٚہہ کیٚنہہ کرنُک ضرورت۔</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>اگر یہ توٚہہ ٲسِو تہٕ توٚہہ گۆو پَنُن پاس ورڈ مٔشِتھ، تیٚلہِ مَنٛگِو نۆو۔ اگر نہٕ، تیٚلہِ ژُنِو اکھ زیادٕ مضبوٗط پاس ورڈ تہٕ کٔرِو دُمَرحلہٕ لاگ اِن چالوٗ۔</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>اگر یہ توٚہہ نہٕ کوٚر، تیٚلہِ ہیٚکہِ کانٛسہِ توٚہہ ہُنٛد پاس ورڈ معلوٗم ٲسِتھ: بَدلٲوِو یہ وُنی تہٕ وُچھِو زِ توٚہہ ہُنٛد اَکاوُنٹ کَتہِ کَتہِ چھُ لاگ اِن۔</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>باقی بحالی کوڈ</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>پَنٕنۍ آلہٕ وُچھِو</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>حِفاظتی اِنتباہ</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>کانٛسہِ کٔر %site پؠٹھ توٚہہ ہٕنٛدِس اَکاوُنٹس %login منٛز غلط پاس ورڈٕ سٟتۍ لگاتار %count لٹہِ لاگ اِن کرنٕچ کوشِش۔</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site پؠٹھ توٚہہ ہٕنٛدِس اَکاوُنٹس %login منٛز سپُد اکھ حِفاظتی واقعہٕ۔</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>یہ چھُ توٚہہ ہٕنٛدِس اَکاوُنٹس مُتعلِق اکھ حِفاظتی اِنتباہ۔ یہ چھُ اَتھ کِسمہِ کِس ہر تبدیلی پؠٹھ سوزنہٕ یِوان تہٕ یہ ہیٚکہِ نہٕ بَنٛد کرنہٕ یِتھ۔</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>وَقت</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site پؠٹھ توٚہہ ہٕنٛدِس اَکاوُنٹس %login خٲطرٕ آو دُمَرحلہٕ لاگ اِن بَنٛد کرنہٕ۔</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>دُمَرحلہٕ لاگ اِن آو بَنٛد کرنہٕ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site پؠٹھ توٚہہ ہٕنٛدِس اَکاوُنٹس %login خٲطرٕ آو دُمَرحلہٕ لاگ اِن چالوٗ کرنہٕ۔</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>دُمَرحلہٕ لاگ اِن آو چالوٗ کرنہٕ</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site پؠٹھ توٚہہ ہُنٛد اَکاوُنٹ %login آو واریاہ ناکام لاگ اِنَو پَتہٕ قُفل کرنہٕ۔</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>توٚہہ ہُنٛد اَکاوُنٹ چھُ وُنی صِرف توٚہہ ہٕنٛدِ پاس ورڈٕ سٟتۍ محفوظ۔ اگر یہ توٚہہ نہٕ کوٚر، تیٚلہِ کٔرِو پَنُن پاس ورڈ بَدلاونہٕ پَتہٕ دُمَرحلہٕ لاگ اِن دوبارٕ چالوٗ۔</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>توٚہہ ہُنٛد اَکاوُنٹ آو قُفل کرنہٕ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>حِفاظتی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>حِفاظتی سرگرمی: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>لاگ اِن</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ناکام لاگ اِن کوشِش</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>لاگ آوُٹ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>سیشَن آیہِ لاگ آوُٹ کرنہٕ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>نٔوِس ڈیوایسہِ پؠٹھہٕ لاگ اِن</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>نٔوِ جایہِ پؠٹھہٕ لاگ اِن</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>شِناخت ہٕنٛز تصدیٖق سپٕز (&quot;تصدیٖق کٔرِو زِ یہ چھِو توٚہہ&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>شِناخت ہٕنٛز جانٛچ ناکام</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>پاس کی سٟتۍ لاگ اِن</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>پاس کی سٟتۍ لاگ اِن ناکام</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>لاگ اِن نامَنظوٗر: دُمَرحلہٕ لاگ اِنُک کوڈ چھُنہٕ یا چھُ غلط</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>دُمَرحلہٕ لاگ اِنُک غلط کوڈ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ناکام لاگ اِنَو پَتہٕ اَکاوُنٹ قُفل</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>اَکاوُنٹ کھولنہٕ آو</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>پاس ورڈ آو بَدلاونہٕ</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>پاس ورڈ بَدلاوُن ناکام</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>پاس ورڈ آو ری سیٹ کرنہٕ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>نۆو پاس ورڈ آو مَنٛگنہٕ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ای میل پَتہٕ آو بَدلاونہٕ</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>صارِف ناو آو بَدلاونہٕ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>دُمَرحلہٕ لاگ اِن آو چالوٗ کرنہٕ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>دُمَرحلہٕ لاگ اِن آو بَنٛد کرنہٕ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>بحالی کوڈ آو ورتاونہٕ</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>نۆو بحالی کوڈ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ایپ پاس ورڈ بناونہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ایپ پاس ورڈ منسوٗخ</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>پاس کی آیہٕ شامِل کرنہٕ</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>پاس کی آیہٕ ہٹاونہٕ</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>اَکاوُنٹ آو چالوٗ کرنہٕ</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>اَکاوُنٹ آو بَنٛد کرنہٕ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>سٲرِنی</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>لاگ اِن تہٕ سیشَن</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>اَکاوُنٹ تبدیلیاہ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>توجہ ضروٗری</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>توٚہہ ذٔریعہٕ</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>صارِف ذٔریعہٕ</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>%login ذٔریعہٕ</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>طریٖقہٕ</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>براوزَر</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>سِسٹَم</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ڈیوایس</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>جاے</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>مُلُک</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>سیشَن</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>کُس</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>ذٔریعہٕ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ناکام کوشِشہٕ</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>باقی کوڈ</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>لاگ اِن ہینڈلر</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>حِفاظتی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>حِفاظتی سرگرمی: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>توٚہہ ہٕنٛدِس اَکاوُنٹس ہٕنٛزِ حِفاظتہِ سٟتۍ وابستہ لاگ اِن تہٕ تبدیلیاہ۔ اگر توٚہہ کیٚنہہ تِتھ وُچھِو یُس توٚہہ نہٕ کوٚر، تیٚلہِ بَدلٲوِو پَنُن پاس ورڈ تہٕ یِمہٕ ڈیوایس توٚہہ نہٕ زانِو، تِمن کٔرِو لاگ آوُٹ۔</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>اَمہِ اَکاوُنٹہٕ ہٕنٛزِ حِفاظتہِ سٟتۍ وابستہ لاگ اِن تہٕ تبدیلیاہ۔</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>توٚہہ ہٕنٛد آلہٕ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>پاس ورڈ بَدلاوِو</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>اَکاوُنٹس پؠٹھ واپَس</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>حِفاظتی سرگرمی چھےٚ نہٕ درج سپدان</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>یہ چھےٚ صارِف آڈِٹ لاگہٕ منٛزٕ پَرنہٕ یِوان، یٚمیُک ٹیبل expuser_audit چھُنہٕ موجوٗد یا چھُنہٕ اَتھ ڈیٹا بیسس پؠٹھ سپورٹ۔ php update/common/scripts/6.0/createuseraudittable.php چلٲوِو، یا 6.0.15 ہُنٛد ڈیٹا بیس اَپڈیٹ چلٲوِو۔</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>پٔتِمۍ %days دۄہ</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>پٔتِمَن %days دۄہَن منٛز لاگ اِن</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>حالیہ حِفاظتی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ہاوِو</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>نامَنظوٗر</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>وُنہِ تام چھےٚ نہٕ کانٛہہ حِفاظتی سرگرمی درج۔</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>حِفاظتی واقعات چھِ %days دۄہ رَٹنہٕ یِوان۔</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>حِفاظتی واقعات چھِ تَمہِ وِزِ تام رَٹنہٕ یِوان یوٗت تام نہٕ کانٛہہ مُنتظِم تِم ہٹاوِ۔</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>مےٚ ہُنٛد لاگ اِن ڈیٹا ڈاوُن لوڈ کٔرِو</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>توٚہہ ہِنٛد سیشَن تہٕ حِفاظتی واقعات JSON فایِلہِ ہِنٛدِ پاٹھۍ۔</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>لاگ اِن</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ناکام لاگ اِن کوشِش</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>لاگ آوُٹ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>سیشَن آیہِ لاگ آوُٹ کرنہٕ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>نٔوِس ڈیوایسہِ پؠٹھہٕ لاگ اِن</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>نٔوِ جایہِ پؠٹھہٕ لاگ اِن</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>شِناخت ہٕنٛز تصدیٖق سپٕز (&quot;تصدیٖق کٔرِو زِ یہ چھِو توٚہہ&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>شِناخت ہٕنٛز جانٛچ ناکام</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>پاس کی سٟتۍ لاگ اِن</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>پاس کی سٟتۍ لاگ اِن ناکام</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>لاگ اِن نامَنظوٗر: دُمَرحلہٕ لاگ اِنُک کوڈ چھُنہٕ یا چھُ غلط</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>دُمَرحلہٕ لاگ اِنُک غلط کوڈ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ناکام لاگ اِنَو پَتہٕ اَکاوُنٹ قُفل</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>اَکاوُنٹ کھولنہٕ آو</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>پاس ورڈ آو بَدلاونہٕ</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>پاس ورڈ بَدلاوُن ناکام</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>پاس ورڈ آو ری سیٹ کرنہٕ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>نۆو پاس ورڈ آو مَنٛگنہٕ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ای میل پَتہٕ آو بَدلاونہٕ</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>صارِف ناو آو بَدلاونہٕ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>دُمَرحلہٕ لاگ اِن آو چالوٗ کرنہٕ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>دُمَرحلہٕ لاگ اِن آو بَنٛد کرنہٕ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>بحالی کوڈ آو ورتاونہٕ</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>نۆو بحالی کوڈ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ایپ پاس ورڈ بناونہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ایپ پاس ورڈ منسوٗخ</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>پاس کی آیہٕ شامِل کرنہٕ</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>پاس کی آیہٕ ہٹاونہٕ</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>اَکاوُنٹ آو چالوٗ کرنہٕ</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>اَکاوُنٹ آو بَنٛد کرنہٕ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>سٲرِنی</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>لاگ اِن تہٕ سیشَن</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>اَکاوُنٹ تبدیلیاہ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>توجہ ضروٗری</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>حِفاظتی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>حِفاظتی سرگرمی: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>توٚہہ ہٕنٛدِس اَکاوُنٹس ہٕنٛزِ حِفاظتہِ سٟتۍ وابستہ لاگ اِن تہٕ تبدیلیاہ۔ اگر توٚہہ کیٚنہہ تِتھ وُچھِو یُس توٚہہ نہٕ کوٚر، تیٚلہِ بَدلٲوِو پَنُن پاس ورڈ تہٕ یِمہٕ ڈیوایس توٚہہ نہٕ زانِو، تِمن کٔرِو لاگ آوُٹ۔</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>توٚہہ ہٕنٛد آلہٕ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>پاس ورڈ بَدلاوِو</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>اَتھ سایِٹس پؠٹھ چھےٚ نہٕ حِفاظتی سرگرمی وُنہِ درج سپدان۔</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>پٔتِمَن %days دۄہَن منٛز لاگ اِن</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ناکام کوشِشہٕ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>وُنہِ تام چھےٚ نہٕ کانٛہہ حِفاظتی سرگرمی درج۔</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>مےٚ ہُنٛد لاگ اِن ڈیٹا ڈاوُن لوڈ کٔرِو</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>توٚہہ ہِنٛد سیشَن تہٕ حِفاظتی واقعات JSON فایِلہِ ہِنٛدِ پاٹھۍ۔</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>پاس ورڈ</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>پاس ورڈ تہٕ دُمَرحلہٕ لاگ اِنُک کوڈ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST اِنٹرفیس</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP اِنٹرفیس</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>سِنگَل سایِن آن</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>سیشَن درج سپدنہٕ برونٛہہ لاگ اِن</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>لاگ اِن رِپورٹ</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>سایِٹس پؠٹھ کُس چھُ لاگ اِن، اَکاوُنٹ کوتہٕ لٹہِ چھِ لاگ اِن کران تہٕ کوتہٕ لٹہِ ناکام سپدان، تہٕ کانٛسہِ صارِفس ہر جایہِ پؠٹھہٕ لاگ آوُٹ کرُن۔ یہ چھُ ہر سیشَن ہینڈلرس سٟتۍ کٲم کران۔</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>سیشَن آو لاگ آوُٹ کرنہٕ۔ ڈیوایسس پَزِ دوبارٕ لاگ اِن کرُن۔</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login آو %count سیشَنَو پؠٹھہٕ لاگ آوُٹ کرنہٕ۔</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login ہُنٛد اوس نہٕ کانٛہہ سیشَن چلان۔</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>اَتھ ID، صارِف ناو یا ای میل پَتس سٟتۍ چھُنہٕ کانٛہہ اَکاوُنٹ۔</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>یہ چھُ سُہ سیشَن یُس توٚہہ ورتاوان چھِو۔ اَتھ ختم کرنہٕ خٲطرٕ کٔرِو لاگ آوُٹ۔</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>سُہ سیشَن اوس گۄڈے ختم گومُت۔</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>صفحُک وَقت اوس ختم گومُت۔ کیٚنہہ تہِ آو نہٕ بَدلاونہٕ؛ مہربانی کٔرِتھ کٔرِو دوبارٕ کوشِش۔</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>اَتھ سایِٹس پؠٹھ چھِ نہٕ سیشَن درج سپدان (site.ini [UserSessionSettings] Tracking=disabled)۔</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>ٹیبل expuser_session چھُنہٕ موجوٗد</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>یہ بننہٕ سٟتۍ سٟتۍ چھِ سیشَن درج سپدان: php update/common/scripts/6.0/createusersessiontable.php، یا 6.0.15 ہُنٛد ڈیٹا بیس اَپڈیٹ۔</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>وُنی تہٕ اَز</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>چلَن وٲلۍ سیشَن</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>لاگ اِن صارِف</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>اَزۍ کۍ لاگ اِن</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>اَزۍ کٕنۍ ناکام کوشِشہٕ</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>کانٛسہِ صارِفس ہر جایہِ پؠٹھہٕ لاگ آوُٹ کٔرِو</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>اَکاوُنٹُک ہر سیشَن چھُ تٔمۍ سٕنٛزِ نٔوِ درخواستہِ پؠٹھ ختم سپدان، &quot;مےٚ یاد رَٹِو&quot; سٟتۍ رَٹنہٕ آمتۍ سیشَن تہِ۔ یہ ورتٲوِو ییٚلہِ کانٛہہ اَکاوُنٹ غلط اَتھن منٛز ٲسِتھ ہیٚکہِ؛ پَتہٕ کٔرِو تٔمۍ سُنٛد پاس ورڈ ری سیٹ۔</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>صارِف ID، صارِف ناو یا ای میل پَتہٕ</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ہر جایہِ پؠٹھہٕ لاگ آوُٹ کٔرِو</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>وُنی لاگ اِن</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>حالَس منٛز ورتاونہٕ آمتۍ %limit چھِ ہاونہٕ آمتۍ۔</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>صارِف</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ڈیوایس</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>پَتہٕ</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>لاگ اِن</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>آخری لٹہِ سرگرم</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>عَمَل</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>یہ ڈیوایس</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>درج نہٕ کرنہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>لاگ آوُٹ کٔرِو</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>کانٛہہ سیشَن چھُنہٕ لاگ اِن۔</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>پٔتِمۍ %days دۄہ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>لاگ اِن تہٕ ناکام کوشِشہٕ چھِ صارِف آڈِٹ لاگہٕ منٛزٕ گَنزرنہٕ یِوان، یُس موجوٗد چھُنہٕ؛ نۆو سیشَن چھِ گَنزرنہٕ یِوان۔</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>دۄہ</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>لاگ اِن</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ناکام کوشِشہٕ</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>نۆو سیشَن</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>سیشَن ہینڈلر: %handler۔ سیشَن چھِ ٹیبل expuser_session منٛزٕ پَرنہٕ یِوان، اَمہِ موجوٗب چھےٚ رِپورٹ ہر ہینڈلرس سٟتۍ کٲم کران۔</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>توٚہہ ہٕنٛدِس اَکاوُنٹس خٲطرٕ حِفاظتی اِنتباہ</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>توٚہہ ہٕنٛدِس اَکاوُنٹس %login منٛز سپُد اکھ حِفاظتی واقعہٕ: %event۔ اگر یہ توٚہہ نہٕ ٲسِو، تیٚلہِ کٔرِو %url پؠٹھ پَنُن اَکاوُنٹ محفوظ۔</translation>
     </message>
 </context>
 </TS>

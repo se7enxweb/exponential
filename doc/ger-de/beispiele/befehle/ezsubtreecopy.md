@@ -2,14 +2,14 @@
 title: exp:ezsubtreecopy
 audience: developer, admin
 category: examples
-summary: Kopiert einen Teilbaum von Inhalten an einen neuen Ort (--src-node-id, --dst-node-id).
+summary: Kopiert einen Inhaltsteilbaum an einen neuen Ort (--src-node-id, --dst-node-id; Probelauf, außer mit --apply).
 keywords: Konsole, Befehl, exp:ezsubtreecopy, ezsubtreecopy, console, command, CLI, ezsubtreecopy.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezsubtreecopy
 
-Kopiert einen Teilbaum von Inhalten an einen neuen Ort (--src-node-id, --dst-node-id).
+Kopiert einen Inhaltsteilbaum an einen neuen Ort (--src-node-id, --dst-node-id; Probelauf, außer mit --apply).
 
 Skript `bin/php/ezsubtreecopy.php`, Code in `kernel/private/classes/commands/ezsubtreecopy.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -22,6 +22,8 @@ php bin/php/ezsubtreecopy.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
+| `--apply` |  | Den Teilbaum kopieren (Standard ist ein Probelauf, der ihn auflistet und nichts kopiert) |
+| `--dry-run` |  | Der Standard: die Knoten auflisten, die kopiert würden, nichts ändern |
 | `--src-node-id` | erforderlich | ID des Elternknotens des Quell-Teilbaums. |
 | `--dst-node-id` | erforderlich | ID des Zielknotens. |
 | `--all-versions` |  | Alle Versionen jedes kopierten Inhaltsobjekts kopieren. |

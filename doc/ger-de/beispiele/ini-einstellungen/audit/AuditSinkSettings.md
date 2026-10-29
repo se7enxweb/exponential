@@ -19,10 +19,11 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## SinkClasses
 
-> Ziele außer der Datei (die immer geschrieben wird). Name => Klasse, die  
-> expAuditSink implementiert. Erweiterungen fügen ihre eigenen hinzu (RAD-Survey-Registry "auditsinks").  
+> Sinks besides the file (which is always written). name => class implementing  
+> expAuditSink. Extensions add their own (RAD survey registry "auditsinks").  
+> The user audit log (table expuser\_audit, \[UserAuditSettings\]); a database insert at flush time  
 
-Standard: ein Hash mit 3: `syslog=expAuditSyslogSink`, `webhook=expAuditWebhookSink`, `mail=expAuditMailSink`.
+Standard: ein Hash mit 4: `syslog=expAuditSyslogSink`, `webhook=expAuditWebhookSink`, `mail=expAuditMailSink`, `useraudit=expAuditUserAuditSink`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -33,6 +34,7 @@ SinkClasses[]
 SinkClasses[syslog]=expAuditSyslogSink
 SinkClasses[webhook]=expAuditWebhookSink
 SinkClasses[mail]=expAuditMailSink
+SinkClasses[useraudit]=expAuditUserAuditSink
 */ ?>
 ```
 

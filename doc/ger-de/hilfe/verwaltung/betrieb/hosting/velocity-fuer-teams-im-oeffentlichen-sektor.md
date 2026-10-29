@@ -38,7 +38,7 @@ und anderer ACME-Zertifizierungsstellen) ist eingebaut. Es braucht kein Apache, 
 ## Starten und Stoppen
 
 ```bash
-./console exp:velocity config set ServerSettings Engine qbix --allow-root-user
+./console exp:velocity config set --apply ServerSettings Engine qbix --allow-root-user
 ./console exp:velocity start --allow-root-user
 ./console exp:velocity status --allow-root-user
 ./console exp:velocity graceful --allow-root-user    # re-exec, listening socket kept, no request dropped
@@ -62,7 +62,7 @@ durch ein anderes Werkzeug erneut. Er stoppt oder startet niemals einen laufende
 er installiert wird:
 
 ```bash
-./console exp:velocity watchdog install --allow-root-user
+./console exp:velocity watchdog install --apply --allow-root-user
 ./console exp:velocity watchdog status --allow-root-user
 ```
 

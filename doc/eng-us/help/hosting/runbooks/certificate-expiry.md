@@ -48,7 +48,7 @@ one is usable again" ([Velocity HTTPS and certificates](../../../features/6.0/ve
 2. Renew:
 
    ```bash
-   php bin/php/console exp:velocity ssl renew www.example.com --allow-root-user
+   php bin/php/console exp:velocity ssl renew --apply www.example.com --allow-root-user
    ```
 
    "The running server picks a renewal up within a minute, no restart" (`exp:velocity --help`).

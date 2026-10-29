@@ -109,7 +109,7 @@ Das Neuladen braucht root; als jemand anderes ausgeführt, wird der Schritt mit 
 
 ```bash
 ./console exp:cache clear --id=template --allow-root-user
-./console exp:velocity cache clear --allow-root-user
+./console exp:velocity cache clear --apply --allow-root-user
 ```
 
 Nachdem eine Erweiterung aktiviert wurde, werden ihre Templates nicht gefunden, bis der Cache design_base geleert ist: Die Seite

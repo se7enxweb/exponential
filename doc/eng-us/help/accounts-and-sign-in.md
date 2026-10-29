@@ -26,6 +26,21 @@ Every detail of the sign-in pages: [Logging into the Editor](logging-into-the-ed
 
 Your browser must accept cookies to sign in.
 
+## Your first sign-in with a temporary password
+
+When an administrator created your account, you received the address and your username, and the temporary password
+by a second way (a phone call, for example). At your first sign-in the site opens **Change password** with the note
+*Choose a new password before you continue*:
+
+1. Under **Current password**, enter the temporary password.
+2. Enter your new password under **New password** and again under **Confirm new password**, and press
+   **Change password**.
+3. **Verify it's you** asks for the temporary password once more: enter it and press **Confirm**.
+4. *Your password was changed.* Press **Continue**.
+
+From now on only you know your password. Every step with screenshots:
+[Setting up accounts for editors and administrators](setting-up-editor-and-admin-accounts.md#9-the-editors-first-sign-in).
+
 ## Sign out
 
 In the administration, use the last button of the header, an arrow leaving a box (**Logout**). On the site, choose
@@ -136,6 +151,8 @@ first sign-in.
 ## Learn more
 
 - [Two-step sign-in](../guides/two-factor-login.md), for administrators who set it up.
+- [Setting up accounts for editors and administrators](setting-up-editor-and-admin-accounts.md), for administrators
+- [What the Editor role allows](what-the-editor-role-allows.md)
 - [Getting started](getting-started.md)
 
 <!-- exp-see-also-645 -->

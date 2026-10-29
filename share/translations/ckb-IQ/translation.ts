@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>دامەزراندن &gt; Cronjobs</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>هێشتا هیچ بەشێکی ئەرکەکانی cron کاری نەکردووە: ڕیزی ئەرکەکان، هاوردەکان، ئاگادارکردنەوەکان و پێڕستی گەڕان چاوەڕێن. php bin/php/installcrontab.php --add --apply جێبەجێ بکەن، یان دێڕەکانی --show بۆ crontab زیاد بکەن.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>ئەم دامەزراندنە دیمۆیەکی گشتییە: هەر کەسێک دەکرێت وشەی نهێنی بەڕێوەبەرەکەی بزانێت، و وشەی نهێنی بەڕێوەبەرەکان ناگۆڕدرێن و ڕێک ناخرێنەوە. لێرە هیچ شتێکی تایبەت مەنووسن.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ئامێرەکانتان</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>چالاکیی پاراستن</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>کێ گۆڕانکاری کرد، چووە ژوورەوە یان ڕەتکرایەوە، بەپێی هەر هەژمارێک؛ پاڵاوتن و هەناردەکردن.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ڕاپۆرتی چوونەژوورەوە</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>کێ چووەتە ژوورەوە، چوونەژوورەوەکان و شکستەکان بۆ هەر ڕۆژێک؛ دەرکردنی بەکارهێنەرێک لە هەموو شوێنێک.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>دانیشتنە کاتبەسەرچووەکانی بەڕێوەبەری PHP لەلایەن خودی PHP ەوە لادەبرێن (session.gc_maxlifetime)، نەک لەلایەن ئەم لاپەڕەیە یان بەشی cronjobی session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>دانیشتنە چوونەژوورەوەکانی هەموو بەکارهێنەران لە ڕاپۆرتی چوونەژوورەوەدا لیست دەکرێن و دەردەکرێن؛ ئەم ڕاپۆرتە لەگەڵ هەموو هەندڵەرێکی دانیشتن کار دەکات.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>کردنەوەی ڕاپۆرتی چوونەژوورەوە</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>هێشتا هیچ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>چالاکیی پاراستن</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>دوایین چوونەژوورەوەکانتان، هەوڵە سەرنەکەوتووەکان و گۆڕانکارییەکان لە وشەی نهێنی، ناونیشانی ئیمەیڵ و چوونەژوورەوەی دوو-قۆناغیتاندا.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>دوایین چوونەژوورەوەکان، هەوڵە سەرنەکەوتووەکان و گۆڕانکارییەکانی پاراستنی ئەم هەژمارە.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>پێداچوونەوەی چالاکی</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count چوونەژوورەوەی سەرنەکەوتوو</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab نەنووسرا (%reason). ئەم دێڕانە بۆ crontabی ئەو بەکارهێنەرە زیاد بکەن کە ماڵپەڕەکەی پێ کار دەکات، ئەگینا ڕیز، هاوردەکان، ئاگادارکردنەوەکان و پێڕستی گەڕان هەرگیز کار ناکەن:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>دووبارە دامەزراندن بە kickstarter دەکرێت (%file، پاشان php bin/php/kickstarter.php run --apply) یان بە دامەزراندنێکی نوێ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>گواستنەوەی ئیمەیڵ لە دوایین جێبەجێکردندا %count نامەی ڕەتکردەوە. سێرڤەری ئیمەیڵ و site.ini MailSettings بپشکنن.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count ڕووداو چاوەڕێن و هیچ کارکردنێکی ئەرکی cronی ئاگادارکردنەوەکان تۆمار نەکراوە. بەشی ئەرکی cron &quot;frequent&quot; بۆ crontab زیاد بکەن، یان exp:notification:run --apply جێبەجێ بکەن.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>ماڵپەڕ یان بەشێکی دیکە بە هەڵبژێری گرێ هەڵبژێرن</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>تەنها بەڕێوەبەری سیستەم دەتوانێت خاوەن بگۆڕێت: ./console exp:content-check --fix-permissions --apply وەک root جێبەجێ بکەن.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>بەتاڵ</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>کلیلی واژووکردن لە ساڵێک کۆنترە: بە exp:audit key rotate --apply بیگۆڕن.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>نەنێردراوە</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>ئەرکی cronی ئاگادارکردنەوەکان هەموو کارکردنێکی خۆی لێرە تۆمار دەکات. بەشی frequent بۆ crontab زیاد بکەن، یان exp:notification:run --apply جێبەجێ بکەن.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>کۆنسۆڵ بەکاربهێنن: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>هیچ.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>بە ئەپی پشتڕاستکردنەوە</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>بە کۆدێک لە ڕێگەی ئیمەیڵەوە</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>بە کۆدی گەڕاندنەوە</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>بە Passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>بە هەژمارێکی دەرەکی</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>چالاکیی پاراستن</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>وەک تۆڕەکەی پیشان دەدرێت؛ ناونیشانەکە بەو شێوەیە هەڵدەگیرێت کە ڕێکخستنەکانی پاراستنی داتای ماڵپەڕەکە دەڵێن.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>تۆمار نەکراوە</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>شوێن</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>نزیکەیی</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>بەڕێوەبردنی ئامێرەکان</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>بە ئەپی پشتڕاستکردنەوە</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>بە کۆدێک لە ڕێگەی ئیمەیڵەوە</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>بە کۆدی گەڕاندنەوە</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>بە Passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>بە هەژمارێکی دەرەکی</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>چالاکیی پاراستن</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>تۆمار نەکراوە</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>شوێن</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>نزیکەیی</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>بینینی دانیشتنەکانی ئەم بەکارهێنەرە</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>هەژمارەکەتان %login لە %site ئێستا بەکارهات بۆ چوونەژوورەوە لە شوێنێکەوە کە لەم دواییانەدا لێیەوە نەچووەتە ژوورەوە:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>شوێنی نزیکەیی</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser لەسەر %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ڕاپۆرتی چوونەژوورەوە</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>نەناسراو</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>هەژمارەکەتان بپارێزن</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>کۆدێکی گەڕاندنەوە بەکارهات بۆ چوونەژوورەوە بۆ هەژمارەکەتان %login لە %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>کۆدێکی گەڕاندنەوە بەکارهات</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>هەژمار</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ناونیشانی نزیکەیی</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>بۆ چوونەژوورەوەی دووبارە داوای وشەی نهێنیی نوێ بکەن، یان پەیوەندی بە بەڕێوەبەرانی ماڵپەڕەکەوە بکەن.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>داواکردنی وشەی نهێنیی نوێ</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>هەر کۆدێکی گەڕاندنەوە یەک جار کار دەکات. ئەگەر تەلەفۆنەکەتان ون کردووە، ئەپی پشتڕاستکردنەوەکەتان دووبارە ڕێک بخەنەوە و کۆدە نوێکانی گەڕاندنەوە لە شوێنێکی پارێزراودا هەڵبگرن.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>هەوڵە سەرنەکەوتووەکانی چوونەژوورەوە بۆ هەژمارەکەتان</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>لەمەودوا، چوونەژوورەوە جگە لە وشەی نهێنییەکەتان داوای کۆدێکیش دەکات. ئەگەر ئێوە ئەمەتان کردووە، پێویست ناکات هیچ بکەن.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>ئەگەر ئێوە بوون و وشەی نهێنییەکەتان لەبیر کردووە، داوای وشەی نهێنیی نوێ بکەن. ئەگەر نا، وشەی نهێنییەکی بەهێزتر هەڵبژێرن و چوونەژوورەوەی دوو-قۆناغی چالاک بکەن.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>ئەگەر ئێوە نەبوون، لەوانەیە کەسێک وشەی نهێنییەکەتان بزانێت: ئێستا بیگۆڕن و بپشکنن هەژمارەکەتان لە کوێ چووەتە ژوورەوە.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>کۆدە ماوەکانی گەڕاندنەوە</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>پێداچوونەوەی ئامێرەکانتان</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>ئاگاداریی پاراستن</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>کەسێک هەوڵی دا %count جار لە دوای یەک بە وشەی نهێنیی هەڵە بچێتە ژوورەوەی هەژمارەکەتان %login لە %site.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>ڕووداوێکی پاراستن لە هەژمارەکەتان %login لە %site ڕوویدا.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>ئەمە ئاگادارییەکی پاراستنە دەربارەی هەژمارەکەتان. بۆ هەموو گۆڕانکارییەکی لەم جۆرە دەنێردرێت و ناتوانرێت بکوژێنرێتەوە.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>کات</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>چوونەژوورەوەی دوو-قۆناغی بۆ هەژمارەکەتان %login لە %site ناچالاک کرا.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>چوونەژوورەوەی دوو-قۆناغی ناچالاک کرا</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>چوونەژوورەوەی دوو-قۆناغی بۆ هەژمارەکەتان %login لە %site چالاک کرا.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>چوونەژوورەوەی دوو-قۆناغی چالاک کرا</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>هەژمارەکەتان %login لە %site دوای چوونەژوورەوەی سەرنەکەوتووی زۆر داخرا.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>هەژمارەکەتان ئێستا تەنها بە وشەی نهێنییەکەتان پارێزراوە. ئەگەر ئێوە ئەمەتان نەکردووە، دوای گۆڕینی وشەی نهێنییەکەتان چوونەژوورەوەی دوو-قۆناغی دووبارە چالاک بکەنەوە.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>هەژمارەکەتان داخرا</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>چالاکیی پاراستن</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>چالاکیی پاراستنی %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>چووەتە ژوورەوە</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>هەوڵی سەرنەکەوتووی چوونەژوورەوە</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>چووەتە دەرەوە</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>دانیشتنەکان دەرکران</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>چوونەژوورەوە لە ئامێرێکی نوێوە</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>چوونەژوورەوە لە شوێنێکی نوێوە</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ناسنامە پشتڕاست کرایەوە (&quot;پشتڕاستبکەنەوە کە ئێوەن&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>پشکنینی ناسنامە سەرنەکەوت</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>بە Passkey چووەتە ژوورەوە</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>چوونەژوورەوە بە Passkey سەرنەکەوت</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>چوونەژوورەوە ڕەت کرایەوە: کۆدی دوو-قۆناغی نییە یان هەڵەیە</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>کۆدی دوو-قۆناغیی هەڵە</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>هەژمار دوای چوونەژوورەوەی سەرنەکەوتوو داخرا</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>هەژمار کرایەوە</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>وشەی نهێنی گۆڕدرا</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>گۆڕینی وشەی نهێنی سەرنەکەوت</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>وشەی نهێنی ڕێک خرایەوە</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>داوای وشەی نهێنیی نوێ کرا</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ناونیشانی ئیمەیڵ گۆڕدرا</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ناوی بەکارهێنەر گۆڕدرا</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>چوونەژوورەوەی دوو-قۆناغی چالاک کرا</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>چوونەژوورەوەی دوو-قۆناغی ناچالاک کرا</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>کۆدی گەڕاندنەوە بەکارهات</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>کۆدی نوێی گەڕاندنەوە</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>وشەی نهێنیی ئەپ دروست کرا</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>وشەی نهێنیی ئەپ هەڵوەشێنرایەوە</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey زیاد کرا</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey لابرا</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>هەژمار چالاک کرا</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>هەژمار ناچالاک کرا</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>هەموو</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>چوونەژوورەوەکان و دانیشتنەکان</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>گۆڕانکارییەکانی هەژمار</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>پێویستی بە سەرنجە</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>لەلایەن ئێوەوە</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>لەلایەن بەکارهێنەرەوە</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>لەلایەن &quot;%login&quot;ەوە</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>ڕێگا</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>وێبگەڕ</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>سیستەمی کارپێکردن</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ئامێر</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>جێگا</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>وڵات</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>دانیشتنەکان</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>کامانە</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>کەناڵ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>هەوڵە سەرنەکەوتووەکان</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>کۆدە ماوەکان</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>هەندڵەری چوونەژوورەوە</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>چالاکیی پاراستن</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>چالاکیی پاراستنی %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>چوونەژوورەوەکان و گۆڕانکارییەکان لە پاراستنی هەژمارەکەتاندا. ئەگەر شتێک دەبینن کە ئێوە نەتانکردووە، وشەی نهێنییەکەتان بگۆڕن و ئەو ئامێرانە دەربکەن کە نایانناسن.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>چوونەژوورەوەکان و گۆڕانکارییەکان لە پاراستنی ئەم هەژمارەدا.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ئامێرەکانتان</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>گۆڕینی وشەی نهێنی</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>گەڕانەوە بۆ هەژمار</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>چالاکیی پاراستن تۆمار ناکرێت</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>لە تۆماری ئۆدیتی بەکارهێنەرانەوە دەخوێنرێتەوە، کە خشتەکەی expuser_audit نییە یان لەسەر ئەم بنکەدراوەیە پشتگیری ناکرێت. php update/common/scripts/6.0/createuseraudittable.php جێبەجێ بکەن، یان نوێکردنەوەی بنکەدراوەی 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>دوایین %days ڕۆژ</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>چوونەژوورەوەکان لە دوایین %days ڕۆژدا</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>دوایین چالاکیی پاراستن</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>پیشاندان</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>سەرنەکەوت</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ڕەتکرایەوە</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>هێشتا هیچ چالاکییەکی پاراستن تۆمار نەکراوە.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>ڕووداوەکانی پاراستن %days ڕۆژ هەڵدەگیرێن.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>ڕووداوەکانی پاراستن هەڵدەگیرێن تا بەڕێوەبەرێک لایان دەبات.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>داگرتنی داتای چوونەژوورەوەکەم</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>دانیشتنەکان و ڕووداوەکانی پاراستنتان وەک فایلی JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>چووەتە ژوورەوە</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>هەوڵی سەرنەکەوتووی چوونەژوورەوە</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>چووەتە دەرەوە</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>دانیشتنەکان دەرکران</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>چوونەژوورەوە لە ئامێرێکی نوێوە</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>چوونەژوورەوە لە شوێنێکی نوێوە</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ناسنامە پشتڕاست کرایەوە (&quot;پشتڕاستبکەنەوە کە ئێوەن&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>پشکنینی ناسنامە سەرنەکەوت</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>بە Passkey چووەتە ژوورەوە</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>چوونەژوورەوە بە Passkey سەرنەکەوت</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>چوونەژوورەوە ڕەت کرایەوە: کۆدی دوو-قۆناغی نییە یان هەڵەیە</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>کۆدی دوو-قۆناغیی هەڵە</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>هەژمار دوای چوونەژوورەوەی سەرنەکەوتوو داخرا</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>هەژمار کرایەوە</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>وشەی نهێنی گۆڕدرا</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>گۆڕینی وشەی نهێنی سەرنەکەوت</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>وشەی نهێنی ڕێک خرایەوە</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>داوای وشەی نهێنیی نوێ کرا</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ناونیشانی ئیمەیڵ گۆڕدرا</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ناوی بەکارهێنەر گۆڕدرا</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>چوونەژوورەوەی دوو-قۆناغی چالاک کرا</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>چوونەژوورەوەی دوو-قۆناغی ناچالاک کرا</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>کۆدی گەڕاندنەوە بەکارهات</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>کۆدی نوێی گەڕاندنەوە</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>وشەی نهێنیی ئەپ دروست کرا</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>وشەی نهێنیی ئەپ هەڵوەشێنرایەوە</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey زیاد کرا</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey لابرا</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>هەژمار چالاک کرا</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>هەژمار ناچالاک کرا</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>هەموو</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>چوونەژوورەوەکان و دانیشتنەکان</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>گۆڕانکارییەکانی هەژمار</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>پێویستی بە سەرنجە</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>چالاکیی پاراستن</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>چالاکیی پاراستنی %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>چوونەژوورەوەکان و گۆڕانکارییەکان لە پاراستنی هەژمارەکەتاندا. ئەگەر شتێک دەبینن کە ئێوە نەتانکردووە، وشەی نهێنییەکەتان بگۆڕن و ئەو ئامێرانە دەربکەن کە نایانناسن.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ئامێرەکانتان</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>گۆڕینی وشەی نهێنی</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>چالاکیی پاراستن هێشتا لەم ماڵپەڕەدا تۆمار ناکرێت.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>چوونەژوورەوەکان لە دوایین %days ڕۆژدا</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>هەوڵە سەرنەکەوتووەکان</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>هێشتا هیچ چالاکییەکی پاراستن تۆمار نەکراوە.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>داگرتنی داتای چوونەژوورەوەکەم</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>دانیشتنەکان و ڕووداوەکانی پاراستنتان وەک فایلی JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>وشەی نهێنی</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>وشەی نهێنی و کۆدی دوو-قۆناغی</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>ڕووکاری REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>ڕووکاری SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>چوونەژوورەوەی یەکگرتوو</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>پێش تۆمارکردنی دانیشتنەکان چووەتە ژوورەوە</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ڕاپۆرتی چوونەژوورەوە</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>کێ چووەتە ژوورەوەی ماڵپەڕەکە، هەژمارەکان چەند جار دەچنە ژوورەوە و سەرناکەون، و دەرکردنی بەکارهێنەرێک لە هەموو شوێنێک. لەگەڵ هەموو هەندڵەرێکی دانیشتن کار دەکات.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>دانیشتنەکە دەرکرا. ئامێرەکە دەبێت دووبارە بچێتە ژوورەوە.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login لە %count دانیشتن دەرکرا.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login هیچ دانیشتنێکی کارای نەبوو.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>هیچ هەژمارێک ئەم ID، ناوی بەکارهێنەر یان ناونیشانی ئیمەیڵەی نییە.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ئەمە ئەو دانیشتنەیە کە بەکاری دەهێنن. بۆ کۆتاییپێهێنانی، بچنە دەرەوە.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ئەو دانیشتنە پێشتر کۆتایی هاتبوو.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ماوەی پەڕەکە بەسەرچووبوو. هیچ شتێک نەگۆڕدرا؛ تکایە دووبارە هەوڵ بدەنەوە.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>دانیشتنەکان لەم ماڵپەڕەدا تۆمار ناکرێن (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>خشتەی expuser_session نییە</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>دانیشتنەکان تۆمار دەکرێن هەر کە دروست کرا: php update/common/scripts/6.0/createusersessiontable.php، یان نوێکردنەوەی بنکەدراوەی 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>ئێستا و ئەمڕۆ</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>دانیشتنە کاراکان</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>بەکارهێنەرانی چووەژوورەوە</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>چوونەژوورەوەکانی ئەمڕۆ</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>هەوڵە سەرنەکەوتووەکانی ئەمڕۆ</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>دەرکردنی بەکارهێنەرێک لە هەموو شوێنێک</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>هەموو دانیشتنێکی هەژمارەکە لە داواکاریی داهاتوویدا کۆتایی دێت، ئەوانەش کە بە &quot;من بیرت بێت&quot; هەڵگیراون. کاتێک بەکاری بهێنن کە لەوانەیە هەژمارێک لە دەستی هەڵەدا بێت؛ پاشان وشەی نهێنییەکەی ڕێک بخەنەوە.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID ی بەکارهێنەر، ناوی بەکارهێنەر یان ناونیشانی ئیمەیڵ</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>چوونەدەرەوە لە هەموو شوێنێک</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ئێستا چووەتە ژوورەوە</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>ئەو %limit دانیشتنەی کە دواجار بەکارهاتوون پیشان دەدرێن.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>بەکارهێنەر</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ئامێر</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ناونیشان</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>چووەتە ژوورەوە</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>دوایین چالاکی</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>کردارەکان</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ئەم ئامێرە</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>تۆمار نەکراوە</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>چوونەدەرەوە</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>هیچ دانیشتنێک نەچووەتە ژوورەوە.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>دوایین %days ڕۆژ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>چوونەژوورەوەکان و هەوڵە سەرنەکەوتووەکان لە تۆماری ئۆدیتی بەکارهێنەرانەوە دەژمێردرێن، کە بوونی نییە؛ دانیشتنە نوێکان دەژمێردرێن.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>ڕۆژ</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>چوونەژوورەوەکان</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>هەوڵە سەرنەکەوتووەکان</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>دانیشتنە نوێکان</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>هەندڵەری دانیشتن: %handler. دانیشتنەکان لە خشتەی expuser_session دەخوێنرێنەوە، بۆیە ڕاپۆرتەکە لەگەڵ هەموو هەندڵەرێک کار دەکات.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>ئاگاداریی پاراستن بۆ هەژمارەکەتان</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>ڕووداوێکی پاراستن لە هەژمارەکەتان %login ڕوویدا: %event. ئەگەر ئێوە نەبوون، هەژمارەکەتان لە %url بپارێزن.</translation>
     </message>
 </context>
 </TS>

@@ -72,7 +72,7 @@ cleared once ([Templates and design](../../guides/templates-and-design.md#4-make
 | Cause | What to do | Source |
 |---|---|---|
 | The browser shows its own copy | Reload with Shift held, or use a private window | [Which cache do I clear?](../manual/which-cache-do-i-clear.md#what-can-go-wrong) |
-| Velocity's response cache answers for a few seconds | `php bin/php/console exp:velocity cache clear`, or wait | [Caches](../../guides/caches.md#4-velocity) |
+| Velocity's response cache answers for a few seconds | `php bin/php/console exp:velocity cache clear --apply`, or wait | [Caches](../../guides/caches.md#4-velocity) |
 | A running Velocity holds settings in memory | `php bin/php/console exp:velocity restart --allow-root-user` after clearing INI caches | [Caches](../../guides/caches.md#4-velocity) |
 | A settings change on a server with PHP-FPM | The web server's PHP must reload; ask whoever deploys | [Which cache do I clear?](../manual/which-cache-do-i-clear.md#what-can-go-wrong) |
 

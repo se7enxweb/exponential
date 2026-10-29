@@ -31,7 +31,7 @@ make room. Background: [Keeping versions longer](../../transparency-and-foi/keep
    ```
 
    The shipped values are `DefaultVersionHistoryLimit=45` and `VersionHistoryClass[1]=75`.
-2. Clear the INI cache: `php bin/php/ezcache.php --clear-tag=ini`; with Velocity also `./console exp:velocity cache clear`.
+2. Clear the INI cache: `php bin/php/ezcache.php --clear-tag=ini`; with Velocity also `./console exp:velocity cache clear --apply`.
 
 ## Check
 
@@ -43,7 +43,7 @@ make room. Background: [Keeping versions longer](../../transparency-and-foi/keep
 | Problem | Note |
 |---|---|
 | Versions already removed | the new limit applies from now on; removed versions are gone |
-| Lowering a limit later | does not remove versions until `php bin/php/cleanupversions.php` runs; back up first |
+| Lowering a limit later | does not remove versions until `php bin/php/cleanupversions.php --apply` runs; back up first |
 
 ## Related pages
 

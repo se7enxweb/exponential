@@ -38,7 +38,7 @@ Cache, der Antwort-Cache von Velocity, ein CDN oder Ihr eigener Browser können 
 3. klicken Sie auf **Leeren**.
 4. Laden Sie die Seite abgemeldet in einem privaten Fenster neu.
 5. Immer noch alt: Die Kopie liegt in einem Cache vor dem CMS (statischer Cache, der Antwort-Cache von Velocity, ein
-   CDN). Fragen Sie das Web-Team; es kann diese leeren (zum Beispiel `./console exp:velocity cache clear` für Velocity).
+   CDN). Fragen Sie das Web-Team; es kann diese leeren (zum Beispiel `./console exp:velocity cache clear --apply` für Velocity).
 
 Die anderen Auswahlmöglichkeiten des Kastens (**Template**, **INI-Einstellungen**, **Statisch**, **Gesamter Cache**)
 sind für Administratoren; sie betreffen die ganze Site.

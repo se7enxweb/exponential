@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>ছেটআপ &gt; ক্ৰনজব</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>এতিয়ালৈকে কোনো ক্ৰনজব অংশ চলা নাই: জব শাৰী, ইমপ&apos;ৰ্ট, জাননী আৰু সন্ধান সূচী অপেক্ষাত আছে। php bin/php/installcrontab.php --add --apply চলাওক, নহ&apos;লে --show এ দেখুওৱা শাৰীবোৰ crontab ফাইলত যোগ কৰক।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>এই ইনষ্টলেচনটো এটা সৰ্বসাধাৰণ ডেম': যিকোনো লোকে ইয়াৰ প্ৰশাসকৰ পাছৱৰ্ড জানিব পাৰে, আৰু প্ৰশাসকৰ পাছৱৰ্ড সলনি বা ৰিছেট কৰিব নোৱাৰি। ইয়াত কোনো ব্যক্তিগত তথ্য দিব নালাগে।</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>আপোনাৰ ডিভাইচ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>সুৰক্ষা কাৰ্যকলাপ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>প্ৰতিটো একাউণ্টৰ বাবে কোনে সলনি কৰিলে, লগ ইন কৰিলে বা প্ৰত্যাখ্যাত হ&apos;ল; ফিল্টাৰ আৰু ৰপ্তানি কৰক।</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>লগ ইন প্ৰতিবেদন</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>কোনে লগ ইন কৰি আছে, দিনে প্ৰতি লগ ইন আৰু বিফলতা; এজন ব্যৱহাৰকাৰীক সকলো ঠাইৰ পৰা লগ আউট কৰক।</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP হেণ্ডলাৰৰ সময় উকলি যোৱা ছেছনবোৰ PHP য়ে নিজেই আঁতৰায় (session.gc_maxlifetime), এই পৃষ্ঠা বা session_gc ক্ৰনজবৰ অংশই নহয়।</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>সকলো ব্যৱহাৰকাৰীৰ লগ ইন কৰা ছেছনবোৰ লগ ইন প্ৰতিবেদনত তালিকাভুক্ত হয় আৰু তাৰ পৰাই লগ আউট কৰিব পাৰি; ই সকলো ছেছন হেণ্ডলাৰৰ সৈতে কাম কৰে।</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>লগ ইন প্ৰতিবেদন খোলক</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>এতিয়ালৈকে নাই</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>সুৰক্ষা কাৰ্যকলাপ</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>আপোনাৰ শেহতীয়া লগ ইন, বিফল প্ৰচেষ্টা আৰু আপোনাৰ পাছৱৰ্ড, ই-মেইল ঠিকনা আৰু দুই-পদক্ষেপীয়া লগ ইনৰ পৰিৱৰ্তন।</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>এই একাউণ্টৰ শেহতীয়া লগ ইন, বিফল প্ৰচেষ্টা আৰু সুৰক্ষা পৰিৱৰ্তন।</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>কাৰ্যকলাপ পৰ্যালোচনা কৰক</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count টা বিফল লগ ইন</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab লিখা হোৱা নাই (%reason)। ছাইটটো যি ব্যৱহাৰকাৰী হিচাপে চলে তেওঁৰ crontab ত এই শাৰীবোৰ যোগ কৰক, নহ'লে শাৰী, আমদানি, জাননী আৰু সন্ধান সূচী কেতিয়াও নচলে:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>কিকষ্টাৰ্টাৰৰ সহায়ত (%file, তাৰ পিছত php bin/php/kickstarter.php run --apply) বা এটা নতুন ইনষ্টলেচনৰ জৰিয়তে পুনৰ ইনষ্টল কৰা হয়।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>শেষ ৰানত মেইল ট্ৰান্সপৰ্টে %count টা বাৰ্তা প্ৰত্যাখ্যান কৰিলে। মেইল ছাৰ্ভাৰ আৰু site.ini MailSettings পৰীক্ষা কৰক।</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count টা ঘটনা অপেক্ষাত আছে আৰু জাননী ক্ৰনজবৰ কোনো চলনা ৰেকৰ্ড কৰা হোৱা নাই। ক্ৰনজব অংশ &quot;frequent&quot; crontab ফাইলত যোগ কৰক, নহ&apos;লে exp:notification:run --apply চলাওক।</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>নোড বাছনিকৰ্তাৰে আন এটা ছাইট বা শাখা বাছনি কৰক</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>কেৱল ছিষ্টেম প্ৰশাসকেহে মালিক সলনি কৰিব পাৰে: root হিচাপে ./console exp:content-check --fix-permissions --apply চলাওক।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>খালী</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>স্বাক্ষৰ চাবিটো এবছৰতকৈ পুৰণি: exp:audit key rotate --apply ৰে ইয়াক সলনি কৰক।</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>পঠিওৱা হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>জাননী ক্ৰনজবে ইয়াৰ প্ৰতিটো চলনা ইয়াত ৰেকৰ্ড কৰে। frequent অংশটো crontab ফাইলত যোগ কৰক, নহ&apos;লে exp:notification:run --apply চলাওক।</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>কনচ&apos;ল ব্যৱহাৰ কৰক: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>একো নাই।</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>এটা প্ৰমাণীকৰণ এপৰ সহায়ত</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ই-মেইলত পঠোৱা এটা ক&apos;ডৰ সহায়ত</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>এটা পুনৰুদ্ধাৰ ক&apos;ডৰ সহায়ত</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>এটা পাছকীৰ সহায়ত</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>এটা বাহ্যিক একাউণ্টৰ সহায়ত</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>সুৰক্ষা কাৰ্যকলাপ</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>ইয়াৰ নেটৱৰ্ক হিচাপে দেখুওৱা হৈছে; ছাইটৰ তথ্য সুৰক্ষা ছেটিংছে যিদৰে কয় সেইদৰে ঠিকনাটো ৰখা হয়।</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ৰেকৰ্ড কৰা হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>অৱস্থান</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>আনুমানিক</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>ডিভাইচ পৰিচালনা কৰক</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>এটা প্ৰমাণীকৰণ এপৰ সহায়ত</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ই-মেইলত পঠোৱা এটা ক&apos;ডৰ সহায়ত</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>এটা পুনৰুদ্ধাৰ ক&apos;ডৰ সহায়ত</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>এটা পাছকীৰ সহায়ত</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>এটা বাহ্যিক একাউণ্টৰ সহায়ত</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>সুৰক্ষা কাৰ্যকলাপ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ৰেকৰ্ড কৰা হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>অৱস্থান</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>আনুমানিক</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>এই ব্যৱহাৰকাৰীৰ ছেছনবোৰ চাওক</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site ছাইটত আপোনাৰ একাউণ্ট %login ৰে এইমাত্ৰ এনে এটা ঠাইৰ পৰা লগ ইন কৰা হৈছে, য&apos;ৰ পৰা শেহতীয়াকৈ লগ ইন কৰা হোৱা নাছিল:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>আনুমানিক অৱস্থান</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os ত %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>লগ ইন প্ৰতিবেদন</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>অজ্ঞাত</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>আপোনাৰ একাউণ্ট সুৰক্ষিত কৰক</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site ছাইটত আপোনাৰ একাউণ্ট %login ত লগ ইন কৰিবলৈ এটা পুনৰুদ্ধাৰ ক&apos;ড ব্যৱহাৰ কৰা হৈছে।</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>এটা পুনৰুদ্ধাৰ ক&apos;ড ব্যৱহাৰ কৰা হৈছে</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>একাউণ্ট</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>আনুমানিক ঠিকনা</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>পুনৰ লগ ইন কৰিবলৈ এটা নতুন পাছৱৰ্ডৰ অনুৰোধ কৰক, নহ&apos;লে ছাইটৰ প্ৰশাসকসকলৰ সৈতে যোগাযোগ কৰক।</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>নতুন পাছৱৰ্ডৰ অনুৰোধ কৰক</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>প্ৰতিটো পুনৰুদ্ধাৰ ক&apos;ড এবাৰহে কাম কৰে। আপোনাৰ ফোন হেৰালে আপোনাৰ প্ৰমাণীকৰণ এপ পুনৰ ছেট আপ কৰক আৰু নতুন পুনৰুদ্ধাৰ ক&apos;ডবোৰ সুৰক্ষিত ঠাইত ৰাখক।</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>আপোনাৰ একাউণ্টত বিফল লগ ইন প্ৰচেষ্টা</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>এতিয়াৰ পৰা লগ ইন কৰোঁতে আপোনাৰ পাছৱৰ্ডৰ উপৰিও এটা ক&apos;ড বিচৰা হ&apos;ব। এইটো আপুনি কৰিছে যদি আপুনি একো কৰিব নালাগে।</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>যদি আপুনিয়েই আছিল আৰু আপুনি পাছৱৰ্ড পাহৰিছে, এটা নতুন পাছৱৰ্ডৰ অনুৰোধ কৰক। যদি নহয়, এটা অধিক শক্তিশালী পাছৱৰ্ড বাছনি কৰক আৰু দুই-পদক্ষেপীয়া লগ ইন অন কৰক।</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>যদি এইটো আপুনি নাছিল, কোনোবাই হয়তো আপোনাৰ পাছৱৰ্ড জানে: এতিয়াই ইয়াক সলনি কৰক আৰু আপোনাৰ একাউণ্ট ক&apos;ত লগ ইন হৈ আছে পৰীক্ষা কৰক।</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>বাকী থকা পুনৰুদ্ধাৰ ক&apos;ড</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>আপোনাৰ ডিভাইচ পৰ্যালোচনা কৰক</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>সুৰক্ষা সতৰ্কবাণী</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>কোনোবাই %site ছাইটত আপোনাৰ একাউণ্ট %login ত ভুল পাছৱৰ্ডেৰে একেৰাহে %count বাৰ লগ ইন কৰিবলৈ চেষ্টা কৰিছিল।</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site ছাইটত আপোনাৰ একাউণ্ট %login ত এটা সুৰক্ষা ঘটনা ঘটিছে।</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>এইটো আপোনাৰ একাউণ্টৰ বিষয়ে এটা সুৰক্ষা সতৰ্কবাণী। এনে প্ৰতিটো পৰিৱৰ্তনৰ বাবে ইয়াক পঠোৱা হয় আৰু ইয়াক বন্ধ কৰিব নোৱাৰি।</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>সময়</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site ছাইটত আপোনাৰ একাউণ্ট %login ৰ বাবে দুই-পদক্ষেপীয়া লগ ইন অফ কৰা হ&apos;ল।</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>দুই-পদক্ষেপীয়া লগ ইন অফ কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site ছাইটত আপোনাৰ একাউণ্ট %login ৰ বাবে দুই-পদক্ষেপীয়া লগ ইন অন কৰা হ&apos;ল।</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>দুই-পদক্ষেপীয়া লগ ইন অন কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>অত্যধিক বিফল লগ ইনৰ পিছত %site ছাইটত আপোনাৰ একাউণ্ট %login লক কৰা হ&apos;ল।</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>আপোনাৰ একাউণ্ট এতিয়া কেৱল আপোনাৰ পাছৱৰ্ডৰ দ্বাৰা সুৰক্ষিত। এইটো আপুনি কৰা নাই যদি, পাছৱৰ্ড সলনি কৰাৰ পিছত দুই-পদক্ষেপীয়া লগ ইন পুনৰ অন কৰক।</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>আপোনাৰ একাউণ্ট লক কৰা হ&apos;ল</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>সুৰক্ষা কাৰ্যকলাপ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ৰ সুৰক্ষা কাৰ্যকলাপ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>লগ ইন কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>বিফল লগ ইন প্ৰচেষ্টা</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>লগ আউট কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ছেছন লগ আউট কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>নতুন ডিভাইচৰ পৰা লগ ইন</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>নতুন অৱস্থানৰ পৰা লগ ইন</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>পৰিচয় নিশ্চিত কৰা হ&apos;ল (&quot;আপুনিয়েই বুলি যাচাই কৰক&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>পৰিচয় পৰীক্ষা বিফল হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>পাছকীৰে লগ ইন কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>পাছকীৰে লগ ইন বিফল হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>লগ ইন নাকচ: দুই-পদক্ষেপীয়া ক&apos;ড নাই বা ভুল</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>ভুল দুই-পদক্ষেপীয়া ক&apos;ড</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>বিফল লগ ইনৰ পিছত একাউণ্ট লক কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>একাউণ্ট আনলক কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>পাছৱৰ্ড সলনি কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>পাছৱৰ্ড সলনি কৰাটো বিফল হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>পাছৱৰ্ড ৰিছেট কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>নতুন পাছৱৰ্ডৰ অনুৰোধ কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ই-মেইল ঠিকনা সলনি কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ব্যৱহাৰকাৰীৰ নাম সলনি কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>দুই-পদক্ষেপীয়া লগ ইন অন কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>দুই-পদক্ষেপীয়া লগ ইন অফ কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>পুনৰুদ্ধাৰ ক&apos;ড ব্যৱহাৰ কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>নতুন পুনৰুদ্ধাৰ ক&apos;ড</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>এপ পাছৱৰ্ড সৃষ্টি কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>এপ পাছৱৰ্ড প্ৰত্যাহাৰ কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>পাছকী যোগ কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>পাছকী আঁতৰোৱা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>একাউণ্ট সক্ষম কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>একাউণ্ট অক্ষম কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>সকলো</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>লগ ইন আৰু ছেছন</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>একাউণ্টৰ পৰিৱৰ্তন</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>মনোযোগৰ প্ৰয়োজন</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>আপোনাৰ দ্বাৰা</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ব্যৱহাৰকাৰীৰ দ্বাৰা</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>%login ৰ দ্বাৰা</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>পদ্ধতি</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>ব্ৰাউজাৰ</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>অপাৰেটিং ছিষ্টেম</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ডিভাইচ</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>ঠাই</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>দেশ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ছেছন</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>কোনবোৰ</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>মাধ্যম</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>বিফল প্ৰচেষ্টা</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>বাকী থকা ক&apos;ড</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>লগ ইন হেণ্ডলাৰ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>সুৰক্ষা কাৰ্যকলাপ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ৰ সুৰক্ষা কাৰ্যকলাপ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>আপোনাৰ একাউণ্টৰ লগ ইন আৰু সুৰক্ষাৰ পৰিৱৰ্তন। আপুনি নকৰা কিবা দেখিলে আপোনাৰ পাছৱৰ্ড সলনি কৰক আৰু আপুনি চিনি নোপোৱা ডিভাইচবোৰ লগ আউট কৰক।</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>এই একাউণ্টৰ লগ ইন আৰু সুৰক্ষাৰ পৰিৱৰ্তন।</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>আপোনাৰ ডিভাইচ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>পাছৱৰ্ড সলনি কৰক</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>একাউণ্টলৈ উভতি যাওক</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>সুৰক্ষা কাৰ্যকলাপ ৰেকৰ্ড কৰা নহয়</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>ইয়াক ব্যৱহাৰকাৰী অডিট লগৰ পৰা পঢ়া হয়, যাৰ টেবুল expuser_audit নাই বা এই ডাটাবেছত সমৰ্থিত নহয়। php update/common/scripts/6.0/createuseraudittable.php চলাওক, নহ&apos;লে 6.0.15 ৰ ডাটাবেছ আপডেট চলাওক।</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>যোৱা %days দিন</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>যোৱা %days দিনত লগ ইন</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>শেহতীয়া সুৰক্ষা কাৰ্যকলাপ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>দেখুৱাওক</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>বিফল</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>নাকচ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>এতিয়ালৈকে কোনো সুৰক্ষা কাৰ্যকলাপ ৰেকৰ্ড কৰা হোৱা নাই।</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>সুৰক্ষা ঘটনাবোৰ %days দিন ৰখা হয়।</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>কোনো প্ৰশাসকে আঁতৰাই নিদিয়ালৈকে সুৰক্ষা ঘটনাবোৰ ৰখা হয়।</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>মোৰ লগ ইন তথ্য ডাউনলোড কৰক</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>JSON ফাইল হিচাপে আপোনাৰ ছেছন আৰু সুৰক্ষা ঘটনা।</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>লগ ইন কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>বিফল লগ ইন প্ৰচেষ্টা</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>লগ আউট কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ছেছন লগ আউট কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>নতুন ডিভাইচৰ পৰা লগ ইন</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>নতুন অৱস্থানৰ পৰা লগ ইন</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>পৰিচয় নিশ্চিত কৰা হ&apos;ল (&quot;আপুনিয়েই বুলি যাচাই কৰক&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>পৰিচয় পৰীক্ষা বিফল হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>পাছকীৰে লগ ইন কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>পাছকীৰে লগ ইন বিফল হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>লগ ইন নাকচ: দুই-পদক্ষেপীয়া ক&apos;ড নাই বা ভুল</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>ভুল দুই-পদক্ষেপীয়া ক&apos;ড</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>বিফল লগ ইনৰ পিছত একাউণ্ট লক কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>একাউণ্ট আনলক কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>পাছৱৰ্ড সলনি কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>পাছৱৰ্ড সলনি কৰাটো বিফল হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>পাছৱৰ্ড ৰিছেট কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>নতুন পাছৱৰ্ডৰ অনুৰোধ কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ই-মেইল ঠিকনা সলনি কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ব্যৱহাৰকাৰীৰ নাম সলনি কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>দুই-পদক্ষেপীয়া লগ ইন অন কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>দুই-পদক্ষেপীয়া লগ ইন অফ কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>পুনৰুদ্ধাৰ ক&apos;ড ব্যৱহাৰ কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>নতুন পুনৰুদ্ধাৰ ক&apos;ড</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>এপ পাছৱৰ্ড সৃষ্টি কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>এপ পাছৱৰ্ড প্ৰত্যাহাৰ কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>পাছকী যোগ কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>পাছকী আঁতৰোৱা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>একাউণ্ট সক্ষম কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>একাউণ্ট অক্ষম কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>সকলো</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>লগ ইন আৰু ছেছন</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>একাউণ্টৰ পৰিৱৰ্তন</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>মনোযোগৰ প্ৰয়োজন</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>সুৰক্ষা কাৰ্যকলাপ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ৰ সুৰক্ষা কাৰ্যকলাপ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>আপোনাৰ একাউণ্টৰ লগ ইন আৰু সুৰক্ষাৰ পৰিৱৰ্তন। আপুনি নকৰা কিবা দেখিলে আপোনাৰ পাছৱৰ্ড সলনি কৰক আৰু আপুনি চিনি নোপোৱা ডিভাইচবোৰ লগ আউট কৰক।</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>আপোনাৰ ডিভাইচ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>পাছৱৰ্ড সলনি কৰক</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>এই ছাইটত সুৰক্ষা কাৰ্যকলাপ এতিয়ালৈকে ৰেকৰ্ড কৰা নহয়।</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>যোৱা %days দিনত লগ ইন</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>বিফল প্ৰচেষ্টা</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>এতিয়ালৈকে কোনো সুৰক্ষা কাৰ্যকলাপ ৰেকৰ্ড কৰা হোৱা নাই।</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>মোৰ লগ ইন তথ্য ডাউনলোড কৰক</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>JSON ফাইল হিচাপে আপোনাৰ ছেছন আৰু সুৰক্ষা ঘটনা।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>পাছৱৰ্ড</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>পাছৱৰ্ড আৰু দুই-পদক্ষেপীয়া ক&apos;ড</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ইণ্টাৰফেচ</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ইণ্টাৰফেচ</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>একক লগ ইন (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>ছেছন ৰেকৰ্ড কৰাৰ আগতে লগ ইন কৰা হৈছিল</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>লগ ইন প্ৰতিবেদন</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>ছাইটত কোনে লগ ইন কৰি আছে, একাউণ্টবোৰে কিমান সঘনাই লগ ইন কৰে আৰু বিফল হয়, আৰু এজন ব্যৱহাৰকাৰীক সকলো ঠাইৰ পৰা লগ আউট কৰা। ই সকলো ছেছন হেণ্ডলাৰৰ সৈতে কাম কৰে।</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ছেছনটো লগ আউট কৰা হ&apos;ল। ডিভাইচটোৱে পুনৰ লগ ইন কৰিব লাগিব।</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login ক %count টা ছেছনৰ পৰা লগ আউট কৰা হ&apos;ল।</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login ৰ কোনো চলি থকা ছেছন নাছিল।</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>এই ID, ব্যৱহাৰকাৰীৰ নাম বা ই-মেইল ঠিকনাৰ কোনো একাউণ্ট নাই।</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>এইটো আপুনি ব্যৱহাৰ কৰি থকা ছেছন। ইয়াক শেষ কৰিবলৈ লগ আউট কৰক।</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>সেই ছেছনটো আগতেই শেষ হৈছিল।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>পৃষ্ঠাটোৰ ম্যাদ উকলি গৈছিল। একো সলনি কৰা হোৱা নাই; অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>এই ছাইটত ছেছন ৰেকৰ্ড কৰা নহয় (site.ini [UserSessionSettings] Tracking=disabled)।</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session টেবুলটো নাই</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>টেবুলটো সৃষ্টি কৰাৰ পিছতে ছেছন ৰেকৰ্ড কৰা হ&apos;ব: php update/common/scripts/6.0/createusersessiontable.php, নহ&apos;লে 6.0.15 ৰ ডাটাবেছ আপডেট।</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>এতিয়া আৰু আজি</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>চলি থকা ছেছন</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>লগ ইন কৰা ব্যৱহাৰকাৰী</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>আজিৰ লগ ইন</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>আজিৰ বিফল প্ৰচেষ্টা</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>এজন ব্যৱহাৰকাৰীক সকলো ঠাইৰ পৰা লগ আউট কৰক</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>একাউণ্টৰ প্ৰতিটো ছেছন ইয়াৰ পৰৱৰ্তী অনুৰোধত শেষ হয়, &quot;মোক মনত ৰাখক&quot; ৰে ৰখা ছেছনবোৰো। কোনো একাউণ্ট ভুল হাতত পৰিব পাৰে বুলি ভাবিলে ইয়াক ব্যৱহাৰ কৰক; তাৰ পিছত ইয়াৰ পাছৱৰ্ড ৰিছেট কৰক।</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ব্যৱহাৰকাৰী ID, ব্যৱহাৰকাৰীৰ নাম বা ই-মেইল ঠিকনা</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>সকলো ঠাইৰ পৰা লগ আউট কৰক</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>এতিয়া লগ ইন কৰা</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>শেহতীয়াকৈ ব্যৱহাৰ কৰা %limit টা দেখুওৱা হৈছে।</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ব্যৱহাৰকাৰী</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ডিভাইচ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ঠিকনা</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>লগ ইন কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>শেষবাৰ সক্ৰিয়</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>কাৰ্য</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>এই ডিভাইচ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ৰেকৰ্ড কৰা হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>লগ আউট কৰক</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>কোনো ছেছন লগ ইন হৈ থকা নাই।</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>যোৱা %days দিন</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>লগ ইন আৰু বিফল প্ৰচেষ্টা ব্যৱহাৰকাৰী অডিট লগৰ পৰা গণনা কৰা হয়, যিটো নাই; নতুন ছেছনবোৰ গণনা কৰা হয়।</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>দিন</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>লগ ইন</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>বিফল প্ৰচেষ্টা</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>নতুন ছেছন</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>ছেছন হেণ্ডলাৰ: %handler। ছেছনবোৰ expuser_session টেবুলৰ পৰা পঢ়া হয়, সেয়েহে প্ৰতিবেদনটোৱে সকলো হেণ্ডলাৰৰ সৈতে কাম কৰে।</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>আপোনাৰ একাউণ্টৰ বাবে সুৰক্ষা সতৰ্কবাণী</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>আপোনাৰ একাউণ্ট %login ত এটা সুৰক্ষা ঘটনা ঘটিছে: %event। এইটো আপুনি নহয় যদি, %url ত আপোনাৰ একাউণ্ট সুৰক্ষিত কৰক।</translation>
     </message>
 </context>
 </TS>

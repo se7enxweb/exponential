@@ -126,10 +126,54 @@ werden. Aufrufe über HTTP sind unverändert. Siehe [SOAP-Aufrufe über HTTPS](.
 | Änderung | Wie prüfen | Was tun |
 |---|---|---|
 | `composer.json` verlangt `zetacomponents/authentication-database-tiein`, `zetacomponents/mvc-authentication-tiein` (beide `require`) und `zetacomponents/php-generator` (`require-dev`) nicht mehr. Kein Code des Kernels oder der Pakete, die er verlangt, verwendet sie. `zetacomponents/configuration` bleibt verlangt, solange 7x SQLI Import 2.0.x eine seiner Ausnahmen wirft; `se7enxweb/ezie` und `zetacomponents/image-conversion` bleiben ebenfalls verlangt. | `grep -rE 'ezc(AuthenticationDatabase\|MvcAuthentication\|PhpGenerator)' extension/ <Ihr Code>` | Eigener Code, der eine der drei verwendet, verlangt sie in der `composer.json` Ihres Projekts (`composer require zetacomponents/php-generator`); sonst entfernt das nächste `composer update` sie. |
-| Der Setup-Assistent und der Kickstarter aktivieren für eine neue Installation `expimageeditor`, wo sie `ezie` aktivierten. Bestehende Installationen behalten ihre `ActiveExtensions`; ezie bleibt installiert. | `ActiveExtensions[]` in `settings/override/site.ini.append.php` einer neuen Installation. | Nichts. Eine bestehende Site auf expimageeditor umstellen: `ActiveExtensions[]=expimageeditor` statt `ezie`, dann `php bin/php/addeditorpolicies.php --only=expimageeditor/edit` ([expimageeditor](../../funktionen/6.0/erweiterungen/expimageeditor.md)). |
+| Der Setup-Assistent und der Kickstarter aktivieren für eine neue Installation `expimageeditor`, wo sie `ezie` aktivierten. Bestehende Installationen behalten ihre `ActiveExtensions`; ezie bleibt installiert. | `ActiveExtensions[]` in `settings/override/site.ini.append.php` einer neuen Installation. | Nichts. Eine bestehende Site auf expimageeditor umstellen: `ActiveExtensions[]=expimageeditor` statt `ezie`, dann `php bin/php/addeditorpolicies.php --apply --only=expimageeditor/edit` ([expimageeditor](../../funktionen/6.0/erweiterungen/expimageeditor.md)). |
 | Das Protokoll der Inhaltsjobs schreibt seine Zahlen mit Punkt, welche Locale `config.php` auch setzt („in 0.01 s, peak 30.0 MB“; unter einer deutschen Locale war es „0,01“). | Das Protokoll eines Jobs unter **Setup > Inhaltsjobs**. | Ein Skript, das die Form mit Komma las, liest den Punkt. |
 | Mit dem MySQLi-Cluster-Backend (`eZDFSFileHandlerMySQLiBackend`) unter PHP 8.1 und neuer wird auf eine Cache-Datei, die ein anderer Prozess erzeugt, wieder gewartet, statt sie ein zweites Mal zu erzeugen: `startCacheGeneration()` gibt die verbleibende Erzeugungszeit zurück, und eine abgelaufene Erzeugung wird übernommen. Ein fehlgeschlagenes `SELECT ... FOR UPDATE` am Ende einer Erzeugung rollt zurück und meldet den Fehler statt eines `TypeError`. | Sites im Cluster unter Last: weniger doppelte Erzeugungen desselben View-Caches. | Nichts. |
 | Die Tests der Gruppe `database` laufen auf Wegwerf-Datenbanken `exp_test_<pid>_<hex>` unter MySQL/MariaDB, und die Live-Tests verwenden `EXP_TEST_SITEACCESS` oder `DefaultAccess` (sie verwendeten `admin`). `tests/runtests.php --db-per-test --dsn=…` leert nur eine Datenbank mit `test`, `tests` oder `testdb` als Wort des Namens. | `vendor/bin/phpunit --group database` ohne ein Konto mit `CREATE` und `DROP` auf `exp\_test\_%` überspringt mit dem Grund. | Für die Testläufe: `EXP_TEST_DB_USER` und `EXP_TEST_DB_PASSWORD`, siehe [Testen](love/testen.md). |
+
+## Upgrade-Befehle (28. Oktober 2026)
+
+| Änderung | Wie prüfen | Was tun |
+|---|---|---|
+| `bin/php/addeditorpolicies.php` und `bin/php/addmembermanagement.php` zeigen nur, was sie ändern würden, außer `--apply` ist angegeben; vorher schrieben sie standardmäßig und nahmen `--dry-run`. `--dry-run` wird weiter angenommen und bedeutet dasselbe wie keine Option; `--apply` zusammen mit `--dry-run` ist ein Aufruffehler (Exit-Code 2). Der Setup-Schritt einer neuen Installation ist nicht betroffen: Er ruft die Klassen auf, nicht die Befehle. | Einen der Befehle ohne Optionen ausführen: Er listet, was er ändern würde, und endet mit `PASS: ... (dry run, nothing changed; --apply writes)`. | In einem Skript oder einer Anleitung, die einen der Befehle ohne `--dry-run` ausführte, um die Änderung vorzunehmen, `--apply` ergänzen. Ein Aufruf mit `--dry-run` allein bleibt ein Probelauf. Siehe [Richtlinien der Rolle Editor](redakteur-rolle-richtlinien.md#was-beim-aktualisieren-zu-tun-ist). |
+
+## Befehle ändern nur mit --apply etwas (28. Oktober 2026)
+
+Die Befehle unten ändern eine bestehende Installation: ihre Rollen, Workflows, Inhalte, Logs, Mails, die Crontab, die
+Konfiguration von Velocity oder eine ganze Datenbank. Bis zum 28. Oktober 2026 nahm ein Lauf ohne Optionen die Änderung
+vor, sodass ein Lauf, der nur den Plan zeigen sollte, die Installation bereits änderte. Jeder davon zeigt jetzt nur, was
+er ändern würde, und endet mit `PASS: ... (dry run, nothing changed; --apply writes)`; `--apply` nimmt die Änderung vor
+und prüft sie. Ein `--dry-run`, das der Befehl hatte, wird weiter angenommen und bedeutet dasselbe wie keine Option;
+`--apply` zusammen mit `--dry-run` ist ein Aufruffehler und beendet den Befehl mit Exit-Code 2, bevor er die Datenbank
+liest. Der Setup-Assistent, der Kickstarter und die Cronjob-Teile rufen die Klassen auf, nicht die Befehle, und sind
+nicht betroffen.
+
+| Befehle | Was jetzt nur `--apply` tut |
+|---|---|
+| `addeditorpolicies`, `addmembermanagement`, `addanonymouspublicpolicies`, `addexphelpreadpolicy` (`exp:help-grant`), `addoauthauthorizepolicy`, `adduserapproval` (beide Modi, Gruppe und Abschnitt), `cleanuppolicies`, `adddefaultstates` | Richtlinien, Rollen, Workflow-Ereignisse und Abschnitte hinzufügen, gewähren, entfernen oder zuweisen; Objekten ihre Standardzustände geben. `adddefaultstates` hatte vorher keinen Probelauf. |
+| `install` (`exp:install`), `kickstarter run` | Installieren. Der Probelauf prüft `kickstart.ini`, die Datenbank und die entfernten Pakete und zeigt den Plan, bei `DatabaseAction=remove` mit „would DROP every table“. `--force` allein ist jetzt ein Aufruffehler (Exit-Code 2); zusammen mit `--apply` wird es angenommen. |
+| `audit` (rotate, archive, restore, purge, reindex, pseudonymise, import, checkpoint, `key rotate`, `sinks flush`, cron), `explogs` (`--rotate`, `--rotate-all`, `--prune`, `--compress`, `--truncate`), `contentcheck` (`--fix`, `--quarantine`, `--fix-permissions`), `exphelpcontent` (install, tables, classes, tree, roles, `check --fix`, seed-glossary, seed-topics, build-manuals, ebooks, `feedback --prune`, uninstall) | Die schreibenden Aktionen; die lesenden (status, tail, search, report, verify, export ...) bleiben, wie sie waren. |
+| `exploremipsumfill`, `collaborationsampledata` (auch `--remove`), `cleanuprss`, `clusterpurge`, `ezsubtreecopy`, `ezsubtreeremove`, `trashpurge`, `cleanupversions` | Inhalte und Dateien füllen, anlegen, entfernen, löschen oder kopieren. |
+| `mailbounces`, `mailconsent cleanup`, `notificationevents cleanup`, `notificationsubscriptions remove-missing`, `notificationrun` (`exp:notification:run`) | Adressen sperren, Zeilen entfernen, Benachrichtigungsmails senden. Ein Probelauf sendet nie eine Mail. |
+| `installcrontab --add`, `--remove` | Den Crontab-Block schreiben; der Probelauf zeigt den Block und die Zeilen, die sich ändern würden. `--show` bleibt, wie es war. |
+| `preload` (`exp:preload`); `velocity` `config set` und `unset`, `cache clear`, `layout migrate`, `site`, `conf` und `mod` `enable` und `disable`, `ssl renew`, `watchdog install` und `remove`, `install` der Engine FrankenPHP; `webserver configure`; `frankenphp install` | Die Site abrufen; die Einstellungen von Velocity und die Links in `/etc/vc` schreiben, seinen Antwort-Cache leeren, die Units des Watchdogs oder die Engine installieren. |
+
+Bewusst nicht geändert:
+
+| Befehl | Warum |
+|---|---|
+| `ezpgenerateautoloads`, `cache` (`exp:cache`) und `bin/php/ezcache.php` | Sie arbeiten wie Build-Werkzeuge: Sie erzeugen Dateien neu, die sich immer neu erzeugen lassen, und Composer, das Deployment (`exp:velocity deploy`), die CI und unzählige Anleitungen führen sie aus. Sie wirken weiter sofort. |
+| `velocity` und `webserver` `start`, `stop`, `graceful`, `restart`, `kill`, `status`, `watchdog run`, `ctl`, `ext`; `exp:velocity deploy` | Prozesssteuerung, die installierte systemd-Units und der Watchdog aufrufen; `deploy` behält sein eigenes `--dry-run`. |
+| `dfscleanup` | Es schreibt bereits nur mit `-D`. |
+| `resetuserpassword`, `userpasswordchangerequired` | Das Schreiben ist ihr Zweck. |
+| `updatesearchindex`, `updateniceurls`, `makestaticcache`, `ezgeneratetranslationcache`, `warm`, `preloadjob` | Sie bauen Caches und Indizes neu auf, die sich neu aufbauen lassen; die Cache-Seite, der Setup-Assistent und Cron rufen sie auf. |
+| Die einmaligen Upgrade-Konverter (`convertezenumtoezselection`, `convertprice2multiprice`, `ezconvert2isbn13`, `updateisbn13`, `ezconvertdbcharset`, `ezconvertmysqltabletype`, `ezflowupgrade`, `ezwebininstall`, `ezwebinupgrade`) | Jeder ist ein Schritt eines dokumentierten Upgrades; sie ändern sich mit diesen Schritten. |
+| Importe und Schema-Werkzeuge (`ezimportdbafile`, `ezsqlinsertschema`, `ezcsvimport`, `publish_content`, `ezcreatedeactivatedusergroup`, `flatten`, `ezsessiongc`) | Das Schreiben ist ihre Aufgabe; Installer, Admin-Seiten und Cron rufen sie auf. |
+| `ini set`, `expcontentjob`, `maintenance`, `services`, `i18n`, `solr`, `phar` | Befehle mit Unterbefehlen, die Admin-Seiten, das Deployment und Cron aufrufen; in dieser Runde nicht geändert. |
+
+| Wie prüfen | Was tun |
+|---|---|
+| Einen der Befehle ohne Optionen ausführen: Er listet, was er ändern würde, und endet mit `PASS: ... (dry run, nothing changed; --apply writes)`. | In jedem Skript, jeder Crontab-Zeile und jeder Anleitung, die einen dieser Befehle ausführt, um die Änderung vorzunehmen, `--apply` ergänzen; ein Aufruf mit `--dry-run` allein bleibt ein Probelauf. Vor allem: ein Skript, das eine Demo oder einen Test mit `exp:install`, `collaborationsampledata` oder `preload` neu aufbaut (die Beispiele im [Demomodus](../../beispiele/demomodus/README.md) übergeben `--apply` und brechen ab, wenn nichts installiert wurde), und eine Crontab-Zeile eines Betreibers, die einen Befehl direkt aufruft (der Crontab-Block einer Installation führt nur `runcronjobs.php` aus und ist nicht betroffen). Ein Skript gegen eine ältere Version ohne `--apply` ausführen: Vor dem 28. Oktober 2026 lehnen die Befehle die Option als unbekannt ab. |
 
 ## Das WebDAV-Einstiegsskript heißt index_webdav.php (29. Oktober 2026)
 

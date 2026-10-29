@@ -31,7 +31,7 @@ it may have been read ([Audit guide, 4.6 Keys](../../../../bc/6.0/audit.md#46-ke
 2. Rotate:
 
    ```bash
-   ./console exp:audit key rotate --allow-root-user
+   ./console exp:audit key rotate --apply --allow-root-user
    ```
 
    The new key becomes active; old keys stay for the archives they signed; `system.audit.key.rotate` is recorded. The
@@ -43,7 +43,7 @@ it may have been read ([Audit guide, 4.6 Keys](../../../../bc/6.0/audit.md#46-ke
 ## Check that it worked
 
 - `./console exp:audit status --allow-root-user` shows the new signing key id and fingerprint.
-- After the next checkpoint (`./console exp:audit checkpoint --allow-root-user` to make one now),
+- After the next checkpoint (`./console exp:audit checkpoint --apply --allow-root-user` to make one now),
   `./console exp:audit verify --allow-root-user` is intact.
 
 Do not remove old keys while archives signed with them remain; `exp:audit purge` names the keys still needed. The

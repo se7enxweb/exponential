@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Sozlash &gt; Cron vazifalari</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Cron vazifalarining hech bir qismi hali ishga tushmagan: vazifalar navbati, importlar, bildirishnomalar va qidiruv indeksi kutmoqda. php bin/php/installcrontab.php --add --apply buyrugʻini bajaring yoki --show chiqargan qatorlarni crontab fayliga qoʻshing.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Bu oʻrnatilma ommaviy demo: administrator parolini istalgan kishi bilishi mumkin va administrator parollarini oʻzgartirib yoki tiklab boʻlmaydi. Bu yerga shaxsiy hech narsa kiritmang.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Qurilmalaringiz</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Xavfsizlik faolligi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Kim oʻzgartirgan, tizimga kirgan yoki rad etilgan, har bir hisob boʻyicha; filtrlash va eksport qilish.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Kirishlar hisoboti</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Kim tizimga kirgan, kunlar boʻyicha kirishlar va muvaffaqiyatsizliklar; foydalanuvchini hamma joydan chiqarish.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP ishlovchisining muddati tugagan seanslarini bu sahifa yoki session_gc cron vazifasi qismi emas, PHP oʻzi olib tashlaydi (session.gc_maxlifetime).</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Barcha foydalanuvchilarning kirilgan seanslari kirishlar hisobotida koʻrsatiladi va oʻsha yerda tugatiladi; hisobot har qanday seans ishlovchisi bilan ishlaydi.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Kirishlar hisobotini ochish</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ shu xatdagi yoʻriqnomaga amal qiling.</translation>
     <message>
         <source>None yet</source>
         <translation>Hozircha yoʻq</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Xavfsizlik faolligi</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Soʻnggi kirishlaringiz, muvaffaqiyatsiz urinishlar hamda parol, elektron pochta manzili va ikki bosqichli kirishdagi oʻzgarishlar.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Ushbu hisobning soʻnggi kirishlari, muvaffaqiyatsiz urinishlari va xavfsizlik oʻzgarishlari.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Faollikni koʻrish</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Muvaffaqiyatsiz kirishlar: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ Batafsil maʼlumot uchun talablar sahifasiga qarang.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab yozilmadi (%reason). Quyidagi qatorlarni sayt ishlaydigan foydalanuvchining crontab fayliga qoʻshing, aks holda navbat, import, bildirishnomalar va qidiruv indeksi hech qachon ishlamaydi:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Qayta oʻrnatish kickstarter yordamida (%file, soʻng php bin/php/kickstarter.php run --apply) yoki yangi oʻrnatish bilan bajariladi.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Pochta transporti oxirgi ishga tushirishda %count ta xabarni rad etdi. Pochta serveri va site.ini MailSettings sozlamalarini tekshiring.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count ta hodisa kutmoqda, bildirishnomalar cron vazifasining esa birorta ham ishga tushishi qayd etilmagan. &quot;frequent&quot; cron qismini crontab fayliga qoʻshing yoki exp:notification:run --apply buyrugʻini bajaring.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>Choose another site or section with the node picker</source>
         <translation>Tugun tanlagich bilan boshqa sayt yoki boʻlimni tanlang</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Egasini faqat tizim administratori oʻzgartira oladi: ./console exp:content-check --fix-permissions --apply buyrugʻini root sifatida bajaring.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>empty</source>
         <translation>boʻsh</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Imzo kaliti bir yildan eski: uni exp:audit key rotate --apply buyrugʻi bilan almashtiring.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>not sent</source>
         <translation>yuborilmadi</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Bildirishnomalar cron vazifasi bu yerda har bir ishga tushishini qayd etadi. frequent qismini crontab fayliga qoʻshing yoki exp:notification:run --apply buyrugʻini bajaring.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Konsoldan foydalaning: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>None.</source>
         <translation>Yoʻq.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>autentifikator ilovasi bilan</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>elektron pochta orqali kelgan kod bilan</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>tiklash kodi bilan</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>kirish kaliti bilan</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>tashqi hisob bilan</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Xavfsizlik faolligi</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Tarmoq sifatida koʻrsatiladi; manzil saytning maʼlumotlarni himoya qilish sozlamalarida belgilanganidek saqlanadi.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Qayd etilmagan</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Joylashuv</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>taxminiy</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>Manage devices</source>
         <translation>Qurilmalarni boshqarish</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>autentifikator ilovasi bilan</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>elektron pochta orqali kelgan kod bilan</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>tiklash kodi bilan</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>kirish kaliti bilan</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>tashqi hisob bilan</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Xavfsizlik faolligi</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Qayd etilmagan</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Joylashuv</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>taxminiy</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>View the sessions of this user</source>
         <translation>Ushbu foydalanuvchining seanslarini koʻrish</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site saytidagi %login hisobingizga hozirgina soʻnggi paytda kirilmagan joydan kirildi:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Taxminiy joylashuv</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os da %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Kirishlar hisoboti</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>unknown</source>
         <translation>nomaʼlum</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Hisobingizni himoyalash</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site saytidagi %login hisobingizga tiklash kodi bilan kirildi.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Tiklash kodi ishlatildi</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Hisob</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Taxminiy manzil</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Qayta kirish uchun yangi parol soʻrang yoki sayt administratorlariga murojaat qiling.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Yangi parol soʻrash</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Har bir tiklash kodi faqat bir marta ishlaydi. Agar telefoningizni yoʻqotgan boʻlsangiz, autentifikator ilovasini qayta sozlang va yangi tiklash kodlarini xavfsiz joyda saqlang.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Hisobingizga muvaffaqiyatsiz kirish urinishlari</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Bundan buyon kirishda parolingizdan tashqari kod ham soʻraladi. Agar buni Siz qilgan boʻlsangiz, hech narsa qilishingiz shart emas.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Agar bu Siz boʻlsangiz va parolingizni unutgan boʻlsangiz, yangisini soʻrang. Aks holda kuchliroq parol tanlang va ikki bosqichli kirishni yoqing.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Agar bu Siz boʻlmasangiz, parolingizni kimdir bilishi mumkin: uni hozir oʻzgartiring va hisobingiz qayerlarda kirilgan holatda ekanini tekshiring.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Qolgan tiklash kodlari</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Qurilmalaringizni tekshirish</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Xavfsizlik ogohlantirishi</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Kimdir %site saytidagi %login hisobingizga notoʻgʻri parol bilan ketma-ket %count marta kirishga urindi.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site saytidagi %login hisobingizda xavfsizlik hodisasi yuz berdi.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Bu hisobingiz haqidagi xavfsizlik ogohlantirishi. U har bir shunday oʻzgarishda yuboriladi va uni oʻchirib qoʻyib boʻlmaydi.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Vaqt</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site saytidagi %login hisobingiz uchun ikki bosqichli kirish oʻchirildi.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Ikki bosqichli kirish oʻchirildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site saytidagi %login hisobingiz uchun ikki bosqichli kirish yoqildi.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Ikki bosqichli kirish yoqildi</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site saytidagi %login hisobingiz juda koʻp muvaffaqiyatsiz kirishlardan soʻng qulflandi.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Endi hisobingiz faqat parol bilan himoyalangan. Agar buni Siz qilmagan boʻlsangiz, parolingizni oʻzgartirgandan soʻng ikki bosqichli kirishni qayta yoqing.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Hisobingiz qulflandi</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Xavfsizlik faolligi</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Xavfsizlik faolligi: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Kirilgan</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Muvaffaqiyatsiz kirish urinishi</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Chiqilgan</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Seanslar tugatildi</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Yangi qurilmadan kirish</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Yangi joydan kirish</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Shaxs tasdiqlandi (&quot;Oʻzingizni tasdiqlang&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Shaxsni tekshirish muvaffaqiyatsiz tugadi</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Kirish kaliti bilan kirildi</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Kirish kaliti bilan kirish muvaffaqiyatsiz tugadi</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Kirish rad etildi: ikki bosqichli kirish kodi yoʻq yoki notoʻgʻri</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Ikki bosqichli kirishning notoʻgʻri kodi</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Hisob muvaffaqiyatsiz kirishlardan soʻng qulflandi</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Hisob qulfdan chiqarildi</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Parol oʻzgartirildi</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Parolni oʻzgartirish muvaffaqiyatsiz tugadi</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Parol tiklandi</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Yangi parol soʻraldi</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Elektron pochta manzili oʻzgartirildi</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Foydalanuvchi nomi oʻzgartirildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Ikki bosqichli kirish yoqildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Ikki bosqichli kirish oʻchirildi</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Tiklash kodi ishlatildi</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Yangi tiklash kodlari</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Ilova paroli yaratildi</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Ilova paroli bekor qilindi</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Kirish kaliti qoʻshildi</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Kirish kaliti olib tashlandi</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Hisob yoqildi</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Hisob oʻchirib qoʻyildi</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hammasi</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Kirishlar va seanslar</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Hisobdagi oʻzgarishlar</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Eʼtibor talab qiladi</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>Siz tomoningizdan</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>foydalanuvchi tomonidan</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>foydalanuvchi tomonidan: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Usul</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Brauzer</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Operatsion tizim</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Qurilma</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Joy</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Mamlakat</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Seanslar</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Qaysilari</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanal</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Muvaffaqiyatsiz urinishlar</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Qolgan kodlar</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Kirish ishlovchisi</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Xavfsizlik faolligi</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Xavfsizlik faolligi: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Hisobingizga kirishlar va uning xavfsizligidagi oʻzgarishlar. Agar Siz qilmagan biror narsani koʻrsangiz, parolingizni oʻzgartiring va tanimagan qurilmalaringizni chiqarib yuboring.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Ushbu hisobga kirishlar va uning xavfsizligidagi oʻzgarishlar.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Qurilmalaringiz</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Parolni oʻzgartirish</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Hisobga qaytish</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Xavfsizlik faolligi qayd etilmaydi</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>U foydalanuvchilar audit jurnalidan oʻqiladi, uning expuser_audit jadvali esa mavjud emas yoki ushbu maʼlumotlar bazasida qoʻllab-quvvatlanmaydi. php update/common/scripts/6.0/createuseraudittable.php buyrugʻini yoki 6.0.15 maʼlumotlar bazasi yangilanishini bajaring.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Soʻnggi %days kun</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Soʻnggi %days kundagi kirishlar</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Soʻnggi xavfsizlik faolligi</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Koʻrsatish</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>muvaffaqiyatsiz</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>rad etildi</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Hozircha xavfsizlik faolligi qayd etilmagan.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Xavfsizlik hodisalari %days kun saqlanadi.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Xavfsizlik hodisalari administrator ularni olib tashlaguncha saqlanadi.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Kirishlarim haqidagi maʼlumotlarni yuklab olish</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Seanslaringiz va xavfsizlik hodisalari JSON fayli sifatida.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Kirilgan</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Muvaffaqiyatsiz kirish urinishi</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Chiqilgan</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Seanslar tugatildi</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Yangi qurilmadan kirish</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Yangi joydan kirish</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Shaxs tasdiqlandi (&quot;Oʻzingizni tasdiqlang&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Shaxsni tekshirish muvaffaqiyatsiz tugadi</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Kirish kaliti bilan kirildi</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Kirish kaliti bilan kirish muvaffaqiyatsiz tugadi</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Kirish rad etildi: ikki bosqichli kirish kodi yoʻq yoki notoʻgʻri</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Ikki bosqichli kirishning notoʻgʻri kodi</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Hisob muvaffaqiyatsiz kirishlardan soʻng qulflandi</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Hisob qulfdan chiqarildi</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Parol oʻzgartirildi</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Parolni oʻzgartirish muvaffaqiyatsiz tugadi</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Parol tiklandi</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Yangi parol soʻraldi</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Elektron pochta manzili oʻzgartirildi</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Foydalanuvchi nomi oʻzgartirildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Ikki bosqichli kirish yoqildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Ikki bosqichli kirish oʻchirildi</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Tiklash kodi ishlatildi</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Yangi tiklash kodlari</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Ilova paroli yaratildi</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Ilova paroli bekor qilindi</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Kirish kaliti qoʻshildi</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Kirish kaliti olib tashlandi</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Hisob yoqildi</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Hisob oʻchirib qoʻyildi</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hammasi</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Kirishlar va seanslar</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Hisobdagi oʻzgarishlar</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Eʼtibor talab qiladi</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Xavfsizlik faolligi</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Xavfsizlik faolligi: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Hisobingizga kirishlar va uning xavfsizligidagi oʻzgarishlar. Agar Siz qilmagan biror narsani koʻrsangiz, parolingizni oʻzgartiring va tanimagan qurilmalaringizni chiqarib yuboring.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Qurilmalaringiz</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Parolni oʻzgartirish</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Bu saytda xavfsizlik faolligi hali qayd etilmaydi.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Soʻnggi %days kundagi kirishlar</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Muvaffaqiyatsiz urinishlar</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Hozircha xavfsizlik faolligi qayd etilmagan.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Kirishlarim haqidagi maʼlumotlarni yuklab olish</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Seanslaringiz va xavfsizlik hodisalari JSON fayli sifatida.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Parol</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Parol va ikki bosqichli kirish kodi</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST interfeysi</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP interfeysi</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Yagona kirish</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Seanslar qayd etila boshlashidan oldin kirilgan</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Kirishlar hisoboti</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Saytga kim kirgan, hisoblar qanchalik tez-tez kiradi va kira olmaydi, shuningdek foydalanuvchini hamma joydan chiqarish. Har qanday seans ishlovchisi bilan ishlaydi.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Seans tugatildi. Qurilma qayta kirishi kerak.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login foydalanuvchisi %count ta seansdan chiqarildi.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login foydalanuvchisining faol seansi yoʻq edi.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Bunday ID, foydalanuvchi nomi yoki elektron pochta manziliga ega hisob yoʻq.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Bu Siz foydalanayotgan seans. Uni tugatish uchun tizimdan chiqing.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Bu seans allaqachon tugagan edi.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sahifa muddati oʻtgan edi. Hech narsa oʻzgartirilmadi; iltimos, qayta urinib koʻring.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Bu saytda seanslar qayd etilmaydi (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session jadvali mavjud emas</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>U yaratilgach, seanslar qayd etila boshlaydi: php update/common/scripts/6.0/createusersessiontable.php yoki 6.0.15 maʼlumotlar bazasi yangilanishi.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Hozir va bugun</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Faol seanslar</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Kirgan foydalanuvchilar</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Bugungi kirishlar</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Bugungi muvaffaqiyatsiz urinishlar</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Foydalanuvchini hamma joydan chiqarish</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Hisobning har bir seansi keyingi soʻrovda tugaydi, &quot;Meni eslab qol&quot; orqali saqlanganlari ham. Hisob begona qoʻlga tushgan boʻlishi mumkin boʻlsa, bundan foydalaning; soʻng uning parolini tiklang.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Foydalanuvchi ID, foydalanuvchi nomi yoki elektron pochta manzili</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Hamma joydan chiqish</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Hozir kirgan</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Eng soʻnggi foydalanilgan %limit tasi koʻrsatilgan.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Foydalanuvchi</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Qurilma</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Manzil</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Kirilgan</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Oxirgi faollik</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Amallar</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ushbu qurilma</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Qayd etilmagan</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Chiqish</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Kirilgan seans yoʻq.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Soʻnggi %days kun</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Kirishlar va muvaffaqiyatsiz urinishlar foydalanuvchilar audit jurnalidan sanaladi, u esa mavjud emas; yangi seanslar sanaladi.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Kun</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Kirishlar</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Muvaffaqiyatsiz urinishlar</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Yangi seanslar</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Seans ishlovchisi: %handler. Seanslar expuser_session jadvalidan oʻqiladi, shuning uchun hisobot har qanday ishlovchi bilan ishlaydi.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Hisobingiz uchun xavfsizlik ogohlantirishi</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>%login hisobingizda xavfsizlik hodisasi yuz berdi: %event. Agar bu Siz boʻlmasangiz, hisobingizni %url manzilida himoyalang.</translation>
     </message>
 </context>
 </TS>

@@ -29,7 +29,7 @@ Diese Aufgabe richtet sich an Administratoren. Hintergrund:
 4. Machen Sie sie sichtbar: Fügen Sie die Locale der `SiteLanguageList[]` eines Siteaccess hinzu oder legen Sie einen
    Siteaccess für sie an (siehe „Einer Sprache eine eigene Adresse geben“).
 5. Leeren Sie die Caches: `php bin/php/ezcache.php --clear-tag=ini,content`, und mit Velocity
-   `./console exp:velocity cache clear`.
+   `./console exp:velocity cache clear --apply`.
 6. Geben Sie Übersetzern eine Rolle, die auf die Sprache eingeschränkt ist (siehe „Einen Übersetzer auf eine Sprache
    beschränken“).
 

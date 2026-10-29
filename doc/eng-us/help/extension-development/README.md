@@ -36,7 +36,7 @@ PHP 8.0 and later. For an extension developer that changes three things:
   `./console exp:velocity start` after `[ServerSettings] Engine=qbix`.
 - **Workers keep your code loaded.** A changed class or setting reaches the site after
   `./console exp:velocity deploy` (or `restart`), which regenerates the autoloads, clears the caches and restarts the
-  workers in the right order; `./console exp:velocity cache clear` empties the response cache. Write code that keeps
+  workers in the right order; `./console exp:velocity cache clear --apply` empties the response cache. Write code that keeps
   no per-request state in statics or globals, so it behaves the same under persistent workers and under PHP-FPM.
 - **More is in the box.** The RAD tools write a working extension in minutes, and Velocity adds WebSockets and
   Server-Sent Events, a scheduler and a response cache without another package. Exponential is one working stack

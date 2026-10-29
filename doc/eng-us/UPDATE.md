@@ -175,12 +175,12 @@ Then make the running PHP processes load the new code, and clear the caches in f
 systemctl reload <your-php-fpm-service>                     # Apache or nginx with PHP-FPM
 ./console exp:velocity deploy --dry-run --allow-root-user    # Velocity: shows every step
 ./console exp:velocity deploy --allow-root-user              # Velocity: autoloads, caches, reload, restart, in order
-./console exp:velocity cache clear --allow-root-user         # Velocity's response cache
+./console exp:velocity cache clear --apply --allow-root-user         # Velocity's response cache
 ```
 
 Clear the content view cache **after** the reload (`php bin/php/ezcache.php --clear-tag=content --allow-root-user`):
 a page rendered by the old code between a clear and the reload would be cached again. After an update, rebuild the
-manuals of the help as well: `./console exp:help:content build-manuals -s admin --release`.
+manuals of the help as well: `./console exp:help:content build-manuals --apply -s admin --release`.
 
 ## 7. Verify the update
 
@@ -217,7 +217,7 @@ next version, so the way forward after a rollback is the next release, not a pat
 |---|---|
 | A white page after the code change | `var/log/error.log`; run step 6 again; `vendor/` must match `composer.lock` (`composer install`) |
 | `Class ... not found` | `php bin/php/ezpgenerateautoloads.php -e`, then `php bin/php/ezcache.php --clear-all --allow-root-user` |
-| A change does not show under Velocity | `./console exp:velocity restart --allow-root-user`, then `./console exp:velocity cache clear --allow-root-user` |
+| A change does not show under Velocity | `./console exp:velocity restart --allow-root-user`, then `./console exp:velocity cache clear --apply --allow-root-user` |
 | A SQL file failed half way | restore the backup of step 2 and apply the file again from the start |
 | Libraries missing after a failed Composer run | [Repairing an installation](bc/6.0/repair.md) |
 

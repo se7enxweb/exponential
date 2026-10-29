@@ -51,7 +51,7 @@ The three changes most sites must act on:
 | The kickstarter and the setup wizard default to SQLite. | `kickstart.ini [database_choice] Type` | Name your engine explicitly. |
 | Kickstart no longer ends with a guessable administrator password. | `var/log/initial-admin-password` | Read it once after the install and delete the file. |
 | `DatabaseImplementation` is taken from the live `site.ini`, not from `Type`. | `settings/override/site.ini.append.php` | When you install onto another engine set it first (see [install page](../../features/6.0/install-in-one-command.md)). |
-| `./console exp:install` installs in one command. | `exp:install --help` | New; nothing to migrate. |
+| `./console exp:install --apply` installs in one command. | `exp:install --help` | New; nothing to migrate. |
 | Maintenance mode wraps installations. | `var/maintenance.json` | If a run failed, end it with `php bin/php/maintenance.php off`. See [maintenance mode](../../features/6.0/maintenance-mode.md). |
 | A default installation converts images with GD first. | `image.ini [ImageConverterSettings] ImageConverters[]` (shipped order `GD`, `ImageMagick`) | Put ImageMagick first in `settings/override/image.ini.append.php` if you need its filters. |
 | New installations start with the folders Configuration and Archives and class group Configuration; Setup has the alias `x-setup`. | seed data | Existing installations are not touched. See [seed data](../../specifications/6.0/installer-logs-and-seed-data.md). |

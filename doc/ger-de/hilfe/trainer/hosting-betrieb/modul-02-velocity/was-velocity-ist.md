@@ -107,7 +107,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation. Führen Sie jeden Befehl im Wur
    ```
 
 4. Wenn die Engine nicht `qbix` ist, setzen Sie sie:
-   `php bin/php/console exp:velocity config set ServerSettings Engine qbix`.
+   `php bin/php/console exp:velocity config set --apply ServerSettings Engine qbix`.
 5. Zeigen Sie, welche Datei geschrieben wurde: `php bin/php/console exp:velocity config paths`.
 6. Starten Sie den Server: `php bin/php/console exp:velocity start`.
 7. Lesen Sie den Status: `php bin/php/console exp:velocity status`. Notieren Sie die Adresse der Website, die Adresse der

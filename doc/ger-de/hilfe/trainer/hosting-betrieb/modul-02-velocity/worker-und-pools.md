@@ -100,8 +100,8 @@ Verwenden Sie Ihre eigene Schulungsinstallation, ausgeliefert von Velocity mit d
 3. Stellen Sie einen kleinen dynamischen Pool ein:
 
    ```bash
-   php bin/php/console exp:velocity config set ServerSettings Workers 8
-   php bin/php/console exp:velocity config set ServerSettings SpareWorkers 2
+   php bin/php/console exp:velocity config set --apply ServerSettings Workers 8
+   php bin/php/console exp:velocity config set --apply ServerSettings SpareWorkers 2
    ```
 
 4. Starten Sie neu: `php bin/php/console exp:velocity restart`.

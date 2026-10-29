@@ -469,14 +469,14 @@ Other tools that help after an upgrade:
 | `php bin/php/ezsqldiff.php --type=mysql --user=USER --password=PASS share/db_schema.dba <database>` | compare your database with the reference schema, which goes **first**. The output is the SQL that would turn the second argument (your database) into the first (the reference): a `CREATE TABLE` or `ADD` line names something an update step should have made, a `DROP TABLE` line a table only your database has (your own extensions' tables appear that way). Read it, do not run it. Exit code 0 when the schemas match, 1 when they differ (`--type` is `mysql` or `postgresql`). Chapters 14 to 16 use it the same way |
 | `php bin/php/updateniceurls.php` | rebuild the URL aliases (`--update-nodes`) |
 | `php bin/php/updatesearchindex.php` | reindex all content in the search engine |
-| `php bin/php/cleanupversions.php` | remove archived versions beyond the `VersionManagement` limits |
+| `php bin/php/cleanupversions.php --apply` | remove archived versions beyond the `VersionManagement` limits |
 
 Last, clear the content cache and, under Velocity, its response cache, **after** the PHP-FPM reload or Velocity
 restart, so that a page rendered by the old code is not served again:
 
 ```bash
 php bin/php/ezcache.php --clear-tag=content
-php bin/php/console exp:velocity cache clear
+php bin/php/console exp:velocity cache clear --apply
 ```
 
 ## 11.8 If something goes wrong

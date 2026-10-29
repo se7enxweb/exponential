@@ -155,8 +155,8 @@ warten die freigegebenen Artikel ewig.
 
 ```bash
 ./console exp:collaborationsampledata --dry-run --allow-root-user   # what it would create; nothing is written
-./console exp:collaborationsampledata --allow-root-user             # create it
-./console exp:collaborationsampledata --remove --allow-root-user    # remove all of it again
+./console exp:collaborationsampledata --apply --allow-root-user             # create it
+./console exp:collaborationsampledata --apply --remove --allow-root-user    # remove all of it again
 ```
 
 Der Befehl legt den Workflow *Approval (sample)* auf `content/publish/before` an, dazu Beispiel-Redakteure und
@@ -426,8 +426,8 @@ php runcronjobs.php -s <siteaccess> --script=workflow.php
 
 # the sample approvals: show, create, remove
 ./console exp:collaborationsampledata --dry-run --allow-root-user
-./console exp:collaborationsampledata --allow-root-user
-./console exp:collaborationsampledata --remove --allow-root-user
+./console exp:collaborationsampledata --apply --allow-root-user
+./console exp:collaborationsampledata --apply --remove --allow-root-user
 ```
 
 Die Cronjob-Seite zeigt jeden dieser Befehle mit dem Pfad und dem PHP Ihrer Installation und mit einer Schaltfläche

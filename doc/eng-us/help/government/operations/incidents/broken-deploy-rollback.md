@@ -38,7 +38,7 @@ Many "broken deploys" are an incomplete deploy, fixed in a minute:
 |---|---|
 | `Class ... not found` | `php bin/php/ezpgenerateautoloads.php -e`, then clear caches |
 | Old behavior still visible | PHP-FPM or Velocity still run the old code: `./console exp:velocity deploy --allow-root-user` (reloads the right PHP-FPM and restarts Velocity in order) |
-| Pages look old after a template change | `./console exp:cache clear --id=template --allow-root-user` and `./console exp:velocity cache clear --allow-root-user` |
+| Pages look old after a template change | `./console exp:cache clear --id=template --allow-root-user` and `./console exp:velocity cache clear --apply --allow-root-user` |
 | A new setting has no effect | `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`, then reload |
 
 ## Roll back code and settings

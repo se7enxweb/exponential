@@ -115,7 +115,7 @@ database and expired rows are not removed. Old versions are pruned with `bin/php
 
 | Need | Use |
 |---|---|
-| Remove old versions | `php bin/php/cleanupversions.php` |
+| Remove old versions | `php bin/php/cleanupversions.php --apply` |
 | Rebuild URL aliases | `php bin/php/updateniceurls.php`, `exp:verify_aliases` |
 | Rebuild the search index | `php bin/php/updatesearchindex.php --clean` |
 | Remove expired sessions | `php bin/php/ezsessiongc.php` |

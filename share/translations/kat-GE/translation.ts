@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>კონფიგურაცია &gt; cron-ის დავალებები</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>cronjob-ის არცერთი ნაწილი ჯერ არ გაშვებულა: ამოცანების რიგი, იმპორტები, შეტყობინებები და ძიების ინდექსი ელოდება. გაუშვით php bin/php/installcrontab.php --add --apply ან დაამატეთ --show-ის ხაზები crontab-ში.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>ეს ინსტალაცია საჯარო დემოა: მისი ადმინისტრატორის პაროლი ნებისმიერმა შეიძლება იცოდეს, ხოლო ადმინისტრატორის პაროლების შეცვლა ან აღდგენა შეუძლებელია. აქ არაფერი პირადი არ შეიყვანოთ.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>თქვენი მოწყობილობები</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>უსაფრთხოების აქტივობა</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>ვინ შეცვალა, შევიდა სისტემაში ან ვის ეთქვა უარი, ანგარიშების მიხედვით; ფილტრაცია და ექსპორტი.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>შესვლების ანგარიში</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>ვინ არის შესული, შესვლები და წარუმატებლობები დღეების მიხედვით; მომხმარებლის გაყვანა ყველგან.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP-ის დამმუშავებლის ვადაგასულ სესიებს თავად PHP აცილებს (session.gc_maxlifetime) და არა ეს გვერდი ან cronjob-ის ნაწილი session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>ყველა მომხმარებლის აქტიური სესიები ჩამოთვლილია შესვლების ანგარიშში, სადაც მათი დასრულებაც შეიძლება; ანგარიში მუშაობს სესიების ნებისმიერ დამმუშავებელთან.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>შესვლების ანგარიშის გახსნა</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>ჯერ არცერთი</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>უსაფრთხოების აქტივობა</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>თქვენი ბოლო შესვლები, წარუმატებელი მცდელობები და თქვენი პაროლის, ელფოსტის მისამართისა და ორსაფეხურიანი შესვლის ცვლილებები.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>ამ ანგარიშის ბოლო შესვლები, წარუმატებელი მცდელობები და უსაფრთხოების ცვლილებები.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>აქტივობის განხილვა</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>წარუმატებელი შესვლები: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab არ ჩაიწერა (%reason). დაამატეთ ეს ხაზები იმ მომხმარებლის crontab-ში, რომლის სახელითაც საიტი მუშაობს, წინააღმდეგ შემთხვევაში რიგი, იმპორტები, შეტყობინებები და საძიებო ინდექსი არასოდეს გაეშვება:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>ხელახალი ინსტალაცია ხდება Kickstarter-ით (%file, შემდეგ php bin/php/kickstarter.php run --apply) ან ახალი ინსტალაციით.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>ბოლო გაშვებისას ფოსტის ტრანსპორტმა უარყო %count შეტყობინება. შეამოწმეთ ფოსტის სერვერი და site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>მოლოდინშია %count მოვლენა და შეტყობინებების cronjob-ის არცერთი გაშვება არ არის ჩაწერილი. დაამატეთ cronjob-ის ნაწილი „frequent“ crontab-ში ან გაუშვით exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>სხვა საიტის ან სექციის არჩევა კვანძის ამრჩევით</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>მფლობელის შეცვლა მხოლოდ სისტემის ადმინისტრატორს შეუძლია: გაუშვით ./console exp:content-check --fix-permissions --apply root-ის სახელით.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>ცარიელი</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>ხელმოწერის გასაღები ერთ წელზე ძველია: შეცვალეთ ის ბრძანებით exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>არ გაიგზავნა</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>შეტყობინებების cronjob აქ აღრიცხავს თავის ყოველ გაშვებას. დაამატეთ ნაწილი frequent crontab-ში ან გაუშვით exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>გამოიყენეთ კონსოლი: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>არცერთი.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ავთენტიფიკატორის აპლიკაციით</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ელფოსტით მიღებული კოდით</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>აღდგენის კოდით</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>წვდომის გასაღებით</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>გარე ანგარიშით</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>უსაფრთხოების აქტივობა</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>ნაჩვენებია მისი ქსელის სახით; მისამართი ინახება ისე, როგორც ამას საიტის მონაცემთა დაცვის პარამეტრები ითვალისწინებს.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>არ არის ჩაწერილი</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ადგილი</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>მიახლოებითი</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>მოწყობილობების მართვა</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ავთენტიფიკატორის აპლიკაციით</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ელფოსტით მიღებული კოდით</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>აღდგენის კოდით</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>წვდომის გასაღებით</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>გარე ანგარიშით</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>უსაფრთხოების აქტივობა</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>არ არის ჩაწერილი</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ადგილი</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>მიახლოებითი</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>ამ მომხმარებლის სესიების ნახვა</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>თქვენი ანგარიშით %login საიტზე %site ახლახან შევიდნენ ისეთი ადგილიდან, საიდანაც ბოლო დროს შესვლა არ ყოფილა:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>მიახლოებითი ადგილი</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser (%os)</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>შესვლების ანგარიში</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>უცნობი</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>დაიცავით თქვენი ანგარიში</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>თქვენს ანგარიშში %login საიტზე %site შესასვლელად გამოყენებულ იქნა აღდგენის კოდი.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>გამოყენებულ იქნა აღდგენის კოდი</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ანგარიში</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>მიახლოებითი მისამართი</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>ხელახლა შესასვლელად მოითხოვეთ ახალი პაროლი ან დაუკავშირდით საიტის ადმინისტრატორებს.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>ახალი პაროლის მოთხოვნა</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>თითოეული აღდგენის კოდი მხოლოდ ერთხელ მუშაობს. თუ ტელეფონი დაკარგეთ, ხელახლა დააყენეთ ავთენტიფიკატორის აპლიკაცია და ახალი აღდგენის კოდები უსაფრთხო ადგილას შეინახეთ.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>თქვენს ანგარიშში შესვლის წარუმატებელი მცდელობები</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>ამიერიდან შესვლისას პაროლის გარდა კოდიც მოითხოვება. თუ ეს თქვენ გააკეთეთ, არაფრის გაკეთება არ გჭირდებათ.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>თუ ეს თქვენ იყავით და პაროლი დაგავიწყდათ, მოითხოვეთ ახალი. თუ არა, აირჩიეთ უფრო ძლიერი პაროლი და ჩართეთ ორსაფეხურიანი შესვლა.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>თუ ეს თქვენ არ იყავით, შესაძლოა ვინმემ თქვენი პაროლი იცის: შეცვალეთ ის ახლავე და შეამოწმეთ, სად არის თქვენი ანგარიში შესული.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>დარჩენილი აღდგენის კოდები</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>თქვენი მოწყობილობების განხილვა</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>უსაფრთხოების გაფრთხილება</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>ვიღაც ცდილობდა თქვენს ანგარიშში %login საიტზე %site შესვლას არასწორი პაროლით, ზედიზედ %count მცდელობით.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>თქვენს ანგარიშში %login საიტზე %site მოხდა უსაფრთხოების მოვლენა.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>ეს არის უსაფრთხოების გაფრთხილება თქვენი ანგარიშის შესახებ. ის იგზავნება ყოველი ასეთი ცვლილებისას და მისი გამორთვა შეუძლებელია.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>დრო</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>თქვენი ანგარიშისთვის %login საიტზე %site ორსაფეხურიანი შესვლა გამოირთო.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>ორსაფეხურიანი შესვლა გამოირთო</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>თქვენი ანგარიშისთვის %login საიტზე %site ორსაფეხურიანი შესვლა ჩაირთო.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>ორსაფეხურიანი შესვლა ჩაირთო</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>თქვენი ანგარიში %login საიტზე %site დაიბლოკა შესვლის ზედმეტად ბევრი წარუმატებელი მცდელობის შემდეგ.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>თქვენი ანგარიში ახლა მხოლოდ პაროლით არის დაცული. თუ ეს თქვენ არ გაგიკეთებიათ, პაროლის შეცვლის შემდეგ ხელახლა ჩართეთ ორსაფეხურიანი შესვლა.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>თქვენი ანგარიში დაიბლოკა</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>უსაფრთხოების აქტივობა</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>უსაფრთხოების აქტივობა: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>შევიდა</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>შესვლის წარუმატებელი მცდელობა</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>გავიდა</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>სესიები დასრულდა</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>შესვლა ახალი მოწყობილობიდან</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>შესვლა ახალი ადგილიდან</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ვინაობა დადასტურდა („დაადასტურეთ, რომ ეს თქვენ ხართ“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ვინაობის შემოწმება ვერ მოხერხდა</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>შევიდა წვდომის გასაღებით</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>წვდომის გასაღებით შესვლა ვერ მოხერხდა</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>შესვლა უარყოფილია: ორსაფეხურიანი შესვლის კოდი აკლია ან არასწორია</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>ორსაფეხურიანი შესვლის არასწორი კოდი</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ანგარიში დაიბლოკა წარუმატებელი შესვლების შემდეგ</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ანგარიში განიბლოკა</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>პაროლი შეიცვალა</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>პაროლის შეცვლა ვერ მოხერხდა</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>პაროლი ჩამოიყარა</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>მოთხოვნილია ახალი პაროლი</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ელფოსტის მისამართი შეიცვალა</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>მომხმარებლის სახელი შეიცვალა</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ორსაფეხურიანი შესვლა ჩაირთო</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ორსაფეხურიანი შესვლა გამოირთო</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>გამოყენებულია აღდგენის კოდი</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>ახალი აღდგენის კოდები</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>აპლიკაციის პაროლი შექმნილია</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>აპლიკაციის პაროლი გაუქმებულია</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>წვდომის გასაღები დაემატა</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>წვდომის გასაღები მოცილდა</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ანგარიში ჩაირთო</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ანგარიში გამოირთო</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ყველა</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>შესვლები და სესიები</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ანგარიშის ცვლილებები</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>საჭიროებს ყურადღებას</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>თქვენ მიერ</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>მომხმარებლის მიერ</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>შემსრულებელი: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>მეთოდი</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>ბრაუზერი</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>ოპერაციული სისტემა</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>მოწყობილობა</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>ადგილი</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>ქვეყანა</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>სესიები</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>რომელი</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>არხი</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>წარუმატებელი მცდელობები</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>დარჩენილი კოდები</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>შესვლის დამმუშავებელი</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>უსაფრთხოების აქტივობა</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>უსაფრთხოების აქტივობა: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>შესვლები და ცვლილებები თქვენი ანგარიშის უსაფრთხოებაში. თუ ხედავთ რამეს, რაც თქვენ არ გაგიკეთებიათ, შეცვალეთ პაროლი და გაიყვანეთ ის მოწყობილობები, რომლებსაც ვერ ცნობთ.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>შესვლები და ცვლილებები ამ ანგარიშის უსაფრთხოებაში.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>თქვენი მოწყობილობები</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>პაროლის შეცვლა</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>ანგარიშზე დაბრუნება</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>უსაფრთხოების აქტივობა არ იწერება</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>ის იკითხება მომხმარებლების აუდიტის ჟურნალიდან, რომლის ცხრილი expuser_audit არ არსებობს ან ამ მონაცემთა ბაზაში არ არის მხარდაჭერილი. გაუშვით php update/common/scripts/6.0/createuseraudittable.php ან 6.0.15 ვერსიის მონაცემთა ბაზის განახლება.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>ბოლო %days დღე</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>შესვლები ბოლო %days დღის განმავლობაში</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>უსაფრთხოების ბოლო აქტივობა</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ჩვენება</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>წარუმატებელი</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>უარყოფილი</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>უსაფრთხოების აქტივობა ჯერ არ ჩაწერილა.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>უსაფრთხოების მოვლენები ინახება %days დღე.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>უსაფრთხოების მოვლენები ინახება მანამ, სანამ ადმინისტრატორი არ წაშლის მათ.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ჩემი შესვლის მონაცემების ჩამოტვირთვა</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>თქვენი სესიები და უსაფრთხოების მოვლენები JSON ფაილის სახით.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>შევიდა</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>შესვლის წარუმატებელი მცდელობა</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>გავიდა</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>სესიები დასრულდა</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>შესვლა ახალი მოწყობილობიდან</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>შესვლა ახალი ადგილიდან</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ვინაობა დადასტურდა („დაადასტურეთ, რომ ეს თქვენ ხართ“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ვინაობის შემოწმება ვერ მოხერხდა</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>შევიდა წვდომის გასაღებით</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>წვდომის გასაღებით შესვლა ვერ მოხერხდა</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>შესვლა უარყოფილია: ორსაფეხურიანი შესვლის კოდი აკლია ან არასწორია</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>ორსაფეხურიანი შესვლის არასწორი კოდი</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ანგარიში დაიბლოკა წარუმატებელი შესვლების შემდეგ</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ანგარიში განიბლოკა</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>პაროლი შეიცვალა</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>პაროლის შეცვლა ვერ მოხერხდა</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>პაროლი ჩამოიყარა</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>მოთხოვნილია ახალი პაროლი</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ელფოსტის მისამართი შეიცვალა</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>მომხმარებლის სახელი შეიცვალა</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ორსაფეხურიანი შესვლა ჩაირთო</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ორსაფეხურიანი შესვლა გამოირთო</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>გამოყენებულია აღდგენის კოდი</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>ახალი აღდგენის კოდები</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>აპლიკაციის პაროლი შექმნილია</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>აპლიკაციის პაროლი გაუქმებულია</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>წვდომის გასაღები დაემატა</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>წვდომის გასაღები მოცილდა</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ანგარიში ჩაირთო</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ანგარიში გამოირთო</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ყველა</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>შესვლები და სესიები</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ანგარიშის ცვლილებები</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>საჭიროებს ყურადღებას</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>უსაფრთხოების აქტივობა</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>უსაფრთხოების აქტივობა: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>შესვლები და ცვლილებები თქვენი ანგარიშის უსაფრთხოებაში. თუ ხედავთ რამეს, რაც თქვენ არ გაგიკეთებიათ, შეცვალეთ პაროლი და გაიყვანეთ ის მოწყობილობები, რომლებსაც ვერ ცნობთ.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>თქვენი მოწყობილობები</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>პაროლის შეცვლა</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>ამ საიტზე უსაფრთხოების აქტივობა ჯერ არ იწერება.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>შესვლები ბოლო %days დღის განმავლობაში</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>წარუმატებელი მცდელობები</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>უსაფრთხოების აქტივობა ჯერ არ ჩაწერილა.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ჩემი შესვლის მონაცემების ჩამოტვირთვა</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>თქვენი სესიები და უსაფრთხოების მოვლენები JSON ფაილის სახით.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>პაროლი</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>პაროლი და ორსაფეხურიანი შესვლის კოდი</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ინტერფეისი</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ინტერფეისი</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ერთჯერადი შესვლა (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>შევიდა სესიების აღრიცხვის დაწყებამდე</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>შესვლების ანგარიში</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>ვინ არის შესული საიტზე, რამდენად ხშირად შედიან ანგარიშები და რამდენად ხშირად ვერ ახერხებენ ამას, და მომხმარებლის გაყვანა ყველგან. მუშაობს სესიების ნებისმიერ დამმუშავებელთან.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>სესია დასრულდა. მოწყობილობამ ხელახლა უნდა გაიაროს შესვლა.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>მომხმარებელი %login გაყვანილ იქნა სესიებიდან, რაოდენობა: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>მომხმარებელს %login არ ჰქონდა აქტიური სესია.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>ამ ID-ით, მომხმარებლის სახელით ან ელფოსტის მისამართით ანგარიში არ არსებობს.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ეს არის სესია, რომელსაც თქვენ იყენებთ. მის დასასრულებლად გადით სისტემიდან.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ეს სესია უკვე დასრულებული იყო.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>გვერდის ვადა ამოიწურა. არაფერი შეცვლილა; გთხოვთ, სცადოთ ხელახლა.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ამ საიტზე სესიები არ იწერება (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>ცხრილი expuser_session არ არსებობს</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>სესიები ჩაიწერება, როგორც კი ის შეიქმნება: php update/common/scripts/6.0/createusersessiontable.php ან 6.0.15 ვერსიის მონაცემთა ბაზის განახლება.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>ახლა და დღეს</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>აქტიური სესიები</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>შესული მომხმარებლები</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>დღევანდელი შესვლები</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>დღევანდელი წარუმატებელი მცდელობები</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>მომხმარებლის გაყვანა ყველგან</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>ანგარიშის ყოველი სესია დასრულდება მისი შემდეგი მოთხოვნისას, მათ შორის „დამიმახსოვრე“-ით შენარჩუნებულიც. გამოიყენეთ, როცა ანგარიში შესაძლოა სხვის ხელში იყოს; შემდეგ ჩამოყარეთ მისი პაროლი.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>მომხმარებლის ID, მომხმარებლის სახელი ან ელფოსტის მისამართი</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ყველგან გასვლა</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ახლა შესული</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>ნაჩვენებია ბოლოს გამოყენებული %limit სესია.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>მომხმარებელი</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>მოწყობილობა</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>მისამართი</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>შევიდა</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>ბოლო აქტივობა</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>მოქმედებები</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ეს მოწყობილობა</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>არ არის ჩაწერილი</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>გასვლა</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>შესული სესია არ არის.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>ბოლო %days დღე</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>შესვლები და წარუმატებელი მცდელობები ითვლება მომხმარებლების აუდიტის ჟურნალიდან, რომელიც არ არსებობს; ახალი სესიები კი ითვლება.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>დღე</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>შესვლები</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>წარუმატებელი მცდელობები</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>ახალი სესიები</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>სესიების დამმუშავებელი: %handler. სესიები იკითხება ცხრილიდან expuser_session, ამიტომ ანგარიში მუშაობს ნებისმიერ დამმუშავებელთან.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>უსაფრთხოების გაფრთხილება თქვენი ანგარიშისთვის</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>თქვენს ანგარიშში %login მოხდა უსაფრთხოების მოვლენა: %event. თუ ეს თქვენ არ იყავით, დაიცავით თქვენი ანგარიში მისამართზე: %url.</translation>
     </message>
 </context>
 </TS>
