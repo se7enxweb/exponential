@@ -235,11 +235,15 @@ A clear, single notice protects that window:
 Exponential is written by many people. Their contributions reach the kernel in two ways:
 
 - **Code contributions to the kernel** (the repository se7enxweb/exponential) are merged after the author has signed
-  the **Contributor Licensing Agreement (CLA)**. It assigns the copyright in the contribution to the **Exponential
-  Foundation and 7x**, which become its owners, the Foundation named first as in the notice (owner decision of
-  29 October 2026; until then the agreement, version 1.0.1, assigned it to 7x alone). The two holders of the notice
-  are thereby also the holders of every merged contribution. The agreement form on the CLA page is being updated to
-  this assignment; read it before you sign: [The CLA explained](community/contributing/the-cla-explained.md),
+  the **Exponential Foundation and 7x Contributor Licensing Agreement**, version 1.1.0 (*Exponential Foundation and 7x CLA v1.1.0.pdf* on the CLA page). It
+  assigns the copyright in the contribution to the **Exponential Foundation and 7x** jointly (section 4.1), which
+  become its owners, the Foundation named first as in the notice. The two holders of the notice are thereby also the
+  holders of every merged contribution. Version 1.1.0 (29 October 2026) is the first assignment: the earlier
+  version 1.0.1 only granted 7x a perpetual, worldwide, non-exclusive, royalty-free, irrevocable copyright license
+  (its section 4, from the Apache Individual Contributor License Agreement 2.0), and contributions made under a signed
+  1.0.1 stay licensed to 7x under it (section 12 of 1.1.0). Section 4.3 keeps a license as a fallback where an
+  assignment is not effective; under section 6 the work is released under the GNU GPL version 2 or later. Read the
+  agreement before you sign: [The CLA explained](community/contributing/the-cla-explained.md),
   `CONTRIBUTING.md`.
 - **Documentation contributions** are part of the same repository (`doc/`) and covered by the same CLA; the
   documentation is published under the GNU Free Documentation License 1.3 or later (see
@@ -474,7 +478,8 @@ No share is implied by the order. Both are holders. The Foundation is named firs
 
 **To whom do I assign my contribution under the CLA?**
 To the Exponential Foundation and 7x together, which become its owners and may use, change, relicense and distribute
-it. Since 29 October 2026 the CLA names both, in the same order as the notice. Your own extensions are not affected.
+it. Since version 1.1.0 of the CLA (29 October 2026) the agreement names both, in the same order as the notice;
+version 1.0.1 had been a non-exclusive license to 7x, not an assignment. Your own extensions are not affected.
 
 **Why doesn't the notice name the contributors?**
 Because they hold no separate copyright in Exponential. Every contribution is assigned to the Exponential Foundation

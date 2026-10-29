@@ -66,8 +66,8 @@ From `CONTRIBUTING.md`:
 ## Questions students ask
 
 **I am a student. Who owns what I write?** Usually you. But if you write it as part of a job or an internship, your
-employer may have rights to it; then you need its permission, its waiver, or the company signs (§6 of the agreement,
-as `CONTRIBUTING.md` summarizes it). If your school or course has rules on intellectual property for course work, read
+employer may have rights to it; then you need its permission, its waiver, or the company signs (as `CONTRIBUTING.md`
+summarizes the agreement). If your school or course has rules on intellectual property for course work, read
 them or ask your teacher before you assign copyright.
 
 **Can I keep my extension under my own name?** Yes. Publish it in your own repository; the CLA does not apply. The

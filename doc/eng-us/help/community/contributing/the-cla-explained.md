@@ -3,7 +3,7 @@ title: The CLA explained for community members
 audience: community, developer, supporter, partner
 category: community
 order: 25
-summary: What the 7x Contributor Licensing Agreement means for a community member - a copyright assignment for code contributed to the Exponential kernel - who needs it, how to sign, and what it does not cover, in plain language with the exact sources.
+summary: What the Exponential Foundation and 7x Contributor Licensing Agreement (version 1.1.0) means for a community member - a copyright assignment for code contributed to the Exponential kernel - who needs it, how to sign, and what it does not cover, in plain language with the exact sources.
 keywords: CLA, contributor licensing agreement, copyright assignment, 7x, kernel, pull request, extensions, employer, GPL, sign, community@se7enx.com
 type: help
 ---
@@ -50,13 +50,21 @@ Source: `CONTRIBUTING.md`, "What it does not cover".
 ## How to sign
 
 1. Read the [Contributor Licensing Agreement page](https://share.se7enx.com/community-project/contributor-licensing-agreement-cla)
-   and download the agreement (*7X CONTRIBUTOR LICENSING AGREEMENT*, version 1.0.1, PDF).
+   and download the agreement (*Exponential Foundation and 7x CLA v1.1.0.pdf*, version 1.1.0).
 2. Fill in section 2 and the signature block, and sign.
-3. Deliver it to 7x "by regular mail, by emailing a scan of the signed copy, or by fax"; the agreement gives
+3. Deliver it to the Exponential Foundation and 7x "by regular mail, by emailing a scan of the signed copy, or by fax"; the agreement gives
    community@se7enx.com. If you send it by e-mail, make sure it arrived.
 4. Mention in your pull request that your CLA is signed; the template has a checkbox.
 
 ## Questions people ask
+
+Version 1.1.0 of the agreement (29 October 2026) is the first that assigns the copyright: its section 4.1
+assigns it to the Exponential Foundation and 7x jointly, and section 4.3 keeps a license as a fallback where an
+assignment is not effective. The earlier version 1.0.1 assigned nothing: it granted 7x a perpetual, worldwide,
+non-exclusive, royalty-free, irrevocable copyright license (its section 4, derived from the Apache Individual
+Contributor License Agreement 2.0). Contributions made under a signed 1.0.1 stay licensed to 7x under 1.0.1
+(section 12 of 1.1.0). Under section 6 the work is released under the GNU GPL version 2 or later, and the
+Exponential Foundation and 7x may also license it on other terms.
 
 | Question | Answer, from `CONTRIBUTING.md` |
 |---|---|
@@ -64,7 +72,7 @@ Source: `CONTRIBUTING.md`, "What it does not cover".
 | Can I take it back? | No |
 | Can the Exponential Foundation and 7x relicense it? | Yes, including in commercial products |
 | Is a one-line fix a contribution? | For small fixes "in most cases we do not need you to sign a CLA", but sign anyway for pull requests to the kernel repository: a merge needs a CLA on file |
-| I work for a company | The company usually owns the copyright: it signs, or confirms permission or a waiver (§6) |
+| I work for a company | The company usually owns the copyright: it signs, or confirms permission or a waiver |
 | Does the CLA replace the GPL? | No. The contribution is released under the GPL like the rest; the CLA additionally assigns copyright to the Exponential Foundation and 7x |
 
 The code of conduct adds: "Be honest about authorship. Sign the CLA only for contributions you have the right to

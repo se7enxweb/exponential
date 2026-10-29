@@ -241,12 +241,16 @@ Ein klarer, einziger Hinweis schützt dieses Fenster:
 Exponential wird von vielen Menschen geschrieben. Ihre Beiträge kommen auf zwei Wegen in den Kernel:
 
 - **Code-Beiträge zum Kernel** (Repository se7enxweb/exponential) werden übernommen, nachdem die Autorin oder der Autor
-  das **Contributor Licensing Agreement (CLA)** unterschrieben hat. Es überträgt das Copyright am Beitrag an die
-  **Exponential Foundation und 7x**, die damit seine Eigentümer werden, die Foundation zuerst genannt wie im Hinweis
-  (Entscheidung des Eigentümers vom 29. Oktober 2026; bis dahin übertrug die Vereinbarung, Version 1.0.1, es an 7x
-  allein). Die beiden Rechteinhaber des Hinweises sind damit auch die Rechteinhaber jedes übernommenen Beitrags. Das
-  Formular auf der CLA-Seite wird auf diese Übertragung umgestellt; lesen Sie es, bevor Sie unterschreiben
-  (`CONTRIBUTING.md`).
+  das **Exponential Foundation and 7x Contributor Licensing Agreement**, Version 1.1.0 (*Exponential Foundation and 7x CLA v1.1.0.pdf* auf der CLA-Seite),
+  unterschrieben hat. Es überträgt das Copyright am Beitrag gemeinsam an die **Exponential Foundation und 7x**
+  (Abschnitt 4.1), die damit seine Eigentümer werden, die Foundation zuerst genannt wie im Hinweis. Die beiden
+  Rechteinhaber des Hinweises sind damit auch die Rechteinhaber jedes übernommenen Beitrags. Version 1.1.0
+  (29. Oktober 2026) ist die erste Übertragung: Die frühere Version 1.0.1 gewährte 7x nur eine unbefristete,
+  weltweite, nicht ausschließliche, gebührenfreie, unwiderrufliche Urheberrechtslizenz (ihr Abschnitt 4, aus dem
+  Apache Individual Contributor License Agreement 2.0), und Beiträge unter einer unterschriebenen 1.0.1 bleiben 7x
+  danach lizenziert (Abschnitt 12 von 1.1.0). Abschnitt 4.3 behält eine Lizenz als Rückfall, wo eine Übertragung
+  nicht wirksam ist; nach Abschnitt 6 wird das Werk unter der GNU GPL Version 2 oder später veröffentlicht. Lesen Sie
+  die Vereinbarung, bevor Sie unterschreiben (`CONTRIBUTING.md`).
 - **Beiträge zur Dokumentation** werden unter der GNU Free Documentation License 1.3 oder später angenommen (siehe
   [Die Lizenz dieser Dokumentation](../README-LIZENZ.md)).
 
@@ -449,7 +453,8 @@ Die Reihenfolge sagt nichts über Anteile. Beide sind Rechteinhaber. Die Foundat
 
 **Wem übertrage ich meinen Beitrag mit dem CLA?**
 Der Exponential Foundation und 7x gemeinsam; sie werden seine Eigentümer und dürfen ihn nutzen, ändern, neu
-lizenzieren und verbreiten. Seit dem 29. Oktober 2026 nennt das CLA beide, in derselben Reihenfolge wie der Hinweis.
+lizenzieren und verbreiten. Seit Version 1.1.0 des CLA (29. Oktober 2026) nennt die Vereinbarung beide, in derselben Reihenfolge wie
+der Hinweis; Version 1.0.1 war eine nicht ausschließliche Lizenz an 7x, keine Übertragung.
 Ihre eigenen Erweiterungen sind nicht betroffen.
 
 **Warum nennt der Hinweis die Mitwirkenden nicht?**

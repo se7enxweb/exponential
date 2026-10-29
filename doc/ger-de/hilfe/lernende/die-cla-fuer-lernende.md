@@ -72,7 +72,7 @@ Nach `CONTRIBUTING.md`:
 
 **Ich bin Lernende oder Lernender. Wem gehört, was ich schreibe?** Normalerweise Ihnen. Wenn Sie es aber im Rahmen
 einer Anstellung oder eines Praktikums schreiben, kann Ihr Arbeitgeber Rechte daran haben; dann brauchen Sie seine
-Erlaubnis oder seinen Verzicht, oder das Unternehmen unterzeichnet (§6 der Vereinbarung, wie `CONTRIBUTING.md` es
+Erlaubnis oder seinen Verzicht, oder das Unternehmen unterzeichnet (wie `CONTRIBUTING.md` die Vereinbarung
 zusammenfasst). Wenn Ihre Schule oder Ihr Kurs Regeln zum geistigen Eigentum an Kursarbeiten hat, lesen Sie sie oder
 fragen Sie Ihre Lehrkraft, bevor Sie das Urheberrecht übertragen.
 

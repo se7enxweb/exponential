@@ -3,7 +3,7 @@ title: Das CLA für Community-Mitglieder erklärt
 audience: community, developer, supporter, partner
 category: community
 order: 25
-summary: Was das 7x Contributor Licensing Agreement für ein Community-Mitglied bedeutet - eine Übertragung des Urheberrechts für Code, der zum Exponential-Kernel beigetragen wird -, wer es braucht, wie Sie unterschreiben und was es nicht abdeckt, in einfacher Sprache mit den genauen Quellen.
+summary: Was das Exponential Foundation and 7x Contributor Licensing Agreement (Version 1.1.0) für ein Community-Mitglied bedeutet - eine Übertragung des Urheberrechts für Code, der zum Exponential-Kernel beigetragen wird -, wer es braucht, wie Sie unterschreiben und was es nicht abdeckt, in einfacher Sprache mit den genauen Quellen.
 keywords: CLA, Contributor Licensing Agreement, Beitragsvereinbarung, Übertragung des Urheberrechts, 7x, Kernel, Pull Request, Erweiterungen, Arbeitgeber, GPL, unterschreiben, community@se7enx.com, copyright assignment, employer, sign
 type: help
 ---
@@ -54,13 +54,21 @@ Quelle: `CONTRIBUTING.md`, „What it does not cover“.
 ## Wie Sie unterschreiben
 
 1. Lesen Sie die [Seite zum Contributor Licensing Agreement](https://share.se7enx.com/community-project/contributor-licensing-agreement-cla)
-   und laden Sie die Vereinbarung herunter (*7X CONTRIBUTOR LICENSING AGREEMENT*, Version 1.0.1, PDF).
+   und laden Sie die Vereinbarung herunter (*Exponential Foundation and 7x CLA v1.1.0.pdf*, Version 1.1.0).
 2. Füllen Sie Abschnitt 2 und den Unterschriftenblock aus und unterschreiben Sie.
-3. Senden Sie sie an 7x „per Post, per E-Mail als Scan der unterschriebenen Kopie oder per Fax“; die Vereinbarung
+3. Senden Sie sie an die Exponential Foundation und 7x „per Post, per E-Mail als Scan der unterschriebenen Kopie oder per Fax“; die Vereinbarung
    nennt community@se7enx.com. Wenn Sie sie per E-Mail senden, vergewissern Sie sich, dass sie angekommen ist.
 4. Erwähnen Sie in Ihrem Pull Request, dass Ihr CLA unterschrieben ist; die Vorlage hat dafür ein Kästchen.
 
 ## Häufige Fragen
+
+Version 1.1.0 der Vereinbarung (29. Oktober 2026) ist die erste, die das Urheberrecht überträgt: Abschnitt 4.1
+überträgt es gemeinsam an die Exponential Foundation und 7x, Abschnitt 4.3 behält eine Lizenz als Rückfall, wo
+eine Übertragung nicht wirksam ist. Die frühere Version 1.0.1 übertrug nichts: Sie gewährte 7x eine unbefristete,
+weltweite, nicht ausschließliche, gebührenfreie, unwiderrufliche Urheberrechtslizenz (ihr Abschnitt 4, abgeleitet
+vom Apache Individual Contributor License Agreement 2.0). Beiträge unter einer unterschriebenen 1.0.1 bleiben
+7x nach 1.0.1 lizenziert (Abschnitt 12 von 1.1.0). Nach Abschnitt 6 wird das Werk unter der GNU GPL Version 2
+oder später veröffentlicht, und die Exponential Foundation und 7x dürfen es auch zu anderen Bedingungen lizenzieren.
 
 | Frage | Antwort, aus `CONTRIBUTING.md` |
 |---|---|
@@ -68,7 +76,7 @@ Quelle: `CONTRIBUTING.md`, „What it does not cover“.
 | Kann ich es zurücknehmen? | Nein |
 | Dürfen die Exponential Foundation und 7x ihn neu lizenzieren? | Ja, auch in kommerziellen Produkten |
 | Ist eine einzeilige Korrektur ein Beitrag? | Für kleine Korrekturen „müssen Sie in den meisten Fällen kein CLA unterschreiben“, unterschreiben Sie aber trotzdem für Pull Requests an das Kernel-Repository: Ein Merge braucht ein vorliegendes CLA |
-| Ich arbeite für ein Unternehmen | Meist gehört dem Unternehmen das Urheberrecht: Es unterschreibt oder bestätigt eine Erlaubnis oder einen Verzicht (§6) |
+| Ich arbeite für ein Unternehmen | Meist gehört dem Unternehmen das Urheberrecht: Es unterschreibt oder bestätigt eine Erlaubnis oder einen Verzicht |
 | Ersetzt das CLA die GPL? | Nein. Der Beitrag wird wie alles andere unter der GPL veröffentlicht; das CLA überträgt zusätzlich das Urheberrecht an die Exponential Foundation und 7x |
 
 Der Verhaltenskodex ergänzt: „Seien Sie ehrlich zur Autorschaft. Unterschreiben Sie das CLA nur für Beiträge, die Sie
