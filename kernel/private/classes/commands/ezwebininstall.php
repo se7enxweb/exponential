@@ -339,9 +339,11 @@ class Ezwebininstall extends \Exponential\Runnable\Command
                                                                           'attributes_data' => $templateLookData ) );
 
 
-                    $siteInstaller->swapNodes( array( 'src_node' => array( 'name' => "Exponential" ),
+                    // the content root, by its remote id: its name changed from release to release
+                    $contentRoot = array( 'name' => 'Websites', 'remote_id' => \eZSiteInstaller::CONTENT_ROOT_REMOTE_ID );
+                    $siteInstaller->swapNodes( array( 'src_node' => $contentRoot,
                                                       'dst_node' => array( 'name' => "Home" ) ) );
-                    $siteInstaller->removeContentObject( array( 'name' => 'Exponential' ) );
+                    $siteInstaller->removeContentObject( $contentRoot );
 
                     $webinInstaller->postInstall();
                 }

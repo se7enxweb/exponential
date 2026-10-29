@@ -14,11 +14,16 @@ anything:
 
 | Installed copy | Package's copy | Result |
 |---|---|---|
-| a release number | a higher release number | the package's copy replaces it |
-| a release number | the same or a lower one | the installed copy is kept |
-| a release number | none (`dev-master`, `//autogentag//`) | the installed copy is kept |
-| none, Composer or git manages it | anything | the installed copy is kept |
-| none, a plain copy | anything | the package's copy replaces it (as before) |
+| Composer or git manages it (any version) | anything | the installed copy is kept |
+| a plain copy with a release number | a higher release number | the package's copy replaces it |
+| a plain copy with a release number | the same or a lower one | the installed copy is kept |
+| a plain copy with a release number | none (`dev-master`, `//autogentag//`) | the installed copy is kept |
+| a plain copy without a release number | anything | the package's copy replaces it (as before) |
+
+A copy Composer or git manages is kept even against a newer package (since 2026-10-28): Composer or the checkout
+updates it, and a package that replaced it would leave `vendor/composer/installed.json` and `composer.lock`
+describing files that are no longer there. Uninstalling an extension package does not delete such a directory
+either; it only takes the extension out of `ActiveExtensions`, and the setup log says so.
 
 - The version is read from `extension.xml` (`<metadata><version>`) first, as the about page reads it, and from
   `'Version'` in `ezinfo.php` when `extension.xml` has no release number. `ezinfo.php` is read as text, never
@@ -55,3 +60,15 @@ with their "Home" page and then remove the old root. Their installers named the 
 clean data of 6.0 no longer uses (it names it "Websites"), so the installation stopped at the swap with
 "Can't fetch node ''". The rebuilt packages name the root by its remote id (`9459d3c29e15006e45197295722c7ade`, the
 same in every release).
+
+Since 2026-10-28 the kernel finds the root for every package, also for the old ones that name it "eZ Publish":
+
+- `eZSiteInstaller::contentObjectByName()` (used by `swapNodes()`, `removeContentObject()`, `moveTreeNode()` and the
+  other steps that name an object) looks in the order `objectLookups()` gives: the step's `remote_id`, then its
+  `name` (with its `class_id`), then, when the name is one the content root has carried (`CONTENT_ROOT_NAMES`:
+  "eZ Publish", "Exponential", "Websites", "eZ Platform"), the object with `CONTENT_ROOT_REMOTE_ID`.
+- `removeContentObject()` never purges an object whose main node is at depth 1 (`mayPurgeAtDepth()`): after the
+  swap the old root is one level down, where "Home" was; without the swap it would be the content root itself.
+- `swapNodes()` names the object it could not find ("Can't find the node of the object named 'X' to swap").
+
+Tested without a database in `tests/tests/kernel/classes/setup/SiteInstallerContentRootLookupTest.php`.
