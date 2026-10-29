@@ -20,7 +20,7 @@ gelesen am 18. Oktober 2026).
 |---|---|---|
 | Inhaltsmodell | Designs folgen der Struktur der Inhalte, nicht umgekehrt | [Workshops zur Inhaltsmodellierung](../fuehrung/workshops-zur-inhaltsmodellierung.md) |
 | Layouts | Redakteure ordnen Blöcke in Zonen an; Designs müssen in vielen Anordnungen funktionieren | [Der Layouts-Editor](../layout-editor.md) |
-| Sprachen und Schreibrichtung von rechts nach links | 359 Locale-Dateien, 43 davon von rechts nach links (`doc/eng-us/languages.md`) | [Sprachen](../sprachen.md) |
+| Sprachen und Schreibrichtung von rechts nach links | 368 Locale-Dateien, 43 davon von rechts nach links (`doc/eng-us/languages.md`) | [Sprachen](../sprachen.md) |
 | Medien | Bildvarianten und Uploads | [Bilder und Medien](../medien-und-uploads.md) |
 | Bedienerlebnis der Redaktion | Die Menschen, die die Administration jeden Tag nutzen | [Inhalte bearbeiten](../inhalte-bearbeiten.md), [Rundgang durch die Administration](../rundgang-durch-die-administration.md) |
 | Barrierefreiheit | Das Design admin4 folgt WCAG-Regeln, die durch Tests geprüft werden | `doc/eng-us/bc/6.0/admin4-styling.md` |

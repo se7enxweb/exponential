@@ -37,7 +37,7 @@ your site uses depends on how it was built and which extensions are active.
 
 | Feature | Who uses it | Read |
 |---|---|---|
-| Multilingual content, with 359 locale files | Translators, editors | [Languages](../../languages.md), [Content languages](../../../guides/content-languages.md) |
+| Multilingual content, with 368 locale files | Translators, editors | [Languages](../../languages.md), [Content languages](../../../guides/content-languages.md) |
 | Right-to-left languages | Editors | [Right to left](../../../features/6.0/right-to-left.md) |
 | Several sites from one installation | Owner, administrator | [Multisite setup](../../creators/website-creators/multisite-setup.md) |
 

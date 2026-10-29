@@ -10,22 +10,26 @@ and `settings/i18n.ini`, no extension) has:
 | What | How many |
 |---|---:|
 | Languages of the administration: translations in `share/translations` | **155**, 3 of them complete |
-| Locales: `share/locale/*.ini` files | **359**: 352 languages and countries, 1 test language, 6 variants |
+| Locales: `share/locale/*.ini` files | **368**: 361 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **150** |
 | of them shown translated by the administration (own translation, fallback or English) | **150** |
 | of them not translated ([list](#the-languages-not-translated-yet)) | **0** |
-| Countries and territories of the locales | **238** |
-| of them with the administration in their language (green on the map) | **238** |
+| Countries and territories of the locales | **247** |
+| of them with the administration in their language (green on the map) | **247** |
+| Codes of ISO 3166-1 (`settings/country.ini`) without a locale | **4**, all of them by design: uninhabited or withdrawn (list below the map) |
 | Locales written right to left | **43** |
 
-![World map: 238 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
+![World map: 247 countries and territories in green, where a shipped locale shows the administration in its language, and 3 uninhabited territories without a locale by design; the others in grey](images/languages/coverage-map.webp)
 
 A country is green when a locale ships for it whose language the administration shows translated: with a
 translation of its own or the first translation of its fallback chain (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, see [section 13](#13-translation-fallbacks)). English counts as translated: it is the
 language of the source texts. The map as a vector image: `doc/eng-us/images/languages/coverage-map.svg`; outlines: Natural Earth, public domain.
 
-<details><summary>The 238 countries and territories in green</summary>
+The uninhabited territories without a locale by design are green too: Antarctica (`AQ`), Bouvet Island (`BV`) and Heard Island and McDonald Islands (`HM`).
+Exponential serves these territories in every language; no local conventions exist.
+
+<details><summary>The 247 countries and territories in green</summary>
 
 | Country or territory | Code | Locales and the translation they show |
 |---|---|---|
@@ -73,6 +77,8 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Chad | TD | `ara-TD` → `ara-SA`, `fre-TD` → `fre-FR` |
 | Chile | CL | `esl-CL` → `esl-ES` |
 | China | CN | `bod-CN`, `chi-CN`, `uig-CN` |
+| Christmas Island | CX | `eng-CX` → `eng-AU` |
+| Cocos (Keeling) Islands | CC | `eng-CC` → `eng-AU` |
 | Colombia | CO | `esl-CO` → `esl-ES` |
 | Comoros | KM | `ara-KM` → `ara-SA`, `fre-KM` → `fre-FR` |
 | Congo | CG | `fre-CG` → `fre-FR` |
@@ -102,6 +108,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Fiji | FJ | `eng-FJ` (source texts) |
 | Finland | FI | `fin-FI` |
 | France | FR | `bre-FR`, `fre-FR`, `oci-FR` |
+| French Guiana | GF | `fre-GF` → `fre-FR` |
 | French Polynesia | PF | `fre-PF` → `fre-FR` |
 | French Southern Territories | TF | `fre-TF` → `fre-FR` |
 | Gabon | GA | `fre-GA` → `fre-FR` |
@@ -165,12 +172,14 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Martinique | MQ | `fre-MQ` → `fre-FR` |
 | Mauritania | MR | `ara-MR` → `ara-SA`, `fre-MR` → `fre-FR` |
 | Mauritius | MU | `fre-MU` → `fre-FR` |
+| Mayotte | YT | `fre-YT` → `fre-FR` |
 | Mexico | MX | `esl-MX` |
 | Micronesia, Federated States of | FM | `eng-FM` (source texts) |
 | Moldova, Republic of | MD | `ron-MD` → `ron-RO`, `rus-MD` → `rus-RU` |
 | Monaco | MC | `fre-MC` → `fre-FR` |
 | Mongolia | MN | `mon-MN` |
 | Montenegro | ME | `srp-ME` → `srp-RS` |
+| Montserrat | MS | `eng-MS` (source texts) |
 | Morocco | MA | `ara-MA` → `ara-SA`, `fre-MA` → `fre-FR`, `zgh-MA` |
 | Mozambique | MZ | `por-MZ` → `por-PT` |
 | Myanmar | MM | `mya-MM` |
@@ -184,6 +193,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Niger | NE | `fre-NE` → `fre-FR` |
 | Nigeria | NG | `eng-NG` (source texts), `hau-NG`, `ibo-NG`, `pcm-NG`, `yor-NG` |
 | Niue | NU | `eng-NU` (source texts) |
+| Norfolk Island | NF | `eng-NF` → `eng-AU` |
 | North Macedonia | MK | `mkd-MK` |
 | Northern Mariana Islands | MP | `eng-MP` (source texts) |
 | Norway | NO | `nno-NO` → `nor-NO`, `nor-NO`, `sme-NO` |
@@ -201,6 +211,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Portugal | PT | `por-PT` |
 | Puerto Rico | PR | `esl-PR` → `esl-ES` |
 | Qatar | QA | `ara-QA` → `ara-SA` |
+| Reunion | RE | `fre-RE` → `fre-FR` |
 | Romania | RO | `ron-RO` |
 | Russian Federation | RU | `che-RU`, `rus-RU`, `tat-RU` |
 | Rwanda | RW | `fre-RW` → `fre-FR`, `kin-RW` |
@@ -232,6 +243,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Sri Lanka | LK | `sin-LK`, `tam-LK` → `tam-IN` |
 | Sudan | SD | `ara-SD` → `ara-SA` |
 | Suriname | SR | `dut-SR` → `dut-NL` |
+| Svalbard and Jan Mayen | SJ | `nor-SJ` → `nor-NO` |
 | Sweden | SE | `swe-SE` |
 | Switzerland | CH | `fre-CH` → `fre-FR`, `ger-CH` → `ger-DE`, `ita-CH` → `ita-IT`, `roh-CH` |
 | Syrian Arab Republic | SY | `ara-SY` → `ara-SA`, `syr-SY` → `syr-IQ` |
@@ -253,6 +265,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Ukraine | UA | `ukr-UA` |
 | United Arab Emirates | AE | `ara-AE` → `ara-SA` |
 | United Kingdom | GB | `cym-GB`, `eng-GB` (source texts), `gla-GB` |
+| United States Minor Outlying Islands | UM | `eng-UM` (source texts) |
 | United States of America | US | `eng-US`, `esl-US` → `esl-ES`, `haw-US`, `yid-US` |
 | Uruguay | UY | `esl-UY` → `esl-ES` |
 | Uzbekistan | UZ | `uzb-UZ` |
@@ -277,6 +290,17 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 
 </details>
 
+<details><summary>The 4 codes of ISO 3166-1 without a locale</summary>
+
+| Country or territory | Code | Why |
+|---|---|---|
+| Netherlands Antilles | AN | No locale by design: code withdrawn in 2010; its successors Bonaire, Sint Eustatius and Saba (BQ), Curaçao (CW) and Sint Maarten (SX) each have a locale of their own |
+| Antarctica | AQ | No locale by design: uninhabited, CLDR defines no locale for it (shown green: Exponential serves these territories in every language; no local conventions exist) |
+| Bouvet Island | BV | No locale by design: uninhabited, CLDR defines no locale for it (shown green: Exponential serves these territories in every language; no local conventions exist) |
+| Heard Island and McDonald Islands | HM | No locale by design: uninhabited, CLDR defines no locale for it (shown green: Exponential serves these territories in every language; no local conventions exist) |
+
+</details>
+
 Made by `./console exp:i18n coverage` from the shipped files; `./console exp:i18n coverage --check` and the test `expI18nCoverageMapTest` fail when the figures or the map are out of date.
 <!-- generated: exp:i18n coverage (end) -->
 
@@ -284,7 +308,7 @@ The one place that says which languages Exponential supports, at which level, an
 were taken on 15 October 2026, those of the administration translations on 26 October 2026 (Exponential 6.0.15).
 
 <!-- generated: exp:i18n coverage translations (start) -->
-In short: **359 locale files** (352 languages and countries, the test language Lorem Ipsum and 6 variations, 43 of
+In short: **368 locale files** (361 languages and countries, the test language Lorem Ipsum and 6 variations, 43 of
 them written right to left) can be chosen as content languages and siteaccess locales; **155 administration
 translations** exist, 3 of them complete: English (Australia) (`eng-AU`), English (United States) (`eng-US`), German
 (Germany) (`ger-DE`). The names are the English ones of the locale files.
@@ -476,7 +500,9 @@ The table is generated from the locale files; do not edit it by hand.
 | `eng-BW` | English (Botswana) | English (Botswana) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-BZ` | English (Belize) | English (Belize) | Americas | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-CA` | English (Canada) | English (Canada) | Americas | LTR | Latin (`Latn`) | older, hand-made | 100% |
+| `eng-CC` | English (Cocos (Keeling) Islands) | English (Cocos (Keeling) Islands) | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `eng-AU`) |
 | `eng-CK` | English (Cook Islands) | English (Cook Islands) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% |
+| `eng-CX` | English (Christmas Island) | English (Christmas Island) | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `eng-AU`) |
 | `eng-DM` | English (Dominica) | English (Dominica) | Americas | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-FJ` | English (Fiji) | English (Fiji) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-FK` | English (Falkland Islands) | English (Falkland Islands) | Americas | LTR | Latin (`Latn`) | CLDR 44 | 100% |
@@ -506,8 +532,10 @@ The table is generated from the locale files; do not edit it by hand.
 | `eng-LS` | English (Lesotho) | English (Lesotho) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-MH` | English (Marshall Islands) | English (Marshall Islands) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-MP` | English (Northern Mariana Islands) | English (Northern Mariana Islands) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% |
+| `eng-MS` | English (Montserrat) | English (Montserrat) | Americas | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-MW` | English (Malawi) | English (Malawi) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-NA` | English (Namibia) | English (Namibia) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
+| `eng-NF` | English (Norfolk Island) | English (Norfolk Island) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `eng-AU`) |
 | `eng-NG` | English (Nigeria) | English (Nigeria) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-NR` | English (Nauru) | English (Nauru) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-NU` | English (Niue) | English (Niue) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% |
@@ -529,6 +557,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `eng-TT` | English (Trinidad & Tobago) | English (Trinidad & Tobago) | Americas | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-TV` | English (Tuvalu) | English (Tuvalu) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-UG` | English (Uganda) | English (Uganda) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
+| `eng-UM` | English (U.S. Outlying Islands) | English (U.S. Outlying Islands) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-US` | English (United States) | English (United States) | Americas | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `eng-VC` | English (St. Vincent & Grenadines) | English (St Vincent & the Grenadines) | Americas | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-VG` | English (British Virgin Islands) | English (British Virgin Islands) | Americas | LTR | Latin (`Latn`) | CLDR 44 | 100% |
@@ -584,6 +613,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `fre-DZ` | French (Algeria) | Français (Algérie) | Africa | LTR | Latin (`Latn`) | CLDR 48 | 99% (falls back to `fre-FR`) |
 | `fre-FR` | French (France) | Français (France) | Europe | LTR | Latin (`Latn`) | older, hand-made | 99% |
 | `fre-GA` | French (Gabon) | Français (Gabon) | Africa | LTR | Latin (`Latn`) | CLDR 48 | 99% (falls back to `fre-FR`) |
+| `fre-GF` | French (French Guiana) | Français (Guyane française) | Americas | LTR | Latin (`Latn`) | CLDR 44 | 99% (falls back to `fre-FR`) |
 | `fre-GN` | French (Guinea) | Français (Guinée) | Africa | LTR | Latin (`Latn`) | CLDR 48 | 99% (falls back to `fre-FR`) |
 | `fre-GP` | French (Guadeloupe) | Français (Guadeloupe) | Americas | LTR | Latin (`Latn`) | CLDR 44 | 99% (falls back to `fre-FR`) |
 | `fre-GQ` | French (Equatorial Guinea) | Français (Guinée équatoriale) | Africa | LTR | Latin (`Latn`) | CLDR 48 | 99% (falls back to `fre-FR`) |
@@ -602,6 +632,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `fre-NE` | French (Niger) | Français (Niger) | Africa | LTR | Latin (`Latn`) | CLDR 48 | 99% (falls back to `fre-FR`) |
 | `fre-PF` | French (French Polynesia) | Français (Polynésie française) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 99% (falls back to `fre-FR`) |
 | `fre-PM` | French (St. Pierre & Miquelon) | Français (Saint-Pierre-et-Miquelon) | Americas | LTR | Latin (`Latn`) | CLDR 44 | 99% (falls back to `fre-FR`) |
+| `fre-RE` | French (Réunion) | Français (La Réunion) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 99% (falls back to `fre-FR`) |
 | `fre-RW` | French (Rwanda) | Français (Rwanda) | Africa | LTR | Latin (`Latn`) | CLDR 48 | 99% (falls back to `fre-FR`) |
 | `fre-SC` | French (Seychelles) | Français (Seychelles) | Africa | LTR | Latin (`Latn`) | CLDR 48 | 99% (falls back to `fre-FR`) |
 | `fre-SN` | French (Senegal) | Français (Sénégal) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 99% (falls back to `fre-FR`) |
@@ -611,6 +642,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `fre-TN` | French (Tunisia) | Français (Tunisie) | Africa | LTR | Latin (`Latn`) | CLDR 48 | 99% (falls back to `fre-FR`) |
 | `fre-VU` | French (Vanuatu) | Français (Vanuatu) | Oceania | LTR | Latin (`Latn`) | CLDR 48 | 99% (falls back to `fre-FR`) |
 | `fre-WF` | French (Wallis & Futuna) | Français (Wallis-et-Futuna) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 99% (falls back to `fre-FR`) |
+| `fre-YT` | French (Mayotte) | Français (Mayotte) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 99% (falls back to `fre-FR`) |
 | `fry-NL` | Western Frisian | Frysk | Europe | LTR | Latin (`Latn`) | CLDR 44 | 99% |
 | `ful-SN` | Fula | Pulaar | Africa | LTR | Latin (`Latn`) | CLDR 44 | 99% |
 | `ger-AT` | German (Austria) | Deutsch (Österreich) | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `ger-DE`) |
@@ -680,6 +712,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `nor-NO` | Norwegian Bokmål | Norsk (Bokmål) | Europe | LTR | Latin (`Latn`) | older, hand-made | 99% |
 | `nor-NO@intl` | Variant of `nor-NO`: Internasjonalt Format |  | Europe | LTR | Latin (`Latn`) | older variation, hand-made | 99% (falls back to `nor-NO`) |
 | `nor-NO@spraakraad` | Variant of `nor-NO`: Norsk Språkråd |  | Europe | LTR | Latin (`Latn`) | older variation, hand-made | 99% (falls back to `nor-NO`) |
+| `nor-SJ` | Norwegian Bokmål (Svalbard & Jan Mayen) | Norsk bokmål (Svalbard og Jan Mayen) | Europe | LTR | Latin (`Latn`) | CLDR 44 | 99% (falls back to `nor-NO`) |
 | `nqo-GN` | N’Ko | ߒߞߏ | Africa | RTL | N’Ko (`Nkoo`) | CLDR 44 | 99% |
 | `oci-FR` | Occitan | Occitan | Europe | LTR | Latin (`Latn`) | CLDR 44 | 99% |
 | `ori-IN` | Odia | ଓଡ଼ିଆ | South Asia | LTR | Oriya (Odia) (`Orya`) | CLDR 44 | 99% |
@@ -1849,6 +1882,13 @@ chain whose last step has no translation (it shows the English source texts; the
 The extension coverage is cached in `var/<site>/cache/i18n/fallback-report.json` and rebuilt when a file or a
 setting changes; the first run reads every extension catalogue and takes a few seconds.
 
+`coverage` also lists the codes of `settings/country.ini` (ISO 3166-1) that no locale names. The ones without a locale
+by design are named, with the reason, in `expI18nCoverageMap::NO_LOCALE_BY_DESIGN`: Antarctica (`AQ`), Bouvet Island
+(`BV`) and Heard Island and McDonald Islands (`HM`) are uninhabited and CLDR defines no locale for them (the map
+shows them green all the same: Exponential serves these territories in every language; no local conventions exist); the
+Netherlands Antilles (`AN`) code was withdrawn in 2010, and its successors `BQ`, `CW` and `SX` have locales. Any
+other code without a locale is listed as "not yet", and the test `expI18nCoverageMapTest` fails on it.
+
 **Setup > Interface languages** (`setup/languages`, policy `setup/system_info`, next to Languages in the Setup
 menu) shows the same list in the administration: every locale with the translation it shows, the coverage of the
 kernel and of the extensions, the chain (a step of the automatic fallback is highlighted), the problems, and the
@@ -1859,7 +1899,7 @@ The page is read only.
 
 | `i18n.ini [TranslationSettings]` | Default | Meaning |
 |---|---|---|
-| `FallbackLanguages[<locale>]` | 100 entries | The translation a locale falls back to; `eng-GB` or `untranslated` for the source texts. |
+| `FallbackLanguages[<locale>]` | 146 entries | The translation a locale falls back to; `eng-GB` or `untranslated` for the source texts. |
 | `FallbackRules[]` | empty | Classes implementing `expI18nFallbackRuleInterface`, asked after `FallbackLanguages[]`. |
 | `AutomaticLanguageFallback` | `enabled` | The same-language fallback for locales without translation and configuration. |
 | `AutomaticFallbackExclude[]` | `eng` | Languages or locales the automatic fallback leaves alone. |

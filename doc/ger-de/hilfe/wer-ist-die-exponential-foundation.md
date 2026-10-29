@@ -160,7 +160,7 @@ Installation betreiben, und Entwickler, die Anwendungen auf seinem Framework bau
 
 **Wo es steht.** 6.0.14 ist der neueste Tag (7. Juni 2026). Die Linie 6.0.15 bringt neben vielem anderen Velocity,
 das Design admin4, ein Audit-Protokoll, Exponential Layouts, Exponential Intelligence, Inhalts-Jobs, Pakete von Anfang
-bis Ende, 219 Locales nach der Zählung des README, die LoveStack-Funktionen von Mugo Web und dieses Hilfesystem
+bis Ende, mehr als 360 Locales nach der Zählung des README, die LoveStack-Funktionen von Mugo Web und dieses Hilfesystem
 ([Changelog 6.0.15](../../changelogs/6.0/6.0.15.md), README „Recent improvements“). Die Geschichte jeder Änderung
 seit Dezember 2023 steht in [der Geschichte](../geschichte/README.md).
 
@@ -365,7 +365,7 @@ jedem Push auf `main` und bei jedem Pull-Request ([CI](../bc/6.0/ci.md)).
 
 ### Sprachen und Barrierefreiheit
 
-- 359 Locale-Dateien, 43 davon von rechts nach links, und Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../sprachen.md))
+- 368 Locale-Dateien, 43 davon von rechts nach links, und Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../sprachen.md))
   ([Sprachen](../sprachen.md)); `dir="rtl"` in Inhalten und Administration ([Von rechts nach links](../funktionen/6.0/rechts-nach-links.md)).
 - Das Design admin4 folgt WCAG-Regeln, die Tests prüfen: ein Kontrasttest der Farb-Tokens im hellen und dunklen Modus
   und Zielgrößen von mindestens 24 mal 24 Pixeln ([Gestaltung der Administration](../bc/6.0/admin4-gestaltung.md)).

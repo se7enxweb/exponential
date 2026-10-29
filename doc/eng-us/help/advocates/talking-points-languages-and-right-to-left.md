@@ -35,7 +35,7 @@ Always ask "for editors' screens or for content?" before answering "is my langua
 
 | Say | Source |
 |---|---|
-| "359 locale files can be used as content languages." | [Languages in Exponential](../../languages.md), [Languages and accessibility](../who-is-the-exponential-foundation.md#languages-and-accessibility) |
+| "368 locale files can be used as content languages." | [Languages in Exponential](../../languages.md), [Languages and accessibility](../who-is-the-exponential-foundation.md#languages-and-accessibility) |
 | "43 of them are right to left." | [Languages and accessibility](../who-is-the-exponential-foundation.md#languages-and-accessibility) |
 | "administration translations exist (the current totals are at the top of [Languages in Exponential](../../languages.md))." | same |
 | "Each translation of an item is published on its own, and badges show what exists and what is missing." | [Languages](../languages.md) |
@@ -57,7 +57,7 @@ Timed version: [Demo scripts, Part 3: languages and right to left](../business/d
 
 ## Do not say
 
-- "Exponential is available in 359 languages." Say "359 locale files as content languages; administration translations (the current totals are at the top of [Languages in Exponential](../../languages.md))".
+- "Exponential is available in 368 languages." Say "368 locale files as content languages; administration translations (the current totals are at the top of [Languages in Exponential](../../languages.md))".
 - "All translations are perfect." Several complete translations were machine-assisted; a review is "the quickest
   win" ([Languages in Exponential, section 8](../../languages.md#8-adding-or-completing-an-administration-translation)).
 - "You can use as many content languages as you like." There is a documented limit of 62 content languages per

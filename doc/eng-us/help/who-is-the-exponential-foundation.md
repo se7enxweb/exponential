@@ -152,8 +152,8 @@ layer, clustering, and a plugin API.
 installation, and developers who build applications on its framework.
 
 **Where it stands.** 6.0.14 is the newest tag (7 June 2026). The 6.0.15 line adds, among much else, Velocity, the
-admin4 design, an audit trail, Exponential Layouts, Exponential Intelligence, content jobs, packages end to end, 219
-locales in the README's count, the LoveStack features of Mugo Web and this help system
+admin4 design, an audit trail, Exponential Layouts, Exponential Intelligence, content jobs, packages end to end, more
+than 360 locales in the README's count, the LoveStack features of Mugo Web and this help system
 ([6.0.15 changelog](../../changelogs/6.0/6.0.15.md), README "Recent improvements"). The story of every change since
 December 2023 is in [the history](../history/README.md).
 
@@ -352,7 +352,7 @@ to `main` and every pull request ([CI](../bc/6.0/ci.md)).
 
 ### Languages and accessibility
 
-- 359 locale files, 43 of them right to left, and administration translations (the current totals are at the top of [Languages in Exponential](../languages.md))
+- 368 locale files, 43 of them right to left, and administration translations (the current totals are at the top of [Languages in Exponential](../languages.md))
   ([Languages](../languages.md)); `dir="rtl"` in content and administration ([Right to left](../features/6.0/right-to-left.md)).
 - The admin4 design follows WCAG rules that tests check: a contrast test of the color tokens in light and dark mode
   and target sizes of at least 24 by 24 pixels ([Styling the administration](../bc/6.0/admin4-styling.md)).
