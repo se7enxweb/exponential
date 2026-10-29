@@ -161,7 +161,8 @@ class expBookmarkViewTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'not-bookmarkable', expBookmarkView::bookmarkable( 'content/action/12', $list )['reason'] );
         $this->assertFalse( expBookmarkView::bookmarkable( 'switchlanguage/to/ger/content', $list )['result'], 'module/*' );
         $this->assertFalse( expBookmarkView::bookmarkable( 'user/logout', $list )['result'], 'spaces and slashes of an entry are ignored' );
-        $this->assertTrue( expBookmarkView::bookmarkable( 'content/actions', $list )['result'], 'another view' );
+        // the setup module, not content: loading the content module definition reads the state groups from the database
+        $this->assertTrue( expBookmarkView::bookmarkable( 'setup/action', $list )['result'], 'the same view name in another module' );
         $this->assertTrue( expBookmarkView::bookmarkable( 'setup/info', array() )['result'] );
     }
 

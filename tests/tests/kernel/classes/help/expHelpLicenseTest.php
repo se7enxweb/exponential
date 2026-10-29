@@ -179,7 +179,7 @@ class expHelpLicenseTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( $free['or_later'] );
         $this->assertSame( 'https://www.gnu.org/licenses/fdl-1.3.html', $free['url'] );
         $this->assertStringContainsString( 'Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.', $free['notice'] );
-        $this->assertStringStartsWith( 'Copyright (C) ', $free['copyright'] );
+        $this->assertSame( 'Exponential Copyright © 1998-2026 Exponential Foundation and 7x', $free['copyright'] );
         $this->assertStringContainsString( 'GNU Free Documentation License 1.3 or later', expHelpLicense::noticeText( 'help/getting-started.md' ) );
 
         $old = expHelpLicense::forPage( 'features/3.8/foo.txt' );

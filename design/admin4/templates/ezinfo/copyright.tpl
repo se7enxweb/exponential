@@ -28,7 +28,8 @@
 <section class="ezinfo-section">
     <h2>{'Copyright'|i18n( 'design/admin/ezinfo/about' )}</h2>
     <div class="ezinfo-prose">
-        <p class="ezinfo-notice-holder">{'Copyright (C) %years %holder. All rights reserved.'|i18n( 'design/admin/ezinfo/about',, hash( '%years', $copyright_info.years, '%holder', $copyright_info.holder ) )|wash}</p>
+        {* The notice itself is never translated (#284, owner 2026-10-29) *}
+        <p class="ezinfo-notice-holder">Exponential Copyright &copy; {$copyright_info.years|wash} {$copyright_info.holder|wash}</p>
     </div>
 </section>
 

@@ -645,7 +645,7 @@ class eZExecution
                 . '<p class="logo"><img src="/design/admin4/images/admin4/logo-light.png" alt="Exponential" width="200" height="50"></p>'
                 . '<p style="font-size:3rem;font-weight:700;margin:0">{status}</p>'
                 . '<h1>{title}</h1><p>{message}</p><p><strong>For the administrator:</strong></p>{steps}{repair}<small>{reference}</small>{detail}'
-                . '<footer>Powered by <strong>Exponential</strong>. Copyright &copy; 1998-' . date( 'Y' ) . ' <a href="https://se7enx.com">7x</a> and others.</footer>'
+                . '<footer>Powered by <strong>Exponential</strong>. Exponential Copyright &copy; 1998-2026 Exponential Foundation and <a href="https://se7enx.com">7x</a></footer>'
                 . '</body></html>';
         }
 
