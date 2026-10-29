@@ -31,6 +31,12 @@ Document-Root liegen" ([Webserver-Beispiele](../../beispiele/webserver/README.md
 Die Liste steht einmal in `.htaccess_root`, und Velocity setzt sie Regel für Regel um. Ein Bundle, das seine eigene
 Webserver-Konfiguration schreibt, muss dieselbe Liste in derselben Reihenfolge umsetzen; die Beispiele tun das.
 
+Nur Apache (mit `AllowOverride All`) und LiteSpeed Enterprise lesen `.htaccess` so, wie sie ausgeliefert wird; für sie
+kopiert ein Bundle die Vorlage mit `php bin/php/console exp:setup:htaccess --apply` (`--static` für
+`.htaccess_root_static`). OpenLiteSpeed liest nur ihre Rewrite-Regeln, mit `autoLoadHtaccess` und erst nach einem
+Neustart; nginx, Caddy, FrankenPHP und IIS lesen sie nie; Velocity hat die Regeln eingebaut
+([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)).
+
 ## Die Auswahl
 
 | Server | Beispiel als Ausgangspunkt | Wie das Beispiel geprüft wurde |
@@ -77,7 +83,8 @@ Der Hosting-Bereich vergleicht sie ausführlicher: [Einen Webserver wählen](../
 ## Bevor Sie eine Serverkonfiguration ausliefern
 
 - [ ] Sie leitet genau so weiter wie `.htaccess_root`; die Testanfragen der Beispielseite (`/.git/config`, `/.env`,
-      Skripte unterhalb des Wurzelverzeichnisses) liefern in Ihrem Bundle 404.
+      Skripte unterhalb des Wurzelverzeichnisses) liefern in Ihrem Bundle 404. Für ein Apache-Bundle endet
+      `exp:setup:htaccess` mit Exit-Code 0 (die `.htaccess` ist eine Kopie der Vorlage).
 - [ ] Das Document-Root ist das Wurzelverzeichnis der Installation.
 - [ ] HTTPS ist konfiguriert oder ausdrücklich dem Empfänger überlassen.
 - [ ] Das PHP, das die Website ausliefert, hat die Erweiterungen, nach denen `exp:velocity ext check` fragt.
@@ -89,6 +96,7 @@ Der Hosting-Bereich vergleicht sie ausführlicher: [Einen Webserver wählen](../
 - [Kapitel 8: Die Website ausliefern](../../installation/08-die-website-ausliefern.md)
 - [Velocity in einem Bundle](velocity-in-einem-bundle.md)
 - [Velocity für Hoster](../hosting/server/velocity-fuer-hoster.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

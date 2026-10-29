@@ -137,6 +137,12 @@ the natural unit is a new image rolled out to new pods. Two cautions from the so
 - After the rollout, clear the caches that the replicas share
   ([Cache clearing and warming](../performance/cache-clearing-and-warming.md)).
 
+Every pod needs the same `config.php`, for example the `CLUSTER_*` constants of a shared cluster storage. Make it in
+the image or in the entry point with `exp:setup:config --apply` and `exp:config:set ... --apply`, with passwords from
+the pod's secrets (`--value="$CLUSTER_DB_PASS"`), never in the image. `exp:config:list --only-set --format=json`, run
+in each pod, shows whether they agree
+([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md#11-in-scripts-containers-and-ci)).
+
 ## Checklist
 
 - [ ] One replica with SQLite, or several with a database server (PostgreSQL first).
@@ -152,6 +158,7 @@ the natural unit is a new image rolled out to new pods. Two cautions from the so
 - [Containers: Docker and Podman](containers-docker-and-podman.md)
 - [Several web nodes](../operations/several-web-nodes.md), [Clustering and shared storage](../operations/clustering-and-shared-storage.md)
 - [Varnish and reverse proxies](../performance/varnish-and-reverse-proxies.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

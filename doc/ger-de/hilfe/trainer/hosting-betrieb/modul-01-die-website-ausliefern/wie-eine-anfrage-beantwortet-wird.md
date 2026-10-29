@@ -86,7 +86,9 @@ Regel für Regel aus `.htaccess_root` übersetzt (Lektion 1.2).
 
 - **Ein `200` für `/.git/config`.** Die Regeln sind nicht aktiv: Apache ohne `.htaccess` oder `AllowOverride`, oder ein
   nginx-Block, der nicht der aus dem Kapitel ist. Halten Sie an und beheben Sie das vor allem anderen; das ist das
-  wichtigste Ergebnis der Lektion.
+  wichtigste Ergebnis der Lektion. Unter Apache zeigt `./console exp:setup:status` sofort, ob `.htaccess` existiert und
+  von welcher Vorlage sie eine Kopie ist
+  ([.htaccess und config.php von der Konsole einrichten](../../../../anleitungen/setup-dateien-von-der-konsole.md)).
 - **Falscher Port.** Die Teilnehmenden kopieren `127.0.0.1:8088` aus dem Buch, während ihre Website woanders läuft.
   Lassen Sie sie zuerst `php bin/php/console exp:velocity status` ausführen; es listet jede Adresse als vollständige
   URL auf.
@@ -166,6 +168,8 @@ Verwenden Sie Ihre eigene Schulungsinstallation, ausgeliefert auf Ihrem Rechner 
   Bild für Hosting-Mitarbeitende.
 - [Anforderungen auf einen Blick](../../../hosting/grundlagen/anforderungen-auf-einen-blick.md): Anforderungen an PHP und
   Erweiterungen.
+- [.htaccess und config.php von der Konsole einrichten](../../../../anleitungen/setup-dateien-von-der-konsole.md): welche
+  Server `.htaccess` lesen, und die Befehle, die sie an ihren Platz bringen.
 
 ## Verwandte Seiten
 

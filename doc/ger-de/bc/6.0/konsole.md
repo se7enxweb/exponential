@@ -73,7 +73,24 @@ php bin/php/console exp:ezsessiongc
 php bin/php/console exp:benchmark
 php bin/php/console exp:benchmark --compare=https://www.example.com,https://www.example.com:8080
 php bin/php/console exp:benchmark kernel --save=var/benchmark/base.json
+
+# Put .htaccess and config.php into place from the shipped templates (nothing is written without --apply)
+php bin/php/console exp:setup:status
+php bin/php/console exp:setup:htaccess --apply              # .htaccess_root -> .htaccess (--static: .htaccess_root_static)
+php bin/php/console exp:setup:config --apply                # config.php-RECOMMENDED -> config.php
+
+# Read and change the constants in config.php
+php bin/php/console exp:config:list --only-set
+php bin/php/console exp:config:get EZP_INI_FILEMTIME_CHECK
+php bin/php/console exp:config:set EZP_INI_FILEMTIME_CHECK false --apply
+php bin/php/console exp:config:unset EZP_INI_FILEMTIME_CHECK --apply
 ```
+
+Die Befehle für Setup-Dateien und `config.php` sind in
+[.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md) beschrieben
+und mit jeder Option in [exp:setupfiles](../../beispiele/befehle/setupfiles.md) und
+[exp:configphp](../../beispiele/befehle/configphp.md) aufgeführt. `exp:setup:*` und `exp:config:*` sind Aliase von
+`exp:setupfiles <htaccess|config|status>` und `exp:configphp <list|get|set|unset>`.
 
 Der Befehl für Benchmarks ist in [Benchmark](../../funktionen/6.0/benchmark.md) beschrieben und wird in der
 Anleitung [Benchmarking von Exponential](../../anleitungen/benchmarking.md) erklärt.
@@ -229,6 +246,7 @@ Ein Cronjob-Skript verwendet dasselbe Tag, zum Beispiel
 |---|---|
 | `PHP Fatal error: ... autoload.php` | Sie sind nicht im Wurzelverzeichnis von Exponential. Wechseln Sie mit `cd /path/to/your/exponential-root` dorthin und führen Sie den Befehl erneut aus. |
 | `Running scripts as root may be dangerous` | Das Skript läuft als `root`. Fügen Sie zur Bestätigung `--allow-root-user` hinzu, zum Beispiel `php bin/php/console exp:ezcache --clear-all --allow-root-user`. |
+| `Warning: config.php does not compile: ...` | `config.php` enthält einen Syntaxfehler; auch die Website ist ausgefallen. Andere Befehle als `exp:setup:*` und `exp:config:*` brechen daran ab. Korrigieren Sie die genannte Zeile, oder ersetzen Sie die Datei mit `php bin/php/console exp:setup:config --force --apply` (die defekte Datei wird vorher gesichert). |
 | `Unknown command: exp:myscript` | Die Datei liegt nicht dort, wo der Namespace sie erwartet. Prüfen Sie, dass `bin/php/myscript.php` existiert und lesbar ist, und führen Sie dann `php bin/php/console list` aus. |
 | Keine Farben | Das Terminal unterstützt keine ANSI-Codes, oder die Ausgabe wird umgeleitet; Farben werden dann automatisch ausgeschaltet. |
 
@@ -243,6 +261,7 @@ Ein Cronjob-Skript verwendet dasselbe Tag, zum Beispiel
 ## Verwandte Seiten
 
 - [Cache-Konsole (`exp:cache`)](cache-konsole.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md) (`exp:setup:*`, `exp:config:*`)
 - [Befehle, Cronjob-Teile und Modul-Views als Klassen](cli-cronjob-und-view-abstraktionen.md)
 - [Cronjob-Konsole](../../funktionen/6.0/cronjobs-in-der-konsole.md)
 - [Juni 2026, erste Hälfte (1. bis 15. Juni)](../../geschichte/2026/2026-06a.md)

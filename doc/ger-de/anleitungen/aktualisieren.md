@@ -197,6 +197,20 @@ Laden Sie dann das PHP-FPM neu, das die Site ausliefert (`systemctl reload <your
 Velocity betreiben, zeigt `./console exp:velocity deploy --dry-run --allow-root-user` jeden Schritt, den der echte
 Befehl ausführen würde.
 
+Vergleichen Sie dann `.htaccess` und `config.php` mit den neuen Vorlagen. Eine Release kann `.htaccess_root`,
+`.htaccess_root_static` und `config.php-RECOMMENDED` ändern, und Ihre Kopien bleiben, wie sie sind:
+
+```bash
+./console exp:setup:status                     # ist .htaccess noch eine Kopie einer Vorlage?
+./console exp:setup:htaccess                   # der Diff zwischen Ihrer .htaccess und der neuen Vorlage
+./console exp:setup:htaccess --force --apply   # die neuen Regeln übernehmen (vorher Sicherung), wenn der Diff nichts Eigenes enthält
+./console exp:config:list                      # Einstellungen, die neu in config.php-RECOMMENDED sind, erscheinen als (not set)
+```
+
+Setzen Sie die neuen Einstellungen, die Sie möchten, mit `./console exp:config:set <NAME> <value> --apply`; die
+Einstellungen, die Sie hatten, behalten ihre Werte. Dasselbe gilt nach Teil A und B. Siehe
+[.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md).
+
 ### C2. Das Datenbank-Update anwenden
 
 Die Datei für die Linie ist `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql` (es gibt Dateien für MySQL,
@@ -329,6 +343,7 @@ sehen, was eine Version enthält, öffnen Sie ihr Changelog: [6.0.0 bis 6.0.15](
 - [Betrieb einer Site](betrieb-einer-website.md): Datensicherungen, Caches und Reparaturen nach dem Upgrade.
 - [Bereitstellung](bereitstellung.md) und [Velocity-Engines](../bc/6.0/velocity-engines.md): das richtige PHP-FPM neu laden oder auf einen schnelleren Server wechseln.
 - [Extensions](extensions.md): Versionen, Ladereihenfolge und Releases Ihrer eigenen Extensions.
+- [.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md): beide Dateien mit den neuen Vorlagen vergleichen.
 - Release-Hinweise: [Changelogs von Exponential 6.0](../../changelogs/6.0/6.0.15.md) und [die Release-Hinweise der Extensions](../../changelogs/extensions/README.md).
 
 <!-- exp-partner-block:start -->

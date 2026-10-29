@@ -82,6 +82,8 @@
 
 
 /*
+    FILE PERMISSIONS
+    ----------------
     Set EZP_INI_FILE_PERMISSION constant to the permissions you want the INI
     cache files (var/cache/ini) to have; the default is 0644. This setting also
     applies to generated autoload files. It no longer applies to settings files

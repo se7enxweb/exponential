@@ -20,6 +20,12 @@ einer Dateiendung); nach einem Upgrade gilt sie mit dem Neustart, den `exp:veloc
 
 Alles wird in `velocity.ini` eingestellt; der Baum `/etc/vc` wird bei jedem Start daraus erzeugt.
 
+Velocity liest `.htaccess` nicht. Kopieren Sie sie trotzdem (`./console exp:setup:htaccess --apply`), wenn Apache
+denselben Baum ausliefern könnte, etwa hinter einem Panel oder während eines Umzugs. `config.php` liest jeder Worker
+einmal: Führen Sie nach `./console exp:setup:config --apply` oder `./console exp:config:set <NAME> <Wert> --apply`
+den Befehl `./console exp:velocity restart` aus. Siehe
+[.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
+
 **WebDAV liefert Velocity nicht aus.** Seine Einstiegsskripte sind `index.php`, `index_rest.php` und
 `index_treemenu.php`; der WebDAV-Server, seit 6.0.15 `index_webdav.php` (früher `webdav.php`), gehört unter keinem der
 beiden Namen dazu. Liefern Sie WebDAV über Apache oder nginx mit PHP-FPM aus, am besten auf einem eigenen Host wie
@@ -271,6 +277,7 @@ Datei, in der die Pfade dieses Rechners ersetzt wurden.
   [8.3.10 Der Konfigurationsbaum](../../installation/08-die-website-ausliefern.md#8310-der-konfigurationsbaum-etcvc-im-debian-stil),
   [8.3.11 Velocity als Dienst betreiben](../../installation/08-die-website-ausliefern.md#8311-velocity-als-dienst-betreiben).
 - [Velocity-Engines](../../bc/6.0/velocity-engines.md) und [FrankenPHP](frankenphp.md).
+- [.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
 - [Kapitel 13, Abschnitt 13.12: Velocity-spezifische Härtung](../../installation/13-sicherheitshaertung.md#1312-velocity-spezifische-härtung).
 - [Webserver-Beispiele](README.md) und [alle Beispiele](../README.md).
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite dürfen Sie frei kopieren, übersetzen und verbessern.

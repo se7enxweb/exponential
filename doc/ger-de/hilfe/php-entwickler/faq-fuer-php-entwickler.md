@@ -60,6 +60,17 @@ Führen Sie `php bin/php/ezpgenerateautoloads.php -e` aus; unter Velocity starte
 Leeren Sie den INI-Cache mit `--clear-tag=ini` (nicht `--clear-id=ini`), prüfen Sie mit `exp:ini where`, welche Schicht
 gewinnt, und starten Sie die Worker von Velocity neu ([Einstellungen mit eZINI lesen](einstellungen-mit-ezini-lesen.md)).
 
+**Wie lege ich `.htaccess` und `config.php` an?**
+`./console exp:setup:htaccess --apply` und `./console exp:setup:config --apply` kopieren sie aus `.htaccess_root` und
+`config.php-RECOMMENDED`; eine vorhandene, abweichende Datei wird als Diff gezeigt und ohne `--force` behalten
+([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)).
+
+**Wie ändere ich eine Einstellung in `config.php` ohne Editor?**
+`./console exp:config:set <NAME> <value> [--type=bool|int|octal|float|string|null] --apply`. Die Datei wird als
+PHP-Tokens gelesen, nie ausgeführt; nur der Wert dieses einen `define()` ändert sich, und das Ergebnis muss `php -l`
+bestehen. Eine Konstante Ihrer eigenen Extension braucht `--allow-unknown`. Unter Velocity starten Sie danach die
+Worker neu ([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)).
+
 **Sollte ich `eZContentObject` und die anderen `eZ`-Klassen umbenennen?**
 Niemals. Es sind echte Bezeichner, die jede Erweiterung verwendet; neuer Code verwendet `exp` oder Ihr eigenes Präfix.
 

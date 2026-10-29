@@ -56,9 +56,20 @@ Actions and scope providers are classes registered in `settings/ini.ini` `[IniCo
 `/setup/radsurvey/(show)/inicommand` lists each with its owner. The same editor class (`expIniEditor`) is behind the
 [debug bar's](exp-debug-bar.md) settings tab.
 
+## See also: config.php
+
+`exp:ini` handles the INI files in `settings/` and extensions. The constants in `config.php` (file modes, INI checks,
+cluster storage, log rotation), which are read before any INI file, are handled by their own commands:
+`exp:config:list`, `exp:config:get`, `exp:config:set` and `exp:config:unset`, with `exp:setup:config` to put the file
+into place. They follow the same rules: a dry run without `--apply`, a backup of each changed file (to
+`var/backup/config/<time>/`) and masked secrets. See
+[Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md) and
+[Console commands for .htaccess and config.php](setup-files-and-config-php-commands.md).
+
 ## Related pages
 
 - [Console](../../bc/6.0/console.md)
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md): `exp:config:*` for `config.php`
 - [INI override placements](../../specifications/6.0/ini-override-placements.md)
 - [Audit event model](../../specifications/6.0/audit-event-model.md)
 - [eZINI preserves comments on save](../../bc/6.0/eZINI_PRESERVES_COMMENTS.md)

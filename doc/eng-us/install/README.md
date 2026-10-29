@@ -74,6 +74,7 @@ Each one goes through the vendor's own migration pages point by point and says w
 | Moving a site from eZ Publish 5.x | Chapters [15](15-migrating-from-5x-legacy.md), [17](17-migration-reference.md) |
 | Moving a site from eZ Platform or Ibexa | Chapters [16](16-migrating-from-ez-platform-and-ibexa.md), [17](17-migration-reference.md) |
 | Moving between Exponential products, from another CMS or site builder, or away from Exponential | [The migration hub](migration/README.md) |
+| Putting `.htaccess` and `config.php` into place, changing a `config.php` setting | [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md), chapters [3](03-getting-the-code.md) and [8](08-serving-the-site.md) |
 | Something does not work | Chapter [12](12-troubleshooting.md) |
 
 ## Other documentation

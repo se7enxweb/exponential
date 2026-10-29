@@ -61,7 +61,8 @@ Beantworten Sie diese für Ihren eigenen Server-Aufbau, bevor Sie eine Produktbe
 | PHP-Version | 8.0 oder später für Web und Kommandozeile, in beiden dieselben Erweiterungen | [PHP-Auswahl und FPM-Pools](php-auswahl-und-fpm-pools.md) |
 | PHP-Einstellungen | `memory_limit` 64M oder mehr, `max_execution_time` 30 oder mehr, `date.timezone`, `file_uploads`, `allow_url_fopen`; Upload-Größen für die Dateien der Redakteure | [2.5](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini) |
 | Document Root | das Wurzelverzeichnis der Installation, wo `index.php` liegt | [8.5.1](../../../installation/08-die-website-ausliefern.md#851-schritt-für-schritt) |
-| Rewrite-Regeln | `.htaccess` aus `.htaccess_root` kopiert | [13.2](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf) |
+| Rewrite-Regeln | `.htaccess` aus `.htaccess_root` kopiert; mit Shell, als Benutzer des Kontos: `php bin/php/console exp:setup:htaccess --apply` | [13.2](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf), [von der Konsole](../../../anleitungen/setup-dateien-von-der-konsole.md) |
+| `config.php` (optional) | `config.php-RECOMMENDED` nach `config.php` kopiert: `php bin/php/console exp:setup:config --apply`, Werte mit `exp:config:set` | [von der Konsole](../../../anleitungen/setup-dateien-von-der-konsole.md) |
 | Datenbank | in der offiziellen Reihenfolge: 1. SQLite 3 (kein Server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL; Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich | [Datenbanken und Benutzer](datenbanken-und-benutzer.md) |
 | Cron | `runcronjobs.php` mit dem PHP des Kontos, alle paar Minuten für `frequent` | [Cron und Shell-Zugang](cron-und-shell-zugang.md) |
 | Zertifikat | HTTPS für jeden Namen der Website, Umleitung von HTTP | [TLS-Zertifikate in Panels](tls-zertifikate-in-panels.md) |
@@ -106,6 +107,7 @@ Melden Sie einen erfolgreichen Lauf dem Projekt, damit die Stufe aufrücken kann
 - [Control Panels: Überblick](README.md), [cPanel](cpanel.md)
 - [Shared Hosting](../modelle/shared-hosting.md), [Trennung von Mandanten](../sicherheit/trennung-von-mandanten.md)
 - [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

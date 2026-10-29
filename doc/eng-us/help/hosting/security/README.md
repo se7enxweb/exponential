@@ -55,7 +55,8 @@ the other covers.
 
 | Area | Exponential provides | The host provides | The customer decides |
 |---|---|---|---|
-| Served files | the rewrite rules of `.htaccess_root` and Velocity's list | a web server configuration that keeps them | nothing, unless they bring their own rules |
+| Served files | the rewrite rules of `.htaccess_root` and Velocity's list; `exp:setup:htaccess` to copy them and to show drift | a web server configuration that keeps them | nothing, unless they bring their own rules |
+| `config.php` | `exp:config:*` with masked secrets, backups and a `php -l` check | mode `0640`, out of version control, `var/backup/` protected and cleaned | the values their site needs |
 | Transport | HSTS and certificate handling in Velocity; secure cookies | certificates, renewal, redirects, the TLS terminator | which host names exist |
 | Accounts | bcrypt hashes, password rules, the weak password check, two-step sign-in | a provisioning flow that never leaves a known password | who gets which role |
 | Isolation | nothing between installations: that is the operating system's job | one user, one pool, one database user per customer | nothing |
@@ -88,6 +89,7 @@ open.
 - [Chapter 13: Security hardening for production](../../../install/13-security-hardening.md)
 - [Security review checklist](../checklists/security-review.md)
 - [Compromised site](../runbooks/compromised-site.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

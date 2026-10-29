@@ -66,6 +66,8 @@ PHP 8. Testen Sie Ihren eigenen Stack.
 
 ## Nachzubildendes Routing
 
+IIS liest `.htaccess` nie, `exp:setup:htaccess` schützt eine IIS-Website also nicht
+([.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)).
 Welchen Regelsatz Sie für IIS auch schreiben, er muss tun, was `.htaccess_root` tut
 ([Kapitel 8, Wie eine Anfrage ausgeliefert wird](../../../installation/08-die-website-ausliefern.md#82-wie-eine-anfrage-beantwortet-wird)):
 
@@ -100,7 +102,8 @@ Führen Sie die vier Prüfungen des Routings aus [Webserver und Engines](README.
 
 ## Alternativen auf Windows-Maschinen
 
-- **Apache mit FastCGI-PHP** unter Windows: Die mitgelieferte `.htaccess_root` gilt direkt.
+- **Apache mit FastCGI-PHP** unter Windows: Die mitgelieferte `.htaccess_root` gilt direkt (kopiert mit
+  `php bin/php/console exp:setup:htaccess --apply`).
 - **WSL2** führt die Linux-Stufen aus und ist der einfachere Weg für die Entwicklung unter Windows.
 - **Eine virtuelle Linux-Maschine oder ein Container** auf dem Windows-Host, wenn sich der Tarif so bauen lässt
   ([Container, Docker und Podman](../modelle/container-docker-und-podman.md)).
@@ -119,6 +122,7 @@ Führen Sie die vier Prüfungen des Routings aus [Webserver und Engines](README.
 - [Betriebssysteme für Hoster](../grundlagen/betriebssysteme-fuer-hoster.md)
 - [Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md)
 - [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

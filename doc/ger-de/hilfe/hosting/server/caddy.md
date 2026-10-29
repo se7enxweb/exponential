@@ -68,6 +68,8 @@ PHP-FPM-Handler nach.
 
 ## Das Routing, das jede Caddy-Konfiguration braucht
 
+Caddy liest `.htaccess` nie, `./console exp:setup:htaccess --apply` ändert für Caddy also nichts; das Routing steht im
+Caddyfile ([.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)).
 Das erzeugte Caddyfile setzt `.htaccess_root` so um
 ([FrankenPHP, Was es enthält](../../../bc/6.0/frankenphp.md#was-es-enthält-überprüfte-ausgabe)):
 
@@ -108,6 +110,7 @@ HTTPS war: direkt (`HTTPS` an PHP übergeben) oder von einem vertrauenswürdigen
 - [nginx mit PHP-FPM](nginx-mit-php-fpm.md)
 - [Einen Webserver wählen](einen-webserver-waehlen.md)
 - [Velocity-Engines](../../../bc/6.0/velocity-engines.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

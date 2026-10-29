@@ -907,11 +907,15 @@ process of its own.
    version:
 
    ```bash
-   cp .htaccess_root .htaccess
+   ./console exp:setup:htaccess --apply      # or by hand: cp .htaccess_root .htaccess
    ```
 
    Use `.htaccess_root_static` instead only when you serve a generated static cache (it is `.htaccess_root` with the
-   static cache offload rules added).
+   static cache offload rules added): `./console exp:setup:htaccess --static --apply`. The command copies with the
+   template's mode (and, run as root with `--allow-root-user`, its owner), shows a diff and refuses when a different
+   `.htaccess` is already there, and backs the old one up to `var/backup/setup/<time>/` before `--force --apply`
+   replaces it. `./console exp:setup:status` says which template the current `.htaccess` is a copy of. See
+   [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md).
 
 2. **Load the modules.** `mod_rewrite`, `mod_proxy` and `mod_proxy_fcgi` (Debian: `a2enmod rewrite proxy_fcgi`);
    for HTTPS `mod_ssl`, for HTTP/2 `mod_http2`.
@@ -995,7 +999,8 @@ Plesk generates the virtual host itself; do not edit its files. In Plesk:
 
 - point the domain's document root at the installation root (the directory with `index.php`);
 - choose "FPM application served by Apache" in the PHP settings, and the PHP version;
-- keep `.htaccess` (copied from `.htaccess_root`); Plesk's Apache reads it;
+- keep `.htaccess` (copied from `.htaccess_root`, for example with `./console exp:setup:htaccess --apply`); Plesk's
+  Apache reads it;
 - install the certificate in Plesk (its Let's Encrypt extension or your own) and switch on the redirect to HTTPS.
 
 Plesk names each pool after the domain in `/opt/plesk/php/<version>/etc/php-fpm.d/<domain>.conf`, served by the systemd
@@ -1329,7 +1334,7 @@ What can go wrong behind a proxy:
 - [ ] `[DeploySettings] PhpFpmService=disabled` when Velocity serves the site alone; `exp:velocity deploy --dry-run`
       shows the steps you expect.
 - [ ] Apache or nginx: `.htaccess` copied from `.htaccess_root` (or the derived nginx block), front controllers and
-      asset paths tested, a `.php` below the root answers 404.
+      asset paths tested, a `.php` below the root answers 404; `./console exp:setup:status` names the template.
 - [ ] `var/` and `settings/` writable by the one user (or group) that runs PHP; no root-owned files in `var/`.
 - [ ] Behind a proxy: the proxy is trusted (`TrustedProxies[]`, or for Velocity `Q.webserver.proxy.trusted`), it sets
       `X-Forwarded-Proto` and appends to or sets `X-Forwarded-For`; `ClientIpByCustomHTTPHeader` set only under Apache

@@ -46,6 +46,18 @@ jede Entscheidung auf einer Seite mit einer Erklärung zeigt. Wenn Sie für den 
 > dass Sie die Datei ohne Shell-Zugang mit einem FTP-Client kopieren oder Ihren Hosting-Anbieter darum bitten müssen
 > ([5.3.13](../../../installation/05-setup-assistent.md#5313-seitensicherheit)). Legen Sie sie vorab an, dann wird die Seite übersprungen.
 
+Die Bereitstellung des Hosters kann das mit der Konsole erledigen, bevor der Kunde den Assistenten öffnet. Als root
+braucht die Kopie `--allow-root-user` und sollte dem Benutzer des Kontos gegeben werden:
+
+```bash
+cd /path/to/the/installation
+php bin/php/console exp:setup:htaccess --apply --allow-root-user --owner=<konto-benutzer>:<konto-gruppe>
+php bin/php/console exp:setup:config --apply --allow-root-user --owner=<konto-benutzer>:<konto-gruppe>   # optional
+```
+
+Ohne `--owner` erhält eine neue Datei den Eigentümer der Vorlage, aus der sie kopiert wird, niemals root. Einzelheiten:
+[.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md).
+
 ## Was der Kunde tut
 
 1. Er öffnet die Adresse der Website. Solange `[SiteAccessSettings] CheckValidity=true` gilt (der mitgelieferte Wert), erscheint die erste
@@ -93,6 +105,7 @@ Installation; sie enthält Passwörter im Klartext.
 - [Ein-Klick-Installer](ein-klick-installer-fuer-exponential.md)
 - [Shared Hosting](../modelle/shared-hosting.md)
 - [Apache mit PHP-FPM](../server/apache-mit-php-fpm.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

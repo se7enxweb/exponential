@@ -65,7 +65,11 @@ Das Folgende ist ein allgemeiner Ratschlag, abgeleitet aus den Anforderungen von
    Einstellungen für Erweiterungen des Panels. Nutzen Sie dieselbe Version für die Kommandozeile, wenn das Konto eine Shell hat.
 2. **Richten Sie den Document Root der Domain auf das Wurzelverzeichnis der Installation** (das Verzeichnis mit `index.php`).
 3. **Kopieren Sie die Rewrite-Regeln**: `cp .htaccess_root .htaccess` (oder laden Sie `.htaccess_root` als `.htaccess` hoch)
-   ([8.5.1](../../../installation/08-die-website-ausliefern.md#851-schritt-für-schritt)).
+   ([8.5.1](../../../installation/08-die-website-ausliefern.md#851-schritt-für-schritt)). Mit dem **Terminal** von cPanel
+   (oder SSH) erledigt das die Konsole, als Benutzer des Kontos: `php bin/php/console exp:setup:htaccess --apply`, und
+   `php bin/php/console exp:setup:config --apply` für `config.php`. Ohne Shell kopieren Sie die Dateien im
+   **File Manager** (er blendet Punktdateien aus, bis Sie „Show Hidden Files“ einschalten)
+   ([.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)).
 4. **Legen Sie die Datenbank und ihren Benutzer** im Panel an, wenn nicht SQLite. Für MariaDB oder MySQL nutzen Sie `utf8mb4`
    ([9.3](../../../installation/09-datenbanken.md#93-mysql-und-mariadb)). Seit 6.0.15 braucht der Assistent nur Rechte auf diese
    Datenbank ([Eine saubere Installation, die zu Shared Hosting passt](../../../funktionen/6.0/standardwerte-einer-sauberen-installation.md)).
@@ -131,6 +135,7 @@ Projekt mit, und die Zeile rückt auf ([Die vier Stufen](../../betriebssystemunt
 - [Control Panels: Überblick](README.md), [DirectAdmin](directadmin.md)
 - [Shared Hosting](../modelle/shared-hosting.md)
 - [Der Setup-Assistent auf Shared Hosting](../bereitstellung/der-setup-assistent-auf-shared-hosting.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

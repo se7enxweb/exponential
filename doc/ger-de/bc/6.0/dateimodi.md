@@ -36,6 +36,20 @@ define( 'EZP_DIR_MODE_MAX', 0750 );   // directories: owner rwx, group r-x, othe
 define( 'EZP_FILE_MODE_MAX', 0640 );  // files: owner rw, group r, others nothing
 ```
 
+Von der Konsole aus, ohne Editor (jeder Befehl zeigt die Änderung zuerst und schreibt erst mit `--apply`, nach einer
+Sicherung nach `var/backup/config/<Zeit>/` und einer Prüfung mit `php -l`):
+
+```bash
+./console exp:setup:config --apply                     # once, when there is no config.php yet
+./console exp:config:set EZP_DIR_MODE_MAX 0750 --apply
+./console exp:config:set EZP_FILE_MODE_MAX 0640 --apply
+./console exp:config:get EZP_FILE_MODE_MAX             # 0640
+```
+
+`exp:config:set` schreibt den Wert als oktalen Modus (`750` und `0o750` werden angenommen und als `0750` geschrieben),
+und zwar in die Zeile, die `config.php-RECOMMENDED` dokumentiert. Siehe
+[.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
+
 - Schreiben Sie sie als Oktalzahlen mit führender 0 (`0750`) oder als Zeichenketten (`'0750'`, `'750'`). Eine Ganzzahl
   über 0777 ohne die 0 (`750`) wird ebenfalls als 0750 gelesen, eine kleinere lässt sich aber nicht von einer Oktalzahl
   unterscheiden: `440` ist 0670. Ein Wert, der kein Modus ist (`'rwxr-x---'`, 0x1ff0, eine Gleitkommazahl, ein Array),
@@ -161,3 +175,4 @@ hat.
 
 - [Anleitung zu Sicherheit und Audit](../../anleitungen/sicherheit-und-audit.md)
 - [Über die Administration gespeicherte Einstellungsdateien](dateirechte-beim-speichern-von-ini-dateien.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md): `exp:config:set` für diese Konstanten

@@ -14,6 +14,12 @@ Exponential ships no nginx configuration of its own; [`nginx.conf`](nginx.conf) 
 [chapter 8, section 8.6](../../install/08-serving-the-site.md#86-nginx-with-php-fpm) with HTTPS, HTTP/2, a port 80
 redirect and the security headers. Compare it with `.htaccess_root` after every upgrade.
 
+nginx never reads `.htaccess`, so `./console exp:setup:htaccess --apply` does not protect an nginx site: the rules
+below do. The console is still useful here: `./console exp:setup:config --apply` puts `config.php` into place, and
+after an upgrade a `.htaccess` copied with `exp:setup:htaccess` makes `./console exp:setup:htaccess` show, as a diff,
+which rules of `.htaccess_root` changed. See
+[Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md).
+
 ## Install it
 
 1. Copy the file to `/etc/nginx/conf.d/example.com.conf`. It is read inside the `http {}` block: it holds `map` blocks
@@ -247,5 +253,6 @@ file on port 80.
 - [Chapter 8, section 8.6: nginx with PHP-FPM](../../install/08-serving-the-site.md#86-nginx-with-php-fpm).
 - [Chapter 13, section 13.2: What the web server must never hand out](../../install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out).
 - [PHP-FPM pool](php-fpm.md), [Apache .htaccess](apache-htaccess.md) (the rules explained one by one).
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md): which servers read `.htaccess`, and `config.php`.
 - [Web server examples](README.md) and [all examples](../README.md).
 - [Free documentation](../../help/free-documentation.md): this page is free to copy, translate and improve.

@@ -77,6 +77,7 @@ Exponential sich unterscheidet.
 | Umzug einer Site von eZ Publish 5.x | Kapitel [15](15-migration-von-5x-legacy.md), [17](17-migrationsreferenz.md) |
 | Umzug einer Site von eZ Platform oder Ibexa | Kapitel [16](16-migration-von-ez-platform-und-ibexa.md), [17](17-migrationsreferenz.md) |
 | Wechsel zwischen Exponential-Produkten, von einem anderen CMS oder Website-Baukasten, oder weg von Exponential | [Die Migrationsübersicht](migration/README.md) |
+| `.htaccess` und `config.php` anlegen, eine Einstellung in `config.php` ändern | [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md), Kapitel [3](03-den-code-beschaffen.md) und [8](08-die-website-ausliefern.md) |
 | Etwas funktioniert nicht | Kapitel [12](12-fehlerbehebung.md) |
 
 ## Weitere Dokumentation

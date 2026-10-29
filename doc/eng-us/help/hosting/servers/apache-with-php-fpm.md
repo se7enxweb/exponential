@@ -45,8 +45,11 @@ and how to check the result. The source is
    cp .htaccess_root .htaccess
    ```
 
-   Use `.htaccess_root_static` instead only when the site serves a generated static cache
-   ([Static cache](../performance/static-cache.md)).
+   Or `./console exp:setup:htaccess --apply`, run as the site's user: it keeps the template's mode, refuses to
+   replace a `.htaccess` that differs unless you add `--force` (backup first), and shows what it would do when
+   `--apply` is left out ([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)).
+   Use `.htaccess_root_static` instead (`exp:setup:htaccess --static --apply`) only when the site serves a generated
+   static cache ([Static cache](../performance/static-cache.md)).
 
 2. **Load the modules:** `mod_rewrite`, `mod_proxy` and `mod_proxy_fcgi` (Debian: `a2enmod rewrite proxy_fcgi`);
    for HTTPS `mod_ssl`, for HTTP/2 `mod_http2`.
@@ -106,7 +109,7 @@ and how to check the result. The source is
 | Needs | `AllowOverride All` | `AllowOverride None` |
 | Cost | a file lookup per directory | `AllowOverride None` saves that lookup |
 | Customer can change it | yes, which suits shared hosting | no, only the host |
-| Upgrade | copy the new `.htaccess_root` over `.htaccess` | copy the changed rules into the vhost |
+| Upgrade | copy the new `.htaccess_root` over `.htaccess` (`exp:setup:htaccess` shows the diff, `--force --apply` copies) | copy the changed rules into the vhost |
 
 Inside `<Directory>` the rules of `.htaccess_root` keep their form. In server context (outside `<Directory>`) every
 pattern needs a leading slash, as in [doc/eng-us/examples/ezpublish.conf](../../../examples/ezpublish.conf). That example's
@@ -115,7 +118,9 @@ rule list predates the current `.htaccess_root`, so take the rules from `.htacce
 
 > **Warning**
 > After every upgrade, compare your copied rules with the new `.htaccess_root`. A rule that is missing can expose
-> files that should never be sent; a rule that is added can be the fix for exactly that.
+> files that should never be sent; a rule that is added can be the fix for exactly that. `./console
+> exp:setup:htaccess` prints that comparison as a diff and exits 1 while `.htaccess` differs, which also makes it a
+> drift check for monitoring.
 
 ## The PHP-FPM pool
 
@@ -164,6 +169,10 @@ Plesk generates the virtual host itself; do not edit its files ([Chapter 8, Ples
 - keep `.htaccess` (copied from `.htaccess_root`); Plesk's Apache reads it;
 - install the certificate in Plesk and switch on the redirect to HTTPS.
 
+In Plesk's SSH terminal, as the subscription's system user and with the domain's PHP,
+`/opt/plesk/php/<version>/bin/php bin/php/console exp:setup:htaccess --apply` makes the copy. As root, add
+`--allow-root-user` and, when needed, `--owner=<subscription-user>:psacln` ([Plesk](../panels/plesk.md)).
+
 Plesk names each pool after the domain in `/opt/plesk/php/<version>/etc/php-fpm.d/<domain>.conf`, served by the unit
 `plesk-php<XY>-fpm` (for example `plesk-php85-fpm`). `systemctl restart php-fpm` restarts a different master that no
 Plesk site uses. More on [Plesk](../panels/plesk.md).
@@ -203,6 +212,7 @@ add those rules to the administration vhost. See [Static cache](../performance/s
 - [PHP-FPM tuning](../performance/php-fpm-tuning.md)
 - [Per-customer users and pools](../security/per-customer-users-and-pools.md)
 - [Chapter 8: Serving the site](../../../install/08-serving-the-site.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

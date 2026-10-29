@@ -36,6 +36,7 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:clusterize](clusterize.md) |  | Verschiebt die Dateien aus var in den Cluster-Speicher der Datenbank (-u verschiebt sie zurück) |
 | [exp:clusterpurge](clusterpurge.md) |  | Löscht die Cluster-Dateien der angegebenen Bereiche physisch (--scopes=scope1,scope2; Probelauf, außer mit --apply) |
 | [exp:collaborationsampledata](collaborationsampledata.md) | exp:collaboration:sample-data | Legt Beispielinhalte für das Kollaborationswerkzeug an (Freigaben, Kommentare, Gruppen) oder entfernt sie wieder (Probelauf, außer mit --apply) |
+| [exp:configphp](configphp.md) | exp:config:list, exp:config:get, exp:config:set, exp:config:unset | Listet, liest, setzt und entfernt die define()-Einstellungen der config.php, mit Typ und mit php -l geprüft, beschrieben durch config.php-RECOMMENDED (set und unset: Probelauf ohne --apply) |
 | [exp:contentcheck](contentcheck.md) | exp:content-check | Inhaltsprüfungen: den Referenzindex aufbauen, die ungenutzten Assets und die defekten Beziehungen unter einem Knoten auflisten, die fehlenden Dateien auflisten, die Speicherdateien durchsuchen (nur Bericht; --fix, --quarantine und --fix-permissions sind ein Probelauf, außer mit --apply) |
 | [exp:convertezenumtoezselection](convertezenumtoezselection.md) |  |  |
 | [exp:convertprice2multiprice](convertprice2multiprice.md) |  | Wandelt Inhaltsobjekte mit Attributen vom Datentyp 'price' in 'multiprice' um |
@@ -107,6 +108,7 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:publish_content](publish_content.md) |  |  |
 | [exp:resetuserpassword](resetuserpassword.md) |  | Setzt das Passwort eines Benutzers zurück, mit Anmeldung als Administrator oder als root ohne Anmeldung |
 | [exp:services](services.md) | exp:services:compile, exp:services:list, exp:services:show, exp:services:check | Kompiliert, listet, zeigt und prüft den Service-Container des Kernels (Verben compile, list, show, check) |
+| [exp:setupfiles](setupfiles.md) | exp:setup:htaccess, exp:setup:config, exp:setup:status | Kopiert .htaccess_root (oder .htaccess_root_static) nach .htaccess und config.php-RECOMMENDED nach config.php, mit Diff, Sicherung und --force für eine vorhandene Datei (Probelauf ohne --apply) |
 | [exp:solr](solr.md) | exp:search | Steuert den Solr-Suchserver, sobald er installiert und konfiguriert ist |
 | [exp:systeminfo](systeminfo.md) | exp:system:info | Die Fakten und Zustandsprüfungen von Setup > Systeminformationen, als Text oder JSON (--json, --sizes) |
 | [exp:trashpurge](trashpurge.md) |  | Löscht alle Objekte im Papierkorb endgültig (Probelauf, außer mit --apply) |

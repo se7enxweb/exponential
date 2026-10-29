@@ -146,7 +146,9 @@ script in the browser (SVG, HTML), or a huge or malformed file that exhausts the
   is served with headers that stop it from running anything ([SVG images](../bc/6.0/svg-images.md)).
 - Package uploads need the `package` policies, and `ManagedByDeployment` blocks them.
 
-**Harden.** Keep the rewrite rules current after every upgrade (`.htaccess_root`, or the derived nginx block). Give
+**Harden.** Keep the rewrite rules current after every upgrade (`.htaccess_root`, or the derived nginx block;
+`./console exp:setup:htaccess` shows the diff between your `.htaccess` and the shipped rules and exits 1 while they
+differ, see [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md)). Give
 upload rights only to the roles that need them. Keep `TemporaryDir` private to the site
 ([13.11](../install/13-security-hardening.md#1311-file-permissions-and-ownership)).
 
@@ -163,6 +165,15 @@ classifier writes every traversal attempt to `security.log` (rule set `traversal
 **Harden.** Never serve the installation with a generic "serve the file if it exists" configuration. Run the check of
 [13.2](../install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out) from outside after every
 change of the web server's configuration.
+
+**`config.php` and its backups.** `config.php` can hold the cluster database password. Never commit it (add
+`/config.php` to your project's `.gitignore`; the Exponential repository tracks only `config.php-RECOMMENDED`) and
+narrow its mode: `chmod 0640 config.php`, with the web server's group. Edit it with `./console exp:config:set`: the
+value of every name with `PASS`, `SECRET`, `KEY`, `TOKEN`, `CREDENTIAL` or `PWD` is shown as `********` unless you ask
+for `--show-secrets`, and a secret written into a `config.php` every user can read prints a `WARN:` that says so.
+Every edit backs the old file up to `var/backup/config/<time>/` (directories of mode `0700`, not served by the shipped
+rules): include `var/backup/` in what you protect and delete old backups
+([Setting up .htaccess and config.php from the console, Security](../guides/setup-files-from-the-console.md#10-security)).
 
 ### Cross-site scripting (XSS) and the Content Security Policy
 
@@ -426,7 +437,8 @@ front, of the web server, or of a listener you register in `requestclassifier.in
 - [ ] The administration on its own host, restricted by network, VPN or the shield's browser check.
 - [ ] `CheckValidity=false`, `AllowWizardOnInstalledSite=disabled`; `ManagedByDeployment` where the configuration
       comes from version control.
-- [ ] Rewrite rules current; the outside check of 13.2 returns no file.
+- [ ] Rewrite rules current (`./console exp:setup:htaccess` exits 0); the outside check of 13.2 returns no file.
+- [ ] `config.php` not in version control, mode `0640`; old backups in `var/backup/` removed.
 - [ ] `ezformtoken` active; Content Security Policy enforced on the administration, then on the sites.
 - [ ] Debug output off; PHP `display_errors=Off`.
 - [ ] HTTPS everywhere, HSTS, `CookieSecure=true`.
@@ -450,6 +462,8 @@ data. The policy and the supported versions are in
 
 - [Chapter 13: Security hardening for production](../install/13-security-hardening.md)
 - [Security and audit: lock it down, see who did what](../guides/security-and-audit.md), the 30-minute walk-through
+- [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md): the rules file,
+  `config.php`, masked secrets and backups
 - [Change the administrator password](change-the-admin-password.md),
   [The default administrator password](default-administrator-password.md)
 - [Security defaults of September 2026](../specifications/6.0/security-defaults-2026-09.md),

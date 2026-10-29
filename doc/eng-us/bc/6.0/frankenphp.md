@@ -742,6 +742,11 @@ bulk of the gain (~+26 %); tracing JIT was *slower* on this workload and is
 deliberately absent. Keep `revalidate_freq=0` so edited/regenerated PHP files
 are noticed.
 
+That includes `config.php`: a value set with `./console exp:config:set <NAME>
+<value> --apply` applies from the next request. FrankenPHP does not read
+`.htaccess`; the generated Caddyfile carries the routing
+([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)).
+
 ### Go runtime knobs
 
 FrankenPHP is a Go program; the Go runtime env vars apply and can be passed via
@@ -1003,3 +1008,4 @@ tail -n 50 var/vc/frankenphp/log/error.log | jq .
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Deploying guide](../../guides/deploying.md)
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)

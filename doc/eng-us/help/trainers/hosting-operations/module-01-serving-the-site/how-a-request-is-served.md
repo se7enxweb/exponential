@@ -83,7 +83,8 @@ for rule from `.htaccess_root` (lesson 1.2).
 
 - **A `200` for `/.git/config`.** The rules are not active: Apache without `.htaccess` or `AllowOverride`, or an nginx
   block that is not the chapter's. Stop and fix it before anything else; this is the most important result of the
-  lesson.
+  lesson. Under Apache, `./console exp:setup:status` shows at once whether `.htaccess` exists and which template it is
+  a copy of ([Setting up .htaccess and config.php from the console](../../../../guides/setup-files-from-the-console.md)).
 - **Wrong port.** Learners copy `127.0.0.1:8088` from the book while their site runs elsewhere. Have them run
   `php bin/php/console exp:velocity status` first; it lists every address as a full URL.
 - **The qbix engine answers 403, not 404,** for dot paths. Both mean the file was refused.
@@ -158,6 +159,8 @@ Use your own training installation, served on your machine (for example with
 - [What hosting Exponential involves](../../../hosting/basics/what-hosting-exponential-involves.md): the bigger
   picture for hosting staff.
 - [Requirements at a glance](../../../hosting/basics/requirements-at-a-glance.md): PHP and extension requirements.
+- [Setting up .htaccess and config.php from the console](../../../../guides/setup-files-from-the-console.md): which
+  servers read `.htaccess`, and the commands that put it into place.
 
 ## Related pages
 

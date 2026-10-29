@@ -46,9 +46,17 @@ kopiert sie, sodass ein Update eine neue Version bringen kann:
 
 ```bash
 cp .htaccess_root .htaccess
+# oder, wo das Konto eine Shell hat, als Benutzer des Kontos:
+php bin/php/console exp:setup:htaccess --apply
 ```
 
-Nutzen Sie stattdessen `.htaccess_root_static` nur, wenn die Website einen erzeugten statischen Cache ausliefert. Für Apache
+Der Konsolenbefehl übernimmt den Modus der Vorlage, weigert sich, eine abweichende `.htaccess` zu überschreiben (er
+zeigt den Diff; `--force --apply` ersetzt sie nach einer Sicherung in `var/backup/setup/<zeit>/`) und sagt ohne
+`--apply`, was er tun würde. `php bin/php/console exp:setup:config --apply` bringt `config.php` auf dieselbe Weise an
+ihren Platz. Ohne Shell legt der Dateimanager oder der FTP-Client die Kopie an. Siehe
+[.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md).
+
+Nutzen Sie stattdessen `.htaccess_root_static` (`exp:setup:htaccess --static --apply`) nur, wenn die Website einen erzeugten statischen Cache ausliefert. Für Apache
 muss der virtuelle Host `.htaccess` wirken lassen (`AllowOverride All` auf dem Document Root), und `mod_rewrite` muss an
 sein; ein 404 für jede Seite bedeutet, dass `.htaccess` nicht gelesen wird (`AllowOverride`) oder `mod_rewrite` aus ist
 ([8.5 Apache mit PHP-FPM](../../../installation/08-die-website-ausliefern.md#85-apache-mit-php-fpm)). LiteSpeed liest die
@@ -167,6 +175,7 @@ des Kunden), als dieser eine Benutzer laufen
 - [Ein Hosting-Modell wählen](ein-hosting-modell-waehlen.md)
 - [Control Panels: Überblick](../control-panels/README.md)
 - [Der Setup-Assistent auf Shared Hosting](../bereitstellung/der-setup-assistent-auf-shared-hosting.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

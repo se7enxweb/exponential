@@ -98,6 +98,22 @@ composer install
 Installieren Sie die Site dann wie gewohnt: [Eine Installationsmethode wählen](../installation/04-installationsweg-waehlen.md)
 oder der eine Befehl `php bin/php/console exp:install --apply` aus [der Konsoleninstallation](../installation/07-installation-ueber-die-konsole.md).
 
+Für eine lokale Entwicklungs-Site unter Apache bringen Sie die Regeln und die Konstanten von der Konsole aus an ihren
+Platz. Eine Kopie von `config.php-RECOMMENDED` setzt nichts, es gelten also die eingebauten Vorgaben, und die passen zur
+Entwicklung (Änderungen an INI-Dateien werden sofort gesehen); `exp:config:list` zeigt, was sich setzen ließe:
+
+```bash
+php bin/php/console exp:setup:status
+php bin/php/console exp:setup:htaccess --apply
+php bin/php/console exp:setup:config --apply
+php bin/php/console exp:config:list
+```
+
+Der Klon verfolgt nur die Vorlagen (`.htaccess_root`, `.htaccess_root_static`, `config.php-RECOMMENDED`); die Kopien
+erscheinen in `git status` als nicht verfolgte Dateien. Committen Sie `config.php` nie: Sie kann ein Passwort enthalten.
+Tragen Sie in einem Repository Ihrer eigenen Site `/config.php` in dessen `.gitignore` ein. Einzelheiten:
+[.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md).
+
 **Lieber `composer create-project`?** Auch das kann Klone erzeugen, aber Sie brauchen zwei Optionen zusammen:
 
 ```bash
@@ -370,6 +386,8 @@ Drei weitere wissenswerte Dinge:
 - [Den Code beziehen](../installation/03-den-code-beschaffen.md): jeder Installationsweg, Versionen und Tags, Erweiterungen als
   Composer-Pakete.
 - [Erweiterungen](../anleitungen/extensions.md) und die [Seiten zu den Erweiterungen](../funktionen/6.0/erweiterungen/README.md).
+- [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md): die
+  lokale `.htaccess` und `config.php`.
 - [git_manager](../funktionen/6.0/erweiterungen/git_manager.md): den Zustand eines Git-Checkouts in der Administration
   ansehen und ändern und Backups erstellen, bevor Sie etwas ändern.
 - [Wenn etwas schiefgeht](wenn-etwas-schiefgeht.md#einen-fehler-in-exponential-melden): welcher Issue-Tracker zu verwenden

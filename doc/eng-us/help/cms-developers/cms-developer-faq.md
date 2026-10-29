@@ -97,6 +97,18 @@ PHP-FPM work too. [Deploying a site](deploying-a-site.md#choose-how-the-site-is-
 PHP 8.0 to 8.5 (PHP 7.4 usable without support) per the root `composer.json`. Databases in the project's order of preference: SQLite 3, PostgreSQL,
 MongoDB, MariaDB, Oracle, MySQL. [Database support](../database-support.md), [Requirements](../../install/02-requirements.md).
 
+**How do I create .htaccess and config.php?**
+`./console exp:setup:htaccess --apply` copies `.htaccess_root` (with `--static`: `.htaccess_root_static`), and
+`./console exp:setup:config --apply` copies `config.php-RECOMMENDED`. Without `--apply` they only show what they would
+do, and an existing file that differs is shown as a diff and kept unless you add `--force`.
+[Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md).
+
+**How do I change a config.php setting without an editor?**
+`./console exp:config:set EZP_INI_FILEMTIME_CHECK false --apply`: the file is backed up, checked with `php -l` and
+written in one step. `exp:config:list` shows every documented setting, `exp:config:get <NAME>` one value, and
+`exp:config:unset <NAME> --apply` comments it out again.
+[Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md#6-set-a-value).
+
 **How do I start a project fast?**
 `exp:install` with the default `sevenx_multisite` package on SQLite, then your own extension.
 [Development environment](development-environment.md).

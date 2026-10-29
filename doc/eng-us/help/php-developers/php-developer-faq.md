@@ -59,6 +59,17 @@ Run `php bin/php/ezpgenerateautoloads.php -e`; under Velocity also restart the w
 Clear the INI cache with `--clear-tag=ini` (not `--clear-id=ini`), check the layer that wins with `exp:ini where`, and
 restart Velocity's workers ([Reading settings with eZINI](reading-settings-with-ezini.md)).
 
+**How do I create `.htaccess` and `config.php`?**
+`./console exp:setup:htaccess --apply` and `./console exp:setup:config --apply` copy them from `.htaccess_root` and
+`config.php-RECOMMENDED`; an existing file that differs is shown as a diff and kept unless `--force`
+([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)).
+
+**How do I change a `config.php` setting without an editor?**
+`./console exp:config:set <NAME> <value> [--type=bool|int|octal|float|string|null] --apply`. The file is read as PHP
+tokens, never run; only the value of that one `define()` changes, and the result must pass `php -l`. A constant of your
+own extension needs `--allow-unknown`. Under Velocity restart the workers afterwards
+([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md#6-set-a-value)).
+
 **Should I rename `eZContentObject` and the other `eZ` classes?**
 Never. They are real identifiers that every extension uses; new code uses `exp` or your own prefix.
 

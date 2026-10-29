@@ -70,6 +70,12 @@ Files on the volume must belong to the user the container's PHP runs as; decide 
 volume ([Containers: Docker and Podman](../../../hosting/models/containers-docker-and-podman.md)). Keep credentials out
 of the image itself.
 
+`config.php` belongs with the code when it holds no secret: put it into place in the image build with
+`php bin/php/console exp:setup:config --apply --allow-root-user --owner=www-data:www-data` and set values with
+`exp:config:set`. A password (`CLUSTER_STORAGE_PASS`) is set at start from the platform's secrets. For the change
+record, `php bin/php/console exp:config:list --only-set --format=json` documents what an image sets, with secrets
+masked ([Setting up .htaccess and config.php from the console](../../../../guides/setup-files-from-the-console.md)).
+
 ## One container or several
 
 | | One container | Several replicas |
@@ -112,6 +118,7 @@ Containers make some public-sector duties easier, if you use them for that:
 - [Hosting](README.md) index of this folder
 - [Containers: Docker and Podman](../../../hosting/models/containers-docker-and-podman.md), [Kubernetes](../../../hosting/models/kubernetes.md)
 - [Government and sovereign cloud hosting](government-and-sovereign-cloud.md)
+- [Setting up .htaccess and config.php from the console](../../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

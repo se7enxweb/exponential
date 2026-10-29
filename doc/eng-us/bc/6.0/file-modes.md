@@ -31,6 +31,20 @@ define( 'EZP_DIR_MODE_MAX', 0750 );   // directories: owner rwx, group r-x, othe
 define( 'EZP_FILE_MODE_MAX', 0640 );  // files: owner rw, group r, others nothing
 ```
 
+From the console, without an editor (each command shows the change first and writes only with `--apply`, after a
+backup to `var/backup/config/<time>/` and a `php -l` check):
+
+```bash
+./console exp:setup:config --apply                     # once, when there is no config.php yet
+./console exp:config:set EZP_DIR_MODE_MAX 0750 --apply
+./console exp:config:set EZP_FILE_MODE_MAX 0640 --apply
+./console exp:config:get EZP_FILE_MODE_MAX             # 0640
+```
+
+`exp:config:set` writes the value as an octal mode (`750` and `0o750` are accepted and written as `0750`) on the line
+`config.php-RECOMMENDED` documents. See
+[Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md).
+
 - Write them as octal numbers with the leading 0 (`0750`) or as strings (`'0750'`, `'750'`). An integer above 0777
   written without the 0 (`750`) is read as 0750 too, but a smaller one cannot be told from an octal number: `440` is
   0670. A value that is no mode (`'rwxr-x---'`, 0x1ff0, a float, an array) or a limit that would take rights from
@@ -147,3 +161,4 @@ set-group-ID directories the result is the same as without limits; without the s
 
 - [Security and audit guide](../../guides/security-and-audit.md)
 - [Settings files saved through the admin](ini-save-file-permissions.md)
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md): `exp:config:set` for these constants

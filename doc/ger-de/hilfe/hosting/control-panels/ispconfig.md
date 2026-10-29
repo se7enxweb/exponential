@@ -68,7 +68,10 @@ kein Testergebnis: Behandeln Sie ISPConfig höchstens als Stufe 3, bis Sie es ge
 `.htaccess`, wenn `.htaccess`-Dateien gelesen werden (`AllowOverride`) und `mod_rewrite` an ist. Unter nginx gibt es keine
 `.htaccess`; die Regeln von Exponential müssen in die Konfiguration des Servers. Das Projekt liefert keine nginx-Datei mit: Kapitel 8
 nennt einen Server-Block, der abgeleitet, nicht mitgeliefert ist, und bittet Sie, ihn auf Ihrer Website zu testen, bevor Sie sich
-darauf verlassen ([8.6](../../../installation/08-die-website-ausliefern.md#86-nginx-mit-php-fpm)).
+darauf verlassen ([8.6](../../../installation/08-die-website-ausliefern.md#86-nginx-mit-php-fpm)). Unter Apache kopiert
+`php bin/php/console exp:setup:htaccess --apply`, ausgeführt als Shell-Benutzer der Website, `.htaccess_root` an ihren
+Platz; unter nginx schützt diese Kopie nichts
+([.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)).
 
 > **Warnung**
 > Liefern Sie die Installation nie mit einer allgemeinen Konfiguration wie dem nginx-Muster „Datei ausliefern, wenn sie existiert,
@@ -112,6 +115,7 @@ Wenn alles besteht, teilen Sie es dem Projekt mit, damit ISPConfig in eine Stufe
 - [Control Panels: Überblick](README.md), [Webmin](webmin.md)
 - [nginx mit PHP-FPM](../server/nginx-mit-php-fpm.md), [Apache mit PHP-FPM](../server/apache-mit-php-fpm.md)
 - [Anforderungen auf einen Blick](../grundlagen/anforderungen-auf-einen-blick.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -36,6 +36,13 @@ Testen Sie ihn auf Ihrer Website, bevor Sie sich darauf verlassen, und vergleich
 > Ihr nginx-Block nicht mit. Setzen Sie den Vergleich der nginx-Regeln mit `.htaccess_root` auf die Upgrade-Checkliste jedes Tarifs mit
 > nginx.
 
+nginx liest `.htaccess` nie, `./console exp:setup:htaccess --apply` schützt hier also nichts. Beim Vergleich hilft der
+Befehl trotzdem: Behalten Sie eine damit kopierte `.htaccess`, dann gibt `./console exp:setup:htaccess` nach einem
+Upgrade den Diff zwischen dieser Kopie und der neuen `.htaccess_root` aus (Exit-Code 1, solange sie abweichen), also
+die Liste der Regeln, die in den Server-Block zu übernehmen sind. `config.php` wird auf jedem Server gleich
+eingerichtet: `./console exp:setup:config --apply` und `./console exp:config:set`
+([.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)).
+
 ## Der Server-Block
 
 Passen Sie die Wurzel und den PHP-FPM-Socket an (ein Socket pro Pool eines Kunden auf einer geteilten Maschine). Das ist der Block aus
@@ -189,6 +196,7 @@ Was schiefgehen kann:
 - [Velocity neben Apache oder nginx](velocity-neben-apache-oder-nginx.md)
 - [Einen Webserver wählen](einen-webserver-waehlen.md)
 - [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

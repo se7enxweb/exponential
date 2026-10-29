@@ -102,6 +102,18 @@ PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) laut `composer.json` im Hauptverz
 SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL. [Datenbankunterstützung](../datenbankunterstuetzung.md),
 [Anforderungen](../../installation/02-voraussetzungen.md).
 
+**Wie lege ich .htaccess und config.php an?**
+`./console exp:setup:htaccess --apply` kopiert `.htaccess_root` (mit `--static`: `.htaccess_root_static`), und
+`./console exp:setup:config --apply` kopiert `config.php-RECOMMENDED`. Ohne `--apply` zeigen sie nur, was sie tun
+würden, und eine vorhandene, abweichende Datei wird als Diff gezeigt und behalten, solange Sie nicht `--force`
+angeben. [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
+
+**Wie ändere ich eine Einstellung in config.php ohne Editor?**
+`./console exp:config:set EZP_INI_FILEMTIME_CHECK false --apply`: Die Datei wird gesichert, mit `php -l` geprüft und
+in einem Schritt geschrieben. `exp:config:list` zeigt jede dokumentierte Einstellung, `exp:config:get <NAME>` einen
+Wert, und `exp:config:unset <NAME> --apply` kommentiert sie wieder aus.
+[.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
+
 **Wie starte ich ein Projekt schnell?**
 `exp:install` mit dem Standardpaket `sevenx_multisite` auf SQLite, dann Ihre eigene Erweiterung.
 [Entwicklungsumgebung](entwicklungsumgebung.md).

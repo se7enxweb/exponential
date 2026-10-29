@@ -51,7 +51,11 @@ Quelle: [Kapitel 8, Apache mit PHP-FPM](../../../../installation/08-die-website-
 [Dateirechte und Eigentum](../../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer).
 
 1. **Die Rewrite-Regeln** (3 Minuten). `cp .htaccess_root .htaccess`: kopieren, nicht verschieben, damit ein Update eine
-   neue Version mitbringen kann. `.htaccess_root_static` ist nur für einen erzeugten statischen Cache.
+   neue Version mitbringen kann. `.htaccess_root_static` ist nur für einen erzeugten statischen Cache. Zeigen Sie
+   auch den Weg über die Konsole: `./console exp:setup:htaccess` (ein Probelauf, der sagt, was er tun würde), dann
+   `--apply`. Der Befehl ersetzt keine abweichende `.htaccess` und gibt den Diff aus; so sehen die Teilnehmenden
+   auch, was ein Upgrade geändert hat
+   ([.htaccess und config.php von der Konsole einrichten](../../../../anleitungen/setup-dateien-von-der-konsole.md)).
 2. **Der virtuelle Host** (4 Minuten). Zeigen Sie das Beispiel `<VirtualHost *:80>` aus Abschnitt 8.5.1:
    `DocumentRoot`, `AllowOverride All`, damit die `.htaccess` gelesen wird, und den Handler `<FilesMatch \.php$>`, der
    Skripte an den PHP-FPM-Socket schickt. Module: `mod_rewrite`, `mod_proxy`, `mod_proxy_fcgi`; für HTTPS `mod_ssl`,
@@ -98,7 +102,9 @@ hinzu ([Kapitel 13](../../../../installation/13-sicherheitshaertung.md)).
 Verwenden Sie Ihre eigene virtuelle Linux-Maschine mit Apache, PHP-FPM und einer Schulungsinstallation, zum Beispiel
 in `/var/www/training`.
 
-1. Wechseln Sie in das Wurzelverzeichnis der Installation und führen Sie `cp .htaccess_root .htaccess` aus.
+1. Wechseln Sie in das Wurzelverzeichnis der Installation und führen Sie `cp .htaccess_root .htaccess` aus, oder
+   `./console exp:setup:htaccess --apply` als Benutzer der Website. Führen Sie danach `./console exp:setup:status` aus:
+   Es nennt `.htaccess_root` als Vorlage.
 2. Aktivieren Sie die Module (Debian: `a2enmod rewrite proxy_fcgi`), oder prüfen Sie, dass sie auf Ihrem System geladen
    sind.
 3. Suchen Sie den Socket-Pfad Ihres PHP-FPM-Pools in seiner Pool-Datei (die Zeile `listen`) und notieren Sie den
@@ -155,6 +161,8 @@ in `/var/www/training`.
 - [Apache mit PHP-FPM](../../../hosting/server/apache-mit-php-fpm.md): die Einrichtung aus Sicht des Hosters.
 - [nginx mit PHP-FPM](../../../hosting/server/nginx-mit-php-fpm.md): der abgeleitete Block und seine Vorbehalte.
 - [Plesk](../../../hosting/control-panels/plesk.md): Exponential auf einem Plesk-Server.
+- [.htaccess und config.php von der Konsole einrichten](../../../../anleitungen/setup-dateien-von-der-konsole.md):
+  `exp:setup:htaccess`, `exp:setup:status` und welche Server `.htaccess` lesen.
 - [Beschreibbare Verzeichnisse und Rechte](../../../hosting/grundlagen/beschreibbare-verzeichnisse-und-berechtigungen.md): das
   Eigentum im Detail.
 

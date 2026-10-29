@@ -43,8 +43,11 @@ das Ergebnis prüfen. Die Quelle ist [Kapitel 8, Apache mit PHP-FPM](../../../in
    cp .htaccess_root .htaccess
    ```
 
-   Nutzen Sie stattdessen `.htaccess_root_static` nur, wenn die Website einen erzeugten statischen Cache ausliefert
-   ([Statischer Cache](../leistung/statischer-cache.md)).
+   Oder `./console exp:setup:htaccess --apply`, ausgeführt als Benutzer der Website: Der Befehl übernimmt den Modus
+   der Vorlage, ersetzt eine abweichende `.htaccess` nur mit `--force` (nach einer Sicherung) und zeigt ohne
+   `--apply` nur, was er tun würde ([.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)).
+   Nutzen Sie stattdessen `.htaccess_root_static` (`exp:setup:htaccess --static --apply`) nur, wenn die Website einen
+   erzeugten statischen Cache ausliefert ([Statischer Cache](../leistung/statischer-cache.md)).
 
 2. **Laden Sie die Module:** `mod_rewrite`, `mod_proxy` und `mod_proxy_fcgi` (Debian: `a2enmod rewrite proxy_fcgi`); für HTTPS
    `mod_ssl`, für HTTP/2 `mod_http2`.
@@ -104,7 +107,7 @@ das Ergebnis prüfen. Die Quelle ist [Kapitel 8, Apache mit PHP-FPM](../../../in
 | Braucht | `AllowOverride All` | `AllowOverride None` |
 | Kosten | eine Dateisuche pro Verzeichnis | `AllowOverride None` spart diese Suche |
 | Kunde kann es ändern | ja, was zu Shared Hosting passt | nein, nur der Hoster |
-| Upgrade | die neue `.htaccess_root` über `.htaccess` kopieren | die geänderten Regeln in den vhost kopieren |
+| Upgrade | die neue `.htaccess_root` über `.htaccess` kopieren (`exp:setup:htaccess` zeigt den Diff, `--force --apply` kopiert) | die geänderten Regeln in den vhost kopieren |
 
 Innerhalb von `<Directory>` behalten die Regeln von `.htaccess_root` ihre Form. Im Server-Kontext (außerhalb von `<Directory>`) braucht
 jedes Muster einen führenden Schrägstrich, wie in [doc/eng-us/examples/ezpublish.conf](../../../../eng-us/examples/ezpublish.conf). Die Regelliste
@@ -113,7 +116,9 @@ dieses Beispiels ist älter als die aktuelle `.htaccess_root`; nehmen Sie die Re
 
 > **Warnung**
 > Vergleichen Sie nach jedem Upgrade Ihre kopierten Regeln mit der neuen `.htaccess_root`. Eine fehlende Regel kann Dateien offenlegen, die
-> nie gesendet werden dürfen; eine hinzugefügte Regel kann genau dafür die Korrektur sein.
+> nie gesendet werden dürfen; eine hinzugefügte Regel kann genau dafür die Korrektur sein. `./console
+> exp:setup:htaccess` gibt diesen Vergleich als Diff aus und endet mit Exit-Code 1, solange `.htaccess` abweicht; damit
+> eignet er sich auch als Abweichungsprüfung für das Monitoring.
 
 ## Der PHP-FPM-Pool
 
@@ -163,6 +168,10 @@ Plesk erzeugt den virtuellen Host selbst; bearbeiten Sie seine Dateien nicht ([K
 - Behalten Sie `.htaccess` (aus `.htaccess_root` kopiert); der Apache von Plesk liest sie.
 - Installieren Sie das Zertifikat in Plesk und schalten Sie die Umleitung auf HTTPS ein.
 
+Im SSH-Terminal von Plesk, als Systembenutzer des Abonnements und mit dem PHP der Domain, legt
+`/opt/plesk/php/<version>/bin/php bin/php/console exp:setup:htaccess --apply` die Kopie an. Als root ergänzen Sie
+`--allow-root-user` und bei Bedarf `--owner=<abonnement-benutzer>:psacln` ([Plesk](../control-panels/plesk.md)).
+
 Plesk benennt jeden Pool nach der Domain in `/opt/plesk/php/<version>/etc/php-fpm.d/<domain>.conf`, ausgeliefert von der Unit
 `plesk-php<XY>-fpm` (zum Beispiel `plesk-php85-fpm`). `systemctl restart php-fpm` startet einen anderen Master neu, den keine
 Plesk-Website nutzt. Mehr auf [Plesk](../control-panels/plesk.md).
@@ -202,6 +211,7 @@ diese Regeln nie dem vhost der Administration hinzu. Siehe [Statischer Cache](..
 - [PHP-FPM abstimmen](../leistung/abstimmung-von-php-fpm.md)
 - [Benutzer und Pools pro Kunde](../sicherheit/benutzer-und-pools-pro-kunde.md)
 - [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

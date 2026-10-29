@@ -84,6 +84,12 @@ php bin/php/console exp:velocity deploy --dry-run --allow-root-user  # what it w
 | 9 | der Antwort-Cache von Velocity | `exp:velocity cache clear` |
 | 10 | Vorwärmen: `[DeploySettings] WarmUpURL[]`, jede einmal von einem Hintergrundprozess angefragt | `curl URL...` |
 
+**`config.php` zählt als PHP-Änderung.** Die persistenten Worker der qbix-Engine lesen sie einmal, wenn sie starten.
+Führen Sie nach `./console exp:config:set <NAME> <Wert> --apply` (oder `exp:setup:config --force --apply`)
+`exp:velocity restart` aus, oder `deploy`, das in Schritt 7 neu startet. FrankenPHP im klassischen Modus und PHP-FPM
+lesen sie bei jeder Anfrage, sobald OPcache die neue Datei sieht; bei `opcache.validate_timestamps=0` laden Sie PHP-FPM
+neu ([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)).
+
 **Auf die Reihenfolge kommt es an.** Die Caches mit gerenderter Ausgabe (8 und 9) werden erst geleert, wenn PHP-FPM
 und Velocity den neuen Code ausführen. Werden sie vorher geleert, wird jede in der Zwischenzeit angefragte Seite vom
 alten Code gerendert und erneut gecacht, und die Änderung sieht aus, als hätte sie nicht funktioniert.
@@ -686,6 +692,10 @@ Die drei Qbix-Schlüssel brauchen einen qbix-webserver, der sie kennt; ein älte
 Namen angefragte `.php`-Datei aus und sendet jede Datei mit einer ausgelieferten Endung — `.htaccess` wird auf seinem
 Pool-Pfad nicht gelesen.
 
+Keine der drei Engines liest `.htaccess`. Kopieren Sie die Datei trotzdem (`./console exp:setup:htaccess --apply`),
+wenn Apache denselben Baum ausliefern kann, zum Beispiel neben Velocity oder während eines Umzugs
+([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)).
+
 ## Symbolische Links aus dem Document Root heraus
 
 `[ServerSettings] FollowSymlinks=disabled` (der Standard) lehnt eine Datei ab, zu der ein Link innerhalb des Document
@@ -824,4 +834,5 @@ Site-envvars nicht. [Demomodus](demomodus.md#velocity-nur-eine-installation).
 - [FrankenPHP](frankenphp.md)
 - [Engine-Archiv (phar)](phar.md)
 - [Anleitung zum Bereitstellen](../../anleitungen/bereitstellung.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Anleitung zum Benchmarking](../../anleitungen/benchmarking.md): die Engines gegeneinander messen

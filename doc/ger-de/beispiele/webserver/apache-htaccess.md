@@ -26,6 +26,12 @@ apachectl configtest             # Syntax OK
 systemctl reload httpd           # apache2 on Debian and Ubuntu
 ```
 
+Oder lassen Sie die Konsole kopieren: `./console exp:setup:htaccess --apply` kopiert `.htaccess_root` nach `.htaccess`
+(`--static` nimmt `.htaccess_root_static`), übernimmt Modus und Eigentümer der Vorlage, sichert eine schon vorhandene
+Datei und weigert sich, eine abweichende zu ersetzen, solange Sie nicht `--force` angeben. Ohne `--apply` zeigt der
+Befehl nur, was er tun würde. Siehe
+[.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
+
 Apache braucht `mod_rewrite` (Debian: `a2enmod rewrite`), und der virtuelle Host muss ihm erlauben, die Datei zu lesen:
 
 ```apache
@@ -42,7 +48,8 @@ Fehlerprotokoll nennt die Zeile.
 
 Um die optionalen Blöcke zu nutzen, kopieren Sie `doc/eng-us/examples/htaccess` statt `.htaccess_root` und aktivieren
 Sie, was Sie brauchen. Vergleichen Sie nach jedem Upgrade Ihre `.htaccess` mit der neuen `.htaccess_root` und übernehmen
-Sie neue Regeln.
+Sie neue Regeln. `./console exp:setup:htaccess` zeigt diesen Unterschied als Diff und endet mit Exit-Code 1, solange
+die beiden abweichen; `./console exp:setup:status` sagt, von welcher Vorlage `.htaccess` eine Kopie ist.
 
 ## Die Datei
 
@@ -314,4 +321,5 @@ Wie dieses Beispiel geprüft wurde: `httpd -t` mit der Datei innerhalb eines `<D
 - [Kapitel 8, Abschnitt 8.5: Apache mit PHP-FPM](../../installation/08-die-website-ausliefern.md#85-apache-mit-php-fpm).
 - [Kapitel 13, Abschnitt 13.2: Was der Webserver niemals ausliefern darf](../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf).
 - [LiteSpeed](litespeed.md): LiteSpeed Enterprise liest diese Datei wie Apache.
+- [.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md): `exp:setup:htaccess`, `exp:setup:status`.
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert werden.

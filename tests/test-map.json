@@ -30,7 +30,8 @@
     ],
     "bin/php/console": [
       "tests/tests/bin/ConsoleExtensionAliasTest.php",
-      "tests/tests/kernel/classes/security/expFileModeLimitsTest.php"
+      "tests/tests/kernel/classes/security/expFileModeLimitsTest.php",
+      "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php"
     ],
     "*.ini": [
       "tests/tests/kernel/classes/ini/expIniRoundTripTest.php"
@@ -499,7 +500,8 @@
     ],
     "config.php-RECOMMENDED": [
       "tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php",
-      "tests/tests/lib/ezfile/eZLogMaxSizeTest.php"
+      "tests/tests/lib/ezfile/eZLogMaxSizeTest.php",
+      "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php"
     ],
     "lib/eztemplate/classes/eztemplatephpoperator.php": [
       "tests/tests/kernel/common/eZTemplateRawURLEncodeOperatorTest.php"
@@ -2061,6 +2063,18 @@
       "tests/tests/kernel/private/classes/commands/expApplyFlagCronCommandsTest.php",
       "tests/tests/kernel/private/classes/commands/expApplyFlagInstallerCommandsTest.php",
       "tests/tests/kernel/private/classes/commands/expApplyFlagDeployCommandsTest.php"
+    ],
+    "kernel/classes/expsetupfilecopy.php": [
+      "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php"
+    ],
+    "kernel/classes/expconfigphpeditor.php": [
+      "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php"
+    ],
+    "kernel/classes/expconfigphpcatalogue.php": [
+      "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php"
+    ],
+    "autoload.php": [
+      "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php"
     ],
     "kernel/private/classes/runnable/command.php": [
       "tests/tests/kernel/private/classes/commands/expApplyFlagCommandsTest.php"
