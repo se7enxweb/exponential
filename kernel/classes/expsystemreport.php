@@ -505,7 +505,7 @@ class expSystemReport
         $disabled = array_values( array_filter( array_map( 'trim', explode( ',', (string)ini_get( 'disable_functions' ) ) ), 'strlen' ) );
         return array(
             'version' => PHP_VERSION,
-            'minimum' => (string)self::ini( 'phpversion', 'MinimumVersion', '8.0.0', 'setup.ini' ),
+            'minimum' => (string)self::ini( 'phpversion', 'MinimumVersion', '7.4.0', 'setup.ini' ),
             'sapi' => PHP_SAPI,
             'zts' => defined( 'PHP_ZTS' ) && PHP_ZTS,
             'os' => PHP_OS_FAMILY,

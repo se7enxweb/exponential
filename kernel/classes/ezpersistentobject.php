@@ -49,12 +49,12 @@ class eZPersistentObject
     /** Backing store for dynamic persistent fields (replaces PHP dynamic properties). */
     protected array $__persistentData = [];
 
-    public function __get( string $name ): mixed
+    public function __get( string $name )
     {
         return $this->__persistentData[$name] ?? null;
     }
 
-    public function __set( string $name, mixed $value ): void
+    public function __set( string $name, $value ): void
     {
         $this->__persistentData[$name] = $value;
     }
