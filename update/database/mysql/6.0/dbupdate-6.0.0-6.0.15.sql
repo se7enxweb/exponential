@@ -738,3 +738,39 @@ SET @exp_order_siteaccess_sql := IF(
 PREPARE exp_order_siteaccess_stmt FROM @exp_order_siteaccess_sql;
 EXECUTE exp_order_siteaccess_stmt;
 DEALLOCATE PREPARE exp_order_siteaccess_stmt;
+
+--
+-- expuser_audit: the user audit log (doc/eng-us/features/6.0/user-audit.md). One row per
+-- security event about a user account or a user group (a change with its fields before and
+-- after, a sign-in, a refused attempt, a role assignment): who, when, where (siteaccess, host,
+-- the address as the audit's privacy rules leave it), whom and what. Filled from the audit
+-- records of the access channel; read on user/audit. Never a password, a hash or a secret.
+-- Written with IF NOT EXISTS, so running this statement again changes nothing.
+--
+CREATE TABLE IF NOT EXISTS expuser_audit (
+  actor_id int(11) NOT NULL DEFAULT '0',
+  actor_login varchar(150) NOT NULL DEFAULT '',
+  client_ip varchar(64) NOT NULL DEFAULT '',
+  created int(11) NOT NULL DEFAULT '0',
+  event_id varchar(26) NOT NULL DEFAULT '',
+  event_name varchar(128) NOT NULL DEFAULT '',
+  host varchar(255) NOT NULL DEFAULT '',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  module_view varchar(128) NOT NULL DEFAULT '',
+  reason varchar(64) NOT NULL DEFAULT '',
+  request_id varchar(40) NOT NULL DEFAULT '',
+  result varchar(16) NOT NULL DEFAULT '',
+  siteaccess varchar(64) NOT NULL DEFAULT '',
+  target_id int(11) NOT NULL DEFAULT '0',
+  target_login varchar(150) NOT NULL DEFAULT '',
+  target_type varchar(16) NOT NULL DEFAULT '',
+  time_ms bigint(20) NOT NULL DEFAULT '0',
+  value_after longtext,
+  value_before longtext,
+  PRIMARY KEY ( id ),
+  UNIQUE KEY expuser_audit_event ( event_id ),
+  KEY expuser_audit_target ( target_id, created ),
+  KEY expuser_audit_actor ( actor_id, created ),
+  KEY expuser_audit_name ( event_name, created ),
+  KEY expuser_audit_created ( created )
+) ENGINE=InnoDB;

@@ -870,6 +870,27 @@ CREATE TABLE `expuser_session` (
 ,  `user_agent` varchar(512) NOT NULL DEFAULT ''
 ,  `user_id` integer NOT NULL DEFAULT '0'
 );
+CREATE TABLE `expuser_audit` (
+  `actor_id` integer NOT NULL DEFAULT '0'
+,  `actor_login` varchar(150) NOT NULL DEFAULT ''
+,  `client_ip` varchar(64) NOT NULL DEFAULT ''
+,  `created` integer NOT NULL DEFAULT '0'
+,  `event_id` varchar(26) NOT NULL DEFAULT ''
+,  `event_name` varchar(128) NOT NULL DEFAULT ''
+,  `host` varchar(255) NOT NULL DEFAULT ''
+,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `module_view` varchar(128) NOT NULL DEFAULT ''
+,  `reason` varchar(64) NOT NULL DEFAULT ''
+,  `request_id` varchar(40) NOT NULL DEFAULT ''
+,  `result` varchar(16) NOT NULL DEFAULT ''
+,  `siteaccess` varchar(64) NOT NULL DEFAULT ''
+,  `target_id` integer NOT NULL DEFAULT '0'
+,  `target_login` varchar(150) NOT NULL DEFAULT ''
+,  `target_type` varchar(16) NOT NULL DEFAULT ''
+,  `time_ms` integer NOT NULL DEFAULT '0'
+,  `value_after` longtext
+,  `value_before` longtext
+);
 CREATE TABLE `exphelp_help_id` (
   `help_id` varchar(80) NOT NULL DEFAULT '' PRIMARY KEY
 ,  `object_id` integer NOT NULL DEFAULT '0'
@@ -1412,6 +1433,11 @@ CREATE INDEX exp_data_sync_link_object ON exp_data_sync_link ( sync_id, object_i
 CREATE UNIQUE INDEX expuser_session_token ON expuser_session ( token_hash );
 CREATE INDEX expuser_session_user ON expuser_session ( user_id, ended );
 CREATE INDEX expuser_session_active ON expuser_session ( ended, last_active );
+CREATE UNIQUE INDEX expuser_audit_event ON expuser_audit ( event_id );
+CREATE INDEX expuser_audit_target ON expuser_audit ( target_id, created );
+CREATE INDEX expuser_audit_actor ON expuser_audit ( actor_id, created );
+CREATE INDEX expuser_audit_name ON expuser_audit ( event_name, created );
+CREATE INDEX expuser_audit_created ON expuser_audit ( created );
 CREATE INDEX exphelp_help_id_object ON exphelp_help_id ( object_id );
 CREATE INDEX exphelp_feedback_object ON exphelp_feedback ( object_id, created );
 CREATE INDEX exphelp_feedback_created ON exphelp_feedback ( created );

@@ -192,6 +192,18 @@ $ViewList['sessions'] = array(
     'params' => array( 'UserID' ),
 );
 
+// The user audit log (doc/eng-us/features/6.0/user-audit.md): the security events about user accounts and groups
+// (table expuser_audit) filtered by user, action, result and date, paged, and the CSV of the filtered list (POST).
+// Needs the policy user/audit. See kernel/private/classes/views/user/audit.php
+$ViewList['audit'] = array(
+    'functions' => array( 'audit' ),
+    'script' => 'audit.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezusernavigationpart',
+    'unordered_params' => array( 'offset' => 'Offset' ),
+    'params' => array(),
+);
+
 $SiteAccess = array(
     'name'=> 'SiteAccess',
     'values'=> array(),
@@ -211,5 +223,7 @@ $FunctionList['hygiene'] = array();
 $FunctionList['deactivate'] = array();
 // see and sign out the sessions of other users (user/sessions/<user id>)
 $FunctionList['sessions'] = array();
+// read and export the user audit log (user/audit): who changed, signed in or was refused, for every account
+$FunctionList['audit'] = array();
 
 ?>
