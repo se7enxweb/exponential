@@ -32,7 +32,7 @@ who want to try them.
 ## In one paragraph
 
 As of Exponential 6.0.15, the Velocity Internet / Web Application Server is part of Exponential. The root
-`composer.json` **requires** the package `se7enxweb/exponential-velocity` at `~0.0.4.55`; it is no longer only a
+`composer.json` **requires** the package `se7enxweb/exponential-velocity` at `~0.0.4.57`; it is no longer only a
 suggestion. Every installation made with Composer therefore has the server, on every PHP version Exponential supports
 (PHP 8.0 and later, including the stock PHP 8.0 of Red Hat Enterprise Linux 9). It is driven by the same console as
 the rest of Exponential: `./console exp:velocity deploy`, `start`, `restart` and `cache clear`. This marks a turning
@@ -44,7 +44,7 @@ the core product provides even greater features out of the box, by default.
 | Before 6.0.15 | As of 6.0.15 |
 |---|---|
 | Exponential was a PHP application that needed a web server of someone else's choosing in front of it. | Exponential ships its own Internet and web application server, and still runs behind any other one. |
-| Velocity was a separate package, listed in `composer.json` under `suggest`, to be added by hand. | `composer.json` requires `se7enxweb/exponential-velocity ~0.0.4.55`; `composer install` installs it. |
+| Velocity was a separate package, listed in `composer.json` under `suggest`, to be added by hand. | `composer.json` requires `se7enxweb/exponential-velocity ~0.0.4.57`; `composer install` installs it. |
 | Velocity needed PHP 8.1, so installations on PHP 8.0 (Red Hat Enterprise Linux 9) had to leave it out. | Velocity 0.0.4.54 runs on PHP 8.0 to 8.5, the same range as the Exponential kernel. |
 | Serving, caching and deploying were separate jobs with separate tools. | `./console exp:velocity deploy` refreshes autoloads, settings, caches, the PHP processes and the server in one ordered run. |
 

@@ -82,7 +82,7 @@ Diesen begegnen Sie in `composer.json` und in Changelogs, die benötigte Pakete 
 
 | Bedingung | Bedeutet | Beispiel und Quelle |
 |---|---|---|
-| `~0.0.4.55` | `>=0.0.4.55 <0.0.5.0`, also jede spätere 0.0.4.x | Velocity, [Den Code besorgen](../../installation/03-den-code-beschaffen.md#34-das-velocity-paket) |
+| `~0.0.4.57` | `>=0.0.4.57 <0.0.5.0`, also jede spätere 0.0.4.x | Velocity, [Den Code besorgen](../../installation/03-den-code-beschaffen.md#34-das-velocity-paket) |
 | `~2.4.11` | `>=2.4.11 <2.5.0` | eztags, [Den Code besorgen](../../installation/03-den-code-beschaffen.md#35-extensions-sind-composer-pakete) |
 | `^8.0` | PHP 8.0 oder jede spätere 8.x | Die PHP-Anforderung der Linie 6.0.15, dieselbe Seite, Abschnitt 3.1 |
 
