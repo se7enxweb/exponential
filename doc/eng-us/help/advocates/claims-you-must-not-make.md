@@ -38,7 +38,7 @@ the right column says what you can say instead.
 | "Market share", "most popular", "number one" | No source | Leave it out |
 | Any figure you remember but cannot find | Figures change with releases | Look it up on [Where the facts live](where-the-facts-live.md) |
 
-The figures that **are** documented (such as 355 locale files, 15 6.0.x releases, 66 required packages) carry a
+The figures that **are** documented (such as 359 locale files, 15 6.0.x releases, 66 required packages) carry a
 date; numbers change, so cite the page, not your memory ([Who is 7x?, 7x in numbers](../who-is-7x.md#7x-in-numbers)).
 
 ## Security and compliance

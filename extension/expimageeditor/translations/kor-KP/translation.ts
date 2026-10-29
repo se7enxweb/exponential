@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<!-- Korean, North (조선말, kor-KP) translation of the Exponential administration interface, in the cultured
-     language (문화어), adapted from the South Korean catalogue. Machine-assisted; a review by a native speaker is welcome. -->
+<!-- Korean, North (조선말, kor-KP) translation of the Exponential image editor, in the cultured language (문화어), adapted from the South Korean catalogue. Machine-assisted; a review by a native speaker is welcome. -->
 <TS version="2.0" language="kor-KP">
 <context>
     <name>extension/expimageeditor</name>
@@ -11,7 +10,7 @@
     </message>
     <message>
         <source>The image shows the result. Apply makes it a step; another tool drops it.</source>
-        <translation>화상에 결과가 표시됩니다. 《적용》하면 하나의 단계로 되고 다른 도구를 선택하면 없어집니다.</translation>
+        <translation>화상에 결과가 표시됩니다. 적용을 누르면 하나의 단계가 되고, 다른 도구를 선택하면 버려집니다.</translation>
     </message>
     <message>
         <source>New SVG drawing</source>
@@ -23,7 +22,7 @@
     </message>
     <message>
         <source>The request did not come from the edit form.</source>
-        <translation>요청이 편집양식에서 오지 않았습니다.</translation>
+        <translation>요청이 편집 양식에서 오지 않았습니다.</translation>
     </message>
     <message>
         <source>Edit image: %1</source>
@@ -51,11 +50,11 @@
     </message>
     <message>
         <source>Close the editor and discard your changes?</source>
-        <translation>편집기를 닫고 변경내용을 버리시겠습니까?</translation>
+        <translation>편집기를 닫고 변경내용을 취소하시겠습니까?</translation>
     </message>
     <message>
         <source>Loading the editor ...</source>
-        <translation>편집기를 로드하는 중 ...</translation>
+        <translation>편집기를 불러오는 중 ...</translation>
     </message>
     <message>
         <source>Saving ...</source>
@@ -63,7 +62,7 @@
     </message>
     <message>
         <source>The editor could not be loaded.</source>
-        <translation>편집기를 로드할수 없습니다.</translation>
+        <translation>편집기를 불러올수 없습니다.</translation>
     </message>
     <message>
         <source>The image could not be saved (%1).</source>
@@ -71,11 +70,11 @@
     </message>
     <message>
         <source>The image could not be loaded.</source>
-        <translation>화상을 로드할수 없습니다.</translation>
+        <translation>화상을 불러올수 없습니다.</translation>
     </message>
     <message>
         <source>%1 × %2 pixels</source>
-        <translation>%1 × %2 화소</translation>
+        <translation>%1 × %2 픽셀</translation>
     </message>
     <message>
         <source>Undo</source>
@@ -107,7 +106,7 @@
     </message>
     <message>
         <source>%1 applied.</source>
-        <translation>%1 적용되였습니다.</translation>
+        <translation>%1 적용됨.</translation>
     </message>
     <message>
         <source>Undone: %1.</source>
@@ -143,7 +142,7 @@
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>가로세로비</translation>
+        <translation>가로세로 비률</translation>
     </message>
     <message>
         <source>Free</source>
@@ -155,7 +154,7 @@
     </message>
     <message>
         <source>Drag on the image to select a region. The arrow keys move the selection.</source>
-        <translation>화상에서 끌어서 령역을 선택하십시오. 화살표키로 선택령역을 옮깁니다.</translation>
+        <translation>화상 위를 끌어서 령역을 선택합니다. 화살표 키로 선택 령역을 이동합니다.</translation>
     </message>
     <message>
         <source>Rotate left</source>
@@ -179,15 +178,15 @@
     </message>
     <message>
         <source>Flip horizontally</source>
-        <translation>수평 뒤집기</translation>
+        <translation>좌우 뒤집기</translation>
     </message>
     <message>
         <source>Flip vertically</source>
-        <translation>수직 뒤집기</translation>
+        <translation>상하 뒤집기</translation>
     </message>
     <message>
         <source>Resize</source>
-        <translation>크기 변경</translation>
+        <translation>크기 조정</translation>
     </message>
     <message>
         <source>Width</source>
@@ -223,7 +222,7 @@
     </message>
     <message>
         <source>Blur region</source>
-        <translation>령역 흐리기</translation>
+        <translation>령역 흐리게</translation>
     </message>
     <message>
         <source>Strength</source>
@@ -231,7 +230,7 @@
     </message>
     <message>
         <source>The whole image, no region is selected.</source>
-        <translation>화상 전체, 선택된 령역이 없습니다.</translation>
+        <translation>화상 전체이며, 선택된 령역이 없습니다.</translation>
     </message>
     <message>
         <source>Watermark</source>
@@ -259,7 +258,7 @@
     </message>
     <message>
         <source>The watermark is placed in the selected region, or in the lower right corner.</source>
-        <translation>워터마크는 선택된 령역이나 오른쪽 아래 모서리에 놓입니다.</translation>
+        <translation>워터마크는 선택한 령역에, 령역이 없으면 오른쪽 아래 모서리에 배치됩니다.</translation>
     </message>
     <message>
         <source>Select</source>
@@ -267,7 +266,7 @@
     </message>
     <message>
         <source>Rectangle</source>
-        <translation>직사각형</translation>
+        <translation>사각형</translation>
     </message>
     <message>
         <source>Ellipse</source>
@@ -275,7 +274,7 @@
     </message>
     <message>
         <source>Line</source>
-        <translation>선</translation>
+        <translation>직선</translation>
     </message>
     <message>
         <source>Path</source>
@@ -283,7 +282,7 @@
     </message>
     <message>
         <source>Freehand</source>
-        <translation>자유곡선</translation>
+        <translation>자유 그리기</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -295,11 +294,11 @@
     </message>
     <message>
         <source>Bring to front</source>
-        <translation>맨 앞으로</translation>
+        <translation>맨 앞으로 가져오기</translation>
     </message>
     <message>
         <source>Send to back</source>
-        <translation>맨 뒤로</translation>
+        <translation>맨 뒤로 보내기</translation>
     </message>
     <message>
         <source>Fill</source>
@@ -311,15 +310,15 @@
     </message>
     <message>
         <source>Stroke</source>
-        <translation>륜곽선</translation>
+        <translation>선</translation>
     </message>
     <message>
         <source>Stroke width</source>
-        <translation>륜곽선 너비</translation>
+        <translation>선 두께</translation>
     </message>
     <message>
         <source>Font size</source>
-        <translation>글자크기</translation>
+        <translation>글꼴 크기</translation>
     </message>
     <message>
         <source>Draw</source>
@@ -327,7 +326,7 @@
     </message>
     <message>
         <source>Arrange</source>
-        <translation>배치</translation>
+        <translation>정렬</translation>
     </message>
     <message>
         <source>Style</source>
@@ -335,11 +334,11 @@
     </message>
     <message>
         <source>Nothing is selected.</source>
-        <translation>선택된것이 없습니다.</translation>
+        <translation>선택된 항목이 없습니다.</translation>
     </message>
     <message>
         <source>%1 selected.</source>
-        <translation>%1 선택되였습니다.</translation>
+        <translation>%1 선택됨.</translation>
     </message>
     <message>
         <source>%1 objects</source>
@@ -351,27 +350,27 @@
     </message>
     <message>
         <source>Drawing. Enter adds a shape of the current tool, N selects the next object, the arrow keys move the selection.</source>
-        <translation>그리기. Enter는 현재 도구의 도형을 추가하고 N은 다음 객체를 선택하며 화살표키는 선택을 옮깁니다.</translation>
+        <translation>그리기. Enter 키는 현재 도구의 도형을 추가하고, N 키는 다음 객체를 선택하며, 화살표 키는 선택 항목을 이동합니다.</translation>
     </message>
     <message>
         <source>Zoom: %1 %</source>
-        <translation>배률: %1 %</translation>
+        <translation>확대/축소: %1 %</translation>
     </message>
     <message>
         <source>Font</source>
-        <translation>서체</translation>
+        <translation>글꼴</translation>
     </message>
     <message>
         <source>Default font</source>
-        <translation>기본서체</translation>
+        <translation>기본 글꼴</translation>
     </message>
     <message>
         <source>This font could not be loaded, the default font is used: %1</source>
-        <translation>이 서체를 로드할수 없어 기본서체를 사용합니다: %1</translation>
+        <translation>이 글꼴을 불러올수 없어 기본 글꼴을 사용합니다: %1</translation>
     </message>
     <message>
         <source>Save text in added fonts as paths</source>
-        <translation>추가한 서체의 텍스트를 경로로 저장</translation>
+        <translation>추가한 글꼴의 텍스트를 경로로 저장</translation>
     </message>
     <message>
         <source>The text could not be converted to paths (%1). Save without converting, or try again.</source>
@@ -403,11 +402,11 @@
     </message>
     <message>
         <source>No image was sent.</source>
-        <translation>보낸 화상이 없습니다.</translation>
+        <translation>전송된 화상이 없습니다.</translation>
     </message>
     <message>
         <source>The edited image is larger than the server accepts.</source>
-        <translation>편집한 화상이 봉사기가 받아들이는 크기보다 큽니다.</translation>
+        <translation>편집한 화상이 봉사기에서 허용하는 크기보다 큽니다.</translation>
     </message>
     <message>
         <source>The image could not be received.</source>
@@ -415,7 +414,7 @@
     </message>
     <message>
         <source>The edited image is larger than this image field accepts.</source>
-        <translation>편집한 화상이 이 화상마당이 받아들이는 크기보다 큽니다.</translation>
+        <translation>편집한 화상이 이 화상 마당에서 허용하는 크기보다 큽니다.</translation>
     </message>
     <message>
         <source>The edited image is larger than the editor stores.</source>
@@ -423,7 +422,7 @@
     </message>
     <message>
         <source>The edited image has more pixels than the editor stores.</source>
-        <translation>편집한 화상의 화소수가 편집기가 저장하는 수보다 많습니다.</translation>
+        <translation>편집한 화상의 픽셀 수가 편집기가 저장하는 수보다 많습니다.</translation>
     </message>
     <message>
         <source>The edited image could not be read.</source>
@@ -431,7 +430,7 @@
     </message>
     <message>
         <source>The server cannot re-encode images of this type.</source>
-        <translation>봉사기는 이 형식의 화상을 다시 부호화할수 없습니다.</translation>
+        <translation>봉사기가 이 형식의 화상을 다시 부호화할수 없습니다.</translation>
     </message>
     <message>
         <source>The attribute has no image to edit.</source>
@@ -439,11 +438,11 @@
     </message>
     <message>
         <source>An SVG image can only be replaced by an SVG image here.</source>
-        <translation>여기서 SVG 화상은 SVG 화상으로만 바꿀수 있습니다.</translation>
+        <translation>여기에서 SVG 화상은 SVG 화상으로만 바꿀수 있습니다.</translation>
     </message>
     <message>
         <source>A raster image can only be replaced by a raster image here.</source>
-        <translation>여기서 래스터화상은 래스터화상으로만 바꿀수 있습니다.</translation>
+        <translation>여기에서 래스터 화상은 래스터 화상으로만 바꿀수 있습니다.</translation>
     </message>
     <message>
         <source>The editor may not store images of this type.</source>

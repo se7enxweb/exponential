@@ -31,7 +31,7 @@ der Seite, die sie belegt. Prüfen Sie die Quelle, bevor Sie antworten: Fakten �
 | Was braucht es? | PHP 8.0 oder später; eine Datenbank (SQLite braucht keinen Server) | [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md), [Datenbankunterstützung](../datenbankunterstuetzung.md) |
 | Welcher Webserver? | Velocity wird empfohlen; FrankenPHP oder Apache/nginx mit PHP-FPM funktionieren auch | [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) |
 | Shared Hosting? | Möglich mit Apache oder LiteSpeed; Velocity meist nicht | [Container, Cloud und Hosting-Panels](../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels) |
-| Wird meine Sprache unterstützt? | 355 Locale-Dateien für Inhalte; Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../../sprachen.md)) | [Gesprächspunkte: Sprachen](gespraechspunkte-sprachen-und-rtl.md) |
+| Wird meine Sprache unterstützt? | 359 Locale-Dateien für Inhalte; Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../../sprachen.md)) | [Gesprächspunkte: Sprachen](gespraechspunkte-sprachen-und-rtl.md) |
 
 ## Hilfe bekommen und helfen
 

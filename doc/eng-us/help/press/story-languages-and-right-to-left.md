@@ -3,7 +3,7 @@ title: "Story: languages and right to left"
 audience: press
 category: press-media
 order: 64
-summary: A feature story about languages in Exponential - 355 locale files, 43 of them right to left, administration translations, all of them complete, an administration that turns around for Hebrew and Arabic - with printable facts, a counting difference to watch, and the claims to avoid.
+summary: A feature story about languages in Exponential - 359 locale files, 43 of them right to left, administration translations, all of them complete, an administration that turns around for Hebrew and Arabic - with printable facts, a counting difference to watch, and the claims to avoid.
 keywords: story, languages, locales, translations, right to left, RTL, Hebrew, Arabic, multilingual, internationalization, press
 type: help
 ---
@@ -26,8 +26,8 @@ counts with their date, and shows where two sources count differently.
 
 ## The story in one paragraph
 
-Exponential separates the language of the **content** from the language of the **administration**. "355 locale files
-(348 languages and countries, [a test language] and 6 variations, 43 of them written right
+Exponential separates the language of the **content** from the language of the **administration**. "359 locale files
+(352 languages and countries, [a test language] and 6 variations, 43 of them written right
 to left) can be chosen as content languages and siteaccess locales; administration translations exist (the current totals are at the top of the languages page)" ([Languages in Exponential](../../languages.md)). When an editor chooses a right-to-left interface language,
 "the administration turns around": the page says `dir="rtl"`, the side columns change places and text starts at the
 right ([Right to left](../../features/6.0/right-to-left.md)). Most of this arrived in October 2026, in the 6.0.15
@@ -46,7 +46,7 @@ development line, which is not released.
 
 | Fact | Source |
 |---|---|
-| 355 locale files, 43 written right to left (figures of 29 October 2026). | [Languages in Exponential](../../languages.md) |
+| 359 locale files, 43 written right to left (figures of 29 October 2026). | [Languages in Exponential](../../languages.md) |
 | administration translations (the current totals are at the top of [Languages in Exponential](../../languages.md)), listed in [Languages in Exponential, section 4](../../languages.md#4-every-administration-translation). All but `eng-US` and `ger-DE` were machine-assisted, at least in part. | [Languages in Exponential, Support levels](../../languages.md#2-support-levels) |
 | Each translation of an item is published on its own; badges show what exists and what is missing. | [Languages](../languages.md) |
 | A country without its own translation falls back to a related one, for example every German-speaking country to German. | [Languages in Exponential, Support levels](../../languages.md#2-support-levels) |
@@ -58,12 +58,12 @@ development line, which is not released.
 ## Where the sources differ
 
 The README counts "219 locales, 170 of them new" ([README, Recent improvements](https://github.com/se7enxweb/exponential/blob/main/README.md#recent-improvements-to-exponential)),
-while [Languages in Exponential](../../languages.md) counts 355 locale files on 29 October 2026. Locales were added in
+while [Languages in Exponential](../../languages.md) counts 359 locale files on 29 October 2026. Locales were added in
 October in several steps, so use the dated figure from the languages page and give its date.
 
 ## What not to claim
 
-- "Exponential is available in 355 languages." Say "355 locale files as content languages; administration translations (the current totals are at the top of [Languages in Exponential](../../languages.md))".
+- "Exponential is available in 359 languages." Say "359 locale files as content languages; administration translations (the current totals are at the top of [Languages in Exponential](../../languages.md))".
 - "Every translation is perfect" or "professionally translated". Several were machine-assisted.
 - "Unlimited content languages." The documented limit is 62 per installation on 64-bit PHP.
 - "Klingon support" as a serious feature: the README itself says "(for fun)".
@@ -75,7 +75,7 @@ October in several steps, so use the dated figure from the languages page and gi
 
 ```text
 "An admin that reads right to left: Exponential adds Hebrew and Arabic"
-"355 locales, many complete translations: counting languages honestly"
+"359 locales, many complete translations: counting languages honestly"
 "Native speakers wanted: reviewing a CMS translated with machine help"
 ```
 

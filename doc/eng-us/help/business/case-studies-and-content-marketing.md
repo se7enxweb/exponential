@@ -262,7 +262,7 @@ system as the website.
 | Respect for e-mail choices | E-mail preferences: optional e-mail is off until turned on, one-click unsubscribe | [E-mail preferences](../../features/6.0/mail-preferences.md), [administrator's guide](../../guides/mail-preferences-administrator.md) |
 | Tagging and topics | `eztags` | [eztags](../../features/6.0/extensions/eztags.md) |
 | Search engines | `xrowmetadata`, `bcgooglesitemaps` | [xrowmetadata](../../features/6.0/extensions/xrowmetadata.md), [bcgooglesitemaps](../../features/6.0/extensions/bcgooglesitemaps.md) |
-| Many languages | 355 locale files as content languages | [Languages in Exponential](../../languages.md) |
+| Many languages | 359 locale files as content languages | [Languages in Exponential](../../languages.md) |
 
 ### Topics that stay true
 

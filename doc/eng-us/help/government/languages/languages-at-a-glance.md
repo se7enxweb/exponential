@@ -37,7 +37,7 @@ other pages of this section explain each topic for public bodies.
 
 ## What the numbers are
 
-- **Locales**: 355 locale files ship in `share/locale/`; each one can become a content language
+- **Locales**: 359 locale files ship in `share/locale/`; each one can become a content language
   ([Languages in Exponential](../../../languages.md)).
 - **Right to left**: 43 of them carry `TextDirection=rtl` (counted in `share/locale/`; the list is in section 9 of
   [Languages in Exponential](../../../languages.md#9-right-to-left-languages)).

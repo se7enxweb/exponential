@@ -52,7 +52,7 @@ Budget and timeline
 | Which databases? | SQLite 3 (the default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, in that order of preference | [Database support](../../database-support.md) |
 | Which PHP versions? | 8.0 to 8.5 | [Requirements at a glance](../../hosting/basics/requirements-at-a-glance.md) |
 | Can we have several sites? | Yes, as siteaccesses on one installation, sharing content and users where wanted | [Multi-site offers](../offers/multi-site-offers.md) |
-| Which languages? | 355 locale files for content; administration translations at three support levels; right to left supported | [Multilingual offers](../offers/multilingual-offers.md) |
+| Which languages? | 359 locale files for content; administration translations at three support levels; right to left supported | [Multilingual offers](../offers/multilingual-offers.md) |
 | Can we sell online? | Yes, a shop is built in; some things (stock, coupons, shipping labels) are not included | [E-commerce offers](../offers/e-commerce-offers.md) |
 | How is security handled? | Private reports to security@se7enx.com with a first answer within one business day; fixes in the next 6.0.x release; hardening guide | `SECURITY.md`, [Security hardening](../../security-hardening.md) |
 | Can editors sign in with two steps? | Yes, two-step sign-in exists | [Two-step sign-in](../../../guides/two-factor-login.md) |

@@ -52,7 +52,7 @@ und nennt die Seiten von Exponential, die jede Fähigkeit dokumentieren, aus den
 | LAN-05 | [Zuordnung von Siteaccesses nach Host und Sprache](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md), [Sprachumschalter und Sprach-URLs](../../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md); an Browser gesendete BCP-47-Tags: **Erfüllt**; die Pagelayouts der Administration setzen `<html lang>` ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)) |
 | LAN-06 | [UI-Umschalter: Sprachen der Oberfläche](../../../../funktionen/6.0/ui-umschalter-sprachen.md); [Sprachen in Exponential](../../../../sprachen.md) zählt die mitgelieferten Übersetzungen der Administration |
 | LAN-07 | Interne Kodierung UTF-8 **Erfüllt**; 4-Byte-UTF-8 unter MySQL/MariaDB **Teilweise erfüllt** ([Zusätzliche Zeichen im Rich Text](../../../../funktionen/6.0/rich-text-zusatzzeichen-und-tex-quelltext.md)) |
-| LAN-08 | Locale-Dateien aus den Daten von Unicode CLDR erzeugt, 355 Locale-Dateien mit Stand Oktober 2026 ([Sprachen in Exponential](../../../../sprachen.md)) |
+| LAN-08 | Locale-Dateien aus den Daten von Unicode CLDR erzeugt, 359 Locale-Dateien mit Stand Oktober 2026 ([Sprachen in Exponential](../../../../sprachen.md)) |
 
 ## Bekannte Lücken, nach denen Sie fragen sollten
 

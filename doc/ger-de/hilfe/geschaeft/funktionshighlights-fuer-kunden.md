@@ -62,7 +62,7 @@ eine Seite sagt, lautet die ehrliche Antwort „Die Dokumentation macht dazu kei
 |---|---|---|---|
 | Redakteure, die Seiten ohne Entwickler anordnen | Exponential Layouts: Layouts, Zonen, Blöcke und Regeln | Tab **Layouts**, ein Layout **öffnen** | [Der Layout-Editor](../layout-editor.md) |
 | Mehrere Sites, Marken oder Länder aus einer Installation | Siteaccesses (einer je Site, Sprache oder für die Administration), Einstellungen je Site, Links zwischen Sites | Die Globus-Schaltfläche in der Kopfzeile, **Website oder einen anderen Siteaccess öffnen** | [Siteaccess-Zuordnung nach Host und Sprache](../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md), [Einstellungen je Site](../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md), [Links zwischen Sites](../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md) |
-| Inhalte in vielen Sprachen | 355 Locale-Dateien (348 Sprachen und Länder) als Inhaltssprachen; Übersetzungen je Objekt | Die Sprachabzeichen eines Objekts und der Tab **Übersetzungen** | [Sprachen in Exponential](../../sprachen.md), [Sprachen](../sprachen.md) |
+| Inhalte in vielen Sprachen | 359 Locale-Dateien (352 Sprachen und Länder) als Inhaltssprachen; Übersetzungen je Objekt | Die Sprachabzeichen eines Objekts und der Tab **Übersetzungen** | [Sprachen in Exponential](../../sprachen.md), [Sprachen](../sprachen.md) |
 | Eine Administration in der eigenen Sprache der Redakteure | Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../../sprachen.md)) | Rechte Spalte, Kasten **Oberfläche**, **Sprache der Oberfläche** | [Sprachen in Exponential, Unterstützungsstufen](../../sprachen.md#2-unterstützungsstufen) |
 | Hebräisch, Arabisch, Persisch oder Urdu | Schreibrichtung von rechts nach links in Inhalten und Administration (`dir="rtl"`) | Eine Sprache der Oberfläche mit Schreibrichtung von rechts nach links wählen | [Von rechts nach links](../../funktionen/6.0/rechts-nach-links.md) |
 | Schneller schreiben, mit einem Menschen am Steuer | Exponential Intelligence (`expai`): schreibt nur Entwürfe | Der Tab **Intelligence** eines Objekts; das Bearbeitungsformular | [Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md) |
@@ -137,7 +137,7 @@ einer mit `./console exp:install` angelegten Installation, die Sites des Multisi
 
 ## Viele Sprachen, einschließlich Schreibrichtung von rechts nach links
 
-**Was Sie sagen.** „355 Locale-Dateien (348 Sprachen und Länder ...) können als Inhaltssprachen und als Locales von
+**Was Sie sagen.** „359 Locale-Dateien (352 Sprachen und Länder ...) können als Inhaltssprachen und als Locales von
 Siteaccesses gewählt werden; es gibt Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite Sprachen)“ ([Sprachen in Exponential](../../sprachen.md)).
 Jede Übersetzung eines Objekts wird für sich veröffentlicht ([Sprachen](../sprachen.md#ein-objekt-übersetzen)). Wenn die
 Sprache der Oberfläche von rechts nach links geschrieben wird, „dreht sich die Administration um“, und Inhalte in einer

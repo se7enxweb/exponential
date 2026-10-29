@@ -216,7 +216,7 @@ Fakten zum Audit; leisten Sie keine Rechtsberatung.
 
 | Einwand | Antwort | Quelle |
 |---|---|---|
-| „Unsere Sprache wird nicht unterstützt.“ | Es gibt 355 Locale-Dateien; prüfen Sie die Sprache des Kunden in der Liste. Jede Übersetzung der Administration ist vollständig (die aktuellen Gesamtzahlen stehen am Anfang der Seite Sprachen); eine Sprache ohne eigene zeigt Englisch. | [Sprachen in Exponential](../../sprachen.md) |
+| „Unsere Sprache wird nicht unterstützt.“ | Es gibt 359 Locale-Dateien; prüfen Sie die Sprache des Kunden in der Liste. Jede Übersetzung der Administration ist vollständig (die aktuellen Gesamtzahlen stehen am Anfang der Seite Sprachen); eine Sprache ohne eigene zeigt Englisch. | [Sprachen in Exponential](../../sprachen.md) |
 | „Wir brauchen Arabisch oder Hebräisch.“ | Schreibrichtung von rechts nach links in Inhalten und in der Administration; die hebräische und die arabische Übersetzung der Administration sind vollständig. | [Von rechts nach links](../../funktionen/6.0/rechts-nach-links.md), [Unterstützungsstufen](../../sprachen.md#2-unterstützungsstufen) |
 | „Ist die Administration barrierefrei?“ | Sprunglink, Landmarks, Tastaturmuster, beschriftete Felder, Tests für Kontrast und Zielgröße in admin4. | [Das Design admin4](../../funktionen/6.0/admin4-design.md#landmarks-und-namen) |
 | „PHP ist langsam.“ | `README.md` dokumentiert 0,36 ms je gecachter Seite und 8.941 Anfragen pro Sekunde auf einer Maschine mit 12 Kernen mit Velocity und hält fest, dass der größte Teil der Geschwindigkeit aus Korrekturen stammt, die auch unter Apache oder Nginx wirken. Bieten Sie eine Messung auf der Hardware des Kunden an. | `README.md`, [Benchmarks](../../anleitungen/benchmarking.md) |

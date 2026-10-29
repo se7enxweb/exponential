@@ -37,7 +37,7 @@ prüft.
 
 | Zählt | Zählt nicht |
 |---|---|
-| unter Setup > Sprachen hinzugefügte Inhaltssprachen | die Locale-Dateien in `share/locale/` (355 werden mitgeliefert) |
+| unter Setup > Sprachen hinzugefügte Inhaltssprachen | die Locale-Dateien in `share/locale/` (359 werden mitgeliefert) |
 | eine Sprache, die hinzugefügt und nie genutzt wurde | Oberflächenübersetzungen |
 | die Testsprache Lorem Ipsum, solange sie hinzugefügt ist | eine Locale, die nur als `Locale` eines Siteaccess für die Formate gewählt ist |
 

@@ -271,7 +271,7 @@ selben System wie die Website betreiben kann.
 | Respekt vor E-Mail-Entscheidungen | E-Mail-Einstellungen: optionale E-Mails sind aus, bis sie eingeschaltet werden, Abmelden mit einem Klick | [E-Mail-Einstellungen](../../funktionen/6.0/e-mail-einstellungen.md), [Leitfaden für Administratoren](../../anleitungen/mail-einstellungen-administrator.md) |
 | Schlagwörter und Themen | `eztags` | [eztags](../../funktionen/6.0/erweiterungen/eztags.md) |
 | Suchmaschinen | `xrowmetadata`, `bcgooglesitemaps` | [xrowmetadata](../../funktionen/6.0/erweiterungen/xrowmetadata.md), [bcgooglesitemaps](../../funktionen/6.0/erweiterungen/bcgooglesitemaps.md) |
-| Viele Sprachen | 355 Locale-Dateien als Inhaltssprachen | [Sprachen in Exponential](../../sprachen.md) |
+| Viele Sprachen | 359 Locale-Dateien als Inhaltssprachen | [Sprachen in Exponential](../../sprachen.md) |
 
 ### Themen, die wahr bleiben
 
