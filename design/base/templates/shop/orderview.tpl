@@ -4,6 +4,11 @@
                '%order_status', $order.status_name|wash ) )}</h1>
 
     {shop_account_view_gui view=html order=$order}
+
+    {* the store (siteaccess) the order was placed in, by the name the customer knows it by *}
+    {if $order.store_name}
+    <p class="shop-order-store"><strong>{'Shop'|i18n( 'design/admin/parts/shop/menu' )}:</strong> {$order.store_name|wash}</p>
+    {/if}
     {def $currency = fetch( 'shop', 'currency', hash( 'code', $order.productcollection.currency_code ) )
          $locale = false()
          $symbol = false()}

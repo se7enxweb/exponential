@@ -2228,6 +2228,7 @@ CREATE TABLE ezorder (
     is_temporary integer DEFAULT 1 NOT NULL,
     order_nr integer DEFAULT 0 NOT NULL,
     productcollection_id integer DEFAULT 0 NOT NULL,
+    siteaccess character varying(255) DEFAULT ''::character varying NOT NULL,
     status_id integer DEFAULT 0,
     status_modified integer DEFAULT 0,
     status_modifier_id integer DEFAULT 0,

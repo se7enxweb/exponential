@@ -583,6 +583,7 @@ CREATE TABLE `ezorder` (
 ,  `is_temporary` integer NOT NULL DEFAULT '1'
 ,  `order_nr` integer NOT NULL DEFAULT '0'
 ,  `productcollection_id` integer NOT NULL DEFAULT '0'
+,  `siteaccess` varchar(255) NOT NULL DEFAULT ''
 ,  `status_id` integer DEFAULT '0'
 ,  `status_modified` integer DEFAULT '0'
 ,  `status_modifier_id` integer DEFAULT '0'
