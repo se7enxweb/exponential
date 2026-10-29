@@ -49,7 +49,7 @@ they show you how to measure and decide.
   for every stage; FrankenPHP is a production-ready alternative; Apache or nginx with PHP-FPM remain fully supported
   and are what shared hosting usually offers ([Chapter 8](../../install/08-serving-the-site.md)).
 - **As of 6.0.15 that engine is part of Exponential.** The root `composer.json` requires
-  `se7enxweb/exponential-velocity ~0.0.4.55`, so every site you install with Composer has the Velocity Internet /
+  `se7enxweb/exponential-velocity ~0.0.4.57`, so every site you install with Composer has the Velocity Internet /
   Web Application Server, on the same PHP as the site (8.0 and later, the stock PHP 8.0 of Red Hat Enterprise Linux 9
   included). It needs the `sockets` extension, with `pcntl` and `openssl` recommended. Nothing switches engines on its
   own, so an Apache or nginx offer keeps working unchanged; offering Velocity is a setting

@@ -181,16 +181,16 @@ Engines mit denselben Verben: `qbix` (der eigene Server von Velocity, Thema dies
 
 ### 8.3.1 Das Engine-Paket installieren
 
-Die `composer.json` von Exponential verlangt die Engine als `~0.0.4.55`, sodass `composer install` sie unter jedem
+Die `composer.json` von Exponential verlangt die Engine als `~0.0.4.57`, sodass `composer install` sie unter jedem
 unterstützten PHP installiert, 8.0 eingeschlossen. Bis zu ihrem Release 0.0.4.54 brauchte die Engine PHP 8.1 und wurde
 nur vorgeschlagen; eine Installation aus dieser Zeit fügt sie mit Composer hinzu:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.55
+composer require se7enxweb/exponential-velocity:~0.0.4.57
 ```
 
 Sie landet in `vendor/se7enxweb/exponential-velocity` (der frühere Paketname `se7enxweb/qbix-webserver` wird weiterhin
-gefunden). Die Tilde-Einschränkung folgt der letzten Versionsstelle der Engine, sodass `~0.0.4.55` spätere
+gefunden). Die Tilde-Einschränkung folgt der letzten Versionsstelle der Engine, sodass `~0.0.4.57` spätere
 `0.0.4.x`-Releases akzeptiert.
 
 Die `composer.json` des Pakets setzt PHP 8.0 (`"php": ">=8.0"`, ab dem Release 0.0.4.54; zuvor `>=8.1`) und die
