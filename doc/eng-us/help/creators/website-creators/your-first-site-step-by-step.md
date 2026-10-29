@@ -27,7 +27,7 @@ real site, read [Choosing an install method](choosing-an-install-method.md) afte
 
 ## Before you start
 
-You need PHP 7.4 or newer on the command line, Composer 2 and Git
+You need PHP 8.0 or newer (PHP 7.4 usable without support) on the command line, Composer 2 and Git
 ([Requirements](../../../install/02-requirements.md)). Run every command from the installation root, the directory
 that holds `index.php`, as your own user (not `root`).
 
@@ -110,7 +110,7 @@ when you are done.
 
 | You see | Do |
 |---|---|
-| `composer install` refuses your PHP | install PHP 7.4 or newer ([2.2 PHP](../../../install/02-requirements.md#22-php)) |
+| `composer install` refuses your PHP | install PHP 8.0 or newer (PHP 7.4 usable without support) ([2.2 PHP](../../../install/02-requirements.md#22-php)) |
 | The install stops in `SystemCheck` | read the printed fix; usually a missing PHP extension or permission |
 | A maintenance page instead of the site | `php bin/php/maintenance.php status`, then `off` |
 | Errors about files that cannot be written | you ran a command as `root`; see [12. Troubleshooting](../../../install/12-troubleshooting.md) |

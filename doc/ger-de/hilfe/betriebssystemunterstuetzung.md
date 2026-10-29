@@ -3,7 +3,7 @@ title: Unterstützte Betriebssysteme
 audience: admin, developer
 category: install-upgrade
 order: 11
-summary: Exponential 6.0.x läuft auf fast jedem Betriebssystem mit PHP 7.4 oder neuer und einem Webserver. Diese Seite ordnet sie ehrlich in Stufen ein (hier getestet, bekanntermaßen lauffähig, voraussichtlich lauffähig, heute nicht möglich), von Linux, den BSDs, macOS und Windows bis zu IBM i, Haiku und dem Commodore 64, mit den Webservern und PHP-SAPIs, die es ausliefern.
+summary: Exponential 6.0.x läuft auf fast jedem Betriebssystem mit PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) und einem Webserver. Diese Seite ordnet sie ehrlich in Stufen ein (hier getestet, bekanntermaßen lauffähig, voraussichtlich lauffähig, heute nicht möglich), von Linux, den BSDs, macOS und Windows bis zu IBM i, Haiku und dem Commodore 64, mit den Webservern und PHP-SAPIs, die es ausliefern.
 keywords: Betriebssystem, Plattform, Systemvoraussetzungen, Anforderungen, Container, Prozessorarchitektur, Webserver, operating system, OS, platform, Linux, RHEL, AlmaLinux, Rocky Linux, CentOS Stream, Fedora, Debian, Ubuntu, SUSE, openSUSE, Arch, Alpine, Gentoo, Slackware, NixOS, Amazon Linux, Plesk, cPanel, FreeBSD, OpenBSD, NetBSD, DragonFly, macOS, Windows, IIS, WSL2, illumos, Solaris, OpenIndiana, AIX, HP-UX, IBM i, Docker, Podman, Kubernetes, ARM, Raspberry Pi, Graviton, RISC-V, Android, Termux, Haiku, Apache, nginx, Caddy, LiteSpeed, Velocity, FrankenPHP, PHP-FPM, SAPI, requirements
 featured: true
 context: setup/info
@@ -11,9 +11,11 @@ type: help
 ---
 # Unterstützte Betriebssysteme
 
+> **Unterstützt: PHP 8.0 bis 8.5. Ohne Support nutzbar: PHP 7.4 (Exponential 6.0.15 und neuer).** [Warum Exponential PHP 7.4 unterstützt](warum-exponential-php-7-4-unterstuetzt.md)
+
 Diese Seite richtet sich an Administratoren, die einen Rechner für Exponential auswählen, und an Entwickler, die wissen
 möchten, ob ihr eigener Computer es ausführen kann. Die kurze Antwort: **Exponential 6.0.x läuft auf fast jedem
-Betriebssystem, das PHP 7.4 oder neuer und einen Webserver hat.** Es besteht aus einfachen PHP-Dateien und einer
+Betriebssystem, das PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) und einen Webserver hat.** Es besteht aus einfachen PHP-Dateien und einer
 Datenbank; es hat keinen eigenen kompilierten Code, keine eigene Architektur und hängt von keiner bestimmten
 C-Bibliothek ab.
 

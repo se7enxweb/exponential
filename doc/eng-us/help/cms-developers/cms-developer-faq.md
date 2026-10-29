@@ -94,7 +94,7 @@ Exponential Velocity is the recommended engine; FrankenPHP is the production-rea
 PHP-FPM work too. [Deploying a site](deploying-a-site.md#choose-how-the-site-is-served).
 
 **Which PHP and databases?**
-PHP 7.4 to 8.5 per the root `composer.json`. Databases in the project's order of preference: SQLite 3, PostgreSQL,
+PHP 8.0 to 8.5 (PHP 7.4 usable without support) per the root `composer.json`. Databases in the project's order of preference: SQLite 3, PostgreSQL,
 MongoDB, MariaDB, Oracle, MySQL. [Database support](../database-support.md), [Requirements](../../install/02-requirements.md).
 
 **How do I start a project fast?**

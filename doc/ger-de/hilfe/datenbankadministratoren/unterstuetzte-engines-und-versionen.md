@@ -72,7 +72,7 @@ Auf einer laufenden Website zeigt **Setup > Systeminformationen**, Karte **Daten
 
 ## PHP-Versionen
 
-Exponential 6.0.x läuft auf PHP 7.4 bis 8.5 (`composer.json`). Die Datenbanktreiber folgen diesem Bereich mit einer
+Exponential 6.0.x läuft auf PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) (`composer.json`). Die Datenbanktreiber folgen diesem Bereich mit einer
 Ausnahme: Der MongoDB-Adapter braucht PHP 8.2 oder neuer. Velocity, der empfohlene Webserver, braucht PHP 8.1. Für Oracle
 bedient PECL oci8 3.4 PHP 8.4 und 8.5 und oci8 3.2 PHP 8.1 bis 8.3
 ([PHP-Erweiterungen je Engine](php-erweiterungen-je-engine.md)).

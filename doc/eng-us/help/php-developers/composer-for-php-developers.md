@@ -3,7 +3,7 @@ title: Composer for PHP developers
 audience: php-developer, developer
 category: php-development
 order: 460
-summary: How Exponential uses Composer - the root composer.json with PHP 7.4 to 8.5, required extensions and packages, the legacy-scripts hook that regenerates autoloads, the installer plugin that puts extensions into extension/, composer.dev.json for the development tools, an extension's own composer.json, version constraints, and what not to do with vendor/.
+summary: How Exponential uses Composer - the root composer.json with PHP 8.0 to 8.5 (PHP 7.4 usable without support), required extensions and packages, the legacy-scripts hook that regenerates autoloads, the installer plugin that puts extensions into extension/, composer.dev.json for the development tools, an extension's own composer.json, version constraints, and what not to do with vendor/.
 keywords: Composer, composer.json, Packagist, se7enxweb, exponential-legacy-installer, ezpublish-legacy-extension, require, require-dev, suggest, post-install-cmd, legacy-scripts, composer.dev.json, .devtools, version constraint, tilde, PHP constraint, vendor
 type: help
 ---

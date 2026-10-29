@@ -31,7 +31,7 @@ und [Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-
 |---|---|---|
 | Sicherheits- und Fehlerkorrekturen von Exponential | als nächste Version 6.0.x veröffentlicht; veröffentlichte Tags ändern sich nie | `SECURITY.md`, [Tags sind dauerhaft](../../../../standards/versionsverwaltung-und-releases.md#tags-sind-dauerhaft) |
 | Erweiterungen | jede hat eigene Releases und ein eigenes Changelog | [Leitfaden zu Erweiterungen](../../../../anleitungen/extensions.md) |
-| PHP | PHP-Versionen verlieren mit der Zeit die Sicherheitsunterstützung; Exponential 6.0.15 läuft unter PHP 7.4 bis 8.5 | [Anforderungen](../../../../installation/02-voraussetzungen.md#22-php) |
+| PHP | PHP-Versionen verlieren mit der Zeit die Sicherheitsunterstützung; Exponential 6.0.15 läuft unter PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) | [Anforderungen](../../../../installation/02-voraussetzungen.md#22-php) |
 | Betriebssystem und Datenbank | wie Ihre Plattform es verlangt | [Runbook zum PHP-Upgrade](../../../hosting/runbooks/php-upgrade.md) |
 | Von einer älteren Linie (4.x, 5.x) | einmalig, als Projekt | [Aktualisieren, Teile A und B](../../../../anleitungen/aktualisieren.md#welchen-teil-lese-ich) |
 

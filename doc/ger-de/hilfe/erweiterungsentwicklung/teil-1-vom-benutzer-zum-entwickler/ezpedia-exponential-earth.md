@@ -64,7 +64,7 @@ Module, Datentypen, Workflow-Ereignisse) haben sich seitdem kaum verändert. Was
 
 | Damals | In Exponential 6 |
 |---|---|
-| Code für PHP 4 und PHP 5 (Konstruktoren `function ClassName()`, `each()`, `create_function()`) | PHP 7.4 bis 8.5; siehe [Teil 4](../teil-4-aktualisieren/README.md) |
+| Code für PHP 4 und PHP 5 (Konstruktoren `function ClassName()`, `each()`, `create_function()`) | PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar); siehe [Teil 4](../teil-4-aktualisieren/README.md) |
 | Zeilen `include_once( 'kernel/classes/...' )` am Anfang von Dateien | Autoloading; neu erzeugen mit `php bin/php/ezpgenerateautoloads.php -e` |
 | Inline-`<script>` und `onclick=""` in Templates | In der Administration durch ihre Content Security Policy verboten |
 | YUI und älteres jQuery | jQuery 4 und der Namensraum `Exp` von expui |

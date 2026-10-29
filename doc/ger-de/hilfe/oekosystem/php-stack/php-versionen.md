@@ -9,6 +9,8 @@ type: help
 ---
 # PHP-Versionen im Ökosystem
 
+> **Unterstützt: PHP 8.0 bis 8.5. Ohne Support nutzbar: PHP 7.4 (Exponential 6.0.15 und neuer).** [Warum Exponential PHP 7.4 unterstützt](../../warum-exponential-php-7-4-unterstuetzt.md)
+
 ## Inhalt
 
 1. [Exponential 6](#exponential-6)
@@ -20,7 +22,7 @@ type: help
 
 | PHP | Exponential 6 | Quelle |
 |---|---|---|
-| 7.4 | Bis 6.0.7 und wieder ab 6.0.15 | `README.md` |
+| 7.4 | Bis 6.0.7; ab 6.0.15 ohne Support nutzbar | `README.md` |
 | 8.0 | Unterstützt, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 es betreibt, ab 0.0.4.54 auch unter Velocity | `README.md`, [Unterstützung für PHP 8.0](../../../bc/6.0/php-8.0-unterstuetzung.md) |
 | 8.1 bis 8.5 | Unterstützt, einschließlich Velocity | `README.md` |
 | 8.6 und neuer | Von `composer.json` erlaubt (bis 8.8); das Projekt zielt auf "PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9" | `composer.json`, `README.md` |

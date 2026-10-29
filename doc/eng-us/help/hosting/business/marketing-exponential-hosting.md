@@ -34,7 +34,7 @@ Each fact has a source a customer can check.
 |---|---|
 | Exponential is "a professional PHP application framework with advanced CMS (content management system) functionality" | `README.md` |
 | Free software under the GNU GPL v2 or later; no license fee | `COPYRIGHT.md`, `README.md` |
-| Runs on PHP 7.4 to 8.5 | [Chapter 2](../../../install/02-requirements.md) |
+| Runs on PHP 8.0 to 8.5 (PHP 7.4 usable without support) | [Chapter 2](../../../install/02-requirements.md) |
 | Six supported databases: SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Database support](../../database-support.md) |
 | Runs on almost any operating system that runs PHP 8 | [Operating system support](../../os-support.md) |
 | Ships its own web server and engine, Exponential Velocity, with HTTPS certificates of its own | [Chapter 8](../../../install/08-serving-the-site.md), [HTTPS certificates](../../../features/6.0/velocity-https-certificates.md) |

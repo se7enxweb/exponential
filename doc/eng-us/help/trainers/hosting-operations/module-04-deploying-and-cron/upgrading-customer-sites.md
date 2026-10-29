@@ -68,7 +68,7 @@ Source: [Upgrading customer sites](../../../hosting/operations/upgrading-custome
 
 **What about MongoDB and Oracle?** MongoDB needs no SQL update file; Oracle's files come with the `ezoracle` extension.
 
-**Can a site on PHP 7.4 upgrade?** Yes, from 6.0.15: the current line runs on PHP 7.4, without Velocity, Layouts
+**Can a site on PHP 7.4 upgrade?** Yes, from 6.0.15: the current line is usable on PHP 7.4 without support, without Velocity, Layouts
 and a few extensions that need PHP 8 ([Why Exponential supports PHP 7.4](../../../why-exponential-supports-php-7-4.md)).
 
 **Is there automation?** The `ezupdate` extension can apply updates; see

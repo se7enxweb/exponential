@@ -66,7 +66,7 @@ Schriften, die von rechts nach links laufen. Es enthält einen eingebauten Shop,
 einen visuellen Seitenbaukasten (Exponential Layouts), einen Schreibassistenten, der nur Entwürfe schreibt
 (Exponential Intelligence), und einen eigenen PHP-Webserver (Exponential Velocity).
 
-Exponential läuft auf PHP 7.4 bis 8.5 mit SQLite, PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL, unter Linux,
+Exponential läuft auf PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) mit SQLite, PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL, unter Linux,
 BSD, macOS und Windows. Die Software steht unter der GNU General Public License, Version 2 oder später, und ist
 kostenlos; ihre Dokumentation ist freie Dokumentation unter der GNU FDL.
 

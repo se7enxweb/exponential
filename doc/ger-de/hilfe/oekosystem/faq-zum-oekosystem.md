@@ -58,14 +58,14 @@ Siehe [Eine Erweiterung finden](pakete/eine-erweiterung-finden.md).
 ## Stack
 
 **Welche PHP-Versionen?**
-PHP 7.4 bis 8.5 für Exponential 6.0.15 ([PHP-Versionen](php-stack/php-versionen.md)).
+PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) für Exponential 6.0.15 ([PHP-Versionen](php-stack/php-versionen.md)).
 
 **Welche Datenbanken?**
 SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle und MySQL, in dieser Reihenfolge der Bevorzugung
 ([Datenbanken](php-stack/datenbanken.md)).
 
 **Welche Betriebssysteme?**
-Fast jedes, auf dem PHP 7.4 oder neuer läuft, in vier Stufen ([Betriebssysteme](php-stack/betriebssysteme.md)).
+Fast jedes, auf dem PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) läuft, in vier Stufen ([Betriebssysteme](php-stack/betriebssysteme.md)).
 
 ## Organisationen und Menschen
 

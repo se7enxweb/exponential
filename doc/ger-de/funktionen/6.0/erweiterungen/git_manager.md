@@ -14,7 +14,7 @@ Version 2.0.14.
 
 ## Voraussetzungen
 
-Exponential 6, PHP 7.4 oder neuer, ein Git-Programm, das der Benutzer des Webservers ausführen kann, GnuPG
+Exponential 6, PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar), ein Git-Programm, das der Benutzer des Webservers ausführen kann, GnuPG
 (`/usr/bin/gpg`) für verschlüsselte Sicherungen und `mysqldump` für Datenbanksicherungen.
 
 ## Schnellstart: vor einer Änderung eine Sicherung erstellen

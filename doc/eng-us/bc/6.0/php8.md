@@ -11,7 +11,7 @@ rid of deprecation warnings, you may still have to adapt your own code, most oft
 | | |
 |---|---|
 | What changed | PHP 8 syntax and checks throughout the kernel; since 6.0.8, Composer requires PHP 8.1 or newer. Since 6.0.15 the code runs on PHP 8.0 again ([PHP 8.0 support](php-8.0-support.md)), and on PHP 7.4 ([Why Exponential supports PHP 7.4](../../help/why-exponential-supports-php-7-4.md)). |
-| Who is affected | Sites still on PHP 7.4 (6.0.8 to 6.0.14 need PHP 8.1; 6.0.15 runs on 7.4 again); authors of extensions with dynamic properties, unchecked `count()` or `null` passed to string functions. |
+| Who is affected | Sites still on PHP 7.4 (6.0.8 to 6.0.14 need PHP 8.1; 6.0.15 is usable on 7.4 again, without support); authors of extensions with dynamic properties, unchecked `count()` or `null` passed to string functions. |
 | How to check | Enable the debug output on a development copy and look for "Deprecated" notices from your extension files. |
 | How to fix | Follow "What this means for your own code" below. |
 
@@ -32,7 +32,7 @@ same treatment.
 | 6.0.11 (Dec 2025) | 8.5 | Nullable types where PHP 8.5 requires them; Zeta Components raised to releases that support PHP 8.5; the README states PHP 8.5 support. |
 | 6.0.13 (Feb 2026) | 8.4 | Time datatype and `eZOrder::fetchList()` deprecations fixed, see [the hardening specification](../../specifications/6.0/security-hardening-6.0.13.md). |
 | 6.0.15 (Oct 2026) | 8.0 | PHP 8.0 is the oldest supported version (RHEL 9): `array_is_list()` defined when missing (`lib/phpcompat.php`), `fputcsv()` without `$eol` on 8.0, the HTML escaping functions get the PHP 8.1 default flags explicitly so `wash` escapes single quotes on 8.0 too, a PHP 8.0 syntax check and boot test in CI. See [PHP 8.0 support](php-8.0-support.md). |
-| 6.0.15 (Oct 2026) | 7.4 | PHP 7.4 is supported again, as a bridge: the kernel parses and runs on it, Composer picks the packages per PHP version through `se7enxweb/exponential-php-floor`, CI job `php74` ([Why Exponential supports PHP 7.4](../../help/why-exponential-supports-php-7-4.md)) |
+| 6.0.15 (Oct 2026) | 7.4 | PHP 7.4 is usable again, without support, as a bridge: the kernel parses and runs on it, Composer picks the packages per PHP version through `se7enxweb/exponential-php-floor`, CI job `php74` ([Why Exponential supports PHP 7.4](../../help/why-exponential-supports-php-7-4.md)) |
 | 6.0.13 (Apr 2026) | 8.x | The session handler: `read()` returns an empty string for an unknown session, `gc()` uses `time()` and a start time, and the current siteaccess global is checked before use. |
 
 ## How to check your installation
@@ -55,7 +55,7 @@ release accepts.
   `#[ReturnTypeWillChange]` attribute, or real return types.
 - **Raise your PHP constraint.** Set your own `composer.json` PHP constraint to `^8.0` or newer, the oldest version
   the product supports again since 6.0.15 (6.0.8 to 6.0.14 required `^8.1`). Exponential Velocity runs on 8.0 too
-  from its release 0.0.4.54. Sites on PHP 7.4 can use 6.0.15 again; 6.0.8 to 6.0.14 need PHP 8.1.
+  from its release 0.0.4.54. Sites on PHP 7.4 can use 6.0.15 again, without support; 6.0.8 to 6.0.14 need PHP 8.1.
 
 The PHP manual lists every incompatible change per version:
 

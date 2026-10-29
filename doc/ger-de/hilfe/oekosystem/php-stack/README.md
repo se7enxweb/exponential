@@ -32,7 +32,7 @@ auf denen Exponential läuft und mit denen es arbeitet.
 
 | Schicht | Exponential 6.0.15 | Quelle |
 |---|---|---|
-| Sprache | PHP 7.4 bis 8.5 | `README.md` |
+| Sprache | PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) | `README.md` |
 | Paketmanager | Composer, Packagist | `README.md` |
 | Kernel-Bibliotheken | Zeta Components | `composer.json` |
 | Datenbank | SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Datenbankunterstützung](../../datenbankunterstuetzung.md) |

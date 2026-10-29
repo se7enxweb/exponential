@@ -10,6 +10,8 @@ type: help
 ---
 # Requirements at a glance
 
+> **Supported: PHP 8.0 to 8.5. Usable without support: PHP 7.4 (Exponential 6.0.15 and later).** [Why Exponential supports PHP 7.4](../../why-exponential-supports-php-7-4.md)
+
 This page is for system administrators and support staff at a hosting company who need the requirements of
 Exponential 6.0.x in one place, and for product managers who must check that a plan can run it. It answers: what must
 a server have, what is only recommended, and which part of the software checks each item. The full chapter with every
@@ -31,7 +33,7 @@ summary for hosts.
 
 | Need | Minimum | Recommended | Checked by |
 |---|---|---|---|
-| PHP | 7.4 (8.0 for Velocity, 8.1 for Layouts) | the newest 8.x the system offers; 8.5 is the newest tested | Composer (`composer.json` `require.php`) and the setup wizard (`settings/setup.ini`, `[phpversion] MinimumVersion=7.4.0`) |
+| PHP | 8.0 supported (7.4 usable without support; 8.1 for Layouts) | the newest 8.x the system offers; 8.5 is the newest tested | Composer (`composer.json` `require.php`) and the setup wizard (`settings/setup.ini`, `[phpversion] MinimumVersion=7.4.0`) |
 | PHP for Exponential Velocity | 8.0 with `sockets` (8.1 before release 0.0.4.54) | with `pcntl` and `openssl` as well | Composer (the Velocity package requires `"php": ">=8.0"` and `ext-sockets`) |
 | PHP extensions | see [below](#required-php-extensions) | plus `curl`, `gd`, `openssl`, `pcntl`, `opcache` | Composer (`ext-*`) and the setup wizard's critical tests |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` set, `file_uploads` on, `allow_url_fopen` on | more memory for imports and image work; upload limits sized for your customers | the setup wizard's critical tests |

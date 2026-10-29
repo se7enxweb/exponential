@@ -42,7 +42,7 @@ Rundgang für Käufer: [Funktionsrundgang](../../kunden/nutzen/rundgang-durch-di
 | 6.0.14 erschien am 7. Juni 2026; 6.0.15 ist auf `main` in Entwicklung | ebenda |
 | 6.0 ist die gepflegte Linie; Korrekturen werden mit dem nächsten Release 6.0.x veröffentlicht | `SECURITY.md` |
 | Ein veröffentlichtes Tag wird nie geändert | `SECURITY.md` |
-| PHP 7.4 bis 8.5 werden unterstützt | `README.md`, [PHP-Versionen](../php-stack/php-versionen.md) |
+| PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) werden unterstützt | `README.md`, [PHP-Versionen](../php-stack/php-versionen.md) |
 
 Die Linie 6.0.15 bringt unter vielem anderen Velocity, das Design admin4, einen Audit-Trail, Exponential Layouts,
 Exponential Intelligence, Inhaltsjobs, die LoveStack-Funktionen von Mugo Web und das Hilfesystem

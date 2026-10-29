@@ -3,13 +3,15 @@ title: Operating system support
 audience: admin, developer
 category: install-upgrade
 order: 11
-summary: Exponential 6.0.x runs on almost any operating system with PHP 7.4 or later and a web server. This page sorts them honestly into tiers (tested here, known to work, expected to work, not possible today), from Linux, the BSDs, macOS and Windows to IBM i, Haiku and the Commodore 64, with the web servers and PHP SAPIs that serve it.
+summary: Exponential 6.0.x runs on almost any operating system with PHP 8.0 or later (PHP 7.4 usable without support) and a web server. This page sorts them honestly into tiers (tested here, known to work, expected to work, not possible today), from Linux, the BSDs, macOS and Windows to IBM i, Haiku and the Commodore 64, with the web servers and PHP SAPIs that serve it.
 keywords: operating system, OS, platform, Linux, RHEL, AlmaLinux, Rocky Linux, CentOS Stream, Fedora, Debian, Ubuntu, SUSE, openSUSE, Arch, Alpine, Gentoo, Slackware, NixOS, Amazon Linux, Plesk, cPanel, FreeBSD, OpenBSD, NetBSD, DragonFly, macOS, Windows, IIS, WSL2, illumos, Solaris, OpenIndiana, AIX, HP-UX, IBM i, Docker, Podman, Kubernetes, ARM, Raspberry Pi, Graviton, RISC-V, Android, Termux, Haiku, Apache, nginx, Caddy, LiteSpeed, Velocity, FrankenPHP, PHP-FPM, SAPI, requirements
 featured: true
 context: setup/info
 type: help
 ---
 # Operating system support
+
+> **Supported: PHP 8.0 to 8.5. Usable without support: PHP 7.4 (Exponential 6.0.15 and later).** [Why Exponential supports PHP 7.4](why-exponential-supports-php-7-4.md)
 
 This page is for administrators choosing a machine for Exponential and for developers who want to know whether their
 own computer can run it. The short answer: **Exponential 6.0.x runs on almost any operating system that has PHP 7.4

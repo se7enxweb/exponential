@@ -83,7 +83,7 @@ From the [README, "What version of PHP is required"](https://github.com/se7enxwe
 
 | PHP | Exponential 6 |
 |---|---|
-| 7.4 | Again from 6.0.15, as a bridge (6.0.8 to 6.0.14: no) |
+| 7.4 | Usable without support from 6.0.15, as a bridge (6.0.8 to 6.0.14: no) |
 | 8.0 | Supported, so the stock PHP of Red Hat Enterprise Linux 9 runs it under Apache, PHP-FPM or Exponential Velocity (from its release 0.0.4.54) |
 | 8.1 to 8.5 | Supported, Exponential Velocity included |
 | 8.6 and later | Allowed by the `php` requirement of `composer.json`; the README names "PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9" as the aim |

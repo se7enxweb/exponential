@@ -10,6 +10,8 @@ type: help
 ---
 # Exponential: frequently asked questions
 
+> **Supported: PHP 8.0 to 8.5. Usable without support: PHP 7.4 (Exponential 6.0.15 and later).** [Why Exponential supports PHP 7.4](../why-exponential-supports-php-7-4.md)
+
 These answers follow the FAQ pages of the project website, [exponential.earth/faq](https://exponential.earth/faq),
 read in October 2026, retold in this help's own words and checked against the software in this repository. Where
 the repository says something different, the answer says so and follows the repository.
@@ -162,7 +164,7 @@ To follow releases, or every change as it is made, see [Update with Git](../upda
 
 ### Which PHP versions does it support?
 
-Exponential 6.0.15 runs on PHP 7.4 to 8.5, and the Velocity application server on 8.0 to 8.5 from its release 0.0.4.54
+Exponential 6.0.15 is supported on PHP 8.0 to 8.5, the Velocity application server from its release 0.0.4.54, and usable without support on PHP 7.4 (without Velocity)
 ([Requirements](../../install/02-requirements.md)). The website's community page says "PHP 8.1 through PHP 8.5" for
 the 6.0.14 release; the repository's requirements, which also cover PHP 7.4 and 8.0, are the reference.
 
@@ -182,7 +184,7 @@ The website's article
 recommends hosting providers that offer Exponential already installed, so you can start with content instead of
 server setup. Its requirements are those of an older release and not the reference: it names 6.0.10 as the current
 version, asks for PHP 8.3 or higher and for a LAMP stack with MySQL 5.7 or MariaDB 10.2. The repository says
-otherwise: 6.0.10 to 6.0.14 require PHP 8.1 or later in their `composer.json`, the 6.0.15 line runs on PHP 7.4 to 8.5,
+otherwise: 6.0.10 to 6.0.14 require PHP 8.1 or later in their `composer.json`, the 6.0.15 line runs on PHP 8.0 to 8.5 (PHP 7.4 usable without support),
 and no database server is needed, because SQLite 3 is the default; PostgreSQL, MongoDB, MariaDB, Oracle and MySQL are
 the alternatives ([Requirements](../../install/02-requirements.md)). Apache, nginx with PHP-FPM, LiteSpeed and the
 Velocity application server all serve it. If you install it yourself, the [installation book](../../install/README.md) covers every step, and

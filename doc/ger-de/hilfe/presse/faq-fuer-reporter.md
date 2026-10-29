@@ -89,7 +89,7 @@ Es ist keine Kundenliste veröffentlicht. Nennen Sie eine Organisation nur mit i
 ([Privatsphäre in Ihrer Berichterstattung](privatsphaere-in-ihrer-berichterstattung.md)).
 
 **Worauf läuft es?**
-PHP 7.4 bis 8.5; SQLite, PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL; Linux, BSD, macOS und Windows in
+PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar); SQLite, PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL; Linux, BSD, macOS und Windows in
 dokumentierten Stufen ([Faktenblatt für Journalisten](faktenblatt-fuer-journalisten.md)).
 
 ## Sicherheit

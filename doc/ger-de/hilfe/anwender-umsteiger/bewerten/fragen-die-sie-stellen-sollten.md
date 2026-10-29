@@ -23,7 +23,7 @@ type: help
 |---|---|
 | Was kostet es an Lizenzen? | Nichts; GPL v2 oder später (`README.md`) |
 | Welche Versionen erhalten Sicherheitskorrekturen? | Die Linie 6.0; Korrekturen im nächsten Release 6.0.x (`SECURITY.md`) |
-| Welche PHP-Versionen und Datenbanken? | PHP 7.4 bis 8.5; SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL ([Datenbankunterstützung](../../datenbankunterstuetzung.md)) |
+| Welche PHP-Versionen und Datenbanken? | PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar); SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL ([Datenbankunterstützung](../../datenbankunterstuetzung.md)) |
 | Wer führt das Projekt? | 7x führt die Entwicklung; die Exponential Foundation betreibt das Projekt ([Wer entscheidet](../../../../eng-us/help/community/how-it-works/who-decides.md)) |
 | Wie werden Sicherheitsprobleme gemeldet? | Vertraulich an security@se7enx.com, erste Antwort innerhalb eines Werktags (`SECURITY.md`) |
 

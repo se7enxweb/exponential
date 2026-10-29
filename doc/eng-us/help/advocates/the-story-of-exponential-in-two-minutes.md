@@ -51,7 +51,7 @@ Tell the two-minute version, then add any of these blocks, depending on your lis
 
 | Listener | Add | Source |
 |---|---|---|
-| A developer | "It runs on PHP 7.4 to 8.5, installs with Composer, and every package is a Git repository you can clone with its full history. Every pull request is merged." | [PHP versions](../who-is-the-exponential-foundation.md#php-versions), [Develop with Git](../develop-with-git.md), [How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows) |
+| A developer | "It runs on PHP 8.0 to 8.5 (PHP 7.4 usable without support), installs with Composer, and every package is a Git repository you can clone with its full history. Every pull request is merged." | [PHP versions](../who-is-the-exponential-foundation.md#php-versions), [Develop with Git](../develop-with-git.md), [How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows) |
 | An administrator | "SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle or MySQL; Linux, BSD, macOS or Windows; and a one-command install." | [Database support](../database-support.md), [Operating system support](../os-support.md), [Install in one command](../../features/6.0/install-in-one-command.md) |
 | An editor | "Drafts and versions, a preview at phone width, a page builder, and help on every screen." | [A tour of the administration](../admin-tour.md), [The layouts editor](../layouts-editor.md) |
 | A decision maker | "The software has outlived its original vendor once already because its code is free. A company and a nonprofit stand behind it." | [Handling objections, Longevity](../business/objection-handling.md#longevity-will-it-still-be-here-in-ten-years) |

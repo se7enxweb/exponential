@@ -1,6 +1,6 @@
 # Unterstützung für PHP 8.0
 
-Exponential 6 läuft unter PHP 8.0 und neuer, ab 6.0.15 auch unter PHP 7.4 (siehe
+Exponential 6 läuft unter PHP 8.0 und neuer, ab 6.0.15 ist es unter PHP 7.4 ohne Support nutzbar (siehe
 [Warum Exponential PHP 7.4 unterstützt](../../hilfe/warum-exponential-php-7-4-unterstuetzt.md)). PHP 8.0 ist wichtig,
 weil es das Standard-PHP von Red Hat Enterprise Linux 9 ist (und von AlmaLinux 9 und Rocky Linux 9). Lesen Sie diese Seite, wenn
 Sie Exponential unter RHEL 9 ohne ein neueres PHP betreiben, wenn Sie Code für den Kernel oder für Erweiterungen
@@ -11,7 +11,7 @@ ist.
 
 | | |
 |---|---|
-| Ältestes PHP | 8.0 für den Kernel und die mitgelieferten Erweiterungen, unter Apache mit mod_php, PHP-FPM oder Velocity; ab 6.0.15 7.4 für den Kernel, ohne Velocity. |
+| Ältestes PHP | 8.0 für den Kernel und die mitgelieferten Erweiterungen, unter Apache mit mod_php, PHP-FPM oder Velocity; ab 6.0.15 7.4 ohne Support nutzbar für den Kernel, ohne Velocity. |
 | Velocity | Exponential Velocity, der Anwendungsserver, läuft ab seinem Release 0.0.4.54 ebenfalls unter PHP 8.0 (bis dahin brauchte er 8.1; siehe unten). |
 | Was sich in 6.0.15 geändert hat | Die wenigen Stellen, die PHP 8.1 oder neuer brauchten, funktionieren jetzt unter 8.0; die CI prüft 8.0 bei jedem Push. |
 | Verhalten unter 8.1 und neuer | Unverändert. Jeder Ersatz wird nur dort verwendet, wo PHP die Funktion fehlt. |
@@ -96,7 +96,7 @@ Ab dem Release 0.0.4.54 (20. Oktober 2026) läuft Velocity (`vendor/se7enxweb/ex
 kein Polyfill-Paket und keine Erweiterung. Bis 0.0.4.54 gab die Engine 8.1 als Minimum an, daher musste eine Website
 unter PHP 8.0 von Apache oder PHP-FPM ausgeliefert werden; diese Grenze ist weg. Also:
 
-- Apache oder PHP-FPM liefern die Website aus: PHP 7.4 oder neuer.
+- Apache oder PHP-FPM liefern die Website aus: PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar).
 - Velocity: PHP 8.0 oder neuer, einschließlich des Standard-PHP 8.0 von RHEL 9.
 
 Was sich unter PHP 8.0 unterscheidet, und nur das:

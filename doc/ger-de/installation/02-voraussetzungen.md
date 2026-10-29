@@ -16,7 +16,7 @@ man sie mitten in einer Installation, kostet sie einen Neustart der Installation
 
 | Bedarf | Minimum | Empfohlen | Geprüft durch |
 |---|---|---|---|
-| PHP | 7.4 | das neueste 8.x, das Ihr System anbietet (8.5 wird unterstützt) | Composer (`composer.json`, `require.php`, und das Metapaket `se7enxweb/exponential-php-floor`); den Setup-Assistenten (`settings/setup.ini`, `[phpversion] MinimumVersion=7.4.0`) |
+| PHP | 8.0 unterstützt; 7.4 ohne Support nutzbar | das neueste 8.x, das Ihr System anbietet (8.5 wird unterstützt) | Composer (`composer.json`, `require.php`, und das Metapaket `se7enxweb/exponential-php-floor`); den Setup-Assistenten (`settings/setup.ini`, `[phpversion] MinimumVersion=7.4.0`) |
 | PHP für Netgen Layouts und die Mediensite | 8.1 | wie oben | Composer (die Pakete `explayouts` und `sevenx-themes-media`; das Metapaket installiert sie ab PHP 8.1) |
 | PHP für Exponential Velocity | 8.0, mit `sockets` (ab dem Release 0.0.4.54; bis dahin 8.1) | wie oben, mit `pcntl` und `openssl` | Composer (`se7enxweb/exponential-velocity`: `"php": ">=8.0"`, `"ext-sockets": "*"`) |
 | PHP-Extensions | siehe [2.3](#23-php-extensions) | zusätzlich die empfohlenen | Composer (`ext-*`), den Systemtest des Setup-Assistenten |
@@ -37,9 +37,12 @@ Kommandozeile).
 
 ### Versionen
 
+> **Unterstützt: PHP 8.0 bis 8.5. Ohne Support nutzbar: PHP 7.4 (Exponential 6.0.15 und neuer).**
+> „Ohne Support“ heißt: Die Software ist so gebaut, dass sie unter PHP 7.4 nutzbar ist, aber das Projekt gibt keine Zusage für Fehler- oder Sicherheitskorrekturen, die nur PHP 7.4 betreffen; Sie nutzen es auf eigenes Risiko, und die Funktionen, die PHP 8 brauchen, gibt es dort nicht.
+
 | PHP | Status |
 |---|---|
-| 7.4 | Ab 6.0.15 unterstützt, für Websites, die noch nicht auf PHP 8 umziehen können. Der Kernel und die mitgelieferten Extensions laufen darauf; Velocity, Netgen Layouts und einige Erweiterungen, die PHP 8 brauchen, werden nicht installiert (die vollständige Tabelle steht in [Warum Exponential PHP 7.4 unterstützt](../hilfe/warum-exponential-php-7-4-unterstuetzt.md)). |
+| 7.4 | Ab 6.0.15 ohne Support nutzbar, für Websites, die noch nicht auf PHP 8 umziehen können (keine Zusage für Fehler- oder Sicherheitskorrekturen). Der Kernel und die mitgelieferten Extensions laufen darauf; Velocity, Netgen Layouts und einige Erweiterungen, die PHP 8 brauchen, werden nicht installiert (die vollständige Tabelle steht in [Warum Exponential PHP 7.4 unterstützt](../hilfe/warum-exponential-php-7-4-unterstuetzt.md)). |
 | 8.0 | Unterstützt. Der Kernel und die mitgelieferten Extensions laufen darauf unter Apache mit mod_php oder PHP-FPM. Sie ist das Standard-PHP von Red Hat Enterprise Linux 9, AlmaLinux 9 und Rocky Linux 9. Velocity läuft darauf ab seinem Release 0.0.4.54 (was sich unterscheidet, steht in [2.9](#php-80-und-red-hat-enterprise-linux)); Netgen Layouts braucht 8.1. |
 | 8.1 bis 8.4 | Unterstützt, einschließlich Velocity und Layouts. |
 | 8.5 | Unterstützt; die neueste getestete Version. |
@@ -59,13 +62,13 @@ Jede Version bringt mehr Geschwindigkeit, und die älteren verlieren zuerst die 
 Hoster es noch pflegt, und planen Sie den Umzug auf PHP 8.
 
 **Ein Metapaket pro PHP-Bereich.** Der Kernel verlangt außerdem `se7enxweb/exponential-php-floor` (`^1.0`). Jede seiner
-Versionen gehört zu einem PHP-Bereich und verlangt die Erweiterungs-Releases, die dort laufen: 1.0.0 für PHP 7.4, 1.1.0
+Versionen gehört zu einem PHP-Bereich und verlangt die Erweiterungs-Releases, die dort laufen: 1.0.1 für PHP 7.4 (ohne Support nutzbar), 1.1.0
 für 8.0, 1.2.0 für 8.1 bis 8.3, 1.3.0 für 8.4 und neuer. Composer installiert die Version, die zum PHP passt, mit dem es
 läuft; dasselbe `composer require se7enxweb/exponential` ergibt so auf jedem unterstützten PHP eine vollständige
 Installation, mit eingeschalteten Sicherheitsprüfungen von Composer. Führen Sie Composer mit dem PHP aus, das die
 Website verwenden wird (siehe [PHP auf der Kommandozeile und im Web](#php-auf-der-kommandozeile-und-im-web)).
 
-Die Unterstützung für PHP 7.4 kehrt in 6.0.15 zurück, ebenso die für PHP 8.0. Die veröffentlichten Releases `v6.0.8` bis
+In 6.0.15 wird PHP 8.0 wieder unterstützt, und PHP 7.4 ist wieder nutzbar, ohne Support. Die veröffentlichten Releases `v6.0.8` bis
 `v6.0.14` verlangen in ihrer `composer.json` PHP 8.1, und `v6.0.7` verlangt 7.4 oder 8.1; installieren Sie auf PHP 7.4
 oder 8.0 daher die Linie 6.0.15 (`dev-main`, bis ihr Tag veröffentlicht ist;
 [Kapitel 3](03-den-code-beschaffen.md#31-versionen-tags-und-branches)).
@@ -444,7 +447,7 @@ Das Velocity-Manifest kennt außerdem Alpine (`apk`), FreeBSD (`pkg`), macOS (Ho
 Kernels haben Windows-Pfade für ImageMagick (`convertim.exe`, `convert.exe`), dieses Handbuch ist aber für Linux
 geschrieben.
 
-Exponential läuft auf fast jedem Betriebssystem mit PHP 7.4 oder neuer und einem Webserver. [Unterstützung von
+Exponential läuft auf fast jedem Betriebssystem mit PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) und einem Webserver. [Unterstützung von
 Betriebssystemen](../hilfe/betriebssystemunterstuetzung.md) teilt sie in Stufen ein (hier getestet, bekanntermaßen
 funktionierend, voraussichtlich funktionierend, derzeit nicht möglich), von den Linux-Distributionen, den BSDs, macOS
 und Windows bis zu IBM i, Haiku und den 8-Bit-Rechnern, und führt die Webserver und PHP-SAPIs auf.

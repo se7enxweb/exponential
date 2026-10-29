@@ -192,7 +192,7 @@ Stewards     7x (company, leads since 2023);
              Exponential Foundation (nonprofit, founded 19 March 2026)    [Who is 7x?, Foundation page]
 License      GPL v2 or later, free of charge; help under GNU FDL 1.3      [README, Free documentation]
 Databases    SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL [Database support]
-OS           Almost any that runs PHP 7.4 or later                         [Operating system support]
+OS           Almost any that runs PHP 8.0 or later (PHP 7.4 usable without support)                         [Operating system support]
 PHP          8.0 to 8.5                                                    [README]
 Languages    368 locale files, 43 right to left; all translations complete [Languages in Exponential]
 Highlights   Multisite, layouts editor, Exponential Intelligence (drafts only),

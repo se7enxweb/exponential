@@ -15,7 +15,7 @@ package install, found half-way through an install it costs a restart of the ins
 
 | Need | Minimum | Recommended | Checked by |
 |---|---|---|---|
-| PHP | 7.4 | the newest 8.x your system offers (8.5 is supported) | Composer (`composer.json`, `require.php`, and the metapackage `se7enxweb/exponential-php-floor`); the setup wizard (`settings/setup.ini`, `[phpversion] MinimumVersion=7.4.0`) |
+| PHP | 8.0 supported; 7.4 usable without support | the newest 8.x your system offers (8.5 is supported) | Composer (`composer.json`, `require.php`, and the metapackage `se7enxweb/exponential-php-floor`); the setup wizard (`settings/setup.ini`, `[phpversion] MinimumVersion=7.4.0`) |
 | PHP for Netgen Layouts and the media site | 8.1 | as above | Composer (the `explayouts` packages and `sevenx-themes-media`; the metapackage installs them from PHP 8.1 on) |
 | PHP for Exponential Velocity | 8.0, with `sockets` (from release 0.0.4.54; until then 8.1) | as above, with `pcntl` and `openssl` | Composer (`se7enxweb/exponential-velocity`: `"php": ">=8.0"`, `"ext-sockets": "*"`) |
 | PHP extensions | see [2.3](#23-php-extensions) | plus the recommended ones | Composer (`ext-*`), the setup wizard's system check |
@@ -35,9 +35,12 @@ good check (for the command line PHP).
 
 ### Versions
 
+> **Supported: PHP 8.0 to 8.5. Usable without support: PHP 7.4 (Exponential 6.0.15 and later).**
+> "Without support" means: the software is designed to be usable on PHP 7.4, but the project gives no bug-fix or security commitment specific to PHP 7.4, you use it at your own risk, and the features that need PHP 8 are not available there.
+
 | PHP | Status |
 |---|---|
-| 7.4 | Supported from 6.0.15, for sites that cannot move to PHP 8 yet. The kernel and the bundled extensions run on it; Velocity, Netgen Layouts and a few extensions that need PHP 8 are not installed (see [Why Exponential supports PHP 7.4](../help/why-exponential-supports-php-7-4.md) for the full table). |
+| 7.4 | Usable without support from 6.0.15, for sites that cannot move to PHP 8 yet (no bug-fix or security commitment). The kernel and the bundled extensions run on it; Velocity, Netgen Layouts and a few extensions that need PHP 8 are not installed (see [Why Exponential supports PHP 7.4](../help/why-exponential-supports-php-7-4.md) for the full table). |
 | 8.0 | Supported. The kernel and the shipped extensions run on it under Apache with mod_php or PHP-FPM. It is the stock PHP of Red Hat Enterprise Linux 9, AlmaLinux 9 and Rocky Linux 9. Velocity runs on it from its release 0.0.4.54 (see [2.9](#php-80-and-red-hat-enterprise-linux) for what differs); Netgen Layouts needs 8.1. |
 | 8.1 to 8.4 | Supported, Velocity and Layouts included. |
 | 8.5 | Supported; the newest version tested. |
@@ -56,13 +59,13 @@ PHP 7.4 itself has had no security support from the PHP project since November 2
 distribution or host still patches it, and plan the move to PHP 8.
 
 **One metapackage per PHP range.** The kernel also requires `se7enxweb/exponential-php-floor` (`^1.0`). Each of its
-versions belongs to one PHP range and requires the extension releases that run there: 1.0.0 for PHP 7.4, 1.1.0 for
+versions belongs to one PHP range and requires the extension releases that run there: 1.0.1 for PHP 7.4 (usable without support), 1.1.0 for
 8.0, 1.2.0 for 8.1 to 8.3, 1.3.0 for 8.4 and later. Composer installs the version that matches the PHP it runs with,
 so the same `composer require se7enxweb/exponential` gives a complete installation on every supported PHP, with
 Composer's security checks left on. Run Composer with the PHP the site will use (see
 [Command line and web PHP](#command-line-and-web-php)).
 
-PHP 7.4 support returns in 6.0.15, and so does PHP 8.0 support. The published releases `v6.0.8` to `v6.0.14`
+In 6.0.15 PHP 8.0 is supported again, and PHP 7.4 is usable again, without support. The published releases `v6.0.8` to `v6.0.14`
 require PHP 8.1 in their `composer.json`, and `v6.0.7` requires 7.4 or 8.1, so on PHP 7.4 or 8.0 install the 6.0.15
 line (`dev-main` until its tag is published; [chapter 3](03-getting-the-code.md#31-versions-tags-and-branches)).
 
@@ -425,7 +428,7 @@ and its [requirements](https://github.com/se7enxweb/exponential-velocity/blob/ma
 The Velocity manifest also knows Alpine (`apk`), FreeBSD (`pkg`), macOS (Homebrew) and Windows. The kernel's setup
 tests have Windows paths for ImageMagick (`convertim.exe`, `convert.exe`), but this book is written for Linux.
 
-Exponential runs on almost any operating system with PHP 7.4 or later and a web server. [Operating system
+Exponential runs on almost any operating system with PHP 8.0 or later (PHP 7.4 usable without support) and a web server. [Operating system
 support](../help/os-support.md) sorts them into tiers (tested here, known to work, expected to work, not possible
 today), from the Linux distributions, the BSDs, macOS and Windows to IBM i, Haiku and the 8-bit machines, and lists
 the web servers and PHP SAPIs.

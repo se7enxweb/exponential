@@ -95,7 +95,7 @@ Symfony digital experience platform line; it is a separate product with its own 
 Because every one of those layers comes from one source, with one installer, one console and one set of
 documentation, adopting Exponential anywhere in the world comes without the usual integration work: there is no
 server to choose before the first page, no second vendor's documentation to reconcile, and no PHP version where half
-of the stack is missing. Exponential runs on almost any operating system that has PHP 7.4 or later
+of the stack is missing. Exponential runs on almost any operating system that has PHP 8.0 or later (PHP 7.4 usable without support)
 ([Operating system support](os-support.md)).
 
 ## What Velocity brings out of the box

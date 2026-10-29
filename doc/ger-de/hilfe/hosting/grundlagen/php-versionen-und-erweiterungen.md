@@ -33,7 +33,7 @@ warum die beiden PHPs eines Servers (Web und Kommandozeile) übereinstimmen müs
 | 8.0 | Unterstützt; der Kernel läuft darauf unter Apache mit mod_php oder PHP-FPM. Sie ist das mitgelieferte PHP von RHEL 9, AlmaLinux 9 und Rocky Linux 9. Velocity läuft darauf ab seinem Release 0.0.4.54 (bis dahin brauchte es 8.1). |
 | 8.1 bis 8.4 | Unterstützt, einschließlich Velocity. |
 | 8.5 | Unterstützt; die neueste getestete Version. |
-| 7.4 | Ab 6.0.15 wieder unterstützt, ohne die Funktionen, die PHP 8 brauchen; nicht von 6.0.8 bis 6.0.14. |
+| 7.4 | Ab 6.0.15 ohne Support nutzbar (keine Zusage für Fehler- oder Sicherheitskorrekturen, ohne die Funktionen, die PHP 8 brauchen); nicht von 6.0.8 bis 6.0.14. |
 
 `composer.json` erklärt `"php": "^7.4 || ^8.0 || ^8.1 || ^8.2 || ^8.3 || ^8.4 || ^8.5 || ^8.6 || ^8.7 || ^8.8"`. Die Versionen
 nach 8.5 werden von der Bedingung akzeptiert, sind aber weder veröffentlicht noch getestet.

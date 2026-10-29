@@ -125,7 +125,7 @@ Möglichkeiten; wählen Sie pro Tarif, und schreiben Sie die Wahl in die Beschre
 
 ## Checkliste
 
-- [ ] PHP 7.4 oder später für Web und Kommandozeile, in beiden dieselbe Version und dieselben Erweiterungen.
+- [ ] PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar) für Web und Kommandozeile, in beiden dieselbe Version und dieselben Erweiterungen.
 - [ ] `sockets`, `pcntl` und `openssl` in diesem PHP, wo Velocity angeboten wird.
 - [ ] Ein Datenbankangebot aus der offiziellen Reihenfolge gewählt.
 - [ ] `var/` und `settings/` für den Benutzer der Website beschreibbar; ein Benutzer oder eine Gruppe für jeden Prozess.

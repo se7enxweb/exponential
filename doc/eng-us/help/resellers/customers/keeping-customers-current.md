@@ -31,8 +31,8 @@ is selling security; one that does not is selling risk. The partners' version is
 | 6.0.x, released tags (`v6.0.0` to `v6.0.14`) | Fixed by upgrading to the newest 6.0.x |
 | 5.x, 4.x, 3.x and older | No |
 
-"A published tag is never changed": a fix reaches a site only through an update. PHP 7.4 to 8.5 are supported for the
-6.0.15 line; PHP 7.4 again from 6.0.15 ([Release line and support](../../customers/healthy/release-line-and-support.md)).
+"A published tag is never changed": a fix reaches a site only through an update. PHP 8.0 to 8.5 (PHP 7.4 usable without support) are supported for the
+6.0.15 line; PHP 7.4 usable without support from 6.0.15 ([Release line and support](../../customers/healthy/release-line-and-support.md)).
 The project publishes no release calendar and no end-of-life date for 6.0.
 
 ## Keep an inventory

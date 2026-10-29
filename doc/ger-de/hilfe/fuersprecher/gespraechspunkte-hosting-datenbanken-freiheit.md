@@ -27,7 +27,7 @@ ist oft ja, und die Details zählen: Exponential dokumentiert seine Unterstützu
 | „Sechs Datenbanken werden unterstützt, in dieser offiziellen Reihenfolge: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL.“ | [Datenbankunterstützung](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge) |
 | „SQLite ist der Standard: eine vollständige Website ohne Datenbankserver.“ | [Datenbankunterstützung, SQLite 3](../datenbankunterstuetzung.md#1-sqlite-3-der-standard), [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | „Betriebssysteme sind in vier Stufen dokumentiert, von getestet bis theoretisch.“ | [Betriebssystemunterstützung, Die vier Stufen](../betriebssystemunterstuetzung.md#die-vier-stufen) |
-| „PHP 7.4 oder später auf fast jedem Betriebssystem, mit vielen Webservern.“ | [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md#webserver) |
+| „PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar) auf fast jedem Betriebssystem, mit vielen Webservern.“ | [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md#webserver) |
 | „Container, Cloud-Maschinen und Hosting-Panels sind abgedeckt.“ | [Container, Cloud und Hosting-Panels](../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels) |
 | „Sie können eine Website mit dokumentierten Werkzeugen in eine andere Datenbank umziehen.“ | [Eine Website in eine andere Datenbank umziehen](../datenbankunterstuetzung.md#eine-site-auf-eine-andere-datenbank-umziehen) |
 | „Backups sind Standard-Dumps für jede Datenbank.“ | [Backup und Wiederherstellung](../datenbankunterstuetzung.md#backup-und-wiederherstellung) |

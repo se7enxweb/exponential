@@ -24,7 +24,7 @@ damit die Teilnehmenden allein weitermachen können.
 
 ## Vor dem Workshop
 
-**Die Teilnehmenden bringen** einen Laptop mit PHP 7.4 oder später, Composer und Git mit sowie ein GitHub-Konto für die
+**Die Teilnehmenden bringen** einen Laptop mit PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar), Composer und Git mit sowie ein GitHub-Konto für die
 letzte Übung. Prüfen Sie die PHP-Anforderung unter [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md#was-das-betriebssystem-bereitstellen-muss).
 
 **Sie bereiten vor**:

@@ -53,7 +53,7 @@ public function render( array $items, ?eZINI $ini = null, ?callable $filter = nu
    `eZWorkflowEventType`). A return type added to a kernel method forces every subclass to add it too, or the subclass
    no longer loads.
 4. **PHP 8.0.** Several declaration forms (`never`, intersection types, typed constants, `readonly`) do not exist on
-   8.0 (7.4 is the oldest supported version from 6.0.15).
+   8.0, the oldest supported version (7.4 is usable without support from 6.0.15).
 
 ## How types are documented instead
 

@@ -11,7 +11,7 @@ und aufgegeben haben, versuchen Sie es erneut.
 
 ## Anforderungen
 
-Exponential 6, PHP 7.4 oder neuer, GD2 oder ImageMagick und ein Bearbeitungsformular von Exponential (Admin oder ein
+Exponential 6, PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar), GD2 oder ImageMagick und ein Bearbeitungsformular von Exponential (Admin oder ein
 Design, das die Skripte des Bearbeitungsformulars lädt). Er verwendet jQuery, jQuery UI, die Plugins Jcrop und
 colorpicker und die Bildkonvertierung der Zeta Components.
 

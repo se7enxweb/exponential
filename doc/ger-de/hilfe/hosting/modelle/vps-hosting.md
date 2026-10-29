@@ -147,7 +147,7 @@ Möglichkeiten, zwischen denen ein Hoster üblicherweise wählt:
 
 ## Checkliste
 
-- [ ] Distribution der Stufe 1 oder 2, PHP 7.4 oder später für Web und Kommandozeile, in beiden dieselben Erweiterungen.
+- [ ] Distribution der Stufe 1 oder 2, PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar) für Web und Kommandozeile, in beiden dieselben Erweiterungen.
 - [ ] `exp:velocity ext check` ohne Befund für die genutzten Funktionen.
 - [ ] Velocity mit einem Startdienst oder Apache/nginx mit PHP-FPM; HTTPS mit einem Zertifikat einer CA.
 - [ ] Datenbank in der offiziellen Reihenfolge gewählt und dokumentiert.

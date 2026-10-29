@@ -324,7 +324,7 @@ jobs:
         run: php bin/php/ezexec.php tests/bin/bootsmoke.php
 
   php74:
-    name: PHP 7.4 (oldest supported from 6.0.15) syntax, install and boot
+    name: PHP 7.4 (usable without support from 6.0.15) syntax, install and boot
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -344,7 +344,7 @@ jobs:
         run: make lint74-all PHP74=php
 
       # A plain production install on PHP 7.4: se7enxweb/exponential-php-floor resolves to its
-      # PHP 7.4 version (1.0.0), which leaves out Velocity, Layouts and the extensions that need
+      # PHP 7.4 version (1.0.1; PHP 7.4 is usable without support), which leaves out Velocity, Layouts and the extensions that need
       # PHP 8. A package the kernel requires directly that raises its PHP minimum fails here.
       - name: Get Composer cache directory
         id: composer-cache

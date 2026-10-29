@@ -3,7 +3,7 @@ title: Hosting-Anforderungen für Ihre Angebote
 audience: reseller, hosting
 category: reselling
 order: 210
-summary: Die Serveranforderungen, die ein Wiederverkäufer prüfen muss, bevor er ein Exponential-Angebot verkauft - PHP 7.4 bis 8.5 und seine Erweiterungen, Werte in der php.ini, die sechs Datenbanken in der offiziellen Reihenfolge, Composer, die Engine, Bildkonvertierung, beschreibbare Verzeichnisse - und die Fragen an einen Hosting-Lieferanten.
+summary: Die Serveranforderungen, die ein Wiederverkäufer prüfen muss, bevor er ein Exponential-Angebot verkauft - PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) und seine Erweiterungen, Werte in der php.ini, die sechs Datenbanken in der offiziellen Reihenfolge, Composer, die Engine, Bildkonvertierung, beschreibbare Verzeichnisse - und die Fragen an einen Hosting-Lieferanten.
 keywords: Anforderungen, Hosting-Anforderungen, PHP 8, Erweiterungen, php.ini, memory_limit, Datenbank, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Composer, Velocity, ImageMagick, GD, Fragen an Lieferanten, requirements, hosting requirements, extensions, database, supplier questions
 type: help
 ---
@@ -25,7 +25,7 @@ Anforderungen erfüllt. Die vollständige Referenz ist [Anforderungen auf einen 
 
 | Bedarf | Minimum | Empfohlen | Geprüft durch |
 |---|---|---|---|
-| PHP | 7.4 (8.0 für Velocity, 8.1 für Layouts) | Das neueste 8.x, das das System anbietet; 8.5 ist das neueste getestete | `composer.json` und den Setup-Assistenten (`settings/setup.ini`, `[phpversion] MinimumVersion=7.4.0`) |
+| PHP | 8.0 unterstützt (7.4 ohne Support nutzbar; 8.1 für Layouts) | Das neueste 8.x, das das System anbietet; 8.5 ist das neueste getestete | `composer.json` und den Setup-Assistenten (`settings/setup.ini`, `[phpversion] MinimumVersion=7.4.0`) |
 | PHP-Erweiterungen | `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`, `zlib`, eine Datenbankerweiterung, `gd` oder ImageMagick | Dazu `curl`, `gd`, `openssl`, `pcntl`, `opcache` | Composer und die kritischen Tests des Setup-Assistenten |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` gesetzt, `file_uploads` an, `allow_url_fopen` an | Mehr Speicher für Importe und Bildbearbeitung | Die kritischen Tests des Setup-Assistenten |
 | Composer | 2.x | Ein aktuelles 2.x | Sie |

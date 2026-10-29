@@ -35,7 +35,7 @@ verweisen sie dorthin, statt sie zu wiederholen.
 GNU GPL, Version 2 oder später. Seine Codebasis wird seit 1999 entwickelt, zuerst unter dem Namen eZ Publish, einem Produkt,
 das sein Hersteller nach fast 18 Jahren eingestellt hat; 7x hat es am Leben erhalten, und es wird von 7x gemeinsam mit der
 Exponential Foundation geführt ([Wer ist 7x?](../wer-ist-7x.md), [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)).
-Für einen PHP-Entwickler ist es eine große, ausgereifte Codebasis mit eigenen Konventionen: PHP 7.4 bis 8.5, generierte
+Für einen PHP-Entwickler ist es eine große, ausgereifte Codebasis mit eigenen Konventionen: PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar), generierte
 Klassen-Maps statt PSR-4, geschichtete INI-Einstellungen, die über `eZINI` gelesen werden, `eZPersistentObject` für Tabellen,
 eine kompilierte Template-Sprache, sechs unterstützte Datenbanken (standardmäßig SQLite 3, PostgreSQL, MongoDB, MariaDB,
 Oracle, MySQL) und Velocity, ein Anwendungsserver mit persistenten Workern, als Teil des Produkts
@@ -56,7 +56,7 @@ Den gesamten Abschnitt in Reihenfolge finden Sie unter [Der Lesepfad für PHP-En
 
 ## Sieben Regeln für jede PHP-Änderung
 
-1. **Läuft unter PHP 7.4 bis 8.5.** Keine Syntax und keine ungeschützte Funktion, die neuer als 8.0 ist
+1. **Läuft unter PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar).** Keine Syntax und keine ungeschützte Funktion, die neuer als 8.0 ist
    ([Code schreiben, der unter PHP 8.0 läuft](code-der-unter-php-8-0-laeuft.md)).
 2. **Folgt dem Hausstil.** `array()`, Leerzeichen innerhalb von Klammern, keine Typdeklarationen; `make phpcs` und
    `make phpstan` melden nichts Neues ([Der Coding-Standard](der-coding-standard.md)).

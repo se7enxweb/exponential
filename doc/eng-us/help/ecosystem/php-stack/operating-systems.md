@@ -9,7 +9,7 @@ type: help
 ---
 # Operating systems in the ecosystem
 
-Exponential runs on "almost any [operating system] that runs PHP 7.4 or later" (`README.md`, "Requirements"). The
+Exponential runs on "almost any [operating system] that runs PHP 8.0 or later (PHP 7.4 usable without support)" (`README.md`, "Requirements"). The
 help sorts them into four tiers ([Operating system support](../../os-support.md)).
 
 ## Contents

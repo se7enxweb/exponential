@@ -23,7 +23,7 @@ check. Every exercise links the documentation page it follows, so participants c
 
 ## Before the workshop
 
-**Participants bring** a laptop with PHP 7.4 or later, Composer and Git, and a GitHub account for the last exercise.
+**Participants bring** a laptop with PHP 8.0 or later (PHP 7.4 usable without support), Composer and Git, and a GitHub account for the last exercise.
 Check the PHP requirement on [Operating system support](../os-support.md#what-the-operating-system-has-to-provide).
 
 **You prepare**:

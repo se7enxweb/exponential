@@ -123,7 +123,7 @@ Mitwirkenden warnt nur), PHPStan und die Tests der eigenen Sniffs
 (ein eigener Job, auf PHP 8.4) blockieren; der Code-Stil der geänderten Dateien, einschließlich Typdeklarationen und
 Kompatibilität mit PHP 8.0, wird als Warnung gemeldet.
 
-Der Job `php74` prüft die älteste unterstützte Version, PHP 7.4, auf dieselbe Weise; der Job `php80` ist die Prüfung für PHP 8.0 (das mitgelieferte PHP von RHEL 9), an
+Der Job `php74` prüft PHP 7.4, ohne Support nutzbar, auf dieselbe Weise; der Job `php80` ist die Prüfung für PHP 8.0 (das mitgelieferte PHP von RHEL 9), an
 einer Stelle:
 
 1. `make lint80-all`: `php -l` mit PHP 8.0 auf jeder PHP-Datei in Git (blockierend).

@@ -21,7 +21,7 @@ if ( !defined( 'EXP_ROOT_DIR' ) && strncmp( __FILE__, 'phar://', 7 ) !== 0 )
     define( 'EXP_ROOT_DIR', __DIR__ );
 }
 
-// PHP functions younger than the oldest supported PHP (7.4), defined only where
+// PHP functions younger than the oldest usable PHP (7.4, usable without support; 8.0 is the oldest supported), defined only where
 // PHP lacks them; symfony/polyfill-php80 and -php81 add the rest. On 8.1 and
 // later the file is not even read.
 if ( PHP_VERSION_ID < 80100 )

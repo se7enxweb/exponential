@@ -30,7 +30,7 @@ Windows. The full support statement with every system is
 
 ## The short answer
 
-Exponential 6.0.x runs on almost any operating system that has PHP 7.4 or later and a web server. It is plain PHP
+Exponential 6.0.x runs on almost any operating system that has PHP 8.0 or later (PHP 7.4 usable without support) and a web server. It is plain PHP
 files plus a database; it has no compiled code of its own and no dependency on one C library
 ([OS support](../../os-support.md#what-the-operating-system-has-to-provide)). For a host the practical choice is a
 current Linux distribution with a maintained PHP 8.

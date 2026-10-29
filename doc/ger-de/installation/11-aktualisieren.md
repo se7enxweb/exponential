@@ -296,7 +296,7 @@ beschriebene Weg gilt für sie. Um Exponential 6 weiterhin innerhalb einer Symfo
    Spalte nicht hat. Die MySQL-Datei läuft auf jedem MySQL ab 5.5.3 und auf MariaDB (siehe die Hinweise je Datenbank
    oben). Details: [Changelog 6.0.0](../../changelogs/6.0/6.0.0.md).
 3. **PHP.** Die aktuelle Linie läuft unter PHP 8.0 bis 8.5 (`composer.json`: `^8.0`), Velocity ab seinem Release 0.0.4.54 eingeschlossen. Die
-   Releases 6.0.8 bis 6.0.14 verlangten 8.1. Eine Site unter PHP 7.4 kann ab 6.0.15 wieder die aktuelle Linie betreiben (6.0.8 bis 6.0.14 brauchen PHP 8.1). Prüfen Sie Ihre
+   Releases 6.0.8 bis 6.0.14 verlangten 8.1. Eine Site unter PHP 7.4 kann ab 6.0.15 wieder die aktuelle Linie betreiben, ohne Support (6.0.8 bis 6.0.14 brauchen PHP 8.1). Prüfen Sie Ihre
    eigenen Extensions auf Probleme mit PHP 8: Klassen, die `eZPersistentObject` oder `eZDataType` erweitern, sind die
    üblichen Fälle. Siehe [PHP-8-Unterstützung](../bc/6.0/php8.md) und [PHP-8.0-Unterstützung](../bc/6.0/php-8.0-unterstuetzung.md).
 4. Fahren Sie mit [11.6](#116-von-einer-beliebigen-60x-auf-den-heutigen-stand) fort.

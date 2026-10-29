@@ -3,7 +3,7 @@ title: Composer für PHP-Entwickler
 audience: php-developer, developer
 category: php-development
 order: 460
-summary: Wie Exponential Composer verwendet - die Wurzel-composer.json mit PHP 7.4 bis 8.5, benötigte Erweiterungen und Pakete, der Hook legacy-scripts, der Autoloads neu generiert, das Installer-Plugin, das Erweiterungen nach extension/ legt, composer.dev.json für die Entwicklungswerkzeuge, die eigene composer.json einer Erweiterung, Versionseinschränkungen und was Sie mit vendor/ nicht tun sollten.
+summary: Wie Exponential Composer verwendet - die Wurzel-composer.json mit PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar), benötigte Erweiterungen und Pakete, der Hook legacy-scripts, der Autoloads neu generiert, das Installer-Plugin, das Erweiterungen nach extension/ legt, composer.dev.json für die Entwicklungswerkzeuge, die eigene composer.json einer Erweiterung, Versionseinschränkungen und was Sie mit vendor/ nicht tun sollten.
 keywords: Composer, Versionseinschränkung, Tilde, PHP-Einschränkung, Entwicklungswerkzeuge, Erweiterung paketieren, composer.json, Packagist, se7enxweb, exponential-legacy-installer, ezpublish-legacy-extension, require, require-dev, suggest, post-install-cmd, legacy-scripts, composer.dev.json, .devtools, version constraint, tilde, PHP constraint, vendor
 type: help
 ---

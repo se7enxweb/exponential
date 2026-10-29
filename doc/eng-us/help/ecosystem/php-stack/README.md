@@ -32,7 +32,7 @@ works with.
 
 | Layer | Exponential 6.0.15 | Source |
 |---|---|---|
-| Language | PHP 7.4 to 8.5 | `README.md` |
+| Language | PHP 8.0 to 8.5 (PHP 7.4 usable without support) | `README.md` |
 | Package manager | Composer, Packagist | `README.md` |
 | Kernel libraries | Zeta Components | `composer.json` |
 | Database | SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Database support](../../database-support.md) |

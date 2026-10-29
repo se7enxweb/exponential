@@ -3,20 +3,22 @@ title: "Unterstützte PHP-Versionen: 7.4 bis 8.5"
 audience: php-developer, developer
 category: php-development
 order: 50
-summary: Welche PHP-Versionen Exponential 6 unterstützt und wie jede getestet wird - PHP 7.4 als älteste (8.0 für Velocity), 8.5 als neueste, die Einschränkung in composer.json, die CI-Jobs je Version, die Unterschiede unter 8.0 und was Sie in Ihrer eigenen Erweiterung angeben.
+summary: Welche PHP-Versionen Exponential 6 unterstützt und wie jede getestet wird - PHP 7.4 als älteste (8.0 als älteste unterstützte, 7.4 ohne Support nutzbar), 8.5 als neueste, die Einschränkung in composer.json, die CI-Jobs je Version, die Unterschiede unter 8.0 und was Sie in Ihrer eigenen Erweiterung angeben.
 keywords: unterstützte PHP-Versionen, PHP-Einschränkung, CI-Matrix, PHPUnit-Versionen, PHP 8.0, PHP 8.1, PHP 8.2, PHP 8.3, PHP 8.4, PHP 8.5, supported PHP versions, composer.json, php constraint, RHEL 9, CI matrix, PHPUnit versions, Velocity 0.0.4.54, PHP 7.4
 type: help
 ---
 # Unterstützte PHP-Versionen: 7.4 bis 8.5
 
+> **Unterstützt: PHP 8.0 bis 8.5. Ohne Support nutzbar: PHP 7.4 (Exponential 6.0.15 und neuer).** [Warum Exponential PHP 7.4 unterstützt](../warum-exponential-php-7-4-unterstuetzt.md)
+
 Diese Seite richtet sich an PHP-Entwickler, die wissen müssen, unter welchen PHP-Versionen ihr Code laufen muss.
-Exponential 6 läuft unter PHP 7.4 bis 8.5. Die älteste Version bestimmt, welche Syntax und welche Funktionen Sie
+Exponential 6 läuft unter PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar). Die älteste Version bestimmt, welche Syntax und welche Funktionen Sie
 verwenden dürfen; die neueste bestimmt, welche Deprecations Sie vermeiden müssen.
 
 ## Inhalt
 
 1. [Der Bereich](#der-bereich)
-2. [Warum PHP 7.4 die älteste ist](#warum-php-74-die-älteste-ist)
+2. [PHP 8.0 unterstützt, PHP 7.4 ohne Support nutzbar](#php-80-unterstützt-php-74-ohne-support-nutzbar)
 3. [Wie jede Version getestet wird](#wie-jede-version-getestet-wird)
 4. [Was unter PHP 8.0 anders ist](#was-unter-php-80-anders-ist)
 5. [Die Geschichte der Anforderung](#die-geschichte-der-anforderung)
@@ -40,7 +42,7 @@ Exponential Velocity, der Anwendungsserver, läuft ab seinem Release 0.0.4.54 un
 zusammen mit den anderen Paketen, die PHP 8 brauchen, über das Metapaket `se7enxweb/exponential-php-floor`, dessen
 Version für PHP 7.4 sie auslässt ([Warum Exponential PHP 7.4 unterstützt](../warum-exponential-php-7-4-unterstuetzt.md)).
 
-## Warum PHP 7.4 die älteste ist
+## PHP 8.0 unterstützt, PHP 7.4 ohne Support nutzbar
 
 PHP 7.4 wird ab 6.0.15 für Organisationen unterstützt, die das PHP ihrer Server noch nicht ändern können:
 Hosting-Verträge, zertifizierte Images, Betriebssystem-Releases mit langer Laufzeit. PHP 8.0 ist wichtig, weil es das
@@ -97,7 +99,7 @@ Die vollständige Tabelle mit den Dateien finden Sie unter [Unterstützung für 
 | bis 6.0.7 | PHP 7.4 und 8.1 |
 | 6.0.8 (April 2025) | Composer verlangt PHP 8.1 oder neuer; erste Unterstützung für 8.4 |
 | 6.0.11 (Dezember 2025) | Unterstützung für PHP 8.5 |
-| 6.0.15 | PHP 8.0 wieder unterstützt, in der CI geprüft; dann PHP 7.4 wieder als älteste Version unterstützt, mit dem Metapaket `se7enxweb/exponential-php-floor` und einem CI-Job `php74` |
+| 6.0.15 | PHP 8.0 wieder unterstützt, in der CI geprüft; dann PHP 7.4 wieder nutzbar, ohne Support, mit dem Metapaket `se7enxweb/exponential-php-floor` und einem CI-Job `php74` |
 
 Jeder Schritt ist unter [Unterstützung für PHP 8](../../bc/6.0/php8.md) aufgeführt.
 

@@ -276,7 +276,7 @@ running Exponential 6 inside a Symfony platform, see [Legacy bridge](../features
    if the table lacks it. The MySQL file runs on every MySQL from 5.5.3 and on MariaDB (see the per-database notes
    above). Details: [Changelog 6.0.0](../../changelogs/6.0/6.0.0.md).
 3. **PHP.** The current line runs on PHP 8.0 to 8.5 (`composer.json`: `^8.0`), Velocity included from its release 0.0.4.54. Releases 6.0.8 to
-   6.0.14 required 8.1. A site on PHP 7.4 can run the current line again from 6.0.15 (6.0.8 to 6.0.14 need PHP 8.1). Check your own extensions for PHP 8
+   6.0.14 required 8.1. A site on PHP 7.4 can run the current line again from 6.0.15, without support (6.0.8 to 6.0.14 need PHP 8.1). Check your own extensions for PHP 8
    problems: classes that extend `eZPersistentObject` or `eZDataType` are the usual cases. See
    [PHP 8 support](../bc/6.0/php8.md) and [PHP 8.0 support](../bc/6.0/php-8.0-support.md).
 4. Continue with [11.6](#116-from-any-60x-to-today).

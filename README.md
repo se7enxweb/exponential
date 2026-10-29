@@ -81,7 +81,7 @@ The 6.0.15 line also brings, among much else (the full list is in the
   currencies, for every inhabited country and territory; the administration in more than 150 languages, all of them
   complete (the current totals are at the top of [languages](doc/eng-us/languages.md)); right-to-left languages get
   `dir="rtl"` in content and in the administration ([right to left](doc/eng-us/features/6.0/right-to-left.md)).
-- **MariaDB, MySQL, PostgreSQL, SQLite, Oracle and MongoDB** on one kernel, PHP 7.4 to 8.5, and the bundled
+- **MariaDB, MySQL, PostgreSQL, SQLite, Oracle and MongoDB** on one kernel, PHP 8.0 to 8.5 (PHP 7.4 usable without support), and the bundled
   application server Exponential Velocity, part of Exponential as of 6.0.15 (required at `~0.0.4.55`, which runs on PHP 8.0 as well, answers HEAD over HTTP/2 with its
   headers only and drains its connections when it stops).
 
@@ -298,7 +298,7 @@ being loaded from its archive: rebuild it first.
   **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
   3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
   at this time. Details: [Database support](doc/eng-us/help/database-support.md).
-- Operating system: almost any that runs PHP 7.4 or later; see
+- Operating system: almost any that runs PHP 8.0 or later (PHP 7.4 usable without support); see
   [Operating system support](doc/eng-us/help/os-support.md).
 - Composer. Used to download Exponential software packages for installation, also notably installs the required Zeta Components php libraries and the extensions listed in `composer.json`.
 - (Optional) For Exponential Intelligence: an API key of a hosted AI provider, or a local open-weight model on the
@@ -307,11 +307,13 @@ being loaded from its archive: rebuild it first.
 
 ## What version of PHP is required
 
-Exponential supports PHP 7.4 and PHP 8.0 -> 8.5+; please use the latest version of PHP available on your OS.
+Supported: PHP 8.0 to 8.5. Usable without support: PHP 7.4 (Exponential 6.0.15 and later).
+
+Please use the latest version of PHP available on your OS.
 
 PHP 8.0 is supported so that the stock PHP of Red Hat Enterprise Linux 9 (and AlmaLinux / Rocky Linux 9) runs Exponential under Apache or PHP-FPM and under Exponential Velocity, the built-in application server, which runs on PHP 8.0 to 8.5 from its release 0.0.4.54 (until then it needed 8.1). See [PHP 8.0 support](doc/eng-us/bc/6.0/php-8.0-support.md) and the engine's [PHP 8.0 and Red Hat Enterprise Linux](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/rhel.md) page.
 
-PHP 7.4 is supported again from 6.0.15, as a bridge for organizations that cannot change the PHP of their servers yet. The kernel and the bundled extensions run on it; Velocity, Netgen Layouts and a few extensions that need PHP 8 are left out. Composer chooses the right packages for each PHP version through the metapackage [se7enxweb/exponential-php-floor](https://github.com/se7enxweb/exponential-php-floor). Why the project does this, what works on PHP 7.4, how security is kept and the end-of-life stance: [Why Exponential supports PHP 7.4](doc/eng-us/help/why-exponential-supports-php-7-4.md). PHP 7.4 itself has had no security fixes from the PHP project since November 2022, so run it only where your operating system vendor or host still patches it, and plan the move to PHP 8.
+PHP 7.4 is usable again from 6.0.15, without support, as a bridge for organizations that cannot change the PHP of their servers yet. The kernel and the bundled extensions run on it; Velocity, Netgen Layouts and a few extensions that need PHP 8 are left out. Composer chooses the right packages for each PHP version through the metapackage [se7enxweb/exponential-php-floor](https://github.com/se7enxweb/exponential-php-floor). Why the project does this, what works on PHP 7.4, how security is kept and the end-of-life stance: [Why Exponential supports PHP 7.4](doc/eng-us/help/why-exponential-supports-php-7-4.md). PHP 7.4 itself has had no security fixes from the PHP project since November 2022, so run it only where your operating system vendor or host still patches it, and plan the move to PHP 8.
 
 # Main Exponential features
 

@@ -34,7 +34,7 @@ The README: "Exponential has made it beyond it's end of life in 2021 and survive
 
 ### 3. "It only runs on old PHP."
 
-It supports PHP 7.4 to 8.5; PHP 7.4 sites can run 6.0.15 too ([Story: current PHP](story-current-php.md)).
+It supports PHP 7.4 to 8.5; PHP 7.4 sites can run 6.0.15 too, without support ([Story: current PHP](story-current-php.md)).
 
 ### 4. "The AI writes and publishes your site."
 

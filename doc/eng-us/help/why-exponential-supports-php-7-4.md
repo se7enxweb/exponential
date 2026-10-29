@@ -3,7 +3,7 @@ title: Why Exponential supports PHP 7.4
 audience: admin, developer, user, press, business
 category: getting-started
 order: 3
-summary: From 6.0.15 Exponential runs on PHP 7.4 again, next to PHP 8.0 to 8.5. Who this is for, what works on PHP 7.4 and what needs PHP 8 (a table per feature), how one Composer metapackage picks the right packages for each PHP version, how security is kept, the honest trade-offs, and the end-of-life stance - and why bridging old PHP versions is one of the project's values.
+summary: Supported - PHP 8.0 to 8.5; usable without support - PHP 7.4 (Exponential 6.0.15 and later). Who this is for, what works on PHP 7.4 and what needs PHP 8 (a table per feature), how one Composer metapackage picks the right packages for each PHP version, how security is kept, the honest trade-offs, and the end-of-life stance - and why bridging old PHP versions is one of the project's values.
 keywords: PHP 7.4, PHP 8.0, PHP 8.5, supported PHP versions, legacy PHP, old hosting, locked-down hosting, se7enxweb/exponential-php-floor, metapackage, Composer, polyfills, symfony/polyfill-php80, symfony/polyfill-php81, end of life, security, Velocity, Layouts, upgrade path, 6.0.15
 type: help
 ---
@@ -11,9 +11,14 @@ type: help
 
 This page is for site owners, administrators, hosting companies and developers who run, or must run, Exponential on
 PHP 7.4, and for anyone who wonders why a project that supports PHP 8.5 on the day it appears also goes back to a
-PHP version that its makers stopped supporting in 2022. From **6.0.15**, Exponential installs and runs on **PHP 7.4,
-8.0, 8.1, 8.2, 8.3, 8.4 and 8.5**. The newest PHP stays fully supported; PHP 7.4 is added below it, not instead of
-anything.
+PHP version that its makers stopped supporting in 2022.
+
+> **Supported: PHP 8.0 to 8.5. Usable without support: PHP 7.4 (Exponential 6.0.15 and later).**
+>
+> "Without support" means: the software is designed to be usable on PHP 7.4, but the project gives no bug-fix or security commitment specific to PHP 7.4, you use it at your own risk, and the features that need PHP 8 are not available there.
+
+The supported versions stay PHP 8.0 to 8.5, and the newest PHP stays fully supported; usability on PHP 7.4 is added
+below them, not instead of anything.
 
 ## Contents
 
@@ -33,16 +38,17 @@ anything.
 
 | Question | Answer |
 |---|---|
-| Which PHP versions? | 7.4 and 8.0 to 8.5. `composer.json` declares `"php": "^7.4 \|\| ^8.0 \|\| ... \|\| ^8.8"`; versions after 8.5 do not exist yet and are not tested. |
-| What runs on 7.4? | The whole kernel: content, the admin and editor interfaces, templates, the REST API, SOAP, WebDAV, cronjobs, search, the setup wizard and `exp:install`, and the extensions bundled with the kernel. |
+| Which PHP versions? | Supported: 8.0 to 8.5. Usable without support: 7.4. `composer.json` declares `"php": "^7.4 \|\| ^8.0 \|\| ... \|\| ^8.8"`; versions after 8.5 do not exist yet and are not tested. |
+| What is usable on 7.4, without support? | The whole kernel: content, the admin and editor interfaces, templates, the REST API, SOAP, WebDAV, cronjobs, search, the setup wizard and `exp:install`, and the extensions bundled with the kernel. |
 | What needs PHP 8? | Exponential Velocity (8.0), Netgen Layouts and the media site (8.1), and a handful of extensions whose releases need 8.0. The [table](#what-works-on-php-74-and-what-needs-php-8) lists each one. |
 | Do I have to choose packages by hand? | No. The kernel requires the metapackage `se7enxweb/exponential-php-floor`; Composer installs the version that fits your PHP and with it the right set of packages. |
 | Is PHP 7.4 safe? | PHP 7.4 has had no security fixes from the PHP project since 28 November 2022. It is safe only where your operating system vendor or host still patches it. See [How security is kept](#how-security-is-kept). |
-| How long? | PHP 7.4 support is a bridge, not a destination. See [The end-of-life stance](#the-end-of-life-stance). |
+| What does "without support" mean? | No bug-fix or security commitment specific to PHP 7.4; a problem that occurs only on 7.4 may stay unfixed. You use it at your own risk. |
+| How long? | Usability on PHP 7.4 is a bridge, not a destination. See [The end-of-life stance](#the-end-of-life-stance). |
 
 ## Who it is for
 
-PHP 7.4 support is for organizations that want a current Exponential but **cannot change the PHP version of the
+Using Exponential on PHP 7.4, without support, is for organizations that want a current Exponential but **cannot change the PHP version of the
 machine it runs on yet**. In our experience they are rarely careless; they are usually bound by something outside
 their control:
 
@@ -69,7 +75,7 @@ The **kernel** (everything in `kernel/` and `lib/`) and the **extensions shipped
 servers, the table shows the oldest PHP each one needs. "7.4 (older release)" means Composer installs, on PHP 7.4,
 the last release of the same line that still runs there; on PHP 8 you get the newest one.
 
-| Feature or package | PHP 7.4 | PHP 8.0 | PHP 8.1 to 8.3 | PHP 8.4 and 8.5 |
+| Feature or package | PHP 7.4 (without support) | PHP 8.0 | PHP 8.1 to 8.3 | PHP 8.4 and 8.5 |
 |---|---|---|---|---|
 | Kernel: content, admin, editor, templates, REST v1 and v2, SOAP, WebDAV, cronjobs, search | yes | yes | yes | yes |
 | Setup wizard, kickstarter, `exp:install` | yes | yes | yes | yes |
@@ -81,7 +87,8 @@ the last release of the same line that still runs there; on PHP 8 you get the ne
 | Two-factor authentication (`sevenx_authentication_2fa`) | no | yes | yes | yes |
 | `exp_adminui`, `expai`, `expqueue`, `exp_enhanced_link`, `expchangeclass`, `cjw_themes_jumper`, `cjw_tmv` | no | yes | yes | yes |
 | `sqliimport` 2.x, `ezodf` 7.x, `ezownerchange` 1.4 | no | yes | yes | yes |
-| Tags (`eztags`), CJW Newsletter, Syndication, `bccie`, `git_manager`, `xrowextract`, `sevenx_dse` | 7.4 (older release) | yes | yes | yes |
+| Tags (`eztags`), CJW Newsletter, Syndication, `bccie`, `git_manager` | 7.4 (older release) | yes | yes | yes |
+| `xrowextract`, `sevenx_dse` | no (their code needs PHP 8) | yes | yes | yes |
 | reCAPTCHA library (`google/recaptcha`) | 1.2.4 | 1.3 | 1.3 | 2.x |
 | All other extensions the kernel installs (ezflow, ezwebin, ezdemo, recaptcha, hcaptcha, ezmultiupload, ...) | yes | yes | yes | yes |
 | AVIF image output | no (WebP is the best format) | no | yes | yes |
@@ -124,7 +131,7 @@ the kernel needs beyond that.
 
 | Metapackage version | PHP | What it adds |
 |---|---|---|
-| 1.0.0 | 7.4 | the last PHP 7.4 releases of the lines that moved to PHP 8 (eztags ~2.4.23, cjw_newsletter ~4.2.14, syndication ~1.3.10, bccie ~1.1.18, git_manager ~2.0.22, xrowextract ~2.5.18, sevenx_dse ~1.1.14) and google/recaptcha ~1.2.4 |
+| 1.0.1 | 7.4 (usable without support) | the last PHP 7.4 releases of the lines that moved to PHP 8 (eztags ~2.4.23, cjw_newsletter ~4.2.14, syndication ~1.3.10, bccie ~1.1.18, git_manager ~2.0.22) and google/recaptcha ~1.2.4; 1.0.0 also required xrowextract and sevenx_dse, whose code does not run on 7.4 |
 | 1.1.0 | 8.0 | the extensions that need PHP 8.0, Velocity included, and google/recaptcha ~1.3.1 |
 | 1.2.0 | 8.1 to 8.3 | all of 1.1.0, plus Netgen Layouts, the expsite packages and the media site theme; google/recaptcha ~1.3.1 |
 | 1.3.0 | 8.4 and later | the same set with the current google/recaptcha 2.x |
@@ -145,12 +152,12 @@ The technique is not new to the project: the Exponential Platform DXP 4.6 line u
 | eZ Publish 4.x and 5.x (historical, discontinued) | PHP 5, later PHP 7 for the legacy kernel |
 | up to 6.0.7 | PHP 7.4 and 8.1 |
 | 6.0.8 (April 2025) to 6.0.14 | PHP 8.1 and later; PHP 8.4 support began in 6.0.8, PHP 8.5 support in 6.0.11 |
-| 6.0.15 | PHP 8.0 again (the stock PHP of Red Hat Enterprise Linux 9), then PHP 7.4 again, up to PHP 8.5 |
+| 6.0.15 | Supported: PHP 8.0 again (the stock PHP of Red Hat Enterprise Linux 9) to 8.5; usable without support: PHP 7.4 |
 
 The step to PHP 8.1 in 6.0.8 was right at the time: it let the project clean up years of PHP 5 and PHP 7 code
 quickly. Once that work was done, the same review showed that very little of the kernel actually needed PHP 8. Only a
 handful of language features stood between the code and PHP 7.4, so going back cost days, not months. That is why
-the floor came down again in 6.0.15, first to 8.0, then to 7.4.
+the supported floor came down to 8.0 in 6.0.15, and the software was made usable, without support, on 7.4.
 
 ## Why the project does this
 
@@ -162,7 +169,7 @@ contract, a certification, a platform or a budget cycle that nobody on the proje
 The project's values follow from that experience:
 
 - **Meet people where they are.** Software that only runs on the newest platform helps the organizations that need
-  help least. Bridging an older PHP version lets the others take part, get the current fixes and features, and plan
+  help least. Keeping the software usable on an older PHP version, even without support, lets the others take part, get the current fixes and features, and plan
   their own move.
 - **Separate the application upgrade from the platform upgrade.** Changing Exponential and changing PHP at the same
   time doubles the risk. With PHP 7.4 support, a site first moves to the current Exponential on the PHP it has, and
@@ -175,16 +182,16 @@ The project's values follow from that experience:
 
 ## How security is kept
 
-A supported Exponential on an old PHP is only as safe as the whole stack. This is how each layer is kept safe.
+Exponential on an old PHP is only as safe as the whole stack, and on PHP 7.4 that stack is unsupported. This is how each layer is kept safe.
 
 **PHP itself.** The PHP project ended security support for PHP 7.4 on 28 November 2022. Run PHP 7.4 only where
 someone still fixes it: the PHP packages of an operating system with long-term support (for example Debian LTS or
 extended support, Ubuntu Pro, or the PHP 7.4 stream of Red Hat Enterprise Linux 8 and its rebuilds within their
-support periods), or a host that backports security fixes. An unpatched PHP 7.4 downloaded from somewhere is not a
-supported platform for Exponential.
+support periods), or a host that backports security fixes. An unpatched PHP 7.4 downloaded from somewhere is a risk
+no application can remove.
 
 **Exponential's own code.** The kernel is one code base for every PHP version. Security fixes go into it once and
-reach PHP 7.4 and PHP 8.5 alike; there is no separate, older branch that could fall behind.
+reach PHP 7.4 and PHP 8.5 alike, although the project makes no commitment specific to 7.4; there is no separate, older branch that could fall behind.
 
 **Dependencies.** Composer's security blocking stays on: Composer refuses package versions with known security
 advisories during resolution, on every PHP version. The metapackage only selects versions that Composer accepts.
@@ -215,10 +222,10 @@ Exponential. They only add functions; they change nothing on PHP versions that a
 
 ## The end-of-life stance
 
-PHP 7.4 support is a **bridge**. It exists so that organizations can run a current Exponential while they prepare
+Usability on PHP 7.4 is a **bridge**, without support. It exists so that organizations can run a current Exponential while they prepare
 their move to PHP 8. The project's commitments:
 
-- PHP 7.4 support is not removed in a patch release. When the time comes, it is announced in the changelog and in
+- Usability on PHP 7.4 is not removed in a patch release. When the time comes, it is announced in the changelog and in
   this documentation at least one release ahead, and the release that removes it says so in its notes.
 - The deciding factor is security: as long as maintained, patched PHP 7.4 packages are widely available from
   operating system vendors and the dependencies can be kept free of known vulnerabilities on PHP 7.4, the bridge

@@ -37,7 +37,7 @@ You need:
 
 | Tool | Check with | Why |
 |---|---|---|
-| PHP 7.4+ | `php -v` | Runs the script |
+| PHP 8.0+ (7.4 usable without support) | `php -v` | Runs the script |
 | curl | `curl --version` | Phase 1 — fetches section pages |
 | wget | `wget --version` | Phase 2 — spiders the full site |
 

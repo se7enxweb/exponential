@@ -27,7 +27,7 @@ for example, ships no layouts editor, workflow, scheduler or legacy kernel, whic
 
 | Dimension | Where to check | Page |
 |---|---|---|
-| PHP version | `require.php` of the package and of the kernel (PHP 7.4 to 8.5 for 6.0.15) | [PHP versions](../php-stack/php-versions.md) |
+| PHP version | `require.php` of the package and of the kernel (PHP 8.0 to 8.5 (PHP 7.4 usable without support) for 6.0.15) | [PHP versions](../php-stack/php-versions.md) |
 | Kernel version | `require."se7enxweb/exponential"` or the README | [The Exponential 6 kernel](../products/exponential-6-kernel.md) |
 | Database | Whether the extension uses SQL that your database lacks | [Databases](../php-stack/databases.md) |
 | Engine | Persistent workers keep classes in memory; restart after changes | [Exponential Velocity](../products/exponential-velocity.md) |

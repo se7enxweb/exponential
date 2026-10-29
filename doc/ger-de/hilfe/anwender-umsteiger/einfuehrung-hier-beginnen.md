@@ -53,7 +53,7 @@ Der [Fahrplan zur Einführung](fahrplan-zur-einfuehrung.md) stellt die sechs Eta
   anpassbaren und erweiterbaren Inhaltsmodell (`README.md`).
 - **Was es an Lizenzen kostet.** Nichts: "Using Exponential under the terms of the GNU GPL is free of charge"
   (`README.md`). Sie bezahlen für Arbeit und Hosting ([Lizenzen für Anwender](entscheiden/lizenzen-fuer-anwender.md)).
-- **Worauf es läuft.** PHP 7.4 oder neuer auf fast jedem Betriebssystem; SQLite braucht keinen Datenbankserver
+- **Worauf es läuft.** PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) auf fast jedem Betriebssystem; SQLite braucht keinen Datenbankserver
   ([Hosting und Datenbank auswählen](planung/hosting-und-datenbank-auswaehlen.md)).
 - **Wer dahintersteht.** 7x führt die Entwicklung; die gemeinnützige Exponential Foundation betreibt das Projekt
   ([Langlebigkeit und Unterstützung](entscheiden/langlebigkeit-und-unterstuetzung.md)).

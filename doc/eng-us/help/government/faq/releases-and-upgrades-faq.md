@@ -60,7 +60,7 @@ and stops when something needs a person. It advises testing on staging first and
 
 ## Which PHP versions are supported?
 
-PHP 8.0 to 8.5, Velocity included (from its release 0.0.4.54); PHP 7.4 again from 6.0.15 ([2. Requirements](../../../install/02-requirements.md#versions)).
+PHP 8.0 to 8.5, Velocity included (from its release 0.0.4.54); PHP 7.4 usable without support from 6.0.15 ([2. Requirements](../../../install/02-requirements.md#versions)).
 
 ## Related pages
 

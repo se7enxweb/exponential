@@ -105,7 +105,7 @@ RootDelay=0
 
 - **Ausgabe der Konsole:** Jeder Eintrag von `bin/php/console` zeigt eine Beschreibung; `ezpm` ist ein Konsolenbefehl
   ([ezpm](../../funktionen/6.0/ezpm-paketmanager-cli.md)).
-- **PHP 7.4 bis 8.5:** String-Offsets mit geschweiften Klammern (Datentyp ISBN13, WebDAV-Backend);
+- **PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar):** String-Offsets mit geschweiften Klammern (Datentyp ISBN13, WebDAV-Backend);
   `#[AllowDynamicProperties]` an `eZINI`, `eZPersistentObject` und `eZWorkflowProcess` (PHP 8.2); nullable
   Array-Typhinweise (`generateUrl`, `fetchRelatedObjects`); ein Integer-Cast für die nächste Bestellnummer (PHP 8.4);
   der entfernte Aufruf von `imagedestroy()` (PHP 8.5); Absicherungen gegen Null-Werte in `eZSiteAccess::load`,

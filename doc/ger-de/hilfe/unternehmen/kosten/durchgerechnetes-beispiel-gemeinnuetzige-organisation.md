@@ -35,7 +35,7 @@ geben.
 |---|---|---|
 | Keine Lizenzgebühr | Kein Abonnement, das aus einem knappen Budget verlängert werden muss | `README.md`, „License“ |
 | SQLite 3 ist der Standard und braucht keinen Datenbankserver | Ein kleiner Hosting-Tarif oder ein kleiner Server reicht für eine Website auf einer Maschine | `README.md`, „Requirements“; [Datenbankunterstützung](../../datenbankunterstuetzung.md) |
-| Läuft auf fast jedem Betriebssystem mit PHP 7.4 oder neuer | Große Auswahl an Hostern | [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) |
+| Läuft auf fast jedem Betriebssystem mit PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) | Große Auswahl an Hostern | [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) |
 | Newsletter über `cjw_newsletter`, das `composer.json` verlangt | Kein separates Newsletter-Produkt nötig | [Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md) |
 | Gemeinsames Bearbeiten mit Rollen und Freigabe | Ehrenamtliche können bearbeiten, ohne vollen Zugriff zu haben | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) |
 | Freie Dokumentation unter der GNU FDL | Schulungsmaterial, das Sie kopieren und anpassen dürfen | [Freie Dokumentation](../../freie-dokumentation.md) |

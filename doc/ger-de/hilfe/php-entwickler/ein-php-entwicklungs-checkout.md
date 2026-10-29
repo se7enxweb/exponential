@@ -89,7 +89,7 @@ mit einem Hinweis.
 
 ## Eine PHP-8.0-Binärdatei
 
-PHP 7.4 ist die älteste unterstützte Version (`make lint74` prüft sie), PHP 8.0 das mitgelieferte PHP von RHEL 9. Der pre-commit-Hook und `make lint80` finden PHP 8.0 als `EXP_PHP80`, `php8.0`
+PHP 8.0 ist die älteste unterstützte Version (das mitgelieferte PHP von RHEL 9); PHP 7.4 ist ohne Support nutzbar (`make lint74` prüft sie). Der pre-commit-Hook und `make lint80` finden PHP 8.0 als `EXP_PHP80`, `php8.0`
 oder `php80` im `PATH` oder als `/opt/plesk/php/8.0/bin/php`:
 
 ```bash

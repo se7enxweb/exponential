@@ -64,7 +64,7 @@ Use maintenance mode for the database step ([Maintenance mode during changes](ma
 
 ## PHP versions
 
-Exponential 6.0.15 runs on PHP 7.4 to 8.5, and Velocity on 8.0 to 8.5 from its release 0.0.4.54. Use the newest PHP your system offers; older
+Exponential 6.0.15 is supported on PHP 8.0 to 8.5, Velocity from its release 0.0.4.54, and usable without support on PHP 7.4 (without Velocity). Use the newest PHP your system offers; older
 versions lose security support first ([2.2 PHP](../../../install/02-requirements.md#22-php)). Test a PHP upgrade on
 staging like any other update.
 

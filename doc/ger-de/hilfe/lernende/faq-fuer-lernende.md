@@ -27,7 +27,7 @@ GNU FDL 1.3 ([Partner für Studierende und Bildung](../partner/partner-fuer-stud
 [Freie Dokumentation](../freie-dokumentation.md)).
 
 **Was brauche ich auf meinem Rechner?**
-PHP 7.4 bis 8.5 und Composer. Keinen Datenbankserver: SQLite ist die Voreinstellung
+PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) und Composer. Keinen Datenbankserver: SQLite ist die Voreinstellung
 ([Ihre erste Website auf drei Wegen](ihre-erste-website-auf-drei-wegen.md#was-sie-auf-ihrem-rechner-brauchen)).
 
 **Was ist der schnellste Weg zu einer Lernwebsite?**

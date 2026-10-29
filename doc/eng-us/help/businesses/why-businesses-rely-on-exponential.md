@@ -73,7 +73,7 @@ Every component a site needs is one more thing that can fail, be misconfigured o
 |---|---|
 | SQLite 3 is the default database; "SQLite needs none" (no database server) | `README.md`, "Requirements"; [Database support](../database-support.md) |
 | Supported databases, in order of preference: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | `README.md`, "Main Exponential features" |
-| Runs on almost any operating system with PHP 7.4 or later | [Operating system support](../os-support.md) |
+| Runs on almost any operating system with PHP 8.0 or later (PHP 7.4 usable without support) | [Operating system support](../os-support.md) |
 | Runs behind Apache, Nginx, LiteSpeed, Caddy, IIS, lighttpd and others, or its own server, Velocity | `README.md`, "How Exponential is served" |
 | Shop, search engine, workflows, multisite and many languages are built in | `README.md`, "Main Exponential features" |
 

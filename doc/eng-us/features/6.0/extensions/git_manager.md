@@ -12,7 +12,7 @@ The extension was released as 2.0.1 on 21 June 2026 (backup manager) and reached
 
 ## Requirements
 
-Exponential 6, PHP 7.4 or later, a git binary the web server's user can run, GnuPG (`/usr/bin/gpg`) for encrypted
+Exponential 6, PHP 8.0 or later (PHP 7.4 usable without support), a git binary the web server's user can run, GnuPG (`/usr/bin/gpg`) for encrypted
 backups, and `mysqldump` for database backups.
 
 ## Quick start: make a backup before a change

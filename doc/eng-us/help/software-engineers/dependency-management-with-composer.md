@@ -87,7 +87,7 @@ system expects those interfaces.
 
 - [ ] Is it needed, or does the kernel or a shipped extension already do it?
 - [ ] Its license is compatible with the GNU GPL, version 2 or later.
-- [ ] It supports PHP 7.4 (the oldest supported version), or it is optional and guarded, or it is required only for newer PHP through `se7enxweb/exponential-php-floor`.
+- [ ] It supports PHP 8.0 (the oldest supported version) and, where it can, PHP 7.4 (usable without support), or it is optional and guarded, or it is required only for newer PHP through `se7enxweb/exponential-php-floor`.
 - [ ] It is maintained, and released on Packagist.
 - [ ] The constraint names a released version.
 - [ ] Its security advisories are watched (`composer audit` is recommended in the hardening guide).

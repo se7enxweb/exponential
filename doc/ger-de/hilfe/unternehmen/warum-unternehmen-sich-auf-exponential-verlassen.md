@@ -79,7 +79,7 @@ eigene Updates brauchen kann.
 |---|---|
 | SQLite 3 ist die Standarddatenbank; „SQLite braucht keinen“ (keinen Datenbankserver) | `README.md`, „Requirements“; [Datenbankunterstützung](../datenbankunterstuetzung.md) |
 | Unterstützte Datenbanken, in der Reihenfolge der Präferenz: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | `README.md`, „Main Exponential features“ |
-| Läuft auf fast jedem Betriebssystem mit PHP 7.4 oder neuer | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
+| Läuft auf fast jedem Betriebssystem mit PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
 | Läuft hinter Apache, Nginx, LiteSpeed, Caddy, IIS, lighttpd und anderen, oder auf seinem eigenen Server, Velocity | `README.md`, „How Exponential is served“ |
 | Shop, Suchmaschine, Workflows, Multisite und viele Sprachen sind eingebaut | `README.md`, „Main Exponential features“ |
 

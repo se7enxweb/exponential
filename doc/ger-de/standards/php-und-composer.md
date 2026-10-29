@@ -64,7 +64,7 @@ zwei Jahre Sicherheitskorrekturen.
 | PHPStan | 8.3 (Analyse `phpVersion: 80100`) | `quality.yml`, `phpstan` |
 | Micro-Benchmark | 8.5 | `performance.yml`, `micro` |
 
-**Status: Erfüllt** für PHP 7.4 bis 8.5.
+**Status: Erfüllt** für PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar).
 
 **Bekannte Lücken.**
 

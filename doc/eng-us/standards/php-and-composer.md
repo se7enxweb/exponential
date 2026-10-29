@@ -40,7 +40,7 @@ two of security fixes.
 
 - `composer.json` `require`: `"php": "^7.4 || ^8.0 || ^8.1 || ^8.2 || ^8.3 || ^8.4 || ^8.5 || ^8.6 || ^8.7 || ^8.8"`. The
   ranges for 8.6 to 8.8 are forward-looking; those versions do not exist yet and are not tested.
-- **PHP 7.4 is the oldest supported version** from 6.0.15, for sites that cannot move to PHP 8 yet; PHP 8.0 matters
+- **PHP 8.0 is the oldest supported version** from 6.0.15, for sites that cannot move to PHP 8 yet; PHP 8.0 matters
   because it is the stock PHP of Red Hat Enterprise Linux 9; see
   [Why Exponential supports PHP 7.4](../help/why-exponential-supports-php-7-4.md) and
   [PHP 8.0 support](../bc/6.0/php-8.0-support.md). PHP functions newer than 7.4 come from `symfony/polyfill-php80`
@@ -63,7 +63,7 @@ two of security fixes.
 | PHPStan | 8.3 (analysis `phpVersion: 80100`) | `quality.yml`, `phpstan` |
 | Micro benchmark | 8.5 | `performance.yml`, `micro` |
 
-**Status: Complies** for PHP 7.4 to 8.5.
+**Status: Complies** for PHP 8.0 to 8.5 (PHP 7.4 usable without support).
 
 **Known gaps.**
 

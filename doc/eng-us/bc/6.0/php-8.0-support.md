@@ -1,6 +1,6 @@
 # PHP 8.0 support
 
-Exponential 6 runs on PHP 8.0 and later, and from 6.0.15 on PHP 7.4 as well (see
+Exponential 6 runs on PHP 8.0 and later, and from 6.0.15 it is usable without support on PHP 7.4 (see
 [Why Exponential supports PHP 7.4](../../help/why-exponential-supports-php-7-4.md)). PHP 8.0 matters because it is the
 stock PHP of Red Hat Enterprise Linux 9 (and of AlmaLinux 9 and Rocky Linux 9). Read this page if you run Exponential on RHEL 9
 without a newer PHP, if you write kernel or extension code, or if you wonder why a function newer than 8.0 is
@@ -10,7 +10,7 @@ wrapped in `function_exists()`.
 
 | | |
 |---|---|
-| Oldest PHP | 8.0 for the kernel and the shipped extensions, under Apache with mod_php, PHP-FPM or Velocity; 7.4 for the kernel from 6.0.15, without Velocity. |
+| Oldest PHP | 8.0 for the kernel and the shipped extensions, under Apache with mod_php, PHP-FPM or Velocity; 7.4 usable without support for the kernel from 6.0.15, without Velocity. |
 | Velocity | Exponential Velocity, the application server, runs on PHP 8.0 too, from its release 0.0.4.54 (until then it needed 8.1; see below). |
 | What changed in 6.0.15 | The few places that needed PHP 8.1 or later were made to work on 8.0; CI checks 8.0 on every push. |
 | Behaviour on 8.1 and later | Unchanged. Every fallback is used only where PHP lacks the function. |
@@ -91,7 +91,7 @@ its `composer.json` requires `"php": ">=8.0"` (it was `>=8.1`). Nothing extra is
 and no extension. Until 0.0.4.54 the engine declared 8.1 as its minimum, so on PHP 8.0 a site had to be served by
 Apache or PHP-FPM; that limit is gone. So:
 
-- Apache or PHP-FPM serving the site: PHP 7.4 or later.
+- Apache or PHP-FPM serving the site: PHP 8.0 or later (PHP 7.4 usable without support).
 - Velocity: PHP 8.0 or later, including the stock PHP 8.0 of RHEL 9.
 
 What differs on PHP 8.0, and only this:

@@ -55,7 +55,7 @@ PLAN
 | Access review | [Access reviews](../../../businesses/security/access-reviews.md), [Roles and policies](../../../../guides/roles-and-policies.md) |
 | Two-step sign-in | [Two-factor login](../../../../guides/two-factor-login.md) |
 | Extension updates | [Budgeting for upgrades and maintenance](../../../businesses/costs/budgeting-for-upgrades-and-maintenance.md) |
-| PHP support | `README.md`: PHP 7.4 to 8.5 supported; your host plans the upgrade |
+| PHP support | `README.md`: PHP 8.0 to 8.5 (PHP 7.4 usable without support) supported; your host plans the upgrade |
 | Content audit | [The content checks](../../../../features/6.0/content-checks.md), [Publishing and versions](../../../publishing-and-versions.md) |
 | Accessibility | [Testing accessibility](../../../creators/website-creators/testing-accessibility.md) |
 | Costs and ROI figures | [Cost of ownership for owners](../cost-of-ownership-for-owners.md), [Measuring ROI](../measuring-roi.md) |

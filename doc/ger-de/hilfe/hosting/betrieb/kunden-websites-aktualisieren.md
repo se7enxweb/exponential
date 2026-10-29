@@ -70,7 +70,7 @@ Welcher Teil der Anleitung gilt, ergibt sich aus der Version ([Welchen Teil lese
 
 | Schritt | Was zu entscheiden ist |
 |---|---|
-| PHP | Exponential 6.0.15 läuft unter PHP 7.4 oder neuer, Velocity unter 8.0 oder neuer ([PHP-Versionen und Erweiterungen](../grundlagen/php-versionen-und-erweiterungen.md)) |
+| PHP | Unterstützt: PHP 8.0 bis 8.5 (mit Velocity). Ohne Support nutzbar: PHP 7.4 (Exponential 6.0.15 und neuer) ([PHP-Versionen und Erweiterungen](../grundlagen/php-versionen-und-erweiterungen.md)) |
 | Anpassungen | eigene Erweiterungen und Template-Overrides: zuerst auf einer Kopie testen |
 | Staging | das neueste Backup auf einer Staging-Kopie wiederherstellen, dort aktualisieren, den Kunden prüfen lassen |
 | Fenster | ein Wartungsfenster für den Datenbankschritt, dem Kunden angekündigt |

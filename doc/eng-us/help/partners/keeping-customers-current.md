@@ -18,7 +18,7 @@ updated becomes a security risk and, eventually, an expensive rescue.
 |---|---|
 | "Exponential 6.0 is the maintained line. Security fixes are made on the `main` branch ... and published with the next 6.0.x release." | SECURITY.md |
 | 5.x, 4.x, 3.x and older are not supported | SECURITY.md |
-| PHP 7.4 to 8.5 are supported for the 6.0.15 line; PHP 7.4 again from 6.0.15 | README, `doc/eng-us/install/02-requirements.md` |
+| PHP 7.4 to 8.5 are supported for the 6.0.15 line; PHP 7.4 usable without support from 6.0.15 | README, `doc/eng-us/install/02-requirements.md` |
 | "A published tag is never changed" | SECURITY.md |
 
 The full list: [Who is the Exponential Foundation?, "The support commitment"](../who-is-the-exponential-foundation.md#the-support-commitment).

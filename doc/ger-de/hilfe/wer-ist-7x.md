@@ -312,7 +312,7 @@ publishing, media portals, intranets, e-commerce and extranets“ (<https://expo
 Die unterstützten Datenbanken, „in order of preference: 1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB ·
 4. MariaDB · 5. Oracle · 6. MySQL“ (README, „Requirements“). Jede wird unter [Datenbankunterstützung](datenbankunterstuetzung.md)
 beschrieben. Die Betriebssysteme sind unter [Unterstützte Betriebssysteme](betriebssystemunterstuetzung.md) in Stufen eingeteilt:
-„almost any that runs PHP 7.4 or later“.
+„almost any that runs PHP 8.0 or later (PHP 7.4 usable without support)“.
 
 ## Der Anwendungs-Stack
 

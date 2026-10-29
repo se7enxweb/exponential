@@ -35,10 +35,10 @@ worauf Exponential heute läuft und was es bietet, und lassen Sie die Menschen u
 
 | Tatsache | Quelle |
 |---|---|
-| PHP 7.4 ist die älteste unterstützte Version (ab 6.0.15); 8.0 bis 8.5 werden unterstützt; `composer.json` erlaubt bis 8.8 | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
+| PHP 8.0 bis 8.5 werden unterstützt; 7.4 ist ab 6.0.15 ohne Support nutzbar; `composer.json` erlaubt bis 8.8 | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | Das Projekt zielt auf „PHP 8.2, 8.3, 8.4, 8.5, 8.6 und darüber hinaus PHP 9“ | ebenda |
 | Die CI führt die Tests auf PHP 8.1 bis 8.5 aus und prüft, dass 8.0 noch startet | ebenda |
-| Die Unterstützung für PHP 7.4 endete mit 6.0.7 und kehrte mit 6.0.15 zurück | ebenda |
+| Die Unterstützung für PHP 7.4 endete mit 6.0.7; ab 6.0.15 ist PHP 7.4 ohne Support nutzbar | ebenda |
 | Das Design admin4, mit hellem und dunklem Modus, Tastaturunterstützung und Tests der Barrierefreiheit | [Das Design admin4](../../funktionen/6.0/admin4-design.md) |
 | jQuery 4 und TinyMCE 8 in der Linie 6.0.15 | [Mit Einwänden umgehen, PHP-Versionen und moderne Technik](../geschaeft/einwandbehandlung.md#php-versionen-und-moderne-technik) |
 | AdminUI als alternative Administration | [AdminUI](../../funktionen/6.0/exp-adminui.md) |

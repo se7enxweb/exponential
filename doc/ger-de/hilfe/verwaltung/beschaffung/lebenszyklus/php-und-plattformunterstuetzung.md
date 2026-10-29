@@ -28,7 +28,7 @@ stammen aus [2. Anforderungen](../../../../installation/02-voraussetzungen.md) u
 
 | PHP | Exponential 6.0 |
 |---|---|
-| 7.4 | ab 6.0.15 wieder unterstützt, ohne die Funktionen, die PHP 8 brauchen; nicht von 6.0.8 bis 6.0.14 |
+| 7.4 | ab 6.0.15 ohne Support nutzbar (keine Zusage für Fehler- oder Sicherheitskorrekturen, ohne die Funktionen, die PHP 8 brauchen); nicht von 6.0.8 bis 6.0.14 |
 | 8.0 | ab 6.0.15 wieder unterstützt; das mitgelieferte PHP von Red Hat Enterprise Linux 9 und seinen Nachbauten; Velocity läuft darauf ab seinem Release 0.0.4.54 |
 | 8.1 bis 8.4 | unterstützt, Velocity eingeschlossen |
 | 8.5 | unterstützt; die neueste getestete Version |

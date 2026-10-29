@@ -18,7 +18,7 @@ their code editor again, the Roboto italic face ships, and layout share links wo
 
 ## Requirements
 
-- Exponential 6 (PHP 7.4 or later).
+- Exponential 6 (PHP 8.0 or later (PHP 7.4 usable without support)).
 - Sibling extensions `explayouts` (value objects, tables, `explayouts.ini` layout and block types), `explayouts_core`
   (services) and `ezformtoken` (form token).
 - Activate it for the admin siteaccess, after its dependencies, then regenerate autoloads and clear caches.

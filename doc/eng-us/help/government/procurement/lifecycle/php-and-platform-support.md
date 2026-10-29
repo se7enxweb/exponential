@@ -27,7 +27,7 @@ and the support commitment in [Who is the Exponential Foundation?](../../../who-
 
 | PHP | Exponential 6.0 |
 |---|---|
-| 7.4 | supported again from 6.0.15, without the features that need PHP 8; not by 6.0.8 to 6.0.14 |
+| 7.4 | usable without support from 6.0.15 (no bug-fix or security commitment, without the features that need PHP 8); not by 6.0.8 to 6.0.14 |
 | 8.0 | supported again in 6.0.15; the stock PHP of Red Hat Enterprise Linux 9 and its rebuilds; Velocity runs on it from its release 0.0.4.54 |
 | 8.1 to 8.4 | supported, Velocity included |
 | 8.5 | supported; the newest version tested |

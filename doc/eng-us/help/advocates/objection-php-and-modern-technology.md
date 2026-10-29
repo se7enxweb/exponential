@@ -35,10 +35,10 @@ sources, and let people judge.
 
 | Fact | Source |
 |---|---|
-| PHP 7.4 is the oldest supported version (from 6.0.15); 8.0 to 8.5 are supported; `composer.json` allows up to 8.8 | [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
+| Supported: PHP 8.0 to 8.5. Usable without support: PHP 7.4 (Exponential 6.0.15 and later); `composer.json` allows up to 8.8 | [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
 | The project aims at "PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9" | same |
 | CI runs the tests on PHP 8.1 to 8.5 and checks that 8.0 still boots | same |
-| PHP 7.4 support ended with 6.0.7 and returned in 6.0.15 | same |
+| PHP 7.4 support ended with 6.0.7; from 6.0.15 PHP 7.4 is usable without support | same |
 | The admin4 design, with light and dark mode, keyboard support and accessibility tests | [The admin4 design](../../features/6.0/admin4-design.md) |
 | jQuery 4 and TinyMCE 8 in the 6.0.15 line | [Handling objections, PHP versions and modern technology](../business/objection-handling.md#php-versions-and-modern-technology) |
 | AdminUI as an alternative administration | [AdminUI](../../features/6.0/exp-adminui.md) |

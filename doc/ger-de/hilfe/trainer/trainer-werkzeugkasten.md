@@ -66,7 +66,7 @@ Subject: Preparing for "<course>" on <date>
 Hello,
 
 To start on time, please check before the course:
-  1. PHP 7.4 or later:   php -v
+  1. PHP 8.0 or later (PHP 7.4 usable without support):   php -v
   2. These PHP extensions are listed by php -m: intl, xsl, mbstring, iconv, dom, zlib, sqlite3, gd
   3. Composer and Git:   composer --version ; git --version
 If anything is missing, reply to this message and we will help, or use a prepared machine.

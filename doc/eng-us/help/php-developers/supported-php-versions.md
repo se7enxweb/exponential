@@ -9,14 +9,16 @@ type: help
 ---
 # Supported PHP versions: 7.4 to 8.5
 
+> **Supported: PHP 8.0 to 8.5. Usable without support: PHP 7.4 (Exponential 6.0.15 and later).** [Why Exponential supports PHP 7.4](../why-exponential-supports-php-7-4.md)
+
 This page is for PHP developers who need to know which PHP versions their code must run on. Exponential 6 runs on
-PHP 7.4 to 8.5. The oldest version decides what syntax and functions you may use; the newest decides which
+PHP 8.0 to 8.5 (PHP 7.4 usable without support). The oldest version decides what syntax and functions you may use; the newest decides which
 deprecations you must avoid.
 
 ## Contents
 
 1. [The range](#the-range)
-2. [Why PHP 7.4 is the oldest](#why-php-74-is-the-oldest)
+2. [PHP 8.0 supported, PHP 7.4 usable without support](#php-80-supported-php-74-usable-without-support)
 3. [How each version is tested](#how-each-version-is-tested)
 4. [What differs on PHP 8.0](#what-differs-on-php-80)
 5. [The history of the requirement](#the-history-of-the-requirement)
@@ -40,7 +42,7 @@ Exponential Velocity, the application server, runs on PHP 8.0 to 8.5 from its re
 together with the other packages that need PHP 8, through the metapackage `se7enxweb/exponential-php-floor`, whose
 version for PHP 7.4 leaves them out ([Why Exponential supports PHP 7.4](../why-exponential-supports-php-7-4.md)).
 
-## Why PHP 7.4 is the oldest
+## PHP 8.0 supported, PHP 7.4 usable without support
 
 PHP 7.4 is supported from 6.0.15 for organizations that cannot change the PHP of their servers yet: hosting
 contracts, certified images, long-term operating system releases. PHP 8.0 matters because it is the stock PHP of Red
@@ -94,7 +96,7 @@ The full table with the files is in [PHP 8.0 support](../../bc/6.0/php-8.0-suppo
 | up to 6.0.7 | PHP 7.4 and 8.1 |
 | 6.0.8 (April 2025) | Composer requires PHP 8.1 or newer; initial 8.4 support |
 | 6.0.11 (December 2025) | PHP 8.5 support |
-| 6.0.15 | PHP 8.0 supported again, checked in CI; then PHP 7.4 supported again as the oldest version, with the metapackage `se7enxweb/exponential-php-floor` and a CI job `php74` |
+| 6.0.15 | PHP 8.0 supported again, checked in CI; then PHP 7.4 usable again without support, with the metapackage `se7enxweb/exponential-php-floor` and a CI job `php74` |
 
 Every step is listed in [PHP 8 support](../../bc/6.0/php8.md).
 

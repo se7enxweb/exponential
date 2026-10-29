@@ -29,7 +29,7 @@ laut der Anleitung für die ersten Schritte auf SQLite etwa eine Minute.
 php -v
 ```
 
-Erwartet: eine Zeile, die mit `PHP 8.` beginnt. Exponential 6.0 läuft auf PHP 7.4 bis 8.5
+Erwartet: eine Zeile, die mit `PHP 8.` beginnt. Exponential 6.0 läuft auf PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar)
 ([Anforderungen](../../INSTALL.md#2-voraussetzungen)). Setzen Sie `memory_limit` (mindestens `64M`) und `date.timezone`
 in der `php.ini`, bevor Sie weitermachen.
 

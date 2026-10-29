@@ -25,7 +25,7 @@ the page says so. Every row names the file or document that is the source of tru
 
 | Concern | What Exponential uses | Source |
 |---|---|---|
-| Language | PHP 7.4 to 8.5 (`"php": "^7.4 \|\| ... \|\| ^8.8"`) | `composer.json` |
+| Language | PHP 8.0 to 8.5 (PHP 7.4 usable without support) (`"php": "^7.4 \|\| ... \|\| ^8.8"`) | `composer.json` |
 | Packages | Composer; the root package is `se7enxweb/exponential`, type `ezpublish-legacy` | `composer.json` |
 | License | GNU GPL, version 2 or later | `LICENSE`, `composer.json` |
 | Databases | SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Database support](../database-support.md) |

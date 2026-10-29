@@ -10,6 +10,8 @@ type: help
 ---
 # Exponential: Häufige Fragen
 
+> **Unterstützt: PHP 8.0 bis 8.5. Ohne Support nutzbar: PHP 7.4 (Exponential 6.0.15 und neuer).** [Warum Exponential PHP 7.4 unterstützt](../warum-exponential-php-7-4-unterstuetzt.md)
+
 Diese Antworten folgen den FAQ-Seiten der Projektwebsite, [exponential.earth/faq](https://exponential.earth/faq),
 gelesen im Oktober 2026, in den eigenen Worten dieser Hilfe wiedergegeben und mit der Software in diesem Repository
 abgeglichen. Wo das Repository etwas anderes sagt, weist die Antwort darauf hin und folgt dem Repository.
@@ -172,7 +174,7 @@ Sie Releases oder jeder Änderung beim Entstehen folgen, zeigt [Mit Git aktualis
 
 ### Welche PHP-Versionen werden unterstützt?
 
-Exponential 6.0.15 läuft unter PHP 7.4 bis 8.5, und ab seinem Release 0.0.4.54 der Anwendungsserver Velocity unter 8.0 bis 8.5
+Exponential 6.0.15 wird unter PHP 8.0 bis 8.5 unterstützt, ab seinem Release 0.0.4.54 mit dem Anwendungsserver Velocity, und ist unter PHP 7.4 ohne Support nutzbar (ohne Velocity)
 ([Anforderungen](../../installation/02-voraussetzungen.md)). Die Community-Seite der Website nennt für das Release 6.0.14
 „PHP 8.1 bis PHP 8.5“; maßgeblich sind die Anforderungen des Repositorys, die auch PHP 7.4 und 8.0 abdecken.
 

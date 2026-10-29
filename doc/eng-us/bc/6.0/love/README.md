@@ -51,7 +51,7 @@ published on Packagist as
 [`mugoweb/ezpublish-legacy`](https://packagist.org/packages/mugoweb/ezpublish-legacy). When the
 port was made (12 October 2026), its latest release was `v2025.03.1-1` (1 March 2025), its
 latest commit was from 23 February 2026, and its `composer.json` supported PHP 7.3–7.4 and
-8.1–8.3. Exponential 6 supports PHP 7.4 to 8.5.
+8.1–8.3. Exponential 6 supports PHP 8.0 to 8.5 (PHP 7.4 usable without support).
 
 Both projects are licensed under the GNU GPL version 2 (Exponential: version 2 or later). Code
 in Exponential that derives from a LoveStack change keeps every existing copyright notice and

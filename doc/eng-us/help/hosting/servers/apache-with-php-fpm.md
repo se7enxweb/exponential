@@ -34,7 +34,7 @@ and how to check the result. The source is
 - [Operating system support](../../os-support.md#web-servers) lists Apache httpd 2.4 with PHP-FPM (or mod_php) as
   tier 1. PHP-FPM is preferred over mod_php, which "ties PHP to Apache's prefork model"
   ([PHP SAPIs](../../os-support.md#php-sapis)).
-- It runs Exponential on PHP 7.4 and later, so it is the answer on machines with the stock PHP 8.0 of Red Hat
+- It runs Exponential on PHP 8.0 and later (PHP 7.4 usable without support), so it is the answer on machines with the stock PHP 8.0 of Red Hat
   Enterprise Linux 9 and its rebuilds.
 
 ## Step by step

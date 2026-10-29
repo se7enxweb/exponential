@@ -34,7 +34,7 @@ From [2.2 PHP](../../../install/02-requirements.md#22-php):
 | 8.0 | supported; runs under Apache with mod_php or PHP-FPM, and under Velocity from its release 0.0.4.54 |
 | 8.1 to 8.4 | supported, Velocity included |
 | 8.5 | supported; the newest version tested |
-| 7.4 | supported again from 6.0.15, without the features that need PHP 8; not by 6.0.8 to 6.0.14 |
+| 7.4 | usable without support from 6.0.15 (no bug-fix or security commitment, without the features that need PHP 8); not by 6.0.8 to 6.0.14 |
 
 "Use the newest PHP your system offers: each version brings speed, and the older ones lose security support first."
 64-bit PHP is recommended "for support of more than 30 languages".

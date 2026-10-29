@@ -55,7 +55,7 @@ Quellen: `README.md` („What does Exponential provide“, „License“, „Req
 | Releases 6.0.0 (1. Januar 2024) bis 6.0.14 (7. Juni 2026); 6.0.15 in Entwicklung | [Wer ist 7x?](../wer-ist-7x.md#die-releases-60x) |
 | Sechs unterstützte Datenbanken: SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | `README.md`, [Unterstützte Datenbanken](../datenbankunterstuetzung.md) |
 | „fast jedes“ Betriebssystem, „auf dem PHP 8.0 oder später läuft“ | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
-| PHP 7.4 bis 8.5 werden unterstützt | `README.md`, „What version of PHP is required“ |
+| PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) werden unterstützt | `README.md`, „What version of PHP is required“ |
 | 368 Locale-Dateien, davon 43 mit Schreibrichtung von rechts nach links; Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite Sprachen) | [Sprachen in Exponential](../../sprachen.md) |
 | „Der empfohlene Weg ist, den Kernel und jede se7enxweb-Erweiterung als Git-Klon mit vollständiger Historie zu beziehen“ | `README.md`, „Installation“; [Mit Git entwickeln](../mit-git-entwickeln.md) |
 | „Ein veröffentlichter Tag wird nie geändert“ | `SECURITY.md` |
@@ -157,7 +157,7 @@ sie für Nachfragen bereit.
 >    aber immer nur in Form von Entwürfen, die ein Mensch veröffentlicht. [README]
 > 5. Es ist unter der GNU General Public License, Version 2 oder später, kostenlos nutzbar, und seine Dokumentation ist
 >    frei unter der GNU Free Documentation License. [README, Freie Dokumentation]
-> 6. Es läuft auf fast jedem Betriebssystem mit PHP 7.4 oder später, hinter Apache, Nginx und anderen Webservern oder
+> 6. Es läuft auf fast jedem Betriebssystem mit PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar), hinter Apache, Nginx und anderen Webservern oder
 >    auf seinem eigenen Server Velocity. [Unterstützte Betriebssysteme, README]
 > 7. Es unterstützt sechs Datenbanken, mit SQLite als Standard, sodass eine Site überhaupt keinen Datenbankserver
 >    braucht. [Unterstützte Datenbanken]
@@ -177,7 +177,7 @@ sie für Nachfragen bereit.
 | **Redaktionsleitung** | Entwürfe, Versionen, Freigabe-Workflows und ein Schreibassistent, der nie von sich aus veröffentlicht | [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md), [Workflows](../../anleitungen/workflows.md), [Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md) |
 | **IT und Betrieb** | Ihr Betriebssystem, Ihr Webserver, Ihre Datenbank; ein dokumentierter Leitfaden zur Sicherheitshärtung und ein Audit-Protokoll | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md), [Unterstützte Datenbanken](../datenbankunterstuetzung.md), [Sicherheitshärtung](../sicherheitshaertung.md) |
 | **Sicherheitsbeauftragte** | CSP, Anmeldung in zwei Schritten, manipulationssicheres Audit, vertrauliche Meldung, klare Release-Richtlinie | [Content Security Policy](../../funktionen/6.0/content-security-policy.md), [Das Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md), `SECURITY.md` |
-| **Entwickler** | Git-Klone mit vollständiger Historie, Composer-Pakete, Erweiterungen, eine REST-API, PHP 7.4 bis 8.5 | [Mit Git entwickeln](../mit-git-entwickeln.md), [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md), [Erweiterungen](../../anleitungen/extensions.md) |
+| **Entwickler** | Git-Klone mit vollständiger Historie, Composer-Pakete, Erweiterungen, eine REST-API, PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) | [Mit Git entwickeln](../mit-git-entwickeln.md), [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md), [Erweiterungen](../../anleitungen/extensions.md) |
 | **Betreiber einer älteren Site** | Eine gepflegte Fortführung mit dokumentierten Migrationswegen | Installationskapitel [11](../../installation/11-aktualisieren.md), [14](../../installation/14-migration-von-4x.md), [15](../../installation/15-migration-von-5x-legacy.md), [16](../../installation/16-migration-von-ez-platform-und-ibexa.md) |
 
 ## Wörter, die Sie verwenden, und Wörter, die Sie meiden

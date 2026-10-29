@@ -35,7 +35,7 @@ them instead of repeating them.
 GNU GPL, version 2 or later. Its code base has been developed since 1999, first under the name eZ Publish, a product its
 creator discontinued after almost 18 years; 7x kept it alive, and it is led by 7x together with the Exponential
 Foundation ([Who is 7x?](../who-is-7x.md), [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md)).
-For a PHP developer it is a large, mature code base with its own conventions: PHP 7.4 to 8.5, generated class maps
+For a PHP developer it is a large, mature code base with its own conventions: PHP 8.0 to 8.5 (PHP 7.4 usable without support), generated class maps
 instead of PSR-4, layered INI settings read through `eZINI`, `eZPersistentObject` for tables, a compiled template
 language, six supported databases (SQLite 3 by default, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), and Velocity, an
 application server with persistent workers, as part of the product
@@ -56,7 +56,7 @@ The whole section in order is [The PHP developer's reading path](php-developer-r
 
 ## Seven rules for every PHP change
 
-1. **Runs on PHP 7.4 to 8.5.** No syntax or unguarded function newer than 8.0
+1. **Runs on PHP 8.0 to 8.5 (PHP 7.4 usable without support).** No syntax or unguarded function newer than 8.0
    ([Writing code that runs on PHP 8.0](writing-code-that-runs-on-php-8-0.md)).
 2. **Follows the house style.** `array()`, spaces inside parentheses, no type declarations; `make phpcs` and
    `make phpstan` add nothing ([The coding standard](the-coding-standard.md)).

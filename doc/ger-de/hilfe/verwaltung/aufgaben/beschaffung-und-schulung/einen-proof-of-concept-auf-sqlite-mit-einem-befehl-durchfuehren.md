@@ -24,7 +24,7 @@ Produkt kennenzulernen) oder während der Bewertung. Der Befehl stammt aus
 
 ## Bevor Sie beginnen
 
-- Eine Testmaschine (nicht die Produktion) mit PHP 7.4 oder neuer, Composer 2 und Git
+- Eine Testmaschine (nicht die Produktion) mit PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar), Composer 2 und Git
   ([2. Anforderungen](../../../../installation/02-voraussetzungen.md#21-die-checkliste)).
 - Der Code, geklont und mit installierten Composer-Paketen ([3. Den Code beschaffen](../../../../installation/03-den-code-beschaffen.md)).
 - Kein Datenbankserver nötig: SQLite ist die Voreinstellung.

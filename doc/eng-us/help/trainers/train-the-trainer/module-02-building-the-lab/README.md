@@ -38,7 +38,7 @@ site, learner accounts with the right roles, and a routine to reset everything f
 
 ## Preparing this module
 
-- A machine per learner with a terminal, PHP 7.4 or later, Composer 2 and Git; network access to GitHub and
+- A machine per learner with a terminal, PHP 8.0 or later (PHP 7.4 usable without support), Composer 2 and Git; network access to GitHub and
   Packagist, or the code prepared in advance.
 - Enough disk for two or three installations per learner.
 - A printed list of the commands of lessons 2.3 and 2.4.

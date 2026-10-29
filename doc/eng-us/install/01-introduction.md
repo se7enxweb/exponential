@@ -19,7 +19,7 @@ e-commerce and forums, is built in, together with user management, a permission 
 multi-language content and a template language for the output.
 
 Exponential 6 continues a long-lived code base (its copyright lines start in 1998). The current 6.0 line runs on
-PHP 7.4 to 8.5, installs with Composer and stores its content in SQLite, MySQL or MariaDB, PostgreSQL, MongoDB or
+PHP 8.0 to 8.5 (PHP 7.4 usable without support), installs with Composer and stores its content in SQLite, MySQL or MariaDB, PostgreSQL, MongoDB or
 Oracle. Since 6.0.15 it also ships its own application server, **Exponential Velocity**, which is the recommended way
 to serve it at every stage, from a developer's laptop to production. Apache or nginx with PHP-FPM remain fully
 supported, and FrankenPHP is a production-ready alternative.

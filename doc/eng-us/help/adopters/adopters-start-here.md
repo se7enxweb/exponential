@@ -50,7 +50,7 @@ The [adoption roadmap](adoption-roadmap.md) puts the six stages on one page with
   functionality", whose most notable feature "is its fully customizable and extendable content model" (`README.md`).
 - **What it costs in licenses.** Nothing: "Using Exponential under the terms of the GNU GPL is free of charge"
   (`README.md`). You pay for work and hosting ([Licensing for adopters](deciding/licensing-for-adopters.md)).
-- **What it runs on.** PHP 7.4 or later on almost any operating system; SQLite needs no database server
+- **What it runs on.** PHP 8.0 or later (PHP 7.4 usable without support) on almost any operating system; SQLite needs no database server
   ([Hosting and database choices](planning/hosting-and-database-choices.md)).
 - **Who stands behind it.** 7x leads development; the nonprofit Exponential Foundation operates the project
   ([Longevity and support](deciding/longevity-and-support.md)).

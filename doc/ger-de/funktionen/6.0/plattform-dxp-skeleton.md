@@ -112,7 +112,7 @@ Die Anleitung (Abschnitt 21) beschreibt den Wechsel zwischen Engines: jede Daten
 
 ## Grenzen
 
-- Das Skeleton v5 lehnt PHP älter als 8.3 ab. Das Skeleton 4.6.x behält PHP 7.4 bis 8.5 und Symfony 5.4.
+- Das Skeleton v5 lehnt PHP älter als 8.3 ab. Das Skeleton 4.6.x behält PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) und Symfony 5.4.
 - Node.js: Die Anleitung des Skeletons v5 sagt, nur Node 20 LTS zu verwenden; der Nexus-Starter v5 verlangt Node 22. Folgen Sie der Anleitung des Projekts, das Sie installieren.
 - Ein Klon des Skeletons mit `git clone` statt `create-project` braucht `composer install --keep-vcs` und dieselben Schritte in Reihenfolge.
 

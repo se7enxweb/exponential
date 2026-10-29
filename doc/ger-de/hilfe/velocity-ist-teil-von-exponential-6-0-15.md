@@ -101,7 +101,7 @@ Weil jede dieser Schichten aus einer Quelle kommt, mit einem Installer, einer Ko
 der Einsatz von Exponential überall auf der Welt ohne die übliche Integrationsarbeit aus: Es gibt keinen Server, den
 Sie vor der ersten Seite auswählen müssen, keine Dokumentation eines zweiten Anbieters, die Sie damit in Einklang
 bringen müssen, und keine PHP-Version, auf der die Hälfte des Stacks fehlt. Exponential läuft auf fast jedem
-Betriebssystem, das PHP 7.4 oder neuer hat ([Betriebssystemunterstützung](betriebssystemunterstuetzung.md)).
+Betriebssystem, das PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) hat ([Betriebssystemunterstützung](betriebssystemunterstuetzung.md)).
 
 ## Was Velocity von Haus aus mitbringt
 

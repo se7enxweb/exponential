@@ -70,7 +70,7 @@ Die Kurzfassung, erklärt in [Warum Unternehmen sich auf Exponential verlassen](
 - **Veröffentlichte Versionen ändern sich nie.** Eine Korrektur kommt als nächstes Release, nie als stillschweigend
   berichtigte Kopie (`SECURITY.md`, zitiert in
   [Die Support-Zusage](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung)).
-- **Wenige bewegliche Teile.** SQLite braucht keinen Datenbankserver, PHP 7.4 oder neuer auf fast jedem
+- **Wenige bewegliche Teile.** SQLite braucht keinen Datenbankserver, PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) auf fast jedem
   Betriebssystem genügt, und jeder gängige Webserver funktioniert
   ([Anforderungen](../hosting/grundlagen/anforderungen-auf-einen-blick.md)).
 - **Schnell unter Last.** Die Cache-Korrekturen der Linie 6.0.15 machen die Anwendung auch unter Apache oder Nginx
