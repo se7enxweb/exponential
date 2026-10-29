@@ -98,11 +98,11 @@
       {if eq( $mode, 'page' )}
         <input type="checkbox" name="DeleteIDArray[]" value="{$row.id}" title="{'Select bookmark for removal.'|i18n( 'design/admin/content/bookmark' )}" />
       {/if}
-      <span class="a4-icon a4-bi-gear exp-bm-kind" aria-hidden="true" title="{'System page'|i18n( 'design/admin/content/bookmark' )}"></span>
+      <span class="a4-icon a4-bi-{first_set( $row.icon, 'gear' )|wash} exp-bm-kind" aria-hidden="true" title="{first_set( $row.type_label, 'System page'|i18n( 'design/admin/content/bookmark' ) )|wash}"></span>
       {if and( first_set( $row.can_open, false() ), ne( $ui_context, 'edit' ), ne( $ui_context, 'browse' ) )}
         <a class="exp-bm-link" href={concat( '/', $row.uri )|ezurl} title="{concat( '/', $row.uri )|wash}"><bdi>{$row.name|wash}</bdi></a>
       {else}
-        <span class="disabled exp-bm-link"{if first_set( $row.can_open, false() )|not} title="{'You may no longer open this page.'|i18n( 'design/admin/content/bookmark' )|wash}"{/if}><bdi>{$row.name|wash}</bdi></span>
+        <span class="disabled exp-bm-link"{if first_set( $row.can_open, false() )|not} title="{first_set( $row.reason_text, '' )|ne( '' )|choose( 'You may no longer open this page.'|i18n( 'design/admin/content/bookmark' ), $row.reason_text )|wash}"{/if}><bdi>{$row.name|wash}</bdi>{if first_set( $row.can_open, false() )|not}<span class="a4-sr-only"> ({first_set( $row.reason_text, '' )|ne( '' )|choose( 'You may no longer open this page.'|i18n( 'design/admin/content/bookmark' ), $row.reason_text )|wash})</span>{/if}</span>
       {/if}
       {if eq( $mode, 'page' )}
         <span class="exp-bm-meta">{'System page'|i18n( 'design/admin/content/bookmark' )} &middot; /{$row.uri|wash}</span>

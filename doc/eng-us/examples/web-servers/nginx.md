@@ -14,6 +14,19 @@ Exponential ships no nginx configuration of its own; [`nginx.conf`](nginx.conf) 
 [chapter 8, section 8.6](../../install/08-serving-the-site.md#86-nginx-with-php-fpm) with HTTPS, HTTP/2, a port 80
 redirect and the security headers. Compare it with `.htaccess_root` after every upgrade.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](nginx.md), [LiteSpeed](litespeed.md),
+> [Caddy](caddy.md), [IIS](iis.md), [Velocity](velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../../help/hosting/panels/plesk.md), [cPanel](../../help/hosting/panels/cpanel.md), [DirectAdmin](../../help/hosting/panels/directadmin.md), [ISPConfig](../../help/hosting/panels/ispconfig.md).
+
 nginx never reads `.htaccess`, so `./console exp:setup:htaccess --apply` does not protect an nginx site: the rules
 below do. The console is still useful here: `./console exp:setup:config --apply` puts `config.php` into place, and
 after an upgrade a `.htaccess` copied with `exp:setup:htaccess` makes `./console exp:setup:htaccess` show, as a diff,

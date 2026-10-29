@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Жүйелік беттерді де бетбелгіге қосуға болады: бетті (Баптау, аудит журналы, пайдаланушылар тізімі ...) ашып, оның үстіндегі «Бетті бетбелгіге қосу» тармағын таңдаңыз. Мұндай бетбелгілерде тісті доңғалақ белгішесі бар.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Сіз бұл бетті бұл жерде енді аша алмайсыз. Бетбелгіні алып тастаңыз немесе әкімшіден кіру рұқсатын сұраңыз.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;Exponential Enterprise Edition нұсқасын бағалаңыз&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential қауымдастығының мүшесі болыңыз, тәжірибе алмасыңыз және үлес қосыңыз&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Авторлық құқық &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; және басқалар.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>Жұмыс істейтін жүйе: &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. Қосымша ақпаратты &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; бетінен қараңыз.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Авторлық құқық &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; және басқалар.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> Қосымша ақпаратты &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; бетінен қараңыз.</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Авторлық құқық &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; және басқалар.</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;Exponential (7x ұсынысы) бағдарламасын бағалаңыз&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential қауымдастығының мүшесі болыңыз, қолдау алыңыз және үлес қосыңыз&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Авторлық құқық &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; және басқалар.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Бетбелгінің аты «%name» болып өзгертілді.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Бұл бет осы сайтқа кіру нүктесінде (%siteaccess) өшірілген. Бетбелгіні бұл бет бар сайтқа кіру нүктесінде ашыңыз.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Бұл беттің модулі мұнда орнатылмаған немесе қосылмаған.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Бұл бет енді жоқ: оның модулінде мұндай көрініс жоқ.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Сіздің рөлдеріңіздің ешқайсысы бұл бетті ашуға рұқсат бермейді.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Сіз бұл сайтқа кіру нүктесін пайдалана алмайсыз.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Сіз бұл бет көрсететін мазмұнды оқи алмайсыз.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Мұндай бетті бетбелгіге қосу мүмкін емес: ол тек пішінмен әрекет етеді немесе бір сәттік бет болып табылады.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Бұл беттің мекенжайы жоқ.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Бұл бетті қазір ашу мүмкін емес.</translation>
     </message>
 </context>
 <context>

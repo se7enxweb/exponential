@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Ũrũa cia mũthaiyo nĩ ciikagwo ikĩmenyithia o nacio: hingũra ũrũa (Mwambĩrĩria, rekodi ya ũkaguzi, mũhari wa ahũthiri ...) na ũthuure Ikia kĩmenyithia ũrũa-inĩ ũyũ igũrũ rĩaguo. Ikĩmenyithia ta icio irĩ mũhianĩre wa gĩtegi.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ndũngĩhota rĩngĩ gũhingũra ũrũa ũyũ gũkũ. Ehereria kĩmenyithia, kana ũhooe mũrũgamĩrĩri rũtha rwa gũtoonya.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;Geria Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Tuĩka mũthiganĩrĩria wa Gĩkundi kĩa Exponential, tũhũranĩria na ũteithie&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Rũtha rwa mwandĩki &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; na angĩ.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>Nĩ ĩtengerio nĩ &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. Nĩguo wone ũhoro mũingĩ rora &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Rũtha rwa mwandĩki &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; na angĩ.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> Nĩguo wone ũhoro mũingĩ rora &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Rũtha rwa mwandĩki &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; na angĩ.</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;Geria Exponential (kuuma 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Tuĩka mũthiganĩrĩria wa Gĩkundi kĩa Exponential, ũgĩe ũteithio na ũteithie&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Rũtha rwa mwandĩki &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; na angĩ.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ Ndagũthaitha, ũhoye mũrũgamĩrĩri wa saiti na ũmũmenyithie
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Kĩmenyithia nĩ gĩacenjetio rĩĩtwa kũgĩa "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Ũrũa ũyũ nĩ ũhingĩtwo njĩra-inĩ ĩno ya saiti (%siteaccess). Hingũra kĩmenyithia njĩra-inĩ ya saiti ĩrĩ na ũrũa ũyũ.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Moduli ya ũrũa ũyũ ndĩingĩrĩtio kana ndĩhingũrĩtwo gũkũ.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Ũrũa ũyũ ndũrĩ ho rĩngĩ: moduli yaguo ĩtirĩ na mwonekere ta ũcio.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Gũtirĩ rolo o na ĩmwe yaku ĩgũtĩkĩrĩtie gũhingũra ũrũa ũyũ.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Ndũtĩkĩrĩtio kũhũthĩra njĩra ĩno ya saiti.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Ndũtĩkĩrĩtio gũthoma ũhoro ũrĩa ũrũa ũyũ ũronania.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Ũrũa wa mũthemba ũyũ ndũngĩĩkĩrwo kĩmenyithia: ũrutaga wĩra fomu-inĩ tu, kana nĩ ũrũa wa kahinda kanini tu.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Anwani ya ũrũa ũyũ ndĩrĩho.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Ũrũa ũyũ ndũngĩhingũka rĩu.</translation>
     </message>
 </context>
 <context>

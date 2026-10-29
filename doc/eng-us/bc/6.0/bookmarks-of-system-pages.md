@@ -52,8 +52,25 @@ if ( $uri !== false && $check['result'] )
     expBookmarkView::createNew( eZUser::currentUserID(), $uri, 'Upgrade check', $folderID );
 ```
 
+## Kinds, settings and reasons
+
+Added with the saved searches and the greyed bookmarks:
+
+| Where | What |
+|---|---|
+| `settings/bookmark.ini` | New: `[ViewBookmarkSettings] NonBookmarkableViews[]`, `QueryParameters[]`, `ModuleIcons[]`, `DefaultIcon`; `[BookmarkTypeSettings] TypeList[]`, `TypeClass[]` |
+| Module definitions | A view entry of `$ViewList` may carry `'bookmarkable' => false` (`user/logout` does) |
+| `expBookmarkType` (abstract), `expBookmarkTypeSystemPage`, `expBookmarkTypeSearch` | The kinds: `identifier()`, `accepts( $module, $view )`, `queryParameters()`, `icon( $uri )`, `label()` |
+| `expBookmarkView` | New: `bookmarkable( $uri )` (`result`, `reason`), `queryOf()`, `pathOf()`, `canonicalQuery( $module, $view, $query )`, `configuredQueryParameters()`, `moduleIcon()`, `types()`, `typeFor()`, `reasonText( $reason )`. `moduleURI()` keeps the query string keys of the view's kind (it dropped every query string before); `parts()` ignores the query string; `pageState()` takes the request's query string as a third argument (default `$_SERVER['QUERY_STRING']`) and is not available on a view that cannot be bookmarked; `handleAction()` refuses such a view |
+| `expBookmarkView::decorateRows()` | A system page row also has `reason`, `reason_text`, `bookmark_type`, `type_label` and `icon`; a view that may no longer be bookmarked has `can_open` false with the reason `not-bookmarkable`. The row's `type` stays `bookmark` |
+| `expBookmarkPage::viewItem()` | Items also have `icon`, `reason` and `reason_text`; the type (`class_name`) is the label of the row's kind when it has one |
+| Templates | `bookmark_tree.tpl` and the `bookmark.tpl` cards draw `a4-bi-<icon>` instead of the gear and show `reason_text`; `design/admin3/templates/pagelayout.tpl` includes the button too |
+
+A stored address can now end in a query string (`content/search?SearchText=news`); code that reads `module_uri`
+directly and splits it on `/` should use `expBookmarkView::parts()` or `pathOf()`.
+
 ## Tests
 
-- `tests/tests/kernel/classes/bookmarks/expBookmarkViewTest.php`: addresses, names, items, search and order (no database)
+- `tests/tests/kernel/classes/bookmarks/expBookmarkViewTest.php`: addresses, query strings, names, items, search and order, the excluded views, the kinds (an extension's too), the icons and the reasons (no database)
 - `tests/tests/kernel/classes/bookmarks/BookmarkViewSchemaSqlTest.php`: the table everywhere it is written; the SQLite update twice
 - `tests/tests/kernel/classes/bookmarks/BookmarkViewsTest.php`: the model on a live installation (skipped without one or without the table)

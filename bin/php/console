@@ -904,7 +904,7 @@ if ( array_intersect( $aboutFlags, $leading ) )
        . $row( 'System', php_uname( 's' ) . ' ' . php_uname( 'r' ) . ' ' . php_uname( 'm' ) )
        . $row( 'Home page', 'https://github.com/se7enxweb/exponential' )
        . "\n"
-       . "Copyright (C) 1998-2026 7x / Exponential Foundation.\n"
+       . "Exponential Copyright © 1998-2026 Exponential Foundation and 7x\n"
        . "Originally developed by eZ Systems AS, 1999-2014 (http://ez.no).\n"
        . "License GPLv2: GNU GPL version 2 <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html>;\n"
        . "the full text is in the LICENSE file of the installation.\n"

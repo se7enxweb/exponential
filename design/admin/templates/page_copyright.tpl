@@ -7,7 +7,7 @@
 <p>
 {'Powered by <span class="edition-info">%edition</span>. For more information see <a href=%about_link>ezinfo/about</a>.'|i18n( 'design/admin/page_copyright',, hash( '%edition', fetch( 'setup', 'edition' ), '%about_link', "/ezinfo/about"|ezurl ) )}</p>
 <p>
-{'<a href="%ezpublish_link">Exponential</a> Copyright &copy; 1998-2026 <a href="%ez_link">7x</a> and others.'|i18n( 'design/admin/page_copyright',, hash( '%ezpublish_link', 'https://se7enx.com/Exponential', '%ez_link', 'https://se7enx.com' ) )}
+{'<a href="%ezpublish_link">Exponential</a> Copyright &copy; 1998-2026 <a href="%foundation_link">Exponential Foundation</a> and <a href="%7x_link">7x</a>'|i18n( 'design/admin/page_copyright',, hash( '%ezpublish_link', 'https://se7enx.com/Exponential', '%foundation_link', 'https://foundation.exponential.earth', '%7x_link', 'https://se7enx.com' ) )}
 </p>
 <p>
 {* The share link names the release to signed-in users only, as the header does (also under layouts that define no $current_user) *}

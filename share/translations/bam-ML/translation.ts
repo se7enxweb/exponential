@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Sistɛmu ɲɛw fana bɛ se ka kɛ taamasiyɛn ye: ɲɛ da yɛlɛ (Labɛnni, sɛgɛsɛgɛli sɛbɛn, baarakɛlaw lisi ...), o kɔ «Nin ɲɛ taamasiyɛn kɛ» sugandi a san fɛ. Taamasiyɛn nin suguya bɛ jaa dɔ bolo min ye mɔbilɛri ye.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>I tɛ se ka nin ɲɛ da yɛlɛ yan tun. Taamasiyɛn bɔsi, wala donni ɲini marabaga fɛ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Ko: pakew tɛna sigili bɔ.</translation>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;Exponential Enterprise Edition sɛgɛsɛgɛ&lt;/a&gt; - &lt;a href="%share_link"&gt;I ka kɛ Exponential Community ka mɔgɔ ye, ka ɲɔgɔn dɛmɛ ani ka fara a kan&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; ni mɔgɔ wɛrɛw.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>&lt;span class="edition-info"&gt;%edition&lt;/span&gt; bɛ baara kɛ. Kunnafoni wɛrɛw kama, filɛ &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; ni mɔgɔ wɛrɛw.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> Kunnafoni wɛrɛw kama, filɛ &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; ni mɔgɔ wɛrɛw.</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;Exponential sɛgɛsɛgɛ (7x fɛ)&lt;/a&gt; - &lt;a href="%share_link"&gt;I ka kɛ Exponential Community ka mɔgɔ ye, ka dɛmɛ sɔrɔ ani ka fara a kan&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; ni mɔgɔ wɛrɛw.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ I kana sarali ci tugun.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Taamasiyɛn tɔgɔ yɛlɛmana ka kɛ «%name» ye.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Nin ɲɛ bɔra baara la nin siti donda in na (%siteaccess). Taamasiyɛn da yɛlɛ siti donda dɔ la min bɛ ni nin ɲɛ ye.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Nin ɲɛ modili ma sigi yan, wala a ma bila baara la yan.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Nin ɲɛ tɛ yen tun: a modili tɛ ni lajɛyɔrɔ suguya in ye.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>I ka jɔyɔrɔw si t'a to i ka nin ɲɛ da yɛlɛ.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>I tɛ se ka nin siti donda in labaara.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>I tɛ se ka kɔnɔkow kalan minnu bɛ jira nin ɲɛ kan.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Ɲɛ nin suguya tɛ se ka kɛ taamasiyɛn ye: a bɛ baara kɛ sɛbɛnfura dɔrɔn kan, wala ɲɛ don min bɛ yen waati dɔɔnin dɔrɔn.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Nin ɲɛ adiresi tɛ yen.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Nin ɲɛ tɛ se ka da yɛlɛ sisan.</translation>
     </message>
 </context>
 <context>
