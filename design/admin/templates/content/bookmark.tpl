@@ -276,7 +276,7 @@
                 <label class="a4-pick" title="{'Select this bookmark.'|i18n( 'design/admin/content/bookmark' )}">
                     <input type="checkbox" name="DeleteIDArray[]" value="{$item.id}" aria-label="{'Select %name'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}" />
                 </label>
-                {if $item.class_identifier}{$item.class_identifier|class_icon( small, $item.class_name )}{elseif eq( $item.kind, 'view' )}<span class="a4-icon a4-bi-gear is-medium a4-content-bookmark-kind" aria-hidden="true"></span>{/if}
+                {if $item.class_identifier}{$item.class_identifier|class_icon( small, $item.class_name )}{elseif eq( $item.kind, 'view' )}<span class="a4-icon a4-bi-{first_set( $item.icon, 'gear' )|wash} is-medium a4-content-bookmark-kind" aria-hidden="true"></span>{/if}
                 <h4 id="{$card_id}-title">{if or( eq( $item.state, 'gone' ), eq( $item.state, 'denied' ) )}<bdi>{$item.name|wash}</bdi>{elseif eq( $item.kind, 'view' )}<a href={concat( '/', $item.uri )|ezurl} dir="auto">{$item.name|wash}</a>{else}<a href={concat( 'content/view/full/', $item.node_id )|ezurl} dir="auto">{$item.name|wash}</a>{/if}</h4>
                 <ul class="a4-badges">
                     {if $item.class_name}<li class="a4-badge">{$item.class_name|wash}</li>{/if}
@@ -284,7 +284,7 @@
                     {case match='hidden'}<li class="a4-badge is-warn" title="{'Hidden: visitors of the site do not see it.'|i18n( 'design/admin/content/bookmark' )}">{'Hidden'|i18n( 'design/admin/content/bookmark' )}</li>{/case}
                     {case match='invisible'}<li class="a4-badge is-warn" title="{'An item above it is hidden, so visitors of the site do not see it.'|i18n( 'design/admin/content/bookmark' )}">{'Hidden by a parent'|i18n( 'design/admin/content/bookmark' )}</li>{/case}
                     {case match='gone'}<li class="a4-badge is-bad">{'Not found'|i18n( 'design/admin/content/bookmark' )}</li>{/case}
-                    {case match='denied'}<li class="a4-badge is-bad">{'No access'|i18n( 'design/admin/content/bookmark' )}</li>{/case}
+                    {case match='denied'}<li class="a4-badge is-bad"{if first_set( $item.reason_text, '' )|ne( '' )} title="{$item.reason_text|wash}"{/if}>{'No access'|i18n( 'design/admin/content/bookmark' )}</li>{/case}
                     {case}{/case}
                     {/switch}
                 </ul>
@@ -307,7 +307,7 @@
         {if eq( $item.state, 'gone' )}
         <p class="a4-content-bookmark-note">{'The address of this page is missing. Remove the bookmark and bookmark the page again.'|i18n( 'design/admin/content/bookmark' )}</p>
         {elseif eq( $item.state, 'denied' )}
-        <p class="a4-content-bookmark-note">{'You may no longer open this page. Remove the bookmark, or ask an administrator for access.'|i18n( 'design/admin/content/bookmark' )}</p>
+        <p class="a4-content-bookmark-note">{if first_set( $item.reason_text, '' )|ne( '' )}<strong>{$item.reason_text|wash}</strong> {/if}{'You may no longer open this page here. Remove the bookmark, or ask an administrator for access.'|i18n( 'design/admin/content/bookmark' )}</p>
         {/if}
         <dl class="a4-facts">
             <div>

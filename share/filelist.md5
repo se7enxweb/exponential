@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 4a1fbecdc069860129cd4ef52a1728f2  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-8eee42c7ff9e81a75641cf35d54c961a  autoload/ezp_kernel.php
+c6660a32e7ac8f80cf59e110ce6ecce6  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -417,7 +417,7 @@ efe05cae5f2e6da6178454f8b133d7fe  design/admin/templates/collaboration/handlers/
 881cf558f5a24a4b3fea18fe9e942ca9  design/admin/templates/collaboration/message/view/element/ezapprove_comment.tpl
 843ee667523786c1fb95a1473abec47f  design/admin/templates/collaboration/view/summary.tpl
 a8dd06e48594df07847950b72761ab8c  design/admin/templates/content/advancedsearch.tpl
-b8adb888c5d5ada647865c2582889d37  design/admin/templates/content/bookmark.tpl
+4e3aeb0bf6434d385e31360f7d58db31  design/admin/templates/content/bookmark.tpl
 35b2087a8237fbaf09eae445fa1cb132  design/admin/templates/content/browse.tpl
 49964a603a1121582d590f36389820bc  design/admin/templates/content/browse_add_locations.tpl
 89b996a34bdb703ef3ea87043b4be6f2  design/admin/templates/content/browse_bookmark.tpl
@@ -957,7 +957,7 @@ cb128a4645e891cd796919aad3ed36d1  design/admin3/templates/page_header.tpl
 68ef800e886d8f0bbe4c2216f50e0c18  design/admin3/templates/page_search.tpl
 e197b66c63a2bcf4e5d9777cd91f6300  design/admin3/templates/page_topmenu.tpl
 cf8663798cf45b3045efbc98b8d831c5  design/admin3/templates/page_topmenuitem.tpl
-e171ad46a49a7caea754a310b90d4513  design/admin3/templates/pagelayout.tpl
+066b4bf70df2aad0392b9f6d691a7101  design/admin3/templates/pagelayout.tpl
 e32e963f4d25c52a7f8d3eb520c0b227  design/admin3/templates/parts/user/menu.tpl
 03bf0a50004b366a1cbe7f46bb57d6ce  design/admin3/templates/window_controls.tpl
 a41265a8c8cf4698837a304aae23bb6a  design/admin4/fonts/IcoMoon.eot
@@ -1184,7 +1184,7 @@ f6abd7a9c28105d54f54099bd7f8c318  design/admin4/templates/collaboration/item_lis
 cb9ce70ef90296e96c1fc846fb8e9d3e  design/admin4/templates/collaboration/parts/rows.tpl
 50ad0bf49cddd812799da21930d06b49  design/admin4/templates/collaboration/view/summary.tpl
 af02a9092beb4e1c936a0de224b3944f  design/admin4/templates/content/advancedsearch.tpl
-4704f3e51d616df641b38d5a194e7130  design/admin4/templates/content/bookmark.tpl
+b6fc6abadc88fbb2f1d6a986b26c2415  design/admin4/templates/content/bookmark.tpl
 b75fb68bbe77ed31dd3ed149a8bb9135  design/admin4/templates/content/browse.tpl
 49964a603a1121582d590f36389820bc  design/admin4/templates/content/browse_add_locations.tpl
 89b996a34bdb703ef3ea87043b4be6f2  design/admin4/templates/content/browse_bookmark.tpl
@@ -2297,7 +2297,7 @@ e11df7849555c5497e019b6233871c49  design/standard/templates/collaboration/view/s
 eeb2fa6f5621444e436ee177d6e799a5  design/standard/templates/content/advancedsearch.tpl
 7b6bd904a8b3f74b2f12d9f8c66bfc35  design/standard/templates/content/bookmark.tpl
 dd2d083063d92a1267370c78fde9056d  design/standard/templates/content/bookmark_folder_forms.tpl
-ab608f90151f45fc2c382026f8ef0c5c  design/standard/templates/content/bookmark_tree.tpl
+12966d6c17a1e95fa4fe5315feeebbbb  design/standard/templates/content/bookmark_tree.tpl
 a797e348d6d1b6416e0f69070275b646  design/standard/templates/content/bookmark_view_action.tpl
 3514af6c300de574c1c6b24adad1a636  design/standard/templates/content/browse.tpl
 49964a603a1121582d590f36389820bc  design/standard/templates/content/browse_add_locations.tpl
@@ -3740,9 +3740,10 @@ b6655c97e0f3a74544da58844180cc7e  doc/eng-us/examples/demo-mode/install-demo-sql
 cca5d7ab779676279104a95fbfe62288  doc/eng-us/examples/demo-mode/nginx-fastcgi-demo.conf
 85231412f69ddf5584dc88af3b27095c  doc/eng-us/examples/demo-mode/php-fpm-pool-demo.conf
 b8b3d6b9a764ca22e43f9f52beb3610d  doc/eng-us/examples/demo-mode/velocity-demo-mode.conf
-afdd265f7ac47876ae43e0d2f0501a59  doc/eng-us/examples/extension-points/README.md
+c561836480ed3a78e12ae40702acfd59  doc/eng-us/examples/extension-points/README.md
 7f5c75fe36346ae0f6daa7de74fb143d  doc/eng-us/examples/extension-points/audit.md
 c2cafe9e2e4dc86fd5103ebc3fca26e9  doc/eng-us/examples/extension-points/binaryfile.md
+1b96f43cb4223bfc1de6851f90da4945  doc/eng-us/examples/extension-points/bookmark.md
 83664bb0f5266345795e93f2bc414687  doc/eng-us/examples/extension-points/browse.md
 86d9fbbad18a8c0595a6595205f50626  doc/eng-us/examples/extension-points/collaboration.md
 444ae8524e72a7b474a26738c1ef1395  doc/eng-us/examples/extension-points/content.md
@@ -3991,7 +3992,7 @@ d8ecf8a36f51610f9879784a8776ab80  doc/eng-us/examples/fetch-functions/user/membe
 42a70c11641a0fce108e4659cd159987  doc/eng-us/examples/fetch-functions/workflow/workflow_statuses.md
 e2a0d933b995c654fb8d0b0d61460b08  doc/eng-us/examples/fetch-functions/workflow/workflow_type_statuses.md
 f1f3ecb9c85bb6e5acce764771306644  doc/eng-us/examples/htaccess
-9ca08604934b174eb4541542263cceff  doc/eng-us/examples/ini-settings/README.md
+054447071b3bfe555390ac0c1f9fe34e  doc/eng-us/examples/ini-settings/README.md
 6522da4a85b1b6fbd3b3c71c41603590  doc/eng-us/examples/ini-settings/admininterface/AdditionalMenuSettings.md
 00dd82562f4f4fcb17497b31e0f32f2f  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_audit.md
 1982ccc2ae500e3049741b22912053c6  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_datatable.md
@@ -4042,6 +4043,9 @@ e6ffeac9e64037bafa95779320573d18  doc/eng-us/examples/ini-settings/audit/README.
 3a148cc57b86fb6fe7a4de2cd1f4a33a  doc/eng-us/examples/ini-settings/binaryfile/PDFHandlerSettings.md
 a754d9fc16b8d63b29527bc567dc45ad  doc/eng-us/examples/ini-settings/binaryfile/README.md
 2d92e60598eaf0ec4d56dae8fd8471fb  doc/eng-us/examples/ini-settings/binaryfile/WordHandlerSettings.md
+0d281f3e4c8933fb732c7abf44c96da7  doc/eng-us/examples/ini-settings/bookmark/BookmarkTypeSettings.md
+7d1ffa554ffff4eb053669ee16c2aacb  doc/eng-us/examples/ini-settings/bookmark/README.md
+80cc1caa9954ba976bd734265f5836cd  doc/eng-us/examples/ini-settings/bookmark/ViewBookmarkSettings.md
 c331aa384487942310026cdd274404ca  doc/eng-us/examples/ini-settings/browse/AddBookmark.md
 976c5a3360ccdd455651035e592d95d7  doc/eng-us/examples/ini-settings/browse/AddCustomer.md
 e5c7bcceab9f59271f4818ec4b7e29e3  doc/eng-us/examples/ini-settings/browse/AddNodeAssignment.md
@@ -12339,7 +12343,7 @@ e9e96bfe1a547715698636f3b5ca4a07  doc/eng-us/install/migration/other-application
 0abfe339c3b8505840a67bc0ead04f08  doc/eng-us/install/migration/static-html.md
 77086c0914a9e5e8d960262ffd85eccc  doc/eng-us/install/migration/symfony-apps.md
 470354c857d794827531e5cf374d7859  doc/eng-us/install/migration/wordpress.md
-b796e3a63f1b98d090d573b3d8782e95  doc/eng-us/languages.md
+61954b172d360572d774bd93cd150fe3  doc/eng-us/languages.md
 5ca19bde368970c0a22a6a314de2c9af  doc/eng-us/release-overview
 81b7485665e49e6de38b6e8a216c7136  doc/eng-us/shop/classeshierarchy.html
 7a4ca93d7c8c4867763c5b42ee925a96  doc/eng-us/shop/examples/paypal/extensionfiles.html
@@ -12618,7 +12622,7 @@ aa57a726dc0740993dd6d133be08b6f5  doc/eng-us/standards/patterns/value-object.md
 73a29218cbabcba5c380e1fe436a45be  doc/eng-us/standards/source-control-and-releases.md
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
-53998b4953e407da170e1446c2657569  doc/eng-us/translation-waves.md
+6d600598425db56cc506b203422a1b21  doc/eng-us/translation-waves.md
 fe7287e9e15faec9246eaa532ab45c7e  doc/ger-de/.dirnames.json
 5647e0a40e18862c9be14fe193209099  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
@@ -12632,10 +12636,11 @@ b09583bc5cb22d2c91a42a2ec393f30a  doc/ger-de/.examples/descriptions/09-ini-setti
 a68982de41df978c6f8141a03e990954  doc/ger-de/.examples/descriptions/10-ini-settings-site-ini-runnablesettings-listeners.json
 12c454533564ea8a55005f082ccd5bcf  doc/ger-de/.examples/descriptions/11-ini-settings-syscard-ini.json
 22d6c9c5408fb8730a53e260be31c8c4  doc/ger-de/.examples/descriptions/12-shell-checkcalltimeref.json
+f16d86ab0286e7abf7b93b1e644bbb1f  doc/ger-de/.examples/descriptions/13-ini-settings-bookmark-ini.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-89483c7732478d4ebbdecf3bd2928975  doc/ger-de/.paths.json
+44b31b6e58d0fc8fd2ba35c988d10110  doc/ger-de/.paths.json
 6e497c5ae6db873b5c128b73b64f2658  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
@@ -13014,9 +13019,10 @@ b029afb37c9ff1b5c013628114d1d7b6  doc/ger-de/beispiele/datentypen/ezurl.md
 740888a57dd1953e7c47aad0aa957ea0  doc/ger-de/beispiele/datentypen/ezuser.md
 506914e9196030f94b7e99a7d94b5133  doc/ger-de/beispiele/datentypen/ezxmltext.md
 b6bdbe4773d230b1b91eb3895bfdc387  doc/ger-de/beispiele/demomodus/README.md
-4d0c7bb6a01154ad4cd838e011fdbc80  doc/ger-de/beispiele/erweiterungspunkte/README.md
+9d2932fe9ab23a7aed4d3795c4a9e4e9  doc/ger-de/beispiele/erweiterungspunkte/README.md
 a490e1ec426aca441fb5e252d2527133  doc/ger-de/beispiele/erweiterungspunkte/audit.md
 e34329194560e142b7bd6d21a0cbb109  doc/ger-de/beispiele/erweiterungspunkte/binaryfile.md
+796effd13e93fc30735b2d7b626710e3  doc/ger-de/beispiele/erweiterungspunkte/bookmark.md
 92d7d32c91c954d72a2bdb7954755eb2  doc/ger-de/beispiele/erweiterungspunkte/browse.md
 803ca8cb4ece78a95a369998368d195f  doc/ger-de/beispiele/erweiterungspunkte/collaboration.md
 37010cfef641da11f7e520cd8684b85b  doc/ger-de/beispiele/erweiterungspunkte/content.md
@@ -13263,7 +13269,7 @@ f6cef0867c4076eae774a91ce3f812cb  doc/ger-de/beispiele/fetch-funktionen/user/use
 8383861c182b6605aac7f6f6d7819b37  doc/ger-de/beispiele/fetch-funktionen/workflow/README.md
 c747569ce52d239c1f42255fd4fd9d7a  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_statuses.md
 410651a2685ea7f1a673cc9a58b14277  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_type_statuses.md
-9c7849f5c8ab200e8e0628a0d7b92e95  doc/ger-de/beispiele/ini-einstellungen/README.md
+a1732e8a86f19d189a6d0cd9cc1bfaaa  doc/ger-de/beispiele/ini-einstellungen/README.md
 88a9e6f3da744f06b838a30f640c9750  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalMenuSettings.md
 61b7500c6da46b1684d61841b2c0b331  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_audit.md
 da8522f9eb603cff06146203b11e3431  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_datatable.md
@@ -13314,6 +13320,9 @@ edcbb2913a8d31565e8a545846faf6c6  doc/ger-de/beispiele/ini-einstellungen/audit/R
 3192d0a22626d35fd1735d4f89e283a6  doc/ger-de/beispiele/ini-einstellungen/binaryfile/PDFHandlerSettings.md
 7eb5ab837275e7c8fe5c5ff3e31ae17e  doc/ger-de/beispiele/ini-einstellungen/binaryfile/README.md
 230020a62d4110f240a8f91af6f3a4d2  doc/ger-de/beispiele/ini-einstellungen/binaryfile/WordHandlerSettings.md
+82b671160574c0e29962641406bfdb3c  doc/ger-de/beispiele/ini-einstellungen/bookmark/BookmarkTypeSettings.md
+7deb8ffaaebd45c3b5d6437b1b40a9c7  doc/ger-de/beispiele/ini-einstellungen/bookmark/README.md
+fbbce34e02a1e89c8b8a07ea2edb45d3  doc/ger-de/beispiele/ini-einstellungen/bookmark/ViewBookmarkSettings.md
 977b0cda4555123e3608108746f5d990  doc/ger-de/beispiele/ini-einstellungen/browse/AddBookmark.md
 b565be8123bd48be4345600d77cb776d  doc/ger-de/beispiele/ini-einstellungen/browse/AddCustomer.md
 dc07256affeade129bc5942205e91a5b  doc/ger-de/beispiele/ini-einstellungen/browse/AddNodeAssignment.md
@@ -21324,7 +21333,7 @@ f6ce87b6422da987a43c79641d17de0c  doc/ger-de/spezifikationen/6.0/syndikation.md
 318e35392529be468f30eb96b9543fa7  doc/ger-de/spezifikationen/6.0/velocity-http2-und-sicherheit.md
 0a829bee13ffa1d319b038f4c24af29e  doc/ger-de/spezifikationen/6.0/velocity-worker-pool.md
 c4f17fcd2efd17b97d9e37fbcd966f62  doc/ger-de/spezifikationen/6.0/xrowextract.md
-ef947859727e519aad0512f068a9b54e  doc/ger-de/sprachen.md
+4ead75fa0b0aac89942c060cd19f31ed  doc/ger-de/sprachen.md
 9b7cd5aa113b112195b49e1fab3df878  doc/ger-de/standards/README.md
 5dc1194f57c8b1b5fbe99a36f5c6a86c  doc/ger-de/standards/apis-und-protokolle.md
 0b0f0ca714c2ab620eab9538302ed3dc  doc/ger-de/standards/architektur/kernel-architektur.md
@@ -21514,7 +21523,7 @@ f5ff4f18d94e1c80ff309a29ec39ac4d  doc/ger-de/standards/sicherheit.md
 3e355cb14e5eefd2bf6bb2044c682f56  doc/ger-de/standards/tests-und-ci.md
 7d089b30e57b258c2749f8a92146dcf8  doc/ger-de/standards/versionsverwaltung-und-releases.md
 9e515575ffc50620e08b29cbb7a63894  doc/ger-de/standards/webplattform.md
-94c0d23d895dc5e619c6657a68fbd0a9  doc/ger-de/uebersetzungswellen.md
+d2361339f6b070016cb4ca634a89349b  doc/ger-de/uebersetzungswellen.md
 192f2fd597239e14f76d3e21b2a370ad  doc/ger-de/ziele.md
 1147a04b0458d869f2da4e5c14256142  exponential.cron
 b09f1f23ad8851037391227378101eda  extension/exphelpsite/design/standard/override/templates/help/full_map.tpl
@@ -22828,8 +22837,11 @@ e024c259b0132ce6c550ebed48974a8b  kernel/classes/expanonymouspublicpolicies.php
 0f21cab2bd8703ec564d77e3042723f2  kernel/classes/expbenchmarkhttp.php
 a2ea960d7ab9f69ae0ed376317e58ebd  kernel/classes/expbenchmarkkernel.php
 0c75a7bca2a0dce8da13908f7a1ee322  kernel/classes/expbenchmarkmicro.php
-996ddac5e94625098229ed3846d288ad  kernel/classes/expbookmarkpage.php
-e3197bc6f53d6c15e4ee71bb81ff34a1  kernel/classes/expbookmarkview.php
+dce4ba7efe46c8319b48f4bb7a23b93e  kernel/classes/expbookmarkpage.php
+a5d495e6d6dfee0336f239d6be3705f5  kernel/classes/expbookmarktype.php
+5482010cf8b0da1f8ad8969f6079a9c9  kernel/classes/expbookmarktypesearch.php
+1457a4e764be91d122ed511a019db7c3  kernel/classes/expbookmarktypesystempage.php
+636f76b1f9cf7196bc05aa744be09991  kernel/classes/expbookmarkview.php
 4c41c074f7ffa8b82424c373c5c80fa9  kernel/classes/expcachecatalogue.php
 c38d493128fc6296be9d66ba02d82e49  kernel/classes/expcachemanager.php
 bcf102d8550fd2f6ed4ceff8e035e572  kernel/classes/expcachewarm.php
@@ -24414,7 +24426,7 @@ a24698b44fc828b90cf66f0d6956d157  kernel/user/forgotpassword.php
 2249454854f2ed4915becd82dc8cbf6d  kernel/user/login.php
 1848c9a2e02a79de9ca904cfa426b32f  kernel/user/logout.php
 beec050ee4bb350cdb97504de1919203  kernel/user/megamenu.php
-d50d7198d2d8804cfc38e6546ff1e9b6  kernel/user/module.php
+b685df237846b17a2899f8c7cbf055a9  kernel/user/module.php
 7a70842b2d61c6951ef8d08a9cb90086  kernel/user/operation_definition.php
 c93995757295e4e0b248577badf5efbc  kernel/user/passkeys.php
 08227c2f02883658c551f14f1b8add01  kernel/user/password.php
@@ -24689,6 +24701,7 @@ c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 384d863a64ec6bf359da051874b0d222  settings/admininterface.ini
 f6a704224ed3cf962770f16ede3749b7  settings/audit.ini
 1b4240b9c4d8b7cfa57f7c76b8e2d1a7  settings/binaryfile.ini
+d907d9b953748fe4b792931bf477a890  settings/bookmark.ini
 f99a41a30ace913f63ff7525de52d0ff  settings/browse.ini
 69b7abd76c6aad8b54776c6f2b9bb65e  settings/codetemplate.ini
 de45042ac0530e8a52e3a2ac0e519d8a  settings/collaboration.ini
@@ -25741,7 +25754,7 @@ c830879a12955560ed79f8be26478bed  share/translations/dut-NL/translation.ts
 27c0828353fe98bea13c97a1d808551c  share/translations/ell-GR/GUIDE.md
 70a26bfcd63a5403f0f70c2de4d53d3e  share/translations/ell-GR/translation.ts
 4e9d921c4cb3f0437e97629ebf20faf2  share/translations/eng-AU/translation.ts
-cbf302da5e00357a99c25797fa44a081  share/translations/eng-US/translation.ts
+d8e5b52e2fb8128476e0a566ce76f07a  share/translations/eng-US/translation.ts
 c4aefd9911e5b7b7646f05df605f6902  share/translations/epo-EO/GUIDE.md
 62034b7e3fd1e140da0606b2b603df9f  share/translations/epo-EO/translation.ts
 efca7798a9e1f1f216aa838154d35110  share/translations/esl-ES/GUIDE.md
@@ -25773,7 +25786,7 @@ c60bf8f5999a3f7ca39d4e3834bf9071  share/translations/fre-FR/translation.ts
 ccf8758ef6ea0b6f639323dd1573c204  share/translations/ger-DE/GUIDE.md
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-70b2fdade7c1912fb36a25c89ce3964c  share/translations/ger-DE/translation.ts
+ef2e369aec3a83e1a5b5ca6dd497b59b  share/translations/ger-DE/translation.ts
 1663811be417a845709468b796268b8e  share/translations/gla-GB/GUIDE.md
 51f4999512289e50675586517208b832  share/translations/gla-GB/translation.ts
 c9c96be6fea59b4e6e70919f636e2de8  share/translations/gle-IE/GUIDE.md
@@ -25968,7 +25981,7 @@ f1d1a8113c1045f22bd8a4a74d5172f2  share/translations/uig-CN/translation.ts
 8b26a8d47d928d0b0bd5c6885bd87f3f  share/translations/ukr-UA/GUIDE.md
 f2e8240ca22bc74719b2231ede07ec97  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-3dc2f597cfc777b85729c601568c4333  share/translations/untranslated/translation.ts
+6decad7979cf4063885f755befd39607  share/translations/untranslated/translation.ts
 50c0423066d265dc70107a85555ec431  share/translations/urd-PK/GUIDE.md
 eb16bb0eb6b059bb8b495b18bb0b5f71  share/translations/urd-PK/translation.ts
 9e9e7eefce4bcdac8cdf37ea44206f6e  share/translations/uzb-UZ/GUIDE.md
@@ -26411,9 +26424,9 @@ d4cad238dad8d7b326ffbdb4af42308e  tests/tests/kernel/classes/benchmark/ExpBenchm
 8a01acd9d7c4f0241e600a97c1238dc9  tests/tests/kernel/classes/bookmarks/BookmarkFolderUpgradeSqlTest.php
 02038e9154fe79a5d2954b16f6ba6612  tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php
 79101a52cabebdfdccdfc84ce58a2940  tests/tests/kernel/classes/bookmarks/BookmarkViewSchemaSqlTest.php
-575393a1e503ed68771d0652d103f4dd  tests/tests/kernel/classes/bookmarks/BookmarkViewsTest.php
+6f4943ac01b1b0ccaf158e7753e03acc  tests/tests/kernel/classes/bookmarks/BookmarkViewsTest.php
 c1c9e79ffa62a9e81808cb1a5ef91681  tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php
-8ca1b03daadda20f008172fdccf9acd3  tests/tests/kernel/classes/bookmarks/expBookmarkViewTest.php
+8e86bd2f2585214f6ccd11bde4e9ab37  tests/tests/kernel/classes/bookmarks/expBookmarkViewTest.php
 9f35d62dea92268419f9f373c661ea91  tests/tests/kernel/classes/cachesmore/eZStaticCachePathsTest.php
 ec49325384c48adf5d56ade86b85d5dd  tests/tests/kernel/classes/cachesmore/expPreloadRunnerLinksTest.php
 91468a69c1c96cc74112894400196b4f  tests/tests/kernel/classes/cachesmore/expPreloadRunnerSitePathTest.php

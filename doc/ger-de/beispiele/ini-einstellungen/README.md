@@ -22,6 +22,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [admininterface.ini](admininterface/README.md) | Kernel | 10 |
 | [audit.ini](audit/README.md) | Kernel | 34 |
 | [binaryfile.ini](binaryfile/README.md) | Kernel | 3 |
+| [bookmark.ini](bookmark/README.md) | Kernel | 2 |
 | [browse.ini](browse/README.md) | Kernel | 34 |
 | [codetemplate.ini](codetemplate/README.md) | Kernel | 1 |
 | [collaboration.ini](collaboration/README.md) | Kernel | 4 |

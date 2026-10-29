@@ -2781,6 +2781,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Auch Systemseiten lassen sich merken: Öffnen Sie die Seite (Einrichtung, das Audit-Protokoll, eine Benutzerliste ...) und wählen Sie darüber „Seite merken“. Solche Lesezeichen haben ein Zahnrad-Symbol.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Sie dürfen diese Seite hier nicht mehr öffnen. Entfernen Sie das Lesezeichen oder bitten Sie einen Administrator um Zugriff.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -64118,6 +64122,42 @@ diesen Fehler. Bitte versuchen Sie nicht, die Zahlung erneut zu senden.</transla
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Das Lesezeichen wurde in „%name“ umbenannt.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Diese Seite ist in diesem Siteaccess (%siteaccess) abgeschaltet. Öffnen Sie das Lesezeichen in einem Siteaccess, der sie hat.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Das Modul dieser Seite ist hier nicht installiert oder nicht aktiviert.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Diese Seite gibt es nicht mehr: Ihr Modul hat keine solche Ansicht.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Keine Ihrer Rollen erlaubt Ihnen, diese Seite zu öffnen.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Sie dürfen diesen Siteaccess nicht benutzen.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Sie dürfen den Inhalt, den diese Seite zeigt, nicht lesen.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Diese Art Seite kann nicht gemerkt werden: Sie verarbeitet nur ein Formular oder ist eine Seite für einen Moment.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Die Adresse dieser Seite fehlt.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Diese Seite kann jetzt nicht geöffnet werden.</translation>
     </message>
 </context>
 <context>
