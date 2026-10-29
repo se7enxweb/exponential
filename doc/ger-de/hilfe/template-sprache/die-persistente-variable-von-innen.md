@@ -3,7 +3,7 @@ title: Die persistente Variable, von innen
 audience: developer, designer, app-creator
 category: development
 order: 330
-summary: Wie $persistent_variable von einem Template einer Knotenansicht zum Pagelayout gelangt - der Kernel setzt sie auf false, liest sie nach dem Rendern aus dem Wurzel-Namensraum zurück, speichert sie in content_info und im Content-View-Cache und macht sie zu einem Override-Schlüssel - und warum scope='global' zählt, mit Namensräumen auf alpha belegt.
+summary: Wie $persistent_variable von einem Template einer Knotenansicht zum Pagelayout gelangt - der Kernel setzt sie auf false, liest sie nach dem Rendern aus dem Wurzel-Namensraum zurück, speichert sie in content_info und im Content-View-Cache und macht sie zu einem Override-Schlüssel - und warum scope='global' zählt, mit Namensräumen auf einer Entwicklungsinstallation belegt.
 keywords: persistent_variable, persistente Variable, scope global, content_info, View-Cache, Pagelayout, Namensraum, set, Override-Schlüssel, eZNodeviewfunctions, ezpagedata, persistent variable, view cache, pagelayout, namespace, override key
 type: help
 ---
@@ -53,7 +53,7 @@ Schritt 1), ein Template einbinden, das sie mit `scope='global'` setzt, und sie 
 after the view template: body_class={$persistent_variable.body_class}, hide_sidebar={$persistent_variable.hide_sidebar|choose( 'false', 'true' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 <article>...</article>
@@ -89,7 +89,7 @@ included with name=part, without scope: {if $persistent_variable}set{else}still 
 included with name=part, with scope='global': {$persistent_variable.body_class}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 

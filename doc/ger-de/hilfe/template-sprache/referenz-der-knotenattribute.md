@@ -3,7 +3,7 @@ title: Referenz der Knotenattribute
 audience: developer, designer, app-creator
 category: development
 order: 210
-summary: Jedes Attribut, das ein Template von einem Knoten (eZContentObjectTreeNode) lesen kann - die 16 Datenbankfelder und die 35 Funktionsattribute seiner Definition, die PHP-Methode hinter jedem und der Wert, den jedes für einen echten Artikel auf alpha zurückgab.
+summary: Jedes Attribut, das ein Template von einem Knoten (eZContentObjectTreeNode) lesen kann - die 16 Datenbankfelder und die 35 Funktionsattribute seiner Definition, die PHP-Methode hinter jedem und der Wert, den jedes für einen echten Artikel auf einer Entwicklungsinstallation zurückgab.
 keywords: Knotenattribute, eZContentObjectTreeNode, definition, function_attributes, name, data_map, children, path, url_alias, can_edit, class_identifier, Referenz, node attributes, reference
 type: help
 ---
@@ -19,15 +19,15 @@ lesen kann, ist genau das, was `eZContentObjectTreeNode::definition()` aufführt
 1. [Wie diese Tabelle entstand](#wie-diese-tabelle-entstand)
 2. [Datenbankfelder](#datenbankfelder)
 3. [Funktionsattribute](#funktionsattribute)
-4. [Ein Beispiel auf alpha](#ein-beispiel-auf-alpha)
+4. [Ein Beispiel](#ein-beispiel)
 5. [Hinweise](#hinweise)
 6. [Verwandte Seiten](#verwandte-seiten)
 
 ## Wie diese Tabelle entstand
 
-Ein nur lesendes CLI-Skript auf alpha (mit `bin/php/ezexec.php -s site` als Benutzer des Webservers ausgeführt) rief
+Ein nur lesendes CLI-Skript auf einer Entwicklungsinstallation (mit `bin/php/ezexec.php -s site` als Benutzer des Webservers ausgeführt) rief
 `eZContentObjectTreeNode::definition()` auf, führte `fields` und `function_attributes` auf und las jeden Namen mit `$node->attribute( $name )`
-an Knoten 96, einem `ng_article`. Die Spalte „Wert auf alpha“ ist der PHP-Typ und, bei kurzen Werten, der zurückgegebene Wert. Das Skript läuft
+an Knoten 96, einem `ng_article`. Die Spalte „Wert auf einer Entwicklungsinstallation“ ist der PHP-Typ und, bei kurzen Werten, der zurückgegebene Wert. Das Skript läuft
 als anonymer Benutzer, die Prüfungen `can_*` zeigen also, was ein anonymer Besucher tun darf. Sein Kern:
 
 ```php
@@ -41,7 +41,7 @@ foreach ( $def['function_attributes'] as $name => $method )
 
 ## Datenbankfelder
 
-| Attribut | Datenbankspalte / Mitglied | Datentyp | Wert auf alpha (Knoten 96) |
+| Attribut | Datenbankspalte / Mitglied | Datentyp | Wert auf einer Entwicklungsinstallation (Knoten 96) |
 |---|---|---|---|
 | `node_id` | `NodeID` | integer | integer 96 |
 | `parent_node_id` | `ParentNodeID` | integer | integer 92 |
@@ -64,7 +64,7 @@ foreach ( $def['function_attributes'] as $name => $method )
 
 `remote_id` steht in beiden Listen; ein Template liest das Funktionsattribut (`remoteID()`).
 
-| Funktionsattribut | PHP-Methode | Wert auf alpha (Knoten 96) |
+| Funktionsattribut | PHP-Methode | Wert auf einer Entwicklungsinstallation (Knoten 96) |
 |---|---|---|
 | `name` | `eZContentObjectTreeNode::getName()` | string "Why Should You Choose Strength Training?" |
 | `data_map` | `eZContentObjectTreeNode::dataMap()` | array(18) aus eZContentObjectAttribute |
@@ -102,7 +102,7 @@ foreach ( $def['function_attributes'] as $name => $method )
 | `classes_js_array` | `eZContentObjectTreeNode::availableClassesJsArray()` | string (3218 Bytes) |
 | `is_container` | `eZContentObjectTreeNode::classIsContainer()` | integer 1 |
 
-## Ein Beispiel auf alpha
+## Ein Beispiel
 
 Einige dieser Attribute an Knoten 89, der Startseite „Fit & Healthy“:
 
@@ -121,7 +121,7 @@ can_read:        {cond( $node.can_read, 'yes', 'no' )}, can_edit: {cond( $node.c
 current user:    {fetch( 'user', 'current_user' ).login}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 name:            Fit &amp; Healthy
@@ -152,7 +152,7 @@ url_alias:       {$node.url_alias}
 url:             {$node.url}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 PathPrefix:      fit-healthy

@@ -18,7 +18,7 @@ type: help
 
 ## Die öffentliche Demo
 
-Die Hilfe nennt die laufende Demonstrationsinstallation unter <https://alpha.se7enx.com> als Quelle ihrer Fakten
+Die Hilfe nennt eine laufende Demonstrationsinstallation als Quelle ihrer Fakten
 ([Unternehmen: hier beginnen](../../unternehmen/unternehmen-hier-beginnen.md)). Eine öffentliche Demo läuft absichtlich im
 Demomodus: "administrator passwords cannot be changed or reset there", Administratorpasswörter lassen sich dort also
 weder ändern noch zurücksetzen ([Demomodus](../../demomodus.md), [FAQ zum Demomodus](../../demomodus-faq.md)). Behandeln

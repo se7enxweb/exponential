@@ -20,8 +20,8 @@ and what it has to do, and then links to the technical pages for whoever does th
 company or a partner.
 
 > **Note**
-> Every fact in this section comes from the Exponential repository, from the live demonstration installation at
-> <https://alpha.se7enx.com> or from <https://exponential.earth>, and the page it comes from is linked. The section
+> Every fact in this section comes from the Exponential repository, from a live demonstration installation
+> or from <https://exponential.earth>, and the page it comes from is linked. The section
 > names no customers and quotes no market statistics. Where a page calculates costs, every input is labeled as an
 > example assumption for you to replace with your own numbers.
 

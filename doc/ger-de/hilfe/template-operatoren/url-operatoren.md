@@ -3,7 +3,7 @@ title: URL-, Design-, INI- und HTTP-Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 300
-summary: Die zehn Operatoren von eZURLOperator im Kernel (ezurl, ezroot, ezdesign, ezimage, exturl, ezsys, ezhttp, ezhttp_hasvariable, ezini, ezini_hasvariable), wie die Erweiterung ezurlmultisite sie auf alpha übernimmt, und ihre eigenen ezurl_path, ezurl_siteaccess und ezurl_roots, jeweils mit belegten Beispielen.
+summary: Die zehn Operatoren von eZURLOperator im Kernel (ezurl, ezroot, ezdesign, ezimage, exturl, ezsys, ezhttp, ezhttp_hasvariable, ezini, ezini_hasvariable), wie die Erweiterung ezurlmultisite sie auf einer Entwicklungsinstallation übernimmt, und ihre eigenen ezurl_path, ezurl_siteaccess und ezurl_roots, jeweils mit belegten Beispielen.
 keywords: URL-Operatoren, Links, Anführungszeichen, Design-Dateien, Einstellungen lesen, Anfragevariablen, ezurl, ezroot, ezdesign, ezimage, exturl, ezsys, ezhttp, ezhttp_hasvariable, ezini, ezini_hasvariable, ezurl_path, ezurl_siteaccess, ezurl_roots, eZURLOperator, ezurlmultisite, links, url, quote
 type: help
 ---
@@ -14,10 +14,10 @@ Der Kernel registriert zehn Operatoren mit einer Klasse, `eZURLOperator` (`kerne
 `ezimage`), registrieren externe Links (`exturl`) und lesen die Umgebung (`ezsys`), die Anfrage (`ezhttp`,
 `ezhttp_hasvariable`) und die Einstellungen (`ezini`, `ezini_hasvariable`).
 
-Auf alpha werden alle zehn Namen stattdessen von der Erweiterung `ezurlmultisite` registriert (Klasse
+Auf einer Entwicklungsinstallation werden alle zehn Namen stattdessen von der Erweiterung `ezurlmultisite` registriert (Klasse
 `eZURLMultisiteURLOperator`, `extension/ezurlmultisite/classes/ezurlmultisiteurloperator.php`), die die Kernel-Klasse
 erweitert und nur `ezurl` ändert. Dieselbe Erweiterung fügt drei eigene Operatoren hinzu. Jedes Beispiel auf dieser
-Seite wurde auf alpha mit dem Siteaccess `site` auf der Kommandozeile gerendert; Links entstehen also ohne eine
+Seite wurde auf einer Entwicklungsinstallation mit dem Siteaccess `site` auf der Kommandozeile gerendert; Links entstehen also ohne eine
 Web-Anfrage (kein `index.php`, Schema `http`).
 
 ## Inhalt
@@ -74,14 +74,14 @@ Ein Wert `javascript:` bleibt einer.
 6 {'https://example.com/a?b=1&c=2'|ezurl}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 "/content/view/full/90"
 2 "/privacy-policy"
 3 '/privacy-policy'
 4 /privacy-policy
-5 http://alpha.se7enx.com/privacy-policy
+5 http://www.example.com/privacy-policy
 6 "https://example.com/a?b=1&amp;c=2"
 ```
 
@@ -127,7 +127,7 @@ Warnungen.
 5 {'1x1.gif'|ezimage( 'no', true() )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 "/robots.txt"
@@ -151,7 +151,7 @@ Generierte Seite: [exturl](../../beispiele/template-operatoren/exturl.md).
 vorhanden, **registriert es sie** mit `eZURL::registerURL()`, sodass der Link-Prüfer und die URL-Verwaltung in der
 Administrationsoberfläche sie kennen.
 
-Auf alpha nicht ausgeführt: `exturl` schreibt für jede Adresse, die es noch nicht gesehen hat, eine Zeile in die
+Auf einer Entwicklungsinstallation nicht ausgeführt: `exturl` schreibt für jede Adresse, die es noch nicht gesehen hat, eine Zeile in die
 Tabelle `ezurl`, und diese Beispiele verändern nichts. Verwendet wird es als `{'https://example.com/'|exturl}`, was
 `"https://example.com/"` ergibt.
 
@@ -202,7 +202,7 @@ Derselbe Code wie `ezhttp` mit stets eingeschalteter Existenzprüfung: Parameter
 6 indexdir=[{ezsys( 'indexdir' )}] hostname=[{ezsys( 'hostname' )}] querystring=[{ezsys( 'querystring' )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 no
@@ -210,7 +210,7 @@ Ausgabe auf alpha:
 3 no
 4 ezhttptool
 5 wwwdir=[] indexfile=[]
-6 indexdir=[] hostname=[alpha.se7enx.com] querystring=[]
+6 indexdir=[] hostname=[www.example.com] querystring=[]
 ```
 
 ### ezini
@@ -251,7 +251,7 @@ Fehler. Die Zeilen 6 und 7 unten; Zeile 5 ist dieselbe Prüfung über Parameter 
 8 {ezini( 'SiteAccessSettings', 'AvailableSiteAccessList' )|count} siteaccesses
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 site
@@ -310,7 +310,7 @@ Template im Siteaccess `site` verlinkt ihn deshalb unter `/bold/`, ohne dass man
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 /bold/privacy-policy
@@ -319,12 +319,12 @@ Ausgabe auf alpha:
 4 bold
 5 site
 6 /privacy-policy?a=1#top
-7 http://alpha.se7enx.com/privacy-policy
-site: host=alpha.se7enx.com prefix=fit-healthy root=89
-bold: host=alpha.se7enx.com/bold prefix=bold-agency root=73
-bold_ger: host=alpha.se7enx.com/bold_ger prefix=bold-agency root=73
-starter: host=alpha.se7enx.com/starter prefix=starter root=31927
-starter_ger: host=alpha.se7enx.com/starter_ger prefix=starter root=31927
+7 http://www.example.com/privacy-policy
+site: host=www.example.com prefix=fit-healthy root=89
+bold: host=www.example.com/bold prefix=bold-agency root=73
+bold_ger: host=www.example.com/bold_ger prefix=bold-agency root=73
+starter: host=www.example.com/starter prefix=starter root=31927
+starter_ger: host=www.example.com/starter_ger prefix=starter root=31927
 ```
 
 ## Die Operatoren von ezurlmultisite

@@ -24,8 +24,8 @@ und [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md); d
 
 ## Die Felder
 
-Die Felder hängen davon ab, wie Ihre Produktklasse aufgebaut ist. In der Demo-Installation unter
-<https://alpha.se7enx.com> hat die Klasse Product einen Namen, eine Artikelnummer, eine Kurzbeschreibung, eine
+Die Felder hängen davon ab, wie Ihre Produktklasse aufgebaut ist. In einer Demo-Installation
+hat die Klasse Product einen Namen, eine Artikelnummer, eine Kurzbeschreibung, eine
 Beschreibung, einen Preis, Bilder, zusätzliche Optionen, Tags, eine Sternebewertung, Metadaten und eine
 Tabelle mit technischen Daten ([Produktklassen und Katalog](../../unternehmen/shops/produktklassen-und-katalog.md)). Ihre eigene Klasse kann abweichen.
 

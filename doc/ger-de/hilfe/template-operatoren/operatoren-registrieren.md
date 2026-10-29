@@ -96,7 +96,7 @@ Erweiterungen zusammengeführt werden:
 
 1. `[ExtensionSettings] ActiveExtensions[]` (globale Erweiterungen), dann `ActiveAccessExtensions[]` des Siteaccess
    (Zugriffserweiterungen);
-2. mit `[ExtensionSettings] ExtensionOrdering=enabled` (der Standard in `settings/site.ini`, und auf alpha) wird die
+2. mit `[ExtensionSettings] ExtensionOrdering=enabled` (der Standard in `settings/site.ini`, und auf einer Entwicklungsinstallation) wird die
    Liste der aktiven Erweiterungen nach den Abhängigkeiten sortiert, die jede Erweiterung in ihrer `extension.xml`
    deklariert (`eZExtension::extensionOrdering()`, `ezpExtension::getLoadingOrder()`):
    `<requires>` und `<uses>` lassen Ihre Erweiterung **nach** der genannten laden, `<extends>` **vor** ihr.
@@ -128,7 +128,7 @@ PHPOperatorList[rawurldecode]=rawurldecode
 
 Das ist die `settings/template.ini` des Kernels. `kernel/common/eztemplateautoload.php` registriert diese Namen über die
 Funktionen `eZPHPOperatorNameInit()` (die Namen) und `eZPHPOperatorInit()` (ein `eZTemplatePHPOperator`-Objekt für alle).
-Erweiterungen fügen Einträge in ihrer `template.ini.append.php` hinzu; auf alpha ergänzt cjw_newsletter `nl2br`,
+Erweiterungen fügen Einträge in ihrer `template.ini.append.php` hinzu; auf einer Entwicklungsinstallation ergänzt cjw_newsletter `nl2br`,
 ezmultiupload `strip_tags`, swark `serialize` und `unserialize`, bcgooglesitemaps `getenv`. Verwenden Sie in einem
 Append Zeilen der Form Schlüssel=Wert ohne führende leere Zeile `PHPOperatorList[]`, aus dem oben genannten Grund. Was
 diese Operatoren tun und wo ihre Grenzen liegen: [PHP-Funktionsoperatoren](php-funktionsoperatoren.md).
@@ -152,10 +152,10 @@ Template-Funktionen verwenden dieselben Dateien und dieselben Listen: Einträge 
   wurden gegen die alte Liste kompiliert): `php bin/php/ezcache.php --clear-tag=ini,template --allow-root-user`.
 - `php bin/php/ezpgenerateautoloads.php -e` nur dann, wenn Sie Klassen hinzugefügt haben, die über die Autoload-Arrays
   statt über `script` geladen werden.
-- Auf alpha: `./console exp:velocity deploy --allow-root-user` erledigt all das und startet Velocity neu, dessen
+- Auf einer Entwicklungsinstallation: `./console exp:velocity deploy --allow-root-user` erledigt all das und startet Velocity neu, dessen
   Worker die Registrierungen behalten, die sie beim Start vorgenommen haben.
 - Prüfen Sie den Namen auf jedem Siteaccess, der ihn verwendet: `{'x'|myext_initials}` darf nicht
-  `Operator 'myext_initials' is not registered` protokollieren, und das [Skript, das die Eigentümer auflistet](registrierungsreihenfolge-und-ueberschreibungen.md#die-auf-alpha-doppelt-registrierten-namen),
+  `Operator 'myext_initials' is not registered` protokollieren, und das [Skript, das die Eigentümer auflistet](registrierungsreihenfolge-und-ueberschreibungen.md#die-doppelt-registrierten-namen),
   darf Ihren Namen nicht neben einer anderen Klasse zeigen.
 
 ## Verwandte Seiten

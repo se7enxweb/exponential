@@ -3,20 +3,20 @@ title: Operator index
 audience: developer, designer, app-creator
 category: development
 order: 10
-summary: All 401 template operators registered on alpha's site and admin siteaccesses, A to Z, each with the family page that documents its parameters, return value and examples, the class that serves it and where that class comes from.
+summary: All 401 template operators registered on the site and admin siteaccesses, A to Z, each with the family page that documents its parameters, return value and examples, the class that serves it and where that class comes from.
 keywords: operator index, template operators, A-Z, all operators, operator list, which class, extension operators
 type: help
 ---
 # Operator index
 
-Every template operator that the template engine registers on alpha's `site` and `admin` siteaccesses, read from
+Every template operator that the template engine registers on the `site` and `admin` siteaccesses, read from
 the engine itself (`eZTemplate::factory()` with all its autoload files, then every operator object loaded and
 asked for its parameters). 401 names; 5 of them only on `admin`. The class is the one that serves the
 name after the autoload files are read; for names that two classes register, see
-[Registration order and overrides](registration-order-and-overrides.md#the-names-registered-twice-on-alpha).
+[Registration order and overrides](registration-order-and-overrides.md#the-names-registered-twice).
 
 "Documented in" leads to the operator's section on its family page, with parameters, return value and examples
-rendered on alpha; "generated" to the page that `./console exp:help:examples` generates from the code, with the
+rendered on a development installation; "generated" to the page that `./console exp:help:examples` generates from the code, with the
 first use in a shipped template. Operators of an extension exist only where that extension is active.
 
 ## A

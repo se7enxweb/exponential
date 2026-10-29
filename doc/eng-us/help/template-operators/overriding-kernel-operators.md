@@ -3,7 +3,7 @@ title: Overriding kernel operators
 audience: developer, app-creator
 category: development
 order: 510
-summary: Changing what a kernel or template-library operator does from an extension, the way extension ezurlmultisite does for ezurl - subclass the class that owns the name, register the subclass for all of its names, drop the compile-time code for what you change - with each mistake and the working pattern rendered on alpha in interpreted and compiled mode.
+summary: Changing what a kernel or template-library operator does from an extension, the way extension ezurlmultisite does for ezurl - subclass the class that owns the name, register the subclass for all of its names, drop the compile-time code for what you change - with each mistake and the working pattern rendered on a development installation in interpreted and compiled mode.
 keywords: override operator, kernel operator, extend operator, eZURLOperator, ezurlmultisite, eZTemplateStringOperator, subclass, operatorTemplateHints, element-transformation, ExtensionAutoloadPath, ActiveExtensions
 type: help
 ---
@@ -41,7 +41,7 @@ a name back.
 
 ## A real case: ezurlmultisite
 
-Extension ezurlmultisite (active on alpha) makes `ezurl` produce links to the right site when content belongs to
+Extension ezurlmultisite (active on a development installation) makes `ezurl` produce links to the right site when content belongs to
 another participating siteaccess. Its `autoloads/eztemplateautoload.php`:
 
 ```php
@@ -144,7 +144,7 @@ ExtensionAutoloadPath[]=myextension
 */ ?>
 ```
 
-Not run on alpha as an installed extension: the outputs below were rendered by a script that registered the same
+Not run on a development installation as an installed extension: the outputs below were rendered by a script that registered the same
 entry on the template engine in memory, for that process only, with the class in a scratch folder (the scratch copy
 has one extra static switch that keeps the hints, used in the section on compile-time code). The template
 uses `upcase`, then `wash`, then `upcase` again:
@@ -155,7 +155,7 @@ uses `upcase`, then `wash`, then `upcase` again:
 {'fit & healthy'|upcase}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [override] FIT & HEALTHY
@@ -163,7 +163,7 @@ Fit &amp; Healthy
 [override] FIT & HEALTHY
 ```
 
-Output on alpha with the template compiler (compiled into a scratch folder):
+Output with the template compiler (compiled into a scratch folder):
 
 ```text
 [override] FIT & HEALTHY
@@ -182,7 +182,7 @@ Registering the subclass (or any class) only for `upcase` looks enough, and work
 {'fit & healthy'|upcase}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [override] FIT & HEALTHY
@@ -197,7 +197,7 @@ registers it for all fifteen names again, `upcase` included:
 {'fit & healthy'|upcase}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [override] FIT & HEALTHY
@@ -205,7 +205,7 @@ Fit &amp; Healthy
 FIT & HEALTHY
 ```
 
-Output on alpha with the template compiler (compiled into a scratch folder):
+Output with the template compiler (compiled into a scratch folder):
 
 ```text
 FIT & HEALTHY
@@ -230,7 +230,7 @@ the library's hints kept, registered for all fifteen names:
 {'fit & healthy'|upcase}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [override] FIT & HEALTHY
@@ -238,7 +238,7 @@ Fit &amp; Healthy
 [override] FIT & HEALTHY
 ```
 
-Output on alpha with the template compiler (compiled into a scratch folder):
+Output with the template compiler (compiled into a scratch folder):
 
 ```text
 FIT & HEALTHY
@@ -246,7 +246,7 @@ Fit &amp; Healthy
 FIT & HEALTHY
 ```
 
-Alpha, like every default installation, compiles templates (`[TemplateSettings] TemplateCompile=enabled` in
+The development installation used here, like every default installation, compiles templates (`[TemplateSettings] TemplateCompile=enabled` in
 `settings/site.ini`), so the compiled result is what visitors get. Remove the hint entry of each operator you change
 (`unset( $hints['upcase'] )`), or set `element-transformation` to `false` as ezurlmultisite does. Keep the hints of
 the names you only pass through to the parent.
@@ -261,7 +261,7 @@ the names you only pass through to the parent.
   there. Check every siteaccess that renders the templates, including the admin when it previews content.
 - Clear the INI and template caches after adding the registration (compiled templates keep the old inline code
   until they are compiled again): `php bin/php/ezcache.php --clear-tag=ini,template --allow-root-user`. Under
-  Velocity the workers keep the operator registrations of their warm-up: on alpha run
+  Velocity the workers keep the operator registrations of their warm-up: on a development installation run
   `./console exp:velocity deploy --allow-root-user`, which clears these caches and restarts Velocity.
 
 ## Risks and how to keep them small

@@ -3,7 +3,7 @@ title: Die Operatoren von ezjscore im Detail
 audience: developer, designer, app-creator
 category: development
 order: 400
-summary: Jeder Operator der Erweiterung ezjscore - die Packer-Operatoren ezscript, ezscript_require, ezscript_load, ezscriptfiles, ezcss, ezcss_require, ezcss_load, ezcssfiles, die Encoder json_encode, xml_encode, node_encode sowie has_access_to_limitation - mit allen Parametern, dem Mechanismus der persistenten Variablen hinter require und load, den Packstufen und auf alpha gerenderten Beispielen.
+summary: Jeder Operator der Erweiterung ezjscore - die Packer-Operatoren ezscript, ezscript_require, ezscript_load, ezscriptfiles, ezcss, ezcss_require, ezcss_load, ezcssfiles, die Encoder json_encode, xml_encode, node_encode sowie has_access_to_limitation - mit allen Parametern, dem Mechanismus der persistenten Variablen hinter require und load, den Packstufen und auf einer Entwicklungsinstallation gerenderten Beispielen.
 keywords: ezjscore, Packer, Packstufe, persistente Variable, Stylesheets, JavaScript, Zugriffsrechte, ezscript, ezscript_require, ezscript_load, ezscriptfiles, ezcss, ezcss_require, ezcss_load, ezcssfiles, json_encode, xml_encode, node_encode, has_access_to_limitation, packer, pack_level, persistent_variable
 type: help
 ---
@@ -42,7 +42,7 @@ Alle Packer-Operatoren übergeben ihre Dateiliste an `ezjscPacker` (`extension/e
 - `pack_level` 0 verlinkt die Dateien so, wie sie sind. Oberhalb von 0 werden die Dateien im Cache-Ordner
   (`var/<site>/cache/public/`) zu einer Datei zusammengefügt, und höhere Stufen minimieren sie zusätzlich. `ezjscore.ini`
   `[eZJSCore] Packer=disabled` erzwingt 0, eine Zahl an dieser Stelle ersetzt jedes `pack_level`; ist `Packer` nicht gesetzt,
-  erzwingt `[TemplateSettings] DevelopmentMode=enabled` den Wert 0. Auf alpha gilt `Packer=enabled`, also entscheidet der Parameter.
+  erzwingt `[TemplateSettings] DevelopmentMode=enabled` den Wert 0. Auf einer Entwicklungsinstallation gilt `Packer=enabled`, also entscheidet der Parameter.
 - Beim Packen wird die zusammengefügte Datei geschrieben, wenn eine Liste zum ersten Mal verwendet wird. Die Beispiele auf dieser
   Seite verwenden `pack_level` 0, damit sie nichts schreiben.
 - An die Links wird keine Versionsabfrage angehängt; eine geänderte Datei erhält einen neuen gepackten Namen, weil der Name die
@@ -52,7 +52,7 @@ Alle Packer-Operatoren übergeben ihre Dateiliste an `ezjscPacker` (`extension/e
 Packer setting: [{ezini( 'eZJSCore', 'Packer', 'ezjscore.ini' )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Packer setting: [enabled]
@@ -116,7 +116,7 @@ Dasselbe für Stylesheets: `css_array`, `pack_level` (Standard 3), `ignore_loade
 4 {ezscript( array( 'ezjsc::jquery' ), 'text/javascript', '', 'utf-8', 0 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 /extension/ezwebin/design/ezwebin/stylesheets/core.css /design/standard/stylesheets/debug.css
@@ -169,7 +169,7 @@ zurückgesetzt. Die folgende Reihenfolge zeigt den ganzen Ablauf in einem Templa
 5 again: [{ezcss_require( array( 'pagelayout.css' ), 'all', 'text/css', 'stylesheet', '', 0 )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 require: []
@@ -236,7 +236,7 @@ Fordern Sie nur Aliase an, die die Bilder bereits haben.
 4 node_encode as JSON: {node_encode( $node, hash(), 'json' )|count_chars} characters, starts {node_encode( $node, hash(), 'json' )|extract_left( 40 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 {"title":"Privacy Policy","children":0,"tags":["a","b"]}
@@ -264,7 +264,7 @@ Zuerst entscheidet `hasAccessTo()`: `yes` und `no` werden unverändert zurückge
 Richtlinien pro übergebenem Limitierungsschlüssel zusammengeführt; der Aufruf ergibt `true`, wenn jeder übergebene Wert unter den
 zusammengeführten Werten ist (`Subtree` und `User_Subtree` passen, wenn Ihre Pfadzeichenkette einen der erlaubten Pfade enthält).
 Limitierungsschlüssel der Richtlinien, die Sie nicht übergeben haben, werden ignoriert (mit `debug` in der Debug-Ausgabe vermerkt).
-Auf alpha liest die anonyme Rolle die Sektionen 1, 3 und 67, daher wird Sektion 2 abgelehnt:
+Auf einer Entwicklungsinstallation liest die anonyme Rolle die Sektionen 1, 3 und 67, daher wird Sektion 2 abgelehnt:
 
 ```tpl
 {def $access = fetch( 'user', 'has_access_to', hash( 'module', 'content', 'function', 'read' ) )}
@@ -275,7 +275,7 @@ anonymous content/read: {$access|choose( 'no', 'yes' )}
 4 content/edit: {has_access_to_limitation( 'content', 'edit', hash( 'Section', 1 ) )|choose( 'no', 'yes' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 anonymous content/read: yes

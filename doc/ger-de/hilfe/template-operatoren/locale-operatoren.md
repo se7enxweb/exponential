@@ -3,7 +3,7 @@ title: Locale-Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 210
-summary: Die 7 Operatoren von eZTemplateLocaleOperator - l10n mit allen neun Formatierungstypen, datetime mit den Klassen der datetime.ini und eigenen Formaten, locale, currentdate, maketime, makedate und gettime - mit auf alpha ausgegebenen Beispielen und dem Unterschied von gettime im kompilierten Template.
+summary: Die 7 Operatoren von eZTemplateLocaleOperator - l10n mit allen neun Formatierungstypen, datetime mit den Klassen der datetime.ini und eigenen Formaten, locale, currentdate, maketime, makedate und gettime - mit auf einer Entwicklungsinstallation ausgegebenen Beispielen und dem Unterschied von gettime im kompilierten Template.
 keywords: Lokalisierung, Datumsformat, Zahlenformat, Währung, Zeitstempel, Uhrzeit, Gebietsschema, l10n, datetime, locale, currentdate, maketime, makedate, gettime, date format, number format, currency, datetime.ini, eZLocale, eZTemplateLocaleOperator
 type: help
 ---
@@ -15,7 +15,7 @@ Operatoren auf dieser Seite registriert `eZTemplateLocaleOperator` (`lib/eztempl
 (`lib/ezlocale/classes/ezlocale.php`) und den Locale-Dateien in `share/locale/`.
 
 Alle Beispiele verwenden feste, mit `maketime` erzeugte Zeitstempel, damit sie sich nicht von Tag zu Tag ändern.
-Formate ohne Locale-Code verwenden die Locale des Siteaccess (auf dem Siteaccess site von alpha: US-englische Formate,
+Formate ohne Locale-Code verwenden die Locale des Siteaccess (auf dem Siteaccess site einer Entwicklungsinstallation: US-englische Formate,
 wie die Ausgabe zeigt).
 
 ## Inhalt
@@ -69,7 +69,7 @@ currency      {1234.5|l10n( 'currency' )}
 clean_currency {1234.5|l10n( 'clean_currency' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 time          02:05:00 pm
@@ -93,7 +93,7 @@ ger-DE currency {1234.5|l10n( 'currency', 'ger-DE' )}
 currency with symbol 'EUR' {1234.5|l10n( 'currency', 'eng-GB', 'EUR' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 ger-DE date     Montag, 19. Oktober 2026
@@ -118,7 +118,7 @@ die Locale in ihrer Sprache aus.
 | `class` | Zeichenkette: ein Klassenname oder `custom` | ja | `false` |
 | `data` | Zeichenkette: das Format, mit `custom` | nein | `false` |
 
-Die Klassen auf alpha (`datetime.ini` des Kernels; ezfind fügt `solr` hinzu, ezfind ist hier aber nicht aktiv):
+Die Klassen auf einer Entwicklungsinstallation (`datetime.ini` des Kernels; ezfind fügt `solr` hinzu, ezfind ist hier aber nicht aktiv):
 
 | Klasse | Format |
 |---|---|
@@ -144,7 +144,7 @@ custom ISO 8601 {$t|datetime( 'custom', '%Y-%m-%dT%H:%i:%s' )}
 custom words    {$t|datetime( 'custom', '%l %j %F %Y' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 short_date      19.10.2026
@@ -162,7 +162,7 @@ Eine Klasse, die es nicht gibt, protokolliert einen Fehler und lässt den Zeitst
 [{maketime( 14, 5, 0, 10, 19, 2026 )|datetime( 'no_such_class' )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [1792443900]
@@ -230,7 +230,7 @@ gettime( $t ): {foreach $info as $key => $value}{$key}={$value} {/foreach}
 gettime( $d ).weekday = {gettime( $d ).weekday}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 maketime( 14, 5, 0, 10, 19, 2026 ) = 1792443900
@@ -246,17 +246,17 @@ gettime( $d ).weekday = 5
 $t|gettime.hours = {$t|gettime.hours}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 $t|gettime.hours = 14
 ```
 
 der kompilierte Code (`getTimeTransformation()`) beachtet aber nur die Parameter, daher verwendete dieselbe Zeile
-kompiliert auf alpha die aktuelle Zeit und gab statt 14 die aktuelle Stunde aus. `gettime( $t )` liefert in beiden
+kompiliert auf einer Entwicklungsinstallation die aktuelle Zeit und gab statt 14 die aktuelle Stunde aus. `gettime( $t )` liefert in beiden
 Fällen dieselbe Antwort.
 
-Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
+Ausgabe mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ```text
 $t|gettime.hours = 2
@@ -271,7 +271,7 @@ mit Ansichtscache ist der Wert die Zeit, zu der der Cache erstellt wurde.
 Erzeugte Referenz: [currentdate](../../beispiele/template-operatoren/currentdate.md).
 
 Das Beispiel prüft den Wert, statt ihn auszugeben, damit sich die Seite nicht jeden Tag ändert; außerdem berechnet es
-ein Alter in Tagen aus dem Veröffentlichungsdatum des Artikels Privacy Policy auf alpha (Knoten 90):
+ein Alter in Tagen aus dem Veröffentlichungsdatum des Artikels Privacy Policy auf einer Entwicklungsinstallation (Knoten 90):
 
 ```tpl
 {def $now = currentdate()}
@@ -279,7 +279,7 @@ currentdate() is a Unix timestamp: {$now|is_integer|choose( 'no', 'yes' )}, afte
 Published age of the Privacy Policy article in whole days is a number: {div( sub( $now, fetch( 'content', 'node', hash( 'node_id', 90 ) ).object.published ), 86400 )|floor|is_numeric|choose( 'no', 'yes' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 currentdate() is a Unix timestamp: yes, after 2026-01-01: yes
@@ -308,7 +308,7 @@ locale( 'ger-DE' ): {$de.locale_code}, {$de.language_name}, currency {$de.curren
 'nor-NO'|locale: {$no.locale_code}, {$no.language_name}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 locale( 'ger-DE' ): ger-DE, Deutsch (Deutschland), currency €

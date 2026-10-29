@@ -3,7 +3,7 @@ title: ezwebin operators
 audience: developer, designer, app-creator
 category: development
 order: 410
-summary: The six operators of the ezwebin extension - ezpagedata, ezpagedata_set, ezpagedata_append, ezarchive, ezkeywordlist and eztagcloud - with their parameters, what ezpagedata computes for a pagelayout, the database engines ezarchive supports, and examples rendered on alpha.
+summary: The six operators of the ezwebin extension - ezpagedata, ezpagedata_set, ezpagedata_append, ezarchive, ezkeywordlist and eztagcloud - with their parameters, what ezpagedata computes for a pagelayout, the database engines ezarchive supports, and examples rendered on a development installation.
 keywords: ezwebin, ezpagedata, ezpagedata_set, ezpagedata_append, ezarchive, ezkeywordlist, eztagcloud, page data, persistent_variable, tag cloud, keywords, archive
 type: help
 ---
@@ -80,7 +80,7 @@ keys: {foreach $page as $k => $v}{$k}{delimiter} {/delimiter}{/foreach}
 left_menu={$page.left_menu|choose( 'false', 'true' )} css_classes={$page.css_classes} top_menu={$page.top_menu} root_node={$page.root_node}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 
@@ -101,7 +101,7 @@ left_menu=false css_classes=nosidemenu noextrainfo top_menu=flat_top root_node=8
   in which visible children of `parent_node_id` of that class have a `publication_date` attribute value.
 
 The attribute identifier `publication_date` is fixed in the SQL. The operator has SQL for MySQL, PostgreSQL and
-Oracle only; on any other engine the query is empty and the result is an empty list. Alpha runs SQLite, so:
+Oracle only; on any other engine the query is empty and the result is an empty list. The development installation used here runs SQLite, so:
 
 ```tpl
 database: {ezini( 'DatabaseSettings', 'DatabaseImplementation' )}
@@ -110,7 +110,7 @@ database: {ezini( 'DatabaseSettings', 'DatabaseImplementation' )}
 ezarchive rows: {$months|count}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 database: sqlite3
@@ -154,7 +154,7 @@ eztagcloud:
 {eztagcloud( hash( 'parent_node_id', 2, 'sort_by', array( 'count', false() ), 'limit', 4 ) )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 ezkeywordlist: 0 keywords, first: 

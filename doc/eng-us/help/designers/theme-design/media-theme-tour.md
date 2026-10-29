@@ -130,7 +130,7 @@ model.
 
 ## Related pages
 
-- [The themes that ship with Exponential](themes-on-alpha.md)
+- [The themes that ship with Exponential](themes-that-ship-with-exponential.md)
 - [The packer](the-packer.md)
 - [Layouts for designers](layouts-for-designers.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

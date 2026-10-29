@@ -53,7 +53,7 @@ Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei.
 > include.  
 > Speicher: 512 MB für Skripte und 64 MB für interned strings. Die Indexdateien des Hilfecenters sind je 18-24 MB  
 > pro Sprache, und mit 256/32 war der Puffer der interned strings nach einigen Hilfeanfragen voll (gemessen auf  
-> alpha, 2026-10-20: 32.0 von 32.0 MB, 141.6 von 256 MB belegt drei Minuten nach einem Neustart). Der Speicher wird  
+> einer Entwicklungsinstallation, 2026-10-20: 32.0 von 32.0 MB, 141.6 von 256 MB belegt drei Minuten nach einem Neustart). Der Speicher wird  
 > von jedem Worker einer Instanz geteilt und reserviert, nicht belegt, bis er sich füllt.  
 > file\_update\_protection=0 aus demselben Grund: Der Cache behält kein Skript, das  
 > weniger als file\_update\_protection Sekunden vor dem Start der ANFRAGE geändert wurde,  

@@ -3,7 +3,7 @@ title: Module result reference
 audience: developer, designer, app-creator
 category: development
 order: 310
-summary: Every key of $Result / $module_result found in the kernel - content, path, title_path, content_info and its 25 keys, view_parameters, pagelayout, navigation_part, left_menu, errorType and the rest - with the code that sets each and the values content/view returned on alpha.
+summary: Every key of $Result / $module_result found in the kernel - content, path, title_path, content_info and its 25 keys, view_parameters, pagelayout, navigation_part, left_menu, errorType and the rest - with the code that sets each and the values content/view returned on a development installation.
 keywords: $module_result, $Result, content_info, path, title_path, view_parameters, pagelayout, navigation_part, errorType, errorNumber, cache_ttl, template_list, ui_context, reference
 type: help
 ---
@@ -12,7 +12,7 @@ type: help
 A module view returns an array, `$Result`; the kernel adds a few keys and hands it to the pagelayout as
 `$module_result` (see [Module view templates](module-view-templates.md)). This page lists every key the kernel's
 views, `eZModule::run()` and `ezpKernelWeb` set, found by searching the kernel for `$Result['...']` and
-`$moduleResult['...']`. The values in the examples are what `content/view/full/96` returned on alpha.
+`$moduleResult['...']`. The values in the examples are what `content/view/full/96` returned on a development installation.
 
 ## Contents
 
@@ -55,22 +55,22 @@ views, `eZModule::run()` and `ezpKernelWeb` set, found by searching the kernel f
 `eZNodeviewfunctions::generateNodeViewData()` (`kernel/classes/eznodeviewfunctions.php`) builds these for
 `content/view`:
 
-| Key | Value on alpha (node 96) |
+| Key | Value on a development installation (node 96) |
 |---|---|
 | `view_parameters` | `offset`, `year`, `month`, `day`, `namefilter`, plus every user parameter (see [View parameters](view-parameters.md)) |
 | `section_id` | `1` |
 | `node_id` | `96` |
 | `content_info` | see below |
-| `template_list` | the templates used to render the view (11 on alpha), stored with the view cache so a changed template expires it |
+| `template_list` | the templates used to render the view (11 on a development installation), stored with the view cache so a changed template expires it |
 | `cache_ttl` | `-1`, or the value of a template variable `$cache_ttl`; `0` adds `no_cache` |
 | `no_cache` | `true` when a template set `cache_ttl` to 0 |
 
 ## content_info
 
-`content_info` lets the pagelayout know what the page shows without a fetch. All 25 keys, as alpha returned them for
+`content_info` lets the pagelayout know what the page shows without a fetch. All 25 keys, as a development installation returned them for
 node 96:
 
-| Key | Value on alpha | Meaning |
+| Key | Value on a development installation | Meaning |
 |---|---|---|
 | `object_id` | `94` | content object ID |
 | `node_id` | `96` | node ID |
@@ -105,9 +105,9 @@ available whether the page was cached or not.
 ## Keys of error results
 
 A view that fails calls `$Module->handleError()`, which runs the error view
-(`kernel/private/classes/views/error/view.php`). On alpha, `content/view/full/99999999` returned:
+(`kernel/private/classes/views/error/view.php`). On a development installation, `content/view/full/99999999` returned:
 
-| Key | Value on alpha |
+| Key | Value on a development installation |
 |---|---|
 | `errorType` | `'kernel'` |
 | `errorNumber` | `3`, `eZError::KERNEL_NOT_AVAILABLE` (the numbers are constants of `eZError`, `kernel/classes/ezerror.php`: 1 access denied, 2 not found, 3 not available, 4 moved, 5 language not found, 6 form token refused, 20 module not found, 21 view not found, 22 module disabled) |
@@ -121,7 +121,7 @@ templates of their own (see [Error templates](../designers/templates/error-templ
 
 ## Reading it in the pagelayout
 
-Not run on alpha: `$module_result` exists only while the kernel renders a pagelayout for a web request, so this
+Not run on a development installation: `$module_result` exists only while the kernel renders a pagelayout for a web request, so this
 example cannot run in the CLI example renderer. The values it reads are the ones listed in the tables above, which
 came from running the view.
 

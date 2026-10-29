@@ -3,7 +3,7 @@ title: Custom template functions
 audience: developer, app-creator
 category: development
 order: 500
-summary: Writing a template function (a brace tag with named parameters and an optional body) in an extension - functionList, hasChildren, attributeList, process, evaluating parameters, rendering the body, registration in eztemplateautoload.php, compile-time hints - and extending or overriding the kernel's functions, with a sample function rendered on alpha.
+summary: Writing a template function (a brace tag with named parameters and an optional body) in an extension - functionList, hasChildren, attributeList, process, evaluating parameters, rendering the body, registration in eztemplateautoload.php, compile-time hints - and extending or overriding the kernel's functions, with a sample function rendered on a development installation.
 keywords: template function, custom function, functionList, hasChildren, attributeList, process, processNode, elementValue, eZTemplateFunctionArray, function_names, function_attributes, functionTemplateHints, override function
 type: help
 ---
@@ -121,7 +121,7 @@ is loaded; the library registers `if`'s `elseif` and `else` this way). The exten
 
 ## Using it
 
-Not run on alpha as an installed extension: the script that rendered these examples registered the entry above on
+Not run on a development installation as an installed extension: the script that rendered these examples registered the entry above on
 the template engine in memory, with the class in a scratch folder. Interpreted and compiled results were the same.
 
 ```tpl
@@ -130,7 +130,7 @@ the template engine in memory, with the class in a scratch folder. Interpreted a
 {c11_box title='Plain'}<p>Default class</p>{/c11_box}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 <section class="teaser"><h2>Fit &amp; Healthy</h2><p>16 children</p></section><section class="box"><h2>Plain</h2><p>Default class</p></section>
@@ -142,7 +142,7 @@ A missing parameter, handled by the function's own check:
 {c11_box}<p>no title</p>{/c11_box}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 (no output)
@@ -161,7 +161,7 @@ the name), so the body is swallowed too, and the engine logs a warning:
 {c11_unknown title='x'}<p>body</p>{/c11_unknown}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 (no output)
@@ -187,7 +187,7 @@ compiled output; the reasons are the same as for operators
 
 Function names follow the operator rules exactly: the last `eztemplateautoload.php` entry for a name wins, and a
 class registers all names of its `functionList()` when it is loaded
-([Registration order and overrides](../template-operators/registration-order-and-overrides.md)). On alpha no
+([Registration order and overrides](../template-operators/registration-order-and-overrides.md)). On a development installation no
 function name is registered twice. To change a kernel or library function from an extension:
 
 - subclass the class that owns the name (for example `eZTemplateBlockFunction`, which owns `set-block`,
@@ -196,9 +196,9 @@ function name is registered twice. To change a kernel or library function from a
 - register the subclass for **all** names of the parent class, and keep `function_attributes` and `hasChildren()`
   consistent with the parent;
 - drop the parent's `functionTemplateHints()` entry for the name you change, or compiled templates keep the
-  parent's code ([the operator case, shown on alpha](../template-operators/overriding-kernel-operators.md#drop-the-compile-time-code-you-change)).
+  parent's code ([the operator case, shown on a development installation](../template-operators/overriding-kernel-operators.md#drop-the-compile-time-code-you-change)).
 
-Not demonstrated with a function on alpha: the override of a function name uses the same code path as for
+Not demonstrated with a function on a development installation: the override of a function name uses the same code path as for
 operators (`registerAutoloadFunctions()`, `registerFunctionsInternal()`), which
 [Overriding kernel operators](../template-operators/overriding-kernel-operators.md) shows rendered. Overriding
 the language's own control functions (`if`, `foreach`, `def`, `include`) changes every template on the

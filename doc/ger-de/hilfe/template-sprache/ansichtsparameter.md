@@ -3,7 +3,7 @@ title: Ansichtsparameter
 audience: developer, designer, app-creator
 category: development
 order: 320
-summary: Der Teil /(name)/value einer URL - wie eZURI ihn zerlegt, wie eZModule::run() ihn den ungeordneten Parametern und UserParameters einer Ansicht zuordnet, was content/view daraus macht ($view_parameters, eine Variable pro Name, content_info.offset) und wie er den Schlüssel des Content-View-Cache ändert - auf alpha belegt.
+summary: Der Teil /(name)/value einer URL - wie eZURI ihn zerlegt, wie eZModule::run() ihn den ungeordneten Parametern und UserParameters einer Ansicht zuordnet, was content/view daraus macht ($view_parameters, eine Variable pro Name, content_info.offset) und wie er den Schlüssel des Content-View-Cache ändert - auf einer Entwicklungsinstallation belegt.
 keywords: Ansichtsparameter, Benutzerparameter, $view_parameters, unordered_params, UserParameters, (offset), offset, Seitenblättern, Paginierung, eZURI, Schlüssel des View-Cache, namefilter, view parameters, user parameters, pagination, view cache key
 type: help
 ---
@@ -27,7 +27,7 @@ oder „nur die roten Einträge“, ohne Query-String. Diese Seite folgt ihnen v
 
 `eZURI` (`lib/ezutils/classes/ezuri.php`) zerlegt die URI. Ein Element, das auf `^\([a-zA-Z0-9_]+\)` passt, beginnt einen Parameter; das
 nächste Element ist sein Wert; weitere Elemente bis zum nächsten Parameter werden mit `/` an den Wert angehängt. Der Kernel übergibt das
-Ergebnis, `$this->uri->userParameters()`, an das Modul (`ezpKernelWeb`). Ein nur lesendes CLI-Skript auf alpha zerlegte einige Beispiel-URIs
+Ergebnis, `$this->uri->userParameters()`, an das Modul (`ezpKernelWeb`). Ein nur lesendes CLI-Skript auf einer Entwicklungsinstallation zerlegte einige Beispiel-URIs
 mit `new eZURI( $uri )`:
 
 ```text
@@ -95,7 +95,7 @@ $viewParameters = array(
 $viewParameters = array_merge( $viewParameters, $UserParameters );
 ```
 
-Das nur lesende Ausführen der Ansicht auf alpha (wie auf [Templates von Modulansichten](templates-von-modulansichten.md)) zeigte die Wirkung. Mit den
+Das nur lesende Ausführen der Ansicht auf einer Entwicklungsinstallation (wie auf [Templates von Modulansichten](templates-von-modulansichten.md)) zeigte die Wirkung. Mit den
 Benutzerparametern `offset=10` und `color=red`:
 
 ```text
@@ -160,7 +160,7 @@ definiert ist (in einem echten Knoten-Template setzt ihn der Kernel):
 color: {first_set( $view_parameters.color, 'none' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Recipes: 18 children, page 2 of 6
@@ -181,7 +181,7 @@ Hängen Sie die Paare vor `ezurl` an den URL-Alias des Knotens an:
 <a href={concat( $node.url_alias, '/(offset)/', sum( $offset, $limit ) )|ezurl}>Next</a>
 ```
 
-Nicht auf alpha ausgeführt: Ein Link zeigt seinen Nutzen erst in einem Browser; die Seite des Zerlegens ist oben belegt. Nutzen Sie nur Namen
+Nicht auf einer Entwicklungsinstallation ausgeführt: Ein Link zeigt seinen Nutzen erst in einem Browser; die Seite des Zerlegens ist oben belegt. Nutzen Sie nur Namen
 aus Buchstaben, Ziffern und Unterstrichen, sonst erkennt `eZURI` sie nicht als Parameter.
 
 ## Ansichtsparameter und der View-Cache

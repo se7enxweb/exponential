@@ -32,8 +32,8 @@ die Arbeit organisiert wird.
 | Hilfe bei Entwürfen, Zusammenfassungen und Übersetzungen | Exponential Intelligence (nur Entwürfe, veröffentlicht nie) | [Exponential Intelligence für Betreiber](../wachstum/exponential-intelligence.md) |
 
 Alle diese Funktionen sind in der `README.md` des Repositorys unter „Main Exponential features“ aufgeführt. Welche
-Inhaltsklassen Ihre Website hat (ein Artikel, eine Nachricht, eine Galerie), hängt davon ab, wie sie gebaut wurde: Die
-Demo-Installation unter <https://alpha.se7enx.com> enthält unter anderem die Klassen Article, News, Gallery, Video und
+Inhaltsklassen Ihre Website hat (ein Artikel, eine Nachricht, eine Galerie), hängt davon ab, wie sie gebaut wurde: Eine
+Demo-Installation enthält unter anderem die Klassen Article, News, Gallery, Video und
 Event, Ihre eigene Website verwendet aber vielleicht andere Namen.
 
 ## Wer am Desk was tut

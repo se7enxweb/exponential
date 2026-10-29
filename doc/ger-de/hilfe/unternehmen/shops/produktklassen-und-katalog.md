@@ -40,7 +40,7 @@ praktische Vorteile:
 
 ## Die Produktklasse im Auslieferungszustand
 
-Auf der Installation alpha (https://alpha.se7enx.com) hat die Klasse **Product** diese Felder in dieser Reihenfolge:
+Auf einer Entwicklungsinstallation hat die Klasse **Product** diese Felder in dieser Reihenfolge:
 
 | Feld | Datentyp | Verwendung |
 |---|---|---|

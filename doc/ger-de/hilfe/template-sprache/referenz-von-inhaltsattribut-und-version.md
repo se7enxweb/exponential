@@ -3,7 +3,7 @@ title: Referenz von Inhaltsattribut und Version
 audience: developer, designer, app-creator
 category: development
 order: 230
-summary: Jedes Attribut, das ein Template von einem Inhaltsobjekt-Attribut (eZContentObjectAttribute, die Einträge von data_map) und von einer Version (eZContentObjectVersion) lesen kann, mit der PHP-Methode hinter jedem, Werten von alpha und dem, was .content für jeden Datentyp in den Inhalten von alpha zurückgibt.
+summary: Jedes Attribut, das ein Template von einem Inhaltsobjekt-Attribut (eZContentObjectAttribute, die Einträge von data_map) und von einer Version (eZContentObjectVersion) lesen kann, mit der PHP-Methode hinter jedem, Werten einer Entwicklungsinstallation und dem, was .content für jeden Datentyp in den Inhalten einer Entwicklungsinstallation zurückgibt.
 keywords: eZContentObjectAttribute, eZContentObjectVersion, Eintrag von data_map, content, has_content, data_text, data_int, sort_key_string, view_template, Inhalt des Datentyps, Version, translation_list, Referenz, data_map item, datatype content, version, reference
 type: help
 ---
@@ -24,11 +24,11 @@ oder `$object.versions`. Diese Seite führt auf, was Templates von beiden lesen 
 7. [Verwandte Seiten](#verwandte-seiten)
 
 Die Tabellen entstanden wie die Tabelle der [Knotenattribute](referenz-der-knotenattribute.md): `definition()` aufgeführt und jeder Name auf
-alpha gelesen, hier am Attribut `title` und an der aktuellen Version von Knoten 96 (Objekt 94, ein `ng_article`).
+einer Entwicklungsinstallation gelesen, hier am Attribut `title` und an der aktuellen Version von Knoten 96 (Objekt 94, ein `ng_article`).
 
 ## Inhaltsobjekt-Attribut: Datenbankfelder
 
-| Attribut | Datenbankspalte / Mitglied | Datentyp | Wert auf alpha (Knoten 96) |
+| Attribut | Datenbankspalte / Mitglied | Datentyp | Wert auf einer Entwicklungsinstallation (Knoten 96) |
 |---|---|---|---|
 | `id` | `ID` | integer | integer 580 |
 | `contentobject_id` | `ContentObjectID` | integer | integer 94 |
@@ -50,7 +50,7 @@ Die Felder `data_text`, `data_int` und `data_float` sind die rohe Speicherung. W
 
 ## Inhaltsobjekt-Attribut: Funktionsattribute
 
-| Funktionsattribut | PHP-Methode | Wert auf alpha (Knoten 96) |
+| Funktionsattribut | PHP-Methode | Wert auf einer Entwicklungsinstallation (Knoten 96) |
 |---|---|---|
 | `contentclass_attribute` | `eZContentObjectAttribute::contentClassAttribute()` | Objekt eZContentClassAttribute |
 | `contentclass_attribute_identifier` | `eZContentObjectAttribute::contentClassAttributeIdentifier()` | string "title" |
@@ -88,7 +88,7 @@ templates:               view {$attribute.view_template}, edit {$attribute.edit_
 stored:                  data_text "{$attribute.data_text|wash}", sort_key_string "{$attribute.sort_key_string|wash}"
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 id / version / language: 580 / 1 / eng-US
@@ -102,7 +102,7 @@ stored:                  data_text "Why Should You Choose Strength Training?", s
 ## Was content zurückgibt, pro Datentyp
 
 `content` ruft `eZContentObjectAttribute::content()` auf, das einmal `objectAttributeContent()` des Datentyps fragt und das Ergebnis am
-Attribut behält. Dieses Template durchlief die ersten 150 Knoten unter der Startseite Fit & Healthy auf alpha und gab für jeden Datentyp beim
+Attribut behält. Dieses Template durchlief die ersten 150 Knoten unter der Startseite Fit & Healthy auf einer Entwicklungsinstallation und gab für jeden Datentyp beim
 ersten Mal mit Inhalt aus, was `content` zurückgab:
 
 ```tpl
@@ -112,7 +112,7 @@ ersten Mal mit Inhalt aus, was `content` zurückgab:
 {/if}{/foreach}{/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 ezstring: string (ng_article.title)
@@ -135,7 +135,7 @@ ezsrrating: object ezsrratingobject (product.rating)
 ezmatrix: object ezmatrix (product.specifications)
 ```
 
-| Datentyp | `content` auf alpha | Seite des Datentyps |
+| Datentyp | `content` auf einer Entwicklungsinstallation | Seite des Datentyps |
 |---|---|---|
 | `ezstring`, `eztext`, `ezemail`, `ezurl` | Zeichenkette (bei `ezurl` die URL) | [ezstring](../../beispiele/datentypen/ezstring.md), [eztext](../../beispiele/datentypen/eztext.md), [ezemail](../../beispiele/datentypen/ezemail.md), [ezurl](../../beispiele/datentypen/ezurl.md) |
 | `ezinteger`, `ezboolean` | ganze Zahl | [ezinteger](../../beispiele/datentypen/ezinteger.md), [ezboolean](../../beispiele/datentypen/ezboolean.md) |
@@ -157,7 +157,7 @@ ezmatrix: object ezmatrix (product.specifications)
 
 ## Version: Datenbankfelder
 
-| Attribut | Datenbankspalte / Mitglied | Datentyp | Wert auf alpha (Knoten 96) |
+| Attribut | Datenbankspalte / Mitglied | Datentyp | Wert auf einer Entwicklungsinstallation (Knoten 96) |
 |---|---|---|---|
 | `id` | `ID` | integer | integer 544 |
 | `contentobject_id` | `ContentObjectID` | integer | integer 94 |
@@ -176,7 +176,7 @@ ezmatrix: object ezmatrix (product.specifications)
 
 ## Version: Funktionsattribute
 
-| Funktionsattribut | PHP-Methode | Wert auf alpha (Knoten 96) |
+| Funktionsattribut | PHP-Methode | Wert auf einer Entwicklungsinstallation (Knoten 96) |
 |---|---|---|
 | `creator` | `eZContentObjectVersion::creator()` | Objekt eZContentObject |
 | `name` | `eZContentObjectVersion::name()` | string "Why Should You Choose Strength Training?" |
@@ -209,7 +209,7 @@ translations: {foreach $version.translation_list as $t}{$t.language_code}{delimi
 creator object id: {$version.creator_id}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 version 1, status 1, created 2020-09-24
@@ -227,7 +227,7 @@ creator object id: 14
   das Template des Sammlers zurück.
 - `class_content` ist der Inhalt des Klassenattributs (die Einstellungen des Felds, etwa die Optionen einer Auswahl).
 - `has_content` kommt von `hasObjectAttributeContent()` des Datentyps. Die meisten Datentypen geben einen booleschen Wert zurück; der Datentyp
-  `ezimage` gab auf alpha bei einem Bildfeld ohne Bild eine leere Zeichenkette zurück (siehe [Der Template-Compiler](der-template-compiler.md) dazu,
+  `ezimage` gab auf einer Entwicklungsinstallation bei einem Bildfeld ohne Bild eine leere Zeichenkette zurück (siehe [Der Template-Compiler](der-template-compiler.md) dazu,
   warum das bei `choose` zählt).
 - `can_read` und `can_remove` einer Version prüfen die Richtlinien `content/versionread` und `content/versionremove` des aktuellen Benutzers;
   als anonymer Benutzer waren beide false.

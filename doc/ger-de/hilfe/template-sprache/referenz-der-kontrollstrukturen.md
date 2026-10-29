@@ -3,7 +3,7 @@ title: Referenz der Kontrollstrukturen
 audience: developer, designer, app-creator
 category: development
 order: 130
-summary: Jeder Parameter von if, elseif und else, switch und case (match, in, key und der Standardfall), foreach (key, sequence, offset, max, reverse), for, while und do und die Schleifenhelfer delimiter (mit modulo), break, continue und skip - mit ihrem genauen Verhalten aus dem Code, jeder auf alpha gezeigt.
+summary: Jeder Parameter von if, elseif und else, switch und case (match, in, key und der Standardfall), foreach (key, sequence, offset, max, reverse), for, while und do und die Schleifenhelfer delimiter (mit modulo), break, continue und skip - mit ihrem genauen Verhalten aus dem Code, jeder auf einer Entwicklungsinstallation gezeigt.
 keywords: Kontrollstrukturen, if, elseif, else, switch, case, match, in, key, foreach, offset, max, reverse, sequence, for, while, do, delimiter, modulo, break, continue, skip, Schleifen, control structures, loops
 type: help
 ---
@@ -43,7 +43,7 @@ Die Bedingung ist ein einzelner Ausdruck; verbinden Sie Prüfungen mit `and()`, 
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 noneone7 items
@@ -58,7 +58,7 @@ sind `0`, `1`, `''`, `'x'`, `'0'`, `array()`, `array( 0 )`, `false()`, `true()`:
 {foreach array( 0, 1, '', 'x', '0', array(), array( 0 ), false(), true() ) as $v}[{if $v}T{else}F{/if}]{/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [F][T][F][T][F][F][T][F][T]
@@ -90,14 +90,14 @@ Der erste passende Fall gewinnt. Ein zweiter Fall mit demselben Wert für `match
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 onetwo or threedefault for other
 ```
 
 Mit `key` übergibt der Code den Wert an `eZTemplate::variableAttribute()`, das eine **Liste** von Attributnamen durchläuft. Eine einfache
-Zeichenkette wird dort nicht in eine Liste umgewandelt, also findet nur die Form als Array das Element; so verhält sich alpha heute:
+Zeichenkette wird dort nicht in eine Liste umgewandelt, also findet nur die Form als Array das Element; so verhält sich eine Entwicklungsinstallation heute:
 
 ```tpl
 {def $people = array( hash( 'id', 7, 'name', 'Ada' ), hash( 'id', 9, 'name', 'Lin' ) )}
@@ -105,7 +105,7 @@ key as a string: {switch match=9}{case in=$people key='id'}found{/case}{case}not
 key as an array: {switch match=9}{case in=$people key=array( 'id' )}found{/case}{case}not found{/case}{/switch}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 key as a string: not foundkey as an array: found
@@ -117,7 +117,7 @@ Wenn nichts passt und es keinen Standardfall gibt, gibt der switch nichts aus un
 [{switch match=5}{case match=1}one{/case}{/switch}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 []
@@ -156,7 +156,7 @@ Sequenz sind gewöhnliche Variablen der Datei, nicht eines Namensraums.
 {foreach hash( 'one', 1, 'two', 2 ) as $key => $value}{$key}={$value} {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [1:b:x]|[2:c:y]|[3:d:x]4321one=1 two=2
@@ -168,7 +168,7 @@ Ein leeres Array führt den Rumpf null Mal aus, ohne Warnung:
 [{foreach array() as $v}{$v}{/foreach}] empty array: no output
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [] empty array: no output
@@ -186,13 +186,13 @@ angelegt hat, ein kompiliertes behält sie mit ihrem letzten Wert; eine Variable
 [{$item}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [v removed after the loop][2]
 ```
 
-Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
+Ausgabe mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ```text
 [v still set][2]
@@ -221,7 +221,7 @@ In dieser Schleife wird bei 2 fortgesetzt (sein Delimiter wird trotzdem ausgegeb
 {foreach array( 1, 2, 3, 4, 5, 6 ) as $v}{if eq( $v, 2 )}{continue}{/if}{if eq( $v, 4 )}{skip}{/if}{if eq( $v, 6 )}{break}{/if}{$v}{delimiter}-{/delimiter}{/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1--3-5-
@@ -236,7 +236,7 @@ nur ausgegeben, wenn der Index des Durchlaufs durch n teilbar ist:
 {foreach array( 1, 2, 3, 4, 5, 6 ) as $v}{$v}{delimiter modulo=2} / {/delimiter}{/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 12 / 34 / 56
@@ -257,7 +257,7 @@ Delimiter nach 3 ausgegeben, bevor das `{break}` des nächsten Durchlaufs läuft
 {for 0 to 10 as $i}{if $i|gt( 3 )}{break}{/if}{$i}{delimiter},{/delimiter}{/for}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1o 2e 3o 4e 5o 543210,1,2,3,
@@ -276,7 +276,7 @@ Die Bedingung wird vor jedem Durchlauf ausgewertet. Ändern Sie die geprüfte Va
 {while $n|lt( 3 ) sequence array( 'a', 'b' ) as $s}[{$n}{$s}]{set $n = $n|inc}{/while}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [0a][1b][2a]
@@ -296,7 +296,7 @@ Anfang an falsch ist:
 {do}[{$n}]{set $n = $n|inc}{/do while $n|lt( 3 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [5]

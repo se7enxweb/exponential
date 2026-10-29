@@ -3,14 +3,14 @@ title: Moving a template from Smarty
 audience: developer, designer, app-creator
 category: templates
 order: 50
-summary: A porting guide - a typical Smarty list template translated to the template language in three steps (variables, data from fetch, the loop with conditions, links, dates and escaping), each step rendered on alpha, plus a checklist of the replacements to make.
+summary: A porting guide - a typical Smarty list template translated to the template language in three steps (variables, data from fetch, the loop with conditions, links, dates and escaping), each step rendered on a development installation, plus a checklist of the replacements to make.
 keywords: Smarty, port, migrate, convert, translate, porting guide, checklist, fetch, foreach, sequence, cycle, ezurl, wash, datetime
 type: help
 ---
 # Moving a template from Smarty
 
 This page ports one small Smarty template to the template language, step by step, and ends with a checklist for your
-own templates. Each step was rendered on alpha against the "Fit & Healthy" front page (node 89).
+own templates. Each step was rendered on a development installation against the "Fit & Healthy" front page (node 89).
 
 ## Contents
 
@@ -52,7 +52,7 @@ from PHP, the template fetches the node. `escape` becomes `wash`:
 <h2>{$site.name|wash}</h2>
 ```
 
-Output on alpha:
+Output:
 
 ```text
 <h2>Fit &amp; Healthy</h2>
@@ -73,7 +73,7 @@ operator; there is no `@` and no `==`:
 <p>{$pages|count} of {$site.children_count} pages</p>
 ```
 
-Output on alpha:
+Output:
 
 ```text
 <h2>Fit &amp; Healthy</h2>
@@ -114,7 +114,7 @@ The finished template. What changed:
 {undef $site $limit $pages}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 <h2>Fit &amp; Healthy</h2><ul>  <li class="odd"><a href="/slash-quotes">Slash Quotes</a>
@@ -123,7 +123,7 @@ Output on alpha:
       2026-08-31</li></ul>
 ```
 
-The list shows what was published last on alpha when this page was built, so the names will differ on your site.
+The list shows what was published last on a development installation when this page was built, so the names will differ on your site.
 
 ## Checklist
 

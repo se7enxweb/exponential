@@ -35,8 +35,8 @@ The administration help of Exponential is itself a documentation site, and it sh
 topics, manuals, figures and the glossary can be maintained **as content of the site**: eight classes in the class
 group "Help" (manual, chapter, concept, task, reference, troubleshooting, figure, glossary entry), an object state
 group `help_status` with the states Draft, Review and Released, roles "Help editor" and "Help release", and an
-export of a manual as EPUB or PDF (`doc/eng-us/features/6.0/help-content.md`). The demonstration installation at
-<https://alpha.se7enx.com> has these classes.
+export of a manual as EPUB or PDF (`doc/eng-us/features/6.0/help-content.md`). A demonstration
+installation has these classes.
 
 You do not have to use these classes for your own product's documentation, but the model is worth copying:
 

@@ -37,7 +37,7 @@ which is which explains most "why does this not work here" questions.
 | Registered in | `$eZTemplateFunctionArray` | `$eZTemplateOperatorArray` |
 | Main PHP method | `process()` | `modify()` |
 | Compile hook | `templateNodeTransformation()` | `operatorTemplateHints()` and a transformation method |
-| On alpha's `site` siteaccess | 48 registered | 395 registered |
+| On the `site` siteaccess | 48 registered | 395 registered |
 
 ## The same task both ways
 
@@ -51,7 +51,7 @@ function: {if $tags|count|gt( 2 )}many{else}few{/if}
 operator: {cond( $tags|count|gt( 2 ), 'many', 'few' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 function: news, sport, weatheroperator: news, sport, weather
@@ -70,7 +70,7 @@ The output of functions is text, and `set-block` turns text back into a value th
 [{$list}] [{$list|count_chars}] [{$list|upcase}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [<a><b><c>] [9] [<A><B><C>]
@@ -83,7 +83,7 @@ is looked up as an operator:
 [{concat( 'a', if( true() ) )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [a]
@@ -152,7 +152,7 @@ once (`lib/eztemplate/classes/eztemplatecompiler.php`). Both kinds can take part
   through `modify()` at run time.
 
 Either way the output must be the same as when the template is interpreted. The examples of these pages were rendered
-both ways on alpha and compared; the real differences found are noted on
+both ways on a development installation and compared; the real differences found are noted on
 [Sections versus foreach](sections-vs-foreach.md#a-difference-in-compiled-templates) and in the [foreach](control-structures-reference.md#foreach) reference.
 
 ## Which one to write

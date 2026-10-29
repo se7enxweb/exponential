@@ -3,7 +3,7 @@ title: Locale operators
 audience: developer, designer, app-creator
 category: development
 order: 210
-summary: The 7 operators of eZTemplateLocaleOperator - l10n with all nine formatting types, datetime with the datetime.ini classes and custom formats, locale, currentdate, maketime, makedate and gettime - with examples rendered on alpha and the compiled gettime difference.
+summary: The 7 operators of eZTemplateLocaleOperator - l10n with all nine formatting types, datetime with the datetime.ini classes and custom formats, locale, currentdate, maketime, makedate and gettime - with examples rendered on a development installation and the compiled gettime difference.
 keywords: l10n, datetime, locale, currentdate, maketime, makedate, gettime, date format, number format, currency, datetime.ini, eZLocale, eZTemplateLocaleOperator
 type: help
 ---
@@ -15,7 +15,7 @@ registered by `eZTemplateLocaleOperator` (`lib/eztemplate/classes/eztemplateloca
 (`lib/ezlocale/classes/ezlocale.php`) and the locale files in `share/locale/`.
 
 All examples use fixed timestamps made with `maketime`, so they do not change from day to day. Formats without a
-locale code use the locale of the siteaccess (on alpha's site siteaccess: US English formats, as the output shows).
+locale code use the locale of the siteaccess (on the site siteaccess: US English formats, as the output shows).
 
 ## Contents
 
@@ -67,7 +67,7 @@ currency      {1234.5|l10n( 'currency' )}
 clean_currency {1234.5|l10n( 'clean_currency' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 time          02:05:00 pm
@@ -91,7 +91,7 @@ ger-DE currency {1234.5|l10n( 'currency', 'ger-DE' )}
 currency with symbol 'EUR' {1234.5|l10n( 'currency', 'eng-GB', 'EUR' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 ger-DE date     Montag, 19. Oktober 2026
@@ -115,7 +115,7 @@ and `%j` day, `%H` and `%h` hours, `%i` minutes, `%s` seconds), and other letter
 | `class` | string: a class name or `custom` | yes | `false` |
 | `data` | string: the format, with `custom` | no | `false` |
 
-The classes on alpha (kernel `datetime.ini`; ezfind adds `solr`, but ezfind is not active here):
+The classes on a development installation (kernel `datetime.ini`; ezfind adds `solr`, but ezfind is not active here):
 
 | Class | Format |
 |---|---|
@@ -140,7 +140,7 @@ custom ISO 8601 {$t|datetime( 'custom', '%Y-%m-%dT%H:%i:%s' )}
 custom words    {$t|datetime( 'custom', '%l %j %F %Y' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 short_date      19.10.2026
@@ -158,7 +158,7 @@ A class that does not exist logs an error and leaves the timestamp as it was:
 [{maketime( 14, 5, 0, 10, 19, 2026 )|datetime( 'no_such_class' )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [1792443900]
@@ -225,7 +225,7 @@ gettime( $t ): {foreach $info as $key => $value}{$key}={$value} {/foreach}
 gettime( $d ).weekday = {gettime( $d ).weekday}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 maketime( 14, 5, 0, 10, 19, 2026 ) = 1792443900
@@ -241,16 +241,16 @@ gettime( $d ).weekday = 5
 $t|gettime.hours = {$t|gettime.hours}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 $t|gettime.hours = 14
 ```
 
-but the compiled code (`getTimeTransformation()`) looks only at the parameters, so compiled on alpha the same line
+but the compiled code (`getTimeTransformation()`) looks only at the parameters, so compiled on a development installation the same line
 used the current time and printed the current hour instead of 14. `gettime( $t )` gives the same answer in both.
 
-Output on alpha with the template compiler (compiled into a scratch folder):
+Output with the template compiler (compiled into a scratch folder):
 
 ```text
 $t|gettime.hours = 2
@@ -264,7 +264,7 @@ The current Unix timestamp (`time()`). No parameters, no input. Inside a cache-b
 the time the cache was made. Generated reference: [currentdate](../../examples/template-operators/currentdate.md).
 
 The example tests the value instead of printing it, so the page does not change every day; it also computes an age in
-days from the publishing date of the Privacy Policy article on alpha (node 90):
+days from the publishing date of the Privacy Policy article on a development installation (node 90):
 
 ```tpl
 {def $now = currentdate()}
@@ -272,7 +272,7 @@ currentdate() is a Unix timestamp: {$now|is_integer|choose( 'no', 'yes' )}, afte
 Published age of the Privacy Policy article in whole days is a number: {div( sub( $now, fetch( 'content', 'node', hash( 'node_id', 90 ) ).object.published ), 86400 )|floor|is_numeric|choose( 'no', 'yes' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 currentdate() is a Unix timestamp: yes, after 2026-01-01: yes
@@ -300,7 +300,7 @@ locale( 'ger-DE' ): {$de.locale_code}, {$de.language_name}, currency {$de.curren
 'nor-NO'|locale: {$no.locale_code}, {$no.language_name}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 locale( 'ger-DE' ): ger-DE, Deutsch (Deutschland), currency €

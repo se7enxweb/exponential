@@ -34,7 +34,7 @@ Designs, siteaccesses, the cascade, CSS and JavaScript, accessibility, dark mode
 - [The pagelayout](theme-design/the-pagelayout.md)
 - [Pagelayout variables](theme-design/pagelayout-variables.md)
 - [Choosing a starting theme](theme-design/choosing-a-starting-theme.md)
-- [The themes that ship with Exponential](theme-design/themes-on-alpha.md)
+- [The themes that ship with Exponential](theme-design/themes-that-ship-with-exponential.md)
 - [A tour of the media theme](theme-design/media-theme-tour.md)
 - [A tour of the simple theme](theme-design/simple-theme-tour.md)
 - [A tour of the starter theme](theme-design/starter-theme-tour.md)

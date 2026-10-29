@@ -101,7 +101,7 @@ that content model.
 
 ## Related pages
 
-- [The themes on this installation](themes-on-alpha.md)
+- [The themes on this installation](themes-that-ship-with-exponential.md)
 - [Tutorial: create a theme extension](tutorial-create-a-theme-extension.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 

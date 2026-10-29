@@ -68,6 +68,15 @@ language in `language-names-<code>.json`). Both are keyed by a signature of the 
 locale and translation file, so a new or changed file builds the catalogue again on its next use; nothing needs
 clearing. With the cache, the list costs about 2 ms per page.
 
+Each translation file is kept as a mask of the source messages it translates, per file, in
+`<cache directory>/uiswitch/translation-masks.json`, keyed by the file's size, time and inode and by those of the
+source catalogue. When a translation changes, only that file is read again, not all of them. A well-formed file is
+read by string search, about three times faster than building an XML node for each message. A file the scan cannot
+read exactly as the XML parser does (broken, with CDATA, or in another encoding than UTF-8) is streamed with
+XMLReader as before. The cache files get the installation's file mode (`site.ini [FileSettings]
+StorageFilePermissions`), so Velocity (root) and PHP-FPM (the site user) can both replace them.
+`exp:velocity deploy` builds them in its "interface language caches" step.
+
 A regional variant without a translation of its own takes the one `i18n.ini [TranslationSettings]
 FallbackLanguages[]` names: `ger-AT` and `ger-CH` show the `ger-DE` texts, the French-speaking countries `fre-FR`,
 the Spanish-speaking ones `esl-ES`, the Arabic ones `ara-SA` once it exists. The translator looks this up for the

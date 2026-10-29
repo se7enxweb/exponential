@@ -32,7 +32,7 @@ the questions a new manager will ask.
 
 ## A working example
 
-The demonstration installation at <https://alpha.se7enx.com> serves several sites from one content tree: the "Fit &
+A demonstration installation serves several sites from one content tree: the "Fit &
 Healthy" site on `/site` or `/` and the "Bold Agency" site on `/bold`, with their translations
 (`doc/eng-us/features/6.0/multisite-cross-site-links.md`). When a page of one site lists content of another (a tag page, a
 search result, a related item), the links have to point into the right site; the `ezurlmultisite` extension does

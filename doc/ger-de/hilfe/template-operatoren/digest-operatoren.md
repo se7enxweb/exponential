@@ -3,7 +3,7 @@ title: Digest-Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 230
-summary: crc32, md5 und rot13 aus eZTemplateDigestOperator, dazu sha1, das die Klasse anbietet, das aber erst funktioniert, nachdem ein anderer Digest-Operator sie geladen hat; wofür sie in Templates gedacht sind und wofür nicht, mit Beispielen, die auf alpha gerendert wurden.
+summary: crc32, md5 und rot13 aus eZTemplateDigestOperator, dazu sha1, das die Klasse anbietet, das aber erst funktioniert, nachdem ein anderer Digest-Operator sie geladen hat; wofür sie in Templates gedacht sind und wofür nicht, mit Beispielen, die auf einer Entwicklungsinstallation gerendert wurden.
 keywords: crc32, md5, sha1, rot13, Hash, Prüfsumme, Digest, Hashwert, hash, checksum, digest, eZSys::ezcrc32, 64bitCompatibilityMode, eZTemplateDigestOperator
 type: help
 ---
@@ -53,7 +53,7 @@ Für alle vier gilt: Eingabe ist die Zeichenkette (über die Pipe), keine Parame
 'Fit & Healthy'|sha1 = {'Fit & Healthy'|sha1}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 'Fit & Healthy'|md5 = 230d0ad476984ff3dba19ec739b09733
@@ -62,14 +62,14 @@ Ausgabe auf alpha:
 'Fit & Healthy'|sha1 = 2441fb64e95685d5f0064f97e86d06048e57a499
 ```
 
-Eine kurze, stabile ID für ein Element, gebildet aus einem Knoten von alpha (Knoten 89) und seiner aktuellen Version:
+Eine kurze, stabile ID für ein Element, gebildet aus einem Knoten einer Entwicklungsinstallation (Knoten 89) und seiner aktuellen Version:
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 89 ) )}
 id-{concat( $node.node_id, '-', $node.object.current_version )|md5|extract_left( 8 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 id-0c7e77db
@@ -87,7 +87,7 @@ wie im ersten Beispiel, und ist davor "not registered", wobei der Wert unveränd
 [{'Fit & Healthy'|sha1}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [Fit & Healthy]
@@ -108,7 +108,7 @@ Sie sind nicht für Passwörter, Signaturen oder irgendetwas gedacht, das ein An
 SHA-1 sind für diese Zwecke gebrochen, und ein Template ist ohnehin der falsche Ort für Geheimnisse. Verwenden Sie sie
 nur für IDs und Cache-Schlüssel.
 
-Die Beispiele lieferten auf alpha interpretiert und kompiliert dieselbe Ausgabe.
+Die Beispiele lieferten auf einer Entwicklungsinstallation interpretiert und kompiliert dieselbe Ausgabe.
 
 ## Verwandte Seiten
 

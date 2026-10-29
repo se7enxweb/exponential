@@ -53,7 +53,7 @@ Every kind in one template:
 text | {$who} | {'literal string'} | {42} | {$who|upcase} | {concat( 'a', 'b' )} | {if true()}block{/if}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 text | world | literal string | 42 | WORLD | ab | block
@@ -71,7 +71,7 @@ line 1
 line 3 {* inline *} still line 3
 ```
 
-Output on alpha:
+Output:
 
 ```text
 line 1
@@ -96,7 +96,7 @@ backslash the string is cut, the tag ends early and the rest is printed as text:
 [{'a}b'}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [a}b]
@@ -120,7 +120,7 @@ C
 D
 ```
 
-Output on alpha:
+Output:
 
 ```text
 ABC
@@ -143,7 +143,7 @@ B
 C
 ```
 
-Output on alpha:
+Output:
 
 ```text
 A
@@ -166,7 +166,7 @@ the variable keeps its value:
 {def $n = 1}[{set $n = 2 /}{$n}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [1]
@@ -186,7 +186,7 @@ Write these functions without the slash. The slash works for functions that take
 [{include uri='file:var/tmp/examples/tl-smarty/parts/greeting.tpl' who='single tag' /}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [<p>Hello, single tag!</p>
@@ -202,7 +202,7 @@ first line
 second {$broken
 ```
 
-Output on alpha:
+Output:
 
 ```text
 first line
@@ -230,7 +230,7 @@ belongs to that block and is lost with it:
 [before {nosuchfunction param=1} after]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [before

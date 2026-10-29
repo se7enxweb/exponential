@@ -3,7 +3,7 @@ title: Menu and tree operators
 audience: developer, designer, app-creator
 category: development
 order: 330
-summary: The kernel operators that build navigation - treemenu (a menu that unfolds along the current path), content_structure_tree (a nested tree of nodes) and topmenu (the admin tabs from menu.ini) - with every parameter, the shape of what they return, their costs, and examples rendered on alpha.
+summary: The kernel operators that build navigation - treemenu (a menu that unfolds along the current path), content_structure_tree (a nested tree of nodes) and topmenu (the admin tabs from menu.ini) - with every parameter, the shape of what they return, their costs, and examples rendered on a development installation.
 keywords: treemenu, content_structure_tree, topmenu, menu, navigation, tree, menu.ini, TopAdminMenu, eZTreeMenuOperator, eZContentStructureTreeOperator, eZTopMenuOperator
 type: help
 ---
@@ -67,7 +67,7 @@ path: {foreach $path as $p}{$p.url} {/foreach}
 node_id is {$node.node_id|get_type}, the id taken from a URL is {'/content/view/full/144'|explode( '/' )|extract( 4, 1 )|implode( '' )|get_type}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 0 -15 92 Fitness /fitness
@@ -119,7 +119,7 @@ root: {$tree.parent_node.node.node_id} {$tree.parent_node.object.name} ({$tree.p
 {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 root: 89 Fit & Healthy (ng_frontpage), 16 children
@@ -167,7 +167,7 @@ the filtered list is empty:
 shown to this user: {topmenu( 'content', true() )|count}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 first: Dashboard -> content/dashboard enabled=yes access=no part=ezmynavigationpart

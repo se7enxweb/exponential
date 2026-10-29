@@ -25,7 +25,7 @@ you decide what to ask for.
 
 ## The roles you start with
 
-The demonstration installation at `https://alpha.se7enx.com` shows the roles a standard installation works with
+A demonstration installation shows the roles a standard installation works with
 (read on the live installation, October 2026):
 
 | Role | Who has it | What it gives, in short |

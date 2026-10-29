@@ -17,7 +17,7 @@ every attribute are on the reference pages linked at the end.
 ## Contents
 
 1. [The chain from node to content](#the-chain-from-node-to-content)
-2. [A walk down the chain on alpha](#a-walk-down-the-chain-on-alpha)
+2. [A walk down the chain](#a-walk-down-the-chain)
 3. [The attribute protocol](#the-attribute-protocol)
 4. [Arrays and objects use the same dot](#arrays-and-objects-use-the-same-dot)
 5. [Testing before reading](#testing-before-reading)
@@ -54,9 +54,9 @@ object for the version stored on the node (`contentobject_version`), or the curr
 `eZContentObjectTreeNode::setUseCurrentUserDraft( true )` is switched on (off by default). `eZContentObject::fetchDataMap()`
 keeps each map in the global `$eZContentObjectDataMapCache`, so reading it twice in one request costs one query.
 
-## A walk down the chain on alpha
+## A walk down the chain
 
-Node 96 on alpha is an `ng_article` below "Fitness" in the Fit & Healthy site:
+Node 96 on a development installation is an `ng_article` below "Fitness" in the Fit & Healthy site:
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 96 ) )}
@@ -68,7 +68,7 @@ attribute: {$node.data_map.title|get_class} {$node.data_map.title.id}, datatype 
 content:   {$node.data_map.title.content|get_type} "{$node.data_map.title.content|wash}"
 ```
 
-Output on alpha:
+Output:
 
 ```text
 node:      ezcontentobjecttreenode 96, parent 92, depth 4, path /1/2/89/92/96/
@@ -121,7 +121,7 @@ path_array: {$node.path_array|implode( '/' )}
 dynamic key: {$node.data_map[$field].content|wash}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 3 ancestors: Websites, then Fit &amp; Healthy, then Fitness
@@ -145,7 +145,7 @@ HTML.
 {if is_set( $node.data_map.price )}has a price field{else}no price field{/if}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 has an image field
@@ -162,7 +162,7 @@ the template goes on:
 [{$node.no_such_attribute}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 []
@@ -191,7 +191,7 @@ by object: {$object.name|wash} / main node {$object.main_node_id} / {$object.ass
 same data_map: {if eq( $node.data_map.title.id, $object.data_map.title.id )}yes{else}no{/if}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 by node:   Why Should You Choose Strength Training? / main node 96

@@ -74,6 +74,15 @@ zwischengespeichert: im Speicher für den Prozess (Velocity-Worker) und in
 Übersetzungsdatei verschlüsselt, sodass eine neue oder geänderte Datei den Katalog bei der nächsten Verwendung neu
 aufbaut; nichts muss geleert werden. Mit dem Cache kostet die Liste etwa 2 ms pro Seite.
 
+Jede Übersetzungsdatei wird als Maske der Quellmeldungen, die sie übersetzt, pro Datei in
+`<cache directory>/uiswitch/translation-masks.json` gehalten, verschlüsselt über Größe, Zeit und Inode der Datei und
+die des Quellkatalogs. Ändert sich eine Übersetzung, wird nur diese Datei neu gelesen, nicht alle. Eine wohlgeformte
+Datei wird per Zeichenkettensuche gelesen, etwa dreimal so schnell wie mit einem XML-Knoten pro Meldung. Eine Datei, die
+die Suche nicht genau so lesen kann wie der XML-Parser (fehlerhaft, mit CDATA oder in einer anderen Kodierung als
+UTF-8), wird wie bisher mit XMLReader gestreamt. Die Cache-Dateien erhalten den Dateimodus der Installation
+(`site.ini [FileSettings] StorageFilePermissions`), sodass Velocity (root) und PHP-FPM (der Site-Benutzer) sie beide
+ersetzen können. `exp:velocity deploy` baut sie im Schritt „interface language caches“ auf.
+
 Eine regionale Variante ohne eigene Übersetzung übernimmt die, die `i18n.ini [TranslationSettings]
 FallbackLanguages[]` nennt: `ger-AT` und `ger-CH` zeigen die Texte von `ger-DE`, die französischsprachigen Länder
 `fre-FR`, die spanischsprachigen `esl-ES`, die arabischen `ara-SA`, sobald es existiert. Der Übersetzer schlägt das

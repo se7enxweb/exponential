@@ -40,7 +40,7 @@ The caches the kernel knows are listed in `eZCache::fetchList()` (`kernel/classe
 | Translation | `translation` | i18n | | always |
 
 `php bin/php/ezcache.php --list-ids` and `--list-tags` print the full list of an installation, with the caches of
-extensions. The template-related settings on alpha's `site` siteaccess:
+extensions. The template-related settings on the `site` siteaccess:
 
 ```tpl
 TemplateCompile:  {ezini( 'TemplateSettings', 'TemplateCompile' )}
@@ -51,7 +51,7 @@ ViewCaching:      {ezini( 'ContentSettings', 'ViewCaching' )}
 CachedViewModes:  {ezini( 'ContentSettings', 'CachedViewModes' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 TemplateCompile:  enabled
@@ -83,7 +83,7 @@ The [design resource](resources-and-overrides.md) keeps two lookups:
 
 `content/view` stores the whole `$Result` of a node view (HTML, `content_info`, the persistent variable, the list of
 templates used) for the view modes in `[ContentSettings] CachedViewModes` (`full;sitemap;pdf;googlesitemap` on
-alpha). The cache file name is a hash of (`eZNodeviewfunctions::generateViewCacheFile()`):
+a development installation). The cache file name is a hash of (`eZNodeviewfunctions::generateViewCacheFile()`):
 
 - node ID, view mode, language, offset, layout;
 - the user's role IDs, limited-assignment values and discount rules (each can be left out with a
@@ -103,7 +103,7 @@ a lifetime in seconds. Clear with `--clear-id=content`.
 ## The template-block cache (cache-block)
 
 `cache-block` stores the output of a part of a template (`lib/eztemplate/classes/eztemplatecachefunction.php`,
-`eztemplatecacheblock.php`). Not run on alpha: rendering a cache-block writes a cache file, so this example is shown
+`eztemplatecacheblock.php`). Not run on a development installation: rendering a cache-block writes a cache file, so this example is shown
 without output:
 
 ```tpl

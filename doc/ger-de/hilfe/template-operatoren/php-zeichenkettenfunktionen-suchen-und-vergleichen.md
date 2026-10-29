@@ -3,7 +3,7 @@ title: "PHP-Zeichenkettenfunktionen: suchen und vergleichen"
 audience: developer, designer, app-creator
 category: development
 order: 160
-summary: Die Operatoren von eZTemplateStringsOperator zum Suchen, Vergleichen und Bestimmen der Ähnlichkeit (strlen, strpos, stripos, strrpos, strripos, strstr, stristr, strrchr, strpbrk, strspn, strcspn, substr_count, str_contains, str_starts_with, str_ends_with, strcmp, strcasecmp, strncmp, strncasecmp, strnatcmp, strnatcasecmp, strcoll, substr_compare, levenshtein, similar_text, soundex, metaphone), wie ihre Parameter auf PHP abgebildet werden, mit auf alpha gerenderten Beispielen.
+summary: Die Operatoren von eZTemplateStringsOperator zum Suchen, Vergleichen und Bestimmen der Ähnlichkeit (strlen, strpos, stripos, strrpos, strripos, strstr, stristr, strrchr, strpbrk, strspn, strcspn, substr_count, str_contains, str_starts_with, str_ends_with, strcmp, strcasecmp, strncmp, strncasecmp, strnatcmp, strnatcasecmp, strcoll, substr_compare, levenshtein, similar_text, soundex, metaphone), wie ihre Parameter auf PHP abgebildet werden, mit auf einer Entwicklungsinstallation gerenderten Beispielen.
 keywords: PHP-Zeichenkettenfunktionen, Zeichenkette suchen, Zeichenketten vergleichen, Ähnlichkeit, Position, Teilzeichenkette, natürliche Sortierung, PHP string functions, search, compare, strlen, strpos, stripos, strrpos, strripos, strstr, stristr, strrchr, strpbrk, strspn, strcspn, substr_count, str_contains, str_starts_with, str_ends_with, strcmp, strcasecmp, strncmp, strncasecmp, strnatcmp, strnatcasecmp, strcoll, substr_compare, levenshtein, similar_text, soundex, metaphone, eZTemplateStringsOperator
 type: help
 ---
@@ -73,7 +73,7 @@ strripos( 'HEALTHY' ) = {$s|strripos( 'HEALTHY' )}
 strpos( 'healthy', 20 ) = [{$s|strpos( 'healthy', 20 )|choose( 'false', 'true' )}] (false: not found after 20)
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 strlen = 29
@@ -146,7 +146,7 @@ strcspn( '/' ) = {$s|strcspn( '/' )}
 substr_count( '-' ) = {$s|substr_count( '-' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 strstr( '/' ) = /pasta/almond-french-toast
@@ -185,7 +185,7 @@ str_ends_with( '.jpg' ) = {$file|str_ends_with( '.jpg' )|choose( 'false', 'true'
 str_ends_with( '.JPG' ) = {$file|str_ends_with( '.JPG' )|choose( 'false', 'true' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 str_contains( 'Breakfast' ) = true
@@ -257,7 +257,7 @@ Generierte Referenz: [substr_compare](../../beispiele/template-operatoren/substr
 'Hello WORLD'|substr_compare( 'world', 6, 5, true() ) = {'Hello WORLD'|substr_compare( 'world', 6, 5, true() )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 'apple'|strcmp( 'banana' ) = -1
@@ -281,7 +281,7 @@ Eine Prüfung auf „dasselbe Wort, ohne Beachtung der Groß- und Kleinschreibun
 {if $a|strcasecmp( $b )|eq( 0 )}"{$a}" and "{$b}" are the same word, ignoring case.{/if}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 "Running" and "running" are the same word, ignoring case.
@@ -293,7 +293,7 @@ Ohne seinen erforderlichen Parameter lässt ein Vergleich die Eingabe unverände
 [{'abc'|strcmp}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [abc]
@@ -331,7 +331,7 @@ Zeichenketten zurück. Generierte Referenzen: [soundex](../../beispiele/template
 'Thompson'|metaphone( 2 ) = {'Thompson'|metaphone( 2 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 'recipe'|levenshtein( 'recipes' ) = 1

@@ -3,7 +3,7 @@ title: "Swark operators: request and system"
 audience: developer, designer, app-creator
 category: development
 order: 432
-summary: The request and system operators of the swark extension - charset, current_siteaccess, current_layout, is_post_request, server, cookie, user_id_by_login, variable_names, debug, debug_attributes, redirect, return and clear_object_cache - with parameters, return values, which ones end the request or change state, and examples rendered on alpha.
+summary: The request and system operators of the swark extension - charset, current_siteaccess, current_layout, is_post_request, server, cookie, user_id_by_login, variable_names, debug, debug_attributes, redirect, return and clear_object_cache - with parameters, return values, which ones end the request or change state, and examples rendered on a development installation.
 keywords: swark, charset, current_siteaccess, current_layout, is_post_request, server, cookie, user_id_by_login, variable_names, debug, debug_attributes, redirect, return, clear_object_cache
 type: help
 ---
@@ -88,7 +88,7 @@ goes to the debug output as a notice; with `0` it is returned.
 7 variable_names: {variable_names( 0 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 charset: utf-8
@@ -125,7 +125,7 @@ enabled for the request), not into the page.
 
 ## Operators with side effects
 
-Not run on alpha: these operators stop the request, send headers or empty caches, which a read-only example must not
+Not run on a development installation: these operators stop the request, send headers or empty caches, which a read-only example must not
 do. Their behavior is described from the code.
 
 ### redirect

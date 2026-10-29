@@ -3,7 +3,7 @@ title: Role operators
 audience: developer, designer, app-creator
 category: development
 order: 260
-summary: The 7 operators of eZTemplateRoleOperator (has_role, has_role_id, has_any_role, has_role_by_user, has_role_by_user_id, has_policy, has_policy_by_user) - what they check, why the piped input is ignored, why they are not an access check, with read-only examples rendered on alpha as the anonymous user.
+summary: The 7 operators of eZTemplateRoleOperator (has_role, has_role_id, has_any_role, has_role_by_user, has_role_by_user_id, has_policy, has_policy_by_user) - what they check, why the piped input is ignored, why they are not an access check, with read-only examples rendered on a development installation as the anonymous user.
 keywords: has_role, has_role_id, has_any_role, has_role_by_user, has_role_by_user_id, has_policy, has_policy_by_user, role, policy, permission, eZRole, eZTemplateRoleOperator
 type: help
 ---
@@ -15,14 +15,14 @@ parts of a page by role. They are registered by `eZTemplateRoleOperator`
 return a boolean and read the roles with `eZUser::roles()`, which includes the roles the user gets through user groups.
 
 The examples were rendered by a command-line run that is not logged in, so the current user is the anonymous user
-(id 10 on alpha) with the role "Anonymous" (id 1). Nothing was changed.
+(id 10 on a development installation) with the role "Anonymous" (id 1). Nothing was changed.
 
 ```tpl
 {def $me = fetch( 'user', 'current_user' )}
 current user: id {$me.contentobject_id}, roles: {foreach $me.roles as $r}{$r.id} {$r.name}{delimiter}, {/delimiter}{/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 current user: id 10, roles: 1 Anonymous
@@ -47,7 +47,7 @@ the visitor, not for `$someone`:
 'any value'|has_role( 'Anonymous' ) = {'any value'|has_role( 'Anonymous' )|choose( 'false', 'true' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 'any value'|has_role( 'Anonymous' ) = true
@@ -106,7 +106,7 @@ has_any_role( array( 'Editor', 1 ) ) = {has_any_role( array( 'Editor', 1 ) )|cho
 has_any_role( array( 'Anonymous', 'Editor' ), 0, true() ) = {has_any_role( array( 'Anonymous', 'Editor' ), 0, true() )|choose( 'false', 'true' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 has_role( 'Anonymous' ) = true
@@ -147,7 +147,7 @@ has_role_by_user( $me, 1 ) = {has_role_by_user( $me, 1 )|choose( 'false', 'true'
 has_role_by_user_id( $me.contentobject_id, 1 ) = {has_role_by_user_id( $me.contentobject_id, 1 )|choose( 'false', 'true' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 has_role_by_user( $me, 1 ) = true
@@ -190,7 +190,7 @@ has_policy( 'content', 'edit' ) = {has_policy( 'content', 'edit' )|choose( 'fals
 has_policy_by_user( $me, 'user', 'login' ) = {has_policy_by_user( $me, 'user', 'login' )|choose( 'false', 'true' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 has_policy( 'content', 'read' ) = true
@@ -198,7 +198,7 @@ has_policy( 'content', 'edit' ) = false
 has_policy_by_user( $me, 'user', 'login' ) = true
 ```
 
-All examples gave the same output interpreted and compiled on alpha.
+All examples gave the same output interpreted and compiled on a development installation.
 
 ## Related pages
 
