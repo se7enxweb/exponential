@@ -14,8 +14,9 @@ The shipped settings of `settings/membermanagement.ini`: 4 blocks, 13 settings.
 
 > Member management: which user groups may manage the user accounts of which other groups, with which policies, and  
 > which groups nobody manages through such a rule. Read by the setup wizard's role step and the kickstarter (a new  
-> installation), by bin/php/addmembermanagement.php (an installation that exists), and by the access check that keeps  
-> the protected groups' accounts out of reach (doc/eng-us/bc/6.0/member-management.md).  
+> installation), by bin/php/addmembermanagement.php --apply (an installation that exists; without --apply it only  
+> shows what it would change), and by the access check that keeps the protected groups' accounts out of reach  
+> (doc/eng-us/bc/6.0/member-management.md).  
 >
 > The defaults give the Editors group the role "Member management": create, edit (name, e-mail, password), enable and  
 > disable, move and remove the accounts below Members. The accounts of Administrator users and Editors stay with the  

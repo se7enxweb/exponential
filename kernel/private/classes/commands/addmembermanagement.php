@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of bin/php/addmembermanagement.php.
- * @description Set up member management from membermanagement.ini: the role that lets a group (default Editors) manage the accounts of another (default Members), never Administrator users or Editors (--dry-run lists it first)
+ * @description Set up member management from membermanagement.ini: the role that lets a group (default Editors) manage the accounts of another (default Members), never Administrator users or Editors (dry run unless --apply)
  * Guide: doc/eng-us/bc/6.0/member-management.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -23,24 +23,33 @@ class Addmembermanagement extends \Exponential\Runnable\Command
                     . "rule's policy set (each content policy limited to the managed groups), assigned to the manager groups.\n"
                     . "The defaults give the Editors group the role \"Member management\" over Members. A rule whose managed\n"
                     . "groups reach a protected group (default Administrator users and Editors) is refused. What a role already\n"
-                    . "has is left alone, so the script can run again. Prints PASS or FAIL at the end.\n\n"
-                    . "Example: php bin/php/addmembermanagement.php --dry-run\n"
-                    . "         php bin/php/addmembermanagement.php\n"
-                    . "         php bin/php/addmembermanagement.php --rule=editors_manage_members",
+                    . "has is left alone, so the script can run again. Prints PASS or FAIL at the end.\n"
+                    . "Without --apply nothing is written: the script lists what it would create, add and assign. --dry-run\n"
+                    . "is still accepted and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).\n\n"
+                    . "Example: php bin/php/addmembermanagement.php\n"
+                    . "         php bin/php/addmembermanagement.php --apply\n"
+                    . "         php bin/php/addmembermanagement.php --apply --rule=editors_manage_members",
                 'use-session' => false,
                 'use-modules' => true,
                 'use-extensions' => true
             )
         );
         $options = $this->startup(
-            "[dry-run][rule:*]",
+            "[apply][dry-run][rule:*]",
             '',
             array(
-                'dry-run' => "List what would be created, added and assigned; change nothing",
+                'apply' => "Write the changes (the default is a dry run that lists them and changes nothing)",
+                'dry-run' => "The default, kept for scripts that pass it: list what would be created, added and assigned; change nothing",
                 'rule' => "Only this rule ([MemberRule_<name>]), may be repeated"
             )
         );
-        $dryRun = (bool)$options['dry-run'];
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $script->shutdown( 2 );
+        }
+        $dryRun = !$apply;
         $only = $options['rule'] ? array_map( 'strval', (array)$options['rule'] ) : array();
 
         if ( !\expMemberManagement::enabled() )
@@ -114,7 +123,7 @@ class Addmembermanagement extends \Exponential\Runnable\Command
             $cli->error( "FAIL: $failed rule(s) could not be applied" );
             $script->shutdown( 1 );
         }
-        $cli->output( $dryRun ? "PASS: $changed change(s) would be made (dry run, nothing changed)" : "PASS: $changed change(s) made" );
+        $cli->output( $dryRun ? "PASS: $changed change(s) would be made (dry run, nothing changed; --apply writes)" : "PASS: $changed change(s) made" );
         $script->shutdown();
     }
 }

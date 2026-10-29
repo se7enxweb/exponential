@@ -27,6 +27,34 @@
         "en": "The user: its content object ID or its login; \"anonymous\" for the anonymous user",
         "de": "Der Benutzer: seine Inhaltsobjekt-ID oder sein Login; \"anonymous\" für den anonymen Benutzer"
     },
+    "command:addeditorpolicies": {
+        "en": "Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account (dry run unless --apply)",
+        "de": "Gibt der Rolle Editor die alltäglichen Richtlinien, die ihr fehlen: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, den Bildeditor, das eigene Konto (Probelauf, außer mit --apply)"
+    },
+    "command:addeditorpolicies --apply": {
+        "en": "Write the changes (the default is a dry run that lists them and changes nothing)",
+        "de": "Die Änderungen schreiben (Standard ist ein Probelauf, der sie auflistet und nichts ändert)"
+    },
+    "command:addeditorpolicies --dry-run": {
+        "en": "The default, kept for scripts that pass it: list what would be removed and added, change nothing",
+        "de": "Der Standard, beibehalten für Skripte, die die Option übergeben: auflisten, was entfernt und hinzugefügt würde, nichts ändern"
+    },
+    "command:addeditorpolicies --keep-content-wildcard": {
+        "en": "Leave a content/* of the role as it is (not replaced by single functions)",
+        "de": "Ein content/* der Rolle so lassen, wie es ist (nicht durch einzelne Funktionen ersetzt)"
+    },
+    "command:addeditorpolicies --only": {
+        "en": "Only this policy (module/function), may be repeated",
+        "de": "Nur diese Richtlinie (Modul/Funktion), kann wiederholt werden"
+    },
+    "command:addeditorpolicies --role": {
+        "en": "The role to complete (ID or name); default Editor",
+        "de": "Die zu vervollständigende Rolle (ID oder Name); Standard Editor"
+    },
+    "command:addeditorpolicies --skip": {
+        "en": "Never this policy (module/function), may be repeated; e.g. --skip=content/restore keeps the trash closed",
+        "de": "Nie diese Richtlinie (Modul/Funktion), kann wiederholt werden; z. B. hält --skip=content/restore den Papierkorb geschlossen"
+    },
     "command:addexphelpreadpolicy": {
         "en": "Grant exphelp/read (the help system) to the Editor role or the roles named (--dry-run lists them first)",
         "de": "Gewährt der Rolle Editor oder den genannten Rollen exphelp/read (das Hilfesystem) (--dry-run listet sie zuerst auf)"
@@ -38,6 +66,22 @@
     "command:addexphelpreadpolicy --role": {
         "en": "This role (ID or name), may be repeated; the Editor role when none is named",
         "de": "Diese Rolle (ID oder Name), kann wiederholt werden; die Rolle Editor, wenn keine genannt ist"
+    },
+    "command:addmembermanagement": {
+        "en": "Set up member management from membermanagement.ini: the role that lets a group (default Editors) manage the accounts of another (default Members), never Administrator users or Editors (dry run unless --apply)",
+        "de": "Richtet die Mitgliederverwaltung nach membermanagement.ini ein: die Rolle, mit der eine Gruppe (Standard Editors) die Konten einer anderen (Standard Members) verwaltet, nie Administrator users oder Editors (Probelauf, außer mit --apply)"
+    },
+    "command:addmembermanagement --apply": {
+        "en": "Write the changes (the default is a dry run that lists them and changes nothing)",
+        "de": "Die Änderungen schreiben (Standard ist ein Probelauf, der sie auflistet und nichts ändert)"
+    },
+    "command:addmembermanagement --dry-run": {
+        "en": "The default, kept for scripts that pass it: list what would be created, added and assigned; change nothing",
+        "de": "Der Standard, beibehalten für Skripte, die die Option übergeben: auflisten, was angelegt, hinzugefügt und zugewiesen würde; nichts ändern"
+    },
+    "command:addmembermanagement --rule": {
+        "en": "Only this rule ([MemberRule_<name>]), may be repeated",
+        "de": "Nur diese Regel ([MemberRule_<name>]), kann wiederholt werden"
     },
     "command:addoauthauthorizepolicy": {
         "en": "Grant oauth/authorize to the roles that let users sign in (6.0.15 upgrade; --dry-run lists them first)",
