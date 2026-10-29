@@ -66,9 +66,15 @@ class expI18nCoverageMap
     const COVERED = '#2e8b57';
     const OTHER = '#b8bec6';
     const STROKE = '#6f7781';
+    /** The borders of covered land: a darker shade of COVERED, so that it reads green at every size */
+    const COVERED_STROKE = '#24704a';
+    const STROKE_WIDTH = 0.7;
+    /** Shapes smaller than this (the larger side of their bounding box, map units) get the thinner border */
+    const SMALL_SHAPE = 12;
+    const SMALL_STROKE_WIDTH = 0.35;
 
     /** The height of the legend strip below the map, in map units */
-    const LEGEND_HEIGHT = 140;
+    const LEGEND_HEIGHT = 170;
 
     /** Region codes that name no country: user-assigned ISO 3166-1 codes (QO, ZZ ...); XK, Kosovo, is the one
      * user-assigned code that CLDR, the European Union and the outline of the map use for a country */
@@ -441,13 +447,47 @@ class expI18nCoverageMap
                                                           : 'its successors ' . $joined . ' each have a locale of their own' ) : '' );
             }
             else
-                $why = $german ? 'Keine Locale, mit Absicht: unbewohnt, CLDR definiert keine Locale dafür'
-                               : 'No locale by design: uninhabited, CLDR defines no locale for it';
+                $why = $german ? 'Keine Locale, mit Absicht: unbewohnt, CLDR definiert keine Locale dafür (grün dargestellt: Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es keine)'
+                               : 'No locale by design: uninhabited, CLDR defines no locale for it (shown green: Exponential serves these territories in every language; no local conventions exist)';
             $list[] = array( 'code' => $iso, 'name' => $name( $iso ), 'design' => true, 'why' => $why );
         }
         foreach ( $data['without']['missing'] as $iso )
             $list[] = array( 'code' => $iso, 'name' => $name( $iso ), 'design' => false, 'why' => $german ? 'Noch keine Locale' : 'No locale yet' );
         return $list;
+    }
+
+    /**
+     * The territories without a locale by design that the map shows green as well: those without a population
+     * (Antarctica, Bouvet Island ...), which Exponential serves in every language, no local conventions existing
+     * for them. A withdrawn code names no territory and is left out.
+     *
+     * @return string[] ISO codes, sorted
+     */
+    public function greenByDesign()
+    {
+        $codes = array();
+        foreach ( $this->data()['without']['design'] as $iso => $entry )
+        {
+            if ( $entry['reason'] !== 'withdrawn' )
+                $codes[] = $iso;
+        }
+        return $codes;
+    }
+
+    /**
+     * The names of greenByDesign() in the documentation language, as a list: "A, B and C".
+     *
+     * @param string $language
+     * @param bool $codes with the code in brackets after each name
+     * @return string
+     */
+    protected function greenByDesignNames( $language, $codes = false )
+    {
+        $names = $this->countryNames( $language );
+        $list = array();
+        foreach ( $this->greenByDesign() as $iso )
+            $list[] = ( isset( $names[$iso] ) ? $names[$iso] : $iso ) . ( $codes ? ' (`' . $iso . '`)' : '' );
+        return self::joinList( $list, $language === 'ger-de' );
     }
 
     /**
@@ -505,6 +545,8 @@ class expI18nCoverageMap
                 'desc' => 'Weltkarte. Grün: %1$d Länder und Gebiete, für die eine mitgelieferte Locale existiert, deren Sprache die Administration einer Standardinstallation übersetzt zeigt (eigene Übersetzung oder Fallback). Grau: die übrigen. Die Liste steht unter der Karte in doc/ger-de/sprachen.md.',
                 'legend_covered' => 'Administration in der Sprache einer mitgelieferten Locale (%1$d)',
                 'legend_other' => 'Andere Länder und Gebiete',
+                'design' => 'Ebenfalls grün, ohne Locale mit Absicht (unbewohnt): %1$s.',
+                'design_why' => 'Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es keine.',
                 'source' => 'Karte: Natural Earth, gemeinfrei',
             );
         return array(
@@ -512,6 +554,8 @@ class expI18nCoverageMap
             'desc' => 'World map. Green: %1$d countries and territories with a shipped locale whose language the administration of a default installation shows translated (its own translation or a fallback). Grey: the others. The list is below the map in doc/eng-us/languages.md.',
             'legend_covered' => 'Administration in the language of a shipped locale (%1$d)',
             'legend_other' => 'Other countries and territories',
+            'design' => 'Also green, without a locale by design (uninhabited): %1$s.',
+            'design_why' => 'Exponential serves these territories in every language; no local conventions exist.',
             'source' => 'Map: Natural Earth, public domain',
         );
     }
@@ -541,12 +585,18 @@ class expI18nCoverageMap
             if ( $country['covered'] )
                 $covered[$iso] = true;
         }
+        // the uninhabited territories without a locale by design are green too: served in every language
+        $design = $this->greenByDesign();
+        foreach ( $design as $iso )
+            $covered[$iso] = true;
         $texts = self::texts( $language );
+        $designText = $design ? sprintf( $texts['design'], $this->greenByDesignNames( $language ) ) : '';
         $esc = function ( $text ) { return htmlspecialchars( (string)$text, ENT_XML1 | ENT_QUOTES, 'UTF-8' ); };
 
         $groups = array( 'other' => array(), 'covered' => array() );
         foreach ( $paths as $path )
-            $groups[isset( $covered[$path[1]] ) ? 'covered' : 'other'][] = '<path data-iso="' . $path[1] . '" d="' . $path[2] . '"/>';
+            $groups[isset( $covered[$path[1]] ) ? 'covered' : 'other'][] = '<path data-iso="' . $path[1] . '"'
+                . ( self::pathSize( $path[2] ) < self::SMALL_SHAPE ? ' stroke-width="' . self::SMALL_STROKE_WIDTH . '"' : '' ) . ' d="' . $path[2] . '"/>';
         $dots = array( 'other' => array(), 'covered' => array() );
         foreach ( $circles as $circle )
             $dots[isset( $covered[$circle[1]] ) ? 'covered' : 'other'][] = '<circle data-iso="' . $circle[1] . '" cx="' . $circle[2] . '" cy="' . $circle[3] . '" r="' . $circle[4] . '"/>';
@@ -554,16 +604,18 @@ class expI18nCoverageMap
         $lines = array();
         $lines[] = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' . $width . ' ' . $height . '" width="' . $width . '" height="' . $height . '" role="img" aria-labelledby="map-title map-desc">';
         $lines[] = '<title id="map-title">' . $esc( $texts['title'] ) . '</title>';
-        $lines[] = '<desc id="map-desc">' . $esc( sprintf( $texts['desc'], $data['covered'] ) ) . '</desc>';
+        $lines[] = '<desc id="map-desc">' . $esc( sprintf( $texts['desc'], $data['covered'] ) . ( $design ? ' ' . $designText . ' ' . $texts['design_why'] : '' ) ) . '</desc>';
         $lines[] = '<!-- Generated by ./console exp:i18n coverage from the shipped locales, translations and settings/i18n.ini; do not edit.';
-        $lines[] = '     World outline: Natural Earth 1:50m Admin 0 - Countries and Admin 0 - Tiny countries';
-        $lines[] = '     (https://www.naturalearthdata.com/), public domain; Equal Earth projection, Antarctica left out,';
+        $lines[] = '     World outline: Natural Earth 1:50m Admin 0 - Countries, Admin 0 - Map units and Admin 0 - Tiny countries';
+        $lines[] = '     (https://www.naturalearthdata.com/), public domain; Equal Earth projection, Antarctica included,';
         $lines[] = '     simplified (' . self::OUTLINE . '). -->';
-        $lines[] = '<g stroke="' . self::STROKE . '" stroke-width="0.7" stroke-linejoin="round">';
-        $lines[] = '<g id="other" fill="' . self::OTHER . '">';
+        // borders in a darker shade of each group's fill: covered land reads green at every size, also where many
+        // small islands crowd together (the Arctic, Indonesia), which grey borders turned grey in a thumbnail
+        $lines[] = '<g stroke-width="' . self::STROKE_WIDTH . '" stroke-linejoin="round">';
+        $lines[] = '<g id="other" fill="' . self::OTHER . '" stroke="' . self::STROKE . '">';
         $lines = array_merge( $lines, $groups['other'], $dots['other'] );
         $lines[] = '</g>';
-        $lines[] = '<g id="covered" fill="' . self::COVERED . '">';
+        $lines[] = '<g id="covered" fill="' . self::COVERED . '" stroke="' . self::COVERED_STROKE . '">';
         $lines = array_merge( $lines, $groups['covered'], $dots['covered'] );
         $lines[] = '</g>';
         $lines[] = '</g>';
@@ -571,14 +623,52 @@ class expI18nCoverageMap
         $top = $mapHeight + 12;
         $lines[] = '<g id="legend" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#1f2328">';
         $lines[] = '<rect x="16" y="' . $top . '" width="' . ( $width - 32 ) . '" height="' . ( self::LEGEND_HEIGHT - 24 ) . '" rx="12" fill="#ffffff" stroke="' . self::STROKE . '" stroke-width="1.5"/>';
-        $lines[] = '<rect x="40" y="' . ( $top + 22 ) . '" width="36" height="26" rx="4" fill="' . self::COVERED . '" stroke="' . self::STROKE . '"/>';
+        $lines[] = '<rect x="40" y="' . ( $top + 22 ) . '" width="36" height="26" rx="4" fill="' . self::COVERED . '" stroke="' . self::COVERED_STROKE . '"/>';
         $lines[] = '<text x="90" y="' . ( $top + 45 ) . '">' . $esc( sprintf( $texts['legend_covered'], $data['covered'] ) ) . '</text>';
         $lines[] = '<rect x="1140" y="' . ( $top + 22 ) . '" width="36" height="26" rx="4" fill="' . self::OTHER . '" stroke="' . self::STROKE . '"/>';
         $lines[] = '<text x="1190" y="' . ( $top + 45 ) . '">' . $esc( $texts['legend_other'] ) . '</text>';
-        $lines[] = '<text x="40" y="' . ( $top + 88 ) . '" font-size="22" fill="#4b525a">' . $esc( $texts['source'] ) . '</text>';
+        if ( $design )
+        {
+            $lines[] = '<text x="40" y="' . ( $top + 90 ) . '" font-size="24">' . $esc( $designText ) . '</text>';
+            $lines[] = '<text x="40" y="' . ( $top + 124 ) . '" font-size="24">' . $esc( $texts['design_why'] ) . '</text>';
+        }
+        $lines[] = '<text x="' . ( $design ? $width - 40 : 40 ) . '" y="' . ( $top + ( $design ? 124 : 88 ) ) . '" font-size="22" fill="#4b525a"'
+                 . ( $design ? ' text-anchor="end"' : '' ) . '>' . $esc( $texts['source'] ) . '</text>';
         $lines[] = '</g>';
         $lines[] = '</svg>';
         return implode( "\n", $lines ) . "\n";
+    }
+
+    /**
+     * The size of an outline path: the larger side of its bounding box, in map units. The outline writes each ring
+     * as an absolute M followed by relative l steps.
+     *
+     * @param string $d
+     * @return int
+     */
+    public static function pathSize( $d )
+    {
+        $size = 0;
+        if ( !preg_match_all( '/M(-?\d+) (-?\d+)l([^Mz]*)/', $d, $rings, PREG_SET_ORDER ) )
+            return $size;
+        $minX = $minY = PHP_INT_MAX;
+        $maxX = $maxY = PHP_INT_MIN;
+        foreach ( $rings as $ring )
+        {
+            $x = (int)$ring[1];
+            $y = (int)$ring[2];
+            $minX = min( $minX, $x ); $maxX = max( $maxX, $x );
+            $minY = min( $minY, $y ); $maxY = max( $maxY, $y );
+            $steps = preg_split( '/\s+/', trim( $ring[3] ) );
+            for ( $i = 0; $i + 1 < count( $steps ); $i += 2 )
+            {
+                $x += (int)$steps[$i];
+                $y += (int)$steps[$i + 1];
+                $minX = min( $minX, $x ); $maxX = max( $maxX, $x );
+                $minY = min( $minY, $y ); $maxY = max( $maxY, $y );
+            }
+        }
+        return max( $maxX - $minX, $maxY - $minY );
     }
 
     /**
@@ -619,6 +709,8 @@ class expI18nCoverageMap
         $image = self::PAGES[$language]['image'];
         $svgPath = self::PAGES[$language]['svg'];
         $when = self::formatDate( $date, $language );
+        $design = $this->greenByDesignNames( $language, true );
+        $designCount = count( $this->greenByDesign() );
 
         $out = array();
         $out[] = '<!-- generated: exp:i18n coverage ' . $date . ' (start) -->';
@@ -639,12 +731,18 @@ class expI18nCoverageMap
             $out[] = '| Codes aus ISO 3166-1 (`settings/country.ini`) ohne Locale | ' . self::withoutCount( $data['without'], true ) . ' |';
             $out[] = '| Locales, die von rechts nach links geschrieben werden | **' . $l['rtl'] . '** |';
             $out[] = '';
-            $out[] = '![Weltkarte: ' . $data['covered'] . ' Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](' . $image . ')';
+            $out[] = '![Weltkarte: ' . $data['covered'] . ' Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt' . ( $designCount ? ', dazu ' . $designCount . ' unbewohnte Gebiete ohne Locale mit Absicht' : '' ) . '; die übrigen in Grau](' . $image . ')';
             $out[] = '';
             $out[] = 'Ein Land ist grün, wenn für es eine Locale mitgeliefert wird, deren Sprache die Administration übersetzt zeigt:';
             $out[] = 'mit einer eigenen Übersetzung oder der ersten Übersetzung ihrer Fallback-Kette (`i18n.ini [TranslationSettings]`,';
             $out[] = '`FallbackMode=first`, siehe [Abschnitt 13](#13-übersetzungs-fallbacks)). Englisch zählt als übersetzt: Es ist die';
             $out[] = 'Sprache der Quelltexte. Die Karte als Vektorgrafik: `' . $svgPath . '`; Umrisse: Natural Earth, gemeinfrei.';
+            if ( $design )
+            {
+                $out[] = '';
+                $out[] = 'Ebenfalls grün sind die unbewohnten Gebiete ohne Locale mit Absicht: ' . $design . '.';
+                $out[] = 'Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es keine.';
+            }
             $out[] = '';
             $out[] = '<details><summary>Die ' . count( $covered ) . ' Länder und Gebiete in Grün</summary>';
             $out[] = '';
@@ -667,12 +765,18 @@ class expI18nCoverageMap
             $out[] = '| Codes of ISO 3166-1 (`settings/country.ini`) without a locale | ' . self::withoutCount( $data['without'], false ) . ' |';
             $out[] = '| Locales written right to left | **' . $l['rtl'] . '** |';
             $out[] = '';
-            $out[] = '![World map: ' . $data['covered'] . ' countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](' . $image . ')';
+            $out[] = '![World map: ' . $data['covered'] . ' countries and territories in green, where a shipped locale shows the administration in its language' . ( $designCount ? ', and ' . $designCount . ' uninhabited territories without a locale by design' : '' ) . '; the others in grey](' . $image . ')';
             $out[] = '';
             $out[] = 'A country is green when a locale ships for it whose language the administration shows translated: with a';
             $out[] = 'translation of its own or the first translation of its fallback chain (`i18n.ini [TranslationSettings]`,';
             $out[] = '`FallbackMode=first`, see [section 13](#13-translation-fallbacks)). English counts as translated: it is the';
             $out[] = 'language of the source texts. The map as a vector image: `' . $svgPath . '`; outlines: Natural Earth, public domain.';
+            if ( $design )
+            {
+                $out[] = '';
+                $out[] = 'The uninhabited territories without a locale by design are green too: ' . $design . '.';
+                $out[] = 'Exponential serves these territories in every language; no local conventions exist.';
+            }
             $out[] = '';
             $out[] = '<details><summary>The ' . count( $covered ) . ' countries and territories in green</summary>';
             $out[] = '';

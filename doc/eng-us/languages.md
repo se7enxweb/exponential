@@ -19,12 +19,15 @@ and `settings/i18n.ini`, no extension) has:
 | Codes of ISO 3166-1 (`settings/country.ini`) without a locale | **4**, all of them by design: uninhabited or withdrawn (list below the map) |
 | Locales written right to left | **43** |
 
-![World map: 247 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
+![World map: 247 countries and territories in green, where a shipped locale shows the administration in its language, and 3 uninhabited territories without a locale by design; the others in grey](images/languages/coverage-map.webp)
 
 A country is green when a locale ships for it whose language the administration shows translated: with a
 translation of its own or the first translation of its fallback chain (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, see [section 13](#13-translation-fallbacks)). English counts as translated: it is the
 language of the source texts. The map as a vector image: `doc/eng-us/images/languages/coverage-map.svg`; outlines: Natural Earth, public domain.
+
+The uninhabited territories without a locale by design are green too: Antarctica (`AQ`), Bouvet Island (`BV`) and Heard Island and McDonald Islands (`HM`).
+Exponential serves these territories in every language; no local conventions exist.
 
 <details><summary>The 247 countries and territories in green</summary>
 
@@ -292,9 +295,9 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Country or territory | Code | Why |
 |---|---|---|
 | Netherlands Antilles | AN | No locale by design: code withdrawn in 2010; its successors Bonaire, Sint Eustatius and Saba (BQ), Curaçao (CW) and Sint Maarten (SX) each have a locale of their own |
-| Antarctica | AQ | No locale by design: uninhabited, CLDR defines no locale for it |
-| Bouvet Island | BV | No locale by design: uninhabited, CLDR defines no locale for it |
-| Heard Island and McDonald Islands | HM | No locale by design: uninhabited, CLDR defines no locale for it |
+| Antarctica | AQ | No locale by design: uninhabited, CLDR defines no locale for it (shown green: Exponential serves these territories in every language; no local conventions exist) |
+| Bouvet Island | BV | No locale by design: uninhabited, CLDR defines no locale for it (shown green: Exponential serves these territories in every language; no local conventions exist) |
+| Heard Island and McDonald Islands | HM | No locale by design: uninhabited, CLDR defines no locale for it (shown green: Exponential serves these territories in every language; no local conventions exist) |
 
 </details>
 
@@ -1911,7 +1914,8 @@ setting changes; the first run reads every extension catalogue and takes a few s
 
 `coverage` also lists the codes of `settings/country.ini` (ISO 3166-1) that no locale names. The ones without a locale
 by design are named, with the reason, in `expI18nCoverageMap::NO_LOCALE_BY_DESIGN`: Antarctica (`AQ`), Bouvet Island
-(`BV`) and Heard Island and McDonald Islands (`HM`) are uninhabited and CLDR defines no locale for them; the
+(`BV`) and Heard Island and McDonald Islands (`HM`) are uninhabited and CLDR defines no locale for them (the map
+shows them green all the same: Exponential serves these territories in every language; no local conventions exist); the
 Netherlands Antilles (`AN`) code was withdrawn in 2010, and its successors `BQ`, `CW` and `SX` have locales. Any
 other code without a locale is listed as "not yet", and the test `expI18nCoverageMapTest` fails on it.
 

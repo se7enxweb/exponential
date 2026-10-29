@@ -10,7 +10,8 @@
  *         (FallbackMode=first) or English, not by a locale without a translation; private-use regions and locales
  *         without a region name no country; only the shipped settings/i18n.ini counts, not an override; the known
  *         languages (language codes of the real locales), the supported ones and those not translated
- *  CM-03  the map: covered countries and their small-country circles in the green group, the others grey, title,
+ *  CM-03  the map: covered countries, the uninhabited ones without a locale by design and their small-country circles
+ *         in the green group with darker green borders, the others grey with grey borders, title,
  *         description and legend in the page's language, no script; the outline is required
  *  CM-04  the page: the generated part goes below the first heading, is replaced in place, keeps its date while
  *         nothing else changes and takes the new date when something does; write() then check() is clean, a
@@ -70,7 +71,7 @@ class expI18nCoverageMapTest extends PHPUnit\Framework\TestCase
         $this->write( 'share/locale/ger-DE.ini', "[RegionalSettings]\n[LanguageSettings]\nLanguageName=Deutsch\nInternationalLanguageName=German\n[HTTP]\nContentLanguage=de-DE\n"
                                                 . "[CountryNames]\nCountries[DE]=Deutschland\nCountries[AT]=Österreich\nCountries[KE]=Kenia\n" );
         $paths = '';
-        foreach ( array( 'AT', 'CA', 'DE', 'EG', 'FR', 'GB', 'KE', 'RS', 'SA', 'US', '' ) as $i => $iso )
+        foreach ( array( 'AT', 'CA', 'DE', 'EG', 'FR', 'GB', 'KE', 'RS', 'SA', 'US', 'AQ', '' ) as $i => $iso )
             $paths .= '<path data-iso="' . $iso . '" d="M' . ( 10 * $i ) . ' 10l5 0 0 5z"/>' . "\n";
         $this->write( expI18nCoverageMap::OUTLINE, "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2000 800\" width=\"2000\" height=\"800\">\n<g id=\"countries\">\n$paths</g>\n"
                                                     . "<g id=\"tiny\">\n<circle data-iso=\"SA\" cx=\"50\" cy=\"50\" r=\"6\"/>\n<circle data-iso=\"MC\" cx=\"60\" cy=\"60\" r=\"6\"/>\n</g>\n</svg>\n" );
@@ -130,6 +131,36 @@ class expI18nCoverageMapTest extends PHPUnit\Framework\TestCase
         // every code of settings/country.ini has a locale, but those without one by design
         $this->assertSame( array(), $data['without']['missing'], 'codes of settings/country.ini without a locale: add one, or list the code in expI18nCoverageMap::NO_LOCALE_BY_DESIGN with the reason' );
         $this->assertSame( array( 'AN', 'AQ', 'BV', 'HM' ), array_keys( $data['without']['design'] ) );
+        $this->assertSame( array( 'AQ', 'BV', 'HM' ), $map->greenByDesign() );
+        // the shipped map: every territory with a covered locale or without a locale by design is drawn and green,
+        // Antarctica, the overseas parts of France and Svalbard as shapes of their own, small islands as circles
+        $drawn = array( 'covered' => array(), 'other' => array() );
+        $doc = new DOMDocument();
+        $this->assertTrue( $doc->loadXML( $map->svg( 'eng-us' ) ) );
+        $xpath = new DOMXPath( $doc );
+        $xpath->registerNamespace( 's', 'http://www.w3.org/2000/svg' );
+        foreach ( array_keys( $drawn ) as $group )
+        {
+            foreach ( $xpath->query( "//s:g[@id='$group']/*" ) as $node )
+                $drawn[$group][$node->getAttribute( 'data-iso' )] = true;
+        }
+        $this->assertSame( array(), array_keys( $drawn['other'] ), 'no grey land in a default installation' );
+        $green = array();
+        foreach ( $data['countries'] as $iso => $country )
+        {
+            if ( $country['covered'] )
+                $green[] = $iso;
+        }
+        $green = array_merge( $green, $map->greenByDesign() );
+        sort( $green );
+        $codes = array_keys( $drawn['covered'] );
+        sort( $codes );
+        $this->assertSame( $green, $codes, 'every covered or by-design territory is drawn, and nothing else' );
+        $this->assertCount( 250, $codes, '247 countries and territories with a locale and 3 uninhabited ones' );
+        foreach ( array( 'AQ', 'GF', 'RE', 'SJ', 'FR', 'NO' ) as $iso )
+            $this->assertCount( 1, $xpath->query( "//s:g[@id='covered']/s:path[@data-iso='$iso']" ), "$iso is a shape of its own" );
+        foreach ( array( 'BV', 'HM', 'CC', 'CX', 'NF', 'MS', 'UM', 'YT', 'RE' ) as $iso )
+            $this->assertGreaterThan( 0, $xpath->query( "//s:g[@id='covered']/s:circle[@data-iso='$iso']" )->length, "$iso has a circle" );
         foreach ( expI18nCoverageMap::NO_LOCALE_BY_DESIGN as $iso => $entry )
         {
             $this->assertArrayNotHasKey( $iso, $data['countries'], "$iso has a locale: take it out of NO_LOCALE_BY_DESIGN" );
@@ -149,17 +180,17 @@ class expI18nCoverageMapTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'AN', 'AQ', 'MS' ), array_column( $english, 'code' ) );
         $this->assertSame( array( true, true, false ), array_column( $english, 'design' ) );
         $this->assertSame( 'No locale by design: code withdrawn in 2010; its successors are BQ (BQ), CW (CW) and SX (SX), still without a locale: BQ, CW, SX', $english[0]['why'] );
-        $this->assertSame( 'No locale by design: uninhabited, CLDR defines no locale for it', $english[1]['why'] );
+        $this->assertSame( 'No locale by design: uninhabited, CLDR defines no locale for it (shown green: Exponential serves these territories in every language; no local conventions exist)', $english[1]['why'] );
         $this->assertSame( 'No locale yet', $english[2]['why'] );
         $german = $map->withoutLocale( 'ger-de' );
         $this->assertSame( 'Niederländische Antillen', $german[0]['name'], 'a withdrawn code ger-DE.ini does not name' );
-        $this->assertSame( 'Keine Locale, mit Absicht: unbewohnt, CLDR definiert keine Locale dafür', $german[1]['why'] );
+        $this->assertSame( 'Keine Locale, mit Absicht: unbewohnt, CLDR definiert keine Locale dafür (grün dargestellt: Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es keine)', $german[1]['why'] );
 
         $files = $map->build( '2026-10-26' );
         $page = $files['doc/eng-us/languages.md'];
         $this->assertStringContainsString( '| Codes of ISO 3166-1 (`settings/country.ini`) without a locale | **3**: 2 by design, 1 not yet (list below the map) |', $page );
         $this->assertStringContainsString( "<details><summary>The 3 codes of ISO 3166-1 without a locale</summary>\n\n| Country or territory | Code | Why |\n|---|---|---|\n| Netherlands Antilles | AN | No locale by design: code withdrawn in 2010;", $page );
-        $this->assertStringContainsString( "| Antarctica | AQ | No locale by design: uninhabited, CLDR defines no locale for it |\n| Montserrat | MS | No locale yet |\n\n</details>", $page );
+        $this->assertStringContainsString( "| Antarctica | AQ | No locale by design: uninhabited, CLDR defines no locale for it (shown green: Exponential serves these territories in every language; no local conventions exist) |\n| Montserrat | MS | No locale yet |\n\n</details>", $page );
         $this->assertStringContainsString( '| Codes aus ISO 3166-1 (`settings/country.ini`) ohne Locale | **3**: 2 mit Absicht, 1 noch nicht (Liste unter der Karte) |', $files['doc/ger-de/sprachen.md'] );
         $this->assertStringContainsString( '| Niederländische Antillen | AN | Keine Locale, mit Absicht: Code 2010 zurückgezogen; seine Nachfolger sind', $files['doc/ger-de/sprachen.md'] );
 
@@ -231,10 +262,26 @@ class expI18nCoverageMapTest extends PHPUnit\Framework\TestCase
                 $list[] = $node->localName . ':' . $node->getAttribute( 'data-iso' );
             return $list;
         };
-        $this->assertSame( array( 'path:AT', 'path:CA', 'path:DE', 'path:EG', 'path:FR', 'path:GB', 'path:RS', 'path:SA', 'circle:SA' ), $isos( 'covered' ) );
+        // Antarctica has no locale by design (uninhabited) and is green all the same; the withdrawn AN has no shape
+        $this->assertSame( array( 'AQ' ), $map->greenByDesign() );
+        $this->assertSame( array( 'path:AT', 'path:CA', 'path:DE', 'path:EG', 'path:FR', 'path:GB', 'path:RS', 'path:SA', 'path:AQ', 'circle:SA' ), $isos( 'covered' ) );
         $this->assertSame( array( 'path:KE', 'path:US', 'path:', 'circle:MC' ), $isos( 'other' ) );
-        $this->assertSame( expI18nCoverageMap::COVERED, $xpath->query( "//s:g[@id='covered']" )->item( 0 )->getAttribute( 'fill' ) );
-        $this->assertSame( expI18nCoverageMap::OTHER, $xpath->query( "//s:g[@id='other']" )->item( 0 )->getAttribute( 'fill' ) );
+        $covered = $xpath->query( "//s:g[@id='covered']" )->item( 0 );
+        $other = $xpath->query( "//s:g[@id='other']" )->item( 0 );
+        $this->assertSame( expI18nCoverageMap::COVERED, $covered->getAttribute( 'fill' ) );
+        $this->assertSame( expI18nCoverageMap::OTHER, $other->getAttribute( 'fill' ) );
+        // the borders of covered land are a darker green, never the grey of the other land, so that crowded small
+        // islands read green in a thumbnail; small shapes get a thinner border
+        $this->assertSame( expI18nCoverageMap::COVERED_STROKE, $covered->getAttribute( 'stroke' ) );
+        $this->assertSame( expI18nCoverageMap::STROKE, $other->getAttribute( 'stroke' ) );
+        $this->assertNotSame( expI18nCoverageMap::STROKE, expI18nCoverageMap::COVERED_STROKE );
+        foreach ( $xpath->query( "//s:g[@id='covered']//*[@stroke] | //s:g[@id='other']//*[@stroke]" ) as $node )
+            $this->fail( 'a shape with a stroke of its own: ' . $node->getAttribute( 'data-iso' ) );
+        $this->assertSame( (string)expI18nCoverageMap::SMALL_STROKE_WIDTH, $xpath->query( "//s:g[@id='covered']/s:path[@data-iso='AT']" )->item( 0 )->getAttribute( 'stroke-width' ) );
+        $this->assertSame( 20, expI18nCoverageMap::pathSize( 'M0 0l20 0 0 5zM3 3l1 1 -1 0z' ) );
+        $this->assertSame( 30, expI18nCoverageMap::pathSize( 'M0 0l5 0 0 5zM10 10l1 0 0 20z' ) );
+        $this->assertStringContainsString( '>Also green, without a locale by design (uninhabited): Antarctica.</text>', $svg );
+        $this->assertStringContainsString( '>Exponential serves these territories in every language; no local conventions exist.</text>', $svg );
         $this->assertStringContainsString( '<title id="map-title">Exponential: the countries', $svg );
         $this->assertStringContainsString( 'Green: 8 countries and territories', $svg );
         $this->assertStringContainsString( '>Administration in the language of a shipped locale (8)</text>', $svg );
@@ -243,6 +290,7 @@ class expI18nCoverageMapTest extends PHPUnit\Framework\TestCase
         $german = $map->svg( 'ger-de' );
         $this->assertStringContainsString( '>Administration in der Sprache einer mitgelieferten Locale (8)</text>', $german );
         $this->assertStringContainsString( 'Grün: 8 Länder und Gebiete', $german );
+        $this->assertStringContainsString( '>Ebenfalls grün, ohne Locale mit Absicht (unbewohnt): Antarctica.</text>', $german, 'ger-DE.ini of the fixture names no AQ' );
 
         $this->remove( $this->dir . '/' . expI18nCoverageMap::OUTLINE );
         $this->expectException( RuntimeException::class );
