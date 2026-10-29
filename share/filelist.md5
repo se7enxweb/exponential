@@ -12634,7 +12634,7 @@ c13a558f647f18e92dfbeea060cebe4d  doc/ger-de/.examples/descriptions/11-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-0b115dd206e9b12696e20f95927d065c  doc/ger-de/.paths.json
+64a35b33ab0ed73e36b0babff2b159db  doc/ger-de/.paths.json
 bb3a945902ac11b7d40c047580f5b6b8  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 b58ded94c758f0e4cc4ec1c8b1e60ef7  doc/ger-de/UNINSTALL.md
@@ -12725,6 +12725,7 @@ dcf1b0b94d93bc43a5091638826844ee  doc/ger-de/bc/5.90/passwortlaenge.md
 039ce123c1a0a75a7c9e730e577e0136  doc/ger-de/bc/5.90/php7.md
 4bb7e499ff2e5de85cce183ee1e0a6e7  doc/ger-de/bc/6.0/admin4-gestaltung.md
 89b8a355c68197ec7dff10f92a5d34db  doc/ger-de/bc/6.0/admin4l.md
+dd5653767aefb70d1dc63d4fa837c838  doc/ger-de/bc/6.0/anonymous-rolle-richtlinien.md
 693eca963756cd0b335bee8289bc4022  doc/ger-de/bc/6.0/antwort-cache-und-navigation.md
 0e9a9f2936d696af431fdd512833676e  doc/ger-de/bc/6.0/api-schluessel.md
 fa7c4cd3470d5592f9fe6c50f29b200a  doc/ger-de/bc/6.0/audit.md
@@ -12761,6 +12762,7 @@ b8c45092d70c0b14cebc1ddfd4f2ff31  doc/ger-de/bc/6.0/geheimnispruefung-fuer-erwei
 43d676b154295b51022f71acc225fb5f  doc/ger-de/bc/6.0/http2-und-cache-vorwaermen.md
 da6858675aab7eefd1c837248cf33a5f  doc/ger-de/bc/6.0/httpcache.md
 b07cb9d0845526f5a8130ac0d9c4c0f6  doc/ger-de/bc/6.0/inhaltsjobs.md
+4e809d5414ab035953f3b8ebe675aee7  doc/ger-de/bc/6.0/kernel-dienste.md
 479ebce51c43e3bed185ec37e619e09e  doc/ger-de/bc/6.0/kickstartercli.md
 7ba9afdf3ad6c78386f7b65a89221352  doc/ger-de/bc/6.0/konsole.md
 91033bcb69b5008d798485f1da4d8e5c  doc/ger-de/bc/6.0/layouts.md
@@ -12790,6 +12792,7 @@ cb44c3fa0a4efd14dafd0a022f422ef5  doc/ger-de/bc/6.0/mongodb-kernel-unterstuetzun
 4f34865c236121798d8914f2f63c0f38  doc/ger-de/bc/6.0/oauth-token-haertung.md
 b561173941e1bd7cf5e7da6de12c3eb9  doc/ger-de/bc/6.0/opml.md
 e64015b83ef1461c77168bd9f4938cf3  doc/ger-de/bc/6.0/package-json-format.md
+83700ff483ca67aad78eff8b6b64bd93  doc/ger-de/bc/6.0/paketinstallation-behaelt-neuere-erweiterungen.md
 fa6582156c1ac5cda7f7f9673bf80b0a  doc/ger-de/bc/6.0/papierkorb.md
 6c91ddd5913285b05123df33b5652cd8  doc/ger-de/bc/6.0/passkeys-und-identitaet-bestaetigen.md
 9216ae625e43af5a926b4fd211996ac3  doc/ger-de/bc/6.0/passwort-bei-naechster-anmeldung-aendern.md
@@ -12823,7 +12826,7 @@ cc494c00ecd01129c6c76c3e175c8e48  doc/ger-de/bc/6.0/ui-umschalter-design.md
 fb7e473b95d422399e463bfe56d9395d  doc/ger-de/bc/6.0/ui-umschalter.md
 6444af39a4f005b744ebce2ec72a46cf  doc/ger-de/bc/6.0/unterelemente-weitere-aktionen-verstecken-einblenden.md
 271c73727f0fff7506e5831158e4122d  doc/ger-de/bc/6.0/velocity-engine-upgrade-hinweise.md
-b42965a73e2c78316d71be2a662ccb38  doc/ger-de/bc/6.0/velocity-engines.md
+e7734670898839dff07181a6d86c31b9  doc/ger-de/bc/6.0/velocity-engines.md
 49f042040eb5d4a84e4376a52b330e66  doc/ger-de/bc/6.0/velocity-verzeichnisstruktur.md
 370c2a1fff3d2d6bce27361c8ac9ae5c  doc/ger-de/bc/6.0/verhaltensaenderungen-2026-07-08.md
 55c5b5417bdcece86dcb502387b92142  doc/ger-de/bc/6.0/verhaltensaenderungen-2026-09b.md
@@ -15468,6 +15471,7 @@ c60cd2b24e9d7d010b86a57124ae2ab2  doc/ger-de/funktionen/6.0/content-security-pol
 e81970914012d9e0567a147c7baea19a  doc/ger-de/funktionen/6.0/datentabellen.md
 9fa97c0f8e47e189f172c2cfdabd9d20  doc/ger-de/funktionen/6.0/durch-deployment-verwaltet.md
 b3e456d2f10a16a5331ce2c08d501420  doc/ger-de/funktionen/6.0/e-mail-einstellungen.md
+c2b63dfcd38fd4be5143414587677110  doc/ger-de/funktionen/6.0/e-mail-layout.md
 236706d8d28dba7a4d469e4f69ed7006  doc/ger-de/funktionen/6.0/eigene-anzahl-eintraege-pro-seite.md
 b3433a0730d58a1b5a4e4711c402f31a  doc/ger-de/funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md
 2675712f2345f80d0f2996d3c039b540  doc/ger-de/funktionen/6.0/entfernte-dienste-expservices.md
@@ -17866,7 +17870,7 @@ fab8f14709d236bce51277a9c819fca6  doc/ger-de/hilfe/hosting/grundlagen/postgresql
 bb1c3056e17f1125dc9111572b56aa88  doc/ger-de/hilfe/hosting/grundlagen/such-backends.md
 c66fd92990fbff7ff40b8dde9359720f  doc/ger-de/hilfe/hosting/grundlagen/was-das-hosting-von-exponential-umfasst.md
 91efd0daa405d03b05d3b2edb3d2aa88  doc/ger-de/hilfe/hosting/hosting-anbieter-hier-beginnen.md
-dd4d914bc7ddff7ac36923a6c0b3026e  doc/ger-de/hilfe/hosting/leistung/README.md
+33221f4020fe0a0833af0da93663da0c  doc/ger-de/hilfe/hosting/leistung/README.md
 b438f175d145c4d6087878c059c26072  doc/ger-de/hilfe/hosting/leistung/abstimmung-von-php-fpm.md
 50e4cad9578280082431830408fb98b9  doc/ger-de/hilfe/hosting/leistung/antwort-cache-von-velocity.md
 50872af97d688d9489393bf3df301cce  doc/ger-de/hilfe/hosting/leistung/benchmark-einer-gehosteten-website.md
@@ -17874,6 +17878,7 @@ b438f175d145c4d6087878c059c26072  doc/ger-de/hilfe/hosting/leistung/abstimmung-v
 03944a1aec2ca15e0cd3deaa4d45a2cb  doc/ger-de/hilfe/hosting/leistung/caches-leeren-und-vorwaermen.md
 1e655c555c6c2754d447e94d9a6d4c88  doc/ger-de/hilfe/hosting/leistung/cdn.md
 c0cea58908b3e29643faafa706769873  doc/ger-de/hilfe/hosting/leistung/http-cache-header.md
+4d95d8bcd0935aa9a184ad973f7677ef  doc/ger-de/hilfe/hosting/leistung/kompilierter-kernel-container.md
 2c5c74dceaf7f726ebc26f160fd06f40  doc/ger-de/hilfe/hosting/leistung/opcache.md
 953e184ec0acb0e2bd7e5c43eeebf1c3  doc/ger-de/hilfe/hosting/leistung/statischer-cache.md
 9fa2fa343fd2399a25e8dea24021bf04  doc/ger-de/hilfe/hosting/leistung/valkey-und-redis.md
@@ -17915,7 +17920,7 @@ edd4e1dc6361ef4958cbedf8051ce10e  doc/ger-de/hilfe/hosting/server/microsoft-iis.
 6f46463ea336c641cb97bc4a300046bc  doc/ger-de/hilfe/hosting/server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md
 7c58e2af2672c38a159b10bdee84db02  doc/ger-de/hilfe/hosting/server/velocity-fuer-hoster.md
 db3067c35ef1aae1df9c8e31c0d3776a  doc/ger-de/hilfe/hosting/server/velocity-neben-apache-oder-nginx.md
-f955cafe391a0250bd1aa0cb73e8fa06  doc/ger-de/hilfe/hosting/server/velocity-worker-und-pools.md
+e4e8cb2115de2fd5cd9dfb97be928763  doc/ger-de/hilfe/hosting/server/velocity-worker-und-pools.md
 0d9a48fdbc4ae4555da4116404f89cd8  doc/ger-de/hilfe/hosting/sicherheit/README.md
 153293079a0961afce3a1dededac7151  doc/ger-de/hilfe/hosting/sicherheit/aufbewahrung-von-logs-und-daten.md
 1823fe67499cf94affa265ab2c23215c  doc/ger-de/hilfe/hosting/sicherheit/benutzer-und-pools-pro-kunde.md
@@ -18603,7 +18608,7 @@ c1895da68acb115014eafe8313e025ad  doc/ger-de/hilfe/php-entwickler/das-engine-pha
 c8e2c829d3c170676e6264b7f41e4bc3  doc/ger-de/hilfe/php-entwickler/debugging-mit-ezdebug.md
 2e41b807e11ce6d5fd50e76794331134  doc/ger-de/hilfe/php-entwickler/definitionen-persistenter-objekte-im-detail.md
 65b78d6b25e3e34ba29882987c7880c6  doc/ger-de/hilfe/php-entwickler/der-coding-standard.md
-200520efaa4f61e9220235378c37ef72  doc/ger-de/hilfe/php-entwickler/der-kernel-service-container.md
+bd194ecc9dec42cb21672485ba4515b3  doc/ger-de/hilfe/php-entwickler/der-kernel-service-container.md
 ccea96e06902786ae559fd16d1072331  doc/ger-de/hilfe/php-entwickler/die-debug-leiste-fuer-php-entwickler.md
 24fae2e46772d4deb2e00c4643d47d2d  doc/ger-de/hilfe/php-entwickler/ein-php-entwicklungs-checkout.md
 0d5f8ba139169048d14ba44ed7f7ba3c  doc/ger-de/hilfe/php-entwickler/ein-rundgang-durch-den-quellbaum.md
