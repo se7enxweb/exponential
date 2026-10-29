@@ -25,7 +25,7 @@ to serve it at every stage, from a developer's laptop to production. Apache or n
 supported, and FrankenPHP is a production-ready alternative.
 
 **As of 6.0.15 the Velocity Internet / Web Application Server is part of Exponential.** The root `composer.json`
-requires `se7enxweb/exponential-velocity ~0.0.4.55` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later) instead of suggesting it, so every installation made with
+requires `se7enxweb/exponential-velocity ~0.0.4.57` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later) instead of suggesting it, so every installation made with
 Composer has it, on every PHP the kernel supports, PHP 8.0 included. This is a turning point for the project, a
 cornerstone and a capstone: a new level of application system integration that provides even greater features out of
 the box in the core product, by default. Exponential is a whole working unit rather than a framework to be completed:

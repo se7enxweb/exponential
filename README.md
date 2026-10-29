@@ -45,7 +45,7 @@ of its own — **Exponential Velocity** — which is considerably faster. See
 [How Exponential is served](#how-exponential-is-served) below.
 
 **As of 6.0.15, the Velocity Internet / Web Application Server is part of Exponential.** The root `composer.json`
-requires `se7enxweb/exponential-velocity` (`~0.0.4.55`); it is no longer a suggestion, so every installation has it,
+requires `se7enxweb/exponential-velocity` (`~0.0.4.57`); it is no longer a suggestion, so every installation has it,
 on every PHP Velocity runs on (8.0 and later, the stock PHP of Red Hat Enterprise Linux 9 included; it comes through the metapackage `se7enxweb/exponential-php-floor`, which leaves it out on PHP 7.4). This marks a
 turning point for the project: a cornerstone, a capstone, and a new level of application system integration, which
 provides even greater features out of the box in the core product, by default. Exponential is a whole working unit,
@@ -82,7 +82,7 @@ The 6.0.15 line also brings, among much else (the full list is in the
   complete (the current totals are at the top of [languages](doc/eng-us/languages.md)); right-to-left languages get
   `dir="rtl"` in content and in the administration ([right to left](doc/eng-us/features/6.0/right-to-left.md)).
 - **MariaDB, MySQL, PostgreSQL, SQLite, Oracle and MongoDB** on one kernel, PHP 8.0 to 8.5 (PHP 7.4 usable without support), and the bundled
-  application server Exponential Velocity, part of Exponential as of 6.0.15 (required at `~0.0.4.55`, which runs on PHP 8.0 as well, answers HEAD over HTTP/2 with its
+  application server Exponential Velocity, part of Exponential as of 6.0.15 (required at `~0.0.4.57`, which runs on PHP 8.0 as well, answers HEAD over HTTP/2 with its
   headers only and drains its connections when it stops).
 
 ## What does Exponential provide for end users building websites?

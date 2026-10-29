@@ -10,7 +10,7 @@ type: help
 # Velocity in einem Bundle
 
 Diese Seite richtet sich an Bündler, die die gebündelte Website mit Exponential Velocity ausliefern. "Seit 6.0.15
-**verlangt** die `composer.json` im Wurzelverzeichnis `se7enxweb/exponential-velocity ~0.0.4.55` (über `se7enxweb/exponential-php-floor`, auf PHP 8.0 und neuer)", daher hat jede mit
+**verlangt** die `composer.json` im Wurzelverzeichnis `se7enxweb/exponential-velocity ~0.0.4.57` (über `se7enxweb/exponential-php-floor`, auf PHP 8.0 und neuer)", daher hat jede mit
 Composer gebaute Installation es bereits
 ([Velocity-Engines](../../bc/6.0/velocity-engines.md#velocity-ist-seit-6015-teil-von-exponential)).
 

@@ -71,9 +71,9 @@ older ones lose security support first (see PHP's [supported versions](https://w
 PHP 7.4 itself has had no security support from the PHP project since November 2022; run it only where your
 distribution or host still patches it, and plan the move to PHP 8.
 
-**One metapackage per PHP range.** The kernel also requires `se7enxweb/exponential-php-floor` (`^1.0`). Each of its
-versions belongs to one PHP range and requires the extension releases that run there: 1.0.1 for PHP 7.4 (usable without support), 1.1.0 for
-8.0, 1.2.0 for 8.1 to 8.3, 1.3.0 for 8.4 and later. Composer installs the version that matches the PHP it runs with,
+**One metapackage per PHP range.** The kernel also requires `se7enxweb/exponential-php-floor` (`~1.0.1 || ~1.1.1 || ~1.2.1 || ~1.3.1`). Each of its
+versions belongs to one PHP range and requires the extension releases that run there: 1.0.1 for PHP 7.4 (usable without support), 1.1.1 for
+8.0, 1.2.1 for 8.1 to 8.3, 1.3.1 for 8.4 and later (the earlier 1.0.0, 1.1.0, 1.2.0 and 1.3.0 allowed older extension releases and are left out). Composer installs the version that matches the PHP it runs with,
 so the same `composer require se7enxweb/exponential` gives a complete installation on every supported PHP, with
 Composer's security checks left on. Run Composer with the PHP the site will use (see
 [Command line and web PHP](#command-line-and-web-php)).

@@ -42,7 +42,7 @@ Packagist, and its current line is **Exponential 6.0.x**. A content management s
 ### For decision makers: one stack, and the server is in it
 
 As of 6.0.15 the Velocity Internet / Web Application Server is part of Exponential: the root `composer.json` requires
-`se7enxweb/exponential-velocity ~0.0.4.55` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later), so every installation has it, on PHP 8.0 and later. The project calls this
+`se7enxweb/exponential-velocity ~0.0.4.57` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later), so every installation has it, on PHP 8.0 and later. The project calls this
 a turning point, a cornerstone and a capstone: a new level of application system integration that provides even
 greater features out of the box in the core product, by default. What that means when you decide:
 

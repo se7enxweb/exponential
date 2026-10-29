@@ -101,7 +101,7 @@ The kit is dated June 2026. The repository has moved on since, and for release f
 
 The kit predates the news of 20 October 2026, which it therefore does not mention: **as of 6.0.15 the Velocity
 Internet / Web Application Server is part of Exponential.** The root `composer.json` requires
-`se7enxweb/exponential-velocity ~0.0.4.55` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later) (until then it was only suggested), and Velocity 0.0.4.54 runs on PHP 8.0
+`se7enxweb/exponential-velocity ~0.0.4.57` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later) (until then it was only suggested), and Velocity 0.0.4.54 runs on PHP 8.0
 and later. Facts you can print, each with its source:
 
 | Fact | Source |

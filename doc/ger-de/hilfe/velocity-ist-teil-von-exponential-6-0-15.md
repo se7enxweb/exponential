@@ -45,7 +45,7 @@ Kernprodukt von Haus aus und standardmäßig noch mehr Funktionen bietet.
 | Vor 6.0.15 | Seit 6.0.15 |
 |---|---|
 | Exponential war eine PHP-Anwendung, vor die ein Webserver nach fremder Wahl gestellt werden musste. | Exponential liefert seinen eigenen Internet- und Webanwendungsserver mit und läuft weiterhin auch hinter jedem anderen. |
-| Velocity war ein eigenes Paket, in der `composer.json` unter `suggest` aufgeführt und von Hand hinzuzufügen. | Die `composer.json` verlangt `se7enxweb/exponential-velocity ~0.0.4.55` (über `se7enxweb/exponential-php-floor`, auf PHP 8.0 und neuer); `composer install` installiert es. |
+| Velocity war ein eigenes Paket, in der `composer.json` unter `suggest` aufgeführt und von Hand hinzuzufügen. | Die `composer.json` verlangt `se7enxweb/exponential-velocity ~0.0.4.57` (über `se7enxweb/exponential-php-floor`, auf PHP 8.0 und neuer); `composer install` installiert es. |
 | Velocity brauchte PHP 8.1, Installationen auf PHP 8.0 (Red Hat Enterprise Linux 9) mussten darauf verzichten. | Velocity 0.0.4.54 läuft auf PHP 8.0 bis 8.5, demselben Bereich wie der Kernel von Exponential. |
 | Ausliefern, Cachen und Bereitstellen waren getrennte Aufgaben mit getrennten Werkzeugen. | `./console exp:velocity deploy` erneuert Autoloads, Einstellungen, Caches, die PHP-Prozesse und den Server in einem geordneten Durchlauf. |
 

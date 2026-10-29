@@ -31,7 +31,7 @@ ankommen" ([Die Standardauswahl an Erweiterungen](../../funktionen/6.0/standard-
 | Der Kernel | `kernel/`, `lib/`, `bin/php/`, `design/`, `settings/`, `share/` | das Repository |
 | Mit dem Kernel ausgelieferte Erweiterungen | `ezjscore`, `ezoe`, `ezformtoken`, `expservices` | [3.2 A](../../installation/03-den-code-beschaffen.md#a-git-clone-und-composer-install-empfohlen) |
 | Erforderliche Erweiterungen | jedes `se7enxweb/*`-Paket unter `require`, jedes ein eigenes Composer-Paket | `composer.json` |
-| Velocity | `se7enxweb/exponential-velocity ~0.0.4.55` (über `se7enxweb/exponential-php-floor`, auf PHP 8.0 und neuer) ist seit 6.0.15 erforderlich | [Velocity-Engines](../../bc/6.0/velocity-engines.md#velocity-ist-seit-6015-teil-von-exponential) |
+| Velocity | `se7enxweb/exponential-velocity ~0.0.4.57` (über `se7enxweb/exponential-php-floor`, auf PHP 8.0 und neuer) ist seit 6.0.15 erforderlich | [Velocity-Engines](../../bc/6.0/velocity-engines.md#velocity-ist-seit-6015-teil-von-exponential) |
 | Das Standard-Theme | `se7enxweb/sevenx_themes_simple`, seit 6.0.10 erforderlich, "damit das Standard-Theme immer mit ausgeliefert wird" | [Standardauswahl an Erweiterungen](../../funktionen/6.0/standard-extension-auslieferung.md#zeitleiste-der-auslieferung-composerjson-im-wurzelverzeichnis) |
 | Der Oracle-Treiber | `se7enxweb/ezoracle`, erforderlich, daher in jeder Installation vorhanden | [Datenbankunterstützung](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge) |
 | Die Dokumentation | `doc/`, einschließlich dieser Hilfe | das Repository |
