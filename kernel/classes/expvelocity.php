@@ -591,8 +591,8 @@ class expVelocity
             return '';
         $version = intdiv( $phpVersionId, 10000 ) . '.' . intdiv( $phpVersionId % 10000, 100 );
         return 'the Velocity engine (' . $engine . ') needs PHP ' . intdiv( $minimum, 10000 ) . '.' . intdiv( $minimum % 10000, 100 )
-            . ' or later, this is PHP ' . $version . '. Exponential runs on PHP ' . $version
-            . ' with Apache or nginx and PHP-FPM, or with the php engine (exp:velocity start --engine=php)';
+            . ' or later, this is PHP ' . $version . '. Exponential is usable without support on PHP ' . $version
+            . ' with Apache or nginx and PHP-FPM, or with the php engine (exp:velocity start --engine=php). Supported: PHP 8.0 to 8.5.';
     }
 
     /**

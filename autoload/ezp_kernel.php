@@ -1368,6 +1368,7 @@ return array(
       'expPasswordChangeRequired'                                    => 'kernel/classes/user/exppasswordchangerequired.php',
       'expPasswordPolicy'                                            => 'kernel/classes/exppasswordpolicy.php',
       'expPhar'                                                      => 'kernel/classes/expphar.php',
+      'expPhpSupport'                                                => 'kernel/classes/expphpsupport.php',
       'expPolicyOmitList'                                            => 'kernel/classes/exppolicyomitlist.php',
       'expPreloadAddress'                                            => 'kernel/classes/exppreloadaddress.php',
       'expPreloadHistory'                                            => 'kernel/classes/exppreloadhistory.php',

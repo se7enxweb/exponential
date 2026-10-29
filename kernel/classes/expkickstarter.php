@@ -122,6 +122,10 @@ class expKickstarter
         // the installation's, and could leave a broken page in the caches
         // A maintenance window that was already open is kept as it is: not
         // replaced by this run's, and not switched off at its end
+        // PHP 7.4: installed, with the notice that it is usable without support (expPhpSupport)
+        if ( class_exists( 'expPhpSupport' ) && ( $phpNotice = expPhpSupport::notice() ) !== '' )
+            $this->cli->warning( $phpNotice );
+
         $maintenanceState = empty( $this->options['dry-run'] )
             ? expMaintenance::beginRun( getcwd(), $runId, array( 'reason' => 'setup' ) ) : false;
         $maintenance = $maintenanceState === 'enabled' || $maintenanceState === 'adopted';

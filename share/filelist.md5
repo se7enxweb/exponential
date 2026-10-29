@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 8f3531b51cfab8a13f2a654019014494  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 24facba0dd7f4fa232e748acfd3ffa3d  autoload.php
-93a3b9c478c05a13b5a4052d8d4f03e5  autoload/ezp_kernel.php
+8ebf47b24ff8cc218e537e3f78b9f798  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -22860,7 +22860,7 @@ c0b45317b01b2d3b5c26f41524a76077  kernel/classes/expdemomode.php
 b744014d45bbb8a080e82b39cec611c9  kernel/classes/expkernelservicecontainer.php
 734d185d9c5493c4f018eee4c442edce  kernel/classes/expkernelservices.php
 750bf024fbb3a0c6c885c32ea16bca2b  kernel/classes/expkernelservicescope.php
-d12921f2bf05b495bdbb26b99f829794  kernel/classes/expkickstarter.php
+e353d049ec6e6fe2851a1da6b68ec25c  kernel/classes/expkickstarter.php
 f93c0a4b63a19a1bc54c806e89fd6a22  kernel/classes/expkickstarterini.php
 260fe378605929bcf0d4755cb2240c9c  kernel/classes/explinkcheck.php
 f4d6ecae469a38295a4d8c566f6ba3be  kernel/classes/explovestack.php
@@ -22879,6 +22879,7 @@ ff21db9e62979a47ec36d34ca3d7a32e  kernel/classes/exppackagearchivemodes.php
 65f02a8a118da8ab94010e39eff7fe42  kernel/classes/exppackagejson.php
 dc4c8073437ac469badafd440850162b  kernel/classes/exppasswordpolicy.php
 cadc65b1b3cc8e2459058bcc7eeb2840  kernel/classes/expphar.php
+d483347064e3fb8b8ebabf3825065485  kernel/classes/expphpsupport.php
 757793bfb95c663bf2f51744c3184b70  kernel/classes/exppolicyomitlist.php
 b607c67490219f43e8a2cf31d600700e  kernel/classes/exppreloadaddress.php
 37416fe9deaea6518c1addddcd86c2ae  kernel/classes/exppreloadhistory.php
@@ -22890,11 +22891,11 @@ d8bfba7e3e116906a27e21641d61ef7b  kernel/classes/exppreloadlock.php
 a9ac5a2c24c07de96e640440ff067bd2  kernel/classes/expsetuplog.php
 8847d66084301dd736d9c836f09b62e5  kernel/classes/expsetupwizardguard.php
 97cde01acb9dcf716cfed032b3762f4f  kernel/classes/expsiteaccessoverview.php
-b2dddbd54811fba33d1e23851ed63a0b  kernel/classes/expsystemreport.php
+4cd9ee242a065f3ea57789eb44940dad  kernel/classes/expsystemreport.php
 d1743b6d55d3d778b90feac8ba7b953f  kernel/classes/expsystemreportmask.php
 69e945b04dd9717d0446cf7306528fe7  kernel/classes/exptestlanguage.php
 6adcf9498be1e7be6b733ec60c3ffdab  kernel/classes/expuserloginintegrity.php
-0311756e26657e86dd4796d6e55f4b4b  kernel/classes/expvelocity.php
+116836b5ceb174a3eacd45d1007f6efa  kernel/classes/expvelocity.php
 ccab7d5acac2dabe846321cb2c2b3273  kernel/classes/expvelocityconfig.php
 99fc9e7a7c802abd77f1c2154c0b291c  kernel/classes/expvelocityconfiglayout.php
 a4630ccfef10da921b5b1bc32efcd944  kernel/classes/expvelocitydeploy.php
@@ -24262,7 +24263,7 @@ f7657a2d39889bcc63f9e9a9ed72ec17  kernel/setup/ezsetup.php
 939f6afaaeeb8425b5a6cd2117ace549  kernel/setup/ezsetup_summary.php
 b3d46bd1c3ea5767a9ffcb90f8b22061  kernel/setup/ezsetupcommon.php
 7f70e1fbb96af520b91d82af6c15e0e9  kernel/setup/ezsetupfunctioncollection.php
-39a33be6623d8cea5e768bcde38a99e1  kernel/setup/ezsetuptests.php
+84a08ce27a68c1a73d295491d36cd3a8  kernel/setup/ezsetuptests.php
 01c7698069eb84d0a5678de8de7f97b3  kernel/setup/function_definition.php
 7183ac0ed7562b87665665a2daad4b6f  kernel/setup/handlerextension.php
 f74e53f9425a012b53f82f9d23c7306c  kernel/setup/info.php
@@ -24742,7 +24743,7 @@ a5de15343b43044c3212fdc6953d813f  settings/requestclassifier.ini
 f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 470014a7d1753e79aff749cb969342b1  settings/rest.ini
 0e25e6140fca0aab71d94cdb05352146  settings/secrets.ini
-3197e2b14ad895064ea1a471dd85d42e  settings/setup.ini
+3d58b3c9abd483644a07965e143cb05f  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
 e9abf4da3b190ac0aea14c1d6fbe6ed3  settings/site.ini
@@ -26617,6 +26618,7 @@ b96df7eebf3dbbb88f9463398353a91a  tests/tests/kernel/classes/expLoveStackMigrate
 a8e3d9e6d6d9bf9a5e1a6181395ad5d8  tests/tests/kernel/classes/expMemberManagementTest.php
 64c24c6c801055316bbafc3aaabe243b  tests/tests/kernel/classes/expNodeQuickPickTest.php
 d7f7252f8a4021c0896627188449e9aa  tests/tests/kernel/classes/expPDFExportTest.php
+09b12cab0f979e6956843dc465c8d648  tests/tests/kernel/classes/expPhpSupportTest.php
 3bdd28bd003091155ce34cc6c77145e9  tests/tests/kernel/classes/expPolicyOmitListTest.php
 b167704de63034a7da8cd5daba25a132  tests/tests/kernel/classes/expRemoveSubtreeMultiLocationTest.php
 397f9eb0f4ca848604f45445f278a3b0  tests/tests/kernel/classes/expReverseRelationCheckTest.php

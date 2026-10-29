@@ -506,6 +506,8 @@ class expSystemReport
         return array(
             'version' => PHP_VERSION,
             'minimum' => (string)self::ini( 'phpversion', 'MinimumVersion', '7.4.0', 'setup.ini' ),
+            // the oldest supported PHP; between minimum and this one Exponential is usable without support
+            'supported' => (string)self::ini( 'phpversion', 'SupportedVersion', '8.0.0', 'setup.ini' ),
             'sapi' => PHP_SAPI,
             'zts' => defined( 'PHP_ZTS' ) && PHP_ZTS,
             'os' => PHP_OS_FAMILY,
