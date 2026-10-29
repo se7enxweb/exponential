@@ -217,7 +217,10 @@ class expUpgradeStepCodeUpdate extends expUpgradeBaseStep
             throw new RuntimeException( "cannot write $dir/code.json, nothing was moved" );
         @chmod( "$dir/code.json", 0600 );
         $lines[] = "the commits before the move: $dir/code.json";
-        if ( !$context->option( 'no-backup', false ) && class_exists( 'BackupManager' ) )
+        // git_manager's caption dumps MySQL/MariaDB only; on the other engines the upgrade's own backup holds the database
+        if ( !$context->option( 'no-backup', false ) && class_exists( 'BackupManager' ) && $context->engine() !== 'mysql' )
+            $lines[] = 'git_manager backup: not made (it dumps MySQL/MariaDB only); the upgrade backup holds the database';
+        else if ( !$context->option( 'no-backup', false ) && class_exists( 'BackupManager' ) )
         {
             $manager = new BackupManager();
             $result = $manager->createFullCaption( 'exp:upgrade: before the code moves to ' . (string)( $context->option( 'to', '' ) ?: 'the upstream' ) );
