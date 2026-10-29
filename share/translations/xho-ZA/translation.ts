@@ -8064,8 +8064,8 @@
         <translation>Izaziso zelungelo lokushicilela zababhali bokuqala nezesoftware yenye inkampani equlethwe kuExponential zigcinwe kumafayile omthombo nakwifayile ethi LICENSE, njengoko ilayisenisi ibhekiselele.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Oku kulandelayo luluhlu lwabanegalelo kuExponential abanikele ngelayisensi yomsebenzi wabo ukuze usetyenziswe yi-7x phantsi kwemiqathango yeSivumelwano seLayisensi yabaNegalelo se-eZ Systems. Njengoko isivumelwano sivuma, i-7x isasaza kwakhona igalelo ngalinye phantsi kwelayisensi enye nefayile elikuyo igalelo. Uluhlu lubiza umnikeli ngamnye, ulwazi lonxibelelwano olukhethekayo namafayile abanikele kuwo okanye abanikele ngomsebenzi kuwo.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Abanikeli abanconywayo ngomsebenzi wabo kwi-Exponential nakwisoftware eyavela kuyo, kunye neefayile abaye banikela kuzo. Oku kukuncoma, asisaziso selungelo lokushicilela: iminikelo kwi-Exponential inikezelwa kwi-Exponential Foundation nakwi-7x phantsi kwe-Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

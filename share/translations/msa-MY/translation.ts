@@ -8066,8 +8066,8 @@
         <translation>Notis hak cipta pengarang asal dan perisian pihak ketiga yang disertakan bersama Exponential disimpan dalam fail sumber dan dalam fail LICENSE, seperti yang dikehendaki oleh lesen.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Berikut ialah senarai penyumbang Exponential yang telah melesenkan kerja mereka untuk digunakan oleh 7x di bawah terma dan syarat eZ Systems Contributor Licensing Agreement. Seperti yang dibenarkan oleh perjanjian ini, 7x mengedarkan semula setiap sumbangan di bawah lesen yang sama dengan fail yang mengandungi sumbangan tersebut. Senarai ini menamakan setiap penyumbang, maklumat hubungan pilihan dan fail yang telah mereka sumbangkan atau sumbangkan kerja kepadanya.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Penyumbang yang diiktiraf atas kerja mereka pada Exponential dan pada perisian asal-usulnya, bersama fail yang mereka sumbangkan. Ini ialah pengiktirafan, bukan notis hak cipta: sumbangan kepada Exponential diserahkan kepada Exponential Foundation dan 7x di bawah Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

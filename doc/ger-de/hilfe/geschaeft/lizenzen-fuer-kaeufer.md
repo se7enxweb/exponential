@@ -181,7 +181,7 @@ wird.
 |---|---|
 | „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ | `COPYRIGHT.md` |
 | „Copyright (C) 1999 - 2014 eZ Systems AS. All rights reserved.“ | `COPYRIGHT.md` |
-| „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ (Teile von den Mitwirkenden von Exponential) | die Dokumentation ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)) |
+| „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ | die Dokumentation ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)) |
 
 „All rights reserved“ in einem Vermerk hebt die Erlaubnisse der GPL nicht auf; die Lizenz gewährt sie zusätzlich zum
 Copyright. Übernehmen Sie diese Vermerke genau, wenn Sie sie zitieren.

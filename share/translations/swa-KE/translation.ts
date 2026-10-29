@@ -8064,8 +8064,8 @@
         <translation>Ilani za hakimiliki za waandishi wa awali na za programu za wahusika wengine zilizojumuishwa pamoja na Exponential zimehifadhiwa katika faili za chanzo na katika faili LICENSE, kama leseni inavyotaka.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Ifuatayo ni orodha ya wachangiaji wa Exponential ambao wamelipa 7x leseni ya kutumia kazi yao chini ya masharti na vigezo vya eZ Systems Contributor Licensing Agreement. Kama mkataba huu unavyoruhusu, 7x husambaza upya kila mchango chini ya leseni ile ile ya faili ambamo mchango umejumuishwa. Orodha inamtaja kila mchangiaji, taarifa za mawasiliano zisizo za lazima na faili walizochangia au kuchangia kazi ndani yake.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Wachangiaji wanaotambuliwa kwa kazi yao kwenye Exponential na kwenye programu iliyozaa, pamoja na faili walizochangia. Huu ni utambuzi, si notisi ya hakimiliki: michango kwa Exponential hukabidhiwa Exponential Foundation na 7x chini ya Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

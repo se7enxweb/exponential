@@ -10011,8 +10011,8 @@
         <translation>Die Urheberrechtshinweise der ursprünglichen Autoren und der mit Exponential ausgelieferten Software von Drittanbietern bleiben, wie es die Lizenz verlangt, in den Quelldateien und in der Datei LICENSE erhalten.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Die folgende Liste nennt die Mitwirkenden an Exponential, die ihre Arbeit 7x zu den Bedingungen des eZ Systems Contributor Licensing Agreement zur Verfügung gestellt haben. Wie diese Vereinbarung es erlaubt, gibt 7x jeden Beitrag unter derselben Lizenz weiter wie die Datei, in der er enthalten ist. Die Liste nennt jeden Mitwirkenden, optional Kontaktangaben und die Dateien, zu denen er beigetragen hat.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Mitwirkende, die für ihre Arbeit an Exponential und an der Software, aus der es hervorging, genannt werden, mit den Dateien, zu denen sie beigetragen haben. Dies ist eine Nennung, kein Copyright-Hinweis: Beiträge zu Exponential werden nach dem Contributor Licensing Agreement an die Exponential Foundation und 7x übertragen.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

@@ -8066,8 +8066,8 @@
         <translation>اصل ليکڪن ۽ Exponential سان شامل ٿرڊ پارٽي سافٽ ويئر جا ڪاپي رائيٽ نوٽيس، لائسنس جي شرط مطابق، سورس فائلن ۽ LICENSE فائل ۾ محفوظ رکيا ويا آهن.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>هيٺ ڏنل Exponential جي انهن حصو وٺندڙن جي فهرست آهي جن eZ Systems Contributor Licensing Agreement جي شرطن ۽ ضابطن تحت پنهنجو ڪم 7x جي استعمال لاءِ لائسنس ڪيو آهي. هن معاهدي جي اجازت مطابق، 7x هر حصيداري کي ساڳئي لائسنس تحت ٻيهر ورهائي ٿو جيڪو ان فائل جو آهي جنهن ۾ اها حصيداري شامل آهي. فهرست ۾ هر حصو وٺندڙ جو نالو، اختياري رابطي جي معلومات ۽ اهي فائلون ڏنل آهن جن ۾ هنن حصو ورتو آهي.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>اهي حصو وٺندڙ جن کي Exponential ۽ ان سافٽ ويئر تي ڪم لاءِ ساراهيو وڃي ٿو جنهن مان اهو پيدا ٿيو، انهن فائلن سان جن ۾ هنن حصو ورتو. هي ساراهه آهي، ڪاپي رائيٽ نوٽيس ناهي: Exponential ۾ حصا Contributor Licensing Agreement تحت Exponential Foundation ۽ 7x کي سونپيا وڃن ٿا.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

@@ -10,7 +10,7 @@ type: help
 # Für freie Dokumentation eintreten
 
 Diese Seite ist für Fürsprecher, die finden, dass gute Dokumentation allen gehören sollte. Die Dokumentation von
-Exponential ist frei: „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ (Teile von den Mitwirkenden von Exponential),
+Exponential ist frei: „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“,
 lizenziert unter der GNU Free Documentation License 1.3 oder später ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)).
 
 ## Inhalt

@@ -8064,8 +8064,8 @@
         <translation>按照许可证的要求，原作者以及随 Exponential 一同分发的第三方软件的版权声明保留在源文件和 LICENSE 文件中。</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>以下是依据 eZ Systems 贡献者许可协议的条款，将其作品授权给 7x 使用的 Exponential 贡献者列表。根据该协议的许可，7x 会按照贡献内容所在文件的许可证重新分发每一项贡献。列表列出了每位贡献者、可选的联系信息，以及他们所贡献的文件或参与贡献的文件。</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>因参与 Exponential 及其前身软件的工作而获致谢的贡献者，以及他们参与贡献的文件。这是致谢，而非版权声明：对 Exponential 的贡献依据 Contributor Licensing Agreement 转让给 Exponential Foundation 和 7x。</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

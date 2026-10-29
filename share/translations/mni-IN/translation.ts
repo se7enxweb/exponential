@@ -8066,8 +8066,8 @@
         <translation>অহানবা ইরাকপাশিং অমসুং Exponential গা থোক্কখিবা তৃতীয় পক্ষগী সফ্টৱেয়রকী কপিরাইট নোটিসশিং লাইসেন্সনা ঙাক্লবগী মখলগা সোর্স ফাইলশিং অমসুং LICENSE ফাইলদা থম্লি.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>মখাদা লৈবা অসি eZ Systems Contributor Licensing Agreement গী চর্তশিংগী মখুংদা 7x না ইউজ তৌবগী ফাওহনি মখোইগী ৱারোল লাইসেন্স পীখিবা Exponential গী অবদান পীবাশিংগী তালিকানি. চুক্তি অসিনা য়ানবগী ওইনা 7x নুংদা অবদান অমা অমা অসি অবদান অসি লৈবা ফাইলকী লাইসেন্স অসিনা অমতা ওইনা পুন বিতরণ তৌরি. তালিকা অসিদা অবদান পীবা অমা অমাগী মমিং, ইচ্ছাধীন খুৎচিন্নবগী ইনফরমেসন অমসুং মখোইনা অবদান পীখিবা নত্রগা ৱারোল তৌখিবা ফাইলশিং ইশিনখ্রে.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential অমসুং মসি থোরকখিবা ছোফতৱেরদা থবক তৌখিবগীদমক থাগৎপা ফংলিবা মতেং পাংলকপশিং, মখোয়না মতেং পাংলকখিবা ফাইলশিংগা লোয়ননা। মসি থাগৎপনি, কপিরাইটকী খঙহনবা নত্তে: Exponential দা পীবা মতেংশিং Contributor Licensing Agreement গী মখাদা Exponential Foundation অমসুং 7x দা পীদোকই।</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

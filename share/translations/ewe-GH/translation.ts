@@ -8066,8 +8066,8 @@
         <translation>Ŋgɔgbewɔlawo kple dɔwɔnu siwo tso ame bubuwo gbɔ eye wotsɔ wo kple Exponential ƒe ŋutɔdidi ƒe ŋlɔɖiwo le gbɔ le ŋtɔŋu faɛlwo kple LICENSE faɛl me, abe alesi lisɛns la di ene.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Esia nye Exponential ƒe kpekpeɖeŋudelawo siwo tsɔ woƒe dɔ na 7x le eZ Systems Contributor Licensing Agreement ƒe ɖoɖowo nu ƒe lisiti. Abe alesi nubabla sia ɖe mɔ ene la, 7x tsɔa kpekpeɖeŋu ɖe sia ɖe zua ame bubuwo hã le lisɛns ɖeka si faɛl si me kpekpeɖeŋu la le lia te. Lisiti la gblɔa kpekpeɖeŋudela ɖe sia ɖe ƒe ŋkɔ, kadodo ƒe nyatakaka (ne ele eme) kple faɛlwo si wotsɔ kpe ɖe eŋu.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Kpekpeɖeŋunala siwo ŋu wodoa ŋkɔ le woƒe dɔ si wowɔ le Exponential kple software si me wòtso la ŋu, kpe ɖe faɛl siwo me wokpe ɖe eŋu la ŋu. Esia nye akpedada, menye copyright gbeƒãɖeɖe o: wotsɔa kpekpeɖeŋu siwo wona Exponential la naa Exponential Foundation kple 7x le Contributor Licensing Agreement la te.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

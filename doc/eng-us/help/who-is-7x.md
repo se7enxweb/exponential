@@ -89,7 +89,7 @@ The copyright holder named in every file of the kernel is "Exponential Foundatio
 29 October 2026 ([Copyright and copyleft](copyright-and-copyleft.md)): see [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md),
 [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE) and the header of almost every PHP file, for
 example `autoload.php`. The documentation carries "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved."
-and names the Exponential contributors as authors of portions ([The license of this documentation](../README-LICENSE.md)).
+([The license of this documentation](../README-LICENSE.md)).
 
 The two are not the same organization. 7x is the company; the Exponential Foundation is a nonprofit corporation,
 founded on 19 March 2026, which names 7x "the current leader in contributions both financial, code, extension

@@ -8066,8 +8066,8 @@
         <translation>Upphavsrættarfráboðanirnar hjá upprunaligu høvundunum og hjá forriti frá triðja parti, sum fylgir við Exponential, verða varðveittar í keldufílunum og í fíluni LICENSE, sum loyvið krevur.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Hetta er ein listi yvir luttakarar í Exponential, sum hava loyvt 7x at nýta arbeiði teirra eftir treytunum í eZ Systems Contributor Licensing Agreement. So sum avtalan loyvir, býtir 7x hvørt íkast víðari undir sama loyvi sum fílan, íkastið er í. Listin nevnir hvønn luttakara, møguligar samskiftisupplýsingar og fílurnar, ið viðkomandi hevur lagt til.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Íkastarar, sum verða nevndir fyri sítt arbeiði við Exponential og við ta ritbúnaðin, sum tað vaks úr, við teimum fílunum, sum teir hava íkastað til. Hetta er viðurkenning, ikki ein upphavsrættarfráboðan: íkøst til Exponential verða latin Exponential Foundation og 7x sambært Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

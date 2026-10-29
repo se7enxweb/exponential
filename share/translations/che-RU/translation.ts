@@ -8066,8 +8066,8 @@
         <translation>Хьалхара авторийн а, Exponential-ца юкъайогӀучу кхечу агӀор программин а авторан бакъонаш лицензи ма-дарра, хьалхара файлашкахь а, LICENSE файлехь а ларйина ю.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>ХӀара — шайн болх 7x-на eZ Systems Contributor Licensing Agreement бакъонашца лело лицензи динчу Exponential декъашхойн могӀам. Иза бакъо йолу тайпа, 7x хӀора декъашхочун болх цу декъашхочун болх чудерзийна файлан лицензица юха даржайо. МогӀамехь хӀора декъашхочун цӀе, лаахь контакт а, цо дина я цуьнан болх чудаьхьна файлаш а ю.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential а, иза кхолламчу программни гӀирсана а беш болчу балха гӀоьнна хаздина декъашхой, церан гӀо хилла файлашца. ХӀара хьалхара хьахор ду, авторан бакъонах лаьцна хаам бац: Exponential-на деш болу гӀо Contributor Licensing Agreement-ца Exponential Foundation-на а, 7x-на а дӀалуш ду.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

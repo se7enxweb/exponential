@@ -24,7 +24,7 @@ Jeder darf sie kopieren, übersetzen, anpassen und weitergeben.
 ## Das Thema in einem Absatz
 
 Die Dokumentation im Verzeichnis `doc/` des Repositorys, einschließlich der Hilfe in der Administration, steht unter
-„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ (Teile von den Mitwirkenden von Exponential) und ist unter der GNU Free
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ und ist unter der GNU Free
 Documentation License, Version 1.3 oder später, lizenziert, ohne unveränderliche Abschnitte und ohne Umschlagtexte
 ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)). Eine Seite in einfachen Worten erklärt, was Leser damit
 tun dürfen: sie lesen, kopieren, weitergeben, übersetzen, anpassen und zitieren

@@ -47,7 +47,7 @@ kostenpflichtigen Newsletter, wenn Sie die Hinweise behalten und Ihren bearbeite
 
 ```text
 Adapted from the Exponential documentation, "<page>", Exponential Copyright © 1998-2026 Exponential Foundation and 7x,
-and the Exponential contributors, GNU FDL 1.3 or later.
+GNU FDL 1.3 or later.
 ```
 
 ## Offenlegung

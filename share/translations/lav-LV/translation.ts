@@ -8005,8 +8005,8 @@
         <translation>Sākotnējo autoru un sistēmā Exponential iekļautās trešo pušu programmatūras autortiesību paziņojumi ir saglabāti avota failos un failā LICENSE, kā to prasa licence.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Tālāk ir sniegts to Exponential līdzautoru saraksts, kuri ir licencējuši savu darbu izmantošanai uzņēmumam 7x saskaņā ar eZ Systems līdzautoru licencēšanas līguma (Contributor Licensing Agreement) noteikumiem. Kā to atļauj šis līgums, 7x izplata katru ieguldījumu saskaņā ar to pašu licenci, kas attiecas uz failu, kurā ieguldījums ir iekļauts. Sarakstā ir norādīts katrs līdzautors, neobligāta kontaktinformācija un faili, kurus viņš ir izveidojis vai kuros ir veicis ieguldījumu.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Līdzstrādnieki, kuri minēti par savu darbu pie Exponential un programmatūras, no kuras tā izauga, kopā ar failiem, kuros viņi ir devuši ieguldījumu. Tā ir atzinība, nevis autortiesību paziņojums: ieguldījumi Exponential saskaņā ar Contributor Licensing Agreement tiek nodoti Exponential Foundation un 7x.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

@@ -8005,8 +8005,8 @@
         <translation>मूल लेखकों और Exponential के साथ शामिल तृतीय-पक्ष सॉफ़्टवेयर की कॉपीराइट सूचनाएँ, लाइसेंस की अपेक्षा के अनुसार, स्रोत फ़ाइलों और LICENSE फ़ाइल में रखी गई हैं।</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>नीचे उन Exponential योगदानकर्ताओं की सूची है जिन्होंने eZ Systems Contributor Licensing Agreement के नियमों और शर्तों के अंतर्गत अपने कार्य को 7x द्वारा उपयोग के लिए लाइसेंस दिया है। इस समझौते की अनुमति के अनुसार, 7x प्रत्येक योगदान को उसी लाइसेंस के अंतर्गत पुनर्वितरित करता है जो उस फ़ाइल का है जिसमें वह योगदान शामिल है। सूची में प्रत्येक योगदानकर्ता का नाम, वैकल्पिक संपर्क जानकारी और वे फ़ाइलें दी गई हैं जिनमें उन्होंने योगदान दिया है या जिनके कार्य में योगदान दिया है।</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential और उस सॉफ़्टवेयर पर काम के लिए श्रेय पाने वाले योगदानकर्ता, जिससे यह विकसित हुआ, उन फ़ाइलों के साथ जिनमें उन्होंने योगदान दिया। यह श्रेय है, कॉपीराइट सूचना नहीं: Exponential में योगदान Contributor Licensing Agreement के तहत Exponential Foundation और 7x को सौंपे जाते हैं।</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

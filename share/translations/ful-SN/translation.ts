@@ -8066,8 +8066,8 @@
         <translation>Reentinooje copyright binndooɓe adinooɓe e software ɓanndu goɗɗo e Exponential ina mooftaama ka fichiers sorsi e ka fichier LICENSE, no jamirol ngol yeewti.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Ɗum ko doggol wallooɓe Exponential ɓe ndonni 7x jamirol huutinirgol golle maɓɓe e sarɗi Contributor Licensing Agreement ɗum eZ Systems. No sarɗi ɗin ndonni, 7x yaltinii golle kala wallooɗo e jamirol fichier ɗo golle ɗe ngoni. Doggol ngol innat wallooɗo kala, anndinol haɓɓitugol e fichiers ɗi o wallitii.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Wallitooɓe teddinaaɓe e golle maɓɓe e Exponential e software nde iwi e mayre, e fiise ɗe ɓe walli. Ɗum ko teddingol, wonaa tintinol copyright: wallitaaɗe ngam Exponential ndokkete Exponential Foundation e 7x e les Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

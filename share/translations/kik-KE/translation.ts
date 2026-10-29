@@ -8066,8 +8066,8 @@
         <translation>Ũmenyithia wa kĩrĩ kĩa gwĩka wa andĩki a mbere na wa software ya andũ angĩ ĩrĩa ĩrĩ hamwe na Exponential nĩ ũigĩtwo thĩinĩ wa mafaili ma kĩambĩrĩria na thĩinĩ wa faili ya LICENSE, ta ũrĩa rũthaano rũrenda.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Ũũ nĩ mũhari wa aiteithĩria a Exponential arĩa mahetire 7x rũthaano rwa gũhũthĩra wĩra wao kũringana na mawatho na mũhaka wa eZ Systems Contributor Licensing Agreement. Ta ũrĩa mũtũũranĩre ũyũ ũrekereria, 7x ĩgaĩraga rĩngĩ kĩheo kĩothe na rũthaano rũmwe na rwa faili ĩrĩa kĩheo kĩu kĩrĩ thĩinĩ. Mũhari ũcio ũtaarĩtie mũteithia o mũmwe, ũhoro wa gũtaarania ũrĩa ũtarĩ wa bata, na mafaili marĩa maateithĩtie kana marĩa maakĩrĩire wĩra wao.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Arĩa mateithĩtie arĩa marakũngũĩrwo nĩ ũndũ wa wĩra wao harĩ Exponential na harĩ software ĩrĩa yoimire, hamwe na faili iria mateithĩirie. Ũyũ nĩ ũkũngũĩri, ti ũhoro wa copyright: ũteithio harĩ Exponential ũheagwo Exponential Foundation na 7x kũringana na Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

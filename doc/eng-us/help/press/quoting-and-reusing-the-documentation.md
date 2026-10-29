@@ -25,7 +25,7 @@ and how to credit it. It is practical guidance, not legal advice.
 ## The license in one paragraph
 
 The documentation in `doc/`, including this help, is "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved."
-(portions by the Exponential contributors) and licensed under the GNU Free Documentation License, Version 1.3 or any later version,
+and licensed under the GNU Free Documentation License, Version 1.3 or any later version,
 "with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts" ([The license of this documentation](../../README-LICENSE.md)).
 The plain-words explanation is [Free documentation](../free-documentation.md).
 
@@ -45,7 +45,7 @@ The plain-words explanation is [Free documentation](../free-documentation.md).
 
 When you redistribute a page or a substantial part of it:
 
-1. The copyright notice: "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." (portions by the Exponential contributors).
+1. The copyright notice: "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved."
 2. The license notice, or a clear reference to the GNU FDL 1.3 with a link
    (<https://www.gnu.org/licenses/fdl-1.3.html>); for a printed reprint of a large part, include the license text
    as the license requires.
@@ -59,8 +59,8 @@ Article (short quote):
   (Exponential documentation, https://github.com/se7enxweb/exponential/tree/main/doc).
 
 Reprinted page:
-  Adapted from "<page title>", Exponential documentation. Exponential Copyright © 1998-2026 Exponential Foundation and 7x,
-  and the Exponential contributors. Licensed under the GNU FDL 1.3 or later,
+  Adapted from "<page title>", Exponential documentation. Exponential Copyright © 1998-2026 Exponential Foundation and 7x.
+  Licensed under the GNU FDL 1.3 or later,
   https://www.gnu.org/licenses/fdl-1.3.html. Changes: <what you changed>.
 
 Video description:

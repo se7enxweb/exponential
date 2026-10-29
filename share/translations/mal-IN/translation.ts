@@ -8064,8 +8064,8 @@
         <translation>ലൈസൻസ് ആവശ്യപ്പെടുന്നതുപോലെ, യഥാർത്ഥ രചയിതാക്കളുടെയും Exponential-നൊപ്പം ഉൾപ്പെടുത്തിയിട്ടുള്ള മൂന്നാം കക്ഷി സോഫ്റ്റ്വെയറിന്റെയും പകർപ്പവകാശ അറിയിപ്പുകൾ സോഴ്സ് ഫയലുകളിലും LICENSE ഫയലിലും സൂക്ഷിച്ചിരിക്കുന്നു.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>eZ Systems Contributor Licensing Agreement-ന്റെ നിബന്ധനകൾക്കും വ്യവസ്ഥകൾക്കും അനുസൃതമായി 7x-ന് ഉപയോഗിക്കാൻ തങ്ങളുടെ സൃഷ്ടി ലൈസൻസ് ചെയ്തിട്ടുള്ള Exponential സംഭാവകരുടെ ലിസ്റ്റ് ചുവടെ നൽകിയിരിക്കുന്നു. ഈ കരാർ അനുവദിക്കുന്നതുപോലെ, ഓരോ സംഭാവനയും ഉൾപ്പെടുത്തിയിട്ടുള്ള ഫയലിന്റെ അതേ ലൈസൻസിൽ തന്നെ 7x വീണ്ടും വിതരണം ചെയ്യുന്നു. ഈ ലിസ്റ്റിൽ ഓരോ സംഭാവകന്റെയും പേര്, ഐച്ഛികമായ ബന്ധപ്പെടാനുള്ള വിവരങ്ങൾ, അവർ സംഭാവന ചെയ്ത ഫയലുകൾ അല്ലെങ്കിൽ സൃഷ്ടികൾ എന്നിവ നൽകിയിരിക്കുന്നു.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential-ലും അത് വളർന്നുവന്ന സോഫ്റ്റ്‌വെയറിലുമുള്ള പ്രവർത്തനത്തിന് അംഗീകാരം ലഭിക്കുന്ന സംഭാവകർ, അവർ സംഭാവന ചെയ്ത ഫയലുകൾ സഹിതം. ഇത് അംഗീകാരമാണ്, പകർപ്പവകാശ അറിയിപ്പല്ല: Exponential-ലേക്കുള്ള സംഭാവനകൾ Contributor Licensing Agreement പ്രകാരം Exponential Foundation-നും 7x-നും കൈമാറുന്നു.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

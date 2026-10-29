@@ -8066,8 +8066,8 @@
         <translation>Amatangazo y'uburenganzira bw'umwanditsi y'abanditsi ba mbere n'aya porogaramu z'abandi bantu zazanywe na Exponential abitswe mu mafayili y'inkomoko no mu ifayili LICENSE, nk'uko uruhushya rubisaba.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Ibikurikira ni urutonde rw'abagiramo uruhare muri Exponential bahaye 7x uruhushya rwo gukoresha akazi kabo hakurikijwe amabwiriza ya eZ Systems Contributor Licensing Agreement. Nk'uko iyi masezerano yemera, 7x isakaza buri musanzu ikoresheje uruhushya rumwe n'urw'ifayili irimo uwo musanzu. Urutonde rugaragaza buri wese wagiramo uruhare, amakuru ye yo kumuhamagara aramutse ayatanze, n'amafayili yatanzemo umusanzu.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Abatanze umusanzu bashimirwa ku murimo wabo kuri Exponential no kuri porogaramu yakomotsemo, hamwe n'amadosiye batanzemo umusanzu. Iki ni ugushimira, si itangazo ry'uburenganzira bw'umwanditsi: imisanzu itangwa kuri Exponential yeguriwa Exponential Foundation na 7x hakurikijwe Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

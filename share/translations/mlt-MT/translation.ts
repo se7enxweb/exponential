@@ -8005,8 +8005,8 @@
         <translation>L-avviżi dwar id-drittijiet tal-awtur tal-awturi oriġinali u tas-softwer ta&apos; partijiet terzi inkluż ma&apos; Exponential jinżammu fil-fajls tas-sors u fil-fajl LICENSE, kif titlob il-liċenzja.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Din li ġejja hija lista tal-kontributuri ta&apos; Exponential li lliċenzjaw ix-xogħol tagħhom biex jintuża minn 7x skont it-termini u l-kundizzjonijiet tal-eZ Systems Contributor Licensing Agreement. Kif jippermetti dan il-ftehim, 7x iqassam kull kontribuzzjoni taħt l-istess liċenzja tal-fajl li fih hija inkluża l-kontribuzzjoni. Il-lista ssemmi kull kontributur, informazzjoni ta&apos; kuntatt fakultattiva u l-fajls li kkontribwixxa jew li għalihom ikkontribwixxa xogħol.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Kontributuri rikonoxxuti għax-xogħol tagħhom fuq Exponential u fuq is-softwer li minnu kiber, flimkien mal-fajls li kkontribwew għalihom. Dan huwa rikonoxximent, mhux avviż tad-drittijiet tal-awtur: il-kontribuzzjonijiet għal Exponential jiġu assenjati lill-Exponential Foundation u lil 7x taħt il-Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

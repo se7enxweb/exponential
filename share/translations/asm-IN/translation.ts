@@ -8066,8 +8066,8 @@
         <translation>অনুজ্ঞাপত্ৰৰ প্ৰয়োজন অনুসৰি, মূল লেখকসকলৰ আৰু Exponentialৰ সৈতে অন্তৰ্ভুক্ত তৃতীয় পক্ষৰ ছফ্টৱেৰৰ কপিৰাইট জাননী উৎস ফাইল আৰু LICENSE ফাইলত ৰখা হৈছে।</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>তলত Exponentialৰ সেই অৱদানকাৰীসকলৰ তালিকা দিয়া হৈছে, যিসকলে eZ Systems Contributor Licensing Agreementৰ চৰ্তাৱলী অনুসৰি 7xৰ ব্যৱহাৰৰ বাবে নিজৰ কামৰ অনুজ্ঞা দিছে। এই চুক্তিয়ে অনুমতি দিয়াৰ দৰে, 7xএ প্ৰতিটো অৱদান সেই ফাইলৰ অনুজ্ঞাপত্ৰৰ অধীনতে পুনৰ বিতৰণ কৰে, যিটো ফাইলত অৱদানটো অন্তৰ্ভুক্ত আছে। তালিকাত প্ৰতিজন অৱদানকাৰীৰ নাম, ঐচ্ছিক যোগাযোগৰ তথ্য আৰু তেওঁলোকে অৱদান আগবঢ়োৱা ফাইলবোৰ উল্লেখ আছে।</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential আৰু ইয়াৰ পৰা গঢ় লোৱা ছফ্টৱেৰত কামৰ বাবে স্বীকৃতি পোৱা অৱদানকাৰীসকল, তেওঁলোকে অৱদান দিয়া ফাইলসমূহৰ সৈতে। এইটো স্বীকৃতি, কপিৰাইট জাননী নহয়: Contributor Licensing Agreement অনুসৰি Exponential লৈ কৰা অৱদানসমূহ Exponential Foundation আৰু 7x লৈ হস্তান্তৰ কৰা হয়।</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

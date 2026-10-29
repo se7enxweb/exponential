@@ -250,8 +250,16 @@ Exponential wird von vielen Menschen geschrieben. Ihre Beiträge kommen auf zwei
 - **Beiträge zur Dokumentation** werden unter der GNU Free Documentation License 1.3 oder später angenommen (siehe
   [Die Lizenz dieser Dokumentation](../README-LIZENZ.md)).
 
-Beitragende werden in der Git-Historie genannt, die festhält, wer was geschrieben hat, und auf der Seite „Über“
-(/ezinfo/about). Ein Name in der Historie ist kein Copyright-Hinweis und wird nie entfernt.
+**Ein eigenes Urheberrecht „der Mitwirkenden von Exponential“ gibt es nicht.** Alle Mitwirkenden übertragen das
+Urheberrecht an einem Beitrag über das CLA an die Exponential Foundation und 7x; das Projekt hat also genau zwei
+Rechteinhaber, und der Hinweis nennt nur diese beiden, im Code wie in der Dokumentation. Frühere Fassungen des
+Hinweises der Dokumentation ergänzten „and the Exponential contributors“; diese Formulierung ist entfallen
+(Entscheidung des Eigentümers vom 29. Oktober 2026). Beiträge zur Dokumentation liegen im selben Repository (`doc/`)
+und fallen unter dasselbe CLA.
+
+Mitwirkende werden genannt, und die Nennung wird nie entfernt: in den Changelogs, in der Autorenschaft jedes Commits
+(die Git-Historie hält fest, wer was geschrieben hat), auf den Seiten zur Anerkennung und in der Liste der
+Mitwirkenden auf der Seite „Über“ (/ezinfo/about). Eine Nennung ist kein Anspruch auf Urheberrecht.
 
 Ihre eigenen Erweiterungen, Themes und Seitenpakete in Ihren eigenen Repositories sind **keine** Beiträge und brauchen
 kein CLA. Sie tragen Ihren Hinweis.
@@ -443,6 +451,13 @@ Die Reihenfolge sagt nichts über Anteile. Beide sind Rechteinhaber. Die Foundat
 Der Exponential Foundation und 7x gemeinsam; sie werden seine Eigentümer und dürfen ihn nutzen, ändern, neu
 lizenzieren und verbreiten. Seit dem 29. Oktober 2026 nennt das CLA beide, in derselben Reihenfolge wie der Hinweis.
 Ihre eigenen Erweiterungen sind nicht betroffen.
+
+**Warum nennt der Hinweis die Mitwirkenden nicht?**
+Weil sie kein eigenes Urheberrecht an Exponential halten. Jeder Beitrag wird über das Contributor Licensing
+Agreement an die Exponential Foundation und 7x übertragen; diese beiden sind die einzigen Rechteinhaber, und ein
+Hinweis nennt Rechteinhaber. Die Menschen, die die Arbeit geleistet haben, werden in den Changelogs, in der
+Commit-Historie und auf den Seiten zur Anerkennung mit Namen genannt; diese Nennung ist kein Anspruch auf
+Urheberrecht.
 
 **Hat sich am 29. Oktober 2026 die Lizenz geändert?**
 Nein. Nur der Hinweis auf die Rechteinhaber hat sich geändert. Die Lizenz ist weiterhin die GNU General Public License,

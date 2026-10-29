@@ -32,6 +32,9 @@ class CopyrightNoticeTest extends PHPUnit\Framework\TestCase
 
     const NOTICE = '/(?:copyright|\(c\)|©|&(?:amp;)?copy;)(?:\s|[:=(),"\'„“]|\(c\)|©|&(?:amp;)?copy;)*(?:(?:19|20)[0-9]{2}\s*-\s*(?:19|20)[0-9]{2},?\s*|<year>\s*)?(?:(?:<[^<>]*>|&lt;.*?&gt;)\s*)*(?:the\s+)?(?:7x(?![0-9A-Za-z])|exponential foundation)/iu';
 
+    const CONTRIB = '/exponential contributors/i';
+    const CONTRIB_CONTEXT = '/copyright|\(c\)|©|&copy;|portions/i';
+
     private static $allowlist;
 
     private static function root()
@@ -62,6 +65,11 @@ class CopyrightNoticeTest extends PHPUnit\Framework\TestCase
      */
     public static function classify( $line )
     {
+        // "the Exponential contributors" next to copyright, (C), the sign or "portions" claims them as holders; there
+        // is no such holder: every contributor assigns the copyright to the two holders through the CLA (owner,
+        // 2026-10-29)
+        if ( preg_match( self::CONTRIB, $line ) && preg_match( self::CONTRIB_CONTEXT, $line ) )
+            return 'own-other';
         if ( stripos( $line, 'copyright' ) === false || !preg_match( self::MARKER, $line ) )
             return null;
         if ( !preg_match( self::OWN, $line ) )
@@ -135,6 +143,10 @@ class CopyrightNoticeTest extends PHPUnit\Framework\TestCase
             'notice without the approved wording' => array( 'Copyright: 1998 - 2026 Exponential Foundation and 7x; 1999 - 2014 eZ Systems AS', 'own-other' ),
             'prose with years' => array( '| The copyright notice runs from 1998 to 2026 for the Exponential Foundation and 7x | `COPYRIGHT.md` |', null ),
             'another author with the Foundation' => array( ' * @copyright Copyright CJW Network and Exponential Foundation. All rights reserved.', null ),
+            'contributors as holders' => array( 'Portions copyright (C) 1998 - 2026 the Exponential contributors.', 'own-other' ),
+            'contributors added to the notice' => array( 'Copyright (C) 1998 - 2026 7x & Exponential Foundation and the Exponential contributors.', 'own-other' ),
+            'contributors credited, no copyright' => array( 'Thanks to the Exponential contributors for the new editor.', null ),
+            'contributors guidelines title' => array( '# Exponential Contributors Guidelines', null ),
             'prose without a marker' => array( 'The copyright belongs to the Exponential Foundation and 7x together.', null ),
             'no copyright word' => array( 'Exponential Foundation and 7x, 1998 - 2026', null ),
         );

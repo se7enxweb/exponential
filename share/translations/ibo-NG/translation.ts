@@ -8064,8 +8064,8 @@
         <translation>Ọkwa ikike mmeputa nke ndị dere mbụ na nke sọftwia ndị ọzọ e mejupụtara na Exponential ka edebere na faịlụ isi mmalite na na faịlụ LICENSE, dịka ikikere ahụ chọrọ.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Nke a bụ ndepụta ndị nyere aka na Exponential bụ ndị nyere ikikere maka ojiji ọrụ ha site na 7x n&apos;okpuru usoro na ọnọdụ nke Nkwekọrịta Ikikere Onye Nyere Aka nke eZ Systems. Dịka nkwekọrịta a kwadoro, 7x na-ekesaghachi onyinye ọ bụla n&apos;okpuru otu ikikere dịka faịlụ e tinyere onyinye ahụ n&apos;ime ya. Ndepụta a kpọtụrụ onye nyere aka ọ bụla aha, ozi mkpakọrịta nhọrọ na faịlụ ndị ha nyere aka ma ọ bụ nyekwara ọrụ.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Ndị nyere aka a na-enye otuto maka ọrụ ha na Exponential na sọftụwia o si na ya pụta, ya na faịlụ ndị ha nyere aka na ha. Nke a bụ otuto, ọ bụghị ọkwa nwebiisinka: a na-enyefe onyinye nye Exponential na Exponential Foundation na 7x n&apos;okpuru Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

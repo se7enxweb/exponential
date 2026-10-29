@@ -8066,8 +8066,8 @@
         <translation>Паведамленні пра аўтарскія правы першапачатковых аўтараў і старонніх праграм, якія ўваходзяць у Exponential, захоўваюцца ў зыходных файлах і ў файле LICENSE, як таго патрабуе ліцэнзія.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Ніжэй прыведзены спіс удзельнікаў Exponential, якія далі 7x ліцэнзію на выкарыстанне сваёй працы на ўмовах eZ Systems Contributor Licensing Agreement. Як дазваляе гэта пагадненне, 7x распаўсюджвае кожны ўклад пад той жа ліцэнзіяй, што і файл, у які ён уключаны. У спісе пазначаны кожны ўдзельнік, неабавязковыя кантактныя даныя і файлы, якія ён стварыў або ў якія ўнёс уклад.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Удзельнікі, якім аддаецца належнае за працу над Exponential і над праграмным забеспячэннем, з якога ён вырас, з файламі, у якія яны ўнеслі ўклад. Гэта прызнанне, а не паведамленне пра аўтарскае права: уклады ў Exponential перадаюцца Exponential Foundation і 7x паводле Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

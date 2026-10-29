@@ -8066,8 +8066,8 @@
         <translation>Yégle yi ci sañ-sañu bind bu ñi ko jëkk a bind ak bu prograam yu ñeneen yi nekk ak Exponential, mu ngi ci fisie yi ak ci fisie LICENSE bi, ni ko lisàns bi laajee.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Lii mooy lim bu ñi bokk ci Exponential te joxal nañu 7x seen liggéey ci dayoy eZ Systems Contributor Licensing Agreement. Ni ko diggante bi nangoo, 7x dafay law benn-benn ci seen yooni liggéey ci lisàns bi fisie bi ñu ko duggal nekk. Lim bi mu ngi tudd kenn-kenn, yëfi jokkoo yu mu bëgg, ak fisie yi mu jàppale.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Ñi ci jàppale te ñu sargal seen liggéey ci Exponential ak ci prograam bi mu jóge, ak fisye yi ñu ci jàppale. Lii sargal la, du yégle copyright: jàppale yi ñuy def ci Exponential ñu ngi leen jox Exponential Foundation ak 7x ci Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

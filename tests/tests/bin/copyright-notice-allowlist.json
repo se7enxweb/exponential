@@ -16,6 +16,11 @@
     "lines": [
         {
             "path": "*",
+            "contains": "no separate copyright of \"the Exponential contributors\"",
+            "reason": "the clarification that there is no such holder (owner, 2026-10-29): every contributor assigns the copyright through the CLA"
+        },
+        {
+            "path": "*",
             "contains": "CJW Network and Exponential Foundation",
             "reason": "the notice of CJW Network, co-author of these files with the Exponential Foundation; another author's notice is kept as it is"
         },

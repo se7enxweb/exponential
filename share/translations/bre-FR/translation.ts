@@ -8066,8 +8066,8 @@
         <translation>Miret eo kemennoù gwirioù aozer an aozerien orin hag ar meziantoù tredeog ebarzhet gant Exponential er restroù tarzh hag er restr LICENSE, evel m'her goulenn an aotreadur.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Setu roll ar genlabourerien Exponential o deus aotreet o labour da 7x da vezañ implijet dindan divizoù ha divoned ar Contributor Licensing Agreement eus eZ Systems. Evel m'her aotre ar c'hendivizad-se, 7x a adskign pep perzh dindan an hevelep aotreadur hag ar restr ma 'z eo ebarzhet ennañ. Ar roll a anv pep kenlabourer, e titouroù darempred diret ha ar restroù m'en deus kemeret perzh enno.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Kenlabourerien anavezet evit o labour war Exponential ha war ar meziant ma'z eo deuet anezhañ, gant ar restroù m'o deus kemeret perzh enno. Un anaoudegezh eo, n'eo ket un evezhiadenn gwir-eilañ: treuzkaset eo ar c'henlabouroù da Exponential d'an Exponential Foundation ha da 7x dindan ar Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

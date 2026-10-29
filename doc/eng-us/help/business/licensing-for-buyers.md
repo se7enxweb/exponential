@@ -170,7 +170,7 @@ Before you tell a buyer that "everything is GPL", check the About page of the in
 |---|---|
 | "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." | `COPYRIGHT.md` |
 | "Copyright (C) 1999 - 2014 eZ Systems AS. All rights reserved." | `COPYRIGHT.md` |
-| "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." (portions by the Exponential contributors) | the documentation ([The license of this documentation](../../README-LICENSE.md)) |
+| "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." | the documentation ([The license of this documentation](../../README-LICENSE.md)) |
 
 "All rights reserved" in a notice does not take away the GPL's permissions; the license grants them on top of
 the copyright. Copy these notices exactly when you quote them.

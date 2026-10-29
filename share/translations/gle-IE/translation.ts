@@ -8005,8 +8005,8 @@
         <translation>Coinnítear fógraí cóipchirt na n-údar bunaidh agus na mbogearraí tríú páirtí a chuirtear san áireamh le Exponential sna comhaid foinse agus sa chomhad LICENSE, mar a éilíonn an ceadúnas.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Seo thíos liosta de rannpháirtithe Exponential a thug ceadúnas dá gcuid oibre le húsáid ag 7x faoi théarmaí agus choinníollacha an eZ Systems Contributor Licensing Agreement. Mar a cheadaíonn an comhaontú sin, athdháileann 7x gach ranníocaíocht faoin gceadúnas céanna leis an gcomhad ina bhfuil an ranníocaíocht. Ainmníonn an liosta gach rannpháirtí, sonraí teagmhála roghnacha agus na comhaid ar chuir siad leo nó ar chuir siad obair leo.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Rannpháirtithe a bhfaightear creidiúint dóibh as a gcuid oibre ar Exponential agus ar na bogearraí ar fhás sé astu, leis na comhaid ar chuidigh siad leo. Is creidiúint é seo, ní fógra cóipchirt: sanntar ranníocaíochtaí le Exponential don Exponential Foundation agus do 7x faoin Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

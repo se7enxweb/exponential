@@ -8066,8 +8066,8 @@
         <translation>Di copyright notices of di original authors and of di third-party software wey dey inside Exponential dey for di source files and for di LICENSE file, as di license need am.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Dis na list of Exponential contributors wey don license dia work make 7x use am under di terms and conditions of di eZ Systems Contributor Licensing Agreement. As dis agreement allow, 7x dey redistribute each contribution under di same license wey di file wey di contribution dey inside get. Di list name each contributor, optional contact info and di files wey dem contribute or contribute work to.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Contributors wey we give credit for di work wey dem do for Exponential and for di software wey e grow from, plus di files wey dem contribute to. Dis na credit, no be copyright notice: contribution to Exponential dey go to Exponential Foundation and 7x under di Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

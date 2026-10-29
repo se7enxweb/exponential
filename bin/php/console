@@ -910,7 +910,7 @@ if ( array_intersect( $aboutFlags, $leading ) )
        . "the full text is in the LICENSE file of the installation.\n"
        . "This is free software: you are free to change and redistribute it.\n"
        . "There is NO WARRANTY, to the extent permitted by law.\n\n"
-       . "Written by 7x (se7enx.com) and the Exponential contributors.\n";
+       . "Written by the Exponential Foundation and 7x (se7enx.com).\n";
     exit( 0 );
 }
 

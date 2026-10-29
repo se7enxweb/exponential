@@ -15,6 +15,10 @@ Thank you for considering contributing to Exponential! We appreciate the time an
 >
 > **Your own custom extensions are not affected.**
 
+There is therefore no separate copyright of "the Exponential contributors": the copyright notice names only the
+Exponential Foundation and 7x, the holders of every merged contribution. Contributors are credited (changelogs,
+commit authorship, the recognition pages); credit is not a copyright claim.
+
 The agreement form on the CLA page is being updated to this assignment; sign the form currently published there.
 
 Read the agreement before you sign it; this summary does not replace it and is not legal advice.

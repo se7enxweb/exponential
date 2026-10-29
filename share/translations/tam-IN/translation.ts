@@ -8064,8 +8064,8 @@
         <translation>உரிமத்தின் தேவைப்படி, மூல ஆசிரியர்களின் பதிப்புரிமை அறிவிப்புகளும் Exponential உடன் சேர்க்கப்பட்டுள்ள மூன்றாம் தரப்பு மென்பொருளின் அறிவிப்புகளும் மூலக் கோப்புகளிலும் LICENSE கோப்பிலும் பாதுகாக்கப்படுகின்றன.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>eZ Systems பங்களிப்பாளர் உரிம ஒப்பந்தத்தின் விதிமுறைகள் மற்றும் நிபந்தனைகளின்படி 7x பயன்படுத்துவதற்காகத் தங்கள் பணிக்கு உரிமம் வழங்கிய Exponential பங்களிப்பாளர்களின் பட்டியல் கீழே உள்ளது. இந்த ஒப்பந்தம் அனுமதிப்பதன்படி, ஒவ்வொரு பங்களிப்பும் அது சேர்க்கப்பட்டுள்ள கோப்பின் உரிமத்தின் கீழேயே 7x ஆல் மறுவிநியோகம் செய்யப்படுகிறது. இந்தப் பட்டியல் ஒவ்வொரு பங்களிப்பாளரின் பெயர், விருப்பத் தொடர்புத் தகவல் மற்றும் அவர்கள் பங்களித்த அல்லது பணியாற்றிய கோப்புகளைக் குறிப்பிடுகிறது.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential மற்றும் அது தோன்றிய மென்பொருளில் செய்த பணிக்காகப் பாராட்டப்படும் பங்களிப்பாளர்கள், அவர்கள் பங்களித்த கோப்புகளுடன். இது பாராட்டு, பதிப்புரிமை அறிவிப்பு அல்ல: Exponential-க்கான பங்களிப்புகள் Contributor Licensing Agreement-இன் கீழ் Exponential Foundation மற்றும் 7x-க்கு ஒப்படைக்கப்படுகின்றன.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

@@ -39,7 +39,7 @@ These commands only read. Run them from the root of the installation (the direct
 
 Expected: the first line reads `console (Exponential) 6.0.15stable`. Below it are the version, the build, the
 number of extensions, the web server and the PHP version, and at the end the line
-`Written by 7x (se7enx.com) and the Exponential contributors.`
+`Written by the Exponential Foundation and 7x (se7enx.com).`
 
 ```bash
 ./console list exp

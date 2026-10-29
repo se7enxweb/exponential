@@ -8066,8 +8066,8 @@
         <translation>Սկզբնական հեղինակների և Exponential-ի հետ ներառված երրորդ կողմի ծրագրակազմի հեղինակային իրավունքի ծանուցումները պահվում են սկզբնական ֆայլերում և LICENSE ֆայլում, ինչպես պահանջում է լիցենզիան։</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Ստորև բերված է Exponential-ի այն մասնակիցների ցանկը, ովքեր իրենց աշխատանքը լիցենզավորել են 7x-ի կողմից օգտագործման համար eZ Systems Contributor Licensing Agreement-ի պայմաններով։ Ինչպես թույլատրված է այս համաձայնագրով, 7x-ը վերաբաշխում է յուրաքանչյուր ներդրում նույն լիցենզիայով, ինչ ֆայլը, որում ներառված է ներդրումը։ Ցանկում նշված են յուրաքանչյուր մասնակից, ըստ ցանկության կոնտակտային տվյալներ և այն ֆայլերը, որոնց նրանք ներդրում են կատարել։</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Մասնակիցներ, որոնց երախտագիտություն է հայտնվում Exponential-ի և այն ծրագրաշարի վրա կատարած աշխատանքի համար, որից այն ծագել է, այն ֆայլերով, որոնցում նրանք ներդրում են ունեցել։ Սա երախտագիտություն է, ոչ թե հեղինակային իրավունքի ծանուցում. Exponential-ին արված ներդրումները Contributor Licensing Agreement-ի համաձայն փոխանցվում են Exponential Foundation-ին և 7x-ին։</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

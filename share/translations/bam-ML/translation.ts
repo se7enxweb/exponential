@@ -8066,8 +8066,8 @@
         <translation>Sɛbɛnnabaga fɔlɔw ni cɛ wɛrɛw ka porogaramuw ka copyright kunnafoniw minnu bɛ Exponential fɛ, olu bɛ sɔrɔ sɛbɛn fisiyew kɔnɔ ni LICENSE fisiye kɔnɔ, i n'a fɔ lisansi b'a ɲini cogo min na.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Nin ye Exponential dɛmɛbagaw ka lisi ye, minnu ye u ka baara di 7x ma eZ Systems Contributor Licensing Agreement sariyaw la. I n'a fɔ jɛɲɔgɔnya in b'a yamaruya cogo min na, 7x bɛ dɛmɛ kelen-kelen bɛɛ lajɛ ni lisansi kelen ye ni fisiye min kɔnɔ a bɛ. Lisi bɛ dɛmɛbaga kelen-kelen bɛɛ tɔgɔ fɔ, a ka jɔɲɔgɔnya kunnafoniw ni a b'a fɛ, ni fisiye minnu na a dɛmɛna.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Dɛmɛbagaw minnu tɔgɔ fɔra u ka baara la Exponential ni a bɔra software min na, ani u ye dɛmɛ don fiyɛri minnu na. Nin ye waleɲumandɔn ye, copyright kunnafoni tɛ: dɛmɛ minnu bɛ don Exponential la, olu bɛ di Exponential Foundation ni 7x ma Contributor Licensing Agreement kɔnɔ.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

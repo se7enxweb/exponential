@@ -241,11 +241,18 @@ Exponential is written by many people. Their contributions reach the kernel in t
   are thereby also the holders of every merged contribution. The agreement form on the CLA page is being updated to
   this assignment; read it before you sign: [The CLA explained](community/contributing/the-cla-explained.md),
   `CONTRIBUTING.md`.
-- **Documentation contributions** are accepted under the GNU Free Documentation License 1.3 or later (see
+- **Documentation contributions** are part of the same repository (`doc/`) and covered by the same CLA; the
+  documentation is published under the GNU Free Documentation License 1.3 or later (see
   [The license of this documentation](../README-LICENSE.md)).
 
-Contributors are credited in the git history, which is the record of who wrote what, and on the about page
-(/ezinfo/about). A contributor's name in the history is not a copyright notice and is never removed.
+**There is no separate copyright of "the Exponential contributors".** Every contributor assigns the copyright in a
+contribution to the Exponential Foundation and 7x through the CLA, so the project has exactly two copyright holders
+and the notice names only those two, in code and in the documentation alike. Earlier versions of the documentation's
+notice added "and the Exponential contributors"; that wording is gone (owner decision of 29 October 2026).
+
+Contributors are credited, and the credit is never removed: in the changelogs, in the authorship of every commit
+(the git history is the record of who wrote what), on the recognition pages and in the list of contributors on the
+about page (/ezinfo/about). Credit is not a copyright claim.
 
 Your own extensions, themes and site packages that you keep in your own repositories are **not** contributions and
 need no CLA. They carry your notice.
@@ -468,6 +475,12 @@ No share is implied by the order. Both are holders. The Foundation is named firs
 **To whom do I assign my contribution under the CLA?**
 To the Exponential Foundation and 7x together, which become its owners and may use, change, relicense and distribute
 it. Since 29 October 2026 the CLA names both, in the same order as the notice. Your own extensions are not affected.
+
+**Why doesn't the notice name the contributors?**
+Because they hold no separate copyright in Exponential. Every contribution is assigned to the Exponential Foundation
+and 7x through the Contributor Licensing Agreement, so those two are the only holders, and a notice names holders.
+The people who did the work are credited by name in the changelogs, the commit history and the recognition pages;
+that credit is not a copyright claim.
 
 **Did the license change on 29 October 2026?**
 No. Only the holder notice changed. The license is still the GNU General Public License, version 2 or any later

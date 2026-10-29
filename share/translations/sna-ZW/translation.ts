@@ -8066,8 +8066,8 @@
         <translation>Zviziviso zvekodzero dzekunyora zvevakanyora kutanga nezvepurogiramu dzevamwe dzakaiswa ne Exponential zvinochengetwa mumafaira ekodhi nemufaira re LICENSE, sezvinodiwa nerezinesi.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Inotevera rondedzero yevakabatsira Exponential vakapa rezinesi basa ravo rekushandiswa ne 7x pasi pemitemo nemamiriro e eZ Systems Contributor Licensing Agreement. Sezvinobvumirwa neChibvumirano ichi, 7x inogovanazve mupiro mumwe nemumwe pasi perezinesi rimwe chete nefaira rakaiswa mupiro iwoyo. Rondedzero inotaura munhu mumwe nemumwe akabatsira, ruzivo rwekubatana kana ruripo, nemafaira avakabatsira kana basa ravakabatsira.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Vapi vanokudzwa nebasa ravo paExponential uye pasoftware yayakabva, pamwe nemafaira avakapa rubatsiro. Uku kukudza, kwete chiziviso chekodzero yemunyori: zvipo kuExponential zvinopihwa kuExponential Foundation na7x pasi peContributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
