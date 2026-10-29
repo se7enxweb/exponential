@@ -35,6 +35,15 @@ in einem Branch, halten Sie jede Änderung in einem eigenen Commit und beschreib
 | Langsam, aber lebendig | Eröffnen Sie den Pull Request und ein Issue, das ihn erklärt; warten Sie eine angemessene Zeit |
 | Verwaist (lange keine Antwort) | Fragen Sie öffentlich, ob Sie übernehmen dürfen; sonst forken Sie |
 
+**Übertragung des Urheberrechts (CLA).** Eine Änderung am **Kernel** (`se7enxweb/exponential`), in welcher Form auch
+immer eingereicht, wird erst gemergt, nachdem Sie das Contributor Licensing Agreement unterzeichnet haben, das 7x und
+die Exponential Foundation verlangen. **Mit Unterschrift und Einreichung übertragen Sie das Urheberrecht an Ihrem
+Beitrag an 7x, das damit sein Eigentümer wird, und geben die Kontrolle darüber ab:** 7x darf ihn auf jede Weise
+verwenden, ändern, neu lizenzieren und verbreiten, auch unter anderen Lizenzen und in kommerziellen Produkten, ohne Sie
+zu fragen oder zu bezahlen, und Sie können ihn nicht zurückziehen und keine Bedingungen daran knüpfen. Ihre eigenen
+individuellen Erweiterungen und Korrekturen, die Sie für Ihre Kunden behalten, sind nicht betroffen. Siehe
+[Übertragung des Urheberrechts (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla).
+
 ## 4. Forks und Umbenennungen, mit Respekt
 
 - Behalten Sie die vollständige Git-Historie, das ursprüngliche Copyright und die Lizenz.

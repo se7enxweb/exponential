@@ -43,18 +43,28 @@ ist die Standarddatenbank, eine Entwicklungsinstallation braucht also keinen Dat
 
 - Die CI prüft Syntax, Manifest, Commit-Nachricht, Programmierstil, PHPStan und Tests auf den unterstützten
   PHP-Versionen (`doc/eng-us/bc/6.0/ci.md`).
-- Er wird begutachtet. „Jeder Pull-Request wird gemergt, und seine Commits bleiben so erhalten, wie der Mitwirkende
-  sie geschrieben hat, und werden niemals umgeschrieben“ (`doc/eng-us/bc/6.0/ci.md`); was geändert werden muss, wird in
-  Commits darüber geändert.
-- Soll Ihr Pull-Request ein Verhalten ändern, das beabsichtigt oder Auslegungssache ist, handelt es sich um eine
-  negative Funktion, auf die sich andere Sites verlassen. Dann braucht er eine klare Begründung und oft mehrere
-  Runden der Prüfung; eine Option kommt besser an als ein neuer Standard
-  ([Negative Funktionen](../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
+- Er wird begutachtet, und jeder Pull-Request wird gemergt. Solange er offen ist, fassen Sie ihn zusammen (Squash) und
+  setzen ihn per Rebase auf `main` auf, wie es die Reviews verlangen (`git fetch origin`, `git rebase -i origin/main`,
+  `git push --force-with-lease` nur auf den Branch Ihres Pull-Requests); sobald er gemergt ist, wird die Historie von
+  `main` nie umgeschrieben (`doc/eng-us/bc/6.0/ci.md`).
+- Ein Pull-Request, der ein beabsichtigtes Verhalten ändert, eine
+  [negative Funktion](../projekt/unterstuetzung-erhalten.md#negative-funktionen), auf die sich andere Sites verlassen,
+  braucht eine klare Begründung und kann mehrere Runden der Prüfung durchlaufen, bevor er angenommen und gemergt wird.
+  Eine Option hinzuzufügen, statt den Standard zu ändern, ist der leichtere Weg.
 
 ## Lizenz
 
 „Mit Ihrem Beitrag erklären Sie sich damit einverstanden, dass Ihre Beiträge unter der GNU General Public License,
 Version 2.0 oder höher, lizenziert werden“ (CONTRIBUTING.md).
+
+**Übertragung des Urheberrechts (CLA).** 7x und die Exponential Foundation mergen einen Code-Beitrag zum Kernel, in
+welcher Form auch immer eingereicht (Pull-Request, Patch, Issue oder E-Mail), erst, nachdem Sie das Contributor
+Licensing Agreement unterzeichnet haben. **Mit Unterschrift und Einreichung übertragen Sie das Urheberrecht an Ihrem
+Beitrag an 7x, das damit sein Eigentümer wird, und geben die Kontrolle darüber ab:** 7x darf ihn auf jede Weise
+verwenden, ändern, neu lizenzieren und verbreiten, auch unter anderen Lizenzen und in kommerziellen Produkten, ohne Sie
+zu fragen oder zu bezahlen, und Sie können ihn nicht zurückziehen und keine Bedingungen daran knüpfen. Eine Unterschrift
+deckt alle Ihre künftigen Beiträge ab. Erweiterungen, die Sie für sich selbst schreiben, sind nicht betroffen. So
+unterzeichnen Sie: [Übertragung des Urheberrechts (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla).
 
 ## Ideen für einen ersten Beitrag
 

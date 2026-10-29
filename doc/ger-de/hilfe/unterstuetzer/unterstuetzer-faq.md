@@ -19,12 +19,26 @@ Forum.
 [Unterstützer: Hier beginnen](unterstuetzer-hier-beginnen.md)
 
 **Wird mein Pull-Request abgelehnt?**
-„Jeder Pull-Request wird gemergt“; was geändert werden muss, wird darüber geändert (`doc/eng-us/bc/6.0/ci.md`).
+„Jeder Pull-Request wird gemergt“ (`doc/eng-us/bc/6.0/ci.md`). Solange er offen ist, fassen Sie ihn zusammen (Squash)
+und setzen ihn per Rebase auf `main` auf, wie es die Reviews verlangen.
 [Code beitragen](code-beitragen.md)
 
 **Unter welcher Lizenz wird mein Beitrag veröffentlicht?**
 Code: GPL v2 oder höher (CONTRIBUTING.md). Dokumentation: GFDL 1.3 oder höher.
 [Dokumentation beitragen](dokumentation-beitragen.md)
+
+**Muss ich etwas unterzeichnen, und was gebe ich ab?**
+Für Code-Beiträge zum Kernel ja: ein Contributor Licensing Agreement (CLA), einmal, vor dem ersten Merge. Indem Sie
+unterzeichnen und einreichen, übertragen Sie das Urheberrecht an Ihrem Beitrag an 7x, das damit sein Eigentümer wird,
+und geben die Kontrolle darüber ab: 7x darf ihn auf jede Weise verwenden, ändern, neu lizenzieren und verbreiten, ohne
+Sie zu fragen oder zu bezahlen, und Sie können ihn nicht zurücknehmen. Ihre eigenen Erweiterungen sind nicht betroffen.
+[Übertragung des Urheberrechts (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)
+
+**Was sollte ich einfügen, wenn ich um Hilfe bitte oder einen Fehler melde?**
+Die Ausgabe von `./console exp:info --json --no-logo` (oder `--plain`): die Versionen von Exponential, PHP, der
+Datenbank, der Engine und jeder Erweiterung, mit den Hinweisen. Geheimnisse sind nie enthalten, deshalb ist sie in einem
+öffentlichen Issue sicher.
+[Die Systemkarte](../../funktionen/6.0/systemkarte.md)
 
 **Wo melde ich ein Sicherheitsproblem?**
 Vertraulich an security@se7enx.com, niemals öffentlich. [Testen und Fehler melden](testen-und-fehler-melden.md)
