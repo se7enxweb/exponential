@@ -77211,6 +77211,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>పాస్‌కీని తనిఖీ చేయడం సాధ్యం కాలేదు. దయచేసి మళ్లీ ప్రయత్నించండి.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>పాస్‌కీలతో మాత్రమే సైన్ ఇన్ చేసే ఖాతాలు ఇక్కడ పాస్‌వర్డ్‌ను ఉపయోగించలేవు: “పాస్‌కీతో సైన్ ఇన్ చేయండి” ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login పాస్‌కీలు</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>ఈ ఖాతా సైన్ ఇన్ చేసే పాస్‌కీలు. పోయిన లేదా దొంగిలించబడిన పరికరంలో ఉన్నదాన్ని ఉపసంహరించండి: దానితో ఇకపై సైన్ ఇన్ చేయలేరు. కొత్తవాటిని యజమానే జోడిస్తారు.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>మీ ఖాతాకు పాస్‌కీ అవసరం</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>మీ ఖాతాకు పాస్‌కీని జోడించండి</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>కొనసాగడానికి పాస్‌కీని జోడించండి. ఆ తర్వాత మీరు పాస్‌వర్డ్ ఒక్కటే కాకుండా దానితో సైన్ ఇన్ చేస్తారు.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>పాస్‌కీతో సైన్ ఇన్ చేయడం పాస్‌వర్డ్ కంటే వేగంగా, సురక్షితంగా ఉంటుంది. ఇప్పుడే ఒకటి జోడించండి, లేదా అది లేకుండా కొనసాగండి.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>ఇప్పుడు కాదు</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>“%name” పాస్‌కీని ఉపసంహరించాలా?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>దానితో ఇకపై ఈ ఖాతాలోకి సైన్ ఇన్ చేయలేరు. అది చివరిది అయితే, యజమాని పాస్‌వర్డ్‌తో సైన్ ఇన్ చేస్తారు, లేదా మీరు కొత్తది సెట్ చేస్తారు.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>పాస్‌కీని ఉపసంహరించండి</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>ఉపసంహరించండి</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>ఈ ఖాతాకు పాస్‌కీ లేదు.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>ప్రమాణీకరణి</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>తెలియదు</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>మీ చివరి పాస్‌కీ: దాన్ని తీసివేసే ముందు మరొకటి జోడించండి.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>ఈ ఖాతా పాస్‌కీలతో మాత్రమే సైన్ ఇన్ చేస్తుంది (పాస్‌కీ విధానం): ఒక్కటీ మిగలకపోతే, మళ్లీ తన పాస్‌వర్డ్‌తో సైన్ ఇన్ చేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>ఇది మీ చివరి పాస్‌కీ, ఇది లేకుండా మీ ఖాతా సైన్ ఇన్ చేయలేదు. ముందుగా మరొక పాస్‌కీని జోడించండి.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>“%name” పాస్‌కీ ఉపసంహరించబడింది. దానితో ఇకపై ఈ ఖాతాలోకి సైన్ ఇన్ చేయలేరు.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77310,6 +77386,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>మీ ప్రమాణీకరణ యాప్ నుండి కోడ్</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>మీరు డేటాను శాశ్వతంగా తొలగించబోతున్నారు లేదా లాగ్‌ను ఖాళీ చేయబోతున్నారు.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>మీ పాస్‌వర్డ్ మరియు పాస్‌కీ</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>మీ పాస్‌వర్డ్ మరియు మీ ప్రమాణీకరణ యాప్ నుండి కోడ్</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>లేదా:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>ఈ బ్రౌజర్ పాస్‌కీలను ఉపయోగించలేదు. వేరే మార్గాన్ని లేదా వేరే బ్రౌజర్‌ను ఉపయోగించండి.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>మీరు కొనసాగినప్పుడు, మీ బ్రౌజర్ మీ పాస్‌కీలలో ఒకదాన్ని అడుగుతుంది.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>పాస్‌కీతో కొనసాగండి</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77400,6 +77504,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>సెటప్</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>తన సొంత పాస్‌వర్డ్, ఇమెయిల్ చిరునామా, పాస్‌కీలు, రెండు దశల సైన్ ఇన్, రికవరీ కోడ్‌లు లేదా API కీలను మార్చడం, తన ఇతర పరికరాల నుండి సైన్ అవుట్ చేయడం.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>వినియోగదారులను, వారి పాస్‌వర్డ్‌లు మరియు పరికరాలను, ఖాతా సెట్టింగ్‌లను సృష్టించడం మరియు సవరించడం, కొత్త వినియోగదారు ఖాతాలను ఆమోదించడం లేదా తిరస్కరించడం, పాత్రలను కేటాయించడం మరియు విధానాలను సవరించడం.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>డేటాను తొలగించడం</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>ట్రాష్‌ను ఖాళీ చేయడం, దాని నుండి అంశాలను తీసివేయడం మరియు ఒకేసారి అనేక అంశాలను తీసివేయడం.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>కంటెంట్‌ను తీసివేయడం, ప్రచురించడం మరియు సేవ్ చేయడం</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>కంటెంట్‌ను తీసివేయడం (ట్రాష్‌కు కూడా), ప్రచురించడం మరియు డ్రాఫ్ట్‌ను సేవ్ చేయడం; ఫారమ్ పంపినప్పుడు అడుగుతుంది. డిఫాల్ట్‌గా ఆఫ్.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>సున్నితమైన చర్యకు ముందు, సైన్ ఇన్ అయిన వినియోగదారు తాము ఎవరో మళ్లీ నిర్ధారిస్తారు: తమ పాస్‌వర్డ్ మరియు పాస్‌కీతో, లేదా పాస్‌కీ లేకుంటే తమ పాస్‌వర్డ్ మరియు ప్రమాణీకరణ యాప్ కోడ్‌తో. వెబ్ పేజీలు మాత్రమే అడుగుతాయి: REST ఇంటర్‌ఫేస్, SOAP, WebDAV, expservices లాగిన్ మరియు కమాండ్ లైన్ ఎప్పుడూ అడగవు.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>సెట్టింగ్‌లు ఎక్కడ వర్తిస్తాయి</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>దీని కోసం సెట్టింగ్‌లు</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ప్రతి సైట్‌యాక్సెస్</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>సైట్‌యాక్సెస్ %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>తెరవండి</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>ఎవరిని అడుగుతారు: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>వాటి సభ్యులను మాత్రమే అడగడానికి వినియోగదారు సమూహాలను ఎంచుకోండి (ఉదాహరణకు, ఎడిటర్లు). ఏదీ ఎంచుకోకపోతే: ప్రతి వినియోగదారు.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php లో, ప్రతి సైట్‌యాక్సెస్ కోసం సేవ్ చేయబడుతుంది. సేవ్ చేసేటప్పుడు ఇది మీరేనని నిర్ధారించమని అడుగుతుంది.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php లో సేవ్ చేయబడుతుంది. settings/override లోని విలువకు ప్రాధాన్యత ఉంటుంది. సేవ్ చేసేటప్పుడు ఇది మీరేనని నిర్ధారించమని అడుగుతుంది.</translation>
     </message>
 </context>
 <context>
@@ -77756,6 +77924,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>మీ ఖాతా లాక్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site లోని మీ %login ఖాతాకు పాస్‌కీ జోడించబడింది.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>ఈ పాస్‌కీ ఉన్న ఎవరైనా మీ పాస్‌వర్డ్ లేకుండా మీ ఖాతాలోకి సైన్ ఇన్ చేయగలరు. మీరు దీన్ని జోడించకపోతే, పాస్‌కీలు విభాగంలో దాన్ని తీసివేసి మీ పాస్‌వర్డ్‌ను మార్చండి.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site లోని మీ %login ఖాతా నుండి పాస్‌కీ తీసివేయబడింది.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>దానితో ఇకపై మీ ఖాతాలోకి సైన్ ఇన్ చేయలేరు. మీరు దీన్ని తీసివేయకపోతే, మీ పాస్‌కీలు మరియు పరికరాలను తనిఖీ చేయండి.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>మీ ఖాతాకు పాస్‌కీ జోడించబడింది</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>మీ ఖాతా నుండి పాస్‌కీ తీసివేయబడింది</translation>
     </message>
 </context>
 <context>

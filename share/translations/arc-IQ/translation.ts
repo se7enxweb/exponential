@@ -77222,6 +77222,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>לא אשתכח למבחר קלידא דעללא. בבעותא נסו תוב.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>חושבנא דעללין בקלידא דעללא בלחוד לא מצין דנפלחון במלתא דעברא הרכא: גבו „עללא בקלידא דעללא”.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>קלידא דעללא ד %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>קלידא דעללא דבהון עאל הנא חושבנא. בטלו חד דאית על מאנא דאבד או דאתגנב: לא מצא תוב דנעול. מרא מוסף חדתא בנפשה.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>חושבנא דיוכון סניק לקלידא דעללא</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>ספו קלידא דעללא לחושבנא דיוכון</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>ספו קלידא דעללא דתמטון. בתרכן עללין אנתון בה חלף מלתא דעברא בלחוד.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>עללא בקלידא דעללא מסרהב ושליא יתיר מן מלתא דעברא. ספו חד השא, או ממטו דלא הו.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>לא השא</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>בטלא דקלידא דעללא „%name”?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>לא מציא תוב דנעול להנא חושבנא. אן הו הוא חרינא, מרא עאל במלתא דעברא, או אנתון סימין חדתא.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>בטלא דקלידא דעללא</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>בטלא</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>להנא חושבנא לית קלידא דעללא.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>משררנא</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>לא ידיעא</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>קלידא דעללא חרינא דיוכון: ספו אחרנא קדם דתשקלונה.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>הנא חושבנא עאל בקלידא דעללא בלחוד (פוקדנא דקלידא דעללא): כד לא פיש מדם, עאל תוב במלתא דעברא דילה.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>הנא הו קלידא דעללא חרינא דיוכון, וחושבנא דיוכון לא מצא דנעול דלא הו. ספו לוקדם קלידא דעללא אחרנא.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>קלידא דעללא „%name” בטיל. לא מציא תוב דנעול להנא חושבנא.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77321,6 +77397,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>רמזא מן תוטפא דמשררנא דיוכון</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>אנתון עתידין למשיפו ידעתא לעלם או למסרק רושמא.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>מלתא דעברא דיוכון וקלידא דעללא</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>מלתא דעברא דיוכון ורמזא מן תוטפא דמשררנא דיוכון</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>או:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>הנא חירנא לא מצא דנפלח בקלידא דעללא. פלחו באורחא אחרתא, או בחירנא אחרנא.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>כד ממטין אנתון, חירנא דיוכון שאל חד מן קלידא דעללא דיוכון.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>ממטיא בקלידא דעללא</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77411,6 +77515,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>טויבא</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>שוחלפא דמלתא דעברא, מונעא דברידא אלקטרוניא, קלידא דעללא, עללא בתרתין דרגא, רמזא דדוערא או קלידא ד API דילה בנפשה, ומפקנא מן מאנא אחרנא דילה.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>בריא ותוקנא דמפלחנא, דמלא דעברא ודמאנא דילהון, טויבא דחושבנא, שוררא או סליא דחושבנא חדתא דמפלחנא, מוהבתא דדורא ותוקנא דפוקדנא.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>שיפא דידעתא</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>סרקא דמזבלתא, שקלא דמדם מנה ושקלא דסגיאא בחדא זבנא.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>שקלא, פורסא ונטרא דמליותא</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>שקלא דמליותא (אף למזבלתא), פורסא ונטרא דסורטא, נשאל כד משתדר פורמא. בטיל בעידיא.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>קדם סוערנא דחסים מפלחנא דעליל משרר תוב מנו הו: במלתא דעברא דה ובקלידא דעללא, או דלא קלידא דעללא במלתא דעברא דה וברמזא דתוטפא דמשררנא דה. בלחוד פאתא דויב שאלין: מצעיותא ד REST, SOAP, WebDAV, עללא ד expservices ושורתא דפוקדנא לא שאלין אמתי.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>איכא דטויבא שרירין</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>טויבא דמטל</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>כל מעלנא דאתרא</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>מעלנא דאתרא %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>פתחא</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>מנו נשתאל: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>רשמו כנשא דמפלחנא דתשאלון בלחוד להדמיהון (מתקננא, למתל). לא רשים מדם: כל מפלחנא.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>נטיר ב settings/override/site.ini.append.php, לכל מעלנא דאתרא. נטרא מתבעא דתשררון דאנתון הויתון.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>נטיר ב settings/siteaccess/%name/site.ini.append.php. סימא דב settings/override זכא עלוהי. נטרא מתבעא דתשררון דאנתון הויתון.</translation>
     </message>
 </context>
 <context>
@@ -77767,6 +77935,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>חושבנא דילוכון אתקפל</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>קלידא דעללא אתוסף לחושבנא דילוכון %login על %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>מן דאחיד הנא קלידא דעללא מצא דנעול לחושבנא דיוכון דלא מלתא דעברא דיוכון. אן לא אוסיפתון לה, שקולו לה תחת קלידא דעללא ושחלפו מלתא דעברא דיוכון.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>קלידא דעללא אשתקל מן חושבנא דילוכון %login על %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>לא מציא תוב דנעול לחושבנא דיוכון. אן לא שקלתון לה, בצו קלידא דעללא ומאנא דיוכון.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>קלידא דעללא אתוסף לחושבנא דיוכון</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>קלידא דעללא אשתקל מן חושבנא דיוכון</translation>
     </message>
 </context>
 <context>

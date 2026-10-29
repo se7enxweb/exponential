@@ -77211,6 +77211,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>ಪಾಸ್‌ಕೀಯನ್ನು ಪರಿಶೀಲಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>ಪಾಸ್‌ಕೀಗಳ ಮೂಲಕ ಮಾತ್ರ ಸೈನ್ ಇನ್ ಮಾಡುವ ಖಾತೆಗಳು ಇಲ್ಲಿ ಪಾಸ್‌ವರ್ಡ್ ಬಳಸಲು ಸಾಧ್ಯವಿಲ್ಲ: “ಪಾಸ್‌ಕೀ ಮೂಲಕ ಸೈನ್ ಇನ್ ಮಾಡಿ” ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login ಅವರ ಪಾಸ್‌ಕೀಗಳು</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>ಈ ಖಾತೆ ಸೈನ್ ಇನ್ ಮಾಡಲು ಬಳಸುವ ಪಾಸ್‌ಕೀಗಳು. ಕಳೆದುಹೋದ ಅಥವಾ ಕಳ್ಳತನವಾದ ಸಾಧನದಲ್ಲಿರುವ ಪಾಸ್‌ಕೀಯನ್ನು ಹಿಂಪಡೆಯಿರಿ: ಅದು ಇನ್ನು ಸೈನ್ ಇನ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ. ಹೊಸವನ್ನು ಮಾಲೀಕರೇ ಸೇರಿಸುತ್ತಾರೆ.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆಗೆ ಪಾಸ್‌ಕೀ ಅಗತ್ಯವಿದೆ</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆಗೆ ಪಾಸ್‌ಕೀ ಸೇರಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>ಮುಂದುವರಿಯಲು ಪಾಸ್‌ಕೀ ಸೇರಿಸಿ. ನಂತರ ನೀವು ಕೇವಲ ಪಾಸ್‌ವರ್ಡ್ ಬದಲು ಅದರ ಮೂಲಕ ಸೈನ್ ಇನ್ ಮಾಡುತ್ತೀರಿ.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>ಪಾಸ್‌ಕೀ ಮೂಲಕ ಸೈನ್ ಇನ್ ಮಾಡುವುದು ಪಾಸ್‌ವರ್ಡ್‌ಗಿಂತ ವೇಗವಾಗಿ ಮತ್ತು ಸುರಕ್ಷಿತವಾಗಿದೆ. ಈಗ ಒಂದನ್ನು ಸೇರಿಸಿ, ಅಥವಾ ಅದಿಲ್ಲದೆ ಮುಂದುವರಿಯಿರಿ.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>ಈಗ ಬೇಡ</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>“%name” ಪಾಸ್‌ಕೀಯನ್ನು ಹಿಂಪಡೆಯಬೇಕೇ?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>ಅದು ಇನ್ನು ಈ ಖಾತೆಗೆ ಸೈನ್ ಇನ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ. ಅದು ಕೊನೆಯದಾಗಿದ್ದರೆ, ಮಾಲೀಕರು ಪಾಸ್‌ವರ್ಡ್ ಮೂಲಕ ಸೈನ್ ಇನ್ ಮಾಡುತ್ತಾರೆ, ಅಥವಾ ನೀವು ಹೊಸದನ್ನು ಹೊಂದಿಸುತ್ತೀರಿ.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>ಪಾಸ್‌ಕೀಯನ್ನು ಹಿಂಪಡೆ</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>ಹಿಂಪಡೆ</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>ಈ ಖಾತೆಗೆ ಯಾವುದೇ ಪಾಸ್‌ಕೀ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>ದೃಢೀಕರಣಕಾರಕ</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>ಅಜ್ಞಾತ</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>ನಿಮ್ಮ ಕೊನೆಯ ಪಾಸ್‌ಕೀ: ಅದನ್ನು ತೆಗೆದುಹಾಕುವ ಮೊದಲು ಇನ್ನೊಂದನ್ನು ಸೇರಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>ಈ ಖಾತೆ ಪಾಸ್‌ಕೀಗಳ ಮೂಲಕ ಮಾತ್ರ ಸೈನ್ ಇನ್ ಮಾಡುತ್ತದೆ (ಪಾಸ್‌ಕೀ ನೀತಿ): ಯಾವುದೂ ಉಳಿದಿಲ್ಲದಿದ್ದರೆ, ಅದು ಮತ್ತೆ ತನ್ನ ಪಾಸ್‌ವರ್ಡ್ ಮೂಲಕ ಸೈನ್ ಇನ್ ಮಾಡುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>ಇದು ನಿಮ್ಮ ಕೊನೆಯ ಪಾಸ್‌ಕೀ, ಮತ್ತು ಅದಿಲ್ಲದೆ ನಿಮ್ಮ ಖಾತೆ ಸೈನ್ ಇನ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ. ಮೊದಲು ಇನ್ನೊಂದು ಪಾಸ್‌ಕೀ ಸೇರಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>“%name” ಪಾಸ್‌ಕೀಯನ್ನು ಹಿಂಪಡೆಯಲಾಗಿದೆ. ಅದು ಇನ್ನು ಈ ಖಾತೆಗೆ ಸೈನ್ ಇನ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77310,6 +77386,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>ನಿಮ್ಮ ದೃಢೀಕರಣ ಆ್ಯಪ್‌ನ ಕೋಡ್</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>ನೀವು ಡೇಟಾವನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಲಿದ್ದೀರಿ ಅಥವಾ ಲಾಗ್ ಅನ್ನು ಖಾಲಿ ಮಾಡಲಿದ್ದೀರಿ.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಮತ್ತು ಒಂದು ಪಾಸ್‌ಕೀ</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಮತ್ತು ನಿಮ್ಮ ದೃಢೀಕರಣ ಆ್ಯಪ್‌ನ ಕೋಡ್</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>ಅಥವಾ:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>ಈ ಬ್ರೌಸರ್ ಪಾಸ್‌ಕೀಗಳನ್ನು ಬಳಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ಬೇರೆ ವಿಧಾನವನ್ನು ಅಥವಾ ಬೇರೆ ಬ್ರೌಸರ್ ಅನ್ನು ಬಳಸಿ.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>ನೀವು ಮುಂದುವರಿದಾಗ, ನಿಮ್ಮ ಬ್ರೌಸರ್ ನಿಮ್ಮ ಪಾಸ್‌ಕೀಗಳಲ್ಲಿ ಒಂದನ್ನು ಕೇಳುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>ಪಾಸ್‌ಕೀ ಮೂಲಕ ಮುಂದುವರಿಸಿ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77400,6 +77504,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>ಸೆಟಪ್</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>ತನ್ನದೇ ಪಾಸ್‌ವರ್ಡ್, ಇಮೇಲ್ ವಿಳಾಸ, ಪಾಸ್‌ಕೀಗಳು, ಎರಡು ಹಂತದ ಸೈನ್ ಇನ್, ಮರುಪಡೆಯುವಿಕೆ ಕೋಡ್‌ಗಳು ಅಥವಾ API ಕೀಗಳನ್ನು ಬದಲಾಯಿಸುವುದು, ಮತ್ತು ತನ್ನ ಇತರ ಸಾಧನಗಳಿಂದ ಸೈನ್ ಔಟ್ ಮಾಡುವುದು.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ಬಳಕೆದಾರರನ್ನು ರಚಿಸುವುದು ಮತ್ತು ಸಂಪಾದಿಸುವುದು, ಅವರ ಪಾಸ್‌ವರ್ಡ್‌ಗಳು ಮತ್ತು ಸಾಧನಗಳು, ಖಾತೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳು, ಹೊಸ ಬಳಕೆದಾರ ಖಾತೆಗಳನ್ನು ಅನುಮೋದಿಸುವುದು ಅಥವಾ ನಿರಾಕರಿಸುವುದು, ಪಾತ್ರಗಳನ್ನು ನಿಯೋಜಿಸುವುದು ಮತ್ತು ನೀತಿಗಳನ್ನು ಸಂಪಾದಿಸುವುದು.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>ಡೇಟಾ ಅಳಿಸುವುದು</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>ಕಸದ ಬುಟ್ಟಿಯನ್ನು ಖಾಲಿ ಮಾಡುವುದು, ಅದರಿಂದ ಐಟಂಗಳನ್ನು ತೆಗೆದುಹಾಕುವುದು ಮತ್ತು ಹಲವು ಐಟಂಗಳನ್ನು ಒಮ್ಮೆಗೇ ತೆಗೆದುಹಾಕುವುದು.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>ವಿಷಯವನ್ನು ತೆಗೆದುಹಾಕುವುದು, ಪ್ರಕಟಿಸುವುದು ಮತ್ತು ಉಳಿಸುವುದು</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>ವಿಷಯವನ್ನು ತೆಗೆದುಹಾಕುವುದು (ಕಸದ ಬುಟ್ಟಿಗೂ ಸಹ), ಪ್ರಕಟಿಸುವುದು ಮತ್ತು ಕರಡು ಉಳಿಸುವುದು; ಫಾರ್ಮ್ ಕಳುಹಿಸಿದಾಗ ಕೇಳಲಾಗುತ್ತದೆ. ಡೀಫಾಲ್ಟ್ ಆಗಿ ಆಫ್.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>ಸೂಕ್ಷ್ಮ ಕ್ರಿಯೆಯ ಮೊದಲು, ಸೈನ್ ಇನ್ ಆಗಿರುವ ಬಳಕೆದಾರರು ತಾವು ಯಾರು ಎಂಬುದನ್ನು ಮತ್ತೆ ದೃಢೀಕರಿಸುತ್ತಾರೆ: ತಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಮತ್ತು ಪಾಸ್‌ಕೀ ಮೂಲಕ, ಅಥವಾ ಪಾಸ್‌ಕೀ ಇಲ್ಲದೆ ತಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಮತ್ತು ತಮ್ಮ ದೃಢೀಕರಣ ಆ್ಯಪ್‌ನ ಕೋಡ್ ಮೂಲಕ. ವೆಬ್ ಪುಟಗಳು ಮಾತ್ರ ಕೇಳುತ್ತವೆ: REST ಇಂಟರ್‌ಫೇಸ್, SOAP, WebDAV, expservices ಲಾಗಿನ್ ಮತ್ತು ಕಮಾಂಡ್ ಲೈನ್ ಎಂದಿಗೂ ಕೇಳುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಎಲ್ಲಿ ಅನ್ವಯಿಸುತ್ತವೆ</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>ಇದಕ್ಕಾಗಿ ಸೆಟ್ಟಿಂಗ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ಪ್ರತಿ ಸೈಟ್‌ಆಕ್ಸೆಸ್</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>ಸೈಟ್‌ಆಕ್ಸೆಸ್ %name ಮಾತ್ರ</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ತೆರೆ</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>ಯಾರನ್ನು ಕೇಳಲಾಗುತ್ತದೆ: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>ಅವುಗಳ ಸದಸ್ಯರನ್ನು ಮಾತ್ರ ಕೇಳಲು ಬಳಕೆದಾರ ಗುಂಪುಗಳನ್ನು ಗುರುತಿಸಿ (ಉದಾಹರಣೆಗೆ, ಸಂಪಾದಕರು). ಯಾವುದನ್ನೂ ಗುರುತಿಸಿಲ್ಲ: ಪ್ರತಿಯೊಬ್ಬ ಬಳಕೆದಾರ.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>ಪ್ರತಿ ಸೈಟ್‌ಆಕ್ಸೆಸ್‌ಗಾಗಿ settings/override/site.ini.append.php ನಲ್ಲಿ ಉಳಿಸಲಾಗಿದೆ. ಉಳಿಸುವಾಗ ಇದು ನೀವೇ ಎಂದು ದೃಢೀಕರಿಸಲು ಕೇಳಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php ನಲ್ಲಿ ಉಳಿಸಲಾಗಿದೆ. settings/override ನಲ್ಲಿರುವ ಮೌಲ್ಯಕ್ಕೆ ಇದರ ಮೇಲೆ ಆದ್ಯತೆ ಇದೆ. ಉಳಿಸುವಾಗ ಇದು ನೀವೇ ಎಂದು ದೃಢೀಕರಿಸಲು ಕೇಳಲಾಗುತ್ತದೆ.</translation>
     </message>
 </context>
 <context>
@@ -77756,6 +77924,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಲಾಕ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site ಸೈಟ್‌ನಲ್ಲಿರುವ ನಿಮ್ಮ ಖಾತೆ %login ಗೆ ಒಂದು ಪಾಸ್‌ಕೀ ಸೇರಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>ಈ ಪಾಸ್‌ಕೀ ಹೊಂದಿರುವ ಯಾರಾದರೂ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಇಲ್ಲದೆ ನಿಮ್ಮ ಖಾತೆಗೆ ಸೈನ್ ಇನ್ ಮಾಡಬಹುದು. ನೀವು ಅದನ್ನು ಸೇರಿಸದಿದ್ದರೆ, ಪಾಸ್‌ಕೀಗಳು ಅಡಿಯಲ್ಲಿ ಅದನ್ನು ತೆಗೆದುಹಾಕಿ ಮತ್ತು ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site ಸೈಟ್‌ನಲ್ಲಿರುವ ನಿಮ್ಮ ಖಾತೆ %login ನಿಂದ ಒಂದು ಪಾಸ್‌ಕೀ ತೆಗೆದುಹಾಕಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>ಅದು ಇನ್ನು ನಿಮ್ಮ ಖಾತೆಗೆ ಸೈನ್ ಇನ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ. ನೀವು ಅದನ್ನು ತೆಗೆದುಹಾಕದಿದ್ದರೆ, ನಿಮ್ಮ ಪಾಸ್‌ಕೀಗಳು ಮತ್ತು ಸಾಧನಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆಗೆ ಒಂದು ಪಾಸ್‌ಕೀ ಸೇರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆಯಿಂದ ಒಂದು ಪಾಸ್‌ಕೀ ತೆಗೆದುಹಾಕಲಾಗಿದೆ</translation>
     </message>
 </context>
 <context>

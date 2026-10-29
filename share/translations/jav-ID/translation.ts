@@ -77221,6 +77221,82 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Passkey ora bisa dipriksa. Mangga coba maneh.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Akun sing mung mlebu nganggo passkey ora bisa nggunakake tembung sandhi ing kene: pilih &quot;Mlebu nganggo passkey&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Passkey duweke %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Passkey sing digunakake akun iki kanggo mlebu. Cabut passkey sing ana ing piranti sing ilang utawa dicolong: passkey kuwi ora bisa mlebu maneh. Sing duwe akun nambahake sing anyar dhewe.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Akun panjenengan butuh passkey</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Tambahake passkey menyang akun panjenengan</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Tambahake passkey kanggo nerusake. Sabanjure panjenengan mlebu nganggo passkey kuwi, ora mung nganggo tembung sandhi.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Mlebu nganggo passkey luwih cepet lan luwih aman tinimbang tembung sandhi. Tambahake siji saiki, utawa terusake tanpa passkey.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Ora saiki</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Cabut passkey &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Passkey iki ora bisa mlebu menyang akun iki maneh. Yen iki sing pungkasan, sing duwe akun mlebu nganggo tembung sandhi, utawa panjenengan nyetel sing anyar.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Cabut passkey</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Cabut</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Akun iki ora duwe passkey.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Autentikator</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Ora dingerteni</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Passkey pungkasan panjenengan: tambahake liyane sadurunge panjenengan nyopot.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Akun iki mung mlebu nganggo passkey (kawicaksanan passkey): yen ora ana sing kari, akun iki mlebu maneh nganggo tembung sandhine.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Iki passkey pungkasan panjenengan lan akun panjenengan ora bisa mlebu tanpa passkey. Tambahake passkey liyane dhisik.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Passkey &quot;%name&quot; wis dicabut. Passkey iki ora bisa mlebu menyang akun iki maneh.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77320,6 +77396,34 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>Code from your authenticator app</source>
         <translation>Kode saka aplikasi autentikator panjenengan</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Panjenengan arep mbusak data selawase utawa ngosongake log.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Tembung sandhi panjenengan lan passkey</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Tembung sandhi panjenengan lan kode saka aplikasi autentikator panjenengan</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Utawa:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Browser iki ora bisa nggunakake passkey. Gunakake cara liya, utawa browser liya.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Yen panjenengan nerusake, browser panjenengan bakal njaluk salah siji passkey panjenengan.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Terusake nganggo passkey</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77410,6 +77514,70 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
     <message>
         <source>Setup</source>
         <translation>Panyiapan</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Ngganti tembung sandhi, alamat email, passkey, mlebu rong langkah, kode pemulihan utawa kunci API dhewe, lan metu saka piranti liya duweke dhewe.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Nggawe lan nyunting panganggo, tembung sandhi lan pirantine, setelan akun, nyetujoni utawa nolak akun panganggo anyar, menehi peran lan nyunting kawicaksanan.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Mbusak data</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Ngosongake tong sampah, nyopot item saka kono lan nyopot sawetara item bebarengan.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Nyopot, nerbitake lan nyimpen isi</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Nyopot isi (uga menyang tong sampah), nerbitake lan nyimpen draf; ditakonake nalika formulir dikirim. Mati minangka gawan.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Sadurunge tumindak sing sensitif, panganggo sing wis mlebu ngonfirmasi maneh sapa dheweke: nganggo tembung sandhine lan passkey, utawa tanpa passkey nganggo tembung sandhine lan kode saka aplikasi autentikatore. Mung kaca web sing takon: antarmuka REST, SOAP, WebDAV, login expservices lan baris prentah ora tau takon.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Panggonan setelan ditrapake</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Setelan kanggo</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Saben akses situs</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Mung akses situs %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Bukak</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Sing ditakoni: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Centhang klompok panganggo supaya mung anggotane sing ditakoni (contone panyunting). Ora ana sing dicenthang: saben panganggo.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Disimpen menyang settings/override/site.ini.append.php, kanggo saben akses situs. Nalika nyimpen, panjenengan dijaluk ngonfirmasi yen iki panjenengan.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Disimpen menyang settings/siteaccess/%name/site.ini.append.php. Nilai ing settings/override luwih diutamakake. Nalika nyimpen, panjenengan dijaluk ngonfirmasi yen iki panjenengan.</translation>
     </message>
 </context>
 <context>
@@ -77766,6 +77934,30 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
     <message>
         <source>Your account was locked</source>
         <translation>Akun panjenengan wis dikunci</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Ana passkey sing ditambahake menyang akun panjenengan %login ing %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Sapa wae sing nyekel passkey iki bisa mlebu menyang akun panjenengan tanpa tembung sandhi panjenengan. Yen dudu panjenengan sing nambahake, copot ing Kunci sandhi lan ganti tembung sandhi panjenengan.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Ana passkey sing dicopot saka akun panjenengan %login ing %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Passkey iki ora bisa mlebu menyang akun panjenengan maneh. Yen dudu panjenengan sing nyopot, priksa passkey lan piranti panjenengan.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Ana passkey sing ditambahake menyang akun panjenengan</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Ana passkey sing dicopot saka akun panjenengan</translation>
     </message>
 </context>
 <context>

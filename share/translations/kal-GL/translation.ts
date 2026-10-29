@@ -77211,6 +77211,82 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Passkey misissorneqarsinnaanngilaq. Misileqqiguk.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Kontut passkey-nik kisimik iserartartut maani isissummik atuisinnaanngillat: »Passkey atorlugu iserit« toqqaruk.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login-ip passkey-ii</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Passkey-it kontup matuma iserfigisartagai. Passkey atortorissami tammartumi tillinneqartumiluunniit ittoq atorunnaarsiguk: iserfigineqarsinnaajunnaassaaq. Kontup pigisaata nutaat nammineq ilasarpai.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Kontut passkey-mik pisariaqartitsivoq</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Kontunnut passkey ilaguk</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Ingerlaqqinniarlutit passkey ilaguk. Taava isissut kisiat pinnagu passkey atorlugu iserartassaatit.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Passkey atorlugu iserneq isissummit sukkaneruvoq isumannaannerullunilu. Maanna ataaseq ilaguk, imaluunniit passkey-qanngitsutit ingerlaqqigit.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Maannakkut naamik</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Passkey »%name« atorunnaarsissaviuk?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Kontu una iserfigisinnaajunnaarpaa. Kingulleq ippat, kontup pigisaa isissut atorlugu iserassaaq, imaluunniit isissummik nutaamik aalajangiissaatit.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Passkey atorunnaarsiguk</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Atorunnaarsiguk</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Kontu una passkey-qanngilaq.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Uppernarsaasiut</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Ilisimaneqanngitsoq</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Passkey-it kingulleq: piiaatinnagu alla ilaguk.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Kontu una passkey-nik kisimik iserartarpoq (passkey-mut maleruagassaq): sinneqartoqanngippat isissutini atorlugu iseqqittassaaq.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Una passkey-it kingulliuvoq, kontullu passkey-qanngitsoq iserfigineqarsinnaanngilaq. Siullermik passkey alla ilaguk.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Passkey »%name« atorunnaarsinneqarpoq. Kontu una iserfigisinnaajunnaarpaa.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77310,6 +77386,34 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>Code from your authenticator app</source>
         <translation>Authenticator-ip app-ianit kodi</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Paasissutissat tamaviaarlugit peerniarpatit log-iluunniit salinniarlugu.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Isissutitit passkey-lu</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Isissutitit authenticator-illu app-ianit kodi</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Imaluunniit:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Browser una passkey-nik atuisinnaanngilaq. Allatut iliorit, imaluunniit browser alla atoruk.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Ingerlaqqikkuit browser-it passkey-itit ilaannik piumassaaq.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Passkey atorlugu ingerlaqqigit</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77400,6 +77504,70 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>Setup</source>
         <translation>Aaqqissuussineq</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Nammineq isissutip, e-mailip najugaata, passkey-it, marlunnik alloriarluni isernerup, kodit utertitsissutit imaluunniit API-mut kodit allanngortinneqarnerat, atortorissallu allat nammineq pigisat anisinneqarnerat.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Atuisunik pilersitsineq aaqqissuinerlu, isissutaat atortorissaallu, kontup aaqqissugaanera, atuisut kontuinik nutaanik akuerineq itigartitsinerluunniit, atuuffinnik tunniussineq maleruagassanillu aaqqissuineq.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Paasissutissanik peersineq</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Eqqaavimmik saliineq, eqqaavimmit piiaaneq ataatsikkullu arlalinnik piiaaneq.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Imarisanik piiaaneq, saqqummiussineq toqqorsinerlu</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Imarisanik piiaaneq (aamma eqqaavimmut), saqqummiussineq missingiummillu toqqorsineq; immersugassaq nassiunneqarpat apeqqutigineqartarpoq. Aallaavittut atorunnaarsimavoq.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Suliassap mianernartup siorna atuisoq iseriikkaq kinaassusiminik uppernarsaaqqittarpoq: isissutini passkey-lu atorlugit, imaluunniit passkey-qanngikkuni isissutini authenticator-illu app-iata kodia atorlugit. Nittartakkat quppernerisa kisimik apeqquteqartarput: REST-ip attaveqaasiutaa, SOAP, WebDAV, expservices-imut iserneq naqqiussiviillu apeqquteqarneq ajorput.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Aaqqissuussat sumi atuuttut</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Aaqqissuussat uunga</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Nittartakkamut isaariaq tamarmi</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Nittartakkamut isaariaq %name kisiat</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ammaruk</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Apeqqutigineqartut: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Atuisut eqimattaat ilaasortaasa kisimik apeqqutigineqarnissaannut nalunaaqutsikkit (assersuutigalugu aaqqissuisut). Nalunaaqutsersuisoqanngippat: atuisut tamarmik.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php-imi toqqorneqarpoq, nittartakkamut isaariaq tamaat atuuttussatut. Toqqorsinermi illuunerit uppernarsassavat.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php-imi toqqorneqarpoq. settings/override-imi naleq tamatuminnga salliutinneqarpoq. Toqqorsinermi illuunerit uppernarsassavat.</translation>
     </message>
 </context>
 <context>
@@ -77788,6 +77956,30 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>Your account was locked</source>
         <translation>Kontut parnaarneqarpoq</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Kontunnut %login nittartakkami %site passkey ilanngunneqarpoq.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Kinaluunniit passkey una pigigaa kontunnut isissutinnik atuinani iserfigisinnaavaa. Illit ilannguppinnagu, Passkey-it ataani piiaruk isissutillu allanngortiguk.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Kontunnit %login nittartakkami %site passkey piiarneqarpoq.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Kontut iserfigisinnaajunnaarpaa. Illit piiarsimanngikkukku passkey-itit atortorissatillu misissorkit.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Kontunnut passkey ilanngunneqarpoq</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Kontunnit passkey piiarneqarpoq</translation>
     </message>
 </context>
 <context>

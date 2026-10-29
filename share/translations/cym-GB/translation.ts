@@ -77213,6 +77213,82 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Nid oedd modd gwirio'r allwedd pas. Rhowch gynnig arni eto.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Ni all cyfrifon sy&apos;n mewngofnodi gydag allweddi pas yn unig ddefnyddio cyfrinair yma: dewiswch &quot;Mewngofnodi gydag allwedd pas&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Allweddi pas %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Yr allweddi pas y mae&apos;r cyfrif hwn yn mewngofnodi gyda nhw. Dirymwch un sydd ar ddyfais a gollwyd neu a gafodd ei dwyn: ni all fewngofnodi mwyach. Mae&apos;r perchennog yn ychwanegu rhai newydd ei hun.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Mae angen allwedd pas ar eich cyfrif</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Ychwanegu allwedd pas at eich cyfrif</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Ychwanegwch allwedd pas i barhau. Yna byddwch yn mewngofnodi gyda hi yn lle cyfrinair yn unig.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Mae mewngofnodi gydag allwedd pas yn gyflymach ac yn fwy diogel na chyfrinair. Ychwanegwch un nawr, neu parhewch hebddi.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Nid nawr</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Dirymu&apos;r allwedd pas &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Ni all fewngofnodi i&apos;r cyfrif hwn mwyach. Os mai hon oedd yr olaf, mae&apos;r perchennog yn mewngofnodi gyda&apos;r cyfrinair, neu rydych chi&apos;n gosod un newydd.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Dirymu&apos;r allwedd pas</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Dirymu</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Nid oes gan y cyfrif hwn allwedd pas.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Dilyswr</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Anhysbys</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Eich allwedd pas olaf: ychwanegwch un arall cyn ei thynnu.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Mae&apos;r cyfrif hwn yn mewngofnodi gydag allweddi pas yn unig (polisi allweddi pas): heb yr un ar ôl, mae&apos;n mewngofnodi gyda&apos;i gyfrinair eto.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Dyma eich allwedd pas olaf ac ni all eich cyfrif fewngofnodi heb un. Ychwanegwch allwedd pas arall yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Mae&apos;r allwedd pas &quot;%name&quot; wedi&apos;i dirymu. Ni all fewngofnodi i&apos;r cyfrif hwn mwyach.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77312,6 +77388,34 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>Code from your authenticator app</source>
         <translation>Cod o'ch ap dilysu</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Rydych ar fin dileu data am byth neu glirio cofnod.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Eich cyfrinair ac allwedd pas</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Eich cyfrinair a chod o&apos;ch ap dilysu</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Neu:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Ni all y porwr hwn ddefnyddio allweddi pas. Defnyddiwch ffordd arall, neu borwr arall.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Pan fyddwch yn parhau, bydd eich porwr yn gofyn am un o&apos;ch allweddi pas.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Parhau gydag allwedd pas</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77402,6 +77506,70 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>Setup</source>
         <translation>Gosod</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Newid eich cyfrinair, cyfeiriad e-bost, allweddi pas, mewngofnodi dau gam, codau adfer neu allweddi API eich hun, ac allgofnodi o&apos;ch dyfeisiau eraill.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Creu a golygu defnyddwyr, eu cyfrineiriau a&apos;u dyfeisiau, gosodiadau cyfrif, cymeradwyo neu wrthod cyfrifon defnyddwyr newydd, neilltuo rolau a golygu polisïau.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Dileu data</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Gwagio&apos;r sbwriel, tynnu eitemau ohono a thynnu sawl eitem ar unwaith.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Tynnu, cyhoeddi a chadw cynnwys</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Tynnu cynnwys (hefyd i&apos;r sbwriel), cyhoeddi a chadw drafft, gofynnir pan anfonir y ffurflen. Wedi&apos;i ddiffodd yn ddiofyn.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Cyn gweithred sensitif, mae defnyddiwr sydd wedi mewngofnodi yn cadarnhau pwy ydyw eto: gyda&apos;i gyfrinair ac allwedd pas, neu heb allwedd pas gyda&apos;i gyfrinair a chod ei ap dilysu. Dim ond y tudalennau gwe sy&apos;n gofyn: nid yw&apos;r rhyngwyneb REST, SOAP, WebDAV, mewngofnodi expservices na&apos;r llinell orchymyn byth yn gofyn.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Ble mae&apos;r gosodiadau&apos;n berthnasol</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Gosodiadau ar gyfer</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Pob mynediad i&apos;r wefan</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Mynediad i&apos;r wefan %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Agor</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Pwy a holir: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Ticiwch grwpiau defnyddwyr i ofyn i&apos;w haelodau yn unig (golygyddion, er enghraifft). Dim wedi&apos;i dicio: pob defnyddiwr.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Cadwyd i settings/override/site.ini.append.php, ar gyfer pob mynediad i&apos;r wefan. Wrth gadw, gofynnir i chi gadarnhau mai chi sydd yno.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Cadwyd i settings/siteaccess/%name/site.ini.append.php. Mae gwerth yn settings/override yn cael blaenoriaeth drosto. Wrth gadw, gofynnir i chi gadarnhau mai chi sydd yno.</translation>
     </message>
 </context>
 <context>
@@ -77758,6 +77926,30 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>Your account was locked</source>
         <translation>Cafodd eich cyfrif ei gloi</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Ychwanegwyd allwedd pas at eich cyfrif %login ar %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Gall unrhyw un sydd â&apos;r allwedd pas hon fewngofnodi i&apos;ch cyfrif heb eich cyfrinair. Os na wnaethoch chi ei hychwanegu, tynnwch hi o dan Allweddi pas a newidiwch eich cyfrinair.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Tynnwyd allwedd pas o&apos;ch cyfrif %login ar %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Ni all fewngofnodi i&apos;ch cyfrif mwyach. Os na wnaethoch chi ei thynnu, gwiriwch eich allweddi pas a&apos;ch dyfeisiau.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Ychwanegwyd allwedd pas at eich cyfrif</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Tynnwyd allwedd pas o&apos;ch cyfrif</translation>
     </message>
 </context>
 <context>

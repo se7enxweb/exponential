@@ -77213,6 +77213,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>ཆོག་ལྡེ་ཞིབ་བཤེར་མ་ཐུབ། ཡང་བསྐྱར་ཚོད་ལྟ་བྱེད་རོགས།</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>ཆོག་ལྡེ་ཁོ་ནས་ནང་འཛུལ་བྱེད་པའི་ཐོ་ཁོངས་ཀྱིས་འདིར་གསང་གྲངས་བེད་སྤྱོད་བྱེད་མི་ཐུབ། &quot;ཆོག་ལྡེ་དང་བཅས་ནང་འཛུལ&quot; འདེམས་རོགས།</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login ཡི་ཆོག་ལྡེ།</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>ཐོ་ཁོངས་འདིས་ནང་འཛུལ་བྱེད་པའི་ཆོག་ལྡེ། བོར་བའམ་རྐུ་བྱས་པའི་སྒྲིག་ཆས་སྟེང་གི་ཆོག་ལྡེ་ཕྱིར་འཐེན་གནང་རོགས། དེས་ད་ནས་ནང་འཛུལ་བྱེད་མི་ཐུབ། བདག་པོས་གསར་པ་རང་ཉིད་ཀྱིས་ཁ་སྣོན་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>ཁྱེད་ཀྱི་ཐོ་ཁོངས་ལ་ཆོག་ལྡེ་ཞིག་དགོས།</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>ཁྱེད་ཀྱི་ཐོ་ཁོངས་ལ་ཆོག་ལྡེ་ཞིག་ཁ་སྣོན་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>མུ་མཐུད་པར་ཆོག་ལྡེ་ཞིག་ཁ་སྣོན་གནང་རོགས། དེ་ནས་ཁྱེད་ཀྱིས་གསང་གྲངས་ཁོ་ནའི་ཚབ་ཏུ་དེས་ནང་འཛུལ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>ཆོག་ལྡེས་ནང་འཛུལ་བྱེད་པ་གསང་གྲངས་ལས་མགྱོགས་ཤིང་བདེ་འཇགས་ཆེ། ད་ལྟ་གཅིག་ཁ་སྣོན་གནང་རོགས། ཡང་ན་དེ་མེད་པར་མུ་མཐུད་གནང་།</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>ད་ལྟ་མིན།</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>ཆོག་ལྡེ་ &quot;%name&quot; ཕྱིར་འཐེན་ནམ།</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>དེས་ཐོ་ཁོངས་འདིར་ནང་འཛུལ་བྱེད་མི་ཐུབ། དེ་མཐའ་མ་ཡིན་ན། བདག་པོས་གསང་གྲངས་ཀྱིས་ནང་འཛུལ་བྱེད། ཡང་ན་ཁྱེད་ཀྱིས་གསང་གྲངས་གསར་པ་ཞིག་སྒྲིག་འགོད་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>ཆོག་ལྡེ་ཕྱིར་འཐེན།</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>ཕྱིར་འཐེན།</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>ཐོ་ཁོངས་འདི་ལ་ཆོག་ལྡེ་མེད།</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>བདེན་དཔང་ཆས།</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>མི་ཤེས་པ།</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>ཁྱེད་ཀྱི་ཆོག་ལྡེ་མཐའ་མ། དེ་ཕྱིར་མ་འདོན་གོང་གཞན་ཞིག་ཁ་སྣོན་གནང་རོགས།</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>ཐོ་ཁོངས་འདིས་ཆོག་ལྡེ་ཁོ་ནས་ནང་འཛུལ་བྱེད། (ཆོག་ལྡེའི་སྲིད་ཇུས།) གཅིག་ཀྱང་མ་ལུས་ན་ཡང་བསྐྱར་རང་གི་གསང་གྲངས་ཀྱིས་ནང་འཛུལ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>འདི་ནི་ཁྱེད་ཀྱི་ཆོག་ལྡེ་མཐའ་མ་ཡིན་ལ། ཁྱེད་ཀྱི་ཐོ་ཁོངས་ཆོག་ལྡེ་མེད་པར་ནང་འཛུལ་བྱེད་མི་ཐུབ། སྔོན་ལ་ཆོག་ལྡེ་གཞན་ཞིག་ཁ་སྣོན་གནང་རོགས།</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>ཆོག་ལྡེ་ &quot;%name&quot; ཕྱིར་འཐེན་ཟིན། དེས་ཐོ་ཁོངས་འདིར་ད་ནས་ནང་འཛུལ་བྱེད་མི་ཐུབ།</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77312,6 +77388,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>ཁྱེད་ཀྱི་བདེན་དཔང་ཉེར་སྤྱོད་ནས་ཀྱི་ཀོ་ཌི།</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>ཁྱེད་ཀྱིས་གཞི་གྲངས་གཏན་དུ་བསུབ་པའམ་ཟིན་ཐོ་ཞིག་གཙང་སེལ་བྱེད་གྲབས་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>ཁྱེད་ཀྱི་གསང་གྲངས་དང་ཆོག་ལྡེ་ཞིག</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>ཁྱེད་ཀྱི་གསང་གྲངས་དང་བདེན་དཔང་ཉེར་སྤྱོད་ནས་ཀྱི་ཀོ་ཌི་ཞིག</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>ཡང་ན།</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>དྲ་བཤར་ཆས་འདིས་ཆོག་ལྡེ་བེད་སྤྱོད་བྱེད་མི་ཐུབ། ཐབས་ལམ་གཞན་པའམ་དྲ་བཤར་ཆས་གཞན་ཞིག་བེད་སྤྱོད་གནང་རོགས།</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>མུ་མཐུད་སྐབས། ཁྱེད་ཀྱི་དྲ་བཤར་ཆས་ཀྱིས་ཁྱེད་ཀྱི་ཆོག་ལྡེ་གཅིག་འདྲི་ངེས།</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>ཆོག་ལྡེ་དང་བཅས་མུ་མཐུད།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77402,6 +77506,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>སྒྲིག་བཀོད།</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>རང་ཉིད་ཀྱི་གསང་གྲངས། གློག་འཕྲིན་ཁ་བྱང་། ཆོག་ལྡེ། གོམ་པ་གཉིས་ཀྱི་ནང་འཛུལ། སླར་གསོའི་ཨང་རྟགས། ཡང་ན་ API གསང་ལྡེ་བཟོ་བཅོས་བྱེད་པ་དང་། རང་གི་སྒྲིག་ཆས་གཞན་དག་ནས་ཕྱིར་ཐོན་པ།</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>སྤྱོད་མཁན་དང་། ཁོང་ཚོའི་གསང་གྲངས་དང་སྒྲིག་ཆས་གསར་བཟོ་དང་རྩོམ་སྒྲིག ཐོ་ཁོངས་ཀྱི་སྒྲིག་འགོད། སྤྱོད་མཁན་ཐོ་ཁོངས་གསར་པ་ངོས་ལེན་ནམ་ཁས་མི་ལེན་པ། འགན་ཁུར་སྤྲོད་པ་དང་སྲིད་ཇུས་རྩོམ་སྒྲིག་བྱེད་པ།</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>གཞི་གྲངས་བསུབ་པ།</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>གད་སྙིགས་སྒམ་གཙང་སེལ་བྱེད་པ། དེ་ནས་རྣམ་གྲངས་ཕྱིར་འདོན་བྱེད་པ། རྣམ་གྲངས་མང་པོ་ཐེངས་གཅིག་ལ་ཕྱིར་འདོན་བྱེད་པ།</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>ནང་དོན་ཕྱིར་འདོན། འགྲེམས་སྤེལ་དང་ཉར་ཚགས།</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>ནང་དོན་ཕྱིར་འདོན་བྱེད་པ། (གད་སྙིགས་སྒམ་དུ་སྤོ་བ་ཡང་ཚུད།) འགྲེམས་སྤེལ་དང་ཟིན་བྲིས་ཉར་ཚགས། རེའུ་མིག་བསྐུར་སྐབས་འདྲི། སོར་བཞག་ལ་སྒོ་བརྒྱབ་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>ཚབས་ཆེའི་བྱ་འགུལ་མ་བྱས་གོང་ནང་འཛུལ་བྱས་ཟིན་པའི་སྤྱོད་མཁན་གྱིས་རང་ཉིད་སུ་ཡིན་པ་ཡང་བསྐྱར་གཏན་འཁེལ་བྱེད། གསང་གྲངས་དང་ཆོག་ལྡེ་བཀོལ་ནས་སམ། ཆོག་ལྡེ་མེད་ན་གསང་གྲངས་དང་བདེན་དཔང་ཉེར་སྤྱོད་ཀྱི་ཀོ་ཌི་བཀོལ་ནས་ཡིན། དྲ་ངོས་རྣམས་ཀྱིས་ཁོ་ན་འདྲི། REST མཐུད་ངོས། SOAP། WebDAV། expservices ནང་འཛུལ་དང་བཀའ་ཕྲེང་ཐིག་གིས་ནམ་ཡང་མི་འདྲི།</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>སྒྲིག་འགོད་ནུས་པ་ཐོན་ས།</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>འདིའི་སྒྲིག་འགོད།</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>དྲ་ཚིགས་འཛུལ་སྒོ་ཚང་མ།</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>དྲ་ཚིགས་འཛུལ་སྒོ་ %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ཁ་ཕྱེ།</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>འདྲི་ཡུལ། %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>ཚོ་མི་ཁོ་ན་ལ་འདྲི་བར་སྤྱོད་མཁན་ཚོ་ཆུང་ལ་རྟགས་རྒྱག་རོགས། (དཔེར་ན་རྩོམ་སྒྲིག་པ།) གང་ལའང་རྟགས་མ་བརྒྱབ་ན། སྤྱོད་མཁན་ཚང་མ།</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php ལ་ཉར་ཚགས་བྱས་ཟིན། དྲ་ཚིགས་འཛུལ་སྒོ་ཚང་མའི་ཆེད་དུ། ཉར་ཚགས་བྱེད་སྐབས་ཁྱེད་རང་ཡིན་པ་གཏན་འཁེལ་བྱེད་རྒྱུ་ཞུ་གི་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php ལ་ཉར་ཚགས་བྱས་ཟིན། settings/override ནང་གི་གྲངས་ཐང་ལ་གཙོ་གནས་ཡོད། ཉར་ཚགས་བྱེད་སྐབས་ཁྱེད་རང་ཡིན་པ་གཏན་འཁེལ་བྱེད་རྒྱུ་ཞུ་གི་ཡོད།</translation>
     </message>
 </context>
 <context>
@@ -77758,6 +77926,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>ཁྱེད་ཀྱི་ཐོ་ཁོངས་ལ་ཟྭ་བརྒྱབ་སོང་།</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site ཐོག་གི་ཁྱེད་ཀྱི་ཐོ་ཁོངས་ %login ལ་ཆོག་ལྡེ་ཞིག་ཁ་སྣོན་བྱས་སོང་།</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>ཆོག་ལྡེ་འདི་ཡོད་མཁན་སུ་ཡིན་ཡང་ཁྱེད་ཀྱི་གསང་གྲངས་མེད་པར་ཁྱེད་ཀྱི་ཐོ་ཁོངས་སུ་ནང་འཛུལ་བྱེད་ཐུབ། ཁྱེད་ཀྱིས་ཁ་སྣོན་མ་བྱས་ན། ནང་འཛུལ་གསང་ལྡེའི་འོག་ནས་ཕྱིར་འདོན་གནང་སྟེ་ཁྱེད་ཀྱི་གསང་གྲངས་བརྗེ་རོགས།</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site ཐོག་གི་ཁྱེད་ཀྱི་ཐོ་ཁོངས་ %login ནས་ཆོག་ལྡེ་ཞིག་ཕྱིར་འདོན་བྱས་སོང་།</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>དེས་ཁྱེད་ཀྱི་ཐོ་ཁོངས་སུ་ད་ནས་ནང་འཛུལ་བྱེད་མི་ཐུབ། ཁྱེད་ཀྱིས་ཕྱིར་མ་འདོན་ན། ཁྱེད་ཀྱི་ཆོག་ལྡེ་དང་སྒྲིག་ཆས་ལ་ཞིབ་བཤེར་གནང་རོགས།</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>ཁྱེད་ཀྱི་ཐོ་ཁོངས་ལ་ཆོག་ལྡེ་ཞིག་ཁ་སྣོན་བྱས་སོང་།</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>ཁྱེད་ཀྱི་ཐོ་ཁོངས་ནས་ཆོག་ལྡེ་ཞིག་ཕྱིར་འདོན་བྱས་སོང་།</translation>
     </message>
 </context>
 <context>

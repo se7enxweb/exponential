@@ -77213,6 +77213,82 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>La clau d'accès a pas pogut èsser verificada. Ensajatz tornarmai.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Los comptes que se connectan pas qu&apos;amb de claus d&apos;accès pòdon pas utilizar de senhal aquí: causissètz « Se connectar amb una clau d&apos;accès ».</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Claus d&apos;accès de %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Las claus d&apos;accès amb las qualas aqueste compte se connecta. Revocatz la que se tròba sus un periferic perdut o raubat: se poirà pas pus connectar. Lo titular n&apos;apond de novèlas el meteis.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Vòstre compte a besonh d&apos;una clau d&apos;accès</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Apondètz una clau d&apos;accès a vòstre compte</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Apondètz una clau d&apos;accès per contunhar. Vos connectaretz puèi amb ela allòc d&apos;un senhal sol.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Se connectar amb una clau d&apos;accès es mai rapid e mai segur qu&apos;un senhal. Apondètz-ne una ara, o contunhatz sens ela.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Pas ara</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Revocar la clau d&apos;accès « %name »?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Se pòt pas pus connectar a aqueste compte. S&apos;èra la darrièra, lo titular se connecta amb lo senhal, o ne definissètz un novèl.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Revocar la clau d&apos;accès</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Revocar</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Aqueste compte a pas cap de clau d&apos;accès.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Autentificador</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Desconegut</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Vòstra darrièra clau d&apos;accès: apondètz-ne una autra abans de la levar.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Aqueste compte se connecta pas qu&apos;amb de claus d&apos;accès (politica de las claus d&apos;accès): quand ne demòra pas cap, se connecta tornamai amb son senhal.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Es vòstra darrièra clau d&apos;accès e vòstre compte se pòt pas connectar sens ela. Apondètz d&apos;en primièr una autra clau d&apos;accès.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>La clau d&apos;accès « %name » es estada revocada. Se pòt pas pus connectar a aqueste compte.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77312,6 +77388,34 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>Code from your authenticator app</source>
         <translation>Còdi de vòstra aplicacion d'autentificacion</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Sètz per suprimir de donadas per totjorn o voidar un jornal.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Vòstre senhal e una clau d&apos;accès</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Vòstre senhal e un còdi de vòstra aplicacion d&apos;autentificacion</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>O:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Aqueste navigador pòt pas utilizar de claus d&apos;accès. Utilizatz un autre biais o un autre navigador.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Quand contunhatz, vòstre navigador vos demanda una de vòstras claus d&apos;accès.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Contunhar amb una clau d&apos;accès</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77402,6 +77506,70 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     <message>
         <source>Setup</source>
         <translation>Configuracion</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Cambiar son pròpri senhal, son adreça electronica, sas claus d&apos;accès, la connexion en dos passes, los còdis de recuperacion o las claus API, e desconnectar sos autres periferics.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Crear e modificar d&apos;utilizaires, lors senhals e periferics, los paramètres del compte, aprovar o refusar de comptes d&apos;utilizaires novèls, assignar de ròtles e modificar de politicas.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Suprimir de donadas</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Voidar l&apos;escobilhièr, ne levar d&apos;elements e levar mantun element d&apos;un còp.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Levar, publicar e enregistrar de contengut</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Levar de contengut (tanben cap a l&apos;escobilhièr), publicar e enregistrar un borrolhon; demandat quand lo formulari es mandat. Desactivat per defaut.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Abans una accion sensibla, un utilizaire connectat confirma tornamai qual es: amb son senhal e una clau d&apos;accès, o sens clau d&apos;accès amb son senhal e lo còdi de son aplicacion d&apos;autentificacion. Pas que las paginas web o demandan: l&apos;interfàcia REST, SOAP, WebDAV, la connexion expservices e la linha de comanda o demandan pas jamai.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Ont s&apos;aplican los paramètres</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Paramètres per</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Cada accès al site</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Accès al site %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Dobrir</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Qual es demandat: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Marcatz de grops d&apos;utilizaires per demandar pas qu&apos;a lors membres (los redactors, per exemple). Cap de marcat: cada utilizaire.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Enregistrat dins settings/override/site.ini.append.php, per cada accès al site. En enregistrant, vos es demandat de confirmar qu&apos;es plan vos.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Enregistrat dins settings/siteaccess/%name/site.ini.append.php. Una valor dins settings/override a la prioritat. En enregistrant, vos es demandat de confirmar qu&apos;es plan vos.</translation>
     </message>
 </context>
 <context>
@@ -77758,6 +77926,30 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Vòstre compte es estat verrolhat</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Una clau d&apos;accès es estada aponduda a vòstre compte %login sus %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Qual que tenga aquesta clau d&apos;accès se pòt connectar a vòstre compte sens vòstre senhal. Se l&apos;avètz pas aponduda, levatz-la jos Claus d&apos;accès e cambiatz vòstre senhal.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Una clau d&apos;accès es estada levada de vòstre compte %login sus %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Se pòt pas pus connectar a vòstre compte. Se l&apos;avètz pas levada, verificatz vòstras claus d&apos;accès e vòstres periferics.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Una clau d&apos;accès es estada aponduda a vòstre compte</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Una clau d&apos;accès es estada levada de vòstre compte</translation>
     </message>
 </context>
 <context>

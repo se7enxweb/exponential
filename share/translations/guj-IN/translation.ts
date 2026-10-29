@@ -77211,6 +77211,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>પાસકી તપાસી શકાઈ નહીં. કૃપા કરીને ફરી પ્રયાસ કરો.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>જે ખાતાં ફક્ત પાસકી વડે સાઇન ઇન કરે છે તે અહીં પાસવર્ડ વાપરી શકતાં નથી: “પાસકી વડે સાઇન ઇન કરો” પસંદ કરો.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login ની પાસકી</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>આ ખાતું જે પાસકી વડે સાઇન ઇન કરે છે તે. ખોવાયેલા કે ચોરાયેલા ઉપકરણ પર હોય તે પાસકી રદબાતલ કરો: તે પછી તે સાઇન ઇન કરી શકશે નહીં. માલિક નવી પાસકી જાતે ઉમેરે છે.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>તમારા ખાતાને પાસકીની જરૂર છે</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>તમારા ખાતામાં પાસકી ઉમેરો</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>આગળ વધવા માટે પાસકી ઉમેરો. પછી તમે ફક્ત પાસવર્ડને બદલે તેના વડે સાઇન ઇન કરશો.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>પાસકી વડે સાઇન ઇન કરવું પાસવર્ડ કરતાં ઝડપી અને વધુ સુરક્ષિત છે. હમણાં એક ઉમેરો, અથવા તેના વિના આગળ વધો.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>હમણાં નહીં</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>પાસકી “%name” રદબાતલ કરવી છે?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>તે હવે આ ખાતામાં સાઇન ઇન કરી શકશે નહીં. જો તે છેલ્લી હતી, તો માલિક પાસવર્ડ વડે સાઇન ઇન કરે છે, અથવા તમે નવો પાસવર્ડ સેટ કરો છો.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>પાસકી રદબાતલ કરો</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>રદબાતલ કરો</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>આ ખાતામાં કોઈ પાસકી નથી.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>પ્રમાણકર્તા</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>અજ્ઞાત</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>તમારી છેલ્લી પાસકી: તેને દૂર કરતાં પહેલાં બીજી ઉમેરો.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>આ ખાતું ફક્ત પાસકી વડે સાઇન ઇન કરે છે (પાસકી નીતિ): એક પણ બાકી ન રહે તો તે ફરીથી પોતાના પાસવર્ડ વડે સાઇન ઇન કરે છે.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>આ તમારી છેલ્લી પાસકી છે અને તેના વિના તમારું ખાતું સાઇન ઇન કરી શકતું નથી. પહેલાં બીજી પાસકી ઉમેરો.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>પાસકી “%name” રદબાતલ કરવામાં આવી. તે હવે આ ખાતામાં સાઇન ઇન કરી શકશે નહીં.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77310,6 +77386,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>તમારી પ્રમાણકર્તા ઍપનો કોડ</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>તમે ડેટા કાયમ માટે કાઢી નાખવાના અથવા લૉગ ખાલી કરવાના છો.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>તમારો પાસવર્ડ અને એક પાસકી</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>તમારો પાસવર્ડ અને તમારી પ્રમાણકર્તા ઍપનો કોડ</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>અથવા:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>આ બ્રાઉઝર પાસકીનો ઉપયોગ કરી શકતું નથી. બીજી રીત અથવા બીજું બ્રાઉઝર વાપરો.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>તમે આગળ વધશો ત્યારે તમારું બ્રાઉઝર તમારી પાસકીમાંથી એક માગશે.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>પાસકી વડે આગળ વધો</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77400,6 +77504,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>સેટઅપ</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>પોતાનો પાસવર્ડ, ઇમેઇલ સરનામું, પાસકી, બે-પગલાંનું સાઇન ઇન, પુનઃપ્રાપ્તિ કોડ અથવા API કી બદલવાં, અને પોતાનાં અન્ય ઉપકરણોમાંથી સાઇન આઉટ કરવું.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>વપરાશકર્તાઓ બનાવવા અને સંપાદિત કરવા, તેમના પાસવર્ડ અને ઉપકરણો, ખાતાની સેટિંગ્સ, નવાં વપરાશકર્તા ખાતાં મંજૂર અથવા નામંજૂર કરવાં, ભૂમિકાઓ સોંપવી અને નીતિઓ સંપાદિત કરવી.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>ડેટા કાઢી નાખવો</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>કચરાપેટી ખાલી કરવી, તેમાંથી આઇટમ દૂર કરવી અને એકસાથે ઘણી આઇટમ દૂર કરવી.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>સામગ્રી દૂર કરવી, પ્રકાશિત કરવી અને સાચવવી</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>સામગ્રી દૂર કરવી (કચરાપેટીમાં પણ), પ્રકાશિત કરવી અને ડ્રાફ્ટ સાચવવો; ફોર્મ મોકલવામાં આવે ત્યારે પૂછવામાં આવે છે. ડિફૉલ્ટ રૂપે બંધ.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>સંવેદનશીલ ક્રિયા પહેલાં સાઇન ઇન થયેલ વપરાશકર્તા ફરીથી પુષ્ટિ કરે છે કે તે કોણ છે: પોતાના પાસવર્ડ અને પાસકી વડે, અથવા પાસકી વિના પોતાના પાસવર્ડ અને પ્રમાણકર્તા ઍપના કોડ વડે. ફક્ત વેબ પેજ પૂછે છે: REST ઇન્ટરફેસ, SOAP, WebDAV, expservices લૉગિન અને કમાન્ડ લાઇન ક્યારેય પૂછતાં નથી.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>સેટિંગ્સ ક્યાં લાગુ પડે છે</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>આ માટે સેટિંગ્સ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>દરેક સાઇટઍક્સેસ</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>ફક્ત સાઇટઍક્સેસ %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ખોલો</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>કોને પૂછવામાં આવે છે: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>ફક્ત તેમના સભ્યોને પૂછવા માટે વપરાશકર્તા સમૂહો પર ટિક કરો (ઉદાહરણ તરીકે, સંપાદકો). કોઈ ટિક નહીં: દરેક વપરાશકર્તા.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php માં દરેક સાઇટઍક્સેસ માટે સાચવ્યું. સાચવતી વખતે તમને પુષ્ટિ કરવાનું કહેવામાં આવે છે કે આ તમે જ છો.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php માં સાચવ્યું. settings/override માંની કિંમત તેના પર અગ્રતા ધરાવે છે. સાચવતી વખતે તમને પુષ્ટિ કરવાનું કહેવામાં આવે છે કે આ તમે જ છો.</translation>
     </message>
 </context>
 <context>
@@ -77756,6 +77924,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>તમારું ખાતું લૉક કરવામાં આવ્યું</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site પર તમારા ખાતા %login માં એક પાસકી ઉમેરવામાં આવી.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>જેની પાસે આ પાસકી છે તે તમારા પાસવર્ડ વિના તમારા ખાતામાં સાઇન ઇન કરી શકે છે. જો તમે તે ઉમેરી ન હોય, તો તેને પાસકી હેઠળ દૂર કરો અને તમારો પાસવર્ડ બદલો.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site પર તમારા ખાતા %login માંથી એક પાસકી દૂર કરવામાં આવી.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>તે હવે તમારા ખાતામાં સાઇન ઇન કરી શકશે નહીં. જો તમે તે દૂર ન કરી હોય, તો તમારી પાસકી અને ઉપકરણો તપાસો.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>તમારા ખાતામાં એક પાસકી ઉમેરવામાં આવી</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>તમારા ખાતામાંથી એક પાસકી દૂર કરવામાં આવી</translation>
     </message>
 </context>
 <context>

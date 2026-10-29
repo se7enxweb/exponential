@@ -77213,6 +77213,82 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Ang passkey dili masusi. Palihug sulayi pag-usab.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Ang mga account nga mag-login gamit ang passkey lang dili makagamit og password dinhi: pilia ang &quot;Mag-login gamit ang passkey&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Mga passkey ni %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Ang mga passkey nga gigamit niini nga account sa pag-login. Bawia ang anaa sa nawala o gikawat nga device: dili na kini makapag-login. Ang tag-iya mismo ang magdugang og bag-o.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Nagkinahanglan og passkey ang imong account</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Pagdugang og passkey sa imong account</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Pagdugang og passkey aron makapadayon. Unya mag-login ka gamit kini imbes nga password lang.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Mas paspas ug mas luwas ang pag-login gamit ang passkey kaysa password. Pagdugang og usa karon, o padayon nga wala niini.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Dili karon</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Bawion ang passkey nga &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Dili na kini makapag-login niini nga account. Kon kini ang katapusan, ang tag-iya mag-login gamit ang password, o magbutang ka og bag-o.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Bawia ang passkey</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Bawia</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Walay passkey kini nga account.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Tig-authenticate</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Wala mailhi</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Imong katapusang passkey: pagdugang og lain sa dili pa nimo kini kuhaon.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Kini nga account mag-login gamit ang passkey lang (palisiya sa passkey): kon wala nay mabilin, mag-login kini pag-usab gamit ang iyang password.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Kini ang imong katapusang passkey ug dili makapag-login ang imong account kon wala niini. Pagdugang una og laing passkey.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Nabawi na ang passkey nga &quot;%name&quot;. Dili na kini makapag-login niini nga account.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77312,6 +77388,34 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>Code from your authenticator app</source>
         <translation>Code gikan sa imong authenticator app</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Hapit na nimo papason ang datos sa hingpit o hawanon ang usa ka log.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Imong password ug usa ka passkey</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Imong password ug usa ka code gikan sa imong authenticator app</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>O:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Dili makagamit og passkey kini nga browser. Gamita ang laing paagi, o laing browser.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Kon magpadayon ka, mangayo ang imong browser og usa sa imong mga passkey.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Padayon gamit ang passkey</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77402,6 +77506,70 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     <message>
         <source>Setup</source>
         <translation>Pag-setup</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Pagbag-o sa kaugalingong password, e-mail address, passkey, duha-ka-lakang nga pag-login, recovery code o API key, ug pag-logout sa kaugalingong ubang mga device.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Paghimo ug pag-usab sa mga tiggamit, ilang mga password ug device, mga setting sa account, pag-aprobar o pagdumili sa bag-ong mga account sa tiggamit, paggahin og papel ug pag-usab sa mga palisiya.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Pagpapas sa datos</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Paghawan sa basurahan, pagkuha og mga butang gikan niini ug pagkuha og daghang butang dungan.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Pagkuha, pag-publish ug pagtipig sa sulod</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Pagkuha sa sulod (lakip ang paglabay sa basurahan), pag-publish ug pagtipig og draft, pangutan-on inig padala sa form. Naka-disable sa default.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Sa wala pa ang usa ka sensitibo nga aksyon, magpamatuod pag-usab ang naka-login nga tiggamit kon kinsa siya: gamit ang iyang password ug passkey, o kon walay passkey, gamit ang iyang password ug ang code sa iyang authenticator app. Ang mga web page lang ang nangutana: ang REST interface, SOAP, WebDAV, ang expservices login ug ang command line dili gayod mangutana.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Asa magamit ang mga setting</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Mga setting para sa</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Matag access sa site</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Access sa site nga %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Abli</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Kinsa ang pangutan-on: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Markahi ang mga grupo sa tiggamit aron ang ilang mga miyembro lang ang pangutan-on (mga editor, pananglitan). Walay namarkahan: matag tiggamit.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Natipigan sa settings/override/site.ini.append.php, para sa matag access sa site. Ang pagtipig nangayo nga kumpirmahon nimo nga ikaw kini.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Natipigan sa settings/siteaccess/%name/site.ini.append.php. Ang value sa settings/override ang mopatigbabaw niini. Ang pagtipig nangayo nga kumpirmahon nimo nga ikaw kini.</translation>
     </message>
 </context>
 <context>
@@ -77758,6 +77926,30 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     <message>
         <source>Your account was locked</source>
         <translation>Gi-lock ang imong account</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Usa ka passkey ang gidugang sa imong account nga %login sa %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Bisan kinsa nga adunay kini nga passkey makapag-login sa imong account bisan walay imong password. Kon dili ikaw ang nagdugang niini, kuhaa kini ubos sa Mga passkey ug usba ang imong password.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Usa ka passkey ang gikuha gikan sa imong account nga %login sa %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Dili na kini makapag-login sa imong account. Kon dili ikaw ang nagkuha niini, susiha ang imong mga passkey ug device.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Usa ka passkey ang gidugang sa imong account</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Usa ka passkey ang gikuha gikan sa imong account</translation>
     </message>
 </context>
 <context>

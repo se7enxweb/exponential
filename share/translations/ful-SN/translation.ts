@@ -77213,6 +77213,82 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Passkey ndaaraaka. Useni, foti kadi.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Konte naatooje e passkeys tan waawaa huutoraade finnde ɗoo: suɓo &quot;Naat e passkey&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Passkeys jeyaaɗi e %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Passkeys ɗe konte ndee naatortoo. Haaytu kala ngoo woni e kaɓirgal majjungal walla nguyaangal: ɗum waawataa naatde kadi. Jom konte oo ɓeydata kese ɗee hoore mum.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Konte maaɗa ina sokli passkey</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Ɓeydu passkey e konte maaɗa</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Ɓeydu passkey ngam jokkude. Caggal ɗuum a naatoto e mayre, wonaa e finnde tan.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Naatgol e passkey ina yaawi, ina reenii ko ɓuri finnde. Ɓeydu gooto jooni, walla jokku tawa alaa.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Wonaa jooni</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Haaytu passkey &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Ɗum waawataa naatde e konte ndee kadi. So ɗum woni sakkitiiɗo oo, jom konte oo naatoto e finnde nden, walla a waɗa hesere.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Haaytu passkey oo</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Haaytu</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Konte ndee alaa passkey.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Kaɓirgal ƴeewtorgal</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Anndaaka</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Passkey maaɗa sakkitiiɗo: ɓeydu goɗɗo hade maa ittude ɗum.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Konte ndee naatortoo passkeys tan (doosgol passkey): so hay gooto heddaaki, ɗum naatoto e finnde mum kadi.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Ɗum ko passkey maaɗa sakkitiiɗo, konte maaɗa waawaa naatde tawa alaa. Ɓeydu passkey goɗɗo adan.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Passkey &quot;%name&quot; haaytaama. Ɗum waawataa naatde e konte ndee kadi.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77312,6 +77388,34 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>Code from your authenticator app</source>
         <translation>Koode diga application authenticator maaɗa</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>A ɗon yaara momtude keɓe haa abadaa walla wujjude jaaynde golle.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Finnde maaɗa e passkey</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Finnde maaɗa e koode diga application authenticator maaɗa</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Walla:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Wanngorde ndee waawaa huutoraade passkeys. Huutoro laawol goɗngol, walla wanngorde goɗnde.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>So a jokkii, wanngorde maaɗa naamnay gooto e passkeys maaɗa.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Jokku e passkey</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77402,6 +77506,70 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>Setup</source>
         <translation>Teeltugol</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Waylude finnde mum, ñiiɓirde iimeel, passkeys, naatgol e jahal ɗiɗi, kodeeji danndugol walla keɓe API mum, e yaltinde kaɓirɗe mum goɗɗe.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Sosde e waylude kuutorɓe, finndeeji maɓɓe e kaɓirɗe maɓɓe, teelte konte, jaɓde walla salaade konte kuutorɓe kese, rokkude darnde e waylude doosgolji.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Momtude keɓe</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Wujjude ɓalli, ittude geɗe e mayri e ittude geɗe keewɗe e laawol gootol.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Ittude, yaltinde e mooftude loowdi</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Ittude loowdi (hay e ɓalli), yaltinde e mooftude daartol; naamnetee so formular oo neldaama. Ñifaama e mbaydi ɗoworndi.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Hade gollal maɓɓungal, kuutoro naatɗo oo teeŋtinta kadi ko hombo woni: e finnde mum e passkey, walla tawa alaa passkey e finnde mum e koode application authenticator mum. Hello geese tan naamnata: interface REST, SOAP, WebDAV, naatgol expservices e laawol yamirde naamnataa abadaa.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Ɗo teelte ɗee golli</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Teelte ngam</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Kala siteaccess</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Siteaccess %name tan</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Uddit</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Hombo naamnetee: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Maanto fedde kuutorɓe ngam naamnude tergaaɗe majje tan (binndooɓe, yeru). Hay gooto maantaaka: kala kuutoro.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Mooftaama e settings/override/site.ini.append.php, ngam kala siteaccess. Mooftugol ngol naamnay maa teeŋtinde ko an.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Mooftaama e settings/siteaccess/%name/site.ini.append.php. Keɗe e settings/override ɓurata ɗum. Mooftugol ngol naamnay maa teeŋtinde ko an.</translation>
     </message>
 </context>
 <context>
@@ -77758,6 +77926,30 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Konte maa uddaama</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Passkey ɓeydaama e konte maaɗa %login e %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Kala jogiiɗo passkey oo ina waawi naatde e konte maaɗa tawa alaa finnde maaɗa. So wonaa an ɓeydi ɗum, itt ɗum e les Passkeys, waylaa finnde maaɗa.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Passkey ittaama e konte maaɗa %login e %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Ɗum waawataa naatde e konte maaɗa kadi. So wonaa an itti ɗum, ƴeewto passkeys maaɗa e kaɓirɗe maaɗa.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Passkey ɓeydaama e konte maaɗa</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Passkey ittaama e konte maaɗa</translation>
     </message>
 </context>
 <context>

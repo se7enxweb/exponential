@@ -77211,6 +77211,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>கடவுச்சாவியைச் சரிபார்க்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>கடவுச்சாவிகள் மூலம் மட்டுமே உள்நுழையும் கணக்குகள் இங்கே கடவுச்சொல்லைப் பயன்படுத்த முடியாது: “கடவுச்சாவி மூலம் உள்நுழை” என்பதைத் தேர்ந்தெடுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login இன் கடவுச்சாவிகள்</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>இந்தக் கணக்கு உள்நுழையும் கடவுச்சாவிகள். தொலைந்த அல்லது திருடப்பட்ட சாதனத்தில் உள்ளதைத் திரும்பப்பெறுங்கள்: அதனால் இனி உள்நுழைய முடியாது. புதியவற்றை உரிமையாளரே சேர்க்கிறார்.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>உங்கள் கணக்குக்கு ஒரு கடவுச்சாவி தேவை</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>உங்கள் கணக்கில் ஒரு கடவுச்சாவியைச் சேருங்கள்</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>தொடர ஒரு கடவுச்சாவியைச் சேருங்கள். பிறகு கடவுச்சொல் மட்டுமின்றி அதன் மூலம் உள்நுழைவீர்கள்.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>கடவுச்சாவி மூலம் உள்நுழைவது கடவுச்சொல்லை விட வேகமானது, பாதுகாப்பானது. இப்போதே ஒன்றைச் சேருங்கள், அல்லது அது இல்லாமல் தொடருங்கள்.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>இப்போது வேண்டாம்</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>“%name” என்ற கடவுச்சாவியைத் திரும்பப்பெறவா?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>அதனால் இனி இந்தக் கணக்கில் உள்நுழைய முடியாது. அது கடைசியானதாக இருந்தால், உரிமையாளர் கடவுச்சொல் மூலம் உள்நுழைவார், அல்லது நீங்கள் புதியதை அமைப்பீர்கள்.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>கடவுச்சாவியைத் திரும்பப்பெறு</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>திரும்பப்பெறு</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>இந்தக் கணக்கில் கடவுச்சாவி இல்லை.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>அங்கீகரிப்பான்</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>தெரியாதது</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>உங்கள் கடைசி கடவுச்சாவி: அதை அகற்றும் முன் இன்னொன்றைச் சேருங்கள்.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>இந்தக் கணக்கு கடவுச்சாவிகள் மூலம் மட்டுமே உள்நுழைகிறது (கடவுச்சாவிக் கொள்கை): ஒன்றும் மிஞ்சவில்லை என்றால், மீண்டும் அதன் கடவுச்சொல் மூலம் உள்நுழையும்.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>இது உங்கள் கடைசி கடவுச்சாவி, அது இல்லாமல் உங்கள் கணக்கு உள்நுழைய முடியாது. முதலில் இன்னொரு கடவுச்சாவியைச் சேருங்கள்.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>“%name” என்ற கடவுச்சாவி திரும்பப்பெறப்பட்டது. அதனால் இனி இந்தக் கணக்கில் உள்நுழைய முடியாது.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77310,6 +77386,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>உங்கள் அங்கீகரிப்புச் செயலியின் குறியீடு</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>நீங்கள் தரவை நிரந்தரமாக நீக்கவோ ஒரு பதிவேட்டை அழிக்கவோ போகிறீர்கள்.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>உங்கள் கடவுச்சொல்லும் ஒரு கடவுச்சாவியும்</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>உங்கள் கடவுச்சொல்லும் உங்கள் அங்கீகரிப்புச் செயலியின் குறியீடும்</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>அல்லது:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>இந்த உலாவியால் கடவுச்சாவிகளைப் பயன்படுத்த முடியாது. வேறு வழியையோ வேறு உலாவியையோ பயன்படுத்துங்கள்.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>நீங்கள் தொடரும்போது, உங்கள் உலாவி உங்கள் கடவுச்சாவிகளில் ஒன்றைக் கேட்கும்.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>கடவுச்சாவி மூலம் தொடர்</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77400,6 +77504,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>அமைவு</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>தனது சொந்தக் கடவுச்சொல், மின்னஞ்சல் முகவரி, கடவுச்சாவிகள், இரு-படி உள்நுழைவு, மீட்புக் குறியீடுகள் அல்லது API சாவிகளை மாற்றுதல், தனது பிற சாதனங்களிலிருந்து வெளியேறுதல்.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>பயனர்கள், அவர்களின் கடவுச்சொற்கள், சாதனங்கள், கணக்கு அமைப்புகளை உருவாக்குதல், திருத்துதல், புதிய பயனர் கணக்குகளை ஏற்றல் அல்லது மறுத்தல், பங்குகளை ஒதுக்குதல், கொள்கைகளைத் திருத்துதல்.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>தரவை நீக்குதல்</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>குப்பையைக் காலியாக்குதல், அதிலிருந்து உருப்படிகளை அகற்றுதல், பல உருப்படிகளை ஒரே நேரத்தில் அகற்றுதல்.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>உள்ளடக்கத்தை அகற்றுதல், வெளியிடுதல், சேமித்தல்</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>உள்ளடக்கத்தை அகற்றுதல் (குப்பைக்கும்), வெளியிடுதல், வரைவைச் சேமித்தல்; படிவம் அனுப்பப்படும்போது கேட்கப்படும். இயல்பாக முடக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>ஒரு முக்கியச் செயலுக்கு முன், உள்நுழைந்த பயனர் தாம் யார் என மீண்டும் உறுதிசெய்கிறார்: தமது கடவுச்சொல், ஒரு கடவுச்சாவி மூலம், அல்லது கடவுச்சாவி இல்லையெனில் தமது கடவுச்சொல், அங்கீகரிப்புச் செயலியின் குறியீடு மூலம். வலைப்பக்கங்கள் மட்டுமே கேட்கும்: REST இடைமுகம், SOAP, WebDAV, expservices உள்நுழைவு, கட்டளை வரி ஒருபோதும் கேட்காது.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>அமைப்புகள் எங்கே பொருந்தும்</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>இதற்கான அமைப்புகள்</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ஒவ்வொரு தள அணுகலும்</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>தள அணுகல் %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>திற</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>யாரிடம் கேட்கப்படும்: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>அவற்றின் உறுப்பினர்களிடம் மட்டும் கேட்க பயனர் குழுக்களைக் குறியிடுங்கள் (எடுத்துக்காட்டாக, ஆசிரியர்கள்). எதுவும் குறியிடப்படவில்லை: ஒவ்வொரு பயனரும்.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php இல், ஒவ்வொரு தள அணுகலுக்கும் சேமிக்கப்படும். சேமிக்கும்போது இது நீங்கள்தான் என உறுதிசெய்யக் கேட்கும்.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php இல் சேமிக்கப்படும். settings/override இல் உள்ள மதிப்புக்கு முன்னுரிமை உண்டு. சேமிக்கும்போது இது நீங்கள்தான் என உறுதிசெய்யக் கேட்கும்.</translation>
     </message>
 </context>
 <context>
@@ -77756,6 +77924,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>உங்கள் கணக்கு பூட்டப்பட்டது</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site இல் உள்ள உங்கள் %login கணக்கில் ஒரு கடவுச்சாவி சேர்க்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>இந்தக் கடவுச்சாவியை வைத்திருக்கும் எவரும் உங்கள் கடவுச்சொல் இல்லாமல் உங்கள் கணக்கில் உள்நுழையலாம். நீங்கள் இதைச் சேர்க்கவில்லை என்றால், கடவுச்சாவிகள் பகுதியில் அதை அகற்றி உங்கள் கடவுச்சொல்லை மாற்றுங்கள்.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site இல் உள்ள உங்கள் %login கணக்கிலிருந்து ஒரு கடவுச்சாவி அகற்றப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>அதனால் இனி உங்கள் கணக்கில் உள்நுழைய முடியாது. நீங்கள் அதை அகற்றவில்லை என்றால், உங்கள் கடவுச்சாவிகளையும் சாதனங்களையும் சரிபாருங்கள்.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>உங்கள் கணக்கில் ஒரு கடவுச்சாவி சேர்க்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>உங்கள் கணக்கிலிருந்து ஒரு கடவுச்சாவி அகற்றப்பட்டது</translation>
     </message>
 </context>
 <context>

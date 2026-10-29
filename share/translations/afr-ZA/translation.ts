@@ -77211,6 +77211,82 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Die wagwoordsleutel kon nie nagegaan word nie. Probeer asseblief weer.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Rekeninge wat slegs met wagwoordsleutels aanmeld, kan nie hier &apos;n wagwoord gebruik nie: kies “Meld aan met &apos;n wagwoordsleutel”.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Wagwoordsleutels van %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Die wagwoordsleutels waarmee hierdie rekening aanmeld. Trek een terug wat op &apos;n verlore of gesteelde toestel is: dit kan dan nie meer aanmeld nie. Die eienaar voeg self nuwes by.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>U rekening benodig &apos;n wagwoordsleutel</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Voeg &apos;n wagwoordsleutel by u rekening</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Voeg &apos;n wagwoordsleutel by om voort te gaan. U meld dan daarmee aan in plaas van slegs met &apos;n wagwoord.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Om met &apos;n wagwoordsleutel aan te meld is vinniger en veiliger as &apos;n wagwoord. Voeg nou een by, of gaan sonder een voort.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Nie nou nie</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Trek die wagwoordsleutel “%name” terug?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Dit kan nie meer by hierdie rekening aanmeld nie. As dit die laaste een was, meld die eienaar met die wagwoord aan, of u stel &apos;n nuwe een.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Trek die wagwoordsleutel terug</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Trek terug</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Hierdie rekening het geen wagwoordsleutel nie.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Verifieerder</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Onbekend</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>U laaste wagwoordsleutel: voeg nog een by voordat u dit verwyder.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Hierdie rekening meld slegs met wagwoordsleutels aan (wagwoordsleutelbeleid): wanneer daar geen oor is nie, meld dit weer met sy wagwoord aan.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Dit is u laaste wagwoordsleutel en u rekening kan nie sonder een aanmeld nie. Voeg eers nog &apos;n wagwoordsleutel by.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Die wagwoordsleutel “%name” is teruggetrek. Dit kan nie meer by hierdie rekening aanmeld nie.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77310,6 +77386,34 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>Code from your authenticator app</source>
         <translation>Kode van u verifieerder-app</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>U is op die punt om data permanent te skrap of &apos;n log leeg te maak.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>U wagwoord en &apos;n wagwoordsleutel</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>U wagwoord en &apos;n kode van u verifieerder-app</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Of:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Hierdie blaaier kan nie wagwoordsleutels gebruik nie. Gebruik &apos;n ander manier, of &apos;n ander blaaier.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Wanneer u voortgaan, vra u blaaier vir een van u wagwoordsleutels.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Gaan voort met &apos;n wagwoordsleutel</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77400,6 +77504,70 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     <message>
         <source>Setup</source>
         <translation>Opstelling</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Verandering van die eie wagwoord, e-posadres, wagwoordsleutels, tweestap-aanmelding, herwinningskodes of API-sleutels, en afmelding van die eie ander toestelle.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Skep en wysig van gebruikers, hul wagwoorde en toestelle, rekeninginstellings, goedkeuring of weiering van nuwe gebruikersrekeninge, toewysing van rolle en wysiging van beleide.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Data skrap</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Leegmaak van die asblik, verwydering van items daaruit en verwydering van verskeie items gelyktydig.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Inhoud verwyder, publiseer en stoor</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Verwydering van inhoud (ook na die asblik), publisering en stoor van &apos;n konsep, gevra wanneer die vorm gestuur word. Verstek af.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Voor &apos;n sensitiewe aksie bevestig &apos;n aangemelde gebruiker weer wie hy of sy is: met hul wagwoord en &apos;n wagwoordsleutel, of sonder &apos;n wagwoordsleutel met hul wagwoord en die kode van hul verifieerder-app. Slegs die webbladsye vra: die REST-koppelvlak, SOAP, WebDAV, die expservices-aanmelding en die opdragreël vra nooit nie.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Waar die instellings geld</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Instellings vir</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Elke werftoegang</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Werftoegang %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Maak oop</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Wie gevra word: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Merk gebruikersgroepe om slegs hul lede te vra (byvoorbeeld redakteurs). Niks gemerk nie: elke gebruiker.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Gestoor in settings/override/site.ini.append.php, vir elke werftoegang. Wanneer u stoor, word u gevra om te bevestig dat dit u is.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Gestoor in settings/siteaccess/%name/site.ini.append.php. &apos;n Waarde in settings/override geniet voorrang daarbo. Wanneer u stoor, word u gevra om te bevestig dat dit u is.</translation>
     </message>
 </context>
 <context>
@@ -77788,6 +77956,30 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>U rekening is gesluit</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>&apos;n Wagwoordsleutel is by u rekening %login op %site gevoeg.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Wie hierdie wagwoordsleutel het, kan sonder u wagwoord by u rekening aanmeld. As u dit nie bygevoeg het nie, verwyder dit onder Wagwoordsleutels en verander u wagwoord.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>&apos;n Wagwoordsleutel is van u rekening %login op %site verwyder.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Dit kan nie meer by u rekening aanmeld nie. As u dit nie verwyder het nie, kontroleer u wagwoordsleutels en toestelle.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>&apos;n Wagwoordsleutel is by u rekening gevoeg</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>&apos;n Wagwoordsleutel is van u rekening verwyder</translation>
     </message>
 </context>
 <context>

@@ -77213,6 +77213,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>পাছকীটো পৰীক্ষা কৰিব পৰা নগ'ল। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>কেৱল পাছকীৰে লগ ইন কৰা একাউণ্টে ইয়াত পাছৱৰ্ড ব্যৱহাৰ কৰিব নোৱাৰে: &quot;পাছকীৰে লগ ইন কৰক&quot; বাছনি কৰক।</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login ৰ পাছকীসমূহ</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>এই একাউণ্টে যিবোৰ পাছকীৰে লগ ইন কৰে। হেৰোৱা বা চুৰি হোৱা ডিভাইচত থকা পাছকী প্ৰত্যাহাৰ কৰক: ই আৰু লগ ইন কৰিব নোৱাৰিব। মালিকে নতুনবোৰ নিজে যোগ কৰে।</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>আপোনাৰ একাউণ্টৰ বাবে এটা পাছকী লাগিব</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>আপোনাৰ একাউণ্টত এটা পাছকী যোগ কৰক</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>আগবাঢ়িবলৈ এটা পাছকী যোগ কৰক। তাৰ পিছত আপুনি কেৱল পাছৱৰ্ডৰ সলনি ইয়াৰে লগ ইন কৰিব।</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>পাছকীৰে লগ ইন কৰা পাছৱৰ্ডতকৈ দ্ৰুত আৰু অধিক সুৰক্ষিত। এতিয়া এটা যোগ কৰক, বা ইয়াৰ অবিহনে আগবাঢ়ক।</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>এতিয়া নহয়</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>&quot;%name&quot; পাছকী প্ৰত্যাহাৰ কৰিব নেকি?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>ই আৰু এই একাউণ্টত লগ ইন কৰিব নোৱাৰিব। যদি এইটোৱেই শেষটো আছিল, মালিকে পাছৱৰ্ডেৰে লগ ইন কৰিব, বা আপুনি এটা নতুন পাছৱৰ্ড ছেট কৰিব।</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>পাছকী প্ৰত্যাহাৰ কৰক</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>প্ৰত্যাহাৰ কৰক</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>এই একাউণ্টৰ কোনো পাছকী নাই।</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>প্ৰমাণীকৰণকাৰী</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>অজ্ঞাত</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>আপোনাৰ শেষ পাছকী: আঁতৰোৱাৰ আগতে আন এটা যোগ কৰক।</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>এই একাউণ্টে কেৱল পাছকীৰে লগ ইন কৰে (পাছকী নীতি): এটাও নাথাকিলে, ই পুনৰ নিজৰ পাছৱৰ্ডেৰে লগ ইন কৰে।</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>এইটো আপোনাৰ শেষ পাছকী আৰু আপোনাৰ একাউণ্টে পাছকী অবিহনে লগ ইন কৰিব নোৱাৰে। প্ৰথমে আন এটা পাছকী যোগ কৰক।</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>&quot;%name&quot; পাছকী প্ৰত্যাহাৰ কৰা হ&apos;ল। ই আৰু এই একাউণ্টত লগ ইন কৰিব নোৱাৰে।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77312,6 +77388,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>আপোনাৰ প্ৰমাণীকৰণ এপৰ কোড</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>আপুনি ডাটা চিৰদিনৰ বাবে মচিবলৈ বা এটা লগ খালী কৰিবলৈ ওলাইছে।</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>আপোনাৰ পাছৱৰ্ড আৰু এটা পাছকী</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>আপোনাৰ পাছৱৰ্ড আৰু আপোনাৰ প্ৰমাণীকৰণ এপৰ এটা কোড</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>বা:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>এই ব্ৰাউজাৰে পাছকী ব্যৱহাৰ কৰিব নোৱাৰে। আন এটা উপায়, বা আন এটা ব্ৰাউজাৰ ব্যৱহাৰ কৰক।</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>আপুনি অব্যাহত ৰাখিলে, আপোনাৰ ব্ৰাউজাৰে আপোনাৰ পাছকীসমূহৰ এটা বিচাৰিব।</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>পাছকীৰে অব্যাহত ৰাখক</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77402,6 +77506,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>ছেটআপ</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>নিজৰ পাছৱৰ্ড, ই-মেইল ঠিকনা, পাছকী, দুই-পদক্ষেপীয় লগ ইন, পুনৰুদ্ধাৰ কোড বা API কীসমূহ সলনি কৰা, আৰু নিজৰ আন ডিভাইচসমূহৰ পৰা লগ আউট কৰা।</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ব্যৱহাৰকাৰী, তেওঁলোকৰ পাছৱৰ্ড আৰু ডিভাইচ সৃষ্টি আৰু সম্পাদনা কৰা, একাউণ্ট ছেটিংছ, নতুন ব্যৱহাৰকাৰী একাউণ্ট অনুমোদন বা প্ৰত্যাখ্যান কৰা, ভূমিকা নিযুক্ত কৰা আৰু নীতি সম্পাদনা কৰা।</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>ডাটা মচা</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>আবৰ্জনা খালী কৰা, তাৰ পৰা বস্তু আঁতৰোৱা আৰু একেলগে কেইবাটাও বস্তু আঁতৰোৱা।</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>সমল আঁতৰোৱা, প্ৰকাশ কৰা আৰু সঞ্চয় কৰা</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>সমল আঁতৰোৱা (আবৰ্জনালৈ পঠিওৱাও), প্ৰকাশ কৰা আৰু খচৰা সঞ্চয় কৰা, ফৰ্ম পঠিওৱাৰ সময়ত সোধা হয়। ডিফল্টভাৱে বন্ধ।</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>কোনো সংবেদনশীল কাৰ্যৰ আগতে লগ ইন কৰা ব্যৱহাৰকাৰীয়ে পুনৰ নিশ্চিত কৰে যে তেওঁ কোন: নিজৰ পাছৱৰ্ড আৰু এটা পাছকীৰে, বা পাছকী নাথাকিলে নিজৰ পাছৱৰ্ড আৰু প্ৰমাণীকৰণ এপৰ কোডেৰে। কেৱল ৱেব পৃষ্ঠাই সোধে: REST ইণ্টাৰফেচ, SOAP, WebDAV, expservices লগইন আৰু কমাণ্ড লাইনে কেতিয়াও নোসোধে।</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>ছেটিংছ ক&apos;ত প্ৰযোজ্য</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>ইয়াৰ বাবে ছেটিংছ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>প্ৰতিটো ছাইট প্ৰৱেশ</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>ছাইট প্ৰৱেশ %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>খোলক</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>কাক সোধা হয়: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>কেৱল সদস্যসকলক সুধিবলৈ ব্যৱহাৰকাৰী গোট বাছনি কৰক (উদাহৰণস্বৰূপে সম্পাদকসকল)। একো বাছনি কৰা নহ&apos;লে: প্ৰতিজন ব্যৱহাৰকাৰী।</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php ত সঞ্চয় কৰা হয়, প্ৰতিটো ছাইট প্ৰৱেশৰ বাবে। সঞ্চয় কৰোতে আপোনাক নিশ্চিত কৰিবলৈ কোৱা হয় যে এয়া আপুনি।</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php ত সঞ্চয় কৰা হয়। settings/override ত থকা মানে ইয়াৰ ওপৰত অগ্ৰাধিকাৰ পায়। সঞ্চয় কৰোতে আপোনাক নিশ্চিত কৰিবলৈ কোৱা হয় যে এয়া আপুনি।</translation>
     </message>
 </context>
 <context>
@@ -77758,6 +77926,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>আপোনাৰ একাউণ্ট লক কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site ছাইটত আপোনাৰ একাউণ্ট %login ত এটা পাছকী যোগ কৰা হৈছে।</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>এই পাছকী যাৰ হাতত আছে তেওঁ আপোনাৰ পাছৱৰ্ড অবিহনে আপোনাৰ একাউণ্টত লগ ইন কৰিব পাৰে। যদি আপুনি ইয়াক যোগ কৰা নাই, পাছকী অংশত ইয়াক আঁতৰাওক আৰু আপোনাৰ পাছৱৰ্ড সলনি কৰক।</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site ছাইটত আপোনাৰ একাউণ্ট %login ৰ পৰা এটা পাছকী আঁতৰোৱা হৈছে।</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>ই আৰু আপোনাৰ একাউণ্টত লগ ইন কৰিব নোৱাৰে। যদি আপুনি ইয়াক আঁতৰোৱা নাই, আপোনাৰ পাছকী আৰু ডিভাইচসমূহ পৰীক্ষা কৰক।</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>আপোনাৰ একাউণ্টত এটা পাছকী যোগ কৰা হৈছে</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>আপোনাৰ একাউণ্টৰ পৰা এটা পাছকী আঁতৰোৱা হৈছে</translation>
     </message>
 </context>
 <context>
