@@ -66939,7 +66939,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Good evening</source>
-        <translation>I ni sɔgɔma</translation>
+        <translation>I ni wula</translation>
     </message>
     <message>
         <source>Good morning</source>
