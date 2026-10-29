@@ -1497,7 +1497,7 @@ class eZSys
      *
      * @param eZSys $instance
      */
-    public static function setInstance( eZSys|null $instance = null )
+    public static function setInstance( ?eZSys $instance = null )
     {
         self::$instance = $instance;
     }
