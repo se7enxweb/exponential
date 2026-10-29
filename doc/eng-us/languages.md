@@ -77,8 +77,8 @@ Exponential serves these territories in every language; no local conventions exi
 | Chad | TD | `ara-TD` → `ara-SA`, `fre-TD` → `fre-FR` |
 | Chile | CL | `esl-CL` → `esl-ES` |
 | China | CN | `bod-CN`, `chi-CN`, `uig-CN` |
-| Christmas Island | CX | `eng-CX` (source texts) |
-| Cocos (Keeling) Islands | CC | `eng-CC` (source texts) |
+| Christmas Island | CX | `eng-CX` → `eng-AU` |
+| Cocos (Keeling) Islands | CC | `eng-CC` → `eng-AU` |
 | Colombia | CO | `esl-CO` → `esl-ES` |
 | Comoros | KM | `ara-KM` → `ara-SA`, `fre-KM` → `fre-FR` |
 | Congo | CG | `fre-CG` → `fre-FR` |
@@ -193,7 +193,7 @@ Exponential serves these territories in every language; no local conventions exi
 | Niger | NE | `fre-NE` → `fre-FR` |
 | Nigeria | NG | `eng-NG` (source texts), `hau-NG`, `ibo-NG`, `pcm-NG`, `yor-NG` |
 | Niue | NU | `eng-NU` (source texts) |
-| Norfolk Island | NF | `eng-NF` (source texts) |
+| Norfolk Island | NF | `eng-NF` → `eng-AU` |
 | North Macedonia | MK | `mkd-MK` |
 | Northern Mariana Islands | MP | `eng-MP` (source texts) |
 | Norway | NO | `nno-NO` → `nor-NO`, `nor-NO`, `sme-NO` |
@@ -530,9 +530,9 @@ The table is generated from the locale files; do not edit it by hand.
 | `eng-BW` | English (Botswana) | English (Botswana) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-BZ` | English (Belize) | English (Belize) | Americas | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-CA` | English (Canada) | English (Canada) | Americas | LTR | Latin (`Latn`) | older, hand-made | 100% |
-| `eng-CC` | English (Cocos (Keeling) Islands) | English (Cocos (Keeling) Islands) | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | 100% |
+| `eng-CC` | English (Cocos (Keeling) Islands) | English (Cocos (Keeling) Islands) | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `eng-AU`) |
 | `eng-CK` | English (Cook Islands) | English (Cook Islands) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% |
-| `eng-CX` | English (Christmas Island) | English (Christmas Island) | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | 100% |
+| `eng-CX` | English (Christmas Island) | English (Christmas Island) | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `eng-AU`) |
 | `eng-DM` | English (Dominica) | English (Dominica) | Americas | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-FJ` | English (Fiji) | English (Fiji) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-FK` | English (Falkland Islands) | English (Falkland Islands) | Americas | LTR | Latin (`Latn`) | CLDR 44 | 100% |
@@ -565,7 +565,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `eng-MS` | English (Montserrat) | English (Montserrat) | Americas | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-MW` | English (Malawi) | English (Malawi) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-NA` | English (Namibia) | English (Namibia) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
-| `eng-NF` | English (Norfolk Island) | English (Norfolk Island) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% |
+| `eng-NF` | English (Norfolk Island) | English (Norfolk Island) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `eng-AU`) |
 | `eng-NG` | English (Nigeria) | English (Nigeria) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-NR` | English (Nauru) | English (Nauru) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `eng-NU` | English (Niue) | English (Niue) | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% |
@@ -1929,7 +1929,7 @@ The page is read only.
 
 | `i18n.ini [TranslationSettings]` | Default | Meaning |
 |---|---|---|
-| `FallbackLanguages[<locale>]` | 143 entries | The translation a locale falls back to; `eng-GB` or `untranslated` for the source texts. |
+| `FallbackLanguages[<locale>]` | 146 entries | The translation a locale falls back to; `eng-GB` or `untranslated` for the source texts. |
 | `FallbackRules[]` | empty | Classes implementing `expI18nFallbackRuleInterface`, asked after `FallbackLanguages[]`. |
 | `AutomaticLanguageFallback` | `enabled` | The same-language fallback for locales without translation and configuration. |
 | `AutomaticFallbackExclude[]` | `eng` | Languages or locales the automatic fallback leaves alone. |

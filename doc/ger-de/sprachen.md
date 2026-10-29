@@ -140,7 +140,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Kenia | KE | `eng-KE` (Quelltexte), `kik-KE`, `swa-KE` |
 | Kirgistan | KG | `kir-KG`, `rus-KG` → `rus-RU` |
 | Kiribati | KI | `eng-KI` (Quelltexte) |
-| Kokosinseln | CC | `eng-CC` (Quelltexte) |
+| Kokosinseln | CC | `eng-CC` → `eng-AU` |
 | Kolumbien | CO | `esl-CO` → `esl-ES` |
 | Komoren | KM | `ara-KM` → `ara-SA`, `fre-KM` → `fre-FR` |
 | Kongo (Republik Kongo) | CG | `fre-CG` → `fre-FR` |
@@ -191,7 +191,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Niue | NU | `eng-NU` (Quelltexte) |
 | Nordkorea | KP | `kor-KP` |
 | Nördliche Marianen | MP | `eng-MP` (Quelltexte) |
-| Norfolkinsel | NF | `eng-NF` (Quelltexte) |
+| Norfolkinsel | NF | `eng-NF` → `eng-AU` |
 | Norwegen | NO | `nno-NO` → `nor-NO`, `nor-NO`, `sme-NO` |
 | Oman | OM | `ara-OM` → `ara-SA` |
 | Österreich | AT | `ger-AT` → `ger-DE` |
@@ -275,7 +275,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Vereinigtes Königreich | GB | `cym-GB`, `eng-GB` (Quelltexte), `gla-GB` |
 | Vietnam | VN | `vie-VN` |
 | Wallis und Futuna | WF | `fre-WF` → `fre-FR` |
-| Weihnachtsinsel | CX | `eng-CX` (Quelltexte) |
+| Weihnachtsinsel | CX | `eng-CX` → `eng-AU` |
 | Westsahara | EH | `ara-EH` → `ara-SA` |
 | Zaire | CD | `fre-CD` → `fre-FR`, `lin-CD` |
 | Zentralafrikanische Republik | CF | `fre-CF` → `fre-FR` |
@@ -534,9 +534,9 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `eng-BW` | English (Botswana) | English (Botswana) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-BZ` | English (Belize) | English (Belize) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-CA` | English (Canada) | English (Canada) | Amerika | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
-| `eng-CC` | English (Cocos (Keeling) Islands) | English (Cocos (Keeling) Islands) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-CC` | English (Cocos (Keeling) Islands) | English (Cocos (Keeling) Islands) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `eng-AU` zurück) |
 | `eng-CK` | English (Cook Islands) | English (Cook Islands) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
-| `eng-CX` | English (Christmas Island) | English (Christmas Island) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-CX` | English (Christmas Island) | English (Christmas Island) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `eng-AU` zurück) |
 | `eng-DM` | English (Dominica) | English (Dominica) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-FJ` | English (Fiji) | English (Fiji) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-FK` | English (Falkland Islands) | English (Falkland Islands) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
@@ -569,7 +569,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `eng-MS` | English (Montserrat) | English (Montserrat) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-MW` | English (Malawi) | English (Malawi) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-NA` | English (Namibia) | English (Namibia) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
-| `eng-NF` | English (Norfolk Island) | English (Norfolk Island) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-NF` | English (Norfolk Island) | English (Norfolk Island) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `eng-AU` zurück) |
 | `eng-NG` | English (Nigeria) | English (Nigeria) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-NR` | English (Nauru) | English (Nauru) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-NU` | English (Niue) | English (Niue) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
@@ -2004,7 +2004,7 @@ und jeder Extension. Die Seite ist schreibgeschützt.
 
 | `i18n.ini [TranslationSettings]` | Standard | Bedeutung |
 |---|---|---|
-| `FallbackLanguages[<locale>]` | 143 Einträge | Die Übersetzung, auf die eine Locale zurückfällt; `eng-GB` oder `untranslated` für die Quelltexte. |
+| `FallbackLanguages[<locale>]` | 146 Einträge | Die Übersetzung, auf die eine Locale zurückfällt; `eng-GB` oder `untranslated` für die Quelltexte. |
 | `FallbackRules[]` | leer | Klassen, die `expI18nFallbackRuleInterface` implementieren, abgefragt nach `FallbackLanguages[]`. |
 | `AutomaticLanguageFallback` | `enabled` | Der Fallback innerhalb derselben Sprache für Locales ohne Übersetzung und Konfiguration. |
 | `AutomaticFallbackExclude[]` | `eng` | Sprachen oder Locales, die der automatische Fallback in Ruhe lässt. |
