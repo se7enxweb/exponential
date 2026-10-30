@@ -50,5 +50,9 @@
     "ini:settings/graphql.ini [GraphQLSettings] PersistedQueryDirectoryList": {
         "en": "Directories of persisted queries shipped with the code: every <name>.graphql file is the persisted query <name>,\nread only (exp:graphql:persist --list shows them). Relative to the installation root, or absolute; an extension\nadds its own directory in its settings/graphql.ini.append.php.\nPersistedQueryDirectoryList[]=extension/myfrontend/graphql",
         "de": "Verzeichnisse gespeicherter Abfragen, die mit dem Code ausgeliefert werden: Jede Datei <name>.graphql ist die\ngespeicherte Abfrage <name>, nur lesbar (exp:graphql:persist --list zeigt sie). Relativ zum Wurzelverzeichnis der\nInstallation oder absolut; eine Erweiterung fügt ihr eigenes Verzeichnis in ihrer settings/graphql.ini.append.php hinzu.\nPersistedQueryDirectoryList[]=extension/myfrontend/graphql"
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] RateLimit": {
+        "en": "Rate limits: the requests one signed-in user or one personal API key (RateLimit), or one IP address of anonymous\nrequests (RateLimitAnonymous), may send in RateLimitWindow seconds; 0: no limit. A request over its limit is\nanswered 429 with RATE_LIMITED and Retry-After; every answer carries X-RateLimit-Limit, X-RateLimit-Remaining and\nX-RateLimit-Reset. Counted in var/cache/graphql/rate/ by every web server worker alike. The console is not limited.",
+        "de": "Ratenbegrenzung: die Anfragen, die ein angemeldeter Benutzer oder ein persönlicher API-Schlüssel (RateLimit) oder\neine IP-Adresse anonymer Anfragen (RateLimitAnonymous) in RateLimitWindow Sekunden senden darf; 0: keine Grenze. Eine\nAnfrage über ihrer Grenze wird mit 429, RATE_LIMITED und Retry-After beantwortet; jede Antwort trägt\nX-RateLimit-Limit, X-RateLimit-Remaining und X-RateLimit-Reset. Gezählt in var/cache/graphql/rate/, von jedem Worker\ndes Webservers gleich. Die Konsole ist nicht begrenzt."
     }
 }

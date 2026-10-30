@@ -3,13 +3,13 @@ title: graphql.ini [GraphQLSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [GraphQLSettings] in graphql.ini: Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList ..."
-keywords: graphql.ini, GraphQLSettings, INI, setting, Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList, Introspection, MaxDepth, MaxComplexity, MaxListLimit, DefaultListLimit, PersistedQueries, AutomaticPersistedQueries, MaxPersistedQueries, PersistedQueriesOnly, PersistedQueryDirectoryList, MaxQueryLength, ImageAliasList, Debug
+keywords: graphql.ini, GraphQLSettings, INI, setting, Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList, Introspection, MaxDepth, MaxComplexity, MaxListLimit, DefaultListLimit, PersistedQueries, AutomaticPersistedQueries, MaxPersistedQueries, PersistedQueriesOnly, PersistedQueryDirectoryList, MaxQueryLength, RateLimit, RateLimitAnonymous, RateLimitWindow, ImageAliasList, Debug
 type: generated
 generated: exp:help:examples
 ---
 # graphql.ini [GraphQLSettings]
 
-The block `[GraphQLSettings]` of `settings/graphql.ini`, with 21 setting(s).
+The block `[GraphQLSettings]` of `settings/graphql.ini`, with 24 setting(s).
 
 Never edit `settings/graphql.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -325,6 +325,47 @@ Default: `100000`.
 # settings/override/graphql.ini.append.php
 [GraphQLSettings]
 MaxQueryLength=100000
+*/ ?>
+```
+
+## RateLimit
+
+> Rate limits: the requests one signed-in user or one personal API key (RateLimit), or one IP address of anonymous  
+> requests (RateLimitAnonymous), may send in RateLimitWindow seconds; 0: no limit. A request over its limit is  
+> answered 429 with RATE\_LIMITED and Retry-After; every answer carries X-RateLimit-Limit, X-RateLimit-Remaining and  
+> X-RateLimit-Reset. Counted in var/cache/graphql/rate/ by every web server worker alike. The console is not limited.  
+
+Default: `600`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+RateLimit=600
+*/ ?>
+```
+
+## RateLimitAnonymous
+
+Default: `120`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+RateLimitAnonymous=120
+*/ ?>
+```
+
+## RateLimitWindow
+
+Default: `60`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+RateLimitWindow=60
 */ ?>
 ```
 

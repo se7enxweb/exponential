@@ -540,6 +540,14 @@ ausführen; `enabled` tut das für jede Anfrage an `/api/graphql`. Eine Ad-hoc-A
 - **Nur gespeicherte Abfragen**, für anonyme Anfragen oder für alle (`PersistedQueriesOnly`,
   [oben](#gespeicherte-abfragen)): Ein Frontend in Produktion, das immer nur seine eigenen gespeicherten Abfragen
   sendet, lässt nichts anderes zum Ausprobieren übrig.
+- **Ratenbegrenzung.** Ein angemeldeter Benutzer oder ein persönlicher API-Schlüssel darf `RateLimit` Anfragen (600) in
+  `RateLimitWindow` Sekunden (60) senden, eine anonyme IP-Adresse `RateLimitAnonymous` (120); `0` schaltet eine Grenze
+  ab. Eine Anfrage über ihrer Grenze wird mit `429 Too Many Requests`, `RATE_LIMITED` und `Retry-After` beantwortet,
+  bevor ein Schema gebaut wird oder eine Abfrage läuft; jede Antwort trägt `X-RateLimit-Limit`,
+  `X-RateLimit-Remaining` und `X-RateLimit-Reset`. Die Zähler sind kleine Dateien in `var/cache/graphql/rate/` mit
+  exklusiver Sperre, also zählt jeder PHP-FPM- und jeder [Velocity](velocity-webserver.md)-Worker dieselben Anfragen,
+  ohne Datenbankverbindung. Der Playground zählt je Benutzer; die Konsole ist nicht begrenzt. Ein Lasttest von einer
+  Adresse braucht `RateLimitAnonymous=0` (oder ein Token) im gemessenen Siteaccess.
 - **Nur lesend.** Phase 1 hat keine Mutationen: Nichts, was eine Abfrage tut, ändert Inhalte.
 - **Kein Caching über Benutzer hinweg.** Die Antworten sind `private, no-store` und werden nie vom Anwendungs-Cache der
   REST-Schicht behalten.
@@ -604,7 +612,8 @@ Ein Fehler folgt der GraphQL-Spezifikation, mit `extensions.code` und `extension
 | `PERSISTED_QUERY_NOT_FOUND` | keine gespeicherte Abfrage hat diese Id oder diesen Hash (die Meldung ist `PersistedQueryNotFound`, wie Apollo Client sie erwartet) |
 | `PERSISTED_QUERY_NOT_SUPPORTED` | gespeicherte Abfragen sind abgeschaltet (`PersistedQueries=disabled`; die Meldung ist `PersistedQueryNotSupported`) |
 | `PERSISTED_QUERY_REQUIRED` | eine Ad-hoc-Abfrage, wo nur gespeicherte Abfragen angenommen werden (`PersistedQueriesOnly`) |
-| `FORBIDDEN`, `NOT_FOUND`, `RATE_LIMITED` | für spätere Phasen reserviert; Phase 1 sendet sie nicht (Inhalt, der sich nicht lesen lässt, ist `null`) |
+| `RATE_LIMITED` | über der Ratenbegrenzung (HTTP 429, mit `Retry-After`) |
+| `FORBIDDEN`, `NOT_FOUND` | für spätere Phasen reserviert; noch nicht gesendet (Inhalt, der sich nicht lesen lässt, ist `null`) |
 
 Die Codes sind ein stabiler Vertrag: Ein veröffentlichter Code behält Namen und Bedeutung, neue Codes kommen nur hinzu.
 
@@ -718,7 +727,8 @@ lesen.
 (`Enabled`, `SiteAccessList[]`, `LibraryPath`, `NamingStyle`, `ClassList[]`, `ExcludedClassList[]`,
 `HiddenFieldList[]`, `HiddenDatatypeList[]`, `Introspection`, `MaxDepth`, `MaxComplexity`, `MaxListLimit`,
 `DefaultListLimit`, `PersistedQueries`, `AutomaticPersistedQueries`, `MaxPersistedQueries`, `PersistedQueriesOnly`,
-`PersistedQueryDirectoryList[]`, `MaxQueryLength`, `ImageAliasList[]`, `Debug`) und [[GraphQLNaming]](../../beispiele/ini-einstellungen/graphql/GraphQLNaming.md)
+`PersistedQueryDirectoryList[]`, `MaxQueryLength`, `RateLimit`, `RateLimitAnonymous`, `RateLimitWindow`,
+`ImageAliasList[]`, `Debug`) und [[GraphQLNaming]](../../beispiele/ini-einstellungen/graphql/GraphQLNaming.md)
 (`TypeNames[]`, `FieldNames[]`). Ändern Sie nie die ausgelieferte Datei: Änderungen gehören in
 `settings/override/graphql.ini.append.php` oder in die `graphql.ini.append.php` eines Siteaccess.
 

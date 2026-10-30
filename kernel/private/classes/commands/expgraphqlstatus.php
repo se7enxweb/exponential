@@ -55,6 +55,10 @@ class Expgraphqlstatus extends \Exponential\Runnable\Command
             $out->output( sprintf( '%-14s %s', 'library', $status['library'] ? 'webonyx/graphql-php ' . $status['libraryVersion'] : 'not installed' ) );
             $out->output( sprintf( '%-14s depth %d, complexity %d, list %d (default %d)', 'limits', $status['limits']['maxDepth'], $status['limits']['maxComplexity'],
                                    $status['limits']['maxListLimit'], $status['limits']['defaultListLimit'] ) );
+            $out->output( sprintf( '%-14s %d per user or key, %d per anonymous address, in %d s', 'rate limits', $status['rateLimits']['user'],
+                                   $status['rateLimits']['anonymous'], $status['rateLimits']['window'] ) );
+            $out->output( sprintf( '%-14s %s, %d stored, automatic: %s, persisted only: %s', 'persisted', $status['persisted']['enabled'] ? 'enabled' : 'disabled',
+                                   $status['persisted']['stored'], $status['persisted']['automatic'], $status['persisted']['only'] ) );
             $out->output( sprintf( '%-14s %s', 'introspection', $status['introspection'] ) );
             $out->output( sprintf( '%-14s %s', 'naming', $status['naming'] ) );
             if ( $status['schemaHash'] !== null )
@@ -81,6 +85,12 @@ class Expgraphqlstatus extends \Exponential\Runnable\Command
                          'libraryVersion' => $library ? \expGraphQL::libraryVersion() : null,
                          'limits' => array( 'maxDepth' => \expGraphQL::intSetting( 'MaxDepth', 12 ), 'maxComplexity' => \expGraphQL::intSetting( 'MaxComplexity', 1000 ),
                                             'maxListLimit' => \expGraphQL::intSetting( 'MaxListLimit', 100 ), 'defaultListLimit' => \expGraphQL::intSetting( 'DefaultListLimit', 25 ) ),
+                         'rateLimits' => array( 'user' => (int)\expGraphQL::setting( 'RateLimit', 600 ), 'anonymous' => (int)\expGraphQL::setting( 'RateLimitAnonymous', 120 ),
+                                                'window' => \expGraphQL::intSetting( 'RateLimitWindow', 60 ) ),
+                         'persisted' => array( 'enabled' => \expGraphQL::setting( 'PersistedQueries', 'enabled' ) === 'enabled',
+                                               'automatic' => (string)\expGraphQL::setting( 'AutomaticPersistedQueries', 'signed-in' ),
+                                               'only' => (string)\expGraphQL::setting( 'PersistedQueriesOnly', 'disabled' ),
+                                               'stored' => \expGraphQLPersistedQueries::fromSettings()->count() ),
                          'introspection' => (string)\expGraphQL::setting( 'Introspection', 'signed-in' ),
                          'naming' => \expGraphQLNaming::fromSettings()->style(),
                          'schemaHash' => null, 'classes' => 0, 'fields' => 0, 'unmappedDatatypes' => array() );

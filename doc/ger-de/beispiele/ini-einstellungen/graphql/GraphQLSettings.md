@@ -3,13 +3,13 @@ title: graphql.ini [GraphQLSettings]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [GraphQLSettings] in graphql.ini: Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList ..."
-keywords: Einstellung, graphql.ini, GraphQLSettings, INI, setting, Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList, Introspection, MaxDepth, MaxComplexity, MaxListLimit, DefaultListLimit, PersistedQueries, AutomaticPersistedQueries, MaxPersistedQueries, PersistedQueriesOnly, PersistedQueryDirectoryList, MaxQueryLength, ImageAliasList, Debug
+keywords: Einstellung, graphql.ini, GraphQLSettings, INI, setting, Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList, Introspection, MaxDepth, MaxComplexity, MaxListLimit, DefaultListLimit, PersistedQueries, AutomaticPersistedQueries, MaxPersistedQueries, PersistedQueriesOnly, PersistedQueryDirectoryList, MaxQueryLength, RateLimit, RateLimitAnonymous, RateLimitWindow, ImageAliasList, Debug
 type: generated
 generated: exp:help:examples
 ---
 # graphql.ini [GraphQLSettings]
 
-Der Block `[GraphQLSettings]` von `settings/graphql.ini`, mit 21 Einstellung(en).
+Der Block `[GraphQLSettings]` von `settings/graphql.ini`, mit 24 Einstellung(en).
 
 Bearbeiten Sie `settings/graphql.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -326,6 +326,48 @@ Standard: `100000`.
 # settings/override/graphql.ini.append.php
 [GraphQLSettings]
 MaxQueryLength=100000
+*/ ?>
+```
+
+## RateLimit
+
+> Ratenbegrenzung: die Anfragen, die ein angemeldeter Benutzer oder ein persönlicher API-Schlüssel (RateLimit) oder  
+> eine IP-Adresse anonymer Anfragen (RateLimitAnonymous) in RateLimitWindow Sekunden senden darf; 0: keine Grenze. Eine  
+> Anfrage über ihrer Grenze wird mit 429, RATE\_LIMITED und Retry-After beantwortet; jede Antwort trägt  
+> X-RateLimit-Limit, X-RateLimit-Remaining und X-RateLimit-Reset. Gezählt in var/cache/graphql/rate/, von jedem Worker  
+> des Webservers gleich. Die Konsole ist nicht begrenzt.  
+
+Standard: `600`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+RateLimit=600
+*/ ?>
+```
+
+## RateLimitAnonymous
+
+Standard: `120`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+RateLimitAnonymous=120
+*/ ?>
+```
+
+## RateLimitWindow
+
+Standard: `60`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+RateLimitWindow=60
 */ ?>
 ```
 

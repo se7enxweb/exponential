@@ -35,6 +35,14 @@ class Query extends \Exponential\Runnable\ModuleView
             self::send( 400, \expGraphQLServer::refusal( $request['error'], \expGraphQLError::BAD_USER_INPUT ) );
 
         $user = \eZUser::currentUser();
+        $hit = \expGraphQLRateLimiter::hitRequest( \expGraphQLContext::AUTH_SESSION, $user, null );
+        if ( $hit !== null )
+        {
+            foreach ( \expGraphQLRateLimiter::headers( $hit ) as $name => $value )
+                header( "$name: $value" );
+            if ( !$hit['allowed'] )
+                self::send( 429, \expGraphQLRateLimiter::refusal( $hit ) );
+        }
         $builder = \expGraphQLSchemaBuilder::fromSettings();
         $context = new \expGraphQLContext( $user, \expGraphQLContext::AUTH_SESSION, new \expGraphQLRepository( $builder->catalogue() ),
                                            \expGraphQLContext::requestBaseUrl() );

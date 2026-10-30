@@ -529,6 +529,14 @@ the server stores it when the request may store queries (`AutomaticPersistedQuer
   query is at most `MaxQueryLength` bytes (100 000).
 - **Persisted queries only**, for anonymous requests or for all (`PersistedQueriesOnly`, [above](#persisted-queries)):
   a production front end that only ever sends its own stored queries leaves nothing else to try.
+- **Rate limits.** A signed-in user or a personal API key may send `RateLimit` requests (600) in `RateLimitWindow`
+  seconds (60), an anonymous IP address `RateLimitAnonymous` (120); `0` switches a limit off. A request over its
+  limit is answered `429 Too Many Requests` with `RATE_LIMITED` and `Retry-After`, before any schema is built or
+  query runs; every answer carries `X-RateLimit-Limit`, `X-RateLimit-Remaining` and `X-RateLimit-Reset`. The counters
+  are small files in `var/cache/graphql/rate/` with an exclusive lock, so every PHP-FPM and every
+  [Velocity](velocity-web-server.md) worker counts the same requests, with no database connection. The playground
+  counts per user; the console is not limited. A load test from one address needs `RateLimitAnonymous=0` (or a token)
+  on the siteaccess it measures.
 - **Read only.** Phase 1 has no mutations: nothing a query does changes content.
 - **No caching across users.** The answers are `private, no-store`, never kept by the REST application cache.
 - **Errors do not leak.** An error of the code (a PHP exception) is answered as `Internal server error` with
@@ -591,7 +599,8 @@ An error follows the GraphQL specification, with `extensions.code` and `extensio
 | `PERSISTED_QUERY_NOT_FOUND` | no persisted query has this id or hash (the message is `PersistedQueryNotFound`, as Apollo Client expects) |
 | `PERSISTED_QUERY_NOT_SUPPORTED` | persisted queries are switched off (`PersistedQueries=disabled`; the message is `PersistedQueryNotSupported`) |
 | `PERSISTED_QUERY_REQUIRED` | an ad-hoc query where only persisted queries are accepted (`PersistedQueriesOnly`) |
-| `FORBIDDEN`, `NOT_FOUND`, `RATE_LIMITED` | reserved for later phases; phase 1 does not send them (content that cannot be read is `null`) |
+| `RATE_LIMITED` | over the rate limit (HTTP 429, with `Retry-After`) |
+| `FORBIDDEN`, `NOT_FOUND` | reserved for later phases; not sent yet (content that cannot be read is `null`) |
 
 The codes are a stable contract: a code, once released, keeps its name and meaning, and new codes are only added.
 
@@ -701,7 +710,8 @@ The API keeps no state between requests (only the fact that the library is loade
 (`Enabled`, `SiteAccessList[]`, `LibraryPath`, `NamingStyle`, `ClassList[]`, `ExcludedClassList[]`,
 `HiddenFieldList[]`, `HiddenDatatypeList[]`, `Introspection`, `MaxDepth`, `MaxComplexity`, `MaxListLimit`,
 `DefaultListLimit`, `PersistedQueries`, `AutomaticPersistedQueries`, `MaxPersistedQueries`, `PersistedQueriesOnly`,
-`PersistedQueryDirectoryList[]`, `MaxQueryLength`, `ImageAliasList[]`, `Debug`) and [[GraphQLNaming]](../../examples/ini-settings/graphql/GraphQLNaming.md)
+`PersistedQueryDirectoryList[]`, `MaxQueryLength`, `RateLimit`, `RateLimitAnonymous`, `RateLimitWindow`,
+`ImageAliasList[]`, `Debug`) and [[GraphQLNaming]](../../examples/ini-settings/graphql/GraphQLNaming.md)
 (`TypeNames[]`, `FieldNames[]`). Never edit the shipped file: put changes in `settings/override/graphql.ini.append.php`
 or a siteaccess's `graphql.ini.append.php`.
 

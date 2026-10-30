@@ -31,14 +31,20 @@ class expGraphQLRestController extends ezpRestMvcController
             return self::answer( 400, expGraphQLServer::refusal( $request['error'], expGraphQLError::BAD_USER_INPUT ) );
 
         $user = eZUser::currentUser();
-        if ( class_exists( 'expApiKeyRest' ) && expApiKeyRest::current() !== null )
+        $key = class_exists( 'expApiKeyRest' ) ? expApiKeyRest::current() : null;
+        if ( $key !== null )
             $mode = expGraphQLContext::AUTH_API_KEY;
         else
             $mode = $user->isAnonymous() ? expGraphQLContext::AUTH_ANONYMOUS : expGraphQLContext::AUTH_TOKEN;
+        // The rate limit first: a request over it costs no schema and no query
+        $hit = expGraphQLRateLimiter::hitRequest( $mode, $user, $key !== null ? (int)$key->attribute( 'id' ) : null );
+        $rateHeaders = $hit === null ? array() : expGraphQLRateLimiter::headers( $hit );
+        if ( $hit !== null && !$hit['allowed'] )
+            return self::answer( 429, expGraphQLRateLimiter::refusal( $hit ), $rateHeaders );
         $builder = expGraphQLSchemaBuilder::fromSettings();
         $context = new expGraphQLContext( $user, $mode, new expGraphQLRepository( $builder->catalogue() ), expGraphQLContext::requestBaseUrl() );
         $result = ( new expGraphQLServer( $builder ) )->run( $request, $context );
-        return self::answer( 200, $result['answer'], array( 'X-GraphQL-Schema' => $builder->schemaHash(), 'Cache-Control' => 'private, no-store' ) );
+        return self::answer( 200, $result['answer'], array( 'X-GraphQL-Schema' => $builder->schemaHash(), 'Cache-Control' => 'private, no-store' ) + $rateHeaders );
     }
 
     /**
