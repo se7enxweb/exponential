@@ -68522,6 +68522,46 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>Share of page time</source>
         <translation>Òkè nke oge ibe</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>a rịọrọ ka e gosipụta ya zuru ezu</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>cache ibe enweghị ibe a (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>cache ibe azaghị</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Egosipụtara</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Kernel gosipụtara ya: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>E si na cache ibe nye ya n'ime %ms ms. E chekwara ibe a na %stored site na ngosipụta were %render ms, %age s gara aga.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Gosipụta ugbu a</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Laghachi na nlele cache</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Site na ngosipụta nke %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Arịrịọ a: e si na cache ibe nye ya n'ime %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

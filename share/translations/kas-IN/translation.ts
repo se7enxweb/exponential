@@ -68524,6 +68524,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>صَفحہ وَقتچ حِصہٕ</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>مُکَمَل رینڈرٕچ دَرخواست اوس آمُت کرنہٕ</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>صَفحہ کیشس منز اوس نہٕ یہ صَفحہ (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>صَفحہ کیشن دیُت نہٕ جَواب</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>رینڈر کَرنہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>کرنَلن کوٚر رینڈر: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>صَفحہ کیشَن پؠٹھ %ms ms منز دِنہٕ آمُت۔ یہ صَفحہ اوس %stored بجے %render ms کِس رینڈرَن محفوظ کوٚرمُت، %age s برونہہ۔</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>وۄنی رینڈر کٔرِو</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>کیش کَرنہٕ آمتِس ویوس پؠٹھ واپَس</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored بجِک رینڈرٕ پؠٹھ (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>یہ دَرخواست: صَفحہ کیشَن پؠٹھ %ms ms منز دِنہٕ آمِژ۔</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

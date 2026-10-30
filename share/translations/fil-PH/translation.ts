@@ -68524,6 +68524,46 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>Share of page time</source>
         <translation>Bahagi ng oras ng pahina</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>hiniling ang buong render</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>wala sa cache ng pahina ang pahina (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>hindi sumagot ang cache ng pahina</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Na-render</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Na-render ng kernel: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Inihain mula sa cache ng pahina sa loob ng %ms ms. Inimbak ang pahina noong %stored ng isang render na %render ms, %age seg ang nakalipas.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>I-render ngayon</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Bumalik sa view mula sa cache</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Mula sa render noong %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Ang request na ito: inihain mula sa cache ng pahina sa loob ng %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

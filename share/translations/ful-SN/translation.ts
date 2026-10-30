@@ -68524,6 +68524,46 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>Share of page time</source>
         <translation>Ɓeydal waktu hello</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>yoɓugol timmungol ñaagaama</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>hello ndee alaa e cache kelle (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>cache kelle jaabaaki</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Yoɓaama</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Ɓernde yoɓii ɗum: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Rokkaama e cache kelle e nder %ms ms. Hello ndee mooftaama e %stored, yoɓugol %render ms, %age s ɓennii.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Yoɓ jooni</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Rutto e yiyannde cache</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Iwde e yoɓugol %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Ñaagnde ndee: rokkaama e cache kelle e nder %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

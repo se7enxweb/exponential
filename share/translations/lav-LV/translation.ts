@@ -68463,6 +68463,46 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>Share of page time</source>
         <translation>Daļa no lapas laika</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>tika pieprasīta pilna atveidošana</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>lapu kešatmiņā nebija šīs lapas (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>lapu kešatmiņa neatbildēja</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Atveidots</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Atveidoja kodols: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Apkalpots no lapu kešatmiņas %ms ms laikā. Lapu %stored saglabāja atveidošana, kas ilga %render ms, pirms %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Atveidot tūlīt</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Atgriezties pie skata no kešatmiņas</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>No atveidošanas %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Šis pieprasījums: apkalpots no lapu kešatmiņas %ms ms laikā.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

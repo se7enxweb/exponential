@@ -68524,6 +68524,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>חלק פֿון דער בלאַט־צייַט</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>אַ פֿולע רענדערירונג איז געבעטן געוואָרן</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>דער בלאַט־קאַש האָט ניט געהאַט דעם בלאַט (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>דער בלאַט־קאַש האָט ניט געענטפֿערט</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>געמאַכט</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>געמאַכט פֿונעם קערן: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>באַדינט פֿונעם בלאַט־קאַש אין %ms ms. דער בלאַט איז אויפֿגעהיט געוואָרן בייַ %stored פֿון אַ רענדערירונג פֿון %render ms, מיט %age סעק. צוריק.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>רענדערירן איצט</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>צוריקגיין צום אָנבליק פֿונעם קאַש</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>פֿון דער רענדערירונג בייַ %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>די בקשה: באַדינט פֿונעם בלאַט־קאַש אין %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

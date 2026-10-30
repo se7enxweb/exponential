@@ -68522,6 +68522,46 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>Share of page time</source>
         <translation>Sehemu ya muda wa ukurasa</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>uonyeshaji kamili uliombwa</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>akiba ya kurasa haikuwa na ukurasa huu (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>akiba ya kurasa haikujibu</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Imeonyeshwa</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Imeonyeshwa na kernel: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Imehudumiwa kutoka kwenye akiba ya kurasa kwa %ms ms. Ukurasa ulihifadhiwa saa %stored na uonyeshaji wa %render ms, %age s zilizopita.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Onyesha sasa</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Rudi kwenye mwonekano wa akiba</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Kutoka kwenye uonyeshaji wa saa %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Ombi hili: limehudumiwa kutoka kwenye akiba ya kurasa kwa %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

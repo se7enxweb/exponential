@@ -67072,6 +67072,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>سهم از زمان صفحه</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>یک رندر کامل درخواست شد</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>حافظهٔ پنهان صفحه این صفحه را نداشت (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>حافظهٔ پنهان صفحه پاسخ نداد</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>رندرشده</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>رندرشده توسط هسته: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>در %ms میلی‌ثانیه از حافظهٔ پنهان صفحه ارائه شد. صفحه در %stored توسط رندری به مدت %render میلی‌ثانیه ذخیره شد، %age ثانیه پیش.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>رندر اکنون</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>بازگشت به نمای حافظهٔ پنهان</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>از رندر در %stored (%render میلی‌ثانیه)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>این درخواست: در %ms میلی‌ثانیه از حافظهٔ پنهان صفحه ارائه شد.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

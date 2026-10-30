@@ -68522,6 +68522,46 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>Share of page time</source>
         <translation>Isabelo sesikhathi sekhasi</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>kuceliwe ukukhiqiza okuphelele</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>inqolobane yamakhasi ibingenalo leli khasi (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>inqolobane yamakhasi ayiphendulanga</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Ikhiqiziwe</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Ikhiqizwe yikherneli: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Ihlinzekwe isuka enqolobaneni yamakhasi, ithathe %ms ms. Ikhasi lagcinwa ngo %stored ngokukhiqiza okuthathe %render ms, %age s edlule.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Khiqiza manje</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Buyela ekubukeni kwenqolobane</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Kusukela ekukhiqizeni ngo %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Lesi sicelo: ihlinzekwe isuka enqolobaneni yamakhasi, ithathe %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

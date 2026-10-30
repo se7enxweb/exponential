@@ -68522,6 +68522,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>ਸਫ਼ਾ ਸਮੇਂ ਦਾ ਹਿੱਸਾ</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>ਪੂਰੇ ਰੈਂਡਰ ਦੀ ਬੇਨਤੀ ਕੀਤੀ ਗਈ ਸੀ</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>ਸਫ਼ਾ ਕੈਸ਼ ਵਿੱਚ ਇਹ ਸਫ਼ਾ ਨਹੀਂ ਸੀ (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>ਸਫ਼ਾ ਕੈਸ਼ ਨੇ ਜਵਾਬ ਨਹੀਂ ਦਿੱਤਾ</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>ਰੈਂਡਰ ਕੀਤਾ</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>ਕਰਨਲ ਦੁਆਰਾ ਰੈਂਡਰ ਕੀਤਾ: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>ਸਫ਼ਾ ਕੈਸ਼ ਤੋਂ %ms ms ਵਿੱਚ ਪੇਸ਼ ਕੀਤਾ ਗਿਆ। ਇਹ ਸਫ਼ਾ %stored ਵਜੇ %render ms ਦੇ ਇੱਕ ਰੈਂਡਰ ਦੁਆਰਾ ਸਟੋਰ ਕੀਤਾ ਗਿਆ ਸੀ, %age s ਪਹਿਲਾਂ।</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>ਹੁਣੇ ਰੈਂਡਰ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>ਕੈਸ਼ ਕੀਤੇ ਦ੍ਰਿਸ਼ ’ਤੇ ਪਿੱਛੇ ਜਾਓ</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored ਵਜੇ ਦੇ ਰੈਂਡਰ ਤੋਂ (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>ਇਹ ਬੇਨਤੀ: ਸਫ਼ਾ ਕੈਸ਼ ਤੋਂ %ms ms ਵਿੱਚ ਪੇਸ਼ ਕੀਤੀ ਗਈ।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

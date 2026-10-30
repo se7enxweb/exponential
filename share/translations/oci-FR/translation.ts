@@ -68524,6 +68524,46 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>Share of page time</source>
         <translation>Part del temps de la pagina</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>un rendut complet es estat demandat</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>l'escondedor de paginas aviá pas la pagina (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>l'escondedor de paginas a pas respondut</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Rendut</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Rendut pel nuclèu: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Servit dempuèi l'escondedor de paginas en %ms ms. La pagina es estada emmagazinada a %stored per un rendut de %render ms, i a %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Far lo rendut ara</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Tornar a la vista en escondedor</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Del rendut de %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Aquesta requèsta: servida dempuèi l'escondedor de paginas en %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

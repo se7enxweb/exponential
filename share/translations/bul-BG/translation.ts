@@ -68463,6 +68463,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>Дял от времето на страницата</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>беше поискана пълна обработка</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>кешът на страниците нямаше страницата (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>кешът на страниците не отговори</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Обработена</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Обработена от ядрото: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Обслужена от кеша на страниците за %ms ms. Страницата е запазена в %stored от обработка за %render ms, преди %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Обработи сега</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Обратно към изгледа от кеша</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>От обработката в %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Тази заявка: обслужена от кеша на страниците за %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

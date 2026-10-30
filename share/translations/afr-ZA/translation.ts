@@ -68463,6 +68463,46 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>Share of page time</source>
         <translation>Aandeel van bladsytyd</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>’n volledige weergawe is aangevra</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>die bladsykas het nie die bladsy gehad nie (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>die bladsykas het nie geantwoord nie</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Weergegee</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Deur die kern weergegee: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>In %ms ms uit die bladsykas bedien. Die bladsy is om %stored gestoor deur ’n weergawe van %render ms, %age s gelede.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Nou weergee</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Terug na die gekaste aansig</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Uit die weergawe om %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Hierdie versoek: in %ms ms uit die bladsykas bedien.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

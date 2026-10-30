@@ -68325,6 +68325,46 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>Share of page time</source>
         <translation>Andel av sidetiden</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>en full gjengivelse ble bedt om</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>sidecachen hadde ikke siden (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>sidecachen svarte ikke</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Gjengitt</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Gjengitt av kjernen: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Levert fra sidecachen på %ms ms. Siden ble lagret %stored av en gjengivelse på %render ms, for %age s siden.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Gjengi nå</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Tilbake til den bufrede visningen</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Fra gjengivelsen %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Denne forespørselen: levert fra sidecachen på %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

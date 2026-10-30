@@ -68524,6 +68524,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>පිටු කාලයේ කොටස</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>සම්පූර්ණ විදැහුම්කරණයක් ඉල්ලා තිබුණි</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>පිටු හැඹිලියේ මෙම පිටුව නොතිබුණි (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>පිටු හැඹිලිය ප්‍රතිචාර නොදැක්වීය</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>විදැහුම් කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>හරය විසින් විදැහුම් කරන ලදී: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>පිටු හැඹිලියෙන් %ms ms කින් සපයන ලදී. මෙම පිටුව %stored ට %render ms ක විදැහුම්කරණයක් මගින් ගබඩා කරන ලදී, %age s කට පෙර.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>දැන් විදැහුම් කරන්න</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>හැඹිලිගත දසුනට ආපසු</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored හි විදැහුම්කරණයෙන් (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>මෙම ඉල්ලීම: පිටු හැඹිලියෙන් %ms ms කින් සපයන ලදී.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

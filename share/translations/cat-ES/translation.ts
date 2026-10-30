@@ -68463,6 +68463,46 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>Share of page time</source>
         <translation>Part del temps de la pàgina</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>s'ha demanat una renderització completa</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>la memòria cau de pàgines no tenia la pàgina (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>la memòria cau de pàgines no ha respost</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Renderitzada</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Renderitzada pel nucli: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Servida des de la memòria cau de pàgines en %ms ms. La pàgina es va desar a les %stored amb una renderització de %render ms, fa %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Renderitza ara</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Torna a la vista de la memòria cau</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>De la renderització de les %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Aquesta sol·licitud: servida des de la memòria cau de pàgines en %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

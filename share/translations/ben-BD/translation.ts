@@ -68522,6 +68522,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>পৃষ্ঠার সময়ের অংশ</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>সম্পূর্ণ রেন্ডারের অনুরোধ করা হয়েছিল</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>পৃষ্ঠা ক্যাশেতে পৃষ্ঠাটি ছিল না (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>পৃষ্ঠা ক্যাশে সাড়া দেয়নি</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>রেন্ডার করা হয়েছে</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>কার্নেল দ্বারা রেন্ডার করা হয়েছে: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>%ms ms সময়ে পৃষ্ঠা ক্যাশে থেকে পরিবেশন করা হয়েছে। পৃষ্ঠাটি %stored সময়ে %render ms-এর একটি রেন্ডার দ্বারা সংরক্ষিত হয়েছিল, %age s আগে।</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>এখনই রেন্ডার করুন</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>ক্যাশে করা ভিউতে ফিরে যান</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored সময়ের রেন্ডার থেকে (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>এই অনুরোধ: %ms ms সময়ে পৃষ্ঠা ক্যাশে থেকে পরিবেশন করা হয়েছে।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

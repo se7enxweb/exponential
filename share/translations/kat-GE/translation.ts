@@ -68524,6 +68524,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>წილი გვერდის დროში</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>მოთხოვნილია სრული დამუშავება</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>გვერდების ქეშში გვერდი არ იყო (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>გვერდების ქეშმა არ უპასუხა</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>დამუშავებული</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>დამუშავებულია ბირთვის მიერ: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>მოწოდებულია გვერდების ქეშიდან, დრო: %ms მწმ. გვერდი შენახულია (დრო: %stored) დამუშავებით, რომელსაც %render მწმ დასჭირდა, %age წმ-ის წინ.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>ახლავე დამუშავება</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>ქეშიდან ხედზე დაბრუნება</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>დამუშავებიდან (დრო: %stored, %render მწმ)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>ეს მოთხოვნა: მოწოდებულია გვერდების ქეშიდან, დრო: %ms მწმ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

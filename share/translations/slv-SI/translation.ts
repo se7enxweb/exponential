@@ -68463,6 +68463,46 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>Share of page time</source>
         <translation>Delež časa strani</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>zahtevan je bil celoten izris</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>predpomnilnik strani ni imel strani (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>predpomnilnik strani ni odgovoril</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Izrisano</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Izrisalo jedro: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Postreženo iz predpomnilnika strani v %ms ms. Stran je bila shranjena ob %stored z izrisom, ki je trajal %render ms, pred %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Izriši zdaj</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Nazaj na pogled iz predpomnilnika</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Iz izrisa ob %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Ta zahteva: postreženo iz predpomnilnika strani v %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

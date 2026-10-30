@@ -68524,6 +68524,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>फोथानि सोमोयनि भाग</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>जोबोद रेन्डारनि अनुरोध खालामनाय जादोंमोन</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>फोथा क्यासआव बे फोथाआ गैयामोन (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>फोथा क्यासआ जोबाब होयाखै</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>रेन्डार खालामनाय</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>कर्नेलजों रेन्डार खालामनाय: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>फोथा क्यासनिफ्राय %ms ms आव होनाय. बे फोथाखौ %stored आव %render ms नि रेन्डारजों रैखा खालामनाय जादोंमोन, %age s सिगांनि.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>दानो रेन्डार खालाम</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>क्यास खालामनाय भिउआव खेबसे</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored नि रेन्डारनिफ्राय (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>बे अनुरोधआ: फोथा क्यासनिफ्राय %ms ms आव होनाय.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

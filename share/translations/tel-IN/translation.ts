@@ -68522,6 +68522,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>పేజీ సమయంలో వాటా</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>పూర్తి రెండర్ అభ్యర్థించబడింది</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>పేజీ కాష్‌లో ఈ పేజీ లేదు (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>పేజీ కాష్ ప్రతిస్పందించలేదు</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>రెండర్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>కెర్నల్ ద్వారా రెండర్ చేయబడింది: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>పేజీ కాష్ నుండి %ms ms లో అందించబడింది. ఈ పేజీ %stored సమయంలో %render ms పట్టిన రెండర్ ద్వారా నిల్వ చేయబడింది, %age s క్రితం.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>ఇప్పుడే రెండర్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>కాష్ చేసిన వీక్షణకు వెనుకకు</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored నాటి రెండర్ నుండి (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>ఈ అభ్యర్థన: పేజీ కాష్ నుండి %ms ms లో అందించబడింది.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

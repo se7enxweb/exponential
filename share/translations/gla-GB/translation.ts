@@ -68524,6 +68524,46 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>Share of page time</source>
         <translation>Cuibhreann de ùine na duilleige</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>chaidh reandaradh slàn iarraidh</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>cha robh an duilleag ann an tasgadan nan duilleagan (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>cha do fhreagair tasgadan nan duilleagan</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Air a reandaradh</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Air a reandaradh leis an eitean: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Air a lìbhrigeadh à tasgadan nan duilleagan ann an %ms ms. Chaidh an duilleag a stòradh aig %stored le reandaradh de %render ms, %age s air ais.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Reandaraich an-dràsta</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Air ais dhan t-sealladh on tasgadan</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>On reandaradh aig %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>An t-iarrtas seo: air a lìbhrigeadh à tasgadan nan duilleagan ann an %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68524,6 +68524,46 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>Share of page time</source>
         <translation>Raphip pachanmanta rakin</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>hunt'asqa ruwayta mañakurqan</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>raphi utqay waqaychaqa mana kay raphiyuqchu karqan (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>raphi utqay waqaychaqa mana kutichirqanchu</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Ruwasqa</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Sunqup ruwasqan: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Raphi utqay waqaychamanta %ms ms-pi qusqa. Raphiqa %stored-pi %render ms ruwaywan waqaychasqa karqan, %age s ñawpaqta.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Kunan ruway</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Utqay waqaychamanta qhawayman kutiy</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored-pi ruwaymanta (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Kay mañay: raphi utqay waqaychamanta %ms ms-pi qusqa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

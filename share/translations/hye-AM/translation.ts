@@ -68524,6 +68524,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>Էջի ժամանակի բաժինը</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>պահանջվել է ամբողջական մշակում</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>էջերի քեշում այդ էջը չկար (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>էջերի քեշը չպատասխանեց</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Մշակված</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Մշակվել է միջուկի կողմից: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Մատուցվել է էջերի քեշից %ms ms ընթացքում։ Էջը պահվել է ժամը %stored %render ms տևած մշակմամբ, %age վրկ առաջ։</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Մշակել հիմա</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Վերադառնալ քեշից դիտմանը</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Ժամը %stored կատարված մշակումից (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Այս հարցումը: մատուցվել է էջերի քեշից %ms ms ընթացքում։</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68524,6 +68524,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>ཤོག་ལེབ་ཀྱི་དུས་ཚོད་ཀྱི་བརྒྱ་ཆ།</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>བཟོ་སྐྲུན་ཆ་ཚང་ཅིག་ཞུ་ཡོདཔ</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>ཤོག་ལེབ་ཀེཤ་ནང་ཤོག་ལེབ་འདི་མིན་འདུག (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>ཤོག་ལེབ་ཀེཤ་གིས་ལན་མ་བཏབ</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>བཟོ་ཡོདཔ</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>ཀེར་ནཱལ་གིས་བཟོ་ཡོདཔ: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>ཤོག་ལེབ་ཀེཤ་ལས་ %ms ms ནང་ཞབས་ཏོག་འབད་ཡོདཔ། ཤོག་ལེབ་འདི་ %age s ཧེ་མ་ %stored ལུ་ %render ms གི་བཟོ་སྐྲུན་ཅིག་གིས་སྲུང་བཞག་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>ད་ལྟོ་བཟོ</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>ཀེཤ་ནང་གི་མཐོང་སྣང་ལུ་ཕྱིར་ལོག</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored གི་བཟོ་སྐྲུན་ལས་ (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>ཞུ་བ་འདི: ཤོག་ལེབ་ཀེཤ་ལས་ %ms ms ནང་ཞབས་ཏོག་འབད་ཡོདཔ།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

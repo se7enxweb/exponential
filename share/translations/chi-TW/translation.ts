@@ -68522,6 +68522,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>佔頁面時間的比例</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>已要求完整轉譯</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>頁面快取中沒有此頁面（%reason）</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>頁面快取未回應</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>已轉譯</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>由核心轉譯：%why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>已在 %ms ms 內由頁面快取提供。此頁面於 %stored 由一次耗時 %render ms 的轉譯儲存，即 %age 秒前。</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>立即轉譯</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>返回快取的檢視</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>來自 %stored 的轉譯（%render ms）</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>本次要求：已在 %ms ms 內由頁面快取提供。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

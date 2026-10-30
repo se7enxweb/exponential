@@ -68524,6 +68524,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>सफे दे समें च हिस्सा</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>पूरे रेंडर दी दरखास्त कीती गेई ही</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>सफा कैश च एह् सफा नेईं हा (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>सफा कैश ने जवाब नेईं दित्ता</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>रेंडर कीता गेआ</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>कर्नल ने रेंडर कीता: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>सफा कैश थमां %ms ms च दित्ता गेआ। एह् सफा %stored पर %render ms दे इक रेंडर ने सहेजेआ हा, %age s पैहले।</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>हून रेंडर करो</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>कैश कीते गेदे दृश्य पर पिच्छें</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored आह्ले रेंडर थमां (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>एह् दरखास्त: सफा कैश थमां %ms ms च दित्ती गेई।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
