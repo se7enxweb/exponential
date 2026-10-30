@@ -24853,7 +24853,7 @@ c8b7cb50e53522cc1d45078b3a28979b  lib/ezdb/classes/ezmysqlcharset.php
 184ec92d24404cebb876e3ee05cff51f  lib/ezdb/classes/ezmysqlidb.php
 31faf16a40f407c32b6c7b0b2102b5ec  lib/ezdb/classes/eznulldb.php
 1a6057447c813267a1ca86be58c9e6ba  lib/ezdb/classes/ezpostgresqldb.php
-109025c647800b3bf4db9a1c93b62641  lib/ezdb/classes/ezsqlite3db.php
+2abc0b239ac1e8bb0091f27d6856a4b3  lib/ezdb/classes/ezsqlite3db.php
 86b2f701aa81e8db34267630e6ce5acf  lib/ezdbschema/classes/expmongoschema.php
 8e9010beaa4d355d60448ef5c507ea6c  lib/ezdbschema/classes/ezdbschema.php
 c7c6f99535283f00d9ff4266c494aead  lib/ezdbschema/classes/ezdbschemachecker.php
@@ -24905,7 +24905,7 @@ c747d4d9094af12fa536e810f85d99d3  lib/ezi18n/classes/eztranslationcache.php
 f8be2d828d18163faa495b65e3de0c80  lib/ezi18n/classes/eztranslatorgroup.php
 a3484f75543a6443a38e554f38570e7d  lib/ezi18n/classes/eztranslatorhandler.php
 6513d16cb0039d3ce0301b7eb9dc4f59  lib/ezi18n/classes/eztranslatormanager.php
-11e1108bcc8c53e1cf8376e729ec57a2  lib/ezi18n/classes/eztstranslator.php
+4cb767d2b24edf8a569bb50bb9c6f495  lib/ezi18n/classes/eztstranslator.php
 31bddf4620277ea94f10938bfb7f66a0  lib/ezi18n/classes/ezutf8codec.php
 b1f9d0cc359e52d77bd2a37936892e46  lib/ezimage/classes/expsvgsanitizer.php
 f69f6eb6351f364356203c20fa061dd1  lib/ezimage/classes/ezexifimageanalyzer.php
@@ -27894,7 +27894,7 @@ d185830f980916133c98bbee065b75bb  tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStrin
 647b489c0b9f59541e1d26587ed4bb2b  tests/tests/lib/ezdb/eZPostgreSQLDBTest.php
 a0c0ae8787effaa5ef6bf8c35edc273a  tests/tests/lib/ezdb/eZSQLite3DBQueryCountTest.php
 60babceabece4d8182763089a36e5826  tests/tests/lib/ezdb/eZSQLite3InsertOrReplaceTest.php
-73e3c7ee19a023ae92f43c9739e29144  tests/tests/lib/ezdb/eZSQLite3KeptConnectionTest.php
+95550acea9523ff5c949ae5d927a1ae3  tests/tests/lib/ezdb/eZSQLite3KeptConnectionTest.php
 e7c428ffa18e115fd9afa3ac417d175c  tests/tests/lib/ezdb/eZSQLite3MirrorTest.php
 6717784b518c234af57a75e931e34535  tests/tests/lib/ezdb/eZSQLite3ModFunctionTest.php
 654c78882b4e6b36a7b6d761d26ddbd2  tests/tests/lib/ezdb/eZSQLite3SerialIDTest.php

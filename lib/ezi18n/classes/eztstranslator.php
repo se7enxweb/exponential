@@ -141,8 +141,12 @@ class eZTSTranslator extends eZTranslatorHandler
                     }
                     return array( 'roots' => $roots, 'files' => $scanFiles ? self::newestFileTime( $roots, $locale, $charset, $filename ) : 0 );
                 };
+            // A translation cache clear (in any process) changes the expiry times, and so the key: every worker
+            // looks at the files again. A TS file edited in place is seen after the clear, which the deploy does.
+            $memoExpiry = eZExpiryHandler::instance();
             $memo = class_exists( 'expKernelServiceScope' )
-                ? expKernelServiceScope::memo( 'ts-roots|' . $locale . '|' . $filename . '|' . $charset . '|' . ( $checkMTime ? 1 : 0 ) . ( $scanFiles ? 1 : 0 ), $build )
+                ? expKernelServiceScope::memo( 'ts-roots|' . $locale . '|' . $filename . '|' . $charset . '|' . ( $checkMTime ? 1 : 0 ) . ( $scanFiles ? 1 : 0 )
+                                               . '|' . $memoExpiry->getTimestamp( self::EXPIRY_KEY, 0 ) . '|' . $memoExpiry->getTimestamp( self::EXPIRY_KEY . '-' . $locale, 0 ), $build )
                 : $build();
             $roots = $memo['roots'];
             $this->RootCache = array( 'roots' => $roots, 'files' => $memo['files'] );

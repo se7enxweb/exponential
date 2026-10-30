@@ -140,6 +140,39 @@ class eZSQLite3KeptConnectionTest extends PHPUnit\Framework\TestCase
         $second->close();
     }
 
+    public function testReplacedDatabaseFileIsOpenedAgain()
+    {
+        $first = new eZSQLite3KeptConnectionTestDB( $this->parameters() );
+        $first->query( 'CREATE TABLE t ( v INTEGER )' );
+        $first->query( 'INSERT INTO t VALUES ( 1 )' );
+        $first->close();
+        // a restore puts another file at the path: written beside it and renamed over it
+        $other = new SQLite3( $this->file . '.new' );
+        $other->exec( 'CREATE TABLE t ( v INTEGER )' );
+        $other->exec( 'INSERT INTO t VALUES ( 2 )' );
+        $other->close();
+        foreach ( array( '-wal', '-shm' ) as $suffix )
+        {
+            if ( is_file( $this->file . $suffix ) )
+                unlink( $this->file . $suffix );
+        }
+        rename( $this->file . '.new', $this->file );
+        $second = new eZSQLite3KeptConnectionTestDB( $this->parameters() );
+        $this->assertFalse( $second->wasKept() );
+        $this->assertSame( array( array( 'v' => 2 ) ), $second->arrayQuery( 'SELECT v FROM t' ) );
+        $second->close();
+    }
+
+    public function testConnectionThatMetAnErrorIsNotKept()
+    {
+        $first = new eZSQLite3KeptConnectionTestDB( $this->parameters() );
+        $first->query( 'SELECT * FROM no_such_table' );
+        $first->close();
+        $second = new eZSQLite3KeptConnectionTestDB( $this->parameters() );
+        $this->assertFalse( $second->wasKept() );
+        $second->close();
+    }
+
     public function testNothingIsKeptOutsideAWorker()
     {
         $first = new eZSQLite3DB( $this->parameters() );

@@ -189,7 +189,7 @@ class eZSQLite3DB extends eZDBInterface
         $keepKey = static::keptConnectionKey( self::filePath( $fileName ) );
         if ( $keepKey !== null )
         {
-            $kept = self::takeKeptConnection( $keepKey );
+            $kept = self::takeKeptConnection( $keepKey, self::filePath( $fileName ) );
             if ( $kept !== null )
             {
                 $this->KeptConnection = true;
@@ -312,15 +312,19 @@ class eZSQLite3DB extends eZDBInterface
      * @param string $key
      * @return array|null
      */
-    protected static function takeKeptConnection( $key )
+    protected static function takeKeptConnection( $key, $fullPath )
     {
         $worker = expKernelServiceScope::worker();
         if ( !isset( $worker->connections['sqlite3'][$key] ) )
             return null;
         $kept = $worker->connections['sqlite3'][$key];
         unset( $worker->connections['sqlite3'][$key] );
-        // a connection that no longer answers is closed and replaced
-        if ( !$kept[0] instanceof SQLite3 || @$kept[0]->querySingle( 'SELECT 1' ) !== 1 )
+        // a connection that no longer answers, or to a database file that was replaced since (a restore, a
+        // reinstall: another device and inode at the path, or none), is closed and replaced by a new one
+        clearstatcache( true, $fullPath );
+        $stat = @stat( $fullPath );
+        if ( !$kept[0] instanceof SQLite3 || !isset( $kept[2] ) || $stat === false || $kept[2] !== $stat['dev'] . ':' . $stat['ino']
+             || @$kept[0]->querySingle( 'SELECT 1' ) !== 1 )
         {
             if ( $kept[0] instanceof SQLite3 )
                 @$kept[0]->close();
@@ -1125,13 +1129,17 @@ class eZSQLite3DB extends eZDBInterface
         {
             // Kept for the next request of this worker (keptConnectionKey()), unless a transaction is still open
             // or the process is another one than the one that opened it.
-            if ( $this->KeepKey !== null && !$this->InSQLTransaction && $this->TransactionCounter == 0
-                 && strpos( $this->KeepKey, getmypid() . '|' ) === 0 && $this->DBConnection instanceof SQLite3 )
+            // the file it was opened on, to see a replaced database file before the connection is used again
+            $stat = $this->KeepKey !== null ? @stat( substr( $this->KeepKey, strpos( $this->KeepKey, '|' ) + 1 ) ) : false;
+            if ( $this->KeepKey !== null && !$this->InSQLTransaction && $this->TransactionCounter == 0 && $stat !== false
+                 && strpos( $this->KeepKey, getmypid() . '|' ) === 0 && $this->DBConnection instanceof SQLite3
+                 // a connection that met an error in this request is not trusted with the next one
+                 && !$this->ConnectionFailed )
             {
                 $worker = expKernelServiceScope::worker();
                 if ( isset( $worker->connections['sqlite3'][$this->KeepKey] ) && $worker->connections['sqlite3'][$this->KeepKey][0] !== $this->DBConnection )
                     @$worker->connections['sqlite3'][$this->KeepKey][0]->close();
-                $worker->connections['sqlite3'][$this->KeepKey] = array( $this->DBConnection, $this->StatementWaitMs );
+                $worker->connections['sqlite3'][$this->KeepKey] = array( $this->DBConnection, $this->StatementWaitMs, $stat['dev'] . ':' . $stat['ino'] );
             }
             else
             {
@@ -1234,6 +1242,10 @@ class eZSQLite3DB extends eZDBInterface
         {
             $this->ErrorNumber = $this->DBConnection->lastErrorCode();
             $this->ErrorMessage = $this->DBConnection->lastErrorMsg();
+            // anything but "busy" or "locked" (which another writer causes) closes the connection at the end of the
+            // request instead of keeping it for the next one
+            if ( !in_array( (int)$this->ErrorNumber, array( 0, 5, 6, 100, 101 ), true ) )
+                $this->ConnectionFailed = true;
         }
     }
 
@@ -1383,6 +1395,9 @@ class eZSQLite3DB extends eZDBInterface
 
     /** @var string|null the key the connection is kept under after close(), null when it is closed */
     protected $KeepKey = null;
+
+    /** @var bool an error other than busy/locked was met on this connection: it is closed, not kept */
+    protected $ConnectionFailed = false;
     /// Whether SQLite has a transaction open on this connection (BEGIN IMMEDIATE succeeded, not ended yet)
     protected $InSQLTransaction = false;
 
