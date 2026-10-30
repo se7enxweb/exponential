@@ -52,8 +52,8 @@ ließ, sagt die Seite das.
 - **7x ist ihr wichtigster Mitwirkender.** Die Foundation nennt 7x „the current leader in contributions both financial,
   code, extension development, new features, infrastructure, maintenance and much much more back to the project“
   (<https://foundation.exponential.earth/>).
-- **Sie teilt sich das Urheberrecht.** Der Copyright-Vermerk des Kernels lautet „Copyright (C) 1998 - 2026 7x &
-  Exponential Foundation“ ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
+- **Sie teilt sich das Urheberrecht.** Der Copyright-Vermerk des Kernels lautet
+  „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
 - **Alles ist freie Software.** Der Code steht unter der GPL v2 oder später, die Dokumentation unter der GFDL 1.3 oder
   später ([Die Lizenz dieser Dokumentation](../README-LIZENZ.md), [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
 
@@ -98,7 +98,7 @@ Die Foundation und 7x sind zwei Organisationen mit einem Projekt:
 | Was sie ist | Ein Unternehmen: „a responsive North American web design, support, development and website hosting company“ (<https://se7enx.com/about>) | Eine gemeinnützige Körperschaft (<https://foundation.exponential.earth/>) |
 | Rolle | Führt Entwicklung, Support, Hosting und Dienstleistungen; „the current leader in contributions“ zum Projekt | Betreibt das Projekt; finanziert und steuert es |
 | Sponsorenseite | <https://github.com/sponsors/se7enxweb> | <https://github.com/sponsors/exponentialcms> |
-| Urheberrecht | „7x & Exponential Foundation“, gemeinsam, in COPYRIGHT.md, LICENSE und den Dateiköpfen | |
+| Urheberrecht | „Exponential Foundation and 7x“, gemeinsam, in COPYRIGHT.md, LICENSE und den Dateiköpfen | |
 | Website | <https://se7enx.com/> | <https://foundation.exponential.earth/>, <https://exponential.earth/> |
 
 „The Exponential Open Source Project is funded by donations of time and resources by 7x (and Exponential Sponsors)“
@@ -323,8 +323,8 @@ genannten Stelle schriftlich festgehalten; zusammen beschreiben sie, wie sich da
 
 | PHP | Exponential 6 | Quelle |
 |---|---|---|
-| 7.4 | Nur bis 6.0.7 („PHP 7 Support is deprecated but still available from our older stable and usable past releases up to version 6.0.7“) | README |
-| 8.0 | Die älteste unterstützte Version, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 es ausführt, ab dem Velocity-Release 0.0.4.54 auch unter Velocity (bis dahin brauchte Velocity 8.1) | README, [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md) |
+| 7.4 | Bis 6.0.7 und wieder ab 6.0.15 („PHP 7.4 is usable again from 6.0.15, without support, as a bridge for organizations that cannot change the PHP of their servers yet“); siehe [Warum Exponential PHP 7.4 unterstützt](warum-exponential-php-7-4-unterstuetzt.md) | README |
+| 8.0 | Unterstützt, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 es ausführt, ab dem Velocity-Release 0.0.4.54 auch unter Velocity (bis dahin brauchte Velocity 8.1) | README, [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md) |
 | 8.1 bis 8.5 | Unterstützt, auch für Velocity | README |
 | 8.6 und neuer | Durch die `php`-Anforderung in `composer.json` zugelassen (bis 8.8); das Projekt zielt auf „PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9“ | composer.json, README |
 
@@ -429,7 +429,7 @@ In den für diese Seite verwendeten Quellen sind keine Veranstaltungen (Konferen
 
 | Wann | Was geschah | Quelle |
 |---|---|---|
-| 1998 | Erstes Jahr des Copyright-Vermerks von 7x und der Exponential Foundation | COPYRIGHT.md |
+| 1998 | Erstes Jahr des Copyright-Vermerks von der Exponential Foundation und 7x | COPYRIGHT.md |
 | 1999 bis 2014 | Die Copyright-Jahre von eZ Systems AS im Code | COPYRIGHT.md |
 | 2006 | eZpedia startet | <https://ezpedia.exponential.earth/> |
 | 2014 | Die erste Idee von 7x: Die Domain se7enx.com wird still registriert und der Fork des gesamten Ökosystems vorbereitet | Darstellung von 7x (Inhaber, 18. Oktober 2026); [Wer ist 7x?](wer-ist-7x.md#von-brookins-consulting-zu-7x-in-drei-stufen) |
@@ -529,3 +529,11 @@ und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-We
 Sie mit [Partner: hier beginnen](partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->
+
+## Urheberrecht und Copyleft
+
+Seit dem 29. Oktober 2026 halten die Exponential Foundation und 7x das Copyright an Exponential gemeinsam, die
+Foundation zuerst genannt: „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“, in Dateien
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ Wer es hält und warum, was die
+GPL Ihnen erlaubt, welche Hinweise Dritter bleiben und wie der Hinweis in neue Dateien und Erweiterungen kommt:
+[Urheberrecht und Copyleft](urheberrecht-und-copyleft.md).

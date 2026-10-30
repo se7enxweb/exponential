@@ -50,7 +50,7 @@ Die Richtlinienfunktionen jedes Moduls und die Einschränkungen, die jede tragen
 | [trigger](trigger.md) | (keine: `trigger/*`) |
 | [uiswitch](uiswitch.md) | `design`, `language` |
 | [url](url.md) | (keine: `url/*`) |
-| [user](user.md) | `activation`, `deactivate`, `hygiene`, `login`, `password`, `preferences`, `register`, `selfedit`, `sessions` |
+| [user](user.md) | `activation`, `audit`, `deactivate`, `hygiene`, `login`, `passkeys_manage`, `password`, `preferences`, `register`, `selfedit`, `sessions`, `sessions_manage` |
 | [visual](visual.md) | (keine: `visual/*`) |
 | [workflow](workflow.md) | (keine: `workflow/*`) |
 

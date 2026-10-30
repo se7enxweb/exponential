@@ -43,8 +43,26 @@ Generierte Seite: [siteaccess_url](../../beispiele/template-operatoren/siteacces
   Siteaccess, der nicht in `AvailableSiteAccessList[]` steht, ergibt eine leere Zeichenkette.
 
 Die Adresse wird aus Schema, Host und Port der Anfrage und aus der Art ermittelt, wie der Ziel-Siteaccess erkannt wird
-(`MatchOrder`, `URIMatchType`, `HostMatchMapItems`, `SiteURL`); sie funktioniert also bei Erkennung über URI, Host und
-Port gleichermaßen. Sie wird weder in Anführungszeichen gesetzt noch maskiert.
+(`MatchOrder` mit `host_uri`, `host` und `uri`; `URIMatchType`, `HostUriMatchMapItems`, `HostMatchMapItems` und das
+eigene `[SiteSettings] SiteURL` des Siteaccess); sie funktioniert also bei Erkennung über URI, Host, Host und URI sowie
+Port gleichermaßen. Eine Adresse wird nur verwendet, wenn die Erkennungsregeln mit ihr zu genau diesem Siteaccess
+führen, ohne dass vom Pfad etwas übrig bleibt, sodass eine über den Host erkannte Website nie einen Pfad `/name/`
+bekommt, den ihr Host als Modul lesen würde (und mit 404 beantworten würde). In dieser Reihenfolge:
+
+1. dieser Host, mit einem Eintrag des Siteaccess in `HostUriMatchMapItems` für diesen Host, sonst mit seinem
+   URI-Element (oder seinem Schlüssel in `URIMatchMapItems`);
+2. die eigene `SiteURL` des Siteaccess (Host, Port und Pfad; eine darin enthaltene Indexdatei wird weggelassen), sofern
+   sie nicht leer oder `localhost` ist;
+3. ein Host, den `HostMatchMapItems` ihm zuordnet, ohne Pfad;
+4. Host und URI eines seiner Einträge in `HostUriMatchMapItems`.
+
+Lässt sich für keine davon zeigen, dass sie dorthin führt, wird seine URI auf diesem Host verwendet, sonst seine
+`SiteURL`, wie sie geschrieben ist, sonst dieser Host. Das Schema ist immer das der Anfrage. Mit den Einstellungen einer
+Demo, deren Administration einen eigenen Host hat (`MatchOrder=host_uri;host;uri`,
+`HostMatchMapItems[]=edit.example.com;admin` und `=example.com;site`,
+`HostUriMatchMapItems[]=example.com;bold;bold;strict`), verlinkt die Administration auf `edit.example.com` `site` auf
+`https://example.com/` und `bold` auf `https://example.com/bold/`. Sie wird weder in Anführungszeichen gesetzt noch
+maskiert.
 
 ```tpl
 1 front: {siteaccess_url()}

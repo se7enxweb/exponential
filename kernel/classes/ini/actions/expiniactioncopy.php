@@ -7,7 +7,7 @@
  * ends with what the source has. It is the worked example of the guide's "Adding an action" chapter and is
  * registered as a built-in, so the example is tested with the others. Guide: doc/eng-us/bc/6.0/console-exp-ini.md.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

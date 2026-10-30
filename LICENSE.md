@@ -1,3 +1,11 @@
+Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+
+Originally developed by eZ Systems as eZ Publish (Legacy):
+Copyright (C) 1999 - 2014 eZ Systems AS. All rights reserved.
+
+The source code of Exponential is provided under the following license. See [COPYRIGHT.md](COPYRIGHT.md) for the
+copyright notice and its history.
+
 # GNU GENERAL PUBLIC LICENSE
 
 Version 2, June 1991

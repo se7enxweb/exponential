@@ -4,7 +4,7 @@ audience: hosting
 category: hosting
 order: 60
 summary: Was die Quellen von Exponential über Hosting mit LiteSpeed und OpenLiteSpeed sagen - die mitgelieferten Apache-Regeln, die SAPI LSAPI, open_basedir, was Sie vor dem Verkauf eines Tarifs testen und wo Velocity hineinpasst.
-keywords: LiteSpeed, OpenLiteSpeed, LSAPI, SAPI litespeed, htaccess, .htaccess_root, Shared Hosting, open_basedir, Rewrite, Stufe 3, litespeed SAPI, shared hosting, rewrite, tier 3
+keywords: LiteSpeed, OpenLiteSpeed, LSAPI, SAPI litespeed, htaccess, .htaccess_root, Shared Hosting, open_basedir, Rewrite, Stufe 3, litespeed SAPI, shared hosting, rewrite, tier 3, Seiten-Cache, page cache, LSCache, X-LiteSpeed-Cache, CacheRoot, Cache-Modul
 type: help
 ---
 # LiteSpeed und OpenLiteSpeed
@@ -26,6 +26,7 @@ Die eigenen Menüs und Einstellungen von LiteSpeed werden hier nicht beschrieben
 > Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
 > [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../control-panels/plesk.md), [cPanel](../control-panels/cpanel.md), [DirectAdmin](../control-panels/directadmin.md), [ISPConfig](../control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md).
 
 ## Inhalt
 
@@ -34,7 +35,8 @@ Die eigenen Menüs und Einstellungen von LiteSpeed werden hier nicht beschrieben
 3. [PHP unter LiteSpeed](#php-unter-litespeed)
 4. [Was Sie vor dem Verkauf eines Tarifs testen](#was-sie-vor-dem-verkauf-eines-tarifs-testen)
 5. [Velocity auf einem LiteSpeed-Host](#velocity-auf-einem-litespeed-host)
-6. [Checkliste](#checkliste)
+6. [Der Seiten-Cache von LiteSpeed](#der-seiten-cache-von-litespeed)
+7. [Checkliste](#checkliste)
 
 ## Was die Quellen sagen
 
@@ -107,6 +109,31 @@ kontrollieren, kann Velocity daneben auf eigenen Ports laufen, und der LiteSpeed
 wie mit Apache oder nginx ([Velocity neben Apache oder nginx](velocity-neben-apache-oder-nginx.md)). Dem Proxy muss vertraut werden, und er
 muss `X-Forwarded-Proto` setzen ([Kapitel 8, Hinter einem Reverse Proxy](../../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy)).
 
+## Der Seiten-Cache von LiteSpeed
+
+LiteSpeed Enterprise und OpenLiteSpeed haben einen Seiten-Cache eingebaut. Für eine Exponential-Website wird er ohne
+Plugin und ohne Code eingeschaltet: `.htaccess_root` enthält einen auskommentierten Block (`## >>> LiteSpeed page
+cache`), der anonyme `GET`- und `HEAD`-Anfragen ohne Abfragezeichenkette, Sitzungs-Cookie oder `is_logged_in`-Cookie,
+außerhalb der Administrations-, Benutzer-, Shop- und Bearbeitungsansichten, für `max-age` (120) Sekunden markiert.
+Das erste `#` jeder Zeile des Blocks zu entfernen schaltet ihn ein; Apache und nginx übergehen ihn
+(`<IfModule LiteSpeed>`). Für einen virtuellen Host, die „Zusätzlichen Anweisungen für HTTPS“ von Plesk, die
+Include-Dateien von cPanel oder die eigene Konfiguration von DirectAdmin gibt es
+[`litespeed-page-cache.conf`](../../../../eng-us/examples/web-servers/litespeed-page-cache.conf); das Cache-Modul von
+OpenLiteSpeed steht im [OpenLiteSpeed-Beispiel](../../../beispiele/webserver/litespeed.md#seiten-cache).
+
+Was ein Hoster wissen sollte, bevor er ihn anbietet:
+
+| Frage | Antwort |
+|---|---|
+| Was auf dem Server da sein muss | ein Cache-Verzeichnis: `CacheRoot` auf Serverebene (Enterprise) oder `storagePath` des Cache-Moduls (OpenLiteSpeed) |
+| Wer gespeicherte Seiten bekommt | nur anonyme Besucher und Crawler; Redakteure und angemeldete Mitglieder haben ein Sitzungs-Cookie und erreichen immer PHP |
+| Was Redakteure nach dem Veröffentlichen sehen | die aktuelle Seite; anonyme Besucher sehen die Änderung nach höchstens `max-age` Sekunden, weil Exponential LiteSpeed nicht leert |
+| Wie man prüft | `curl -sI https://example.com/ \| grep -i x-litespeed-cache` zweimal: `miss`, dann `hit` |
+| Was es spart | ein Treffer braucht keinen PHP-Prozess und keine Datenbankabfrage; Crawler-Wellen werden billig |
+
+Schritt für Schritt für jedes Control Panel, Leeren, Fehlersuche und Sicherheit:
+[Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md).
+
 ## Checkliste
 
 - [ ] `.htaccess` aus `.htaccess_root` kopiert; Document Root ist das Wurzelverzeichnis der Installation.
@@ -114,6 +141,7 @@ muss `X-Forwarded-Proto` setzen ([Kapitel 8, Hinter einem Reverse Proxy](../../.
 - [ ] Die Prüfungen des Routings und die Tests oben bestehen auf einem Staging-Konto.
 - [ ] Die Auswirkungen von `open_basedir` auf das Vorladen und andere Läufe im Hintergrund sind bekannt und für den Support dokumentiert.
 - [ ] Nach jedem Upgrade wird `.htaccess` aus der neuen `.htaccess_root` aufgefrischt (`./console exp:setup:htaccess` zeigt den Diff; `--force --apply` kopiert nach einer Sicherung).
+- [ ] Mit eingeschaltetem Seiten-Cache: Eine zweite anonyme Anfrage meldet `X-LiteSpeed-Cache: hit`, eine angemeldete nie, und die Kunden kennen die Verzögerung von `max-age` nach dem Veröffentlichen ([Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md#prüfen-ob-er-arbeitet)).
 
 **Demomodus auf LiteSpeed.** LiteSpeed liest `SetEnv` in `.htaccess` wie Apache und gibt es an `lsphp` weiter: `SetEnv EXP_DEMO_MODE 1` in der `.htaccess` einer öffentlichen Demo schaltet den Demomodus für ihre Web-Anfragen ein, und `security.log` zeigt dann `demo/mode on ... sapi=litespeed`. [Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md).
 

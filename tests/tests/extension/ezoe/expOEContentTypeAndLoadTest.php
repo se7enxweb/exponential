@@ -10,7 +10,7 @@
  *          which posts to ezoe/upload/<object>/<version>/auto/1 and renders no template
  *  LO-01 - ezoe/load reads the EmbedID through Relations::parseEmbedId() and starts without an embedded object
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

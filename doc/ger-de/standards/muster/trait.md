@@ -15,7 +15,7 @@ type: catalogue
 
 Gemeinsame Methoden, die in mehrere Klassen eingemischt werden.
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Struktur |
 | Instanzen | 1 |

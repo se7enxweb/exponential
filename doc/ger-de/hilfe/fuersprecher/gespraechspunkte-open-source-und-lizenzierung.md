@@ -31,7 +31,7 @@ den Fachleuten.
 |---|---|---|
 | Der Code von Exponential | GNU General Public License, Version 2 oder jede spätere Version | [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE), [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
 | Die Dokumentation in `doc/` | GNU Free Documentation License, Version 1.3 oder jede spätere Version | [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md) |
-| Copyright | „7x & Exponential Foundation“ (mit „eZ Systems AS“ für 1999 bis 2014) | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
+| Copyright | „Exponential Foundation and 7x“ (mit „eZ Systems AS“ für 1999 bis 2014) | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
 | Velocity | MIT-Lizenz (seine eigene `composer.json`) | [Exponential Velocity](../wer-ist-die-exponential-foundation.md#exponential-velocity) |
 
 Erweiterungen haben jeweils ihre eigene Lizenz; lesen Sie die Dateien der Erweiterung ([Erweiterungen](../../anleitungen/extensions.md)).
@@ -65,7 +65,7 @@ Erweiterungen haben jeweils ihre eigene Lizenz; lesen Sie die Dateien der Erweit
 | „Es ist Freeware“ oder „gemeinfrei“ | „Es ist freie Software unter der GNU GPL“ | Die GPL hat Bedingungen ([Marken- und Namensregeln, Tun und Lassen](../geschaeft/marken-und-namensregeln.md#richtig-und-falsch)) |
 | „Sie können damit alles machen“ | „Sie dürfen es unter den Bedingungen der GPL ausführen, studieren, ändern und weitergeben“ | Die Weitergabe geänderter Fassungen hat Bedingungen |
 | „Sie müssen den Code Ihrer Website veröffentlichen“ | „Lesen Sie die Lizenz; fragen Sie für Ihren Fall eine Rechtsberatung“ | Das ist eine Rechtsfrage zur Verbreitung |
-| „7x gehört Exponential“ | „7x und die Exponential Foundation halten das Copyright; die Lizenz ist die GPL“ | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
+| „7x gehört Exponential“ | „Die Exponential Foundation und 7x halten das Copyright; die Lizenz ist die GPL“ | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
 | „Licence“ (in englischen Texten) | „License“ | Amerikanisches Englisch ([Kurzkarte zu den Namensregeln](kurzkarte-namensregeln.md)) |
 
 ## Fragen, die Sie hören werden
@@ -83,3 +83,11 @@ Erweiterungen haben jeweils ihre eigene Lizenz; lesen Sie die Dateien der Erweit
 - [Für freie Dokumentation eintreten](fuer-freie-dokumentation-eintreten.md)
 - [Lizenzierung für Käufer](../geschaeft/lizenzen-fuer-kaeufer.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+## Urheberrecht und Copyleft
+
+Seit dem 29. Oktober 2026 halten die Exponential Foundation und 7x das Copyright an Exponential gemeinsam, die
+Foundation zuerst genannt: „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“, in Dateien
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ Wer es hält und warum, was die
+GPL Ihnen erlaubt, welche Hinweise Dritter bleiben und wie der Hinweis in neue Dateien und Erweiterungen kommt:
+[Urheberrecht und Copyleft](../urheberrecht-und-copyleft.md).

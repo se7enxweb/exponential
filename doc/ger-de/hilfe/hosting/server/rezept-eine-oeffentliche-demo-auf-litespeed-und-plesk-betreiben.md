@@ -27,6 +27,7 @@ funktionieren mit Apache und PHP-FPM; die Unterschiede sind vermerkt.
 > Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
 > [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../control-panels/plesk.md), [cPanel](../control-panels/cpanel.md), [DirectAdmin](../control-panels/directadmin.md), [ISPConfig](../control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md).
 
 Die Demo läuft im **Demomodus** (die Umgebungsvariable `EXP_DEMO_MODE=1`): Niemand kann ein Administratorpasswort ändern oder
 zurücksetzen, sodass der nächste Besucher sich weiterhin anmelden kann, und die Installer akzeptieren das veröffentlichte Passwort. Was der
@@ -153,7 +154,7 @@ Wenn eines davon fehlt: [Probleme mit dem Demomodus](../runbooks/probleme-mit-de
 |---|---|
 | Apache mit PHP-FPM (der FPM-Handler von Plesk) | dieselben Zeilen in `.htaccess` oder `env[EXP_DEMO_MODE] = 1` im Pool der Domain ([`php-fpm-pool-demo.conf`](../../../../eng-us/examples/demo-mode/php-fpm-pool-demo.conf)); Plesk schreibt die Pool-Datei, nutzen Sie also seine PHP-Einstellungen für die Domain, wo es sie anbietet |
 | nginx mit PHP-FPM | der Pool oder `fastcgi_param EXP_DEMO_MODE 1` ([`nginx-fastcgi-demo.conf`](../../../../eng-us/examples/demo-mode/nginx-fastcgi-demo.conf)) |
-| Exponential Velocity | die Umgebung der Unit, die ihn startet ([`velocity-demo-mode.conf`](../../../../eng-us/examples/demo-mode/velocity-demo-mode.conf)); ein Neustart aus einer Shell ohne die Variable verwirft sie |
+| Exponential Velocity | `export EXP_DEMO_MODE=1` in den Site-Envvars der Demo `/etc/vc/sites-available/<site>.envvars`: `exp:velocity start` gibt die Variable bei jedem Start an den Server dieser Installation weiter, sodass ein Neustart oder ein Deploy aus jeder beliebigen Shell sie behält (die Umgebung der eigenen Unit der Demo, [`velocity-demo-mode.conf`](../../../../eng-us/examples/demo-mode/velocity-demo-mode.conf), funktioniert ebenfalls). Niemals die gemeinsame `/etc/vc/envvars`, die der Server jeder Installation liest und die die Worker für den Demomodus ablehnen |
 | cPanel | die `.htaccess` der Domain (Apache oder LiteSpeed) und die Zeile mit der Variablen in den Cronjobs des Kontos |
 | Ein Container | [`docker-demo.env`](../../../../eng-us/examples/demo-mode/docker-demo.env) nur für den Dienst der Demo |
 

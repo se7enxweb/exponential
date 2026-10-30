@@ -19,19 +19,19 @@ type: help
 
 | Fakt | Quelle |
 |---|---|
-| Der Copyright-Vermerk reicht von 1998 bis 2026 für 7x und die Exponential Foundation | `COPYRIGHT.md` |
+| Der Copyright-Vermerk reicht von 1998 bis 2026 für die Exponential Foundation und 7x | `COPYRIGHT.md` |
 | "Exponential has made it beyond it's end of life in 2021 and survived", also: Exponential hat sein Lebensende 2021 überstanden | `README.md` |
 | 7x übernahm 2023 die Führung; die Linie 6.0 erscheint seit dem 1. Januar 2024 | [Wer ist 7x?](../../wer-ist-7x.md#die-releases-60x) |
 | Die gemeinnützige Exponential Foundation betreibt das Projekt seit 2026 | [Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md#kurz-gesagt) |
 | 6.0 ist die gepflegte Linie; Sicherheitskorrekturen kommen im nächsten Release 6.0.x | `SECURITY.md` |
-| PHP 8.0 bis 8.5 werden unterstützt, und das Projekt zielt auf 8.6 und darüber hinaus | `README.md` |
+| PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) werden unterstützt, und das Projekt zielt auf 8.6 und darüber hinaus | `README.md` |
 
 ## Möglichkeiten der Unterstützung
 
 | Möglichkeit | Was Sie bekommen | Seite |
 |---|---|---|
-| Die Hilfe in der Administration | Dokumentation für Ihre Version | [Schritt für Schritt Hilfe bekommen](../../../../eng-us/help/community/joining/getting-help-step-by-step.md) |
-| Die Community | Kostenlose Antworten, keine garantierte Antwortzeit | [Wo sich Menschen treffen](../../../../eng-us/help/community/joining/where-people-meet.md) |
+| Die Hilfe in der Administration | Dokumentation für Ihre Version | [Schritt für Schritt Hilfe bekommen](../../gemeinschaft/beitreten/schritt-fuer-schritt-hilfe-bekommen.md) |
+| Die Community | Kostenlose Antworten, keine garantierte Antwortzeit | [Wo sich Menschen treffen](../../gemeinschaft/beitreten/wo-sich-menschen-treffen.md) |
 | 7x | Bezahlter Support, Wartungsverträge, Hosting | [7x im Ökosystem](../../oekosystem/organisationen/7x-im-oekosystem.md) |
 | Partner | Support in Stufen mit Antwortzeiten | [Supportstufen und Antwortzeiten](../../partner/support-stufen-und-reaktionszeiten.md) |
 | Hosting-Unternehmen | Betrieb der Website; oft Aktualisierungen und Sicherungen | [Einen Hoster wählen](../../kunden/partner-und-hoster/einen-hoster-auswaehlen.md) |

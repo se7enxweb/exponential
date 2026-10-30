@@ -56,7 +56,7 @@ PLAN
 | Zugriffsüberprüfung | [Zugriffsüberprüfungen](../../../unternehmen/sicherheit/zugriffspruefungen.md), [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md) |
 | Zweistufige Anmeldung | [Zwei-Faktor-Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Updates der Erweiterungen | [Budget für Upgrades und Wartung](../../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md) |
-| PHP-Unterstützung | `README.md`: PHP 8.0 bis 8.5 unterstützt; Ihr Hoster plant das Upgrade |
+| PHP-Unterstützung | `README.md`: PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) unterstützt; Ihr Hoster plant das Upgrade |
 | Inhalts-Audit | [Die Inhaltsprüfungen](../../../../funktionen/6.0/inhaltspruefungen.md), [Veröffentlichen und Versionen](../../../veroeffentlichen-und-versionen.md) |
 | Barrierefreiheit | [Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md) |
 | Kosten und ROI-Zahlen | [Betriebskosten für Betreiber](../betriebskosten-fuer-betreiber.md), [Den ROI messen](../den-roi-messen.md) |

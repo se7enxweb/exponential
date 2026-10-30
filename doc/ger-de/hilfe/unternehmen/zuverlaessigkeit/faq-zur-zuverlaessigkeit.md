@@ -43,7 +43,7 @@ Nein. „Ein veröffentlichter Tag wird nie geändert“
 Version.
 
 **Welche PHP-Versionen werden unterstützt?**
-PHP 8.0 ist die älteste unterstützte Version, 8.1 bis 8.5 werden unterstützt, und Velocity läuft unter 8.0 oder neuer
+PHP 8.0 bis 8.5 werden unterstützt, und PHP 7.4 ist ohne Support nutzbar (ab 6.0.15), und Velocity läuft unter 8.0 oder neuer
 (ab seinem Release 0.0.4.54)
 ([README, „What version of PHP is required“](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required)).
 

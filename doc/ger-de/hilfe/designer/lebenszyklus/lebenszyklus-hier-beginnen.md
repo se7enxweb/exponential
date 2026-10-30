@@ -48,7 +48,7 @@ Nutzer am Laufen.
 | [Releases von Exponential verfolgen](exponential-releases-verfolgen.md) | Wo Änderungen angekündigt werden |
 | [Ein Changelog als Designer lesen](ein-changelog-als-designer-lesen.md) | Was für ein Theme zählt |
 | [Eine Kompatibilitätsmatrix](kompatibilitaetsmatrix.md) | Theme-Versionen gegen Exponential und PHP |
-| [PHP-Versionskompatibilität](php-versionskompatibilitaet.md) | PHP 8.0 und später |
+| [PHP-Versionskompatibilität](php-versionskompatibilitaet.md) | PHP 8.0 und später (PHP 7.4 ohne Support nutzbar) |
 | [Kompatibilität angeben](kompatibilitaet-angeben.md) | Wo Nutzer sie lesen |
 | [Eine Upgrade-Testumgebung](upgrade-testumgebung.md) | Ein sicherer Ort zum Testen |
 | [Upgrade-Test Schritt für Schritt](upgrade-test-schritt-fuer-schritt.md) | Die Routine |

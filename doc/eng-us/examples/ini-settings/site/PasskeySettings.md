@@ -3,13 +3,13 @@ title: site.ini [PasskeySettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [PasskeySettings] in site.ini: Passkeys, SignInForm, RelyingPartyID, RelyingPartyName, AllowedOrigins, UserVerification, Algorithms, ChallengeSeconds ..."
-keywords: site.ini, PasskeySettings, INI, setting, Passkeys, SignInForm, RelyingPartyID, RelyingPartyName, AllowedOrigins, UserVerification, Algorithms, ChallengeSeconds, MaxPerUser
+keywords: site.ini, PasskeySettings, INI, setting, Passkeys, SignInForm, RelyingPartyID, RelyingPartyName, AllowedOrigins, UserVerification, Algorithms, ChallengeSeconds, MaxPerUser, Attestation, RelyingPartyIDMap, AuthenticatorNames, Policy, PasswordSignIn, GroupPolicy, GroupPasswordSignIn, UserPolicy, UserPasswordSignIn, PolicyHandlers, ExemptViews, ConsoleSlots
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [PasskeySettings]
 
-The block `[PasskeySettings]` of `settings/site.ini`, with 9 setting(s).
+The block `[PasskeySettings]` of `settings/site.ini`, with 21 setting(s).
 
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -158,6 +158,198 @@ Default: `20`.
 # settings/override/site.ini.append.php
 [PasskeySettings]
 MaxPerUser=20
+*/ ?>
+```
+
+## Attestation
+
+> The attestation asked for when a passkey is added: none (default), indirect or direct.  
+> With indirect every browser keeps the authenticator's model id (AAGUID), which names it in  
+> the list ("iCloud Keychain", "YubiKey 5 Series"); the statement itself is never relied on.  
+
+Default: `none`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+Attestation=none
+*/ ?>
+```
+
+## RelyingPartyIDMap
+
+> A multi-host installation: the relying party id of each host, RelyingPartyIDMap\[<host>\]=<id>.  
+> The id must be the host or a parent domain of it; a host not listed uses RelyingPartyID.  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# an empty "RelyingPartyIDMap[]" first replaces the shipped list; without it the items are added
+RelyingPartyIDMap[]
+*/ ?>
+```
+
+## AuthenticatorNames
+
+> Names of authenticator models the built-in list lacks or names otherwise:  
+> AuthenticatorNames\[<aaguid>\]=<name>  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# an empty "AuthenticatorNames[]" first replaces the shipped list; without it the items are added
+AuthenticatorNames[]
+*/ ?>
+```
+
+## Policy
+
+> The passkey policy (doc/eng-us/guides/passkeys.md, "Policy"). Only the web pages apply it;  
+> REST, SOAP, WebDAV and the expservices login keep their own sign-in.  
+> optional (default): users may add passkeys. preferred: a user without a passkey is asked  
+> once per session to add one and may go on. required: a user without a passkey adds one  
+> before any other page.  
+
+Default: `optional`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+Policy=optional
+*/ ?>
+```
+
+## PasswordSignIn
+
+> enabled (default) or disabled: disabled refuses the password on the sign-in form for an  
+> account that has a passkey (answered like a wrong password). An account without a passkey  
+> still signs in with its password, so nobody is locked out.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+PasswordSignIn=enabled
+*/ ?>
+```
+
+## GroupPolicy
+
+> Per user group (content object id): the strictest of the user's groups and Policy wins;  
+> disabled in any group wins. GroupPolicy\[13\]=required, GroupPasswordSignIn\[13\]=disabled  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# an empty "GroupPolicy[]" first replaces the shipped list; without it the items are added
+GroupPolicy[]
+*/ ?>
+```
+
+## GroupPasswordSignIn
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# an empty "GroupPasswordSignIn[]" first replaces the shipped list; without it the items are added
+GroupPasswordSignIn[]
+*/ ?>
+```
+
+## UserPolicy
+
+> Per account (content object id), winning over the groups.  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# an empty "UserPolicy[]" first replaces the shipped list; without it the items are added
+UserPolicy[]
+*/ ?>
+```
+
+## UserPasswordSignIn
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# an empty "UserPasswordSignIn[]" first replaces the shipped list; without it the items are added
+UserPasswordSignIn[]
+*/ ?>
+```
+
+## PolicyHandlers
+
+> Classes implementing expPasskeyPolicyHandler: extensions change the policy of an account.  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# an empty "PolicyHandlers[]" first replaces the shipped list; without it the items are added
+PolicyHandlers[]
+*/ ?>
+```
+
+## ExemptViews
+
+> The views that stay open while a passkey is required ("module" or "module/view").  
+
+Default: a list of 7: `user/passkeys`, `user/logout`, `user/login`, `user/password`, `user2fa`, `ezjscore`, `user/preferences`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# an empty "ExemptViews[]" first replaces the shipped list; without it the items are added
+ExemptViews[]
+ExemptViews[]=user/passkeys
+ExemptViews[]=user/logout
+ExemptViews[]=user/login
+ExemptViews[]=user/password
+ExemptViews[]=user2fa
+ExemptViews[]=ezjscore
+ExemptViews[]=user/preferences
+*/ ?>
+```
+
+## ConsoleSlots
+
+> Templates added below the list of passkeys on user/passkeys (an extension's own section):  
+> ConsoleSlots\[\]=design:myextension/passkeys\_slot.tpl  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# an empty "ConsoleSlots[]" first replaces the shipped list; without it the items are added
+ConsoleSlots[]
 */ ?>
 ```
 

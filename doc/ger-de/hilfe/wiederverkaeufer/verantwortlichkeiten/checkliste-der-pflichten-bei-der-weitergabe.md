@@ -108,7 +108,7 @@ Reviewed by: ______________   Counsel consulted: yes / no
 
 - [OEM-Produkt-Wiederverkäufer](../modelle/oem-produkt-wiederverkaeufer.md)
 - [Lizenzierung für Partner](../../partner/lizenzierung-fuer-partner.md)
-- [Paketersteller: hier beginnen](../../../../eng-us/help/bundlers/bundlers-start-here.md)
+- [Paketersteller: hier beginnen](../../buendler/buendler-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -36,7 +36,7 @@ Verhaltenskodex, den viele Open-Source-Projekte verwenden, mit vier für Exponen
 | Contributor Covenant 2.1 | Die Verpflichtung, die Verhaltensregeln, die Durchsetzung und die vier Stufen der Folgen |
 | Partner und geschäftliches Verhalten | Ehrlichkeit gegenüber Kunden, fairer Wettbewerb, Interessenkonflikte, Lizenzen, Kundendaten |
 | Mit KI erzeugte Beiträge | Verantwortung, Offenlegung, Rechte an dem, was Sie einreichen, keine ungeprüften Massen |
-| Die Beitragsvereinbarung (CLA) | Beiträge zum Kernel sind eine Übertragung des Urheberrechts an 7x; ehrliche Urheberschaft |
+| Die Beitragsvereinbarung (CLA) | Beiträge zum Kernel sind eine Übertragung des Urheberrechts an die Exponential Foundation und 7x; ehrliche Urheberschaft |
 | Trainer und Fürsprecher | Korrektes Unterrichten, keine falschen Behauptungen, etwas sei „offiziell“, Offenlegung, sichere und barrierefreie Veranstaltungen, Privatsphäre |
 
 ## Für wen er gilt
@@ -91,7 +91,7 @@ veröffentlichen Sie niemals einen ungeprüften Sicherheitsbericht öffentlich.
 ### Die Beitragsvereinbarung (CLA)
 
 Beiträge zum Kernel brauchen eine unterschriebene CLA, bevor sie übernommen werden. Wenn Sie sie unterschreiben und
-einen Beitrag zum Kernel einreichen, übertragen Sie das Urheberrecht an diesem Beitrag an 7x; Ihre eigenen Erweiterungen
+einen Beitrag zum Kernel einreichen, übertragen Sie das Urheberrecht an diesem Beitrag an die Exponential Foundation und 7x; Ihre eigenen Erweiterungen
 sind davon nicht betroffen. Unterschreiben Sie nur für Arbeit, deren Rechte Sie übertragen dürfen. Einzelheiten:
 [CONTRIBUTING.md, Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla).
 

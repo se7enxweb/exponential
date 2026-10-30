@@ -126,6 +126,13 @@ zwischen, antwortet also immer für die aktuelle Umgebung des Prozesses. In Code
 gestartet wurde, bevor die Klasse existierte, prüfen Sie zuerst `class_exists( 'expDemoMode' )`, wie der Kernel es
 tut. Speichern Sie die Antwort nicht in einer statischen Variablen oder einem Objekt, das länger lebt als der Request.
 
+Lesen Sie `getenv( 'EXP_DEMO_MODE' )` nie selbst: Fragen Sie `expDemoMode::enabled()`. Unter Velocity kann die Variable
+aus der gemeinsamen `/etc/vc/envvars` kommen, die der Server jeder Installation auf dem Host liest; `expDemoMode` lehnt
+einen Wert ab, den die Engine aus einer solchen Datei exportiert hat (`expDemoMode::isSharedEnvvarsValue()`, geprüft
+gegen `Q_WebServer_Layout::$exported` der Engine und die Konfigurationsverzeichnisse, die sie gelesen hat). Code, der die
+Umgebung direkt liest, sähe also den Demomodus, wo der Kernel ihn nicht sieht. Der Ort pro Installation sind die
+envvars der Site, `/etc/vc/sites-available/<site>.envvars` ([Demomodus](../../../bc/6.0/demomodus.md#velocity-nur-eine-installation)).
+
 ## Testen
 
 Setzen und entfernen Sie die Variable im Test und stellen Sie sie danach wieder her:

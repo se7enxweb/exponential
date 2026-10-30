@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/datatypes
 audience: developer
 category: standards
-order: 490
+order: 497
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/datatypes mit den Entwurfsmustern.
 keywords: kernel/classes/datatypes, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

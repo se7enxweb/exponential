@@ -26,7 +26,7 @@
  *          INI reset; the deploy's INI step reaches the compile through the "kernelservices" cache item
  *  KS-10 - Without a booted container, eZExtension::activateExtensions() does not ask it (nothing changes)
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -33,7 +33,7 @@ From CONTRIBUTING.md and [Develop with Git](../develop-with-git.md):
    (`make manifest-fix`); `make hooks` installs the pre-commit hook that checks it.
 6. Make sure the tests pass, update the documentation, push to your fork and open a pull request.
 7. Make sure a signed Contributor Licensing Agreement is on file with 7x, knowing that it gives control of the
-   contribution to 7x (see below)
+   contribution to the Exponential Foundation and 7x (see below)
    ([Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)). When the partner company
    has the rights to its developers' work, the company signs it or gives its permission (CLA, section 6); one
    signature covers all future contributions.
@@ -42,7 +42,7 @@ From CONTRIBUTING.md and [Develop with Git](../develop-with-git.md):
 
 - **Copyright assignment (CLA).** A kernel contribution, sent in any form (pull request,
   patch, issue or mail), is merged only once its signed CLA has been received; 7x and the Exponential Foundation
-  require it. **By signing and submitting, the partner assigns the copyright in the contribution to 7x, which becomes its owner, and gives up control over it:** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial
+  require it. **By signing and submitting, the partner assigns the copyright in the contribution to the Exponential Foundation and 7x, which become its owners, and gives up control over it:** The Exponential Foundation and 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial
   products, without asking or paying the partner, who cannot withdraw it or set conditions on it. It does not
   affect the partner's own custom extensions or its customers' sites.
 

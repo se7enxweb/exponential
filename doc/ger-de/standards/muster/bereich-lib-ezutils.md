@@ -2,7 +2,7 @@
 title: Muster in lib/ezutils
 audience: developer
 category: standards
-order: 540
+order: 553
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von lib/ezutils mit den Entwurfsmustern.
 keywords: lib/ezutils, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -36,8 +36,8 @@ Jede Klasse, Schnittstelle und jeder Trait von `lib/ezutils` mit den Mustern, al
 | `eZFunctionHandler` | class | [Strategie / Handler](strategie-handler.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `lib/ezutils/classes/ezfunctionhandler.php:18` | – |
 | `eZHTTPFile` | class | – | `lib/ezutils/classes/ezhttpfile.php:23` | – |
 | `eZHTTPPersistence` | class | – | `lib/ezutils/classes/ezhttppersistence.php:21` | Objektpersistenz über HTTP-POST-Variablen |
-| `eZHTTPTool` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [Singleton / instance()](singleton.md) | `lib/ezutils/classes/ezhttptool.php:25` | – |
-| `eZINI` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [Singleton / instance()](singleton.md) | `lib/ezutils/classes/ezini.php:53` | ### EXP-MULTI-SITE-OVERRIDE-SETTINGS ### - lib/ezutils/classes/ezini.php - neue INI-Einstellung ext-siteaccess-override - - neue INI-Einstellung ext-siteaccess… |
+| `eZHTTPTool` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md), [Singleton / instance()](singleton.md) | `lib/ezutils/classes/ezhttptool.php:25` | – |
+| `eZINI` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md), [Singleton / instance()](singleton.md) | `lib/ezutils/classes/ezini.php:53` | ### EXP-MULTI-SITE-OVERRIDE-SETTINGS ### - lib/ezutils/classes/ezini.php - neue INI-Einstellung ext-siteaccess-override - - neue INI-Einstellung ext-siteaccess… |
 | `eZInputValidator` | class | – | `lib/ezutils/classes/ezinputvalidator.php:78` | – |
 | `eZIntegerValidator` | class extends eZRegExpValidator | – | `lib/ezutils/classes/ezintegervalidator.php:18` | – |
 | `eZMail` | class | – | `lib/ezutils/classes/ezmail.php:60` | – |

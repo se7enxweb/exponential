@@ -25,6 +25,7 @@ ausgegraut oder gar nicht angezeigt.
 | Seite | Wobei sie Ihnen hilft |
 |---|---|
 | [Velocity ist Teil von Exponential 6.0.15](velocity-ist-teil-von-exponential-6-0-15.md) | Wissen, was sich geändert hat, als der Velocity Internet / Web Application Server Teil von Exponential wurde: ein Wendepunkt, der Exponential zu einem einzigen funktionierenden Stack macht (Server, RAD-Plattform, CMS, Digital Experience und E-Commerce) |
+| [Warum Exponential PHP 7.4 unterstützt](warum-exponential-php-7-4-unterstuetzt.md) | Wissen, was unter PHP 7.4 ohne Support nutzbar ist und was PHP 8 braucht, wie Composer die passenden Pakete für Ihr PHP wählt, wie die Sicherheit gewahrt bleibt und warum das Projekt Brücken zu älteren PHP-Versionen baut |
 | [Erste Schritte](erste-schritte.md) | Anmelden, die ersten Schritte gehen und wissen, wo Sie Hilfe finden |
 | [Ein Rundgang durch die Administration](rundgang-durch-die-administration.md) | Kopfzeile, Registerkarten, Seitenspalten und Dashboard kennenlernen |
 | [Anmelden im Editor](anmelden-im-editor.md) | Im Editor anmelden, der Oberfläche zum Schreiben und Veröffentlichen |
@@ -37,7 +38,11 @@ ausgegraut oder gar nicht angezeigt.
 |---|---|
 | [Wer ist 7x?](wer-ist-7x.md) | Das Unternehmen hinter Exponential kennenlernen: fast dreißig Jahre mit diesem Code, von den Jahren von eZ Publish bis Exponential 6, die Produkte, die Community und wie Sie mitmachen |
 | [Wer ist die Exponential Foundation?](wer-ist-die-exponential-foundation.md) | Die gemeinnützige Organisation kennenlernen, die das Open-Source-Projekt und die ganze Familie der Exponential-Produkte betreibt, und wozu sich das Projekt verpflichtet |
+| [Urheberrecht und Copyleft](urheberrecht-und-copyleft.md) | Wissen, wer das Copyright an Exponential hält (die Exponential Foundation und 7x gemeinsam, seit dem historischen Wechsel vom 29. Oktober 2026), warum die Foundation zuerst steht, was die GPL Ihnen erlaubt und wie der Hinweis in eigene Dateien und Erweiterungen kommt |
 | [Unsere Ziele](../ziele.md) | Wissen, warum es Exponential gibt, was schon eingebaut ist, damit Sie es nicht bauen müssen, warum es freie Software ist, wie 7x seinen Lebensunterhalt verdient und warum wir Sie einladen mitzumachen, mit ehrlichen Antworten auf Zweifel an unseren Absichten |
+| [Community](gemeinschaft/community-hier-beginnen.md) | Die Exponential-Community kennenlernen: die Menschen, die weltweit Software mit Exponential nutzen, dazu beitragen, sie bekannt machen und entwickeln |
+| [Ökosystem](oekosystem/oekosystem-hier-beginnen.md) | Das größere Ökosystem jenseits der Community kennenlernen: jeden Teil der Welt von Exponential innerhalb des PHP-Stacks, seine Benutzer und Schöpfer |
+| [Partner](partner/partner-hier-beginnen.md) | Die Exponential-Partner kennenlernen: Sie tragen finanziell zur dauerhaften Zukunft des Projekts bei, geben Code und mehr an es zurück und arbeiten direkt mit 7x und der Exponential Foundation zusammen |
 | [Das Projekt Exponential](projekt/README.md) | Die FAQ, die Fragen zur Lizenz, die Roadmap, Unterstützung und die Community-Kanäle finden, und wie Sie bauen, beitragen und geben, so wie die Projektwebsite exponential.earth sie vorstellt |
 
 ## Die tägliche Arbeit
@@ -99,6 +104,7 @@ Für Administratoren und Entwickler, die die Maschine und die Datenbank einer Si
 |---|---|
 | [Datenbankunterstützung](datenbankunterstuetzung.md) | Eine Datenbank unter den unterstützten wählen, in ihrer offiziellen Reihenfolge (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), und wissen, was jede braucht |
 | [Betriebssystemunterstützung](betriebssystemunterstuetzung.md) | Prüfen, ob ein Betriebssystem, ein Prozessor und ein Webserver Exponential ausführen können, von Linux bis Windows und darüber hinaus |
+| [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../anleitungen/seiten-cache-mit-litespeed.md) | Eine Website auf einem LiteSpeed- oder OpenLiteSpeed-Server für anonyme Besucher und Crawler schnell machen: Der Server antwortet aus gespeicherten Seiten ohne PHP, ohne Plugin und ohne Code |
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück

@@ -27,6 +27,7 @@ Windows. The full support statement with every system is
 > test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
 > [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../panels/plesk.md), [cPanel](../panels/cpanel.md), [DirectAdmin](../panels/directadmin.md), [ISPConfig](../panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md).
 
 ## Contents
 
@@ -43,7 +44,7 @@ Windows. The full support statement with every system is
 
 ## The short answer
 
-Exponential 6.0.x runs on almost any operating system that has PHP 8.0 or later and a web server. It is plain PHP
+Exponential 6.0.x runs on almost any operating system that has PHP 8.0 or later (PHP 7.4 usable without support) and a web server. It is plain PHP
 files plus a database; it has no compiled code of its own and no dependency on one C library
 ([OS support](../../os-support.md#what-the-operating-system-has-to-provide)). For a host the practical choice is a
 current Linux distribution with a maintained PHP 8.

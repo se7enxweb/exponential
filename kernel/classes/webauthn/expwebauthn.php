@@ -2,7 +2,7 @@
 /**
  * File containing the expWebAuthn class.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
@@ -105,7 +105,9 @@ class expWebAuthn
 
     /**
      * The options of navigator.credentials.create() for a new passkey: a discoverable credential (resident key
-     * required), the algorithms in order of preference, attestation "none", the user's existing passkeys excluded.
+     * required), the algorithms in order of preference, attestation "none" (or "indirect" / "direct": the browser
+     * then keeps the authenticator's AAGUID, which names its maker; the statement itself is never relied on), the
+     * user's existing passkeys excluded.
      *
      * @param array $rp id, name
      * @param array $user id (raw bytes, at most 64), name, displayName
@@ -114,10 +116,11 @@ class expWebAuthn
      * @param string[] $excludeIds credential ids (raw bytes)
      * @param string $userVerification required, preferred, discouraged
      * @param int $timeout milliseconds
+     * @param string $attestation none, indirect or direct
      * @return array
      */
     public static function creationOptions( array $rp, array $user, $challenge, array $algorithms, array $excludeIds = array(),
-                                            $userVerification = 'required', $timeout = 300000 )
+                                            $userVerification = 'required', $timeout = 300000, $attestation = 'none' )
     {
         $params = array();
         foreach ( $algorithms as $alg )
@@ -136,7 +139,7 @@ class expWebAuthn
             'excludeCredentials' => $exclude,
             'authenticatorSelection' => array( 'residentKey' => 'required', 'requireResidentKey' => true,
                                                'userVerification' => self::userVerification( $userVerification ) ),
-            'attestation' => 'none',
+            'attestation' => in_array( $attestation, array( 'none', 'indirect', 'direct' ), true ) ? $attestation : 'none',
         );
     }
 

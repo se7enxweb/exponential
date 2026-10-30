@@ -19,7 +19,7 @@
  *  RA-12 - The protected accounts (anonymous, administrator, the user who rejects): protectedIDsOf(), isProtected(),
  *          and reject() checks them before anything else
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

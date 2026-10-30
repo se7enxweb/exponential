@@ -60,7 +60,7 @@ außerdem das Recht, das neue Element dort anzulegen, wohin Uploads gehen.
 - [Inhalte erstellen und bearbeiten](../inhalte-bearbeiten.md#verknüpfungen-und-bilder)
 - [Wie verwende ich ein Bild oder eine Datei aus der Medienbibliothek wieder?](wie-verwende-ich-ein-bild-oder-eine-datei-wieder.md)
 - [Wie bette ich ein anderes Objekt in einen Text ein?](wie-bette-ich-ein-anderes-objekt-ein.md)
-- [Relationen und Einbettungen](../../../eng-us/help/cms-developers/relations-and-embeds.md)
+- [Relationen und Einbettungen](../cms-entwickler/relationen-und-einbettungen.md)
 - [Benutzerhandbuch](README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

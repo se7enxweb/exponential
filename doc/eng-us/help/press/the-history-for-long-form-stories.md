@@ -71,7 +71,7 @@ where the story of Exponential 6 begins: the month a dormant code base changed h
 | Open source as insurance | The GPL let a new steward continue the code | [Licenses explained for reporters](licenses-explained-for-reporters.md) |
 | Twenty-plus years of one code base | Commits since 2002, copyright since 1999 | [Who is 7x?, 7x in numbers](../who-is-7x.md#7x-in-numbers) |
 | A small company and a new nonprofit | Two organizations with one project | [Two organizations, one project](two-organizations-one-project.md) |
-| Old code, current PHP | PHP 8.0 to 8.5 supported | [Story: current PHP](story-current-php.md) |
+| Old code, current PHP | PHP 8.0 to 8.5 (PHP 7.4 usable without support) supported | [Story: current PHP](story-current-php.md) |
 | Credit across companies | Netgen, Mugo Web and CJW Network's work credited by name | [Crediting Netgen, Mugo Web and CJW Network](crediting-other-projects.md) |
 
 ## Lines not to cross

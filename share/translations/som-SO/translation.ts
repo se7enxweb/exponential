@@ -8064,8 +8064,8 @@
         <translation>Ogeysiisyada xuquuqda daabacaadda ee qorayaasha asalka ah iyo software-ka dhinac saddexaad ee lagu daray Exponential waxaa lagu hayaa faylasha isha iyo faylka LICENSE, sida ruqsadda uu u baahan yahay.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Kuwa soo socda waa liis ka mid ah kuwa wax ku biiriyay Exponential oo shaqadooda ruqsad u siiyay 7x si ay u isticmaasho iyadoo la raacayo shuruudaha heshiiska ruqsadeynta ee eZ Systems Contributor Licensing Agreement. Sida heshiiskan u ogol yahay, 7x waxay mid kasta oo wax-ku-biirin ah dib u qaybisaa iyadoo isticmaalaysa ruqsadda faylka ay ku jirto. Liisku wuxuu magacaabayaa qof kasta oo wax ku biiriyay, macluumaadka xiriirka ee ikhtiyaarka ah iyo faylasha ay wax ku biiriyeen ama ay shaqo ku lahaayeen.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Ka-qaybgalayaasha lagu amaanay shaqadooda Exponential iyo software-ka uu ka soo farcamay, oo ay la socdaan faylasha ay ka qayb qaateen. Tani waa amaan, ma aha ogeysiis xuquuqda daabacaadda: ka-qaybgalka Exponential waxaa loo wareejiyaa Exponential Foundation iyo 7x iyadoo la raacayo Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77279,6 +77279,82 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Furaha gelitaanka lama hubin karin. Fadlan isku day mar kale.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Akoonnada ku gala furayaasha gelitaanka oo keliya halkan kuma isticmaali karaan erayga sirta ah: dooro “Ku gal fure gelitaan”.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Furayaasha gelitaanka ee %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Furayaasha gelitaanka ee akoonkani ku galo. Baabi&apos;i kan ku jira qalab lumay ama la xaday: mar dambe laguma geli karo. Kuwa cusub milkiiluhu isagu ayaa ku dara.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Akoonkaagu wuxuu u baahan yahay fure gelitaan</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Ku dar fure gelitaan akoonkaaga</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Ku dar fure gelitaan si aad u sii wadato. Kadib waxaad ku galaysaa isaga halkii aad erayga sirta ah oo keliya ku geli lahayd.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Ku galidda fure gelitaan way ka dhakhso badan tahay kana ammaan badan tahay erayga sirta ah. Hadda mid ku dar, ama sii wad la&apos;aantiis.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Hadda maya</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Ma la baabi&apos;iyaa furaha gelitaanka “%name”?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Mar dambe laguma geli karo akoonkan. Haddii uu ahaa kii ugu dambeeyay, milkiiluhu wuxuu ku galayaa erayga sirta ah, ama adiga ayaa dejinaya mid cusub.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Baabi&apos;i furaha gelitaanka</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Baabi&apos;i</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Akoonkani ma laha fure gelitaan.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Xaqiijiye</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Aan la aqoon</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Furahaaga gelitaanka ee ugu dambeeya: ku dar mid kale ka hor intaadan ka saarin.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Akoonkani wuxuu ku galaa furayaasha gelitaanka oo keliya (siyaasadda furayaasha gelitaanka): marka midna uusan hadhin, wuxuu mar kale ku galaa erayga sirta ah.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Kani waa furahaaga gelitaanka ee ugu dambeeya, akoonkaaguna ma geli karo la&apos;aantiis. Marka hore ku dar fure gelitaan oo kale.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Furaha gelitaanka “%name” waa la baabi&apos;iyay. Mar dambe laguma geli karo akoonkan.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77378,6 +77454,34 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>Code from your authenticator app</source>
         <translation>Koodhka app-kaaga xaqiijinta</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Waxaad ku dhowdahay inaad xog si joogto ah u tirtirto ama aad nadiifiso diiwaan.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Erayga sirta ah iyo fure gelitaan</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Erayga sirta ah iyo koodh ka yimid app-kaaga xaqiijinta</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Ama:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Biraawsarkan ma isticmaali karo furayaasha gelitaanka. Isticmaal hab kale, ama biraawsar kale.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Marka aad sii wadato, biraawsarkaagu wuxuu ku weydiinayaa mid ka mid ah furayaashaada gelitaanka.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Ku sii wad fure gelitaan</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77468,6 +77572,70 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>Setup</source>
         <translation>Habeyn</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Beddelidda erayga sirta ah ee qofka, ciwaanka iimaylka, furayaasha gelitaanka, gelitaanka laba-tallaabo ah, koodhadhka soo celinta ama furayaasha API, iyo ka bixidda qalabkiisa kale.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Abuurista iyo tafatirka isticmaalayaasha, erayadooda sirta ah iyo qalabkooda, dejinta akoonnada, ansixinta ama diidmada akoonnada cusub, u qoondaynta doorar iyo tafatirka siyaasadaha.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Tirtiridda xogta</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Faaruqinta qashinka, ka saarista walxaha ku jira iyo ka saarista dhowr walxood hal mar.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Ka saarista, daabacaadda iyo kaydinta nuxurka</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Ka saarista nuxurka (sidoo kale qashinka), daabacaadda iyo kaydinta qabyo, waxaa la weydiiyaa marka foomka la diro. Waa dansan yahay si caadi ah.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Ka hor fal xasaasi ah, isticmaale soo galay ayaa mar kale xaqiijiya cidda uu yahay: erayga sirta ah iyo fure gelitaan, ama fure gelitaan la&apos;aan erayga sirta ah iyo koodhka app-ka xaqiijinta. Bogagga shabakadda oo keliya ayaa weydiiya: interface-ka REST, SOAP, WebDAV, gelitaanka expservices iyo khadka amarka marnaba.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Halka ay dejintu khuseyso</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Dejinta loogu talagalay</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Gelitaan kasta oo goobta</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Gelitaanka goobta %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Fur</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Cidda la weydiinayo: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Calaamadee kooxaha isticmaalayaasha si aad u weydiiso xubnahooda oo keliya (tusaale ahaan tifaftirayaasha). Midna lama calaamadin: isticmaale kasta.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Waxaa lagu kaydiyaa settings/override/site.ini.append.php, gelitaan kasta oo goobta. Kaydintu waxay ku weydiinaysaa inaad xaqiijiso inay adiga tahay.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Waxaa lagu kaydiyaa settings/siteaccess/%name/site.ini.append.php. Qiime ku jira settings/override ayaa ka mudnaan badan. Kaydintu waxay ku weydiinaysaa inaad xaqiijiso inay adiga tahay.</translation>
     </message>
 </context>
 <context>
@@ -77824,6 +77992,30 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>Your account was locked</source>
         <translation>Akoonkaaga waa la xiray</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Fure gelitaan ayaa lagu daray akoonkaaga %login ee %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Qof kasta oo haysta furahan gelitaanka wuxuu geli karaa akoonkaaga isagoo aan isticmaalin erayga sirta ah. Haddii aadan adigu ku darin, ka saar qaybta Furayaasha gelitaanka oo beddel erayga sirta ah.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Fure gelitaan ayaa laga saaray akoonkaaga %login ee %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Mar dambe laguma geli karo akoonkaaga. Haddii aadan adigu ka saarin, hubi furayaashaada gelitaanka iyo qalabkaaga.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Fure gelitaan ayaa lagu daray akoonkaaga</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Fure gelitaan ayaa laga saaray akoonkaaga</translation>
     </message>
 </context>
 <context>

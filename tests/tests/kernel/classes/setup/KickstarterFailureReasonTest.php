@@ -4,7 +4,7 @@
  * "Unknown failure": a missing kickstart.ini section, Continue other than true, a language without a locale.
  * Stand-in step objects; no database.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

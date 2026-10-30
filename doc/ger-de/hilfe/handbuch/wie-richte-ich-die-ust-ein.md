@@ -30,6 +30,19 @@ Benutzer, deren Rolle `shop/administrate` hat. Legen Sie die Sätze zuerst mit I
    dann auf **Erstellen**.
 7. Bearbeiten Sie ein Produkt, wählen Sie in seinem Preisfeld den USt-Typ und veröffentlichen Sie es.
 
+### Sätze, die vom Land oder von der Art des Produkts abhängen
+
+Regeln nach Land und Produktkategorie funktionieren nur, wenn die Website dafür eingerichtet ist: der USt-Handler
+`ezdefault` in `shop.ini [VATSettings]`, ein Länderfeld in der Benutzerklasse (`UserCountryAttribute`) und ein Feld für
+die Produktkategorie in der Produktklasse (`ProductCategoryAttribute`). Fragen Sie einen Administrator. Dann:
+
+1. Klicken Sie auf **Shop** und dann auf **Produkt Kategorien**, klicken Sie auf **Neue Produktkategorie**, geben Sie
+   ihr einen Namen (zum Beispiel „Geschenkkarten“) und klicken Sie auf **Änderungen anwenden**.
+2. Bearbeiten Sie jedes Produkt und wählen Sie seine Kategorie im Feld für die Produktkategorie.
+3. Wählen Sie im Preisfeld des Produkts den USt-Typ *Determined by VAT charging rules*, damit die Regeln entscheiden.
+4. Fügen Sie die Regeln wie in den Schritten 5 und 6 hinzu, mit einer Regel für **Beliebig** als Land und **Beliebig**
+   als Kategorie als Rückfall.
+
 ![Die Liste der USt-Typen mit Name und Prozentsatz und den Schaltflächen Ausgewählte entfernen, Neuer USt-Typ und Änderungen anwenden](bilder/store-vat-types.webp)
 
 ## Was schiefgehen kann

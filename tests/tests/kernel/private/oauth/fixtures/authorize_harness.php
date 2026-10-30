@@ -14,7 +14,7 @@
  * [OAuthSettings], name => value) and "authorized" (true: the user has authorized the client, so the view issues the
  * code or token; the stored object is returned as "saved"). "public-client" is a known client without a secret.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

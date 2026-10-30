@@ -2,7 +2,7 @@
 title: Muster in lib/ezsession
 audience: developer
 category: standards
-order: 537
+order: 550
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von lib/ezsession mit den Entwurfsmustern.
 keywords: lib/ezsession, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

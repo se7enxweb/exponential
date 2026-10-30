@@ -22,7 +22,7 @@
  *
  * Writes only into var/tmp/audit-tests/ (and two test lines to the journal in SK-02); no database.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group audit
@@ -404,7 +404,7 @@ class expAuditSinksTest extends PHPUnit\Framework\TestCase
         $script = __DIR__ . '/fixtures/expaudittestsyslogopenbasedir.php';
         $run = function ( array $args ) use ( $root, $script )
         {
-            $cmd = array_merge( array( PHP_BINARY, '-n', '-d', 'open_basedir=' . $root, '-d', 'display_errors=0', $script ), $args );
+            $cmd = array_merge( array( ...expTestBarePhpCommand(), '-d', 'open_basedir=' . $root, '-d', 'display_errors=0', $script ), $args );
             $p = proc_open( $cmd, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
             $out = stream_get_contents( $pipes[1] );
             $err = stream_get_contents( $pipes[2] );

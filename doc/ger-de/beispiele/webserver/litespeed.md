@@ -4,7 +4,7 @@ audience: admin, developer
 category: examples
 order: 70
 summary: Exponential 6 mit LiteSpeed Enterprise ausliefern (es liest .htaccess wie Apache) oder mit OpenLiteSpeed (die Regeln stehen im virtuellen Host), mit einem vollständigen virtuellen Host für OpenLiteSpeed, dessen Umschreiberegeln mit mod_rewrite von Apache getestet wurden.
-keywords: LiteSpeed, OpenLiteSpeed, virtueller Host, Umschreiberegeln, Sicherheits-Header, Beispiel, LiteSpeed Enterprise, OLS, vhconf.conf, LSAPI, lsphp, rewrite, .htaccess, autoLoadHtaccess, context, extraHeaders, example
+keywords: LiteSpeed, OpenLiteSpeed, virtueller Host, Umschreiberegeln, Sicherheits-Header, Beispiel, LiteSpeed Enterprise, OLS, vhconf.conf, LSAPI, lsphp, rewrite, .htaccess, autoLoadHtaccess, context, extraHeaders, Seiten-Cache, page cache, LSCache, X-LiteSpeed-Cache, example
 type: example
 ---
 # LiteSpeed und OpenLiteSpeed
@@ -28,6 +28,7 @@ LSAPI von LiteSpeed. Nichts auf dieser Seite wird dafür gebraucht.
 > Dieselben Regeln für andere Server: [nginx](nginx.md), [LiteSpeed](litespeed.md), [Caddy](caddy.md), [IIS](iis.md),
 > [Velocity](velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../../hilfe/hosting/control-panels/plesk.md), [cPanel](../../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../../hilfe/hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../anleitungen/seiten-cache-mit-litespeed.md).
 
 **OpenLiteSpeed**, die Open-Source-Ausgabe, liest von einer `.htaccess` nur die Umschreiberegeln, nur wenn
 `autoLoadHtaccess` eingeschaltet ist, und nach einer Änderung der Datei erst nach einem Neustart. Das Beispiel unten
@@ -153,6 +154,31 @@ context /var/log/ {
   allowBrowse             0
 }
 
+# Page cache (off). OpenLiteSpeed keeps whole pages and answers anonymous
+# visitors and crawlers from them without PHP. To switch it on, remove the "#"
+# of the lines below and of the cache rules in the rewrite block, then a
+# graceful restart. Guide: doc/eng-us/guides/litespeed-page-cache.md
+# enableCache 0 with checkPublicCache 1 leaves the choice to the rewrite rule:
+# only requests it marks with cache-control are stored. respCookieCache 0
+# never stores a page that sets a cookie. ignoreRespCacheCtrl 0 obeys the
+# page's own Cache-Control: with it, switch on site.ini [HTTPHeaderSettings]
+# for anonymous visitors (OnlyForAnonymous=enabled, see the guide), or no
+# page is stored.
+#module cache {
+#  ls_enabled              1
+#  enableCache             0
+#  enablePrivateCache      0
+#  checkPublicCache        1
+#  checkPrivateCache       0
+#  qsCache                 0
+#  reqCookieCache          1
+#  respCookieCache         0
+#  ignoreReqCacheCtrl      1
+#  ignoreRespCacheCtrl     0
+#  expireInSeconds         120
+#  storagePath             $VH_ROOT/lscache
+#}
+
 rewrite  {
   enable                  1
   autoLoadHtaccess        0
@@ -187,6 +213,16 @@ RewriteRule ^/?robots\.txt - [L]
 RewriteRule ^/?index\.js$ - [L]
 RewriteRule ^/?sw\.js$ - [L]
 RewriteRule ^/?w3c/p3p\.xml - [L]
+# Page cache (off; see "module cache" above): GET or HEAD, no query string,
+# no session or sign-in cookie, not the administration, user/, shop/,
+# notification/, layout/, ezjscore/, setup/ or content/ other than view/.
+# Kept max-age seconds; nothing removes a page when an editor publishes.
+#RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$
+#RewriteCond %{QUERY_STRING} ^$
+#RewriteCond %{HTTP_COOKIE} !(eZSESSID|PHPSESSID|is_logged_in) [NC]
+#RewriteCond %{REQUEST_URI} !^/([^/]+/)?((admin|user|shop|notification|layout|ezjscore|setup)(/|$)|content/(?!view/)) [NC]
+#RewriteCond %{HTTP_HOST} !^admin\. [NC]
+#RewriteRule ^/?(.*)$ - [E=cache-control:max-age=120]
 # Everything else, settings/, var/, vendor/ and composer.json included
 RewriteRule .* /index.php [L]
   END_rules
@@ -215,6 +251,22 @@ vhssl  {
   auf der Liste der statischen Dateien. Verwenden Sie die eigene Let's-Encrypt-Unterstützung von OpenLiteSpeed oder
   fügen Sie direkt nach der Punkt-Regel `RewriteRule ^/?\.well-known/acme-challenge/ - [L]` ein.
 
+## Seiten-Cache
+
+Beide Server können ganze Seiten aufbewahren und anonyme Besucher und Crawler daraus bedienen, ohne PHP zu starten,
+ohne Plugin und ohne Code. Er wird ausgeschaltet ausgeliefert, an drei Stellen:
+
+| Wo | Was zu tun ist |
+|---|---|
+| `.htaccess_root` (LiteSpeed Enterprise, oder OpenLiteSpeed mit `autoLoadHtaccess`) | der Block zwischen `## >>> LiteSpeed page cache` und `## <<< LiteSpeed page cache`: das erste `#` jeder Zeile entfernen |
+| [`litespeed-page-cache.conf`](../../../eng-us/examples/web-servers/litespeed-page-cache.conf) | derselbe Block für einen virtuellen Host von LiteSpeed Enterprise, die „Zusätzlichen Anweisungen für HTTPS“ von Plesk, die Include-Dateien von cPanel oder die Custom HTTPD Configuration von DirectAdmin |
+| Die Datei oben (OpenLiteSpeed) | der auskommentierte Block `module cache` vor `rewrite` und die auskommentierten Cache-Regeln vor der letzten Umschreiberegel: ihr `#` entfernen, dann ein sanfter Neustart |
+
+Gespeichert wird nur ein `GET` oder `HEAD` ohne Abfragezeichenkette, von einem Besucher ohne Sitzungs- oder
+Anmelde-Cookie, an eine Adresse, die keine Administrations-, Benutzer-, Shop- oder Bearbeitungsansicht ist, für
+`max-age` (120) Sekunden. Jede Zeile, wie Sie `X-LiteSpeed-Cache: hit` prüfen, Leeren, die Control Panels und
+Fehlersuche: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../anleitungen/seiten-cache-mit-litespeed.md).
+
 ## Prüfen
 
 ```bash
@@ -227,6 +279,7 @@ curl -sI https://example.com/design/admin4/stylesheets/components.css | head -1 
 
 ## Verwandte Seiten
 
+- [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../anleitungen/seiten-cache-mit-litespeed.md): der Seiten-Cache beider Server, ohne Plugin.
 - [Apache .htaccess](apache-htaccess.md): die Regeln, eine nach der anderen erklärt; LiteSpeed Enterprise verwendet diese Datei.
 - [.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md): `exp:setup:htaccess` und welche Server die Datei lesen.
 - [Kapitel 13, Abschnitt 13.2: Was der Webserver niemals ausliefern darf](../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf).

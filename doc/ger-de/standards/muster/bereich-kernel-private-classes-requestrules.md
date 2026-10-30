@@ -2,7 +2,7 @@
 title: Muster in kernel/private/classes/requestrules
 audience: developer
 category: standards
-order: 521
+order: 534
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/private/classes/requestrules mit den Entwurfsmustern.
 keywords: kernel/private/classes/requestrules, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

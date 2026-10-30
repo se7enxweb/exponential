@@ -120,3 +120,4 @@ sandbox would refuse ([Checking template syntax](../../guides/template-syntax-ch
 - [Twig templates](../../features/6.0/twig-templates.md) and the Twig guides
 - [Converting between template engines](converting-between-template-engines.md)
 - [Moving from .tpl to .stpl](moving-from-tpl-to-stpl.md)
+- [Templates side by side: .tpl, .twig and .stpl](tpl-twig-smarty-side-by-side.md), [writing Twig-native templates](../../guides/twig-templates-native.md), [recipes](../../guides/twig-templates-recipes.md) and [the speed of the three engines](../../guides/template-engines-speed.md)

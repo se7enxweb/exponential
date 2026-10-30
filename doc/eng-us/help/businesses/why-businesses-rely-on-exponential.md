@@ -41,7 +41,7 @@ surprises its upgrades bring. The sections below take these one by one.
 
 | Fact | Source |
 |---|---|
-| The copyright notice reads "Copyright (C) 1998 - 2026 7x & Exponential Foundation" | `COPYRIGHT.md`, quoted in [Who is 7x?](../who-is-7x.md#in-short) |
+| The copyright notice reads "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." | `COPYRIGHT.md`, quoted in [Who is 7x?](../who-is-7x.md#in-short) |
 | "Exponential has made it beyond it's end of life in 2021 and survived" | `README.md`, "Exponential Project Status" |
 | 7x has published the 6.0.x releases since December 2023, from 6.0.0 on 1 January 2024 to 6.0.14 on 7 June 2026, with 6.0.15 in development | [Who is 7x?](../who-is-7x.md#in-short) |
 | Current releases aim "at easing the requirements to support current versions of the PHP language like PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9" | `README.md` |
@@ -73,7 +73,7 @@ Every component a site needs is one more thing that can fail, be misconfigured o
 |---|---|
 | SQLite 3 is the default database; "SQLite needs none" (no database server) | `README.md`, "Requirements"; [Database support](../database-support.md) |
 | Supported databases, in order of preference: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | `README.md`, "Main Exponential features" |
-| Runs on almost any operating system with PHP 8.0 or later | [Operating system support](../os-support.md) |
+| Runs on almost any operating system with PHP 8.0 or later (PHP 7.4 usable without support) | [Operating system support](../os-support.md) |
 | Runs behind Apache, Nginx, LiteSpeed, Caddy, IIS, lighttpd and others, or its own server, Velocity | `README.md`, "How Exponential is served" |
 | Shop, search engine, workflows, multisite and many languages are built in | `README.md`, "Main Exponential features" |
 

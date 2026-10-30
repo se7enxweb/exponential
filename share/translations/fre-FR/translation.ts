@@ -8219,8 +8219,8 @@
         <translation>Les avis de copyright des auteurs d&apos;origine et des logiciels tiers inclus avec Exponential sont conservés dans les fichiers sources et dans le fichier LICENSE, comme l&apos;exige la licence.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Voici une liste des contributeurs d&apos;Exponential qui ont concédé leur travail sous licence à 7x selon les termes et conditions du Contributor Licensing Agreement d&apos;eZ Systems. Comme le permet cet accord, 7x redistribue chaque contribution sous la même licence que le fichier dans lequel elle est incluse. La liste nomme chaque contributeur, ses coordonnées facultatives et les fichiers auxquels il a contribué.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Contributeurs crédités pour leur travail sur Exponential et sur le logiciel dont il est issu, avec les fichiers auxquels ils ont contribué. Il s&apos;agit d&apos;une reconnaissance, et non d&apos;une mention de copyright : les contributions à Exponential sont cédées à l&apos;Exponential Foundation et à 7x en vertu du Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -78689,6 +78689,82 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>The passkey could not be checked. Please try again.</source>
         <translation>La clé d'accès n'a pas pu être vérifiée. Veuillez réessayer.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Les comptes qui se connectent uniquement avec des clés d&apos;accès ne peuvent pas utiliser de mot de passe ici : choisissez « Se connecter avec une clé d&apos;accès ».</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Clés d&apos;accès de %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Les clés d&apos;accès avec lesquelles ce compte se connecte. Révoquez celle qui se trouve sur un appareil perdu ou volé : elle ne pourra plus se connecter. Le propriétaire ajoute lui-même les nouvelles.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Votre compte a besoin d&apos;une clé d&apos;accès</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Ajoutez une clé d&apos;accès à votre compte</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Ajoutez une clé d&apos;accès pour continuer. Vous vous connecterez ensuite avec elle au lieu d&apos;un simple mot de passe.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Se connecter avec une clé d&apos;accès est plus rapide et plus sûr qu&apos;avec un mot de passe. Ajoutez-en une maintenant ou continuez sans.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Pas maintenant</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Révoquer la clé d&apos;accès « %name » ?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Elle ne pourra plus se connecter à ce compte. Si c&apos;était la dernière, le propriétaire se connecte avec le mot de passe, ou vous en définissez un nouveau.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Révoquer la clé d&apos;accès</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Révoquer</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Ce compte n&apos;a aucune clé d&apos;accès.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Authentificateur</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Inconnu</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Votre dernière clé d&apos;accès : ajoutez-en une autre avant de la supprimer.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Ce compte se connecte uniquement avec des clés d&apos;accès (règle des clés d&apos;accès) : s&apos;il n&apos;en reste aucune, il se connecte de nouveau avec son mot de passe.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>C&apos;est votre dernière clé d&apos;accès et votre compte ne peut pas se connecter sans. Ajoutez d&apos;abord une autre clé d&apos;accès.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>La clé d&apos;accès « %name » est révoquée. Elle ne peut plus se connecter à ce compte.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -78788,6 +78864,34 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Code from your authenticator app</source>
         <translation>Code de votre application d'authentification</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Vous êtes sur le point de supprimer des données définitivement ou de vider un journal.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Votre mot de passe et une clé d&apos;accès</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Votre mot de passe et un code de votre application d&apos;authentification</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Ou :</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Ce navigateur ne peut pas utiliser de clés d&apos;accès. Utilisez une autre méthode ou un autre navigateur.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Si vous continuez, votre navigateur vous demande l&apos;une de vos clés d&apos;accès.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Continuer avec une clé d&apos;accès</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -78878,6 +78982,70 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Setup</source>
         <translation>Administration</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Modifier son propre mot de passe, son adresse e-mail, ses clés d&apos;accès, la connexion en deux étapes, ses codes de récupération ou ses clés d&apos;API, et déconnecter ses autres appareils.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Créer et modifier des utilisateurs, leurs mots de passe et appareils, les paramètres des comptes, approuver ou refuser de nouveaux comptes utilisateurs, attribuer des rôles et modifier des règles.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Suppression de données</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Vider la corbeille, en retirer des éléments et supprimer plusieurs éléments à la fois.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Suppression, publication et enregistrement de contenu</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Supprimer du contenu (y compris vers la corbeille), publier et enregistrer un brouillon ; demandé à l&apos;envoi du formulaire. Désactivé par défaut.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Avant une action sensible, un utilisateur connecté confirme de nouveau son identité : avec son mot de passe et une clé d&apos;accès, ou sans clé d&apos;accès avec son mot de passe et le code de son application d&apos;authentification. Seules les pages web le demandent : l&apos;interface REST, SOAP, WebDAV, la connexion expservices et la ligne de commande jamais.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Où les paramètres s&apos;appliquent</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Paramètres pour</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Chaque siteaccess</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Uniquement le siteaccess %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ouvrir</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Qui est concerné : %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Cochez des groupes d&apos;utilisateurs pour ne le demander qu&apos;à leurs membres (les rédacteurs, par exemple). Aucun coché : chaque utilisateur.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Enregistré dans settings/override/site.ini.append.php, pour chaque siteaccess. L&apos;enregistrement vous demande de confirmer votre identité.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Enregistré dans settings/siteaccess/%name/site.ini.append.php. Une valeur dans settings/override l&apos;emporte sur celle-ci. L&apos;enregistrement vous demande de confirmer votre identité.</translation>
     </message>
 </context>
 <context>
@@ -79266,6 +79434,30 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Your account was locked</source>
         <translation>Votre compte a été verrouillé</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Une clé d&apos;accès a été ajoutée à votre compte %login sur %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Quiconque détient cette clé d&apos;accès peut se connecter à votre compte sans votre mot de passe. Si vous ne l&apos;avez pas ajoutée, supprimez-la sous Clés d&apos;accès et changez votre mot de passe.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Une clé d&apos;accès a été supprimée de votre compte %login sur %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Elle ne peut plus se connecter à votre compte. Si vous ne l&apos;avez pas supprimée, vérifiez vos clés d&apos;accès et vos appareils.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Une clé d&apos;accès a été ajoutée à votre compte</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Une clé d&apos;accès a été supprimée de votre compte</translation>
     </message>
 </context>
 <context>

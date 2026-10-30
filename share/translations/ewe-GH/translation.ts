@@ -8066,8 +8066,8 @@
         <translation>Ŋgɔgbewɔlawo kple dɔwɔnu siwo tso ame bubuwo gbɔ eye wotsɔ wo kple Exponential ƒe ŋutɔdidi ƒe ŋlɔɖiwo le gbɔ le ŋtɔŋu faɛlwo kple LICENSE faɛl me, abe alesi lisɛns la di ene.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Esia nye Exponential ƒe kpekpeɖeŋudelawo siwo tsɔ woƒe dɔ na 7x le eZ Systems Contributor Licensing Agreement ƒe ɖoɖowo nu ƒe lisiti. Abe alesi nubabla sia ɖe mɔ ene la, 7x tsɔa kpekpeɖeŋu ɖe sia ɖe zua ame bubuwo hã le lisɛns ɖeka si faɛl si me kpekpeɖeŋu la le lia te. Lisiti la gblɔa kpekpeɖeŋudela ɖe sia ɖe ƒe ŋkɔ, kadodo ƒe nyatakaka (ne ele eme) kple faɛlwo si wotsɔ kpe ɖe eŋu.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Kpekpeɖeŋunala siwo ŋu wodoa ŋkɔ le woƒe dɔ si wowɔ le Exponential kple software si me wòtso la ŋu, kpe ɖe faɛl siwo me wokpe ɖe eŋu la ŋu. Esia nye akpedada, menye copyright gbeƒãɖeɖe o: wotsɔa kpekpeɖeŋu siwo wona Exponential la naa Exponential Foundation kple 7x le Contributor Licensing Agreement la te.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77281,6 +77281,82 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Womete ŋu kpɔ mɔxe-safui la me o. Taflatse, da asi le eŋu ake.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Akɔnta siwo gena ɖe eme kple mɔxe-safuiwo ɖeɖe ko mate ŋu azã mɔxenya le afi sia o: tia “Ge ɖe eme kple mɔxe-safui”.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login ƒe mɔxe-safuiwo</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Mɔxe-safui siwo akɔnta sia zãna gena ɖe eme. Ɖe esi le mɔ̃ si bu alo wofi dzi la ɖa: mate ŋu age ɖe eme azɔ o. Akɔnta tɔ ŋutɔ tsɔa yeyewo kpena ɖe eŋu.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Wò akɔnta hiã mɔxe-safui</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Tsɔ mɔxe-safui kpe ɖe wò akɔnta ŋu</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Tsɔ mɔxe-safui kpe ɖe eŋu be nàyi edzi. Emegbe àge ɖe eme kplii, menye kple mɔxenya ɖeɖe ko o.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Geɖeeme kple mɔxe-safui le kabakaba eye wòle dedie wu mɔxenya. Tsɔ ɖeka kpe ɖe eŋu fifia, alo yi edzi manɔmee.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Fifia o</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Ɖe mɔxe-safui “%name” ɖa?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Mate ŋu age ɖe akɔnta sia me azɔ o. Ne enye mamlɛtɔ la, akɔnta tɔ age ɖe eme kple mɔxenya, alo àɖo yeye.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Ɖe mɔxe-safui la ɖa</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Ɖe ɖa</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Mɔxe-safui aɖeke mele akɔnta sia si o.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Kpɔkpɔ ƒe mɔ̃</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Menya o</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Wò mɔxe-safui mamlɛtɔ: tsɔ bubu kpe ɖe eŋu hafi nàɖe esia ɖa.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Akɔnta sia gena ɖe eme kple mɔxe-safuiwo ɖeɖe ko (mɔxe-safui ƒe sedede): ne ɖeke megasusɔ o la, egbugbɔa gena ɖe eme kple eƒe mɔxenya.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Esia enye wò mɔxe-safui mamlɛtɔ eye wò akɔnta mate ŋu age ɖe eme ne ɖeke meli o. Tsɔ mɔxe-safui bubu kpe ɖe eŋu gbã.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Woɖe mɔxe-safui “%name” ɖa. Mate ŋu age ɖe akɔnta sia me azɔ o.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77380,6 +77456,34 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>Code from your authenticator app</source>
         <translation>Kɔd si tso wò authenticator app me</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Èle nyatakakawo tutu ɖa tegbee alo ŋkuɖodzigbalẽ aɖe ƒe nuwo ŋlɔ ɖa ge.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Wò mɔxenya kple mɔxe-safui</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Wò mɔxenya kple kɔd tso wò authenticator app me</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Alo:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Browser sia mate ŋu azã mɔxe-safuiwo o. Zã mɔ bubu, alo browser bubu.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Ne èyi edzi la, wò browser abia ɖeka le wò mɔxe-safuiwo dome.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Yi edzi kple mɔxe-safui</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77470,6 +77574,70 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     <message>
         <source>Setup</source>
         <translation>Ɖoɖowɔwɔ</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Ame ŋutɔ ƒe mɔxenya, e-mail adrɛs, mɔxe-safuiwo, geɖeeme le afɔɖeɖe eve me, gbugbɔgaxɔ kɔdwo alo API safuiwo tɔtrɔ, kple ame ŋutɔ ƒe mɔ̃ bubuwo ɖeɖe le eme.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Zãlawo wɔwɔ kple woƒe nuwo tɔtrɔ, woƒe mɔxenyawo kple mɔ̃wo, akɔnta ƒe ɖoɖowo, zãla ƒe akɔnta yeyewo dzi ɖeɖe alo gbegbe, dɔdeasiwo nana kple sededewo tɔtrɔ.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Nyatakakawo tutu ɖa</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Nugbegblẽƒe ŋlɔ ɖa, nuwo ɖeɖe le eme kple nu geɖewo ɖeɖe ɖa zi ɖeka.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Emenuwo ɖeɖe ɖa, ɖeɖe ɖe dutoƒo kple dzadzraɖo</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Emenuwo ɖeɖe ɖa (le nugbegblẽƒe hã), ɖeɖe ɖe dutoƒo kple ŋɔŋlɔ gbãtɔ dzadzraɖo; wobiana ne wodɔ agbalẽ la ɖa. Wotsi enu le gɔmedzedzea me.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Hafi zãla si ge ɖe eme nawɔ nu vevi aɖe la, egbugbɔa ɖoa kpe edzi be eyae: kple eƒe mɔxenya kple mɔxe-safui, alo mɔxe-safui manɔmee la, kple eƒe mɔxenya kple kɔd si tso eƒe authenticator app me. Web axawo ɖeɖe ko biana: REST ƒe mɔnu, SOAP, WebDAV, expservices ƒe geɖeeme kple kɔmand ƒe fli mebiana gbeɖe o.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Afi si ɖoɖowo wɔa dɔ le</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Ɖoɖowo na</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Nyatakakaɖoƒe ƒe mɔnu ɖesiaɖe</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Nyatakakaɖoƒe ƒe mɔnu %name ɖeɖe ko</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ʋu</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Ame siwo wobiana: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Tia zãlawo ƒe ƒuƒoƒowo be woabia woƒe ŋkɔtɔwo ɖeɖe ko (abe asitrɔlawo ene). Ne mètia ɖeke o: zãla ɖesiaɖe.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Wodzrae ɖo ɖe settings/override/site.ini.append.php me, na nyatakakaɖoƒe ƒe mɔnu ɖesiaɖe. Dzadzraɖo abia be nàɖo kpe edzi be wòe.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Wodzrae ɖo ɖe settings/siteaccess/%name/site.ini.append.php me. Asixɔxɔ si le settings/override me ƒo esia ta. Dzadzraɖo abia be nàɖo kpe edzi be wòe.</translation>
     </message>
 </context>
 <context>
@@ -77826,6 +77994,30 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     <message>
         <source>Your account was locked</source>
         <translation>Wotu wò akɔnta</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Wotsɔ mɔxe-safui kpe ɖe wò akɔnta %login ŋu le %site dzi.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Ame sia ame si si mɔxe-safui sia le la ate ŋu age ɖe wò akɔnta me manɔ wò mɔxenya o. Ne menye wòe tsɔe kpe ɖe eŋu o la, ɖee ɖa le Mɔxe-safuiwo te eye nàtrɔ wò mɔxenya.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Woɖe mɔxe-safui ɖa le wò akɔnta %login me le %site dzi.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Mate ŋu age ɖe wò akɔnta me azɔ o. Ne menye wòe ɖee ɖa o la, lé ŋku ɖe wò mɔxe-safuiwo kple mɔ̃ɖaŋuwo ŋu.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Wotsɔ mɔxe-safui kpe ɖe wò akɔnta ŋu</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Woɖe mɔxe-safui ɖa le wò akɔnta me</translation>
     </message>
 </context>
 <context>

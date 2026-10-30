@@ -6,7 +6,7 @@
  *
  * No database. The shim is run in a PHP process of its own, in a copy beside a stand-in index_soap.php.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

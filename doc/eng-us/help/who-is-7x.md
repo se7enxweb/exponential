@@ -56,8 +56,8 @@ says so instead of choosing one. Where something could not be checked, it is lef
 - **7x used to be Brookins Consulting.** Brookins Consulting was an eZ Publish partner in the USA
   (<https://se7enx.com/about/exponential-hosting-usa>). 7x grew from it in three stages: the idea in 2014, the start
   of the project in 2022 and its launch in December 2023 ([From Brookins Consulting to 7x](#from-brookins-consulting-to-7x-in-three-stages)).
-- **Nearly thirty years.** The copyright notice of Exponential reads "Copyright (C) 1998 - 2026 7x & Exponential
-  Foundation" next to "Copyright (C) 1999 - 2014 eZ Systems AS"
+- **Nearly thirty years.** The copyright notice of Exponential reads "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved."
+  next to "Copyright (C) 1999 - 2014 eZ Systems AS"
   ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
 - **One code base, kept alive.** "Exponential has made it beyond it's end of life in 2021 and survived" (README,
   "Exponential Project Status"). Since December 2023 7x has published the 6.0.x releases, from 6.0.0 on
@@ -85,11 +85,11 @@ Nexus, Legacy), Winter CMS and Concrete CMS (<https://se7enx.com/>).
 
 ### 7x and the Exponential Foundation
 
-The copyright holder named in every file of the kernel is "7x & Exponential Foundation" (or "7x / Exponential
-Foundation"): see [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md),
+The copyright holder named in every file of the kernel is "Exponential Foundation and 7x", together since
+29 October 2026 ([Copyright and copyleft](copyright-and-copyleft.md)): see [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md),
 [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE) and the header of almost every PHP file, for
-example `autoload.php`. The documentation carries "Copyright (C) 1998 - 2026 7x & Exponential Foundation and the
-Exponential contributors" ([The license of this documentation](../README-LICENSE.md)).
+example `autoload.php`. The documentation carries "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved."
+([The license of this documentation](../README-LICENSE.md)).
 
 The two are not the same organization. 7x is the company; the Exponential Foundation is a nonprofit corporation,
 founded on 19 March 2026, which names 7x "the current leader in contributions both financial, code, extension
@@ -150,7 +150,7 @@ overview" is the file [doc/eng-us/release-overview](../release-overview), which 
 
 | When | What happened | Source |
 |---|---|---|
-| 1998 | The first year of the copyright notice of 7x and the Exponential Foundation. | COPYRIGHT.md |
+| 1998 | The first year of the copyright notice of the Exponential Foundation and 7x. | COPYRIGHT.md |
 | 1999 | The first year of the copyright of eZ Systems AS in the code base. | COPYRIGHT.md |
 | early 2000 | "The content management system (CMS) eZ Publish was developed by the Norwegian company eZ Systems in early 2000." | <https://se7enx.com/about/exponential-hosting-usa> |
 | 2000 | The founder of 7x starts with "the original source code of eZ Publish Version 1.0 and eZ Trade 1.0 building advanced simple to use e-commerce website applications". | <https://graham.se7enx.com/7x> |
@@ -264,7 +264,7 @@ From [doc/eng-us/release-overview](../release-overview) and the git tags (`git t
 | 6.0.4 | 5 September 2024 | The first release after admin3, the responsive administration design |
 | 6.0.5 | 1 October 2024 | |
 | 6.0.6 | 17 December 2024 | |
-| 6.0.7 | 1 February 2025 | The last release for PHP 7.4 |
+| 6.0.7 | 1 February 2025 | The last release for PHP 7.4 until 6.0.15 |
 | 6.0.8 | 2 May 2025 | The first release after PHP 8.4 support began (April 2025) |
 | 6.0.9 | 10 June 2025 | |
 | 6.0.10 | 28 August 2025 | The first release named Exponential |
@@ -305,7 +305,7 @@ publishing, media portals, intranets, e-commerce and extranets" (<https://expone
 
 The supported databases, "in order of preference: 1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB ·
 5. Oracle · 6. MySQL" (README, "Requirements"). Each is described on [Database support](database-support.md). The
-operating systems are sorted into tiers on [Operating system support](os-support.md): "almost any that runs PHP 8.0
+operating systems are sorted into tiers on [Operating system support](os-support.md): "almost any that runs PHP 7.4
 or later".
 
 ## The application stack

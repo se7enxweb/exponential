@@ -27,6 +27,7 @@ not state that" over a guess.
 > test the site. The same rules for other servers: [nginx](../../examples/web-servers/nginx.md), [LiteSpeed](../../examples/web-servers/litespeed.md),
 > [Caddy](../../examples/web-servers/caddy.md), [IIS](../../examples/web-servers/iis.md), [Velocity](../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../hosting/panels/plesk.md), [cPanel](../hosting/panels/cpanel.md), [DirectAdmin](../hosting/panels/directadmin.md), [ISPConfig](../hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../guides/litespeed-page-cache.md).
 
 ## Contents
 
@@ -121,7 +122,7 @@ Nobody can promise the future, and you should not. What the sources show is a re
 
 | Fact | Source |
 |---|---|
-| The code base carries copyright years from 1999 (eZ Systems AS) and 1998 to 2026 (7x and the Exponential Foundation) | `COPYRIGHT.md` |
+| The code base carries copyright years from 1999 (eZ Systems AS) and 1998 to 2026 (the Exponential Foundation and 7x) | `COPYRIGHT.md` |
 | "Exponential has made it beyond it's end of life in 2021 and survived" | `README.md`, "Exponential Project Status" |
 | 7x took over leadership of the project in 2023; the company worked with this software since its first versions | [Who is 7x?](../who-is-7x.md#from-brookins-consulting-to-7x-in-three-stages) |
 | The Exponential Foundation, a nonprofit founded on 19 March 2026, operates the project; its mission includes "Funding, Adoption, Support, Direction, Education, Development, Promotion and Documentation" | [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md#what-the-foundation-is) |
@@ -156,9 +157,9 @@ report, "within one business day" (`SECURITY.md`). Service levels belong in a co
 
 | Objection | Answer | Source |
 |---|---|---|
-| "It needs an old PHP." | PHP 8.0 is the oldest supported version; 8.1 to 8.5 are supported; `composer.json` allows up to 8.8. | [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
+| "It needs an old PHP." | Supported: PHP 8.0 to 8.5. Usable without support: PHP 7.4 (Exponential 6.0.15 and later); `composer.json` allows up to 8.8. | [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
 | "We run Red Hat Enterprise Linux 9 with its stock PHP." | PHP 8.0, the stock PHP of RHEL 9 and its rebuilds, runs it under Apache, PHP-FPM or Velocity (from Velocity 0.0.4.54). | `README.md`, [PHP 8.0 support](../../bc/6.0/php-8.0-support.md) |
-| "We are still on PHP 7.4." | 6.0.7 is the last release for PHP 7.4; 7x "strongly recommends you to upgrade". | `README.md` |
+| "We are still on PHP 7.4." | 6.0.15 is usable on PHP 7.4 again, without support, as a bridge; 7x still recommends moving to PHP 8. | `README.md` |
 | "The interface looks dated." | admin4, with light and dark mode; jQuery 4 and TinyMCE 8 in the 6.0.15 line; AdminUI as an alternative look. | [The admin4 design](../../features/6.0/admin4-design.md), [October 2026](../../history/2026/2026-10.md), [AdminUI](../../features/6.0/exp-adminui.md) |
 | "We need headless delivery." | A REST API, versions 1 and 2. For a Symfony project with GraphQL, the family offers Exponential Platform DXP. | [REST API v1 and v2](../../guides/rest-api-v1-and-v2.md), [Which product is for you](../who-is-the-exponential-foundation.md#which-product-is-for-you) |
 
@@ -239,7 +240,7 @@ Some objections are right. Say so, and offer the alternative the sources name.
 | A published SLA from the project | There is none | A service contract with a provider |
 | More than 62 content languages in one installation | Not possible | Split into installations, or check the real need ([The limit of 62](../../languages.md#11-the-limit-of-62-content-languages)) |
 | Velocity on shared hosting | Usually not possible | Apache or LiteSpeed with `.htaccess` (`README.md`) |
-| PHP 7.4 with new features | No; PHP 7.4 stops at 6.0.7 | Upgrade PHP ([PHP versions](../who-is-the-exponential-foundation.md#php-versions)) |
+| PHP 7.4 with new features | Yes from 6.0.15, without support and without the features that need PHP 8 | Upgrade PHP ([PHP versions](../who-is-the-exponential-foundation.md#php-versions)) |
 
 ## Record new objections
 

@@ -5,7 +5,7 @@
  * content/pdf passes a layout of false and view parameters; the cache path
  * must still be built (array_merge() refuses non-arrays on PHP 8).
  *
- * @copyright Copyright (C) 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  */

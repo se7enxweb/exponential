@@ -65,12 +65,12 @@ Seiten: [Im Ökosystem veröffentlichen](personen/im-oekosystem-veroeffentlichen
 [ ] Es ist keine Vermutung, die als Tatsache dargestellt wird
 ```
 
-Seite: [Hilfe genau halten](../../../eng-us/help/community/helping-others/keeping-help-accurate.md).
+Seite: [Hilfe genau halten](../gemeinschaft/anderen-helfen/die-hilfe-korrekt-halten.md).
 
 ## Verwandte Seiten
 
 - [Ökosystem: hier beginnen](oekosystem-hier-beginnen.md)
-- [Checklisten für die Community](../../../eng-us/help/community/community-checklists.md)
+- [Checklisten für die Community](../gemeinschaft/checklisten-fuer-die-community.md)
 - [Wo die Fakten stehen](../fuersprecher/wo-die-fakten-stehen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.
 

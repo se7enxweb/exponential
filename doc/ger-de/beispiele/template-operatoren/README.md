@@ -12,7 +12,7 @@ generated: exp:help:examples
 
 Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweiterungen registrieren (das `$eZTemplateOperatorArray` jeder `eztemplateautoload.php` und `settings/template.ini` `[PHP] PHPOperatorList[]`), mit seinen Parametern und einem Beispiel. „Verwendet in“ gibt an, ob ein ausgeliefertes Template ihn verwendet; seine Seite zitiert die erste Verwendung.
 
-241 Operatoren.
+243 Operatoren.
 
 | Operator | Klasse | Parameter | In einem ausgelieferten Template verwendet |
 |---|---|---|---|
@@ -64,6 +64,8 @@ Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweit
 | [exp_demo_mode](exp_demo_mode.md) | expDemoModeOperator | 0 | ja |
 | [exp_environment](exp_environment.md) | expEnvironmentOperator | 0 |  |
 | [exp_environment_badge](exp_environment_badge.md) | expEnvironmentOperator | 0 | ja |
+| [exp_smarty_render](exp_smarty_render.md) | expSmartyOperator | 1 |  |
+| [exp_twig_render](exp_twig_render.md) | expTwigOperator | 1 |  |
 | [expinfo](expinfo.md) | eZTemplateExpInfoOperator | 0 | ja |
 | [explode](explode.md) | eZTemplateArrayOperator | 1 | ja |
 | [extract](extract.md) | eZTemplateArrayOperator | 2 | ja |
@@ -254,7 +256,7 @@ Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweit
 | [vsprintf](vsprintf.md) | eZTemplateStringsOperator | ? |  |
 | [wash](wash.md) | eZTemplateStringOperator | 1 | ja |
 | [wordtoimage](wordtoimage.md) | eZWordToImageOperator | ? | ja |
-| [wrap](wrap.md) | eZTemplateStringOperator | 3 |  |
+| [wrap](wrap.md) | eZTemplateStringOperator | 3 | ja |
 | [x18n](x18n.md) | eZi18nOperator | 4 |  |
 | [xml_encode](xml_encode.md) | ezjscEncodingTemplateFunctions | 1 |  |
 
@@ -262,4 +264,4 @@ Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweit
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `extension/ezjscore/autoloads/eztemplateautoload.php`, `extension/ezoe/autoloads/eztemplateautoload.php`, `kernel/common/eztemplateautoload.php`, `kernel/private/eztemplate/eztemplateautoload.php`, `lib/ezpdf/classes/eztemplateautoload.php`, `lib/eztemplate/classes/eztemplateautoload.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `extension/ezjscore/autoloads/eztemplateautoload.php`, `extension/ezoe/autoloads/eztemplateautoload.php`, `kernel/common/eztemplateautoload.php`, `kernel/private/eztemplate/eztemplateautoload.php`, `lib/ezpdf/classes/eztemplateautoload.php`, `lib/eztemplate/classes/eztemplateautoload.php`, `lib/smarty/classes/eztemplateautoload.php`, `lib/twig/classes/eztemplateautoload.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).

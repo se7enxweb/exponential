@@ -12,7 +12,7 @@
  *  SA-05 - The module declares user/security; the templates exist in admin, admin4 and standard and admin = admin4;
  *          the sessions page and the account overview link to it
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

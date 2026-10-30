@@ -3,7 +3,7 @@ title: Operating system support
 audience: admin, developer
 category: install-upgrade
 order: 11
-summary: Exponential 6.0.x runs on almost any operating system with PHP 8.0 or later and a web server. This page sorts them honestly into tiers (tested here, known to work, expected to work, not possible today), from Linux, the BSDs, macOS and Windows to IBM i, Haiku and the Commodore 64, with the web servers and PHP SAPIs that serve it.
+summary: Exponential 6.0.x runs on almost any operating system with PHP 8.0 or later (PHP 7.4 usable without support) and a web server. This page sorts them honestly into tiers (tested here, known to work, expected to work, not possible today), from Linux, the BSDs, macOS and Windows to IBM i, Haiku and the Commodore 64, with the web servers and PHP SAPIs that serve it.
 keywords: operating system, OS, platform, Linux, RHEL, AlmaLinux, Rocky Linux, CentOS Stream, Fedora, Debian, Ubuntu, SUSE, openSUSE, Arch, Alpine, Gentoo, Slackware, NixOS, Amazon Linux, Plesk, cPanel, FreeBSD, OpenBSD, NetBSD, DragonFly, macOS, Windows, IIS, WSL2, illumos, Solaris, OpenIndiana, AIX, HP-UX, IBM i, Docker, Podman, Kubernetes, ARM, Raspberry Pi, Graviton, RISC-V, Android, Termux, Haiku, Apache, nginx, Caddy, LiteSpeed, Velocity, FrankenPHP, PHP-FPM, SAPI, requirements
 featured: true
 context: setup/info
@@ -11,8 +11,10 @@ type: help
 ---
 # Operating system support
 
+> **Supported: PHP 8.0 to 8.5. Usable without support: PHP 7.4 (Exponential 6.0.15 and later).** [Why Exponential supports PHP 7.4](why-exponential-supports-php-7-4.md)
+
 This page is for administrators choosing a machine for Exponential and for developers who want to know whether their
-own computer can run it. The short answer: **Exponential 6.0.x runs on almost any operating system that has PHP 8.0
+own computer can run it. The short answer: **Exponential 6.0.x runs on almost any operating system that has PHP 7.4
 or later and a web server.** It is plain PHP files plus a database; it has no compiled code of its own, no
 architecture of its own and no dependency on one C library.
 
@@ -28,6 +30,7 @@ architecture of its own and no dependency on one C library.
 > test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
 > [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](hosting/panels/plesk.md), [cPanel](hosting/panels/cpanel.md), [DirectAdmin](hosting/panels/directadmin.md), [ISPConfig](hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../guides/litespeed-page-cache.md).
 
 The long answer is the rest of this page, sorted into honest tiers, because "runs anywhere PHP runs" is only useful
 when you also know what has been watched working, what should work, and what cannot work today and why.
@@ -55,7 +58,7 @@ guide](../install/02-requirements.md); where an item is a recommendation rather 
 
 | Need | Minimum | Why |
 |---|---|---|
-| PHP | **8.0** (`composer.json`: `"php": "^8.0 || ^8.1 || ... || ^8.8"`; the setup wizard: `[phpversion] MinimumVersion=8.0.0`) | the kernel; 8.0 is the stock PHP of RHEL 9 and its rebuilds |
+| PHP | **8.0** (`composer.json`: `"php": "^8.0 || ^8.1 || ... || ^8.8"`; the setup wizard: `[phpversion] MinimumVersion=7.4.0`) | the kernel; 8.0 is the stock PHP of RHEL 9 and its rebuilds |
 | PHP for Velocity | **8.0**, with `sockets` (`pcntl` and `openssl` recommended); 8.1 before Velocity 0.0.4.54 | Velocity, the recommended web server, is a PHP program |
 | PHP extensions | `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`, `pcre`, `json`, `session`, `zlib`, one database extension, `gd` or ImageMagick | the setup wizard's critical tests and `composer.json` |
 | A database | SQLite 3 needs only the `sqlite3` extension; the others need their server somewhere on the network | see [Database support](database-support.md) |

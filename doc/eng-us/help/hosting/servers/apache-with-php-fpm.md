@@ -27,6 +27,7 @@ and how to check the result. The source is
 > test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
 > [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../panels/plesk.md), [cPanel](../panels/cpanel.md), [DirectAdmin](../panels/directadmin.md), [ISPConfig](../panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md).
 
 ## Contents
 
@@ -47,7 +48,7 @@ and how to check the result. The source is
 - [Operating system support](../../os-support.md#web-servers) lists Apache httpd 2.4 with PHP-FPM (or mod_php) as
   tier 1. PHP-FPM is preferred over mod_php, which "ties PHP to Apache's prefork model"
   ([PHP SAPIs](../../os-support.md#php-sapis)).
-- It runs Exponential on PHP 8.0 and later, so it is the answer on machines with the stock PHP 8.0 of Red Hat
+- It runs Exponential on PHP 8.0 and later (PHP 7.4 usable without support), so it is the answer on machines with the stock PHP 8.0 of Red Hat
   Enterprise Linux 9 and its rebuilds.
 
 ## Step by step

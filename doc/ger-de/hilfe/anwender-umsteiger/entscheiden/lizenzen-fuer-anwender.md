@@ -51,7 +51,7 @@ Die Seite für Käufer geht tiefer: [Lizenzen für Käufer](../../geschaeft/lize
 - [Entscheiden](README.md)
 - [Lizenzen für Käufer](../../geschaeft/lizenzen-fuer-kaeufer.md)
 - [Was Ihnen gehört](../../kunden/was-ihnen-gehoert.md)
-- [Lizenzen in der Community](../../../../eng-us/help/community/how-it-works/licenses-in-the-community.md)
+- [Lizenzen in der Community](../../gemeinschaft/so-funktioniert-es/lizenzen-in-der-community.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.
 
 <!-- exp-partner-block:start -->

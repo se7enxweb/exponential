@@ -8,7 +8,7 @@
  * tables, rebuild the catalogue), datatable/connections (make, change, test and remove connections),
  * datatable/sync (the synchronisation between tables and content). Only Administrator has them in a new installation.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

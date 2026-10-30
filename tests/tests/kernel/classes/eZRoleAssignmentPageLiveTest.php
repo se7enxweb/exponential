@@ -14,7 +14,7 @@
  *  RA-07 - The role list gets the count of every role in one call, 0 for a role without assignments
  *  RA-08 - A page costs the same few queries whatever its size (no query per assignment)
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

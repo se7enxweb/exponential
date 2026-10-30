@@ -11,7 +11,7 @@
  *  PK-06 names are one line, at most 100 characters, the default when empty; transports only the known ones
  *  PK-07 the credential hash is SHA-256 hex
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

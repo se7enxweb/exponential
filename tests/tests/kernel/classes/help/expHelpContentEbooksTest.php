@@ -12,7 +12,7 @@
  *  HCB-05  the state assignment calls the release hook, guarded for a server that does not have the class yet
  *  HCB-06  a manual has an edition in the default language, and in another only when it is translated into it
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

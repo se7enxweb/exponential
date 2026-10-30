@@ -22,11 +22,11 @@ Jede Angabe stammt aus dieser Dokumentation, aus dem Code oder aus einer echten 
 ändert, ändern sich die Lektionen mit.
 
 > **Hinweis**
-> Die Prüfungen in diesen Kursen sind Ihr Material als Trainer. Das Exponential-Partnerprogramm nennt
-> Zertifizierungen für Partnerteams (Developer, Design, Solution, Sales), aber deren Lehrplan, Prüfungen und Prüfer
-> sind nicht veröffentlicht ([Zertifizierungen](../partner/zertifizierungen.md)), und diese Kurse sind nicht diese
-> Zertifizierungen. Geben Sie einen Kurs, eine Prüfung oder ein Zertifikat von Ihnen niemals als offizielle
-> Zertifizierung aus.
+> Die Prüfungen in diesen Kursen sind Ihr Material als Trainer. Offizielle Exponential-Zertifizierungen sind geplant,
+> als Teil der Zukunftspläne des Projekts für die Community, Partner, Exponential-Entwickler und Lernende; sie sind
+> noch nicht verfügbar ([Zertifizierungen und Zertifikate](../lernende/zertifizierungen-und-zertifikate.md)). Bis dahin
+> stellen Sie Zertifikate in Ihrem eigenen Namen aus, und diese Kurse sind nicht diese Zertifizierungen. Geben Sie
+> einen Kurs, eine Prüfung oder ein Zertifikat von Ihnen niemals als offizielle Zertifizierung aus.
 
 ## Inhalt
 
@@ -134,6 +134,9 @@ indem er das Passwort ändert; installieren Sie sie zwischen den Kursen neu. [De
 - [Train the Trainer: Kursüberblick](train-the-trainer/README.md)
 - [Wer ist 7x?](../wer-ist-7x.md) und [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-see-also-645 -->
+**Siehe auch:** [Lernende](../lernende/lernende-hier-beginnen.md).
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück

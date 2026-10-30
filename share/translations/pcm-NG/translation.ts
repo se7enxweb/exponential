@@ -8066,8 +8066,8 @@
         <translation>Di copyright notices of di original authors and of di third-party software wey dey inside Exponential dey for di source files and for di LICENSE file, as di license need am.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Dis na list of Exponential contributors wey don license dia work make 7x use am under di terms and conditions of di eZ Systems Contributor Licensing Agreement. As dis agreement allow, 7x dey redistribute each contribution under di same license wey di file wey di contribution dey inside get. Di list name each contributor, optional contact info and di files wey dem contribute or contribute work to.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Contributors wey we give credit for di work wey dem do for Exponential and for di software wey e grow from, plus di files wey dem contribute to. Dis na credit, no be copyright notice: contribution to Exponential dey go to Exponential Foundation and 7x under di Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77289,6 +77289,82 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>E no fit check di passkey. Abeg try again.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Accounts wey dey sign in wit passkeys only no fit use password for here: choose &quot;Sign in wit passkey&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login im passkeys</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Di passkeys wey dis account dey take sign in. Revoke di one wey dey for device wey loss or wey dem thief: e no go fit sign in again. Di owner go add new ones by imself.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Your account need passkey</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Add passkey to your account</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Add passkey make you fit continue. After dat, you go sign in wit am, no be only password.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>To sign in wit passkey fast pass password and e safe pass am. Add one now, or continue without am.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>No be now</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>You wan revoke di passkey &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>E no fit sign in to dis account again. If na di last one, di owner go sign in wit di password, or you go set new one.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Revoke di passkey</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Revoke am</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Dis account no get passkey.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Di authenticator</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Dem no know am</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Your last passkey: add another one before you comot am.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Dis account dey sign in wit passkeys only (passkey policy): if none remain, e go sign in wit im password again.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Dis na your last passkey and your account no fit sign in without one. Add another passkey first.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Dem don revoke di passkey &quot;%name&quot;. E no fit sign in to dis account again.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77388,6 +77464,34 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>Code from your authenticator app</source>
         <translation>Code from your authenticator app</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>You wan delete data forever or clear log.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Your password and passkey</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Your password and code wey come from your authenticator app</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Abi:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Dis browser no fit use passkeys. Use another way, or another browser.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>When you continue, your browser go ask for one of your passkeys.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Continue wit passkey</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77478,6 +77582,70 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>Setup</source>
         <translation>Setup</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>To change your own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and to sign out your other devices.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>To create and edit users, dia passwords and devices, account settings, to approve or reject new user accounts, to give roles and to edit policies.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>To delete data</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>To empty di trash, comot items from am and comot plenty items at once.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>To comot, publish and save content</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>To comot content (even to di trash), publish and save draft; dem go ask when di form dey send. E dey off by default.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Before any sensitive action, user wey don sign in go confirm again say na im: wit im password and passkey, or if no passkey, wit im password and di code from im authenticator app. Na only di web pages dey ask: di REST interface, SOAP, WebDAV, di expservices login and di command line no dey ever ask.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Where di settings dey work</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Settings wey dey for</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>All di siteaccess</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Di siteaccess %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Open am</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Who dem go ask: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Tick user groups make dem ask only dia members (like editors). If you no tick any: every user.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>E don save for settings/override/site.ini.append.php, for all di siteaccess. When you save, dem go ask you to confirm say na you.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>E don save for settings/siteaccess/%name/site.ini.append.php. Value wey dey settings/override go win am. When you save, dem go ask you to confirm say na you.</translation>
     </message>
 </context>
 <context>
@@ -77834,6 +78002,30 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Dem don lock your account</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Dem don add passkey to your account %login for %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Anybody wey get dis passkey fit sign in to your account without your password. If no be you add am, comot am for Passkeys and change your password.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Dem don comot passkey from your account %login for %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>E no fit sign in to your account again. If no be you comot am, check your passkeys and devices.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Dem don add passkey to your account</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Dem don comot passkey from your account</translation>
     </message>
 </context>
 <context>

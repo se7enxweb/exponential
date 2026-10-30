@@ -28,6 +28,7 @@ und Cron dort funktionieren und wie Velocity neben Plesk läuft.
 > Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
 > [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](plesk.md), [cPanel](cpanel.md), [DirectAdmin](directadmin.md), [ISPConfig](ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md).
 
 Jedes Detail zu Plesk auf dieser Seite stammt aus den im Text zitierten Quellen von Exponential. Für alles andere in Plesk lesen Sie
 in der Dokumentation von Plesk nach.
@@ -233,6 +234,8 @@ Der Entwicklungsserver betreibt Velocity neben dem Apache von Plesk auf derselbe
 - [ ] Logs des Webservers zum Log-Viewer hinzugefügt.
 
 **Eine öffentliche Demo auf Plesk.** Setzen Sie `EXP_DEMO_MODE=1` nur für das Abonnement der Demo: `SetEnv EXP_DEMO_MODE 1` in seiner `.htaccess` (Apache oder LiteSpeed) oder in seinen **Additional Apache directives**, oder `env[EXP_DEMO_MODE] = 1` über die PHP-FPM-Einstellungen der Domain, und eine Zeile `EXP_DEMO_MODE=1` in seinen **Scheduled Tasks**. Plesk betreibt jede PHP-Version mit ihrem eigenen FPM-Master: Laden Sie den der Version der Domain neu. Schritt für Schritt: [Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](../server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md).
+
+**Der Seiten-Cache von LiteSpeed unter Plesk.** Mit LiteSpeed als Webserver beantwortet sein Seiten-Cache anonyme Besucher und Crawler ohne PHP. Schalten Sie ihn je Website mit dem auskommentierten Block aus `.htaccess_root` ein, oder fügen Sie [`litespeed-page-cache.conf`](../../../../eng-us/examples/web-servers/litespeed-page-cache.conf) in **Additional directives for HTTPS** ein. Bearbeiten Sie `/var/www/vhosts/system/<domain>/conf/vhost_ssl.conf` nie von Hand: Plesk schreibt die Datei aus dem Feld des Panels neu, wann immer es die Konfiguration der Domain neu erzeugt. Schritt für Schritt: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md#plesk).
 
 ## Verwandte Seiten
 

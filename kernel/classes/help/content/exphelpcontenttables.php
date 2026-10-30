@@ -13,7 +13,7 @@
  * 6.0.15 update files or from "./console exp:help:content install" (step tables). Without them both features are off
  * and everything else works as before.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

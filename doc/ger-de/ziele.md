@@ -198,7 +198,7 @@ zutreffen, auf [Exponential sachlich vergleichen](hilfe/geschaeft/exponential-sa
 
 Eine Bedingung sollten Sie kennen, bevor Sie Code zum Kernel beitragen: 7x und die Foundation verlangen ein
 unterschriebenes Contributor Licensing Agreement, und mit Unterschrift und Einreichung übertragen Sie das Urheberrecht
-an diesem Beitrag auf 7x, das ihn dann verwenden, ändern, neu lizenzieren und verbreiten darf, ohne Sie zu fragen oder
+an diesem Beitrag auf die Exponential Foundation und 7x, die ihn dann verwenden, ändern, neu lizenzieren und verbreiten dürfen, ohne Sie zu fragen oder
 zu bezahlen. Ihre eigenen Erweiterungen sind nicht betroffen
 ([Copyright assignment (CLA)](../../CONTRIBUTING.md#copyright-assignment-cla),
 [Das CLA erklärt](hilfe/gemeinschaft/mitwirken/das-cla-erklaert.md)). Wir sagen das deutlich, weil Sie mit allen
@@ -218,11 +218,11 @@ Wir versprechen nicht mehr, als die Dokumente sagen. Wir zeigen Ihnen, woran Sie
 
 ### Wem gehört der Code?
 
-Der Copyright-Vermerk des Kernels lautet „Copyright (C) 1998 - 2026 7x & Exponential Foundation“, neben „Copyright (C)
+Der Copyright-Vermerk des Kernels lautet „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“, neben „Copyright (C)
 1999 - 2014 eZ Systems AS“, und der Code trägt die Arbeit von Hunderten von Mitwirkenden über die Jahre
 ([Wer ist 7x?, 7x und die Exponential Foundation](hilfe/wer-ist-7x.md#7x-und-die-exponential-foundation),
 [Mitwirkende und Freunde des Projekts](hilfe/wer-ist-7x.md#mitwirkende-und-freunde-des-projekts)). Neue
-Code-Beiträge zum Kernel werden über das oben beschriebene CLA auf 7x übertragen. In einem Satz: 7x führt das Projekt,
+Code-Beiträge zum Kernel werden über das oben beschriebene CLA auf die Exponential Foundation und 7x übertragen. In einem Satz: 7x führt das Projekt,
 7x und die Foundation halten das Urheberrecht, und die Lizenz ist die GPL
 ([Häufige Fehler in Berichten](hilfe/presse/haeufige-fehler-in-berichten.md)).
 

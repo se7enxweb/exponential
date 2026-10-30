@@ -117,11 +117,41 @@ erweitert: Eine Zeile, deren Einschränkung sich nicht auflösen lässt, entfäl
 
 Das Auditprotokoll des Kernels ([audit.md](audit.md)) zeichnet jede Aktion der Mitgliederverwaltung auf, aus jeder
 Oberfläche (die Admin-Designs, der Siteaccess editor, REST, Befehle), unter Apache wie unter Velocity, im Kanal
-`access`: wer (Benutzer-ID und Login, Siteaccess, Host, Adresse nach den Datenschutzregeln, User-Agent), wann, das
-Konto (ID und Login) und was sich geändert hat (`access.user.create`, `access.user.change`,
-`access.user.email.change`, `access.user.login.change`, `access.user.password.change` ohne Passwort oder Hash,
-`access.user.enable`/`disable`, `access.user.move`, `access.user.remove`, `access.role.assign`/`unassign` und
-`access.permission.refused` mit dem Konto als Ziel).
+`access`. Jeder Eintrag nennt, wer (Benutzer-ID und Login, Siteaccess, Host, Adresse nach den Datenschutzregeln,
+User-Agent), wann, das Konto (ID und Login) und was sich geändert hat:
+
+| Ereignis | Wann | Vorher → nachher |
+| --- | --- | --- |
+| `access.user.create` | ein Konto wird angelegt | – → Login, E-Mail (Datenschutzregeln), Gruppen |
+| `access.user.change` | eine neue Version eines Kontos wird veröffentlicht | die geänderten Felder als Text → dieselben Felder (nie das Benutzerkonto-Attribut) |
+| `access.user.email.change` | die E-Mail-Adresse ändert sich | E-Mail → E-Mail (standardmäßig gehasht) |
+| `access.user.login.change` | der Login ändert sich | Login → Login |
+| `access.user.password.change` | das Passwort wird gesetzt oder geändert | – (nie das Passwort oder sein Hash) |
+| `access.user.enable` / `access.user.disable` | user/setting | enabled, max_login → dieselben |
+| `access.user.move` | ein Konto wird in eine andere Gruppe verschoben | Gruppe → Gruppe |
+| `content.node.remove` (an), `content.node.add` (standardmäßig aus: `Enabled[]=content.node.add`) | ein Ort wird entfernt oder hinzugefügt | Elternknoten → Elternknoten |
+| `access.user.remove` | ein Konto wird entfernt | Login, E-Mail → – |
+| `content.object.restore` | ein Konto kommt aus dem Papierkorb zurück | – |
+| `access.role.assign` / `access.role.unassign` | eine Rolle wird zugewiesen oder entzogen | Einschränkung |
+| `access.permission.refused` | eine Ansicht wird verweigert: einen Administrator bearbeiten, user/setting eines Redakteurs, role/assign | – → die erfragte Richtlinie, Einschränkung; Ziel ist das Konto (ID, Login), wenn die Ansicht eines nennt |
+
+Das Protokoll besteht aus Dateien mit einer Hash-Kette (nur anhängend; niemand bearbeitet einen Eintrag über die
+Oberfläche) und einem Index in der Datenbank der Website (`expaudit_event` und seine Nebentabellen, in
+`share/db_schema.dba` für jede Engine; `update/common/scripts/6.0/createaudittables.php` für eine Installation, die
+älter ist als sie). Administratoren lesen es im Reiter **Audit** (`audit/dashboard`, `audit/console`, Richtlinie
+`audit/read`, einschränkbar nach Kanal), filtern nach Ereignis, Benutzer, Objekt, Zeit und Text und exportieren einen
+Filter als CSV, JSON-Zeilen oder JSON (`audit/export`). Was ein Eintrag enthalten darf, regelt
+`audit.ini [AuditPrivacySettings]`: `Field[]` je Feld `full`, `truncate`, `hash` oder `off` (`actor.ip=truncate`
+behält /24 und /48), `NeverRecord[]` lässt Schlüssel überall weg (fügen Sie einen Feldbezeichner der Benutzerklasse
+hinzu, um ihn aus `access.user.change` herauszuhalten), `PseudonymiseAfterDays`. Die Aufbewahrung gilt je Kanal
+(`[AuditChannel_access] LiveDays`, `ArchiveDays`). Welche Ereignisse aufgezeichnet werden, regelt
+`[AuditEventSettings] Enabled[]`/`Disabled[]` (Muster); Erweiterungen fügen ihre eigenen Namen und Senken hinzu
+(`[AuditSinkSettings] SinkClasses[]`: syslog, Webhook, E-Mail oder eine Klasse, die `expAuditSink` implementiert),
+ohne den Kernel zu ändern.
+
+Die Ereignisse sind allgemein: je Benutzer, nach Namen typisiert, mit Akteur, Ziel und vorher/nachher. Ereignisse der
+Sitzungsverfolgung, des Workflows und der Zusammenarbeit kommen als weitere Namen in dasselbe Protokoll, nicht in eine
+andere Tabelle.
 
 Je Konto stehen dieselben Ereignisse auch im Benutzer-Auditprotokoll, der Tabelle `expuser_audit`: **Benutzer >
 Benutzer-Auditprotokoll** (`user/audit`, Richtlinie `user/audit`) zeigt, was einem Mitglied geschah und was ein
@@ -136,17 +166,23 @@ eigenen Warte- oder Freigabezustand hinzu.
 
 Das Anlegen eines neuen **Redakteurs** ist die eine Ausnahme, und sie läuft über eine Freigabe: Die Rolle *Editor
 account requests* lässt Redakteure ein Konto direkt in Editors anlegen, und das Workflow-Ereignis *Approve user
-accounts* hält es zurück, bis ein Administrator es freigibt.
+accounts* hält es zurück, bis ein Administrator es freigibt. Siehe
+[Freigabe neuer Benutzerkonten](freigabe-von-benutzerkonten.md).
 
 ## Was auf einer bestehenden Installation zu tun ist
 
 ```bash
-php bin/php/addmembermanagement.php --dry-run     # was angelegt, hinzugefügt und zugewiesen würde
-php bin/php/addmembermanagement.php --apply               # ausführen; prüft das Ergebnis, gibt PASS oder FAIL aus
+php bin/php/addmembermanagement.php               # was angelegt, hinzugefügt und zugewiesen würde; ändert nichts
+php bin/php/addmembermanagement.php --apply       # ausführen; prüft das Ergebnis, gibt PASS oder FAIL aus
 php bin/php/addmembermanagement.php --apply --rule=editors_manage_members
 ```
 
-Das Skript legt die Rolle an, wenn sie fehlt, fügt die geplanten Richtlinien hinzu, die die Rolle nicht genau in
+Ohne `--apply` ändert das Skript nichts (seit dem 28. Oktober 2026; vorher schrieb es standardmäßig und nahm
+`--dry-run` an, das weiterhin angenommen wird und dasselbe bedeutet wie keine Option). Der Probelauf endet mit
+`PASS: 0 change(s) would be made (dry run, nothing changed; --apply writes)`, wenn die Installation vollständig ist.
+`--apply` zusammen mit `--dry-run` wird abgelehnt (Exit-Code 2).
+
+Mit `--apply` legt das Skript die Rolle an, wenn sie fehlt, fügt die geplanten Richtlinien hinzu, die die Rolle nicht genau in
 dieser Form hat (ein zweiter Lauf fügt nichts hinzu), weist die Rolle den Verwaltergruppen zu und verwirft die
 Rollen- und Benutzer-Caches. Es entfernt nie eine Richtlinie. Sobald die Kernel-Dateien da sind, leeren Sie den
 INI-Cache (`--clear-tag=ini`), damit `membermanagement.ini` gelesen wird, und starten Sie unter Velocity die Worker neu
@@ -154,4 +190,6 @@ INI-Cache (`--clear-tag=ini`), damit `membermanagement.ini` gelesen wird, und st
 
 Code: `kernel/classes/expmembermanagement.php`, Befehl `kernel/private/classes/commands/addmembermanagement.php`,
 Schutz in `kernel/classes/ezcontentobject.php` und `kernel/classes/ezcontentobjecttreenode.php`, user/setting in
-`kernel/private/classes/views/user/setting.php`. Test ohne Datenbank: `tests/tests/kernel/classes/expMemberManagementTest.php`.
+`kernel/private/classes/views/user/setting.php`, `access.user.change` in
+`kernel/content/ezcontentoperationcollection.php`, `access.user.move` in `ezcontentobjecttreenode.php`. Test ohne
+Datenbank: `tests/tests/kernel/classes/expMemberManagementTest.php`.

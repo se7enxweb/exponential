@@ -3,7 +3,7 @@
  * The basket services on a test session: the basket and its lines exist only for a session key made by the test and
  * are removed in tearDown. The checkout steps create a temporary order and cancel it; no order is completed.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

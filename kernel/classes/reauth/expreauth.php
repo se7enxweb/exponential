@@ -2,15 +2,18 @@
 /**
  * File containing the expReauth class.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
 /**
  * "Verify it's you" (doc/eng-us/guides/verify-its-you.md): before a sensitive action the signed-in user confirms who
- * they are again, with their password, one of their passkeys or the code of their authenticator app, and is then not
- * asked again for [ReauthSettings] Minutes.
+ * they are again and is then not asked again for [ReauthSettings] Minutes. How is [ReauthSettings] Factors[]: the
+ * first combination whose every way the user has, by default the password AND one of their passkeys, else the
+ * password and the code of their authenticator app, else the password alone, else a passkey alone (an account
+ * without a password). Another combination of the same strength is offered beside it (combinations()), never a
+ * weaker one.
  *
  * Which requests ask: the rules of the groups of [ReauthSettings] Groups[] whose [ReauthGroup_<name>] Enabled=true
  * (expReauthRules). By default account (one's own password, passkeys, two-step sign-in, API keys and e-mail address),
@@ -43,6 +46,8 @@ class expReauth
 
     /** The form's fields; never passed on to the view */
     const FIELD_METHOD = 'ExpReauthMethod';
+    /** The combination the form answers ("password+passkey"), one of those offered */
+    const FIELD_FACTORS = 'ExpReauthFactors';
     const FIELD_PASSWORD = 'ExpReauthPassword';
     const FIELD_CODE = 'ExpReauthCode';
     const FIELD_CONFIRM = 'ExpReauthConfirmButton';
@@ -66,13 +71,15 @@ class expReauth
     // ------------------------------------------------------------------------------------------------------------
 
     /**
-     * site.ini [ReauthSettings] and the groups, read for this request.
+     * site.ini [ReauthSettings] and the groups, read for this request (or from the site.ini of another siteaccess).
      *
-     * @return array enabled, minutes, max_failures, groups (name => array( enabled, rules ))
+     * @param eZINI|null $ini site.ini to read; null: this request's
+     * @return array enabled, minutes, max_failures, factors, bulk_count, trigger_handlers, groups (name => array( enabled,
+     *               rules, user_groups ))
      */
-    public static function settings()
+    public static function settings( $ini = null )
     {
-        $ini = eZINI::instance();
+        $ini = $ini instanceof eZINI ? $ini : eZINI::instance();
         $get = function ( $block, $name, $default ) use ( $ini ) {
             return $ini->hasVariable( $block, $name ) ? $ini->variable( $block, $name ) : $default;
         };
@@ -83,15 +90,94 @@ class expReauth
             if ( $name === '' || !preg_match( '/^[A-Za-z0-9_]+$/', $name ) || isset( $groups[$name] ) )
                 continue;
             $block = 'ReauthGroup_' . $name;
+            $userGroups = array();
+            foreach ( (array)$get( $block, 'UserGroups', array() ) as $id )
+                if ( is_numeric( $id ) && (int)$id > 0 )
+                    $userGroups[] = (int)$id;
             $groups[$name] = array( 'enabled' => self::isOn( $get( $block, 'Enabled', 'false' ) ),
-                                    'rules' => array_values( array_filter( array_map( 'trim', (array)$get( $block, 'Rules', array() ) ), 'strlen' ) ) );
+                                    'rules' => array_values( array_filter( array_map( 'trim', (array)$get( $block, 'Rules', array() ) ), 'strlen' ) ),
+                                    'user_groups' => array_values( array_unique( $userGroups ) ) );
         }
         return array(
             'enabled' => self::isOn( $get( 'ReauthSettings', 'Reauth', 'enabled' ) ),
             'minutes' => max( 1, min( 1440, (int)$get( 'ReauthSettings', 'Minutes', 10 ) ) ),
             'max_failures' => max( 1, (int)$get( 'ReauthSettings', 'MaxFailures', 5 ) ),
+            'factors' => self::parseFactors( (array)$get( 'ReauthSettings', 'Factors', array() ) ),
+            'bulk_count' => max( 2, (int)$get( 'ReauthSettings', 'BulkCount', 2 ) ),
+            'trigger_handlers' => array_values( array_filter( array_map( 'trim', (array)$get( 'ReauthSettings', 'TriggerHandlers', array() ) ), 'strlen' ) ),
             'groups' => $groups,
         );
+    }
+
+    /**
+     * The combinations of [ReauthSettings] Factors[], in order: each a list of methods ("password+passkey"). Unknown
+     * methods make a line unusable; an empty or unusable list gives the shipped order (the owner's: the password and
+     * a passkey, else the password and the code of the authenticator app, else the password, else a passkey).
+     *
+     * @param array $lines
+     * @return array[] each a list of METHOD_* values
+     */
+    public static function parseFactors( array $lines )
+    {
+        $known = array( self::METHOD_PASSWORD, self::METHOD_PASSKEY, self::METHOD_CODE );
+        $out = array();
+        foreach ( $lines as $line )
+        {
+            $parts = array_values( array_unique( array_filter( array_map( 'trim', explode( '+', strtolower( (string)$line ) ) ), 'strlen' ) ) );
+            if ( !$parts || array_diff( $parts, $known ) )
+                continue;
+            if ( !in_array( $parts, $out, true ) )
+                $out[] = $parts;
+        }
+        if ( !$out )
+            $out = array( array( self::METHOD_PASSWORD, self::METHOD_PASSKEY ), array( self::METHOD_PASSWORD, self::METHOD_CODE ),
+                          array( self::METHOD_PASSWORD ), array( self::METHOD_PASSKEY ) );
+        return $out;
+    }
+
+    /**
+     * The combinations a user can answer, strongest first: the first line of $factors whose every method the user
+     * has, and the later lines with as many methods (another way of the same strength: the code of the
+     * authenticator app instead of a passkey on a browser without passkeys). Never a weaker one: a stolen password
+     * cannot choose its way around the second step. Pure.
+     *
+     * @param string[] $available methods()
+     * @param array[] $factors parseFactors()
+     * @return array[] the combinations offered; empty when the user can answer none
+     */
+    public static function combinations( array $available, array $factors )
+    {
+        $out = array();
+        $size = null;
+        foreach ( $factors as $combination )
+        {
+            if ( array_diff( $combination, $available ) )
+                continue;
+            if ( $size === null )
+                $size = count( $combination );
+            if ( count( $combination ) === $size )
+                $out[] = $combination;
+        }
+        return $out;
+    }
+
+    /**
+     * The combination a form answers: the one it names (ExpReauthFactors, "password+code") when it is one of those
+     * offered, else the first offered. Pure.
+     *
+     * @param array[] $offered combinations()
+     * @param mixed $named
+     * @return string[]|null null when nothing is offered
+     */
+    public static function chosenCombination( array $offered, $named )
+    {
+        if ( !$offered )
+            return null;
+        if ( is_string( $named ) && $named !== '' )
+            foreach ( $offered as $combination )
+                if ( implode( '+', $combination ) === strtolower( trim( $named ) ) )
+                    return $combination;
+        return $offered[0];
     }
 
     /**
@@ -113,21 +199,96 @@ class expReauth
      * @param array $post
      * @param callable|null $whose
      * @param callable|null $credentials
+     * @param callable[] $conditions the rule conditions by name (bulk => function(): bool)
+     * @param callable|null $memberOf function(): int[], the user's groups (content object ids), for UserGroups[]
      * @return array|null group, rule
      */
-    public static function matchGroup( array $settings, $module, $view, $method, array $post, $whose = null, $credentials = null )
+    public static function matchGroup( array $settings, $module, $view, $method, array $post, $whose = null, $credentials = null,
+                                       array $conditions = array(), $memberOf = null )
     {
         if ( empty( $settings['enabled'] ) || in_array( $module . '/' . $view, self::NEVER, true ) )
             return null;
+        $groupsOfUser = null;
         foreach ( $settings['groups'] as $name => $group )
         {
             if ( empty( $group['enabled'] ) )
                 continue;
-            $rule = expReauthRules::match( $group['rules'], $module, $view, $method, $post, $whose, $credentials );
-            if ( $rule !== null )
-                return array( 'group' => $name, 'rule' => $rule );
+            $rule = expReauthRules::match( $group['rules'], $module, $view, $method, $post, $whose, $credentials, $conditions );
+            if ( $rule === null )
+                continue;
+            if ( !self::appliesToUser( $group, $groupsOfUser, $memberOf ) )
+                continue;
+            return array( 'group' => $name, 'rule' => $rule );
         }
         return null;
+    }
+
+    /**
+     * Whether a group asks this user: every user, or with UserGroups[] only their members.
+     *
+     * @param array $group
+     * @param int[]|null $groupsOfUser filled on first use
+     * @param callable|null $memberOf
+     * @return bool
+     */
+    protected static function appliesToUser( array $group, &$groupsOfUser, $memberOf )
+    {
+        if ( empty( $group['user_groups'] ) )
+            return true;
+        if ( $groupsOfUser === null )
+            $groupsOfUser = $memberOf ? array_map( 'intval', (array)call_user_func( $memberOf ) ) : array();
+        return (bool)array_intersect( $group['user_groups'], $groupsOfUser );
+    }
+
+    /**
+     * The group an extension's trigger handler ([ReauthSettings] TriggerHandlers[], expReauthTriggerHandler) names for a
+     * request the rules did not match; only a group that exists, is on and applies to the user counts.
+     *
+     * @param array $settings
+     * @param string $module
+     * @param string $view
+     * @param string $method
+     * @param array $post
+     * @param array $params
+     * @param eZUser $user
+     * @param callable|null $memberOf
+     * @return array|null group, rule ("handler:<class>")
+     */
+    public static function matchHandlers( array $settings, $module, $view, $method, array $post, array $params, eZUser $user, $memberOf = null )
+    {
+        if ( empty( $settings['enabled'] ) || in_array( $module . '/' . $view, self::NEVER, true ) )
+            return null;
+        $groupsOfUser = null;
+        foreach ( isset( $settings['trigger_handlers'] ) ? $settings['trigger_handlers'] : array() as $class )
+        {
+            if ( !class_exists( $class ) || !is_subclass_of( $class, 'expReauthTriggerHandler' ) )
+                continue;
+            $handler = new $class();
+            $name = $handler->reauthGroup( $module, $view, $method, $post, $params, $user );
+            if ( !is_string( $name ) || !isset( $settings['groups'][$name] ) || empty( $settings['groups'][$name]['enabled'] ) )
+                continue;
+            if ( !self::appliesToUser( $settings['groups'][$name], $groupsOfUser, $memberOf ) )
+                continue;
+            return array( 'group' => $name, 'rule' => 'handler:' . $class );
+        }
+        return null;
+    }
+
+    /**
+     * How many items the removal of this request takes away: the selection content/removeobject is asked to remove
+     * (the session's DeleteIDArray, set by content/action), 0 for another view.
+     *
+     * @param string $module
+     * @param string $view
+     * @return int
+     */
+    public static function removalCount( $module, $view )
+    {
+        if ( $module . '/' . $view !== 'content/removeobject' )
+            return 0;
+        $http = eZHTTPTool::instance();
+        $ids = $http->hasSessionVariable( 'DeleteIDArray' ) ? $http->sessionVariable( 'DeleteIDArray' ) : array();
+        return is_array( $ids ) ? count( $ids ) : 0;
     }
 
     // ------------------------------------------------------------------------------------------------------------
@@ -168,6 +329,45 @@ class expReauth
                                                               'until' => self::now() + 60 * max( 1, $minutes ) ) );
         if ( $http->hasSessionVariable( self::FAILURES_KEY ) )
             $http->removeSessionVariable( self::FAILURES_KEY );
+    }
+
+    /**
+     * After a web sign-in: the sign-in counts as a confirmation when it asked for at least one combination "Verify
+     * it's you" would offer this account (a password sign-in of an account that has only a password; the password
+     * and the authenticator app's code of the two-step sign-in; a passkey of an account without a password), so the
+     * user is not asked again right away for the same. A sign-in that asked for less (the password of an account with
+     * a passkey) counts for nothing.
+     *
+     * @param eZUser $user
+     * @param string[] $used the ways the sign-in asked for (METHOD_*)
+     * @return bool counted
+     */
+    public static function markFreshAfterSignIn( eZUser $user, array $used )
+    {
+        $settings = self::settings();
+        if ( empty( $settings['enabled'] ) )
+            return false;
+        if ( !self::signInCounts( self::methods( $user ), $settings['factors'], $used ) )
+            return false;
+        self::markFresh( $user, 'signin:' . implode( '+', $used ), $settings['minutes'] );
+        return true;
+    }
+
+    /**
+     * Whether a sign-in with the ways $used covers one of the combinations offered to an account with $available.
+     * Pure.
+     *
+     * @param string[] $available methods()
+     * @param array[] $factors parseFactors()
+     * @param string[] $used
+     * @return bool
+     */
+    public static function signInCounts( array $available, array $factors, array $used )
+    {
+        foreach ( self::combinations( $available, $factors ) as $combination )
+            if ( !array_diff( $combination, $used ) )
+                return true;
+        return false;
     }
 
     /** Forgets a confirmation. */
@@ -243,17 +443,55 @@ class expReauth
     }
 
     /**
-     * Checks an answer of the form.
+     * The combinations of ways this user is offered ([ReauthSettings] Factors[]).
+     *
+     * @param eZUser $user
+     * @param array|null $settings settings()
+     * @return array[]
+     */
+    public static function offeredCombinations( eZUser $user, $settings = null )
+    {
+        $settings = $settings ?: self::settings();
+        return self::combinations( self::methods( $user ), $settings['factors'] );
+    }
+
+    /**
+     * Checks an answer of the form: every way of the combination it answers (ExpReauthFactors, one of those offered;
+     * the first offered when it names none). The password and the code are checked before the passkey, so a wrong
+     * password does not use up the passkey's challenge for nothing.
      *
      * @param eZUser $user
      * @param array $post
+     * @param array|null $settings settings()
+     * @return array ok, method ("password+passkey"), reason (when not ok)
+     */
+    public static function verify( eZUser $user, array $post, $settings = null )
+    {
+        $offered = self::offeredCombinations( $user, $settings );
+        $combination = self::chosenCombination( $offered, isset( $post[self::FIELD_FACTORS] ) ? $post[self::FIELD_FACTORS] : null );
+        if ( $combination === null )
+            return array( 'ok' => false, 'method' => '', 'reason' => 'method' );
+        $order = array_values( array_intersect( array( self::METHOD_PASSWORD, self::METHOD_CODE, self::METHOD_PASSKEY ), $combination ) );
+        foreach ( $order as $method )
+        {
+            $r = self::verifyOne( $user, $method, $post );
+            if ( !$r['ok'] )
+                return array( 'ok' => false, 'method' => implode( '+', $combination ), 'reason' => $r['reason'] );
+        }
+        return array( 'ok' => true, 'method' => implode( '+', $combination ), 'reason' => null );
+    }
+
+    /**
+     * Checks one way of an answer.
+     *
+     * @param eZUser $user
+     * @param string $method
+     * @param array $post
      * @return array ok, method, reason (when not ok)
      */
-    public static function verify( eZUser $user, array $post )
+    public static function verifyOne( eZUser $user, $method, array $post )
     {
-        $method = isset( $post[self::FIELD_METHOD] ) && is_string( $post[self::FIELD_METHOD] ) ? $post[self::FIELD_METHOD] : self::METHOD_PASSWORD;
-        $available = self::methods( $user );
-        if ( !in_array( $method, $available, true ) )
+        if ( !in_array( $method, self::methods( $user ), true ) )
             return array( 'ok' => false, 'method' => $method, 'reason' => 'method' );
         switch ( $method )
         {
@@ -321,9 +559,63 @@ class expReauth
         // the answer of the form itself is checked against the original request's rules: without its fields
         $original = self::withoutOwnFields( $post );
         $originalMethod = isset( $post[self::FIELD_GET] ) ? 'GET' : $method;
-        $match = self::matchGroup( $settings, $moduleName, $view, $originalMethod, $original, $whose, $credentials );
+        $conditions = array( 'bulk' => function () use ( $moduleName, $view, $settings ) {
+            return self::removalCount( $moduleName, $view ) >= $settings['bulk_count'];
+        } );
+        $memberOf = function () use ( $user ) {
+            return (array)$user->groups();
+        };
+        $match = self::matchGroup( $settings, $moduleName, $view, $originalMethod, $original, $whose, $credentials, $conditions, $memberOf );
+        if ( $match === null )
+            $match = self::matchHandlers( $settings, $moduleName, $view, $originalMethod, $original, (array)$params, $user, $memberOf );
         if ( $match === null )
             return null;
+        return self::ask( $module, $view, $match, $settings, $user );
+    }
+
+    /**
+     * For a view (an extension's too) that decides itself that what it is about to do needs "Verify it's you":
+     * null when the user confirmed within the window (go on), else the module result to return instead (the page,
+     * which posts the request again after the answer). Anonymous visitors and a switched-off feature or group get
+     * null. Call it before the view changes anything:
+     *
+     *     if ( ( $result = expReauth::requireFresh( $Params['Module'], 'myview', 'system' ) ) !== null )
+     *         return $result;
+     *
+     * @param eZModule $module
+     * @param string $view
+     * @param string $group a group of [ReauthSettings] Groups[]
+     * @return array|null
+     */
+    public static function requireFresh( $module, $view, $group )
+    {
+        if ( !$module instanceof eZModule )
+            return null;
+        $user = eZUser::currentUser();
+        if ( !$user instanceof eZUser || !$user->isRegistered() )
+            return null;
+        $settings = self::settings();
+        if ( empty( $settings['enabled'] ) || !isset( $settings['groups'][$group] ) || empty( $settings['groups'][$group]['enabled'] ) )
+            return null;
+        $groupsOfUser = null;
+        $memberOf = function () use ( $user ) {
+            return (array)$user->groups();
+        };
+        if ( !self::appliesToUser( $settings['groups'][$group], $groupsOfUser, $memberOf ) )
+            return null;
+        return self::ask( $module, (string)$view, array( 'group' => (string)$group, 'rule' => 'view' ), $settings, $user );
+    }
+
+    /**
+     * The question itself, for a request that matched a group: null when the confirmation is fresh or was just
+     * given (the view runs), else the module result.
+     */
+    protected static function ask( $module, $view, array $match, array $settings, eZUser $user )
+    {
+        $moduleName = (string)$module->attribute( 'name' );
+        $method = isset( $_SERVER['REQUEST_METHOD'] ) ? strtoupper( (string)$_SERVER['REQUEST_METHOD'] ) : 'GET';
+        $post = is_array( $_POST ) ? $_POST : array();
+        $original = self::withoutOwnFields( $post );
 
         if ( self::isFresh( $user ) )
         {
@@ -346,7 +638,7 @@ class expReauth
         $failed = null;
         if ( $method === 'POST' && array_key_exists( self::FIELD_CONFIRM, $post ) )
         {
-            $result = self::verify( $user, $post );
+            $result = self::verify( $user, $post, $settings );
             if ( $result['ok'] )
             {
                 self::markFresh( $user, $result['method'], $settings['minutes'] );
@@ -467,7 +759,7 @@ class expReauth
     {
         // the passkey fields belong to the form only in an answer of it; elsewhere they are the view's own (user/passkeys)
         $answer = array_key_exists( self::FIELD_CONFIRM, $post );
-        foreach ( array( self::FIELD_METHOD, self::FIELD_PASSWORD, self::FIELD_CODE, self::FIELD_CONFIRM, self::FIELD_CANCEL, self::FIELD_GET,
+        foreach ( array( self::FIELD_METHOD, self::FIELD_FACTORS, self::FIELD_PASSWORD, self::FIELD_CODE, self::FIELD_CONFIRM, self::FIELD_CANCEL, self::FIELD_GET,
                          self::FIELD_FILES ) as $f )
             unset( $post[$f] );
         if ( $answer )
@@ -547,14 +839,23 @@ class expReauth
     protected static function page( eZUser $user, array $match, array $settings, array $post, $isGet, $failed, $failures )
     {
         $methods = self::methods( $user );
+        $combinations = array();
+        $usesPasskey = false;
+        foreach ( self::combinations( $methods, $settings['factors'] ) as $combination )
+        {
+            $combinations[] = array( 'key' => implode( '+', $combination ), 'methods' => $combination );
+            $usesPasskey = $usesPasskey || in_array( self::METHOD_PASSKEY, $combination, true );
+        }
         $passkeyOptions = null;
-        if ( in_array( self::METHOD_PASSKEY, $methods, true ) )
+        if ( $usesPasskey )
         {
             $service = new expPasskeyService();
             $passkeyOptions = $service->reauthOptions( $user );
         }
         $tpl = eZTemplate::factory();
         $tpl->setVariable( 'methods', $methods );
+        // the forms, the first the one to use; each lists the ways it asks for together (password, passkey, code)
+        $tpl->setVariable( 'combinations', $combinations );
         $tpl->setVariable( 'group', $match['group'] );
         $tpl->setVariable( 'minutes', $settings['minutes'] );
         $tpl->setVariable( 'failed', $failed !== null );

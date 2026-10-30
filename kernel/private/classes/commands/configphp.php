@@ -11,7 +11,7 @@
  * config.php is read as PHP tokens and never run (expConfigPhpEditor), so these commands work when it does not load;
  * bin/php/configphp.php keeps autoload.php from reading a config.php that does not compile.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

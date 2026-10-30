@@ -52,7 +52,7 @@ requires `mongodb/mongodb`, resolves the dependencies fresh with
 committed lock file: the dev requirements differ per PHP version, and a frozen lock
 broke on every later repin of `composer.json`.
 
-PHP 8.0, the oldest supported version, is not in this matrix: PHPUnit 10 and later
+PHP 7.4 and PHP 8.0 are not in this matrix: PHPUnit 10 and later
 need 8.1, and the tests are written for them. PHP 8.0 is covered by the job `php80`
 of `.github/workflows/quality.yml` instead: `php -l` with 8.0 on every PHP file, a
 production `composer install` on 8.0, and the boot smoke test `tests/bin/bootsmoke.php`

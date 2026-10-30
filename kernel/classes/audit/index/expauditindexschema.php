@@ -10,7 +10,7 @@
  * (update/common/scripts/6.0/createaudittables.php) and the tests use, so an installation made before the tables
  * existed gets exactly the tables a new installation has.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

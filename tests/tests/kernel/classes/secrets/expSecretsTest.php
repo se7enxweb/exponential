@@ -23,7 +23,7 @@
  *          ones already current; a secret of a key that is gone is unreadable and counted
  *  SC-10 - required() throws naming the secret, never a value; set() refuses env: names, empty values, bad scopes
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

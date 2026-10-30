@@ -83,10 +83,10 @@ Pfad B, dann:
 ## Pfad E: zu Exponential Platform DXP wechseln
 
 1. [Themes für Exponential Platform](themes-fuer-exponential-platform.md)
-2. [Twig-Templates und die Design-Engine](../../../eng-us/help/dxp-developers/twig-templates-and-the-design-engine.md)
-3. [Das Standarddesign und Ihr Theme](../../../eng-us/help/dxp-developers/the-standard-design-and-your-theme.md)
-4. [Assets mit Yarn und Encore bauen](../../../eng-us/help/dxp-developers/building-assets-with-yarn-and-encore.md)
-5. [Bildvarianten](../../../eng-us/help/dxp-developers/image-variations.md)
+2. [Twig-Templates und die Design-Engine](../dxp-entwickler/twig-templates-und-die-design-engine.md)
+3. [Das Standarddesign und Ihr Theme](../dxp-entwickler/das-standarddesign-und-ihr-theme.md)
+4. [Assets mit Yarn und Encore bauen](../dxp-entwickler/assets-mit-yarn-und-encore-bauen.md)
+5. [Bildvarianten](../dxp-entwickler/bildvariationen.md)
 
 ## Kurze Pfade nach Thema
 

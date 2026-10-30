@@ -23,6 +23,18 @@ class expSmartySecurity extends \Smarty\Security
     /** @var array name => bool: the same for a modifier */
     private $nativeModifiers = array();
 
+    /** @var \Smarty\Smarty the instance the policy belongs to (Smarty's Security keeps it in an undeclared property) */
+    private $owner;
+
+    /**
+     * @param \Smarty\Smarty $smarty
+     */
+    public function __construct( \Smarty\Smarty $smarty )
+    {
+        parent::__construct( $smarty );
+        $this->owner = $smarty;
+    }
+
     /**
      * The policy of smarty.ini [SmartySettings] for $smarty.
      *
@@ -133,7 +145,7 @@ class expSmartySecurity extends \Smarty\Security
         if ( !isset( $this->nativeTags[$name] ) )
         {
             $native = false;
-            foreach ( $this->smarty->getExtensions() as $extension )
+            foreach ( $this->owner->getExtensions() as $extension )
             {
                 if ( $extension instanceof expSmartyExtension )
                     continue;
@@ -154,7 +166,7 @@ class expSmartySecurity extends \Smarty\Security
         if ( !isset( $this->nativeModifiers[$name] ) )
         {
             $native = false;
-            foreach ( $this->smarty->getExtensions() as $extension )
+            foreach ( $this->owner->getExtensions() as $extension )
             {
                 if ( $extension instanceof expSmartyExtension )
                     continue;

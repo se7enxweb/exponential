@@ -27,6 +27,7 @@ das Ergebnis prüfen. Die Quelle ist [Kapitel 8, Apache mit PHP-FPM](../../../in
 > Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
 > [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../control-panels/plesk.md), [cPanel](../control-panels/cpanel.md), [DirectAdmin](../control-panels/directadmin.md), [ISPConfig](../control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md).
 
 ## Inhalt
 
@@ -46,7 +47,7 @@ das Ergebnis prüfen. Die Quelle ist [Kapitel 8, Apache mit PHP-FPM](../../../in
 - Die Rewrite-Regeln werden mit Exponential als `.htaccess_root` ausgeliefert; Apache (und LiteSpeed) lesen sie direkt.
 - [Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md#webserver) führt Apache httpd 2.4 mit PHP-FPM (oder mod_php) als Stufe 1.
   PHP-FPM wird mod_php vorgezogen, das PHP an das Prefork-Modell von Apache bindet ([PHP-SAPIs](../../betriebssystemunterstuetzung.md#php-sapis)).
-- Es betreibt Exponential auf PHP 8.0 und neuer und ist damit die Antwort auf Maschinen mit dem Standard-PHP 8.0 von Red Hat Enterprise
+- Es betreibt Exponential auf PHP 8.0 und neuer (PHP 7.4 ohne Support nutzbar) und ist damit die Antwort auf Maschinen mit dem Standard-PHP 8.0 von Red Hat Enterprise
   Linux 9 und seinen Nachbauten.
 
 ## Schritt für Schritt

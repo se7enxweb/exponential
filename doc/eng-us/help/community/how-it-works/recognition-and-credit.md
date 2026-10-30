@@ -21,8 +21,9 @@ type: help
 
 - **The Git history** keeps the author of every merged commit; `git shortlog -sn` shows everyone who contributed
   ([Recognition for supporters](../../supporters/recognition-for-supporters.md)).
-- **The documentation's copyright notice** names "the Exponential contributors" next to 7x and the Foundation
-  ([The license of this documentation](../../../README-LICENSE.md)).
+- **Credit is not copyright.** The copyright notice names only the Exponential Foundation and 7x, because every
+  contributor assigns the copyright in a contribution to them through the CLA; the credit stays with the people
+  ([Copyright and copyleft](../../copyright-and-copyleft.md)).
 - **Credit for other projects** appears in the README, for example the LoveStack improvements rebuilt "with full credit
   to Mugo Web" (`README.md`).
 - **Contributors by name**: [How the project grows](../../who-is-the-exponential-foundation.md#how-the-project-grows)

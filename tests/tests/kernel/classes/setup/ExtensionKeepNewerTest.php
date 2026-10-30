@@ -14,7 +14,7 @@
  *  KN-05 - keepInstalledReason(): the published 2012 packages against the Composer copies (ezwebin, ezstarrating,
  *          ezwt, ezgmaplocation) are kept, with a reason naming both versions; a newer package is not
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

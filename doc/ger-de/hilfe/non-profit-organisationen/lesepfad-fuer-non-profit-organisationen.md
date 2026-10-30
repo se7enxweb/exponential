@@ -85,7 +85,7 @@ Wenn Sie eine Stunde Zeit haben:
 6. [Checkliste zum Start](checklisten/checkliste-zum-start.md)
 
 Wer noch nie eine Website betrieben hat, kann mit
-[Nicht-Techniker: hier beginnen](../../../eng-us/help/non-technical-people/non-technical-people-start-here.md) anfangen.
+[Nicht-Techniker: hier beginnen](../nicht-technische-menschen/nicht-technische-menschen-hier-beginnen.md) anfangen.
 
 ## Verwandte Seiten
 

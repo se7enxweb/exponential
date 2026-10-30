@@ -47,11 +47,11 @@
     <name>design/standard/content/datatype</name>
     <message>
         <source>Disable editor</source>
-        <translation>Hinga kĩnyamũ kĩa gũcenjia</translation>
+        <translation>Hinga porogiramu ya gũcenjia</translation>
     </message>
     <message>
         <source>Enable editor</source>
-        <translation>Hingũra kĩnyamũ kĩa gũcenjia</translation>
+        <translation>Hingũra porogiramu ya gũcenjia</translation>
     </message>
 </context>
 <context>
@@ -130,27 +130,27 @@
     </message>
     <message>
         <source>Switch to the editor %engine</source>
-        <translation>Thiĩ kĩnyamũ-inĩ kĩa gũcenjia %engine</translation>
+        <translation>Thiĩ porogiramu-inĩ ya gũcenjia %engine</translation>
     </message>
     <message>
         <source>This file type is not accepted by the editor: %file</source>
-        <translation>Mũthemba ũyũ wa faili ndũtĩkĩrĩtio nĩ kĩnyamũ kĩa gũcenjia: %file</translation>
+        <translation>Mũthemba ũyũ wa faili ndũtĩkĩrĩtio nĩ porogiramu ya gũcenjia: %file</translation>
     </message>
     <message>
         <source>Online editor</source>
-        <translation>Kĩnyamũ kĩa gũcenjia kĩa intaneti</translation>
+        <translation>Porogiramu ya gũcenjia ya intaneti</translation>
     </message>
     <message>
         <source>The editor of your user was saved.</source>
-        <translation>Kĩnyamũ kĩa gũcenjia kĩa mũhũthiri waku nĩ kĩaigwo.</translation>
+        <translation>Porogiramu ya gũcenjia ya mũhũthiri waku nĩ yaigwo.</translation>
     </message>
     <message>
         <source>This editor is not available.</source>
-        <translation>Kĩnyamũ gĩkĩ kĩa gũcenjia gĩtiboneka.</translation>
+        <translation>Porogiramu ĩno ya gũcenjia ndĩrĩ ho.</translation>
     </message>
     <message>
         <source>Editor for text fields</source>
-        <translation>Kĩnyamũ kĩa gũcenjia kĩa mahandũ ma maandĩko</translation>
+        <translation>Porogiramu ya gũcenjia ya mahandũ ma maandĩko</translation>
     </message>
     <message>
         <source>Default of this site (%engine)</source>
@@ -158,11 +158,11 @@
     </message>
     <message>
         <source>In use now: %engine. Saved only for your user, the text of your content is the same with every editor.</source>
-        <translation>Kĩrahũthĩrwo rĩu: %engine. Nĩ kĩaigwo gũkorwo mũhũthiri waku o, ũhoro wa maandĩko maku nĩ o o thĩinĩ wa kĩnyamũ o gĩothe.</translation>
+        <translation>Ĩrahũthĩrwo rĩu: %engine. Nĩ yaigwo gũkorwo mũhũthiri waku o, ũhoro wa maandĩko maku nĩ o o thĩinĩ wa porogiramu o yothe ya gũcenjia.</translation>
     </message>
     <message>
         <source>Editor engines</source>
-        <translation>Mainjini ma ikĩnyamũ cia gũcenjia</translation>
+        <translation>Mainjini ma porogiramu cia gũcenjia</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -190,11 +190,11 @@
     </message>
     <message>
         <source>The edit form also has a button to switch to each of the other available editors.</source>
-        <translation>Ngathĩ ya gũcenjia ĩrĩ na kĩbataro kĩa gũthiĩ kĩnyamũ-inĩ o gĩothe kĩngĩ kĩa gũcenjia kĩonekaga.</translation>
+        <translation>Ngathĩ ya gũcenjia ĩrĩ na kĩbataro kĩa gũthiĩ porogiramu-inĩ o yothe ĩngĩ ya gũcenjia ĩrĩa ĩonekaga.</translation>
     </message>
     <message>
         <source>The Online Editor on TinyMCE 3.5, the editor of every installation.</source>
-        <translation>Online Editor thĩinĩ wa TinyMCE 3.5, kĩnyamũ kĩa gũcenjia kĩa ũingĩrio o wothe.</translation>
+        <translation>Online Editor thĩinĩ wa TinyMCE 3.5, porogiramu ya gũcenjia ya ũingĩrio o wothe.</translation>
     </message>
     <message>
         <source>The Online Editor on TinyMCE 8 (GPL), with the dialogs of the Online Editor.</source>
@@ -202,11 +202,11 @@
     </message>
     <message>
         <source>Switch to the new editor (TinyMCE 8)</source>
-        <translation>Thiĩ kĩnyamũ-inĩ kĩerũ kĩa gũcenjia (TinyMCE 8)</translation>
+        <translation>Thiĩ porogiramu-inĩ njerũ ya gũcenjia (TinyMCE 8)</translation>
     </message>
     <message>
         <source>Switch to the previous editor (TinyMCE 3)</source>
-        <translation>Cooka kĩnyamũ-inĩ kĩa mbere kĩa gũcenjia (TinyMCE 3)</translation>
+        <translation>Cooka porogiramu-inĩ ya mbere ya gũcenjia (TinyMCE 3)</translation>
     </message>
     <message>
         <source>The text is kept, the choice is saved for your user.</source>
@@ -1140,7 +1140,7 @@ Nĩ ũrenda ũhoro mũingĩ ũkoniĩ ũndũ ũyũ?</translation>
     </message>
     <message>
         <source>Jump to tool buttons - Alt+Q, Jump to editor - Alt-Z, Jump to element path - Alt-X</source>
-        <translation>Thiĩ kĩbataro-inĩ kĩa ciana cia wĩra - Alt+Q, Thiĩ kĩnyamũ-inĩ kĩa gũcenjia - Alt-Z, Thiĩ njĩra-inĩ ya kĩndũ - Alt-X</translation>
+        <translation>Thiĩ kĩbataro-inĩ kĩa ciana cia wĩra - Alt+Q, Thiĩ porogiramu-inĩ ya gũcenjia - Alt-Z, Thiĩ njĩra-inĩ ya kĩndũ - Alt-X</translation>
     </message>
     <message>
         <source>Next</source>
@@ -1168,7 +1168,7 @@ Nĩ ũrenda ũhoro mũingĩ ũkoniĩ ũndũ ũyũ?</translation>
     </message>
     <message>
         <source>HTML Source Editor</source>
-        <translation>Kĩnyamũ kĩa gũcenjia kĩrĩa kĩa HTML</translation>
+        <translation>Porogiramu ya gũcenjia ĩrĩa ya HTML</translation>
     </message>
     <message>
         <source>Word wrap</source>
@@ -1450,7 +1450,7 @@ Nĩ ũrenda ũhoro mũingĩ ũkoniĩ ũndũ ũyũ?</translation>
     </message>
     <message>
         <source>Undo the last operation in the editor. To undo more than one operation, keep clicking the button.</source>
-        <translation>Cooka ũndũ wa mũthia thĩinĩ wa kĩnyamũ kĩa gũcenjia. Nĩguo ũcooke ciĩko nyingĩ gũkĩra ĩmwe, tũũra ũhinyiria kĩbataro.</translation>
+        <translation>Cooka ũndũ wa mũthia thĩinĩ wa porogiramu ya gũcenjia. Nĩguo ũcooke ciĩko nyingĩ gũkĩra ĩmwe, tũũra ũhinyiria kĩbataro.</translation>
     </message>
     <message>
         <source>Reverse the "Undo" command.</source>
@@ -1466,7 +1466,7 @@ Nĩ ũrenda ũhoro mũingĩ ũkoniĩ ũndũ ũyũ?</translation>
     </message>
     <message>
         <source>Create a named anchor. An anchor-like icon will appear in the editor.</source>
-        <translation>Thondeka nanga ĩrĩ na rĩĩtwa. Ĩkoni ĩhaanaine na nanga ĩkoneka thĩinĩ wa kĩnyamũ kĩa gũcenjia.</translation>
+        <translation>Thondeka nanga ĩrĩ na rĩĩtwa. Ĩkoni ĩhaanaine na nanga ĩkoneka thĩinĩ wa porogiramu ya gũcenjia.</translation>
     </message>
     <message>
         <source>Insert an image from the related images list, upload a new image, search for an existing images or browse for it. To upload a local image choose the local file, specify the name of the new object, choose placement from list, optionally write some caption text (You can use simple html formating here) and then click "Upload" button.</source>
@@ -1494,7 +1494,7 @@ Nĩ ũrenda ũhoro mũingĩ ũkoniĩ ũndũ ũyũ?</translation>
     </message>
     <message>
         <source>Insert a table at the selected position. Tables with their border set to 0 are displayed with a grey border color in the editor.</source>
-        <translation>Tonyia gĩtabũrũ handũ harĩa hathuurĩtwo. Ititabũrũ iria mũthia wacio ũtũmĩtwo 0 nĩ cionekaga na rangi ya mũthia wa ngrei thĩinĩ wa kĩnyamũ kĩa gũcenjia.</translation>
+        <translation>Tonyia gĩtabũrũ handũ harĩa hathuurĩtwo. Ititabũrũ iria mũthia wacio ũtũmĩtwo 0 nĩ cionekaga na rangi ya mũthia wa ngrei thĩinĩ wa porogiramu ya gũcenjia.</translation>
     </message>
     <message>
         <source>Delete the currently selected table.</source>
@@ -1526,7 +1526,7 @@ Nĩ ũrenda ũhoro mũingĩ ũkoniĩ ũndũ ũyũ?</translation>
     </message>
     <message>
         <source>Open Online Editor xhtml source code editor. This button is not enabled by default, and is only intended for experienced users.</source>
-        <translation>Hingũra kĩnyamũ kĩa gũcenjia kĩrĩa kĩa kodi ya xhtml ya Online Editor. Kĩbataro gĩkĩ ti kĩhingũre kũringana na kĩrĩa kĩigĩtwo, na gĩtũmĩrũo nĩ ahũthiri arĩa moĩ wĩra o ithuĩ.</translation>
+        <translation>Hingũra porogiramu ya gũcenjia ĩrĩa ya kodi ya xhtml ya Online Editor. Kĩbataro gĩkĩ ti kĩhingũre kũringana na kĩrĩa kĩigĩtwo, na gĩtũmĩrũo nĩ ahũthiri arĩa moĩ wĩra o ithuĩ.</translation>
     </message>
     <message>
         <source>Edit the current content attribute in the whole browser window("Fullscreen"). Click second time to go back to normal editing.</source>
@@ -1554,7 +1554,7 @@ Nĩ ũrenda ũhoro mũingĩ ũkoniĩ ũndũ ũyũ?</translation>
     </message>
     <message>
         <source>You can adjust the height of the editor by draging the bottom right corner of the editor.</source>
-        <translation>No ũcenjie ũraihu wa kĩnyamũ kĩa gũcenjia na kũguucia kĩkonĩ kĩa thĩ kĩa ũrĩo kĩa kĩnyamũ kĩa gũcenjia.</translation>
+        <translation>No ũcenjie ũraihu wa porogiramu ya gũcenjia na kũguucia kĩkonĩ kĩa thĩ kĩa ũrĩo kĩa porogiramu ya gũcenjia.</translation>
     </message>
     <message>
         <source>You can create a new line by holding the Shift key down and pressing Enter key.</source>

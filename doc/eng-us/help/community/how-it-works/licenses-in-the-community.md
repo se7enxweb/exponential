@@ -24,7 +24,7 @@ This page is a summary for community members, not legal advice. The license text
 |---|---|---|
 | The code of Exponential | GNU General Public License, version 2 or later | `LICENSE`, `README.md` ("License") |
 | The documentation, including this help | GNU Free Documentation License 1.3 or later | [The license of this documentation](../../../README-LICENSE.md) |
-| Code contributed to the kernel | The GPL, plus a copyright assignment to 7x through the CLA | `CONTRIBUTING.md` |
+| Code contributed to the kernel | The GPL, plus a copyright assignment to the Exponential Foundation and 7x through the CLA | `CONTRIBUTING.md` |
 
 "Using Exponential under the terms of the GNU GPL is free of charge" (`README.md`). The former professional license
 "is no longer available", so Exponential is "GNU GPLv2-or-later ONLY" (same).

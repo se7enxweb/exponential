@@ -2,7 +2,7 @@
 title: Muster in extension/ezssp
 audience: developer
 category: standards
-order: 454
+order: 459
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezssp mit den Entwurfsmustern.
 keywords: extension/ezssp, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

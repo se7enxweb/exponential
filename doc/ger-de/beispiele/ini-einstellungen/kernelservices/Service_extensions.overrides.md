@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/kernelservices.ini` nie selbst: Ein Update ersetzt die 
 
 ## Class
 
-> what the extension activation of the web kernel gives for the current  
-> siteaccess, as compiled: the settings directories in order and the  
-> extension directories  
+> was die Erweiterungsaktivierung des Web-Kernels für den aktuellen  
+> Siteaccess ergibt, wie kompiliert: die Einstellungsverzeichnisse der Reihe nach und die  
+> Erweiterungsverzeichnisse  
 
 Standard: `expKernelExtensionOverrideList`.
 

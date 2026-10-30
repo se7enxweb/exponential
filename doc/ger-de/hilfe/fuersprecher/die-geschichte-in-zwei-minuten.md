@@ -52,7 +52,7 @@ Erzählen Sie die Zwei-Minuten-Fassung und fügen Sie je nach Zuhörer einen die
 
 | Zuhörer | Fügen Sie hinzu | Quelle |
 |---|---|---|
-| Ein Entwickler | „Es läuft auf PHP 8.0 bis 8.5, wird mit Composer installiert, und jedes Paket ist ein Git-Repository, das Sie mit vollständiger Historie klonen können. Jeder Pull Request wird übernommen.“ | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen), [Mit Git entwickeln](../mit-git-entwickeln.md), [Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst) |
+| Ein Entwickler | „Es läuft auf PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar), wird mit Composer installiert, und jedes Paket ist ein Git-Repository, das Sie mit vollständiger Historie klonen können. Jeder Pull Request wird übernommen.“ | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen), [Mit Git entwickeln](../mit-git-entwickeln.md), [Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst) |
 | Ein Administrator | „SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL; Linux, BSD, macOS oder Windows; und eine Installation mit einem Befehl.“ | [Datenbankunterstützung](../datenbankunterstuetzung.md), [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md), [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | Ein Redakteur | „Entwürfe und Versionen, eine Vorschau in Telefonbreite, ein Seitenbaukasten und Hilfe auf jedem Bildschirm.“ | [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md), [Der Layouts-Editor](../layout-editor.md) |
 | Ein Entscheider | „Die Software hat ihren ursprünglichen Hersteller schon einmal überlebt, weil ihr Code frei ist. Ein Unternehmen und eine gemeinnützige Organisation stehen dahinter.“ | [Mit Einwänden umgehen, Langlebigkeit](../geschaeft/einwandbehandlung.md#langlebigkeit-gibt-es-das-in-zehn-jahren-noch) |
@@ -63,7 +63,7 @@ Erzählen Sie die Zwei-Minuten-Fassung und fügen Sie je nach Zuhörer einen die
 | Aussage | Quelle |
 |---|---|
 | „ein professionelles PHP-Anwendungsframework mit fortgeschrittener CMS-Funktionalität (Content-Management-System) ... seine bemerkenswerteste Eigenschaft ist sein vollständig anpassbares und erweiterbares Inhaltsmodell“ | [README](https://github.com/se7enxweb/exponential/blob/main/README.md), [Exponential 6](../wer-ist-die-exponential-foundation.md#exponential-6-der-kernel) |
-| Copyright „1998 - 2026 7x & Exponential Foundation“ und „1999 - 2014 eZ Systems AS“ | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
+| „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“ und „1999 - 2014 eZ Systems AS“ | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
 | eZ Publish wurde von seinem Hersteller nach fast achtzehn Jahren eingestellt | [Exponential 6](../wer-ist-die-exponential-foundation.md#exponential-6-der-kernel) |
 | „7x hat 2023 die Leitung des Projekts übernommen ...“ | [Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt) |
 | 6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026, fünfzehn Releases; 6.0.15 in Entwicklung | [Wer ist 7x?, Die Releases 6.0.x](../wer-ist-7x.md#die-releases-60x) |

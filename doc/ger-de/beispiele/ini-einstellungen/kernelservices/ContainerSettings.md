@@ -19,19 +19,19 @@ Bearbeiten Sie `settings/kernelservices.ini` nie selbst: Ein Update ersetzt die 
 
 ## Mode
 
-> These four are read before the extensions are active: set them here or in  
-> settings/override/kernelservices.ini.append.php, not in an extension.  
+> Diese vier werden gelesen, bevor die Erweiterungen aktiv sind: hier oder in  
+> settings/override/kernelservices.ini.append.php setzen, nicht in einer Erweiterung.  
 >
-> compiled  the web kernel applies the compiled container in CacheDir: the  
->           extension activation of each siteaccess, recorded once, instead  
->           of looking up every extension directory on every request (the  
->           default). Without a compiled file, or when a request does not  
->           start from exactly the recorded state, it runs as without a  
->           container.  
-> dev       nothing compiled is used; services are read from the settings  
->           as they stand (for development)  
-> disabled  the container takes no part in the boot; services can still be  
->           asked for, read from the settings  
+> compiled  der Web-Kernel wendet den kompilierten Container in CacheDir an: die  
+>           einmal aufgezeichnete Erweiterungsaktivierung jedes Siteaccess, statt  
+>           bei jeder Anfrage jedes Erweiterungsverzeichnis nachzuschlagen (der  
+>           Standard). Ohne kompilierte Datei, oder wenn eine Anfrage nicht  
+>           genau vom aufgezeichneten Zustand ausgeht, läuft er wie ohne  
+>           Container.  
+> dev       nichts Kompiliertes wird verwendet; Services werden aus den Einstellungen  
+>           gelesen, wie sie gerade sind (für die Entwicklung)  
+> disabled  der Container nimmt am Boot nicht teil; Services können weiterhin  
+>           angefordert werden, gelesen aus den Einstellungen  
 
 Standard: `compiled`.
 
@@ -45,8 +45,8 @@ Mode=compiled
 
 ## CacheDir
 
-> Where the compiled container lives, relative to the installation root:  
-> index.php and one <siteaccess>.php per siteaccess.  
+> Wo der kompilierte Container liegt, relativ zum Installationsverzeichnis:  
+> index.php und eine <siteaccess>.php pro Siteaccess.  
 
 Standard: `var/cache/kernelservices`.
 
@@ -60,12 +60,12 @@ CacheDir=var/cache/kernelservices
 
 ## AutoRebuild
 
-> enabled   a web request of a siteaccess without a current compiled file  
->           records its own extension activation and writes it, so the next  
->           request uses it (after an INI cache clear from the  
->           administration, or before the first compile)  
-> disabled  only exp:services:compile, the deploy and ezcache.php on the  
->           command line write it  
+> enabled   eine Web-Anfrage eines Siteaccess ohne aktuelle kompilierte Datei  
+>           zeichnet ihre eigene Erweiterungsaktivierung auf und schreibt sie, sodass die nächste  
+>           Anfrage sie nutzt (nach einem INI-Cache-Leeren aus der  
+>           Administration oder vor dem ersten Kompilieren)  
+> disabled  nur exp:services:compile, der Deploy und ezcache.php auf der  
+>           Kommandozeile schreiben sie  
 
 Standard: `enabled`.
 
@@ -79,16 +79,16 @@ AutoRebuild=enabled
 
 ## WorkerScope
 
-> The worker scope of the settings files: each settings file of a siteaccess  
-> is built once per worker and handed out as a copy afterwards. On Exponential  
-> Velocity a worker serves thousands of requests, so this saves loading every  
-> settings file on every request; on PHP-FPM a worker is one request long.  
-> auto      on only when the INI cache does not check file times either  
->           (EZP\_INI\_FILEMTIME\_CHECK false in config.php), so a kept settings  
->           file is exactly what loading it again would give (the default)  
-> enabled   always (an edited settings file then reaches a Velocity worker  
->           with the next compile, INI cache clear or restart)  
-> disabled  never  
+> Der Worker-Scope der Einstellungsdateien: jede Einstellungsdatei eines Siteaccess  
+> wird einmal pro Worker gebaut und danach als Kopie ausgegeben. Bei Exponential  
+> Velocity bedient ein Worker tausende Anfragen, das spart also das Laden jeder  
+> Einstellungsdatei bei jeder Anfrage; bei PHP-FPM lebt ein Worker nur eine Anfrage lang.  
+> auto      nur an, wenn der INI-Cache auch keine Dateizeiten prüft  
+>           (EZP\_INI\_FILEMTIME\_CHECK false in config.php), sodass eine behaltene Einstellungsdatei  
+>           genau das ist, was ihr erneutes Laden ergäbe (der Standard)  
+> enabled   immer (eine bearbeitete Einstellungsdatei erreicht dann einen Velocity-Worker  
+>           mit dem nächsten Kompilieren, INI-Cache-Leeren oder Neustart)  
+> disabled  nie  
 
 Standard: `auto`.
 

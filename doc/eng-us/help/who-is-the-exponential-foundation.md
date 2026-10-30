@@ -49,7 +49,7 @@ The page does not describe what the sources do not say. Where a fact could not b
 - **7x is its main contributor.** The Foundation names 7x "the current leader in contributions both financial, code,
   extension development, new features, infrastructure, maintenance and much much more back to the project"
   (<https://foundation.exponential.earth/>).
-- **It shares the copyright.** The kernel's notice reads "Copyright (C) 1998 - 2026 7x & Exponential Foundation"
+- **It shares the copyright.** The kernel's notice reads "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved."
   ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
 - **Everything is free software.** The code is GPL v2 or later, the documentation GFDL 1.3 or later
   ([The license of this documentation](../README-LICENSE.md), [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
@@ -95,7 +95,7 @@ The Foundation and 7x are two organizations with one project:
 | What it is | A company: "a responsive North American web design, support, development and website hosting company" (<https://se7enx.com/about>) | A nonprofit corporation (<https://foundation.exponential.earth/>) |
 | Role | Leads development, support, hosting and services; "the current leader in contributions" to the project | Operates the project; funds and directs it |
 | Sponsor page | <https://github.com/sponsors/se7enxweb> | <https://github.com/sponsors/exponentialcms> |
-| Copyright | "7x & Exponential Foundation", together, in COPYRIGHT.md, LICENSE and the file headers | |
+| Copyright | "Exponential Foundation and 7x", together, in COPYRIGHT.md, LICENSE and the file headers | |
 | Website | <https://se7enx.com/> | <https://foundation.exponential.earth/>, <https://exponential.earth/> |
 
 "The Exponential Open Source Project is funded by donations of time and resources by 7x (and Exponential Sponsors)"
@@ -311,8 +311,8 @@ named; together they describe how the project looks after its users.
 
 | PHP | Exponential 6 | Source |
 |---|---|---|
-| 7.4 | Up to 6.0.7 only ("PHP 7 Support is deprecated but still available from our older stable and usable past releases up to version 6.0.7") | README |
-| 8.0 | The oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 runs it, under Velocity too from its release 0.0.4.54 (until then Velocity needed 8.1) | README, [PHP 8.0 support](../bc/6.0/php-8.0-support.md) |
+| 7.4 | Up to 6.0.7, and again from 6.0.15 ("PHP 7.4 is usable again from 6.0.15, without support, as a bridge for organizations that cannot change the PHP of their servers yet"); see [Why Exponential supports PHP 7.4](why-exponential-supports-php-7-4.md) | README |
+| 8.0 | Supported, so the stock PHP of Red Hat Enterprise Linux 9 runs it, under Velocity too from its release 0.0.4.54 (until then Velocity needed 8.1) | README, [PHP 8.0 support](../bc/6.0/php-8.0-support.md) |
 | 8.1 to 8.5 | Supported, Velocity included | README |
 | 8.6 and later | Allowed by the `php` requirement of `composer.json` (up to 8.8); the project aims at "PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9" | composer.json, README |
 
@@ -379,9 +379,9 @@ clones with their full history" (README, "Installation"; [Develop with Git](deve
   [Code reviews](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#code-reviews)).
 - **Contributions stay free.** "any modifications made to the project are also released under the same GPLv2 or
   later license" ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
-- **Copyright assignment (CLA).** 7x and the Exponential Foundation require a signed Contributor
+- **Copyright assignment (CLA).** The Exponential Foundation and 7x require a signed Contributor
   Licensing Agreement for every code contribution to the core kernel, in any form, before it is merged. By signing
-  and submitting, the contributor assigns the copyright in the contribution to 7x, which becomes its owner, and gives up control over it: 7x may use, change, relicense and distribute
+  and submitting, the contributor assigns the copyright in the contribution to the Exponential Foundation and 7x, which become its owners, and gives up control over it: the Exponential Foundation and 7x may use, change, relicense and distribute
   it in any way, also commercially and under other licenses, without asking or paying the contributor, who cannot
   withdraw it or set conditions on it. Users' own
   custom extensions are not affected
@@ -424,7 +424,7 @@ No events (conferences, meetups) are documented in the sources used for this pag
 
 | When | What happened | Source |
 |---|---|---|
-| 1998 | First year of the copyright notice of 7x and the Exponential Foundation | COPYRIGHT.md |
+| 1998 | First year of the copyright notice of the Exponential Foundation and 7x | COPYRIGHT.md |
 | 1999 to 2014 | The copyright years of eZ Systems AS in the code | COPYRIGHT.md |
 | 2006 | eZpedia starts | <https://ezpedia.exponential.earth/> |
 | 2014 | 7x's initial idea: the se7enx.com domain is registered quietly and the fork of the entire ecosystem is prepared | 7x's account (owner, 18 October 2026); [Who is 7x?](who-is-7x.md#from-brookins-consulting-to-7x-in-three-stages) |
@@ -522,3 +522,11 @@ develop the products with us, and that is how Exponential grows. A partner websi
 mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
 [Partners: start here](partners/partners-start-here.md) and [How to apply](partners/how-to-apply.md).
 <!-- exp-partner-block:end -->
+
+## Copyright and copyleft
+
+Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
+Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
+[Copyright and copyleft](copyright-and-copyleft.md).

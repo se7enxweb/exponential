@@ -2,7 +2,7 @@
 /**
  * File containing the expPasskey class.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
@@ -60,6 +60,7 @@ class expPasskey extends eZPersistentObject
                     'synced' => 'isSynced',
                     'transport_list' => 'transportList',
                     'never_used' => 'isNeverUsed',
+                    'authenticator_name' => 'authenticatorName',
                 ),
                 'sort' => array( 'created' => 'asc', 'id' => 'asc' ),
                 'class_name' => 'expPasskey',
@@ -132,6 +133,16 @@ class expPasskey extends eZPersistentObject
     public function algorithmName()
     {
         return expWebAuthnCose::name( (int)$this->attribute( 'algorithm' ) );
+    }
+
+    /**
+     * @return string the name of the authenticator model (AAGUID, expPasskeyAuthenticators), '' when unknown
+     */
+    public function authenticatorName()
+    {
+        $ini = class_exists( 'eZINI' ) ? eZINI::instance() : null;
+        $names = $ini && $ini->hasVariable( 'PasskeySettings', 'AuthenticatorNames' ) ? (array)$ini->variable( 'PasskeySettings', 'AuthenticatorNames' ) : array();
+        return expPasskeyAuthenticators::name( (string)$this->attribute( 'aaguid' ), expPasskeySettings::authenticatorNames( $names ) );
     }
 
     /** @return bool a synced passkey (backed up by its provider) */

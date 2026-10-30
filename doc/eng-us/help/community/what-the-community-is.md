@@ -57,7 +57,7 @@ Two organizations carry particular responsibility, and both describe themselves 
   Support, Direction, Education, Development, Promotion and Documentation" for the project
   ([Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md#in-short)).
 
-The kernel's copyright notice names both: "Copyright (C) 1998 - 2026 7x & Exponential Foundation".
+The kernel's copyright notice names both: "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.".
 
 ## What the community is not
 

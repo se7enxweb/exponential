@@ -2,7 +2,7 @@
 title: Muster in extension/ezauthorize
 audience: developer
 category: standards
-order: 435
+order: 439
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezauthorize mit den Entwurfsmustern.
 keywords: extension/ezauthorize, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

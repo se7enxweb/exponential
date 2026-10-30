@@ -12,7 +12,7 @@
  *  RP-08 - "Assign with limitation" takes subtree or section only
  *  RP-09 - Unactivated users: order, search, ids, age, LIKE pattern, activation address, new hash
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

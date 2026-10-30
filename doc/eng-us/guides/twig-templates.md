@@ -184,5 +184,8 @@ the environment on every request, resolves only the names a template uses.
 ## Related
 
 - [Twig templates](../features/6.0/twig-templates.md) (feature page)
-- [The three template engines compared](template-engines.md)
+- [Writing Twig-native templates](twig-templates-native.md), [recipes](twig-templates-recipes.md),
+  [debugging](twig-templates-debugging.md), [your editor](twig-templates-editors.md),
+  [versions and compatibility](twig-templates-compatibility.md)
+- [The three template engines compared](template-engines.md) and their [speed](template-engines-speed.md)
 - [Moving from .tpl to .twig](../help/template-language/moving-from-tpl-to-twig.md)

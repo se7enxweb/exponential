@@ -16,7 +16,7 @@
  * Payload keys: purpose, user (user id, 0 without account), email (only for an address without account), category
  * ('' for none), pending (expmail_pending id of a confirmation, 0 otherwise), issued, expires (0 never).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

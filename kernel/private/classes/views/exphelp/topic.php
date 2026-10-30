@@ -15,7 +15,7 @@
  * answers to "Was this helpful?"), help_feedback_thanks, help_feedback_summary (yes, no, reasons; null: none or not
  * shown), help_feedback_reasons.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

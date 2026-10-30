@@ -3,7 +3,7 @@
  * ezjscore/call/expshipping::<method>: what the shop knows about shipping: the handler, the simple shipping
  * workflow cost, the shipping info of a basket or an order. Read only; the cost lives in settings and workflows.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

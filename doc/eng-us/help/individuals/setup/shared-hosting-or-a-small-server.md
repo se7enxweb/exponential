@@ -25,6 +25,7 @@ and each leaves different work to you. The hosting section has the detail for ho
 > test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
 > [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../../hosting/panels/plesk.md), [cPanel](../../hosting/panels/cpanel.md), [DirectAdmin](../../hosting/panels/directadmin.md), [ISPConfig](../../hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md).
 
 ## Contents
 
@@ -86,7 +87,7 @@ keep backups away from that machine.
 
 | Question | Why |
 |---|---|
-| Which PHP versions, and can I choose 8.x per site? | PHP 8.0 or later is required |
+| Which PHP versions, and can I choose 8.x per site? | PHP 8.0 or later (PHP 7.4 usable without support) is required |
 | Are `intl`, `mbstring`, `xsl`, `gd` or ImageMagick, `sqlite3` available? | Required or needed extensions ([PHP versions and extensions](../../hosting/basics/php-versions-and-extensions.md)) |
 | Can I run cron every few minutes? | Newsletters, scheduled publishing |
 | Can the site send mail, and from my domain? | Registration, password reset, forms, newsletters |

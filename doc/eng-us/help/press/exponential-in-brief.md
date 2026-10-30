@@ -45,7 +45,7 @@ and scheduled publication, multisite, e-commerce, workflows, a template engine a
 | **The Exponential Foundation** | A nonprofit, "a 501(c)(3) Non-Profit Corporation founded in Seattle, Washington, USA" on 19 March 2026; it operates and funds the project | [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md#in-short) |
 | **The contributors** | Hundreds of people over the history of the code; pull requests since December 2023 from 7x and from other companies and developers | [How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows) |
 
-The copyright notice reads "Copyright (C) 1998 - 2026 7x & Exponential Foundation" next to "Copyright (C) 1999 - 2014
+The copyright notice reads "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." next to "Copyright (C) 1999 - 2014
 eZ Systems AS" ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
 
 ## Where it came from
@@ -84,7 +84,7 @@ the software (development, support, hosting); its prices are on its own website.
 
 ## Where it runs
 
-PHP 8.0 to 8.5; six databases (SQLite 3 is the default, then PostgreSQL, MongoDB, MariaDB, Oracle and MySQL); Linux,
+PHP 8.0 to 8.5 (PHP 7.4 usable without support); six databases (SQLite 3 is the default, then PostgreSQL, MongoDB, MariaDB, Oracle and MySQL); Linux,
 BSD, macOS and Windows in documented tiers; Apache, Nginx and other web servers, or the bundled Velocity
 ([Database support](../database-support.md), [Operating system support](../os-support.md),
 [PHP versions](../who-is-the-exponential-foundation.md#php-versions)).

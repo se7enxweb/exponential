@@ -2,7 +2,7 @@
 /**
  * File containing the eZHTTPTool class.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 75cbb1daa2), Copyright (C) Mugo Web, GPL v2
@@ -815,7 +815,6 @@ EOT;
 
             $result = curl_exec( $ch );
             $responseCode = (int)curl_getinfo( $ch, CURLINFO_RESPONSE_CODE );
-            if ( PHP_VERSION_ID < 80000 ) curl_close( $ch ); // no effect since PHP 8.0, deprecated in 8.5
 
             // If we should check url without downloading data from it.
             if ( $justCheckURL )

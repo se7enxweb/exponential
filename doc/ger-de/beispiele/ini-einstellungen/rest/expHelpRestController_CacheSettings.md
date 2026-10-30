@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[expHelpRestController_CacheSettings]` von `settings/rest.ini`, mit 1 Einstellung(en).
 
-> The context help of the help provider is never cached: what a user may see depends on the user  
+> Die Kontexthilfe des Hilfe-Providers wird nie gecacht: was ein Benutzer sehen darf, hängt vom Benutzer ab  
 
 Bearbeiten Sie `settings/rest.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

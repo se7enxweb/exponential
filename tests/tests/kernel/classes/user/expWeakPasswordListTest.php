@@ -20,7 +20,7 @@
  *  WPL-08  The installers: the wizard refuses a well-known password that is long enough; the kickstarter's
  *          password problem names empty, well-known and too short
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

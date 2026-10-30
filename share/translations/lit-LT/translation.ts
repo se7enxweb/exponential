@@ -8005,8 +8005,8 @@
         <translation>Originalių autorių ir trečiųjų šalių programinės įrangos, įtrauktos į „Exponential“, autorių teisių pranešimai saugomi šaltinio failuose ir faile LICENSE, kaip reikalauja licencija.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Toliau pateikiamas „Exponential“ talkininkų, kurie licencijavo savo darbą 7x naudoti pagal „eZ Systems“ talkininkų licencijavimo sutarties sąlygas, sąrašas. Kaip leidžia ši sutartis, 7x platina kiekvieną indėlį pagal tą pačią licenciją, kaip ir failas, į kurį indėlis įtrauktas. Sąraše nurodytas kiekvienas talkininkas, pasirinktina kontaktinė informacija ir failai, kuriuos jie sukūrė arba prie kurių prisidėjo.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Bendraautoriai, paminėti už darbą su Exponential ir programine įranga, iš kurios ji išaugo, kartu su failais, prie kurių jie prisidėjo. Tai padėka, o ne autorių teisių pranešimas: indėliai į Exponential pagal Contributor Licensing Agreement perduodami Exponential Foundation ir 7x.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77279,6 +77279,82 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Nepavyko patikrinti prieigos rakto. Bandykite dar kartą.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Paskyros, kurios jungiasi tik prieigos raktais, čia negali naudoti slaptažodžio: pasirinkite „Prisijungti su prieigos raktu“.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login prieigos raktai</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Prieigos raktai, kuriais jungiasi ši paskyra. Panaikinkite raktą, esantį prarastame ar pavogtame įrenginyje: juo nebebus galima prisijungti. Naujus savininkas prideda pats.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Jūsų paskyrai reikia prieigos rakto</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Pridėkite prieigos raktą prie savo paskyros</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Pridėkite prieigos raktą, kad galėtumėte tęsti. Tada jungsitės juo, o ne vien slaptažodžiu.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Prisijungti prieigos raktu greičiau ir saugiau nei slaptažodžiu. Pridėkite jį dabar arba tęskite be jo.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Ne dabar</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Panaikinti prieigos raktą „%name“?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Juo nebebus galima prisijungti prie šios paskyros. Jei tai buvo paskutinis, savininkas jungiasi slaptažodžiu, arba jūs nustatote naują.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Panaikinti prieigos raktą</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Panaikinti</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Ši paskyra neturi prieigos rakto.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Autentifikatorius</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Nežinoma</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Jūsų paskutinis prieigos raktas: prieš jį šalindami pridėkite kitą.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Ši paskyra jungiasi tik prieigos raktais (prieigos raktų politika): nelikus nė vieno, ji vėl jungiasi savo slaptažodžiu.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Tai jūsų paskutinis prieigos raktas, o be jo jūsų paskyra negali prisijungti. Pirmiausia pridėkite kitą prieigos raktą.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Prieigos raktas „%name“ panaikintas. Juo nebegalima prisijungti prie šios paskyros.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77378,6 +77454,34 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>Code from your authenticator app</source>
         <translation>Kodas iš autentifikavimo programėlės</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Ketinate negrįžtamai ištrinti duomenis arba išvalyti žurnalą.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Jūsų slaptažodis ir prieigos raktas</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Jūsų slaptažodis ir kodas iš autentifikavimo programėlės</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Arba:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Ši naršyklė negali naudoti prieigos raktų. Naudokite kitą būdą arba kitą naršyklę.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Kai tęsite, naršyklė paprašys vieno iš jūsų prieigos raktų.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Tęsti su prieigos raktu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77468,6 +77572,70 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>Setup</source>
         <translation>Sąranka</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Savo slaptažodžio, el. pašto adreso, prieigos raktų, dviejų žingsnių prisijungimo, atkūrimo kodų ar API raktų keitimas ir atsijungimas savo kituose įrenginiuose.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Naudotojų, jų slaptažodžių ir įrenginių, paskyros nustatymų kūrimas ir redagavimas, naujų naudotojų paskyrų patvirtinimas ar atmetimas, vaidmenų priskyrimas ir politikų redagavimas.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Duomenų trynimas</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Šiukšlinės ištuštinimas, elementų šalinimas iš jos ir kelių elementų šalinimas vienu metu.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Turinio šalinimas, publikavimas ir įrašymas</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Turinio šalinimas (taip pat į šiukšlinę), publikavimas ir juodraščio įrašymas; klausiama siunčiant formą. Pagal numatytuosius nustatymus išjungta.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Prieš jautrų veiksmą prisijungęs naudotojas dar kartą patvirtina, kas jis yra: slaptažodžiu ir prieigos raktu arba, jei prieigos rakto neturi, slaptažodžiu ir autentifikavimo programėlės kodu. Klausia tik tinklalapiai: REST sąsaja, SOAP, WebDAV, expservices prisijungimas ir komandų eilutė niekada neklausia.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Kur taikomi nustatymai</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Nustatymai, skirti</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Kiekviena prieiga prie svetainės</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Prieiga prie svetainės %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Atidaryti</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Kas klausiamas: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Pažymėkite naudotojų grupes, kad būtų klausiami tik jų nariai (pavyzdžiui, redaktoriai). Nepažymėta nieko: kiekvienas naudotojas.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Įrašoma į settings/override/site.ini.append.php, kiekvienai prieigai prie svetainės. Įrašant prašoma patvirtinti, kad tai jūs.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Įrašoma į settings/siteaccess/%name/site.ini.append.php. Reikšmė iš settings/override turi pirmenybę. Įrašant prašoma patvirtinti, kad tai jūs.</translation>
     </message>
 </context>
 <context>
@@ -77856,6 +78024,30 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Jūsų paskyra buvo užrakinta</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Prie jūsų paskyros %login svetainėje %site pridėtas prieigos raktas.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Kas turi šį prieigos raktą, gali prisijungti prie jūsų paskyros be jūsų slaptažodžio. Jei jo nepridėjote, pašalinkite jį skiltyje Prieigos raktai ir pakeiskite slaptažodį.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Iš jūsų paskyros %login svetainėje %site pašalintas prieigos raktas.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Juo nebegalima prisijungti prie jūsų paskyros. Jei jo nepašalinote, patikrinkite savo prieigos raktus ir įrenginius.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Prie jūsų paskyros pridėtas prieigos raktas</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Iš jūsų paskyros pašalintas prieigos raktas</translation>
     </message>
 </context>
 <context>

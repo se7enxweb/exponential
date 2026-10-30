@@ -5,7 +5,7 @@
  * original ezjscServer_expsubitems stay as they are; these are the same data in the expservices envelope, with
  * the columns of a request given as an argument instead of a form field.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

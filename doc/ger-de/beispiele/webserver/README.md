@@ -30,6 +30,7 @@ einzigen Stelle festgehalten, in `.htaccess_root`, und Velocity setzt sie Regel 
 > Dieselben Regeln für andere Server: [nginx](nginx.md), [LiteSpeed](litespeed.md), [Caddy](caddy.md), [IIS](iis.md),
 > [Velocity](velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../../hilfe/hosting/control-panels/plesk.md), [cPanel](../../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../../hilfe/hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../anleitungen/seiten-cache-mit-litespeed.md).
 
 Jedes Beispiel auf diesen Seiten ist eine vollständige Datei zum Kopieren; ersetzen Sie darin `example.com` und
 `/var/www/example.com`. Jedes setzt dieselbe Liste um, in dieser Reihenfolge:
@@ -57,6 +58,7 @@ Jedes Beispiel auf diesen Seiten ist eine vollständige Datei zum Kopieren; erse
 | Caddy | [Caddy](caddy.md) | `Caddyfile.example` | `frankenphp validate` (Caddy 2.11 in FrankenPHP 1.12.7) |
 | FrankenPHP | [FrankenPHP](frankenphp.md) | `frankenphp.Caddyfile.example` | `frankenphp validate` |
 | LiteSpeed, OpenLiteSpeed | [LiteSpeed](litespeed.md) | `openlitespeed-vhost.conf` | nicht auf LiteSpeed ausgeführt; seine Rewrite-Regeln beantworteten in Apaches `mod_rewrite` jede Testanfrage wie erwartet |
+| LiteSpeed, OpenLiteSpeed: Seiten-Cache | [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../anleitungen/seiten-cache-mit-litespeed.md) | `litespeed-page-cache.conf` (und auskommentierte Blöcke in `.htaccess_root` und `openlitespeed-vhost.conf`) | nicht auf LiteSpeed ausgeführt; die Adressbedingung wurde mit PCRE gegen Beispieladressen geprüft (gespeichert, und ausgenommen: die Administration, `user/`, `shop/`, `content/`-Ansichten außer `view/`) |
 | IIS | [IIS](iis.md) | `web.config` | nur wohlgeformtes XML (`xmllint`); nicht auf IIS ausgeführt |
 | PHP-FPM (hinter Apache, nginx, Caddy) | [PHP-FPM-Pool](php-fpm.md) | `php-fpm-pool.conf` | `php-fpm -t` |
 

@@ -1,7 +1,7 @@
 # 2. Requirements
 
 This chapter lists what a machine needs before Exponential can be installed on it, and why each item is needed: the
-PHP version (8.0 to 8.5, for Velocity too), every PHP extension with the place in the code that asks for
+PHP version (7.4 to 8.5; 8.0 for Velocity, 8.1 for Layouts), every PHP extension with the place in the code that asks for
 it, the `php.ini` settings the setup wizard checks, the database servers and their minimum versions, Composer, a web
 server, and notes for Red Hat Enterprise Linux 9 and its rebuilds, Debian and Ubuntu, and Plesk. It ends with what
 the documentation says about memory and disk. Everything here is taken from `composer.json`, `settings/setup.ini`,
@@ -21,6 +21,7 @@ package install, found half-way through an install it costs a restart of the ins
 > test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
 > [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../guides/litespeed-page-cache.md).
 
 [Contents](README.md) · Previous: [1. Introduction](01-introduction.md) · Next: [3. Getting the code](03-getting-the-code.md)
 
@@ -28,7 +29,8 @@ package install, found half-way through an install it costs a restart of the ins
 
 | Need | Minimum | Recommended | Checked by |
 |---|---|---|---|
-| PHP | 8.0 | the newest 8.x your system offers (8.5 is supported) | Composer (`composer.json`, `require.php`); the setup wizard (`settings/setup.ini`, `[phpversion] MinimumVersion=8.0.0`) |
+| PHP | 8.0 supported; 7.4 usable without support | the newest 8.x your system offers (8.5 is supported) | Composer (`composer.json`, `require.php`, and the metapackage `se7enxweb/exponential-php-floor`); the setup wizard (`settings/setup.ini`, `[phpversion] MinimumVersion=7.4.0`) |
+| PHP for Netgen Layouts and the media site | 8.1 | as above | Composer (the `explayouts` packages and `sevenx-themes-media`; the metapackage installs them from PHP 8.1 on) |
 | PHP for Exponential Velocity | 8.0, with `sockets` (from release 0.0.4.54; until then 8.1) | as above, with `pcntl` and `openssl` | Composer (`se7enxweb/exponential-velocity`: `"php": ">=8.0"`, `"ext-sockets": "*"`) |
 | PHP extensions | see [2.3](#23-php-extensions) | plus the recommended ones | Composer (`ext-*`), the setup wizard's system check |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` set, `file_uploads` on, `allow_url_fopen` on | | the setup wizard's system check |
@@ -47,30 +49,46 @@ good check (for the command line PHP).
 
 ### Versions
 
+> **Supported: PHP 8.0 to 8.5. Usable without support: PHP 7.4 (Exponential 6.0.15 and later).**
+> "Without support" means: the software is designed to be usable on PHP 7.4, but the project gives no bug-fix or security commitment specific to PHP 7.4, you use it at your own risk, and the features that need PHP 8 are not available there.
+
 | PHP | Status |
 |---|---|
-| 8.0 | The oldest supported version. The kernel and the shipped extensions run on it under Apache with mod_php or PHP-FPM. It is the stock PHP of Red Hat Enterprise Linux 9, AlmaLinux 9 and Rocky Linux 9. Velocity runs on it from its release 0.0.4.54 (see [2.9](#php-80-and-red-hat-enterprise-linux) for what differs). |
-| 8.1 to 8.4 | Supported, Velocity included. |
+| 7.4 | Usable without support from 6.0.15, for sites that cannot move to PHP 8 yet (no bug-fix or security commitment). The kernel and the bundled extensions run on it; Velocity, Netgen Layouts and a few extensions that need PHP 8 are not installed (see [Why Exponential supports PHP 7.4](../help/why-exponential-supports-php-7-4.md) for the full table). |
+| 8.0 | Supported. The kernel and the shipped extensions run on it under Apache with mod_php or PHP-FPM. It is the stock PHP of Red Hat Enterprise Linux 9, AlmaLinux 9 and Rocky Linux 9. Velocity runs on it from its release 0.0.4.54 (see [2.9](#php-80-and-red-hat-enterprise-linux) for what differs); Netgen Layouts needs 8.1. |
+| 8.1 to 8.4 | Supported, Velocity and Layouts included. |
 | 8.5 | Supported; the newest version tested. |
-| 7.4 and older | Not supported by 6.0.8 and later. A site that must stay on PHP 7.4 stays on 6.0.7. |
+| 7.3 and older | Not supported. A site that must stay on PHP 7.3 or older stays on 6.0.7 or earlier. |
 
 `composer.json` declares:
 
 ```json
-"php": "^8.0 || ^8.1 || ^8.2 || ^8.3 || ^8.4 || ^8.5 || ^8.6 || ^8.7 || ^8.8"
+"php": "^7.4 || ^8.0 || ^8.1 || ^8.2 || ^8.3 || ^8.4 || ^8.5 || ^8.6 || ^8.7 || ^8.8"
 ```
 
-so Composer refuses to install on anything older than 8.0. The versions after 8.5 are accepted by the constraint
+so Composer refuses to install on anything older than 7.4. The versions after 8.5 are accepted by the constraint
 but have not been released or tested. Use the newest PHP your system offers: each version brings speed, and the
 older ones lose security support first (see PHP's [supported versions](https://www.php.net/supported-versions.php)).
+PHP 7.4 itself has had no security support from the PHP project since November 2022; run it only where your
+distribution or host still patches it, and plan the move to PHP 8.
 
-PHP 8.0 support is new in 6.0.15. The published releases `v6.0.8` to `v6.0.14` require PHP 8.1 in their
-`composer.json`, and `v6.0.7` requires 7.4 or 8.1, so on PHP 8.0 install the 6.0.15 line (`dev-main` until its tag
-is published; [chapter 3](03-getting-the-code.md#31-versions-tags-and-branches)).
+**One metapackage per PHP range.** The kernel also requires `se7enxweb/exponential-php-floor` (`~1.0.3 || ~1.1.3 || ~1.2.3 || ~1.3.3`). Each of its
+versions belongs to one PHP range and requires the extension releases and the Twig 3 release that run there: 1.0.3 for PHP 7.4 (usable without support,
+`se7enxweb/twig` ~3.11.4), 1.1.3 for 8.0 (`se7enxweb/twig` ~3.19.1), 1.2.3 for 8.1 to 8.3 and 1.3.3 for 8.4 and later (`twig/twig` ^3.27).
+The earlier versions (1.0.0 to 1.0.2, 1.1.0 to 1.1.2, 1.2.0 to 1.2.2, 1.3.0 to 1.3.2) allowed older extension releases or install no Twig and are
+left out. The kernel does not require `twig/twig` itself: upstream Twig up to 3.26 is blocked by security advisories and 3.27 needs PHP 8.1. Composer installs the version that matches the PHP it runs with,
+so the same `composer require se7enxweb/exponential` gives a complete installation on every supported PHP, with
+Composer's security checks left on. Run Composer with the PHP the site will use (see
+[Command line and web PHP](#command-line-and-web-php)).
 
-On PHP 8.0, `autoload.php` loads `lib/phpcompat.php`, which defines the few functions PHP 8.0 lacks
-(`array_is_list()` among them); on 8.1 and later that file is not even opened. The details, and the places that
-needed PHP 8.1 and were made to work on 8.0 in 6.0.15, are in [PHP 8.0 support](../bc/6.0/php-8.0-support.md). The
+In 6.0.15 PHP 8.0 is supported again, and PHP 7.4 is usable again, without support. The published releases `v6.0.8` to `v6.0.14`
+require PHP 8.1 in their `composer.json`, and `v6.0.7` requires 7.4 or 8.1, so on PHP 7.4 or 8.0 install the 6.0.15
+line (`dev-main` until its tag is published; [chapter 3](03-getting-the-code.md#31-versions-tags-and-branches)).
+
+On PHP 7.4 and 8.0, `autoload.php` loads `lib/phpcompat.php`, which defines the few functions these versions lack
+(`array_is_list()` among them), and Composer installs `symfony/polyfill-php80` and `symfony/polyfill-php81` for the
+rest (`str_contains()` and the like); on 8.1 and later these files do nothing. The details are in
+[PHP 8.0 support](../bc/6.0/php-8.0-support.md) and [Why Exponential supports PHP 7.4](../help/why-exponential-supports-php-7-4.md). The
 history of the PHP 8 work since 6.0.0 is in [PHP 8 support](../bc/6.0/php8.md).
 
 **How to check.** The first line of `php -v` names the version:
@@ -80,9 +98,9 @@ PHP 8.5.11 (cli) (built: Sep 22 2026 13:32:06) (NTS gcc x86_64)
 ```
 
 **The setup wizard's PHP check.** The critical test `phpversion` compares the running PHP with
-`settings/setup.ini`, `[phpversion] MinimumVersion=8.0.0` (the same lower bound as `composer.json`) and refuses the
+`settings/setup.ini`, `[phpversion] MinimumVersion=7.4.0` (the same lower bound as `composer.json`) and refuses the
 versions listed in `UnstableVersions` (`6`, the PHP version that was never released). Since Composer already
-enforces 8.0, this test fails in practice only when the web server's PHP is older than the command line PHP that ran
+enforces 7.4, this test fails in practice only when the web server's PHP is older than the command line PHP that ran
 Composer, which is exactly the case it is there to catch.
 
 **64-bit PHP.** `composer.json` suggests `php-64bit`: "For support of more than 30 languages, a 64bit php
@@ -203,7 +221,7 @@ ignored with its checkbox, which is not recommended: an ignored test usually fai
 | Test | Checks | Setting in `settings/setup.ini` | Fix |
 |---|---|---|---|
 | `directory_permissions` | The web server can write the directories in `CheckList` | `[directory_permissions] CheckList`: `design`, `extension`, `settings`, `settings/override`, `settings/siteaccess`, `settings/siteaccess/admin`, `var`, `var/cache` and its subdirectories, `var/log`, `var/storage` and its subdirectories, `var/autoload` | the `chmod`/`chown` commands the page prints |
-| `phpversion` | PHP at least `MinimumVersion`, not one of `UnstableVersions` | `[phpversion] MinimumVersion=8.0.0` | a newer PHP |
+| `phpversion` | PHP at least `MinimumVersion`, not one of `UnstableVersions` | `[phpversion] MinimumVersion=7.4.0` | a newer PHP |
 | `database_extensions` | at least one database extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8`, `Require=one` | install one |
 | `image_conversion` | GD's `imagegd2()` or ImageMagick's `convert` | `[image_conversion] TestList`, `Require=one` | install `gd` or ImageMagick |
 | `safe_mode` | `safe_mode` off | | (removed from PHP; always passes) |
@@ -426,7 +444,7 @@ and its [requirements](https://github.com/se7enxweb/exponential-velocity/blob/ma
 The Velocity manifest also knows Alpine (`apk`), FreeBSD (`pkg`), macOS (Homebrew) and Windows. The kernel's setup
 tests have Windows paths for ImageMagick (`convertim.exe`, `convert.exe`), but this book is written for Linux.
 
-Exponential runs on almost any operating system with PHP 8.0 or later and a web server. [Operating system
+Exponential runs on almost any operating system with PHP 8.0 or later (PHP 7.4 usable without support) and a web server. [Operating system
 support](../help/os-support.md) sorts them into tiers (tested here, known to work, expected to work, not possible
 today), from the Linux distributions, the BSDs, macOS and Windows to IBM i, Haiku and the 8-bit machines, and lists
 the web servers and PHP SAPIs.

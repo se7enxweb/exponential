@@ -26,6 +26,7 @@ site needs, translated into the tasks any hosting panel performs, and a plan to 
 > test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
 > [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](plesk.md), [cPanel](cpanel.md), [DirectAdmin](directadmin.md), [ISPConfig](ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md).
 
 > **Note**
 > Nothing on this page describes ISPConfig's screens, options or files. For how ISPConfig performs each task below,
@@ -56,7 +57,7 @@ Plesk (tier 1 on the development server), cPanel and DirectAdmin (tier 3)
 
 The reasoning that places cPanel and DirectAdmin in tier 3 is that Exponential needs nothing from a panel itself:
 "It is plain PHP files plus a database; it has no compiled code of its own" and "runs on almost any operating system
-that has PHP 8.0 or later and a web server" ([Operating system support](../../os-support.md)). Any server whose panel
+that has PHP 8.0 or later (PHP 7.4 usable without support) and a web server" ([Operating system support](../../os-support.md)). Any server whose panel
 can provide the items below, on a supported operating system, meets the requirements. That is an inference, not a
 test result: treat ISPConfig as at most tier 3 until you have tested it.
 

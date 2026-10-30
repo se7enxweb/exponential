@@ -9,7 +9,7 @@
  *  HN-05  the built tree is cached per index signature and rebuilt when it changes
  *  HN-06  a folded folder ([NavigationSettings] FoldedFolders[]) lists its pages only on the way to the current page
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

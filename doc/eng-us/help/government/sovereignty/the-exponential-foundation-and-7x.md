@@ -26,7 +26,7 @@ the sourced pages [Who is the Exponential Foundation?](../../who-is-the-exponent
 |---|---|---|
 | What it is | describes itself as a 501(c)(3) nonprofit corporation founded in Seattle, Washington, USA, on 19 March 2026 | describes itself as a North American web design, support, development and hosting company |
 | Role | "This project is operated by the Exponential Foundation" | leads development, support and community growth since 2023; the Foundation names it the main contributor |
-| Copyright | together: "Copyright (C) 1998 - 2026 7x & Exponential Foundation" | |
+| Copyright | together: "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." | |
 
 Exponential carried forward the code base of eZ Publish, which its creator discontinued after almost eighteen
 years; the project states it is not associated with eZ Systems or Ibexa ([Who is 7x?](../../who-is-7x.md)).
@@ -69,3 +69,11 @@ develop the products with us, and that is how Exponential grows. A partner websi
 mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
 [Partners: start here](../../partners/partners-start-here.md) and [How to apply](../../partners/how-to-apply.md).
 <!-- exp-partner-block:end -->
+
+## Copyright and copyleft
+
+Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
+Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
+[Copyright and copyleft](../../copyright-and-copyleft.md).

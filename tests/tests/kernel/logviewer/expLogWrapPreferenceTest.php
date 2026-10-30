@@ -9,7 +9,7 @@
  *  LV-103  the page draws the stored choice on first paint (checkbox and list class), in both designs, and the script
  *          stores a change through user/preferences/set_and_exit and leaves the address alone
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

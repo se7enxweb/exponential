@@ -34,14 +34,14 @@ type: help
 | Hosting-Unternehmen und Agenturen | Betreiben und bauen Exponential-Websites | [Hosting-Unternehmen: hier beginnen](../../hosting/hosting-anbieter-hier-beginnen.md) |
 | Andere Open-Source-Projekte | Liefern Code, den Exponential verwendet und nennt | [Begleitprojekte und andere Unternehmen](begleitprojekte-und-andere-unternehmen.md) |
 
-Der Copyright-Vermerk des Kernels lautet "Copyright (C) 1998 - 2026 7x & Exponential Foundation" (`COPYRIGHT.md`).
+Der Copyright-Vermerk des Kernels lautet "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." (`COPYRIGHT.md`).
 
 ## Verwandte Seiten
 
 - [Ökosystem: hier beginnen](../oekosystem-hier-beginnen.md)
 - [7x und die Foundation für Fürsprecher](../../fuersprecher/7x-und-die-foundation.md)
 - [Wer das Partnerprogramm betreibt](../../partner/wer-das-partnerprogramm-betreibt.md)
-- [Partner, Community und Ökosystem](../../../../eng-us/help/community/partners-community-and-ecosystem.md)
+- [Partner, Community und Ökosystem](../../gemeinschaft/partner-community-und-oekosystem.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.
 
 <!-- exp-partner-block:start -->

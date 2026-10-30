@@ -5,7 +5,7 @@
  * package does not bring, differences an import cannot bring), and which class an object needs imported first
  * for values whose attributes the site's class lacks.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group kernel

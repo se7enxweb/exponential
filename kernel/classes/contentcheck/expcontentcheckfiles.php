@@ -18,7 +18,7 @@
  * kept a minute) for its total and pages. What the user may not read is left out in the SQL. A file is looked up through
  * eZClusterFileHandler, so the DFS of a cluster counts, not the local disk.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

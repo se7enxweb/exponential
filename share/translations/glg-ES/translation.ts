@@ -8066,8 +8066,8 @@
         <translation>Os avisos de dereitos de autor dos autores orixinais e do software de terceiros incluído con Exponential consérvanse nos ficheiros fonte e no ficheiro LICENSE, tal como esixe a licenza.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>A continuación figura unha lista dos colaboradores de Exponential que licenciaron o seu traballo para que 7x o use segundo os termos e condicións do eZ Systems Contributor Licensing Agreement. Tal como permite este acordo, 7x redistribúe cada contribución baixo a mesma licenza que o ficheiro no que está incluída. A lista indica cada colaborador, datos de contacto opcionais e os ficheiros que achegou ou nos que colaborou.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Colaboradores recoñecidos polo seu traballo en Exponential e no software do que xurdiu, cos ficheiros nos que colaboraron. Isto é un recoñecemento, non un aviso de copyright: as contribucións a Exponential cédense á Exponential Foundation e a 7x conforme ao Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77281,6 +77281,82 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Non se puido comprobar a clave de acceso. Tente de novo.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>As contas que acceden só con claves de acceso non poden usar un contrasinal aquí: escolla &quot;Acceder cunha clave de acceso&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Claves de acceso de %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>As claves de acceso coas que accede esta conta. Revogue a que estea nun dispositivo perdido ou roubado: xa non poderá acceder. O propietario engade el mesmo as novas.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>A súa conta precisa unha clave de acceso</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Engada unha clave de acceso á súa conta</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Engada unha clave de acceso para continuar. Despois accederá con ela en lugar de só cun contrasinal.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Acceder cunha clave de acceso é máis rápido e seguro ca cun contrasinal. Engada unha agora ou continúe sen ela.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Agora non</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Revogar a clave de acceso &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Xa non poderá acceder a esta conta. Se era a última, o propietario accede co contrasinal, ou vostede establece un novo.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Revogar a clave de acceso</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Revogar</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Esta conta non ten ningunha clave de acceso.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Autenticador</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Descoñecido</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>A súa última clave de acceso: engada outra antes de quitala.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Esta conta accede só con claves de acceso (política de claves de acceso): se non lle queda ningunha, volve acceder co seu contrasinal.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Esta é a súa última clave de acceso e a súa conta non pode acceder sen ela. Engada primeiro outra clave de acceso.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>A clave de acceso &quot;%name&quot; foi revogada. Xa non pode acceder a esta conta.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77380,6 +77456,34 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>Code from your authenticator app</source>
         <translation>Código da súa aplicación de autenticación</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Está a piques de eliminar datos para sempre ou de baleirar un rexistro.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>O seu contrasinal e unha clave de acceso</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>O seu contrasinal e un código da súa aplicación de autenticación</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Ou:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Este navegador non pode usar claves de acceso. Use outro método ou outro navegador.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Cando continúe, o seu navegador pedirá unha das súas claves de acceso.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Continuar cunha clave de acceso</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77470,6 +77574,70 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
     <message>
         <source>Setup</source>
         <translation>Configuración</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Cambiar o propio contrasinal, o enderezo de correo electrónico, as claves de acceso, o acceso en dous pasos, os códigos de recuperación ou as chaves de API, e pechar a sesión nos outros dispositivos propios.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Crear e editar usuarios, os seus contrasinais e dispositivos, os axustes da conta, aprobar ou rexeitar novas contas de usuario, asignar roles e editar políticas.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Eliminar datos</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Baleirar o lixo, quitar elementos del e quitar varios elementos á vez.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Quitar, publicar e gardar contido</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Quitar contido (tamén ao lixo), publicar e gardar un borrador; pregúntase ao enviar o formulario. Desactivado por defecto.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Antes dunha acción delicada, un usuario que accedeu confirma de novo quen é: co seu contrasinal e unha clave de acceso, ou sen clave de acceso co seu contrasinal e o código da súa aplicación de autenticación. Só preguntan as páxinas web: a interface REST, SOAP, WebDAV, o acceso de expservices e a liña de ordes nunca o fan.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Onde se aplican os axustes</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Axustes para</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Cada acceso ao sitio</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Só o acceso ao sitio %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Abrir</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>A quen se pregunta: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Marque grupos de usuarios para preguntar só aos seus membros (editores, por exemplo). Ningún marcado: todos os usuarios.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Gardado en settings/override/site.ini.append.php, para cada acceso ao sitio. Ao gardar pídeselle que confirme que é vostede.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Gardado en settings/siteaccess/%name/site.ini.append.php. Un valor en settings/override ten prioridade sobre el. Ao gardar pídeselle que confirme que é vostede.</translation>
     </message>
 </context>
 <context>
@@ -77826,6 +77994,30 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>A súa conta bloqueouse</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Engadiuse unha clave de acceso á súa conta %login en %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Quen teña esta clave de acceso pode acceder á súa conta sen o seu contrasinal. Se non a engadiu vostede, quítea en Claves de acceso e cambie o seu contrasinal.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Quitouse unha clave de acceso da súa conta %login en %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Xa non pode acceder á súa conta. Se non a quitou vostede, revise as súas claves de acceso e dispositivos.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Engadiuse unha clave de acceso á súa conta</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Quitouse unha clave de acceso da súa conta</translation>
     </message>
 </context>
 <context>

@@ -20,7 +20,7 @@
  * Arabic letters are drawn in their isolated forms (no contextual shaping). Without any TrueType font the PDF
  * core fonts (Helvetica, Courier) are used and text is transliterated to Windows-1252.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

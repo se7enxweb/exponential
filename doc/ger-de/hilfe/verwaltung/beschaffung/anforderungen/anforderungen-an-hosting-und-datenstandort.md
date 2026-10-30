@@ -27,7 +27,7 @@ der Hilfe zum Hosting, mit denen die Antworten der Bieter übereinstimmen sollte
 
 ## Möglichkeiten des Hostings, die Exponential zulässt
 
-- **Jeder Host, der die Anforderungen erfüllt**: PHP 8.0 oder neuer, eine unterstützte Datenbank und ein Webserver
+- **Jeder Host, der die Anforderungen erfüllt**: PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar), eine unterstützte Datenbank und ein Webserver
   ([Anforderungen](../../../../installation/02-voraussetzungen.md), [Anforderungen auf einen Blick](../../../hosting/grundlagen/anforderungen-auf-einen-blick.md)).
 - **Modelle**: Shared Hosting, VPS, dedizierte Server, Container und Kubernetes werden in
   [Ein Hosting-Modell wählen](../../../hosting/modelle/ein-hosting-modell-waehlen.md) verglichen.
@@ -57,7 +57,7 @@ Füllen Sie die Lücken nach Ihrem eigenen Bedarf aus; diese Hilfe schlägt kein
 | Datenbanken | In der offiziellen Reihenfolge der Präferenz: SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL ([Datenbankunterstützung](../../../datenbankunterstuetzung.md)) |
 | Webserver | Exponential Velocity, Apache oder nginx mit PHP-FPM, FrankenPHP ([Die Website ausliefern](../../../../installation/08-die-website-ausliefern.md), [Einen Webserver wählen](../../../hosting/server/einen-webserver-waehlen.md)) |
 | Betriebssysteme | Stufen von „tested here“ bis „not possible today“ ([Unterstützung von Betriebssystemen](../../../betriebssystemunterstuetzung.md)) |
-| PHP | 8.0 ist die älteste unterstützte Version; 8.5 die neueste getestete ([Anforderungen](../../../../installation/02-voraussetzungen.md)) |
+| PHP | 8.0 ist die älteste unterstützte Version (7.4 ohne Support nutzbar); 8.5 die neueste getestete ([Anforderungen](../../../../installation/02-voraussetzungen.md)) |
 | Mehrere Webknoten | Brauchen einen Datenbankserver und gemeinsamen Speicher ([Mehrere Webknoten](../../../hosting/betrieb/mehrere-web-knoten.md)) |
 | HTTPS auf Velocity | Zertifikatsverwaltung einschließlich ACME ([HTTPS-Zertifikate von Velocity](../../../../funktionen/6.0/velocity-https-zertifikate.md)) |
 | Die Administration beschränken | [Die Administration beschränken](../../../hosting/sicherheit/die-administration-einschraenken.md) |

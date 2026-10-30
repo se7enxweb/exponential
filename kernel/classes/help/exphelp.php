@@ -3,7 +3,7 @@
  * The help system's shared helpers (doc/eng-us/features/6.0/help-system.md): its settings, whether it is on, the install
  * root it reads from, and the URLs of its views. Every other expHelp* class takes its settings from here.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

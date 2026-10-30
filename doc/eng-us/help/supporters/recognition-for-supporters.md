@@ -17,8 +17,9 @@ to help, but it matters, especially for companies and for people building a care
 - **The Git history.** Every merged commit keeps its author: every pull request is merged, squashed and rebased
   by its author while it was open, and `main`'s history is never rewritten after the merge (`doc/eng-us/bc/6.0/ci.md`). `git shortlog -sn` shows everyone who
   contributed.
-- **The documentation's copyright notice** names "the Exponential contributors" next to 7x and the Foundation
-  ([The license of this documentation](../../README-LICENSE.md)).
+- **Credit is not copyright.** The copyright notice names only the Exponential Foundation and 7x, because every
+  contributor assigns the copyright in a contribution to them through the CLA; the credit stays with the people
+  ([Copyright and copyleft](../copyright-and-copyleft.md)).
 - **Credit in the README** for the work of other projects, for example "with full credit to Mugo Web" (README).
 
 ## Sponsors

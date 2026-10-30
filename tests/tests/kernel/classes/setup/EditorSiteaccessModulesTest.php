@@ -4,7 +4,7 @@
  * hides the administration tabs, and the modules behind them answer 404 there. Syndication (feed export and
  * import) is one of them. No database: only the lists the wizard writes are checked.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

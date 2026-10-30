@@ -6,7 +6,7 @@
  * it a third time, so "a+b@example.com" was looked up as "a b@example.com" and the customer's orders were not found.
  * The case of LoveStack (mugoweb/ezpublish-legacy) commit 5a17c08bfc.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group kernel

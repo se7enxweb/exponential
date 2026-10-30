@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/notification
 audience: developer
 category: standards
-order: 498
+order: 505
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/notification mit den Entwurfsmustern.
 keywords: kernel/classes/notification, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

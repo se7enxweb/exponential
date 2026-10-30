@@ -103,7 +103,7 @@ später ([Freie Dokumentation](../freie-dokumentation.md), [Standards für Dokum
 ## Verwandte Seiten
 
 - [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md)
-- [Standards der Hilfe](../../../eng-us/specifications/6.0/help-standards.md)
+- [Standards der Hilfe](../../spezifikationen/6.0/hilfestandards.md)
 - [Beiträge an das Projekt](upstream-beitragen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

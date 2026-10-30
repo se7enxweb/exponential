@@ -51,7 +51,7 @@ außerdem die Einstellungen und Erweiterungen auf, die Aufmerksamkeit brauchen:
    Ersetzen Sie `mydatabase` (verwenden Sie `pg_dump` für PostgreSQL). Bewahren Sie die Backups auf, bis die
    umgezogene Website eine Weile gelaufen ist.
 
-2. **Prüfen Sie PHP.** Exponential 6 läuft unter PHP 8.1 bis 8.5. Die `composer.json` von LoveStack erlaubt PHP
+2. **Prüfen Sie PHP.** Exponential 6 läuft unter PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar). Die `composer.json` von LoveStack erlaubt PHP
    7.3–7.4 und 8.1–8.3; eine Website unter PHP 7 zieht also gleichzeitig auf PHP 8 um: `php -v`.
 
 3. **Erfassen Sie Ihren eigenen Code.** Alles, was Sie oder Ihre Agentur geschrieben haben, liegt in Ihren eigenen

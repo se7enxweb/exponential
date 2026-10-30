@@ -25,7 +25,7 @@ Kopieren Sie die Liste, die Sie brauchen, in Ihre Notizen und haken Sie sie ab.
 
 - [ ] Ich habe einen Lernpfad gewählt ([Einen Lernpfad wählen](einen-lernpfad-waehlen.md)).
 - [ ] Ich habe ein Lerntagebuch begonnen ([Ein Lerntagebuch führen](ein-lerntagebuch-fuehren.md)).
-- [ ] Ich habe PHP 8.0 oder neuer und Composer, oder ich beginne mit der öffentlichen Demo
+- [ ] Ich habe PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) und Composer, oder ich beginne mit der öffentlichen Demo
       ([Ihre erste Website auf drei Wegen](ihre-erste-website-auf-drei-wegen.md)).
 - [ ] Ich habe einen Passwortmanager für die Passwörter, die der Installer ausgibt.
 

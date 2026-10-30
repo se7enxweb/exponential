@@ -21,6 +21,7 @@ nginx; FrankenPHP), the file permissions every setup needs, and running behind a
 > test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
 > [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../guides/litespeed-page-cache.md).
 
 [Contents](README.md) · Previous: [7. The console install](07-console-install.md) · Next: [9. Databases](09-databases.md)
 
@@ -158,7 +159,7 @@ test (`curl -X PROPFIND -H 'Depth: 1'`, expect `207 Multi-Status`) are in
 ## 8.3 Exponential Velocity, the recommended way
 
 **Velocity is part of Exponential as of 6.0.15.** The root `composer.json` requires
-`se7enxweb/exponential-velocity ~0.0.4.57`, so the `composer install` of [chapter 3](03-getting-the-code.md#34-the-velocity-package)
+`se7enxweb/exponential-velocity ~0.0.4.57` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later), so the `composer install` of [chapter 3](03-getting-the-code.md#34-the-velocity-package)
 has already installed it, on the same PHP as the kernel (8.0 and later, the stock PHP 8.0 of Red Hat Enterprise Linux 9
 included). There is nothing extra to download before the first `exp:velocity start`. This is the turning point of the
 6.0 line: the Internet / Web Application Server is a cornerstone of the core product, so serving, caching, HTTPS and

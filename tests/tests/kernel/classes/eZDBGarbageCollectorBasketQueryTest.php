@@ -5,7 +5,7 @@
  * "Query failed: RIGHT and FULL OUTER JOINs are not currently supported"), and find exactly the baskets without a
  * session. No database of the installation: the query is read from the source and run on an in-memory SQLite.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

@@ -44,7 +44,7 @@ shows a dry run before anything is published ([7x SQLI Import: start here](../..
 
 - **Old versions get no security fixes.** "5.x, 4.x, 3.x and older" are not supported; 6.0 is the maintained line
   (`SECURITY.md`). A site from the eZ Publish years is running without fixes.
-- **Current PHP.** Exponential supports PHP 8.0 to 8.5 (`README.md`), so the site can move to a supported PHP as well.
+- **Current PHP.** Exponential supports PHP 8.0 to 8.5 (PHP 7.4 usable without support) (`README.md`), so the site can move to a supported PHP as well.
 - **A shared database heritage.** For 4.x and 5.x legacy sites, the content model and much of the database carry
   over; the chapters explain what changes and what does not
   ([14.1 What changes, and what does not](../../../install/14-migrating-from-4x.md#141-what-changes-and-what-does-not)).

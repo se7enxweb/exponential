@@ -2,7 +2,7 @@
 /**
  * Autoloader definition for eZ Publish
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
@@ -21,11 +21,30 @@ if ( !defined( 'EXP_ROOT_DIR' ) && strncmp( __FILE__, 'phar://', 7 ) !== 0 )
     define( 'EXP_ROOT_DIR', __DIR__ );
 }
 
-// PHP functions younger than the oldest supported PHP (8.0), defined only where
-// PHP lacks them. On 8.1 and later the file is not even read.
+// PHP functions younger than the oldest usable PHP (7.4, usable without support; 8.0 is the oldest supported), defined only where
+// PHP lacks them; symfony/polyfill-php80 and -php81 add the rest. On 8.1 and
+// later the file is not even read.
 if ( PHP_VERSION_ID < 80100 )
 {
     require_once __DIR__ . '/lib/phpcompat.php';
+}
+
+// The views of the class module were in the namespace Exponential\View\Kernel\Class
+// until 6.0.15. "Class" is a reserved word before PHP 8.0, so the namespace is
+// Exponential\View\Kernel\ContentClass now; code that still names a class by the old
+// name loads the new one, which registers the old name as an alias.
+if ( !function_exists( 'expAutoloadRenamedClassViews' ) )
+{
+    function expAutoloadRenamedClassViews( $className )
+    {
+        $old = 'Exponential\\View\\Kernel\\Class\\';
+        if ( strncmp( $className, $old, strlen( $old ) ) !== 0 )
+            return;
+        $new = 'Exponential\\View\\Kernel\\ContentClass\\' . substr( $className, strlen( $old ) );
+        if ( class_exists( $new ) && !class_exists( $className, false ) )
+            class_alias( $new, $className );
+    }
+    spl_autoload_register( 'expAutoloadRenamedClassViews' );
 }
 
 // An engine archive, if this installation is running from one.

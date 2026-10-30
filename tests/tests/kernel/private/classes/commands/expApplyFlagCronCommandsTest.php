@@ -13,7 +13,7 @@
  *  AC-05 - "Run now" of the notification status page starts notificationrun with --apply, "Dry run" with --dry-run
  *  AC-06 - The demo-mode scripts and crontab pass --apply to every command that is a dry run without it
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

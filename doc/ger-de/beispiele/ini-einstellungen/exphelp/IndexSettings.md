@@ -217,12 +217,12 @@ StatFiles=enabled
 
 ## StatFilesInterval
 
-> With StatFiles enabled: seconds for which that comparison, once made, is reused by every request and process (it is  
-> kept in the help cache directory). Thousands of listed files make it the most expensive part of a help request,  
-> about 25 ms behind PHP-FPM (and under Velocity 0.0.4.56 and later, which stats the list in one go; 0.5 s before).  
-> An edited page then shows within this many seconds; a page  
-> added or removed changes the git index and shows at once, and "./console exp:help index" always looks again.  
-> 0: compare on every request  
+> Bei aktiviertem StatFiles: Sekunden, für die dieser Vergleich, einmal durchgeführt, von jeder Anfrage und jedem Prozess wiederverwendet wird (er  
+> liegt im Hilfe-Cache-Verzeichnis). Bei Tausenden aufgelisteter Dateien ist er der teuerste Teil einer Hilfe-Anfrage,  
+> etwa 25 ms hinter PHP-FPM (und unter Velocity 0.0.4.56 und später, das die Liste in einem Zug per stat prüft; davor 0,5 s).  
+> Eine bearbeitete Seite erscheint dann innerhalb dieser Sekunden; eine  
+> hinzugefügte oder entfernte Seite ändert den Git-Index und erscheint sofort, und "./console exp:help index" prüft immer neu.  
+> 0: bei jeder Anfrage vergleichen  
 
 Standard: `5`.
 

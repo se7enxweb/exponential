@@ -18,10 +18,11 @@ Webservern mit denselben Verben (`start`, `stop`, `graceful`, `restart`, `kill`,
 > Dieselben Regeln für andere Server: [nginx](../../beispiele/webserver/nginx.md), [LiteSpeed](../../beispiele/webserver/litespeed.md), [Caddy](../../beispiele/webserver/caddy.md), [IIS](../../beispiele/webserver/iis.md),
 > [Velocity](../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../../hilfe/hosting/control-panels/plesk.md), [cPanel](../../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../../hilfe/hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../anleitungen/seiten-cache-mit-litespeed.md).
 
 ## Velocity ist seit 6.0.15 Teil von Exponential
 
-Seit 6.0.15 **verlangt** die `composer.json` im Wurzelverzeichnis `se7enxweb/exponential-velocity ~0.0.4.57`; vorher
+Seit 6.0.15 **verlangt** die `composer.json` im Wurzelverzeichnis `se7enxweb/exponential-velocity ~0.0.4.57` (über `se7enxweb/exponential-php-floor`, auf PHP 8.0 und neuer); vorher
 schlug sie das Paket nur vor. Was sich dadurch für eine bestehende Installation ändert:
 
 | | |
@@ -89,13 +90,13 @@ php bin/php/console exp:velocity deploy --dry-run --allow-root-user  # what it w
 |---|---|---|
 | 1 | Autoloads der Erweiterungen | `php bin/php/ezpgenerateautoloads.php -e` |
 | 2 | Autoloads des Kernels, nur mit `--kernel` | `php bin/php/ezpgenerateautoloads.php -k`, beschränkt auf `kernel/` und `lib/` |
-| 3 | INI-Caches | `php bin/php/ezcache.php --clear-tag=ini` |
-| 4 | Caches template, template-override, translation und design_base | `--clear-id=template`, `--clear-id=template-override`, `--clear-id=translation`, `--clear-id=design_base`, eine ID pro Aufruf |
+| 3 | INI-Caches und der kompilierte Kernel-Service-Container (Cache-Eintrag `kernelservices`, [Kernel-Dienste](kernel-dienste.md)), wenn sich Einstellungen geändert haben oder mit `--kernel` | `php bin/php/ezcache.php --clear-tag=ini` (`./console exp:services:compile` nur für den Container) |
+| 4 | Caches template, template-override, translation und design_base, jeder, wenn sich geändert haben kann, was er hält (unten) | `--clear-id=template`, `--clear-id=template-override`, `--clear-id=translation`, `--clear-id=design_base`, eine ID pro Aufruf |
 | 5 | Engine-Archiv, wenn Velocity aus einem läuft | `php bin/php/phar.php build`: nur neu gebaut, wenn sich eine Datei in `kernel/`, `lib/` oder `autoload/` geändert hat, jede Datei wird vorher geparst |
 | 6 | PHP-FPM: warten, bis sein OPcache die geänderten Dateien neu validiert hat (kein Neuladen), oder es neu laden, wenn darauf kein Verlass ist | `sleep <revalidate_freq + 1>`, oder `systemctl reload <[DeploySettings] PhpFpmService>` |
 | 7 | Velocity neu starten, wenn er läuft | `exp:velocity restart` |
-| 8 | Caches content, exphttpcache, ezjscore-packer (nur mit `--packer`) und template-block | `--clear-id=content`, `--clear-id=exphttpcache`, `--clear-id=ezjscore-packer`, `--clear-id=template-block` |
-| 9 | der Antwort-Cache von Velocity | `exp:velocity cache clear` |
+| 8 | Caches content, exphttpcache, ezjscore-packer (nur mit `--packer`) und template-block, wenn sich Templates, Design-Dateien, Einstellungen oder Übersetzungen geändert haben | `--clear-id=content`, `--clear-id=exphttpcache`, `--clear-id=ezjscore-packer`, `--clear-id=template-block` |
+| 9 | der Antwort-Cache von Velocity, mit Schritt 8 | `exp:velocity cache clear` |
 | 10 | Vorwärmen: `[DeploySettings] WarmUpURL[]`, jede einmal von einem Hintergrundprozess angefragt | `curl URL...` |
 
 **`config.php` zählt als PHP-Änderung.** Die persistenten Worker der qbix-Engine lesen sie einmal, wenn sie starten.
@@ -107,6 +108,29 @@ neu ([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen
 **Auf die Reihenfolge kommt es an.** Die Caches mit gerenderter Ausgabe (8 und 9) werden erst geleert, wenn PHP-FPM
 und Velocity den neuen Code ausführen. Werden sie vorher geleert, wird jede in der Zwischenzeit angefragte Seite vom
 alten Code gerendert und erneut gecacht, und die Änderung sieht aus, als hätte sie nicht funktioniert.
+
+**Ein Cache wird nur geleert, wenn sich geändert haben kann, was er hält.** Ein erfolgreiches Deployment hält fest,
+wann es begonnen hat (`var/cache/velocity-deploy/last.json`); das nächste sucht nach Dateien, die seitdem geändert
+wurden, unter `design/`, `settings/`, `share/translations/`, denselben Verzeichnissen jeder Erweiterung und im Code
+der Template-Engines und der Operator-Registrierungen (`lib/eztemplate`, `lib/smarty`, `lib/twig`,
+`lib/templatebridge`, `kernel/common`, `extension/*/autoloads`):
+
+| Seit dem letzten Deployment geändert | Geleert |
+|---|---|
+| Einstellungen | INI-Caches, template-override, design_base, die Caches gerenderter Ausgabe (Schritte 8 und 9) |
+| Templates oder andere Design-Dateien | template, template-override, design_base, die Caches gerenderter Ausgabe |
+| Übersetzungen | translation, die Caches gerenderter Ausgabe |
+| Code der Template-Engines oder der Operator-Registrierungen | template (kompilierte Templates) |
+| nur PHP-Klassen | nichts aus den Schritten 3, 4, 8 und 9 |
+
+Ein Deployment von PHP-Klassen behält also die bereits gerenderten Seiten, und die ersten Besucher danach warten nicht
+jeder darauf, dass eine Seite neu gerendert wird. `--dry-run` sagt für jeden Cache, warum er geleert oder behalten
+würde, und nennt die geänderten Dateien. `--clear-content` leert die Caches gerenderter Ausgabe trotzdem (nach einer
+Änderung an PHP-Code, die ändert, was eine Seite zeigt), `--all-caches` leert jeden Cache. Mit `--kernel` werden auch
+die INI-Caches geleert (der Kernel-Service-Container wird neu kompiliert). Ohne Aufzeichnung eines früheren
+Deployments (das erste, oder die Datei entfernt) wird jeder Cache geleert, wie bisher; ein Upgrade (`exp:upgrade`)
+stellt mit `--all-caches` bereit. Eine Datei gilt nach ihrer Änderungszeit als geändert: eine Kopie, die die alte
+Zeit behält (`cp -p`, `rsync -t`), wird nicht erkannt; stellen Sie eine solche Kopie mit `--all-caches` bereit.
 
 **Der erste fehlgeschlagene Schritt beendet den Lauf.** Eine Kernel-Datei, die sich nicht parsen lässt, lässt
 Schritt 5 fehlschlagen, bevor PHP-FPM oder Velocity berührt wurden; ein Neustart, der nicht hochkommt, lässt jeden

@@ -8066,8 +8066,8 @@
         <translation>თავდაპირველი ავტორებისა და Exponential-თან ერთად მოწოდებული მესამე მხარის პროგრამული უზრუნველყოფის საავტორო უფლებების შეტყობინებები, ლიცენზიის მოთხოვნისამებრ, დაცულია წყაროს ფაილებსა და LICENSE ფაილში.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>ქვემოთ მოცემულია Exponential-ის მონაწილეთა სია, რომლებმაც თავიანთი ნაშრომი 7x-ს გამოსაყენებლად ლიცენზიით გადასცეს eZ Systems Contributor Licensing Agreement-ის პირობებით. ამ შეთანხმების თანახმად, 7x ყოველ წვლილს ავრცელებს იმავე ლიცენზიით, რომლითაც ვრცელდება ფაილი, რომელშიც ეს წვლილი შედის. სიაში მითითებულია ყოველი მონაწილე, სურვილისამებრ საკონტაქტო ინფორმაცია და ფაილები, რომლებშიც მათ წვლილი შეიტანეს.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>კონტრიბუტორები, რომლებსაც მადლობას ვუხდით Exponential-ზე და იმ პროგრამულ უზრუნველყოფაზე მუშაობისთვის, საიდანაც ის წარმოიშვა, იმ ფაილებით, რომლებშიც წვლილი შეიტანეს. ეს მადლიერებაა და არა საავტორო უფლების შეტყობინება: Exponential-ში შეტანილი წვლილი Contributor Licensing Agreement-ის მიხედვით გადაეცემა Exponential Foundation-სა და 7x-ს.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77281,6 +77281,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>წვდომის გასაღების შემოწმება ვერ მოხერხდა. გთხოვთ, სცადოთ ხელახლა.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>ანგარიშებს, რომლებიც მხოლოდ წვდომის გასაღებებით შედიან, აქ პაროლის გამოყენება არ შეუძლიათ: აირჩიეთ „წვდომის გასაღებით შესვლა“.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login-ის წვდომის გასაღებები</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>წვდომის გასაღებები, რომლებითაც ეს ანგარიში შედის. გააუქმეთ ის, რომელიც დაკარგულ ან მოპარულ მოწყობილობაზეა: მისით შესვლა აღარ იქნება შესაძლებელი. ახლებს მფლობელი თავად ამატებს.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>თქვენს ანგარიშს წვდომის გასაღები სჭირდება</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>წვდომის გასაღების დამატება თქვენს ანგარიშზე</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>გასაგრძელებლად დაამატეთ წვდომის გასაღები. ამის შემდეგ მხოლოდ პაროლის ნაცვლად მისით შეხვალთ.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>წვდომის გასაღებით შესვლა პაროლზე სწრაფი და უსაფრთხოა. დაამატეთ ერთი ახლავე ან გააგრძელეთ მის გარეშე.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>ახლა არა</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>გავაუქმოთ წვდომის გასაღები „%name“?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>მისით ამ ანგარიშზე შესვლა აღარ იქნება შესაძლებელი. თუ ის ბოლო იყო, მფლობელი პაროლით შედის, ან თქვენ ახალს დააყენებთ.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>წვდომის გასაღების გაუქმება</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>გაუქმება</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>ამ ანგარიშს წვდომის გასაღები არ აქვს.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>ავთენტიფიკატორი</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>უცნობი</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>თქვენი ბოლო წვდომის გასაღები: მის მოცილებამდე დაამატეთ სხვა.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>ეს ანგარიში მხოლოდ წვდომის გასაღებებით შედის (წვდომის გასაღებების პოლიტიკა): თუ არცერთი აღარ დარჩა, ის კვლავ თავისი პაროლით შედის.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>ეს თქვენი ბოლო წვდომის გასაღებია და თქვენი ანგარიში მის გარეშე ვერ შევა. ჯერ დაამატეთ სხვა წვდომის გასაღები.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>წვდომის გასაღები „%name“ გაუქმდა. მისით ამ ანგარიშზე შესვლა აღარ არის შესაძლებელი.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77380,6 +77456,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>კოდი თქვენი ავთენტიფიკატორის აპლიკაციიდან</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>თქვენ აპირებთ მონაცემების სამუდამოდ წაშლას ან ჟურნალის გასუფთავებას.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>თქვენი პაროლი და წვდომის გასაღები</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>თქვენი პაროლი და თქვენი ავთენტიფიკატორის აპლიკაციის კოდი</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>ან:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>ამ ბრაუზერს არ შეუძლია წვდომის გასაღებების გამოყენება. გამოიყენეთ სხვა გზა ან სხვა ბრაუზერი.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>როცა გააგრძელებთ, ბრაუზერი მოგთხოვთ თქვენს ერთ-ერთ წვდომის გასაღებს.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>გაგრძელება წვდომის გასაღებით</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77470,6 +77574,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>კონფიგურაცია</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>საკუთარი პაროლის, ელფოსტის მისამართის, წვდომის გასაღებების, ორსაფეხურიანი შესვლის, აღდგენის კოდების ან API გასაღებების შეცვლა და საკუთარი სხვა მოწყობილობებიდან გამოსვლა.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>მომხმარებლების შექმნა და რედაქტირება, მათი პაროლები და მოწყობილობები, ანგარიშის პარამეტრები, ახალი მომხმარებლის ანგარიშების დამტკიცება ან უარყოფა, როლების მინიჭება და პოლიტიკების რედაქტირება.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>მონაცემების წაშლა</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>სანაგვის დაცლა, მისგან ელემენტების მოცილება და რამდენიმე ელემენტის ერთდროულად მოცილება.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>შიგთავსის მოცილება, გამოქვეყნება და შენახვა</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>შიგთავსის მოცილება (სანაგვეშიც), გამოქვეყნება და მონახაზის შენახვა; იკითხება ფორმის გაგზავნისას. ნაგულისხმევად გამორთულია.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>მგრძნობიარე მოქმედებამდე შესული მომხმარებელი ხელახლა ადასტურებს, ვინ არის: თავისი პაროლით და წვდომის გასაღებით, ან წვდომის გასაღების გარეშე თავისი პაროლით და ავთენტიფიკატორის აპლიკაციის კოდით. მხოლოდ ვებგვერდები კითხულობენ: REST ინტერფეისი, SOAP, WebDAV, expservices-ში შესვლა და ბრძანების სტრიქონი არასოდეს.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>სად მოქმედებს პარამეტრები</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>პარამეტრები:</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ყველა საიტზე წვდომა</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>მხოლოდ საიტზე წვდომა %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>გახსნა</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>ვის ეკითხებიან: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>მონიშნეთ მომხმარებელთა ჯგუფები, რათა მხოლოდ მათ წევრებს ჰკითხონ (მაგალითად, რედაქტორებს). არცერთი მონიშნული: ყველა მომხმარებელს.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>შენახულია settings/override/site.ini.append.php-ში, ყველა საიტზე წვდომისთვის. შენახვისას მოგეთხოვებათ დაადასტუროთ, რომ ეს თქვენ ხართ.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>შენახულია settings/siteaccess/%name/site.ini.append.php-ში. settings/override-ში არსებულ მნიშვნელობას მასზე უპირატესობა აქვს. შენახვისას მოგეთხოვებათ დაადასტუროთ, რომ ეს თქვენ ხართ.</translation>
     </message>
 </context>
 <context>
@@ -77826,6 +77994,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>თქვენი ანგარიში დაიბლოკა</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>თქვენს ანგარიშს %login საიტზე %site დაემატა წვდომის გასაღები.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>ნებისმიერს, ვისაც ეს წვდომის გასაღები აქვს, შეუძლია თქვენს ანგარიშზე შესვლა თქვენი პაროლის გარეშე. თუ ის თქვენ არ დაგიმატებიათ, მოაცილეთ ის განყოფილებაში „წვდომის გასაღებები“ და შეცვალეთ პაროლი.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>თქვენი ანგარიშიდან %login საიტზე %site მოცილდა წვდომის გასაღები.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>მისით თქვენს ანგარიშზე შესვლა აღარ არის შესაძლებელი. თუ ის თქვენ არ მოგიცილებიათ, შეამოწმეთ თქვენი წვდომის გასაღებები და მოწყობილობები.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>თქვენს ანგარიშს დაემატა წვდომის გასაღები</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>თქვენი ანგარიშიდან მოცილდა წვდომის გასაღები</translation>
     </message>
 </context>
 <context>

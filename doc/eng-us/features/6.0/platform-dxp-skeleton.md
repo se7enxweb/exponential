@@ -112,7 +112,7 @@ The guide (section 21) describes moving between engines: any database to SQLite 
 
 ## Limits
 
-- The v5 skeleton refuses PHP older than 8.3. The 4.6.x skeleton keeps PHP 7.4 to 8.5 and Symfony 5.4.
+- The v5 skeleton refuses PHP older than 8.3. The 4.6.x skeleton keeps PHP 8.0 to 8.5 (PHP 7.4 usable without support) and Symfony 5.4.
 - Node.js: the v5 skeleton guide says use Node 20 LTS only; the Nexus v5 starter requires Node 22. Follow the guide of the project you install.
 - A clone of the skeleton with `git clone` instead of `create-project` needs `composer install --keep-vcs` and the same steps in order.
 

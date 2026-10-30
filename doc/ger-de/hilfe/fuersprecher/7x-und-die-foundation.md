@@ -35,7 +35,7 @@ ein Projekt. Wer sie richtig benennt, schafft Vertrauen; wer sie verwechselt, ve
 Quellen: [Die Foundation und 7x](../wer-ist-die-exponential-foundation.md#die-foundation-und-7x),
 [Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt).
 
-Das Copyright ist geteilt: „Copyright (C) 1998 - 2026 7x & Exponential Foundation“
+Das Copyright ist geteilt: „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“
 ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
 
 ## Sätze, die Sie sagen können

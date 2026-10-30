@@ -8066,8 +8066,8 @@
         <translation>សេចក្តីជូនដំណឹងអំពីសិទ្ធិអ្នកនិពន្ធរបស់អ្នកនិពន្ធដើម និងរបស់កម្មវិធីភាគីទីបីដែលរួមបញ្ចូលជាមួយ Exponential ត្រូវបានរក្សាទុកក្នុងឯកសារប្រភព និងក្នុងឯកសារ LICENSE ដូចដែលអាជ្ញាប័ណ្ណតម្រូវ។</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>ខាងក្រោមនេះជាបញ្ជីអ្នកចូលរួមចំណែកដល់ Exponential ដែលបានផ្តល់អាជ្ញាប័ណ្ណលើស្នាដៃរបស់ពួកគេសម្រាប់ឱ្យ 7x ប្រើប្រាស់ តាមលក្ខខណ្ឌនៃ eZ Systems Contributor Licensing Agreement។ តាមដែលកិច្ចព្រមព្រៀងនេះអនុញ្ញាត 7x ចែកចាយបន្តការចូលរួមចំណែកនីមួយៗក្រោមអាជ្ញាប័ណ្ណដូចគ្នានឹងឯកសារដែលការចូលរួមចំណែកនោះស្ថិតនៅក្នុង។ បញ្ជីនេះរាយឈ្មោះអ្នកចូលរួមចំណែកម្នាក់ៗ ព័ត៌មានទំនាក់ទំនង (ស្រេចចិត្ត) និងឯកសារដែលពួកគេបានចូលរួមចំណែក។</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>អ្នករួមចំណែកដែលទទួលបានការទទួលស្គាល់ចំពោះការងាររបស់ពួកគេលើ Exponential និងលើកម្មវិធីដែលវាកើតចេញមក រួមជាមួយឯកសារដែលពួកគេបានរួមចំណែក។ នេះគឺជាការទទួលស្គាល់ មិនមែនជាសេចក្ដីជូនដំណឹងអំពីសិទ្ធិអ្នកនិពន្ធទេ៖ ការរួមចំណែកដល់ Exponential ត្រូវបានផ្ទេរទៅ Exponential Foundation និង 7x ក្រោម Contributor Licensing Agreement។</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77281,6 +77281,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>មិនអាចពិនិត្យផាសគីបានទេ។ សូមព្យាយាមម្តងទៀត។</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>គណនីដែលចូលដោយប្រើផាសគីតែប៉ុណ្ណោះ មិនអាចប្រើពាក្យសម្ងាត់នៅទីនេះបានទេ៖ សូមជ្រើស &quot;ចូលដោយប្រើផាសគី&quot;។</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>ផាសគីរបស់ %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>ផាសគីដែលគណនីនេះប្រើដើម្បីចូល។ សូមដកហូតផាសគីដែលនៅលើឧបករណ៍បាត់ ឬត្រូវគេលួច៖ វានឹងមិនអាចចូលបានទៀតទេ។ ម្ចាស់គណនីបន្ថែមផាសគីថ្មីដោយខ្លួនឯង។</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>គណនីរបស់អ្នកត្រូវការផាសគី</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>បន្ថែមផាសគីទៅគណនីរបស់អ្នក</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>បន្ថែមផាសគីដើម្បីបន្ត។ បន្ទាប់មក អ្នកនឹងចូលដោយប្រើវា ជំនួសឱ្យពាក្យសម្ងាត់តែមួយ។</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>ការចូលដោយប្រើផាសគីលឿនជាង និងមានសុវត្ថិភាពជាងពាក្យសម្ងាត់។ បន្ថែមមួយឥឡូវនេះ ឬបន្តដោយគ្មានវា។</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>មិនមែនឥឡូវទេ</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>ដកហូតផាសគី &quot;%name&quot; ឬ?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>វាមិនអាចចូលគណនីនេះបានទៀតទេ។ ប្រសិនបើវាជាផាសគីចុងក្រោយ ម្ចាស់គណនីនឹងចូលដោយប្រើពាក្យសម្ងាត់ ឬអ្នកកំណត់ពាក្យសម្ងាត់ថ្មី។</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>ដកហូតផាសគី</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>ដកហូត</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>គណនីនេះគ្មានផាសគីទេ។</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>កម្មវិធីផ្ទៀងផ្ទាត់</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>មិនស្គាល់</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>ផាសគីចុងក្រោយរបស់អ្នក៖ សូមបន្ថែមមួយទៀតមុនពេលដកវាចេញ។</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>គណនីនេះចូលដោយប្រើផាសគីតែប៉ុណ្ណោះ (គោលការណ៍ផាសគី)៖ ប្រសិនបើគ្មានផាសគីនៅសល់ វានឹងចូលដោយប្រើពាក្យសម្ងាត់របស់វាវិញ។</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>នេះជាផាសគីចុងក្រោយរបស់អ្នក ហើយគណនីរបស់អ្នកមិនអាចចូលបានដោយគ្មានវាទេ។ សូមបន្ថែមផាសគីមួយទៀតជាមុនសិន។</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>ផាសគី &quot;%name&quot; ត្រូវបានដកហូត។ វាមិនអាចចូលគណនីនេះបានទៀតទេ។</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77380,6 +77456,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>កូដពីកម្មវិធីផ្ទៀងផ្ទាត់ភាពត្រឹមត្រូវរបស់អ្នក</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>អ្នកហៀបនឹងលុបទិន្នន័យជាអចិន្ត្រៃយ៍ ឬសម្អាតកំណត់ហេតុ។</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>ពាក្យសម្ងាត់របស់អ្នក និងផាសគី</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>ពាក្យសម្ងាត់របស់អ្នក និងកូដពីកម្មវិធីផ្ទៀងផ្ទាត់របស់អ្នក</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>ឬ៖</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>កម្មវិធីរុករកនេះមិនអាចប្រើផាសគីបានទេ។ សូមប្រើវិធីផ្សេង ឬកម្មវិធីរុករកផ្សេង។</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>នៅពេលអ្នកបន្ត កម្មវិធីរុករករបស់អ្នកនឹងស្នើសុំផាសគីមួយរបស់អ្នក។</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>បន្តដោយប្រើផាសគី</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77470,6 +77574,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>ការរៀបចំ</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>ការប្ដូរពាក្យសម្ងាត់ អាសយដ្ឋានអ៊ីមែល ផាសគី ការចូលពីរជំហាន កូដសង្គ្រោះ ឬកូនសោ API ផ្ទាល់ខ្លួន និងការចាកចេញពីឧបករណ៍ផ្សេងទៀតរបស់ខ្លួន។</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ការបង្កើត និងកែសម្រួលអ្នកប្រើ ពាក្យសម្ងាត់ និងឧបករណ៍របស់ពួកគេ ការកំណត់គណនី ការអនុម័ត ឬបដិសេធគណនីអ្នកប្រើថ្មី ការចាត់តាំងតួនាទី និងការកែសម្រួលគោលការណ៍។</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>ការលុបទិន្នន័យ</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>ការសម្អាតធុងសំរាម ការដកធាតុចេញពីវា និងការដកធាតុជាច្រើនចេញក្នុងពេលតែមួយ។</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>ការដកចេញ ការបោះពុម្ពផ្សាយ និងការរក្សាទុកមាតិកា</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>ការដកមាតិកាចេញ (រួមទាំងទៅធុងសំរាម) ការបោះពុម្ពផ្សាយ និងការរក្សាទុកសេចក្តីព្រាង ដែលត្រូវសួរនៅពេលបញ្ជូនទម្រង់។ បិទតាមលំនាំដើម។</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>មុនសកម្មភាពរសើប អ្នកប្រើដែលបានចូលបញ្ជាក់ម្ដងទៀតថាគេជានរណា៖ ដោយប្រើពាក្យសម្ងាត់ និងផាសគី ឬបើគ្មានផាសគី ដោយប្រើពាក្យសម្ងាត់ និងកូដពីកម្មវិធីផ្ទៀងផ្ទាត់របស់គេ។ មានតែទំព័រវេបប៉ុណ្ណោះដែលសួរ៖ ចំណុចប្រទាក់ REST, SOAP, WebDAV, ការចូល expservices និងបន្ទាត់ពាក្យបញ្ជាមិនដែលសួរទេ។</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>កន្លែងដែលការកំណត់អនុវត្ត</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>ការកំណត់សម្រាប់</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ការចូលគេហទំព័រនីមួយៗ</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>តែការចូលគេហទំព័រ %name ប៉ុណ្ណោះ</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>បើក</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>អ្នកដែលត្រូវសួរ៖ %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>ធីកក្រុមអ្នកប្រើ ដើម្បីសួរតែសមាជិករបស់ក្រុមទាំងនោះ (ឧទាហរណ៍ អ្នកកែសម្រួល)។ មិនធីកអ្វីទេ៖ អ្នកប្រើគ្រប់រូប។</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>បានរក្សាទុកក្នុង settings/override/site.ini.append.php សម្រាប់ការចូលគេហទំព័រនីមួយៗ។ ការរក្សាទុកនឹងស្នើឱ្យអ្នកបញ្ជាក់ថាជាអ្នក។</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>បានរក្សាទុកក្នុង settings/siteaccess/%name/site.ini.append.php។ តម្លៃក្នុង settings/override មានអាទិភាពជាង។ ការរក្សាទុកនឹងស្នើឱ្យអ្នកបញ្ជាក់ថាជាអ្នក។</translation>
     </message>
 </context>
 <context>
@@ -77826,6 +77994,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>គណនីរបស់អ្នកត្រូវបានចាក់សោ</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>ផាសគីមួយត្រូវបានបន្ថែមទៅគណនី %login របស់អ្នកនៅលើ %site ។</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>អ្នកណាដែលមានផាសគីនេះ អាចចូលគណនីរបស់អ្នកដោយគ្មានពាក្យសម្ងាត់របស់អ្នក។ ប្រសិនបើអ្នកមិនបានបន្ថែមវាទេ សូមដកវាចេញនៅក្រោម កូនសោសម្ងាត់ ហើយប្ដូរពាក្យសម្ងាត់របស់អ្នក។</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>ផាសគីមួយត្រូវបានដកចេញពីគណនី %login របស់អ្នកនៅលើ %site ។</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>វាមិនអាចចូលគណនីរបស់អ្នកបានទៀតទេ។ ប្រសិនបើអ្នកមិនបានដកវាចេញទេ សូមពិនិត្យផាសគី និងឧបករណ៍របស់អ្នក។</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>ផាសគីមួយត្រូវបានបន្ថែមទៅគណនីរបស់អ្នក</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>ផាសគីមួយត្រូវបានដកចេញពីគណនីរបស់អ្នក</translation>
     </message>
 </context>
 <context>

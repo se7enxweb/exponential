@@ -2,7 +2,7 @@
 title: Muster in lib/ezdbschema
 audience: developer
 category: standards
-order: 529
+order: 542
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von lib/ezdbschema mit den Entwurfsmustern.
 keywords: lib/ezdbschema, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

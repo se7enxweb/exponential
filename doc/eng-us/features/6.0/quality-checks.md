@@ -116,7 +116,7 @@ PHP 8.3, JavaScript syntax of the changed scripts (`node --check` with Node.js 2
 (their own job, on PHP 8.4) block; the code style of the changed files, including type declarations and PHP 8.0
 compatibility, is reported as a warning.
 
-The job `php80` is the check for the oldest supported version, PHP 8.0 (the stock PHP of RHEL 9), in one place:
+The job `php74` checks PHP 7.4, usable without support, the same way; the job `php80` is the check for PHP 8.0 (the stock PHP of RHEL 9), in one place:
 
 1. `make lint80-all`: `php -l` with PHP 8.0 on every PHP file in git (blocking).
 2. `composer install --no-dev` with PHP 8.0. It passes `--ignore-platform-req=php`, because `composer.json` and
@@ -252,6 +252,14 @@ Tests that scan the whole tree name no file, so the map lists them by pattern: e
 `expIniRoundTripTest`, and `composer.json` runs both and `AdminStylingRulesTest`, because a repinned package brings
 its own PHP, INI files and admin templates. Each of these once reached `main` through a change whose own tests
 passed (October 2026).
+
+The copyright notice is checked the same way: every PHP, JavaScript, template, style sheet, XML, INI, SQL and text
+file, every script in `bin/`, `LICENSE`, `composer.json` and every catalogue runs `CopyrightNoticeTest`, which fails
+on any line that names 7x or the Exponential Foundation as a holder in a form other than these two:
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." or
+"Exponential Copyright © 1998-2026 Exponential Foundation and 7x" (exceptions with their reasons: `tests/tests/bin/copyright-notice-allowlist.json`); the footers, the
+sign-in pages, the copyright page, the help notice, the console and the catalogues also run
+`CopyrightFooterNoticeTest`. See [Copyright and copyleft](../../help/copyright-and-copyleft.md).
 
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and

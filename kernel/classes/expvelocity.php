@@ -2,7 +2,7 @@
 /**
  * File containing the expVelocity class.
  *
- * @copyright Copyright (C) 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
@@ -568,6 +568,31 @@ class expVelocity
     public function engineName()
     {
         return 'qbix';
+    }
+
+    /**
+     * The lowest PHP version each engine runs on. Exponential itself runs on PHP 7.4;
+     * the Velocity engine (qbix) needs PHP 8.0, so Composer does not install it on 7.4.
+     */
+    const ENGINE_MINIMUM_PHP = array( 'qbix' => 80000 );
+
+    /**
+     * Why $engine cannot run on this PHP, or '' when it can.
+     *
+     * @param string $engine qbix, frankenphp or php
+     * @param int|null $phpVersionId PHP_VERSION_ID when null
+     * @return string
+     */
+    public static function phpRefusal( $engine, $phpVersionId = null )
+    {
+        $phpVersionId = $phpVersionId === null ? PHP_VERSION_ID : (int)$phpVersionId;
+        $minimum = isset( self::ENGINE_MINIMUM_PHP[$engine] ) ? self::ENGINE_MINIMUM_PHP[$engine] : 0;
+        if ( $phpVersionId >= $minimum )
+            return '';
+        $version = intdiv( $phpVersionId, 10000 ) . '.' . intdiv( $phpVersionId % 10000, 100 );
+        return 'the Velocity engine (' . $engine . ') needs PHP ' . intdiv( $minimum, 10000 ) . '.' . intdiv( $minimum % 10000, 100 )
+            . ' or later, this is PHP ' . $version . '. Exponential is usable without support on PHP ' . $version
+            . ' with Apache or nginx and PHP-FPM, or with the php engine (exp:velocity start --engine=php). Supported: PHP 8.0 to 8.5.';
     }
 
     /**
@@ -2673,6 +2698,9 @@ class expVelocity
      */
     protected function startUnchecked()
     {
+        if ( $refusal = self::phpRefusal( $this->engineName() ) )
+            return $this->result( false, $refusal );
+
         $script = $this->scriptPath();
         if ( !is_file( $script ) )
             return $this->result( false, "no server script at $script" );

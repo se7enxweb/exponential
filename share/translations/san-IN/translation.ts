@@ -8066,8 +8066,8 @@
         <translation>मूललेखकानां Exponential सह अन्तर्भूतस्य तृतीयपक्षीयस्य सॉफ्टवेयरस्य च प्रतिलिप्यधिकारसूचनाः, अनुज्ञापत्रस्य अपेक्षानुसारं, स्रोतसञ्चिकासु LICENSE सञ्चिकायां च रक्षिताः सन्ति।</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>अधः तेषां Exponential योगदातॄणां सूचिः अस्ति ये स्वकार्यं 7x इत्यनेन उपयोगाय eZ Systems Contributor Licensing Agreement इत्यस्य नियमानुसारम् अनुज्ञप्तवन्तः। अनया सन्धिना अनुमतं यथा, 7x प्रत्येकं योगदानं तस्यैव अनुज्ञापत्रस्य अधीनं पुनर्वितरति यत् तस्याः सञ्चिकायाः अस्ति यस्यां योगदानम् अन्तर्भूतम्। सूच्यां प्रत्येकस्य योगदातुः नाम, ऐच्छिकी सम्पर्कसूचना, ताः सञ्चिकाश्च सन्ति यासु तेन योगदानं कृतम्।</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential इत्यस्मिन् तस्य उद्भवस्थाने सॉफ्टवेयर इत्यस्मिन् च कार्यार्थं श्रेयं प्राप्ताः योगदातारः, तैः योगदत्तैः सञ्चिकाभिः सह। एतत् श्रेयम्, न तु प्रतिलिप्यधिकारसूचना: Exponential इत्यस्मै योगदानानि Contributor Licensing Agreement अनुसारं Exponential Foundation इत्यस्मै 7x इत्यस्मै च समर्प्यन्ते।</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77281,6 +77281,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>प्रवेशकुञ्जी परीक्षितुं न शक्ता। कृपया पुनः प्रयतताम्।</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>ये खाताः केवलं प्रवेशकुञ्जीभिः प्रविशन्ति ते अत्र गुप्तशब्दं उपयोक्तुं न शक्नुवन्ति: “प्रवेशकुञ्ज्या प्रवेशः” इति चिनोतु।</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login इत्यस्य प्रवेशकुञ्ज्यः</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>याभिः प्रवेशकुञ्जीभिः एतत् खातं प्रविशति ताः। नष्टे चोरिते वा यन्त्रे स्थितां प्रतिसंहरतु: तया पुनः प्रवेशः न शक्यः। नूतनाः स्वामी स्वयं योजयति।</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>भवतः खाते प्रवेशकुञ्जी आवश्यकी</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>भवतः खाते प्रवेशकुञ्जीं योजयतु</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>अग्रे गन्तुं प्रवेशकुञ्जीं योजयतु। ततः भवान् केवलं गुप्तशब्देन न, अपि तु तया प्रविशति।</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>प्रवेशकुञ्ज्या प्रवेशः गुप्तशब्दात् शीघ्रतरः सुरक्षिततरः च। इदानीम् एकां योजयतु, अथवा तां विना अग्रे गच्छतु।</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>इदानीं न</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>“%name” इति प्रवेशकुञ्जीं प्रतिसंहरतु वा?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>तया एतस्मिन् खाते पुनः प्रवेशः न शक्यः। यदि सा अन्तिमा आसीत् तर्हि स्वामी गुप्तशब्देन प्रविशति, अथवा भवान् नूतनं स्थापयति।</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>प्रवेशकुञ्जीप्रतिसंहरणम्</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>प्रतिसंहरणम्</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>अस्य खातस्य प्रवेशकुञ्जी नास्ति।</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>प्रमाणकः</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>अज्ञातम्</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>भवतः अन्तिमा प्रवेशकुञ्जी: तस्याः अपसारणात् पूर्वम् अन्यां योजयतु।</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>एतत् खातं केवलं प्रवेशकुञ्जीभिः प्रविशति (प्रवेशकुञ्जीनीतिः): यदा काचित् अपि न अवशिष्यते तदा पुनः स्वगुप्तशब्देन प्रविशति।</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>एषा भवतः अन्तिमा प्रवेशकुञ्जी, तां विना भवतः खातं प्रवेष्टुं न शक्नोति। प्रथमम् अन्यां प्रवेशकुञ्जीं योजयतु।</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>“%name” इति प्रवेशकुञ्जी प्रतिसंहृता। तया एतस्मिन् खाते पुनः प्रवेशः न शक्यः।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77380,6 +77456,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>भवतः प्रमाणकअनुप्रयोगस्य सङ्केतः</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>भवान् दत्तांशं सर्वदा अपाकर्तुं वा लेखपञ्जीं रिक्तीकर्तुं वा उद्यतः अस्ति।</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>भवतः गुप्तशब्दः प्रवेशकुञ्जी च</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>भवतः गुप्तशब्दः भवतः प्रमाणकएप् इत्यस्य सङ्केतः च</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>अथवा:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>एतत् जालदर्शकं प्रवेशकुञ्जीः उपयोक्तुं न शक्नोति। अन्यं मार्गम् अन्यं जालदर्शकं वा उपयुञ्जीत।</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>यदा भवान् अग्रे गच्छति तदा भवतः जालदर्शकं भवतः प्रवेशकुञ्जीषु एकां याचते।</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>प्रवेशकुञ्ज्या अग्रे गच्छतु</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77470,6 +77574,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>स्थापना</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>स्वस्य गुप्तशब्दस्य, ईमेल्-सङ्केतस्य, प्रवेशकुञ्जीनां, द्विचरणप्रवेशस्य, पुनर्प्राप्तिसङ्केतानां API-कुञ्जीनां वा परिवर्तनं, स्वेषाम् अन्ययन्त्रेभ्यः निर्गमनं च।</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>उपयोक्तॄणां, तेषां गुप्तशब्दानां यन्त्राणां च, खातविन्यासस्य निर्माणं सम्पादनं च, नूतनखातानाम् अनुमोदनं निराकरणं वा, भूमिकानां नियोजनं नीतीनां सम्पादनं च।</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>दत्तांशस्य अपाकरणम्</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>कचरापेटिकायाः रिक्तीकरणं, ततः वस्तूनाम् अपसारणं, अनेकवस्तूनाम् एकदा अपसारणं च।</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>विषयस्य अपसारणं प्रकाशनं रक्षणं च</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>विषयस्य अपसारणं (कचरापेटिकां प्रति अपि), प्रकाशनं प्रारूपस्य रक्षणं च, प्रपत्रप्रेषणकाले पृच्छ्यते। पूर्वनिर्धारितरूपेण निष्क्रियम्।</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>संवेदनशीलक्रियायाः पूर्वं प्रविष्टः उपयोक्ता स्वं पुनः पुष्टीकरोति: स्वगुप्तशब्देन प्रवेशकुञ्ज्या च, अथवा प्रवेशकुञ्जीं विना स्वगुप्तशब्देन प्रमाणकएप् इत्यस्य सङ्केतेन च। केवलं जालपृष्ठानि पृच्छन्ति: REST अन्तरापृष्ठं, SOAP, WebDAV, expservices प्रवेशः, आदेशपङ्क्तिः च कदापि न।</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>विन्यासः कुत्र प्रवर्तते</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>विन्यासः कस्य कृते</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>प्रत्येकः जालस्थलप्रवेशः</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>जालस्थलप्रवेशः %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>उद्घाटनम्</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>कः पृच्छ्यते: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>केवलं तेषां सदस्यान् प्रष्टुं उपयोक्तृसमूहान् चिह्नयतु (यथा सम्पादकाः)। किमपि न चिह्नितम्: प्रत्येकः उपयोक्ता।</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php मध्ये, प्रत्येकस्य जालस्थलप्रवेशस्य कृते रक्षितम्। रक्षणकाले भवान् एव इति पुष्टिः याच्यते।</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php मध्ये रक्षितम्। settings/override मध्ये स्थितं मूल्यं प्राधान्यं लभते। रक्षणकाले भवान् एव इति पुष्टिः याच्यते।</translation>
     </message>
 </context>
 <context>
@@ -77826,6 +77994,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>भवतः खातम् आवृतम्</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site इत्यत्र भवतः %login खाते प्रवेशकुञ्जी योजिता।</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>यस्य समीपे एषा प्रवेशकुञ्जी अस्ति सः भवतः गुप्तशब्दं विना भवतः खाते प्रवेष्टुं शक्नोति। यदि भवान् तां न योजितवान्, तर्हि पासकी इत्यत्र ताम् अपसारयतु गुप्तशब्दं च परिवर्तयतु।</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site इत्यत्र भवतः %login खातात् प्रवेशकुञ्जी अपसारिता।</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>तया भवतः खाते पुनः प्रवेशः न शक्यः। यदि भवान् तां न अपसारितवान्, तर्हि स्वप्रवेशकुञ्जीः यन्त्राणि च परीक्षताम्।</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>भवतः खाते प्रवेशकुञ्जी योजिता</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>भवतः खातात् प्रवेशकुञ्जी अपसारिता</translation>
     </message>
 </context>
 <context>

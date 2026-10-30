@@ -10011,8 +10011,8 @@
         <translation>Die Urheberrechtshinweise der ursprünglichen Autoren und der mit Exponential ausgelieferten Software von Drittanbietern bleiben, wie es die Lizenz verlangt, in den Quelldateien und in der Datei LICENSE erhalten.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Die folgende Liste nennt die Mitwirkenden an Exponential, die ihre Arbeit 7x zu den Bedingungen des eZ Systems Contributor Licensing Agreement zur Verfügung gestellt haben. Wie diese Vereinbarung es erlaubt, gibt 7x jeden Beitrag unter derselben Lizenz weiter wie die Datei, in der er enthalten ist. Die Liste nennt jeden Mitwirkenden, optional Kontaktangaben und die Dateien, zu denen er beigetragen hat.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Mitwirkende, die für ihre Arbeit an Exponential und an der Software, aus der es hervorging, genannt werden, mit den Dateien, zu denen sie beigetragen haben. Dies ist eine Nennung, kein Copyright-Hinweis: Beiträge zu Exponential werden nach dem Contributor Licensing Agreement an die Exponential Foundation und 7x übertragen.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -84251,6 +84251,82 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Der Passkey konnte nicht geprüft werden. Bitte versuchen Sie es noch einmal.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Konten, die sich nur mit Passkeys anmelden, können hier kein Passwort benutzen: Wählen Sie „Mit einem Passkey anmelden“.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Passkeys von %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Die Passkeys, mit denen sich dieses Konto anmeldet. Widerrufen Sie einen, der auf einem verlorenen oder gestohlenen Gerät liegt: Er meldet dann nicht mehr an. Neue fügt der Inhaber selbst hinzu.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Ihr Konto braucht einen Passkey</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Fügen Sie Ihrem Konto einen Passkey hinzu</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Fügen Sie einen Passkey hinzu, um weiterzumachen. Sie melden sich dann damit an statt nur mit einem Passwort.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Mit einem Passkey melden Sie sich schneller und sicherer an als mit einem Passwort. Fügen Sie jetzt einen hinzu oder machen Sie ohne weiter.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Nicht jetzt</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Den Passkey „%name“ widerrufen?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Er kann sich nicht mehr bei diesem Konto anmelden. War es der letzte, meldet sich der Inhaber mit dem Passwort an, oder Sie setzen ein neues.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Den Passkey widerrufen</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Widerrufen</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Dieses Konto hat keinen Passkey.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Authentifikator</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Unbekannt</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Ihr letzter Passkey: Fügen Sie einen weiteren hinzu, bevor Sie ihn entfernen.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Dieses Konto meldet sich nur mit Passkeys an (Passkey-Richtlinie): Ohne Passkey meldet es sich wieder mit seinem Passwort an.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Das ist Ihr letzter Passkey, und Ihr Konto kann sich ohne einen nicht anmelden. Fügen Sie zuerst einen weiteren Passkey hinzu.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Der Passkey „%name“ ist widerrufen. Er kann sich nicht mehr bei diesem Konto anmelden.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -84350,6 +84426,34 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Code from your authenticator app</source>
         <translation>Code aus Ihrer Authenticator-App</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Sie sind dabei, Daten endgültig zu löschen oder ein Protokoll zu leeren.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Ihr Passwort und ein Passkey</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Ihr Passwort und ein Code Ihrer Authenticator-App</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Oder:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Dieser Browser kann keine Passkeys benutzen. Wählen Sie einen anderen Weg oder einen anderen Browser.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Wenn Sie weitermachen, fragt Ihr Browser nach einem Ihrer Passkeys.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Mit einem Passkey weiter</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -84440,6 +84544,70 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Setup</source>
         <translation>Setup</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Das eigene Passwort, die E-Mail-Adresse, Passkeys, die zweistufige Anmeldung, Wiederherstellungscodes oder API-Schlüssel ändern und die eigenen anderen Geräte abmelden.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Benutzer anlegen und bearbeiten, ihre Passwörter und Geräte, Kontoeinstellungen, neue Benutzerkonten freigeben oder ablehnen, Rollen zuweisen und Richtlinien bearbeiten.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Daten löschen</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Den Papierkorb leeren, Elemente daraus entfernen und mehrere Elemente auf einmal entfernen.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Inhalte entfernen, veröffentlichen und speichern</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Inhalte entfernen (auch in den Papierkorb), veröffentlichen und einen Entwurf speichern, gefragt beim Senden des Formulars. Standardmäßig aus.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Vor einer heiklen Aktion bestätigt ein angemeldeter Benutzer noch einmal, wer er ist: mit seinem Passwort und einem Passkey, oder ohne Passkey mit seinem Passwort und dem Code seiner Authenticator-App. Nur die Webseiten fragen: die REST-Schnittstelle, SOAP, WebDAV, die expservices-Anmeldung und die Kommandozeile nie.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Wo die Einstellungen gelten</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Einstellungen für</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Jeder Siteaccess</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Nur der Siteaccess %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Öffnen</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Wer gefragt wird: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Haken Sie Benutzergruppen an, um nur deren Mitglieder zu fragen (etwa Redakteure). Keine angehakt: jeder Benutzer.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Gespeichert in settings/override/site.ini.append.php, für jeden Siteaccess. Das Speichern fragt, ob Sie es sind.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Gespeichert in settings/siteaccess/%name/site.ini.append.php. Ein Wert in settings/override hat Vorrang. Das Speichern fragt, ob Sie es sind.</translation>
     </message>
 </context>
 <context>
@@ -84796,6 +84964,30 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Ihr Konto wurde gesperrt</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Ihrem Konto %login auf %site wurde ein Passkey hinzugefügt.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Wer diesen Passkey hat, kann sich ohne Ihr Passwort bei Ihrem Konto anmelden. Haben Sie ihn nicht hinzugefügt, entfernen Sie ihn unter Passkeys und ändern Sie Ihr Passwort.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Von Ihrem Konto %login auf %site wurde ein Passkey entfernt.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Er kann sich nicht mehr bei Ihrem Konto anmelden. Haben Sie ihn nicht entfernt, prüfen Sie Ihre Passkeys und Geräte.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Ihrem Konto wurde ein Passkey hinzugefügt</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Von Ihrem Konto wurde ein Passkey entfernt</translation>
     </message>
 </context>
 <context>

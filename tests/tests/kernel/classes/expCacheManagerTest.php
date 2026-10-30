@@ -7,7 +7,7 @@
  * resolved, that a dry run changes nothing, that bad input is refused before
  * anything is touched, and what the results look like.
  *
- * @copyright Copyright (C) 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests

@@ -5,7 +5,7 @@
  * The version history of an object: list, current, published, drafts (own and all), compare two versions, and the
  * draft workflow as writes: create a draft (in a language), publish, discard, remove old versions, revert.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

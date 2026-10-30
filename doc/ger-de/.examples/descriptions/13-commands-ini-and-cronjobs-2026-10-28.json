@@ -1,0 +1,546 @@
+{
+    "command:expcontentjob --scope": {
+        "en": "section: which objects below the node get the section: subtree (the default, all of them), inherited (those that have the section of the node's object, not branches in another section) or object (none)",
+        "de": "section: welche Objekte unterhalb des Knotens die Sektion erhalten: subtree (Standard, alle), inherited (die, die die Sektion des Objekts des Knotens haben, nicht Zweige in einer anderen Sektion) oder object (keines)"
+    },
+    "command:i18n --list": {
+        "en": "With waves: print the whole queue, one wave a line",
+        "de": "Mit waves: gibt die gesamte Warteschlange aus, eine Welle pro Zeile"
+    },
+    "command:i18n --wave": {
+        "en": "With waves: the pages, contexts or files of one wave (ara-SA/H-help) or work set (A03), and which are done",
+        "de": "Mit waves: die Seiten, Kontexte oder Dateien einer Welle (ara-SA/H-help) oder eines Arbeitssatzes (A03) und welche davon erledigt sind"
+    },
+    "command:services": {
+        "en": "Compile, list, show and check the kernel service container (verbs compile, list, show, check)",
+        "de": "Kompiliert, listet, zeigt und prüft den Service-Container des Kernels (Verben compile, list, show, check)"
+    },
+    "command:services --only": {
+        "en": "compile: only these siteaccesses (comma separated); the files of the others are kept.",
+        "de": "compile: nur diese Siteaccesses (durch Kommas getrennt); die Dateien der anderen bleiben erhalten."
+    },
+    "command:services --tag": {
+        "en": "list: only the services with this tag.",
+        "de": "list: nur die Services mit diesem Tag."
+    },
+    "command:userpasswordchangerequired": {
+        "en": "Change password at next sign-in: show, set or clear the mark of a user account",
+        "de": "Passwortänderung bei der nächsten Anmeldung: zeigt die Markierung eines Benutzerkontos an, setzt sie oder löscht sie"
+    },
+    "command:userpasswordchangerequired --login": {
+        "en": "The login of the account",
+        "de": "Das Login des Kontos"
+    },
+    "command:userpasswordchangerequired --user-id": {
+        "en": "The user (content object) id of the account",
+        "de": "Die Benutzer-ID (Inhaltsobjekt-ID) des Kontos"
+    },
+    "cronjob:datatablesync.php": {
+        "en": "Start the data table synchronisations that are due (scheduled and live, by their interval)",
+        "de": "Startet die fälligen Synchronisationen der Datentabellen (geplante und Live-Synchronisationen, nach ihrem Intervall)"
+    },
+    "cronjob:datatablesync.php docblock": {
+        "en": "The cronjob part datatablesync (cronjobs/datatablesync.php, frequent group; doc/eng-us/features/6.0/data-tables.md,\n\"Synchronisation\"): starts each enabled scheduled or live data table synchronisation whose next run is due, through\nthe transfer runner (expqueue, content jobs, or this process), and moves its next run by its interval. Does nothing\non an installation without the sync tables.",
+        "de": "Der Cronjob-Teil datatablesync (cronjobs/datatablesync.php, Gruppe frequent; doc/eng-us/features/6.0/data-tables.md,\n\"Synchronisation\"): startet jede aktivierte geplante oder Live-Synchronisation einer Datentabelle, deren nächster Lauf fällig ist, über\nden Transfer-Runner (expqueue, Inhalts-Jobs oder diesen Prozess) und verschiebt ihren nächsten Lauf um ihr Intervall. Tut nichts\nin einer Installation ohne die Sync-Tabellen."
+    },
+    "cronjob:exphelp.php": {
+        "en": "Help maintained as content: removes old answers to \"Was this helpful?\" and records the DITA export of the help in git when exphelp.ini [ContentSettings] DitaHistoryDirectory is set",
+        "de": "Als Inhalt gepflegte Hilfe: entfernt alte Antworten auf \"War das hilfreich?\" und hält den DITA-Export der Hilfe in Git fest, wenn exphelp.ini [ContentSettings] DitaHistoryDirectory gesetzt ist"
+    },
+    "cronjob:exphelp.php docblock": {
+        "en": "The code of cronjobs/exphelp.php.",
+        "de": "Der Code von cronjobs/exphelp.php."
+    },
+    "cronjob:useraudit.php": {
+        "en": "User audit log: removes the rows of expuser_audit older than audit.ini [UserAuditSettings] RetentionDays",
+        "de": "Benutzer-Audit-Log: entfernt die Zeilen von expuser_audit, die älter sind als audit.ini [UserAuditSettings] RetentionDays"
+    },
+    "cronjob:useraudit.php docblock": {
+        "en": "The code of cronjobs/useraudit.php.",
+        "de": "Der Code von cronjobs/useraudit.php."
+    },
+    "cronjob:usersessions.php": {
+        "en": "Signed-in sessions (\"Your devices\"): ends the sessions not used for [Session] SessionTimeout, removes ended ones after [UserSessionSettings] RetentionDays",
+        "de": "Angemeldete Sitzungen (\"Ihre Geräte\"): beendet die Sitzungen, die für [Session] SessionTimeout nicht benutzt wurden, und entfernt beendete nach [UserSessionSettings] RetentionDays"
+    },
+    "cronjob:usersessions.php docblock": {
+        "en": "The code of cronjobs/usersessions.php.",
+        "de": "Der Code von cronjobs/usersessions.php."
+    },
+    "ini:settings/audit.ini [AuditChannel_access] Sinks": {
+        "en": "The user audit log: records about a user account or group also go to the table\nexpuser_audit ([UserAuditSettings], doc/eng-us/features/6.0/user-audit.md)",
+        "de": "Das Benutzer-Audit-Log: Einträge über ein Benutzerkonto oder eine Benutzergruppe gehen auch in die Tabelle\nexpuser_audit ([UserAuditSettings], doc/eng-us/features/6.0/user-audit.md)"
+    },
+    "ini:settings/audit.ini [UserAuditSettings] Events": {
+        "en": "Which events: patterns as in [AuditEventSettings]; only records naming a user account (the\naccount changed, signed in or refused, the user a role was assigned to) or a user group are kept.\nAn event the audit does not record ([AuditEventSettings]) never reaches the table either.",
+        "de": "Welche Ereignisse: Muster wie in [AuditEventSettings]; nur Einträge, die ein Benutzerkonto nennen (das\ngeänderte Konto, angemeldet oder abgewiesen, der Benutzer, dem eine Rolle zugewiesen wurde) oder eine Benutzergruppe, werden behalten.\nEin Ereignis, das das Audit nicht aufzeichnet ([AuditEventSettings]), erreicht auch die Tabelle nie."
+    },
+    "ini:settings/audit.ini [UserAuditSettings] MaxValueLength": {
+        "en": "The longest before or after value stored, in bytes of JSON; a longer one is cut.",
+        "de": "Der längste gespeicherte Wert vorher oder nachher, in Bytes JSON; ein längerer wird abgeschnitten."
+    },
+    "ini:settings/audit.ini [UserAuditSettings] RecordIP": {
+        "en": "The address of the request, as [AuditPrivacySettings] Field[actor.ip] leaves it (by default\nshortened to /24 or /48); disabled: never stored in the table.  enabled | disabled",
+        "de": "Die Adresse der Anfrage, so wie [AuditPrivacySettings] Field[actor.ip] sie belässt (standardmäßig\nauf /24 oder /48 gekürzt); disabled: wird nie in der Tabelle gespeichert.  enabled | disabled"
+    },
+    "ini:settings/audit.ini [UserAuditSettings] RetentionDays": {
+        "en": "Rows older than this are removed by the cronjob part useraudit (cronjobs/useraudit.php, in the\ninfrequent group). 0 keeps them all.",
+        "de": "Ältere Zeilen entfernt der Cronjob-Teil useraudit (cronjobs/useraudit.php, in der\nGruppe infrequent). 0 behält alle."
+    },
+    "ini:settings/audit.ini [UserAuditSettings] UserAudit": {
+        "en": "The user audit log (doc/eng-us/features/6.0/user-audit.md): one row per security event about a\nuser account or a user group in the table expuser_audit, a copy of the access channel's records\nmade by the sink useraudit ([AuditChannel_access] Sinks[]). Read on Users > User audit log\n(user/audit, policy user/audit), filtered and exported as CSV.  enabled | disabled",
+        "de": "Das Benutzer-Audit-Log (doc/eng-us/features/6.0/user-audit.md): eine Zeile pro Sicherheitsereignis zu einem\nBenutzerkonto oder einer Benutzergruppe in der Tabelle expuser_audit, eine Kopie der Einträge des Access-Kanals,\ngeschrieben von der Senke useraudit ([AuditChannel_access] Sinks[]). Lesbar unter Benutzer > Benutzer-Audit-Log\n(user/audit, Richtlinie user/audit), gefiltert und als CSV exportierbar.  enabled | disabled"
+    },
+    "ini:settings/country.ini [AN] Name": {
+        "en": "Obsolete: ISO 3166-1 withdrew AN in 2010 (now BQ, CW, SX); kept for existing data.",
+        "de": "Veraltet: ISO 3166-1 hat AN 2010 zurückgezogen (jetzt BQ, CW, SX); für bestehende Daten beibehalten."
+    },
+    "ini:settings/cronjob.ini [AdminSettings] CrontabSchedule_expqueue": {
+        "en": "The schedule of a part in a crontab line, CrontabSchedule_<part>=<five cron fields>: the line Setup >\nCronjobs proposes and the line the installers and bin/php/installcrontab.php write. Without one:\nfrequent */5 * * * *, the global part */15 * * * *, infrequent 17 * * * *, any other part 0 * * * *.\nThe job queue and the imports' schedules run every minute, expai's queue every five minutes.",
+        "de": "Der Zeitplan eines Teils in einer Crontab-Zeile, CrontabSchedule_<part>=<fünf Cron-Felder>: die Zeile, die Setup >\nCronjobs vorschlägt, und die Zeile, die die Installer und bin/php/installcrontab.php schreiben. Ohne Angabe:\nfrequent */5 * * * *, der globale Teil */15 * * * *, infrequent 17 * * * *, jeder andere Teil 0 * * * *.\nDie Job-Warteschlange und die Zeitpläne der Importe laufen jede Minute, die Warteschlange von expai alle fünf Minuten."
+    },
+    "ini:settings/cronjob.ini [CronjobPart-datatable]": {
+        "en": "The data table synchronisations on their own: php runcronjobs.php datatable",
+        "de": "Die Synchronisationen der Datentabellen für sich: php runcronjobs.php datatable"
+    },
+    "ini:settings/cronjob.ini [CronjobPart-exphelp]": {
+        "en": "Help maintained as content on its own: php runcronjobs.php exphelp (doc/eng-us/features/6.0/help-content.md)",
+        "de": "Als Inhalt gepflegte Hilfe für sich: php runcronjobs.php exphelp (doc/eng-us/features/6.0/help-content.md)"
+    },
+    "ini:settings/cronjob.ini [CronjobPart-useraudit]": {
+        "en": "The user audit log's retention on its own: php runcronjobs.php useraudit (doc/eng-us/features/6.0/user-audit.md)",
+        "de": "Die Aufbewahrung des Benutzer-Audit-Logs für sich: php runcronjobs.php useraudit (doc/eng-us/features/6.0/user-audit.md)"
+    },
+    "ini:settings/cronjob.ini [CronjobPart-usersessions]": {
+        "en": "The signed-in sessions on their own: php runcronjobs.php usersessions (doc/eng-us/features/6.0/user-sessions.md)",
+        "de": "Die angemeldeten Sitzungen für sich: php runcronjobs.php usersessions (doc/eng-us/features/6.0/user-sessions.md)"
+    },
+    "ini:settings/cronjob.ini [CrontabSettings] AdminParts": {
+        "en": "The parts that run with the admin siteaccess (-s <admin>): their extensions are active there\nonly, or their jobs need the administration's settings. The others run with the default siteaccess.",
+        "de": "Die Teile, die mit dem Admin-Siteaccess laufen (-s <admin>): ihre Erweiterungen sind nur dort aktiv,\noder ihre Jobs brauchen die Einstellungen der Administration. Die anderen laufen mit dem Standard-Siteaccess."
+    },
+    "ini:settings/cronjob.ini [CrontabSettings] AdminSiteAccess": {
+        "en": "The admin siteaccess of AdminParts[] (set it in settings/override). Empty: admin when it exists,\nelse the first siteaccess of AvailableSiteAccessList[] with \"admin\" in its name.",
+        "de": "Der Admin-Siteaccess von AdminParts[] (in settings/override setzen). Leer: admin, wenn er existiert,\nsonst der erste Siteaccess aus AvailableSiteAccessList[] mit \"admin\" im Namen."
+    },
+    "ini:settings/cronjob.ini [CrontabSettings] CrontabCommand": {
+        "en": "The crontab command: a name on the PATH or a full path.",
+        "de": "Der Crontab-Befehl: ein Name im PATH oder ein vollständiger Pfad."
+    },
+    "ini:settings/cronjob.ini [CrontabSettings] Parts": {
+        "en": "The parts the cron job runs, each only when the installation defines it with at least one\nscript (an extension's part when the extension is active). An extension can add its own in its\nsettings/cronjob.ini.append.php. The schedule is [AdminSettings] CrontabSchedule_<part>.",
+        "de": "Die Teile, die der Cronjob ausführt, jeweils nur, wenn die Installation ihn mit mindestens einem\nSkript definiert (der Teil einer Erweiterung, wenn die Erweiterung aktiv ist). Eine Erweiterung kann in ihrer\nsettings/cronjob.ini.append.php eigene hinzufügen. Der Zeitplan ist [AdminSettings] CrontabSchedule_<part>."
+    },
+    "ini:settings/dashboard.ini [DashboardBlock_cronjobs]": {
+        "en": "When each cronjob part last ran, with a warning when none has run yet or one is late\n(doc/eng-us/bc/6.0/installer-crontab.md).",
+        "de": "Wann jeder Cronjob-Teil zuletzt gelaufen ist, mit einer Warnung, wenn noch keiner gelaufen ist oder einer verspätet ist\n(doc/eng-us/bc/6.0/installer-crontab.md)."
+    },
+    "ini:settings/datatable.ini": {
+        "en": "Data tables: the tables of the installation's persistent classes (eZPersistentObject), the named database\nconnections they and the tools can use, their schema, their relations to content, and the synchronisation between\ntables and content. See doc/eng-us/features/6.0/data-tables.md.\n\nConnections made in the administration (Setup > Data tables > Connections) are rows of the table\nexp_data_connection and need nothing here. This file is for what an extension ships: a connection it declares, the\nconnection one of its classes uses, a relation its definition() does not state.",
+        "de": "Datentabellen: die Tabellen der persistenten Klassen der Installation (eZPersistentObject), die benannten Datenbankverbindungen,\ndie sie und die Werkzeuge nutzen können, ihr Schema, ihre Beziehungen zu Inhalten und die Synchronisation zwischen\nTabellen und Inhalten. Siehe doc/eng-us/features/6.0/data-tables.md.\n\nVerbindungen, die in der Administration angelegt werden (Setup > Datentabellen > Verbindungen), sind Zeilen der Tabelle\nexp_data_connection und brauchen hier nichts. Diese Datei ist für das, was eine Erweiterung mitliefert: eine Verbindung, die sie deklariert, die\nVerbindung, die eine ihrer Klassen nutzt, eine Beziehung, die ihre definition() nicht angibt."
+    },
+    "ini:settings/datatable.ini [ClassSettings]": {
+        "en": "Declared connections: one block per connection, [Connection_<identifier>], read-only in the administration.\n\n[Connection_archive]\nName=Archive database\nEngine=mysql                 sqlite, mysql, postgresql, oracle, sqlserver or mongodb\nServer=db2.example.com\nPort=3306\nDatabase=archive             for sqlite the file, relative to the installation (in SQLiteDirectories)\nUser=archive\nSecret=env:ARCHIVE_DB_PASSWORD\nCharset=utf8mb4\nReadOnly=false",
+        "de": "Deklarierte Verbindungen: ein Block pro Verbindung, [Connection_<identifier>], in der Administration nur lesbar.\n\n[Connection_archive]\nName=Archive database\nEngine=mysql                 sqlite, mysql, postgresql, oracle, sqlserver oder mongodb\nServer=db2.example.com\nPort=3306\nDatabase=archive             bei sqlite die Datei, relativ zur Installation (in SQLiteDirectories)\nUser=archive\nSecret=env:ARCHIVE_DB_PASSWORD\nCharset=utf8mb4\nReadOnly=false"
+    },
+    "ini:settings/datatable.ini [ClassSettings] Connection": {
+        "en": "The connection a persistent class uses, when its definition() does not name one ('connection' => '<identifier>'):\nConnection[<class name>]=<identifier>",
+        "de": "Die Verbindung, die eine persistente Klasse nutzt, wenn ihre definition() keine nennt ('connection' => '<identifier>'):\nConnection[<Klassenname>]=<identifier>"
+    },
+    "ini:settings/datatable.ini [ConnectionSettings] AllowedHosts": {
+        "en": "Hosts a server connection may reach, besides any when the list is empty (host names or addresses; * for any)",
+        "de": "Hosts, die eine Server-Verbindung erreichen darf; ist die Liste leer, jeder (Hostnamen oder Adressen; * für jeden)"
+    },
+    "ini:settings/datatable.ini [ConnectionSettings] ConnectTimeout": {
+        "en": "Seconds a connection test waits for the server",
+        "de": "Sekunden, die ein Verbindungstest auf den Server wartet"
+    },
+    "ini:settings/datatable.ini [ConnectionSettings] Engines": {
+        "en": "The engines that may be used for a connection (sqlite, mysql, postgresql, oracle, sqlserver, mongodb)",
+        "de": "Die Engines, die für eine Verbindung verwendet werden dürfen (sqlite, mysql, postgresql, oracle, sqlserver, mongodb)"
+    },
+    "ini:settings/datatable.ini [ConnectionSettings] SQLiteDirectories": {
+        "en": "The directories a SQLite connection's file may be in, relative to the installation; the file is created there\nwhen it does not exist yet. A path outside them is refused.",
+        "de": "Die Verzeichnisse, in denen die Datei einer SQLite-Verbindung liegen darf, relativ zur Installation; die Datei wird dort angelegt,\nwenn sie noch nicht existiert. Ein Pfad außerhalb davon wird abgelehnt."
+    },
+    "ini:settings/datatable.ini [DataTableSettings] CatalogueCacheDir": {
+        "en": "Where the catalogue of persistent classes is kept between requests, below the cache directory. It is rebuilt when\nthe autoload arrays change.",
+        "de": "Wo der Katalog der persistenten Klassen zwischen Anfragen aufbewahrt wird, unterhalb des Cache-Verzeichnisses. Er wird neu aufgebaut, wenn\ndie Autoload-Arrays sich ändern."
+    },
+    "ini:settings/datatable.ini [DataTableSettings] ContentTabInferred": {
+        "en": "The \"Data tables\" tab of the content view lists the rows of extensions' tables that point at the node or its object\nthrough a declared relation ('relations' of the definition, a foreign_class, a [Relation_*] block). enabled also asks\nthe relations inferred from column names (one query more per relation and node view).",
+        "de": "Der Tab \"Datentabellen\" der Inhaltsansicht listet die Zeilen der Tabellen von Erweiterungen auf, die über eine deklarierte Beziehung\n('relations' der Definition, eine foreign_class, ein [Relation_*]-Block) auf den Knoten oder sein Objekt verweisen. enabled fragt auch\ndie aus Spaltennamen abgeleiteten Beziehungen ab (eine Abfrage mehr pro Beziehung und Knotenansicht)."
+    },
+    "ini:settings/datatable.ini [DataTableSettings] IgnoreClasses": {
+        "en": "The persistent classes the catalogue leaves out (class names), e.g. a class whose definition() needs a request.",
+        "de": "Die persistenten Klassen, die der Katalog auslässt (Klassennamen), z. B. eine Klasse, deren definition() eine Anfrage braucht."
+    },
+    "ini:settings/datatable.ini [DataTableSettings] InferRelations": {
+        "en": "Relations inferred from column names (contentobject_id, node_id, ...) when a definition states none:\nenabled (shown as \"inferred\") or disabled",
+        "de": "Aus Spaltennamen (contentobject_id, node_id, ...) abgeleitete Beziehungen, wenn eine Definition keine angibt:\nenabled (angezeigt als \"inferred\") oder disabled"
+    },
+    "ini:settings/datatable.ini [DataTableSettings] MongoSampleSize": {
+        "en": "Rows the describe page reads to work out the fields of a MongoDB collection",
+        "de": "Zeilen, die die Beschreibungsseite liest, um die Felder einer MongoDB-Collection zu ermitteln"
+    },
+    "ini:settings/design.ini [AdminHeaderSettings] HeaderItems": {
+        "en": "admin4: the header items of the extensions, drawn among the header's tools after Help and before the user menu\n(page_topmenu.tpl). Each is a template, e.g. HeaderItems[]=sqliimport/header_bell.tpl in an extension's\ndesign.ini.append.php; parts/a4_header_item.tpl describes its markup: a round 36px button with a count, a panel\nand, for live data, a JSON feed (data-a4-header-feed) that admin4.js loads, since the header is cached per user.\ndoc/eng-us/features/6.0/admin4-design.md, \"Header items\".",
+        "de": "admin4: die Header-Elemente der Erweiterungen, gezeichnet unter den Werkzeugen des Headers nach Hilfe und vor dem Benutzermenü\n(page_topmenu.tpl). Jedes ist ein Template, z. B. HeaderItems[]=sqliimport/header_bell.tpl in der design.ini.append.php\neiner Erweiterung; parts/a4_header_item.tpl beschreibt sein Markup: ein runder 36-px-Button mit einer Zahl, ein Panel\nund, für Live-Daten, ein JSON-Feed (data-a4-header-feed), den admin4.js lädt, da der Header pro Benutzer gecacht wird.\ndoc/eng-us/features/6.0/admin4-design.md, \"Header items\"."
+    },
+    "ini:settings/design.ini [JavaScriptSettings] ClassicBackendJavaScriptList": {
+        "en": "Scripts the older admin designs (admin and admin3, chosen with the UI switch) still expect on every page: their\npage_head_script.tpl loads them after jQuery and BackendJavaScriptList (adminui once its package reads it too);\nadmin4 and admin4l do not read this list. An extension that used to put a jQuery script or an exp:: module into BackendJavaScriptList for those\ndesigns adds it here.",
+        "de": "Skripte, die die älteren Admin-Designs (admin und admin3, gewählt mit dem UI-Schalter) weiterhin auf jeder Seite erwarten: ihre\npage_head_script.tpl lädt sie nach jQuery und BackendJavaScriptList (adminui, sobald es diese Liste auch liest);\nadmin4 und admin4l lesen diese Liste nicht. Eine Erweiterung, die für diese Designs bisher ein jQuery-Skript oder ein exp::-Modul in BackendJavaScriptList eingetragen hat,\nträgt es hier ein."
+    },
+    "ini:settings/exphelp.ini [ContentSettings] AnonymousFeedback": {
+        "en": "enabled: the roles step of exp:help:content also gives Anonymous exphelp/feedback, for a site that shows its help\npublicly (the templates of the extension exphelpsite). Off by default.",
+        "de": "enabled: der Rollen-Schritt von exp:help:content gibt auch Anonymous exphelp/feedback, für eine Website, die ihre Hilfe\nöffentlich zeigt (die Templates der Erweiterung exphelpsite). Standardmäßig aus."
+    },
+    "ini:settings/exphelp.ini [ContentSettings] BookChecks": {
+        "en": "report: run the configured checks and report them; required: an e-book that fails one is not stored; disabled",
+        "de": "report: führt die konfigurierten Prüfungen aus und berichtet sie; required: ein E-Book, das eine nicht besteht, wird nicht gespeichert; disabled"
+    },
+    "ini:settings/exphelp.ini [ContentSettings] CachePhpBinary": {
+        "en": "The rows of help content are kept in var/<site>/cache/exphelp/content. A web request never reads every help object\n(an emptied cache): it starts \"php bin/php/exphelpcontent.php cache -s <siteaccess>\" in the background and shows no\nhelp content until that is done. The PHP command line binary for it; empty: found next to the running PHP.",
+        "de": "Die Zeilen der Hilfe-Inhalte liegen in var/<site>/cache/exphelp/content. Eine Web-Anfrage liest nie jedes Hilfe-Objekt\n(ein geleerter Cache): sie startet \"php bin/php/exphelpcontent.php cache -s <siteaccess>\" im Hintergrund und zeigt keine\nHilfe-Inhalte, bis das fertig ist. Das PHP-Kommandozeilen-Binary dafür; leer: neben dem laufenden PHP gefunden."
+    },
+    "ini:settings/exphelp.ini [ContentSettings] CacheSiteAccessList": {
+        "en": "The siteaccesses whose help cache exp:velocity deploy fills, besides those that have used it\n(var/<site>/cache/exphelp/content/siteaccesses.json)",
+        "de": "Die Siteaccesses, deren Hilfe-Cache exp:velocity deploy füllt, zusätzlich zu denen, die ihn genutzt haben\n(var/<site>/cache/exphelp/content/siteaccesses.json)"
+    },
+    "ini:settings/exphelp.ini [ContentSettings] DitaHistoryDirectory": {
+        "en": "The history of the help in git (delivery path 4): the cronjob part exphelp writes the DITA export of every manual\ninto this directory (outside the web root) and commits what changed; the first run makes it a git repository. Empty:\noff. The export holds the Released objects that DitaHistoryLogin may read. DitaHistoryAuthor: \"Name <mail>\" of the\ncommits, else the repository's git configuration.",
+        "de": "Die Historie der Hilfe in Git (Auslieferungsweg 4): der Cronjob-Teil exphelp schreibt den DITA-Export jedes Handbuchs\nin dieses Verzeichnis (außerhalb des Web-Roots) und committet, was sich geändert hat; der erste Lauf macht es zu einem Git-Repository. Leer:\naus. Der Export enthält die Released-Objekte, die DitaHistoryLogin lesen darf. DitaHistoryAuthor: \"Name <mail>\" der\nCommits, sonst die Git-Konfiguration des Repositorys."
+    },
+    "ini:settings/exphelp.ini [ContentSettings] EpubCheckCommand": {
+        "en": "The checks of an EPUB (epubcheck, Ace by DAISY) are not shipped; a site that has them names their commands. The\nEPUB file is added as the last argument; Ace gets --outdir <dir> --force first. Empty: the check is skipped.\nEpubCheckCommand=java -jar /opt/epubcheck/epubcheck.jar\nAceCommand=ace",
+        "de": "Die Prüfungen eines EPUB (epubcheck, Ace by DAISY) werden nicht mitgeliefert; eine Website, die sie hat, nennt ihre Befehle. Die\nEPUB-Datei wird als letztes Argument angehängt; Ace bekommt zuerst --outdir <dir> --force. Leer: die Prüfung wird übersprungen.\nEpubCheckCommand=java -jar /opt/epubcheck/epubcheck.jar\nAceCommand=ace"
+    },
+    "ini:settings/exphelp.ini [ContentSettings] Feedback": {
+        "en": "\"Was this helpful?\" under each Released topic: yes, or no with a reason from a fixed list, counted per topic (table\nexphelp_feedback). Nothing about who answered is kept: no user, no address, no free text; one answer per topic and\nsession counts. Answers older than FeedbackKeepDays are removed by the cronjob part exphelp.",
+        "de": "\"War das hilfreich?\" unter jedem Released-Thema: ja, oder nein mit einem Grund aus einer festen Liste, gezählt pro Thema (Tabelle\nexphelp_feedback). Nichts darüber, wer geantwortet hat, wird behalten: kein Benutzer, keine Adresse, kein Freitext; eine Antwort pro Thema und\nSitzung zählt. Antworten, die älter sind als FeedbackKeepDays, entfernt der Cronjob-Teil exphelp."
+    },
+    "ini:settings/exphelp.ini [ContentSettings] ReleaseByAuthor": {
+        "en": "The review workflow (Draft, Review, Released): the person who wrote a topic's current version does not release it,\nwhatever their roles (the Object states tab, the content job and the help's buttons alike). enabled allows it, for a\nsite with a single editor. The command line (seed-topics --release, build-manuals --release) is not limited.",
+        "de": "Der Review-Workflow (Draft, Review, Released): wer die aktuelle Version eines Themas geschrieben hat, gibt es nicht frei,\nwelche Rollen er auch hat (der Tab Objektstatus, der Inhalts-Job und die Buttons der Hilfe gleichermaßen). enabled erlaubt es, für eine\nWebsite mit nur einem Redakteur. Die Kommandozeile (seed-topics --release, build-manuals --release) ist nicht beschränkt."
+    },
+    "ini:settings/exphelp.ini [ContentSettings] ReviewMonths": {
+        "en": "The longest a review date may be away (style guide section 8: release + 12 months; the areas of ShortReviewAreas[]\n+ 6 months); a date further away is a WARNING (review-date.too-far). 0 switches it off.",
+        "de": "Der größte Abstand eines Review-Datums (Styleguide Abschnitt 8: Freigabe + 12 Monate; die Bereiche aus ShortReviewAreas[]\n+ 6 Monate); ein weiter entferntes Datum ist eine WARNUNG (review-date.too-far). 0 schaltet es ab."
+    },
+    "ini:settings/exphelp.ini [ContentSettings] SentenceWordsPublic": {
+        "en": "The style guide's plain language (section 3), checked as NOTICE by exp:help:content check and on the topic's page:\nwords per sentence for the audiences of PlainLanguageAudiences[] and for the others, sentences per paragraph for the\nplain ones. 0 switches a check off. A site with readers who need shorter limits sets them here (15 and 3).",
+        "de": "Die einfache Sprache des Styleguides (Abschnitt 3), geprüft als NOTICE von exp:help:content check und auf der Seite des Themas:\nWörter pro Satz für die Zielgruppen aus PlainLanguageAudiences[] und für die anderen, Sätze pro Absatz für die\neinfachen. 0 schaltet eine Prüfung ab. Eine Website mit Lesern, die kürzere Grenzen brauchen, setzt sie hier (15 und 3)."
+    },
+    "ini:settings/exphelp.ini [ManualSettings] BatchSize": {
+        "en": "Objects created and updated per database transaction: more is faster, a failed object rolls back the whole batch",
+        "de": "Pro Datenbanktransaktion angelegte und aktualisierte Objekte: mehr ist schneller, ein fehlgeschlagenes Objekt macht den ganzen Batch rückgängig"
+    },
+    "ini:settings/exphelp.ini [ManualSettings] BuildOnInstall": {
+        "en": "enabled: the kickstarter and ./console exp:install queue the build of the manuals after an installation\n(\"exp:help:content build-manuals --queue\" on the admin siteaccess): the content job helpmanuals installs the help as\ncontent and builds the manuals in the background, in about 20 to 30 minutes, while the site is already in use; the\ninstallation does not wait for it. disabled: leave it to the administrator",
+        "de": "enabled: der Kickstarter und ./console exp:install reihen nach einer Installation den Build der Handbücher ein\n(\"exp:help:content build-manuals --queue\" im Admin-Siteaccess): der Inhalts-Job helpmanuals installiert die Hilfe als\nInhalt und baut die Handbücher im Hintergrund, in etwa 20 bis 30 Minuten, während die Website schon in Gebrauch ist; die\nInstallation wartet nicht darauf. disabled: dem Administrator überlassen"
+    },
+    "ini:settings/exphelp.ini [ManualSettings] JobBatchSize": {
+        "en": "The background job (content job helpmanuals): objects per batch, each batch a transaction of its own, and the pause\nafter each batch in milliseconds, so the site's own writes never wait long",
+        "de": "Der Hintergrund-Job (Inhalts-Job helpmanuals): Objekte pro Batch, jeder Batch eine eigene Transaktion, und die Pause\nnach jedem Batch in Millisekunden, damit die eigenen Schreibvorgänge der Website nie lange warten"
+    },
+    "ini:settings/exphelp.ini [ManualSettings] Languages": {
+        "en": "The content languages the manuals are translated into, from the help's pages in that language (doc/ger-de/ for\nger-DE). A language the installation does not have is left out and reported, never created.",
+        "de": "Die Inhaltssprachen, in die die Handbücher übersetzt werden, aus den Seiten der Hilfe in dieser Sprache (doc/ger-de/ für\nger-DE). Eine Sprache, die die Installation nicht hat, wird ausgelassen und gemeldet, nie angelegt."
+    },
+    "ini:settings/exphelp.ini [ManualSettings] License": {
+        "en": "The license of the manuals (the documentation's license, doc/eng-us/LICENSE-GFDL-1.3.txt)",
+        "de": "Die Lizenz der Handbücher (die Lizenz der Dokumentation, doc/eng-us/LICENSE-GFDL-1.3.txt)"
+    },
+    "ini:settings/exphelp.ini [ManualSettings] Manuals": {
+        "en": "The manuals built from the Markdown help by ./console exp:help:content build-manuals (doc/eng-us/features/6.0/help-content.md,\n\"Manuals from the Markdown help\"). The Markdown stays the source: every run makes the manuals, chapters and topics\nmatch the pages again, and an edit made only in the admin is overwritten by the next run. Objects the command did not\nmake (remote_id not help-gen-...) are never touched.\nOne line per manual, in the order of the manuals: <key>;<source>[;<title>]\n  key     a-z, 0-9 and inner hyphens; the manual's remote_id is help-gen-manual-<key>\n  source  a folder below doc/eng-us/: its pages become topics, each subfolder a chapter (and theirs sub-chapters);\n          <folder>/*.md: only the pages directly in the folder, no chapters\n  title   default: the title of the folder's README.md, else its start page (\"Adopters: start here\" gives\n          \"Adopters\"), else the folder's name\nChanging the scope is an edit of this list. A line taken out removes its manual, chapters and topics at the next run.",
+        "de": "Die Handbücher, die aus der Markdown-Hilfe von ./console exp:help:content build-manuals gebaut werden (doc/eng-us/features/6.0/help-content.md,\n\"Manuals from the Markdown help\"). Das Markdown bleibt die Quelle: jeder Lauf bringt die Handbücher, Kapitel und Themen\nwieder in Übereinstimmung mit den Seiten, und eine nur in der Administration gemachte Änderung wird vom nächsten Lauf überschrieben. Objekte, die der Befehl nicht\nerzeugt hat (remote_id nicht help-gen-...), werden nie angefasst.\nEine Zeile pro Handbuch, in der Reihenfolge der Handbücher: <key>;<source>[;<title>]\n  key     a-z, 0-9 und innere Bindestriche; die remote_id des Handbuchs ist help-gen-manual-<key>\n  source  ein Ordner unterhalb von doc/eng-us/: seine Seiten werden Themen, jeder Unterordner ein Kapitel (und deren Unterordner Unterkapitel);\n          <folder>/*.md: nur die Seiten direkt im Ordner, keine Kapitel\n  title   Standard: der Titel der README.md des Ordners, sonst seine Startseite (\"Adopters: start here\" ergibt\n          \"Adopters\"), sonst der Name des Ordners\nDen Umfang zu ändern heißt, diese Liste zu bearbeiten. Eine entfernte Zeile entfernt ihr Handbuch, ihre Kapitel und Themen beim nächsten Lauf."
+    },
+    "ini:settings/exphelp.ini [ManualSettings] TranslatedTitles": {
+        "en": "The title of a manual whose title Manuals[] gives, in a translation: <key>;<locale>;<title> (the others take the\ntitle of the translated README or start page)",
+        "de": "Der Titel eines Handbuchs, dessen Titel Manuals[] angibt, in einer Übersetzung: <key>;<locale>;<title> (die anderen übernehmen den\nTitel der übersetzten README oder Startseite)"
+    },
+    "ini:settings/kernelservices.ini": {
+        "en": "The kernel service container: shared objects of the kernel by name, made on\nfirst use, in a scope, and the compiled boot of the web kernel.\nSee doc/eng-us/bc/6.0/kernel-services.md.\n\nExtensions add or replace services in\nextension/<name>/settings/kernelservices.ini.append.php (a later block of the\nsame name wins, as everywhere in the settings). After a change:\n./console exp:services:compile (the deploy and ezcache.php --clear-tag=ini do\nit too), ./console exp:services:check to check.",
+        "de": "Der Service-Container des Kernels: gemeinsame Objekte des Kernels nach Namen, beim\nersten Gebrauch erzeugt, in einem Scope, und der kompilierte Boot des Web-Kernels.\nSiehe doc/eng-us/bc/6.0/kernel-services.md.\n\nErweiterungen fügen Services hinzu oder ersetzen sie in\nextension/<name>/settings/kernelservices.ini.append.php (ein späterer Block desselben\nNamens gewinnt, wie überall in den Einstellungen). Nach einer Änderung:\n./console exp:services:compile (der Deploy und ezcache.php --clear-tag=ini tun es\nauch), zur Prüfung ./console exp:services:check."
+    },
+    "ini:settings/kernelservices.ini [ContainerSettings] AutoRebuild": {
+        "en": "enabled   a web request of a siteaccess without a current compiled file\n          records its own extension activation and writes it, so the next\n          request uses it (after an INI cache clear from the\n          administration, or before the first compile)\ndisabled  only exp:services:compile, the deploy and ezcache.php on the\n          command line write it",
+        "de": "enabled   eine Web-Anfrage eines Siteaccess ohne aktuelle kompilierte Datei\n          zeichnet ihre eigene Erweiterungsaktivierung auf und schreibt sie, sodass die nächste\n          Anfrage sie nutzt (nach einem INI-Cache-Leeren aus der\n          Administration oder vor dem ersten Kompilieren)\ndisabled  nur exp:services:compile, der Deploy und ezcache.php auf der\n          Kommandozeile schreiben sie"
+    },
+    "ini:settings/kernelservices.ini [ContainerSettings] CacheDir": {
+        "en": "Where the compiled container lives, relative to the installation root:\nindex.php and one <siteaccess>.php per siteaccess.",
+        "de": "Wo der kompilierte Container liegt, relativ zum Installationsverzeichnis:\nindex.php und eine <siteaccess>.php pro Siteaccess."
+    },
+    "ini:settings/kernelservices.ini [ContainerSettings] Mode": {
+        "en": "These four are read before the extensions are active: set them here or in\nsettings/override/kernelservices.ini.append.php, not in an extension.\n\ncompiled  the web kernel applies the compiled container in CacheDir: the\n          extension activation of each siteaccess, recorded once, instead\n          of looking up every extension directory on every request (the\n          default). Without a compiled file, or when a request does not\n          start from exactly the recorded state, it runs as without a\n          container.\ndev       nothing compiled is used; services are read from the settings\n          as they stand (for development)\ndisabled  the container takes no part in the boot; services can still be\n          asked for, read from the settings",
+        "de": "Diese vier werden gelesen, bevor die Erweiterungen aktiv sind: hier oder in\nsettings/override/kernelservices.ini.append.php setzen, nicht in einer Erweiterung.\n\ncompiled  der Web-Kernel wendet den kompilierten Container in CacheDir an: die\n          einmal aufgezeichnete Erweiterungsaktivierung jedes Siteaccess, statt\n          bei jeder Anfrage jedes Erweiterungsverzeichnis nachzuschlagen (der\n          Standard). Ohne kompilierte Datei, oder wenn eine Anfrage nicht\n          genau vom aufgezeichneten Zustand ausgeht, läuft er wie ohne\n          Container.\ndev       nichts Kompiliertes wird verwendet; Services werden aus den Einstellungen\n          gelesen, wie sie gerade sind (für die Entwicklung)\ndisabled  der Container nimmt am Boot nicht teil; Services können weiterhin\n          angefordert werden, gelesen aus den Einstellungen"
+    },
+    "ini:settings/kernelservices.ini [ContainerSettings] WorkerScope": {
+        "en": "The worker scope of the settings files: each settings file of a siteaccess\nis built once per worker and handed out as a copy afterwards. On Exponential\nVelocity a worker serves thousands of requests, so this saves loading every\nsettings file on every request; on PHP-FPM a worker is one request long.\nauto      on only when the INI cache does not check file times either\n          (EZP_INI_FILEMTIME_CHECK false in config.php), so a kept settings\n          file is exactly what loading it again would give (the default)\nenabled   always (an edited settings file then reaches a Velocity worker\n          with the next compile, INI cache clear or restart)\ndisabled  never",
+        "de": "Der Worker-Scope der Einstellungsdateien: jede Einstellungsdatei eines Siteaccess\nwird einmal pro Worker gebaut und danach als Kopie ausgegeben. Bei Exponential\nVelocity bedient ein Worker tausende Anfragen, das spart also das Laden jeder\nEinstellungsdatei bei jeder Anfrage; bei PHP-FPM lebt ein Worker nur eine Anfrage lang.\nauto      nur an, wenn der INI-Cache auch keine Dateizeiten prüft\n          (EZP_INI_FILEMTIME_CHECK false in config.php), sodass eine behaltene Einstellungsdatei\n          genau das ist, was ihr erneutes Laden ergäbe (der Standard)\nenabled   immer (eine bearbeitete Einstellungsdatei erreicht dann einen Velocity-Worker\n          mit dem nächsten Kompilieren, INI-Cache-Leeren oder Neustart)\ndisabled  nie"
+    },
+    "ini:settings/kernelservices.ini [Service_db]": {
+        "en": "One block per service, [Service_<id>]. The id is the name code asks for:\n  expKernelServices::get( '<id>' )\n\nClass        the class (or interface) of the service\nFactory      Class::method to call; without it, \"new Class( Arguments )\"\nArguments[]  @<id> another service, %ini:<file>/<Section>/<Variable>% a\n             setting, anything else as written (@@ and %% for a leading @\n             or % in a literal)\nScope        worker: one per worker and siteaccess (kept across requests on\n                     Velocity; it must hold nothing of a request)\n             request: one per request (the default)\n             prototype: a new one each time\nLazy         true (the default): made when first asked for\nTags[]       names that collect services for a consumer\n             (expKernelServices::tagged( '<tag>' ))\nDescription  one line for exp:services:list and exp:services:show\nEnabled      false switches a service off (an extension can switch off one\n             of the kernel's)\n\nThe ids ini.<name> need no block: expKernelServices::get( 'ini.site' ) is\neZINI::instance( 'site.ini' ). The blocks for ini.site and ini.i18n below\nonly document them.",
+        "de": "Ein Block pro Service, [Service_<id>]. Die id ist der Name, den der Code anfordert:\n  expKernelServices::get( '<id>' )\n\nClass        die Klasse (oder Schnittstelle) des Services\nFactory      Class::method zum Aufrufen; ohne sie \"new Class( Arguments )\"\nArguments[]  @<id> ein anderer Service, %ini:<file>/<Section>/<Variable>% eine\n             Einstellung, alles andere wie geschrieben (@@ und %% für ein führendes @\n             oder % in einem Literal)\nScope        worker: einer pro Worker und Siteaccess (über Anfragen hinweg behalten bei\n                     Velocity; er darf nichts aus einer Anfrage halten)\n             request: einer pro Anfrage (der Standard)\n             prototype: jedes Mal ein neuer\nLazy         true (der Standard): beim ersten Anfordern erzeugt\nTags[]       Namen, die Services für einen Verbraucher sammeln\n             (expKernelServices::tagged( '<tag>' ))\nDescription  eine Zeile für exp:services:list und exp:services:show\nEnabled      false schaltet einen Service ab (eine Erweiterung kann einen\n             des Kernels abschalten)\n\nDie ids ini.<name> brauchen keinen Block: expKernelServices::get( 'ini.site' ) ist\neZINI::instance( 'site.ini' ). Die Blöcke für ini.site und ini.i18n unten\ndokumentieren sie nur."
+    },
+    "ini:settings/kernelservices.ini [Service_db] Scope": {
+        "en": "the handle in $GLOBALS['eZDBGlobalInstance'] is per request; the connection\nunderneath is persistent at driver level where the driver keeps one",
+        "de": "das Handle in $GLOBALS['eZDBGlobalInstance'] gilt pro Anfrage; die Verbindung\ndarunter ist auf Treiberebene persistent, wo der Treiber eine hält"
+    },
+    "ini:settings/kernelservices.ini [Service_extensions.overrides] Class": {
+        "en": "what the extension activation of the web kernel gives for the current\nsiteaccess, as compiled: the settings directories in order and the\nextension directories",
+        "de": "was die Erweiterungsaktivierung des Web-Kernels für den aktuellen\nSiteaccess ergibt, wie kompiliert: die Einstellungsverzeichnisse der Reihe nach und die\nErweiterungsverzeichnisse"
+    },
+    "ini:settings/kernelservices.ini [Service_ini.site] Scope": {
+        "en": "kept per siteaccess for the worker when WorkerScope is on",
+        "de": "pro Siteaccess für den Worker behalten, wenn WorkerScope an ist"
+    },
+    "ini:settings/kernelservices.ini [Service_transfer.registry]": {
+        "en": "The transfer registry (doc/eng-us/features/6.0/transfer-registry.md): every import and export tool declares itself\nin a block tagged transfer.tool, the kernel's below, an extension's in its own\nsettings/kernelservices.ini.append.php. Every link to a tool reads the registry: the \"Looking for…?\" boxes, the\nentries of the content view's Import/Export menu and of the class pages, the \"Import and export\" list of the Setup\nmenu and of the tools' left menus, the admin search's tool suggestions, and the context help. A tool whose\nextension is not active, whose module does not exist or that the user may not use is never shown.\n\nClass=expKernelTransferTool, Factory=expKernelTransferTool::fromSettings, Arguments[]=<the block's id>,\nScope=worker, Tags[]=transfer.tool, and:\nDescription  one sentence: what it is for\nName         its name in lists\nDirection    import, export or both\nScopes[]     site, subtree, object, class, data (records that are not content: submissions, subscribers, logs)\nFormats[]    the file formats it reads or writes (CSV, XLSX, ezpkg ...)\nEntryURL     its main page; its first part is the tool's module\nPermission   module/function needed to use it; alternatives separated by \"|\"\nModules[]    further modules whose pages belong to the tool\nHelpPage     its help page (a page id below doc/eng-us/, ext/<extension>/<path> for an extension's, #anchor allowed)\nRoundTrip[]  the ids of tools that read what it writes or write what it reads\nKeywords[]   task words the admin search finds it by (English and German)\nActions[]    context|import or export|label|URL[|module/function]: an entry of a context. Contexts: node (any\n             published item), container (an item below which the user may create), class (a class page),\n             setup (the Setup pages); %nodeID%, %objectID%, %classID%, %classIdentifier% in the URL\nWeight       the order in lists (lower first, then by name; default 100)",
+        "de": "Die Transfer-Registry (doc/eng-us/features/6.0/transfer-registry.md): jedes Import- und Export-Werkzeug deklariert sich selbst in einem\nBlock mit dem Tag transfer.tool, die des Kernels unten, die einer Erweiterung in ihrer eigenen\nsettings/kernelservices.ini.append.php. Jeder Link zu einem Werkzeug liest die Registry: die \"Suchen Sie …?\"-Boxen, die\nEinträge des Import/Export-Menüs der Inhaltsansicht und der Klassenseiten, die Liste \"Import und Export\" des Setup-\nMenüs und der linken Menüs der Werkzeuge, die Werkzeugvorschläge der Admin-Suche und die Kontexthilfe. Ein Werkzeug, dessen\nErweiterung nicht aktiv ist, dessen Modul nicht existiert oder das der Benutzer nicht nutzen darf, wird nie angezeigt.\n\nClass=expKernelTransferTool, Factory=expKernelTransferTool::fromSettings, Arguments[]=<die id des Blocks>,\nScope=worker, Tags[]=transfer.tool, und:\nDescription  ein Satz: wofür es ist\nName         sein Name in Listen\nDirection    import, export oder both\nScopes[]     site, subtree, object, class, data (Datensätze, die kein Inhalt sind: Einsendungen, Abonnenten, Logs)\nFormats[]    die Dateiformate, die es liest oder schreibt (CSV, XLSX, ezpkg ...)\nEntryURL     seine Hauptseite; ihr erster Teil ist das Modul des Werkzeugs\nPermission   module/function, die zur Nutzung nötig ist; Alternativen durch \"|\" getrennt\nModules[]    weitere Module, deren Seiten zum Werkzeug gehören\nHelpPage     seine Hilfeseite (eine Seiten-ID unterhalb von doc/eng-us/, ext/<extension>/<path> für die einer Erweiterung, #anchor erlaubt)\nRoundTrip[]  die ids der Werkzeuge, die lesen, was es schreibt, oder schreiben, was es liest\nKeywords[]   Aufgabenwörter, unter denen die Admin-Suche es findet (Englisch und Deutsch)\nActions[]    context|import oder export|label|URL[|module/function]: ein Eintrag eines Kontexts. Kontexte: node (jedes\n             veröffentlichte Element), container (ein Element, unterhalb dessen der Benutzer anlegen darf), class (eine Klassenseite),\n             setup (die Setup-Seiten); %nodeID%, %objectID%, %classID%, %classIdentifier% in der URL\nWeight       die Reihenfolge in Listen (niedrigere zuerst, dann nach Name; Standard 100)"
+    },
+    "ini:settings/kernelservices.ini [Tags] TagList": {
+        "en": "The tags services may carry. exp:services:check warns about a tag that is\nnot listed here (an extension adds its own with TagList[]=<tag>).",
+        "de": "Die Tags, die Services tragen dürfen. exp:services:check warnt vor einem Tag, der\nhier nicht aufgeführt ist (eine Erweiterung fügt eigene mit TagList[]=<tag> hinzu)."
+    },
+    "ini:settings/membermanagement.ini [MemberGuardSettings] Guard": {
+        "en": "The access check: an account (an object of a class with a user account attribute, or of a class in GuardedClasses)\nthat has a location below a protected group may be edited, moved, removed, hidden or have its locations changed\nonly by someone who may do that at that location, not merely at another location of the same account (a policy\nlimited to Members otherwise reaches an administrator who also has a location below Members).\nenabled | disabled",
+        "de": "Die Zugriffsprüfung: ein Konto (ein Objekt einer Klasse mit einem Benutzerkonto-Attribut oder einer Klasse in GuardedClasses),\ndas einen Ort unterhalb einer geschützten Gruppe hat, darf nur von jemandem bearbeitet, verschoben, entfernt, versteckt oder in seinen Orten\ngeändert werden, der das an diesem Ort darf, nicht nur an einem anderen Ort desselben Kontos (eine auf\nMembers beschränkte Richtlinie erreicht sonst einen Administrator, der auch einen Ort unterhalb von Members hat).\nenabled | disabled"
+    },
+    "ini:settings/membermanagement.ini [MemberGuardSettings] GuardedClasses": {
+        "en": "Classes guarded besides those with a user account attribute (identifiers).",
+        "de": "Klassen, die zusätzlich zu denen mit einem Benutzerkonto-Attribut geschützt werden (Bezeichner)."
+    },
+    "ini:settings/membermanagement.ini [MemberGuardSettings] GuardedFunctions": {
+        "en": "The functions guarded.",
+        "de": "Die geschützten Funktionen."
+    },
+    "ini:settings/membermanagement.ini [MemberGuardSettings] SettingRequiresEdit": {
+        "en": "user/setting (enable, disable, the number of concurrent logins) also asks for content/edit of the account, so that\nuser/preferences alone does not reach every account of the installation.  enabled | disabled",
+        "de": "user/setting (aktivieren, deaktivieren, die Anzahl gleichzeitiger Anmeldungen) verlangt auch content/edit für das Konto, damit\nuser/preferences allein nicht jedes Konto der Installation erreicht.  enabled | disabled"
+    },
+    "ini:settings/membermanagement.ini [MemberManagementSettings] MemberManagement": {
+        "en": "enabled | disabled. Disabled: the setup step and the command change nothing; the guard below stays as set there.",
+        "de": "enabled | disabled. Disabled: der Setup-Schritt und der Befehl ändern nichts; die Prüfung unten bleibt, wie dort gesetzt."
+    },
+    "ini:settings/membermanagement.ini [MemberManagementSettings] ProtectedGroups": {
+        "en": "Groups no rule may manage: a rule whose managed groups are, contain or lie below one of these is refused (the setup\nstep skips it, the command fails). Default: Administrator users and Editors.",
+        "de": "Gruppen, die keine Regel verwalten darf: eine Regel, deren verwaltete Gruppen eine davon sind, sie enthalten oder unterhalb davon liegen, wird abgelehnt (der Setup-\nSchritt überspringt sie, der Befehl schlägt fehl). Standard: Administrator users und Editors."
+    },
+    "ini:settings/membermanagement.ini [MemberManagementSettings] Rules": {
+        "en": "The rules in use: a [MemberRule_<name>] block each.",
+        "de": "Die verwendeten Regeln: je ein Block [MemberRule_<name>]."
+    },
+    "ini:settings/membermanagement.ini [MemberPolicySet_member_management]": {
+        "en": "A policy set: Policies[] lines of the form module/function[;Limitation=value,value;...]. Class and ParentClass take\nclass identifiers. Every content policy whose function takes a Subtree limitation gets one: the rule's managed\ngroups. Policies outside the content module get no Subtree (user/preferences opens user/setting, which the guard and\nSettingRequiresEdit above still limit to the accounts the manager may edit).",
+        "de": "Ein Richtlinien-Satz: Policies[]-Zeilen der Form module/function[;Limitation=value,value;...]. Class und ParentClass nehmen\nKlassenbezeichner. Jede content-Richtlinie, deren Funktion eine Subtree-Einschränkung kennt, erhält eine: die verwalteten\nGruppen der Regel. Richtlinien außerhalb des Moduls content erhalten keinen Subtree (user/preferences öffnet user/setting, das die Prüfung und\nSettingRequiresEdit oben weiterhin auf die Konten beschränken, die der Verwalter bearbeiten darf)."
+    },
+    "ini:settings/membermanagement.ini [MemberRule_editors_manage_members]": {
+        "en": "A rule: who manages whom, with which policy set, in which role.\n  RoleName          the role the policies go into; created when missing, assigned to every manager group without a\n                    limitation (each policy carries its own: the managed subtrees)\n  ManagerGroups[]   the groups whose members manage\n  ManagedGroups[]   the groups whose accounts (and sub-groups) they manage\n  PolicySet         a [MemberPolicySet_<name>] block\n  EntryNodes[]      nodes the managers may read on their own (read limited to that node), so that the Users tab and\n                    the user root open; \"users\" is content.ini [NodeSettings] UserRootNode",
+        "de": "Eine Regel: wer wen verwaltet, mit welchem Richtlinien-Satz, in welcher Rolle.\n  RoleName          die Rolle, in die die Richtlinien kommen; wird angelegt, wenn sie fehlt, und jeder Verwalter-Gruppe ohne\n                    Einschränkung zugewiesen (jede Richtlinie trägt ihre eigene: die verwalteten Teilbäume)\n  ManagerGroups[]   die Gruppen, deren Mitglieder verwalten\n  ManagedGroups[]   die Gruppen, deren Konten (und Untergruppen) sie verwalten\n  PolicySet         ein Block [MemberPolicySet_<name>]\n  EntryNodes[]      Knoten, die die Verwalter für sich lesen dürfen (read auf diesen Knoten beschränkt), damit der Tab Benutzer und\n                    das Benutzer-Root sich öffnen; \"users\" ist content.ini [NodeSettings] UserRootNode"
+    },
+    "ini:settings/notification.ini [MailSettings] HTMLLayout": {
+        "en": "enabled: a notification written as text (the templates of\nnotification/handler/*/view/) is sent as text and as HTML in the mail layout\n(design:mail/layout.tpl), the first address on a line of its own as the\nbutton. disabled: as text only. A template that sets content_type is sent as\nit says either way.",
+        "de": "enabled: eine als Text geschriebene Benachrichtigung (die Templates von\nnotification/handler/*/view/) wird als Text und als HTML im Mail-Layout\n(design:mail/layout.tpl) gesendet, die erste Adresse in einer eigenen Zeile als\nButton. disabled: nur als Text. Ein Template, das content_type setzt, wird in jedem Fall\nso gesendet, wie es sagt."
+    },
+    "ini:settings/rest.ini [ApiProvider] ProviderClass": {
+        "en": "Context help of help maintained as content for clients with a token (an OAuth token or a personal API key with\nthe scope help): /api/help/v1/topic/<help_id>, /api/help/v1/manual/<remote_id> (doc/eng-us/features/6.0/help-content.md)",
+        "de": "Kontexthilfe der als Inhalt gepflegten Hilfe für Clients mit Token (ein OAuth-Token oder ein persönlicher API-Schlüssel mit\nder Berechtigung help): /api/help/v1/topic/<help_id>, /api/help/v1/manual/<remote_id> (doc/eng-us/features/6.0/help-content.md)"
+    },
+    "ini:settings/rest.ini [expHelpRestController_CacheSettings]": {
+        "en": "The context help of the help provider is never cached: what a user may see depends on the user",
+        "de": "Die Kontexthilfe des Hilfe-Providers wird nie gecacht: was ein Benutzer sehen darf, hängt vom Benutzer ab"
+    },
+    "ini:settings/secrets.ini": {
+        "en": "The kernel's secret store: passwords, tokens and API keys of the tools (data table connections, import sources,\nremote servers), stored encrypted in the table exp_secret. A tool keeps the NAME of a secret, never its value.\nSee doc/eng-us/features/6.0/secret-store.md. The administration: Setup > Secrets (module secrets, policy\nsecrets/manage); it shows names only.",
+        "de": "Der Secret-Store des Kernels: Passwörter, Tokens und API-Schlüssel der Werkzeuge (Verbindungen von Datentabellen, Importquellen,\nentfernte Server), verschlüsselt in der Tabelle exp_secret gespeichert. Ein Werkzeug behält den NAMEN eines Secrets, nie seinen Wert.\nSiehe doc/eng-us/features/6.0/secret-store.md. Die Administration: Setup > Secrets (Modul secrets, Richtlinie\nsecrets/manage); sie zeigt nur Namen."
+    },
+    "ini:settings/secrets.ini [SecretSettings] KeyFile": {
+        "en": "The key file, used when the environment variable EXP_SECRET_KEY is not set: made on first use (32 random bytes,\nbase64, mode 0600). Relative to the installation, or absolute. It must not be in a path the web server serves.\nA backup of the database alone cannot decrypt the secrets: keep the key file (or EXP_SECRET_KEY) with it.",
+        "de": "Die Schlüsseldatei, verwendet, wenn die Umgebungsvariable EXP_SECRET_KEY nicht gesetzt ist: beim ersten Gebrauch erzeugt (32 Zufallsbytes,\nbase64, Modus 0600). Relativ zur Installation oder absolut. Sie darf nicht in einem Pfad liegen, den der Webserver ausliefert.\nEin Backup allein der Datenbank kann die Secrets nicht entschlüsseln: die Schlüsseldatei (oder EXP_SECRET_KEY) mit aufbewahren."
+    },
+    "ini:settings/secrets.ini [SecretSettings] Secrets": {
+        "en": "Secrets set in the settings, by name (in the site's own settings, never in a repository), asked after the store:\nSecrets[<name>]=<value>",
+        "de": "In den Einstellungen gesetzte Secrets, nach Namen (in den eigenen Einstellungen der Site, nie in einem Repository), nach dem Store abgefragt:\nSecrets[<name>]=<value>"
+    },
+    "ini:settings/site.ini [Cache_exphelpcontent]": {
+        "en": "The rows of help maintained as content (var/<site>/cache/exphelp/content/repository-*.cache).\nIt checks itself against the help subtree on every request and reads again only\nthe objects that changed, so it needs no clearing after a publish; clearing it\nmakes the next help page read every help object (a few seconds).",
+        "de": "Die Zeilen der als Inhalt gepflegten Hilfe (var/<site>/cache/exphelp/content/repository-*.cache).\nEr prüft sich bei jeder Anfrage gegen den Hilfe-Teilbaum und liest nur\ndie geänderten Objekte erneut, braucht also nach einer Veröffentlichung kein Leeren;\nLeeren führt dazu, dass die nächste Hilfeseite jedes Hilfe-Objekt liest (einige Sekunden)."
+    },
+    "ini:settings/site.ini [ExtensionSettings] RequiredExtensions": {
+        "en": "Extensions the kernel's own designs need. Each one that is installed is active\nin every siteaccess, ahead of ActiveExtensions[], whatever an override sets\nthere; one that is not installed is left out without an error. The admin\ndesigns request the script packs of Exponential UI (expui, which the kernel\npackage requires: exp::core::shared, exp::io, exp::datatable ...) for the\nsub-items table, relation search, uploads and date fields; without it ezjscore\nanswers \"Not a valid ezjscServer function\" for each of them. A project that\nresets ActiveExtensions[] (a Platform Legacy project's override) keeps it.",
+        "de": "Erweiterungen, die die eigenen Designs des Kernels brauchen. Jede installierte ist\nin jedem Siteaccess aktiv, vor ActiveExtensions[], was auch immer ein Override\ndort setzt; eine nicht installierte wird ohne Fehler ausgelassen. Die Admin-\nDesigns fordern die Skriptpakete von Exponential UI (expui, das das Kernel-\nPaket verlangt: exp::core::shared, exp::io, exp::datatable ...) für die\nTabelle der Unterelemente, die Relationssuche, Uploads und Datumsfelder an; ohne sie\nantwortet ezjscore für jedes davon \"Not a valid ezjscServer function\". Ein Projekt, das\nActiveExtensions[] zurücksetzt (der Override eines Platform-Legacy-Projekts), behält sie."
+    },
+    "ini:settings/site.ini [PasskeySettings] Algorithms": {
+        "en": "COSE algorithms offered, most preferred first: -7 ES256, -257 RS256, -8 Ed25519 (needs\nPHP's sodium extension), -35 ES384, -36 ES512.",
+        "de": "Angebotene COSE-Algorithmen, der bevorzugte zuerst: -7 ES256, -257 RS256, -8 Ed25519 (braucht\ndie sodium-Erweiterung von PHP), -35 ES384, -36 ES512."
+    },
+    "ini:settings/site.ini [PasskeySettings] AllowedOrigins": {
+        "en": "The origins (scheme://host[:port]) answers may come from. Empty: the origin of the\nrequest. List every host the passkeys are used on when RelyingPartyID is a parent domain.",
+        "de": "Die Origins (scheme://host[:port]), von denen Antworten kommen dürfen. Leer: der Origin der\nAnfrage. Alle Hosts auflisten, auf denen die Passkeys genutzt werden, wenn RelyingPartyID eine übergeordnete Domain ist."
+    },
+    "ini:settings/site.ini [PasskeySettings] ChallengeSeconds": {
+        "en": "Seconds a challenge may be answered.",
+        "de": "Sekunden, in denen eine Challenge beantwortet werden darf."
+    },
+    "ini:settings/site.ini [PasskeySettings] MaxPerUser": {
+        "en": "Passkeys one account may have.",
+        "de": "Passkeys, die ein Konto haben darf."
+    },
+    "ini:settings/site.ini [PasskeySettings] Passkeys": {
+        "en": "Passkeys (WebAuthn): a user registers passkeys on user/passkeys (My account > Passkeys)\nand signs in with one on the web sign-in form, next to the password; a passkey also\nanswers \"Verify it's you\" ([ReauthSettings]). Only the web pages use passkeys: REST,\nSOAP, WebDAV and the expservices login do not change.\nGuide: doc/eng-us/guides/passkeys.md\n\nenabled or disabled. Disabled: no passkey can be added or used; the stored ones stay.",
+        "de": "Passkeys (WebAuthn): ein Benutzer registriert Passkeys unter user/passkeys (Mein Konto > Passkeys)\nund meldet sich mit einem im Web-Anmeldeformular an, neben dem Passwort; ein Passkey\nbeantwortet auch \"Bestätigen Sie, dass Sie es sind\" ([ReauthSettings]). Nur die Webseiten nutzen Passkeys: REST,\nSOAP, WebDAV und die expservices-Anmeldung ändern sich nicht.\nAnleitung: doc/eng-us/guides/passkeys.md\n\nenabled oder disabled. Disabled: kein Passkey kann hinzugefügt oder verwendet werden; die gespeicherten bleiben."
+    },
+    "ini:settings/site.ini [PasskeySettings] RelyingPartyID": {
+        "en": "The relying party id: a host name, the passkeys are bound to it. Empty: the host name of\nthe request. A shared parent domain (example.com) lets the passkeys of www.example.com\nwork on admin.example.com too; it must be the host or a parent of it.",
+        "de": "Die Relying-Party-ID: ein Hostname, an den die Passkeys gebunden sind. Leer: der Hostname der\nAnfrage. Eine gemeinsame übergeordnete Domain (example.com) lässt die Passkeys von www.example.com\nauch auf admin.example.com funktionieren; sie muss der Host oder eine übergeordnete Domain davon sein."
+    },
+    "ini:settings/site.ini [PasskeySettings] RelyingPartyName": {
+        "en": "The name the browser shows. Empty: [SiteSettings] SiteName.",
+        "de": "Der Name, den der Browser anzeigt. Leer: [SiteSettings] SiteName."
+    },
+    "ini:settings/site.ini [PasskeySettings] SignInForm": {
+        "en": "Offer \"Sign in with a passkey\" on the sign-in form (and the browser's passkey autofill).",
+        "de": "\"Mit einem Passkey anmelden\" im Anmeldeformular anbieten (und die Passkey-Autofill-Funktion des Browsers)."
+    },
+    "ini:settings/site.ini [PasskeySettings] UserVerification": {
+        "en": "required (default; the authenticator checks a PIN, fingerprint or face), preferred or\ndiscouraged. Signing in with a passkey always requires it; this applies to re-authentication.",
+        "de": "required (Standard; der Authenticator prüft eine PIN, einen Fingerabdruck oder ein Gesicht), preferred oder\ndiscouraged. Die Anmeldung mit einem Passkey verlangt es immer; dies gilt für die erneute Authentifizierung."
+    },
+    "ini:settings/site.ini [PasswordChangeRequiredSettings] ExemptViews": {
+        "en": "\"Change password at next sign-in\": an administrator ticks it on a user account (the\naccount edit form, or ./console exp:user-password-change-required); after that user's\nnext sign-in every page sends them to user/password until they set a new password,\nwhich clears it. The REST interface answers 403 password_change_required, WebDAV and\nSOAP refuse the sign-in. Ignored for administrators in demo mode (EXP_DEMO_MODE=1).\nGuide: doc/eng-us/features/6.0/password-change-at-next-sign-in.md\n\nThe views that stay open meanwhile: module/view, or a module alone for all its views.\nuser/password is always open. user2fa is the two-step sign-in (it comes first).",
+        "de": "\"Passwort bei der nächsten Anmeldung ändern\": ein Administrator setzt den Haken an einem Benutzerkonto (im\nBearbeitungsformular des Kontos oder mit ./console exp:user-password-change-required); nach der\nnächsten Anmeldung dieses Benutzers sendet jede Seite ihn zu user/password, bis er ein neues Passwort setzt,\nwas die Markierung löscht. Die REST-Schnittstelle antwortet mit 403 password_change_required, WebDAV und\nSOAP verweigern die Anmeldung. Ignoriert für Administratoren im Demo-Modus (EXP_DEMO_MODE=1).\nAnleitung: doc/eng-us/features/6.0/password-change-at-next-sign-in.md\n\nDie Ansichten, die währenddessen offen bleiben: module/view, oder ein Modul allein für alle seine Ansichten.\nuser/password ist immer offen. user2fa ist die zweistufige Anmeldung (sie kommt zuerst)."
+    },
+    "ini:settings/site.ini [ReauthGroup_account]": {
+        "en": "Rules, in every group: \"module/view [token ...]\"\n  module/view    the view (view * for every view of the module); a POST to it is asked\n  *              every request, GET too (a page that downloads, or a form with a file upload)\n  Name           only a POST that carries this field (any of several names)\n  self, other    only when the account addressed is the user's own / another user's\n                 (content/edit of a user object, user/password, user/setting; the\n                 pending account of an approval item of \"Approve user accounts\")\n  credentials    only when the POST changes the login, e-mail or password of a user\n  !module/view   never asked for this view (an exception to a module/* rule)",
+        "de": "Regeln, in jeder Gruppe: \"module/view [token ...]\"\n  module/view    die Ansicht (view * für jede Ansicht des Moduls); ein POST darauf wird abgefragt\n  *              jede Anfrage, auch GET (eine Seite, die herunterlädt, oder ein Formular mit Datei-Upload)\n  Name           nur ein POST, der dieses Feld enthält (eines von mehreren Namen)\n  self, other    nur, wenn das angesprochene Konto das eigene des Benutzers / das eines anderen Benutzers ist\n                 (content/edit eines Benutzerobjekts, user/password, user/setting; das\n                 ausstehende Konto eines Freigabe-Elements von \"Approve user accounts\")\n  credentials    nur, wenn der POST das Login, die E-Mail oder das Passwort eines Benutzers ändert\n  !module/view   für diese Ansicht nie abgefragt (eine Ausnahme von einer module/*-Regel)"
+    },
+    "ini:settings/site.ini [ReauthGroup_account] Enabled": {
+        "en": "The security settings of one's own account.",
+        "de": "Die Sicherheitseinstellungen des eigenen Kontos."
+    },
+    "ini:settings/site.ini [ReauthGroup_account] Rules": {
+        "en": "\"Sign out all other sessions\" asks first too: someone at an unattended screen must not lock the owner out",
+        "de": "\"Alle anderen Sitzungen abmelden\" fragt ebenfalls zuerst: jemand an einem unbeaufsichtigten Bildschirm darf den Eigentümer nicht aussperren"
+    },
+    "ini:settings/site.ini [ReauthGroup_content] Enabled": {
+        "en": "Removing content (also to the trash) and publishing. Off by default; switched on setup/reauth.",
+        "de": "Inhalt entfernen (auch in den Papierkorb) und Veröffentlichen. Standardmäßig aus; eingeschaltet unter setup/reauth."
+    },
+    "ini:settings/site.ini [ReauthGroup_export] Enabled": {
+        "en": "Exporting data.",
+        "de": "Daten exportieren."
+    },
+    "ini:settings/site.ini [ReauthGroup_system] Enabled": {
+        "en": "System settings and dangerous setup actions.",
+        "de": "Systemeinstellungen und gefährliche Setup-Aktionen."
+    },
+    "ini:settings/site.ini [ReauthGroup_users] Enabled": {
+        "en": "Managing users, roles and policies, and approving or denying new user accounts.",
+        "de": "Benutzer, Rollen und Richtlinien verwalten und neue Benutzerkonten freigeben oder ablehnen."
+    },
+    "ini:settings/site.ini [ReauthGroup_users] Rules": {
+        "en": "Approve and Deny of a new user account waiting for approval (the workflow event\n\"Approve user accounts\"); content approvals address no account and never ask here",
+        "de": "Freigeben und Ablehnen eines neuen Benutzerkontos, das auf Freigabe wartet (das Workflow-Ereignis\n\"Approve user accounts\"); Inhaltsfreigaben betreffen kein Konto und fragen hier nie"
+    },
+    "ini:settings/site.ini [ReauthSettings] CodeHandlers": {
+        "en": "Classes implementing expReauthCodeHandler: they check the code of a two-step sign-in app.\nexpReauthTotpCode reads the codes of sevenx_authentication_2fa when that extension is active.",
+        "de": "Klassen, die expReauthCodeHandler implementieren: sie prüfen den Code einer App für die zweistufige Anmeldung.\nexpReauthTotpCode liest die Codes von sevenx_authentication_2fa, wenn diese Erweiterung aktiv ist."
+    },
+    "ini:settings/site.ini [ReauthSettings] Groups": {
+        "en": "The groups, each [ReauthGroup_<name>] with Enabled=true|false and Rules[].",
+        "de": "Die Gruppen, jeweils [ReauthGroup_<name>] mit Enabled=true|false und Rules[]."
+    },
+    "ini:settings/site.ini [ReauthSettings] MaxFailures": {
+        "en": "Wrong answers in a row after which the user is signed out.",
+        "de": "Falsche Antworten in Folge, nach denen der Benutzer abgemeldet wird."
+    },
+    "ini:settings/site.ini [ReauthSettings] Minutes": {
+        "en": "Minutes a confirmation counts.",
+        "de": "Minuten, die eine Bestätigung gilt."
+    },
+    "ini:settings/site.ini [ReauthSettings] Reauth": {
+        "en": "\"Verify it's you\": before a sensitive action the signed-in user confirms who they are\nagain, with the password, a passkey or the code of a two-step sign-in app, and is not\nasked again for Minutes. Only the web pages ask (index.php and Velocity); REST, SOAP,\nWebDAV, the expservices login and the command line are never asked. Anonymous visitors\nare never asked. The groups and their switches are edited on setup/reauth.\nGuide: doc/eng-us/guides/verify-its-you.md\n\nenabled or disabled (all groups).",
+        "de": "\"Bestätigen Sie, dass Sie es sind\": vor einer sensiblen Aktion bestätigt der angemeldete Benutzer erneut, wer er ist,\nmit dem Passwort, einem Passkey oder dem Code einer App für die zweistufige Anmeldung, und wird für\nMinutes nicht erneut gefragt. Nur die Webseiten fragen (index.php und Velocity); REST, SOAP,\nWebDAV, die expservices-Anmeldung und die Kommandozeile werden nie gefragt. Anonyme Besucher\nwerden nie gefragt. Die Gruppen und ihre Schalter werden unter setup/reauth bearbeitet.\nAnleitung: doc/eng-us/guides/verify-its-you.md\n\nenabled oder disabled (alle Gruppen)."
+    },
+    "ini:settings/site.ini [RunnableSettings]": {
+        "en": "The kernel notifies content/publish ( object id, version ), content/move ( node id, object id, old parent, new\nparent ) and content/remove ( object ids, node ids ). The live mirror of the data tables is called by the kernel\nitself, in every process (doc/eng-us/features/6.0/data-tables.md, \"Live mirror\").",
+        "de": "Der Kernel meldet content/publish ( Objekt-ID, Version ), content/move ( Knoten-ID, Objekt-ID, alter Elternknoten, neuer\nElternknoten ) und content/remove ( Objekt-IDs, Knoten-IDs ). Der Live-Mirror der Datentabellen wird vom Kernel\nselbst aufgerufen, in jedem Prozess (doc/eng-us/features/6.0/data-tables.md, \"Live mirror\")."
+    },
+    "ini:settings/site.ini [SignInSecondFactorSettings] CodeHeader": {
+        "en": "The request header that carries the code of an authenticator app, where the extension\naccepts one (the expservices login also reads the POST field otp).",
+        "de": "Der Request-Header, der den Code einer Authenticator-App trägt, wo die Erweiterung\neinen akzeptiert (die expservices-Anmeldung liest auch das POST-Feld otp)."
+    },
+    "ini:settings/site.ini [SignInSecondFactorSettings] Handlers": {
+        "en": "The second sign-in step on the paths that check a password without the web login form:\nthe REST interface with basic authentication, WebDAV, SOAP and the expservices login.\nA two-step sign-in extension (sevenx_authentication_2fa) adds its class here; it then\ndecides whether a password alone is enough for an account, and which app passwords\n(made by the user on the extension's setup page) sign in instead. Without a class\nnothing changes. Console commands are never asked.\nGuide: doc/eng-us/features/6.0/second-factor-on-other-sign-in-paths.md\n\nClasses implementing expSignInSecondFactorHandler (the extension's settings add theirs).",
+        "de": "Der zweite Anmeldeschritt auf den Pfaden, die ein Passwort ohne das Web-Anmeldeformular prüfen:\ndie REST-Schnittstelle mit Basic-Authentifizierung, WebDAV, SOAP und die expservices-Anmeldung.\nEine Erweiterung für die zweistufige Anmeldung (sevenx_authentication_2fa) fügt hier ihre Klasse hinzu; sie\nentscheidet dann, ob ein Passwort allein für ein Konto genügt, und welche App-Passwörter\n(vom Benutzer auf der Setup-Seite der Erweiterung erzeugt) stattdessen zur Anmeldung dienen. Ohne eine Klasse\nändert sich nichts. Konsolenbefehle werden nie gefragt.\nAnleitung: doc/eng-us/features/6.0/second-factor-on-other-sign-in-paths.md\n\nKlassen, die expSignInSecondFactorHandler implementieren (die Einstellungen der Erweiterung fügen ihre hinzu)."
+    },
+    "ini:settings/site.ini [UserSessionSettings] FirstSignInMail": {
+        "en": "Whether the very first sign-in an account has here counts as a new device (there is nothing to compare it with).",
+        "de": "Ob die allererste Anmeldung, die ein Konto hier hat, als neues Gerät zählt (es gibt nichts, womit man sie vergleichen könnte)."
+    },
+    "ini:settings/site.ini [UserSessionSettings] GeoIPDatabase": {
+        "en": "The approximate place of a sign-in, from a GeoIP database on this server in the MaxMind DB format (.mmdb, e.g.\nGeoLite2-City.mmdb), relative to the installation or absolute; empty: no places. Needs the PHP extension maxminddb\nor the Composer package maxmind-db/reader. Nothing is ever asked of another server. With it, a sign-in from a\ncountry the account has not signed in from within RetentionDays is a \"new location\" (event and mail).",
+        "de": "Der ungefähre Ort einer Anmeldung, aus einer GeoIP-Datenbank auf diesem Server im MaxMind-DB-Format (.mmdb, z. B.\nGeoLite2-City.mmdb), relativ zur Installation oder absolut; leer: keine Orte. Braucht die PHP-Erweiterung maxminddb\noder das Composer-Paket maxmind-db/reader. Es wird nie ein anderer Server gefragt. Damit ist eine Anmeldung aus einem\nLand, aus dem sich das Konto innerhalb von RetentionDays nicht angemeldet hat, ein \"neuer Ort\" (Ereignis und Mail)."
+    },
+    "ini:settings/site.ini [UserSessionSettings] GeoIPLanguage": {
+        "en": "The language of the place names the database holds (en when a name is not in it).",
+        "de": "Die Sprache der Ortsnamen, die die Datenbank enthält (en, wenn ein Name nicht darin steht)."
+    },
+    "ini:settings/site.ini [UserSessionSettings] NewDeviceAdminMail": {
+        "en": "The same as a note to the administrators: AdminMailReceivers[], else [MailSettings] AdminEmail (category admin).",
+        "de": "Dasselbe als Hinweis an die Administratoren: AdminMailReceivers[], sonst [MailSettings] AdminEmail (Kategorie admin)."
+    },
+    "ini:settings/site.ini [UserSessionSettings] NewDeviceMail": {
+        "en": "\"New sign-in to your account\" to the user, when a sign-in comes from a browser, system and device kind not seen\nfor the account within RetentionDays (category security). Each user can turn it off on the page.",
+        "de": "\"Neue Anmeldung bei Ihrem Konto\" an den Benutzer, wenn eine Anmeldung von einem Browser, System und Gerätetyp kommt, die für das Konto\ninnerhalb von RetentionDays nicht gesehen wurden (Kategorie security). Jeder Benutzer kann es auf der Seite ausschalten."
+    },
+    "ini:settings/site.ini [UserSessionSettings] RecordIP": {
+        "en": "How the addresses of sessions are kept: full, truncated (the network only: 203.0.113.x, 2001:db8:85a3::/48),\ndisabled (none), or audit: as audit.ini says for the audit ([UserAuditSettings] RecordIP=disabled: none,\n[AuditPrivacySettings] Field[actor.ip]=off: none, truncate or hash: the network, full: the address).",
+        "de": "Wie die Adressen von Sitzungen aufbewahrt werden: full, truncated (nur das Netzwerk: 203.0.113.x, 2001:db8:85a3::/48),\ndisabled (keine) oder audit: wie audit.ini es für das Audit sagt ([UserAuditSettings] RecordIP=disabled: keine,\n[AuditPrivacySettings] Field[actor.ip]=off: keine, truncate oder hash: das Netzwerk, full: die Adresse)."
+    },
+    "ini:settings/site.ini [UserSessionSettings] RetentionDays": {
+        "en": "Ended sessions (signed out, revoked, expired) are kept this many days, for the list of recent sign-ins and to know\na device seen before; the cronjob usersessions.php removes them afterwards. Sessions not used for [Session]\nSessionTimeout are ended by the same cronjob.",
+        "de": "Beendete Sitzungen (abgemeldet, widerrufen, abgelaufen) werden so viele Tage aufbewahrt, für die Liste der letzten Anmeldungen und um\nein zuvor gesehenes Gerät zu erkennen; der Cronjob usersessions.php entfernt sie danach. Sitzungen, die für [Session]\nSessionTimeout nicht benutzt wurden, beendet derselbe Cronjob."
+    },
+    "ini:settings/site.ini [UserSessionSettings] SecurityAlertMail": {
+        "en": "\"Security alert\" to the owner of an account when two-step sign-in is turned on or off, a recovery code is used, sign-ins\nfail FailedSignInAlertThreshold times in a row (0: never) or the account is locked (category security, design:user/\nsecurity_alert_mail.tpl, links to user/security). A user cannot turn these off; disabled turns them off for the site.\nSent from the user audit log (audit.ini [UserAuditSettings]): without it no alert is sent.",
+        "de": "\"Sicherheitswarnung\" an den Eigentümer eines Kontos, wenn die zweistufige Anmeldung ein- oder ausgeschaltet wird, ein Wiederherstellungscode benutzt wird, Anmeldungen\nFailedSignInAlertThreshold-mal in Folge fehlschlagen (0: nie) oder das Konto gesperrt wird (Kategorie security, design:user/\nsecurity_alert_mail.tpl, verlinkt auf user/security). Ein Benutzer kann diese nicht ausschalten; disabled schaltet sie für die Site aus.\nGesendet aus dem Benutzer-Audit-Log (audit.ini [UserAuditSettings]): ohne es wird keine Warnung gesendet."
+    },
+    "ini:settings/site.ini [UserSessionSettings] TouchInterval": {
+        "en": "The last use and address of a session are written at most this often (seconds), or when the address changes.",
+        "de": "Die letzte Nutzung und Adresse einer Sitzung werden höchstens so oft geschrieben (Sekunden), oder wenn sich die Adresse ändert."
+    },
+    "ini:settings/site.ini [UserSessionSettings] Tracking": {
+        "en": "\"Your devices\": every sign-in is a row of the table expuser_session (when the table is there), with when it\nstarted and was last used, the address, the browser and system, the sign-in method and Remember me. The user sees\nthem at user/sessions and signs out one session or all others; an administrator with the policy user/sessions does\nthe same for any user (user/sessions/<user id>). A session signed out there ends on its next request, on every\nsession handler. Guide: doc/eng-us/features/6.0/user-sessions.md\ndisabled: no rows are written and no session is checked (the pages say so).",
+        "de": "\"Ihre Geräte\": jede Anmeldung ist eine Zeile der Tabelle expuser_session (wenn die Tabelle da ist), mit Beginn und letzter\nNutzung, der Adresse, dem Browser und System, der Anmeldemethode und Angemeldet bleiben. Der Benutzer sieht\nsie unter user/sessions und meldet eine Sitzung oder alle anderen ab; ein Administrator mit der Richtlinie user/sessions\ntut dasselbe für jeden Benutzer (user/sessions/<user id>). Eine dort abgemeldete Sitzung endet bei ihrer nächsten Anfrage, bei jedem\nSession-Handler. Anleitung: doc/eng-us/features/6.0/user-sessions.md\ndisabled: es werden keine Zeilen geschrieben und keine Sitzung geprüft (die Seiten sagen es)."
+    },
+    "ini:settings/transfer.ini": {
+        "en": "The background runs and the run history of the import and export tools of the transfer registry\n(Export, CIE, Imports ...): doc/eng-us/features/6.0/transfer-runs.md.",
+        "de": "Die Hintergrundläufe und der Laufverlauf der Import- und Export-Werkzeuge der Transfer-Registry\n(Export, CIE, Imports ...): doc/eng-us/features/6.0/transfer-runs.md."
+    },
+    "ini:settings/transfer.ini [TransferSettings] Engine": {
+        "en": "Which engine runs a tool's background runs:\n  auto        the job queue (expqueue) when it can take them, else the kernel's content jobs, else the\n              tool's own process (the default)\n  expqueue    the job queue; needs expqueue active, its tables installed, the tool's job type in expqueue.ini\n              (the tool's QueueJobType=) and a live queue worker (see QueueNeedsWorker)\n  contentjob  the kernel's content jobs (content.ini [ContentJobSettings] JobTypes[transfer]), which start a\n              worker process of their own for each run\n  process     the tool's own way of running in the background, as before 6.0.15\nAn engine that is not available falls back in that order. A tool may name its own engine (Engine= in its\n[Service_transfer.<id>] block of kernelservices.ini); ToolEngine[<tool id>] here wins over both.",
+        "de": "Welche Engine die Hintergrundläufe eines Werkzeugs ausführt:\n  auto        die Job-Warteschlange (expqueue), wenn sie sie annehmen kann, sonst die Inhalts-Jobs des Kernels, sonst der\n              eigene Prozess des Werkzeugs (der Standard)\n  expqueue    die Job-Warteschlange; braucht aktives expqueue, installierte Tabellen, den Job-Typ des Werkzeugs in expqueue.ini\n              (das QueueJobType= des Werkzeugs) und einen laufenden Queue-Worker (siehe QueueNeedsWorker)\n  contentjob  die Inhalts-Jobs des Kernels (content.ini [ContentJobSettings] JobTypes[transfer]), die für jeden Lauf einen\n              eigenen Worker-Prozess starten\n  process     die eigene Art des Werkzeugs, im Hintergrund zu laufen, wie vor 6.0.15\nEine nicht verfügbare Engine fällt in dieser Reihenfolge zurück. Ein Werkzeug kann seine eigene Engine nennen (Engine= in seinem\nBlock [Service_transfer.<id>] von kernelservices.ini); ToolEngine[<tool id>] hier gewinnt gegenüber beiden."
+    },
+    "ini:settings/transfer.ini [TransferSettings] KeepDays": {
+        "en": "Days the run history keeps a finished run (exp_transfer_run); 0 keeps every run.\nThe tools keep their own records and files as long as their own settings say.",
+        "de": "Tage, die der Laufverlauf einen beendeten Lauf behält (exp_transfer_run); 0 behält jeden Lauf.\nDie Werkzeuge behalten ihre eigenen Aufzeichnungen und Dateien so lange, wie ihre eigenen Einstellungen es sagen."
+    },
+    "ini:settings/transfer.ini [TransferSettings] QueueNeedsWorker": {
+        "en": "ToolEngine[transfer.xrowextract]=contentjob\nWhether the job queue is used only while a queue worker is alive (a run queued with no worker would wait\nuntil one starts). disabled: queue the run anyway.",
+        "de": "ToolEngine[transfer.xrowextract]=contentjob\nOb die Job-Warteschlange nur genutzt wird, solange ein Queue-Worker lebt (ein Lauf, der ohne Worker eingereiht wird, würde warten,\nbis einer startet). disabled: den Lauf trotzdem einreihen."
+    },
+    "ini:settings/velocity.ini [ServerSettings] SharedInstances": {
+        "en": "enabled: the instances share one cache of compiled scripts and one APCu\nsegment (the engine starts the first and forks the others from it, Exponential\nVelocity 0.0.4.56 and later), so a script is compiled once and a result the\nkernel keeps in APCu (the query cache) is paid for once, not once per\ninstance; all of them write to LogFile. disabled: every instance is started\non its own, with caches and a log (console.1.log ...) of its own. An instance\nreloaded by graceful sets PHP up again and has caches of its own from then on.",
+        "de": "enabled: die Instanzen teilen sich einen Cache kompilierter Skripte und ein APCu-\nSegment (die Engine startet die erste und forkt die anderen daraus, Exponential\nVelocity 0.0.4.56 und später), sodass ein Skript einmal kompiliert wird und ein Ergebnis, das der\nKernel in APCu hält (der Query-Cache), einmal bezahlt wird, nicht einmal pro\nInstanz; alle schreiben in LogFile. disabled: jede Instanz wird für sich gestartet,\nmit eigenen Caches und einem eigenen Log (console.1.log ...). Eine mit graceful\nneu geladene Instanz richtet PHP neu ein und hat von da an eigene Caches."
+    },
+    "workflow-event:expdatatablemirror": {
+        "en": "Mirror to data tables",
+        "de": "Auf Datentabellen spiegeln"
+    },
+    "workflow-event:expuserapprove": {
+        "en": "Approve user accounts",
+        "de": "Benutzerkonten freigeben"
+    }
+}

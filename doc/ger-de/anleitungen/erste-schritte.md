@@ -19,6 +19,7 @@ SQLite etwa eine Minute.
 > Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
 > [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](seiten-cache-mit-litespeed.md).
 
 Jeder Befehl wird im Wurzelverzeichnis der Installation ausgeführt (dem Verzeichnis, das `console`, `index.php` und
 `settings/` enthält). Befehle, die mit `./console` beginnen, sind dieselben Programme wie `php bin/php/<name>.php`.
@@ -78,7 +79,7 @@ Prüfen Sie, ob die Konsole läuft:
 ```
 
 Erwartet: Die erste Zeile lautet `console (Exponential) 6.0.15stable` (oder die Version, die Sie installiert haben), und der Text endet
-mit `Written by 7x (se7enx.com) and the Exponential contributors.`
+mit `Written by the Exponential Foundation and 7x (se7enx.com).`
 Wenn Sie als `root` arbeiten, ergänzen Sie `--allow-root-user` bei den Skripten, die danach verlangen. Die Meldung des Skripts sagt es Ihnen.
 
 ## 3. Installieren

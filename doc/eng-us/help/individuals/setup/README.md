@@ -25,6 +25,7 @@ in the order you meet them and links to the installation book for the detail
 > test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
 > [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../../hosting/panels/plesk.md), [cPanel](../../hosting/panels/cpanel.md), [DirectAdmin](../../hosting/panels/directadmin.md), [ISPConfig](../../hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md).
 
 ## Contents
 
@@ -55,7 +56,7 @@ Sources: [Choosing an install method](../../creators/website-creators/choosing-a
 
 ## What you need before you start
 
-- [ ] PHP 8.0 or later with the required extensions, or a host that offers it
+- [ ] PHP 8.0 or later (PHP 7.4 usable without support) with the required extensions, or a host that offers it
   ([Requirements at a glance](../../hosting/basics/requirements-at-a-glance.md)).
 - [ ] For a console install: a shell and Composer. For the wizard: a browser and FTP.
 - [ ] A real mail address for the administrator.

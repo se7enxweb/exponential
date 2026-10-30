@@ -11,7 +11,7 @@ type: help
 
 Kapitel 6 des Buchs baut zwei Erweiterungen im Detail, ein Zahlungsmodul für einen Anbieter seiner Zeit und einen
 Kategorie-Datentyp. Diese anbieterspezifischen Teile sind veraltet, und der Shop von Exponential 6 hat ein eigenes
-Zahlungsgateway-Ereignis ([Zahlungsgateway-Ereignis](../../../eng-us/help/e-commerce/checkout/payment-gateway-event.md)). Nicht veraltet
+Zahlungsgateway-Ereignis ([Zahlungsgateway-Ereignis](../e-commerce/kasse/das-ereignis-zahlungs-gateway.md)). Nicht veraltet
 ist der erste Abschnitt, die Praxis der Erweiterungsentwicklung. Jeder seiner Punkte ist immer noch eine gute Regel.
 
 ## Zuerst entwerfen
@@ -29,7 +29,7 @@ ist der erste Abschnitt, die Praxis der Erweiterungsentwicklung. Jeder seiner Pu
 ## Anforderungen und Umgebung
 
 Verwenden Sie dieselben Versionen wie Ihr Produktivserver: Eine Funktion, die es nur in einem neueren PHP oder einer
-neueren Datenbank gibt, scheitert bei der Bereitstellung. Exponential 6 läuft auf PHP 8.0 bis 8.5 (siehe
+neueren Datenbank gibt, scheitert bei der Bereitstellung. Exponential 6 läuft auf PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) (siehe
 [Erste Schritte](../../anleitungen/erste-schritte.md)), und jede Erweiterung nennt ihre eigenen Anforderungen in
 `composer.json`. Testen Sie früh auf der Plattform, auf der Sie bereitstellen werden. Eine Entwicklungsinstallation, die
 eine Kopie des Produktivsystems ist, ist der richtige Weg ([Eine Entwicklungsinstallation einrichten](../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/eine-entwicklungsinstallation-einrichten.md)).

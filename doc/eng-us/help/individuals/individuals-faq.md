@@ -24,6 +24,7 @@ with the detail.
 > test the site. The same rules for other servers: [nginx](../../examples/web-servers/nginx.md), [LiteSpeed](../../examples/web-servers/litespeed.md),
 > [Caddy](../../examples/web-servers/caddy.md), [IIS](../../examples/web-servers/iis.md), [Velocity](../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../hosting/panels/plesk.md), [cPanel](../hosting/panels/cpanel.md), [DirectAdmin](../hosting/panels/directadmin.md), [ISPConfig](../hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../guides/litespeed-page-cache.md).
 
 ## Contents
 
@@ -41,7 +42,7 @@ No license fee. It is free software under the GNU General Public License, versio
 want them, outside services such as a mail provider or an AI provider.
 
 **What is the smallest setup that works?**
-PHP 8.0 or later, SQLite 3 (no database server) and either a common web server or no web server at all with
+PHP 8.0 or later (PHP 7.4 usable without support), SQLite 3 (no database server) and either a common web server or no web server at all with
 Velocity ([Requirements at a glance](../hosting/basics/requirements-at-a-glance.md),
 [Running on a small budget](setup/running-on-a-small-budget.md)).
 

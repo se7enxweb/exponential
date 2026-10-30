@@ -23,8 +23,8 @@ type: help
 |---|---|
 | Was kostet es an Lizenzen? | Nichts; GPL v2 oder später (`README.md`) |
 | Welche Versionen erhalten Sicherheitskorrekturen? | Die Linie 6.0; Korrekturen im nächsten Release 6.0.x (`SECURITY.md`) |
-| Welche PHP-Versionen und Datenbanken? | PHP 8.0 bis 8.5; SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL ([Datenbankunterstützung](../../datenbankunterstuetzung.md)) |
-| Wer führt das Projekt? | 7x führt die Entwicklung; die Exponential Foundation betreibt das Projekt ([Wer entscheidet](../../../../eng-us/help/community/how-it-works/who-decides.md)) |
+| Welche PHP-Versionen und Datenbanken? | PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar); SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL ([Datenbankunterstützung](../../datenbankunterstuetzung.md)) |
+| Wer führt das Projekt? | 7x führt die Entwicklung; die Exponential Foundation betreibt das Projekt ([Wer entscheidet](../../gemeinschaft/so-funktioniert-es/wer-entscheidet.md)) |
 | Wie werden Sicherheitsprobleme gemeldet? | Vertraulich an security@se7enx.com, erste Antwort innerhalb eines Werktags (`SECURITY.md`) |
 
 ## Fragen an einen Partner oder an 7x
@@ -49,7 +49,7 @@ Mehr: [Was Sie Ihren Hoster fragen](../../kunden/gesund-halten/was-sie-ihren-hos
 
 ## Fragen an die Community
 
-Fragen Sie in den Foren ([Eine gute Frage stellen](../../../../eng-us/help/community/joining/asking-a-good-question.md)):
+Fragen Sie in den Foren ([Eine gute Frage stellen](../../gemeinschaft/beitreten/eine-gute-frage-stellen.md)):
 
 - Hat jemand schon etwas wie unsere schwierigste Anforderung gebaut?
 - Welche Erweiterung verwenden die Leute für X?

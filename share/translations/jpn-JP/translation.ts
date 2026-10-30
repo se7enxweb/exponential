@@ -8005,8 +8005,8 @@
         <translation>原作者および Exponential に含まれるサードパーティ製ソフトウェアの著作権表示は、ライセンスの要求に従い、ソースファイルと LICENSEファイルに保持されています。</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>以下は、eZ Systems Contributor Licensing Agreement の条件に基づき、7x による使用のために自身の成果物をライセンスした Exponential の貢献者の一覧です。この契約で認められているとおり、7x は各貢献を、その貢献が含まれるファイルと同じライセンスで再配布しています。一覧には、各貢献者、任意の連絡先情報、およびその貢献者が作成または貢献したファイルが記載されています。</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential およびその元となったソフトウェアへの貢献が認められた貢献者と、その貢献したファイルの一覧です。これは謝辞であり、著作権表示ではありません。Exponential への貢献は Contributor Licensing Agreement に基づき Exponential Foundation と 7x に譲渡されます。</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77279,6 +77279,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>パスキーを確認できませんでした。もう一度お試しください。</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>パスキーのみでログインするアカウントは、ここでパスワードを使用できません。「パスキーでログイン」を選択してください。</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login のパスキー</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>このアカウントがログインに使用するパスキーです。紛失または盗難にあったデバイス上のパスキーは取り消してください。取り消したパスキーではログインできなくなります。新しいパスキーはアカウントの所有者が自分で追加します。</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>アカウントにパスキーが必要です</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>アカウントにパスキーを追加</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>続行するにはパスキーを追加してください。以後はパスワードだけでなく、パスキーでログインします。</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>パスキーでのログインは、パスワードより速く安全です。今すぐ追加するか、追加せずに続行してください。</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>後で</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>パスキー「%name」を取り消してもよろしいですか？</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>このパスキーでは、このアカウントにログインできなくなります。最後のパスキーだった場合、所有者はパスワードでログインするか、あなたが新しいパスワードを設定します。</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>パスキーの取り消し</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>取り消し</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>このアカウントにはパスキーがありません。</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>認証器</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>不明</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>最後のパスキーです。削除する前に別のパスキーを追加してください。</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>このアカウントはパスキーのみでログインします (パスキーポリシー)。パスキーが残っていない場合は、再びパスワードでログインします。</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>これは最後のパスキーで、パスキーがないとアカウントにログインできません。先に別のパスキーを追加してください。</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>パスキー「%name」を取り消しました。このパスキーでは、このアカウントにログインできなくなりました。</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77378,6 +77454,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>認証アプリのコード</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>データを完全に削除するか、ログを消去しようとしています。</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>パスワードとパスキー</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>パスワードと認証アプリのコード</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>または：</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>このブラウザーではパスキーを使用できません。別の方法か、別のブラウザーを使用してください。</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>続行すると、ブラウザーがパスキーのいずれかを求めます。</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>パスキーで続行</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77468,6 +77572,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>システム設定</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>自分のパスワード、メールアドレス、パスキー、2 段階認証、リカバリーコード、API キーの変更、および自分の他のデバイスからのログアウト。</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ユーザーの作成と編集、ユーザーのパスワードとデバイス、アカウント設定、新規ユーザーアカウントの承認または拒否、ロールの割り当て、ポリシーの編集。</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>データの削除</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>ごみ箱を空にすること、ごみ箱から項目を削除すること、複数の項目を一度に削除すること。</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>コンテンツの削除、公開、保存</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>コンテンツの削除 (ごみ箱への移動を含む)、公開、下書きの保存。フォームの送信時に確認します。既定ではオフです。</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>重要な操作の前に、ログイン中のユーザーは本人であることを再確認します。パスワードとパスキーで、またはパスキーがない場合はパスワードと認証アプリのコードで確認します。確認を求めるのは Web ページだけです。REST インターフェイス、SOAP、WebDAV、expservices のログイン、コマンドラインでは求めません。</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>設定の適用範囲</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>設定の対象</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>すべてのサイトアクセス</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>サイトアクセス %name のみ</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>開く</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>確認を求める対象：%group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>メンバーにのみ確認を求めるユーザーグループにチェックを付けます (例：編集者)。チェックなし：すべてのユーザー。</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>すべてのサイトアクセスを対象に settings/override/site.ini.append.php に保存されます。保存時に本人確認を求められます。</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php に保存されます。settings/override の値はこれより優先されます。保存時に本人確認を求められます。</translation>
     </message>
 </context>
 <context>
@@ -77856,6 +78024,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>アカウントがロックされました</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site のアカウント %login にパスキーが追加されました。</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>このパスキーを持つ人は、パスワードなしであなたのアカウントにログインできます。追加した覚えがない場合は、「パスキー」でパスキーを削除し、パスワードを変更してください。</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site のアカウント %login からパスキーが削除されました。</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>このパスキーでは、あなたのアカウントにログインできなくなりました。削除した覚えがない場合は、パスキーとデバイスを確認してください。</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>アカウントにパスキーが追加されました</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>アカウントからパスキーが削除されました</translation>
     </message>
 </context>
 <context>

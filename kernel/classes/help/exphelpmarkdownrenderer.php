@@ -57,7 +57,7 @@
  * external links; span.a4-help-deadlink; span.a4-help-target[id] for <a name>; sup.a4-help-fnref and
  * section.a4-help-footnotes > ol > li[id] with a.a4-help-fnback; div.a4-help-plain for plain text pages.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

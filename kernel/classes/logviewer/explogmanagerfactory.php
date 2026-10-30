@@ -4,7 +4,7 @@
  * service expLogManager when it is there, else expLogManagerFallback, which does the same on the log viewer's own
  * classes. Both implement expLogManagerInterface.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

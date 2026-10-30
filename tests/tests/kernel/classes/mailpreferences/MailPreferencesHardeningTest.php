@@ -26,7 +26,7 @@
  *  MPH-09  Over HTTP, on the site's web server and on Velocity: the one-click POST answers 200, a broken link 400,
  *          and the JSON and CSV downloads arrive complete
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group mailpreferences
@@ -241,7 +241,7 @@ class MailPreferencesHardeningTest extends PHPUnit\Framework\TestCase
     {
         // in a process of its own: a buffer that cannot be removed stays until the process ends
         $fixture = __DIR__ . '/fixtures/discard_output_worker_buffer.php';
-        $process = proc_open( array( PHP_BINARY, '-n', '-d', 'display_errors=stderr', $fixture ), array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
+        $process = proc_open( array( ...expTestBarePhpCommand(), '-d', 'display_errors=stderr', $fixture ), array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
         $this->assertIsResource( $process );
         stream_set_blocking( $pipes[1], false );
         $out = '';

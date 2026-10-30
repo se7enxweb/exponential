@@ -5,7 +5,7 @@
  * the transfer runner (expqueue, content jobs, or this process), and moves its next run by its interval. Does nothing
  * on an installation without the sync tables.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

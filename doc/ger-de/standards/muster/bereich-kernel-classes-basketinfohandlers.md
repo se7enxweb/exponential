@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/basketinfohandlers
 audience: developer
 category: standards
-order: 481
+order: 487
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/basketinfohandlers mit den Entwurfsmustern.
 keywords: kernel/classes/basketinfohandlers, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

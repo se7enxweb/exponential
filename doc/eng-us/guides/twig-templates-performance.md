@@ -2,7 +2,9 @@
 
 This page is for site builders and developers who need to know how fast `.twig` pages are, why, and how to measure
 their own. It describes what the Twig engine does to be fast, gives the measurements taken on a development
-installation on 2026-10-29 with their conditions, and shows how to repeat them.
+installation on 2026-10-29 with their conditions, and shows how to repeat them. The comparison of all three engines
+in one place, with a quieter cached run, the debug render a developer sees and where a request spends its time, is
+[Speed of the three template engines](template-engines-speed.md).
 
 ## What makes .twig fast
 
@@ -15,6 +17,12 @@ installation on 2026-10-29 with their conditions, and shows how to repeat them.
 - **Operators in PHP.** The logic, arithmetic and control operators, `wash`, `implode`, `contains` and `concat` run
   directly in PHP, as static methods the compiled template calls without a lookup, with a fast path for plain
   numbers and texts. The other operators run through the template system's own code.
+- **Direct calls for everything bridged.** Every other operator, the template functions and the converter's helper
+  functions are compiled as direct static calls too, so a compiled template never looks a name up in the Twig
+  environment and a request never makes Twig set up its extensions. Before this change that set-up cost about 8 ms
+  on every PHP-FPM request, and the debug render of a `.twig` page took 82 to 113 ms of script time against 25 to
+  36 ms for its Smarty port; after it, 25 to 36 ms, the same as Smarty. A template compiled before the change keeps
+  working.
 - **Translations when compiling.** A constant `i18n` text is translated when the template is compiled; the compiled
   class is kept per siteaccess and locale. On the media front page this took 37.5 ms of operator time off every
   uncached request.
@@ -58,6 +66,11 @@ What the numbers say:
   maximum per request.
 - With PHP-FPM a cached page costs about 12 ms of PHP before the HTTP cache answers: the request starts PHP, reads the
   settings and the session, then the cache. That is the floor of Apache with PHP-FPM, for every engine.
+
+A second run the same afternoon (15:51 to 16:32, load 5 to 18, 600 requests per page, engine and server) gave a median
+server time of 0.1 ms on Velocity for all three engines and 7.5 to 7.6 ms on Apache with PHP-FPM; two `.twig` pages had
+every one of their 600 server times on Velocity at or below 33 ms. The tables and the conditions of that run are in
+[Speed of the three template engines](template-engines-speed.md#1-cached-pages).
 
 ## Uncached pages
 
@@ -113,6 +126,8 @@ php vendor/bin/phpunit --group performance tests/tests/lib/twig/expTwigPerforman
 
 ## Related
 
+- [Speed of the three template engines](template-engines-speed.md)
 - [Caching](twig-templates-caching.md)
+- [Debugging Twig templates](twig-templates-debugging.md) (the Twig profile)
 - [Smarty templates: performance](smarty-templates-performance.md)
 - [Benchmarking](benchmarking.md)

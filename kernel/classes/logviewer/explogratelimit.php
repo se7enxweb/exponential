@@ -8,7 +8,7 @@
  * of one session at the same moment may both pass, which a limit of this kind can afford. Nothing is written to
  * the session, so a poll costs no session write.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

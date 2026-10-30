@@ -9,7 +9,7 @@
  *  MPE-02  a handler that throws is logged; the erasure and the other handlers go on
  *  MPE-03  a handler without erased() is skipped; notifyErased() names the classes it called
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group mailpreferences

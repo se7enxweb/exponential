@@ -4,7 +4,7 @@
  * as far as the content policies let visitors read; writing, editing and removing follow the policies, so a
  * member edits and removes their own topics when the role has the owner limitation.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

@@ -51,7 +51,7 @@ Tell the two-minute version, then add any of these blocks, depending on your lis
 
 | Listener | Add | Source |
 |---|---|---|
-| A developer | "It runs on PHP 8.0 to 8.5, installs with Composer, and every package is a Git repository you can clone with its full history. Every pull request is merged." | [PHP versions](../who-is-the-exponential-foundation.md#php-versions), [Develop with Git](../develop-with-git.md), [How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows) |
+| A developer | "It runs on PHP 8.0 to 8.5 (PHP 7.4 usable without support), installs with Composer, and every package is a Git repository you can clone with its full history. Every pull request is merged." | [PHP versions](../who-is-the-exponential-foundation.md#php-versions), [Develop with Git](../develop-with-git.md), [How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows) |
 | An administrator | "SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle or MySQL; Linux, BSD, macOS or Windows; and a one-command install." | [Database support](../database-support.md), [Operating system support](../os-support.md), [Install in one command](../../features/6.0/install-in-one-command.md) |
 | An editor | "Drafts and versions, a preview at phone width, a page builder, and help on every screen." | [A tour of the administration](../admin-tour.md), [The layouts editor](../layouts-editor.md) |
 | A decision maker | "The software has outlived its original vendor once already because its code is free. A company and a nonprofit stand behind it." | [Handling objections, Longevity](../business/objection-handling.md#longevity-will-it-still-be-here-in-ten-years) |
@@ -62,7 +62,7 @@ Tell the two-minute version, then add any of these blocks, depending on your lis
 | Statement | Source |
 |---|---|
 | "a professional PHP application framework with advanced CMS (content management system) functionality ... its most notable feature is its fully customizable and extendable content model" | [README](https://github.com/se7enxweb/exponential/blob/main/README.md), [Exponential 6](../who-is-the-exponential-foundation.md#exponential-6-the-kernel) |
-| Copyright "1998 - 2026 7x & Exponential Foundation" and "1999 - 2014 eZ Systems AS" | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
+| "Exponential Copyright © 1998-2026 Exponential Foundation and 7x" and "1999 - 2014 eZ Systems AS" | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
 | eZ Publish was discontinued by its creator after almost eighteen years | [Exponential 6](../who-is-the-exponential-foundation.md#exponential-6-the-kernel) |
 | "7x took over leadership of the project ... in 2023" | [Who is 7x?, In short](../who-is-7x.md#in-short) |
 | 6.0.0 on 1 January 2024 to 6.0.14 on 7 June 2026, fifteen releases; 6.0.15 in development | [Who is 7x?, The 6.0.x releases](../who-is-7x.md#the-60x-releases) |

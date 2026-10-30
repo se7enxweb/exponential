@@ -8066,8 +8066,8 @@
         <translation>मूल लेखकहरू र Exponential सँग समावेश तेस्रो-पक्ष सफ्टवेयरका प्रतिलिपि अधिकार सूचनाहरू, इजाजतपत्रले आवश्यक पारेबमोजिम, स्रोत फाइलहरू र LICENSE फाइलमा राखिएका छन्।</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>तल Exponential का ती योगदानकर्ताहरूको सूची छ जसले eZ Systems Contributor Licensing Agreement का सर्त र शर्तहरू अन्तर्गत आफ्नो काम 7x ले प्रयोग गर्न इजाजतपत्र दिएका छन्। यस सम्झौताले अनुमति दिएबमोजिम, 7x ले प्रत्येक योगदानलाई त्यो योगदान समावेश भएको फाइलको इजाजतपत्र अन्तर्गत नै पुनर्वितरण गर्छ। सूचीमा प्रत्येक योगदानकर्ताको नाम, वैकल्पिक सम्पर्क जानकारी र उनीहरूले योगदान गरेका वा काममा योगदान पुर्‍याएका फाइलहरू उल्लेख छन्।</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential र यो जुन सफ्टवेयरबाट विकसित भयो त्यसमा गरेको कामका लागि श्रेय पाउने योगदानकर्ताहरू, उनीहरूले योगदान दिएका फाइलहरूसहित। यो श्रेय हो, प्रतिलिपि अधिकार सूचना होइन: Exponential मा योगदानहरू Contributor Licensing Agreement अन्तर्गत Exponential Foundation र 7x लाई हस्तान्तरण गरिन्छन्।</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77289,6 +77289,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>पासकी जाँच गर्न सकिएन। कृपया फेरि प्रयास गर्नुहोस्।</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>पासकीबाट मात्र लग इन गर्ने खाताहरूले यहाँ पासवर्ड प्रयोग गर्न सक्दैनन्: &quot;पासकीसँग लग इन गर्नुहोस्&quot; छान्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login का पासकीहरू</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>यो खाताले लग इन गर्ने पासकीहरू। हराएको वा चोरी भएको उपकरणमा भएको पासकी खारेज गर्नुहोस्: त्यसले अब लग इन गर्न सक्दैन। नयाँ पासकी खाताधनी आफैँ थप्नुहुन्छ।</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>तपाईंको खातालाई पासकी चाहिन्छ</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>आफ्नो खातामा पासकी थप्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>जारी राख्न पासकी थप्नुहोस्। त्यसपछि तपाईं पासवर्ड मात्र होइन, त्यसबाट लग इन गर्नुहुनेछ।</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>पासकीबाट लग इन गर्नु पासवर्डभन्दा छिटो र सुरक्षित हुन्छ। अहिले एउटा थप्नुहोस्, वा त्यसबिना जारी राख्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>अहिले होइन</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>पासकी &quot;%name&quot; खारेज गर्ने?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>यसले अब यो खातामा लग इन गर्न सक्दैन। यो अन्तिम थियो भने, खाताधनीले पासवर्डबाट लग इन गर्नुहुन्छ, वा तपाईंले नयाँ पासवर्ड सेट गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>पासकी खारेज गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>खारेज गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>यो खातामा कुनै पासकी छैन।</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>प्रमाणक</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>अज्ञात</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>तपाईंको अन्तिम पासकी: यसलाई हटाउनुअघि अर्को थप्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>यो खाताले पासकीबाट मात्र लग इन गर्छ (पासकी नीति): एउटा पनि नबाँचेमा यसले फेरि आफ्नो पासवर्डबाट लग इन गर्छ।</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>यो तपाईंको अन्तिम पासकी हो र यसबिना तपाईंको खाताले लग इन गर्न सक्दैन। पहिले अर्को पासकी थप्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>पासकी &quot;%name&quot; खारेज गरियो। यसले अब यो खातामा लग इन गर्न सक्दैन।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77388,6 +77464,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>तपाईंको प्रमाणक एपको कोड</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>तपाईं डेटा स्थायी रूपमा मेटाउन वा लग खाली गर्न लाग्नुभएको छ।</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>तपाईंको पासवर्ड र पासकी</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>तपाईंको पासवर्ड र तपाईंको प्रमाणक एपको कोड</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>वा:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>यो ब्राउजरले पासकी प्रयोग गर्न सक्दैन। अर्को तरिका वा अर्को ब्राउजर प्रयोग गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>तपाईंले जारी राख्दा तपाईंको ब्राउजरले तपाईंको कुनै एक पासकी माग्छ।</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>पासकीसँग जारी राख्नुहोस्</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77478,6 +77582,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>सेटअप</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>आफ्नै पासवर्ड, इमेल ठेगाना, पासकी, दुई-चरणीय लग इन, पुनर्प्राप्ति कोड वा API कुञ्जी परिवर्तन गर्ने, र आफ्ना अन्य उपकरणहरूबाट लग आउट गर्ने।</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>प्रयोगकर्ता, तिनका पासवर्ड र उपकरण, खाता सेटिङ सिर्जना र सम्पादन गर्ने, नयाँ प्रयोगकर्ता खाता स्वीकृत वा अस्वीकार गर्ने, भूमिका तोक्ने र नीति सम्पादन गर्ने।</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>डेटा मेटाउने</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>रद्दीटोकरी खाली गर्ने, त्यसबाट वस्तु हटाउने र एकैपटक धेरै वस्तु हटाउने।</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>सामग्री हटाउने, प्रकाशित गर्ने र सुरक्षित गर्ने</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>सामग्री हटाउने (रद्दीटोकरीमा पनि), प्रकाशित गर्ने र मस्यौदा सुरक्षित गर्ने; फारम पठाउँदा सोधिन्छ। पूर्वनिर्धारित रूपमा बन्द।</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>संवेदनशील कार्यअघि लग इन भएका प्रयोगकर्ताले आफू को हुन् भनी फेरि पुष्टि गर्छन्: आफ्नो पासवर्ड र पासकीबाट, वा पासकी नभए आफ्नो पासवर्ड र प्रमाणक एपको कोडबाट। वेब पृष्ठहरूले मात्र सोध्छन्: REST इन्टरफेस, SOAP, WebDAV, expservices लग इन र कमान्ड लाइनले कहिल्यै सोध्दैनन्।</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>सेटिङहरू कहाँ लागू हुन्छन्</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>यसका लागि सेटिङहरू</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>हरेक साइट पहुँच</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>साइट पहुँच %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>खोल्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>कसलाई सोधिन्छ: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>तिनका सदस्यहरूलाई मात्र सोध्न प्रयोगकर्ता समूहहरूमा चिन्ह लगाउनुहोस् (जस्तै सम्पादकहरू)। कुनै चिन्ह नलगाए: हरेक प्रयोगकर्ता।</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>हरेक साइट पहुँचका लागि settings/override/site.ini.append.php मा सुरक्षित गरियो। सुरक्षित गर्दा यो तपाईं नै हो भनी पुष्टि गर्न सोधिन्छ।</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php मा सुरक्षित गरियो। settings/override मा भएको मानले यसमाथि प्राथमिकता पाउँछ। सुरक्षित गर्दा यो तपाईं नै हो भनी पुष्टि गर्न सोधिन्छ।</translation>
     </message>
 </context>
 <context>
@@ -77834,6 +78002,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>तपाईंको खाता लक गरियो</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site मा तपाईंको खाता %login मा एउटा पासकी थपियो।</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>यो पासकी भएको जो कोहीले तपाईंको पासवर्डबिना तपाईंको खातामा लग इन गर्न सक्छ। तपाईंले यो थप्नुभएको होइन भने, पासकी अन्तर्गत यसलाई हटाउनुहोस् र आफ्नो पासवर्ड परिवर्तन गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site मा तपाईंको खाता %login बाट एउटा पासकी हटाइयो।</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>यसले अब तपाईंको खातामा लग इन गर्न सक्दैन। तपाईंले यो हटाउनुभएको होइन भने, आफ्ना पासकी र उपकरणहरू जाँच गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>तपाईंको खातामा एउटा पासकी थपियो</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>तपाईंको खाताबाट एउटा पासकी हटाइयो</translation>
     </message>
 </context>
 <context>

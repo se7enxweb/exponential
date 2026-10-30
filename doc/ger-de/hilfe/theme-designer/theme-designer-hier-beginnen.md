@@ -184,8 +184,8 @@ Das sind die Regeln des Projekts für Designs ([Designer: hier beginnen](../desi
 | Designer | [Designer: hier beginnen](../designer/designer-hier-beginnen.md) | die technische Seite von Themes: Kaskade, Templates, CSS, Verpackung, Release |
 | Theme-Entwickler (Erweiterungsentwicklung, Teil 6) | [Teil 6: Theme-Entwickler](../erweiterungsentwicklung/teil-6-theme-entwickler/README.md) | Themes als Erweiterungen, aus Sicht eines Entwicklers |
 | Trainer | [Theme-Design: Kursüberblick](../trainer/theme-designer/README.md) | Übungen zu allem in der Hilfe für Designer |
-| CMS-Entwickler | [Ein Inhaltsmodell entwerfen](../../../eng-us/help/cms-developers/designing-a-content-model.md) | wie Klassen und Felder festgelegt werden |
-| DXP-Entwickler | [DXP-Entwickler: hier beginnen](../../../eng-us/help/dxp-developers/dxp-developers-start-here.md) | Twig-Themes auf Exponential Platform |
+| CMS-Entwickler | [Ein Inhaltsmodell entwerfen](../cms-entwickler/ein-inhaltsmodell-entwerfen.md) | wie Klassen und Felder festgelegt werden |
+| DXP-Entwickler | [DXP-Entwickler: hier beginnen](../dxp-entwickler/dxp-entwickler-hier-beginnen.md) | Twig-Themes auf Exponential Platform |
 | Website-Ersteller | [Metadaten und Teilen in sozialen Netzwerken](../ersteller/website-ersteller/metadaten-und-teilen-in-sozialen-medien.md) | Metadaten von Seiten und Tags zum Teilen |
 | Partner | [Kreativpartner](../partner/kreativpartner.md) | das veröffentlichte Profil der Kreativpartner |
 

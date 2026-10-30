@@ -36,7 +36,7 @@ The full method is on [Comparing Exponential factually](../../business/comparing
 |---|---|---|
 | License | GNU GPL v2 or later; "Using Exponential under the terms of the GNU GPL is free of charge" | `README.md`, `LICENSE` |
 | Documentation license | GNU FDL 1.3 or later | [Free documentation](../../free-documentation.md) |
-| Self-hosting | Runs on almost any operating system that runs PHP 8.0 or later | [Operating system support](../../os-support.md) |
+| Self-hosting | Runs on almost any operating system that runs PHP 8.0 or later (PHP 7.4 usable without support) | [Operating system support](../../os-support.md) |
 | Databases | SQLite 3 (the default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Database support](../../database-support.md) |
 | PHP versions | 8.0 to 8.5 | [Requirements at a glance](../../hosting/basics/requirements-at-a-glance.md) |
 | Release integrity | "A published tag is never changed": a fix arrives as the next release | `SECURITY.md` |

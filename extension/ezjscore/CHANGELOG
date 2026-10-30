@@ -1,3 +1,8 @@
+# 1.8.7 (2026-10-29)
+- Updated: every file header and the metadata name the copyright holders as "Copyright (C) 1998 - 2026 Exponential
+  Foundation and 7x. All rights reserved."; contributors assign their copyright to both through the CLA.
+- Updated: Version 1.8.7 in ezinfo.php and extension.xml.
+
 # 1.8.6 (2026-10-29)
 - Fixed: ezjscore/call, the json_encode template operator and the ajax uploader never answer with an empty JSON
   value for a string that is not valid UTF-8 (a truncated multibyte character, a Latin-1 value of an old import):

@@ -24,6 +24,7 @@ which language, whether visitors must sign in. One installation, one database, m
 > test the site. The same rules for other servers: [nginx](../web-servers/nginx.md), [LiteSpeed](../web-servers/litespeed.md),
 > [Caddy](../web-servers/caddy.md), [IIS](../web-servers/iis.md), [Velocity](../web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../../help/hosting/panels/plesk.md), [cPanel](../../help/hosting/panels/cpanel.md), [DirectAdmin](../../help/hosting/panels/directadmin.md), [ISPConfig](../../help/hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../guides/litespeed-page-cache.md).
 
 | Siteaccess | Host | What it is |
 |---|---|---|

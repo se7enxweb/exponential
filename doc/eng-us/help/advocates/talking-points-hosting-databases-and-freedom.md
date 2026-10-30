@@ -24,6 +24,7 @@ details matter: Exponential documents its support in tiers and lists, not in slo
 > test the site. The same rules for other servers: [nginx](../../examples/web-servers/nginx.md), [LiteSpeed](../../examples/web-servers/litespeed.md),
 > [Caddy](../../examples/web-servers/caddy.md), [IIS](../../examples/web-servers/iis.md), [Velocity](../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../hosting/panels/plesk.md), [cPanel](../hosting/panels/cpanel.md), [DirectAdmin](../hosting/panels/directadmin.md), [ISPConfig](../hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../guides/litespeed-page-cache.md).
 
 ## Contents
 
@@ -40,7 +41,7 @@ details matter: Exponential documents its support in tiers and lists, not in slo
 | "Six databases are supported, in this official order: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL." | [Database support](../database-support.md#the-supported-databases-in-order) |
 | "SQLite is the default: a complete site with no database server." | [Database support, SQLite 3](../database-support.md#1-sqlite-3-the-default), [Install in one command](../../features/6.0/install-in-one-command.md) |
 | "Operating systems are documented in four tiers, from tested to theoretical." | [Operating system support, The four tiers](../os-support.md#the-four-tiers) |
-| "PHP 8.0 or later on almost any operating system, with many web servers." | [Operating system support](../os-support.md#web-servers) |
+| "PHP 8.0 or later (PHP 7.4 usable without support) on almost any operating system, with many web servers." | [Operating system support](../os-support.md#web-servers) |
 | "Containers, cloud machines and hosting panels are covered." | [Containers, cloud and hosting panels](../os-support.md#containers-cloud-and-hosting-panels) |
 | "You can move a site to another database with documented tools." | [Moving a site to another database](../database-support.md#moving-a-site-to-another-database) |
 | "Backups are standard dumps for each database." | [Backup and restore](../database-support.md#backup-and-restore) |

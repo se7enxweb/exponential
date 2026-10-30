@@ -12,7 +12,7 @@
  *  ROP-03  Templates using them render, interpreted and compiled, without an error or warning; a value that is
  *          no user object gives has_role_by_user and has_policy_by_user false, not a fatal error
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group lib

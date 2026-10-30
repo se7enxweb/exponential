@@ -27,6 +27,7 @@ clones with their full history**, the kernel and every extension, instead of as 
 > test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
 > [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](hosting/panels/plesk.md), [cPanel](hosting/panels/cpanel.md), [DirectAdmin](hosting/panels/directadmin.md), [ISPConfig](hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../guides/litespeed-page-cache.md).
 
 Nothing here needs you to be an expert. Each step shows the command to type and what you should see, and every
 command on this page was tried on a fresh machine before it was written down.
@@ -262,9 +263,9 @@ git push --force-with-lease
 Push with force only to your own pull request branch. After the merge, `main` is never rewritten
 ([Code reviews](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#code-reviews)).
 
-**Copyright assignment (CLA).** 7x and the Exponential Foundation merge a code contribution to
+**Copyright assignment (CLA).** The Exponential Foundation and 7x merge a code contribution to
 the core kernel (`se7enxweb/exponential`), sent in any form (pull request, patch, issue or mail), only after you have
-signed the Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other
+signed the Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to the Exponential Foundation and 7x, which become its owners, and give up control over it:** The Exponential Foundation and 7x may use, change, relicense and distribute it in any way, also under other
 licenses and in commercial products, without asking or paying you, and you cannot withdraw it or set conditions on it.
 Your own custom extensions, and the branch of your own site, are not affected. See
 [Copyright assignment (CLA)](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#copyright-assignment-cla)

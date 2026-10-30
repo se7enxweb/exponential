@@ -8066,8 +8066,8 @@
         <translation>De auteursrjochtmeldingen fan de oarspronklike auteurs en fan de software fan tredden dy't by Exponential levere wurdt, wurde bewarre yn de boarnebestannen en yn it bestân LICENSE, lykas de lisinsje fereasket.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Hjirûnder folget in list fan meiwurkers oan Exponential dy't harren wurk yn lisinsje jûn hawwe foar gebrûk troch 7x ûnder de betingsten fan de eZ Systems Contributor Licensing Agreement. Lykas dizze oerienkomst talit, ferspriedt 7x elke bydrage wer ûnder deselde lisinsje as it bestân dêr't de bydrage yn opnommen is. De list neamt elke meiwurker, opsjonele kontaktgegevens en de bestannen dêr't se oan bydroegen hawwe.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Bydragers dy't neamd wurde foar har wurk oan Exponential en oan de software dêr't it út fuortkommen is, mei de bestannen dêr't se oan bydroegen hawwe. Dit is in fermelding, gjin copyrightmelding: bydragen oan Exponential wurde ûnder de Contributor Licensing Agreement oerdroegen oan de Exponential Foundation en 7x.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77281,6 +77281,82 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>De tagongskaai koe net kontrolearre wurde. Besykje it opnij.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Accounts dy&apos;t harren allinnich mei tagongskaaien oanmelde, kinne hjir gjin wachtwurd brûke: kies &quot;Oanmelde mei in tagongskaai&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Tagongskaaien fan %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>De tagongskaaien dêr&apos;t dit account him mei oanmeldt. Lûk ien yn dy&apos;t op in kwyt rekke of stellen apparaat stiet: dêr kin dan net mear mei oanmeld wurde. De eigener foeget sels nije ta.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Jo account hat in tagongskaai nedich</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Foegje in tagongskaai ta oan jo account</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Foegje in tagongskaai ta om fierder te gean. Jo melde jo dan dêrmei oan ynstee fan allinnich mei in wachtwurd.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Oanmelde mei in tagongskaai is flugger en feiliger as mei in wachtwurd. Foegje no ien ta, of gean sûnder fierder.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>No net</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>De tagongskaai &quot;%name&quot; ynlûke?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Dêr kin net mear mei oanmeld wurde by dit account. As it de lêste wie, meldt de eigener him oan mei it wachtwurd, of jo stelle in nij yn.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>De tagongskaai ynlûke</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Ynlûke</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Dit account hat gjin tagongskaai.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Autentikator</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Ûnbekend</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Jo lêste tagongskaai: foegje in oare ta foardat jo dizze fuorthelje.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Dit account meldt him allinnich mei tagongskaaien oan (tagongskaaibelied): as der gjin ien mear oer is, meldt it him wer mei syn wachtwurd oan.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Dit is jo lêste tagongskaai en jo account kin him net sûnder oanmelde. Foegje earst in oare tagongskaai ta.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>De tagongskaai &quot;%name&quot; is ynlutsen. Dêr kin net mear mei oanmeld wurde by dit account.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77380,6 +77456,34 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>Code from your authenticator app</source>
         <translation>Koade fan jo authenticator-app</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Jo steane op it punt gegevens foargoed te wiskjen of in log leech te meitsjen.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Jo wachtwurd en in tagongskaai</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Jo wachtwurd en in koade út jo autentikator-app</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Of:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Dizze browser kin gjin tagongskaaien brûke. Brûk in oare manier, of in oare browser.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>As jo fierder geane, freget jo browser om ien fan jo tagongskaaien.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Fierder mei in tagongskaai</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77470,6 +77574,70 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     <message>
         <source>Setup</source>
         <translation>Ynstelle</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>It eigen wachtwurd, e-mailadres, tagongskaaien, oanmelde yn twa stappen, werstelkoaden of API-kaaien feroarje, en de eigen oare apparaten ôfmelde.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Brûkers oanmeitsje en bewurkje, harren wachtwurden en apparaten, accountynstellingen, nije brûkersaccounts goedkarre of ôfwize, rollen tawize en belied bewurkje.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Gegevens wiskje</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>It jiskefet leegje, items derút fuorthelje en ferskate items tagelyk fuorthelje.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Ynhâld fuorthelje, publisearje en bewarje</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Ynhâld fuorthelje (ek nei it jiskefet), publisearje en in konsept bewarje, frege by it ferstjoeren fan it formulier. Standert út.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Foar in gefoelige aksje befêstiget in oanmelde brûker op &apos;e nij wa&apos;t er is: mei syn wachtwurd en in tagongskaai, of sûnder tagongskaai mei syn wachtwurd en de koade fan syn autentikator-app. Allinnich de websiden freegje it: de REST-ynterface, SOAP, WebDAV, de expservices-oanmelding en de kommandorigel dogge dat nea.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Wêr&apos;t de ynstellingen jilde</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Ynstellingen foar</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Elke websidetagong</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Allinnich websidetagong %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Iepenje</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Wa&apos;t frege wurdt: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Fink brûkersgroepen oan om allinnich harren leden te freegjen (bygelyks bewurkers). Gjin oanfinke: elke brûker.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Bewarre yn settings/override/site.ini.append.php, foar elke websidetagong. By it bewarjen wurdt jo frege om te befêstigjen dat jo it binne.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Bewarre yn settings/siteaccess/%name/site.ini.append.php. In wearde yn settings/override giet dêrfoar. By it bewarjen wurdt jo frege om te befêstigjen dat jo it binne.</translation>
     </message>
 </context>
 <context>
@@ -77826,6 +77994,30 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Jo account is beskoattele</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Der is in tagongskaai tafoege oan jo account %login op %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Wa&apos;t dizze tagongskaai hat, kin sûnder jo wachtwurd oanmelde by jo account. As jo him net tafoege hawwe, helje him dan fuort ûnder Tagongskaaien en feroarje jo wachtwurd.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Der is in tagongskaai fuorthelle fan jo account %login op %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Dêr kin net mear mei oanmeld wurde by jo account. As jo him net fuorthelle hawwe, kontrolearje dan jo tagongskaaien en apparaten.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Der is in tagongskaai tafoege oan jo account</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Der is in tagongskaai fuorthelle fan jo account</translation>
     </message>
 </context>
 <context>

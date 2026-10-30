@@ -35,7 +35,7 @@
  *     cd /path/to/copy && EXP_CONTENTFINDER_SANDBOX=$PWD php vendor/bin/phpunit tests/tests/kernel/contentfinder/expContentFinderSandboxTest.php
  * The objects the actions remove are made by the test itself. Audit records go to var/tmp/audit-tests/.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

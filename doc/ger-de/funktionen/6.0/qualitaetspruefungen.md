@@ -123,7 +123,7 @@ Mitwirkenden warnt nur), PHPStan und die Tests der eigenen Sniffs
 (ein eigener Job, auf PHP 8.4) blockieren; der Code-Stil der geänderten Dateien, einschließlich Typdeklarationen und
 Kompatibilität mit PHP 8.0, wird als Warnung gemeldet.
 
-Der Job `php80` ist die Prüfung für die älteste unterstützte Version, PHP 8.0 (das mitgelieferte PHP von RHEL 9), an
+Der Job `php74` prüft PHP 7.4, ohne Support nutzbar, auf dieselbe Weise; der Job `php80` ist die Prüfung für PHP 8.0 (das mitgelieferte PHP von RHEL 9), an
 einer Stelle:
 
 1. `make lint80-all`: `php -l` mit PHP 8.0 auf jeder PHP-Datei in Git (blockierend).
@@ -270,6 +270,14 @@ Modusgrenzen hinaus), jede INI-Datei führt `expIniRoundTripTest` aus, und `comp
 `AdminStylingRulesTest` aus, weil ein neu festgelegtes Paket sein eigenes PHP, eigene INI-Dateien und Admin-Templates
 mitbringt. Jeder dieser Fälle erreichte einmal `main` über eine Änderung, deren eigene Tests erfolgreich waren
 (Oktober 2026).
+
+Der Copyright-Hinweis wird ebenso geprüft: Jede PHP-, JavaScript-, Template-, Stylesheet-, XML-, INI-, SQL- und
+Textdatei, jedes Skript in `bin/`, `LICENSE`, `composer.json` und jeder Katalog führt `CopyrightNoticeTest` aus, der
+bei jeder Zeile fehlschlägt, die 7x oder die Exponential Foundation in einer anderen Form als diesen beiden:
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ oder
+„Exponential Copyright © 1998-2026 Exponential Foundation and 7x“ als Rechteinhaber nennt (Ausnahmen mit Begründung: `tests/tests/bin/copyright-notice-allowlist.json`);
+die Fußzeilen, die Anmeldeseiten, die Copyright-Seite, der Hinweis der Hilfe, die Konsole und die Kataloge führen
+außerdem `CopyrightFooterNoticeTest` aus. Siehe [Urheberrecht und Copyleft](../../hilfe/urheberrecht-und-copyleft.md).
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück

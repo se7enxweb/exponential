@@ -28,6 +28,8 @@ Organisationen stammen aus [Wer ist die Exponential Foundation?, Glossar](../wer
 | Exponential 6, 6.0.x | Die aktuelle Hauptlinie, seit dem 1. Januar 2024 |
 | 7x | Das Unternehmen, das Exponential leitet; früher Brookins Consulting |
 | se7enxweb | Das GitHub-Konto und der Composer-Vendorname von 7x |
+| `sevenx` | Das offizielle öffentliche PHP-Code-Präfix von 7x; „7x“ kann keines sein, weil ein Code-Name nicht mit einer Ziffer beginnen kann ([Namenspräfixe](../../standards/namenspraefixe-sevenx-und-exp.md)) |
+| `exp` | Das Code-Präfix, das 7x bewusst verwendet, um die Marke Exponential aufzubauen und eine Erweiterung oder Lösung dem Projekt Exponential und der Exponential Foundation zuzuordnen |
 | Exponential Foundation | Die gemeinnützige Organisation, die das Projekt betreibt und finanziert |
 | Velocity | Der eigene PHP-Web- und Anwendungsserver von Exponential |
 | Exponential Intelligence (expai) | Der Schreibassistent, der Entwürfe schreibt |
@@ -67,6 +69,7 @@ Organisationen stammen aus [Wer ist die Exponential Foundation?, Glossar](../wer
 | GPL | GNU General Public License, Version 2 oder später: die Lizenz des Codes |
 | GFDL | GNU Free Documentation License 1.3 oder später: die Lizenz der Dokumentation |
 | Pull Request | Eine auf GitHub eingereichte, vorgeschlagene Änderung ([Mit Git entwickeln](../mit-git-entwickeln.md)) |
+| CLA | Contributor Licensing Agreement: einmal unterzeichnet, bevor ein Code-Beitrag zum Kernel gemergt wird; mit Unterschrift und Einreichung überträgt der Beitragende das Urheberrecht an 7x und gibt die Kontrolle ab: 7x darf den Beitrag auf jede Weise verwenden, ändern, neu lizenzieren und verbreiten, ohne zu fragen oder zu bezahlen, und er kann nicht zurückgezogen werden; eigene Erweiterungen sind nicht betroffen ([Übertragung des Urheberrechts (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)) |
 | Issue | Eine Meldung oder ein Vorschlag in einem Tracker ([Welcher Tracker für welche Meldung](welcher-tracker-fuer-welche-meldung.md)) |
 | Fork, Klon | Ihre Kopie eines Repositorys auf GitHub; eine lokale Kopie mit ihrer Historie |
 | Tag, Release | Eine feste, veröffentlichte Version; Tags ändern sich nie |

@@ -22,6 +22,7 @@ Schritt.
 > Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
 > [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../anleitungen/seiten-cache-mit-litespeed.md).
 
 [Inhalt](README.md) · Zurück: [10. Nach der Installation](10-nach-der-installation.md) · Weiter: [12. Fehlerbehebung](12-fehlerbehebung.md)
 
@@ -310,7 +311,7 @@ beschriebene Weg gilt für sie. Um Exponential 6 weiterhin innerhalb einer Symfo
    Spalte nicht hat. Die MySQL-Datei läuft auf jedem MySQL ab 5.5.3 und auf MariaDB (siehe die Hinweise je Datenbank
    oben). Details: [Changelog 6.0.0](../../changelogs/6.0/6.0.0.md).
 3. **PHP.** Die aktuelle Linie läuft unter PHP 8.0 bis 8.5 (`composer.json`: `^8.0`), Velocity ab seinem Release 0.0.4.54 eingeschlossen. Die
-   Releases 6.0.8 bis 6.0.14 verlangten 8.1. Eine Site, die auf PHP 7.4 bleiben muss, bleibt auf 6.0.7. Prüfen Sie Ihre
+   Releases 6.0.8 bis 6.0.14 verlangten 8.1. Eine Site unter PHP 7.4 kann ab 6.0.15 wieder die aktuelle Linie betreiben, ohne Support (6.0.8 bis 6.0.14 brauchen PHP 8.1). Prüfen Sie Ihre
    eigenen Extensions auf Probleme mit PHP 8: Klassen, die `eZPersistentObject` oder `eZDataType` erweitern, sind die
    üblichen Fälle. Siehe [PHP-8-Unterstützung](../bc/6.0/php8.md) und [PHP-8.0-Unterstützung](../bc/6.0/php-8.0-unterstuetzung.md).
 4. Fahren Sie mit [11.6](#116-von-einer-beliebigen-60x-auf-den-heutigen-stand) fort.
@@ -436,7 +437,7 @@ Lesen Sie jede Release Note zwischen Ihrer Version und dem heutigen Stand; jede 
 | 6.0.3 | [6.0.4](../../changelogs/6.0/6.0.4.md): das responsive Administrationsdesign |
 | 6.0.4 | [6.0.5](../../changelogs/6.0/6.0.5.md): eine fehlgeschlagene 6.0.4-Installation, Datentypen von Extensions |
 | 6.0.5 | [6.0.6](../../changelogs/6.0/6.0.6.md): `admin3` auf Smartphones und Tablets |
-| 6.0.6 | [6.0.7](../../changelogs/6.0/6.0.7.md): die letzte Release für PHP 7.4 |
+| 6.0.6 | [6.0.7](../../changelogs/6.0/6.0.7.md): die letzte Release für PHP 7.4 bis 6.0.15 |
 | 6.0.7 | [6.0.8](../../changelogs/6.0/6.0.8.md): **braucht PHP 8.1**; und [PHP-8-Unterstützung](../bc/6.0/php8.md) |
 | 6.0.8 | [6.0.9](../../changelogs/6.0/6.0.9.md): PostgreSQL, REST-Zugriff auf Inhalte |
 | 6.0.9 | [6.0.10](../../changelogs/6.0/6.0.10.md): der Produktname in Templates, Übersetzungen und Overrides; [Das Produkt heißt Exponential](../funktionen/6.0/umbenennung-in-exponential.md) |

@@ -96,7 +96,7 @@ Schreiben Sie Text in der Form von Inhalten, kein Lorem ipsum: Schlagzeilen, die
 gemessenen Längen einer vergleichbaren Website. Vereinbaren Sie mit den Redakteuren Ziellängen, und setzen Sie diese
 Ziele in das Bearbeitungsformular, wo die Klasse eine Beschreibung des Felds erlaubt, damit Redakteure sie beim
 Schreiben sehen. Längenbegrenzungen für ein Feld sind eine Entscheidung des Entwicklers über das Inhaltsmodell
-([Datentypen wählen](../../../eng-us/help/cms-developers/choosing-datatypes.md)).
+([Datentypen wählen](../cms-entwickler/datentypen-waehlen.md)).
 
 ## Verwandte Seiten
 

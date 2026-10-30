@@ -27,6 +27,7 @@ allgemeinen Ratschlägen.
 > Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
 > [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](plesk.md), [cPanel](cpanel.md), [DirectAdmin](directadmin.md), [ISPConfig](ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md).
 
 > **Hinweis**
 > Die Quellen von Exponential beschreiben keine Bildschirme oder Menüs von cPanel. Wo diese Seite eine Funktion des Panels nennt,
@@ -60,7 +61,7 @@ Das ist alles, was die Quellen speziell über cPanel sagen.
 Die Anforderungen von Exponential hängen nicht vom Panel ab. Ein cPanel-Konto, das Folgendes bietet, führt Exponential aus, nach
 derselben Überlegung, die cPanel in Stufe 3 einordnet:
 
-- PHP 8.0 oder später für das Konto, mit den erforderlichen Erweiterungen: `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`,
+- PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar) für das Konto, mit den erforderlichen Erweiterungen: `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`,
   `iconv`, `intl`, `pcre`, `json`, `session`, `zlib`, eine Datenbankerweiterung, `gd` oder ImageMagick
   ([2.3 PHP-Erweiterungen](../../../installation/02-voraussetzungen.md#23-php-extensions)). `xsl` und `intl` sind kritische Tests des
   Setup-Assistenten und fehlen am häufigsten in einem Standard-Build von PHP.
@@ -143,6 +144,8 @@ Projekt mit, und die Zeile rückt auf ([Die vier Stufen](../../betriebssystemunt
 - [ ] Der Testplan hat auf Ihrer Plattform bestanden.
 
 **Eine öffentliche Demo auf cPanel.** Setzen Sie `EXP_DEMO_MODE=1` nur für das Konto der Demo: `SetEnv EXP_DEMO_MODE 1` in der `.htaccess` der Website (Apache oder LiteSpeed) und `EXP_DEMO_MODE=1` in einer eigenen Zeile oben in den Cronjobs des Kontos. [Demomodus für Hoster](../sicherheit/demomodus-fuer-hoster.md), [Beispiele für den Demomodus](../../../beispiele/demomodus/README.md).
+
+**Der Seiten-Cache von LiteSpeed unter cPanel.** Mit LiteSpeed als Webserver beantwortet sein Seiten-Cache anonyme Besucher und Crawler ohne PHP. Schalten Sie ihn je Website mit dem auskommentierten Block aus `.htaccess_root` in der `.htaccess` des Kontos ein, oder als Include-Datei unter `/etc/apache2/conf.d/userdata/ssl/2_4/<user>/<domain>/` ([`litespeed-page-cache.conf`](../../../../eng-us/examples/web-servers/litespeed-page-cache.conf)). Schritt für Schritt: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md#cpanel-und-whm).
 
 ## Verwandte Seiten
 

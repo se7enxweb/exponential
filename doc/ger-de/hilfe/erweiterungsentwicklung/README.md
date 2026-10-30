@@ -22,6 +22,32 @@ Methoden und Einstellungen existieren, die PHP-Beispiele bestehen `php -l`, und 
 Template-Engine gerendert. Wenn eine Seite eine Tatsache nennt, gibt sie die Datei oder die Seite an, aus der diese
 Tatsache stammt.
 
+Offizielle Exponential-Zertifizierungen sind geplant, als Teil der Zukunftspläne des Projekts für die Community,
+Partner, Exponential-Entwickler und Lernende; sie sind noch nicht verfügbar
+([Zertifizierungen und Zertifikate](../lernende/zertifizierungen-und-zertifikate.md)).
+
+## Auf dem ganzen Stack entwickeln: Velocity ist Teil von Exponential 6.0.15
+
+Seit 6.0.15 ist der Velocity Internet / Web Application Server Teil von Exponential: Die `composer.json` des
+Hauptpakets verlangt `se7enxweb/exponential-velocity ~0.0.4.57`, sodass Ihre Entwicklungsinstallation denselben Server
+hat, auf dem die Produktion läuft, auf PHP 8.0 und neuer. Für einen Erweiterungsentwickler ändert das drei Dinge:
+
+- **Sie entwickeln gegen die Engine, die die Website ausliefert.** Der eigene Server von Velocity ist die empfohlene
+  Engine für jede Stufe, vom Laptop bis zur Produktion (FrankenPHP ist die produktionsreife Alternative). Starten Sie
+  ihn mit `./console exp:velocity start`, nachdem Sie `[ServerSettings] Engine=qbix` gesetzt haben.
+- **Worker halten Ihren Code geladen.** Eine geänderte Klasse oder Einstellung erreicht die Website nach
+  `./console exp:velocity deploy` (oder `restart`), das die Autoloads neu erzeugt, die Caches leert und die Worker in
+  der richtigen Reihenfolge neu startet; `./console exp:velocity cache clear` leert den Antwort-Cache. Schreiben Sie
+  Code, der keinen Zustand pro Anfrage in statischen Variablen oder Globals hält, damit er sich unter persistenten
+  Workern genauso verhält wie unter PHP-FPM.
+- **Es ist mehr im Lieferumfang.** Die RAD-Werkzeuge schreiben in Minuten eine funktionierende Erweiterung, und
+  Velocity bringt WebSockets und Server-Sent Events, einen Scheduler und einen Antwort-Cache ohne weiteres Paket mit.
+  Exponential ist ein einziger funktionierender Stack (Server, RAD-Plattform, CMS, Digital Experience, E-Commerce), nicht
+  nur ein Framework, das Sie selbst vervollständigen.
+
+Die Geschichte: [Velocity ist Teil von Exponential 6.0.15](../velocity-ist-teil-von-exponential-6-0-15.md). Die Engines:
+[Velocity-Engines](../../bc/6.0/velocity-engines.md). Die RAD-Werkzeuge: [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md).
+
 ## Die Teile
 
 | Teil | Für | Was Sie lernen |

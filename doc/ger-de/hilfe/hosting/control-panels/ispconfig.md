@@ -28,6 +28,7 @@ testen.
 > Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
 > [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](plesk.md), [cPanel](cpanel.md), [DirectAdmin](directadmin.md), [ISPConfig](ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md).
 
 > **Hinweis**
 > Nichts auf dieser Seite beschreibt die Bildschirme, Optionen oder Dateien von ISPConfig. Wie ISPConfig jede Aufgabe unten erledigt,
@@ -57,7 +58,7 @@ auf dem Entwicklungsserver), cPanel und DirectAdmin (Stufe 3) ([Control Panels: 
 
 Die Überlegung, die cPanel und DirectAdmin in Stufe 3 einordnet, ist, dass Exponential von einem Panel selbst nichts braucht: Es
 besteht aus reinen PHP-Dateien und einer Datenbank, hat keinen eigenen kompilierten Code und läuft auf fast jedem Betriebssystem,
-das PHP 8.0 oder später und einen Webserver hat ([Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md)). Jeder Server, dessen Panel die
+das PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar) und einen Webserver hat ([Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md)). Jeder Server, dessen Panel die
 Punkte unten bereitstellen kann, auf einem unterstützten Betriebssystem, erfüllt die Anforderungen. Das ist eine Schlussfolgerung,
 kein Testergebnis: Behandeln Sie ISPConfig höchstens als Stufe 3, bis Sie es getestet haben.
 

@@ -2,7 +2,7 @@
 title: Muster in extension/expservices
 audience: developer
 category: standards
-order: 425
+order: 429
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/expservices mit den Entwurfsmustern.
 keywords: extension/expservices, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -69,7 +69,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `extension/expservices` mit den M
 | `expRoleServices` | class extends expUsersBase | [Fabrik und statische Fabrikmethoden](fabrik.md), [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/expservices/classes/users/exproleservices.php:13` | exprole: Rollen, ihre Bearbeitungsentwürfe und ihre Zuweisungen an Benutzer und Gruppen. |
 | `expSearchServices` | class extends expContentServiceBase | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/expservices/classes/content/expsearchservices.php:14` | Dienste für die Suche: ezjscore/call/expsearch::[::arg...] |
 | `expSectionServices` | class extends expContentServiceBase | [Fabrik und statische Fabrikmethoden](fabrik.md), [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/expservices/classes/content/expsectionservices.php:13` | Dienste für Sektionen: ezjscore/call/expsection::[::arg...] |
-| `expServiceBase` | abstract class extends ezjscServerFunctions | [Schablonenmethode / abstrakte Basisklasse](schablonenmethode.md) | `extension/expservices/classes/expservicebase.php:29` | – |
+| `expServiceBase` | abstract class extends ezjscServerFunctions | [Schablonenmethode / abstrakte Basisklasse](schablonenmethode.md) | `extension/expservices/classes/expservicebase.php:38` | – |
 | `expServiceException` | class extends Exception | [Ausnahmehierarchie](ausnahme.md) | `extension/expservices/classes/expservicebase.php:20` | Die Basis jeder Domänenklasse von expservices: eine öffentliche statische Methode pro Dienst, aufgerufen als ezjscore/call/exp::[::arg...]. |
 | `expServicesAuditBranch` | class implements expAuditTaxonomyBranch | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `extension/expservices/classes/expservicesauditbranch.php:10` | Der Audit-Taxonomiezweig von expservices: persönliche API-Tokens. |
 | `expServicesCatalog` | class extends expServiceBase | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/expservices/classes/expservicescatalog.php:12` | ezjscore/call/expservices::catalog \ | schema:: \ | version \ | domains \ | service:::: Die Erkennung der API: aufgebaut aus den $services jeder reg… |

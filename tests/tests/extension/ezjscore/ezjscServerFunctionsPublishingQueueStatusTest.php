@@ -10,7 +10,7 @@
  *
  * Run: php vendor/bin/phpunit tests/tests/extension/ezjscore/ezjscServerFunctionsPublishingQueueStatusTest.php
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */
@@ -27,7 +27,7 @@ class ezjscServerFunctionsPublishingQueueStatusTest extends PHPUnit\Framework\Te
     {
         $case += array( 'args' => array( '7', '1' ), 'version' => array( 'creator_id' => 14 ), 'canRead' => false,
                         'user' => self::ANONYMOUS, 'process' => null );
-        $line = array( PHP_BINARY, '-n', '-d', 'display_errors=stderr', __DIR__ . '/fixtures/publishingqueue_harness.php',
+        $line = array( ...expTestBarePhpCommand(), '-d', 'display_errors=stderr', __DIR__ . '/fixtures/publishingqueue_harness.php',
                        json_encode( $case ) );
         $process = proc_open( $line, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
         $this->assertIsResource( $process );

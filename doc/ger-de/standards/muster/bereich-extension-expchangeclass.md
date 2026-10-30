@@ -2,7 +2,7 @@
 title: Muster in extension/expchangeclass
 audience: developer
 category: standards
-order: 411
+order: 412
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/expchangeclass mit den Entwurfsmustern.
 keywords: extension/expchangeclass, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

@@ -2,7 +2,7 @@
 /**
  * Autoloader definition for eZ Publish Kernel files.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
@@ -1391,13 +1391,17 @@ return array(
       'expPackageConflictReport'                                     => 'kernel/classes/exppackageconflictreport.php',
       'expPackageJson'                                               => 'kernel/classes/exppackagejson.php',
       'expPasskey'                                                   => 'kernel/classes/passkey/exppasskey.php',
+      'expPasskeyAuthenticators'                                     => 'kernel/classes/passkey/exppasskeyauthenticators.php',
       'expPasskeyLogin'                                              => 'kernel/classes/passkey/exppasskeylogin.php',
+      'expPasskeyPolicy'                                             => 'kernel/classes/passkey/exppasskeypolicy.php',
+      'expPasskeyPolicyHandler'                                      => 'kernel/classes/passkey/exppasskeypolicyhandler.php',
       'expPasskeySchema'                                             => 'kernel/classes/passkey/exppasskeyschema.php',
       'expPasskeyService'                                            => 'kernel/classes/passkey/exppasskeyservice.php',
       'expPasskeySettings'                                           => 'kernel/classes/passkey/exppasskeysettings.php',
       'expPasswordChangeRequired'                                    => 'kernel/classes/user/exppasswordchangerequired.php',
       'expPasswordPolicy'                                            => 'kernel/classes/exppasswordpolicy.php',
       'expPhar'                                                      => 'kernel/classes/expphar.php',
+      'expPhpSupport'                                                => 'kernel/classes/expphpsupport.php',
       'expPolicyOmitList'                                            => 'kernel/classes/exppolicyomitlist.php',
       'expPreloadAddress'                                            => 'kernel/classes/exppreloadaddress.php',
       'expPreloadHistory'                                            => 'kernel/classes/exppreloadhistory.php',
@@ -1413,6 +1417,7 @@ return array(
       'expReauthRules'                                               => 'kernel/classes/reauth/expreauthrules.php',
       'expReauthSettings'                                            => 'kernel/classes/reauth/expreauthsettings.php',
       'expReauthTotpCode'                                            => 'kernel/classes/reauth/expreauthtotpcode.php',
+      'expReauthTriggerHandler'                                      => 'kernel/classes/reauth/expreauthtriggerhandler.php',
       'expRegistrationAdminAction'                                   => 'kernel/classes/user/expregistrationadminaction.php',
       'expRenderStats'                                               => 'kernel/classes/debugbar/exprenderstats.php',
       'expRenderSwitch'                                              => 'kernel/private/classes/httpcache/exprenderswitch.php',

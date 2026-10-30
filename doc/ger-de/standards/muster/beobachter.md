@@ -3,7 +3,7 @@ title: Beobachter / Listener / Ereignis
 audience: developer
 category: standards
 order: 327
-summary: "Code, der auf etwas reagiert, das anderswo geschehen ist, ohne dass die Quelle davon weiß: ezpEvent-Listener, Benachrichtigungs-Handler, Cache-Listener. 8 Instanzen in Exponential."
+summary: "Code, der auf etwas reagiert, das anderswo geschehen ist, ohne dass die Quelle davon weiß: ezpEvent-Listener, Benachrichtigungs-Handler, Cache-Listener. 10 Instanzen in Exponential."
 keywords: Entwurfsmuster, Beobachter, Verhalten, Musterkatalog, design pattern, observer, pattern catalogue
 type: catalogue
 ---
@@ -15,10 +15,10 @@ type: catalogue
 
 Code, der auf etwas reagiert, das anderswo geschehen ist, ohne dass die Quelle davon weiß: ezpEvent-Listener, Benachrichtigungs-Handler, Cache-Listener.
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Verhalten |
-| Instanzen | 8 |
+| Instanzen | 10 |
 | Erkannt an | Der Klassenname enthält Listener, Observer oder Subscriber, oder die Klasse hat Methoden attach()/notify()/addListener(); jeder Aufruf von ezpEvent notify()/filter() (siehe die Seite der Hooks). |
 | Erweiterungspunkt | event.ini [Event] Listeners[]=EVENT@CALLBACK; notification.ini [NotificationEventHandlerSettings] AvailableNotificationEventTypes[]. |
 
@@ -33,6 +33,14 @@ Code, der auf etwas reagiert, das anderswo geschehen ist, ohne dass die Quelle d
 | `CjwNewsletterSubscriberExport` | class | `extension/cjw_newsletter/classes/importexport/cjwnewslettersubscriberexport.php:22` | Die Abonnenten einer Liste als CSV, mit Filtern (Abonnementstatus, ein Datumsbereich auf einem gewählten Datum) und einer Auswahl von Spalten. | – |
 | `Exponential\View\Extension\CjwNewsletter\Newsletter\SubscriberExport` | class extends ModuleView | `extension/cjw_newsletter/classes/runnable/views/newsletter/subscriber_export.php:15` | newsletter/subscriber_export/: die Abonnenten einer Liste als CSV-Datei, mit Filtern (Status, ein Datumsbereich) und einer Auswahl von Spalten. | – |
 
+### extension/expai (1)
+
+[Alle Muster von extension/expai](area-extension-expai.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expAiPackageDraftListener` | class | `extension/expai/classes/expaipackagedraftlistener.php:21` | Lauscht auf das Ereignis package/install/drafts des Kernels (eZPackage::notifyDraftsInstalled(): nach jeder Installation eines Pakets als Entwürfe, in Setup › Packag… | – |
+
 ### extension/explayouts (2)
 
 [Alle Muster von extension/explayouts](bereich-extension-explayouts.md)
@@ -41,6 +49,14 @@ Code, der auf etwas reagiert, das anderswo geschehen ist, ohne dass die Quelle d
 | --- | --- | --- | --- | --- |
 | `expLayoutsSiteBundleEvent` | class | `extension/explayouts/classes/explayoutssitebundleevent.php:4` | – | – |
 | `expLayoutsSiteBundleEventListener` | class | `extension/explayouts/classes/explayoutssitebundleeventlistener.php:4` | – | – |
+
+### kernel/classes/datatable (1)
+
+[Alle Muster von kernel/classes/datatable](area-kernel-classes-datatable.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expDataSyncListener` | class | `kernel/classes/datatable/sync/expdatasynclistener.php:20` | Der Live-Spiegel der Datentabellen-Synchronisationen (doc/eng-us/features/6.0/data-tables.md, „Live mirror“): der Kernel benachrichtigt content/publish, cont… | – |
 
 ### kernel/classes/requestclassifier (1)
 

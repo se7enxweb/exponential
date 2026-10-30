@@ -13,7 +13,7 @@
  *  LV-138  the links: the filtered permalink (literal, level, from) and the newest entry (paused at its offset)
  *  LV-139  the view's paths, the settings bounds, and the template: both designs equal, no inline CSS, POST with token
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -471,6 +471,9 @@ Under Velocity, or any server that keeps PHP processes between requests:
 - [Smarty templates: the converter and porting a design](smarty-templates-converter.md)
 - [Templates and design](templates-and-design.md) and [Caches](caches.md)
 - [Velocity: running Exponential in a persistent-worker web server](../features/6.0/velocity-persistent-worker-server.md)
+- The third engine: [Twig templates](twig-templates.md); all three compared in [The three template engines
+  compared](template-engines.md), [their speed](template-engines-speed.md) and
+  [templates side by side](../help/template-language/tpl-twig-smarty-side-by-side.md)
 
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and

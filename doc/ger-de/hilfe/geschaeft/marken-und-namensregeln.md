@@ -111,9 +111,9 @@ Hinweise:
 - 7x und die Foundation sind **zwei Organisationen**. Schreiben Sie nie so, als wären sie eine, und schreiben Sie nie,
   dass die Foundation Dienstleistungen verkauft: 7x ist das Unternehmen, die Foundation betreibt und finanziert das
   Projekt ([Die Foundation und 7x](../wer-ist-die-exponential-foundation.md#die-foundation-und-7x)).
-- Der Copyright-Inhaber der Software wird **7x & Exponential Foundation** geschrieben (`COPYRIGHT.md`); der Vermerk
-  der Dokumentation ergänzt „and the Exponential contributors“ ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)).
-  Übernehmen Sie diese Vermerke genau, kürzen Sie sie nie.
+- Der Copyright-Inhaber der Software wird **Exponential Foundation and 7x** geschrieben (`COPYRIGHT.md`); die
+  Dokumentation trägt denselben Vermerk, ohne dritten Rechteinhaber: Mitwirkende übertragen ihr Urheberrecht über das CLA
+  an beide ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)). Übernehmen Sie den Vermerk genau, kürzen Sie ihn nie.
 
 ## Der alte Name: eZ Publish, nur als Geschichte
 

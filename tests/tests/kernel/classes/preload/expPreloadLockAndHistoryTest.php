@@ -21,7 +21,7 @@
  * array key in expPreloadHistory::ids(), failed isID() and dropped out of runs(). Fixed in ids(); PH-10 pins it
  * with fixed all-digit ids. Stressed afterwards: this file 500 times in a row and 4 copies at once, all green.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

@@ -28,6 +28,7 @@ jedem System ist [Betriebssystemunterstützung](../../betriebssystemunterstuetzu
 > Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
 > [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../control-panels/plesk.md), [cPanel](../control-panels/cpanel.md), [DirectAdmin](../control-panels/directadmin.md), [ISPConfig](../control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md).
 
 ## Inhalt
 
@@ -44,7 +45,7 @@ jedem System ist [Betriebssystemunterstützung](../../betriebssystemunterstuetzu
 
 ## Die kurze Antwort
 
-Exponential 6.0.x läuft auf fast jedem Betriebssystem, das PHP 8.0 oder später und einen Webserver hat. Es besteht aus
+Exponential 6.0.x läuft auf fast jedem Betriebssystem, das PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar) und einen Webserver hat. Es besteht aus
 reinen PHP-Dateien und einer Datenbank; es hat keinen eigenen kompilierten Code und hängt von keiner bestimmten
 C-Bibliothek ab ([Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md#was-das-betriebssystem-bereitstellen-muss)). Für einen
 Hoster ist die praktische Wahl eine aktuelle Linux-Distribution mit einem gepflegten PHP 8.

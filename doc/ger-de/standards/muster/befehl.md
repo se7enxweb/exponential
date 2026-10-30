@@ -3,7 +3,7 @@ title: Befehl (Konsole, Skripte, Cronjobs)
 audience: developer
 category: standards
 order: 319
-summary: "Eine Arbeitseinheit, die eigenständig läuft: ein Konsolenbefehl (./console exp:...), eine CLI-Skriptklasse oder ein Cronjob-Teil. 221 Instanzen in Exponential."
+summary: "Eine Arbeitseinheit, die eigenständig läuft: ein Konsolenbefehl (./console exp:...), eine CLI-Skriptklasse oder ein Cronjob-Teil. 247 Instanzen in Exponential."
 keywords: Entwurfsmuster, Befehl, Anfrageverarbeitung, Musterkatalog, design pattern, command, pattern catalogue
 type: catalogue
 ---
@@ -15,10 +15,10 @@ type: catalogue
 
 Eine Arbeitseinheit, die eigenständig läuft: ein Konsolenbefehl (./console exp:...), eine CLI-Skriptklasse oder ein Cronjob-Teil.
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Verarbeitung von Anfragen |
-| Instanzen | 221 |
+| Instanzen | 247 |
 | Erkannt an | Erweitert Command, CronjobPart oder Runnable (die ausführbaren Konsolenbefehle und Cronjob-Teile), oder eine Datei cronjobs/*.php. |
 | Erweiterungspunkt | kernel/private/classes/commands/, cronjob.ini [CronjobSettings] ExtensionDirectories[] und CronjobPart-*. |
 
@@ -95,6 +95,14 @@ Eine Arbeitseinheit, die eigenständig läuft: ein Konsolenbefehl (./console exp
 | --- | --- | --- | --- | --- |
 | `Exponential\Command\Extension\ExplayoutsUi\Layouts` | class extends Command | `extension/explayouts_ui/classes/runnable/commands/php_layouts.php:17` | exp:layouts (ext:explayouts_ui:layouts) - Layouts, geteilte Layouts und ihre Zuordnungen auflisten, exportieren und importieren. | – |
 
+### extension/expqueue (1)
+
+[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expQueueCommand` | class | `extension/expqueue/classes/expqueuecommand.php:17` | Die Befehle ./console ext:expqueue: (extension/expqueue/bin/php/.php); jede Datei ruft nur expQueueCommand::main( '' ) auf. | – |
+
 ### extension/ezprestapi (1)
 
 [Alle Muster von extension/ezprestapi](bereich-extension-ezprestapi.md)
@@ -132,6 +140,14 @@ Eine Arbeitseinheit, die eigenständig läuft: ein Konsolenbefehl (./console exp
 | `Exponential\Command\Extension\GitManager\Remote` | class extends Command | `extension/git_manager/classes/runnable/commands/php_remote.php:38` | Der Code von extension/git_manager/bin/php/remote.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\Command\Extension\GitManager\Submodule` | class extends Command | `extension/git_manager/classes/runnable/commands/php_submodule.php:38` | Der Code von extension/git_manager/bin/php/submodule.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\Command\Extension\GitManager\UpgradePolicyDumpToBackup` | class extends Command | `extension/git_manager/classes/runnable/commands/php_upgrade-policy-dump-to-backup.php:25` | Der Code von extension/git_manager/bin/php/upgrade-policy-dump-to-backup.php, in eine Klasse verschoben (#207 Stufe 1). | – |
+
+### extension/sqliimport (1)
+
+[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expImportCommand` | class | `extension/sqliimport/classes/exp/expimportcommand.php:17` | Die Befehle ./console ext:sqliimport: (extension/sqliimport/bin/php/.php); jede Datei ruft nur expImportCommand::main( '' ) auf. | – |
 
 ### extension/syndication (6)
 
@@ -182,16 +198,20 @@ Eine Arbeitseinheit, die eigenständig läuft: ein Konsolenbefehl (./console exp
 | --- | --- | --- | --- | --- |
 | `expIniCommand` | class | `kernel/classes/ini/actions/expinicommand.php:15` | Der Befehl exp:ini ohne sein Skript: Zerlegen der Befehlszeile, die Hilfetexte, Finden der Aktion in der Registry, Ausführen mit einem expIniComm… | – |
 
-### kernel/private/classes/commands (95)
+### kernel/private/classes/commands (103)
 
 [Alle Muster von kernel/private/classes/commands](bereich-kernel-private-classes-commands.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `Exponential\Command\Kernel\Accesscheck` | class extends Command | `kernel/private/classes/commands/accesscheck.php:16` | – | – |
+| `Exponential\Command\Kernel\Addanonymouspublicpolicies` | class extends Command | `kernel/private/classes/commands/addanonymouspublicpolicies.php:15` | Der Code von bin/php/addanonymouspublicpolicies.php. | – |
 | `Exponential\Command\Kernel\Adddefaultstates` | class extends Command | `kernel/private/classes/commands/adddefaultstates.php:23` | Der Code von bin/php/adddefaultstates.php, in eine Klasse verschoben (#207 Stufe 1). | – |
+| `Exponential\Command\Kernel\Addeditorpolicies` | class extends Command | `kernel/private/classes/commands/addeditorpolicies.php:15` | Der Code von bin/php/addeditorpolicies.php. | – |
 | `Exponential\Command\Kernel\Addexphelpreadpolicy` | class extends Command | `kernel/private/classes/commands/addexphelpreadpolicy.php:16` | Der Code von bin/php/addexphelpreadpolicy.php. | – |
+| `Exponential\Command\Kernel\Addmembermanagement` | class extends Command | `kernel/private/classes/commands/addmembermanagement.php:15` | Der Code von bin/php/addmembermanagement.php. | – |
 | `Exponential\Command\Kernel\Addoauthauthorizepolicy` | class extends Command | `kernel/private/classes/commands/addoauthauthorizepolicy.php:15` | Der Code von bin/php/addoauthauthorizepolicy.php. | – |
+| `Exponential\Command\Kernel\Adduserapproval` | class extends Command | `kernel/private/classes/commands/adduserapproval.php:15` | Der Code von bin/php/adduserapproval.php. | – |
 | `Exponential\Command\Kernel\Audit` | class extends Command | `kernel/private/classes/commands/audit.php:26` | Der Audit-Befehl exp:audit: die Datensätze der Audit-Kanäle und ihre Hash-Ketten. | – |
 | `Exponential\Command\Kernel\Benchmark` | class extends Command | `kernel/private/classes/commands/benchmark.php:15` | Der Code von bin/php/benchmark.php (exp:benchmark). | – |
 | `Exponential\Command\Kernel\Cache` | class extends Command | `kernel/private/classes/commands/cache.php:23` | Der Code von bin/php/cache.php, in eine Klasse verschoben (#207 Stufe 1). | – |
@@ -252,6 +272,7 @@ Eine Arbeitseinheit, die eigenständig läuft: ein Konsolenbefehl (./console exp
 | `Exponential\Command\Kernel\I18n` | class extends Command | `kernel/private/classes/commands/i18n.php:18` | – | – |
 | `Exponential\Command\Kernel\Ini` | class extends Command | `kernel/private/classes/commands/ini.php:18` | – | – |
 | `Exponential\Command\Kernel\Install` | class extends Command | `kernel/private/classes/commands/install.php:29` | Der Code von bin/php/install.php, in eine Klasse verschoben (#207 Stufe 1). | – |
+| `Exponential\Command\Kernel\Installcrontab` | class extends Command | `kernel/private/classes/commands/installcrontab.php:15` | Der Code von bin/php/installcrontab.php. | – |
 | `Exponential\Command\Kernel\Kickstarter` | class extends Command | `kernel/private/classes/commands/kickstarter.php:153` | Führt dieses Skript erneut als Kindprozess mit denselben Argumenten und PHP-Einstellungen aus, zeigt seine Ausgabe laufend an und kopiert sie nach var/log/kickstart.log, nach… | – |
 | `Exponential\Command\Kernel\Mailbounces` | class extends Command | `kernel/private/classes/commands/mailbounces.php:16` | – | – |
 | `Exponential\Command\Kernel\Mailconsent` | class extends Command | `kernel/private/classes/commands/mailconsent.php:16` | – | – |
@@ -271,20 +292,23 @@ Eine Arbeitseinheit, die eigenständig läuft: ein Konsolenbefehl (./console exp
 | `Exponential\Command\Kernel\PublishContent` | class extends Command | `kernel/private/classes/commands/publish_content.php:25` | Der Code von bin/php/publish_content.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\Command\Kernel\Resetuserpassword` | class extends Command | `kernel/private/classes/commands/resetuserpassword.php:27` | Der Code von bin/php/resetuserpassword.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\Command\Kernel\Runcronjobs` | class extends Command | `kernel/private/classes/commands/runcronjobs.php:91` | Der Code von runcronjobs.php, in eine Klasse verschoben (#207 Stufe 1). | – |
+| `Exponential\Command\Kernel\Services` | class extends Command | `kernel/private/classes/commands/services.php:19` | Der Code von bin/php/services.php: der Kernel-Service-Container auf der Kommandozeile. | – |
 | `Exponential\Command\Kernel\Solr` | class extends Command | `kernel/private/classes/commands/solr.php:190` | Ein Ergebnis für einen Menschen oder als JSON ausgeben und mit $exit beenden. | – |
+| `Exponential\Command\Kernel\Syscard` | class extends Command | `kernel/private/classes/commands/syscard.php:17` | – | – |
 | `Exponential\Command\Kernel\Systeminfo` | class extends Command | `kernel/private/classes/commands/systeminfo.php:16` | – | – |
 | `Exponential\Command\Kernel\Trashpurge` | class extends Command | `kernel/private/classes/commands/trashpurge.php:24` | Der Code von bin/php/trashpurge.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\Command\Kernel\Updateisbn13` | class extends Command | `kernel/private/classes/commands/updateisbn13.php:24` | Der Code von bin/php/updateisbn13.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\Command\Kernel\Updateniceurls` | class extends Command | `kernel/private/classes/commands/updateniceurls.php:338` | Der Code von bin/php/updateniceurls.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\Command\Kernel\Updatesearchindex` | class extends Command | `kernel/private/classes/commands/updatesearchindex.php:42` | Der Code von bin/php/updatesearchindex.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\Command\Kernel\Userlogincheck` | class extends Command | `kernel/private/classes/commands/userlogincheck.php:18` | – | – |
+| `Exponential\Command\Kernel\Userpasswordchangerequired` | class extends Command | `kernel/private/classes/commands/userpasswordchangerequired.php:16` | – | – |
 | `Exponential\Command\Kernel\Velocity` | class extends Command | `kernel/private/classes/commands/velocity.php:262` | Eine Einstellungsliste für einen Menschen zum Lesen ausgeben. | – |
 | `Exponential\Command\Kernel\VelocityWarmup` | class extends Command | `kernel/private/classes/commands/velocity-warmup.php:40` | Der Code von bin/php/velocity-warmup.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\Command\Kernel\VerifyAliases` | class extends Command | `kernel/private/classes/commands/verify_aliases.php:43` | Der Code von bin/php/verify_aliases.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\Command\Kernel\Warm` | class extends Command | `kernel/private/classes/commands/warm.php:34` | Der Code von bin/php/warm.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\Command\Kernel\Webserver` | class extends Command | `kernel/private/classes/commands/webserver.php:170` | Ein Konfigurationsergebnis für einen Menschen oder als JSON ausgeben. | – |
 
-### kernel/private/classes/cronjobs (27)
+### kernel/private/classes/cronjobs (30)
 
 [Alle Muster von kernel/private/classes/cronjobs](bereich-kernel-private-classes-cronjobs.md)
 
@@ -296,7 +320,9 @@ Eine Arbeitseinheit, die eigenständig läuft: ein Konsolenbefehl (./console exp
 | `Exponential\Cronjob\Kernel\Cleanuprss` | class extends CronjobPart | `kernel/private/classes/cronjobs/cleanuprss.php:29` | Der Code von cronjobs/cleanuprss.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\Cronjob\Kernel\Clusterpurge` | class extends CronjobPart | `kernel/private/classes/cronjobs/clusterpurge.php:25` | Der Code von cronjobs/clusterpurge.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\Cronjob\Kernel\Contentcheck` | class extends CronjobPart | `kernel/private/classes/cronjobs/contentcheck.php:18` | Der Code von cronjobs/contentcheck.php: baut den Referenzindex der Inhaltsprüfungen auf und hält ihn im Cache (expContentCheckReferences). | – |
-| `Exponential\Cronjob\Kernel\Contentjobs` | class extends CronjobPart | `kernel/private/classes/cronjobs/contentjobs.php:20` | Der Cronjob-Teil contentjobs (cronjobs/contentjobs.php, Gruppe frequent): startet die Inhaltsjobs, die einen Worker brauchen und keinen haben — ein laufender Job, des… | – |
+| `Exponential\Cronjob\Kernel\Contentjobs` | class extends CronjobPart | `kernel/private/classes/cronjobs/contentjobs.php:21` | Der Cronjob-Teil contentjobs (cronjobs/contentjobs.php, Gruppe frequent): startet die Inhaltsjobs, die einen Worker brauchen und keinen haben — ein laufender Job, des… | – |
+| `Exponential\Cronjob\Kernel\Datatablesync` | class extends CronjobPart | `kernel/private/classes/cronjobs/datatablesync.php:16` | Der Cronjob-Teil datatablesync (cronjobs/datatablesync.php, Gruppe frequent; doc/eng-us/features/6.0/data-tables.md, „Synchronisation“): startet jede… | – |
+| `Exponential\Cronjob\Kernel\Exphelp` | class extends CronjobPart | `kernel/private/classes/cronjobs/exphelp.php:15` | – | – |
 | `Exponential\Cronjob\Kernel\Explogrotate` | class extends CronjobPart | `kernel/private/classes/cronjobs/explogrotate.php:19` | Der Code von cronjobs/explogrotate.php: der Cronjob-Teil für die Log-Rotation ([CronjobPart-logs], in keinem Standardteil, er läuft also nur, wenn eine Site ihn hinzufügt zu… | – |
 | `Exponential\Cronjob\Kernel\Hide` | class extends CronjobPart | `kernel/private/classes/cronjobs/hide.php:25` | Der Code von cronjobs/hide.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\Cronjob\Kernel\HttpcacheCleanup` | class extends CronjobPart | `kernel/private/classes/cronjobs/httpcache_cleanup.php:23` | Der Code von cronjobs/httpcache_cleanup.php, in eine Klasse verschoben (#207 Stufe 1). | – |
@@ -316,6 +342,7 @@ Eine Arbeitseinheit, die eigenständig läuft: ein Konsolenbefehl (./console exp
 | `Exponential\Cronjob\Kernel\Unlock` | class extends CronjobPart | `kernel/private/classes/cronjobs/unlock.php:93` | Der Code von cronjobs/unlock.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\Cronjob\Kernel\Unpublish` | class extends CronjobPart | `kernel/private/classes/cronjobs/unpublish.php:25` | Der Code von cronjobs/unpublish.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\Cronjob\Kernel\Updateviewcount` | class extends CronjobPart | `kernel/private/classes/cronjobs/updateviewcount.php:25` | Der Code von cronjobs/updateviewcount.php, in eine Klasse verschoben (#207 Stufe 1). | – |
+| `Exponential\Cronjob\Kernel\Usersessions` | class extends CronjobPart | `kernel/private/classes/cronjobs/usersessions.php:15` | – | – |
 | `Exponential\Cronjob\Kernel\Workflow` | class extends CronjobPart | `kernel/private/classes/cronjobs/workflow.php:25` | Der Code von cronjobs/workflow.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 
 ### kernel/private/classes/runnable (3)
@@ -328,7 +355,7 @@ Eine Arbeitseinheit, die eigenständig läuft: ein Konsolenbefehl (./console exp
 | `Exponential\Runnable\CronjobPart` | abstract class extends Runnable | `kernel/private/classes/runnable/cronjobpart.php:21` | Ein Cronjob-Teil. | – |
 | `Exponential\Runnable\ModuleView` | abstract class extends Runnable | `kernel/private/classes/runnable/moduleview.php:23` | Eine Modulansicht. | – |
 
-## Cronjob-Teile (36)
+## Cronjob-Teile (49)
 
 ### extension/bccie (4)
 
@@ -365,6 +392,21 @@ Eine Arbeitseinheit, die eigenständig läuft: ein Konsolenbefehl (./console exp
 | --- | --- | --- |
 | `cjw_tmv_refresh` | `extension/cjw_tmv/cronjobs/cjw_tmv_refresh.php` | Cronjob-Teil cjw_tmv: importiert und aktualisiert die TMV-Veranstaltungen jedes tmv_container als Inhaltsobjekte (cjwTmvImporter) und entfernt die vergangenen. |
 
+### extension/expai (4)
+
+| Cronjob | Datei | Beschreibung |
+| --- | --- | --- |
+| `expai_exchange_rates` | `extension/expai/cronjobs/expai_exchange_rates.php` | Cronjob expai_exchange_rates: aktualisiert einmal täglich die Referenzkurse der Europäischen Zentralbank (die Umrechnung von Preisen in einer anderen Währung, ex… |
+| `expai_prune` | `extension/expai/cronjobs/expai_prune.php` | Cronjob expai_prune: markiert Zeilen des Entwurfslogs, deren Inhaltsobjekt entfernt wurde, als „deleted“; entfernt alte Threads und Unterhaltungen, leert alte Anfrage-Zus… |
+| `expai_queue` | `extension/expai/cronjobs/expai_queue.php` | Cronjob expai_queue (Teil „expai“): setzt die Anfragen in der Warteschlange fort, die ein Budget angehalten hat, sobald sie passen (ein neuer Monat, ein erhöhtes Budget, Anfragen, die kos… |
+| `expai_thread_prune` | `extension/expai/cronjobs/expai_thread_prune.php` | Cronjob expai_thread_prune (Teil „expai“): entfernt Thread-Ereignisse, gestufte Vorschläge, Kontrollstellen sowie abgeschlossene Pläne und Follow-ups, die älter sind als expai.in… |
+
+### extension/expqueue (1)
+
+| Cronjob | Datei | Beschreibung |
+| --- | --- | --- |
+| `expqueue` | `extension/expqueue/cronjobs/expqueue.php` | Der Cron-Teil „expqueue“ (php runcronjobs.php -q expqueue, jede Minute): der Standard-Worker der Warteschlange und das Sicherheitsnetz neben einem systemd-Dienst… |
+
 ### extension/ezfind (2)
 
 | Cronjob | Datei | Beschreibung |
@@ -386,11 +428,34 @@ Eine Arbeitseinheit, die eigenständig läuft: ein Konsolenbefehl (./console exp
 | `ezmbpaex_sendexpirynotifications` | `extension/ezmbpaex/cronjobs/ezmbpaex_sendexpirynotifications.php` | – |
 | `ezmbpaex_updatechildren` | `extension/ezmbpaex/cronjobs/ezmbpaex_updatechildren.php` | – |
 
+### extension/ezodf (1)
+
+| Cronjob | Datei | Beschreibung |
+| --- | --- | --- |
+| `ezodf_keepalive` | `extension/ezodf/cronjobs/ezodf_keepalive.php` | Cron-Teil von ezodf: hält den Konvertierungsserver am Laufen, wenn die Administration ihn eingeschaltet hat (nach einem Neustart oder Absturz), und entfernt Arbeitsdateien, Upl… |
+
+### extension/ezoracle (4)
+
+| Cronjob | Datei | Beschreibung |
+| --- | --- | --- |
+| `ezoracle_health` | `extension/ezoracle/cronjobs/ezoracle_health.php` | – |
+| `ezoracle_recyclebin` | `extension/ezoracle/cronjobs/ezoracle_recyclebin.php` | – |
+| `ezoracle_sequences` | `extension/ezoracle/cronjobs/ezoracle_sequences.php` | – |
+| `ezoracle_statistics` | `extension/ezoracle/cronjobs/ezoracle_statistics.php` | – |
+
 ### extension/sevenx_authentication_2fa (1)
 
 | Cronjob | Datei | Beschreibung |
 | --- | --- | --- |
 | `sevenx2facleanup` | `extension/sevenx_authentication_2fa/cronjobs/sevenx2facleanup.php` | – |
+
+### extension/sqliimport (3)
+
+| Cronjob | Datei | Beschreibung |
+| --- | --- | --- |
+| `sqliimport_cleanup` | `extension/sqliimport/cronjobs/sqliimport_cleanup.php` | SQLi-Import-Cleanup-Cronjob. Leert bei Bedarf die Caches importierter Inhaltsobjekte. Löst bei Bedarf die Indexierung importierter Inhaltsobjekte aus |
+| `sqliimport_run` | `extension/sqliimport/cronjobs/sqliimport_run.php` | Cronjob, der geplante und einmalige Imports ausführt, wie in der Administration konfiguriert |
+| `sqliimport_schedule` | `extension/sqliimport/cronjobs/sqliimport_schedule.php` | Der Cron-Teil „sqliimport“ (php runcronjobs.php -q sqliimport, jede Minute): reiht die Läufe der fälligen Zeitpläne und die ausstehenden Importe ein… |
 
 ### extension/syndication (4)
 

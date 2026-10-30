@@ -2,7 +2,7 @@
 /**
  * File containing the expSystemReport class.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
@@ -505,7 +505,9 @@ class expSystemReport
         $disabled = array_values( array_filter( array_map( 'trim', explode( ',', (string)ini_get( 'disable_functions' ) ) ), 'strlen' ) );
         return array(
             'version' => PHP_VERSION,
-            'minimum' => (string)self::ini( 'phpversion', 'MinimumVersion', '8.0.0', 'setup.ini' ),
+            'minimum' => (string)self::ini( 'phpversion', 'MinimumVersion', '7.4.0', 'setup.ini' ),
+            // the oldest supported PHP; between minimum and this one Exponential is usable without support
+            'supported' => (string)self::ini( 'phpversion', 'SupportedVersion', '8.0.0', 'setup.ini' ),
             'sapi' => PHP_SAPI,
             'zts' => defined( 'PHP_ZTS' ) && PHP_ZTS,
             'os' => PHP_OS_FAMILY,

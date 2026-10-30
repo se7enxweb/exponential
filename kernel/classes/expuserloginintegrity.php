@@ -2,7 +2,7 @@
 /**
  * File containing the expUserLoginIntegrity class
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  *
@@ -443,6 +443,7 @@ class expUserLoginIntegrity
         if ( !$db instanceof eZDBInterface || !property_exists( $db, 'errorHandling' ) )
             return eZDB::ERROR_HANDLING_STANDARD;
         $property = new ReflectionProperty( 'eZDBInterface', 'errorHandling' );
+        if ( PHP_VERSION_ID < 80100 ) $property->setAccessible( true ); // no effect since PHP 8.1, deprecated in 8.5
         return $property->getValue( $db );
     }
 

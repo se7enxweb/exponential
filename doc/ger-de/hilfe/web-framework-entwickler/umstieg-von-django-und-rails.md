@@ -59,7 +59,7 @@ Inhaltsklassen von Exponential vertraut vorkommen. Beginnen Sie mit dem
 - Benennung: Kernel-Klassen verwenden das Präfix `eZ`, neuer Code des Projekts verwendet `exp`, und Ihre eigenen
   Klassen erhalten ein Präfix Ihrer Organisation oder Erweiterung
   ([Autoloads und Klassenbenennung](../ersteller/anwendungsentwickler/autoloads-und-klassenbenennung.md)).
-- Die Seiten für PHP-Entwickler behandeln die Sprachseite ([PHP-Entwickler: hier beginnen](../../../eng-us/help/php-developers/php-developers-start-here.md)).
+- Die Seiten für PHP-Entwickler behandeln die Sprachseite ([PHP-Entwickler: hier beginnen](../php-entwickler/php-entwickler-hier-beginnen.md)).
 
 ## Was Ihnen fehlen wird
 

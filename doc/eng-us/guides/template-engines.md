@@ -10,7 +10,7 @@ can be mixed in one design and one page. What differs is the language, its tools
 | | `.tpl` | `.stpl` | `.twig` |
 |---|---|---|---|
 | Language | Exponential's own template language | Smarty 5 | Twig 3 |
-| Library | the kernel | Smarty 5 (`smarty/smarty`, `[SmartySettings] LibraryPath`) | Twig 3 (`twig/twig`, `[TwigSettings] LibraryPath`) |
+| Library | the kernel | Smarty 5 (`smarty/smarty`, `[SmartySettings] LibraryPath`) | Twig 3 (`twig/twig` on PHP 8.1 and later, `se7enxweb/twig` on 7.4 and 8.0, both through `se7enxweb/exponential-php-floor`; `[TwigSettings] LibraryPath`) |
 | Settings | `template.ini` | `smarty.ini` | `twig.ini` |
 | Compiled to | PHP (`<cache>/template/compiled`) | PHP (`<cache>/smarty/compile-secure`) | PHP classes (`<cache>/twig/compile-secure`) |
 | Operators | by name | as modifiers; `exp_<name>` where Smarty has the name | as filters and functions; `exp_<name>` where Twig has the name |
@@ -33,8 +33,18 @@ can be mixed in one design and one page. What differs is the language, its tools
 
 Speed does not decide it: cached pages never reach a template engine, and uncached pages render within a small
 margin of each other. Measured on a development installation, a converted design rendered uncached pages as `.twig`
-at 0.83 to 0.98 times the time of the `.tpl` design and 0.90 to 1.19 times the `.stpl` design
-([Twig performance](twig-templates-performance.md), [Smarty performance](smarty-templates-performance.md)).
+at 0.83 to 0.98 times the time of the `.tpl` design and 0.90 to 1.19 times the `.stpl` design; with the debug output
+on, `.twig` and `.stpl` pages took 0.037 to 0.044 s and `.tpl` pages 0.059 to 0.110 s. Every number with its
+conditions, the profile of a request and how to measure your own: [Speed of the three template
+engines](template-engines-speed.md) ([Twig performance](twig-templates-performance.md),
+[Smarty performance](smarty-templates-performance.md)).
+
+## Reading one when you know another
+
+[Templates side by side](../help/template-language/tpl-twig-smarty-side-by-side.md) puts the same template in all
+three languages, row by row, every row rendered with identical output. For Twig written the Twig way (inheritance,
+`embed`, macros, tests) see [Writing Twig-native templates](twig-templates-native.md); for complete starting points,
+[Twig recipes](twig-templates-recipes.md).
 
 ## Mixing them
 
@@ -69,3 +79,6 @@ converted and not changed since; see [Converting templates between template engi
 - [Twig templates](../features/6.0/twig-templates.md)
 - [Smarty templates](../features/6.0/smarty-templates.md)
 - [Converting between template engines](../help/template-language/converting-between-template-engines.md)
+- [Speed of the three template engines](template-engines-speed.md)
+- [Templates side by side: .tpl, .twig and .stpl](../help/template-language/tpl-twig-smarty-side-by-side.md)
+- [Twig templates: versions, upgrades and compatibility](twig-templates-compatibility.md)

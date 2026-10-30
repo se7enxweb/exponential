@@ -3,7 +3,7 @@ title: Zwei Organisationen, ein Projekt
 audience: press, sponsor, partner
 category: press-media
 order: 12
-summary: Wie 7x und die Exponential Foundation zueinander stehen, nebeneinandergestellt - Unternehmen und gemeinnützige Organisation, Rollen, Urheberrecht, Sponsorenseiten und Websites - mit den Sätzen, die das Verhältnis richtig beschreiben, und den Verwechslungen, die in Berichten vorkommen.
+summary: Wie die Exponential Foundation und 7x zueinander stehen, nebeneinandergestellt - Unternehmen und gemeinnützige Organisation, Rollen, Urheberrecht, Sponsorenseiten und Websites - mit den Sätzen, die das Verhältnis richtig beschreiben, und den Verwechslungen, die in Berichten vorkommen.
 keywords: 7x, Exponential Foundation, Verhältnis, Unternehmen, gemeinnützige Organisation, Rollen, Urheberrecht, Sponsor, zwei Organisationen, wer macht was, Leitung, relationship, company, nonprofit, roles, copyright, two organizations, who does what, governance
 type: help
 ---
@@ -30,7 +30,7 @@ und der häufigste Fehler in Berichten ist, sie zu einer zu verschmelzen.
 | Verdient Geld durch | Verkauf von Dienstleistungen (Entwicklung, Support, Hosting, Schulung) | Spenden und Sponsoring |
 | Website | <https://se7enx.com/> | <https://foundation.exponential.earth/>, <https://exponential.earth/> |
 | Sponsorenseite | <https://github.com/sponsors/se7enxweb> | <https://github.com/sponsors/exponentialcms> |
-| Urheberrecht | „7x & Exponential Foundation“, gemeinsam | (derselbe Vermerk) |
+| Urheberrecht | „Exponential Foundation and 7x“, gemeinsam | (derselbe Vermerk) |
 
 Quelle: [Die Foundation und 7x](../wer-ist-die-exponential-foundation.md#die-foundation-und-7x).
 
@@ -51,7 +51,7 @@ Quelle: [Die Foundation und 7x](../wer-ist-die-exponential-foundation.md#die-fou
 ```text
 "Exponential is led by the company 7x and operated by the Exponential Foundation, a nonprofit."
 "7x is the main contributor to the project that the Exponential Foundation operates."
-"The software's copyright is held jointly by 7x and the Exponential Foundation; the license is the GNU GPL."
+"The software's copyright is held jointly by the Exponential Foundation and 7x; the license is the GNU GPL."
 ```
 
 ## Häufige Verwechslungen

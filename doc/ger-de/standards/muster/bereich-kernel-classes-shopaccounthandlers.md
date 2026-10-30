@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/shopaccounthandlers
 audience: developer
 category: standards
-order: 506
+order: 516
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/shopaccounthandlers mit den Entwurfsmustern.
 keywords: kernel/classes/shopaccounthandlers, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

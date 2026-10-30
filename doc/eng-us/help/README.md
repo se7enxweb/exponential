@@ -23,6 +23,7 @@ allowed to use is shown grayed out or not at all.
 | Page | What it helps you do |
 |---|---|
 | [Velocity is part of Exponential 6.0.15](velocity-is-part-of-exponential-6-0-15.md) | Know what changed when the Velocity Internet / Web Application Server became part of Exponential: a turning point that makes Exponential one working stack (server, RAD platform, CMS, digital experience and e-commerce) |
+| [Why Exponential supports PHP 7.4](why-exponential-supports-php-7-4.md) | Know what is usable on PHP 7.4 without support and what needs PHP 8, how Composer picks the right packages for your PHP, how security is kept, and why the project bridges older PHP versions |
 | [Getting started](getting-started.md) | Sign in, take your first steps, and know where to find help |
 | [A tour of the administration](admin-tour.md) | Know the header, the tabs, the side columns and the dashboard |
 | [Logging into the Editor](logging-into-the-editor.md) | Sign in to the Editor, the interface for writing and publishing |
@@ -35,6 +36,7 @@ allowed to use is shown grayed out or not at all.
 |---|---|
 | [Who is 7x?](who-is-7x.md) | Know the company behind Exponential: nearly thirty years with this code, from the eZ Publish years to Exponential 6, the products, the community and how to take part |
 | [Who is the Exponential Foundation?](who-is-the-exponential-foundation.md) | Know the nonprofit that operates the open source project, the whole family of Exponential products and what the project commits to |
+| [Copyright and copyleft](copyright-and-copyleft.md) | Know who holds the copyright of Exponential (the Exponential Foundation and 7x together, since the historical shift of 29 October 2026), why the Foundation is named first, what the GPL lets you do, and how to write the notice in your own files and extensions |
 | [Our goals](../goals.md) | Know why Exponential exists, what is already built in so you do not have to build it, why it is free software, how 7x earns a living, and why we invite you to join, with honest answers to doubts about our intentions |
 | [Community](community/community-start-here.md) | Know the Exponential Community: the people who use, contribute to, promote and develop software using Exponential worldwide |
 | [Ecosystem](ecosystem/ecosystem-start-here.md) | Know the greater ecosystem beyond the community: every part of the Exponential world within the PHP stack, its users and creators |
@@ -98,6 +100,7 @@ For administrators and developers who choose the machine and the database of a s
 |---|---|
 | [Database support](database-support.md) | Choose a database from the supported ones, in their official order (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), and know what each needs |
 | [Operating system support](os-support.md) | Check whether an operating system, processor and web server can run Exponential, from Linux to Windows and beyond |
+| [Page caching with LiteSpeed and OpenLiteSpeed](../guides/litespeed-page-cache.md) | Make a site on a LiteSpeed or OpenLiteSpeed server fast for anonymous visitors and crawlers: the server answers from stored pages without PHP, with no plugin and no code |
 
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and

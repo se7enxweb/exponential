@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
@@ -231,14 +231,15 @@ $ViewList["templateoperator"] = array(
     "params" => array( ) );
 
 // "Verify it's you" (doc/eng-us/guides/verify-its-you.md): which groups of actions ask the signed-in user to confirm
-// who they are, and for how many minutes a confirmation counts; written to settings/override/site.ini.append.php.
+// who they are, and for how many minutes a confirmation counts; for every siteaccess (settings/override) or one
+// (setup/reauth/<siteaccess>: settings/siteaccess/<name>), with the user groups a group asks.
 // Saving asks itself ([ReauthGroup_system] Rules[]=setup/*). See kernel/setup/reauth.php
 $ViewList['reauth'] = array(
     'functions' => array( 'setup' ),
     'script' => 'reauth.php',
     'ui_context' => 'administration',
     'default_navigation_part' => 'ezsetupnavigationpart',
-    'params' => array() );
+    'params' => array( 'SiteAccess' ) );
 
 $ViewList["extensions"] = array(
     'functions' => array( 'setup' ),

@@ -15,7 +15,7 @@ type: catalogue
 
 Ein Einstiegspunkt empfängt jede Anfrage, ermittelt den Siteaccess und leitet sie an eine Modulansicht weiter.
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Verarbeitung von Anfragen |
 | Instanzen | 10 |

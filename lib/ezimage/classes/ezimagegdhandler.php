@@ -2,7 +2,7 @@
 /**
  * File containing the eZImageGDHandler class.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
@@ -149,8 +149,8 @@ class eZImageGDHandler extends eZImageHandler
         $currentImage = $inputFunction( $inputFile );
 
 
-        // ###PHP8PATCH check if imagefile could be loaded if not write error
-        if ( !is_object( $currentImage )  )
+        // a GdImage object from PHP 8.0 on, a resource before; false when the file could not be loaded
+        if ( !is_object( $currentImage ) && !is_resource( $currentImage ) )
         {
             eZDebug::writeError( "Source image $inputFile can not be load with function:  $inputFunction ( inputFile )", __METHOD__ );
             return false;

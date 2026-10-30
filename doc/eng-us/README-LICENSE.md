@@ -10,7 +10,7 @@ type: reference
 
 ## Copyright and permission notice
 
-Copyright (C) 1998 - 2026 7x & Exponential Foundation and the Exponential contributors.
+Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
 
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free
 Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no
@@ -34,7 +34,13 @@ The notice covers the documentation the Exponential project wrote and maintains 
 repository: the help pages (`doc/eng-us/help/`), the guides, the installation chapters, the feature, upgrade and
 specification documents of the 6.x line (`doc/eng-us/features/6.0/`, `doc/eng-us/bc/6.0/`, `doc/eng-us/specifications/6.0/`), the
 changelogs of 6.x and of the extensions, the history, and the other pages at the top of `doc/`. This includes
-every 6.x page contributed through pull requests by the Exponential contributors.
+every 6.x page contributed through pull requests, whose copyright the contributors assigned to the Exponential
+Foundation and 7x.
+
+There is no separate copyright of "the Exponential contributors": every contributor assigns the copyright in a
+contribution to the Exponential Foundation and 7x through the Contributor Licensing Agreement, so the notice names
+only those two. Contributors are credited (changelogs, commit authorship, the recognition pages), and credit is not
+a copyright claim; see [Copyright and copyleft](help/copyright-and-copyleft.md).
 
 The software itself is not documentation: its source code stays under the GNU General Public License, version 2
 or any later version ([LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE) and
@@ -71,3 +77,11 @@ A change to a page under the notice above is accepted under the same license, th
 1.3 or any later version, so that everyone keeps the same freedoms with the changed page. A contribution that
 cannot be published under these terms (text copied from a source with a different license, for example) has to
 say so in its pull request.
+
+## Copyright and copyleft
+
+Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
+Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
+[Copyright and copyleft](help/copyright-and-copyleft.md).

@@ -25,7 +25,7 @@ vielleicht kennen, sagt die Seite das. Jede Zeile nennt die Datei oder das Dokum
 
 | Thema | Was Exponential verwendet | Quelle |
 |---|---|---|
-| Sprache | PHP 8.0 bis 8.5 (`"php": "^8.0 \|\| ... \|\| ^8.8"`) | `composer.json` |
+| Sprache | PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) (`"php": "^7.4 \|\| ... \|\| ^8.8"`) | `composer.json` |
 | Pakete | Composer; das Hauptpaket ist `se7enxweb/exponential`, Typ `ezpublish-legacy` | `composer.json` |
 | Lizenz | GNU GPL, Version 2 oder später | `LICENSE`, `composer.json` |
 | Datenbanken | SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
@@ -92,7 +92,7 @@ vielleicht kennen, sagt die Seite das. Jede Zeile nennt die Datei oder das Dokum
 - [Softwareingenieure: hier beginnen](softwareingenieure-hier-beginnen.md)
 - [Architekturüberblick](architekturueberblick.md)
 - [Exponential bewerten](exponential-bewerten.md)
-- [PHP-Entwickler: hier beginnen](../../../eng-us/help/php-developers/php-developers-start-here.md), [Erweiterungsentwicklung](../erweiterungsentwicklung/README.md) und [Anwendungsentwickler: hier beginnen](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md)
+- [PHP-Entwickler: hier beginnen](../php-entwickler/php-entwickler-hier-beginnen.md), [Erweiterungsentwicklung](../erweiterungsentwicklung/README.md) und [Anwendungsentwickler: hier beginnen](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -5,7 +5,7 @@
  * (checked by the form token); an empty choice goes back to the siteaccess default. Above the form, a table
  * lists every registered engine with its version, description and status, the ones that cannot be used too.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package ezoe
  */

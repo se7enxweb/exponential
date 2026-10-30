@@ -19,12 +19,12 @@ type: help
 
 | Fact | Source |
 |---|---|
-| The copyright notice runs from 1998 to 2026 for 7x and the Exponential Foundation | `COPYRIGHT.md` |
+| The copyright notice runs from 1998 to 2026 for the Exponential Foundation and 7x | `COPYRIGHT.md` |
 | "Exponential has made it beyond it's end of life in 2021 and survived" | `README.md` |
 | 7x took over leadership in 2023; the 6.0 line has been released since 1 January 2024 | [Who is 7x?](../../who-is-7x.md#the-60x-releases) |
 | The nonprofit Exponential Foundation operates the project since 2026 | [Who is the Exponential Foundation?](../../who-is-the-exponential-foundation.md#in-short) |
 | 6.0 is the maintained line; security fixes come in the next 6.0.x release | `SECURITY.md` |
-| PHP 8.0 to 8.5 are supported, and the project aims at 8.6 and beyond | `README.md` |
+| PHP 8.0 to 8.5 (PHP 7.4 usable without support) are supported, and the project aims at 8.6 and beyond | `README.md` |
 
 ## Support options
 

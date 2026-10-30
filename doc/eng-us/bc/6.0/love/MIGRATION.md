@@ -51,7 +51,7 @@ checks and also lists the settings and extensions that need attention:
    Replace `mydatabase` (use `pg_dump` for PostgreSQL). Keep the backups until the moved site
    has run for a while.
 
-2. **Check PHP.** Exponential 6 runs on PHP 8.1 to 8.5. LoveStack's `composer.json` allows PHP
+2. **Check PHP.** Exponential 6 runs on PHP 8.0 to 8.5 (PHP 7.4 usable without support). LoveStack's `composer.json` allows PHP
    7.3–7.4 and 8.1–8.3, so a site on PHP 7 moves to PHP 8 at the same time: `php -v`.
 
 3. **List your own code.** Everything you or your agency wrote lives in your own extensions,

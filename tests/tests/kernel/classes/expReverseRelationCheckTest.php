@@ -23,7 +23,7 @@
  *          given to the subtree that holds the node, readable as the provider says, a failing provider is failed
  *  RC-16 - removing the last locations on the Locations tab and a WebDAV delete go through the check
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

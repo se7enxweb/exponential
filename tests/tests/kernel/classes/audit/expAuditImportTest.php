@@ -11,7 +11,7 @@
  *  IM-04 — the originals are archived into <ArchiveDir>/legacy with a manifest whose HMAC verifies; with
  *          keepOriginals they stay, otherwise they are removed; the live chains are untouched
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group audit

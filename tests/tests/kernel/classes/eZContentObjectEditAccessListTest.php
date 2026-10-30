@@ -10,7 +10,7 @@
  *  EAL-03 - Edit allowed by the create rule for a draft stays 1, with or without the list
  *  EAL-04 - accessList( 'edit' ) returns the list
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

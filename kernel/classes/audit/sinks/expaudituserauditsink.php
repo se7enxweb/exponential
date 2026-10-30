@@ -10,7 +10,7 @@
  * [AuditSink_useraudit] Events[]. A batch the database refused waits in the spool and is tried again by the audit
  * cronjob part; a record stored already is not stored twice.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

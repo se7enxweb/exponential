@@ -4,7 +4,7 @@
  * content classes ([Community] in expservices.ini). Lists, reads, create, edit, remove and moderation (hide)
  * follow the content policies of the current user, so "own" limitations apply as they do in the admin.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

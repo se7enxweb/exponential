@@ -22,7 +22,7 @@ to 6.0 keeps most of the content model and database ([Switching to Exponential](
 ## Why move now
 
 - "5.x, 4.x, 3.x and older" get no security fixes; 6.0 is the maintained line (`SECURITY.md`).
-- Exponential supports PHP 8.0 to 8.5 (`README.md`), so the site can move to a supported PHP as well.
+- Exponential supports PHP 8.0 to 8.5 (PHP 7.4 usable without support) (`README.md`), so the site can move to a supported PHP as well.
 - No license fee after the switch (`README.md`).
 
 ## Your starting point

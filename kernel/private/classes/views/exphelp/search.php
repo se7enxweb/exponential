@@ -21,7 +21,7 @@
  * help_types, help_pager (prev, next: addresses or false; from, to, total, pages: list of array( number, url,
  * current )), help_i18n_json.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

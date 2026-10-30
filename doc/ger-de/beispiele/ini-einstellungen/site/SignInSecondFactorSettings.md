@@ -19,15 +19,15 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Handlers
 
-> The second sign-in step on the paths that check a password without the web login form:  
-> the REST interface with basic authentication, WebDAV, SOAP and the expservices login.  
-> A two-step sign-in extension (sevenx\_authentication\_2fa) adds its class here; it then  
-> decides whether a password alone is enough for an account, and which app passwords  
-> (made by the user on the extension's setup page) sign in instead. Without a class  
-> nothing changes. Console commands are never asked.  
-> Guide: doc/eng-us/features/6.0/second-factor-on-other-sign-in-paths.md  
+> Der zweite Anmeldeschritt auf den Pfaden, die ein Passwort ohne das Web-Anmeldeformular prüfen:  
+> die REST-Schnittstelle mit Basic-Authentifizierung, WebDAV, SOAP und die expservices-Anmeldung.  
+> Eine Erweiterung für die zweistufige Anmeldung (sevenx\_authentication\_2fa) fügt hier ihre Klasse hinzu; sie  
+> entscheidet dann, ob ein Passwort allein für ein Konto genügt, und welche App-Passwörter  
+> (vom Benutzer auf der Setup-Seite der Erweiterung erzeugt) stattdessen zur Anmeldung dienen. Ohne eine Klasse  
+> ändert sich nichts. Konsolenbefehle werden nie gefragt.  
+> Anleitung: doc/eng-us/features/6.0/second-factor-on-other-sign-in-paths.md  
 >
-> Classes implementing expSignInSecondFactorHandler (the extension's settings add theirs).  
+> Klassen, die expSignInSecondFactorHandler implementieren (die Einstellungen der Erweiterung fügen ihre hinzu).  
 
 Standard: eine leere Liste.
 
@@ -42,8 +42,8 @@ Handlers[]
 
 ## CodeHeader
 
-> The request header that carries the code of an authenticator app, where the extension  
-> accepts one (the expservices login also reads the POST field otp).  
+> Der Request-Header, der den Code einer Authenticator-App trägt, wo die Erweiterung  
+> einen akzeptiert (die expservices-Anmeldung liest auch das POST-Feld otp).  
 
 Standard: `X-Exp-OTP`.
 

@@ -3,7 +3,7 @@ title: Dekorierer / Filter
 audience: developer
 category: standards
 order: 331
-summary: "Umhüllt ein Objekt oder einen Wert, um Verhalten hinzuzufügen, und behält dabei seine Schnittstelle: Ausgabefilter, Eingabefilter, Vor- und Nachverarbeiter. 62 Instanzen in Exponential."
+summary: "Umhüllt ein Objekt oder einen Wert, um Verhalten hinzuzufügen, und behält dabei seine Schnittstelle: Ausgabefilter, Eingabefilter, Vor- und Nachverarbeiter. 64 Instanzen in Exponential."
 keywords: Entwurfsmuster, Dekorierer, Struktur, Musterkatalog, design pattern, decorator, pattern catalogue
 type: catalogue
 ---
@@ -15,10 +15,10 @@ type: catalogue
 
 Umhüllt ein Objekt oder einen Wert, um Verhalten hinzuzufügen, und behält dabei seine Schnittstelle: Ausgabefilter, Eingabefilter, Vor- und Nachverarbeiter.
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Struktur |
-| Instanzen | 62 |
+| Instanzen | 64 |
 | Erkannt an | Der Klassenname enthält Decorator oder Filter. |
 
 ## Klassen nach Bereich
@@ -35,6 +35,14 @@ Umhüllt ein Objekt oder einen Wert, um Verhalten hinzuzufügen, und behält dab
 | `CjwNewsletterFilterTypeEmail` | class extends CjwNewsletterFilterType | `extension/cjw_newsletter/classes/filtertypes/cjwnewsletterfiltertypeemail.php:19` | Klassenbeschreibung hier | extension/cjw_newsletter/settings/cjw_newsletter.ini [NewsletterFilterSettings] AvailableFilterTypeClassArray[] |
 | `CjwNewsletterFilterTypeSalutation` | class extends CjwNewsletterFilterType | `extension/cjw_newsletter/classes/filtertypes/cjwnewsletterfiltertypesalutation.php:19` | Klassenbeschreibung hier | extension/cjw_newsletter/settings/cjw_newsletter.ini [NewsletterFilterSettings] AvailableFilterTypeClassArray[] |
 | `CjwNewsletterListFilter` | class | `extension/cjw_newsletter/extendedattributefilter/cjwnewsletterlistfilter.php:29` | Dieser Filter erlaubt es, alle Listen nach einem bestimmten Siteaccess abzurufen; reserviertes Wort „current_siteaccess“ == aktuellen Siteaccess nehmen, um den Parameter siteaccess abzugleichen… | extension/cjw_newsletter/settings/extendedattributefilter.ini [CjwNewsletterListFilter] ClassName |
+
+### extension/explayouts_content_browser_core (1)
+
+[Alle Muster von extension/explayouts_content_browser_core](bereich-extension-explayouts-content-browser-core.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expLayoutsContentBrowserCoreSearchFilter` | class | `extension/explayouts_content_browser_core/classes/explayoutscontentbrowsercoresearchfilter.php:10` | Der erweiterte Attributfilter der Suche des Content-Browsers (extendedattributefilter.ini [explayouts_content_browser_search]): jedes Wort muss in… | extension/explayouts_content_browser_core/settings/extendedattributefilter.ini [explayouts_content_browser_search] ClassName |
 
 ### extension/expsite_api (1)
 
@@ -77,6 +85,14 @@ Umhüllt ein Objekt oder einen Wert, um Verhalten hinzuzufügen, und behält dab
 | `eZIEImageFilterBW` | class extends eZIEImageAction | `extension/ezie/classes/image_filter_bw.php:12` | – | – |
 | `eZIEImageFilterContrast` | class extends eZIEImageAction | `extension/ezie/classes/image_filter_contrast.php:11` | – | – |
 | `eZIEImageFilterSepia` | class extends eZIEImageAction | `extension/ezie/classes/image_filter_sepia.php:11` | – | – |
+
+### extension/ezodf (1)
+
+[Alle Muster von extension/ezodf](bereich-extension-ezodf.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expOdfFilterCatalogue` | class | `extension/ezodf/classes/converter/expodffiltercatalogue.php:16` | Die Import- und Exportfilter einer LibreOffice-Installation, gelesen aus ihren Dateien share/registry/*.xcd (die Filters und Types der Typerkennung), damit… | – |
 
 ### extension/ezprestapi (1)
 
@@ -151,8 +167,8 @@ Umhüllt ein Objekt oder einen Wert, um Verhalten hinzuzufügen, und behält dab
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
-| `expApiKeyAuthFilter` | class extends ezcAuthenticationFilter | `kernel/private/rest/classes/auth/apikey_auth_filter.php:19` | Authentifizierungsfilter für einen persönlichen API-Schlüssel (expApiKey), vorgelegt als „Authorization: Bearer expk_...“ (doc/eng-us/guides/api-keys.md, „How the REST layer r… | – |
-| `expRestPasswordAuthFilter` | class extends ezcAuthenticationFilter | `kernel/private/rest/classes/auth/password_auth_filter.php:19` | Prüft Login und Passwort für die Basic-Authentifizierung der REST-Schnittstelle so, wie es die Anmeldung tut. | – |
+| `expApiKeyAuthFilter` | class extends ezcAuthenticationFilter | `kernel/private/rest/classes/auth/apikey_auth_filter.php:19` | Authentifizierungsfilter für einen persönlichen API-Schlüssel (expApiKey), übergeben als „Authorization: Bearer expk_...“ (doc/eng-us/guides/api-keys.md, „How the REST… | – |
+| `expRestPasswordAuthFilter` | class extends ezcAuthenticationFilter | `kernel/private/rest/classes/auth/password_auth_filter.php:23` | Prüft Login und Passwort für die Basic-Authentifizierung der REST-Schnittstelle so, wie es die Anmeldung tut. | – |
 | `ezpAsynchronousPublishingFilter` | abstract class | `kernel/private/classes/ezpasynchronouspublishingfilter.php:24` | Diese Schnittstelle dient zum Erstellen von Annahme-/Ablehnungsfiltern für die Funktion Asynchronous Publishing; jede Filterklasse muss die Methode accept() imp… | – |
 | `ezpAsynchronousPublishingFilterInterface` | interface | `kernel/private/interfaces/asynchronouspublishingfilter.php:17` | Basisschnittstelle für Filterklassen von eZ Asynchronous Publishing | – |
 | `ezpMobileDeviceDetectFilter` | class | `kernel/private/classes/ezpmobiledevicedetectfilter.php:12` | – | – |

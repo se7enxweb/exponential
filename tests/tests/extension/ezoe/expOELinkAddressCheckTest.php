@@ -16,7 +16,7 @@
  *  LA-05 - Through the parser: the input is invalid, the link loses its address, the message names it; a link to an
  *          anchor keeps the input valid (a kept address is registered in the database, so it is not parsed here)
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

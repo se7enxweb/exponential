@@ -17,11 +17,12 @@ an index of their own: [Extensions, themes and packages](extensions/README.md). 
 > test the site. The same rules for other servers: [nginx](../../examples/web-servers/nginx.md), [LiteSpeed](../../examples/web-servers/litespeed.md),
 > [Caddy](../../examples/web-servers/caddy.md), [IIS](../../examples/web-servers/iis.md), [Velocity](../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../../help/hosting/panels/plesk.md), [cPanel](../../help/hosting/panels/cpanel.md), [DirectAdmin](../../help/hosting/panels/directadmin.md), [ISPConfig](../../help/hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../guides/litespeed-page-cache.md).
 
 ## Start here: Velocity is part of Exponential 6.0.15
 
 As of 6.0.15 the Velocity Internet / Web Application Server is part of Exponential: the root `composer.json` requires
-`se7enxweb/exponential-velocity ~0.0.4.57`, so every installation has it, on PHP 8.0 and later. It marks a turning
+`se7enxweb/exponential-velocity ~0.0.4.57` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later), so every installation has it, on PHP 8.0 and later. It marks a turning
 point, a cornerstone and a capstone for the project: a new level of application system integration, with even greater
 features out of the box in the core product, by default. Exponential is one working stack (server, rapid application
 development platform, CMS, digital experience and e-commerce), not just a framework. Read
@@ -128,6 +129,13 @@ nginx with PHP-FPM keep working as before.
   [troubleshooting and FAQ](../../guides/twig-templates-troubleshooting.md),
   [writing operators and functions](../../guides/twig-templates-plugins.md),
   [security and escaping](../../guides/twig-templates-security.md),
+  [writing Twig-native templates](../../guides/twig-templates-native.md),
+  [recipes](../../guides/twig-templates-recipes.md),
+  [debugging](../../guides/twig-templates-debugging.md),
+  [Twig in your editor](../../guides/twig-templates-editors.md),
+  [versions, upgrades and compatibility](../../guides/twig-templates-compatibility.md),
+  [speed of the three template engines](../../guides/template-engines-speed.md),
+  [templates side by side](../../help/template-language/tpl-twig-smarty-side-by-side.md),
   [the three template engines compared](../../guides/template-engines.md)
 - [Debug output you can read at a glance and style](debug-output-improvements.md)
 - [The Exp Debug bar](exp-debug-bar.md)

@@ -12,7 +12,7 @@
  * A run takes <LogDir>/.cron.lock, so two runs never overlap; the day of the last daily run is in
  * <LogDir>/.cron-daily.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -47,8 +47,8 @@ klare Begründung und mehrere Runden der Prüfung; eine Option ist besser als ei
 4. Öffnen Sie einen Pull-Request ([Pull-Requests an fremde Themes](pull-requests-an-fremde-themes.md)). Eine Änderung an Exponential
    selbst, einschließlich der Templates und Designs des Kernels, wird erst zusammengeführt, wenn Sie das Contributor
    Licensing Agreement unterzeichnet haben, das 7x und die Exponential Foundation für jeden Beitrag zum Kernel verlangen.
-   **Mit der Unterzeichnung und Einreichung übertragen Sie das Urheberrecht an Ihrem Beitrag auf 7x, das dessen Eigentümer
-   wird, und geben die Kontrolle darüber ab:** 7x darf ihn auf jede Weise nutzen, ändern, neu lizenzieren und verbreiten,
+   **Mit der Unterzeichnung und Einreichung übertragen Sie das Urheberrecht an Ihrem Beitrag auf die Exponential Foundation und 7x, die dessen Eigentümer
+   werden, und geben die Kontrolle darüber ab:** Die Exponential Foundation und 7x dürfen ihn auf jede Weise nutzen, ändern, neu lizenzieren und verbreiten,
    auch unter anderen Lizenzen und in kommerziellen Produkten, ohne Sie zu fragen oder zu bezahlen, und Sie können ihn
    nicht zurückziehen oder an Bedingungen knüpfen
    ([Übertragung des Urheberrechts (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)); Ihre eigenen Themes

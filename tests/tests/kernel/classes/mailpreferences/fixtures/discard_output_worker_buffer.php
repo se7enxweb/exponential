@@ -4,7 +4,7 @@
  * worker (Velocity) keeps one under the script, and one the page opened above it. MailPreferencesPage::discardOutput()
  * must return at once (it uses eZExecution::discardOutputBuffers()). The result goes to STDOUT directly (fwrite bypasses the output buffers) as JSON.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

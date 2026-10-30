@@ -18,6 +18,7 @@ merken.
 > Dieselben Regeln für andere Server: [nginx](../../beispiele/webserver/nginx.md), [LiteSpeed](../../beispiele/webserver/litespeed.md), [Caddy](../../beispiele/webserver/caddy.md), [IIS](../../beispiele/webserver/iis.md),
 > [Velocity](../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../../hilfe/hosting/control-panels/plesk.md), [cPanel](../../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../../hilfe/hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../anleitungen/seiten-cache-mit-litespeed.md).
 
 ## Kurz gesagt
 
@@ -31,7 +32,7 @@ merken.
 ## In einer Minute starten
 
 Führen Sie jeden Befehl aus dem Wurzelverzeichnis von Exponential aus, dem Verzeichnis, das `index.php`,
-`autoload.php` und `bin/` enthält. Sie brauchen PHP 8.0 oder neuer in Ihrem `$PATH` (`php -v`); die Befehle
+`autoload.php` und `bin/` enthält. Sie brauchen PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) in Ihrem `$PATH` (`php -v`); die Befehle
 `exp:velocity` laufen ebenfalls unter 8.0, wie Velocity ab seinem Release 0.0.4.54. Einige Unterskripte brauchen
 außerdem `curl` und `wget`; die Konsole selbst nicht.
 

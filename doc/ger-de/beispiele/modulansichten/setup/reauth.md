@@ -14,8 +14,10 @@ Eine Ansicht des Moduls `setup`, definiert in `kernel/setup/module.php` und ausg
 ## Adresse
 
 ```text
-/setup/reauth
+/setup/reauth/<SiteAccess>
 ```
+
+Geordnete Parameter, in dieser Reihenfolge nach dem Namen der Ansicht: `SiteAccess`.
 
 ## Wer sie öffnen darf
 
@@ -37,13 +39,13 @@ Eine Richtlinie auf `setup/*` (jede Funktion) erlaubt sie ebenfalls; Einschränk
 Ein Link in einem Template (`ezurl` ergänzt den Siteaccess und setzt die Adresse in Anführungszeichen); die Parameterwerte sind Platzhalter:
 
 ```tpl
-<a href={'/setup/reauth'|ezurl}>setup/reauth</a>
+<a href={'/setup/reauth/siteaccess'|ezurl}>setup/reauth</a>
 ```
 
 Aus PHP die Weiterleitung, die eine Ansicht nach getaner Arbeit gibt:
 
 ```php
-return $Module->redirectTo( '/setup/reauth' );
+return $Module->redirectTo( '/setup/reauth/siteaccess' );
 ```
 
 ## Siehe auch

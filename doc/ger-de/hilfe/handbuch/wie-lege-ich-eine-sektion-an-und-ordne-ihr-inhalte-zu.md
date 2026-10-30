@@ -71,7 +71,7 @@ die Sektion und klicken Sie auf **Setzen**.
 - [Sektionen](../../anleitungen/sektionen.md): jede Seite und Regel zu Sektionen im Detail
 - [Wie gebe ich einer Gruppe Bearbeitungsrechte nur für eine Sektion?](wie-gebe-ich-einer-gruppe-bearbeitungsrechte-fuer-eine-sektion.md)
 - [Wie richte ich einen Bereich nur für Mitglieder ein?](wie-richte-ich-einen-bereich-nur-fuer-mitglieder-ein.md)
-- [Sektionen, Rollen und Richtlinien](../../../eng-us/help/cms-developers/sections-roles-and-policies.md)
+- [Sektionen, Rollen und Richtlinien](../cms-entwickler/sektionen-rollen-und-richtlinien.md)
 - [Override nach Sektion](../designer/vorlagen/override-nach-sektion.md)
 - [Benutzerhandbuch](README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

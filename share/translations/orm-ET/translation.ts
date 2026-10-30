@@ -8066,8 +8066,8 @@
         <translation>Beeksisni mirga abbummaa barreessitoota jalqabaa fi sooftiweerii dhaabbilee biroo Exponential waliin dhufan, akka laayisansiin barbaadutti, faayilii maddaa fi faayilii LICENSE keessa eegamaniiru.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Kanatti aanu tarree gumaacha-tootaa Exponential kan hojii isaanii 7x tiif waliigaltee Laayisansii Gumaacha-tootaa eZ Systems jalatti kennaniidha. Akkuma waliigalteen kun hayyamu, 7x gumaacha hundaa laayisansii faayilii gumaachichi keessa jiruu wajjin tokkoon deebisee raabsa. Tarreen kun gumaacha-too hunda, odeeffannoo qunnamtii filannoo fi faayiloota isaan gumaachan yookiin hojii itti gumaachan tarreessa.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Gumaachitoota hojii isaanii Exponential fi sooftiweerii inni irraa maddee irratti hojjataniif galateeffaman, faayiloota isaan itti gumaachan waliin. Kun galata, beeksisa mirga abbummaa miti: gumaachi Exponential'iif godhamu Contributor Licensing Agreement jalatti Exponential Foundation fi 7x'iif dabarfama.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77281,6 +77281,82 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Furtuun seensaa mirkaneeffamuu hin dandeenye. Maaloo irra deebi'aa yaalaa.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Herregoonni furtuu seensaatiin qofa seenan asitti jecha icciitii fayyadamuu hin danda&apos;an: &quot;Furtuu seensaatiin seeni&quot; filadhaa.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Furtuuwwan seensaa %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Furtuuwwan seensaa herregni kun ittiin seenu. Kan meeshaa bade ykn hatame irra jiru dhorkaa: isa kanaan booda seenuu hin danda&apos;u. Kan haaraa abbaan herregaa ofii isaatii ida&apos;a.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Herregni keessan furtuu seensaa barbaada</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Herrega keessanitti furtuu seensaa ida&apos;aa</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Itti fufuuf furtuu seensaa ida&apos;aa. Achiis jecha icciitii qofaan osoo hin taane isaan seentu.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Furtuu seensaatiin seenuun jecha icciitii caalaa saffisaa fi nageenya qaba. Amma tokko ida&apos;aa, ykn isa malee itti fufaa.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Amma miti</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Furtuu seensaa &quot;%name&quot; dhorkuu?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Isa kanaan booda herrega kanatti seenuu hin danda&apos;u. Inni isa dhumaa yoo ture, abbaan herregaa jecha icciitiin seena, ykn isin jecha icciitii haaraa kaa&apos;attu.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Furtuu seensaa dhorki</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Dhorki</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Herregni kun furtuu seensaa hin qabu.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Mirkaneessaa</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Hin beekamu</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Furtuu seensaa keessan isa dhumaa: osoo hin baasin dura kan biraa ida&apos;aa.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Herregni kun furtuu seensaatiin qofa seena (imaammata furtuu seensaa): tokkollee yoo hin hafin, ammas jecha icciitii isaatiin seena.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Kun furtuu seensaa keessan isa dhumaa ti, herregni keessanis isa malee seenuu hin danda&apos;u. Dura furtuu seensaa biraa ida&apos;aa.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Furtuun seensaa &quot;%name&quot; dhorkameera. Isa kanaan booda herrega kanatti seenuu hin danda&apos;u.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77380,6 +77456,34 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>Code from your authenticator app</source>
         <translation>Koodii appii mirkaneessaa keessanii</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Daataa yeroo hundaaf haquuf ykn galmee tokko duwwaa gochuuf jirtu.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Jecha icciitii keessanii fi furtuu seensaa</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Jecha icciitii keessanii fi koodii appii mirkaneessaa keessanii</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Ykn:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Biraawzarri kun furtuu seensaa fayyadamuu hin danda&apos;u. Karaa biraa ykn biraawzara biraa fayyadamaa.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Yeroo itti fuftan, biraawzarri keessan furtuuwwan seensaa keessan keessaa tokko gaafata.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Furtuu seensaatiin itti fufi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77470,6 +77574,70 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>Setup</source>
         <translation>Qopheessa</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Jecha icciitii ofii, teessoo imeelii, furtuuwwan seensaa, seensa tarkaanfii lamaa, koodii deebisanii argachuu ykn furtuuwwan API jijjiiruu, fi meeshaalee ofii kan biroo irraa ba&apos;uu.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Fayyadamtoota, jecha icciitii fi meeshaalee isaanii, qindaa&apos;ina herregaa uumuu fi gulaaluu, herrega fayyadamtootaa haaraa raggaasisuu ykn diduu, gahee ramaduu fi imaammata gulaaluu.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Daataa haquu</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Kuusaa kosii duwwaa gochuu, wantoota isa keessaa baasuu fi wantoota hedduu yeroo tokkotti baasuu.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Qabiyyee baasuu, maxxansuu fi olkaa&apos;uu</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Qabiyyee baasuu (kuusaa kosiittis), maxxansuu fi wixinee olkaa&apos;uu; yeroo unkaan ergamu gaafatama. Durtiin cufaa dha.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Gocha miira qabeessa tokko dura, fayyadamaan seene eenyu akka ta&apos;e irra deebi&apos;ee mirkaneessa: jecha icciitii isaa fi furtuu seensaatiin, ykn furtuu seensaa malee jecha icciitii isaa fi koodii appii mirkaneessaa isaatiin. Fuulota weebii qofatu gaafata: walqunnamtiin REST, SOAP, WebDAV, seensi expservices fi sararri ajajaa gonkumaa hin gaafatan.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Bakka qindaa&apos;inni itti hojjetu</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Qindaa&apos;ina kanaaf</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Seensa marsariitii hunda</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Seensa marsariitii %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Bani</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Kan gaafatamu: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Miseensota isaanii qofa gaafachuuf garee fayyadamtootaa mallattoo godhaa (fakkeenyaaf gulaaltota). Homtuu yoo hin mallattoofne: fayyadamaa hunda.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php keessatti olkaa&apos;ameera, seensa marsariitii hundaaf. Olkaa&apos;uun isin akka taatan akka mirkaneessitan isin gaafata.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php keessatti olkaa&apos;ameera. Gatiin settings/override keessa jiru isa caala. Olkaa&apos;uun isin akka taatan akka mirkaneessitan isin gaafata.</translation>
     </message>
 </context>
 <context>
@@ -77826,6 +77994,30 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Herregni keessan cufameera</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Herrega keessan %login %site irratti furtuun seensaa ida&apos;ameera.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Namni furtuu seensaa kana qabu kamiyyuu jecha icciitii keessan malee herrega keessanitti seenuu danda&apos;a. Isin yoo hin ida&apos;in, Furtuuwwan darbii jalatti baasaatii jecha icciitii keessan jijjiiraa.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Herrega keessan %login %site irraa furtuun seensaa baafameera.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Isa kanaan booda herrega keessanitti seenuu hin danda&apos;u. Isin yoo hin baasin, furtuuwwan seensaa fi meeshaalee keessan ilaalaa.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Herrega keessanitti furtuun seensaa ida&apos;ameera</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Herrega keessan irraa furtuun seensaa baafameera</translation>
     </message>
 </context>
 <context>

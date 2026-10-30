@@ -8,7 +8,7 @@
  * The eZSys state earlier tests leave (access path, www directory, index file) is saved, cleared for each test
  * and restored, so the links are exact whatever runs before.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group lib

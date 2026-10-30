@@ -60,7 +60,7 @@ Stilprüfungen aus ([Qualitätsprüfungen](../../../funktionen/6.0/qualitaetspru
 
 - [Der PHP-Stack](README.md)
 - [Standards](../../../standards/README.md)
-- [Code beitragen](../../../../eng-us/help/community/contributing/contributing-code.md)
+- [Code beitragen](../../gemeinschaft/mitwirken/code-beitragen.md)
 - [Commit-Nachrichten](../../erweiterungsentwicklung/teil-5-erweitern-forken-zurueckgeben/commit-nachrichten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.
 

@@ -28,7 +28,7 @@ practice of developing an extension. Each point of it is still a good rule.
 ## Requirements and the environment
 
 Use the same versions as your live server: a feature that exists only in a newer PHP or database fails at deployment.
-Exponential 6 runs on PHP 8.0 to 8.5 (see [Getting started](../../guides/getting-started.md)), and each extension names its
+Exponential 6 runs on PHP 8.0 to 8.5 (PHP 7.4 usable without support) (see [Getting started](../../guides/getting-started.md)), and each extension names its
 own requirements in `composer.json`. Test early on the platform you will deploy to. A development installation that is a
 copy of live is the way ([Setting up a development installation](../extension-development/part-1-from-user-to-developer/setting-up-a-development-installation.md)).
 

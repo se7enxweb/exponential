@@ -23,7 +23,7 @@ Name `User management`, defined in `kernel/user/module.php`. 20 views.
 | [login](login.md) | `/user/login` | login |
 | [logout](logout.md) | `/user/logout` | login |
 | [megamenu](megamenu.md) | `/user/megamenu/<Tab>` | login |
-| [passkeys](passkeys.md) | `/user/passkeys` | login |
+| [passkeys](passkeys.md) | `/user/passkeys/<UserID>` | login |
 | [password](password.md) | `/user/password/<UserID>` | password |
 | [preferences](preferences.md) | `/user/preferences/<Function>/<Key>/<Value>` | login |
 | [register](register.md) | `/user/register/<redirect_number>` | register |

@@ -8,7 +8,7 @@
  * No database. The rules are injected into site.ini (eZINI::injectSettings(), put back in tearDown()) for
  * siteaccesses that do not exist (k1-*), and the request is $_SERVER over HTTPS.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group kernel

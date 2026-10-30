@@ -10,7 +10,7 @@
  *  US-03 - The upgrade script: --dry-run changes nothing, rows that exist are never changed (apply() checks again),
  *          the user cache is purged for each row
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

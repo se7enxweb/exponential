@@ -8005,8 +8005,8 @@
         <translation>Οι σημειώσεις πνευματικών δικαιωμάτων των αρχικών δημιουργών και του λογισμικού τρίτων που περιλαμβάνεται στο Exponential διατηρούνται στα αρχεία πηγαίου κώδικα και στο αρχείο LICENSE, όπως απαιτεί η άδεια χρήσης.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Ακολουθεί λίστα των συνεισφερόντων του Exponential που έχουν παραχωρήσει άδεια χρήσης του έργου τους στην 7x σύμφωνα με τους όρους και τις προϋποθέσεις της συμφωνίας eZ Systems Contributor Licensing Agreement. Όπως επιτρέπει η συμφωνία αυτή, η 7x αναδιανέμει κάθε συνεισφορά με την ίδια άδεια χρήσης με το αρχείο στο οποίο περιλαμβάνεται η συνεισφορά. Η λίστα αναφέρει κάθε συνεισφέροντα, προαιρετικά στοιχεία επικοινωνίας και τα αρχεία στα οποία συνεισέφερε.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Συνεισφέροντες που αναγνωρίζονται για τη δουλειά τους στο Exponential και στο λογισμικό από το οποίο προήλθε, με τα αρχεία στα οποία συνεισέφεραν. Πρόκειται για αναγνώριση, όχι για σημείωμα πνευματικών δικαιωμάτων: οι συνεισφορές στο Exponential εκχωρούνται στο Exponential Foundation και στην 7x βάσει του Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77279,6 +77279,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Δεν ήταν δυνατός ο έλεγχος του κλειδιού πρόσβασης. Δοκιμάστε ξανά.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Οι λογαριασμοί που συνδέονται μόνο με κλειδιά πρόσβασης δεν μπορούν να χρησιμοποιήσουν κωδικό πρόσβασης εδώ: επιλέξτε «Σύνδεση με κλειδί πρόσβασης».</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Κλειδιά πρόσβασης του %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Τα κλειδιά πρόσβασης με τα οποία συνδέεται αυτός ο λογαριασμός. Ανακαλέστε όποιο βρίσκεται σε συσκευή που χάθηκε ή κλάπηκε: δεν θα μπορεί πλέον να συνδεθεί. Ο κάτοχος προσθέτει μόνος του νέα.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Ο λογαριασμός σας χρειάζεται κλειδί πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Προσθέστε ένα κλειδί πρόσβασης στον λογαριασμό σας</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Προσθέστε ένα κλειδί πρόσβασης για να συνεχίσετε. Στη συνέχεια θα συνδέεστε με αυτό αντί μόνο με κωδικό πρόσβασης.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Η σύνδεση με κλειδί πρόσβασης είναι ταχύτερη και ασφαλέστερη από έναν κωδικό πρόσβασης. Προσθέστε ένα τώρα ή συνεχίστε χωρίς αυτό.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Όχι τώρα</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Ανάκληση του κλειδιού πρόσβασης «%name»;</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Δεν θα μπορεί πλέον να συνδεθεί σε αυτόν τον λογαριασμό. Αν ήταν το τελευταίο, ο κάτοχος συνδέεται με τον κωδικό πρόσβασης ή ορίζετε εσείς νέο.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Ανάκληση κλειδιού πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Ανάκληση</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Αυτός ο λογαριασμός δεν έχει κλειδί πρόσβασης.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Πρόγραμμα ελέγχου ταυτότητας</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Άγνωστο</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Το τελευταίο σας κλειδί πρόσβασης: προσθέστε άλλο πριν το αφαιρέσετε.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Αυτός ο λογαριασμός συνδέεται μόνο με κλειδιά πρόσβασης (πολιτική κλειδιών πρόσβασης): όταν δεν μένει κανένα, συνδέεται ξανά με τον κωδικό πρόσβασής του.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Αυτό είναι το τελευταίο σας κλειδί πρόσβασης και ο λογαριασμός σας δεν μπορεί να συνδεθεί χωρίς κλειδί. Προσθέστε πρώτα άλλο κλειδί πρόσβασης.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Το κλειδί πρόσβασης «%name» ανακλήθηκε. Δεν μπορεί πλέον να συνδεθεί σε αυτόν τον λογαριασμό.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77378,6 +77454,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>Κωδικός από την εφαρμογή ελέγχου ταυτότητας</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Πρόκειται να διαγράψετε οριστικά δεδομένα ή να εκκαθαρίσετε ένα αρχείο καταγραφής.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Ο κωδικός πρόσβασής σας και ένα κλειδί πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Ο κωδικός πρόσβασής σας και ένας κωδικός από την εφαρμογή ελέγχου ταυτότητας</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Ή:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Αυτό το πρόγραμμα περιήγησης δεν μπορεί να χρησιμοποιήσει κλειδιά πρόσβασης. Χρησιμοποιήστε άλλον τρόπο ή άλλο πρόγραμμα περιήγησης.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Όταν συνεχίσετε, το πρόγραμμα περιήγησης θα ζητήσει ένα από τα κλειδιά πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Συνέχεια με κλειδί πρόσβασης</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77468,6 +77572,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>Ρυθμίσεις συστήματος</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Αλλαγή του δικού σας κωδικού πρόσβασης, διεύθυνσης e-mail, κλειδιών πρόσβασης, σύνδεσης σε δύο βήματα, κωδικών ανάκτησης ή κλειδιών API και αποσύνδεση των άλλων συσκευών σας.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Δημιουργία και επεξεργασία χρηστών, των κωδικών πρόσβασης και των συσκευών τους, ρυθμίσεις λογαριασμών, έγκριση ή απόρριψη νέων λογαριασμών χρηστών, ανάθεση ρόλων και επεξεργασία πολιτικών.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Διαγραφή δεδομένων</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Άδειασμα του κάδου απορριμμάτων, αφαίρεση στοιχείων από αυτόν και αφαίρεση πολλών στοιχείων μαζί.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Αφαίρεση, δημοσίευση και αποθήκευση περιεχομένου</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Αφαίρεση περιεχομένου (και στον κάδο απορριμμάτων), δημοσίευση και αποθήκευση προσχεδίου· ζητείται κατά την υποβολή της φόρμας. Απενεργοποιημένο από προεπιλογή.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Πριν από μια ευαίσθητη ενέργεια, ένας συνδεδεμένος χρήστης επιβεβαιώνει ξανά την ταυτότητά του: με τον κωδικό πρόσβασής του και ένα κλειδί πρόσβασης ή, χωρίς κλειδί πρόσβασης, με τον κωδικό πρόσβασής του και τον κωδικό της εφαρμογής ελέγχου ταυτότητας. Ρωτούν μόνο οι ιστοσελίδες: η διασύνδεση REST, το SOAP, το WebDAV, η σύνδεση expservices και η γραμμή εντολών δεν ρωτούν ποτέ.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Πού ισχύουν οι ρυθμίσεις</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Ρυθμίσεις για</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Κάθε πρόσβαση ιστότοπου</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Πρόσβαση ιστότοπου %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Άνοιγμα</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Ποιοι ερωτώνται: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Επιλέξτε ομάδες χρηστών για να ερωτώνται μόνο τα μέλη τους (για παράδειγμα, οι συντάκτες). Καμία επιλογή: κάθε χρήστης.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Αποθηκεύεται στο settings/override/site.ini.append.php, για κάθε πρόσβαση ιστότοπου. Κατά την αποθήκευση θα σας ζητηθεί να επιβεβαιώσετε την ταυτότητά σας.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Αποθηκεύεται στο settings/siteaccess/%name/site.ini.append.php. Μια τιμή στο settings/override υπερισχύει. Κατά την αποθήκευση θα σας ζητηθεί να επιβεβαιώσετε την ταυτότητά σας.</translation>
     </message>
 </context>
 <context>
@@ -77856,6 +78024,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>Ο λογαριασμός σας κλειδώθηκε</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Προστέθηκε ένα κλειδί πρόσβασης στον λογαριασμό σας %login στο %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Όποιος έχει αυτό το κλειδί πρόσβασης μπορεί να συνδεθεί στον λογαριασμό σας χωρίς τον κωδικό πρόσβασής σας. Αν δεν το προσθέσατε εσείς, αφαιρέστε το στα Κλειδιά πρόσβασης και αλλάξτε τον κωδικό πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Αφαιρέθηκε ένα κλειδί πρόσβασης από τον λογαριασμό σας %login στο %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Δεν μπορεί πλέον να συνδεθεί στον λογαριασμό σας. Αν δεν το αφαιρέσατε εσείς, ελέγξτε τα κλειδιά πρόσβασης και τις συσκευές σας.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Προστέθηκε ένα κλειδί πρόσβασης στον λογαριασμό σας</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Αφαιρέθηκε ένα κλειδί πρόσβασης από τον λογαριασμό σας</translation>
     </message>
 </context>
 <context>

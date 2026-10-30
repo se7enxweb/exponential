@@ -2,14 +2,14 @@
 title: exp:services
 audience: developer, admin
 category: examples
-summary: Compile, list, show and check the kernel service container (verbs compile, list, show, check).
+summary: Kompiliert, listet, zeigt und prüft den Service-Container des Kernels (Verben compile, list, show, check).
 keywords: Konsole, Befehl, exp:services, services, console, command, CLI, services.php, exp:services:compile, exp:services:list, exp:services:show, exp:services:check
 type: generated
 generated: exp:help:examples
 ---
 # exp:services
 
-Compile, list, show and check the kernel service container (verbs compile, list, show, check).
+Kompiliert, listet, zeigt und prüft den Service-Container des Kernels (Verben compile, list, show, check).
 
 Skript `bin/php/services.php`, Code in `kernel/private/classes/commands/services.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -43,8 +43,8 @@ The service container of the kernel (settings/kernelservices.ini) and its compil
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--json` |  | Das Ergebnis als JSON ausgeben. |
-| `--tag` | erforderlich | list: only the services with this tag. |
-| `--only` | erforderlich | compile: only these siteaccesses (comma separated); the files of the others are kept. |
+| `--tag` | erforderlich | list: nur die Services mit diesem Tag. |
+| `--only` | erforderlich | compile: nur diese Siteaccesses (durch Kommas getrennt); die Dateien der anderen bleiben erhalten. |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

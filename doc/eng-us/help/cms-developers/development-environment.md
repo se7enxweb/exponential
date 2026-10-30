@@ -28,7 +28,7 @@ has every detail; this page is the CMS developer's summary with the project arou
 
 ## What you need
 
-PHP 8.0 or later with the extensions the root `composer.json` requires (dom, mbstring, json, iconv, simplexml and
+PHP 8.0 or later (PHP 7.4 usable without support) with the extensions the root `composer.json` requires (dom, mbstring, json, iconv, simplexml and
 others; SQLite 3 for the default database, GD or ImageMagick for images), Composer and Git
 ([Tools you need](../extension-development/part-1-from-user-to-developer/tools-you-need.md),
 [Requirements](../../install/02-requirements.md)).
@@ -121,7 +121,7 @@ belong in packages in that repository ([Creating a content class](creating-a-con
 
 | Symptom | Check |
 |---|---|
-| `composer install` stops with a PHP version error | `php -v`; Exponential 6 needs PHP 8.0 or later |
+| `composer install` stops with a PHP version error | `php -v`; Exponential 6 needs PHP 8.0 or later (PHP 7.4 usable without support) |
 | A blank page | `var/log/error.log` and the PHP error log |
 | A template change has no effect | `TemplateCompile`, the template and override caches |
 | A new class is not found | `php bin/php/ezpgenerateautoloads.php -e`, then clear the caches and restart the server |

@@ -18,6 +18,7 @@ site and what to do afterwards. For what Exponential is and how it is served, re
 > test the site. The same rules for other servers: [nginx](examples/web-servers/nginx.md), [LiteSpeed](examples/web-servers/litespeed.md),
 > [Caddy](examples/web-servers/caddy.md), [IIS](examples/web-servers/iis.md), [Velocity](examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](help/hosting/panels/plesk.md), [cPanel](help/hosting/panels/cpanel.md), [DirectAdmin](help/hosting/panels/directadmin.md), [ISPConfig](help/hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](guides/litespeed-page-cache.md).
 
 Every command is run from the installation root: the directory that holds `index.php`, `autoload.php`, `bin/`
 and `settings/`. The command console is `bin/php/console`. Many installations add a shortcut to it in the root
@@ -88,8 +89,8 @@ every extension a clone you can follow, change and contribute back from.
 
 | | |
 |---|---|
-| Version | **PHP 8.0 to 8.5**. `composer.json` declares `^8.0` (and accepts later 8.x). PHP 8.0 is the oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 (and AlmaLinux 9, Rocky Linux 9) runs Exponential under Apache, PHP-FPM or Velocity. Use the newest PHP your system offers. See [PHP 8.0 support](bc/6.0/php-8.0-support.md). |
-| Exponential Velocity | part of Exponential as of 6.0.15: `composer.json` requires `se7enxweb/exponential-velocity ~0.0.4.57`, so `composer install` installs it ([Velocity is part of Exponential 6.0.15](help/velocity-is-part-of-exponential-6-0-15.md)). It runs on **PHP 8.0 to 8.5** from its release 0.0.4.54 (until then it needed 8.1), with the `sockets` extension (`pcntl` and `openssl` for the worker pool and HTTPS). On RHEL 9 the stock PHP 8.0 runs it; see [PHP 8.0 support](bc/6.0/php-8.0-support.md#exponential-velocity-on-php-80). |
+| Version | **PHP 8.0 to 8.5**. `composer.json` declares `^7.4 || ^8.0` (and accepts later 8.x). PHP 8.0 is the oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 (and AlmaLinux 9, Rocky Linux 9) runs Exponential under Apache, PHP-FPM or Velocity. Use the newest PHP your system offers. See [PHP 8.0 support](bc/6.0/php-8.0-support.md). |
+| Exponential Velocity | part of Exponential as of 6.0.15: `composer.json` requires `se7enxweb/exponential-velocity ~0.0.4.57` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later), so `composer install` installs it ([Velocity is part of Exponential 6.0.15](help/velocity-is-part-of-exponential-6-0-15.md)). It runs on **PHP 8.0 to 8.5** from its release 0.0.4.54 (until then it needed 8.1), with the `sockets` extension (`pcntl` and `openssl` for the worker pool and HTTPS). On RHEL 9 the stock PHP 8.0 runs it; see [PHP 8.0 support](bc/6.0/php-8.0-support.md#exponential-velocity-on-php-80). |
 | Release tags | `v6.0.8` to `v6.0.14` require PHP 8.1; on PHP 8.0 install the 6.0.15 line (`dev-main`, which Composer also knows as `6.0.x-dev`) until its tag is published. |
 | 64-bit PHP | needed for more than 30 languages (`composer.json`, `suggest`). |
 | `memory_limit` | at least `64M` (setup check `memory_limit`). Restart the web server or PHP-FPM after editing `php.ini`. |
@@ -132,7 +133,7 @@ The names are the aliases in `settings/site.ini`, block `[DatabaseSettings]`, `I
 server versions the wizard checks are in `kernel/setup/ezsetupcommon.php` (MySQL 4.1.1, PostgreSQL 8.0, SQLite
 3.0.1, MongoDB 4.0, Oracle 19); the practical minimums the current drivers need are higher (SQLite 3.33, PostgreSQL 13,
 MongoDB 6.0), see [Database support](help/database-support.md#versions-checked-against-the-code). Exponential runs on
-almost any operating system with PHP 8.0 or later: see [Operating system support](help/os-support.md).
+almost any operating system with PHP 8.0 or later (PHP 7.4 usable without support): see [Operating system support](help/os-support.md).
 
 ### Web server
 

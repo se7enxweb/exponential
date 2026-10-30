@@ -44,7 +44,7 @@ Fixed
 Updated
 - The context menu entries carry no inline handlers, so they work under a Content Security Policy.
 
-Requires: Exponential 6.0.15 or later, PHP 8.0 or later.
+Requires: Exponential 6.0.15 or later, PHP 8.0 or later (PHP 7.4 usable without support).
 Install or update: composer require your-account/myext:^1.2
 ```
 

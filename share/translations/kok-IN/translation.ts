@@ -8066,8 +8066,8 @@
         <translation>मूळ लेखकांचीं आनी Exponential वांगडा दिल्ल्या तिसर्‍या पक्षाच्या सॉफ्टवेअराचीं कॉपीराइट सूचणा परवान्यांत सांगिल्ल्याप्रमाणें सोर्स फायलींत आनी LICENSE फायलींत सांबाळ्ळ्यांत.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>सकयली यादी, eZ Systems Contributor Licensing Agreement च्या अटींप्रमाणें 7x कडेन वापरपाखातीर आपलें काम परवान्यान दिल्ल्या Exponential च्या योगदान दिवप्यांची आसा. ह्या कराराक अनुसरून, 7x दर योगदान जे फायलींत तें आसा तितल्याच परवान्याखाला परत वितरीत करता. ह्या यादींत दर योगदान दिवप्याचें नांव, ऐच्छीक संपर्क म्हायती आनी तांणी योगदान दिल्ल्यो वा काम केल्ल्यो फायली दिल्यात.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential आनी तें जाचेंतल्यान वाडलें त्या सॉफ्टवेअराचेर केल्ल्या वावराखातीर श्रेय मेळपी योगदानकार, तांणी योगदान दिल्ल्या फायलींसकट. हें श्रेय, कॉपीराइट सूचना न्हय: Exponential क दिल्लें योगदान Contributor Licensing Agreement खाला Exponential Foundation आनी 7x हांकां सोंपतात.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77281,6 +77281,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>पासकी तपासूंक जाली ना. कृपया परत यत्न करात.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>फकत पासकी वरवीं साइन इन करपी खातीं हांगा पासवर्ड वापरूंक शकनात: “पासकी वरवीं साइन इन करात” वेंचात.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login हाच्यो पासकी</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>हें खातें ज्यो पासकी वापरून साइन इन करता त्यो. हारशिल्ल्या वा चोरिल्ल्या उपकरणाचेर आशिल्ली पासकी रद्द करात: तिचे वरवीं परत साइन इन जावंक शकचें ना. मालक नव्यो पासकी स्वता जोडटा.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>तुमच्या खात्याक पासकीची गरज आसा</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>तुमच्या खात्याक पासकी जोडात</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>फुडें वचपाक पासकी जोडात. उपरांत तुमी फकत पासवर्डा बदला तिचे वरवीं साइन इन करतले.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>पासकी वरवीं साइन इन करप पासवर्डापरस बेगीन आनी चड सुरक्षीत आसा. आतां एक जोडात, वा तिचेबगर फुडें वचात.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>आतां न्हय</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>पासकी “%name” रद्द करची?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>तिचे वरवीं ह्या खात्यांत परत साइन इन जावंक शकचें ना. ती निमणी आशिल्ली जाल्यार, मालक पासवर्डान साइन इन करता, वा तुमी नवो पासवर्ड सेट करतात.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>पासकी रद्द करात</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>रद्द करात</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>ह्या खात्याक एकूय पासकी ना.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>प्रमाणक</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>अज्ञात</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>तुमची निमणी पासकी: ती काडचे पयलीं आनीक एक जोडात.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>हें खातें फकत पासकी वरवीं साइन इन करता (पासकी धोरण): एकूय उरली ना जाल्यार, तें परत आपल्या पासवर्डान साइन इन करता.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>ही तुमची निमणी पासकी आनी तिचेबगर तुमचें खातें साइन इन करूंक शकना. पयलीं आनीक एक पासकी जोडात.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>पासकी “%name” रद्द केल्या. तिचे वरवीं ह्या खात्यांत परत साइन इन जावंक शकना.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77380,6 +77456,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>तुमच्या ऑथेंटिकेटर ॲपांतलो कोड</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>तुमी डेटा कायमचो फाटोवपाचो वा लॉग रिकामो करपाचो आसा.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>तुमचो पासवर्ड आनी एक पासकी</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>तुमचो पासवर्ड आनी तुमच्या प्रमाणक अॅपांतलो कोड</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>वा:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>हो ब्राउझर पासकी वापरूंक शकना. दुसरी पद्दत वा दुसरो ब्राउझर वापरात.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>तुमी फुडें वचतकच, तुमचो ब्राउझर तुमच्या पासकींतली एक मागतलो.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>पासकी वरवीं फुडें वचात</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77470,6 +77574,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>सेटअप</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>आपलो पासवर्ड, ईमेल पत्तो, पासकी, दोन-पावलांचें साइन इन, परतून मेळोवपाचे कोड वा API कीज बदलप, आनी आपल्या हेर उपकरणांतल्यान साइन आउट करप.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>वापरपी तयार करप आनी संपादीत करप, तांचे पासवर्ड आनी उपकरणां, खात्याच्यो सेटिंग्ज, नवीं वापरपी खातीं मान्य वा नामान्य करप, भूमिका दिवप आनी धोरणां संपादीत करप.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>डेटा फाटोवप</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>कचरेपेटी रिकामी करप, तिचेंतल्यान वस्तू काडप आनी एकाच वेळार जायत्यो वस्तू काडप.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>आशय काडप, प्रकाशीत करप आनी जतन करप</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>आशय काडप (कचरेपेटयेंतूय), प्रकाशीत करप आनी मसुदो जतन करप; फॉर्म धाडटना विचारतात. मूळ स्थितींत बंद.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>संवेदनशील कृती पयलीं, साइन इन केल्लो वापरपी आपूण कोण तें परत थारायता: आपल्या पासवर्डान आनी पासकी वरवीं, वा पासकी नासल्यार आपल्या पासवर्डान आनी आपल्या प्रमाणक अॅपाच्या कोडान. फकत वॅब पानां विचारतात: REST इंटरफेस, SOAP, WebDAV, expservices लॉगिन आनी कमांड लायन केन्नाच विचारिनात.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>सेटिंग्ज खंय लागू जातात</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>हाचे खातीर सेटिंग्ज</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>दरेक साइटअॅक्सेस</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>फकत साइटअॅक्सेस %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>उकतें करात</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>कोणाक विचारतात: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>फकत तांच्या वांगड्यांक विचारपाक वापरपी गटांचेर खूण करात (देखीक, संपादक). खंयच्याच गटाचेर खूण ना: दरेक वापरपी.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>दरेक साइटअॅक्सेसा खातीर settings/override/site.ini.append.php हातूंत जतन केलें. जतन करतना तुमीच आसात हें थारावपाक सांगतात.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php हातूंत जतन केलें. settings/override हातूंतल्या मोलाक ताचेर प्राधान्य आसा. जतन करतना तुमीच आसात हें थारावपाक सांगतात.</translation>
     </message>
 </context>
 <context>
@@ -77826,6 +77994,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>तुमचें खातें लॉक केलें</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site चेर तुमच्या %login खात्याक एक पासकी जोडल्या.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>ही पासकी कोणाकडेय आसल्यार तो तुमच्या पासवर्डाबगर तुमच्या खात्यांत साइन इन करूंक शकता. तुमी ती जोडूंक नाशिल्ल्यो जाल्यार, पासकी हाचे सकयल ती काडात आनी तुमचो पासवर्ड बदलात.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site चेर तुमच्या %login खात्यांतल्यान एक पासकी काडल्या.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>तिचे वरवीं तुमच्या खात्यांत परत साइन इन जावंक शकना. तुमी ती काडूंक नाशिल्ल्यो जाल्यार, तुमच्यो पासकी आनी उपकरणां तपासात.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>तुमच्या खात्याक एक पासकी जोडल्या</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>तुमच्या खात्यांतल्यान एक पासकी काडल्या</translation>
     </message>
 </context>
 <context>

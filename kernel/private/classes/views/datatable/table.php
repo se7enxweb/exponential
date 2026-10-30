@@ -5,7 +5,7 @@
  * tables, the table as the database has it (columns, rows), how the two differ, and the first rows. Columns whose
  * names say they hold a secret (password, hash, token, secret, key) are not shown. Policy datatable/read.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

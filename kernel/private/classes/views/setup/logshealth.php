@@ -6,7 +6,7 @@
  * to its line in the viewer, and the effective rotation settings of each log with where each one is set (read only).
  * Policy setup/logs. Nothing on the page changes a file.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

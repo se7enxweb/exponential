@@ -35,9 +35,9 @@ Enabled=enabled
 
 ## CachePhpBinary
 
-> The rows of help content are kept in var/<site>/cache/exphelp/content. A web request never reads every help object  
-> (an emptied cache): it starts "php bin/php/exphelpcontent.php cache -s <siteaccess>" in the background and shows no  
-> help content until that is done. The PHP command line binary for it; empty: found next to the running PHP.  
+> Die Zeilen der Hilfe-Inhalte liegen in var/<site>/cache/exphelp/content. Eine Web-Anfrage liest nie jedes Hilfe-Objekt  
+> (ein geleerter Cache): sie startet "php bin/php/exphelpcontent.php cache -s <siteaccess>" im Hintergrund und zeigt keine  
+> Hilfe-Inhalte, bis das fertig ist. Das PHP-Kommandozeilen-Binary dafür; leer: neben dem laufenden PHP gefunden.  
 
 Standard: leer.
 
@@ -51,7 +51,7 @@ CachePhpBinary=
 
 ## CacheSiteAccessList
 
-> The siteaccesses whose help cache exp:velocity deploy fills, besides those that have used it  
+> Die Siteaccesses, deren Hilfe-Cache exp:velocity deploy füllt, zusätzlich zu denen, die ihn genutzt haben  
 > (var/<site>/cache/exphelp/content/siteaccesses.json)  
 
 Standard: eine leere Liste.
@@ -82,10 +82,10 @@ ParentNode=media
 
 ## Audiences
 
-> The audience options of the help\_\* classes, in their stored order. ONLY APPEND: ezselection stores the position of  
-> an option, so a reordered list gives every topic another audience. The command appends missing ones.  
-> The other audiences of the help (\[AudienceSettings\] AudienceNames\[\]), so the manuals built from the Markdown help  
-> (exp:help:content build-manuals) keep who each page is for  
+> Die Zielgruppen-Optionen der help\_\*-Klassen, in ihrer gespeicherten Reihenfolge. NUR ANHÄNGEN: ezselection speichert die Position  
+> einer Option, daher ergibt eine umsortierte Liste für jedes Thema eine andere Zielgruppe. Der Befehl hängt fehlende an.  
+> Die anderen Zielgruppen der Hilfe (\[AudienceSettings\] AudienceNames\[\]), damit die aus der Markdown-Hilfe gebauten Handbücher  
+> (exp:help:content build-manuals) behalten, für wen jede Seite ist  
 
 Standard: eine Liste mit 42: `Visitors`, `Members`, `Editors`, `Administrators`, `Developers`, `Project managers`, `Sales & marketing`, `Partners`, `Advocates`, `Designers`, `Hosting companies`, `Application creators` ....
 
@@ -155,8 +155,8 @@ Platforms[]=Mobile
 
 ## Areas
 
-> The areas of help\_ids (area.topic\[.variant\]); the validator warns about any other  
-> the pages of the Markdown help as topics (exp:help:content build-manuals): doc.<path of the page>  
+> Die Bereiche der help\_ids (area.topic\[.variant\]); der Validator warnt vor jedem anderen  
+> die Seiten der Markdown-Hilfe als Themen (exp:help:content build-manuals): doc.<Pfad der Seite>  
 
 Standard: eine Liste mit 9: `account`, `content`, `media`, `search`, `users`, `setup`, `privacy`, `help`, `doc`.
 
@@ -180,8 +180,8 @@ Areas[]=doc
 
 ## AudienceMap
 
-> The help's audience (editor, admin, developer, user ...) of each audience option, in lower case. build-manuals  
-> gives a page of the help audience X the first option that maps to X.  
+> Die Zielgruppe der Hilfe (editor, admin, developer, user ...) jeder Zielgruppen-Option, in Kleinbuchstaben. build-manuals  
+> ordnet eine Seite der Hilfe-Zielgruppe X der ersten Option zu, die auf X abgebildet wird.  
 
 Standard: ein Hash mit 42: `visitors=user`, `members=user`, `editors=editor`, `administrators=admin`, `developers=developer`, `project managers=project-manager`, `sales & marketing=sales-marketing`, `partners=partner`, `advocates=advocate`, `designers=designer`, `hosting companies=hosting`, `application creators=app-creator` ....
 
@@ -300,9 +300,9 @@ ReviewListLimit=10
 
 ## ReleaseByAuthor
 
-> The review workflow (Draft, Review, Released): the person who wrote a topic's current version does not release it,  
-> whatever their roles (the Object states tab, the content job and the help's buttons alike). enabled allows it, for a  
-> site with a single editor. The command line (seed-topics --release, build-manuals --release) is not limited.  
+> Der Review-Workflow (Draft, Review, Released): wer die aktuelle Version eines Themas geschrieben hat, gibt es nicht frei,  
+> welche Rollen er auch hat (der Tab Objektstatus, der Inhalts-Job und die Buttons der Hilfe gleichermaßen). enabled erlaubt es, für eine  
+> Website mit nur einem Redakteur. Die Kommandozeile (seed-topics --release, build-manuals --release) ist nicht beschränkt.  
 
 Standard: `disabled`.
 
@@ -316,9 +316,9 @@ ReleaseByAuthor=disabled
 
 ## SentenceWordsPublic
 
-> The style guide's plain language (section 3), checked as NOTICE by exp:help:content check and on the topic's page:  
-> words per sentence for the audiences of PlainLanguageAudiences\[\] and for the others, sentences per paragraph for the  
-> plain ones. 0 switches a check off. A site with readers who need shorter limits sets them here (15 and 3).  
+> Die einfache Sprache des Styleguides (Abschnitt 3), geprüft als NOTICE von exp:help:content check und auf der Seite des Themas:  
+> Wörter pro Satz für die Zielgruppen aus PlainLanguageAudiences\[\] und für die anderen, Sätze pro Absatz für die  
+> einfachen. 0 schaltet eine Prüfung ab. Eine Website mit Lesern, die kürzere Grenzen brauchen, setzt sie hier (15 und 3).  
 
 Standard: `20`.
 
@@ -371,8 +371,8 @@ PlainLanguageAudiences[]=Members
 
 ## ReviewMonths
 
-> The longest a review date may be away (style guide section 8: release + 12 months; the areas of ShortReviewAreas\[\]  
-> + 6 months); a date further away is a WARNING (review-date.too-far). 0 switches it off.  
+> Der größte Abstand eines Review-Datums (Styleguide Abschnitt 8: Freigabe + 12 Monate; die Bereiche aus ShortReviewAreas\[\]  
+> + 6 Monate); ein weiter entferntes Datum ist eine WARNUNG (review-date.too-far). 0 schaltet es ab.  
 
 Standard: `12`.
 
@@ -413,9 +413,9 @@ ShortReviewAreas[]=account
 
 ## Feedback
 
-> "Was this helpful?" under each Released topic: yes, or no with a reason from a fixed list, counted per topic (table  
-> exphelp\_feedback). Nothing about who answered is kept: no user, no address, no free text; one answer per topic and  
-> session counts. Answers older than FeedbackKeepDays are removed by the cronjob part exphelp.  
+> "War das hilfreich?" unter jedem Released-Thema: ja, oder nein mit einem Grund aus einer festen Liste, gezählt pro Thema (Tabelle  
+> exphelp\_feedback). Nichts darüber, wer geantwortet hat, wird behalten: kein Benutzer, keine Adresse, kein Freitext; eine Antwort pro Thema und  
+> Sitzung zählt. Antworten, die älter sind als FeedbackKeepDays, entfernt der Cronjob-Teil exphelp.  
 
 Standard: `enabled`.
 
@@ -441,8 +441,8 @@ FeedbackKeepDays=730
 
 ## AnonymousFeedback
 
-> enabled: the roles step of exp:help:content also gives Anonymous exphelp/feedback, for a site that shows its help  
-> publicly (the templates of the extension exphelpsite). Off by default.  
+> enabled: der Rollen-Schritt von exp:help:content gibt auch Anonymous exphelp/feedback, für eine Website, die ihre Hilfe  
+> öffentlich zeigt (die Templates der Erweiterung exphelpsite). Standardmäßig aus.  
 
 Standard: `disabled`.
 
@@ -456,8 +456,8 @@ AnonymousFeedback=disabled
 
 ## EpubCheckCommand
 
-> The checks of an EPUB (epubcheck, Ace by DAISY) are not shipped; a site that has them names their commands. The  
-> EPUB file is added as the last argument; Ace gets --outdir <dir> --force first. Empty: the check is skipped.  
+> Die Prüfungen eines EPUB (epubcheck, Ace by DAISY) werden nicht mitgeliefert; eine Website, die sie hat, nennt ihre Befehle. Die  
+> EPUB-Datei wird als letztes Argument angehängt; Ace bekommt zuerst --outdir <dir> --force. Leer: die Prüfung wird übersprungen.  
 > EpubCheckCommand=java -jar /opt/epubcheck/epubcheck.jar  
 > AceCommand=ace  
 
@@ -485,7 +485,7 @@ AceCommand=
 
 ## BookChecks
 
-> report: run the configured checks and report them; required: an e-book that fails one is not stored; disabled  
+> report: führt die konfigurierten Prüfungen aus und berichtet sie; required: ein E-Book, das eine nicht besteht, wird nicht gespeichert; disabled  
 
 Standard: `report`.
 
@@ -499,10 +499,10 @@ BookChecks=report
 
 ## DitaHistoryDirectory
 
-> The history of the help in git (delivery path 4): the cronjob part exphelp writes the DITA export of every manual  
-> into this directory (outside the web root) and commits what changed; the first run makes it a git repository. Empty:  
-> off. The export holds the Released objects that DitaHistoryLogin may read. DitaHistoryAuthor: "Name <mail>" of the  
-> commits, else the repository's git configuration.  
+> Die Historie der Hilfe in Git (Auslieferungsweg 4): der Cronjob-Teil exphelp schreibt den DITA-Export jedes Handbuchs  
+> in dieses Verzeichnis (außerhalb des Web-Roots) und committet, was sich geändert hat; der erste Lauf macht es zu einem Git-Repository. Leer:  
+> aus. Der Export enthält die Released-Objekte, die DitaHistoryLogin lesen darf. DitaHistoryAuthor: "Name <mail>" der  
+> Commits, sonst die Git-Konfiguration des Repositorys.  
 
 Standard: leer.
 

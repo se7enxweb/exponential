@@ -24,6 +24,7 @@ eigenen Upgrade-Seiten des Herstellers für 4.0 bis 4.7 etwas anderes sagen, wir
 > Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
 > [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../anleitungen/seiten-cache-mit-litespeed.md).
 
 [Inhalt](README.md) · Zurück: [13. Sicherheitshärtung für den Produktivbetrieb](13-sicherheitshaertung.md) · Weiter: [15. Migration vom 5.x-Legacy-Stack](15-migration-von-5x-legacy.md)
 
@@ -905,7 +906,7 @@ diese Tabelle sagt, wo, und wie sich Exponential unterscheidet.
 | Datei- und Datenbankkonsistenzprüfung unter Setup > Upgrade-Prüfung | 14.4, 14.12 | dieselben Schaltflächen; die Dateiprüfung vergleicht mit `share/filelist.md5` |
 | Fünf Schritte: Dateien, Datenbank, System-Skripte, Konfiguration, Caches ([Vorgehensweise](https://ezpublishdoc.mugo.ca/eZ-Publish/Upgrading/How-to-proceed.html)) | 14.5 bis 14.8 | Datenbankskripte in zwei Phasen (14.5.4) |
 | Direktes Upgrade nur zwischen aufeinanderfolgenden stabilen Releases; sonst schrittweise | 14.5.5 | eine Kette, in einer Sitzung angewendet, Datei für Datei |
-| 4.0: PHP 5, `date.timezone`, Autoload-Arrays, Klassenkonstanten statt globaler Konstanten ([wichtige Hinweise](https://ezpublishdoc.mugo.ca/eZ-Publish/Upgrading/Upgrading-to-4.0/Important-notes.html)) | 14.9 | PHP 8.0 bis 8.5; Arrays in `autoload/` und `var/autoload/` |
+| 4.0: PHP 5, `date.timezone`, Autoload-Arrays, Klassenkonstanten statt globaler Konstanten ([wichtige Hinweise](https://ezpublishdoc.mugo.ca/eZ-Publish/Upgrading/Upgrading-to-4.0/Important-notes.html)) | 14.9 | PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar); Arrays in `autoload/` und `var/autoload/` |
 | 4.0: Zeichensatzkonvertierung mit `ezconvertdbcharset.php`, InnoDB mit `ezconvertmysqltabletype.php` ([3.10 auf 4.0](https://ezpublishdoc.mugo.ca/eZ-Publish/Upgrading/Upgrading-to-4.0/from-3.10.x-to-4.0.y.html)) | 14.5.2 | dieselben Skripte; MySQL `utf8`, Standardwerte von MySQL 8 beachten |
 | 4.0: überschreibende Templates in `override/templates/` | 14.8 | unverändert; `Priority` ordnet jetzt die Override-Blöcke |
 | 4.1: `updateimagesystem.php` **vor** dem SQL; ezdhtml durch ezoe ersetzt; `$Result['path']` muss ein Array sein ([4.0 auf 4.1](https://ezpublishdoc.mugo.ca/eZ-Publish/Upgrading/Upgrading-to-4.1/4.0.x-to-4.1.y.html)) | 14.5.4, 14.7, 14.9 | nur, wenn `ezimage` Zeilen hat; ezoe mit TinyMCE 3 oder 8 |

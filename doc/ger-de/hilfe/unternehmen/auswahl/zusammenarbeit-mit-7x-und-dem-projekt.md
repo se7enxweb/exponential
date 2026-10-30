@@ -30,7 +30,7 @@ sind [Wer ist 7x?](../../wer-ist-7x.md) und [Wer ist die Exponential Foundation?
 | Was es ist | ein Unternehmen: „ein reaktionsschnelles nordamerikanisches Unternehmen für Webdesign, Support, Entwicklung und Website-Hosting“ (<https://se7enx.com/about>) | eine gemeinnützige Körperschaft, gegründet am 19. März 2026 (<https://foundation.exponential.earth/>) |
 | Rolle | „7x hat 2023 die Leitung des Projekts und seiner Entwicklung, seines Supports, seiner Verbreitung und des Wachstums seiner Community übernommen“ (`README.md`) | „Dieses Projekt wird von der Exponential Foundation betrieben“ (<https://exponential.earth/about/project>) |
 | Geschichte | früher Brookins Consulting; arbeitet seit den Jahren von eZ Publish mit dieser Codebasis ([Wer ist 7x?](../../wer-ist-7x.md#kurz-gesagt)) | nennt 7x „den derzeit führenden Beitragenden“ des Projekts |
-| Copyright | „7x & Exponential Foundation“ gemeinsam (`COPYRIGHT.md`) | |
+| Copyright | „Exponential Foundation and 7x“ gemeinsam (`COPYRIGHT.md`) | |
 
 „Dieses Projekt ist nicht mit der ursprünglichen Software eZ Publish oder ihrem ursprünglichen Entwickler, eZ Systems
 oder Ibexa, verbunden“ (`README.md`, „Exponential Project Notice“).

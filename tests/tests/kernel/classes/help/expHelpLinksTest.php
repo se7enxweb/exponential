@@ -12,7 +12,7 @@
  *         page keeps the image's room), an https image its address only; the render cache key carries a version
  *  HL-06  the views' request helpers: search bounds and filters, the asset content types (no SVG, no HTML)
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

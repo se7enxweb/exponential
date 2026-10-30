@@ -4,7 +4,7 @@
  * order was placed in, null when it is not known: an order placed before it was recorded, Oracle's NULL, or a
  * database without the column. No database: the orders are stand-ins that answer the export's questions.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

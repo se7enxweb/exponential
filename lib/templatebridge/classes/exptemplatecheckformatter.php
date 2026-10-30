@@ -4,7 +4,7 @@
  * sarif. The JSON schema exp-template-check/1 is versioned: its fields are never removed or changed in type, new ones
  * may be added (doc/eng-us/reference/template-check-schema.json).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package lib
  */

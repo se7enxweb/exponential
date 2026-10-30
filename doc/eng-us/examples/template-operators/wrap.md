@@ -30,6 +30,14 @@ Built from the parameter list above; the values are placeholders (the operator's
 {$value|wrap( 1, 'break_sequence', true() )}
 ```
 
+## In a shipped template
+
+The first use in the templates of this installation, `design/admin/templates/content/edit_locations.tpl` line 37:
+
+```tpl
+{* the table scrolls inside its column instead of overflowing it, and its headings wrap (modules/content.css, as in admin4) *}
+```
+
 ## Related
 
 - [All template operators](README.md)

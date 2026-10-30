@@ -5,7 +5,7 @@
  * The REST applications (OAuth clients), with how many users authorized each and how many of its tokens are still
  * valid, and the figures of the personal API keys (their own page is oauthadmin/keys).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//

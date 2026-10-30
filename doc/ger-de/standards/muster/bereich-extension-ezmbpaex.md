@@ -2,7 +2,7 @@
 title: Muster in extension/ezmbpaex
 audience: developer
 category: standards
-order: 444
+order: 448
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezmbpaex mit den Entwurfsmustern.
 keywords: extension/ezmbpaex, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

@@ -16,6 +16,7 @@ nicht die gewünschte Arbeitsweise ist. `git_manager` stellt im Web-Admin zwei W
 > Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
 > [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../../../hilfe/hosting/control-panels/plesk.md), [cPanel](../../../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../../../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../../../hilfe/hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md).
 
 - ein **Git-Dashboard** (**Setup**, `/git_manager/dashboard`): Sehen Sie, wo die Installation gegenüber ihrem Branch
   auf dem Remote steht, wechseln Sie Branches, checken Sie einen Commit aus, führen Sie Pull und Push aus, verwalten
@@ -28,7 +29,7 @@ Version 2.0.14.
 
 ## Voraussetzungen
 
-Exponential 6, PHP 8.1 oder neuer, ein Git-Programm, das der Benutzer des Webservers ausführen kann, GnuPG
+Exponential 6, PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar), ein Git-Programm, das der Benutzer des Webservers ausführen kann, GnuPG
 (`/usr/bin/gpg`) für verschlüsselte Sicherungen und `mysqldump` für Datenbanksicherungen.
 
 ## Schnellstart: vor einer Änderung eine Sicherung erstellen

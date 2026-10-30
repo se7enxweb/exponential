@@ -84,7 +84,7 @@ Sources: "At a glance" and "Versions, checked against the code" on [Database sup
 
 ## Operating system
 
-Exponential runs on "almost any" system "that runs PHP 8.0 or later". [Operating system support](../os-support.md)
+Exponential runs on "almost any" system "that runs PHP 8.0 or later (PHP 7.4 usable without support)". [Operating system support](../os-support.md)
 sorts systems into four tiers:
 
 | Tier | Meaning | Examples from the sources |

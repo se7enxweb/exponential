@@ -2,13 +2,14 @@
 /**
  * File containing the expUserSecurityAlerts class.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
 /**
- * Security alerts by e-mail to the owner of an account, as Google sends "Security alert": two-step sign-in turned on
+ * Security alerts by e-mail to the owner of an account, as Google sends "Security alert": a passkey added or removed
+ * (also revoked by an administrator), two-step sign-in turned on
  * or off, a recovery code used, repeated failed sign-ins, the account locked. Each mail says what happened, when and
  * from where (approximately), and links to "Secure your account" (user/security) and Your devices.
  *
@@ -59,7 +60,7 @@ class expUserSecurityAlerts
      * @param array $row the row as stored (event_name, target_type, target_id, created, value_after ...)
      * @param array $settings settings()
      * @param int $now
-     * @return string|null twofactor_on, twofactor_off, recovery_used, failures, locked
+     * @return string|null twofactor_on, twofactor_off, recovery_used, failures, locked, passkey_added, passkey_removed
      */
     public static function decide( array $row, array $settings, $now )
     {
@@ -79,6 +80,13 @@ class expUserSecurityAlerts
                 return 'twofactor_off';
             case 'access.user.two_factor.recovery_used':
                 return 'recovery_used';
+            case 'access.passkey.add':
+            case 'access.passkey.remove':
+            case 'access.passkey.revoke':
+                // only a passkey actually added or removed; a refused registration is no change
+                if ( isset( $row['result'] ) && $row['result'] !== '' && $row['result'] !== 'success' )
+                    return null;
+                return $row['event_name'] === 'access.passkey.add' ? 'passkey_added' : 'passkey_removed';
             case 'access.user.lock':
                 return 'locked';
             case 'access.session.login.failed':

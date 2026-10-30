@@ -27,6 +27,14 @@ Redakteure, die das Objekt bearbeiten dürfen. Einen Tag hinzuzufügen, der noch
 4. Um einen Tag zu entfernen, klicken Sie daneben auf **Remove tag**.
 5. Klicken Sie auf **Zur Veröffentlichung schicken**.
 
+### Ein einfaches Schlüsselwortfeld
+
+Manche Klassen haben statt eines Tag-Baums ein einfaches Schlüsselwortfeld, zum Beispiel **Tags** der
+Standardklasse **Product**. Es ist eine Textzeile: Tippen Sie die Schlüsselwörter durch Kommas getrennt ein, etwa
+`garden, tools, spring`. Elemente mit einem gemeinsamen Schlüsselwort sind darüber verknüpft, unabhängig vom Baum, und
+die Website kann sie gemeinsam auflisten. Schreiben Sie jedes Schlüsselwort jedes Mal gleich; *garden* und *gardens*
+zählen als zwei verschiedene Schlüsselwörter.
+
 ## Was schiefgehen kann
 
 - **Der Tag, den Sie brauchen, existiert nicht und kann nicht hinzugefügt werden.** Das Feld erlaubt nur Tags aus dem

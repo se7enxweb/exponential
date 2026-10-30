@@ -11,7 +11,7 @@
  * PHP 8.2, and a tentative return type without #[\ReturnTypeWillChange] since
  * PHP 8.1.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */
@@ -93,6 +93,8 @@ class eZPhp8CallableMethodsTest extends PHPUnit\Framework\TestCase
 
     public function testDfsFilterIteratorKeepsItsReturnTypesQuiet()
     {
+        if ( PHP_VERSION_ID < 80000 )
+            $this->markTestSkipped( 'attributes exist from PHP 8.0 on; on 7.4 #[...] is a comment' );
         foreach ( array( 'accept', 'current' ) as $name )
             $this->assertNotEmpty( ( new ReflectionMethod( 'eZDFSFileHandlerDFSBackendFilterIterator', $name ) )
                 ->getAttributes( 'ReturnTypeWillChange' ), "$name() carries #[\\ReturnTypeWillChange]" );

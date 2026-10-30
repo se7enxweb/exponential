@@ -3,7 +3,7 @@ title: Two organizations, one project
 audience: press, sponsor, partner
 category: press-media
 order: 12
-summary: How 7x and the Exponential Foundation relate, side by side - company and nonprofit, roles, copyright, sponsor pages and websites - with the sentences that describe the relationship correctly and the mix-ups that appear in coverage.
+summary: How the Exponential Foundation and 7x relate, side by side - company and nonprofit, roles, copyright, sponsor pages and websites - with the sentences that describe the relationship correctly and the mix-ups that appear in coverage.
 keywords: 7x, Exponential Foundation, relationship, company, nonprofit, roles, copyright, sponsor, two organizations, who does what, governance
 type: help
 ---
@@ -30,7 +30,7 @@ most common error in coverage is to merge them into one.
 | Earns money by | Selling services (development, support, hosting, training) | Donations and sponsorships |
 | Website | <https://se7enx.com/> | <https://foundation.exponential.earth/>, <https://exponential.earth/> |
 | Sponsor page | <https://github.com/sponsors/se7enxweb> | <https://github.com/sponsors/exponentialcms> |
-| Copyright | "7x & Exponential Foundation", together | (same notice) |
+| Copyright | "Exponential Foundation and 7x", together | (same notice) |
 
 Source: [The Foundation and 7x](../who-is-the-exponential-foundation.md#the-foundation-and-7x).
 
@@ -51,7 +51,7 @@ Source: [The Foundation and 7x](../who-is-the-exponential-foundation.md#the-foun
 ```text
 "Exponential is led by the company 7x and operated by the Exponential Foundation, a nonprofit."
 "7x is the main contributor to the project that the Exponential Foundation operates."
-"The software's copyright is held jointly by 7x and the Exponential Foundation; the license is the GNU GPL."
+"The software's copyright is held jointly by the Exponential Foundation and 7x; the license is the GNU GPL."
 ```
 
 ## Common mix-ups

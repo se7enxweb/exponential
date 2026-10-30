@@ -18,7 +18,7 @@ sind. Eine Website, die nicht aktualisiert wird, wird zum Sicherheitsrisiko und 
 |---|---|
 | „Exponential 6.0 ist die gepflegte Linie. Sicherheitskorrekturen werden auf dem Branch `main` gemacht ... und mit dem nächsten Release 6.0.x veröffentlicht.“ | SECURITY.md |
 | 5.x, 4.x, 3.x und älter werden nicht unterstützt | SECURITY.md |
-| PHP 8.0 bis 8.5 werden für die Linie 6.0.15 unterstützt; PHP 7.4 nur bis 6.0.7 | README, `doc/eng-us/install/02-requirements.md` |
+| PHP 7.4 bis 8.5 werden für die Linie 6.0.15 unterstützt; PHP 7.4 ab 6.0.15 ohne Support nutzbar | README, `doc/eng-us/install/02-requirements.md` |
 | „Ein veröffentlichtes Tag wird nie geändert“ | SECURITY.md |
 
 Die vollständige Liste: [Wer ist die Exponential Foundation?, „Die Support-Zusage“](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung).

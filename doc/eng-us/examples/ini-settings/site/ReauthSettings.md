@@ -2,14 +2,14 @@
 title: site.ini [ReauthSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [ReauthSettings] in site.ini: Reauth, Minutes, MaxFailures, Groups, CodeHandlers"
-keywords: site.ini, ReauthSettings, INI, setting, Reauth, Minutes, MaxFailures, Groups, CodeHandlers
+summary: "The settings of [ReauthSettings] in site.ini: Reauth, Minutes, MaxFailures, Factors, Groups, CodeHandlers, TriggerHandlers, BulkCount"
+keywords: site.ini, ReauthSettings, INI, setting, Reauth, Minutes, MaxFailures, Factors, Groups, CodeHandlers, TriggerHandlers, BulkCount
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [ReauthSettings]
 
-The block `[ReauthSettings]` of `settings/site.ini`, with 5 setting(s).
+The block `[ReauthSettings]` of `settings/site.ini`, with 8 setting(s).
 
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -20,7 +20,7 @@ Never edit `settings/site.ini` itself: an update replaces it. Put the settings y
 ## Reauth
 
 > "Verify it's you": before a sensitive action the signed-in user confirms who they are  
-> again, with the password, a passkey or the code of a two-step sign-in app, and is not  
+> again (the password and a passkey, see Factors\[\]) and is not  
 > asked again for Minutes. Only the web pages ask (index.php and Velocity); REST, SOAP,  
 > WebDAV, the expservices login and the command line are never asked. Anonymous visitors  
 > are never asked. The groups and their switches are edited on setup/reauth.  
@@ -66,11 +66,34 @@ MaxFailures=5
 */ ?>
 ```
 
+## Factors
+
+> How the user confirms: the first combination whose every way the user has is asked, with  
+> the later ones of as many ways offered beside it (never a weaker one). Ways: password,  
+> passkey, code (the authenticator app of a two-step sign-in, see CodeHandlers\[\]).  
+> The default: the password AND a passkey; without a passkey the password and the code;  
+> without either the password alone; an account without a password uses a passkey.  
+
+Default: a list of 4: `password+passkey`, `password+code`, `password`, `passkey`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[ReauthSettings]
+# an empty "Factors[]" first replaces the shipped list; without it the items are added
+Factors[]
+Factors[]=password+passkey
+Factors[]=password+code
+Factors[]=password
+Factors[]=passkey
+*/ ?>
+```
+
 ## Groups
 
 > The groups, each \[ReauthGroup\_<name>\] with Enabled=true|false and Rules\[\].  
 
-Default: a list of 5: `account`, `users`, `system`, `export`, `content`.
+Default: a list of 6: `account`, `users`, `system`, `export`, `delete`, `content`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -82,6 +105,7 @@ Groups[]=account
 Groups[]=users
 Groups[]=system
 Groups[]=export
+Groups[]=delete
 Groups[]=content
 */ ?>
 ```
@@ -100,6 +124,36 @@ Default: a list of 1: `expReauthTotpCode`.
 # an empty "CodeHandlers[]" first replaces the shipped list; without it the items are added
 CodeHandlers[]
 CodeHandlers[]=expReauthTotpCode
+*/ ?>
+```
+
+## TriggerHandlers
+
+> Classes implementing expReauthTriggerHandler: extensions decide themselves that a request  
+> asks, naming one of the groups above (it asks only while that group is on).  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[ReauthSettings]
+# an empty "TriggerHandlers[]" first replaces the shipped list; without it the items are added
+TriggerHandlers[]
+*/ ?>
+```
+
+## BulkCount
+
+> The number of items at which a removal counts as "bulk" (the rule token bulk).  
+
+Default: `2`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[ReauthSettings]
+BulkCount=2
 */ ?>
 ```
 

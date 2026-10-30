@@ -27,10 +27,9 @@
 </div>
 <div class="object">
 <p>
-    The following is a list of <a href="https://exponential.earth">Exponential</a> contributors who have licensed their work for use by <a href="https://se7enx.com">7x</a> under the terms and conditions of
-    the eZ Systems Contributor Licensing Agreement. As permitted by this agreement with the contributors, <a href="https://se7enx.com">7x</a> is redistributing the
-    contribution under the same license as the file that the contribution is included in. The list of contributors includes the
-    contributors&apos;s name, optional contact info and a list of files that they have either contributed or contributed work to.
+    Contributors credited for their work on <a href="https://exponential.earth">Exponential</a> and on the software it grew
+    from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are
+    assigned to the Exponential Foundation and <a href="https://se7enx.com">7x</a> under the Contributor Licensing Agreement.
 </p>
 
 <ul>

@@ -96,7 +96,7 @@ nicht; entscheiden Sie mit dem Kunden, ob sie gebraucht wird, bevor Sie sie gest
 Verwendet eine Installation die Erweiterung ezfind mit einem Solr-Server, beantwortet Solr die Suche, und das
 Such-Template von ezfind kann **Facetten** zeigen, zum Beispiel die Zahl der Ergebnisse pro Inhaltsklasse. Gestalten
 Sie Filter erst, wenn der Entwickler bestätigt, welche Suchmaschine die Website verwendet und welche Facetten sie
-anbieten wird; die Standardsuche des Kernels hat keine ([Suche: Legacy und Solr](../../../eng-us/help/dxp-developers/search-legacy-and-solr.md)
+anbieten wird; die Standardsuche des Kernels hat keine ([Suche: Legacy und Solr](../dxp-entwickler/suche-legacy-und-solr.md)
 behandelt die DXP-Seite, [Suchen](../suchen.md) die Sicht des Besuchers).
 
 Hinweise zum Gestalten von Filtern:

@@ -1,9 +1,9 @@
 <?php
 /**
  * The setup wizard's PHP check asks for the PHP version composer.json requires: setup.ini [phpversion]
- * MinimumVersion was 5.3.3 while the code needs 8.0. No database.
+ * MinimumVersion was 5.3.3 while the code needs 8.0. The comments above MinimumVersion are allowed. No database.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */
@@ -13,7 +13,7 @@ class SetupPhpVersionTest extends PHPUnit\Framework\TestCase
     public function testMinimumVersionMatchesComposer()
     {
         $root = dirname( __DIR__, 5 );
-        $this->assertSame( 1, preg_match( '/^\[phpversion\]\s*\nMinimumVersion=(\S+)/m', file_get_contents( $root . '/settings/setup.ini' ), $m ) );
+        $this->assertSame( 1, preg_match( '/^\[phpversion\]\s*\n(?:\s*#.*\n)*MinimumVersion=(\S+)/m', file_get_contents( $root . '/settings/setup.ini' ), $m ) );
         $minimum = $m[1];
 
         $composer = json_decode( file_get_contents( $root . '/composer.json' ), true );

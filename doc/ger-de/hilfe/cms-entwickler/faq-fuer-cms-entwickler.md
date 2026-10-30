@@ -25,6 +25,7 @@ kurz und verweist auf die Seite mit der ganzen Geschichte.
 > Dieselben Regeln für andere Server: [nginx](../../beispiele/webserver/nginx.md), [LiteSpeed](../../beispiele/webserver/litespeed.md), [Caddy](../../beispiele/webserver/caddy.md), [IIS](../../beispiele/webserver/iis.md),
 > [Velocity](../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../hosting/control-panels/plesk.md), [cPanel](../hosting/control-panels/cpanel.md), [DirectAdmin](../hosting/control-panels/directadmin.md), [ISPConfig](../hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../anleitungen/seiten-cache-mit-litespeed.md).
 
 ## Inhalt
 
@@ -112,7 +113,7 @@ Exponential Velocity ist die empfohlene Engine; FrankenPHP ist die produktionsre
 PHP-FPM funktionieren ebenfalls. [Eine Website bereitstellen](eine-website-bereitstellen.md#wählen-wie-die-website-ausgeliefert-wird).
 
 **Welches PHP und welche Datenbanken?**
-PHP 8.0 bis 8.5 laut `composer.json` im Hauptverzeichnis. Datenbanken in der Reihenfolge der Präferenz des Projekts:
+PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) laut `composer.json` im Hauptverzeichnis. Datenbanken in der Reihenfolge der Präferenz des Projekts:
 SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL. [Datenbankunterstützung](../datenbankunterstuetzung.md),
 [Anforderungen](../../installation/02-voraussetzungen.md).
 

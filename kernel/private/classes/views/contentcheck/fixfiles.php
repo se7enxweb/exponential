@@ -12,7 +12,7 @@
  * and on a siteaccess that is not an administration one (404). Each field version done is recorded in the audit
  * (content.file.*).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -109,9 +109,9 @@ Notes:
 - 7x and the Foundation are **two organizations**. Never write as if they were one, and never write that the
   Foundation sells services: 7x is the company, the Foundation operates and funds the project
   ([The Foundation and 7x](../who-is-the-exponential-foundation.md#the-foundation-and-7x)).
-- The copyright holder of the software is written **7x & Exponential Foundation** (`COPYRIGHT.md`); the
-  documentation's notice adds "and the Exponential contributors" ([The license of this documentation](../../README-LICENSE.md)).
-  Copy these notices exactly, never shorten them.
+- The copyright holder of the software is written **Exponential Foundation and 7x** (`COPYRIGHT.md`); the
+  documentation carries the same notice, with no third holder: contributors assign their copyright to both through the
+  CLA ([The license of this documentation](../../README-LICENSE.md)). Copy the notice exactly, never shorten it.
 
 ## The old name: eZ Publish, only as history
 

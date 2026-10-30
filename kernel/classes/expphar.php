@@ -13,7 +13,7 @@
  * change safe to try and easy to undo -- delete the phar, or unset one
  * environment variable, and the installation is back to what it was.
  *
- * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license   For full copyright and license information view LICENSE file.
  * @package   kernel
  */

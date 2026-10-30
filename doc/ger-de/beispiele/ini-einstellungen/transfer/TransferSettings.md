@@ -19,16 +19,16 @@ Bearbeiten Sie `settings/transfer.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## Engine
 
-> Which engine runs a tool's background runs:  
->   auto        the job queue (expqueue) when it can take them, else the kernel's content jobs, else the  
->               tool's own process (the default)  
->   expqueue    the job queue; needs expqueue active, its tables installed, the tool's job type in expqueue.ini  
->               (the tool's QueueJobType=) and a live queue worker (see QueueNeedsWorker)  
->   contentjob  the kernel's content jobs (content.ini \[ContentJobSettings\] JobTypes\[transfer\]), which start a  
->               worker process of their own for each run  
->   process     the tool's own way of running in the background, as before 6.0.15  
-> An engine that is not available falls back in that order. A tool may name its own engine (Engine= in its  
-> \[Service\_transfer.<id>\] block of kernelservices.ini); ToolEngine\[<tool id>\] here wins over both.  
+> Welche Engine die Hintergrundläufe eines Werkzeugs ausführt:  
+>   auto        die Job-Warteschlange (expqueue), wenn sie sie annehmen kann, sonst die Inhalts-Jobs des Kernels, sonst der  
+>               eigene Prozess des Werkzeugs (der Standard)  
+>   expqueue    die Job-Warteschlange; braucht aktives expqueue, installierte Tabellen, den Job-Typ des Werkzeugs in expqueue.ini  
+>               (das QueueJobType= des Werkzeugs) und einen laufenden Queue-Worker (siehe QueueNeedsWorker)  
+>   contentjob  die Inhalts-Jobs des Kernels (content.ini \[ContentJobSettings\] JobTypes\[transfer\]), die für jeden Lauf einen  
+>               eigenen Worker-Prozess starten  
+>   process     die eigene Art des Werkzeugs, im Hintergrund zu laufen, wie vor 6.0.15  
+> Eine nicht verfügbare Engine fällt in dieser Reihenfolge zurück. Ein Werkzeug kann seine eigene Engine nennen (Engine= in seinem  
+> Block \[Service\_transfer.<id>\] von kernelservices.ini); ToolEngine\[<tool id>\] hier gewinnt gegenüber beiden.  
 
 Standard: `auto`.
 
@@ -56,8 +56,8 @@ ToolEngine[]
 ## QueueNeedsWorker
 
 > ToolEngine\[transfer.xrowextract\]=contentjob  
-> Whether the job queue is used only while a queue worker is alive (a run queued with no worker would wait  
-> until one starts). disabled: queue the run anyway.  
+> Ob die Job-Warteschlange nur genutzt wird, solange ein Queue-Worker lebt (ein Lauf, der ohne Worker eingereiht wird, würde warten,  
+> bis einer startet). disabled: den Lauf trotzdem einreihen.  
 
 Standard: `enabled`.
 
@@ -71,8 +71,8 @@ QueueNeedsWorker=enabled
 
 ## KeepDays
 
-> Days the run history keeps a finished run (exp\_transfer\_run); 0 keeps every run.  
-> The tools keep their own records and files as long as their own settings say.  
+> Tage, die der Laufverlauf einen beendeten Lauf behält (exp\_transfer\_run); 0 behält jeden Lauf.  
+> Die Werkzeuge behalten ihre eigenen Aufzeichnungen und Dateien so lange, wie ihre eigenen Einstellungen es sagen.  
 
 Standard: `365`.
 

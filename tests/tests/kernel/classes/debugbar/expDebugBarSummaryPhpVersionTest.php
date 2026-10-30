@@ -10,7 +10,7 @@
  * Reads the users of the installation and sets the current user through the globals eZUser::currentUser() reads,
  * without a session, restoring them afterwards; skipped without an installation database.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

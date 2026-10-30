@@ -25,6 +25,7 @@ page gives both, with sources.
 > test the site. The same rules for other servers: [nginx](../../examples/web-servers/nginx.md), [LiteSpeed](../../examples/web-servers/litespeed.md),
 > [Caddy](../../examples/web-servers/caddy.md), [IIS](../../examples/web-servers/iis.md), [Velocity](../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../hosting/panels/plesk.md), [cPanel](../hosting/panels/cpanel.md), [DirectAdmin](../hosting/panels/directadmin.md), [ISPConfig](../hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../guides/litespeed-page-cache.md).
 
 ## Contents
 
@@ -39,7 +40,7 @@ page gives both, with sources.
 
 ## The story in one paragraph
 
-"Exponential 6.0.x runs on almost any operating system that has PHP 8.0 or later and a web server. It is plain PHP
+"Exponential 6.0.x runs on almost any operating system that has PHP 8.0 or later (PHP 7.4 usable without support) and a web server. It is plain PHP
 files plus a database; it has no compiled code of its own" ([Operating system support](../os-support.md)). It runs
 behind "any web server that can rewrite a URL", or under its own Velocity server
 ([README](https://github.com/se7enxweb/exponential/blob/main/README.md#the-traditional-options)), on six databases from SQLite to Oracle

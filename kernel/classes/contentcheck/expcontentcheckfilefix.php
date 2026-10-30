@@ -17,7 +17,7 @@
  * Each item needs content/edit on its object (review: content/read), on top of the policy contentcheck/fixfiles
  * the view checks. Each item done or failed is recorded in the audit (content.file.*).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

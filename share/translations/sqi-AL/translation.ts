@@ -8005,8 +8005,8 @@
         <translation>Njoftimet për të drejtat e autorit të autorëve origjinalë dhe të softuerit të palëve të treta që përfshihet në Exponential ruhen në skedarët burimorë dhe në skedarin LICENSE, siç e kërkon licenca.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Më poshtë jepet një listë e kontribuuesve të Exponential që e kanë licencuar punën e tyre për përdorim nga 7x sipas kushteve të eZ Systems Contributor Licensing Agreement. Siç e lejon kjo marrëveshje, 7x e rishpërndan çdo kontribut me të njëjtën licencë si skedari në të cilin përfshihet kontributi. Lista përmban çdo kontribuues, të dhëna kontakti opsionale dhe skedarët në të cilët ka kontribuuar.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Kontribuues të përmendur për punën e tyre në Exponential dhe në softuerin nga i cili lindi, bashkë me skedarët ku kanë kontribuar. Kjo është mirënjohje, jo njoftim për të drejtat e autorit: kontributet në Exponential u kalohen Exponential Foundation dhe 7x sipas Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77279,6 +77279,82 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Çelësi i kalimit nuk mund të kontrollohej. Provoni sërish.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Llogaritë që identifikohen vetëm me çelësa kalimi nuk mund të përdorin fjalëkalim këtu: zgjidhni „Identifikohu me një çelës kalimi“.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Çelësat e kalimit të %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Çelësat e kalimit me të cilët identifikohet kjo llogari. Revokoni atë që ndodhet në një pajisje të humbur ose të vjedhur: nuk mund të identifikohet më. Të rinjtë i shton vetë pronari.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Llogaria juaj ka nevojë për një çelës kalimi</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Shtoni një çelës kalimi në llogarinë tuaj</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Shtoni një çelës kalimi për të vazhduar. Pastaj identifikoheni me të në vend të vetëm një fjalëkalimi.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Identifikimi me një çelës kalimi është më i shpejtë dhe më i sigurt se një fjalëkalim. Shtoni një tani ose vazhdoni pa të.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Jo tani</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Të revokohet çelësi i kalimit „%name“?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Nuk mund të identifikohet më në këtë llogari. Nëse ishte i fundit, pronari identifikohet me fjalëkalimin, ose ju vendosni një të ri.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Revoko çelësin e kalimit</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Revoko</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Kjo llogari nuk ka çelës kalimi.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Vërtetues</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>I panjohur</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Çelësi juaj i fundit i kalimit: shtoni një tjetër para se ta hiqni.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Kjo llogari identifikohet vetëm me çelësa kalimi (politika e çelësave të kalimit): kur nuk mbetet asnjë, identifikohet përsëri me fjalëkalimin e saj.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Ky është çelësi juaj i fundit i kalimit dhe llogaria juaj nuk mund të identifikohet pa të. Shtoni fillimisht një çelës tjetër kalimi.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Çelësi i kalimit „%name“ u revokua. Nuk mund të identifikohet më në këtë llogari.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77378,6 +77454,34 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>Code from your authenticator app</source>
         <translation>Kodi nga aplikacioni juaj i vërtetimit</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Jeni gati të fshini përgjithmonë të dhëna ose të pastroni një regjistër.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Fjalëkalimi juaj dhe një çelës kalimi</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Fjalëkalimi juaj dhe një kod nga aplikacioni juaj i vërtetimit</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Ose:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Ky shfletues nuk mund të përdorë çelësa kalimi. Përdorni një mënyrë tjetër ose një shfletues tjetër.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Kur vazhdoni, shfletuesi kërkon një nga çelësat tuaj të kalimit.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Vazhdo me një çelës kalimi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77468,6 +77572,70 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>Setup</source>
         <translation>Konfigurimi</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Ndryshimi i fjalëkalimit, adresës email, çelësave të kalimit, identifikimit me dy hapa, kodeve të rikuperimit ose çelësave API të vetë përdoruesit dhe nxjerrja nga pajisjet e tjera të tij.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Krijimi dhe redaktimi i përdoruesve, i fjalëkalimeve dhe pajisjeve të tyre, i cilësimeve të llogarisë, miratimi ose refuzimi i llogarive të reja, caktimi i roleve dhe redaktimi i politikave.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Fshirja e të dhënave</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Zbrazja e koshit, heqja e elementeve prej tij dhe heqja e disa elementeve njëherësh.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Heqja, publikimi dhe ruajtja e përmbajtjes</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Heqja e përmbajtjes (edhe në kosh), publikimi dhe ruajtja e një skice, pyetet kur dërgohet formulari. Fikur si parazgjedhje.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Para një veprimi të ndjeshëm, një përdorues i identifikuar konfirmon sërish kush është: me fjalëkalimin dhe një çelës kalimi, ose pa çelës kalimi me fjalëkalimin dhe kodin nga aplikacioni i vërtetimit. Pyesin vetëm faqet web: ndërfaqja REST, SOAP, WebDAV, identifikimi expservices dhe rreshti i komandave kurrë.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Ku vlejnë cilësimet</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Cilësimet për</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Çdo qasje në sajt</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Qasja në sajt %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Hap</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Kush pyetet: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Shënoni grupet e përdoruesve për të pyetur vetëm anëtarët e tyre (për shembull redaktorët). Asnjë i shënuar: çdo përdorues.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Ruhet në settings/override/site.ini.append.php, për çdo qasje në sajt. Ruajtja ju kërkon të konfirmoni se jeni ju.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Ruhet në settings/siteaccess/%name/site.ini.append.php. Një vlerë në settings/override ka përparësi. Ruajtja ju kërkon të konfirmoni se jeni ju.</translation>
     </message>
 </context>
 <context>
@@ -77856,6 +78024,30 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>Your account was locked</source>
         <translation>Llogaria juaj u bllokua</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Në llogarinë tuaj %login në %site u shtua një çelës kalimi.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Kushdo që e ka këtë çelës kalimi mund të identifikohet në llogarinë tuaj pa fjalëkalimin tuaj. Nëse nuk e shtuat ju, hiqeni te Çelësat e kalimit dhe ndryshoni fjalëkalimin.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Nga llogaria juaj %login në %site u hoq një çelës kalimi.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Nuk mund të identifikohet më në llogarinë tuaj. Nëse nuk e hoqët ju, kontrolloni çelësat tuaj të kalimit dhe pajisjet.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Në llogarinë tuaj u shtua një çelës kalimi</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Nga llogaria juaj u hoq një çelës kalimi</translation>
     </message>
 </context>
 <context>

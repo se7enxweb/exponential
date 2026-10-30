@@ -9,7 +9,7 @@
  * with defer, reads the blocks and starts an editor for every such textarea. eZOe8Start() starts the ones added
  * later; eZOe8Init(), eZOe8Toolbar() and eZOe8StickyOffset() stay global as before.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  */
 (function( window, document )

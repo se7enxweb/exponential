@@ -341,7 +341,7 @@ credentials, or reading the history alone.
 
 ## Requirements and the server check
 
-PHP 8.1 or later with `mbstring`, `ctype` and `json`, and writable `var` and cache
+PHP 8.0 or later (on PHP 7.4 Composer installs release 2.5.18) with `mbstring`, `ctype` and `json`, and writable `var` and cache
 folders are required. Single features need more: `dom` and `xmlreader` for
 importing XML, `zip` for ZIP downloads and archives, `dom`, `zlib`, `proc_open()`,
 `tar` and `gzip` and a writable storage folder for content packages,

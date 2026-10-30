@@ -24,7 +24,7 @@ option where someone you trust is responsible for updates, backups and HTTPS, an
 
 From [Requirements at a glance](../../hosting/basics/requirements-at-a-glance.md):
 
-- PHP 8.0 or later with a few common extensions;
+- PHP 8.0 or later (PHP 7.4 usable without support) with a few common extensions;
 - a database: SQLite needs no database server and is enough for a site on one machine; MySQL, MariaDB and
   PostgreSQL are supported too ([Database support](../../database-support.md));
 - a web server such as Apache or Nginx, or Exponential Velocity, the application server that ships with Exponential

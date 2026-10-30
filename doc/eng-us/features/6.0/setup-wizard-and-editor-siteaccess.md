@@ -42,7 +42,7 @@ makes it an editor's administration. Put templates there only where the editor m
 
 The look: one white card on a dark slate page with a soft orange glow (`setup3.css`, loaded after `setup.css` and
 `setup2.css`, overrides only), the progress bar as a slim orange bar under the logo, Help and Summary in a side panel.
-The footer reads "Exponential copyright 1998-2026 7x & Exponential Foundation", and the links point to
+The footer reads "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", and the links point to
 exponential.earth.
 
 Fixes of the same change:

@@ -13,7 +13,7 @@
  *  RG-08 - Assignments narrow the grants: section, subtree, both ways; nothing for no limitation
  *  RG-09 - Normalising values; uncovered() keeps the keys of the refused grants
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

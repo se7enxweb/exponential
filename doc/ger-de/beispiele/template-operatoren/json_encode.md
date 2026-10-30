@@ -28,7 +28,7 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin4/templates/children_detailed.tpl` Zeile 220:
+Die erste Verwendung in den Templates dieser Installation, `design/admin4/templates/children_detailed.tpl` Zeile 237:
 
 ```tpl
 data-create-groups="{json_encode( $subitems_create_groups )|wash}"

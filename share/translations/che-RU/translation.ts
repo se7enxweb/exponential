@@ -8066,8 +8066,8 @@
         <translation>Хьалхара авторийн а, Exponential-ца юкъайогӀучу кхечу агӀор программин а авторан бакъонаш лицензи ма-дарра, хьалхара файлашкахь а, LICENSE файлехь а ларйина ю.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>ХӀара — шайн болх 7x-на eZ Systems Contributor Licensing Agreement бакъонашца лело лицензи динчу Exponential декъашхойн могӀам. Иза бакъо йолу тайпа, 7x хӀора декъашхочун болх цу декъашхочун болх чудерзийна файлан лицензица юха даржайо. МогӀамехь хӀора декъашхочун цӀе, лаахь контакт а, цо дина я цуьнан болх чудаьхьна файлаш а ю.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential а, иза кхолламчу программни гӀирсана а беш болчу балха гӀоьнна хаздина декъашхой, церан гӀо хилла файлашца. ХӀара хьалхара хьахор ду, авторан бакъонах лаьцна хаам бац: Exponential-на деш болу гӀо Contributor Licensing Agreement-ца Exponential Foundation-на а, 7x-на а дӀалуш ду.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77281,6 +77281,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>ЧугӀоран догӀа таллам бан ца елира. Дехар до, юха хьажа.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>ЧугӀоран догӀанашца бен чугӀо ца до аккаунташна кхузахь пароль леладан йиш яц: «ЧугӀоран догӀаца чугӀо» харжа.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login чугӀоран догӀанаш</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>ХӀара аккаунт чугӀоьту чугӀоран догӀанаш. Дайначу я лачкъийначу гӀирсаца долу догӀа юхадаккха: цуьнца кхин чугӀо ца тарло. Керланаш дас ша тӀетуху.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Шун аккаунтана чугӀоран догӀа оьшу</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Шун аккаунте чугӀоран догӀа тӀетоха</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Кхин дӀа даха чугӀоран догӀа тӀетоха. ТӀаккха шу паролаца бен доцуш, цуьнца чугӀур ду.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>ЧугӀоран догӀаца чугӀор паролал сиха а, кхерамза а ду. ХӀинца цхьаъ тӀетоха, я цуьнца доцуш кхин дӀаяхйа.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>ХӀинца дац</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>ЧугӀоран догӀа «%name» юхадаккха?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Цуьнца хӀокху аккаунте кхин чугӀо ца тарло. Иза тӀаьххьара делахь, да паролаца чугӀур ву, я шуьга керла пароль хӀотто йиш ю.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>ЧугӀоран догӀа юхадаккха</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Юхадаккха</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>ХӀокху аккаунтан чугӀоран догӀа дац.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Аутентификатор</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Вовзийтина дац</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Шун тӀаьххьара чугӀоран догӀа: иза дӀадаккхале кхин цхьаъ тӀетоха.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>ХӀара аккаунт чугӀоран догӀанашца бен чугӀо ца до (чугӀоран догӀанийн политика): цхьа а дисна ца хилча, иза юха шен паролаца чугӀо.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>ХӀара шун тӀаьххьара чугӀоран догӀа ду, шун аккаунт цуьнца доцуш чугӀо ца тарло. Хьалха кхин чугӀоран догӀа тӀетоха.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>ЧугӀоран догӀа «%name» юхадаьккхина. Цуьнца хӀокху аккаунте кхин чугӀо ца тарло.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77380,6 +77456,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>Шун аутентификаторан программера код</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Шу хаамаш гуттаренна дӀабайа я журнал цӀанъян кийча ду.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Шун пароль а, чугӀоран догӀа а</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Шун пароль а, шун аутентификаторан программера код а</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Я:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>ХӀокху браузерехь чугӀоран догӀанаш лелош ца тарло. Кхин некъ я кхин браузер лелае.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Шу дӀадахча, браузеро шун чугӀоран догӀанех цхьаъ хоттур ду.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>ЧугӀоран догӀаца кхин дӀаяхйа</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77470,6 +77574,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>ДӀахӀоттор</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Шен пароль, электронан поштан адрес, чугӀоран догӀанаш, шина гӀулчехь чугӀор, меттахӀотторан кодаш я API догӀанаш хийцар, ткъа шен кхечу гӀирсашкара аравалар.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Декъашхой, церан пароль а, гӀирсаш а кхолла а, нисдан а, аккаунтан параметраш, керла декъашхойн аккаунташ тӀелаца я юхатоха, ролаш леладан а, политикаш нисдан а.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Хаамаш дӀадайар</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Нехийн тускар яьсса яккхар, цу чуьра хӀуманаш дӀаяккхар а, цхьана хенахь масех хӀума дӀаяккхар а.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Чулацам дӀадаккхар, арахецар а, Ӏалашдар а</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Чулацам дӀадаккхар (нехийн тускаре а), арахецар а, черновик Ӏалашдар а; форма дӀаяхьийтича хоттало. Кечйинчу чохь дӀасаций.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Нийса ца йолу гӀуллакхал хьалха чугӀаьлла декъашхочо юха шу мила ю тӀечӀагӀдо: шен паролаца а, чугӀоран догӀаца а, я чугӀоран догӀа доцуш, шен паролаца а, шен аутентификаторан программин кодаца а. Веб-агӀонаш бен ца хоттало: REST интерфейс, SOAP, WebDAV, expservices чугӀор а, командан могӀа а цкъа а ца хоьттуш.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Параметраш мичахь болу</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Параметраш</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Массо сайте тӀекхачар</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Сайте тӀекхачар %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Схьаделла</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Мила хоттур ву: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Декъашхойн тобанаш билгалъяха, церан декъашхошка бен ца хотта (масала, редакторашка). Цхьа а билгалйина яц: массо декъашхошка.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php чохь Ӏалашйина, массо сайте тӀекхачарна. Ӏалашдарехь шу мила ю тӀечӀагӀдар хоттало.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php чохь Ӏалашйина. settings/override чохь долу маьӀна цунна тӀехь ду. Ӏалашдарехь шу мила ю тӀечӀагӀдар хоттало.</translation>
     </message>
 </context>
 <context>
@@ -77826,6 +77994,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>Шун аккаунт дӀакъовлина</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site сайтехь шун аккаунте %login чугӀоран догӀа тӀетоьхна.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>ХӀара чугӀоран догӀа шена гаргахь долчунна шун пароль йоцуш шун аккаунте чугӀо тарло. Шуьга иза тӀе ца тоьхнехь, ЧугӀоран догӀанаш чохь иза дӀадаккха, шун пароль хийца.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site сайтехь шун аккаунтера %login чугӀоран догӀа дӀадаьккхина.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Цуьнца шун аккаунте кхин чугӀо ца тарло. Шуьга иза дӀа ца даьккхинехь, шун чугӀоран догӀанаш а, гӀирсаш а хьажа.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Шун аккаунте чугӀоран догӀа тӀетоьхна</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Шун аккаунтера чугӀоран догӀа дӀадаьккхина</translation>
     </message>
 </context>
 <context>

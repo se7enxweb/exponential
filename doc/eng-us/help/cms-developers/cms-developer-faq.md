@@ -24,6 +24,7 @@ that has the whole story.
 > test the site. The same rules for other servers: [nginx](../../examples/web-servers/nginx.md), [LiteSpeed](../../examples/web-servers/litespeed.md),
 > [Caddy](../../examples/web-servers/caddy.md), [IIS](../../examples/web-servers/iis.md), [Velocity](../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../hosting/panels/plesk.md), [cPanel](../hosting/panels/cpanel.md), [DirectAdmin](../hosting/panels/directadmin.md), [ISPConfig](../hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../guides/litespeed-page-cache.md).
 
 ## Contents
 
@@ -107,7 +108,7 @@ Exponential Velocity is the recommended engine; FrankenPHP is the production-rea
 PHP-FPM work too. [Deploying a site](deploying-a-site.md#choose-how-the-site-is-served).
 
 **Which PHP and databases?**
-PHP 8.0 to 8.5 per the root `composer.json`. Databases in the project's order of preference: SQLite 3, PostgreSQL,
+PHP 8.0 to 8.5 (PHP 7.4 usable without support) per the root `composer.json`. Databases in the project's order of preference: SQLite 3, PostgreSQL,
 MongoDB, MariaDB, Oracle, MySQL. [Database support](../database-support.md), [Requirements](../../install/02-requirements.md).
 
 **How do I create .htaccess and config.php?**

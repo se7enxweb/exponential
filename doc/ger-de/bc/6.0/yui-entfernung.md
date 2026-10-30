@@ -60,7 +60,8 @@ Die `composer.json` im Wurzelverzeichnis verlangt diese Versionen.
 
 2. In den Entwicklerwerkzeugen eines Browsers, auf einer beliebigen Admin-Seite: keine Anfrage, deren URL `yui`
    enthält; in der Konsole sind `typeof YUI` und `typeof YAHOO` gleich `"undefined"` und `typeof Exp` gleich
-   `"object"`.
+   `"object"` (in admin4 und admin4l auf einer Seite, die ein `exp::`-Modul anfordert, oder solange expui seine Module
+   noch in `BackendJavaScriptList[]` aufführt).
 
 ## So beheben Sie es
 
@@ -71,8 +72,8 @@ Die `composer.json` im Wurzelverzeichnis verlangt diese Versionen.
    | YUI | Stattdessen verwenden |
    |---|---|
    | `ezjsc::yui3` + `ezjsc::yui3io`, `Y.io.ez('fn::args', ...)` | `ezjsc::jquery` + `ezjsc::jqueryio`, `$.ez('fn::args', post, callback)`; oder `exp::io`, `Exp.io.call(fn, args)` |
-   | `Y.one`, `Y.all`, `Y.on`, `Y.Node` | jQuery `$(...)` |
-   | YUI 2 DataTable / Paginator | `exp::datatable` (`$.fn.expDataTable`) |
+   | `Y.one`, `Y.all`, `Y.on`, `Y.Node` | jQuery `$(...)`; in admin4 reines DOM (`querySelector`, `addEventListener`, `a4_dom.js`) |
+   | YUI 2 DataTable / Paginator | `exp::datatable` (`Exp.datatable.create()`, oder `$.fn.expDataTable`, wo die Seite jQuery hat) |
    | YUI 2 Calendar, `ezdatepicker.js` | `exp::datepicker` (definiert `showDatePicker()`) |
    | `ezmodalwindow`, YUI Dialog / SimpleDialog | `exp::dialog` (`Exp.dialog`) |
    | `ezajaxuploader` | `exp::upload` + `expajaxuploader.js` (`$.fn.expAjaxUploader`) |

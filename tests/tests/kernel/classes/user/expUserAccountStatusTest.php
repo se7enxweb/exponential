@@ -14,7 +14,7 @@
  *  UAS-06 - The callers read the whole page at once: ezjscnode::subtree, expsubitems::rows and the tree menu call
  *           the bundle outside their loops; changing the enabled flag renews the tree's stamp
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

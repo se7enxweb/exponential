@@ -4,7 +4,7 @@
  * overview (setup/menu) is left out of that user's top menu only; a user who may not open the overview keeps it.
  * No database: whether the user may open setup/menu is the test's answer, the tabs are the test's own.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

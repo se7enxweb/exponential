@@ -26,6 +26,7 @@ für Hoster ([Ein Hosting-Modell wählen](../../hosting/modelle/ein-hosting-mode
 > Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
 > [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../../hosting/control-panels/plesk.md), [cPanel](../../hosting/control-panels/cpanel.md), [DirectAdmin](../../hosting/control-panels/directadmin.md), [ISPConfig](../../hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md).
 
 ## Inhalt
 
@@ -91,7 +92,7 @@ nutzen, ist der vernünftigste Fall; bewahren Sie Sicherungen trotzdem getrennt 
 
 | Frage | Warum |
 |---|---|
-| Welche PHP-Versionen, und kann ich 8.x pro Website wählen? | PHP 8.0 oder neuer ist erforderlich |
+| Welche PHP-Versionen, und kann ich 8.x pro Website wählen? | PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) ist erforderlich |
 | Sind `intl`, `mbstring`, `xsl`, `gd` oder ImageMagick, `sqlite3` verfügbar? | Erforderliche oder benötigte Erweiterungen ([PHP-Versionen und Erweiterungen](../../hosting/grundlagen/php-versionen-und-erweiterungen.md)) |
 | Kann ich Cron alle paar Minuten ausführen? | Newsletter, zeitgesteuertes Veröffentlichen |
 | Kann die Website E-Mails versenden, und zwar von meiner Domain? | Registrierung, Zurücksetzen des Passworts, Formulare, Newsletter |

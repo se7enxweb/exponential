@@ -7,7 +7,7 @@
  * the watchdog is paused, a lock is held or it is backing off; one that runs is
  * never touched. The run uses a stand-in engine and a directory of its own.
  *
- * @copyright Copyright (C) 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests

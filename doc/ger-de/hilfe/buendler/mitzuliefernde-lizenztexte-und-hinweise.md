@@ -26,7 +26,7 @@ eine Vorlage für die Hinweisdatei Ihres eigenen Bundles. Keine Rechtsberatung; 
 
 | Datei | Was sie enthält |
 |---|---|
-| `LICENSE` | die Urheberrechtszeilen von 7x und der Exponential Foundation sowie des ursprünglichen Entwicklers |
+| `LICENSE` | die Urheberrechtszeilen von der Exponential Foundation und 7x sowie des ursprünglichen Entwicklers |
 | `LICENSE.md` | den Text der GNU General Public License, Version 2 |
 | `COPYRIGHT.md` | das Urheberrecht und die Lizenzbedingungen ("either version 2 of the License, or (at your option) any later version") |
 | Köpfe in den Quelldateien | Zeilen `@copyright` und `@license`, zum Beispiel "GNU General Public License v2.0 (or any later version)" |
@@ -78,7 +78,7 @@ Copyright (C) <year> <your company>.
 
 This bundle contains Exponential <version>, free software under the
 GNU General Public License, version 2 or (at your option) any later version.
-Copyright (C) 1998 - 2026 7x & Exponential Foundation.
+Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
 Copyright (C) 1999 - 2014 eZ Systems AS.
 See LICENSE, LICENSE.md and COPYRIGHT.md.
 
@@ -120,3 +120,11 @@ und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-We
 Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->
+
+## Urheberrecht und Copyleft
+
+Seit dem 29. Oktober 2026 halten die Exponential Foundation und 7x das Copyright an Exponential gemeinsam, die
+Foundation zuerst genannt: „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“, in Dateien
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ Wer es hält und warum, was die
+GPL Ihnen erlaubt, welche Hinweise Dritter bleiben und wie der Hinweis in neue Dateien und Erweiterungen kommt:
+[Urheberrecht und Copyleft](../urheberrecht-und-copyleft.md).

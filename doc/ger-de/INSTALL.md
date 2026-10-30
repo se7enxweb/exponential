@@ -19,6 +19,7 @@ nach der Installation finden Sie unter [Erste Schritte](anleitungen/erste-schrit
 > Dieselben Regeln für andere Server: [nginx](beispiele/webserver/nginx.md), [LiteSpeed](beispiele/webserver/litespeed.md), [Caddy](beispiele/webserver/caddy.md), [IIS](beispiele/webserver/iis.md),
 > [Velocity](beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](hilfe/hosting/control-panels/plesk.md), [cPanel](hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](hilfe/hosting/control-panels/directadmin.md), [ISPConfig](hilfe/hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](anleitungen/seiten-cache-mit-litespeed.md).
 
 Jeder Befehl wird im Wurzelverzeichnis der Installation ausgeführt: dem Verzeichnis, das `index.php`, `autoload.php`,
 `bin/` und `settings/` enthält. Die Befehlskonsole ist `bin/php/console`. Viele Installationen legen im Wurzelverzeichnis
@@ -138,7 +139,7 @@ Serverversionen, die der Assistent prüft, stehen in `kernel/setup/ezsetupcommon
 SQLite 3.0.1, MongoDB 4.0, Oracle 19); die praktischen Mindestversionen, die die aktuellen Treiber brauchen, liegen
 höher (SQLite 3.33, PostgreSQL 13, MongoDB 6.0), siehe
 [Datenbankunterstützung](hilfe/datenbankunterstuetzung.md#versionen-am-code-überprüft). Exponential läuft auf fast jedem
-Betriebssystem mit PHP 8.0 oder neuer: siehe [Unterstützung von Betriebssystemen](hilfe/betriebssystemunterstuetzung.md).
+Betriebssystem mit PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar): siehe [Unterstützung von Betriebssystemen](hilfe/betriebssystemunterstuetzung.md).
 
 ### Webserver
 

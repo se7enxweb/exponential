@@ -10,6 +10,8 @@ type: help
 ---
 # Exponential: frequently asked questions
 
+> **Supported: PHP 8.0 to 8.5. Usable without support: PHP 7.4 (Exponential 6.0.15 and later).** [Why Exponential supports PHP 7.4](../why-exponential-supports-php-7-4.md)
+
 These answers follow the FAQ pages of the project website, [exponential.earth/faq](https://exponential.earth/faq),
 read in October 2026, retold in this help's own words and checked against the software in this repository. Where
 the repository says something different, the answer says so and follows the repository.
@@ -71,7 +73,7 @@ usual integration work. See [Velocity is part of Exponential 6.0.15](../velocity
 ### Does Exponential include a web server?
 
 Yes, as of 6.0.15. The Velocity Internet / Web Application Server is part of Exponential: the root `composer.json`
-requires `se7enxweb/exponential-velocity ~0.0.4.57`, so every installation has it, on PHP 8.0 and later. The project
+requires `se7enxweb/exponential-velocity ~0.0.4.57` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later), so every installation has it, on PHP 8.0 and later. The project
 calls this a turning point, a cornerstone and a capstone: a new level of application system integration that puts
 even greater features in the core product, out of the box, by default. Velocity is the recommended engine for every
 stage and FrankenPHP is a production-ready alternative; Apache and nginx with PHP-FPM keep working as before. The
@@ -162,9 +164,18 @@ To follow releases, or every change as it is made, see [Update with Git](../upda
 
 ### Which PHP versions does it support?
 
-Exponential 6.0.15 runs on PHP 8.0 to 8.5, and so does the Velocity application server from its release 0.0.4.54
+Exponential 6.0.15 is supported on PHP 8.0 to 8.5, the Velocity application server from its release 0.0.4.54, and usable without support on PHP 7.4 (without Velocity)
 ([Requirements](../../install/02-requirements.md)). The website's community page says "PHP 8.1 through PHP 8.5" for
-the 6.0.14 release; the repository's requirements, which also cover PHP 8.0, are the reference.
+the 6.0.14 release; the repository's requirements, which also cover PHP 7.4 and 8.0, are the reference.
+
+### Can I run Exponential on PHP 7.4?
+
+Yes, from 6.0.15, for sites that cannot change the PHP of their server yet. The kernel and the bundled extensions run
+on PHP 7.4; Velocity, Netgen Layouts, two-factor authentication and a few other extensions need PHP 8 and are not
+installed there. Composer picks the right packages by itself through the metapackage
+`se7enxweb/exponential-php-floor`. PHP 7.4 gets no security fixes from the PHP project any more, so run it only
+where your operating system vendor or host still patches it, and plan the move to PHP 8. The whole story, with a
+table per feature: [Why Exponential supports PHP 7.4](../why-exponential-supports-php-7-4.md).
 
 ### How do I host my first site?
 
@@ -173,7 +184,7 @@ The website's article
 recommends hosting providers that offer Exponential already installed, so you can start with content instead of
 server setup. Its requirements are those of an older release and not the reference: it names 6.0.10 as the current
 version, asks for PHP 8.3 or higher and for a LAMP stack with MySQL 5.7 or MariaDB 10.2. The repository says
-otherwise: 6.0.10 to 6.0.14 require PHP 8.1 or later in their `composer.json`, the 6.0.15 line runs on PHP 8.0 to 8.5,
+otherwise: 6.0.10 to 6.0.14 require PHP 8.1 or later in their `composer.json`, the 6.0.15 line runs on PHP 8.0 to 8.5 (PHP 7.4 usable without support),
 and no database server is needed, because SQLite 3 is the default; PostgreSQL, MongoDB, MariaDB, Oracle and MySQL are
 the alternatives ([Requirements](../../install/02-requirements.md)). Apache, nginx with PHP-FPM, LiteSpeed and the
 Velocity application server all serve it. If you install it yourself, the [installation book](../../install/README.md) covers every step, and
@@ -199,7 +210,7 @@ documentation, accessibility advice and testing. See [Contribute to the project]
 
 For the core kernel, yes. 7x and the Exponential Foundation require a signed Contributor Licensing Agreement (CLA)
 for every code contribution to the kernel, whether it is sent as a pull request, a patch, an issue or by mail, before
-it can be merged. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without
+it can be merged. **By signing and submitting, you assign the copyright in your contribution to the Exponential Foundation and 7x, which become its owners, and give up control over it:** The Exponential Foundation and 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without
 asking or paying you, and you cannot withdraw it or set conditions on it. You sign once for all future contributions. Your
 own custom extensions, site packages and themes are not affected. See
 [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla).
@@ -223,3 +234,11 @@ develop the products with us, and that is how Exponential grows. A partner websi
 mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
 [Partners: start here](../partners/partners-start-here.md) and [How to apply](../partners/how-to-apply.md).
 <!-- exp-partner-block:end -->
+
+## Copyright and copyleft
+
+Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
+Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
+[Copyright and copyleft](../copyright-and-copyleft.md).

@@ -2,18 +2,18 @@
 title: Cronjob usersessions.php
 audience: developer, admin
 category: examples
-summary: "Signed-in sessions ('Your devices'): ends the sessions not used for [Session] SessionTimeout, removes ended ones after [UserSessionSettings] RetentionDays."
+summary: "Angemeldete Sitzungen ('Ihre Geräte'): beendet die Sitzungen, die für [Session] SessionTimeout nicht benutzt wurden, und entfernt beendete nach [UserSessionSettings] RetentionDays."
 keywords: Teil, usersessions.php, usersessions, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob usersessions.php
 
-Signed-in sessions ("Your devices"): ends the sessions not used for [Session] SessionTimeout, removes ended ones after [UserSessionSettings] RetentionDays.
+Angemeldete Sitzungen ("Ihre Geräte"): beendet die Sitzungen, die für [Session] SessionTimeout nicht benutzt wurden, und entfernt beendete nach [UserSessionSettings] RetentionDays.
 
 Einstiegspunkt `cronjobs/usersessions.php`, Code in `kernel/private/classes/cronjobs/usersessions.php`.
 
-> The code of cronjobs/usersessions.php.  
+> Der Code von cronjobs/usersessions.php.  
 
 ## Wann er läuft
 

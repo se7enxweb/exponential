@@ -8066,8 +8066,8 @@
         <translation>မူလ ရေးသားသူများနှင့် Exponential နှင့်အတူ ပါဝင်သော ပြင်ပအဖွဲ့အစည်း ဆော့ဖ်ဝဲ၏ မူပိုင်ခွင့် အသိပေးချက်များကို လိုင်စင်က လိုအပ်သည့်အတိုင်း အရင်းအမြစ်ဖိုင်များနှင့် LICENSE ဖိုင်တွင် ထိန်းသိမ်းထားသည်။</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>အောက်ပါသည် eZ Systems Contributor Licensing Agreement ၏ စည်းကမ်းချက်များအရ 7x က အသုံးပြုရန် ၎င်းတို့၏ လုပ်ငန်းကို လိုင်စင်ပေးထားသော Exponential ပါဝင်ကူညီသူများ၏ စာရင်း ဖြစ်သည်။ ဤသဘောတူညီချက်က ခွင့်ပြုထားသည့်အတိုင်း 7x သည် ပါဝင်ကူညီမှုတစ်ခုစီကို ၎င်းပါဝင်သော ဖိုင်၏ လိုင်စင်အတိုင်း ပြန်လည်ဖြန့်ဝေသည်။ စာရင်းတွင် ပါဝင်ကူညီသူတစ်ဦးစီ၏ အမည်၊ ရွေးချယ်နိုင်သော ဆက်သွယ်ရန်အချက်အလက်နှင့် ၎င်းတို့ ပါဝင်ကူညီခဲ့သော သို့မဟုတ် လုပ်ငန်း ပါဝင်ခဲ့သော ဖိုင်များကို ဖော်ပြထားသည်။</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential နှင့် ၎င်းမှ ပေါက်ဖွားလာသော ဆော့ဖ်ဝဲပေါ်တွင် လုပ်ဆောင်ခဲ့သည့်အတွက် ဂုဏ်ပြုခံရသော ပံ့ပိုးသူများနှင့် ၎င်းတို့ ပံ့ပိုးခဲ့သော ဖိုင်များ။ ဤသည်မှာ ဂုဏ်ပြုခြင်းဖြစ်ပြီး မူပိုင်ခွင့်အသိပေးချက် မဟုတ်ပါ- Exponential သို့ ပံ့ပိုးမှုများကို Contributor Licensing Agreement အရ Exponential Foundation နှင့် 7x ထံ လွှဲပြောင်းပေးပါသည်။</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77281,6 +77281,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>ပတ်စ်ကီးကို စစ်ဆေး၍ မရခဲ့ပါ။ ကျေးဇူးပြု၍ ထပ်စမ်းပါ။</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>ပတ်စ်ကီးများဖြင့်သာ ဝင်သော အကောင့်များသည် ဤနေရာတွင် စကားဝှက်ကို သုံး၍ မရပါ- &quot;ပတ်စ်ကီးဖြင့် ဝင်ရန်&quot; ကို ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login ၏ ပတ်စ်ကီးများ</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>ဤအကောင့် ဝင်ရောက်ရာတွင် သုံးသော ပတ်စ်ကီးများ။ ပျောက်ဆုံးသွားသော သို့မဟုတ် ခိုးယူခံရသော စက်ပစ္စည်းပေါ်ရှိ ပတ်စ်ကီးကို ရုပ်သိမ်းပါ- ၎င်းဖြင့် ထပ်မံဝင်၍ မရတော့ပါ။ အသစ်များကို ပိုင်ရှင်ကိုယ်တိုင် ထည့်ပါသည်။</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>သင့်အကောင့်တွင် ပတ်စ်ကီး လိုအပ်သည်</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>သင့်အကောင့်တွင် ပတ်စ်ကီး ထည့်ရန်</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>ဆက်လုပ်ရန် ပတ်စ်ကီးတစ်ခု ထည့်ပါ။ ထို့နောက် စကားဝှက်တစ်ခုတည်းအစား ၎င်းဖြင့် ဝင်ပါမည်။</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>ပတ်စ်ကီးဖြင့် ဝင်ခြင်းသည် စကားဝှက်ထက် ပိုမြန်ပြီး ပိုလုံခြုံသည်။ ယခု တစ်ခုထည့်ပါ သို့မဟုတ် ၎င်းမပါဘဲ ဆက်လုပ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>ယခု မဟုတ်ပါ</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>ပတ်စ်ကီး &quot;%name&quot; ကို ရုပ်သိမ်းမည်လား။</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>၎င်းသည် ဤအကောင့်သို့ ဝင်၍ မရတော့ပါ။ ၎င်းသည် နောက်ဆုံးတစ်ခု ဖြစ်ခဲ့လျှင် ပိုင်ရှင်သည် စကားဝှက်ဖြင့် ဝင်ပါမည်၊ သို့မဟုတ် သင်က စကားဝှက်အသစ် သတ်မှတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>ပတ်စ်ကီးကို ရုပ်သိမ်းရန်</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>ရုပ်သိမ်းရန်</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>ဤအကောင့်တွင် ပတ်စ်ကီး မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>အထောက်အထားစိစစ်ကိရိယာ</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>မသိ</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>သင့်နောက်ဆုံး ပတ်စ်ကီး- ၎င်းကို မဖယ်ရှားမီ နောက်တစ်ခု ထည့်ပါ။</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>ဤအကောင့်သည် ပတ်စ်ကီးများဖြင့်သာ ဝင်သည် (ပတ်စ်ကီးမူဝါဒ)- တစ်ခုမှ မကျန်တော့လျှင် ၎င်း၏ စကားဝှက်ဖြင့် ပြန်ဝင်ပါမည်။</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>ဤသည်မှာ သင့်နောက်ဆုံး ပတ်စ်ကီးဖြစ်ပြီး ၎င်းမရှိဘဲ သင့်အကောင့် ဝင်၍ မရပါ။ နောက်ထပ် ပတ်စ်ကီးတစ်ခုကို အရင်ထည့်ပါ။</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>ပတ်စ်ကီး &quot;%name&quot; ကို ရုပ်သိမ်းပြီးပါပြီ။ ၎င်းသည် ဤအကောင့်သို့ ဝင်၍ မရတော့ပါ။</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77380,6 +77456,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>သင့်အထောက်အထားစိစစ်အက်ပ်မှ ကုဒ်</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>သင်သည် ဒေတာကို အပြီးအပိုင် ဖျက်တော့မည် သို့မဟုတ် မှတ်တမ်းတစ်ခုကို ရှင်းလင်းတော့မည်။</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>သင့်စကားဝှက်နှင့် ပတ်စ်ကီး</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>သင့်စကားဝှက်နှင့် သင့်အထောက်အထားစိစစ်အက်ပ်မှ ကုဒ်</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>သို့မဟုတ်:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>ဤဘရောက်ဆာသည် ပတ်စ်ကီးများကို သုံး၍ မရပါ။ အခြားနည်းလမ်း သို့မဟုတ် အခြားဘရောက်ဆာကို သုံးပါ။</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>ဆက်လုပ်သည့်အခါ သင့်ဘရောက်ဆာက သင့်ပတ်စ်ကီးများထဲမှ တစ်ခုကို တောင်းပါမည်။</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>ပတ်စ်ကီးဖြင့် ဆက်လုပ်ရန်</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77470,6 +77574,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>စနစ်ထည့်သွင်းမှု</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>ကိုယ်ပိုင် စကားဝှက်၊ အီးမေးလ်လိပ်စာ၊ ပတ်စ်ကီးများ၊ နှစ်ဆင့်ဝင်ရောက်မှု၊ ပြန်လည်ရယူရေးကုဒ်များ သို့မဟုတ် API ကီးများကို ပြောင်းခြင်းနှင့် ကိုယ်ပိုင် အခြားစက်ပစ္စည်းများမှ ထွက်ခြင်း။</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>အသုံးပြုသူများ၊ ၎င်းတို့၏ စကားဝှက်များနှင့် စက်ပစ္စည်းများ၊ အကောင့်ဆက်တင်များကို ဖန်တီးခြင်းနှင့် တည်းဖြတ်ခြင်း၊ အသုံးပြုသူအကောင့်အသစ်များကို အတည်ပြုခြင်း သို့မဟုတ် ငြင်းပယ်ခြင်း၊ အခန်းကဏ္ဍများ သတ်မှတ်ခြင်းနှင့် မူဝါဒများ တည်းဖြတ်ခြင်း။</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>ဒေတာ ဖျက်ခြင်း</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>အမှိုက်ပုံးကို ရှင်းလင်းခြင်း၊ ၎င်းထဲမှ အရာများ ဖယ်ရှားခြင်းနှင့် အရာများစွာကို တစ်ပြိုင်နက် ဖယ်ရှားခြင်း။</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>အကြောင်းအရာ ဖယ်ရှားခြင်း၊ ထုတ်ဝေခြင်းနှင့် သိမ်းဆည်းခြင်း</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>အကြောင်းအရာ ဖယ်ရှားခြင်း (အမှိုက်ပုံးသို့လည်း)၊ ထုတ်ဝေခြင်းနှင့် မူကြမ်း သိမ်းဆည်းခြင်း၊ ဖောင်ကို ပို့သည့်အခါ မေးသည်။ မူလအားဖြင့် ပိတ်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>အရေးကြီးသော လုပ်ဆောင်ချက်မတိုင်မီ ဝင်ထားသော အသုံးပြုသူသည် မိမိမည်သူဖြစ်ကြောင်း ထပ်မံအတည်ပြုသည်- မိမိ၏ စကားဝှက်နှင့် ပတ်စ်ကီးဖြင့်၊ သို့မဟုတ် ပတ်စ်ကီးမရှိလျှင် မိမိ၏ စကားဝှက်နှင့် အထောက်အထားစိစစ်အက်ပ်၏ ကုဒ်ဖြင့်။ ဝဘ်စာမျက်နှာများသာ မေးသည်- REST အင်တာဖေ့စ်၊ SOAP၊ WebDAV၊ expservices ဝင်ရောက်မှုနှင့် ကွန်မန်းလိုင်းတို့သည် ဘယ်တော့မှ မမေးပါ။</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>ဆက်တင်များ သက်ရောက်သည့်နေရာ</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>အောက်ပါအတွက် ဆက်တင်များ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ဆိုက်ဝင်ရောက်မှု အားလုံး</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>ဆိုက်ဝင်ရောက်မှု %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ဖွင့်ရန်</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>မေးမည့်သူ- %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>အဖွဲ့ဝင်များကိုသာ မေးရန် အသုံးပြုသူအုပ်စုများကို အမှန်ခြစ်ပါ (ဥပမာ တည်းဖြတ်သူများ)။ မည်သည့်အရာမျှ အမှန်မခြစ်လျှင်- အသုံးပြုသူတိုင်း။</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>ဆိုက်ဝင်ရောက်မှုတိုင်းအတွက် settings/override/site.ini.append.php တွင် သိမ်းထားသည်။ သိမ်းသည့်အခါ သင်ဖြစ်ကြောင်း အတည်ပြုရန် တောင်းပါမည်။</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php တွင် သိမ်းထားသည်။ settings/override ရှိ တန်ဖိုးသည် ၎င်းထက် ဦးစားပေးသည်။ သိမ်းသည့်အခါ သင်ဖြစ်ကြောင်း အတည်ပြုရန် တောင်းပါမည်။</translation>
     </message>
 </context>
 <context>
@@ -77826,6 +77994,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>သင့်အကောင့်ကို လော့ခ်ချလိုက်ပြီ</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site ရှိ သင့်အကောင့် %login တွင် ပတ်စ်ကီးတစ်ခု ထည့်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>ဤပတ်စ်ကီးကို ကိုင်ထားသူမည်သူမဆို သင့်စကားဝှက်မပါဘဲ သင့်အကောင့်သို့ ဝင်နိုင်သည်။ ၎င်းကို သင်မထည့်ခဲ့လျှင် ပတ်စ်ကီးများ အောက်တွင် ဖယ်ရှားပြီး သင့်စကားဝှက်ကို ပြောင်းပါ။</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site ရှိ သင့်အကောင့် %login မှ ပတ်စ်ကီးတစ်ခု ဖယ်ရှားထားသည်။</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>၎င်းသည် သင့်အကောင့်သို့ ဝင်၍ မရတော့ပါ။ ၎င်းကို သင်မဖယ်ရှားခဲ့လျှင် သင့်ပတ်စ်ကီးများနှင့် စက်ပစ္စည်းများကို စစ်ဆေးပါ။</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>သင့်အကောင့်တွင် ပတ်စ်ကီးတစ်ခု ထည့်ထားသည်</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>သင့်အကောင့်မှ ပတ်စ်ကီးတစ်ခု ဖယ်ရှားထားသည်</translation>
     </message>
 </context>
 <context>

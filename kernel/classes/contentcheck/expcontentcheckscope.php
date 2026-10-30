@@ -16,7 +16,7 @@
  * shared with other pages' quick location buttons (the upload page of ezmultiupload); the methods here keep their
  * names and answers.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

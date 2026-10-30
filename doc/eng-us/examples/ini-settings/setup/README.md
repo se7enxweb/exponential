@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # setup.ini
 
-The shipped settings of `settings/setup.ini`: 24 blocks, 54 settings.
+The shipped settings of `settings/setup.ini`: 24 blocks, 55 settings.
 
 > Exponential configuration file for eZ Setup  
 >
@@ -29,7 +29,7 @@ The shipped settings of `settings/setup.ini`: 24 blocks, 54 settings.
 | Block | Settings |
 |---|---|
 | [RegistrationSettings](RegistrationSettings.md) | 1 |
-| [phpversion](phpversion.md) | 2 |
+| [phpversion](phpversion.md) | 3 |
 | [ezcversion](ezcversion.md) | 3 |
 | [php_session](php_session.md) | 2 |
 | [memory_limit](memory_limit.md) | 1 |

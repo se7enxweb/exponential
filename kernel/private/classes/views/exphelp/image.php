@@ -7,7 +7,7 @@
  * with the content type of its suffix, nosniff and a long private cache lifetime (the copy of an address never
  * changes).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

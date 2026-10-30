@@ -13,7 +13,7 @@
  * Links between topics (help:<help_id> in the text, related topics, a manual's contents) go to the topics' pages on
  * this site (their node's URL alias), not to the help of the administration.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

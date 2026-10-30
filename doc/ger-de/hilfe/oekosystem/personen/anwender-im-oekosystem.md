@@ -39,7 +39,7 @@ type: help
 ## Anwender, die zu Erstellern werden
 
 Viele Ersteller haben als Anwender begonnen, die eine Sache geändert haben wollten. Der erste Schritt ist klein:
-[Vom Anwender zum Mitwirkenden](../../../../eng-us/help/community/paths/from-user-to-contributor.md).
+[Vom Anwender zum Mitwirkenden](../../gemeinschaft/lernpfade/vom-nutzer-zum-mitwirkenden.md).
 
 ## Verwandte Seiten
 

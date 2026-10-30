@@ -82,7 +82,7 @@ Maintenance mode makes database and files agree during the backup
 
 | Topic | Source |
 |---|---|
-| Requirements (PHP 8.0+, databases, web servers) | [Requirements at a glance](../../../hosting/basics/requirements-at-a-glance.md) |
+| Requirements (PHP 8.0+ (7.4 usable without support), databases, web servers) | [Requirements at a glance](../../../hosting/basics/requirements-at-a-glance.md) |
 | Database backup commands per engine | [Database backups per engine](../../../hosting/operations/database-backups-per-engine.md) |
 | Restore tests | [Restore and restore tests](../../../hosting/operations/restore-and-restore-tests.md) |
 | Restricting the administration | [Restricting the administration](../../../hosting/security/restricting-the-administration.md) |

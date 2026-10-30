@@ -2,7 +2,7 @@
 /**
  * File containing the expPasskeySettings class.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
@@ -10,7 +10,8 @@
 /**
  * site.ini [PasskeySettings], read for one request (doc/eng-us/guides/passkeys.md): whether passkeys are on, the
  * relying party (id and name), the origins answers may come from, user verification, the algorithms offered, how
- * long a challenge may be answered and how many passkeys an account may have.
+ * long a challenge may be answered, how many passkeys an account may have, the attestation asked for, the relying
+ * party id of each host of a multi-host installation (RelyingPartyIDMap) and the names a site gives authenticators.
  *
  * The relying party id and the origins default to the request's host and origin. fromValues() takes the raw values
  * and the request's host and origin, so the rules are tested without an installation; read() takes them from
@@ -49,6 +50,9 @@ class expPasskeySettings
             'Algorithms' => $get( 'Algorithms', array( -7, -257 ) ),
             'ChallengeSeconds' => $get( 'ChallengeSeconds', 300 ),
             'MaxPerUser' => $get( 'MaxPerUser', 20 ),
+            'Attestation' => $get( 'Attestation', 'none' ),
+            'RelyingPartyIDMap' => $get( 'RelyingPartyIDMap', array() ),
+            'AuthenticatorNames' => $get( 'AuthenticatorNames', array() ),
         ), $origin, $siteName );
     }
 
@@ -67,6 +71,10 @@ class expPasskeySettings
         $requestHost = $requestOrigin ? parse_url( $requestOrigin, PHP_URL_HOST ) : '';
 
         $rpId = strtolower( trim( (string)( isset( $raw['RelyingPartyID'] ) ? $raw['RelyingPartyID'] : '' ) ) );
+        // a multi-host installation maps each host to its relying party id (RelyingPartyIDMap[<host>]=<id>)
+        $map = isset( $raw['RelyingPartyIDMap'] ) && is_array( $raw['RelyingPartyIDMap'] ) ? array_change_key_case( $raw['RelyingPartyIDMap'], CASE_LOWER ) : array();
+        if ( $requestHost !== '' && isset( $map[strtolower( $requestHost )] ) && trim( (string)$map[strtolower( $requestHost )] ) !== '' )
+            $rpId = strtolower( trim( (string)$map[strtolower( $requestHost )] ) );
         // the id must be the host or a parent domain of it, or the browser refuses it: fall back to the host
         if ( $rpId === '' || ( $requestHost !== '' && $requestHost !== $rpId && substr( $requestHost, -strlen( '.' . $rpId ) ) !== '.' . $rpId ) )
             $rpId = (string)$requestHost;
@@ -96,6 +104,8 @@ class expPasskeySettings
             'algorithms' => $algorithms,
             'challenge_seconds' => max( 30, min( 3600, (int)( isset( $raw['ChallengeSeconds'] ) ? $raw['ChallengeSeconds'] : 300 ) ) ),
             'max_per_user' => max( 1, (int)( isset( $raw['MaxPerUser'] ) ? $raw['MaxPerUser'] : 20 ) ),
+            'attestation' => self::attestationValue( isset( $raw['Attestation'] ) ? $raw['Attestation'] : 'none' ),
+            'authenticator_names' => self::authenticatorNames( isset( $raw['AuthenticatorNames'] ) ? (array)$raw['AuthenticatorNames'] : array() ),
         ) );
     }
 
@@ -120,6 +130,37 @@ class expPasskeySettings
     public function algorithms() { return $this->values['algorithms']; }
     public function challengeSeconds() { return $this->values['challenge_seconds']; }
     public function maxPerUser() { return $this->values['max_per_user']; }
+    public function attestation() { return $this->values['attestation']; }
+
+    /**
+     * @param mixed $value
+     * @return string none (default), indirect or direct
+     */
+    public static function attestationValue( $value )
+    {
+        $value = strtolower( trim( (string)$value ) );
+        return in_array( $value, array( 'none', 'indirect', 'direct' ), true ) ? $value : 'none';
+    }
+    public function authenticatorNamesMap() { return $this->values['authenticator_names']; }
+
+    /**
+     * AuthenticatorNames[<aaguid>]=<name>: the names a site adds or corrects, keyed by the AAGUID in lower case.
+     *
+     * @param array $raw
+     * @return array
+     */
+    public static function authenticatorNames( array $raw )
+    {
+        $out = array();
+        foreach ( $raw as $aaguid => $name )
+        {
+            $aaguid = strtolower( trim( (string)$aaguid ) );
+            $name = trim( (string)$name );
+            if ( preg_match( '/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/', $aaguid ) && $name !== '' )
+                $out[$aaguid] = $name;
+        }
+        return $out;
+    }
 
     /**
      * What a check expects (expWebAuthn::verify*()).

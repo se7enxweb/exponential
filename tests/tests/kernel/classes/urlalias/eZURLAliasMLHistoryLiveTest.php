@@ -13,7 +13,7 @@
  * Runs on the admin siteaccess through ezpLiveInstallation (skipped where there is no installation, as on CI);
  * every object lives below a throwaway folder that tearDownAfterClass() removes.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group kernel

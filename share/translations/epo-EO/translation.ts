@@ -8066,8 +8066,8 @@
         <translation>La aŭtorrajtaj notoj de la originaj aŭtoroj kaj de la programaro de triaj partoj inkluzivita kun Exponential estas konservataj en la fontaj dosieroj kaj en la dosiero LICENSE, kiel la licenco postulas.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Sekvas listo de kontribuantoj al Exponential, kiuj licencis sian laboron por uzo de 7x laŭ la kondiĉoj de la eZ Systems Contributor Licensing Agreement. Kiel ĉi tiu interkonsento permesas, 7x redistribuas ĉiun kontribuon laŭ la sama licenco kiel la dosiero, en kiu la kontribuo estas inkluzivita. La listo nomas ĉiun kontribuanton, laŭvolajn kontaktajn informojn kaj la dosierojn, al kiuj ili kontribuis.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Kontribuantoj agnoskitaj pro sia laboro pri Exponential kaj pri la programaro el kiu ĝi kreskis, kun la dosieroj al kiuj ili kontribuis. Ĉi tio estas agnosko, ne kopirajta avizo: kontribuoj al Exponential estas cedataj al la Exponential Foundation kaj al 7x laŭ la Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77281,6 +77281,82 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>La alirŝlosilo ne povis esti kontrolita. Bonvolu provi denove.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Kontoj, kiuj ensalutas nur per alirŝlosiloj, ne povas uzi pasvorton ĉi tie: elektu &quot;Ensaluti per alirŝlosilo&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Alirŝlosiloj de %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>La alirŝlosiloj, per kiuj ĉi tiu konto ensalutas. Revoku tiun, kiu estas sur perdita aŭ ŝtelita aparato: ĝi ne plu povos ensaluti. La posedanto mem aldonas novajn.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Via konto bezonas alirŝlosilon</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Aldonu alirŝlosilon al via konto</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Aldonu alirŝlosilon por daŭrigi. Poste vi ensalutos per ĝi anstataŭ nur per pasvorto.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Ensaluti per alirŝlosilo estas pli rapide kaj pli sekure ol per pasvorto. Aldonu unu nun, aŭ daŭrigu sen ĝi.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Ne nun</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Ĉu revoki la alirŝlosilon &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Ĝi ne plu povos ensaluti en ĉi tiun konton. Se ĝi estis la lasta, la posedanto ensalutas per la pasvorto, aŭ vi agordas novan.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Revoki la alirŝlosilon</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Revoki</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Ĉi tiu konto ne havas alirŝlosilon.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Aŭtentigilo</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Nekonata</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Via lasta alirŝlosilo: aldonu alian antaŭ ol forpreni ĝin.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Ĉi tiu konto ensalutas nur per alirŝlosiloj (alirŝlosila politiko): se neniu restas, ĝi denove ensalutas per sia pasvorto.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Ĉi tio estas via lasta alirŝlosilo, kaj via konto ne povas ensaluti sen ĝi. Unue aldonu alian alirŝlosilon.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>La alirŝlosilo &quot;%name&quot; estas revokita. Ĝi ne plu povas ensaluti en ĉi tiun konton.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77380,6 +77456,34 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>Code from your authenticator app</source>
         <translation>Kodo el via aŭtentiga aplikaĵo</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Vi estas forigonta datumojn porĉiame aŭ malplenigonta protokolon.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Via pasvorto kaj alirŝlosilo</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Via pasvorto kaj kodo el via aŭtentiga aplikaĵo</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Aŭ:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Ĉi tiu retumilo ne povas uzi alirŝlosilojn. Uzu alian manieron aŭ alian retumilon.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Kiam vi daŭrigos, via retumilo petos unu el viaj alirŝlosiloj.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Daŭrigi per alirŝlosilo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77470,6 +77574,70 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>Setup</source>
         <translation>Agordado</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Ŝanĝo de la propra pasvorto, retpoŝtadreso, alirŝlosiloj, dupaŝa ensaluto, restarigaj kodoj aŭ API-ŝlosiloj, kaj elsalutigo de la propraj aliaj aparatoj.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Kreado kaj redaktado de uzantoj, iliaj pasvortoj kaj aparatoj, kontaj agordoj, aprobo aŭ rifuzo de novaj uzantkontoj, atribuo de roloj kaj redaktado de politikoj.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Forigo de datumoj</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Malplenigo de la rubujo, forpreno de eroj el ĝi kaj forpreno de pluraj eroj samtempe.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Forpreno, publikigo kaj konservado de enhavo</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Forpreno de enhavo (ankaŭ en la rubujon), publikigo kaj konservado de malneto, demandata kiam la formularo estas sendata. Implicite malŝaltita.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Antaŭ sentema ago ensalutinta uzanto denove konfirmas, kiu li estas: per sia pasvorto kaj alirŝlosilo, aŭ sen alirŝlosilo per sia pasvorto kaj la kodo de sia aŭtentiga aplikaĵo. Nur la retpaĝoj demandas: la REST-interfaco, SOAP, WebDAV, la ensaluto de expservices kaj la komandlinio neniam demandas.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Kie la agordoj validas</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Agordoj por</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Ĉiu retejaliro</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Retejaliro %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Malfermi</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Kiu estas demandata: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Marku uzantgrupojn por demandi nur iliajn membrojn (ekzemple redaktorojn). Nenio markita: ĉiu uzanto.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Konservita en settings/override/site.ini.append.php, por ĉiu retejaliro. Konservado petas, ke vi konfirmu, ke ĝi estas vi.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Konservita en settings/siteaccess/%name/site.ini.append.php. Valoro en settings/override havas prioritaton. Konservado petas, ke vi konfirmu, ke ĝi estas vi.</translation>
     </message>
 </context>
 <context>
@@ -77826,6 +77994,30 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Via konto estis ŝlosita</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Alirŝlosilo estis aldonita al via konto %login ĉe %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Ĉiu, kiu havas ĉi tiun alirŝlosilon, povas ensaluti en vian konton sen via pasvorto. Se vi ne aldonis ĝin, forprenu ĝin sub Alirŝlosiloj kaj ŝanĝu vian pasvorton.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Alirŝlosilo estis forprenita de via konto %login ĉe %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Ĝi ne plu povas ensaluti en vian konton. Se vi ne forprenis ĝin, kontrolu viajn alirŝlosilojn kaj aparatojn.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Alirŝlosilo estis aldonita al via konto</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Alirŝlosilo estis forprenita de via konto</translation>
     </message>
 </context>
 <context>

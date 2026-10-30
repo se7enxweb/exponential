@@ -2,7 +2,7 @@
 title: Muster in extension/ezpm
 audience: developer
 category: standards
-order: 450
+order: 455
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezpm mit den Entwurfsmustern.
 keywords: extension/ezpm, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

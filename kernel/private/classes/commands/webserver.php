@@ -10,7 +10,7 @@
  * File containing the web server control script.
  *
  * @description Control the Exponential web server (php, frankenphp or qbix engines); what writes is a dry run unless --apply
- * @copyright Copyright (C) 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel

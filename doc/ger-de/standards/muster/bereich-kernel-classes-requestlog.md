@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/requestlog
 audience: developer
 category: standards
-order: 504
+order: 513
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/requestlog mit den Entwurfsmustern.
 keywords: kernel/classes/requestlog, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

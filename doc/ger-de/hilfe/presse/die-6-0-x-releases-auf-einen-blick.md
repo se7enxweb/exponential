@@ -31,7 +31,7 @@ seinem Datum auf, nach [doc/eng-us/release-overview](../../../eng-us/release-ove
 | 6.0.4 | 5. September 2024 | Das erste Release nach admin3, dem responsiven Design der Administration |
 | 6.0.5 | 1. Oktober 2024 | |
 | 6.0.6 | 17. Dezember 2024 | |
-| 6.0.7 | 1. Februar 2025 | Das letzte Release für PHP 7.4 |
+| 6.0.7 | 1. Februar 2025 | Das letzte Release für PHP 7.4 bis 6.0.15 |
 | 6.0.8 | 2. Mai 2025 | Das erste Release nach Beginn der Unterstützung für PHP 8.4 |
 | 6.0.9 | 10. Juni 2025 | |
 | 6.0.10 | 28. August 2025 | Das erste Release unter dem Namen Exponential |

@@ -6,7 +6,7 @@
  * groups and states, order the states of a group, and assign states to an object or a subtree (subtrees route
  * through content jobs when asked or large).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

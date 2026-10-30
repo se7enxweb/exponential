@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[CronjobPart-usersessions]` von `settings/cronjob.ini`, mit 1 Einstellung(en).
 
-> The signed-in sessions on their own: php runcronjobs.php usersessions (doc/eng-us/features/6.0/user-sessions.md)  
+> Die angemeldeten Sitzungen für sich: php runcronjobs.php usersessions (doc/eng-us/features/6.0/user-sessions.md)  
 
 Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

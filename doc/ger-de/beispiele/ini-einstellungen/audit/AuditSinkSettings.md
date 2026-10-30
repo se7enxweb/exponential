@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## SinkClasses
 
-> Sinks besides the file (which is always written). name => class implementing  
-> expAuditSink. Extensions add their own (RAD survey registry "auditsinks").  
-> The user audit log (table expuser\_audit, \[UserAuditSettings\]); a database insert at flush time  
+> Senken neben der Datei (die immer geschrieben wird). Name => Klasse, die  
+> expAuditSink implementiert. Erweiterungen fügen eigene hinzu (RAD-Survey-Registry "auditsinks").  
+> Das Benutzer-Audit-Log (Tabelle expuser\_audit, \[UserAuditSettings\]); ein Datenbank-Insert beim Flush  
 
 Standard: ein Hash mit 4: `syslog=expAuditSyslogSink`, `webhook=expAuditWebhookSink`, `mail=expAuditMailSink`, `useraudit=expAuditUserAuditSink`.
 

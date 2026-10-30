@@ -32,7 +32,7 @@ first, then `ezinfo.php` for anything still missing, then `composer.json` and th
 // before: se7enxweb/expsite_installer, before commit 0c771fe
 return array( Name => "expsite_installer",
               Version => "1.0.1",
-              Copyright => "Copyright (C) 1998 - 2026 7x. All rights reserved.",
+              Copyright => "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.",
               License => "GNU General Public License v2.0 (or any later version)",
               info_url => "https://github.com/se7enxweb/expsite_installer" );
 ```

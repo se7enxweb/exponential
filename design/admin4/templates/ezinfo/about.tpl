@@ -89,7 +89,7 @@
     {if $has_contributors}
     <h3>{'Contributors'|i18n( 'design/admin/ezinfo/about' )}</h3>
     <div class="ezinfo-prose">
-        <p>{'The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.'|i18n( 'design/admin/ezinfo/about' )}</p>
+        <p>{'Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.'|i18n( 'design/admin/ezinfo/about' )}</p>
     </div>
     <ul class="ezinfo-list">
     {foreach $contributors as $contributor}

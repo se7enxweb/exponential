@@ -8066,8 +8066,8 @@
         <translation>Ka puritia ngā pānui manatārua o ngā kaituhi taketake me te pūmanawa a te hunga kē kei roto i a Exponential i ngā kōnae pūtake me te kōnae LICENSE, pērā i tā te raihana e tono ana.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Ko te rārangi e whai ake nei ko ngā kaitautoko o Exponential kua raihana i ā rātou mahi kia whakamahia e 7x i raro i ngā ture me ngā āhuatanga o te eZ Systems Contributor Licensing Agreement. E ai ki tā tēnei whakaaetanga e whakaae ana, ka tohatoha anō a 7x i ia tautoko i raro i te raihana ōrite ki te kōnae kei roto ai te tautoko. Ka whakahua te rārangi i ia kaitautoko, ngā taipitopito whakapā ki te pai, me ngā kōnae i tautoko ai rātou.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Ngā kaiwhai wāhi e whakamihia ana mō ā rātou mahi ki Exponential, ki te pūmanawa hoki i ahu mai ai, me ngā kōnae i whai wāhi ai rātou. He whakamihi tēnei, ehara i te pānui manatārua: ka tukuna ngā takoha ki Exponential ki te Exponential Foundation me 7x i raro i te Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77281,6 +77281,82 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Kāore i taea te tirotiro i te kī uru. Tēnā koa, whakamātauria anōtia.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Kāore e taea e ngā pūkete ka takiuru mā ngā kī uru anake te whakamahi kupuhipa i konei: kōwhiria “Takiuru mā te kī uru”.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Ngā kī uru o %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Ngā kī uru e takiuru ai tēnei pūkete. Unuhia te kī kei runga i tētahi pūrere kua ngaro, kua tāhaetia rānei: kāore e taea e ia te takiuru anō. Mā te rangatira anō e tāpiri ngā mea hou.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Me whai kī uru tō pūkete</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Tāpiria he kī uru ki tō pūkete</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Tāpiria he kī uru kia haere tonu ai. Ka takiuru koe mā reira, kaua mā te kupuhipa anake.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>He tere ake, he haumaru ake te takiuru mā te kī uru i te kupuhipa. Tāpiria tētahi ināianei, haere tonu rānei me te kore.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Ā tōna wā</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Me unu te kī uru “%name”?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Kāore e taea e ia te takiuru ki tēnei pūkete. Mehemea koia te mea whakamutunga, ka takiuru te rangatira mā te kupuhipa, ka tautuhi rānei koe i tētahi kupuhipa hou.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Unuhia te kī uru</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Unu</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Kāore he kī uru o tēnei pūkete.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Kaiwhakamana</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Kāore i te mōhiotia</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Tō kī uru whakamutunga: tāpiria tētahi atu i mua i tō tango i tēnei.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Ka takiuru tēnei pūkete mā ngā kī uru anake (kaupapa here kī uru): ki te kore he mea e toe ana, ka takiuru anō mā tōna kupuhipa.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Koinei tō kī uru whakamutunga, ā, kāore e taea e tō pūkete te takiuru me te kore. Tāpiria tētahi atu kī uru i te tuatahi.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Kua unuhia te kī uru “%name”. Kāore e taea e ia te takiuru ki tēnei pūkete.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77380,6 +77456,34 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>Code from your authenticator app</source>
         <translation>Waehere mai i tō tono kaiwhakamana</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Kei te mukua e koe ētahi raraunga mō ake tonu, kei te ūkui rānei i tētahi rangitaki.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Tō kupuhipa me tētahi kī uru</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Tō kupuhipa me tētahi waehere mai i tō tono kaiwhakamana</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Rānei:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Kāore e taea e tēnei pūtirotiro te whakamahi kī uru. Whakamahia tētahi atu huarahi, tētahi atu pūtirotiro rānei.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Ka haere tonu koe, ka tono tō pūtirotiro i tētahi o ō kī uru.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Haere tonu mā te kī uru</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77470,6 +77574,70 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>Setup</source>
         <translation>Whakaritenga</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Te huri i tō ake kupuhipa, wāhitau īmēra, kī uru, takiuru takirua, waehere whakaora, kī API rānei, me te takiputa i ō ake pūrere kē.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Te waihanga me te whakatika i ngā kaiwhakamahi, ō rātou kupuhipa me ō rātou pūrere, ngā tautuhinga pūkete, te whakaae, te whakakāhore rānei i ngā pūkete kaiwhakamahi hou, te tautapa tūranga me te whakatika kaupapa here.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Te muku raraunga</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Te whakawātea i te ipupara, te tango mea i roto, me te tango i ngā mea maha i te wā kotahi.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Te tango, te whakaputa me te tiaki ihirangi</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Te tango ihirangi (ki te ipupara anō), te whakaputa me te tiaki tauira; ka pātaihia ina tukuna te puka. Kua weto mā te taunoa.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>I mua i tētahi mahi tūpato, ka whakaū anō te kaiwhakamahi kua takiuru ko wai ia: mā tōna kupuhipa me tētahi kī uru, mā tōna kupuhipa me te waehere o tōna tono kaiwhakamana rānei ki te kore he kī uru. Ko ngā whārangi tukutuku anake ka pātai: kāore rawa te atanga REST, SOAP, WebDAV, te takiuru expservices me te rārangi tono e pātai.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Te wāhi e pā ai ngā tautuhinga</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Ngā tautuhinga mō</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Ia urunga pae</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Urunga pae %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Huaki</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Ko wai ka pātaihia: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Tohua ngā rōpū kaiwhakamahi kia pātaihia ō rātou mema anake (pērā i ngā ētita). Kāore he mea kua tohua: ia kaiwhakamahi.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Kua tiakina ki settings/override/site.ini.append.php, mō ia urunga pae. Ka tono te tiaki kia whakaū koe ko koe tēnei.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Kua tiakina ki settings/siteaccess/%name/site.ini.append.php. Ka toa tētahi uara i settings/override i runga ake. Ka tono te tiaki kia whakaū koe ko koe tēnei.</translation>
     </message>
 </context>
 <context>
@@ -77826,6 +77994,30 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>Your account was locked</source>
         <translation>Kua rakaina tō pūkete</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Kua tāpiria he kī uru ki tō pūkete %login i %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Ka taea e te tangata kei a ia tēnei kī uru te takiuru ki tō pūkete me te kore o tō kupuhipa. Ki te kore koe i tāpiri, tangohia i raro i Kī uru, ka huri i tō kupuhipa.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Kua tangohia he kī uru i tō pūkete %login i %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Kāore e taea e ia te takiuru ki tō pūkete. Ki te kore koe i tango, tirohia ō kī uru me ō pūrere.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Kua tāpiria he kī uru ki tō pūkete</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Kua tangohia he kī uru i tō pūkete</translation>
     </message>
 </context>
 <context>

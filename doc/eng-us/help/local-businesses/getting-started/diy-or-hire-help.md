@@ -47,7 +47,7 @@ Exponential for its customers keeps the software, backups and HTTPS in order
 ([Hosting models compared](../../businesses/choosing/hosting-models-compared.md)).
 
 **3. Someone in the business does everything.** Realistic when someone on the team already runs servers, or wants to
-learn. Exponential runs on SQLite with no database server, on PHP 8.0 or later
+learn. Exponential runs on SQLite with no database server, on PHP 8.0 or later (PHP 7.4 usable without support)
 ([Requirements at a glance](../../hosting/basics/requirements-at-a-glance.md)), so a small installation is not
 complicated, but updates and backups remain a duty that does not go away.
 

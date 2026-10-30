@@ -21,7 +21,7 @@ betreffen es sehr.
 | Design-Einstellungen (`design.ini`, `site.ini [DesignSettings]`) | Das Laden von Stylesheets und Skripten | `design.ini` kennzeichnet `CSSFileList[]` als veraltet zugunsten von `FrontendCSSFileList[]` |
 | JavaScript-Bibliotheken | Ihre Skripte können sich auf alte APIs verlassen | jQuery 4 und die Entfernung von YUI (1. und 2. Oktober 2026) |
 | Sicherheits-Header und die Content Security Policy | Inline-Skripte können gemeldet oder blockiert werden | Die CSP der Administration, standardmäßig report-only |
-| PHP-Versionen | Ihr PHP-Code muss darauf laufen | „PHP 8.0 is the oldest supported version“ (5. Oktober 2026) |
+| PHP-Versionen | Ihr PHP-Code muss darauf laufen | „PHP 8.0 is the oldest supported version“ (5. Oktober 2026), dann PHP 7.4 ohne Support nutzbar (29. Oktober 2026), dann PHP 7.4 ohne Support nutzbar (29. Oktober 2026) |
 | Änderungen der Barrierefreiheit | Die Erwartungen des Produkts steigen | Änderungen an Kontrast oder Fokus in den gemeinsamen Komponenten |
 
 ## Schritt für Schritt

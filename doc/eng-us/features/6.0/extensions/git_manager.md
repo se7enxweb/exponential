@@ -15,6 +15,7 @@ This page is for administrators of servers where nobody has a shell, or where a 
 > test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
 > [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../../../help/hosting/panels/plesk.md), [cPanel](../../../help/hosting/panels/cpanel.md), [DirectAdmin](../../../help/hosting/panels/directadmin.md), [ISPConfig](../../../help/hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md).
 
 - a **git dashboard** (**Setup**, `/git_manager/dashboard`): see where the installation stands against its branch on
   the remote, switch branches, check out a commit, pull, push, manage remotes and submodules;
@@ -25,7 +26,7 @@ The extension was released as 2.0.1 on 21 June 2026 (backup manager) and reached
 
 ## Requirements
 
-Exponential 6, PHP 8.1 or later, a git binary the web server's user can run, GnuPG (`/usr/bin/gpg`) for encrypted
+Exponential 6, PHP 8.0 or later (PHP 7.4 usable without support), a git binary the web server's user can run, GnuPG (`/usr/bin/gpg`) for encrypted
 backups, and `mysqldump` for database backups.
 
 ## Quick start: make a backup before a change

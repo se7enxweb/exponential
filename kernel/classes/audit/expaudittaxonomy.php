@@ -13,7 +13,7 @@
  * counts as later than Enabled[]. The answers are compiled once per settings state (expAuditConfig's hash) and kept
  * for the life of the process, so a name that is off costs one array lookup.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
@@ -170,6 +170,10 @@ class expAuditTaxonomy
         'access.passkey.remove' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access', 'label' => 'Passkey removed' ),
         'access.passkey.use' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'access', 'label' => 'Passkey used' ),
         'access.passkey.use.failed' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access', 'label' => 'Passkey refused' ),
+        'access.passkey.revoke' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'access', 'label' => 'Passkey revoked by an administrator' ),
+        'access.passkey.password_refused' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access', 'label' => 'Password sign-in refused: the account signs in with passkeys' ),
+        'access.passkey.required' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'access', 'label' => 'Sent to add a passkey (required)' ),
+        'access.passkey.suggested' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'access', 'label' => 'Suggested to add a passkey' ),
         'access.session.reauth.ask' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'access', 'label' => 'Asked to verify it is you' ),
         'system.setting.write' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.setting.undo' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),

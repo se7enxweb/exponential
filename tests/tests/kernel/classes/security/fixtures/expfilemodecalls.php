@@ -4,7 +4,7 @@
  * installation and tells those that bypass the limits EZP_FILE_MODE_MAX / EZP_DIR_MODE_MAX: a call whose mode does
  * not go through eZFile::fileMode(), eZDir::dirMode() or eZFile::creationUmask(). Used by expFileModeLimitsTest.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  */

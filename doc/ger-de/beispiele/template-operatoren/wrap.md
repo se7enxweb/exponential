@@ -30,6 +30,14 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 {$value|wrap( 1, 'break_sequence', true() )}
 ```
 
+## In einem ausgelieferten Template
+
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/content/edit_locations.tpl` Zeile 37:
+
+```tpl
+{* the table scrolls inside its column instead of overflowing it, and its headings wrap (modules/content.css, as in admin4) *}
+```
+
 ## Siehe auch
 
 - [Alle Template-Operatoren](README.md)

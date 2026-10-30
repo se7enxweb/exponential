@@ -45,8 +45,8 @@ muss.
 
 Das Aussehen: eine weiße Karte auf einer dunklen schiefergrauen Seite mit einem sanften orangefarbenen Schimmer
 (`setup3.css`, nach `setup.css` und `setup2.css` geladen, nur Überschreibungen), der Fortschrittsbalken als schmaler
-orangefarbener Balken unter dem Logo, Hilfe und Zusammenfassung in einem Seitenbereich. Die Fußzeile lautet „Exponential
-copyright 1998-2026 7x & Exponential Foundation“, und die Links zeigen auf exponential.earth.
+orangefarbener Balken unter dem Logo, Hilfe und Zusammenfassung in einem Seitenbereich. Die Fußzeile lautet
+„Exponential Copyright © 1998-2026 Exponential Foundation and 7x“, und die Links zeigen auf exponential.earth.
 
 Korrekturen derselben Änderung:
 

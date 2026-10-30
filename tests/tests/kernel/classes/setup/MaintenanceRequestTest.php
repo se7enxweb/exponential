@@ -8,7 +8,7 @@
  * rendered meanwhile, and with the response cache off it had no pause file at all for the HTTP cache it asks.
  * No database; markers only under var/tmp/maintenance-request-tests/.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

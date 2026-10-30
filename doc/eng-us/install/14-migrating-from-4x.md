@@ -22,6 +22,7 @@ difference is pointed out.
 > test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
 > [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../guides/litespeed-page-cache.md).
 
 [Contents](README.md) · Previous: [13. Security hardening for production](13-security-hardening.md) · Next: [15. Migrating from the 5.x legacy stack](15-migrating-from-5x-legacy.md)
 
@@ -854,7 +855,7 @@ says where, and how Exponential differs.
 | File and database consistency check in Setup > Upgrade check | 14.4, 14.12 | same buttons; file check compares with `share/filelist.md5` |
 | Five steps: files, database, system scripts, configuration, caches ([how to proceed](https://ezpublishdoc.mugo.ca/eZ-Publish/Upgrading/How-to-proceed.html)) | 14.5 to 14.8 | database scripts in two phases (14.5.4) |
 | Direct upgrade only between consecutive stable releases; otherwise stage it | 14.5.5 | one chain, applied in one session, file by file |
-| 4.0: PHP 5, `date.timezone`, autoload arrays, class constants instead of global constants ([important notes](https://ezpublishdoc.mugo.ca/eZ-Publish/Upgrading/Upgrading-to-4.0/Important-notes.html)) | 14.9 | PHP 8.0 to 8.5; arrays in `autoload/` and `var/autoload/` |
+| 4.0: PHP 5, `date.timezone`, autoload arrays, class constants instead of global constants ([important notes](https://ezpublishdoc.mugo.ca/eZ-Publish/Upgrading/Upgrading-to-4.0/Important-notes.html)) | 14.9 | PHP 8.0 to 8.5 (PHP 7.4 usable without support); arrays in `autoload/` and `var/autoload/` |
 | 4.0: charset conversion with `ezconvertdbcharset.php`, InnoDB with `ezconvertmysqltabletype.php` ([3.10 to 4.0](https://ezpublishdoc.mugo.ca/eZ-Publish/Upgrading/Upgrading-to-4.0/from-3.10.x-to-4.0.y.html)) | 14.5.2 | same scripts; MySQL `utf8`, mind MySQL 8 defaults |
 | 4.0: overriding templates in `override/templates/` | 14.8 | unchanged; `Priority` now orders override blocks |
 | 4.1: `updateimagesystem.php` **before** the SQL; ezdhtml replaced by ezoe; `$Result['path']` must be an array ([4.0 to 4.1](https://ezpublishdoc.mugo.ca/eZ-Publish/Upgrading/Upgrading-to-4.1/4.0.x-to-4.1.y.html)) | 14.5.4, 14.7, 14.9 | only if `ezimage` has rows; ezoe on TinyMCE 3 or 8 |

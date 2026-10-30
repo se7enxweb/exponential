@@ -6,7 +6,7 @@
  *  - ezoe/tags opens for who may read and edit the object, for the published version as before
  *  - ezoe/relations without an EmbedID, or with a malformed one, ends with its message and without a PHP warning
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

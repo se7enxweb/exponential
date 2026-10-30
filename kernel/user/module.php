@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
@@ -59,12 +59,13 @@ $ViewList['megamenu'] = array(
 
 // The passkeys of the signed-in user's own account (doc/eng-us/guides/passkeys.md): add one (the browser's passkey
 // dialog), name, list, rename and remove them. Opens with user/login; the view sends a visitor who is not signed in
-// to the sign-in. "Verify it's you" asks first ([ReauthGroup_account]). See kernel/user/passkeys.php
+// to the sign-in. "Verify it's you" asks first ([ReauthGroup_account]). user/passkeys/<user id>: the passkeys of another
+// account, for a viewer with the policy user/passkeys_manage, who can revoke them. See kernel/user/passkeys.php
 $ViewList['passkeys'] = array(
     'functions' => array( 'login' ),
     'script' => 'passkeys.php',
     'default_navigation_part' => 'ezmynavigationpart',
-    'params' => array() );
+    'params' => array( 'UserID' ) );
 
 $ViewList['password'] = array(
     'functions' => array( 'password' ),
@@ -256,5 +257,7 @@ $FunctionList['audit'] = array();
 // the sign-in report of the whole site (user/sessionreport): running sessions of every user, sign-ins and failures per
 // day, and signing a user out everywhere
 $FunctionList['sessions_manage'] = array();
+// see and revoke the passkeys of other users (user/passkeys/<user id>)
+$FunctionList['passkeys_manage'] = array();
 
 ?>

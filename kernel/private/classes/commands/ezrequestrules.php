@@ -14,7 +14,7 @@
  * explains what they decide for an address and a user, without sending a
  * request. Guide: doc/eng-us/bc/6.0/view_full_security.md
  *
- * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license http://www.gnu.org/licenses/gpl-2.0.txt GNU General Public License v2 (or later)
  * @package kernel
  *

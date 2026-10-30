@@ -34,11 +34,11 @@ EmailSender=
 
 ## HTMLLayout
 
-> enabled: a notification written as text (the templates of  
-> notification/handler/\*/view/) is sent as text and as HTML in the mail layout  
-> (design:mail/layout.tpl), the first address on a line of its own as the  
-> button. disabled: as text only. A template that sets content\_type is sent as  
-> it says either way.  
+> enabled: eine als Text geschriebene Benachrichtigung (die Templates von  
+> notification/handler/\*/view/) wird als Text und als HTML im Mail-Layout  
+> (design:mail/layout.tpl) gesendet, die erste Adresse in einer eigenen Zeile als  
+> Button. disabled: nur als Text. Ein Template, das content\_type setzt, wird in jedem Fall  
+> so gesendet, wie es sagt.  
 
 Standard: `enabled`.
 

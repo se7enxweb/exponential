@@ -26,6 +26,7 @@ customer sees, and how the wizard protects the site while it runs. The page-by-p
 > test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
 > [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../panels/plesk.md), [cPanel](../panels/cpanel.md), [DirectAdmin](../panels/directadmin.md), [ISPConfig](../panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md).
 
 ## Contents
 
@@ -47,7 +48,7 @@ only method that shows each decision on a page with an explanation". When you ca
 
 | Item | Why |
 |---|---|
-| PHP 8.0 or later with the required extensions; Apache with `mod_rewrite` and PHP-FPM is "the classic setup; shared hosting" | [Requirements at a glance](../basics/requirements-at-a-glance.md) |
+| PHP 8.0 or later (PHP 7.4 usable without support) with the required extensions; Apache with `mod_rewrite` and PHP-FPM is "the classic setup; shared hosting" | [Requirements at a glance](../basics/requirements-at-a-glance.md) |
 | The code, with `vendor/` (the dependencies), in the customer's web space | the wizard cannot run Composer; upload a complete release |
 | `settings/`, `var/` and `design/` writable by the user PHP runs as | the System check tests `[directory_permissions] CheckList` ([Writable directories and permissions](../basics/writable-directories-and-permissions.md)) |
 | `.htaccess` in place: a copy of the shipped `.htaccess_root` | the rewrite rules that keep internal files from being served |

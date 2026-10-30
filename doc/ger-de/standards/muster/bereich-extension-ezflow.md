@@ -2,7 +2,7 @@
 title: Muster in extension/ezflow
 audience: developer
 category: standards
-order: 439
+order: 443
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezflow mit den Entwurfsmustern.
 keywords: extension/ezflow, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

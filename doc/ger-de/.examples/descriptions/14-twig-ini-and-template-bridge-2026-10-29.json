@@ -1,0 +1,86 @@
+{
+    "ini:settings/site.ini [Cache_twig]": {
+        "en": "Twig's compiled .twig templates (lib/twig), in <cache directory>/twig/. Cleared with\nthe template caches.",
+        "de": "Die kompilierten .twig-Templates von Twig (lib/twig), in <Cache-Verzeichnis>/twig/. Geleert mit\nden Template-Caches."
+    },
+    "ini:settings/site.ini [TemplateBridgeSettings]": {
+        "en": "CompileIncludeNodeTree[]=final\nCompileIncludeNodeTree[]=transformed\nCompileIncludeNodeTree[]=static\nCompileIncludeNodeTree[]=combined\nCompileIncludeNodeTree[]=original\nThe converters of exp:template:convert (lib/templatebridge/classes/exptemplatedesignconverter.php):\nConverterList[<from>-<to>]=<class> converts one template text from one engine to another.\nEngines: tpl (Exponential templates, .tpl), stpl (Smarty templates, .stpl), twig (Twig\ntemplates, .twig and .html.twig).\nThe class takes an eZTemplate in its constructor and has convert( $text, $name ) and warnings().\nAn extension adds a direction with its own ConverterList[] entry.",
+        "de": "CompileIncludeNodeTree[]=final\nCompileIncludeNodeTree[]=transformed\nCompileIncludeNodeTree[]=static\nCompileIncludeNodeTree[]=combined\nCompileIncludeNodeTree[]=original\nDie Konverter von exp:template:convert (lib/templatebridge/classes/exptemplatedesignconverter.php):\nConverterList[<von>-<nach>]=<Klasse> wandelt einen Template-Text von einer Engine in eine andere um.\nEngines: tpl (Exponential-Templates, .tpl), stpl (Smarty-Templates, .stpl), twig (Twig-Templates,\n.twig und .html.twig).\nDie Klasse nimmt im Konstruktor ein eZTemplate und hat convert( $text, $name ) und warnings().\nEine Extension fügt eine Richtung mit einem eigenen Eintrag in ConverterList[] hinzu."
+    },
+    "ini:settings/site.ini [TemplateBridgeSettings] EngineSuffixList": {
+        "en": "Template files of other engines, by file ending (the longest ending matches first):\nEngineSuffixList[<ending>]=<engine>. The template system parses such a file as the stub\nof the engine's renderer, RendererList[<engine>]=<class> (expTemplateEngines).",
+        "de": "Template-Dateien anderer Engines, nach Dateiendung (die längste Endung gilt zuerst):\nEngineSuffixList[<endung>]=<engine>. Das Template-System parst eine solche Datei als Stub\ndes Renderers der Engine, RendererList[<engine>]=<Klasse> (expTemplateEngines)."
+    },
+    "ini:settings/site.ini [TemplateBridgeSettings] ParameterOperatorList": {
+        "en": "Operators without template hints that read their parameters only, never their input,\nfor every engine (smarty.ini and twig.ini ParameterOperatorList[] are read too).",
+        "de": "Operatoren ohne Template-Hinweise, die nur ihre Parameter lesen, nie ihre Eingabe,\nfür jede Engine (ParameterOperatorList[] in smarty.ini und twig.ini wird ebenfalls gelesen)."
+    },
+    "ini:settings/twig.ini": {
+        "en": "Twig templates (.twig, .html.twig) inside the template system (lib/twig).\nGuide: doc/eng-us/guides/twig-templates.md",
+        "de": "Twig-Templates (.twig, .html.twig) im Template-System (lib/twig).\nAnleitung: doc/ger-de/anleitungen/twig-templates-nativ-schreiben.md"
+    },
+    "ini:settings/twig.ini [TwigSettings] AutoReload": {
+        "en": "Twig's auto_reload: a changed .twig is compiled again. disabled saves a\nfile check per template on production systems (clear the template caches\nafter a deploy).",
+        "de": "auto_reload von Twig: Ein geändertes .twig wird neu kompiliert. disabled spart auf\nProduktionssystemen eine Dateiprüfung je Template (leeren Sie nach einem Deploy die\nTemplate-Caches)."
+    },
+    "ini:settings/twig.ini [TwigSettings] Autoescape": {
+        "en": "disabled: nothing is escaped unless the template says so (|wash), as in a\n.tpl, so converted templates print what the .tpl printed. A siteaccess may\nenable it (html) for hand-written templates; see the security guide.",
+        "de": "disabled: Nichts wird maskiert, wenn das Template es nicht sagt (|wash), wie in einem\n.tpl, sodass umgewandelte Templates drucken, was das .tpl druckte. Ein Siteaccess kann\nes für handgeschriebene Templates einschalten (html); siehe die Sicherheitsanleitung."
+    },
+    "ini:settings/twig.ini [TwigSettings] Debug": {
+        "en": "Twig's debug mode (the dump() function, debug information in compiled code).",
+        "de": "Der Debug-Modus von Twig (die Funktion dump(), Debug-Informationen im kompilierten Code)."
+    },
+    "ini:settings/twig.ini [TwigSettings] FunctionList": {
+        "en": "Template functions callable as Twig functions with a hash of named\nparameters, {{ attribute_view_gui({attribute: a}) }}. Every other template\nfunction without children is bridged too; functions with children become tags\n({% explblock name='x' %}...{% endexplblock %}).",
+        "de": "Template-Funktionen, die als Twig-Funktionen mit einem Hash benannter Parameter aufrufbar\nsind, {{ attribute_view_gui({attribute: a}) }}. Jede andere Template-Funktion ohne\nKinder wird ebenfalls gebrückt; Funktionen mit Kindern werden zu Tags\n({% explblock name='x' %}...{% endexplblock %})."
+    },
+    "ini:settings/twig.ini [TwigSettings] LibraryPath": {
+        "en": "Where Twig 3 is loaded from when the installation's Composer autoload has no\ntwig/twig: a directory with vendor/autoload.php (a Composer directory that\nrequires twig/twig), or the twig/twig package itself (the directory holding\nsrc/Environment.php). Relative to the installation root, or absolute.",
+        "de": "Woher Twig 3 geladen wird, wenn der Composer-Autoload der Installation kein twig/twig\nhat: ein Verzeichnis mit vendor/autoload.php (ein Composer-Verzeichnis, das twig/twig\nverlangt) oder das Paket twig/twig selbst (das Verzeichnis mit src/Environment.php).\nRelativ zum Installationsverzeichnis oder absolut."
+    },
+    "ini:settings/twig.ini [TwigSettings] ParameterOperatorList": {
+        "en": "Operators without template hints that read their parameters only, never\ntheir input (in addition to site.ini [TemplateBridgeSettings]\nParameterOperatorList[], the list for every engine).",
+        "de": "Operatoren ohne Template-Hinweise, die nur ihre Parameter lesen, nie ihre Eingabe\n(zusätzlich zu site.ini [TemplateBridgeSettings] ParameterOperatorList[], der Liste für\njede Engine)."
+    },
+    "ini:settings/twig.ini [TwigSettings] Profile": {
+        "en": "enabled (and debug output on): the debug bar's accumulators show where a page's Twig time\ngoes (renders, compiled-template loads, operators, template functions, includes, wrapping).",
+        "de": "enabled (und eingeschaltete Debug-Ausgabe): Die Zähler der Debug-Leiste zeigen, wohin die\nTwig-Zeit einer Seite geht (Renderings, Laden kompilierter Templates, Operatoren,\nTemplate-Funktionen, Includes, Verpacken der Werte)."
+    },
+    "ini:settings/twig.ini [TwigSettings] Security": {
+        "en": "The sandbox (Twig's SandboxExtension with the policy of expTwigSecurity).\nenabled: a template may only use the tags, filters and functions allowed\nhere; no method of an object can be called and no property read (values of\nthe template system are read through their attributes, which is allowed).\nCompiled apart from the templates compiled without it (<cache>/twig/compile-secure).",
+        "de": "Die Sandbox (Twigs SandboxExtension mit der Richtlinie von expTwigSecurity).\nenabled: Ein Template darf nur die hier erlaubten Tags, Filter und Funktionen benutzen;\nkeine Methode eines Objekts kann aufgerufen und keine Eigenschaft gelesen werden (Werte\ndes Template-Systems werden über ihre Attribute gelesen, was erlaubt ist).\nGetrennt von den ohne sie kompilierten Templates kompiliert (<cache>/twig/compile-secure)."
+    },
+    "ini:settings/twig.ini [TwigSettings] SecurityAllowedFilterList": {
+        "en": "Twig filters allowed in addition to every bridged operator.",
+        "de": "Twig-Filter, die zusätzlich zu jedem gebrückten Operator erlaubt sind."
+    },
+    "ini:settings/twig.ini [TwigSettings] SecurityAllowedFunctionList": {
+        "en": "Twig functions allowed in addition to every bridged operator and template function.",
+        "de": "Twig-Funktionen, die zusätzlich zu jedem gebrückten Operator und jeder Template-Funktion erlaubt sind."
+    },
+    "ini:settings/twig.ini [TwigSettings] SecurityAllowedMethodList": {
+        "en": "Methods allowed as Class::method (none by default: values are read through attributes).",
+        "de": "Erlaubte Methoden als Klasse::methode (standardmäßig keine: Werte werden über Attribute gelesen)."
+    },
+    "ini:settings/twig.ini [TwigSettings] SecurityAllowedPropertyList": {
+        "en": "Properties allowed as Class::property (none by default).",
+        "de": "Erlaubte Eigenschaften als Klasse::eigenschaft (standardmäßig keine)."
+    },
+    "ini:settings/twig.ini [TwigSettings] SecurityAllowedTagList": {
+        "en": "Tags allowed (empty: Twig's own tags below, and every exp* tag of lib/twig).",
+        "de": "Erlaubte Tags (leer: Twigs eigene Tags unten und jedes exp*-Tag von lib/twig)."
+    },
+    "ini:settings/twig.ini [TwigSettings] StrictVariables": {
+        "en": "disabled: an undefined variable or attribute prints nothing, as in a .tpl.",
+        "de": "disabled: Eine undefinierte Variable oder ein undefiniertes Attribut druckt nichts, wie in einem .tpl."
+    },
+    "ini:settings/twig.ini [TwigSettings] TemplateSuffixList": {
+        "en": "Template file endings Twig renders (expTemplateEngines matches the longest\nfirst). The same list as site.ini [TemplateBridgeSettings] EngineSuffixList[].",
+        "de": "Dateiendungen von Templates, die Twig rendert (expTemplateEngines prüft die längste\nzuerst). Dieselbe Liste wie site.ini [TemplateBridgeSettings] EngineSuffixList[]."
+    },
+    "ini:settings/twig.ini [TwigSettings] WhileLoopLimit": {
+        "en": "The most rounds a converted {while} or {do} loop runs ({% expwhile %});\na loop that reaches it stops with a debug notice.",
+        "de": "Die meisten Runden, die eine umgewandelte {while}- oder {do}-Schleife läuft ({% expwhile %});\neine Schleife, die sie erreicht, endet mit einem Debug-Hinweis."
+    }
+}

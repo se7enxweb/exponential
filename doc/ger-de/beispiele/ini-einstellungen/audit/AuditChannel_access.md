@@ -67,7 +67,7 @@ ArchiveFormat=gzip
 
 ## Sinks
 
-> The user audit log: records about a user account or group also go to the table  
+> Das Benutzer-Audit-Log: Einträge über ein Benutzerkonto oder eine Benutzergruppe gehen auch in die Tabelle  
 > expuser\_audit (\[UserAuditSettings\], doc/eng-us/features/6.0/user-audit.md)  
 
 Standard: eine Liste mit 2: `syslog`, `useraudit`.

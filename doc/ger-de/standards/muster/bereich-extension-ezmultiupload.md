@@ -2,7 +2,7 @@
 title: Muster in extension/ezmultiupload
 audience: developer
 category: standards
-order: 445
+order: 449
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezmultiupload mit den Entwurfsmustern.
 keywords: extension/ezmultiupload, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

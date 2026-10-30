@@ -21,9 +21,9 @@ start to end. It applies to the kernel (`se7enxweb/exponential`) and to any exte
    **For the kernel: expect many review rounds.** 7x reviews a commit or pull request in many more rounds than
    usual, sometimes hundreds of revisions; be ready to revise your change until it is simple to accept
    ([Code reviews](../../../../../CONTRIBUTING.md#code-reviews)).
-   **For the kernel: copyright assignment (CLA).** 7x and the Exponential Foundation merge a
+   **For the kernel: copyright assignment (CLA).** The Exponential Foundation and 7x merge a
    code contribution to the core kernel, sent in any form (pull request, patch, issue or mail), only after you have
-   signed the Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other
+   signed the Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to the Exponential Foundation and 7x, which become its owners, and give up control over it:** The Exponential Foundation and 7x may use, change, relicense and distribute it in any way, also under other
    licenses and in commercial products, without asking or paying you, and you cannot withdraw it or set conditions on it.
    How to sign:
    [Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla). It does not apply to the

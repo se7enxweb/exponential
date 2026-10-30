@@ -15,7 +15,7 @@
  * Each firing is the event system.audit.alert with the rule's Severity; after holds rule, group, count, window,
  * first, last, sinks and message, and expAuditSinkRegistry::dispatch() sends it to the rule's Sinks[].
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

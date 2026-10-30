@@ -10,7 +10,7 @@
  * the help of the administration. Anonymous does not have it unless exphelp.ini [ContentSettings]
  * AnonymousContextHelp=enabled and the roles step of exp:help:content ran.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

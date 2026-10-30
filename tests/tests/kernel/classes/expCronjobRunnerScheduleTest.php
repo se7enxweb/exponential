@@ -7,7 +7,7 @@
  * that runs a part or one script from a shell, and a script's own @description.
  * No database and no cronjob is run.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */
@@ -31,7 +31,7 @@ class expCronjobRunnerScheduleTest extends ezpTestCase
         parent::tearDown();
     }
 
-    private function at( $text )
+    private function atTime( $text )
     {
         return strtotime( $text . ' UTC' );
     }
@@ -47,43 +47,43 @@ class expCronjobRunnerScheduleTest extends ezpTestCase
 
     public function testNextRunOfStepsAndFixedTimes()
     {
-        $from = $this->at( '2026-10-05 10:02:30' );
-        $this->assertSame( $this->at( '2026-10-05 10:05:00' ), expCronjobRunner::nextRun( '*/5 * * * *', $from ) );
-        $this->assertSame( $this->at( '2026-10-05 10:15:00' ), expCronjobRunner::nextRun( '*/15 * * * *', $from ) );
-        $this->assertSame( $this->at( '2026-10-05 10:17:00' ), expCronjobRunner::nextRun( '17 * * * *', $from ) );
-        $this->assertSame( $this->at( '2026-10-06 03:30:00' ), expCronjobRunner::nextRun( '30 3 * * *', $from ) );
-        $this->assertSame( $this->at( '2026-10-05 10:03:00' ), expCronjobRunner::nextRun( '* * * * *', $from ), 'the next whole minute' );
+        $from = $this->atTime( '2026-10-05 10:02:30' );
+        $this->assertSame( $this->atTime( '2026-10-05 10:05:00' ), expCronjobRunner::nextRun( '*/5 * * * *', $from ) );
+        $this->assertSame( $this->atTime( '2026-10-05 10:15:00' ), expCronjobRunner::nextRun( '*/15 * * * *', $from ) );
+        $this->assertSame( $this->atTime( '2026-10-05 10:17:00' ), expCronjobRunner::nextRun( '17 * * * *', $from ) );
+        $this->assertSame( $this->atTime( '2026-10-06 03:30:00' ), expCronjobRunner::nextRun( '30 3 * * *', $from ) );
+        $this->assertSame( $this->atTime( '2026-10-05 10:03:00' ), expCronjobRunner::nextRun( '* * * * *', $from ), 'the next whole minute' );
     }
 
     public function testNextRunNeverReturnsTheMomentItself()
     {
-        $from = $this->at( '2026-10-05 10:05:00' );
-        $this->assertSame( $this->at( '2026-10-05 10:10:00' ), expCronjobRunner::nextRun( '*/5 * * * *', $from ) );
+        $from = $this->atTime( '2026-10-05 10:05:00' );
+        $this->assertSame( $this->atTime( '2026-10-05 10:10:00' ), expCronjobRunner::nextRun( '*/5 * * * *', $from ) );
     }
 
     public function testNextRunOfWeekdaysMonthsAndNames()
     {
         // 2026-10-05 is a Monday
-        $from = $this->at( '2026-10-05 12:00:00' );
-        $this->assertSame( $this->at( '2026-10-11 00:00:00' ), expCronjobRunner::nextRun( '0 0 * * 0', $from ), 'Sunday as 0' );
-        $this->assertSame( $this->at( '2026-10-11 00:00:00' ), expCronjobRunner::nextRun( '0 0 * * 7', $from ), 'Sunday as 7' );
-        $this->assertSame( $this->at( '2026-10-07 08:00:00' ), expCronjobRunner::nextRun( '0 8 * * wed', $from ) );
-        $this->assertSame( $this->at( '2027-01-01 00:00:00' ), expCronjobRunner::nextRun( '0 0 1 jan *', $from ) );
-        $this->assertSame( $this->at( '2026-10-06 09:00:00' ), expCronjobRunner::nextRun( '0 9-17/4 * * 1-5', $this->at( '2026-10-05 18:00:00' ) ), '9, 13 and 17 on weekdays' );
-        $this->assertSame( $this->at( '2026-10-05 13:00:00' ), expCronjobRunner::nextRun( '0 9-17/4 * * mon-fri', $this->at( '2026-10-05 10:00:00' ) ) );
+        $from = $this->atTime( '2026-10-05 12:00:00' );
+        $this->assertSame( $this->atTime( '2026-10-11 00:00:00' ), expCronjobRunner::nextRun( '0 0 * * 0', $from ), 'Sunday as 0' );
+        $this->assertSame( $this->atTime( '2026-10-11 00:00:00' ), expCronjobRunner::nextRun( '0 0 * * 7', $from ), 'Sunday as 7' );
+        $this->assertSame( $this->atTime( '2026-10-07 08:00:00' ), expCronjobRunner::nextRun( '0 8 * * wed', $from ) );
+        $this->assertSame( $this->atTime( '2027-01-01 00:00:00' ), expCronjobRunner::nextRun( '0 0 1 jan *', $from ) );
+        $this->assertSame( $this->atTime( '2026-10-06 09:00:00' ), expCronjobRunner::nextRun( '0 9-17/4 * * 1-5', $this->atTime( '2026-10-05 18:00:00' ) ), '9, 13 and 17 on weekdays' );
+        $this->assertSame( $this->atTime( '2026-10-05 13:00:00' ), expCronjobRunner::nextRun( '0 9-17/4 * * mon-fri', $this->atTime( '2026-10-05 10:00:00' ) ) );
     }
 
     public function testNextRunWithDayOfMonthAndWeekdayMatchesEither()
     {
         // the 15th, or any Friday: Friday the 9th comes first
-        $from = $this->at( '2026-10-05 12:00:00' );
-        $this->assertSame( $this->at( '2026-10-09 00:00:00' ), expCronjobRunner::nextRun( '0 0 15 * 5', $from ) );
+        $from = $this->atTime( '2026-10-05 12:00:00' );
+        $this->assertSame( $this->atTime( '2026-10-09 00:00:00' ), expCronjobRunner::nextRun( '0 0 15 * 5', $from ) );
     }
 
     public function testNextRunOfLeapDayAndUnreadableSchedules()
     {
-        $this->assertSame( $this->at( '2028-02-29 00:00:00' ), expCronjobRunner::nextRun( '0 0 29 2 *', $this->at( '2026-10-05 12:00:00' ) ) );
-        $this->assertFalse( expCronjobRunner::nextRun( '0 0 31 2 *', $this->at( '2026-10-05 12:00:00' ) ), 'never comes round' );
+        $this->assertSame( $this->atTime( '2028-02-29 00:00:00' ), expCronjobRunner::nextRun( '0 0 29 2 *', $this->atTime( '2026-10-05 12:00:00' ) ) );
+        $this->assertFalse( expCronjobRunner::nextRun( '0 0 31 2 *', $this->atTime( '2026-10-05 12:00:00' ) ), 'never comes round' );
         $this->assertFalse( expCronjobRunner::nextRun( '61 * * * *' ) );
         $this->assertFalse( expCronjobRunner::nextRun( '* * *' ) );
         $this->assertFalse( expCronjobRunner::nextRun( '*/0 * * * *' ) );

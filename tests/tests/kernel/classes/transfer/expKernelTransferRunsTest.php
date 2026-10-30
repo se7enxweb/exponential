@@ -22,7 +22,7 @@
  *  TX-10 - The settings: transfer.ini, the content job type transfer, the cronjob part purges the history
  *  TX-11 - The content job type refuses a payload without a task and describes a run by its tool and title
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

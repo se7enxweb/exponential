@@ -8066,8 +8066,8 @@
         <translation>D'Copyrightinformatioune vun den ursprénglechen Auteuren an der Software vun Drëttubidder, déi mat Exponential matgeliwwert gëtt, bleiwen, wéi d'Lizenz et verlaangt, an de Quellfichieren an am Fichier LICENSE erhalen.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Dëst ass eng Lëscht vun de Matwierkenden un Exponential, déi hir Aarbecht 7x ënner de Bedingunge vum eZ Systems Contributor Licensing Agreement zur Verfügung gestallt hunn. Wéi dës Vereinbarung et erlaabt, gëtt 7x all Bäitrag ënner der selwechter Lizenz weider wéi de Fichier, an deem hien enthale ass. D'Lëscht nennt all Matwierkenden, optional Kontaktangaben an d'Fichieren, zu deenen en bäigedroen huet.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Bäiträger, déi fir hir Aarbecht un Exponential an un der Software, aus där et entstanen ass, genannt ginn, mat de Fichieren, zu deenen si bäigedroen hunn. Dëst ass eng Unerkennung, keen Copyright-Hiweis: Bäiträg zu Exponential ginn ënner dem Contributor Licensing Agreement un d'Exponential Foundation an 7x iwwerdroen.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77281,6 +77281,82 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>De Passkey konnt net gepréift ginn. Probéiert w.e.g. nach eng Kéier.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Konten, déi sech nëmme mat Passkeys umellen, kënnen hei kee Passwuert benotzen: Wielt &quot;Mat engem Passkey umellen&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Passkeys vun %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>D&apos;Passkeys, mat deenen sech dëse Kont umellt. Zitt een zréck, deen op engem verluerenen oder geklauten Apparat ass: Da kann en sech net méi umellen. Nei setzt de Besëtzer selwer derbäi.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Äre Kont brauch e Passkey</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Setzt Ärem Kont e Passkey derbäi</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Setzt e Passkey derbäi, fir weiderzemaachen. Dir mellt Iech dann domat un amplaz nëmme mat engem Passwuert.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Mat engem Passkey mellt Dir Iech méi séier a méi sécher un wéi mat engem Passwuert. Setzt elo een derbäi oder maacht ouni weider.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Net elo</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>De Passkey &quot;%name&quot; zréckzéien?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>En kann sech net méi bei dësem Kont umellen. Wann et de leschte war, mellt de Besëtzer sech mam Passwuert un, oder Dir setzt en neit.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>De Passkey zréckzéien</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Zréckzéien</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Dëse Kont huet kee Passkey.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Authentifizéierer</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Onbekannt</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Äre leschte Passkey: Setzt en aneren derbäi, ier Dir dëse ewechhuelt.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Dëse Kont mellt sech nëmme mat Passkeys un (Passkey-Richtlinn): Ouni Passkey mellt e sech erëm mat sengem Passwuert un.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Dat ass Äre leschte Passkey, an Äre Kont kann sech ouni een net umellen. Setzt fir d&apos;éischt en anere Passkey derbäi.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>De Passkey &quot;%name&quot; ass zréckgezunn. En kann sech net méi bei dësem Kont umellen.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77380,6 +77456,34 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>Code from your authenticator app</source>
         <translation>Code vun Ärer Authentifizéierungs-App</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Dir sidd amgaang, Donnéeë fir ëmmer ze läschen oder e Protokoll eidel ze maachen.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Äert Passwuert an e Passkey</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Äert Passwuert an e Code aus Ärer Authenticator-App</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Oder:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Dëse Browser kann keng Passkeys benotzen. Wielt en anere Wee oder en anere Browser.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Wann Dir weidermaacht, freet Äre Browser no engem vun Äre Passkeys.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Mat engem Passkey weider</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77470,6 +77574,70 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>Setup</source>
         <translation>Konfiguratioun</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Säin eegent Passwuert, d&apos;E-Mail-Adress, Passkeys, d&apos;Umeldung a zwee Schrëtt, Recuperatiounscoden oder API-Schlësselen änneren an déi eegen aner Apparater ofmellen.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Benotzer erstellen an änneren, hir Passwierder an Apparater, Kontastellungen, nei Benotzerkonten fräiginn oder refuséieren, Rollen zouweisen a Richtlinnen änneren.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Donnéeë läschen</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>D&apos;Dreckskëscht eidel maachen, Elementer doraus ewechhuelen a méi Elementer op eemol ewechhuelen.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Inhalt ewechhuelen, publizéieren a späicheren</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Inhalt ewechhuelen (och an d&apos;Dreckskëscht), publizéieren an en Entworf späicheren, gefrot beim Schécke vum Formulaire. Standardméisseg aus.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Virun enger sensibeler Aktioun bestätegt en ugemellte Benotzer nach eng Kéier, wien en ass: mat sengem Passwuert an engem Passkey, oder ouni Passkey mat sengem Passwuert an dem Code vu senger Authenticator-App. Nëmmen d&apos;Websäite froen: d&apos;REST-Schnëttstell, SOAP, WebDAV, d&apos;expservices-Umeldung an d&apos;Kommandozeil froen ni.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Wou d&apos;Astellunge gëllen</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Astellunge fir</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>All Site-Zougang</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Site-Zougang %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Opmaachen</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Wien gefrot gëtt: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Kräizt Benotzergruppen un, fir nëmmen hir Memberen ze froen (zum Beispill Redakteren). Keng ugekräizt: all Benotzer.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Gespäichert an settings/override/site.ini.append.php, fir all Site-Zougang. Beim Späichere gitt Dir gefrot, ze bestätegen, datt Dir et sidd.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Gespäichert an settings/siteaccess/%name/site.ini.append.php. E Wäert an settings/override huet Virrang. Beim Späichere gitt Dir gefrot, ze bestätegen, datt Dir et sidd.</translation>
     </message>
 </context>
 <context>
@@ -77826,6 +77994,30 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Äre Kont gouf gespaart</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Ärem Kont %login op %site gouf e Passkey derbäigesat.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Wien dëse Passkey huet, kann sech ouni Äert Passwuert bei Ärem Kont umellen. Wann Dir en net derbäigesat hutt, huelt en ënner Passkeys ewech an ännert Äert Passwuert.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Vun Ärem Kont %login op %site gouf e Passkey ewechgeholl.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>En kann sech net méi bei Ärem Kont umellen. Wann Dir en net ewechgeholl hutt, kontrolléiert Är Passkeys an Apparater.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Ärem Kont gouf e Passkey derbäigesat</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Vun Ärem Kont gouf e Passkey ewechgeholl</translation>
     </message>
 </context>
 <context>

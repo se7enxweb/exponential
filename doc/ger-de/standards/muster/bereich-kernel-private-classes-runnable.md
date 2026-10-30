@@ -2,7 +2,7 @@
 title: Muster in kernel/private/classes/runnable
 audience: developer
 category: standards
-order: 522
+order: 535
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/private/classes/runnable mit den Entwurfsmustern.
 keywords: kernel/private/classes/runnable, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

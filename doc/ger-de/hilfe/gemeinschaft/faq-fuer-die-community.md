@@ -40,7 +40,7 @@ Ja: Fehlerberichte, Bestätigungen, Übersetzungen, Hilfeseiten, Tests und Antwo
 ([Wege mitzuwirken](mitwirken/wege-mitzuwirken.md)).
 
 **Muss ich etwas unterschreiben?**
-Für Code, der zum Kernel-Repository beigetragen wird, ja: das CLA, das das Urheberrecht am Beitrag an 7x überträgt.
+Für Code, der zum Kernel-Repository beigetragen wird, ja: das CLA, das das Urheberrecht am Beitrag an die Exponential Foundation und 7x überträgt.
 Ihre eigenen Erweiterungen und Websites sind davon nicht betroffen ([Das CLA erklärt](mitwirken/das-cla-erklaert.md)).
 
 **Wird mein Pull Request gemergt?**

@@ -77,7 +77,7 @@ rounds than usual, sometimes hundreds of revisions, until the change is simple t
 
 **Do I have to sign anything?** For a code contribution to the kernel, yes: 7x and the Exponential Foundation merge it
 only once the author's signed Contributor Licensing Agreement has been received. Say plainly what it means: by
-signing and submitting, the author assigns the copyright in the contribution to 7x, which becomes its owner, and gives up control over it; 7x may use, change, relicense
+signing and submitting, the author assigns the copyright in the contribution to the Exponential Foundation and 7x, which become its owners, and gives up control over it; 7x may use, change, relicense
 and distribute it in any way, without asking or paying the author, who cannot withdraw it or set conditions on it. It is signed once. A pull request opened in the course can wait for it. Learners' own extensions are not affected
 ([Copyright assignment (CLA)](../../../../../../CONTRIBUTING.md#copyright-assignment-cla)).
 

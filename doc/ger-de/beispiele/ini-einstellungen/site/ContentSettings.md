@@ -11,12 +11,6 @@ generated: exp:help:examples
 
 Der Block `[ContentSettings]` von `settings/site.ini`, mit 20 Einstellung(en).
 
-> CompileIncludeNodeTree\[\]=final  
-> CompileIncludeNodeTree\[\]=transformed  
-> CompileIncludeNodeTree\[\]=static  
-> CompileIncludeNodeTree\[\]=combined  
-> CompileIncludeNodeTree\[\]=original  
-
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
 - `settings/override/site.ini.append.php` für jeden Siteaccess,

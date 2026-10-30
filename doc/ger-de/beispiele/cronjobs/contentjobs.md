@@ -13,15 +13,15 @@ Setzt Inhaltsaufträge fort, deren Worker gestorben ist, und startet wartende Au
 
 Einstiegspunkt `cronjobs/contentjobs.php`, Code in `kernel/private/classes/cronjobs/contentjobs.php`.
 
-> The cronjob part contentjobs (cronjobs/contentjobs.php, frequent group): starts the content jobs that need a  
-> worker and have none — a running job whose worker died (kill -9, a reboot, a memory limit) and a queued job  
-> nobody started within content.ini \[ContentJobSettings\] QueuedGrace seconds (the spawn from the web request  
-> failed) — and removes finished jobs older than KeepDays, and the runs of the import and export tools'  
-> run history older than transfer.ini \[TransferSettings\] KeepDays (expKernelTransferHistory::purge()).  
+> Der Cronjob-Teil contentjobs (cronjobs/contentjobs.php, Gruppe frequent): startet die Inhalts-Jobs, die einen  
+> Worker brauchen und keinen haben — einen laufenden Job, dessen Worker gestorben ist (kill -9, ein Neustart, ein Speicherlimit), und einen eingereihten  
+> Job, den innerhalb von content.ini \[ContentJobSettings\] QueuedGrace Sekunden niemand gestartet hat (der Start  
+> aus der Web-Anfrage ist fehlgeschlagen) — und entfernt beendete Jobs, die älter sind als KeepDays, sowie den Verlauf der Läufe der Import- und Export-Werkzeuge,  
+> der älter ist als transfer.ini \[TransferSettings\] KeepDays (expKernelTransferHistory::purge()).  
 >
-> The worker is started detached (bin/php/expcontentjob.php run <id>), as from the web request, so a long job  
-> never holds up the other cronjob parts; started as root, it becomes the site user. A job resumed again and  
-> again without finishing a batch is failed by the worker after MaxAttempts starts instead of looping.  
+> Der Worker wird abgekoppelt gestartet (bin/php/expcontentjob.php run <id>), wie aus der Web-Anfrage, damit ein langer Job  
+> nie die anderen Cronjob-Teile aufhält; als root gestartet, wechselt er zum Site-Benutzer. Ein Job, der immer wieder  
+> fortgesetzt wird, ohne einen Batch abzuschließen, wird vom Worker nach MaxAttempts Starts als fehlgeschlagen markiert, statt endlos zu laufen.  
 
 ## Wann er läuft
 

@@ -10,7 +10,7 @@
  * File containing the velocity control script.
  *
  * @alias vc
- * @copyright Copyright (C) 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
@@ -318,8 +318,14 @@ class Velocity extends \Exponential\Runnable\Command
             "             exphttpcache, template-block and response caches, the help content cache of each\n" .
             "             siteaccess that shows the help (exp:help:content cache), then warm-up requests\n" .
             "             ([DeploySettings] WarmUpURL[]). Stops at the first step that fails.\n" .
+            "             A cache is cleared only when what it holds can have changed since the last deploy\n" .
+            "             that passed (files below design/, settings/, translations and the template engines'\n" .
+            "             code, by modification time): a deploy of PHP classes keeps the INI caches and the\n" .
+            "             caches of rendered output (content, exphttpcache, template-block, response cache).\n" .
+            "             --dry-run says for each cache why it is cleared or kept.\n" .
             "             --kernel (kernel autoloads too)  --no-autoload  --no-fpm  --fpm-reload  --no-velocity\n" .
             "             --rebuild-phar  --packer (packed scripts + styles, with template-block)\n" .
+            "             --clear-content (the caches of rendered output anyway)  --all-caches (every cache)\n" .
             "             --dry-run (print the steps, do nothing)  --json\n" .
             "  kill       stop without asking, for a wedged worker\n" .
             "  command    print the command line it would run, and exit\n" .
@@ -424,7 +430,7 @@ class Velocity extends \Exponential\Runnable\Command
                    'allow-root-user', 'debug', 'force', 'check', 'trust-github-digest', 'all',
                    'rebuild-phar', 'kernel', 'apply', 'dry-run', 'no-fpm', 'fpm-reload', 'no-velocity', 'no-autoload', 'packer' ) );
 
-        $options = $this->options( '[json][keep-global:][engine:][from:][force][check][trust-github-digest][all][https][no-https][rebuild-phar][kernel][apply][dry-run][no-fpm][fpm-reload][no-velocity][no-autoload][packer]', '[command]',
+        $options = $this->options( '[json][keep-global:][engine:][from:][force][check][trust-github-digest][all][https][no-https][rebuild-phar][kernel][apply][dry-run][no-fpm][fpm-reload][no-velocity][no-autoload][packer][clear-content][all-caches]', '[command]',
             array( 'json' => 'Report as JSON, for a caller that is not a person',
                    'keep-global' => 'More globals to keep between requests (comma-separated), appended to the '
                                   . 'built-in defaults and velocity.ini KeepGlobals[]; for start, restart and command',
@@ -446,7 +452,9 @@ class Velocity extends \Exponential\Runnable\Command
                    'fpm-reload' => 'deploy: reload PHP-FPM even when its OPcache revalidates the files (php.ini or pool changed, files renamed)',
                    'no-velocity' => 'deploy: do not restart Velocity',
                    'no-autoload' => 'deploy: do not regenerate autoload arrays',
-                   'packer' => 'deploy: clear the packed scripts and styles too (ezjscore-packer, right before template-block)' ),
+                   'packer' => 'deploy: clear the packed scripts and styles too (ezjscore-packer, right before template-block)',
+                   'clear-content' => 'deploy: clear the content, exphttpcache, template-block and response caches even when no template, design file, setting or translation changed',
+                   'all-caches' => 'deploy: clear every cache, whatever changed since the last deploy' ),
             $velocityArgs );
         // After "--": plain arguments, never read as options here.
         $options['arguments'] = array_merge( $options['arguments'], $velocityTail );
@@ -543,7 +551,7 @@ class Velocity extends \Exponential\Runnable\Command
             $cli->error( 'velocity: --dry-run goes with deploy and the commands that write (' . implode( ', ', $writers ) . ')' );
             $script->shutdown( 1 );
         }
-        foreach ( array( 'kernel', 'no-fpm', 'fpm-reload', 'no-velocity', 'no-autoload' ) as $deployOnly )
+        foreach ( array( 'kernel', 'no-fpm', 'fpm-reload', 'no-velocity', 'no-autoload', 'clear-content', 'all-caches' ) as $deployOnly )
         {
             if ( !empty( $options[$deployOnly] ) && $verb !== 'deploy' )
             {
@@ -1066,6 +1074,8 @@ class Velocity extends \Exponential\Runnable\Command
                     'rebuild-phar' => !empty( $options['rebuild-phar'] ),
                     'packer'       => !empty( $options['packer'] ),
                     'fpm-reload'   => !empty( $options['fpm-reload'] ),
+                    'clear-content' => !empty( $options['clear-content'] ),
+                    'all-caches'   => !empty( $options['all-caches'] ),
                     'engine'       => count( $engineList ) === 1 ? $engineList[0] : '',
                 ), $printer );
                 if ( !$asJson )

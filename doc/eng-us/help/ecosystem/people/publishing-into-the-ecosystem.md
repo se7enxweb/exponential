@@ -31,7 +31,7 @@ type: help
 | | Publish yourself | Contribute to the project |
 |---|---|---|
 | Who maintains it | You | The project |
-| Copyright | Yours | Assigned to 7x through the CLA, for kernel code and code handed over for inclusion |
+| Copyright | Yours | Assigned to the Exponential Foundation and 7x through the CLA, for kernel code and code handed over for inclusion |
 | License | Your choice; GPL 2 or later recommended | GPL 2 or later (code), GNU FDL (documentation) |
 
 Source: `CONTRIBUTING.md`, "What it does not cover"; [The CLA explained](../../community/contributing/the-cla-explained.md).

@@ -4,7 +4,7 @@ audience: hosting
 category: hosting
 order: 10
 summary: Überblick über den Bereich Leistung für Hosting-Anbieter - die Hebel in der Reihenfolge ihrer Wirkung, die Cache-Schichten, Messen vor dem Abstimmen und ein einzeiliger Wegweiser zu jeder Seite des Bereichs.
-keywords: Leistung, Geschwindigkeit, Abstimmung, Cache, Caching, OPcache, PHP-FPM, Velocity, Antwort-Cache, HTTP-Cache, SQL-Abfrage-Cache, Valkey, Redis, statischer Cache, CDN, Varnish, Benchmark, Überblick, performance, speed, tuning, response cache, HTTP cache, SQL query cache, static cache, overview
+keywords: Leistung, Geschwindigkeit, Abstimmung, Cache, Caching, OPcache, PHP-FPM, Velocity, Antwort-Cache, HTTP-Cache, SQL-Abfrage-Cache, Valkey, Redis, statischer Cache, CDN, Varnish, Benchmark, Überblick, performance, speed, tuning, response cache, HTTP cache, SQL query cache, static cache, overview, LiteSpeed, OpenLiteSpeed, LSCache, Seiten-Cache, page cache
 type: help
 ---
 # Leistung
@@ -65,11 +65,13 @@ das selbst; betrachten Sie sie als Beispiele dafür, was zu messen ist, nicht al
 | [Antwort-Cache von Velocity](antwort-cache-von-velocity.md) | Der Cache im Elternprozess von Velocity: Einstellungen, Prüfungen, Leeren |
 | [HTTP-Cache-Header](http-cache-header.md) | Was Browser, Proxys und CDNs behalten dürfen, und der rollenbewusste HTTP-Cache |
 | [Varnish und Reverse Proxys](varnish-und-reverse-proxys.md) | Zwischenspeichernde Proxys davor: Vertrauen, Leeren, was nicht zwischengespeichert werden darf |
+| [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md) | Der in LiteSpeed und OpenLiteSpeed eingebaute Seiten-Cache für anonyme Besucher und Crawler, ohne Plugin: einschalten, Treffer prüfen, leeren |
 | [CDN](cdn.md) | Ein Content Delivery Network vor Kunden-Websites stellen |
 | [Valkey und Redis](valkey-und-redis.md) | Die Erweiterung `sevenx_valkey_cache`: Caches in Redis oder Valkey |
 | [Statischer Cache](statischer-cache.md) | Als Dateien erzeugte Seiten; warum er ausgeschaltet ausgeliefert wird und wann Sie ihn nutzen |
 | [Caches leeren und vorwärmen](caches-leeren-und-vorwaermen.md) | Welcher Cache für welche Änderung geleert wird, in welcher Reihenfolge, und wie Sie vorwärmen |
 | [Benchmark einer gehosteten Website](benchmark-einer-gehosteten-website.md) | `exp:benchmark` für Hoster: faire Vergleiche, Prüfungen nach dem Ausrollen, Grenzen von Tarifen |
+| [Der kompilierte Kernel-Container](kompilierter-kernel-container.md) | Was `var/cache/kernelservices/` ist, wann er neu aufgebaut wird, wie Sie ihn prüfen und was er pro Anfrage einspart |
 
 ## Was Hoster am häufigsten falsch machen
 
@@ -80,6 +82,7 @@ das selbst; betrachten Sie sie als Beispiele dafür, was zu messen ist, nicht al
 | den falschen PHP-FPM-Master neu laden | die Website führt weiter den alten Code aus | [Abstimmung von PHP-FPM](abstimmung-von-php-fpm.md) |
 | den Speicher von Velocity nach RSS beurteilen | der Pool sieht um ein Vielfaches größer aus, als er ist | [Velocity-Worker und Pools](../server/velocity-worker-und-pools.md) |
 | ein zwischenspeichernder Proxy, der Seiten mit einem Sitzungscookie speichert | Seiten angemeldeter Benutzer werden anderen Besuchern ausgeliefert | [Varnish und Reverse Proxys](varnish-und-reverse-proxys.md) |
+| ein Seiten-Cache von LiteSpeed mit `CacheEnable public /` statt der Bedingungen aus `.htaccess_root` | welche Seiten gespeichert werden, hängt von der Richtlinie des Servers ab, nicht von den Bedingungen für Sitzung und Adresse | [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md#der-block-zeile-für-zeile) |
 | den statischen Cache der Geschwindigkeit wegen einschalten | jede Veröffentlichung erzeugt Seiten innerhalb der Anfrage des Redakteurs neu | [Statischer Cache](statischer-cache.md) |
 
 ## Verwandte Seiten

@@ -11,7 +11,7 @@
  *  SR-04 - The module declares user/sessionreport with the new policy function sessions_manage; the menu, the
  *          templates (admin = admin4), "Verify it's you" before signing out, and the link from setup/session
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */
@@ -110,7 +110,8 @@ class expUserSessionReportTest extends eZDatatypeTestCase
         $this->assertSame( 'user/sessionreport', $menu->variable( 'Leftmenu_user', 'Links' )['session_report'] );
         $this->assertContains( 'access-session_report', $menu->variable( 'Leftmenu_user_mega', 'MegaMenuLinks' ) );
         $site = eZINI::instance();
-        $this->assertContains( 'user/sessionreport RevokeSessionButton ForceSignOutButton', $site->variable( 'ReauthGroup_users', 'Rules' ) );
+        // the whole report asks "Verify it's you" before it opens (task 273: other users' devices in full)
+        $this->assertContains( 'user/sessionreport *', $site->variable( 'ReauthGroup_users', 'Rules' ) );
         $this->assertContains( 'user/sessions self SaveMailButton RevokeOthersButton', $site->variable( 'ReauthGroup_account', 'Rules' ),
                                'signing out all other sessions asks "Verify it\'s you" first' );
         foreach ( array( 'admin', 'admin4' ) as $design )

@@ -12,7 +12,7 @@
  *  AR-06 — names: 3 to 6 ranks in the five domains; anything else is refused (event() returns null)
  *  AR-07 — patterns: "content.*" matches the domain, "content.node.remove.*" matches itself and its details, the
  *          most specific wins, Disabled[] wins a tie
- *  AR-08 — the catalogue has the names of the design (136, the four access.apikey.* names of the API keys, the six of passkeys and "Verify it's you", and the later
+ *  AR-08 — the catalogue has the names of the design (136, the four access.apikey.* names of the API keys, the ten of passkeys and "Verify it's you" (revoke, password_refused, required, suggested added with #273), and the later
  *          additions such as the three of Deactivate and move); defaults: on, off, always, sampled
  *  AR-09 — routing: Route[] patterns, the exact entry wins, DefaultChannel for the rest
  *  AR-10 — Audit=disabled records nothing; an "always" name ignores Disabled[]; MinSeverity drops lower ones
@@ -23,7 +23,7 @@
  *
  * Writes only into var/tmp/audit-tests/; no database, no live settings.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group audit
@@ -191,9 +191,9 @@ class expAuditRecordTest extends PHPUnit\Framework\TestCase
     public function testCatalogue()
     {
         $catalogue = expAuditTaxonomy::catalogue();
-        $this->assertCount( 203, $catalogue );
+        $this->assertCount( 207, $catalogue );
         $defaults = array_count_values( array_column( $catalogue, 'default' ) );
-        $this->assertSame( array( 'always' => 24, 'off' => 23, 'on' => 153, 'sampled' => 3 ), array( 'always' => $defaults['always'], 'off' => $defaults['off'],
+        $this->assertSame( array( 'always' => 24, 'off' => 23, 'on' => 157, 'sampled' => 3 ), array( 'always' => $defaults['always'], 'off' => $defaults['off'],
                                                                                                   'on' => $defaults['on'], 'sampled' => $defaults['sampled'] ) );
         foreach ( $catalogue as $name => $def )
         {

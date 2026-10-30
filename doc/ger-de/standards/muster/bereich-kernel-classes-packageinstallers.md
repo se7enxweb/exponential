@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/packageinstallers
 audience: developer
 category: standards
-order: 501
+order: 508
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/packageinstallers mit den Entwurfsmustern.
 keywords: kernel/classes/packageinstallers, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

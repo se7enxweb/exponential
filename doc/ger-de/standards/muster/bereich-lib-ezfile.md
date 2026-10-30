@@ -2,7 +2,7 @@
 title: Muster in lib/ezfile
 audience: developer
 category: standards
-order: 531
+order: 544
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von lib/ezfile mit den Entwurfsmustern.
 keywords: lib/ezfile, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

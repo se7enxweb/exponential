@@ -103,7 +103,7 @@ the [Foundation's glossary](../who-is-the-exponential-foundation.md#glossary) fo
 | **Changelog** | The list of changes of a release. [Reading a changelog](reading-a-changelog.md) |
 | **Main branch** | Where development happens; public at all times |
 | **Pull request** | A proposed change; the project merges every pull request |
-| **CLA** | Contributor Licensing Agreement: what a kernel contributor signs once before the first merge; by signing and submitting, the contributor assigns the copyright to 7x and gives up control: 7x may use, change, relicense and distribute the contribution in any way, without asking or paying, and the contributor cannot withdraw it. Users' own extensions are not affected. [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) |
+| **CLA** | Contributor Licensing Agreement: what a kernel contributor signs once before the first merge; by signing and submitting, the contributor assigns the copyright to the Exponential Foundation and 7x and gives up control: the Exponential Foundation and 7x may use, change, relicense and distribute the contribution in any way, without asking or paying, and the contributor cannot withdraw it. Users' own extensions are not affected. [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) |
 | **In development** | Not released yet, such as 6.0.15 on 18 October 2026 |
 
 ## Related pages

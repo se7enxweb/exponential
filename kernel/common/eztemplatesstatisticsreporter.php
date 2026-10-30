@@ -2,7 +2,7 @@
 /**
  * File containing the eZTemplatesStatisticsReporter class.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit fb20bee0d2), Copyright (C) Mugo Web, GPL v2
@@ -178,7 +178,10 @@ class eZTemplatesStatisticsReporter
     {
         try
         {
-            $url = sprintf( $format, $templateEditURI, $siteAccess, $templateFileName );
+            // PHP 8 throws on a refused format; PHP 7.4 warns and returns false
+            $url = @sprintf( $format, $templateEditURI, $siteAccess, $templateFileName );
+            if ( $url === false )
+                throw new \ValueError( 'too few arguments' );
         }
         catch ( \Throwable $e )
         {

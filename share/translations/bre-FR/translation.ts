@@ -8066,8 +8066,8 @@
         <translation>Miret eo kemennoù gwirioù aozer an aozerien orin hag ar meziantoù tredeog ebarzhet gant Exponential er restroù tarzh hag er restr LICENSE, evel m'her goulenn an aotreadur.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Setu roll ar genlabourerien Exponential o deus aotreet o labour da 7x da vezañ implijet dindan divizoù ha divoned ar Contributor Licensing Agreement eus eZ Systems. Evel m'her aotre ar c'hendivizad-se, 7x a adskign pep perzh dindan an hevelep aotreadur hag ar restr ma 'z eo ebarzhet ennañ. Ar roll a anv pep kenlabourer, e titouroù darempred diret ha ar restroù m'en deus kemeret perzh enno.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Kenlabourerien anavezet evit o labour war Exponential ha war ar meziant ma'z eo deuet anezhañ, gant ar restroù m'o deus kemeret perzh enno. Un anaoudegezh eo, n'eo ket un evezhiadenn gwir-eilañ: treuzkaset eo ar c'henlabouroù da Exponential d'an Exponential Foundation ha da 7x dindan ar Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77281,6 +77281,82 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>N'eo ket bet tu gwiriañ an alc'hwez-tremen. Klaskit en-dro, mar plij.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Ar c&apos;hontoù a gevre gant alc&apos;hwezioù-tremen hepken n&apos;hallont ket implijout ur ger-tremen amañ: dibabit &quot;Kevreañ gant un alc&apos;hwez-tremen&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Alc&apos;hwezioù-tremen %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>An alc&apos;hwezioù-tremen a implij ar gont-mañ evit kevreañ. Dizoberit an hini a zo war un trepas kollet pe laeret: ne c&apos;hallo ket kevreañ ken. Ar perc&apos;henn a ouzhpenn re nevez e-unan.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Ezhomm en deus ho kont eus un alc&apos;hwez-tremen</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Ouzhpennañ un alc&apos;hwez-tremen d&apos;ho kont</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Ouzhpennit un alc&apos;hwez-tremen evit kenderc&apos;hel. Goude e kevreot gantañ e-lec&apos;h gant ur ger-tremen hepken.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Kevreañ gant un alc&apos;hwez-tremen a zo buanoc&apos;h ha suroc&apos;h eget gant ur ger-tremen. Ouzhpennit unan bremañ, pe kendalc&apos;hit hep unan.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Ket bremañ</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Dizober an alc&apos;hwez-tremen &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Ne c&apos;hallo ket kevreañ ouzh ar gont-mañ ken. Ma oa an hini diwezhañ, e kevre ar perc&apos;henn gant ar ger-tremen, pe e lakait unan nevez.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Dizober an alc&apos;hwez-tremen</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Dizober</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>N&apos;eus alc&apos;hwez-tremen ebet gant ar gont-mañ.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Kadarnaer</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Dianav</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Hoc&apos;h alc&apos;hwez-tremen diwezhañ: ouzhpennit unan all a-raok e lemel kuit.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Ar gont-mañ a gevre gant alc&apos;hwezioù-tremen hepken (reolenn an alc&apos;hwezioù-tremen): pa ne chom hini ebet, e kevre en-dro gant he ger-tremen.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Hoc&apos;h alc&apos;hwez-tremen diwezhañ eo hag ho kont ne c&apos;hall ket kevreañ hep unan. Ouzhpennit un alc&apos;hwez-tremen all da gentañ.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Dizobereet eo an alc&apos;hwez-tremen &quot;%name&quot;. Ne c&apos;hall ket kevreañ ouzh ar gont-mañ ken.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77380,6 +77456,34 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>Code from your authenticator app</source>
         <translation>Kod eus ho arload kadarnaat</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Emaoc&apos;h o vont da zilemel roadennoù da viken pe da c&apos;houllonderiñ ur marilh.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Ho ker-tremen hag un alc&apos;hwez-tremen</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Ho ker-tremen hag ur c&apos;hod eus ho arload kadarnaat</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Pe:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>N&apos;hall ket ar merdeer-mañ implijout alc&apos;hwezioù-tremen. Implijit un doare all, pe ur merdeer all.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Pa genderc&apos;hot, e c&apos;houlenno ho merdeer unan eus hoc&apos;h alc&apos;hwezioù-tremen.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Kenderc&apos;hel gant un alc&apos;hwez-tremen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77470,6 +77574,70 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>Setup</source>
         <translation>Kefluniañ</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Kemmañ ho ker-tremen, ho chomlec&apos;h postel, hoc&apos;h alc&apos;hwezioù-tremen, ho kevreadur e daou gam, ho kodoù adtapout pe hoc&apos;h alc&apos;hwezioù API, ha digevreañ ho trepasoù all.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Krouiñ ha kemmañ implijerien, o gerioù-tremen hag o zrepasoù, arventennoù ar c&apos;hontoù, aprouiñ pe nac&apos;hañ kontoù implijer nevez, lakaat rolloù ha kemmañ reolennoù.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Dilemel roadennoù</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Goullonderiñ ar voubellenn, lemel kuit elfennoù diouti ha lemel kuit meur a elfenn war un dro.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Lemel kuit, embann hag enrollañ endalc&apos;had</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Lemel kuit endalc&apos;had (er voubellenn ivez), embann hag enrollañ ur brouilhed, goulennet pa vez kaset ar furmskrid. Diweredekaet dre ziouer.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>A-raok un ober kizidik e kadarna un implijer kevreet adarre piv eo: gant e c&apos;her-tremen hag un alc&apos;hwez-tremen, pe hep alc&apos;hwez-tremen gant e c&apos;her-tremen ha kod e arload kadarnaat. Ar pajennoù web hepken a c&apos;houlenn: ar c&apos;hehentiñ REST, SOAP, WebDAV, ar c&apos;hevreadur expservices hag al linenn-urzhioù na c&apos;houlennont morse.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Pelec&apos;h e talvez an arventennoù</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Arventennoù evit</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Pep haeziñ al lec&apos;hienn</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Haeziñ al lec&apos;hienn %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Digeriñ</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Piv a vez goulennet: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Askit strolladoù implijerien evit goulenn ouzh o izili hepken (an embannerien, da skouer). Netra asket: pep implijer.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Enrollet e settings/override/site.ini.append.php, evit pep haeziñ al lec&apos;hienn. Enrollañ a c&apos;houlenn ouzhoc&apos;h kadarnaat e oc&apos;h c&apos;hwi.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Enrollet e settings/siteaccess/%name/site.ini.append.php. Un dalvoudenn e settings/override a dremen a-raok. Enrollañ a c&apos;houlenn ouzhoc&apos;h kadarnaat e oc&apos;h c&apos;hwi.</translation>
     </message>
 </context>
 <context>
@@ -77826,6 +77994,30 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Prennet eo bet ho kont</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Ouzhpennet eo bet un alc&apos;hwez-tremen d&apos;ho kont %login war %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Piv bennak en deus an alc&apos;hwez-tremen-mañ a c&apos;hall kevreañ d&apos;ho kont hep ho ker-tremen. Ma n&apos;hoc&apos;h eus ket ouzhpennet anezhañ, lamit anezhañ e Alc&apos;hwezioù tremen ha cheñchit ho ker-tremen.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Lamet eo bet un alc&apos;hwez-tremen diwar ho kont %login war %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Ne c&apos;hall ket kevreañ d&apos;ho kont ken. Ma n&apos;hoc&apos;h eus ket lamet anezhañ, gwiriit hoc&apos;h alc&apos;hwezioù-tremen hag ho trepasoù.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Ouzhpennet eo bet un alc&apos;hwez-tremen d&apos;ho kont</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Lamet eo bet un alc&apos;hwez-tremen diwar ho kont</translation>
     </message>
 </context>
 <context>

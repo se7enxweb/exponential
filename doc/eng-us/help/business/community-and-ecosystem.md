@@ -82,7 +82,7 @@ If a buyer asks, say that the public sources do not answer it and offer to ask t
 
 You may say, with sources:
 
-- The copyright notice runs from 1998 to 2026 for 7x and the Exponential Foundation, next to 1999 to 2014 for
+- The copyright notice runs from 1998 to 2026 for the Exponential Foundation and 7x, next to 1999 to 2014 for
   eZ Systems AS (`COPYRIGHT.md`).
 - Exponential continues the code base of eZ Publish, a product its creator discontinued after almost 18 years
   ([Who is 7x?](../who-is-7x.md#the-ez-publish-years-1999-to-2021)).

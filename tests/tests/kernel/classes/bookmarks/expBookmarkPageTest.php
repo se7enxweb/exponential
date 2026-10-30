@@ -20,7 +20,7 @@
  *  BP-16 - Moving to a position keeps it within the folder; an unknown entry is refused
  *  BP-17 - Every bookmark knows its place and the size of its folder
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group bookmarks

@@ -11,7 +11,7 @@
  *  LV-35  groups kernel, site, extensions, webserver (empty by default), archives; rotations and .gz; the file level
  *  LV-36  rotationsOf() in number order; defaultID()
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

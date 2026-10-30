@@ -34,7 +34,7 @@
  *   ./bin/php/console list
  *   ./bin/php/console list ext
  *
- * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license   For full copyright and license information view LICENSE file.
  * @package   kernel
  */
@@ -915,7 +915,7 @@ if ( array_intersect( $aboutFlags, $leading ) )
        . "the full text is in the LICENSE file of the installation.\n"
        . "This is free software: you are free to change and redistribute it.\n"
        . "There is NO WARRANTY, to the extent permitted by law.\n\n"
-       . "Written by 7x (se7enx.com) and the Exponential contributors.\n";
+       . "Written by the Exponential Foundation and 7x (se7enx.com).\n";
     exit( 0 );
 }
 

@@ -10,6 +10,8 @@ type: help
 ---
 # Exponential: Häufige Fragen
 
+> **Unterstützt: PHP 8.0 bis 8.5. Ohne Support nutzbar: PHP 7.4 (Exponential 6.0.15 und neuer).** [Warum Exponential PHP 7.4 unterstützt](../warum-exponential-php-7-4-unterstuetzt.md)
+
 Diese Antworten folgen den FAQ-Seiten der Projektwebsite, [exponential.earth/faq](https://exponential.earth/faq),
 gelesen im Oktober 2026, in den eigenen Worten dieser Hilfe wiedergegeben und mit der Software in diesem Repository
 abgeglichen. Wo das Repository etwas anderes sagt, weist die Antwort darauf hin und folgt dem Repository.
@@ -74,7 +76,7 @@ Integrationsarbeit aus. Siehe [Velocity ist Teil von Exponential 6.0.15](../velo
 ### Enthält Exponential einen Webserver?
 
 Ja, seit 6.0.15. Der Velocity Internet / Web Application Server ist Teil von Exponential: Die `composer.json` im
-Wurzelverzeichnis verlangt `se7enxweb/exponential-velocity ~0.0.4.57`, sodass jede Installation ihn hat, auf PHP 8.0
+Wurzelverzeichnis verlangt `se7enxweb/exponential-velocity ~0.0.4.57` (über `se7enxweb/exponential-php-floor`, auf PHP 8.0 und neuer), sodass jede Installation ihn hat, auf PHP 8.0
 und neuer. Das Projekt nennt das einen Wendepunkt, einen Grundstein und einen Schlussstein: eine neue Stufe der
 Integration von Anwendung und System, die noch mehr Funktionen von Haus aus und standardmäßig ins Kernprodukt bringt.
 Velocity ist die empfohlene Engine für jede Stufe, und FrankenPHP ist eine produktionsreife Alternative; Apache und
@@ -172,9 +174,19 @@ Sie Releases oder jeder Änderung beim Entstehen folgen, zeigt [Mit Git aktualis
 
 ### Welche PHP-Versionen werden unterstützt?
 
-Exponential 6.0.15 läuft unter PHP 8.0 bis 8.5, und ab seinem Release 0.0.4.54 auch der Anwendungsserver Velocity
+Exponential 6.0.15 wird unter PHP 8.0 bis 8.5 unterstützt, ab seinem Release 0.0.4.54 mit dem Anwendungsserver Velocity, und ist unter PHP 7.4 ohne Support nutzbar (ohne Velocity)
 ([Anforderungen](../../installation/02-voraussetzungen.md)). Die Community-Seite der Website nennt für das Release 6.0.14
-„PHP 8.1 bis PHP 8.5“; maßgeblich sind die Anforderungen des Repositorys, die auch PHP 8.0 abdecken.
+„PHP 8.1 bis PHP 8.5“; maßgeblich sind die Anforderungen des Repositorys, die auch PHP 7.4 und 8.0 abdecken.
+
+### Kann ich Exponential unter PHP 7.4 betreiben?
+
+Ja, ab 6.0.15, für Websites, die das PHP ihres Servers noch nicht ändern können. Der Kernel und die mitgelieferten
+Erweiterungen laufen unter PHP 7.4; Velocity, Netgen Layouts, die Zwei-Faktor-Authentifizierung und einige andere
+Erweiterungen brauchen PHP 8 und werden dort nicht installiert. Composer wählt die passenden Pakete selbst, über das
+Metapaket `se7enxweb/exponential-php-floor`. PHP 7.4 erhält keine Sicherheitskorrekturen des PHP-Projekts mehr;
+betreiben Sie es daher nur dort, wo Ihr Betriebssystemhersteller oder Hoster es noch pflegt, und planen Sie den
+Umzug auf PHP 8. Die ganze Geschichte, mit einer Tabelle pro Funktion:
+[Warum Exponential PHP 7.4 unterstützt](../warum-exponential-php-7-4-unterstuetzt.md).
 
 ### Wie hoste ich meine erste Site?
 
@@ -206,7 +218,8 @@ und [Geben und spenden](geben-und-spenden.md).
 Für den Kern-Kernel ja. 7x und die Exponential Foundation verlangen für jeden Code-Beitrag zum Kernel eine
 unterschriebene Contributor Licensing Agreement (CLA), bevor er übernommen werden kann, gleich ob er als Pull Request,
 Patch, Issue oder per E-Mail eingereicht wird. **Mit Unterschrift und Einreichung übertragen Sie das Urheberrecht an
-Ihrem Beitrag an 7x, das sein Eigentümer wird, und geben die Kontrolle darüber auf:** 7x darf ihn auf jede Weise
+Ihrem Beitrag an die Exponential Foundation und 7x, die seine Eigentümer werden, und geben die Kontrolle darüber
+auf:** Die Exponential Foundation und 7x dürfen ihn auf jede Weise
 verwenden, ändern, neu lizenzieren und verbreiten, auch unter anderen Lizenzen und in kommerziellen Produkten, ohne
 Sie zu fragen oder zu bezahlen, und Sie können ihn weder zurückziehen noch an Bedingungen knüpfen. Sie unterschreiben
 einmal für alle künftigen Beiträge. Ihre eigenen Extensions, Seitenpakete und Themes sind nicht betroffen. Siehe
@@ -233,3 +246,11 @@ und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-We
 Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->
+
+## Urheberrecht und Copyleft
+
+Seit dem 29. Oktober 2026 halten die Exponential Foundation und 7x das Copyright an Exponential gemeinsam, die
+Foundation zuerst genannt: „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“, in Dateien
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ Wer es hält und warum, was die
+GPL Ihnen erlaubt, welche Hinweise Dritter bleiben und wie der Hinweis in neue Dateien und Erweiterungen kommt:
+[Urheberrecht und Copyleft](../urheberrecht-und-copyleft.md).

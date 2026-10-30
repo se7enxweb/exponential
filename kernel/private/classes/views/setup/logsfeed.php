@@ -17,7 +17,7 @@
  * ([RateLimitSettings]); over it the answer is 429 with Retry-After. The answer carries cost: the milliseconds the
  * server spent and, for a poll, the stat, open and cache counts.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

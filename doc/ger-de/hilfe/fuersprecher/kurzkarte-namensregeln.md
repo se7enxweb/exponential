@@ -38,7 +38,7 @@ THE ORGANIZATIONS
   7x                               the company that leads Exponential (digit 7, lowercase x)
   se7enx.com                       7x's domain        se7enxweb    GitHub account and Composer vendor
   the Exponential Foundation       the nonprofit that operates and funds the project
-  7x & Exponential Foundation      the copyright holder, exactly like this
+  Exponential Foundation and 7x      the copyright holder, exactly like this
 
 THE PAST
   eZ Publish                       only in the past tense: "while the software was still called eZ Publish"

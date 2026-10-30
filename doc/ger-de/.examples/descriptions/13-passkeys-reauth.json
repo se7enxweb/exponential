@@ -1,0 +1,150 @@
+{
+    "ini:settings/site.ini [PasskeySettings] Algorithms": {
+        "en": "COSE algorithms offered, most preferred first: -7 ES256, -257 RS256, -8 Ed25519 (needs\nPHP's sodium extension), -35 ES384, -36 ES512.",
+        "de": "Angebotene COSE-Verfahren, bevorzugte zuerst: -7 ES256, -257 RS256, -8 Ed25519 (braucht\nPHPs sodium-Erweiterung), -35 ES384, -36 ES512."
+    },
+    "ini:settings/site.ini [PasskeySettings] AllowedOrigins": {
+        "en": "The origins (scheme://host[:port]) answers may come from. Empty: the origin of the\nrequest. List every host the passkeys are used on when RelyingPartyID is a parent domain.",
+        "de": "Die Origins (schema://host[:port]), von denen Antworten kommen dürfen. Leer: der Origin der\nAnfrage. Nennen Sie jeden Host, auf dem die Passkeys benutzt werden, wenn RelyingPartyID eine übergeordnete Domain ist."
+    },
+    "ini:settings/site.ini [PasskeySettings] Attestation": {
+        "en": "The attestation asked for when a passkey is added: none (default), indirect or direct.\nWith indirect every browser keeps the authenticator's model id (AAGUID), which names it in\nthe list (\"iCloud Keychain\", \"YubiKey 5 Series\"); the statement itself is never relied on.",
+        "de": "Die Attestierung, um die beim Hinzufügen eines Passkeys gebeten wird: none (Standard), indirect oder direct.\nMit indirect behält jeder Browser die Modellkennung des Authentifikators (AAGUID), die ihn in\nder Liste benennt („iCloud Keychain“, „YubiKey 5 Series“); der Nachweis selbst wird nie herangezogen."
+    },
+    "ini:settings/site.ini [PasskeySettings] AuthenticatorNames": {
+        "en": "Names of authenticator models the built-in list lacks or names otherwise:\nAuthenticatorNames[<aaguid>]=<name>",
+        "de": "Namen von Authentifikatormodellen, die die eingebaute Liste nicht kennt oder anders nennt:\nAuthenticatorNames[<aaguid>]=<Name>"
+    },
+    "ini:settings/site.ini [PasskeySettings] ChallengeSeconds": {
+        "en": "Seconds a challenge may be answered.",
+        "de": "Sekunden, in denen eine Challenge beantwortet werden kann."
+    },
+    "ini:settings/site.ini [PasskeySettings] ConsoleSlots": {
+        "en": "Templates added below the list of passkeys on user/passkeys (an extension's own section):\nConsoleSlots[]=design:myextension/passkeys_slot.tpl",
+        "de": "Templates unter der Liste der Passkeys auf user/passkeys (ein eigener Abschnitt einer Erweiterung):\nConsoleSlots[]=design:myextension/passkeys_slot.tpl"
+    },
+    "ini:settings/site.ini [PasskeySettings] ExemptViews": {
+        "en": "The views that stay open while a passkey is required (\"module\" or \"module/view\").",
+        "de": "Die Ansichten, die offen bleiben, solange ein Passkey verlangt ist („modul“ oder „modul/ansicht“)."
+    },
+    "ini:settings/site.ini [PasskeySettings] GroupPolicy": {
+        "en": "Per user group (content object id): the strictest of the user's groups and Policy wins;\ndisabled in any group wins. GroupPolicy[13]=required, GroupPasswordSignIn[13]=disabled",
+        "de": "Je Benutzergruppe (Content-Objekt-ID): Die strengste Angabe der Gruppen des Benutzers und Policy gilt;\ndisabled in irgendeiner Gruppe gilt. GroupPolicy[13]=required, GroupPasswordSignIn[13]=disabled"
+    },
+    "ini:settings/site.ini [PasskeySettings] MaxPerUser": {
+        "en": "Passkeys one account may have.",
+        "de": "Passkeys je Konto."
+    },
+    "ini:settings/site.ini [PasskeySettings] Passkeys": {
+        "en": "Passkeys (WebAuthn): a user registers passkeys on user/passkeys (My account > Passkeys)\nand signs in with one on the web sign-in form, next to the password; a passkey also\nanswers \"Verify it's you\" ([ReauthSettings]). Only the web pages use passkeys: REST,\nSOAP, WebDAV and the expservices login do not change.\nGuide: doc/eng-us/guides/passkeys.md\n\nenabled or disabled. Disabled: no passkey can be added or used; the stored ones stay.",
+        "de": "Passkeys (WebAuthn): Ein Benutzer registriert Passkeys auf user/passkeys (Mein Konto > Passkeys)\nund meldet sich im Anmeldeformular des Webs neben dem Passwort mit einem an; ein Passkey\nbeantwortet auch „Identität bestätigen“ ([ReauthSettings]). Nur die Webseiten benutzen Passkeys: REST,\nSOAP, WebDAV und die expservices-Anmeldung ändern sich nicht.\nAnleitung: doc/ger-de/anleitungen/passkeys.md\n\nenabled oder disabled. Disabled: Kein Passkey kann hinzugefügt oder benutzt werden; die gespeicherten bleiben."
+    },
+    "ini:settings/site.ini [PasskeySettings] PasswordSignIn": {
+        "en": "enabled (default) or disabled: disabled refuses the password on the sign-in form for an\naccount that has a passkey (answered like a wrong password). An account without a passkey\nstill signs in with its password, so nobody is locked out.",
+        "de": "enabled (Standard) oder disabled: disabled lehnt im Anmeldeformular das Passwort eines\nKontos ab, das einen Passkey hat (beantwortet wie ein falsches Passwort). Ein Konto ohne Passkey\nmeldet sich weiter mit seinem Passwort an, niemand wird ausgesperrt."
+    },
+    "ini:settings/site.ini [PasskeySettings] Policy": {
+        "en": "The passkey policy (doc/eng-us/guides/passkeys.md, \"Policy\"). Only the web pages apply it;\nREST, SOAP, WebDAV and the expservices login keep their own sign-in.\noptional (default): users may add passkeys. preferred: a user without a passkey is asked\nonce per session to add one and may go on. required: a user without a passkey adds one\nbefore any other page.",
+        "de": "Die Passkey-Richtlinie (doc/ger-de/anleitungen/passkeys.md, „Richtlinie“). Nur die Webseiten wenden sie an;\nREST, SOAP, WebDAV und die expservices-Anmeldung behalten ihre eigene Anmeldung.\noptional (Standard): Benutzer dürfen Passkeys hinzufügen. preferred: Ein Benutzer ohne Passkey wird\neinmal je Sitzung gebeten, einen hinzuzufügen, und darf weitermachen. required: Ein Benutzer ohne Passkey fügt\nvor jeder anderen Seite einen hinzu."
+    },
+    "ini:settings/site.ini [PasskeySettings] PolicyHandlers": {
+        "en": "Classes implementing expPasskeyPolicyHandler: extensions change the policy of an account.",
+        "de": "Klassen, die expPasskeyPolicyHandler umsetzen: Erweiterungen ändern die Richtlinie eines Kontos."
+    },
+    "ini:settings/site.ini [PasskeySettings] RelyingPartyID": {
+        "en": "The relying party id: a host name, the passkeys are bound to it. Empty: the host name of\nthe request. A shared parent domain (example.com) lets the passkeys of www.example.com\nwork on admin.example.com too; it must be the host or a parent of it.",
+        "de": "Die Relying-Party-ID: ein Hostname, an den die Passkeys gebunden sind. Leer: der Hostname\nder Anfrage. Eine gemeinsame übergeordnete Domain (example.com) lässt die Passkeys von www.example.com\nauch auf admin.example.com gelten; sie muss der Host oder eine übergeordnete Domain davon sein."
+    },
+    "ini:settings/site.ini [PasskeySettings] RelyingPartyIDMap": {
+        "en": "A multi-host installation: the relying party id of each host, RelyingPartyIDMap[<host>]=<id>.\nThe id must be the host or a parent domain of it; a host not listed uses RelyingPartyID.",
+        "de": "Eine Installation mit mehreren Hosts: die Relying-Party-ID je Host, RelyingPartyIDMap[<host>]=<id>.\nDie ID muss der Host oder eine übergeordnete Domain davon sein; ein nicht genannter Host benutzt RelyingPartyID."
+    },
+    "ini:settings/site.ini [PasskeySettings] RelyingPartyName": {
+        "en": "The name the browser shows. Empty: [SiteSettings] SiteName.",
+        "de": "Der Name, den der Browser zeigt. Leer: [SiteSettings] SiteName."
+    },
+    "ini:settings/site.ini [PasskeySettings] SignInForm": {
+        "en": "Offer \"Sign in with a passkey\" on the sign-in form (and the browser's passkey autofill).",
+        "de": "„Mit einem Passkey anmelden“ im Anmeldeformular anbieten (und das Passkey-Autofill des Browsers)."
+    },
+    "ini:settings/site.ini [PasskeySettings] UserPolicy": {
+        "en": "Per account (content object id), winning over the groups.",
+        "de": "Je Konto (Content-Objekt-ID), vor den Gruppen."
+    },
+    "ini:settings/site.ini [PasskeySettings] UserVerification": {
+        "en": "required (default; the authenticator checks a PIN, fingerprint or face), preferred or\ndiscouraged. Signing in with a passkey always requires it; this applies to re-authentication.",
+        "de": "required (Standard; der Authentifikator prüft PIN, Fingerabdruck oder Gesicht), preferred oder\ndiscouraged. Die Anmeldung mit Passkey verlangt sie immer; dies gilt für die Bestätigung der Identität."
+    },
+    "ini:settings/site.ini [ReauthGroup_account]": {
+        "en": "Rules, in every group: \"module/view [token ...]\"\n  module/view    the view (view * for every view of the module); a POST to it is asked\n  *              every request, GET too (a page that downloads, or a form with a file upload)\n  Name           only a POST that carries this field (any of several names)\n  self, other    only when the account addressed is the user's own / another user's\n                 (content/edit of a user object, user/password, user/setting; the\n                 pending account of an approval item of \"Approve user accounts\")\n  credentials    only when the POST changes the login, e-mail or password of a user\n  !module/view   never asked for this view (an exception to a module/* rule)\n  bulk           only when several items are removed at once (BulkCount)\nA group may name UserGroups[] (content object ids of user groups): it then asks only\ntheir members; empty or missing: every user.",
+        "de": "Regeln, in jeder Gruppe: \"modul/ansicht [token ...]\"\n  modul/ansicht  die Ansicht (ansicht * für jede Ansicht des Moduls); ein POST an sie wird gefragt\n  *              jede Anfrage, auch GET (eine Seite, die herunterlädt, oder ein Formular mit Datei-Upload)\n  Name           nur ein POST, der dieses Feld trägt (einen von mehreren Namen)\n  self, other    nur wenn das betroffene Konto das eigene / das eines anderen Benutzers ist\n                 (content/edit eines Benutzerobjekts, user/password, user/setting; das\n                 wartende Konto eines Freigabe-Elements von „Benutzerkonten freigeben“)\n  credentials    nur wenn der POST Login, E-Mail oder Passwort eines Benutzers ändert\n  !modul/ansicht für diese Ansicht nie gefragt (eine Ausnahme zu einer modul/*-Regel)\n  bulk           nur wenn mehrere Elemente auf einmal entfernt werden (BulkCount)\nEine Gruppe kann UserGroups[] nennen (Content-Objekt-IDs von Benutzergruppen): Sie fragt dann nur\nderen Mitglieder; leer oder fehlend: jeden Benutzer."
+    },
+    "ini:settings/site.ini [ReauthGroup_account] Enabled": {
+        "en": "The security settings of one's own account.",
+        "de": "Die Sicherheitseinstellungen des eigenen Kontos."
+    },
+    "ini:settings/site.ini [ReauthGroup_account] Rules": {
+        "en": "\"Sign out all other sessions\" asks first too: someone at an unattended screen must not lock the owner out",
+        "de": "„Alle anderen Sitzungen abmelden“ fragt ebenfalls zuerst: Jemand an einem unbeaufsichtigten Bildschirm darf den Inhaber nicht aussperren"
+    },
+    "ini:settings/site.ini [ReauthGroup_content] Enabled": {
+        "en": "Removing content (also to the trash), publishing and storing a draft, asked when the form\nis sent, before the page goes on to the content. Off by default; switched on setup/reauth,\nfor every siteaccess or one, and for every user or the members of some user groups.\nA confirmation counts for Minutes, so an editor is not asked at every save.",
+        "de": "Inhalte entfernen (auch in den Papierkorb), veröffentlichen und einen Entwurf speichern, gefragt beim Senden\ndes Formulars, bevor die Seite zum Inhalt weitergeht. Standardmäßig aus; eingeschaltet auf setup/reauth,\nfür jeden Siteaccess oder einen, und für jeden Benutzer oder die Mitglieder bestimmter Benutzergruppen.\nEine Bestätigung gilt Minutes lang, ein Redakteur wird also nicht bei jedem Speichern gefragt."
+    },
+    "ini:settings/site.ini [ReauthGroup_content] UserGroups": {
+        "en": "The user groups (content object ids) whose members are asked; empty: every user.",
+        "de": "Die Benutzergruppen (Content-Objekt-IDs), deren Mitglieder gefragt werden; leer: jeder Benutzer."
+    },
+    "ini:settings/site.ini [ReauthGroup_delete] Enabled": {
+        "en": "Deleting data for good: emptying the trash or removing items from it, removing several\nitems at once (BulkCount or more), and clearing the session list (setup/session is in\nsystem). The audit log has no page that clears it: only the console, which is never asked.",
+        "de": "Daten endgültig löschen: den Papierkorb leeren oder Elemente daraus entfernen, mehrere\nElemente auf einmal entfernen (BulkCount oder mehr) und die Sitzungsliste leeren (setup/session liegt in\nsystem). Das Audit-Protokoll hat keine Seite, die es leert: nur die Konsole, die nie gefragt wird."
+    },
+    "ini:settings/site.ini [ReauthGroup_export] Enabled": {
+        "en": "Exporting data.",
+        "de": "Daten exportieren."
+    },
+    "ini:settings/site.ini [ReauthGroup_system] Enabled": {
+        "en": "System settings and dangerous setup actions.",
+        "de": "Systemeinstellungen und gefährliche Setup-Aktionen."
+    },
+    "ini:settings/site.ini [ReauthGroup_users] Enabled": {
+        "en": "Managing users, roles and policies, and approving or denying new user accounts.",
+        "de": "Benutzer, Rollen und Richtlinien verwalten und neue Benutzerkonten freigeben oder ablehnen."
+    },
+    "ini:settings/site.ini [ReauthGroup_users] Rules": {
+        "en": "Another user's devices in full (their addresses and browsers) and signing them out\nApprove and Deny of a new user account waiting for approval (the workflow event\n\"Approve user accounts\"); content approvals address no account and never ask here",
+        "de": "Die Geräte eines anderen Benutzers vollständig (ihre Adressen und Browser) und deren Abmeldung\nFreigeben und Ablehnen eines neuen Benutzerkontos, das auf Freigabe wartet (das Workflow-Ereignis\n„Benutzerkonten freigeben“); Inhaltsfreigaben betreffen kein Konto und fragen hier nie"
+    },
+    "ini:settings/site.ini [ReauthSettings] BulkCount": {
+        "en": "The number of items at which a removal counts as \"bulk\" (the rule token bulk).",
+        "de": "Die Zahl der Elemente, ab der ein Entfernen als „bulk“ gilt (das Regel-Token bulk)."
+    },
+    "ini:settings/site.ini [ReauthSettings] CodeHandlers": {
+        "en": "Classes implementing expReauthCodeHandler: they check the code of a two-step sign-in app.\nexpReauthTotpCode reads the codes of sevenx_authentication_2fa when that extension is active.",
+        "de": "Klassen, die expReauthCodeHandler umsetzen: Sie prüfen den Code einer App der zweistufigen Anmeldung.\nexpReauthTotpCode liest die Codes von sevenx_authentication_2fa, wenn diese Erweiterung aktiv ist."
+    },
+    "ini:settings/site.ini [ReauthSettings] Factors": {
+        "en": "How the user confirms: the first combination whose every way the user has is asked, with\nthe later ones of as many ways offered beside it (never a weaker one). Ways: password,\npasskey, code (the authenticator app of a two-step sign-in, see CodeHandlers[]).\nThe default: the password AND a passkey; without a passkey the password and the code;\nwithout either the password alone; an account without a password uses a passkey.",
+        "de": "Wie der Benutzer bestätigt: Gefragt wird die erste Kombination, deren Wege der Benutzer alle hat, mit\nden späteren mit ebenso vielen Wegen daneben (nie eine schwächere). Wege: password,\npasskey, code (die Authenticator-App einer zweistufigen Anmeldung, siehe CodeHandlers[]).\nStandard: das Passwort UND ein Passkey; ohne Passkey Passwort und Code;\nohne beides das Passwort allein; ein Konto ohne Passwort benutzt einen Passkey."
+    },
+    "ini:settings/site.ini [ReauthSettings] Groups": {
+        "en": "The groups, each [ReauthGroup_<name>] with Enabled=true|false and Rules[].",
+        "de": "Die Gruppen, jede [ReauthGroup_<Name>] mit Enabled=true|false und Rules[]."
+    },
+    "ini:settings/site.ini [ReauthSettings] MaxFailures": {
+        "en": "Wrong answers in a row after which the user is signed out.",
+        "de": "Falsche Antworten hintereinander, nach denen der Benutzer abgemeldet wird."
+    },
+    "ini:settings/site.ini [ReauthSettings] Minutes": {
+        "en": "Minutes a confirmation counts.",
+        "de": "Minuten, die eine Bestätigung gilt."
+    },
+    "ini:settings/site.ini [ReauthSettings] Reauth": {
+        "en": "\"Verify it's you\": before a sensitive action the signed-in user confirms who they are\nagain (the password and a passkey, see Factors[]) and is not\nasked again for Minutes. Only the web pages ask (index.php and Velocity); REST, SOAP,\nWebDAV, the expservices login and the command line are never asked. Anonymous visitors\nare never asked. The groups and their switches are edited on setup/reauth.\nGuide: doc/eng-us/guides/verify-its-you.md\n\nenabled or disabled (all groups).",
+        "de": "„Identität bestätigen“: Vor einer heiklen Aktion bestätigt der angemeldete Benutzer noch einmal, wer er ist\n(Passwort und Passkey, siehe Factors[]), und wird\nMinutes lang nicht wieder gefragt. Nur die Webseiten fragen (index.php und Velocity); REST, SOAP,\nWebDAV, die expservices-Anmeldung und die Kommandozeile werden nie gefragt. Anonyme Besucher\nwerden nie gefragt. Die Gruppen und ihre Schalter werden auf setup/reauth bearbeitet.\nAnleitung: doc/ger-de/anleitungen/identitaet-bestaetigen.md\n\nenabled oder disabled (alle Gruppen)."
+    },
+    "ini:settings/site.ini [ReauthSettings] TriggerHandlers": {
+        "en": "Classes implementing expReauthTriggerHandler: extensions decide themselves that a request\nasks, naming one of the groups above (it asks only while that group is on).",
+        "de": "Klassen, die expReauthTriggerHandler umsetzen: Erweiterungen entscheiden selbst, dass eine Anfrage\nfragt, und nennen eine der Gruppen oben (gefragt wird nur, solange diese Gruppe eingeschaltet ist)."
+    }
+}

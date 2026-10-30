@@ -31,10 +31,10 @@ Aus [2.2 PHP](../../../installation/02-voraussetzungen.md#22-php):
 
 | PHP | Stand |
 |---|---|
-| 8.0 | die älteste unterstützte Version; läuft unter Apache mit mod_php oder PHP-FPM und ab dem Release 0.0.4.54 auch unter Velocity |
+| 8.0 | unterstützt; läuft unter Apache mit mod_php oder PHP-FPM und ab dem Release 0.0.4.54 auch unter Velocity |
 | 8.1 bis 8.4 | unterstützt, einschließlich Velocity |
 | 8.5 | unterstützt; die neueste getestete Version |
-| 7.4 und älter | ab 6.0.8 nicht unterstützt; eine Website, die auf PHP 7.4 bleiben muss, bleibt auf 6.0.7 |
+| 7.4 | ab 6.0.15 ohne Support nutzbar (keine Zusage für Fehler- oder Sicherheitskorrekturen, ohne die Funktionen, die PHP 8 brauchen); nicht von 6.0.8 bis 6.0.14 |
 
 Nutzen Sie das neueste PHP, das Ihr System anbietet: Jede Version bringt Geschwindigkeit, und die älteren verlieren zuerst die
 Sicherheitsunterstützung. 64-Bit-PHP wird für die Unterstützung von mehr als 30 Sprachen empfohlen.

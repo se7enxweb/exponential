@@ -10,7 +10,7 @@
  * credentials in URLs and key=value secrets. No database host, user, password or name, no mail settings, no
  * session, no user is ever part of it. What the visitor types into the report form goes through scrub() as well.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

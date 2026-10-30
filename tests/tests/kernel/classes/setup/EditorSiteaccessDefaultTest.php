@@ -4,7 +4,7 @@
  * exp:install --access=port the editor took 8080, the public site's port, and --access=host gave it edit.localhost.
  * No database; exp:install is run with --print only (it writes nothing then).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

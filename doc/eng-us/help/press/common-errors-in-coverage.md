@@ -38,7 +38,7 @@ you publish.
 | Error | Correct | Source |
 |---|---|---|
 | "the 7x Foundation" | the Exponential Foundation | [Two organizations, one project](two-organizations-one-project.md) |
-| "7x owns Exponential" | 7x leads it; 7x and the Foundation hold the copyright; the license is GPL | [Licenses explained for reporters](licenses-explained-for-reporters.md) |
+| "7x owns Exponential" | 7x leads it; the Foundation and 7x hold the copyright; the license is GPL | [Licenses explained for reporters](licenses-explained-for-reporters.md) |
 | "the Foundation sells hosting" | 7x sells services; the Foundation funds the project | same |
 | "Ibexa's Exponential" | Not associated with eZ Systems or Ibexa | [Not associated with eZ Systems or Ibexa](not-associated-with-ez-systems-or-ibexa.md) |
 

@@ -34,7 +34,7 @@ The README: "Exponential has made it beyond it's end of life in 2021 and survive
 
 ### 3. "It only runs on old PHP."
 
-It supports PHP 8.0 to 8.5; PHP 7.4 sites stay on 6.0.7 ([Story: current PHP](story-current-php.md)).
+It supports PHP 7.4 to 8.5; PHP 7.4 sites can run 6.0.15 too, without support ([Story: current PHP](story-current-php.md)).
 
 ### 4. "The AI writes and publishes your site."
 
@@ -68,7 +68,7 @@ The code base has been developed since 1999; the name is from August 2025 ([Time
 
 ### 10. "7x owns it and can close it."
 
-7x and the Exponential Foundation hold the copyright together and the code is under the GPL, which lets anyone keep and
+The Exponential Foundation and 7x hold the copyright together and the code is under the GPL, which lets anyone keep and
 continue it ([Licenses explained for reporters](licenses-explained-for-reporters.md)).
 
 ## Why the myths exist

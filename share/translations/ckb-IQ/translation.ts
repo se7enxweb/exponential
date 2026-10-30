@@ -8066,8 +8066,8 @@
         <translation>ئاگادارکردنەوەکانی مافی لەبەرگرتنەوەی نووسەرە بنەڕەتییەکان و نەرمامێری لایەنی سێیەمی لەگەڵ Exponential دا هاتوو، وەک مۆڵەتنامەکە داوای دەکات، لە فایلە سەرچاوەکان و لە فایلی LICENSE دا دەپارێزرێن.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>ئەمە لیستی بەشداربووانی Exponential ـە کە کارەکانیان بۆ بەکارهێنانی 7x بەپێی مەرج و ڕێساکانی eZ Systems Contributor Licensing Agreement مۆڵەتپێدراون. وەک ئەم ڕێککەوتنە ڕێگە دەدات، 7x هەر بەشداریەک بە هەمان مۆڵەتنامەی ئەو فایلەی بەشداریەکەی تێدایە دووبارە بڵاو دەکاتەوە. لیستەکە ناوی هەر بەشداربوو، زانیاری پەیوەندیی ئارەزوومەندانە و ئەو فایلانە دەخاتە ڕوو کە بەشدارییان تێدا کردووە.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>بەشداربووانێک کە بۆ کارەکانیان لەسەر Exponential و ئەو نەرمەکاڵایەی لێیەوە پەیدا بوو سوپاس دەکرێن، لەگەڵ ئەو فایلانەی بەشدارییان تێدا کردووە. ئەمە سوپاسگوزارییە، نەک ئاگادارکردنەوەی مافی لەبەرگرتنەوە: بەشدارییەکان لە Exponential بەپێی Contributor Licensing Agreement دەدرێنە Exponential Foundation و 7x.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77281,6 +77281,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>پاسکییەکە نەتوانرا بپشکنرێت. تکایە دووبارە هەوڵ بدەنەوە.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>ئەو هەژمارانەی تەنها بە پاسکی دەچنە ژوورەوە ناتوانن لێرە وشەی نهێنی بەکاربهێنن: «چوونەژوورەوە بە پاسکی» هەڵبژێرن.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>پاسکییەکانی %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>ئەو پاسکییانەی ئەم هەژمارە پێیان دەچێتە ژوورەوە. ئەوەی لەسەر ئامێرێکی ونبوو یان دزراوە باتڵی بکەنەوە: ئیتر ناتوانێت بچێتە ژوورەوە. خاوەنەکە خۆی پاسکیی نوێ زیاد دەکات.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>هەژمارەکەتان پێویستی بە پاسکییەکە</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>پاسکییەک بۆ هەژمارەکەتان زیاد بکەن</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>بۆ بەردەوامبوون پاسکییەک زیاد بکەن. دواتر لە جیاتی تەنها وشەی نهێنی، بەو دەچنە ژوورەوە.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>چوونەژوورەوە بە پاسکی خێراتر و پارێزراوترە لە وشەی نهێنی. ئێستا یەکێک زیاد بکەن، یان بەبێ ئەو بەردەوام بن.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>ئێستا نا</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>پاسکی &quot;%name&quot; باتڵ بکرێتەوە؟</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>ئیتر ناتوانێت بچێتە ژوورەوەی ئەم هەژمارە. ئەگەر دواینیان بوو، خاوەنەکە بە وشەی نهێنی دەچێتە ژوورەوە، یان ئێوە وشەیەکی نهێنی نوێ دادەنێن.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>باتڵکردنەوەی پاسکی</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>باتڵکردن</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>ئەم هەژمارە هیچ پاسکییەکی نییە.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>سەلمێنەر</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>نەناسراو</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>دوایین پاسکیتان: پێش لابردنی، یەکێکی تر زیاد بکەن.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>ئەم هەژمارە تەنها بە پاسکی دەچێتە ژوورەوە (سیاسەتی پاسکی): ئەگەر هیچیان نەمێنێت، دووبارە بە وشەی نهێنی خۆی دەچێتە ژوورەوە.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>ئەمە دوایین پاسکیتانە و هەژمارەکەتان بەبێ پاسکی ناتوانێت بچێتە ژوورەوە. سەرەتا پاسکییەکی تر زیاد بکەن.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>پاسکی &quot;%name&quot; باتڵ کرایەوە. ئیتر ناتوانێت بچێتە ژوورەوەی ئەم هەژمارە.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77380,6 +77456,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>کۆد لە ئەپی سەلماندنی ئێوە</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>ئێوە خەریکن داتا بە یەکجاری بسڕنەوە یان تۆمارێک بەتاڵ بکەنەوە.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>وشەی نهێنیتان و پاسکییەک</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>وشەی نهێنیتان و کۆدێک لە ئەپی سەلمێنەرەکەتان</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>یان:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>ئەم وێبگەڕە ناتوانێت پاسکی بەکاربهێنێت. ڕێگایەکی تر، یان وێبگەڕێکی تر بەکاربهێنن.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>کاتێک بەردەوام دەبن، وێبگەڕەکەتان داوای یەکێک لە پاسکییەکانتان دەکات.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>بەردەوامبوون بە پاسکی</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77470,6 +77574,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>دامەزراندن</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>گۆڕینی وشەی نهێنی، ناونیشانی ئیمەیڵ، پاسکی، چوونەژوورەوەی دوو-قۆناغی، کۆدەکانی گەڕاندنەوە یان کلیلەکانی API ی خۆتان، و چوونەدەرەوە لە ئامێرەکانی تری خۆتان.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>دروستکردن و دەستکاریکردنی بەکارهێنەران، وشەی نهێنی و ئامێرەکانیان، ڕێکخستنەکانی هەژمار، پەسەندکردن یان ڕەتکردنەوەی هەژماری بەکارهێنەری نوێ، دیاریکردنی ڕۆڵەکان و دەستکاریکردنی سیاسەتەکان.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>سڕینەوەی داتا</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>بەتاڵکردنەوەی سەبەتەی خۆڵ، لابردنی بڕگەکان لێی و لابردنی چەند بڕگەیەک بە یەکجار.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>لابردن، بڵاوکردنەوە و پاشەکەوتکردنی ناوەڕۆک</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>لابردنی ناوەڕۆک (بۆ سەبەتەی خۆڵیش)، بڵاوکردنەوە و پاشەکەوتکردنی ڕەشنووس، لە کاتی ناردنی فۆرمەکە دەپرسرێت. بە بنەڕەت ناچالاکە.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>پێش کرداری هەستیار، بەکارهێنەری چووەژوورەوە دووبارە دڵنیایی دەدات کە کێیە: بە وشەی نهێنی و پاسکییەک، یان بەبێ پاسکی بە وشەی نهێنی و کۆدی ئەپی سەلماندنەکەی. تەنها پەڕەکانی وێب دەپرسن: ڕووکاری REST، SOAP، WebDAV، چوونەژوورەوەی expservices و هێڵی فەرمان هەرگیز ناپرسن.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>ڕێکخستنەکان لە کوێ جێبەجێ دەبن</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>ڕێکخستنەکان بۆ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>هەموو دەستگەیشتنێکی ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>دەستگەیشتنی ماڵپەڕ %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>کردنەوە</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>کێ دەپرسرێت: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>گرووپەکانی بەکارهێنەر نیشان بکەن بۆ ئەوەی تەنها ئەندامەکانیان بپرسرێن (بۆ نموونە سەرنووسەران). هیچ نیشان نەکراوە: هەموو بەکارهێنەرێک.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>لە settings/override/site.ini.append.php پاشەکەوت کرا، بۆ هەموو دەستگەیشتنێکی ماڵپەڕ. لە کاتی پاشەکەوتکردن داوا لە ئێوە دەکرێت دڵنیا بکەنەوە کە ئێوەن.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>لە settings/siteaccess/%name/site.ini.append.php پاشەکەوت کرا. بەهایەک لە settings/override پێشی دەکەوێت. لە کاتی پاشەکەوتکردن داوا لە ئێوە دەکرێت دڵنیا بکەنەوە کە ئێوەن.</translation>
     </message>
 </context>
 <context>
@@ -77826,6 +77994,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>هەژمارەکەتان داخرا</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>پاسکییەک بۆ هەژمارەکەتان %login لە %site زیاد کرا.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>هەر کەسێک ئەم پاسکییەی هەبێت دەتوانێت بەبێ وشەی نهێنیتان بچێتە ژوورەوەی هەژمارەکەتان. ئەگەر ئێوە زیادتان نەکردووە، لە بەشی پاسکی لای ببەن و وشەی نهێنیتان بگۆڕن.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>پاسکییەک لە هەژمارەکەتان %login لە %site لابرا.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>ئیتر ناتوانێت بچێتە ژوورەوەی هەژمارەکەتان. ئەگەر ئێوە لاتان نەبردووە، پاسکی و ئامێرەکانتان بپشکنن.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>پاسکییەک بۆ هەژمارەکەتان زیاد کرا</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>پاسکییەک لە هەژمارەکەتان لابرا</translation>
     </message>
 </context>
 <context>

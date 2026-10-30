@@ -1,13 +1,13 @@
 ---
-title: Workflow-Ereignis expuserapprove (Approve user accounts)
+title: Workflow-Ereignis expuserapprove (Benutzerkonten freigeben)
 audience: developer, admin
 category: examples
 summary: "Der Workflow-Ereignistyp expuserapprove: seine Klasse, die Auslöser, die er akzeptiert, und wie er verwendet wird."
-keywords: Ereignis, Auslöser, expuserapprove, event_expuserapprove, workflow, event, trigger, expUserApproveType
+keywords: Ereignis, Auslöser, expuserapprove, event_expuserapprove, Benutzerkonten freigeben, Approve user accounts, workflow, event, trigger, expUserApproveType
 type: generated
 generated: exp:help:examples
 ---
-# Das Workflow-Ereignis expuserapprove (Approve user accounts)
+# Das Workflow-Ereignis expuserapprove (Benutzerkonten freigeben)
 
 Klasse `expUserApproveType` in `kernel/classes/workflowtypes/event/expuserapprove/expuserapprovetype.php`; in einem Workflow ist es der Ereignistyp `event_expuserapprove`, aufgeführt in `settings/workflow.ini` `[EventSettings] AvailableEventTypes[]`.
 
@@ -15,7 +15,7 @@ Es kann nur an diesen Auslösern verwendet werden (`setTriggerTypes()`): `conten
 
 ## Verwenden
 
-1. Setup > Workflows: Legen Sie in einer Gruppe einen Workflow an und fügen Sie das Ereignis „Approve user accounts“ hinzu; füllen Sie seine Einstellungen aus.
+1. Setup > Workflows: Legen Sie in einer Gruppe einen Workflow an und fügen Sie das Ereignis „Benutzerkonten freigeben“ hinzu; füllen Sie seine Einstellungen aus.
 2. Setup > Auslöser: Verbinden Sie den Workflow mit einem Auslöser, zum Beispiel `content / publish / before` (siehe die [Auslöser](ausloeser.md)).
 3. Workflows, die warten (eine Freigabe, ein Datum), laufen weiter, wenn der Cronjob-Teil `frequent` `workflow.php` ausführt (siehe die [Cronjobs](../cronjobs/README.md)).
 

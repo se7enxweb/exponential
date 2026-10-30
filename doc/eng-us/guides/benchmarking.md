@@ -869,7 +869,8 @@ Apache with PHP-FPM and on Velocity, and what made the Smarty pages fast:
 The same for a Twig (`.twig`) port, with one more rule for cached pages: measure from a client whose address is not
 in the debug list, or every response carries the debug report and bypasses the page caches. The media design measured
 in all three engines, cached and uncached, on Apache with PHP-FPM and on Velocity, with the load of each run:
-[Twig templates: performance (Speed)](twig-templates-performance.md).
+[Twig templates: performance (Speed)](twig-templates-performance.md); all three engines side by side, cached, uncached and
+with the debug output, with the conditions of every run: [Speed of the three template engines](template-engines-speed.md).
 
 ## References
 

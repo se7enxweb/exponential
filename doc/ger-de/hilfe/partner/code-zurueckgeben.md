@@ -33,19 +33,34 @@ Aus CONTRIBUTING.md und [Mit Git entwickeln](../mit-git-entwickeln.md):
    `share/filelist.md5` (`make manifest-fix`); `make hooks` installiert den Pre-Commit-Hook, der es prüft.
 6. Stellen Sie sicher, dass die Tests bestehen, aktualisieren Sie die Dokumentation, pushen Sie in Ihren Fork und
    eröffnen Sie einen Pull Request.
+7. Stellen Sie sicher, dass bei 7x ein unterzeichnetes Contributor Licensing Agreement vorliegt, im Wissen, dass es die
+   Kontrolle über den Beitrag an 7x gibt (siehe unten)
+   ([Übertragung des Urheberrechts (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)). Hat das
+   Partnerunternehmen die Rechte an der Arbeit seiner Entwickler, unterzeichnet das Unternehmen sie oder gibt seine
+   Erlaubnis (CLA, Abschnitt 6); eine Unterschrift deckt alle künftigen Beiträge ab.
 
 ## Was danach geschieht
 
-- „Jeder Pull Request wird übernommen, und seine Commits bleiben so erhalten, wie der Mitwirkende sie geschrieben hat,
-  und werden nie umgeschrieben“ (`doc/eng-us/bc/6.0/ci.md`). Was korrigiert werden muss, wird in Commits darüber korrigiert.
+- **Übertragung des Urheberrechts (CLA).** Ein Beitrag zum Kernel, in welcher Form auch immer eingereicht (Pull
+  Request, Patch, Issue oder E-Mail), wird erst gemergt, wenn seine unterzeichnete CLA eingegangen ist; 7x und die
+  Exponential Foundation verlangen sie. **Mit Unterschrift und Einreichung überträgt der Partner das Urheberrecht an dem
+  Beitrag an 7x, das damit sein Eigentümer wird, und gibt die Kontrolle darüber ab:** 7x darf ihn auf jede Weise
+  verwenden, ändern, neu lizenzieren und verbreiten, auch unter anderen Lizenzen und in kommerziellen Produkten, ohne
+  den Partner zu fragen oder zu bezahlen, der ihn nicht zurückziehen und keine Bedingungen daran knüpfen kann. Die
+  eigenen individuellen Erweiterungen des Partners und die Sites seiner Kunden sind davon nicht betroffen.
+
+- Jeder Pull Request wird übernommen. Solange er offen ist, fassen Sie ihn zusammen (Squash) und setzen ihn per Rebase
+  auf `main` auf, wie es die Reviews verlangen (`git fetch origin`, `git rebase -i origin/main`,
+  `git push --force-with-lease` nur auf den Branch Ihres Pull Requests); sobald er übernommen ist, wird die Historie von
+  `main` nie umgeschrieben, und spätere Korrekturen kommen als neue Pull Requests (`doc/eng-us/bc/6.0/ci.md`).
+- Eine Korrektur, die ein Verhalten ändert, das Ihr Kunde als Fehler sah, auf das sich andere Installationen aber
+  verlassen (eine [negative Funktion](../projekt/unterstuetzung-erhalten.md#negative-funktionen)), braucht eine klare
+  Begründung und kann mehrere Runden der Prüfung durchlaufen, bevor sie angenommen und übernommen wird. Den heutigen
+  Standard zu behalten und eine Option hinzuzufügen, wird leichter angenommen.
 - CI prüft Syntax, Manifest, Commit-Nachrichten, Programmierstil, PHPStan und die Tests auf den unterstützten
   PHP-Versionen (`doc/eng-us/bc/6.0/ci.md`).
 - „Mit Ihrem Beitrag erklären Sie sich damit einverstanden, dass Ihre Beiträge unter der GNU General Public License,
   Version 2.0 oder später, lizenziert werden“ (CONTRIBUTING.md).
-- Ändert Ihre Korrektur ein Verhalten, das beabsichtigt oder Auslegungssache ist (eine negative Funktion), betrifft
-  sie jede Site, die sich darauf verlässt, auch die anderer Partner. Rechnen Sie dann mit einer Bitte um eine klare
-  Begründung und mehreren Runden der Prüfung, und bieten Sie das neue Verhalten lieber als Option an als als neuen
-  Standard ([Negative Funktionen](../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
 
 ## Mit Kunden abstimmen
 

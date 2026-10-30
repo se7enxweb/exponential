@@ -3,7 +3,7 @@
  * The zstd archive format: <file>.jsonl.zst, through the PHP extension zstd when it is loaded, else the zstd
  * binary. Registered as [AuditArchiveSettings] FormatHandlers[zstd]=expAuditZstdFormat. Levels 1-19.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

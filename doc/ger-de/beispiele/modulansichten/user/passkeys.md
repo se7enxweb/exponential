@@ -14,8 +14,10 @@ Eine Ansicht des Moduls `user`, definiert in `kernel/user/module.php` und ausgef
 ## Adresse
 
 ```text
-/user/passkeys
+/user/passkeys/<UserID>
 ```
+
+Geordnete Parameter, in dieser Reihenfolge nach dem Namen der Ansicht: `UserID`.
 
 ## Wer sie öffnen darf
 
@@ -36,13 +38,13 @@ Eine Richtlinie auf `user/*` (jede Funktion) erlaubt sie ebenfalls; Einschränku
 Ein Link in einem Template (`ezurl` ergänzt den Siteaccess und setzt die Adresse in Anführungszeichen); die Parameterwerte sind Platzhalter:
 
 ```tpl
-<a href={'/user/passkeys'|ezurl}>user/passkeys</a>
+<a href={'/user/passkeys/1'|ezurl}>user/passkeys</a>
 ```
 
 Aus PHP die Weiterleitung, die eine Ansicht nach getaner Arbeit gibt:
 
 ```php
-return $Module->redirectTo( '/user/passkeys' );
+return $Module->redirectTo( '/user/passkeys/1' );
 ```
 
 ## Siehe auch

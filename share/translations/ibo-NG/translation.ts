@@ -8064,8 +8064,8 @@
         <translation>Ọkwa ikike mmeputa nke ndị dere mbụ na nke sọftwia ndị ọzọ e mejupụtara na Exponential ka edebere na faịlụ isi mmalite na na faịlụ LICENSE, dịka ikikere ahụ chọrọ.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Nke a bụ ndepụta ndị nyere aka na Exponential bụ ndị nyere ikikere maka ojiji ọrụ ha site na 7x n&apos;okpuru usoro na ọnọdụ nke Nkwekọrịta Ikikere Onye Nyere Aka nke eZ Systems. Dịka nkwekọrịta a kwadoro, 7x na-ekesaghachi onyinye ọ bụla n&apos;okpuru otu ikikere dịka faịlụ e tinyere onyinye ahụ n&apos;ime ya. Ndepụta a kpọtụrụ onye nyere aka ọ bụla aha, ozi mkpakọrịta nhọrọ na faịlụ ndị ha nyere aka ma ọ bụ nyekwara ọrụ.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Ndị nyere aka a na-enye otuto maka ọrụ ha na Exponential na sọftụwia o si na ya pụta, ya na faịlụ ndị ha nyere aka na ha. Nke a bụ otuto, ọ bụghị ọkwa nwebiisinka: a na-enyefe onyinye nye Exponential na Exponential Foundation na 7x n&apos;okpuru Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77279,6 +77279,82 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Enweghị ike inyocha igodo nbanye ahụ. Biko nwaa ọzọ.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Akaụntụ ndị na-abanye naanị site na igodo nbanye enweghị ike iji okwuntughe ebe a: họrọ “Banye site na igodo nbanye”.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Igodo nbanye nke %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Igodo nbanye akaụntụ a ji abanye. Wepụ nke dị na ngwaọrụ furu efu ma ọ bụ e zuru ezu: ọ gaghị enwe ike ịbanye ọzọ. Onye nwe ya na-etinye ndị ọhụrụ n&apos;onwe ya.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Akaụntụ gị chọrọ igodo nbanye</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Tinye igodo nbanye na akaụntụ gị</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Tinye igodo nbanye ka ị gaa n&apos;ihu. Mgbe ahụ ị ga-eji ya banye kama naanị okwuntughe.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Ịbanye site na igodo nbanye dị ngwa ma dịkwa nchebe karịa okwuntughe. Tinye otu ugbu a, ma ọ bụ gaa n&apos;ihu na-enweghị ya.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Ọ bụghị ugbu a</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Wepụ ikike igodo nbanye “%name”?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Ọ gaghị enwe ike ịbanye n&apos;akaụntụ a ọzọ. Ọ bụrụ na ọ bụ nke ikpeazụ, onye nwe ya ga-eji okwuntughe banye, ma ọ bụ ị ga-edobe nke ọhụrụ.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Wepụ ikike igodo nbanye</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Wepụ ikike</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Akaụntụ a enweghị igodo nbanye.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Ngwa nkwenye njirimara</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Amaghị</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Igodo nbanye ikpeazụ gị: tinye ọzọ tupu i wepụ ya.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Akaụntụ a na-abanye naanị site na igodo nbanye (iwu igodo nbanye): ọ bụrụ na ọ dịghị nke fọdụrụ, ọ ga-eji okwuntughe ya banye ọzọ.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Nke a bụ igodo nbanye ikpeazụ gị, akaụntụ gị enweghịkwa ike ịbanye na-enweghị ya. Buru ụzọ tinye igodo nbanye ọzọ.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>E wepụla ikike igodo nbanye “%name”. Ọ gaghị enwe ike ịbanye n&apos;akaụntụ a ọzọ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77378,6 +77454,34 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>Code from your authenticator app</source>
         <translation>Koodu sitere na ngwa nkwenye njirimara gị</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Ị na-achọ ihichapụ data kpamkpam ma ọ bụ ihicha ndekọ.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Okwuntughe gị na igodo nbanye</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Okwuntughe gị na koodu sitere na ngwa nkwenye njirimara gị</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Ma ọ bụ:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Ihe nchọgharị a enweghị ike iji igodo nbanye. Jiri ụzọ ọzọ, ma ọ bụ ihe nchọgharị ọzọ.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Mgbe ị gara n&apos;ihu, ihe nchọgharị gị ga-arịọ otu n&apos;ime igodo nbanye gị.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Gaa n&apos;ihu site na igodo nbanye</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77468,6 +77572,70 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>Setup</source>
         <translation>Nrụnye</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Ịgbanwe okwuntughe nke onwe, adreesị email, igodo nbanye, mbanye nzọụkwụ abụọ, koodu mgbake ma ọ bụ igodo API, na ịpụ na ngwaọrụ ndị ọzọ nke onwe.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Ịmepụta na idezi ndị ọrụ, okwuntughe na ngwaọrụ ha, ntọala akaụntụ, ịnabata ma ọ bụ ịjụ akaụntụ ndị ọrụ ọhụrụ, ikenye ọrụ na idezi iwu.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Ihichapụ data</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Ihicha mkpọkọta ahịhịa, iwepụ ihe n&apos;ime ya na iwepụ ọtụtụ ihe n&apos;otu oge.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Iwepụ, ibipụta na ichekwa ọdịnaya</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Iwepụ ọdịnaya (gụnyere n&apos;ime mkpọkọta ahịhịa), ibipụta na ichekwa ndepụta mbụ; a na-ajụ mgbe e zipụrụ fọm ahụ. Agbanyụrụ ya na ndabara.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Tupu omume dị nro, onye ọrụ banyere na-akwado ọzọ onye ọ bụ: site na okwuntughe ya na igodo nbanye, ma ọ bụ na-enweghị igodo nbanye site na okwuntughe ya na koodu nke ngwa nkwenye njirimara ya. Naanị ibe weebụ na-ajụ: interface REST, SOAP, WebDAV, nbanye expservices na ahịrị iwu anaghị ajụ mgbe ọ bụla.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Ebe ntọala ndị a na-arụ ọrụ</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Ntọala maka</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Nnweta saịtị ọ bụla</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Naanị nnweta saịtị %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Mepee</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Ndị a na-ajụ: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Kaa akara n&apos;otu ndị ọrụ ka a jụọ naanị ndị otu ha (dịka ọmụmaatụ, ndị editọ). Ọ dịghị nke akaara: onye ọrụ ọ bụla.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Echekwara na settings/override/site.ini.append.php, maka nnweta saịtị ọ bụla. Ichekwa na-arịọ gị ka ị kwado na ọ bụ gị.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Echekwara na settings/siteaccess/%name/site.ini.append.php. Uru dị na settings/override na-akarị ya. Ichekwa na-arịọ gị ka ị kwado na ọ bụ gị.</translation>
     </message>
 </context>
 <context>
@@ -77824,6 +77992,30 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>Your account was locked</source>
         <translation>Ekpochiri akaụntụ gị</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Etinyere igodo nbanye na akaụntụ gị %login na %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Onye ọ bụla jidere igodo nbanye a nwere ike ịbanye n&apos;akaụntụ gị na-enweghị okwuntughe gị. Ọ bụrụ na ọ bụghị gị tinyere ya, wepụ ya n&apos;okpuru Igodo nbanye ma gbanwee okwuntughe gị.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Ewepụrụ igodo nbanye n&apos;akaụntụ gị %login na %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Ọ gaghị enwe ike ịbanye n&apos;akaụntụ gị ọzọ. Ọ bụrụ na ọ bụghị gị wepụrụ ya, lelee igodo nbanye na ngwaọrụ gị.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Etinyere igodo nbanye na akaụntụ gị</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Ewepụrụ igodo nbanye n&apos;akaụntụ gị</translation>
     </message>
 </context>
 <context>

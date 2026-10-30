@@ -31,7 +31,7 @@ with material that is accurate, accessible and correctly licensed.
 | Format | Classroom or online; hands-on |
 | Level | Beginner to intermediate |
 | Prerequisites | Comfortable with a browser and a terminal; any Exponential experience helps but is not required |
-| Lab | One training installation per learner (Module 2 builds it); PHP 8.1 or later, Composer 2 and Git |
+| Lab | One training installation per learner (Module 2 builds it); PHP 8.0 or later (PHP 7.4 usable without support), Composer 2 and Git |
 
 ## Modules
 

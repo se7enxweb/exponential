@@ -2,7 +2,7 @@
 title: Muster in extension/powercontent
 audience: developer
 category: standards
-order: 466
+order: 471
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/powercontent mit den Entwurfsmustern.
 keywords: extension/powercontent, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

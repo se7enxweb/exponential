@@ -18,6 +18,7 @@ part for each of them and ends with the same steps as this page.
 > test the site. The same rules for other servers: [nginx](examples/web-servers/nginx.md), [LiteSpeed](examples/web-servers/litespeed.md),
 > [Caddy](examples/web-servers/caddy.md), [IIS](examples/web-servers/iis.md), [Velocity](examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](help/hosting/panels/plesk.md), [cPanel](help/hosting/panels/cpanel.md), [DirectAdmin](help/hosting/panels/directadmin.md), [ISPConfig](help/hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](guides/litespeed-page-cache.md).
 
 Every command is run from the installation root (the directory that holds `index.php`, `autoload.php`, `bin/` and
 `settings/`), as the user the site runs as. When you run a script as `root`, add `--allow-root-user`.

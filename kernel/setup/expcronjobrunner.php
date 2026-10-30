@@ -28,7 +28,7 @@
  *   copy of a job already running. A state file records the pid, part,
  *   siteaccess and start time, and a launch is refused while one is running.
  *
- * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package kernel
  */

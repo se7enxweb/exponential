@@ -2,13 +2,14 @@
 /**
  * File containing the expUpgradeStepFinishDeploy class.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
 /**
- * Makes the run's changes live: ./console exp:velocity deploy --kernel (expVelocityDeploy) in its own process, the
+ * Makes the run's changes live: ./console exp:velocity deploy --kernel --all-caches (expVelocityDeploy; an upgrade clears every
+ * cache, whatever changed) in its own process, the
  * one order that works: autoloads, INI and template caches, the engine archive, the PHP-FPM reload, the Velocity
  * restart, then the output caches and the help content cache. It skips on its own what the installation does not
  * use (no Velocity, no PHP-FPM unit). With the option no-deploy (--no-deploy) only the extension autoloads and the INI,
@@ -34,7 +35,7 @@ class expUpgradeStepFinishDeploy extends expUpgradeFinishStep
         if ( $context->option( 'no-deploy', false ) )
             return array( 'regenerate the extension autoloads', 'clear the INI, template and content caches', 'no deploy (--no-deploy): run ./console exp:velocity deploy --kernel afterwards' );
         $output = array();
-        $code = self::php( 'bin/php/velocity.php', array( 'deploy', '--kernel', '--dry-run' ), $output );
+        $code = self::php( 'bin/php/velocity.php', array( 'deploy', '--kernel', '--all-caches', '--dry-run' ), $output );
         $lines = array( 'run ./console exp:velocity deploy --kernel' );
         foreach ( $output as $line )
             if ( preg_match( '/^\[\s*\d+\/\d+\]/', $line ) )
@@ -56,7 +57,7 @@ class expUpgradeStepFinishDeploy extends expUpgradeFinishStep
             return array( 'extension autoloads generated', 'INI, template and content caches cleared', 'not deployed (--no-deploy): run ./console exp:velocity deploy --kernel' );
         }
         $output = array();
-        $code = self::php( 'bin/php/velocity.php', array( 'deploy', '--kernel' ), $output );
+        $code = self::php( 'bin/php/velocity.php', array( 'deploy', '--kernel', '--all-caches' ), $output );
         if ( $code !== 0 )
             throw new RuntimeException( 'exp:velocity deploy --kernel failed (exit ' . $code . '): ' . implode( ' | ', array_slice( $output, -5 ) ) );
         $done = array( 'exp:velocity deploy --kernel' );

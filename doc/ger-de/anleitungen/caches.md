@@ -104,6 +104,12 @@ Jede Gruppe und jede Ergebnismeldung zeigt den Befehl für genau die Caches, die
 **Eine Seite zeigt nach dem Leeren noch die alte Fassung.** Leeren Sie den Antwort-Cache von Velocity oder warten Sie einige Sekunden. Handelt
 es sich um eine Änderung der Einstellungen, starten Sie Velocity neu.
 
+**Die Website läuft unter LiteSpeed oder OpenLiteSpeed, und anonyme Besucher sehen noch die alte Seite.** Den eigenen
+Seiten-Cache des Servers (eingeschaltet mit dem Block aus `.htaccess_root`) leert diese Seite nicht: Er bewahrt eine
+Seite für ihr `max-age` auf (ausgeliefert 120 Sekunden). Warten Sie, oder leeren Sie ihn, wie
+[Seiten-Caching mit LiteSpeed und OpenLiteSpeed](seiten-cache-mit-litespeed.md#leeren) es beschreibt. Ein
+Response-Header `X-LiteSpeed-Cache: hit` zeigt, dass die Seite von dort kam.
+
 **Das Protokoll meldet „Expiring all view cache“.** Eine Änderung hat so viele Seiten betroffen, dass das einzelne Leeren länger dauern würde
 als das Leeren aller: Wenn die View-Caches von `site.ini [ContentSettings] CacheThreshold` Knoten oder mehr
 (Standard 250) geleert werden sollen, wird stattdessen jeder View-Cache der Site verworfen, und die nächsten Besuche jeder Seite

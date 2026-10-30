@@ -13,7 +13,7 @@
  *  AD-04 - The callers pass --apply: maintenance mode, the command line Setup > Preload shows; exp:velocity deploy
  *          keeps running the autoloads without it
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

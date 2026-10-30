@@ -49,7 +49,7 @@ ein Hosting-Unternehmen, das Exponential für seine Kunden betreibt, hält Softw
 ([Hosting-Modelle im Vergleich](../../unternehmen/auswahl/hosting-modelle-im-vergleich.md)).
 
 **3. Jemand im Unternehmen macht alles.** Realistisch, wenn jemand im Team schon Server betreibt oder es lernen will.
-Exponential läuft auf SQLite ohne Datenbankserver, mit PHP 8.0 oder neuer
+Exponential läuft auf SQLite ohne Datenbankserver, mit PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar)
 ([Anforderungen auf einen Blick](../../hosting/grundlagen/anforderungen-auf-einen-blick.md)), sodass eine kleine Installation
 nicht kompliziert ist, aber Updates und Sicherungen bleiben eine Pflicht, die nicht verschwindet.
 
@@ -91,7 +91,7 @@ gegenüber.
 - [Mit einem lokalen Partner oder Freiberufler arbeiten](mit-einem-lokalen-partner-oder-freiberufler-arbeiten.md)
 - [Wann Sie wen anrufen](../../kunden/partner-und-hoster/wann-sie-wen-anrufen.md)
 - [Wer was macht](../../kunden/partner-und-hoster/wer-was-macht.md)
-- [Nicht-technische Menschen: hier beginnen](../../../../eng-us/help/non-technical-people/non-technical-people-start-here.md)
+- [Nicht-technische Menschen: hier beginnen](../../nicht-technische-menschen/nicht-technische-menschen-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

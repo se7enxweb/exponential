@@ -2,7 +2,7 @@
 title: Muster in extension/expquery_translator
 audience: developer
 category: standards
-order: 424
+order: 427
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/expquery_translator mit den Entwurfsmustern.
 keywords: extension/expquery_translator, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

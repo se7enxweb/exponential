@@ -20,21 +20,27 @@
       "tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php",
       "tests/tests/kernel/classes/help/expHelpLandingPagesTest.php",
       "tests/tests/kernel/classes/help/expHelpContentsPageTest.php",
-      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+      "tests/tests/kernel/classes/user/expDemoModeTest.php",
+      "tests/tests/bin/CopyrightNoticeTest.php",
+      "tests/tests/design/CopyrightFooterNoticeTest.php"
     ],
     "*.php": [
-      "tests/tests/kernel/classes/security/expFileModeLimitsTest.php"
+      "tests/tests/kernel/classes/security/expFileModeLimitsTest.php",
+      "tests/tests/bin/CopyrightNoticeTest.php"
     ],
     "bin/*": [
-      "tests/tests/kernel/classes/security/expFileModeLimitsTest.php"
+      "tests/tests/kernel/classes/security/expFileModeLimitsTest.php",
+      "tests/tests/bin/CopyrightNoticeTest.php"
     ],
     "bin/php/console": [
       "tests/tests/bin/ConsoleExtensionAliasTest.php",
       "tests/tests/kernel/classes/security/expFileModeLimitsTest.php",
-      "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php"
+      "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php",
+      "tests/tests/design/CopyrightFooterNoticeTest.php"
     ],
     "*.ini": [
-      "tests/tests/kernel/classes/ini/expIniRoundTripTest.php"
+      "tests/tests/kernel/classes/ini/expIniRoundTripTest.php",
+      "tests/tests/bin/CopyrightNoticeTest.php"
     ],
     "*.ini.append": [
       "tests/tests/kernel/classes/ini/expIniRoundTripTest.php"
@@ -48,7 +54,8 @@
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/ExtensionInlineScriptsTest.php",
       "tests/tests/extension/ezflow/ezflowEditScriptTest.php",
-      "tests/tests/kernel/private/classes/commands/expApplyFlagDeployCommandsTest.php"
+      "tests/tests/kernel/private/classes/commands/expApplyFlagDeployCommandsTest.php",
+      "tests/tests/bin/CopyrightNoticeTest.php"
     ],
     "kernel/classes/mail/expmailtemplatebody.php": [
       "tests/tests/kernel/classes/mail/expMailTemplateBodyTest.php",
@@ -1768,7 +1775,8 @@
       "tests/tests/kernel/classes/help/expHelpIndexStabilityTest.php"
     ],
     "kernel/classes/help/exphelplicense.php": [
-      "tests/tests/kernel/classes/help/expHelpLicenseTest.php"
+      "tests/tests/kernel/classes/help/expHelpLicenseTest.php",
+      "tests/tests/design/CopyrightFooterNoticeTest.php"
     ],
     "design/*/templates/exphelp/parts/license_*.tpl": [
       "tests/tests/kernel/classes/help/expHelpLicenseTest.php"
@@ -1859,7 +1867,8 @@
       "tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php",
       "tests/tests/kernel/classes/help/expHelpLandingPagesTest.php",
       "tests/tests/kernel/classes/help/expHelpMigrationHubTest.php",
-      "tests/tests/kernel/classes/help/expHelpCachePruneTest.php"
+      "tests/tests/kernel/classes/help/expHelpCachePruneTest.php",
+      "tests/tests/design/CopyrightFooterNoticeTest.php"
     ],
     "settings/module.ini": [
       "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"
@@ -2103,7 +2112,8 @@
       "tests/tests/kernel/private/classes/commands/expApplyFlagInstallerCommandsTest.php"
     ],
     "kernel/classes/expvelocitydeploy.php": [
-      "tests/tests/kernel/private/classes/commands/expApplyFlagDeployCommandsTest.php"
+      "tests/tests/kernel/private/classes/commands/expApplyFlagDeployCommandsTest.php",
+      "tests/tests/kernel/classes/expVelocityDeployCachePlanTest.php"
     ],
     "lib/smarty/classes/*": [
       "tests/tests/lib/smarty/expSmartyTemplateRenderTest.php",
@@ -2351,6 +2361,72 @@
     ],
     "kernel/private/classes/httpcache/ezphttpcacheworkerdebug.php": [
       "tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php"
+    ],
+    "*.js": [
+      "tests/tests/bin/CopyrightNoticeTest.php"
+    ],
+    "*.tpl": [
+      "tests/tests/bin/CopyrightNoticeTest.php"
+    ],
+    "*.css": [
+      "tests/tests/bin/CopyrightNoticeTest.php"
+    ],
+    "*.xml": [
+      "tests/tests/bin/CopyrightNoticeTest.php"
+    ],
+    "*.cpp": [
+      "tests/tests/bin/CopyrightNoticeTest.php"
+    ],
+    "*.h": [
+      "tests/tests/bin/CopyrightNoticeTest.php"
+    ],
+    "*.sql": [
+      "tests/tests/bin/CopyrightNoticeTest.php"
+    ],
+    "*.txt": [
+      "tests/tests/bin/CopyrightNoticeTest.php"
+    ],
+    "LICENSE": [
+      "tests/tests/bin/CopyrightNoticeTest.php"
+    ],
+    "tests/tests/bin/copyright-notice-allowlist.json": [
+      "tests/tests/bin/CopyrightNoticeTest.php"
+    ],
+    "tests/tests/lib/ezi18n/translation-identical-allowlist.json": [
+      "tests/tests/design/CopyrightFooterNoticeTest.php"
+    ],
+    "design/*/templates/page_copyright.tpl": [
+      "tests/tests/design/CopyrightFooterNoticeTest.php"
+    ],
+    "design/*/templates/page_login_copyright.tpl": [
+      "tests/tests/design/CopyrightFooterNoticeTest.php"
+    ],
+    "design/standard/templates/setup/page_copyright.tpl": [
+      "tests/tests/design/CopyrightFooterNoticeTest.php"
+    ],
+    "design/standard/templates/setup_pagelayout.tpl": [
+      "tests/tests/design/CopyrightFooterNoticeTest.php"
+    ],
+    "design/standard/templates/undefinedmodule.tpl": [
+      "tests/tests/design/CopyrightFooterNoticeTest.php"
+    ],
+    "design/base/templates/pagelayout.tpl": [
+      "tests/tests/design/CopyrightFooterNoticeTest.php"
+    ],
+    "design/base/templates/loginpagelayout.tpl": [
+      "tests/tests/design/CopyrightFooterNoticeTest.php"
+    ],
+    "design/*/templates/ezinfo/copyright.tpl": [
+      "tests/tests/design/CopyrightFooterNoticeTest.php"
+    ],
+    "kernel/private/classes/views/ezinfo/copyright.php": [
+      "tests/tests/design/CopyrightFooterNoticeTest.php"
+    ],
+    "lib/ezutils/classes/ezexecution.php": [
+      "tests/tests/design/CopyrightFooterNoticeTest.php"
+    ],
+    "share/syscard/about.txt": [
+      "tests/tests/design/CopyrightFooterNoticeTest.php"
     ]
   },
   "generated": {
@@ -3371,6 +3447,9 @@
     ],
     "design/standard/templates/dashboard/community_activity.tpl": [
       "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "lib/ezdb/classes/ezsqlite3db.php": [
+      "tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php"
     ]
   }
 }

@@ -18,7 +18,7 @@
  *  BV-L6 moduleURI() accepts module views only and drops a leading siteaccess; pageState() of a module view
  *  BV-L7 handleAction(): add refuses an address that is not a module view and one the user may not open; rename
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group bookmarks

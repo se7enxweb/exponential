@@ -3,7 +3,7 @@ title: Builder
 audience: developer
 category: standards
 order: 322
-summary: Baut ein komplexes Objekt oder einen Text Schritt für Schritt auf. 9 Instanzen in Exponential.
+summary: Baut ein komplexes Objekt oder einen Text Schritt für Schritt auf. 10 Instanzen in Exponential.
 keywords: Entwurfsmuster, Builder, Erzeugung, Musterkatalog, design pattern, builder, pattern catalogue
 type: catalogue
 ---
@@ -15,10 +15,10 @@ type: catalogue
 
 Baut ein komplexes Objekt oder einen Text Schritt für Schritt auf.
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Anlegen |
-| Instanzen | 9 |
+| Instanzen | 10 |
 | Erkannt an | Der Klassenname enthält Builder oder Generator. |
 
 ## Klassen nach Bereich
@@ -71,13 +71,14 @@ Baut ein komplexes Objekt oder einen Text Schritt für Schritt auf.
 | --- | --- | --- | --- | --- |
 | `xrowMetaDataLicenseCatalogueGenerator` | class | `extension/xrowmetadata/bin/php/xrowmetadatalicenses.php:84` | Erstellt den Lizenzkatalog share/licenses/licenses.json von xrowmetadata aus zwei heruntergeladenen Dateien, nie aus dem Netz: | – |
 
-### kernel/classes/help (1)
+### kernel/classes/help (2)
 
 [Alle Muster von kernel/classes/help](bereich-kernel-classes-help.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
-| `expHelpExamplesGenerator` | class | `kernel/classes/help/exphelpexamplesgenerator.php:25` | Schreibt die generierten Referenzbeispiele unter doc/eng-us/examples/ (doc/eng-us/examples/README.md, "How the generated pages are made"): eine Markdown-Seite je Templ… | – |
+| `expHelpExamplesGenerator` | class | `kernel/classes/help/exphelpexamplesgenerator.php:25` | Schreibt die generierten Referenzbeispiele unter doc/eng-us/examples/ (doc/eng-us/examples/README.md, „How the generated pages are made“): eine Markdown… | – |
+| `expHelpManualBuilder` | class | `kernel/classes/help/content/exphelpmanualbuilder.php:35` | Die Handbücher der als Inhalt gepflegten Hilfe, aus der Markdown-Hilfe erzeugt (doc/eng-us/features/6.0/help-content.md, „Manuals from the Markdown help“). | – |
 
 ### kernel/classes/pdfexport (1)
 

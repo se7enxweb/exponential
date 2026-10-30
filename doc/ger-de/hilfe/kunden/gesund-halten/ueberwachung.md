@@ -51,6 +51,8 @@ selbst ausführen; bitten Sie darum, dass sie eingeplant sind und dass ein Fehls
 | Der Reiter **Audit** | Der Zustand jedes Kanals des Prüfprotokolls, neue Ereignisse, Alarme |
 | **Setup > Cronjobs** | Eingeplante Jobs, letzte Läufe, Jobs, die Aufmerksamkeit brauchen |
 
+![Setup, Systeminformationen: welcher Server geantwortet hat, die Schaltflächen für den Bericht und die Statusprüfungen mit dem, was zu tun ist](../../bilder/help/bu-sysinfo.webp)
+
 Quelle: [Statusprüfungen und Überwachung](../../unternehmen/zuverlaessigkeit/health-checks-und-monitoring.md). Wenn niemand in
 Ihrem Team sie liest, bitten Sie Ihren Hoster oder Partner stattdessen um eine kurze wöchentliche oder monatliche
 Zusammenfassung ([Monatlicher Betrieb](../../hosting/checklisten/checkliste-fuer-den-monatlichen-betrieb.md) enthält einen Bericht an den Kunden).

@@ -2,7 +2,7 @@
 /**
  * File containing the ezpKernelWeb class.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
@@ -1040,6 +1040,11 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                         // siteaccess ([PasswordChangeRequiredSettings] ExemptViews[] stay open)
                         if ( $moduleResult === null && class_exists( 'expPasswordChangeRequired' ) )
                             $moduleResult = expPasswordChangeRequired::moduleResult( $this->module, $functionName );
+
+                        // The passkey policy ([PasskeySettings] Policy, doc/eng-us/guides/passkeys.md): an account that
+                        // must have a passkey adds one first; "preferred" suggests it once per session
+                        if ( $moduleResult === null && class_exists( 'expPasskeyPolicy' ) )
+                            $moduleResult = expPasskeyPolicy::moduleResult( $this->module, $functionName );
 
                         // "Verify it's you" before a sensitive action ([ReauthSettings]; doc/eng-us/guides/verify-its-you.md):
                         // only here, on the web pages, never on REST, SOAP, WebDAV or the command line

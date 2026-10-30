@@ -28,7 +28,7 @@ diese Seite ergänzt Reihenfolge und Abstimmung.
 |---|---|---|
 | PHP 8.0 | die älteste unterstützte; Velocity läuft darauf ab seinem Release 0.0.4.54 | [Anforderungen](../../../../installation/02-voraussetzungen.md) |
 | PHP 8.1 bis 8.5 | unterstützt, Velocity eingeschlossen | dieselbe |
-| PHP 7.4 | eine Website, die darauf bleiben muss, bleibt auf 6.0.7 | [Aktualisieren, Teil B](../../../../anleitungen/aktualisieren.md#teil-b-von-54-oder-590-auf-exponential-600) |
+| PHP 7.4 | ab 6.0.15 ohne Support nutzbar (6.0.8 bis 6.0.14 brauchen PHP 8.1) | [Aktualisieren, Teil B](../../../../anleitungen/aktualisieren.md#teil-b-von-54-oder-590-auf-exponential-600) |
 | Datenbanken | SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, mit praktischen Mindestversionen | [Datenbanken in der offiziellen Reihenfolge](../../../hosting/grundlagen/datenbanken-in-der-offiziellen-reihenfolge.md) |
 
 ## Die Reihenfolge der Aktualisierungen

@@ -77,7 +77,7 @@ before it accepts a commit or pull request, sometimes hundreds of revisions ... 
 - Code contributions are licensed under the GNU GPL version 2 or later, like the rest of Exponential.
 - Documentation is free documentation under the GNU FDL 1.3 or later ([Free documentation](../free-documentation.md)).
 - A code contribution to the core kernel is merged only after its author has signed the Contributor Licensing
-  Agreement, by which the author assigns the copyright to 7x. Read [The CLA for students](the-cla-for-students.md)
+  Agreement, by which the author assigns the copyright to the Exponential Foundation and 7x. Read [The CLA for students](the-cla-for-students.md)
   before you send kernel code. Your own extensions are not affected.
 
 ## Where to start

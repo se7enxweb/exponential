@@ -62,7 +62,7 @@ them to several websites in many languages, including right-to-left scripts. It 
 workflows, a headless REST API, a visual page builder (Exponential Layouts), a writing assistant that writes
 drafts only (Exponential Intelligence) and its own PHP web server (Exponential Velocity).
 
-Exponential runs on PHP 8.0 to 8.5 with SQLite, PostgreSQL, MongoDB, MariaDB, Oracle or MySQL, on Linux, BSD,
+Exponential runs on PHP 8.0 to 8.5 (PHP 7.4 usable without support) with SQLite, PostgreSQL, MongoDB, MariaDB, Oracle or MySQL, on Linux, BSD,
 macOS and Windows. The software is licensed under the GNU General Public License, version 2 or later, and is
 free of charge; its documentation is free documentation under the GNU FDL.
 

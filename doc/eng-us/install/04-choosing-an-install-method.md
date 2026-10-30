@@ -362,7 +362,7 @@ tail -n 20 var/log/setup.log
 
 ## 4.7 Before you start, whatever the method
 
-- The code is in place and the dependencies are installed ([chapter 3](03-getting-the-code.md)), and PHP 8.0 or
+- The code is in place and the dependencies are installed ([chapter 3](03-getting-the-code.md)), and PHP 7.4 or
   later with the extensions of [chapter 2](02-requirements.md) is available.
 - For a database server: the database and its user exist, and the user may create tables
   ([chapter 9](09-databases.md)). SQLite needs only a writable `var/storage/sqlite3/`.

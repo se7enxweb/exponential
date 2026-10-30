@@ -54,7 +54,7 @@ Lesen Sie diese zehn Seiten der Reihe nach; zusammen brauchen sie etwa anderthal
 - [Community: hier beginnen](community-hier-beginnen.md)
 - [Lesepfad für Fürsprecher](../fuersprecher/lesepfad-fuer-fuersprecher.md)
 - [Lesepfad für Partner](../partner/lesepfad-fuer-partner.md)
-- [Ökosystem: hier beginnen](../../../eng-us/help/ecosystem/ecosystem-start-here.md)
+- [Ökosystem: hier beginnen](../oekosystem/oekosystem-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

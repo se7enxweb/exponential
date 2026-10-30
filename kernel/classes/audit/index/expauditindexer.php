@@ -12,7 +12,7 @@
  * Nothing here runs at request time: the cronjob part (cronjobs/auditindex.php), the console when it opens,
  * exp:audit reindex and the upgrade script call it. One run at a time, under <LogDir>/.index.lock.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

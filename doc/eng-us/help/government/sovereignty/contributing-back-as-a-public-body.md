@@ -53,7 +53,7 @@ kernel are released under the same license, GPL v2 or later.
 
 **Copyright assignment (CLA).** Before a kernel contribution can be merged, 7x and the
 Exponential Foundation require a signed Contributor Licensing Agreement from its copyright owner. **By signing and
-submitting, the body assigns the copyright in the contribution to 7x, which becomes its owner, and gives up control over it:** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without asking or paying the body,
+submitting, the body assigns the copyright in the contribution to the Exponential Foundation and 7x, which become its owners, and gives up control over it:** The Exponential Foundation and 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without asking or paying the body,
 which cannot withdraw it or set conditions on it. Your internal approvals must accept this, and settle who may sign:
 when the body has the rights to its staff's work, the body signs or gives its permission (CLA, section 6). Extensions the body builds and keeps for its own sites are not affected. See
 [Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla).

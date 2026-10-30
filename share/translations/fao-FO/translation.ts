@@ -8066,8 +8066,8 @@
         <translation>Upphavsrættarfráboðanirnar hjá upprunaligu høvundunum og hjá forriti frá triðja parti, sum fylgir við Exponential, verða varðveittar í keldufílunum og í fíluni LICENSE, sum loyvið krevur.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Hetta er ein listi yvir luttakarar í Exponential, sum hava loyvt 7x at nýta arbeiði teirra eftir treytunum í eZ Systems Contributor Licensing Agreement. So sum avtalan loyvir, býtir 7x hvørt íkast víðari undir sama loyvi sum fílan, íkastið er í. Listin nevnir hvønn luttakara, møguligar samskiftisupplýsingar og fílurnar, ið viðkomandi hevur lagt til.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Íkastarar, sum verða nevndir fyri sítt arbeiði við Exponential og við ta ritbúnaðin, sum tað vaks úr, við teimum fílunum, sum teir hava íkastað til. Hetta er viðurkenning, ikki ein upphavsrættarfráboðan: íkøst til Exponential verða latin Exponential Foundation og 7x sambært Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77281,6 +77281,82 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Ikki bar til at kanna atgongdarlykilin. Royn aftur.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Kontur, sum bert rita inn við atgongdarlyklum, kunnu ikki brúka loyniorð her: vel “Rita inn við atgongdarlykli”.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Atgongdarlyklar hjá %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Atgongdarlyklarnir, sum henda kontan ritar inn við. Afturkalla ein, sum er á einum mistum ella stolnum tóli: hann kann ikki longur rita inn. Eigarin leggur sjálvur nýggjar afturat.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Kontan hjá tær hevur brúk fyri einum atgongdarlykli</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Legg ein atgongdarlykil afturat kontu tíni</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Legg ein atgongdarlykil afturat fyri at halda fram. Síðan ritar tú inn við honum í staðin fyri bert við loyniorði.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>At rita inn við atgongdarlykli er skjótari og tryggari enn við loyniorði. Legg ein afturat nú, ella halt fram uttan.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Ikki nú</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Afturkalla atgongdarlykilin “%name”?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Hann kann ikki longur rita inn á hesa kontu. Var hetta tann seinasti, ritar eigarin inn við loyniorðinum, ella tú setur eitt nýtt.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Afturkalla atgongdarlykilin</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Afturkalla</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Henda kontan hevur ongan atgongdarlykil.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Váttanarbúnaður</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Ókent</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Seinasti atgongdarlykil tín: legg ein annan afturat, áðrenn tú tekur hann burtur.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Henda kontan ritar bert inn við atgongdarlyklum (atgongdarlykilspolitikkur): uttan nakran eftir ritar hon aftur inn við loyniorði sínum.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Hetta er seinasti atgongdarlykil tín, og kontan hjá tær kann ikki rita inn uttan ein. Legg fyrst ein annan atgongdarlykil afturat.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Atgongdarlykilin “%name” er afturkallaður. Hann kann ikki longur rita inn á hesa kontu.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77380,6 +77456,34 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>Code from your authenticator app</source>
         <translation>Kota úr samgildisappini hjá tær</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Tú ert í ferð við at strika dátur endaliga ella at tøma ein logg.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Loyniorð títt og ein atgongdarlykil</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Loyniorð títt og ein koda úr váttanarappini hjá tær</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Ella:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Hesin kagin kann ikki brúka atgongdarlyklar. Brúka ein annan hátt ella ein annan kaga.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Tá ið tú heldur fram, biður kagin teg um ein av atgongdarlyklunum hjá tær.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Halt fram við atgongdarlykli</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77470,6 +77574,70 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     <message>
         <source>Setup</source>
         <translation>Uppseting</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>At broyta egna loyniorð, teldupostadressu, atgongdarlyklar, tvístigsinnritan, endurskapanarkodur ella API-lyklar og at rita síni onnur tól út.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>At stovna og broyta brúkarar, teirra loyniorð og tól, kontustillingar, at góðkenna ella vraka nýggjar brúkarakontur, at tilluta leiklutir og at broyta politikkar.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>At strika dátur</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>At tøma ruskspannina, at taka lutir úr henni og at taka fleiri lutir burtur í senn.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>At taka burtur, útgeva og goyma innihald</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>At taka innihald burtur (eisini í ruskspannina), at útgeva og at goyma eina kladdu, spurt tá ið formurin verður sendur. Sløkt sum standard.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Áðrenn eina viðkvæma atgerð váttar ein innritaður brúkari aftur, hvør hann er: við loyniorði sínum og einum atgongdarlykli, ella uttan atgongdarlykil við loyniorði sínum og kodu úr váttanarappini. Bert vevsíðurnar spyrja: REST-markamótið, SOAP, WebDAV, expservices-innritanin og stýrislinjan gera tað aldri.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Hvar stillingarnar galda</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Stillingar fyri</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Hvør atgongd til vevstað</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Bert atgongd til vevstað %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Opna</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Hvør verður spurdur: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Merk brúkarabólkar fyri bert at spyrja limir teirra (t.d. ritstjórar). Eingin merktur: hvør brúkari.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Goymt í settings/override/site.ini.append.php, fyri hvørja atgongd til vevstað. At goyma spyr teg um at vátta, at tað ert tú.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Goymt í settings/siteaccess/%name/site.ini.append.php. Eitt virði í settings/override hevur fortrinsrætt. At goyma spyr teg um at vátta, at tað ert tú.</translation>
     </message>
 </context>
 <context>
@@ -77826,6 +77994,30 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Kontan tín varð læst</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Ein atgongdarlykil varð lagdur afturat kontu tíni %login á %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Hvør tann, sum hevur henda atgongdarlykilin, kann rita inn á kontu tína uttan loyniorð títt. Legði tú hann ikki afturat, so tak hann burtur undir Atgongdarlyklar og broyt loyniorð títt.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Ein atgongdarlykil varð tikin burtur úr kontu tíni %login á %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Hann kann ikki longur rita inn á kontu tína. Tók tú hann ikki burtur, so kanna atgongdarlyklar og tól tíni.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Ein atgongdarlykil varð lagdur afturat kontu tíni</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Ein atgongdarlykil varð tikin burtur úr kontu tíni</translation>
     </message>
 </context>
 <context>

@@ -36,7 +36,7 @@ to PHP 8.0 to 8.5 and renamed it Exponential in August 2025; in March 2026 a non
 | Oldest commit 2 September 2002; more than 27,000 commits (18 October 2026) | [Exponential by the numbers](exponential-by-the-numbers.md) |
 | Last release of the old line: v2019.03.6.1, 3 September 2021 | [Who is 7x?, timeline](../who-is-7x.md#nearly-thirty-years-the-timeline) |
 | 15 releases of the 6.0 line from January 2024 to June 2026 | [The 6.0.x releases at a glance](the-6-0-x-releases-at-a-glance.md) |
-| PHP 8.0 to 8.5 supported | [Story: current PHP](story-current-php.md) |
+| PHP 8.0 to 8.5 (PHP 7.4 usable without support) supported | [Story: current PHP](story-current-php.md) |
 | "The platform originally known as eZ Publish reached end-of-life in 2021. We kept going." | se7enxweb GitHub profile, quoted on [Who is 7x?](../who-is-7x.md#nearly-thirty-years-the-timeline) |
 
 ## What not to claim

@@ -47,6 +47,8 @@ entscheiden Sie, wohin ihre Besucher stattdessen gelangen sollen:
 | Ein ganzer Ordner alter Seiten fällt weg | eine Wildcard vom alten Muster zum neuen Ort | **Setup > URL Platzhalter** |
 | Nichts ersetzt sie | sie bewusst mit „nicht gefunden“ antworten lassen | keins |
 
+![Setup, URL Platzhalter: das Formular für eine neue Wildcard mit ihrem Ziel und der Auswahl Weiterleitende URL sowie Eine Adresse ausprobieren](../../bilder/creators/url-wildcards.webp)
+
 Wildcards werden nur herangezogen, wenn kein Alias passt, und **Eine Adresse ausprobieren** auf der Seite der Wildcards
 zeigt, zu welcher Wildcard eine Adresse passt, ohne etwas zu ändern
 ([URL-Aliase, Wildcards und Suchstatistiken](../../../anleitungen/urls-und-aliase.md#4-url-platzhalter)).

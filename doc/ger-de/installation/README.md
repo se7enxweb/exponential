@@ -19,6 +19,7 @@ Repository und auf die offiziellen Quellen außerhalb davon.
 > Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
 > [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../anleitungen/seiten-cache-mit-litespeed.md).
 
 Wenig Zeit? [Die Kurzanleitung zur Installation](../INSTALL.md) enthält den Schnellstart und verweist zurück auf die
 Kapitel hier.
@@ -30,7 +31,7 @@ Kapitel hier.
 | Kapitel | Inhalt |
 |---|---|
 | [1. Einführung: Was Sie installieren](01-einfuehrung.md) | Der Kernel, Extensions, Siteaccesses (site, admin, editor) und Designs; die drei Installationsmethoden; Konventionen und Glossar |
-| [2. Voraussetzungen](02-voraussetzungen.md) | PHP 8.0 bis 8.5, jede PHP-Erweiterung und wozu sie dient, die php.ini-Einstellungen, die das Setup prüft, Datenbanken, Composer, Webserver, Betriebssysteme, Dimensionierung; die Übersichten [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md) und [Unterstützte Betriebssysteme](../hilfe/betriebssystemunterstuetzung.md) |
+| [2. Voraussetzungen](02-voraussetzungen.md) | PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar), jede PHP-Erweiterung und wozu sie dient, die php.ini-Einstellungen, die das Setup prüft, Datenbanken, Composer, Webserver, Betriebssysteme, Dimensionierung; die Übersichten [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md) und [Unterstützte Betriebssysteme](../hilfe/betriebssystemunterstuetzung.md) |
 | [3. Den Code beschaffen](03-den-code-beschaffen.md) | Versionen und Tags, Git-Klone mit Historie (empfohlen), `composer create-project`, Installation unter PHP 8.0 bis 8.3, das Velocity-Paket, Extensions als Pakete, ein Rundgang durch das Installationsverzeichnis |
 
 ### Teil II: Installieren

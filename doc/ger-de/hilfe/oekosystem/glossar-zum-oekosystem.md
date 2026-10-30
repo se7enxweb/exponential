@@ -38,7 +38,7 @@ type: help
 ## Verwandte Seiten
 
 - [Ökosystem: hier beginnen](oekosystem-hier-beginnen.md)
-- [Glossar der Community](../../../eng-us/help/community/community-glossary.md)
+- [Glossar der Community](../gemeinschaft/glossar-fuer-die-community.md)
 - [Glossar des Installationsbuchs](../../glossar.md)
 - [Glossar für Partner](../partner/glossar-fuer-partner.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.

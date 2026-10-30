@@ -12,10 +12,10 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/secrets.ini`: 1 Blöcke, 2 Einstellungen.
 
-> The kernel's secret store: passwords, tokens and API keys of the tools (data table connections, import sources,  
-> remote servers), stored encrypted in the table exp\_secret. A tool keeps the NAME of a secret, never its value.  
-> See doc/eng-us/features/6.0/secret-store.md. The administration: Setup > Secrets (module secrets, policy  
-> secrets/manage); it shows names only.  
+> Der Secret-Store des Kernels: Passwörter, Tokens und API-Schlüssel der Werkzeuge (Verbindungen von Datentabellen, Importquellen,  
+> entfernte Server), verschlüsselt in der Tabelle exp\_secret gespeichert. Ein Werkzeug behält den NAMEN eines Secrets, nie seinen Wert.  
+> Siehe doc/eng-us/features/6.0/secret-store.md. Die Administration: Setup > Secrets (Modul secrets, Richtlinie  
+> secrets/manage); sie zeigt nur Namen.  
 
 | Block | Einstellungen |
 |---|---|

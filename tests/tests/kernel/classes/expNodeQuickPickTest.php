@@ -10,7 +10,7 @@
  *  QP-04  a row: visible children once each, the filter before the limit, "more"
  *  QP-05  the component in both designs, with dark-safe tokens only, and the content checks use it
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

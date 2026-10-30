@@ -10,7 +10,7 @@
  * each action; refused without the form tokens, with another method than POST (405), and on a siteaccess that is
  * not an administration one (404). Every refusal and every action is recorded (content.finder.action).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

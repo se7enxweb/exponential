@@ -10,7 +10,7 @@
  *
  * Run: php vendor/bin/phpunit tests/tests/kernel/private/oauth/ezpOauthAuthorizeRedirectTest.php
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel
@@ -24,7 +24,7 @@ class ezpOauthAuthorizeRedirectTest extends PHPUnit\Framework\TestCase
     /** @return array the JSON object the harness printed */
     private function authorize( array $get, array $post = array(), array $extra = array() )
     {
-        $line = array( PHP_BINARY, '-n', '-d', 'display_errors=stderr', __DIR__ . '/fixtures/authorize_harness.php',
+        $line = array( ...expTestBarePhpCommand(), '-d', 'display_errors=stderr', __DIR__ . '/fixtures/authorize_harness.php',
                        json_encode( array( 'get' => $get, 'post' => $post ) + $extra ) );
         $process = proc_open( $line, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
         $this->assertIsResource( $process );

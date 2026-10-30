@@ -120,7 +120,7 @@ Verwenden Sie eine Serverversion, für die Ihr Anbieter noch Sicherheitskorrektu
 damit der Assistent einen alten Server nicht von vornherein ablehnt; sie sind kein Versprechen, dass ein Server dieses
 Alters mit den aktuellen Treibern funktioniert.
 
-**PHP.** Exponential 6.0.x läuft auf PHP 8.0 bis 8.5 (`composer.json`, `"php": "^8.0 || ... || ^8.8"`). Die
+**PHP.** Exponential 6.0.x läuft auf PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) (`composer.json`, `"php": "^7.4 || ... || ^8.8"`). Die
 Datenbanktreiber folgen diesem Bereich mit einer Ausnahme: Der MongoDB-Adapter braucht PHP 8.2 oder neuer. Velocity,
 der empfohlene Webserver, braucht PHP 8.1. Siehe [Kapitel 2](../installation/02-voraussetzungen.md#22-php).
 
@@ -662,7 +662,7 @@ Wegwerf-Datenbank pro Test laufen.
 | 5. Oracle | nein | Oracle-spezifische Kernel-Tests werden auf anderen Engines übersprungen; die Erweiterung `ezoracle` hat in der installierten Kopie keinen eigenen Workflow (upstream nicht geprüft) |
 | 6. MySQL | ja, Datenbanktests | der Job „Database tests (mysql, PHP 8.3)“ mit einem `mysql:8.0`-Service |
 
-PHP 8.0, die älteste unterstützte Version, prüft der Quality-Workflow mit einer Syntaxprüfung jeder PHP-Datei und einem
+PHP 8.0, die älteste unterstützte Version, und PHP 7.4 (ohne Support nutzbar) prüft der Quality-Workflow mit einer Syntaxprüfung jeder PHP-Datei und einem
 Boot-Smoke-Test ohne Datenbank. Die Testsuiten und wie man sie lokal ausführt, beschreibt
 [Continuous Integration](../spezifikationen/6.0/kontinuierliche-integration.md).
 

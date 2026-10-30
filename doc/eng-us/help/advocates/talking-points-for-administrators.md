@@ -24,6 +24,7 @@ staff, DevOps people. They want to know what it needs, what can go wrong and how
 > test the site. The same rules for other servers: [nginx](../../examples/web-servers/nginx.md), [LiteSpeed](../../examples/web-servers/litespeed.md),
 > [Caddy](../../examples/web-servers/caddy.md), [IIS](../../examples/web-servers/iis.md), [Velocity](../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../hosting/panels/plesk.md), [cPanel](../hosting/panels/cpanel.md), [DirectAdmin](../hosting/panels/directadmin.md), [ISPConfig](../hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../guides/litespeed-page-cache.md).
 
 ## Contents
 
@@ -46,7 +47,7 @@ staff, DevOps people. They want to know what it needs, what can go wrong and how
 |---|---|
 | "One command installs a complete site on SQLite, with no database server." | [Installing Exponential in one command](../../features/6.0/install-in-one-command.md) |
 | "Six databases: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle and MySQL, in that official order." | [Database support](../database-support.md#the-supported-databases-in-order) |
-| "PHP 8.0 is the oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 runs it." | [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
+| "PHP 8.0 to 8.5 are supported, so the stock PHP of Red Hat Enterprise Linux 9 runs it; PHP 7.4 is usable without support for hosts that cannot leave it yet." | [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
 | "Operating systems in four documented tiers, from tested to theoretical." | [Operating system support](../os-support.md#the-four-tiers) |
 | "Velocity is the recommended engine; FrankenPHP is the production-ready alternative; Apache or nginx with PHP-FPM also serve it." | [Velocity](../../features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it), [Web servers](../os-support.md#web-servers) |
 | "A threat-by-threat hardening guide with a checklist." | [Security hardening](../security-hardening.md#checklist) |

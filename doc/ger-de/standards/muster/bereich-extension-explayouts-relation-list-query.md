@@ -2,7 +2,7 @@
 title: Muster in extension/explayouts_relation_list_query
 audience: developer
 category: standards
-order: 418
+order: 421
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/explayouts_relation_list_query mit den Entwurfsmustern.
 keywords: extension/explayouts_relation_list_query, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

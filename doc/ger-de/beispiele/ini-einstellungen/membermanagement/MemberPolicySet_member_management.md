@@ -11,10 +11,10 @@ generated: exp:help:examples
 
 Der Block `[MemberPolicySet_member_management]` von `settings/membermanagement.ini`, mit 1 Einstellung(en).
 
-> A policy set: Policies\[\] lines of the form module/function\[;Limitation=value,value;...\]. Class and ParentClass take  
-> class identifiers. Every content policy whose function takes a Subtree limitation gets one: the rule's managed  
-> groups. Policies outside the content module get no Subtree (user/preferences opens user/setting, which the guard and  
-> SettingRequiresEdit above still limit to the accounts the manager may edit).  
+> Ein Richtlinien-Satz: Policies\[\]-Zeilen der Form module/function\[;Limitation=value,value;...\]. Class und ParentClass nehmen  
+> Klassenbezeichner. Jede content-Richtlinie, deren Funktion eine Subtree-Einschränkung kennt, erhält eine: die verwalteten  
+> Gruppen der Regel. Richtlinien außerhalb des Moduls content erhalten keinen Subtree (user/preferences öffnet user/setting, das die Prüfung und  
+> SettingRequiresEdit oben weiterhin auf die Konten beschränken, die der Verwalter bearbeiten darf).  
 
 Bearbeiten Sie `settings/membermanagement.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

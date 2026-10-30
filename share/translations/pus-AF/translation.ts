@@ -8064,8 +8064,8 @@
         <translation>د اصلي لیکوالانو او د هغو درېیمو اړخونو د سافټویر د کاپي حق خبرتیاوې چې له Exponential سره شاملې دي، لکه څنګه چې جواز غوښتنه کوي، په سرچینه دوتنو او د LICENSE په دوتنه کې ساتل کېږي.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>لاندې د Exponential د هغو مرسته کوونکو لېست دی چې خپل کار یې د eZ Systems Contributor Licensing Agreement د شرایطو له مخې د 7x د کارونې لپاره جواز کړی دی. لکه څنګه چې دغه تړون اجازه ورکوي، 7x هره ونډه د هماغه جواز لاندې بیا وېشي چې هغه دوتنه یې لري په کومه کې چې ونډه شامله ده. لېست هر مرسته کوونکی، اختیاري د اړیکې معلومات او هغه دوتنې نوموي چې دوی جوړې کړې یا یې پکې ونډه اخیستې ده.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>هغه ونډه وال چې په Exponential او هغه سافټویر کې د کار لپاره ستایل کېږي چې له هغه څخه راوتلی، د هغو فایلونو سره چې دوی پکې ونډه اخیستې. دا ستاینه ده، د کاپي حق خبرتیا نه ده: Exponential ته ونډې د Contributor Licensing Agreement له مخې Exponential Foundation او 7x ته سپارل کېږي.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
@@ -77279,6 +77279,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>پاس‌کي ونه کتل شو. مهرباني وکړئ بیا هڅه وکړئ.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>هغه حسابونه چې یوازې د پاس‌کيو په مرسته ننوځي دلته پټنوم نه شي کارولی: «د پاس‌کي په مرسته ننوتل» وټاکئ.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>د %login پاس‌کي</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>هغه پاس‌کي چې دا حساب پرې ننوځي. هغه پاس‌کي بېرته واخلئ چې په ورکه شوې یا غلا شوې وسیله کې دی: هغه به نور ننوتلی نه شي. نوي یې د حساب خاوند پخپله زیاتوي.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>ستاسو حساب یو پاس‌کي ته اړتیا لري</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>خپل حساب ته یو پاس‌کي زیات کړئ</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>د دوام لپاره یو پاس‌کي زیات کړئ. بیا به تاسو یوازې د پټنوم پر ځای د هغه په مرسته ننوځئ.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>د پاس‌کي په مرسته ننوتل له پټنوم څخه چټک او خوندي دي. همدا اوس یو زیات کړئ، یا پرته له هغه دوام ورکړئ.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>اوس نه</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>پاس‌کي &quot;%name&quot; بېرته واخیستل شي؟</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>هغه به نور دې حساب ته ننوتلی نه شي. که دا وروستی و، خاوند به په پټنوم ننوځي، یا تاسو نوی پټنوم وټاکئ.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>پاس‌کي بېرته اخیستل</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>بېرته اخیستل</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>دا حساب هېڅ پاس‌کي نه لري.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>تصدیق کوونکی</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>نامعلوم</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>ستاسو وروستی پاس‌کي: د لرې کولو مخکې یو بل زیات کړئ.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>دا حساب یوازې د پاس‌کيو په مرسته ننوځي (د پاس‌کي تګلاره): کله چې هېڅ پاتې نه شي، بیا په خپل پټنوم ننوځي.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>دا ستاسو وروستی پاس‌کي دی او ستاسو حساب پرته له هغه ننوتلی نه شي. لومړی بل پاس‌کي زیات کړئ.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>پاس‌کي &quot;%name&quot; بېرته واخیستل شو. هغه نور دې حساب ته ننوتلی نه شي.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77378,6 +77454,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>ستاسو د تصدیق له اپ څخه کوډ</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>تاسو د دې په درشل کې یاست چې معلومات د تل لپاره ړنګ کړئ یا یو لاګ پاک کړئ.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>ستاسو پټنوم او یو پاس‌کي</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>ستاسو پټنوم او ستاسو د تصدیق له اپ څخه یو کوډ</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>یا:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>دا براوزر پاس‌کي نه شي کارولی. بله لاره یا بل براوزر وکاروئ.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>کله چې تاسو دوام ورکړئ، ستاسو براوزر به ستاسو له پاس‌کيو څخه یو وغواړي.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>د پاس‌کي په مرسته دوام ورکول</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77468,6 +77572,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>جوړونه</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>د خپل پټنوم، برېښنالیک پتې، پاس‌کيو، دوه‌ګامه ننوتلو، د بیا رغونې کوډونو یا API کیلیو بدلول، او له خپلو نورو وسیلو وتل.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>د کارنانو، د هغوی د پټنومونو او وسیلو، د حساب امستنو جوړول او سمول، د نویو کارن حسابونو منل یا ردول، د رولونو ټاکل او د تګلارو سمول.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>د معلوماتو ړنګول</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>د کثافت‌دانۍ تشول، له هغې څخه د توکو لرې کول او په یو ځل د څو توکو لرې کول.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>د منځپانګې لرې کول، خپرول او خوندي کول</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>د منځپانګې لرې کول (کثافت‌دانۍ ته هم)، خپرول او د مسودې خوندي کول؛ د فورمې د لېږلو پر مهال پوښتل کېږي. په ډیفالټ ډول بند.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>د یوې حساسې کړنې مخکې، ننوتلی کارن بیا تایید کوي چې څوک دی: په خپل پټنوم او یو پاس‌کي، یا پرته له پاس‌کي په خپل پټنوم او د خپل تصدیق اپ په کوډ. یوازې ویب پاڼې پوښتنه کوي: د REST انټرفېس، SOAP، WebDAV، د expservices ننوتل او کمانډ لاین هېڅکله نه پوښتي.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>امستنې چېرې پلي کېږي</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>امستنې د دې لپاره</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>د سایټ هر لاسرسی</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>د سایټ لاسرسی %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>پرانیستل</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>څوک پوښتل کېږي: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>د کارنانو ډلې په نښه کړئ چې یوازې د هغوی غړي وپوښتل شي (د بېلګې په توګه سمونګر). هېڅ په نښه نه وي: هر کارن.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>د سایټ د هر لاسرسي لپاره په settings/override/site.ini.append.php کې خوندي شو. د خوندي کولو پر مهال له تاسو غوښتل کېږي چې تایید کړئ دا تاسو یاست.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>په settings/siteaccess/%name/site.ini.append.php کې خوندي شو. په settings/override کې ارزښت پر دې لومړیتوب لري. د خوندي کولو پر مهال له تاسو غوښتل کېږي چې تایید کړئ دا تاسو یاست.</translation>
     </message>
 </context>
 <context>
@@ -77824,6 +77992,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>ستاسو حساب قلف شو</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>ستاسو حساب %login ته په %site کې یو پاس‌کي زیات شو.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>هر څوک چې دا پاس‌کي ولري، کولی شي پرته له ستاسو پټنوم ستاسو حساب ته ننوځي. که تاسو دا نه وي زیات کړی، د پاس‌کي لاندې یې لرې کړئ او خپل پټنوم بدل کړئ.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>ستاسو له حساب %login څخه په %site کې یو پاس‌کي لرې شو.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>هغه نور ستاسو حساب ته ننوتلی نه شي. که تاسو دا نه وي لرې کړی، خپل پاس‌کي او وسیلې وګورئ.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>ستاسو حساب ته یو پاس‌کي زیات شو</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>ستاسو له حساب څخه یو پاس‌کي لرې شو</translation>
     </message>
 </context>
 <context>

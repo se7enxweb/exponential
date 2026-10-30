@@ -7,7 +7,7 @@
  * publishDraft or discardDraft, plus copy and remove. A draft is the class in the temporary version of the kernel,
  * the same one the admin class editor works on.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

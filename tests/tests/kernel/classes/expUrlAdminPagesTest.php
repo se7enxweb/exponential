@@ -17,7 +17,7 @@
  *  UA-10 - A tried address is translated by the first wildcard it matches, as the wildcard cache does
  *  UA-11 - The alias and wildcard searches and kinds are query conditions, with %, _ and ! matched as themselves
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

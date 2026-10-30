@@ -2,7 +2,7 @@
 /**
  * File containing the eZDBQueryCache class.
  *
- * @copyright Copyright (C) 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package lib
  */
@@ -69,7 +69,7 @@ class eZDBQueryCache
     public static $stats = array( 'hits' => 0, 'misses' => 0, 'stores' => 0, 'uncacheable' => 0, 'writes' => 0, 'reserve' => 0 );
 
     /**
-     * @var WeakMap|null per driver object: the session parameters its ALTER
+     * @var WeakMap|SplObjectStorage|null per driver object: the session parameters its ALTER
      * SESSION statements set (see noteSession()), which key() adds to every
      * statement of that connection. Not reset per request: the session lives
      * as long as the connection.
@@ -1303,7 +1303,9 @@ class eZDBQueryCache
     protected static function noteSession( $db, array $set )
     {
         if ( self::$session === null )
-            self::$session = new WeakMap();
+            // WeakMap from PHP 8.0 on; on PHP 7.4 SplObjectStorage (the same array access, but it keeps
+            // the driver alive, which is how long a connection lives anyway)
+            self::$session = class_exists( 'WeakMap' ) ? new WeakMap() : new SplObjectStorage();
         $all = ( isset( self::$session[$db] ) ? self::$session[$db]['set'] : array() );
         foreach ( $set as $name => $value )
             $all[$name] = $value;

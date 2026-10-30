@@ -13,12 +13,12 @@ type: help
 |---|---|---|
 | **7x** | Das nordamerikanische Unternehmen, das Entwicklung, Support und Hosting von Exponential leitet | [Wer ist 7x?](../wer-ist-7x.md) |
 | **Fürsprecher** | Ein Community-Mitglied, das über Exponential spricht, schreibt oder präsentiert | [Fürsprecher: hier beginnen](../fuersprecher/fuersprecher-hier-beginnen.md) |
-| **CLA** | Das 7x Contributor Licensing Agreement; wer es unterschreibt und Kernel-Code einreicht, überträgt das Urheberrecht an diesem Code an 7x | [Das CLA erklärt](mitwirken/das-cla-erklaert.md) |
+| **CLA** | Das Exponential Foundation and 7x Contributor Licensing Agreement (Version 1.1.0); wer es unterschreibt und Kernel-Code einreicht, überträgt das Urheberrecht an diesem Code an die Exponential Foundation und 7x | [Das CLA erklärt](mitwirken/das-cla-erklaert.md) |
 | **Verhaltenskodex** | Der Contributor Covenant 2.1 mit Exponential-Ergänzungen, verbindlich in allen Räumen der Community | [Der Verhaltenskodex](beitreten/der-verhaltenskodex.md) |
 | **Community** | Die Menschen, die Exponential weltweit nutzen, dazu beitragen, dafür werben und Software damit entwickeln | [Was die Community ist](was-die-community-ist.md) |
 | **Beitragstag** | Einige Stunden, in denen eine Gruppe gemeinsam echte Beiträge leistet | [Ein Beitragstag](lokale-gruppen/ein-beitragstag.md) |
 | **dev-main** | Der Composer-Name des Branches `main`, der Entwicklungslinie, in der Korrekturen zuerst landen | [Wie Releases entstehen](so-funktioniert-es/wie-releases-entstehen.md) |
-| **Ökosystem** | Die größere Exponential-Welt im PHP-Stack: ihre Nutzer und Ersteller | [Ökosystem: hier beginnen](../../../eng-us/help/ecosystem/ecosystem-start-here.md) |
+| **Ökosystem** | Die größere Exponential-Welt im PHP-Stack: ihre Nutzer und Ersteller | [Ökosystem: hier beginnen](../oekosystem/oekosystem-hier-beginnen.md) |
 | **Exponential Foundation** | Die gemeinnützige Organisation, gegründet am 19. März 2026, die das Projekt betreibt | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) |
 | **eZpedia** | Eine Community-Enzyklopädie unter der GNU FDL, seit 2006 | [Zu eZpedia beitragen](../fuersprecher/zu-ezpedia-beitragen.md) |
 | **Fork** | Ihre eigene Kopie eines Repositorys auf GitHub, aus der Sie Pull Requests senden | [Code beitragen](mitwirken/code-beitragen.md) |
