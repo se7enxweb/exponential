@@ -27342,6 +27342,7 @@ e88c80daf0e1f3b6f1d5227eaa20f455  tests/tests/kernel/classes/graphql/expGraphQLD
 503456ae45d2bd1622b37fbee480fb3e  tests/tests/kernel/classes/graphql/expGraphQLLayoutsExtensionTest.php
 68fcd50db55bcaa902b9504c5a32382a  tests/tests/kernel/classes/graphql/expGraphQLMessageTest.php
 810d7d5131784b9ed119c58e27ba6d10  tests/tests/kernel/classes/graphql/expGraphQLPersistedQueriesTest.php
+69a76219fc9767d6d6e7c63828cc0ac4  tests/tests/kernel/classes/graphql/expGraphQLQueryBudgetTest.php
 4f86abcb3b18b08b07f75a8fcf46de5b  tests/tests/kernel/classes/graphql/expGraphQLRateLimiterTest.php
 3122d8127a5970f9ccfefd51632dedc8  tests/tests/kernel/classes/graphql/expGraphQLResponseCacheTest.php
 7c1f466027aaabca8106d97903db478f  tests/tests/kernel/classes/graphql/expGraphQLRestTest.php
