@@ -1344,7 +1344,7 @@ class ezpHttpCacheContract
                                     'served' => $served, 'stored' => (float)$meta['created'] ) );
         if ( $data === false || !$this->atomicWrite( $path, $data ) )
             return false;
-        @chmod( $path, 0600 );
+        @chmod( $path, self::fileMode( 0600 ) );
         $marker = $this->debugMarkerPath( $userID );
         if ( (int)$userID !== 0 && !is_file( $marker ) )
         {

@@ -24226,7 +24226,7 @@ bcb0332c0b0520ccda4e6c546576e6e8  kernel/private/classes/ezscriptclusterpurge.ph
 fb0da8d265574ee77f00f944f703979e  kernel/private/classes/ezscripttrashpurge.php
 acba595acfd97bf4d89350f4f0205043  kernel/private/classes/global_functions.php
 910a46886fe7fccded38152aba864859  kernel/private/classes/httpcache/exprenderswitch.php
-60da2954d3bdc222be6d2a15b84bdda1  kernel/private/classes/httpcache/ezphttpcachecontract.php
+8c9e350d7b2f861c5e02e2980993b890  kernel/private/classes/httpcache/ezphttpcachecontract.php
 274670c9115ac2f49fcee592bb942e6b  kernel/private/classes/httpcache/ezphttpcacheearlyexit.php
 9689e9efd650df9b97a669e58719278e  kernel/private/classes/httpcache/ezphttpcachelistener.php
 ebb49bcd0b9f19e252231e5d51397f70  kernel/private/classes/httpcache/ezphttpcacheworkerdebug.php
