@@ -3463,6 +3463,12 @@ WHERE user_id = '" . $userID . "' AND
         // Every user's permissions may have changed: every cached context goes.
         if ( class_exists( 'ezpHttpCacheListener' ) )
             ezpHttpCacheListener::purgeAll();
+        // and the GraphQL answers kept per rights, and the rights the GraphQL early answer knows of credentials
+        if ( class_exists( 'expGraphQLResponseCache' ) )
+        {
+            expGraphQLResponseCache::expireIfAvailable();
+            expGraphQLResponseCache::forgetCredentialsIfAvailable();
+        }
     }
 
     static function fetchUserClassList( $asObject = false, $fields = false )

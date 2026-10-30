@@ -59,6 +59,8 @@ class Expgraphqlstatus extends \Exponential\Runnable\Command
                                    $status['rateLimits']['anonymous'], $status['rateLimits']['window'] ) );
             $out->output( sprintf( '%-14s %s, %d stored, automatic: %s, persisted only: %s', 'persisted', $status['persisted']['enabled'] ? 'enabled' : 'disabled',
                                    $status['persisted']['stored'], $status['persisted']['automatic'], $status['persisted']['only'] ) );
+            $out->output( sprintf( '%-14s %s, at most %d s', 'cache', $status['responseCache']['enabled'] ? 'persisted queries' : 'disabled',
+                                   $status['responseCache']['ttl'] ) );
             $out->output( sprintf( '%-14s %s', 'introspection', $status['introspection'] ) );
             $out->output( sprintf( '%-14s %s', 'naming', $status['naming'] ) );
             if ( $status['schemaHash'] !== null )
@@ -91,6 +93,8 @@ class Expgraphqlstatus extends \Exponential\Runnable\Command
                                                'automatic' => (string)\expGraphQL::setting( 'AutomaticPersistedQueries', 'signed-in' ),
                                                'only' => (string)\expGraphQL::setting( 'PersistedQueriesOnly', 'disabled' ),
                                                'stored' => \expGraphQLPersistedQueries::fromSettings()->count() ),
+                         'responseCache' => array( 'enabled' => \expGraphQL::setting( 'ResponseCache', 'enabled' ) === 'enabled',
+                                                   'ttl' => (int)\expGraphQL::setting( 'ResponseCacheTtl', 86400 ) ),
                          'introspection' => (string)\expGraphQL::setting( 'Introspection', 'signed-in' ),
                          'naming' => \expGraphQLNaming::fromSettings()->style(),
                          'schemaHash' => null, 'classes' => 0, 'fields' => 0, 'unmappedDatatypes' => array() );

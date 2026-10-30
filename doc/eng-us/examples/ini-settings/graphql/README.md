@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # graphql.ini
 
-The shipped settings of `settings/graphql.ini`: 2 blocks, 26 settings.
+The shipped settings of `settings/graphql.ini`: 2 blocks, 29 settings.
 
 > The GraphQL API of the kernel: one end point per siteaccess (/api/graphql), a schema generated from the content  
 > classes, the users, roles and policies of the administration, the OAuth tokens and personal API keys of the REST  
@@ -19,7 +19,7 @@ The shipped settings of `settings/graphql.ini`: 2 blocks, 26 settings.
 
 | Block | Settings |
 |---|---|
-| [GraphQLSettings](GraphQLSettings.md) | 24 |
+| [GraphQLSettings](GraphQLSettings.md) | 27 |
 | [GraphQLNaming](GraphQLNaming.md) | 2 |
 
 - [All examples](../../README.md)

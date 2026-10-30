@@ -1226,6 +1226,7 @@ return array(
       'expGraphQLPersistedQueries'                                   => 'kernel/classes/graphql/expgraphqlpersistedqueries.php',
       'expGraphQLRateLimiter'                                        => 'kernel/classes/graphql/expgraphqlratelimiter.php',
       'expGraphQLRepository'                                         => 'kernel/classes/graphql/expgraphqlrepository.php',
+      'expGraphQLResponseCache'                                      => 'kernel/classes/graphql/expgraphqlresponsecache.php',
       'expGraphQLRestController'                                     => 'kernel/classes/graphql/rest/expgraphqlrestcontroller.php',
       'expGraphQLRestProvider'                                       => 'kernel/classes/graphql/rest/expgraphqlrestprovider.php',
       'expGraphQLRestResponse'                                       => 'kernel/classes/graphql/rest/expgraphqlrestresponse.php',

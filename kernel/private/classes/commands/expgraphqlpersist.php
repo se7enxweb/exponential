@@ -84,7 +84,10 @@ class Expgraphqlpersist extends \Exponential\Runnable\Command
                 $this->shutdown( self::EXIT_ERRORS );
             }
             else
+            {
+                \expGraphQLResponseCache::expireIfAvailable();
                 $out->output( "PASS removed $id" );
+            }
             $this->shutdown( self::EXIT_OK );
         }
 
@@ -138,7 +141,9 @@ class Expgraphqlpersist extends \Exponential\Runnable\Command
                 $store->store( $item[2], $item[1] );
             $out->output( ( $apply ? 'PASS stored ' : 'DRY RUN would store ' ) . $hash . '  ' . $item[1] . '  (' . $item[0] . ')' );
         }
-        if ( !$apply )
+        if ( $apply )
+            \expGraphQLResponseCache::expireIfAvailable(); // a name may now stand for another query
+        else
             $out->output( 'DRY RUN ' . count( $checked ) . ' queries fit the schema; run again with --apply to store them in ' . $store->directory() );
         $this->shutdown( self::EXIT_OK );
     }

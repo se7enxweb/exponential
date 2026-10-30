@@ -538,7 +538,10 @@ the server stores it when the request may store queries (`AutomaticPersistedQuer
   counts per user; the console is not limited. A load test from one address needs `RateLimitAnonymous=0` (or a token)
   on the siteaccess it measures.
 - **Read only.** Phase 1 has no mutations: nothing a query does changes content.
-- **No caching across users.** The answers are `private, no-store`, never kept by the REST application cache.
+- **No caching across rights.** An ad-hoc answer is `private, no-store`, never kept. The answer of a persisted query is
+  kept per user rights (the user's roles and the values of its limited role assignments, as the view cache keys
+  them), so a user never gets an answer made for other rights; an answer that names the user (`currentUser`) is not
+  kept for signed-in users, and an answer with errors is never kept. The REST application cache never keeps an answer.
 - **Errors do not leak.** An error of the code (a PHP exception) is answered as `Internal server error` with
   `INTERNAL`; the details go to the error log. `Debug=enabled` puts the message and the trace in `extensions.debug`:
   only on a development siteaccess.
@@ -562,6 +565,49 @@ one item after the other:
   the file, so a request reads no class from the database.
 - **Lists in one query.** A list reads its items with their fields in one subtree fetch, and `totalCount` costs a
   count query only when it is asked for.
+
+**The response cache** (`ResponseCache=enabled`, the default) keeps the answers of [persisted
+queries](#persisted-queries), in `var/cache/graphql/responses/`:
+
+- An **anonymous `GET`** of a persisted query (`/api/graphql?id=articles`, or Apollo's `extensions`) is answered at the
+  very start of `index_rest.php`, before autoload, settings, siteaccess, session or database: its key is made from the
+  raw request (scheme, host, address, query string, `X-Siteaccess`, `Origin`), which is all that decides its answer. It
+  still counts against the anonymous rate limit, and a CORS request gets the `Access-Control-*` headers
+  `rest.ini [CorsSettings]` gave its origin when the answer was made.
+- A **signed-in `GET`** (an OAuth token or a personal API key) is answered there too once the kernel has checked its
+  credentials: the kernel remembers the rights of the credentials (a hash of the token, never the token) for
+  `CredentialCacheTtl` seconds (60) in `var/cache/graphql/credentials/`, and forgets every one at once when an API key
+  is revoked or removed, a role or policy changes, or the user caches are cleaned up. Within those seconds a token
+  revoked any other way still reads the answers already cached for its rights; `CredentialCacheTtl=0` sends every
+  signed-in request through the kernel. The request counts against the user's or key's rate limit.
+- Anything else (a `POST`, the first request of new credentials) is looked up by the kernel once the user is known, by
+  siteaccess, schema hash, user rights, query, variables and address.
+- **Expired** whenever content is published or the view caches are cleared (every path of
+  `eZContentCacheManager` writes a time stamp in `var/cache/graphql/expired`; an answer made before it is stale), when
+  a class changes, when persisted queries are stored or removed, after `ResponseCacheTtl` seconds (86400), and by
+  `./console ezcache --clear-id=graphql`, which `--clear-tag=content` and `--clear-tag=ini` include: clear the INI caches
+  after changing `graphql.ini`, as after any setting.
+- **Headers.** `X-GraphQL-Cache: HIT`, `MISS` or `BYPASS` (a persisted query whose answer is not kept); every answer
+  has an `ETag` (weak for ad-hoc answers, whose request id differs), and a request with a matching `If-None-Match` gets
+  `304 Not Modified` without a body. A cached anonymous answer is `public, max-age=0, must-revalidate` (a proxy may keep
+  it but must ask again), a signed-in one `private, no-cache`. The request id of a cached answer is in the header
+  `X-Request-Id`, not in the body, so the body is the same for every request.
+
+Measured on alpha (PHP-FPM 8.5 with OPcache behind nginx, 4 workers, the demo content: 50 articles with image, owner
+and address, a 20.8 KB answer; 3 runs of 250 requests each, one after the other, on a shared host with a load of 5
+to 7):
+
+| Request | Median | p95 | Max |
+|---|---|---|---|
+| cached, anonymous `GET` | 1.2 ms | 3.0 ms | 28.8 ms |
+| cached, signed-in `GET` (credentials known) | 1.1 ms | 2.9 ms | 30.3 ms |
+| cached, CORS `GET` | 1.7 ms | 3.8 ms | 11.1 ms |
+| `304 Not Modified` | 1.0 ms | 2.2 ms | 13.8 ms |
+| cached, but through the kernel (a `POST`, new credentials) | 17.7 ms | 22.7 ms | 45.1 ms |
+| not cached (an ad-hoc query) | 78.8 ms | 111.9 ms | 178.8 ms |
+
+The early answer is under 33 ms on every request and under 13 ms at the median and p95; an answer that has to start
+the kernel costs its start (about 18 ms) on top.
 
 Nothing of this is kept between requests: the loaders and their memory belong to one request, so a persistent worker
 ([Velocity](velocity-web-server.md)) never answers from another request's memory and keeps no database connection
@@ -710,8 +756,8 @@ The API keeps no state between requests (only the fact that the library is loade
 (`Enabled`, `SiteAccessList[]`, `LibraryPath`, `NamingStyle`, `ClassList[]`, `ExcludedClassList[]`,
 `HiddenFieldList[]`, `HiddenDatatypeList[]`, `Introspection`, `MaxDepth`, `MaxComplexity`, `MaxListLimit`,
 `DefaultListLimit`, `PersistedQueries`, `AutomaticPersistedQueries`, `MaxPersistedQueries`, `PersistedQueriesOnly`,
-`PersistedQueryDirectoryList[]`, `MaxQueryLength`, `RateLimit`, `RateLimitAnonymous`, `RateLimitWindow`,
-`ImageAliasList[]`, `Debug`) and [[GraphQLNaming]](../../examples/ini-settings/graphql/GraphQLNaming.md)
+`PersistedQueryDirectoryList[]`, `MaxQueryLength`, `ResponseCache`, `ResponseCacheTtl`, `CredentialCacheTtl`, `RateLimit`,
+`RateLimitAnonymous`, `RateLimitWindow`, `ImageAliasList[]`, `Debug`) and [[GraphQLNaming]](../../examples/ini-settings/graphql/GraphQLNaming.md)
 (`TypeNames[]`, `FieldNames[]`). Never edit the shipped file: put changes in `settings/override/graphql.ini.append.php`
 or a siteaccess's `graphql.ini.append.php`.
 

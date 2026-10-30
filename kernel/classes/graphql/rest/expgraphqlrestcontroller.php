@@ -43,8 +43,11 @@ class expGraphQLRestController extends ezpRestMvcController
             return self::answer( 429, expGraphQLRateLimiter::refusal( $hit ), $rateHeaders );
         $builder = expGraphQLSchemaBuilder::fromSettings();
         $context = new expGraphQLContext( $user, $mode, new expGraphQLRepository( $builder->catalogue() ), expGraphQLContext::requestBaseUrl() );
-        $result = ( new expGraphQLServer( $builder ) )->run( $request, $context );
-        return self::answer( 200, $result['answer'], array( 'X-GraphQL-Schema' => $builder->schemaHash(), 'Cache-Control' => 'private, no-store' ) + $rateHeaders );
+        $context->apiKeyId = $key !== null ? (int)$key->attribute( 'id' ) : null;
+        $http = ( new expGraphQLServer( $builder ) )->respond( $request, $context, $_SERVER );
+        $result = new ezpRestMvcResult();
+        $result->status = new expGraphQLRestResponse( $http['status'], $http['body'], $http['headers'] + $rateHeaders );
+        return $result;
     }
 
     /**

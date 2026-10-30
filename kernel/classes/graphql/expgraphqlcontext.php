@@ -49,6 +49,22 @@ class expGraphQLContext
         $this->requestId = self::newRequestId();
     }
 
+    /** @var int|null the id of the personal API key the request was signed in with */
+    public $apiKeyId = null;
+
+    /** @var string|null the rights of the user as a hash (expGraphQLResponseCache::roleHash()), made when first asked for */
+    public $roleHash = null;
+
+    /**
+     * @return string the rights of the user as a hash: what the answers of persisted queries are kept by
+     */
+    public function roleHash()
+    {
+        if ( $this->roleHash === null )
+            $this->roleHash = $this->user instanceof eZUser ? expGraphQLResponseCache::roleHash( $this->user ) : '';
+        return $this->roleHash;
+    }
+
     /** @var expGraphQLBatchLoader[] kind => loader, made when first asked for */
     protected $loaders = array();
 

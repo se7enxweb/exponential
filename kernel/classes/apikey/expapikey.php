@@ -807,7 +807,30 @@ class expApiKey extends eZPersistentObject
         $this->setAttribute( 'revoked', time() );
         $this->setAttribute( 'revoked_by', (int)$byUserID );
         $this->store( array( 'revoked', 'revoked_by' ) );
+        self::forgetInCaches();
         return true;
+    }
+
+    /**
+     * Removes the key, and forgets it where it is remembered.
+     *
+     * @param array|null $conditions
+     * @param array|null $extraConditions
+     */
+    public function remove( $conditions = null, $extraConditions = null )
+    {
+        parent::remove( $conditions, $extraConditions );
+        self::forgetInCaches();
+    }
+
+    /**
+     * The GraphQL early answer remembers the rights of checked credentials for a minute (graphql.ini
+     * CredentialCacheTtl): a revoked or removed key is forgotten at once.
+     */
+    protected static function forgetInCaches()
+    {
+        if ( class_exists( 'expGraphQLResponseCache' ) )
+            expGraphQLResponseCache::forgetCredentialsIfAvailable();
     }
 
     /**

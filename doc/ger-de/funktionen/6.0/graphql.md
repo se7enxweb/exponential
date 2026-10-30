@@ -549,8 +549,11 @@ ausführen; `enabled` tut das für jede Anfrage an `/api/graphql`. Eine Ad-hoc-A
   ohne Datenbankverbindung. Der Playground zählt je Benutzer; die Konsole ist nicht begrenzt. Ein Lasttest von einer
   Adresse braucht `RateLimitAnonymous=0` (oder ein Token) im gemessenen Siteaccess.
 - **Nur lesend.** Phase 1 hat keine Mutationen: Nichts, was eine Abfrage tut, ändert Inhalte.
-- **Kein Caching über Benutzer hinweg.** Die Antworten sind `private, no-store` und werden nie vom Anwendungs-Cache der
-  REST-Schicht behalten.
+- **Kein Caching über Rechte hinweg.** Eine Ad-hoc-Antwort ist `private, no-store` und wird nie behalten. Die Antwort
+  einer gespeicherten Abfrage wird je Benutzerrechten gehalten (die Rollen des Benutzers und die Werte seiner
+  eingeschränkten Rollenzuweisungen, so wie der View-Cache sie schlüsselt), also bekommt ein Benutzer nie eine Antwort,
+  die für andere Rechte entstand; eine Antwort, die den Benutzer nennt (`currentUser`), wird für angemeldete Benutzer
+  nicht behalten, und eine Antwort mit Fehlern nie. Der Anwendungs-Cache der REST-Schicht behält nie eine Antwort.
 - **Fehler verraten nichts.** Ein Fehler des Codes (eine PHP-Exception) wird als `Internal server error` mit `INTERNAL`
   beantwortet; die Einzelheiten gehen ins Fehlerprotokoll. `Debug=enabled` schreibt die Meldung und den Trace in
   `extensions.debug`: nur auf einem Entwicklungs-Siteaccess.
@@ -575,6 +578,52 @@ wird: in Gruppen, nicht ein Element nach dem anderen.
   der Datenbank.
 - **Listen mit einer Abfrage.** Eine Liste liest ihre Elemente samt Feldern mit einem Teilbaum-Abruf, und `totalCount`
   kostet nur dann eine Zählabfrage, wenn danach gefragt wird.
+
+**Der Antwort-Cache** (`ResponseCache=enabled`, der Standard) hält die Antworten [gespeicherter
+Abfragen](#gespeicherte-abfragen) in `var/cache/graphql/responses/`:
+
+- Ein **anonymes `GET`** einer gespeicherten Abfrage (`/api/graphql?id=articles` oder die `extensions` von Apollo) wird
+  ganz am Anfang von `index_rest.php` beantwortet, vor Autoload, Einstellungen, Siteaccess, Sitzung und Datenbank: Sein
+  Schlüssel entsteht aus der rohen Anfrage (Schema, Host, Adresse, Query-String, `X-Siteaccess`, `Origin`), und nur das
+  entscheidet seine Antwort. Es zählt trotzdem gegen die anonyme Ratenbegrenzung, und eine CORS-Anfrage bekommt die
+  `Access-Control-*`-Header, die `rest.ini [CorsSettings]` ihrem Origin gab, als die Antwort entstand.
+- Ein **angemeldetes `GET`** (ein OAuth-Token oder ein persönlicher API-Schlüssel) wird dort ebenfalls beantwortet,
+  sobald der Kernel seine Anmeldedaten geprüft hat: Der Kernel merkt sich die Rechte der Anmeldedaten (einen Hash des
+  Tokens, nie das Token) für `CredentialCacheTtl` Sekunden (60) in `var/cache/graphql/credentials/` und vergisst alle
+  auf einmal, wenn ein API-Schlüssel widerrufen oder entfernt wird, sich eine Rolle oder Richtlinie ändert oder die
+  Benutzer-Caches aufgeräumt werden. Innerhalb dieser Sekunden liest ein auf anderem Weg widerrufenes Token noch die
+  Antworten, die für seine Rechte schon gecacht sind; `CredentialCacheTtl=0` schickt jede angemeldete Anfrage durch den
+  Kernel. Die Anfrage zählt gegen die Ratenbegrenzung des Benutzers oder Schlüssels.
+- Alles andere (ein `POST`, die erste Anfrage neuer Anmeldedaten) schlägt der Kernel nach, sobald der Benutzer bekannt
+  ist: nach Siteaccess, Schema-Hash, Benutzerrechten, Abfrage, Variablen und Adresse.
+- **Abgelaufen** ist alles, sobald Inhalt veröffentlicht oder die View-Caches geleert werden (jeder Weg von
+  `eZContentCacheManager` schreibt einen Zeitstempel in `var/cache/graphql/expired`; eine Antwort von davor ist
+  veraltet), wenn sich eine Klasse ändert, wenn gespeicherte Abfragen gespeichert oder entfernt werden, nach
+  `ResponseCacheTtl` Sekunden (86400) und mit `./console ezcache --clear-id=graphql`, das in `--clear-tag=content` und
+  `--clear-tag=ini` enthalten ist: Leeren Sie nach einer Änderung an `graphql.ini` die INI-Caches, wie nach jeder
+  Einstellung.
+- **Header.** `X-GraphQL-Cache: HIT`, `MISS` oder `BYPASS` (eine gespeicherte Abfrage, deren Antwort nicht behalten
+  wird); jede Antwort hat ein `ETag` (schwach bei Ad-hoc-Antworten, deren Anfrage-Id sich unterscheidet), und eine
+  Anfrage mit passendem `If-None-Match` bekommt `304 Not Modified` ohne Body. Eine gecachte anonyme Antwort ist
+  `public, max-age=0, must-revalidate` (ein Proxy darf sie halten, muss aber neu fragen), eine angemeldete
+  `private, no-cache`. Die Anfrage-Id einer gecachten Antwort steht im Header `X-Request-Id`, nicht im Body, also ist
+  der Body für jede Anfrage derselbe.
+
+Gemessen auf alpha (PHP-FPM 8.5 mit OPcache hinter nginx, 4 Worker, der Demo-Inhalt: 50 Artikel mit Bild, Eigentümer
+und Adresse, eine Antwort von 20,8 KB; 3 Läufe zu je 250 Anfragen nacheinander, auf einem geteilten Host mit einer Last
+von 5 bis 7):
+
+| Anfrage | Median | p95 | Maximum |
+|---|---|---|---|
+| gecacht, anonymes `GET` | 1,2 ms | 3,0 ms | 28,8 ms |
+| gecacht, angemeldetes `GET` (Anmeldedaten bekannt) | 1,1 ms | 2,9 ms | 30,3 ms |
+| gecacht, CORS-`GET` | 1,7 ms | 3,8 ms | 11,1 ms |
+| `304 Not Modified` | 1,0 ms | 2,2 ms | 13,8 ms |
+| gecacht, aber durch den Kernel (ein `POST`, neue Anmeldedaten) | 17,7 ms | 22,7 ms | 45,1 ms |
+| nicht gecacht (eine Ad-hoc-Abfrage) | 78,8 ms | 111,9 ms | 178,8 ms |
+
+Die frühe Antwort liegt bei jeder Anfrage unter 33 ms und im Median und p95 unter 13 ms; eine Antwort, die den Kernel
+starten muss, kostet dessen Start (etwa 18 ms) obendrauf.
 
 Nichts davon wird zwischen Anfragen behalten: Die Loader und ihr Speicher gehören zu einer Anfrage, also antwortet ein
 dauerhafter Worker ([Velocity](velocity-webserver.md)) nie aus dem Speicher einer anderen Anfrage und hält keine eigene
@@ -727,8 +776,8 @@ lesen.
 (`Enabled`, `SiteAccessList[]`, `LibraryPath`, `NamingStyle`, `ClassList[]`, `ExcludedClassList[]`,
 `HiddenFieldList[]`, `HiddenDatatypeList[]`, `Introspection`, `MaxDepth`, `MaxComplexity`, `MaxListLimit`,
 `DefaultListLimit`, `PersistedQueries`, `AutomaticPersistedQueries`, `MaxPersistedQueries`, `PersistedQueriesOnly`,
-`PersistedQueryDirectoryList[]`, `MaxQueryLength`, `RateLimit`, `RateLimitAnonymous`, `RateLimitWindow`,
-`ImageAliasList[]`, `Debug`) und [[GraphQLNaming]](../../beispiele/ini-einstellungen/graphql/GraphQLNaming.md)
+`PersistedQueryDirectoryList[]`, `MaxQueryLength`, `ResponseCache`, `ResponseCacheTtl`, `CredentialCacheTtl`, `RateLimit`,
+`RateLimitAnonymous`, `RateLimitWindow`, `ImageAliasList[]`, `Debug`) und [[GraphQLNaming]](../../beispiele/ini-einstellungen/graphql/GraphQLNaming.md)
 (`TypeNames[]`, `FieldNames[]`). Ändern Sie nie die ausgelieferte Datei: Änderungen gehören in
 `settings/override/graphql.ini.append.php` oder in die `graphql.ini.append.php` eines Siteaccess.
 

@@ -94,6 +94,8 @@ class expGraphQLClassCatalogue
                 return new self( $classes );
         }
         $catalogue = self::fromDatabase();
+        // the classes changed (or the settings): no answer made with the old schema stays
+        expGraphQLResponseCache::expireIfAvailable();
         eZFile::create( basename( $file ), $dir, "<?php\n// GraphQL class catalogue, generated; removed by ezcache --clear-id=graphql\nreturn " .
                                                  var_export( array_values( $catalogue->classes() ), true ) . ";\n", true );
         return $catalogue;

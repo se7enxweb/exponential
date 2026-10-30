@@ -3,13 +3,13 @@ title: graphql.ini [GraphQLSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [GraphQLSettings] in graphql.ini: Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList ..."
-keywords: graphql.ini, GraphQLSettings, INI, setting, Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList, Introspection, MaxDepth, MaxComplexity, MaxListLimit, DefaultListLimit, PersistedQueries, AutomaticPersistedQueries, MaxPersistedQueries, PersistedQueriesOnly, PersistedQueryDirectoryList, MaxQueryLength, RateLimit, RateLimitAnonymous, RateLimitWindow, ImageAliasList, Debug
+keywords: graphql.ini, GraphQLSettings, INI, setting, Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList, Introspection, MaxDepth, MaxComplexity, MaxListLimit, DefaultListLimit, PersistedQueries, AutomaticPersistedQueries, MaxPersistedQueries, PersistedQueriesOnly, PersistedQueryDirectoryList, MaxQueryLength, ResponseCache, ResponseCacheTtl, CredentialCacheTtl, RateLimit, RateLimitAnonymous, RateLimitWindow, ImageAliasList, Debug
 type: generated
 generated: exp:help:examples
 ---
 # graphql.ini [GraphQLSettings]
 
-The block `[GraphQLSettings]` of `settings/graphql.ini`, with 24 setting(s).
+The block `[GraphQLSettings]` of `settings/graphql.ini`, with 27 setting(s).
 
 Never edit `settings/graphql.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -325,6 +325,57 @@ Default: `100000`.
 # settings/override/graphql.ini.append.php
 [GraphQLSettings]
 MaxQueryLength=100000
+*/ ?>
+```
+
+## ResponseCache
+
+> The response cache: the answers of persisted queries, kept per siteaccess, schema, user rights (roles and their  
+> limitations, as the view cache), variables and address, in var/cache/graphql/responses/. An anonymous GET of a  
+> persisted query is answered from it at the start of index\_rest.php, before the settings and the database. Every  
+> answer is expired when content is published (whenever view caches are cleared), when a class changes, when  
+> persisted queries are stored or removed, and by ezcache --clear-id=graphql (also --clear-tag=ini and content).  
+> Ad-hoc queries are never kept. enabled (the default) or disabled.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+ResponseCache=enabled
+*/ ?>
+```
+
+## ResponseCacheTtl
+
+> Seconds an answer is kept at most, also without a publish; 0: until it is expired.  
+
+Default: `86400`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+ResponseCacheTtl=86400
+*/ ?>
+```
+
+## CredentialCacheTtl
+
+> A signed-in GET of a persisted query is answered at the start of index\_rest.php too, once the kernel has checked its  
+> token or key: the rights of the credentials (their user's roles) are remembered this many seconds  
+> (var/cache/graphql/credentials/), and forgotten at once when an API key, a role or a user's rights change. A token  
+> revoked otherwise still reads the answers cached for its rights until then. 0: signed-in requests always go  
+> through the kernel.  
+
+Default: `60`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+CredentialCacheTtl=60
 */ ?>
 ```
 

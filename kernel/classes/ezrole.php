@@ -353,6 +353,12 @@ class eZRole extends eZPersistentObject
         $handler->setTimestamp( 'user-info-cache', time() );
         $handler->setTimestamp( 'user-class-cache', time() );
         $handler->store();
+        // The GraphQL answers kept per rights, and the rights the GraphQL early answer knows of credentials
+        if ( class_exists( 'expGraphQLResponseCache' ) )
+        {
+            expGraphQLResponseCache::expireIfAvailable();
+            expGraphQLResponseCache::forgetCredentialsIfAvailable();
+        }
     }
 
     /*!

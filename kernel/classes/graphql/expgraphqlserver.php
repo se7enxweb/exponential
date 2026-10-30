@@ -22,6 +22,24 @@ class expGraphQLServer
     /** @var expGraphQLSchemaBuilder */
     protected $builder;
 
+    /** @var expGraphQLResponseCache|null the response cache (null: the installation's) */
+    protected $responseCache = null;
+
+    /** @var expGraphQLPersistedQueries|null the persisted queries (null: the installation's) */
+    protected $persistedStore = null;
+
+    /**
+     * Uses another response cache and store of persisted queries than the installation's (tests).
+     *
+     * @param expGraphQLResponseCache|null $cache
+     * @param expGraphQLPersistedQueries|null $store
+     */
+    public function useStorage( $cache, $store )
+    {
+        $this->responseCache = $cache;
+        $this->persistedStore = $store;
+    }
+
     /**
      * @param expGraphQLSchemaBuilder $builder
      */
@@ -101,7 +119,7 @@ class expGraphQLServer
     public function run( array $request, expGraphQLContext $context )
     {
         $request += array( 'query' => '', 'variables' => null, 'operationName' => null, 'id' => null, 'persistedHash' => null );
-        $resolved = self::resolvePersisted( $request, $context );
+        $resolved = self::resolvePersisted( $request, $context, $this->persistedStore );
         if ( isset( $resolved['error'] ) )
         {
             return array( 'answer' => array( 'errors' => array( self::error( $resolved['error'][0], $resolved['error'][1], $context ) ),
@@ -110,6 +128,111 @@ class expGraphQLServer
         }
         return array( 'answer' => $this->execute( $resolved['query'], $request['variables'], $request['operationName'], $context ),
                       'persisted' => $resolved['hash'] );
+    }
+
+    /**
+     * The HTTP answer of a request (the end point and the session end point): run() with the response cache for
+     * persisted queries (graphql.ini ResponseCache), an ETag on every answer and 304 for an If-None-Match that
+     * matches it.
+     *
+     * @param array $request of parseHttpRequest()
+     * @param expGraphQLContext $context
+     * @param array $server $_SERVER (the raw request: the key of an anonymous GET, If-None-Match)
+     * @return array status (200 or 304), body (JSON), headers
+     */
+    public function respond( array $request, expGraphQLContext $context, array $server )
+    {
+        $request += array( 'query' => '', 'variables' => null, 'operationName' => null, 'id' => null, 'persistedHash' => null );
+        $headers = array( 'X-GraphQL-Schema' => $this->builder->schemaHash(), 'X-Request-Id' => $context->requestId );
+        $resolved = self::resolvePersisted( $request, $context, $this->persistedStore );
+        $cache = null;
+        $key = null;
+        $anonymous = !$context->isSignedIn();
+        if ( !isset( $resolved['error'] ) && $resolved['hash'] !== null && expGraphQL::setting( 'ResponseCache', 'enabled' ) === 'enabled'
+             && expGraphQL::setting( 'Debug', 'disabled' ) !== 'enabled' )
+        {
+            $cache = $this->responseCache !== null ? $this->responseCache : expGraphQLResponseCache::forInstallation();
+            if ( $anonymous )
+                $key = expGraphQLResponseCache::anonymousKey( $server );
+            else
+            {
+                // a GET with a token or a key: kept under the raw request and the rights, and the early answer of
+                // index_rest.php learns the rights of these credentials for CredentialCacheTtl seconds
+                $key = expGraphQLResponseCache::signedInKey( $server, $context->roleHash() );
+                $credential = expGraphQLResponseCache::credential( $server );
+                if ( $key !== null && $credential !== null && $cache->readCredential( $credential ) === null
+                     && ( $context->authMode === expGraphQLContext::AUTH_TOKEN || $context->authMode === expGraphQLContext::AUTH_API_KEY ) )
+                {
+                    $cache->writeCredential( $credential, array( 'roleHash' => $context->roleHash(),
+                        'identity' => $context->apiKeyId ? 'key:' . (int)$context->apiKeyId : 'user:' . ( $context->user instanceof eZUser ? (int)$context->user->id() : 0 ),
+                        'rateLimit' => (int)expGraphQL::setting( 'RateLimit', 600 ), 'rateWindow' => expGraphQL::intSetting( 'RateLimitWindow', 60 ),
+                        'ttl' => (int)expGraphQL::setting( 'CredentialCacheTtl', 60 ) ) );
+                }
+            }
+            if ( $key === null )
+            {
+                $key = expGraphQLResponseCache::userKey( array( expGraphQL::currentSiteAccess(), $this->builder->schemaHash(),
+                    $context->roleHash(), $resolved['hash'],
+                    $request['variables'], $request['operationName'], $context->baseUrl ) );
+            }
+            $entry = $cache->read( $key );
+            if ( $entry !== null )
+                return self::httpAnswer( $entry['body'], (string)$entry['etag'], $headers + expGraphQLResponseCache::headers( $entry, 'HIT', $anonymous ), $server );
+        }
+        if ( isset( $resolved['error'] ) )
+            $answer = array( 'errors' => array( self::error( $resolved['error'][0], $resolved['error'][1], $context ) ),
+                             'extensions' => array( 'requestId' => $context->requestId, 'schemaHash' => $this->builder->schemaHash() ) );
+        else
+            $answer = $this->execute( $resolved['query'], $request['variables'], $request['operationName'], $context );
+        if ( $cache !== null && expGraphQLResponseCache::storable( $answer, $resolved['query'], !$anonymous ) )
+        {
+            // the same body for every request it answers: the request id is in the header X-Request-Id only
+            unset( $answer['extensions']['requestId'] );
+            $body = expGraphQLRestResponse::encode( $answer );
+            $etag = expGraphQLResponseCache::etag( $body );
+            $cache->write( $key, $body, array( 'etag' => $etag, 'schemaHash' => $this->builder->schemaHash(),
+                                               'ttl' => (int)expGraphQL::setting( 'ResponseCacheTtl', 86400 ),
+                                               'rateLimit' => $anonymous ? (int)expGraphQL::setting( 'RateLimitAnonymous', 120 ) : 0,
+                                               'rateWindow' => expGraphQL::intSetting( 'RateLimitWindow', 60 ),
+                                               'cors' => self::corsHeaders( $server ) ) );
+            return self::httpAnswer( $body, $etag, $headers + expGraphQLResponseCache::headers( array( 'etag' => $etag, 'schemaHash' => $this->builder->schemaHash() ),
+                                                                                                   'MISS', $anonymous ), $server );
+        }
+        $body = expGraphQLRestResponse::encode( $answer );
+        // a weak ETag: the same answer but for its request id
+        $withoutId = $answer;
+        unset( $withoutId['extensions']['requestId'] );
+        $etag = 'W/' . expGraphQLResponseCache::etag( expGraphQLRestResponse::encode( $withoutId ) );
+        $headers += array( 'Content-Type' => 'application/json; charset=UTF-8', 'ETag' => $etag, 'Cache-Control' => 'private, no-store' );
+        if ( $cache !== null )
+            $headers['X-GraphQL-Cache'] = 'BYPASS';
+        return self::httpAnswer( $body, $etag, $headers, $server );
+    }
+
+    /**
+     * @param array $server
+     * @return string[] the Access-Control headers of a CORS request (rest.ini [CorsSettings]), kept with its answer for
+     *                  the early answer of index_rest.php
+     */
+    protected static function corsHeaders( array $server )
+    {
+        if ( empty( $server['HTTP_ORIGIN'] ) || !class_exists( 'expRestCors' ) )
+            return array();
+        return array_values( (array)expRestCors::fromIni( eZINI::instance( 'rest.ini' ) )->responseHeaders( $server ) );
+    }
+
+    /**
+     * @param string $body
+     * @param string $etag
+     * @param array $headers
+     * @param array $server
+     * @return array status, body, headers
+     */
+    protected static function httpAnswer( $body, $etag, array $headers, array $server )
+    {
+        if ( isset( $server['HTTP_IF_NONE_MATCH'] ) && expGraphQLResponseCache::etagMatches( (string)$server['HTTP_IF_NONE_MATCH'], $etag ) )
+            return array( 'status' => 304, 'body' => '', 'headers' => $headers );
+        return array( 'status' => 200, 'body' => $body, 'headers' => $headers );
     }
 
     /**

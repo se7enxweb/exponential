@@ -811,6 +811,9 @@ class eZContentCacheManager
         eZDebug::accumulatorStart( 'node_cleanup', '', 'Node cleanup' );
 
         eZContentObject::expireComplexViewModeCache();
+        // The answers of the GraphQL API's persisted queries (a file stamp; nothing when the API was never used)
+        if ( class_exists( 'expGraphQLResponseCache' ) ) // a worker started before this class was deployed has no autoload entry for it
+            expGraphQLResponseCache::expireIfAvailable();
         $cleanupValue = eZContentCache::calculateCleanupValue( count( $nodeList ) );
 
         if ( eZContentCache::inCleanupThresholdRange( $cleanupValue ) )
@@ -1178,6 +1181,8 @@ class eZContentCacheManager
         {
             // view cache and/or ordinary template block cache
             eZContentObject::expireAllCache();
+            if ( class_exists( 'expGraphQLResponseCache' ) )
+                expGraphQLResponseCache::expireIfAvailable();
 
             ezpEvent::getInstance()->notify( 'content/cache/all' );
 

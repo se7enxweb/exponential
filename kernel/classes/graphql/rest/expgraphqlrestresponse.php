@@ -14,13 +14,17 @@ class expGraphQLRestResponse extends ezpRestStatusResponse
     {
         if ( $writer instanceof ezcMvcHttpResponseWriter )
         {
-            $writer->headers["HTTP/1.1 " . $this->code] = isset( self::$statusCodes[$this->code] ) ? self::$statusCodes[$this->code] : '';
+            $writer->headers["HTTP/1.1 " . $this->code] = isset( self::$statusCodes[$this->code] ) ? self::$statusCodes[$this->code]
+                                                                                                 : ( $this->code === 429 ? 'Too Many Requests' : '' );
             $writer->headers = $this->headers + $writer->headers;
         }
-        if ( $this->message !== null )
+        if ( $this->code === 304 )
+            $writer->response->body = '';
+        else if ( $this->message !== null )
         {
             $writer->headers['Content-Type'] = 'application/json; charset=UTF-8';
-            $writer->response->body = self::encode( $this->message );
+            // a string is an answer already written as JSON (the response cache keeps answers so)
+            $writer->response->body = is_string( $this->message ) ? $this->message : self::encode( $this->message );
         }
     }
 

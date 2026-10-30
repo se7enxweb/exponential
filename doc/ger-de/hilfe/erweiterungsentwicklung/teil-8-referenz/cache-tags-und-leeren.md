@@ -44,6 +44,7 @@ Aus `kernel/classes/ezcache.php`:
 | `content` | content | gerenderte Inhalts-Views |
 | `exphttpcache` | content, template | der HTTP-Antwort-Cache |
 | `querycache` | content, ini | der SQL-Abfrage-Cache |
+| `graphql` | content, ini | die Antworten der gespeicherten Abfragen der GraphQL-API und die Klassenkataloge ihres Schemas |
 | `classid`, `sortkey`, `urlalias`, `content_tree_menu`, `state_limitations`, `content_language` | content | Nachschlagedaten zu Inhalten |
 | `translation`, `chartrans` | i18n | Übersetzungen |
 | `imagealias` | image | Bildvarianten |

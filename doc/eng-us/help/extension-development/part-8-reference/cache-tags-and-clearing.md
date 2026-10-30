@@ -43,6 +43,7 @@ From `kernel/classes/ezcache.php`:
 | `content` | content | rendered content views |
 | `exphttpcache` | content, template | the HTTP response cache |
 | `querycache` | content, ini | the SQL query cache |
+| `graphql` | content, ini | the answers of the GraphQL API's persisted queries and the class catalogues of its schema |
 | `classid`, `sortkey`, `urlalias`, `content_tree_menu`, `state_limitations`, `content_language` | content | lookups about content |
 | `translation`, `chartrans` | i18n | translations |
 | `imagealias` | image | image variations |

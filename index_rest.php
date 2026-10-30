@@ -20,6 +20,19 @@ if ( !class_exists( 'expMaintenance', false ) )
 if ( expMaintenance::check( __DIR__ ) )
     return;
 
+// The GraphQL response cache: an anonymous GET of a persisted query (/api/graphql?id=...) whose answer is cached is
+// answered here, before autoload, settings, siteaccess and database (doc/eng-us/features/6.0/graphql.md, "Speed").
+// Only what the raw request says decides it; anything else goes on to the kernel. See
+// kernel/classes/graphql/expgraphqlresponsecache.php.
+if ( isset( $_SERVER['REQUEST_METHOD'] ) && $_SERVER['REQUEST_METHOD'] === 'GET' && isset( $_SERVER['REQUEST_URI'] )
+     && strpos( $_SERVER['REQUEST_URI'], '/api/graphql' ) !== false )
+{
+    if ( !class_exists( 'expGraphQLResponseCache', false ) )
+        require_once __DIR__ . '/kernel/classes/graphql/expgraphqlresponsecache.php';
+    if ( expGraphQLResponseCache::serveEarly( __DIR__, $_SERVER ) )
+        return;
+}
+
 require __DIR__ . '/autoload.php';
 
 ignore_user_abort( true );
