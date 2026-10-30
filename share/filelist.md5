@@ -3325,7 +3325,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-43fd430165b8fb76102ad71e0459f6a7  doc/changelogs/6.0/6.0.15.md
+133671fc97cdd2f7b920453fdc3800c9  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3541,7 +3541,7 @@ fe76752d44638f44f345857617e38f5f  doc/eng-us/bc/6.0/php8.md
 0785742cb6ad30c25657d8d3a4363ac9  doc/eng-us/bc/6.0/role-policy-paging.md
 981cb46d02cc504b4d483962e3e5f0ed  doc/eng-us/bc/6.0/shop-basket-view-name.md
 1bb2ec9b10e67e5c692f4140f388681a  doc/eng-us/bc/6.0/soap-entry-script-index-soap.md
-60039ee545481e1d04fdc0979ea8846d  doc/eng-us/bc/6.0/sql-query-cache.md
+460f7c3d2c2413ee8d14e143fb960ead  doc/eng-us/bc/6.0/sql-query-cache.md
 fb85be121ac1186257310cd979fc3c1e  doc/eng-us/bc/6.0/sqlite-transactions.md
 04e2b3effc91ccae524c980b807607a9  doc/eng-us/bc/6.0/static-cache-defaults.md
 7889f36fad4374eb4863c2f13552e5f1  doc/eng-us/bc/6.0/subitems-table-options.md
@@ -24926,7 +24926,7 @@ f8422b2d7c5983552ff65b4105c20766  kernel/workflow/view.php
 13f0a583c9b7da0867680d243ffdcb5e  lib/ezdb/classes/exppdodb.php
 dbeb177b9f0f19b9931a36f338e15216  lib/ezdb/classes/ezdb.php
 661ef313a4ddad8e41cfa06a5e021a1e  lib/ezdb/classes/ezdbinterface.php
-363a5088cd7410462a6bc068935116b5  lib/ezdb/classes/ezdbquerycache.php
+719ca62619ceda1941fd31f2037e6305  lib/ezdb/classes/ezdbquerycache.php
 5d130fa0386f0a1810c63282941ab4aa  lib/ezdb/classes/ezdbtool.php
 7ef8186a613986a90636b30fac85b4f9  lib/ezdb/classes/ezmysqlcharset.php
 6fcbf61fd8586aefce6b28a6ef386d4a  lib/ezdb/classes/ezmysqlidb.php
@@ -27972,7 +27972,7 @@ db6c4a8ca3c8ccf2ed6fcbbdd2c0b803  tests/tests/kernel/requestlog/fixtures/request
 7f6e2b6de48fdcd12e58a1b3cc4d69ea  tests/tests/lib/ezdb/eZDBExceptionCodeTest.php
 b60dc460fe5444f72a0e09fc1305a105  tests/tests/lib/ezdb/eZDBInterfaceHelpersTest.php
 8f01078350da067cc0f5ac5ca3e493fa  tests/tests/lib/ezdb/eZDBInterfaceTest.php
-14ec27701e3365c5048fe4735c487033  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
+dd02cc4d58511b3d02e513802c3442cb  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
 41ad6b0de2479238f509f8e4d61298ce  tests/tests/lib/ezdb/eZMySQLiDBFKTest.php
 595e7ab1cedd85478942a82e6a062c97  tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStringNullTest.php
 98ac0a85b24dddc04a8ff6b0e7156c2a  tests/tests/lib/ezdb/eZPostgreSQLDBTest.php
