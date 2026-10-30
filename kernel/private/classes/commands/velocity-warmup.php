@@ -372,6 +372,9 @@ class VelocityWarmup extends \Exponential\Runnable\Command
             try { $GLOBALS['eZDBGlobalInstance']->close(); } catch (\Throwable $e) {}
         }
         $GLOBALS['eZDBGlobalInstance'] = null;
+        // A SQLite connection closed above is kept for the next request in a worker (eZSQLite3DB): here, in the
+        // process that forks the workers, it is closed for real.
+        if (class_exists('eZSQLite3DB', false)) eZSQLite3DB::closeKeptConnections();
 
         // Every other global the render left. A pool worker removes the globals a
         // request added before its next request, keeping only the server's own and

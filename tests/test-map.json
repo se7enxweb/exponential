@@ -2335,6 +2335,9 @@
     ],
     "kernel/classes/expkernelservices.php": [
       "tests/tests/kernel/classes/expKernelServiceScopeMemoTest.php"
+    ],
+    "lib/ezdb/classes/ezsqlite3db.php": [
+      "tests/tests/lib/ezdb/eZSQLite3KeptConnectionTest.php"
     ]
   },
   "generated": {
