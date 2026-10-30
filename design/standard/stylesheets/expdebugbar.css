@@ -126,7 +126,10 @@ body.exp-debug-bar { padding-bottom: calc(var(--exp-debug-bar-h, 38px) + 8px); }
   text-transform: uppercase; letter-spacing: .03em;
 }
 #debug .exp-debug-served[data-served="cache"] { background: var(--xd-ok-bg); color: var(--xd-ok); }
-#debug .exp-debug-served-action { font-size: 12px; margin-inline-end: 6px; color: var(--xd-accent); white-space: nowrap; }
+#debug .exp-debug-served-action { font-size: 12px; font-weight: 400; margin-inline-end: 6px; color: var(--xd-accent); white-space: nowrap; }
+/* not the bar's own "Exp Debug" link: no open/close arrow */
+#debug > h2 > a.exp-debug-served-action { flex: 0 0 auto; padding: 0 6px; color: var(--xd-accent); text-decoration: underline; }
+#debug > h2 > a.exp-debug-served-action::after { content: none; }
 #debug .exp-debug-from-render { margin: 0 0 8px; color: var(--xd-fg-soft); font-size: 12px; }
 /* OPcache, APCu, then the PHP and Exponential versions: the last chips, at the right end of the summary */
 #debug .exp-debug-chip.exp-debug-end { margin-inline-start: auto; }
