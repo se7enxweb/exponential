@@ -23,13 +23,15 @@ class expGraphQLCommandContractTest extends PHPUnit\Framework\TestCase
         'expgraphqlstatus' => array( 'exp:graphql:status' ),
         'expgraphqlschema' => array( 'exp:graphql:schema' ),
         'expgraphqlquery' => array( 'exp:graphql:query' ),
+        'expgraphqlpersist' => array( 'exp:graphql:persist' ),
     );
 
     /** command => its option names */
     const OPTIONS = array(
         'expgraphqlstatus' => array( 'format' ),
         'expgraphqlschema' => array( 'format', 'output' ),
-        'expgraphqlquery' => array( 'variables', 'operation', 'as', 'format' ),
+        'expgraphqlquery' => array( 'variables', 'operation', 'as', 'format', 'id' ),
+        'expgraphqlpersist' => array( 'name', 'list', 'remove', 'apply', 'format' ),
     );
 
     /** command class => exit code constants */
@@ -37,10 +39,12 @@ class expGraphQLCommandContractTest extends PHPUnit\Framework\TestCase
         'Expgraphqlstatus' => array( 'EXIT_OK' => 0, 'EXIT_USAGE' => 2, 'EXIT_UNAVAILABLE' => 3 ),
         'Expgraphqlschema' => array( 'EXIT_OK' => 0, 'EXIT_ERRORS' => 1, 'EXIT_USAGE' => 2, 'EXIT_UNAVAILABLE' => 3 ),
         'Expgraphqlquery' => array( 'EXIT_OK' => 0, 'EXIT_ERRORS' => 1, 'EXIT_USAGE' => 2, 'EXIT_UNAVAILABLE' => 3 ),
+        'Expgraphqlpersist' => array( 'EXIT_OK' => 0, 'EXIT_ERRORS' => 1, 'EXIT_USAGE' => 2, 'EXIT_UNAVAILABLE' => 3 ),
     );
 
     const ERROR_CODES = array( 'FORBIDDEN', 'NOT_FOUND', 'VALIDATION', 'PARSE', 'BAD_USER_INPUT', 'DEPTH_LIMIT', 'COMPLEXITY_LIMIT',
-                               'INTROSPECTION_DISABLED', 'RATE_LIMITED', 'DISABLED', 'INTERNAL' );
+                               'INTROSPECTION_DISABLED', 'RATE_LIMITED', 'DISABLED', 'INTERNAL', 'PERSISTED_QUERY_NOT_FOUND',
+                               'PERSISTED_QUERY_NOT_SUPPORTED', 'PERSISTED_QUERY_REQUIRED' );
 
     const CONTENT_FIELDS = array( 'id', 'remoteId', 'name', 'classIdentifier', 'className', 'published', 'modified', 'language',
                                   'languages', 'mainLanguage', 'ownerId', 'ownerName', 'sectionId', 'url', 'urlAlias', 'location',
@@ -104,6 +108,7 @@ class expGraphQLCommandContractTest extends PHPUnit\Framework\TestCase
                 $this->assertSame( $value, constant( "Exponential\\Command\\Kernel\\$class::$name" ), "$class::$name" );
         }
         $this->assertSame( 'exp-graphql-status/1', Exponential\Command\Kernel\Expgraphqlstatus::SCHEMA );
+        $this->assertSame( 'exp-graphql-persisted/1', Exponential\Command\Kernel\Expgraphqlpersist::SCHEMA );
         self::sameSet( array( 'sdl', 'json', 'summary' ), Exponential\Command\Kernel\Expgraphqlschema::FORMATS, 'a format of exp:graphql:schema' );
         $this->assertSame( array( array( 'data.a.0', '1' ), array( 'data.a.1', 'true' ), array( 'data.b', 'null' ), array( 'data.c', '[]' ) ),
                            Exponential\Command\Kernel\Expgraphqlquery::rows( array( 'data' => array( 'a' => array( 1, true ), 'b' => null, 'c' => array() ) ) ) );

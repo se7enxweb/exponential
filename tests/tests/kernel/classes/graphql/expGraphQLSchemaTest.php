@@ -535,9 +535,9 @@ class expGraphQLSchemaTest extends PHPUnit\Framework\TestCase
     public function testAnHttpRequestIsRead()
     {
         $json = expGraphQLServer::parseHttpRequest( 'POST', 'application/json; charset=utf-8', '{"query":"{ a }","variables":{"x":1},"operationName":"Q"}', array(), array() );
-        $this->assertSame( array( 'query' => '{ a }', 'variables' => array( 'x' => 1 ), 'operationName' => 'Q' ), $json );
+        $this->assertSame( array( 'query' => '{ a }', 'variables' => array( 'x' => 1 ), 'operationName' => 'Q', 'id' => null, 'persistedHash' => null, 'method' => 'POST' ), $json );
         $get = expGraphQLServer::parseHttpRequest( 'GET', '', '', array( 'query' => '{ b }', 'variables' => '{"y":2}' ), array() );
-        $this->assertSame( array( 'query' => '{ b }', 'variables' => array( 'y' => 2 ), 'operationName' => null ), $get );
+        $this->assertSame( array( 'query' => '{ b }', 'variables' => array( 'y' => 2 ), 'operationName' => null, 'id' => null, 'persistedHash' => null, 'method' => 'GET' ), $get );
         $graphql = expGraphQLServer::parseHttpRequest( 'POST', 'application/graphql', '{ c }', array(), array() );
         $this->assertSame( '{ c }', $graphql['query'] );
         $this->assertArrayHasKey( 'error', expGraphQLServer::parseHttpRequest( 'POST', 'application/json', '[1', array(), array() ) );

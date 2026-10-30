@@ -33,6 +33,7 @@ not be switched on.
 ./console exp:graphql:query '{ node(id: 2) { name children { totalCount } } }'
 ./console exp:graphql:query queries/menu.graphql --variables='{"depth": 2}' --as=admin
 ./console exp:graphql:query '{ siteaccess { name schemaHash } }' --format=table
+./console exp:graphql:query --id=articles     a persisted query, by its name or its SHA-256
 
 Exit code: 0 an answer without errors; 1 an answer with errors; 3 the library is missing;
 2 wrong options (no query, variables not JSON, an unknown user).
@@ -46,6 +47,7 @@ Exit code: 0 an answer without errors; 1 an answer with errors; 3 the library is
 | `--operation` | erforderlich | die auszuführende Operation, wenn die Abfrage mehrere hat |
 | `--as` | erforderlich | als dieser Benutzer ausführen (ein Login); Standard: anonym |
 | `--format` | erforderlich | json (der Standard) oder table (eine Zeile je Wert: sein Pfad und der Wert) |
+| `--id` | erforderlich | die gespeicherte Abfrage mit diesem Namen oder SHA-256 ausführen statt eines Abfragetexts |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

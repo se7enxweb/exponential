@@ -23,6 +23,9 @@ class expGraphQLError extends Exception
     const RATE_LIMITED = 'RATE_LIMITED';
     const DISABLED = 'DISABLED';
     const INTERNAL = 'INTERNAL';
+    const PERSISTED_QUERY_NOT_FOUND = 'PERSISTED_QUERY_NOT_FOUND';
+    const PERSISTED_QUERY_NOT_SUPPORTED = 'PERSISTED_QUERY_NOT_SUPPORTED';
+    const PERSISTED_QUERY_REQUIRED = 'PERSISTED_QUERY_REQUIRED';
 
     /** @var string */
     protected $errorCode;

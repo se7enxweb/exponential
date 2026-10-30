@@ -38,7 +38,7 @@ class Query extends \Exponential\Runnable\ModuleView
         $builder = \expGraphQLSchemaBuilder::fromSettings();
         $context = new \expGraphQLContext( $user, \expGraphQLContext::AUTH_SESSION, new \expGraphQLRepository( $builder->catalogue() ),
                                            \expGraphQLContext::requestBaseUrl() );
-        $answer = ( new \expGraphQLServer( $builder ) )->execute( $request['query'], $request['variables'], $request['operationName'], $context );
+        $answer = ( new \expGraphQLServer( $builder ) )->run( $request, $context )['answer'];
         header( 'X-GraphQL-Schema: ' . $builder->schemaHash() );
         self::send( 200, $answer );
         return null;

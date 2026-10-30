@@ -3,13 +3,13 @@ title: graphql.ini [GraphQLSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [GraphQLSettings] in graphql.ini: Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList ..."
-keywords: graphql.ini, GraphQLSettings, INI, setting, Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList, Introspection, MaxDepth, MaxComplexity, MaxListLimit, DefaultListLimit, ImageAliasList, Debug
+keywords: graphql.ini, GraphQLSettings, INI, setting, Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList, Introspection, MaxDepth, MaxComplexity, MaxListLimit, DefaultListLimit, PersistedQueries, AutomaticPersistedQueries, MaxPersistedQueries, PersistedQueriesOnly, PersistedQueryDirectoryList, MaxQueryLength, ImageAliasList, Debug
 type: generated
 generated: exp:help:examples
 ---
 # graphql.ini [GraphQLSettings]
 
-The block `[GraphQLSettings]` of `settings/graphql.ini`, with 15 setting(s).
+The block `[GraphQLSettings]` of `settings/graphql.ini`, with 21 setting(s).
 
 Never edit `settings/graphql.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -226,6 +226,105 @@ Default: `25`.
 # settings/override/graphql.ini.append.php
 [GraphQLSettings]
 DefaultListLimit=25
+*/ ?>
+```
+
+## PersistedQueries
+
+> Persisted queries: queries stored on the server (var/<site>/graphql/persisted/) and called by a name  
+> (GET /api/graphql?id=articles) or by their SHA-256 (Apollo's extensions.persistedQuery.sha256Hash). Stored with  
+> ./console exp:graphql:persist <file or directory> --apply. enabled (the default) or disabled.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+PersistedQueries=enabled
+*/ ?>
+```
+
+## AutomaticPersistedQueries
+
+> Who may store a query by sending its text with its SHA-256 (Apollo's automatic persisted queries):  
+>   signed-in  (the default) a request signed in by a token, a personal API key or a session  
+>   enabled    every request, the anonymous one too (at most MaxPersistedQueries are stored)  
+>   disabled   nobody; queries are stored with exp:graphql:persist only  
+> A query that may not be stored still runs, as an ad-hoc query.  
+
+Default: `signed-in`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+AutomaticPersistedQueries=signed-in
+*/ ?>
+```
+
+## MaxPersistedQueries
+
+> The most queries the store holds before an automatic persisted query is no longer stored (exp:graphql:persist  
+> stores regardless).  
+
+Default: `1000`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+MaxPersistedQueries=1000
+*/ ?>
+```
+
+## PersistedQueriesOnly
+
+> Only persisted queries are run at /api/graphql (an ad-hoc query is refused with PERSISTED\_QUERY\_REQUIRED):  
+>   disabled   (the default) any query  
+>   anonymous  anonymous requests may run persisted queries only, signed-in ones any query  
+>   enabled    every request to /api/graphql runs persisted queries only  
+> The session end point (the playground of Setup > GraphQL) and the console always run any query.  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+PersistedQueriesOnly=disabled
+*/ ?>
+```
+
+## PersistedQueryDirectoryList
+
+> Directories of persisted queries shipped with the code: every <name>.graphql file is the persisted query <name>,  
+> read only (exp:graphql:persist --list shows them). Relative to the installation root, or absolute; an extension  
+> adds its own directory in its settings/graphql.ini.append.php.  
+> PersistedQueryDirectoryList\[\]=extension/myfrontend/graphql  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+# an empty "PersistedQueryDirectoryList[]" first replaces the shipped list; without it the items are added
+PersistedQueryDirectoryList[]
+*/ ?>
+```
+
+## MaxQueryLength
+
+> The longest query text accepted, in bytes.  
+
+Default: `100000`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+MaxQueryLength=100000
 */ ?>
 ```
 

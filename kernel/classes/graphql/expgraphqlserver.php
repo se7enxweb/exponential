@@ -16,7 +16,7 @@
 
 class expGraphQLServer
 {
-    /** The longest query accepted, in bytes. */
+    /** The longest query accepted, in bytes, when graphql.ini MaxQueryLength does not say. */
     const MAX_QUERY_BYTES = 100000;
 
     /** @var expGraphQLSchemaBuilder */
@@ -72,9 +72,128 @@ class expGraphQLServer
             if ( !is_array( $variables ) )
                 return array( 'error' => 'variables is not a JSON object.' );
         }
+        // A persisted query: the id of the request (?id=articles), or Apollo's extensions.persistedQuery.sha256Hash
+        $extensions = isset( $input['extensions'] ) ? $input['extensions'] : null;
+        if ( is_string( $extensions ) && $extensions !== '' )
+        {
+            $extensions = json_decode( $extensions, true );
+            if ( !is_array( $extensions ) )
+                return array( 'error' => 'extensions is not a JSON object.' );
+        }
+        $hash = is_array( $extensions ) && isset( $extensions['persistedQuery']['sha256Hash'] ) && is_string( $extensions['persistedQuery']['sha256Hash'] )
+            ? strtolower( $extensions['persistedQuery']['sha256Hash'] ) : null;
         return array( 'query' => isset( $input['query'] ) && is_string( $input['query'] ) ? $input['query'] : '',
                       'variables' => is_array( $variables ) ? $variables : null,
-                      'operationName' => isset( $input['operationName'] ) && is_string( $input['operationName'] ) && $input['operationName'] !== '' ? $input['operationName'] : null );
+                      'operationName' => isset( $input['operationName'] ) && is_string( $input['operationName'] ) && $input['operationName'] !== '' ? $input['operationName'] : null,
+                      'id' => isset( $input['id'] ) && is_string( $input['id'] ) && $input['id'] !== '' ? $input['id'] : null,
+                      'persistedHash' => $hash,
+                      'method' => $method );
+    }
+
+    /**
+     * Runs a request of parseHttpRequest(): a persisted query is looked up (or stored, for an automatic persisted
+     * query a client may store), PersistedQueriesOnly is applied, then the query runs.
+     *
+     * @param array $request query, variables, operationName, id, persistedHash
+     * @param expGraphQLContext $context
+     * @return array answer (the GraphQL answer), persisted (the hash of a persisted query, or null)
+     */
+    public function run( array $request, expGraphQLContext $context )
+    {
+        $request += array( 'query' => '', 'variables' => null, 'operationName' => null, 'id' => null, 'persistedHash' => null );
+        $resolved = self::resolvePersisted( $request, $context );
+        if ( isset( $resolved['error'] ) )
+        {
+            return array( 'answer' => array( 'errors' => array( self::error( $resolved['error'][0], $resolved['error'][1], $context ) ),
+                                              'extensions' => array( 'requestId' => $context->requestId, 'schemaHash' => $this->builder->schemaHash() ) ),
+                          'persisted' => null );
+        }
+        return array( 'answer' => $this->execute( $resolved['query'], $request['variables'], $request['operationName'], $context ),
+                      'persisted' => $resolved['hash'] );
+    }
+
+    /**
+     * The query text of a request and the hash it is persisted under.
+     *
+     * @param array $request
+     * @param expGraphQLContext $context
+     * @param expGraphQLPersistedQueries|null $store null: the store of the installation
+     * @return array query and hash (null: not persisted), or error (array( message, code ))
+     */
+    public static function resolvePersisted( array $request, expGraphQLContext $context, $store = null )
+    {
+        $query = isset( $request['query'] ) ? (string)$request['query'] : '';
+        $id = isset( $request['id'] ) ? $request['id'] : null;
+        $hash = isset( $request['persistedHash'] ) ? $request['persistedHash'] : null;
+        if ( $id === null && $hash === null )
+        {
+            if ( self::persistedOnly( $context ) )
+                return array( 'error' => array( 'Only persisted queries are accepted here: send the id of a stored query.', expGraphQLError::PERSISTED_QUERY_REQUIRED ) );
+            return array( 'query' => $query, 'hash' => null );
+        }
+        if ( expGraphQL::setting( 'PersistedQueries', 'enabled' ) !== 'enabled' )
+            return array( 'error' => array( 'PersistedQueryNotSupported', expGraphQLError::PERSISTED_QUERY_NOT_SUPPORTED ) );
+        $store = $store instanceof expGraphQLPersistedQueries ? $store : expGraphQLPersistedQueries::fromSettings();
+        if ( $id !== null )
+        {
+            $found = $store->find( $id );
+            if ( $found === null )
+                return array( 'error' => array( 'PersistedQueryNotFound', expGraphQLError::PERSISTED_QUERY_NOT_FOUND ) );
+            return array( 'query' => $found, 'hash' => expGraphQLPersistedQueries::hash( $found ) );
+        }
+        if ( !expGraphQLPersistedQueries::isHash( $hash ) )
+            return array( 'error' => array( 'The persisted query hash is not a SHA-256.', expGraphQLError::BAD_USER_INPUT ) );
+        if ( trim( $query ) === '' )
+        {
+            $found = $store->find( $hash );
+            if ( $found === null )
+                return array( 'error' => array( 'PersistedQueryNotFound', expGraphQLError::PERSISTED_QUERY_NOT_FOUND ) );
+            return array( 'query' => $found, 'hash' => $hash );
+        }
+        // An automatic persisted query: the text with its hash, stored when the client may store queries
+        if ( expGraphQLPersistedQueries::hash( $query ) !== $hash )
+            return array( 'error' => array( 'The persisted query hash does not match the query.', expGraphQLError::BAD_USER_INPUT ) );
+        if ( $store->find( $hash ) === null )
+        {
+            if ( !self::mayRegister( $context ) || $store->count() >= expGraphQL::intSetting( 'MaxPersistedQueries', 1000 ) )
+            {
+                // not stored: the query still runs, but stays ad hoc
+                if ( self::persistedOnly( $context ) )
+                    return array( 'error' => array( 'Only persisted queries are accepted here: send the id of a stored query.', expGraphQLError::PERSISTED_QUERY_REQUIRED ) );
+                return array( 'query' => $query, 'hash' => null );
+            }
+            $store->store( $query );
+        }
+        return array( 'query' => $query, 'hash' => $hash );
+    }
+
+    /**
+     * @param expGraphQLContext $context
+     * @return bool the request may only run persisted queries (PersistedQueriesOnly); the console and the session of
+     *              the administration (the playground) always may run any query
+     */
+    public static function persistedOnly( expGraphQLContext $context )
+    {
+        if ( $context->authMode === expGraphQLContext::AUTH_CONSOLE || $context->authMode === expGraphQLContext::AUTH_SESSION )
+            return false;
+        $setting = (string)expGraphQL::setting( 'PersistedQueriesOnly', 'disabled' );
+        if ( $setting === 'enabled' )
+            return true;
+        return $setting === 'anonymous' && !$context->isSignedIn();
+    }
+
+    /**
+     * @param expGraphQLContext $context
+     * @return bool the request may store an automatic persisted query (AutomaticPersistedQueries)
+     */
+    public static function mayRegister( expGraphQLContext $context )
+    {
+        $setting = (string)expGraphQL::setting( 'AutomaticPersistedQueries', 'signed-in' );
+        if ( $setting === 'enabled' )
+            return true;
+        if ( $setting === 'disabled' )
+            return $context->authMode === expGraphQLContext::AUTH_CONSOLE;
+        return $context->isSignedIn();
     }
 
     /**
@@ -90,8 +209,8 @@ class expGraphQLServer
         $query = (string)$query;
         if ( trim( $query ) === '' )
             return array( 'errors' => array( self::error( 'The request has no query.', expGraphQLError::BAD_USER_INPUT, $context ) ), 'extensions' => $extensions );
-        if ( strlen( $query ) > self::MAX_QUERY_BYTES )
-            return array( 'errors' => array( self::error( 'The query is longer than ' . self::MAX_QUERY_BYTES . ' bytes.', expGraphQLError::BAD_USER_INPUT, $context ) ),
+        if ( strlen( $query ) > expGraphQL::intSetting( 'MaxQueryLength', self::MAX_QUERY_BYTES ) )
+            return array( 'errors' => array( self::error( 'The query is longer than ' . expGraphQL::intSetting( 'MaxQueryLength', self::MAX_QUERY_BYTES ) . ' bytes.', expGraphQLError::BAD_USER_INPUT, $context ) ),
                           'extensions' => $extensions );
 
         $debug = expGraphQL::setting( 'Debug', 'disabled' ) === 'enabled';

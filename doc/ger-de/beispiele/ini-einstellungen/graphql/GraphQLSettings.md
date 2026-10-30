@@ -3,13 +3,13 @@ title: graphql.ini [GraphQLSettings]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [GraphQLSettings] in graphql.ini: Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList ..."
-keywords: Einstellung, graphql.ini, GraphQLSettings, INI, setting, Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList, Introspection, MaxDepth, MaxComplexity, MaxListLimit, DefaultListLimit, ImageAliasList, Debug
+keywords: Einstellung, graphql.ini, GraphQLSettings, INI, setting, Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList, Introspection, MaxDepth, MaxComplexity, MaxListLimit, DefaultListLimit, PersistedQueries, AutomaticPersistedQueries, MaxPersistedQueries, PersistedQueriesOnly, PersistedQueryDirectoryList, MaxQueryLength, ImageAliasList, Debug
 type: generated
 generated: exp:help:examples
 ---
 # graphql.ini [GraphQLSettings]
 
-Der Block `[GraphQLSettings]` von `settings/graphql.ini`, mit 15 Einstellung(en).
+Der Block `[GraphQLSettings]` von `settings/graphql.ini`, mit 21 Einstellung(en).
 
 Bearbeiten Sie `settings/graphql.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -226,6 +226,106 @@ Standard: `25`.
 # settings/override/graphql.ini.append.php
 [GraphQLSettings]
 DefaultListLimit=25
+*/ ?>
+```
+
+## PersistedQueries
+
+> Gespeicherte Abfragen: Abfragen, die auf dem Server liegen (var/<site>/graphql/persisted/) und mit einem Namen  
+> (GET /api/graphql?id=articles) oder mit ihrem SHA-256 (extensions.persistedQuery.sha256Hash von Apollo) aufgerufen  
+> werden. Gespeichert mit ./console exp:graphql:persist <Datei oder Verzeichnis> --apply. enabled (der Standard) oder  
+> disabled.  
+
+Standard: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+PersistedQueries=enabled
+*/ ?>
+```
+
+## AutomaticPersistedQueries
+
+> Wer eine Abfrage speichern darf, indem er ihren Text mit ihrem SHA-256 sendet (die automatischen Persisted Queries von Apollo):  
+>   signed-in  (der Standard) eine Anfrage, die mit einem Token, einem persönlichen API-Schlüssel oder einer Sitzung angemeldet ist  
+>   enabled    jede Anfrage, auch die anonyme (es werden höchstens MaxPersistedQueries gespeichert)  
+>   disabled   niemand; Abfragen werden nur mit exp:graphql:persist gespeichert  
+> Eine Abfrage, die nicht gespeichert werden darf, läuft trotzdem, als Ad-hoc-Abfrage.  
+
+Standard: `signed-in`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+AutomaticPersistedQueries=signed-in
+*/ ?>
+```
+
+## MaxPersistedQueries
+
+> Die meisten Abfragen, die der Speicher hält, bevor eine automatische gespeicherte Abfrage nicht mehr gespeichert wird  
+> (exp:graphql:persist speichert trotzdem).  
+
+Standard: `1000`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+MaxPersistedQueries=1000
+*/ ?>
+```
+
+## PersistedQueriesOnly
+
+> Unter /api/graphql werden nur gespeicherte Abfragen ausgeführt (eine Ad-hoc-Abfrage wird mit PERSISTED\_QUERY\_REQUIRED abgelehnt):  
+>   disabled   (der Standard) jede Abfrage  
+>   anonymous  anonyme Anfragen dürfen nur gespeicherte Abfragen ausführen, angemeldete jede Abfrage  
+>   enabled    jede Anfrage an /api/graphql führt nur gespeicherte Abfragen aus  
+> Der Sitzungs-Endpunkt (der Playground unter Setup > GraphQL) und die Konsole führen immer jede Abfrage aus.  
+
+Standard: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+PersistedQueriesOnly=disabled
+*/ ?>
+```
+
+## PersistedQueryDirectoryList
+
+> Verzeichnisse gespeicherter Abfragen, die mit dem Code ausgeliefert werden: Jede Datei <name>.graphql ist die  
+> gespeicherte Abfrage <name>, nur lesbar (exp:graphql:persist --list zeigt sie). Relativ zum Wurzelverzeichnis der  
+> Installation oder absolut; eine Erweiterung fügt ihr eigenes Verzeichnis in ihrer settings/graphql.ini.append.php hinzu.  
+> PersistedQueryDirectoryList\[\]=extension/myfrontend/graphql  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+# ein leeres "PersistedQueryDirectoryList[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+PersistedQueryDirectoryList[]
+*/ ?>
+```
+
+## MaxQueryLength
+
+> Der längste angenommene Abfragetext, in Bytes.  
+
+Standard: `100000`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+MaxQueryLength=100000
 */ ?>
 ```
 

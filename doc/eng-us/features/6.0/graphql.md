@@ -28,14 +28,15 @@ This is phase 1: reading content. The API answers queries; it changes nothing. W
 3. [Signing in](#signing-in)
 4. [The schema](#the-schema)
 5. [Queries, with examples](#queries-with-examples)
-6. [Security](#security)
-7. [Speed](#speed)
-8. [Errors](#errors)
-9. [The playground and the session end point](#the-playground-and-the-session-end-point)
-10. [Console commands](#console-commands)
-11. [The library](#the-library)
-12. [Settings](#settings)
-13. [What comes next](#what-comes-next)
+6. [Persisted queries](#persisted-queries)
+7. [Security](#security)
+8. [Speed](#speed)
+9. [Errors](#errors)
+10. [The playground and the session end point](#the-playground-and-the-session-end-point)
+11. [Console commands](#console-commands)
+12. [The library](#the-library)
+13. [Settings](#settings)
+14. [What comes next](#what-comes-next)
 
 ## Quick start in 60 seconds
 
@@ -461,6 +462,50 @@ The page has no German translation, so it is read in English, and `language` say
 }
 ```
 
+## Persisted queries
+
+A persisted query is stored on the server and called by an id instead of its text: the address stays short, the
+query cannot be changed by whoever calls it, and only persisted queries are kept in the [response
+cache](#speed). The id is the query's SHA-256 (64 hexadecimal digits) or the name it was stored under.
+
+```bash
+# check every .graphql file of a directory against the schema, store nothing
+./console exp:graphql:persist frontend/queries/
+# store them: each under its SHA-256 and its file name without .graphql
+./console exp:graphql:persist frontend/queries/ --apply
+./console exp:graphql:persist menu.graphql --name=main-menu --apply
+./console exp:graphql:persist --list
+./console exp:graphql:persist --remove=main-menu --apply
+```
+
+A query that does not fit the schema (a syntax error, an unknown field) is refused, and then nothing is stored. The
+store is `var/<site>/graphql/persisted/`: `<sha256>.graphql` and `names.json`. An extension or a deployment ships
+queries in a directory of `PersistedQueryDirectoryList[]` instead: each `<name>.graphql` there is the persisted query
+`<name>`, read only.
+
+Calling one:
+
+```bash
+# by name, GET: variables and operationName as for any GET
+curl 'https://example.com/api/graphql?id=articles50'
+curl 'https://example.com/api/graphql?id=menu&variables=%7B%22depth%22%3A2%7D'
+# by hash, in a JSON body
+curl -H 'Content-Type: application/json' -d '{"id":"21f7a4e0...ffad"}' https://example.com/api/graphql
+# from the console
+./console exp:graphql:query --id=articles50
+```
+
+**Apollo's automatic persisted queries** work as Apollo Client sends them: a request with
+`extensions={"persistedQuery":{"version":1,"sha256Hash":"<sha256>"}}` and no query runs the stored query, or is
+answered `PersistedQueryNotFound` (`PERSISTED_QUERY_NOT_FOUND`); the client then sends the text with the hash, and
+the server stores it when the request may store queries (`AutomaticPersistedQueries`: `signed-in` by default, at most
+`MaxPersistedQueries` of them) and runs it either way. A hash that is not the query's is refused (`BAD_USER_INPUT`).
+
+**Persisted queries only.** `PersistedQueriesOnly=anonymous` lets anonymous requests run persisted queries only;
+`enabled` does so for every request to `/api/graphql`. An ad-hoc query is then refused with
+`PERSISTED_QUERY_REQUIRED`. The playground (the session end point) and the console run any query.
+`PersistedQueries=disabled` switches persisted queries off (`PERSISTED_QUERY_NOT_SUPPORTED`).
+
 ## Security
 
 - **Policies always apply.** Every content object, location and relation is read through the permission system with
@@ -481,7 +526,9 @@ The page has no German translation, so it is read in English, and `language` say
   every field counts 1, a list field counts its `limit` or `first` (or `DefaultListLimit`) times the fields below it,
   so a list of 100 items with a list of 100 below it is refused at once:
   `Max query complexity should be 1000 but got 20202.` (`COMPLEXITY_LIMIT`). `MaxListLimit` (100) caps every page, and a
-  query is at most 100 000 bytes.
+  query is at most `MaxQueryLength` bytes (100 000).
+- **Persisted queries only**, for anonymous requests or for all (`PersistedQueriesOnly`, [above](#persisted-queries)):
+  a production front end that only ever sends its own stored queries leaves nothing else to try.
 - **Read only.** Phase 1 has no mutations: nothing a query does changes content.
 - **No caching across users.** The answers are `private, no-store`, never kept by the REST application cache.
 - **Errors do not leak.** An error of the code (a PHP exception) is answered as `Internal server error` with
@@ -541,6 +588,9 @@ An error follows the GraphQL specification, with `extensions.code` and `extensio
 | `INTROSPECTION_DISABLED` | the request may not read the schema (`Introspection`) |
 | `DISABLED` | the API is switched off in this siteaccess (HTTP 404) |
 | `INTERNAL` | an error of the code, or the library is missing (HTTP 503) |
+| `PERSISTED_QUERY_NOT_FOUND` | no persisted query has this id or hash (the message is `PersistedQueryNotFound`, as Apollo Client expects) |
+| `PERSISTED_QUERY_NOT_SUPPORTED` | persisted queries are switched off (`PersistedQueries=disabled`; the message is `PersistedQueryNotSupported`) |
+| `PERSISTED_QUERY_REQUIRED` | an ad-hoc query where only persisted queries are accepted (`PersistedQueriesOnly`) |
 | `FORBIDDEN`, `NOT_FOUND`, `RATE_LIMITED` | reserved for later phases; phase 1 does not send them (content that cannot be read is `null`) |
 
 The codes are a stable contract: a code, once released, keeps its name and meaning, and new codes are only added.
@@ -573,7 +623,8 @@ needs no policy of its own: a token or key runs with its user's rights, and a ke
 |---|---|
 | [`exp:graphql:status`](../../examples/commands/expgraphqlstatus.md) | switched on or off, end point, library and version, limits, introspection, naming, schema hash, classes, the datatypes without a mapping; `--format=text\|json` |
 | [`exp:graphql:schema`](../../examples/commands/expgraphqlschema.md) | the schema: `--format=sdl` (the schema language, for code generators and editors), `json` (the introspection result), `summary` (classes, types, fields, datatypes, mapped or not); `--output=<file>` |
-| [`exp:graphql:query`](../../examples/commands/expgraphqlquery.md) | runs a query, given as the argument, a `.graphql` or `.gql` file, or `-` for standard input; `--variables`, `--operation`, `--as=<login>`, `--format=json\|table` |
+| [`exp:graphql:query`](../../examples/commands/expgraphqlquery.md) | runs a query, given as the argument, a `.graphql` or `.gql` file, or `-` for standard input, or a persisted query with `--id=<name or sha256>`; `--variables`, `--operation`, `--as=<login>`, `--format=json\|table` |
+| [`exp:graphql:persist`](../../examples/commands/expgraphqlpersist.md) | stores `.graphql` files as [persisted queries](#persisted-queries) after checking them against the schema (`--apply`; `--name=`), `--list` (`--format=text\|json`), `--remove=<name or sha256> --apply` |
 
 ```bash
 ./console exp:graphql:status --format=json
@@ -649,7 +700,8 @@ The API keeps no state between requests (only the fact that the library is loade
 `settings/graphql.ini`, every setting with its default: [[GraphQLSettings]](../../examples/ini-settings/graphql/GraphQLSettings.md)
 (`Enabled`, `SiteAccessList[]`, `LibraryPath`, `NamingStyle`, `ClassList[]`, `ExcludedClassList[]`,
 `HiddenFieldList[]`, `HiddenDatatypeList[]`, `Introspection`, `MaxDepth`, `MaxComplexity`, `MaxListLimit`,
-`DefaultListLimit`, `ImageAliasList[]`, `Debug`) and [[GraphQLNaming]](../../examples/ini-settings/graphql/GraphQLNaming.md)
+`DefaultListLimit`, `PersistedQueries`, `AutomaticPersistedQueries`, `MaxPersistedQueries`, `PersistedQueriesOnly`,
+`PersistedQueryDirectoryList[]`, `MaxQueryLength`, `ImageAliasList[]`, `Debug`) and [[GraphQLNaming]](../../examples/ini-settings/graphql/GraphQLNaming.md)
 (`TypeNames[]`, `FieldNames[]`). Never edit the shipped file: put changes in `settings/override/graphql.ini.append.php`
 or a siteaccess's `graphql.ini.append.php`.
 

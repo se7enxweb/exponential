@@ -29,14 +29,15 @@ unter [Was als Nächstes kommt](#was-als-nächstes-kommt).
 3. [Anmelden](#anmelden)
 4. [Das Schema](#das-schema)
 5. [Abfragen, mit Beispielen](#abfragen-mit-beispielen)
-6. [Sicherheit](#sicherheit)
-7. [Geschwindigkeit](#geschwindigkeit)
-8. [Fehler](#fehler)
-9. [Der Playground und der Sitzungs-Endpunkt](#der-playground-und-der-sitzungs-endpunkt)
-10. [Konsolenbefehle](#konsolenbefehle)
-11. [Die Bibliothek](#die-bibliothek)
-12. [Einstellungen](#einstellungen)
-13. [Was als Nächstes kommt](#was-als-nächstes-kommt)
+6. [Gespeicherte Abfragen](#gespeicherte-abfragen)
+7. [Sicherheit](#sicherheit)
+8. [Geschwindigkeit](#geschwindigkeit)
+9. [Fehler](#fehler)
+10. [Der Playground und der Sitzungs-Endpunkt](#der-playground-und-der-sitzungs-endpunkt)
+11. [Konsolenbefehle](#konsolenbefehle)
+12. [Die Bibliothek](#die-bibliothek)
+13. [Einstellungen](#einstellungen)
+14. [Was als Nächstes kommt](#was-als-nächstes-kommt)
 
 ## Schnellstart in 60 Sekunden
 
@@ -468,6 +469,52 @@ Die Seite hat keine deutsche Übersetzung, also wird sie englisch gelesen, und `
 }
 ```
 
+## Gespeicherte Abfragen
+
+Eine gespeicherte Abfrage (Persisted Query) liegt auf dem Server und wird mit einer Id statt mit ihrem Text
+aufgerufen: Die Adresse bleibt kurz, wer sie aufruft, kann die Abfrage nicht ändern, und nur gespeicherte Abfragen
+werden im [Antwort-Cache](#geschwindigkeit) gehalten. Die Id ist der SHA-256 der Abfrage (64 Hexadezimalziffern) oder
+der Name, unter dem sie gespeichert wurde.
+
+```bash
+# jede .graphql-Datei eines Verzeichnisses gegen das Schema prüfen, nichts speichern
+./console exp:graphql:persist frontend/queries/
+# speichern: jede unter ihrem SHA-256 und ihrem Dateinamen ohne .graphql
+./console exp:graphql:persist frontend/queries/ --apply
+./console exp:graphql:persist menu.graphql --name=main-menu --apply
+./console exp:graphql:persist --list
+./console exp:graphql:persist --remove=main-menu --apply
+```
+
+Eine Abfrage, die nicht zum Schema passt (ein Syntaxfehler, ein unbekanntes Feld), wird abgelehnt, und dann wird nichts
+gespeichert. Der Speicher ist `var/<site>/graphql/persisted/`: `<sha256>.graphql` und `names.json`. Eine Erweiterung
+oder ein Deployment liefert Abfragen stattdessen in einem Verzeichnis von `PersistedQueryDirectoryList[]` aus: Jede
+`<name>.graphql` dort ist die gespeicherte Abfrage `<name>`, nur lesbar.
+
+Eine aufrufen:
+
+```bash
+# nach Namen, GET: variables und operationName wie bei jedem GET
+curl 'https://example.com/api/graphql?id=articles50'
+curl 'https://example.com/api/graphql?id=menu&variables=%7B%22depth%22%3A2%7D'
+# nach Hash, in einem JSON-Body
+curl -H 'Content-Type: application/json' -d '{"id":"21f7a4e0...ffad"}' https://example.com/api/graphql
+# auf der Konsole
+./console exp:graphql:query --id=articles50
+```
+
+**Die automatischen Persisted Queries von Apollo** funktionieren so, wie Apollo Client sie sendet: Eine Anfrage mit
+`extensions={"persistedQuery":{"version":1,"sha256Hash":"<sha256>"}}` und ohne Abfrage führt die gespeicherte
+Abfrage aus oder wird mit `PersistedQueryNotFound` (`PERSISTED_QUERY_NOT_FOUND`) beantwortet; der Client sendet dann
+den Text mit dem Hash, und der Server speichert ihn, wenn die Anfrage Abfragen speichern darf
+(`AutomaticPersistedQueries`: standardmäßig `signed-in`, höchstens `MaxPersistedQueries` Stück), und führt ihn in jedem
+Fall aus. Ein Hash, der nicht der der Abfrage ist, wird abgelehnt (`BAD_USER_INPUT`).
+
+**Nur gespeicherte Abfragen.** `PersistedQueriesOnly=anonymous` lässt anonyme Anfragen nur gespeicherte Abfragen
+ausführen; `enabled` tut das für jede Anfrage an `/api/graphql`. Eine Ad-hoc-Abfrage wird dann mit
+`PERSISTED_QUERY_REQUIRED` abgelehnt. Der Playground (der Sitzungs-Endpunkt) und die Konsole führen jede Abfrage aus.
+`PersistedQueries=disabled` schaltet gespeicherte Abfragen ab (`PERSISTED_QUERY_NOT_SUPPORTED`).
+
 ## Sicherheit
 
 - **Die Richtlinien gelten immer.** Jedes Inhaltsobjekt, jeder Ort und jede Relation wird über das Rechtesystem mit
@@ -489,7 +536,10 @@ Die Seite hat keine deutsche Übersetzung, also wird sie englisch gelesen, und `
   `MaxComplexity` (1000): Jedes Feld zählt 1, ein Listenfeld zählt sein `limit` oder `first` (oder `DefaultListLimit`)
   mal die Felder darunter, sodass eine Liste von 100 Einträgen mit einer Liste von 100 darunter sofort abgelehnt wird:
   `Max query complexity should be 1000 but got 20202.` (`COMPLEXITY_LIMIT`). `MaxListLimit` (100) begrenzt jede Seite,
-  und eine Abfrage ist höchstens 100 000 Bytes lang.
+  und eine Abfrage ist höchstens `MaxQueryLength` Bytes lang (100 000).
+- **Nur gespeicherte Abfragen**, für anonyme Anfragen oder für alle (`PersistedQueriesOnly`,
+  [oben](#gespeicherte-abfragen)): Ein Frontend in Produktion, das immer nur seine eigenen gespeicherten Abfragen
+  sendet, lässt nichts anderes zum Ausprobieren übrig.
 - **Nur lesend.** Phase 1 hat keine Mutationen: Nichts, was eine Abfrage tut, ändert Inhalte.
 - **Kein Caching über Benutzer hinweg.** Die Antworten sind `private, no-store` und werden nie vom Anwendungs-Cache der
   REST-Schicht behalten.
@@ -551,6 +601,9 @@ Ein Fehler folgt der GraphQL-Spezifikation, mit `extensions.code` und `extension
 | `INTROSPECTION_DISABLED` | die Anfrage darf das Schema nicht lesen (`Introspection`) |
 | `DISABLED` | die API ist in diesem Siteaccess ausgeschaltet (HTTP 404) |
 | `INTERNAL` | ein Fehler des Codes, oder die Bibliothek fehlt (HTTP 503) |
+| `PERSISTED_QUERY_NOT_FOUND` | keine gespeicherte Abfrage hat diese Id oder diesen Hash (die Meldung ist `PersistedQueryNotFound`, wie Apollo Client sie erwartet) |
+| `PERSISTED_QUERY_NOT_SUPPORTED` | gespeicherte Abfragen sind abgeschaltet (`PersistedQueries=disabled`; die Meldung ist `PersistedQueryNotSupported`) |
+| `PERSISTED_QUERY_REQUIRED` | eine Ad-hoc-Abfrage, wo nur gespeicherte Abfragen angenommen werden (`PersistedQueriesOnly`) |
 | `FORBIDDEN`, `NOT_FOUND`, `RATE_LIMITED` | für spätere Phasen reserviert; Phase 1 sendet sie nicht (Inhalt, der sich nicht lesen lässt, ist `null`) |
 
 Die Codes sind ein stabiler Vertrag: Ein veröffentlichter Code behält Namen und Bedeutung, neue Codes kommen nur hinzu.
@@ -585,7 +638,8 @@ Benutzers, und ein Schlüssel braucht den Bereich `graphql:read`.
 |---|---|
 | [`exp:graphql:status`](../../beispiele/befehle/expgraphqlstatus.md) | ein- oder ausgeschaltet, Endpunkt, Bibliothek und Version, Grenzen, Introspection, Benennung, Schema-Hash, Klassen, die Datentypen ohne Abbildung; `--format=text\|json` |
 | [`exp:graphql:schema`](../../beispiele/befehle/expgraphqlschema.md) | das Schema: `--format=sdl` (die Schemasprache, für Code-Generatoren und Editoren), `json` (das Ergebnis der Introspection), `summary` (Klassen, Typen, Felder, Datentypen, abgebildet oder nicht); `--output=<datei>` |
-| [`exp:graphql:query`](../../beispiele/befehle/expgraphqlquery.md) | führt eine Abfrage aus, angegeben als Argument, als `.graphql`- oder `.gql`-Datei oder `-` für die Standardeingabe; `--variables`, `--operation`, `--as=<login>`, `--format=json\|table` |
+| [`exp:graphql:query`](../../beispiele/befehle/expgraphqlquery.md) | führt eine Abfrage aus, angegeben als Argument, als `.graphql`- oder `.gql`-Datei oder `-` für die Standardeingabe, oder eine gespeicherte Abfrage mit `--id=<Name oder sha256>`; `--variables`, `--operation`, `--as=<login>`, `--format=json\|table` |
+| [`exp:graphql:persist`](../../beispiele/befehle/expgraphqlpersist.md) | speichert `.graphql`-Dateien als [gespeicherte Abfragen](#gespeicherte-abfragen), nachdem sie gegen das Schema geprüft wurden (`--apply`; `--name=`), `--list` (`--format=text\|json`), `--remove=<Name oder sha256> --apply` |
 
 ```bash
 ./console exp:graphql:status --format=json
@@ -663,7 +717,8 @@ lesen.
 `settings/graphql.ini`, jede Einstellung mit ihrem Standard: [[GraphQLSettings]](../../beispiele/ini-einstellungen/graphql/GraphQLSettings.md)
 (`Enabled`, `SiteAccessList[]`, `LibraryPath`, `NamingStyle`, `ClassList[]`, `ExcludedClassList[]`,
 `HiddenFieldList[]`, `HiddenDatatypeList[]`, `Introspection`, `MaxDepth`, `MaxComplexity`, `MaxListLimit`,
-`DefaultListLimit`, `ImageAliasList[]`, `Debug`) und [[GraphQLNaming]](../../beispiele/ini-einstellungen/graphql/GraphQLNaming.md)
+`DefaultListLimit`, `PersistedQueries`, `AutomaticPersistedQueries`, `MaxPersistedQueries`, `PersistedQueriesOnly`,
+`PersistedQueryDirectoryList[]`, `MaxQueryLength`, `ImageAliasList[]`, `Debug`) und [[GraphQLNaming]](../../beispiele/ini-einstellungen/graphql/GraphQLNaming.md)
 (`TypeNames[]`, `FieldNames[]`). Ändern Sie nie die ausgelieferte Datei: Änderungen gehören in
 `settings/override/graphql.ini.append.php` oder in die `graphql.ini.append.php` eines Siteaccess.
 

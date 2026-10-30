@@ -1,0 +1,54 @@
+{
+    "command:expgraphqlpersist": {
+        "en": "Store GraphQL queries on the server as persisted queries (called by name or SHA-256), list them or remove them; a dry run unless --apply",
+        "de": "Speichert GraphQL-Abfragen als gespeicherte Abfragen auf dem Server (aufgerufen nach Name oder SHA-256), listet sie auf oder entfernt sie; ein Probelauf ohne --apply"
+    },
+    "command:expgraphqlpersist --apply": {
+        "en": "write; without it nothing is changed",
+        "de": "schreiben; ohne diese Option wird nichts geändert"
+    },
+    "command:expgraphqlpersist --format": {
+        "en": "text (the default) or json (with --list)",
+        "de": "text (der Standard) oder json (mit --list)"
+    },
+    "command:expgraphqlpersist --list": {
+        "en": "list the persisted queries",
+        "de": "die gespeicherten Abfragen auflisten"
+    },
+    "command:expgraphqlpersist --name": {
+        "en": "the name of the query (one file only); default: the file name without .graphql",
+        "de": "der Name der Abfrage (nur bei einer Datei); Standard: der Dateiname ohne .graphql"
+    },
+    "command:expgraphqlpersist --remove": {
+        "en": "remove the persisted query of this name or SHA-256 (and its names)",
+        "de": "die gespeicherte Abfrage mit diesem Namen oder SHA-256 entfernen (und ihre Namen)"
+    },
+    "command:expgraphqlquery --id": {
+        "en": "run the persisted query of this name or SHA-256 instead of a query text",
+        "de": "die gespeicherte Abfrage mit diesem Namen oder SHA-256 ausführen statt eines Abfragetexts"
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] AutomaticPersistedQueries": {
+        "en": "Who may store a query by sending its text with its SHA-256 (Apollo's automatic persisted queries):\n  signed-in  (the default) a request signed in by a token, a personal API key or a session\n  enabled    every request, the anonymous one too (at most MaxPersistedQueries are stored)\n  disabled   nobody; queries are stored with exp:graphql:persist only\nA query that may not be stored still runs, as an ad-hoc query.",
+        "de": "Wer eine Abfrage speichern darf, indem er ihren Text mit ihrem SHA-256 sendet (die automatischen Persisted Queries von Apollo):\n  signed-in  (der Standard) eine Anfrage, die mit einem Token, einem persönlichen API-Schlüssel oder einer Sitzung angemeldet ist\n  enabled    jede Anfrage, auch die anonyme (es werden höchstens MaxPersistedQueries gespeichert)\n  disabled   niemand; Abfragen werden nur mit exp:graphql:persist gespeichert\nEine Abfrage, die nicht gespeichert werden darf, läuft trotzdem, als Ad-hoc-Abfrage."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] MaxPersistedQueries": {
+        "en": "The most queries the store holds before an automatic persisted query is no longer stored (exp:graphql:persist\nstores regardless).",
+        "de": "Die meisten Abfragen, die der Speicher hält, bevor eine automatische gespeicherte Abfrage nicht mehr gespeichert wird\n(exp:graphql:persist speichert trotzdem)."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] MaxQueryLength": {
+        "en": "The longest query text accepted, in bytes.",
+        "de": "Der längste angenommene Abfragetext, in Bytes."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] PersistedQueries": {
+        "en": "Persisted queries: queries stored on the server (var/<site>/graphql/persisted/) and called by a name\n(GET /api/graphql?id=articles) or by their SHA-256 (Apollo's extensions.persistedQuery.sha256Hash). Stored with\n./console exp:graphql:persist <file or directory> --apply. enabled (the default) or disabled.",
+        "de": "Gespeicherte Abfragen: Abfragen, die auf dem Server liegen (var/<site>/graphql/persisted/) und mit einem Namen\n(GET /api/graphql?id=articles) oder mit ihrem SHA-256 (extensions.persistedQuery.sha256Hash von Apollo) aufgerufen\nwerden. Gespeichert mit ./console exp:graphql:persist <Datei oder Verzeichnis> --apply. enabled (der Standard) oder\ndisabled."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] PersistedQueriesOnly": {
+        "en": "Only persisted queries are run at /api/graphql (an ad-hoc query is refused with PERSISTED_QUERY_REQUIRED):\n  disabled   (the default) any query\n  anonymous  anonymous requests may run persisted queries only, signed-in ones any query\n  enabled    every request to /api/graphql runs persisted queries only\nThe session end point (the playground of Setup > GraphQL) and the console always run any query.",
+        "de": "Unter /api/graphql werden nur gespeicherte Abfragen ausgeführt (eine Ad-hoc-Abfrage wird mit PERSISTED_QUERY_REQUIRED abgelehnt):\n  disabled   (der Standard) jede Abfrage\n  anonymous  anonyme Anfragen dürfen nur gespeicherte Abfragen ausführen, angemeldete jede Abfrage\n  enabled    jede Anfrage an /api/graphql führt nur gespeicherte Abfragen aus\nDer Sitzungs-Endpunkt (der Playground unter Setup > GraphQL) und die Konsole führen immer jede Abfrage aus."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] PersistedQueryDirectoryList": {
+        "en": "Directories of persisted queries shipped with the code: every <name>.graphql file is the persisted query <name>,\nread only (exp:graphql:persist --list shows them). Relative to the installation root, or absolute; an extension\nadds its own directory in its settings/graphql.ini.append.php.\nPersistedQueryDirectoryList[]=extension/myfrontend/graphql",
+        "de": "Verzeichnisse gespeicherter Abfragen, die mit dem Code ausgeliefert werden: Jede Datei <name>.graphql ist die\ngespeicherte Abfrage <name>, nur lesbar (exp:graphql:persist --list zeigt sie). Relativ zum Wurzelverzeichnis der\nInstallation oder absolut; eine Erweiterung fügt ihr eigenes Verzeichnis in ihrer settings/graphql.ini.append.php hinzu.\nPersistedQueryDirectoryList[]=extension/myfrontend/graphql"
+    }
+}

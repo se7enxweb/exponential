@@ -37,8 +37,8 @@ class expGraphQLRestController extends ezpRestMvcController
             $mode = $user->isAnonymous() ? expGraphQLContext::AUTH_ANONYMOUS : expGraphQLContext::AUTH_TOKEN;
         $builder = expGraphQLSchemaBuilder::fromSettings();
         $context = new expGraphQLContext( $user, $mode, new expGraphQLRepository( $builder->catalogue() ), expGraphQLContext::requestBaseUrl() );
-        $answer = ( new expGraphQLServer( $builder ) )->execute( $request['query'], $request['variables'], $request['operationName'], $context );
-        return self::answer( 200, $answer, array( 'X-GraphQL-Schema' => $builder->schemaHash(), 'Cache-Control' => 'private, no-store' ) );
+        $result = ( new expGraphQLServer( $builder ) )->run( $request, $context );
+        return self::answer( 200, $result['answer'], array( 'X-GraphQL-Schema' => $builder->schemaHash(), 'Cache-Control' => 'private, no-store' ) );
     }
 
     /**
