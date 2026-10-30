@@ -423,10 +423,11 @@ RateLimitWindow=60
 ## SchemaExtensionList
 
 > Schema extensions: classes implementing expGraphQLSchemaExtension that add root queries, fields of Location and the  
-> types of their datatypes; each answers only where it is available (its extension active). An extension adds its own  
-> in its settings/graphql.ini.append.php.  
+> types of their datatypes; each answers only where it is available (its extension active). The kernel ships the one  
+> of eztags (the root queries tag and tags, the eztags fields as \[Tag\]). An extension adds its own in its  
+> settings/graphql.ini.append.php.  
 
-Default: an empty list.
+Default: a list of 1: `expGraphQLTagsExtension`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -434,6 +435,7 @@ Default: an empty list.
 [GraphQLSettings]
 # an empty "SchemaExtensionList[]" first replaces the shipped list; without it the items are added
 SchemaExtensionList[]
+SchemaExtensionList[]=expGraphQLTagsExtension
 */ ?>
 ```
 

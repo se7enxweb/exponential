@@ -39,8 +39,9 @@ class expGraphQLConnection
      * @param expGraphQLRepository $repository
      * @param expGraphQLLocation|null $location null: an empty list
      * @param array $args the field's arguments
+     * @param array $params fetch parameters set by the field itself (depth 0: the whole subtree; tagIds: tagged with)
      */
-    public function __construct( expGraphQLRepository $repository, $location, array $args )
+    public function __construct( expGraphQLRepository $repository, $location, array $args, array $params = array() )
     {
         $this->repository = $repository;
         $this->location = $location;
@@ -48,6 +49,7 @@ class expGraphQLConnection
                                'sortField' => isset( $args['sortField'] ) ? $args['sortField'] : null,
                                'sortOrder' => isset( $args['sortOrder'] ) ? $args['sortOrder'] : null,
                                'depth' => isset( $args['depth'] ) ? max( 1, (int)$args['depth'] ) : 1 );
+        $this->params = $params + $this->params;
         list( $this->limit, $this->offset ) = self::page( $args );
     }
 

@@ -1237,6 +1237,8 @@ return array(
       'expGraphQLSchemaExtension'                                    => 'kernel/classes/graphql/expgraphqlschemaextension.php',
       'expGraphQLSchemaExtensions'                                   => 'kernel/classes/graphql/expgraphqlschemaextensions.php',
       'expGraphQLSearchConnection'                                   => 'kernel/classes/graphql/expgraphqlsearchconnection.php',
+      'expGraphQLTagsExtension'                                      => 'kernel/classes/graphql/extensions/expgraphqltagsextension.php',
+      'expGraphQLTagsSource'                                         => 'kernel/classes/graphql/extensions/expgraphqltagssource.php',
       'expGraphQLServer'                                             => 'kernel/classes/graphql/expgraphqlserver.php',
       'expGraphQLTypes'                                              => 'kernel/classes/graphql/expgraphqltypes.php',
       'expHandlerWizard'                                             => 'kernel/setup/exphandlerwizard.php',

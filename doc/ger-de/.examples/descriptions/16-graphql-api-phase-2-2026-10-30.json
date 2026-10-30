@@ -68,7 +68,7 @@
         "de": "Die Sekunden, die eine Antwort höchstens gehalten wird, auch ohne Veröffentlichung; 0: bis sie abläuft."
     },
     "ini:settings/graphql.ini [GraphQLSettings] SchemaExtensionList": {
-        "en": "Schema extensions: classes implementing expGraphQLSchemaExtension that add root queries, fields of Location and the\ntypes of their datatypes; each answers only where it is available (its extension active). An extension adds its own\nin its settings/graphql.ini.append.php.",
-        "de": "Schema-Erweiterungen: Klassen, die expGraphQLSchemaExtension implementieren und Abfragen der Wurzel, Felder von\nLocation und die Typen ihrer Datentypen hinzufügen; jede antwortet nur dort, wo sie verfügbar ist (ihre Erweiterung\naktiv). Eine Erweiterung fügt ihre eigene in ihrer settings/graphql.ini.append.php hinzu."
+        "en": "Schema extensions: classes implementing expGraphQLSchemaExtension that add root queries, fields of Location and the\ntypes of their datatypes; each answers only where it is available (its extension active). The kernel ships the one\nof eztags (the root queries tag and tags, the eztags fields as [Tag]). An extension adds its own in its\nsettings/graphql.ini.append.php.",
+        "de": "Schema-Erweiterungen: Klassen, die expGraphQLSchemaExtension implementieren und Abfragen der Wurzel, Felder von\nLocation und die Typen ihrer Datentypen hinzufügen; jede antwortet nur dort, wo sie verfügbar ist (ihre Erweiterung\naktiv). Der Kernel liefert die von eztags mit (die Abfragen tag und tags, die eztags-Felder als [Tag]). Eine\nErweiterung fügt ihre eigene in ihrer settings/graphql.ini.append.php hinzu."
     }
 }

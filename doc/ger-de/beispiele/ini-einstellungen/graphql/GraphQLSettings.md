@@ -426,9 +426,10 @@ RateLimitWindow=60
 
 > Schema-Erweiterungen: Klassen, die expGraphQLSchemaExtension implementieren und Abfragen der Wurzel, Felder von  
 > Location und die Typen ihrer Datentypen hinzufügen; jede antwortet nur dort, wo sie verfügbar ist (ihre Erweiterung  
-> aktiv). Eine Erweiterung fügt ihre eigene in ihrer settings/graphql.ini.append.php hinzu.  
+> aktiv). Der Kernel liefert die von eztags mit (die Abfragen tag und tags, die eztags-Felder als \[Tag\]). Eine  
+> Erweiterung fügt ihre eigene in ihrer settings/graphql.ini.append.php hinzu.  
 
-Standard: eine leere Liste.
+Standard: eine Liste mit 1: `expGraphQLTagsExtension`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -436,6 +437,7 @@ Standard: eine leere Liste.
 [GraphQLSettings]
 # ein leeres "SchemaExtensionList[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 SchemaExtensionList[]
+SchemaExtensionList[]=expGraphQLTagsExtension
 */ ?>
 ```
 

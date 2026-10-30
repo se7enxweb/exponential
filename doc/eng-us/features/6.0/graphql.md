@@ -174,6 +174,8 @@ type Query {
   search(text: String, classes: [String!], subtree: [Int!], sections: [Int!], publishedAfter: String,
          publishedBefore: String, facets: [String!], limit: Int, offset: Int, first: Int, after: String,
          language: String): SearchResult!
+  tag(id: Int, remoteId: String, path: String, language: String): Tag          # while eztags is active
+  tags(parentId: Int = 0, keyword: String, limit: Int, offset: Int, language: String): [Tag!]!
   currentUser: User!
   siteaccess: SiteAccess!
   translations: [Language!]!
@@ -186,6 +188,7 @@ type Query {
 | `content` | a content object at its main location, by exactly one of its id or its remote id |
 | `children` | the content below a location (see [Lists](#lists-limit-and-offset-or-cursors)) |
 | `search` | content the search engine finds, by text and filters (see [Search](#search)) |
+| `tag`, `tags` | tags of eztags (see [Tags](#tags)) |
 | `currentUser` | `id`, `login`, `name`, `anonymous`, `signedInBy` of the user the request runs as |
 | `siteaccess` | `name`, `languages`, `rootNodeId`, `schemaHash` |
 | `translations` | the content languages of the installation: `code` and `name` |
@@ -279,6 +282,7 @@ Choose the style before clients depend on it: a client's queries name the types 
 | `ezenum` | `[EnumValue!]!`: `element`, `value` |
 | `ezsubtreesubscription` | `Boolean` |
 | `ezproductcategory` | `String`: the category's name |
+| `eztags` | `[Tag!]!` while eztags is active ([Tags](#tags)) |
 | a datatype of a [schema extension](#schema-extensions) | the type the extension gives it |
 | every other datatype | `String`: the field's text form (`toString()`) |
 
@@ -465,6 +469,34 @@ text, while Solr also finds by filters alone. `limit`/`offset` and `first`/`afte
 `totalCount` is what the engine counts, `engine` names the engine that answered, and `facets` gives each facet asked
 for with its values: `{ field values { value name count } }`. The search runs once for all of its fields, and the URL
 aliases of its page are made together, as for every list.
+
+### Tags
+
+While eztags is active, its schema extension (`expGraphQLTagsExtension`, in `SchemaExtensionList[]` by default) adds
+the root queries `tag` and `tags`, and every `eztags` field of content is a list of `Tag`:
+
+```graphql
+{
+  tag(path: "Topics/Asian") {            # or id: 42, or remoteId: "..."
+    id keyword url childrenCount
+    parent { keyword }
+    path { keyword }                     # from the top down to the parent
+    synonyms { keyword }
+    content(classes: ["ng_recipe"], limit: 10) { totalCount nodes { name url } }
+  }
+  tags(parentId: 0, limit: 20) { id keyword }   # the top tags; keyword: "Pasta" finds by keyword
+  node(urlAlias: "recipes/pad-thai") { ... on ng_recipe { tags { keyword url } } }
+}
+```
+
+- `Tag`: `id`, `keyword` (in the translation of `language`, else the main one), `remoteId`, `parentId`, `mainTagId`,
+  `isSynonym`, `depth`, `pathString`, `modified`, `languages`, `url` (the tag's page, `tags/view/...`), `parent`,
+  `mainTag`, `path`, `children(limit, offset)`, `childrenCount`, `synonyms`, and `content`: the content tagged with the
+  tag or one of its synonyms anywhere below the root of the siteaccess, a list as every list (`classes`, `sortField`,
+  `limit`, `first`/`after` ...), as the user may read it.
+- The parents, main tags and paths of a level are read in one batch.
+- `tag` and `tags` answer only for a user with the policy `tags/read` (else `null` and `[]`); the tags of a content's
+  field are part of the content and need no policy of their own.
 
 ### Languages
 
@@ -876,7 +908,6 @@ The API reads content: queries, persisted queries with their response cache, sea
 and its extensions. Later phases are planned to add, without dates yet:
 
 - **Mutations**: creating, editing, publishing and removing content, with the same policies as the administration.
-- **Tags**: `eztags` as a type of its own, and lists by tag.
 - **Layouts**: the layouts, zones and blocks of the page builder.
 - **Webhooks**: a call to another system when content changes.
 - **Subscriptions**: changes pushed to a client as they happen.

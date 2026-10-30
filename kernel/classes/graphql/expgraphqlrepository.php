@@ -187,8 +187,17 @@ class expGraphQLRepository
      */
     protected function subTreeParams( expGraphQLLocation $parent, array $params )
     {
-        $fetch = array( 'Depth' => max( 1, isset( $params['depth'] ) ? (int)$params['depth'] : 1 ), 'DepthOperator' => 'le',
-                        'AsObject' => true, 'LoadDataMap' => true );
+        $fetch = array( 'AsObject' => true, 'LoadDataMap' => true );
+        // depth 0: the whole subtree (the content of a tag)
+        if ( !isset( $params['depth'] ) || (int)$params['depth'] !== 0 )
+        {
+            $fetch['Depth'] = max( 1, isset( $params['depth'] ) ? (int)$params['depth'] : 1 );
+            $fetch['DepthOperator'] = 'le';
+        }
+        // tagged with one of these tags or their synonyms (eztags' extended attribute filter)
+        if ( !empty( $params['tagIds'] ) )
+            $fetch['ExtendedAttributeFilter'] = array( 'id' => 'TagsAttributeFilter',
+                                                       'params' => array( 'tag_id' => array_map( 'intval', (array)$params['tagIds'] ), 'include_synonyms' => true ) );
         $classes = isset( $params['classes'] ) && is_array( $params['classes'] ) ? array_values( array_filter( $params['classes'], 'strlen' ) ) : array();
         if ( $classes )
         {

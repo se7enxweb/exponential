@@ -178,6 +178,8 @@ type Query {
   search(text: String, classes: [String!], subtree: [Int!], sections: [Int!], publishedAfter: String,
          publishedBefore: String, facets: [String!], limit: Int, offset: Int, first: Int, after: String,
          language: String): SearchResult!
+  tag(id: Int, remoteId: String, path: String, language: String): Tag          # solange eztags aktiv ist
+  tags(parentId: Int = 0, keyword: String, limit: Int, offset: Int, language: String): [Tag!]!
   currentUser: User!
   siteaccess: SiteAccess!
   translations: [Language!]!
@@ -190,6 +192,7 @@ type Query {
 | `content` | einem Inhaltsobjekt an seinem Hauptort, nach genau einem von: seiner ID oder seiner Remote-ID |
 | `children` | den Inhalten unterhalb eines Orts (siehe [Listen](#listen-limit-und-offset-oder-cursor)) |
 | `search` | den Inhalten, die die Suchmaschine findet, nach Text und Filtern (siehe [Suche](#suche)) |
+| `tag`, `tags` | Tags von eztags (siehe [Tags](#tags)) |
 | `currentUser` | `id`, `login`, `name`, `anonymous`, `signedInBy` des Benutzers, als der die Anfrage läuft |
 | `siteaccess` | `name`, `languages`, `rootNodeId`, `schemaHash` |
 | `translations` | den Inhaltssprachen der Installation: `code` und `name` |
@@ -284,6 +287,7 @@ Wählen Sie den Stil, bevor Clients sich darauf verlassen: Die Abfragen eines Cl
 | `ezenum` | `[EnumValue!]!`: `element`, `value` |
 | `ezsubtreesubscription` | `Boolean` |
 | `ezproductcategory` | `String`: der Name der Kategorie |
+| `eztags` | `[Tag!]!`, solange eztags aktiv ist ([Tags](#tags)) |
 | ein Datentyp einer [Schema-Erweiterung](#schema-erweiterungen) | der Typ, den die Erweiterung ihm gibt |
 | jeder andere Datentyp | `String`: die Textform des Felds (`toString()`) |
 
@@ -472,6 +476,35 @@ Wörtern, braucht also einen Text, Solr findet auch nach Filtern allein. `limit`
 bei jeder Liste, `totalCount` ist, was die Suchmaschine zählt, `engine` nennt die Suchmaschine, die geantwortet hat,
 und `facets` liefert jede verlangte Facette mit ihren Werten: `{ field values { value name count } }`. Die Suche läuft
 einmal für alle ihre Felder, und die URL-Aliasse ihrer Seite entstehen zusammen, wie bei jeder Liste.
+
+### Tags
+
+Solange eztags aktiv ist, fügt seine Schema-Erweiterung (`expGraphQLTagsExtension`, standardmäßig in
+`SchemaExtensionList[]`) die Abfragen `tag` und `tags` hinzu, und jedes `eztags`-Feld eines Inhalts ist eine Liste von
+`Tag`:
+
+```graphql
+{
+  tag(path: "Topics/Asian") {            # oder id: 42, oder remoteId: "..."
+    id keyword url childrenCount
+    parent { keyword }
+    path { keyword }                     # von oben bis zum Elterntag
+    synonyms { keyword }
+    content(classes: ["ng_recipe"], limit: 10) { totalCount nodes { name url } }
+  }
+  tags(parentId: 0, limit: 20) { id keyword }   # die obersten Tags; keyword: "Pasta" findet nach Schlagwort
+  node(urlAlias: "recipes/pad-thai") { ... on ng_recipe { tags { keyword url } } }
+}
+```
+
+- `Tag`: `id`, `keyword` (in der Übersetzung von `language`, sonst der Hauptübersetzung), `remoteId`, `parentId`,
+  `mainTagId`, `isSynonym`, `depth`, `pathString`, `modified`, `languages`, `url` (die Seite des Tags, `tags/view/...`),
+  `parent`, `mainTag`, `path`, `children(limit, offset)`, `childrenCount`, `synonyms` und `content`: die Inhalte, die mit
+  dem Tag oder einem seiner Synonyme getaggt sind, irgendwo unterhalb der Wurzel des Siteaccess, eine Liste wie jede
+  Liste (`classes`, `sortField`, `limit`, `first`/`after` ...), so wie der Benutzer sie lesen darf.
+- Die Elterntags, Haupttags und Pfade einer Ebene werden in einem Stapel gelesen.
+- `tag` und `tags` antworten nur einem Benutzer mit der Richtlinie `tags/read` (sonst `null` und `[]`); die Tags des
+  Felds eines Inhalts gehören zum Inhalt und brauchen keine eigene Richtlinie.
 
 ### Sprachen
 
@@ -900,7 +933,6 @@ seiner Erweiterungen. Spätere Phasen sollen hinzufügen, noch ohne Termine:
 
 - **Mutationen**: Inhalte anlegen, bearbeiten, veröffentlichen und entfernen, mit denselben Richtlinien wie in der
   Administration.
-- **Tags**: `eztags` als eigener Typ, und Listen nach Tag.
 - **Layouts**: die Layouts, Zonen und Blöcke des Seitenbaukastens.
 - **Webhooks**: ein Aufruf an ein anderes System, wenn sich Inhalte ändern.
 - **Subscriptions**: Änderungen, die einem Client gleich beim Geschehen zugestellt werden.
