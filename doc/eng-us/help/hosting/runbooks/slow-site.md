@@ -4,7 +4,7 @@ audience: hosting, admin
 category: hosting
 order: 30
 summary: What to do when an Exponential site is slow: measure first with exp:benchmark, separate cold from warm, check the caches, OPcache, workers or PHP-FPM children, the database and the request logs, then apply the levers in order of effect.
-keywords: runbook, slow site, performance, latency, benchmark, exp:benchmark, cache, view cache, response cache, OPcache, PHP-FPM, workers, database, SQLite ANALYZE, warm, static cache
+keywords: runbook, slow site, performance, latency, benchmark, exp:benchmark, cache, view cache, response cache, OPcache, PHP-FPM, workers, database, SQLite ANALYZE, warm, static cache, crawler, bots, LiteSpeed, page cache
 type: help
 ---
 # Runbook: slow site
@@ -49,7 +49,7 @@ php bin/php/console exp:benchmark --baseline=var/benchmark/base.json --threshold
 | Only the first request after a change is slow | caches being rebuilt after a clear or a deploy: normal, warm them |
 | Only signed-in users (editors) are slow | they bypass the anonymous caches; check the database and OPcache |
 | One page slow | that page's template or fetch; check its log lines |
-| Slow at certain times | a cron job, a backup, an import, or a crawler; check the request logs and cron times |
+| Slow at certain times | a cron job, a backup, an import, or a crawler; check the request logs and cron times ([slow under crawlers](#slow-under-crawlers-and-bots)) |
 
 ## Checks in order
 
@@ -85,6 +85,22 @@ From 10.12:
 6. **The database** tuning of [chapter 9](../../../install/09-databases.md).
 
 Change one lever at a time and measure again with the baseline.
+
+### Slow under crawlers and bots
+
+When the slow times match bursts of crawlers (search engines, AI crawlers, SEO tools; the access log shows many
+anonymous requests from a few user agents within a minute), the cheapest fix is a cache that answers anonymous pages
+without PHP:
+
+- **Velocity:** its response cache does this out of the box.
+- **LiteSpeed or OpenLiteSpeed:** the server's page cache, switched on with the commented block of `.htaccess_root` or
+  the same rules in the virtual host, no plugin needed:
+  [Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md#crawlers-and-bots).
+- **Apache or nginx:** cacheable headers for anonymous visitors and a caching proxy in front
+  ([HTTP cache headers](../performance/http-cache-headers.md), [Varnish and reverse proxies](../performance/varnish-and-reverse-proxies.md)),
+  or the role-aware HTTP cache.
+
+`robots.txt` can slow polite crawlers down; it does nothing against the others.
 
 ## After the incident
 

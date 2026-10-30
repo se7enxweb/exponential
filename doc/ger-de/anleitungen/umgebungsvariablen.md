@@ -17,6 +17,7 @@ Deployment-Pipeline konfigurieren.
 > Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
 > [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](seiten-cache-mit-litespeed.md).
 
 Exponential wird über seine INI-Dateien (`settings/`) konfiguriert und, für einige Dinge, die bekannt sein müssen,
 bevor die Einstellungen gelesen werden, über Konstanten in `config.php` und `config.env.php` (`EXP_ENV`,

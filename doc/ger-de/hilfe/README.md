@@ -103,6 +103,7 @@ Für Administratoren und Entwickler, die die Maschine und die Datenbank einer Si
 |---|---|
 | [Datenbankunterstützung](datenbankunterstuetzung.md) | Eine Datenbank unter den unterstützten wählen, in ihrer offiziellen Reihenfolge (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), und wissen, was jede braucht |
 | [Betriebssystemunterstützung](betriebssystemunterstuetzung.md) | Prüfen, ob ein Betriebssystem, ein Prozessor und ein Webserver Exponential ausführen können, von Linux bis Windows und darüber hinaus |
+| [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../anleitungen/seiten-cache-mit-litespeed.md) | Eine Website auf einem LiteSpeed- oder OpenLiteSpeed-Server für anonyme Besucher und Crawler schnell machen: Der Server antwortet aus gespeicherten Seiten ohne PHP, ohne Plugin und ohne Code |
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück

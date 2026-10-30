@@ -25,6 +25,7 @@ combination before you sell it.
 > test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
 > [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](plesk.md), [cPanel](cpanel.md), [DirectAdmin](directadmin.md), [ISPConfig](ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md).
 
 > **Note**
 > The Exponential sources describe no DirectAdmin screens, menus or file locations. This page refers to panel features
@@ -116,6 +117,8 @@ Report a successful run to the project so the tier can move up ([The four tiers]
 - [ ] Document root, `.htaccess` and database ready.
 - [ ] Cron and certificate set up.
 - [ ] The test plan passed, including the isolation test.
+
+**The LiteSpeed page cache on DirectAdmin.** With LiteSpeed as the web server, its page cache answers anonymous visitors and crawlers without PHP. Switch it on per site with the commented block of `.htaccess_root` in the domain's `.htaccess`, or paste [`litespeed-page-cache.conf`](../../../examples/web-servers/litespeed-page-cache.conf) into Custom HTTPD Configurations for the domain. Step by step: [Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md#directadmin).
 
 ## Related pages
 

@@ -28,6 +28,7 @@ HTTPS, HTTP/2, eine Weiterleitung auf Port 80 und die Sicherheits-Header. Vergle
 > Dieselben Regeln für andere Server: [nginx](nginx.md), [LiteSpeed](litespeed.md), [Caddy](caddy.md), [IIS](iis.md),
 > [Velocity](velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../../hilfe/hosting/control-panels/plesk.md), [cPanel](../../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../../hilfe/hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../anleitungen/seiten-cache-mit-litespeed.md).
 
 nginx liest `.htaccess` nie, deshalb schützt `./console exp:setup:htaccess --apply` eine nginx-Site nicht: Das tun die
 Regeln unten. Nützlich ist die Konsole trotzdem: `./console exp:setup:config --apply` bringt `config.php` an ihren

@@ -26,6 +26,7 @@ die Update-Dateien Version für Version finden Sie in [Kapitel 11](11-aktualisie
 > Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
 > [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../anleitungen/seiten-cache-mit-litespeed.md).
 
 [Inhalt](README.md) · Zurück: [14. Migration von der 4.x-Linie](14-migration-von-4x.md) · Weiter: [16. Migration von eZ Platform und Ibexa](16-migration-von-ez-platform-und-ibexa.md)
 

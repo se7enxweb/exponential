@@ -25,6 +25,7 @@ rewrite rules of `.htaccess_root`, request filtering and the security headers.
 > test the site. The same rules for other servers: [nginx](nginx.md), [LiteSpeed](litespeed.md),
 > [Caddy](caddy.md), [IIS](iis.md), [Velocity](velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../../help/hosting/panels/plesk.md), [cPanel](../../help/hosting/panels/cpanel.md), [DirectAdmin](../../help/hosting/panels/directadmin.md), [ISPConfig](../../help/hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../guides/litespeed-page-cache.md).
 
 > **Note:** This example is derived, not tested on IIS: it was checked for well-formed XML only (`xmllint`). Its
 > rewrite rules are `.htaccess_root`'s, whose behavior was tested in Apache and nginx. Test it on your server with the

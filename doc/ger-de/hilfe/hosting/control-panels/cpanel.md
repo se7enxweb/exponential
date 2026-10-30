@@ -27,6 +27,7 @@ allgemeinen Ratschlägen.
 > Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
 > [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](plesk.md), [cPanel](cpanel.md), [DirectAdmin](directadmin.md), [ISPConfig](ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md).
 
 > **Hinweis**
 > Die Quellen von Exponential beschreiben keine Bildschirme oder Menüs von cPanel. Wo diese Seite eine Funktion des Panels nennt,
@@ -143,6 +144,8 @@ Projekt mit, und die Zeile rückt auf ([Die vier Stufen](../../betriebssystemunt
 - [ ] Der Testplan hat auf Ihrer Plattform bestanden.
 
 **Eine öffentliche Demo auf cPanel.** Setzen Sie `EXP_DEMO_MODE=1` nur für das Konto der Demo: `SetEnv EXP_DEMO_MODE 1` in der `.htaccess` der Website (Apache oder LiteSpeed) und `EXP_DEMO_MODE=1` in einer eigenen Zeile oben in den Cronjobs des Kontos. [Demomodus für Hoster](../sicherheit/demomodus-fuer-hoster.md), [Beispiele für den Demomodus](../../../beispiele/demomodus/README.md).
+
+**Der Seiten-Cache von LiteSpeed unter cPanel.** Mit LiteSpeed als Webserver beantwortet sein Seiten-Cache anonyme Besucher und Crawler ohne PHP. Schalten Sie ihn je Website mit dem auskommentierten Block aus `.htaccess_root` in der `.htaccess` des Kontos ein, oder als Include-Datei unter `/etc/apache2/conf.d/userdata/ssl/2_4/<user>/<domain>/` ([`litespeed-page-cache.conf`](../../../../eng-us/examples/web-servers/litespeed-page-cache.conf)). Schritt für Schritt: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md#cpanel-und-whm).
 
 ## Verwandte Seiten
 

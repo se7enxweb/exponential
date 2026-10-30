@@ -26,6 +26,7 @@ Kombination testen, bevor Sie sie verkaufen.
 > Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
 > [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](plesk.md), [cPanel](cpanel.md), [DirectAdmin](directadmin.md), [ISPConfig](ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md).
 
 > **Hinweis**
 > Die Quellen von Exponential beschreiben keine Bildschirme, Menüs oder Dateiorte von DirectAdmin. Diese Seite nennt Funktionen des
@@ -115,6 +116,8 @@ Melden Sie einen erfolgreichen Lauf dem Projekt, damit die Stufe aufrücken kann
 - [ ] Document Root, `.htaccess` und Datenbank bereit.
 - [ ] Cron und Zertifikat eingerichtet.
 - [ ] Der Testplan hat bestanden, einschließlich des Tests der Abschottung.
+
+**Der Seiten-Cache von LiteSpeed unter DirectAdmin.** Mit LiteSpeed als Webserver beantwortet sein Seiten-Cache anonyme Besucher und Crawler ohne PHP. Schalten Sie ihn je Website mit dem auskommentierten Block aus `.htaccess_root` in der `.htaccess` der Domain ein, oder fügen Sie [`litespeed-page-cache.conf`](../../../../eng-us/examples/web-servers/litespeed-page-cache.conf) in die Custom HTTPD Configurations der Domain ein. Schritt für Schritt: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md#directadmin).
 
 ## Verwandte Seiten
 

@@ -23,6 +23,7 @@ FrankenPHP is the Caddy web server with PHP built in, as one binary. There are t
 > test the site. The same rules for other servers: [nginx](nginx.md), [LiteSpeed](litespeed.md),
 > [Caddy](caddy.md), [IIS](iis.md), [Velocity](velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../../help/hosting/panels/plesk.md), [cPanel](../../help/hosting/panels/cpanel.md), [DirectAdmin](../../help/hosting/panels/directadmin.md), [ISPConfig](../../help/hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../guides/litespeed-page-cache.md).
 
 - **Through Velocity** (recommended): `exp:velocity` downloads and verifies the binary, writes the Caddyfile from
   `velocity.ini` on every start, validates it before use and drives the server with the same commands as its other

@@ -17,6 +17,7 @@ site. Allow ten to fifteen minutes. The install itself takes about a minute on S
 > test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
 > [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](litespeed-page-cache.md).
 
 Every command is run from the root of the installation (the directory that holds `console`, `index.php` and
 `settings/`). Commands that start with `./console` are the same programs as `php bin/php/<name>.php`.

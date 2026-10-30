@@ -24,6 +24,7 @@ This section has examples you can copy into a real installation. There are three
 > test the site. The same rules for other servers: [nginx](web-servers/nginx.md), [LiteSpeed](web-servers/litespeed.md),
 > [Caddy](web-servers/caddy.md), [IIS](web-servers/iis.md), [Velocity](web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../guides/litespeed-page-cache.md).
 
 - **[Web server examples](web-servers/README.md)**: complete configurations for Exponential Velocity, Apache
   (`.htaccess` and virtual host), nginx, Caddy, FrankenPHP, LiteSpeed, IIS and PHP-FPM. Each one routes requests

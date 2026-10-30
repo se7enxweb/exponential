@@ -29,6 +29,7 @@ statt als Release-Archive.
 > Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
 > [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](hosting/control-panels/plesk.md), [cPanel](hosting/control-panels/cpanel.md), [DirectAdmin](hosting/control-panels/directadmin.md), [ISPConfig](hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../anleitungen/seiten-cache-mit-litespeed.md).
 
 Nichts hier setzt voraus, dass Sie Experte sind. Jeder Schritt zeigt den einzugebenden Befehl und was Sie sehen
 sollten, und jeder Befehl auf dieser Seite wurde auf einem frischen Rechner ausprobiert, bevor er aufgeschrieben wurde.

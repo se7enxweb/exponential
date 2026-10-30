@@ -27,6 +27,7 @@ cron work there, and how Velocity runs beside Plesk.
 > test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
 > [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](plesk.md), [cPanel](cpanel.md), [DirectAdmin](directadmin.md), [ISPConfig](ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md).
 
 Every Plesk detail on this page comes from the Exponential sources cited inline. For anything else in Plesk, check
 Plesk's documentation.
@@ -232,6 +233,8 @@ The development server runs Velocity next to Plesk's Apache on the same installa
 - [ ] Web server logs added to the log viewer.
 
 **A public demo on Plesk.** Set `EXP_DEMO_MODE=1` for the demo's subscription only: `SetEnv EXP_DEMO_MODE 1` in its `.htaccess` (Apache or LiteSpeed) or its **Additional Apache directives**, or `env[EXP_DEMO_MODE] = 1` through the domain's PHP-FPM settings, and a `EXP_DEMO_MODE=1` line in its **Scheduled Tasks**. Plesk runs each PHP version with its own FPM master: reload the one of the domain's version. Step by step: [Recipe: run a public demo on LiteSpeed and Plesk](../servers/run-a-public-demo-on-litespeed-and-plesk.md).
+
+**The LiteSpeed page cache on Plesk.** With LiteSpeed as the web server, its page cache answers anonymous visitors and crawlers without PHP. Switch it on per site with the commented block of `.htaccess_root`, or paste [`litespeed-page-cache.conf`](../../../examples/web-servers/litespeed-page-cache.conf) into **Additional directives for HTTPS**. Never edit `/var/www/vhosts/system/<domain>/conf/vhost_ssl.conf` by hand: Plesk writes it again from the panel field whenever it regenerates the domain configuration. Step by step: [Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md#plesk).
 
 ## Related pages
 
