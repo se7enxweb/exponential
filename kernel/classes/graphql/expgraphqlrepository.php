@@ -36,6 +36,14 @@ class expGraphQLRepository
     }
 
     /**
+     * @return expGraphQLClassCatalogue the classes of the schema
+     */
+    public function catalogue()
+    {
+        return $this->catalogue;
+    }
+
+    /**
      * @param string $classIdentifier
      * @return bool the schema has a type for the class
      */
@@ -151,7 +159,7 @@ class expGraphQLRepository
      */
     protected function contentOfObject( $object, $language )
     {
-        if ( !$object instanceof eZContentObject || !$object->attribute( 'status' ) || !$object->canRead()
+        if ( !$object instanceof eZContentObject || (int)$object->attribute( 'status' ) !== eZContentObject::STATUS_PUBLISHED || !$object->canRead()
              || !$this->isExposed( (string)$object->attribute( 'class_identifier' ) ) )
             return null;
         $node = $object->attribute( 'main_node' );
@@ -292,7 +300,7 @@ class expGraphQLRepository
             if ( !$node instanceof eZContentObjectTreeNode )
                 continue;
             $object = $node->object();
-            if ( !$object instanceof eZContentObject || !$object->attribute( 'status' ) || !$node->canRead()
+            if ( !$object instanceof eZContentObject || (int)$object->attribute( 'status' ) !== eZContentObject::STATUS_PUBLISHED || !$node->canRead()
                  || !$this->isExposed( (string)$object->attribute( 'class_identifier' ) ) )
                 continue;
             $readable[(int)$object->attribute( 'id' )] = $node;

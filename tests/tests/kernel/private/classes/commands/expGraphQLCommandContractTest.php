@@ -56,7 +56,8 @@ class expGraphQLCommandContractTest extends PHPUnit\Framework\TestCase
                                   'Int', 'Float', 'String', 'Boolean', 'ID',
                                   'GeoLocation', 'Rating', 'Metadata', 'EnhancedLink', 'Option', 'OptionList', 'OptionGroup', 'Range',
                                   'CurrencyPrice', 'EnumValue', 'SearchResult', 'SearchFacet', 'SearchFacetValue', 'Tag', 'Layout',
-                                  'LayoutZone', 'LayoutBlock', 'LayoutBlockParameter' );
+                                  'LayoutZone', 'LayoutBlock', 'LayoutBlockParameter',
+                                  'Upload', 'FieldInput', 'FieldFormat', 'MutationStatus', 'ContentPayload', 'PreviewToken' );
 
     const SORT_FIELDS = array( 'PATH', 'PUBLISHED', 'MODIFIED', 'SECTION', 'DEPTH', 'CLASS_IDENTIFIER', 'CLASS_NAME', 'PRIORITY', 'NAME', 'NODE_ID' );
 

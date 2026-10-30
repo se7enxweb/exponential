@@ -28,7 +28,8 @@ class expGraphQLRestController extends ezpRestMvcController
 
         $request = expGraphQLServer::parseHttpRequest( $this->request->originalProtocol === 'http-get' ? 'GET' : 'POST',
                                                        isset( $_SERVER['CONTENT_TYPE'] ) ? (string)$_SERVER['CONTENT_TYPE'] : '',
-                                                       (string)$this->request->body, (array)$this->request->get, (array)$this->request->post );
+                                                       (string)$this->request->body, (array)$this->request->get, (array)$this->request->post,
+                                                       isset( $_FILES ) ? (array)$_FILES : array() );
         if ( isset( $request['error'] ) )
             return self::answer( 400, expGraphQLServer::refusal( $request['error'], expGraphQLError::BAD_USER_INPUT ) );
 
@@ -46,6 +47,7 @@ class expGraphQLRestController extends ezpRestMvcController
         $builder = expGraphQLSchemaBuilder::fromSettings();
         $context = new expGraphQLContext( $user, $mode, new expGraphQLRepository( $builder->catalogue() ), expGraphQLContext::requestBaseUrl() );
         $context->apiKeyId = $key !== null ? (int)$key->attribute( 'id' ) : null;
+        $context->apiKeyScopes = $key !== null ? $key->scopeList() : null;
         $http = ( new expGraphQLServer( $builder ) )->respond( $request, $context, $_SERVER );
         $result = new ezpRestMvcResult();
         $result->status = new expGraphQLRestResponse( $http['status'], $http['body'], $http['headers'] + $rateHeaders );

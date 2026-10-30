@@ -7,16 +7,17 @@ the content classes of the installation: every class is a type, every attribute 
 the installation, signed in with an OAuth token, a personal API key, the session of the administration, or as the
 anonymous user, and the roles and policies of that user decide what it may read, exactly as in the web interface.
 
-The API reads content (queries, persisted queries with a response cache, search, tags and layouts); it changes
-nothing. What later phases add is listed under
-[What comes next](#what-comes-next).
+The API reads content (queries, persisted queries with a response cache, search, tags and layouts) and, where
+[mutations](#mutations) are switched on, changes it with the same policies, workflows and audit as the
+administration. What later phases add is listed under [What comes next](#what-comes-next).
 
 | | |
 |---|---|
 | End point | `POST /api/graphql` (and `GET`) in each siteaccess; the session end point `POST /graphql/query` |
 | Off until | `settings/graphql.ini` `[GraphQLSettings] Enabled=enabled`, optionally for the siteaccesses of `SiteAccessList[]` |
 | Library | `webonyx/graphql-php` 15, required by the root `composer.json` |
-| Sign-in | an OAuth token, a personal API key with the scope `graphql:read`, the session (playground), or none (anonymous) |
+| Sign-in | an OAuth token, a personal API key with the scope `graphql:read` (and `graphql:write` for mutations), the session (playground), or none (anonymous) |
+| Mutations | off until `MutationsEnabled=enabled`; then policy-checked, workflows run, audited, `POST` only |
 | Rights | the user's roles and policies, always; the schema settings decide what can be asked at all |
 | Administration | Setup > GraphQL (policy `graphql/playground`): the end points, the schema and a playground |
 | Console | `exp:graphql:status`, `exp:graphql:schema`, `exp:graphql:query` |
@@ -29,16 +30,17 @@ nothing. What later phases add is listed under
 3. [Signing in](#signing-in)
 4. [The schema](#the-schema)
 5. [Queries, with examples](#queries-with-examples)
-6. [Persisted queries](#persisted-queries)
-7. [Security](#security)
-8. [Speed](#speed)
-9. [Errors](#errors)
-10. [The playground and the session end point](#the-playground-and-the-session-end-point)
-11. [Schema extensions](#schema-extensions)
-12. [Console commands](#console-commands)
-13. [The library](#the-library)
-14. [Settings](#settings)
-15. [What comes next](#what-comes-next)
+6. [Mutations](#mutations)
+7. [Persisted queries](#persisted-queries)
+8. [Security](#security)
+9. [Speed](#speed)
+10. [Errors](#errors)
+11. [The playground and the session end point](#the-playground-and-the-session-end-point)
+12. [Schema extensions](#schema-extensions)
+13. [Console commands](#console-commands)
+14. [The library](#the-library)
+15. [Settings](#settings)
+16. [What comes next](#what-comes-next)
 
 ## Quick start in 60 seconds
 
@@ -156,6 +158,8 @@ The REST layer reads the credentials, as for every route of `/api/`:
   still hold `content/read`. A key with only the scope `read` is refused at `/api/graphql`. Scope ids may now carry a
   namespace (`graphql:read`); see [API keys, Scopes](../../guides/api-keys.md#6-scopes). Send the key in the
   `Authorization` header: a key in the address is refused.
+- **The scope `graphql:write`.** A key that sends [mutations](#mutations) needs `graphql:write` as well
+  (`Scopes[graphql:write]=content/edit`); each mutation still checks the owner's policies on the content it changes.
 - **OAuth tokens** come from the REST interface's OAuth flow: [REST API v1 and v2](../../guides/rest-api-v1-and-v2.md).
 
 ## The schema
@@ -591,6 +595,139 @@ The page has no German translation, so it is read in English, and `language` say
 }
 ```
 
+## Mutations
+
+Mutations change content: create it, write a new version, translate it, publish a draft, remove it, move it, hide and
+reveal it, give it another location, upload images. They are **off until switched on**, per siteaccess:
+
+```ini
+# settings/siteaccess/<the siteaccess your front end writes through>/graphql.ini.append.php
+[GraphQLSettings]
+MutationsEnabled=enabled
+```
+
+While they are off, the schema has no type `Mutation` and a mutation is refused with `DISABLED`. Switched on, every
+mutation is held to the same rules as the administration:
+
+- **The policies of the user.** Each mutation checks the rights of the user it runs as on the content it changes:
+  `content/create` below the parent (for the class and the language), `content/edit` of the object (in the language),
+  `content/remove` of every location it removes, `content/edit` and `content/remove` of a location it moves and
+  `content/create` below the new parent, `content/hide`. Content the user may not read is answered `NOT_FOUND`, as a
+  query answers it as not there; content the user may read but not change is `FORBIDDEN`. A class the schema does not
+  show (the user accounts, `ExcludedClassList[]`) is never written, nor is a hidden field or datatype
+  (`HiddenFieldList[]`, `HiddenDatatypeList[]`: the user account, the password). A top-level location is never removed
+  or moved.
+- **The workflows.** A mutation runs the kernel's own operations, `content/publish`, `content/delete`, `content/move`,
+  `content/hide` and `content/addlocation`, so the workflows triggered on them run as they do in the administration.
+  A publish an approval workflow holds answers `PENDING`; one a workflow cancels answers `CANCELLED`.
+- **Who may send one.** A mutation is sent with `POST`, never `GET`. An anonymous request is refused (`FORBIDDEN`)
+  unless `AnonymousMutations=enabled`, and then the role Anonymous decides. A personal API key needs the scope
+  `graphql:write` besides `graphql:read` (`rest.ini Scopes[graphql:write]=content/edit`). The session end point
+  (the playground) needs the form token of the session in the header `X-CSRF-Token`, as every other `POST` of a
+  signed-in session. An OAuth token and the console (`exp:graphql:query --as=<login>`) need nothing more.
+- **The audit.** Every mutation is recorded as `content.graphql.mutation`: the mutation, how the request was signed
+  in, its request id, the API key, the identifiers of the fields written (never their values), the status and the ids
+  it changed. The kernel's own events of the change (`content.node.move`, `content.node.remove.trash` ...) are its
+  children. A refused or failed one is `content.graphql.mutation.failed`, with the reason (`anonymous`, `scope`,
+  `form_token`, `get`, `forbidden`, `not_found`, `bad_user_input` ...). Both are on by default; see
+  [the audit](../../bc/6.0/audit.md).
+- **The response cache.** A mutation that changed something expires the [response cache](#speed), and the answer of
+  a mutation is never kept.
+
+### The mutations
+
+| Mutation | Does |
+|---|---|
+| `createContent(parentId, classIdentifier, fields, language, remoteId, publish)` | creates content below a location and publishes it (`publish: false`: leaves a draft) |
+| `updateContent(id, fields, language, publish)` | writes the fields given into a new version (the others keep their value) and publishes it, or leaves a draft |
+| `translateContent(id, language, fields, publish)` | adds a translation: a new version in the language, copied from the main language |
+| `publishDraft(id, version)` | publishes a draft (one of the user's, or one the user may read and edit) |
+| `deleteContent(id \| nodeId, trash)` | removes one location (`nodeId`) or every location of an object (`id`); to the trash unless `trash: false` |
+| `moveContent(nodeId, newParentId)` | moves a location below another |
+| `hideContent(nodeId)`, `revealContent(nodeId)` | hides or reveals a location and the content below it |
+| `addLocation(id, parentId)` | places content at one more location |
+| `uploadImage(parentId, file, name, alt, classIdentifier, fieldIdentifier, nameIdentifier, language, publish)` | creates an image from a file sent with the request |
+| `uploadFromUrl(parentId, url, ...)` | creates an image from an `https` address on a host of `UploadFromUrlHostList[]` (imports; off while the list is empty) |
+| `createPreviewToken(id, version, language, ttl)` | a short-lived token to read a version (a draft) with `preview(token:)` |
+
+Each answers a `ContentPayload`: `status` (`PUBLISHED`, `DRAFT`, `PENDING`, `CANCELLED`, `DONE`, `TRASHED`,
+`DELETED`), `contentId`, `nodeId`, `version`, and `content`, the content as the user may now read it (a draft: that
+version). A mutation that fails answers `null` and an error; the mutations before it in the same request keep their
+answers, as the specification runs the fields of a mutation one after the other.
+
+### Fields: `FieldInput`
+
+A field is written by its attribute identifier (the admin's, whatever the [naming style](#naming-styles)) and its
+value in the string format of its datatype: the format of the CSV import and of `fromString()` (a text line as it is,
+an integer as digits, a date as a Unix time, a selection as its option names separated by `|`, a relation list as
+object ids separated by `-` ...). A rich text field (`ezxmltext`) also takes `format: TEXT` (plain text, a paragraph per block of text parted
+by an empty line) or `format: HTML` (simple HTML: `p`, `h1` to `h6`, `strong`, `em`, `a`, lists, tables; markup it
+does not know is dropped). A new object needs every required field.
+
+```graphql
+mutation {
+  createContent(parentId: 2, classIdentifier: "folder", fields: [
+    { identifier: "name", value: "News" },
+    { identifier: "short_description", value: "What happens.\n\nAnd why.", format: TEXT }
+  ]) {
+    status contentId nodeId
+    content { name url }
+  }
+}
+```
+
+```json
+{ "data": { "createContent": { "status": "PUBLISHED", "contentId": 59338, "nodeId": 57446,
+                               "content": { "name": "News", "url": "/news" } } } }
+```
+
+A draft first, a look at it, then publish it:
+
+```graphql
+mutation { updateContent(id: 59338, fields: [{ identifier: "name", value: "News and stories" }], publish: false) { status version } }
+mutation { createPreviewToken(id: 59338, version: 2, ttl: 600) { token expires } }
+mutation { publishDraft(id: 59338, version: 2) { status content { name } } }
+```
+
+### Files: multipart requests
+
+A field of a file (`ezimage`, `ezbinaryfile`, `ezmedia` and the datatypes of `FileDatatypeList[]`) takes a file sent
+with the request, never a value: a path in a value would let a client import any file of the server. The file comes by
+the [GraphQL multipart request specification](https://github.com/jaydenseric/graphql-multipart-request-spec), which
+Apollo Client (`apollo-upload-client`), urql and graphql-request send: a `POST` of `multipart/form-data` with the
+field `operations` (the JSON request), the field `map` (which file goes to which variable) and the files.
+
+```bash
+curl https://example.com/api/graphql -H 'Authorization: Bearer <token>' \
+  -F operations='{"query":"mutation ($f: Upload!) { uploadImage(parentId: 52, file: $f, alt: \"The harbour\") { status contentId content { name } } }","variables":{"f":null}}' \
+  -F map='{"0":["variables.f"]}' \
+  -F 0=@harbour.jpg
+```
+
+A file in a `FieldInput` goes to `variables.<variable>.<n>.upload` the same way. The scalar `Upload` takes only such a
+file; a string is refused. Before a file is stored it is checked: `MaxUploadSize` (32 MiB by default; PHP's
+`upload_max_filesize` and `post_max_size` stop a larger request earlier), a file PHP did not receive whole, and every
+check of `UploadCheckList[]`, classes implementing `expGraphQLUploadCheck` (a virus scanner, a filter of file types).
+The first check that gives a reason refuses the file with it; a check that is missing refuses every file, so a scanner
+that was removed never lets files through unchecked. The file is stored under its name with only letters, digits,
+`-`, `_` and `.`; the image aliases are made as for an image uploaded in the administration.
+
+`uploadFromUrl` fetches a file the server reads itself, for imports: `https` only, from a host of
+`UploadFromUrlHostList[]` (exactly; empty: switched off), without redirects, at most `MaxUploadSize`.
+
+### Drafts and preview tokens
+
+`content(id:, version:)` reads a version of an object (a draft, an archived version) for a user who may: a draft of
+the user's own, or with `content/versionread`. `createPreviewToken` makes a token for one version in one language,
+valid `PreviewTokenTtl` seconds (3600 by default, at most `MaxPreviewTokenTtl`); `preview(token:)` reads that version
+with it, also without signing in, so a front end can show an editor the page before it is published. A token is
+signed with the installation's secret key (`EXP_SECRET_KEY` or `var/secrets/exp_secret.key`), needs no table, and is
+refused (`FORBIDDEN`) once it has expired, when it was changed, or when the secret key was rotated.
+
+```graphql
+{ preview(token: "exp1.eyJvIjo1OTMzOC...") { name ... on folder { short_description { html } } } }
+```
+
 ## Persisted queries
 
 A persisted query is stored on the server and called by an id instead of its text: the address stays short, the
@@ -666,7 +803,10 @@ the server stores it when the request may store queries (`AutomaticPersistedQuer
   [Velocity](velocity-web-server.md) worker counts the same requests, with no database connection. The playground
   counts per user; the console is not limited. A load test from one address needs `RateLimitAnonymous=0` (or a token)
   on the siteaccess it measures.
-- **Read only.** There are no mutations yet: nothing a query does changes content.
+- **Changes only where switched on.** A query never changes content. [Mutations](#mutations) are off until
+  `MutationsEnabled=enabled` in a siteaccess; then they are `POST` only, refused for anonymous requests
+  (`AnonymousMutations`), for a key without `graphql:write` and for a session without its form token, checked against
+  the user's policies, run through the kernel's operations and their workflows, and recorded in the audit.
 - **No caching across rights.** An ad-hoc answer is `private, no-store`, never kept. The answer of a persisted query is
   kept per user rights (the user's roles and the values of its limited role assignments, as the view cache keys
   them), so a user never gets an answer made for other rights; an answer that names the user (`currentUser`) is not
@@ -770,13 +910,14 @@ An error follows the GraphQL specification, with `extensions.code` and `extensio
 | `DEPTH_LIMIT` | deeper than `MaxDepth` |
 | `COMPLEXITY_LIMIT` | more complex than `MaxComplexity` |
 | `INTROSPECTION_DISABLED` | the request may not read the schema (`Introspection`) |
-| `DISABLED` | the API is switched off in this siteaccess (HTTP 404) |
+| `DISABLED` | the API is switched off in this siteaccess (HTTP 404), or a mutation where mutations are off |
+| `FORBIDDEN` | a mutation the request may not send (anonymous, a key without `graphql:write`, a session without its form token), a change the user's policies do not allow, or a preview token that is not valid |
+| `NOT_FOUND` | a mutation on content that is not there or that the user may not read (a query answers such content `null`) |
 | `INTERNAL` | an error of the code, or the library is missing (HTTP 503) |
 | `PERSISTED_QUERY_NOT_FOUND` | no persisted query has this id or hash (the message is `PersistedQueryNotFound`, as Apollo Client expects) |
 | `PERSISTED_QUERY_NOT_SUPPORTED` | persisted queries are switched off (`PersistedQueries=disabled`; the message is `PersistedQueryNotSupported`) |
 | `PERSISTED_QUERY_REQUIRED` | an ad-hoc query where only persisted queries are accepted (`PersistedQueriesOnly`) |
 | `RATE_LIMITED` | over the rate limit (HTTP 429, with `Retry-After`) |
-| `FORBIDDEN`, `NOT_FOUND` | reserved for later phases; not sent yet (content that cannot be read is `null`) |
 
 The codes are a stable contract: a code, once released, keeps its name and meaning, and new codes are only added.
 
@@ -939,12 +1080,14 @@ The API keeps no state between requests (only the fact that the library is loade
 `HiddenFieldList[]`, `HiddenDatatypeList[]`, `Introspection`, `MaxDepth`, `MaxComplexity`, `MaxListLimit`,
 `DefaultListLimit`, `PersistedQueries`, `AutomaticPersistedQueries`, `MaxPersistedQueries`, `PersistedQueriesOnly`,
 `PersistedQueryDirectoryList[]`, `MaxQueryLength`, `ResponseCache`, `ResponseCacheTtl`, `CredentialCacheTtl`, `RateLimit`,
-`RateLimitAnonymous`, `RateLimitWindow`, `SchemaExtensionList[]`, `ImageAliasList[]`, `Debug`) and [[GraphQLNaming]](../../examples/ini-settings/graphql/GraphQLNaming.md)
+`RateLimitAnonymous`, `RateLimitWindow`, `SchemaExtensionList[]`, `ImageAliasList[]`, `MutationsEnabled`,
+`AnonymousMutations`, `MaxUploadSize`, `UploadCheckList[]`, `FileDatatypeList[]`, `UploadFromUrlHostList[]`,
+`PreviewTokenTtl`, `MaxPreviewTokenTtl`, `Debug`) and [[GraphQLNaming]](../../examples/ini-settings/graphql/GraphQLNaming.md)
 (`TypeNames[]`, `FieldNames[]`). Never edit the shipped file: put changes in `settings/override/graphql.ini.append.php`
 or a siteaccess's `graphql.ini.append.php`.
 
 In `settings/rest.ini`: `[ApiProvider] ProviderClass[graphql]=expGraphQLRestProvider` (the route `/api/graphql`;
-a provider's address now works without a slash after it), `[ApiKeySettings] Scopes[graphql:read]` and
+a provider's address now works without a slash after it), `[ApiKeySettings] Scopes[graphql:read]`, `Scopes[graphql:write]` and
 `RouteScopes[expGraphQLRestController_query]`, `[RouteSettings] OptionalAuthentication[]` and
 `[expGraphQLRestController_CacheSettings]`. The module `graphql` is in `module.ini [ModuleSettings] ModuleList[]`, its
 views and policies are listed in [module views](../../examples/module-views/graphql/README.md) and
@@ -952,10 +1095,9 @@ views and policies are listed in [module views](../../examples/module-views/grap
 
 ## What comes next
 
-The API reads content: queries, persisted queries with their response cache, search, tags, layouts, and the datatypes
-of the kernel and its extensions. Later phases are planned to add, without dates yet:
+The API reads content (queries, persisted queries with their response cache, search, tags, layouts, and the datatypes
+of the kernel and its extensions) and changes it with mutations. Later phases are planned to add, without dates yet:
 
-- **Mutations**: creating, editing, publishing and removing content, with the same policies as the administration.
 - **Dynamic collections**: the items of a block's query, as the page renders them.
 - **Webhooks**: a call to another system when content changes.
 - **Subscriptions**: changes pushed to a client as they happen.

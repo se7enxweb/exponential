@@ -1,0 +1,30 @@
+{
+    "ini:settings/graphql.ini [GraphQLSettings] AnonymousMutations": {
+        "en": "Mutations of anonymous requests (they run with the Anonymous role's policies): disabled (the default) refuses\nthem with FORBIDDEN; enabled lets them through to the policy checks (a guest book, a form that creates content).",
+        "de": "Mutationen anonymer Anfragen (sie laufen mit den Richtlinien der Rolle Anonymous): disabled (der Standard) lehnt\nsie mit FORBIDDEN ab; enabled lässt sie zu den Richtlinienprüfungen durch (ein Gästebuch, ein Formular, das Inhalte anlegt)."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] FileDatatypeList": {
+        "en": "Datatypes whose value is a file, besides ezimage, ezbinaryfile and ezmedia: a FieldInput writes them with an\nupload only, never with a value (a path in a value could import any file of the server).",
+        "de": "Datentypen, deren Wert eine Datei ist, neben ezimage, ezbinaryfile und ezmedia: Ein FieldInput schreibt sie nur mit\neinem Upload, nie mit einem Wert (ein Pfad in einem Wert könnte jede Datei des Servers importieren)."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] MaxUploadSize": {
+        "en": "The largest file a mutation accepts (uploadImage, a FieldInput upload, uploadFromUrl), in bytes or with k, M, G.\nPHP's own upload_max_filesize and post_max_size limit a request before it gets here.",
+        "de": "Die größte Datei, die eine Mutation annimmt (uploadImage, ein Upload in einem FieldInput, uploadFromUrl), in Bytes oder mit k, M, G.\nupload_max_filesize und post_max_size von PHP begrenzen eine Anfrage, bevor sie hier ankommt."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] MutationsEnabled": {
+        "en": "Mutations (createContent, updateContent, translateContent, publishDraft, deleteContent, moveContent, hideContent,\nrevealContent, addLocation, uploadImage, uploadFromUrl, createPreviewToken): enabled or disabled (the default).\nDisabled: the schema has no type Mutation and a mutation is refused with DISABLED. Enabled: each mutation checks\nthe policies of the user on the content it changes, runs the kernel's operations (the workflows of content/publish,\ncontent/move ... included), is recorded in the audit (content.graphql.mutation) and expires the response cache.\nA mutation is sent with POST only; with a personal API key it needs the scope graphql:write; with the session of\nthe web interface it needs the form token (header X-CSRF-Token). Switch it on per siteaccess, for the siteaccess\na front end writes through.",
+        "de": "Mutationen (createContent, updateContent, translateContent, publishDraft, deleteContent, moveContent, hideContent,\nrevealContent, addLocation, uploadImage, uploadFromUrl, createPreviewToken): enabled oder disabled (der Standard).\nDisabled: Das Schema hat keinen Typ Mutation, und eine Mutation wird mit DISABLED abgelehnt. Enabled: Jede Mutation prüft\ndie Richtlinien des Benutzers an dem Inhalt, den sie ändert, führt die Operationen des Kernels aus (samt den Workflows von\ncontent/publish, content/move ...), wird im Audit aufgezeichnet (content.graphql.mutation) und lässt den Antwort-Cache verfallen.\nEine Mutation wird nur mit POST gesendet; mit einem persönlichen API-Schlüssel braucht sie den Bereich graphql:write; mit der\nSitzung der Weboberfläche braucht sie das Formular-Token (Header X-CSRF-Token). Schalten Sie sie je Siteaccess ein, für den\nSiteaccess, über den ein Frontend schreibt."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] PreviewTokenTtl": {
+        "en": "Preview tokens (createPreviewToken, the query preview(token:)): the seconds a token is valid when the mutation\ndoes not say, and the longest it may ask for. The tokens are signed with the installation's secret key\n(EXP_SECRET_KEY or var/secrets/exp_secret.key); rotating it ends every token.",
+        "de": "Vorschau-Token (createPreviewToken, die Abfrage preview(token:)): die Sekunden, die ein Token gilt, wenn die Mutation\nnichts angibt, und das Längste, das sie verlangen darf. Die Token sind mit dem geheimen Schlüssel der Installation signiert\n(EXP_SECRET_KEY oder var/secrets/exp_secret.key); ihn zu rotieren beendet jedes Token."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] UploadCheckList": {
+        "en": "Checks every uploaded file passes before it is stored: classes implementing expGraphQLUploadCheck (a virus\nscanner, a type filter). The first that gives a reason refuses the file; a class that is missing refuses every\nfile. UploadCheckList[]=myClamAvUploadCheck",
+        "de": "Prüfungen, die jede hochgeladene Datei besteht, bevor sie gespeichert wird: Klassen, die expGraphQLUploadCheck implementieren\n(ein Virenscanner, ein Filter für Dateitypen). Die erste, die einen Grund nennt, lehnt die Datei ab; eine fehlende Klasse\nlehnt jede Datei ab. UploadCheckList[]=myClamAvUploadCheck"
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] UploadFromUrlHostList": {
+        "en": "The hosts uploadFromUrl may fetch files from (https only, no redirects, at most MaxUploadSize). Empty (the\ndefault): uploadFromUrl is switched off. UploadFromUrlHostList[]=images.example.com",
+        "de": "Die Hosts, von denen uploadFromUrl Dateien holen darf (nur https, keine Weiterleitungen, höchstens MaxUploadSize). Leer\n(der Standard): uploadFromUrl ist ausgeschaltet. UploadFromUrlHostList[]=images.example.com"
+    }
+}

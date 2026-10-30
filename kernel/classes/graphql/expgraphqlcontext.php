@@ -52,6 +52,83 @@ class expGraphQLContext
     /** @var int|null the id of the personal API key the request was signed in with */
     public $apiKeyId = null;
 
+    /** @var string[]|null the scopes of that key (graphql:read, graphql:write ...) */
+    public $apiKeyScopes = null;
+
+    /** @var string|null GET or POST: the HTTP method of the request (null: the console) */
+    public $httpMethod = null;
+
+    /** @var bool a request of a session sent the form token of the session (X-CSRF-Token): it may run mutations */
+    public $formTokenChecked = false;
+
+    /** @var string|null query, mutation or subscription: the operation the request runs, once it is known */
+    public $operationType = null;
+
+    /** @var expGraphQLWriter|null how mutations change content, made when first asked for */
+    public $writer = null;
+
+    /** @var callable|null function( string $name, array $data ): string|null, records a mutation (null: expAudit) */
+    public $auditor = null;
+
+    /** @var callable|null function(): void, expires the response cache after a mutation (null: the installation's) */
+    public $cacheExpirer = null;
+
+    /** @var expGraphQLPreviewToken|null the preview tokens (null: the installation's) */
+    public $previewTokens = null;
+
+    /**
+     * @return expGraphQLWriter
+     */
+    public function writer()
+    {
+        if ( $this->writer === null )
+            $this->writer = new expGraphQLWriter( $this->repository, $this->repository->catalogue(), $this->user );
+        return $this->writer;
+    }
+
+    /**
+     * @return expGraphQLPreviewToken|null
+     */
+    public function previewTokens()
+    {
+        if ( $this->previewTokens === null )
+            $this->previewTokens = expGraphQLPreviewToken::fromSettings();
+        return $this->previewTokens;
+    }
+
+    /**
+     * Records an event of a mutation in the audit (begin, end, or a whole refused one).
+     *
+     * @param string $action begin, end or event
+     * @param string $name the audit name (content.graphql.mutation ...)
+     * @param array $data
+     * @param string|null $id the event begin() made (end)
+     * @return string|null
+     */
+    public function audit( $action, $name, array $data, $id = null )
+    {
+        if ( $this->auditor !== null )
+            return call_user_func( $this->auditor, $action, $name, $data, $id );
+        if ( !class_exists( 'expAudit' ) )
+            return null;
+        if ( $action === 'begin' )
+            return expAudit::begin( $name, $data );
+        if ( $action === 'end' )
+            return expAudit::end( $id, $data );
+        return expAudit::event( $name, $data );
+    }
+
+    /**
+     * Expires the response cache: a mutation changed content that cached answers may show.
+     */
+    public function expireCache()
+    {
+        if ( $this->cacheExpirer !== null )
+            call_user_func( $this->cacheExpirer );
+        else
+            expGraphQLResponseCache::expireIfAvailable();
+    }
+
     /** @var string|null the rights of the user as a hash (expGraphQLResponseCache::roleHash()), made when first asked for */
     public $roleHash = null;
 

@@ -553,11 +553,14 @@ class expGraphQLResponseCache
      * @param array $answer
      * @param string $query
      * @param bool $signedIn
+     * @param string|null $operation the operation that ran (query, mutation): the answer of a mutation is never kept
      * @return bool
      */
-    public static function storable( array $answer, $query, $signedIn )
+    public static function storable( array $answer, $query, $signedIn, $operation = null )
     {
         if ( !empty( $answer['errors'] ) || !isset( $answer['data'] ) )
+            return false;
+        if ( $operation === 'mutation' || ( $operation === null && preg_match( '/^\s*mutation\b/m', (string)$query ) ) )
             return false;
         return !$signedIn || !preg_match( '/\bcurrentUser\b/', (string)$query );
     }
