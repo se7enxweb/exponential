@@ -15073,6 +15073,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>同期</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: エンドポイント、スキーマ、クエリを試すためのプレイグラウンド。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78683,6 +78691,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>アカウント %login でセキュリティイベントが発生しました: %event。心当たりがない場合は、%url でアカウントを保護してください。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>システム設定</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>このサイトのコンテンツから、ページに必要なフィールドだけを1回のリクエストで取得します。スキーマはコンテンツクラスに従い、各クエリは送信したユーザーの権限で実行されます。</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>このサイトアクセスでは GraphQL API が無効になっています。graphql.ini で有効にしてください: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL ライブラリ (webonyx/graphql-php 15) がインストールされていません。</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>エンドポイント</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>ライブラリ</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>スキーマ</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count 個のコンテンツクラス、スキーマ %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>クエリ</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>変数 (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>実行</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>応答</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>実行中…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>応答を読み取れませんでした。</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>クエリは、このセッションでサインインしているあなたの権限で実行されます。</translation>
     </message>
 </context>
 </TS>

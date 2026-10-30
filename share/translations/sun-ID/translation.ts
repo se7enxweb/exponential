@@ -15134,6 +15134,14 @@ Catetan: Pakét moal dicabut pamasanganana.</translation>
         <source>Synchronisations</source>
         <translation>Sinkronisasi</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>API GraphQL: titik tungtungna, skéma sareng tempat pikeun nyobian kueri.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78661,6 +78669,73 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Aya kajadian kaamanan dina akun anjeun %login: %event. Upami sanés anjeun, amankeun akun anjeun di %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Panyetélan</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Pénta ti eusi situs ieu persis widang anu diperyogikeun ku hiji kaca, dina hiji pamundut. Skéma nuturkeun kelas eusi; unggal kueri dijalankeun ku hak pamaké anu ngirimkeunana.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>API GraphQL dipareuman dina aksés situs ieu. Hurungkeun dina graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Pustaka GraphQL (webonyx/graphql-php 15) teu acan dipasang.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Titik tungtung</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Pustaka</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Skéma</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count kelas eusi, skéma %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Kueri</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Variabel (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Jalankeun</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Jawaban</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Nuju dijalankeun…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Jawaban teu tiasa dibaca.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Kueri dijalankeun ku hak anjeun, asup ku sési ieu.</translation>
     </message>
 </context>
 </TS>

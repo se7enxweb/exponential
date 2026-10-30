@@ -15134,6 +15134,14 @@ Xamal ne: paket yi dootuñu ñu dindi samp.</translation>
         <source>Synchronisations</source>
         <translation>Yemale yi</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API bi: bërëbam bu mujj, tekki bi ak bërëb bu ñuy natte laaj yi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Am na xew-xewu kaaraange ci sa kont %login: %event. Su dee du yow, aaral sa kont ci %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Defar</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Laajal li nekk ci sit bii waaw yi xët bi soxla rekk, ci benn laaj. Tekki bi dafay topp xeeti li ci biir; laaj bu nekk dafay dox ak sañ-sañi jëfandikukat bi ko yónne.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API bi dañu ko fay ci buntu sit bii. Taal ko ci graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Bibliyotek GraphQL bi (webonyx/graphql-php 15) sampuñu ko.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Bërëb bu mujj</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Bibliyotek</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Tekki</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count xeeti li ci biir, tekki %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Laaj</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Yu soppiku (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Doxal</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Tontu</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Mi ngi dox…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Tontu bi mënuñu ko jàng.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Laaj bi dafay dox ak sa sañ-sañ, yaw mi dugg ci jamono jii.</translation>
     </message>
 </context>
 </TS>

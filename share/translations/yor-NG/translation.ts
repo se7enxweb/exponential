@@ -15132,6 +15132,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>Àwọn ìmúbáramu</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: ojú ìparí rẹ̀, schema náà àti ibi ìṣeré láti dán àwọn ìbéèrè wò.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78651,6 +78659,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Ìṣẹ̀lẹ̀ ààbò kan wáyé lórí àkáǹtì yín %login: %event. Bí kì í bá ṣe ẹ̀yin, ẹ dáàbò bo àkáǹtì yín ní %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ìgbékalẹ̀</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Béèrè àkóónú sáìtì yìí fún àwọn pápá tí ojú-ìwé kan nílò gangan, nínú ìbéèrè kan ṣoṣo. Schema náà ń tẹ̀lé àwọn kílásì àkóónú; ìbéèrè kọ̀ọ̀kan ń ṣiṣẹ́ pẹ̀lú ẹ̀tọ́ olùmúlò tí ó fi ránṣẹ́.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>A ti pa GraphQL API nínú ìwọlé sáìtì yìí. Tàn án nínú graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>A kò tíì fi ilé-ìkàwé GraphQL (webonyx/graphql-php 15) sórí ẹ̀rọ.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Ojú ìparí</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Ilé-ìkàwé</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Kílásì àkóónú %count, schema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Ìbéèrè</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Àwọn oníyípadà (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Ìdáhùn</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Ó ń ṣiṣẹ́…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>A kò lè ka ìdáhùn náà.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Ìbéèrè náà ń ṣiṣẹ́ pẹ̀lú ẹ̀tọ́ rẹ, o ti wọlé pẹ̀lú àkókò yìí.</translation>
     </message>
 </context>
 </TS>

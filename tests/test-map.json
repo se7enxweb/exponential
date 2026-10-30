@@ -2302,6 +2302,27 @@
     "kernel/private/classes/commands/exptemplateengines.php": [
       "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php"
     ],
+    "kernel/classes/graphql/*": [
+      "tests/tests/kernel/classes/graphql/expGraphQLSchemaTest.php",
+      "tests/tests/kernel/classes/graphql/expGraphQLRestTest.php",
+      "tests/tests/kernel/private/classes/commands/expGraphQLCommandContractTest.php"
+    ],
+    "kernel/private/classes/commands/expgraphql*": [
+      "tests/tests/kernel/private/classes/commands/expGraphQLCommandContractTest.php"
+    ],
+    "bin/php/expgraphql*": [
+      "tests/tests/kernel/private/classes/commands/expGraphQLCommandContractTest.php"
+    ],
+    "settings/graphql.ini": [
+      "tests/tests/kernel/classes/graphql/expGraphQLSchemaTest.php"
+    ],
+    "kernel/private/rest/classes/auth/auth_configuration.php": [
+      "tests/tests/kernel/classes/graphql/expGraphQLRestTest.php",
+      "tests/tests/kernel/private/restapi/ezpRestRouteSecurityTest.php"
+    ],
+    "kernel/private/rest/classes/default_regexp_prefix_filter.php": [
+      "tests/tests/kernel/classes/rest/ezpRestPrefixFilterTest.php"
+    ],
     "kernel/private/classes/commands/exptemplateconvertdiff.php": [
       "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php",
       "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php"

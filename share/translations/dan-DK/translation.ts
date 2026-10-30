@@ -15342,6 +15342,14 @@ Navigeringsdel</translation>
         <source>Synchronisations</source>
         <translation>Synkroniseringer</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL-API'et: dets endepunkt, skemaet og en legeplads til at afprøve forespørgsler.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79333,6 +79341,73 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Der var en sikkerhedshændelse på din konto %login: %event. Hvis det ikke var dig, så beskyt din konto på %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Opsætning</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Bed dette websteds indhold om præcis de felter, en side har brug for, i én forespørgsel. Skemaet følger indholdsklasserne; hver forespørgsel kører med rettighederne for den bruger, der sender den.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL-API'et er slået fra i denne siteaccess. Slå det til i graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL-biblioteket (webonyx/graphql-php 15) er ikke installeret.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Endepunkt</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Bibliotek</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Skema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count indholdsklasser, skema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Forespørgsel</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Variabler (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Kør</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Svar</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Kører…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Svaret kunne ikke læses.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Forespørgslen kører med dine rettigheder, logget ind med denne session.</translation>
     </message>
 </context>
 </TS>

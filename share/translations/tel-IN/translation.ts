@@ -15132,6 +15132,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>సింక్రనైజేషన్‌లు</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: దాని ఎండ్ పాయింట్, స్కీమా మరియు క్వెరీలను ప్రయత్నించడానికి ఒక ప్లేగ్రౌండ్.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78651,6 +78659,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>మీ ఖాతా %login పై ఒక భద్రతా ఈవెంట్ జరిగింది: %event. ఇది మీరు కాకపోతే, %url వద్ద మీ ఖాతాను సురక్షితం చేయండి.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>సెటప్</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>ఈ సైట్ కంటెంట్ నుండి ఒక పేజీకి కావలసిన ఫీల్డ్‌లను మాత్రమే కచ్చితంగా, ఒకే అభ్యర్థనలో అడగండి. స్కీమా కంటెంట్ క్లాస్‌లను అనుసరిస్తుంది; ప్రతి క్వెరీ దానిని పంపిన వినియోగదారు హక్కులతో నడుస్తుంది.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>ఈ సైట్‌యాక్సెస్‌లో GraphQL API ఆఫ్‌లో ఉంది. దీన్ని graphql.ini లో ఆన్ చేయండి: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL లైబ్రరీ (webonyx/graphql-php 15) ఇన్‌స్టాల్ చేయబడలేదు.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>ఎండ్ పాయింట్</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>లైబ్రరీ</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>స్కీమా</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count కంటెంట్ క్లాస్‌లు, స్కీమా %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>క్వెరీ</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>వేరియబుల్స్ (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>రన్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>సమాధానం</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>నడుస్తోంది…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>సమాధానాన్ని చదవలేకపోయాం.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>ఈ సెషన్‌తో సైన్ ఇన్ అయి, మీ హక్కులతో క్వెరీ నడుస్తుంది.</translation>
     </message>
 </context>
 </TS>

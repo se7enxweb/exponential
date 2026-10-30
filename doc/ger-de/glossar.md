@@ -133,6 +133,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 ## G
 
 - **git_manager**: Web-Admin-Werkzeuge für die Git-Seite einer Installation. [git_manager](funktionen/6.0/erweiterungen/git_manager.md).
+- **GraphQL**: eine Abfragesprache für APIs, in der der Client genau die Felder nennt, die er will; der Kernel beantwortet sie unter `/api/graphql`, mit einem aus den Inhaltsklassen erzeugten Schema und immer mit den Richtlinien des Benutzers. [Die GraphQL-API](funktionen/6.0/graphql.md).
 - **guide** (Anleitung): ein Tutorial, das Sie in wenigen Minuten zu einem funktionierenden Ergebnis führt. [Anleitungen](anleitungen/README.md).
 
 ## H

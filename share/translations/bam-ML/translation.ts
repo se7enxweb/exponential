@@ -15134,6 +15134,14 @@ Ko: pakew tɛna sigili bɔ.</translation>
         <source>Synchronisations</source>
         <translation>Ɲɔgɔnsuma</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: a donda yɔrɔ, sigicogo ani ɲɛnajɛyɔrɔ min bɛ ɲininkaliw lajɛ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Lakana kɛwale dɔ kɛra i ka konti %login kan: %event. Ni e tun tɛ, i ka konti lakana %url la.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Labɛnni</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Nin siti kɔnɔkow ɲininka yɔrɔ minnu ɲɛ bɛ mago don o dɔrɔn na, ɲininkali kelen kɔnɔ. Sigicogo bɛ kɔnɔko kuluw tugu; ɲininkali bɛɛ bɛ boli ni a cibaga ka sariyaw ye.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API sogolen don nin siti donda in na. A yɛlɛ graphql.ini kɔnɔ: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL gafebon (webonyx/graphql-php 15) ma sigi.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Donda yɔrɔ</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Gafebon</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Sigicogo</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Kɔnɔko kulu %count, sigicogo %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Ɲininkali</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Yɛlɛmatɔw (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Boli</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Jaabi</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>A bɛ boli…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Jaabi ma se ka kalan.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Ɲininkali bɛ boli ni i ka sariyaw ye, i donnen nin sesɔn in na.</translation>
     </message>
 </context>
 </TS>

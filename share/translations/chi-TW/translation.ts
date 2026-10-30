@@ -15132,6 +15132,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>同步</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API：其端點、結構描述以及試用查詢的測試環境。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78651,6 +78659,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>您的帳號 %login 發生了一個安全性事件：%event。如果不是您本人，請在 %url 保護您的帳號。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>設定</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>在一次請求中，從本網站內容精確取得頁面所需的欄位。結構描述依循內容類別；每個查詢都以送出它的使用者權限執行。</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>此網站存取已關閉 GraphQL API。請在 graphql.ini 中開啟：[GraphQLSettings] Enabled=enabled。</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>尚未安裝 GraphQL 程式庫（webonyx/graphql-php 15）。</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>端點</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>程式庫</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>結構描述</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count 個內容類別，結構描述 %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>查詢</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>變數（JSON）</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>執行</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>回應</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>執行中…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>無法讀取回應。</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>查詢以您的權限執行，使用目前的工作階段登入。</translation>
     </message>
 </context>
 </TS>

@@ -15132,6 +15132,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>ಸಿಂಕ್ರೊನೈಸೇಶನ್‌ಗಳು</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: ಅದರ ಎಂಡ್ ಪಾಯಿಂಟ್, ಸ್ಕೀಮಾ ಮತ್ತು ಕ್ವೆರಿಗಳನ್ನು ಪ್ರಯತ್ನಿಸಲು ಒಂದು ಪ್ಲೇಗ್ರೌಂಡ್.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78651,6 +78659,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>ನಿಮ್ಮ ಖಾತೆ %login ನಲ್ಲಿ ಒಂದು ಭದ್ರತಾ ಘಟನೆ ನಡೆದಿದೆ: %event. ಇದು ನೀವಲ್ಲದಿದ್ದರೆ, %url ನಲ್ಲಿ ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಸುರಕ್ಷಿತಗೊಳಿಸಿ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ಸೆಟಪ್</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>ಈ ಸೈಟ್‌ನ ವಿಷಯದಿಂದ ಒಂದು ಪುಟಕ್ಕೆ ಬೇಕಾದ ನಿಖರ ಫೀಲ್ಡ್‌ಗಳನ್ನು ಒಂದೇ ವಿನಂತಿಯಲ್ಲಿ ಕೇಳಿ. ಸ್ಕೀಮಾ ವಿಷಯ ವರ್ಗಗಳನ್ನು ಅನುಸರಿಸುತ್ತದೆ; ಪ್ರತಿಯೊಂದು ಕ್ವೆರಿ ಅದನ್ನು ಕಳುಹಿಸುವ ಬಳಕೆದಾರರ ಹಕ್ಕುಗಳೊಂದಿಗೆ ನಡೆಯುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>ಈ ಸೈಟ್‌ಆಕ್ಸೆಸ್‌ನಲ್ಲಿ GraphQL API ಆಫ್ ಆಗಿದೆ. ಅದನ್ನು graphql.ini ನಲ್ಲಿ ಆನ್ ಮಾಡಿ: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL ಲೈಬ್ರರಿ (webonyx/graphql-php 15) ಸ್ಥಾಪಿಸಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>ಎಂಡ್ ಪಾಯಿಂಟ್</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>ಲೈಬ್ರರಿ</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>ಸ್ಕೀಮಾ</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count ವಿಷಯ ವರ್ಗಗಳು, ಸ್ಕೀಮಾ %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>ಕ್ವೆರಿ</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>ವೇರಿಯಬಲ್‌ಗಳು (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ಚಾಲನೆ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>ಉತ್ತರ</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>ಚಾಲನೆಯಲ್ಲಿದೆ…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>ಉತ್ತರವನ್ನು ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>ಕ್ವೆರಿ ನಿಮ್ಮ ಹಕ್ಕುಗಳೊಂದಿಗೆ, ಈ ಸೆಷನ್‌ನಿಂದ ಸೈನ್ ಇನ್ ಆಗಿ ನಡೆಯುತ್ತದೆ.</translation>
     </message>
 </context>
 </TS>

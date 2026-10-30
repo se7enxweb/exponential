@@ -1,0 +1,110 @@
+{
+    "command:expgraphqlquery": {
+        "en": "Run a GraphQL query from the console, as a user of the installation (anonymous unless --as names one), and print the answer",
+        "de": "Führt eine GraphQL-Abfrage auf der Konsole aus, als ein Benutzer der Installation (anonym, wenn --as keinen nennt), und gibt die Antwort aus"
+    },
+    "command:expgraphqlquery --as": {
+        "en": "run as this user (a login); default: anonymous",
+        "de": "als dieser Benutzer ausführen (ein Login); Standard: anonym"
+    },
+    "command:expgraphqlquery --format": {
+        "en": "json (the default) or table (one line per value: its path and the value)",
+        "de": "json (der Standard) oder table (eine Zeile je Wert: sein Pfad und der Wert)"
+    },
+    "command:expgraphqlquery --operation": {
+        "en": "the operation to run when the query has several",
+        "de": "die auszuführende Operation, wenn die Abfrage mehrere hat"
+    },
+    "command:expgraphqlquery --variables": {
+        "en": "the variables, a JSON object",
+        "de": "die Variablen, ein JSON-Objekt"
+    },
+    "command:expgraphqlschema": {
+        "en": "Print or write the GraphQL schema of a siteaccess: the schema language (sdl), the introspection result (json) or the classes and their fields (summary)",
+        "de": "Gibt das GraphQL-Schema eines Siteaccess aus oder schreibt es in eine Datei: die Schemasprache (sdl), das Ergebnis der Introspection (json) oder die Klassen und ihre Felder (summary)"
+    },
+    "command:expgraphqlschema --format": {
+        "en": "sdl (the default), json or summary",
+        "de": "sdl (der Standard), json oder summary"
+    },
+    "command:expgraphqlschema --output": {
+        "en": "write to this file instead of the screen",
+        "de": "in diese Datei schreiben statt auf den Bildschirm"
+    },
+    "command:expgraphqlstatus": {
+        "en": "The GraphQL API of a siteaccess: switched on or off, end point, library, limits, introspection, naming, schema hash, classes and datatypes without a mapping",
+        "de": "Die GraphQL-API eines Siteaccess: ein- oder ausgeschaltet, Endpunkt, Bibliothek, Grenzen, Introspection, Benennung, Schema-Hash, Klassen und Datentypen ohne eigene Abbildung"
+    },
+    "ini:settings/graphql.ini": {
+        "en": "The GraphQL API of the kernel: one end point per siteaccess (/api/graphql), a schema generated from the content\nclasses, the users, roles and policies of the administration, the OAuth tokens and personal API keys of the REST\nAPI. Guide: doc/eng-us/features/6.0/graphql.md. The administration: Setup > GraphQL (module graphql, policies\ngraphql/playground and graphql/query). Console: ./console exp:graphql:status, exp:graphql:schema, exp:graphql:query.",
+        "de": "Die GraphQL-API des Kernels: ein Endpunkt je Siteaccess (/api/graphql), ein aus den Inhaltsklassen erzeugtes\nSchema, die Benutzer, Rollen und Richtlinien der Administration, die OAuth-Token und persönlichen API-Schlüssel der\nREST-API. Anleitung: doc/ger-de/funktionen/6.0/graphql.md. Die Administration: Setup > GraphQL (Modul graphql,\nRichtlinien graphql/playground und graphql/query). Konsole: ./console exp:graphql:status, exp:graphql:schema, exp:graphql:query."
+    },
+    "ini:settings/graphql.ini [GraphQLNaming] TypeNames": {
+        "en": "NamingStyle=map: the name of a type per class identifier, and of a field per <class>/<attribute>.\nTypeNames[ng_article]=Article\nFieldNames[ng_article/short_title]=shortTitle",
+        "de": "NamingStyle=map: der Name eines Typs je Klassenbezeichner und eines Felds je <klasse>/<attribut>.\nTypeNames[ng_article]=Article\nFieldNames[ng_article/short_title]=shortTitle"
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] ClassList": {
+        "en": "The classes the schema shows. Empty: every class except those of ExcludedClassList[]. Policies always apply:\na class in the schema is still read only by who may read its objects.",
+        "de": "Die Klassen, die das Schema zeigt. Leer: jede Klasse außer denen aus ExcludedClassList[]. Die Richtlinien gelten\nimmer: Eine Klasse im Schema liest trotzdem nur, wer ihre Objekte lesen darf."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] Debug": {
+        "en": "enabled or disabled (the default). Enabled: an error carries the PHP exception and its trace in\nextensions.debug. Only for a development siteaccess: a trace tells paths and code to whoever asks.",
+        "de": "enabled oder disabled (der Standard). Eingeschaltet: Ein Fehler trägt die PHP-Exception und ihren Trace in\nextensions.debug. Nur für einen Entwicklungs-Siteaccess: Ein Trace verrät jedem, der fragt, Pfade und Code."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] DefaultListLimit": {
+        "en": "The items a list field returns when the query does not say.",
+        "de": "Die Zahl der Einträge, die ein Listenfeld liefert, wenn die Abfrage keine nennt."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] Enabled": {
+        "en": "enabled or disabled (the default). Off until it is switched on, for every siteaccess or in the settings of one\n(settings/siteaccess/<siteaccess>/graphql.ini.append.php). Disabled: /api/graphql answers 404, the session end\npoint graphql/query answers 404, nothing else changes.",
+        "de": "enabled oder disabled (der Standard). Aus, bis sie eingeschaltet wird, für jeden Siteaccess oder in den\nEinstellungen eines einzelnen (settings/siteaccess/<siteaccess>/graphql.ini.append.php). Ausgeschaltet: /api/graphql\nantwortet mit 404, der Sitzungs-Endpunkt graphql/query antwortet mit 404, sonst ändert sich nichts."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] ExcludedClassList": {
+        "en": "Never in the schema (unless ClassList[] names them): the user accounts, the user groups and the classes of\nsettings.",
+        "de": "Nie im Schema (außer ClassList[] nennt sie): die Benutzerkonten, die Benutzergruppen und die Klassen der\nEinstellungen."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] HiddenDatatypeList": {
+        "en": "Datatypes never in the schema: the user account (login, e-mail, password hash) and the password field.",
+        "de": "Datentypen, die nie im Schema stehen: das Benutzerkonto (Login, E-Mail, Passwort-Hash) und das Passwortfeld."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] HiddenFieldList": {
+        "en": "Attributes never in the schema, <class>/<attribute> or */<attribute> for every class.",
+        "de": "Attribute, die nie im Schema stehen, <klasse>/<attribut> oder */<attribut> für jede Klasse."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] ImageAliasList": {
+        "en": "Image aliases (settings/image.ini) the field variations lists when the query names none; url(alias:) takes any\nalias of image.ini.",
+        "de": "Bildaliase (settings/image.ini), die das Feld variations liefert, wenn die Abfrage keine nennt; url(alias:)\nnimmt jeden Alias aus image.ini."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] Introspection": {
+        "en": "Introspection (the schema read by a client, as the playground does):\n  signed-in  (the default) for a request signed in by a token, a personal API key or a session; refused for\n             anonymous requests\n  enabled    for every request\n  disabled   for none (the console commands still print the schema)",
+        "de": "Introspection (das Schema, von einem Client gelesen, wie es der Playground tut):\n  signed-in  (der Standard) für eine Anfrage, die mit einem Token, einem persönlichen API-Schlüssel oder einer\n             Sitzung angemeldet ist; für anonyme Anfragen abgelehnt\n  enabled    für jede Anfrage\n  disabled   für keine (die Konsolenbefehle geben das Schema trotzdem aus)"
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] LibraryPath": {
+        "en": "Where webonyx/graphql-php 15 is loaded from when the installation's Composer autoload has no GraphQL\\GraphQL: a\ndirectory with vendor/autoload.php (a Composer directory that requires webonyx/graphql-php), or the package\nitself (the directory holding src/GraphQL.php). Relative to the installation root, or absolute. The environment\nvariable GRAPHQL_LIBRARY_PATH is read the same way when this is empty.",
+        "de": "Woher webonyx/graphql-php 15 geladen wird, wenn der Composer-Autoload der Installation kein GraphQL\\GraphQL hat:\nein Verzeichnis mit vendor/autoload.php (ein Composer-Verzeichnis, das webonyx/graphql-php verlangt) oder das Paket\nselbst (das Verzeichnis mit src/GraphQL.php). Relativ zum Wurzelverzeichnis der Installation oder absolut. Die\nUmgebungsvariable GRAPHQL_LIBRARY_PATH wird genauso gelesen, wenn diese Einstellung leer ist."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] MaxDepth": {
+        "en": "The deepest nesting of fields a query may have, and the highest complexity (every field counts 1, a list field\ncounts its limit or first argument times the fields below it). A query over the limit is refused before it runs\n(extensions.code DEPTH_LIMIT or COMPLEXITY_LIMIT).",
+        "de": "Die tiefste Verschachtelung von Feldern, die eine Abfrage haben darf, und die höchste Komplexität (jedes Feld\nzählt 1, ein Listenfeld zählt sein Argument limit oder first mal die Felder darunter). Eine Abfrage über der\nGrenze wird abgelehnt, bevor sie läuft (extensions.code DEPTH_LIMIT oder COMPLEXITY_LIMIT)."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] MaxListLimit": {
+        "en": "The most items one list field returns (limit, first); a bigger value is lowered to it.",
+        "de": "Die meisten Einträge, die ein Listenfeld liefert (limit, first); ein größerer Wert wird darauf gesenkt."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] NamingStyle": {
+        "en": "How content classes and their attributes are named in the schema:\n  identifier  (the default) as in the administration: the class ng_article is the type ng_article, its attribute\n              short_title the field short_title\n  pascal      types in PascalCase (NgArticle), fields in camelCase (shortTitle)\n  map         as identifier, but the names of [GraphQLNaming] TypeNames[] and FieldNames[] win\nA name that is not a valid GraphQL name (a digit first, a dash) has every other character replaced by _ and a _\nin front when it starts with a digit. An attribute named like a field every content has (id, name, children ...)\ngets the suffix _field (name_field).",
+        "de": "Wie Inhaltsklassen und ihre Attribute im Schema heißen:\n  identifier  (der Standard) wie in der Administration: Die Klasse ng_article ist der Typ ng_article, ihr\n              Attribut short_title das Feld short_title\n  pascal      Typen in PascalCase (NgArticle), Felder in camelCase (shortTitle)\n  map         wie identifier, aber die Namen aus [GraphQLNaming] TypeNames[] und FieldNames[] haben Vorrang\nIn einem Namen, der kein gültiger GraphQL-Name ist (eine Ziffer vorn, ein Bindestrich), wird jedes andere Zeichen\ndurch _ ersetzt, und vor eine führende Ziffer kommt ein _. Ein Attribut, das wie ein Feld heißt, das jeder Inhalt\nhat (id, name, children ...), erhält die Endung _field (name_field)."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] SiteAccessList": {
+        "en": "The siteaccesses that answer when Enabled=enabled; empty: every siteaccess. A request is answered by the\nsiteaccess it matches (host, path or the X-Siteaccess header, as every REST request).",
+        "de": "Die Siteaccesses, die bei Enabled=enabled antworten; leer: jeder Siteaccess. Eine Anfrage beantwortet der\nSiteaccess, zu dem sie passt (Host, Pfad oder der Header X-Siteaccess, wie bei jeder REST-Anfrage)."
+    },
+    "ini:settings/rest.ini [RouteSettings] OptionalAuthentication": {
+        "en": "Routes authenticated only when the request presents credentials (an Authorization header, or a token or key\nparameter); without any they run as the anonymous user (or [Authentication] DefaultUserID). controller_action.\nA request with a wrong or expired token is refused as on every other route, never run as anonymous.",
+        "de": "Routen, die nur authentifiziert werden, wenn die Anfrage Zugangsdaten vorlegt (einen Authorization-Header oder\neinen Token- oder Schlüssel-Parameter); ohne solche laufen sie als anonymer Benutzer (oder [Authentication]\nDefaultUserID). controller_action. Eine Anfrage mit einem falschen oder abgelaufenen Token wird wie auf jeder anderen\nRoute abgelehnt, nie als anonym ausgeführt."
+    },
+    "ini:settings/rest.ini [expGraphQLRestController_CacheSettings]": {
+        "en": "Nor a GraphQL answer: it depends on the user and on the query",
+        "de": "Auch keine GraphQL-Antwort: Sie hängt vom Benutzer und von der Abfrage ab"
+    }
+}

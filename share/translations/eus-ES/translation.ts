@@ -15134,6 +15134,14 @@ Oharra: paketeak ez dira desinstalatuko.</translation>
         <source>Synchronisations</source>
         <translation>Sinkronizazioak</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL APIa: bere amaiera-puntua, eskema eta kontsultak probatzeko proba-gunea.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Segurtasun-gertaera bat izan da zure %login kontuan: %event. Zu izan ez bazara, babestu zure kontua helbide honetan: %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurazioa</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Eskatu gune honetako edukiari orri batek behar dituen eremuak zehazki, eskaera bakar batean. Eskemak eduki-klaseei jarraitzen die; kontsulta bakoitza bidaltzen duen erabiltzailearen eskubideekin exekutatzen da.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL APIa desaktibatuta dago gune-sarbide honetan. Aktibatu graphql.ini fitxategian: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL liburutegia (webonyx/graphql-php 15) ez dago instalatuta.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Amaiera-puntua</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Liburutegia</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Eskema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count eduki-klase, %hash eskema</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Kontsulta</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Aldagaiak (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Exekutatu</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Erantzuna</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Exekutatzen…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Ezin izan da erantzuna irakurri.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Kontsulta zure eskubideekin exekutatzen da, saio honekin hasita.</translation>
     </message>
 </context>
 </TS>

@@ -15076,6 +15076,14 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <source>Synchronisations</source>
         <translation>rapmoHghachmey</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: API Daq, qach nab, ghel nIDmeH Qorwagh je.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78686,6 +78694,73 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>lo&apos;wI&apos; De&apos;lIj %login Hung wanI&apos; qaS: %event. SoHbe&apos;chugh, %url Daq lo&apos;wI&apos; De&apos;lIj yIQan.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>SeHlaw</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>wa' tlhobmeH naDev De' yIpoQ: ghItlh'a' poQbogh mIwmey neH. De' Seghmey tlha' qach nab; ngeHbogh lo'wI' DIchmey lo' Hoch ghel.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>yoS lojmIt vam Daq GraphQL API chu'Ha'lu'. graphql.ini Daq yIchu': [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL paq'or (webonyx/graphql-php 15) jomlu'be'.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>API Daq</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>paq'or</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>qach nab</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count De' Seghmey, qach nab %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>ghel</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>choHlaHbogh mI'mey (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>yIQapmoH</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>jang</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>QaptaH…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>jang laDlaHbe'lu'.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>DIchmeylIj lo' ghel; ghom vam Daq Da'el.</translation>
     </message>
 </context>
 </TS>

@@ -15134,6 +15134,14 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
         <source>Synchronisations</source>
         <translation>Nā hoʻokūlike</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>Ka GraphQL API: kona kiko hope, ka papahana a me kahi hoʻāʻo e hoʻāʻo ai i nā nīnau.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Ua loaʻa kekahi hanana palekana ma kāu moʻokāki %login: %event. Inā ʻaʻole ʻo ʻoe, e hoʻopalekana i kāu moʻokāki ma %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Hoʻonohonoho</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>E noi i ka ʻike o kēia pūnaewele i nā kahua pono wale nō e pono ai kekahi ʻaoʻao, ma ka noi hoʻokahi. Hahai ka papahana i nā papa ʻike; holo kēlā me kēia nīnau me nā kuleana o ka mea hoʻohana nāna i hoʻouna.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>Ua hoʻopio ʻia ka GraphQL API ma kēia Siteaccess. E hoʻā iā ia ma graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>ʻAʻole i hoʻokomo ʻia ka waihona GraphQL (webonyx/graphql-php 15).</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Kiko hope</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Waihona</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Papahana</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count papa ʻike, papahana %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Nīnau</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Nā loli (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Holo</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Pane</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>E holo ana…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>ʻAʻole hiki ke heluhelu ʻia ka pane.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Holo ka nīnau me kou mau kuleana, me ke komo ʻana ma kēia kau.</translation>
     </message>
 </context>
 </TS>

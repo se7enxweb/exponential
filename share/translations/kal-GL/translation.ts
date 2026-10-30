@@ -15073,6 +15073,14 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
         <source>Synchronisations</source>
         <translation>Naapertuutsitsinerit</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: naggatip sumiiffia, skema aamma apeqqutinik misiliiffik.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78683,6 +78691,73 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Kontunni %login isumannaallisaanermut tunngasumik pisoqarpoq: %event. Illit taamaaliorsimanngikkuit, kontut %url-imi isumannaallisaruk.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Aaqqissuussineq</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Nittartakkami matumani imarisanik qupperummit pisariaqartinneqartunik taamaallaat qinnuteqaammi ataatsimi apeqquteqarit. Skema imarisat immikkoortuinik malinnippoq; apeqqut tamarmi atuisup nassiussisup pisinnaatitaaffii atorlugit ingerlanneqartarpoq.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API nittartakkamut isaariami matumani matoqqavoq. graphql.ini-mi ammassuk: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL-ip atuagaateqarfia (webonyx/graphql-php 15) ikkussorneqanngilaq.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Naggatip sumiiffia</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Atuagaateqarfik</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Skema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Imarisat immikkoortui %count, skema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Apeqqut</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Allanngorartut (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Aallartiguk</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Akissut</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Ingerlanneqarpoq…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Akissut atuarneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Apeqqut pisinnaatitaaffitit atorlugit ingerlanneqarpoq, session-imi matumani iserputit.</translation>
     </message>
 </context>
 </TS>

@@ -15132,6 +15132,14 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
         <source>Synchronisations</source>
         <translation>Daidaitawa</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: ƙarshen hanyarsa, tsarin da wurin gwada tambayoyi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78651,6 +78659,73 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>An samu lamarin tsaro a asusunku %login: %event. Idan ba ku ba ne, ku kare asusunku a %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Saitin farko</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Tambayi abubuwan da ke cikin wannan shafi kawai filayen da shafi ke buƙata, a cikin buƙata guda ɗaya. Tsarin yana bin ajin abubuwan ciki; kowace tambaya tana gudana da haƙƙoƙin mai amfani da ya aiko ta.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>An kashe GraphQL API a wannan hanyar shiga shafi. Kunna shi a graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Ba a girka ɗakin karatu na GraphQL (webonyx/graphql-php 15) ba.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Ƙarshen hanya</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Ɗakin karatu</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Tsari</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Ajin abubuwan ciki %count, tsari %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Tambaya</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Masu canzawa (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Gudanar</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Amsa</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Ana gudanarwa…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Ba a iya karanta amsar ba.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Tambayar tana gudana da haƙƙoƙinka, kamar yadda ka shiga da wannan zaman.</translation>
     </message>
 </context>
 </TS>

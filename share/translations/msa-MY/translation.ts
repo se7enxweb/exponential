@@ -15134,6 +15134,14 @@ Nota: Pakej tersebut tidak akan dinyahpasang.</translation>
         <source>Synchronisations</source>
         <translation>Penyegerakan</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>API GraphQL: titik akhirnya, skema dan ruang percubaan untuk mencuba pertanyaan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Berlaku peristiwa keselamatan pada akaun anda %login: %event. Jika itu bukan anda, lindungi akaun anda di %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Persediaan</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Minta daripada kandungan laman ini tepat medan yang diperlukan oleh sesebuah halaman, dalam satu permintaan. Skema mengikut kelas kandungan; setiap pertanyaan dijalankan dengan hak pengguna yang menghantarnya.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>API GraphQL dimatikan dalam akses laman ini. Hidupkannya dalam graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Pustaka GraphQL (webonyx/graphql-php 15) tidak dipasang.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Titik akhir</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Pustaka</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Skema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count kelas kandungan, skema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Pertanyaan</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Pemboleh ubah (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Jalankan</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Jawapan</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Sedang dijalankan…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Jawapan tidak dapat dibaca.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Pertanyaan dijalankan dengan hak anda, log masuk dengan sesi ini.</translation>
     </message>
 </context>
 </TS>

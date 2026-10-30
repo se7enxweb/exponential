@@ -15134,6 +15134,14 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
         <source>Synchronisations</source>
         <translation>Synchronisations</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: tolnde mum joofnirde, schema oo e nokku ndarndagol ñaamde.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Huunde waɗnde kisal waɗii e konte maa %login: %event. So wonaa an, reen konte maa e %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Teeltugol</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Ƴam loowdi ndee lowre ko hello ena sokli tan, e ñaamdu wootu. Schema oo ena rewa ndenndi loowdi; kala ñaamdu ena dogga e hakkeeji kuutoro neldu ndu.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API ko ñifaa e ndee siteaccess. Huɓɓin ɗum e graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Defterdu GraphQL (webonyx/graphql-php 15) aafaaka.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Tolnde joofnirde</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Defterdu</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Ndenndi loowdi %count, schema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Ñaamdu</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Ceertuɗi (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Dogin</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Jaabawol</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Ena dogga…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Jaabawol ngol waawaa janngeede.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Ñaamdu ndu ena dogga e hakkeeji maa, a naatii e ndee jokkondiral.</translation>
     </message>
 </context>
 </TS>

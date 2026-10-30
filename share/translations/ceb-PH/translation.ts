@@ -15134,6 +15134,14 @@ Hinumdomi: Dili i-uninstall ang mga pakete.</translation>
         <source>Synchronisations</source>
         <translation>Mga synchronization</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>Ang GraphQL API: ang katapusang punto niini, ang eskema ug usa ka dapit sa pagsulay sa mga pangutana.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Adunay panghitabo sa seguridad sa imong account nga %login: %event. Kon dili ikaw kadto, seguroha ang imong account sa %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Pag-setup</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Pangayo sa sulod niining site sa eksakto nga mga field nga gikinahanglan sa usa ka panid, sa usa lang ka hangyo. Ang eskema nagsunod sa mga klase sa sulod; ang matag pangutana modagan uban sa mga katungod sa user nga nagpadala niini.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>Gipalong ang GraphQL API niining access sa site. I-on kini sa graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Wala ma-install ang GraphQL library (webonyx/graphql-php 15).</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Katapusang punto</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Library</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Eskema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count ka klase sa sulod, eskema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Pangutana</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Mga variable (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Padagana</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Tubag</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Nagdagan…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Dili mabasa ang tubag.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Ang pangutana modagan uban sa imong mga katungod, naka-sign in niining session.</translation>
     </message>
 </context>
 </TS>

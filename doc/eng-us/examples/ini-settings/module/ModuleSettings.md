@@ -59,9 +59,10 @@ ExtensionRepositories[]
 > This is currently used to avoid URL aliases overriding  
 > existing module names  
 > The data tables and the named database connections (doc/eng-us/features/6.0/data-tables.md)  
+> The GraphQL API with the session of the web interface (doc/eng-us/features/6.0/graphql.md)  
 > The kernel's secret store (doc/eng-us/features/6.0/secret-store.md)  
 
-Default: a list of 36: `apikey`, `audit`, `class`, `collaboration`, `contentcheck`, `csp`, `contentfinder`, `content`, `datatable`, `error`, `exphelp`, `ezinfo` ....
+Default: a list of 37: `apikey`, `audit`, `class`, `collaboration`, `contentcheck`, `csp`, `contentfinder`, `content`, `datatable`, `error`, `exphelp`, `graphql` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -80,6 +81,7 @@ ModuleList[]=content
 ModuleList[]=datatable
 ModuleList[]=error
 ModuleList[]=exphelp
+ModuleList[]=graphql
 ModuleList[]=ezinfo
 ModuleList[]=infocollector
 ModuleList[]=layout
@@ -88,8 +90,7 @@ ModuleList[]=notification
 ModuleList[]=oauth
 ModuleList[]=oauthadmin
 ModuleList[]=package
-ModuleList[]=pdf
-# ... 16 more in the shipped file
+# ... 17 more in the shipped file
 */ ?>
 ```
 

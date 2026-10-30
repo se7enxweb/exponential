@@ -15134,6 +15134,14 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
         <source>Synchronisations</source>
         <translation>Wal-simsiisuuwwan</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: qabxii xumuraa isaa, caasaa fi bakka gaaffiiwwan itti yaalan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Herrega keessan %login irratti taateen nageenyaa tokko uumameera: %event. Yoo isin hin taane, herrega keessan %url irratti eegaa.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Qopheessa</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Qabiyyee marsariitii kanaa dirreewwan fuulli tokko barbaadu qofa, gaaffii tokkoon gaafadhu. Caasaan gosoota qabiyyee hordofa; gaaffiin hundi mirga fayyadamaa erge sanaatiin hojjeta.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API seensa marsariitii kana keessatti dhaamsameera. graphql.ini keessatti banaa: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Kuusaan GraphQL (webonyx/graphql-php 15) hin fe'amne.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Qabxii xumuraa</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Kuusaa</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Caasaa</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Gosoota qabiyyee %count, caasaa %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Gaaffii</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Jijjiiramoota (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Hojjechiisi</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Deebii</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Hojjechaa jira…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Deebiin dubbifamuu hin dandeenye.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Gaaffiin mirga keetiin hojjeta, yeroo kanaan seenteetta.</translation>
     </message>
 </context>
 </TS>

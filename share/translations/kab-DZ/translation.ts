@@ -15134,6 +15134,14 @@ Azen: ikemmusen ur ttwakksen ara asebded-nsen.</translation>
         <source>Synchronisations</source>
         <translation>Timsemlilt</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: ixef-is n tuqqna, askema d wadeg n wurar i usekyed n tsuturin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Tella tedyant n tɣellist deg umiḍan-ik %login: %event. Ma mačči d kečč, ḥrez amiḍan-ik deg %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Asbadu</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Suter seg ugbur n usmel-a anagar urtiyen i yeḥwaǧ usebter, deg yiwet n tuttra. Askema yeṭṭafar tiẓunin n ugbur; yal tasuturt tettwaselkam s yizerfan n useqdac i tt-yuznen.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API yensa deg unekcum-a ɣer usmel. Sermed-it deg graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Tamkarḍit GraphQL (webonyx/graphql-php 15) ur tettwasbeddeḍ ara.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Ixef n tuqqna</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Tamkarḍit</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Askema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count n tiẓunin n ugbur, askema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Tasuturt</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Imuttiyen (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Sedu</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Tiririt</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Aselkem…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Ur tettwaɣer ara tririt.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Tasuturt tettwaselkam s yizerfan-ik, s tɣimit-a ideg tkecmeḍ.</translation>
     </message>
 </context>
 </TS>

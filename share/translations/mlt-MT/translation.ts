@@ -15073,6 +15073,14 @@ Nota: il-pakketti mhux se jiġu ddiżinstallati.</translation>
         <source>Synchronisations</source>
         <translation>Sinkronizzazzjonijiet</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>L-API GraphQL: il-punt tat-tmiem tagħha, l-iskema u spazju tal-provi biex tipprova mistoqsijiet.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78683,6 +78691,73 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Kien hemm avveniment tas-sigurtà fil-kont tiegħek %login: %event. Jekk ma kontx int, assigura l-kont tiegħek fuq %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurazzjoni</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Itlob lill-kontenut ta' dan is-sit eżattament il-oqsma li paġna teħtieġ, f'talba waħda. L-iskema ssegwi l-klassijiet tal-kontenut; kull mistoqsija taħdem bid-drittijiet tal-utent li jibgħatha.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>L-API GraphQL hija mitfija f'dan l-aċċess għas-sit. Ixgħelha f'graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Il-librerija GraphQL (webonyx/graphql-php 15) mhijiex installata.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Punt tat-tmiem</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Librerija</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Skema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count klassijiet tal-kontenut, skema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Mistoqsija</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Varjabbli (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ħaddem</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Tweġiba</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Qed jaħdem…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>It-tweġiba ma setgħetx tinqara.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Il-mistoqsija taħdem bid-drittijiet tiegħek, illoggjat b'din is-sessjoni.</translation>
     </message>
 </context>
 </TS>

@@ -15075,6 +15075,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>סנכרונים</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>ממשק ה־API של GraphQL: נקודת הקצה שלו, הסכמה וסביבת ניסוי להרצת שאילתות.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78685,6 +78693,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>אירע אירוע אבטחה בחשבון שלך %login: %event. אם הפעולה לא בוצעה על ידך, יש לאבטח את החשבון בכתובת %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>הגדרות</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>בקשו מתוכן האתר בדיוק את השדות שהדף צריך, בבקשה אחת. הסכמה עוקבת אחר מחלקות התוכן; כל שאילתה רצה עם ההרשאות של המשתמש ששולח אותה.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>ממשק ה־API של GraphQL כבוי בגישת אתר זו. הפעילו אותו ב־graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>ספריית GraphQL (webonyx/graphql-php 15) אינה מותקנת.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>נקודת קצה</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>ספרייה</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>סכמה</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count מחלקות תוכן, סכמה %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>שאילתה</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>משתנים (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>הרצה</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>תשובה</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>מריץ…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>לא ניתן היה לקרוא את התשובה.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>השאילתה רצה עם ההרשאות שלך, כשאתה מחובר בהפעלה זו.</translation>
     </message>
 </context>
 </TS>

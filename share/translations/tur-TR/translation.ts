@@ -15132,6 +15132,14 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <source>Synchronisations</source>
         <translation>Eşitlemeler</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: uç noktası, şema ve sorguları denemek için bir deneme alanı.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78658,6 +78666,73 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>%login hesabınızda bir güvenlik olayı gerçekleşti: %event. Bu siz değilseniz hesabınızı %url adresinde güvenceye alın.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Kurulum</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Bu sitenin içeriğinden bir sayfanın ihtiyaç duyduğu alanları tam olarak, tek bir istekle isteyin. Şema içerik sınıflarını izler; her sorgu, onu gönderen kullanıcının yetkileriyle çalışır.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API bu site erişiminde kapalı. graphql.ini dosyasında açın: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL kütüphanesi (webonyx/graphql-php 15) kurulu değil.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Uç nokta</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Kütüphane</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Şema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>İçerik sınıfları: %count, şema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Sorgu</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Değişkenler (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Çalıştır</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Yanıt</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Çalışıyor…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Yanıt okunamadı.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Sorgu, bu oturumla giriş yapmış olarak sizin yetkilerinizle çalışır.</translation>
     </message>
 </context>
 </TS>

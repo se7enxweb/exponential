@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>Синхронизации</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: крајната точка, шемата и простор за испробување барања.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>На Вашата сметка %login се случи безбедносен настан: %event. Ако тоа не сте биле Вие, заштитете ја Вашата сметка на %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Конфигурација</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Побарајте од содржината на овој сајт точно полињата што ѝ се потребни на страницата, со едно барање. Шемата ги следи класите на содржина; секое барање се извршува со правата на корисникот што го испраќа.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API е исклучен во овој пристап до сајтот. Вклучете го во graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Библиотеката GraphQL (webonyx/graphql-php 15) не е инсталирана.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Крајна точка</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Библиотека</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Шема</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Класи на содржина: %count, шема %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Барање</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Променливи (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Изврши</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Одговор</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Се извршува…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Одговорот не можеше да се прочита.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Барањето се извршува со вашите права, најавени во оваа сесија.</translation>
     </message>
 </context>
 </TS>

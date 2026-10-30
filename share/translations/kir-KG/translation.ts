@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>Синхрондоштуруулар</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: анын акыркы чекити, схемасы жана сурооларды сынап көрүү аянтчасы.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>%login каттоо эсебиңизде коопсуздук окуясы болду: %event. Бул Сиз болбосоңуз, каттоо эсебиңизди %url дарегинде коргоңуз.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Жөндөө</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Бул сайттын мазмунунан баракка керектүү талааларды гана бир суроо менен алыңыз. Схема мазмун класстарына ылайык келет; ар бир суроо аны жөнөткөн колдонуучунун укуктары менен аткарылат.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API бул сайтка кирүү чекитинде өчүрүлгөн. Аны graphql.ini ичинде күйгүзүңүз: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL китепканасы (webonyx/graphql-php 15) орнотулган эмес.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Акыркы чекит</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Китепкана</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Схема</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Мазмун класстары: %count, схема %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Суроо</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Өзгөрмөлөр (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Аткаруу</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Жооп</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Аткарылууда…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Жоопту окуу мүмкүн болгон жок.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Суроо сиздин укуктарыңыз менен, ушул сеанста кирүү аркылуу аткарылат.</translation>
     </message>
 </context>
 </TS>

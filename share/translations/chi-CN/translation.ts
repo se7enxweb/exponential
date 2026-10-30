@@ -15132,6 +15132,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>同步</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API：其端点、架构以及用于试验查询的测试平台。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78651,6 +78659,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>您的帐户 %login 发生了一个安全事件：%event。如果不是您本人，请在 %url 保护您的帐户。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>设置</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>在一次请求中，从本站内容中精确获取页面所需的字段。架构与内容类保持一致；每个查询都以发送它的用户的权限运行。</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>此站点访问中已关闭 GraphQL API。请在 graphql.ini 中开启：[GraphQLSettings] Enabled=enabled。</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>未安装 GraphQL 库（webonyx/graphql-php 15）。</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>端点</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>库</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>架构</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count 个内容类，架构 %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>查询</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>变量（JSON）</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>运行</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>响应</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>正在运行…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>无法读取响应。</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>查询以您的权限运行，使用当前会话登录。</translation>
     </message>
 </context>
 </TS>

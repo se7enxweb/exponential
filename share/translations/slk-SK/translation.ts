@@ -15073,6 +15073,14 @@ Poznámka: Balíky sa neodinštalujú.</translation>
         <source>Synchronisations</source>
         <translation>Synchronizácie</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: koncový bod, schéma a ihrisko na skúšanie dopytov.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78683,6 +78691,73 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Vo vašom konte %login nastala udalosť zabezpečenia: %event. Ak ste to neboli vy, zabezpečte svoje konto na adrese %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Nastavenie</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Vyžiadajte si od obsahu tejto lokality presne tie polia, ktoré stránka potrebuje, jednou požiadavkou. Schéma zodpovedá triedam obsahu; každý dopyt beží s oprávneniami používateľa, ktorý ho odosiela.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API je v tomto prístupe k lokalite vypnuté. Zapnite ho v graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Knižnica GraphQL (webonyx/graphql-php 15) nie je nainštalovaná.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Koncový bod</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Knižnica</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schéma</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Triedy obsahu: %count, schéma %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Dopyt</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Premenné (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Spustiť</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Odpoveď</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Prebieha…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Odpoveď sa nepodarilo prečítať.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Dopyt beží s vašimi oprávneniami, prihlásení v tejto relácii.</translation>
     </message>
 </context>
 </TS>

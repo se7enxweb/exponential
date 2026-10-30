@@ -15134,6 +15134,14 @@ Muitte: Páhkaid sajáiduhttin ii sihkkojuvvo.</translation>
         <source>Synchronisations</source>
         <translation>Sihkkarastimat</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL-API: dan loahppačuokkis, hápmi ja stoahkanbáiki gos geahččalit jearaldagaid.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Du kontus %login dáhpáhuvai sihkarvuođadáhpáhus: %event. Jus dat it lean don, de sihkkarastte du konto čujuhusas %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ásaheapmi</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Bivdde dán neahttabáikki sisdoalus juste daid gieddeid maid siidu dárbbaša, ovtta jearaldagas. Hápmi čuovvu sisdoalloluohkáid; juohke jearaldat vuddjojuvvo dan geavaheaddji vuoigatvuođaiguin gii dan sádde.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL-API lea jáddaduvvon dán neahttabáikebeassanis. Álggat dan graphql.ini:s: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL-girjerájus (webonyx/graphql-php 15) ii leat sajáiduhttojuvvon.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Loahppačuokkis</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Girjerájus</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Hápmi</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count sisdoalloluohkká, hápmi %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Jearaldat</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Variábelat (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Vuodjit</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Vástádus</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Vuddjojuvvo…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Vástádus ii sáhttán lohkkojuvvot.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Jearaldat vuddjojuvvo du vuoigatvuođaiguin, sisačáliiduvvon dán bargovuoru bokte.</translation>
     </message>
 </context>
 </TS>

@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>ምስምማዓት</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API፦ መወዳእታ ነጥቡ፣ ኣወዳድባኡን ሕቶታት ዝፍተነሉ ቦታን።</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>ኣብ ሕሳብኩም %login ፍጻመ ድሕንነት ኣጋጢሙ: %event። እዚ ንስኹም እንተ ዘይኮንኩም፣ ሕሳብኩም ኣብ %url ኣውሕሱ።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ምድላው</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>ትሕዝቶ እዚ መርበብ ንሓደ ገጽ ዘድልዮ ዓውድታት ጥራይ ብሓደ ሕቶ ሕተት። ኣወዳድባ ንክፍልታት ትሕዝቶ ይስዕብ፤ ነፍሲ ወከፍ ሕቶ ብመሰላት እቲ ዝለኣኾ ተጠቃሚ ይካየድ።</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API ኣብዚ ምእታው መርበብ ጠፊኡ ኣሎ። ኣብ graphql.ini ወልዖ፦ [GraphQLSettings] Enabled=enabled።</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>ቤተ-መጻሕፍቲ GraphQL (webonyx/graphql-php 15) ኣይተተኽለን።</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>መወዳእታ ነጥቢ</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>ቤተ-መጻሕፍቲ</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>ኣወዳድባ</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count ክፍልታት ትሕዝቶ፣ ኣወዳድባ %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>ሕቶ</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>ተለዋወጥቲ (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ኣካይድ</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>መልሲ</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>ይካየድ ኣሎ…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>እቲ መልሲ ክንበብ ኣይከኣለን።</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>እቲ ሕቶ ብመሰላትካ ይካየድ፣ በዚ ክፍለ ግዜ ኣቲኻ ኣለኻ።</translation>
     </message>
 </context>
 </TS>

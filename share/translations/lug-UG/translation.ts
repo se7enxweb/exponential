@@ -15134,6 +15134,14 @@ Jjukira: Pakeeji tezijja kusimbulwa.</translation>
         <source>Synchronisations</source>
         <translation>Okukwataganya</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: enkomerero yaayo, sikima n'ekifo eky'okugezesezaamu ebibuuzo.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Waliwo ekibaddewo eky&apos;obukuumi ku kawunti yo %login: %event. Bwe kitaba ggwe, kuuma akawunti yo ku %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Okuteekateeka</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Saba ebiri ku mukutu guno ebifo byokka olupapula bye lwetaaga, mu kusaba kumu. Sikima egoberera ebika by'ebiri ku mukutu; buli kibuuzo kikola n'obuyinza bw'omukozesa akiweerezza.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API nzikiddwa ku mulyango guno gw'omukutu. Gikoleeze mu graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Etterekero lya GraphQL (webonyx/graphql-php 15) teriteekeddwamu.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Enkomerero</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Etterekero</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Sikima</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Ebika by'ebiri ku mukutu %count, sikima %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Ekibuuzo</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Ebikyuka (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ddusa</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Okuddamu</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Kiri mu kudduka…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Okuddamu tekusobodde kusomebwa.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Ekibuuzo kikola n'obuyinza bwo, ng'oyingidde mu kiseera kino.</translation>
     </message>
 </context>
 </TS>

@@ -15134,6 +15134,14 @@ Icyitonderwa: Amapaki ntazakurwa muri sisitemu.</translation>
         <source>Synchronisations</source>
         <translation>Guhuza amakuru</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: iherezo ryayo, igishushanyo n'ahantu ho kugerageza ibibazo.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Habaye igikorwa cy&apos;umutekano kuri konti yanyu %login: %event. Niba atari mwe, murinde konti yanyu kuri %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Gutunganya</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Saba ibikubiye muri uru rubuga imirima nyayo urupapuro rukeneye, mu cyifuzo kimwe. Igishushanyo gikurikiza amoko y'ibikubiye; buri kibazo gikorwa n'uburenganzira bw'ukoresha ukohereje.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API irafunze muri ubu buryo bwo kugera ku rubuga. Yifungure muri graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Isomero rya GraphQL (webonyx/graphql-php 15) ntiryashyizweho.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Iherezo ry'inzira</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Isomero</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Igishushanyo</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Amoko y'ibikubiye %count, igishushanyo %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Ikibazo</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Ibihinduka (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Gukoresha</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Igisubizo</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Birakorwa…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Igisubizo ntigishobora gusomwa.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Ikibazo gikorwa n'uburenganzira bwawe, winjiye muri iki gihe cy'akazi.</translation>
     </message>
 </context>
 </TS>

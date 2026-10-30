@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>Համաժամացումներ</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API՝ դրա վերջնակետը, սխեման և հարցումներ փորձելու հարթակ։</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Ձեր %login հաշվում տեղի է ունեցել անվտանգության իրադարձություն: %event։ Եթե դա Դուք չէիք, պաշտպանեք Ձեր հաշիվը հետևյալ հասցեով՝ %url։</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Կարգաբերում</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Մեկ հարցումով խնդրեք այս կայքի բովանդակությունից հենց այն դաշտերը, որոնք պետք են էջին։ Սխեման հետևում է բովանդակության դասերին. յուրաքանչյուր հարցում կատարվում է այն ուղարկած օգտատիրոջ իրավունքներով։</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API-ն անջատված է կայքի այս մուտքի կետում։ Միացրեք այն graphql.ini-ում՝ [GraphQLSettings] Enabled=enabled։</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL գրադարանը (webonyx/graphql-php 15) տեղադրված չէ։</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Վերջնակետ</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Գրադարան</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Սխեմա</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Բովանդակության դասեր՝ %count, սխեմա %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Հարցում</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Փոփոխականներ (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Գործարկել</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Պատասխան</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Կատարվում է…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Պատասխանը հնարավոր չեղավ կարդալ։</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Հարցումը կատարվում է ձեր իրավունքներով՝ այս սեսիայով մուտք գործած։</translation>
     </message>
 </context>
 </TS>

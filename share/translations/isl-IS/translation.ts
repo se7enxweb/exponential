@@ -15073,6 +15073,14 @@ Athugaðu: uppsetning pakkanna verður ekki fjarlægð.</translation>
         <source>Synchronisations</source>
         <translation>Samstillingar</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL-forritaskilin: endapunktur þeirra, skemað og prufusvæði til að prófa fyrirspurnir.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78683,6 +78691,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Öryggisatburður átti sér stað á reikningnum þínum %login: %event. Ef þetta varst ekki þú skaltu tryggja reikninginn þinn á %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Uppsetning</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Biddu efni þessa vefs um nákvæmlega þá reiti sem síða þarf, í einni beiðni. Skemað fylgir efnisflokkunum; hver fyrirspurn keyrir með réttindum notandans sem sendir hana.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL-forritaskilin eru óvirk í þessum vefaðgangi. Virkjaðu þau í graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL-safnið (webonyx/graphql-php 15) er ekki uppsett.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Endapunktur</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Safn</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Skema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count efnisflokkar, skema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Fyrirspurn</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Breytur (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Keyra</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Svar</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Keyrir…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Ekki tókst að lesa svarið.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Fyrirspurnin keyrir með þínum réttindum, í þessari innskráðu lotu.</translation>
     </message>
 </context>
 </TS>

@@ -15134,6 +15134,14 @@ Paalala: Hindi ia-uninstall ang mga package.</translation>
         <source>Synchronisations</source>
         <translation>Mga synchronization</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>Ang GraphQL API: ang end point nito, ang schema at isang playground para subukan ang mga query.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Nagkaroon ng security event sa iyong account na %login: %event. Kung hindi ikaw iyon, i-secure ang iyong account sa %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Hingin sa nilalaman ng site na ito ang eksaktong mga field na kailangan ng isang pahina, sa iisang kahilingan. Sinusunod ng schema ang mga class ng nilalaman; tumatakbo ang bawat query gamit ang mga karapatan ng user na nagpadala nito.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>Naka-off ang GraphQL API sa siteaccess na ito. I-on ito sa graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Hindi naka-install ang GraphQL library (webonyx/graphql-php 15).</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>End point</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Library</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count class ng nilalaman, schema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Query</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Mga variable (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Patakbuhin</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Sagot</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Tumatakbo…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Hindi mabasa ang sagot.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Tumatakbo ang query gamit ang iyong mga karapatan, naka-sign in sa session na ito.</translation>
     </message>
 </context>
 </TS>

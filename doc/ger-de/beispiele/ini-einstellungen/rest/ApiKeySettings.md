@@ -133,8 +133,9 @@ RateLimitPerMinute=120
 
 > Die Bereiche, die ein Schlüssel erhalten kann: <scope>=<module>/<function> der Richtlinie, die der Eigentümer dafür braucht,  
 > geprüft beim Erstellen des Schlüssels und erneut bei jeder Anfrage.  
+> Abfragen der GraphQL-API (/api/graphql), im Rahmen der Rechte des Eigentümers, Inhalte zu lesen  
 
-Standard: ein Hash mit 5: `read=content/read`, `publish=content/create`, `edit=content/edit`, `remove=content/remove`, `help=exphelp/context`.
+Standard: ein Hash mit 6: `read=content/read`, `publish=content/create`, `edit=content/edit`, `remove=content/remove`, `help=exphelp/context`, `graphql:read=content/read`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -147,12 +148,13 @@ Scopes[publish]=content/create
 Scopes[edit]=content/edit
 Scopes[remove]=content/remove
 Scopes[help]=exphelp/context
+Scopes[graphql:read]=content/read
 */ ?>
 ```
 
 ## ScopeNames
 
-Standard: ein Hash mit 5: `read=Read content`, `publish=Create and publish content`, `edit=Edit content`, `remove=Remove content`, `help=Read context help`.
+Standard: ein Hash mit 6: `read=Read content`, `publish=Create and publish content`, `edit=Edit content`, `remove=Remove content`, `help=Read context help`, `graphql:read=Read content through GraphQL`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -165,6 +167,7 @@ ScopeNames[publish]=Create and publish content
 ScopeNames[edit]=Edit content
 ScopeNames[remove]=Remove content
 ScopeNames[help]=Read context help
+ScopeNames[graphql:read]=Read content through GraphQL
 */ ?>
 ```
 
@@ -185,7 +188,7 @@ DefaultReadScope=read
 
 ## RouteScopes
 
-Standard: ein Hash mit 5: `ezp7xRestContentController_CreateContentNode=publish`, `ezp7xRestContentController_UpdateContentNode=edit`, `ezp7xRestContentController_DeleteContentNode=remove`, `expHelpRestController_topic=help`, `expHelpRestController_manual=help`.
+Standard: ein Hash mit 6: `ezp7xRestContentController_CreateContentNode=publish`, `ezp7xRestContentController_UpdateContentNode=edit`, `ezp7xRestContentController_DeleteContentNode=remove`, `expHelpRestController_topic=help`, `expHelpRestController_manual=help`, `expGraphQLRestController_query=graphql:read`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -198,6 +201,7 @@ RouteScopes[ezp7xRestContentController_UpdateContentNode]=edit
 RouteScopes[ezp7xRestContentController_DeleteContentNode]=remove
 RouteScopes[expHelpRestController_topic]=help
 RouteScopes[expHelpRestController_manual]=help
+RouteScopes[expGraphQLRestController_query]=graphql:read
 */ ?>
 ```
 

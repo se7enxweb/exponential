@@ -15134,6 +15134,14 @@ Avertiment: Ils pachets na vegnan betg deinstallads.</translation>
         <source>Synchronisations</source>
         <translation>Sincronisaziuns</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>L'API GraphQL: ses punct final, il schema ed in plazzal da gieu per empruvar dumondas.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>I ha dà in eveniment da segirezza en Voss conto %login: %event. Sche Vus n&apos;eras betg quai, protegi Voss conto sut %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuraziun</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Dumandai il cuntegn da questa website exactamain ils champs ch'ina pagina dovra, en ina suletta dumonda. Il schema suonda las classas da cuntegn; mintga dumonda vegn exequida cun ils dretgs da l'utilisader che la trametta.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>L'API GraphQL è deactivada en quest access a la website. Activai l'API en graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>La biblioteca GraphQL (webonyx/graphql-php 15) n'è betg installada.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Punct final</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Biblioteca</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count classas da cuntegn, schema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Dumonda</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Variablas (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Exequir</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Resposta</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Vegn exequì…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>La resposta n'ha betg pudì vegnir legida.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>La dumonda vegn exequida cun voss dretgs, annunzià cun questa sessiun.</translation>
     </message>
 </context>
 </TS>

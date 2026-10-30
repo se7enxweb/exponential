@@ -2,14 +2,14 @@
 title: rest.ini [RouteSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [RouteSettings] in rest.ini: RouteSettingImpl, SkipFilter"
-keywords: rest.ini, RouteSettings, INI, setting, RouteSettingImpl, SkipFilter
+summary: "The settings of [RouteSettings] in rest.ini: RouteSettingImpl, SkipFilter, OptionalAuthentication"
+keywords: rest.ini, RouteSettings, INI, setting, RouteSettingImpl, SkipFilter, OptionalAuthentication
 type: generated
 generated: exp:help:examples
 ---
 # rest.ini [RouteSettings]
 
-The block `[RouteSettings]` of `settings/rest.ini`, with 2 setting(s).
+The block `[RouteSettings]` of `settings/rest.ini`, with 3 setting(s).
 
 Never edit `settings/rest.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -47,6 +47,24 @@ SkipFilter[]=ezpRestErrorController_show
 SkipFilter[]=ezpRestAuthController_basicAuth
 SkipFilter[]=ezpRestAuthController_oauthRequired
 SkipFilter[]=ezpRestOauthTokenController_handleRequest
+*/ ?>
+```
+
+## OptionalAuthentication
+
+> Routes authenticated only when the request presents credentials (an Authorization header, or a token or key  
+> parameter); without any they run as the anonymous user (or \[Authentication\] DefaultUserID). controller\_action.  
+> A request with a wrong or expired token is refused as on every other route, never run as anonymous.  
+
+Default: a list of 1: `expGraphQLRestController_query`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/rest.ini.append.php
+[RouteSettings]
+# an empty "OptionalAuthentication[]" first replaces the shipped list; without it the items are added
+OptionalAuthentication[]
+OptionalAuthentication[]=expGraphQLRestController_query
 */ ?>
 ```
 

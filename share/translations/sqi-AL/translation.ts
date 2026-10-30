@@ -15073,6 +15073,14 @@ Shënim: paketat nuk do të çinstalohen.</translation>
         <source>Synchronisations</source>
         <translation>Sinkronizimet</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: pika fundore, skema dhe një hapësirë për të provuar pyetësorë.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78683,6 +78691,73 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Ndodhi një ngjarje sigurie në llogarinë tuaj %login: %event. Nëse nuk ishit ju, siguroni llogarinë tuaj te %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurimi</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Kërkojini përmbajtjes së këtij sajti pikërisht fushat që i duhen një faqeje, me një kërkesë të vetme. Skema ndjek klasat e përmbajtjes; çdo pyetësor ekzekutohet me të drejtat e përdoruesit që e dërgon.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API është i çaktivizuar në këtë qasje në sajt. Aktivizojeni në graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Biblioteka GraphQL (webonyx/graphql-php 15) nuk është instaluar.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Pika fundore</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Biblioteka</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Skema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Klasa përmbajtjeje: %count, skema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Pyetësor</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Variablat (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ekzekuto</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Përgjigjja</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Po ekzekutohet…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Përgjigjja nuk mund të lexohej.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Pyetësori ekzekutohet me të drejtat tuaja, i identifikuar në këtë seancë.</translation>
     </message>
 </context>
 </TS>

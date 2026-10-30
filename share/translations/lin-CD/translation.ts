@@ -15134,6 +15134,14 @@ Nkomba: Ba-paquet ekolongolama na système te.</translation>
         <source>Synchronisations</source>
         <translation>Bosangisi</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: esika na yango ya nsuka, schéma mpe esika ya komeka ba demande.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Likambo moko ya libateli esalemaki na compte na yo %login: %event. Soki ezali yo te, batelá compte na yo na %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Bobongisi</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Senga na makambo ya site oyo kaka bisika oyo lokasa esengeli, na demande moko. Schéma elandaka mitindo ya makambo; demande nyonso esalemaka na makoki ya mosaleli oyo atindi yango.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API ekangami na siteaccess oyo. Fungolá yango na graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Bibliothèque ya GraphQL (webonyx/graphql-php 15) etiami te.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Esika ya nsuka</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Bibliothèque</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schéma</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Mitindo ya makambo %count, schéma %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Demande</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Ba variables (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Salisá</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Eyano</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Ezali kosala…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Eyano ekoki kotangama te.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Demande esalemaka na makoki na yo, okoti na session oyo.</translation>
     </message>
 </context>
 </TS>

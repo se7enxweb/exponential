@@ -15134,6 +15134,14 @@ Sylwer: ni fydd y pecynnau'n cael eu dadosod.</translation>
         <source>Synchronisations</source>
         <translation>Cydamseriadau</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>Yr API GraphQL: ei bwynt terfyn, y sgema a maes chwarae i roi cynnig ar ymholiadau.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Bu digwyddiad diogelwch ar eich cyfrif %login: %event. Os nad chi oedd yno, diogelwch eich cyfrif yn %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Gosod</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Gofynnwch i gynnwys y wefan hon am yr union feysydd sydd eu hangen ar dudalen, mewn un cais. Mae'r sgema yn dilyn y dosbarthiadau cynnwys; mae pob ymholiad yn rhedeg gyda hawliau'r defnyddiwr sy'n ei anfon.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>Mae'r API GraphQL wedi'i ddiffodd yn y mynediad i'r wefan hwn. Trowch ef ymlaen yn graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Nid yw'r llyfrgell GraphQL (webonyx/graphql-php 15) wedi'i gosod.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Pwynt terfyn</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Llyfrgell</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Sgema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count dosbarth cynnwys, sgema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Ymholiad</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Newidynnau (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Rhedeg</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Ateb</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Yn rhedeg…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Nid oedd modd darllen yr ateb.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Mae'r ymholiad yn rhedeg gyda'ch hawliau chi, wedi mewngofnodi gyda'r sesiwn hon.</translation>
     </message>
 </context>
 </TS>

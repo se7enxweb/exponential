@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>සමමුහුර්ත කිරීම්</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: එහි අන්ත ලක්ෂ්‍යය, ස්කීමාව සහ විමසුම් අත්හදා බැලීමට පරීක්ෂණ පිටියක්.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>ඔබේ ගිණුම %login හි ආරක්ෂක සිදුවීමක් සිදු විය: %event. මෙය ඔබ නොවේ නම්, %url හි ඔබේ ගිණුම සුරක්ෂිත කරන්න.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>පිහිටුවීම</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>පිටුවකට අවශ්‍ය ක්ෂේත්‍ර පමණක් නිවැරදිව, එක් ඉල්ලීමකින් මෙම අඩවියේ අන්තර්ගතයෙන් ඉල්ලන්න. ස්කීමාව අන්තර්ගත පන්ති අනුගමනය කරයි; සෑම විමසුමක්ම එය යවන පරිශීලකයාගේ අයිතිවාසිකම් සමඟ ක්‍රියාත්මක වේ.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>මෙම අඩවි ප්‍රවේශයේ GraphQL API අක්‍රිය කර ඇත. එය graphql.ini හි සක්‍රිය කරන්න: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL පුස්තකාලය (webonyx/graphql-php 15) ස්ථාපනය කර නැත.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>අන්ත ලක්ෂ්‍යය</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>පුස්තකාලය</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>ස්කීමාව</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>අන්තර්ගත පන්ති %count, ස්කීමාව %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>විමසුම</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>විචල්‍ය (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ධාවනය කරන්න</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>පිළිතුර</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>ධාවනය වෙමින්…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>පිළිතුර කියවිය නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>මෙම සැසියෙන් පුරනය වී, ඔබගේ අයිතිවාසිකම් සමඟ විමසුම ක්‍රියාත්මක වේ.</translation>
     </message>
 </context>
 </TS>

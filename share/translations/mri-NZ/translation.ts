@@ -15134,6 +15134,14 @@ Kia mōhio: kāore e tangohia te tāutanga o ngā mōkihi.</translation>
         <source>Synchronisations</source>
         <translation>Ngā tukutahitanga</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>Te GraphQL API: tōna pito mutunga, te hanganga me tētahi papa whakamātau hei whakamātau i ngā uiui.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>I puta tētahi takahanga haumarutanga ki tō pūkete %login: %event. Mēnā ehara i a koe, whakahaumarutia tō pūkete ki %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Whakaritenga</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Tonoa ki te ihirangi o tēnei pae ngā āpure e hiahiatia ana e tētahi whārangi, i te tono kotahi anake. E whai ana te hanganga i ngā karaehe ihirangi; ka whakahaerehia ia uiui me ngā mana o te kaiwhakamahi nāna i tuku.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>Kua whakawetohia te GraphQL API i tēnei urunga pae. Whakakāngia ki graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Kāore anō kia tāutahia te whare pukapuka GraphQL (webonyx/graphql-php 15).</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Pito mutunga</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Whare pukapuka</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Hanganga</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count karaehe ihirangi, hanganga %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Uiui</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Ngā taurangi (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Whakahaere</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Whakautu</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>E whakahaere ana…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Kāore i taea te pānui i te whakautu.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Ka whakahaerehia te uiui me ōu mana, kua takiuru mā tēnei wātū.</translation>
     </message>
 </context>
 </TS>

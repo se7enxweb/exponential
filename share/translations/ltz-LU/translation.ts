@@ -15134,6 +15134,14 @@ Hiweis: D'Packagen ginn net desinstalléiert.</translation>
         <source>Synchronisations</source>
         <translation>Synchronisatiounen</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>D'GraphQL-API: hiren Endpunkt, de Schema an eng Spillplaz fir Ufroen auszeprobéieren.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Op Ärem Kont %login gouf et e Sécherheetsevenement: %event. Wann Dir dat net waart, sécheret Äre Kont ënner %url of.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfiguratioun</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Frot den Inhalt vun dësem Site no genee de Felder, déi eng Säit brauch, an enger eenzeger Ufro. De Schema follegt den Inhaltsklassen; all Ufro leeft mat de Rechter vum Benotzer, deen se schéckt.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>D'GraphQL-API ass an dësem Site-Zougang ausgeschalt. Schalt se an graphql.ini an: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>D'GraphQL-Bibliothéik (webonyx/graphql-php 15) ass net installéiert.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Endpunkt</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Bibliothéik</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count Inhaltsklassen, Schema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Ufro</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Variabelen (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ausféieren</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Äntwert</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Leeft…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>D'Äntwert konnt net gelies ginn.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>D'Ufro leeft mat Äre Rechter, ugemellt mat dëser Sessioun.</translation>
     </message>
 </context>
 </TS>

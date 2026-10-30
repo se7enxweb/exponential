@@ -15134,6 +15134,14 @@ Noto: La pakoj ne estos malinstalitaj.</translation>
         <source>Synchronisations</source>
         <translation>Sinkronigoj</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>La GraphQL-API: ĝia finpunkto, la skemo kaj ludejo por provi informpetojn.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Okazis sekureca evento ĉe via konto %login: %event. Se tio ne estis vi, sekurigu vian konton ĉe %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Agordado</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Petu de la enhavo de ĉi tiu retejo ĝuste la kampojn, kiujn paĝo bezonas, per unu peto. La skemo sekvas la enhavklasojn; ĉiu informpeto ruliĝas kun la rajtoj de la uzanto, kiu sendas ĝin.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>La GraphQL-API estas malŝaltita en ĉi tiu retejaliro. Ŝaltu ĝin en graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>La GraphQL-biblioteko (webonyx/graphql-php 15) ne estas instalita.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Finpunkto</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Biblioteko</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Skemo</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count enhavklasoj, skemo %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Informpeto</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Variabloj (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ruli</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Respondo</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Rulante…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>La respondo ne legeblis.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>La informpeto ruliĝas kun viaj rajtoj, ensalutinte per ĉi tiu seanco.</translation>
     </message>
 </context>
 </TS>

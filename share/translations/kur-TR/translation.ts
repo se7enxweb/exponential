@@ -15132,6 +15132,14 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <source>Synchronisations</source>
         <translation>Hevdemkirin</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>API ya GraphQL: xala wê ya dawî, şema û qadeke ceribandinê ji bo pirsiyaran.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78651,6 +78659,73 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Li ser hesabê we %login bûyereke ewlehiyê çêbû: %event. Heke ne hûn bûn, hesabê xwe li %url biparêzin.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sazkirin</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Ji naveroka vê malperê tam qadên ku rûpelek hewce dike, di yek daxwazê de bixwaze. Şema li pey çînên naverokê diçe; her pirsiyar bi mafên bikarhênerê ku wê dişîne dixebite.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>API ya GraphQL di vê gihîştina malperê de girtî ye. Wê di graphql.ini de veke: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Pirtûkxaneya GraphQL (webonyx/graphql-php 15) nehatiye sazkirin.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Xala dawî</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Pirtûkxane</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Şema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count çînên naverokê, şema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Pirsiyar</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Guherbar (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Xebitandin</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Bersiv</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Dixebite…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Bersiv nehat xwendin.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Pirsiyar bi mafên te dixebite, bi vê danişînê têketî.</translation>
     </message>
 </context>
 </TS>

@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # menu.ini
 
-The shipped settings of `settings/menu.ini`: 28 blocks, 222 settings.
+The shipped settings of `settings/menu.ini`: 28 blocks, 223 settings.
 
 > Exponential configuration file.  
 >
@@ -43,7 +43,7 @@ The shipped settings of `settings/menu.ini`: 28 blocks, 222 settings.
 | [Leftmenu_media](Leftmenu_media.md) | 0 |
 | [Leftmenu_my](Leftmenu_my.md) | 15 |
 | [Leftmenu_audit](Leftmenu_audit.md) | 13 |
-| [Leftmenu_setup](Leftmenu_setup.md) | 63 |
+| [Leftmenu_setup](Leftmenu_setup.md) | 64 |
 | [Leftmenu_shop](Leftmenu_shop.md) | 3 |
 | [Leftmenu_user](Leftmenu_user.md) | 10 |
 | [Leftmenu_user_mega](Leftmenu_user_mega.md) | 12 |

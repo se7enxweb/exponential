@@ -1430,3 +1430,14 @@ label.a4-package-option-label {
 }
 .a4-setup-languages-problems { display: grid; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-4); padding: 0; list-style: none; }
 .a4-setup-languages-detail { margin-bottom: var(--a4-space-4); }
+
+/* ---- graphql/playground: Setup > GraphQL, the playground (design:graphql/playground.tpl) ---------------------- */
+/* The query and its variables beside the answer; one column on a narrow screen */
+.a4-graphql-play { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--a4-space-4); }
+@media (max-width: 960px) {
+  .a4-graphql-play { grid-template-columns: minmax(0, 1fr); }
+}
+.a4-graphql-play .a4-field textarea { font-family: var(--a4-mono); font-size: var(--a4-text-s); line-height: var(--a4-leading); }
+.a4-graphql-query { min-height: 18em; }
+.a4-graphql-variables { min-height: 5em; }
+.a4-graphql-answer { min-height: 18em; }

@@ -277,7 +277,7 @@ class expApiKey extends eZPersistentObject
         $catalogue = array();
         foreach ( $scopes as $id => $policy )
         {
-            if ( !is_string( $id ) || !preg_match( '/^[a-z][a-z0-9_]*$/', $id ) || !preg_match( '#^[a-z0-9_]+/[a-z0-9_*]+$#i', (string)$policy ) )
+            if ( !is_string( $id ) || !preg_match( '/^[a-z][a-z0-9_]*(?::[a-z][a-z0-9_]*)?$/', $id ) || !preg_match( '#^[a-z0-9_]+/[a-z0-9_*]+$#i', (string)$policy ) )
                 continue;
             $catalogue[$id] = array( 'id' => $id,
                                      'policy' => (string)$policy,

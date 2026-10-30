@@ -15132,6 +15132,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>ସିଙ୍କ୍ରୋନାଇଜେସନ୍‌ଗୁଡ଼ିକ</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: ଏହାର ଏଣ୍ଡ ପଏଣ୍ଟ, ସ୍କିମା ଏବଂ କ୍ୱେରୀ ପରୀକ୍ଷା କରିବା ପାଇଁ ଏକ ପ୍ଲେଗ୍ରାଉଣ୍ଡ।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78651,6 +78659,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>ଆପଣଙ୍କ ଖାତା %login ରେ ଏକ ସୁରକ୍ଷା ଘଟଣା ଘଟିଛି: %event। ଯଦି ଏହା ଆପଣ ନଥିଲେ, %url ରେ ଆପଣଙ୍କ ଖାତା ସୁରକ୍ଷିତ କରନ୍ତୁ।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ସେଟଅପ୍</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>ଏହି ସାଇଟ୍‌ର ବିଷୟବସ୍ତୁରୁ ଗୋଟିଏ ପୃଷ୍ଠା ପାଇଁ ଆବଶ୍ୟକ ଠିକ୍ ସେହି ଫିଲ୍ଡଗୁଡ଼ିକ ଗୋଟିଏ ଅନୁରୋଧରେ ମାଗନ୍ତୁ। ସ୍କିମା ବିଷୟବସ୍ତୁ ଶ୍ରେଣୀଗୁଡ଼ିକୁ ଅନୁସରଣ କରେ; ପ୍ରତ୍ୟେକ କ୍ୱେରୀ ଏହାକୁ ପଠାଉଥିବା ଉପଯୋଗକର୍ତ୍ତାଙ୍କ ଅଧିକାର ସହ ଚାଲେ।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>ଏହି ସାଇଟ୍ ଆକ୍ସେସ୍‌ରେ GraphQL API ବନ୍ଦ ଅଛି। ଏହାକୁ graphql.ini ରେ ଚାଲୁ କରନ୍ତୁ: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL ଲାଇବ୍ରେରୀ (webonyx/graphql-php 15) ଇନଷ୍ଟଲ୍ ହୋଇନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>ଏଣ୍ଡ ପଏଣ୍ଟ</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>ଲାଇବ୍ରେରୀ</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>ସ୍କିମା</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count ବିଷୟବସ୍ତୁ ଶ୍ରେଣୀ, ସ୍କିମା %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>କ୍ୱେରୀ</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>ଭେରିଏବଲ୍ (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ଚଲାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>ଉତ୍ତର</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>ଚାଲୁଛି…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>ଉତ୍ତର ପଢ଼ାଯାଇପାରିଲା ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>କ୍ୱେରୀ ଆପଣଙ୍କ ଅଧିକାର ସହ, ଏହି ସେସନ୍‌ରେ ସାଇନ୍ ଇନ୍ ହୋଇ ଚାଲେ।</translation>
     </message>
 </context>
 </TS>

@@ -15132,6 +15132,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>همغږۍ</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>د GraphQL API: د هغه پای ټکی، سکیما او د پوښتنو د ازمویلو ځای.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78651,6 +78659,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>ستاسو په حساب %login کې یوه امنیتي پېښه رامنځته شوه: %event. که دا تاسو نه وئ، خپل حساب په %url کې خوندي کړئ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>جوړونه</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>د دې سایټ له منځپانګې څخه په یوه غوښتنه کې هماغه ساحې وغواړئ چې یوه پاڼه ورته اړتیا لري. سکیما د منځپانګې کلاسونه تعقیبوي؛ هره پوښتنه د هغه کارن په حقونو چلېږي چې یې لېږي.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>د GraphQL API په دې سایټ لاسرسي کې بند دی. په graphql.ini کې یې چالان کړئ: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>د GraphQL کتابتون (webonyx/graphql-php 15) نه دی نصب شوی.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>پای ټکی</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>کتابتون</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>سکیما</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count د منځپانګې کلاسونه، سکیما %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>پوښتنه</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>متغیرونه (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>چلول</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>ځواب</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>چلېږي…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>ځواب ونه لوستل شو.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>پوښتنه ستاسو په حقونو چلېږي، د همدې ناستې په ننوتلو سره.</translation>
     </message>
 </context>
 </TS>

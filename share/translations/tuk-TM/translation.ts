@@ -15134,6 +15134,14 @@ bellik: Paketler gurnamadan aýrylmaz.</translation>
         <source>Synchronisations</source>
         <translation>Sinhronizasiýalar</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: onuň ahyrky nokady, shemasy we soraglary synap görmek üçin meýdança.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>%login hasabyňyzda howpsuzlyk wakasy boldy: %event. Eger bu Siz bolmasaňyz, hasabyňyzy %url salgysynda goraň.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sazlama</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Bu saýtyň mazmunyndan sahypa gerek bolan meýdançalary bir haýyş bilen takyk alyň. Shema mazmun klaslaryna eýerýär; her sorag ony iberen ulanyjynyň hukuklary bilen işleýär.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API bu saýta giriş nokadynda öçürilen. Ony graphql.ini-de açyň: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL kitaphanasy (webonyx/graphql-php 15) gurnalmadyk.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Ahyrky nokat</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Kitaphana</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Shema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Mazmun klaslary: %count, shema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Sorag</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Üýtgeýänler (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Işlet</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Jogap</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Işleýär…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Jogaby okap bolmady.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Sorag siziň hukuklaryňyz bilen, şu sessiýada giren ýagdaýyňyzda işleýär.</translation>
     </message>
 </context>
 </TS>

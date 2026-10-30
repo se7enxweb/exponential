@@ -29,6 +29,7 @@ Every module of the kernel and the bundled extensions, from their `module.php`: 
 | [ezinfo](ezinfo/README.md) | 3 | `kernel/ezinfo/module.php` |
 | [ezjscore](ezjscore/README.md) | 3 | `extension/ezjscore/modules/ezjscore/module.php` |
 | [ezoe](ezoe/README.md) | 8 | `extension/ezoe/modules/ezoe/module.php` |
+| [graphql](graphql/README.md) | 2 | `kernel/graphql/module.php` |
 | [infocollector](infocollector/README.md) | 4 | `kernel/infocollector/module.php` |
 | [layout](layout/README.md) | 1 | `kernel/layout/module.php` |
 | [mailpreferences](mailpreferences/README.md) | 7 | `kernel/mailpreferences/module.php` |

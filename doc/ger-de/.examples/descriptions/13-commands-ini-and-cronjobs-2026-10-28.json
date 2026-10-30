@@ -344,8 +344,8 @@
         "de": "enabled: eine als Text geschriebene Benachrichtigung (die Templates von\nnotification/handler/*/view/) wird als Text und als HTML im Mail-Layout\n(design:mail/layout.tpl) gesendet, die erste Adresse in einer eigenen Zeile als\nButton. disabled: nur als Text. Ein Template, das content_type setzt, wird in jedem Fall\nso gesendet, wie es sagt."
     },
     "ini:settings/rest.ini [ApiProvider] ProviderClass": {
-        "en": "Context help of help maintained as content for clients with a token (an OAuth token or a personal API key with\nthe scope help): /api/help/v1/topic/<help_id>, /api/help/v1/manual/<remote_id> (doc/eng-us/features/6.0/help-content.md)",
-        "de": "Kontexthilfe der als Inhalt gepflegten Hilfe für Clients mit Token (ein OAuth-Token oder ein persönlicher API-Schlüssel mit\nder Berechtigung help): /api/help/v1/topic/<help_id>, /api/help/v1/manual/<remote_id> (doc/eng-us/features/6.0/help-content.md)"
+        "en": "Context help of help maintained as content for clients with a token (an OAuth token or a personal API key with\nthe scope help): /api/help/v1/topic/<help_id>, /api/help/v1/manual/<remote_id> (doc/eng-us/features/6.0/help-content.md)\nThe GraphQL API, /api/graphql (settings/graphql.ini, off until enabled; doc/eng-us/features/6.0/graphql.md)",
+        "de": "Kontexthilfe der als Inhalt gepflegten Hilfe für Clients mit Token (ein OAuth-Token oder ein persönlicher API-Schlüssel mit\nder Berechtigung help): /api/help/v1/topic/<help_id>, /api/help/v1/manual/<remote_id> (doc/eng-us/features/6.0/help-content.md)\nDie GraphQL-API, /api/graphql (settings/graphql.ini, aus, bis sie eingeschaltet wird; doc/eng-us/features/6.0/graphql.md)"
     },
     "ini:settings/rest.ini [expHelpRestController_CacheSettings]": {
         "en": "The context help of the help provider is never cached: what a user may see depends on the user",

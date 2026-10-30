@@ -32,6 +32,7 @@ Wo eine Erweiterung sich über Einstellungen in den Kernel einklinkt: INI-Einste
 | [exphelp.ini](exphelp.md) | Kernel | 2 | Providers, BookChecks |
 | [ezxml.ini](ezxml.md) | Kernel | 4 | HandlerClass, AliasClasses, HandlerClass, AliasClasses |
 | [file.ini](file.md) | Kernel | 5 | Handler, SystemUserCheck, Handlers, FileHandler, Listener |
+| [graphql.ini](graphql.md) | Kernel | 2 | ClassList, ExcludedClassList |
 | [image.ini](image.md) | Kernel | 15 | Filters, Filters, Filters, Filters, Filters, Filters ... |
 | [ini.ini](ini.md) | Kernel | 1 | ScopeProviders |
 | [kernelservices.ini](kernelservices.md) | Kernel | 25 | Class, Factory, Class, Factory, Class, Factory ... |

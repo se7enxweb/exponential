@@ -15073,6 +15073,14 @@ Piezīme: pakotnes netiks atinstalētas.</translation>
         <source>Synchronisations</source>
         <translation>Sinhronizācijas</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: tā galapunkts, shēma un vide vaicājumu izmēģināšanai.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78683,6 +78691,73 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Jūsu kontā %login notika drošības notikums: %event. Ja tas nebijāt jūs, aizsargājiet savu kontu adresē %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Iestatīšana</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Pieprasiet no šīs vietnes satura vienā pieprasījumā tieši tos laukus, kas vajadzīgi lapai. Shēma seko satura klasēm; katrs vaicājums tiek izpildīts ar tā lietotāja tiesībām, kurš to nosūta.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API šajā vietnes piekļuvē ir izslēgts. Ieslēdziet to failā graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL bibliotēka (webonyx/graphql-php 15) nav instalēta.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Galapunkts</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Bibliotēka</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Shēma</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Satura klases: %count, shēma %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Vaicājums</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Mainīgie (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Palaist</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Atbilde</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Izpilda…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Atbildi neizdevās nolasīt.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Vaicājums tiek izpildīts ar jūsu tiesībām, pierakstoties šajā sesijā.</translation>
     </message>
 </context>
 </TS>

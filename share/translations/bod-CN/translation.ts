@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>མཉམ་སྒྲིག</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: དེའི་མཇུག་ཚེག་དང་། གཞི་ཁྲམ། འདྲི་རྩད་ཚོད་ལྟ་བྱེད་ས་བཅས།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>ཁྱེད་ཀྱི་ཐོ་ཁོངས་ %login ལ་བདེ་འཇགས་ཀྱི་དོན་རྐྱེན་ཞིག་བྱུང་: %event། འདི་ཁྱེད་མིན་ན་ %url ནས་ཁྱེད་ཀྱི་ཐོ་ཁོངས་བདེ་འཇགས་སུ་གཏོང་རོགས།</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>སྒྲིག་བཀོད།</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>དྲ་ཚིགས་འདིའི་ནང་དོན་ལ་ཤོག་ངོས་ཤིག་ལ་དགོས་པའི་ཡིག་ཁོངས་ཁོ་ན་རེ་ཞུ་ཐེངས་གཅིག་གི་ནང་འདྲི་རོགས། གཞི་ཁྲམ་ནི་ནང་དོན་གྱི་རིགས་ལ་བརྟེན་ཡོད། འདྲི་རྩད་རེ་རེ་དེ་བཏང་མཁན་སྤྱོད་མཁན་གྱི་དབང་ཚད་ཀྱིས་འཁོར་སྐྱོད་བྱེད།</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>དྲ་ཚིགས་འཛུལ་སྒོ་འདིའི་ནང་ GraphQL API བཀག་ཡོད། graphql.ini ནང་སྒོ་ཕྱེ་རོགས་: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL དཔེ་མཛོད་ (webonyx/graphql-php 15) སྒྲིག་འཇུག་བྱས་མེད།</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>མཇུག་ཚེག</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>དཔེ་མཛོད།</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>གཞི་ཁྲམ།</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>ནང་དོན་རིགས་ %count, གཞི་ཁྲམ་ %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>འདྲི་རྩད།</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>འགྱུར་ཚད་ (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>འཁོར་སྐྱོད།</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>ལན།</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>འཁོར་སྐྱོད་བྱེད་བཞིན་པ…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>ལན་ཀློག་མ་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>འདྲི་རྩད་འདི་ཁྱེད་ཀྱི་དབང་ཚད་ཐོག་ བརྒྱུད་རིམ་འདིས་ནང་འཛུལ་བྱས་ནས་འཁོར་སྐྱོད་བྱེད།</translation>
     </message>
 </context>
 </TS>

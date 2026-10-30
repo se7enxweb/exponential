@@ -158,6 +158,35 @@ class ezpRestAuthConfiguration
      * Checks if authentication should be requested or not
      * @return bool
      */
+    /**
+     * @param ezcMvcRoutingInformation $info
+     * @return bool the route is listed in rest.ini [RouteSettings] OptionalAuthentication[] (controller_action)
+     */
+    public static function isOptional( ezcMvcRoutingInformation $info )
+    {
+        $ini = eZINI::instance( 'rest.ini' );
+        if ( !$ini->hasVariable( 'RouteSettings', 'OptionalAuthentication' ) )
+            return false;
+        return in_array( $info->controllerClass . '_' . $info->action, (array)$ini->variable( 'RouteSettings', 'OptionalAuthentication' ), true );
+    }
+
+    /**
+     * @param ezcMvcRequest $req
+     * @return bool the request carries an Authorization header, or a token or key parameter
+     */
+    public static function presentsCredentials( ezcMvcRequest $req )
+    {
+        $header = ezpOauthUtility::getAuthorizationHeader();
+        if ( is_string( $header ) && trim( $header ) !== '' )
+            return true;
+        foreach ( array( 'oauth_token', 'access_token', 'api_key' ) as $name )
+        {
+            if ( isset( $req->get[$name] ) || isset( $req->post[$name] ) )
+                return true;
+        }
+        return false;
+    }
+
     private function shallAuthenticate()
     {
         $shallAuthenticate = true;
@@ -169,6 +198,10 @@ class ezpRestAuthConfiguration
         {
             $routeFilter = ezpRestRouteFilterInterface::getRouteFilter();
             $shallAuthenticate = $routeFilter->shallDoActionWithRoute( $this->info );
+            // A route of rest.ini [RouteSettings] OptionalAuthentication[] (the GraphQL end point) is authenticated
+            // only when the request presents credentials; without any it runs as the anonymous user.
+            if ( $shallAuthenticate && self::isOptional( $this->info ) && !self::presentsCredentials( $this->req ) )
+                $shallAuthenticate = false;
         }
 
         return $shallAuthenticate;

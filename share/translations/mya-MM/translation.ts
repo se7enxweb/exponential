@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>ထပ်တူပြုမှုများ</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API- ၎င်း၏ အဆုံးမှတ်၊ ဇယားဖွဲ့စည်းပုံနှင့် မေးမြန်းမှုများကို စမ်းသပ်ရန် နေရာ။</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>သင်၏ %login အကောင့်တွင် လုံခြုံရေးဖြစ်ရပ်တစ်ခု ဖြစ်ပေါ်ခဲ့သည်: %event ။ သင်မဟုတ်ပါက %url တွင် သင့်အကောင့်ကို လုံခြုံအောင်ပြုလုပ်ပါ။</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>စနစ်ထည့်သွင်းမှု</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>စာမျက်နှာတစ်ခုအတွက် လိုအပ်သော အကွက်များကိုသာ ဤဆိုက်၏ အကြောင်းအရာထံမှ တောင်းဆိုမှုတစ်ခုတည်းဖြင့် အတိအကျ တောင်းယူပါ။ ဇယားဖွဲ့စည်းပုံသည် အကြောင်းအရာ အတန်းအစားများအတိုင်း လိုက်နာပြီး မေးမြန်းမှုတိုင်းကို ပေးပို့သည့် အသုံးပြုသူ၏ ခွင့်ပြုချက်များဖြင့် လုပ်ဆောင်သည်။</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>ဤဆိုက်ဝင်ရောက်မှုတွင် GraphQL API ကို ပိတ်ထားသည်။ graphql.ini တွင် ဖွင့်ပါ- [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL စာကြည့်တိုက် (webonyx/graphql-php 15) ကို ထည့်သွင်းမထားပါ။</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>အဆုံးမှတ်</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>စာကြည့်တိုက်</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>ဇယားဖွဲ့စည်းပုံ</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>အကြောင်းအရာ အတန်းအစား %count ခု၊ ဇယားဖွဲ့စည်းပုံ %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>မေးမြန်းမှု</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>ကိန်းရှင်များ (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>လုပ်ဆောင်ရန်</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>အဖြေ</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>လုပ်ဆောင်နေသည်…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>အဖြေကို ဖတ်၍မရပါ။</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>မေးမြန်းမှုကို ဤစက်ရှင်ဖြင့် ဝင်ရောက်ထားသော သင်၏ ခွင့်ပြုချက်များဖြင့် လုပ်ဆောင်သည်။</translation>
     </message>
 </context>
 </TS>

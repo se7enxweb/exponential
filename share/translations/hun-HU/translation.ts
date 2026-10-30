@@ -15073,6 +15073,14 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
         <source>Synchronisations</source>
         <translation>Szinkronizálások</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>A GraphQL API: a végpontja, a séma és egy kísérleti felület lekérdezések kipróbálásához.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78683,6 +78691,73 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Biztonsági esemény történt az Ön %login fiókjában: %event. Ha nem Ön volt az, védje meg fiókját itt: %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Rendszer</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Kérje le a webhely tartalmából egyetlen kéréssel pontosan azokat a mezőket, amelyekre egy oldalnak szüksége van. A séma a tartalomosztályokat követi; minden lekérdezés a küldő felhasználó jogosultságaival fut.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>A GraphQL API ki van kapcsolva ebben a webhely-hozzáférésben. Kapcsolja be a graphql.ini fájlban: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>A GraphQL könyvtár (webonyx/graphql-php 15) nincs telepítve.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Végpont</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Könyvtár</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Séma</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Tartalomosztályok: %count, séma %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Lekérdezés</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Változók (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Futtatás</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Válasz</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Fut…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>A választ nem sikerült beolvasni.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>A lekérdezés az Ön jogosultságaival fut, ebben a bejelentkezett munkamenetben.</translation>
     </message>
 </context>
 </TS>

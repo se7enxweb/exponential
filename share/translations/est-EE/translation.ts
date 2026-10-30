@@ -15073,6 +15073,14 @@ Märkus: pakette ei desinstallita.</translation>
         <source>Synchronisations</source>
         <translation>Sünkroonimised</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: selle lõpp-punkt, skeem ja mänguväljak päringute proovimiseks.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78683,6 +78691,73 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Teie kontol %login toimus turvasündmus: %event. Kui see ei olnud teie, kaitske oma kontot aadressil %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Häälestus</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Küsi selle saidi sisult ühe päringuga täpselt need väljad, mida leht vajab. Skeem järgib sisuklasse; iga päring töötab selle kasutaja õigustega, kes selle saadab.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API on selles saidi juurdepääsus välja lülitatud. Lülita see sisse failis graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL teek (webonyx/graphql-php 15) pole paigaldatud.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Lõpp-punkt</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Teek</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Skeem</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Sisuklasse: %count, skeem %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Päring</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Muutujad (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Käivita</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Vastus</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Käivitamine…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Vastust ei õnnestunud lugeda.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Päring töötab sinu õigustega, selle seansiga sisse logituna.</translation>
     </message>
 </context>
 </TS>

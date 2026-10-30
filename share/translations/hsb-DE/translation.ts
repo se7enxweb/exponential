@@ -15134,6 +15134,14 @@ Pokazka: pakety so njewotinstaluja.</translation>
         <source>Synchronisations</source>
         <translation>Synchronizacije</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: jeho kónčny dypk, šema a hrajkanišćo za wupruwowanje naprašowanjow.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Pola Wašeho konta %login je wěstotny podawk był: %event. Jeli to njejsće Wy był, zawěsćće swoje konto na %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Zarjadowanje</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Prašejće so wobsaha tutoho sydła z jednym naprašowanjom runje za tymi polemi, kotrež strona trjeba. Šema slěduje klasam wobsaha; kóžde naprašowanje so z prawami wužiwarja wuwjedźe, kiž je sćele.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API je w tutym přistupje k sydłu wupinjene. Zapińće jo w graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Biblioteka GraphQL (webonyx/graphql-php 15) njeje instalowana.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Kónčny dypk</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Biblioteka</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Šema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Klasy wobsaha: %count, šema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Naprašowanje</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Wariable (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Wuwjesć</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Wotmołwa</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Wuwjedźe so…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Wotmołwa njeda so čitać.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Naprašowanje so z wašimi prawami wuwjedźe, přizjewjeni w tutym posedźenju.</translation>
     </message>
 </context>
 </TS>

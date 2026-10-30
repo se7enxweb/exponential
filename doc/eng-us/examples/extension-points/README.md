@@ -32,6 +32,7 @@ Where an extension plugs into the kernel through settings: INI settings that nam
 | [exphelp.ini](exphelp.md) | kernel | 2 | Providers, BookChecks |
 | [ezxml.ini](ezxml.md) | kernel | 4 | HandlerClass, AliasClasses, HandlerClass, AliasClasses |
 | [file.ini](file.md) | kernel | 5 | Handler, SystemUserCheck, Handlers, FileHandler, Listener |
+| [graphql.ini](graphql.md) | kernel | 2 | ClassList, ExcludedClassList |
 | [image.ini](image.md) | kernel | 15 | Filters, Filters, Filters, Filters, Filters, Filters ... |
 | [ini.ini](ini.md) | kernel | 1 | ScopeProviders |
 | [kernelservices.ini](kernelservices.md) | kernel | 25 | Class, Factory, Class, Factory, Class, Factory ... |

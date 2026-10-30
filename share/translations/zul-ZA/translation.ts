@@ -15132,6 +15132,14 @@ Isaziso: Amaphakheji ngeke akhishwe.</translation>
         <source>Synchronisations</source>
         <translation>Ukuvumelanisa</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>I-GraphQL API: iphoyinti layo lokugcina, i-schema nendawo yokuzama imibuzo.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78651,6 +78659,73 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Kube nesehlakalo sokuphepha ku-akhawunti yenu %login: %event. Uma bekungeyona nina, vikelani i-akhawunti yenu ku %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ukumisa</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Buza okuqukethwe yile sayithi kanye izinkambu ikhasi elizidingayo, ngesicelo esisodwa. I-Schema ilandela amakilasi okuqukethwe; umbuzo ngamunye usebenza ngamalungelo omsebenzisi owuthumelayo.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>I-GraphQL API ivaliwe kulokhu kufinyelela isayithi. Yivule ku-graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Umtapo wolwazi we-GraphQL (webonyx/graphql-php 15) awufakiwe.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Iphoyinti lokugcina</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Umtapo wolwazi</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>I-Schema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Amakilasi okuqukethwe angu-%count, i-schema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Umbuzo</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Okuguquguqukayo (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Sebenzisa</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Impendulo</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Iyasebenza…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Impendulo ayikwazanga ukufundwa.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Umbuzo usebenza ngamalungelo akho, ungene ngale seshini.</translation>
     </message>
 </context>
 </TS>

@@ -15568,6 +15568,14 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <source>Synchronisations</source>
         <translation>Synchronisaties</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>De GraphQL-API: het endpoint, het schema en een speelomgeving om query's uit te proberen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79878,6 +79886,73 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Er was een beveiligingsgebeurtenis op je account %login: %event. Was jij het niet, beveilig je account dan op %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Vraag de content van deze site om precies de velden die een pagina nodig heeft, in één verzoek. Het schema volgt de contentklassen; elke query draait met de rechten van de gebruiker die hem verstuurt.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>De GraphQL-API is uitgeschakeld in deze siteaccess. Schakel hem in via graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>De GraphQL-bibliotheek (webonyx/graphql-php 15) is niet geïnstalleerd.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Endpoint</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Bibliotheek</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count contentklassen, schema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Query</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Variabelen (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Uitvoeren</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Antwoord</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Bezig met uitvoeren…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Het antwoord kon niet worden gelezen.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>De query draait met uw rechten, ingelogd met deze sessie.</translation>
     </message>
 </context>
 </TS>

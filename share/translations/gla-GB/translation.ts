@@ -15134,6 +15134,14 @@ An aire: Cha tèid na pacaidean a dhì-stàladh.</translation>
         <source>Synchronisations</source>
         <translation>Sioncronachaidhean</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>An API GraphQL: a phuing-crìche, an sgeama agus raon-cluiche airson ceistean fheuchainn.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Thachair tachartas tèarainteachd air ur cunntas %login: %event. Mur e sibh fhèin a bh&apos; ann, dìonaibh ur cunntas aig %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Suidheachadh</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Iarr air susbaint na làraich seo dìreach na raointean a tha a dhìth air duilleag, ann an aon iarrtas. Tha an sgeama a' leantainn nan clasaichean susbainte; bidh gach ceist a' ruith le còraichean a' chleachdaiche a chuireas i.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>Tha an API GraphQL dheth san inntrigeadh làraich seo. Cuir air e ann an graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Chan eil an leabharlann GraphQL (webonyx/graphql-php 15) air a stàladh.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Puing-crìche</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Leabharlann</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Sgeama</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count clasaichean susbainte, sgeama %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Ceist</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Caochladairean (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ruith</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Freagairt</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>A' ruith…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Cha b' urrainn dhuinn an fhreagairt a leughadh.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Bidh a' cheist a' ruith le na còraichean agad, air do chlàradh a-steach leis an t-seisean seo.</translation>
     </message>
 </context>
 </TS>

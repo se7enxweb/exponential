@@ -15135,6 +15135,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>שוויא</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>API ד GraphQL: נוקזא דסופא דילה, סכמא ודוכתא לנסיונא דשואלא.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78662,6 +78670,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>הוא גדשא דשלמותא בחושבנא דילוכון %login: %event. אן לא אחתון הויתון, חמו חושבנא דילוכון ב %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>טויבא</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>שאל למליותא דהנא אתרא חקלא הנון בלחוד דסניקא להון פאתא, בחדא בעותא. סכמא אזל בתר זניא דמליותא; כל שואלא רהט בשולטנא דמפלחנא דמשדר לה.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>API ד GraphQL בטילא בהנא מעלנא דאתרא. פעל לה ב graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>בית כתבא ד GraphQL (webonyx/graphql-php 15) לא מתקים.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>נוקזא דסופא</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>בית כתבא</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>סכמא</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count זניא דמליותא, סכמא %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>שואלא</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>משחלפנא (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>מרהטא</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>פוניא</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>רהט…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>פוניא לא אשתכח למתקריו.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>שואלא רהט בשולטניך, עלילא בהנא מותבא.</translation>
     </message>
 </context>
 </TS>

@@ -48,6 +48,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [ezxml.ini](ezxml/README.md) | kernel | 4 |
 | [fetchalias.ini](fetchalias/README.md) | kernel | 8 |
 | [file.ini](file/README.md) | kernel | 6 |
+| [graphql.ini](graphql/README.md) | kernel | 2 |
 | [httpcache.ini](httpcache/README.md) | kernel | 1 |
 | [i18n.ini](i18n/README.md) | kernel | 2 |
 | [icon.ini](icon/README.md) | kernel | 3 |
@@ -72,7 +73,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [rad.ini](rad/README.md) | kernel | 4 |
 | [requestclassifier.ini](requestclassifier/README.md) | kernel | 7 |
 | [requestrules.ini](requestrules/README.md) | kernel | 4 |
-| [rest.ini](rest/README.md) | kernel | 17 |
+| [rest.ini](rest/README.md) | kernel | 18 |
 | [secrets.ini](secrets/README.md) | kernel | 1 |
 | [setup.ini](setup/README.md) | kernel | 24 |
 | [shop.ini](shop/README.md) | kernel | 10 |

@@ -59,9 +59,10 @@ ExtensionRepositories[]
 > Das wird derzeit verwendet, damit URL-Aliase keine  
 > bestehenden Modulnamen überschreiben  
 > Die Datentabellen und die benannten Datenbankverbindungen (doc/eng-us/features/6.0/data-tables.md)  
+> Die GraphQL-API mit der Sitzung der Weboberfläche (doc/eng-us/features/6.0/graphql.md)  
 > Der Secret-Store des Kernels (doc/eng-us/features/6.0/secret-store.md)  
 
-Standard: eine Liste mit 36: `apikey`, `audit`, `class`, `collaboration`, `contentcheck`, `csp`, `contentfinder`, `content`, `datatable`, `error`, `exphelp`, `ezinfo` ....
+Standard: eine Liste mit 37: `apikey`, `audit`, `class`, `collaboration`, `contentcheck`, `csp`, `contentfinder`, `content`, `datatable`, `error`, `exphelp`, `graphql` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -80,6 +81,7 @@ ModuleList[]=content
 ModuleList[]=datatable
 ModuleList[]=error
 ModuleList[]=exphelp
+ModuleList[]=graphql
 ModuleList[]=ezinfo
 ModuleList[]=infocollector
 ModuleList[]=layout
@@ -88,8 +90,7 @@ ModuleList[]=notification
 ModuleList[]=oauth
 ModuleList[]=oauthadmin
 ModuleList[]=package
-ModuleList[]=pdf
-# ... 16 weitere in der ausgelieferten Datei
+# ... 17 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

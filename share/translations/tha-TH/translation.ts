@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>การซิงโครไนซ์</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: ปลายทาง สคีมา และพื้นที่ทดลองคิวรี</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>เกิดเหตุการณ์ด้านความปลอดภัยกับบัญชี %login ของคุณ: %event. หากไม่ใช่คุณ กรุณาปกป้องบัญชีของคุณที่ %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ตั้งค่าระบบ</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>ขอข้อมูลจากเนื้อหาของไซต์นี้เฉพาะฟิลด์ที่หน้าต้องการ ภายในคำขอเดียว สคีมาเป็นไปตามคลาสเนื้อหา และทุกคิวรีจะทำงานด้วยสิทธิ์ของผู้ใช้ที่ส่งคิวรีนั้น</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API ถูกปิดอยู่ในการเข้าถึงไซต์นี้ เปิดได้ใน graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>ยังไม่ได้ติดตั้งไลบรารี GraphQL (webonyx/graphql-php 15)</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>ปลายทาง</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>ไลบรารี</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>สคีมา</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count คลาสเนื้อหา, สคีมา %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>คิวรี</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>ตัวแปร (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>เรียกใช้</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>คำตอบ</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>กำลังเรียกใช้…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>ไม่สามารถอ่านคำตอบได้</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>คิวรีทำงานด้วยสิทธิ์ของคุณ โดยลงชื่อเข้าใช้ด้วยเซสชันนี้</translation>
     </message>
 </context>
 </TS>

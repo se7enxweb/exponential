@@ -15073,6 +15073,14 @@ Pastaba: paketai nebus pašalinti iš įdiegtų (neįdiegiami).</translation>
         <source>Synchronisations</source>
         <translation>Sinchronizavimai</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: jos galinis taškas, schema ir aplinka užklausoms išbandyti.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78683,6 +78691,73 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Jūsų paskyroje %login įvyko saugos įvykis: %event. Jei tai buvote ne jūs, apsaugokite paskyrą adresu %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sąranka</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Vienu užklausimu paprašykite šios svetainės turinio tiksliai tų laukų, kurių reikia puslapiui. Schema atitinka turinio klases; kiekviena užklausa vykdoma ją siunčiančio naudotojo teisėmis.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API šioje prieigoje prie svetainės (siteaccess) išjungta. Įjunkite ją graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL biblioteka (webonyx/graphql-php 15) neįdiegta.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Galinis taškas</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Biblioteka</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Turinio klasės: %count, schema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Užklausa</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Kintamieji (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Paleisti</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Atsakymas</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Vykdoma…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Atsakymo nepavyko perskaityti.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Užklausa vykdoma jūsų teisėmis, prisijungus šia sesija.</translation>
     </message>
 </context>
 </TS>

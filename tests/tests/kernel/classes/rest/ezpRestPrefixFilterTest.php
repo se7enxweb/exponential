@@ -46,6 +46,11 @@ class ezpRestPrefixFilterTest extends PHPUnit\Framework\TestCase
             'no version'           => array( '/api/ezp/content/node/2', 'ezp', 1, '/api/content/node/2' ),
             'other provider'       => array( '/api/myapp/v12/items', 'myapp', 12, '/api/items' ),
             'not under the prefix' => array( '/other/ezp/v2/x', false, 1, '/other/ezp/v2/x' ),
+            // rest.ini [ApiProvider] ProviderClass[graphql]: its address alone is the provider's (/api/graphql)
+            'a registered provider without a slash' => array( '/api/graphql', 'graphql', 1, '/api' ),
+            'a registered provider with a slash'    => array( '/api/graphql/', 'graphql', 1, '/api/' ),
+            'below a registered provider'           => array( '/api/graphql/playground', 'graphql', 1, '/api/playground' ),
+            'an element that names no provider'     => array( '/api/fatal', false, 1, '/api/fatal' ),
         );
     }
 

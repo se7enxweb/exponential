@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>سِنکرونایِزیشَن</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: اَمیُک اینڈ پوائنٹ، اِسکیما تہٕ کوئری آزماونہٕ خٲطرٕ اکھ پلے گراؤنڈ۔</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>توٚہہ ہٕنٛدِس اَکاوُنٹس %login منٛز سپُد اکھ حِفاظتی واقعہٕ: %event۔ اگر یہ توٚہہ نہٕ ٲسِو، تیٚلہِ کٔرِو %url پؠٹھ پَنُن اَکاوُنٹ محفوظ۔</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>سیٹ اَپ</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>یمہٕ سایِٹچہِ مواد نِشہِ مانٛگِو اکہِ درخواستہِ منٛز تِمے فیلڈ یِمن ہُنٛد کانٛسہِ صفحس ضرورت چھےٚ۔ اِسکیما چھُ مواد کلاسن ہُنٛد پیروی کران؛ پرٛتھ کوئری چھےٚ سوزن وٲلس یوٗزرس ہٕنٛدِ حقوٗقو سٟتؠ چلان۔</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>یمہٕ سایِٹ ایکسیسس منٛز چھُ GraphQL API بنٛد۔ یہِ کٔرِو graphql.ini منٛز آن: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL لائبریری (webonyx/graphql-php 15) چھےٚ نہٕ اِنسٹال۔</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>اینڈ پوائنٹ</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>لائبریری</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>اِسکیما</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count مواد کلاس، اِسکیما %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>کوئری</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>ویریایبل (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>چلٲوِو</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>جواب</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>چلان…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>جواب ہیوٚک نہٕ پٔرِتھ۔</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>کوئری چھےٚ تُہٕنٛدِ حقوٗقو سٟتؠ، یمہٕ سیشنہٕ سٟتؠ سائن اِن کٔرِتھ چلان۔</translation>
     </message>
 </context>
 </TS>

@@ -15132,6 +15132,14 @@ Fiiro gaar ah: Xirmooyinka lama saari doono rakibaaddooda.</translation>
         <source>Synchronisations</source>
         <translation>Isku waafajinta</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: barta dhammaadkeeda, schema-da iyo goob lagu tijaabiyo weydiimaha.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78651,6 +78659,73 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Dhacdo amni ayaa ka dhacday akoonkaaga %login: %event. Haddii aysan adiga ahayn, ku sug akoonkaaga %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Habeyn</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Ka weydii nuxurka goobtan oo keliya beeraha bog u baahan yahay, hal codsi. Schema-du waxay raacdaa fasallada nuxurka; weydiin kasta waxay ku shaqaysaa xuquuqda isticmaalaha soo diray.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API waa ka demsan yahay gelitaankan goobta. Ka shid graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Maktabadda GraphQL (webonyx/graphql-php 15) lama rakibin.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Barta dhammaadka</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Maktabad</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count fasal oo nuxur ah, schema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Weydiin</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Doorsoomayaal (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Maamul</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Jawaab</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Waa socdaa…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Jawaabta lama akhrin karin.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Weydiintu waxay ku shaqaysaa xuquuqdaada, adigoo ku soo galay fadhigan.</translation>
     </message>
 </context>
 </TS>

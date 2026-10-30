@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>ߢߐߜ߳ߐ߲ߛߎߡߊ</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: ߊ ߘߏ߲ߘߊ ߦߐߙߐ߸ ߛߌߜ߳ߌߗߏߜ߳ߏ ߣߌ߫ ߢߍߣߊߖߍߦߐߙߐ ߡߍ߲ ߦߋ ߢߌߣߌ߲ߞߊߟߌ ߟߎ ߝߊߙߌ ߟߊ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍ ߘߐ ߞߍߙߊ ߌ ߞߊ ߞߐ߲ߕߌ %login ߞߊ߲: %event. ߣߌ ߌߟߋ ߕߎ߲ ߕߍ߸ ߌ ߞߊ ߞߐ߲ߕߌ ߟߊߞߊߣߊ %url ߟߊ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ߟߊߓߍ߲ߣߌ</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>ߣߌ߲ ߛߌߕߌ ߞߐߣߐߞߏ ߟߎ ߢߌߣߌ߲ߞߊ ߦߐߙߐ ߡߍ߲ ߠߎ ߡߊߞߏ ߦߋ ߞߐߜߍ ߦߋ ߏ ߘߐߙߐ߲ ߡߊ߸ ߢߌߣߌ߲ߞߊߟߌ ߞߋߟߋ߲ ߞߣߐ. ߛߌߜ߳ߌߗߏߜ߳ߏ ߦߋ ߞߐߣߐߞߏ ߞߎߟߎ ߟߎ ߣߐߡߌߣߍ߲߸ ߢߌߣߌ߲ߞߊߟߌ ߓߍߍ ߦߋ ߓߏߟߌ ߟߊ ߊ ߗߌߓߊ ߟߊ ߤߊߞߍ ߟߎ ߟߊ.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API ߛߐߜߐߟߍ߲ ߦߋ ߣߌ߲ ߛߌߕߌ ߘߏ߲ߘߊ ߣߌ߲ ߘߐ. ߊ ߦߟߍ graphql.ini ߞߣߐ: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL ߜ߳ߊߝߋߓߏ߲ (webonyx/graphql-php 15) ߡߊ ߛߌߜߌ.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>ߘߏ߲ߘߊ ߦߐߙߐ</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>ߜ߳ߊߝߋߓߏ߲</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>ߛߌߜ߳ߌߗߏߜ߳ߏ</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>ߞߐߣߐߞߏ ߞߎߟߎ %count߸ ߛߌߜ߳ߌߗߏߜ߳ߏ %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>ߢߌߣߌ߲ߞߊߟߌ</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>ߦߟߍߡߊߕߐ ߟߎ (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ߓߏߟߌ</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>ߖߊߓߌ</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>ߊ ߓߍ ߓߏߟߌ ߟߊ…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>ߖߊߓߌ ߡߊ ߛߋ ߞߊ ߞߊߙߊ߲.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>ߢߌߣߌ߲ߞߊߟߌ ߦߋ ߓߏߟߌ ߟߊ ߌ ߟߊ ߤߊߞߍ ߟߎ ߟߊ߸ ߌ ߘߏ߲ߣߍ߲ ߣߌ߲ ߛߋߛߐ߲ ߣߌ߲ ߘߐ.</translation>
     </message>
 </context>
 </TS>

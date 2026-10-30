@@ -15853,6 +15853,14 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <source>Synchronisations</source>
         <translation>Synkroniseringer</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL-API-et: endepunktet, skjemaet og en lekeplass for å prøve spørringer.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79911,6 +79919,73 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Det var en sikkerhetshendelse på kontoen din %login: %event. Hvis det ikke var deg, sikre kontoen din på %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Oppsett</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Be innholdet på dette nettstedet om nøyaktig de feltene en side trenger, i én forespørsel. Skjemaet følger innholdsklassene; hver spørring kjører med rettighetene til brukeren som sender den.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL-API-et er slått av i denne nettstedstilgangen. Slå det på i graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL-biblioteket (webonyx/graphql-php 15) er ikke installert.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Endepunkt</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Bibliotek</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count innholdsklasser, skjema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Spørring</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Variabler (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Kjør</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Svar</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Kjører…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Svaret kunne ikke leses.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Spørringen kjører med dine rettigheter, innlogget med denne økten.</translation>
     </message>
 </context>
 </TS>

@@ -15134,6 +15134,14 @@ Fakatokanga: ʻE ʻikai toʻo ʻa e fokotuʻu ʻo e ngaahi pēkeisi.</translatio
         <source>Synchronisations</source>
         <translation>Ngaahi fakahoa</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>Ko e GraphQL API: hono feituʻu ngataʻanga, ʻa e ʻAki mo ha feituʻu ke ʻahiʻahiʻi ai ʻa e ngaahi fehuʻi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Naʻe ʻi ai ha meʻa hoko fakamalu ki hoʻo ʻakauni %login: %event. Kapau naʻe ʻikai ko koe, fakamalu hoʻo ʻakauni ʻi %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Fokotuʻu</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Kole ki he meʻa ʻi loto ʻo e uepisaiti ni ʻa e ngaahi feituʻu tonu pē ʻoku fiemaʻu ʻe ha peesi, ʻi ha kole ʻe taha. ʻOku muimui ʻa e ʻAki ki he ngaahi kalasi meʻa ʻi loto; ʻoku fakalele ʻa e fehuʻi kotoa pē ʻaki ʻa e ngaahi totonu ʻa e tokotaha ngāue naʻá ne fekauʻi ia.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>Kuo tāmateʻi ʻa e GraphQL API ʻi he hūʻanga uepisaiti ko ʻeni. Fakaʻaongaʻi ia ʻi he graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>ʻOku teʻeki fokotuʻu ʻa e laipeli GraphQL (webonyx/graphql-php 15).</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Feituʻu ngataʻanga</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Laipeli</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>ʻAki</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count kalasi meʻa ʻi loto, ʻAki %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Fehuʻi</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Ngaahi liliuʻanga (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Fakalele</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Tali</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>ʻOku lolotonga fakalele…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Naʻe ʻikai lava ʻo lau ʻa e tali.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>ʻOku fakalele ʻa e fehuʻi ʻaki ho ngaahi totonu, kuo ke hū mai ʻaki ʻa e seseni ko ʻeni.</translation>
     </message>
 </context>
 </TS>

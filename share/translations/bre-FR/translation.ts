@@ -15134,6 +15134,14 @@ Notenn: ne vo ket distaliet ar pakadoù.</translation>
         <source>Synchronisations</source>
         <translation>Sinkronelaadurioù</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>An API GraphQL: e boent-termen, ar chema hag ul leurenn-c'hoari evit esaeañ goulennoù.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Un darvoud surentez a zo bet war ho kont %login: %event. Ma ne oa ket c&apos;hwi, surentezit ho kont war %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Kefluniañ</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Goulennit digant danvez al lec'hienn-mañ ar maeziennoù rik a zo ezhomm d'ur bajenn, en ur goulenn hepken. Ar chema a heuilh ar c'hlasoù danvez; pep goulenn a vez lañset gant gwirioù an implijer a gas anezhañ.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>Diweredekaet eo an API GraphQL en haeziñ al lec'hienn-mañ. Gweredekait anezhañ e graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>N'eo ket staliet al levraoueg GraphQL (webonyx/graphql-php 15).</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Poent-termen</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Levraoueg</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Chema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count klas danvez, chema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Goulenn</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Argemmennoù (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Lañsañ</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Respont</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>O lañsañ…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>N'eus ket bet gallet lenn ar respont.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Lañset e vez ar goulenn gant ho kwirioù, kevreet gant an dalc'h-mañ.</translation>
     </message>
 </context>
 </TS>

@@ -15132,6 +15132,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>സിൻക്രൊണൈസേഷനുകൾ</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: അതിന്റെ എൻഡ് പോയിന്റ്, സ്കീമ, ക്വറികൾ പരീക്ഷിക്കാനുള്ള ഒരു പ്ലേഗ്രൗണ്ട്.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78651,6 +78659,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>നിങ്ങളുടെ അക്കൗണ്ട് %login ൽ ഒരു സുരക്ഷാ ഇവന്റ് ഉണ്ടായി: %event. ഇത് നിങ്ങളല്ലെങ്കിൽ, %url എന്ന വിലാസത്തിൽ നിങ്ങളുടെ അക്കൗണ്ട് സുരക്ഷിതമാക്കുക.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>സജ്ജീകരണം</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>ഒരു പേജിന് ആവശ്യമായ ഫീൽഡുകൾ മാത്രം കൃത്യമായി, ഒരൊറ്റ അഭ്യർത്ഥനയിൽ ഈ സൈറ്റിന്റെ ഉള്ളടക്കത്തോട് ചോദിക്കുക. സ്കീമ ഉള്ളടക്ക ക്ലാസുകളെ പിന്തുടരുന്നു; ഓരോ ക്വറിയും അത് അയയ്ക്കുന്ന ഉപയോക്താവിന്റെ അവകാശങ്ങളോടെ പ്രവർത്തിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>ഈ സൈറ്റ്ആക്സസിൽ GraphQL API ഓഫാണ്. graphql.ini ൽ ഇത് ഓണാക്കുക: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL ലൈബ്രറി (webonyx/graphql-php 15) ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>എൻഡ് പോയിന്റ്</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>ലൈബ്രറി</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>സ്കീമ</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count ഉള്ളടക്ക ക്ലാസുകൾ, സ്കീമ %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>ക്വറി</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>വേരിയബിളുകൾ (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>പ്രവർത്തിപ്പിക്കുക</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>ഉത്തരം</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>പ്രവർത്തിക്കുന്നു…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>ഉത്തരം വായിക്കാനായില്ല.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>ഈ സെഷനിൽ സൈൻ ഇൻ ചെയ്ത്, നിങ്ങളുടെ അവകാശങ്ങളോടെയാണ് ക്വറി പ്രവർത്തിക്കുന്നത്.</translation>
     </message>
 </context>
 </TS>

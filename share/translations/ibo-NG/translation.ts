@@ -15132,6 +15132,14 @@ Nzòpụta: Agaghị ewepụ nwụnye mpakị ndị a.</translation>
         <source>Synchronisations</source>
         <translation>Nhazi n&apos;otu</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: ebe njedebe ya, schema na ebe egwuregwu iji nwalee ajụjụ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78651,6 +78659,73 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Ihe omume nchekwa mere n&apos;akaụntụ gị %login: %event. Ọ bụrụ na ọ bụghị gị, chekwaa akaụntụ gị na %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Nrụnye</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Jụọ ọdịnaya saịtị a naanị ubi ndị ibe chọrọ, n'otu arịrịọ. Schema na-eso klaasị ọdịnaya; ajụjụ ọ bụla na-arụ ọrụ site n'ikike onye ọrụ zitere ya.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>Agbanyụrụ GraphQL API na Nnweta saịtị a. Gbanye ya na graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Etinyeghị ọbá akwụkwọ GraphQL (webonyx/graphql-php 15).</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Ebe njedebe</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Ọbá akwụkwọ</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Klaasị ọdịnaya %count, schema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Ajụjụ</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Mgbanwe (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Gbaa</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Azịza</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Ọ na-agba…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Enweghị ike ịgụ azịza ahụ.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Ajụjụ ahụ na-arụ ọrụ site n'ikike gị, ebe ị banyere na nnọkọ a.</translation>
     </message>
 </context>
 </TS>

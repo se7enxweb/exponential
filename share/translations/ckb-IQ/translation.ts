@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>هاوکاتکردنەکان</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>API ی GraphQL: خاڵی کۆتایی، سکیما و شوێنێک بۆ تاقیکردنەوەی پرسیارەکان.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>ڕووداوێکی پاراستن لە هەژمارەکەتان %login ڕوویدا: %event. ئەگەر ئێوە نەبوون، هەژمارەکەتان لە %url بپارێزن.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>دامەزراندن</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>لە ناوەڕۆکی ئەم ماڵپەڕە ڕێک ئەو خانانە داوا بکە کە پەڕەیەک پێویستی پێیانە، لە یەک داواکاریدا. سکیما شوێن پۆلەکانی ناوەڕۆک دەکەوێت؛ هەر پرسیارێک بە مافەکانی ئەو بەکارهێنەرە جێبەجێ دەکرێت کە دەینێرێت.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>API ی GraphQL لەم دەستگەیشتنی ماڵپەڕەدا کوژاوەتەوە. لە graphql.ini دا هەڵیبکە: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>کتێبخانەی GraphQL (webonyx/graphql-php 15) دانەمەزراوە.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>خاڵی کۆتایی</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>کتێبخانە</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>سکیما</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count پۆلی ناوەڕۆک، سکیما %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>پرسیار</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>گۆڕاوەکان (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>جێبەجێکردن</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>وەڵام</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>جێبەجێ دەکرێت…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>وەڵامەکە نەخوێنرایەوە.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>پرسیارەکە بە مافەکانی تۆ جێبەجێ دەکرێت، بە چوونەژوورەوە لەم دانیشتنەدا.</translation>
     </message>
 </context>
 </TS>

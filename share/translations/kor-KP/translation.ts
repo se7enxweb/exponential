@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>동기화</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: 끝점, 스키마 및 질문을 시험해볼수 있는 시험마당.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>%login 계정에서 보안 이벤트가 발생했습니다: %event. 본인이 아니라면 %url에서 계정을 보호하십시오.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>설정</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>이 싸이트의 콘텐츠에서 페지에 필요한 마당들만 정확히 한번의 요청으로 얻습니다. 스키마는 콘텐츠클라스를 따르며 모든 질문은 그것을 보낸 리용자의 권한으로 실행됩니다.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>이 싸이트접근에서는 GraphQL API가 꺼져있습니다. graphql.ini에서 켜십시오: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL 서고(webonyx/graphql-php 15)가 설치되여있지 않습니다.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>끝점</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>서고</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>스키마</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>콘텐츠클라스 %count개, 스키마 %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>질문</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>변수 (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>실행</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>응답</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>실행중…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>응답을 읽을수 없습니다.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>질문은 이 세션으로 가입한 리용자의 권한으로 실행됩니다.</translation>
     </message>
 </context>
 </TS>

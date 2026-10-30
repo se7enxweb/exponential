@@ -15134,6 +15134,14 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
         <source>Synchronisations</source>
         <translation>Sinxronlashlar</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: uning yakuniy nuqtasi, sxemasi va soʻrovlarni sinab koʻrish uchun maydoncha.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>%login hisobingizda xavfsizlik hodisasi yuz berdi: %event. Agar bu Siz boʻlmasangiz, hisobingizni %url manzilida himoyalang.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sozlash</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Ushbu sayt kontentidan sahifaga kerakli maydonlarni aynan bitta soʻrov bilan oling. Sxema kontent sinflariga mos keladi; har bir soʻrov uni yuborgan foydalanuvchining huquqlari bilan bajariladi.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API ushbu sayt kirish nuqtasida oʻchirilgan. Uni graphql.ini faylida yoqing: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL kutubxonasi (webonyx/graphql-php 15) oʻrnatilmagan.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Yakuniy nuqta</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Kutubxona</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Sxema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Kontent sinflari: %count, sxema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Soʻrov</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Oʻzgaruvchilar (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ishga tushirish</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Javob</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Bajarilmoqda…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Javobni oʻqib boʻlmadi.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Soʻrov ushbu seansda kirgan holda sizning huquqlaringiz bilan bajariladi.</translation>
     </message>
 </context>
 </TS>

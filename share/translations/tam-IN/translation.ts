@@ -15132,6 +15132,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>ஒத்திசைவுகள்</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: அதன் முனைப்புள்ளி, ஸ்கீமா மற்றும் வினவல்களை முயற்சிக்க ஒரு சோதனைக்களம்.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78651,6 +78659,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>உங்கள் கணக்கு %login இல் ஒரு பாதுகாப்பு நிகழ்வு நடந்தது: %event. இது நீங்கள் இல்லையெனில், %url என்ற முகவரியில் உங்கள் கணக்கைப் பாதுகாக்கவும்.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>அமைவு</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>இந்தத் தளத்தின் உள்ளடக்கத்திடம் ஒரு பக்கத்திற்குத் தேவையான புலங்களை மட்டும் சரியாக, ஒரே கோரிக்கையில் கேளுங்கள். ஸ்கீமா உள்ளடக்க வகுப்புகளைப் பின்பற்றுகிறது; ஒவ்வொரு வினவலும் அதை அனுப்பும் பயனரின் உரிமைகளுடன் இயங்குகிறது.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>இந்தத் தள அணுகலில் GraphQL API முடக்கப்பட்டுள்ளது. graphql.ini இல் இதை இயக்கவும்: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL நூலகம் (webonyx/graphql-php 15) நிறுவப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>முனைப்புள்ளி</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>நூலகம்</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>ஸ்கீமா</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count உள்ளடக்க வகுப்புகள், ஸ்கீமா %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>வினவல்</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>மாறிகள் (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>இயக்கு</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>பதில்</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>இயங்குகிறது…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>பதிலைப் படிக்க முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>இந்த அமர்வில் உள்நுழைந்து, உங்கள் உரிமைகளுடன் வினவல் இயங்குகிறது.</translation>
     </message>
 </context>
 </TS>

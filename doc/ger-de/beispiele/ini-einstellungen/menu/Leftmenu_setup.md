@@ -9,7 +9,7 @@ generated: exp:help:examples
 ---
 # menu.ini [Leftmenu_setup]
 
-Der Block `[Leftmenu_setup]` von `settings/menu.ini`, mit 63 Einstellung(en).
+Der Block `[Leftmenu_setup]` von `settings/menu.ini`, mit 64 Einstellung(en).
 
 Bearbeiten Sie `settings/menu.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -218,7 +218,7 @@ GroupLinks_users[]=audit
 
 ## GroupLinks_data
 
-Standard: eine Liste mit 4: `datatables`, `data_connections`, `secrets`, `data_syncs`.
+Standard: eine Liste mit 5: `datatables`, `data_connections`, `secrets`, `graphql`, `data_syncs`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -229,6 +229,7 @@ GroupLinks_data[]
 GroupLinks_data[]=datatables
 GroupLinks_data[]=data_connections
 GroupLinks_data[]=secrets
+GroupLinks_data[]=graphql
 GroupLinks_data[]=data_syncs
 */ ?>
 ```
@@ -366,7 +367,7 @@ MegaMenuLinks[]=git_manager
 >                                   figure\_key=<key> nur für eine angezeigte Kachel eingebunden; leer oder nicht design: zeichnet keine  
 > Eine Erweiterung setzt sie für ihren eigenen Link in ihrer menu.ini.append.php (doc/eng-us/features/6.0/admin4-design.md).  
 
-Standard: ein Hash mit 57: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank`, `expai_models=cpu` ....
+Standard: ein Hash mit 58: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank`, `expai_models=cpu` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -394,13 +395,13 @@ LinkIcons[git_manager]=git
 LinkIcons[git_manager_backup]=archive
 LinkIcons[global_setting]=globe
 LinkIcons[ini]=sliders
-# ... 37 weitere in der ausgelieferten Datei
+# ... 38 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
 ## LinkDescriptions
 
-Standard: ein Hash mit 57: `audit=Who changed what: the audit settings and archives.`, `broken_relations=Visible content that links to deleted, hidden or trashed content.`, `storage_files=Files in the storage that nothing uses, and files with the wrong owner or mode.`, `cache=Clear or regenerate the caches.`, `classes=The content classes and their attributes.`, `collected=What visitors sent through forms.`, `contentfinder=Find content by its id, remote id or path.`, `cronjobs=The cronjob parts, their scripts and last runs.`, `design_node=The design's top node and the objects below it.`, `dse=Browse and query the database directly.`, `expai_budgets=AI budgets, queued requests and what they cost.`, `expai_models=The AI providers and models, and their tests.` ....
+Standard: ein Hash mit 58: `audit=Who changed what: the audit settings and archives.`, `broken_relations=Visible content that links to deleted, hidden or trashed content.`, `storage_files=Files in the storage that nothing uses, and files with the wrong owner or mode.`, `cache=Clear or regenerate the caches.`, `classes=The content classes and their attributes.`, `collected=What visitors sent through forms.`, `contentfinder=Find content by its id, remote id or path.`, `cronjobs=The cronjob parts, their scripts and last runs.`, `design_node=The design's top node and the objects below it.`, `dse=Browse and query the database directly.`, `expai_budgets=AI budgets, queued requests and what they cost.`, `expai_models=The AI providers and models, and their tests.` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -428,7 +429,7 @@ LinkDescriptions[git_manager]=The Git checkout of the installation and its updat
 LinkDescriptions[git_manager_backup]=Make, download and remove backups.
 LinkDescriptions[global_setting]=The settings of the whole site.
 LinkDescriptions[ini]=Read and edit the INI settings.
-# ... 37 weitere in der ausgelieferten Datei
+# ... 38 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
@@ -483,6 +484,7 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 > verwaist, eine gemeinsame E-Mail-Adresse; nur mit user/hygiene. Derselbe Schlüssel steht in \[Leftmenu\_user\].  
 > Die Datentabellen, die benannten Datenbankverbindungen und der Secret-Store (doc/eng-us/features/6.0/data-tables.md,  
 > doc/eng-us/features/6.0/secret-store.md)  
+> Die GraphQL-API (doc/eng-us/features/6.0/graphql.md)  
 > Die Zeilen von ezsite\_data, nur lesbar (Setup > Site-Daten)  
 > Das Hilfe-Center, die Startseite der Hilfe (exphelp/dashboard)  
 > Entfernt seit 4.3. Aktivieren, wenn Sie besondere Anforderungen haben.  
@@ -493,7 +495,7 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 > PolicyList\_toolbar\_management\[\]=visual/\*  
 > RAD schließt die Gruppe "Site und URLs"  
 
-Standard: ein Hash mit 44: `overview=setup/menu`, `cache=setup/cache`, `audit=audit/settings`, `classes=class/grouplist`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `maintenance=setup/maintenance`, `cronjobs=setup/cronjobs`, `logs=setup/logs` ....
+Standard: ein Hash mit 45: `overview=setup/menu`, `cache=setup/cache`, `audit=audit/settings`, `classes=class/grouplist`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `maintenance=setup/maintenance`, `cronjobs=setup/cronjobs`, `logs=setup/logs` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -521,13 +523,13 @@ Links[interface_languages]=setup/languages
 Links[mailpreferences]=mailpreferences/admin/status
 Links[notification]=notification/status
 Links[preload]=setup/preload
-# ... 24 weitere in der ausgelieferten Datei
+# ... 25 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
 ## LinkNames
 
-Standard: ein Hash mit 18: `audit=Audit`, `contentfinder=Content finder`, `unreferenced_objects=Unreferenced objects`, `broken_relations=Broken relations`, `storage_files=Storage files`, `maintenance=Maintenance`, `cronjobs=Cronjobs`, `logs=Log files`, `design_node=Design content`, `interface_languages=Interface languages`, `preload=Preload Sites`, `user_hygiene=Check user accounts` ....
+Standard: ein Hash mit 19: `audit=Audit`, `contentfinder=Content finder`, `unreferenced_objects=Unreferenced objects`, `broken_relations=Broken relations`, `storage_files=Storage files`, `maintenance=Maintenance`, `cronjobs=Cronjobs`, `logs=Log files`, `design_node=Design content`, `interface_languages=Interface languages`, `preload=Preload Sites`, `user_hygiene=Check user accounts` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -550,6 +552,7 @@ LinkNames[user_hygiene]=Check user accounts
 LinkNames[datatables]=Data tables
 LinkNames[data_connections]=Connections
 LinkNames[secrets]=Secrets
+LinkNames[graphql]=GraphQL
 LinkNames[data_syncs]=Synchronisations
 LinkNames[sitedata]=Site data
 LinkNames[oauth_list]=oAuth admin
@@ -945,6 +948,20 @@ Standard: eine Liste mit 1: `secrets/manage`.
 # ein leeres "PolicyList_secrets[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 PolicyList_secrets[]
 PolicyList_secrets[]=secrets/manage
+*/ ?>
+```
+
+## PolicyList_graphql
+
+Standard: eine Liste mit 1: `graphql/playground`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/menu.ini.append.php
+[Leftmenu_setup]
+# ein leeres "PolicyList_graphql[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+PolicyList_graphql[]
+PolicyList_graphql[]=graphql/playground
 */ ?>
 ```
 

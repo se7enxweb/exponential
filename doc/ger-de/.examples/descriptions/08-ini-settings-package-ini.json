@@ -328,8 +328,8 @@
         "de": "Die Rechte des Eigentümers, die am Knoten geprüft werden, auf den eine schreibende Route wirkt: create (content/create der abgeschickten\nclassIdentifier unter dem abgeschickten parentNodeID), edit oder remove (die nodeId der Route)."
     },
     "ini:settings/rest.ini [ApiKeySettings] Scopes": {
-        "en": "The scopes a key can be given: <scope>=<module>/<function> of the policy the owner needs for it,\nchecked when the key is made and again on every request.",
-        "de": "Die Bereiche, die ein Schlüssel erhalten kann: <scope>=<module>/<function> der Richtlinie, die der Eigentümer dafür braucht,\ngeprüft beim Erstellen des Schlüssels und erneut bei jeder Anfrage."
+        "en": "The scopes a key can be given: <scope>=<module>/<function> of the policy the owner needs for it,\nchecked when the key is made and again on every request.\nQueries of the GraphQL API (/api/graphql), within the owner's rights to read content",
+        "de": "Die Bereiche, die ein Schlüssel erhalten kann: <scope>=<module>/<function> der Richtlinie, die der Eigentümer dafür braucht,\ngeprüft beim Erstellen des Schlüssels und erneut bei jeder Anfrage.\nAbfragen der GraphQL-API (/api/graphql), im Rahmen der Rechte des Eigentümers, Inhalte zu lesen"
     },
     "ini:settings/rest.ini [Authentication] DefaultUserID": {
         "en": "Default user to authenticate when authentication is disabled or the route used doesn't need authentication\nIf left empty, site.ini/[UserSettings].AnonymousUserID will be used",

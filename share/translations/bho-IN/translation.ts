@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>सिंक्रनाइज़ेशन</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: एकर एंड पॉइंट, स्कीमा आ क्वेरी आजमावे खातिर एगो प्लेग्राउंड।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78661,6 +78669,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>रउआ खाता %login में एगो सुरक्षा घटना भइल: %event। अगर ई रउआ ना रहीं, त %url पर आपन खाता सुरक्षित करीं।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>सेटअप</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>एह साइट के सामग्री से एके अनुरोध में ठीक ओही फ़ील्ड माँगीं जेकर कवनो पेज के जरूरत बा। स्कीमा सामग्री वर्ग के पालन करेला; हर क्वेरी ओकरा भेजे वाला उपयोगकर्ता के अधिकार से चलेला।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>एह साइट एक्सेस में GraphQL API बंद बा। एकरा के graphql.ini में चालू करीं: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL लाइब्रेरी (webonyx/graphql-php 15) इंस्टॉल नइखे।</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>एंड पॉइंट</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>लाइब्रेरी</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>स्कीमा</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count सामग्री वर्ग, स्कीमा %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>क्वेरी</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>वेरिएबल (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>चलाईं</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>जवाब</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>चल रहल बा…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>जवाब पढ़ल ना जा सकल।</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>क्वेरी रउआ अधिकार से चलेला, एह सत्र से साइन इन करके।</translation>
     </message>
 </context>
 </TS>

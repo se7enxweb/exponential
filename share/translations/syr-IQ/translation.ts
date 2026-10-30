@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>ܫܘܘ̈ܝܐ</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>API ܕ GraphQL: ܢܘܩܙܐ ܕܣܘܦܐ ܕܝܠܗ، ܣܟܡܐ ܘܕܘܟܬܐ ܠܢܣܝܘܢܐ ܕܫܘ̈ܐܠܐ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78661,6 +78669,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>ܗܘܐ ܓܕܫܐ ܕܫܠܡܘܬܐ ܒܚܘܫܒܢܐ ܕܝܠܘܟܘܢ %login: %event. ܐܢ ܠܐ ܐܚܬܘܢ ܗܘܝܬܘܢ، ܚܡܘ ܚܘܫܒܢܐ ܕܝܠܘܟܘܢ ܒ %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ܛܘܝܒܐ</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>ܫܐܠ ܠܡܠܝܘܬܐ ܕܗܢܐ ܐܬܪܐ ܚܩ̈ܠܐ ܗܢܘܢ ܒܠܚܘܕ ܕܣܢܝܩܐ ܠܗܘܢ ܦܐܬܐ، ܒܚܕܐ ܒܥܘܬܐ. ܣܟܡܐ ܐܙܠ ܒܬܪ ܙ̈ܢܝܐ ܕܡܠܝܘܬܐ؛ ܟܠ ܫܘܐܠܐ ܪܗܛ ܒܫܘ̈ܠܛܢܐ ܕܡܦܠܚܢܐ ܕܡܫܕܪ ܠܗ.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>API ܕ GraphQL ܒܛܝܠܐ ܒܗܢܐ ܡܥܠܢܐ ܕܐܬܪܐ. ܦܥܠ ܠܗ ܒ graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>ܒܝܬ ܟܬܒܐ ܕ GraphQL (webonyx/graphql-php 15) ܠܐ ܡܬܩܝܡ.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>ܢܘܩܙܐ ܕܣܘܦܐ</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>ܒܝܬ ܟܬܒܐ</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>ܣܟܡܐ</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count ܙ̈ܢܝܐ ܕܡܠܝܘܬܐ، ܣܟܡܐ %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>ܫܘܐܠܐ</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>ܡܫܚܠܦ̈ܢܐ (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ܡܪܗܛܐ</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>ܦܘܢܝܐ</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>ܪܗܛ…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>ܦܘܢܝܐ ܠܐ ܐܫܬܟܚ ܠܡܬܩܪܝܘ.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>ܫܘܐܠܐ ܪܗܛ ܒܫܘ̈ܠܛܢܝܟ، ܥܠܝܠܐ ܒܗܢܐ ܡܘܬܒܐ.</translation>
     </message>
 </context>
 </TS>

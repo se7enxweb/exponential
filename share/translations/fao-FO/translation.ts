@@ -15134,6 +15134,14 @@ Ivasamt: Pakkarnir verða ikki avinnlagdir.</translation>
         <source>Synchronisations</source>
         <translation>Samstilling</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL-API'ið: endapunktið, skemað og ein leikvøllur at royna fyrispurningar.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Ein trygdarhending hendi á kontu tíni %login: %event. Var tað ikki tú, so trygga kontu tína á %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Uppseting</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Bið innihaldið á hesum vevstaði um júst teir teigar, sum ein síða hevur brúk fyri, í einum fyrispurningi. Skemað fylgir innihaldsflokkunum; hvør fyrispurningur koyrir við rættindunum hjá brúkaranum, sum sendir hann.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL-API'ið er sløkt í hesi atgongd til vevstað. Tendra tað í graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL-savnið (webonyx/graphql-php 15) er ikki innlagt.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Endapunkt</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Savn</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Skema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count innihaldsflokkar, skema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Fyrispurningur</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Variablar (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Koyra</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Svar</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Koyrir…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Svarið kundi ikki lesast.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Fyrispurningurin koyrir við tínum rættindum, innritaður við hesi setuni.</translation>
     </message>
 </context>
 </TS>

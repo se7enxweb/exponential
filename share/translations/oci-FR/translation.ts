@@ -15134,6 +15134,14 @@ Nòta: los paquets seràn pas desinstallats.</translation>
         <source>Synchronisations</source>
         <translation>Sincronizacions</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>L'API GraphQL: son punt final, l'esquèma e un espaci d'ensag per ensajar de requèstas.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>I a agut un eveniment de seguretat sus vòstre compte %login: %event. Se èra pas vos, securizatz vòstre compte a l&apos;adreça %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuracion</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Demandatz al contengut d'aqueste site exactament los camps que li cal a una pagina, en una sola requèsta. L'esquèma seguís las classas de contengut; cada requèsta s'executa amb los dreches de l'utilizaire que la manda.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>L'API GraphQL es desactivada dins aqueste accès al site. Activatz-la dins graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>La bibliotèca GraphQL (webonyx/graphql-php 15) es pas installada.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Punt final</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Bibliotèca</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Esquèma</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count classas de contengut, esquèma %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Requèsta</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Variablas (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Executar</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Responsa</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Execucion…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>La responsa se podiá pas legir.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>La requèsta s'executa amb vòstres dreches, connectat amb aquesta session.</translation>
     </message>
 </context>
 </TS>

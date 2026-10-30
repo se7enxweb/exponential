@@ -15073,6 +15073,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>Συγχρονισμοί</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>Το GraphQL API: το τελικό σημείο, το σχήμα και ένας χώρος δοκιμών για ερωτήματα.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78683,6 +78691,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Σημειώθηκε ένα συμβάν ασφαλείας στον λογαριασμό σας %login: %event. Αν δεν ήσασταν εσείς, ασφαλίστε τον λογαριασμό σας στη διεύθυνση %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ρυθμίσεις συστήματος</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Ζητήστε από το περιεχόμενο αυτού του ιστότοπου ακριβώς τα πεδία που χρειάζεται μια σελίδα, με ένα αίτημα. Το σχήμα ακολουθεί τις κλάσεις περιεχομένου· κάθε ερώτημα εκτελείται με τα δικαιώματα του χρήστη που το στέλνει.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>Το GraphQL API είναι απενεργοποιημένο σε αυτή την πρόσβαση ιστότοπου. Ενεργοποιήστε το στο graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Η βιβλιοθήκη GraphQL (webonyx/graphql-php 15) δεν είναι εγκατεστημένη.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Τελικό σημείο</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Βιβλιοθήκη</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Σχήμα</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Κλάσεις περιεχομένου: %count, σχήμα %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Ερώτημα</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Μεταβλητές (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Εκτέλεση</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Απάντηση</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Εκτελείται…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Δεν ήταν δυνατή η ανάγνωση της απάντησης.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Το ερώτημα εκτελείται με τα δικαιώματά σας, συνδεδεμένοι σε αυτή τη συνεδρία.</translation>
     </message>
 </context>
 </TS>

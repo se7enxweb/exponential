@@ -15134,6 +15134,14 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
         <source>Synchronisations</source>
         <translation>Fampifanarahana</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: ny teboka farany, ny rafitra ary toerana hanandramana fangatahana.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Nisy zava-mitranga momba ny fiarovana tamin&apos;ny kaontinao %login: %event. Raha tsy ianao izany, arovy ny kaontinao ao amin&apos;ny %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Fametrahana</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Angataho amin'ny votoatin'ity tranonkala ity ireo saha ilain'ny pejy ihany, amin'ny fangatahana iray. Manaraka ireo kilasin'ny votoaty ny rafitra; mandeha amin'ny zon'ny mpampiasa nandefa azy ny fangatahana tsirairay.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>Maty ny GraphQL API amin'ity fidirana amin'ny tranonkala ity. Alefaso ao amin'ny graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Tsy napetraka ny tranomboky GraphQL (webonyx/graphql-php 15).</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Teboka farany</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Tranomboky</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Rafitra</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Kilasin'ny votoaty %count, rafitra %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Fangatahana</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Ireo miova (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Alefaso</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Valiny</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Mandeha…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Tsy azo novakiana ny valiny.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Mandeha amin'ny zonao ny fangatahana, niditra tamin'ity fotoam-pidirana ity ianao.</translation>
     </message>
 </context>
 </TS>

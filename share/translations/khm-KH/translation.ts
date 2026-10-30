@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>ការធ្វើសមកាលកម្ម</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API៖ ចំណុចបញ្ចប់របស់វា គ្រោងការណ៍ និងកន្លែងសាកល្បងសំណួរ។</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>មានព្រឹត្តិការណ៍សុវត្ថិភាពមួយនៅលើគណនី %login របស់អ្នក: %event ។ ប្រសិនបើមិនមែនជាអ្នក សូមការពារគណនីរបស់អ្នកនៅ %url ។</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ការរៀបចំ</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>ស្នើសុំពីមាតិកានៃគេហទំព័រនេះ នូវវាលដែលទំព័រមួយត្រូវការយ៉ាងពិតប្រាកដ ក្នុងសំណើតែមួយ។ គ្រោងការណ៍ធ្វើតាមថ្នាក់មាតិកា ហើយសំណួរនីមួយៗដំណើរការជាមួយសិទ្ធិរបស់អ្នកប្រើដែលផ្ញើវា។</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API ត្រូវបានបិទនៅក្នុងការចូលគេហទំព័រនេះ។ បើកវានៅក្នុង graphql.ini៖ [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>បណ្ណាល័យ GraphQL (webonyx/graphql-php 15) មិនទាន់បានដំឡើងទេ។</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>ចំណុចបញ្ចប់</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>បណ្ណាល័យ</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>គ្រោងការណ៍</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>ថ្នាក់មាតិកា %count គ្រោងការណ៍ %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>សំណួរ</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>អថេរ (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ដំណើរការ</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>ចម្លើយ</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>កំពុងដំណើរការ…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>មិនអាចអានចម្លើយបានទេ។</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>សំណួរដំណើរការជាមួយសិទ្ធិរបស់អ្នក ដោយចូលតាមវគ្គនេះ។</translation>
     </message>
 </context>
 </TS>

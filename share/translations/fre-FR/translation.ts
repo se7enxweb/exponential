@@ -15580,6 +15580,14 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
         <source>Synchronisations</source>
         <translation>Synchronisation</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>L'API GraphQL : son point de terminaison, le schéma et un bac à sable pour essayer des requêtes.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80093,6 +80101,73 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Un évènement de sécurité a eu lieu sur votre compte %login : %event. Si ce n&apos;était pas vous, sécurisez votre compte à l&apos;adresse %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Administration</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Demandez au contenu de ce site exactement les champs dont une page a besoin, en une seule requête. Le schéma suit les classes de contenu ; chaque requête s'exécute avec les droits de l'utilisateur qui l'envoie.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>L'API GraphQL est désactivée dans ce siteaccess. Activez-la dans graphql.ini : [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>La bibliothèque GraphQL (webonyx/graphql-php 15) n'est pas installée.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Point de terminaison</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Bibliothèque</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schéma</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count classes de contenu, schéma %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Requête</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Variables (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Exécuter</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Réponse</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Exécution…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>La réponse n'a pas pu être lue.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>La requête s'exécute avec vos droits, connecté avec cette session.</translation>
     </message>
 </context>
 </TS>

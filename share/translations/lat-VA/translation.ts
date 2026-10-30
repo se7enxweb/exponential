@@ -15076,6 +15076,14 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <source>Synchronisations</source>
         <translation>Synchronizationes</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>API GraphQL: punctum finale, schema et area ludi ad quaestiones temptandas.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78686,6 +78694,73 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Eventus securitatis in ratione tua %login accidit: %event. Si tu non eras, rationem tuam muni apud %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuratio</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Pete a contento huius situs ipsos campos quibus pagina eget, una petitione. Schema classes contenti sequitur; quaeque quaestio iuribus usoris qui eam mittit exsequitur.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>API GraphQL in hoc aditu situs exstincta est. Accende eam in graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Bibliotheca GraphQL (webonyx/graphql-php 15) non est installata.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Punctum finale</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Bibliotheca</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schema</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count classes contenti, schema %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Quaestio</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Variabiles (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Exsequi</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Responsum</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Exsequitur…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Responsum legi non potuit.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Quaestio tuis iuribus exsequitur, hac sessione inscriptus.</translation>
     </message>
 </context>
 </TS>

@@ -15132,6 +15132,14 @@ Kumbuka: Usakinishaji wa vifurushi hautaondolewa.</translation>
         <source>Synchronisations</source>
         <translation>Usawazishaji</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: sehemu yake ya mwisho, skima na uwanja wa kujaribu hoja.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78651,6 +78659,73 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Kulikuwa na tukio la usalama kwenye akaunti yako %login: %event. Ikiwa si wewe, linda akaunti yako kwenye %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Usanidi</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Uliza maudhui ya tovuti hii sehemu hasa ambazo ukurasa unahitaji, kwa ombi moja. Skima inafuata madarasa ya maudhui; kila hoja inaendeshwa kwa haki za mtumiaji aliyeituma.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API imezimwa katika siteaccess hii. Iwashe katika graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Maktaba ya GraphQL (webonyx/graphql-php 15) haijasakinishwa.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Sehemu ya mwisho</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Maktaba</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Skima</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Madarasa ya maudhui %count, skima %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Hoja</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Vigezo (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Endesha</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Jibu</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Inaendeshwa…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Jibu halikuweza kusomwa.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Hoja inaendeshwa kwa haki zako, ukiwa umeingia kwa kipindi hiki.</translation>
     </message>
 </context>
 </TS>

@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>সিংক্রোনাইজেসনশিং</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: মসিগী এন্দ পোইন্ত, স্কিমা অমসুং কোয়েরি চংশিনবগীদমক প্লেগ্রাউন্দ অমা।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>নঙ্গী একাউন্টতা সুরক্ষাগী থৌদোক অমা থোকখি. একাউন্ট: %login, থৌদোক: %event. মসি নহাক নত্রবদি, নঙ্গী একাউন্ট মসিদা ঙাক্তবিয়ু: %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>সেটআপ</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>সাইট অসিগী কন্তেন্তদগী পেজ অমগী মথৌ তাবা ফিল্দশিং অদু অনুরোধ অমদা হংবীয়ু। স্কিমা অসিনা কন্তেন্ত ক্লাসশিং ইথুং লৈ; কোয়েরি খুদিংমক থাখিবা শিজিন্নবা মীগী হক্কী মথক্তা চলি।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>সাইট একসেস অসিদা GraphQL API থোংজিনখ্রে। মসিবু graphql.ini দা হাংদোকপীয়ু: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL লাইব্রেরি (webonyx/graphql-php 15) ইনস্তল তৌদ্রি।</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>এন্দ পোইন্ত</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>লাইব্রেরি</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>স্কিমা</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count কন্তেন্ত ক্লাস, স্কিমা %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>কোয়েরি</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>ভেরিয়েবলশিং (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>চলাবা</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>পাউখুম</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>চলরি…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>পাউখুম অদু পাবা ঙম্লমদে।</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>কোয়েরি অসি নহাক্কী হক্তা, সেসন অসিনা সাইন ইন তৌরগা চলি।</translation>
     </message>
 </context>
 </TS>

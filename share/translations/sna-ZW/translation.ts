@@ -15134,6 +15134,14 @@ Chenjerai: Mapakeji acho haazobviswi pakuiswa.</translation>
         <source>Synchronisations</source>
         <translation>Kuwiriranisa</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: magumo ayo, chirongwa uye nzvimbo yekuedza mibvunzo.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Pakava nechiitiko chekuchengeteka paakaundi yenyu %login: %event. Kana zvisiri imi, chengetedzai akaundi yenyu pa %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Gadziriro</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Bvunza zvirimo musaiti iyi minda chaiyo inodiwa nepeji, muchikumbiro chimwe. Chirongwa chinotevera mapoka ezvirimo; mubvunzo wega wega unomhanya nekodzero dzemushandisi auntumira.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API yakadzimwa munzira yekupinda pasaiti iyi. Ibatidze mu graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Raibhurari yeGraphQL (webonyx/graphql-php 15) haina kuiswa.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Magumo</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Raibhurari</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Chirongwa</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>Mapoka ezvirimo %count, chirongwa %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Mubvunzo</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Zvinoshanduka (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Mhanyisa</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Mhinduro</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Kumhanya…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Mhinduro haina kugona kuverengwa.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Mubvunzo unomhanya nekodzero dzako, wakapinda nechikamu chino.</translation>
     </message>
 </context>
 </TS>

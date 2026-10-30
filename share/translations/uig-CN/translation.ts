@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>ماسلاشتۇرۇشلار</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: ئۇنىڭ ئاخىرقى نۇقتىسى، شېما ۋە سۈرۈشتۈرۈشلەرنى سىناپ بېقىش مەيدانى.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>%login ھېساباتىڭىزدا بىر بىخەتەرلىك ھادىسىسى يۈز بەردى: %event. ئەگەر بۇ سىز بولمىسىڭىز، ھېساباتىڭىزنى %url ئادرېسىدا قوغداڭ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ئورنىتىش</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>بۇ تور بېكەتنىڭ مەزمۇنىدىن بىر بەتكە كېرەكلىك سۆزلىكلەرنىلا بىر قېتىملىق تەلەپتە ئېنىق سوراڭ. شېما مەزمۇن تىپلىرىغا ئەگىشىدۇ؛ ھەر بىر سۈرۈشتۈرۈش ئۇنى ئەۋەتكەن ئىشلەتكۈچىنىڭ ھوقۇقى بىلەن ئىجرا قىلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>بۇ تور بېكەت زىيارىتىدە GraphQL API تاقالغان. ئۇنى graphql.ini دا ئېچىڭ: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL ئامبىرى (webonyx/graphql-php 15) ئورنىتىلمىغان.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>ئاخىرقى نۇقتا</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>ئامبار</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>شېما</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count مەزمۇن تىپى، شېما %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>سۈرۈشتۈرۈش</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>ئۆزگەرگۈچىلەر (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ئىجرا قىل</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>جاۋاب</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>ئىجرا قىلىنىۋاتىدۇ…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>جاۋابنى ئوقۇغىلى بولمىدى.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>سۈرۈشتۈرۈش سىزنىڭ ھوقۇقىڭىز بىلەن، مۇشۇ ئەڭگىمە ئارقىلىق كىرگەن ھالەتتە ئىجرا قىلىنىدۇ.</translation>
     </message>
 </context>
 </TS>

@@ -15132,6 +15132,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>সিঙ্ক্রোনাইজেশন</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: এর এন্ড পয়েন্ট, স্কিমা এবং কোয়েরি চেষ্টা করার একটি প্লেগ্রাউন্ড।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78651,6 +78659,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>আপনার অ্যাকাউন্ট %login এ একটি নিরাপত্তা ইভেন্ট ঘটেছে: %event। এটি আপনি না হলে %url ঠিকানায় আপনার অ্যাকাউন্ট সুরক্ষিত করুন।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>সেটআপ</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>এই সাইটের কনটেন্ট থেকে একটি পৃষ্ঠার ঠিক যে ফিল্ডগুলো দরকার, সেগুলো একটি অনুরোধেই চেয়ে নিন। স্কিমা কনটেন্ট ক্লাস অনুসরণ করে; প্রতিটি কোয়েরি তার প্রেরক ব্যবহারকারীর অধিকার নিয়ে চলে।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>এই সাইটঅ্যাক্সেসে GraphQL API বন্ধ আছে। graphql.ini ফাইলে এটি চালু করুন: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL লাইব্রেরি (webonyx/graphql-php 15) ইনস্টল করা নেই।</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>এন্ড পয়েন্ট</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>লাইব্রেরি</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>স্কিমা</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count কনটেন্ট ক্লাস, স্কিমা %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>কোয়েরি</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>ভেরিয়েবল (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>চালান</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>উত্তর</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>চলছে…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>উত্তরটি পড়া যায়নি।</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>কোয়েরিটি আপনার অধিকার নিয়ে, এই সেশনে সাইন ইন অবস্থায় চলে।</translation>
     </message>
 </context>
 </TS>

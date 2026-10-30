@@ -15134,6 +15134,14 @@ Yuyay: q'ipikunaqa manam churasqata hurqusqa kanqachu.</translation>
         <source>Synchronisations</source>
         <translation>Huk pachaman churaykuna</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: tukuna k'itin, siq'in, tapukuykunata pruebanapaq pukllanapas.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Kuwintaykipi (%login) huk amachay pasakuy karqan: %event. Mana qamchu karqanki chayqa, kuwintaykita kaypi amachay: %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Wakichiy</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Kay web kamachikuypa contenidonmanta huk p'anqa necesitasqan campokunallata mañakuy, huk mañakuyllapi. Siq'iqa contenido clasekunatam qatin; sapa tapukuymi kachaqnin runapa derechonkunawan purin.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL APIqa wañuchisqam kay web yaykunapi. graphql.ini nisqapi kawsachiy: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>GraphQL biblioteca (webonyx/graphql-php 15) mana churasqachu.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Tukuna k'iti</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Biblioteca</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Siq'i</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count contenido clasekuna, siq'i %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Tapukuy</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Tikrakuqkuna (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Purichiy</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Kutichiy</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Purichkan…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Kutichiyqa mana ñawinchay atikurqanchu.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Tapukuyqa qampa derechoykikunawan purin, kay sesionwan yaykusqa kaspa.</translation>
     </message>
 </context>
 </TS>

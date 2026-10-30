@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>همگام‌سازی‌ها</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>API ‏GraphQL: نقطهٔ پایانی آن، طرح‌واره و محیطی برای آزمودن پرس‌وجوها.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>رویدادی امنیتی در حساب شما %login رخ داد: %event. اگر شما نبودید، حساب خود را در %url ایمن کنید.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>راه‌اندازی</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>از محتوای این سایت دقیقاً همان ساحه‌هایی را که یک صفحه ضرورت دارد، در یک درخواست بخواهید. طرح‌واره از کلاس‌های محتوا پیروی می‌کند؛ هر پرس‌وجو با صلاحیت‌های کاربری اجرا می‌شود که آن را می‌فرستد.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>API ‏GraphQL در این دسترسی سایت خاموش است. آن را در graphql.ini روشن کنید: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>کتابخانهٔ GraphQL (webonyx/graphql-php 15) نصب نشده است.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>نقطهٔ پایانی</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>کتابخانه</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>طرح‌واره</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count کلاس محتوا، طرح‌واره %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>پرس‌وجو</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>متغیرها (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>اجرا</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>پاسخ</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>در حال اجرا…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>پاسخ خوانده نشد.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>پرس‌وجو با صلاحیت‌های شما اجرا می‌شود، با ورود از طریق همین جلسه.</translation>
     </message>
 </context>
 </TS>

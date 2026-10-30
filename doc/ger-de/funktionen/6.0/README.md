@@ -101,6 +101,9 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Einschränkungen von Inhaltsrichtlinien durch Erweiterungen](handler-fuer-inhaltseinschraenkungen.md)
 - [Icon-Themes, die in Ihrer Erweiterung liegen](icon-themes-in-extensions.md)
 - [Entfernte Dienste: die ganze Administration als HTTP-API (expservices)](entfernte-dienste-expservices.md)
+- [Die GraphQL-API: genau die Felder abfragen, die eine Seite braucht](graphql.md): `/api/graphql`, ein aus den
+  Inhaltsklassen erzeugtes Schema, Richtlinien gelten immer, Setup > GraphQL mit einem Playground,
+  `exp:graphql:status`, `exp:graphql:schema` und `exp:graphql:query`
 - [Anfrageregeln: entscheiden, was mit einer Anfrage geschieht, bevor ihr View läuft](anfrageregeln.md)
 - [Prüfungen von Rollen und Richtlinien in Templates](template-operatoren-fuer-rollen-und-richtlinien.md)
 - [String-Funktionen von PHP als Template-Operatoren](template-operatoren-fuer-zeichenketten.md)

@@ -15134,6 +15134,14 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
         <source>Synchronisations</source>
         <translation>Đồng bộ hóa</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>API GraphQL: điểm cuối, lược đồ và nơi thử nghiệm truy vấn.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Đã có một sự kiện bảo mật trên tài khoản %login của bạn: %event. Nếu đó không phải là bạn, hãy bảo vệ tài khoản của bạn tại %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Thiết lập</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Yêu cầu nội dung của trang này trả về đúng các trường mà một trang cần, trong một lần yêu cầu. Lược đồ đi theo các lớp nội dung; mỗi truy vấn chạy với quyền của người dùng gửi nó.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>API GraphQL đang tắt ở điểm truy cập trang này. Bật nó trong graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Thư viện GraphQL (webonyx/graphql-php 15) chưa được cài đặt.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Điểm cuối</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Thư viện</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Lược đồ</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count lớp nội dung, lược đồ %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Truy vấn</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Biến (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Chạy</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Kết quả trả về</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Đang chạy…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Không đọc được kết quả trả về.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Truy vấn chạy với quyền của bạn, đăng nhập bằng phiên này.</translation>
     </message>
 </context>
 </TS>

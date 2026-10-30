@@ -27,7 +27,7 @@ PrefixFilterClass=ezpRestDefaultRegexpPrefixFilter    # durch Ihre Klasse oder I
 
 ## ApiProvider ProviderClass
 
-Ausgeliefert: ein Hash mit 2: `auth=ezpRestAuthProvider`, `help=expHelpRestProvider`. [Die Einstellung](../ini-einstellungen/rest/ApiProvider.md#providerclass).
+Ausgeliefert: ein Hash mit 3: `auth=ezpRestAuthProvider`, `help=expHelpRestProvider`, `graphql=expGraphQLRestProvider`. [Die Einstellung](../ini-einstellungen/rest/ApiProvider.md#providerclass).
 
 ```ini
 <?php /* #?ini charset="utf-8"?

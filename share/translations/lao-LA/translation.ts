@@ -15134,6 +15134,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Synchronisations</source>
         <translation>ການຊິງໂຄຣໄນ</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>GraphQL API: ຈຸດປາຍທາງ, ສະຄີມາ ແລະ ບ່ອນທົດລອງຄຳຖາມ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78653,6 +78661,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>ເກີດເຫດການດ້ານຄວາມປອດໄພກັບບັນຊີ %login ຂອງທ່ານ: %event. ຖ້າບໍ່ແມ່ນທ່ານ, ກະລຸນາປົກປ້ອງບັນຊີຂອງທ່ານທີ່ %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ຕັ້ງຄ່າລະບົບ</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>ຂໍຈາກເນື້ອຫາຂອງໄຊນີ້ ສະເພາະຊ່ອງຂໍ້ມູນທີ່ໜ້າໜຶ່ງຕ້ອງການ ໃນຄຳຮ້ອງດຽວ. ສະຄີມາເຮັດຕາມຄລາສເນື້ອຫາ; ທຸກຄຳຖາມຈະດຳເນີນການດ້ວຍສິດຂອງຜູ້ໃຊ້ທີ່ສົ່ງມັນ.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>GraphQL API ຖືກປິດໃນການເຂົ້າເຖິງໄຊນີ້. ເປີດມັນໃນ graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>ຍັງບໍ່ໄດ້ຕິດຕັ້ງຫ້ອງສະໝຸດ GraphQL (webonyx/graphql-php 15).</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>ຈຸດປາຍທາງ</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>ຫ້ອງສະໝຸດ</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>ສະຄີມາ</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count ຄລາສເນື້ອຫາ, ສະຄີມາ %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>ຄຳຖາມ</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>ຕົວແປ (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ດຳເນີນການ</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>ຄຳຕອບ</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>ກຳລັງດຳເນີນການ…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>ບໍ່ສາມາດອ່ານຄຳຕອບໄດ້.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>ຄຳຖາມດຳເນີນການດ້ວຍສິດຂອງທ່ານ, ເຂົ້າສູ່ລະບົບດ້ວຍເຊດຊັນນີ້.</translation>
     </message>
 </context>
 </TS>

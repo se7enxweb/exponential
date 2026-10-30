@@ -132,6 +132,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 ## G
 
 - **git_manager**: web admin tools for the Git side of an installation. [git_manager](features/6.0/extensions/git_manager.md).
+- **GraphQL**: a query language for APIs in which the client names exactly the fields it wants; the kernel answers it at `/api/graphql`, with a schema generated from the content classes and the user's policies always applied. [The GraphQL API](features/6.0/graphql.md).
 - **guide**: a tutorial that gets you a working result in minutes. [Guides](guides/README.md).
 
 ## H

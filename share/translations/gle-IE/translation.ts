@@ -15073,6 +15073,14 @@ Nóta: Ní dhíshuiteálfar na pacáistí.</translation>
         <source>Synchronisations</source>
         <translation>Sioncrónuithe</translation>
     </message>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
+        <translation>An API GraphQL: a chríochphointe, an scéimre agus clós súgartha chun iarratais a thriail.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -78683,6 +78691,73 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <message>
         <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
         <translation>Tharla imeacht slándála ar do chuntas %login: %event. Mura tusa a bhí ann, daingnigh do chuntas ag %url.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/graphql</name>
+    <message>
+        <source>GraphQL</source>
+        <translation>GraphQL</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Socrú</translation>
+    </message>
+    <message>
+        <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
+        <translation>Iarr ar ábhar an tsuímh seo díreach na réimsí a theastaíonn ó leathanach, in aon iarratas amháin. Leanann an scéimre na haicmí ábhair; ritheann gach iarratas le cearta an úsáideora a sheolann é.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
+        <translation>Tá an API GraphQL múchta sa rochtain suímh seo. Cas air é in graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
+        <translation>Níl an leabharlann GraphQL (webonyx/graphql-php 15) suiteáilte.</translation>
+    </message>
+    <message>
+        <source>End point</source>
+        <translation>Críochphointe</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Leabharlann</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Scéimre</translation>
+    </message>
+    <message>
+        <source>%count content classes, schema %hash</source>
+        <translation>%count aicme ábhair, scéimre %hash</translation>
+    </message>
+    <message>
+        <source>Query</source>
+        <translation>Iarratas</translation>
+    </message>
+    <message>
+        <source>Variables (JSON)</source>
+        <translation>Athróga (JSON)</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Rith</translation>
+    </message>
+    <message>
+        <source>Answer</source>
+        <translation>Freagra</translation>
+    </message>
+    <message>
+        <source>Running…</source>
+        <translation>Ag rith…</translation>
+    </message>
+    <message>
+        <source>The answer could not be read.</source>
+        <translation>Níorbh fhéidir an freagra a léamh.</translation>
+    </message>
+    <message>
+        <source>The query runs with your rights, signed in with this session.</source>
+        <translation>Ritheann an t-iarratas le do chearta, logáilte isteach leis an seisiún seo.</translation>
     </message>
 </context>
 </TS>

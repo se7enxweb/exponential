@@ -85,6 +85,7 @@
         "symfony/polyfill-php80": "^1.27",
         "symfony/polyfill-php81": "^1.27",
         "smarty/smarty": "^5",
+        "webonyx/graphql-php": "^15",
         "zetacomponents/archive": "~1.5.1",
         "zetacomponents/authentication": "~1.4.1",
         "zetacomponents/cache": "~1.6.3",
