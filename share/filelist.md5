@@ -24650,7 +24650,7 @@ cd927c02a44dcfb6ece0b65e829b3927  kernel/private/options/ezpautoloadgeneratoropt
 71f88116fc87041f46755e3ea43be8b4  kernel/private/options/ezpextensionoptions.php
 8b5a21f10ae4a65b39ffc2cf1138d048  kernel/private/rest/classes/auth/apikey_auth_filter.php
 c268c18a2be5130cdc99d8336a339e80  kernel/private/rest/classes/auth/apikey_rest.php
-b3cc892e15285f30e5abc29fffcd749c  kernel/private/rest/classes/auth/auth_configuration.php
+4548233bf7c30f5db7e46d817319dd5a  kernel/private/rest/classes/auth/auth_configuration.php
 7327ff4e095d6737b9a9c5eddcee0f05  kernel/private/rest/classes/auth/auth_provider.php
 5782c0718698593fd0bd01d9bc4f6628  kernel/private/rest/classes/auth/auth_style.php
 12181672fd7b2bcead25f329e77b80b9  kernel/private/rest/classes/auth/content_permission.php
@@ -27337,7 +27337,7 @@ e88c80daf0e1f3b6f1d5227eaa20f455  tests/tests/kernel/classes/graphql/expGraphQLD
 e42ef39230613ab1a6ab58a671abf29c  tests/tests/kernel/classes/graphql/expGraphQLPersistedQueriesTest.php
 4f86abcb3b18b08b07f75a8fcf46de5b  tests/tests/kernel/classes/graphql/expGraphQLRateLimiterTest.php
 b22728eb3f93bc4592f6514ba7adbe16  tests/tests/kernel/classes/graphql/expGraphQLResponseCacheTest.php
-bf9f228b64a5cd160ce3dea062694377  tests/tests/kernel/classes/graphql/expGraphQLRestTest.php
+7c1f466027aaabca8106d97903db478f  tests/tests/kernel/classes/graphql/expGraphQLRestTest.php
 d5820128371e8652644a10c6933a6440  tests/tests/kernel/classes/graphql/expGraphQLSchemaTest.php
 90d50947f17f666964401c3e8aa21116  tests/tests/kernel/classes/graphql/expGraphQLSearchTest.php
 5e0f68dba8fc393591b831926f3ef5e1  tests/tests/kernel/classes/graphql/expGraphQLTagsExtensionTest.php
