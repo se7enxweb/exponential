@@ -151,7 +151,7 @@ class Expgraphqlpersist extends \Exponential\Runnable\Command
     /**
      * @param \GraphQL\Type\Schema $schema
      * @param string $query
-     * @return string[] why the query cannot be stored (syntax, schema)
+     * @return string[] why the query cannot be stored (syntax, schema, MaxDepth, MaxComplexity)
      */
     public static function problems( $schema, $query )
     {
@@ -166,7 +166,9 @@ class Expgraphqlpersist extends \Exponential\Runnable\Command
             return array( $e->getMessage() );
         }
         $problems = array();
-        foreach ( \GraphQL\Validator\DocumentValidator::validate( $schema, $document ) as $error )
+        // the rules a request is checked against, its depth and complexity limits included (introspection is
+        // checked when the query is called: who may read the schema depends on the request)
+        foreach ( \GraphQL\Validator\DocumentValidator::validate( $schema, $document, \expGraphQLServer::validationRules( true ) ) as $error )
             $problems[] = $error->getMessage();
         return $problems;
     }
