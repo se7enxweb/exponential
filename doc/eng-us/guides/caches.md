@@ -104,6 +104,12 @@ Each group and each result notice shows the command for exactly the caches it cl
 **A page still shows the old version after clearing.** Clear Velocity's response cache, or wait a few seconds. If
 it is a settings change, restart Velocity.
 
+**The site runs on LiteSpeed or OpenLiteSpeed and anonymous visitors still see the old page.** The server's own page
+cache (switched on with the block of `.htaccess_root`) is not cleared from this page: it keeps a page for its
+`max-age` (120 seconds as shipped). Wait, or purge it as
+[Page caching with LiteSpeed and OpenLiteSpeed](litespeed-page-cache.md#purging) describes. A response header
+`X-LiteSpeed-Cache: hit` says the page came from there.
+
 **The log says "Expiring all view cache".** A change touched so many pages that clearing each one would take
 longer than clearing them all: when the view caches of `site.ini [ContentSettings] CacheThreshold` nodes or more
 (default 250) are to be cleared, every view cache of the site is expired instead, and the next visits to every page

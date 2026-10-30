@@ -33,7 +33,7 @@ Support erkennen, woher eine veraltete oder langsame Seite kommt.
 |---|---|---|---|---|
 | 1 | Browser-Cache statischer Dateien | Velocity: `StaticMaxAge=31536000`; Apache: Ihr `mod_expires` | alle | Dateinamen, oder das Abwarten der Lebensdauer |
 | 2 | Browser-Cache von Seiten | aus (`site.ini [HTTPHeaderSettings] CustomHeader=disabled`) | anonyme Besucher, wenn eingeschaltet | Lebensdauer |
-| 3 | CDN oder zwischenspeichernder Proxy | nicht Teil von Exponential | wie Sie es konfigurieren | Ihren Proxy; Exponential sendet kein Leeren |
+| 3 | CDN, zwischenspeichernder Proxy oder der Seiten-Cache von LiteSpeed und OpenLiteSpeed | nicht Teil von Exponential (LiteSpeed: ein auskommentierter Block in `.htaccess_root`) | wie Sie es konfigurieren; LiteSpeed: anonyme Besucher | Ihren Proxy; LiteSpeed: `max-age`; Exponential sendet kein Leeren |
 | 4 | Antwort-Cache von Velocity | an unter Velocity (`velocity.ini [CacheSettings] Enabled=enabled`) | anonyme Besucher | `exp:velocity cache clear` |
 | 5 | Rollenbewusster HTTP-Cache | aus (`httpcache.ini [HttpCacheSettings] Enabled=disabled`) | anonyme und angemeldete Besucher, je Berechtigungskontext | bei Änderungen an Inhalten geleert; `--clear-id=exphttpcache` |
 | 6 | Statischer Cache | aus (`site.ini [ContentSettings] StaticCache=disabled`) | anonyme Besucher, als Dateien | beim Veröffentlichen neu erzeugt |
@@ -58,6 +58,12 @@ die unten verlinkten Seiten.
 
 **CDN oder Proxy.** Exponential sendet keine Anfragen zum Leeren oder Sperren an einen Proxy; einem Proxy, der Seiten speichert, muss
 gesagt werden, was er speichern soll und wie lange. Siehe [Varnish und Reverse Proxys](varnish-und-reverse-proxys.md) und [CDN](cdn.md).
+
+**Der Seiten-Cache von LiteSpeed und OpenLiteSpeed.** Auf diesen Servern kann der Webserver selbst Seiten aufbewahren:
+Der auskommentierte Block `## >>> LiteSpeed page cache` in `.htaccess_root` (oder dieselben Regeln im virtuellen
+Host) speichert anonyme `GET`-Anfragen ohne Abfragezeichenkette, Sitzungs- oder Anmelde-Cookie für `max-age` Sekunden
+und beantwortet sie ohne PHP. Beim Veröffentlichen leert ihn nichts; er läuft ab. Siehe
+[Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md).
 
 ## Im Server, vor dem Kernel
 

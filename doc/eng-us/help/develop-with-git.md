@@ -27,6 +27,7 @@ clones with their full history**, the kernel and every extension, instead of as 
 > test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
 > [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](hosting/panels/plesk.md), [cPanel](hosting/panels/cpanel.md), [DirectAdmin](hosting/panels/directadmin.md), [ISPConfig](hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../guides/litespeed-page-cache.md).
 
 Nothing here needs you to be an expert. Each step shows the command to type and what you should see, and every
 command on this page was tried on a fresh machine before it was written down.

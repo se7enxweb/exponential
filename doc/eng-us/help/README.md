@@ -98,6 +98,7 @@ For administrators and developers who choose the machine and the database of a s
 |---|---|
 | [Database support](database-support.md) | Choose a database from the supported ones, in their official order (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), and know what each needs |
 | [Operating system support](os-support.md) | Check whether an operating system, processor and web server can run Exponential, from Linux to Windows and beyond |
+| [Page caching with LiteSpeed and OpenLiteSpeed](../guides/litespeed-page-cache.md) | Make a site on a LiteSpeed or OpenLiteSpeed server fast for anonymous visitors and crawlers: the server answers from stored pages without PHP, with no plugin and no code |
 
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and

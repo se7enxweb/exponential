@@ -27,6 +27,7 @@ server context and saves Apache a file lookup per directory on every request.
 > test the site. The same rules for other servers: [nginx](nginx.md), [LiteSpeed](litespeed.md),
 > [Caddy](caddy.md), [IIS](iis.md), [Velocity](velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../../help/hosting/panels/plesk.md), [cPanel](../../help/hosting/panels/cpanel.md), [DirectAdmin](../../help/hosting/panels/directadmin.md), [ISPConfig](../../help/hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../guides/litespeed-page-cache.md).
 
 ## Install it
 
@@ -192,6 +193,52 @@ RewriteRule ^sw\.js$ - [L]
 # More info here : http://en.wikipedia.org/wiki/P3p
 RewriteRule ^w3c/p3p\.xml - [L]
 
+## >>> LiteSpeed page cache (off) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## LiteSpeed Web Server (Enterprise) and OpenLiteSpeed can keep whole pages and
+## answer anonymous visitors and crawlers from them without running PHP: no
+## plugin and no code, only the rules below. Apache and nginx never read them
+## (<IfModule LiteSpeed>). Every line, purging, checks and troubleshooting:
+##   doc/eng-us/guides/litespeed-page-cache.md
+##
+## To switch it on, remove the first "#" of every line from the ">>>" line to
+## the "<<<" line (a "##" line keeps one "#" and stays a comment), or run:
+##   sed -i '/^## >>> LiteSpeed page cache/,/^## <<< LiteSpeed page cache/ s/^#//' .htaccess
+## Then request a page twice without cookies; the second answer says "hit":
+##   curl -sI https://www.example.com/ | grep -i x-litespeed-cache
+## The server needs a cache directory (LiteSpeed Enterprise: CacheRoot at
+## server level). OpenLiteSpeed reads only the rewrite rules of .htaccess,
+## only with autoLoadHtaccess on and only after a restart, and needs its cache
+## module on for the virtual host: see the guide.
+##
+#<IfModule LiteSpeed>
+## Look the request up in the page cache.
+#CacheLookup on
+## Only reads: every form (POST) and every other write reaches PHP.
+#RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$
+## No query string: searches, filters and tracking parameters reach PHP.
+#RewriteCond %{QUERY_STRING} ^$
+## Nobody with a session or signed in. The session cookie is PHPSESSID with
+## site.ini [Session] SessionNameHandler=default (php.ini session.name) and
+## eZSESSID<md5 of the siteaccess> with SessionNameHandler=custom; the kernel
+## sets is_logged_in=true for every signed-in user. Editors, members and a
+## visitor with a basket all carry one. Add cookies of your own that change
+## what a page shows, separated by "|".
+#RewriteCond %{HTTP_COOKIE} !(eZSESSID|PHPSESSID|is_logged_in) [NC]
+## Not the views that differ per visitor or change something, with or without
+## a siteaccess in front: the administration (put the URI of yours if it is
+## not "admin"), user/, shop/, notification/, layout/, ezjscore/, setup/ and
+## every content/ view except content/view/. REST, SOAP, WebDAV and the tree
+## menu never get here: the rules above send them their own way.
+#RewriteCond %{REQUEST_URI} !^/([^/]+/)?((admin|user|shop|notification|layout|ezjscore|setup)(/|$)|content/(?!view/)) [NC]
+## The administration on a host name of its own: remove one more "#", adjust.
+##RewriteCond %{HTTP_HOST} !^admin\. [NC]
+## Keep the page 120 seconds (max-age). Nothing removes it when an editor
+## publishes: anonymous visitors see a change at most max-age seconds later.
+## Never cache pages with debug output (site.ini DebugOutput, DebugByIP).
+#RewriteRule .* - [E=cache-control:max-age=120]
+#</IfModule>
+## <<< LiteSpeed page cache <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 RewriteRule .* index.php
 
 # ===========================================================================
@@ -274,6 +321,7 @@ RewriteRule .* index.php
 | `^extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg\|png\|gif)$` | the icon themes of extensions (`icon.ini [ExtensionSettings] IconExtensions[]`) | SVG, PNG and GIF images with exactly one extension only: a name like `a.php.svg` could otherwise be handed to PHP by an `AddHandler` mapping |
 | `^packages/styles/...`, `^var/storage/packages/.+\.(png\|jpe?g\|gif\|webp)$` | package styles and preview images | a package's XML, SQL and settings are not for the web; SVG is not listed, it can carry script |
 | `favicon.ico`, `robots.txt`, `index.js`, `sw.js`, `w3c/p3p.xml` | sent from the root | the service worker must be served from the root |
+| the block `## >>> LiteSpeed page cache` ... `## <<< LiteSpeed page cache` (commented) | once uncommented, on LiteSpeed Enterprise and OpenLiteSpeed only (`<IfModule LiteSpeed>`): anonymous `GET` and `HEAD` requests without a query string, session or sign-in cookie, outside the administration, user, shop and editing views, are kept by the server's page cache for `max-age` seconds | answers anonymous visitors and crawlers without PHP; Apache skips it. Every line: [Page caching with LiteSpeed and OpenLiteSpeed](../../guides/litespeed-page-cache.md) |
 | `RewriteRule .* index.php` | everything else runs `index.php` | URL aliases and modules; also `settings/site.ini`, `composer.json`, `var/log/...`, which `index.php` answers with a page or a 404, never the file |
 
 So `var/`, `settings/`, `vendor/`, `.git`, `composer.*` and `.env` need no rules of their own: the dot rule and "not on

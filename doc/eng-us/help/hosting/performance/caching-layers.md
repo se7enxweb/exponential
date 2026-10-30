@@ -33,7 +33,7 @@ can tell where a stale or slow page comes from.
 |---|---|---|---|---|
 | 1 | Browser cache of static files | Velocity: `StaticMaxAge=31536000`; Apache: your `mod_expires` | everyone | file names, or waiting out the lifetime |
 | 2 | Browser cache of pages | off (`site.ini [HTTPHeaderSettings] CustomHeader=disabled`) | anonymous visitors, when switched on | lifetime |
-| 3 | CDN or caching proxy | not part of Exponential | as you configure it | your proxy; Exponential sends no purges |
+| 3 | CDN, caching proxy, or the page cache of LiteSpeed and OpenLiteSpeed | not part of Exponential (LiteSpeed: a commented block in `.htaccess_root`) | as you configure it; LiteSpeed: anonymous visitors | your proxy; LiteSpeed: `max-age`; Exponential sends no purges |
 | 4 | Velocity response cache | on under Velocity (`velocity.ini [CacheSettings] Enabled=enabled`) | anonymous visitors | `exp:velocity cache clear` |
 | 5 | Role-aware HTTP cache | off (`httpcache.ini [HttpCacheSettings] Enabled=disabled`) | anonymous and signed-in, per permission context | purged on content change; `--clear-id=exphttpcache` |
 | 6 | Static cache | off (`site.ini [ContentSettings] StaticCache=disabled`) | anonymous visitors, as files | regenerated on publish |
@@ -58,6 +58,12 @@ and `sw.js`) can answer return visits in the visitor's own browser
 
 **CDN or proxy.** Exponential sends no purge or ban requests to a proxy; a proxy that stores pages must be told what
 to store and for how long. See [Varnish and reverse proxies](varnish-and-reverse-proxies.md) and [CDN](cdn.md).
+
+**The page cache of LiteSpeed and OpenLiteSpeed.** On these servers the web server itself can keep pages: the
+commented block `## >>> LiteSpeed page cache` of `.htaccess_root` (or the same rules in the virtual host) stores
+anonymous `GET` requests without query string, session or sign-in cookie for `max-age` seconds and answers them
+without PHP. Nothing purges it on publish; it expires. See
+[Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md).
 
 ## In the server, before the kernel
 

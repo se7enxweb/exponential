@@ -28,6 +28,7 @@ the document root. The list is written down once, in `.htaccess_root`, and Veloc
 > test the site. The same rules for other servers: [nginx](nginx.md), [LiteSpeed](litespeed.md),
 > [Caddy](caddy.md), [IIS](iis.md), [Velocity](velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](../../help/hosting/panels/plesk.md), [cPanel](../../help/hosting/panels/cpanel.md), [DirectAdmin](../../help/hosting/panels/directadmin.md), [ISPConfig](../../help/hosting/panels/ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../guides/litespeed-page-cache.md).
 
 Every example on these pages is a complete file you can copy, with `example.com` and `/var/www/example.com` to
 replace. Each one implements the same list, in this order:
@@ -53,6 +54,7 @@ replace. Each one implements the same list, in this order:
 | Caddy | [Caddy](caddy.md) | `Caddyfile.example` | `frankenphp validate` (Caddy 2.11 inside FrankenPHP 1.12.7) |
 | FrankenPHP | [FrankenPHP](frankenphp.md) | `frankenphp.Caddyfile.example` | `frankenphp validate` |
 | LiteSpeed, OpenLiteSpeed | [LiteSpeed](litespeed.md) | `openlitespeed-vhost.conf` | not run on LiteSpeed; its rewrite rules answered every test request as expected in Apache's `mod_rewrite` |
+| LiteSpeed, OpenLiteSpeed: page cache | [Page caching with LiteSpeed and OpenLiteSpeed](../../guides/litespeed-page-cache.md) | `litespeed-page-cache.conf` (and commented blocks in `.htaccess_root` and `openlitespeed-vhost.conf`) | not run on LiteSpeed; the address condition was checked with PCRE against sample addresses (cached, and excluded: the administration, `user/`, `shop/`, `content/` views other than `view/`) |
 | IIS | [IIS](iis.md) | `web.config` | well-formed XML (`xmllint`) only; not run on IIS |
 | PHP-FPM (behind Apache, nginx, Caddy) | [PHP-FPM pool](php-fpm.md) | `php-fpm-pool.conf` | `php-fpm -t` |
 

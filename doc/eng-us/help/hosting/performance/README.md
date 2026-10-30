@@ -4,7 +4,7 @@ audience: hosting
 category: hosting
 order: 10
 summary: Overview of the performance section for hosting companies: the levers in order of effect, the caching layers, measuring before tuning, and a one-line guide to every page of the section.
-keywords: performance, speed, tuning, cache, caching, OPcache, PHP-FPM, Velocity, response cache, HTTP cache, SQL query cache, Valkey, Redis, static cache, CDN, Varnish, benchmark, overview
+keywords: performance, speed, tuning, cache, caching, OPcache, PHP-FPM, Velocity, response cache, HTTP cache, SQL query cache, Valkey, Redis, static cache, CDN, Varnish, benchmark, overview, LiteSpeed, OpenLiteSpeed, LSCache, page cache
 type: help
 ---
 # Performance
@@ -65,6 +65,7 @@ sources say so themselves; treat them as examples of what to measure, not as pro
 | [Velocity response cache](velocity-response-cache.md) | The cache in Velocity's parent process: settings, checks, clearing |
 | [HTTP cache headers](http-cache-headers.md) | What browsers, proxies and CDNs may keep, and the role-aware HTTP cache |
 | [Varnish and reverse proxies](varnish-and-reverse-proxies.md) | Caching proxies in front: trust, purging, what not to cache |
+| [Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md) | The page cache built into LiteSpeed and OpenLiteSpeed, for anonymous visitors and crawlers, without a plugin: switching it on, checking hits, purging |
 | [CDN](cdn.md) | Putting a content delivery network in front of customer sites |
 | [Valkey and Redis](valkey-and-redis.md) | The `sevenx_valkey_cache` extension: caches in Redis or Valkey |
 | [Static cache](static-cache.md) | Pages generated as files; why it ships off and when to use it |
@@ -81,6 +82,7 @@ sources say so themselves; treat them as examples of what to measure, not as pro
 | reloading the wrong PHP-FPM master | the site keeps running the old code | [PHP-FPM tuning](php-fpm-tuning.md) |
 | judging Velocity's memory by RSS | the pool looks many times larger than it is | [Velocity workers and pools](../servers/velocity-workers-and-pools.md) |
 | a caching proxy that stores pages with a session cookie | signed-in pages served to other visitors | [Varnish and reverse proxies](varnish-and-reverse-proxies.md) |
+| a LiteSpeed page cache with `CacheEnable public /` instead of the conditions of `.htaccess_root` | which pages are stored depends on the server policy, not on the session and address conditions | [Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md#the-block-line-by-line) |
 | switching on the static cache for speed | every publish regenerates pages inside the editor's request | [Static cache](static-cache.md) |
 
 ## Related pages

@@ -29,6 +29,7 @@ Einstellungen oder Befehle, die schließen, was noch offen ist.
 > Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
 > [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
 > [Plesk](hosting/control-panels/plesk.md), [cPanel](hosting/control-panels/cpanel.md), [DirectAdmin](hosting/control-panels/directadmin.md), [ISPConfig](hosting/control-panels/ispconfig.md).
+> **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../anleitungen/seiten-cache-mit-litespeed.md).
 
 Sie ergänzt [Kapitel 13 der Installationsanleitung, Sicherheitshärtung für den
 Produktivbetrieb](../installation/13-sicherheitshaertung.md), ohne es zu wiederholen; dieses ist die Referenz Einstellung für

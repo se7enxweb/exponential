@@ -26,6 +26,7 @@ general advice.
 > test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
 > [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
 > panel: [Plesk](plesk.md), [cPanel](cpanel.md), [DirectAdmin](directadmin.md), [ISPConfig](ispconfig.md).
+> **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md).
 
 > **Note**
 > The Exponential sources describe no cPanel screens or menus. Where this page refers to a panel feature, it does so
@@ -144,6 +145,8 @@ project ... and the row moves up" ([The four tiers](../../os-support.md#the-four
 - [ ] The test plan passed on your platform.
 
 **A public demo on cPanel.** Set `EXP_DEMO_MODE=1` for the demo's account only: `SetEnv EXP_DEMO_MODE 1` in the site's `.htaccess` (Apache or LiteSpeed), and `EXP_DEMO_MODE=1` on its own line at the top of the account's cron jobs. [Demo mode for hosts](../security/demo-mode-for-hosts.md), [Demo mode examples](../../../examples/demo-mode/README.md).
+
+**The LiteSpeed page cache on cPanel.** With LiteSpeed as the web server, its page cache answers anonymous visitors and crawlers without PHP. Switch it on per site with the commented block of `.htaccess_root` in the account's `.htaccess`, or as an include file below `/etc/apache2/conf.d/userdata/ssl/2_4/<user>/<domain>/` ([`litespeed-page-cache.conf`](../../../examples/web-servers/litespeed-page-cache.conf)). Step by step: [Page caching with LiteSpeed and OpenLiteSpeed](../../../guides/litespeed-page-cache.md#cpanel-and-whm).
 
 ## Related pages
 

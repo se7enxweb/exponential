@@ -4,7 +4,7 @@ audience: hosting, admin
 category: hosting
 order: 30
 summary: Was zu tun ist, wenn eine Exponential-Website langsam ist - zuerst mit exp:benchmark messen, kalt von warm trennen, die Caches, OPcache, Worker oder PHP-FPM-Kinder, die Datenbank und die Anfrage-Logs prüfen, dann die Hebel in der Reihenfolge ihrer Wirkung anwenden.
-keywords: Runbook, langsame Website, Leistung, Latenz, Benchmark, exp:benchmark, Cache, View-Cache, Antwort-Cache, OPcache, PHP-FPM, Worker, Datenbank, SQLite ANALYZE, vorwärmen, statischer Cache, runbook, slow site, performance, latency, view cache, response cache, workers, database, warm, static cache
+keywords: Runbook, langsame Website, Leistung, Latenz, Benchmark, exp:benchmark, Cache, View-Cache, Antwort-Cache, OPcache, PHP-FPM, Worker, Datenbank, SQLite ANALYZE, vorwärmen, statischer Cache, runbook, slow site, performance, latency, view cache, response cache, workers, database, warm, static cache, Crawler, Bots, LiteSpeed, Seiten-Cache, page cache
 type: help
 ---
 # Runbook: langsame Website
@@ -49,7 +49,7 @@ php bin/php/console exp:benchmark --baseline=var/benchmark/base.json --threshold
 | Nur die erste Anfrage nach einer Änderung ist langsam | Caches werden nach einem Leeren oder Ausrollen neu aufgebaut: normal, wärmen Sie sie vor |
 | Nur angemeldete Benutzer (Redakteure) sind langsam | sie umgehen die anonymen Caches; prüfen Sie die Datenbank und OPcache |
 | Eine Seite langsam | das Template oder der Fetch dieser Seite; prüfen Sie ihre Log-Zeilen |
-| Langsam zu bestimmten Zeiten | ein Cronjob, ein Backup, ein Import oder ein Crawler; prüfen Sie die Anfrage-Logs und die Cron-Zeiten |
+| Langsam zu bestimmten Zeiten | ein Cronjob, ein Backup, ein Import oder ein Crawler; prüfen Sie die Anfrage-Logs und die Cron-Zeiten ([langsam unter Crawlern](#langsam-unter-crawlern-und-bots)) |
 
 ## Prüfungen in Reihenfolge
 
@@ -85,6 +85,22 @@ Aus 10.12:
 6. **Die Abstimmung der Datenbank** aus [Kapitel 9](../../../installation/09-datenbanken.md).
 
 Ändern Sie einen Hebel nach dem anderen und messen Sie erneut mit der Basislinie.
+
+### Langsam unter Crawlern und Bots
+
+Fallen die langsamen Zeiten mit Wellen von Crawlern zusammen (Suchmaschinen, KI-Crawler, SEO-Werkzeuge; das
+Zugriffslog zeigt viele anonyme Anfragen weniger User-Agents innerhalb einer Minute), ist die billigste Abhilfe ein
+Cache, der anonyme Seiten ohne PHP beantwortet:
+
+- **Velocity:** Sein Antwort-Cache tut das ohne weiteres Zutun.
+- **LiteSpeed oder OpenLiteSpeed:** der Seiten-Cache des Servers, eingeschaltet mit dem auskommentierten Block aus
+  `.htaccess_root` oder denselben Regeln im virtuellen Host, ohne Plugin:
+  [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../../anleitungen/seiten-cache-mit-litespeed.md#crawler-und-bots).
+- **Apache oder nginx:** zwischenspeicherbare Header für anonyme Besucher und ein zwischenspeichernder Proxy davor
+  ([HTTP-Cache-Header](../leistung/http-cache-header.md), [Varnish und Reverse Proxys](../leistung/varnish-und-reverse-proxys.md)),
+  oder der rollenbewusste HTTP-Cache.
+
+`robots.txt` kann höfliche Crawler bremsen; gegen die anderen hilft sie nicht.
 
 ## Nach dem Vorfall
 
