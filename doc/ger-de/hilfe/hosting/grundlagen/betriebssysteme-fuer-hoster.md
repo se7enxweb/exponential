@@ -44,7 +44,7 @@ jedem System ist [Betriebssystemunterstützung](../../betriebssystemunterstuetzu
 
 ## Die kurze Antwort
 
-Exponential 6.0.x läuft auf fast jedem Betriebssystem, das PHP 8.0 oder später und einen Webserver hat. Es besteht aus
+Exponential 6.0.x läuft auf fast jedem Betriebssystem, das PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar) und einen Webserver hat. Es besteht aus
 reinen PHP-Dateien und einer Datenbank; es hat keinen eigenen kompilierten Code und hängt von keiner bestimmten
 C-Bibliothek ab ([Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md#was-das-betriebssystem-bereitstellen-muss)). Für einen
 Hoster ist die praktische Wahl eine aktuelle Linux-Distribution mit einem gepflegten PHP 8.

@@ -36,7 +36,7 @@ vornehmen und einen Pull-Request an das Repository von 7x schicken, wo er geprü
 veröffentlicht wird. Im Einzelnen:
 
 1. **Lesen Sie die Regeln.** `CONTRIBUTING.md` im Hauptverzeichnis der Installation und den Verhaltenskodex, auf den
-   sie verweist.
+   sie verweist ([Der Verhaltenskodex von Exponential](verhaltenskodex.md)).
 2. **Arbeiten Sie in einem Klon.** Forken Sie [se7enxweb/exponential](https://github.com/se7enxweb/exponential)
    (oder das Repository der Erweiterung), klonen Sie Ihren Fork und legen Sie einen Branch für eine einzelne Änderung
    an. [Mit Git entwickeln](../mit-git-entwickeln.md) zeigt, wie Sie aus einer Installation Klone machen, in denen Sie
@@ -52,23 +52,35 @@ veröffentlicht wird. Im Einzelnen:
    korrigieren mit `make manifest-fix`). Führen Sie die Tests aus und aktualisieren Sie die Dokumentation, wenn Ihre
    Änderung das erfordert.
 6. **Eröffnen Sie den Pull-Request** und beschreiben Sie, was Sie geändert haben, warum und wie Sie es getestet
-   haben. Nennen Sie das Issue, das er behebt (`Fixes #123`).
+   haben. Nennen Sie das Issue, das er behebt (`Fixes #123`). Ist der „Fehler“, den Sie beheben, ein Verhalten, das
+   beabsichtigt oder Auslegungssache ist, eine [negative Funktion](unterstuetzung-erhalten.md#negative-funktionen),
+   auf die sich andere Sites verlassen, dann erklären Sie den Anwendungsfall sorgfältig, ziehen Sie eine neue Option
+   einem geänderten Standard vor, und rechnen Sie mit mehreren Runden der Prüfung, bevor er angenommen und gemergt
+   wird.
+7. **Übertragung des Urheberrechts (CLA).** 7x und die Exponential Foundation mergen einen Code-Beitrag zum Kernel
+   (`se7enxweb/exponential`), in welcher Form auch immer eingereicht (Pull-Request, Patch, Code in einem Issue oder
+   E-Mail), erst, nachdem Sie das Contributor Licensing Agreement unterzeichnet haben. **Mit Unterschrift und
+   Einreichung übertragen Sie das Urheberrecht an Ihrem Beitrag an 7x, das damit sein Eigentümer wird, und geben die
+   Kontrolle darüber ab:** 7x darf ihn auf jede Weise verwenden, ändern, neu lizenzieren und verbreiten, auch unter
+   anderen Lizenzen und in kommerziellen Produkten, ohne Sie zu fragen oder zu bezahlen, und Sie können ihn nicht
+   zurückziehen und keine Bedingungen daran knüpfen. Siehe
+   [Übertragung des Urheberrechts (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) und die
+   [CLA-Seite](https://share.se7enx.com/community-project/contributor-licensing-agreement-cla). Ihre eigenen
+   individuellen Erweiterungen, Site-Pakete und Themes sind nicht betroffen.
 
 Die Continuous Integration des Projekts läuft bei jedem Pull-Request ([CI](../../bc/6.0/ci.md)). Das Projekt mergt
-jeden Pull-Request und behält die Commits der Mitwirkenden so, wie sie geschrieben wurden; was zu korrigieren ist,
-wird darauf aufbauend korrigiert
+jeden Pull-Request. Solange er offen ist, fassen Sie ihn zusammen (Squash) und setzen ihn per Rebase auf `main` auf,
+wie es die Reviews verlangen (`git fetch origin`, `git rebase -i origin/main`, `git push --force-with-lease` nur auf
+den Branch Ihres Pull-Requests); sobald er gemergt ist, wird die Historie von `main` nie umgeschrieben, und spätere
+Korrekturen kommen als neue Pull-Requests
 ([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#mitwirkende-und-pull-requests)).
-
-Nicht jeder gemeldete Fehler ist einer: Manches Verhalten ist beabsichtigt oder Auslegungssache, und andere Sites
-verlassen sich darauf. Eine Korrektur daran braucht eine klare Begründung, kann mehrere Runden der Prüfung brauchen,
-bevor sie angenommen und zusammengeführt wird, und kommt als Option meist besser an als ein neuer Standard
-([Negative Funktionen](unterstuetzung-erhalten.md#negative-funktionen)).
 
 ### Die Lizenz Ihres Beitrags
 
 Tragen Sie zu denselben Bedingungen bei wie alle anderen: unter der GNU GPL Version 2 oder später. Die FAQ der
 Website bittet darum, damit Beiträge mit dem übrigen Code vereinbar bleiben und das Projekt als Ganzes auf spätere
-Versionen der GPL wechseln kann; `CONTRIBUTING.md` sagt dasselbe. Das Urheberrecht an Ihrem Code behalten Sie. Wenn
+Versionen der GPL wechseln kann; `CONTRIBUTING.md` sagt dasselbe. Für den Kernel überträgt die CLA zusätzlich das Urheberrecht an Ihrem Beitrag an 7x,
+das ihn dann verwenden, ändern und neu lizenzieren darf, ohne Sie zu fragen oder zu bezahlen. Wenn
 Sie einen Beitrag nicht so lizenzieren können, reichen Sie ihn nicht ein
 ([Fragen zur Lizenz](lizenz-faq.md#darf-ich-code-ausschließlich-unter-gpl-version-3-oder-ausschließlich-unter-gpl-version-2-beitragen)).
 

@@ -56,7 +56,7 @@ A site on 5.x, 4.x or older receives no fixes. The migration chapters of the ins
 that era ran on the code base of eZ Publish, which its creator discontinued after almost eighteen years; Exponential
 continues that code base ([Who is 7x?](../../../who-is-7x.md)).
 
-A site that must stay on PHP 7.4 can only run up to 6.0.7, which is no longer the maintained line
+A site that must stay on PHP 7.4 can run the maintained line again from 6.0.15, without support and without the features that need PHP 8
 ([2. Requirements](../../../../install/02-requirements.md#versions)).
 
 ## Extensions

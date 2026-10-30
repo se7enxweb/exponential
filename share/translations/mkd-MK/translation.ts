@@ -77241,6 +77241,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Клучот за пристап не можеше да се провери. Обидете се повторно.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Сметките што се најавуваат само со клучеви за пристап не можат да користат лозинка тука: изберете „Најави се со клуч за пристап“.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Клучеви за пристап на %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Клучевите за пристап со кои се најавува оваа сметка. Отповикајте го оној што е на изгубен или украден уред: со него повеќе не може да се најави. Новите ги додава самиот сопственик.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>На Вашата сметка ѝ треба клуч за пристап</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Додајте клуч за пристап на Вашата сметка</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Додајте клуч за пристап за да продолжите. Потоа ќе се најавувате со него наместо само со лозинка.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Најавата со клуч за пристап е побрза и побезбедна од лозинката. Додајте еден сега или продолжете без него.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Не сега</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Да се отповика клучот за пристап „%name“?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Со него повеќе не може да се најави на оваа сметка. Ако бил последниот, сопственикот се најавува со лозинката, или Вие поставувате нова.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Отповикај го клучот за пристап</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Отповикај</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Оваа сметка нема клуч за пристап.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Автентикатор</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Непознато</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Вашиот последен клуч за пристап: додајте друг пред да го отстраните.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Оваа сметка се најавува само со клучеви за пристап (политика за клучеви за пристап): ако не остане ниеден, повторно се најавува со својата лозинка.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Ова е Вашиот последен клуч за пристап и Вашата сметка не може да се најави без него. Прво додајте друг клуч за пристап.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Клучот за пристап „%name“ е отповикан. Со него повеќе не може да се најави на оваа сметка.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>Код од Вашата апликација за автентикација</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Се подготвувате трајно да избришете податоци или да испразните дневник.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Вашата лозинка и клуч за пристап</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Вашата лозинка и код од Вашата апликација за автентикација</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Или:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Овој прелистувач не може да користи клучеви за пристап. Користете друг начин или друг прелистувач.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Кога ќе продолжите, Вашиот прелистувач ќе побара еден од Вашите клучеви за пристап.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Продолжи со клуч за пристап</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>Конфигурација</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Промена на сопствената лозинка, адреса за е-пошта, клучеви за пристап, најава во два чекора, кодови за обнова или API-клучеви и одјавување од сопствените други уреди.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Создавање и уредување корисници, нивните лозинки и уреди, поставки на сметката, одобрување или одбивање нови кориснички сметки, доделување улоги и уредување политики.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Бришење податоци</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Празнење на корпата, отстранување ставки од неа и отстранување повеќе ставки одеднаш.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Отстранување, објавување и зачувување содржина</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Отстранување содржина (и во корпата), објавување и зачувување нацрт; се прашува при испраќање на формуларот. Стандардно исклучено.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Пред чувствително дејство, најавениот корисник повторно потврдува кој е: со својата лозинка и клуч за пристап, или без клуч за пристап со својата лозинка и кодот од својата апликација за автентикација. Прашуваат само веб-страниците: REST-интерфејсот, SOAP, WebDAV, најавата на expservices и командната линија никогаш.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Каде важат поставките</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Поставки за</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Секој пристап до сајтот</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Пристап до сајтот %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Отвори</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Кој се прашува: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Штиклирајте групи корисници за да се прашуваат само нивните членови (на пример уредници). Ништо не е штиклирано: секој корисник.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Зачувано во settings/override/site.ini.append.php, за секој пристап до сајтот. При зачувувањето ќе Ве праша да потврдите дека сте Вие.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Зачувано во settings/siteaccess/%name/site.ini.append.php. Вредност во settings/override има предност пред неа. При зачувувањето ќе Ве праша да потврдите дека сте Вие.</translation>
     </message>
 </context>
 <context>
@@ -77786,6 +77954,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>Вашата сметка е заклучена</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>На Вашата сметка %login на %site е додаден клуч за пристап.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Секој што го има овој клуч за пристап може да се најави на Вашата сметка без Вашата лозинка. Ако не сте го додале Вие, отстранете го во Клучеви за пристап и сменете ја лозинката.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Од Вашата сметка %login на %site е отстранет клуч за пристап.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Со него повеќе не може да се најави на Вашата сметка. Ако не сте го отстраниле Вие, проверете ги Вашите клучеви за пристап и уреди.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>На Вашата сметка е додаден клуч за пристап</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Од Вашата сметка е отстранет клуч за пристап</translation>
     </message>
 </context>
 <context>

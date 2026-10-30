@@ -21,7 +21,7 @@ Webservern mit denselben Verben (`start`, `stop`, `graceful`, `restart`, `kill`,
 
 ## Velocity ist seit 6.0.15 Teil von Exponential
 
-Seit 6.0.15 **verlangt** die `composer.json` im Wurzelverzeichnis `se7enxweb/exponential-velocity ~0.0.4.57`; vorher
+Seit 6.0.15 **verlangt** die `composer.json` im Wurzelverzeichnis `se7enxweb/exponential-velocity ~0.0.4.57` (über `se7enxweb/exponential-php-floor`, auf PHP 8.0 und neuer); vorher
 schlug sie das Paket nur vor. Was sich dadurch für eine bestehende Installation ändert:
 
 | | |
@@ -89,7 +89,7 @@ php bin/php/console exp:velocity deploy --dry-run --allow-root-user  # what it w
 |---|---|---|
 | 1 | Autoloads der Erweiterungen | `php bin/php/ezpgenerateautoloads.php -e` |
 | 2 | Autoloads des Kernels, nur mit `--kernel` | `php bin/php/ezpgenerateautoloads.php -k`, beschränkt auf `kernel/` und `lib/` |
-| 3 | INI-Caches | `php bin/php/ezcache.php --clear-tag=ini` |
+| 3 | INI-Caches und der kompilierte Kernel-Service-Container (Cache-Eintrag `kernelservices`, [Kernel-Dienste](kernel-dienste.md)) | `php bin/php/ezcache.php --clear-tag=ini` (`./console exp:services:compile` nur für den Container) |
 | 4 | Caches template, template-override, translation und design_base | `--clear-id=template`, `--clear-id=template-override`, `--clear-id=translation`, `--clear-id=design_base`, eine ID pro Aufruf |
 | 5 | Engine-Archiv, wenn Velocity aus einem läuft | `php bin/php/phar.php build`: nur neu gebaut, wenn sich eine Datei in `kernel/`, `lib/` oder `autoload/` geändert hat, jede Datei wird vorher geparst |
 | 6 | PHP-FPM: warten, bis sein OPcache die geänderten Dateien neu validiert hat (kein Neuladen), oder es neu laden, wenn darauf kein Verlass ist | `sleep <revalidate_freq + 1>`, oder `systemctl reload <[DeploySettings] PhpFpmService>` |

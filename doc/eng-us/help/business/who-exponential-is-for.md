@@ -187,7 +187,7 @@ Ask these in discovery. The right column says which answer points to a good fit 
 | Who changes pages today, and how long does it take? | Editors wait for developers | [The layouts editor](../layouts-editor.md) |
 | Do you sell online, or plan to? | Yes, close to the content | [Feature highlights](feature-highlights-for-customers.md) |
 | Where must the site run: own servers, a cloud, a hosting partner? | They want the choice, or have a fixed standard | [Choosing hosting, database and operating system](../leadership/choosing-hosting-database-and-os.md) |
-| Which database and operating system does your IT run? | One of the six databases; an OS with PHP 8.0 or later | [Database support](../database-support.md), [Operating system support](../os-support.md) |
+| Which database and operating system does your IT run? | One of the six databases; an OS with PHP 8.0 or later (PHP 7.4 usable without support) | [Database support](../database-support.md), [Operating system support](../os-support.md) |
 | How important are license costs and the freedom to change provider? | Important | [Licensing explained for buyers](licensing-for-buyers.md) |
 | Do you run a site built while the software was called eZ Publish, or on eZ Platform or Ibexa? | Yes | [Upgrading](../../guides/upgrading.md), migration chapters 14 to 16 |
 | Who will run the site after launch: your IT, an agency, a hosting company? | Someone is named | [Working together](../leadership/working-together.md) |
@@ -206,7 +206,7 @@ question must be answered before you promise anything.
 | "We need features X, Y and Z" that no help page describes | Nothing undocumented may be promised | Hand it to the project manager as a scoping question ([Estimating and scoping with extensions](../leadership/estimating-and-scoping-with-extensions.md)) |
 | "We need a certification or a guaranteed support time." | The sources name no certifications; `SECURITY.md` promises only a first answer to security reports within one business day | Say what the sources say; service levels are a matter of your own contract |
 | "We need Microsoft SQL Server." | It is "known to be possible with additional work", not supported today (`README.md`) | Read [Database support](../database-support.md) together with their IT |
-| "Our site runs on PHP 7." | PHP 7.4 is supported only up to 6.0.7 (`README.md`) | Plan the PHP upgrade as part of the project |
+| "Our site runs on PHP 7." | PHP 7.4 is usable again from 6.0.15, without support and without the features that need PHP 8 | Plan the PHP upgrade as part of the project |
 | "We want a Symfony-only stack." | The Exponential 6 kernel is not Symfony | Look at Exponential Platform DXP ([Which product of the family fits](#which-product-of-the-family-fits)) |
 
 ## A persona card to copy

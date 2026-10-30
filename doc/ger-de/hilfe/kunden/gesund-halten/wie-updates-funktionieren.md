@@ -56,6 +56,8 @@ Die Person, die das Update durchführt, hat Prüfungen mit einem klaren Ergebnis
   und ändert nichts ([Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md)).
 - Die Startseite lädt, die Administration öffnet sich, und ein Testelement lässt sich veröffentlichen.
 
+![Setup, Upgrade-Prüfung: die Version, die Prüfung der Dateikonsistenz und die Prüfung der Datenbankkonsistenz, die nur lesen](../../bilder/creators/upgrade-check.webp)
+
 Lassen Sie sich diese drei Ergebnisse nach jedem Update schriftlich geben.
 
 ## Wo Sie lesen, was sich geändert hat

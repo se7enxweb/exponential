@@ -42,7 +42,7 @@ type: help
 | Supportvertrag | | |
 | Dienste Dritter (Zahlung, KI-Anbieter, Suche) | | |
 | Weiterentwicklung | | |
-| Sponsoring des Projekts, wenn Sie sich dafür entscheiden | | [Die Community finanzieren](../../../../eng-us/help/community/how-it-works/funding-the-community.md) |
+| Sponsoring des Projekts, wenn Sie sich dafür entscheiden | | [Die Community finanzieren](../../gemeinschaft/so-funktioniert-es/die-community-finanzieren.md) |
 | **Summe pro Jahr** | | |
 
 ## Interne Zeit

@@ -124,7 +124,7 @@ per plan, and write the choice into the plan's description.
 
 ## Checklist
 
-- [ ] PHP 8.0 or later for the web and the command line, the same version and extensions in both.
+- [ ] PHP 8.0 or later (PHP 7.4 usable without support) for the web and the command line, the same version and extensions in both.
 - [ ] `sockets`, `pcntl` and `openssl` in that PHP where Velocity is offered.
 - [ ] A database offer chosen from the official order.
 - [ ] `var/` and `settings/` writable by the site's user; one user or one group for every process.

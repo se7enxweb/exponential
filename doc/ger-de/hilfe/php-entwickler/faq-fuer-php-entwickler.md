@@ -38,7 +38,7 @@ den Einzelheiten.
 ## Plattform und Sprache
 
 **Welche PHP-Versionen muss mein Code unterstützen?**
-PHP 8.0 bis 8.5. PHP 8.0 ist die älteste, weil es das Standard-PHP von RHEL 9 ist
+PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar). PHP 8.0 ist die älteste, weil es das Standard-PHP von RHEL 9 ist
 ([Unterstützte PHP-Versionen: 8.0 bis 8.5](unterstuetzte-php-versionen.md)).
 
 **Darf ich Enums, readonly-Eigenschaften oder `foo(...)` verwenden?**
@@ -151,8 +151,8 @@ Reihenfolge ist [Der Lesepfad für PHP-Entwickler](lesepfad-fuer-php-entwickler.
 
 - [PHP-Entwickler: hier beginnen](php-entwickler-hier-beginnen.md)
 - [Anwendungsentwickler: häufig gestellte Fragen](../ersteller/anwendungsentwickler/faq-fuer-anwendungsentwickler.md)
-- [Software-Ingenieure: hier beginnen](../../../eng-us/help/software-engineers/software-engineers-start-here.md),
-  [Web-Framework-Entwickler: hier beginnen](../../../eng-us/help/web-framework-developers/web-framework-developers-start-here.md),
+- [Software-Ingenieure: hier beginnen](../softwareingenieure/softwareingenieure-hier-beginnen.md),
+  [Web-Framework-Entwickler: hier beginnen](../web-framework-entwickler/web-framework-entwickler-hier-beginnen.md),
   [das Buch für Erweiterungsentwickler](../erweiterungsentwicklung/README.md)
 - [Glossar für PHP-Entwickler](glossar-fuer-php-entwickler.md)
 - [Freie Dokumentation](../freie-dokumentation.md): diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

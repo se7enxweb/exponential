@@ -178,7 +178,10 @@ class eZTemplatesStatisticsReporter
     {
         try
         {
-            $url = sprintf( $format, $templateEditURI, $siteAccess, $templateFileName );
+            // PHP 8 throws on a refused format; PHP 7.4 warns and returns false
+            $url = @sprintf( $format, $templateEditURI, $siteAccess, $templateFileName );
+            if ( $url === false )
+                throw new \ValueError( 'too few arguments' );
         }
         catch ( \Throwable $e )
         {

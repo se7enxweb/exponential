@@ -322,3 +322,54 @@ jobs:
 
       - name: Boot smoke test without a database (every kernel and extension class, compat functions, a template)
         run: php bin/php/ezexec.php tests/bin/bootsmoke.php
+
+  php74:
+    name: PHP 7.4 (usable without support from 6.0.15) syntax, install and boot
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP 7.4, for sites that cannot move to PHP 8 yet
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, mysqli, pdo_sqlite, sqlite3, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: PHP 7.4 syntax of every PHP file (union types, nullsafe, match, named arguments, ... are refused)
+        run: make lint74-all PHP74=php
+
+      # A plain production install on PHP 7.4: se7enxweb/exponential-php-floor resolves to its
+      # PHP 7.4 version (1.0.1; PHP 7.4 is usable without support), which leaves out Velocity, Layouts and the extensions that need
+      # PHP 8. A package the kernel requires directly that raises its PHP minimum fails here.
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Composer downloads
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-php74-${{ hashFiles('composer.json') }}
+          restore-keys: ${{ runner.os }}-composer-php74-
+
+      - name: Install the production dependencies with PHP 7.4
+        run: |
+          for attempt in 1 2 3; do
+            if composer install --no-dev --prefer-dist --no-progress --no-interaction > "$RUNNER_TEMP/composer.log" 2>&1; then
+              cat "$RUNNER_TEMP/composer.log"
+              exit 0
+            fi
+            cat "$RUNNER_TEMP/composer.log"
+            grep -q 'could not be resolved to an installable set' "$RUNNER_TEMP/composer.log" && exit 1
+            echo "::warning::composer install failed (attempt $attempt of 3)"
+            sleep $((attempt * 15))
+          done
+          exit 1
+
+      - name: Boot smoke test without a database (every kernel and extension class, compat functions, a template)
+        run: php bin/php/ezexec.php tests/bin/bootsmoke.php

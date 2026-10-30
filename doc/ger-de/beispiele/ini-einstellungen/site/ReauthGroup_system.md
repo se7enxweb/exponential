@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Enabled
 
-> System settings and dangerous setup actions.  
+> Systemeinstellungen und gefährliche Setup-Aktionen.  
 
 Standard: `true`.
 

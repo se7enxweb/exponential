@@ -21,7 +21,7 @@ an index of their own: [Extensions, themes and packages](extensions/README.md). 
 ## Start here: Velocity is part of Exponential 6.0.15
 
 As of 6.0.15 the Velocity Internet / Web Application Server is part of Exponential: the root `composer.json` requires
-`se7enxweb/exponential-velocity ~0.0.4.57`, so every installation has it, on PHP 8.0 and later. It marks a turning
+`se7enxweb/exponential-velocity ~0.0.4.57` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later), so every installation has it, on PHP 8.0 and later. It marks a turning
 point, a cornerstone and a capstone for the project: a new level of application system integration, with even greater
 features out of the box in the core product, by default. Exponential is one working stack (server, rapid application
 development platform, CMS, digital experience and e-commerce), not just a framework. Read

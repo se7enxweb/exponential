@@ -29,6 +29,7 @@ Eine Richtlinie auf `setup/*` (jede Funktion) erlaubt sie ebenfalls; Einschränk
 
 | Schlüssel | Wert |
 |---|---|
+| Navigationsbereich | `ezsetupnavigationpart` |
 | Einzelne POST-Aktionen | SetButton: Set |
 | Parameter der POST-Aktionen | Set (SiteAccess: SiteAccess, AllSettingsList: AllSettingsList, SelectedList: SelectedList) |
 

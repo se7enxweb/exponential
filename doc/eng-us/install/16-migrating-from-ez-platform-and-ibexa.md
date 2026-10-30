@@ -79,7 +79,7 @@ reference installation behind this book runs (SQLite, Symfony 7.4, `se7enxweb/ex
 Next to Nexus there are plain distributions without the demo site: `se7enxweb/exponential-platform` (3.2.9, "runs the
 Exponential Platform kernel on Symfony 5.1/5.4 LTS (full-stack, single kernel — no LegacyBridge)"),
 `se7enxweb/oss` (the 3.3 metapackage, `replace: ibexa/oss`), `se7enxweb/exponential-platform-v4x-dxp-skeleton`
-(4.6.x, PHP 7.4 to 8.5, Symfony 5.4), and `se7enxweb/exponential-platform-dxp-skeleton` with the metapackage
+(4.6.x, PHP 8.0 to 8.5 (PHP 7.4 usable without support), Symfony 5.4), and `se7enxweb/exponential-platform-dxp-skeleton` with the metapackage
 `se7enxweb/exponential-platform-dxp` (Platform v5, PHP 8.3 or newer, Symfony 7.4). The complete package list is in the
 [Platform package map](../specifications/6.0/platform-package-map.md); the Nexus lines are introduced in
 [Exponential Platform Nexus](../features/6.0/platform-nexus-starter.md) and the skeletons in the
@@ -106,7 +106,7 @@ Three facts decide how a migration to these targets works:
 ### Target B: Exponential 6.0, alone or as Exponential Platform Legacy
 
 **Exponential 6.0** is the legacy kernel in this repository: Composer package `se7enxweb/exponential`, type
-`ezpublish-legacy`, `lib/version.php` 6.0.15, PHP 8.0 to 8.5, five database engines, INI settings, TPL templates,
+`ezpublish-legacy`, `lib/version.php` 6.0.15, PHP 8.0 to 8.5 (PHP 7.4 usable without support), five database engines, INI settings, TPL templates,
 the legacy administration interface and Exponential Velocity as its own web server ([chapter 1](01-introduction.md)).
 
 **Exponential Platform Legacy** (`se7enxweb/exponential-platform-legacy`) is the hybrid: the README of its 2.5 line

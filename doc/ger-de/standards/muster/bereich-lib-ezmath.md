@@ -2,7 +2,7 @@
 title: Muster in lib/ezmath
 audience: developer
 category: standards
-order: 535
+order: 548
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von lib/ezmath mit den Entwurfsmustern.
 keywords: lib/ezmath, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

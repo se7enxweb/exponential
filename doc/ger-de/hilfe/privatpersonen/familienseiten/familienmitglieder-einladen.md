@@ -78,7 +78,7 @@ Für den Link zum Zurücksetzen muss ausgehende E-Mail funktionieren; testen Sie
 - Bieten Sie für die erste Anmeldung einen kurzen Videoanruf an.
 - Halten Sie das Menü kurz und die Wörter einfach („Fotos", nicht „Medienbibliothek").
 - Geben Sie jeder verwandten Person anfangs nur Leserechte; ergänzen Sie Schreibrechte für die, die sie möchten.
-- Die Seiten für [Nicht-technische Menschen](../../../../eng-us/help/non-technical-people/non-technical-people-start-here.md) können Sie
+- Die Seiten für [Nicht-technische Menschen](../../nicht-technische-menschen/nicht-technische-menschen-hier-beginnen.md) können Sie
   mit ihnen teilen.
 
 ## Zweistufige Anmeldung

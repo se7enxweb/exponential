@@ -38,10 +38,10 @@ Dieser Bereich ist eine Karte. Er sagt Ihnen, was es gibt, wie die Teile zusamme
 | Kreis | Wer | Lesen |
 |---|---|---|
 | Partner | Exponential-Partner tragen finanziell zur dauerhaften Zukunft des Projekts bei, geben Code und mehr an das Projekt zurück und arbeiten direkt mit 7x und der Exponential Foundation zusammen. | [Partner: hier beginnen](../partner/partner-hier-beginnen.md) |
-| Community | Mitglieder der Exponential-Community nutzen Exponential weltweit, tragen dazu bei, werben dafür und entwickeln Software damit. | [Community: hier beginnen](../../../eng-us/help/community/community-start-here.md) |
+| Community | Mitglieder der Exponential-Community nutzen Exponential weltweit, tragen dazu bei, werben dafür und entwickeln Software damit. | [Community: hier beginnen](../gemeinschaft/community-hier-beginnen.md) |
 | Ökosystem | Das größere Ökosystem reicht über die Community hinaus und umfasst alle Aspekte der Welt von Exponential innerhalb des PHP-Stacks: ihre Anwender und Ersteller. | dieser Bereich |
 
-Wie die drei zusammenhängen: [Partner, Community und Ökosystem](../../../eng-us/help/community/partners-community-and-ecosystem.md) und
+Wie die drei zusammenhängen: [Partner, Community und Ökosystem](../gemeinschaft/partner-community-und-oekosystem.md) und
 [Was das Ökosystem ist](was-das-oekosystem-ist.md).
 
 ## Das Ökosystem in einer Minute
@@ -98,7 +98,7 @@ Die [Karte des Ökosystems](karte-des-oekosystems.md) erklärt jeden Kasten.
 
 | Bereich | Lesen Sie ihn, wenn |
 |---|---|
-| [Community](../../../eng-us/help/community/community-start-here.md) | Sie mitmachen möchten |
+| [Community](../gemeinschaft/community-hier-beginnen.md) | Sie mitmachen möchten |
 | [Partner](../partner/partner-hier-beginnen.md) | Ihr Unternehmen direkt mit 7x und der Foundation arbeiten möchte |
 | [Entwickler: Mit Git entwickeln](../mit-git-entwickeln.md) | Sie auf dem Kernel aufbauen |
 | [Erweiterungsentwicklung](../erweiterungsentwicklung/README.md) | Sie Erweiterungen schreiben und veröffentlichen |
@@ -109,7 +109,7 @@ Die [Karte des Ökosystems](karte-des-oekosystems.md) erklärt jeden Kasten.
 
 - [Was das Ökosystem ist](was-das-oekosystem-ist.md)
 - [Lesepfad zum Ökosystem](lesepfad-zum-oekosystem.md)
-- [Community: hier beginnen](../../../eng-us/help/community/community-start-here.md)
+- [Community: hier beginnen](../gemeinschaft/community-hier-beginnen.md)
 - [Partner: hier beginnen](../partner/partner-hier-beginnen.md)
 - [Das Ökosystem der Exponential-Plattform (Geschichte)](../../geschichte/oekosystem.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.

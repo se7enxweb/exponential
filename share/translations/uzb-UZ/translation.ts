@@ -77241,6 +77241,82 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Kirish kalitini tekshirib boʻlmadi. Iltimos, qayta urinib koʻring.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Faqat kirish kalitlari bilan kiradigan hisoblar bu yerda paroldan foydalana olmaydi: “Kirish kaliti bilan kirish” ni tanlang.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login kirish kalitlari</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Bu hisob kiradigan kirish kalitlari. Yoʻqolgan yoki oʻgʻirlangan qurilmadagi kalitni qaytarib oling: u bilan endi kirib boʻlmaydi. Yangilarini egasi oʻzi qoʻshadi.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Hisobingizga kirish kaliti kerak</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Hisobingizga kirish kaliti qoʻshing</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Davom etish uchun kirish kaliti qoʻshing. Shundan soʻng faqat parol emas, u bilan kirasiz.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Kirish kaliti bilan kirish paroldan tezroq va xavfsizroq. Hozir qoʻshing yoki usiz davom eting.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Hozir emas</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>“%name” kirish kalitini qaytarib olasizmi?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>U bilan endi bu hisobga kirib boʻlmaydi. Agar u oxirgisi boʻlsa, egasi parol bilan kiradi yoki siz yangi parol oʻrnatasiz.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Kirish kalitini qaytarib olish</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Qaytarib olish</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Bu hisobda kirish kaliti yoʻq.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Autentifikator</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Nomaʼlum</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Oxirgi kirish kalitingiz: uni olib tashlashdan oldin boshqasini qoʻshing.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Bu hisob faqat kirish kalitlari bilan kiradi (kirish kalitlari siyosati): birortasi qolmasa, yana paroli bilan kiradi.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Bu oxirgi kirish kalitingiz va hisobingiz usiz kira olmaydi. Avval boshqa kirish kalitini qoʻshing.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>“%name” kirish kaliti qaytarib olindi. U bilan endi bu hisobga kirib boʻlmaydi.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>Code from your authenticator app</source>
         <translation>Autentifikator ilovangizdagi kod</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Siz maʼlumotlarni butunlay oʻchirmoqchi yoki jurnalni tozalamoqchisiz.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Parolingiz va kirish kaliti</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Parolingiz va autentifikator ilovangizdagi kod</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Yoki:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Bu brauzer kirish kalitlaridan foydalana olmaydi. Boshqa usul yoki boshqa brauzerdan foydalaning.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Davom etganingizda brauzeringiz kirish kalitlaringizdan birini soʻraydi.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Kirish kaliti bilan davom etish</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>Setup</source>
         <translation>Sozlash</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Oʻz parolini, elektron pochta manzilini, kirish kalitlarini, ikki bosqichli kirishni, tiklash kodlarini yoki API kalitlarini oʻzgartirish va boshqa qurilmalaridan chiqish.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Foydalanuvchilarni, ularning parollari va qurilmalarini, hisob sozlamalarini yaratish va tahrirlash, yangi foydalanuvchi hisoblarini tasdiqlash yoki rad etish, rollarni tayinlash va siyosatlarni tahrirlash.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Maʼlumotlarni oʻchirish</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Savatni boʻshatish, undan elementlarni olib tashlash va bir nechta elementni birdaniga olib tashlash.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Kontentni olib tashlash, nashr qilish va saqlash</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Kontentni olib tashlash (savatga ham), nashr qilish va qoralamani saqlash, shakl yuborilganda soʻraladi. Standart holatda oʻchiq.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Muhim amaldan oldin tizimga kirgan foydalanuvchi kimligini yana tasdiqlaydi: paroli va kirish kaliti bilan yoki kirish kalitisiz paroli va autentifikator ilovasidagi kod bilan. Faqat veb-sahifalar soʻraydi: REST interfeysi, SOAP, WebDAV, expservices kirishi va buyruqlar qatori hech qachon soʻramaydi.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Sozlamalar qayerda amal qiladi</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Sozlamalar:</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Har bir sayt kirish nuqtasi</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Sayt kirish nuqtasi %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ochish</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Kimdan soʻraladi: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Faqat aʼzolaridan soʻrash uchun foydalanuvchilar guruhlarini belgilang (masalan, muharrirlar). Hech biri belgilanmagan: har bir foydalanuvchi.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php fayliga, har bir sayt kirish nuqtasi uchun saqlanadi. Saqlashda bu siz ekanligingizni tasdiqlash soʻraladi.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php fayliga saqlanadi. settings/override dagi qiymat ustun turadi. Saqlashda bu siz ekanligingizni tasdiqlash soʻraladi.</translation>
     </message>
 </context>
 <context>
@@ -77786,6 +77954,30 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>Your account was locked</source>
         <translation>Hisobingiz qulflandi</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site saytidagi %login hisobingizga kirish kaliti qoʻshildi.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Bu kirish kalitiga ega boʻlgan har kim hisobingizga parolingizsiz kira oladi. Agar uni siz qoʻshmagan boʻlsangiz, Kirish kalitlari boʻlimida olib tashlang va parolingizni oʻzgartiring.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site saytidagi %login hisobingizdan kirish kaliti olib tashlandi.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>U bilan endi hisobingizga kirib boʻlmaydi. Agar uni siz olib tashlamagan boʻlsangiz, kirish kalitlaringiz va qurilmalaringizni tekshiring.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Hisobingizga kirish kaliti qoʻshildi</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Hisobingizdan kirish kaliti olib tashlandi</translation>
     </message>
 </context>
 <context>

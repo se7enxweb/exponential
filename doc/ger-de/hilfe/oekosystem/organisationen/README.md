@@ -41,7 +41,7 @@ Der Copyright-Vermerk des Kernels lautet "Copyright (C) 1998 - 2026 7x & Exponen
 - [Ökosystem: hier beginnen](../oekosystem-hier-beginnen.md)
 - [7x und die Foundation für Fürsprecher](../../fuersprecher/7x-und-die-foundation.md)
 - [Wer das Partnerprogramm betreibt](../../partner/wer-das-partnerprogramm-betreibt.md)
-- [Partner, Community und Ökosystem](../../../../eng-us/help/community/partners-community-and-ecosystem.md)
+- [Partner, Community und Ökosystem](../../gemeinschaft/partner-community-und-oekosystem.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.
 
 <!-- exp-partner-block:start -->

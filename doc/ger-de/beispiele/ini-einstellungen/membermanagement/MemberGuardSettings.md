@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/membermanagement.ini` nie selbst: Ein Update ersetzt di
 
 ## Guard
 
-> The access check: an account (an object of a class with a user account attribute, or of a class in GuardedClasses)  
-> that has a location below a protected group may be edited, moved, removed, hidden or have its locations changed  
-> only by someone who may do that at that location, not merely at another location of the same account (a policy  
-> limited to Members otherwise reaches an administrator who also has a location below Members).  
+> Die Zugriffsprüfung: ein Konto (ein Objekt einer Klasse mit einem Benutzerkonto-Attribut oder einer Klasse in GuardedClasses),  
+> das einen Ort unterhalb einer geschützten Gruppe hat, darf nur von jemandem bearbeitet, verschoben, entfernt, versteckt oder in seinen Orten  
+> geändert werden, der das an diesem Ort darf, nicht nur an einem anderen Ort desselben Kontos (eine auf  
+> Members beschränkte Richtlinie erreicht sonst einen Administrator, der auch einen Ort unterhalb von Members hat).  
 > enabled | disabled  
 
 Standard: `enabled`.
@@ -37,7 +37,7 @@ Guard=enabled
 
 ## GuardedClasses
 
-> Classes guarded besides those with a user account attribute (identifiers).  
+> Klassen, die zusätzlich zu denen mit einem Benutzerkonto-Attribut geschützt werden (Bezeichner).  
 
 Standard: eine Liste mit 1: `user_group`.
 
@@ -53,7 +53,7 @@ GuardedClasses[]=user_group
 
 ## GuardedFunctions
 
-> The functions guarded.  
+> Die geschützten Funktionen.  
 
 Standard: eine Liste mit 7: `edit`, `move`, `remove`, `manage_locations`, `hide`, `translate`, `versionremove`.
 
@@ -75,8 +75,8 @@ GuardedFunctions[]=versionremove
 
 ## SettingRequiresEdit
 
-> user/setting (enable, disable, the number of concurrent logins) also asks for content/edit of the account, so that  
-> user/preferences alone does not reach every account of the installation.  enabled | disabled  
+> user/setting (aktivieren, deaktivieren, die Anzahl gleichzeitiger Anmeldungen) verlangt auch content/edit für das Konto, damit  
+> user/preferences allein nicht jedes Konto der Installation erreicht.  enabled | disabled  
 
 Standard: `enabled`.
 

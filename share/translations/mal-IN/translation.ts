@@ -77239,6 +77239,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>പാസ്കീ പരിശോധിക്കാനായില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>പാസ്കീകൾ ഉപയോഗിച്ച് മാത്രം സൈൻ ഇൻ ചെയ്യുന്ന അക്കൗണ്ടുകൾക്ക് ഇവിടെ പാസ്വേഡ് ഉപയോഗിക്കാനാവില്ല: “പാസ്കീ ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക” തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login-ന്റെ പാസ്കീകൾ</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>ഈ അക്കൗണ്ട് സൈൻ ഇൻ ചെയ്യാൻ ഉപയോഗിക്കുന്ന പാസ്കീകൾ. നഷ്ടപ്പെട്ടതോ മോഷ്ടിക്കപ്പെട്ടതോ ആയ ഉപകരണത്തിലുള്ള പാസ്കീ അസാധുവാക്കുക: പിന്നീട് അതിന് സൈൻ ഇൻ ചെയ്യാനാവില്ല. പുതിയവ ഉടമ തന്നെ ചേർക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ടിന് ഒരു പാസ്കീ ആവശ്യമാണ്</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ടിലേക്ക് ഒരു പാസ്കീ ചേർക്കുക</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>തുടരാൻ ഒരു പാസ്കീ ചേർക്കുക. തുടർന്ന് പാസ്വേഡ് മാത്രമല്ല, അത് ഉപയോഗിച്ച് നിങ്ങൾ സൈൻ ഇൻ ചെയ്യും.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>പാസ്കീ ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുന്നത് പാസ്വേഡിനെക്കാൾ വേഗമേറിയതും സുരക്ഷിതവുമാണ്. ഇപ്പോൾ ഒന്ന് ചേർക്കുക, അല്ലെങ്കിൽ അതില്ലാതെ തുടരുക.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>ഇപ്പോൾ വേണ്ട</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>“%name” എന്ന പാസ്കീ അസാധുവാക്കണോ?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>അതിന് ഇനി ഈ അക്കൗണ്ടിലേക്ക് സൈൻ ഇൻ ചെയ്യാനാവില്ല. ഇത് അവസാനത്തേതായിരുന്നെങ്കിൽ, ഉടമ പാസ്വേഡ് ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യും, അല്ലെങ്കിൽ നിങ്ങൾ പുതിയൊരു പാസ്വേഡ് സജ്ജമാക്കുക.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>പാസ്കീ അസാധുവാക്കുക</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>അസാധുവാക്കുക</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>ഈ അക്കൗണ്ടിന് പാസ്കീ ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>ഓതന്റിക്കേറ്റർ</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>അജ്ഞാതം</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>നിങ്ങളുടെ അവസാന പാസ്കീ: ഇത് നീക്കം ചെയ്യുന്നതിന് മുമ്പ് മറ്റൊന്ന് ചേർക്കുക.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>ഈ അക്കൗണ്ട് പാസ്കീകൾ ഉപയോഗിച്ച് മാത്രം സൈൻ ഇൻ ചെയ്യുന്നു (പാസ്കീ നയം): ഒന്നും ശേഷിക്കാത്തപ്പോൾ, അത് വീണ്ടും പാസ്വേഡ് ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുന്നു.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>ഇത് നിങ്ങളുടെ അവസാന പാസ്കീ ആണ്, ഇതില്ലാതെ നിങ്ങളുടെ അക്കൗണ്ടിന് സൈൻ ഇൻ ചെയ്യാനാവില്ല. ആദ്യം മറ്റൊരു പാസ്കീ ചേർക്കുക.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>“%name” എന്ന പാസ്കീ അസാധുവാക്കി. അതിന് ഇനി ഈ അക്കൗണ്ടിലേക്ക് സൈൻ ഇൻ ചെയ്യാനാവില്ല.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77338,6 +77414,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>നിങ്ങളുടെ ഓതന്റിക്കേറ്റർ ആപ്പിൽ നിന്നുള്ള കോഡ്</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>നിങ്ങൾ ഡാറ്റ സ്ഥിരമായി ഇല്ലാതാക്കാനോ ഒരു ലോഗ് മായ്ക്കാനോ പോകുകയാണ്.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>നിങ്ങളുടെ പാസ്വേഡും ഒരു പാസ്കീയും</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>നിങ്ങളുടെ പാസ്വേഡും ഓതന്റിക്കേറ്റർ ആപ്പിൽ നിന്നുള്ള ഒരു കോഡും</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>അല്ലെങ്കിൽ:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>ഈ ബ്രൗസറിന് പാസ്കീകൾ ഉപയോഗിക്കാനാവില്ല. മറ്റൊരു മാർഗമോ മറ്റൊരു ബ്രൗസറോ ഉപയോഗിക്കുക.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>നിങ്ങൾ തുടരുമ്പോൾ, നിങ്ങളുടെ ബ്രൗസർ നിങ്ങളുടെ പാസ്കീകളിൽ ഒന്ന് ആവശ്യപ്പെടും.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>പാസ്കീ ഉപയോഗിച്ച് തുടരുക</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77428,6 +77532,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>സജ്ജീകരണം</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>സ്വന്തം പാസ്വേഡ്, ഇമെയിൽ വിലാസം, പാസ്കീകൾ, ദ്വി-ഘട്ട സൈൻ ഇൻ, വീണ്ടെടുക്കൽ കോഡുകൾ അല്ലെങ്കിൽ API കീകൾ മാറ്റുന്നതും സ്വന്തം മറ്റ് ഉപകരണങ്ങളിൽ നിന്ന് സൈൻ ഔട്ട് ചെയ്യുന്നതും.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ഉപയോക്താക്കളെയും അവരുടെ പാസ്വേഡുകളും ഉപകരണങ്ങളും അക്കൗണ്ട് ക്രമീകരണങ്ങളും സൃഷ്ടിക്കുന്നതും എഡിറ്റ് ചെയ്യുന്നതും, പുതിയ ഉപയോക്തൃ അക്കൗണ്ടുകൾ അംഗീകരിക്കുന്നതും നിരസിക്കുന്നതും, റോളുകൾ നൽകുന്നതും നയങ്ങൾ എഡിറ്റ് ചെയ്യുന്നതും.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>ഡാറ്റ ഇല്ലാതാക്കൽ</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>ട്രാഷ് ശൂന്യമാക്കൽ, അതിൽ നിന്ന് ഇനങ്ങൾ നീക്കം ചെയ്യൽ, ഒന്നിലധികം ഇനങ്ങൾ ഒരുമിച്ച് നീക്കം ചെയ്യൽ.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>ഉള്ളടക്കം നീക്കം ചെയ്യൽ, പ്രസിദ്ധീകരിക്കൽ, സംരക്ഷിക്കൽ</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>ഉള്ളടക്കം നീക്കം ചെയ്യൽ (ട്രാഷിലേക്കും), പ്രസിദ്ധീകരിക്കൽ, ഡ്രാഫ്റ്റ് സംഭരിക്കൽ; ഫോം അയയ്ക്കുമ്പോൾ ചോദിക്കുന്നു. സ്ഥിരസ്ഥിതിയായി ഓഫ്.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>ഒരു സെൻസിറ്റീവ് പ്രവർത്തനത്തിന് മുമ്പ് സൈൻ ഇൻ ചെയ്ത ഉപയോക്താവ് താൻ ആരാണെന്ന് വീണ്ടും സ്ഥിരീകരിക്കുന്നു: പാസ്വേഡും പാസ്കീയും ഉപയോഗിച്ച്, അല്ലെങ്കിൽ പാസ്കീ ഇല്ലെങ്കിൽ പാസ്വേഡും ഓതന്റിക്കേറ്റർ ആപ്പിന്റെ കോഡും ഉപയോഗിച്ച്. വെബ് പേജുകൾ മാത്രമേ ചോദിക്കൂ: REST ഇന്റർഫേസ്, SOAP, WebDAV, expservices ലോഗിൻ, കമാൻഡ് ലൈൻ എന്നിവ ഒരിക്കലും ചോദിക്കില്ല.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>ക്രമീകരണങ്ങൾ ബാധകമാകുന്നിടം</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>ഇതിനുള്ള ക്രമീകരണങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>എല്ലാ സൈറ്റ്ആക്സസും</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>സൈറ്റ്ആക്സസ് %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>തുറക്കുക</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>ആരോട് ചോദിക്കുന്നു: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>അംഗങ്ങളോട് മാത്രം ചോദിക്കാൻ ഉപയോക്തൃ ഗ്രൂപ്പുകൾ ടിക്ക് ചെയ്യുക (ഉദാഹരണത്തിന് എഡിറ്റർമാർ). ഒന്നും ടിക്ക് ചെയ്തില്ലെങ്കിൽ: എല്ലാ ഉപയോക്താക്കളും.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>എല്ലാ സൈറ്റ്ആക്സസിനുമായി settings/override/site.ini.append.php-ൽ സംരക്ഷിച്ചു. സംരക്ഷിക്കുമ്പോൾ ഇത് നിങ്ങളാണെന്ന് സ്ഥിരീകരിക്കാൻ ആവശ്യപ്പെടും.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php-ൽ സംരക്ഷിച്ചു. settings/override-ലെ ഒരു മൂല്യത്തിന് ഇതിനെക്കാൾ മുൻഗണനയുണ്ട്. സംരക്ഷിക്കുമ്പോൾ ഇത് നിങ്ങളാണെന്ന് സ്ഥിരീകരിക്കാൻ ആവശ്യപ്പെടും.</translation>
     </message>
 </context>
 <context>
@@ -77784,6 +77952,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>നിങ്ങളുടെ അക്കൗണ്ട് ലോക്ക് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site-ലെ നിങ്ങളുടെ %login അക്കൗണ്ടിലേക്ക് ഒരു പാസ്കീ ചേർത്തു.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>ഈ പാസ്കീ കൈവശമുള്ള ആർക്കും നിങ്ങളുടെ പാസ്വേഡ് ഇല്ലാതെ നിങ്ങളുടെ അക്കൗണ്ടിലേക്ക് സൈൻ ഇൻ ചെയ്യാം. നിങ്ങൾ ഇത് ചേർത്തില്ലെങ്കിൽ, പാസ്കീകൾ എന്നതിൽ നിന്ന് ഇത് നീക്കം ചെയ്ത് പാസ്വേഡ് മാറ്റുക.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site-ലെ നിങ്ങളുടെ %login അക്കൗണ്ടിൽ നിന്ന് ഒരു പാസ്കീ നീക്കം ചെയ്തു.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>അതിന് ഇനി നിങ്ങളുടെ അക്കൗണ്ടിലേക്ക് സൈൻ ഇൻ ചെയ്യാനാവില്ല. നിങ്ങൾ ഇത് നീക്കം ചെയ്തില്ലെങ്കിൽ, നിങ്ങളുടെ പാസ്കീകളും ഉപകരണങ്ങളും പരിശോധിക്കുക.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ടിലേക്ക് ഒരു പാസ്കീ ചേർത്തു</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ടിൽ നിന്ന് ഒരു പാസ്കീ നീക്കം ചെയ്തു</translation>
     </message>
 </context>
 <context>

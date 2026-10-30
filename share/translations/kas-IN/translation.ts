@@ -77241,6 +77241,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>پاسکی ہیکہِ نہ جانچتھ۔ مہربانی کٔرِتھ دوبارہ کوشِش کٔرِو۔</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>یِم اَکاوُنٹ صِرف پاسکی سیتۍ سایِن اِن کران چھِ، تِم ہیٚکن نہٕ یتھ پاس ورڈ اِستعمال کٔرِتھ: &quot;پاسکی سیتۍ سایِن اِن کٔرِو&quot; ژارِو۔</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login ہٕنٛزٕ پاسکی</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>تِم پاسکی یِمَو سیتۍ یہ اَکاوُنٹ سایِن اِن چھُ کران۔ گٲب گٔمتِس یا چوٗرِ گٔمتِس آلَس پیٹھ آسَن وٲلۍ پاسکی منسوٗخ کٔرِو: سۅ ہیٚکہِ نہٕ بیٚیہِ سایِن اِن کٔرِتھ۔ مالِک چھُ نٔوۍ پانَے شامِل کران۔</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>توٚہہ ہٕنٛدِس اَکاوُنٹس چھےٚ پاسکی ہٕنٛز ضروٗرَت</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>پننِس اَکاوُنٹس منز پاسکی شامِل کٔرِو</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>جٲری تھاونہٕ خٲطرٕ پاسکی شامِل کٔرِو۔ پَتہٕ کٔرِو توٚہہ صِرف پاس ورڈ بجاے امہِ سیتۍ سایِن اِن۔</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>پاسکی سیتۍ سایِن اِن کرُن چھُ پاس ورڈ کھۄتہٕ تیز تہٕ زیادٕ محفوٗظ۔ وُنی اکھ شامِل کٔرِو، یا امہِ ورٲے جٲری تھٲوِو۔</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>وُنی نہٕ</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>پاسکی &quot;%name&quot; منسوٗخ کرٕنۍ چھا؟</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>سۅ ہیٚکہِ نہٕ بیٚیہِ یتھ اَکاوُنٹس منز سایِن اِن کٔرِتھ۔ اگر سۅ آخری اوس، مالِک کرِ پاس ورڈ سیتۍ سایِن اِن، یا توٚہہ کٔرِو نوٚو سیٹ۔</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>پاسکی منسوٗخ کٔرِو</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>منسوٗخ کٔرِو</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>یتھ اَکاوُنٹس چھےٚ نہٕ کانٛہہ پاسکی۔</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>تصدیٖق کَرَن وول</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>نامعلوم</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>توٚہہ ہٕنٛز آخری پاسکی: یہ ہٹاونہٕ برونٛہہ کٔرِو بیٚیہِ اکھ شامِل۔</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>یہ اَکاوُنٹ چھُ صِرف پاسکی سیتۍ سایِن اِن کران (پاسکی پالیسی): ییٚلہِ کانٛہہ رُوزِ نہٕ، یہ کرِ دوبارٕ پننِس پاس ورڈس سیتۍ سایِن اِن۔</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>یہ چھےٚ توٚہہ ہٕنٛز آخری پاسکی تہٕ توٚہہ ہُنٛد اَکاوُنٹ ہیٚکہِ نہٕ امہِ ورٲے سایِن اِن کٔرِتھ۔ گۅڈٕ کٔرِو بیٚیہِ پاسکی شامِل۔</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>پاسکی &quot;%name&quot; آیہِ منسوٗخ کرنہٕ۔ سۅ ہیٚکہِ نہٕ بیٚیہِ یتھ اَکاوُنٹس منز سایِن اِن کٔرِتھ۔</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>پَنَن تَصدیٖق کَرَن والؠ ایپ ہُنٛد کوڈ</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>توٚہہ چھِو ڈیٹا ہمیشہ خٲطرٕ مِٹاونہٕ یا لاگ خٲلی کرنہٕ والۍ۔</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>توٚہہ ہُنٛد پاس ورڈ تہٕ اکھ پاسکی</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>توٚہہ ہُنٛد پاس ورڈ تہٕ پننۍ تصدیٖق اێپہٕ پیٹھہٕ کوڈ</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>یا:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>یہ براوزَر ہیٚکہِ نہٕ پاسکی اِستعمال کٔرِتھ۔ بیٚیہِ طریقہٕ یا بیٚیہِ براوزَر اِستعمال کٔرِو۔</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>ییٚلہِ توٚہہ اَگہٕ پَکِو، توٚہہ ہُنٛد براوزَر مَنگہِ توٚہہ ہٕنٛزٕ پاسکی منٛزٕ اکھ۔</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>پاسکی سیتۍ جٲری تھٲوِو</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>سیٹ اَپ</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>پنُن پاس ورڈ، ای میل پتہٕ، پاسکی، دُمَرحلہٕ سایِن اِن، بحالی کوڈ یا API کییز بدلاوٕنۍ، تہٕ پننیٚن باقی آلَن پیٹھہٕ سایِن آوٗٹ کرُن۔</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>صارِف بناوٕنۍ تہٕ ترمیم کرٕنۍ، تِہنٛدۍ پاس ورڈ تہٕ آلہٕ، اَکاوُنٹ ترتیبات، نٔوۍ صارِف اَکاوُنٹ منظوٗر یا نامنظوٗر کرٕنۍ، کردار دِنۍ تہٕ پالیسی ترمیم کرٕنۍ۔</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>ڈیٹا مِٹاوُن</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>ردی خٲلی کرٕنۍ، امہِ منٛزٕ چیز ہٹاوٕنۍ تہٕ واریاہ چیز اکے ساتھ ہٹاوٕنۍ۔</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>مَواد ہٹاوُن، شایع کرُن تہٕ محفوظ کرُن</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>مَواد ہٹاوُن (ردی منز تہِ)، شایع کرُن تہٕ مَسوٗدہٕ محفوظ کرُن؛ فارم سوزنہٕ وِزِ چھُ پرٛژھنہٕ یِوان۔ پہلے پٲٹھۍ بَنٛد۔</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>کُنہِ حساس عمل برونٛہہ چھُ سایِن اِن کوٚرمُت صارِف دوبارٕ تصدیٖق کران زِ سُہ کُس چھُ: پننِس پاس ورڈس تہٕ پاسکی سیتۍ، یا پاسکی ورٲے پننِس پاس ورڈس تہٕ پننِس تصدیٖق اێپہٕ کِس کوڈس سیتۍ۔ صِرف ویب صفحہٕ چھِ پرٛژھان: REST اِنٹرفیس، SOAP، WebDAV، expservices لاگ اِن تہٕ کمانڈ لائن چھِ نہٕ زانٛہہ پرٛژھان۔</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>ترتیبات کتہِ لاگوٗ گژھن</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>ترتیبات خٲطرٕ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>پرٛتھ سایِٹ ایکسیس</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>صِرف سایِٹ ایکسیس %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>کھولِو</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>کٔمِس چھُ پرٛژھنہٕ یِوان: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>صارِف گروپَن نشان لٲگِو تاکہ صِرف تِہنٛدیٚن مِمبرَن پرٛژھنہٕ یِیہِ (مثلاً مُدیر)۔ کانٛہہ نشان نہٕ: پرٛتھ صارِف۔</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php منز محفوظ، پرٛتھ سایِٹ ایکسیس خٲطرٕ۔ محفوظ کرنہٕ وِزِ چھُ توٚہہ تصدیٖق کرنہٕ باپتھ ونہٕ یِوان زِ یہ چھِو توٚہہ۔</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php منز محفوظ۔ settings/override منز قیمت چھےٚ امہِ پیٹھ غٲلِب۔ محفوظ کرنہٕ وِزِ چھُ توٚہہ تصدیٖق کرنہٕ باپتھ ونہٕ یِوان زِ یہ چھِو توٚہہ۔</translation>
     </message>
 </context>
 <context>
@@ -77786,6 +77954,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>توٚہہ ہُنٛد اَکاوُنٹ آو قُفل کرنہٕ</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site پیٹھ توٚہہ ہٕنٛدِس اَکاوُنٹس %login منز آیہِ اکھ پاسکی شامِل کرنہٕ۔</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>یُس تہِ یہ پاسکی رٹِتھ چھُ، سُہ ہیٚکہِ توٚہہ ہٕنٛدِس پاس ورڈس ورٲے توٚہہ ہٕنٛدِس اَکاوُنٹس منز سایِن اِن کٔرِتھ۔ اگر توٚہہ چھِو نہٕ یہ شامِل کوٚرمُت، پاسکی تَل ہٹٲوِو یہ تہٕ پنُن پاس ورڈ بدلٲوِو۔</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site پیٹھ توٚہہ ہٕنٛدِس اَکاوُنٹس %login منٛزٕ آیہِ اکھ پاسکی ہٹاونہٕ۔</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>سۅ ہیٚکہِ نہٕ بیٚیہِ توٚہہ ہٕنٛدِس اَکاوُنٹس منز سایِن اِن کٔرِتھ۔ اگر توٚہہ چھِو نہٕ یہ ہٹوٚومُت، پننۍ پاسکی تہٕ آلہٕ چیک کٔرِو۔</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>توٚہہ ہٕنٛدِس اَکاوُنٹس منز آیہِ اکھ پاسکی شامِل کرنہٕ</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>توٚہہ ہٕنٛدِس اَکاوُنٹس منٛزٕ آیہِ اکھ پاسکی ہٹاونہٕ</translation>
     </message>
 </context>
 <context>

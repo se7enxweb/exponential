@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an PHP-Entwickler, die Kernel-Code oder Erweiterungen schreiben und gemeinsam genutzte Objekte
 des Kernels verwenden oder anbieten möchten. Ab 6.0.15 hat der Kernel einen Service-Container: Objekte nach Namen, in
 den Einstellungen definiert, beim ersten Abruf erzeugt und in einem Gültigkeitsbereich gehalten. Die Referenz für
-Mitwirkende mit allen Einzelheiten ist [der Kernel-Service-Container](../../../eng-us/bc/6.0/kernel-services.md).
+Mitwirkende mit allen Einzelheiten ist [der Kernel-Service-Container](../../bc/6.0/kernel-dienste.md).
 
 ## Inhalt
 
@@ -102,7 +102,7 @@ Ordnung ist; der Hook bleibt mit dem Worker erhalten und läuft zu Beginn jeder 
 
 Der kompilierte Container (`var/cache/kernelservices/`) enthält auch die aufgezeichnete Aktivierung der Erweiterungen
 jedes Siteaccess, die der Web-Kernel anwendet, statt jedes Erweiterungsverzeichnis nachzuschlagen: Wie das korrekt
-bleibt, steht unter [der Kernel-Service-Container](../../../eng-us/bc/6.0/kernel-services.md).
+bleibt, steht unter [der Kernel-Service-Container](../../bc/6.0/kernel-dienste.md).
 
 ## Testen
 
@@ -113,7 +113,7 @@ eigenen Tests des Kernels stehen in `tests/tests/kernel/classes/expKernelService
 
 ## Mehr erfahren
 
-- [Der Kernel-Service-Container (Referenz für Mitwirkende)](../../../eng-us/bc/6.0/kernel-services.md)
+- [Der Kernel-Service-Container (Referenz für Mitwirkende)](../../bc/6.0/kernel-dienste.md)
 - [Einstellungen mit eZINI lesen](einstellungen-mit-ezini-lesen.md)
 - [Einen Konsolenbefehl schreiben](einen-konsolenbefehl-schreiben.md)
 - [Wie eine Anfrage in PHP abläuft](wie-eine-anfrage-in-php-ablaeuft.md)

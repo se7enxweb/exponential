@@ -31,7 +31,7 @@ merken.
 ## In einer Minute starten
 
 Führen Sie jeden Befehl aus dem Wurzelverzeichnis von Exponential aus, dem Verzeichnis, das `index.php`,
-`autoload.php` und `bin/` enthält. Sie brauchen PHP 8.0 oder neuer in Ihrem `$PATH` (`php -v`); die Befehle
+`autoload.php` und `bin/` enthält. Sie brauchen PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) in Ihrem `$PATH` (`php -v`); die Befehle
 `exp:velocity` laufen ebenfalls unter 8.0, wie Velocity ab seinem Release 0.0.4.54. Einige Unterskripte brauchen
 außerdem `curl` und `wget`; die Konsole selbst nicht.
 

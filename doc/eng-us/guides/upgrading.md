@@ -172,8 +172,8 @@ Then read the notes of the 5.90 line, which prepared the move to PHP 7 and a lon
    `SET default_storage_engine=InnoDB;`, which MySQL (from 5.5.3) and MariaDB accept, so run the whole file. Copies of
    the file from before October 2026 began with `SET storage_engine=InnoDB;`, which MySQL 5.7.5 and newer and
    MariaDB 12.0 and newer reject; take the current file. Details: [Changelog 6.0.0](../../changelogs/6.0/6.0.0.md).
-3. PHP: Exponential 6.0 needs PHP 8.0 or newer on the current line (Exponential Velocity included, from its release 0.0.4.54; see
-   [PHP 8.0 support](../bc/6.0/php-8.0-support.md)). A site that must stay on PHP 7.4 stays on 6.0.7; read [PHP 8 support](../bc/6.0/php8.md) for the order of the upgrade steps, and check your own extensions
+3. PHP: Exponential 6.0.15 runs on PHP 8.0 or newer (PHP 7.4 usable without support), Exponential Velocity on 8.0 or newer (from its release 0.0.4.54; see
+   [PHP 8.0 support](../bc/6.0/php-8.0-support.md) and [Why Exponential supports PHP 7.4](../help/why-exponential-supports-php-7-4.md)). A site on PHP 7.4 can run the current line again from 6.0.15, without support (6.0.8 to 6.0.14 need PHP 8.1); read [PHP 8 support](../bc/6.0/php8.md) for the order of the upgrade steps, and check your own extensions
    for PHP 8 warnings (classes extending `eZPersistentObject` or `eZDataType` are the usual cases).
 4. Continue with Part C, which is the same procedure for every 6.0.x step.
 

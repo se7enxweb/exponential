@@ -13,7 +13,7 @@ Diese Seite ist für Theme-Designer, die ihre Mockups mit den Inhalten verbinden
 speichert. In Exponential zeigt jede Seite ein Objekt einer **Inhaltsklasse**, und jedes sichtbare Stück Text oder
 Medium stammt aus einem der **Felder** (Attribute) der Klasse. Ein Zuordnungsblatt, ausgefüllt, bevor Sie Einzelheiten
 zeichnen, hält Design und Inhaltsmodell im Gleichschritt. Das Inhaltsmodell selbst ist Arbeit des Entwicklers:
-[Ein Inhaltsmodell entwerfen](../../../eng-us/help/cms-developers/designing-a-content-model.md) erklärt, wie es entsteht.
+[Ein Inhaltsmodell entwerfen](../cms-entwickler/ein-inhaltsmodell-entwerfen.md) erklärt, wie es entsteht.
 
 ## Inhalt
 
@@ -42,7 +42,7 @@ Administration **Setup > Klassen** und die Klasse. Notieren Sie für jedes Feld 
 optionale Feld braucht ein Design für "leer" ([Für Redakteure gestalten](fuer-redakteure-gestalten.md)).
 
 Ein Entwickler kann Ihnen die Liste auch von der Kommandozeile oder aus der Klassendefinition im Paket des Projekts
-geben. Hintergrund: [Inhaltsklassen und Attribute](../../../eng-us/help/cms-developers/content-classes-and-attributes.md).
+geben. Hintergrund: [Inhaltsklassen und Attribute](../cms-entwickler/inhaltsklassen-und-attribute.md).
 
 ## Wie jede Art von Feld aussehen kann
 

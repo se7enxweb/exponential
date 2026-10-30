@@ -2,7 +2,7 @@
 title: Muster in extension/sevenx_themes_super
 audience: developer
 category: standards
-order: 472
+order: 477
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/sevenx_themes_super mit den Entwurfsmustern.
 keywords: extension/sevenx_themes_super, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

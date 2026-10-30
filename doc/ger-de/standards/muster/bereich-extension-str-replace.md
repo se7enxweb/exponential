@@ -2,7 +2,7 @@
 title: Muster in extension/str_replace
 audience: developer
 category: standards
-order: 473
+order: 479
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/str_replace mit den Entwurfsmustern.
 keywords: extension/str_replace, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -20,7 +20,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `extension/str_replace` mit den M
 | Klasse | Art | Muster | Datei | Beschreibung |
 | --- | --- | --- | --- | --- |
 | `MyStrReplaceOperator` | class | [Template-Operator (Interpreter-Plugin)](template-operator.md) | `extension/str_replace/autoloads/str_replace_controloperator.php:3` | – |
-| `strReplaceInfo` | class | [Wertobjekt / Struktur](wertobjekt.md) | `extension/str_replace/ezinfo.php:2` | – |
+| `str_replaceInfo` | class | [Wertobjekt / Struktur](wertobjekt.md) | `extension/str_replace/ezinfo.php:2` | – |
 
 ## Template-Operatoren (1)
 

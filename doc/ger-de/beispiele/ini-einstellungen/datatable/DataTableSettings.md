@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/datatable.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## CatalogueCacheDir
 
-> Where the catalogue of persistent classes is kept between requests, below the cache directory. It is rebuilt when  
-> the autoload arrays change.  
+> Wo der Katalog der persistenten Klassen zwischen Anfragen aufbewahrt wird, unterhalb des Cache-Verzeichnisses. Er wird neu aufgebaut, wenn  
+> die Autoload-Arrays sich ändern.  
 
 Standard: `datatable`.
 
@@ -34,7 +34,7 @@ CatalogueCacheDir=datatable
 
 ## IgnoreClasses
 
-> The persistent classes the catalogue leaves out (class names), e.g. a class whose definition() needs a request.  
+> Die persistenten Klassen, die der Katalog auslässt (Klassennamen), z. B. eine Klasse, deren definition() eine Anfrage braucht.  
 
 Standard: eine leere Liste.
 
@@ -49,8 +49,8 @@ IgnoreClasses[]
 
 ## InferRelations
 
-> Relations inferred from column names (contentobject\_id, node\_id, ...) when a definition states none:  
-> enabled (shown as "inferred") or disabled  
+> Aus Spaltennamen (contentobject\_id, node\_id, ...) abgeleitete Beziehungen, wenn eine Definition keine angibt:  
+> enabled (angezeigt als "inferred") oder disabled  
 
 Standard: `enabled`.
 
@@ -64,9 +64,9 @@ InferRelations=enabled
 
 ## ContentTabInferred
 
-> The "Data tables" tab of the content view lists the rows of extensions' tables that point at the node or its object  
-> through a declared relation ('relations' of the definition, a foreign\_class, a \[Relation\_\*\] block). enabled also asks  
-> the relations inferred from column names (one query more per relation and node view).  
+> Der Tab "Datentabellen" der Inhaltsansicht listet die Zeilen der Tabellen von Erweiterungen auf, die über eine deklarierte Beziehung  
+> ('relations' der Definition, eine foreign\_class, ein \[Relation\_\*\]-Block) auf den Knoten oder sein Objekt verweisen. enabled fragt auch  
+> die aus Spaltennamen abgeleiteten Beziehungen ab (eine Abfrage mehr pro Beziehung und Knotenansicht).  
 
 Standard: `disabled`.
 
@@ -80,7 +80,7 @@ ContentTabInferred=disabled
 
 ## MongoSampleSize
 
-> Rows the describe page reads to work out the fields of a MongoDB collection  
+> Zeilen, die die Beschreibungsseite liest, um die Felder einer MongoDB-Collection zu ermitteln  
 
 Standard: `50`.
 

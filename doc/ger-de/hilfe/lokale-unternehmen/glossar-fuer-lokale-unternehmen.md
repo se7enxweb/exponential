@@ -126,7 +126,7 @@ einem Datum ([Feiertags- und Saisonöffnungszeiten](karten-und-oeffnungszeiten/f
 
 - [FAQ für lokale Unternehmen](faq-fuer-lokale-unternehmen.md)
 - [Glossar für Kunden](../kunden/glossar-fuer-kunden.md)
-- [Glossar für nicht-technische Menschen](../../../eng-us/help/non-technical-people/non-technical-people-glossary.md)
+- [Glossar für nicht-technische Menschen](../nicht-technische-menschen/glossar-fuer-nicht-technische-menschen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

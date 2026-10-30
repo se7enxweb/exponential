@@ -6,8 +6,9 @@ Editor einschalten. `expimageeditor` ist ein Bildeditor neben dem Bildattribut i
 ändern, Helligkeit, Kontrast, Schwarzweiß, Sepia, einen Bereich verpixeln oder weichzeichnen, Wasserzeichen) und
 SVG-Zeichnungen (Formen, Pfade, Freihand, Text, Füllung und Kontur), und er kann für ein Bildattribut ohne Bild eine
 neue SVG-Zeichnung beginnen. Er arbeitet ohne jQuery und unter der Content Security Policy der Administration. Er wird
-im Repository des Kernels ausgeliefert, wie `ezjscore` und `ezoe`, und ist aus, bis er aktiviert wird; der Setup-Assistent und der Kickstarter aktivieren ihn für eine neue Installation.
-Hinzugefügt in 6.0.15 (22.10.2026). Die vollständige Referenz ist `extension/expimageeditor/README.md` der Erweiterung (Englisch).
+im Repository des Kernels ausgeliefert, wie `ezjscore` und `ezoe`, und ist aus, bis er aktiviert wird; der
+Setup-Assistent und der Kickstarter aktivieren ihn für eine neue Installation. Hinzugefügt in 6.0.15 (22.10.2026). Die
+vollständige Referenz ist `extension/expimageeditor/README.md` der Erweiterung.
 
 ## Einschalten
 

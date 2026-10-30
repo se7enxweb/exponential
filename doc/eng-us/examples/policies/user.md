@@ -2,7 +2,7 @@
 title: Policies of the user module
 audience: developer, admin
 category: examples
-summary: The policy functions of the user module (11) and their limitations.
+summary: The policy functions of the user module (12) and their limitations.
 keywords: user, policy, policies, role, limitation, permission
 type: generated
 generated: exp:help:examples
@@ -99,6 +99,24 @@ $role->appendPolicy( 'user', 'login', array( 'SiteAccess' => array( /* values */
 
 ```tpl
 {if fetch( 'user', 'has_access_to', hash( 'module', 'user', 'function', 'login' ) )}
+    ...
+{/if}
+```
+
+## passkeys_manage
+
+No view of the module names it; code checks it (`eZUser::hasAccessTo( 'user', 'passkeys_manage' )` or the `user/has_access_to` fetch).
+
+No limitations: the policy is all or nothing.
+
+```php
+// Give a role the policy (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'user', 'passkeys_manage' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'user', 'function', 'passkeys_manage' ) )}
     ...
 {/if}
 ```

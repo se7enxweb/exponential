@@ -29,7 +29,7 @@ des Buchs enthält jedes Detail; diese Seite ist die Zusammenfassung für CMS-En
 
 ## Was Sie brauchen
 
-PHP 8.0 oder später mit den Erweiterungen, die die `composer.json` im Hauptverzeichnis verlangt (dom, mbstring, json,
+PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar) mit den Erweiterungen, die die `composer.json` im Hauptverzeichnis verlangt (dom, mbstring, json,
 iconv, simplexml und weitere; SQLite 3 für die Standarddatenbank, GD oder ImageMagick für Bilder), Composer und Git
 ([Werkzeuge, die Sie brauchen](../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/werkzeuge-die-sie-brauchen.md),
 [Anforderungen](../../installation/02-voraussetzungen.md)).
@@ -126,7 +126,7 @@ angelegte Klassen gehören in Paketen in dieses Repository
 
 | Symptom | Prüfen Sie |
 |---|---|
-| `composer install` bricht mit einem Fehler zur PHP-Version ab | `php -v`; Exponential 6 braucht PHP 8.0 oder später |
+| `composer install` bricht mit einem Fehler zur PHP-Version ab | `php -v`; Exponential 6 braucht PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar) |
 | Eine leere Seite | `var/log/error.log` und das PHP-Fehlerlog |
 | Eine Template-Änderung wirkt nicht | `TemplateCompile`, die Template- und Override-Caches |
 | Eine neue Klasse wird nicht gefunden | `php bin/php/ezpgenerateautoloads.php -e`, dann die Caches leeren und den Server neu starten |

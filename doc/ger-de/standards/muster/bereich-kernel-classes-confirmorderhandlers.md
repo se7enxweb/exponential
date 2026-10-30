@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/confirmorderhandlers
 audience: developer
 category: standards
-order: 486
+order: 492
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/confirmorderhandlers mit den Entwurfsmustern.
 keywords: kernel/classes/confirmorderhandlers, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

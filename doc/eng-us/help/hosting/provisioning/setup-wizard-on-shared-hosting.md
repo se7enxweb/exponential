@@ -47,7 +47,7 @@ only method that shows each decision on a page with an explanation". When you ca
 
 | Item | Why |
 |---|---|
-| PHP 8.0 or later with the required extensions; Apache with `mod_rewrite` and PHP-FPM is "the classic setup; shared hosting" | [Requirements at a glance](../basics/requirements-at-a-glance.md) |
+| PHP 8.0 or later (PHP 7.4 usable without support) with the required extensions; Apache with `mod_rewrite` and PHP-FPM is "the classic setup; shared hosting" | [Requirements at a glance](../basics/requirements-at-a-glance.md) |
 | The code, with `vendor/` (the dependencies), in the customer's web space | the wizard cannot run Composer; upload a complete release |
 | `settings/`, `var/` and `design/` writable by the user PHP runs as | the System check tests `[directory_permissions] CheckList` ([Writable directories and permissions](../basics/writable-directories-and-permissions.md)) |
 | `.htaccess` in place: a copy of the shipped `.htaccess_root` | the rewrite rules that keep internal files from being served |

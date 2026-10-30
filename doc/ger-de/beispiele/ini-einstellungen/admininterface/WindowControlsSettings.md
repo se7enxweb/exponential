@@ -39,11 +39,11 @@ HiddenTabs[]
 
 ## AdditionalTabs
 
-> List of additional tab identifiers  
+> Liste zusätzlicher Tab-Bezeichner  
 > AdditionalTabs\[\]=customtab  
-> The audit trail of a node (doc/eng-us/bc/6.0/audit.md, "Placement"), only with audit/read  
-> The rows of data tables that point at a node or its object (doc/eng-us/features/6.0/data-tables.md,  
-> "Relations"), only with datatable/read and only when there are some  
+> Der Audit-Verlauf eines Knotens (doc/eng-us/bc/6.0/audit.md, "Placement"), nur mit audit/read  
+> Die Zeilen von Datentabellen, die auf einen Knoten oder sein Objekt verweisen (doc/eng-us/features/6.0/data-tables.md,  
+> "Relations"), nur mit datatable/read und nur, wenn es welche gibt  
 
 Standard: eine Liste mit 4: `roles`, `policies`, `audit`, `datatable`.
 

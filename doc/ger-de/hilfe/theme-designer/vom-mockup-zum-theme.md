@@ -43,7 +43,7 @@ verlinkt darauf.
 Listen Sie vor dem Zeichnen auf, was existiert: Inhaltsklassen und ihre Felder, die Ansichtsmodi, in denen jede Klasse
 erscheint, die besonderen Seiten (Suche, Anmeldung, Fehler, Formulare) und, wenn die Website Layouts verwendet, die
 Blocktypen und Ansichtstypen. Bei einer bestehenden Website bringt der [Plan für den ersten Tag](ihr-erster-tag-als-theme-designer.md)
-diese Liste hervor. Bei einer neuen Website kommt sie aus dem Inhaltsmodell ([Ein Inhaltsmodell entwerfen](../../../eng-us/help/cms-developers/designing-a-content-model.md));
+diese Liste hervor. Bei einer neuen Website kommt sie aus dem Inhaltsmodell ([Ein Inhaltsmodell entwerfen](../cms-entwickler/ein-inhaltsmodell-entwerfen.md));
 setzen Sie sich also mit dem Entwickler zusammen, während die Klassen festgelegt werden: Ein Feld, das nicht in der
 Klasse steht, kann nicht in Ihrem Design erscheinen.
 

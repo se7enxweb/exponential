@@ -77239,6 +77239,82 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Cheia de acces nu a putut fi verificată. Încercați din nou.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Conturile care se conectează doar cu chei de acces nu pot folosi o parolă aici: alegeți „Conectare cu o cheie de acces”.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Cheile de acces ale lui %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Cheile de acces cu care se conectează acest cont. Revocați cheia aflată pe un dispozitiv pierdut sau furat: nu se mai poate conecta. Titularul adaugă singur chei noi.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Contul dumneavoastră are nevoie de o cheie de acces</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Adăugați o cheie de acces la cont</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Adăugați o cheie de acces pentru a continua. Apoi vă conectați cu ea în loc de doar cu o parolă.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Conectarea cu o cheie de acces este mai rapidă și mai sigură decât cu o parolă. Adăugați una acum sau continuați fără ea.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Nu acum</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Revocați cheia de acces „%name”?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Nu se mai poate conecta la acest cont. Dacă era ultima, titularul se conectează cu parola sau setați dumneavoastră una nouă.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Revocare cheie de acces</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Revocare</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Acest cont nu are nicio cheie de acces.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Autentificator</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Necunoscut</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Ultima dumneavoastră cheie de acces: adăugați alta înainte de a o elimina.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Acest cont se conectează doar cu chei de acces (politica cheilor de acces): dacă nu mai rămâne niciuna, se conectează din nou cu parola sa.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Aceasta este ultima dumneavoastră cheie de acces, iar contul nu se poate conecta fără una. Adăugați mai întâi altă cheie de acces.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Cheia de acces „%name” a fost revocată. Nu se mai poate conecta la acest cont.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77338,6 +77414,34 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>Code from your authenticator app</source>
         <translation>Cod din aplicația de autentificare</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Urmează să ștergeți definitiv date sau să goliți un jurnal.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Parola și o cheie de acces</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Parola și un cod din aplicația de autentificare</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Sau:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Acest browser nu poate folosi chei de acces. Folosiți altă metodă sau alt browser.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Când continuați, browserul vă cere una dintre cheile de acces.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Continuare cu o cheie de acces</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77428,6 +77532,70 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>Setup</source>
         <translation>Configurare</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Modificarea propriei parole, a adresei de e-mail, a cheilor de acces, a conectării în doi pași, a codurilor de recuperare sau a cheilor API și deconectarea propriilor alte dispozitive.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Crearea și editarea utilizatorilor, a parolelor și dispozitivelor lor, a setărilor contului, aprobarea sau respingerea conturilor noi de utilizator, atribuirea rolurilor și editarea politicilor.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Ștergere date</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Golirea coșului de reciclare, eliminarea elementelor din el și eliminarea mai multor elemente deodată.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Eliminare, publicare și salvare conținut</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Eliminarea conținutului (și în coșul de reciclare), publicarea și salvarea unei ciorne; se cere la trimiterea formularului. Dezactivat implicit.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Înaintea unei acțiuni sensibile, un utilizator conectat confirmă din nou cine este: cu parola și o cheie de acces sau, fără cheie de acces, cu parola și codul din aplicația de autentificare. Doar paginile web cer acest lucru: interfața REST, SOAP, WebDAV, conectarea expservices și linia de comandă nu cer niciodată.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Unde se aplică setările</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Setări pentru</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Fiecare acces la site</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Acces la site %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Deschidere</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Cui i se cere: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Bifați grupuri de utilizatori pentru a cere doar membrilor lor (de exemplu, editorilor). Niciunul bifat: fiecărui utilizator.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Salvat în settings/override/site.ini.append.php, pentru fiecare acces la site. La salvare vi se cere să confirmați că sunteți dumneavoastră.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Salvat în settings/siteaccess/%name/site.ini.append.php. O valoare din settings/override are prioritate. La salvare vi se cere să confirmați că sunteți dumneavoastră.</translation>
     </message>
 </context>
 <context>
@@ -77816,6 +77984,30 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>Your account was locked</source>
         <translation>Contul dumneavoastră a fost blocat</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>A fost adăugată o cheie de acces la contul dumneavoastră %login de pe %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Oricine deține această cheie de acces se poate conecta la contul dumneavoastră fără parolă. Dacă nu ați adăugat-o dumneavoastră, eliminați-o din Chei de acces și schimbați-vă parola.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>A fost eliminată o cheie de acces din contul dumneavoastră %login de pe %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Nu se mai poate conecta la contul dumneavoastră. Dacă nu ați eliminat-o dumneavoastră, verificați cheile de acces și dispozitivele.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>A fost adăugată o cheie de acces la contul dumneavoastră</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>A fost eliminată o cheie de acces din contul dumneavoastră</translation>
     </message>
 </context>
 <context>

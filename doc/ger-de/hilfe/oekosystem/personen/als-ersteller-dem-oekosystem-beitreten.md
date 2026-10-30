@@ -56,8 +56,8 @@ bitten Sie in den Foren um eine Durchsicht; beantworten Sie das erste Issue, das
 
 - [Personen](README.md)
 - [Ersteller im Ökosystem](ersteller-im-oekosystem.md)
-- [Ihr erster Beitrag](../../../../eng-us/help/community/contributing/your-first-contribution.md)
-- [Die Community für Entwickler](../../../../eng-us/help/community/paths/community-for-developers.md)
+- [Ihr erster Beitrag](../../gemeinschaft/mitwirken/ihr-erster-beitrag.md)
+- [Die Community für Entwickler](../../gemeinschaft/lernpfade/community-fuer-entwickler.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.
 
 <!-- exp-partner-block:start -->

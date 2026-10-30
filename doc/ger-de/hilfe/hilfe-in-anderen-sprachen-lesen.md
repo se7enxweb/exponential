@@ -39,9 +39,9 @@ Hilfe die Sprache, in der Sie lesen, ohne die Auswahl.
 ## Das englische Original
 
 Eine übersetzte Seite hat über dem Text einen Link auf ihr englisches Original („Original auf Englisch lesen“). Das
-Original öffnet sich unter derselben Adresse, gefolgt von `/(lang)/eng-us` (ein `?lang=` in der Adresse wird nicht
-gelesen); es wird für diesen einen Aufruf auf Englisch
-angezeigt, mit einem Link zurück zur Seite in Ihrer Sprache. Die Sprache Ihrer Oberfläche ändert sich dabei nicht.
+Original öffnet sich unter derselben Adresse, gefolgt von `/(lang)/eng-us`; es wird für diesen einen Aufruf auf
+Englisch angezeigt, mit einem Link zurück zur Seite in Ihrer Sprache. Die Sprache Ihrer Oberfläche ändert sich dabei
+nicht. (Der ältere Schlüssel `/(lang)/en-us` funktioniert weiterhin; ein `?lang=` in der Adresse wird nicht gelesen.)
 
 ## Eine Seite, die noch nicht übersetzt ist
 
@@ -64,6 +64,13 @@ die es für Sie gibt.
 Englisch ist das Original. Deutsch wird gerade übersetzt. Ihr Administrator kann in den Einstellungen eine Sprache
 hinzufügen (`exphelp.ini`, `[DocLanguages]`); Entwickler und Übersetzer finden unter
 [Übersetzte Dokumentation](../bc/6.0/uebersetzte-dokumentation.md), wie das geht.
+
+In den Dateien der Dokumentation ist jede Sprache ein Verzeichnis, benannt nach dem Code, den Exponential für die
+Sprache verwendet, in Kleinbuchstaben: `doc/eng-us/` ist das englische Original (`eng-US`), `doc/ger-de/` die deutsche
+Übersetzung (`ger-DE`). Eine neue Sprache bekommt ihr Verzeichnis auf dieselbe Weise, zum Beispiel `doc/fre-fr/` für
+Französisch (`fre-FR`). Diese Namen brauchen Sie nicht, um die Hilfe zu lesen: Jede Hilfeadresse ist in jeder Sprache
+dieselbe, und Links und Lesezeichen aus der Zeit, bevor die Verzeichnisse umbenannt wurden, öffnen weiterhin die
+richtige Seite.
 
 ## Siehe auch
 

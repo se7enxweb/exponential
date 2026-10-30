@@ -443,6 +443,7 @@ class expUserLoginIntegrity
         if ( !$db instanceof eZDBInterface || !property_exists( $db, 'errorHandling' ) )
             return eZDB::ERROR_HANDLING_STANDARD;
         $property = new ReflectionProperty( 'eZDBInterface', 'errorHandling' );
+        if ( PHP_VERSION_ID < 80100 ) $property->setAccessible( true ); // no effect since PHP 8.1, deprecated in 8.5
         return $property->getValue( $db );
     }
 

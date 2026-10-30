@@ -77239,6 +77239,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Ekki tókst að athuga aðgangslykilinn. Reyndu aftur.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Reikningar sem skrá sig aðeins inn með aðgangslyklum geta ekki notað aðgangsorð hér: veldu „Skrá inn með aðgangslykli“.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Aðgangslyklar %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Aðgangslyklarnir sem þessi reikningur skráir sig inn með. Afturkallaðu lykil sem er á týndu eða stolnu tæki: hann getur þá ekki lengur skráð sig inn. Eigandinn bætir sjálfur við nýjum.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Reikningurinn þinn þarf aðgangslykil</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Bættu aðgangslykli við reikninginn þinn</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Bættu við aðgangslykli til að halda áfram. Þá skráir þú þig inn með honum í stað aðgangsorðs eingöngu.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Innskráning með aðgangslykli er fljótlegri og öruggari en með aðgangsorði. Bættu einum við núna eða haltu áfram án hans.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Ekki núna</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Afturkalla aðgangslykilinn „%name“?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Hann getur ekki lengur skráð sig inn á þennan reikning. Ef hann var sá síðasti skráir eigandinn sig inn með aðgangsorðinu, eða þú setur nýtt.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Afturkalla aðgangslykilinn</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Afturkalla</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Þessi reikningur er ekki með neinn aðgangslykil.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Auðkenningarbúnaður</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Óþekkt</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Síðasti aðgangslykillinn þinn: bættu öðrum við áður en þú fjarlægir hann.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Þessi reikningur skráir sig aðeins inn með aðgangslyklum (stefna um aðgangslykla): ef enginn er eftir skráir hann sig aftur inn með aðgangsorðinu sínu.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Þetta er síðasti aðgangslykillinn þinn og reikningurinn þinn getur ekki skráð sig inn án hans. Bættu fyrst öðrum aðgangslykli við.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Aðgangslykillinn „%name“ hefur verið afturkallaður. Hann getur ekki lengur skráð sig inn á þennan reikning.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77338,6 +77414,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>Kóði úr auðkenningarforritinu þínu</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Þú ert að fara að eyða gögnum endanlega eða tæma annál.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Aðgangsorðið þitt og aðgangslykill</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Aðgangsorðið þitt og kóði úr auðkenningarforritinu þínu</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Eða:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Þessi vafri getur ekki notað aðgangslykla. Notaðu aðra leið eða annan vafra.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Þegar þú heldur áfram biður vafrinn þinn um einn af aðgangslyklunum þínum.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Halda áfram með aðgangslykli</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77428,6 +77532,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>Uppsetning</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Að breyta eigin aðgangsorði, netfangi, aðgangslyklum, tveggja þrepa innskráningu, endurheimtarkóðum eða API-lyklum og að skrá eigin önnur tæki út.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Að stofna og breyta notendum, aðgangsorðum þeirra og tækjum, reikningsstillingum, að samþykkja eða hafna nýjum notendareikningum, að úthluta hlutverkum og breyta stefnum.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Eyðing gagna</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Að tæma ruslafötuna, fjarlægja atriði úr henni og fjarlægja mörg atriði í einu.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Fjarlæging, birting og vistun efnis</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Að fjarlægja efni (líka í ruslafötuna), birta og vista drög; spurt þegar eyðublaðið er sent. Sjálfgefið slökkt.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Fyrir viðkvæma aðgerð staðfestir innskráður notandi aftur hver hann er: með aðgangsorðinu sínu og aðgangslykli, eða án aðgangslykils með aðgangsorðinu sínu og kóðanum úr auðkenningarforritinu sínu. Aðeins vefsíðurnar spyrja: REST-viðmótið, SOAP, WebDAV, expservices-innskráningin og skipanalínan gera það aldrei.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Hvar stillingarnar gilda</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Stillingar fyrir</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Hver vefaðgangur</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Aðeins vefaðgangurinn %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Opna</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Hver er spurður: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Hakaðu við notendahópa til að spyrja aðeins meðlimi þeirra (til dæmis ritstjóra). Ekkert hakað: hver notandi.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Vistað í settings/override/site.ini.append.php, fyrir hvern vefaðgang. Við vistun ertu beðinn að staðfesta að þetta sért þú.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Vistað í settings/siteaccess/%name/site.ini.append.php. Gildi í settings/override gengur framar því. Við vistun ertu beðinn að staðfesta að þetta sért þú.</translation>
     </message>
 </context>
 <context>
@@ -77816,6 +77984,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>Reikningnum þínum var læst</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Aðgangslykli var bætt við reikninginn þinn %login á %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Hver sem hefur þennan aðgangslykil getur skráð sig inn á reikninginn þinn án aðgangsorðsins þíns. Ef þú bættir honum ekki við skaltu fjarlægja hann undir Aðgangslyklar og breyta aðgangsorðinu þínu.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Aðgangslykill var fjarlægður af reikningnum þínum %login á %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Hann getur ekki lengur skráð sig inn á reikninginn þinn. Ef þú fjarlægðir hann ekki skaltu athuga aðgangslyklana þína og tækin.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Aðgangslykli var bætt við reikninginn þinn</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Aðgangslykill var fjarlægður af reikningnum þínum</translation>
     </message>
 </context>
 <context>

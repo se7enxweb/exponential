@@ -184,7 +184,7 @@ class expBenchmarkHttp
 
         $start = function ( $handle ) use ( &$headers, &$queued, &$inFlight, $multi, $url, $options )
         {
-            $id = spl_object_id( $handle );
+            $id = self::handleId( $handle );
             $headers[$id] = array( 'cache' => '', 'server' => '' );
             curl_setopt( $handle, CURLOPT_URL, $options['cold'] ? self::bust( $url ) : $url );
             curl_setopt( $handle, CURLOPT_HEADERFUNCTION, function ( $ch, $line ) use ( &$headers, $id )
@@ -219,7 +219,7 @@ class expBenchmarkHttp
             while ( $info = curl_multi_info_read( $multi ) )
             {
                 $handle = $info['handle'];
-                $seen = $headers[spl_object_id( $handle )];
+                $seen = $headers[self::handleId( $handle )];
                 $results[] = self::record( $handle, $info['result'], $seen['cache'], $seen['server'] );
                 curl_multi_remove_handle( $multi, $handle );
                 $inFlight--;
@@ -233,6 +233,17 @@ class expBenchmarkHttp
         $wall = ( hrtime( true ) - $began ) / 1e9;
 
         return array( 'requests' => $results, 'wall' => $wall );
+    }
+
+    /**
+     * A key for a cURL handle: a CurlHandle object from PHP 8.0 on, a resource on PHP 7.4.
+     *
+     * @param \CurlHandle|resource $handle
+     * @return int
+     */
+    protected static function handleId( $handle )
+    {
+        return is_object( $handle ) ? spl_object_id( $handle ) : (int)$handle;
     }
 
     /**

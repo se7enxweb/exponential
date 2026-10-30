@@ -14,10 +14,18 @@ Live-Demo beantwortet die Frage „Wie fühlt es sich an?“ besser als jeder Sc
 
 ## Beispiele aus dem Projekt
 
-Das Projekt Exponential betreibt öffentliche Demonstrations-Websites, zum Beispiel `https://demo.exponential.earth/` und
-`https://site.cjw.demo.exponential.earth/` (die CJW-Starter-Website, die das Design `cjw_themes_jumper` zeigt). Das
-Projekt baut seine Demo-Installationen nach Zeitplan neu auf, sodass Besucher immer einen sauberen, aktuellen Stand
-sehen.
+Das Projekt Exponential betreibt öffentliche Demonstrations-Websites und baut jede davon nach Zeitplan aus den neuesten
+Quellen auf GitHub neu auf (`se7enxweb/exponential`, Branch `main`), auf SQLite und im Demomodus, sodass Besucher immer
+einen sauberen, aktuellen Stand sehen:
+
+| Demo | Neu aufgebaut | Anmeldung |
+|---|---|---|
+| `https://demo.exponential.earth/` | einmal am Tag | `admin` / `publish` unter `https://edit.demo.exponential.earth/` |
+| `https://latest.demo.exponential.earth/` | alle zwei Stunden | `admin` unter `/admin` |
+| `https://site.cjw.demo.exponential.earth/` (die CJW-Starter-Website, Design `cjw_themes_jumper`) | alle zwei Stunden | `admin` unter `/admin` |
+
+Alles, was Sie dort ändern, ist nach dem nächsten Neuaufbau verschwunden. Das Skript von `demo.exponential.earth` liegt
+bei den Beispielen: [`install-demo-sqlite-demo-exponential-earth.sh`](../../../../eng-us/examples/demo-mode/install-demo-sqlite-demo-exponential-earth.sh).
 
 ## Möglichkeiten
 

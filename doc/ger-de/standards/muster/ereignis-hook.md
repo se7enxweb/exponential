@@ -3,8 +3,8 @@ title: Ereignis-Hook (ezpEvent)
 audience: developer
 category: standards
 order: 328
-summary: Ein benannter Punkt, an dem der Kernel ezpEvent::getInstance()-›notify() oder filter() aufruft, damit Listener reagieren oder einen Wert ändern können. 97 Instanzen in Exponential.
-keywords: Entwurfsmuster, Ereignis-Hook, Verhalten, Musterkatalog, design pattern, event-hook, pattern catalogue
+summary: Ein benannter Punkt, an dem der Kernel ezpEvent::getInstance()-›notify() oder filter() aufruft, damit Listener reagieren oder einen Wert ändern können. 99 Instanzen in Exponential.
+keywords: Entwurfsmuster, Ereignis-Hook, Verhalten, Musterkatalog, design pattern, event-hook, behavior, pattern catalogue
 type: catalogue
 ---
 # Ereignis-Hook (ezpEvent)
@@ -15,14 +15,14 @@ type: catalogue
 
 Ein benannter Punkt, an dem der Kernel ezpEvent::getInstance()->notify() oder filter() aufruft, damit Listener reagieren oder einen Wert ändern können.
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Verhalten |
-| Instanzen | 97 |
+| Instanzen | 99 |
 | Erkannt an | Ein Aufruf von ezpEvent::getInstance()-›notify( 'EVENT' ) oder -›filter( 'EVENT' ). |
 | Erweiterungspunkt | event.ini [Event] Listeners[]=EVENT@CALLBACK. |
 
-## Ereignis-Hooks (97)
+## Ereignis-Hooks (99)
 
 ### extension/expservices (12)
 
@@ -87,19 +87,20 @@ Ein benannter Punkt, an dem der Kernel ezpEvent::getInstance()->notify() oder fi
 | `content/cache` | notify | `extension/nxc_powercontent/modules/content/urlalias.php:157` |
 | `content/view` | filter | `extension/nxc_powercontent/modules/content/view.php:52` |
 
-### kernel/classes (10)
+### kernel/classes (11)
 
 | Ereignis | Art | Aufgerufen in |
 | --- | --- | --- |
-| `image/invalidateAliases` | notify | `kernel/classes/ezcache.php:703` |
-| `content/class/cache/all` | notify | `kernel/classes/ezcache.php:850` |
-| `user/cache/all` | notify | `kernel/classes/ezcache.php:873` |
-| `content/cache/all` | notify | `kernel/classes/ezcache.php:886` |
-| `content/state/cache/all` | notify | `kernel/classes/ezcache.php:956` |
+| `image/invalidateAliases` | notify | `kernel/classes/ezcache.php:715` |
+| `content/class/cache/all` | notify | `kernel/classes/ezcache.php:862` |
+| `user/cache/all` | notify | `kernel/classes/ezcache.php:885` |
+| `content/cache/all` | notify | `kernel/classes/ezcache.php:898` |
+| `content/state/cache/all` | notify | `kernel/classes/ezcache.php:968` |
 | `content/cache` | notify | `kernel/classes/ezcontentcachemanager.php:818` |
 | `content/cache/all` | notify | `kernel/classes/ezcontentcachemanager.php:826` |
 | `content/cache/all` | notify | `kernel/classes/ezcontentcachemanager.php:1182` |
-| `content/edit/access` | filter | `kernel/classes/ezcontentobject.php:6319` |
+| `content/edit/access` | filter | `kernel/classes/ezcontentobject.php:6375` |
+| `content/move` | notify | `kernel/classes/ezcontentobjecttreenode.php:5415` |
 | `content/view/cachekeys` | filter | `kernel/classes/eznodeviewfunctions.php:414` |
 
 ### kernel/classes/contentjob (1)
@@ -116,24 +117,25 @@ Ein benannter Punkt, an dem der Kernel ezpEvent::getInstance()->notify() oder fi
 | `image/removeAliases` | notify | `kernel/classes/datatypes/ezimage/ezimagealiashandler.php:811` |
 | `image/trashAliases` | notify | `kernel/classes/datatypes/ezimage/ezimagetype.php:120` |
 
-### kernel/modules (7)
+### kernel/modules (8)
 
 | Ereignis | Art | Aufgerufen in |
 | --- | --- | --- |
-| `content/class/cache` | notify | `kernel/class/delete.php:32` |
 | `content/cache/version` | notify | `kernel/content/attribute_edit.php:325` |
-| `content/notification/create` | filter | `kernel/content/ezcontentoperationcollection.php:920` |
-| `content/cache` | filter | `kernel/content/ezcontentoperationcollection.php:1414` |
-| `content/cache` | notify | `kernel/content/ezcontentoperationcollection.php:1530` |
-| `content/state/assign` | notify | `kernel/content/ezcontentoperationcollection.php:2034` |
+| `content/publish` | notify | `kernel/content/ezcontentoperationcollection.php:277` |
+| `content/notification/create` | filter | `kernel/content/ezcontentoperationcollection.php:983` |
+| `content/cache` | filter | `kernel/content/ezcontentoperationcollection.php:1481` |
+| `content/remove` | notify | `kernel/content/ezcontentoperationcollection.php:1490` |
+| `content/cache` | notify | `kernel/content/ezcontentoperationcollection.php:1604` |
+| `content/state/assign` | notify | `kernel/content/ezcontentoperationcollection.php:2117` |
 | `content/cache/version` | notify | `kernel/content/multiedit_functions.php:496` |
 
 ### kernel/private (4)
 
 | Ereignis | Art | Aufgerufen in |
 | --- | --- | --- |
-| `request/preinput` | notify | `kernel/private/classes/ezpkernelweb.php:1649` |
-| `request/input` | notify | `kernel/private/classes/ezpkernelweb.php:1769` |
+| `request/preinput` | notify | `kernel/private/classes/ezpkernelweb.php:1661` |
+| `request/input` | notify | `kernel/private/classes/ezpkernelweb.php:1786` |
 | `response/preoutput` | filter | `kernel/private/classes/global_functions.php:83` |
 | `response/output` | filter | `kernel/private/classes/global_functions.php:102` |
 

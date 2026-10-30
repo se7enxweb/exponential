@@ -77241,6 +77241,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Керү ачкычын тикшерү мөмкин булмады. Зинһар, тагын бер тапкыр сынап карагыз.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Бары тик керү ачкычлары белән керә торган хисап язмалары монда серсүз куллана алмый: «Керү ачкычы белән керү» дигәнне сайлагыз.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login керү ачкычлары</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Бу хисап язмасы керә торган керү ачкычлары. Югалган яки урланган җайланмадагы ачкычны кире алыгыз: аның белән башка керә алмаячак. Яңаларын хуҗа үзе өсти.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Хисап язмагызга керү ачкычы кирәк</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Хисап язмагызга керү ачкычы өстәгез</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Дәвам итү өчен керү ачкычы өстәгез. Аннары сез бары серсүз белән генә түгел, аның белән керәсез.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Керү ачкычы белән керү серсүзгә караганда тизрәк һәм куркынычсызрак. Хәзер өстәгез яки аннан башка дәвам итегез.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Хәзер түгел</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>«%name» керү ачкычын кире алырга?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Аның белән бу хисап язмасына башка керә алмаячак. Әгәр ул соңгысы булса, хуҗа серсүз белән керә, яки сез яңасын куясыз.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Керү ачкычын кире алу</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Кире алу</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Бу хисап язмасының керү ачкычы юк.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Аутентификатор</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Билгесез</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Соңгы керү ачкычыгыз: аны алып ташлаганчы, тагын берне өстәгез.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Бу хисап язмасы бары керү ачкычлары белән керә (керү ачкычлары сәясәте): берсе дә калмаса, ул яңадан серсүзе белән керә.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Бу сезнең соңгы керү ачкычыгыз, һәм хисап язмагыз аннан башка керә алмый. Башта тагын бер керү ачкычы өстәгез.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>«%name» керү ачкычы кире алынды. Аның белән бу хисап язмасына башка керә алмаячак.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>Аутентификатор кушымтасыннан код</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Сез мәгълүматларны биржолы бетерергә яки журналны чистартырга җыенасыз.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Серсүзегез һәм керү ачкычы</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Серсүзегез һәм аутентификатор кушымтасындагы код</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Яки:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Бу браузер керү ачкычларын куллана алмый. Башка ысул яки башка браузер сайлагыз.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Дәвам иткәч, браузер сезнең керү ачкычларыгызның берсен сорый.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Керү ачкычы белән дәвам итү</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>Көйләү</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Үз серсүзен, электрон почта адресын, керү ачкычларын, ике адымлы керүне, торгызу кодларын яки API ачкычларын үзгәртү һәм үзенең башка җайланмаларыннан чыгу.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Кулланучыларны, аларның серсүзләрен һәм җайланмаларын, хисап язмасы көйләүләрен булдыру һәм үзгәртү, яңа кулланучы хисап язмаларын раслау яки кире кагу, рольләр билгеләү һәм сәясәтләрне үзгәртү.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Мәгълүматларны бетерү</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Чүп савытын бушату, аннан элементларны алып ташлау һәм берьюлы берничә элементны алып ташлау.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Эчтәлекне алып ташлау, бастыру һәм саклау</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Эчтәлекне алып ташлау (чүп савытына да), бастыру һәм караламаны саклау, форма җибәрелгәндә сорала. Килешү буенча сүндерелгән.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Мөһим гамәл алдыннан кергән кулланучы кем икәнен тагын бер тапкыр раслый: серсүзе һәм керү ачкычы белән, яки керү ачкычы булмаса, серсүзе һәм аутентификатор кушымтасындагы код белән. Бары тик веб-битләр генә сорый: REST интерфейсы, SOAP, WebDAV, expservices керүе һәм боерык юлы беркайчан да сорамый.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Көйләүләр кайда гамәлдә</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Көйләүләр:</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Һәр сайтка керү ноктасы</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Сайтка керү ноктасы %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ачу</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Кемнән сорала: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Бары тик әгъзаларыннан сорау өчен кулланучылар төркемнәрен билгеләгез (мәсәлән, мөхәррирләр). Берсе дә билгеләнмәгән: һәр кулланучы.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php файлына, һәр сайтка керү ноктасы өчен саклана. Саклаганда бу сез икәнне раслау сорала.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php файлына саклана. settings/override эчендәге кыйммәт өстенрәк. Саклаганда бу сез икәнне раслау сорала.</translation>
     </message>
 </context>
 <context>
@@ -77786,6 +77954,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>Хисап язмагыз бикләнде</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site сайтындагы %login хисап язмагызга керү ачкычы өстәлде.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Бу керү ачкычы кемдә булса, ул сезнең хисап язмагызга серсүзегездән башка керә ала. Әгәр сез аны өстәмәгән булсагыз, Керү ачкычлары бүлегендә алып ташлагыз һәм серсүзегезне үзгәртегез.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site сайтындагы %login хисап язмагыздан керү ачкычы алып ташланды.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Аның белән хисап язмагызга башка керә алмаячак. Әгәр сез аны алып ташламаган булсагыз, керү ачкычларыгызны һәм җайланмаларыгызны тикшерегез.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Хисап язмагызга керү ачкычы өстәлде</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Хисап язмагыздан керү ачкычы алып ташланды</translation>
     </message>
 </context>
 <context>

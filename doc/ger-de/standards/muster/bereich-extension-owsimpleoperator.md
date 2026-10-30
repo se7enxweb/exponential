@@ -2,7 +2,7 @@
 title: Muster in extension/owsimpleoperator
 audience: developer
 category: standards
-order: 465
+order: 470
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/owsimpleoperator mit den Entwurfsmustern.
 keywords: extension/owsimpleoperator, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

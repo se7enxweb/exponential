@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/workflowtypes
 audience: developer
 category: standards
-order: 511
+order: 524
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/workflowtypes mit den Entwurfsmustern.
 keywords: kernel/classes/workflowtypes, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -15,10 +15,12 @@ type: catalogue
 
 Jede Klasse, Schnittstelle und jeder Trait von `kernel/classes/workflowtypes` mit den Mustern, als die sie erkannt wurden, gefolgt von den Modulansichten, Richtlinienfunktionen, Fetch-Funktionen, Template-Operatoren, Cronjobs, Ereignis-Hooks und INI-Plugin-Punkten des Bereichs. [Alle Muster](README.md).
 
-## Klassen (9)
+## Klassen (11)
 
 | Klasse | Art | Muster | Datei | Beschreibung |
 | --- | --- | --- | --- | --- |
+| `expDataTableMirrorType` | class extends eZWorkflowEventType | [Workflow-Ereignistyp (Befehl, Plugin)](workflow-ereignis.md) | `kernel/classes/workflowtypes/event/expdatatablemirror/expdatatablemirrortype.php:21` | Das Workflow-Ereignis „In Datentabellen spiegeln“ (doc/eng-us/features/6.0/data-tables.md, „Live mirror“): in einem Workflow bei content/publish (nach), die veröffentlichte… |
+| `expUserApproveType` | class extends eZApproveType | [Workflow-Ereignistyp (Befehl, Plugin)](workflow-ereignis.md) | `kernel/classes/workflowtypes/event/expuserapprove/expuserapprovetype.php:36` | Das Workflow-Ereignis „Benutzerkonten freigeben“ (doc/eng-us/bc/6.0/user-account-approval.md), dem Freigabe-Ereignis (ezapprove) nachgebildet: bei content/publi… |
 | `eZApproveType` | class extends eZWorkflowEventType | [Workflow-Ereignistyp (Befehl, Plugin)](workflow-ereignis.md) | `kernel/classes/workflowtypes/event/ezapprove/ezapprovetype.php:24` | – |
 | `eZFinishUserRegisterType` | class extends eZWorkflowEventType | [Workflow-Ereignistyp (Befehl, Plugin)](workflow-ereignis.md) | `kernel/classes/workflowtypes/event/ezfinishuserregister/ezfinishuserregistertype.php:17` | – |
 | `eZMultiplexerType` | class extends eZWorkflowEventType | [Workflow-Ereignistyp (Befehl, Plugin)](workflow-ereignis.md) | `kernel/classes/workflowtypes/event/ezmultiplexer/ezmultiplexertype.php:24` | – |

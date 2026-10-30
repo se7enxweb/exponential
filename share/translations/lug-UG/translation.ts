@@ -77241,6 +77241,82 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Ekisumuluzo ky'okuyingira tekisobodde kukeberebwa. Bambi gezaako nate.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Akawunti eziyingira n&apos;ebisumuluzo by&apos;okuyingira byokka tezisobola kukozesa kigambo kya kyama wano: londa «Yingira n&apos;ekisumuluzo ky&apos;okuyingira».</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Ebisumuluzo by&apos;okuyingira ebya %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Ebisumuluzo by&apos;okuyingira akawunti eno by&apos;eyingiza. Jjulula ekiri ku kyuma ekyabula oba ekyabbibwa: tekikyasobola kuyingira. Nannyini akawunti y&apos;ayongerako ebipya yennyini.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Akawunti yo yeetaaga ekisumuluzo ky&apos;okuyingira</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Yongera ekisumuluzo ky&apos;okuyingira ku akawunti yo</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Yongerako ekisumuluzo ky&apos;okuyingira okugenda mu maaso. Oluvannyuma ojja kuyingira nakyo mu kifo ky&apos;ekigambo ky&apos;ekyama kyokka.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Okuyingira n&apos;ekisumuluzo ky&apos;okuyingira kwangu era kwa bukuumi okusinga ekigambo ky&apos;ekyama. Kyongereko kati, oba genda mu maaso awatali kyo.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Si kati</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Jjulula ekisumuluzo ky&apos;okuyingira «%name»?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Tekikyasobola kuyingira mu akawunti eno. Bwe kiba nga kye kyali ekisembayo, nannyini akawunti ayingira n&apos;ekigambo ky&apos;ekyama, oba ggwe oteekawo ekipya.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Jjulula ekisumuluzo ky&apos;okuyingira</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Jjulula</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Akawunti eno terina kisumuluzo kya kuyingira.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Ekikakasa</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Ekitamanyiddwa</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Ekisumuluzo kyo eky&apos;okuyingira ekisembayo: yongerako ekirala nga tonnakiggyamu.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Akawunti eno eyingira n&apos;ebisumuluzo by&apos;okuyingira byokka (enkola y&apos;ebisumuluzo by&apos;okuyingira): bwe watabaawo kisigaddeyo, eddamu okuyingira n&apos;ekigambo kyayo eky&apos;ekyama.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Kino kye kisumuluzo kyo eky&apos;okuyingira ekisembayo, era akawunti yo tesobola kuyingira awatali kyo. Sooka oyongereko ekisumuluzo ky&apos;okuyingira ekirala.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Ekisumuluzo ky&apos;okuyingira «%name» kijjuluddwa. Tekikyasobola kuyingira mu akawunti eno.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>Code from your authenticator app</source>
         <translation>Koodi evudde mu pulogulaamu yo ey'okukakasa</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Oli kumpi okusangula data lubeerera oba okwerula ekitabo ky&apos;ebyafaayo.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Ekigambo kyo eky&apos;ekyama n&apos;ekisumuluzo ky&apos;okuyingira</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Ekigambo kyo eky&apos;ekyama ne koodi okuva mu pulogulaamu yo ey&apos;okukakasa</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Oba:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Bulawuza eno tesobola kukozesa bisumuluzo bya kuyingira. Kozesa engeri endala, oba bulawuza endala.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Bw&apos;onoogenda mu maaso, bulawuza yo ejja kusaba kimu ku bisumuluzo byo eby&apos;okuyingira.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Genda mu maaso n&apos;ekisumuluzo ky&apos;okuyingira</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     <message>
         <source>Setup</source>
         <translation>Okuteekateeka</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Okukyusa ekigambo kyo eky&apos;ekyama, endagiriro ya email, ebisumuluzo by&apos;okuyingira, okuyingira mu mitendera ebiri, koodi ez&apos;okuzzaawo oba ebisumuluzo bya API, n&apos;okufulumya ebyuma byo ebirala.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Okutonda n&apos;okulongoosa abakozesa, ebigambo byabwe eby&apos;ekyama n&apos;ebyuma byabwe, entegeka za akawunti, okukkiriza oba okugaana akawunti z&apos;abakozesa empya, okugaba emirimu n&apos;okulongoosa enkola.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Okusangula data</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Okwerula kasasiro, okuggyamu ebintu mu ye n&apos;okuggyamu ebintu ebingi omulundi gumu.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Okuggyamu, okufulumya n&apos;okutereka ebirimu</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Okuggyamu ebirimu (ne mu kasasiro), okufulumya n&apos;okutereka ddulaafuti; kibuuzibwa ng&apos;ofoomu eweerezebwa. Kiggaddwa mu ntandikwa.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Nga tannakola kikolwa kikulu, omukozesa ayingidde addamu okukakasa nti ye: n&apos;ekigambo kye eky&apos;ekyama n&apos;ekisumuluzo ky&apos;okuyingira, oba awatali kisumuluzo kya kuyingira n&apos;ekigambo kye eky&apos;ekyama ne koodi ya pulogulaamu ye ey&apos;okukakasa. Empapula za yintaneti zokka ze zibuuza: enkolagana ya REST, SOAP, WebDAV, okuyingira kwa expservices ne layini y&apos;ebiragiro tebibuuza n&apos;akatono.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Entegeka gye zikola</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Entegeka za</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Buli mulyango gw&apos;omukutu</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Omulyango gw&apos;omukutu %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ggulawo</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Abuuzibwa: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Londa ebibinja by&apos;abakozesa okubuuza bammemba baabyo bokka (okugeza abalongoosa). Bw&apos;otolonda kimu: buli mukozesa.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Kiterekeddwa mu settings/override/site.ini.append.php, ku buli mulyango gw&apos;omukutu. Okutereka kukusaba okukakasa nti ggwe.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Kiterekeddwa mu settings/siteaccess/%name/site.ini.append.php. Omuwendo mu settings/override gwe gusinga. Okutereka kukusaba okukakasa nti ggwe.</translation>
     </message>
 </context>
 <context>
@@ -77786,6 +77954,30 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     <message>
         <source>Your account was locked</source>
         <translation>Akawunti yo yaggalwawo</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Ekisumuluzo ky&apos;okuyingira kyongeddwa ku akawunti yo %login ku %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Buli alina ekisumuluzo kino ky&apos;okuyingira asobola okuyingira mu akawunti yo awatali kigambo kyo eky&apos;ekyama. Bw&apos;oba si ggwe wakyongerako, kiggyemu wansi wa Ebisumuluzo by&apos;okuyingira era okyuse ekigambo kyo eky&apos;ekyama.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Ekisumuluzo ky&apos;okuyingira kiggiddwa ku akawunti yo %login ku %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Tekikyasobola kuyingira mu akawunti yo. Bw&apos;oba si ggwe wakiggyako, kebera ebisumuluzo byo eby&apos;okuyingira n&apos;ebyuma byo.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Ekisumuluzo ky&apos;okuyingira kyongeddwa ku akawunti yo</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Ekisumuluzo ky&apos;okuyingira kiggiddwa ku akawunti yo</translation>
     </message>
 </context>
 <context>

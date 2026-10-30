@@ -235,6 +235,9 @@ einer Demo nie auf eine andere Website.
 
   und verzeichnet das Audit-Ereignis `system.demo.mode` (Schweregrad warning, Kanal system, immer eingeschaltet). Ein
   geforkter Worker hat seine eigene PID und verzeichnet es erneut; ein persistenter Worker verzeichnet es einmal. Ein
+  Webprozess, der jede Anfrage neu beginnt (PHP-FPM, mod_php, LiteSpeed, der eingebaute Server von PHP), legt je Prozess
+  eine leere Markierungsdatei im Cache-Verzeichnis an (`<cache>/demo-mode/<pid>-<start time>`) und verzeichnet es so
+  ebenfalls einmal statt bei jeder Anfrage; nach dem Leeren der Caches verzeichnen die laufenden Prozesse es erneut. Ein
   Konsolenbefehl meldet außerdem `Demo mode is on (EXP_DEMO_MODE=1) ...` auf der Standardfehlerausgabe.
 
 Auf einer Produktivsite bedeutet ein Ereignis `system.demo.mode` oder eine Zeile `demo/mode`, dass die Variable einen

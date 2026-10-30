@@ -112,7 +112,7 @@ Exponential Velocity ist die empfohlene Engine; FrankenPHP ist die produktionsre
 PHP-FPM funktionieren ebenfalls. [Eine Website bereitstellen](eine-website-bereitstellen.md#wählen-wie-die-website-ausgeliefert-wird).
 
 **Welches PHP und welche Datenbanken?**
-PHP 8.0 bis 8.5 laut `composer.json` im Hauptverzeichnis. Datenbanken in der Reihenfolge der Präferenz des Projekts:
+PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) laut `composer.json` im Hauptverzeichnis. Datenbanken in der Reihenfolge der Präferenz des Projekts:
 SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL. [Datenbankunterstützung](../datenbankunterstuetzung.md),
 [Anforderungen](../../installation/02-voraussetzungen.md).
 

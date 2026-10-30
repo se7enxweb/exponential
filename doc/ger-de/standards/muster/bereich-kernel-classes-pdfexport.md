@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/pdfexport
 audience: developer
 category: standards
-order: 502
+order: 510
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/pdfexport mit den Entwurfsmustern.
 keywords: kernel/classes/pdfexport, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

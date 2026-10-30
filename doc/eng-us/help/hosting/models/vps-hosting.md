@@ -143,7 +143,7 @@ usually chooses between:
 
 ## Checklist
 
-- [ ] Distribution of tier 1 or 2, PHP 8.0 or later for web and CLI, the same extensions in both.
+- [ ] Distribution of tier 1 or 2, PHP 8.0 or later (PHP 7.4 usable without support) for web and CLI, the same extensions in both.
 - [ ] `exp:velocity ext check` clean for the features in use.
 - [ ] Velocity with a boot service, or Apache/nginx with PHP-FPM; HTTPS with a CA certificate.
 - [ ] Database chosen in the official order and documented.

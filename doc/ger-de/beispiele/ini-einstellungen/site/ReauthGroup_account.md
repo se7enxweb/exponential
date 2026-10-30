@@ -20,6 +20,9 @@ Der Block `[ReauthGroup_account]` von `settings/site.ini`, mit 2 Einstellung(en)
 >                  pending account of an approval item of "Approve user accounts")  
 >   credentials    only when the POST changes the login, e-mail or password of a user  
 >   !module/view   never asked for this view (an exception to a module/\* rule)  
+>   bulk           only when several items are removed at once (BulkCount)  
+> A group may name UserGroups\[\] (content object ids of user groups): it then asks only  
+> their members; empty or missing: every user.  
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -29,7 +32,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Enabled
 
-> The security settings of one's own account.  
+> Die Sicherheitseinstellungen des eigenen Kontos.  
 
 Standard: `true`.
 
@@ -43,7 +46,9 @@ Enabled=true
 
 ## Rules
 
-Standard: eine Liste mit 6: `user/password self`, `user/passkeys *`, `user2fa/setup`, `apikey/list`, `content/edit self credentials`, `user/sessions self SaveMailButton`.
+> "Alle anderen Sitzungen abmelden" fragt ebenfalls zuerst: jemand an einem unbeaufsichtigten Bildschirm darf den Eigentümer nicht aussperren  
+
+Standard: eine Liste mit 6: `user/password self`, `user/passkeys *`, `user2fa/setup`, `apikey/list`, `content/edit self credentials`, `user/sessions self SaveMailButton RevokeOthersButton`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -56,7 +61,7 @@ Rules[]=user/passkeys *
 Rules[]=user2fa/setup
 Rules[]=apikey/list
 Rules[]=content/edit self credentials
-Rules[]=user/sessions self SaveMailButton
+Rules[]=user/sessions self SaveMailButton RevokeOthersButton
 */ ?>
 ```
 

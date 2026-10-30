@@ -3,7 +3,7 @@ title: "PHP-Versionskompatibilität"
 audience: designer, developer
 category: theme-lifecycle
 order: 70
-summary: Den PHP-Code eines Themes (Operatoren, Module, Klassen) auf jeder PHP-Version lauffähig halten, die Exponential unterstützt - PHP 8.0 ist die älteste - mit php -l pro Version, was typischerweise bricht und wie Sie den Bereich in composer.json angeben.
+summary: Den PHP-Code eines Themes (Operatoren, Module, Klassen) auf jeder PHP-Version lauffähig halten, die Exponential unterstützt - PHP 8.0 ist die älteste, PHP 7.4 ohne Support nutzbar - mit php -l pro Version, was typischerweise bricht und wie Sie den Bereich in composer.json angeben.
 keywords: PHP-Version, PHP 8.0, PHP 8.5, Kompatibilität, php -l, Abkündigungen, composer require php, Operatoren, Module, PHP version, compatibility, deprecations, operators, modules
 type: help
 ---
@@ -14,7 +14,7 @@ Templates und Stylesheets ist von PHP-Versionen nicht direkt betroffen.
 
 ## Die Fakten
 
-- Das Changelog von 6.0.15 gibt an, dass **PHP 8.0 die älteste unterstützte Version** ist (5. Oktober 2026).
+- Das Changelog von 6.0.15 gibt an, dass **PHP 8.0 die älteste unterstützte Version** ist (5. Oktober 2026), und ab dem 29. Oktober 2026 ist PHP 7.4 ohne Support nutzbar ([Warum Exponential PHP 7.4 unterstützt](../../warum-exponential-php-7-4-unterstuetzt.md)).
 - Die `composer.json` im Wurzelverzeichnis erlaubt PHP ab 8.0 (`^8.0 || ^8.1 || ... ^8.5` und spätere Minor-Versionen).
 - Die veröffentlichten Themes geben eigene Bereiche an, zum Beispiel `sevenx_themes_media`
   `^8.0 || ^8.1 || ^8.2 || ^8.3 || ^8.4` und `cjw_themes_jumper` `>=8.0`.

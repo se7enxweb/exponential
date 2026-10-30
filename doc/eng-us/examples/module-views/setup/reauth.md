@@ -14,8 +14,10 @@ A view of the `setup` module, defined in `kernel/setup/module.php` and run by `k
 ## Address
 
 ```text
-/setup/reauth
+/setup/reauth/<SiteAccess>
 ```
+
+Ordered parameters, in this order after the view name: `SiteAccess`.
 
 ## Who may open it
 
@@ -37,13 +39,13 @@ A policy on `setup/*` (every function) also grants it; limitations of the policy
 A link in a template (`ezurl` adds the siteaccess and quotes the address); the parameter values are placeholders:
 
 ```tpl
-<a href={'/setup/reauth'|ezurl}>setup/reauth</a>
+<a href={'/setup/reauth/siteaccess'|ezurl}>setup/reauth</a>
 ```
 
 From PHP, the redirect a view gives after it has done its work:
 
 ```php
-return $Module->redirectTo( '/setup/reauth' );
+return $Module->redirectTo( '/setup/reauth/siteaccess' );
 ```
 
 ## Related

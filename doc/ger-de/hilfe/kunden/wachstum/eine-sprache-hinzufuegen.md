@@ -28,6 +28,9 @@ Aus [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md):
 
 - **Setup > Sprachen > Sprache hinzufügen** fügt eine Inhaltssprache hinzu; auf einer Standardinstallation stehen
   132 Locales in der Liste, und eine eigene lässt sich aus einer Locale-Datei erstellen.
+
+  ![Setup, Sprachen: die Inhaltssprachen mit der Schaltfläche Sprache hinzufügen über der Liste](../../bilder/government/gov-add-language.webp)
+
 - **Das Hinzufügen übersetzt nichts und ändert keinen Siteaccess**: Noch sieht kein Besucher etwas Neues.
 - Was ein Besucher sieht, legt jeder Siteaccess mit `SiteLanguageList` fest: die Inhaltssprachen, die er anzeigt, die
   bevorzugte zuerst. Ein Element wird in der ersten davon angezeigt, die es hat; Elemente in keiner davon sind

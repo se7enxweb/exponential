@@ -53,10 +53,10 @@ ExtensionDirectories[]
 
 ## AvailableEventTypes
 
-> A list of events, each entry consists of the group  
-> and the name with a \_ as separator  
-> Writes the published object to the tables of data table synchronisations (doc/eng-us/features/6.0/data-tables.md)  
-> Approve user accounts: a new account in a chosen user group waits for an approver (doc/eng-us/bc/6.0/user-account-approval.md)  
+> Eine Liste von Ereignissen, jeder Eintrag besteht aus der Gruppe  
+> und dem Namen mit einem \_ als Trennzeichen  
+> Schreibt das veröffentlichte Objekt in die Tabellen der Synchronisationen der Datentabellen (doc/eng-us/features/6.0/data-tables.md)  
+> Approve user accounts: ein neues Konto in einer gewählten Benutzergruppe wartet auf einen Freigebenden (doc/eng-us/bc/6.0/user-account-approval.md)  
 
 Standard: eine Liste mit 8: `event_ezapprove`, `event_ezwaituntildate`, `event_ezsimpleshipping`, `event_ezmultiplexer`, `event_ezpaymentgateway`, `event_ezfinishuserregister`, `event_expdatatablemirror`, `event_expuserapprove`.
 

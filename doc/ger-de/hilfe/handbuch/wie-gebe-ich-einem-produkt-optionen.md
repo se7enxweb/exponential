@@ -54,7 +54,7 @@ Manche Klassen verwenden stattdessen das neuere Mehrfachoptionsfeld. Es bietet z
 
 ## Verwandte Seiten
 
-- [Optionen und Varianten](../../../eng-us/help/e-commerce/catalog/options-and-variants.md)
+- [Optionen und Varianten](../e-commerce/katalog/optionen-und-varianten.md)
 - [Ein Produkt hinzufügen](../kunden/handel/ein-produkt-anlegen.md)
 - [Produkte und Katalog](../kunden/handel/produkte-und-katalog.md)
 - [Benutzerhandbuch](README.md)

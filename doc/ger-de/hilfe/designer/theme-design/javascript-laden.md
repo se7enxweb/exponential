@@ -79,8 +79,13 @@ Das `ezscript_load` des Pagelayouts gibt es aus. Seiten ohne Galerie laden es ni
 | Einstellung | Gedacht für |
 |---|---|
 | `FrontendJavaScriptList[]` | öffentliche Designs |
-| `BackendJavaScriptList[]` | Administrationsdesigns (der Kernel führt `tools/ezjsselection.js`, `ezadmin_menubar.js` ... auf) |
+| `BackendJavaScriptList[]` | jede Seite der Administrationsdesigns (der Kernel führt `tools/ezjsselection.js`, `ezadmin_menubar.js` ... auf); nur Skripte, die ohne jQuery laufen, da admin4 und admin4l jQuery nur dort laden, wo ein Template es anfordert |
+| `ClassicBackendJavaScriptList[]` | jede Seite der älteren Administrationsdesigns (`admin`, `admin3`), nach jQuery und `BackendJavaScriptList[]`; admin4 liest sie nicht |
 | `JavaScriptList[]` | ältere Liste für beide (DEPRECATED zugunsten der beiden oben) |
+
+Ein admin4-Template, dessen Skript jQuery oder ein Exponential-UI-Modul braucht, fordert es selbst an, außerhalb jedes
+cache-block: `{ezscript_require( array( 'ezjsc::jquery', 'myadmin.js' ) )}` (siehe
+[admin4 und admin4l ohne jQuery](../../../funktionen/6.0/jquery4-und-entfernung-von-yui.md#admin4-und-admin4l-ohne-jquery)).
 
 Wie bei Stylesheets zählt eine Liste nur, wenn Ihr Pagelayout sie liest:
 

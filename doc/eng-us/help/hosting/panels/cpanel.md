@@ -59,7 +59,7 @@ That is everything the sources say about cPanel specifically.
 Exponential's needs do not depend on the panel. A cPanel account that offers the following runs Exponential, by the
 same reasoning that puts cPanel in tier 3:
 
-- PHP 8.0 or later for the account, with the required extensions: `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`,
+- PHP 8.0 or later (PHP 7.4 usable without support) for the account, with the required extensions: `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`,
   `iconv`, `intl`, `pcre`, `json`, `session`, `zlib`, one database extension, `gd` or ImageMagick
   ([2.3 PHP extensions](../../../install/02-requirements.md#23-php-extensions)). `xsl` and `intl` are critical tests
   of the setup wizard, and are the ones most often missing from a default PHP build.

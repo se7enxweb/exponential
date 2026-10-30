@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Enabled
 
-> Managing users, roles and policies, and approving or denying new user accounts.  
+> Benutzer, Rollen und Richtlinien verwalten und neue Benutzerkonten freigeben oder ablehnen.  
 
 Standard: `true`.
 
@@ -33,10 +33,11 @@ Enabled=true
 
 ## Rules
 
+> Another user's devices in full (their addresses and browsers) and signing them out  
 > Approve and Deny of a new user account waiting for approval (the workflow event  
 > "Approve user accounts"); content approvals address no account and never ask here  
 
-Standard: eine Liste mit 12: `content/edit other`, `user/password other`, `user/sessions other RevokeSessionButton RevokeOthersButton`, `user/setting`, `user/unactivated`, `user/hygiene`, `user/deactivate`, `user/registration`, `content/removeuserobject ConfirmButton`, `collaboration/action other CollaborationAction_Accept CollaborationAction_Deny CollaborationAction_Defer`, `role/*`, `oauthadmin/*`.
+Standard: eine Liste mit 13: `content/edit other`, `user/password other`, `user/sessions other *`, `user/sessionreport *`, `user/setting`, `user/unactivated`, `user/hygiene`, `user/deactivate`, `user/registration`, `content/removeuserobject ConfirmButton`, `collaboration/action other CollaborationAction_Accept CollaborationAction_Deny CollaborationAction_Defer`, `role/*` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -46,7 +47,8 @@ Standard: eine Liste mit 12: `content/edit other`, `user/password other`, `user/
 Rules[]
 Rules[]=content/edit other
 Rules[]=user/password other
-Rules[]=user/sessions other RevokeSessionButton RevokeOthersButton
+Rules[]=user/sessions other *
+Rules[]=user/sessionreport *
 Rules[]=user/setting
 Rules[]=user/unactivated
 Rules[]=user/hygiene

@@ -117,7 +117,7 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:preloadjob](preloadjob.md) |  |  |
 | [exp:publish_content](publish_content.md) |  |  |
 | [exp:resetuserpassword](resetuserpassword.md) |  | Setzt das Passwort eines Benutzers zurück, mit Anmeldung als Administrator oder als root ohne Anmeldung |
-| [exp:services](services.md) | exp:services:compile, exp:services:list, exp:services:show, exp:services:check | Compile, list, show and check the kernel service container (verbs compile, list, show, check) |
+| [exp:services](services.md) | exp:services:compile, exp:services:list, exp:services:show, exp:services:check | Kompiliert, listet, zeigt und prüft den Service-Container des Kernels (Verben compile, list, show, check) |
 | [exp:setupfiles](setupfiles.md) | exp:setup:htaccess, exp:setup:config, exp:setup:status | Kopiert .htaccess_root (oder .htaccess_root_static) nach .htaccess und config.php-RECOMMENDED nach config.php, mit Diff, Sicherung und --force für eine vorhandene Datei (Probelauf ohne --apply) |
 | [exp:solr](solr.md) | exp:search | Steuert den Solr-Suchserver, sobald er installiert und konfiguriert ist |
 | [exp:systeminfo](systeminfo.md) | exp:system:info | Die Fakten und Zustandsprüfungen von Setup > Systeminformationen, als Text oder JSON (--json, --sizes) |
@@ -138,7 +138,7 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:upgradesteps](upgradesteps.md) | exp:upgrade:steps | Upgrade-Schritte: die registrierten Schritte mit ID, Stufe, Version, Engines und Beschreibung |
 | [exp:upgradeverify](upgradeverify.md) | exp:upgrade:verify | Upgrade prüfen: jeden Schritt neu erkennen und Abweichungen melden; --after: die ganze Prüfung nach einem Upgrade (Schritte, Rauchprobe-Adressen, Tests, Fehlerprotokoll, Autoloads) |
 | [exp:userlogincheck](userlogincheck.md) | exp:user-login-check | Eindeutige Logins: listet die Logins auf, die mehr als ein Benutzerkonto hat; --fix-index fügt den eindeutigen Index auf ezuser.login hinzu, sobald es keine mehr gibt |
-| [exp:userpasswordchangerequired](userpasswordchangerequired.md) | exp:user-password-change-required | Change password at next sign-in: show, set or clear the mark of a user account |
+| [exp:userpasswordchangerequired](userpasswordchangerequired.md) | exp:user-password-change-required | Passwortänderung bei der nächsten Anmeldung: zeigt die Markierung eines Benutzerkontos an, setzt sie oder löscht sie |
 | [exp:velocity-router](velocity-router.md) |  |  |
 | [exp:velocity-warmup](velocity-warmup.md) |  |  |
 | [exp:velocity](velocity.md) | exp:vc |  |

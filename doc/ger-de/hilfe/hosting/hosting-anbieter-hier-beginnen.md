@@ -36,7 +36,7 @@ keine: Sie zeigen, wie Sie messen und entscheiden.
 ## Exponential in einer Minute, für Hoster
 
 - **Es ist eine PHP-Anwendung.** Exponential ist „ein professionelles PHP-Anwendungsframework mit fortgeschrittener
-  CMS-Funktionalität (Content-Management-System)“ (`README.md`). Es läuft auf PHP 8.0 bis 8.5, auf fast jedem
+  CMS-Funktionalität (Content-Management-System)“ (`README.md`). Es läuft auf PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar), auf fast jedem
   Betriebssystem, auf dem PHP 8 läuft ([Betriebssystemunterstützung](../betriebssystemunterstuetzung.md)).
 - **Es ist freie Software.** Der Code steht unter der GPL v2 oder später und kostet nichts; Sie können es für beliebig
   viele Kunden installieren. Die Dokumentation, einschließlich dieser Seite, steht unter der GNU FDL 1.3
@@ -49,6 +49,18 @@ keine: Sie zeigen, wie Sie messen und entscheiden.
 - **Es bringt seine eigene Engine mit.** Exponential Velocity ist ein in PHP geschriebener Webserver mit dauerhaften
   Workern, empfohlen für jede Phase; FrankenPHP ist eine produktionsreife Alternative; Apache oder nginx mit PHP-FPM
   bleiben vollständig unterstützt und sind das, was Shared Hosting meist anbietet ([Kapitel 8](../../installation/08-die-website-ausliefern.md)).
+- **Seit 6.0.15 ist diese Engine Teil von Exponential.** Die `composer.json` im Wurzelverzeichnis verlangt
+  `se7enxweb/exponential-velocity ~0.0.4.57`, sodass jede Website, die Sie mit Composer installieren, den Velocity
+  Internet / Web Application Server hat, auf demselben PHP wie die Website (8.0 und neuer, einschließlich des
+  Standard-PHP 8.0 von Red Hat Enterprise Linux 9). Er braucht die Erweiterung `sockets`, empfohlen sind `pcntl` und
+  `openssl`. Nichts wechselt die Engine von selbst, ein Angebot mit Apache oder nginx funktioniert also unverändert
+  weiter; Velocity anzubieten ist eine Einstellung (`[ServerSettings] Engine=qbix`) und ein dauerhaft laufender
+  Prozess, kein zweites Produkt, das installiert werden müsste.
+- **Ein Stack für Ihre Kunden.** Mit dem Server im Kern ist Exponential eine funktionierende Einheit: ein Stack für
+  die schnelle Anwendungsentwicklung, ein CMS, Digital-Experience-Funktionen und E-Commerce aus einer Installation,
+  eine Konsole (`./console exp:velocity deploy`, `start`, `restart`, `cache clear`) und eine Dokumentation. Für einen
+  Hoster bedeutet das weniger bewegliche Teile, die pro Website zu betreuen sind. Die Geschichte dazu:
+  [Velocity ist Teil von Exponential 6.0.15](../velocity-ist-teil-von-exponential-6-0-15.md).
 
 ## Was ein Server bereitstellen muss
 

@@ -10,8 +10,9 @@ type: help
 # Einen ersten Beitrag begleiten
 
 Diese Seite ist für Fürsprecher, die einer anderen Person zu ihrem ersten Beitrag verhelfen. Ein erster Pull Request,
-der willkommen geheißen wird, macht aus einem Benutzer einen Beitragenden. Bei Exponential „wird jeder Pull Request
-übernommen, und seine Commits bleiben so erhalten, wie der Beitragende sie geschrieben hat“
+der willkommen geheißen wird, macht aus einem Benutzer einen Beitragenden. Bei Exponential wird jeder Pull Request
+übernommen, unter dem Namen seines Autors, sobald dieser ihn zusammengefasst (Squash) und per Rebase auf `main`
+aufgesetzt hat, wie es die Reviews verlangen
 ([Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst)), was es zu einem besonders
 guten Ort für den Anfang macht.
 
@@ -67,6 +68,14 @@ git push -u fork fix-<short-name>
 
 Lesen Sie beim Kernel gemeinsam CONTRIBUTING.md: den Commit-Hook (`make hooks`) und das Dateimanifest
 (`make manifest-fix`) ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
+Sagen Sie der Person früh, dass ein Code-Beitrag zum Kernel erst übernommen wird, wenn sie das Contributor Licensing
+Agreement unterzeichnet hat, das 7x und die Exponential Foundation verlangen, und erklären Sie klar, was es bedeutet:
+**Mit Unterschrift und Einreichung überträgt sie das Urheberrecht an dem Beitrag an 7x, das damit sein Eigentümer wird,
+und gibt die Kontrolle darüber ab.** 7x darf ihn auf jede Weise verwenden, ändern, neu lizenzieren und verbreiten, auch
+unter anderen Lizenzen und in kommerziellen Produkten, ohne sie zu fragen oder zu bezahlen, und sie kann ihn nicht
+zurückziehen und keine Bedingungen daran knüpfen
+([Übertragung des Urheberrechts (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)). Ihre eigenen
+Erweiterungen sind nicht betroffen.
 
 ## Der Pull Request
 
@@ -79,10 +88,18 @@ How I tested: <steps, version>
 Fixes #<issue number> (if there is one)
 ```
 
-Erklären Sie, dass Prüfende Dinge in Commits obendrauf korrigieren können; das ist normal und keine Ablehnung.
-Bereiten Sie die Person auch darauf vor, dass manches, was wie ein Fehler aussieht, beabsichtigt ist und andere Sites
-sich darauf verlassen: Eine solche Änderung braucht eine klare Begründung und mehrere Runden der Prüfung, und eine
-Option kommt besser an als ein neuer Standard ([Negative Funktionen](../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
+Erklären Sie, dass Review-Runden, die um Änderungen bitten, normal und keine Ablehnung sind. Bereiten Sie die Person
+beim Kernel auf viele Review-Runden vor: 7x prüft einen Commit oder Pull Request in viel mehr Runden als üblich,
+manchmal in Hunderten von Überarbeitungen, bis die Änderung einfach anzunehmen ist. Solange der Pull Request offen ist,
+fasst sie ihn zusammen (Squash) und setzt ihn per Rebase auf `main` auf, wie es die Reviews verlangen
+(`git fetch origin`, `git rebase -i origin/main`, `git push --force-with-lease` nur auf den Branch ihres Pull
+Requests); nach dem Merge wird `main` nie umgeschrieben
+([Code Reviews](../../../../CONTRIBUTING.md#code-reviews)).
+
+Lenken Sie einen ersten Beitrag weg von der Änderung eines beabsichtigten Verhaltens, auf das sich andere Sites
+verlassen, einer [negativen Funktion](../projekt/unterstuetzung-erhalten.md#negative-funktionen): Eine solche Änderung
+braucht eine klare Begründung und wird noch länger geprüft. Wenn sie nicht warten kann, schlagen Sie eine Option vor,
+die den heutigen Standard beibehält.
 
 ## Nach der Übernahme
 
@@ -97,9 +114,10 @@ Option kommt besser an als ein neuer Standard ([Negative Funktionen](../projekt/
 [ ] They have a GitHub account (with two-factor authentication)
 [ ] They chose the path (docs, translation, code) and read the page for it
 [ ] Commit message starts with Added:/Updated:/Fixed:/Removed:/Renamed:
+[ ] For a kernel code change: they know the CLA gives control of it to 7x, and their signed CLA is on file
 [ ] No secrets or personal data in the change
 [ ] Pull request text: what, why, how tested
-[ ] They know reviews may add commits on top
+[ ] They know how to squash and rebase their pull request onto main
 [ ] Celebrated, with consent
 ```
 

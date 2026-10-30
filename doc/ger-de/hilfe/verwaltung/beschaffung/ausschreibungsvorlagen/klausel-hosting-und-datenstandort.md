@@ -83,7 +83,7 @@ Der Wartungsmodus sorgt dafür, dass Datenbank und Dateien während der Sicherun
 
 | Thema | Quelle |
 |---|---|
-| Anforderungen (PHP 8.0+, Datenbanken, Webserver) | [Anforderungen auf einen Blick](../../../hosting/grundlagen/anforderungen-auf-einen-blick.md) |
+| Anforderungen (PHP 8.0+ (7.4 ohne Support nutzbar), Datenbanken, Webserver) | [Anforderungen auf einen Blick](../../../hosting/grundlagen/anforderungen-auf-einen-blick.md) |
 | Befehle zur Datenbanksicherung je Engine | [Datenbanksicherungen je Engine](../../../hosting/betrieb/datenbank-backups-je-engine.md) |
 | Wiederherstellungstests | [Wiederherstellung und Wiederherstellungstests](../../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md) |
 | Die Administration beschränken | [Die Administration beschränken](../../../hosting/sicherheit/die-administration-einschraenken.md) |

@@ -2,7 +2,7 @@
 title: Muster in extension/ezprestapi
 audience: developer
 category: standards
-order: 452
+order: 457
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezprestapi mit den Entwurfsmustern.
 keywords: extension/ezprestapi, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

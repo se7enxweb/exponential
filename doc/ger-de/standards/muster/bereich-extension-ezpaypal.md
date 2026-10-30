@@ -2,7 +2,7 @@
 title: Muster in extension/ezpaypal
 audience: developer
 category: standards
-order: 449
+order: 454
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezpaypal mit den Entwurfsmustern.
 keywords: extension/ezpaypal, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

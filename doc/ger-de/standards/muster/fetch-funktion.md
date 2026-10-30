@@ -3,7 +3,7 @@ title: Fetch-Funktion (Query Object, Fassade)
 audience: developer
 category: standards
 order: 315
-summary: Eine benannte Abfrage, die Templates mit fetch( module, function, hash(...) ) aufrufen; der Kernel ordnet sie einer Methode einer Function-Collection-Klasse zu. 319 Instanzen in Exponential.
+summary: Eine benannte Abfrage, die Templates mit fetch( module, function, hash(...) ) aufrufen; der Kernel ordnet sie einer Methode einer Function-Collection-Klasse zu. 354 Instanzen in Exponential.
 keywords: Entwurfsmuster, Fetch-Funktion, Plugins, Musterkatalog, design pattern, fetch-function, pattern catalogue
 type: catalogue
 ---
@@ -15,10 +15,10 @@ type: catalogue
 
 Eine benannte Abfrage, die Templates mit fetch( module, function, hash(...) ) aufrufen; der Kernel ordnet sie einer Methode einer Function-Collection-Klasse zu.
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Plugins |
-| Instanzen | 319 |
+| Instanzen | 354 |
 | Erkannt an | Ein Eintrag der function_definition.php eines Moduls oder eine Klasse namens *FunctionCollection. |
 | Erweiterungspunkt | function_definition.php im Modulverzeichnis einer Extension (module.ini ModuleRepositories[]). |
 
@@ -39,6 +39,27 @@ Eine benannte Abfrage, die Templates mit fetch( module, function, hash(...) ) au
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `cjwTmvFunctionCollection` | class | `extension/cjw_tmv/classes/cjwtmvfunctioncollection.php:10` | Die Fetch-Funktionen des Moduls cjw_tmv (modules/cjw_tmv/function_definition.php). | – |
+
+### extension/expai (6)
+
+[Alle Muster von extension/expai](area-extension-expai.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expAiAltTextFunctionCollection` | class | `extension/expai/classes/alttext/expaialttextfunctioncollection.php:14` | fetch( 'expai', 'alt_text_model', hash( 'object', $object ) ): das Vision-Modell, das die Schaltfläche „Alternativtext schreiben“ für die Bilder dieses Objekts verwendet, oder wa… | – |
+| `expAiBudgetFunctionCollection` | class | `extension/expai/classes/budget/expaibudgetfunctioncollection.php:14` | Die Template-Fetch-Funktion fetch( 'expai', 'budget_status' ): das monatliche Site-Budget der Warteschlangen-Anfragen (expAiBudget::status()), für Benutzer mit… | – |
+| `expAiChainFunctionCollection` | class | `extension/expai/classes/chain/expaichainfunctioncollection.php:18` | Template-Fetch-Funktionen von KI-Ketten: | – |
+| `expAiFunctionCollection` | class | `extension/expai/classes/expaifunctioncollection.php:14` | Die Template-Fetch-Funktionen von expai (modules/expai/function_definition.php). | – |
+| `expAiPresetFunctionCollection` | class | `extension/expai/classes/fieldactions/expaipresetfunctioncollection.php:15` | fetch( 'expai', 'edit_presets', hash( 'object', $object, 'attributes', $content_attributes ) ): die Voreinstellungen, das Menü „Verbessern“ und die Standardzeile von… | – |
+| `expAiThreadFunctionCollection` | class | `extension/expai/classes/vector/expaithreadfunctioncollection.php:17` | Template-Fetch-Funktionen von Threads (function_definition.php): | – |
+
+### extension/expimageeditor (1)
+
+[Alle Muster von extension/expimageeditor](area-extension-expimageeditor.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expImageEditorFunctionCollection` | class | `extension/expimageeditor/classes/expimageeditorfunctioncollection.php:15` | Die Fetch-Funktionen des Moduls expimageeditor. | – |
 
 ### extension/explayouts (1)
 
@@ -96,6 +117,14 @@ Eine benannte Abfrage, die Templates mit fetch( module, function, hash(...) ) au
 | --- | --- | --- | --- | --- |
 | `eZContentFunctionCollection` | class | `extension/nxc_powercontent/modules/content/ezcontentfunctioncollection.php:20` | – | – |
 
+### extension/sqliimport (1)
+
+[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expImportFunctionCollection` | class | `extension/sqliimport/classes/exp/expimportfunctioncollection.php:11` | Die Template-Fetch-Funktionen des Moduls sqliimport (modules/sqliimport/function_definition.php). | – |
+
 ### extension/xrowextract (1)
 
 [Alle Muster von extension/xrowextract](bereich-extension-xrowextract.md)
@@ -119,6 +148,14 @@ Eine benannte Abfrage, die Templates mit fetch( module, function, hash(...) ) au
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `expAuditFunctionCollection` | class | `kernel/classes/audit/console/expauditfunctioncollection.php:22` | Die Fetch-Funktionen des Moduls audit (kernel/audit/function_definition.php; doc/eng-us/bc/6.0/audit.md, „Template operator and fetch“): | – |
+
+### kernel/classes/datatable (1)
+
+[Alle Muster von kernel/classes/datatable](area-kernel-classes-datatable.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expDataTableFunctionCollection` | class | `kernel/classes/datatable/expdatatablefunctioncollection.php:28` | Die Template-Fetch-Funktionen des Moduls datatable (kernel/datatable/function_definition.php, doc/eng-us/features/6.0/data-tables.md, „In templates… | – |
 
 ### kernel/classes/help (1)
 
@@ -158,7 +195,7 @@ Eine benannte Abfrage, die Templates mit fetch( module, function, hash(...) ) au
 | --- | --- | --- | --- | --- |
 | `ezpLanguageSwitcherFunctionCollection` | class | `kernel/private/modules/switchlanguage/ezpLanguageSwitcherFunctionCollection.php:14` | – | – |
 
-## Fetch-Funktionen (290)
+## Fetch-Funktionen (316)
 
 ### extension/cjw_newsletter (16)
 
@@ -190,24 +227,48 @@ Eine benannte Abfrage, die Templates mit fetch( module, function, hash(...) ) au
 | `fetch( 'cjw_tmv', 'places' )` | `cjwTmvFunctionCollection::places()` | `extension/cjw_tmv/modules/cjw_tmv/function_definition.php:32` |
 | `fetch( 'cjw_tmv', 'filter_params' )` | `cjwTmvFunctionCollection::filterParams()` | `extension/cjw_tmv/modules/cjw_tmv/function_definition.php:40` |
 
+### extension/expai (12)
+
+| Fetch | Implementiert von | Definiert in |
+| --- | --- | --- |
+| `fetch( 'expai', 'my_drafts' )` | `expAiFunctionCollection::fetchMyDrafts()` | `extension/expai/modules/expai/function_definition.php:16` |
+| `fetch( 'expai', 'my_draft_count' )` | `expAiFunctionCollection::fetchMyDraftCount()` | `extension/expai/modules/expai/function_definition.php:22` |
+| `fetch( 'expai', 'waiting_for_my_approval' )` | `expAiFunctionCollection::fetchWaitingForMyApproval()` | `extension/expai/modules/expai/function_definition.php:27` |
+| `fetch( 'expai', 'budget_status' )` | `expAiBudgetFunctionCollection::fetchStatus()` | `extension/expai/modules/expai/function_definition.php:33` |
+| `fetch( 'expai', 'chains' )` | `expAiChainFunctionCollection::fetchChains()` | `extension/expai/modules/expai/function_definition.php:40` |
+| `fetch( 'expai', 'chain_runs' )` | `expAiChainFunctionCollection::fetchRuns()` | `extension/expai/modules/expai/function_definition.php:45` |
+| `fetch( 'expai', 'models' )` | `expAiFunctionCollection::fetchModels()` | `extension/expai/modules/expai/function_definition.php:51` |
+| `fetch( 'expai', 'my_threads' )` | `expAiThreadFunctionCollection::fetchMyThreads()` | `extension/expai/modules/expai/function_definition.php:57` |
+| `fetch( 'expai', 'switched_on' )` | `expAiGate::fetchSwitchedOn()` | `extension/expai/modules/expai/function_definition.php:64` |
+| `fetch( 'expai', 'alt_text_model' )` | `expAiAltTextFunctionCollection::fetchModel()` | `extension/expai/modules/expai/function_definition.php:72` |
+| `fetch( 'expai', 'alt_text_required' )` | `expAiAltTextFunctionCollection::fetchAltTextRequired()` | `extension/expai/modules/expai/function_definition.php:79` |
+| `fetch( 'expai', 'edit_presets' )` | `expAiPresetFunctionCollection::fetchEditPresets()` | `extension/expai/modules/expai/function_definition.php:87` |
+
 ### extension/expchangeclass (1)
 
 | Fetch | Implementiert von | Definiert in |
 | --- | --- | --- |
 | `fetch( 'changeclass', 'simple_conversion' )` | `conversionFunctions::fetchSimpleConversionArray()` | `extension/expchangeclass/modules/changeclass/function_definition.php:30` |
 
-### extension/explayouts (8)
+### extension/expimageeditor (1)
+
+| Fetch | Implementiert von | Definiert in |
+| --- | --- | --- |
+| `fetch( 'expimageeditor', 'aspect_ratios' )` | `expImageEditorFunctionCollection::fetchAspectRatios()` | `extension/expimageeditor/modules/expimageeditor/function_definition.php:13` |
+
+### extension/explayouts (9)
 
 | Fetch | Implementiert von | Definiert in |
 | --- | --- | --- |
 | `fetch( 'explayouts', 'layout' )` | `expLayoutsFunctionCollection::fetchLayout()` | `extension/explayouts/modules/explayouts/function_definition.php:4` |
 | `fetch( 'explayouts', 'resolve_layout' )` | `expLayoutsFunctionCollection::resolveLayout()` | `extension/explayouts/modules/explayouts/function_definition.php:18` |
-| `fetch( 'explayouts', 'resolve_admin_layout' )` | `expLayoutsFunctionCollection::resolveAdminLayout()` | `extension/explayouts/modules/explayouts/function_definition.php:32` |
-| `fetch( 'explayouts', 'admin_layout_cache_key' )` | `expLayoutsFunctionCollection::adminLayoutCacheKey()` | `extension/explayouts/modules/explayouts/function_definition.php:47` |
-| `fetch( 'explayouts', 'admin_layouts_enabled' )` | `expLayoutsFunctionCollection::adminLayoutsEnabled()` | `extension/explayouts/modules/explayouts/function_definition.php:62` |
-| `fetch( 'explayouts', 'layout_summary_for_node' )` | `expLayoutsFunctionCollection::layoutSummaryForNode()` | `extension/explayouts/modules/explayouts/function_definition.php:74` |
-| `fetch( 'explayouts', 'resolve_layout_for_node' )` | `expLayoutsFunctionCollection::resolveLayoutForNode()` | `extension/explayouts/modules/explayouts/function_definition.php:88` |
-| `fetch( 'explayouts', 'rules_for_node' )` | `expLayoutsFunctionCollection::rulesForNode()` | `extension/explayouts/modules/explayouts/function_definition.php:102` |
+| `fetch( 'explayouts', 'resolve_route_layout' )` | `expLayoutsFunctionCollection::resolveRouteLayout()` | `extension/explayouts/modules/explayouts/function_definition.php:33` |
+| `fetch( 'explayouts', 'resolve_admin_layout' )` | `expLayoutsFunctionCollection::resolveAdminLayout()` | `extension/explayouts/modules/explayouts/function_definition.php:45` |
+| `fetch( 'explayouts', 'admin_layout_cache_key' )` | `expLayoutsFunctionCollection::adminLayoutCacheKey()` | `extension/explayouts/modules/explayouts/function_definition.php:60` |
+| `fetch( 'explayouts', 'admin_layouts_enabled' )` | `expLayoutsFunctionCollection::adminLayoutsEnabled()` | `extension/explayouts/modules/explayouts/function_definition.php:75` |
+| `fetch( 'explayouts', 'layout_summary_for_node' )` | `expLayoutsFunctionCollection::layoutSummaryForNode()` | `extension/explayouts/modules/explayouts/function_definition.php:87` |
+| `fetch( 'explayouts', 'resolve_layout_for_node' )` | `expLayoutsFunctionCollection::resolveLayoutForNode()` | `extension/explayouts/modules/explayouts/function_definition.php:101` |
+| `fetch( 'explayouts', 'rules_for_node' )` | `expLayoutsFunctionCollection::rulesForNode()` | `extension/explayouts/modules/explayouts/function_definition.php:115` |
 
 ### extension/ezfind (7)
 
@@ -324,6 +385,14 @@ Eine benannte Abfrage, die Templates mit fetch( module, function, hash(...) ) au
 | `fetch( 'content', 'reverse_related_objects_ids' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsID()` | `extension/nxc_powercontent/modules/content/function_definition.php:1224` |
 | `fetch( 'content', 'content_tree_menu_expiry' )` | `eZContentFunctionCollection::fetchContentTreeMenuExpiry()` | `extension/nxc_powercontent/modules/content/function_definition.php:1241` |
 
+### extension/sqliimport (3)
+
+| Fetch | Implementiert von | Definiert in |
+| --- | --- | --- |
+| `fetch( 'sqliimport', 'recent_runs' )` | `expImportFunctionCollection::fetchRecentRuns()` | `extension/sqliimport/modules/sqliimport/function_definition.php:17` |
+| `fetch( 'sqliimport', 'failed_runs_24h' )` | `expImportFunctionCollection::fetchFailedRuns24h()` | `extension/sqliimport/modules/sqliimport/function_definition.php:22` |
+| `fetch( 'sqliimport', 'notices' )` | `expImportFunctionCollection::fetchNotices()` | `extension/sqliimport/modules/sqliimport/function_definition.php:27` |
+
 ### extension/xrowextract (2)
 
 | Fetch | Implementiert von | Definiert in |
@@ -331,7 +400,7 @@ Eine benannte Abfrage, die Templates mit fetch( module, function, hash(...) ) au
 | `fetch( 'xrowextract', 'schedule_alerts' )` | `XrowExtractFunctionCollection::fetchScheduleAlerts()` | `extension/xrowextract/modules/xrowextract/function_definition.php:10` |
 | `fetch( 'xrowextract', 'requirement_notices' )` | `XrowExtractFunctionCollection::fetchRequirementNotices()` | `extension/xrowextract/modules/xrowextract/function_definition.php:17` |
 
-### kernel/modules (173)
+### kernel/modules (182)
 
 | Fetch | Implementiert von | Definiert in |
 | --- | --- | --- |
@@ -391,39 +460,47 @@ Eine benannte Abfrage, die Templates mit fetch( module, function, hash(...) ) au
 | `fetch( 'content', 'contentobject_attributes' )` | `eZContentFunctionCollection::contentobjectAttributes()` | `kernel/content/function_definition.php:723` |
 | `fetch( 'content', 'bookmarks' )` | `eZContentFunctionCollection::fetchBookmarks()` | `kernel/content/function_definition.php:737` |
 | `fetch( 'content', 'bookmark_rows' )` | `eZContentFunctionCollection::fetchBookmarkRows()` | `kernel/content/function_definition.php:751` |
-| `fetch( 'content', 'bookmark_folders' )` | `eZContentFunctionCollection::fetchBookmarkFolders()` | `kernel/content/function_definition.php:761` |
-| `fetch( 'content', 'recent' )` | `eZContentFunctionCollection::fetchRecent()` | `kernel/content/function_definition.php:768` |
-| `fetch( 'content', 'section_list' )` | `eZContentFunctionCollection::fetchSectionList()` | `kernel/content/function_definition.php:775` |
-| `fetch( 'content', 'tipafriend_top_list' )` | `eZContentFunctionCollection::fetchTipafriendTopList()` | `kernel/content/function_definition.php:782` |
-| `fetch( 'content', 'view_top_list' )` | `eZContentFunctionCollection::fetchMostViewedTopList()` | `kernel/content/function_definition.php:816` |
-| `fetch( 'content', 'collected_info_count' )` | `eZContentFunctionCollection::fetchCollectedInfoCount()` | `kernel/content/function_definition.php:838` |
-| `fetch( 'content', 'collected_info_count_list' )` | `eZContentFunctionCollection::fetchCollectedInfoCountList()` | `kernel/content/function_definition.php:864` |
-| `fetch( 'content', 'collected_info_collection' )` | `eZContentFunctionCollection::fetchCollectedInfoCollection()` | `kernel/content/function_definition.php:875` |
-| `fetch( 'content', 'collected_info_list' )` | `eZContentFunctionCollection::fetchCollectionsList()` | `kernel/content/function_definition.php:889` |
-| `fetch( 'content', 'object_by_attribute' )` | `eZContentFunctionCollection::fetchObjectByAttribute()` | `kernel/content/function_definition.php:919` |
-| `fetch( 'content', 'object_count_by_user_id' )` | `eZContentFunctionCollection::fetchObjectCountByUserID()` | `kernel/content/function_definition.php:929` |
-| `fetch( 'content', 'same_classattribute_node' )` | `eZContentFunctionCollection::fetchSameClassAttributeNodeList()` | `kernel/content/function_definition.php:947` |
-| `fetch( 'content', 'keyword' )` | `eZContentFunctionCollection::fetchKeyword()` | `kernel/content/function_definition.php:962` |
-| `fetch( 'content', 'keyword_count' )` | `eZContentFunctionCollection::fetchKeywordCount()` | `kernel/content/function_definition.php:1008` |
-| `fetch( 'content', 'assigned_nodes' )` | `eZContentFunctionCollection::fetchAssignedNodes()` | `kernel/content/function_definition.php:1048` |
-| `fetch( 'content', 'assigned_node_count' )` | `eZContentFunctionCollection::fetchAssignedNodeCount()` | `kernel/content/function_definition.php:1073` |
-| `fetch( 'content', 'access' )` | `eZContentFunctionCollection::checkAccess()` | `kernel/content/function_definition.php:1081` |
-| `fetch( 'content', 'navigation_parts' )` | `eZContentFunctionCollection::fetchNavigationParts()` | `kernel/content/function_definition.php:1106` |
-| `fetch( 'content', 'navigation_part' )` | `eZContentFunctionCollection::fetchNavigationPart()` | `kernel/content/function_definition.php:1114` |
-| `fetch( 'content', 'related_objects' )` | `eZContentFunctionCollection::fetchRelatedObjects()` | `kernel/content/function_definition.php:1124` |
-| `fetch( 'content', 'related_objects_count' )` | `eZContentFunctionCollection::fetchRelatedObjectsCount()` | `kernel/content/function_definition.php:1173` |
-| `fetch( 'content', 'reverse_related_objects' )` | `eZContentFunctionCollection::fetchReverseRelatedObjects()` | `kernel/content/function_definition.php:1190` |
-| `fetch( 'content', 'reverse_related_objects_count' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsCount()` | `kernel/content/function_definition.php:1234` |
-| `fetch( 'content', 'available_sort_fields' )` | `eZContentFunctionCollection::fetchAvailableSortFieldList()` | `kernel/content/function_definition.php:1254` |
-| `fetch( 'content', 'country_list' )` | `eZContentFunctionCollection::fetchCountryList()` | `kernel/content/function_definition.php:1261` |
-| `fetch( 'content', 'country_groups' )` | `eZContentFunctionCollection::fetchCountryGroups()` | `kernel/content/function_definition.php:1275` |
-| `fetch( 'content', 'related_objects_ids' )` | `eZContentFunctionCollection::fetchRelatedObjectsID()` | `kernel/content/function_definition.php:1285` |
-| `fetch( 'content', 'reverse_related_objects_ids' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsID()` | `kernel/content/function_definition.php:1302` |
-| `fetch( 'content', 'site_data' )` | `eZContentFunctionCollection::fetchSiteData()` | `kernel/content/function_definition.php:1321` |
-| `fetch( 'content', 'content_tree_menu_expiry' )` | `eZContentFunctionCollection::fetchContentTreeMenuExpiry()` | `kernel/content/function_definition.php:1330` |
+| `fetch( 'content', 'view_bookmark' )` | `eZContentFunctionCollection::fetchViewBookmark()` | `kernel/content/function_definition.php:761` |
+| `fetch( 'content', 'bookmark_folders' )` | `eZContentFunctionCollection::fetchBookmarkFolders()` | `kernel/content/function_definition.php:774` |
+| `fetch( 'content', 'recent' )` | `eZContentFunctionCollection::fetchRecent()` | `kernel/content/function_definition.php:781` |
+| `fetch( 'content', 'section_list' )` | `eZContentFunctionCollection::fetchSectionList()` | `kernel/content/function_definition.php:788` |
+| `fetch( 'content', 'tipafriend_top_list' )` | `eZContentFunctionCollection::fetchTipafriendTopList()` | `kernel/content/function_definition.php:795` |
+| `fetch( 'content', 'view_top_list' )` | `eZContentFunctionCollection::fetchMostViewedTopList()` | `kernel/content/function_definition.php:829` |
+| `fetch( 'content', 'collected_info_count' )` | `eZContentFunctionCollection::fetchCollectedInfoCount()` | `kernel/content/function_definition.php:851` |
+| `fetch( 'content', 'collected_info_count_list' )` | `eZContentFunctionCollection::fetchCollectedInfoCountList()` | `kernel/content/function_definition.php:877` |
+| `fetch( 'content', 'collected_info_collection' )` | `eZContentFunctionCollection::fetchCollectedInfoCollection()` | `kernel/content/function_definition.php:888` |
+| `fetch( 'content', 'collected_info_list' )` | `eZContentFunctionCollection::fetchCollectionsList()` | `kernel/content/function_definition.php:902` |
+| `fetch( 'content', 'object_by_attribute' )` | `eZContentFunctionCollection::fetchObjectByAttribute()` | `kernel/content/function_definition.php:932` |
+| `fetch( 'content', 'object_count_by_user_id' )` | `eZContentFunctionCollection::fetchObjectCountByUserID()` | `kernel/content/function_definition.php:942` |
+| `fetch( 'content', 'same_classattribute_node' )` | `eZContentFunctionCollection::fetchSameClassAttributeNodeList()` | `kernel/content/function_definition.php:960` |
+| `fetch( 'content', 'keyword' )` | `eZContentFunctionCollection::fetchKeyword()` | `kernel/content/function_definition.php:975` |
+| `fetch( 'content', 'keyword_count' )` | `eZContentFunctionCollection::fetchKeywordCount()` | `kernel/content/function_definition.php:1021` |
+| `fetch( 'content', 'assigned_nodes' )` | `eZContentFunctionCollection::fetchAssignedNodes()` | `kernel/content/function_definition.php:1061` |
+| `fetch( 'content', 'assigned_node_count' )` | `eZContentFunctionCollection::fetchAssignedNodeCount()` | `kernel/content/function_definition.php:1086` |
+| `fetch( 'content', 'access' )` | `eZContentFunctionCollection::checkAccess()` | `kernel/content/function_definition.php:1094` |
+| `fetch( 'content', 'navigation_parts' )` | `eZContentFunctionCollection::fetchNavigationParts()` | `kernel/content/function_definition.php:1119` |
+| `fetch( 'content', 'navigation_part' )` | `eZContentFunctionCollection::fetchNavigationPart()` | `kernel/content/function_definition.php:1127` |
+| `fetch( 'content', 'related_objects' )` | `eZContentFunctionCollection::fetchRelatedObjects()` | `kernel/content/function_definition.php:1137` |
+| `fetch( 'content', 'related_objects_count' )` | `eZContentFunctionCollection::fetchRelatedObjectsCount()` | `kernel/content/function_definition.php:1186` |
+| `fetch( 'content', 'reverse_related_objects' )` | `eZContentFunctionCollection::fetchReverseRelatedObjects()` | `kernel/content/function_definition.php:1203` |
+| `fetch( 'content', 'reverse_related_objects_count' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsCount()` | `kernel/content/function_definition.php:1247` |
+| `fetch( 'content', 'available_sort_fields' )` | `eZContentFunctionCollection::fetchAvailableSortFieldList()` | `kernel/content/function_definition.php:1267` |
+| `fetch( 'content', 'country_list' )` | `eZContentFunctionCollection::fetchCountryList()` | `kernel/content/function_definition.php:1274` |
+| `fetch( 'content', 'country_groups' )` | `eZContentFunctionCollection::fetchCountryGroups()` | `kernel/content/function_definition.php:1288` |
+| `fetch( 'content', 'related_objects_ids' )` | `eZContentFunctionCollection::fetchRelatedObjectsID()` | `kernel/content/function_definition.php:1298` |
+| `fetch( 'content', 'reverse_related_objects_ids' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsID()` | `kernel/content/function_definition.php:1315` |
+| `fetch( 'content', 'site_data' )` | `eZContentFunctionCollection::fetchSiteData()` | `kernel/content/function_definition.php:1334` |
+| `fetch( 'content', 'content_tree_menu_expiry' )` | `eZContentFunctionCollection::fetchContentTreeMenuExpiry()` | `kernel/content/function_definition.php:1343` |
+| `fetch( 'datatable', 'list' )` | `expDataTableFunctionCollection::fetchList()` | `kernel/datatable/function_definition.php:13` |
+| `fetch( 'datatable', 'count' )` | `expDataTableFunctionCollection::fetchCount()` | `kernel/datatable/function_definition.php:23` |
+| `fetch( 'datatable', 'row' )` | `expDataTableFunctionCollection::fetchRow()` | `kernel/datatable/function_definition.php:30` |
+| `fetch( 'datatable', 'pointing_at' )` | `expDataTableFunctionCollection::fetchPointingAt()` | `kernel/datatable/function_definition.php:37` |
+| `fetch( 'datatable', 'can' )` | `expDataTableFunctionCollection::fetchCan()` | `kernel/datatable/function_definition.php:44` |
 | `fetch( 'exphelp', 'context' )` | `expHelpFunctionCollection::fetchContext()` | `kernel/exphelp/function_definition.php:16` |
 | `fetch( 'exphelp', 'license' )` | `expHelpFunctionCollection::fetchLicense()` | `kernel/exphelp/function_definition.php:25` |
 | `fetch( 'exphelp', 'context_menu' )` | `expHelpFunctionCollection::fetchContextMenu()` | `kernel/exphelp/function_definition.php:33` |
+| `fetch( 'exphelp', 'site_topic' )` | `expHelpFunctionCollection::fetchSiteTopic()` | `kernel/exphelp/function_definition.php:45` |
+| `fetch( 'exphelp', 'site_map' )` | `expHelpFunctionCollection::fetchSiteMap()` | `kernel/exphelp/function_definition.php:51` |
 | `fetch( 'infocollector', 'collected_info_count' )` | `eZInfocollectorFunctionCollection::fetchCollectedInfoCount()` | `kernel/infocollector/function_definition.php:13` |
 | `fetch( 'infocollector', 'collected_info_count_list' )` | `eZInfocollectorFunctionCollection::fetchCollectedInfoCountList()` | `kernel/infocollector/function_definition.php:39` |
 | `fetch( 'infocollector', 'collected_info_collection' )` | `eZInfocollectorFunctionCollection::fetchCollectedInfoCollection()` | `kernel/infocollector/function_definition.php:50` |
@@ -475,7 +552,8 @@ Eine benannte Abfrage, die Templates mit fetch( module, function, hash(...) ) au
 | `fetch( 'setup', 'edition' )` | `eZSetupFunctionCollection::fetchEdition()` | `kernel/setup/function_definition.php:70` |
 | `fetch( 'setup', 'extension_counts' )` | `eZSetupFunctionCollection::fetchExtensionCounts()` | `kernel/setup/function_definition.php:76` |
 | `fetch( 'setup', 'cronjob_pauses' )` | `eZSetupFunctionCollection::fetchCronjobPauses()` | `kernel/setup/function_definition.php:86` |
-| `fetch( 'setup', 'log_files' )` | `eZSetupFunctionCollection::fetchLogFiles()` | `kernel/setup/function_definition.php:94` |
+| `fetch( 'setup', 'cronjob_status' )` | `eZSetupFunctionCollection::fetchCronjobStatus()` | `kernel/setup/function_definition.php:94` |
+| `fetch( 'setup', 'log_files' )` | `eZSetupFunctionCollection::fetchLogFiles()` | `kernel/setup/function_definition.php:102` |
 | `fetch( 'shop', 'basket' )` | `eZShopFunctionCollection::fetchBasket()` | `kernel/shop/function_definition.php:11` |
 | `fetch( 'shop', 'best_sell_list' )` | `eZShopFunctionCollection::fetchBestSellList()` | `kernel/shop/function_definition.php:18` |
 | `fetch( 'shop', 'related_purchase' )` | `eZShopFunctionCollection::fetchRelatedPurchaseList()` | `kernel/shop/function_definition.php:54` |

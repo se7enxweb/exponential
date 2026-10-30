@@ -125,6 +125,9 @@ Der Index aller Designer-Seiten, Bereich für Bereich: [Designer-Hilfe, alle Sei
 - [Der Layout-Editor](../layout-editor.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
+<!-- exp-see-also-645 -->
+**Siehe auch:** [Theme-Designer](../theme-designer/theme-designer-hier-beginnen.md), [CMS-Entwickler](../cms-entwickler/cms-entwickler-hier-beginnen.md).
+
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
 und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte

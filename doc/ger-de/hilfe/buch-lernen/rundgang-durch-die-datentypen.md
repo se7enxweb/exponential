@@ -54,7 +54,7 @@ Filter oder einer Sortierung darauf verlassen.
 |---|---|---|
 | `ezselection` | einen oder mehrere Werte aus einer Liste, die die Klasse definiert | Der Ersatz für `ezenum` laut Buch. |
 | `ezenum` | eine Liste von Werten, einfach oder mehrfach | Seit 3.3 wegen seiner Komplexität und seines Aufwands veraltet. Er ist für alte Klassen noch installiert; verwenden Sie ihn nicht für neue. |
-| `ezoption`, `ezmultioption`, `ezmultioption2`, `ezrangeoption` | Optionen mit Preisen für einen Shop | Siehe [E-Commerce](../../../eng-us/help/e-commerce/e-commerce-reading-path.md). |
+| `ezoption`, `ezmultioption`, `ezmultioption2`, `ezrangeoption` | Optionen mit Preisen für einen Shop | Siehe [E-Commerce](../e-commerce/lesepfad-fuer-e-commerce.md). |
 | `ezkeyword` | durch Kommas getrennte Schlüsselwörter | Objekte mit einem gemeinsamen Schlüsselwort lassen sich zusammen auflisten („siehe auch“); siehe [Häufige Aufgaben mit Templates](haeufige-aufgaben-mit-templates.md). |
 | `ezcountry` | ein Land (oder mehrere) | |
 

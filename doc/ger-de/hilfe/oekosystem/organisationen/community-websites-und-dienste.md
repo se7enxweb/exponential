@@ -40,7 +40,7 @@ type: help
 | Telegram | <https://t.me/exponentialcms> |
 | Discord und Slack | Verlinkt unter "Um Hilfe bitten" in [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md) |
 
-Was Sie wofür verwenden: [Wo sich Menschen treffen](../../../../eng-us/help/community/joining/where-people-meet.md).
+Was Sie wofür verwenden: [Wo sich Menschen treffen](../../gemeinschaft/beitreten/wo-sich-menschen-treffen.md).
 
 ## Was die Roadmap für sie plant
 

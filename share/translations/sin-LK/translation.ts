@@ -77241,6 +77241,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>පාස්කී එක පරීක්ෂා කළ නොහැකි විය. කරුණාකර නැවත උත්සාහ කරන්න.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>පාස්කී වලින් පමණක් පිවිසෙන ගිණුම්වලට මෙහි මුරපදයක් භාවිතා කළ නොහැක: &quot;පාස්කී එකකින් පිවිසෙන්න&quot; තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login ගේ පාස්කී</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>මෙම ගිණුම පිවිසෙන පාස්කී. නැතිවූ හෝ සොරකම් කළ උපාංගයක ඇති එකක් අහෝසි කරන්න: එයින් තවදුරටත් පිවිසිය නොහැක. අලුත් ඒවා හිමිකරු විසින්ම එක් කරයි.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>ඔබේ ගිණුමට පාස්කී එකක් අවශ්‍යයි</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>ඔබේ ගිණුමට පාස්කී එකක් එක් කරන්න</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>ඉදිරියට යාමට පාස්කී එකක් එක් කරන්න. ඉන්පසු ඔබ මුරපදයකින් පමණක් නොව එයින් පිවිසෙනු ඇත.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>පාස්කී එකකින් පිවිසීම මුරපදයකට වඩා වේගවත් හා ආරක්ෂිතයි. දැන්ම එකක් එක් කරන්න, නැතහොත් එය නොමැතිව ඉදිරියට යන්න.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>දැන් නොවේ</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>&quot;%name&quot; පාස්කී එක අහෝසි කරන්නද?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>එයින් තවදුරටත් මෙම ගිණුමට පිවිසිය නොහැක. එය අවසාන එක නම්, හිමිකරු මුරපදයෙන් පිවිසෙයි, නැතහොත් ඔබ අලුත් එකක් සකසයි.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>පාස්කී එක අහෝසි කරන්න</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>අහෝසි කරන්න</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>මෙම ගිණුමට පාස්කී එකක් නැත.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>සත්‍යාපකය</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>නොදන්නා</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>ඔබේ අවසාන පාස්කී එක: එය ඉවත් කිරීමට පෙර තවත් එකක් එක් කරන්න.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>මෙම ගිණුම පාස්කී වලින් පමණක් පිවිසෙයි (පාස්කී ප්‍රතිපත්තිය): කිසිවක් ඉතිරි නැති විට, එය නැවත සිය මුරපදයෙන් පිවිසෙයි.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>මෙය ඔබේ අවසාන පාස්කී එක වන අතර එකක් නොමැතිව ඔබේ ගිණුමට පිවිසිය නොහැක. පළමුව තවත් පාස්කී එකක් එක් කරන්න.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>&quot;%name&quot; පාස්කී එක අහෝසි කර ඇත. එයින් තවදුරටත් මෙම ගිණුමට පිවිසිය නොහැක.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>ඔබේ සත්‍යාපන යෙදුමේ කේතය</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>ඔබ දත්ත ස්ථිරවම මකා දැමීමට හෝ ලොගයක් හිස් කිරීමට යන්නේය.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>ඔබේ මුරපදය සහ පාස්කී එකක්</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>ඔබේ මුරපදය සහ ඔබේ සත්‍යාපක යෙදුමේ කේතයක්</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>නැතහොත්:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>මෙම බ්‍රව්සරයට පාස්කී භාවිතා කළ නොහැක. වෙනත් ක්‍රමයක් හෝ වෙනත් බ්‍රව්සරයක් භාවිතා කරන්න.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>ඔබ ඉදිරියට යන විට, ඔබේ බ්‍රව්සරය ඔබේ පාස්කී වලින් එකක් ඉල්ලයි.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>පාස්කී එකකින් ඉදිරියට යන්න</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>පිහිටුවීම</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>තමාගේම මුරපදය, ඊමේල් ලිපිනය, පාස්කී, පියවර දෙකේ පිවිසුම, ප්‍රතිසාධන කේත හෝ API යතුරු වෙනස් කිරීම සහ තමාගේ අනෙකුත් උපාංගවලින් ඉවත් වීම.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>පරිශීලකයින්, ඔවුන්ගේ මුරපද සහ උපාංග, ගිණුම් සැකසුම් සෑදීම සහ සංස්කරණය, නව පරිශීලක ගිණුම් අනුමත කිරීම හෝ ප්‍රතික්ෂේප කිරීම, භූමිකා පැවරීම සහ ප්‍රතිපත්ති සංස්කරණය.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>දත්ත මකා දැමීම</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>කුණු බඳුන හිස් කිරීම, එයින් අයිතම ඉවත් කිරීම සහ අයිතම කිහිපයක් එකවර ඉවත් කිරීම.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>අන්තර්ගතය ඉවත් කිරීම, ප්‍රකාශනය සහ සුරැකීම</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>අන්තර්ගතය ඉවත් කිරීම (කුණු බඳුනට ද), ප්‍රකාශනය සහ කෙටුම්පතක් සුරැකීම, පෝරමය යවන විට අසයි. පෙරනිමියෙන් අක්‍රියයි.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>සංවේදී ක්‍රියාවකට පෙර පිවිසී ඇති පරිශීලකයා තමා කවුදැයි නැවත තහවුරු කරයි: සිය මුරපදය සහ පාස්කී එකකින්, නැතහොත් පාස්කී එකක් නොමැතිව සිය මුරපදය සහ සත්‍යාපක යෙදුමේ කේතයෙන්. වෙබ් පිටු පමණක් අසයි: REST අතුරුමුහුණත, SOAP, WebDAV, expservices පිවිසුම සහ විධාන රේඛාව කිසිදා නොඅසයි.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>සැකසුම් අදාළ වන්නේ කොතැනද</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>සැකසුම් සඳහා</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>සෑම අඩවි ප්‍රවේශයක්ම</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>අඩවි ප්‍රවේශය %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>විවෘත කරන්න</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>අසනු ලබන්නේ කාගෙන්ද: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>ඔවුන්ගේ සාමාජිකයින්ගෙන් පමණක් ඇසීමට පරිශීලක සමූහ ලකුණු කරන්න (උදාහරණයක් ලෙස සංස්කාරකවරුන්). කිසිවක් ලකුණු කර නැත: සෑම පරිශීලකයෙක්ම.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php හි, සෑම අඩවි ප්‍රවේශයක් සඳහාම සුරැකේ. සුරැකීමේදී එය ඔබ බව තහවුරු කිරීමට ඉල්ලයි.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php හි සුරැකේ. settings/override හි ඇති අගයට ප්‍රමුඛතාව ඇත. සුරැකීමේදී එය ඔබ බව තහවුරු කිරීමට ඉල්ලයි.</translation>
     </message>
 </context>
 <context>
@@ -77786,6 +77954,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>ඔබේ ගිණුම අගුළු දමන ලදී</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site හි ඔබේ %login ගිණුමට පාස්කී එකක් එක් කරන ලදී.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>මෙම පාස්කී එක ඇති ඕනෑම අයෙකුට ඔබේ මුරපදය නොමැතිව ඔබේ ගිණුමට පිවිසිය හැක. ඔබ එය එක් නොකළේ නම්, පාස්කී යටතේ එය ඉවත් කර ඔබේ මුරපදය වෙනස් කරන්න.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site හි ඔබේ %login ගිණුමෙන් පාස්කී එකක් ඉවත් කරන ලදී.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>එයින් තවදුරටත් ඔබේ ගිණුමට පිවිසිය නොහැක. ඔබ එය ඉවත් නොකළේ නම්, ඔබේ පාස්කී සහ උපාංග පරීක්ෂා කරන්න.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>ඔබේ ගිණුමට පාස්කී එකක් එක් කරන ලදී</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>ඔබේ ගිණුමෙන් පාස්කී එකක් ඉවත් කරන ලදී</translation>
     </message>
 </context>
 <context>

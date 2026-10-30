@@ -288,12 +288,20 @@ Website nicht gebraucht.
 
 ## 3.4 Das Velocity-Paket
 
-Exponential Velocity, der empfohlene Anwendungsserver, ist ein eigenes Paket,
-[`se7enxweb/exponential-velocity`](https://packagist.org/packages/se7enxweb/exponential-velocity). `composer.json`
-verlangt es als `~0.0.4.57`, sodass `composer install` es installiert. Seit dem Release 0.0.4.54 läuft die Engine unter PHP
-8.0 bis 8.5 (`"php": ">=8.0"`, dieselbe älteste Version wie beim Kernel) und braucht die Erweiterung `sockets`
-(`"ext-sockets": "*"`). Bis 0.0.4.54 brauchte die Engine PHP 8.1, und `composer.json` schlug sie nur vor; eine
-Installation aus dieser Zeit fügt sie so hinzu:
+Seit 6.0.15 ist Exponential Velocity, der Internet / Web Application Server und die empfohlene Engine für jede Stufe,
+Teil von Exponential. Es ist das Paket
+[`se7enxweb/exponential-velocity`](https://packagist.org/packages/se7enxweb/exponential-velocity), und die
+`composer.json` im Wurzelverzeichnis **verlangt** es (vor 6.0.15 wurde es nur vorgeschlagen):
+
+```json
+"se7enxweb/exponential-velocity": "~0.0.4.57"
+```
+
+Velocity 0.0.4.54 läuft unter PHP 8.0 und höher (`"php": ">=8.0"`) und braucht die Erweiterung `sockets`
+(`"ext-sockets": "*"`), sodass dasselbe PHP, das den Kernel ausführt, auch den Server ausführt, das mitgelieferte
+PHP 8.0 von Red Hat Enterprise Linux 9 eingeschlossen. Ein einfaches `composer install` installiert es; mehr ist nicht
+nötig. Bis 0.0.4.54 brauchte die Engine PHP 8.1, und `composer.json` schlug sie nur vor; eine Installation aus dieser
+Zeit fügt sie so hinzu:
 
 ```bash
 composer require se7enxweb/exponential-velocity:~0.0.4.57

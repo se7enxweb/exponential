@@ -77241,6 +77241,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Кіру кілтін тексеру мүмкін болмады. Қайталап көріңіз.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Тек кіру кілттерімен кіретін тіркелгілер мұнда құпиясөзді пайдалана алмайды: «Кіру кілтімен кіру» тармағын таңдаңыз.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login кіру кілттері</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Бұл тіркелгі кіретін кіру кілттері. Жоғалған немесе ұрланған құрылғыдағы кілтті кері қайтарып алыңыз: онымен енді кіру мүмкін болмайды. Жаңаларын иесі өзі қосады.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Тіркелгіңізге кіру кілті қажет</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Тіркелгіңізге кіру кілтін қосу</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Жалғастыру үшін кіру кілтін қосыңыз. Содан кейін тек құпиясөздің орнына сонымен кіресіз.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Кіру кілтімен кіру құпиясөзге қарағанда жылдамырақ әрі қауіпсізірек. Қазір біреуін қосыңыз немесе онсыз жалғастырыңыз.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Қазір емес</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>«%name» кіру кілтін кері қайтарып алу керек пе?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Онымен бұл тіркелгіге енді кіру мүмкін болмайды. Егер ол соңғысы болса, иесі құпиясөзбен кіреді немесе сіз жаңасын орнатасыз.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Кіру кілтін кері қайтарып алу</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Кері қайтарып алу</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Бұл тіркелгіде кіру кілті жоқ.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Аутентификатор</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Белгісіз</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Соңғы кіру кілтіңіз: оны алып тастамас бұрын басқасын қосыңыз.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Бұл тіркелгі тек кіру кілттерімен кіреді (кіру кілттері саясаты): бірде-біреуі қалмаса, ол қайтадан өз құпиясөзімен кіреді.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Бұл сіздің соңғы кіру кілтіңіз, тіркелгіңіз онсыз кіре алмайды. Алдымен басқа кіру кілтін қосыңыз.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>«%name» кіру кілті кері қайтарып алынды. Онымен бұл тіркелгіге енді кіру мүмкін емес.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>Аутентификатор қолданбасындағы код</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Сіз деректерді біржола жоюға немесе журналды тазалауға бара жатырсыз.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Құпиясөзіңіз және кіру кілті</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Құпиясөзіңіз және аутентификатор қолданбаңыздағы код</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Немесе:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Бұл браузер кіру кілттерін пайдалана алмайды. Басқа тәсілді немесе басқа браузерді пайдаланыңыз.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Жалғастырсаңыз, браузеріңіз кіру кілттеріңіздің бірін сұрайды.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Кіру кілтімен жалғастыру</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>Баптау</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Өз құпиясөзін, электрондық пошта мекенжайын, кіру кілттерін, екі қадамды кіруді, қалпына келтіру кодтарын немесе API кілттерін өзгерту және өзінің басқа құрылғыларынан шығу.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Пайдаланушыларды, олардың құпиясөздері мен құрылғыларын, тіркелгі баптауларын жасау және өңдеу, жаңа пайдаланушы тіркелгілерін мақұлдау немесе қабылдамау, рөлдер тағайындау және саясаттарды өңдеу.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Деректерді жою</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Қоқыс себетін босату, одан элементтерді алып тастау және бірнеше элементті бірден алып тастау.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Мазмұнды алып тастау, жариялау және сақтау</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Мазмұнды алып тастау (қоқыс себетіне де), жариялау және жобаны сақтау; пішін жіберілгенде сұралады. Әдепкіде өшірулі.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Маңызды әрекет алдында жүйеге кірген пайдаланушы өзінің кім екенін қайта растайды: құпиясөзімен және кіру кілтімен, немесе кіру кілті болмаса, құпиясөзімен және аутентификатор қолданбасының кодымен. Тек веб-беттер сұрайды: REST интерфейсі, SOAP, WebDAV, expservices кіруі және командалық жол ешқашан сұрамайды.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Баптаулар қай жерде қолданылады</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Баптаулар:</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Әр сайтқа кіру нүктесі</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Тек %name сайтқа кіру нүктесі</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ашу</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Кімнен сұралады: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Тек мүшелерінен сұрау үшін пайдаланушылар топтарын белгілеңіз (мысалы, редакторлар). Ештеңе белгіленбесе: әр пайдаланушы.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php файлына әр сайтқа кіру нүктесі үшін сақталды. Сақтау кезінде өзіңіз екеніңізді растау сұралады.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php файлына сақталды. settings/override ішіндегі мән оның алдында басым. Сақтау кезінде өзіңіз екеніңізді растау сұралады.</translation>
     </message>
 </context>
 <context>
@@ -77786,6 +77954,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>Тіркелгіңіз бұғатталды</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site сайтындағы %login тіркелгіңізге кіру кілті қосылды.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Бұл кіру кілті бар кез келген адам құпиясөзіңізсіз тіркелгіңізге кіре алады. Егер оны сіз қоспаған болсаңыз, оны «Кіру кілттері» бөлімінде алып тастап, құпиясөзіңізді өзгертіңіз.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site сайтындағы %login тіркелгіңізден кіру кілті алып тасталды.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Онымен тіркелгіңізге енді кіру мүмкін емес. Егер оны сіз алып тастамаған болсаңыз, кіру кілттеріңіз бен құрылғыларыңызды тексеріңіз.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Тіркелгіңізге кіру кілті қосылды</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Тіркелгіңізден кіру кілті алып тасталды</translation>
     </message>
 </context>
 <context>

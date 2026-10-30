@@ -77241,6 +77241,82 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>The passkey could not be checked. Please try again.</source>
         <translation>ʻAʻole hiki ke nānā ʻia ke kī komo. E ʻoluʻolu, e hoʻāʻo hou.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>ʻAʻole hiki i nā moʻokāki e ʻeʻe me nā kī komo wale nō ke hoʻohana i ka ʻōlelo huna ma ʻaneʻi: e koho i &quot;ʻEʻe me kahi kī komo&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Nā kī komo o %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Nā kī komo e ʻeʻe ai kēia moʻokāki. E hoʻopau i ka mea e waiho ana ma kahi hāmeʻa i nalowale a i ʻaihue ʻia: ʻaʻole hiki iā ia ke ʻeʻe hou. Na ka mea nona ka moʻokāki e hoʻohui i nā mea hou.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Pono kāu moʻokāki i kahi kī komo</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Hoʻohui i kahi kī komo i kāu moʻokāki</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>E hoʻohui i kahi kī komo e hoʻomau ai. A laila e ʻeʻe ʻoe me ia ma kahi o ka ʻōlelo huna wale nō.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>ʻOi aku ka wikiwiki a me ka palekana o ka ʻeʻe ʻana me kahi kī komo ma mua o ka ʻōlelo huna. E hoʻohui i hoʻokahi i kēia manawa, a i ʻole e hoʻomau me ka ʻole.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>ʻAʻole i kēia manawa</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Hoʻopau i ke kī komo &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>ʻAʻole hiki iā ia ke ʻeʻe hou i kēia moʻokāki. Inā ʻo ia ka mea hope loa, e ʻeʻe ka mea nona ka moʻokāki me ka ʻōlelo huna, a i ʻole e hoʻonoho ʻoe i kekahi mea hou.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Hoʻopau i ke kī komo</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Hoʻopau</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>ʻAʻohe kī komo o kēia moʻokāki.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Mea hōʻoia</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>ʻIke ʻole ʻia</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Kāu kī komo hope loa: e hoʻohui i kekahi ʻē aʻe ma mua o kou wehe ʻana iā ia.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>ʻEʻe kēia moʻokāki me nā kī komo wale nō (kulekele kī komo): inā ʻaʻohe i koe, e ʻeʻe hou ia me kāna ʻōlelo huna.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>ʻO kēia kāu kī komo hope loa a ʻaʻole hiki i kāu moʻokāki ke ʻeʻe me ka ʻole. E hoʻohui mua i kekahi kī komo ʻē aʻe.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Ua hoʻopau ʻia ke kī komo &quot;%name&quot;. ʻAʻole hiki iā ia ke ʻeʻe hou i kēia moʻokāki.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>Code from your authenticator app</source>
         <translation>Code mai kāu noi hōʻoia</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Ke holoi mau loa aku nei ʻoe i ka ʻikepili a i ʻole ke hoʻonele nei i kekahi moʻolelo hana.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Kāu ʻōlelo huna a me kahi kī komo</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Kāu ʻōlelo huna a me kahi code mai kāu noi hōʻoia</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>A i ʻole:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>ʻAʻole hiki i kēia polokalamu kele pūnaewele ke hoʻohana i nā kī komo. E hoʻohana i kekahi ala ʻē aʻe, a i ʻole kekahi polokalamu kele ʻē aʻe.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Ke hoʻomau ʻoe, e noi ana kāu polokalamu kele i kekahi o kāu mau kī komo.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Hoʻomau me kahi kī komo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>Setup</source>
         <translation>Hoʻonohonoho</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Ka hoʻololi ʻana i kāu ʻōlelo huna ponoʻī, ka helu wahi leka uila, nā kī komo, ka ʻeʻe pae ʻelua, nā code hoʻihoʻi a i ʻole nā kī API, a me ka hoʻopau ʻana i ka ʻeʻe ma kāu mau hāmeʻa ʻē aʻe.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Ka hana a hoʻoponopono ʻana i nā mea hoʻohana, kā lākou mau ʻōlelo huna a me nā hāmeʻa, nā hoʻonohonoho moʻokāki, ka ʻae a hōʻole ʻana i nā moʻokāki mea hoʻohana hou, ka hāʻawi ʻana i nā kuleana a me ka hoʻoponopono ʻana i nā kulekele.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Ka holoi ʻana i ka ʻikepili</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Ka hoʻonele ʻana i ka pahu ʻōpala, ka wehe ʻana i nā mea mai loko mai a me ka wehe ʻana i nā mea he nui i ka manawa hoʻokahi.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Ka wehe, hoʻopuka a mālama ʻana i ka ʻike</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Ka wehe ʻana i ka ʻike (i ka pahu ʻōpala nō hoʻi), ka hoʻopuka ʻana a me ka mālama ʻana i kahi kāmua; nīnau ʻia ke hoʻouna ʻia ka palapala. Pio ma ke ʻano maʻamau.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Ma mua o kekahi hana koʻikoʻi, hōʻoia hou ka mea hoʻohana i ʻeʻe ʻia ʻo wai ʻo ia: me kāna ʻōlelo huna a me kahi kī komo, a i ʻole me ka ʻole o ke kī komo me kāna ʻōlelo huna a me ka code o kāna noi hōʻoia. Nīnau wale nā ʻaoʻao pūnaewele: ʻaʻole loa e nīnau ka pilina REST, SOAP, WebDAV, ka ʻeʻe expservices a me ka laina kauoha.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Kahi e pili ai nā hoʻonohonoho</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Nā hoʻonohonoho no</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Kēlā me kēia siteaccess</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>ʻO ka siteaccess %name wale nō</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Wehe</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>ʻO wai ka mea i nīnau ʻia: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>E kaha i nā pūʻulu mea hoʻohana e nīnau wale ai i ko lākou mau lālā (nā mea hoʻoponopono, no ka laʻana). ʻAʻohe i kaha ʻia: kēlā me kēia mea hoʻohana.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Mālama ʻia ma settings/override/site.ini.append.php, no kēlā me kēia siteaccess. Ke mālama ʻoe, e noi ʻia ʻoe e hōʻoia ʻo ʻoe nō.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Mālama ʻia ma settings/siteaccess/%name/site.ini.append.php. Lanakila ka waiwai ma settings/override ma luna ona. Ke mālama ʻoe, e noi ʻia ʻoe e hōʻoia ʻo ʻoe nō.</translation>
     </message>
 </context>
 <context>
@@ -77786,6 +77954,30 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>Your account was locked</source>
         <translation>Ua laka ʻia kāu moʻokāki</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Ua hoʻohui ʻia kahi kī komo i kāu moʻokāki %login ma %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Hiki i ka mea e paʻa ana i kēia kī komo ke ʻeʻe i kāu moʻokāki me ka ʻole o kāu ʻōlelo huna. Inā ʻaʻole ʻoe i hoʻohui iā ia, e wehe iā ia ma lalo o Nā kī komo a e hoʻololi i kāu ʻōlelo huna.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Ua wehe ʻia kahi kī komo mai kāu moʻokāki %login ma %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>ʻAʻole hiki iā ia ke ʻeʻe hou i kāu moʻokāki. Inā ʻaʻole ʻoe i wehe iā ia, e nānā i kāu mau kī komo a me nā hāmeʻa.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Ua hoʻohui ʻia kahi kī komo i kāu moʻokāki</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Ua wehe ʻia kahi kī komo mai kāu moʻokāki</translation>
     </message>
 </context>
 <context>

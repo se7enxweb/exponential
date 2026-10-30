@@ -23,7 +23,7 @@ class ExpProcessToolsTest extends TestCase
 
     private static function child( $basedir )
     {
-        $cmd = array( PHP_BINARY, '-n' );
+        $cmd = expTestBarePhpCommand();
         if ( $basedir !== '' )
             array_push( $cmd, '-d', 'open_basedir=' . $basedir );
         $code = 'require ' . var_export( self::root() . '/kernel/classes/expprocesstools.php', true ) . ';'

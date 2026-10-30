@@ -2,7 +2,7 @@
 title: Muster in extension/ezgmaplocation
 audience: developer
 category: standards
-order: 441
+order: 445
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezgmaplocation mit den Entwurfsmustern.
 keywords: extension/ezgmaplocation, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -15,11 +15,12 @@ type: catalogue
 
 Jede Klasse, Schnittstelle und jeder Trait von `extension/ezgmaplocation` mit den Mustern, als die sie erkannt wurden, gefolgt von den Modulansichten, Richtlinienfunktionen, Fetch-Funktionen, Template-Operatoren, Cronjobs, Ereignis-Hooks und INI-Plugin-Punkten des Bereichs. [Alle Muster](README.md).
 
-## Klassen (3)
+## Klassen (4)
 
 | Klasse | Art | Muster | Datei | Beschreibung |
 | --- | --- | --- | --- | --- |
 | `eZGmapLocation` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Fabrik und statische Fabrikmethoden](fabrik.md) | `extension/ezgmaplocation/classes/ezgmaplocation.php:40` | Hilfsklasse, die zusammen mit dem Datentyp eZGmapLocationType verwendet wird. |
+| `ezgmaplocationInfo` | class | [Wertobjekt / Struktur](wertobjekt.md) | `extension/ezgmaplocation/ezinfo.php:7` | – |
 | `eZGmapLocationType` | class extends eZDataType | [Datentyp (Strategie für Inhaltsfelder)](datentyp.md) | `extension/ezgmaplocation/datatypes/ezgmaplocation/ezgmaplocationtype.php:39` | Klasse, die den Datentyp eZGmapLocationType bereitstellt. |
 | `ezgmlLocationFilter` | class | [Dekorierer / Filter](dekorierer.md), [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `extension/ezgmaplocation/classes/ezgmllocationfilter.php:32` | – |
 

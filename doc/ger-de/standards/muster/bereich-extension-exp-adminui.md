@@ -2,7 +2,7 @@
 title: Muster in extension/exp_adminui
 audience: developer
 category: standards
-order: 432
+order: 436
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/exp_adminui mit den Entwurfsmustern.
 keywords: extension/exp_adminui, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

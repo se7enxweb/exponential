@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/vathandlers
 audience: developer
 category: standards
-order: 510
+order: 522
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/vathandlers mit den Entwurfsmustern.
 keywords: kernel/classes/vathandlers, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

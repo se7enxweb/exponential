@@ -66,10 +66,10 @@ Wahl ist.
 | Lizenz der Dokumentation | GNU Free Documentation License 1.3 oder später | [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md), [Freie Dokumentation](../freie-dokumentation.md) |
 | Quellcode und Historie | Die vollständige Historie ist erhalten, zurück bis zum ältesten Commit vom 2. September 2002; 27.242 Commits auf `main` am 18. Oktober 2026 | [Wer ist 7x?, Die Jahre von eZ Publish](../wer-ist-7x.md#die-jahre-von-ez-publish-1999-bis-2021) |
 | Herkunft | Urheberrechtsvermerk „1998 - 2026 7x & Exponential Foundation“ neben „1999 - 2014 eZ Systems AS“ | `COPYRIGHT.md` |
-| Selbst-Hosting | Läuft auf „fast jedem [Betriebssystem], auf dem PHP 8.0 oder später läuft“, in vier dokumentierten Stufen | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
+| Selbst-Hosting | Läuft auf „fast jedem [Betriebssystem], auf dem PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar) läuft“, in vier dokumentierten Stufen | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
 | Datenbanken | „1. SQLite 3 (Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL“ | [Unterstützte Datenbanken](../datenbankunterstuetzung.md) |
 | Webserver | Exponential Velocity (empfohlen), Apache, nginx, FrankenPHP, LiteSpeed, Caddy, IIS, lighttpd und weitere | [Unterstützte Betriebssysteme, Webserver](../betriebssystemunterstuetzung.md#webserver), `README.md` |
-| PHP-Versionen | PHP 8.0 bis 8.5, einschließlich Velocity (ab seinem Release 0.0.4.54); PHP 7.4 nur bis 6.0.7 | [Wer ist die Exponential Foundation?, PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
+| PHP-Versionen | PHP 8.0 bis 8.5, einschließlich Velocity (ab seinem Release 0.0.4.54); PHP 7.4 ab 6.0.15 ohne Support nutzbar | [Wer ist die Exponential Foundation?, PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | Unveränderliche Releases | „Ein veröffentlichter Tag wird nie geändert“: Eine Korrektur kommt mit dem nächsten Release | `SECURITY.md` |
 | Sicherheitsprozess | Vertrauliche Meldung, eine erste Antwort „innerhalb eines Werktags“, Korrekturen auf `main` und im nächsten 6.0.x-Release | `SECURITY.md` |
 | Continuous Integration | Qualitätsprüfungen und PHPUnit bei jedem Push und jedem Pull-Request; PHPUnit unter PHP 8.1 bis 8.5; Datenbanktests mit MySQL 8.0 und PostgreSQL 15; Startprüfung unter PHP 8.0 | [Continuous Integration](../../bc/6.0/ci.md) |
@@ -150,7 +150,7 @@ ausgefüllt; die anderen Spalten überlassen Sie dem Käufer.
 | License of the code               | GPL v2 or later, free of charge                     |          |          | LICENSE      |
 | License of the documentation      | GNU FDL 1.3 or later                                |          |          | doc/eng-us/README-LICENSE.md |
 | Source and full history public    | Yes, since 2002                                     |          |          | git log      |
-| Self-hosting                      | Yes, any OS with PHP 8.0+ (tiers)                   |          |          | os-support   |
+| Self-hosting                      | Yes, any OS with PHP 8.0+ (7.4 ohne Support nutzbar) (tiers)                   |          |          | os-support   |
 | Databases                         | SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |          |          | database-support |
 | Web servers                       | Velocity, Apache, nginx, FrankenPHP and others      |          |          | os-support   |
 | PHP versions                      | 8.0 to 8.5                                          |          |          | composer.json |

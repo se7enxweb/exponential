@@ -34,7 +34,7 @@ $result = eZFunctionHandler::execute( 'shop', 'currency', array( 'code' => 'code
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/shop/archivelist.tpl` Zeile 61:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/shop/archivelist.tpl` Zeile 63:
 
 ```tpl
 {set $currency = fetch( 'shop', 'currency', hash( 'code', $Orders.item.productcollection.currency_code ) )}

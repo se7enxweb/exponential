@@ -4326,7 +4326,7 @@
     </message>
     <message>
         <source>Stay on this page after making a new draft (untick to open the new draft in the editor at once).</source>
-        <translation>Tikia ũrũa-inĩ ũyũ thutha wa kũumba ndrafti njerũ (ehereria alama nĩguo ũhingũre ndrafti njerũ kĩnyamũ-inĩ kĩa gũcenjia o hĩndĩ ĩyo).</translation>
+        <translation>Tikia ũrũa-inĩ ũyũ thutha wa kũumba ndrafti njerũ (ehereria alama nĩguo ũhingũre ndrafti njerũ porogiramu-inĩ ya gũcenjia o hĩndĩ ĩyo).</translation>
     </message>
     <message>
         <source>%count selected.</source>
@@ -5206,7 +5206,7 @@
     </message>
     <message>
         <source>Adds a language content can be translated into. It does not translate anything and changes no siteaccess: afterwards, translate content into it in the editor and add it to the SiteLanguageList of the siteaccesses that should show it.</source>
-        <translation>Nĩ ĩongerera rũthiomi rũrĩa ũhoro ũngĩtaũrwo. Ndĩtaũraga kĩndũ na ndĩgarũragia njĩra ya saiti o yothe: thutha wa ũguo, taũra ũhoro rũthiomi-inĩ rũu kĩnyamũ-inĩ kĩa gũcenjia na ũrwongerere SiteLanguageList ya njĩra cia saiti iria ikwagĩrĩrũo kũrwonania.</translation>
+        <translation>Nĩ ĩongerera rũthiomi rũrĩa ũhoro ũngĩtaũrwo. Ndĩtaũraga kĩndũ na ndĩgarũragia njĩra ya saiti o yothe: thutha wa ũguo, taũra ũhoro rũthiomi-inĩ rũu porogiramu-inĩ ya gũcenjia na ũrwongerere SiteLanguageList ya njĩra cia saiti iria ikwagĩrĩrũo kũrwonania.</translation>
     </message>
     <message>
         <source>%used of at most %max content languages are in use. Only the languages added here count, not the locales in the list below; removing a language no content uses frees a place.</source>
@@ -5262,7 +5262,7 @@
     </message>
     <message>
         <source>Translate content: open an object, choose Edit and pick the new language; the editor offers to start from an existing translation.</source>
-        <translation>Taũra ũhoro: hingũra kĩndũ, thuura Cenjia na ũthuure rũthiomi rũerũ; kĩnyamũ kĩa gũcenjia nĩ gĩkũguũrĩria gwambĩrĩria kuuma ũtaũri-inĩ ũrĩa ũrĩ o ho.</translation>
+        <translation>Taũra ũhoro: hingũra kĩndũ, thuura Cenjia na ũthuure rũthiomi rũerũ; porogiramu ya gũcenjia nĩ ĩgũkũguũrĩria gwambĩrĩria kuuma ũtaũri-inĩ ũrĩa ũrĩ o ho.</translation>
     </message>
     <message>
         <source>Show it: add SiteLanguageList[]=&lt;code&gt; to the site.ini of each siteaccess that should show it; first in the list means shown first.</source>
@@ -5353,7 +5353,7 @@
     </message>
     <message>
         <source>The languages content can be written in. Every object keeps one translation per language it has, and each siteaccess shows the languages in its SiteLanguageList, the first one first. The language of the administration interface itself is a different setting (Locale) and is not managed here.</source>
-        <translation>Ũthiomi ũrĩa ũhoro ũngĩandĩkwo thĩinĩ wacio. Kĩndũ o kĩmwe kĩigaga ũtaũri ũmwe harĩ rũthiomi o rũrĩa kĩrĩ naruo, na njĩra o yothe ya saiti ĩonanagia ũthiomi ũrĩa ũrĩ thĩinĩ wa SiteLanguageList yayo, ũrĩa wa mbere ũkĩmbere. Rũthiomi rwa kĩnyamũ kĩa ũrũgamĩrĩri kĩyo mwene nĩ mũtaratara ũngĩ (Locale) na ndũrũgamĩrĩrũo haha.</translation>
+        <translation>Ũthiomi ũrĩa ũhoro ũngĩandĩkwo thĩinĩ wacio. Kĩndũ o kĩmwe kĩigaga ũtaũri ũmwe harĩ rũthiomi o rũrĩa kĩrĩ naruo, na njĩra o yothe ya saiti ĩonanagia ũthiomi ũrĩa ũrĩ thĩinĩ wa SiteLanguageList yayo, ũrĩa wa mbere ũkĩmbere. Rũthiomi rwa kĩonereria kĩa ũrũgamĩrĩri kĩyo mwene nĩ mũtaratara ũngĩ (Locale) na ndũrũgamĩrĩrũo haha.</translation>
     </message>
     <message>
         <source>Overview</source>
@@ -5497,7 +5497,7 @@
     </message>
     <message>
         <source>No object or class has a translation in %locale yet. Translate content into it from the editor.</source>
-        <translation>Gũtirĩ kĩndũ kana kĩrathi kĩrĩ na ũtaũri thĩinĩ wa %locale o rĩ. Taũra ũhoro rũthiomi-inĩ rũu kuuma kĩnyamũ-inĩ kĩa gũcenjia.</translation>
+        <translation>Gũtirĩ kĩndũ kana kĩrathi kĩrĩ na ũtaũri thĩinĩ wa %locale o rĩ. Taũra ũhoro rũthiomi-inĩ rũu kuuma porogiramu-inĩ ya gũcenjia.</translation>
     </message>
     <message>
         <source>Can be removed, but %sites still list it: take it out of their SiteLanguageList as well.</source>
@@ -5553,7 +5553,7 @@
     </message>
     <message>
         <source>Content languages and interface languages</source>
-        <translation>Ũthiomi wa ũhoro na ũthiomi wa kĩnyamũ</translation>
+        <translation>Ũthiomi wa ũhoro na ũthiomi wa kĩonereria</translation>
     </message>
     <message>
         <source>What this page manages, and what it does not</source>
@@ -5565,11 +5565,11 @@
     </message>
     <message>
         <source>The texts of the administration interface and the templates (buttons, menus) come from translation files (.ts) and follow the Locale setting of a siteaccess instead. A site can show German content with an English interface and the other way round.</source>
-        <translation>Ciugo cia kĩnyamũ kĩa ũrũgamĩrĩri na cia mĩhiano (itonĩ, menu) nĩ ciumaga mafaili-inĩ ma ũtaũri (.ts) na igakũrũmĩra mũtaratara wa Locale wa njĩra ya saiti. Saiti no yonanie ũhoro wa Kĩjerumani na kĩnyamũ kĩa Gĩthungũ, na kũgĩa ũguo-rĩ.</translation>
+        <translation>Ciugo cia kĩonereria kĩa ũrũgamĩrĩri na cia mĩhiano (itonĩ, menu) nĩ ciumaga mafaili-inĩ ma ũtaũri (.ts) na igakũrũmĩra mũtaratara wa Locale wa njĩra ya saiti. Saiti no yonanie ũhoro wa Kĩjerumani na kĩonereria kĩa Gĩthungũ, na kũgĩa ũguo-rĩ.</translation>
     </message>
     <message>
         <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/eng-us/guides/content-languages.md.</source>
-        <translation>Kwongerera rũthiomi haha ndũtaũraga kĩndũ na ndũgarũragia njĩra ya saiti o yothe: taũra ũhoro kĩnyamũ-inĩ kĩa gũcenjia, na ũrũorodhie SiteLanguageList kũrĩa rũkwagĩrĩrũo kwonanio. Ũtaarani wa mũhũthiri nĩ doc/eng-us/guides/content-languages.md.</translation>
+        <translation>Kwongerera rũthiomi haha ndũtaũraga kĩndũ na ndũgarũragia njĩra ya saiti o yothe: taũra ũhoro porogiramu-inĩ ya gũcenjia, na ũrũorodhie SiteLanguageList kũrĩa rũkwagĩrĩrũo kwonanio. Ũtaarani wa mũhũthiri nĩ doc/eng-us/guides/content-languages.md.</translation>
     </message>
     <message>
         <source>Remove these languages?</source>
@@ -5788,7 +5788,7 @@
     </message>
     <message>
         <source>Language of this interface</source>
-        <translation>Rũthiomi rwa kĩnyamũ gĩkĩ</translation>
+        <translation>Rũthiomi rwa kĩonereria gĩkĩ</translation>
     </message>
     <message>
         <source>In no SiteLanguageList</source>
@@ -5860,7 +5860,7 @@
     </message>
     <message>
         <source>It is the language this administration interface runs in, so it is not removed from here.</source>
-        <translation>Nĩ rũthiomi rũrĩa kĩnyamũ gĩkĩ kĩa ũrũgamĩrĩri gĩtengeragia, nĩ ũndũ ũcio ndũehererio haha.</translation>
+        <translation>Nĩ rũthiomi rũrĩa kĩonereria gĩkĩ kĩa ũrũgamĩrĩri gĩtengeragia, nĩ ũndũ ũcio ndũehererio haha.</translation>
     </message>
     <message>
         <source>%name cannot be removed while %objects objects and %classes classes have a translation in it; the kernel refuses it. To take it out of use without losing anything:</source>
@@ -21325,15 +21325,15 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
     </message>
     <message>
         <source>The file consistency tool checks if you have altered any of the files that came with the current installation. Altered files may be replaced by new versions that contain bugfixes, new features, etc. Make sure that you backup and then merge your changes into the new versions of the files.</source>
-        <translation>Kĩnyamũ kĩa ũringaniru wa faili nĩkĩgeragia kana nĩwacenjia faili o yothe iria ciokire na ũingĩria wa rĩu. Mafaili marĩa macenjetio no mahaanwo nĩ irutwo njerũ irĩ na ũgeithia wa mahĩtia, kĩrĩa kĩerũ, na ũguo. Menya atĩ nĩũtumĩte kopi na ũcooke ũhurũre macenjio maku irutwo-inĩ njerũ ya mafaili.</translation>
+        <translation>Kĩndũ kĩa wĩra kĩa ũringaniru wa faili nĩkĩgeragia kana nĩwacenjia faili o yothe iria ciokire na ũingĩria wa rĩu. Mafaili marĩa macenjetio no mahaanwo nĩ irutwo njerũ irĩ na ũgeithia wa mahĩtia, kĩrĩa kĩerũ, na ũguo. Menya atĩ nĩũtumĩte kopi na ũcooke ũhurũre macenjio maku irutwo-inĩ njerũ ya mafaili.</translation>
     </message>
     <message>
         <source>The database consistency tool checks if the current database is consistent with the database schema that came with the Exponential distribution. If there are any inconsistencies, the tool will suggest the necessary SQL statements that should be run in order to bring the database into a consistent state. Please run the suggested SQL statements before upgrading.</source>
-        <translation>Kĩnyamũ kĩa ũringaniru wa kĩigĩro kĩa data nĩkĩgeragia kana kĩigĩro kĩa data kĩa rĩu nĩkĩringanĩte na mũthondeko wa kĩigĩro kĩa data ũrĩa wokire na ũgaĩrĩri wa Exponential. Angĩkorwo gũkoragwo na gũtaringana, kĩnyamũ nĩkĩgatuĩria maathani ma SQL marĩa mabataraga gũtengerio nĩguo kĩigĩro kĩa data kĩcooke hali-inĩ ĩrĩa ĩringanĩte. Ndagũthaitha, tengeria maathani ma SQL marĩa matuĩrĩirũo mbere ya gũthondeka.</translation>
+        <translation>Kĩndũ kĩa wĩra kĩa ũringaniru wa kĩigĩro kĩa data nĩkĩgeragia kana kĩigĩro kĩa data kĩa rĩu nĩkĩringanĩte na mũthondeko wa kĩigĩro kĩa data ũrĩa wokire na ũgaĩrĩri wa Exponential. Angĩkorwo gũkoragwo na gũtaringana, kĩndũ kĩu kĩa wĩra nĩkĩgatuĩria maathani ma SQL marĩa mabataraga gũtengerio nĩguo kĩigĩro kĩa data kĩcooke hali-inĩ ĩrĩa ĩringanĩte. Ndagũthaitha, tengeria maathani ma SQL marĩa matuĩrĩirũo mbere ya gũthondeka.</translation>
     </message>
     <message>
         <source>The upgrade checking tools require a lot of system resources. They may take some time to run.</source>
-        <translation>Ikĩnyamũ cia kũgeria gũthondeka nĩcibataraga indo nyingĩ cia mũtaratara. No ciende ihinda rĩa gũtengerio.</translation>
+        <translation>Indo cia wĩra cia kũgeria gũthondeka nĩcibataraga indo nyingĩ cia mũtaratara. No ciende ihinda rĩa gũtengerio.</translation>
     </message>
 </context>
 <context>
@@ -22555,7 +22555,7 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
     </message>
     <message>
         <source>No php command line binary was found. Set cronjob.ini [AdminSettings] PhpCliPath to its full path.</source>
-        <translation>Gũtirĩ kĩnyamũ kĩa mũsitari wa itegeko kĩa php kĩnyitĩtwo. Iga cronjob.ini [AdminSettings] PhpCliPath njĩra yayo yothe.</translation>
+        <translation>Gũtirĩ porogiramu ya mũtara wa maathani ya php ĩrĩa ĩanyitirũo. Iga cronjob.ini [AdminSettings] PhpCliPath njĩra yayo yothe.</translation>
     </message>
     <message>
         <source>proc_open is disabled, so a cronjob cannot be started from the interface. Run it from a shell.</source>
@@ -25454,7 +25454,7 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
     </message>
     <message>
         <source>Static cache</source>
-        <translation>Kĩigĩro kĩa ihenya gĩtarĩ kĩnyamũ</translation>
+        <translation>Kĩigĩro kĩa ihenya kĩa tũtũ</translation>
     </message>
     <message>
         <source>HTTP cache</source>
@@ -25614,7 +25614,7 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
     </message>
     <message>
         <source>Processor</source>
-        <translation>Kĩnyamũ kĩa gũthondeka</translation>
+        <translation>Purosesa</translation>
     </message>
     <message>
         <source>Load</source>
@@ -26610,7 +26610,7 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
     </message>
     <message>
         <source>Every point this system can be extended at is listed below: what it is for, where the code goes, and what registers it. Where there is a tool it opens from here; where there is not, what is written here is what you would otherwise have to find by reading the kernel.</source>
-        <translation>Handũ hothe harĩa mũthia ũyũ ũngĩongererwo hathondekĩtwo haha thĩinĩ: nĩ wa kĩ, kodi ĩthiĩ kũ, na kĩrĩa kĩmĩcihĩtia. Harĩa harĩ kĩnyamũ, nĩkĩhingũrĩka kuuma haha; harĩa gũtarĩ, kĩrĩa kĩandĩkĩtwo haha nĩkĩo ũngĩkorirwo nĩ ũhoro ũngĩagĩrĩirũo gũtuĩra na gũthoma mũthingi.</translation>
+        <translation>Handũ hothe harĩa mũthia ũyũ ũngĩongererwo hathondekĩtwo haha thĩinĩ: nĩ wa kĩ, kodi ĩthiĩ kũ, na kĩrĩa kĩmĩcihĩtia. Harĩa harĩ kĩndũ kĩa wĩra, nĩkĩhingũrĩka kuuma haha; harĩa gũtarĩ, kĩrĩa kĩandĩkĩtwo haha nĩkĩo ũngĩkorirwo nĩ ũhoro ũngĩagĩrĩirũo gũtuĩra na gũthoma mũthingi.</translation>
     </message>
     <message>
         <source>extension points written up</source>
@@ -26618,11 +26618,11 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
     </message>
     <message>
         <source>with a tool</source>
-        <translation>irĩ na kĩnyamũ</translation>
+        <translation>irĩ na kĩndũ kĩa wĩra</translation>
     </message>
     <message>
         <source>The rest are documented, and each is a tool waiting to be written.</source>
-        <translation>Icio ingĩ nĩ ciandĩkĩtwo, na o ĩmwe nĩ kĩnyamũ kĩrĩa kĩrĩ kĩrĩetereire gwandĩkwo.</translation>
+        <translation>Icio ingĩ nĩ ciandĩkĩtwo, na o ĩmwe nĩ kĩndũ kĩa wĩra kĩrĩa kĩrĩ kĩrĩetereire gwandĩkwo.</translation>
     </message>
     <message>
         <source>Showing %shown of them.</source>
@@ -26650,11 +26650,11 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
     </message>
     <message>
         <source>tool available</source>
-        <translation>kĩnyamũ nĩ kĩrĩho</translation>
+        <translation>kĩndũ kĩa wĩra nĩ kĩrĩho</translation>
     </message>
     <message>
         <source>no tool yet</source>
-        <translation>gũtirĩ kĩnyamũ o rĩrĩ</translation>
+        <translation>gũtirĩ kĩndũ kĩa wĩra o rĩrĩ</translation>
     </message>
     <message>
         <source>Code</source>
@@ -26686,7 +26686,7 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
     </message>
     <message>
         <source>With a tool</source>
-        <translation>Irĩ na kĩnyamũ</translation>
+        <translation>Irĩ na kĩndũ kĩa wĩra</translation>
     </message>
     <message>
         <source>Documentation only</source>
@@ -27094,7 +27094,7 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
     </message>
     <message>
         <source>Something the browser can call and get json back from, without a page.</source>
-        <translation>Kĩndũ kĩrĩa kĩrĩa kĩnyamũ kĩa gũthoma kĩngĩhooya na kĩgacookio json, gũtarĩ ũrũa.</translation>
+        <translation>Kĩndũ kĩrĩa kĩrĩa kĩrorero kĩngĩhooya na kĩgacookio json, gũtarĩ ũrũa.</translation>
     </message>
     <message>
         <source>A step a workflow can take when something is published, moved or removed.</source>
@@ -27182,7 +27182,7 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
     </message>
     <message>
         <source>Takes the payment without the buyer ever leaving the site: the card is exchanged for a token in the browser, and the charge is made server to server while they wait. The common shape now, and a different job from the redirect kind - one call decides the order, so there is no second visit in which to correct a wrong answer, and a timeout is a genuinely ambiguous state that has to be asked about rather than guessed at.</source>
-        <translation>Ĩĩkagĩra kũriha mũgũri ndathiĩ nja ya saiti: karata nĩ gũgũranagio na kĩrĩa kĩrĩ mbica kĩnyamũ-inĩ, na kũriha gũgĩkwo sava kũrĩ sava mũgũri akĩrĩra. Nĩ mũthemba wa ũmũthĩ, na wĩra ũtiganaine na wa gũthiĩ nja - kũgwĩta kũmwe nĩkũtuaga ioda, nĩ ũndũ ũcio gũtirĩ kũũka kwa keerĩ kwa kũrũngia macookio mahĩtu, na ihinda kũthira nĩ hali ĩtooĩkaine ĩrĩa ĩbatairie kũũrio na ti gũtuĩrwo.</translation>
+        <translation>Ĩĩkagĩra kũriha mũgũri ndathiĩ nja ya saiti: karata nĩ gũgũranagio na kĩrĩa kĩrĩ mbica kĩrorero-inĩ, na kũriha gũgĩkwo sava kũrĩ sava mũgũri akĩrĩra. Nĩ mũthemba wa ũmũthĩ, na wĩra ũtiganaine na wa gũthiĩ nja - kũgwĩta kũmwe nĩkũtuaga ioda, nĩ ũndũ ũcio gũtirĩ kũũka kwa keerĩ kwa kũrũngia macookio mahĩtu, na ihinda kũthira nĩ hali ĩtooĩkaine ĩrĩa ĩbatairie kũũrio na ti gũtuĩrwo.</translation>
     </message>
     <message>
         <source>What rate of tax applies to what, for whom.</source>
@@ -27206,7 +27206,7 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
     </message>
     <message>
         <source>Decides whether a request came from a phone and what to do about it. The one that ships matches user agent strings against patterns, which ages badly; a filter of its own can use a header a proxy sets or a hint the browser gives.</source>
-        <translation>Nĩ ĩtuaga kana ihooya nĩ rĩũmĩte harĩ thimũ na kĩrĩa gĩkĩragwo gwĩkwo. Ĩrĩa ĩrehetwo nĩ ĩhaanaga mĩtũrĩre ya mũhũthiri na ngerekano, ũndũ ũrĩa ũngĩhĩtĩa wega; kĩthuurania kĩa gĩtwĩ kĩngĩhũthĩra mũtwe ũrĩa proxy ĩigagĩra kana kĩnyiihia kĩrĩa kĩnyamũ kĩa gũthoma kĩheagĩra.</translation>
+        <translation>Nĩ ĩtuaga kana ihooya nĩ rĩũmĩte harĩ thimũ na kĩrĩa gĩkĩragwo gwĩkwo. Ĩrĩa ĩrehetwo nĩ ĩhaanaga mĩtũrĩre ya mũhũthiri na ngerekano, ũndũ ũrĩa ũngĩhĩtĩa wega; kĩthuurania kĩa gĩtwĩ kĩngĩhũthĩra mũtwe ũrĩa proxy ĩigagĩra kana kĩnyiihia kĩrĩa kĩrorero kĩheagĩra.</translation>
     </message>
     <message>
         <source>The earliest place there is to see a REST request. Nothing has been matched and no controller chosen, so a request can be rewritten or turned away before anything has committed to answering it - and before authentication, so about a caller nobody has identified.</source>
@@ -37910,7 +37910,7 @@ akaunti yaku.</translation>
     </message>
     <message>
         <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
-        <translation>Kũrĩa ũingĩrĩte: kĩnyamũ kĩa ũthakia, mũthingi, handũ na ihinda. Ũmia kĩfaa kĩrĩa ũtooĩ.</translation>
+        <translation>Kũrĩa ũingĩrĩte: kĩrorero, mũthingi, handũ na ihinda. Ũmia kĩfaa kĩrĩa ũtooĩ.</translation>
     </message>
     <message>
         <source>Where this user is signed in, and signing the user out everywhere.</source>
@@ -38482,7 +38482,7 @@ akaunti yaku.</translation>
     </message>
     <message>
         <source>If the button does not work, copy this address into your browser: %url</source>
-        <translation>Angĩkorwo gĩthũngũ gĩtĩkĩrĩte gwĩka wĩra, kobia anwani ĩno thĩinĩ wa kĩnyamũ gĩaku kĩa ũthakia: %url</translation>
+        <translation>Angĩkorwo gĩthũngũ gĩtĩkĩrĩte gwĩka wĩra, kobia anwani ĩno thĩinĩ wa kĩrorero gĩaku: %url</translation>
     </message>
     <message>
         <source>This mail was sent by %siteurl because this email address was used to register an account.</source>
@@ -49781,7 +49781,7 @@ Nĩguo ũtaratĩrie thĩna ũyũ no kwagĩrĩrwo ũreke ũmwe wa ũrĩa ũrũmĩ
     </message>
     <message>
         <source>Make sure the database server is configured to use Unicode or that it has the latest software which supports Unicode.</source>
-        <translation>Ĩkĩra ũhoro atĩ sava ya kĩigĩro kĩa data nĩ ĩtaratĩtwo gũhũthĩra Unicode kana atĩ nĩ ĩrĩ na kĩnyamũ kĩa rĩu kĩrĩa kĩtĩkĩrĩte Unicode.</translation>
+        <translation>Ĩkĩra ũhoro atĩ sava ya kĩigĩro kĩa data nĩ ĩtaratĩtwo gũhũthĩra Unicode kana atĩ nĩ ĩrĩ na porogiramu ya rĩu ĩrĩa ĩtĩkĩrĩte Unicode.</translation>
     </message>
     <message>
         <source>These and other additional languages can also be installed later.</source>
@@ -53827,7 +53827,7 @@ akaunti yaku.</translation>
     </message>
     <message>
         <source>If the button does not work, copy this address into your browser: %url</source>
-        <translation>Angĩkorwo gĩthũngũ gĩtĩkĩrĩte gwĩka wĩra, kobia anwani ĩno thĩinĩ wa kĩnyamũ gĩaku kĩa ũthakia: %url</translation>
+        <translation>Angĩkorwo gĩthũngũ gĩtĩkĩrĩte gwĩka wĩra, kobia anwani ĩno thĩinĩ wa kĩrorero gĩaku: %url</translation>
     </message>
     <message>
         <source>If you did not register, you can ignore this mail.</source>
@@ -62439,7 +62439,7 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>The files are kept by a cluster file handler: they are read from its table, owner and mode are not checked, and nothing can be moved or fixed here.</source>
-        <translation>Mafaili nĩmagĩtagwo nĩ mũhũthĩri wa mafaili wa kĩnyamũ kĩa klasta: nĩmathomagwo kuuma mũhariinĩ wao, mwene na mũhaano wa rũtha ndĩgũthimwo, na gũtirĩ kĩndũ kĩngĩthamio kana gũtharĩrio haha.</translation>
+        <translation>Mafaili nĩmagĩtagwo nĩ mũhũthĩri wa mafaili wa klasta: nĩmathomagwo kuuma mũhariinĩ wao, mwene na mũhaano wa rũtha ndĩgũthimwo, na gũtirĩ kĩndũ kĩngĩthamio kana gũtharĩrio haha.</translation>
     </message>
     <message>
         <source>Last scan</source>
@@ -76276,7 +76276,7 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>If the button does not work, copy this address into your browser: %url</source>
-        <translation>Angĩkorwo gĩthũngũ gĩtĩkĩrĩte gwĩka wĩra, kobia anwani ĩno thĩinĩ wa kĩnyamũ gĩaku kĩa ũthakia: %url</translation>
+        <translation>Angĩkorwo gĩthũngũ gĩtĩkĩrĩte gwĩka wĩra, kobia anwani ĩno thĩinĩ wa kĩrorero gĩaku: %url</translation>
     </message>
     <message>
         <source>A new user account waits for your approval</source>
@@ -77241,6 +77241,82 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Kĩhingũri kĩa hitho gĩtiahotetwo gũthuthuria. Ndagũthaitha geria rĩngĩ.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Akaunti iria ciĩngĩraga na ihingũrio cia hitho tu itingĩhũthĩra kiugo kĩa hitho haha: thuura &quot;Ingĩra na kĩhingũri kĩa hitho&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Ihingũrio cia hitho cia %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Ihingũrio cia hitho iria akaunti ĩno ĩĩngĩragĩra nacio. Cooria kĩrĩa kĩrĩ kĩndũ-inĩ kĩrĩa kĩorire kana gĩkĩiywo: gĩtingĩhota gũtũmĩrwo kũingĩra rĩngĩ. Mwene akaunti nĩwe wongagĩrĩra njerũ we mwene.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Akaunti yaku nĩĩrabatara kĩhingũri kĩa hitho</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Ongerera akaunti yaku kĩhingũri kĩa hitho</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Ongerera kĩhingũri kĩa hitho nĩguo ũthiĩ na mbere. Thuutha ũcio ũkũingĩra nakĩo handũ ha kiugo kĩa hitho kĩrĩ kĩiki.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Kũingĩra na kĩhingũri kĩa hitho nĩ kwa ihenya na kwa ũgitĩri gũkĩra kiugo kĩa hitho. Ongerera kĩmwe rĩu, kana ũthiĩ na mbere ũtarĩ nakĩo.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Ti rĩu</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Cooria kĩhingũri kĩa hitho &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Gĩtingĩhota gũtũmĩrwo kũingĩra akaunti ĩno rĩngĩ. Angĩkorwo nĩkĩo kĩa kũrigĩrĩria, mwene akaunti nĩekũingĩra na kiugo kĩa hitho, kana wee ũige kĩerũ.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Cooria kĩhingũri kĩa hitho</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Cooria</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Akaunti ĩno ndĩrĩ na kĩhingũri kĩa hitho.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Kĩthibitisha</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Gĩtooĩkaine</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Kĩhingũri gĩaku kĩa hitho kĩa kũrigĩrĩria: ongerera kĩngĩ mbere ya gũkĩehereria.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Akaunti ĩno ĩĩngĩraga na ihingũrio cia hitho tu (watho wa ihingũrio cia hitho): hatarĩ kĩrĩa gĩtigarĩte, ĩĩngĩraga rĩngĩ na kiugo kĩayo kĩa hitho.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Gĩkĩ nĩkĩo kĩhingũri gĩaku kĩa hitho kĩa kũrigĩrĩria na akaunti yaku ndĩngĩhota kũingĩra ĩtarĩ nakĩo. Ongerera kĩhingũri kĩngĩ kĩa hitho mbere.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Kĩhingũri kĩa hitho &quot;%name&quot; nĩgĩacooruo. Gĩtingĩhota gũtũmĩrwo kũingĩra akaunti ĩno rĩngĩ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>Code from your authenticator app</source>
         <translation>Kĩndũ kĩa namba kuuma programu yaku ya ũhingũrĩri</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Nĩ ũrenda gũthiria data biũ kana gũtheria rekodi ya mawĩra.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Kiugo gĩaku kĩa hitho na kĩhingũri kĩa hitho</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Kiugo gĩaku kĩa hitho na kĩara kuuma thoroga yaku ya gũthibitisha</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Kana:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Mbaratha ĩno ndĩngĩhota kũhũthĩra ihingũrio cia hitho. Hũthĩra njĩra ĩngĩ, kana mbaratha ĩngĩ.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Ũngĩthiĩ na mbere, mbaratha yaku nĩĩkũrĩa kĩmwe kĩa ihingũrio ciaku cia hitho.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Thiĩ na mbere na kĩhingũri kĩa hitho</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <message>
         <source>Setup</source>
         <translation>Mwambĩrĩria</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Gũcenjia kiugo kĩa hitho kĩa mwene, adiresi ya imeri, ihingũrio cia hitho, kũingĩra kwa ngũmbĩ igĩrĩ, ciara cia gũcookia kana ihingũrio cia API, na kũruta indo ingĩ cia mwene.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Kũmba na gũcenjia ahũthiri, ciugo ciao cia hitho na indo ciao, mĩtaratara ya akaunti, gwĩtĩkĩra kana kũrega akaunti njerũ cia ahũthiri, kũheana marolo na gũcenjia mawatho.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Gũthiria data</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Gũtheria kĩgira kĩa mahuti, kũehereria indo kuuma kuo na kũehereria indo nyingĩ hamwe.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Kũehereria, gũcabithia na kũiga ũhoro</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Kũehereria ũhoro (o na gũũtwara kĩgira-inĩ kĩa mahuti), gũcabithia na kũiga ndrafti; kũũragio rĩrĩa fomu yatũmwo. Nĩ kũhingĩtwo kuuma kĩambĩrĩria.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Mbere ya wĩra wa bata, mũhũthiri ũrĩa wĩngĩrĩte nĩathibitithagia rĩngĩ nũũ: na kiugo gĩake kĩa hitho na kĩhingũri kĩa hitho, kana atarĩ na kĩhingũri kĩa hitho na kiugo gĩake kĩa hitho na kĩara kĩa thoroga yake ya gũthibitisha. Mathamba ma web moiki nĩmo moragia: interface ya REST, SOAP, WebDAV, kũingĩra kwa expservices na mũhari wa watho matiũragia o na rĩ.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Kũrĩa mĩtaratara ĩrutaga wĩra</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Mĩtaratara ya</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>O njĩra ya saiti</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Njĩra ya saiti %name tu</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Hingũra</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Ũrĩa ũrooragio: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Ikĩra rũthiomi ikundi cia ahũthiri nĩguo ũũrie amemba ao tu (ta acenjia). Hatarĩ ĩrĩ na rũthiomi: o mũhũthiri.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Nĩĩigĩtwo thiinĩ wa settings/override/site.ini.append.php, nĩ ũndũ wa o njĩra ya saiti. Kũiga nĩgũkũũria ũthibitithie atĩ nĩ wee.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Nĩĩigĩtwo thiinĩ wa settings/siteaccess/%name/site.ini.append.php. Mũigana thiinĩ wa settings/override nĩũkĩrĩte ũyũ. Kũiga nĩgũkũũria ũthibitithie atĩ nĩ wee.</translation>
     </message>
 </context>
 <context>
@@ -77527,7 +77695,7 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <name>design/standard/mail</name>
     <message>
         <source>If the button does not work, copy this address into your browser: %url</source>
-        <translation>Angĩkorwo gĩthũngũ gĩtĩkĩrĩte gwĩka wĩra, kobia anwani ĩno thĩinĩ wa kĩnyamũ gĩaku kĩa ũthakia: %url</translation>
+        <translation>Angĩkorwo gĩthũngũ gĩtĩkĩrĩte gwĩka wĩra, kobia anwani ĩno thĩinĩ wa kĩrorero gĩaku: %url</translation>
     </message>
     <message>
         <source>Open the page</source>
@@ -77786,6 +77954,30 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <message>
         <source>Your account was locked</source>
         <translation>Akaunti yaku nĩ yahingirwo</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Kĩhingũri kĩa hitho nĩkĩongereirwo akaunti-inĩ yaku %login kũrĩ %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Mũndũ o wothe ũrĩ na kĩhingũri gĩkĩ kĩa hitho no ahote kũingĩra akaunti yaku atarĩ na kiugo gĩaku kĩa hitho. Angĩkorwo ti wee wakĩongereire, gĩkĩehererie rungu rwa Ihingũrio cia hitho na ũcenjie kiugo gĩaku kĩa hitho.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Kĩhingũri kĩa hitho nĩkĩeherio kuuma akaunti-inĩ yaku %login kũrĩ %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Gĩtingĩhota gũtũmĩrwo kũingĩra akaunti yaku rĩngĩ. Angĩkorwo ti wee wakĩeheririe, rora ihingũrio ciaku cia hitho na indo ciaku.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Kĩhingũri kĩa hitho nĩkĩongereirwo akaunti-inĩ yaku</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Kĩhingũri kĩa hitho nĩkĩeherio kuuma akaunti-inĩ yaku</translation>
     </message>
 </context>
 <context>

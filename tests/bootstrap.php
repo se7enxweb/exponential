@@ -100,6 +100,34 @@ if ( !class_exists( 'PHPUnit_Runner_Version', false ) )
     }
 }
 
+if ( !function_exists( 'expTestBarePhpCommand' ) )
+{
+    /**
+     * The command of a PHP process without php.ini (-n), for tests that need one: PHP_BINARY and -n. Before
+     * PHP 8.0 json may be a shared extension (php-json on RHEL and Plesk builds) that -n leaves out, so it is
+     * loaded again there.
+     *
+     * @return string[]
+     */
+    function expTestBarePhpCommand()
+    {
+        $command = array( PHP_BINARY, '-n' );
+        if ( PHP_VERSION_ID < 80000 && extension_loaded( 'json' ) && ini_get( 'extension_dir' ) !== false
+             && is_file( rtrim( ini_get( 'extension_dir' ), '/' ) . '/json.so' ) )
+        {
+            $command = array_merge( $command, array( '-d', 'extension_dir=' . ini_get( 'extension_dir' ), '-d', 'extension=json' ) );
+        }
+        return $command;
+    }
+}
+
+// PHPUnit 9.6 (the PHPUnit that runs on PHP 7.4 and 8.0) still has a constructible TestSuite with
+// run( TestResult ): the old name is an alias there. The wrapper below is for PHPUnit 10 and later.
+if ( !class_exists( 'PHPUnit_Framework_TestSuite', false ) && version_compare( \PHPUnit\Runner\Version::id(), '10', '<' ) )
+{
+    class_alias( \PHPUnit\Framework\TestSuite::class, 'PHPUnit_Framework_TestSuite' );
+}
+
 if ( !class_exists( 'PHPUnit_Framework_TestSuite', false ) )
 {
     class PHPUnit_Framework_TestSuite

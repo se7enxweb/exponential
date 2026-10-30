@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/packagecreators
 audience: developer
 category: standards
-order: 499
+order: 506
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/packagecreators mit den Entwurfsmustern.
 keywords: kernel/classes/packagecreators, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

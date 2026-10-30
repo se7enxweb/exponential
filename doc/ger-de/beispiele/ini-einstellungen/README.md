@@ -77,7 +77,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [setup.ini](setup/README.md) | Kernel | 24 |
 | [shop.ini](shop/README.md) | Kernel | 10 |
 | [shopaccount.ini](shopaccount/README.md) | Kernel | 3 |
-| [site.ini](site/README.md) | Kernel | 59 |
+| [site.ini](site/README.md) | Kernel | 60 |
 | [soap.ini](soap/README.md) | Kernel | 2 |
 | [solr.ini](solr/README.md) | Kernel | 1 |
 | [staticcache.ini](staticcache/README.md) | Kernel | 1 |
@@ -92,6 +92,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [transform.ini](transform/README.md) | Kernel | 13 |
 | [uiswitch.ini](uiswitch/README.md) | Kernel | 3 |
 | [units.ini](units/README.md) | Kernel | 4 |
+| [upgrade.ini](upgrade/README.md) | Kernel | 1 |
 | [upload.ini](upload/README.md) | Kernel | 12 |
 | [velocity.ini](velocity/README.md) | Kernel | 13 |
 | [viewcache.ini](viewcache/README.md) | Kernel | 1 |

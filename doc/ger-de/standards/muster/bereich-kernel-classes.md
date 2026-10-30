@@ -2,7 +2,7 @@
 title: Muster in kernel/classes
 audience: developer
 category: standards
-order: 478
+order: 484
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes mit den Entwurfsmustern.
 keywords: kernel/classes, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -15,16 +15,18 @@ type: catalogue
 
 Jede Klasse, Schnittstelle und jeder Trait von `kernel/classes` mit den Mustern, als die sie erkannt wurden, gefolgt von den Modulansichten, Richtlinienfunktionen, Fetch-Funktionen, Template-Operatoren, Cronjobs, Ereignis-Hooks und INI-Plugin-Punkten des Bereichs. [Alle Muster](README.md).
 
-## Klassen (202)
+## Klassen (217)
 
 | Klasse | Art | Muster | Datei | Beschreibung |
 | --- | --- | --- | --- | --- |
 | `expAdminPagination` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expadminpagination.php:19` | Eine zentrale Stelle für die Frage, wie viele Zeilen eine Liste in der Administrationsoberfläche anzeigt. |
+| `expAnonymousPublicPolicies` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expanonymouspublicpolicies.php:29` | Die Richtlinien, die ein nicht angemeldeter Besucher auf einer öffentlichen Site braucht, über das Lesen von Inhalt hinaus: sich registrieren, die RSS-Feeds lesen, die Tag-Seiten von ezta… |
 | `expBenchmark` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expbenchmark.php:28` | Die Statistik, die Berichtsformate und die Regressionsprüfung von exp:benchmark. |
 | `expBenchmarkHttp` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expbenchmarkhttp.php:20` | Die HTTP-Seite von exp:benchmark: ruft eine Liste von URLs ab, mehrere gleichzeitig, mit PHPs eigenem curl (curl_multi), sodass kein externes Programm nötig ist. |
 | `expBenchmarkKernel` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expbenchmarkkernel.php:29` | Die In-Process-Seite von exp:benchmark: was der Kernel für die Teile einer Seite aufwendet, ohne HTTP, Webserver oder Antwort-Cache dazwischen. |
 | `expBenchmarkMicro` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expbenchmarkmicro.php:33` | Der Mikromodus von exp:benchmark: reine PHP-Hot-Paths des Kernels, in diesem Prozess ohne HTTP, Webserver oder Datenbank gemessen, sodass er auf einem CI… |
 | `expBookmarkPage` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expbookmarkpage.php:18` | Was die Lesezeichenseite (content/bookmark) zeigt, aus einfachen Arrays ermittelt: die Ordner mit ihren Zahlen, welche Lesezeichen ein Ordner, eine Suche und… |
+| `expBookmarkView` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Fabrik und statische Fabrikmethoden](fabrik.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expbookmarkview.php:39` | Ein Lesezeichen auf eine Systemseite: eine Seite einer Modulansicht (setup/systemupgrade, exphelp/dashboard, audit/console/(user)/14 ...) statt eines Knotens. |
 | `expCacheCatalogue` | class | [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/classes/expcachecatalogue.php:22` | Die Caches von Setup › Caches, für einen Menschen beschrieben: was jeder enthält, seine ID und Tags, sein Verzeichnis, seine Größe und Dateianzahl, wann er zuletzt… |
 | `expCacheManager` | class | [Fassade / Dienst](fassade.md) | `kernel/classes/expcachemanager.php:30` | Alles, was Setup › Cache (kernel/setup/cache.php) kann, als Funktionen, die zurückgeben, was geschehen ist, statt Template-Variablen zu setzen, sodass die Admini… |
 | `expCacheWarm` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expcachewarm.php:28` | Hält den Antwort-Cache gefüllt, damit kein Besucher derjenige ist, der für das Rendern einer Seite bezahlt. |
@@ -38,23 +40,35 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/classes` mit den Mustern,
 | `expContentLanguageStates` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expcontentlanguagestates.php:26` | Der Zustand jeder Sprache eines Inhaltsobjekts für die Sprach-Badges von admin4 (design:parts/ language_state_badge.tpl): die Hauptsprache (die… |
 | `expContentPendingList` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expcontentpendinglist.php:21` | Was die Seite der ausstehenden Elemente (content/pendinglist, "My pending items") auflistet, aus einfachen Arrays ermittelt: die Versionen, die der Benutzer zum Veröffentlichen gesendet hat, die a… |
 | `expCronjobPause` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expcronjobpause.php:27` | Pausiert Cronjob-Teile: einen Teil oder alle, bis jemand sie fortsetzt. |
+| `expCrontabSetup` | class | [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/classes/expcrontabsetup.php:47` | Der Cronjob einer Installation: die Crontab-Zeilen, die ihre Cronjob-Teile ausführen (runcronjobs.php), geschrieben von den Installern und von bin/php/installcron… |
+| `expDemoMode` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expdemomode.php:38` | Demo-Modus: Die Umgebungsvariable EXP_DEMO_MODE=1 kennzeichnet eine Installation als öffentliche Demo. |
+| `expEditorPolicies` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expeditorpolicies.php:39` | Die Richtlinien, die ein Redakteur für die tägliche Arbeit braucht und die der Rolle Editor einer neuen Installation fehlen: Ausblenden und Einblenden, der Papierkorb (hineinsehen und… |
 | `expErrorHeaderList` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/experrorheaderlist.php:25` | Die Antwort-Header einer Fehlerseite, aus error.ini [HTTPError-]: |
 | `expExtensionCatalogue` | class | [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/classes/expextensioncatalogue.php:20` | Was Setup › Extensions über jede Extension weiß: ihre Metadaten (expInfo), ihre deklarierten Abhängigkeiten (extension.xml ), die Designs und Einstellungsda… |
 | `expExtensionChangePlan` | class | [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/classes/expextensionchangeplan.php:33` | Der Änderungsplaner von Setup › Extensions: was aus einer Liste aktiver Extensions wird, wenn ein Administrator eine verschiebt, aktiviert oder deaktiviert, was di… |
 | `expImageUploadValidator` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expimageuploadvalidator.php:35` | Entscheidet anhand des Inhalts statt des Namens, ob eine hochgeladene Datei ein Bild ist, das die Site akzeptiert. |
 | `ExpInstallationDetailsOutputFilter` | class | [Dekorierer / Filter](dekorierer.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expinstallationdetailsoutputfilter.php:15` | Ausgabefilter für den Installationsnamen. |
 | `ExpInstallationOperator` | class | [Template-Operator (Interpreter-Plugin)](template-operator.md) | `kernel/classes/expinstallationoperator.php:10` | Template-Operatoren, die den Installationsnamen für Templates bereitstellen: |
+| `expInstallDefaultExtensions` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expinstalldefaultextensions.php:33` | Die Extensions, die jede neue Installation eingerichtet bekommt, aus welchem Site-Paket sie auch gemacht ist: zweistufige Anmeldung (sevenx_authentication_2fa) und Importe (s… |
 | `expJsonSchemaValidator` | class | [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/classes/expjsonschemavalidator.php:20` | Prüft dekodiertes JSON (json_decode( ..., true )) gegen ein JSON Schema (Draft 2020-12), für die Schlüsselwörter, die die eigenen Schemas des Kernels verwenden: type, enum, cons… |
+| `expKernelExtensionOverrideList` | class | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `kernel/classes/expkernelextensionoverridelist.php:21` | Der Dienst „extensions.overrides“: was die beiden Extension-Aktivierungsdurchgänge des Web-Kernels (eZExtension::activateExtensions() 'default' und 'acce… |
+| `expKernelServiceCompiler` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expkernelservicecompiler.php:33` | Baut, prüft und entfernt den kompilierten Service-Container des Kernels (var/cache/kernelservices/). |
+| `expKernelServiceContainer` | class | – | `kernel/classes/expkernelservicecontainer.php:35` | Der Service-Container des Kernels: gemeinsam genutzte Objekte nach Name, bei der ersten Verwendung erzeugt, in ihrem Bereich. |
+| `expKernelServices` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expkernelservices.php:44` | Der Kernel-Service-Container: die statische Fassade und der kompilierte Start des Web-Kernels. |
+| `expKernelServiceScope` | class | – | `kernel/classes/expkernelservicescope.php:31` | Die Bereiche (Scopes) des Kernel-Service-Containers (expKernelServices) und der Speicher des Worker-Bereichs. |
 | `expKickstarter` | class | – | `kernel/classes/expkickstarter.php:12` | – |
 | `expKickstarterIni` | class | – | `kernel/classes/expkickstarterini.php:19` | – |
 | `expLinkCheck` | class | – | `kernel/classes/explinkcheck.php:15` | Entscheidet, ob ein Link veröffentlichter Inhalte funktioniert, für den Linkprüfungs-Cronjob (linkcheck.php) und die Linkliste (url/list). |
 | `expLoveStack` | class | – | `kernel/classes/explovestack.php:29` | Findet, was eine von LoveStack (mugoweb/Exponential-legacy) kommende Website mitbringt, das Exponential anders behandelt: die Markierungen ihrer Datenbank (… |
 | `expMaintenance` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expmaintenance.php:29` | Wartungsmodus: solange var/maintenance.json existiert, wird jede Anfrage an die Front Controller mit einer Wartungsseite beantwortet (503, Retry-After, ne… |
 | `expManagedConfiguration` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expmanagedconfiguration.php:25` | site.ini [ConfigurationSettings] ManagedByDeployment=enabled: Einstellungen, Templates und Code kommen nur aus dem Deployment, und die Administrationsoberfläche… |
+| `expMemberManagement` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expmembermanagement.php:27` | Mitgliederverwaltung: Benutzergruppen, die die Konten anderer Benutzergruppen verwalten, eingerichtet über membermanagement.ini (doc/eng-us/bc/6.0/member-management.m… |
 | `expNamePatternResolverInterface` | interface | [Schnittstelle (Vertrag)](schnittstelle.md) | `kernel/classes/expnamepatternresolverinterface.php:27` | Eine PHP-Klasse, die den Namen eines Inhaltsobjekts oder den Namen, aus dem sein URL-Alias gebildet wird, erzeugt, statt der Attribut-Tokens des Namensmusters der Klasse… |
-| `expNodeQuickPick` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expnodequickpick.php:18` | Schnellzugriffsschaltflächen (doc/eng-us/features/6.0/quick-location-buttons.md): einige bekannte Stellen des Inhaltsbaums, gefunden über einen kurzen Schlüssel (Websites, M… |
+| `expNodeQuickPick` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expnodequickpick.php:18` | Schnellzugriffe auf Speicherorte (doc/eng-us/features/6.0/quick-location-buttons.md): einige bekannte Orte des Inhaltsbaums, gefunden über ein kurzes Kürzel (Webs… |
 | `expNotificationJob` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expnotificationjob.php:17` | Ein Benachrichtigungslauf für die Statusseite („Jetzt ausführen“), im Hintergrund. |
 | `expNotificationService` | class | [Fassade / Dienst](fassade.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expnotificationservice.php:26` | Die eine Stelle, die weiß, wie das Benachrichtigungssystem ausgeführt und eingesehen wird: der Cronjob-Teil, die Befehle exp:notification:*, die Statusseite und ihre… |
+| `expPackageArchive` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/exppackagearchive.php:41` | Öffnet ein Paketarchiv (.ezpkg: ein gzip-komprimiertes tar-Archiv) zum Lesen, nach einem begrenzten Scan seiner tar-Header. |
+| `expPackageArchiveModes` | class extends ezcArchiveCallback | – | `kernel/classes/exppackagearchivemodes.php:20` | Der Extract-Callback eines Paketarchivs (expPackageArchive::open()): jede Datei, die er entpackt, bekommt 0644, jedes Verzeichnis 0755, jeweils innerhalb der Grenzen… |
 | `expPackageConflictReport` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/exppackageconflictreport.php:22` | Was die Installation eines Pakets auf dieser Installation vorfinden würde, nach Remote-ID, ohne etwas zu schreiben: für jedes Inhaltsobjekt des Pakets, ob ein… |
 | `expPackageJson` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/exppackagejson.php:34` | Die JSON-Serialisierung eines Pakets (doc/eng-us/bc/6.0/package-json-format.md). |
 | `expPasswordPolicy` | class | [Singleton / instance()](singleton.md) | `kernel/classes/exppasswordpolicy.php:24` | Die Regeln, die ein neues Passwort erfüllen muss, und was geschieht, nachdem ein Passwort geändert wurde. |
@@ -77,7 +91,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/classes` mit den Mustern,
 | `expVelocity` | class | [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/classes/expvelocity.php:38` | Steuert den mitgelieferten Anwendungsserver als Dienst. |
 | `expVelocityConfig` | class | – | `kernel/classes/expvelocityconfig.php:36` | Die Einstellungen lesen und schreiben, mit denen Exponential Velocity tatsächlich läuft. |
 | `expVelocityConfigLayout` | class | – | `kernel/classes/expvelocityconfiglayout.php:41` | Die Konfiguration des Servers als Baum im Stil von Debian Apache und der Umzug dorthin. |
-| `expVelocityDeploy` | class | – | `kernel/classes/expvelocitydeploy.php:47` | Alles, was eine PHP-Codeänderung braucht, bevor sie live ist, in der einen Reihenfolge, die funktioniert: exp:velocity deploy. |
+| `expVelocityDeploy` | class | – | `kernel/classes/expvelocitydeploy.php:52` | Alles, was eine PHP-Codeänderung braucht, bevor sie live ist, in der einen Reihenfolge, die funktioniert: exp:velocity deploy. |
 | `expVelocityFrankenPHP` | class extends expVelocity | – | `kernel/classes/expvelocityfrankenphp.php:34` | Die zweite Engine von Velocity: FrankenPHP, der Caddy-Webserver mit eingebautem PHP. |
 | `expVelocityFrankenPHPInstaller` | class | – | `kernel/classes/expvelocityfrankenphpinstaller.php:28` | Legt die FrankenPHP-Binärdatei für die Engine frankenphp bereit: `exp:velocity install` und AutoInstall von start. |
 | `expVelocityMarkers` | class | [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/classes/expvelocitymarkers.php:30` | Die kleinen Statusdateien, die sagen, warum eine Engine nicht läuft. |
@@ -85,6 +99,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/classes` mit den Mustern,
 | `expVelocityRestartUnit` | class | [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/classes/expvelocityrestartunit.php:34` | Führt exp:velocity restart als eine losgelöste Einheit aus: das Stoppen und das Starten in einem Prozess, der nicht zum Aufrufer gehört. |
 | `expVelocityWatchdog` | class | – | `kernel/classes/expvelocitywatchdog.php:49` | Ein Sicherheitsnetz, das die Standard-Engine wieder startet, wenn sie läuft nicht und niemand das wollte: exp:velocity watchdog. |
 | `expViewAccess` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expviewaccess.php:25` | Ob ein Benutzer eine Adresse dieses Siteaccess öffnen kann, so entschieden, wie der Kernel eine Anfrage entscheidet (ezpKernelWeb): die URL-Alias- (und Wildcard-)Übers… |
+| `expViewParameters` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/expviewparameters.php:25` | Die Optionen einer Administrationsansicht oder eines Endpunkts sind View-Parameter, /(name)/value, nie GET-Query-Parameter (wie beim Help Center, doc/eng-us/fe… |
 | `expWeakPasswordList` | class | [Singleton / instance()](singleton.md) | `kernel/classes/expweakpasswordlist.php:35` | Die eine Liste bekannter und häufiger Passwörter und die Prüfung, die jede Stelle verwendet, die ein neues Passwort setzt: der Setup-Assistent, der Kickstarter und exp:i… |
 | `eZAudit` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/ezaudit.php:20` | Die Audit-API von 4.x, beibehalten, damit jeder bestehende Aufruf weiter funktioniert: eZAudit::writeAudit( $name, $attributes ) wird von expAudit aufgezeichnet (kernel/classes/audit… |
 | `eZBasket` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md) | `kernel/classes/ezbasket.php:20` | – |
@@ -165,8 +180,8 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/classes` mit den Mustern,
 | `eZPackageLicense` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/ezpackagelicense.php:28` | – |
 | `eZPackageRemovalPlan` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/ezpackageremovalplan.php:20` | Was das Entfernen einer Auswahl von Paketen bewirken würde, bevor es geschieht: pro Paket sein Verzeichnis, seine Dateien und seine Größe, ob es installiert ist (sein Installationsdat… |
 | `eZPackageRequestGuard` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/ezpackagerequestguard.php:16` | Die Prüfungen, die jede Paketansicht auf das anwendet, was eine Anfrage benennt, bevor etwas von der Platte gelesen wird: ein Paketname, ein Repository, ein Ansichtsmodus und eine Datei… |
-| `eZPackageUploadInspector` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/ezpackageuploadinspector.php:31` | Prüft ein Paketarchiv, bevor etwas davon in ein Repository geschrieben wird. |
-| `eZPackageVersion` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/ezpackageversion.php:46` | – |
+| `eZPackageUploadInspector` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/ezpackageuploadinspector.php:33` | Prüft ein Paketarchiv, bevor etwas davon in ein Repository geschrieben wird. |
+| `eZPackageVersion` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/ezpackageversion.php:55` | – |
 | `eZPathElement` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md) | `kernel/classes/ezpathelement.php:23` | – |
 | `eZPDFExport` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/classes/ezpdfexport.php:19` | – |
 | `eZPendingActions` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/ezpendingactions.php:12` | – |
@@ -222,17 +237,18 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/classes` mit den Mustern,
 | `eZWorkflowProcess` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/classes/ezworkflowprocess.php:19` | – |
 | `eZWorkflowType` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [Registry](registry.md) | `kernel/classes/ezworkflowtype.php:18` | – |
 
-## Ereignis-Hooks (10)
+## Ereignis-Hooks (11)
 
 | Ereignis | Art | Aufgerufen in |
 | --- | --- | --- |
-| `image/invalidateAliases` | notify | `kernel/classes/ezcache.php:703` |
-| `content/class/cache/all` | notify | `kernel/classes/ezcache.php:850` |
-| `user/cache/all` | notify | `kernel/classes/ezcache.php:873` |
-| `content/cache/all` | notify | `kernel/classes/ezcache.php:886` |
-| `content/state/cache/all` | notify | `kernel/classes/ezcache.php:956` |
+| `image/invalidateAliases` | notify | `kernel/classes/ezcache.php:715` |
+| `content/class/cache/all` | notify | `kernel/classes/ezcache.php:862` |
+| `user/cache/all` | notify | `kernel/classes/ezcache.php:885` |
+| `content/cache/all` | notify | `kernel/classes/ezcache.php:898` |
+| `content/state/cache/all` | notify | `kernel/classes/ezcache.php:968` |
 | `content/cache` | notify | `kernel/classes/ezcontentcachemanager.php:818` |
 | `content/cache/all` | notify | `kernel/classes/ezcontentcachemanager.php:826` |
 | `content/cache/all` | notify | `kernel/classes/ezcontentcachemanager.php:1182` |
-| `content/edit/access` | filter | `kernel/classes/ezcontentobject.php:6319` |
+| `content/edit/access` | filter | `kernel/classes/ezcontentobject.php:6375` |
+| `content/move` | notify | `kernel/classes/ezcontentobjecttreenode.php:5415` |
 | `content/view/cachekeys` | filter | `kernel/classes/eznodeviewfunctions.php:414` |

@@ -2,7 +2,7 @@
 title: Muster in extension/ezstarrating
 audience: developer
 category: standards
-order: 455
+order: 460
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezstarrating mit den Entwurfsmustern.
 keywords: extension/ezstarrating, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -15,7 +15,7 @@ type: catalogue
 
 Jede Klasse, Schnittstelle und jeder Trait von `extension/ezstarrating` mit den Mustern, als die sie erkannt wurden, gefolgt von den Modulansichten, Richtlinienfunktionen, Fetch-Funktionen, Template-Operatoren, Cronjobs, Ereignis-Hooks und INI-Plugin-Punkten des Bereichs. [Alle Muster](README.md).
 
-## Klassen (7)
+## Klassen (8)
 
 | Klasse | Art | Muster | Datei | Beschreibung |
 | --- | --- | --- | --- | --- |
@@ -26,6 +26,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `extension/ezstarrating` mit den 
 | `ezsrRatingType` | class extends eZDataType | [Datentyp (Strategie für Inhaltsfelder)](datentyp.md) | `extension/ezstarrating/datatypes/ezsrrating/ezsrratingtype.php:27` | – |
 | `ezsrServerFunctions` | class extends ezjscServerFunctions | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/ezstarrating/classes/ezsrserverfunctions.php:36` | – |
 | `ezsrTemplateOperators` | class | [Template-Operator (Interpreter-Plugin)](template-operator.md) | `extension/ezstarrating/autoloads/ezsrtemplateoperators.php:27` | – |
+| `ezstarratingInfo` | class | [Wertobjekt / Struktur](wertobjekt.md) | `extension/ezstarrating/ezinfo.php:7` | – |
 
 ## Template-Operatoren (1)
 

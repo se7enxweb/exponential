@@ -70,7 +70,7 @@ What it gives a small team:
 
 - It usually does **not** run on shared hosting (`README.md` comparison table: "Shared hosting ... usually not"). It
   suits a small virtual server.
-- PHP 8.0 or later.
+- PHP 8.0 or later (PHP 7.4 usable without support).
 - Windows has no `fork()`, so no pool of forked workers there.
 - Someone must start it at boot and restart it after changes ([Velocity web server, Limits](../../../features/6.0/velocity-web-server.md#limits)).
 

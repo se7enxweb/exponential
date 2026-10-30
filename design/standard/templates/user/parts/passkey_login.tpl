@@ -5,6 +5,7 @@
    design/standard/templates/user/login.tpl). Variables: passkey_options, passkey_warning, User:redirect_uri. *}
 {if first_set( $passkey_options, false() )}
 {if first_set( $passkey_warning, false() )}<p class="warning" role="alert">{$passkey_warning|wash}</p>{/if}
+{if first_set( $passkey_only_hint, false() )}<p class="feedback" role="status">{'Accounts that sign in with passkeys only cannot use a password here: choose "Sign in with a passkey".'|i18n( 'design/standard/user/passkeys' )}</p>{/if}
 <form method="post" action={'/user/login/'|ezurl} class="exp-passkey-login" data-exp-passkey="login" data-exp-passkey-options="{$passkey_options|wash}"
       data-msg-working="{'Follow the steps of your browser or device.'|i18n( 'design/standard/user/passkeys' )|wash}"
       data-msg-cancelled="{'The passkey dialog was closed. You can sign in with your password instead.'|i18n( 'design/standard/user/passkeys' )|wash}"

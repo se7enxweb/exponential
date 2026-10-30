@@ -77241,6 +77241,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>পাসকী অদু চেক তৌজরদে. অনুগ্রহ তৌরগা অমুক চেষ্টা তৌবিয়ু.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>পাসকীশিংনা খক্তা লগইন তৌবা একাউন্টশিংনা মফম অসিদা পাসওয়র্দ ব্যৱহার তৌবা ঙমদে: &quot;পাসকীনা লগইন তৌবা&quot; সিলেক্ট তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login গী পাসকীশিং</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>একাউন্ট অসিনা লগইন তৌবা পাসকীশিং. মংখ্রবা নত্রগা হুরান্নখিবা ডিভাইস অমদা লৈরিবা পাসকী অদু রিভোক তৌবিয়ু: মসিনা লগইন তৌজরদে. অনৌবাশিং মালিকনা মশামকতা যোগ তৌই.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>নঙ্গী একাউন্টদা পাসকী অমা মথৌ তাই</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>নঙ্গী একাউন্টদা পাসকী অমা যোগ তৌবা</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>মখা চত্থনবা পাসকী অমা যোগ তৌবিয়ু. মদুগী মতুংদা নঙনা পাসওয়র্দ খক্তা নত্তনা মসিনা লগইন তৌগনি.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>পাসকীনা লগইন তৌবা অসি পাসওয়র্দতগী হেন্না থুনাই অমসুং হেন্না অশোয়বা নাইদে. হৌজিক অমা যোগ তৌবিয়ু, নত্রগা মসি য়াওদনা মখা চত্থবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>হৌজিক নত্তে</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>পাসকী &quot;%name&quot; রিভোক তৌবনা?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>মসিনা একাউন্ট অসিদা লগইন তৌজরদে. মসি অরোইবা ওইরবদি, মালিকনা পাসওয়র্দনা লগইন তৌগনি, নত্রগা নঙনা অনৌবা অমা সেত তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>পাসকী রিভোক তৌবা</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>রিভোক তৌবা</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>একাউন্ট অসিদা পাসকী অমত্তা লৈতে.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>অথেন্টিকেটর</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>খঙদ্রবা</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>নঙ্গী অরোইবা পাসকী: মসি থোক্কনবগী মমাংদা অতোপ্পা অমা যোগ তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>একাউন্ট অসিনা পাসকীশিংনা খক্তা লগইন তৌই (পাসকী পোলিসি): অমত্তা লেপ্পা মতমদা, মসিনা মশাগী পাসওয়র্দনা অমুক হন্না লগইন তৌই.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>মসি নঙ্গী অরোইবা পাসকীনি অমসুং নঙ্গী একাউন্টনা মসি য়াওদনা লগইন তৌবা ঙমদে. অহানবদা অতোপ্পা পাসকী অমা যোগ তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>পাসকী &quot;%name&quot; রিভোক তৌরে. মসিনা একাউন্ট অসিদা লগইন তৌজরদে.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>নঙ্গী অথেন্টিকেটর এপকী কোদ</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>নঙ্গীনা দেতা লোইনা ফাহনবা নত্রগা লোগ অমা অশেংবা ওইহনবদা লৈরি.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>নঙ্গী পাসওয়র্দ অমসুং পাসকী অমা</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>নঙ্গী পাসওয়র্দ অমসুং নঙ্গী অথেন্টিকেটর এপকী কোদ অমা</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>নত্রগা:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>ব্রাউজর অসিনা পাসকী ব্যৱহার তৌজরদে. অতোপ্পা মওং অমা নত্রগা অতোপ্পা ব্রাউজর অমা ব্যৱহার তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>নঙনা মখা চত্থবা মতমদা, নঙ্গী ব্রাউজরনা নঙ্গী পাসকীশিংগী মনুংদগী অমা হায়জগনি.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>পাসকীনা মখা চত্থবা</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>সেটআপ</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>মশাগী পাসওয়র্দ, ই-মেল এদ্রেস, পাসকীশিং, দুইগী স্তরগী সাইন ইন, রিকভরী কোদশিং নত্রগা API কী হোংদোকপা, অমসুং মশাগী অতোপ্পা ডিভাইসশিংদগী সাইন আউট তৌবা.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ইউজরশিং, মখোয়গী পাসওয়র্দ অমসুং ডিভাইসশিং, একাউন্ট সেটিংশিং সেম্বা অমসুং এডিট তৌবা, অনৌবা ইউজর একাউন্টশিং য়াবা নত্রগা য়াদবা, রোলশিং পীবা অমসুং পোলিসিশিং এডিট তৌবা.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>দেতা ফাহনবা</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>ট্রেশ অশেংবা ওইহনবা, মসিদগী পোত্শিং থোক্কনবা অমসুং পোত্ কয়া অমুকতা থোক্কনবা.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>কন্টেন্ট থোক্কনবা, প্রকাশ তৌবা অমসুং থম্বা</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>কন্টেন্ট থোক্কনবা (ট্রেশতসু), প্রকাশ তৌবা অমসুং দ্রাফ্ট অমা থম্বা; ফোর্ম পাঠাবা মতমদা হংই. দিফোল্টতা অফ ওই.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>সেন্সিটিভ থবক অমগী মমাংদা লগইন তৌরবা ইউজরনা মহাক কনানো হায়বদু অমুক হন্না কনফর্ম তৌই: মশাগী পাসওয়র্দ অমসুং পাসকী অমনা, নত্রগা পাসকী লৈতবদি মশাগী পাসওয়র্দ অমসুং অথেন্টিকেটর এপকী কোদনা. ৱেব পেজশিংনা খক্তা হংই: REST ইন্টরফেস, SOAP, WebDAV, expservices লগইন অমসুং কমান্দ লাইননা কদাইদসু হংদে.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>সেটিংশিং কদাইদা চলে</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>সেটিংশিং মসিগীদমক</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>সাইট একসেস খুদিংমক</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>সাইট একসেস %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>হাংদোকপা</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>কনাদা হংগনি: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>মখোয়গী মেম্বরশিংদা খক্তা হংনবা ইউজর মরুপশিং টিক তৌবিয়ু (খুদম ওইনা এদিতরশিং). অমত্তা টিক তৌদ্রবদি: ইউজর খুদিংমক.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php দা থম্লে, সাইট একসেস খুদিংমকগীদমক. থম্বা মতমদা নঙ ওইবদু কনফর্ম তৌনবা হায়গনি.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php দা থম্লে. settings/override দা লৈবা ভেল্যু অমনা মসিদগী মমাং লৈ. থম্বা মতমদা নঙ ওইবদু কনফর্ম তৌনবা হায়গনি.</translation>
     </message>
 </context>
 <context>
@@ -77786,6 +77954,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>নঙ্গী একাউন্ট লক তৌরে</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site দা লৈবা নঙ্গী একাউন্ট %login দা পাসকী অমা যোগ তৌরে.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>পাসকী অসি লৈবা কনাগুম্বা অমনা নঙ্গী পাসওয়র্দ য়াওদনা নঙ্গী একাউন্টদা লগইন তৌবা ঙমগনি. নঙনা যোগ তৌদ্রবদি, পাসকীশিংগী মখাদা মসি থোক্কনবিয়ু অমসুং নঙ্গী পাসওয়র্দ হোংদোকপিয়ু.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site দা লৈবা নঙ্গী একাউন্ট %login দগী পাসকী অমা থোক্কনখ্রে.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>মসিনা নঙ্গী একাউন্টদা লগইন তৌজরদে. নঙনা থোক্কনদ্রবদি, নঙ্গী পাসকীশিং অমসুং ডিভাইসশিং চেক তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>নঙ্গী একাউন্টদা পাসকী অমা যোগ তৌরে</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>নঙ্গী একাউন্টদগী পাসকী অমা থোক্কনখ্রে</translation>
     </message>
 </context>
 <context>

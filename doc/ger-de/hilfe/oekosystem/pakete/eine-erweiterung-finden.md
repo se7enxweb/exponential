@@ -23,7 +23,7 @@ type: help
 | 2 | Die Funktionsseiten der Erweiterungen: [Erweiterungen](../../../funktionen/6.0/erweiterungen/README.md) |
 | 3 | Die Repositorys von se7enxweb auf [GitHub](https://github.com/se7enxweb) und die Pakete des Anbieters auf Packagist |
 | 4 | [Projects](https://projects.exponential.earth/), wo Projekte und Erweiterungen der Community aufgeführt sind |
-| 5 | Fragen Sie in den [Foren](https://share.exponential.earth/forums) ([Eine gute Frage stellen](../../../../eng-us/help/community/joining/asking-a-good-question.md)) |
+| 5 | Fragen Sie in den [Foren](https://share.exponential.earth/forums) ([Eine gute Frage stellen](../../gemeinschaft/beitreten/eine-gute-frage-stellen.md)) |
 
 ## Beurteilen, was Sie finden
 

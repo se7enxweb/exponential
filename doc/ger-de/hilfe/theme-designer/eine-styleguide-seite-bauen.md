@@ -108,7 +108,7 @@ keine Versionsabfrage an seinen Link ([Keine Versionsabfragen an Asset-Links](..
 - Legen Sie den Ordner dorthin, wo Abrufe der Navigation nicht hinreichen, oder in eine Sektion, die das Hauptmenü
   auslässt.
 - Verbergen Sie ihn vor Besuchern, wenn die Website öffentlich ist: Üblich ist eine Sektion ohne Leserecht für anonyme
-  Besucher, über die der Administrator entscheidet ([Sektionen, Rollen und Richtlinien](../../../eng-us/help/cms-developers/sections-roles-and-policies.md)).
+  Besucher, über die der Administrator entscheidet ([Sektionen, Rollen und Richtlinien](../cms-entwickler/sektionen-rollen-und-richtlinien.md)).
 - Halten Sie ihn auf dieselbe Weise aus Suchergebnissen und Sitemaps heraus.
 
 ## Die Seite nutzen

@@ -264,7 +264,7 @@ From [doc/eng-us/release-overview](../release-overview) and the git tags (`git t
 | 6.0.4 | 5 September 2024 | The first release after admin3, the responsive administration design |
 | 6.0.5 | 1 October 2024 | |
 | 6.0.6 | 17 December 2024 | |
-| 6.0.7 | 1 February 2025 | The last release for PHP 7.4 |
+| 6.0.7 | 1 February 2025 | The last release for PHP 7.4 until 6.0.15 |
 | 6.0.8 | 2 May 2025 | The first release after PHP 8.4 support began (April 2025) |
 | 6.0.9 | 10 June 2025 | |
 | 6.0.10 | 28 August 2025 | The first release named Exponential |
@@ -305,7 +305,7 @@ publishing, media portals, intranets, e-commerce and extranets" (<https://expone
 
 The supported databases, "in order of preference: 1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB ·
 5. Oracle · 6. MySQL" (README, "Requirements"). Each is described on [Database support](database-support.md). The
-operating systems are sorted into tiers on [Operating system support](os-support.md): "almost any that runs PHP 8.0
+operating systems are sorted into tiers on [Operating system support](os-support.md): "almost any that runs PHP 7.4
 or later".
 
 ## The application stack

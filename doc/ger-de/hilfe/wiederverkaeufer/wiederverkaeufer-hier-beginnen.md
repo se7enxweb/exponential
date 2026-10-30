@@ -97,7 +97,7 @@ eher.
 | Support-Leiter | [Service-Levels gestalten](angebote/service-levels-gestalten.md), [Support-Stufen, die Sie anbieten](angebote/support-stufen-die-sie-anbieten.md), [Eskalation](kunden/eskalation.md) |
 | Trainer | [Schulungs-Wiederverkäufer](modelle/schulungs-wiederverkaeufer.md) und [Trainer: hier beginnen](../trainer/trainer-hier-beginnen.md) |
 | jemand, der nur Leads vermitteln möchte | [Wiederverkauf nur über Empfehlungen](grundlagen/wiederverkauf-nur-ueber-empfehlungen.md) und [Leads übergeben](verkauf/leads-uebergeben.md) |
-| Ersteller von Paketen oder Integrationen | [Paketersteller: hier beginnen](../../../eng-us/help/bundlers/bundlers-start-here.md) und [Integratoren: hier beginnen](../../../eng-us/help/integrators/integrators-start-here.md) |
+| Ersteller von Paketen oder Integrationen | [Paketersteller: hier beginnen](../buendler/buendler-hier-beginnen.md) und [Integratoren: hier beginnen](../integratoren/integratoren-hier-beginnen.md) |
 
 Der [Lesepfad](lesepfad-fuer-wiederverkaeufer.md) bringt alle Seiten für einen neuen Wiederverkäufer in eine Reihenfolge.
 
@@ -128,7 +128,7 @@ Der [Lesepfad](lesepfad-fuer-wiederverkaeufer.md) bringt alle Seiten für einen 
 - [Partner: hier beginnen](../partner/partner-hier-beginnen.md)
 - [Hosting-Unternehmen: hier beginnen](../hosting/hosting-anbieter-hier-beginnen.md)
 - [Vertrieb und Marketing: hier beginnen](../geschaeft/vertrieb-und-marketing-hier-beginnen.md)
-- [Paketersteller: hier beginnen](../../../eng-us/help/bundlers/bundlers-start-here.md), [Integratoren: hier beginnen](../../../eng-us/help/integrators/integrators-start-here.md)
+- [Paketersteller: hier beginnen](../buendler/buendler-hier-beginnen.md), [Integratoren: hier beginnen](../integratoren/integratoren-hier-beginnen.md)
 - [Kunden: hier beginnen](../kunden/kunden-hier-beginnen.md), der Bereich, den Ihre Kunden lesen
 - [Freie Dokumentation](../freie-dokumentation.md): diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

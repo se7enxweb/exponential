@@ -51,11 +51,11 @@
     </message>
     <message>
         <source>Close the editor and discard your changes?</source>
-        <translation>Nĩ ũrenda kũhinga kĩnyamũ kĩa gũcenjia na ũikie macenjia maku?</translation>
+        <translation>Nĩ ũrenda kũhinga porogiramu ya gũcenjia na ũikie macenjia maku?</translation>
     </message>
     <message>
         <source>Loading the editor ...</source>
-        <translation>Kĩnyamũ kĩa gũcenjia nĩ kĩrahingũrwo ...</translation>
+        <translation>Porogiramu ya gũcenjia nĩ ĩrahingũrwo ...</translation>
     </message>
     <message>
         <source>Saving ...</source>
@@ -63,7 +63,7 @@
     </message>
     <message>
         <source>The editor could not be loaded.</source>
-        <translation>Kĩnyamũ kĩa gũcenjia gĩtiahotire kũhingũrwo.</translation>
+        <translation>Porogiramu ya gũcenjia ndĩahotire kũhingũrwo.</translation>
     </message>
     <message>
         <source>The image could not be saved (%1).</source>
@@ -419,11 +419,11 @@
     </message>
     <message>
         <source>The edited image is larger than the editor stores.</source>
-        <translation>Mbica ĩrĩa ĩcenjetio nĩ nene gũkĩra ũrĩa kĩnyamũ kĩa gũcenjia kĩigaga.</translation>
+        <translation>Mbica ĩrĩa ĩcenjetio nĩ nene gũkĩra ũrĩa porogiramu ya gũcenjia ĩigaga.</translation>
     </message>
     <message>
         <source>The edited image has more pixels than the editor stores.</source>
-        <translation>Mbica ĩrĩa ĩcenjetio ĩrĩ na pikiseli nyingĩ gũkĩra iria kĩnyamũ kĩa gũcenjia kĩigaga.</translation>
+        <translation>Mbica ĩrĩa ĩcenjetio ĩrĩ na pikiseli nyingĩ gũkĩra iria porogiramu ya gũcenjia ĩigaga.</translation>
     </message>
     <message>
         <source>The edited image could not be read.</source>
@@ -447,7 +447,7 @@
     </message>
     <message>
         <source>The editor may not store images of this type.</source>
-        <translation>Kĩnyamũ kĩa gũcenjia gĩtirĩ na rũtha rwa kũiga mbica cia mũthemba ũyũ.</translation>
+        <translation>Porogiramu ya gũcenjia ndĩrĩ na rũtha rwa kũiga mbica cia mũthemba ũyũ.</translation>
     </message>
     <message>
         <source>The edited image could not be stored.</source>

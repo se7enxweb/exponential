@@ -27,7 +27,7 @@ Nach den Inhaltsfunktionen geht das Buch die übrigen Administratorfunktionen de
 | Packages | Inhalte, Klassen und Designs als Pakete installieren und exportieren. | [Pakete](../../anleitungen/pakete.md) |
 | Notification | Benachrichtigungen über Inhaltsänderungen per E-Mail versenden. | [Benachrichtigungen für Administratoren](../../anleitungen/benachrichtigungen-administrator.md) |
 | Personal | Die eigenen Seiten des Benutzers: Lesezeichen, Entwürfe, Einstellungen, Benachrichtigungseinstellungen. | [Was auf meiner Kontoseite steht](../handbuch/was-steht-auf-meiner-kontoseite.md) |
-| Shop | Bestellungen, Produkte, Preise. | [E-Commerce](../../../eng-us/help/e-commerce/e-commerce-reading-path.md) |
+| Shop | Bestellungen, Produkte, Preise. | [E-Commerce](../e-commerce/lesepfad-fuer-e-commerce.md) |
 
 ## Was seit dem Buch neu ist
 

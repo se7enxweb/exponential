@@ -3,7 +3,7 @@ title: Das Skeleton 4.6.x
 audience: dxp-developer
 category: dxp-development
 order: 43
-summary: Wann Sie se7enxweb/exponential-platform-v4x-dxp-skeleton statt des v5-Skeletons verwenden - Platform 4.6.x auf Symfony 5.4 mit PHP 7.4 bis 8.5 - und wie es sich von der v5-DXP unterscheidet, die der Rest dieses Bereichs beschreibt.
+summary: Wann Sie se7enxweb/exponential-platform-v4x-dxp-skeleton statt des v5-Skeletons verwenden - Platform 4.6.x auf Symfony 5.4 mit PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) - und wie es sich von der v5-DXP unterscheidet, die der Rest dieses Bereichs beschreibt.
 keywords: 4.6, Skeleton v4x, exponential-platform-v4x-dxp-skeleton, Symfony 5.4, PHP 7.4, Ibexa 4.6, älteres PHP, Migrationsschritt, v4x skeleton, older PHP, migration step
 type: help
 ---

@@ -25,7 +25,7 @@ verantwortlich ist und bei der Sie diese Person erreichen.
 
 Aus [Anforderungen auf einen Blick](../../hosting/grundlagen/anforderungen-auf-einen-blick.md):
 
-- PHP 8.0 oder neuer mit einigen üblichen Erweiterungen;
+- PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) mit einigen üblichen Erweiterungen;
 - eine Datenbank: SQLite braucht keinen Datenbankserver und reicht für eine Website auf einem Rechner; MySQL, MariaDB
   und PostgreSQL werden ebenfalls unterstützt ([Datenbankunterstützung](../../datenbankunterstuetzung.md));
 - einen Webserver wie Apache oder Nginx oder Exponential Velocity, den Anwendungsserver, der mit Exponential

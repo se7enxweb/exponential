@@ -311,8 +311,8 @@ named; together they describe how the project looks after its users.
 
 | PHP | Exponential 6 | Source |
 |---|---|---|
-| 7.4 | Up to 6.0.7 only ("PHP 7 Support is deprecated but still available from our older stable and usable past releases up to version 6.0.7") | README |
-| 8.0 | The oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 runs it, under Velocity too from its release 0.0.4.54 (until then Velocity needed 8.1) | README, [PHP 8.0 support](../bc/6.0/php-8.0-support.md) |
+| 7.4 | Up to 6.0.7, and again from 6.0.15 ("PHP 7.4 is usable again from 6.0.15, without support, as a bridge for organizations that cannot change the PHP of their servers yet"); see [Why Exponential supports PHP 7.4](why-exponential-supports-php-7-4.md) | README |
+| 8.0 | Supported, so the stock PHP of Red Hat Enterprise Linux 9 runs it, under Velocity too from its release 0.0.4.54 (until then Velocity needed 8.1) | README, [PHP 8.0 support](../bc/6.0/php-8.0-support.md) |
 | 8.1 to 8.5 | Supported, Velocity included | README |
 | 8.6 and later | Allowed by the `php` requirement of `composer.json` (up to 8.8); the project aims at "PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9" | composer.json, README |
 

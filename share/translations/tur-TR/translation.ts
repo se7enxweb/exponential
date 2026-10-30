@@ -77246,6 +77246,82 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Geçiş anahtarı denetlenemedi. Lütfen yeniden deneyin.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Yalnızca geçiş anahtarlarıyla oturum açan hesaplar burada parola kullanamaz: &quot;Geçiş anahtarıyla oturum aç&quot; seçeneğini seçin.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login kullanıcısının geçiş anahtarları</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Bu hesabın oturum açtığı geçiş anahtarları. Kayıp veya çalınmış bir cihazdaki anahtarı iptal edin: artık onunla oturum açılamaz. Yenilerini sahibi kendisi ekler.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Hesabınızın bir geçiş anahtarına ihtiyacı var</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Hesabınıza bir geçiş anahtarı ekleyin</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Devam etmek için bir geçiş anahtarı ekleyin. Ardından yalnızca parola yerine onunla oturum açarsınız.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Geçiş anahtarıyla oturum açmak paroladan daha hızlı ve daha güvenlidir. Şimdi bir tane ekleyin veya onsuz devam edin.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Şimdi değil</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>&quot;%name&quot; geçiş anahtarı iptal edilsin mi?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Artık bu hesapta oturum açamaz. Son anahtarsa, sahibi parolayla oturum açar ya da siz yeni bir parola belirlersiniz.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Geçiş anahtarını iptal et</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>İptal et</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Bu hesabın geçiş anahtarı yok.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Kimlik doğrulayıcı</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Bilinmiyor</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Son geçiş anahtarınız: kaldırmadan önce başka bir tane ekleyin.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Bu hesap yalnızca geçiş anahtarlarıyla oturum açar (geçiş anahtarı ilkesi): hiçbiri kalmazsa yeniden parolasıyla oturum açar.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Bu son geçiş anahtarınız ve hesabınız onsuz oturum açamaz. Önce başka bir geçiş anahtarı ekleyin.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>&quot;%name&quot; geçiş anahtarı iptal edildi. Artık bu hesapta oturum açamaz.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77345,6 +77421,34 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Code from your authenticator app</source>
         <translation>Kimlik doğrulama uygulamanızdaki kod</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Verileri kalıcı olarak silmek veya bir günlüğü temizlemek üzeresiniz.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Parolanız ve bir geçiş anahtarı</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Parolanız ve kimlik doğrulama uygulamanızdan bir kod</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Veya:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Bu tarayıcı geçiş anahtarlarını kullanamıyor. Başka bir yol veya başka bir tarayıcı seçin.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Devam ettiğinizde tarayıcınız geçiş anahtarlarınızdan birini ister.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Geçiş anahtarıyla devam et</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77435,6 +77539,70 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>Setup</source>
         <translation>Kurulum</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Kişinin kendi parolasını, e-posta adresini, geçiş anahtarlarını, iki adımlı oturum açmayı, kurtarma kodlarını veya API anahtarlarını değiştirmesi ve diğer cihazlarındaki oturumları kapatması.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Kullanıcıları, parolalarını ve cihazlarını, hesap ayarlarını oluşturma ve düzenleme, yeni kullanıcı hesaplarını onaylama veya reddetme, rol atama ve ilkeleri düzenleme.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Veri silme</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Çöp kutusunu boşaltma, içinden öğe kaldırma ve birden çok öğeyi aynı anda kaldırma.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>İçerik kaldırma, yayımlama ve kaydetme</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>İçerik kaldırma (çöp kutusuna da), yayımlama ve taslak kaydetme; form gönderilirken sorulur. Varsayılan olarak kapalı.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Hassas bir işlemden önce oturum açmış kullanıcı kim olduğunu yeniden doğrular: parolası ve bir geçiş anahtarıyla ya da geçiş anahtarı olmadan parolası ve kimlik doğrulama uygulamasındaki kodla. Yalnızca web sayfaları sorar: REST arayüzü, SOAP, WebDAV, expservices oturum açma ve komut satırı asla sormaz.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Ayarların geçerli olduğu yer</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Ayarlar:</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Her site erişimi</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Site erişimi %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Aç</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Kime sorulur: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Yalnızca üyelerine sormak için kullanıcı gruplarını işaretleyin (örneğin editörler). Hiçbiri işaretli değilse: her kullanıcı.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php dosyasına, her site erişimi için kaydedilir. Kaydetme, siz olduğunuzu doğrulamanızı ister.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php dosyasına kaydedilir. settings/override içindeki bir değer bundan önceliklidir. Kaydetme, siz olduğunuzu doğrulamanızı ister.</translation>
     </message>
 </context>
 <context>
@@ -77791,6 +77959,30 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>Your account was locked</source>
         <translation>Hesabınız kilitlendi</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site üzerindeki %login hesabınıza bir geçiş anahtarı eklendi.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Bu geçiş anahtarına sahip olan herkes, parolanız olmadan hesabınızda oturum açabilir. Bunu siz eklemediyseniz Geçiş anahtarları bölümünden kaldırın ve parolanızı değiştirin.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site üzerindeki %login hesabınızdan bir geçiş anahtarı kaldırıldı.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Artık hesabınızda oturum açamaz. Bunu siz kaldırmadıysanız geçiş anahtarlarınızı ve cihazlarınızı kontrol edin.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Hesabınıza bir geçiş anahtarı eklendi</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Hesabınızdan bir geçiş anahtarı kaldırıldı</translation>
     </message>
 </context>
 <context>

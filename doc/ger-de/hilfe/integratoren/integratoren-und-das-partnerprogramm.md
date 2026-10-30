@@ -91,7 +91,7 @@ Partnerteam. Beiträge zählen allgemein als Gemeinschaftsarbeit ([Punkte durch 
 - [Partner: hier beginnen](../partner/partner-hier-beginnen.md)
 - [Partnerpläne und Preise](../partner/partnertarife-und-preise.md)
 - [Integrationen zurückgeben](integrationen-zurueckgeben.md)
-- [Wiederverkäufer: hier beginnen](../../../eng-us/help/resellers/resellers-start-here.md), [Bündler: hier beginnen](../buendler/buendler-hier-beginnen.md)
+- [Wiederverkäufer: hier beginnen](../wiederverkaeufer/wiederverkaeufer-hier-beginnen.md), [Bündler: hier beginnen](../buendler/buendler-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

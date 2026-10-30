@@ -34,7 +34,7 @@ what it brings in, and how to count the hours volunteers give.
 |---|---|---|
 | No license fee | No subscription to renew from a tight budget | `README.md`, "License" |
 | SQLite 3 is the default and needs no database server | A small hosting plan or one small server is enough for one site on one machine | `README.md`, "Requirements"; [Database support](../../database-support.md) |
-| Runs on almost any operating system with PHP 8.0 or later | Wide choice of hosts | [Operating system support](../../os-support.md) |
+| Runs on almost any operating system with PHP 8.0 or later (PHP 7.4 usable without support) | Wide choice of hosts | [Operating system support](../../os-support.md) |
 | Newsletters through `cjw_newsletter`, required by `composer.json` | No separate newsletter product needed | [Newsletters with cjw_newsletter](../../creators/website-creators/newsletters-with-cjw-newsletter.md) |
 | Shared editing with roles and approval | Volunteers can edit without full access | [Roles and policies](../../../guides/roles-and-policies.md) |
 | Free documentation under the GNU FDL | Training material you may copy and adapt | [Free documentation](../../free-documentation.md) |

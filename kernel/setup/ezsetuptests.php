@@ -363,11 +363,23 @@ function eZSetupTestPhpVersion( $type )
         }
     }
 
+    // Below [phpversion] SupportedVersion (8.0.0) the test passes, with a notice: PHP 7.4 is usable without support
+    $supportedVersion = eZSetupConfigVariable( $type, 'SupportedVersion' );
+    if ( !$supportedVersion )
+        $supportedVersion = class_exists( 'expPhpSupport' ) ? expPhpSupport::SUPPORTED_MINIMUM : '8.0.0';
+    $unsupported = $result && version_compare( $currentVersion, $supportedVersion, '<' );
+    if ( $unsupported && class_exists( 'eZDebug' ) && class_exists( 'expPhpSupport' ) )
+        eZDebug::writeWarning( expPhpSupport::notice( $currentVersion ), __FUNCTION__ );
+
     return array( 'result' => $result,
                   'persistent_data' => array( 'result' => array( 'value' => $result ),
                                               'found' => array( 'value' => $currentVersion ),
-                                              'required' => array( 'value' => $neededVersion ) ),
+                                              'required' => array( 'value' => $neededVersion ),
+                                              'supported' => array( 'value' => $supportedVersion ) ),
                   'needed_version' => $neededVersion,
+                  'supported_version' => $supportedVersion,
+                  'unsupported_version' => $unsupported,
+                  'unsupported_notice' => $unsupported && class_exists( 'expPhpSupport' ) ? expPhpSupport::notice( $currentVersion ) : '',
                   'current_version' => $currentVersion,
                   'warning_version' => $warningVersion );
 }

@@ -30,7 +30,7 @@ bevor Sie veröffentlichen.
 |---|---|---|
 | Was es ist | "a professional PHP application framework with advanced CMS (content management system) functionality", mit einem "fully customizable and extendable content model" | [Exponential 6, der Kernel](../wer-ist-die-exponential-foundation.md#exponential-6-der-kernel) |
 | Wichtigste Funktionen | Inhaltsklassen, Versionen, Mehrsprachigkeit, Suche, Rollen, Freigabe und zeitgesteuerte Veröffentlichung, Multisite, E-Commerce, Workflows, Templates, eine Headless-REST-API, Clustering, eine Plugin-API | Derselbe Abschnitt (aus der README) |
-| PHP | 8.0 ist die älteste unterstützte Version der Entwicklungslinie; 8.1 bis 8.5 werden unterstützt; PHP 7.4 nur bis 6.0.7 | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
+| PHP | 8.0 bis 8.5 werden auf der Entwicklungslinie unterstützt; 7.4 ist ohne Support nutzbar; PHP 7.4 ab 6.0.15 ohne Support nutzbar | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | Tests | Die CI führt die Testsuite auf PHP 8.1 bis 8.5 aus und prüft, dass 8.0 startet, bei jedem Push auf `main` und jedem Pull Request | Derselbe Abschnitt |
 | Lizenz | GNU GPL v2 oder später; Dokumentation GNU FDL 1.3 oder später | [Wer ist 7x?, Open-Source-Lizenzen](../wer-ist-7x.md#open-source-lizenzen) |
 | Pakete | Der Kernel ist das Composer-Paket `se7enxweb/exponential`; seine `composer.json` verlangte am 18. Oktober 2026 66 se7enxweb-Pakete | [7x in Zahlen](../wer-ist-7x.md#7x-in-zahlen) |

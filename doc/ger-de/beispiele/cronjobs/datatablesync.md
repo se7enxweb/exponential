@@ -2,21 +2,21 @@
 title: Cronjob datatablesync.php
 audience: developer, admin
 category: examples
-summary: Start the data table synchronisations that are due (scheduled and live, by their interval).
+summary: Startet die fälligen Synchronisationen der Datentabellen (geplante und Live-Synchronisationen, nach ihrem Intervall).
 keywords: Teil, datatablesync.php, datatablesync, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob datatablesync.php
 
-Start the data table synchronisations that are due (scheduled and live, by their interval).
+Startet die fälligen Synchronisationen der Datentabellen (geplante und Live-Synchronisationen, nach ihrem Intervall).
 
 Einstiegspunkt `cronjobs/datatablesync.php`, Code in `kernel/private/classes/cronjobs/datatablesync.php`.
 
-> The cronjob part datatablesync (cronjobs/datatablesync.php, frequent group; doc/eng-us/features/6.0/data-tables.md,  
-> "Synchronisation"): starts each enabled scheduled or live data table synchronisation whose next run is due, through  
-> the transfer runner (expqueue, content jobs, or this process), and moves its next run by its interval. Does nothing  
-> on an installation without the sync tables.  
+> Der Cronjob-Teil datatablesync (cronjobs/datatablesync.php, Gruppe frequent; doc/eng-us/features/6.0/data-tables.md,  
+> "Synchronisation"): startet jede aktivierte geplante oder Live-Synchronisation einer Datentabelle, deren nächster Lauf fällig ist, über  
+> den Transfer-Runner (expqueue, Inhalts-Jobs oder diesen Prozess) und verschiebt ihren nächsten Lauf um ihr Intervall. Tut nichts  
+> in einer Installation ohne die Sync-Tabellen.  
 
 ## Wann er läuft
 

@@ -2,7 +2,7 @@
 title: Muster in extension/expui
 audience: developer
 category: standards
-order: 431
+order: 435
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/expui mit den Entwurfsmustern.
 keywords: extension/expui, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -21,7 +21,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `extension/expui` mit den Mustern
 | --- | --- | --- | --- | --- |
 | `Exponential\View\Extension\Expui\Expui\Test` | class extends ModuleView | [Modulansicht (Page Controller)](modulansicht.md) | `extension/expui/classes/runnable/views/expui/test.php:23` | Der Code von extension/expui/modules/expui/test.php, in eine Klasse verschoben (#207 Stufe 1). |
 | `expuiInfo` | class | [Wertobjekt / Struktur](wertobjekt.md) | `extension/expui/ezinfo.php:7` | – |
-| `expUIServerFunctions` | class | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/expui/classes/expuiserverfunctions.php:28` | – |
+| `expUIServerFunctions` | class | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/expui/classes/expuiserverfunctions.php:30` | – |
 | `expUITemplateOperators` | class | [Template-Operator (Interpreter-Plugin)](template-operator.md) | `extension/expui/classes/expuitemplateoperators.php:17` | – |
 
 ## Template-Operatoren (1)

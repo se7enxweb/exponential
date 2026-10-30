@@ -136,8 +136,10 @@ werden für einen Pfad oder ein Präfix gelesen; die Seite sagt, wenn es mehr ga
 ## Die Adresse einer Suche
 
 Eine Suche ist eine Adresse mit View-Parametern, `contentfinder/search/(type)/object/(text)/58`: `(text)` ist der
-Text (unverändert, wenn er aus Buchstaben, Ziffern, Leerzeichen und `. _ : @ , + = -` besteht, sonst `~` und sein
-base64url, wie bei einem Pfad oder einer URL), und `(type)` ist der Typ (keiner für *auto*). Das Formular wird per
+Text, geschrieben wie jeder View-Parameter (`/` als `~2F`, `(` und `)` als `~28` und `~29`, der Rest lesbar:
+`(text)/example.com~2Fnews`, siehe
+[wie ein Wert in der Adresse reist](../../anleitungen/urls-und-aliase.md#9-view-parameter-wie-ein-wert-in-der-adresse-reist);
+ein Link von früher, `~` und ein base64url, wird weiterhin gelesen), und `(type)` ist der Typ (keiner für *auto*). Das Formular wird per
 POST gesendet und mit einem 303 auf diese Adresse beantwortet; ein Query-String wie `?SearchText=` wird nicht gelesen.
 
 ## Wer ihn verwenden darf

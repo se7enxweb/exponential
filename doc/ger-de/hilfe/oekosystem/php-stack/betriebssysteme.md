@@ -9,8 +9,8 @@ type: help
 ---
 # Betriebssysteme im Ökosystem
 
-Exponential läuft auf "almost any [operating system] that runs PHP 8.0 or later", also auf fast jedem Betriebssystem,
-auf dem PHP 8.0 oder neuer läuft (`README.md`, "Requirements"). Die Hilfe ordnet sie in vier Stufen
+Exponential läuft auf "almost any [operating system] that runs PHP 8.0 or later (PHP 7.4 usable without support)", also auf fast jedem Betriebssystem,
+auf dem PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) läuft (`README.md`, "Requirements"). Die Hilfe ordnet sie in vier Stufen
 ([Unterstützte Betriebssysteme](../../betriebssystemunterstuetzung.md)).
 
 ## Inhalt
@@ -44,7 +44,7 @@ Velocity veröffentlicht `.deb`-Pakete, ein Binary für macOS und Container-Imag
 "If you run Exponential on a tier 3 system, please tell the project on the community tracker or the software tracker,
 and the row moves up", wenn Sie Exponential also auf einem System der Stufe 3 betreiben, sagen Sie es dem Projekt im
 Tracker der Community oder der Software, und die Zeile rückt auf ([Unterstützte Betriebssysteme](../../betriebssystemunterstuetzung.md)).
-Das ist ein Beitrag, den jeder Anwender leisten kann ([Einen Fehler melden](../../../../eng-us/help/community/contributing/filing-a-bug.md)).
+Das ist ein Beitrag, den jeder Anwender leisten kann ([Einen Fehler melden](../../gemeinschaft/mitwirken/einen-fehler-melden.md)).
 
 ## Verwandte Seiten
 

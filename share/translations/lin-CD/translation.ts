@@ -77241,6 +77241,82 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Passkey ekokaki kotalama te. Meká lisusu.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Ba-compte oyo ekɔtaka kaka na bapasskey ekoki kosalela liloba ya sekele awa te: ponà &quot;Kɔtá na passkey&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Bapasskey ya %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Bapasskey oyo compte oyo ekɔtaka na yango. Annulá oyo ezali na appareil oyo ebungaki to bayibaki: ekoki lisusu kokɔta te. Nkolo ya compte abakisaka ya sika ye moko.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Compte na yo esengeli kozala na passkey</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Bakisá passkey na compte na yo</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Bakisá passkey mpo na kokoba. Sima okokɔta na yango na esika ya liloba ya sekele kaka.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Kokɔta na passkey ezali noki mpe na libateli koleka liloba ya sekele. Bakisá moko sikoyo, to kobá kozanga yango.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Sikoyo te</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Annulá passkey &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Ekoki lisusu kokɔta na compte oyo te. Soki ezalaki ya nsuka, nkolo akokɔta na liloba ya sekele, to yo okotia liloba ya sika.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Annulá passkey</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Annulá</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Compte oyo ezali na passkey te.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Authentificateur</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Eyebani te</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Passkey na yo ya nsuka: bakisá mosusu liboso ya kolongola yango.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Compte oyo ekɔtaka kaka na bapasskey (mibeko ya passkey): soki etikali ata moko te, ekokɔta lisusu na liloba na yango ya sekele.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Oyo ezali passkey na yo ya nsuka mpe compte na yo ekoki kokɔta te soki ezangi yango. Bakisá passkey mosusu liboso.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Passkey &quot;%name&quot; eannulami. Ekoki lisusu kokɔta na compte oyo te.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>Code from your authenticator app</source>
         <translation>Code euti na application ya authentificateur na yo</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Ozali pene ya kopangusa ba-donnée mpo na libela to kopetola journal.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Liloba na yo ya sekele mpe passkey</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Liloba na yo ya sekele mpe code euti na application ya authentificateur na yo</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>To:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Navigateur oyo ekoki kosalela bapasskey te. Salelá nzela mosusu, to navigateur mosusu.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Soki okobi, navigateur na yo ekosɛnga moko ya bapasskey na yo.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Kobá na passkey</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>Setup</source>
         <translation>Bobongisi</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Kobongola liloba ya sekele ya yo moko, adresi ya e-mail, bapasskey, bokɔti na etape mibale, ba-code ya bozongisi to ba-clé API, mpe kobimisa ba-appareil mosusu ya yo moko.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Kosala mpe kobongisa basaleli, baliloba na bango ya sekele mpe ba-appareil na bango, mibongiseli ya compte, kondima to koboya ba-compte ya sika ya basaleli, kopesa mikumba mpe kobongisa mibeko.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Kopangusa ba-donnée</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Kosopa kitunga ya bosoto, kolongola biloko na kati na yango mpe kolongola biloko ebele mbala moko.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Kolongola, kobimisa mpe kobomba makambo</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Kolongola makambo (ata na kitunga ya bosoto), kobimisa mpe kobomba brouillon; etunami ntango formulaire etindami. Ekangami na ndenge ya liboso.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Liboso ya mosala ya ntina mingi, mosaleli oyo akɔti andimisaka lisusu soki azali nani: na liloba na ye ya sekele mpe passkey, to soki passkey ezali te, na liloba na ye ya sekele mpe code ya application ya authentificateur na ye. Kaka bapaje ya web nde etunaka: interface REST, SOAP, WebDAV, bokɔti ya expservices mpe ligne de commande etunaka soko moke te.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Esika mibongiseli esalaka</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Mibongiseli mpo na</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Siteaccess nyonso</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Siteaccess kaka %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Fungola</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Nani atunami: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Ponà bisanga ya basaleli mpo na kotuna kaka basangani na yango (ndakisa babongisi). Soki eponami te: basaleli nyonso.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Ebombami na settings/override/site.ini.append.php, mpo na siteaccess nyonso. Kobomba ekosɛnga yo kondimisa ete ezali yo.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Ebombami na settings/siteaccess/%name/site.ini.append.php. Motuya na settings/override eleki yango. Kobomba ekosɛnga yo kondimisa ete ezali yo.</translation>
     </message>
 </context>
 <context>
@@ -77786,6 +77954,30 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Compte na yo ekangamaki</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Babakisi passkey na compte na yo %login na %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Moto nyonso oyo azali na passkey oyo akoki kokɔta na compte na yo kozanga liloba na yo ya sekele. Soki yo te obakisaki yango, longolá yango na Ba-passkey mpe bongolá liloba na yo ya sekele.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Balongoli passkey na compte na yo %login na %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Ekoki lisusu kokɔta na compte na yo te. Soki yo te olongolaki yango, talá bapasskey mpe ba-appareil na yo.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Babakisi passkey na compte na yo</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Balongoli passkey na compte na yo</translation>
     </message>
 </context>
 <context>

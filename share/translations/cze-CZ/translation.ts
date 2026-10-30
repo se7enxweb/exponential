@@ -78527,6 +78527,82 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Přístupový klíč se nepodařilo ověřit. Zkuste to prosím znovu.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Účty, které se přihlašují pouze přístupovými klíči, zde nemohou použít heslo: zvolte „Přihlásit se přístupovým klíčem“.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Přístupové klíče uživatele %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Přístupové klíče, kterými se tento účet přihlašuje. Odvolejte klíč, který je na ztraceném nebo odcizeném zařízení: už se jím nebude možné přihlásit. Nové si vlastník přidává sám.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Váš účet potřebuje přístupový klíč</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Přidejte ke svému účtu přístupový klíč</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Pro pokračování přidejte přístupový klíč. Poté se budete přihlašovat jím, a ne jen heslem.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Přihlášení přístupovým klíčem je rychlejší a bezpečnější než heslo. Přidejte si ho hned, nebo pokračujte bez něj.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Teď ne</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Odvolat přístupový klíč „%name“?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Poté se jím již nebude možné k tomuto účtu přihlásit. Pokud byl poslední, vlastník se přihlásí heslem, nebo nastavíte nové.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Odvolat přístupový klíč</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Odvolat</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Tento účet nemá žádný přístupový klíč.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Ověřovatel</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Neznámé</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Váš poslední přístupový klíč: než ho odstraníte, přidejte další.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Tento účet se přihlašuje pouze přístupovými klíči (zásada přístupových klíčů): když žádný nezbude, přihlašuje se opět svým heslem.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Toto je váš poslední přístupový klíč a váš účet se bez něj nemůže přihlásit. Nejprve přidejte další přístupový klíč.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Přístupový klíč „%name“ byl odvolán. Už se jím k tomuto účtu nelze přihlásit.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -78626,6 +78702,34 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Code from your authenticator app</source>
         <translation>Kód z ověřovací aplikace</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Chystáte se trvale odstranit data nebo vymazat protokol.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Vaše heslo a přístupový klíč</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Vaše heslo a kód z ověřovací aplikace</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Nebo:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Tento prohlížeč nemůže používat přístupové klíče. Použijte jiný způsob nebo jiný prohlížeč.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Když budete pokračovat, prohlížeč si vyžádá jeden z vašich přístupových klíčů.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Pokračovat přístupovým klíčem</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -78716,6 +78820,70 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>Setup</source>
         <translation>Nastavení</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Změna vlastního hesla, e-mailové adresy, přístupových klíčů, dvoustupňového přihlášení, kódů pro obnovení nebo klíčů API a odhlášení vlastních ostatních zařízení.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Vytváření a úpravy uživatelů, jejich hesel a zařízení, nastavení účtů, schvalování nebo zamítání nových uživatelských účtů, přiřazování rolí a úpravy zásad.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Odstraňování dat</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Vysypání koše, odebírání položek z něj a odebírání více položek najednou.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Odstraňování, publikování a ukládání obsahu</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Odstraňování obsahu (i do koše), publikování a ukládání konceptu, dotaz při odeslání formuláře. Ve výchozím stavu vypnuto.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Před citlivou akcí přihlášený uživatel znovu potvrdí, kdo je: heslem a přístupovým klíčem, nebo bez přístupového klíče heslem a kódem z ověřovací aplikace. Ptají se pouze webové stránky: rozhraní REST, SOAP, WebDAV, přihlášení expservices ani příkazový řádek se neptají nikdy.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Kde nastavení platí</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Nastavení pro</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Každý přístup k webu</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Přístup k webu %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Otevřít</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Koho se ptát: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Zaškrtněte skupiny uživatelů, aby se ptalo jen jejich členů (například redaktorů). Nic nezaškrtnuto: každého uživatele.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Ukládá se do settings/override/site.ini.append.php, pro každý přístup k webu. Při ukládání budete požádáni o potvrzení, že jste to vy.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Ukládá se do settings/siteaccess/%name/site.ini.append.php. Hodnota v settings/override má přednost. Při ukládání budete požádáni o potvrzení, že jste to vy.</translation>
     </message>
 </context>
 <context>
@@ -79072,6 +79240,30 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Váš účet byl zablokován</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>K vašemu účtu %login na webu %site byl přidán přístupový klíč.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Kdokoli, kdo má tento přístupový klíč, se může přihlásit k vašemu účtu bez hesla. Pokud jste jej nepřidali vy, odstraňte jej v části Přístupové klíče a změňte si heslo.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Z vašeho účtu %login na webu %site byl odstraněn přístupový klíč.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Už se jím k vašemu účtu nelze přihlásit. Pokud jste jej neodstranili vy, zkontrolujte své přístupové klíče a zařízení.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>K vašemu účtu byl přidán přístupový klíč</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Z vašeho účtu byl odstraněn přístupový klíč</translation>
     </message>
 </context>
 <context>

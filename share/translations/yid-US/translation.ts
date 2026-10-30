@@ -77241,6 +77241,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>מען האָט ניט געקענט קאָנטראָלירן דעם צוטריט־שליסל. ביטע פּרוּווט נאָך אַ מאָל.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>קאָנטעס וואָס לאָגירן זיך אַרייַן נאָר מיט צוטריט־שליסלען קענען דאָ ניט ניצן קיין פּאַראָל: קלייַבט אויס „אַרייַנלאָגירן מיט אַ צוטריט־שליסל“.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>צוטריט־שליסלען פֿון %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>די צוטריט־שליסלען מיט וועלכע די קאָנטע לאָגירט זיך אַרייַן. רופֿט צוריק איינעם וואָס איז אויף אַ פֿאַרלוירענער אָדער געגנבֿעטער מכשיר: מען קען מיט אים מער ניט אַרייַנלאָגירן. נייַע לייגט דער בעל־הבית אַליין צו.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>אייַער קאָנטע דאַרף אַ צוטריט־שליסל</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>לייגט צו אַ צוטריט־שליסל צו אייַער קאָנטע</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>לייגט צו אַ צוטריט־שליסל כּדי ווייַטער צו גיין. דערנאָך לאָגירט איר זיך אַרייַן מיט אים אַנשטאָט נאָר מיט אַ פּאַראָל.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>אַרייַנלאָגירן מיט אַ צוטריט־שליסל איז גיכער און זיכערער ווי אַ פּאַראָל. לייגט צו איינעם איצט, אָדער גייט ווייַטער אָן אים.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>ניט איצט</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>צוריקרופֿן דעם צוטריט־שליסל „%name“?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>מען קען מיט אים מער ניט אַרייַנלאָגירן אין דער קאָנטע. אויב ער איז געווען דער לעצטער, לאָגירט זיך דער בעל־הבית אַרייַן מיטן פּאַראָל, אָדער איר שטעלט אַ נייַעם.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>צוריקרופֿן דעם צוטריט־שליסל</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>צוריקרופֿן</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>די קאָנטע האָט ניט קיין צוטריט־שליסל.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>אויטענטיפֿיקאַטאָר</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>אומבאַקאַנט</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>אייַער לעצטער צוטריט־שליסל: לייגט צו נאָך איינעם איידער איר נעמט אים אַוועק.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>די קאָנטע לאָגירט זיך אַרייַן נאָר מיט צוטריט־שליסלען (צוטריט־שליסל־פּאָליטיק): ווען קיינער בלייבט ניט, לאָגירט זי זיך ווידער אַרייַן מיט איר פּאַראָל.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>דאָס איז אייַער לעצטער צוטריט־שליסל, און אייַער קאָנטע קען זיך ניט אַרייַנלאָגירן אָן איינעם. לייגט צו פֿריִער נאָך אַ צוטריט־שליסל.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>דער צוטריט־שליסל „%name“ איז צוריקגערופֿן. מען קען מיט אים מער ניט אַרייַנלאָגירן אין דער קאָנטע.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>קאָד פֿון אייַער אויטענטיפֿיקאַטאָר־אַפּליקאַציע</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>איר גרייט זיך אויף שטענדיק אויסמעקן דאַטן אָדער אויסליידיקן אַ זשורנאַל.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>אייַער פּאַראָל און אַ צוטריט־שליסל</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>אייַער פּאַראָל און אַ קאָד פֿון אייַער אויטענטיפֿיקאַטאָר־אַפּליקאַציע</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>אָדער:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>דער בלעטערער קען ניט ניצן קיין צוטריט־שליסלען. ניצט אַן אַנדער וועג אָדער אַן אַנדער בלעטערער.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>ווען איר גייט ווייַטער, בעט אייַער בלעטערער איינעם פֿון אייַערע צוטריט־שליסלען.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>ווייַטער מיט אַ צוטריט־שליסל</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>אייַנריכטונג</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>טוישן דאָס אייגענע פּאַראָל, בליצפּאָסט־אַדרעס, צוטריט־שליסלען, צוויי־שטאַפּלדיקע אַרייַנלאָגירונג, צוריקשטעל־קאָדן אָדער API־שליסלען, און אַרויסלאָגירן די אייגענע אַנדערע מכשירים.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>שאַפֿן און רעדאַקטירן באַניצער, זייערע פּאַראָלן און מכשירים, קאָנטע־אייַנשטעלונגען, באַשטעטיקן אָדער אָפּוואַרפֿן נייַע באַניצער־קאָנטעס, צוטיילן ראָלעס און רעדאַקטירן פּאָליטיקן.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>אויסמעקן דאַטן</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>אויסליידיקן דעם מיסטקאַסטן, אַוועקנעמען זאַכן פֿון אים און אַוועקנעמען עטלעכע זאַכן מיט אַ מאָל.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>אַוועקנעמען, אַרויסגעבן און אָפּהיטן אינהאַלט</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>אַוועקנעמען אינהאַלט (אויך אין מיסטקאַסטן), אַרויסגעבן און אָפּהיטן אַ פּראָיעקט, געפֿרעגט ווען דער פֿאָרמולאַר ווערט געשיקט. לויט דעפֿאָלט אויסגעשאַלטן.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>פֿאַר אַ שפּירעוודיקער פֿעולה באַשטעטיקט אַן אַרייַנגעלאָגירטער באַניצער נאָך אַ מאָל ווער ער איז: מיט זייַן פּאַראָל און אַ צוטריט־שליסל, אָדער אָן אַ צוטריט־שליסל מיט זייַן פּאַראָל און דעם קאָד פֿון זייַן אויטענטיפֿיקאַטאָר־אַפּליקאַציע. נאָר די וועבבלעטער פֿרעגן: דער REST־אינטערפֿייס, SOAP, WebDAV, די expservices־אַרייַנלאָגירונג און די באַפֿעל־שורה קיין מאָל ניט.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>וווּ די אייַנשטעלונגען גילטן</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>אייַנשטעלונגען פֿאַר</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>יעדער וועבזייַטל־צוטריט</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>וועבזייַטל־צוטריט %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>עפֿענען</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>ווער ווערט געפֿרעגט: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>צייכנט אָן באַניצער־גרופּעס כּדי צו פֿרעגן נאָר זייערע מיטגלידער (למשל רעדאַקטאָרן). קיינע ניט אָנגעצייכנט: יעדער באַניצער.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>אָפּגעהיט אין settings/override/site.ini.append.php, פֿאַר יעדן וועבזייַטל־צוטריט. דאָס אָפּהיטן בעט איר זאָלט באַשטעטיקן אַז דאָס זענט איר.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>אָפּגעהיט אין settings/siteaccess/%name/site.ini.append.php. אַ ווערט אין settings/override האָט פֿאָרהאַנט. דאָס אָפּהיטן בעט איר זאָלט באַשטעטיקן אַז דאָס זענט איר.</translation>
     </message>
 </context>
 <context>
@@ -77786,6 +77954,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>אייַער קאָנטע איז פֿאַרשלאָסן געוואָרן</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>אַ צוטריט־שליסל איז צוגעגעבן געוואָרן צו אייַער קאָנטע %login אויף %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>ווער עס האָט דעם צוטריט־שליסל קען זיך אַרייַנלאָגירן אין אייַער קאָנטע אָן אייַער פּאַראָל. אויב איר האָט אים ניט צוגעגעבן, נעמט אים אַוועק אונטער צוטריט־שליסלען און טוישט אייַער פּאַראָל.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>אַ צוטריט־שליסל איז אַוועקגענומען געוואָרן פֿון אייַער קאָנטע %login אויף %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>מען קען מיט אים מער ניט אַרייַנלאָגירן אין אייַער קאָנטע. אויב איר האָט אים ניט אַוועקגענומען, קאָנטראָלירט אייַערע צוטריט־שליסלען און מכשירים.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>אַ צוטריט־שליסל איז צוגעגעבן געוואָרן צו אייַער קאָנטע</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>אַ צוטריט־שליסל איז אַוועקגענומען געוואָרן פֿון אייַער קאָנטע</translation>
     </message>
 </context>
 <context>

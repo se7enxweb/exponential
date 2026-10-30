@@ -24,7 +24,7 @@ class ezpOauthAuthorizeRedirectTest extends PHPUnit\Framework\TestCase
     /** @return array the JSON object the harness printed */
     private function authorize( array $get, array $post = array(), array $extra = array() )
     {
-        $line = array( PHP_BINARY, '-n', '-d', 'display_errors=stderr', __DIR__ . '/fixtures/authorize_harness.php',
+        $line = array( ...expTestBarePhpCommand(), '-d', 'display_errors=stderr', __DIR__ . '/fixtures/authorize_harness.php',
                        json_encode( array( 'get' => $get, 'post' => $post ) + $extra ) );
         $process = proc_open( $line, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
         $this->assertIsResource( $process );

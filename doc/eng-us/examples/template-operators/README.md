@@ -254,7 +254,7 @@ Every operator the kernel, its libraries and the bundled extensions register (th
 | [vsprintf](vsprintf.md) | eZTemplateStringsOperator | ? |  |
 | [wash](wash.md) | eZTemplateStringOperator | 1 | yes |
 | [wordtoimage](wordtoimage.md) | eZWordToImageOperator | ? | yes |
-| [wrap](wrap.md) | eZTemplateStringOperator | 3 |  |
+| [wrap](wrap.md) | eZTemplateStringOperator | 3 | yes |
 | [x18n](x18n.md) | eZi18nOperator | 4 |  |
 | [xml_encode](xml_encode.md) | ezjscEncodingTemplateFunctions | 1 |  |
 

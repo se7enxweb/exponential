@@ -77239,6 +77239,82 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Não foi possível verificar a chave de acesso. Tente novamente.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>As contas que iniciam sessão apenas com chaves de acesso não podem utilizar uma palavra-passe aqui: escolha «Iniciar sessão com uma chave de acesso».</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Chaves de acesso de %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>As chaves de acesso com que esta conta inicia sessão. Revogue a que estiver num dispositivo perdido ou roubado: deixa de poder iniciar sessão. O titular adiciona novas por si próprio.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>A conta precisa de uma chave de acesso</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Adicionar uma chave de acesso à conta</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Adicione uma chave de acesso para continuar. Depois passa a iniciar sessão com ela em vez de apenas com uma palavra-passe.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Iniciar sessão com uma chave de acesso é mais rápido e mais seguro do que com uma palavra-passe. Adicione uma agora ou continue sem ela.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Agora não</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Revogar a chave de acesso «%name»?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Deixa de poder iniciar sessão nesta conta. Se era a última, o titular inicia sessão com a palavra-passe, ou é definida uma nova.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Revogar a chave de acesso</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Revogar</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Esta conta não tem nenhuma chave de acesso.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Autenticador</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Desconhecido</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Última chave de acesso: adicione outra antes de a remover.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Esta conta inicia sessão apenas com chaves de acesso (política de chaves de acesso): sem nenhuma, volta a iniciar sessão com a palavra-passe.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Esta é a última chave de acesso e a conta não consegue iniciar sessão sem uma. Adicione primeiro outra chave de acesso.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>A chave de acesso «%name» foi revogada. Já não pode iniciar sessão nesta conta.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77338,6 +77414,34 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>Code from your authenticator app</source>
         <translation>Código da aplicação de autenticação</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Está prestes a eliminar dados definitivamente ou a limpar um registo.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>A palavra-passe e uma chave de acesso</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>A palavra-passe e um código da aplicação de autenticação</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Ou:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Este navegador não consegue utilizar chaves de acesso. Utilize outra forma ou outro navegador.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Ao continuar, o navegador pede uma das chaves de acesso.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Continuar com uma chave de acesso</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77428,6 +77532,70 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
     <message>
         <source>Setup</source>
         <translation>Configuração</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Alterar a própria palavra-passe, endereço de e-mail, chaves de acesso, início de sessão em dois passos, códigos de recuperação ou chaves de API, e terminar a sessão nos próprios outros dispositivos.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Criar e editar utilizadores, as respetivas palavras-passe e dispositivos, definições de conta, aprovar ou recusar novas contas de utilizador, atribuir funções e editar políticas.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Eliminar dados</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Esvaziar a reciclagem, remover itens dela e remover vários itens de uma vez.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Remover, publicar e guardar conteúdo</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Remover conteúdo (também para a reciclagem), publicar e guardar um rascunho; perguntado ao enviar o formulário. Desativado por predefinição.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Antes de uma ação sensível, um utilizador com sessão iniciada confirma novamente quem é: com a palavra-passe e uma chave de acesso, ou, sem chave de acesso, com a palavra-passe e o código da aplicação de autenticação. Só as páginas web perguntam: a interface REST, SOAP, WebDAV, o início de sessão do expservices e a linha de comandos nunca perguntam.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Onde as definições se aplicam</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Definições para</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Todos os acessos ao site</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Acesso ao site %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Abrir</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>A quem se pergunta: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Marque grupos de utilizadores para perguntar apenas aos respetivos membros (por exemplo, editores). Nenhum marcado: todos os utilizadores.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Guardado em settings/override/site.ini.append.php, para todos os acessos ao site. Ao guardar, é pedida a confirmação da identidade.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Guardado em settings/siteaccess/%name/site.ini.append.php. Um valor em settings/override prevalece sobre ele. Ao guardar, é pedida a confirmação da identidade.</translation>
     </message>
 </context>
 <context>
@@ -77816,6 +77984,30 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
     <message>
         <source>Your account was locked</source>
         <translation>A sua conta foi bloqueada</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Foi adicionada uma chave de acesso à conta %login em %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Quem tiver esta chave de acesso pode iniciar sessão na conta sem a palavra-passe. Se não foi o titular a adicioná-la, remova-a em Chaves de acesso e altere a palavra-passe.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Foi removida uma chave de acesso da conta %login em %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Já não pode iniciar sessão na conta. Se não foi o titular a removê-la, verifique as chaves de acesso e os dispositivos.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Foi adicionada uma chave de acesso à conta</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Foi removida uma chave de acesso da conta</translation>
     </message>
 </context>
 <context>

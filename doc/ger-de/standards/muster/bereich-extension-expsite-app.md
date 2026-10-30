@@ -2,7 +2,7 @@
 title: Muster in extension/expsite_app
 audience: developer
 category: standards
-order: 427
+order: 431
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/expsite_app mit den Entwurfsmustern.
 keywords: extension/expsite_app, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

@@ -77241,6 +77241,82 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Wɔantumi anhwɛ passkey no. Mesrɛ wo san sɔ hwɛ.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Akawnt a ɛde passkeys nko ara kɔ mu ntumi mfa ahintasɛm nni dwuma wɔ ha: paw &quot;Kɔ mu denam passkey so&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Passkeys a ɛyɛ %login dea</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Passkeys a akawnt yi de kɔ mu. Yi baako a ɛwɔ adwinnadeɛ a ayera anaa wɔawia so: ɛrentumi nkɔ mu bio. Wura no ankasa de foforɔ ka ho.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Wo akawnt hia passkey</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Fa passkey ka wo akawnt ho</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Fa passkey ka ho na wokɔ so. Afei wode bɛkɔ mu, na ɛnyɛ ahintasɛm nko ara.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Passkey de kɔ mu yɛ ntɛm na ɛho tɔ sen ahintasɛm. Fa baako ka ho seesei, anaa kɔ so a wonni bi.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Ɛnyɛ seesei</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Yi passkey &quot;%name&quot; no?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Ɛrentumi nkɔ akawnt yi mu bio. Sɛ na ɛno ne nea ɛtwa toɔ a, wura no de ahintasɛm no bɛkɔ mu, anaa wobɛhyɛ foforɔ.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Yi passkey no</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Yi</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Akawnt yi nni passkey biara.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Authenticator adwinnadeɛ</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Wonnim</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Wo passkey a ɛtwa toɔ: fa foforɔ ka ho ansa na woayi no.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Akawnt yi de passkeys nko ara kɔ mu (passkey mmara): sɛ biara nka a, ɛde n&apos;ahintasɛm kɔ mu bio.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Eyi ne wo passkey a ɛtwa toɔ, na wo akawnt ntumi nkɔ mu a passkey nni hɔ. Fa passkey foforɔ ka ho kan.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Wɔayi passkey &quot;%name&quot; no. Ɛrentumi nkɔ akawnt yi mu bio.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>Code from your authenticator app</source>
         <translation>Code a efi wo authenticator app mu</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Woreyɛ sɛ wopopa data koraa anaa wopepa kyerɛwtohɔ bi.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Wo ahintasɛm ne passkey</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Wo ahintasɛm ne code a efi wo authenticator app mu</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Anaa:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Browser yi ntumi mfa passkeys nni dwuma. Fa ɔkwan foforɔ, anaa browser foforɔ.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Sɛ wokɔ so a, wo browser bɛbisa wo passkeys no mu baako.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Fa passkey kɔ so</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     <message>
         <source>Setup</source>
         <translation>Ahosiesie</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Sesa wo ankasa wo ahintasɛm, email adrɛse, passkeys, anammɔn mmienu mu hyɛ mu, san-nya kood anaa API nsafie, ne wo adwinnadeɛ afoforɔ a wode fi mu.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Yɛ ne sesa adefoɔ, wɔn ahintasɛm ne wɔn adwinnadeɛ, akawnt nhyehyɛeɛ, gye anaa po adefoɔ akawnt foforɔ, ma adefoɔ dwumadie ne sesa nhyehyɛeɛ mmara.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Popa data</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Pepa nwura kotoku, yi nneɛma fi mu ne nneɛma pii a woyi bere koro.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Yi emu nsɛm fi mu, tintim ne sie</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Yi emu nsɛm fi mu (ne nwura kotoku mu nso), tintim ne sie draft, wɔbisa bere a wɔde form no rekɔ. Ɛnyɛ adwuma dada.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Ansa na wɔayɛ adeɛ a ɛho hia no, ɔdefoɔ a wahyɛ mu no bɛkyerɛ bio sɛ ɔno ne hwan: wɔde ne ahintasɛm ne passkey, anaa sɛ onni passkey a, ne ahintasɛm ne code a ɛfiri ne authenticator app mu. Wɛb krataafa nko ara na ɛbisa: REST, SOAP, WebDAV, expservices hyɛ mu ne command line nnbisa da.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Faako a nhyehyɛeɛ no fa</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Nhyehyɛeɛ ma</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Wɛbsaet kwan biara</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Wɛbsaet kwan %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Bue</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Wɔn a wɔbisa wɔn: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Paw adefoɔ akuo na bisa wɔn mufoɔ nko ara (sɛ editors). Wompaw biara a: ɔdefoɔ biara.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Wɔasie wɔ settings/override/site.ini.append.php mu, ma wɛbsaet kwan biara. Sie bisa sɛ kyerɛ sɛ ɛyɛ wo.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Wɔasie wɔ settings/siteaccess/%name/site.ini.append.php mu. Bo a ɛwɔ settings/override mu na edi kan. Sie bisa sɛ kyerɛ sɛ ɛyɛ wo.</translation>
     </message>
 </context>
 <context>
@@ -77786,6 +77954,30 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Wɔato wo akawnt mu</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Wɔde passkey aka wo akawnt %login wɔ %site so ho.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Obiara a ɔwɔ passkey yi betumi akɔ wo akawnt mu a ɔmfa wo ahintasɛm. Sɛ ɛnyɛ wo na wode kaa ho a, yi fi mu wɔ Passkey ase na sesa wo ahintasɛm.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Wɔayi passkey afi wo akawnt %login wɔ %site so mu.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Ɛrentumi nkɔ wo akawnt mu bio. Sɛ ɛnyɛ wo na woyii a, hwɛ wo passkeys ne wo adwinnadeɛ.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Wɔde passkey aka wo akawnt ho</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Wɔayi passkey afi wo akawnt mu</translation>
     </message>
 </context>
 <context>

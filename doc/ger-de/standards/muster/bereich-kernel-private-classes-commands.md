@@ -2,7 +2,7 @@
 title: Muster in kernel/private/classes/commands
 audience: developer
 category: standards
-order: 517
+order: 530
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/private/classes/commands mit den Entwurfsmustern.
 keywords: kernel/private/classes/commands, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -15,15 +15,19 @@ type: catalogue
 
 Jede Klasse, Schnittstelle und jeder Trait von `kernel/private/classes/commands` mit den Mustern, als die sie erkannt wurden, gefolgt von den Modulansichten, Richtlinienfunktionen, Fetch-Funktionen, Template-Operatoren, Cronjobs, Ereignis-Hooks und INI-Plugin-Punkten des Bereichs. [Alle Muster](README.md).
 
-## Klassen (97)
+## Klassen (105)
 
 | Klasse | Art | Muster | Datei | Beschreibung |
 | --- | --- | --- | --- | --- |
 | `CommandLineArguments` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/private/classes/commands/ezconvertdbcharset.php:31` | Klasse zum Speichern einiger Befehlszeilenargumente |
 | `Exponential\Command\Kernel\Accesscheck` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/accesscheck.php:16` | – |
+| `Exponential\Command\Kernel\Addanonymouspublicpolicies` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/addanonymouspublicpolicies.php:15` | Der Code von bin/php/addanonymouspublicpolicies.php. |
 | `Exponential\Command\Kernel\Adddefaultstates` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/adddefaultstates.php:23` | Der Code von bin/php/adddefaultstates.php, in eine Klasse verschoben (#207 Stufe 1). |
+| `Exponential\Command\Kernel\Addeditorpolicies` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/addeditorpolicies.php:15` | Der Code von bin/php/addeditorpolicies.php. |
 | `Exponential\Command\Kernel\Addexphelpreadpolicy` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/addexphelpreadpolicy.php:16` | Der Code von bin/php/addexphelpreadpolicy.php. |
+| `Exponential\Command\Kernel\Addmembermanagement` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/addmembermanagement.php:15` | Der Code von bin/php/addmembermanagement.php. |
 | `Exponential\Command\Kernel\Addoauthauthorizepolicy` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/addoauthauthorizepolicy.php:15` | Der Code von bin/php/addoauthauthorizepolicy.php. |
+| `Exponential\Command\Kernel\Adduserapproval` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/adduserapproval.php:15` | Der Code von bin/php/adduserapproval.php. |
 | `Exponential\Command\Kernel\Audit` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/audit.php:26` | Der Audit-Befehl exp:audit: die Datensätze der Audit-Kanäle und ihre Hash-Ketten. |
 | `Exponential\Command\Kernel\Benchmark` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/benchmark.php:15` | Der Code von bin/php/benchmark.php (exp:benchmark). |
 | `Exponential\Command\Kernel\Cache` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/cache.php:23` | Der Code von bin/php/cache.php, in eine Klasse verschoben (#207 Stufe 1). |
@@ -84,6 +88,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/private/classes/commands`
 | `Exponential\Command\Kernel\I18n` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/i18n.php:18` | – |
 | `Exponential\Command\Kernel\Ini` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/ini.php:18` | – |
 | `Exponential\Command\Kernel\Install` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/install.php:29` | Der Code von bin/php/install.php, in eine Klasse verschoben (#207 Stufe 1). |
+| `Exponential\Command\Kernel\Installcrontab` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/installcrontab.php:15` | Der Code von bin/php/installcrontab.php. |
 | `Exponential\Command\Kernel\Kickstarter` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/kickstarter.php:153` | Führt dieses Skript erneut als Kindprozess mit denselben Argumenten und PHP-Einstellungen aus, zeigt seine Ausgabe laufend an und kopiert sie nach var/log/kickstart.log, nach… |
 | `Exponential\Command\Kernel\Mailbounces` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/mailbounces.php:16` | – |
 | `Exponential\Command\Kernel\Mailconsent` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/mailconsent.php:16` | – |
@@ -103,13 +108,16 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/private/classes/commands`
 | `Exponential\Command\Kernel\PublishContent` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/publish_content.php:25` | Der Code von bin/php/publish_content.php, in eine Klasse verschoben (#207 Stufe 1). |
 | `Exponential\Command\Kernel\Resetuserpassword` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/resetuserpassword.php:27` | Der Code von bin/php/resetuserpassword.php, in eine Klasse verschoben (#207 Stufe 1). |
 | `Exponential\Command\Kernel\Runcronjobs` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/runcronjobs.php:91` | Der Code von runcronjobs.php, in eine Klasse verschoben (#207 Stufe 1). |
+| `Exponential\Command\Kernel\Services` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/services.php:19` | Der Code von bin/php/services.php: der Kernel-Service-Container auf der Kommandozeile. |
 | `Exponential\Command\Kernel\Solr` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/solr.php:190` | Ein Ergebnis für einen Menschen oder als JSON ausgeben und mit $exit beenden. |
+| `Exponential\Command\Kernel\Syscard` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/syscard.php:17` | – |
 | `Exponential\Command\Kernel\Systeminfo` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/systeminfo.php:16` | – |
 | `Exponential\Command\Kernel\Trashpurge` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/trashpurge.php:24` | Der Code von bin/php/trashpurge.php, in eine Klasse verschoben (#207 Stufe 1). |
 | `Exponential\Command\Kernel\Updateisbn13` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/updateisbn13.php:24` | Der Code von bin/php/updateisbn13.php, in eine Klasse verschoben (#207 Stufe 1). |
 | `Exponential\Command\Kernel\Updateniceurls` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/updateniceurls.php:338` | Der Code von bin/php/updateniceurls.php, in eine Klasse verschoben (#207 Stufe 1). |
 | `Exponential\Command\Kernel\Updatesearchindex` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/updatesearchindex.php:42` | Der Code von bin/php/updatesearchindex.php, in eine Klasse verschoben (#207 Stufe 1). |
 | `Exponential\Command\Kernel\Userlogincheck` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/userlogincheck.php:18` | – |
+| `Exponential\Command\Kernel\Userpasswordchangerequired` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/userpasswordchangerequired.php:16` | – |
 | `Exponential\Command\Kernel\Velocity` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/velocity.php:262` | Eine Einstellungsliste für einen Menschen zum Lesen ausgeben. |
 | `Exponential\Command\Kernel\VelocityRouter` | class | [Zuständigkeitskette (Chain of Responsibility)](kette.md) | `kernel/private/classes/commands/velocity-router.php:46` | Der Code von bin/php/velocity-router.php, in eine Klasse verschoben (#207). |
 | `Exponential\Command\Kernel\VelocityWarmup` | class extends Command | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/commands/velocity-warmup.php:40` | Der Code von bin/php/velocity-warmup.php, in eine Klasse verschoben (#207 Stufe 1). |

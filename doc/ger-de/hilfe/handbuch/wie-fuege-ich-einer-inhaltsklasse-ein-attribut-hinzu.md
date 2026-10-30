@@ -63,9 +63,9 @@ Benutzer, deren Rolle das Modul `class` hat (alle Funktionen), meist Administrat
 ## Verwandte Seiten
 
 - [Klassengruppen](../../anleitungen/klassengruppen.md): die Klassenseiten im Detail
-- [Eine Inhaltsklasse anlegen](../../../eng-us/help/cms-developers/creating-a-content-class.md)
-- [Datentypen auswählen](../../../eng-us/help/cms-developers/choosing-datatypes.md)
-- [Inhaltsklassen und Attribute](../../../eng-us/help/cms-developers/content-classes-and-attributes.md)
+- [Eine Inhaltsklasse anlegen](../cms-entwickler/eine-inhaltsklasse-anlegen.md)
+- [Datentypen auswählen](../cms-entwickler/datentypen-waehlen.md)
+- [Inhaltsklassen und Attribute](../cms-entwickler/inhaltsklassen-und-attribute.md)
 - [Benutzerhandbuch](README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

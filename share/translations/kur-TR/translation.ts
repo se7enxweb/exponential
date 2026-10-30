@@ -77239,6 +77239,82 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Mifteya têketinê nehat kontrolkirin. Ji kerema xwe dîsa biceribînin.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Hesabên ku tenê bi mifteyên têketinê têdikevin, li vir nikarin şîfreyê bikar bînin: &quot;Bi mifteya têketinê têketin&quot; hilbijêrin.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Mifteyên têketinê yên %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Mifteyên têketinê yên ku ev hesab pê têdikeve. Ya ku li ser cîhazeke winda an dizî ye nederbasdar bikin: ew êdî nikare têkeve. Xwedî yên nû bi xwe zêde dike.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Hesabê we mifteyeke têketinê hewce dike</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Mifteyeke têketinê li hesabê xwe zêde bikin</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Ji bo berdewamkirinê mifteyeke têketinê zêde bikin. Paşê hûn ne tenê bi şîfreyê, lê bi wê têdikevin.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Têketina bi mifteya têketinê ji şîfreyê zûtir û ewletir e. Niha yekê zêde bikin, an bê wê berdewam bikin.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Ne niha</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Mifteya têketinê &quot;%name&quot; nederbasdar bikin?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Ew êdî nikare têkeve vî hesabî. Heke ew ya dawî bû, xwedî bi şîfreyê têdikeve, an hûn şîfreyeke nû diyar dikin.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Mifteya têketinê nederbasdar kirin</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Nederbasdar kirin</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Mifteya têketinê ya vî hesabî tune ye.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Rastker</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Nenas</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Mifteya we ya dawî: berî ku wê rakin, yekê din zêde bikin.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Ev hesab tenê bi mifteyên têketinê têdikeve (polîtîkaya mifteyên têketinê): dema ku yek nemîne, ew dîsa bi şîfreya xwe têdikeve.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Ev mifteya we ya dawî ye û hesabê we bêyî wê nikare têkeve. Pêşî mifteyeke din zêde bikin.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Mifteya têketinê &quot;%name&quot; hate nederbasdarkirin. Ew êdî nikare têkeve vî hesabî.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77338,6 +77414,34 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>Code from your authenticator app</source>
         <translation>Koda ji sepana rastkirinê ya we</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Hûn ê daneyan bi temamî jê bibin an tomarekê vala bikin.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Şîfreya we û mifteyeke têketinê</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Şîfreya we û kodeke ji sepana rastkirinê ya we</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>An jî:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Ev gerok nikare mifteyên têketinê bikar bîne. Rêyeke din an gerokeke din bikar bînin.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Dema ku hûn bidomînin, geroka we yek ji mifteyên we yên têketinê dixwaze.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Bi mifteya têketinê berdewam kirin</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77428,6 +77532,70 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>Setup</source>
         <translation>Sazkirin</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Guhertina şîfre, navnîşana e-nameyê, mifteyên têketinê, têketina du-gavî, kodên vegerandinê an mifteyên API yên xwe, û derxistina cîhazên xwe yên din.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Afirandin û sererastkirina bikarhêneran, şîfre û cîhazên wan, mîhengên hesaban, pejirandin an redkirina hesabên bikarhêneran ên nû, diyarkirina rolan û sererastkirina polîtîkayan.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Jêbirina daneyan</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Valakirina çopdankê, rakirina hêmanan jê û rakirina çend hêmanan bi carekê.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Rakirin, weşandin û tomarkirina naverokê</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Rakirina naverokê (ji bo çopdankê jî), weşandin û tomarkirina reşnivîsekê, dema ku form tê şandin tê pirsîn. Ji destpêkê ve girtî ye.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Berî çalakiyeke hestiyar, bikarhênerê têketî dîsa piştrast dike ku ew kî ye: bi şîfreya xwe û mifteyeke têketinê, an bêyî mifteya têketinê bi şîfreya xwe û koda sepana rastkirinê ya xwe. Tenê rûpelên malperê dipirsin: navrûya REST, SOAP, WebDAV, têketina expservices û rêzika fermanan qet napirsin.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Mîheng li ku derbas dibin</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Mîheng ji bo</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Her gihîştina malperê</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Gihîştina malperê %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Vekirin</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Kî tê pirsîn: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Komên bikarhêneran nîşan bikin da ku tenê ji endamên wan were pirsîn (wek edîtor). Yek nehatibe nîşankirin: her bikarhêner.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Di settings/override/site.ini.append.php de hate tomarkirin, ji bo her gihîştina malperê. Dema tomarkirinê ji we tê xwestin ku hûn piştrast bikin ku ev hûn in.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Di settings/siteaccess/%name/site.ini.append.php de hate tomarkirin. Nirxek di settings/override de li ser wê serdest e. Dema tomarkirinê ji we tê xwestin ku hûn piştrast bikin ku ev hûn in.</translation>
     </message>
 </context>
 <context>
@@ -77784,6 +77952,30 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>Your account was locked</source>
         <translation>Hesabê we hat kilîtkirin</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Mifteyeke têketinê li hesabê we yê %login li ser %site hate zêdekirin.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Kî ev mifteya têketinê hebe, dikare bêyî şîfreya we têkeve hesabê we. Heke we ew zêde nekiribe, wê di bin Mifteyên têketinê de rakin û şîfreya xwe biguherînin.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Mifteyeke têketinê ji hesabê we yê %login li ser %site hate rakirin.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Ew êdî nikare têkeve hesabê we. Heke we ew ranekiribe, mifteyên xwe yên têketinê û cîhazên xwe kontrol bikin.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Mifteyeke têketinê li hesabê we hate zêdekirin</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Mifteyeke têketinê ji hesabê we hate rakirin</translation>
     </message>
 </context>
 <context>

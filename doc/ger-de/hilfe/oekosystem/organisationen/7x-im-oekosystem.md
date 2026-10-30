@@ -51,7 +51,7 @@ Website von 7x.
 | Bezahlter Support oder ein Projekt | <https://se7enx.com/services> |
 | Partnerschaft | [Partner: hier beginnen](../../partner/partner-hier-beginnen.md), [Mit 7x arbeiten](../../partner/mit-7x-zusammenarbeiten.md) |
 | Sponsoring | <https://github.com/sponsors/se7enxweb> ([7x sponsern](../../sponsoren/7x-sponsern.md)) |
-| Code beitragen | Pull-Requests und das CLA ([Code beitragen](../../../../eng-us/help/community/contributing/contributing-code.md)) |
+| Code beitragen | Pull-Requests und das CLA ([Code beitragen](../../gemeinschaft/mitwirken/code-beitragen.md)) |
 | Sicherheit | security@se7enx.com (`SECURITY.md`) |
 
 ## Verwandte Seiten

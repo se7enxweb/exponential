@@ -38,7 +38,7 @@ No endorsement is implied. LoveStack is Mugo Web's distribution and remains thei
 uses the name only to say where a feature comes from.
 
 **Which PHP versions?**
-Exponential 6: PHP 8.1 to 8.5. LoveStack's `composer.json` (at the commit used for the port):
+Exponential 6: PHP 8.0 to 8.5 (PHP 7.4 usable without support). LoveStack's `composer.json` (at the commit used for the port):
 PHP 7.3–7.4 and 8.1–8.3.
 
 **Do I lose `ezenum` content if I move from LoveStack?**

@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/ini
 audience: developer
 category: standards
-order: 494
+order: 501
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/ini mit den Entwurfsmustern.
 keywords: kernel/classes/ini, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

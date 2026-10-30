@@ -28,7 +28,7 @@ type: help
 SQLite bedeutet, dass "a complete Exponential site runs from one file on disk, with no database server to install,
 configure or secure", also eine vollständige Exponential-Website aus einer Datei läuft, ohne Datenbankserver, der
 installiert, konfiguriert oder abgesichert werden muss ([Unterstützung für SQLite-Datenbanken](../../funktionen/6.0/sqlite-datenbank.md)).
-Fragen gehen an die Community ([Wo sich Menschen treffen](../../../eng-us/help/community/joining/where-people-meet.md)).
+Fragen gehen an die Community ([Wo sich Menschen treffen](../gemeinschaft/beitreten/wo-sich-menschen-treffen.md)).
 
 ## Ein kleines Team
 

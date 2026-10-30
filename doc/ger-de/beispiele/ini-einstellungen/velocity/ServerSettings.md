@@ -253,19 +253,19 @@ IdleWorkerTimeout=60
 
 ## Instances
 
-> How many servers to run on the same ports (the qbix engine only). A server  
-> answers cached pages in its own process, about 0.3 ms of CPU a page, so one  
-> server is bounded by one core: ~3,500 cached pages a second measured on a  
-> 12-core machine. With more than one, every instance listens on the same ports  
-> with SO\_REUSEPORT and the kernel spreads connections across them: two  
-> measured 6,600-6,900, four 12,200-13,100. Renders are not faster; they are  
-> bounded by the workers.  
+> Wie viele Server auf denselben Ports laufen (nur die qbix-Engine). Ein Server  
+> beantwortet gecachte Seiten in seinem eigenen Prozess, etwa 0,3 ms CPU pro Seite, also ist ein  
+> Server durch einen Kern begrenzt: ~3.500 gecachte Seiten pro Sekunde gemessen auf einer  
+> Maschine mit 12 Kernen. Bei mehr als einem lauscht jede Instanz auf denselben Ports  
+> mit SO\_REUSEPORT, und der Kernel verteilt die Verbindungen auf sie: zwei  
+> gemessen 6.600-6.900, vier 12.200-13.100. Renders werden nicht schneller; sie sind  
+> durch die Worker begrenzt.  
 >
-> Each instance has its own worker pool: Workers and SpareWorkers above are  
-> per instance, so divide them by Instances to keep the same memory. Each has  
-> its own pid file beside PidFile (server.pid, server.1.pid, ...). graceful  
-> reloads them one at a time, so the port keeps answering. Linux and the BSDs  
-> only.  
+> Jede Instanz hat ihren eigenen Worker-Pool: Workers und SpareWorkers oben gelten  
+> pro Instanz, teilen Sie sie also durch Instances, um denselben Speicher zu behalten. Jede hat  
+> ihre eigene PID-Datei neben PidFile (server.pid, server.1.pid, ...). graceful  
+> lädt sie nacheinander neu, damit der Port weiter antwortet. Nur Linux  
+> und die BSDs.  
 
 Standard: `1`.
 
@@ -279,13 +279,13 @@ Instances=1
 
 ## SharedInstances
 
-> enabled: the instances share one cache of compiled scripts and one APCu  
-> segment (the engine starts the first and forks the others from it, Exponential  
-> Velocity 0.0.4.56 and later), so a script is compiled once and a result the  
-> kernel keeps in APCu (the query cache) is paid for once, not once per  
-> instance; all of them write to LogFile. disabled: every instance is started  
-> on its own, with caches and a log (console.1.log ...) of its own. An instance  
-> reloaded by graceful sets PHP up again and has caches of its own from then on.  
+> enabled: die Instanzen teilen sich einen Cache kompilierter Skripte und ein APCu-  
+> Segment (die Engine startet die erste und forkt die anderen daraus, Exponential  
+> Velocity 0.0.4.56 und später), sodass ein Skript einmal kompiliert wird und ein Ergebnis, das der  
+> Kernel in APCu hält (der Query-Cache), einmal bezahlt wird, nicht einmal pro  
+> Instanz; alle schreiben in LogFile. disabled: jede Instanz wird für sich gestartet,  
+> mit eigenen Caches und einem eigenen Log (console.1.log ...). Eine mit graceful  
+> neu geladene Instanz richtet PHP neu ein und hat von da an eigene Caches.  
 
 Standard: `enabled`.
 

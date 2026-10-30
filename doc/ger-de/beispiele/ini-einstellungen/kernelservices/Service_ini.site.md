@@ -57,7 +57,7 @@ Arguments[]=site.ini
 
 ## Scope
 
-> kept per siteaccess for the worker when WorkerScope is on  
+> pro Siteaccess für den Worker behalten, wenn WorkerScope an ist  
 
 Standard: `worker`.
 

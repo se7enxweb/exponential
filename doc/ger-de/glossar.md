@@ -153,7 +153,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 ## J
 
 - **job queue** (Auftragswarteschlange): siehe **expqueue**; für umfangreiche Inhaltsoperationen siehe **content job**.
-- **jQuery 4**: die JavaScript-Bibliothek des Admin seit Oktober 2026. [jQuery 4 und die Entfernung von YUI](funktionen/6.0/jquery4-und-entfernung-von-yui.md).
+- **jQuery 4**: die JavaScript-Bibliothek des Admin seit Oktober 2026; admin4 und admin4l laden sie nur auf den Seiten, die sie anfordern (23. Oktober 2026). [jQuery 4 und die Entfernung von YUI](funktionen/6.0/jquery4-und-entfernung-von-yui.md).
 
 ## K
 

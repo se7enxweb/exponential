@@ -91,7 +91,7 @@ nutzen, ist der vernünftigste Fall; bewahren Sie Sicherungen trotzdem getrennt 
 
 | Frage | Warum |
 |---|---|
-| Welche PHP-Versionen, und kann ich 8.x pro Website wählen? | PHP 8.0 oder neuer ist erforderlich |
+| Welche PHP-Versionen, und kann ich 8.x pro Website wählen? | PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) ist erforderlich |
 | Sind `intl`, `mbstring`, `xsl`, `gd` oder ImageMagick, `sqlite3` verfügbar? | Erforderliche oder benötigte Erweiterungen ([PHP-Versionen und Erweiterungen](../../hosting/grundlagen/php-versionen-und-erweiterungen.md)) |
 | Kann ich Cron alle paar Minuten ausführen? | Newsletter, zeitgesteuertes Veröffentlichen |
 | Kann die Website E-Mails versenden, und zwar von meiner Domain? | Registrierung, Zurücksetzen des Passworts, Formulare, Newsletter |

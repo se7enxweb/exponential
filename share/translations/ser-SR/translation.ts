@@ -77239,6 +77239,82 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Ključ za pristup nije mogao da se proveri. Pokušajte ponovo.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Nalozi koji se prijavljuju samo ključevima za pristup ne mogu ovde da koriste lozinku: izaberite „Prijavi se ključem za pristup“.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Ključevi za pristup korisnika %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Ključevi za pristup kojima se ovaj nalog prijavljuje. Opozovite ključ koji je na izgubljenom ili ukradenom uređaju: njime se više ne može prijaviti. Nove ključeve vlasnik dodaje sam.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Vašem nalogu je potreban ključ za pristup</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Dodajte ključ za pristup svom nalogu</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Dodajte ključ za pristup da biste nastavili. Zatim se prijavljujete njime, a ne samo lozinkom.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Prijava ključem za pristup je brža i bezbednija od lozinke. Dodajte ga sada ili nastavite bez njega.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Ne sada</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Opozvati ključ za pristup „%name“?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Njime se više ne može prijaviti na ovaj nalog. Ako je bio poslednji, vlasnik se prijavljuje lozinkom ili vi postavljate novu.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Opozovi ključ za pristup</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Opozovi</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Ovaj nalog nema ključ za pristup.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Autentifikator</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Nepoznato</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Vaš poslednji ključ za pristup: dodajte još jedan pre nego što ga uklonite.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Ovaj nalog se prijavljuje samo ključevima za pristup (politika ključeva za pristup): kada ne ostane nijedan, ponovo se prijavljuje svojom lozinkom.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Ovo je vaš poslednji ključ za pristup i vaš nalog ne može da se prijavi bez njega. Prvo dodajte još jedan ključ za pristup.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Ključ za pristup „%name“ je opozvan. Njime se više ne može prijaviti na ovaj nalog.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77338,6 +77414,34 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <source>Code from your authenticator app</source>
         <translation>Kôd iz aplikacije za autentifikaciju</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Upravo ćete trajno izbrisati podatke ili isprazniti dnevnik.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Vaša lozinka i ključ za pristup</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Vaša lozinka i kôd iz aplikacije za autentifikaciju</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Ili:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Ovaj pregledač ne može da koristi ključeve za pristup. Izaberite drugi način ili drugi pregledač.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Kada nastavite, pregledač će zatražiti jedan od vaših ključeva za pristup.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Nastavi ključem za pristup</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77428,6 +77532,70 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     <message>
         <source>Setup</source>
         <translation>Podešavanje</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Promena sopstvene lozinke, adrese e-pošte, ključeva za pristup, prijave u dva koraka, kodova za oporavak ili API ključeva i odjavljivanje sopstvenih drugih uređaja.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Kreiranje i uređivanje korisnika, njihovih lozinki i uređaja, podešavanja naloga, odobravanje ili odbijanje novih korisničkih naloga, dodela uloga i uređivanje politika.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Brisanje podataka</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Pražnjenje korpe za otpatke, uklanjanje stavki iz nje i uklanjanje više stavki odjednom.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Uklanjanje, objavljivanje i čuvanje sadržaja</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Uklanjanje sadržaja (i u korpu za otpatke), objavljivanje i čuvanje skice, pita se pri slanju obrasca. Podrazumevano isključeno.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Pre osetljive radnje prijavljeni korisnik ponovo potvrđuje ko je: lozinkom i ključem za pristup, ili bez ključa za pristup lozinkom i kôdom iz aplikacije za autentifikaciju. Pitaju samo veb-stranice: REST interfejs, SOAP, WebDAV, expservices prijava i komandna linija nikada.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Gde se podešavanja primenjuju</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Podešavanja za</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Svaki pristup sajtu</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Pristup sajtu %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Otvori</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Ko se pita: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Označite grupe korisnika da biste pitali samo njihove članove (na primer urednike). Ništa označeno: svaki korisnik.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Čuva se u settings/override/site.ini.append.php, za svaki pristup sajtu. Čuvanje traži da potvrdite da ste to vi.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Čuva se u settings/siteaccess/%name/site.ini.append.php. Vrednost u settings/override ima prednost. Čuvanje traži da potvrdite da ste to vi.</translation>
     </message>
 </context>
 <context>
@@ -77816,6 +77984,30 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Vaš nalog je zaključan</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Vašem nalogu %login na %site dodat je ključ za pristup.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Ko god ima ovaj ključ za pristup može se prijaviti na vaš nalog bez vaše lozinke. Ako ga niste vi dodali, uklonite ga u odeljku Ključevi za pristup i promenite lozinku.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Sa vašeg naloga %login na %site uklonjen je ključ za pristup.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Njime se više ne može prijaviti na vaš nalog. Ako ga niste vi uklonili, proverite svoje ključeve za pristup i uređaje.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Vašem nalogu je dodat ključ za pristup</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Sa vašeg naloga je uklonjen ključ za pristup</translation>
     </message>
 </context>
 <context>

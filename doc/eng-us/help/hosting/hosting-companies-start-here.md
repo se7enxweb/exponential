@@ -35,7 +35,7 @@ they show you how to measure and decide.
 ## Exponential in one minute, for hosts
 
 - **It is a PHP application.** Exponential is "a professional PHP application framework with advanced CMS (content
-  management system) functionality" (`README.md`). It runs on PHP 8.0 to 8.5, on almost any operating system that
+  management system) functionality" (`README.md`). It runs on PHP 8.0 to 8.5 (PHP 7.4 usable without support), on almost any operating system that
   runs PHP 8 ([Operating system support](../os-support.md)).
 - **It is free software.** The code is licensed under the GPL v2 or later and costs nothing; you can install it for
   any number of customers. The documentation, including this page, is under the GNU FDL 1.3
@@ -49,7 +49,7 @@ they show you how to measure and decide.
   for every stage; FrankenPHP is a production-ready alternative; Apache or nginx with PHP-FPM remain fully supported
   and are what shared hosting usually offers ([Chapter 8](../../install/08-serving-the-site.md)).
 - **As of 6.0.15 that engine is part of Exponential.** The root `composer.json` requires
-  `se7enxweb/exponential-velocity ~0.0.4.57`, so every site you install with Composer has the Velocity Internet /
+  `se7enxweb/exponential-velocity ~0.0.4.57` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later), so every site you install with Composer has the Velocity Internet /
   Web Application Server, on the same PHP as the site (8.0 and later, the stock PHP 8.0 of Red Hat Enterprise Linux 9
   included). It needs the `sockets` extension, with `pcntl` and `openssl` recommended. Nothing switches engines on its
   own, so an Apache or nginx offer keeps working unchanged; offering Velocity is a setting

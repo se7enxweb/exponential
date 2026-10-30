@@ -302,7 +302,8 @@ class expLogBundle
                 $zip->close();
                 return false;
             }
-            $zip->setMtimeName( $e['entry'], (int)$e['mtime'] );
+            if ( method_exists( $zip, 'setMtimeName' ) ) // PHP 8.0 and later; before, the entry keeps the time of the copy
+                $zip->setMtimeName( $e['entry'], (int)$e['mtime'] );
         }
         return $zip->close();
     }

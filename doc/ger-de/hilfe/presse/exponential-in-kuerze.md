@@ -86,7 +86,7 @@ Siehe [Lizenzen für Reporter erklärt](lizenzen-fuer-reporter-erklaert.md).
 
 ## Wo es läuft
 
-PHP 8.0 bis 8.5; sechs Datenbanken (SQLite 3 ist der Standard, dann PostgreSQL, MongoDB, MariaDB, Oracle und MySQL);
+PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar); sechs Datenbanken (SQLite 3 ist der Standard, dann PostgreSQL, MongoDB, MariaDB, Oracle und MySQL);
 Linux, BSD, macOS und Windows in dokumentierten Stufen; Apache, Nginx und andere Webserver oder das mitgelieferte
 Velocity ([Datenbankunterstützung](../datenbankunterstuetzung.md), [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md),
 [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen)).

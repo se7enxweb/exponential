@@ -77239,6 +77239,82 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Piekļuves atslēgu neizdevās pārbaudīt. Lūdzu, mēģiniet vēlreiz.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Konti, kas pierakstās tikai ar piekļuves atslēgām, šeit nevar izmantot paroli: izvēlieties „Pierakstīties ar piekļuves atslēgu“.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login piekļuves atslēgas</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Piekļuves atslēgas, ar kurām pierakstās šis konts. Atsauciet to, kas atrodas pazaudētā vai nozagtā ierīcē: ar to vairs nevarēs pierakstīties. Jaunas īpašnieks pievieno pats.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Jūsu kontam ir nepieciešama piekļuves atslēga</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Pievienot kontam piekļuves atslēgu</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Pievienojiet piekļuves atslēgu, lai turpinātu. Pēc tam pierakstīsieties ar to, nevis tikai ar paroli.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Pierakstīšanās ar piekļuves atslēgu ir ātrāka un drošāka nekā ar paroli. Pievienojiet to tagad vai turpiniet bez tās.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Ne tagad</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Vai atsaukt piekļuves atslēgu „%name“?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Ar to vairs nevarēs pierakstīties šajā kontā. Ja tā bija pēdējā, īpašnieks pierakstās ar paroli, vai arī jūs iestatāt jaunu.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Atsaukt piekļuves atslēgu</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Atsaukt</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Šim kontam nav piekļuves atslēgas.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Autentificētājs</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Nezināms</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Jūsu pēdējā piekļuves atslēga: pirms tās noņemšanas pievienojiet vēl vienu.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Šis konts pierakstās tikai ar piekļuves atslēgām (piekļuves atslēgu politika): ja neviena nepaliek, tas atkal pierakstās ar savu paroli.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Šī ir jūsu pēdējā piekļuves atslēga, un bez tās jūsu konts nevar pierakstīties. Vispirms pievienojiet vēl vienu piekļuves atslēgu.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Piekļuves atslēga „%name“ ir atsaukta. Ar to vairs nevar pierakstīties šajā kontā.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77338,6 +77414,34 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>Code from your authenticator app</source>
         <translation>Kods no autentificētāja lietotnes</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Jūs gatavojaties neatgriezeniski dzēst datus vai notīrīt žurnālu.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Jūsu parole un piekļuves atslēga</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Jūsu parole un kods no autentificētāja lietotnes</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Vai:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Šī pārlūkprogramma nevar izmantot piekļuves atslēgas. Izmantojiet citu veidu vai citu pārlūkprogrammu.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Kad turpināsiet, pārlūkprogramma pieprasīs vienu no jūsu piekļuves atslēgām.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Turpināt ar piekļuves atslēgu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77428,6 +77532,70 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>Setup</source>
         <translation>Iestatīšana</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Savas paroles, e-pasta adreses, piekļuves atslēgu, divpakāpju pierakstīšanās, atkopšanas kodu vai API atslēgu maiņa un izrakstīšanās no savām citām ierīcēm.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Lietotāju, viņu paroļu un ierīču, konta iestatījumu izveide un rediģēšana, jaunu lietotāju kontu apstiprināšana vai noraidīšana, lomu piešķiršana un politiku rediģēšana.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Datu dzēšana</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Atkritnes iztukšošana, vienumu noņemšana no tās un vairāku vienumu noņemšana vienlaikus.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Satura noņemšana, publicēšana un saglabāšana</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Satura noņemšana (arī uz atkritni), publicēšana un melnraksta saglabāšana; jautā, kad veidlapa tiek nosūtīta. Pēc noklusējuma izslēgts.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Pirms sensitīvas darbības pierakstījies lietotājs vēlreiz apstiprina, kas viņš ir: ar savu paroli un piekļuves atslēgu vai, ja piekļuves atslēgas nav, ar savu paroli un autentificētāja lietotnes kodu. Jautā tikai tīmekļa lapas: REST saskarne, SOAP, WebDAV, expservices pierakstīšanās un komandrinda to nedara nekad.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Kur iestatījumi ir spēkā</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Iestatījumi attiecībā uz</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Katra vietnes piekļuve</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Vietnes piekļuve %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Atvērt</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Kam jautā: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Atzīmējiet lietotāju grupas, lai jautātu tikai to dalībniekiem (piemēram, redaktoriem). Nekas nav atzīmēts: katram lietotājam.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Saglabāts failā settings/override/site.ini.append.php visām vietnes piekļuvēm. Saglabājot jums lūgs apstiprināt, ka tas esat jūs.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Saglabāts failā settings/siteaccess/%name/site.ini.append.php. Vērtībai no settings/override ir priekšroka. Saglabājot jums lūgs apstiprināt, ka tas esat jūs.</translation>
     </message>
 </context>
 <context>
@@ -77816,6 +77984,30 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Jūsu konts tika bloķēts</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Jūsu kontam %login vietnē %site tika pievienota piekļuves atslēga.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Ikviens, kam ir šī piekļuves atslēga, var pierakstīties jūsu kontā bez jūsu paroles. Ja jūs to nepievienojāt, noņemiet to sadaļā Piekļuves atslēgas un nomainiet paroli.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>No jūsu konta %login vietnē %site tika noņemta piekļuves atslēga.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Ar to vairs nevar pierakstīties jūsu kontā. Ja jūs to nenoņēmāt, pārbaudiet savas piekļuves atslēgas un ierīces.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Jūsu kontam tika pievienota piekļuves atslēga</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>No jūsu konta tika noņemta piekļuves atslēga</translation>
     </message>
 </context>
 <context>

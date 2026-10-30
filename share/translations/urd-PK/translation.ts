@@ -77239,6 +77239,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>پاس کی کی جانچ نہیں ہو سکی۔ براہ کرم دوبارہ کوشش کریں۔</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>جو اکاؤنٹس صرف پاس کیز سے سائن ان کرتے ہیں وہ یہاں پاس ورڈ استعمال نہیں کر سکتے: “پاس کی کے ساتھ سائن ان کریں” منتخب کریں۔</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login کی پاس کیز</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>وہ پاس کیز جن سے یہ اکاؤنٹ سائن ان کرتا ہے۔ گم شدہ یا چوری شدہ آلے پر موجود پاس کی کو منسوخ کریں: اس سے مزید سائن ان نہیں ہو سکے گا۔ نئی پاس کیز مالک خود شامل کرتا ہے۔</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>آپ کے اکاؤنٹ کو ایک پاس کی درکار ہے</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>اپنے اکاؤنٹ میں ایک پاس کی شامل کریں</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>جاری رکھنے کے لیے ایک پاس کی شامل کریں۔ پھر آپ صرف پاس ورڈ کے بجائے اس سے سائن ان کریں گے۔</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>پاس کی سے سائن ان کرنا پاس ورڈ سے زیادہ تیز اور محفوظ ہے۔ ابھی ایک شامل کریں، یا اس کے بغیر جاری رکھیں۔</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>ابھی نہیں</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>پاس کی “%name” منسوخ کریں؟</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>اس سے اب اس اکاؤنٹ میں سائن ان نہیں ہو سکتا۔ اگر یہ آخری تھی تو مالک پاس ورڈ سے سائن ان کرتا ہے، یا آپ نیا پاس ورڈ مقرر کرتے ہیں۔</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>پاس کی منسوخ کریں</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>منسوخ کریں</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>اس اکاؤنٹ کی کوئی پاس کی نہیں ہے۔</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>تصدیق کنندہ</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>نامعلوم</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>آپ کی آخری پاس کی: اسے ہٹانے سے پہلے ایک اور شامل کریں۔</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>یہ اکاؤنٹ صرف پاس کیز سے سائن ان کرتا ہے (پاس کی پالیسی): کوئی باقی نہ رہے تو یہ دوبارہ اپنے پاس ورڈ سے سائن ان کرتا ہے۔</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>یہ آپ کی آخری پاس کی ہے اور آپ کا اکاؤنٹ اس کے بغیر سائن ان نہیں کر سکتا۔ پہلے ایک اور پاس کی شامل کریں۔</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>پاس کی “%name” منسوخ کر دی گئی ہے۔ اس سے اب اس اکاؤنٹ میں سائن ان نہیں ہو سکتا۔</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77338,6 +77414,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>آپ کی تصدیق کنندہ ایپ کا کوڈ</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>آپ ڈیٹا کو مستقل طور پر حذف کرنے یا لاگ صاف کرنے والے ہیں۔</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>آپ کا پاس ورڈ اور ایک پاس کی</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>آپ کا پاس ورڈ اور آپ کی تصدیق کنندہ ایپ کا کوڈ</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>یا:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>یہ براؤزر پاس کیز استعمال نہیں کر سکتا۔ کوئی اور طریقہ یا کوئی اور براؤزر استعمال کریں۔</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>جب آپ جاری رکھیں گے تو آپ کا براؤزر آپ کی پاس کیز میں سے ایک مانگے گا۔</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>پاس کی کے ساتھ جاری رکھیں</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77428,6 +77532,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>سیٹ اپ</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>اپنا پاس ورڈ، ای میل پتہ، پاس کیز، دو مرحلوں میں سائن اِن، بازیابی کوڈز یا API کلیدیں تبدیل کرنا، اور اپنے دوسرے آلات سے سائن آؤٹ کرنا۔</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>صارفین، ان کے پاس ورڈز اور آلات، اکاؤنٹ کی ترتیبات بنانا اور ترمیم کرنا، نئے صارف اکاؤنٹس منظور یا مسترد کرنا، کردار تفویض کرنا اور پالیسیوں میں ترمیم کرنا۔</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>ڈیٹا حذف کرنا</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>ردی خالی کرنا، اس میں سے آئٹمز ہٹانا اور ایک ساتھ کئی آئٹمز ہٹانا۔</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>مواد ہٹانا، شائع کرنا اور محفوظ کرنا</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>مواد ہٹانا (ردی میں بھی)، شائع کرنا اور مسودہ محفوظ کرنا، فارم بھیجتے وقت پوچھا جاتا ہے۔ بطور طے شدہ بند۔</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>کسی حساس کارروائی سے پہلے سائن ان شدہ صارف دوبارہ تصدیق کرتا ہے کہ وہ کون ہے: اپنے پاس ورڈ اور پاس کی سے، یا پاس کی کے بغیر اپنے پاس ورڈ اور تصدیق کنندہ ایپ کے کوڈ سے۔ صرف ویب صفحات پوچھتے ہیں: REST انٹرفیس، SOAP، WebDAV، expservices لاگ ان اور کمانڈ لائن کبھی نہیں۔</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>ترتیبات کہاں لاگو ہوتی ہیں</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>ترتیبات برائے</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ہر سائٹ ایکسیس</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>سائٹ ایکسیس %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>کھولیں</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>کس سے پوچھا جاتا ہے: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>صرف ان کے اراکین سے پوچھنے کے لیے صارف گروپس پر نشان لگائیں (مثلاً مدیران)۔ کوئی نشان نہیں: ہر صارف۔</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php میں، ہر سائٹ ایکسیس کے لیے محفوظ ہوتا ہے۔ محفوظ کرتے وقت تصدیق مانگی جاتی ہے کہ یہ آپ ہیں۔</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php میں محفوظ ہوتا ہے۔ settings/override میں موجود قدر کو اس پر ترجیح حاصل ہے۔ محفوظ کرتے وقت تصدیق مانگی جاتی ہے کہ یہ آپ ہیں۔</translation>
     </message>
 </context>
 <context>
@@ -77784,6 +77952,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>آپ کا اکاؤنٹ مقفل کر دیا گیا</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site پر آپ کے اکاؤنٹ %login میں ایک پاس کی شامل کی گئی۔</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>جس کے پاس بھی یہ پاس کی ہو وہ آپ کے پاس ورڈ کے بغیر آپ کے اکاؤنٹ میں سائن ان کر سکتا ہے۔ اگر آپ نے اسے شامل نہیں کیا تو اسے پاس کیز کے تحت ہٹائیں اور اپنا پاس ورڈ تبدیل کریں۔</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site پر آپ کے اکاؤنٹ %login سے ایک پاس کی ہٹائی گئی۔</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>اس سے اب آپ کے اکاؤنٹ میں سائن ان نہیں ہو سکتا۔ اگر آپ نے اسے نہیں ہٹایا تو اپنی پاس کیز اور آلات چیک کریں۔</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>آپ کے اکاؤنٹ میں ایک پاس کی شامل کی گئی</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>آپ کے اکاؤنٹ سے ایک پاس کی ہٹائی گئی</translation>
     </message>
 </context>
 <context>

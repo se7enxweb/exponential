@@ -30,7 +30,7 @@ and [Source control and releases](../../../../standards/source-control-and-relea
 |---|---|---|
 | Exponential security and bug fixes | released as the next 6.0.x version; published tags never change | `SECURITY.md`, [Tags are permanent](../../../../standards/source-control-and-releases.md#tags-are-permanent) |
 | Extensions | each has its own releases and changelog | [Extensions guide](../../../../guides/extensions.md) |
-| PHP | PHP versions lose security support over time; Exponential 6.0.15 runs on PHP 8.0 to 8.5 | [Requirements](../../../../install/02-requirements.md#22-php) |
+| PHP | PHP versions lose security support over time; Exponential 6.0.15 runs on PHP 8.0 to 8.5 (PHP 7.4 usable without support) | [Requirements](../../../../install/02-requirements.md#22-php) |
 | Operating system and database | as your platform requires | [PHP upgrade runbook](../../../hosting/runbooks/php-upgrade.md) |
 | From an older line (4.x, 5.x) | once, as a project | [Upgrading, parts A and B](../../../../guides/upgrading.md#which-part-do-i-read) |
 

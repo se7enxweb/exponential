@@ -2,14 +2,14 @@
 title: site.ini [TemplateSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [TemplateSettings] in site.ini: AutoloadPathList, ExtensionAutoloadPath, Debug, ShowXHTMLCode, ShowMethodDebug, ShowUsedTemplates, ShowTemplatePathComments, NodeTreeCaching ..."
+summary: "Die Einstellungen von [TemplateSettings] in site.ini: AutoloadPathList, ExtensionAutoloadPath, Debug, ShowXHTMLCode, ShowMethodDebug, ShowUsedTemplates, ShowTemplatePathComments, TemplatesWithoutDebugComments ..."
 keywords: Einstellung, site.ini, TemplateSettings, INI, setting, AutoloadPathList, ExtensionAutoloadPath, Debug, ShowXHTMLCode, ShowMethodDebug, ShowUsedTemplates, ShowTemplatePathComments, TemplatesWithoutDebugComments, NodeTreeCaching, TemplateCompile, ShareCompiledTemplates, SharedCompiledTemplatesDir, TemplateOptimization, UseFormatting, TemplateCache, DelayedCacheBlockCleanup, TemplateCompression, DevelopmentMode, CompileComments, CompileAccumulators, CompileTimingPoints, CompileResourceFallback, CompileNodePlacements, CompileExecution, CompileAlwaysGenerate, CompileIncludeNodeTree
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [TemplateSettings]
 
-Der Block `[TemplateSettings]` von `settings/site.ini`, mit 25 Einstellung(en).
+Der Block `[TemplateSettings]` von `settings/site.ini`, mit 26 Einstellung(en).
 
 > AllowedDeletionDirs\[\]=/var/share/somedir  
 
@@ -142,22 +142,24 @@ ShowTemplatePathComments=disabled
 
 ## TemplatesWithoutDebugComments
 
-> Templates, die Debug und ShowTemplatePathComments nie in Kommentare einschließen, mit ihrem Pfad unterhalb  
-> von templates/ (eine Datei dieses Pfads in jedem Design und jeder Erweiterung), etwa  
-> <h1 class="title"{include uri='design:parts/exp_content_direction.tpl' ...}>, das in einen Start-Tag schreibt.  
-> Die meisten Templates brauchen keinen Eintrag: Die Kommentare werden aus jeder gerenderten Ausgabe genommen, wo  
-> sie sie zerstören würden (in einem Tag oder Attributwert, in <script>, <style>, <title> und <textarea> und  
-> überall in einer Ausgabe, die kein HTML ist: XML, JSON, Klartext), und ein set-block, der einen Wert statt HTML  
-> erfasst (einen Namen, eine URL, Attribute, nichts), bekommt keine. Tragen Sie ein Template ein, dessen Ausgabe  
-> auf anderem Weg in die Seite gelangt, etwa über einen Operator, der sie vor der Ausgabe verändert.  
+> Templates that Debug and ShowTemplatePathComments never wrap in comments, by their path below templates/  
+> (a file of that path in any design or extension), like  
+> <h1 class="title"{include uri='design:parts/exp\_content\_direction.tpl' ...}>, which prints into a start tag.  
+> Most templates need no entry: the comments are taken out of every rendered output where they would break it  
+> (inside a tag or an attribute value, inside <script>, <style>, <title> and <textarea>, and everywhere in output  
+> that is not HTML: XML, JSON, plain text), and a set-block that captures a value rather than HTML (a name, a URL,  
+> attributes, nothing) gets no comments. List a template whose output reaches the page some other way, e.g. through  
+> an operator that changes it before it is printed.  
 
-Standard: `parts/exp_content_direction.tpl`.
+Standard: eine Liste mit 1: `parts/exp_content_direction.tpl`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/site.ini.append.php
 [TemplateSettings]
-TemplatesWithoutDebugComments[]=parts/my_attributes.tpl
+# ein leeres "TemplatesWithoutDebugComments[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+TemplatesWithoutDebugComments[]
+TemplatesWithoutDebugComments[]=parts/exp_content_direction.tpl
 */ ?>
 ```
 

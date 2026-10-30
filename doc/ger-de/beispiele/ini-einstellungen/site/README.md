@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # site.ini
 
-Die ausgelieferten Einstellungen von `settings/site.ini`: 59 Blöcke, 464 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/site.ini`: 60 Blöcke, 488 Einstellungen.
 
 > Exponential-Konfigurationsdatei.  
 >
@@ -34,7 +34,7 @@ Die ausgelieferten Einstellungen von `settings/site.ini`: 59 Blöcke, 464 Einste
 | [ExtensionSettings](ExtensionSettings.md) | 6 |
 | [InformationCollectionSettings](InformationCollectionSettings.md) | 1 |
 | [Session](Session.md) | 14 |
-| [UserSessionSettings](UserSessionSettings.md) | 7 |
+| [UserSessionSettings](UserSessionSettings.md) | 12 |
 | [DebugSettings](DebugSettings.md) | 16 |
 | [RequestLogSettings](RequestLogSettings.md) | 4 |
 | [HTMLForms](HTMLForms.md) | 2 |
@@ -49,13 +49,14 @@ Die ausgelieferten Einstellungen von `settings/site.ini`: 59 Blöcke, 464 Einste
 | [PasswordSettings](PasswordSettings.md) | 11 |
 | [PasswordChangeRequiredSettings](PasswordChangeRequiredSettings.md) | 1 |
 | [SignInSecondFactorSettings](SignInSecondFactorSettings.md) | 2 |
-| [PasskeySettings](PasskeySettings.md) | 9 |
-| [ReauthSettings](ReauthSettings.md) | 5 |
+| [PasskeySettings](PasskeySettings.md) | 21 |
+| [ReauthSettings](ReauthSettings.md) | 8 |
 | [ReauthGroup_account](ReauthGroup_account.md) | 2 |
 | [ReauthGroup_users](ReauthGroup_users.md) | 2 |
 | [ReauthGroup_system](ReauthGroup_system.md) | 2 |
 | [ReauthGroup_export](ReauthGroup_export.md) | 2 |
-| [ReauthGroup_content](ReauthGroup_content.md) | 2 |
+| [ReauthGroup_delete](ReauthGroup_delete.md) | 2 |
+| [ReauthGroup_content](ReauthGroup_content.md) | 3 |
 | [SiteAccessSettings](SiteAccessSettings.md) | 37 |
 | [PortAccessSettings](PortAccessSettings.md) | 2 |
 | [RoleSettings](RoleSettings.md) | 13 |
@@ -66,7 +67,7 @@ Die ausgelieferten Einstellungen von `settings/site.ini`: 59 Blöcke, 464 Einste
 | [RegionalSettings](RegionalSettings.md) | 17 |
 | [UnitSettings](UnitSettings.md) | 2 |
 | [FileSettings](FileSettings.md) | 22 |
-| [TemplateSettings](TemplateSettings.md) | 25 |
+| [TemplateSettings](TemplateSettings.md) | 26 |
 | [ContentSettings](ContentSettings.md) | 20 |
 | [MailSettings](MailSettings.md) | 23 |
 | [ShopSettings](ShopSettings.md) | 4 |

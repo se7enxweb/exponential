@@ -37,7 +37,7 @@ derselben Software. Beide müssen sachlich sein. Die vollständige Methode steht
 |---|---|---|
 | Lizenz | GNU GPL v2 oder später; „Using Exponential under the terms of the GNU GPL is free of charge“ | `README.md`, `LICENSE` |
 | Lizenz der Dokumentation | GNU FDL 1.3 oder später | [Freie Dokumentation](../../freie-dokumentation.md) |
-| Selbst-Hosting | Läuft auf fast jedem Betriebssystem, auf dem PHP 8.0 oder neuer läuft | [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) |
+| Selbst-Hosting | Läuft auf fast jedem Betriebssystem, auf dem PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) läuft | [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) |
 | Datenbanken | SQLite 3 (die Voreinstellung), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Datenbankunterstützung](../../datenbankunterstuetzung.md) |
 | PHP-Versionen | 8.0 bis 8.5 | [Anforderungen auf einen Blick](../../hosting/grundlagen/anforderungen-auf-einen-blick.md) |
 | Integrität der Releases | „A published tag is never changed“: Eine Fehlerbehebung kommt als nächstes Release | `SECURITY.md` |

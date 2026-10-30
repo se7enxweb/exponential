@@ -188,6 +188,11 @@ class eZSOAPClientTlsOptionsTest extends PHPUnit\Framework\TestCase
         {
             $this->markTestSkipped( 'needs proc_open' );
         }
+        // -n as expTestBarePhpCommand() gives it (json stays loaded before PHP 8.0)
+        if ( in_array( '-n', $phpOptions, true ) )
+        {
+            $phpOptions = array_merge( array_slice( expTestBarePhpCommand(), 1 ), array_values( array_diff( $phpOptions, array( '-n' ) ) ) );
+        }
         $command = array_merge( array( PHP_BINARY ), $phpOptions, array( '-d', 'display_errors=stderr', __DIR__ . '/fixtures/soap_client_tls_subprocess.php' ), $arguments );
         $process = proc_open( $command, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
         $this->assertIsResource( $process );

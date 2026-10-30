@@ -34,7 +34,7 @@ Anleitungen. Wo die Quellen eine Frage nicht beantworten, sagen die Seiten das, 
 **Exponential** ist ein freies, quelloffenes PHP-Content-Management-System und Anwendungs-Framework, lizenziert unter der
 GNU GPL, Version 2 oder später. Sein README nennt es "a professional PHP application framework with advanced CMS (content
 management system) functionality", dessen bemerkenswerteste Eigenschaft "its fully customizable and extendable content
-model" ist. Der Kernel (`kernel/`, `lib/`) läuft auf PHP 8.0 bis 8.5, speichert Inhalte in SQLite 3 (Standard),
+model" ist. Der Kernel (`kernel/`, `lib/`) läuft auf PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar), speichert Inhalte in SQLite 3 (Standard),
 PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL, gibt über seine eigene Template-Sprache aus und wird über Erweiterungen
 in `extension/` erweitert. Seit 6.0.15 liefert es einen eigenen Anwendungsserver mit, Exponential Velocity, neben Apache
 oder nginx mit PHP-FPM und FrankenPHP. Die Codebasis wurde ab 1999 entwickelt, zuerst unter dem Namen eZ Publish, einem
@@ -171,8 +171,8 @@ Foundation betreibt und finanziert das Projekt ([Wer ist 7x?](../wer-ist-7x.md),
 |---|---|
 | [Erweiterungsentwicklung](../erweiterungsentwicklung/README.md) | der vollständige Kurs vom Benutzer zum Erweiterungsentwickler, mit einer API-Referenz |
 | [Anwendungsentwickler: hier beginnen](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md) | Anwendungen auf Exponential bauen, mit Code |
-| [PHP-Entwickler: hier beginnen](../../../eng-us/help/php-developers/php-developers-start-here.md) | die PHP-Seite im Detail |
-| [Web-Framework-Entwickler: hier beginnen](../../../eng-us/help/web-framework-developers/web-framework-developers-start-here.md) | Exponential im Vergleich mit anderen Web-Frameworks |
+| [PHP-Entwickler: hier beginnen](../php-entwickler/php-entwickler-hier-beginnen.md) | die PHP-Seite im Detail |
+| [Web-Framework-Entwickler: hier beginnen](../web-framework-entwickler/web-framework-entwickler-hier-beginnen.md) | Exponential im Vergleich mit anderen Web-Frameworks |
 | [Hosting-Unternehmen: hier beginnen](../hosting/hosting-anbieter-hier-beginnen.md) | Server, Panels, Betrieb und Runbooks |
 | [Datenbankunterstützung](../datenbankunterstuetzung.md) | die Unterstützungsaussage für jede Datenbank |
 | [Mit Git entwickeln](../mit-git-entwickeln.md), [Mit Git aktualisieren](../mit-git-aktualisieren.md) | Arbeit mit Klonen des Kernels und der Erweiterungen |

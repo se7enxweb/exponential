@@ -25,6 +25,25 @@ Die Engine stammt vom Qbix-Webserver und wird als Composer-Paket `se7enxweb/expo
 `se7enxweb/qbix-webserver`). Exponential steuert sie mit `exp:velocity`; die eigenen Programme der Engine sind
 `qbixserver`, `qbixctl` und `qbixconsole`.
 
+## Teil von Exponential ab 6.0.15
+
+Ab Exponential 6.0.15 ist der Velocity Internet / Web Application Server Teil von Exponential. Die Root-`composer.json`
+verlangt `se7enxweb/exponential-velocity ~0.0.4.57` (vorher war es ein Vorschlag), sodass jede mit `composer install`
+angelegte Installation den Server hat, unter PHP 8.0 und neuer, das mitgelieferte PHP 8.0 von Red Hat Enterprise
+Linux 9 eingeschlossen. Er läuft neben Apache mit PHP-FPM, nginx und FrankenPHP: Sein eigener Server ist die empfohlene
+Engine für jede Stufe, FrankenPHP die produktionsreife Alternative, und die herkömmlichen Server arbeiten weiter wie
+bisher.
+
+Das ist ein Wendepunkt für das Projekt, ein Grundstein und ein Schlussstein: eine neue Stufe der Integration des
+Anwendungssystems, in der das Kernprodukt standardmäßig noch mehr Funktionen von Haus aus mitbringt. Mit dem Server im
+Lieferumfang ist Exponential ein funktionierender Stack (Server, Plattform für schnelle Anwendungsentwicklung, CMS,
+Digital Experience und E-Commerce) statt eines Frameworks, das man erst vervollständigen muss. Die ganze Geschichte, für
+jede Leserin und jeden Leser:
+[Velocity ist Teil von Exponential 6.0.15](../../hilfe/velocity-ist-teil-von-exponential-6-0-15.md). Alle anderen
+Funktionsseiten: [Funktionen von Exponential 6.0](README.md).
+
+Die Befehle der täglichen Arbeit sind `./console exp:velocity deploy`, `start`, `restart` und `cache clear`.
+
 ## In zwei Minuten starten
 
 Verwenden Sie in einer Exponential-Installation den Konsolenbefehl (alle Verben und `velocity.ini` finden Sie unter

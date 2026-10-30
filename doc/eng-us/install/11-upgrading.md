@@ -289,7 +289,7 @@ running Exponential 6 inside a Symfony platform, see [Legacy bridge](../features
    if the table lacks it. The MySQL file runs on every MySQL from 5.5.3 and on MariaDB (see the per-database notes
    above). Details: [Changelog 6.0.0](../../changelogs/6.0/6.0.0.md).
 3. **PHP.** The current line runs on PHP 8.0 to 8.5 (`composer.json`: `^8.0`), Velocity included from its release 0.0.4.54. Releases 6.0.8 to
-   6.0.14 required 8.1. A site that must stay on PHP 7.4 stays on 6.0.7. Check your own extensions for PHP 8
+   6.0.14 required 8.1. A site on PHP 7.4 can run the current line again from 6.0.15, without support (6.0.8 to 6.0.14 need PHP 8.1). Check your own extensions for PHP 8
    problems: classes that extend `eZPersistentObject` or `eZDataType` are the usual cases. See
    [PHP 8 support](../bc/6.0/php8.md) and [PHP 8.0 support](../bc/6.0/php-8.0-support.md).
 4. Continue with [11.6](#116-from-any-60x-to-today).
@@ -409,7 +409,7 @@ Read every release note between your version and today; each opens with what to 
 | 6.0.3 | [6.0.4](../../changelogs/6.0/6.0.4.md): the responsive administration design |
 | 6.0.4 | [6.0.5](../../changelogs/6.0/6.0.5.md): a failed 6.0.4 install, datatypes of extensions |
 | 6.0.5 | [6.0.6](../../changelogs/6.0/6.0.6.md): `admin3` on phones and tablets |
-| 6.0.6 | [6.0.7](../../changelogs/6.0/6.0.7.md): the last release for PHP 7.4 |
+| 6.0.6 | [6.0.7](../../changelogs/6.0/6.0.7.md): the last release for PHP 7.4 until 6.0.15 |
 | 6.0.7 | [6.0.8](../../changelogs/6.0/6.0.8.md): **needs PHP 8.1**; and [PHP 8 support](../bc/6.0/php8.md) |
 | 6.0.8 | [6.0.9](../../changelogs/6.0/6.0.9.md): PostgreSQL, REST access to content |
 | 6.0.9 | [6.0.10](../../changelogs/6.0/6.0.10.md): the product name in templates, translations and overrides; [The product is called Exponential](../features/6.0/rebranding-to-exponential.md) |

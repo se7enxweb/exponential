@@ -77,7 +77,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [setup.ini](setup/README.md) | kernel | 24 |
 | [shop.ini](shop/README.md) | kernel | 10 |
 | [shopaccount.ini](shopaccount/README.md) | kernel | 3 |
-| [site.ini](site/README.md) | kernel | 59 |
+| [site.ini](site/README.md) | kernel | 60 |
 | [soap.ini](soap/README.md) | kernel | 2 |
 | [solr.ini](solr/README.md) | kernel | 1 |
 | [staticcache.ini](staticcache/README.md) | kernel | 1 |
@@ -92,6 +92,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [transform.ini](transform/README.md) | kernel | 13 |
 | [uiswitch.ini](uiswitch/README.md) | kernel | 3 |
 | [units.ini](units/README.md) | kernel | 4 |
+| [upgrade.ini](upgrade/README.md) | kernel | 1 |
 | [upload.ini](upload/README.md) | kernel | 12 |
 | [velocity.ini](velocity/README.md) | kernel | 13 |
 | [viewcache.ini](viewcache/README.md) | kernel | 1 |

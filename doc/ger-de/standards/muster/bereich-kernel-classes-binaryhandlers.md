@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/binaryhandlers
 audience: developer
 category: standards
-order: 482
+order: 488
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/binaryhandlers mit den Entwurfsmustern.
 keywords: kernel/classes/binaryhandlers, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

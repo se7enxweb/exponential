@@ -110,7 +110,8 @@ class expUserSessionReportTest extends eZDatatypeTestCase
         $this->assertSame( 'user/sessionreport', $menu->variable( 'Leftmenu_user', 'Links' )['session_report'] );
         $this->assertContains( 'access-session_report', $menu->variable( 'Leftmenu_user_mega', 'MegaMenuLinks' ) );
         $site = eZINI::instance();
-        $this->assertContains( 'user/sessionreport RevokeSessionButton ForceSignOutButton', $site->variable( 'ReauthGroup_users', 'Rules' ) );
+        // the whole report asks "Verify it's you" before it opens (task 273: other users' devices in full)
+        $this->assertContains( 'user/sessionreport *', $site->variable( 'ReauthGroup_users', 'Rules' ) );
         $this->assertContains( 'user/sessions self SaveMailButton RevokeOthersButton', $site->variable( 'ReauthGroup_account', 'Rules' ),
                                'signing out all other sessions asks "Verify it\'s you" first' );
         foreach ( array( 'admin', 'admin4' ) as $design )

@@ -112,8 +112,8 @@ Danach: Ihr Code läuft unter jeder Engine, ist getestet und kann in den Kernel 
 ## Verwandte Seiten
 
 - [Der Lesepfad für Anwendungsentwickler](../ersteller/anwendungsentwickler/lesepfad-fuer-anwendungsentwickler.md)
-- [Software-Ingenieure: hier beginnen](../../../eng-us/help/software-engineers/software-engineers-start-here.md),
-  [Web-Framework-Entwickler: hier beginnen](../../../eng-us/help/web-framework-developers/web-framework-developers-start-here.md)
+- [Software-Ingenieure: hier beginnen](../softwareingenieure/softwareingenieure-hier-beginnen.md),
+  [Web-Framework-Entwickler: hier beginnen](../web-framework-entwickler/web-framework-entwickler-hier-beginnen.md)
 - [Lesepfade des Buchs für Erweiterungsentwickler](../erweiterungsentwicklung/lesepfade.md)
 - [PHP-Entwickler: hier beginnen](php-entwickler-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

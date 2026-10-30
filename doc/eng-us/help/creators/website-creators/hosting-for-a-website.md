@@ -40,7 +40,7 @@ From [2.1 The checklist](../../../install/02-requirements.md#21-the-checklist):
 
 | Need | Minimum | Recommended |
 |---|---|---|
-| PHP | 8.0 | the newest 8.x the system offers (8.5 is supported) |
+| PHP | 8.0 supported (7.4 usable without support; 8.1 for Layouts) | the newest 8.x the system offers (8.5 is supported) |
 | PHP for Velocity | 8.0 with `sockets` (from Velocity 0.0.4.54) | plus `pcntl` and `openssl` |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` set, `file_uploads` on, `allow_url_fopen` on | |
 | Database | SQLite 3 (no server) | in the official order: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |

@@ -12,6 +12,9 @@
 <h1>{"Login"|i18n("design/standard/user")}</h1>
 </div>
 
+{if first_set( $passkey_only_hint, false() )}
+<div class="feedback" role="status"><p>{'Accounts that sign in with passkeys only cannot use a password here: choose "Sign in with a passkey".'|i18n( 'design/standard/user/passkeys' )}</p></div>
+{/if}
 {if first_set( $passkey_warning, false() )}
 <div class="warning" role="alert">
 <h2>{'Could not sign in with the passkey'|i18n( 'design/standard/user/passkeys' )}</h2>

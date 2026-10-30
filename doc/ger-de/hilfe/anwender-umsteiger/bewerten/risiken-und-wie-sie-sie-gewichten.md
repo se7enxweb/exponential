@@ -48,7 +48,7 @@ hat eine ausführlichere Methode: [Risikomanagement](../../fuehrung/risikomanage
   ([Was die Quellen nicht sagen](../../wer-ist-die-exponential-foundation.md#was-die-quellen-nicht-sagen)). Fragen Sie,
   wenn es für Sie wichtig ist.
 - **Finanzierung.** Das Projekt lebt von geschenkter Zeit und Sponsoring; Anwender, die sich darauf verlassen, können
-  helfen, es abzusichern ([Die Community finanzieren](../../../../eng-us/help/community/how-it-works/funding-the-community.md)).
+  helfen, es abzusichern ([Die Community finanzieren](../../gemeinschaft/so-funktioniert-es/die-community-finanzieren.md)).
 
 ## Verwandte Seiten
 

@@ -193,7 +193,7 @@ wo Sie als Nächstes nachsehen.
 | Wer ändert heute Seiten, und wie lange dauert das? | Redakteure warten auf Entwickler | [Der Layout-Editor](../layout-editor.md) |
 | Verkaufen Sie online, oder planen Sie es? | Ja, nah an den Inhalten | [Funktionshighlights](funktionshighlights-fuer-kunden.md) |
 | Wo muss die Site laufen: auf eigenen Servern, in einer Cloud, bei einem Hosting-Partner? | Sie wollen die Wahl haben oder haben einen festen Standard | [Hosting, Datenbank und Betriebssystem auswählen](../fuehrung/hosting-datenbank-und-betriebssystem-waehlen.md) |
-| Welche Datenbank und welches Betriebssystem betreibt Ihre IT? | Eine der sechs Datenbanken; ein Betriebssystem mit PHP 8.0 oder später | [Unterstützte Datenbanken](../datenbankunterstuetzung.md), [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
+| Welche Datenbank und welches Betriebssystem betreibt Ihre IT? | Eine der sechs Datenbanken; ein Betriebssystem mit PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar) | [Unterstützte Datenbanken](../datenbankunterstuetzung.md), [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
 | Wie wichtig sind Lizenzkosten und die Freiheit, den Anbieter zu wechseln? | Wichtig | [Lizenzen für Käufer erklärt](lizenzen-fuer-kaeufer.md) |
 | Betreiben Sie eine Site, die gebaut wurde, als die Software noch eZ Publish hieß, oder eine auf eZ Platform oder Ibexa? | Ja | [Upgrade](../../anleitungen/aktualisieren.md), Migrationskapitel 14 bis 16 |
 | Wer betreibt die Site nach dem Start: Ihre IT, eine Agentur, ein Hosting-Unternehmen? | Es ist jemand benannt | [Zusammenarbeiten](../fuehrung/zusammenarbeiten.md) |
@@ -212,7 +212,7 @@ nicht aus; sie bedeuten, dass die Frage geklärt sein muss, bevor Sie etwas vers
 | „Wir brauchen die Funktionen X, Y und Z“, die keine Hilfeseite beschreibt | Nichts Undokumentiertes darf versprochen werden | Geben Sie es als Frage zum Projektumfang an den Projektleiter weiter ([Aufwand schätzen und Umfang festlegen mit Erweiterungen](../fuehrung/schaetzen-und-abgrenzen-mit-erweiterungen.md)) |
 | „Wir brauchen eine Zertifizierung oder eine garantierte Support-Zeit.“ | Die Quellen nennen keine Zertifizierungen; `SECURITY.md` verspricht nur eine erste Antwort auf Sicherheitsmeldungen innerhalb eines Werktags | Sagen Sie, was die Quellen sagen; Service-Level sind Sache Ihres eigenen Vertrags |
 | „Wir brauchen Microsoft SQL Server.“ | Es „ist bekanntermaßen mit zusätzlichem Aufwand möglich“, wird heute aber nicht unterstützt (`README.md`) | Lesen Sie [Unterstützte Datenbanken](../datenbankunterstuetzung.md) gemeinsam mit der IT des Kunden |
-| „Unsere Site läuft auf PHP 7.“ | PHP 7.4 wird nur bis 6.0.7 unterstützt (`README.md`) | Planen Sie das PHP-Upgrade als Teil des Projekts ein |
+| „Unsere Site läuft auf PHP 7.“ | PHP 7.4 ist ab 6.0.15 wieder nutzbar, ohne Support und ohne die Funktionen, die PHP 8 brauchen | Planen Sie das PHP-Upgrade als Teil des Projekts ein |
 | „Wir wollen einen reinen Symfony-Stack.“ | Der Kernel von Exponential 6 ist kein Symfony | Sehen Sie sich Exponential Platform DXP an ([Welches Produkt der Familie passt](#welches-produkt-der-familie-passt)) |
 
 ## Eine Persona-Karte zum Kopieren

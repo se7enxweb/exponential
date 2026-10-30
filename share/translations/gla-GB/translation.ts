@@ -77241,6 +77241,82 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Cha b' urrainnear an iuchair-faire a sgrùdadh. Feuchaibh a-rithist.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Chan urrainn do chunntasan a chlàraicheas a-steach le iuchraichean-faire a-mhàin facal-faire a chleachdadh an-seo: taghaibh “Clàraich a-steach le iuchair-faire”.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Iuchraichean-faire %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Na h-iuchraichean-faire leis an clàraich an cunntas seo a-steach. Cùl-ghairmibh tè a tha air uidheam a chaidh air chall no a chaidh a ghoid: cha chlàraich i a-steach tuilleadh. Cuiridh an sealbhadair fhèin feadhainn ùra ris.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Feumaidh ur cunntas iuchair-faire</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Cuir iuchair-faire ris a&apos; chunntas agaibh</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Cuiribh iuchair-faire ris airson leantainn air adhart. An uair sin clàraichidh sibh a-steach leatha seach le facal-faire a-mhàin.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Tha clàradh a-steach le iuchair-faire nas luaithe is nas sàbhailte na facal-faire. Cuiribh tè ris an-dràsta, no leanaibh air adhart às a h-aonais.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Chan ann an-dràsta</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>A bheil sibh airson an iuchair-faire “%name” a chùl-ghairm?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Chan urrainn dhi clàradh a-steach dhan chunntas seo tuilleadh. Mas e an tè mu dheireadh a bh&apos; ann, clàraichidh an sealbhadair a-steach leis an fhacal-fhaire, no suidhichidh sibh fear ùr.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Cùl-ghairm an iuchair-faire</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Cùl-ghairm</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Chan eil iuchair-faire aig a&apos; chunntas seo.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Dearbhaiche</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Neo-aithnichte</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>An iuchair-faire mu dheireadh agaibh: cuiribh tè eile ris mus toir sibh air falbh i.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Clàraichidh an cunntas seo a-steach le iuchraichean-faire a-mhàin (poileasaidh nan iuchraichean-faire): mura bi tè air fhàgail, clàraichidh e a-steach leis an fhacal-fhaire aige a-rithist.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Seo an iuchair-faire mu dheireadh agaibh agus chan urrainn dhan chunntas agaibh clàradh a-steach às a h-aonais. Cuiribh iuchair-faire eile ris an toiseach.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Chaidh an iuchair-faire “%name” a chùl-ghairm. Chan urrainn dhi clàradh a-steach dhan chunntas seo tuilleadh.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>Code from your authenticator app</source>
         <translation>Còd o ur n-aplacaid dearbhaiche</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Tha sibh gu bhith a&apos; sguabadh às dàta gu buan no a&apos; falmhachadh loga.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Ur facal-faire agus iuchair-faire</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Ur facal-faire agus còd o ur n-aplacaid dearbhaiche</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>No:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Chan urrainn dhan bhrabhsair seo iuchraichean-faire a chleachdadh. Cleachdaibh dòigh eile, no brabhsair eile.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Nuair a leanas sibh air adhart, iarraidh am brabhsair agaibh tè de na h-iuchraichean-faire agaibh.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Lean air adhart le iuchair-faire</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>Setup</source>
         <translation>Suidheachadh</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Atharrachadh an fhacail-fhaire, an t-seòlaidh puist-d, nan iuchraichean-faire, a&apos; chlàraidh a-steach dà-cheumnaich, nan còdan aiseig no nan iuchraichean API agad fhèin, agus clàradh a-mach air na h-uidheaman eile agad fhèin.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Cruthachadh is deasachadh chleachdaichean, am faclan-faire is an uidheaman, roghainnean chunntasan, aontachadh ri cunntasan cleachdaiche ùra no an diùltadh, sònrachadh dhreuchdan agus deasachadh phoileasaidhean.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>A&apos; sguabadh às dàta</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Falmhachadh an sgudail, toirt air falbh nithean às agus toirt air falbh grunn nithean aig an aon àm.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>A&apos; toirt air falbh, a&apos; foillseachadh is a&apos; sàbhaladh susbaint</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Toirt air falbh susbaint (cuideachd dhan sgudal), foillseachadh agus sàbhaladh dreachd; thèid fhaighneachd nuair a thèid am foirm a chur. Dheth a ghnàth.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Ro ghnìomh mothachail, dearbhaidh cleachdaiche a tha air clàradh a-steach cò e a-rithist: le fhacal-faire agus iuchair-faire, no gun iuchair-faire le fhacal-faire agus còd na h-aplacaid dearbhaiche aige. Chan fhaighnich ach na duilleagan-lìn: chan fhaighnich eadar-aghaidh REST, SOAP, WebDAV, clàradh a-steach expservices no an loidhne-àithne idir.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Far a bheil na roghainnean an sàs</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Roghainnean airson</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Gach inntrigeadh làraich</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>An t-inntrigeadh làraich %name a-mhàin</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Fosgail</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Cò dha a thèid fhaighneachd: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Cuiribh cromag ri buidhnean chleachdaichean airson faighneachd dhe na buill aca a-mhàin (deasaichean, mar eisimpleir). Gun chromag: gach cleachdaiche.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Air a shàbhaladh ann an settings/override/site.ini.append.php, airson gach inntrigeadh làraich. Iarraidh an sàbhaladh oirbh dearbhadh gur e sibh a th&apos; ann.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Air a shàbhaladh ann an settings/siteaccess/%name/site.ini.append.php. Bidh luach ann an settings/override os a chionn. Iarraidh an sàbhaladh oirbh dearbhadh gur e sibh a th&apos; ann.</translation>
     </message>
 </context>
 <context>
@@ -77786,6 +77954,30 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Chaidh ur cunntas a ghlasadh</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Chaidh iuchair-faire a chur ris a&apos; chunntas agaibh %login air %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Is urrainn do neach sam bith aig a bheil an iuchair-faire seo clàradh a-steach dhan chunntas agaibh gun ur facal-faire. Mura do chuir sibh fhèin ris i, thoiribh air falbh i fo Iuchraichean-faire agus atharraichibh ur facal-faire.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Chaidh iuchair-faire a thoirt air falbh on chunntas agaibh %login air %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Chan urrainn dhi clàradh a-steach dhan chunntas agaibh tuilleadh. Mura do thoir sibh fhèin air falbh i, thoiribh sùil air na h-iuchraichean-faire is na h-uidheaman agaibh.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Chaidh iuchair-faire a chur ris a&apos; chunntas agaibh</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Chaidh iuchair-faire a thoirt air falbh on chunntas agaibh</translation>
     </message>
 </context>
 <context>

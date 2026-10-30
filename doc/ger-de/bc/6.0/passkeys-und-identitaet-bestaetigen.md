@@ -74,3 +74,22 @@ Sechs neue Namen (der Katalog hat 186): `access.passkey.add`, `access.passkey.re
 `access.passkey.use`, `access.passkey.use.failed`, `access.session.reauth.ask`. `access.session.reauth` und
 `access.session.reauth.failed` löst auch „Identität bestätigen“ aus. Eine Anmeldung mit Passkey ist
 `access.session.login` mit dem Handler `expPasskeyLogin`.
+
+## Später in 6.0.15: beide Wege zusammen, eine Richtlinie und weitere Gruppen
+
+Lesen Sie dies auch, wenn Sie von einer früheren Vorabversion von 6.0.15 aktualisieren.
+
+| | |
+|---|---|
+| Was sich änderte | „Identität bestätigen“ fragt nach Passwort **und** Passkey (`[ReauthSettings] Factors[]`), ohne Passkey nach Passwort und App-Code; das Formularfeld `ExpReauthMethod` wich `ExpReauthFactors`. Eine neue Gruppe `delete` (an): Papierkorb leeren, daraus entfernen, mehrere Elemente auf einmal entfernen. Die Geräte eines anderen Benutzers vollständig und der Anmeldebericht fragen vor dem Öffnen. Die Gruppe Inhalte fragt auch beim Speichern eines Entwurfs. Gruppen können `UserGroups[]` nennen; `setup/reauth` bearbeitet jeden Siteaccess oder einen (`setup/reauth/<siteaccess>`). Eine Passkey-Richtlinie (`[PasskeySettings] Policy`, `PasswordSignIn`, je Gruppe und Konto). Administratoren sehen und widerrufen die Passkeys anderer Konten (`user/passkeys/<Benutzer-ID>`, neue Richtlinie `user/passkeys_manage`). Namen der Authentifikatoren; `Attestation`, `RelyingPartyIDMap[]`, `AuthenticatorNames[]`, `ConsoleSlots[]`. Sicherheitsmeldungen, wenn ein Passkey hinzugefügt, entfernt oder widerrufen wird. Vier Audit-Namen: `access.passkey.revoke`, `access.passkey.password_refused`, `access.passkey.required`, `access.passkey.suggested` (der Katalog hat 202). |
+| Wen es betrifft | Benutzer mit Passkey: Die Frage verlangt Passwort und Passkey. Designs mit eigenem `user/reauth.tpl` (sie senden `ExpReauthFactors` und durchlaufen `$combinations`; siehe `design/standard/templates/user/reauth.tpl`). Designs mit eigenem `user/passkeys.tpl` (neue Variablen `own`, `account`, `action_uri`, `policy`, `sent_by_policy`, `last_locked`, `console_slots`; Formulare senden an `$action_uri`). |
+| Wie prüfen | `/setup/reauth` listet sechs Gruppen und hat **Einstellungen für**; die Passkey-Liste hat eine Spalte **Authentifikator**. |
+| Wie beheben | Kernel-Autoloads neu erzeugen (neue Klassen `expPasskeyPolicy`, `expPasskeyPolicyHandler`, `expPasskeyAuthenticators`, `expReauthTriggerHandler`); Caches für INI, Templates und Template-Overrides leeren; PHP-FPM neu laden und Velocity neu starten. |
+| Wie abschalten | Der alte einzelne Weg: `Factors[]` mit `password`, `passkey` und `code` je in einer eigenen Zeile. Die Gruppe delete auf `setup/reauth`. Die Richtlinie ist standardmäßig `optional`. |
+
+Für Erweiterungen: `expReauthTriggerHandler` (`[ReauthSettings] TriggerHandlers[]`), `expReauth::requireFresh()`,
+`expReauth::markFreshAfterSignIn()` (eine Anmeldung, die nach ebenso viel fragte, zählt als Bestätigung; der zweite
+Schritt von `sevenx_authentication_2fa` ruft es auf), `expPasskeyPolicyHandler` (`[PasskeySettings] PolicyHandlers[]`),
+`expPasskeyService::revoke()` und `removeChecked()`. Der zweite Schritt von `sevenx_authentication_2fa` bietet neben
+dem App-Code einen Passkey an, und ein Konto, das einen zweiten Schritt haben muss und einen Passkey hat, braucht
+keine App.

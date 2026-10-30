@@ -2,7 +2,7 @@
 title: Muster in extension/xrowextract
 audience: developer
 category: standards
-order: 476
+order: 482
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/xrowextract mit den Entwurfsmustern.
 keywords: extension/xrowextract, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -15,7 +15,7 @@ type: catalogue
 
 Jede Klasse, Schnittstelle und jeder Trait von `extension/xrowextract` mit den Mustern, als die sie erkannt wurden, gefolgt von den Modulansichten, Richtlinienfunktionen, Fetch-Funktionen, Template-Operatoren, Cronjobs, Ereignis-Hooks und INI-Plugin-Punkten des Bereichs. [Alle Muster](README.md).
 
-## Klassen (91)
+## Klassen (94)
 
 | Klasse | Art | Muster | Datei | Beschreibung |
 | --- | --- | --- | --- | --- |
@@ -51,7 +51,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `extension/xrowextract` mit den M
 | `XrowExtractColumns` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/xrowextract/classes/xrowextractcolumns.php:8` | Die Spalten eines Exports und ihre Werte: die besonderen Spalten (keine Klassenattribute), die Attributspalten einer Klasse und ein Objekt als Zeile von CSV-Zel… |
 | `XrowExtractCron` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/xrowextract/classes/xrowextractcron.php:16` | Wann ein Zeitplan läuft: die einfachen Auswahlmöglichkeiten der Seite Schedules (stündlich zur Minute M, täglich um HH:MM, wöchentlich an einem Tag um HH:MM, monatlich an einem Tag um HH:… |
 | `XrowExtractDestination` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md) | `extension/xrowextract/classes/xrowextractdestination.php:9` | Ein benanntes, wiederverwendbares Lieferziel (Tabelle xrowextract_destination). |
-| `XrowExtractEntry` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/xrowextract/classes/xrowextractentry.php:12` | Die Einstiegsparameter von xrowextract/csv: das Menü Advanced › Export des Inhaltsbaums öffnet das CSV-Formular vorausgefüllt für einen Knoten mit xrowextract/csv/(nod… |
+| `XrowExtractEntry` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/xrowextract/classes/xrowextractentry.php:14` | Die Einstiegsparameter von xrowextract/csv: das Menü Advanced › Export des Inhaltsbaums öffnet das CSV-Formular vorausgefüllt für einen Knoten mit xrowextract/csv/(nod… |
 | `XrowExtractFetchAlias` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/xrowextract/classes/xrowextractfetchalias.php:18` | Benannte Fetches aus fetchalias.ini, nutzbar in der Ansicht extract und in der CLI: die Constant-Werte eines Alias "tree" / "list" / "tree_count" / "list_count" le… |
 | `XrowExtractFileModes` | trait | [Trait (Mixin)](trait.md) | `extension/xrowextract/classes/xrowextractfilemodes.php:14` | Die Modi, die die Extension ihren Dateien und Verzeichnissen gibt, innerhalb der Grenzen EZP_FILE_MODE_MAX / EZP_DIR_MODE_MAX, die der Kernel aus config.php liest (siehe… |
 | `XrowExtractFilters` | class | [Dekorierer / Filter](dekorierer.md), [Fabrik und statische Fabrikmethoden](fabrik.md) | `extension/xrowextract/classes/xrowextractfilters.php:16` | Filter eines Exports: ein Datumsbereich (veröffentlicht, geändert oder ein Datumsattribut der Klasse; beliebig, heute, die letzten N Tage, seit, vor, zwischen, zukünf… |
@@ -66,12 +66,15 @@ Jede Klasse, Schnittstelle und jeder Trait von `extension/xrowextract` mit den M
 | `XrowExtractNotifierHttp` | class extends XrowExtractTransport | – | `extension/xrowextract/classes/xrowextractnotifier.php:216` | Der HTTP-Aufruf des Webhooks: der curl-Helfer von XrowExtractTransport mit einem JSON-Body. |
 | `XrowExtractPackage` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/xrowextract/classes/xrowextractpackage.php:18` | Unterstützung für Inhaltspakete (.ezpkg) für xrowextract/package: Prüfen der Inhaltsklassen und Inhaltsobjekte eines Pakets, bevor etwas geschrieben wird (die… |
 | `XrowExtractPreset` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/xrowextract/classes/xrowextractpreset.php:25` | Eine gespeicherte Exportvoreinstellung: eine vollständige, benannte Definition eines CSV- oder Archivexports (Bereich, Knoten, Klasse oder Sets, Spalten, Sprachen, alle Filter, Sortierung, Aus… |
+| `XrowExtractReimport` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/xrowextract/classes/xrowextractreimport.php:13` | „Diese Datei erneut importieren“ auf den Seiten Jobs und Verlauf: die Datei eines abgeschlossenen Klassenexports (ein CSV-, JSON- oder XML-Job der Ansicht One class, die Befehlszeile… |
 | `XrowExtractRelationFilter` | class | [Dekorierer / Filter](dekorierer.md), [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `extension/xrowextract/classes/xrowextractrelationfilter.php:17` | Erweiterter Attributfilter „XrowExtractRelation“: nur Objekte, die eine Relation zu einem gegebenen Objekt haben (relation_type wird ignoriert — jede Relation zählt, einschließlich o… |
 | `XrowExtractRequirements` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/xrowextract/classes/xrowextractrequirements.php:19` | Was die Extension von PHP und dem Server braucht, an einer Stelle: jede Anforderung (eine PHP-Version, eine PHP-Extension, eine Funktion, die ein Hoster deaktivieren kann, ein… |
 | `XrowExtractSchedule` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md) | `extension/xrowextract/classes/xrowextractschedule.php:20` | Ein geplanter Export oder Import (Tabelle xrowextract_schedule, bei Bedarf von XrowExtractSchema angelegt). |
 | `XrowExtractScheduler` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/xrowextract/classes/xrowextractscheduler.php:15` | Führt Zeitpläne aus: findet die fälligen (der Cronjob-Teil, cronjobs/xrowextract.php, oder bin/php/schedule.php --cron), macht aus jedem einen gewöhnlichen Hintergr… |
 | `XrowExtractSchema` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/xrowextract/classes/xrowextractschema.php:11` | Die eigenen Tabellen der Extension (xrowextract_schedule, xrowextract_destination, xrowextract_history), verzögert und idempotent angelegt, sobald eine d… |
 | `XrowExtractSecrets` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/xrowextract/classes/xrowextractsecrets.php:15` | Zugangsdaten von Zielen im Ruhezustand: libsodium secretbox (XSalsa20-Poly1305) mit einem 32-Byte-Schlüssel in einer Schlüsseldatei außerhalb der Datenbank. |
+| `XrowExtractTransfer` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/xrowextract/classes/xrowextracttransfer.php:20` | Der Export-Teil der Transferläufe von Exponential (6.0.15 und neuer): eine Engine und ein Lauf-Verlauf für jedes Import- und Export-Tool der Installation. |
+| `XrowExtractTransferTask` | class implements expKernelTransferTask | – | `extension/xrowextract/classes/xrowextracttransfertask.php:18` | Ein Hintergrund-Job von Export, ausgeführt von einer der Engines des Kernels (Exponential 6.0.15 und neuer): die Job-Warteschlange (expqueue, Job-Typ xrowextract.run) o… |
 | `XrowExtractTranslationFilter` | class | [Dekorierer / Filter](dekorierer.md), [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `extension/xrowextract/classes/xrowextracttranslationfilter.php:24` | Erweiterter Attributfilter „XrowExtractTranslation“: nur Objekte, die eine Übersetzung in der gegebenen Sprache haben. |
 | `XrowExtractTransport` | abstract class | [Strategie / Handler](strategie-handler.md), [Schablonenmethode / abstrakte Basisklasse](schablonenmethode.md) | `extension/xrowextract/classes/transports/xrowextracttransport.php:10` | Ein Weg, eine Datei an ein Ziel zu liefern (oder, bei einem geplanten Import, von dort abzuholen). |
 | `XrowExtractTransportFtp` | class extends XrowExtractTransport | – | `extension/xrowextract/classes/transports/xrowextracttransportftp.php:9` | FTP und FTPS über die curl-Extension: einfaches FTP (unverschlüsselt: Benutzer, Passwort und Datei gehen im Klartext - die Seite Ziele sagt das), expli… |
@@ -152,7 +155,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `extension/xrowextract` mit den M
 | `xrowextract` | `extension/xrowextract/classes/runnable/cronjobs/xrowextract.php` | Der Code von extension/xrowextract/cronjobs/xrowextract.php, in eine Klasse verschoben (#207 Stufe 1). |
 | `xrowextract` | `extension/xrowextract/cronjobs/xrowextract.php` | Der Cronjob-Teil xrowextract (runcronjobs.php xrowextract): startet jeden fälligen Zeitplan als Hintergrundjob über denselben Runner, den "Run in the backgro… |
 
-## INI-Plugin-Punkte (33)
+## INI-Plugin-Punkte (35)
 
 | Einstellung | Klasse | Gesetzt in |
 | --- | --- | --- |
@@ -185,7 +188,9 @@ Jede Klasse, Schnittstelle und jeder Trait von `extension/xrowextract` mit den M
 | `[eztags] HandlerClass` | `XroweZKeywordHandler` | `extension/xrowextract/settings/csv.ini.append.php:173` |
 | `[ezobjectrelation] HandlerClass` | `XroweZObjectRelationHandler` | `extension/xrowextract/settings/csv.ini.append.php:177` |
 | `[xrowmetadata] HandlerClass` | `XrowxrowmetadataHandler` | `extension/xrowextract/settings/csv.ini.append.php:181` |
+| `[JobType_xrowextract.run] Handler` | `expKernelTransferQueueHandler` | `extension/xrowextract/settings/expqueue.ini.append.php:13` |
 | `[XrowExtractTranslation] ClassName` | `XrowExtractTranslationFilter` | `extension/xrowextract/settings/extendedattributefilter.ini.append.php:8` |
 | `[XrowExtractHasChildren] ClassName` | `XrowExtractHasChildrenFilter` | `extension/xrowextract/settings/extendedattributefilter.ini.append.php:15` |
 | `[XrowExtractRelation] ClassName` | `XrowExtractRelationFilter` | `extension/xrowextract/settings/extendedattributefilter.ini.append.php:23` |
 | `[XrowExtractUserStatus] ClassName` | `XrowExtractUserStatusFilter` | `extension/xrowextract/settings/extendedattributefilter.ini.append.php:30` |
+| `[Service_transfer.xrowextract] Class` | `expKernelTransferTool` | `extension/xrowextract/settings/kernelservices.ini.append.php:10` |

@@ -72,7 +72,7 @@ Im ersten Release hieß das Skript `main.js` und musste von Hand eingeschaltet w
 |---|---|---|---|---|
 | `settings/siteaccess/<admin>/site.ini.append.php` | `DesignSettings` | `SiteDesign` (das zuerst verwendete Design) | `admin4` im mitgelieferten Admin-Siteaccess | Siteaccess |
 | `settings/siteaccess/<admin>/site.ini.append.php` | `DesignSettings` | `AdditionalSiteDesignList[]` (Rückfall-Designs, in Reihenfolge) | `admin3`, `admin2`, `admin` | Siteaccess |
-| `settings/design.ini` | `JavaScriptSettings` | `BackendJavaScriptList[]` (Backend-Skripte) | enthält `ezadmin_menubar.js` | global |
+| `settings/design.ini` | `JavaScriptSettings` | `BackendJavaScriptList[]` (Skripte auf jeder Admin-Seite; nur Skripte, die ohne jQuery laufen, admin3 lädt jQuery vor ihnen) | enthält `ezadmin_menubar.js` | global |
 
 ## Dateien
 

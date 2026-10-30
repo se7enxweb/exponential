@@ -77239,6 +77239,82 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>The passkey could not be checked. Please try again.</source>
         <translation>No s'ha pogut comprovar la clau d'accés. Torna-ho a provar.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Els comptes que inicien la sessió només amb claus d&apos;accés no poden utilitzar aquí una contrasenya: tria «Inicia la sessió amb una clau d&apos;accés».</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Claus d&apos;accés de %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Les claus d&apos;accés amb què inicia la sessió aquest compte. Revoca la que sigui en un dispositiu perdut o robat: ja no podrà iniciar la sessió. El propietari n&apos;afegeix de noves ell mateix.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>El teu compte necessita una clau d&apos;accés</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Afegeix una clau d&apos;accés al teu compte</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Afegeix una clau d&apos;accés per continuar. Després inicies la sessió amb ella en lloc de només amb una contrasenya.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Iniciar la sessió amb una clau d&apos;accés és més ràpid i segur que amb una contrasenya. Afegeix-ne una ara o continua sense.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Ara no</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Vols revocar la clau d&apos;accés «%name»?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Ja no podrà iniciar la sessió en aquest compte. Si era l&apos;última, el propietari inicia la sessió amb la contrasenya, o en defineixes una de nova.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Revoca la clau d&apos;accés</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Revoca</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Aquest compte no té cap clau d&apos;accés.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Autenticador</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Desconegut</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>La teva última clau d&apos;accés: afegeix-ne una altra abans de treure-la.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Aquest compte inicia la sessió només amb claus d&apos;accés (política de claus d&apos;accés): si no en queda cap, torna a iniciar la sessió amb la contrasenya.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Aquesta és la teva última clau d&apos;accés i el teu compte no pot iniciar la sessió sense cap. Afegeix primer una altra clau d&apos;accés.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>S&apos;ha revocat la clau d&apos;accés «%name». Ja no pot iniciar la sessió en aquest compte.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77338,6 +77414,34 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>Code from your authenticator app</source>
         <translation>Codi de l'aplicació d'autenticació</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Estàs a punt de suprimir dades definitivament o de buidar un registre.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>La contrasenya i una clau d&apos;accés</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>La contrasenya i un codi de l&apos;aplicació d&apos;autenticació</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>O bé:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Aquest navegador no pot utilitzar claus d&apos;accés. Fes servir una altra manera o un altre navegador.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Quan continuïs, el navegador et demanarà una de les teves claus d&apos;accés.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Continua amb una clau d&apos;accés</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77428,6 +77532,70 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     <message>
         <source>Setup</source>
         <translation>Configuració</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Canviar la pròpia contrasenya, l&apos;adreça de correu electrònic, les claus d&apos;accés, l&apos;inici de sessió en dos passos, els codis de recuperació o les claus d&apos;API, i tancar la sessió dels altres dispositius propis.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Crear i editar usuaris, les seves contrasenyes i dispositius, paràmetres del compte, aprovar o denegar comptes d&apos;usuari nous, assignar rols i editar polítiques.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Suprimir dades</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Buidar la paperera, treure&apos;n elements i treure diversos elements alhora.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Treure, publicar i desar contingut</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Treure contingut (també a la paperera), publicar i desar un esborrany; es demana en enviar el formulari. Desactivat per defecte.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Abans d&apos;una acció delicada, un usuari amb la sessió iniciada torna a confirmar qui és: amb la contrasenya i una clau d&apos;accés o, sense clau d&apos;accés, amb la contrasenya i el codi de l&apos;aplicació d&apos;autenticació. Només ho demanen les pàgines web: la interfície REST, SOAP, WebDAV, l&apos;inici de sessió d&apos;expservices i la línia d&apos;ordres no ho fan mai.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>On s&apos;apliquen els paràmetres</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Paràmetres per a</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Tots els accessos al lloc</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Accés al lloc %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Obre</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>A qui es demana: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Marca grups d&apos;usuaris per demanar-ho només als seus membres (els editors, per exemple). Cap de marcat: tots els usuaris.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Es desa a settings/override/site.ini.append.php, per a tots els accessos al lloc. En desar, se&apos;t demana que confirmis que ets tu.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Es desa a settings/siteaccess/%name/site.ini.append.php. Un valor a settings/override hi té prioritat. En desar, se&apos;t demana que confirmis que ets tu.</translation>
     </message>
 </context>
 <context>
@@ -77816,6 +77984,30 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     <message>
         <source>Your account was locked</source>
         <translation>El teu compte s&apos;ha bloquejat</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>S&apos;ha afegit una clau d&apos;accés al teu compte %login a %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Qualsevol que tingui aquesta clau d&apos;accés pot iniciar la sessió al teu compte sense la teva contrasenya. Si no l&apos;has afegit tu, treu-la a Claus d&apos;accés i canvia la contrasenya.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>S&apos;ha tret una clau d&apos;accés del teu compte %login a %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Ja no pot iniciar la sessió al teu compte. Si no l&apos;has tret tu, revisa les teves claus d&apos;accés i els teus dispositius.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>S&apos;ha afegit una clau d&apos;accés al teu compte</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>S&apos;ha tret una clau d&apos;accés del teu compte</translation>
     </message>
 </context>
 <context>

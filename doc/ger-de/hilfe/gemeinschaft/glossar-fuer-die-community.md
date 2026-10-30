@@ -18,7 +18,7 @@ type: help
 | **Community** | Die Menschen, die Exponential weltweit nutzen, dazu beitragen, dafür werben und Software damit entwickeln | [Was die Community ist](was-die-community-ist.md) |
 | **Beitragstag** | Einige Stunden, in denen eine Gruppe gemeinsam echte Beiträge leistet | [Ein Beitragstag](lokale-gruppen/ein-beitragstag.md) |
 | **dev-main** | Der Composer-Name des Branches `main`, der Entwicklungslinie, in der Korrekturen zuerst landen | [Wie Releases entstehen](so-funktioniert-es/wie-releases-entstehen.md) |
-| **Ökosystem** | Die größere Exponential-Welt im PHP-Stack: ihre Nutzer und Ersteller | [Ökosystem: hier beginnen](../../../eng-us/help/ecosystem/ecosystem-start-here.md) |
+| **Ökosystem** | Die größere Exponential-Welt im PHP-Stack: ihre Nutzer und Ersteller | [Ökosystem: hier beginnen](../oekosystem/oekosystem-hier-beginnen.md) |
 | **Exponential Foundation** | Die gemeinnützige Organisation, gegründet am 19. März 2026, die das Projekt betreibt | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) |
 | **eZpedia** | Eine Community-Enzyklopädie unter der GNU FDL, seit 2006 | [Zu eZpedia beitragen](../fuersprecher/zu-ezpedia-beitragen.md) |
 | **Fork** | Ihre eigene Kopie eines Repositorys auf GitHub, aus der Sie Pull Requests senden | [Code beitragen](mitwirken/code-beitragen.md) |

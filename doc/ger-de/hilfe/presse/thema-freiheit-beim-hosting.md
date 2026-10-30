@@ -40,7 +40,7 @@ dieser Auswahl. Diese Seite gibt beides, mit Quellen.
 
 ## Das Thema in einem Absatz
 
-„Exponential 6.0.x läuft auf fast jedem Betriebssystem, das PHP 8.0 oder neuer und einen Webserver hat. Es besteht aus
+„Exponential 6.0.x läuft auf fast jedem Betriebssystem, das PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) und einen Webserver hat. Es besteht aus
 einfachen PHP-Dateien plus einer Datenbank; es hat keinen eigenen kompilierten Code“
 ([Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md)). Es läuft hinter „jedem Webserver, der eine URL umschreiben kann“,
 oder unter seinem eigenen Server Velocity

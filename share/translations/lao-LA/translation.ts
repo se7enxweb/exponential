@@ -77241,6 +77241,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>ບໍ່ສາມາດກວດສອບພາສຄີໄດ້. ກະລຸນາລອງອີກຄັ້ງ.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>ບັນຊີທີ່ເຂົ້າສູ່ລະບົບດ້ວຍພາສຄີເທົ່ານັ້ນບໍ່ສາມາດໃຊ້ລະຫັດຜ່ານຢູ່ນີ້ໄດ້: ກະລຸນາເລືອກ &quot;ເຂົ້າສູ່ລະບົບດ້ວຍພາສຄີ&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>ພາສຄີຂອງ %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>ພາສຄີທີ່ບັນຊີນີ້ໃຊ້ເຂົ້າສູ່ລະບົບ. ກະລຸນາເພີກຖອນພາສຄີທີ່ຢູ່ໃນອຸປະກອນທີ່ເສຍ ຫຼືຖືກລັກ: ມັນຈະບໍ່ສາມາດເຂົ້າສູ່ລະບົບໄດ້ອີກ. ເຈົ້າຂອງບັນຊີເພີ່ມພາສຄີໃໝ່ເອງ.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>ບັນຊີຂອງທ່ານຕ້ອງການພາສຄີ</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>ເພີ່ມພາສຄີໃສ່ບັນຊີຂອງທ່ານ</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>ກະລຸນາເພີ່ມພາສຄີເພື່ອດຳເນີນການຕໍ່. ຈາກນັ້ນທ່ານຈະເຂົ້າສູ່ລະບົບດ້ວຍມັນ ແທນທີ່ຈະໃຊ້ພຽງແຕ່ລະຫັດຜ່ານ.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>ການເຂົ້າສູ່ລະບົບດ້ວຍພາສຄີໄວກວ່າ ແລະປອດໄພກວ່າລະຫັດຜ່ານ. ເພີ່ມດຽວນີ້ ຫຼືດຳເນີນການຕໍ່ໂດຍບໍ່ມີມັນ.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>ບໍ່ແມ່ນຕອນນີ້</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>ທ່ານຕ້ອງການເພີກຖອນພາສຄີ &quot;%name&quot; ບໍ່?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>ມັນຈະບໍ່ສາມາດເຂົ້າສູ່ລະບົບບັນຊີນີ້ໄດ້ອີກ. ຖ້າມັນແມ່ນອັນສຸດທ້າຍ, ເຈົ້າຂອງຈະເຂົ້າສູ່ລະບົບດ້ວຍລະຫັດຜ່ານ ຫຼືທ່ານຕັ້ງລະຫັດຜ່ານໃໝ່.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>ເພີກຖອນພາສຄີ</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>ເພີກຖອນ</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>ບັນຊີນີ້ບໍ່ມີພາສຄີ.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>ຕົວຢືນຢັນຕົວຕົນ</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>ບໍ່ຮູ້ຈັກ</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>ພາສຄີສຸດທ້າຍຂອງທ່ານ: ກະລຸນາເພີ່ມອັນອື່ນກ່ອນທີ່ຈະເອົາມັນອອກ.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>ບັນຊີນີ້ເຂົ້າສູ່ລະບົບດ້ວຍພາສຄີເທົ່ານັ້ນ (ນະໂຍບາຍພາສຄີ): ເມື່ອບໍ່ມີພາສຄີເຫຼືອ, ມັນຈະເຂົ້າສູ່ລະບົບດ້ວຍລະຫັດຜ່ານອີກຄັ້ງ.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>ນີ້ແມ່ນພາສຄີສຸດທ້າຍຂອງທ່ານ ແລະບັນຊີຂອງທ່ານບໍ່ສາມາດເຂົ້າສູ່ລະບົບໄດ້ໂດຍບໍ່ມີມັນ. ກະລຸນາເພີ່ມພາສຄີອື່ນກ່ອນ.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>ພາສຄີ &quot;%name&quot; ຖືກເພີກຖອນແລ້ວ. ມັນບໍ່ສາມາດເຂົ້າສູ່ລະບົບບັນຊີນີ້ໄດ້ອີກ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>ລະຫັດຈາກແອັບຢືນຢັນຕົວຕົນຂອງທ່ານ</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>ທ່ານກຳລັງຈະລຶບຂໍ້ມູນຖາວອນ ຫຼືລ້າງບັນທຶກ.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>ລະຫັດຜ່ານຂອງທ່ານ ແລະພາສຄີ</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>ລະຫັດຜ່ານຂອງທ່ານ ແລະລະຫັດຈາກແອັບຢືນຢັນຕົວຕົນຂອງທ່ານ</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>ຫຼື:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>ບຣາວເຊີນີ້ບໍ່ສາມາດໃຊ້ພາສຄີໄດ້. ກະລຸນາໃຊ້ວິທີອື່ນ ຫຼືບຣາວເຊີອື່ນ.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>ເມື່ອທ່ານດຳເນີນການຕໍ່, ບຣາວເຊີຂອງທ່ານຈະຂໍພາສຄີໜຶ່ງຂອງທ່ານ.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>ດຳເນີນການຕໍ່ດ້ວຍພາສຄີ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>ຕັ້ງຄ່າລະບົບ</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>ການປ່ຽນລະຫັດຜ່ານ, ທີ່ຢູ່ອີເມວ, ພາສຄີ, ການຢືນຢັນຕົວຕົນສອງຂັ້ນຕອນ, ລະຫັດກູ້ຄືນ ຫຼືກະແຈ API ຂອງຕົນເອງ ແລະການອອກຈາກລະບົບໃນອຸປະກອນອື່ນຂອງຕົນເອງ.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ການສ້າງ ແລະແກ້ໄຂຜູ້ໃຊ້, ລະຫັດຜ່ານ ແລະອຸປະກອນຂອງເຂົາເຈົ້າ, ການຕັ້ງຄ່າບັນຊີ, ການອະນຸມັດ ຫຼືປະຕິເສດບັນຊີຜູ້ໃຊ້ໃໝ່, ການມອບໝາຍບົດບາດ ແລະການແກ້ໄຂນະໂຍບາຍ.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>ການລຶບຂໍ້ມູນ</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>ການລ້າງຖັງຂີ້ເຫຍື້ອ, ການເອົາລາຍການອອກຈາກຖັງ ແລະການເອົາຫຼາຍລາຍການອອກພ້ອມກັນ.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>ການເອົາອອກ, ເຜີຍແຜ່ ແລະບັນທຶກເນື້ອຫາ</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>ການເອົາເນື້ອຫາອອກ (ລວມທັງໄປຖັງຂີ້ເຫຍື້ອ), ການເຜີຍແຜ່ ແລະການບັນທຶກສະບັບຮ່າງ, ຖາມເມື່ອສົ່ງແບບຟອມ. ປິດໄວ້ຕາມຄ່າເລີ່ມຕົ້ນ.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>ກ່ອນການກະທຳທີ່ລະອຽດອ່ອນ ຜູ້ໃຊ້ທີ່ເຂົ້າສູ່ລະບົບແລ້ວຈະຢືນຢັນອີກຄັ້ງວ່າແມ່ນໃຜ: ດ້ວຍລະຫັດຜ່ານ ແລະພາສຄີ ຫຼືຖ້າບໍ່ມີພາສຄີ ດ້ວຍລະຫັດຜ່ານ ແລະລະຫັດຈາກແອັບຢືນຢັນຕົວຕົນ. ມີແຕ່ໜ້າເວັບເທົ່ານັ້ນທີ່ຖາມ: ສ່ວນຕິດຕໍ່ REST, SOAP, WebDAV, ການເຂົ້າສູ່ລະບົບ expservices ແລະແຖວຄຳສັ່ງບໍ່ເຄີຍຖາມ.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>ບ່ອນທີ່ການຕັ້ງຄ່າມີຜົນ</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>ການຕັ້ງຄ່າສຳລັບ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ທຸກການເຂົ້າເຖິງໄຊ</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>ການເຂົ້າເຖິງໄຊ %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ເປີດ</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>ຜູ້ທີ່ຖືກຖາມ: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>ໝາຍກຸ່ມຜູ້ໃຊ້ເພື່ອຖາມສະເພາະສະມາຊິກຂອງກຸ່ມນັ້ນ (ເຊັ່ນ: ຜູ້ແກ້ໄຂ). ບໍ່ໄດ້ໝາຍ: ຜູ້ໃຊ້ທຸກຄົນ.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>ບັນທຶກໃນ settings/override/site.ini.append.php ສຳລັບທຸກການເຂົ້າເຖິງໄຊ. ການບັນທຶກຈະຂໍໃຫ້ທ່ານຢືນຢັນວ່າແມ່ນທ່ານ.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>ບັນທຶກໃນ settings/siteaccess/%name/site.ini.append.php. ຄ່າໃນ settings/override ມີຄວາມສຳຄັນກວ່າ. ການບັນທຶກຈະຂໍໃຫ້ທ່ານຢືນຢັນວ່າແມ່ນທ່ານ.</translation>
     </message>
 </context>
 <context>
@@ -77786,6 +77954,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>ບັນຊີຂອງທ່ານຖືກລັອກ</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>ມີການເພີ່ມພາສຄີໃສ່ບັນຊີ %login ຂອງທ່ານໃນ %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>ຜູ້ໃດທີ່ມີພາສຄີນີ້ສາມາດເຂົ້າສູ່ລະບົບບັນຊີຂອງທ່ານໄດ້ໂດຍບໍ່ຕ້ອງໃຊ້ລະຫັດຜ່ານ. ຖ້າທ່ານບໍ່ໄດ້ເພີ່ມມັນ, ກະລຸນາເອົາມັນອອກໃນ ພາສຄີ ແລະປ່ຽນລະຫັດຜ່ານຂອງທ່ານ.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>ມີການເອົາພາສຄີອອກຈາກບັນຊີ %login ຂອງທ່ານໃນ %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>ມັນບໍ່ສາມາດເຂົ້າສູ່ລະບົບບັນຊີຂອງທ່ານໄດ້ອີກ. ຖ້າທ່ານບໍ່ໄດ້ເອົາມັນອອກ, ກະລຸນາກວດເບິ່ງພາສຄີ ແລະອຸປະກອນຂອງທ່ານ.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>ມີການເພີ່ມພາສຄີໃສ່ບັນຊີຂອງທ່ານ</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>ມີການເອົາພາສຄີອອກຈາກບັນຊີຂອງທ່ານ</translation>
     </message>
 </context>
 <context>

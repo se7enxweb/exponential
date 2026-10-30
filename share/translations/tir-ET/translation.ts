@@ -77241,6 +77241,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>እቲ መሕለፊ ቁልፊ ክረጋገጽ ኣይከኣለን። በጃኹም ዳግም ፈትኑ።</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>ብመሕለፊ ቁልፍታት ጥራይ ዝኣትዋ ሕሳባት ኣብዚ መሕለፊ ቃል ክጥቀማ ኣይክእላን፦ &quot;ብመሕለፊ ቁልፊ እቶ&quot; ምረጹ።</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>መሕለፊ ቁልፍታት ናይ %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>እዚ ሕሳብ ዝኣትወሎም መሕለፊ ቁልፍታት። ኣብ ዝጠፍአ ወይ ዝተሰርቀ መሳርሒ ዘሎ ኣብጥሉ፦ ድሕሪ ሕጂ ክኣቱ ኣይክእልን። ሓደስቲ ዋና ባዕሉ ይውስኽ።</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>ሕሳብኩም መሕለፊ ቁልፊ የድልዮ</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>ኣብ ሕሳብኩም መሕለፊ ቁልፊ ወስኹ</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>ንምቕጻል መሕለፊ ቁልፊ ወስኹ። ድሕሪኡ ብመሕለፊ ቃል ጥራይ ዘይኮነስ ብእኡ ትኣትዉ።</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>ብመሕለፊ ቁልፊ ምእታው ካብ መሕለፊ ቃል ዝቐልጠፈን ዝያዳ ውሑስን እዩ። ሕጂ ሓደ ወስኹ፡ ወይ ብዘይኡ ቀጽሉ።</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>ሕጂ ኣይኮነን</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>መሕለፊ ቁልፊ &quot;%name&quot; ይባጠል ዶ?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>ድሕሪ ሕጂ ናብዚ ሕሳብ ክኣቱ ኣይክእልን። እቲ ናይ መወዳእታ እንተነይሩ፡ ዋና ብመሕለፊ ቃል ይኣቱ፡ ወይ ንስኹም ሓድሽ ተቐምጡ።</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>መሕለፊ ቁልፊ ኣብጥል</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>ኣብጥል</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>እዚ ሕሳብ መሕለፊ ቁልፊ የብሉን።</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>መረጋገጺ</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>ዘይፍለጥ</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>ናይ መወዳእታ መሕለፊ ቁልፍኹም፦ ከይኣወጽኩምዎ ካልእ ወስኹ።</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>እዚ ሕሳብ ብመሕለፊ ቁልፍታት ጥራይ ይኣቱ (ፖሊሲ መሕለፊ ቁልፊ)፦ ሓደ እኳ እንተዘይተረፈ፡ ደጊሙ ብመሕለፊ ቃሉ ይኣቱ።</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>እዚ ናይ መወዳእታ መሕለፊ ቁልፍኹም እዩ፡ ሕሳብኩም ድማ ብዘይ ሓደ ክኣቱ ኣይክእልን። መጀመርታ ካልእ መሕለፊ ቁልፊ ወስኹ።</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>መሕለፊ ቁልፊ &quot;%name&quot; ተባጢሉ ኣሎ። ድሕሪ ሕጂ ናብዚ ሕሳብ ክኣቱ ኣይክእልን።</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>ኮድ ካብ ኣፕ ምርግጋጽ ዘለዉኩም</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>ዳታ ንሓዋሩ ክትድምስሱ ወይ መዝገብ ከተጽርዩ ቀሪብኩም ኣለኹም።</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>መሕለፊ ቃልኩምን መሕለፊ ቁልፍን</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>መሕለፊ ቃልኩምን ካብ መተግበሪ መረጋገጺኹም ዝመጸ ኮድን</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>ወይ:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>እዚ መርበብ ሓበሬታ መሕለፊ ቁልፍታት ክጥቀም ኣይክእልን። ካልእ መገዲ ወይ ካልእ መርበብ ሓበሬታ ተጠቐሙ።</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>ምስ ቀጸልኩም፡ መርበብ ሓበሬታኹም ሓደ ካብ መሕለፊ ቁልፍታትኩም ክሓትት እዩ።</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>ብመሕለፊ ቁልፊ ቀጽል</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>ምድላው</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>ናይ ባዕሉ መሕለፊ ቃል፡ ኣድራሻ ኢመይል፡ መሕለፊ ቁልፍታት፡ ክልተ ደረጃ ምእታው፡ ኮድታት ምምላስ ወይ ቁልፍታት API ምቕያርን ካብ ካልኦት መሳርሒታቱ ምውጻእን።</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ተጠቀምቲ፡ መሕለፊ ቃላቶምን መሳርሒታቶምን፡ ቅጥዕታት ሕሳብ ምፍጣርን ምእራምን፡ ሓደስቲ ሕሳባት ተጠቀምቲ ምጽዳቕ ወይ ምንጻግ፡ ተራታት ምምዳብን ፖሊሲታት ምእራምን።</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>ዳታ ምድምሳስ</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>መጓሓፊ ምጽራይ፡ ኣቕሑ ካብኡ ምውጻእን ብዙሓት ኣቕሑ ሓንሳብ ምውጻእን።</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>ትሕዝቶ ምውጻእ፡ ምሕታምን ምዕቃብን</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>ትሕዝቶ ምውጻእ (ናብ መጓሓፊ ውን)፡ ምሕታምን ንድፊ ምዕቃብን፡ ቅጥዒ ክለኣኽ ከሎ ይሕተት። ብንቡር ዕጹው።</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>ቅድሚ ስሱዕ ተግባር፡ ዝኣተወ ተጠቃሚ መን ምዃኑ ደጊሙ የረጋግጽ፦ ብመሕለፊ ቃሉን መሕለፊ ቁልፍን፡ ወይ ብዘይ መሕለፊ ቁልፊ ብመሕለፊ ቃሉን ካብ መተግበሪ መረጋገጺኡ ዝመጸ ኮድን። ገጻት መርበብ ጥራይ እዮም ዝሓቱ፦ ገጽ ርክብ REST፡ SOAP፡ WebDAV፡ ምእታው expservices ከምኡውን መስመር ትእዛዝ ፈጺሞም ኣይሓቱን።</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>ቅጥዕታት ኣበይ ይዓዩ</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>ቅጥዕታት ን</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ነፍሲ ወከፍ ምእታው መርበብ</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>ምእታው መርበብ %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ክፈት</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>መን ይሕተት፦ %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>ኣባላቶም ጥራይ ንምሕታት ጉጅለታት ተጠቀምቲ ምልክት ግበሩ (ንኣብነት ኣዳለውቲ)። ሓደ እኳ ዘይተመልከተ፦ ነፍሲ ወከፍ ተጠቃሚ።</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>ኣብ settings/override/site.ini.append.php ተዓቂቡ፡ ንነፍሲ ወከፍ ምእታው መርበብ። ምዕቃብ ንስኹም ምዃንኩም ከተረጋግጹ ይሓትት።</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>ኣብ settings/siteaccess/%name/site.ini.append.php ተዓቂቡ። ኣብ settings/override ዘሎ ዋጋ ቀዳምነት ኣለዎ። ምዕቃብ ንስኹም ምዃንኩም ከተረጋግጹ ይሓትት።</translation>
     </message>
 </context>
 <context>
@@ -77786,6 +77954,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>ሕሳብኩም ተዓጽዩ</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>ኣብ ሕሳብኩም %login ኣብ %site መሕለፊ ቁልፊ ተወሲኹ።</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>ነዚ መሕለፊ ቁልፊ ዝሓዘ ዝኾነ ሰብ ብዘይ መሕለፊ ቃልኩም ናብ ሕሳብኩም ክኣቱ ይኽእል። ንስኹም እንተዘይወሰኽኩምዎ፡ ኣብ ትሕቲ ፓስኪታት ኣውጽእዎ፡ መሕለፊ ቃልኩም ድማ ቀይሩ።</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>ካብ ሕሳብኩም %login ኣብ %site መሕለፊ ቁልፊ ተኣልዩ።</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>ድሕሪ ሕጂ ናብ ሕሳብኩም ክኣቱ ኣይክእልን። ንስኹም እንተዘየውጻእኩምዎ፡ መሕለፊ ቁልፍታትኩምን መሳርሒታትኩምን ፈትሹ።</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>ኣብ ሕሳብኩም መሕለፊ ቁልፊ ተወሲኹ</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>ካብ ሕሳብኩም መሕለፊ ቁልፊ ተኣልዩ</translation>
     </message>
 </context>
 <context>

@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/design.ini` nie selbst: Ein Update ersetzt die Datei. S
 
 ## HeaderItems
 
-> admin4: the header items of the extensions, drawn among the header's tools after Help and before the user menu  
-> (page\_topmenu.tpl). Each is a template, e.g. HeaderItems\[\]=sqliimport/header\_bell.tpl in an extension's  
-> design.ini.append.php; parts/a4\_header\_item.tpl describes its markup: a round 36px button with a count, a panel  
-> and, for live data, a JSON feed (data-a4-header-feed) that admin4.js loads, since the header is cached per user.  
+> admin4: die Header-Elemente der Erweiterungen, gezeichnet unter den Werkzeugen des Headers nach Hilfe und vor dem Benutzermenü  
+> (page\_topmenu.tpl). Jedes ist ein Template, z. B. HeaderItems\[\]=sqliimport/header\_bell.tpl in der design.ini.append.php  
+> einer Erweiterung; parts/a4\_header\_item.tpl beschreibt sein Markup: ein runder 36-px-Button mit einer Zahl, ein Panel  
+> und, für Live-Daten, ein JSON-Feed (data-a4-header-feed), den admin4.js lädt, da der Header pro Benutzer gecacht wird.  
 > doc/eng-us/features/6.0/admin4-design.md, "Header items".  
 
 Standard: eine leere Liste.

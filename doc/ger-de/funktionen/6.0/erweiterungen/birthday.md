@@ -20,6 +20,7 @@ Außerdem registriert er in `csv.ini` einen Export-Handler, `eZBirthdayCsvHandle
 | 1.3.0 | 28. Januar 2024 | Paketanbieter. |
 | 1.3.1 | 14. September 2026 | Der **CSV-Export-Handler beendet keine Anfrage mehr, die ihn lädt** (siehe unten). |
 | 1.3.2 | 2. Oktober 2026 | `ezinfo.php`, das der Extension fehlte, wurde hinzugefügt und `extension.xml` korrigiert, sodass die Info-Seite sie aufführt. |
+| 1.3.6 | 21. Oktober 2026 | Sauber unter PHP 8.0 bis 8.5; der Standardwert der Klasse wird richtig angezeigt; das Formular für gesammelte Informationen wählt das Datum vor; strengere Prüfung; ein beschriftetes Bearbeitungstemplate für admin4; `doc/birthday.md` in der Extension und Tests ohne Datenbank. Siehe [Ein Geburtsdatum speichern](../../../hilfe/ersteller/website-ersteller/ein-geburtsdatum-speichern.md). |
 
 Zu 1.3.1: `eZBirthdayCsvHandler` erweiterte den Basis-Handler von `bccie`, der
 `exportAttribute( &$attribute, $separationChar )` deklariert, während das Exportwerkzeug `exportAttribute( $attribute )`

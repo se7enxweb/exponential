@@ -59,12 +59,12 @@ if ( !class_exists( 'eZINI', true ) )
     {
         public static function instance(): self { return new self(); }
 
-        public function variable( string $section, string $key ): mixed
+        public function variable( string $section, string $key )
         {
             return 3600;
         }
 
-        public function setVariable( string $section, string $key, mixed $value ): void {}
+        public function setVariable( string $section, string $key, $value ): void {}
     }
 }
 

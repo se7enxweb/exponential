@@ -77239,6 +77239,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>পাসকি যাচাই করা যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>যেসব অ্যাকাউন্ট কেবল পাসকি দিয়ে সাইন ইন করে সেগুলো এখানে পাসওয়ার্ড ব্যবহার করতে পারে না: “পাসকি দিয়ে সাইন ইন করুন” বেছে নিন।</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login এর পাসকি</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>এই অ্যাকাউন্ট যেসব পাসকি দিয়ে সাইন ইন করে। হারানো বা চুরি যাওয়া ডিভাইসে থাকা পাসকি প্রত্যাহার করুন: এটি আর সাইন ইন করতে পারবে না। মালিক নতুনগুলো নিজেই যোগ করেন।</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>আপনার অ্যাকাউন্টের একটি পাসকি প্রয়োজন</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>আপনার অ্যাকাউন্টে একটি পাসকি যোগ করুন</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>এগিয়ে যেতে একটি পাসকি যোগ করুন। এরপর আপনি কেবল পাসওয়ার্ডের বদলে এটি দিয়ে সাইন ইন করবেন।</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>পাসকি দিয়ে সাইন ইন করা পাসওয়ার্ডের চেয়ে দ্রুত ও নিরাপদ। এখনই একটি যোগ করুন, অথবা এটি ছাড়াই এগিয়ে যান।</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>এখন নয়</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>পাসকি “%name” প্রত্যাহার করবেন?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>এটি আর এই অ্যাকাউন্টে সাইন ইন করতে পারবে না। এটি শেষটি হলে মালিক পাসওয়ার্ড দিয়ে সাইন ইন করবেন, অথবা আপনি একটি নতুন পাসওয়ার্ড সেট করবেন।</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>পাসকি প্রত্যাহার করুন</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>প্রত্যাহার করুন</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>এই অ্যাকাউন্টের কোনো পাসকি নেই।</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>অথেনটিকেটর</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>অজানা</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>আপনার শেষ পাসকি: এটি অপসারণের আগে আরেকটি যোগ করুন।</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>এই অ্যাকাউন্ট কেবল পাসকি দিয়ে সাইন ইন করে (পাসকি নীতি): কোনোটি না থাকলে এটি আবার নিজের পাসওয়ার্ড দিয়ে সাইন ইন করে।</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>এটি আপনার শেষ পাসকি, এবং আপনার অ্যাকাউন্ট পাসকি ছাড়া সাইন ইন করতে পারে না। আগে আরেকটি পাসকি যোগ করুন।</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>পাসকি “%name” প্রত্যাহার করা হয়েছে। এটি আর এই অ্যাকাউন্টে সাইন ইন করতে পারবে না।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77338,6 +77414,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>আপনার অথেনটিকেটর অ্যাপের কোড</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>আপনি ডেটা স্থায়ীভাবে মুছে ফেলতে বা একটি লগ খালি করতে যাচ্ছেন।</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>আপনার পাসওয়ার্ড এবং একটি পাসকি</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>আপনার পাসওয়ার্ড এবং আপনার অথেনটিকেটর অ্যাপের একটি কোড</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>অথবা:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>এই ব্রাউজার পাসকি ব্যবহার করতে পারে না। অন্য কোনো উপায় বা অন্য ব্রাউজার ব্যবহার করুন।</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>আপনি চালিয়ে গেলে আপনার ব্রাউজার আপনার একটি পাসকি চাইবে।</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>পাসকি দিয়ে চালিয়ে যান</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77428,6 +77532,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>সেটআপ</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>নিজের পাসওয়ার্ড, ইমেইল ঠিকানা, পাসকি, দ্বি-ধাপ সাইন-ইন, পুনরুদ্ধার কোড বা API কী পরিবর্তন করা, এবং নিজের অন্যান্য ডিভাইস থেকে সাইন আউট করা।</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ব্যবহারকারী, তাদের পাসওয়ার্ড ও ডিভাইস তৈরি ও সম্পাদনা, অ্যাকাউন্ট সেটিংস, নতুন ব্যবহারকারী অ্যাকাউন্ট অনুমোদন বা প্রত্যাখ্যান, ভূমিকা নির্ধারণ এবং নীতি সম্পাদনা।</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>ডেটা মুছে ফেলা</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>ট্র্যাশ খালি করা, সেখান থেকে আইটেম অপসারণ করা এবং একসাথে একাধিক আইটেম অপসারণ করা।</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>বিষয়বস্তু অপসারণ, প্রকাশ ও সংরক্ষণ করা</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>বিষয়বস্তু অপসারণ (ট্র্যাশে সরানোও), প্রকাশ করা এবং খসড়া সংরক্ষণ করা; ফর্ম পাঠানোর সময় জিজ্ঞাসা করা হয়। ডিফল্টভাবে বন্ধ।</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>কোনো সংবেদনশীল কার্যক্রমের আগে একজন সাইন ইন করা ব্যবহারকারী আবার নিশ্চিত করেন যে তিনি কে: তার পাসওয়ার্ড ও একটি পাসকি দিয়ে, অথবা পাসকি না থাকলে তার পাসওয়ার্ড ও তার অথেনটিকেটর অ্যাপের কোড দিয়ে। কেবল ওয়েব পৃষ্ঠাগুলো জিজ্ঞাসা করে: REST ইন্টারফেস, SOAP, WebDAV, expservices লগইন এবং কমান্ড লাইন কখনো জিজ্ঞাসা করে না।</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>সেটিংস কোথায় প্রযোজ্য</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>যার জন্য সেটিংস</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>প্রতিটি সাইটঅ্যাক্সেস</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>সাইটঅ্যাক্সেস %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>খুলুন</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>কাকে জিজ্ঞাসা করা হয়: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>কেবল সদস্যদের জিজ্ঞাসা করতে ব্যবহারকারী গোষ্ঠী চিহ্নিত করুন (যেমন সম্পাদকরা)। কোনোটি চিহ্নিত না থাকলে: প্রত্যেক ব্যবহারকারী।</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php-এ সংরক্ষিত হয়, প্রতিটি সাইটঅ্যাক্সেসের জন্য। সংরক্ষণের সময় আপনাকে নিশ্চিত করতে বলা হয় যে এটি আপনি।</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php-এ সংরক্ষিত হয়। settings/override-এর কোনো মান এর ওপর অগ্রাধিকার পায়। সংরক্ষণের সময় আপনাকে নিশ্চিত করতে বলা হয় যে এটি আপনি।</translation>
     </message>
 </context>
 <context>
@@ -77784,6 +77952,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>আপনার অ্যাকাউন্ট লক করা হয়েছে</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site সাইটে আপনার অ্যাকাউন্ট %login এ একটি পাসকি যোগ করা হয়েছে।</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>এই পাসকি যার কাছে আছে সে আপনার পাসওয়ার্ড ছাড়াই আপনার অ্যাকাউন্টে সাইন ইন করতে পারে। আপনি এটি যোগ না করে থাকলে পাসকি অংশে গিয়ে এটি অপসারণ করুন এবং আপনার পাসওয়ার্ড পরিবর্তন করুন।</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site সাইটে আপনার অ্যাকাউন্ট %login থেকে একটি পাসকি অপসারণ করা হয়েছে।</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>এটি আর আপনার অ্যাকাউন্টে সাইন ইন করতে পারবে না। আপনি এটি অপসারণ না করে থাকলে আপনার পাসকি ও ডিভাইসগুলো পরীক্ষা করুন।</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>আপনার অ্যাকাউন্টে একটি পাসকি যোগ করা হয়েছে</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>আপনার অ্যাকাউন্ট থেকে একটি পাসকি অপসারণ করা হয়েছে</translation>
     </message>
 </context>
 <context>

@@ -36,6 +36,9 @@ Was das für Sie bedeutet:
   Uhrzeit und die Seitenadresse zu notieren, wann immer sie oder ein Kunde auf einen Fehler stoßen ([Probleme melden](probleme-melden.md)).
 - **Geben Sie sie unverändert weiter.** Ein Administrator fügt sie unter **Setup > Logdateien** in das Feld
   **Fehlerreferenz** ein und sieht den Eintrag und jede Zeile derselben Anfrage.
+
+  ![Setup, Logdateien, Fehlerübersicht: die verschiedenen Fehler der letzten 24 Stunden, jeder mit seiner Anzahl und wann er zuletzt auftrat](../../bilder/help/bu-logs.webp)
+
 - **Melden Sie schnell.** Logs rotieren; eine alte Referenz ist möglicherweise schon herausrotiert (die Zahl der
   aufbewahrten Rotationen ist eine Einstellung, `site.ini [FileSettings] LogFileRotateCount`, derselbe Leitfaden).
 

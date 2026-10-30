@@ -26,7 +26,7 @@ technical facts from the installation book and the hosting help that bidders' an
 
 ## Hosting options Exponential allows
 
-- **Any host that meets the requirements**: PHP 8.0 or later, a supported database and a web server
+- **Any host that meets the requirements**: PHP 8.0 or later (PHP 7.4 usable without support), a supported database and a web server
   ([Requirements](../../../../install/02-requirements.md), [Requirements at a glance](../../../hosting/basics/requirements-at-a-glance.md)).
 - **Models**: shared hosting, VPS, dedicated servers, containers and Kubernetes are compared in
   [Choosing a hosting model](../../../hosting/models/choosing-a-hosting-model.md).
@@ -56,7 +56,7 @@ Fill the blanks from your own needs; this help does not suggest values.
 | Databases | In the official order of preference: SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL ([Database support](../../../database-support.md)) |
 | Web servers | Exponential Velocity, Apache or nginx with PHP-FPM, FrankenPHP ([Serving the site](../../../../install/08-serving-the-site.md), [Choosing a web server](../../../hosting/servers/choosing-a-web-server.md)) |
 | Operating systems | Tiers from "tested here" to "not possible today" ([Operating system support](../../../os-support.md)) |
-| PHP | 8.0 is the oldest supported; 8.5 the newest tested ([Requirements](../../../../install/02-requirements.md)) |
+| PHP | 8.0 is the oldest supported (7.4 usable without support); 8.5 the newest tested ([Requirements](../../../../install/02-requirements.md)) |
 | Several web nodes | Need a database server and shared storage ([Several web nodes](../../../hosting/operations/several-web-nodes.md)) |
 | HTTPS on Velocity | Certificate management including ACME ([Velocity HTTPS certificates](../../../../features/6.0/velocity-https-certificates.md)) |
 | Restricting the administration | [Restricting the administration](../../../hosting/security/restricting-the-administration.md) |

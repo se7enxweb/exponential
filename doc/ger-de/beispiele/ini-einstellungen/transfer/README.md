@@ -12,7 +12,7 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/transfer.ini`: 1 Blöcke, 4 Einstellungen.
 
-> The background runs and the run history of the import and export tools of the transfer registry  
+> Die Hintergrundläufe und der Laufverlauf der Import- und Export-Werkzeuge der Transfer-Registry  
 > (Export, CIE, Imports ...): doc/eng-us/features/6.0/transfer-runs.md.  
 
 | Block | Einstellungen |

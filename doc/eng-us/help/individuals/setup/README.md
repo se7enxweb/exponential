@@ -55,7 +55,7 @@ Sources: [Choosing an install method](../../creators/website-creators/choosing-a
 
 ## What you need before you start
 
-- [ ] PHP 8.0 or later with the required extensions, or a host that offers it
+- [ ] PHP 8.0 or later (PHP 7.4 usable without support) with the required extensions, or a host that offers it
   ([Requirements at a glance](../../hosting/basics/requirements-at-a-glance.md)).
 - [ ] For a console install: a shell and Composer. For the wizard: a browser and FTP.
 - [ ] A real mail address for the administrator.

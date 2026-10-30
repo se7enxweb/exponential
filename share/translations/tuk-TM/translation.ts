@@ -77241,6 +77241,82 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Giriş açaryny barlap bolmady. Täzeden synanyşyp görüň.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Diňe giriş açarlary bilen girýän hasaplar bu ýerde açar sözi ulanyp bilmeýär: «Giriş açary bilen gir» saýlaň.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login giriş açarlary</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Bu hasabyň girýän giriş açarlary. Ýitirilen ýa-da ogurlanan enjamdaky açary yzyna alyň: onuň bilen indi girip bolmaz. Täzelerini eýesi özi goşýar.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Hasabyňyza giriş açary gerek</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Hasabyňyza giriş açaryny goşuň</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Dowam etmek üçin giriş açaryny goşuň. Soňra diňe açar söz bilen däl, onuň bilen girersiňiz.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Giriş açary bilen girmek açar sözden has çalt we has howpsuz. Häzir birini goşuň ýa-da onsuz dowam ediň.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Häzir däl</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>«%name» giriş açaryny yzyna almalymy?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Onuň bilen indi bu hasaba girip bolmaz. Eger ol iň soňkusy bolsa, eýesi açar söz bilen girýär ýa-da siz täzesini bellärsiňiz.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Giriş açaryny yzyna al</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Yzyna al</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Bu hasabyň giriş açary ýok.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Autentifikator</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Näbelli</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Iň soňky giriş açaryňyz: ony aýyrmazdan öň başga birini goşuň.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Bu hasap diňe giriş açarlary bilen girýär (giriş açary syýasaty): hiç biri galmasa, ýene açar sözi bilen girýär.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Bu siziň iň soňky giriş açaryňyz we hasabyňyz onsuz girip bilmeýär. Ilki başga giriş açaryny goşuň.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>«%name» giriş açary yzyna alyndy. Onuň bilen indi bu hasaba girip bolmaz.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77340,6 +77416,34 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>Code from your authenticator app</source>
         <translation>Autentifikator programmaňyzdaky kod</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Siz maglumatlary düýbünden öçürmekçi ýa-da žurnaly arassalamakçy.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Açar sözüňiz we giriş açary</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Açar sözüňiz we autentifikator goşundyňyzdan kod</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Ýa-da:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Bu brauzer giriş açarlaryny ulanyp bilmeýär. Başga usuly ýa-da başga brauzeri saýlaň.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Dowam edeniňizde brauzeriňiz giriş açarlaryňyzyň birini sorar.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Giriş açary bilen dowam et</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77430,6 +77534,70 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>Setup</source>
         <translation>Sazlama</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Öz açar sözüni, e-poçta salgysyny, giriş açarlaryny, iki ädimli girişi, dikeltme kodlaryny ýa-da API açarlaryny üýtgetmek we beýleki enjamlaryndan çykmak.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Ulanyjylary, olaryň açar sözlerini we enjamlaryny, hasap sazlamalaryny döretmek we üýtgetmek, täze ulanyjy hasaplaryny tassyklamak ýa-da ret etmek, rollary bellemek we syýasatlary üýtgetmek.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Maglumatlary öçürmek</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Zibil sebedini boşatmak, ondan elementleri aýyrmak we birnäçe elementi birden aýyrmak.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Mazmuny aýyrmak, neşir etmek we saklamak</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Mazmuny aýyrmak (zibil sebedine hem), neşir etmek we garalamany saklamak, forma iberilende soralýar. Deslapky ýagdaýda öçük.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Möhüm hereketden öň giren ulanyjy kimdigini ýene tassyklaýar: açar sözi we giriş açary bilen ýa-da giriş açarsyz açar sözi we autentifikator goşundysyndaky kod bilen. Diňe web sahypalar soraýar: REST interfeýsi, SOAP, WebDAV, expservices girişi we buýruk setiri hiç haçan soramaýar.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Sazlamalar nirede güýje girýär</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Sazlamalar:</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Her saýta giriş nokady</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Saýta giriş nokady %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Aç</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Kimden soralýar: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Diňe agzalaryndan soramak üçin ulanyjy toparlaryny belläň (meselem, redaktorlar). Hiç biri bellenmedik: her ulanyjy.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php faýlyna, her saýta giriş nokady üçin saklanýar. Saklamak siziň özüňizdigini tassyklamagy soraýar.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php faýlyna saklanýar. settings/override içindäki baha ondan öňürti gelýär. Saklamak siziň özüňizdigini tassyklamagy soraýar.</translation>
     </message>
 </context>
 <context>
@@ -77786,6 +77954,30 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>Your account was locked</source>
         <translation>Hasabyňyz gulplandy</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site saýtyndaky %login hasabyňyza giriş açary goşuldy.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Bu giriş açary kimde bolsa, ol açar sözüňizsiz hasabyňyza girip biler. Eger ony siz goşmadyk bolsaňyz, Giriş açarlary bölüminde aýyryň we açar sözüňizi üýtgediň.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site saýtyndaky %login hasabyňyzdan giriş açary aýryldy.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Onuň bilen indi hasabyňyza girip bolmaz. Eger ony siz aýyrmadyk bolsaňyz, giriş açarlaryňyzy we enjamlaryňyzy barlaň.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Hasabyňyza giriş açary goşuldy</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Hasabyňyzdan giriş açary aýryldy</translation>
     </message>
 </context>
 <context>

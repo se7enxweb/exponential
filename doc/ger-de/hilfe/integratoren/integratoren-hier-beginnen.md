@@ -74,7 +74,7 @@ wie Sie ein Integrationsprojekt von der Analyse bis zur Übergabe durchführen.
 | Ein Integrationsprojekt durchführen: Schätzungen, Leistungsbeschreibungen, Übergabe | Das Partnerprogramm selbst: [Partner: hier beginnen](../partner/partner-hier-beginnen.md) |
 | Arbeitsblätter, Checklisten, FAQ und Glossar für Integratoren | Mit Git am Code arbeiten: [Mit Git entwickeln](../mit-git-entwickeln.md) |
 
-Zwei Schwesterbereiche sind für benachbarte Rollen geschrieben: [Wiederverkäufer: hier beginnen](../../../eng-us/help/resellers/resellers-start-here.md)
+Zwei Schwesterbereiche sind für benachbarte Rollen geschrieben: [Wiederverkäufer: hier beginnen](../wiederverkaeufer/wiederverkaeufer-hier-beginnen.md)
 für Unternehmen, die Exponential und Leistungen rund darum verkaufen, und [Bündler: hier beginnen](../buendler/buendler-hier-beginnen.md)
 für Unternehmen, die Exponential in einem Produkt oder einer Distribution ausliefern.
 
@@ -134,7 +134,7 @@ Der ganze Bereich in einer Reihenfolge steht im [Lesepfad für Integratoren](les
 - [Mit Git entwickeln: vom Benutzer zum Entwickler](../mit-git-entwickeln.md)
 - [Erweiterungsentwicklung: das Buch (hier beginnen)](../erweiterungsentwicklung/README.md)
 - [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Implementierungspartner](../partner/implementierungspartner.md)
-- [Wiederverkäufer: hier beginnen](../../../eng-us/help/resellers/resellers-start-here.md), [Bündler: hier beginnen](../buendler/buendler-hier-beginnen.md)
+- [Wiederverkäufer: hier beginnen](../wiederverkaeufer/wiederverkaeufer-hier-beginnen.md), [Bündler: hier beginnen](../buendler/buendler-hier-beginnen.md)
 - [App-Ersteller: hier beginnen](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
