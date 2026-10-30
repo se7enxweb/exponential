@@ -30,13 +30,9 @@ class eZSQLite3DB extends eZDBInterface
 
 
         // The connection's settings first: they include the busy timeout, and
-        // until it is set any statement that meets a lock fails at once. A
-        // connection kept from an earlier request has them already.
-        if ( !$this->KeptConnection )
-        {
-            $this->applyPragmas();
-            $this->useWAL();
-        }
+        // until it is set any statement that meets a lock fails at once.
+        $this->applyPragmas();
+        $this->useWAL();
 
         // Initialize TempTableList
         $this->TempTableList = array();
@@ -186,20 +182,6 @@ class eZSQLite3DB extends eZDBInterface
         $error = 0;
         $openError = false;
 
-        $keepKey = static::keptConnectionKey( self::filePath( $fileName ) );
-        if ( $keepKey !== null )
-        {
-            $kept = self::takeKeptConnection( $keepKey );
-            if ( $kept !== null )
-            {
-                $this->KeptConnection = true;
-                $this->KeepKey = $keepKey;
-                $this->StatementWaitMs = $kept[1];
-                $this->IsConnected = true;
-                return $kept[0];
-            }
-        }
-
         $maxAttempts = $this->connectRetryCount() + 1;
         $waitTime = $this->connectRetryWaitTime();
         $numAttempts = 1;
@@ -245,9 +227,7 @@ class eZSQLite3DB extends eZDBInterface
         }
         else
         {
-            // Static callables: a connection kept for the next request (keptConnectionKey()) holds no reference to
-            // the object of this request.
-            $connection->createFunction( 'md5', static function ( $str ) { return md5( (string)$str ); } );
+            $connection->createFunction( 'md5', array( $this, 'md5UDF' ) );
 
             // MySQL's bitwise aggregates. The content engine folds language
             // masks with BIT_OR, and SQLite ships no equivalent, so the
@@ -277,79 +257,9 @@ class eZSQLite3DB extends eZDBInterface
                 }, 2 );
 
             $this->IsConnected = true;
-            $this->KeepKey = $keepKey;
         }
 
         return $connection;
-    }
-
-    /**
-     * Opening the database costs some 5 ms before the first statement: SQLite reads the whole schema of the
-     * database (hundreds of tables and indexes) for every new connection. A persistent worker (Exponential
-     * Velocity), which made a new connection for every request, keeps it for its next request instead: close() at
-     * the end of a request gives it back unless a transaction is still open, and the next connect() takes it, with
-     * its settings (the PRAGMAs belong to the connection) and its schema already read. SQLite notices a schema
-     * changed by another process by itself.
-     *
-     * Only in a pool worker, never in the process that forks them: a connection must not be shared across a fork.
-     * The kept connection is recorded with the process id, and the Velocity warm-up closes it with
-     * closeKeptConnections() before the workers are forked. Everywhere else (PHP-FPM, the command line) a
-     * connection is opened and closed as before.
-     *
-     * @param string $fullPath
-     * @return string|null the key the connection is kept under, null when it is not kept
-     */
-    protected static function keptConnectionKey( $fullPath )
-    {
-        if ( $fullPath === ':memory:' || !class_exists( 'Q_WebServer_Snapshot', false ) || !class_exists( 'expKernelServiceScope' ) )
-            return null;
-        return getmypid() . '|' . $fullPath;
-    }
-
-    /**
-     * The kept connection (array( SQLite3, busy timeout ms )) for $key, taken out of the store, or null.
-     *
-     * @param string $key
-     * @return array|null
-     */
-    protected static function takeKeptConnection( $key )
-    {
-        $worker = expKernelServiceScope::worker();
-        if ( !isset( $worker->connections['sqlite3'][$key] ) )
-            return null;
-        $kept = $worker->connections['sqlite3'][$key];
-        unset( $worker->connections['sqlite3'][$key] );
-        // a connection that no longer answers is closed and replaced
-        if ( !$kept[0] instanceof SQLite3 || @$kept[0]->querySingle( 'SELECT 1' ) !== 1 )
-        {
-            if ( $kept[0] instanceof SQLite3 )
-                @$kept[0]->close();
-            return null;
-        }
-        // temporary tables belong to the connection: a request that ended before dropping one leaves nothing behind
-        $temp = @$kept[0]->query( "SELECT name FROM sqlite_temp_master WHERE type = 'table'" );
-        $names = array();
-        while ( $temp instanceof SQLite3Result && ( $row = $temp->fetchArray( SQLITE3_NUM ) ) )
-            $names[] = $row[0];
-        foreach ( $names as $name )
-            @$kept[0]->exec( 'DROP TABLE temp."' . str_replace( '"', '""', $name ) . '"' );
-        return $kept;
-    }
-
-    /**
-     * Closes every connection kept for a later request. The Velocity warm-up calls it before the workers are forked.
-     */
-    public static function closeKeptConnections()
-    {
-        if ( !class_exists( 'expKernelServiceScope', false ) || !expKernelServiceScope::hasWorker() )
-            return;
-        $worker = expKernelServiceScope::worker();
-        foreach ( isset( $worker->connections['sqlite3'] ) ? $worker->connections['sqlite3'] : array() as $kept )
-        {
-            if ( $kept[0] instanceof SQLite3 )
-                @$kept[0]->close();
-        }
-        $worker->connections['sqlite3'] = array();
     }
 
     /*!
@@ -1123,21 +1033,7 @@ class eZSQLite3DB extends eZDBInterface
     {
         if ( $this->IsConnected )
         {
-            // Kept for the next request of this worker (keptConnectionKey()), unless a transaction is still open
-            // or the process is another one than the one that opened it.
-            if ( $this->KeepKey !== null && !$this->InSQLTransaction && $this->TransactionCounter == 0
-                 && strpos( $this->KeepKey, getmypid() . '|' ) === 0 && $this->DBConnection instanceof SQLite3 )
-            {
-                $worker = expKernelServiceScope::worker();
-                if ( isset( $worker->connections['sqlite3'][$this->KeepKey] ) && $worker->connections['sqlite3'][$this->KeepKey][0] !== $this->DBConnection )
-                    @$worker->connections['sqlite3'][$this->KeepKey][0]->close();
-                $worker->connections['sqlite3'][$this->KeepKey] = array( $this->DBConnection, $this->StatementWaitMs );
-            }
-            else
-            {
-                $this->DBConnection->close();   // SQLite rolls back a transaction left open
-            }
-            $this->DBConnection = false;
+            $this->DBConnection->close();   // SQLite rolls back a transaction left open
             $this->IsConnected = false;
             $this->InSQLTransaction = false;
         }
@@ -1377,12 +1273,6 @@ class eZSQLite3DB extends eZDBInterface
 
     /// The statements' lock wait in ms (busy_timeout), restored after a transaction's longer one
     protected $StatementWaitMs = 5000;
-
-    /** @var bool the connection was kept from an earlier request of this worker (keptConnectionKey()) */
-    protected $KeptConnection = false;
-
-    /** @var string|null the key the connection is kept under after close(), null when it is closed */
-    protected $KeepKey = null;
     /// Whether SQLite has a transaction open on this connection (BEGIN IMMEDIATE succeeded, not ended yet)
     protected $InSQLTransaction = false;
 

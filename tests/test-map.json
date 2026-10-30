@@ -2337,9 +2337,6 @@
     "kernel/classes/expkernelservices.php": [
       "tests/tests/kernel/classes/expKernelServiceScopeMemoTest.php"
     ],
-    "lib/ezdb/classes/ezsqlite3db.php": [
-      "tests/tests/lib/ezdb/eZSQLite3KeptConnectionTest.php"
-    ],
     "kernel/classes/expvelocity.php": [
       "tests/tests/kernel/classes/expVelocityEngineRunArchiveTest.php"
     ],
@@ -2989,9 +2986,6 @@
     ],
     "lib/ezdb/classes/ezdbquerycache.php": [
       "tests/tests/lib/ezdb/eZDBQueryCacheTest.php"
-    ],
-    "lib/ezdb/classes/ezsqlite3db.php": [
-      "tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php"
     ],
     "lib/ezdbschema/classes/ezdbschemachecker.php": [
       "tests/tests/lib/ezdbschema/expSQLiteSchemaReaderTest.php"

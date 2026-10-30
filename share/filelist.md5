@@ -24053,7 +24053,7 @@ c4e484a11695b5a9604cdc13a1d3fb86  kernel/private/classes/commands/upgradescripts
 2015ac6318bd4a4d4add811741d4505f  kernel/private/classes/commands/userlogincheck.php
 7d965c05da2a5c87920ebbb39a4ebbd9  kernel/private/classes/commands/userpasswordchangerequired.php
 8f95645ff99a22bccb7cc98e67d72dac  kernel/private/classes/commands/velocity-router.php
-36bff006ad45e48293fe64ba9a170c72  kernel/private/classes/commands/velocity-warmup.php
+e1e0e881bb7f10985bec30c5f4c3c00b  kernel/private/classes/commands/velocity-warmup.php
 9c890eef8548a2fb95ca6496efc70dfe  kernel/private/classes/commands/velocity.php
 459ade5685b7da3718f61d04bfc8f83a  kernel/private/classes/commands/verify_aliases.php
 6a0c8e5fc57c47766d9b3a7f38d1b3c6  kernel/private/classes/commands/warm.php
@@ -24855,7 +24855,7 @@ c8b7cb50e53522cc1d45078b3a28979b  lib/ezdb/classes/ezmysqlcharset.php
 184ec92d24404cebb876e3ee05cff51f  lib/ezdb/classes/ezmysqlidb.php
 31faf16a40f407c32b6c7b0b2102b5ec  lib/ezdb/classes/eznulldb.php
 1a6057447c813267a1ca86be58c9e6ba  lib/ezdb/classes/ezpostgresqldb.php
-109025c647800b3bf4db9a1c93b62641  lib/ezdb/classes/ezsqlite3db.php
+420b37a2ce9857c45113adff6b73152a  lib/ezdb/classes/ezsqlite3db.php
 86b2f701aa81e8db34267630e6ce5acf  lib/ezdbschema/classes/expmongoschema.php
 8e9010beaa4d355d60448ef5c507ea6c  lib/ezdbschema/classes/ezdbschema.php
 c7c6f99535283f00d9ff4266c494aead  lib/ezdbschema/classes/ezdbschemachecker.php
@@ -26500,7 +26500,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-db6c87ac00d838475050ac64a3f26841  tests/test-map.json
+92096affadb0dd8b16adb88859a51447  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 9e66dccfb84af9620c270342b88c7f84  tests/tests/bin/ConsoleExtensionAliasTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
@@ -27898,7 +27898,6 @@ d185830f980916133c98bbee065b75bb  tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStrin
 647b489c0b9f59541e1d26587ed4bb2b  tests/tests/lib/ezdb/eZPostgreSQLDBTest.php
 a0c0ae8787effaa5ef6bf8c35edc273a  tests/tests/lib/ezdb/eZSQLite3DBQueryCountTest.php
 60babceabece4d8182763089a36e5826  tests/tests/lib/ezdb/eZSQLite3InsertOrReplaceTest.php
-73e3c7ee19a023ae92f43c9739e29144  tests/tests/lib/ezdb/eZSQLite3KeptConnectionTest.php
 e7c428ffa18e115fd9afa3ac417d175c  tests/tests/lib/ezdb/eZSQLite3MirrorTest.php
 6717784b518c234af57a75e931e34535  tests/tests/lib/ezdb/eZSQLite3ModFunctionTest.php
 654c78882b4e6b36a7b6d761d26ddbd2  tests/tests/lib/ezdb/eZSQLite3SerialIDTest.php
