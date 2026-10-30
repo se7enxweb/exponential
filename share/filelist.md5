@@ -3554,7 +3554,7 @@ fb85be121ac1186257310cd979fc3c1e  doc/eng-us/bc/6.0/sqlite-transactions.md
 69d804d80e2da3a6139cf129f4fba8de  doc/eng-us/bc/6.0/user-account-approval.md
 7928239ba6369a6bb899ee998ce94b05  doc/eng-us/bc/6.0/user-password-change.md
 e37c2dcbaa794657ef0b6ade79057808  doc/eng-us/bc/6.0/velocity-engine-upgrade-notes.md
-d40e886e2c346259766c2a4a0dc9ae8b  doc/eng-us/bc/6.0/velocity-engines.md
+4f597785b175c7ecefeedd63a27ef0db  doc/eng-us/bc/6.0/velocity-engines.md
 308dc577e917e96bd27c826e958d21b4  doc/eng-us/bc/6.0/velocity-ondisk-layout.md
 9b429d7d4f93a93dfca9de098c81823a  doc/eng-us/bc/6.0/view_full_security.md
 47fd2bff5c237dc0a50c3deb40ab5f34  doc/eng-us/bc/6.0/weak-passwords-and-reset-key-lifetime.md
@@ -3692,7 +3692,7 @@ e48ad17b0f1b067fccce1b3d55874dd7  doc/eng-us/examples/commands/upgradeverify.md
 40852363cbc1cc656d77c9eb425504f2  doc/eng-us/examples/commands/userpasswordchangerequired.md
 3a13e7186c347cf06bbb8e354f59b630  doc/eng-us/examples/commands/velocity-router.md
 b36f879fe9c836e4da5362520a2f8113  doc/eng-us/examples/commands/velocity-warmup.md
-386a1e582c67e462ae1a13ea1a6ccfdb  doc/eng-us/examples/commands/velocity.md
+280ea0899c88059a440360237afc0815  doc/eng-us/examples/commands/velocity.md
 cc0bc159ec92152e04ad8026b02a3f3c  doc/eng-us/examples/commands/verify_aliases.md
 eae03b523f5aafc44f83b6bd858f0a2a  doc/eng-us/examples/commands/warm.md
 889c6d8ce353e6a1553c7f43c47a7117  doc/eng-us/examples/commands/webserver.md
@@ -9621,7 +9621,7 @@ aef2dba03885a2061e13cd2660b7682f  doc/eng-us/help/hosting/operations/backup-sche
 58422cf020cfc35c928d8745f634e16b  doc/eng-us/help/hosting/operations/cron-jobs.md
 54a2d0581192fb2682919771ea80cc65  doc/eng-us/help/hosting/operations/cronjob-console.md
 4b7752b284fe9227fb33106466755882  doc/eng-us/help/hosting/operations/database-backups-per-engine.md
-27abd06a77f90c259d88bdc4fd554a3e  doc/eng-us/help/hosting/operations/deploying-changes.md
+bb17909cc8f14ccdf08e05671374ee22  doc/eng-us/help/hosting/operations/deploying-changes.md
 591adb052503eef7c3d48c9cce02cb7b  doc/eng-us/help/hosting/operations/health-checks-and-uptime.md
 e0ccf7f4b4fd2ef80af338ab6e107d3e  doc/eng-us/help/hosting/operations/log-viewer-and-rotation.md
 19ac98e160f34c59056b53e6c4c27384  doc/eng-us/help/hosting/operations/mail-consent-and-bounces.md
@@ -12758,7 +12758,7 @@ d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 fe7287e9e15faec9246eaa532ab45c7e  doc/ger-de/.dirnames.json
 5647e0a40e18862c9be14fe193209099  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
-de109bcafdec8c95f323e289952b3b1e  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
+006afd1af6a28daed1e050dffdaca4e3  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
 12320733ddd4b1155b033ddcff05c221  doc/ger-de/.examples/descriptions/04-ini-settings-admininterface-ini-additionalmenusettings-.json
 c8d9e6a8ae553cdb707105fb02be9935  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
 decce9bb06ae705823bfd0e79ffbc52e  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
@@ -12977,7 +12977,7 @@ cc494c00ecd01129c6c76c3e175c8e48  doc/ger-de/bc/6.0/ui-umschalter-design.md
 fb7e473b95d422399e463bfe56d9395d  doc/ger-de/bc/6.0/ui-umschalter.md
 6444af39a4f005b744ebce2ec72a46cf  doc/ger-de/bc/6.0/unterelemente-weitere-aktionen-verstecken-einblenden.md
 271c73727f0fff7506e5831158e4122d  doc/ger-de/bc/6.0/velocity-engine-upgrade-hinweise.md
-77b0f6419309099480802c7cfd53619e  doc/ger-de/bc/6.0/velocity-engines.md
+16eee15955b35d4de9649bd8e307f0a4  doc/ger-de/bc/6.0/velocity-engines.md
 5d2e214aff835b2b72b2c43b01fd5ffa  doc/ger-de/bc/6.0/velocity-verzeichnisstruktur.md
 46accbb2931f17afb423b888e8950f8a  doc/ger-de/bc/6.0/verhaltensaenderungen-2026-07-08.md
 bf0907518b844d85c9b4e78e2ef81b00  doc/ger-de/bc/6.0/verhaltensaenderungen-2026-09b.md
@@ -13118,7 +13118,7 @@ e6060b0c7f76baaae34a927af65fc3ad  doc/ger-de/beispiele/befehle/userlogincheck.md
 db081848987ebdf074b4c8e70fa9027e  doc/ger-de/beispiele/befehle/userpasswordchangerequired.md
 8f88219f40f2c58a38c28c5e3d88a215  doc/ger-de/beispiele/befehle/velocity-router.md
 c4b403a4b80b17564eb0d05ec13190b4  doc/ger-de/beispiele/befehle/velocity-warmup.md
-0214fb8385a411a30d23b5338f601f0e  doc/ger-de/beispiele/befehle/velocity.md
+21cea7df8c2dd5d0faf3801732c65737  doc/ger-de/beispiele/befehle/velocity.md
 c6cf303261c67d6acabbdeef50381dae  doc/ger-de/beispiele/befehle/verify_aliases.md
 b14622add6b22e81ce9224e095dbacfb  doc/ger-de/beispiele/befehle/warm.md
 cf0e283c1c4260fcab5330e16469b085  doc/ger-de/beispiele/befehle/webserver.md
@@ -23244,7 +23244,7 @@ d1743b6d55d3d778b90feac8ba7b953f  kernel/classes/expsystemreportmask.php
 116836b5ceb174a3eacd45d1007f6efa  kernel/classes/expvelocity.php
 ccab7d5acac2dabe846321cb2c2b3273  kernel/classes/expvelocityconfig.php
 99fc9e7a7c802abd77f1c2154c0b291c  kernel/classes/expvelocityconfiglayout.php
-a4630ccfef10da921b5b1bc32efcd944  kernel/classes/expvelocitydeploy.php
+90fba4ba3db20526437327eaf0f97c2d  kernel/classes/expvelocitydeploy.php
 2c0dfc1fa3c3ae93eacef4815c2360a2  kernel/classes/expvelocityfrankenphp.php
 fb35ae8e704fac31fd7579f046131eb4  kernel/classes/expvelocityfrankenphpinstaller.php
 600c52c5993053d67fa78bde9b37ff99  kernel/classes/expvelocitymarkers.php
@@ -23681,7 +23681,7 @@ ab42951d8dfda9ca9d00783901f3ee4c  kernel/classes/upgrade/steps/expupgradestepboo
 d601d33f091e5c5a4244f5c850226bf5  kernel/classes/upgrade/steps/expupgradestepcodeupdate.php
 2a6bcdce9be1233603fc504656f73b75  kernel/classes/upgrade/steps/expupgradestepdatatabletables.php
 4ba029ea2c49f7789d207e06463dcc43  kernel/classes/upgrade/steps/expupgradestepeditorpolicies.php
-c0e6171dd63161a8c9f401106afdfd04  kernel/classes/upgrade/steps/expupgradestepfinishdeploy.php
+364076dd27d5d8f6e21eae74bbb4dcd2  kernel/classes/upgrade/steps/expupgradestepfinishdeploy.php
 32d5ab759aa7b06984bfd88d1438b572  kernel/classes/upgrade/steps/expupgradestepfinishsmoke.php
 573650cdebd7d101617d1a5fdb7cecaa  kernel/classes/upgrade/steps/expupgradestephelpcontenttables.php
 01c688e4b3233c450661ddf7883da38a  kernel/classes/upgrade/steps/expupgradestephelpreadpolicy.php
@@ -24091,7 +24091,7 @@ c4e484a11695b5a9604cdc13a1d3fb86  kernel/private/classes/commands/upgradescripts
 7d965c05da2a5c87920ebbb39a4ebbd9  kernel/private/classes/commands/userpasswordchangerequired.php
 8f95645ff99a22bccb7cc98e67d72dac  kernel/private/classes/commands/velocity-router.php
 e1e0e881bb7f10985bec30c5f4c3c00b  kernel/private/classes/commands/velocity-warmup.php
-9c890eef8548a2fb95ca6496efc70dfe  kernel/private/classes/commands/velocity.php
+45d86f2274ed08ab09af6a7a12a2ac7d  kernel/private/classes/commands/velocity.php
 459ade5685b7da3718f61d04bfc8f83a  kernel/private/classes/commands/verify_aliases.php
 6a0c8e5fc57c47766d9b3a7f38d1b3c6  kernel/private/classes/commands/warm.php
 5ffbbfd34c2d4a9fe30ba18edf409f30  kernel/private/classes/commands/webserver.php
@@ -26531,7 +26531,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-31f43d697d499fd6720dda0a6f4acbbd  tests/test-map.json
+232295d1af85b9628cb1aab7b76388ba  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 9e66dccfb84af9620c270342b88c7f84  tests/tests/bin/ConsoleExtensionAliasTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
@@ -27120,6 +27120,7 @@ f0e7540561b9a7d039c5fee3b8912260  tests/tests/kernel/classes/expUrlAdminPagesTes
 51a5c5e484ed98e16dc6395eb2047f63  tests/tests/kernel/classes/expUserApprovalSectionTest.php
 51f04265ca12861f1309c56449d3e328  tests/tests/kernel/classes/expUserApprovalTest.php
 808113843572bb212ca69e58f900b4dd  tests/tests/kernel/classes/expUserLoginIntegrityTest.php
+29a92c1dea649e7191f8faba50e7f32b  tests/tests/kernel/classes/expVelocityDeployCachePlanTest.php
 c687ac729fa5a22204958abaf63ed47c  tests/tests/kernel/classes/expVelocityEnginesTest.php
 be3a33ce3c88aba09d1e3a0ab5c51a2c  tests/tests/kernel/classes/expVelocityMarkersTest.php
 d192ba3ececa29f5bea6ab48deb3d607  tests/tests/kernel/classes/expVelocityNiceTest.php

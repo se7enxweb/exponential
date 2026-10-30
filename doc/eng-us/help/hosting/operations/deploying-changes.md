@@ -111,8 +111,11 @@ Edits to a template or a stylesheet need less: clear the caches without a restar
 ```
 
 After an extension is activated, its templates are not found until the design_base cache is cleared: the page
-"answers 200 with an empty content area". `exp:velocity deploy` always clears it, with the template-override cache, in
-step 4. For stylesheets packed by ezjscore, deploy with
+"answers 200 with an empty content area". `exp:velocity deploy` clears it, with the template-override cache, in step 4
+whenever settings or templates changed since the last deploy (activating an
+extension changes settings); `--all-caches` clears it in any case. A deploy of
+PHP classes only keeps the INI caches and the pages already rendered:
+`--clear-content` clears the rendered pages anyway. For stylesheets packed by ezjscore, deploy with
 `--packer`. "Never run only `exp:cache clear --all` and then forget the web server: FPM and Velocity keep the old
 classes in memory until they are reloaded."
 
