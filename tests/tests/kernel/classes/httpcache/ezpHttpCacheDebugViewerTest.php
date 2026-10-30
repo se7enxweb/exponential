@@ -94,6 +94,7 @@ class ezpHttpCacheDebugViewerTest extends PHPUnit\Framework\TestCase
     private function bar()
     {
         $served = array( 'by' => 'render', 'full_asked' => false, 'reason' => 'no entry', 'render_ms' => 41.0,
+                         'form_token' => 'storedsessiontoken0123456789',
                          'urls' => array( 'cached' => '/page', 'full' => '/page/(exp_render)/full' ),
                          'labels' => array( 'render' => 'Rendered', 'render_title' => 'Rendered by the kernel: x', 'cache' => 'Cached',
                                             'cache_title' => 'Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.',
@@ -105,7 +106,8 @@ class ezpHttpCacheDebugViewerTest extends PHPUnit\Framework\TestCase
               . '<span class="exp-debug-summary"><!--exp-served-time--><button type="button" class="exp-debug-chip" data-tab="timing" data-key="time" aria-label="Page time: 0.041 s (normal)">0.041 s</button><!--/exp-served-time-->'
               . '<button type="button" class="exp-debug-chip" data-tab="sql" data-key="sql">2 SQL / 1 ms</button></span></h2>';
         foreach ( array( 'messages' => 'Messages', 'timing' => 'Timing', 'sql' => 'SQL' ) as $id => $title )
-            $html .= '<section class="exp-debug-panel" role="tabpanel" id="exp-debug-panel-' . $id . '" tabindex="0"><h3 class="exp-debug-panel-title">' . $title . '</h3><p>render data ' . $id . '</p></section>';
+            $html .= '<section class="exp-debug-panel" role="tabpanel" id="exp-debug-panel-' . $id . '" tabindex="0"><h3 class="exp-debug-panel-title">' . $title . '</h3><p>render data ' . $id . '</p>'
+                   . ( $id === 'messages' ? '<form><input type="hidden" name="ezxform_token" value="storedsessiontoken0123456789"></form>' : '' ) . '</section>';
         $html .= '</div><a id="debug-end"></a><script type="application/json" id="exp-debug-data">'
                . json_encode( array( 'version' => 2, 'summary' => array( 'time' => 0.041 ), 'server_summary' => array( 'time' => array( 'total_ms' => 41.0 ) ), 'served' => $served ) )
                . '</script>';
@@ -217,6 +219,8 @@ class ezpHttpCacheDebugViewerTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 3, substr_count( $body, 'class="exp-debug-hint exp-debug-from-render">From the render at ' ), 'every tab' );
         $this->assertSame( 1, substr_count( $body, 'data-this-request="1"' ), 'the Timing tab: this request' );
         $this->assertStringContainsString( 'render data sql', $body, 'the render\'s figures stay' );
+        $this->assertStringNotContainsString( 'storedsessiontoken0123456789', $body, 'the form token of the session that stored the bar is gone' );
+        $this->assertStringContainsString( 'name="ezxform_token" value="' . $token . '"', $body, 'the bar\'s forms carry this visitor\'s token' );
         preg_match( '#<script type="application/json" id="exp-debug-data">(.*?)</script>#s', $body, $m );
         $data = json_decode( $m[1], true );
         $this->assertSame( 'cache', $data['served']['by'] );

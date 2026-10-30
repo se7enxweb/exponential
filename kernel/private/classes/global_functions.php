@@ -78,9 +78,12 @@ function eZDebugReportNoStore( $report )
 function eZDisplayResult( $templateResult )
 {
     ob_start();
-    // Where the debug report is in the output, for the page cache to keep the page without it and the report beside
-    // it (ezpHttpCacheListener): array( offset, length ), set below when there is a report.
-    unset( $GLOBALS['EXP_DEBUG_REPORT_SPAN'] );
+    // The debug report goes between two marks, for the page cache to keep the page without it and the report beside
+    // it (ezpHttpCacheListener::debugBarOf()); filters of response/output change the page after this (form tokens).
+    $mark = function ( $report ) {
+        $report = (string)$report;
+        return $report === '' || !class_exists( 'expDebugBarReport' ) ? $report : expDebugBarReport::BAR_START . $report . expDebugBarReport::BAR_END;
+    };
     if ( $templateResult !== null )
     {
         $templateResult = ezpEvent::getInstance()->filter( 'response/preoutput', $templateResult );
@@ -90,18 +93,12 @@ function eZDisplayResult( $templateResult )
         {
             $debugMarkerLength = strlen( $debugMarker );
             echo substr( $templateResult, 0, $pos );
-            $report = (string)eZDisplayDebug();
-            if ( $report !== '' )
-                $GLOBALS['EXP_DEBUG_REPORT_SPAN'] = array( $pos, strlen( $report ) );
-            echo $report;
+            echo $mark( eZDisplayDebug() );
             echo substr( $templateResult, $pos + $debugMarkerLength );
         }
         else
         {
-            $report = (string)eZDisplayDebug();
-            if ( $report !== '' )
-                $GLOBALS['EXP_DEBUG_REPORT_SPAN'] = array( strlen( (string)$templateResult ), strlen( $report ) );
-            echo $templateResult, $report;
+            echo $templateResult, $mark( eZDisplayDebug() );
         }
     }
     else

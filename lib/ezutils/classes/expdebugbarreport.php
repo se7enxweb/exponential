@@ -746,6 +746,10 @@ class expDebugBarReport
         return $html . '</span>';
     }
 
+    /** Marks around the whole debug report in the page (eZDisplayResult()): the page cache keeps the report apart */
+    const BAR_START = '<!--exp-debug-bar-->';
+    const BAR_END = '<!--/exp-debug-bar-->';
+
     /** Marks around the "how this page came about" part of the bar (servedHtml()), replaced when served from cache */
     const SERVED_START = '<!--exp-served-->';
     const SERVED_END = '<!--/exp-served-->';

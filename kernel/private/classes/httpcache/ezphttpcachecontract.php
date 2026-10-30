@@ -1379,7 +1379,13 @@ class ezpHttpCacheContract
             return $this->miss( 'placeholder' );
 
         $created = (float)$meta['created'];
-        $bar = $this->debugBar( (string)$report['html'], (array)$report['served'], $created, $start, $uri );
+        $html = (string)$report['html'];
+        // the form token of the session that stored the bar, in its forms: this visitor's instead
+        $stored = (string)( $report['served']['form_token'] ?? '' );
+        if ( strlen( $stored ) >= 16 )
+            $html = str_replace( $stored, $sessionID !== null ? $this->formToken( $sessionID ) : '', $html );
+        unset( $report['served']['form_token'] );
+        $bar = $this->debugBar( $html, (array)$report['served'], $created, $start, $uri );
         $offset = (int)$report['offset'];
         // the placeholders after the bar move with it
         $before = isset( $report['before'] ) ? (int)$report['before'] : PHP_INT_MAX;

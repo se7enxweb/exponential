@@ -24145,11 +24145,11 @@ a4426106f9957b221c8245b2bb480881  kernel/private/classes/ezptemplateoverrides.ph
 b4c8b6bdaa165af37f563c5e39f0dad4  kernel/private/classes/ezptopologicalsortnode.php
 cdb8788a81a6ef28bb12e30c4a5f949b  kernel/private/classes/ezscriptclusterpurge.php
 93df9b90000e461d123cdcd6f817ecd9  kernel/private/classes/ezscripttrashpurge.php
-c4204aba6774f00507477d1f06e25677  kernel/private/classes/global_functions.php
+e44db58d7f4aa5784e233a3ae701998c  kernel/private/classes/global_functions.php
 910a46886fe7fccded38152aba864859  kernel/private/classes/httpcache/exprenderswitch.php
-2fabe80b338f5b50bfcf5ad66b78dc47  kernel/private/classes/httpcache/ezphttpcachecontract.php
+7e1bdc9f3ac0c0a750a1fbcee22ce051  kernel/private/classes/httpcache/ezphttpcachecontract.php
 9c43a44568db957044d47b55eee69085  kernel/private/classes/httpcache/ezphttpcacheearlyexit.php
-686794235c0a1a64761a9ad1708a5cba  kernel/private/classes/httpcache/ezphttpcachelistener.php
+13e0e2b33b0d70d44aea52b2bdadc3d0  kernel/private/classes/httpcache/ezphttpcachelistener.php
 ebb49bcd0b9f19e252231e5d51397f70  kernel/private/classes/httpcache/ezphttpcacheworkerdebug.php
 42ac3ffe977340392a723531ffd8d6a9  kernel/private/classes/requestrules/ezprequestcontext.php
 61dc81b6e01136bd7e9ce0ef279e6094  kernel/private/classes/requestrules/ezprequestrule.php
@@ -25026,7 +25026,7 @@ d27d72fa632723c912c0e30955660dfb  lib/eztemplate/classes/eztemplatetreecache.php
 83db4deedb094ab56e41666aa89d1d45  lib/eztemplate/classes/eztemplateunitoperator.php
 c86873ded14533e5c2c8d74477b5b0c9  lib/eztemplate/classes/eztemplatevariableelement.php
 290175b9eca3990307842ecc8353ae59  lib/eztemplate/classes/eztemplatewhilefunction.php
-020c5a663cfa06a1a3df43b6a83b65a1  lib/ezutils/classes/expdebugbarreport.php
+27ced3ae55ee93be23f8144a547472b5  lib/ezutils/classes/expdebugbarreport.php
 b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 11982ee3f90617fbf7ddbb55b4806286  lib/ezutils/classes/ezcachehelper.php
 65418d73b97109fe1dc0fc642c93139e  lib/ezutils/classes/ezcli.php
@@ -27216,7 +27216,7 @@ f42ff50eccca16045301996e0e3adafe  tests/tests/kernel/classes/help/expHelpSearchV
 c73b3316fa67b8c61e5eb6829c307139  tests/tests/kernel/classes/help/expHelpTranslatedDocumentationTest.php
 adac5192811bf518d52266dd4a6b0e72  tests/tests/kernel/classes/help/fixtures/branch-overview-svn.txt
 1daf12e31058d06d39683173f3e4656f  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
-ac68b2d02eba9c4c5d5630d8dcbbdfa2  tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php
+a6f3b2387605efafecf028e2e71dc357  tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php
 73004725c237c4032e19734560385a00  tests/tests/kernel/classes/i18n/expI18nCoverageMapTest.php
 444d0db01cc11b5e3f7778567f43f105  tests/tests/kernel/classes/i18n/expI18nFallbackReportTest.php
 5c7a22467eda9deedb3fbca52c90fc51  tests/tests/kernel/classes/i18n/expI18nTranslationWavesTest.php

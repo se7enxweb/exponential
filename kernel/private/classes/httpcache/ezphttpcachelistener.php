@@ -296,8 +296,8 @@ class ezpHttpCacheListener
     /**
      * The debug bar of this response, when the page may be kept for a debug viewer with the bar beside it:
      * array( offset, bar html, served block of the bar ), or null. Only the Exp Debug bar (it marks how the page came
-     * about), only for a visitor the contract knows as a debug viewer, and only where eZDisplayResult() said where
-     * the bar is and that is exactly what stands there.
+     * about), only for a visitor the contract knows as a debug viewer, and only once in the page, between the marks
+     * eZDisplayResult() puts around it (expDebugBarReport::BAR_START, BAR_END).
      *
      * @param string $html
      * @param ezpHttpCacheContract $contract
@@ -305,11 +305,15 @@ class ezpHttpCacheListener
      */
     private static function debugBarOf( $html, ezpHttpCacheContract $contract )
     {
-        $span = $GLOBALS['EXP_DEBUG_REPORT_SPAN'] ?? null;
-        if ( !is_array( $span ) || count( $span ) !== 2 || !eZDebug::isDebugEnabled() || empty( $contract->config['debug']['output'] ) )
+        if ( !eZDebug::isDebugEnabled() || empty( $contract->config['debug']['output'] ) || !class_exists( 'expDebugBarReport' ) )
             return null;
-        $bar = substr( (string)$html, (int)$span[0], (int)$span[1] );
-        if ( strlen( $bar ) !== (int)$span[1] || strpos( $bar, expDebugBarReport::SERVED_START ) === false )
+        $html = (string)$html;
+        $start = strpos( $html, expDebugBarReport::BAR_START );
+        $end = $start === false ? false : strpos( $html, expDebugBarReport::BAR_END, $start );
+        if ( $start === false || $end === false || strpos( $html, expDebugBarReport::BAR_START, $start + 1 ) !== false )
+            return null;
+        $bar = substr( $html, $start, $end + strlen( expDebugBarReport::BAR_END ) - $start );
+        if ( strpos( $bar, expDebugBarReport::SERVED_START ) === false )
             return null;
         if ( !preg_match( '#<script type="application/json" id="exp-debug-data">(.*?)</script>#s', $bar, $m ) )
             return null;
@@ -318,7 +322,10 @@ class ezpHttpCacheListener
             return null;
         $served = $data['served'];
         $served['render_ms'] = isset( $data['summary']['time'] ) ? round( (float)$data['summary']['time'] * 1000, 1 ) : null;
-        return array( (int)$span[0], $bar, $served );
+        // the bar's forms (Cache tab) carry the form token of this session: put back as the visitor's when served
+        if ( class_exists( 'ezxFormToken' ) && ezxFormToken::isEnabled() && session_id() !== '' )
+            $served['form_token'] = ezxFormToken::getToken();
+        return array( $start, $bar, $served );
     }
 
     private static function storeOrSay( $html )
