@@ -44,6 +44,7 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:expbackfillordersiteaccess](expbackfillordersiteaccess.md) |  | Infer the siteaccess of orders placed before ezorder.siteaccess was recorded (dry run unless --apply) |
 | [exp:expcontentjob](expcontentjob.md) |  | Run, list, resume and cancel content jobs: large subtree removes and copies in batches |
 | [exp:expfetch](expfetch.md) | exp:info, exp:about | The system card: the Exponential "e" next to the facts of this installation, its engine and its machine, with health hints (exp:info adds an inventory, exp:about the project) |
+| [exp:expgraphqlbench](expgraphqlbench.md) | exp:graphql:bench | Measure the speed of the GraphQL API against decision 18: cached GET, 304, cached POST, a cached answer through the kernel and an uncached query, N requests each, with median, p95 and max |
 | [exp:expgraphqlpersist](expgraphqlpersist.md) | exp:graphql:persist | Store GraphQL queries on the server as persisted queries (called by name or SHA-256), list them or remove them; a dry run unless --apply |
 | [exp:expgraphqlquery](expgraphqlquery.md) | exp:graphql:query | Run a GraphQL query from the console, as a user of the installation (anonymous unless --as names one), and print the answer |
 | [exp:expgraphqlschema](expgraphqlschema.md) | exp:graphql:schema | Print or write the GraphQL schema of a siteaccess: the schema language (sdl), the introspection result (json) or the classes and their fields (summary) |
