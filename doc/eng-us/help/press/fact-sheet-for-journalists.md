@@ -34,7 +34,7 @@ LEADS IT       7x, a North American web design, development, support and hosting
                Brookins Consulting); took over leadership of the project in 2023.
 OPERATES IT    The Exponential Foundation, a 501(c)(3) nonprofit founded 19 March 2026 in Seattle,
                Washington, USA.
-COPYRIGHT      "7x & Exponential Foundation" (1998 - 2026); "eZ Systems AS" (1999 - 2014) stays in the code.
+COPYRIGHT      "Exponential Copyright © 1998-2026 Exponential Foundation and 7x"; "eZ Systems AS" (1999 - 2014) stays in the code.
 HISTORY        Code base developed since 1999, first as eZ Publish, a product its creator discontinued after
                almost 18 years. 7x: idea 2014 (se7enx.com registered), project start 2022, launch December 2023.
                Renamed Exponential on 11/12 August 2025.
@@ -104,3 +104,11 @@ develop the products with us, and that is how Exponential grows. A partner websi
 mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
 [Partners: start here](../partners/partners-start-here.md) and [How to apply](../partners/how-to-apply.md).
 <!-- exp-partner-block:end -->
+
+## Copyright and copyleft
+
+Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
+Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
+[Copyright and copyleft](../copyright-and-copyleft.md).

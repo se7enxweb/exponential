@@ -28,7 +28,7 @@
  *  TD-13  an anchor written for another language's version of a page maps to the shown page's heading at the same
  *         position, when rendered and in the link check, in both directions
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

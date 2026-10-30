@@ -8066,8 +8066,8 @@
         <translation>Béja hak cipta ti panulis asli sareng ti parangkat lunak pihak katilu nu disarengkeun sareng Exponential tetep dijaga dina berkas sumber sareng dina berkas LICENSE, sakumaha nu dipikabutuh ku lisénsi.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Ieu daptar kontributor Exponential nu parantos ngalisénsikeun karyana pikeun dipaké ku 7x dumasar katangtuan sareng sarat eZ Systems Contributor Licensing Agreement. Sakumaha nu diidinan ku pasatujuan ieu, 7x nyebarkeun deui unggal kontribusi dina lisénsi nu sarua jeung berkas tempat kontribusi éta kaasup. Daptar ieu nyebutkeun unggal kontributor, émbaran kontak pilihan, sareng berkas nu disumbangkeunana atanapi nu dilakukeun bareng.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Kontributor anu diaku pikeun karyana dina Exponential jeung dina parangkat lunak asal-usulna, babarengan jeung berkas anu dikontribusikeun. Ieu téh pangakuan, lain béwara hak cipta: kontribusi ka Exponential dialihkeun ka Exponential Foundation jeung 7x dumasar Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

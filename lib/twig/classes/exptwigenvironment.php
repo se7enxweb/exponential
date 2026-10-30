@@ -7,7 +7,7 @@
  * With auto_reload off nothing changes: a deploy restarts the workers. Within one page each template's file is looked at
  * once (pageStart(), called by expTwigRenderer when a page's first .twig starts).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package lib
  */

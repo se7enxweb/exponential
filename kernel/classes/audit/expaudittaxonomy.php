@@ -13,7 +13,7 @@
  * counts as later than Enabled[]. The answers are compiled once per settings state (expAuditConfig's hash) and kept
  * for the life of the process, so a name that is off costs one array lookup.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

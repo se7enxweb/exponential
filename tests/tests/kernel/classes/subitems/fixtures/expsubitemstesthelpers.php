@@ -3,7 +3,7 @@
  * Test doubles for the subitems tests: nodes, objects, attributes and classes that need no
  * database, a counting column, handler functions and a registry reading the fixture INI files.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

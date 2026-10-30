@@ -10,7 +10,7 @@
  * never holds up the other cronjob parts; started as root, it becomes the site user. A job resumed again and
  * again without finishing a batch is failed by the worker after MaxAttempts starts instead of looping.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

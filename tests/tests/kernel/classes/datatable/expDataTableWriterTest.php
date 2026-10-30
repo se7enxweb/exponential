@@ -16,7 +16,7 @@
  *  DW-08 - a reference nothing has fails the row; values with a quote and a backslash are kept
  *  DW-09 - the class map route: a class without 'connection' put on the connection by [ClassSettings]
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -7,7 +7,7 @@
  * setUpBeforeClass(); everything a test creates goes below it or is tracked with track(). tearDownAfterClass()
  * removes the folder's subtree and every tracked object, from the trash too, and checks nothing is left.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  */

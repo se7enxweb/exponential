@@ -36,7 +36,7 @@ engineering checks.
 7x and the Exponential Foundation require a signed Contributor Licensing Agreement for every code contribution to the
 core kernel, before it can be merged, whatever form it arrives in (pull request, patch, code in an issue, mail).
 `CONTRIBUTING.md` states it plainly: **by signing the CLA and submitting a contribution to the core kernel, you assign
-the copyright in that contribution to 7x**, which may use, change, relicense and distribute it without asking or paying
+the copyright in that contribution to the Exponential Foundation and 7x**, which may use, change, relicense and distribute it without asking or paying
 you; you cannot withdraw it or set conditions on it. It is signed once for all future contributions. Your own custom
 extensions are not affected. Read the agreement itself before signing; the summary is not legal advice. If your
 employer has rights to what you write, you need its permission.

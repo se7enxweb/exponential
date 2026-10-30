@@ -7,7 +7,7 @@
  * command exp:template:convert with --from-engine=tpl --to-engine=twig. The work is done by expTemplateDesignConverter
  * (lib/templatebridge/classes/) and expTwigConverter (lib/twig/classes/); guide: doc/eng-us/guides/template-conversion.md
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

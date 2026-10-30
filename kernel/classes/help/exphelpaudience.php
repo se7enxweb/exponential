@@ -26,7 +26,7 @@
  * one ([TreeSettings] PageOrder[<page id>], pageOrder()): this wins over a page's front matter order, so pages that
  * cannot carry front matter (the project files, plain text) can be placed too.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

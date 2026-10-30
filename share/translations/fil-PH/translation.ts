@@ -8066,8 +8066,8 @@
         <translation>Pinananatili sa mga source file at sa LICENSE file ang mga abiso sa copyright ng mga orihinal na may-akda at ng software ng third-party na kasama ng Exponential, ayon sa hinihingi ng lisensya.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Ang sumusunod ay listahan ng mga contributor ng Exponential na naglisensya ng kanilang gawa para magamit ng 7x sa ilalim ng mga tuntunin at kondisyon ng eZ Systems Contributor Licensing Agreement. Ayon sa pinahihintulutan ng kasunduang ito, muling ipinamamahagi ng 7x ang bawat kontribusyon sa ilalim ng parehong lisensya ng file na kinabibilangan ng kontribusyon. Pinangangalanan ng listahan ang bawat contributor, opsyonal na impormasyon sa pakikipag-ugnayan at ang mga file na kinontribyutan nila o pinagkontribyutan ng gawa.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Mga kontribyutor na kinikilala para sa kanilang gawa sa Exponential at sa software na pinagmulan nito, kasama ang mga file na kanilang inambagan. Ito ay pagkilala, hindi paunawa ng copyright: ang mga ambag sa Exponential ay inililipat sa Exponential Foundation at 7x sa ilalim ng Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

@@ -26,7 +26,7 @@
  *  MPH-09  Over HTTP, on the site's web server and on Velocity: the one-click POST answers 200, a broken link 400,
  *          and the JSON and CSV downloads arrive complete
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group mailpreferences

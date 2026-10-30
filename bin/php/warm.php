@@ -15,7 +15,7 @@
  * so whoever asks first after an entry expires waits over a second. This makes
  * that first asker a script instead of a visitor.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -10,7 +10,7 @@
  *  RC-22  the files hold a salted hash of the address, never the address; a new file is created with the log file
  *         permissions; a counter that cannot write never flags anybody
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

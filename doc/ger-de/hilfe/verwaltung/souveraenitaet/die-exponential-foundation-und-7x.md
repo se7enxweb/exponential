@@ -27,7 +27,7 @@ sagen, und sie benennt, was diese offenlassen.
 |---|---|---|
 | Was sie ist | beschreibt sich als gemeinnützige Körperschaft nach 501(c)(3), gegründet am 19. März 2026 in Seattle, Washington, USA | beschreibt sich als nordamerikanisches Unternehmen für Webdesign, Support, Entwicklung und Hosting |
 | Rolle | „This project is operated by the Exponential Foundation“ (dieses Projekt wird von der Exponential Foundation betrieben) | leitet seit 2023 Entwicklung, Support und das Wachstum der Community; die Foundation nennt es den wichtigsten Mitwirkenden |
-| Urheberrecht | gemeinsam: „Copyright (C) 1998 - 2026 7x & Exponential Foundation“ | |
+| Urheberrecht | gemeinsam: „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ | |
 
 Exponential hat die Codebasis von eZ Publish fortgeführt, die ihr Hersteller nach fast achtzehn Jahren eingestellt hat;
 das Projekt erklärt, dass es nicht mit eZ Systems oder Ibexa verbunden ist ([Wer ist 7x?](../../wer-ist-7x.md)).
@@ -76,3 +76,11 @@ und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-We
 Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->
+
+## Urheberrecht und Copyleft
+
+Seit dem 29. Oktober 2026 halten die Exponential Foundation und 7x das Copyright an Exponential gemeinsam, die
+Foundation zuerst genannt: „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“, in Dateien
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ Wer es hält und warum, was die
+GPL Ihnen erlaubt, welche Hinweise Dritter bleiben und wie der Hinweis in neue Dateien und Erweiterungen kommt:
+[Urheberrecht und Copyleft](../../urheberrecht-und-copyleft.md).

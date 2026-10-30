@@ -23,8 +23,8 @@ adapt and redistribute it.
 
 ## The story in one paragraph
 
-The documentation in the repository's `doc/` directory, including the help in the administration, is "Copyright (C)
-1998 - 2026 7x & Exponential Foundation and the Exponential contributors" and licensed under the GNU Free
+The documentation in the repository's `doc/` directory, including the help in the administration, is
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." and licensed under the GNU Free
 Documentation License, Version 1.3 or later, with no invariant sections and no cover texts
 ([The license of this documentation](../../README-LICENSE.md)). A plain-words page explains what that lets readers do:
 read, copy, share, translate, adapt and cite it ([Free documentation](../free-documentation.md)). Older pages inherited

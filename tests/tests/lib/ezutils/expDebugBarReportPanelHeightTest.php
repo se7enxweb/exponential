@@ -13,7 +13,7 @@
  * No database: the preference reader is passed in, and the report is rendered from a debug instance of its own
  * (no eZUser loaded, so the saved height is the default).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group lib

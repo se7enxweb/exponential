@@ -15,7 +15,7 @@
  *  US-06 - The module declares user/sessions with the policy function sessions; the account overview links to it;
  *          eZUser checks the session on every request and ends its row at sign-out; the settings and the cronjob
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

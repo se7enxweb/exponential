@@ -69,7 +69,7 @@ Die Codebasis wird seit 1999 entwickelt; der Name stammt vom August 2025 ([Zeitl
 
 ### 10. „7x gehört es, und 7x kann es schließen.“
 
-7x und die Exponential Foundation halten das Urheberrecht gemeinsam, und der Code steht unter der GPL, die es jedem
+Die Exponential Foundation und 7x halten das Urheberrecht gemeinsam, und der Code steht unter der GPL, die es jedem
 erlaubt, ihn zu behalten und weiterzuführen ([Lizenzen für Reporter erklärt](lizenzen-fuer-reporter-erklaert.md)).
 
 ## Warum es die Mythen gibt

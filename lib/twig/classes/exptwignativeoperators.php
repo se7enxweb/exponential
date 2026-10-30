@@ -12,7 +12,7 @@
  * The parity tests (the engine's 453 cases, every logic and arithmetic case of eZTemplateOperatorMatrixTest) hold the
  * results to the template system's.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package lib
  */

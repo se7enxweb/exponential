@@ -13,7 +13,7 @@
  * Links: a link to another topic arrives from the renderer as /__dita_topic__/<help_id>; the callable "topic_link"
  * decides its target (array( href, scope ) or null). Other links keep their (absolute) address as external links.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

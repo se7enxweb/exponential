@@ -79,7 +79,7 @@ Prüfen Sie, ob die Konsole läuft:
 ```
 
 Erwartet: Die erste Zeile lautet `console (Exponential) 6.0.15stable` (oder die Version, die Sie installiert haben), und der Text endet
-mit `Written by 7x (se7enx.com) and the Exponential contributors.`
+mit `Written by the Exponential Foundation and 7x (se7enx.com).`
 Wenn Sie als `root` arbeiten, ergänzen Sie `--allow-root-user` bei den Skripten, die danach verlangen. Die Meldung des Skripts sagt es Ihnen.
 
 ## 3. Installieren

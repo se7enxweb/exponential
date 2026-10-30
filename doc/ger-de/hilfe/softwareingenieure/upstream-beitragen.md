@@ -36,8 +36,8 @@ Seite ordnet ihn und ergänzt die technischen Prüfungen.
 7x und die Exponential Foundation verlangen für jeden Code-Beitrag zum Kern-Kernel ein unterschriebenes Contributor
 Licensing Agreement, bevor er zusammengeführt werden kann, gleich in welcher Form er ankommt (Pull-Request, Patch, Code in
 einem Issue, E-Mail). `CONTRIBUTING.md` sagt es deutlich: **Indem Sie die CLA unterschreiben und einen Beitrag zum
-Kern-Kernel einreichen, übertragen Sie das Urheberrecht an diesem Beitrag an 7x**, das ihn ohne Rückfrage oder Bezahlung
-verwenden, ändern, neu lizenzieren und verbreiten darf; Sie können ihn nicht zurückziehen oder an Bedingungen knüpfen. Sie
+Kern-Kernel einreichen, übertragen Sie das Urheberrecht an diesem Beitrag an die Exponential Foundation und 7x**, die ihn ohne Rückfrage oder Bezahlung
+verwenden, ändern, neu lizenzieren und verbreiten dürfen; Sie können ihn nicht zurückziehen oder an Bedingungen knüpfen. Sie
 wird einmal für alle künftigen Beiträge unterschrieben. Ihre eigenen Erweiterungen sind nicht betroffen. Lesen Sie die
 Vereinbarung selbst, bevor Sie unterschreiben; die Zusammenfassung ist keine Rechtsberatung. Hat Ihr Arbeitgeber Rechte an
 dem, was Sie schreiben, brauchen Sie seine Erlaubnis.

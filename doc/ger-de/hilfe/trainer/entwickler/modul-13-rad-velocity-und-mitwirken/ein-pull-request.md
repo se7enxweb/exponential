@@ -81,7 +81,7 @@ anzunehmen ist ([Code-Reviews](../../../../../../CONTRIBUTING.md#code-reviews)).
 **Muss ich etwas unterschreiben?** Für einen Code-Beitrag zum Kernel ja: 7x und die Exponential Foundation übernehmen
 ihn erst, wenn das unterschriebene Contributor Licensing Agreement der Autorin oder des Autors eingegangen ist. Sagen
 Sie klar, was das bedeutet: Mit Unterschrift und Einreichung überträgt die Autorin oder der Autor das Urheberrecht am
-Beitrag an 7x, das damit Eigentümer wird, und gibt die Kontrolle darüber ab; 7x darf ihn auf jede Weise verwenden,
+Beitrag an die Exponential Foundation und 7x, die damit Eigentümer werden, und gibt die Kontrolle darüber ab; die Exponential Foundation und 7x dürfen ihn auf jede Weise verwenden,
 ändern, neu lizenzieren und verbreiten, ohne zu fragen oder zu bezahlen, und die Autorin oder der Autor kann ihn weder
 zurückziehen noch Bedingungen daran knüpfen. Es wird einmal unterschrieben. Ein im Kurs eröffneter Pull Request kann
 darauf warten. Die eigenen Erweiterungen der Teilnehmenden sind nicht betroffen

@@ -68,8 +68,8 @@ git push -u fork fix-<short-name>
 For the kernel, read CONTRIBUTING.md together: the commit hook (`make hooks`) and the file manifest
 (`make manifest-fix`) ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
 Tell them early that a code contribution to the kernel is merged only once they have signed the Contributor
-Licensing Agreement that 7x and the Exponential Foundation require, and explain plainly what it means: **by signing
-and submitting, they assign the copyright in the contribution to 7x, which becomes its owner, and give up control over it.** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without asking or paying them, and
+Licensing Agreement that the Exponential Foundation and 7x require, and explain plainly what it means: **by signing
+and submitting, they assign the copyright in the contribution to the Exponential Foundation and 7x, which become its owners, and give up control over it.** The Exponential Foundation and 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without asking or paying them, and
 they cannot withdraw it or set conditions on it
 ([Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)). Their own extensions are
 not affected.
@@ -109,7 +109,7 @@ takes even longer to review. If it cannot wait, suggest an option that keeps tod
 [ ] They have a GitHub account (with two-factor authentication)
 [ ] They chose the path (docs, translation, code) and read the page for it
 [ ] Commit message starts with Added:/Updated:/Fixed:/Removed:/Renamed:
-[ ] For a kernel code change: they know the CLA gives control of it to 7x, and their signed CLA is on file
+[ ] For a kernel code change: they know the CLA gives control of it to the Exponential Foundation and 7x, and their signed CLA is on file
 [ ] No secrets or personal data in the change
 [ ] Pull request text: what, why, how tested
 [ ] They know how to squash and rebase their pull request onto main

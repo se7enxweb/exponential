@@ -11,7 +11,7 @@
  *  HP-05  the clean data and every update SQL: no policy of the Anonymous role (1) for exphelp or for every module
  *  HP-06  the view scripts check the policy or rely on the module's functions, and never answer without it
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

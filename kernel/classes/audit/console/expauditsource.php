@@ -15,7 +15,7 @@
  * string or an absolute URL; the registry drops anything else. A source returns only links the current user may
  * follow. A source that throws is left out of that page and reported in error.log; it never breaks a view.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

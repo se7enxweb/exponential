@@ -41,7 +41,7 @@ Diese Befehle lesen nur. Führen Sie sie im Wurzelverzeichnis der Installation a
 
 Erwartet: Die erste Zeile lautet `console (Exponential) 6.0.15stable`. Darunter stehen die Version, der Build, die
 Anzahl der Extensions, der Webserver und die PHP-Version, und am Ende die Zeile
-`Written by 7x (se7enx.com) and the Exponential contributors.`
+`Written by the Exponential Foundation and 7x (se7enx.com).`
 
 ```bash
 ./console list exp

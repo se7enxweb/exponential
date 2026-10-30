@@ -83,7 +83,7 @@ Begutachtungsrunden als üblich durch, bevor es einen Commit oder Pull Request a
 - Codebeiträge stehen unter der GNU GPL Version 2 oder später, wie der Rest von Exponential.
 - Dokumentation ist freie Dokumentation unter der GNU FDL 1.3 oder später ([Freie Dokumentation](../freie-dokumentation.md)).
 - Ein Codebeitrag zum Kernel wird erst gemergt, wenn sein Autor das Contributor Licensing Agreement unterzeichnet hat,
-  mit dem der Autor das Urheberrecht an 7x überträgt. Lesen Sie [Die CLA für Lernende](die-cla-fuer-lernende.md), bevor
+  mit dem der Autor das Urheberrecht an die Exponential Foundation und 7x überträgt. Lesen Sie [Die CLA für Lernende](die-cla-fuer-lernende.md), bevor
   Sie Kernel-Code einsenden. Ihre eigenen Erweiterungen sind davon nicht betroffen.
 
 ## Wo Sie anfangen

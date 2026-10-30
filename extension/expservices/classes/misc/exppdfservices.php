@@ -4,7 +4,7 @@
  * produces the PDF of a node, and the PDF export definitions of the pdf module (pdf/create, pdf/edit). The PDF itself
  * is downloaded from the link (content/pdf/<node>), which checks the policy again.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

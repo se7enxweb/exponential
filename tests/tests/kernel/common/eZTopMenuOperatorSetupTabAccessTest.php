@@ -9,7 +9,7 @@
  * No database: the user is a stub whose policies are the test's, [Topmenu_setup] is the one in settings/menu.ini,
  * and the address of the tab is checked as the kernel checks the request (expViewAccess, CheckViewAccess=enabled).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

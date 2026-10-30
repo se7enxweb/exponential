@@ -4,7 +4,7 @@
  * the layout resolved for a node, and drafts (create, publish, discard). Policies explayouts/read and
  * explayouts/edit. Answers 404 "not available" when the extension is inactive.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

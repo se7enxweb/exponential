@@ -4,7 +4,7 @@
  * the digest settings) and the notification queue for administrators. Own data needs the notification/use
  * policy, the queue and other users' subscriptions notification/administrate.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

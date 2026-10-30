@@ -8066,8 +8066,8 @@
         <translation>Los avisos de copyright de los autores orixinales y del software de terceros incluyíu con Exponential caltiénense nos ficheros fonte y nel ficheru LICENSE, tal como pide la llicencia.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Darréu hai una llista de los collaboradores d'Exponential que llicenciaron el so trabayu pa que 7x lu use según los términos y condiciones del eZ Systems Contributor Licensing Agreement. Como permite esti alcuerdu, 7x redistribúi cada contribución baxo la mesma llicencia que'l ficheru nel que ta incluyida. La llista indica cada collaborador, datos de contautu opcionales y los ficheros que aportó o nos que collaboró.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Collaboradores reconocíos pol so trabayu n'Exponential y nel software del que naz, colos ficheros nos que collaboraron. Esto ye un reconocimientu, non un avisu de copyright: les collaboraciones a Exponential cédense a la Exponential Foundation y a 7x sol Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

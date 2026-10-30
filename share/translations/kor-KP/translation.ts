@@ -8066,8 +8066,8 @@
         <translation>원저작자와 Exponential에 포함된 타사 쏘프트웨어의 저작권 고지는 라이선스에서 요구하는 대로 소스 화일과 LICENSE 화일에 보존됩니다.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>다음은 eZ Systems Contributor Licensing Agreement의 약관에 따라 7x가 사용할수 있도록 자신의 작업에 대한 사용을 허가한 Exponential 기여자 목록입니다. 이 계약에서 허용하는 대로 7x는 각 기여를 그 기여가 포함된 화일과 동일한 라이선스로 재배포합니다. 목록에는 각 기여자, 선택 사항인 련락처 정보, 그리고 기여자가 만들었거나 작업에 기여한 화일이 나와있습니다.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential과 그 바탕이 된 쏘프트웨어에 대한 작업으로 이름이 밝혀진 기여자들과 그들이 기여한 파일입니다. 이것은 감사의 표시이며 저작권 고지가 아닙니다. Exponential에 대한 기여는 Contributor Licensing Agreement에 따라 Exponential Foundation과 7x에 양도됩니다.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

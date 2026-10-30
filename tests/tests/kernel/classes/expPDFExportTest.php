@@ -13,7 +13,7 @@
  *  PE-08 - The edit form: a title, a source, classes for a tree, a safe and free file name
  *  PE-09 - The list: page sizes, the offset after a removal, the search as typed, its address
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

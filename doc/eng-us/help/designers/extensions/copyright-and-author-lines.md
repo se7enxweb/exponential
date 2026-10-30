@@ -50,3 +50,11 @@ original holders and adds the one who ported it.
 - [Copyright notices in files](../distribution/copyright-notices-in-files.md)
 - [Rebranding a fork, fairly](../lifecycle/rebranding-a-fork.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+## Copyright and copyleft
+
+Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
+Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
+[Copyright and copyleft](../../copyright-and-copyleft.md).

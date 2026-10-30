@@ -633,7 +633,7 @@ Share Exponential! Telegram Community Support Chat
 Everyone is encouraged to [contribute](CONTRIBUTING.md) to the development of new features and bugfixes for Exponential 6.
 
 Code contributions to the core kernel (this repository), whether by pull request, patch, issue or mail, are merged
-only once the author has signed the 7x Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, including commercially
+only once the author has signed the Exponential Foundation and 7x Contributor Licensing Agreement (version 1.1.0). **By signing and submitting, you assign the copyright in your contribution to the Exponential Foundation and 7x, which become its owners, and give up control over it:** The Exponential Foundation and 7x may use, change, relicense and distribute it in any way, including commercially
 and under other licenses, without asking or paying you, and you cannot withdraw it or set conditions. See
 [Copyright assignment (CLA)](CONTRIBUTING.md#copyright-assignment-cla). Your own custom extensions are not affected.
 
@@ -767,3 +767,18 @@ Using Exponential under the terms of the GNU GPL is free of charge.
 The Professional License is no longer available. 
 
 This effectively makes Exponential GNU GPLv2-or-later ONLY.
+
+# Copyright
+
+Exponential Copyright © 1998-2026 Exponential Foundation and 7x
+
+In source files: `Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.`
+Originally developed by eZ Systems AS as eZ Publish: Copyright (C) 1999 - 2014 eZ Systems AS. All rights reserved.
+
+On 29 October 2026 the copyright of Exponential moved from 7x alone to the Exponential Foundation and 7x together,
+and the project replaced every notice it had with this one. The Foundation is named first on purpose: the nonprofit
+steward of the project, so that the software's rights, its license and its history do not depend on any one company
+over the twenty-year support window of a release line. 7x leads the development and is a full holder. The notice is
+never translated. See [COPYRIGHT.md](COPYRIGHT.md) and
+[Copyright and copyleft](doc/eng-us/help/copyright-and-copyleft.md) for the history, what the GPL means for you, the
+third-party notices that stay and how to write the notice in new files and extensions.

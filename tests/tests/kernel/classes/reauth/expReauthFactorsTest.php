@@ -11,7 +11,7 @@
  *        the passkey; with only a password, the password; without a password, a passkey; with nothing, nothing
  *  RF-05 chosenCombination(): a form names one of those offered or gets the first; a weaker one it names is refused
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

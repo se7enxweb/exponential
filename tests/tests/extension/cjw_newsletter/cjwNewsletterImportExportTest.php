@@ -11,7 +11,7 @@ require_once __DIR__ . '/cjwNewsletterTestCase.php';
  * no other suite's cleanup removes them mid-test), everything removed in tearDown.
  * The old eznewsletter tables are never created in the installation's database.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

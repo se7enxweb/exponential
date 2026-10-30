@@ -4,7 +4,7 @@
  * MySQL removed that variable in 5.7.5 and MariaDB in 12.0, so a file that still says it stops on its first line.
  * Reads the files only; needs no database.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group updatesql

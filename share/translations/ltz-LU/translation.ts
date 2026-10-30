@@ -8066,8 +8066,8 @@
         <translation>D'Copyrightinformatioune vun den ursprénglechen Auteuren an der Software vun Drëttubidder, déi mat Exponential matgeliwwert gëtt, bleiwen, wéi d'Lizenz et verlaangt, an de Quellfichieren an am Fichier LICENSE erhalen.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Dëst ass eng Lëscht vun de Matwierkenden un Exponential, déi hir Aarbecht 7x ënner de Bedingunge vum eZ Systems Contributor Licensing Agreement zur Verfügung gestallt hunn. Wéi dës Vereinbarung et erlaabt, gëtt 7x all Bäitrag ënner der selwechter Lizenz weider wéi de Fichier, an deem hien enthale ass. D'Lëscht nennt all Matwierkenden, optional Kontaktangaben an d'Fichieren, zu deenen en bäigedroen huet.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Bäiträger, déi fir hir Aarbecht un Exponential an un der Software, aus där et entstanen ass, genannt ginn, mat de Fichieren, zu deenen si bäigedroen hunn. Dëst ass eng Unerkennung, keen Copyright-Hiweis: Bäiträg zu Exponential ginn ënner dem Contributor Licensing Agreement un d'Exponential Foundation an 7x iwwerdroen.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

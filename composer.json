@@ -3,6 +3,19 @@
     "description": "Exponential 6. Maintained by 7x. For General Use With PHP 8.0 through 8.5. Further feature releases in development. Please sponsor our work on the Exponential (CMS System). This is capable of being used standalone or combined with Ibexa OSS",
     "homepage": "https://se7enx.com",
     "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Exponential Foundation",
+            "homepage": "https://foundation.exponential.earth",
+            "role": "Copyright holder (Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.)"
+        },
+        {
+            "name": "7x",
+            "email": "info@se7enx.com",
+            "homepage": "https://se7enx.com",
+            "role": "Copyright holder and maintainer"
+        }
+    ],
     "type": "ezpublish-legacy",
     "suggest": {
         "php-64bit": "For support of more than 30 languages, a 64bit php installation on all involved prod/dev machines is required",

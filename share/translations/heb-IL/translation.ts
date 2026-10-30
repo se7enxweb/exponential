@@ -8007,8 +8007,8 @@
         <translation>הודעות זכויות היוצרים של המחברים המקוריים ושל תוכנות הצד השלישי הכלולות ב־Exponential נשמרות בקובצי המקור ובקובץ LICENSE, כפי שהרישיון דורש.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>להלן רשימת התורמים ל־Exponential שהעניקו רישיון לשימוש ביצירתם ל־7x בהתאם לתנאי eZ Systems Contributor Licensing Agreement. כפי שהסכם זה מתיר, 7x מפיצה כל תרומה באותו רישיון של הקובץ שבו התרומה כלולה. הרשימה מציינת כל תורם, פרטי קשר אופציונליים ואת הקבצים שתרם או שתרם להם.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>תורמים שזוכים להכרה על עבודתם ב-Exponential ובתוכנה שממנה צמח, עם הקבצים שתרמו להם. זוהי הכרה, לא הודעת זכויות יוצרים: התרומות ל-Exponential מועברות ל-Exponential Foundation ול-7x לפי Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

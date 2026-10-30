@@ -3,7 +3,7 @@
  * Router for PHP's built-in web server, as the php engine of exp:velocity
  * runs it (php -S host:port -t <root> bin/php/velocity-router.php).
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -104,7 +104,7 @@ und die Geschichte.
 | **Changelog** | Die Liste der Änderungen eines Release. [Ein Changelog lesen](ein-changelog-lesen.md) |
 | **Main-Branch** | Wo die Entwicklung stattfindet; jederzeit öffentlich |
 | **Pull Request** | Eine vorgeschlagene Änderung; das Projekt übernimmt jeden Pull Request |
-| **CLA** | Contributor Licensing Agreement: was jemand, der zum Kernel beiträgt, vor der ersten Übernahme einmal unterschreibt; mit der Unterschrift und der Einreichung überträgt er das Urheberrecht an 7x und gibt die Kontrolle ab: 7x darf den Beitrag auf jede Weise nutzen, ändern, neu lizenzieren und verbreiten, ohne zu fragen oder zu bezahlen, und er kann ihn nicht zurückziehen. Die eigenen Erweiterungen der Anwender sind nicht betroffen. [Übertragung des Urheberrechts (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) |
+| **CLA** | Contributor Licensing Agreement: was jemand, der zum Kernel beiträgt, vor der ersten Übernahme einmal unterschreibt; mit der Unterschrift und der Einreichung überträgt er das Urheberrecht an die Exponential Foundation und 7x und gibt die Kontrolle ab: 7x darf den Beitrag auf jede Weise nutzen, ändern, neu lizenzieren und verbreiten, ohne zu fragen oder zu bezahlen, und er kann ihn nicht zurückziehen. Die eigenen Erweiterungen der Anwender sind nicht betroffen. [Übertragung des Urheberrechts (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) |
 | **In Entwicklung** | Noch nicht veröffentlicht, wie 6.0.15 am 18. Oktober 2026 |
 
 ## Verwandte Seiten

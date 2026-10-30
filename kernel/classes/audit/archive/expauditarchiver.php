@@ -29,7 +29,7 @@
  * and the next manifest's previous_manifest still verifies. Signing keys still used by a retained manifest are
  * reported as needed; a key is never removed from the settings by retention.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -35,7 +35,7 @@ This page is for designers sending a change to another maintainer's theme or to 
    ([Code reviews](../../../../../CONTRIBUTING.md#code-reviews)).
 9. **For the Exponential kernel** (`se7enxweb/exponential`), have your signed Contributor Licensing Agreement on file:
    7x and the Exponential Foundation merge a kernel contribution only after it has been received. **By signing and
-   submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without asking or paying you,
+   submitting, you assign the copyright in your contribution to the Exponential Foundation and 7x, which become its owners, and give up control over it:** The Exponential Foundation and 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without asking or paying you,
    and you cannot withdraw it or set conditions on it
    ([Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)). Other maintainers'
    themes and your own themes are not affected.

@@ -8066,8 +8066,8 @@
         <translation>Exponential कन्नै आए दे मूल लेखकें ते तीजी पार्टी दे सॉफ्टवेयर दे कापीराइट दे नोटिस, जिʼयां लाइसेंस आखदा ऐ, सोर्स फाइलें ते LICENSE फाइल च सुरक्खत न।</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>हेठ Exponential दे उʼऐ योगदान दिन्देआलें दी सूची ऐ जिʼन्नें अपना कम्म eZ Systems Contributor Licensing Agreement दी शर्तें हेठ 7x दे इस्तेमाल आस्तै लाइसेंस कीता ऐ। इस समझौते दी इजाजत मताबक 7x हर योगदान गी उसे लाइसेंस हेठ बंडदा ऐ जिस फाइल च योगदान शामल ऐ। इस सूची च हर योगदान दिन्देआले दा नांऽ, वैकल्पिक संपर्क जानकारी ते उʼनें फाइलें दा नांऽ ऐ जिʼनें च उʼन्नें योगदान दित्ता ऐ।</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential ते उस सॉफ्टवेयर पर कम्मै आस्तै श्रेय पाने आह्‌ले योगदानकर्ता जिस थमां एह् बनेआ, उनें फाइलें कन्नै जिंदे च उनें योगदान दित्ता। एह् श्रेय ऐ, कॉपीराइट सूचना नेईं: Exponential च योगदान Contributor Licensing Agreement दे तैह्‌त Exponential Foundation ते 7x गी सौंपे जंदे न।</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

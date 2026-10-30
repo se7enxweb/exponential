@@ -18,7 +18,7 @@
  * address must also match as they are shown masked, so a hidden value (the host part of an address, a token in a
  * request) cannot be found out by trying searches and watching for hits.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

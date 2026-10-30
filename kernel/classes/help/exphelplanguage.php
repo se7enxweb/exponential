@@ -29,7 +29,7 @@
  *   $languages->translated( 'ger-de', 'guides/caches.md' );     // 'anleitungen/caches.md'
  *   $languages->resolveDirectory( 'en-us' );            // 'eng-us' (a /(lang)/ value, old or new)
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

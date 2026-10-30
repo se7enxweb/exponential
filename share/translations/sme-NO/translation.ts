@@ -8066,8 +8066,8 @@
         <translation>Álgoálgosaš čálliid ja Exponentialain mielde juhkojuvvon goalmmátoasi prográmmaid sárgáhusrievttiid dieđut leat vurkejuvvon gáldofiillain ja LICENSE-fiillas, nu mo liseansa gáibida.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Čuovvovaš lea listu Exponential-veahkeheaddjiin geat leat liseanseren iežaset barggu 7x:a geavahussii eZ Systems Contributor Licensing Agreement -šiehtadusa eavttuid vuolde. Nu mo šiehtadus lohpida, 7x juhká viidáseappot juohke veahki seamma liseanssa vuolde go dat fiila masa dat gullá. Listu namuha juohke veahkeheaddji, eaktodáhtolaš oktavuođadieđuid ja fiillaid maidda son lea veahkehan.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Oasseválddit geaid namahuvvojit sin barggu dihte Exponential ja dan prográmma, mas dat šattai, oktan fiillaiguin maidda sii leat váikkuhan. Dát lea dovddasteapmi, ii ge dahkkivuoigatvuođa dieđáhus: oasseváldimat Exponentialii addojuvvojit Exponential Foundationii ja 7x:ii Contributor Licensing Agreement mielde.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

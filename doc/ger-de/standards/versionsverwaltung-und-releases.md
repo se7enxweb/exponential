@@ -52,7 +52,7 @@ mit [Mit Git entwickeln](../hilfe/mit-git-entwickeln.md).
 - **Ein Beitrag zum Kernel wird gemergt, sobald die CLA seines Autors vorliegt.** 7x und die Exponential Foundation
   verlangen für jeden Codebeitrag zum Kern-Kernel eine unterzeichnete Contributor Licensing Agreement, gleich ob er als
   Pull Request, Patch, Issue oder per Mail eingeht ([Übertragung des Urheberrechts (CLA)](../../../CONTRIBUTING.md#copyright-assignment-cla)).
-  Mit Unterzeichnung und Einreichung überträgt der Beitragende das Urheberrecht am Beitrag an 7x, das damit dessen Eigentümer wird, und gibt die Kontrolle darüber auf: 7x darf ihn in jeder Weise verwenden, ändern, neu lizenzieren und verbreiten, und der Beitragende kann ihn weder zurückziehen noch an Bedingungen knüpfen. Die Vorlage für Pull Requests hat dafür ein Kontrollkästchen. Eigene Extensions der Benutzer
+  Mit Unterzeichnung und Einreichung überträgt der Beitragende das Urheberrecht am Beitrag an die Exponential Foundation und 7x, die damit dessen Eigentümer werden, und gibt die Kontrolle darüber auf: Die Exponential Foundation und 7x dürfen ihn in jeder Weise verwenden, ändern, neu lizenzieren und verbreiten, und der Beitragende kann ihn weder zurückziehen noch an Bedingungen knüpfen. Die Vorlage für Pull Requests hat dafür ein Kontrollkästchen. Eigene Extensions der Benutzer
   sind nicht betroffen.
 - **Kein Force-Push und kein Umschreiben veröffentlichter Historie.** Ein Commit auf `main` ist öffentlich; ein
   Umschreiben würde jeden späteren Commit verschieben und jeden Tag, der in diesen Bereich zeigt, verwaisen lassen. Die

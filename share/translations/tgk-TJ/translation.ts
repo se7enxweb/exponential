@@ -8066,8 +8066,8 @@
         <translation>Огоҳиҳои ҳуқуқи муаллифии муаллифони аслӣ ва нармафзори тарафҳои сеюм, ки бо Exponential омадаанд, тавре ки иҷозатнома талаб мекунад, дар файлҳои сарчашма ва дар файли LICENSE нигоҳ дошта мешаванд.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Дар зер рӯйхати иштирокчиёни Exponential оварда шудааст, ки кори худро барои истифодаи 7x тибқи шартҳои eZ Systems Contributor Licensing Agreement иҷозатнома додаанд. Тавре ки ин созишнома иҷозат медиҳад, 7x ҳар саҳмро таҳти ҳамон иҷозатномае, ки файли дорои он саҳм дорад, боз пахш мекунад. Рӯйхат номи ҳар иштирокчӣ, маълумоти тамоси ихтиёрӣ ва файлҳоеро, ки ӯ дар онҳо саҳм гузоштааст, дарбар мегирад.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Иштирокчиёне, ки барои кори худ дар Exponential ва дар нармафзоре, ки аз он ба вуҷуд омадааст, ёдовар мешаванд, бо файлҳое, ки дар онҳо саҳм гузоштаанд. Ин қадрдонӣ аст, на огоҳинома дар бораи ҳуқуқи муаллиф: саҳмҳо ба Exponential тибқи Contributor Licensing Agreement ба Exponential Foundation ва 7x супорида мешаванд.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

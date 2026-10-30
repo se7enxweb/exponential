@@ -7,7 +7,7 @@
  * a save without an edit) warned once per empty cell, before the page's doctype where errors are displayed.
  * No database: the handler and the parser need only the settings.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

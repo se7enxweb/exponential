@@ -28,7 +28,7 @@
  *          itself; the HTTP cache contract does not load eZFile or eZDir (Velocity's parent loads it before its source
  *          transform, and an eZFile compiled there sent every download without its headers) and limits a mode as they do
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  */

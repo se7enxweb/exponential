@@ -8267,8 +8267,8 @@
         <translation>De copyrightvermeldingen van de oorspronkelijke auteurs en van de software van derden die bij Exponential is opgenomen, worden in de bronbestanden en in het bestand LICENSE bewaard, zoals de licentie vereist.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Hieronder volgt een lijst van bijdragers aan Exponential die hun werk in licentie hebben gegeven voor gebruik door 7x onder de voorwaarden van de eZ Systems Contributor Licensing Agreement. Zoals deze overeenkomst toestaat, herdistribueert 7x elke bijdrage onder dezelfde licentie als het bestand waarin de bijdrage is opgenomen. De lijst noemt elke bijdrager, optionele contactgegevens en de bestanden waaraan zij hebben bijgedragen.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Bijdragers die worden vermeld voor hun werk aan Exponential en aan de software waaruit het is voortgekomen, met de bestanden waaraan zij hebben bijgedragen. Dit is een vermelding, geen copyrightvermelding: bijdragen aan Exponential worden onder de Contributor Licensing Agreement overgedragen aan de Exponential Foundation en 7x.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

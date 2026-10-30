@@ -4,7 +4,7 @@
  * not know ends with a non-zero exit status: it printed the help and exited 0, so "-e --allow-root-user" silently
  * generated nothing. Only --help and an unknown option are run: nothing is scanned or written.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

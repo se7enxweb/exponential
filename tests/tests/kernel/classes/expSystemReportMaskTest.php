@@ -12,7 +12,7 @@
  *  SM-07 - A whole report: nested secrets hidden, strings masked, numbers and booleans kept
  *  SM-08 - The names agree with exp:ini, the audit log and the settings pages (expSecretRule); request names are added
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -8,7 +8,7 @@
  * only content_type gets that type, as before; one that sets neither stays plain text. The registration mails use it
  * (doc/eng-us/features/6.0/registration-admin-links.md).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

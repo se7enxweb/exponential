@@ -5,7 +5,7 @@
  * so the button never takes a row of its own; a page without a translation shows the button alone in that line.
  * The line wraps (flex-wrap) and may shrink (min-width: 0), so it fits 960px at 200% zoom. No database.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

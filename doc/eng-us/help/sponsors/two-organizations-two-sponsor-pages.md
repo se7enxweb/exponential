@@ -44,8 +44,8 @@ project itself".
 
 The Foundation describes its work as happening "through the work of 7x the current leader in contributions both
 financial, code, extension development, new features, infrastructure, maintenance and much much more back to the
-project" (<https://foundation.exponential.earth/supporters>). The copyright of the code is held by "7x & Exponential
-Foundation" together (COPYRIGHT.md). Funding either one supports the same code, the same releases and the same
+project" (<https://foundation.exponential.earth/supporters>). The copyright of the code is held by the "Exponential
+Foundation and 7x" together (COPYRIGHT.md). Funding either one supports the same code, the same releases and the same
 community.
 
 ## Related pages

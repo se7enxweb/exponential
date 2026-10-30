@@ -15,7 +15,7 @@
  *  CS-08 - (changes the installation, so only with EXP_COLLAB_SAMPLE_MUTATE=1 on an installation without sample data)
  *          --apply builds the set, a second --apply creates nothing, --remove --apply leaves nothing behind
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group collaboration

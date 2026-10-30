@@ -26,7 +26,7 @@ This page is for advocates with a quick question about advocacy itself.
 | Someone told me about a vulnerability | Route it privately | [Security reports stay private](security-reports-stay-private.md) |
 | Where do I propose ideas for the project? | The community issue tracker | [Which tracker for which report](which-tracker-for-which-report.md) |
 | Is there a code of conduct? | Yes: CODE_OF_CONDUCT.md, the Contributor Covenant 2.1 with Exponential additions; reports to community@se7enx.com | [The Exponential code of conduct](../project/code-of-conduct.md), [Advocate conduct and ethics](advocate-conduct-and-ethics.md) |
-| Does a contributor have to sign anything? | For code contributions to the kernel, yes: a Contributor Licensing Agreement, once, before the first merge. By signing and submitting, they assign the copyright in the contribution to 7x and give up control of it: 7x may use, change, relicense and distribute it without asking or paying them, and they cannot withdraw it. Their own extensions need nothing | [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) |
+| Does a contributor have to sign anything? | For code contributions to the kernel, yes: a Contributor Licensing Agreement, once, before the first merge. By signing and submitting, they assign the copyright in the contribution to the Exponential Foundation and 7x and give up control of it: 7x may use, change, relicense and distribute it without asking or paying them, and they cannot withdraw it. Their own extensions need nothing | [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) |
 | How do I support the project financially? | The two GitHub Sponsors pages | [Advocating for sustainable funding](advocating-for-sustainable-funding.md) |
 | Where do I start? | Your first hour, then your first week | [Advocates: start here](advocates-start-here.md#your-first-hour) |
 
@@ -43,3 +43,11 @@ develop the products with us, and that is how Exponential grows. A partner websi
 mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
 [Partners: start here](../partners/partners-start-here.md) and [How to apply](../partners/how-to-apply.md).
 <!-- exp-partner-block:end -->
+
+## Copyright and copyleft
+
+Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
+Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
+[Copyright and copyleft](../copyright-and-copyleft.md).

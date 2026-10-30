@@ -10,7 +10,7 @@
  *  SE-04 - The values of password=, pwd=, token: and 'secret' => pairs are replaced, also with a prefix
  *  SE-05 - Values without a secret are left exactly as they are; each caller chooses its mask text
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

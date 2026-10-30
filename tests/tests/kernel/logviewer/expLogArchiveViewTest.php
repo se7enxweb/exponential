@@ -13,7 +13,7 @@
  *          permalink opens the same file again
  *  LV-114  a search with the rotations reads the archives too, compressed ones included
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

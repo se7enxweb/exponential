@@ -218,7 +218,8 @@ und [Geben und spenden](geben-und-spenden.md).
 Für den Kern-Kernel ja. 7x und die Exponential Foundation verlangen für jeden Code-Beitrag zum Kernel eine
 unterschriebene Contributor Licensing Agreement (CLA), bevor er übernommen werden kann, gleich ob er als Pull Request,
 Patch, Issue oder per E-Mail eingereicht wird. **Mit Unterschrift und Einreichung übertragen Sie das Urheberrecht an
-Ihrem Beitrag an 7x, das sein Eigentümer wird, und geben die Kontrolle darüber auf:** 7x darf ihn auf jede Weise
+Ihrem Beitrag an die Exponential Foundation und 7x, die seine Eigentümer werden, und geben die Kontrolle darüber
+auf:** Die Exponential Foundation und 7x dürfen ihn auf jede Weise
 verwenden, ändern, neu lizenzieren und verbreiten, auch unter anderen Lizenzen und in kommerziellen Produkten, ohne
 Sie zu fragen oder zu bezahlen, und Sie können ihn weder zurückziehen noch an Bedingungen knüpfen. Sie unterschreiben
 einmal für alle künftigen Beiträge. Ihre eigenen Extensions, Seitenpakete und Themes sind nicht betroffen. Siehe
@@ -245,3 +246,11 @@ und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-We
 Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->
+
+## Urheberrecht und Copyleft
+
+Seit dem 29. Oktober 2026 halten die Exponential Foundation und 7x das Copyright an Exponential gemeinsam, die
+Foundation zuerst genannt: „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“, in Dateien
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ Wer es hält und warum, was die
+GPL Ihnen erlaubt, welche Hinweise Dritter bleiben und wie der Hinweis in neue Dateien und Erweiterungen kommt:
+[Urheberrecht und Copyleft](../urheberrecht-und-copyleft.md).

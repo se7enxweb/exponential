@@ -36,6 +36,7 @@ allowed to use is shown grayed out or not at all.
 |---|---|
 | [Who is 7x?](who-is-7x.md) | Know the company behind Exponential: nearly thirty years with this code, from the eZ Publish years to Exponential 6, the products, the community and how to take part |
 | [Who is the Exponential Foundation?](who-is-the-exponential-foundation.md) | Know the nonprofit that operates the open source project, the whole family of Exponential products and what the project commits to |
+| [Copyright and copyleft](copyright-and-copyleft.md) | Know who holds the copyright of Exponential (the Exponential Foundation and 7x together, since the historical shift of 29 October 2026), why the Foundation is named first, what the GPL lets you do, and how to write the notice in your own files and extensions |
 | [Our goals](../goals.md) | Know why Exponential exists, what is already built in so you do not have to build it, why it is free software, how 7x earns a living, and why we invite you to join, with honest answers to doubts about our intentions |
 | [Community](community/community-start-here.md) | Know the Exponential Community: the people who use, contribute to, promote and develop software using Exponential worldwide |
 | [Ecosystem](ecosystem/ecosystem-start-here.md) | Know the greater ecosystem beyond the community: every part of the Exponential world within the PHP stack, its users and creators |

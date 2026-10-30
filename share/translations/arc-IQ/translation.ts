@@ -8067,8 +8067,8 @@
         <translation>מודענותא דזדקא דנסחא דסיומא שרשיא ודסופטויר דגבא תליתיא דעליל עם Exponential נטירן בפנקיתא דמבועא ובפנקיתא LICENSE, איך מא דרשיותא בעיא.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>הדא הי רשימתא דמעדרנא ד Exponential דיהבו רשיותא לעבדא דילהון לפולחנא ביד 7x תחית תנאי קימא דרשיותא דמעדרנא ד eZ Systems. איך מא דהנא קימא מפס, 7x מפלג כל עודרנא תחית הי רשיותא דפנקיתא דבה עליל עודרנא. רשימתא משמהא כל מעדרנא, ידעתא דאחינותא לא אלציתא ופנקיתא דעדרו בהין.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>ܡܥܕܪ̈ܢܐ ܕܡܬܝܕܥܝܢ ܥܠ ܥܒܕܗܘܢ ܒ Exponential ܘܒܬܘܟܢܝܬܐ ܕܡܢܗ ܪܒܬ، ܥܡ ܦܢܝܬ̈ܐ ܕܥܕܪܘ ܠܗܝܢ. ܗܕܐ ܬܘܕܝܬܐ ܗܝ ܘܠܐ ܡܘܕܥܢܘܬܐ ܕ copyright: ܥܘܕܪ̈ܢܐ ܠ Exponential ܡܫܬܠܡܝܢ ܠ Exponential Foundation ܘ 7x ܬܚܝܬ Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

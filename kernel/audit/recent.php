@@ -2,7 +2,7 @@
 /**
  * Entry point of kernel/audit/recent.php: the latest audit events and the state of each channel's hash chain.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

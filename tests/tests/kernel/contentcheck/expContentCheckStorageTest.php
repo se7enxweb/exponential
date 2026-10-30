@@ -30,7 +30,7 @@
  *         only, in order, the first N and "More", the current one and the one the start location lies in; the picker
  *         at another level; the links keep plain filters only; one template in both designs
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

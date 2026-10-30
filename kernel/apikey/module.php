@@ -11,7 +11,7 @@
  * needs the policy it stands for (rest.ini [ApiKeySettings] Scopes[]), so a key never exceeds its owner.
  * No role has it in a new installation; give it to the roles that may publish through the API.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -42,7 +42,7 @@ described in [Contribute extensions back](../contribute-extensions-back.md) and 
 7x and the Exponential Foundation require a signed Contributor Licensing Agreement for every code contribution to the
 core kernel, before it can be merged. Read the agreement and the summary in `CONTRIBUTING.md` ("Copyright assignment
 (CLA)") before you sign: by signing and submitting a contribution to the core kernel, you assign the copyright in that
-contribution to 7x. You sign once for all your future contributions; a pull request without a signed CLA on file is
+contribution to the Exponential Foundation and 7x. You sign once for all your future contributions; a pull request without a signed CLA on file is
 reviewed but not merged until it is received.
 
 ## Fork, clone, branch

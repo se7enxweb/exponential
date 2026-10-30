@@ -14,7 +14,7 @@
  *  MC-08 - A CLI process that serves the web (Velocity, a request method with a Host header) counts as a web request
  *  MC-09 - expIniEditor::save() refuses in a web request with the switch; generated key material is still written
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

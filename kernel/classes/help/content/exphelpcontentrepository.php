@@ -7,7 +7,7 @@
  * Everything is found by remote_id (help-root ...) and class identifier, never by a node, section or state id from a
  * settings file: those differ between installations.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

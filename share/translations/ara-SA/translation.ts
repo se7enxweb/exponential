@@ -8005,8 +8005,8 @@
         <translation>تُحفظ إشعارات حقوق النشر للمؤلفين الأصليين ولبرامج الجهات الخارجية المضمنة مع Exponential في ملفات المصدر وفي ملف LICENSE، كما يتطلب الترخيص.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>فيما يلي قائمة بمساهمي Exponential الذين رخصوا أعمالهم لاستخدامها من قبل 7x بموجب شروط وأحكام اتفاقية ترخيص المساهمين الخاصة بـ eZ Systems. وكما تسمح هذه الاتفاقية، تعيد 7x توزيع كل مساهمة بموجب الترخيص نفسه للملف الذي تتضمنه المساهمة. تذكر القائمة اسم كل مساهم، ومعلومات اتصال اختيارية، والملفات التي ساهم فيها أو ساهم في العمل عليها.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>المساهمون الذين يُنسب إليهم الفضل في عملهم على Exponential وعلى البرنامج الذي نشأ منه، مع الملفات التي ساهموا فيها. هذا اعتراف بالفضل وليس إشعار حقوق نشر: تُنقل المساهمات في Exponential إلى Exponential Foundation و7x بموجب Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

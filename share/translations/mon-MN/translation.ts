@@ -8066,8 +8066,8 @@
         <translation>Лицензийн шаардлагын дагуу анхны зохиогчид болон Exponential-д багтсан гуравдагч талын програм хангамжийн зохиогчийн эрхийн мэдэгдлийг эх файлууд болон LICENSE файлд хадгалсан.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Доор Exponential-д хувь нэмэр оруулагчдын жагсаалтыг үзүүлэв. Тэд өөрсдийн ажлыг eZ Systems Contributor Licensing Agreement-ийн нөхцлийн дагуу 7x-д ашиглуулахаар лицензлэсэн. Энэ гэрээгээр зөвшөөрсөн ёсоор 7x хувь нэмэр бүрийг тухайн хувь нэмэр багтсан файлтай ижил лицензээр дахин түгээдэг. Жагсаалтад хувь нэмэр оруулагч бүрийн нэр, хүсвэл холбоо барих мэдээлэл, мөн тэдний бүтээсэн эсвэл хувь нэмэр оруулсан файлуудыг заасан.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential болон түүний үүссэн програм хангамж дээр ажилласны төлөө нэр нь дурдагдсан хувь нэмэр оруулагчид, тэдний хувь нэмэр оруулсан файлуудын хамт. Энэ нь талархал бөгөөд зохиогчийн эрхийн мэдэгдэл биш: Exponential-д оруулсан хувь нэмрийг Contributor Licensing Agreement-ийн дагуу Exponential Foundation болон 7x-д шилжүүлдэг.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

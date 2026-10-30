@@ -77,7 +77,7 @@ Check that the console runs:
 ```
 
 Expected: the first line reads `console (Exponential) 6.0.15stable` (or the version you installed), and the text ends
-with `Written by 7x (se7enx.com) and the Exponential contributors.`
+with `Written by the Exponential Foundation and 7x (se7enx.com).`
 If you run as `root`, add `--allow-root-user` to the scripts that ask for it. The script's message says so.
 
 ## 3. Install

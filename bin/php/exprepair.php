@@ -12,7 +12,7 @@
  *   php bin/php/exprepair.php --run          run the queued repair (started by the page; as root it
  *                                            switches to the installation's owner first)
  *
- * @copyright Copyright (C) 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package kernel
  */

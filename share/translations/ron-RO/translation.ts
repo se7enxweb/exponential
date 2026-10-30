@@ -8005,8 +8005,8 @@
         <translation>Notele privind drepturile de autor ale autorilor originali și ale software-ului terț inclus în Exponential sunt păstrate în fișierele sursă și în fișierul LICENSE, așa cum cere licența.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Mai jos este o listă a contribuitorilor la Exponential care și-au licențiat munca pentru a fi utilizată de 7x în condițiile eZ Systems Contributor Licensing Agreement. Așa cum permite acest acord, 7x redistribuie fiecare contribuție sub aceeași licență ca fișierul în care este inclusă contribuția. Lista indică fiecare contribuitor, informații de contact opționale și fișierele la care a contribuit.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Contribuitori menționați pentru munca lor la Exponential și la software-ul din care a apărut, împreună cu fișierele la care au contribuit. Aceasta este o recunoaștere, nu o notă privind drepturile de autor: contribuțiile la Exponential sunt cedate către Exponential Foundation și 7x în temeiul Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

@@ -31,7 +31,7 @@
  *  DM-13  Under Velocity a value the engine took from a shared envvars file (/etc/vc) is not taken; one from a tree
  *         inside the installation, the start environment or the site envvars is
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

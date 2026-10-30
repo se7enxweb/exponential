@@ -8066,8 +8066,8 @@
         <translation>De auteursrjochtmeldingen fan de oarspronklike auteurs en fan de software fan tredden dy't by Exponential levere wurdt, wurde bewarre yn de boarnebestannen en yn it bestân LICENSE, lykas de lisinsje fereasket.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Hjirûnder folget in list fan meiwurkers oan Exponential dy't harren wurk yn lisinsje jûn hawwe foar gebrûk troch 7x ûnder de betingsten fan de eZ Systems Contributor Licensing Agreement. Lykas dizze oerienkomst talit, ferspriedt 7x elke bydrage wer ûnder deselde lisinsje as it bestân dêr't de bydrage yn opnommen is. De list neamt elke meiwurker, opsjonele kontaktgegevens en de bestannen dêr't se oan bydroegen hawwe.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Bydragers dy't neamd wurde foar har wurk oan Exponential en oan de software dêr't it út fuortkommen is, mei de bestannen dêr't se oan bydroegen hawwe. Dit is in fermelding, gjin copyrightmelding: bydragen oan Exponential wurde ûnder de Contributor Licensing Agreement oerdroegen oan de Exponential Foundation en 7x.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

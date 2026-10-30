@@ -8005,8 +8005,8 @@
         <translation>Obaveštenja o autorskim pravima izvornih autora i softvera trećih strana uključenog u Exponential čuvaju se u izvornim datotekama i u datoteci LICENSE, kao što licenca zahteva.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>U nastavku je lista saradnika na sistemu Exponential koji su svoj rad licencirali za upotrebu kompaniji 7x pod uslovima eZ Systems ugovora o licenciranju saradnika. Kao što je ovim ugovorom dozvoljeno, 7x redistribuira svaki prilog pod istom licencom kao i datoteka u kojoj je prilog uključen. Lista sadrži imena saradnika, opcione kontakt podatke i datoteke kojima su doprineli ili za koje su dali rad.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Saradnici navedeni za svoj rad na sistemu Exponential i na softveru iz kog je nastao, sa datotekama kojima su doprineli. Ovo je priznanje, a ne obaveštenje o autorskim pravima: doprinosi sistemu Exponential prenose se na Exponential Foundation i 7x prema Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

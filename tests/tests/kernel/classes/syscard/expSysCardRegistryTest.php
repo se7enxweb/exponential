@@ -13,7 +13,7 @@
  *  SCR-08 - A fact named like a secret is dropped; a password inside a value is masked
  *  SCR-09 - The shipped syscard.ini lists only existing providers, and each has a unique id
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

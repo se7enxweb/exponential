@@ -5,7 +5,7 @@
  * The error a content job refuses or fails with; its message is shown to the user. A failure about one node
  * carries its id (forNode()), kept in the job as error_node_id so the job page can link it.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

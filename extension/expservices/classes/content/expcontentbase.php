@@ -4,7 +4,7 @@
  * turn content objects into plain arrays, attribute value export/import per datatype, sort and filter parsing for
  * the node lists, and the "now or background job" routing of large operations.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

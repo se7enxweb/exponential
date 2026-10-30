@@ -10,7 +10,7 @@
  * editors' siteaccess only. Saving (expReauthSettings) answers with a redirect. Content (removing, publishing, storing
  * a draft) is off by default and switched on here. The save itself is a system setting, so it asks first.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

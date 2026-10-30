@@ -8066,8 +8066,8 @@
         <translation>ܡܘܕܥ̈ܢܘܬܐ ܕܙܕܩܐ ܕܢܣܚܐ ܕܣܝܘ̈ܡܐ ܫܪ̈ܫܝܐ ܘܕܣܘܦܛܘܝܪ ܕܓܒܐ ܬܠܝܬܝܐ ܕܥܠܝܠ ܥܡ Exponential ܢܛܝܪ̈ܢ ܒܦܢܩ̈ܝܬܐ ܕܡܒܘܥܐ ܘܒܦܢܩܝܬܐ LICENSE، ܐܝܟ ܡܐ ܕܪܫܝܘܬܐ ܒܥܝܐ.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>ܗܕܐ ܗܝ ܪܫܝܡܬܐ ܕܡܥܕܪ̈ܢܐ ܕ Exponential ܕܝܗܒܘ ܪܫܝܘܬܐ ܠܥܒܕܐ ܕܝܠܗܘܢ ܠܦܘܠܚܢܐ ܒܝܕ 7x ܬܚܝܬ ܬܢܐ̈ܝ ܩܝܡܐ ܕܪܫܝܘܬܐ ܕܡܥܕܪ̈ܢܐ ܕ eZ Systems. ܐܝܟ ܡܐ ܕܗܢܐ ܩܝܡܐ ܡܦܣ، 7x ܡܦܠܓ ܟܠ ܥܘܕܪܢܐ ܬܚܝܬ ܗܝ ܪܫܝܘܬܐ ܕܦܢܩܝܬܐ ܕܒܗ ܥܠܝܠ ܥܘܕܪܢܐ. ܪܫܝܡܬܐ ܡܫܡܗܐ ܟܠ ܡܥܕܪܢܐ، ܝܕ̈ܥܬܐ ܕܐܚܝܢܘܬܐ ܠܐ ܐܠܨ̈ܝܬܐ ܘܦܢܩ̈ܝܬܐ ܕܥܕܪܘ ܒܗܝܢ.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>ܡܥܕܪ̈ܢܐ ܕܡܬܝܕܥܝܢ ܥܠ ܥܒܕܗܘܢ ܒ Exponential ܘܒܬܘܟܢܝܬܐ ܕܡܢܗ ܪܒܬ، ܥܡ ܦܢܝܬ̈ܐ ܕܥܕܪܘ ܠܗܝܢ. ܗܕܐ ܬܘܕܝܬܐ ܗܝ ܘܠܐ ܡܘܕܥܢܘܬܐ ܕ copyright: ܥܘܕܪ̈ܢܐ ܠ Exponential ܡܫܬܠܡܝܢ ܠ Exponential Foundation ܘ 7x ܬܚܝܬ Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

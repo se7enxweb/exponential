@@ -23,7 +23,7 @@
  *          whose secret is missing fails naming the secret
  *  DC-11 - get() and all(): the site's database first, then the test connections
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -3,7 +3,7 @@
  * Fixtures of the exp:ini engine tests: a throwaway installation root under var/tmp/ini-tests/ with a few settings
  * directories, so no test ever touches the real settings.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

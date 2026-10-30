@@ -210,7 +210,7 @@ documentation, accessibility advice and testing. See [Contribute to the project]
 
 For the core kernel, yes. 7x and the Exponential Foundation require a signed Contributor Licensing Agreement (CLA)
 for every code contribution to the kernel, whether it is sent as a pull request, a patch, an issue or by mail, before
-it can be merged. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without
+it can be merged. **By signing and submitting, you assign the copyright in your contribution to the Exponential Foundation and 7x, which become its owners, and give up control over it:** The Exponential Foundation and 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without
 asking or paying you, and you cannot withdraw it or set conditions on it. You sign once for all future contributions. Your
 own custom extensions, site packages and themes are not affected. See
 [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla).
@@ -234,3 +234,11 @@ develop the products with us, and that is how Exponential grows. A partner websi
 mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
 [Partners: start here](../partners/partners-start-here.md) and [How to apply](../partners/how-to-apply.md).
 <!-- exp-partner-block:end -->
+
+## Copyright and copyleft
+
+Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
+Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
+[Copyright and copyleft](../copyright-and-copyleft.md).

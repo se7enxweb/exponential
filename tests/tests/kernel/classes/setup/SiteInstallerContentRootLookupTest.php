@@ -11,7 +11,7 @@
  *  SR-04 - mayPurgeAtDepth(): a top-level node (the content, users and media roots) is never purged
  *  SR-05 - the kernel's ezwebininstall command names the root by its remote id
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

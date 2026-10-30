@@ -6,7 +6,7 @@
  *   POST notification/job with Action=start (and DryRun=1)   -> { "id": "..." }
  *   GET  notification/job/<id>/<offset>                      -> { "events": [...], "offset": n, "done": bool }
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

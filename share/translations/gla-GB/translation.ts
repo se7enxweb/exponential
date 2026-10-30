@@ -8066,8 +8066,8 @@
         <translation>Tha brathan còir-lethbhreac nan ùghdaran tùsail agus a' bhathair-bhog threas-phàrtaidhean a tha an lùib Exponential air an cumail sna faidhlichean tùsail agus san fhaidhle LICENSE, mar a dh'iarras an ceadachas.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Seo liosta de chom-pàirtichean Exponential a thug ceadachas air an cuid obrach airson a cleachdadh le 7x fo chumhachan an eZ Systems Contributor Licensing Agreement. Mar a cheadaicheas an t-aonta seo, sgaoilidh 7x gach com-pàirteachas às ùr fon aon cheadachas ris an fhaidhle anns a bheil an com-pàirteachas. Ainmichidh an liosta gach com-pàirtiche, fiosrachadh conaltraidh roghainneil agus na faidhlichean a chuir iad ris no ris an do chuir iad obair.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Com-pàirtichean a gheibh creideas airson an obrach air Exponential agus air a' bhathar-bhog às an do dh'fhàs e, leis na faidhlichean dhan do chuir iad. 'S e creideas a tha seo, chan e brath còir-lethbhreac: thèid tabhartasan do Exponential a ghluasad dhan Exponential Foundation agus gu 7x fon Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

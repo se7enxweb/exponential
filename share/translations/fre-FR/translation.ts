@@ -8219,8 +8219,8 @@
         <translation>Les avis de copyright des auteurs d&apos;origine et des logiciels tiers inclus avec Exponential sont conservés dans les fichiers sources et dans le fichier LICENSE, comme l&apos;exige la licence.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Voici une liste des contributeurs d&apos;Exponential qui ont concédé leur travail sous licence à 7x selon les termes et conditions du Contributor Licensing Agreement d&apos;eZ Systems. Comme le permet cet accord, 7x redistribue chaque contribution sous la même licence que le fichier dans lequel elle est incluse. La liste nomme chaque contributeur, ses coordonnées facultatives et les fichiers auxquels il a contribué.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Contributeurs crédités pour leur travail sur Exponential et sur le logiciel dont il est issu, avec les fichiers auxquels ils ont contribué. Il s&apos;agit d&apos;une reconnaissance, et non d&apos;une mention de copyright : les contributions à Exponential sont cédées à l&apos;Exponential Foundation et à 7x en vertu du Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

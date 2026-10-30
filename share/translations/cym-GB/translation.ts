@@ -8066,8 +8066,8 @@
         <translation>Cedwir hysbysiadau hawlfraint yr awduron gwreiddiol a'r feddalwedd trydydd parti a gynhwysir gydag Exponential yn y ffeiliau ffynhonnell ac yn y ffeil LICENSE, fel y mae'r drwydded yn ei gwneud yn ofynnol.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Dyma restr o gyfranwyr Exponential sydd wedi trwyddedu eu gwaith i'w ddefnyddio gan 7x o dan delerau ac amodau Cytundeb Trwyddedu Cyfranwyr eZ Systems. Fel y caniateir gan y cytundeb hwn, mae 7x yn ailddosbarthu pob cyfraniad o dan yr un drwydded â'r ffeil y mae'r cyfraniad wedi'i gynnwys ynddi. Mae'r rhestr yn enwi pob cyfrannwr, gwybodaeth gyswllt ddewisol a'r ffeiliau y maent wedi'u cyfrannu neu wedi cyfrannu gwaith atynt.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Cyfranwyr a gydnabyddir am eu gwaith ar Exponential ac ar y feddalwedd y tyfodd ohoni, gyda'r ffeiliau y gwnaethant gyfrannu iddynt. Cydnabyddiaeth yw hyn, nid hysbysiad hawlfraint: mae cyfraniadau i Exponential yn cael eu trosglwyddo i'r Exponential Foundation a 7x o dan y Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

@@ -19,7 +19,7 @@
  *  HCP-05  the help dashboard shows the Exponential logo right above "Help center": admin4 the header's inline drawing
  *          (dark mode through its tokens), classic the same drawing's file; named "Exponential", a fixed size
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -8240,8 +8240,8 @@
         <translation>Ophavsretsmeddelelserne fra de oprindelige forfattere og fra den tredjepartssoftware, der følger med Exponential, bevares i kildefilerne og i filen LICENSE, som licensen kræver.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Følgende er en liste over Exponential-bidragydere, der har licenseret deres arbejde til brug for 7x under betingelserne i eZ Systems Contributor Licensing Agreement. Som denne aftale tillader, videredistribuerer 7x hvert bidrag under samme licens som den fil, bidraget indgår i. Listen nævner hver bidragyder, eventuelle kontaktoplysninger og de filer, de har bidraget til.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Bidragydere, der krediteres for deres arbejde på Exponential og på den software, det voksede ud af, med de filer, de har bidraget til. Dette er kreditering, ikke en ophavsretsmeddelelse: bidrag til Exponential overdrages til Exponential Foundation og 7x i henhold til Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

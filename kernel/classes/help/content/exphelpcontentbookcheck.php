@@ -18,7 +18,7 @@
  * epubcheck passes with exit code 0. Ace passes when its report.json has no assertion with the outcome "fail" (a
  * violation of EPUB Accessibility or WCAG); its own exit code only says whether it ran.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

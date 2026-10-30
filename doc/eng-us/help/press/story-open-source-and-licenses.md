@@ -33,7 +33,7 @@ available" (se7enxweb GitHub profile) ([Open source licenses](../who-is-7x.md#op
 | Fact | Source |
 |---|---|
 | Software: GPL v2 or later | [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE) |
-| Copyright: 7x & Exponential Foundation (1998 to 2026); eZ Systems AS (1999 to 2014) | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
+| Exponential Copyright © 1998-2026 Exponential Foundation and 7x; eZ Systems AS (1999 to 2014) | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
 | `COPYRIGHT.md` and `LICENSE.md` made licensing explicit in July 2025 | [July 2025](../../history/2025/2025-07.md) |
 | Contributions under the same license | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
 | Documentation: GNU FDL 1.3 or later | [The license of this documentation](../../README-LICENSE.md) |
@@ -58,3 +58,11 @@ available" (se7enxweb GitHub profile) ([Open source licenses](../who-is-7x.md#op
 - [Story: a code base kept alive](story-longevity.md)
 - [Talking points: open source and licensing](../advocates/talking-points-open-source-and-licensing.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+## Copyright and copyleft
+
+Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
+Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
+[Copyright and copyleft](../copyright-and-copyleft.md).

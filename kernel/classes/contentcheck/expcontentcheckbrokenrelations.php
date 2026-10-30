@@ -30,7 +30,7 @@
  * stops after a page of findings or after ScanLimit objects; the next page goes on after the last object checked.
  * No query reads more than one chunk of sources, so a large installation is checked page by page, never as a whole.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -59,3 +59,11 @@ Keep CSS and JavaScript headers short: a comment such as `/* My Theme (C) 2026 Y
 - [Credits and attribution](../lifecycle/credits-and-attribution.md)
 - [The GPL for theme code](gpl-for-theme-code.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+## Copyright and copyleft
+
+Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
+Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
+[Copyright and copyleft](../../copyright-and-copyleft.md).

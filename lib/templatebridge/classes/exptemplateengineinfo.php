@@ -4,7 +4,7 @@
  * available, the version, the settings file, whether its security policy is on, the compiled-template directory and
  * the file endings. Used by exp:template:engines and exp:template:check.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package lib
  */

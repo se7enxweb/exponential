@@ -33,7 +33,7 @@ gehört zu einem genauen Beitrag.
 | Website | [se7enx.com](https://se7enx.com/) | [foundation.exponential.earth](https://foundation.exponential.earth/) |
 
 Quelle der Tabelle: [Wer ist die Exponential Foundation?, Die Foundation und 7x](../wer-ist-die-exponential-foundation.md#die-foundation-und-7x)
-und [Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt). Das Urheberrecht liegt gemeinsam bei "7x & Exponential Foundation"
+und [Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt). Das Urheberrecht liegt gemeinsam bei "Exponential Foundation and 7x"
 ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
 
 ## Das Geschäftsmodell laut Dokumentation

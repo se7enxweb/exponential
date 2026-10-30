@@ -6,7 +6,7 @@
  * the priority of the shell that started it (2026-10-17: a deploy run under
  * nice -n 19 left every worker at 19). No server and no database.
  *
- * @copyright Copyright (C) 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests

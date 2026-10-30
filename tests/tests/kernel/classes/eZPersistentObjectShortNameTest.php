@@ -18,7 +18,7 @@
  *  PS-11 - Without short names every query of PS-04 to PS-09 is exactly the query of the previous release
  *  PS-12 - The ezenum to ezselection conversion removes the enum values through the definition (short name)
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  */

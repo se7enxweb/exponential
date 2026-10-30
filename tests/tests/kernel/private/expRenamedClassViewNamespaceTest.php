@@ -3,7 +3,7 @@
  * The views of the class module moved from the namespace Exponential\View\Kernel\Class (a reserved word before
  * PHP 8.0) to Exponential\View\Kernel\ContentClass in 6.0.15. The old names keep working.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

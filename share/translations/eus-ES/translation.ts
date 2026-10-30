@@ -8066,8 +8066,8 @@
         <translation>Exponential-ekin batera datozen jatorrizko egileen eta hirugarrenen softwarearen copyright oharrak iturburu-fitxategietan eta LICENSE fitxategian gordetzen dira, lizentziak eskatzen duen bezala.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Jarraian, 7x erakundeak erabil dezan eZ Systems Contributor Licensing Agreement-aren baldintzen arabera beren lana lizentziatu duten Exponential-en laguntzaileen zerrenda dago. Akordio honek onartzen duen bezala, 7x erakundeak ekarpen bakoitza ekarpena sartuta dagoen fitxategiaren lizentzia berberarekin birbanatzen du. Zerrendak laguntzaile bakoitza, aukerako harremanetarako datuak eta ekarpena egin duten fitxategiak edo lanean parte hartu duten fitxategiak adierazten ditu.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential-en eta hura sortu zen softwarean egindako lanagatik aitortutako laguntzaileak, lagundu zuten fitxategiekin. Hau aitorpena da, ez copyright oharra: Exponential-i egindako ekarpenak Exponential Foundation-i eta 7x-i lagatzen zaizkie Contributor Licensing Agreement-en arabera.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

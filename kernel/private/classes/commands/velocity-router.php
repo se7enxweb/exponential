@@ -11,7 +11,7 @@
  *   false   the server sends the file itself
  *   string  the front controller to run; $_SERVER is already set up for it
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
@@ -35,7 +35,7 @@
  * EXP_VELOCITY_NEVER_STATIC (expVelocity::NEVER_STATIC) and
  * EXP_VELOCITY_FOLLOW_SYMLINKS ([ServerSettings] FollowSymlinks).
  *
- * @copyright Copyright (C) 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel

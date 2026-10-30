@@ -7,28 +7,33 @@ Thank you for considering contributing to Exponential! We appreciate the time an
 ## Copyright assignment (CLA)
 
 > **By signing the CLA and submitting a contribution to the core kernel, you assign (transfer) the copyright in that
-> contribution to 7x. 7x becomes the copyright owner.**
+> contribution to the Exponential Foundation and 7x. They become the copyright owners.**
 >
-> You **give up control**: 7x may use, change, relicense and distribute your contribution in any way, including
+> You **give up control**: the Exponential Foundation and 7x may use, change, relicense and distribute your contribution in any way, including
 > commercially and under other licenses, **without asking you and without paying you**. You **cannot withdraw it or
 > set conditions on it**.
 >
 > **Your own custom extensions are not affected.**
 
-The agreement form on the CLA page is being updated to this assignment; sign the form currently published there.
+There is therefore no separate copyright of "the Exponential contributors": the copyright notice names only the
+Exponential Foundation and 7x, the holders of every merged contribution. Contributors are credited (changelogs,
+commit authorship, the recognition pages); credit is not a copyright claim.
+
+The agreement is the **Exponential Foundation and 7x Contributor Licensing Agreement**, version 1.1.0 (29 October 2026). Version 1.1.0 of the agreement (29 October 2026) is the first that assigns the copyright: its section 4.1 assigns it to the Exponential Foundation and 7x jointly, and section 4.3 keeps a license as a fallback where an assignment is not effective. The earlier version 1.0.1 assigned nothing: it granted 7x a perpetual, worldwide, non-exclusive, royalty-free, irrevocable copyright license (its section 4, derived from the Apache Individual Contributor License Agreement 2.0). Contributions made under a signed 1.0.1 stay licensed to 7x under 1.0.1 (section 12 of 1.1.0). Under section 6 the work is released under the GNU GPL version 2 or later, and the Exponential Foundation and 7x may also license it on other terms.
 
 Read the agreement before you sign it; this summary does not replace it and is not legal advice.
 
-**Who requires it, and for what.** 7x and the Exponential Foundation require a signed Contributor Licensing
+**Who requires it, and for what.** The Exponential Foundation and 7x require a signed Contributor Licensing
 Agreement (CLA) for every code contribution to the core kernel of Exponential, before that contribution can be
 merged. The core kernel is the repository [se7enxweb/exponential](https://github.com/se7enxweb/exponential):
 `kernel/`, `lib/`, `bin/`, `design/`, `settings/`, `doc/`, the extensions shipped inside it, and everything else in
-this repository. The agreement itself is made with 7x.
+this repository. The agreement is made with the Exponential Foundation and 7x (owner decision of 2026-10-29: the
+assignment goes to both, the Foundation named first, as in the copyright notice).
 
 - **Every form of submission counts**: a GitHub pull request, a patch, code attached to or pasted into an issue, and
-  code sent by mail or any other way. The agreement defines a submission as "any form of electronic, verbal, or
-  written communication sent to 7x or its representatives that is explicitly meant to share the Contribution with
-  7x", including source code control systems and issue tracking systems (CLA, §3).
+  code sent by mail or any other way. The agreement counts any electronic, verbal or written communication meant to
+  share the contribution with the project, including source code control and issue tracking systems, as a
+  submission (CLA, §3, Definitions).
 - **Required before the merge.** A pull request from someone without a signed CLA on file is reviewed, but it is
   not merged until the CLA has been received.
 - **Once is enough.** "The CLA will be signed once for all your future contributions". You sign again only "in the
@@ -38,10 +43,10 @@ this repository. The agreement itself is made with 7x.
 ### How to sign
 
 1. Read the [Contributor Licensing Agreement page](https://share.se7enx.com/community-project/contributor-licensing-agreement-cla)
-   and download the agreement it links to (*7X CONTRIBUTOR LICENSING AGREEMENT*, version 1.0.1, PDF).
+   and download the agreement it links to (*Exponential Foundation and 7x CLA v1.1.0.pdf*, version 1.1.0).
 2. Fill in section 2 (the copyright owner, or the legal entity authorized by the copyright owner) and the signature
    block, and sign it.
-3. Deliver it to 7x "by regular mail, by emailing a scan of the signed copy, or by fax". The agreement gives the
+3. Deliver it to the Exponential Foundation and 7x "by regular mail, by emailing a scan of the signed copy, or by fax". The agreement gives the
    e-mail address community@se7enx.com and the postal address; if you send it by e-mail, make sure it arrived.
 4. Mention in your pull request (or patch, issue or mail) that your CLA is signed; the
    [pull request template](.github/PULL_REQUEST_TEMPLATE.md) has a checkbox for it.
@@ -49,7 +54,7 @@ this repository. The agreement itself is made with 7x.
 **Individuals and companies** sign the same agreement. For a company, "the entity making a Contribution and all
 other entities that control, are controlled by, or are under common control with that entity are considered to be a
 single Contributor" (§3). If your employer has rights to what you write, you need its permission, its waiver, or a
-separate agreement between your employer and 7x (§6).
+separate agreement between your employer and the Exponential Foundation and 7x.
 
 ### What it does not cover
 
@@ -72,13 +77,16 @@ yourself is not.
 
 ### FAQ
 
-**Do I give away my copyright?** Yes. You assign it to 7x. Once you sign the CLA and submit a contribution, 7x owns
-the copyright in it and may use, change, relicense and distribute it as it decides, without asking or paying you.
+**Do I give away my copyright?** Yes. You assign it to the Exponential Foundation and 7x. Once you sign the CLA and submit a contribution, the
+Exponential Foundation and 7x own the copyright in it and may use, change, relicense and distribute it as they decide, without asking or paying you.
+
+**I signed version 1.0.1 earlier. What happens to those contributions?** They stay licensed to 7x under 1.0.1
+(section 12 of 1.1.0); 1.0.1 never assigned the copyright. New contributions need the 1.1.0 agreement.
 
 **Can I take my contribution back?** No. You cannot withdraw it or set conditions on it.
 
-**Can 7x relicense my contribution?** Yes. As the copyright owner, 7x may distribute it under other licenses and in
-commercial products.
+**Can the Exponential Foundation and 7x relicense my contribution?** Yes. As the copyright owners, they may distribute it
+under other licenses and in commercial products.
 
 **Why is it needed?** "Before we can consider the contributions you provide to us, we must agree on what rights you
 are offering to us" (preamble of the agreement), and "We cannot accept your contributions unless we have a signed
@@ -89,7 +97,7 @@ most cases we do not need you to sign a CLA", because "authors cannot claim copy
 requests to the kernel repository, sign the CLA anyway: a merge needs a CLA on file, and you sign only once.
 
 **I contribute for my employer.** Then the company is usually the copyright owner: the company signs, or you
-confirm that it has given you permission or waived its rights (§6).
+confirm that it has given you permission or waived its rights.
 
 **I only build extensions for my own sites or customers.** Nothing to sign. The CLA starts to matter only when you
 submit code back to the kernel, or hand code to 7x to include in the project.
@@ -98,7 +106,7 @@ submit code back to the kernel, or hand code to 7x to include in the project.
 you sign again only for a new legal entity.
 
 **Does the CLA replace the GPL?** No. Your contribution is released under the GPL like the rest of Exponential (see
-[Licensing](#licensing)); for the kernel, the CLA additionally assigns its copyright to 7x.
+[Licensing](#licensing)); for the kernel, the CLA additionally assigns its copyright to the Exponential Foundation and 7x.
 
 ## Licensing of code improvements to Exponential
 Exponential is licensed under the GPLv2 or later license, commonly known as the GNU General Public License, version 2 or any later version, grants users the freedom to modify and distribute software. When it comes to code improvements, contributors must ensure that any modifications made to the project are also released under the same GPLv2 or later license. This means that enhancements, bug fixes, or any changes to the codebase must be open-sourced, allowing others to benefit from and build upon these improvements. The "or later" clause allows the project to upgrade to future versions of the GPL, providing flexibility and ensuring alignment with the principles of free software. It's essential for contributors to understand and comply with these licensing requirements to maintain the open nature of the project.
@@ -153,6 +161,14 @@ git checkout -b feature/your-feature
    strategically, with intent, to build the Exponential brand and to assign ownership of an extension or solution to
    the Exponential project and the Exponential Foundation. New kernel code uses `exp`. Existing kernel identifiers
    (`eZContentObject`, `eZINI`, `ezp*`) are never renamed.
+
+7. A new file of the kernel starts with the project's copyright line, exactly
+   `@copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.` (or the same text in the
+   comment style of its language), followed by the license line. Never remove or change another holder's line (eZ
+   Systems AS and the other authors); put the project's line above it. A notice shown to users reads
+   `Exponential Copyright © 1998-2026 Exponential Foundation and 7x` and is never translated.
+   `tests/tests/bin/CopyrightNoticeTest.php` checks every file; see
+   [Copyright and copyleft](doc/eng-us/help/copyright-and-copyleft.md).
 
 ## Submitting Changes
 

@@ -53,7 +53,7 @@ class myextensionInfo
         return array(
             'Name'      => "My Extension",
             'Version'   => "1.2.3",
-            'Copyright' => "Copyright (C) 1998 - 2026 7x & Exponential Foundation",
+            'Copyright' => "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.",
             'License'   => "GNU General Public License v2.0 (or any later version)",
             'Info_url'  => "https://github.com/se7enxweb/myextension"
         );
@@ -80,7 +80,7 @@ Rules the Exponential releases follow:
     <metadata>
         <name>Exponential Website Interface LS</name>
         <version>6.0.16</version>
-        <copyright>Copyright (C) 7x. All rights reserved.</copyright>
+        <copyright>Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.</copyright>
         <license>GNU General Public License v2.0 (or any later version)</license>
         <info_url>https://github.com/se7enxweb/ezwebin</info_url>
     </metadata>
@@ -141,3 +141,11 @@ the new version.
 - [Behaviour changes of the extensions: metadata, translations and integrity manifests](../../bc/6.0/extensions-behaviour-changes.md#10-metadata-translations-and-integrity-manifests)
 - [Extensions](../../features/6.0/extensions/README.md), [Default extension distribution](../../features/6.0/default-extension-distribution.md), [Extension list: sort, inspect and download](../../features/6.0/extension-list-and-downloads.md), [Setup > Extensions: loading order and safe saving](../../features/6.0/extension-loading-order.md), [File consistency check](../../features/6.0/file-consistency-check.md)
 - Month pages: [January 2024, first half](../../history/2024/2024-01a.md), [January 2024, second half](../../history/2024/2024-01b.md), [February 2024](../../history/2024/2024-02.md), [March 2024](../../history/2024/2024-03.md), [June 2024](../../history/2024/2024-06.md)
+
+## Copyright and copyleft
+
+Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
+Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
+[Copyright and copyleft](../../help/copyright-and-copyleft.md).

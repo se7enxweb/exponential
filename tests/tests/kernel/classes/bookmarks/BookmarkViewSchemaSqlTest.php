@@ -12,7 +12,7 @@
  *  BV-S4 the SQLite update runs twice and keeps the rows; bookmark_id is unique
  *  BV-S5 the update script exists, is executable and goes through expBookmarkView::install()
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group bookmarks

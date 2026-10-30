@@ -15,7 +15,7 @@
  * Settings: ezoe.ini [EditorSettings] UploadFromUrl (enabled|disabled), UploadFromUrlMaxSize (default 145M, not capped by upload_max_filesize:
  * a fetch is not a browser upload), UploadFromUrlTimeout (seconds, default 300).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package ezoe
  */

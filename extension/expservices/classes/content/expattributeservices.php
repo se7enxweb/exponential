@@ -6,7 +6,7 @@
  * the versions, where a datatype is used, and writes that change one or several attributes of an object (published
  * as a new version) or of a draft.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

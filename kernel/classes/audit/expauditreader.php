@@ -4,7 +4,7 @@
  * files, so a large day file is not read whole), one record by id, the files of a channel. Used by exp:audit and
  * the audit/recent view; the database index of stage 4 replaces it for search.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

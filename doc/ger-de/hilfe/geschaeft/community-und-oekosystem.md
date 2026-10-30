@@ -86,7 +86,7 @@ Foundation über ihre Website zu fragen.
 
 Mit Quellen dürfen Sie sagen:
 
-- Der Copyright-Vermerk reicht für 7x und die Exponential Foundation von 1998 bis 2026, neben 1999 bis 2014 für
+- Der Copyright-Vermerk reicht für die Exponential Foundation und 7x von 1998 bis 2026, neben 1999 bis 2014 für
   eZ Systems AS (`COPYRIGHT.md`).
 - Exponential führt die Codebasis von eZ Publish fort, einem Produkt, das sein Hersteller nach fast 18 Jahren
   eingestellt hat ([Wer ist 7x?](../wer-ist-7x.md#die-jahre-von-ez-publish-1999-bis-2021)).

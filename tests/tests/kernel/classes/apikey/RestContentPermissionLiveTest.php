@@ -25,7 +25,7 @@
  *  RP-07 a key with the publish scope creates within its owner's rights only (201 inside, 403 outside)
  *  RP-08 v1 is read only: a create there answers 405; a bad create answers 400
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group network-live

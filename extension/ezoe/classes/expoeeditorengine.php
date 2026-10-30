@@ -13,7 +13,7 @@
  * attributes (TinyMCE 3). Where the Content Security Policy is enforced without 'unsafe-inline' in script-src, such an
  * engine is not offered and editors get the configured or first other engine (expOEEditor::blockedByPolicy()).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package ezoe
  */

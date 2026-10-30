@@ -87,7 +87,7 @@ request ([Contributing to the documentation](../../README-LICENSE.md#contributin
 - Credit work as the project does: "brings the Netgen Layouts concept to the Exponential kernel", "with full credit
   to Mugo Web" ([How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows)).
 - Name contributors only as public sources name them, and only with what is public.
-- Keep copyright notices exactly as written: "7x & Exponential Foundation"
+- Keep copyright notices exactly as written: "Exponential Foundation and 7x"
   ([Brand and naming rules](../business/brand-and-naming-rules.md#the-nonprofit-the-exponential-foundation)).
 
 ## Licensing your own work

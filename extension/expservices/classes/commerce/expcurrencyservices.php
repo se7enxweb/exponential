@@ -3,7 +3,7 @@
  * ezjscore/call/expcurrency::<method>: the currencies of the shop with their rates, conversion, the preferred
  * currency of the user. The kernel writes the commerce.currency.change audit event of every change.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

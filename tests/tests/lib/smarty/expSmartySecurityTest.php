@@ -11,7 +11,7 @@
  * Smarty 5 as in expSmartyTemplateRenderTest (Composer, or SMARTY_LIBRARY_PATH); without it the cases are skipped.
  * No database and no siteaccess.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group lib

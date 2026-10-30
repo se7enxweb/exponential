@@ -8064,8 +8064,8 @@
         <translation>Ogeysiisyada xuquuqda daabacaadda ee qorayaasha asalka ah iyo software-ka dhinac saddexaad ee lagu daray Exponential waxaa lagu hayaa faylasha isha iyo faylka LICENSE, sida ruqsadda uu u baahan yahay.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Kuwa soo socda waa liis ka mid ah kuwa wax ku biiriyay Exponential oo shaqadooda ruqsad u siiyay 7x si ay u isticmaasho iyadoo la raacayo shuruudaha heshiiska ruqsadeynta ee eZ Systems Contributor Licensing Agreement. Sida heshiiskan u ogol yahay, 7x waxay mid kasta oo wax-ku-biirin ah dib u qaybisaa iyadoo isticmaalaysa ruqsadda faylka ay ku jirto. Liisku wuxuu magacaabayaa qof kasta oo wax ku biiriyay, macluumaadka xiriirka ee ikhtiyaarka ah iyo faylasha ay wax ku biiriyeen ama ay shaqo ku lahaayeen.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Ka-qaybgalayaasha lagu amaanay shaqadooda Exponential iyo software-ka uu ka soo farcamay, oo ay la socdaan faylasha ay ka qayb qaateen. Tani waa amaan, ma aha ogeysiis xuquuqda daabacaadda: ka-qaybgalka Exponential waxaa loo wareejiyaa Exponential Foundation iyo 7x iyadoo la raacayo Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

@@ -6,7 +6,7 @@
  * what would be done, table by table, with the SQL, and does it on "Apply"; dropping and changing columns or indexes
  * happen only when ticked. The install SQL of every engine is shown too. Policy datatable/manage.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

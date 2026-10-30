@@ -5,7 +5,7 @@
  * relation value linked to what it points at. Columns whose names say they hold a secret are not shown. Read-only.
  * Policy datatable/read.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

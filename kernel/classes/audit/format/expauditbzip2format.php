@@ -3,7 +3,7 @@
  * The bzip2 archive format (PHP extension bz2): <file>.jsonl.bz2. Registered as
  * [AuditArchiveSettings] FormatHandlers[bzip2]=expAuditBzip2Format. Levels 1-9 (the block size).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

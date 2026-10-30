@@ -17,7 +17,7 @@
  *  HMB-10  removal: only generated objects missing from the plan, the deepest first, only below the manual given
  *  HMB-11  the background job: registered, "n of 52" from the cursor, the installer only queues it
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

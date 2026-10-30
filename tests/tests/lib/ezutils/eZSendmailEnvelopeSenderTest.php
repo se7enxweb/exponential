@@ -11,7 +11,7 @@
  * Each case runs in a child process whose sendmail_path is a capturing script, so mail() really runs and nothing is
  * sent. No database.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  */

@@ -10,7 +10,7 @@
  * (problem), (version), (selectall)/1, (file_offset); a query string is not read. The filter form is posted and
  * answered with a 303 to that address.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

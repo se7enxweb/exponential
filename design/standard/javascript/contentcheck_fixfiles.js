@@ -3,7 +3,7 @@
  * the rest on by itself after a moment, as if "Go on with the next batch" was pressed. "Stop here" (or any click
  * on the page, or a key) stops it; without JavaScript the button does the same.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  */
 (function () {

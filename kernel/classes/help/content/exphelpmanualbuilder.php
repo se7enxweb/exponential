@@ -27,7 +27,7 @@
  * - Translations: the pages of a translation directory (doc/ger-de/, paired through its .paths.json) are the
  *   translation of the same topics; chapters and manuals are translated when they contain a translated topic.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

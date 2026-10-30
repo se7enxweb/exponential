@@ -8,7 +8,7 @@
  * No database: the authentication style is a stand-in. rest.ini settings and the prefix filter's static state are
  * set by the tests and put back.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group kernel

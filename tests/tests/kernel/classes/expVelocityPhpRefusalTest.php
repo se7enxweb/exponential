@@ -3,7 +3,7 @@
  * expVelocity::phpRefusal(): the Velocity engine (qbix) needs PHP 8.0, the kernel runs on PHP 7.4. On 7.4,
  * exp:velocity start refuses with a message instead of failing on code PHP 7.4 cannot run.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

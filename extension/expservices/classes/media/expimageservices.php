@@ -3,7 +3,7 @@
  * ezjscore/call/expimage::<service> - images and their aliases (image.ini), per node and attribute.
  * Reads follow content/read on the node; the writes are POST + form token + content/edit on the node.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

@@ -8008,8 +8008,8 @@
         <translation>Notae de iure auctorum originalium et programmatum tertiarum partium cum Exponential inclusorum in fasciculis fontium et in fasciculo LICENSE servantur, ut licentia postulat.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Sequitur index contributorum Exponential qui opus suum 7x ad usum licentiaverunt secundum condiciones eZ Systems Contributor Licensing Agreement. Ut hoc pactum permittit, 7x quamque contributionem sub eadem licentia redistribuit ac fasciculum in quo contributio inclusa est. Index quemque contributorem nominat, notitiam contactus facultativam et fasciculos quos contribuerunt aut ad quos opus contribuerunt.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Contributores qui ob opus suum in Exponential et in programmate unde ortum est nominantur, cum fasciculis quibus contulerunt. Haec est agnitio, non nota iuris auctoris: collationes ad Exponential cedunt Exponential Foundation et 7x secundum Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

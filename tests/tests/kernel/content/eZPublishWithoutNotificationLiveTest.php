@@ -17,7 +17,7 @@
  *  PL-08 - eZContentFunctions with notify null notifies (as the publish operation does), with "0" not
  *  PL-09 - Every test runs with the file mail transport, set in-process (never real mail)
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

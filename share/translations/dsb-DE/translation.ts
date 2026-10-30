@@ -8005,8 +8005,8 @@
         <translation>Pokazki k awtorskemu pšawu spócetnych awtorkow a awtorow a softwary tśeśich póbitowarjow, kótaraž se z Exponential rozdźěla, wóstanu w žrědłowych datajach a w dataji LICENSE, ako to licenca pomina.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Slědujuca lisćina mjenujo sobuźěłaśerjow systema Exponential, kótarež su swójo źěło firmje 7x pód wuměnjenjami eZ Systems Contributor Licensing Agreement licencowali. Ako to toś to dojadnanje dowólujo, rozdźěla 7x kuždy pśinosk pód tejsameju licencu ako dataja, w kótarejž jo pśinosk wopśimjony. Lisćina mjenujo kuždego sobuźěłaśerja, opcionalne kontaktowe informacije a dataje, ku kótarymž jo pśinosował.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Sobuźěłarje, kótarymž se źěkujomy za jich źěło na Exponential a na softwarje, z kótaregož jo nastał, z datajami, ku kótarymž su pśinosowali. To jo pśipóznaśe, nic pokazka na awtorske pšawo: pśinoski k Exponential pśepódawaju se pó Contributor Licensing Agreement na Exponential Foundation a 7x.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

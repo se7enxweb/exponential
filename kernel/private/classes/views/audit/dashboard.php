@@ -11,7 +11,7 @@
  * figures come from the index, and the index itself is brought up to date by a short bounded run. Policy
  * audit/read with its Channel limitation; manage actions only with audit/manage. Recorded as system.audit.read.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

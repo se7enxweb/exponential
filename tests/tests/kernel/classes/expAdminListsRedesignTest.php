@@ -15,7 +15,7 @@
  *  AL-10 - An RSS import needs a name and an http or https source address to be stored
  *  AL-11 - class/copy copies only for a POST with a copy button; a link shows the confirmation
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

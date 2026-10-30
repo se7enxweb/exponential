@@ -7,7 +7,7 @@
  * exp:ini (./console exp:ini set audit.ini/<Block>/<Variable> <value> <scope>), which records the write.
  * Policy audit/manage. Recorded as system.audit.read.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

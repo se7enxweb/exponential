@@ -10,7 +10,7 @@
  * Never a real provider and never a real SMS: the transports write into a directory of the test under var/tmp or
  * talk to the stub; numbers are the reserved +1 555 01xx ones, addresses nltest-*@example.invalid.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -21,7 +21,7 @@
  * New directories and files get the owner and group of their parent directory when written by root (Velocity,
  * commands run as root), like expIniEditor::save() and expContentJobStore::fixOwner(); files are mode 0640.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

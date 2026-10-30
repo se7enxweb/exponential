@@ -8066,8 +8066,8 @@
         <translation>Ang mga pahibalo sa copyright sa mga orihinal nga tagsulat ug sa software sa third-party nga naapil sa Exponential gitipigan sa mga source file ug sa LICENSE file, sumala sa gikinahanglan sa lisensya.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Mosunod ang lista sa mga contributor sa Exponential nga naglisensya sa ilang buhat alang magamit sa 7x ubos sa mga termino ug kondisyon sa eZ Systems Contributor Licensing Agreement. Sumala sa gitugotan niini nga kasabutan, gi-apod-apod pag-usab sa 7x ang matag kontribusyon ubos sa parehas nga lisensya sa file nga gilakipan sa kontribusyon. Gipangalanan sa lista ang matag contributor, opsyonal nga impormasyon sa pagkontak ug ang mga file nga ilang gikontribyutan o gikontribyutan og buhat.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Mga kontributor nga gipasidunggan sa ilang trabaho sa Exponential ug sa software nga gikan niini, uban sa mga file nga ilang giamotan. Kini pagpasidungog, dili pahibalo sa copyright: ang mga kontribusyon sa Exponential gihatag ngadto sa Exponential Foundation ug 7x ubos sa Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

@@ -9,7 +9,7 @@
  *  HCE-04  topic anchors and language tags
  *  HCE-05  only storage files are put into a book: no path outside var/.../storage, no traversal
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -7,7 +7,7 @@
  * Template variables: help_manual (the manual, or false for the list), help_manual_toc (nested: kind chapter|topic,
  * title, shortdesc, help_id, url, preview, children), help_manuals (visible manuals), help_json_url, help_i18n_json.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

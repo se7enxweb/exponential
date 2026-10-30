@@ -3,7 +3,7 @@
  * The syntax checker of one template engine, for exp:template:check (expTemplateChecker). An engine's checker is
  * registered in site.ini [TemplateBridgeSettings] CheckerList[<engine>]=<class>.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package lib
  */

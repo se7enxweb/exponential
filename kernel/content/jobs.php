@@ -3,7 +3,7 @@
  * Entry point of kernel/content/jobs.php: the list of content jobs (subtree removes and copies in the
  * background), the user's own, or everybody's with the content/jobs policy.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

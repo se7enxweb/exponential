@@ -18,7 +18,7 @@
  *  PP-08 alerts: a passkey added, removed or revoked mails the owner; a refused registration does not
  *  PP-09 a sign-in counts as "Verify it's you" only when it asked for a combination that would be offered
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -6,7 +6,7 @@
  * a category, its state (on, off, pending) and frequency. The master switch is the row of category '_master'.
  * No row means the category's default (or what its handler reads from older data). Use expMailPreferences.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

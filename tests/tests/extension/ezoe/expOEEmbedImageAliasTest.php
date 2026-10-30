@@ -7,7 +7,7 @@
  *  EA-02 - An alias without width or height (created in part) takes the defaults, no "Undefined array key"
  *  EA-03 - An alias without url (its original is missing from the storage) gives null: the attachment icon stands in
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

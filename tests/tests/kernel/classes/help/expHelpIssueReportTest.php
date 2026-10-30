@@ -11,7 +11,7 @@
  *  HI-03  issueUrl(): the tracker's new-issue form, title and body encoded, bounded length, no secret
  *  HI-04  securityContact(): a private way (e-mail or policy URL), never a public issue form
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

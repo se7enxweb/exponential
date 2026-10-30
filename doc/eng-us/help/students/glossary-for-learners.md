@@ -26,7 +26,7 @@ The words you meet first, in plain language, with the page that teaches each. Th
 | **Attribute** | One field of a content class, with a datatype | [Understanding the content model](understanding-the-content-model.md) |
 | **Block** | One part of a layout zone: a title, rich text, an image, a list | [The layouts editor](../layouts-editor.md) |
 | **Cache** | Stored results that make pages faster | [Understanding caches](understanding-caches.md) |
-| **CLA** | The agreement needed before code is merged into the kernel; assigns copyright to 7x | [The CLA for students](the-cla-for-students.md) |
+| **CLA** | The agreement needed before code is merged into the kernel; assigns copyright to the Exponential Foundation and 7x | [The CLA for students](the-cla-for-students.md) |
 | **Console** | `php bin/php/console`, which runs the installation's commands (`exp:...`) | [Glossary](../../glossary.md#c) |
 | **Content class** | A type of content (Article, Folder) as a list of attributes | [project 1](project-01-a-content-class-of-your-own.md) |
 | **Content object** | One piece of content, with versions and translations | [Understanding the content model](understanding-the-content-model.md) |

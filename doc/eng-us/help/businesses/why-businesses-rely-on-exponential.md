@@ -41,7 +41,7 @@ surprises its upgrades bring. The sections below take these one by one.
 
 | Fact | Source |
 |---|---|
-| The copyright notice reads "Copyright (C) 1998 - 2026 7x & Exponential Foundation" | `COPYRIGHT.md`, quoted in [Who is 7x?](../who-is-7x.md#in-short) |
+| The copyright notice reads "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." | `COPYRIGHT.md`, quoted in [Who is 7x?](../who-is-7x.md#in-short) |
 | "Exponential has made it beyond it's end of life in 2021 and survived" | `README.md`, "Exponential Project Status" |
 | 7x has published the 6.0.x releases since December 2023, from 6.0.0 on 1 January 2024 to 6.0.14 on 7 June 2026, with 6.0.15 in development | [Who is 7x?](../who-is-7x.md#in-short) |
 | Current releases aim "at easing the requirements to support current versions of the PHP language like PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9" | `README.md` |

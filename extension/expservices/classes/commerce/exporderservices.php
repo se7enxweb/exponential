@@ -4,7 +4,7 @@
  * (policy shop/administrate) list, view, change the status of, archive and remove every order. Orders are
  * created by the checkout of the basket, never here.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

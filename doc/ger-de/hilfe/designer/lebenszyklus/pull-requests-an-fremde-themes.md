@@ -38,8 +38,8 @@ Exponential schicken.
    nach dem Zusammenführen wird `main` nie umgeschrieben ([Code-Reviews](../../../../../CONTRIBUTING.md#code-reviews)).
 9. **Für den Kernel von Exponential** (`se7enxweb/exponential`) muss Ihr unterzeichnetes Contributor Licensing Agreement
    vorliegen: 7x und die Exponential Foundation führen einen Beitrag zum Kernel erst zusammen, nachdem es eingegangen ist.
-   **Mit der Unterzeichnung und Einreichung übertragen Sie das Urheberrecht an Ihrem Beitrag auf 7x, das dessen
-   Eigentümer wird, und geben die Kontrolle darüber ab:** 7x darf ihn auf jede Weise nutzen, ändern, neu lizenzieren und
+   **Mit der Unterzeichnung und Einreichung übertragen Sie das Urheberrecht an Ihrem Beitrag auf die Exponential Foundation und 7x, die dessen
+   Eigentümer werden, und geben die Kontrolle darüber ab:** Die Exponential Foundation und 7x dürfen ihn auf jede Weise nutzen, ändern, neu lizenzieren und
    verbreiten, auch unter anderen Lizenzen und in kommerziellen Produkten, ohne Sie zu fragen oder zu bezahlen, und Sie
    können ihn nicht zurückziehen oder an Bedingungen knüpfen
    ([Übertragung des Urheberrechts (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)). Themes anderer

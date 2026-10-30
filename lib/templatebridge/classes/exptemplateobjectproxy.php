@@ -5,7 +5,7 @@
  * and the result is wrapped again (expTemplateValues::wrap()), so a chain such as node.data_map.title.content works.
  * Engines subclass it where they need their own lookup rules (expSmartyObjectProxy, expTwigObjectProxy).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package lib
  */

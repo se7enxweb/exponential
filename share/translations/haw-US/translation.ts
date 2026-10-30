@@ -8066,8 +8066,8 @@
         <translation>Mālama ʻia nā hoʻolaha kuleana kope o nā mea kākau mua a me ka polokalamu a nā ʻaoʻao ʻekolu i hoʻokomo ʻia me Exponential ma nā waihona kumu a ma ka waihona LICENSE, e like me ka koi ʻana o ka ʻae laikini.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>ʻO kēia ka papa o nā mea hāʻawi Exponential i ʻae i kā lākou hana e hoʻohana ʻia e 7x ma lalo o nā ʻōlelo a me nā kūlana o ka eZ Systems Contributor Licensing Agreement. E like me ka ʻae ʻana o kēia ʻaelike, hāʻawi hou ʻo 7x i kēlā me kēia hāʻawi ma lalo o ka ʻae laikini like me ka waihona i loaʻa ai ka hāʻawi. Hōʻike ka papa i kēlā me kēia mea hāʻawi, nā ʻike pili koho ʻia a me nā waihona a lākou i hāʻawi ai a i hāʻawi ai i ka hana.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Nā mea kōkua i hoʻomaikaʻi ʻia no kā lākou hana ma Exponential a ma ka polokalamu i ulu mai ai ia, me nā faila a lākou i kōkua ai. He hoʻomaikaʻi kēia, ʻaʻole he hoʻolaha kuleana kope: hāʻawi ʻia nā kōkua iā Exponential i ka Exponential Foundation a me 7x ma lalo o ka Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

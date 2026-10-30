@@ -3,7 +3,7 @@
  * The records of one request (or one stretch of a command), per channel, until they are flushed
  * (doc/eng-us/bc/6.0/audit.md, "Buffering and flushing (F3)").
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

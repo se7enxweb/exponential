@@ -14,7 +14,7 @@
  * the user may not read: a template cannot show audit records to a user without the policy. A use is recorded
  * as system.audit.read once per request and fetch name.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

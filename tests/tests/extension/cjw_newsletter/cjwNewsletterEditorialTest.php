@@ -18,7 +18,7 @@ require_once __DIR__ . '/cjwNewsletterTestCase.php';
  *  ED-22..27  the approval: request, inbox item, the send held and refused, decide, self approval, withdraw
  *  ED-28..32  hooks, dashboard, views, fetch functions, command
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

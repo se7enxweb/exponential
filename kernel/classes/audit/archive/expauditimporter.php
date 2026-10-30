@@ -20,7 +20,7 @@
  * The originals are then compressed into <ArchiveDir>/legacy/ with a signed manifest listing each file's sha256
  * (and removed from the old directory unless keepOriginals), and each import is recorded as system.audit.import.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -26,7 +26,7 @@ vollständige Liste ist das [Glossar](../../glossar.md); viele Definitionen hier
 | **Attribut** | Ein Feld einer Inhaltsklasse, mit einem Datentyp | [Das Inhaltsmodell verstehen](das-inhaltsmodell-verstehen.md) |
 | **Block** | Ein Teil einer Layout-Zone: ein Titel, Rich Text, ein Bild, eine Liste | [Der Layouts-Editor](../layout-editor.md) |
 | **Cache** | Gespeicherte Ergebnisse, die Seiten schneller machen | [Caches verstehen](caches-verstehen.md) |
-| **CLA** | Die Vereinbarung, die nötig ist, bevor Code in den Kernel gemergt wird; überträgt das Urheberrecht an 7x | [Die CLA für Lernende](die-cla-fuer-lernende.md) |
+| **CLA** | Die Vereinbarung, die nötig ist, bevor Code in den Kernel gemergt wird; überträgt das Urheberrecht an die Exponential Foundation und 7x | [Die CLA für Lernende](die-cla-fuer-lernende.md) |
 | **Konsole** | `php bin/php/console`, das die Befehle der Installation ausführt (`exp:...`) | [Glossar](../../glossar.md#c) |
 | **Inhaltsklasse** | Eine Art von Inhalt (Artikel, Ordner) als Liste von Attributen | [Projekt 1](projekt-01-eine-eigene-inhaltsklasse.md) |
 | **Inhaltsobjekt** | Ein einzelner Inhalt, mit Versionen und Übersetzungen | [Das Inhaltsmodell verstehen](das-inhaltsmodell-verstehen.md) |

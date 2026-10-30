@@ -17,7 +17,7 @@
  * The static helpers are what the notification handlers call before they do any work for a person (allowsUser(),
  * allowsAddress()) and to schedule an item at the frequency the person chose (storedFrequency()).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

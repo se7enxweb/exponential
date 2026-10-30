@@ -15,7 +15,7 @@
  *          kept for one more try and then written to the error log, never lost silently
  *  AB-07 — Buffering=disabled writes every event at once
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group audit

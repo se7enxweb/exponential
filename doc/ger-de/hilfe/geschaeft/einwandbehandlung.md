@@ -126,7 +126,7 @@ Struktur:
 
 | Fakt | Quelle |
 |---|---|
-| Die Codebasis trägt Urheberrechtsjahre ab 1999 (eZ Systems AS) und von 1998 bis 2026 (7x und die Exponential Foundation) | `COPYRIGHT.md` |
+| Die Codebasis trägt Urheberrechtsjahre ab 1999 (eZ Systems AS) und von 1998 bis 2026 (die Exponential Foundation und 7x) | `COPYRIGHT.md` |
 | „Exponential hat sein Lebensende im Jahr 2021 hinter sich gelassen und überlebt“ | `README.md`, „Exponential Project Status“ |
 | 7x hat 2023 die Führung des Projekts übernommen; das Unternehmen arbeitet seit den ersten Versionen mit dieser Software | [Wer ist 7x?](../wer-ist-7x.md#von-brookins-consulting-zu-7x-in-drei-stufen) |
 | Die Exponential Foundation, eine am 19. März 2026 gegründete gemeinnützige Organisation, betreibt das Projekt; zu ihrem Auftrag gehören „Finanzierung, Verbreitung, Support, Ausrichtung, Bildung, Entwicklung, Förderung und Dokumentation“ | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#was-die-foundation-ist) |

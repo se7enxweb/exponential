@@ -12,7 +12,7 @@
  *  SA-08 - MatchOrder=none has no rules; StaticMatch is reported
  *  SA-09 - The template, the view and the report use the map; no inline CSS in the new markup
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

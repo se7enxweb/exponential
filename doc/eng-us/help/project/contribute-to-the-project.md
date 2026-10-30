@@ -50,9 +50,9 @@ request to 7x's repository, where it is reviewed and, when merged, released to e
    (`Fixes #123`). If the "bug" you fix is behavior that is deliberate or open to interpretation, a
    [negative feature](getting-support.md#negative-features) other sites depend on, explain the use case carefully,
    prefer a new option over a changed default, and expect several rounds of review before it is accepted and merged.
-7. **Copyright assignment (CLA).** 7x and the Exponential Foundation merge a code
+7. **Copyright assignment (CLA).** The Exponential Foundation and 7x merge a code
    contribution to the core kernel (`se7enxweb/exponential`), sent in any form (pull request, patch, code in an
-   issue, or mail), only after you have signed the Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in
+   issue, or mail), only after you have signed the Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to the Exponential Foundation and 7x, which become its owners, and give up control over it:** The Exponential Foundation and 7x may use, change, relicense and distribute it in
    any way, also under other licenses and in commercial products, without asking or paying you, and you cannot
    withdraw it or set conditions on it. See
    [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) and the
@@ -70,7 +70,7 @@ pull request. While it is open, you squash it and rebase it onto `main` as the r
 Contribute under the same terms as everyone else: the GNU GPL version 2 or later. The website's FAQ asks for this so
 that contributions stay compatible with the rest of the code and the project can move to later versions of the GPL as
 a whole; `CONTRIBUTING.md` says the same. For the kernel, the CLA additionally assigns
-the copyright in your contribution to 7x, which may then use, change and relicense it without asking or paying you. If you cannot license a contribution
+the copyright in your contribution to the Exponential Foundation and 7x, which may then use, change and relicense it without asking or paying you. If you cannot license a contribution
 that way, do not submit it ([Licensing questions](licensing-faq.md#may-i-contribute-code-under-gpl-version-3-only-or-gpl-version-2-only)).
 
 ## Test changes before they are released
@@ -129,3 +129,11 @@ develop the products with us, and that is how Exponential grows. A partner websi
 mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
 [Partners: start here](../partners/partners-start-here.md) and [How to apply](../partners/how-to-apply.md).
 <!-- exp-partner-block:end -->
+
+## Copyright and copyleft
+
+Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
+Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
+[Copyright and copyleft](../copyright-and-copyleft.md).

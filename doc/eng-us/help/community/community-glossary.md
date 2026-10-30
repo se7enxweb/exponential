@@ -13,7 +13,7 @@ type: help
 |---|---|---|
 | **7x** | The North American company that leads development, support and hosting of Exponential | [Who is 7x?](../who-is-7x.md) |
 | **Advocate** | A community member who speaks, writes or presents about Exponential | [Advocates: start here](../advocates/advocates-start-here.md) |
-| **CLA** | The 7x Contributor Licensing Agreement; signing it and submitting kernel code assigns the copyright in that code to 7x | [The CLA explained](contributing/the-cla-explained.md) |
+| **CLA** | The Exponential Foundation and 7x Contributor Licensing Agreement (version 1.1.0); signing it and submitting kernel code assigns the copyright in that code to the Exponential Foundation and 7x | [The CLA explained](contributing/the-cla-explained.md) |
 | **Code of conduct** | The Contributor Covenant 2.1 with Exponential additions, binding in all community spaces | [The code of conduct](joining/the-code-of-conduct.md) |
 | **Community** | The people who use, contribute to, promote and develop software using Exponential worldwide | [What the community is](what-the-community-is.md) |
 | **Contribution day** | A few hours in which a group makes real contributions together | [A contribution day](local-groups/a-contribution-day.md) |

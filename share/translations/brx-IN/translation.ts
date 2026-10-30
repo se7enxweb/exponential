@@ -8066,8 +8066,8 @@
         <translation>गेजेरनि लिरगिरि आरो Exponentialजों दैनाय गुबै फारिनि सफ्टओयारनि कपिराइट खौसिनायआ, लाइसेन्सआ गोनांनायनि बायदि, सोर्स फाइल आरो LICENSE फाइलआव रैखानाय.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>बेनि उननि Exponentialआव जोराव खालामनाय गोदो लिरगिरिनि तालिका, जेरायाव eZ Systems Contributor Licensing Agreementनि सर्त आरो नियमनि बादि गासैनि खामानिखौ 7xनि बेबहारनि थाखाय लाइसेन्स होदों. बे सोमजिआ गोहोदनायनि बादि, 7xआ जोबोद जोराव खालामनायखौ बे जोरावनाय फाइलनि लाइसेन्सजों बांसिन दिदो. तालिकाव जोबोद जोराव खालामग्रानि मुं, इच्छा जायुगोन सोमोन्धोनि बुंनाय, आरो जेरायाव जोराव खालामनाय फाइलखौ दिदोंमोन.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential आरो बेनि सोमखौ जाखांनाय सफ्टवेरआव खामानिनि थाखाय मान होनाय हानाय होग्रासोफोर, बिसोरो होनाय फाइलफोरजों लोगोसे। बेयो मान होनाय, कपिराइट फोरमायनाय नङा: Exponential आव होनाय होग्रा Contributor Licensing Agreement सिमांनिफ्राय Exponential Foundation आरो 7x आव होनो जायो।</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

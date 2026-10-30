@@ -13,7 +13,7 @@
  * Twig keeps its compiled templates (never output) in <cache dir>/twig/compile (compile-secure with the sandbox).
  * The engine-neutral work (operators, functions, values, write-back) is the shared bridge in lib/templatebridge.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package lib
  */

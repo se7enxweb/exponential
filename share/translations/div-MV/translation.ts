@@ -8066,8 +8066,8 @@
         <translation>ލައިސަންސްގައި ބުނާ ގޮތަށް، އަސްލު ލިޔުންތެރިންނާއި Exponential އާއެކު ހިމެނޭ ތިންވަނަ ފަރާތްތަކުގެ ސޮފްޓްވެއަރގެ ކޮޕީރައިޓް ނޯޓިސްތައް ސޯސް ފައިލްތަކާއި LICENSE ފައިލްގައި ހިފެހެއްޓިފައި ވެއެވެ.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>ތިރީގައިވަނީ، eZ Systems Contributor Licensing Agreement ގެ ޝަރުތުތަކާއި ޙާލަތުތަކާ އެއްގޮތަށް 7x އިން ބޭނުންކުރުމަށް ވަކި މަސައްކަތް ލައިސަންސްކުރެއްވި Exponential ގެ ޙިއްސާދާރުންގެ ލިސްޓެވެ. މި އެއްބަސްވުމުން ހުއްދަ ދެނީ ގޮތަށް، 7x އިން ކޮންމެ ޙިއްސާއެއް ބެހޭނީ އެ ޙިއްސާ ހިމެނޭ ފައިލް ހުރި ލައިސަންސްގެ ދަށުންނެވެ. ލިސްޓްގައި ކޮންމެ ޙިއްސާދާރަކު، އިޚްތިޔާރީ ގުޅޭނެ މަޢުލޫމާތާއި، އެމީހުން ޙިއްސާކުރި ފައިލްތައް ބަޔާންކުރެވިފައި ވެއެވެ.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential އާއި އެ ސޮފްޓްވެއާ އުފެދުނު ސޮފްޓްވެއާގައި ކުރި މަސައްކަތަށް ޝުކުރުދެވޭ ހިއްސާވެރިން، އެމީހުން ހިއްސާވި ފައިލްތަކާއެކު. މިއީ ޝުކުރެއް، ކޮޕީރައިޓް ނޯޓިސްއެއް ނޫން: Exponential އަށް ދޭ ހިއްސާތައް Contributor Licensing Agreement ގެ ދަށުން Exponential Foundation އާއި 7x އަށް ހަވާލުކުރެވޭ.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

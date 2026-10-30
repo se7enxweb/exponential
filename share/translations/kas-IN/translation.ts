@@ -8066,8 +8066,8 @@
         <translation>اَسل مُصَنِفَن تہٕ Exponential سان شامِل تھرڈ پارٹی سافٹ ویئرَچ کاپی رایِٹ نوٹِس چھِ، لایِسنسہٕ ہِس شَرطَہ مُطابِق، سورس فایِلن تہٕ LICENSE فایِلَس منز محفوظ۔</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>یِم چھِ Exponential ہِس حِصہ دارَن ہٕنز فِہرِسٹ یِمَو eZ Systems Contributor Licensing Agreement ہٕنزن شَرطَن تَحت پَنُن کٲم 7x ہَس اِستِعمالَس خاطرٕ لایِسنس کوٚرمُت چھُ۔ یَمِ معاہدَس مُطابِق چھُ 7x ہر حِصہ تِمَے لایِسنسَن تَحت دوبارٕ تقسیٖم کَران یُس تَتھ فایِلَکۍ چھُ یَتھ منز سُ حِصہ شامِل چھُ۔ فِہرِسٹَس منز چھُ ہَر حِصہ دارُک ناو، اِختِیاری رابطہ مَعلوٗمات تہٕ تِم فایِل دَرج یِمَن منز تِمَو حِصہ پایہ۔</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>تِم شراکت دار یِمن Exponential تہٕ تَمہِ سافٹ ویرس پیٹھ کامہٕ خٲطرٕ کریڈٹ دِنہٕ چھُ یِوان یَتھ منٛزٕ یہِ بنیوو، تِمن فائلن سٕتۍ یِمن منٛز تِمو شراکت کٔر۔ یہِ چھُ کریڈٹ، کاپی رائٹ نوٹس نہٕ: Exponential منٛز شراکت چھےٚ Contributor Licensing Agreement تحت Exponential Foundation تہٕ 7x حوالہٕ کرنہٕ یِوان۔</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

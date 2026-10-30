@@ -7,7 +7,7 @@
  *  RE-03 - The view sets the embedded object and its type before it reads the EmbedID, so a missing or malformed
  *          one ends with the message and not with an undefined variable
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

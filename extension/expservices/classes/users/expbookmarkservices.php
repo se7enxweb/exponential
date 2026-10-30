@@ -4,7 +4,7 @@
  * current user's own bookmarks and folders only; a folder or bookmark of somebody else does not exist (404).
  * The flat list of all bookmarks stays available as bookmarks (the same order as the content/bookmarks fetch).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

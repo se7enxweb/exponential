@@ -10,7 +10,7 @@
  *  AR-04 - the view refuses a channel that is not allowed and checks audit/manage before verifying
  *  AR-05 - the Verify now form of both designs posts back to the same channel filter
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

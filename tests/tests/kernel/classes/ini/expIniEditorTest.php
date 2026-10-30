@@ -28,7 +28,7 @@
  *  INI-18 — as the site user, a file's group is kept when the user is a member of it (atomic)
  *  INI-19 — as the site user, a group that cannot be set: the original inode is rewritten, the group stays
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group ini

@@ -8,7 +8,7 @@
  * are the upstream onclick="window.setTimeout( disableButtons, 1 )" and a submit listener that calls
  * window.setTimeout( <fn>, 0 ). DB-less: reads the templates of the kernel designs and of every extension on disk.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

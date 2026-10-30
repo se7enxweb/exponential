@@ -4,7 +4,7 @@
  * messages, participants and groups, and the approve and deny decisions where the item's workflow allows them.
  * An item is only visible to its participants; to everybody else it does not exist (404).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

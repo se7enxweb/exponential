@@ -12,7 +12,7 @@
  *  RS-06 - A row is the same on every engine: empty limitations are '', a gone object has no object_id
  *  RS-07 - The address parts of the two lists hold only what differs from the default, the filter encoded
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

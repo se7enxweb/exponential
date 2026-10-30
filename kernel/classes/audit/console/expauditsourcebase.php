@@ -3,7 +3,7 @@
  * The base of an audit console source (expAuditSource): every method answers "nothing", so a source implements only
  * what it shows. Helpers build console addresses and check a policy.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

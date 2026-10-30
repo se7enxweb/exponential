@@ -8282,8 +8282,8 @@
         <translation>Gli avvisi di copyright degli autori originali e del software di terze parti incluso in Exponential sono conservati nei file sorgente e nel file LICENSE, come richiede la licenza.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Segue un elenco dei collaboratori di Exponential che hanno concesso in licenza il proprio lavoro a 7x secondo i termini e le condizioni dell&apos;eZ Systems Contributor Licensing Agreement. Come consentito da tale accordo, 7x ridistribuisce ogni contributo con la stessa licenza del file in cui il contributo è incluso. L&apos;elenco indica ogni collaboratore, eventuali informazioni di contatto e i file a cui ha contribuito.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Collaboratori riconosciuti per il loro lavoro su Exponential e sul software da cui è nato, con i file a cui hanno contribuito. Si tratta di un riconoscimento, non di un avviso di copyright: i contributi a Exponential sono ceduti alla Exponential Foundation e a 7x in base al Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

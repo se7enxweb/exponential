@@ -11,7 +11,7 @@
  * A rule given a state without a file (expAuditAlertState::memory()) works in memory only: exp:audit alerts test
  * --replay runs a rule over past records that way without firing or touching the real state.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

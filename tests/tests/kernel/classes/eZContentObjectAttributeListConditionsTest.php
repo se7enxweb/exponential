@@ -5,7 +5,7 @@
  * hundred objects SQLite refused it ("Expression tree is too large (maximum depth 1000)"), after which the attributes of
  * every object on the page were missing. No database of the installation: the fragments are run on an in-memory SQLite.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

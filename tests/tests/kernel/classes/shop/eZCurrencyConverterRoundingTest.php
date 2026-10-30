@@ -11,7 +11,7 @@
  * No database: the currencies are stand-ins with a fixed rate, put into the converter's currency list, and the math
  * handler is eZPHPMath. The shop.ini settings are set by the test and put back.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group kernel

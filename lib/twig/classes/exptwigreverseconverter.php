@@ -25,7 +25,7 @@
  * operator, method calls ...) is not guessed: it is reported (warnings()) and kept in the .tpl as a comment
  * {* TWIG (not converted: <why>) line <n> *}, which prints nothing.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package lib
  */

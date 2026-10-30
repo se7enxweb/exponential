@@ -21,7 +21,8 @@ type: help
 
 - **Die Git-Historie** bewahrt den Autor jedes gemergten Commits; `git shortlog -sn` zeigt alle, die beigetragen
   haben ([Anerkennung für Unterstützer](../../unterstuetzer/anerkennung-fuer-unterstuetzer.md)).
-- **Der Copyright-Hinweis der Dokumentation** nennt „die Mitwirkenden von Exponential“ neben 7x und der Foundation
+- **Eine Nennung ist kein Urheberrecht.** Der Copyright-Hinweis nennt nur die Exponential Foundation und 7x, weil alle
+  Mitwirkenden das Urheberrecht an einem Beitrag über das CLA an sie übertragen; die Nennung bleibt bei den Menschen
   ([Die Lizenz dieser Dokumentation](../../../README-LIZENZ.md)).
 - **Die Nennung anderer Projekte** erscheint in der README, zum Beispiel die LoveStack-Verbesserungen, die „unter
   vollständiger Nennung von Mugo Web“ neu aufgebaut wurden (`README.md`).

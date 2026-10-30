@@ -6,7 +6,7 @@
  * A stream returned by open() is closed with expAuditFormatBase::close( $stream ), which also ends the
  * decompressing process of a binary handler.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

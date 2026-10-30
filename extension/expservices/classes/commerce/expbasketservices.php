@@ -4,7 +4,7 @@
  * to the session (cookie) of the caller, exactly as in the shop; a remote app keeps its session cookie.
  * Orders are never completed here without the explicit placeOrder service.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

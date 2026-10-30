@@ -4,7 +4,7 @@
  * not give a key away, keeping the viewer's own session out of a removal, the cleaning of ids, searches, sort keys
  * and windows, LIKE escaping, durations in words and one list row as the template gets it. No database, no session.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

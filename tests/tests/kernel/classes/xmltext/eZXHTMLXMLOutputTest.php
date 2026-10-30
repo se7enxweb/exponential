@@ -10,7 +10,7 @@
  * ("[paragraph classification=]...[/paragraph]"), so the result does not depend on the designs of the
  * installation. No database: the URLs of links are given to the handler instead of being read.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group kernel

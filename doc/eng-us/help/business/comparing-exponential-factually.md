@@ -63,7 +63,7 @@ is to make the Exponential column complete, sourced and honest, including where 
 | Contributions stay free | "any modifications made to the project are also released under the same GPLv2 or later license" | `CONTRIBUTING.md` |
 | Documentation license | GNU Free Documentation License 1.3 or later | [The license of this documentation](../../README-LICENSE.md), [Free documentation](../free-documentation.md) |
 | Source and history | The full history is kept, back to the oldest commit of 2 September 2002; 27,242 commits on `main` on 18 October 2026 | [Who is 7x?, The eZ Publish years](../who-is-7x.md#the-ez-publish-years-1999-to-2021) |
-| Lineage | Copyright notice "1998 - 2026 7x & Exponential Foundation" next to "1999 - 2014 eZ Systems AS" | `COPYRIGHT.md` |
+| Lineage | Copyright notice "1998 - 2026 Exponential Foundation and 7x" next to "1999 - 2014 eZ Systems AS" | `COPYRIGHT.md` |
 | Self-hosting | Runs on "almost any [operating system] that runs PHP 8.0 or later (PHP 7.4 usable without support)", in four documented tiers | [Operating system support](../os-support.md) |
 | Databases | "1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL" | [Database support](../database-support.md) |
 | Web servers | Exponential Velocity (recommended), Apache, nginx, FrankenPHP, LiteSpeed, Caddy, IIS, lighttpd and others | [Operating system support, Web servers](../os-support.md#web-servers), `README.md` |

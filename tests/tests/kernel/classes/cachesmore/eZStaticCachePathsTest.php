@@ -8,7 +8,7 @@
  * The static cache is switched off on most installations; none of this needs it on. The siteaccesses are made up:
  * their settings are written under var/tmp and handed to the class's own per request settings cache.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group kernel

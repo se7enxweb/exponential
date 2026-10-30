@@ -8066,8 +8066,8 @@
         <translation>Beeksisni mirga abbummaa barreessitoota jalqabaa fi sooftiweerii dhaabbilee biroo Exponential waliin dhufan, akka laayisansiin barbaadutti, faayilii maddaa fi faayilii LICENSE keessa eegamaniiru.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Kanatti aanu tarree gumaacha-tootaa Exponential kan hojii isaanii 7x tiif waliigaltee Laayisansii Gumaacha-tootaa eZ Systems jalatti kennaniidha. Akkuma waliigalteen kun hayyamu, 7x gumaacha hundaa laayisansii faayilii gumaachichi keessa jiruu wajjin tokkoon deebisee raabsa. Tarreen kun gumaacha-too hunda, odeeffannoo qunnamtii filannoo fi faayiloota isaan gumaachan yookiin hojii itti gumaachan tarreessa.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Gumaachitoota hojii isaanii Exponential fi sooftiweerii inni irraa maddee irratti hojjataniif galateeffaman, faayiloota isaan itti gumaachan waliin. Kun galata, beeksisa mirga abbummaa miti: gumaachi Exponential'iif godhamu Contributor Licensing Agreement jalatti Exponential Foundation fi 7x'iif dabarfama.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

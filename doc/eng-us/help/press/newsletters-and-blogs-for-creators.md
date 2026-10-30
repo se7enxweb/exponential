@@ -45,8 +45,8 @@ newsletter, if you keep the notices and license your adapted text the same way
 ([Quoting and reusing the documentation](quoting-and-reusing-the-documentation.md)).
 
 ```text
-Adapted from the Exponential documentation, "<page>", (C) 1998-2026 7x & Exponential Foundation and the
-Exponential contributors, GNU FDL 1.3 or later.
+Adapted from the Exponential documentation, "<page>", Exponential Copyright © 1998-2026 Exponential Foundation and 7x,
+GNU FDL 1.3 or later.
 ```
 
 ## Disclosure

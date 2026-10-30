@@ -11,7 +11,7 @@
  * No kernel bootstrap, no database. The locale is whatever site.ini sets; every locale dependent expectation is
  * computed with eZLocale itself. Template files and compiled templates go to a private directory under var/tmp.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group lib

@@ -34,7 +34,7 @@ type: help
 | Hosting-Unternehmen und Agenturen | Betreiben und bauen Exponential-Websites | [Hosting-Unternehmen: hier beginnen](../../hosting/hosting-anbieter-hier-beginnen.md) |
 | Andere Open-Source-Projekte | Liefern Code, den Exponential verwendet und nennt | [Begleitprojekte und andere Unternehmen](begleitprojekte-und-andere-unternehmen.md) |
 
-Der Copyright-Vermerk des Kernels lautet "Copyright (C) 1998 - 2026 7x & Exponential Foundation" (`COPYRIGHT.md`).
+Der Copyright-Vermerk des Kernels lautet "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." (`COPYRIGHT.md`).
 
 ## Verwandte Seiten
 

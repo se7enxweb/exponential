@@ -122,7 +122,7 @@ Nobody can promise the future, and you should not. What the sources show is a re
 
 | Fact | Source |
 |---|---|
-| The code base carries copyright years from 1999 (eZ Systems AS) and 1998 to 2026 (7x and the Exponential Foundation) | `COPYRIGHT.md` |
+| The code base carries copyright years from 1999 (eZ Systems AS) and 1998 to 2026 (the Exponential Foundation and 7x) | `COPYRIGHT.md` |
 | "Exponential has made it beyond it's end of life in 2021 and survived" | `README.md`, "Exponential Project Status" |
 | 7x took over leadership of the project in 2023; the company worked with this software since its first versions | [Who is 7x?](../who-is-7x.md#from-brookins-consulting-to-7x-in-three-stages) |
 | The Exponential Foundation, a nonprofit founded on 19 March 2026, operates the project; its mission includes "Funding, Adoption, Support, Direction, Education, Development, Promotion and Documentation" | [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md#what-the-foundation-is) |

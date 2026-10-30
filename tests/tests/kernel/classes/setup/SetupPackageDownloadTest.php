@@ -4,7 +4,7 @@
  * download again and says why it failed: HTTP status, curl error, bytes received.
  * A local PHP web server in var/tmp serves the fixtures; tiny retry delays.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

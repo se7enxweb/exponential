@@ -8066,8 +8066,8 @@
         <translation>ئاگادارکردنەوەکانی مافی لەبەرگرتنەوەی نووسەرە بنەڕەتییەکان و نەرمامێری لایەنی سێیەمی لەگەڵ Exponential دا هاتوو، وەک مۆڵەتنامەکە داوای دەکات، لە فایلە سەرچاوەکان و لە فایلی LICENSE دا دەپارێزرێن.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>ئەمە لیستی بەشداربووانی Exponential ـە کە کارەکانیان بۆ بەکارهێنانی 7x بەپێی مەرج و ڕێساکانی eZ Systems Contributor Licensing Agreement مۆڵەتپێدراون. وەک ئەم ڕێککەوتنە ڕێگە دەدات، 7x هەر بەشداریەک بە هەمان مۆڵەتنامەی ئەو فایلەی بەشداریەکەی تێدایە دووبارە بڵاو دەکاتەوە. لیستەکە ناوی هەر بەشداربوو، زانیاری پەیوەندیی ئارەزوومەندانە و ئەو فایلانە دەخاتە ڕوو کە بەشدارییان تێدا کردووە.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>بەشداربووانێک کە بۆ کارەکانیان لەسەر Exponential و ئەو نەرمەکاڵایەی لێیەوە پەیدا بوو سوپاس دەکرێن، لەگەڵ ئەو فایلانەی بەشدارییان تێدا کردووە. ئەمە سوپاسگوزارییە، نەک ئاگادارکردنەوەی مافی لەبەرگرتنەوە: بەشدارییەکان لە Exponential بەپێی Contributor Licensing Agreement دەدرێنە Exponential Foundation و 7x.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

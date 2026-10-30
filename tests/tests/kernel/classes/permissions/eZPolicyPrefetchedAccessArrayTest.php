@@ -18,7 +18,7 @@
  *  PP-09 - A build inside a build gets the outer one its rows back afterwards, and the last one leaves none behind
  *  PP-10 - The ids of one IN () list stay below Oracle's limit of 1000
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  */

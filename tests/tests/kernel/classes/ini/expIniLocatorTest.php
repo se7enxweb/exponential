@@ -10,7 +10,7 @@
  *  LOC-05 — an unknown siteaccess is refused; a variable set nowhere is reported as not found
  *  LOC-06 — the files of an extension the siteaccess does not load are listed as not loaded (Var and Var[] alike)
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group ini

@@ -8066,8 +8066,8 @@
         <translation>Беренче авторларның һәм Exponential белән бергә килүче өченче як программа тәэминатының авторлык хокукы турында белдерүләре лицензия таләп иткәнчә чыганак файлларда һәм LICENSE файлында саклана.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Түбәндә үз эшләрен eZ Systems Contributor Licensing Agreement шартлары нигезендә 7x кулланышына лицензияләгән Exponential катнашучыларының исемлеге бирелә. Бу килешү рөхсәт иткәнчә, 7x һәр өлешне ул кертелгән файл белән бер үк лицензия нигезендә таратыла. Исемлектә һәр катнашучы, теләк буенча аның элемтә мәгълүматы һәм ул өлеш керткән файллар күрсәтелгән.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential һәм ул барлыкка килгән программа тәэминаты өстендә эшләре өчен искә алынган өлеш кертүчеләр, алар өлеш керткән файллар белән. Бу авторлык хокукы турында белдерү түгел, ә рәхмәт: Exponential'га кертелгән өлешләр Contributor Licensing Agreement буенча Exponential Foundation һәм 7x'кә тапшырыла.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

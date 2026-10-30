@@ -15,7 +15,7 @@
  * are written at once. Per-request state is reset in ezpKernelWeb::__construct() (resetRequest()) and whenever
  * REQUEST_TIME_FLOAT changes, so nothing of one request reaches the next in a persistent Velocity worker.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  *

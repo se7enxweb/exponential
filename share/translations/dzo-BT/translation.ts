@@ -8066,8 +8066,8 @@
         <translation>ཆོག་ཐམ་གྱིས་དགོ་པའི་ལྟར་ ཐོག་མའི་རྩོམ་པ་པོ་ཚུ་དང་ Exponential དང་གཅིག་ཁར་ཚུད་པའི་ཕྱི་ཕྱོགས་ཀྱི་མཉེན་ཆས་ཀྱི་འདྲ་བཤུས་དབང་ཚད་བརྡ་ཐོ་ཚུ་ འབྱུང་ཁུངས་ཡིག་སྣོད་དང་ LICENSE ཡིག་སྣོད་ནང་ཉར་ཚགས་འབད་ཡོདཔ་ཨིན།</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>གཤམ་གསལ་འདི་ eZ Systems Contributor Licensing Agreement གི་ཆིངས་ཡིག་དང་ཁྲིམས་ཡིག་གི་འོག་ལུ་ རང་གི་ལཱ་འདི་ 7x གིས་ལག་ལེན་འཐབ་ནིའི་དོན་ལུ་ཆོག་ཐམ་བྱིན་མི་ Exponential ཕན་འདེབས་པ་ཚུའི་ཐོ་ཡིག་ཨིན། གན་རྒྱ་འདི་གིས་གནང་བ་བྱིན་པ་ལྟར་ 7x གིས་ཕན་འདེབས་རེ་རེ་འདི་ ཕན་འདེབས་དེ་ཚུད་མི་ཡིག་སྣོད་ཀྱི་ཆོག་ཐམ་གཅིག་པའི་འོག་ལུ་ལོག་བགོ་བཤའ་འབདཝ་ཨིན། ཐོ་ཡིག་འདི་ནང་ཕན་འདེབས་པ་རེ་རེའི་མིང་དང་ རང་འདོད་ཀྱི་འབྲེལ་བའི་བརྡ་དོན་ ཁོང་གིས་ཕན་འདེབས་འབད་མི་ཡིག་སྣོད་ཚུ་ཡང་ན་ཕན་འདེབས་འབད་མི་ལཱ་གི་ཡིག་སྣོད་ཚུ་བཀོད་ཡོདཔ་ཨིན།</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential དང་ དེ་ཆགས་ཡོདཔ་ཨིན་པའི་ མཉེན་ཆས་གུ་ ལཱ་འབད་མི་ལུ་ བཀའ་དྲིན་ཞུ་མི་ ཞལ་འདེབས་པ་ཚུ་ དེ་ཚུ་གིས་ཞལ་འདེབས་འབད་མི་ ཡིག་སྣོད་ཚུ་དང་གཅིག་ཁར། འདི་ བཀའ་དྲིན་ཞུ་ནི་ཨིན་ པར་དབང་བརྡ་བསྐུལ་མེན། Exponential ལུ་ ཞལ་འདེབས་ཚུ་ Contributor Licensing Agreement ལྟར་ Exponential Foundation དང་ 7x ལུ་ སྤྲོད་ཨིན།</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

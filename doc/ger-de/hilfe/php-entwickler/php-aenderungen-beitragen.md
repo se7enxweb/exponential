@@ -43,7 +43,7 @@ Erweiterung veröffentlichen, beschreiben [Erweiterungen zurückgeben](../erweit
 7x und die Exponential Foundation verlangen für jeden Code-Beitrag zum Kern-Kernel ein unterzeichnetes Contributor
 Licensing Agreement, bevor er gemergt werden kann. Lesen Sie die Vereinbarung und die Zusammenfassung in
 `CONTRIBUTING.md` („Copyright assignment (CLA)“), bevor Sie unterzeichnen: Indem Sie unterzeichnen und einen Beitrag zum
-Kern-Kernel einreichen, übertragen Sie das Urheberrecht an diesem Beitrag an 7x. Sie unterzeichnen einmal für alle Ihre
+Kern-Kernel einreichen, übertragen Sie das Urheberrecht an diesem Beitrag an die Exponential Foundation und 7x. Sie unterzeichnen einmal für alle Ihre
 künftigen Beiträge; ein Pull Request ohne hinterlegte unterzeichnete CLA wird geprüft, aber erst gemergt, wenn sie
 eingegangen ist.
 

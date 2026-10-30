@@ -8005,8 +8005,8 @@
         <translation>Οι σημειώσεις πνευματικών δικαιωμάτων των αρχικών δημιουργών και του λογισμικού τρίτων που περιλαμβάνεται στο Exponential διατηρούνται στα αρχεία πηγαίου κώδικα και στο αρχείο LICENSE, όπως απαιτεί η άδεια χρήσης.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>Ακολουθεί λίστα των συνεισφερόντων του Exponential που έχουν παραχωρήσει άδεια χρήσης του έργου τους στην 7x σύμφωνα με τους όρους και τις προϋποθέσεις της συμφωνίας eZ Systems Contributor Licensing Agreement. Όπως επιτρέπει η συμφωνία αυτή, η 7x αναδιανέμει κάθε συνεισφορά με την ίδια άδεια χρήσης με το αρχείο στο οποίο περιλαμβάνεται η συνεισφορά. Η λίστα αναφέρει κάθε συνεισφέροντα, προαιρετικά στοιχεία επικοινωνίας και τα αρχεία στα οποία συνεισέφερε.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Συνεισφέροντες που αναγνωρίζονται για τη δουλειά τους στο Exponential και στο λογισμικό από το οποίο προήλθε, με τα αρχεία στα οποία συνεισέφεραν. Πρόκειται για αναγνώριση, όχι για σημείωμα πνευματικών δικαιωμάτων: οι συνεισφορές στο Exponential εκχωρούνται στο Exponential Foundation και στην 7x βάσει του Contributor Licensing Agreement.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

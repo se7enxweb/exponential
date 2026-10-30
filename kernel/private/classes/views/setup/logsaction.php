@@ -10,7 +10,7 @@
  * action on, CancelButton goes back. Then the page of the file is opened again with done=<action>&ok=1|0.
  * A download is masked as the viewer is (unmask=1 only with setup/unmasklogs) and compressed with gzip.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

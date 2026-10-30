@@ -10,7 +10,7 @@
  *  SD-01 - setup/sitedata: a value whose name is a secret is only "set"; a password inside another value is masked
  *  SS-01 - setup/session: a row given to the template carries no session key
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

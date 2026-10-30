@@ -8064,8 +8064,8 @@
         <translation>లైసెన్స్ అవసరం మేరకు, అసలు రచయితల కాపీరైట్ నోటీసులు మరియు Exponential తో చేర్చబడిన మూడవ పక్ష సాఫ్ట్‌వేర్ నోటీసులు సోర్స్ ఫైళ్లలో మరియు LICENSE ఫైల్‌లో ఉంచబడ్డాయి.</translation>
     </message>
     <message>
-        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
-        <translation>eZ Systems కంట్రిబ్యూటర్ లైసెన్సింగ్ ఒప్పందం నియమ నిబంధనల ప్రకారం 7x ఉపయోగించడానికి తమ పనిని లైసెన్స్ చేసిన Exponential కంట్రిబ్యూటర్ల జాబితా క్రింద ఉంది. ఈ ఒప్పందం అనుమతించిన విధంగా, 7x ప్రతి సహకారాన్ని అది చేర్చబడిన ఫైల్‌కు ఉన్న లైసెన్స్ కిందనే తిరిగి పంపిణీ చేస్తుంది. ఈ జాబితాలో ప్రతి కంట్రిబ్యూటర్ పేరు, ఐచ్ఛిక సంప్రదింపు సమాచారం మరియు వారు సహకరించిన లేదా పని అందించిన ఫైళ్లు ఉంటాయి.</translation>
+        <source>Contributors credited for their work on Exponential and on the software it grew from, with the files they contributed to. This is credit, not a copyright notice: contributions to Exponential are assigned to the Exponential Foundation and 7x under the Contributor Licensing Agreement.</source>
+        <translation>Exponential మరియు అది పుట్టిన సాఫ్ట్‌వేర్‌పై చేసిన పనికి గుర్తింపు పొందిన సహకారులు, వారు సహకరించిన ఫైళ్లతో సహా. ఇది గుర్తింపు, కాపీరైట్ నోటీసు కాదు: Exponential కు అందించిన సహకారాలు Contributor Licensing Agreement ప్రకారం Exponential Foundation మరియు 7x కు బదిలీ చేయబడతాయి.</translation>
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>

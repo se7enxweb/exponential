@@ -18,7 +18,7 @@
  *  LV-227  without a redactor (the request lines of one entry, the command line before a viewer) the filters compare
  *          what is written, as before
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */
