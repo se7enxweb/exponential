@@ -39,6 +39,11 @@
  *  QC-35 — In a web request (a Velocity worker too) the purge runs at the end of the request, registered once
  *  QC-36 — One time base for the saved share: the script start (REQUEST_TIME_FLOAT without it) to the end the bar sets
  *  QC-37 — The report row says how many times as long the page would have taken without the cache
+ *  QC-39 — Results kept under a state file that is gone are not answered again (the file deleted with the cache
+ *           directory, APCu or the result files still there)
+ *  QC-40 — A write that cannot take the state lock makes everything stale
+ *  QC-41 — The memo keeps at most MEMO_MAX results, the least recently used goes first
+ *  QC-42 — The key carries the database user, port and socket: two sites on one server do not share results
  *
  * No database: the driver is a stand-in object with the properties the cache
  * reads, and the state lives in a directory of its own under var/tmp.
@@ -104,6 +109,16 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
             return $hit;
         eZDBQueryCache::store( $ticket, $rows );
         return null;
+    }
+
+    /**
+     * An installation that has run before: its state file exists. The first file written gets an id of its own, and
+     * results kept before it (under no file) are not answered under it.
+     */
+    private function existingState()
+    {
+        eZDBQueryCache::clearAll();
+        usleep( 5 );
     }
 
     private function write( $sql )
@@ -189,6 +204,7 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
     public function testWriteToAReadTableMakesItStale()
     {
         $sql = 'SELECT * FROM ezcontentobject o, ezcontentobject_name n WHERE o.id = n.contentobject_id';
+        $this->existingState();
         $this->select( $sql );
         $this->write( 'UPDATE ezsection SET name = 1' );
         $this->assertNotNull( $this->select( $sql ), 'a write to another table leaves it current' );
@@ -642,6 +658,7 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
                 return count( preg_grep( '/^Query cache: state read \(generation \d+\)$/', array_column( $debug->TimePoints, 'Description' ) ) );
             };
             $sql = 'SELECT * FROM ezcontentobject';
+            $this->existingState();
             $this->newRequest();
             $this->select( $sql );
             $this->assertNotNull( $this->select( $sql ) );
@@ -676,14 +693,17 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
 
             // the next request of a persistent worker: nothing carried over; the report reads no state itself
             $this->newRequest();
+            eZDBQueryCache::debugReport( false );
+            $this->assertSame( 3, $points(), 'no state read yet, no timing point, also not from the report' );
+            // a miss reads the state: the result it stores belongs to that state file
             $this->select( $sql );
             $text = eZDBQueryCache::debugReport( false );
             $this->assertMatchesRegularExpression( '/^Hits +0$/m', $text );
             $this->assertMatchesRegularExpression( '/^Misses +1$/m', $text );
-            $this->assertMatchesRegularExpression( '/^Generation +not read$/m', $text );
-            $this->assertSame( 3, $points(), 'no state read yet, no timing point, also not from the report' );
-            $this->assertNotNull( $this->select( $sql ) );
+            $this->assertMatchesRegularExpression( '/^Generation +\\d+$/m', $text );
             $this->assertSame( 4, $points(), 'the first look at the state' );
+            $this->assertNotNull( $this->select( $sql ) );
+            $this->assertSame( 4, $points(), 'once per report' );
 
             // the debug output switched off, then a reset: nothing registered, no accumulator half made
             $GLOBALS['eZDebugEnabled'] = false;
@@ -1142,5 +1162,82 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
                 eZDBQueryCache::setRequestEnd( null );
             }
         } );
+    }
+
+    /** QC-39 */
+    public function testResultsUnderAStateFileThatIsGoneAreNotAnswered()
+    {
+        $sql = 'SELECT * FROM ezcontentobject';
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $this->existingState();
+        $this->select( $sql );
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $this->assertNotNull( $this->select( $sql ), 'kept across requests' );
+        // the cache directory's state file is deleted (rm -r of the cache), the result files are not
+        unlink( $this->dir . '/state.ser' );
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $this->assertNull( $this->select( $sql ), 'the writes the deleted file knew are gone: not answered' );
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $this->assertNotNull( $this->select( $sql ), 'what was stored after it is' );
+    }
+
+    /** QC-40 */
+    public function testAWriteWithoutTheLockMakesEverythingStale()
+    {
+        $this->existingState();
+        $read = 'SELECT * FROM ezcontentobject';
+        $other = 'SELECT * FROM ezsection';
+        $this->select( $read );
+        $this->select( $other );
+        // the lock cannot be opened (here: a directory in its place)
+        unlink( $this->dir . '/state.lock' );
+        mkdir( $this->dir . '/state.lock' );
+        $log = ini_set( 'error_log', $this->dir . '/error.log' );
+        try
+        {
+            $this->write( 'UPDATE ezcontentobject SET x = 1' );
+        }
+        finally
+        {
+            ini_set( 'error_log', $log );
+        }
+        $this->assertNull( $this->select( $other ), 'another process\'s write could have been lost: stale too' );
+        $this->assertStringContainsString( 'could not lock', file_get_contents( $this->dir . '/error.log' ) );
+    }
+
+    /** QC-41 */
+    public function testTheMemoKeepsAtMostMemoMaxResults()
+    {
+        for ( $i = 0; $i <= eZDBQueryCache::MEMO_MAX; $i++ )
+            $this->select( 'SELECT * FROM ezcontentobject WHERE id = ' . $i );
+        $this->assertNotNull( $this->select( 'SELECT * FROM ezcontentobject WHERE id = ' . eZDBQueryCache::MEMO_MAX ), 'the newest is kept' );
+        $this->assertNull( $this->select( 'SELECT * FROM ezcontentobject WHERE id = 0' ), 'the oldest went first' );
+        // a hit makes a result the newest: it outlives the ones read after it
+        $this->assertNotNull( $this->select( 'SELECT * FROM ezcontentobject WHERE id = 2' ) );
+        for ( $i = 0; $i < eZDBQueryCache::MEMO_MAX - 1; $i++ )
+            $this->select( 'SELECT * FROM ezsection WHERE id = ' . $i );
+        $this->assertNotNull( $this->select( 'SELECT * FROM ezcontentobject WHERE id = 2' ), 'used recently: kept' );
+        $this->assertNull( $this->select( 'SELECT * FROM ezcontentobject WHERE id = 3' ), 'not used since: dropped' );
+    }
+
+    /** QC-42 */
+    public function testTheKeyCarriesTheDatabaseUserAndPort()
+    {
+        $a = $this->driver();
+        $a->User = 'site_a';
+        $a->Port = 1521;
+        $b = clone $a;
+        $b->User = 'site_b';
+        $c = clone $a;
+        $c->Port = 1522;
+        $d = clone $a;
+        $d->SocketPath = '/run/mysqld/other.sock';
+        $this->assertNotSame( eZDBQueryCache::key( $a, 'SELECT 1 FROM x', array() ), eZDBQueryCache::key( $d, 'SELECT 1 FROM x', array() ) );
+        $sql = 'SELECT * FROM ezcontentobject';
+        $this->assertNotSame( eZDBQueryCache::key( $a, $sql, array() ), eZDBQueryCache::key( $b, $sql, array() ) );
+        $this->assertNotSame( eZDBQueryCache::key( $a, $sql, array() ), eZDBQueryCache::key( $c, $sql, array() ) );
+        $this->assertSame( eZDBQueryCache::key( $a, $sql, array() ), eZDBQueryCache::key( clone $a, $sql, array() ) );
+        $this->select( $sql, array( array( 'id' => 1 ) ), array(), $a );
+        $this->assertNull( $this->select( $sql, array( array( 'id' => 2 ) ), array(), $b ), 'another user\'s rows are not answered' );
     }
 }
