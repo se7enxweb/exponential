@@ -265,11 +265,24 @@ A read that raced a write is therefore always stale, never trusted.
 ### What is never cached
 
 - reads inside a transaction (they may see the transaction's own writes);
-- statements whose tables cannot be read from the text (subqueries in `FROM`,
-  anything that is not a plain `SELECT`);
+- statements whose tables cannot all be read from the text: anything with a
+  parenthesis in a `FROM` list (a derived table, an index hint, `PARTITION (p)`,
+  `TABLE(...)`, `LATERAL (...)`), `ONLY`, a parenthesised join (`JOIN ( b JOIN c
+  ... )`), a comma list after a join (`JOIN b ON ..., c`, `JOIN b USING (i), c`), a quoted name with a space in
+  it, a comment (`--`, `/* */`, and `#` where a backslash escapes), Oracle's
+  `q'[...]'` and PostgreSQL's `E'...'` literals, anything that is not a plain
+  `SELECT`. Each `SELECT` of `UNION`, `MINUS`, `INTERSECT` and `EXCEPT` is read,
+  and `STRAIGHT_JOIN`. Where a backslash in a literal would end the literal
+  elsewhere depending on the database (it escapes in MySQL's literals, and
+  double quotes delimit strings there; not in Oracle's, SQLite's or PostgreSQL's
+  with `standard_conforming_strings` on, the default: `'C:\'`), the driver's
+  `databaseName()` decides (`eZDBQueryCache::backslashEscapes()`); a driver that
+  does not say gets the statement read both ways, and where they differ it is
+  not cached. The same rules apply to writes: a write that cannot be read makes
+  everything stale;
 - statements whose result is not a function of their tables: `NOW()`,
   `UNIX_TIMESTAMP()` with no argument, `CURRENT_DATE` and friends, `RAND()`,
-  `UUID()`, `LAST_INSERT_ID()`, `FOUND_ROWS()`, locks (`FOR UPDATE`,
+  `UUID()`, `LAST_INSERT_ID()`, `FOUND_ROWS()`, Oracle's `SAMPLE (n)`, locks (`FOR UPDATE`,
   `LOCK IN SHARE MODE`, `GET_LOCK()`), variables (`@x`, `@@x`), `SQL_NO_CACHE`,
   `INTO OUTFILE`;
 - reads of temporary tables: those `CREATE TEMPORARY TABLE` made in this
@@ -483,6 +496,7 @@ so the tests never touch the site's cache.
 | QC-01 | The tables a `SELECT` reads (joins, aliases, `db.table`, quoted names, table names inside strings ignored); not cacheable: not a plain `SELECT`, volatile functions, locks, `SQL_CALC_FOUND_ROWS`, a subquery in `FROM`, variables |
 | QC-02 | The tables a write names, for every verb (`INSERT`, `INSERT IGNORE`, `REPLACE`, `UPDATE` multi-table, `DELETE` with `JOIN`, `TRUNCATE`, `CREATE`/`ALTER`/`DROP TABLE`, `CREATE INDEX`, `RENAME TABLE`); an unreadable write is null |
 | QC-03 | A miss, a store, then a hit with the same rows, and the counters |
+| QC-38 | Statements whose tables cannot all be told are not cached (a derived table, index hint, `PARTITION`, `LATERAL`, `ONLY` or `TABLE()` in `FROM`, a parenthesised join, a comma list after a join, a quoted name with a space, a comment with or without an apostrophe, `q''` and `E''` literals, a backslash that ends a literal differently per database); each `SELECT` of `MINUS`, `INTERSECT`, `EXCEPT`, `UNION` and `STRAIGHT_JOIN` are read; MySQL's `\'` and double-quoted strings stay one literal; a kernel join with `IN ( ... )` lists stays cacheable; `SAMPLE` is volatile |
 | QC-04 | A write to a table the result read makes it stale; a write to another table does not |
 | QC-05 | An unreadable write and a clear make everything stale; a clear raises the generation |
 | QC-06 | In a transaction reads are neither answered nor stored; writes count at `COMMIT` and are forgotten on `ROLLBACK` |
