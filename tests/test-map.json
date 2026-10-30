@@ -2338,6 +2338,9 @@
     ],
     "lib/ezdb/classes/ezsqlite3db.php": [
       "tests/tests/lib/ezdb/eZSQLite3KeptConnectionTest.php"
+    ],
+    "kernel/classes/expvelocity.php": [
+      "tests/tests/kernel/classes/expVelocityEngineRunArchiveTest.php"
     ]
   },
   "generated": {

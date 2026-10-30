@@ -23208,7 +23208,7 @@ dbf729b5e4373a73ea096e996a48b931  kernel/classes/expsystemreport.php
 d1743b6d55d3d778b90feac8ba7b953f  kernel/classes/expsystemreportmask.php
 69e945b04dd9717d0446cf7306528fe7  kernel/classes/exptestlanguage.php
 0d6cdbe8ebbcc04f5b3df35ad85cd7e0  kernel/classes/expuserloginintegrity.php
-7b7d28344ef2191a3ba27703ab4b304b  kernel/classes/expvelocity.php
+0d6c5a1c9b6803b861f920f7136f27f9  kernel/classes/expvelocity.php
 ccab7d5acac2dabe846321cb2c2b3273  kernel/classes/expvelocityconfig.php
 99fc9e7a7c802abd77f1c2154c0b291c  kernel/classes/expvelocityconfiglayout.php
 a4630ccfef10da921b5b1bc32efcd944  kernel/classes/expvelocitydeploy.php
@@ -26498,7 +26498,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-f10806bb7bc85ab2cf1a7e4f0809f62b  tests/test-map.json
+d1bf0a0ff328095dd4205e7ddce2fe56  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 9e66dccfb84af9620c270342b88c7f84  tests/tests/bin/ConsoleExtensionAliasTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
@@ -27087,6 +27087,7 @@ f0e7540561b9a7d039c5fee3b8912260  tests/tests/kernel/classes/expUrlAdminPagesTes
 51a5c5e484ed98e16dc6395eb2047f63  tests/tests/kernel/classes/expUserApprovalSectionTest.php
 51f04265ca12861f1309c56449d3e328  tests/tests/kernel/classes/expUserApprovalTest.php
 808113843572bb212ca69e58f900b4dd  tests/tests/kernel/classes/expUserLoginIntegrityTest.php
+410edbc648f019ba6ca788de2e7d2d7e  tests/tests/kernel/classes/expVelocityEngineRunArchiveTest.php
 c687ac729fa5a22204958abaf63ed47c  tests/tests/kernel/classes/expVelocityEnginesTest.php
 be3a33ce3c88aba09d1e3a0ab5c51a2c  tests/tests/kernel/classes/expVelocityMarkersTest.php
 d192ba3ececa29f5bea6ab48deb3d607  tests/tests/kernel/classes/expVelocityNiceTest.php
