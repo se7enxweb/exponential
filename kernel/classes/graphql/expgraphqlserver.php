@@ -153,12 +153,12 @@ class expGraphQLServer
         {
             $cache = $this->responseCache !== null ? $this->responseCache : expGraphQLResponseCache::forInstallation();
             if ( $anonymous )
-                $key = expGraphQLResponseCache::anonymousKey( $server );
+                $key = expGraphQLResponseCache::anonymousKey( $server, $request );
             else
             {
-                // a GET with a token or a key: kept under the raw request and the rights, and the early answer of
+                // a GET or a POST with a token or a key: kept under the raw request and the rights, and the early answer of
                 // index_rest.php learns the rights of these credentials for CredentialCacheTtl seconds
-                $key = expGraphQLResponseCache::signedInKey( $server, $context->roleHash() );
+                $key = expGraphQLResponseCache::signedInKey( $server, $context->roleHash(), $request );
                 $credential = expGraphQLResponseCache::credential( $server );
                 if ( $key !== null && $credential !== null && $cache->readCredential( $credential ) === null
                      && ( $context->authMode === expGraphQLContext::AUTH_TOKEN || $context->authMode === expGraphQLContext::AUTH_API_KEY ) )
@@ -184,7 +184,7 @@ class expGraphQLServer
                              'extensions' => array( 'requestId' => $context->requestId, 'schemaHash' => $this->builder->schemaHash() ) );
         else
             $answer = $this->execute( $resolved['query'], $request['variables'], $request['operationName'], $context );
-        if ( $cache !== null && expGraphQLResponseCache::storable( $answer, $resolved['query'], !$anonymous ) )
+        if ( $cache !== null && expGraphQLResponseCache::storable( $answer, $resolved['query'], !$anonymous, $request['operationName'] ) )
         {
             // the same body for every request it answers: the request id is in the header X-Request-Id only
             unset( $answer['extensions']['requestId'] );

@@ -20,11 +20,11 @@ if ( !class_exists( 'expMaintenance', false ) )
 if ( expMaintenance::check( __DIR__ ) )
     return;
 
-// The GraphQL response cache: an anonymous GET of a persisted query (/api/graphql?id=...) whose answer is cached is
-// answered here, before autoload, settings, siteaccess and database (doc/eng-us/features/6.0/graphql.md, "Speed").
-// Only what the raw request says decides it; anything else goes on to the kernel. See
-// kernel/classes/graphql/expgraphqlresponsecache.php.
-if ( isset( $_SERVER['REQUEST_METHOD'] ) && $_SERVER['REQUEST_METHOD'] === 'GET' && isset( $_SERVER['REQUEST_URI'] )
+// The GraphQL response cache: a GET or a POST of a persisted query (/api/graphql?id=..., or a JSON body naming one)
+// whose answer is cached is answered here, before autoload, settings, siteaccess and database, anonymous or with
+// credentials the kernel checked a moment ago (doc/eng-us/features/6.0/graphql.md, "Speed"). Only what the raw
+// request says decides it; anything else goes on to the kernel. See kernel/classes/graphql/expgraphqlresponsecache.php.
+if ( isset( $_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI'] ) && ( $_SERVER['REQUEST_METHOD'] === 'GET' || $_SERVER['REQUEST_METHOD'] === 'POST' )
      && strpos( $_SERVER['REQUEST_URI'], '/api/graphql' ) !== false )
 {
     if ( !class_exists( 'expGraphQLResponseCache', false ) )

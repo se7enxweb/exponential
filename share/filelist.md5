@@ -22999,7 +22999,7 @@ e65182a8e462ca0d7bd99f6011003023  extension/ezoe/translations/zul-ZA/translation
 1a9cc96f78b1080813efbd8d0208572d  index.js
 6a4841552b9bf6001ec6516ff49d500d  index.php
 b47a98ba7ad311d9071d794322135ef4  index_cluster.php
-b80f7223e3c9c50b413c66170ee4dbdd  index_rest.php
+aa6fdf4b7f8ff02491f654d4aa531bb5  index_rest.php
 fe9a9825788314f32e42c60b995687b9  index_soap.php
 cec7756e16e4606e5e1cb5155efe1b0c  index_treemenu.php
 8c508d40b455582eb1fdeac8475e6fee  index_webdav.php
@@ -23483,13 +23483,13 @@ f2af73aa35a687a77032261a40aedcd6  kernel/classes/graphql/expgraphqllocation.php
 d3fab073a4b43baf544cac2101f882f7  kernel/classes/graphql/expgraphqlpersistedqueries.php
 74ce5ccc60b6bf2f7a743c8e3d762452  kernel/classes/graphql/expgraphqlratelimiter.php
 2df1bdd410ca012b398836dfe5752232  kernel/classes/graphql/expgraphqlrepository.php
-c0c06a0628c49500199391d7e76d3458  kernel/classes/graphql/expgraphqlresponsecache.php
+b547a1d274fdc4a4ab6a1e2720870ad7  kernel/classes/graphql/expgraphqlresponsecache.php
 69dfb788cf8d4b26ca7663cc3ba84491  kernel/classes/graphql/expgraphqlrichtext.php
 e8b7bba6105ae4b2a95fc7f264519417  kernel/classes/graphql/expgraphqlschemabuilder.php
 305ce7e0b9eecd874076e5ab87077f4a  kernel/classes/graphql/expgraphqlschemaextension.php
 992f1890fd8d062f8f6972a5420bc860  kernel/classes/graphql/expgraphqlschemaextensions.php
 ee737de095cd06ada95426ea6f1920e5  kernel/classes/graphql/expgraphqlsearchconnection.php
-4eb5f3599918052a3672293c25708829  kernel/classes/graphql/expgraphqlserver.php
+d07997038f111f4109faa16b7d3beb2d  kernel/classes/graphql/expgraphqlserver.php
 b83b2df691ee18bc7e73260745b73903  kernel/classes/graphql/expgraphqltypes.php
 be5a6a40f949fada13d2044258e532d4  kernel/classes/graphql/extensions/expgraphqllayoutsextension.php
 973b808ce1fb22a8f8b35ae2796209eb  kernel/classes/graphql/extensions/expgraphqllayoutssource.php
@@ -27336,7 +27336,7 @@ e88c80daf0e1f3b6f1d5227eaa20f455  tests/tests/kernel/classes/graphql/expGraphQLD
 68fcd50db55bcaa902b9504c5a32382a  tests/tests/kernel/classes/graphql/expGraphQLMessageTest.php
 810d7d5131784b9ed119c58e27ba6d10  tests/tests/kernel/classes/graphql/expGraphQLPersistedQueriesTest.php
 4f86abcb3b18b08b07f75a8fcf46de5b  tests/tests/kernel/classes/graphql/expGraphQLRateLimiterTest.php
-b22728eb3f93bc4592f6514ba7adbe16  tests/tests/kernel/classes/graphql/expGraphQLResponseCacheTest.php
+3122d8127a5970f9ccfefd51632dedc8  tests/tests/kernel/classes/graphql/expGraphQLResponseCacheTest.php
 7c1f466027aaabca8106d97903db478f  tests/tests/kernel/classes/graphql/expGraphQLRestTest.php
 d5820128371e8652644a10c6933a6440  tests/tests/kernel/classes/graphql/expGraphQLSchemaTest.php
 90d50947f17f666964401c3e8aa21116  tests/tests/kernel/classes/graphql/expGraphQLSearchTest.php

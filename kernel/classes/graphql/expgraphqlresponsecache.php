@@ -26,6 +26,9 @@ class expGraphQLResponseCache
     /** The format of an entry; an entry of another format is a miss. */
     const FORMAT = 1;
 
+    /** The longest POST body the early answer reads, in bytes; a longer one goes on to the kernel. */
+    const MAX_EARLY_BODY = 65536;
+
     /** @var string var/cache/graphql of the installation */
     protected $dir;
 
@@ -61,57 +64,132 @@ class expGraphQLResponseCache
     }
 
     /**
-     * The key of an anonymous GET of a persisted query, from the raw request alone.
+     * The key of an anonymous request of a persisted query, from the raw request alone: a GET, or a POST with its
+     * persisted query in a JSON body.
      *
      * @param array $server $_SERVER
-     * @return string|null null: not a request the early cache answers (not a GET, credentials, a CORS request, not
-     *                     /api/graphql, not a persisted query)
+     * @param array|null $fields the persisted query of a POST: id, persistedHash, variables, operationName, as
+     *                           persistedFields() or expGraphQLServer::parseHttpRequest() read them from the body
+     * @return string|null null: not a request the early cache answers (not a GET or a POST of a persisted query,
+     *                     credentials, not /api/graphql)
      */
-    public static function anonymousKey( array $server )
+    public static function anonymousKey( array $server, $fields = null )
     {
-        $shape = self::requestShape( $server );
+        $shape = self::requestShape( $server, $fields );
         if ( $shape === null || self::credential( $server ) !== null )
             return null;
         return sha1( json_encode( array( self::FORMAT, 'anonymous', $shape ) ) );
     }
 
     /**
-     * The key of a signed-in GET of a persisted query: the raw request and the rights of its user.
+     * The key of a signed-in request of a persisted query: the raw request and the rights of its user.
      *
      * @param array $server $_SERVER
      * @param string $roleHash
+     * @param array|null $fields see anonymousKey()
      * @return string|null null: not a request the early cache answers
      */
-    public static function signedInKey( array $server, $roleHash )
+    public static function signedInKey( array $server, $roleHash, $fields = null )
     {
-        $shape = self::requestShape( $server );
+        $shape = self::requestShape( $server, $fields );
         if ( $shape === null || self::credential( $server ) === null )
             return null;
         return sha1( json_encode( array( self::FORMAT, 'signed-in', (string)$roleHash, $shape ) ) );
     }
 
     /**
-     * What decides the answer of a GET of a persisted query, from the raw request: scheme, host, path, query string,
-     * X-Siteaccess and the Origin of a CORS request (its Access-Control headers are kept with the answer).
+     * What decides the answer of a persisted query, from the raw request: scheme, host, path, query string,
+     * X-Siteaccess and the Origin of a CORS request (its Access-Control headers are kept with the answer); for a POST
+     * also the persisted query its body names, with its variables and operation.
      *
      * @param array $server
-     * @return array|null null: not a GET of a persisted query at /api/graphql, or HTTP basic authentication
+     * @param array|null $fields see anonymousKey()
+     * @return array|null null: not a GET or POST of a persisted query at /api/graphql, or HTTP basic authentication
      */
-    protected static function requestShape( array $server )
+    protected static function requestShape( array $server, $fields = null )
     {
-        if ( !isset( $server['REQUEST_METHOD'] ) || $server['REQUEST_METHOD'] !== 'GET' || !empty( $server['PHP_AUTH_USER'] ) )
+        $method = isset( $server['REQUEST_METHOD'] ) ? (string)$server['REQUEST_METHOD'] : '';
+        if ( ( $method !== 'GET' && $method !== 'POST' ) || !empty( $server['PHP_AUTH_USER'] ) )
             return null;
+        $persisted = null;
+        if ( $method === 'POST' )
+        {
+            $persisted = is_array( $fields ) ? self::persistedPart( $fields ) : null;
+            if ( $persisted === null )
+                return null;
+        }
         $uri = isset( $server['REQUEST_URI'] ) ? (string)$server['REQUEST_URI'] : '';
         $path = (string)parse_url( $uri, PHP_URL_PATH );
         if ( !preg_match( '#/api/graphql/?$#', $path ) )
             return null;
         $query = isset( $server['QUERY_STRING'] ) ? (string)$server['QUERY_STRING'] : (string)parse_url( $uri, PHP_URL_QUERY );
-        if ( !preg_match( '/(^|&)(id|extensions)=/', $query ) )
+        if ( $method === 'GET' && !preg_match( '/(^|&)(id|extensions)=/', $query ) )
             return null;
         $https = !empty( $server['HTTPS'] ) && strtolower( (string)$server['HTTPS'] ) !== 'off';
-        return array( $https, isset( $server['HTTP_HOST'] ) ? strtolower( (string)$server['HTTP_HOST'] ) : '', $path, $query,
-                      isset( $server['HTTP_X_SITEACCESS'] ) ? (string)$server['HTTP_X_SITEACCESS'] : '',
-                      isset( $server['HTTP_ORIGIN'] ) ? strtolower( (string)$server['HTTP_ORIGIN'] ) : '' );
+        $shape = array( $https, isset( $server['HTTP_HOST'] ) ? strtolower( (string)$server['HTTP_HOST'] ) : '', $path, $query,
+                        isset( $server['HTTP_X_SITEACCESS'] ) ? (string)$server['HTTP_X_SITEACCESS'] : '',
+                        isset( $server['HTTP_ORIGIN'] ) ? strtolower( (string)$server['HTTP_ORIGIN'] ) : '' );
+        if ( $persisted !== null )
+            $shape[] = array( 'POST', $persisted );
+        return $shape;
+    }
+
+    /**
+     * @param array $fields id, persistedHash, variables, operationName
+     * @return array|null what of a request's fields decides the answer of a persisted query; null: not a persisted
+     *                    query
+     */
+    protected static function persistedPart( array $fields )
+    {
+        $id = isset( $fields['id'] ) && is_string( $fields['id'] ) && $fields['id'] !== '' ? $fields['id'] : null;
+        $hash = isset( $fields['persistedHash'] ) && is_string( $fields['persistedHash'] ) ? strtolower( $fields['persistedHash'] ) : null;
+        if ( $id === null && $hash === null )
+            return null;
+        return array( $id, $hash, isset( $fields['variables'] ) && is_array( $fields['variables'] ) ? $fields['variables'] : null,
+                      isset( $fields['operationName'] ) && is_string( $fields['operationName'] ) && $fields['operationName'] !== '' ? $fields['operationName'] : null );
+    }
+
+    /**
+     * The persisted query a POST names in a JSON body, read as expGraphQLServer::parseHttpRequest() reads it, before
+     * anything of the kernel is loaded (the early answer).
+     *
+     * @param string $contentType the Content-Type header
+     * @param string $body
+     * @return array|null id, persistedHash, variables, operationName; null: not a JSON body naming a persisted query
+     *                    (a form, application/graphql, an ad-hoc query, a body that cannot be read), or a query text
+     *                    whose SHA-256 is not the hash it names (the kernel refuses it)
+     */
+    public static function persistedFields( $contentType, $body )
+    {
+        $contentType = strtolower( trim( explode( ';', (string)$contentType )[0] ) );
+        $body = (string)$body;
+        if ( $contentType !== 'application/json' && !( $contentType === '' && $body !== '' && $body[0] === '{' ) )
+            return null;
+        $input = json_decode( $body, true );
+        if ( !is_array( $input ) )
+            return null;
+        $variables = isset( $input['variables'] ) ? $input['variables'] : null;
+        if ( is_string( $variables ) && $variables !== '' )
+        {
+            $variables = json_decode( $variables, true );
+            if ( !is_array( $variables ) )
+                return null;
+        }
+        $extensions = isset( $input['extensions'] ) ? $input['extensions'] : null;
+        if ( is_string( $extensions ) && $extensions !== '' )
+        {
+            $extensions = json_decode( $extensions, true );
+            if ( !is_array( $extensions ) )
+                return null;
+        }
+        $hash = is_array( $extensions ) && isset( $extensions['persistedQuery']['sha256Hash'] ) && is_string( $extensions['persistedQuery']['sha256Hash'] )
+            ? strtolower( $extensions['persistedQuery']['sha256Hash'] ) : null;
+        $id = isset( $input['id'] ) && is_string( $input['id'] ) && $input['id'] !== '' ? $input['id'] : null;
+        $query = isset( $input['query'] ) && is_string( $input['query'] ) ? $input['query'] : '';
+        if ( $id === null && ( $hash === null || ( trim( $query ) !== '' && hash( 'sha256', $query ) !== $hash ) ) )
+            return null;
+        return array( 'id' => $id, 'persistedHash' => $hash, 'variables' => is_array( $variables ) ? $variables : null,
+                      'operationName' => isset( $input['operationName'] ) && is_string( $input['operationName'] ) && $input['operationName'] !== '' ? $input['operationName'] : null );
     }
 
     /**
@@ -444,17 +522,30 @@ class expGraphQLResponseCache
      * the request against the anonymous rate limit stored with the entry; over it, or without an entry, the request
      * goes on to the kernel, which answers it (429, or the query).
      *
+     * A POST is answered the same way when its JSON body names a persisted query (id, or Apollo's extensions): its key
+     * is the raw request and the persisted query, variables and operation of its body.
+     *
      * @param string $root the installation root
      * @param array $server $_SERVER
+     * @param string|null $body the body of a POST; null: read php://input (at most MAX_EARLY_BODY bytes)
      * @return bool the request was answered
      */
-    public static function serveEarly( $root, array $server )
+    public static function serveEarly( $root, array $server, $body = null )
     {
+        $fields = null;
+        if ( isset( $server['REQUEST_METHOD'] ) && $server['REQUEST_METHOD'] === 'POST' )
+        {
+            if ( $body === null )
+                $body = self::readBody( $server );
+            $fields = $body === null ? null : self::persistedFields( isset( $server['CONTENT_TYPE'] ) ? (string)$server['CONTENT_TYPE'] : '', $body );
+            if ( $fields === null )
+                return false;
+        }
         $cache = new self( self::directoryOf( $root ) );
         $credential = self::credential( $server );
         if ( $credential === null )
         {
-            $key = self::anonymousKey( $server );
+            $key = self::anonymousKey( $server, $fields );
             $identity = 'ip:' . ( isset( $server['REMOTE_ADDR'] ) ? (string)$server['REMOTE_ADDR'] : '' );
             $rate = null;
         }
@@ -464,7 +555,7 @@ class expGraphQLResponseCache
             $known = $cache->readCredential( $credential );
             if ( $known === null )
                 return false;
-            $key = self::signedInKey( $server, $known['roleHash'] );
+            $key = self::signedInKey( $server, $known['roleHash'], $fields );
             $identity = isset( $known['identity'] ) ? (string)$known['identity'] : '';
             $rate = array( isset( $known['rateLimit'] ) ? (int)$known['rateLimit'] : 0, isset( $known['rateWindow'] ) ? (int)$known['rateWindow'] : 60 );
         }
@@ -496,6 +587,22 @@ class expGraphQLResponseCache
         if ( !$notModified )
             echo $entry['body'];
         return true;
+    }
+
+    /**
+     * The body of a POST for the early answer: php://input, which the kernel can read again (PHP-FPM keeps it, and
+     * Velocity serves it per request), when the request says it is no longer than MAX_EARLY_BODY bytes.
+     *
+     * @param array $server
+     * @return string|null null: no body, or a longer one (the kernel answers it)
+     */
+    protected static function readBody( array $server )
+    {
+        $length = isset( $server['CONTENT_LENGTH'] ) ? (string)$server['CONTENT_LENGTH'] : '';
+        if ( !ctype_digit( $length ) || (int)$length < 2 || (int)$length > self::MAX_EARLY_BODY )
+            return null;
+        $body = @file_get_contents( 'php://input', false, null, 0, (int)$length );
+        return is_string( $body ) && strlen( $body ) === (int)$length ? $body : null;
     }
 
     /**
@@ -547,19 +654,44 @@ class expGraphQLResponseCache
     }
 
     /**
-     * Whether the answer of a query may be kept: no errors, and no answer that names the user it ran as when it is
-     * kept for every user of the same rights.
+     * Whether the answer of a query may be kept: no errors, a query operation (a mutation or a subscription runs every
+     * time: an answer served from the cache would skip what it does), and no answer that names the user it ran as
+     * when it is kept for every user of the same rights.
      *
      * @param array $answer
      * @param string $query
      * @param bool $signedIn
+     * @param string|null $operationName the operation of the request, in a document of several
      * @return bool
      */
-    public static function storable( array $answer, $query, $signedIn )
+    public static function storable( array $answer, $query, $signedIn, $operationName = null )
     {
         if ( !empty( $answer['errors'] ) || !isset( $answer['data'] ) )
             return false;
+        if ( !self::isQueryOperation( $query, $operationName ) )
+            return false;
         return !$signedIn || !preg_match( '/\bcurrentUser\b/', (string)$query );
+    }
+
+    /**
+     * @param string $query
+     * @param string|null $operationName
+     * @return bool the operation a request runs is a query (not a mutation or a subscription); false when the
+     *              document cannot be read or the library is not loaded
+     */
+    public static function isQueryOperation( $query, $operationName = null )
+    {
+        if ( !class_exists( 'GraphQL\Language\Parser' ) )
+            return false;
+        try
+        {
+            $operation = \GraphQL\Utils\AST::getOperationAST( \GraphQL\Language\Parser::parse( (string)$query ), $operationName );
+        }
+        catch ( Exception $e )
+        {
+            return false;
+        }
+        return $operation !== null && $operation->operation === 'query';
     }
 }
 
