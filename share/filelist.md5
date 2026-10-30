@@ -28092,7 +28092,7 @@ ddcbdd9dcda4698c0bcd444f6913a048  tests/tests/lib/ezi18n/expI18nFallbackResolver
 ed77dbe7edb52426e027ae9a388e78e3  tests/tests/lib/ezi18n/expSpanishTuFormTest.php
 662586ec84b776735de62d77e15e9c4d  tests/tests/lib/ezi18n/expTranslationMeaningTest.php
 bc39eb88cd1667a018c3555bc8132fb0  tests/tests/lib/ezi18n/expTranslationQualityTest.php
-f01ff0a3368cfc0270ce41adb515659f  tests/tests/lib/ezi18n/translation-identical-allowlist.json
+3e16ee3a233e6b30dc7398336602a842  tests/tests/lib/ezi18n/translation-identical-allowlist.json
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
 e20e34d1b6a2efc798e50ebbabee680d  tests/tests/lib/ezimage/data/svg/badge.svg
 b8c98ff2af8dc8e9def7bfe094faeb8b  tests/tests/lib/ezimage/data/svg/chart.svg
