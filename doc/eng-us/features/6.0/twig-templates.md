@@ -73,7 +73,7 @@ A first look:
 
 | Setting | Default | Meaning |
 |---|---|---|
-| `LibraryPath` | empty | where Twig 3 is loaded from when the installation's Composer autoload has no `twig/twig`: a Composer directory (with `vendor/autoload.php`) or the package itself |
+| `LibraryPath` | empty | where Twig 3 is loaded from when the installation's Composer autoload has no Twig 3 (`twig/twig` or `se7enxweb/twig`): a Composer directory (with `vendor/autoload.php`) or the package itself |
 | `AutoReload` | `enabled` | a changed `.twig` is compiled again; `disabled` saves a file check per template (clear the template caches after a deploy) |
 | `Debug` | `disabled` | Twig's debug mode (`dump()`) |
 | `StrictVariables` | `disabled` | an undefined variable prints nothing, as in a `.tpl` |
@@ -91,8 +91,25 @@ The file endings of all engines and the class that renders each are in `settings
 
 ## Installing Twig
 
-The installation's `composer.json` requires `twig/twig` `^3`. After `composer update`, nothing else is needed.
-Without it (or to try a newer Twig), install it in a directory of its own and point `LibraryPath` at it:
+Twig 3 comes with a Composer installation, through the metapackage `se7enxweb/exponential-php-floor` that the
+kernel requires (`~1.0.3 || ~1.1.3 || ~1.2.3 || ~1.3.3`). It installs the Twig 3 release that matches the PHP
+version Composer runs with:
+
+| PHP | Floor version | Twig package |
+|---|---|---|
+| 7.4 | 1.0.3 | `se7enxweb/twig` `~3.11.4` |
+| 8.0 | 1.1.3 | `se7enxweb/twig` `~3.19.1` |
+| 8.1 to 8.3 | 1.2.3 | `twig/twig` `^3.27` |
+| 8.4 and later | 1.3.3 | `twig/twig` `^3.27` |
+
+The kernel's `composer.json` does not require `twig/twig` itself. Upstream `twig/twig` up to 3.26 is affected
+by security advisories, and 3.27 and later need PHP 8.1, so with Composer's security blocking on, no single
+`twig/twig` requirement installs on PHP 7.4 and 8.0. `se7enxweb/twig` provides the same `Twig\` classes there.
+It replaces `twig/twig`, so do not add a `twig/twig` requirement to an installation that runs on PHP 7.4 or 8.0:
+Composer would then apply the `twig/twig` advisories to `se7enxweb/twig` and refuse to install.
+After `composer update`, nothing else is needed.
+
+Without Composer's Twig (or to try a newer Twig), install it in a directory of its own and point `LibraryPath` at it:
 
 ```bash
 mkdir -p var/lib/twig-vendor && cd var/lib/twig-vendor
