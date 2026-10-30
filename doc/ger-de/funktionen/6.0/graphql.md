@@ -8,7 +8,8 @@ Attribut ein Feld. Jede Abfrage läuft als ein Benutzer der Installation, angeme
 persönlichen API-Schlüssel, der Sitzung der Administration oder als anonymer Benutzer, und die Rollen und Richtlinien
 dieses Benutzers entscheiden, was er lesen darf, genau wie in der Weboberfläche.
 
-Das ist Phase 1: Inhalte lesen. Die API beantwortet Abfragen; sie ändert nichts. Was spätere Phasen hinzufügen, steht
+Die API liest Inhalte (Abfragen, gespeicherte Abfragen mit Antwort-Cache, Suche, Tags und Layouts); sie ändert
+nichts. Was spätere Phasen hinzufügen, steht
 unter [Was als Nächstes kommt](#was-als-nächstes-kommt).
 
 | | |
@@ -678,7 +679,7 @@ ausführen; `enabled` tut das für jede Anfrage an `/api/graphql`. Eine Ad-hoc-A
   exklusiver Sperre, also zählt jeder PHP-FPM- und jeder [Velocity](velocity-webserver.md)-Worker dieselben Anfragen,
   ohne Datenbankverbindung. Der Playground zählt je Benutzer; die Konsole ist nicht begrenzt. Ein Lasttest von einer
   Adresse braucht `RateLimitAnonymous=0` (oder ein Token) im gemessenen Siteaccess.
-- **Nur lesend.** Phase 1 hat keine Mutationen: Nichts, was eine Abfrage tut, ändert Inhalte.
+- **Nur lesend.** Es gibt noch keine Mutationen: Nichts, was eine Abfrage tut, ändert Inhalte.
 - **Kein Caching über Rechte hinweg.** Eine Ad-hoc-Antwort ist `private, no-store` und wird nie behalten. Die Antwort
   einer gespeicherten Abfrage wird je Benutzerrechten gehalten (die Rollen des Benutzers und die Werte seiner
   eingeschränkten Rollenzuweisungen, so wie der View-Cache sie schlüsselt), also bekommt ein Benutzer nie eine Antwort,

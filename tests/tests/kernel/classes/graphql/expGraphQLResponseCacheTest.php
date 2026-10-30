@@ -150,6 +150,31 @@ class expGraphQLResponseCacheTest extends PHPUnit\Framework\TestCase
         $this->assertNull( $cache->readCredential( 'cd', microtime( true ) + 61 ), 'past CredentialCacheTtl' );
     }
 
+    public function testTheFilesAreWritableByEveryProcessOfTheSite()
+    {
+        // PHP-FPM runs as the site's user and Velocity as another: both write answers, counters and stamps
+        $umask = umask( 022 );
+        try
+        {
+            $cache = new expGraphQLResponseCache( $this->dir . '/cache' );
+            $cache->write( 'ab12', '{"data":{}}', array( 'etag' => '"e"', 'schemaHash' => 'h', 'ttl' => 60 ) );
+            $cache->expire();
+            ( new expGraphQLRateLimiter( $this->dir . '/rate' ) )->hit( 'ip:192.0.2.1', 5, 60 );
+        }
+        finally
+        {
+            umask( $umask );
+        }
+        $this->assertSame( '777', substr( sprintf( '%o', fileperms( $this->dir . '/cache/responses/ab' ) ), -3 ) );
+        $this->assertSame( '777', substr( sprintf( '%o', fileperms( $this->dir . '/cache/responses' ) ), -3 ) );
+        $this->assertSame( '666', substr( sprintf( '%o', fileperms( $this->dir . '/cache/responses/ab/ab12' ) ), -3 ) );
+        $this->assertSame( '666', substr( sprintf( '%o', fileperms( $this->dir . '/cache/expired' ) ), -3 ) );
+        $counter = glob( $this->dir . '/rate/*/*' );
+        $this->assertCount( 1, $counter );
+        $this->assertSame( '666', substr( sprintf( '%o', fileperms( $counter[0] ) ), -3 ) );
+        $this->assertSame( '777', substr( sprintf( '%o', fileperms( dirname( $counter[0] ) ) ), -3 ) );
+    }
+
     public function testETags()
     {
         $etag = expGraphQLResponseCache::etag( '{"data":{}}' );

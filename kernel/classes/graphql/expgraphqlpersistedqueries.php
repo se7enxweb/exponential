@@ -259,10 +259,10 @@ class expGraphQLPersistedQueries
     public static function writeAtomic( $file, $content )
     {
         $dir = dirname( $file );
-        if ( !is_dir( $dir ) && !mkdir( $dir, 0777, true ) && !is_dir( $dir ) )
+        if ( !expGraphQLResponseCache::makeDirectory( $dir ) )
             throw new RuntimeException( "Cannot create $dir" );
         $tmp = $dir . '/.' . basename( $file ) . '.' . getmypid() . '.' . mt_rand() . '.tmp';
-        if ( file_put_contents( $tmp, $content ) === false || !rename( $tmp, $file ) )
+        if ( file_put_contents( $tmp, $content ) === false || !chmod( $tmp, 0666 ) || !rename( $tmp, $file ) )
         {
             if ( is_file( $tmp ) )
                 unlink( $tmp );

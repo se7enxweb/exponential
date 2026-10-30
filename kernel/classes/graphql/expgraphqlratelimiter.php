@@ -53,9 +53,13 @@ class expGraphQLRateLimiter
             return array( 'allowed' => true, 'limit' => 0, 'remaining' => 0, 'reset' => 0 );
         $key = sha1( (string)$identity );
         $dir = $this->dir . '/' . substr( $key, 0, 2 );
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0777, true ) && !is_dir( $dir ) )
+        if ( !self::makeDirectory( $dir ) )
             return array( 'allowed' => true, 'limit' => $limit, 'remaining' => $limit, 'reset' => $window ); // no place to count: never lock anybody out
-        $handle = @fopen( $dir . '/' . $key, 'c+' );
+        $file = $dir . '/' . $key;
+        $new = !is_file( $file );
+        $handle = @fopen( $file, 'c+' );
+        if ( $new && $handle !== false )
+            @chmod( $file, 0666 ); // counted by the site's PHP-FPM user and by Velocity's alike
         if ( $handle === false )
             return array( 'allowed' => true, 'limit' => $limit, 'remaining' => $limit, 'reset' => $window );
         flock( $handle, LOCK_EX );
@@ -81,6 +85,26 @@ class expGraphQLRateLimiter
         if ( mt_rand( 1, 2000 ) === 1 )
             $this->prune( $window, $now );
         return array( 'allowed' => $allowed, 'limit' => $limit, 'remaining' => max( 0, $limit - $count ), 'reset' => max( 1, $start + $window - $now ) );
+    }
+
+    /**
+     * Makes a directory (and its parents) every process of the site can write in (PHP-FPM and Velocity run as
+     * different users).
+     *
+     * @param string $dir
+     * @return bool
+     */
+    protected static function makeDirectory( $dir )
+    {
+        if ( is_dir( $dir ) )
+            return true;
+        $parent = dirname( $dir );
+        if ( $parent !== $dir && !is_dir( $parent ) && !self::makeDirectory( $parent ) )
+            return false;
+        if ( !@mkdir( $dir, 0777 ) && !is_dir( $dir ) )
+            return false;
+        @chmod( $dir, 0777 );
+        return true;
     }
 
     /**

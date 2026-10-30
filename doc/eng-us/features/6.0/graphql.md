@@ -7,7 +7,8 @@ the content classes of the installation: every class is a type, every attribute 
 the installation, signed in with an OAuth token, a personal API key, the session of the administration, or as the
 anonymous user, and the roles and policies of that user decide what it may read, exactly as in the web interface.
 
-This is phase 1: reading content. The API answers queries; it changes nothing. What later phases add is listed under
+The API reads content (queries, persisted queries with a response cache, search, tags and layouts); it changes
+nothing. What later phases add is listed under
 [What comes next](#what-comes-next).
 
 | | |
@@ -665,7 +666,7 @@ the server stores it when the request may store queries (`AutomaticPersistedQuer
   [Velocity](velocity-web-server.md) worker counts the same requests, with no database connection. The playground
   counts per user; the console is not limited. A load test from one address needs `RateLimitAnonymous=0` (or a token)
   on the siteaccess it measures.
-- **Read only.** Phase 1 has no mutations: nothing a query does changes content.
+- **Read only.** There are no mutations yet: nothing a query does changes content.
 - **No caching across rights.** An ad-hoc answer is `private, no-store`, never kept. The answer of a persisted query is
   kept per user rights (the user's roles and the values of its limited role assignments, as the view cache keys
   them), so a user never gets an answer made for other rights; an answer that names the user (`currentUser`) is not

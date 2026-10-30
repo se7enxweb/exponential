@@ -187,6 +187,27 @@ class expGraphQLResponseCache
     }
 
     /**
+     * Makes a directory (and its parents) that every process of the site can write in: PHP-FPM runs as the site's
+     * user and Velocity as another, and both write answers, counters and stamps here (as var/ is shared, 0777 like
+     * site.ini [FileSettings] DirectoryPermissions).
+     *
+     * @param string $dir
+     * @return bool
+     */
+    public static function makeDirectory( $dir )
+    {
+        if ( is_dir( $dir ) )
+            return true;
+        $parent = dirname( $dir );
+        if ( $parent !== $dir && !is_dir( $parent ) && !self::makeDirectory( $parent ) )
+            return false;
+        if ( !@mkdir( $dir, 0777 ) && !is_dir( $dir ) )
+            return false;
+        @chmod( $dir, 0777 );
+        return true;
+    }
+
+    /**
      * Writes a file under a temporary name and renames it.
      *
      * @param string $file
@@ -196,10 +217,10 @@ class expGraphQLResponseCache
     protected static function writeFile( $file, $content )
     {
         $dir = dirname( $file );
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0777, true ) && !is_dir( $dir ) )
+        if ( !self::makeDirectory( $dir ) )
             return false;
         $tmp = $dir . '/.' . basename( $file ) . '.' . getmypid() . '.' . mt_rand() . '.tmp';
-        if ( @file_put_contents( $tmp, $content ) === false || !@rename( $tmp, $file ) )
+        if ( @file_put_contents( $tmp, $content ) === false || !@chmod( $tmp, 0666 ) || !@rename( $tmp, $file ) )
         {
             @unlink( $tmp );
             return false;
@@ -272,10 +293,10 @@ class expGraphQLResponseCache
         $meta = array( 'format' => self::FORMAT, 'created' => $now, 'expires' => $ttl > 0 ? $now + $ttl : 0 ) + $meta;
         $file = $this->file( $key );
         $dir = dirname( $file );
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0777, true ) && !is_dir( $dir ) )
+        if ( !self::makeDirectory( $dir ) )
             return false;
         $tmp = $dir . '/.' . $key . '.' . getmypid() . '.' . mt_rand() . '.tmp';
-        if ( @file_put_contents( $tmp, json_encode( $meta, JSON_UNESCAPED_SLASHES ) . "\n" . $body ) === false || !@rename( $tmp, $file ) )
+        if ( @file_put_contents( $tmp, json_encode( $meta, JSON_UNESCAPED_SLASHES ) . "\n" . $body ) === false || !@chmod( $tmp, 0666 ) || !@rename( $tmp, $file ) )
         {
             @unlink( $tmp );
             return false;
@@ -299,10 +320,10 @@ class expGraphQLResponseCache
      */
     public function expire()
     {
-        if ( !is_dir( $this->dir ) && !@mkdir( $this->dir, 0777, true ) && !is_dir( $this->dir ) )
+        if ( !self::makeDirectory( $this->dir ) )
             return false;
         $tmp = $this->dir . '/.expired.' . getmypid() . '.' . mt_rand() . '.tmp';
-        if ( @file_put_contents( $tmp, sprintf( '%.6F', microtime( true ) ) ) === false || !@rename( $tmp, $this->dir . '/expired' ) )
+        if ( @file_put_contents( $tmp, sprintf( '%.6F', microtime( true ) ) ) === false || !@chmod( $tmp, 0666 ) || !@rename( $tmp, $this->dir . '/expired' ) )
         {
             @unlink( $tmp );
             return false;
