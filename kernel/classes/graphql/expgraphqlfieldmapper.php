@@ -49,6 +49,30 @@ class expGraphQLFieldMapper
     }
 
     /**
+     * A list of values of a batch loader, in the order of the keys, without the keys that have none: every key is
+     * asked for now (so the whole level of the query is fetched together), the list is made when it is read.
+     *
+     * @param expGraphQLBatchLoader $loader
+     * @param array $keys
+     * @return \GraphQL\Deferred
+     */
+    public static function loadList( expGraphQLBatchLoader $loader, array $keys )
+    {
+        foreach ( $keys as $key )
+            $loader->want( $key );
+        return new \GraphQL\Deferred( function () use ( $loader, $keys ) {
+            $values = array();
+            foreach ( $keys as $key )
+            {
+                $value = $loader->value( $key );
+                if ( $value !== null )
+                    $values[] = $value;
+            }
+            return $values;
+        } );
+    }
+
+    /**
      * The field config of an attribute.
      *
      * @param array $attribute an attribute of expGraphQLClassCatalogue
@@ -194,19 +218,15 @@ class expGraphQLFieldMapper
             case 'ezobjectrelation':
                 return array( $types->content(), function ( eZContentObjectAttribute $f, expGraphQLContext $ctx ) {
                     $id = (int)$f->attribute( 'data_int' );
-                    return $id > 0 ? $ctx->repository->related( $id, $f->attribute( 'language_code' ) ) : null;
+                    return $id > 0 ? $ctx->loader( 'content', $f->attribute( 'language_code' ) )->load( $id ) : null;
                 } );
             case 'ezobjectrelationlist':
                 return array( Type::nonNull( Type::listOf( Type::nonNull( $types->content() ) ) ), function ( eZContentObjectAttribute $f, expGraphQLContext $ctx ) {
                     $content = $f->content();
-                    $related = array();
+                    $ids = array();
                     foreach ( isset( $content['relation_list'] ) ? (array)$content['relation_list'] : array() as $relation )
-                    {
-                        $item = $ctx->repository->related( (int)$relation['contentobject_id'], $f->attribute( 'language_code' ) );
-                        if ( $item !== null )
-                            $related[] = $item;
-                    }
-                    return $related;
+                        $ids[] = (int)$relation['contentobject_id'];
+                    return expGraphQLFieldMapper::loadList( $ctx->loader( 'content', $f->attribute( 'language_code' ) ), $ids );
                 } );
         }
         return array( Type::string(), $text );

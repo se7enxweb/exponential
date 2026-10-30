@@ -72,7 +72,7 @@ class expGraphQLSchemaBuilder
      */
     public static function fromSettings()
     {
-        return new self( expGraphQLClassCatalogue::fromDatabase(), expGraphQLNaming::fromSettings() );
+        return new self( expGraphQLClassCatalogue::cached(), expGraphQLNaming::fromSettings() );
     }
 
     /** @return expGraphQLClassCatalogue */

@@ -29,12 +29,13 @@ This is phase 1: reading content. The API answers queries; it changes nothing. W
 4. [The schema](#the-schema)
 5. [Queries, with examples](#queries-with-examples)
 6. [Security](#security)
-7. [Errors](#errors)
-8. [The playground and the session end point](#the-playground-and-the-session-end-point)
-9. [Console commands](#console-commands)
-10. [The library](#the-library)
-11. [Settings](#settings)
-12. [What comes next](#what-comes-next)
+7. [Speed](#speed)
+8. [Errors](#errors)
+9. [The playground and the session end point](#the-playground-and-the-session-end-point)
+10. [Console commands](#console-commands)
+11. [The library](#the-library)
+12. [Settings](#settings)
+13. [What comes next](#what-comes-next)
 
 ## Quick start in 60 seconds
 
@@ -488,6 +489,28 @@ The page has no German translation, so it is read in English, and `language` say
   only on a development siteaccess.
 - **Off until switched on**, per siteaccess: a siteaccess without it answers `404` with `DISABLED`, and nothing else
   changes.
+
+## Speed
+
+A query asks for a whole page at once, so the API reads the content of a page the way a page is read, in groups, not
+one item after the other:
+
+- **Batched loading** (the DataLoader pattern). The executor runs every field of one level of the query first and
+  collects what they need: the owners of 50 articles are read in one query, the parents of a list in one, the related
+  objects of every relation field of a page in one (their main locations with the objects, then their fields), and
+  the URL aliases of a page in two, however long the page is. A value once read is answered from memory for the rest
+  of the request. Measured on the demo content: 50 articles with their image, owner and address cost 11 SQL
+  statements, where reading them one by one cost 249.
+- **The schema from a cache file.** The content classes the schema is made from are read from the database once and
+  kept in `var/<site>/cache/graphql/catalogue-*.php`, one file per siteaccess, filter settings, languages and class
+  change: storing a class (the expiry `class-identifier-cache`) makes the next request write a new file. OPcache keeps
+  the file, so a request reads no class from the database.
+- **Lists in one query.** A list reads its items with their fields in one subtree fetch, and `totalCount` costs a
+  count query only when it is asked for.
+
+Nothing of this is kept between requests: the loaders and their memory belong to one request, so a persistent worker
+([Velocity](velocity-web-server.md)) never answers from another request's memory and keeps no database connection
+of its own.
 
 ## Errors
 

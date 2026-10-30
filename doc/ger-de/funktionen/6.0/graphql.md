@@ -30,12 +30,13 @@ unter [Was als Nächstes kommt](#was-als-nächstes-kommt).
 4. [Das Schema](#das-schema)
 5. [Abfragen, mit Beispielen](#abfragen-mit-beispielen)
 6. [Sicherheit](#sicherheit)
-7. [Fehler](#fehler)
-8. [Der Playground und der Sitzungs-Endpunkt](#der-playground-und-der-sitzungs-endpunkt)
-9. [Konsolenbefehle](#konsolenbefehle)
-10. [Die Bibliothek](#die-bibliothek)
-11. [Einstellungen](#einstellungen)
-12. [Was als Nächstes kommt](#was-als-nächstes-kommt)
+7. [Geschwindigkeit](#geschwindigkeit)
+8. [Fehler](#fehler)
+9. [Der Playground und der Sitzungs-Endpunkt](#der-playground-und-der-sitzungs-endpunkt)
+10. [Konsolenbefehle](#konsolenbefehle)
+11. [Die Bibliothek](#die-bibliothek)
+12. [Einstellungen](#einstellungen)
+13. [Was als Nächstes kommt](#was-als-nächstes-kommt)
 
 ## Schnellstart in 60 Sekunden
 
@@ -497,6 +498,29 @@ Die Seite hat keine deutsche Übersetzung, also wird sie englisch gelesen, und `
   `extensions.debug`: nur auf einem Entwicklungs-Siteaccess.
 - **Aus, bis sie eingeschaltet wird**, je Siteaccess: Ein Siteaccess ohne sie antwortet mit `404` und `DISABLED`, und
   sonst ändert sich nichts.
+
+## Geschwindigkeit
+
+Eine Abfrage fragt eine ganze Seite auf einmal ab, also liest die API den Inhalt einer Seite so, wie eine Seite gelesen
+wird: in Gruppen, nicht ein Element nach dem anderen.
+
+- **Gebündeltes Laden** (das DataLoader-Muster). Der Executor führt zuerst alle Felder einer Ebene der Abfrage aus und
+  sammelt, was sie brauchen: Die Eigentümer von 50 Artikeln werden mit einer Abfrage gelesen, die Eltern einer Liste mit
+  einer, die verknüpften Objekte aller Beziehungsfelder einer Seite mit einer (ihre Hauptorte mit den Objekten, dann
+  ihre Felder) und die URL-Aliasse einer Seite mit zwei, wie lang die Seite auch ist. Ein einmal gelesener Wert wird für
+  den Rest der Anfrage aus dem Speicher beantwortet. Gemessen am Demo-Inhalt: 50 Artikel mit Bild, Eigentümer und
+  Adresse kosten 11 SQL-Anweisungen, einzeln gelesen waren es 249.
+- **Das Schema aus einer Cache-Datei.** Die Inhaltsklassen, aus denen das Schema entsteht, werden einmal aus der
+  Datenbank gelesen und in `var/<site>/cache/graphql/catalogue-*.php` gehalten, eine Datei je Siteaccess,
+  Filtereinstellungen, Sprachen und Klassenänderung: Das Speichern einer Klasse (der Ablauf `class-identifier-cache`)
+  lässt die nächste Anfrage eine neue Datei schreiben. OPcache hält die Datei, also liest eine Anfrage keine Klasse aus
+  der Datenbank.
+- **Listen mit einer Abfrage.** Eine Liste liest ihre Elemente samt Feldern mit einem Teilbaum-Abruf, und `totalCount`
+  kostet nur dann eine Zählabfrage, wenn danach gefragt wird.
+
+Nichts davon wird zwischen Anfragen behalten: Die Loader und ihr Speicher gehören zu einer Anfrage, also antwortet ein
+dauerhafter Worker ([Velocity](velocity-webserver.md)) nie aus dem Speicher einer anderen Anfrage und hält keine eigene
+Datenbankverbindung.
 
 ## Fehler
 

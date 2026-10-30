@@ -128,6 +128,38 @@ class expGraphQLTestRepository extends expGraphQLRepository
         return null;
     }
 
+    /** @var string[] the batches asked for: kind:number of keys */
+    public $batches = array();
+
+    public function relatedList( array $objectIds, $language = false )
+    {
+        $this->batches[] = 'content:' . count( $objectIds );
+        $answer = array();
+        foreach ( $objectIds as $id )
+            $answer[$id] = $this->related( $id, $language );
+        return $answer;
+    }
+
+    public function contentByNodeIdList( array $nodeIds, $language = false )
+    {
+        $this->batches[] = 'node:' . count( $nodeIds );
+        $answer = array();
+        foreach ( $nodeIds as $id )
+            $answer[$id] = $this->contentByNodeId( $id, $language );
+        return $answer;
+    }
+
+    public function objectNames( array $objectIds )
+    {
+        $this->batches[] = 'names:' . count( $objectIds );
+        return array_fill_keys( $objectIds, 'Administrator User' );
+    }
+
+    public function primeUrlAliases( array $items )
+    {
+        $this->batches[] = 'urls:' . count( $items );
+    }
+
     public function languages()
     {
         return array( array( 'code' => 'eng-GB', 'name' => 'English (United Kingdom)' ) );
@@ -235,6 +267,10 @@ class expGraphQLSchemaTest extends PHPUnit\Framework\TestCase
                                    'featured' => self::field( 'ezboolean', array( 'data_int' => $i % 2 ) ),
                                    'publish_date' => self::field( 'ezdate', array( 'data_int' => 1767225600 ) ),
                                    'kind' => self::field( 'ezselection', array( 'data_text' => '2' ) ),
+                                   'related' => self::field( 'ezobjectrelationlist', array( 'data_text' => '<?xml version="1.0" encoding="utf-8"?><related-objects><relation-list>'
+                                       . '<relation-item priority="1" contentobject-id="' . ( 100 + ( $i % 5 ) + 1 ) . '" contentobject-version="1" node-id="0" parent-node-id="0" contentclass-id="2" contentclass-identifier="article"/>'
+                                       . '<relation-item priority="2" contentobject-id="1" contentobject-version="1" node-id="0" parent-node-id="0" contentclass-id="1" contentclass-identifier="folder"/>'
+                                       . '</relation-list></related-objects>' ) ),
                                    'intro' => self::field( 'ezxmltext', array( 'data_text' => '<?xml version="1.0"?><section><paragraph>Intro <strong>' . $i . '</strong></paragraph><paragraph>Second</paragraph></section>' ) ) ) ) );
         }
         $repository->byNode[30] = new expGraphQLTestContent( array( 'id' => 300, 'class' => 'user', 'name' => 'Someone',
@@ -446,6 +482,54 @@ class expGraphQLSchemaTest extends PHPUnit\Framework\TestCase
         $answer = ( new expGraphQLServer( $builder ) )->execute( '{ node(id: 2) { children { nodes { id } edges { cursor } pageInfo { hasNextPage } } } }', null, null, $context );
         $this->assertArrayNotHasKey( 'errors', $answer );
         $this->assertSame( 1, $repository->childrenCalls );
+    }
+
+    public function testALevelOfAListIsFetchedInOneBatchPerKind()
+    {
+        $builder = self::builder();
+        $repository = self::repository( $builder );
+        $user = new eZUser( array( 'contentobject_id' => 14, 'login' => 'admin' ) );
+        $context = new expGraphQLContext( $user, expGraphQLContext::AUTH_TOKEN, $repository );
+        $answer = ( new expGraphQLServer( $builder ) )->execute(
+            '{ node(id: 2) { children { nodes { name ownerName url urlAlias parent { name } ... on article { related { name ownerName } } } } } }', null, null, $context );
+        $this->assertArrayNotHasKey( 'errors', $answer, json_encode( $answer ) );
+        $nodes = $answer['data']['node']['children']['nodes'];
+        $this->assertCount( 5, $nodes );
+        $this->assertSame( 'Administrator User', $nodes[0]['ownerName'] );
+        $this->assertSame( 'Home', $nodes[0]['parent']['name'] );
+        $this->assertSame( array( array( 'name' => 'Article 2', 'ownerName' => 'Administrator User' ), array( 'name' => 'Home', 'ownerName' => 'Administrator User' ) ),
+                           $nodes[0]['related'] );
+        $this->assertSame( 'Article 1', $nodes[4]['related'][0]['name'] );
+        // 5 items: one batch of owners, one of parents, one of relations, one of URL aliases, whatever the page size
+        sort( $repository->batches );
+        $this->assertSame( array( 'content:6', 'names:1', 'node:1', 'urls:5' ), $repository->batches );
+        $stats = $context->loaderStats();
+        $this->assertSame( 1, $stats['names|']['batches'] );
+        $this->assertSame( 1, $stats['content|eng-GB']['batches'] );
+    }
+
+    public function testABatchLoaderFetchesPendingKeysOnceAndRemembers()
+    {
+        $calls = array();
+        $loader = new expGraphQLBatchLoader( function ( array $keys ) use ( &$calls ) {
+            $calls[] = $keys;
+            $values = array();
+            foreach ( $keys as $key )
+                if ( $key !== 3 )
+                    $values[$key] = "v$key";
+            return $values;
+        } );
+        $loader->want( 1 );
+        $loader->want( 2 );
+        $loader->want( 3 );
+        $this->assertSame( 'v2', $loader->value( 2 ) );
+        $this->assertNull( $loader->value( 3 ), 'a key the batch leaves out is null' );
+        $this->assertSame( 'v1', $loader->value( 1 ) );
+        $loader->prime( 4, 'primed' );
+        $this->assertSame( 'primed', $loader->value( 4 ) );
+        $this->assertSame( array( array( 1, 2, 3 ) ), $calls );
+        $this->assertSame( 1, $loader->batches );
+        $this->assertSame( 3, $loader->keys );
     }
 
     public function testAnHttpRequestIsRead()

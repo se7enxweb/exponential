@@ -76,16 +76,21 @@ class expGraphQLTypes
             'ownerId' => array( 'type' => Type::int(), 'description' => 'The content object id of the owner.',
                                 'resolve' => function ( expGraphQLContent $c ) { return $c->ownerId(); } ),
             'ownerName' => array( 'type' => Type::string(), 'description' => 'The name of the owner.',
-                                  'resolve' => function ( expGraphQLContent $c ) { return $c->ownerName(); } ),
+                                  'resolve' => function ( expGraphQLContent $c, $args, expGraphQLContext $ctx ) {
+                                      // the owners of a whole page in one query
+                                      return $c->ownerId() > 0 ? $ctx->loader( 'names' )->load( $c->ownerId() ) : null;
+                                  } ),
             'sectionId' => array( 'type' => Type::int(), 'description' => 'The id of its section.',
                                   'resolve' => function ( expGraphQLContent $c ) { return $c->sectionId(); } ),
             'url' => array( 'type' => Type::string(), 'description' => 'The address of the location it was reached by, in this siteaccess.',
                             'resolve' => function ( expGraphQLContent $c, $args, expGraphQLContext $ctx ) {
+                                $c->primeUrl();
                                 $location = $c->location();
                                 return $location ? $ctx->siteUrl( $location->urlAlias() ) : null;
                             } ),
             'urlAlias' => array( 'type' => Type::string(), 'description' => 'The URL alias of the location it was reached by (about/company).',
                                  'resolve' => function ( expGraphQLContent $c ) {
+                                     $c->primeUrl();
                                      $location = $c->location();
                                      return $location ? $location->urlAlias() : null;
                                  } ),
@@ -101,7 +106,7 @@ class expGraphQLTypes
                                'description' => 'The content of the parent of the location it was reached by.',
                                'resolve' => function ( expGraphQLContent $c, $args, expGraphQLContext $ctx ) {
                                    $location = $c->location();
-                                   return $location ? $ctx->repository->parent( $location ) : null;
+                                   return $location ? expGraphQLTypes::parentOf( $location, $ctx ) : null;
                                } ),
             'children' => $this->childrenField( function ( expGraphQLContent $c ) { return $c->location(); },
                                                 'The content below the location it was reached by.' ),
@@ -197,7 +202,7 @@ class expGraphQLTypes
                         'content' => array( 'type' => function () use ( $types ) { return $types->content(); }, 'description' => 'The content at the location.',
                                             'resolve' => function ( expGraphQLLocation $l, $args, expGraphQLContext $ctx ) { return $ctx->repository->contentAtLocation( $l ); } ),
                         'parent' => array( 'type' => function () use ( $types ) { return $types->content(); }, 'description' => 'The content of the parent location.',
-                                           'resolve' => function ( expGraphQLLocation $l, $args, expGraphQLContext $ctx ) { return $ctx->repository->parent( $l ); } ),
+                                           'resolve' => function ( expGraphQLLocation $l, $args, expGraphQLContext $ctx ) { return expGraphQLTypes::parentOf( $l, $ctx ); } ),
                         'children' => $types->childrenField( function ( expGraphQLLocation $l ) { return $l; }, 'The content below the location.' ),
                     );
                 },
@@ -455,6 +460,20 @@ class expGraphQLTypes
     {
         return $this->arrayType( 'Language', 'A content language of the installation.',
                                  array( 'code' => array( Type::nonNull( Type::string() ), 'code' ), 'name' => array( Type::string(), 'name' ) ) );
+    }
+
+    /**
+     * The content of the parent of a location, through the batch loader: the parents of a page in one query.
+     *
+     * @param expGraphQLLocation $location
+     * @param expGraphQLContext $ctx
+     * @return \GraphQL\Deferred|null
+     */
+    public static function parentOf( expGraphQLLocation $location, expGraphQLContext $ctx )
+    {
+        if ( $location->depth() <= 1 )
+            return null;
+        return $ctx->loader( 'node', $location->language() )->load( $location->parentId() );
     }
 
     /**

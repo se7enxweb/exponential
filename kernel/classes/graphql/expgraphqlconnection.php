@@ -122,6 +122,22 @@ class expGraphQLConnection
         {
             $this->fetched = ( $this->location === null || $this->limit === 0 ) ? array()
                 : $this->repository->children( $this->location, $this->params + array( 'limit' => $this->limit + 1, 'offset' => $this->offset ) );
+            // url or urlAlias of one item makes the aliases of the whole page (two queries, not two per item)
+            $repository = $this->repository;
+            $items = $this->fetched;
+            $done = false;
+            $primer = function () use ( $repository, $items, &$done ) {
+                if ( !$done )
+                {
+                    $done = true;
+                    $repository->primeUrlAliases( $items );
+                }
+            };
+            foreach ( $this->fetched as $item )
+            {
+                if ( $item instanceof expGraphQLContent )
+                    $item->urlPrimer = $primer;
+            }
         }
         return $this->fetched;
     }

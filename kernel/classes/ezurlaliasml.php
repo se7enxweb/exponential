@@ -1649,6 +1649,57 @@ class eZURLAliasML extends eZPersistentObject
             eZDebug::writeError( "Action values array must not be empty", __METHOD__ );
             return null;
         }
+        list( $actionMap, $objects ) = self::loadActionRows( $actionName, $actionValues );
+        return self::composePathByActionList( $actionName, $actionValues, $actionMap, $objects, $locale );
+    }
+
+    /**
+     * Fills the per-request memo of fetchPathByActionList() for the URL aliases of several nodes at once (a page of
+     * a list): the alias rows and the objects of every node on their paths are read in two queries, instead of two
+     * per node, and each path is then made exactly as fetchPathByActionList() makes it. eZContentObjectTreeNode::
+     * urlAlias() of these nodes then reads from memory.
+     *
+     * @param eZContentObjectTreeNode[] $nodes
+     * @return int how many paths were made
+     */
+    static public function primePathsForNodes( array $nodes )
+    {
+        $contentRootID = (int)eZINI::instance( 'content.ini' )->variable( 'NodeSettings', 'RootNode' );
+        $lists = array();
+        $union = array();
+        foreach ( $nodes as $node )
+        {
+            if ( !$node instanceof eZContentObjectTreeNode || (int)$node->attribute( 'node_id' ) === $contentRootID )
+                continue;
+            $pathArray = $node->pathArray();
+            array_shift( $pathArray );
+            if ( !$pathArray )
+                continue;
+            $locale = $node->CurrentLanguage;
+            $memoKey = 'eznode|' . (string)$locale . '|' . implode( ',', $pathArray );
+            if ( array_key_exists( $memoKey, self::$PathByActionListCache ) || isset( $lists[$memoKey] ) )
+                continue;
+            $lists[$memoKey] = array( $pathArray, $locale );
+            foreach ( $pathArray as $value )
+                $union[(string)$value] = $value;
+        }
+        if ( !$lists )
+            return 0;
+        list( $actionMap, $objects ) = self::loadActionRows( 'eznode', array_values( $union ) );
+        foreach ( $lists as $memoKey => $list )
+            self::$PathByActionListCache[$memoKey] = self::composePathByActionList( 'eznode', $list[0], $actionMap, $objects, $list[1] );
+        return count( $lists );
+    }
+
+    /**
+     * The alias rows of the actions (grouped by action) and the objects of the nodes they name.
+     *
+     * @param string $actionName
+     * @param array $actionValues
+     * @return array array( action => rows, node id => eZContentObject )
+     */
+    static protected function loadActionRows( $actionName, array $actionValues )
+    {
         $db = eZDB::instance();
         $actionList = array();
         foreach ( $actionValues as $i => $value )
@@ -1704,7 +1755,21 @@ class eZURLAliasML extends eZPersistentObject
                 $actionMap[$action] = array();
             $actionMap[$action][] = $row;
         }
+        return array( $actionMap, $objects );
+    }
 
+    /**
+     * The path of the actions from the rows of loadActionRows() (which may hold the rows of other actions too).
+     *
+     * @param string $actionName
+     * @param array $actionValues
+     * @param array $actionMap
+     * @param array $objects
+     * @param string|null $locale
+     * @return string|null
+     */
+    static protected function composePathByActionList( $actionName, array $actionValues, array $actionMap, $objects, $locale = null )
+    {
         if ( $locale !== null && is_string( $locale ) && !empty( $locale ) )
         {
             $selectedLanguage = eZContentLanguage::fetchByLocale( $locale );

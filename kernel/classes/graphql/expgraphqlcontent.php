@@ -23,6 +23,9 @@ class expGraphQLContent
     /** @var array|null attribute identifier => eZContentObjectAttribute */
     protected $dataMap = null;
 
+    /** @var callable|null run before the URL alias is read: makes the aliases of the whole page at once */
+    public $urlPrimer = null;
+
     /**
      * @param eZContentObject|null $object
      * @param eZContentObjectTreeNode|null $node
@@ -90,10 +93,30 @@ class expGraphQLContent
         return (string)$this->object->attribute( 'initial_language_code' );
     }
 
-    /** @return string */
+    /**
+     * @return string the name in the translation read: from the object's own row when it was fetched in that
+     *                translation (a list, a location), else from the names of its translations
+     */
     public function name()
     {
-        return (string)$this->object->name( false, $this->language() );
+        $language = $this->language();
+        $current = $this->object->currentLanguage();
+        if ( $current && $current === $language && (string)$this->object->attribute( 'name', true ) !== '' )
+            return (string)$this->object->attribute( 'name', true ); // the field, not the function attribute name (a query)
+        return (string)$this->object->name( false, $language );
+    }
+
+    /**
+     * Makes the URL aliases of the page this content came with, once, before one of them is read.
+     */
+    public function primeUrl()
+    {
+        if ( $this->urlPrimer !== null )
+        {
+            $primer = $this->urlPrimer;
+            $this->urlPrimer = null;
+            $primer();
+        }
     }
 
     /** @return int a Unix time */

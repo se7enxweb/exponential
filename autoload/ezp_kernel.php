@@ -1212,6 +1212,7 @@ return array(
       'expExtensionWizard'                                           => 'kernel/setup/expextensionwizard.php',
       'expFileConsistencyReport'                                     => 'kernel/private/classes/expfileconsistencyreport.php',
       'expGraphQL'                                                   => 'kernel/classes/graphql/expgraphql.php',
+      'expGraphQLBatchLoader'                                        => 'kernel/classes/graphql/expgraphqlbatchloader.php',
       'expGraphQLClassCatalogue'                                     => 'kernel/classes/graphql/expgraphqlclasscatalogue.php',
       'expGraphQLConnection'                                         => 'kernel/classes/graphql/expgraphqlconnection.php',
       'expGraphQLContent'                                            => 'kernel/classes/graphql/expgraphqlcontent.php',

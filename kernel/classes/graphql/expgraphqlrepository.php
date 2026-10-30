@@ -263,6 +263,124 @@ class expGraphQLRepository
     }
 
     /**
+     * The related objects of a page at once (the batch of expGraphQLContext::loader( 'content' )): one query for the
+     * main locations with their objects, one for their fields.
+     *
+     * @param int[] $objectIds
+     * @param string|false $language
+     * @return array object id => expGraphQLContent|null (null: not there, not readable or not in the schema)
+     */
+    public function relatedList( array $objectIds, $language = false )
+    {
+        $ids = array_values( array_unique( array_filter( array_map( 'intval', $objectIds ) ) ) );
+        $answer = array_fill_keys( $ids, null );
+        if ( !$ids )
+            return $answer;
+        $nodes = eZContentObjectTreeNode::findMainNodeArray( $ids );
+        $readable = array();
+        foreach ( is_array( $nodes ) ? $nodes : array() as $node )
+        {
+            if ( !$node instanceof eZContentObjectTreeNode )
+                continue;
+            $object = $node->object();
+            if ( !$object instanceof eZContentObject || !$object->attribute( 'status' ) || !$node->canRead()
+                 || !$this->isExposed( (string)$object->attribute( 'class_identifier' ) ) )
+                continue;
+            $readable[(int)$object->attribute( 'id' )] = $node;
+        }
+        if ( $readable )
+            eZContentObject::fillNodeListAttributes( array_values( $readable ) );
+        foreach ( $ids as $id )
+        {
+            if ( isset( $readable[$id] ) )
+                $answer[$id] = new expGraphQLContent( $readable[$id]->object(), $readable[$id], $language );
+            else if ( !is_array( $nodes ) || !self::listHasObject( $nodes, $id ) )
+                $answer[$id] = $this->contentById( $id, $language ); // an object without a location
+        }
+        return $answer;
+    }
+
+    /**
+     * @param array $nodes
+     * @param int $objectId
+     * @return bool one of the nodes is a location of the object
+     */
+    protected static function listHasObject( array $nodes, $objectId )
+    {
+        foreach ( $nodes as $node )
+        {
+            if ( $node instanceof eZContentObjectTreeNode && (int)$node->attribute( 'contentobject_id' ) === (int)$objectId )
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * The content at several locations at once (the batch of expGraphQLContext::loader( 'node' ): parents).
+     *
+     * @param int[] $nodeIds
+     * @param string|false $language
+     * @return array node id => expGraphQLContent|null
+     */
+    public function contentByNodeIdList( array $nodeIds, $language = false )
+    {
+        $ids = array_values( array_unique( array_filter( array_map( 'intval', $nodeIds ) ) ) );
+        $answer = array_fill_keys( $ids, null );
+        if ( !$ids )
+            return $answer;
+        $nodes = eZContentObjectTreeNode::fetch( $ids );
+        if ( $nodes instanceof eZContentObjectTreeNode )
+            $nodes = array( $nodes );
+        foreach ( is_array( $nodes ) ? $nodes : array() as $node )
+        {
+            $content = $this->contentAtNode( $node, $language );
+            if ( $content !== null )
+                $answer[(int)$node->attribute( 'node_id' )] = $content;
+        }
+        return $answer;
+    }
+
+    /**
+     * The names of several objects at once (the owners of a page of content): one query.
+     *
+     * @param int[] $objectIds
+     * @return array object id => name (null: no such object)
+     */
+    public function objectNames( array $objectIds )
+    {
+        $ids = array_values( array_unique( array_filter( array_map( 'intval', $objectIds ) ) ) );
+        $answer = array_fill_keys( $ids, null );
+        if ( !$ids )
+            return $answer;
+        foreach ( (array)eZContentObject::fetchIDArray( $ids ) as $id => $object )
+        {
+            if ( $object instanceof eZContentObject )
+                $answer[(int)$id] = (string)$object->attribute( 'name', true );
+        }
+        return $answer;
+    }
+
+    /**
+     * Makes the URL aliases of a page of content in two queries, so that url and urlAlias of every item are read
+     * from memory (eZURLAliasML::primePathsByActionLists()).
+     *
+     * @param expGraphQLContent[] $items
+     */
+    public function primeUrlAliases( array $items )
+    {
+        $nodes = array();
+        foreach ( $items as $item )
+        {
+            $location = $item instanceof expGraphQLContent ? $item->location() : null;
+            $node = $location ? $location->node() : null;
+            if ( $node instanceof eZContentObjectTreeNode )
+                $nodes[] = $node;
+        }
+        if ( $nodes && method_exists( 'eZURLAliasML', 'primePathsForNodes' ) )
+            eZURLAliasML::primePathsForNodes( $nodes );
+    }
+
+    /**
      * @return array the content languages of the installation: code, name, locale
      */
     public function languages()

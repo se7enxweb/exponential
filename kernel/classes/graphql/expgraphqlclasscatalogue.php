@@ -72,6 +72,42 @@ class expGraphQLClassCatalogue
     }
 
     /**
+     * The classes of fromDatabase(), from a cache file when it is current: one file per siteaccess, filter
+     * settings, languages and class change (the expiry class-identifier-cache, set whenever a class is stored). A
+     * PHP file that OPcache keeps, so a request reads no class from the database. A new file is written under a new
+     * name, never over one a worker may have cached.
+     *
+     * @return self
+     */
+    public static function cached()
+    {
+        $handler = eZExpiryHandler::instance();
+        $classTime = $handler->hasTimestamp( 'class-identifier-cache' ) ? (int)$handler->timestamp( 'class-identifier-cache' ) : 0;
+        $key = substr( sha1( json_encode( array( 1, expGraphQL::currentSiteAccess(), self::settings(), $classTime,
+                                                 array_values( (array)eZContentLanguage::prioritizedLanguageCodes() ) ) ) ), 0, 20 );
+        $dir = self::cacheDirectory();
+        $file = $dir . '/catalogue-' . $key . '.php';
+        if ( is_file( $file ) )
+        {
+            $classes = include $file;
+            if ( is_array( $classes ) )
+                return new self( $classes );
+        }
+        $catalogue = self::fromDatabase();
+        eZFile::create( basename( $file ), $dir, "<?php\n// GraphQL class catalogue, generated; removed by ezcache --clear-id=graphql\nreturn " .
+                                                 var_export( array_values( $catalogue->classes() ), true ) . ";\n", true );
+        return $catalogue;
+    }
+
+    /**
+     * @return string the directory of the GraphQL caches of the siteaccess (var/<site>/cache/graphql)
+     */
+    public static function cacheDirectory()
+    {
+        return eZSys::cacheDirectory() . '/graphql';
+    }
+
+    /**
      * The filter settings of graphql.ini.
      *
      * @return array ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList

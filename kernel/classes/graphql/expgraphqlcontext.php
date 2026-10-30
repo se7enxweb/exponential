@@ -49,6 +49,57 @@ class expGraphQLContext
         $this->requestId = self::newRequestId();
     }
 
+    /** @var expGraphQLBatchLoader[] kind => loader, made when first asked for */
+    protected $loaders = array();
+
+    /**
+     * The batch loader of this request for a kind of value (expGraphQLBatchLoader): the keys a level of the query
+     * asks for are fetched together, and a key once fetched is answered from memory.
+     *
+     *   names            object id => the object's name (owners)
+     *   content          object id => expGraphQLContent at its main location (relations)
+     *   node             node id => expGraphQLContent at that location (parents)
+     *
+     * @param string $kind
+     * @param string|false $language the translation content is read in (content, node)
+     * @return expGraphQLBatchLoader
+     */
+    public function loader( $kind, $language = false )
+    {
+        $key = $kind . '|' . (string)$language;
+        if ( !isset( $this->loaders[$key] ) )
+        {
+            $repository = $this->repository;
+            switch ( $kind )
+            {
+                case 'names':
+                    $batch = function ( array $ids ) use ( $repository ) { return $repository->objectNames( $ids ); };
+                    break;
+                case 'content':
+                    $batch = function ( array $ids ) use ( $repository, $language ) { return $repository->relatedList( $ids, $language ); };
+                    break;
+                case 'node':
+                    $batch = function ( array $ids ) use ( $repository, $language ) { return $repository->contentByNodeIdList( $ids, $language ); };
+                    break;
+                default:
+                    throw new InvalidArgumentException( "No GraphQL loader $kind" );
+            }
+            $this->loaders[$key] = new expGraphQLBatchLoader( $batch );
+        }
+        return $this->loaders[$key];
+    }
+
+    /**
+     * @return array kind => array( batches, keys ): what the loaders of this request fetched
+     */
+    public function loaderStats()
+    {
+        $stats = array();
+        foreach ( $this->loaders as $key => $loader )
+            $stats[$key] = array( 'batches' => $loader->batches, 'keys' => $loader->keys );
+        return $stats;
+    }
+
     /**
      * @return bool the request was signed in (a token, a key, a session or the console), not anonymous
      */
