@@ -3325,7 +3325,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-11c89324c6b87d68d4e05611e612efb9  doc/changelogs/6.0/6.0.15.md
+43fd430165b8fb76102ad71e0459f6a7  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6734,7 +6734,7 @@ ab6bbf730a075904c4af88a430513e7d  doc/eng-us/guides/template-syntax-check.md
 9e4779ad88a9e6f97b461ce60bc4e584  doc/eng-us/guides/templates-and-design.md
 af191104f2cf6e5332c98ab91d6b2bd7  doc/eng-us/guides/test-language-lorem-ipsum.md
 ead5dd8f3a160fb61e4ad5298a29919a  doc/eng-us/guides/twig-templates-caching.md
-4ba5fbb2601f223ef589a5af13b8b8c5  doc/eng-us/guides/twig-templates-compatibility.md
+72ea5bb50967deaab2d9b09eab117796  doc/eng-us/guides/twig-templates-compatibility.md
 9511508868f362a14ce9726488741a65  doc/eng-us/guides/twig-templates-converter.md
 7e1fae737168e6f10a298ad63c4165c2  doc/eng-us/guides/twig-templates-debugging.md
 563d7577a7bfbbd6951b72beecbd8282  doc/eng-us/guides/twig-templates-editors.md
@@ -12888,7 +12888,7 @@ c8639029dd7b640cb74fb6702cafbc8e  doc/ger-de/anleitungen/twig-templates-im-edito
 e8572b617b8eddb34206464efe0a1880  doc/ger-de/anleitungen/twig-templates-leistung.md
 1ad570d35262225e0b6efaf700408cf4  doc/ger-de/anleitungen/twig-templates-nativ-schreiben.md
 9c9eac055a66942f61a5b18622810564  doc/ger-de/anleitungen/twig-templates-rezepte.md
-cd7bf363393f23529fa5ea6a5de25f67  doc/ger-de/anleitungen/twig-templates-versionen-und-kompatibilitaet.md
+857938e1d35afb35e1848fffd49f7f8d  doc/ger-de/anleitungen/twig-templates-versionen-und-kompatibilitaet.md
 74970ef5f9094334f55b89fa5c8185e3  doc/ger-de/anleitungen/ui-umschalter-design.md
 538acd610f602879df1d118d1a8104b3  doc/ger-de/anleitungen/ui-umschalter-einstellungen.md
 96c7e7570232e91c8971eb947b341ba1  doc/ger-de/anleitungen/umgebungsvariablen.md

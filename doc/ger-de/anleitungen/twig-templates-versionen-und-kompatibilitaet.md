@@ -8,9 +8,24 @@ wo etwas nicht ausgeführt wurde, sagt die Seite es.
 
 ## Welches Twig für welches PHP
 
-Die `composer.json` des Kernels verlangt `twig/twig` `^3`: irgendein Release von Twig 3. Welches Composer wählt, hängt
-von der PHP-Version ab, denn jede Twig-Linie nennt das PHP, das sie braucht (Packagist-Daten für `twig/twig`, gelesen am
-29. Oktober 2026):
+Composer installiert Twig 3 mit dem Rest der Installation, über das Metapaket `se7enxweb/exponential-php-floor`, das
+die `composer.json` des Kernels verlangt (`~1.0.3 || ~1.1.3 || ~1.2.3 || ~1.3.3`). Composer wählt das Floor-Release,
+das zu der PHP-Version passt, mit der es läuft, und dieses Release verlangt das Twig-3-Paket für diese PHP-Linie:
+
+| PHP | Exponential | Floor-Release | Twig-Paket | Installiertes Twig am 29. Oktober 2026 |
+|---|---|---|---|---|
+| 8.4 und neuer | unterstützt | 1.3.3 | `twig/twig` `^3.27` | 3.30.0 |
+| 8.1 bis 8.3 | unterstützt | 1.2.3 | `twig/twig` `^3.27` | 3.30.0 |
+| 8.0 | unterstützt | 1.1.3 | `se7enxweb/twig` `~3.19.1` | 3.19.1 |
+| 7.4 | nutzbar ohne Unterstützung | 1.0.3 | `se7enxweb/twig` `~3.11.4` | 3.11.4 |
+
+Eine Installation mit eingeschalteter Sicherheitssperre von Composer (der Standard, den das Projekt auf jeder
+PHP-Version eingeschaltet lässt) wurde mit dieser Einrichtung auf PHP 7.4.33, 8.0.30, 8.3.36 und 8.5.12 geprüft: Jede
+installierte sich, und `Twig\Environment` und Smarty wurden aus `vendor/` geladen. Ein Floor-Release älter als x.y.3
+installiert kein Twig; `composer update` wechselt auf das aktuelle.
+
+**Warum `twig/twig` nicht in der eigenen `composer.json` des Kernels steht.** Jede Twig-Linie von upstream nennt das
+PHP, das sie braucht (Packagist-Daten für `twig/twig`, gelesen am 29. Oktober 2026):
 
 | Twig-Linie | Braucht PHP | Neuestes Release der Linie |
 |---|---|---|
@@ -18,18 +33,9 @@ von der PHP-Version ab, denn jede Twig-Linie nennt das PHP, das sie braucht (Pac
 | 3.12 bis 3.19 | 8.0.2 oder neuer | 3.19.0 (29. Januar 2025) |
 | 3.20 bis 3.30 | 8.1 oder neuer | 3.30.0 (25. September 2026) |
 
-Gegen die PHP-Versionen gestellt, auf denen Exponential 6.0.15 läuft:
-
-| PHP | Exponential | Neuestes Twig, das dort läuft | Von Composer installiert, mit eingeschalteter Sicherheitssperre (Standard) |
-|---|---|---|---|
-| 8.1 bis 8.5 | unterstützt | 3.30.0 | ja, das neueste 3.x (3.30.0 am 29. Oktober 2026) |
-| 8.0 | unterstützt | Linie 3.19 | **nein**, siehe unten |
-| 7.4 | nutzbar ohne Unterstützung | Linie 3.11 | **nein**, siehe unten |
-
-**Warum nicht auf PHP 8.0 und 7.4.** Composer lehnt beim Auflösen der Abhängigkeiten Paketversionen mit bekannten
-Sicherheitshinweisen ab, und das Projekt lässt das auf jeder PHP-Version eingeschaltet. Jedes Release von `twig/twig`, das
-auf PHP 8.0 oder 7.4 läuft, ist von Sicherheitshinweisen betroffen, Composer findet dort also nichts, was es installieren
-darf:
+`twig/twig` von upstream ist bis 3.26 von Sicherheitshinweisen betroffen, und 3.27 und neuer brauchen PHP 8.1. Mit
+eingeschalteter Sicherheitssperre findet eine einzelne Anforderung von `twig/twig` auf PHP 8.0 und 7.4 also nichts zu
+installieren. Composer sagte das auf PHP 8.0.30 für `twig/twig` `^3`:
 
 ```
 Problem 1
@@ -37,27 +43,28 @@ Problem 1
   - twig/twig[v3.27.0, ..., v3.30.0] require php >=8.1.0 -> your php version (8.0.30) does not satisfy that requirement.
 ```
 
-Der Fork des Projekts, `se7enxweb/twig`, hat Releases für diese Linien (3.19.1 vom 25. Oktober 2026 für PHP 8.0, 3.11.4
-vom 29. Oktober 2026 für PHP 7.4). Für sich allein installiert er sich auf PHP 8.0 und 7.4. Neben `twig/twig` verlangt,
-tritt er an die Stelle von `twig/twig` und erbt dessen Sicherheitshinweise; das Problem oben löst er so also nicht.
+Der Fork des Projekts, `se7enxweb/twig`, führt die Linie 3.19 für PHP 8.0 (3.19.1 vom 25. Oktober 2026) und die Linie
+3.11 für PHP 7.4 (3.11.4 vom 29. Oktober 2026), mit denselben `Twig\`-Klassen. Er erklärt, dass er `twig/twig` ersetzt;
+der Floor verlangt ihn deshalb nur auf diesen PHP-Linien.
 
-**Was das praktisch heißt:**
+**Fügen Sie einer Installation, die auf PHP 7.4 oder 8.0 läuft, kein `twig/twig` hinzu.** Neben dem Fork verlangt,
+lässt `twig/twig` Composer die Sicherheitshinweise von `twig/twig` auf `se7enxweb/twig` anwenden, und die Installation
+löst sich nicht mehr auf:
 
-- **PHP 8.1 oder neuer**: nichts zu tun. `composer update` installiert Twig mit dem Rest; `.twig`-Templates funktionieren.
-- **PHP 8.0 oder 7.4**: `.tpl`- und `.stpl`-Templates sind nicht betroffen. Für `.twig` installieren Sie Twig in einem
-  eigenen Verzeichnis und lassen `[TwigSettings] LibraryPath` darauf zeigen (nächster Abschnitt). Lesen Sie vorher die
-  Sicherheitshinweise, die Composer nennt (auf der Seite der Sicherheitshinweise von Packagist), und entscheiden Sie, ob
-  sie für Ihre Templates zählen: Eine Website, deren `.twig`-Dateien nur ihre eigenen Entwickler schreiben, ist anders
-  ausgesetzt als eine, bei der andere sie ändern können. Oder wechseln Sie auf PHP 8.1 oder neuer; dann stellt sich die
-  Frage nicht.
+```
+Problem 1
+  - Root composer.json requires se7enxweb/twig ~3.19.1, found se7enxweb/twig[v3.19.1] but these were not loaded, because they are affected by security advisories (...)
+```
+
+Auf PHP 8.1 und neuer schadet eine eigene Anforderung von `twig/twig` nicht, solange sie `^3.27` zulässt.
+
+Die Brücke kompiliert Templates im Modus `use_yield` von Twig und kennzeichnet ihre Knoten als yield-fähig, was Twig ab
+3.9 bietet; sie braucht also Twig 3.9 oder neuer, und jedes Twig, das der Floor installiert, ist neuer.
 
 Was für diese Seite ausgeführt wurde: `.twig` rendern auf PHP 8.5 mit Twig 3.30.0 (jedes Beispiel dieser Anleitungen);
 `php -l` für jede Datei der Twig-Brücke (`lib/twig/classes/`, `lib/templatebridge/classes/`) auf PHP 7.4.33 und 8.0.30,
-ohne Fehler; die Installation des Forks auf beiden. Rendern auf PHP 8.0 und 7.4 wurde in der Entwicklungsinstallation
-nicht ausgeführt, deren Composer-Einrichtung für PHP 8.4 und neuer ist.
-
-Die Brücke kompiliert Templates im Modus `use_yield` von Twig und kennzeichnet ihre Knoten als yield-fähig, was Twig ab
-3.9 bietet; sie braucht also Twig 3.9 oder neuer, und das neueste Release jeder Linie in den Tabellen oben ist neuer.
+ohne Fehler; die Installation des Forks auf beiden, allein und neben `twig/twig` (das zweite scheitert wie gezeigt). Die
+Installation über den Floor auf den vier PHP-Versionen oben wurde geprüft, als die Floor-Releases veröffentlicht wurden.
 
 ## Twig in einem eigenen Verzeichnis installieren
 
@@ -66,7 +73,9 @@ Sie es in einem eigenen Verzeichnis und sagen der Brücke, wo es liegt:
 
 ```bash
 mkdir -p var/lib/twig-vendor && cd var/lib/twig-vendor
-composer require twig/twig:^3
+composer require twig/twig:^3.27            # PHP 8.1 und neuer
+# composer require se7enxweb/twig:~3.19.1   # PHP 8.0 (der Fork allein, ohne twig/twig)
+# composer require se7enxweb/twig:~3.11.4   # PHP 7.4
 ```
 
 ```ini
