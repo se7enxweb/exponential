@@ -24697,7 +24697,7 @@ ac917a570f155f538c90bd69ee28a5a4  kernel/private/rest/classes/exceptions/rest_pr
 7102fb4cd55b1dcb553425c878f52345  kernel/private/rest/classes/exceptions/route_method_not_allowed.php
 4ef1516e747314749faff513f262ac70  kernel/private/rest/classes/exceptions/route_security_filter_not_found.php
 e6cf9146063965f631e6a733a03cfb8a  kernel/private/rest/classes/exceptions/user_not_found.php
-c6551c3633282d651efcc7680ca1317c  kernel/private/rest/classes/ezpkernelrest.php
+9c5cc33712723bb0069177ce3dabe223  kernel/private/rest/classes/ezpkernelrest.php
 da61d84862c64c2544344bfff518bd1f  kernel/private/rest/classes/http_response_codes.php
 445e43b4da32ae268d67eed88aac46f4  kernel/private/rest/classes/interfaces/content_renderer.php
 fa4efa1c7a0fcb9aac0bfb0904a9ea51  kernel/private/rest/classes/interfaces/prerouting_filter.php
@@ -27221,7 +27221,7 @@ a6f6894206dbc0dde7dae7dba8bf008a  tests/tests/kernel/classes/expContentLanguages
 bd8d5281bb788338a12315d0bc4eeea3  tests/tests/kernel/classes/expInstallDefaultExtensionsTest.php
 59410c14cc7dd043faea8eabf885b694  tests/tests/kernel/classes/expKernelCallFixesTest.php
 63560f7fcb44741dad70668afb867c2a  tests/tests/kernel/classes/expKernelServiceScopeMemoTest.php
-aca858cd29762ccc81683c986892b0ee  tests/tests/kernel/classes/expKernelServicesTest.php
+d32b95c53aa6c4d7db1e92129156c0fa  tests/tests/kernel/classes/expKernelServicesTest.php
 cdc3a84370d7973c391aa502601fc541  tests/tests/kernel/classes/expKernelTransferRegistryTest.php
 448f58b85fd061fe10776ed7828bb7f0  tests/tests/kernel/classes/expLinkCheckTest.php
 3e50c9be12a35dbb019b3378de3d7236  tests/tests/kernel/classes/expLoveStackCheckTest.php
