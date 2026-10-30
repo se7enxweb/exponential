@@ -205,6 +205,7 @@ Fields: 18
 ## Verwandte Seiten
 
 - [Von Exponential-Templates (.tpl) zu Exponential-Smarty-Templates (.stpl) umziehen](von-tpl-zu-stpl-umziehen.md): Smarty-Templates, von Exponential selbst ausgeführt
+- Alle drei Engines, Twig eingeschlossen: [Templates nebeneinander: Exponential-Templates, Twig und Smarty](tpl-twig-smarty-nebeneinander.md)
 - Zurück: [Geschichte der Template-Sprache](geschichte-der-template-sprache.md)
 - Weiter: [Smarty und die Template-Sprache: die Unterschiede im Detail](smarty-unterschiede-im-detail.md)
 - [Ein Template von Smarty umziehen](ein-template-von-smarty-umziehen.md)

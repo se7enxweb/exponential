@@ -48,9 +48,11 @@ Where an extension plugs into the kernel through settings: INI settings that nam
 | [shop.ini](shop.md) | kernel | 7 | MathHandler, ExchangeRatesUpdateHandler, ExtensionDirectories, ExtensionDirectories, Handler, ExtensionDirectories ... |
 | [shopaccount.ini](shopaccount.md) | kernel | 4 | Repositories, ExtensionRepositories, Handler, Handler |
 | [site.ini](site.md) | kernel | 30 | purgeClass, purgeClass, DatabaseImplementation, Listeners, Implementation, Listeners ... |
+| [smarty.ini](smarty.md) | kernel | 2 | CompileCheck, SecurityStaticClassList |
 | [subitemscolumns.ini](subitemscolumns.md) | kernel | 112 | Class, Class, Class, Class, Class, Class ... |
 | [syscard.ini](syscard.md) | kernel | 1 | ProviderClasses |
 | [template.ini](template.md) | kernel | 2 | DefaultFormatter, OutputFormatter |
+| [twig.ini](twig.md) | kernel | 1 | SecurityAllowedFilterList |
 | [uiswitch.ini](uiswitch.md) | kernel | 2 | Class, Class |
 | [upload.ini](upload.md) | kernel | 2 | ClassList, DefaultClass |
 | [webdav.ini](webdav.md) | kernel | 2 | FolderClasses, FolderClass |

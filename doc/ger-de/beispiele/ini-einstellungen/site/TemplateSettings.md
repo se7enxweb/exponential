@@ -25,7 +25,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 > Diese Dateien werden verwendet, um Template-Funktionen und -Operatoren automatisch zu laden  
 > Sie können neue hinzufügen, wenn Sie eigenen Template-Code erstellen.  
 
-Standard: eine Liste mit 4: `lib/eztemplate/classes/`, `kernel/common/`, `lib/ezpdf/classes/`, `kernel/private/eztemplate/`.
+Standard: eine Liste mit 6: `lib/eztemplate/classes/`, `kernel/common/`, `lib/ezpdf/classes/`, `lib/smarty/classes/`, `lib/twig/classes/`, `kernel/private/eztemplate/`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -36,6 +36,8 @@ AutoloadPathList[]
 AutoloadPathList[]=lib/eztemplate/classes/
 AutoloadPathList[]=kernel/common/
 AutoloadPathList[]=lib/ezpdf/classes/
+AutoloadPathList[]=lib/smarty/classes/
+AutoloadPathList[]=lib/twig/classes/
 AutoloadPathList[]=kernel/private/eztemplate/
 */ ?>
 ```

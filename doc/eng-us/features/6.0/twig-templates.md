@@ -26,6 +26,13 @@ The guides go further:
 | [Troubleshooting and FAQ](../../guides/twig-templates-troubleshooting.md) | error messages with their cause and fix, common questions |
 | [Writing operators and functions](../../guides/twig-templates-plugins.md) | your own operators and functions that work in every engine |
 | [Security and escaping](../../guides/twig-templates-security.md) | the sandbox, `wash`, autoescape, what a template can reach |
+| [Writing Twig-native templates](../../guides/twig-templates-native.md) | inheritance with the override system, `include` and `embed`, macros, tests, escaping, whitespace, the sandbox, the variables a template sees |
+| [Recipes](../../guides/twig-templates-recipes.md) | a page layout, a line view, a layouts block, a mail template, cache blocks per role and user, a form, texts with a count, image aliases |
+| [Debugging Twig templates](../../guides/twig-templates-debugging.md) | the check, the message in the page, path comments, the debug bar, the Twig profile, a change that does not show |
+| [Twig in your editor](../../guides/twig-templates-editors.md) | syntax highlighting, file endings, what an editor's checks cannot know, the checker in the editor, snippets |
+| [Versions, upgrades and compatibility](../../guides/twig-templates-compatibility.md) | Twig per PHP version, Composer, Twig missing, upgrading, Velocity |
+| [Speed of the three template engines](../../guides/template-engines-speed.md) | Twig, Smarty and `.tpl` measured: cached, uncached and the debug render, with conditions and how to repeat it |
+| [Templates side by side](../../help/template-language/tpl-twig-smarty-side-by-side.md) | the same template in `.tpl`, `.twig` and `.stpl`, and every operator in Twig |
 | [Converting templates between template engines](../../guides/template-conversion.md) | the `exp:template:convert` command space, every direction |
 | [Checking template syntax](../../guides/template-syntax-check.md) | `exp:template:check` for `.tpl`, `.stpl` and `.twig` |
 

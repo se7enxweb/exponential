@@ -204,6 +204,7 @@ Fields: 18
 ## Related pages
 
 - [Moving from Exponential templates (.tpl) to Exponential Smarty templates (.stpl)](moving-from-tpl-to-stpl.md) and [Smarty templates (.stpl) next to .tpl](../../features/6.0/smarty-templates.md): Smarty templates run by Exponential itself
+- All three engines, Twig included: [Templates side by side: Exponential templates, Twig and Smarty](tpl-twig-smarty-side-by-side.md)
 - Previous: [History of the template language](history.md)
 - Next: [Smarty and the template language: the differences in depth](smarty-differences-in-depth.md)
 - [Moving a template from Smarty](moving-from-smarty.md)

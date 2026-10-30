@@ -494,6 +494,8 @@ Check `x-exp-cache` at the same time: a `HIT` measures the full-page cache, not 
 - [Troubleshooting and FAQ](smarty-templates-troubleshooting.md)
 - [Benchmarking](benchmarking.md), [Caches](caches.md), [The role-aware HTTP cache](../bc/6.0/httpcache.md)
 - [Velocity and the opcode cache](../features/6.0/velocity-opcode-cache-and-profile.md)
+- [Speed of the three template engines](template-engines-speed.md): Smarty, Twig and `.tpl` measured side by side,
+  cached, uncached and with the debug output
 
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and

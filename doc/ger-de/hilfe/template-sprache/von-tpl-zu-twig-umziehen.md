@@ -121,3 +121,4 @@ was die Sandbox abweisen würde ([Template-Syntax prüfen](../../anleitungen/tem
 - [Zwischen Template-Engines umwandeln](zwischen-template-engines-umwandeln.md)
 - [Von Exponential-Templates (.tpl) zu Exponential-Smarty-Templates (.stpl) umziehen](von-tpl-zu-stpl-umziehen.md)
 - [Twig templates](../../../eng-us/features/6.0/twig-templates.md) (Englisch)
+- [Templates nebeneinander](tpl-twig-smarty-nebeneinander.md), [Twig-Templates nativ schreiben](../../anleitungen/twig-templates-nativ-schreiben.md), [Rezepte](../../anleitungen/twig-templates-rezepte.md) und [die Geschwindigkeit der drei Engines](../../anleitungen/template-engines-geschwindigkeit.md)

@@ -239,6 +239,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **site package**: the content and design set installed at setup. [Clean install defaults](features/6.0/clean-install-defaults.md).
 - **siteaccess**: one way of reaching the site (by URL, host or port) with its own settings and design, such as `site` and `admin`. [Getting started](guides/getting-started.md), [Multi-site INI overrides](features/6.0/multi-site-ini-overrides.md).
 - **Smaller changes**: the section of a chronicle page that lists changes without a story of their own. [History](history/README.md).
+- **Smarty templates**: templates in Smarty 5 (`.stpl`), rendered by the kernel next to `.tpl` and `.twig`. [Smarty templates](features/6.0/smarty-templates.md).
 - **Solr**: the search server controlled by `exp:solr`. [Web server and Solr commands](features/6.0/web-server-and-solr-commands.md).
 - **specification**: a reference page for a subsystem: data model, classes, settings, APIs. [Specifications](specifications/6.0/README.md).
 - **SQLite**: the database in one file; the default of `exp:install`. [SQLite](features/6.0/sqlite-database.md), [driver specification](specifications/6.0/sqlite3-database-driver.md).
@@ -252,11 +253,13 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 ## T
 
 - **template**: a `.tpl` file in Exponential's template language; resolved by design and **overrides**. [Template path comments](features/6.0/template-path-comments.md).
+- **template engine**: one of the three languages a template can be written in: Exponential templates (`.tpl`), Smarty (`.stpl`) or Twig (`.twig`); chosen by the file ending, mixed freely in one design. [The three template engines compared](guides/template-engines.md), [Templates side by side](help/template-language/tpl-twig-smarty-side-by-side.md).
 - **template path comments**: `START` and `STOP` comments naming each template in the page source. [Template path comments](features/6.0/template-path-comments.md).
 - **test suite**: the PHPUnit suites of `phpunit.xml`, run with `php vendor/bin/phpunit`. [Continuous integration and the test suite](specifications/6.0/continuous-integration.md).
 - **TinyMCE**: the editor engine behind **ezoe**, in versions 3 and 8. [TinyMCE 8](features/6.0/online-editor-tinymce8.md).
 - **translation**: a language version of a content object, or a language file of the interface. [Translations and languages](features/6.0/translations-and-languages.md).
 - **trash**: where removed objects wait to be restored or purged. [Trash](features/6.0/trash-who-and-where.md).
+- **Twig templates**: templates in Twig 3 (`.twig`, `.html.twig`), rendered by the kernel next to `.tpl` and `.stpl` with every operator, fetch function and template function, in a sandbox that is on by default. [Twig templates](features/6.0/twig-templates.md), [Writing Twig-native templates](guides/twig-templates-native.md), [Speed of the three template engines](guides/template-engines-speed.md).
 - **two-factor authentication**: a second proof at sign-in, with OAuth social login. [sevenx_authentication_2fa](features/6.0/extensions/sevenx_authentication_2fa.md).
 
 ## U

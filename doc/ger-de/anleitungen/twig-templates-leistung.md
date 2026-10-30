@@ -2,7 +2,9 @@
 
 Diese Seite ist für Site-Bauer und Entwickler, die wissen müssen, wie schnell `.twig`-Seiten sind, warum, und wie sie
 ihre eigenen messen. Sie beschreibt, was die Twig-Engine tut, um schnell zu sein, gibt die Messungen einer
-Entwicklungsinstallation vom 2026-10-29 mit ihren Bedingungen an und zeigt, wie man sie wiederholt.
+Entwicklungsinstallation vom 2026-10-29 mit ihren Bedingungen an und zeigt, wie man sie wiederholt. Der Vergleich aller
+drei Engines an einem Ort, mit einem ruhigeren Lauf gecachter Seiten, dem Debug-Rendering, das ein Entwickler sieht, und
+wo eine Anfrage ihre Zeit verbringt, ist [Geschwindigkeit der drei Template-Engines](template-engines-geschwindigkeit.md).
 
 ## Was .twig schnell macht
 
@@ -15,6 +17,12 @@ Entwicklungsinstallation vom 2026-10-29 mit ihren Bedingungen an und zeigt, wie 
 - **Operatoren in PHP.** Die logischen, arithmetischen und Steuer-Operatoren, `wash`, `implode`, `contains` und
   `concat` laufen direkt in PHP, als statische Methoden, die das kompilierte Template ohne Nachschlagen aufruft, mit
   einem schnellen Weg für einfache Zahlen und Texte.
+- **Direkte Aufrufe für alles Gebrückte.** Jeder andere Operator, die Template-Funktionen und die Hilfsfunktionen des
+  Konverters werden ebenfalls als direkte statische Aufrufe kompiliert, sodass ein kompiliertes Template nie einen Namen
+  in der Twig-Umgebung nachschlägt und keine Anfrage Twig seine Erweiterungen einrichten lässt. Vor dieser Änderung
+  kostete das Einrichten etwa 8 ms bei jeder PHP-FPM-Anfrage, und das Debug-Rendering einer `.twig`-Seite brauchte 82
+  bis 113 ms Skriptzeit gegen 25 bis 36 ms für ihre Smarty-Fassung; danach 25 bis 36 ms, so viel wie Smarty. Ein vor der
+  Änderung kompiliertes Template funktioniert weiter.
 - **Übersetzungen beim Kompilieren.** Ein konstanter `i18n`-Text wird beim Kompilieren übersetzt; die kompilierte
   Klasse wird pro Siteaccess und Sprache gehalten. Auf der Startseite der Media-Demo nahm das 37,5 ms Operatorzeit von
   jeder ungecachten Anfrage.
@@ -56,6 +64,11 @@ Was die Zahlen sagen:
   pro Anfrage zu zeigen.
 - Mit PHP-FPM kostet eine gecachte Seite etwa 12 ms PHP, bevor der HTTP-Cache antwortet. Das ist die Untergrenze von
   Apache mit PHP-FPM, für jede Engine.
+
+Ein zweiter Lauf am selben Nachmittag (15:51 bis 16:32, Last 5 bis 18, 600 Anfragen je Seite, Engine und Server) ergab
+auf Velocity für alle drei Engines eine mittlere Serverzeit von 0,1 ms und auf Apache mit PHP-FPM 7,5 bis 7,6 ms; zwei
+`.twig`-Seiten hatten alle 600 Serverzeiten auf Velocity bei oder unter 33 ms. Die Tabellen und die Bedingungen dieses
+Laufs stehen in [Geschwindigkeit der drei Template-Engines](template-engines-geschwindigkeit.md#1-gecachte-seiten).
 
 ## Ungecachte Seiten
 
@@ -106,5 +119,7 @@ ist. Typische Ergebnisse auf einer belasteten Entwicklungsmaschine: 1,0 bis 1,7.
 
 ## Verwandte Seiten
 
+- [Geschwindigkeit der drei Template-Engines](template-engines-geschwindigkeit.md)
+- [Fehlersuche in Twig-Templates](twig-templates-fehlersuche.md) (das Twig-Profil)
 - [Twig templates: performance](../../eng-us/guides/twig-templates-performance.md) (Englisch)
 - [Zwischen Template-Engines umwandeln](../hilfe/template-sprache/zwischen-template-engines-umwandeln.md)

@@ -129,6 +129,13 @@ nginx with PHP-FPM keep working as before.
   [troubleshooting and FAQ](../../guides/twig-templates-troubleshooting.md),
   [writing operators and functions](../../guides/twig-templates-plugins.md),
   [security and escaping](../../guides/twig-templates-security.md),
+  [writing Twig-native templates](../../guides/twig-templates-native.md),
+  [recipes](../../guides/twig-templates-recipes.md),
+  [debugging](../../guides/twig-templates-debugging.md),
+  [Twig in your editor](../../guides/twig-templates-editors.md),
+  [versions, upgrades and compatibility](../../guides/twig-templates-compatibility.md),
+  [speed of the three template engines](../../guides/template-engines-speed.md),
+  [templates side by side](../../help/template-language/tpl-twig-smarty-side-by-side.md),
   [the three template engines compared](../../guides/template-engines.md)
 - [Debug output you can read at a glance and style](debug-output-improvements.md)
 - [The Exp Debug bar](exp-debug-bar.md)

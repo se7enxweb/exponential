@@ -240,6 +240,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 - **site package** (Website-Paket): der Satz aus Inhalten und Design, der beim Setup installiert wird. [Standards einer sauberen Installation](funktionen/6.0/standardwerte-einer-sauberen-installation.md).
 - **siteaccess** (Siteaccess): ein Weg, die Website zu erreichen (per URL, Host oder Port), mit eigenen Einstellungen und eigenem Design, etwa `site` und `admin`. [Erste Schritte](anleitungen/erste-schritte.md), [INI-Überschreibungen für mehrere Websites](funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md).
 - **Smaller changes** (Kleinere Änderungen): der Abschnitt einer Chronikseite, der Änderungen ohne eigene Geschichte auflistet. [Historie](geschichte/README.md).
+- **Smarty templates** (Smarty-Templates): Templates in Smarty 5 (`.stpl`), die der Kernel neben `.tpl` und `.twig` rendert. [Von tpl zu stpl umziehen](hilfe/template-sprache/von-tpl-zu-stpl-umziehen.md).
 - **Solr**: der Suchserver, gesteuert durch `exp:solr`. [Befehle für Webserver und Solr](funktionen/6.0/befehle-fuer-webserver-und-solr.md).
 - **specification** (Spezifikation): eine Referenzseite für ein Teilsystem: Datenmodell, Klassen, Einstellungen, APIs. [Spezifikationen](spezifikationen/6.0/README.md).
 - **SQLite**: die Datenbank in einer Datei; der Standard von `exp:install`. [SQLite](funktionen/6.0/sqlite-datenbank.md), [Treiberspezifikation](spezifikationen/6.0/sqlite3-datenbanktreiber.md).
@@ -253,11 +254,13 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 ## T
 
 - **template** (Template): eine `.tpl`-Datei in der Template-Sprache von Exponential; aufgelöst über Design und **overrides**. [Kommentare mit Template-Pfaden](funktionen/6.0/template-pfad-kommentare.md).
+- **template engine** (Template-Engine): eine der drei Sprachen, in denen ein Template geschrieben sein kann: Exponential-Templates (`.tpl`), Smarty (`.stpl`) oder Twig (`.twig`); gewählt über die Dateiendung, in einem Design frei gemischt. [Templates nebeneinander](hilfe/template-sprache/tpl-twig-smarty-nebeneinander.md), [Geschwindigkeit der drei Template-Engines](anleitungen/template-engines-geschwindigkeit.md).
 - **template path comments** (Kommentare mit Template-Pfaden): Kommentare `START` und `STOP`, die jedes Template im Seitenquelltext benennen. [Kommentare mit Template-Pfaden](funktionen/6.0/template-pfad-kommentare.md).
 - **test suite** (Testsuite): die PHPUnit-Suites aus `phpunit.xml`, ausgeführt mit `php vendor/bin/phpunit`. [Kontinuierliche Integration und die Testsuite](spezifikationen/6.0/kontinuierliche-integration.md).
 - **TinyMCE**: die Editor-Engine hinter **ezoe**, in den Versionen 3 und 8. [TinyMCE 8](funktionen/6.0/online-editor-tinymce8.md).
 - **translation** (Übersetzung): eine Sprachversion eines Inhaltsobjekts oder eine Sprachdatei der Oberfläche. [Übersetzungen und Sprachen](funktionen/6.0/uebersetzungen-und-sprachen.md).
 - **trash** (Papierkorb): wo entfernte Objekte darauf warten, wiederhergestellt oder endgültig gelöscht zu werden. [Papierkorb](funktionen/6.0/papierkorb-wer-und-wo.md).
+- **Twig templates** (Twig-Templates): Templates in Twig 3 (`.twig`, `.html.twig`), die der Kernel neben `.tpl` und `.stpl` rendert, mit jedem Operator, jeder Fetch-Funktion und jeder Template-Funktion, in einer standardmäßig eingeschalteten Sandbox. [Twig-Templates nativ schreiben](anleitungen/twig-templates-nativ-schreiben.md), [Geschwindigkeit der drei Template-Engines](anleitungen/template-engines-geschwindigkeit.md).
 - **two-factor authentication** (Zwei-Faktor-Authentifizierung): ein zweiter Nachweis bei der Anmeldung, mit sozialem Login über OAuth. [sevenx_authentication_2fa](funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md).
 
 ## U
