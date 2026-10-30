@@ -70766,6 +70766,46 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
         <source>Share of page time</source>
         <translation>Parte del tiempo de la página</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>se solicitó un renderizado completo</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>el caché de páginas no tenía la página (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>el caché de páginas no respondió</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Renderizado</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Renderizado por el núcleo: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Servido desde el caché de páginas en %ms ms. La página se guardó a las %stored con un renderizado de %render ms, hace %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Renderizar ahora</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Volver a la vista del caché</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Del renderizado de las %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Esta solicitud: servida desde el caché de páginas en %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

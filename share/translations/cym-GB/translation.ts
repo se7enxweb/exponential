@@ -68532,6 +68532,46 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>Share of page time</source>
         <translation>Cyfran o amser y dudalen</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>gofynnwyd am rendro llawn</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>nid oedd y dudalen yn y storfa tudalennau (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>ni atebodd y storfa tudalennau</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Rendrwyd</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Rendrwyd gan y craidd: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Gweinwyd o'r storfa tudalennau mewn %ms ms. Storiwyd y dudalen am %stored gan rendro o %render ms, %age s yn ôl.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Rendro nawr</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Yn ôl i'r golwg o'r storfa</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>O'r rendro am %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Y cais hwn: gweinwyd o'r storfa tudalennau mewn %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

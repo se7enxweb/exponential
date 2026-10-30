@@ -68471,6 +68471,46 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>Share of page time</source>
         <translation>Źěl casa boka</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>wó dopołne wuźěłanje jo se pšosyło</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>pufrowak bokow njejo bok měł (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>pufrowak bokow njejo wótegronił</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Wuźěłany</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Wót jědra wuźěłany: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Za %ms ms z pufrowaka bokow dodany. Bok jo se wó %stored pó wuźěłanju z %render ms składował, pśed %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Něnto wuźěłaś</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Slědk k naglědoju z pufrowaka</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Z wuźěłanja wó %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Toś to napšašowanje: za %ms ms z pufrowaka bokow dodane.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

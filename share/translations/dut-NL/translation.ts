@@ -68300,6 +68300,46 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Share of page time</source>
         <translation>Aandeel in paginatijd</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>er is om een volledige weergave gevraagd</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>de paginacache had de pagina niet (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>de paginacache heeft niet geantwoord</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Weergegeven</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Weergegeven door de kernel: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>In %ms ms geleverd uit de paginacache. De pagina is om %stored opgeslagen door een weergave van %render ms, %age s geleden.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Nu weergeven</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Terug naar de weergave uit de cache</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Uit de weergave om %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Dit verzoek: in %ms ms geleverd uit de paginacache.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

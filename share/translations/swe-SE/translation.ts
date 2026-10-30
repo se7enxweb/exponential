@@ -68378,6 +68378,46 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>Share of page time</source>
         <translation>Andel av sidtiden</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>en fullständig rendering begärdes</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>sidcachen hade inte sidan (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>sidcachen svarade inte</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Renderad</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Renderad av kärnan: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Levererad från sidcachen på %ms ms. Sidan sparades %stored av en rendering på %render ms, för %age s sedan.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Rendera nu</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Tillbaka till den cachade vyn</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Från renderingen %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Den här förfrågan: levererad från sidcachen på %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

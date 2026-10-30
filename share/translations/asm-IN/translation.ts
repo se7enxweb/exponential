@@ -68532,6 +68532,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>পৃষ্ঠাৰ সময়ৰ অংশ</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>সম্পূৰ্ণ ৰেণ্ডাৰৰ অনুৰোধ কৰা হৈছিল</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>পৃষ্ঠা কেচত পৃষ্ঠাটো নাছিল (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>পৃষ্ঠা কেচে উত্তৰ দিয়া নাছিল</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>ৰেণ্ডাৰ কৰা</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>কেন্দ্ৰৰ দ্বাৰা ৰেণ্ডাৰ কৰা: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>পৃষ্ঠা কেচৰ পৰা %ms ms ত প্ৰদান কৰা হৈছে। পৃষ্ঠাটো %stored ত %render ms ৰ এটা ৰেণ্ডাৰে সঞ্চয় কৰিছিল, %age s আগতে।</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>এতিয়া ৰেণ্ডাৰ কৰক</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>কেচ কৰা দৰ্শনলৈ উভতি যাওক</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored ৰ ৰেণ্ডাৰৰ পৰা (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>এই অনুৰোধ: পৃষ্ঠা কেচৰ পৰা %ms ms ত প্ৰদান কৰা হৈছে।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

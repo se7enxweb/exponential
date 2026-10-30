@@ -68530,6 +68530,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>占页面时间的比例</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>已请求完整渲染</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>页面缓存中没有此页面（%reason）</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>页面缓存未响应</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>已渲染</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>由内核渲染：%why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>已在 %ms ms 内从页面缓存提供。此页面于 %stored 由一次耗时 %render ms 的渲染存入，即 %age 秒前。</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>立即渲染</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>返回缓存的视图</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>来自 %stored 的渲染（%render ms）</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>本次请求：已在 %ms ms 内从页面缓存提供。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

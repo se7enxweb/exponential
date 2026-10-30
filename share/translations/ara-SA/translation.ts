@@ -67021,6 +67021,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>الحصة من وقت الصفحة</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>طُلب عرض كامل</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>لم تكن الصفحة في ذاكرة التخزين المؤقت للصفحات (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>لم تُجب ذاكرة التخزين المؤقت للصفحات</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>معروض</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>عرضته نواة النظام: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>قُدّمت من ذاكرة التخزين المؤقت للصفحات في %ms ms. خُزّنت الصفحة في %stored من عرض استغرق %render ms، قبل %age ث.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>عرض الآن</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>العودة إلى العرض المخزّن مؤقتًا</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>من العرض في %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>هذا الطلب: قُدّم من ذاكرة التخزين المؤقت للصفحات في %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

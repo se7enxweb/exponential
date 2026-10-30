@@ -68532,6 +68532,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>Бит вакытындагы өлеш</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>тулы эшкәртү соралды</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>бит кэшендә бит юк иде (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>бит кэше җавап бирмәде</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Эшкәртелде</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Үзәк эшкәртте: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Бит кэшеннән %ms мс эчендә күрсәтелде. Бит %stored вакытында %render мс дәвам иткән эшкәртү белән сакланган, %age с элек.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Хәзер эшкәртү</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Кэштагы күренешкә кайту</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored вакытындагы эшкәртүдән (%render мс)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Бу сорау: бит кэшеннән %ms мс эчендә күрсәтелде.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

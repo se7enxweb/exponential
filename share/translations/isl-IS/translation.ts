@@ -68471,6 +68471,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>Hlutdeild í tíma síðu</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>beðið var um fulla myndun</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>síðuskyndiminnið var ekki með síðuna (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>síðuskyndiminnið svaraði ekki</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Myndað</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Myndað af kerfiskjarnanum: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Afgreitt úr síðuskyndiminninu á %ms ms. Síðan var vistuð kl. %stored af myndun sem tók %render ms, fyrir %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Mynda núna</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Aftur í sýnina úr skyndiminninu</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Úr mynduninni kl. %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Þessi beiðni: afgreidd úr síðuskyndiminninu á %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

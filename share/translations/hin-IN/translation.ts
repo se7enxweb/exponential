@@ -68471,6 +68471,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>पृष्ठ समय में हिस्सा</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>एक पूर्ण रेंडर का अनुरोध किया गया</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>पृष्ठ कैश में यह पृष्ठ नहीं था (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>पृष्ठ कैश ने उत्तर नहीं दिया</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>रेंडर किया गया</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>कर्नेल द्वारा रेंडर किया गया: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>पृष्ठ कैश से %ms ms में परोसा गया। यह पृष्ठ %stored को %render ms के एक रेंडर द्वारा सहेजा गया था, %age s पहले।</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>अभी रेंडर करें</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>कैश किए गए दृश्य पर वापस</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored के रेंडर से (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>यह अनुरोध: पृष्ठ कैश से %ms ms में परोसा गया।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

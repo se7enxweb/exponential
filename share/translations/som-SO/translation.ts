@@ -68530,6 +68530,46 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>Share of page time</source>
         <translation>Saamiga waqtiga bogga</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>waxaa la codsaday soo bandhig buuxa</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>cache-ka bogga ma uusan haysan bogga (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>cache-ka bogga ma uusan jawaabin</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>La soo bandhigay</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Waxaa soo bandhigay kernel-ka: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Waxaa laga bixiyay cache-ka bogga %ms ms gudahood. Bogga waxaa la kaydiyay %stored, soo bandhig qaatay %render ms, %age s ka hor.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Hadda soo bandhig</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Ku noqo muuqaalka cache-ka</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Soo bandhigii %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Codsigan: waxaa laga bixiyay cache-ka bogga %ms ms gudahood.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68471,6 +68471,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>Share of page time</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>a full render was asked for</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>the page cache did not have the page (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>the page cache did not answer</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Rendered</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Rendered by the kernel: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Render now</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Back to the cached view</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>From the render at %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>This request: served from the page cache in %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

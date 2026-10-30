@@ -68532,6 +68532,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>สัดส่วนของเวลาหน้า</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>มีการขอให้เรนเดอร์ทั้งหน้า</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>แคชหน้าไม่มีหน้านี้ (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>แคชหน้าไม่ตอบสนอง</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>เรนเดอร์แล้ว</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>เรนเดอร์โดยเคอร์เนล: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>ส่งจากแคชหน้าใน %ms ms. หน้านี้ถูกจัดเก็บเมื่อ %stored โดยการเรนเดอร์ที่ใช้เวลา %render ms เมื่อ %age วินาทีที่แล้ว.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>เรนเดอร์ตอนนี้</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>กลับไปยังมุมมองจากแคช</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>จากการเรนเดอร์เมื่อ %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>คำขอนี้: ส่งจากแคชหน้าใน %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

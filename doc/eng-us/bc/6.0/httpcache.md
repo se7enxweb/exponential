@@ -187,7 +187,38 @@ marked as not for a cache (`REQUEST_SHIELD=allow-uncached`: a made-up path or
 parameter); a page that carries the debug report of its request (the Exp Debug
 bar or the classic report, `X-Exp-Cache: BYPASS (debug report)`): its timings,
 queries, messages and the viewer's own panel height belong to that request, and a
-report shown by IP would otherwise reach everyone sharing the anonymous context.
+report shown by IP would otherwise reach everyone sharing the anonymous context. A visitor the bar is shown to
+by address gets the page from the cache all the same, with the bar of its render (next section).
+
+## Visitors the debug bar is shown to
+
+A visitor the Exp Debug bar is shown to by address ([DebugSettings] `DebugByIP=enabled`, `DebugIPList[]`, with
+`DebugOutput=enabled`) is answered from this cache as well, with the bar of the render that stored the page:
+
+- The kernel stores the page such a visitor sees **without** the bar, under a context of that visitor's own (their
+  role context plus their user ID), and the bar beside it in a file only the owner may read (0600: it holds SQL,
+  settings and messages). The bar goes with the entry: the same tags purge it, and garbage collection removes it.
+- On the next request the early exit (Apache) or the worker of Velocity puts the page and that bar together. The
+  bar's first chip says **Cached**, its title when the page was stored and how long its render took, and a
+  **Render now** link asks for a full render. The page time chip gives the time of this answer; every tab begins
+  with "From the render at 12:03:15 (41 ms)", and the Timing tab with the time of this request. Every other figure
+  of every tab is the render's, unchanged. The data block (`#exp-debug-data`) says the same: `served.by` is `cache`,
+  `served.render_time` and `served.stored_at` describe the render, `summary.time` is this answer's.
+- A page the kernel rendered says **Rendered** and why in the chip's title: no page in the cache yet, the page
+  was purged, or a full render was asked for. Such a page is stored again, with its bar.
+- A stale page is never served to such a visitor: within the stale-while-revalidate window they get a fresh render.
+
+**The full-render switch** is the view parameter `(exp_render)/full`, added to any address:
+`/fitness/(exp_render)/full`, `/(exp_render)/full` for the front page, `/content/view/full/89/(exp_render)/full`.
+The kernel takes it out of the address before anything reads it, so it never reaches a URL alias, the view
+parameters, the content view cache, a cache-block key, a template or a link of the page, and the HTTP cache key
+never holds it. It means something only for a visitor the bar is shown to; for anybody else the address is the page
+without it. A page rendered with the switch has a **Back to the cached view** link.
+
+The server process of Velocity, which asks this cache before a worker, does not know the visitor's address: for a
+user who has pages with the bar it leaves the request to a worker, which asks again with the address
+("debug viewer, address not known here"). Visitors shown the bar by user ID only (`DebugByUser`) are rendered as
+before.
 
 ## With request-shield in front
 

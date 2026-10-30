@@ -68471,6 +68471,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>ページの時間に占める割合</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>完全なレンダリングが要求されました</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>ページキャッシュにこのページがありませんでした（%reason）</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>ページキャッシュが応答しませんでした</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>レンダリング済み</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>カーネルによるレンダリング: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>ページキャッシュから %ms ms で配信されました。このページは %stored に %render ms のレンダリングによって保存されました（%age 秒前）。</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>今すぐレンダリング</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>キャッシュされた表示に戻る</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored のレンダリングから（%render ms）</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>このリクエスト: ページキャッシュから %ms ms で配信されました。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

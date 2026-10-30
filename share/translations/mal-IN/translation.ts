@@ -68530,6 +68530,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>പേജ് സമയത്തിന്റെ പങ്ക്</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>പൂർണ്ണ റെൻഡർ അഭ്യർത്ഥിച്ചിരുന്നു</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>പേജ് കാഷെയിൽ ഈ പേജ് ഉണ്ടായിരുന്നില്ല (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>പേജ് കാഷെ പ്രതികരിച്ചില്ല</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>റെൻഡർ ചെയ്തത്</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>കേർണൽ റെൻഡർ ചെയ്തത്: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>പേജ് കാഷെയിൽ നിന്ന് %ms ms കൊണ്ട് നൽകി. %age s മുമ്പ്, %stored സമയത്ത് %render ms എടുത്ത ഒരു റെൻഡർ ഈ പേജ് സംഭരിച്ചു.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>ഇപ്പോൾ റെൻഡർ ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>കാഷെ ചെയ്ത കാഴ്ചയിലേക്ക് തിരികെ</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored സമയത്തെ റെൻഡറിൽ നിന്ന് (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>ഈ അഭ്യർത്ഥന: പേജ് കാഷെയിൽ നിന്ന് %ms ms കൊണ്ട് നൽകി.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

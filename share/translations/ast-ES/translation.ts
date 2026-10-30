@@ -68532,6 +68532,46 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>Share of page time</source>
         <translation>Parte del tiempu de la páxina</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>pidióse una xeneración completa</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>la caché de páxines nun tenía la páxina (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>la caché de páxines nun respondió</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Xenerada</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Xenerada pol nucleu: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Sirvida dende la caché de páxines en %ms ms. La páxina guardóse a les %stored nuna xeneración de %render ms, hai %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Xenerar agora</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Volver a la vista de la caché</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>De la xeneración de les %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Esta solicitú: sirvida dende la caché de páxines en %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

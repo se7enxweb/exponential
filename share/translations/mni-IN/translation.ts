@@ -68532,6 +68532,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>পেজগী মসময়গী অংশ</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>রেন্ডর পুম্নমক তৌনবা হায়জখি</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>পেজ কেশদা পেজ অসি লৈরমদে (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>পেজ কেশনা পাউখুম পীখিদে</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>রেন্ডর তৌরে</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>কর্না রেন্ডর তৌরে: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>পেজ কেশদগী %ms ms দা পীখ্রে. পেজ অসি %stored দা %render ms গী রেন্ডর অমনা থম্লম্মি, %age s মমাংদা.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>হৌজিক রেন্ডর তৌবা</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>কেশ তৌরবা ভিউদা লেপ্পা</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored গী রেন্ডরদগী (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>রিকোয়েস্ট অসি: পেজ কেশদগী %ms ms দা পীখ্রে.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

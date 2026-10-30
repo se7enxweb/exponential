@@ -2421,6 +2421,32 @@ class eZTemplate
     function autoload()
     {
         $pathList = $this->autoloadPathList();
+        // The definitions the autoload files give are worked out from the settings: a persistent worker keeps them
+        // while its settings are kept (expKernelServiceScope::memo()) instead of including some 30 files on every
+        // request. The functions those files declare stay declared in the worker.
+        $definitions = class_exists( 'expKernelServiceScope' )
+            ? expKernelServiceScope::memo( 'template-autoload|' . implode( '|', $pathList ),
+                                           function () use ( $pathList ) { return self::readAutoloadDefinitions( $pathList ); } )
+            : self::readAutoloadDefinitions( $pathList );
+        foreach ( $definitions as $definition )
+        {
+            if ( $definition[0] === 'operator' )
+                $this->registerAutoloadOperators( $definition[1] );
+            else
+                $this->registerAutoloadFunctions( $definition[1] );
+        }
+    }
+
+    /**
+     * The operator and function definitions of the eztemplateautoload.php files in $pathList, in the order
+     * autoload() registers them: array( 'operator'|'function', definition ).
+     *
+     * @param string[] $pathList
+     * @return array
+     */
+    private static function readAutoloadDefinitions( array $pathList )
+    {
+        $definitions = array();
         foreach ( $pathList as $path )
         {
             $autoloadFile = $path . 'eztemplateautoload.php';
@@ -2434,7 +2460,7 @@ class eZTemplate
                 {
                     foreach ( $eZTemplateOperatorArray as $operatorDefinition )
                     {
-                        $this->registerAutoloadOperators( $operatorDefinition );
+                        $definitions[] = array( 'operator', $operatorDefinition );
                     }
                 }
                 if ( isset( $eZTemplateFunctionArray ) &&
@@ -2442,7 +2468,7 @@ class eZTemplate
                 {
                     foreach ( $eZTemplateFunctionArray as $functionDefinition )
                     {
-                        $this->registerAutoloadFunctions( $functionDefinition );
+                        $definitions[] = array( 'function', $functionDefinition );
                     }
                 }
             }
@@ -2453,6 +2479,7 @@ class eZTemplate
                                        "Check the setting [TemplateSettings]/ExtensionAutoloadPath or AutoloadPathList in your site.ini settings." );
             }
         }
+        return $definitions;
     }
 
     /*!

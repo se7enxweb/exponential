@@ -68530,6 +68530,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>ಪುಟ ಸಮಯದ ಪಾಲು</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>ಪೂರ್ಣ ರೆಂಡರ್ ಅನ್ನು ವಿನಂತಿಸಲಾಗಿತ್ತು</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>ಪುಟ ಕ್ಯಾಷ್‌ನಲ್ಲಿ ಈ ಪುಟ ಇರಲಿಲ್ಲ (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>ಪುಟ ಕ್ಯಾಷ್ ಪ್ರತಿಕ್ರಿಯಿಸಲಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>ರೆಂಡರ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>ಕರ್ನಲ್ ರೆಂಡರ್ ಮಾಡಿದೆ: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>ಪುಟ ಕ್ಯಾಷ್‌ನಿಂದ %ms ms ನಲ್ಲಿ ಒದಗಿಸಲಾಗಿದೆ. ಈ ಪುಟವನ್ನು %stored ಸಮಯದಲ್ಲಿ %render ms ನ ರೆಂಡರ್ ಮೂಲಕ ಸಂಗ್ರಹಿಸಲಾಗಿತ್ತು, %age s ಹಿಂದೆ.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>ಈಗ ರೆಂಡರ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>ಕ್ಯಾಷ್ ಮಾಡಿದ ವೀಕ್ಷಣೆಗೆ ಹಿಂದೆ</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored ಸಮಯದ ರೆಂಡರ್‌ನಿಂದ (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>ಈ ವಿನಂತಿ: ಪುಟ ಕ್ಯಾಷ್‌ನಿಂದ %ms ms ನಲ್ಲಿ ಒದಗಿಸಲಾಗಿದೆ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

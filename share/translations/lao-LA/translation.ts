@@ -68532,6 +68532,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>ສ່ວນແບ່ງຂອງເວລາໜ້າ</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>ມີການຮ້ອງຂໍໃຫ້ສະແດງຜົນເຕັມໜ້າ</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>ແຄຊໜ້າບໍ່ມີໜ້ານີ້ (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>ແຄຊໜ້າບໍ່ຕອບສະໜອງ</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>ສະແດງຜົນແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>ສະແດງຜົນໂດຍເຄີເນລ: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>ສົ່ງຈາກແຄຊໜ້າໃນ %ms ms. ໜ້ານີ້ຖືກເກັບໄວ້ເມື່ອ %stored ໂດຍການສະແດງຜົນທີ່ໃຊ້ເວລາ %render ms, ເມື່ອ %age ວິນາທີກ່ອນ.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>ສະແດງຜົນດຽວນີ້</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>ກັບຄືນໄປມຸມມອງຈາກແຄຊ</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>ຈາກການສະແດງຜົນເມື່ອ %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>ຄຳຮ້ອງຂໍນີ້: ສົ່ງຈາກແຄຊໜ້າໃນ %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

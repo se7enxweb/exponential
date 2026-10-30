@@ -67080,6 +67080,46 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>Share of page time</source>
         <translation>Para ji dema rûpelê</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>amadekirineke tevahî hate xwestin</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>rûpel di cache ya rûpelan de tune bû (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>cache ya rûpelan bersiv neda</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Amadekirî</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Ji aliyê kernel ve hate amadekirin: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Di %ms ms de ji cache ya rûpelan hate pêşkêşkirin. Rûpel di %stored de ji aliyê amadekirineke %render ms ve hate tomarkirin, berî %age çrk.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Niha amadekirin</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Vegerîn bo dîtina ji cache</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Ji amadekirina di %stored de (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Ev daxwaz: di %ms ms de ji cache ya rûpelan hate pêşkêşkirin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68532,6 +68532,46 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>Share of page time</source>
         <translation>Bahin sa oras sa panid</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>gihangyo ang tibuok nga pag-render</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>wala sa cache sa panid ang panid (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>wala motubag ang cache sa panid</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Na-render</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Gi-render sa kinauyokan: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Gihatag gikan sa cache sa panid sulod sa %ms ms. Ang panid gitipigan kaniadtong %stored sa usa ka pag-render nga %render ms, %age seg na ang milabay.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>I-render karon</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Balik sa talan-awon gikan sa cache</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Gikan sa pag-render kaniadtong %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Kini nga hangyo: gihatag gikan sa cache sa panid sulod sa %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

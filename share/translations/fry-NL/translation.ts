@@ -68532,6 +68532,46 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>Share of page time</source>
         <translation>Oanpart yn sidetiid</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>der is om in folsleine opmaak frege</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>de sidebuffer hie de side net (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>de sidebuffer hat net antwurde</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Opmakke</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Opmakke troch de kearn: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Yn %ms ms levere út de sidebuffer. De side is om %stored bewarre troch in opmaak fan %render ms, %age s lyn.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>No opmeitsje</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Werom nei de werjefte út de buffer</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Út de opmaak om %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Dit fersyk: yn %ms ms levere út de sidebuffer.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

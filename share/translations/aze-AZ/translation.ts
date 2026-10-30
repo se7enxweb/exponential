@@ -68532,6 +68532,46 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>Share of page time</source>
         <translation>Səhifə vaxtında payı</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>tam yaratma istənildi</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>səhifə keşində səhifə yox idi (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>səhifə keşi cavab vermədi</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Yaradıldı</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Nüvə tərəfindən yaradıldı: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Səhifə keşindən %ms ms ərzində təqdim edildi. Səhifə %stored vaxtında %render ms çəkən yaratma ilə saxlanıldı, %age san əvvəl.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>İndi yarat</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Keşdəki görünüşə qayıt</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored vaxtındakı yaratmadan (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Bu sorğu: səhifə keşindən %ms ms ərzində təqdim edildi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

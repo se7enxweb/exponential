@@ -68471,6 +68471,46 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>Share of page time</source>
         <translation>Pjesa e kohës së faqes</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>u kërkua një prodhim i plotë</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>memoria e përkohshme e faqeve nuk e kishte faqen (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>memoria e përkohshme e faqeve nuk u përgjigj</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Prodhuar</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Prodhuar nga kerneli: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Shërbyer nga memoria e përkohshme e faqeve në %ms ms. Faqja u ruajt më %stored nga një prodhim prej %render ms, %age s më parë.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Prodho tani</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Kthehu te pamja nga memoria e përkohshme</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Nga prodhimi më %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Kjo kërkesë: shërbyer nga memoria e përkohshme e faqeve në %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68532,6 +68532,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>АгӀонан хенан дакъа</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>юьззина кхоллар дехна</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>агӀонийн кэшехь агӀо яцара (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>агӀонийн кэшо жоп ца делира</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Кхоьллина</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Бухо кхоьллина: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>АгӀонийн кэшера %ms мс чохь елла. АгӀо %stored хенахь %render мс дахделла кхолларо Ӏалашйина, %age сек хьалха.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>ХӀинца кхолла</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Кэшера хьажарна тӀе юхадерза</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored хенахь хиллачу кхоллара (%render мс)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>ХӀара дехар: агӀонийн кэшера %ms мс чохь елла.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

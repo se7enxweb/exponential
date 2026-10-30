@@ -67080,6 +67080,46 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Share of page time</source>
         <translation>Sayfa süresindeki payı</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>tam oluşturma istendi</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>sayfa önbelleğinde sayfa yoktu (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>sayfa önbelleği yanıt vermedi</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Oluşturuldu</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Çekirdek tarafından oluşturuldu: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Sayfa önbelleğinden %ms ms içinde sunuldu. Sayfa, %stored saatinde %render ms süren bir oluşturmayla saklandı, %age sn önce.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Şimdi oluştur</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Önbellekteki görünüme dön</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored saatindeki oluşturmadan (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Bu istek: sayfa önbelleğinden %ms ms içinde sunuldu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

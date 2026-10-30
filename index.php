@@ -51,6 +51,14 @@ if ( defined( 'EXP_REQUEST_PREPEND_FILE' ) && is_file( EXP_REQUEST_PREPEND_FILE 
     require EXP_REQUEST_PREPEND_FILE;
 }
 
+// In a persistent worker (Exponential Velocity) config.php, and with it the early exit of the HTTP cache, ran once:
+// a visitor the debug bar is shown to is answered from the page cache here, with the bar of the render that stored
+// the page (the server process in front of the workers does not know the visitor's address).
+if ( PHP_SAPI === 'cli' && class_exists( 'Q_WebServer', false ) && is_file( __DIR__ . '/kernel/private/classes/httpcache/ezphttpcacheworkerdebug.php' ) )
+{
+    require __DIR__ . '/kernel/private/classes/httpcache/ezphttpcacheworkerdebug.php';
+}
+
 // On a development or test machine (EXP_ENV dev or test in config.env.php) PHP
 // errors are shown in the browser. Any other environment, or none, keeps the
 // display_errors setting of php.ini.

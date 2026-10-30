@@ -715,6 +715,13 @@ verglichen; bei einem Fehler schreibt der Test die Dateien zurück), die Bediene
 Seite“. Screenshots gehen nach `var/tmp/debug-bar-<engine>-<page>-<tab>.png`. Eine Prüfung der Wörter stellt sicher,
 dass jede Zeichenkette der Leiste übersetzt ist.
 
+## Seiten aus dem Cache
+
+Ein Besucher, dem die Leiste nach Adresse gezeigt wird, wird aus dem rollenabhängigen HTTP-Cache beantwortet, mit
+der Leiste der Ausgabe, die die Seite gespeichert hat: Ihr erster Chip zeigt **Aus dem Cache** oder **Erzeugt**,
+**Jetzt erzeugen** fordert mit dem View-Parameter `(exp_render)/full` eine vollständige Ausgabe an. Siehe
+[Der rollenabhängige HTTP-Cache](httpcache.md), „Besucher, denen die Debug-Leiste gezeigt wird“.
+
 ## Verwandte Seiten
 
 - [Die Debug-Leiste von Exponential (Funktion)](../../funktionen/6.0/exp-debug-leiste.md)

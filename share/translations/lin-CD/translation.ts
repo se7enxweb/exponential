@@ -68532,6 +68532,46 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>Share of page time</source>
         <translation>Ndambo ya ntángo ya lokasa</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>basɛngaki kosala yango mobimba</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>cache ya mikasa ezalaki na lokasa oyo te (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>cache ya mikasa eyanolaki te</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Esalemi</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Esalemi na motema: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Epesami uta na cache ya mikasa na %ms ms. Lokasa ebombamaki na %stored na bosali ya %render ms, %age s eleki.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Salá sikoyo</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Zongá na botali ya cache</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Uta na bosali ya %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Requête oyo: epesami uta na cache ya mikasa na %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

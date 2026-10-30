@@ -68532,6 +68532,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>Ҳиссаи вақти саҳифа</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>коркарди пурра дархост шуд</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>кэши саҳифа ин саҳифаро надошт (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>кэши саҳифа ҷавоб надод</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Коркард шуд</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Ҳаста коркард кард: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Аз кэши саҳифа дар %ms мс хизмат карда шуд. Саҳифа дар %stored аз ҷониби коркарди %render мс захира шуда буд, %age сон. пеш.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Ҳозир коркард кардан</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Бозгашт ба намуди аз кэш</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Аз коркарди %stored (%render мс)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Ин дархост: аз кэши саҳифа дар %ms мс хизмат карда шуд.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

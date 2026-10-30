@@ -3099,7 +3099,12 @@ class eZINI
     static function flushSharedStore()
     {
         if ( self::$sharedStore !== null )
+        {
             self::$sharedStore->ini = array();
+            // what was worked out from the settings goes with them (expKernelServiceScope::memo())
+            if ( isset( self::$sharedStore->memo ) )
+                self::$sharedStore->memo = array();
+        }
         self::detachSharedStore();
     }
 
@@ -3123,7 +3128,66 @@ class eZINI
     static function getSiteAccessIni( $siteAccess, $iniFile )
     {
         $saPath = eZSiteAccess::findPathToSiteAccess( $siteAccess );
-        return self::fetchFromFile( "$saPath/$iniFile" );
+        $fileName = "$saPath/$iniFile";
+
+        // A siteaccess file is read without the INI cache, so every request that asks for one parsed it again: the
+        // multisite ezurl reads site.ini and content.ini of every siteaccess on the first link of a page (some 3 ms
+        // on PHP-FPM). The parsed object is kept, in APCu when it is there (else for the process), and handed out
+        // as a copy for as long as the files it was read from and the siteaccess directory are unchanged (a file
+        // added there, an environment file for one, changes the directory's time).
+        $key = 'eZINI:sa:' . md5( self::installationRoot() . '|' . $fileName . '|' . self::environment() . '|' . ( self::isTextCodecEnabled() ? 1 : 0 ) );
+        $entry = isset( self::$siteAccessIniMemo[$key] ) ? self::$siteAccessIniMemo[$key] : null;
+        if ( $entry === null && self::apcuUsable() )
+        {
+            $fetched = apcu_fetch( $key, $found );
+            $entry = $found && is_array( $fetched ) ? $fetched : null;
+        }
+        if ( $entry !== null && self::siteAccessIniStamps( $entry['files'] ) === $entry['stamps'] )
+        {
+            self::$siteAccessIniMemo[$key] = $entry;
+            $ini = unserialize( $entry['ini'], array( 'allowed_classes' => array( 'eZINI', 'eZTextCodec' ) ) );
+            if ( $ini instanceof eZINI )
+                return $ini;
+        }
+
+        $ini = self::fetchFromFile( $fileName );
+        $files = $ini->LastParsedInputFiles;
+        $files[] = dirname( self::installationRoot() . $fileName );
+        $entry = array( 'files' => $files, 'stamps' => self::siteAccessIniStamps( $files ), 'ini' => serialize( $ini ) );
+        self::$siteAccessIniMemo[$key] = $entry;
+        if ( self::apcuUsable() )
+            @apcu_store( $key, $entry, 3600 );
+        return $ini;
+    }
+
+    /** @var array key => array( files, stamps, ini ): the siteaccess files getSiteAccessIni() read in this process */
+    private static $siteAccessIniMemo = array();
+
+    /**
+     * Modification time, size and inode of each path (false for one that is not there).
+     *
+     * @param string[] $files
+     * @return array
+     */
+    private static function siteAccessIniStamps( array $files )
+    {
+        $stamps = array();
+        foreach ( $files as $file )
+        {
+            $stat = @stat( $file );
+            $stamps[] = $stat === false ? false : $stat['mtime'] . ':' . $stat['size'] . ':' . $stat['ino'];
+        }
+        return $stamps;
+    }
+
+    /**
+     * Whether APCu can keep values for this process (enabled, and for the command line apc.enable_cli).
+     *
+     * @return bool
+     */
+    private static function apcuUsable()
+    {
+        return function_exists( 'apcu_enabled' ) && apcu_enabled();
     }
 
     /*!

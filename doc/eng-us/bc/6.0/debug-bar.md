@@ -659,6 +659,13 @@ byte; on a failure the test writes the files back), the IP list controls, and "T
 `var/tmp/debug-bar-<engine>-<page>-<tab>.png`. A check of the words makes sure every
 string of the bar is translated.
 
+## Pages from the cache
+
+A visitor the bar is shown to by address is answered from the role-aware HTTP cache, with the bar of the
+render that stored the page: its first chip says **Cached** or **Rendered**, **Render now** asks for a full render
+with the view parameter `(exp_render)/full`. See [The role-aware HTTP cache](httpcache.md), "Visitors the debug bar
+is shown to".
+
 ## Related pages
 
 - [Exponential debug bar (feature)](../../features/6.0/exp-debug-bar.md)

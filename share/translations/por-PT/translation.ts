@@ -68471,6 +68471,46 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>Share of page time</source>
         <translation>Percentagem do tempo da página</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>foi pedido um processamento completo</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>a cache de páginas não tinha a página (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>a cache de páginas não respondeu</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Processado</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Processado pelo kernel: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Servido a partir da cache de páginas em %ms ms. A página foi armazenada às %stored por um processamento de %render ms, há %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Processar agora</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Voltar à vista em cache</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Do processamento das %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Este pedido: servido a partir da cache de páginas em %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

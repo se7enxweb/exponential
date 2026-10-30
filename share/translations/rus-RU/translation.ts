@@ -68471,6 +68471,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>Доля времени страницы</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>запрошена полная обработка</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>в кэше страниц не было этой страницы (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>кэш страниц не ответил</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Обработано</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Обработано ядром: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Отдано из кэша страниц за %ms мс. Страница сохранена в %stored после обработки длительностью %render мс, %age с назад.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Обработать сейчас</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Вернуться к странице из кэша</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Из обработки в %stored (%render мс)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Этот запрос: отдано из кэша страниц за %ms мс.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

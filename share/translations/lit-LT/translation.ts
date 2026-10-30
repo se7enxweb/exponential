@@ -68471,6 +68471,46 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>Share of page time</source>
         <translation>Puslapio laiko dalis</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>paprašyta pilno atvaizdavimo</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>puslapių talpykloje šio puslapio nebuvo (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>puslapių talpykla neatsakė</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Atvaizduota</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Atvaizdavo branduolys: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Pateikta iš puslapių talpyklos per %ms ms. Puslapis įrašytas %stored po atvaizdavimo, trukusio %render ms, prieš %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Atvaizduoti dabar</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Grįžti į rodinį iš talpyklos</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Iš atvaizdavimo %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Ši užklausa: pateikta iš puslapių talpyklos per %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

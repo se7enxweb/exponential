@@ -68532,6 +68532,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>Удел во времето на страницата</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>побарано е целосно изведување</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>кешот на страници ја немаше страницата (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>кешот на страници не одговори</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Изведено</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Изведено од јадрото: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Услужено од кешот на страници за %ms ms. Страницата е зачувана во %stored по изведување од %render ms, пред %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Изведи сега</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Назад кон приказот од кешот</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Од изведувањето во %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Ова барање: услужено од кешот на страници за %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68532,6 +68532,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>Барактын убактысындагы үлүшү</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>толук жасоо суралды</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>барак кэшинде барак жок болчу (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>барак кэши жооп берген жок</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Жасалды</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Ядро жасады: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Барак кэшинен %ms мс ичинде берилди. Барак %stored убагында %render мс жасоо менен сакталган, %age сек мурун.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Азыр жасоо</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Кэштеги көрүнүшкө кайтуу</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored убагындагы жасоодон (%render мс)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Бул суроо: барак кэшинен %ms мс ичинде берилди.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

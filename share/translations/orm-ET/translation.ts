@@ -68532,6 +68532,46 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>Share of page time</source>
         <translation>Qooda yeroo fuulaa</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>hojjechuun guutuun gaafatameera</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>kuusaan yeroo fuulaa fuula kana hin qabu ture (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>kuusaan yeroo fuulaa deebii hin kennine</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Hojjetame</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Handhuuraan hojjetame: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Kuusaa yeroo fuulaa irraa %ms ms keessatti kenname. Fuulli %stored irratti hojjechuu %render ms fudhateen kuufame, %age s dura.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Amma hojjedhu</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Gara mul'ata kuusaa yeroo deebi'i</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Hojjechuu %stored irraa (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Gaaffiin kun: kuusaa yeroo fuulaa irraa %ms ms keessatti kenname.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

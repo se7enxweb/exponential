@@ -68530,6 +68530,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>Ìpín àkókò ojú ìwé</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>a béèrè pé kí a ṣe é jáde ní kíkún</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>kásẹ̀ ojú ìwé kò ní ojú ìwé náà (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>kásẹ̀ ojú ìwé kò dáhùn</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>A ṣe é jáde</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Kẹ̀rnẹ́ẹ̀lì ló ṣe é jáde: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>A pèsè rẹ̀ láti inú kásẹ̀ ojú ìwé ní %ms ms. A tọ́jú ojú ìwé náà ní %stored láti inú ṣíṣe jáde tí ó gba %render ms, ní %age s sẹ́yìn.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Ṣe é jáde báyìí</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Padà sí ìwòran kásẹ̀</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Láti inú ṣíṣe jáde ní %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Ìbéèrè yìí: a pèsè rẹ̀ láti inú kásẹ̀ ojú ìwé ní %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

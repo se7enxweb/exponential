@@ -67080,6 +67080,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>د پاڼې د وخت ونډه</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>د بشپړ جوړولو غوښتنه وشوه</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>د پاڼو کش دغه پاڼه نه درلوده (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>د پاڼو کش ځواب ورنه کړ</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>جوړ شوی</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>د کرنل لخوا جوړ شوی: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>په %ms ms کې د پاڼو له کش څخه وړاندې شوه. پاڼه په %stored کې د %render ms جوړولو لخوا خوندي شوې وه، %age ثانیې مخکې.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>اوس جوړول</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>د کش شوي لید ته بېرته تګ</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>په %stored کې له جوړولو څخه (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>دغه غوښتنه: په %ms ms کې د پاڼو له کش څخه وړاندې شوه.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

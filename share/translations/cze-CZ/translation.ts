@@ -68357,6 +68357,46 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Share of page time</source>
         <translation>Podíl na době načtení stránky</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>bylo vyžádáno úplné vykreslení</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>mezipaměť stránek stránku neměla (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>mezipaměť stránek neodpověděla</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Vykresleno</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Vykresleno jádrem: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Obslouženo z mezipaměti stránek za %ms ms. Stránka byla uložena v %stored vykreslením trvajícím %render ms, před %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Vykreslit nyní</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Vrátit se k zobrazení z mezipaměti</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Z vykreslení v %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Tento požadavek: obslouženo z mezipaměti stránek za %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

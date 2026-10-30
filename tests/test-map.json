@@ -268,8 +268,9 @@
       "tests/tests/lib/ezfile/expLogRotatorTest.php"
     ],
     "lib/ezutils/classes/expdebugbarreport.php": [
-      "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php",
+      "tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php",
       "tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php",
+      "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php",
       "tests/tests/lib/smarty/expSmartyDebugBarTest.php"
     ],
     "design/standard/stylesheets/expdebugbar-toolbar.css": [
@@ -2361,6 +2362,27 @@
       "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php",
       "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php"
     ],
+    "kernel/classes/expkernelservicescope.php": [
+      "tests/tests/kernel/classes/expKernelServiceScopeMemoTest.php"
+    ],
+    "kernel/classes/expkernelservices.php": [
+      "tests/tests/kernel/classes/expKernelServiceScopeMemoTest.php"
+    ],
+    "kernel/classes/expvelocity.php": [
+      "tests/tests/kernel/classes/expVelocityEngineRunArchiveTest.php"
+    ],
+    "kernel/private/classes/httpcache/exprenderswitch.php": [
+      "tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php"
+    ],
+    "kernel/private/classes/httpcache/ezphttpcachecontract.php": [
+      "tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php"
+    ],
+    "kernel/private/classes/httpcache/ezphttpcachelistener.php": [
+      "tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php"
+    ],
+    "kernel/private/classes/httpcache/ezphttpcacheworkerdebug.php": [
+      "tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php"
+    ],
     "*.js": [
       "tests/tests/bin/CopyrightNoticeTest.php"
     ],
@@ -3062,9 +3084,6 @@
     "lib/ezdb/classes/ezdbquerycache.php": [
       "tests/tests/lib/ezdb/eZDBQueryCacheTest.php"
     ],
-    "lib/ezdb/classes/ezsqlite3db.php": [
-      "tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php"
-    ],
     "lib/ezdbschema/classes/ezdbschemachecker.php": [
       "tests/tests/lib/ezdbschema/expSQLiteSchemaReaderTest.php"
     ],
@@ -3119,7 +3138,8 @@
     ],
     "lib/ezutils/classes/ezini.php": [
       "tests/tests/kernel/classes/audit/expAuditHookTest.php",
-      "tests/tests/kernel/classes/engineindex/expPharCheckTest.php"
+      "tests/tests/kernel/classes/engineindex/expPharCheckTest.php",
+      "tests/tests/lib/ezutils/eZINISiteAccessIniMemoTest.php"
     ],
     "lib/ezutils/classes/ezmodule.php": [
       "tests/tests/kernel/classes/audit/expAuditHookTest.php"
@@ -3448,6 +3468,9 @@
     ],
     "design/standard/templates/dashboard/community_activity.tpl": [
       "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "lib/ezdb/classes/ezsqlite3db.php": [
+      "tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php"
     ]
   }
 }

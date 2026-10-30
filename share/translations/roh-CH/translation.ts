@@ -68532,6 +68532,46 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>Share of page time</source>
         <translation>Part dal temp da la pagina</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>ina generaziun cumpletta è vegnida dumandada</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>la memoria intermediara da paginas n'aveva betg la pagina (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>la memoria intermediara da paginas n'ha betg respundì</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Generà</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Generà dal nucleus: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Furnì da la memoria intermediara da paginas en %ms ms. La pagina è vegnida memorisada a las %stored d'ina generaziun da %render ms, avant %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Generar ussa</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Enavos a la vista da la memoria intermediara</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Da la generaziun da las %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Questa dumonda: furnida da la memoria intermediara da paginas en %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

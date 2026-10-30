@@ -68532,6 +68532,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>ክፋል ግዜ ገጽ</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>ምሉእ ምስራሕ ተሓቲቱ</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>ካሽ ገጽ ነቲ ገጽ ኣይነበሮን (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>ካሽ ገጽ ኣይመለሰን</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>ተሰሪሑ</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>ብማእከል ተሰሪሑ፦ %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>ካብ ካሽ ገጽ ኣብ %ms ms ቀሪቡ። እቲ ገጽ ኣብ %stored ብምስራሕ ናይ %render ms ተቐሚጡ፣ ቅድሚ %age s።</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>ሕጂ ስራሕ</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>ናብ ትርኢት ካሽ ተመለስ</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>ካብቲ ኣብ %stored ዝተሰርሐ (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>እዚ ሕቶ፦ ካብ ካሽ ገጽ ኣብ %ms ms ቀሪቡ።</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

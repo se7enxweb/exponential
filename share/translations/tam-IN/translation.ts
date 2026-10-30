@@ -68530,6 +68530,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>பக்க நேரத்தில் பங்கு</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>முழு வரைதல் கோரப்பட்டது</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>பக்கத் தற்காலிகச் சேமிப்பில் இந்தப் பக்கம் இல்லை (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>பக்கத் தற்காலிகச் சேமிப்பு பதிலளிக்கவில்லை</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>வரையப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>கெர்னலால் வரையப்பட்டது: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>பக்கத் தற்காலிகச் சேமிப்பிலிருந்து %ms ms இல் வழங்கப்பட்டது. இந்தப் பக்கம் %stored நேரத்தில் %render ms எடுத்த ஒரு வரைதலால் சேமிக்கப்பட்டது, %age s முன்பு.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>புதிதாக வரை</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>தற்காலிகச் சேமிப்புக் காட்சிக்குத் திரும்பு</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored நேர வரைதலிலிருந்து (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>இந்தக் கோரிக்கை: பக்கத் தற்காலிகச் சேமிப்பிலிருந்து %ms ms இல் வழங்கப்பட்டது.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
