@@ -3332,7 +3332,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-d9d077847a99904aca9b0881c53c04ac  doc/changelogs/6.0/6.0.15.md
+6cf238874ea7f7ce1b200a22bad1a406  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6556,7 +6556,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 9c48d98113bfd90aee4978edd5c7a7f2  doc/eng-us/features/6.0/ezpm-package-manager-cli.md
 55a6d37f6223a741370c84e36904131d  doc/eng-us/features/6.0/file-consistency-check.md
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
-d773c45bc437d1d3ceca04b6622a7451  doc/eng-us/features/6.0/graphql.md
+609f717ed013cd71abe23482810cc472  doc/eng-us/features/6.0/graphql.md
 da954ebd145c3c58a98b5755235bb069  doc/eng-us/features/6.0/help-content.md
 c2e6afd557f166bbbd534db2b70a1de7  doc/eng-us/features/6.0/help-system.md
 decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
@@ -15799,7 +15799,7 @@ b1a17245ed04b8323c1b3acf66144d0c  doc/ger-de/funktionen/6.0/exp-debug-leiste.md
 b1f10199d3eaa2ca42f0dc2506b7daaa  doc/ger-de/funktionen/6.0/freigabe-von-redakteurskonten.md
 c86b628979e2e65666467fe3f589272a  doc/ger-de/funktionen/6.0/geheimnisspeicher.md
 eb3d2bb16f19518e5d5f40301852dfa7  doc/ger-de/funktionen/6.0/generator-fuer-den-statischen-cache.md
-8d22d4a9fc5e937cfbc1d1323b3c7445  doc/ger-de/funktionen/6.0/graphql.md
+d92bb9bafee6bc4cc7f8da0b1fe44072  doc/ger-de/funktionen/6.0/graphql.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
 4c817b16a8baa24ca229830f51b0b584  doc/ger-de/funktionen/6.0/hilfeinhalte.md
 922ccbd845d7b93b0067c797f9bf45f2  doc/ger-de/funktionen/6.0/hilfesystem.md

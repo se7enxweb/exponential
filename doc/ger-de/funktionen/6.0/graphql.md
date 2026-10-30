@@ -740,21 +740,22 @@ Abfragen](#gespeicherte-abfragen) in `var/cache/graphql/responses/`:
   `private, no-cache`. Die Anfrage-Id einer gecachten Antwort steht im Header `X-Request-Id`, nicht im Body, also ist
   der Body für jede Anfrage derselbe.
 
-Gemessen auf alpha (PHP-FPM 8.5 mit OPcache hinter nginx, 4 Worker, der Demo-Inhalt: 50 Artikel mit Bild, Eigentümer
-und Adresse, eine Antwort von 20,8 KB; 3 Läufe zu je 250 Anfragen nacheinander, auf einem geteilten Host mit einer Last
-von 5 bis 7):
+Gemessen auf alpha (PHP-FPM 8.5 mit OPcache hinter nginx, 4 Worker, die Erweiterungen von alpha aktiv, der Demo-Inhalt: 50
+Artikel mit Bild, Eigentümer und Adresse, eine Antwort von 20 KB; 3 Läufe zu je 250 Anfragen (200 für die letzten zwei
+Zeilen) nacheinander, auf einem geteilten Host mit einer Last von 4 bis 6):
 
 | Anfrage | Median | p95 | Maximum |
 |---|---|---|---|
-| gecacht, anonymes `GET` | 1,2 ms | 3,0 ms | 28,8 ms |
-| gecacht, angemeldetes `GET` (Anmeldedaten bekannt) | 1,1 ms | 2,9 ms | 30,3 ms |
-| gecacht, CORS-`GET` | 1,7 ms | 3,8 ms | 11,1 ms |
-| `304 Not Modified` | 1,0 ms | 2,2 ms | 13,8 ms |
-| gecacht, aber durch den Kernel (ein `POST`, neue Anmeldedaten) | 17,7 ms | 22,7 ms | 45,1 ms |
-| nicht gecacht (eine Ad-hoc-Abfrage) | 78,8 ms | 111,9 ms | 178,8 ms |
+| gecacht, anonymes `GET` | 1,6 ms | 3,0 ms | 6,6 ms |
+| gecacht, angemeldetes `GET` (Anmeldedaten bekannt) | 1,7 ms | 3,2 ms | 5,9 ms |
+| gecacht, CORS-`GET` | 1,1 ms | 2,1 ms | 3,5 ms |
+| `304 Not Modified` | 1,2 ms | 2,3 ms | 4,2 ms |
+| gecacht, aber durch den Kernel (ein `POST`, neue Anmeldedaten) | 33,0 ms | 39,9 ms | 59,2 ms |
+| nicht gecacht (eine Ad-hoc-Abfrage) | 93,0 ms | 111,7 ms | 153,4 ms |
 
-Die frühe Antwort liegt bei jeder Anfrage unter 33 ms und im Median und p95 unter 13 ms; eine Antwort, die den Kernel
-starten muss, kostet dessen Start (etwa 18 ms) obendrauf.
+Die frühe Antwort liegt bei jeder Anfrage unter 33 ms und im Median und p95 unter 13 ms. Eine Antwort, die den Kernel
+starten muss, kostet dessen Start obendrauf (etwa 30 ms mit den Erweiterungen von alpha), also sendet ein Frontend seine
+gespeicherten Abfragen mit `GET`.
 
 Nichts davon wird zwischen Anfragen behalten: Die Loader und ihr Speicher gehören zu einer Anfrage, also antwortet ein
 dauerhafter Worker ([Velocity](velocity-webserver.md)) nie aus dem Speicher einer anderen Anfrage und hält keine eigene

@@ -722,21 +722,22 @@ queries](#persisted-queries), in `var/cache/graphql/responses/`:
   it but must ask again), a signed-in one `private, no-cache`. The request id of a cached answer is in the header
   `X-Request-Id`, not in the body, so the body is the same for every request.
 
-Measured on alpha (PHP-FPM 8.5 with OPcache behind nginx, 4 workers, the demo content: 50 articles with image, owner
-and address, a 20.8 KB answer; 3 runs of 250 requests each, one after the other, on a shared host with a load of 5
-to 7):
+Measured on alpha (PHP-FPM 8.5 with OPcache behind nginx, 4 workers, alpha's extensions active, the demo content: 50
+articles with image, owner and address, a 20 KB answer; 3 runs of 250 requests each (200 for the last two rows), one
+after the other, on a shared host with a load of 4 to 6):
 
 | Request | Median | p95 | Max |
 |---|---|---|---|
-| cached, anonymous `GET` | 1.2 ms | 3.0 ms | 28.8 ms |
-| cached, signed-in `GET` (credentials known) | 1.1 ms | 2.9 ms | 30.3 ms |
-| cached, CORS `GET` | 1.7 ms | 3.8 ms | 11.1 ms |
-| `304 Not Modified` | 1.0 ms | 2.2 ms | 13.8 ms |
-| cached, but through the kernel (a `POST`, new credentials) | 17.7 ms | 22.7 ms | 45.1 ms |
-| not cached (an ad-hoc query) | 78.8 ms | 111.9 ms | 178.8 ms |
+| cached, anonymous `GET` | 1.6 ms | 3.0 ms | 6.6 ms |
+| cached, signed-in `GET` (credentials known) | 1.7 ms | 3.2 ms | 5.9 ms |
+| cached, CORS `GET` | 1.1 ms | 2.1 ms | 3.5 ms |
+| `304 Not Modified` | 1.2 ms | 2.3 ms | 4.2 ms |
+| cached, but through the kernel (a `POST`, new credentials) | 33.0 ms | 39.9 ms | 59.2 ms |
+| not cached (an ad-hoc query) | 93.0 ms | 111.7 ms | 153.4 ms |
 
-The early answer is under 33 ms on every request and under 13 ms at the median and p95; an answer that has to start
-the kernel costs its start (about 18 ms) on top.
+The early answer is under 33 ms on every request and under 13 ms at the median and p95. An answer that has to start
+the kernel costs its start on top (about 30 ms with alpha's extensions), so a front end sends its persisted queries with
+`GET`.
 
 Nothing of this is kept between requests: the loaders and their memory belong to one request, so a persistent worker
 ([Velocity](velocity-web-server.md)) never answers from another request's memory and keeps no database connection
