@@ -22138,6 +22138,10 @@ Yuyay: q'ipikunaqa manam churasqata hurqusqa kanqachu.</translation>
         <source>%n hours ago</source>
         <translation>%n ura ñawpaqmanta</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL APIpa waqaychasqa tapukuyninkunapa kutichiyninkuna, siq&apos;inpa contenido clasenkunapas.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ llamk'achinaykipaq.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore Packer utqay waqaycha (llapa runapaq)</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL cache (kutichiykuna, siq&apos;ipa clasenkunapas)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Tapukuyqa qampa derechoykikunawan purin, kay sesionwan yaykusqa kaspa.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL APIqa wañuchisqam kay web yaykunapi.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL bibliotecaqa mana churasqachu.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET utaq POST nisqata llamk&apos;achiy.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Mañakuypa ukhunqa manam JSON objetochu.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables nisqaqa manam JSON objetochu.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions nisqaqa manam JSON objetochu.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Tapukuyta POST nisqawan apachiy.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Mañakuypiqa manam tapukuy kanchu.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Tapukuyqa %max bytesmanta aswan sunim.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Servidorpa ukhun pantay</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node nisqaqa id, remoteId, path, urlAlias nisqakunamanta hukllatam munan.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content nisqaqa id, remoteId nisqakunamanta hukllatam munan.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after nisqapa cursorninqa manam kay API qusqanchu.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Manam kanchu %alias rikch&apos;a aliasqa (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Kaypiqa waqaychasqa tapukuykunallatam chaskinku: servidorpi waqaychasqa tapukuypa id nisqanta apachiy.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Waqaychasqa tapukuypa hashninqa manam SHA-256chu.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Waqaychasqa tapukuypa hashninqa manam tapukuywan tupanchu.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Nisyu mañakuykuna: %window segundopi aswanqa %limit. %reset segundomanta huktawan kallpachakuy.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Tapukuyqa %depth patakuna ukhum; aswanqa %max nisqallam saqisqa.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Tapukuypa sasachakuyninqa %complexity; aswanqa %max nisqallam saqisqa.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Kay mañakuyqa manam siq&apos;ita ñawinchanmanchu (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search nisqaqa qillqata utaq filtrota munan (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument nisqaqa manam p&apos;unchawchu (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag nisqaqa id, remoteId, path nisqakunamanta hukllatam munan.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout nisqaqa id, identifier, urlAlias nisqakunamanta hukllatam munan.</translation>
     </message>
 </context>
 </TS>

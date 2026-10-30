@@ -22077,6 +22077,10 @@ Shënim: paketat nuk do të çinstalohen.</translation>
         <source>%n hours ago</source>
         <translation>%n orë më parë</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Përgjigjet e pyetësorëve të ruajtur të GraphQL API dhe klasat e përmbajtjes të skemës së tij.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54891,6 +54895,10 @@ llogarinë tuaj.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Memoria e përkohshme e paketuesit publik të eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Cache GraphQL (përgjigje dhe klasa të skemës)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78758,6 +78766,109 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Pyetësori ekzekutohet me të drejtat tuaja, i identifikuar në këtë seancë.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API është i çaktivizuar në këtë qasje në sajt.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Biblioteka GraphQL nuk është instaluar.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Përdorni GET ose POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Trupi i kërkesës nuk është objekt JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables nuk është objekt JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions nuk është objekt JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Dërgojeni pyetësorin me POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Kërkesa nuk ka pyetësor.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Pyetësori është më i gjatë se %max bajtë.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Gabim i brendshëm i serverit</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node kërkon saktësisht një nga id, remoteId, path dhe urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content kërkon saktësisht një nga id dhe remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Kursori i after nuk është dhënë nga ky API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Nuk ka alias imazhi %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Këtu pranohen vetëm pyetësorë të ruajtur: dërgoni id-në e një pyetësori të ruajtur.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash-i i pyetësorit të ruajtur nuk është SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash-i i pyetësorit të ruajtur nuk përputhet me pyetësorin.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Shumë kërkesa: të shumtën %limit në %window sekonda. Provoni përsëri pas %reset sekondash.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Pyetësori ka thellësi %depth nivele; lejohen të shumtën %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Pyetësori ka kompleksitet %complexity; lejohet të shumtën %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Kjo kërkesë nuk mund të lexojë skemën (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search kërkon një tekst ose një filtër (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument nuk është datë (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag kërkon saktësisht një nga id, remoteId dhe path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout kërkon saktësisht një nga id, identifier dhe urlAlias.</translation>
     </message>
 </context>
 </TS>

@@ -22138,6 +22138,10 @@ Paalala: Hindi ia-uninstall ang mga package.</translation>
         <source>%n hours ago</source>
         <translation>%n oras ang nakalipas</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Mga sagot ng mga naka-imbak na query ng GraphQL API, at ang mga class ng nilalaman ng schema nito.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ ang iyong account.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Cache ng eZJSCore Public Packer</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Cache ng GraphQL (mga sagot at mga class ng schema)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Tumatakbo ang query gamit ang iyong mga karapatan, naka-sign in sa session na ito.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>Naka-off ang GraphQL API sa siteaccess na ito.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Hindi naka-install ang GraphQL library.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Gumamit ng GET o POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Hindi JSON object ang body.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>Hindi JSON object ang variables.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>Hindi JSON object ang extensions.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Ipadala ang query gamit ang POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Walang query ang kahilingan.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Mas mahaba ang query kaysa %max byte.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Panloob na error ng server</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>Kailangan ng node ang eksaktong isa sa id, remoteId, path at urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>Kailangan ng content ang eksaktong isa sa id at remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Hindi galing sa API na ito ang cursor ng after.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Walang image alias na %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Mga naka-imbak na query lamang ang tinatanggap dito: ipadala ang id ng isang naka-imbak na query.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hindi SHA-256 ang hash ng naka-imbak na query.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hindi tugma ang hash ng naka-imbak na query sa query.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Masyadong maraming kahilingan: hanggang %limit lamang sa loob ng %window segundo. Subukang muli pagkalipas ng %reset segundo.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>May lalim na %depth antas ang query; hanggang %max lamang ang pinapayagan.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>May complexity na %complexity ang query; hanggang %max lamang ang pinapayagan.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Hindi pinapayagang basahin ng kahilingang ito ang schema (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>Kailangan ng search ang isang teksto o filter (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>Hindi petsa ang %argument (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>Kailangan ng tag ang eksaktong isa sa id, remoteId at path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>Kailangan ng layout ang eksaktong isa sa id, identifier at urlAlias.</translation>
     </message>
 </context>
 </TS>

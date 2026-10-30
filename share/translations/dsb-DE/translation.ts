@@ -22077,6 +22077,10 @@ Pokazka: pakety se njewótinstalěruju.</translation>
         <source>%n hours ago</source>
         <translation>pśed %n h</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Wótegrona skłaźonych napšašowanjow GraphQL API a klase wopśimjeśa jogo šemy.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54891,6 +54895,10 @@ Wašo konto aktiwěrowali.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Pufrowak zjawnego pakowaka eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Pufrowak GraphQL (wótegrona a klase šemy)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78758,6 +78766,109 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Napšašowanje se z wašymi pšawami wuwjeźo, pśizjawjone w toś tej sesiji.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API jo w toś tom pśistupje k sedłu wótšaltowane.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Biblioteka GraphQL njejo instalěrowana.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Wužywajśo GET abo POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Śěło njejo JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables njejo JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions njejo JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Pósćelśo napšašowanje z POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Póžedanje njewopśimujo žedne napšašowanje.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Napšašowanje jo dlejše ako %max bajtow.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Nutśikowna zmólka serwera</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node trjeba rowno jadno z id, remoteId, path a urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content trjeba rowno jadno z id a remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Kursor wót after njejo wót toś togo API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Njejo wobrazowy alias %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>How se jano na serwerje skłaźone napšašowanja akceptěruju: pósćelśo id skłaźonego napšašowanja.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash skłaźonego napšašowanja njejo SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash skłaźonego napšašowanja njewótpowědujo napšašowanjeju.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Pśewjele póžedanjow: maksimalnje %limit w %window sekundach. Wopytajśo hyšći raz za %reset sekundow.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Napšašowanje jo %depth rowninow głuboke; dowólone jo maksimalnje %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Napšašowanje ma kompleksnosć %complexity; dowólone jo maksimalnje %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Toś to póžedanje njesmějo šemu cytaś (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search trjeba tekst abo filter (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument njejo datum (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag trjeba rowno jadno z id, remoteId a path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout trjeba rowno jadno z id, identifier a urlAlias.</translation>
     </message>
 </context>
 </TS>

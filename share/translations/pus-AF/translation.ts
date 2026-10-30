@@ -22136,6 +22136,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n ساعته مخکې</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>د GraphQL API د خوندي شویو پوښتنو ځوابونه، او د هغې د سکیما د منځپانګې کلاسونه.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54950,6 +54954,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>د eZJSCore د عامه بسته کوونکي کش</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>د GraphQL کېش (ځوابونه او د سکیما کلاسونه)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78726,6 +78734,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>پوښتنه ستاسو په حقونو چلېږي، د همدې ناستې په ننوتلو سره.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>د GraphQL API په دې سایټ لاسرسي کې بند دی.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>د GraphQL کتابتون نه دی نصب شوی.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET یا POST وکاروئ.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>د غوښتنې بدنه د JSON څیز نه دی.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables د JSON څیز نه دی.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions د JSON څیز نه دی.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>پوښتنه د POST له لارې ولېږئ.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>په غوښتنه کې هېڅ پوښتنه نشته.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>پوښتنه له %max بایټه اوږده ده.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>د سرور دننۍ تېروتنه</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node له id, remoteId, path او urlAlias څخه دقیقاً یو ته اړتیا لري.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content له id او remoteId څخه دقیقاً یو ته اړتیا لري.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>د after کرسر هغه نه دی چې دې API ورکړی وي.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>د %alias په نوم د انځور مستعار نوم نشته (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>دلته یوازې خوندي شوې پوښتنې منل کېږي: په سرور کې د خوندي شوې پوښتنې id ولېږئ.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>د خوندي شوې پوښتنې هش SHA-256 نه دی.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>د خوندي شوې پوښتنې هش له پوښتنې سره سمون نه خوري.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>ډېرې زیاتې غوښتنې: په %window ثانیو کې تر ټولو ډېر %limit. له %reset ثانیو وروسته بیا هڅه وکړئ.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>پوښتنه %depth کچې ژوره ده؛ تر ټولو ډېر %max اجازه لري.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>د پوښتنې پېچلتیا %complexity ده؛ تر ټولو ډېر %max اجازه لري.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>دا غوښتنه سکیما نه شي لوستلی (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search متن یا فلټر ته اړتیا لري (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument نېټه نه ده (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag له id, remoteId او path څخه دقیقاً یو ته اړتیا لري.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout له id, identifier او urlAlias څخه دقیقاً یو ته اړتیا لري.</translation>
     </message>
 </context>
 </TS>

@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n цагийн өмнө</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API-н хадгалсан асуулгуудын хариултууд болон түүний схемийн агуулгын ангиуд.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore нийтийн багцлагчийн кэш</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL кэш (хариултууд ба схемийн ангиуд)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Асуулга таны эрхээр, энэ сессээр нэвтэрсэн байдлаар ажиллана.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API энэ сайтын хандалтад унтраалттай байна.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL сан суулгаагүй байна.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET эсвэл POST ашиглана уу.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Хүсэлтийн их бие JSON объект биш байна.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables нь JSON объект биш байна.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions нь JSON объект биш байна.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Асуулгыг POST-оор илгээнэ үү.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Хүсэлтэд асуулга алга.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Асуулга %max байтаас урт байна.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Серверийн дотоод алдаа</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node нь id, remoteId, path болон urlAlias-ын яг нэгийг шаардана.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content нь id болон remoteId-ын яг нэгийг шаардана.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after-ын курсор энэ API-аас өгөгдсөн курсор биш байна.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias гэсэн зургийн алиас байхгүй (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Энд зөвхөн хадгалсан асуулгыг хүлээн авна: сервер дээр хадгалсан асуулгын id-г илгээнэ үү.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Хадгалсан асуулгын хэш SHA-256 биш байна.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Хадгалсан асуулгын хэш асуулгатай таарахгүй байна.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Хэт олон хүсэлт: %window секундэд хамгийн ихдээ %limit. %reset секундын дараа дахин оролдоно уу.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Асуулга %depth түвшний гүнтэй; хамгийн ихдээ %max зөвшөөрөгдөнө.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Асуулгын нарийн төвөгтэй байдал %complexity; хамгийн ихдээ %max зөвшөөрөгдөнө.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Энэ хүсэлт схемийг унших эрхгүй (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search нь текст эсвэл шүүлтүүр шаардана (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument нь огноо биш байна (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag нь id, remoteId болон path-ын яг нэгийг шаардана.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout нь id, identifier болон urlAlias-ын яг нэгийг шаардана.</translation>
     </message>
 </context>
 </TS>

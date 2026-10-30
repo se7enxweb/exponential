@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n соат пеш</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Ҷавобҳои дархостҳои захирашудаи GraphQL API ва синфҳои мундариҷаи схемаи он.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>Кэши фишурдакунандаи оммавии eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Кэши GraphQL (ҷавобҳо ва синфҳои схема)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Дархост бо ҳуқуқҳои шумо, ки дар ин ҷаласа ворид шудаед, иҷро мешавад.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API дар ин дастрасии сомона хомӯш аст.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Китобхонаи GraphQL насб нашудааст.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET ё POST-ро истифода баред.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Ҷисми муроҷиат объекти JSON нест.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables объекти JSON нест.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions объекти JSON нест.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Дархостро бо POST фиристед.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Муроҷиат дархост надорад.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Дархост аз %max байт дарозтар аст.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Хатои дохилии сервер</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node маҳз яке аз id, remoteId, path ва urlAlias-ро талаб мекунад.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content маҳз яке аз id ва remoteId-ро талаб мекунад.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Курсори after аз ҷониби ин API дода нашудааст.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Тахаллуси тасвири %alias вуҷуд надорад (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Дар ин ҷо танҳо дархостҳои захирашуда қабул мешаванд: id-и дархости захирашударо фиристед.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Хеши дархости захирашуда SHA-256 нест.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Хеши дархости захирашуда ба дархост мувофиқ нест.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Муроҷиатҳо аз ҳад зиёданд: дар %window сония на бештар аз %limit. Пас аз %reset сония дубора кӯшиш кунед.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Дархост %depth сатҳ чуқур аст; на бештар аз %max иҷозат дода мешавад.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Мураккабии дархост %complexity аст; на бештар аз %max иҷозат дода мешавад.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Ин муроҷиат наметавонад схемаро хонад (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search матн ё филтрро талаб мекунад (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument сана нест (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag маҳз яке аз id, remoteId ва path-ро талаб мекунад.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout маҳз яке аз id, identifier ва urlAlias-ро талаб мекунад.</translation>
     </message>
 </context>
 </TS>

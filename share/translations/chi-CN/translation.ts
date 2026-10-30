@@ -22136,6 +22136,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n 小时前</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API 持久化查询的应答，以及其架构的内容类。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54950,6 +54954,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore 公共打包缓存</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL 缓存（应答和架构类）</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78726,6 +78734,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>查询以您的权限运行，使用当前会话登录。</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>此站点访问中已关闭 GraphQL API。</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>未安装 GraphQL 库。</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>请使用 GET 或 POST。</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>请求体不是 JSON 对象。</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables 不是 JSON 对象。</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions 不是 JSON 对象。</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>请用 POST 发送查询。</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>请求中没有查询。</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>查询长度超过 %max 字节。</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>服务器内部错误</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node 需要 id、remoteId、path 和 urlAlias 中的恰好一个。</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content 需要 id 和 remoteId 中的恰好一个。</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after 的游标不是此 API 给出的。</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>不存在图片别名 %alias（image.ini [AliasSettings] AliasList[]）。</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>此处只接受持久化查询：请发送存储在服务器上的查询的 id。</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>持久化查询的哈希不是 SHA-256。</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>持久化查询的哈希与查询不匹配。</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>请求过多：%window 秒内最多 %limit 个。请在 %reset 秒后重试。</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>查询深度为 %depth 层；最多允许 %max 层。</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>查询复杂度为 %complexity；最多允许 %max。</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>此请求不能读取架构（introspection）。</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search 需要文本或筛选条件（classes、subtree、sections、publishedAfter、publishedBefore）。</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument 不是日期（ISO 8601，2026-10-30）。</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag 需要 id、remoteId 和 path 中的恰好一个。</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout 需要 id、identifier 和 urlAlias 中的恰好一个。</translation>
     </message>
 </context>
 </TS>

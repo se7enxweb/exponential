@@ -22138,6 +22138,10 @@ Qeyd: Paketlərin quraşdırılması silinməyəcək.</translation>
         <source>%n hours ago</source>
         <translation>%n saat əvvəl</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API-nin saxlanmış sorğularının cavabları və onun sxeminin məzmun sinifləri.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ həmin məktubdakı göstərişlərə əməl edin.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore ümumi paketləyici keşi</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL keşi (cavablar və sxem sinifləri)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Sorğu sizin hüquqlarınızla, bu sessiyada daxil olmuş halda icra olunur.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API bu sayt girişində söndürülüb.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL kitabxanası quraşdırılmayıb.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET və ya POST istifadə edin.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Gövdə JSON obyekti deyil.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables JSON obyekti deyil.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions JSON obyekti deyil.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Sorğunu POST ilə göndərin.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>İstəkdə sorğu yoxdur.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Sorğu %max baytdan uzundur.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Daxili server xətası</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node üçün id, remoteId, path və urlAlias-dan dəqiq biri lazımdır.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content üçün id və remoteId-dən dəqiq biri lazımdır.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after kursoru bu API-nin verdiyi kursor deyil.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias adlı şəkil aliası yoxdur (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Burada yalnız serverdə saxlanmış sorğular qəbul edilir: saxlanmış sorğunun id-sini göndərin.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Saxlanmış sorğunun heşi SHA-256 deyil.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Saxlanmış sorğunun heşi sorğuya uyğun gəlmir.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Həddindən çox istək: %window saniyədə ən çox %limit. %reset saniyədən sonra yenidən cəhd edin.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Sorğu %depth səviyyə dərinlikdədir; ən çox %max icazə verilir.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Sorğunun mürəkkəbliyi %complexity-dir; ən çox %max icazə verilir.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Bu istək sxemi oxuya bilməz (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search üçün mətn və ya filtr lazımdır (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument tarix deyil (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag üçün id, remoteId və path-dan dəqiq biri lazımdır.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout üçün id, identifier və urlAlias-dan dəqiq biri lazımdır.</translation>
     </message>
 </context>
 </TS>

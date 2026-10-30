@@ -22136,6 +22136,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n மணிநேரத்துக்கு முன்பு</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API இன் சேமிக்கப்பட்ட வினவல்களின் பதில்களும் அதன் ஸ்கீமாவின் உள்ளடக்க வகுப்புகளும்.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54950,6 +54954,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore Public Packer தற்காலிகச் சேமிப்பு</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL தற்காலிக நினைவகம் (பதில்கள் மற்றும் ஸ்கீமா வகுப்புகள்)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78726,6 +78734,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>இந்த அமர்வில் உள்நுழைந்து, உங்கள் உரிமைகளுடன் வினவல் இயங்குகிறது.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>இந்தத் தள அணுகலில் GraphQL API முடக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL நூலகம் நிறுவப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET அல்லது POST ஐப் பயன்படுத்தவும்.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>கோரிக்கையின் உள்ளடக்கம் ஒரு JSON பொருள் அல்ல.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables ஒரு JSON பொருள் அல்ல.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions ஒரு JSON பொருள் அல்ல.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>வினவலை POST மூலம் அனுப்பவும்.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>கோரிக்கையில் வினவல் இல்லை.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>வினவல் %max பைட்டுகளை விட நீளமானது.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>உள் சேவையகப் பிழை</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node க்கு id, remoteId, path, urlAlias ஆகியவற்றில் சரியாக ஒன்று தேவை.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content க்கு id, remoteId ஆகியவற்றில் சரியாக ஒன்று தேவை.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after இன் கர்சர் இந்த API வழங்கியது அல்ல.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias என்ற பட மாற்றுப்பெயர் இல்லை (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>இங்கு சேமிக்கப்பட்ட வினவல்கள் மட்டுமே ஏற்கப்படும்: சேமிக்கப்பட்ட வினவலின் id ஐ அனுப்பவும்.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>சேமிக்கப்பட்ட வினவலின் ஹாஷ் ஒரு SHA-256 அல்ல.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>சேமிக்கப்பட்ட வினவலின் ஹாஷ் வினவலுடன் பொருந்தவில்லை.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>அதிகமான கோரிக்கைகள்: %window விநாடிகளில் அதிகபட்சம் %limit. %reset விநாடிகளில் மீண்டும் முயலவும்.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>வினவல் %depth நிலைகள் ஆழமானது; அதிகபட்சம் %max அனுமதிக்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>வினவலின் சிக்கலான தன்மை %complexity; அதிகபட்சம் %max அனுமதிக்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>இந்தக் கோரிக்கை ஸ்கீமாவைப் படிக்க முடியாது (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search க்கு ஒரு உரை அல்லது ஒரு வடிகட்டி தேவை (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ஒரு தேதி அல்ல (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag க்கு id, remoteId, path ஆகியவற்றில் சரியாக ஒன்று தேவை.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout க்கு id, identifier, urlAlias ஆகியவற்றில் சரியாக ஒன்று தேவை.</translation>
     </message>
 </context>
 </TS>

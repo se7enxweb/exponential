@@ -22136,6 +22136,10 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <source>%n hours ago</source>
         <translation>%n saat önce</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API&apos;nin kalıcı sorgularının yanıtları ve şemasının içerik sınıfları.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54950,6 +54954,10 @@ o e-postadaki yönergeleri izleyin.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore genel paketleyici önbelleği</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL önbelleği (yanıtlar ve şema sınıfları)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78733,6 +78741,109 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Sorgu, bu oturumla giriş yapmış olarak sizin yetkilerinizle çalışır.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API bu site erişiminde kapalı.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL kütüphanesi kurulu değil.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET veya POST kullanın.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>İstek gövdesi bir JSON nesnesi değil.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables bir JSON nesnesi değil.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions bir JSON nesnesi değil.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Sorguyu POST ile gönderin.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>İstekte sorgu yok.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Sorgu %max bayttan uzun.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Dahili sunucu hatası</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node için id, remoteId, path ve urlAlias değerlerinden tam olarak biri gerekir.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content için id ve remoteId değerlerinden tam olarak biri gerekir.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after imleci bu API tarafından verilmemiş.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias adında bir görüntü takma adı yok (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Burada yalnızca kalıcı sorgular kabul edilir: saklanan bir sorgunun id değerini gönderin.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Kalıcı sorgu karması bir SHA-256 değil.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Kalıcı sorgu karması sorguyla eşleşmiyor.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Çok fazla istek: %window saniyede en fazla %limit. %reset saniye sonra yeniden deneyin.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Sorgu %depth düzey derinliğinde; en fazla %max düzeye izin verilir.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Sorgunun karmaşıklığı %complexity; en fazla %max izin verilir.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Bu istek şemayı okuyamaz (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search için bir metin veya bir filtre gerekir (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument bir tarih değil (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag için id, remoteId ve path değerlerinden tam olarak biri gerekir.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout için id, identifier ve urlAlias değerlerinden tam olarak biri gerekir.</translation>
     </message>
 </context>
 </TS>

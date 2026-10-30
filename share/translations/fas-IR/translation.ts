@@ -22136,6 +22136,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n ساعت پیش</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>پاسخ‌های پرس‌وجوهای ذخیره‌شدهٔ API ‏GraphQL و کلاس‌های محتوای طرح‌وارهٔ آن.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54950,6 +54954,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>حافظهٔ پنهان فشرده‌ساز عمومی eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>حافظهٔ نهان GraphQL (پاسخ‌ها و کلاس‌های طرح‌واره)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78726,6 +78734,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>پرس‌وجو با دسترسی‌های شما اجرا می‌شود، با ورود از طریق همین نشست.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>API ‏GraphQL در این دسترسی سایت خاموش است.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>کتابخانهٔ GraphQL نصب نشده است.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>از GET یا POST استفاده کنید.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>بدنهٔ درخواست یک شیء JSON نیست.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables یک شیء JSON نیست.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions یک شیء JSON نیست.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>پرس‌وجو را با POST بفرستید.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>درخواست هیچ پرس‌وجویی ندارد.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>پرس‌وجو بیش از %max بایت است.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>خطای داخلی سرور</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node دقیقاً به یکی از id، remoteId، path و urlAlias نیاز دارد.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content دقیقاً به یکی از id و remoteId نیاز دارد.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>مکان‌نمای after را این API نداده است.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>نام مستعار تصویر %alias وجود ندارد (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>در اینجا فقط پرس‌وجوهای ذخیره‌شده پذیرفته می‌شوند: شناسهٔ (id) یک پرس‌وجوی ذخیره‌شده را بفرستید.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>هش پرس‌وجوی ذخیره‌شده یک SHA-256 نیست.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>هش پرس‌وجوی ذخیره‌شده با پرس‌وجو مطابقت ندارد.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>درخواست‌ها بیش از حد است: حداکثر %limit در %window ثانیه. %reset ثانیهٔ دیگر دوباره تلاش کنید.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>عمق پرس‌وجو %depth سطح است؛ حداکثر %max مجاز است.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>پیچیدگی پرس‌وجو %complexity است؛ حداکثر %max مجاز است.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>این درخواست اجازهٔ خواندن طرح‌واره را ندارد (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search به یک متن یا یک فیلتر نیاز دارد (classes، subtree، sections، publishedAfter، publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument یک تاریخ نیست (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag دقیقاً به یکی از id، remoteId و path نیاز دارد.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout دقیقاً به یکی از id، identifier و urlAlias نیاز دارد.</translation>
     </message>
 </context>
 </TS>

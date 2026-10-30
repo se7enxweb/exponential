@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n घन्टा सिगां</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API नि जाखोनाय क्वेरिफोरनि फिननायफोर, आरो बेनि स्कीमानि आयदा थाखोफोर।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore पब्लिक प्याकार क्यास</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL कैश (फिननायफोर आरो स्कीमा थाखोफोर)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>क्वेरिया नोंनि मोनथायजों, बे सेसनजों साइन इन खालामनानै चलायो।</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>बे साइट-प्रबेशआव GraphQL API बन्द जादों।</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL लाइब्रेरिया इनस्टल खालामनाय जाया।</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET एबा POST बाहाय।</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>अनुरोधनि बडिया JSON मुवा नङा।</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables आ JSON मुवा नङा।</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions आ JSON मुवा नङा।</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>क्वेरिखौ POST जों दैथाय।</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>अनुरोधआव जेबो क्वेरि गैया।</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>क्वेरिया %max बाइटनिख्रुइ गोलाव।</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>सिङारि सार्भार गोरोन्थि</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node आ id, remoteId, path आरो urlAlias निफ्राय थारैनो मोनसेखौ नांगौ।</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content आ id आरो remoteId निफ्राय थारैनो मोनसेखौ नांगौ।</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after नि कार्सरा बे API आ होनाय नङा।</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias मुंनि सावगारि एलियास गैया (image.ini [AliasSettings] AliasList[])।</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>बेयाव सार्भारआव जाखोनाय क्वेरिफोरखौल लायो: जाखोनाय क्वेरि मोनसेनि id दैथाय।</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>जाखोनाय क्वेरिनि hash आ SHA-256 नङा।</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>जाखोनाय क्वेरिनि hash आ क्वेरिजों गोरोबाया।</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>जोबोद बांसिन अनुरोध: %window सेकेन्डआव गोबां बांनाय %limit। %reset सेकेन्ड उनाव फिन नाजा।</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>क्वेरिया %depth थाखो गोथौ; गोबां बांनाय %max नि गनायथि दं।</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>क्वेरिनि जटिलताया %complexity; गोबां बांनाय %max नि गनायथि दं।</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>बे अनुरोधा स्कीमाखौ फरायनो हाया (introspection)।</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search आ मोनसे टेक्स्ट एबा मोनसे फिल्टार नांगौ (classes, subtree, sections, publishedAfter, publishedBefore)।</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument आ मोनसे तारिख नङा (ISO 8601, 2026-10-30)।</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag आ id, remoteId आरो path निफ्राय थारैनो मोनसेखौ नांगौ।</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout आ id, identifier आरो urlAlias निफ्राय थारैनो मोनसेखौ नांगौ।</translation>
     </message>
 </context>
 </TS>

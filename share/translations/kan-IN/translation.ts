@@ -22136,6 +22136,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n ಗಂಟೆಗಳ ಹಿಂದೆ</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API ಯ ಸಂಗ್ರಹಿಸಿದ ಕ್ವೆರಿಗಳ ಉತ್ತರಗಳು ಮತ್ತು ಅದರ ಸ್ಕೀಮಾದ ವಿಷಯ ವರ್ಗಗಳು.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54950,6 +54954,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore Public Packer ಕ್ಯಾಷ್</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL ಕ್ಯಾಶ್ (ಉತ್ತರಗಳು ಮತ್ತು ಸ್ಕೀಮಾ ವರ್ಗಗಳು)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78726,6 +78734,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ಕ್ವೆರಿ ನಿಮ್ಮ ಹಕ್ಕುಗಳೊಂದಿಗೆ, ಈ ಸೆಷನ್‌ನಿಂದ ಸೈನ್ ಇನ್ ಆಗಿ ನಡೆಯುತ್ತದೆ.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>ಈ ಸೈಟ್‌ಆಕ್ಸೆಸ್‌ನಲ್ಲಿ GraphQL API ಆಫ್ ಆಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL ಲೈಬ್ರರಿಯನ್ನು ಸ್ಥಾಪಿಸಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET ಅಥವಾ POST ಬಳಸಿ.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>ವಿನಂತಿಯ ಬಾಡಿ JSON ಆಬ್ಜೆಕ್ಟ್ ಅಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables JSON ಆಬ್ಜೆಕ್ಟ್ ಅಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions JSON ಆಬ್ಜೆಕ್ಟ್ ಅಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>ಕ್ವೆರಿಯನ್ನು POST ಮೂಲಕ ಕಳುಹಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>ವಿನಂತಿಯಲ್ಲಿ ಯಾವುದೇ ಕ್ವೆರಿ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>ಕ್ವೆರಿ %max ಬೈಟ್‌ಗಳಿಗಿಂತ ಉದ್ದವಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>ಆಂತರಿಕ ಸರ್ವರ್ ದೋಷ</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node ಗೆ id, remoteId, path ಮತ್ತು urlAlias ಇವುಗಳಲ್ಲಿ ನಿಖರವಾಗಿ ಒಂದು ಬೇಕು.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content ಗೆ id ಮತ್ತು remoteId ಇವುಗಳಲ್ಲಿ ನಿಖರವಾಗಿ ಒಂದು ಬೇಕು.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after ನ ಕರ್ಸರ್ ಈ API ನೀಡಿದುದಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias ಎಂಬ ಚಿತ್ರ ಅಲಿಯಾಸ್ ಇಲ್ಲ (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>ಇಲ್ಲಿ ಸಂಗ್ರಹಿಸಿದ ಕ್ವೆರಿಗಳನ್ನು ಮಾತ್ರ ಸ್ವೀಕರಿಸಲಾಗುತ್ತದೆ: ಸಂಗ್ರಹಿಸಿದ ಕ್ವೆರಿಯ id ಕಳುಹಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>ಸಂಗ್ರಹಿಸಿದ ಕ್ವೆರಿಯ ಹ್ಯಾಶ್ SHA-256 ಅಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>ಸಂಗ್ರಹಿಸಿದ ಕ್ವೆರಿಯ ಹ್ಯಾಶ್ ಕ್ವೆರಿಗೆ ಹೊಂದಿಕೆಯಾಗುತ್ತಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>ತುಂಬಾ ಹೆಚ್ಚು ವಿನಂತಿಗಳು: %window ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಗರಿಷ್ಠ %limit. %reset ಸೆಕೆಂಡುಗಳ ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>ಕ್ವೆರಿ %depth ಹಂತಗಳಷ್ಟು ಆಳವಾಗಿದೆ; ಗರಿಷ್ಠ %max ಗೆ ಅನುಮತಿ ಇದೆ.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>ಕ್ವೆರಿಯ ಸಂಕೀರ್ಣತೆ %complexity ಆಗಿದೆ; ಗರಿಷ್ಠ %max ಗೆ ಅನುಮತಿ ಇದೆ.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>ಈ ವಿನಂತಿ ಸ್ಕೀಮಾವನ್ನು ಓದುವಂತಿಲ್ಲ (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search ಗೆ ಪಠ್ಯ ಅಥವಾ ಫಿಲ್ಟರ್ ಬೇಕು (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ದಿನಾಂಕವಲ್ಲ (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag ಗೆ id, remoteId ಮತ್ತು path ಇವುಗಳಲ್ಲಿ ನಿಖರವಾಗಿ ಒಂದು ಬೇಕು.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout ಗೆ id, identifier ಮತ್ತು urlAlias ಇವುಗಳಲ್ಲಿ ನಿಖರವಾಗಿ ಒಂದು ಬೇಕು.</translation>
     </message>
 </context>
 </TS>

@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>နာရီ %n ခု အကြာက</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API ၏ သိမ်းဆည်းထားသော မေးမြန်းမှုများ၏ အဖြေများနှင့် ၎င်း၏ ဇယားဖွဲ့စည်းပုံ၏ အကြောင်းအရာ အတန်းအစားများ။</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore အများပြည်သူ Packer ကက်ရှ်</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL ကက်ရှ် (အဖြေများနှင့် ဇယားဖွဲ့စည်းပုံ အတန်းအစားများ)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>မေးမြန်းမှုကို ဤစက်ရှင်ဖြင့် ဝင်ရောက်ထားသော သင်၏ ခွင့်ပြုချက်များဖြင့် လုပ်ဆောင်သည်။</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>ဤဆိုက်ဝင်ရောက်မှုတွင် GraphQL API ကို ပိတ်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL စာကြည့်တိုက်ကို ထည့်သွင်းမထားပါ။</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET သို့မဟုတ် POST ကို အသုံးပြုပါ။</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>တောင်းဆိုမှု၏ ကိုယ်ထည်သည် JSON အရာဝတ္ထု မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables သည် JSON အရာဝတ္ထု မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions သည် JSON အရာဝတ္ထု မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>မေးမြန်းမှုကို POST ဖြင့် ပို့ပါ။</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>တောင်းဆိုမှုတွင် မေးမြန်းမှု မပါဝင်ပါ။</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>မေးမြန်းမှုသည် %max ဘိုက်ထက် ရှည်နေသည်။</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>ဆာဗာ အတွင်းပိုင်း အမှား</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node သည် id, remoteId, path နှင့် urlAlias ထဲမှ တစ်ခုတည်းကိုသာ လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content သည် id နှင့် remoteId ထဲမှ တစ်ခုတည်းကိုသာ လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after ၏ ကာဆာသည် ဤ API ပေးထားသော ကာဆာ မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias ဟူသော ပုံအမည်ကွဲ မရှိပါ (image.ini [AliasSettings] AliasList[])။</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>ဤနေရာတွင် သိမ်းဆည်းထားသော မေးမြန်းမှုများကိုသာ လက်ခံသည်- ဆာဗာပေါ်တွင် သိမ်းထားသော မေးမြန်းမှု၏ id ကို ပို့ပါ။</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>သိမ်းဆည်းထားသော မေးမြန်းမှု၏ ဟက်ရှ်သည် SHA-256 မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>သိမ်းဆည်းထားသော မေးမြန်းမှု၏ ဟက်ရှ်သည် မေးမြန်းမှုနှင့် မကိုက်ညီပါ။</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>တောင်းဆိုမှု များလွန်းသည်- %window စက္ကန့်အတွင်း အများဆုံး %limit ခု။ %reset စက္ကန့်အကြာတွင် ထပ်ကြိုးစားပါ။</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>မေးမြန်းမှုသည် အဆင့် %depth ဆင့် နက်သည်; အများဆုံး %max ဆင့်သာ ခွင့်ပြုသည်။</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>မေးမြန်းမှု၏ ရှုပ်ထွေးမှုမှာ %complexity ဖြစ်သည်; အများဆုံး %max သာ ခွင့်ပြုသည်။</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>ဤတောင်းဆိုမှုသည် ဇယားဖွဲ့စည်းပုံကို ဖတ်ခွင့်မရှိပါ (introspection)။</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search သည် စာသား သို့မဟုတ် စစ်ထုတ်မှုတစ်ခု လိုအပ်သည် (classes, subtree, sections, publishedAfter, publishedBefore)။</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument သည် ရက်စွဲ မဟုတ်ပါ (ISO 8601, 2026-10-30)။</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag သည် id, remoteId နှင့် path ထဲမှ တစ်ခုတည်းကိုသာ လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout သည် id, identifier နှင့် urlAlias ထဲမှ တစ်ခုတည်းကိုသာ လိုအပ်သည်။</translation>
     </message>
 </context>
 </TS>

@@ -22138,6 +22138,10 @@ Nkomba: Ba-paquet ekolongolama na système te.</translation>
         <source>%n hours ago</source>
         <translation>banda ba-ngonga %n eleki</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Biyano ya mituna oyo ebombami ya GraphQL API, mpe mitindo ya makambo ya schéma na yango.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ compte na yo.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Cache ya Public Packer ya eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Cache ya GraphQL (biyano mpe mitindo ya schéma)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Demande esalemaka na makoki na yo, okoti na session oyo.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API ekangami na siteaccess oyo.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Bibliothèque ya GraphQL etiyami te.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Salelá GET to POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Nzoto ya demande ezali objet JSON te.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables ezali objet JSON te.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions ezali objet JSON te.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Tindá motuna na POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Demande ezali na motuna te.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Motuna eleki octets %max na bolai.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Libunga ya kati ya serveur</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node esengeli kaka moko kati na id, remoteId, path mpe urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content esengeli kaka moko kati na id mpe remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Curseur ya after epesamaki na API oyo te.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Kombo mosusu ya elilingi %alias ezali te (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Awa bayambaka kaka mituna oyo ebombami: tindá id ya motuna oyo ebombami.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash ya motuna oyo ebombami ezali SHA-256 te.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash ya motuna oyo ebombami ekokani na motuna te.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Ba demande ebele mingi: koleka %limit te na secondes %window. Meka lisusu nsima ya secondes %reset.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Motuna ezali na mozindo ya mabonga %depth; endimami koleka %max te.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Motuna ezali na complexité ya %complexity; endimami koleka %max te.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Demande oyo ekoki kotánga schéma te (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search esengeli makomi to filtre (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ezali dati te (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag esengeli kaka moko kati na id, remoteId mpe path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout esengeli kaka moko kati na id, identifier mpe urlAlias.</translation>
     </message>
 </context>
 </TS>

@@ -22077,6 +22077,10 @@ Piezīme: pakotnes netiks atinstalētas.</translation>
         <source>%n hours ago</source>
         <translation>pirms %n h</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API saglabāto vaicājumu atbildes un tā shēmas satura klases.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54891,6 +54895,10 @@ tajā sniegtos norādījumus.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore publiskā pakotāja kešatmiņa</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL kešatmiņa (atbildes un shēmas klases)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78758,6 +78766,109 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Vaicājums tiek izpildīts ar jūsu tiesībām, pierakstoties šajā sesijā.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API šajā vietnes piekļuvē ir izslēgts.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL bibliotēka nav instalēta.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Izmantojiet GET vai POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Pieprasījuma pamatteksts nav JSON objekts.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables nav JSON objekts.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions nav JSON objekts.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Nosūtiet vaicājumu ar POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Pieprasījumā nav vaicājuma.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Vaicājums ir garāks par %max baitiem.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Iekšēja servera kļūda</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node nepieciešams tieši viens no id, remoteId, path un urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content nepieciešams tieši viens no id un remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after kursoru nav izsniedzis šis API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Attēla aizstājvārda %alias nav (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Šeit tiek pieņemti tikai saglabāti vaicājumi: nosūtiet saglabāta vaicājuma id.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Saglabātā vaicājuma jaucējvērtība nav SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Saglabātā vaicājuma jaucējvērtība neatbilst vaicājumam.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Pārāk daudz pieprasījumu: ne vairāk kā %limit %window sekundēs. Mēģiniet vēlreiz pēc %reset sekundēm.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Vaicājuma dziļums ir %depth līmeņi; atļauts ne vairāk kā %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Vaicājuma sarežģītība ir %complexity; atļauts ne vairāk kā %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Šis pieprasījums nedrīkst lasīt shēmu (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search nepieciešams teksts vai filtrs (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument nav datums (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag nepieciešams tieši viens no id, remoteId un path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout nepieciešams tieši viens no id, identifier un urlAlias.</translation>
     </message>
 </context>
 </TS>

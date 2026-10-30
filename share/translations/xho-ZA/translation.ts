@@ -22136,6 +22136,10 @@ Qaphela: Amapakethe akazi kukhutshwa.</translation>
         <source>%n hours ago</source>
         <translation>Iiyure ezingama-%n eziyadlulayo</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Iimpendulo zemibuzo egciniweyo ye-GraphQL API, kunye neeklasi zomxholo ze-schema yayo.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54950,6 +54954,10 @@ iakhawunti yenu isebenze.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Ikheshi ye-eZJSCore Public Packer</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>I-cache ye-GraphQL (iimpendulo neeklasi ze-schema)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78726,6 +78734,109 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Umbuzo uqhutywa ngamalungelo akho, ungene ngale seshoni.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>I-GraphQL API icinyiwe kolu kufikelela kwisayithi.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Ithala leencwadi le-GraphQL alifakwanga.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Sebenzisa i-GET okanye i-POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Umzimba wesicelo asiyonto ye-JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables asiyonto ye-JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions asiyonto ye-JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Thumela umbuzo nge-POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Isicelo asinawo umbuzo.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Umbuzo mde ngaphezu kweebhayithi ezi-%max.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Impazamo yangaphakathi yeseva</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node idinga enye kuphela kwi-id, remoteId, path kunye ne-urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content idinga enye kuphela kwi-id kunye ne-remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Ikhesa ye-after ayinikwanga yile API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Akukho gama lesibini lomfanekiso %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Kwamkelwa kuphela imibuzo egciniweyo apha: thumela i-id yombuzo ogciniweyo.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>I-hash yombuzo ogciniweyo ayisiyo SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>I-hash yombuzo ogciniweyo ayihambelani nombuzo.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Zininzi kakhulu izicelo: ubuninzi be-%limit kwimizuzwana eyi-%window. Zama kwakhona emva kwemizuzwana eyi-%reset.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Umbuzo unzulu ngamanqanaba angama-%depth; avunyelwe ubuninzi be-%max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Umbuzo unobunzima obuyi-%complexity; buvunyelwe ubuninzi be-%max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Esi sicelo asivumelekanga ukufunda ischema (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search idinga isicatshulwa okanye isihluzi (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ayingomhla (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag idinga enye kuphela kwi-id, remoteId kunye ne-path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout idinga enye kuphela kwi-id, identifier kunye ne-urlAlias.</translation>
     </message>
 </context>
 </TS>

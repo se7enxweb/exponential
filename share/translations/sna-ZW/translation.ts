@@ -22138,6 +22138,10 @@ Chenjerai: Mapakeji acho haazobviswi pakuiswa.</translation>
         <source>%n hours ago</source>
         <translation>maawa: %n apfuura</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Mhinduro dzemibvunzo yakachengetwa yeGraphQL API, nemapoka ezvirimo echirongwa chayo.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ akaundi yenyu.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Cache yeeZJSCore Public Packer</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Cache yeGraphQL (mhinduro nemapoka echirongwa)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Mubvunzo unomhanya nekodzero dzako, wakapinda nechikamu chino.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API yakadzimwa munzira yekupinda pasaiti iyi.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Raibhurari yeGraphQL haina kuiswa.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Shandisa GET kana POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Muviri wechikumbiro hausi chinhu cheJSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables hachisi chinhu cheJSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions hachisi chinhu cheJSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Tumira mubvunzo nePOST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Chikumbiro hachina mubvunzo.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Mubvunzo wakareba kupfuura mabhaiti %max.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Kukanganisa kwemukati kwesevha</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node inoda chimwe chete pa id, remoteId, path ne urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content inoda chimwe chete pa id ne remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Cursor ye after haina kupihwa neAPI iyi.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Hapana zita rechipiri remufananidzo %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Pano panogamuchirwa mibvunzo yakachengetwa chete: tumira id yemubvunzo wakachengetwa.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hashi yemubvunzo wakachengetwa haisi SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hashi yemubvunzo wakachengetwa haienderane nemubvunzo.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Zvikumbiro zvakawandisa: zvisingapfuuri %limit mumasekondi %window. Edza zvakare mushure memasekondi %reset.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Mubvunzo wakadzika nematanho %depth; anobvumirwa haapfuuri %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Mubvunzo une kuoma kwe %complexity; kunobvumirwa hakupfuuri %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Chikumbiro ichi hachibvumirwe kuverenga chirongwa (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search inoda chinyorwa kana sefa (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument harisi zuva (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag inoda chimwe chete pa id, remoteId ne path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout inoda chimwe chete pa id, identifier ne urlAlias.</translation>
     </message>
 </context>
 </TS>

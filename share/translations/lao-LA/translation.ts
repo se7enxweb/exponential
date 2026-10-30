@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n ຊົ່ວໂມງກ່ອນ</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>ຄຳຕອບຂອງຄຳຖາມທີ່ບັນທຶກໄວ້ຂອງ GraphQL API ແລະ ຄລາສເນື້ອຫາຂອງສະຄີມາຂອງມັນ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>ແຄຊ Public Packer ຂອງ eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>ແຄຊ GraphQL (ຄຳຕອບ ແລະ ຄລາສສະຄີມາ)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ຄຳຖາມດຳເນີນການດ້ວຍສິດຂອງທ່ານ, ເຂົ້າສູ່ລະບົບດ້ວຍເຊດຊັນນີ້.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API ຖືກປິດໃນການເຂົ້າເຖິງໄຊນີ້.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>ຍັງບໍ່ໄດ້ຕິດຕັ້ງຫ້ອງສະໝຸດ GraphQL.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>ໃຊ້ GET ຫຼື POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>ເນື້ອໃນຄຳຮ້ອງບໍ່ແມ່ນອອບເຈັກ JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables ບໍ່ແມ່ນອອບເຈັກ JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions ບໍ່ແມ່ນອອບເຈັກ JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>ສົ່ງຄຳຖາມດ້ວຍ POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>ຄຳຮ້ອງບໍ່ມີຄຳຖາມ.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>ຄຳຖາມຍາວກວ່າ %max ໄບຕ໌.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>ຂໍ້ຜິດພາດພາຍໃນເຊີບເວີ</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node ຕ້ອງການອັນດຽວເທົ່ານັ້ນຈາກ id, remoteId, path ແລະ urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content ຕ້ອງການອັນດຽວເທົ່ານັ້ນຈາກ id ແລະ remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>ເຄີເຊີຂອງ after ບໍ່ແມ່ນອັນທີ່ API ນີ້ໃຫ້.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>ບໍ່ມີຊື່ແທນຮູບພາບ %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>ຢູ່ນີ້ຮັບສະເພາະຄຳຖາມທີ່ບັນທຶກໄວ້ເທົ່ານັ້ນ: ສົ່ງ id ຂອງຄຳຖາມທີ່ບັນທຶກໄວ້.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>ແຮຊຂອງຄຳຖາມທີ່ບັນທຶກໄວ້ບໍ່ແມ່ນ SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>ແຮຊຂອງຄຳຖາມທີ່ບັນທຶກໄວ້ບໍ່ກົງກັບຄຳຖາມ.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>ຄຳຮ້ອງຫຼາຍເກີນໄປ: ສູງສຸດ %limit ໃນ %window ວິນາທີ. ລອງໃໝ່ໃນອີກ %reset ວິນາທີ.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>ຄຳຖາມເລິກ %depth ລະດັບ; ອະນຸຍາດສູງສຸດ %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>ຄຳຖາມມີຄວາມຊັບຊ້ອນ %complexity; ອະນຸຍາດສູງສຸດ %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>ຄຳຮ້ອງນີ້ບໍ່ສາມາດອ່ານສະຄີມາໄດ້ (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search ຕ້ອງການຂໍ້ຄວາມ ຫຼື ຕົວກອງ (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ບໍ່ແມ່ນວັນທີ (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag ຕ້ອງການອັນດຽວເທົ່ານັ້ນຈາກ id, remoteId ແລະ path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout ຕ້ອງການອັນດຽວເທົ່ານັ້ນຈາກ id, identifier ແລະ urlAlias.</translation>
     </message>
 </context>
 </TS>

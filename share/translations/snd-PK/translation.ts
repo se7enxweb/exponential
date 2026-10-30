@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n ڪلاڪ اڳ</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API جي محفوظ ٿيل ڪوئرين جا جواب، ۽ ان جي اسڪيما جا مواد ڪلاس.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore Public Packer ڪيش</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL ڪيش (جواب ۽ اسڪيما ڪلاس)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ڪوئري توهان جي اختيارن سان، هن سيشن سان سائن ان ٿي هلي ٿي.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>هن سائيٽ رسائي ۾ GraphQL API بند آهي.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL لائبريري انسٽال ٿيل ناهي.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET يا POST استعمال ڪريو.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>درخواست جي باڊي JSON آبجيڪٽ ناهي.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables JSON آبجيڪٽ ناهي.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions JSON آبجيڪٽ ناهي.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>ڪوئري POST سان موڪليو.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>درخواست ۾ ڪا ڪوئري ناهي.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>ڪوئري %max بائيٽس کان ڊگهي آهي.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>اندروني سرور جي غلطي</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node کي id، remoteId، path ۽ urlAlias مان بلڪل هڪ جي ضرورت آهي.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content کي id ۽ remoteId مان بلڪل هڪ جي ضرورت آهي.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after جو ڪرسر هن API جو ڏنل ناهي.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>تصوير جو ڪو عرف %alias ناهي (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>هتي صرف محفوظ ٿيل ڪوئريون قبول ٿين ٿيون: ڪنهن محفوظ ٿيل ڪوئري جي id موڪليو.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>محفوظ ٿيل ڪوئري جو هيش SHA-256 ناهي.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>محفوظ ٿيل ڪوئري جو هيش ڪوئري سان نٿو ملي.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>تمام گهڻيون درخواستون: %window سيڪنڊن ۾ وڌ ۾ وڌ %limit. %reset سيڪنڊن کانپوءِ ٻيهر ڪوشش ڪريو.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>ڪوئري %depth سطحون اونهي آهي؛ وڌ ۾ وڌ %max جي اجازت آهي.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>ڪوئري جي پيچيدگي %complexity آهي؛ وڌ ۾ وڌ %max جي اجازت آهي.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>هي درخواست اسڪيما نٿي پڙهي سگهي (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search کي متن يا فلٽر جي ضرورت آهي (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument تاريخ ناهي (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag کي id، remoteId ۽ path مان بلڪل هڪ جي ضرورت آهي.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout کي id، identifier ۽ urlAlias مان بلڪل هڪ جي ضرورت آهي.</translation>
     </message>
 </context>
 </TS>

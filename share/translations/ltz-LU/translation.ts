@@ -22138,6 +22138,10 @@ Hiweis: D'Packagen ginn net desinstalléiert.</translation>
         <source>%n hours ago</source>
         <translation>viru(n) %n Stonnen</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Äntwerte vun de gespäicherten Ufroe vun der GraphQL-API an d&apos;Inhaltsklasse vun hirem Schema.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ E-Mail-Adress geschéckt. Follegt den Instruktiounen an där E-Mail, fir
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore-Packer-Cache (ëffentlech)</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL-Cache (Äntwerten a Klasse vum Schema)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>D'Ufro leeft mat Äre Rechter, ugemellt mat dëser Sessioun.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>D&apos;GraphQL-API ass an dësem Site-Zougang ausgeschalt.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>D&apos;GraphQL-Bibliothéik ass net installéiert.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Benotzt GET oder POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>De Body ass keen JSON-Objet.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables ass keen JSON-Objet.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions ass keen JSON-Objet.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Schéckt d&apos;Ufro mat POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>An der Ufro feelt d&apos;GraphQL-Ufro.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>D&apos;Ufro ass méi laang wéi %max Bytes.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Interne Serverfeeler</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node brauch genee eent vun id, remoteId, path an urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content brauch genee eent vun id an remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>De Cursor vun after kënnt net vun dëser API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Et gëtt keen Bildalias %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Hei ginn nëmme gespäichert Ufroen ugeholl: Schéckt d&apos;id vun enger gespäicherter Ufro.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Den Hash vun der gespäicherter Ufro ass keen SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Den Hash vun der gespäicherter Ufro passt net zur Ufro.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Ze vill Ufroen: héchstens %limit an %window Sekonnen. Probéiert et an %reset Sekonnen nach eng Kéier.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>D&apos;Ufro ass %depth Niveauen déif; héchstens %max sinn erlaabt.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>D&apos;Ufro huet eng Komplexitéit vun %complexity; héchstens %max ass erlaabt.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Dës Ufro däerf de Schema net liesen (Introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search brauch en Text oder e Filter (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ass keen Datum (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag brauch genee eent vun id, remoteId an path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout brauch genee eent vun id, identifier an urlAlias.</translation>
     </message>
 </context>
 </TS>

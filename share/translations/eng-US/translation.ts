@@ -22457,6 +22457,10 @@ Note: The packages will not be uninstalled.</translation>
         <source>%n hours ago</source>
         <translation>%n hours ago</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -55936,6 +55940,10 @@ your account.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore Public Packer cache</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL cache (answers and schema classes)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78730,6 +78738,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>The query runs with your rights, signed in with this session.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>The GraphQL API is switched off in this siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>The GraphQL library is not installed.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Use GET or POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>The body is not a JSON object.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables is not a JSON object.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions is not a JSON object.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Send the query with POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>The request has no query.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>The query is longer than %max bytes.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Internal server error</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node needs exactly one of id, remoteId, path and urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content needs exactly one of id and remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>The cursor of after is not one this API gave.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Only persisted queries are accepted here: send the id of a stored query.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>The persisted query hash is not a SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>The persisted query hash does not match the query.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>The query is %depth levels deep; at most %max are allowed.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>The query has a complexity of %complexity; at most %max is allowed.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>This request may not read the schema (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument is not a date (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag needs exactly one of id, remoteId and path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout needs exactly one of id, identifier and urlAlias.</translation>
     </message>
 </context>
 </TS>

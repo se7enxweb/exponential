@@ -22077,6 +22077,10 @@ Huomautus: pakettien asennusta ei poisteta.</translation>
         <source>%n hours ago</source>
         <translation>%n h sitten</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API:n tallennettujen kyselyjen vastaukset ja sen rakenteen sisältöluokat.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54891,6 +54895,10 @@ ohjeita.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCoren julkisen pakkaajan välimuisti</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL-välimuisti (vastaukset ja rakenteen luokat)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78758,6 +78766,109 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Kysely suoritetaan sinun oikeuksillasi, tällä istunnolla kirjautuneena.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API on poistettu käytöstä tässä sivustoyhteydessä.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL-kirjastoa ei ole asennettu.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Käytä GET- tai POST-pyyntöä.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Runko ei ole JSON-objekti.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables ei ole JSON-objekti.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions ei ole JSON-objekti.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Lähetä kysely POST-pyynnöllä.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Pyynnössä ei ole kyselyä.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Kysely on pidempi kuin %max tavua.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Palvelimen sisäinen virhe</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node tarvitsee täsmälleen yhden seuraavista: id, remoteId, path ja urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content tarvitsee täsmälleen yhden seuraavista: id ja remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Argumentin after kursori ei ole tämän API:n antama.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Kuva-aliasta %alias ei ole (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Täällä hyväksytään vain tallennettuja kyselyjä: lähetä tallennetun kyselyn id.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Tallennetun kyselyn tiiviste ei ole SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Tallennetun kyselyn tiiviste ei vastaa kyselyä.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Liian monta pyyntöä: enintään %limit %window sekunnissa. Yritä uudelleen %reset sekunnin kuluttua.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Kysely on %depth tasoa syvä; enintään %max on sallittu.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Kyselyn monimutkaisuus on %complexity; enintään %max on sallittu.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Tämä pyyntö ei saa lukea rakennetta (introspektio).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search tarvitsee tekstin tai suodattimen (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ei ole päivämäärä (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag tarvitsee täsmälleen yhden seuraavista: id, remoteId ja path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout tarvitsee täsmälleen yhden seuraavista: id, identifier ja urlAlias.</translation>
     </message>
 </context>
 </TS>

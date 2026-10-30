@@ -22136,6 +22136,10 @@ Nzòpụta: Agaghị ewepụ nwụnye mpakị ndị a.</translation>
         <source>%n hours ago</source>
         <translation>Awa %n gara aga</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Azịza nke ajụjụ echekwara nke GraphQL API, na klaasị ọdịnaya nke schema ya.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54950,6 +54954,10 @@ akaụntụ gị rụọ ọrụ.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Cache eZJSCore Public Packer</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Ebe nchekwa nwa oge GraphQL (azịza na klaasị schema)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78726,6 +78734,109 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Ajụjụ ahụ na-arụ ọrụ site n'ikike gị, ebe ị banyere na nnọkọ a.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>Agbanyụrụ GraphQL API na Nnweta saịtị a.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Etinyeghị ọbá akwụkwọ GraphQL.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Jiri GET ma ọ bụ POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Ahụ arịrịọ ahụ abụghị ihe JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables abụghị ihe JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions abụghị ihe JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Ziga ajụjụ ahụ site na POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Arịrịọ ahụ enweghị ajụjụ.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Ajụjụ ahụ karịrị baịtị %max n&apos;ogologo.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Njehie dị n&apos;ime sava</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node chọrọ otu n&apos;ime id, remoteId, path na urlAlias, naanị otu.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content chọrọ otu n&apos;ime id na remoteId, naanị otu.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Akara cursor nke after esiteghị na API a.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Enweghị aha ọzọ onyonyo %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Ọ bụ naanị ajụjụ echekwara ka a na-anabata ebe a: ziga id nke ajụjụ echekwara.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash nke ajụjụ echekwara abụghị SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash nke ajụjụ echekwara adabaghị na ajụjụ ahụ.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Arịrịọ karịrị akarị: ọ kachasị %limit n&apos;ime sekọnd %window. Nwaa ọzọ mgbe sekọnd %reset gachara.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Ajụjụ ahụ dị omimi ọkwa %depth; ọ kachasị %max ka anabatara.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Ajụjụ ahụ nwere mgbagwoju anya %complexity; ọ kachasị %max ka anabatara.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Arịrịọ a enweghị ike ịgụ schema ahụ (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search chọrọ ederede ma ọ bụ nzacha (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument abụghị ụbọchị (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag chọrọ otu n&apos;ime id, remoteId na path, naanị otu.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout chọrọ otu n&apos;ime id, identifier na urlAlias, naanị otu.</translation>
     </message>
 </context>
 </TS>

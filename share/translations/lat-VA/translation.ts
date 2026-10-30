@@ -22080,6 +22080,10 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <source>%n hours ago</source>
         <translation>ante horas %n</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Responsa quaestionum servatarum API GraphQL, et classes contenti schematis eius.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54894,6 +54898,10 @@ rationem tuam activeres.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Promptuarium publicum compressoris eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Memoria temporaria GraphQL (responsa et classes schematis)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78761,6 +78769,109 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Quaestio tuis iuribus exsequitur, hac sessione inscriptus.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>API GraphQL in hoc aditu situs exstincta est.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Bibliotheca GraphQL non est installata.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Utere GET aut POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Corpus petitionis non est obiectum JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables non est obiectum JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions non est obiectum JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Mitte quaestionem per POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Petitio nullam quaestionem habet.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Quaestio longior est quam %max octeti.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Error interior servitoris</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node unum tantum ex id, remoteId, path et urlAlias requirit.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content unum tantum ex id et remoteId requirit.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Cursor ipsius after non ab hac API datus est.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Nullum cognomen imaginis %alias exstat (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Hic solae quaestiones servatae accipiuntur: mitte id quaestionis servatae.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash quaestionis servatae non est SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash quaestionis servatae cum quaestione non congruit.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Nimiae petitiones: non plures quam %limit in %window secundis. Iterum conare post %reset secundas.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Quaestio %depth gradus alta est; non plures quam %max permittuntur.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Quaestio complexitatem %complexity habet; non plus quam %max permittitur.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Haec petitio schema legere non potest (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search textum aut filtrum requirit (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument dies non est (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag unum tantum ex id, remoteId et path requirit.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout unum tantum ex id, identifier et urlAlias requirit.</translation>
     </message>
 </context>
 </TS>

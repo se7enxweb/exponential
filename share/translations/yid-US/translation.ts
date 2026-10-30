@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>מיט %n שעה צוריק</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>ענטפֿערס פֿון די אָפּגעהיטע אָנפֿרעגן פֿון דער GraphQL API, און די אינהאַלט־קלאַסן פֿון איר סכעמע.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>קאַש פֿונעם עפֿנטלעכן eZJSCore־פּאַקער</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL קעש (ענטפֿערס און סכעמע־קלאַסן)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>די אָנפֿרעג ווערט אויסגעפֿירט מיט אייַערע רעכט, אייַנגעשריבן מיט דער דאָזיקער סעסיע.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>די GraphQL API איז אויסגעלאָשן אין דעם וועבזייַטל־צוטריט.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>די GraphQL ביבליאָטעק איז נישט אינסטאַלירט.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>ניצט GET אָדער POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>דער גוף פֿון דער בקשה איז נישט קיין JSON אָביעקט.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables איז נישט קיין JSON אָביעקט.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions איז נישט קיין JSON אָביעקט.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>שיקט דעם אָנפֿרעג מיט POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>די בקשה האָט נישט קיין אָנפֿרעג.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>דער אָנפֿרעג איז לענגער ווי %max בייטן.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>אינערלעכער סערווער־פֿעלער</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node דאַרף פּונקט איינס פֿון id, remoteId, path און urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content דאַרף פּונקט איינס פֿון id און remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>דער קורסאָר פֿון after איז נישט געגעבן געוואָרן פֿון דער API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>עס איז נישטאָ קיין בילד־אַליאַס %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>דאָ ווערן אָנגענומען בלויז אָפּגעהיטע אָנפֿרעגן: שיקט די id פֿון אַן אָפּגעהיטן אָנפֿרעג.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>דער hash פֿון דעם אָפּגעהיטן אָנפֿרעג איז נישט קיין SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>דער hash פֿון דעם אָפּגעהיטן אָנפֿרעג שטימט נישט מיט דעם אָנפֿרעג.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>צו פֿיל בקשות: מאַקסימום %limit אין %window סעקונדעס. פּרוּווט ווידער אין %reset סעקונדעס.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>דער אָנפֿרעג איז %depth שיכטן טיף; מאַקסימום %max זענען דערלויבט.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>דער אָנפֿרעג האָט אַ קאָמפּליצירטקייט פֿון %complexity; מאַקסימום %max איז דערלויבט.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>די בקשה טאָר נישט לייענען די סכעמע (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search דאַרף אַ טעקסט אָדער אַ פֿילטער (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument איז נישט קיין דאַטע (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag דאַרף פּונקט איינס פֿון id, remoteId און path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout דאַרף פּונקט איינס פֿון id, identifier און urlAlias.</translation>
     </message>
 </context>
 </TS>

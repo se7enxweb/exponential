@@ -22138,6 +22138,10 @@ Oharra: paketeak ez dira desinstalatuko.</translation>
         <source>%n hours ago</source>
         <translation>duela %n ordu</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL APIaren gordetako kontsulten erantzunak eta bere eskemaren eduki-klaseak.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ aktibatzeko.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore paketatzaile publikoaren cachea</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL cachea (erantzunak eta eskemaren klaseak)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Kontsulta zure eskubideekin exekutatzen da, saio honekin hasita.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL APIa desaktibatuta dago gune-sarbide honetan.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL liburutegia ez dago instalatuta.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Erabili GET edo POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Gorputza ez da JSON objektu bat.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables ez da JSON objektu bat.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions ez da JSON objektu bat.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Bidali kontsulta POST bidez.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Eskaerak ez du kontsultarik.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Kontsulta %max byte baino luzeagoa da.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Zerbitzariaren barne-errorea</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node-k zehazki hauetako bat behar du: id, remoteId, path eta urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content-ek zehazki hauetako bat behar du: id eta remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after-en kurtsorea ez da API honek emandakoa.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Ez dago %alias irudi-aliasik (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Hemen gordetako kontsultak soilik onartzen dira: bidali gordetako kontsulta baten id-a.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Gordetako kontsultaren hasha ez da SHA-256 bat.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Gordetako kontsultaren hasha ez dator bat kontsultarekin.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Eskaera gehiegi: gehienez %limit %window segundotan. Saiatu berriro %reset segundo barru.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Kontsultak %depth mailako sakonera du; gehienez %max onartzen dira.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Kontsultak %complexity-ko konplexutasuna du; gehienez %max onartzen da.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Eskaera honek ezin du eskema irakurri (introspekzioa).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search-ek testu bat edo iragazki bat behar du (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ez da data bat (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag-ek zehazki hauetako bat behar du: id, remoteId eta path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout-ek zehazki hauetako bat behar du: id, identifier eta urlAlias.</translation>
     </message>
 </context>
 </TS>

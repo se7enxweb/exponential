@@ -22138,6 +22138,10 @@ Sylwer: ni fydd y pecynnau'n cael eu dadosod.</translation>
         <source>%n hours ago</source>
         <translation>%n awr yn ôl</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Atebion ymholiadau wedi&apos;u cadw yr API GraphQL, a dosbarthiadau cynnwys ei sgema.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ eich cyfrif.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Storfa pacio cyhoeddus eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Storfa GraphQL (atebion a dosbarthiadau&apos;r sgema)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Mae'r ymholiad yn rhedeg gyda'ch hawliau chi, wedi mewngofnodi gyda'r sesiwn hon.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>Mae&apos;r API GraphQL wedi&apos;i ddiffodd yn y mynediad i&apos;r wefan hwn.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Nid yw&apos;r llyfrgell GraphQL wedi&apos;i gosod.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Defnyddiwch GET neu POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Nid yw&apos;r corff yn wrthrych JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>Nid yw variables yn wrthrych JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>Nid yw extensions yn wrthrych JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Anfonwch yr ymholiad gyda POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Nid oes ymholiad yn y cais.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Mae&apos;r ymholiad yn hirach na %max beit.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Gwall mewnol y gweinydd</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>Mae node angen union un o id, remoteId, path ac urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>Mae content angen union un o id a remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Nid yw cyrchwr after yn un a roddodd yr API hwn.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Nid oes alias delwedd %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Dim ond ymholiadau sydd wedi&apos;u cadw ar y gweinydd a dderbynnir yma: anfonwch id ymholiad sydd wedi&apos;i storio.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Nid yw hash yr ymholiad wedi&apos;i gadw yn SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Nid yw hash yr ymholiad wedi&apos;i gadw yn cyfateb i&apos;r ymholiad.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Gormod o geisiadau: %limit ar y mwyaf mewn %window eiliad. Rhowch gynnig arall ymhen %reset eiliad.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Mae&apos;r ymholiad %depth lefel o ddyfnder; caniateir %max ar y mwyaf.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Mae gan yr ymholiad gymhlethdod o %complexity; caniateir %max ar y mwyaf.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Ni chaiff y cais hwn ddarllen y sgema (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>Mae search angen testun neu hidlydd (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>Nid yw %argument yn ddyddiad (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>Mae tag angen union un o id, remoteId a path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>Mae layout angen union un o id, identifier ac urlAlias.</translation>
     </message>
 </context>
 </TS>

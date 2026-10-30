@@ -22077,6 +22077,10 @@ Märkus: pakette ei desinstallita.</translation>
         <source>%n hours ago</source>
         <translation>%n h tagasi</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API salvestatud päringute vastused ja selle skeemi sisuklassid.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54891,6 +54895,10 @@ juhiseid.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore&apos;i avaliku pakkija vahemälu</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL vahemälu (vastused ja skeemi klassid)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78758,6 +78766,109 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Päring töötab sinu õigustega, selle seansiga sisse logituna.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API on selles saidi juurdepääsus välja lülitatud.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL teek pole paigaldatud.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Kasuta GET või POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Sisu pole JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables pole JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions pole JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Saada päring POST-iga.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Taotlus ei sisalda päringut.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Päring on pikem kui %max baiti.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Serveri sisemine viga</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node vajab täpselt ühte järgmistest: id, remoteId, path ja urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content vajab täpselt ühte järgmistest: id ja remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Argumendi after kursor ei pärine sellelt API-lt.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Pildi aliast %alias ei ole (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Siin võetakse vastu ainult salvestatud päringuid: saada salvestatud päringu id.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Salvestatud päringu räsi pole SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Salvestatud päringu räsi ei vasta päringule.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Liiga palju taotlusi: kõige rohkem %limit %window sekundi jooksul. Proovi uuesti %reset sekundi pärast.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Päring on %depth taset sügav; lubatud on kõige rohkem %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Päringu keerukus on %complexity; lubatud on kõige rohkem %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>See taotlus ei tohi skeemi lugeda (introspektsioon).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search vajab teksti või filtrit (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ei ole kuupäev (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag vajab täpselt ühte järgmistest: id, remoteId ja path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout vajab täpselt ühte järgmistest: id, identifier ja urlAlias.</translation>
     </message>
 </context>
 </TS>

@@ -22138,6 +22138,10 @@ Fakatokanga: ʻE ʻikai toʻo ʻa e fokotuʻu ʻo e ngaahi pēkeisi.</translatio
         <source>%n hours ago</source>
         <translation>houa ʻe %n kuo hili</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Ko e ngaahi tali ʻo e ngaahi fehuʻi kuo tauhi ʻa e GraphQL API, mo e ngaahi kalasi meʻa ʻi loto ʻo hono ʻAki.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ fakaʻaongaʻi ho ʻakauni.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Kēsi ʻo e Packer ʻo e eZJSCore (lahi)</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Cache GraphQL (ngaahi tali mo e ngaahi kalasi ʻo e ʻAki)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ʻOku fakalele ʻa e fehuʻi ʻaki ho ngaahi totonu, kuo ke hū mai ʻaki ʻa e seseni ko ʻeni.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>Kuo tāmateʻi ʻa e GraphQL API ʻi he hūʻanga uepisaiti ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>ʻOku teʻeki fokotuʻu ʻa e laipeli GraphQL.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Fakaʻaongaʻi ʻa e GET pe POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Ko e sino ʻo e kole ʻoku ʻikai ko ha meʻa JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>Ko e variables ʻoku ʻikai ko ha meʻa JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>Ko e extensions ʻoku ʻikai ko ha meʻa JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Fekauʻi ʻa e fehuʻi ʻaki ʻa e POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>ʻOku ʻikai ha fehuʻi ʻi he kole.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>ʻOku lōloa ange ʻa e fehuʻi ʻi he paiti ʻe %max.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Fehalaaki ʻi loto ʻo e sēvaa</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>ʻOku fiemaʻu ʻe he node ha taha pē ʻo e id, remoteId, path mo e urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>ʻOku fiemaʻu ʻe he content ha taha pē ʻo e id mo e remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Ko e cursor ʻo e after ʻoku ʻikai foaki ia ʻe he API ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>ʻOku ʻikai ha hingoa fakafetongi ʻo e ʻīmisi %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Ko e ngaahi fehuʻi kuo tauhi pē ʻoku tali heni: fekauʻi ʻa e id ʻo ha fehuʻi kuo tauhi.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Ko e hash ʻo e fehuʻi kuo tauhi ʻoku ʻikai ko ha SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Ko e hash ʻo e fehuʻi kuo tauhi ʻoku ʻikai tatau mo e fehuʻi.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Lahi fau ʻa e ngaahi kole: lahi taha ʻa e %limit ʻi he sekoni ʻe %window. Toe feinga ʻi he sekoni ʻe %reset.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>ʻOku loloto ʻa e fehuʻi ʻaki ʻa e tuʻunga ʻe %depth; ʻoku ngofua pē ʻa e %max lahi taha.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Ko e faingataʻa ʻo e fehuʻi ko e %complexity; ʻoku ngofua pē ʻa e %max lahi taha.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>ʻOku ʻikai ngofua ki he kole ko ʻeni ke ne lau ʻa e ʻAki (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>ʻOku fiemaʻu ʻe he search ha tohi pe ha sivi (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>Ko e %argument ʻoku ʻikai ko ha ʻaho (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>ʻOku fiemaʻu ʻe he tag ha taha pē ʻo e id, remoteId mo e path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>ʻOku fiemaʻu ʻe he layout ha taha pē ʻo e id, identifier mo e urlAlias.</translation>
     </message>
 </context>
 </TS>

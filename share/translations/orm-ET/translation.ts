@@ -22138,6 +22138,10 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
         <source>%n hours ago</source>
         <translation>sa'aatii %n dura</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Deebiiwwan gaaffiiwwan kuufaman GraphQL API, fi gosoota qabiyyee caasaa isaa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ herrega keessan hojii irra oolchaa.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Kuusaa yeroo paakeera ummataa eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Kuusa yeroo GraphQL (deebiiwwan fi gosoota caasaa)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Gaaffiin mirga keetiin hojjeta, yeroo kanaan seenteetta.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API seensa marsariitii kana keessatti dhaamsameera.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Kuusaan GraphQL hin fe&apos;amne.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET ykn POST fayyadami.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Qaamni iyyannoo wanta JSON miti.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables wanta JSON miti.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions wanta JSON miti.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Gaaffii POST fayyadamuun ergi.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Iyyannoon gaaffii hin qabu.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Gaaffiin baayitii %max caala dheeraadha.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Dogoggora keessoo sarvarii</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node id, remoteId, path fi urlAlias keessaa tokkicha qofa barbaada.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content id fi remoteId keessaa tokkicha qofa barbaada.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Akeekaan after kan API kanaan kenname miti.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Maqaan biraa suuraa %alias hin jiru (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>As gaaffiiwwan kuufaman qofatu fudhatama: id gaaffii sarvarii irratti kuufamee ergi.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash gaaffii kuufamee SHA-256 miti.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash gaaffii kuufamee gaaffii wajjin wal hin simu.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Iyyannoon baay&apos;ee heddu: sekondii %window keessatti yoo baay&apos;ate %limit. Sekondii %reset booda irra deebi&apos;ii yaali.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Gaaffiin sadarkaa %depth gadi fagaata; yoo baay&apos;ate %max qofatu hayyamama.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Gaaffiin walxaxaa %complexity qaba; yoo baay&apos;ate %max qofatu hayyamama.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Iyyannoon kun caasaa dubbisuu hin danda&apos;u (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search barreeffama ykn calaltuu barbaada (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument guyyaa miti (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag id, remoteId fi path keessaa tokkicha qofa barbaada.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout id, identifier fi urlAlias keessaa tokkicha qofa barbaada.</translation>
     </message>
 </context>
 </TS>

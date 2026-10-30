@@ -22138,6 +22138,10 @@ Nota: los paquetes nun se desinstalarán.</translation>
         <source>%n hours ago</source>
         <translation>hai %n hores</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Rempuestes de les consultes persistentes de l&apos;API GraphQL, y les clases de conteníu del so esquema.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ la to cuenta.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Caché pública del empaquetador d'eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Caché de GraphQL (rempuestes y clases del esquema)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>La consulta executase colos tos permisos, cola sesión aniciada agora.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>L&apos;API GraphQL ta desactivada nesti accesu al sitiu.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>La biblioteca GraphQL nun ta instalada.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Usa GET o POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>El cuerpu nun ye un oxetu JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables nun ye un oxetu JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions nun ye un oxetu JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Unvia la consulta con POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>La solicitú nun tien consulta.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>La consulta ye más llarga que %max bytes.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Error internu del sirvidor</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node necesita exactamente ún de id, remoteId, path y urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content necesita exactamente ún de id y remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>El cursor de after nun lu dio esta API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Nun hai nengún alias d&apos;imaxe %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Equí namái s&apos;aceuten consultes persistentes: unvia l&apos;id d&apos;una consulta atroxada.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>El hash de la consulta persistente nun ye un SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>El hash de la consulta persistente nun coincide cola consulta.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Demasiaes solicitúes: como muncho %limit en %window segundos. Volvi tentalo en %reset segundos.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>La consulta tien %depth niveles de fondura; permítense como muncho %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>La consulta tien una complexidá de %complexity; permítese como muncho %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Esta solicitú nun pue lleer l&apos;esquema (introspección).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search necesita un testu o un filtru (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument nun ye una data (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag necesita exactamente ún de id, remoteId y path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout necesita exactamente ún de id, identifier y urlAlias.</translation>
     </message>
 </context>
 </TS>

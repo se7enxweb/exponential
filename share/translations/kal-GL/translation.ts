@@ -22077,6 +22077,10 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
         <source>%n hours ago</source>
         <translation>%n t matuma siornagut</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API-p apeqqutaasa toqqorsimasut akissutaat, aamma skema-p imarisanut immikkoortui.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54891,6 +54895,10 @@ ilitsersuutit malikkit.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore-mi Public Packer-ip cache-ia</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL-ip cache-ia (akissutit aamma skema-p immikkoortui)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78758,6 +78766,109 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Apeqqut pisinnaatitaaffitit atorlugit ingerlanneqarpoq, session-imi matumani iserputit.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API nittartakkamut isaariami matumani matoqqavoq.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL-ip atuagaateqarfia ikkussorneqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET imaluunniit POST atoruk.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Qinnuteqaatip timaa JSON-objektiunngilaq.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables JSON-objektiunngilaq.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions JSON-objektiunngilaq.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Apeqqut POST atorlugu nassiukkit.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Qinnuteqaammi apeqquteqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Apeqqut %max byte-nit takinerujuvoq.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Serverip iluani kukkuneq</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node id, remoteId, path aamma urlAlias akornanni ataasiinnarmik pisariaqartitsivoq.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content id aamma remoteId akornanni ataasiinnarmik pisariaqartitsivoq.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after-ip cursor-ia API-mit matumannga pinngilaq.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Assip taaguutaa allaanerusoq %alias peqanngilaq (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Maani apeqqutit toqqorsimasut kisimik akuerineqarput: apeqqutip toqqorsimasup id-ia nassiuguk.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Apeqqutip toqqorsimasup hash-ia SHA-256-iunngilaq.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Apeqqutip toqqorsimasup hash-ia apeqqummut naapertuutinngilaq.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Qinnuteqaatit amerlavallaarput: %window sekundini annerpaamik %limit. %reset sekundit qaangiuppata misileqqiguk.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Apeqqut %depth qaffasissutsinik itissuseqarpoq; annerpaamik %max akuerineqarput.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Apeqqut %complexity-mik katitigaanermigut ajornassuseqarpoq; annerpaamik %max akuerineqarpoq.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Qinnuteqaat una skema atuarsinnaanngilaa (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search allagamik imaluunniit sillimmatimik pisariaqartitsivoq (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ulloq naqqiunngilaq (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag id, remoteId aamma path akornanni ataasiinnarmik pisariaqartitsivoq.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout id, identifier aamma urlAlias akornanni ataasiinnarmik pisariaqartitsivoq.</translation>
     </message>
 </context>
 </TS>

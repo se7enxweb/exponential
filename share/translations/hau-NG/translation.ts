@@ -22136,6 +22136,10 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
         <source>%n hours ago</source>
         <translation>Awanni %n da suka wuce</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Amsoshin tambayoyin da aka adana na GraphQL API, da ajujuwan abubuwan ciki na tsarinsa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54950,6 +54954,10 @@ asusunka.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Ma&apos;ajiyar ɗan lokaci ta eZJSCore Public Packer</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Ma&apos;ajiyar wucin gadi ta GraphQL (amsoshi da ajujuwan tsarin)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78726,6 +78734,109 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Tambayar tana gudana da haƙƙoƙinka, kamar yadda ka shiga da wannan zaman.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>An kashe GraphQL API a wannan hanyar shiga shafi.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Ba a girka ɗakin karatu na GraphQL ba.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Yi amfani da GET ko POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Jikin buƙatar ba abin JSON ba ne.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables ba abin JSON ba ne.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions ba abin JSON ba ne.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Aika tambayar ta POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Buƙatar ba ta da tambaya.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Tambayar ta fi bytes %max tsawo.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Kuskuren cikin sabar</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node yana buƙatar ɗaya kawai daga id, remoteId, path da urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content yana buƙatar ɗaya kawai daga id da remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Alamar cursor ta after ba wannan API ne ya bayar da ita ba.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Babu laƙabin hoto %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Tambayoyin da aka adana kawai ake karɓa a nan: aika id na tambayar da aka adana.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash na tambayar da aka adana ba SHA-256 ba ne.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash na tambayar da aka adana bai dace da tambayar ba.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Buƙatu sun yi yawa: %limit a mafi yawa cikin daƙiƙa %window. Sake gwadawa bayan daƙiƙa %reset.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Zurfin tambayar mataki %depth ne; an yarda da %max kawai a mafi yawa.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Sarƙaƙiyar tambayar %complexity ce; an yarda da %max kawai a mafi yawa.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Ba a yarda wannan buƙatar ta karanta tsarin ba (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search yana buƙatar rubutu ko matattara (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ba kwanan wata ba ne (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag yana buƙatar ɗaya kawai daga id, remoteId da path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout yana buƙatar ɗaya kawai daga id, identifier da urlAlias.</translation>
     </message>
 </context>
 </TS>

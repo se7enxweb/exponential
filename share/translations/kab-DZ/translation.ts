@@ -22138,6 +22138,10 @@ Azen: ikemmusen ur ttwakksen ara asebded-nsen.</translation>
         <source>%n hours ago</source>
         <translation>send %n n yisragen</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Tiririyin n tsuturin yettwaḥerzen n GraphQL API, d tiẓunin n ugbur n uskema-ines.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ amiḍan-ik.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Tazarkatut n ukemmus eZJSCore azayez</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Tuffirt n GraphQL (tiririyin d tiẓunin n uskema)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Tasuturt tettwaselkam s yizerfan-ik, s tɣimit-a ideg tkecmeḍ.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API yensa deg unekcum-a ɣer usmel.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Tamkarḍit GraphQL ur tettwasbedd ara.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Seqdec GET neɣ POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Tafekka n tuttra mačči d taɣawsa JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables mačči d taɣawsa JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions mačči d taɣawsa JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Azen tasuturt s POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Tuttra ur tesɛi ara tasuturt.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Tasuturt teɣzef ugar n %max n yibiten.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Tuccḍa tagensant n uqeddac</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node yesra yiwen kan seg id, remoteId, path d urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content yesra yiwen kan seg id d remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Taḥnaccaḍt n after ur d-tekki ara seg API-a.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Ulac isem-nniḍen n tugna %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Da ttwaqbalent kan tsuturin yettwaḥerzen: azen id n tsuturt yettwaḥerzen.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Ahac n tsuturt yettwaḥerzen mačči d SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Ahac n tsuturt yettwaḥerzen ur yemṣada ara d tsuturt.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Aṭas n tuttriwin: %limit d afellay deg %window n tasinin. Ɛreḍ tikkelt-nniḍen deg %reset n tasinin.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Tasuturt tesɛa %depth n yiswiren n telqayt; %max d afellay i yettwasirgen.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Tasuturt tesɛa tuddsa n %complexity; %max d afellay i yettwasirgen.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Tuttra-a ur tezmir ara ad teɣṛ askema (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search yesra aḍris neɣ imsizdeg (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument mačči d azemz (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag yesra yiwen kan seg id, remoteId d path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout yesra yiwen kan seg id, identifier d urlAlias.</translation>
     </message>
 </context>
 </TS>

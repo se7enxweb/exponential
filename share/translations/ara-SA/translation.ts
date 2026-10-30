@@ -22077,6 +22077,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>منذ %n ساعة</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>إجابات الاستعلامات المحفوظة لواجهة GraphQL البرمجية، وفئات المحتوى في مخططها.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54891,6 +54895,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>ذاكرة eZJSCore Public Packer المؤقتة</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>ذاكرة التخزين المؤقت لـ GraphQL (الإجابات وفئات المخطط)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78758,6 +78766,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>يُنفَّذ الاستعلام بصلاحياتك، مع تسجيل الدخول بهذه الجلسة.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>واجهة GraphQL البرمجية معطّلة في هذا الـ siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>مكتبة GraphQL غير مثبّتة.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>استخدم GET أو POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>جسم الطلب ليس كائن JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables ليس كائن JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions ليس كائن JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>أرسل الاستعلام باستخدام POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>لا يحتوي الطلب على استعلام.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>الاستعلام أطول من %max بايت.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>خطأ داخلي في الخادم</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>يحتاج node إلى واحد بالضبط من id و remoteId و path و urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>يحتاج content إلى واحد بالضبط من id و remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>مؤشر after ليس من المؤشرات التي أعطتها هذه الواجهة البرمجية.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>لا يوجد اسم مستعار للصورة %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>لا تُقبل هنا إلا الاستعلامات المحفوظة على الخادم: أرسل id استعلام مخزَّن.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>تجزئة الاستعلام المحفوظ ليست SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>تجزئة الاستعلام المحفوظ لا تطابق الاستعلام.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>طلبات كثيرة جدًا: %limit على الأكثر خلال %window ثانية. حاول مرة أخرى بعد %reset ثانية.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>عمق الاستعلام %depth مستويات؛ المسموح به %max على الأكثر.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>تعقيد الاستعلام %complexity؛ المسموح به %max على الأكثر.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>لا يجوز لهذا الطلب قراءة المخطط (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>يحتاج search إلى نص أو مرشّح (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ليس تاريخًا (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>يحتاج tag إلى واحد بالضبط من id و remoteId و path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>يحتاج layout إلى واحد بالضبط من id و identifier و urlAlias.</translation>
     </message>
 </context>
 </TS>

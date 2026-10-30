@@ -22937,6 +22937,10 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <source>%n hours ago</source>
         <translation>for %n timer siden</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Svar på GraphQL-API-ets lagrede spørringer, og innholdsklassene i skjemaet.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -56164,6 +56168,10 @@ kontoen din.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Cache for eZJSCore Public Packer</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL-hurtigbuffer (svar og skjemaklasser)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -79986,6 +79994,109 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Spørringen kjører med dine rettigheter, innlogget med denne økten.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL-API-et er slått av i denne nettstedstilgangen.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL-biblioteket er ikke installert.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Bruk GET eller POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Forespørselens brødtekst er ikke et JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables er ikke et JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions er ikke et JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Send spørringen med POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Forespørselen inneholder ingen spørring.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Spørringen er lengre enn %max byte.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Intern serverfeil</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node trenger nøyaktig én av id, remoteId, path og urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content trenger nøyaktig én av id og remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Markøren i after kommer ikke fra dette API-et.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Bildealiaset %alias finnes ikke (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Bare lagrede spørringer godtas her: send id-en til en spørring som er lagret på serveren.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hashen til den lagrede spørringen er ikke en SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hashen til den lagrede spørringen samsvarer ikke med spørringen.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>For mange forespørsler: høyst %limit i løpet av %window sekunder. Prøv igjen om %reset sekunder.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Spørringen er %depth nivåer dyp; høyst %max er tillatt.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Spørringen har en kompleksitet på %complexity; høyst %max er tillatt.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Denne forespørselen har ikke lov til å lese skjemaet (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search trenger en tekst eller et filter (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument er ikke en dato (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag trenger nøyaktig én av id, remoteId og path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout trenger nøyaktig én av id, identifier og urlAlias.</translation>
     </message>
 </context>
 </TS>

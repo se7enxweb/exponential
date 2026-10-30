@@ -22138,6 +22138,10 @@ Catatan: Paket tidak akan dicopot.</translation>
         <source>%n hours ago</source>
         <translation>%n jam yang lalu</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Jawaban dari kueri tersimpan API GraphQL, dan kelas konten dari skemanya.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ akun Anda.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Cache Public Packer eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Cache GraphQL (jawaban dan kelas skema)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Kueri berjalan dengan hak Anda, masuk dengan sesi ini.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>API GraphQL dimatikan di akses situs ini.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Pustaka GraphQL belum terpasang.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Gunakan GET atau POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Isi permintaan bukan objek JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables bukan objek JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions bukan objek JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Kirim kueri dengan POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Permintaan tidak berisi kueri.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Kueri lebih panjang dari %max byte.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Kesalahan internal server</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node memerlukan tepat satu dari id, remoteId, path, dan urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content memerlukan tepat satu dari id dan remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Kursor pada after bukan berasal dari API ini.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Tidak ada alias gambar %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Hanya kueri tersimpan yang diterima di sini: kirim id dari kueri yang tersimpan.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash kueri tersimpan bukan SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash kueri tersimpan tidak cocok dengan kueri.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Terlalu banyak permintaan: paling banyak %limit dalam %window detik. Coba lagi dalam %reset detik.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Kedalaman kueri %depth tingkat; paling banyak %max yang diizinkan.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Kompleksitas kueri %complexity; paling banyak %max yang diizinkan.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Permintaan ini tidak boleh membaca skema (introspeksi).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search memerlukan teks atau filter (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument bukan tanggal (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag memerlukan tepat satu dari id, remoteId, dan path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout memerlukan tepat satu dari id, identifier, dan urlAlias.</translation>
     </message>
 </context>
 </TS>

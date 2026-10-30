@@ -22077,6 +22077,10 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
         <source>%n hours ago</source>
         <translation>%n órája</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>A GraphQL API tárolt lekérdezéseinek válaszai és sémájának tartalomosztályai.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54891,6 +54895,10 @@ a fiókja aktiválásához.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore nyilvános tömörítő gyorsítótára</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL gyorsítótár (válaszok és a séma osztályai)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78758,6 +78766,109 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>A lekérdezés az Ön jogosultságaival fut, ebben a bejelentkezett munkamenetben.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>A GraphQL API ki van kapcsolva ebben a webhely-hozzáférésben.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>A GraphQL könyvtár nincs telepítve.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Használjon GET vagy POST kérést.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>A törzs nem JSON-objektum.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>A variables nem JSON-objektum.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>Az extensions nem JSON-objektum.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Küldje el a lekérdezést POST kéréssel.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>A kérés nem tartalmaz lekérdezést.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>A lekérdezés hosszabb %max bájtnál.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Belső kiszolgálóhiba</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>A node pontosan egyet igényel ezek közül: id, remoteId, path és urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>A content pontosan egyet igényel ezek közül: id és remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Az after kurzorát nem ez az API adta ki.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Nincs %alias nevű képalias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Itt csak tárolt lekérdezések fogadhatók el: küldje el egy tárolt lekérdezés azonosítóját (id).</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>A tárolt lekérdezés hash-e nem SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>A tárolt lekérdezés hash-e nem egyezik a lekérdezéssel.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Túl sok kérés: legfeljebb %limit %window másodperc alatt. Próbálja újra %reset másodperc múlva.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>A lekérdezés %depth szint mély; legfeljebb %max megengedett.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>A lekérdezés összetettsége %complexity; legfeljebb %max megengedett.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Ez a kérés nem olvashatja a sémát (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>A search szöveget vagy szűrőt igényel (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>A(z) %argument nem dátum (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>A tag pontosan egyet igényel ezek közül: id, remoteId és path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>A layout pontosan egyet igényel ezek közül: id, identifier és urlAlias.</translation>
     </message>
 </context>
 </TS>

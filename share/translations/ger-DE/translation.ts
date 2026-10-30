@@ -25275,6 +25275,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>%n hours ago</source>
         <translation>vor %n Stunden</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Antworten der gespeicherten Abfragen der GraphQL-API und die Inhaltsklassen ihres Schemas.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -62370,6 +62374,10 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
         <source>eZJSCore Public Packer cache</source>
         <translation>Cache des eZJSCore-Packers (öffentlich)</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL-Cache (Antworten und Klassen des Schemas)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -85698,6 +85706,109 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Die Abfrage läuft mit Ihren Rechten, angemeldet mit dieser Sitzung.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>Die GraphQL-API ist in diesem Siteaccess ausgeschaltet.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Die GraphQL-Bibliothek ist nicht installiert.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Verwenden Sie GET oder POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Der Body ist kein JSON-Objekt.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables ist kein JSON-Objekt.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions ist kein JSON-Objekt.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Senden Sie die Abfrage mit POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Die Anfrage enthält keine Abfrage.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Die Abfrage ist länger als %max Bytes.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Interner Serverfehler</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node braucht genau eines von id, remoteId, path und urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content braucht genau eines von id und remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Der Cursor von after stammt nicht von dieser API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Es gibt keinen Bildalias %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Hier werden nur gespeicherte Abfragen angenommen: Senden Sie die Id einer gespeicherten Abfrage.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Der Hash der gespeicherten Abfrage ist kein SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Der Hash der gespeicherten Abfrage passt nicht zur Abfrage.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Zu viele Anfragen: höchstens %limit in %window Sekunden. Versuchen Sie es in %reset Sekunden erneut.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Die Abfrage ist %depth Ebenen tief; höchstens %max sind erlaubt.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Die Abfrage hat eine Komplexität von %complexity; höchstens %max sind erlaubt.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Diese Anfrage darf das Schema nicht lesen (Introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search braucht einen Text oder einen Filter (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ist kein Datum (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag braucht genau eines von id, remoteId und path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout braucht genau eines von id, identifier und urlAlias.</translation>
     </message>
 </context>
 </TS>

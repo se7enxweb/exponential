@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n ᱜᱷᱚᱸᱴᱟ ᱢᱟᱲᱟᱝ</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API ᱨᱮᱭᱟᱜ ᱥᱟᱺᱪᱟᱣ ᱠᱟᱱ ᱠᱣᱮᱨᱤ ᱠᱚᱨᱮᱭᱟᱜ ᱛᱮᱞᱟ, ᱟᱨ ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱥᱠᱤᱢᱟ ᱨᱮᱭᱟᱜ ᱡᱤᱱᱤᱥ ᱠᱞᱟᱥ᱾</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore ᱯᱟᱵᱞᱤᱠ ᱯᱮᱠᱟᱨ ᱠᱮᱥ</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL ᱠᱮᱥ (ᱛᱮᱞᱟ ᱟᱨ ᱥᱠᱤᱢᱟ ᱠᱞᱟᱥ)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ᱠᱣᱮᱨᱤ ᱟᱢᱟᱜ ᱚᱫᱷᱤᱠᱟᱨ ᱥᱟᱶ, ᱱᱚᱶᱟ ᱥᱮᱥᱚᱱ ᱛᱮ ᱥᱟᱭᱤᱱ ᱤᱱ ᱠᱟᱛᱮ ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ᱾</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>ᱱᱚᱶᱟ ᱥᱟᱭᱤᱴ ᱥᱟᱵᱷᱤᱥ ᱨᱮ GraphQL API ᱵᱚᱸᱫᱽ ᱢᱮᱱᱟᱜ ᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL ᱞᱟᱭᱵᱽᱨᱮᱨᱤ ᱤᱱᱥᱴᱚᱞ ᱵᱟᱹᱱᱩᱜ ᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET ᱟᱨᱵᱟᱝ POST ᱵᱮᱵᱷᱟᱨ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>ᱱᱮᱦᱚᱨ ᱨᱮᱭᱟᱜ ᱵᱚᱰᱤ ᱫᱚ JSON ᱚᱵᱡᱮᱠᱴ ᱵᱟᱝ ᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables ᱫᱚ JSON ᱚᱵᱡᱮᱠᱴ ᱵᱟᱝ ᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions ᱫᱚ JSON ᱚᱵᱡᱮᱠᱴ ᱵᱟᱝ ᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>ᱠᱣᱮᱨᱤ POST ᱦᱚᱛᱮᱛᱮ ᱠᱩᱞ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>ᱱᱮᱦᱚᱨ ᱨᱮ ᱡᱟᱦᱟᱸᱱ ᱠᱣᱮᱨᱤ ᱵᱟᱹᱱᱩᱜ ᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>ᱠᱣᱮᱨᱤ ᱫᱚ %max ᱵᱟᱭᱤᱴ ᱠᱷᱚᱱ ᱡᱟᱹᱥᱛᱤ ᱡᱮᱞᱮᱝ ᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>ᱵᱷᱤᱛᱨᱤ ᱥᱟᱨᱵᱷᱟᱨ ᱵᱷᱩᱞ</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node ᱞᱟᱹᱜᱤᱫ id, remoteId, path ᱟᱨ urlAlias ᱨᱮᱭᱟᱜ ᱴᱷᱤᱠ ᱢᱤᱫ ᱜᱮ ᱞᱟᱹᱠᱛᱤ ᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content ᱞᱟᱹᱜᱤᱫ id ᱟᱨ remoteId ᱨᱮᱭᱟᱜ ᱴᱷᱤᱠ ᱢᱤᱫ ᱜᱮ ᱞᱟᱹᱠᱛᱤ ᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after ᱨᱮᱭᱟᱜ ᱠᱟᱨᱥᱚᱨ ᱫᱚ ᱱᱚᱶᱟ API ᱮᱢ ᱟᱠᱟᱫ ᱵᱟᱝ ᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias ᱧᱩᱛᱩᱢ ᱨᱮᱭᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱮᱞᱤᱭᱟᱥ ᱵᱟᱹᱱᱩᱜ ᱟ (image.ini [AliasSettings] AliasList[])᱾</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>ᱱᱚᱰᱮ ᱫᱚ ᱥᱟᱺᱪᱟᱣ ᱠᱟᱱ ᱠᱣᱮᱨᱤ ᱜᱮ ᱦᱟᱛᱟᱣᱜ ᱠᱟᱱᱟ: ᱥᱟᱨᱵᱷᱟᱨ ᱨᱮ ᱥᱟᱺᱪᱟᱣ ᱠᱟᱱ ᱠᱣᱮᱨᱤ ᱨᱮᱭᱟᱜ id ᱠᱩᱞ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>ᱥᱟᱺᱪᱟᱣ ᱠᱟᱱ ᱠᱣᱮᱨᱤ ᱨᱮᱭᱟᱜ ᱦᱮᱥ ᱫᱚ SHA-256 ᱵᱟᱝ ᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>ᱥᱟᱺᱪᱟᱣ ᱠᱟᱱ ᱠᱣᱮᱨᱤ ᱨᱮᱭᱟᱜ ᱦᱮᱥ ᱫᱚ ᱠᱣᱮᱨᱤ ᱥᱟᱶ ᱵᱟᱝ ᱢᱤᱞᱟᱹᱣᱜ ᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>ᱟᱹᱰᱤ ᱡᱟᱹᱥᱛᱤ ᱱᱮᱦᱚᱨ: %window ᱥᱮᱠᱮᱱᱰ ᱨᱮ ᱡᱟᱹᱥᱛᱤ ᱠᱷᱚᱱ ᱡᱟᱹᱥᱛᱤ %limit᱾ %reset ᱥᱮᱠᱮᱱᱰ ᱛᱟᱭᱚᱢ ᱫᱩᱦᱲᱟᱹ ᱠᱩᱨᱩᱢᱩᱴᱩᱭ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>ᱠᱣᱮᱨᱤ ᱫᱚ %depth ᱛᱷᱟᱠ ᱞᱟᱛᱟᱨ ᱥᱮᱱ ᱟᱠᱟᱱᱟ; ᱡᱟᱹᱥᱛᱤ ᱠᱷᱚᱱ ᱡᱟᱹᱥᱛᱤ %max ᱦᱩᱠᱩᱢ ᱢᱮᱱᱟᱜ ᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>ᱠᱣᱮᱨᱤ ᱨᱮᱭᱟᱜ ᱡᱚᱴᱤᱞᱛᱟ ᱫᱚ %complexity ᱠᱟᱱᱟ; ᱡᱟᱹᱥᱛᱤ ᱠᱷᱚᱱ ᱡᱟᱹᱥᱛᱤ %max ᱦᱩᱠᱩᱢ ᱢᱮᱱᱟᱜ ᱟ᱾</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>ᱱᱚᱶᱟ ᱱᱮᱦᱚᱨ ᱫᱚ ᱥᱠᱤᱢᱟ ᱵᱟᱝ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ ᱟ (introspection)᱾</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search ᱞᱟᱹᱜᱤᱫ ᱚᱞ ᱟᱨᱵᱟᱝ ᱪᱷᱟᱸᱠᱤᱡ ᱞᱟᱹᱠᱛᱤ ᱠᱟᱱᱟ (classes, subtree, sections, publishedAfter, publishedBefore)᱾</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ᱫᱚ ᱢᱟᱹᱦᱤᱛ ᱵᱟᱝ ᱠᱟᱱᱟ (ISO 8601, 2026-10-30)᱾</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag ᱞᱟᱹᱜᱤᱫ id, remoteId ᱟᱨ path ᱨᱮᱭᱟᱜ ᱴᱷᱤᱠ ᱢᱤᱫ ᱜᱮ ᱞᱟᱹᱠᱛᱤ ᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout ᱞᱟᱹᱜᱤᱫ id, identifier ᱟᱨ urlAlias ᱨᱮᱭᱟᱜ ᱴᱷᱤᱠ ᱢᱤᱫ ᱜᱮ ᱞᱟᱹᱠᱛᱤ ᱠᱟᱱᱟ᱾</translation>
     </message>
 </context>
 </TS>

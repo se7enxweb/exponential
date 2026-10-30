@@ -22235,6 +22235,10 @@ Nota: I pacchetti non verranno disinstallati.</translation>
         <source>%n hours ago</source>
         <translation>%n ore fa</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Risposte delle query persistenti dell&apos;API GraphQL e classi di contenuto del suo schema.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/datatypecode</name>
@@ -47960,6 +47964,10 @@ per attivare il tuo account.</translation>
     <message>
         <source>eZJSCore Public Packer cache</source>
         <translation>Cache del Public Packer di eZJSCore</translation>
+    </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Cache GraphQL (risposte e classi dello schema)</translation>
     </message>
 </context>
 <context>
@@ -80135,6 +80143,109 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>La query viene eseguita con i tuoi permessi, con l'accesso di questa sessione.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>L&apos;API GraphQL è disattivata in questo Siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>La libreria GraphQL non è installata.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Usa GET o POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Il corpo non è un oggetto JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables non è un oggetto JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions non è un oggetto JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Invia la query con POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>La richiesta non contiene alcuna query.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>La query è più lunga di %max byte.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Errore interno del server</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node richiede esattamente uno tra id, remoteId, path e urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content richiede esattamente uno tra id e remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Il cursore di after non è stato fornito da questa API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Non esiste l&apos;alias immagine %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Qui sono accettate solo query persistenti: invia l&apos;id di una query memorizzata.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>L&apos;hash della query persistente non è uno SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>L&apos;hash della query persistente non corrisponde alla query.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Troppe richieste: al massimo %limit in %window secondi. Riprova tra %reset secondi.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>La query ha una profondità di %depth livelli; ne sono consentiti al massimo %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>La query ha una complessità di %complexity; è consentito al massimo %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Questa richiesta non può leggere lo schema (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search richiede un testo o un filtro (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument non è una data (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag richiede esattamente uno tra id, remoteId e path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout richiede esattamente uno tra id, identifier e urlAlias.</translation>
     </message>
 </context>
 </TS>

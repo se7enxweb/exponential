@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n ժամ առաջ</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API-ի պահպանված հարցումների պատասխանները և դրա սխեմայի բովանդակության դասերը։</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore հանրային փաթեթավորիչի քեշ</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL քեշ (պատասխաններ և սխեմայի դասեր)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Հարցումը կատարվում է ձեր իրավունքներով՝ այս սեսիայով մուտք գործած։</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API-ն անջատված է կայքի այս մուտքի կետում։</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL գրադարանը տեղադրված չէ։</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Օգտագործեք GET կամ POST։</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Մարմինը JSON օբյեկտ չէ։</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables-ը JSON օբյեկտ չէ։</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions-ը JSON օբյեկտ չէ։</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Ուղարկեք հարցումը POST-ով։</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Դիմումը հարցում չի պարունակում։</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Հարցումը %max բայթից երկար է։</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Սերվերի ներքին սխալ</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node-ին անհրաժեշտ է ճիշտ մեկը id, remoteId, path և urlAlias արժեքներից։</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content-ին անհրաժեշտ է ճիշտ մեկը id և remoteId արժեքներից։</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after-ի կուրսորը այս API-ից չէ։</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias պատկերի այլանուն չկա (image.ini [AliasSettings] AliasList[])։</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Այստեղ ընդունվում են միայն պահպանված հարցումներ՝ ուղարկեք պահպանված հարցման id-ն։</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Պահպանված հարցման հեշը SHA-256 չէ։</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Պահպանված հարցման հեշը չի համապատասխանում հարցմանը։</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Չափազանց շատ դիմումներ՝ առավելագույնը %limit %window վայրկյանում։ Կրկին փորձեք %reset վայրկյանից։</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Հարցման խորությունը %depth մակարդակ է. թույլատրվում է առավելագույնը %max։</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Հարցման բարդությունը %complexity է. թույլատրվում է առավելագույնը %max։</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Այս դիմումը չի կարող կարդալ սխեման (introspection)։</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search-ին անհրաժեշտ է տեքստ կամ զտիչ (classes, subtree, sections, publishedAfter, publishedBefore)։</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument-ը ամսաթիվ չէ (ISO 8601, 2026-10-30)։</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag-ին անհրաժեշտ է ճիշտ մեկը id, remoteId և path արժեքներից։</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout-ին անհրաժեշտ է ճիշտ մեկը id, identifier և urlAlias արժեքներից։</translation>
     </message>
 </context>
 </TS>

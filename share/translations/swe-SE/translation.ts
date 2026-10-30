@@ -22170,6 +22170,10 @@ Obs: Paketen avinstalleras inte.</translation>
         <source>%n hours ago</source>
         <translation>för %n timmar sedan</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Svar på GraphQL-API:ts lagrade frågor och innehållsklasserna i dess schema.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/datatypecode</name>
@@ -47868,6 +47872,10 @@ ditt konto.</translation>
     <message>
         <source>eZJSCore Public Packer cache</source>
         <translation>Cache för eZJSCores offentliga packare</translation>
+    </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL-cache (svar och schemaklasser)</translation>
     </message>
 </context>
 <context>
@@ -80031,6 +80039,109 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Frågan körs med dina behörigheter, inloggad med den här sessionen.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL-API:t är avstängt i den här webbplatsingången.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL-biblioteket är inte installerat.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Använd GET eller POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Förfrågans innehåll är inte ett JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables är inte ett JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions är inte ett JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Skicka frågan med POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Förfrågan innehåller ingen fråga.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Frågan är längre än %max byte.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Internt serverfel</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node behöver exakt ett av id, remoteId, path och urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content behöver exakt ett av id och remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Markören för after kommer inte från detta API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Det finns inget bildalias %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Här accepteras bara lagrade frågor: skicka id för en lagrad fråga.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hashen för den lagrade frågan är inte en SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hashen för den lagrade frågan stämmer inte med frågan.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>För många förfrågningar: högst %limit på %window sekunder. Försök igen om %reset sekunder.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Frågan är %depth nivåer djup; högst %max är tillåtna.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Frågan har komplexiteten %complexity; högst %max är tillåtet.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Den här förfrågan får inte läsa schemat (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search behöver en text eller ett filter (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument är inte ett datum (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag behöver exakt ett av id, remoteId och path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout behöver exakt ett av id, identifier och urlAlias.</translation>
     </message>
 </context>
 </TS>

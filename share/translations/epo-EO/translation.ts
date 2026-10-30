@@ -22138,6 +22138,10 @@ Noto: La pakoj ne estos malinstalitaj.</translation>
         <source>%n hours ago</source>
         <translation>antaŭ %n horoj</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Respondoj de la konservitaj informpetoj de la GraphQL-API kaj la enhavklasoj de ĝia skemo.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ vian konton.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Kaŝmemoro de la publika pakilo de eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL-kaŝmemoro (respondoj kaj klasoj de la skemo)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>La informpeto ruliĝas kun viaj rajtoj, ensalutinte per ĉi tiu seanco.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>La GraphQL-API estas malŝaltita en ĉi tiu retejaliro.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>La GraphQL-biblioteko ne estas instalita.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Uzu GET aŭ POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>La korpo ne estas JSON-objekto.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables ne estas JSON-objekto.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions ne estas JSON-objekto.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Sendu la informpeton per POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>La peto enhavas neniun informpeton.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>La informpeto estas pli longa ol %max bajtoj.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Interna servila eraro</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node bezonas ekzakte unu el id, remoteId, path kaj urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content bezonas ekzakte unu el id kaj remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>La kursoro de after ne devenas de ĉi tiu API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Ne ekzistas bildalias %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Ĉi tie estas akceptataj nur konservitaj informpetoj: sendu la identigilon de konservita informpeto.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>La haketaĵo de la konservita informpeto ne estas SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>La haketaĵo de la konservita informpeto ne kongruas kun la informpeto.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Tro da petoj: maksimume %limit en %window sekundoj. Reprovu post %reset sekundoj.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>La informpeto estas %depth nivelojn profunda; maksimume %max estas permesataj.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>La informpeto havas kompleksecon de %complexity; maksimume %max estas permesata.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Ĉi tiu peto ne rajtas legi la skemon (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search bezonas tekston aŭ filtrilon (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ne estas dato (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag bezonas ekzakte unu el id, remoteId kaj path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout bezonas ekzakte unu el id, identifier kaj urlAlias.</translation>
     </message>
 </context>
 </TS>

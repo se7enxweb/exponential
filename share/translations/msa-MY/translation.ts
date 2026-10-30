@@ -22138,6 +22138,10 @@ Nota: Pakej tersebut tidak akan dinyahpasang.</translation>
         <source>%n hours ago</source>
         <translation>%n jam yang lalu</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Jawapan pertanyaan tersimpan API GraphQL, dan kelas kandungan skemanya.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ akaun anda.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Cache pemadat awam eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Cache GraphQL (jawapan dan kelas skema)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Pertanyaan dijalankan dengan hak anda, log masuk dengan sesi ini.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>API GraphQL dimatikan dalam akses laman ini.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Pustaka GraphQL tidak dipasang.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Gunakan GET atau POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Badan permintaan bukan objek JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables bukan objek JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions bukan objek JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Hantar pertanyaan dengan POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Permintaan tidak mengandungi pertanyaan.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Pertanyaan melebihi %max bait.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Ralat pelayan dalaman</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node memerlukan tepat satu daripada id, remoteId, path dan urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content memerlukan tepat satu daripada id dan remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Kursor bagi after bukan yang diberikan oleh API ini.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Tiada alias imej %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Hanya pertanyaan tersimpan diterima di sini: hantar id pertanyaan yang disimpan pada pelayan.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Cincangan pertanyaan tersimpan bukan SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Cincangan pertanyaan tersimpan tidak sepadan dengan pertanyaan.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Terlalu banyak permintaan: paling banyak %limit dalam %window saat. Cuba lagi dalam %reset saat.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Pertanyaan ini sedalam %depth tahap; paling banyak %max dibenarkan.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Pertanyaan ini mempunyai kerumitan %complexity; paling banyak %max dibenarkan.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Permintaan ini tidak boleh membaca skema (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search memerlukan teks atau penapis (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument bukan tarikh (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag memerlukan tepat satu daripada id, remoteId dan path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout memerlukan tepat satu daripada id, identifier dan urlAlias.</translation>
     </message>
 </context>
 </TS>

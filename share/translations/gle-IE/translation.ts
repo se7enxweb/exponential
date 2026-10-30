@@ -22077,6 +22077,10 @@ Nóta: Ní dhíshuiteálfar na pacáistí.</translation>
         <source>%n hours ago</source>
         <translation>%n uair ó shin</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Freagraí ar iarratais stóráilte an API GraphQL, agus aicmí ábhair a scéimre.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54891,6 +54895,10 @@ do chuntas a ghníomhachtú.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Taisce Public Packer eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Taisce GraphQL (freagraí agus aicmí an scéimre)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78758,6 +78766,109 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Ritheann an t-iarratas le do chearta, logáilte isteach leis an seisiún seo.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>Tá an API GraphQL múchta sa rochtain suímh seo.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Níl an leabharlann GraphQL suiteáilte.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Úsáid GET nó POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Ní réad JSON é an corp.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>Ní réad JSON é variables.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>Ní réad JSON é extensions.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Seol an t-iarratas le POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Níl aon iarratas san éileamh.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Tá an t-iarratas níos faide ná %max beart.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Earráid inmheánach freastalaí</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>Teastaíonn go díreach ceann amháin de id, remoteId, path agus urlAlias ó node.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>Teastaíonn go díreach ceann amháin de id agus remoteId ó content.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Níor thug an API seo cúrsóir after.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Níl aon ailias íomhá %alias ann (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Ní ghlactar anseo ach le hiarratais stóráilte: seol id iarratais stóráilte.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Ní SHA-256 é haisc an iarratais stóráilte.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Ní mheaitseálann haisc an iarratais stóráilte leis an iarratas.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>An iomarca éileamh: %limit ar a mhéad in %window soicind. Bain triail eile as i gceann %reset soicind.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Tá an t-iarratas %depth leibhéal ar doimhne; ceadaítear %max ar a mhéad.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Tá castacht %complexity ag an iarratas; ceadaítear %max ar a mhéad.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Ní cheadaítear don éileamh seo an scéimre a léamh (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>Teastaíonn téacs nó scagaire ó search (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>Ní dáta é %argument (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>Teastaíonn go díreach ceann amháin de id, remoteId agus path ó tag.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>Teastaíonn go díreach ceann amháin de id, identifier agus urlAlias ó layout.</translation>
     </message>
 </context>
 </TS>

@@ -15,9 +15,27 @@ class expGraphQLMessageTest extends PHPUnit\Framework\TestCase
     const HTTP_CODES = array( 'de-at' => 'ger-AT', 'de-de' => 'ger-DE', 'en-au' => 'eng-AU', 'en-us' => 'eng-US', 'es-es' => 'esl-ES',
                               'es-mx' => 'esl-MX', 'fr-fr' => 'fre-FR', 'pt-br' => 'por-BR' );
 
+    /** @var callable|null the exception handler before the test */
+    protected $handler;
+
+    protected function setUp(): void
+    {
+        $this->handler = self::exceptionHandler();
+    }
+
     protected function tearDown(): void
     {
         expGraphQLMessage::useLanguage( null );
+        // reading a catalogue goes through the cluster handler, which registers eZExecution's handlers on its first call
+        while ( self::exceptionHandler() !== $this->handler && self::exceptionHandler() !== null )
+            restore_exception_handler();
+    }
+
+    private static function exceptionHandler()
+    {
+        $handler = set_exception_handler( null );
+        restore_exception_handler();
+        return $handler;
     }
 
     public function testAcceptLanguageChoosesACatalogue()
@@ -39,6 +57,16 @@ class expGraphQLMessageTest extends PHPUnit\Framework\TestCase
     {
         expGraphQLMessage::useLanguage( null );
         $this->assertSame( 'The query is longer than 5 bytes.', expGraphQLMessage::tr( 'The query is longer than %max bytes.', array( '%max' => 5 ) ) );
+    }
+
+    public function testAMessageIsReadFromTheCatalogueTheRequestAsksFor()
+    {
+        expGraphQLMessage::useLanguage( 'de-DE,de;q=0.9' );
+        $this->assertSame( 'ger-DE', expGraphQLMessage::locale() );
+        $this->assertSame( 'node braucht genau eines von id, remoteId, path und urlAlias.',
+                           expGraphQLMessage::tr( 'node needs exactly one of id, remoteId, path and urlAlias.' ) );
+        $this->assertSame( 'Die Abfrage ist länger als 7 Bytes.', expGraphQLMessage::tr( 'The query is longer than %max bytes.', array( '%max' => 7 ) ) );
+        $this->assertSame( 'A text no catalogue has.', expGraphQLMessage::tr( 'A text no catalogue has.' ), 'the English text when there is no translation' );
     }
 
     public function testTheLibrarysLimitMessagesAreTheKernelsOwn()

@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n گھنٹے پہلوں</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API دیاں محفوظ کیتیاں کوئریاں دے جواب، تے ایہدی سکیما دیاں مواد کلاساں۔</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore Public Packer کیش</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL کیش (جواب تے سکیما کلاساں)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>کوئری تہاڈے حقاں نال، ایس سیشن نال سائن ان ہو کے چلدی اے۔</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>ایس سائٹ رسائی وچ GraphQL API بند اے۔</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL لائبریری انسٹال نئیں اے۔</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET یا POST ورتو۔</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>درخواست دی باڈی JSON آبجیکٹ نئیں اے۔</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables JSON آبجیکٹ نئیں اے۔</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions JSON آبجیکٹ نئیں اے۔</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>کوئری POST نال گھلو۔</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>درخواست وچ کوئی کوئری نئیں اے۔</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>کوئری %max بائٹ توں لمی اے۔</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>اندرونی سرور غلطی</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node نوں id, remoteId, path تے urlAlias وچوں ٹھیک اک دی لوڑ اے۔</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content نوں id تے remoteId وچوں ٹھیک اک دی لوڑ اے۔</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after دا کرسر ایس API دا دتا ہویا نئیں اے۔</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias ناں دا کوئی تصویر عرف نئیں اے (image.ini [AliasSettings] AliasList[])۔</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>ایتھے صرف محفوظ کیتیاں کوئریاں منیاں جاندیاں نیں: سرور اتے محفوظ کیتی کوئری دا id گھلو۔</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>محفوظ کیتی کوئری دا ہیش SHA-256 نئیں اے۔</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>محفوظ کیتی کوئری دا ہیش کوئری نال نئیں ملدا۔</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>بہت زیادہ درخواستاں: %window سیکنڈاں وچ ودھ توں ودھ %limit۔ %reset سیکنڈاں بعد فیر کوشش کرو۔</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>کوئری %depth پدھر ڈونگھی اے؛ ودھ توں ودھ %max دی اجازت اے۔</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>کوئری دی پیچیدگی %complexity اے؛ ودھ توں ودھ %max دی اجازت اے۔</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>ایہ درخواست سکیما نئیں پڑھ سکدی (introspection)۔</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search نوں متن یا فلٹر دی لوڑ اے (classes, subtree, sections, publishedAfter, publishedBefore)۔</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument تاریخ نئیں اے (ISO 8601, 2026-10-30)۔</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag نوں id, remoteId تے path وچوں ٹھیک اک دی لوڑ اے۔</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout نوں id, identifier تے urlAlias وچوں ٹھیک اک دی لوڑ اے۔</translation>
     </message>
 </context>
 </TS>

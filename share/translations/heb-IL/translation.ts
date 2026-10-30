@@ -22079,6 +22079,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>לפני %n שעות</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>תשובות השאילתות השמורות של ה־API של GraphQL, ומחלקות התוכן של הסכמה שלו.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54893,6 +54897,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>מטמון האורז הציבורי של eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>מטמון GraphQL (תשובות ומחלקות הסכמה)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78760,6 +78768,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>השאילתה רצה עם ההרשאות שלך, כשאתה מחובר בהפעלה זו.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>ממשק ה־API של GraphQL כבוי בגישת אתר זו.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>ספריית GraphQL אינה מותקנת.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>השתמשו ב־GET או ב־POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>גוף הבקשה אינו אובייקט JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables אינו אובייקט JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions אינו אובייקט JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>שלחו את השאילתה עם POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>אין שאילתה בבקשה.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>השאילתה ארוכה מ־%max בתים.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>שגיאה פנימית בשרת</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node דורש בדיוק אחד מבין id, remoteId, path ו־urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content דורש בדיוק אחד מבין id ו־remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>הסמן של after לא ניתן על ידי ה־API הזה.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>אין כינוי תמונה %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>כאן מתקבלות רק שאילתות שמורות: שלחו את ה־id של שאילתה שמורה.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>הגיבוב של השאילתה השמורה אינו SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>הגיבוב של השאילתה השמורה אינו תואם לשאילתה.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>יותר מדי בקשות: לכל היותר %limit בתוך %window שניות. נסו שוב בעוד %reset שניות.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>עומק השאילתה הוא %depth רמות; מותרות לכל היותר %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>מורכבות השאילתה היא %complexity; מותר לכל היותר %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>בקשה זו אינה רשאית לקרוא את הסכמה (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search דורש טקסט או מסנן (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument אינו תאריך (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag דורש בדיוק אחד מבין id, remoteId ו־path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout דורש בדיוק אחד מבין id, identifier ו־urlAlias.</translation>
     </message>
 </context>
 </TS>

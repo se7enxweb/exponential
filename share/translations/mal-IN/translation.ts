@@ -22136,6 +22136,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n മണിക്കൂർ മുമ്പ്</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API-യുടെ സംഭരിച്ച ക്വറികളുടെ ഉത്തരങ്ങളും അതിന്റെ സ്കീമയുടെ ഉള്ളടക്ക ക്ലാസുകളും.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54950,6 +54954,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore Public Packer കാഷെ</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL കാഷെ (ഉത്തരങ്ങളും സ്കീമ ക്ലാസുകളും)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78726,6 +78734,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ഈ സെഷനിൽ സൈൻ ഇൻ ചെയ്ത്, നിങ്ങളുടെ അവകാശങ്ങളോടെയാണ് ക്വറി പ്രവർത്തിക്കുന്നത്.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>ഈ സൈറ്റ്ആക്സസിൽ GraphQL API ഓഫാണ്.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL ലൈബ്രറി ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET അല്ലെങ്കിൽ POST ഉപയോഗിക്കുക.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>അഭ്യർത്ഥനയുടെ ബോഡി ഒരു JSON ഒബ്ജക്റ്റ് അല്ല.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables ഒരു JSON ഒബ്ജക്റ്റ് അല്ല.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions ഒരു JSON ഒബ്ജക്റ്റ് അല്ല.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>ക്വറി POST ഉപയോഗിച്ച് അയയ്ക്കുക.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>അഭ്യർത്ഥനയിൽ ക്വറി ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>ക്വറി %max ബൈറ്റിനേക്കാൾ നീളമുള്ളതാണ്.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>ആന്തരിക സെർവർ പിശക്</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node-ന് id, remoteId, path, urlAlias എന്നിവയിൽ കൃത്യമായി ഒന്ന് ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content-ന് id, remoteId എന്നിവയിൽ കൃത്യമായി ഒന്ന് ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after-ന്റെ കർസർ ഈ API നൽകിയതല്ല.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias എന്ന ചിത്ര അപരനാമം ഇല്ല (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>ഇവിടെ സംഭരിച്ച ക്വറികൾ മാത്രമേ സ്വീകരിക്കൂ: സംഭരിച്ച ഒരു ക്വറിയുടെ id അയയ്ക്കുക.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>സംഭരിച്ച ക്വറിയുടെ ഹാഷ് SHA-256 അല്ല.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>സംഭരിച്ച ക്വറിയുടെ ഹാഷ് ക്വറിയുമായി പൊരുത്തപ്പെടുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>വളരെയധികം അഭ്യർത്ഥനകൾ: %window സെക്കൻഡിൽ പരമാവധി %limit. %reset സെക്കൻഡിന് ശേഷം വീണ്ടും ശ്രമിക്കുക.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>ക്വറിക്ക് %depth തലങ്ങളുടെ ആഴമുണ്ട്; പരമാവധി %max അനുവദനീയമാണ്.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>ക്വറിയുടെ സങ്കീർണ്ണത %complexity ആണ്; പരമാവധി %max അനുവദനീയമാണ്.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>ഈ അഭ്യർത്ഥനയ്ക്ക് സ്കീമ വായിക്കാൻ അനുവാദമില്ല (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search-ന് ഒരു ടെക്സ്റ്റ് അല്ലെങ്കിൽ ഫിൽട്ടർ ആവശ്യമാണ് (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ഒരു തീയതി അല്ല (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag-ന് id, remoteId, path എന്നിവയിൽ കൃത്യമായി ഒന്ന് ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout-ന് id, identifier, urlAlias എന്നിവയിൽ കൃത്യമായി ഒന്ന് ആവശ്യമാണ്.</translation>
     </message>
 </context>
 </TS>

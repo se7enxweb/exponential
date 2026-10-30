@@ -22138,6 +22138,10 @@ Makyerɛ: Wɔrenyi boa no afi mu a wɔde ahyɛ mu.</translation>
         <source>%n hours ago</source>
         <translation>nnɔnhwerew %n a atwam</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API no abisadeɛ a wɔakora so no mmuaeɛ, ne nsɛm akuo a ɛwɔ ne schema mu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ wo akawnt.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore Packer ntɛmkora (ɛda adi)</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL cache (mmuaeɛ ne schema akuo)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Abisadeɛ no di dwuma wɔ wo tumi ase, sɛnea woahyɛ mu wɔ seshɔn yi mu.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>Wɔadum GraphQL API no wɔ wɛbsaet kwan yi mu.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Wɔmfaa GraphQL nhyehyɛe korabea no nhyɛɛ mu.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Fa GET anaa POST di dwuma.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Abisa no nipadua nyɛ JSON adeɛ.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables nyɛ JSON adeɛ.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions nyɛ JSON adeɛ.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Fa POST soma abisadeɛ no.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Abisa no nni abisadeɛ biara.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Abisadeɛ no ware sen bytes %max.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Server no mu mfomsoɔ</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node hia baako pɛ wɔ id, remoteId, path ne urlAlias mu.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content hia baako pɛ wɔ id ne remoteId mu.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after cursor no nyɛ deɛ API yi de mae.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Mfonini alias %alias biara nni hɔ (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Abisadeɛ a wɔakora so nkutoo na wɔgye wɔ ha: soma abisadeɛ a wɔakora so no id.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Abisadeɛ a wɔakora so no hash nyɛ SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Abisadeɛ a wɔakora so no hash ne abisadeɛ no nhyia.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Abisa dodoɔ abu so: %limit pɛ na ɛsɛ wɔ sɛkɛnd %window mu. San bɔ mmɔden bio wɔ sɛkɛnd %reset akyi.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Abisadeɛ no mu dɔ yɛ anammɔn %depth; wɔma kwan ma %max pɛ.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Abisadeɛ no mu den yɛ %complexity; wɔma kwan ma %max pɛ.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Wɔmma abisa yi kwan sɛ ɛkenkan schema no (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search hia nsɛm anaa filter bi (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument nyɛ da bi (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag hia baako pɛ wɔ id, remoteId ne path mu.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout hia baako pɛ wɔ id, identifier ne urlAlias mu.</translation>
     </message>
 </context>
 </TS>

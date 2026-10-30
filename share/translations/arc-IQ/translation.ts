@@ -22139,6 +22139,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>מן %n שעא</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>פתגמא דשואלא נטירא ד API ד GraphQL, וזניא דמליותא דסכמא דילה.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54953,6 +54957,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>סימתא דצרר גליא ד ezjscore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>גנזא ד GraphQL (פתגמא וזניא דסכמא)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78737,6 +78745,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>שואלא רהט בשולטניך, עלילא בהנא מותבא.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>API ד GraphQL בטילא בהנא מעלנא דאתרא.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>בית כתבא ד GraphQL לא מתקים.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>פלח ב GET או ב POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>גושמא דבעותא לא הוא צביונא ד JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables לא הוא צביונא ד JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions לא הוא צביונא ד JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>שדר שואלא ב POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>בבעותא לית שואלא.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>שואלא אריך מן %max בייטין.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>טעיותא גויתא דשמשא</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node סניק לחד בלחוד מן id, remoteId, path ו urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content סניק לחד בלחוד מן id ו remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>סמנא ד after לא הוא מן דיהב הנא API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>לית שמא אחרנא דצורתא %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>הרכא מתקבלין בלחוד שואלא דנטירין בשמשא: שדר id דשואלא נטירא.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>hash דשואלא נטירא לא הוא SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>hash דשואלא נטירא לא שוא לשואלא.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>בעותא סגיאתא: עד %limit ב %window רפפין. נסי תוב בתר %reset רפפין.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>שואלא עמיק %depth דרגין; עד %max שליטין.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>לשואלא אית עסקותא ד %complexity; עד %max שליט.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>בעותא הדא לא שליטא למקרא סכמא (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search סניק לכתבא או לנטורא (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument לא הוא יומא (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag סניק לחד בלחוד מן id, remoteId ו path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout סניק לחד בלחוד מן id, identifier ו urlAlias.</translation>
     </message>
 </context>
 </TS>

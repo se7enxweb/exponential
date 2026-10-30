@@ -22077,6 +22077,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n 時間前</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API の保存済みクエリの応答と、そのスキーマのコンテンツクラス。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54891,6 +54895,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore パブリックパッカーキャッシュ</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL キャッシュ (応答とスキーマのクラス)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78758,6 +78766,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>クエリは、このセッションでサインインしているあなたの権限で実行されます。</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>このサイトアクセスでは GraphQL API が無効になっています。</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL ライブラリがインストールされていません。</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET または POST を使用してください。</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>本文が JSON オブジェクトではありません。</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables が JSON オブジェクトではありません。</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions が JSON オブジェクトではありません。</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>クエリは POST で送信してください。</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>リクエストにクエリがありません。</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>クエリが %max バイトを超えています。</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>内部サーバーエラー</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node には id、remoteId、path、urlAlias のいずれか1つだけが必要です。</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content には id と remoteId のいずれか1つだけが必要です。</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after のカーソルはこの API が返したものではありません。</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>画像エイリアス %alias は存在しません (image.ini [AliasSettings] AliasList[])。</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>ここでは保存済みクエリのみ受け付けます: 保存済みクエリの id を送信してください。</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>保存済みクエリのハッシュが SHA-256 ではありません。</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>保存済みクエリのハッシュがクエリと一致しません。</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>リクエストが多すぎます: %window 秒間に最大 %limit 件までです。%reset 秒後に再試行してください。</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>クエリの深さは %depth レベルです。許可されるのは最大 %max までです。</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>クエリの複雑度は %complexity です。許可されるのは最大 %max までです。</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>このリクエストはスキーマを読み取れません (イントロスペクション)。</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search にはテキストまたはフィルター (classes, subtree, sections, publishedAfter, publishedBefore) が必要です。</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument は日付ではありません (ISO 8601, 2026-10-30)。</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag には id、remoteId、path のいずれか1つだけが必要です。</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout には id、identifier、urlAlias のいずれか1つだけが必要です。</translation>
     </message>
 </context>
 </TS>

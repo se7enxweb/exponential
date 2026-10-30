@@ -22138,6 +22138,10 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
         <source>%n hours ago</source>
         <translation>%n hola i hala</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Nā pane o nā nīnau i mālama ʻia o ka GraphQL API, a me nā papa ʻike o kona papahana.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ i kāu moʻokāki.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Ahu hoʻopaʻa lehulehu eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Huna GraphQL (nā pane a me nā papa o ka papahana)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Holo ka nīnau me kou mau kuleana, me ke komo ʻana ma kēia kau.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>Ua hoʻopio ʻia ka GraphQL API ma kēia Siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>ʻAʻole i hoʻokomo ʻia ka waihona GraphQL.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>E hoʻohana i ka GET a i ʻole ka POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>ʻAʻole he mea JSON ke kino.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>ʻAʻole he mea JSON ʻo variables.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>ʻAʻole he mea JSON ʻo extensions.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>E hoʻouna i ka nīnau me ka POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>ʻAʻohe nīnau ma ke noi.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Ua ʻoi aku ka lōʻihi o ka nīnau ma mua o %max paita.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Hewa kūloko o ka pūnaewele lawelawe</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>Pono ʻo node i hoʻokahi wale nō o id, remoteId, path a me urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>Pono ʻo content i hoʻokahi wale nō o id a me remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>ʻAʻole na kēia API i hāʻawi i ka kaha kuhikuhi o after.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>ʻAʻohe inoa kapakapa kiʻi %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>ʻO nā nīnau i mālama ʻia wale nō ka mea i ʻae ʻia ma ʻaneʻi: e hoʻouna i ka id o kekahi nīnau i mālama ʻia.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>ʻAʻole he SHA-256 ka hash o ka nīnau i mālama ʻia.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>ʻAʻole kūlike ka hash o ka nīnau i mālama ʻia me ka nīnau.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Nui loa nā noi: %limit ka nui loa i loko o %window kekona. E hoʻāʻo hou ma hope o %reset kekona.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>He %depth pae ka hohonu o ka nīnau; %max ka nui loa i ʻae ʻia.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>He %complexity ka paʻakikī o ka nīnau; %max ka nui loa i ʻae ʻia.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>ʻAʻole ʻae ʻia kēia noi e heluhelu i ka papahana (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>Pono ʻo search i kekahi kikokikona a i ʻole kānana (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>ʻAʻole he lā ʻo %argument (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>Pono ʻo tag i hoʻokahi wale nō o id, remoteId a me path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>Pono ʻo layout i hoʻokahi wale nō o id, identifier a me urlAlias.</translation>
     </message>
 </context>
 </TS>

@@ -22138,6 +22138,10 @@ Notenn: ne vo ket distaliet ar pakadoù.</translation>
         <source>%n hours ago</source>
         <translation>%n eur zo</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Respontoù rekedoù enrollet an API GraphQL, ha klasoù danvez e chema.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ gweredekaat ho kont.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Krubuilh pakter foran eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Krubuilh GraphQL (respontoù ha klasoù ar chema)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Lañset e vez ar goulenn gant ho kwirioù, kevreet gant an dalc'h-mañ.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>Diweredekaet eo an API GraphQL en haeziñ al lec&apos;hienn-mañ.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>N&apos;eo ket staliet al levraoueg GraphQL.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Implijit GET pe POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>N&apos;eo ket korf ar goulenn un ergorenn JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>N&apos;eo ket variables un ergorenn JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>N&apos;eo ket extensions un ergorenn JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Kasit ar reked gant POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>N&apos;eus reked ebet er goulenn.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Hiroc&apos;h eo ar reked eget %max okted.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Fazi diabarzh ar servijer</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node en deus ezhomm eus unan hepken eus id, remoteId, path ha urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content en deus ezhomm eus unan hepken eus id ha remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>N&apos;eo ket bet roet reti after gant an API-mañ.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>N&apos;eus alias skeudenn %alias ebet (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Rekedoù enrollet war ar servijer hepken a vez degemeret amañ: kasit id ur reked enrollet.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>N&apos;eo ket hash ar reked enrollet un SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Ne glot ket hash ar reked enrollet gant ar reked.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Re a c&apos;houlennoù: %limit d&apos;ar muiañ e %window eilenn. Klaskit en-dro a-benn %reset eilenn.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Donder ar reked a zo %depth live; %max d&apos;ar muiañ a zo aotreet.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Kemplezhded ar reked a zo %complexity; %max d&apos;ar muiañ a zo aotreet.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>N&apos;hall ket ar goulenn-mañ lenn ar chema (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search en deus ezhomm eus un destenn pe ur sil (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>N&apos;eo ket %argument un deiziad (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag en deus ezhomm eus unan hepken eus id, remoteId ha path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout en deus ezhomm eus unan hepken eus id, identifier ha urlAlias.</translation>
     </message>
 </context>
 </TS>

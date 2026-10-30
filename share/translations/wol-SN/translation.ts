@@ -22138,6 +22138,10 @@ Xamal ne: paket yi dootuñu ñu dindi samp.</translation>
         <source>%n hours ago</source>
         <translation>%n waxtu ba tay</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Tontu yi laaj yu ñu denc yu GraphQL API, ak xeeti li ci biir yu tekki bi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ sa kont.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Kaasu packer eZJSCore (pùblik)</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Cache GraphQL (tontu yi ak xeeti tekki bi)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Laaj bi dafay dox ak sa sañ-sañ, yaw mi dugg ci jamono jii.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API bi dañu ko fay ci buntu sit bii.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Bibliyotek GraphQL bi sampuñu ko.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Jëfandikool GET walla POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Yaramu ñaan bi du ab objet JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables du ab objet JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions du ab objet JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Yónnee laaj bi ak POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Ñaan bi amul benn laaj.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Laaj bi gën na guddu %max byte.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Njuumte ci biir serwëer bi</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node soxla na benn rekk ci id, remoteId, path ak urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content soxla na benn rekk ci id ak remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Kursëru after du API bii moo ko joxe.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Amul benn alias nataal %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Fii laaj yu ñu denc rekk lañuy nangu: yónneel id bu laaj bu ñu denc.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash bu laaj bu ñu denc bi du SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash bu laaj bu ñu denc bi dëppoowul ak laaj bi.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Ñaan yi dañoo bari: %limit rekk ci %window segond. Jéemaatal ci %reset segond.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Laaj bi xóotee na %depth tolluwaay; %max rekk lañu may.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Laaj bi am na jafe-jafe bu %complexity; %max rekk lañu may.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Ñaan bii mënul jàng tekki bi (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search soxla na ab mbind walla ab seetukaay (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument du ab bés (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag soxla na benn rekk ci id, remoteId ak path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout soxla na benn rekk ci id, identifier ak urlAlias.</translation>
     </message>
 </context>
 </TS>

@@ -22138,6 +22138,10 @@ bellik: Paketler gurnamadan aýrylmaz.</translation>
         <source>%n hours ago</source>
         <translation>%n sagat öň</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API-niň saklanan soraglarynyň jogaplary we onuň shemasynyň mazmun klaslary.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ salgysyna hat iberiler. Hasabyňyzy işjeňleşdirmek üçin
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore umumy paketleýjisiniň keşi</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL keşi (jogaplar we shema klaslary)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Sorag siziň hukuklaryňyz bilen, şu sessiýada giren ýagdaýyňyzda işleýär.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API bu saýta giriş nokadynda öçürilen.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL kitaphanasy gurnalmadyk.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET ýa-da POST ulanyň.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Ýüzlenmäniň göwresi JSON obýekti däl.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables JSON obýekti däl.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions JSON obýekti däl.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Soragy POST bilen iberiň.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Ýüzlenmede sorag ýok.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Sorag %max baýtdan uzyn.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Serweriň içki ýalňyşlygy</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node üçin id, remoteId, path we urlAlias-dan takyk biri gerek.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content üçin id we remoteId-dan takyk biri gerek.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after kursory bu API tarapyndan berilmedik.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias atly surat lakamy ýok (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Bu ýerde diňe saklanan soraglar kabul edilýär: saklanan soragyň id-sini iberiň.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Saklanan soragyň heşi SHA-256 däl.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Saklanan soragyň heşi soraga gabat gelmeýär.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Ýüzlenmeler gaty köp: %window sekuntda iň köp %limit. %reset sekuntdan soň gaýtadan synanyşyň.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Sorag %depth dereje çuň; iň köp %max rugsat berilýär.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Soragyň çylşyrymlylygy %complexity; iň köp %max rugsat berilýär.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Bu ýüzlenme shemany okap bilmeýär (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search üçin tekst ýa-da süzgüç gerek (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument sene däl (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag üçin id, remoteId we path-dan takyk biri gerek.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout üçin id, identifier we urlAlias-dan takyk biri gerek.</translation>
     </message>
 </context>
 </TS>

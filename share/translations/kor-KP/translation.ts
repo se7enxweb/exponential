@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n시간 전</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API의 보관된 질문들의 응답과 그 스키마의 콘텐츠클라스.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore 공용 Packer 캐시</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL 캐쉬 (응답과 스키마클라스)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>질문은 이 세션으로 가입한 리용자의 권한으로 실행됩니다.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>이 싸이트접근에서는 GraphQL API가 꺼져있습니다.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL 서고가 설치되여있지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET 또는 POST를 리용하십시오.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>요청본문이 JSON 객체가 아닙니다.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables가 JSON 객체가 아닙니다.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions가 JSON 객체가 아닙니다.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>질문을 POST로 보내십시오.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>요청에 질문이 없습니다.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>질문이 %max바이트보다 깁니다.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>봉사기 내부오유</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node에는 id, remoteId, path, urlAlias중 정확히 하나가 필요합니다.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content에는 id, remoteId중 정확히 하나가 필요합니다.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after의 유표는 이 API가 준것이 아닙니다.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>화상별명 %alias가 없습니다 (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>여기서는 보관된 질문만 받습니다: 보관된 질문의 id를 보내십시오.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>보관된 질문의 하쉬가 SHA-256이 아닙니다.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>보관된 질문의 하쉬가 질문과 맞지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>요청이 너무 많습니다: %window초동안 최대 %limit개. %reset초후에 다시 시도하십시오.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>질문의 깊이는 %depth준위입니다; 최대 %max까지 허용됩니다.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>질문의 복잡도는 %complexity입니다; 최대 %max까지 허용됩니다.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>이 요청은 스키마를 읽을수 없습니다 (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search에는 본문이나 려과기가 필요합니다 (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument는 날자가 아닙니다 (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag에는 id, remoteId, path중 정확히 하나가 필요합니다.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout에는 id, identifier, urlAlias중 정확히 하나가 필요합니다.</translation>
     </message>
 </context>
 </TS>

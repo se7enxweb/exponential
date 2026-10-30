@@ -22136,6 +22136,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n wákàtí sẹ́yìn</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Àwọn ìdáhùn ti àwọn ìbéèrè tí a tọ́jú ti GraphQL API, àti àwọn kílásì àkóónú ti schema rẹ̀.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54950,6 +54954,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>Kásẹ̀ eZJSCore Public Packer</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Cache GraphQL (àwọn ìdáhùn àti kílásì schema)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78726,6 +78734,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Ìbéèrè náà ń ṣiṣẹ́ pẹ̀lú ẹ̀tọ́ rẹ, o ti wọlé pẹ̀lú àkókò yìí.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>A ti pa GraphQL API nínú ìwọlé sáìtì yìí.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>A kò tíì fi ilé-ìkàwé GraphQL sórí ẹ̀rọ.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Lo GET tàbí POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Ara ìfiránṣẹ́ náà kì í ṣe ohun JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables kì í ṣe ohun JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions kì í ṣe ohun JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Fi ìbéèrè náà ránṣẹ́ pẹ̀lú POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Ìfiránṣẹ́ náà kò ní ìbéèrè kankan.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Ìbéèrè náà gùn ju báìtì %max lọ.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Àṣìṣe inú olùpèsè</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node nílò ọ̀kan ṣoṣo nínú id, remoteId, path àti urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content nílò ọ̀kan ṣoṣo nínú id àti remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Kọ́sọ̀ ti after kì í ṣe èyí tí API yìí fúnni.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Kò sí àdàpè àwòrán %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Àwọn ìbéèrè tí a tọ́jú nìkan ni a gbà níbí: fi id ìbéèrè tí a tọ́jú ránṣẹ́.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash ìbéèrè tí a tọ́jú kì í ṣe SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash ìbéèrè tí a tọ́jú kò bá ìbéèrè náà mu.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Ìfiránṣẹ́ ti pọ̀ jù: %limit ní pupọ̀ jùlọ láàárín ìṣẹ́jú-àáyá %window. Gbìyànjú lẹ́ẹ̀kan sí i lẹ́yìn ìṣẹ́jú-àáyá %reset.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Ìbéèrè náà jìn tó ìpele %depth; %max ni ó pọ̀ jùlọ tí a gbà láàyè.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Ìbéèrè náà ní ìdíjú %complexity; %max ni ó pọ̀ jùlọ tí a gbà láàyè.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Ìfiránṣẹ́ yìí kò lè ka schema (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search nílò ọ̀rọ̀ kan tàbí àsẹ́ kan (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument kì í ṣe ọjọ́ (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag nílò ọ̀kan ṣoṣo nínú id, remoteId àti path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout nílò ọ̀kan ṣoṣo nínú id, identifier àti urlAlias.</translation>
     </message>
 </context>
 </TS>

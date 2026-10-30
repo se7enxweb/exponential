@@ -22138,6 +22138,10 @@ Avertiment: Ils pachets na vegnan betg deinstallads.</translation>
         <source>%n hours ago</source>
         <translation>avant %n uras</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Respostas da las dumondas memorisadas da l&apos;API GraphQL e las classas da cuntegn da ses schema.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ Voss conto.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Memoria intermediara dal Public Packer da eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Cache GraphQL (respostas e classas dal schema)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>La dumonda vegn exequida cun voss dretgs, annunzià cun questa sessiun.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>L&apos;API GraphQL è deactivada en quest access a la website.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>La biblioteca GraphQL n&apos;è betg installada.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Duvrai GET u POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Il corp da la petiziun n&apos;è betg in object JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables n&apos;è betg in object JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions n&apos;è betg in object JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Tramettai la dumonda cun POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>La petiziun na cuntegna nagina dumonda.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>La dumonda è pli lunga che %max bytes.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Errur interna dal server</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node dovra exactamain in da id, remoteId, path ed urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content dovra exactamain in da id e remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Il cursur da after na deriva betg da quest&apos;API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>I na dat nagin alias da maletg %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Qua vegnan acceptadas mo dumondas memorisadas: tramettai l&apos;id d&apos;ina dumonda memorisada sin il server.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Il hash da la dumonda memorisada n&apos;è betg in SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Il hash da la dumonda memorisada na correspunda betg a la dumonda.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Memia bleras petiziuns: maximalmain %limit en %window secundas. Empruvai danovamain en %reset secundas.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>La dumonda ha %depth nivels da profunditad; permess èn maximalmain %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>La dumonda ha ina cumplexitad da %complexity; permess è maximalmain %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Questa petiziun na dastga betg leger il schema (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search dovra in text u in filter (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument n&apos;è betg ina data (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag dovra exactamain in da id, remoteId e path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout dovra exactamain in da id, identifier ed urlAlias.</translation>
     </message>
 </context>
 </TS>

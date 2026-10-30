@@ -22138,6 +22138,10 @@ Ikitonderwa: Amapaki ntazokurwamwo.</translation>
         <source>%n hours ago</source>
         <translation>amasaha %n ashize</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Inyishu z&apos;ibibazo vyabitswe vya GraphQL API, n&apos;imice y&apos;ibirimwo y&apos;iskema ryayo.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ konti yanyu.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Ububiko bw'igihe gito bwa Public Packer ya eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Ububiko bwa GraphQL (inyishu n&apos;imice y&apos;iskema)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Ikibazo gikorwa n'uburenganzira bwawe, winjiye muri iki gihe.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API irazimije muri iyi siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Isomero rya GraphQL ntiryashizweho.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Koresha GET canke POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Umubiri w&apos;icifuzo si ikintu ca JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables si ikintu ca JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions si ikintu ca JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Rungika ikibazo ukoresheje POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Icifuzo nta kibazo kirimwo.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Ikibazo kirarenza bayiti %max.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Ikosa ry&apos;imbere muri seriveri</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node ikeneye kimwe gusa muri id, remoteId, path na urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content ikeneye kimwe gusa muri id na remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Akamenyetso ka after si ako iyi API yatanze.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Nta zina ry&apos;irindi ry&apos;ishusho %alias rihari (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Ng&apos;aha hemerwa gusa ibibazo vyabitswe: rungika id y&apos;ikibazo cabitswe kuri seriveri.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash y&apos;ikibazo cabitswe si SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash y&apos;ikibazo cabitswe ntihuye n&apos;ikibazo.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Ivyifuzo ni vyinshi cane: ntibirenze %limit mu masegonda %window. Subira ugerageze mu masegonda %reset.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Ikibazo gifise ubwimbike bw&apos;intambwe %depth; hemewe ntiharenga %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Ikibazo gifise ingorane ingana na %complexity; hemewe ntiharenga %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Iki cifuzo ntikiremerewe gusoma iskema (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search ikeneye inyandiko canke iyungurura (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument si itariki (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag ikeneye kimwe gusa muri id, remoteId na path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout ikeneye kimwe gusa muri id, identifier na urlAlias.</translation>
     </message>
 </context>
 </TS>

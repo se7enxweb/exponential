@@ -22077,6 +22077,10 @@ Opomba: namestitev paketov ne bo odstranjena.</translation>
         <source>%n hours ago</source>
         <translation>pred %n h</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Odgovori shranjenih poizvedb GraphQL API-ja in razredi vsebine njegove sheme.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54891,6 +54895,10 @@ da aktivirate svoj račun.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Predpomnilnik javnega pakirnika eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Predpomnilnik GraphQL (odgovori in razredi sheme)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78758,6 +78766,109 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Poizvedba se izvede z vašimi pravicami, prijavljeni v tej seji.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API je v tem dostopu do spletnega mesta izklopljen.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Knjižnica GraphQL ni nameščena.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Uporabite GET ali POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Telo zahteve ni objekt JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables ni objekt JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions ni objekt JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Pošljite poizvedbo z metodo POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Zahteva ne vsebuje poizvedbe.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Poizvedba je daljša od %max bajtov.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Notranja napaka strežnika</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node potrebuje natanko eno od: id, remoteId, path in urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content potrebuje natanko eno od: id in remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Kazalec v after ne izvira iz tega API-ja.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Slikovni vzdevek %alias ne obstaja (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Tukaj so sprejete samo shranjene poizvedbe: pošljite id poizvedbe, shranjene na strežniku.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Zgoščena vrednost shranjene poizvedbe ni SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Zgoščena vrednost shranjene poizvedbe se ne ujema s poizvedbo.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Preveč zahtev: največ %limit v %window sekundah. Poskusite znova čez %reset sekund.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Poizvedba je globoka %depth ravni; dovoljenih je največ %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Poizvedba ima kompleksnost %complexity; dovoljena je največ %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Ta zahteva ne sme brati sheme (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search potrebuje besedilo ali filter (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ni datum (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag potrebuje natanko eno od: id, remoteId in path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout potrebuje natanko eno od: id, identifier in urlAlias.</translation>
     </message>
 </context>
 </TS>

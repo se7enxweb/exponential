@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n гадз таму</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Адказы захаваных запытаў GraphQL API і класы змесціва яго схемы.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>Кэш публічнага пакавальніка eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Кэш GraphQL (адказы і класы схемы)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Запыт выконваецца з вашымі правамі, з уваходам у гэтым сеансе.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API адключаны ў гэтым доступе да сайта.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Бібліятэка GraphQL не ўсталявана.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Выкарыстоўвайце GET або POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Цела запыту не з&apos;яўляецца аб&apos;ектам JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables не з&apos;яўляецца аб&apos;ектам JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions не з&apos;яўляецца аб&apos;ектам JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Адпраўце запыт праз POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>HTTP-запыт не змяшчае GraphQL-запыту.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Запыт даўжэйшы за %max байтаў.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Унутраная памылка сервера</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node патрабуе роўна аднаго з id, remoteId, path і urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content патрабуе роўна аднаго з id і remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Курсор after не быў выдадзены гэтым API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Няма псеўданіма выявы %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Тут прымаюцца толькі запыты, захаваныя на серверы: адпраўце id захаванага запыту.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Хэш захаванага запыту не з&apos;яўляецца SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Хэш захаванага запыту не адпавядае запыту.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Занадта шмат запытаў: не больш за %limit за %window секунд. Паспрабуйце зноў праз %reset секунд.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Глыбіня запыту — %depth узроўняў; дазволена не больш за %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Складанасць запыту — %complexity; дазволена не больш за %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Гэты запыт не можа чытаць схему (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search патрабуе тэкст або фільтр (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument не з&apos;яўляецца датай (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag патрабуе роўна аднаго з id, remoteId і path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout патрабуе роўна аднаго з id, identifier і urlAlias.</translation>
     </message>
 </context>
 </TS>

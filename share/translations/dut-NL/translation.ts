@@ -22142,6 +22142,10 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <source>%n hours ago</source>
         <translation>%n uur geleden</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Antwoorden van de opgeslagen query&apos;s van de GraphQL-API en de contentklassen van haar schema.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/datatypecode</name>
@@ -47790,6 +47794,10 @@ te activeren.</translation>
     <message>
         <source>eZJSCore Public Packer cache</source>
         <translation>Openbare packercache van eZJSCore</translation>
+    </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL-cache (antwoorden en schemaklassen)</translation>
     </message>
 </context>
 <context>
@@ -79953,6 +79961,109 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>De query draait met uw rechten, ingelogd met deze sessie.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>De GraphQL-API is uitgeschakeld in deze siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>De GraphQL-bibliotheek is niet geïnstalleerd.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Gebruik GET of POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>De body is geen JSON-object.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables is geen JSON-object.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions is geen JSON-object.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Verstuur de query met POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Het verzoek bevat geen query.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>De query is langer dan %max bytes.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Interne serverfout</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node heeft precies één van id, remoteId, path en urlAlias nodig.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content heeft precies één van id en remoteId nodig.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>De cursor van after is niet door deze API gegeven.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Er is geen afbeeldingsalias %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Hier worden alleen op de server opgeslagen query&apos;s geaccepteerd: verstuur de id van een opgeslagen query.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>De hash van de opgeslagen query is geen SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>De hash van de opgeslagen query komt niet overeen met de query.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Te veel verzoeken: maximaal %limit in %window seconden. Probeer het over %reset seconden opnieuw.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>De query is %depth niveaus diep; maximaal %max zijn toegestaan.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>De query heeft een complexiteit van %complexity; maximaal %max is toegestaan.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Dit verzoek mag het schema niet lezen (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search heeft een tekst of een filter nodig (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument is geen datum (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag heeft precies één van id, remoteId en path nodig.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout heeft precies één van id, identifier en urlAlias nodig.</translation>
     </message>
 </context>
 </TS>

@@ -22138,6 +22138,10 @@ Muitte: Páhkaid sajáiduhttin ii sihkkojuvvo.</translation>
         <source>%n hours ago</source>
         <translation>%n diibmu áigi</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL-API:a vurkejuvvon jearaldagaid vástádusat ja dan hámi sisdoalloluohkát.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ du konto.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore almmolaš packer-gaskavuorká</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL-cache (vástádusat ja hámi luohkát)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Jearaldat vuddjojuvvo du vuoigatvuođaiguin, sisačáliiduvvon dán bargovuoru bokte.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL-API lea jáddaduvvon dán neahttabáikebeassanis.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL-girjerájus ii leat sajáiduhttojuvvon.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Geavat GET dahje POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Gáibádusa sisdoallu ii leat JSON-objekta.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables ii leat JSON-objekta.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions ii leat JSON-objekta.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Sádde jearaldaga POST:ain.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Gáibádusas ii leat jearaldat.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Jearaldat lea guhkit go %max byte.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Siskkáldas bálvvá meattáhus</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node dárbbaša juste ovtta dáin: id, remoteId, path ja urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content dárbbaša juste ovtta dáin: id ja remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after-cursor ii leat dán API:as addojuvvon.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Govva-alias %alias ii gávdno (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Dáppe dohkkehuvvojit dušše vurkejuvvon jearaldagat: sádde vurkejuvvon jearaldaga id.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Vurkejuvvon jearaldaga hash ii leat SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Vurkejuvvon jearaldaga hash ii heive jearaldahkii.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Menddo ollu gáibádusat: eanemusat %limit %window sekundas. Geahččal fas %reset sekundda geažes.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Jearaldat lea %depth dási čiekŋal; eanemusat %max leat lobálaččat.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Jearaldagas lea kompleksitehta %complexity; eanemusat %max lea lobálaš.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Dát gáibádus ii oaččo lohkat hámi (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search dárbbaša teavstta dahje sillju (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ii leat dáhton (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag dárbbaša juste ovtta dáin: id, remoteId ja path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout dárbbaša juste ovtta dáin: id, identifier ja urlAlias.</translation>
     </message>
 </context>
 </TS>

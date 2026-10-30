@@ -22138,6 +22138,10 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
         <source>%n hours ago</source>
         <translation>ithaa %n rĩhĩtũku</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Macokio ma ciũria iria ciigĩtwo cia GraphQL API, na mĩthemba ya maũndũ ya skima yayo.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ akaunti yaku.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Kĩigĩro kĩa ihenya kĩa Public Packer ya eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Kĩigĩro kĩa GraphQL (macokio na mĩthemba ya skima)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Ihooyo rĩtengagĩrio na kĩhooto gĩaku, ũtonyete na kĩhinda gĩkĩ.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API nĩ ĩhingĩtwo njĩra-inĩ ĩno ya saiti.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Raibrarĩ ya GraphQL ndĩrĩ ĩhandĩtwo.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Hũthĩra GET kana POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Mwĩrĩ wa ihooyo ti kĩndũ kĩa JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables ti kĩndũ kĩa JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions ti kĩndũ kĩa JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Tũma kĩũria na POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Ihooyo rĩtirĩ na kĩũria.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Kĩũria nĩ kĩraihu gũkĩra baiti %max.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Ihĩtia rĩa thĩinĩ rĩa sava</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node nĩ ĩbataire kĩmwe tu kĩa id, remoteId, path na urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content nĩ ĩbataire kĩmwe tu kĩa id na remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Kĩonereria kĩa after ti kĩrĩa API ĩno yaheanire.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Gũtirĩ rĩĩtwa rĩngĩ rĩa mbica %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Haha nĩ ciũria iria ciigĩtwo tu itĩkagĩrĩtwo: tũma id ya kĩũria kĩigĩtwo.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash ya kĩũria kĩigĩtwo ti SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash ya kĩũria kĩigĩtwo ndĩringaine na kĩũria.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Mahooya maingĩ mũno: matikĩrĩte %limit thĩinĩ wa sekondi %window. Geria rĩngĩ thuutha wa sekondi %reset.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Kĩũria kĩrĩ na ũriku wa mĩtaraga %depth; ĩrĩa ĩtĩkĩrĩtwo ndĩkĩrĩte %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Kĩũria kĩrĩ na ũhinya wa %complexity; ũrĩa ũtĩkĩrĩtwo ndũkĩrĩte %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Ihooyo rĩĩrĩ rĩtingĩthoma skima (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search nĩ ĩbataire mĩandĩko kana gĩthondeki (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ti tarĩkĩ (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag nĩ ĩbataire kĩmwe tu kĩa id, remoteId na path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout nĩ ĩbataire kĩmwe tu kĩa id, identifier na urlAlias.</translation>
     </message>
 </context>
 </TS>

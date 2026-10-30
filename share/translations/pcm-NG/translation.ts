@@ -22138,6 +22138,10 @@ Note: Dem no go uninstall di packages.</translation>
         <source>%n hours ago</source>
         <translation>%n hours ago</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Di answers of di saved queries for di GraphQL API, plus di content classes of im schema.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore Public Packer cache</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Cache for GraphQL (di answers and di schema classes)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78736,6 +78744,109 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Di query dey run wit your rights, as you don sign in for dis session.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>Dem don off di GraphQL API for dis siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Dem never install di GraphQL library.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Make you use GET or POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Di body of di request no be JSON object.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables no be JSON object.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions no be JSON object.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Send di query wit POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Di request no get any query.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Di query long pass %max bytes.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Server get wahala for inside</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node need only one from id, remoteId, path and urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content need only one from id and remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Di cursor for after no be di one wey dis API give.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>No image alias %alias dey (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Na only queries wey dem don save dem dey accept for here: send di id of one query wey dem store for di server.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Di hash of di saved query no be SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Di hash of di saved query no match di query.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Requests don too much: no pass %limit inside %window seconds. Try again after %reset seconds.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Di query deep reach %depth levels; na only %max dem allow.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Di query get complexity of %complexity; na only %max dem allow.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Dis request no fit read di schema (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search need text or filter (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument no be date (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag need only one from id, remoteId and path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout need only one from id, identifier and urlAlias.</translation>
     </message>
 </context>
 </TS>

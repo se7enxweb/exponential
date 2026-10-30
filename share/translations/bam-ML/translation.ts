@@ -22138,6 +22138,10 @@ Ko: pakew tɛna sigili bɔ.</translation>
         <source>%n hours ago</source>
         <translation>lɛrɛ %n tɛmɛnen</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API ka ɲininkali maralenw jaabiw, ani a sigicogo kɔnɔko kuluw.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ konti da bila baara la.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore packer kasi (bɛɛ ka)</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL marayɔrɔ (jaabiw ani sigicogo kuluw)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Ɲininkali bɛ boli ni i ka sariyaw ye, i donnen nin sesɔn in na.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API sogolen don nin siti donda in na.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL gafebon ma sigi.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET walima POST baara.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Delili farikolo tɛ JSON fɛn ye.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables tɛ JSON fɛn ye.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions tɛ JSON fɛn ye.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Ɲininkali ci ni POST ye.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Ɲininkali si tɛ delili in na.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Ɲininkali ka jan ni bayiti %max ye.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Sɛriwɛri kɔnɔna fili</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node mago bɛ kelen dɔrɔn na id, remoteId, path ani urlAlias cɛ.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content mago bɛ kelen dɔrɔn na id ani remoteId cɛ.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after ka kursɔri tɛ API in ye min di.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Ja tɔgɔ wɛrɛ %alias tɛ yen (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Ɲininkali minnu maralen don sɛriwɛri kan, olu dɔrɔn de bɛ minɛ yan: ɲininkali maralen ka id ci.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Ɲininkali maralen ka hash tɛ SHA-256 ye.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Ɲininkali maralen ka hash ni ɲininkali tɛ bɛn.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Delili ka ca kojugu: %limit dɔrɔn segonda %window kɔnɔ. A lajɛ tugun segonda %reset kɔfɛ.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Ɲininkali dunya ye hakɛ %depth ye; %max dɔrɔn de bɛ sɔn.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Ɲininkali gɛlɛya ye %complexity ye; %max dɔrɔn de bɛ sɔn.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Delili in tɛ se ka sigicogo kalan (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search mago bɛ sɛbɛn walima sɔgɔli na (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument tɛ don ye (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag mago bɛ kelen dɔrɔn na id, remoteId ani path cɛ.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout mago bɛ kelen dɔrɔn na id, identifier ani urlAlias cɛ.</translation>
     </message>
 </context>
 </TS>

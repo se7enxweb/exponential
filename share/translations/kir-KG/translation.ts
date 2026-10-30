@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n саат мурун</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API сакталган сурооларынын жооптору жана анын схемасынын мазмун класстары.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore жалпы таңгактоочусунун кэши</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL кэши (жооптор жана схема класстары)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Суроо сиздин укуктарыңыз менен, ушул сеанста кирүү аркылуу аткарылат.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API бул сайтка кирүү чекитинде өчүрүлгөн.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL китепканасы орнотулган эмес.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET же POST колдонуңуз.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Сурамдын денеси JSON объекти эмес.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables JSON объекти эмес.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions JSON объекти эмес.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Суроону POST менен жөнөтүңүз.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Сурамда суроо жок.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Суроо %max байттан узун.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Сервердин ички катасы</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node үчүн id, remoteId, path жана urlAlias ичинен так бирөө керек.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content үчүн id жана remoteId ичинен так бирөө керек.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after курсорун бул API берген эмес.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias сүрөт лакап аты жок (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Бул жерде сакталган суроолор гана кабыл алынат: сакталган суроонун id маанисин жөнөтүңүз.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Сакталган суроонун хэши SHA-256 эмес.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Сакталган суроонун хэши суроого дал келбейт.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Сурамдар өтө көп: %window секундда эң көп %limit. %reset секунддан кийин кайра аракет кылыңыз.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Суроонун тереңдиги %depth деңгээл; эң көп %max уруксат берилет.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Суроонун татаалдыгы %complexity; эң көп %max уруксат берилет.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Бул сурам схеманы окуй албайт (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search үчүн текст же чыпка керек (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument дата эмес (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag үчүн id, remoteId жана path ичинен так бирөө керек.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout үчүн id, identifier жана urlAlias ичинен так бирөө керек.</translation>
     </message>
 </context>
 </TS>

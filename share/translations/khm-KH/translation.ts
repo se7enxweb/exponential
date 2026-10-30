@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n ម៉ោងមុន</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>ចម្លើយនៃសំណួរដែលបានរក្សាទុករបស់ GraphQL API និងថ្នាក់មាតិកានៃគ្រោងការណ៍របស់វា។</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>ឃ្លាំងសម្ងាត់កម្មវិធីបង្រួមសាធារណៈរបស់ eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>ឃ្លាំងសម្ងាត់ GraphQL (ចម្លើយ និងថ្នាក់គ្រោងការណ៍)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>សំណួរដំណើរការជាមួយសិទ្ធិរបស់អ្នក ដោយចូលតាមវគ្គនេះ។</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API ត្រូវបានបិទនៅក្នុងការចូលគេហទំព័រនេះ។</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>បណ្ណាល័យ GraphQL មិនទាន់បានដំឡើងទេ។</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>ប្រើ GET ឬ POST។</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>តួសំណើមិនមែនជាវត្ថុ JSON ទេ។</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables មិនមែនជាវត្ថុ JSON ទេ។</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions មិនមែនជាវត្ថុ JSON ទេ។</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>ផ្ញើសំណួរដោយប្រើ POST។</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>សំណើមិនមានសំណួរទេ។</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>សំណួរវែងជាង %max បៃ។</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>កំហុសម៉ាស៊ីនមេខាងក្នុង</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node ត្រូវការតែមួយគត់ក្នុងចំណោម id, remoteId, path និង urlAlias។</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content ត្រូវការតែមួយគត់ក្នុងចំណោម id និង remoteId។</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>ទស្សន៍ទ្រនិចរបស់ after មិនមែនជាអ្វីដែល API នេះបានផ្ដល់ទេ។</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>មិនមានឈ្មោះក្លែងរូបភាព %alias ទេ (image.ini [AliasSettings] AliasList[])។</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>នៅទីនេះទទួលតែសំណួរដែលបានរក្សាទុកប៉ុណ្ណោះ៖ សូមផ្ញើ id នៃសំណួរដែលបានរក្សាទុក។</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>ហាសរបស់សំណួរដែលបានរក្សាទុកមិនមែនជា SHA-256 ទេ។</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>ហាសរបស់សំណួរដែលបានរក្សាទុកមិនត្រូវគ្នានឹងសំណួរទេ។</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>សំណើច្រើនពេក៖ យ៉ាងច្រើន %limit ក្នុងរយៈពេល %window វិនាទី។ សូមព្យាយាមម្ដងទៀតក្នុងរយៈពេល %reset វិនាទី។</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>សំណួរមានជម្រៅ %depth កម្រិត; អនុញ្ញាតយ៉ាងច្រើន %max។</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>សំណួរមានភាពស្មុគស្មាញ %complexity; អនុញ្ញាតយ៉ាងច្រើន %max។</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>សំណើនេះមិនអាចអានគ្រោងការណ៍បានទេ (introspection)។</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search ត្រូវការអត្ថបទ ឬតម្រង (classes, subtree, sections, publishedAfter, publishedBefore)។</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument មិនមែនជាកាលបរិច្ឆេទទេ (ISO 8601, 2026-10-30)។</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag ត្រូវការតែមួយគត់ក្នុងចំណោម id, remoteId និង path។</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout ត្រូវការតែមួយគត់ក្នុងចំណោម id, identifier និង urlAlias។</translation>
     </message>
 </context>
 </TS>

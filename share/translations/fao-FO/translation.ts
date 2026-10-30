@@ -22138,6 +22138,10 @@ Ivasamt: Pakkarnir verða ikki avinnlagdir.</translation>
         <source>%n hours ago</source>
         <translation>%n tímar síðani</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Svar til goymdu fyrispurningarnar hjá GraphQL-API&apos;num og innihaldsflokkarnir í skemanum hjá tí.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ kontu tína.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Skjótgoymsla fyri eZJSCore Public Packer</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL-goymsla (svar og flokkar í skemanum)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Fyrispurningurin koyrir við tínum rættindum, innritaður við hesi setuni.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL-API&apos;ið er sløkt í hesi atgongd til vevstað.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL-savnið er ikki innlagt.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Nýt GET ella POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Kroppurin er ikki eitt JSON-lutur.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables er ikki eitt JSON-lutur.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions er ikki eitt JSON-lutur.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Send fyrispurningin við POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Umbønin hevur ongan fyrispurning.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Fyrispurningurin er longri enn %max být.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Innanhýsis ambætaravilla</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node hevur tørv á júst einum av id, remoteId, path og urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content hevur tørv á júst einum av id og remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Kursorurin í after kemur ikki frá hesum API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Einki myndaalias %alias er til (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Her verða bert goymdir fyrispurningar góðtiknir: send id fyri ein goymdan fyrispurning.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hashið hjá goymda fyrispurninginum er ikki eitt SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hashið hjá goymda fyrispurninginum samsvarar ikki við fyrispurningin.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Ov nógvar umbønir: í mesta lagi %limit um %window sekund. Royn aftur um %reset sekund.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Fyrispurningurin er %depth stig djúpur; í mesta lagi %max eru loyvd.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Fyrispurningurin hevur flókni %complexity; í mesta lagi %max er loyvt.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Henda umbønin má ikki lesa skemað (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search hevur tørv á einum teksti ella einum filtri (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument er ikki ein dagfesting (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag hevur tørv á júst einum av id, remoteId og path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout hevur tørv á júst einum av id, identifier og urlAlias.</translation>
     </message>
 </context>
 </TS>

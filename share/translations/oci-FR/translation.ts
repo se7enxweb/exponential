@@ -22138,6 +22138,10 @@ Nòta: los paquets seràn pas desinstallats.</translation>
         <source>%n hours ago</source>
         <translation>fa %n oras</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Responsas de las requèstas enregistradas de l&apos;API GraphQL, e las classas de contengut de son esquèma.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ vòstre compte.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Escondedor del packer public eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Cache GraphQL (responsas e classas de l&apos;esquèma)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>La requèsta s'executa amb vòstres dreches, connectat amb aquesta session.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>L&apos;API GraphQL es desactivada dins aqueste accès al site.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>La bibliotèca GraphQL es pas installada.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Utilizatz GET o POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Lo cors de la demanda es pas un objècte JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables es pas un objècte JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions es pas un objècte JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Mandatz la requèsta amb POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>La demanda conten pas cap de requèsta.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>La requèsta fa mai de %max octets.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Error intèrna del servidor</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node a besonh d&apos;exactament un de id, remoteId, path e urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content a besonh d&apos;exactament un de id e remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Lo cursor de after es pas estat provesit per aquesta API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>I a pas d&apos;alias d&apos;imatge %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Aquí son acceptadas sonque las requèstas enregistradas: mandatz l&apos;id d&apos;una requèsta gardada sul servidor.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Lo hash de la requèsta enregistrada es pas un SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Lo hash de la requèsta enregistrada correspond pas a la requèsta.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Tròp de demandas: al maximum %limit en %window segondas. Ensajatz tornarmai dins %reset segondas.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>La requèsta a %depth nivèls de prigondor; al maximum %max son permeses.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>La requèsta a una complexitat de %complexity; al maximum %max es permés.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Aquesta demanda pòt pas legir l&apos;esquèma (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search a besonh d&apos;un tèxte o d&apos;un filtre (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument es pas una data (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag a besonh d&apos;exactament un de id, remoteId e path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout a besonh d&apos;exactament un de id, identifier e urlAlias.</translation>
     </message>
 </context>
 </TS>

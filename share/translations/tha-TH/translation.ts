@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n ชั่วโมงที่แล้ว</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>คำตอบของคิวรีที่จัดเก็บไว้ของ GraphQL API และคลาสเนื้อหาของสคีมา</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>แคชตัวรวมไฟล์สาธารณะของ eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>แคช GraphQL (คำตอบและคลาสของสคีมา)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>คิวรีทำงานด้วยสิทธิ์ของคุณ โดยลงชื่อเข้าใช้ด้วยเซสชันนี้</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API ถูกปิดอยู่ในการเข้าถึงไซต์นี้</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>ยังไม่ได้ติดตั้งไลบรารี GraphQL</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>ใช้ GET หรือ POST</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>เนื้อหาคำขอไม่ใช่ออบเจ็กต์ JSON</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables ไม่ใช่ออบเจ็กต์ JSON</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions ไม่ใช่ออบเจ็กต์ JSON</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>ส่งคิวรีด้วย POST</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>คำขอไม่มีคิวรี</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>คิวรียาวเกิน %max ไบต์</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>ข้อผิดพลาดภายในเซิร์ฟเวอร์</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node ต้องมี id, remoteId, path หรือ urlAlias อย่างใดอย่างหนึ่งเท่านั้น</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content ต้องมี id หรือ remoteId อย่างใดอย่างหนึ่งเท่านั้น</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>เคอร์เซอร์ของ after ไม่ได้มาจาก API นี้</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>ไม่มีชื่อแทนรูปภาพ %alias (image.ini [AliasSettings] AliasList[])</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>ที่นี่รับเฉพาะคิวรีที่จัดเก็บไว้: ส่ง id ของคิวรีที่จัดเก็บไว้</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>แฮชของคิวรีที่จัดเก็บไว้ไม่ใช่ SHA-256</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>แฮชของคิวรีที่จัดเก็บไว้ไม่ตรงกับคิวรี</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>คำขอมากเกินไป: ไม่เกิน %limit ครั้งใน %window วินาที ลองอีกครั้งใน %reset วินาที</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>คิวรีลึก %depth ระดับ อนุญาตไม่เกิน %max ระดับ</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>คิวรีมีความซับซ้อน %complexity อนุญาตไม่เกิน %max</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>คำขอนี้ไม่ได้รับอนุญาตให้อ่านสคีมา (introspection)</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search ต้องมีข้อความหรือตัวกรอง (classes, subtree, sections, publishedAfter, publishedBefore)</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ไม่ใช่วันที่ (ISO 8601, 2026-10-30)</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag ต้องมี id, remoteId หรือ path อย่างใดอย่างหนึ่งเท่านั้น</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout ต้องมี id, identifier หรือ urlAlias อย่างใดอย่างหนึ่งเท่านั้น</translation>
     </message>
 </context>
 </TS>

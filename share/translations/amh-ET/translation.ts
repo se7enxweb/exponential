@@ -22136,6 +22136,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>ከ%n ሰዓታት በፊት</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>የGraphQL API የተቀመጡ መጠይቆች መልሶች፣ እና የመዋቅሩ የይዘት ክፍሎች።</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54950,6 +54954,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>የeZJSCore Public Packer መሸጎጫ</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL መሸጎጫ (መልሶች እና የመዋቅር ክፍሎች)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78726,6 +78734,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ጥያቄው በዚህ ክፍለ ጊዜ በገቡበት በእርስዎ መብቶች ይሄዳል።</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API በዚህ የጣቢያ መዳረሻ ውስጥ ጠፍቷል።</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>የGraphQL ቤተ-መጻሕፍት አልተጫነም።</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET ወይም POST ይጠቀሙ።</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>የጥያቄው አካል የJSON ነገር አይደለም።</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables የJSON ነገር አይደለም።</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions የJSON ነገር አይደለም።</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>መጠይቁን በPOST ይላኩ።</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>ጥያቄው መጠይቅ የለውም።</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>መጠይቁ ከ%max ባይት ይረዝማል።</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>የውስጥ አገልጋይ ስህተት</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node ከ id፣ remoteId፣ path እና urlAlias ውስጥ በትክክል አንዱን ይፈልጋል።</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content ከ id እና remoteId ውስጥ በትክክል አንዱን ይፈልጋል።</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>የ after ጠቋሚ ይህ API የሰጠው አይደለም።</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>የምስል ቅጽል %alias የለም (image.ini [AliasSettings] AliasList[])።</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>እዚህ የሚቀበሉት በአገልጋዩ ላይ የተቀመጡ መጠይቆች ብቻ ናቸው፦ የተቀመጠ መጠይቅ id ይላኩ።</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>የተቀመጠው መጠይቅ hash SHA-256 አይደለም።</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>የተቀመጠው መጠይቅ hash ከመጠይቁ ጋር አይዛመድም።</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>በጣም ብዙ ጥያቄዎች፦ በ%window ሰከንዶች ውስጥ ቢበዛ %limit። ከ%reset ሰከንዶች በኋላ እንደገና ይሞክሩ።</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>መጠይቁ %depth ደረጃዎች ጥልቀት አለው፤ ቢበዛ %max ይፈቀዳሉ።</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>መጠይቁ %complexity ውስብስብነት አለው፤ ቢበዛ %max ይፈቀዳል።</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>ይህ ጥያቄ መዋቅሩን ማንበብ አይፈቀድለትም (introspection)።</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search ጽሑፍ ወይም ማጣሪያ ይፈልጋል (classes, subtree, sections, publishedAfter, publishedBefore)።</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument ቀን አይደለም (ISO 8601, 2026-10-30)።</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag ከ id፣ remoteId እና path ውስጥ በትክክል አንዱን ይፈልጋል።</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout ከ id፣ identifier እና urlAlias ውስጥ በትክክል አንዱን ይፈልጋል።</translation>
     </message>
 </context>
 </TS>

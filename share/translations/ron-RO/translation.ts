@@ -22077,6 +22077,10 @@ Notă: pachetele nu vor fi dezinstalate.</translation>
         <source>%n hours ago</source>
         <translation>acum %n h</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Răspunsurile interogărilor persistente ale API-ului GraphQL și clasele de conținut ale schemei sale.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54891,6 +54895,10 @@ activa contul.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Memorie cache eZJSCore Public Packer</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Cache GraphQL (răspunsuri și clase ale schemei)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78758,6 +78766,109 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Interogarea rulează cu drepturile dumneavoastră, autentificat cu această sesiune.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>API-ul GraphQL este dezactivat în acest acces la site.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Biblioteca GraphQL nu este instalată.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Folosiți GET sau POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Corpul cererii nu este un obiect JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables nu este un obiect JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions nu este un obiect JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Trimiteți interogarea cu POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Cererea nu conține nicio interogare.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Interogarea depășește %max octeți.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Eroare internă a serverului</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node necesită exact unul dintre id, remoteId, path și urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content necesită exact unul dintre id și remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Cursorul din after nu provine de la acest API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Nu există aliasul de imagine %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Aici sunt acceptate doar interogări persistente: trimiteți id-ul unei interogări stocate pe server.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash-ul interogării persistente nu este un SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash-ul interogării persistente nu corespunde interogării.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Prea multe cereri: cel mult %limit în %window secunde. Încercați din nou peste %reset secunde.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Interogarea are %depth niveluri de adâncime; sunt permise cel mult %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Interogarea are o complexitate de %complexity; este permisă cel mult %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Această cerere nu are voie să citească schema (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search necesită un text sau un filtru (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument nu este o dată (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag necesită exact unul dintre id, remoteId și path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout necesită exact unul dintre id, identifier și urlAlias.</translation>
     </message>
 </context>
 </TS>

@@ -22138,6 +22138,10 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
         <source>%n hours ago</source>
         <translation>%n ora lasa</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Valin&apos;ireo fanontaniana voatahirin&apos;ny GraphQL API, sy ireo kilasin&apos;ny votoatin&apos;ny rafiny.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ mba hampandehanana ny kaontinao.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Tahiry vonjimaika momba ny packer ampahibemaso eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Fitahirizana vonjimaika GraphQL (valiny sy kilasin&apos;ny rafitra)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Mandeha amin'ny zonao ny fangatahana, niditra tamin'ity fotoam-pidirana ity ianao.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>Maty ny GraphQL API amin&apos;ity fidirana amin&apos;ny tranonkala ity.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Tsy voapetraka ny tranomboky GraphQL.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Ampiasao ny GET na ny POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Tsy zavatra JSON ny vatan&apos;ny fangatahana.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>Tsy zavatra JSON ny variables.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>Tsy zavatra JSON ny extensions.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Alefaso amin&apos;ny POST ny fanontaniana.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Tsy misy fanontaniana ny fangatahana.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Lava mihoatra ny %max oktety ny fanontaniana.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Hadisoana anatiny amin&apos;ny mpizara</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>Mila iray monja amin&apos;ny id, remoteId, path sy urlAlias ny node.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>Mila iray monja amin&apos;ny id sy remoteId ny content.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Tsy avy amin&apos;ity API ity ny tondron&apos;ny after.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Tsy misy anaram-tsary %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Fanontaniana voatahiry ihany no ekena eto: alefaso ny id an&apos;ny fanontaniana voatahiry.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Tsy SHA-256 ny hash an&apos;ny fanontaniana voatahiry.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Tsy mifanaraka amin&apos;ny fanontaniana ny hash an&apos;ny fanontaniana voatahiry.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Be loatra ny fangatahana: %limit farafahabetsany ao anatin&apos;ny %window segondra. Andramo indray afaka %reset segondra.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Lalina %depth ambaratonga ny fanontaniana; %max farafahabetsany no avela.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Manana fahasarotana %complexity ny fanontaniana; %max farafahabetsany no avela.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Tsy mahazo mamaky ny rafitra ity fangatahana ity (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>Mila lahatsoratra na sivana ny search (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>Tsy daty ny %argument (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>Mila iray monja amin&apos;ny id, remoteId sy path ny tag.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>Mila iray monja amin&apos;ny id, identifier sy urlAlias ny layout.</translation>
     </message>
 </context>
 </TS>

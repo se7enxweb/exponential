@@ -22138,6 +22138,10 @@ Catetan: Pakét moal dicabut pamasanganana.</translation>
         <source>%n hours ago</source>
         <translation>%n jam kapungkur</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Jawaban kueri anu disimpen tina API GraphQL, jeung kelas eusi skémana.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ akun anjeun.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Cache Public Packer eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Cache GraphQL (jawaban jeung kelas skéma)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78736,6 +78744,109 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Kueri dijalankeun ku hak anjeun, asup ku sési ieu.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>API GraphQL dipareuman dina aksés situs ieu.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Pustaka GraphQL teu acan dipasang.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Paké GET atawa POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Awak pamundut lain objék JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables lain objék JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions lain objék JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Kirim kueri ku POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Pamundut teu aya kuerina.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Kueri leuwih panjang ti %max bait.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Kasalahan internal server</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node butuh pas hiji tina id, remoteId, path jeung urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content butuh pas hiji tina id jeung remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Kursor after lain anu dipasihkeun ku API ieu.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Teu aya alias gambar %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Di dieu ngan ukur nampi kueri anu disimpen: kirim id kueri anu disimpen.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash kueri anu disimpen lain SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash kueri anu disimpen teu cocog jeung kuerina.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Pamundut loba teuing: paling loba %limit dina %window detik. Cobian deui dina %reset detik.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Kueri jerona %depth tingkat; paling loba %max anu diidinan.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Kueri kompleksitasna %complexity; paling loba %max anu diidinan.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Pamundut ieu teu meunang maca skéma (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search butuh téks atawa saringan (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument lain tanggal (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag butuh pas hiji tina id, remoteId jeung path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout butuh pas hiji tina id, identifier jeung urlAlias.</translation>
     </message>
 </context>
 </TS>

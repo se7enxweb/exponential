@@ -22350,6 +22350,10 @@ Navigeringsdel</translation>
         <source>%n hours ago</source>
         <translation>for %n timer siden</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Svar på GraphQL-API&apos;ets gemte forespørgsler og indholdsklasserne i dets skema.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -55319,6 +55323,10 @@ din konto.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Cache for eZJSCore Public Packer</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL-cache (svar og skemaklasser)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -79408,6 +79416,109 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Forespørgslen kører med dine rettigheder, logget ind med denne session.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL-API&apos;et er slået fra i denne siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL-biblioteket er ikke installeret.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Brug GET eller POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Brødteksten er ikke et JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables er ikke et JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions er ikke et JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Send forespørgslen med POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Anmodningen indeholder ingen forespørgsel.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Forespørgslen er længere end %max byte.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Intern serverfejl</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node kræver præcis én af id, remoteId, path og urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content kræver præcis én af id og remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Markøren i after er ikke en, som dette API har givet.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Der findes intet billedalias %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Her accepteres kun forespørgsler, der er gemt på serveren: send id&apos;et for en gemt forespørgsel.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hashen for den gemte forespørgsel er ikke en SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hashen for den gemte forespørgsel passer ikke til forespørgslen.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>For mange anmodninger: højst %limit på %window sekunder. Prøv igen om %reset sekunder.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Forespørgslen er %depth niveauer dyb; højst %max er tilladt.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Forespørgslen har en kompleksitet på %complexity; højst %max er tilladt.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Denne anmodning må ikke læse skemaet (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search kræver en tekst eller et filter (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument er ikke en dato (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag kræver præcis én af id, remoteId og path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout kræver præcis én af id, identifier og urlAlias.</translation>
     </message>
 </context>
 </TS>

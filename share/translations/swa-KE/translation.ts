@@ -22136,6 +22136,10 @@ Kumbuka: Usakinishaji wa vifurushi hautaondolewa.</translation>
         <source>%n hours ago</source>
         <translation>saa %n zilizopita</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Majibu ya hoja zilizohifadhiwa za GraphQL API, na madarasa ya maudhui ya skima yake.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54950,6 +54954,10 @@ akaunti yako.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Akiba ya Public Packer ya eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Akiba ya GraphQL (majibu na madarasa ya skima)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78726,6 +78734,109 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Hoja inaendeshwa kwa haki zako, ukiwa umeingia kwa kipindi hiki.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API imezimwa katika siteaccess hii.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Maktaba ya GraphQL haijasakinishwa.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Tumia GET au POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Mwili wa ombi si kitu cha JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables si kitu cha JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions si kitu cha JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Tuma hoja kwa POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Ombi halina hoja.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Hoja ni ndefu kuliko baiti %max.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Hitilafu ya ndani ya seva</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node inahitaji kimoja tu kati ya id, remoteId, path na urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content inahitaji kimoja tu kati ya id na remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Kielekezi cha after hakikutolewa na API hii.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Hakuna lakabu ya picha %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Hoja zilizohifadhiwa pekee ndizo zinazokubaliwa hapa: tuma id ya hoja iliyohifadhiwa.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hashi ya hoja iliyohifadhiwa si SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hashi ya hoja iliyohifadhiwa hailingani na hoja.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Maombi mengi mno: si zaidi ya %limit katika sekunde %window. Jaribu tena baada ya sekunde %reset.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Hoja ina kina cha viwango %depth; si zaidi ya %max vinavyoruhusiwa.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Hoja ina utata wa %complexity; si zaidi ya %max unaoruhusiwa.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Ombi hili haliruhusiwi kusoma skima (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search inahitaji maandishi au kichujio (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument si tarehe (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag inahitaji kimoja tu kati ya id, remoteId na path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout inahitaji kimoja tu kati ya id, identifier na urlAlias.</translation>
     </message>
 </context>
 </TS>

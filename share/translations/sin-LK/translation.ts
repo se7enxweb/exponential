@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>පැය %n කට පෙර</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API හි ගබඩා කළ විමසුම්වල පිළිතුරු, සහ එහි ස්කීමාවේ අන්තර්ගත පන්ති.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore Public Packer හැඹිලිය</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL හැඹිලිය (පිළිතුරු සහ ස්කීමා පන්ති)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>මෙම සැසියෙන් පුරනය වී, ඔබගේ අයිතිවාසිකම් සමඟ විමසුම ක්‍රියාත්මක වේ.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>මෙම අඩවි ප්‍රවේශයේ GraphQL API අක්‍රිය කර ඇත.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL පුස්තකාලය ස්ථාපනය කර නැත.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET හෝ POST භාවිත කරන්න.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>ඉල්ලීමේ ප්‍රධාන කොටස JSON වස්තුවක් නොවේ.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables JSON වස්තුවක් නොවේ.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions JSON වස්තුවක් නොවේ.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>විමසුම POST මගින් යවන්න.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>ඉල්ලීමේ විමසුමක් නැත.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>විමසුම බයිට් %max කට වඩා දිගය.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>අභ්‍යන්තර සේවාදායක දෝෂය</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node සඳහා id, remoteId, path සහ urlAlias අතරින් හරියටම එකක් අවශ්‍යයි.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content සඳහා id සහ remoteId අතරින් හරියටම එකක් අවශ්‍යයි.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after හි කර්සරය මෙම API මගින් දුන් එකක් නොවේ.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias නමැති රූප අන්වර්ථයක් නැත (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>මෙහි පිළිගනු ලබන්නේ ගබඩා කළ විමසුම් පමණි: සේවාදායකයේ ගබඩා කළ විමසුමක id යවන්න.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>ගබඩා කළ විමසුමේ හැෂ් අගය SHA-256 එකක් නොවේ.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>ගබඩා කළ විමසුමේ හැෂ් අගය විමසුමට නොගැළපේ.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>ඉල්ලීම් වැඩිය: තත්පර %window තුළ උපරිම %limit. තත්පර %reset කින් නැවත උත්සාහ කරන්න.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>විමසුම මට්ටම් %depth ක් ගැඹුරුය; උපරිම %max කට ඉඩ ඇත.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>විමසුමේ සංකීර්ණතාව %complexity වේ; උපරිම %max කට ඉඩ ඇත.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>මෙම ඉල්ලීමට ස්කීමාව කියවිය නොහැක (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search සඳහා පෙළක් හෝ පෙරහනක් අවශ්‍යයි (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument දිනයක් නොවේ (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag සඳහා id, remoteId සහ path අතරින් හරියටම එකක් අවශ්‍යයි.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout සඳහා id, identifier සහ urlAlias අතරින් හරියටම එකක් අවශ්‍යයි.</translation>
     </message>
 </context>
 </TS>

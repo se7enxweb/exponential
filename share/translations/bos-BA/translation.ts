@@ -22077,6 +22077,10 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <source>%n hours ago</source>
         <translation>prije %n h</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Odgovori pohranjenih upita GraphQL API-ja i klase sadržaja njegove sheme.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54891,6 +54895,10 @@ svoj račun.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Keš memorija eZJSCore Public Packer</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL keš (odgovori i klase sheme)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78758,6 +78766,109 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Upit se izvršava s vašim pravima, prijavljeni u ovoj sesiji.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API je isključen u ovom pristupu web-stranici.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL biblioteka nije instalirana.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Koristite GET ili POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Tijelo nije JSON objekat.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables nije JSON objekat.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions nije JSON objekat.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Pošaljite upit putem POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Zahtjev ne sadrži upit.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Upit je duži od %max bajtova.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Interna greška servera</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node treba tačno jedno od id, remoteId, path i urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content treba tačno jedno od id i remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Kursor za after nije izdao ovaj API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Ne postoji alias slike %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Ovdje se prihvataju samo upiti pohranjeni na serveru: pošaljite id pohranjenog upita.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash pohranjenog upita nije SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash pohranjenog upita ne odgovara upitu.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Previše zahtjeva: najviše %limit u %window sekundi. Pokušajte ponovo za %reset sekundi.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Upit je dubok %depth nivoa; dozvoljeno je najviše %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Upit ima složenost %complexity; dozvoljeno je najviše %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Ovaj zahtjev ne smije čitati shemu (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search treba tekst ili filter (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument nije datum (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag treba tačno jedno od id, remoteId i path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout treba tačno jedno od id, identifier i urlAlias.</translation>
     </message>
 </context>
 </TS>

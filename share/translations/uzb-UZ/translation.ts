@@ -22138,6 +22138,10 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
         <source>%n hours ago</source>
         <translation>%n soat oldin</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API saqlangan soʻrovlarining javoblari va uning sxemasidagi kontent sinflari.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ shu xatdagi yoʻriqnomaga amal qiling.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore ommaviy paketlovchi keshi</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL keshi (javoblar va sxema sinflari)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Soʻrov ushbu seansda kirgan holda sizning huquqlaringiz bilan bajariladi.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API ushbu sayt kirish nuqtasida oʻchirilgan.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL kutubxonasi oʻrnatilmagan.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET yoki POST dan foydalaning.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Murojaat tanasi JSON obyekti emas.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables JSON obyekti emas.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions JSON obyekti emas.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Soʻrovni POST bilan yuboring.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Murojaatda soʻrov yoʻq.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Soʻrov %max baytdan uzun.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Serverning ichki xatosi</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node uchun id, remoteId, path va urlAlias dan aynan bittasi kerak.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content uchun id va remoteId dan aynan bittasi kerak.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after kursori bu API tomonidan berilmagan.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias nomli rasm taxallusi yoʻq (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Bu yerda faqat saqlangan soʻrovlar qabul qilinadi: saqlangan soʻrovning id sini yuboring.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Saqlangan soʻrov xeshi SHA-256 emas.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Saqlangan soʻrov xeshi soʻrovga mos kelmaydi.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Murojaatlar juda koʻp: %window soniyada koʻpi bilan %limit. %reset soniyadan keyin qayta urinib koʻring.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Soʻrov %depth daraja chuqur; koʻpi bilan %max ga ruxsat beriladi.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Soʻrovning murakkabligi %complexity; koʻpi bilan %max ga ruxsat beriladi.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Bu murojaat sxemani oʻqiy olmaydi (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search uchun matn yoki filtr kerak (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument sana emas (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag uchun id, remoteId va path dan aynan bittasi kerak.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout uchun id, identifier va urlAlias dan aynan bittasi kerak.</translation>
     </message>
 </context>
 </TS>

@@ -22138,6 +22138,10 @@ Nyabiala: Womaɖe agbawo ɖa le ɖoɖoɖi me o.</translation>
         <source>%n hours ago</source>
         <translation>ga %n do ŋgɔ</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API ƒe biabia siwo wodzra ɖo ƒe ŋuɖoɖowo, kple eƒe skema ƒe emenyawo ƒe hatsotsowo.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ be nàna wò akɔnta nawɔ dɔ.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore ƒe packer kase (dutoƒe)</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL ƒe nudzraɖoƒe kpui (ŋuɖoɖowo kple skema ƒe hatsotsowo)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Biabia la wɔa dɔ kple wò ŋusẽwo, esi nège ɖe eme le kpekpe sia me.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>Wotsi GraphQL API la le nyatakakaɖoƒe ƒe mɔnu sia me.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Womeɖo GraphQL agbalẽdzraɖoƒe la ɖe enu o.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Zã GET alo POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Biabia la ƒe ŋutilã menye JSON nu o.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables menye JSON nu o.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions menye JSON nu o.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Ɖo biabia la ɖa kple POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Biabia aɖeke mele kukuɖeɖe la me o.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Biabia la didi wu byte %max.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Vodada le server la me</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node hiã ɖeka pɛ tso id, remoteId, path kple urlAlias me.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content hiã ɖeka pɛ tso id kple remoteId me.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Menye API sia ye na after ƒe cursor la o.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Nɔnɔmetata ƒe ŋkɔ bubu %alias meli o (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Biabia siwo wodzra ɖo ko woxɔna le afi sia: ɖo biabia si wodzra ɖo ƒe id ɖa.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Biabia si wodzra ɖo ƒe hash menye SHA-256 o.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Biabia si wodzra ɖo ƒe hash mesɔ kple biabia la o.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Kukuɖeɖewo sɔ gbɔ akpa: %limit ya teƒe le sekend %window me. Gate kpɔ ake le sekend %reset megbe.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Biabia la ƒe goglome nye ɖoƒe %depth; %max ya teƒe koe woɖe mɔ ɖo.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Biabia la ƒe xaxa nye %complexity; %max ya teƒe koe woɖe mɔ ɖo.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Womeɖe mɔ na kukuɖeɖe sia be wòaxlẽ skema la o (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search hiã nuŋɔŋlɔ alo nusiamɔnu (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument menye ŋkeke o (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag hiã ɖeka pɛ tso id, remoteId kple path me.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout hiã ɖeka pɛ tso id, identifier kple urlAlias me.</translation>
     </message>
 </context>
 </TS>

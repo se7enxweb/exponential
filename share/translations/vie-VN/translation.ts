@@ -22138,6 +22138,10 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
         <source>%n hours ago</source>
         <translation>%n giờ trước</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Câu trả lời của các truy vấn đã lưu của API GraphQL và các lớp nội dung của lược đồ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ tài khoản của bạn.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Bộ nhớ đệm trình đóng gói công khai eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Bộ nhớ đệm GraphQL (câu trả lời và lớp của lược đồ)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Truy vấn chạy với quyền của bạn, đăng nhập bằng phiên này.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>API GraphQL đang tắt ở điểm truy cập trang này.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Thư viện GraphQL chưa được cài đặt.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Hãy dùng GET hoặc POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Phần thân yêu cầu không phải là đối tượng JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables không phải là đối tượng JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions không phải là đối tượng JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Hãy gửi truy vấn bằng POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Yêu cầu không có truy vấn.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Truy vấn dài hơn %max byte.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Lỗi máy chủ nội bộ</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node cần đúng một trong id, remoteId, path và urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content cần đúng một trong id và remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Con trỏ của after không phải do API này cấp.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Không có bí danh ảnh %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Ở đây chỉ chấp nhận truy vấn đã lưu: hãy gửi id của một truy vấn đã lưu.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Mã băm của truy vấn đã lưu không phải là SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Mã băm của truy vấn đã lưu không khớp với truy vấn.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Quá nhiều yêu cầu: tối đa %limit trong %window giây. Hãy thử lại sau %reset giây.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Truy vấn sâu %depth cấp; cho phép tối đa %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Truy vấn có độ phức tạp %complexity; cho phép tối đa %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Yêu cầu này không được đọc lược đồ (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search cần một văn bản hoặc một bộ lọc (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument không phải là ngày (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag cần đúng một trong id, remoteId và path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout cần đúng một trong id, identifier và urlAlias.</translation>
     </message>
 </context>
 </TS>

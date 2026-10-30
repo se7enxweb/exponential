@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n сохьт хьалха</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API-н Ӏалашдинчу хаттарийн жоьпаш а, цуьнан схеман чулацаман классаш а.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore юкъара упаковщикан кэш</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL кэш (жоьпаш а, схеман классаш а)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Хаттар кхочуш до хьан бакъонашца, хӀокху сессехь чувалийна.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API хӀокху сайте тӀекхачарехь дӀайайина ю.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL библиотека дӀахӀоттийна яц.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET я POST лелае.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Дехаран чорхь JSON объект дац.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables JSON объект дац.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions JSON объект дац.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Хаттар POST-ца дахийта.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Дехарехь хаттар дац.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Хаттар %max байтал деха ду.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Серверан чоьхьара гӀалат</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node-на id, remoteId, path, urlAlias цаьрах нийса цхьаъ оьшу.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content-на id, remoteId цаьрах нийса цхьаъ оьшу.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after-ан курсор хӀокху API-с деллачех дац.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias цӀе йолу суьртан псевдоним яц (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Кхузахь серверехь Ӏалашдина хаттарш бен ца тӀеоьцу: Ӏалашдинчу хаттаран id дахийта.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Ӏалашдинчу хаттаран hash SHA-256 дац.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Ӏалашдинчу хаттаран hash хаттарца ца догӀу.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Дехарш дукха ду: %window секундехь %limit сов дац. %reset секунд яьлча юха хьажа.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Хаттаран кӀоргалла %depth тӀегӀа ю; %max сов ца магийна.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Хаттаран чолхалла %complexity ю; %max сов ца магийна.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>ХӀокху дехарна схема еша бакъо яц (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search-на текст я фильтр оьшу (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument терахь дац (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag-на id, remoteId, path цаьрах нийса цхьаъ оьшу.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout-на id, identifier, urlAlias цаьрах нийса цхьаъ оьшу.</translation>
     </message>
 </context>
 </TS>

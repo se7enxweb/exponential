@@ -22077,6 +22077,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>πριν από %n ώρες</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Απαντήσεις των αποθηκευμένων ερωτημάτων του GraphQL API και οι κλάσεις περιεχομένου του σχήματός του.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54891,6 +54895,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>Προσωρινή μνήμη δημόσιου συμπιεστή eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Κρυφή μνήμη GraphQL (απαντήσεις και κλάσεις του σχήματος)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78758,6 +78766,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Το ερώτημα εκτελείται με τα δικαιώματά σας, συνδεδεμένοι σε αυτή τη συνεδρία.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>Το GraphQL API είναι απενεργοποιημένο σε αυτή την πρόσβαση ιστότοπου.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Η βιβλιοθήκη GraphQL δεν είναι εγκατεστημένη.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Χρησιμοποιήστε GET ή POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Το σώμα δεν είναι αντικείμενο JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>Το variables δεν είναι αντικείμενο JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>Το extensions δεν είναι αντικείμενο JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Στείλτε το ερώτημα με POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Το αίτημα δεν περιέχει ερώτημα.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Το ερώτημα είναι μεγαλύτερο από %max byte.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Εσωτερικό σφάλμα διακομιστή</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>Το node χρειάζεται ακριβώς ένα από τα id, remoteId, path και urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>Το content χρειάζεται ακριβώς ένα από τα id και remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Ο δείκτης (cursor) του after δεν προέρχεται από αυτό το API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Δεν υπάρχει ψευδώνυμο εικόνας %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Εδώ γίνονται δεκτά μόνο αποθηκευμένα ερωτήματα: στείλτε το id ενός αποθηκευμένου ερωτήματος.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Ο κατακερματισμός (hash) του αποθηκευμένου ερωτήματος δεν είναι SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Ο κατακερματισμός του αποθηκευμένου ερωτήματος δεν ταιριάζει με το ερώτημα.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Πάρα πολλά αιτήματα: το πολύ %limit σε %window δευτερόλεπτα. Δοκιμάστε ξανά σε %reset δευτερόλεπτα.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Το ερώτημα έχει βάθος %depth επιπέδων· επιτρέπονται το πολύ %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Το ερώτημα έχει πολυπλοκότητα %complexity· επιτρέπεται το πολύ %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Αυτό το αίτημα δεν επιτρέπεται να διαβάσει το σχήμα (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>Το search χρειάζεται ένα κείμενο ή ένα φίλτρο (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>Το %argument δεν είναι ημερομηνία (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>Το tag χρειάζεται ακριβώς ένα από τα id, remoteId και path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>Το layout χρειάζεται ακριβώς ένα από τα id, identifier και urlAlias.</translation>
     </message>
 </context>
 </TS>

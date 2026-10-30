@@ -22138,6 +22138,10 @@ Pokazka: pakety so njewotinstaluja.</translation>
         <source>%n hours ago</source>
         <translation>před %n hodź</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Wotmołwy składowanych naprašowanjow GraphQL API a klasy wobsaha jeje šemy.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ Waše konto aktiwizowali.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Pufrowak zjawneho pakowaka eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL-pufrowak (wotmołwy a klasy šemy)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Naprašowanje so z wašimi prawami wuwjedźe, přizjewjeni w tutym posedźenju.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API je w tutym přistupje k sydłu wupinjene.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Biblioteka GraphQL njeje instalowana.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Wužiwajće GET abo POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Ćěło njeje JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables njeje JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions njeje JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Pósćelće naprašowanje z POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Próstwa žane naprašowanje nima.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Naprašowanje je dlěše hač %max bajtow.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Nutřkowny serwerowy zmylk</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node trjeba runje jedne z id, remoteId, path a urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content trjeba runje jedne z id a remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Kursor wot after njepochadźa z tutoho API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Wobrazowy alias %alias njeeksistuje (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Tu so jenož składowane naprašowanja akceptuja: pósćelće id składowaneho naprašowanja.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash składowaneho naprašowanja njeje SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash składowaneho naprašowanja naprašowanju njewotpowěduje.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Přewjele próstwow: najwjace %limit w %window sekundach. Spytajće hišće raz za %reset sekundow.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Naprašowanje je %depth runinow hłuboke; najwjace %max je dowolene.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Naprašowanje ma kompleksnosć %complexity; najwjace %max je dowolene.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Tuta próstwa njesmě šemu čitać (introspekcija).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search trjeba tekst abo filter (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument njeje datum (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag trjeba runje jedne z id, remoteId a path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout trjeba runje jedne z id, identifier a urlAlias.</translation>
     </message>
 </context>
 </TS>

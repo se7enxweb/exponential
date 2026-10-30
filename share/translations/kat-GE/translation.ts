@@ -22138,6 +22138,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n საათის წინ</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API-ს შენახული მოთხოვნების პასუხები და მისი სქემის კონტენტის კლასები.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore-ის საჯარო პაკერის ქეში</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL ქეში (პასუხები და სქემის კლასები)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>მოთხოვნა სრულდება თქვენი უფლებებით, ამ სესიით შესული.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API გამორთულია ამ საიტზე წვდომაში.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL ბიბლიოთეკა არ არის დაინსტალირებული.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>გამოიყენეთ GET ან POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>მოთხოვნის სხეული არ არის JSON ობიექტი.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables არ არის JSON ობიექტი.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions არ არის JSON ობიექტი.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>გაგზავნეთ მოთხოვნა POST-ით.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>მოთხოვნაში არ არის GraphQL შეკითხვა.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>მოთხოვნა %max ბაიტზე გრძელია.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>სერვერის შიდა შეცდომა</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node-ს სჭირდება ზუსტად ერთი შემდეგთაგან: id, remoteId, path ან urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content-ს სჭირდება ზუსტად ერთი შემდეგთაგან: id ან remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after-ის კურსორი ამ API-ს მიერ გაცემული არ არის.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>გამოსახულების ალიასი %alias არ არსებობს (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>აქ მიიღება მხოლოდ შენახული მოთხოვნები: გაგზავნეთ შენახული მოთხოვნის id.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>შენახული მოთხოვნის ჰეში არ არის SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>შენახული მოთხოვნის ჰეში არ ემთხვევა მოთხოვნას.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>ძალიან ბევრი მოთხოვნა: მაქსიმუმ %limit %window წამში. სცადეთ ხელახლა %reset წამში.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>მოთხოვნის სიღრმე %depth დონეა; დასაშვებია მაქსიმუმ %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>მოთხოვნის სირთულე %complexity-ია; დასაშვებია მაქსიმუმ %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>ამ მოთხოვნას არ შეუძლია სქემის წაკითხვა (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search-ს სჭირდება ტექსტი ან ფილტრი (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument არ არის თარიღი (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag-ს სჭირდება ზუსტად ერთი შემდეგთაგან: id, remoteId ან path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout-ს სჭირდება ზუსტად ერთი შემდეგთაგან: id, identifier ან urlAlias.</translation>
     </message>
 </context>
 </TS>

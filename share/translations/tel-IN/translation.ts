@@ -22136,6 +22136,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%n hours ago</source>
         <translation>%n గంటల క్రితం</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>GraphQL API యొక్క నిల్వ చేసిన క్వెరీల సమాధానాలు, మరియు దాని స్కీమా యొక్క కంటెంట్ క్లాస్‌లు.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54950,6 +54954,10 @@ your account.</source>
         <source>eZJSCore Public Packer cache</source>
         <translation>eZJSCore Public Packer కాష్</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>GraphQL కాష్ (సమాధానాలు మరియు స్కీమా క్లాస్‌లు)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78726,6 +78734,109 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ఈ సెషన్‌తో సైన్ ఇన్ అయి, మీ హక్కులతో క్వెరీ నడుస్తుంది.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>ఈ సైట్‌యాక్సెస్‌లో GraphQL API ఆఫ్‌లో ఉంది.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>GraphQL లైబ్రరీ ఇన్‌స్టాల్ చేయబడలేదు.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>GET లేదా POST ఉపయోగించండి.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>అభ్యర్థన బాడీ JSON ఆబ్జెక్ట్ కాదు.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables JSON ఆబ్జెక్ట్ కాదు.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions JSON ఆబ్జెక్ట్ కాదు.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>క్వెరీని POST తో పంపండి.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>అభ్యర్థనలో క్వెరీ లేదు.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>క్వెరీ %max బైట్‌ల కంటే పొడవుగా ఉంది.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>అంతర్గత సర్వర్ లోపం</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node కి id, remoteId, path, urlAlias లలో సరిగ్గా ఒకటి అవసరం.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content కి id, remoteId లలో సరిగ్గా ఒకటి అవసరం.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>after యొక్క కర్సర్ ఈ API ఇచ్చినది కాదు.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>%alias అనే చిత్ర అలియాస్ లేదు (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>ఇక్కడ నిల్వ చేసిన క్వెరీలు మాత్రమే అంగీకరించబడతాయి: నిల్వ చేసిన క్వెరీ యొక్క id పంపండి.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>నిల్వ చేసిన క్వెరీ హాష్ SHA-256 కాదు.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>నిల్వ చేసిన క్వెరీ హాష్ క్వెరీతో సరిపోలడం లేదు.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>చాలా ఎక్కువ అభ్యర్థనలు: %window సెకన్లలో గరిష్ఠంగా %limit. %reset సెకన్ల తర్వాత మళ్లీ ప్రయత్నించండి.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>క్వెరీ %depth స్థాయిల లోతులో ఉంది; గరిష్ఠంగా %max అనుమతించబడతాయి.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>క్వెరీ సంక్లిష్టత %complexity; గరిష్ఠంగా %max అనుమతించబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>ఈ అభ్యర్థన స్కీమాను చదవకూడదు (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search కి ఒక టెక్స్ట్ లేదా ఫిల్టర్ అవసరం (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument తేదీ కాదు (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag కి id, remoteId, path లలో సరిగ్గా ఒకటి అవసరం.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout కి id, identifier, urlAlias లలో సరిగ్గా ఒకటి అవసరం.</translation>
     </message>
 </context>
 </TS>

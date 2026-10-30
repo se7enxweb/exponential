@@ -22138,6 +22138,10 @@ Kia mōhio: kāore e tangohia te tāutanga o ngā mōkihi.</translation>
         <source>%n hours ago</source>
         <translation>%n haora kua pahure</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Ngā whakautu o ngā uiui penapena o te GraphQL API, me ngā karaehe ihirangi o tōna hanganga.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -54952,6 +54956,10 @@ i tō pūkete.</translation>
         <source>eZJSCore Public Packer cache</source>
         <translation>Keteroki Public Packer eZJSCore</translation>
     </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Keteroki GraphQL (ngā whakautu me ngā karaehe hanganga)</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -78728,6 +78736,109 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Ka whakahaerehia te uiui me ōu mana, kua takiuru mā tēnei wātū.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>Kua whakawetohia te GraphQL API i tēnei urunga pae.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Kāore anō kia tāutahia te whare pukapuka GraphQL.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Whakamahia te GET, te POST rānei.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Ehara te tinana o te tono i te ahanoa JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>Ehara a variables i te ahanoa JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>Ehara a extensions i te ahanoa JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Tukuna te uiui mā te POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Kāore he uiui i roto i te tono.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>He roa ake te uiui i ngā paita %max.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Hapa tūmau ā-roto</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>E hiahia ana a node kia kotahi tonu o id, remoteId, path, urlAlias rānei.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>E hiahia ana a content kia kotahi tonu o id, remoteId rānei.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Ehara te atatohu o after i tētahi i hoatu e tēnei API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Kāore he ingoa kē whakaahua %alias (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Ko ngā uiui penapena anake e whakaaetia ana ki konei: tukuna te id o tētahi uiui kua penapenatia ki te tūmau.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Ehara te hash o te uiui penapena i te SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Kāore te hash o te uiui penapena e ōrite ki te uiui.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>He nui rawa ngā tono: %limit te mōrahi i roto i ngā hēkona %window. Whakamātauria anō ā ngā hēkona %reset.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>E %depth ngā taumata o te hōhonu o te uiui; %max te mōrahi e whakaaetia ana.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Ko te matatini o te uiui ko %complexity; %max te mōrahi e whakaaetia ana.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Kāore e whakaaetia kia pānui tēnei tono i te hanganga (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>E hiahia ana a search i tētahi kuputuhi, tētahi tātari rānei (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>Ehara a %argument i te rā (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>E hiahia ana a tag kia kotahi tonu o id, remoteId, path rānei.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>E hiahia ana a layout kia kotahi tonu o id, identifier, urlAlias rānei.</translation>
     </message>
 </context>
 </TS>

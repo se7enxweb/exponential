@@ -22149,6 +22149,10 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
         <source>%n hours ago</source>
         <translation>před %n h</translation>
     </message>
+    <message>
+        <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
+        <translation>Odpovědi uložených dotazů GraphQL API a třídy obsahu jeho schématu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/datatypecode</name>
@@ -47847,6 +47851,10 @@ a aktivujte svůj účet.</translation>
     <message>
         <source>eZJSCore Public Packer cache</source>
         <translation>Mezipaměť veřejného balíčkovače eZJSCore</translation>
+    </message>
+    <message>
+        <source>GraphQL cache (answers and schema classes)</source>
+        <translation>Mezipaměť GraphQL (odpovědi a třídy schématu)</translation>
     </message>
 </context>
 <context>
@@ -80014,6 +80022,109 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Dotaz běží s vašimi oprávněními, přihlášení v této relaci.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/graphql</name>
+    <message>
+        <source>The GraphQL API is switched off in this siteaccess.</source>
+        <translation>GraphQL API je v tomto přístupu k webu vypnuté.</translation>
+    </message>
+    <message>
+        <source>The GraphQL library is not installed.</source>
+        <translation>Knihovna GraphQL není nainstalována.</translation>
+    </message>
+    <message>
+        <source>Use GET or POST.</source>
+        <translation>Použijte GET nebo POST.</translation>
+    </message>
+    <message>
+        <source>The body is not a JSON object.</source>
+        <translation>Tělo není objekt JSON.</translation>
+    </message>
+    <message>
+        <source>variables is not a JSON object.</source>
+        <translation>variables není objekt JSON.</translation>
+    </message>
+    <message>
+        <source>extensions is not a JSON object.</source>
+        <translation>extensions není objekt JSON.</translation>
+    </message>
+    <message>
+        <source>Send the query with POST.</source>
+        <translation>Odešlete dotaz metodou POST.</translation>
+    </message>
+    <message>
+        <source>The request has no query.</source>
+        <translation>Požadavek neobsahuje žádný dotaz.</translation>
+    </message>
+    <message>
+        <source>The query is longer than %max bytes.</source>
+        <translation>Dotaz je delší než %max bajtů.</translation>
+    </message>
+    <message>
+        <source>Internal server error</source>
+        <translation>Interní chyba serveru</translation>
+    </message>
+    <message>
+        <source>node needs exactly one of id, remoteId, path and urlAlias.</source>
+        <translation>node potřebuje právě jedno z id, remoteId, path a urlAlias.</translation>
+    </message>
+    <message>
+        <source>content needs exactly one of id and remoteId.</source>
+        <translation>content potřebuje právě jedno z id a remoteId.</translation>
+    </message>
+    <message>
+        <source>The cursor of after is not one this API gave.</source>
+        <translation>Kurzor v after nevydalo toto API.</translation>
+    </message>
+    <message>
+        <source>There is no image alias %alias (image.ini [AliasSettings] AliasList[]).</source>
+        <translation>Alias obrázku %alias neexistuje (image.ini [AliasSettings] AliasList[]).</translation>
+    </message>
+    <message>
+        <source>Only persisted queries are accepted here: send the id of a stored query.</source>
+        <translation>Zde se přijímají jen dotazy uložené na serveru: odešlete id uloženého dotazu.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash is not a SHA-256.</source>
+        <translation>Hash uloženého dotazu není SHA-256.</translation>
+    </message>
+    <message>
+        <source>The persisted query hash does not match the query.</source>
+        <translation>Hash uloženého dotazu neodpovídá dotazu.</translation>
+    </message>
+    <message>
+        <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
+        <translation>Příliš mnoho požadavků: nejvýše %limit za %window sekund. Zkuste to znovu za %reset sekund.</translation>
+    </message>
+    <message>
+        <source>The query is %depth levels deep; at most %max are allowed.</source>
+        <translation>Dotaz má hloubku %depth úrovní; povoleno je nejvýše %max.</translation>
+    </message>
+    <message>
+        <source>The query has a complexity of %complexity; at most %max is allowed.</source>
+        <translation>Dotaz má složitost %complexity; povoleno je nejvýše %max.</translation>
+    </message>
+    <message>
+        <source>This request may not read the schema (introspection).</source>
+        <translation>Tento požadavek nesmí číst schéma (introspection).</translation>
+    </message>
+    <message>
+        <source>search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).</source>
+        <translation>search potřebuje text nebo filtr (classes, subtree, sections, publishedAfter, publishedBefore).</translation>
+    </message>
+    <message>
+        <source>%argument is not a date (ISO 8601, 2026-10-30).</source>
+        <translation>%argument není datum (ISO 8601, 2026-10-30).</translation>
+    </message>
+    <message>
+        <source>tag needs exactly one of id, remoteId and path.</source>
+        <translation>tag potřebuje právě jedno z id, remoteId a path.</translation>
+    </message>
+    <message>
+        <source>layout needs exactly one of id, identifier and urlAlias.</source>
+        <translation>layout potřebuje právě jedno z id, identifier a urlAlias.</translation>
     </message>
 </context>
 </TS>
