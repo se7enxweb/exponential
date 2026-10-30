@@ -2135,6 +2135,27 @@ class expDebugBarReport
 
     protected static function translatedScriptStrings()
     {
+        // The same strings are translated for every report; a persistent worker keeps them for the locale while the
+        // settings and the translation cache stay (expKernelServiceScope::memo(); a translation cache clear changes
+        // its expiry time, which is part of the key).
+        if ( class_exists( 'expKernelServiceScope' ) && expKernelServiceScope::memoEnabled() && class_exists( 'eZTSTranslator' ) )
+        {
+            // the locale translations are looked up in, as ezpI18n::translateText() takes it (an interface language
+            // a user chose included)
+            $locale = (string)eZLocale::instance()->localeFullCode();
+            $expiry = eZExpiryHandler::instance();
+            $key = 'debugbar-script-strings|' . $locale . '|' . $expiry->getTimestamp( eZTSTranslator::EXPIRY_KEY, 0 )
+                   . '|' . $expiry->getTimestamp( eZTSTranslator::EXPIRY_KEY . '-' . $locale, 0 );
+            return expKernelServiceScope::memo( $key, function () { return self::translateScriptStrings(); } );
+        }
+        return self::translateScriptStrings();
+    }
+
+    /**
+     * @return array source => translation of the script strings that have one
+     */
+    private static function translateScriptStrings()
+    {
         $out = array();
         foreach ( self::scriptStrings() as $source )
         {
