@@ -180,6 +180,7 @@ type Query {
          language: String): SearchResult!
   tag(id: Int, remoteId: String, path: String, language: String): Tag          # solange eztags aktiv ist
   tags(parentId: Int = 0, keyword: String, limit: Int, offset: Int, language: String): [Tag!]!
+  layout(id: Int, identifier: String, urlAlias: String): Layout                # solange explayouts aktiv ist
   currentUser: User!
   siteaccess: SiteAccess!
   translations: [Language!]!
@@ -193,6 +194,7 @@ type Query {
 | `children` | den Inhalten unterhalb eines Orts (siehe [Listen](#listen-limit-und-offset-oder-cursor)) |
 | `search` | den Inhalten, die die Suchmaschine findet, nach Text und Filtern (siehe [Suche](#suche)) |
 | `tag`, `tags` | Tags von eztags (siehe [Tags](#tags)) |
+| `layout` | einem Layout des Seitenbaukastens (siehe [Layouts](#layouts)) |
 | `currentUser` | `id`, `login`, `name`, `anonymous`, `signedInBy` des Benutzers, als der die Anfrage läuft |
 | `siteaccess` | `name`, `languages`, `rootNodeId`, `schemaHash` |
 | `translations` | den Inhaltssprachen der Installation: `code` und `name` |
@@ -505,6 +507,50 @@ Solange eztags aktiv ist, fügt seine Schema-Erweiterung (`expGraphQLTagsExtensi
 - Die Elterntags, Haupttags und Pfade einer Ebene werden in einem Stapel gelesen.
 - `tag` und `tags` antworten nur einem Benutzer mit der Richtlinie `tags/read` (sonst `null` und `[]`); die Tags des
   Felds eines Inhalts gehören zum Inhalt und brauchen keine eigene Richtlinie.
+
+### Layouts
+
+Solange explayouts aktiv ist, fügt seine Schema-Erweiterung (`expGraphQLLayoutsExtension`, standardmäßig in
+`SchemaExtensionList[]`) die Abfrage `layout` und das Feld `layout` von `Location` hinzu: das Layout des
+Seitenbaukastens, seine Zonen und deren Blöcke, damit ein Frontend eine Seite so aufbauen kann wie die Site.
+
+```graphql
+{
+  node(urlAlias: "fit-healthy") {
+    name
+    location {
+      layout {                           # das Layout, das die Regeln von explayouts dieser Seite geben
+        identifier type
+        zones {
+          identifier linkedLayoutId      # eine mit einem geteilten Layout verknüpfte Zone zeigt dessen Blöcke
+          blocks {
+            id definition viewType itemViewType
+            title: parameter(name: "title")
+            parameters { name value }
+            collectionType
+            items { name url ... on ng_article { image { url(alias: "small") } } }
+            children { definition items { name } }
+          }
+        }
+      }
+    }
+  }
+  home: layout(urlAlias: "") { identifier }   # oder id: 29, oder identifier: "..."
+}
+```
+
+- `Layout`: `id`, `identifier`, `name`, `type` (der Layouttyp aus `explayouts.ini`), `shared`, `modified`, `zones`,
+  `zone(identifier)`.
+- `LayoutZone`: `identifier`, `linkedLayoutId`, `linkedZone`, `blocks`.
+- `LayoutBlock`: `id`, `definition` (die Blockdefinition: `list`, `title`, `html` ...), `viewType`, `itemViewType`,
+  `name`, `position`, `placeholder`, `parameters` (`name`, `value` wie gespeichert), `parameter(name)`,
+  `collectionType` (`manual`, `dynamic` oder null), `items` (die von Hand in seine Sammlung gelegten Inhalte, an ihren
+  Orten, so wie der Benutzer sie lesen darf), `children` (die Blöcke eines Containers).
+- Nur veröffentlichte Layouts der Site werden beantwortet: nie ein Entwurf, nie ein Layout der Administration. Die
+  Abfrage einer dynamischen Sammlung läuft, wenn die Seite gerendert wird; ihr Block liefert seinen `collectionType`
+  und seine Parameter, aber keine Einträge.
+- Die Parameter und die Sammlungen der Blöcke einer Ebene kommen in je einem Stapel, die Einträge einer Sammlung mit
+  einer Abfrage.
 
 ### Sprachen
 
@@ -928,12 +974,12 @@ seine Ansichten und Richtlinien stehen unter [Modulansichten](../../beispiele/mo
 
 ## Was als Nächstes kommt
 
-Die API liest Inhalte: Abfragen, gespeicherte Abfragen mit ihrem Antwort-Cache, Suche und die Datentypen des Kernels und
-seiner Erweiterungen. Spätere Phasen sollen hinzufügen, noch ohne Termine:
+Die API liest Inhalte: Abfragen, gespeicherte Abfragen mit ihrem Antwort-Cache, Suche, Tags, Layouts und die
+Datentypen des Kernels und seiner Erweiterungen. Spätere Phasen sollen hinzufügen, noch ohne Termine:
 
 - **Mutationen**: Inhalte anlegen, bearbeiten, veröffentlichen und entfernen, mit denselben Richtlinien wie in der
   Administration.
-- **Layouts**: die Layouts, Zonen und Blöcke des Seitenbaukastens.
+- **Dynamische Sammlungen**: die Einträge der Abfrage eines Blocks, so wie die Seite sie rendert.
 - **Webhooks**: ein Aufruf an ein anderes System, wenn sich Inhalte ändern.
 - **Subscriptions**: Änderungen, die einem Client gleich beim Geschehen zugestellt werden.
 - **Starter-Kits**: Frontend-Projekte, die die API von der ersten Minute an lesen.

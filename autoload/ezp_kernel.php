@@ -1221,6 +1221,8 @@ return array(
       'expGraphQLError'                                              => 'kernel/classes/graphql/expgraphqlerror.php',
       'expGraphQLFieldMapper'                                        => 'kernel/classes/graphql/expgraphqlfieldmapper.php',
       'expGraphQLImage'                                              => 'kernel/classes/graphql/expgraphqlimage.php',
+      'expGraphQLLayoutsExtension'                                   => 'kernel/classes/graphql/extensions/expgraphqllayoutsextension.php',
+      'expGraphQLLayoutsSource'                                      => 'kernel/classes/graphql/extensions/expgraphqllayoutssource.php',
       'expGraphQLLocation'                                           => 'kernel/classes/graphql/expgraphqllocation.php',
       'expGraphQLMessage'                                            => 'kernel/classes/graphql/expgraphqlmessage.php',
       'expGraphQLNaming'                                             => 'kernel/classes/graphql/expgraphqlnaming.php',

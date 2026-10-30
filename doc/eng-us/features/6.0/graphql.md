@@ -176,6 +176,7 @@ type Query {
          language: String): SearchResult!
   tag(id: Int, remoteId: String, path: String, language: String): Tag          # while eztags is active
   tags(parentId: Int = 0, keyword: String, limit: Int, offset: Int, language: String): [Tag!]!
+  layout(id: Int, identifier: String, urlAlias: String): Layout                # while explayouts is active
   currentUser: User!
   siteaccess: SiteAccess!
   translations: [Language!]!
@@ -189,6 +190,7 @@ type Query {
 | `children` | the content below a location (see [Lists](#lists-limit-and-offset-or-cursors)) |
 | `search` | content the search engine finds, by text and filters (see [Search](#search)) |
 | `tag`, `tags` | tags of eztags (see [Tags](#tags)) |
+| `layout` | a layout of the page builder (see [Layouts](#layouts)) |
 | `currentUser` | `id`, `login`, `name`, `anonymous`, `signedInBy` of the user the request runs as |
 | `siteaccess` | `name`, `languages`, `rootNodeId`, `schemaHash` |
 | `translations` | the content languages of the installation: `code` and `name` |
@@ -497,6 +499,50 @@ the root queries `tag` and `tags`, and every `eztags` field of content is a list
 - The parents, main tags and paths of a level are read in one batch.
 - `tag` and `tags` answer only for a user with the policy `tags/read` (else `null` and `[]`); the tags of a content's
   field are part of the content and need no policy of their own.
+
+### Layouts
+
+While explayouts is active, its schema extension (`expGraphQLLayoutsExtension`, in `SchemaExtensionList[]` by default)
+adds the root query `layout` and the field `layout` of `Location`: the layout of the page builder, its zones and their
+blocks, so a front end can lay out a page as the site does.
+
+```graphql
+{
+  node(urlAlias: "fit-healthy") {
+    name
+    location {
+      layout {                           # the layout the rules of explayouts give this page
+        identifier type
+        zones {
+          identifier linkedLayoutId      # a zone linked to a shared layout shows the shared zone's blocks
+          blocks {
+            id definition viewType itemViewType
+            title: parameter(name: "title")
+            parameters { name value }
+            collectionType
+            items { name url ... on ng_article { image { url(alias: "small") } } }
+            children { definition items { name } }
+          }
+        }
+      }
+    }
+  }
+  home: layout(urlAlias: "") { identifier }   # or id: 29, or identifier: "..."
+}
+```
+
+- `Layout`: `id`, `identifier`, `name`, `type` (the layout type of `explayouts.ini`), `shared`, `modified`, `zones`,
+  `zone(identifier)`.
+- `LayoutZone`: `identifier`, `linkedLayoutId`, `linkedZone`, `blocks`.
+- `LayoutBlock`: `id`, `definition` (the block definition: `list`, `title`, `html` ...), `viewType`, `itemViewType`,
+  `name`, `position`, `placeholder`, `parameters` (`name`, `value` as stored), `parameter(name)`, `collectionType`
+  (`manual`, `dynamic` or null), `items` (the content placed by hand in its collection, at their locations, as the
+  user may read it), `children` (the blocks of a container).
+- Only published layouts of the site are answered: never a draft, never a layout of the administration. A dynamic
+  collection's query runs when the page renders; its block gives its `collectionType` and its parameters, and no
+  items.
+- The parameters and the collections of the blocks of a level come in one batch each, the items of a collection in
+  one query.
 
 ### Languages
 
@@ -904,11 +950,11 @@ views and policies are listed in [module views](../../examples/module-views/grap
 
 ## What comes next
 
-The API reads content: queries, persisted queries with their response cache, search, and the datatypes of the kernel
-and its extensions. Later phases are planned to add, without dates yet:
+The API reads content: queries, persisted queries with their response cache, search, tags, layouts, and the datatypes
+of the kernel and its extensions. Later phases are planned to add, without dates yet:
 
 - **Mutations**: creating, editing, publishing and removing content, with the same policies as the administration.
-- **Layouts**: the layouts, zones and blocks of the page builder.
+- **Dynamic collections**: the items of a block's query, as the page renders them.
 - **Webhooks**: a call to another system when content changes.
 - **Subscriptions**: changes pushed to a client as they happen.
 - **Starter kits**: front-end projects that read the API from the first minute.
