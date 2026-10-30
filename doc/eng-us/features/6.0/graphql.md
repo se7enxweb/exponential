@@ -171,6 +171,9 @@ type Query {
   content(id: Int, remoteId: String, language: String): Content
   children(parentId: Int!, classes: [String!], sortField: ContentSortField, sortOrder: SortOrder,
            depth: Int = 1, limit: Int, offset: Int, first: Int, after: String, language: String): ContentConnection!
+  search(text: String, classes: [String!], subtree: [Int!], sections: [Int!], publishedAfter: String,
+         publishedBefore: String, facets: [String!], limit: Int, offset: Int, first: Int, after: String,
+         language: String): SearchResult!
   currentUser: User!
   siteaccess: SiteAccess!
   translations: [Language!]!
@@ -182,6 +185,7 @@ type Query {
 | `node` | the content at a location, by exactly one of: the node id, the remote id of the location, the path string (`/1/2/58/`) or the URL alias (`about/company`; `""` or `/` is the root node of the siteaccess) |
 | `content` | a content object at its main location, by exactly one of its id or its remote id |
 | `children` | the content below a location (see [Lists](#lists-limit-and-offset-or-cursors)) |
+| `search` | content the search engine finds, by text and filters (see [Search](#search)) |
 | `currentUser` | `id`, `login`, `name`, `anonymous`, `signedInBy` of the user the request runs as |
 | `siteaccess` | `name`, `languages`, `rootNodeId`, `schemaHash` |
 | `translations` | the content languages of the installation: `code` and `name` |
@@ -430,6 +434,37 @@ teaser_intro { excerpt(length: 80) }   # the start of the plain text, cut at a w
 ```json
 "teaser_intro": { "excerpt": "This Cookie Policy explains what this website stores in your browser, why, and…" }
 ```
+
+### Search
+
+`search` asks the search engine of the installation (`site.ini [SearchSettings] SearchEngine`): the kernel's own, or
+Solr through ezfind. The engine applies the user's rights; only classes of the schema are searched and answered.
+
+```graphql
+{
+  search(text: "pasta", classes: ["ng_article", "ng_recipe"], subtree: [2], publishedAfter: "2024-01-01", first: 10) {
+    totalCount
+    engine
+    nodes { name url ... on ng_article { intro { excerpt(length: 120) } } }
+    pageInfo { hasNextPage endCursor }
+  }
+}
+```
+
+| Argument | Filters by |
+|---|---|
+| `text` | the words to look for, in the engine's syntax |
+| `classes` | class identifiers |
+| `subtree` | node ids: only content below them |
+| `sections` | section ids |
+| `publishedAfter`, `publishedBefore` | the publication date, ISO 8601 (`2026-10-30`, `2026-10-30T12:00:00+01:00`) |
+| `facets` | the facets to count (`class`, `section`, `author`, `keywords`, `year` ...); only Solr has facets, the kernel's engine answers an empty list |
+
+A search needs a text or a filter (`BAD_USER_INPUT` otherwise); the kernel's engine finds only by words, so it needs a
+text, while Solr also finds by filters alone. `limit`/`offset` and `first`/`after` work as for every list,
+`totalCount` is what the engine counts, `engine` names the engine that answered, and `facets` gives each facet asked
+for with its values: `{ field values { value name count } }`. The search runs once for all of its fields, and the URL
+aliases of its page are made together, as for every list.
 
 ### Languages
 
@@ -837,19 +872,17 @@ views and policies are listed in [module views](../../examples/module-views/grap
 
 ## What comes next
 
-Phase 1 reads content. Later phases are planned to add, without dates yet:
+The API reads content: queries, persisted queries with their response cache, search, and the datatypes of the kernel
+and its extensions. Later phases are planned to add, without dates yet:
 
-- **Caching and persisted queries**: answers kept per user group and invalidated by publishing, and queries stored on
-  the server and called by id.
 - **Mutations**: creating, editing, publishing and removing content, with the same policies as the administration.
-- **Search**: full-text and filtered search through the search engine of the installation.
 - **Tags**: `eztags` as a type of its own, and lists by tag.
 - **Layouts**: the layouts, zones and blocks of the page builder.
 - **Webhooks**: a call to another system when content changes.
 - **Subscriptions**: changes pushed to a client as they happen.
 - **Starter kits**: front-end projects that read the API from the first minute.
 
-None of this is part of 6.0.15 yet. The names released in phase 1 stay as they are; the later phases only add.
+None of this is part of 6.0.15 yet. The names released stay as they are; the later phases only add.
 
 ## Related pages
 

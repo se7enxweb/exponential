@@ -453,6 +453,52 @@ class expGraphQLTypes
     }
 
     /** @return ObjectType */
+    public function searchResult()
+    {
+        $types = $this;
+        return $this->once( 'SearchResult', function () use ( $types ) {
+            return new ObjectType( array(
+                'name' => 'SearchResult',
+                'description' => 'What the search engine found: a page of it, how much in all, the engine and its facets.',
+                'fields' => function () use ( $types ) {
+                    return array(
+                        'totalCount' => array( 'type' => Type::nonNull( Type::int() ), 'description' => 'How many the engine found that the user may read.',
+                                               'resolve' => function ( expGraphQLSearchConnection $c ) { return $c->totalCount(); } ),
+                        'nodes' => array( 'type' => Type::nonNull( Type::listOf( Type::nonNull( $types->content() ) ) ), 'description' => 'The items of the page, best match first.',
+                                          'resolve' => function ( expGraphQLSearchConnection $c ) { return $c->items(); } ),
+                        'edges' => array( 'type' => Type::nonNull( Type::listOf( Type::nonNull( $types->edge() ) ) ), 'description' => 'The items of the page with their cursors.',
+                                          'resolve' => function ( expGraphQLSearchConnection $c ) { return $c->edges(); } ),
+                        'pageInfo' => array( 'type' => Type::nonNull( $types->pageInfo() ), 'description' => 'Where the page is.',
+                                             'resolve' => function ( expGraphQLSearchConnection $c ) { return $c->pageInfo(); } ),
+                        'engine' => array( 'type' => Type::nonNull( Type::string() ), 'description' => 'The search engine that answered (eZSearchEngine, eZSolr).',
+                                           'resolve' => function ( expGraphQLSearchConnection $c ) { return $c->engine(); } ),
+                        'facets' => array( 'type' => Type::nonNull( Type::listOf( Type::nonNull( $types->searchFacet() ) ) ),
+                                           'description' => 'The facets asked for, from an engine that has them (Solr through ezfind); empty otherwise.',
+                                           'resolve' => function ( expGraphQLSearchConnection $c ) { return $c->facets(); } ),
+                    );
+                },
+            ) );
+        } );
+    }
+
+    /** @return ObjectType */
+    public function searchFacet()
+    {
+        $types = $this;
+        return $this->arrayType( 'SearchFacet', 'A facet of a search: a field and how many items have each of its values.', array(
+            'field' => array( Type::nonNull( Type::string() ), 'field' ),
+            'values' => array( Type::nonNull( Type::listOf( Type::nonNull( $types->searchFacetValue() ) ) ), 'values' ) ) );
+    }
+
+    /** @return ObjectType */
+    public function searchFacetValue()
+    {
+        return $this->arrayType( 'SearchFacetValue', 'A value of a facet and how many items have it.', array(
+            'value' => array( Type::nonNull( Type::string() ), 'value' ), 'name' => array( Type::string(), 'name' ),
+            'count' => array( Type::nonNull( Type::int() ), 'count' ) ) );
+    }
+
+    /** @return ObjectType */
     public function geoLocation()
     {
         return $this->arrayType( 'GeoLocation', 'A map location field (ezgmaplocation).', array(

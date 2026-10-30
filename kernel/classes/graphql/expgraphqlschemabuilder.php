@@ -205,6 +205,33 @@ class expGraphQLSchemaBuilder
                             return new expGraphQLConnection( $ctx->repository, $ctx->repository->locationById( $args['parentId'], $language ), $args );
                         },
                     ) + $types->childrenField( function ( $root ) { return null; }, 'The content below a location (the user must be allowed to read the location).' ),
+                    'search' => array(
+                        'type' => Type::nonNull( $types->searchResult() ),
+                        'description' => 'Content found by the search engine of the installation (the kernel\'s, or Solr through ezfind), as the user may read it: by text and filters.',
+                        'args' => array(
+                            'text' => array( 'type' => Type::string(), 'description' => 'The words to look for (the engine\'s syntax).' ),
+                            'classes' => array( 'type' => Type::listOf( Type::nonNull( Type::string() ) ), 'description' => 'Only content of these class identifiers.' ),
+                            'subtree' => array( 'type' => Type::listOf( Type::nonNull( Type::int() ) ), 'description' => 'Only content below these node ids.' ),
+                            'sections' => array( 'type' => Type::listOf( Type::nonNull( Type::int() ) ), 'description' => 'Only content of these section ids.' ),
+                            'publishedAfter' => array( 'type' => Type::string(), 'description' => 'Only content published at or after this date (ISO 8601).' ),
+                            'publishedBefore' => array( 'type' => Type::string(), 'description' => 'Only content published at or before this date (ISO 8601).' ),
+                            'facets' => array( 'type' => Type::listOf( Type::nonNull( Type::string() ) ),
+                                               'description' => 'Facets to count (class, section, author, keywords, year ...), with an engine that has them.' ),
+                            'limit' => array( 'type' => Type::int(), 'description' => 'At most this many (graphql.ini DefaultListLimit, at most MaxListLimit).' ),
+                            'offset' => array( 'type' => Type::int(), 'description' => 'Skip this many.' ),
+                            'first' => array( 'type' => Type::int(), 'description' => 'Cursor pagination: at most this many (instead of limit).' ),
+                            'after' => array( 'type' => Type::string(), 'description' => 'Cursor pagination: the items after this cursor (instead of offset).' ),
+                        ) + $byArgs,
+                        'complexity' => function ( $childrenComplexity, $args ) { return 10 + $childrenComplexity * expGraphQLConnection::complexityCount( $args ); },
+                        'resolve' => function ( $root, $args, expGraphQLContext $ctx ) {
+                            $text = isset( $args['text'] ) ? trim( (string)$args['text'] ) : '';
+                            if ( $text === '' && empty( $args['classes'] ) && empty( $args['subtree'] ) && empty( $args['sections'] )
+                                 && empty( $args['publishedAfter'] ) && empty( $args['publishedBefore'] ) )
+                                throw new expGraphQLError( expGraphQLMessage::tr( 'search needs a text or a filter (classes, subtree, sections, publishedAfter, publishedBefore).' ),
+                                                           expGraphQLError::BAD_USER_INPUT );
+                            return new expGraphQLSearchConnection( $ctx->repository, $args );
+                        },
+                    ),
                     'currentUser' => array(
                         'type' => Type::nonNull( $types->user() ),
                         'description' => 'The user the request runs as, and how it was signed in (anonymous, token, apikey, session, console).',

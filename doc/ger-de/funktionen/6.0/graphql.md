@@ -175,6 +175,9 @@ type Query {
   content(id: Int, remoteId: String, language: String): Content
   children(parentId: Int!, classes: [String!], sortField: ContentSortField, sortOrder: SortOrder,
            depth: Int = 1, limit: Int, offset: Int, first: Int, after: String, language: String): ContentConnection!
+  search(text: String, classes: [String!], subtree: [Int!], sections: [Int!], publishedAfter: String,
+         publishedBefore: String, facets: [String!], limit: Int, offset: Int, first: Int, after: String,
+         language: String): SearchResult!
   currentUser: User!
   siteaccess: SiteAccess!
   translations: [Language!]!
@@ -186,6 +189,7 @@ type Query {
 | `node` | dem Inhalt an einem Ort (Knoten), nach genau einem von: der Knoten-ID, der Remote-ID des Orts, dem Pfad (`/1/2/58/`) oder dem URL-Alias (`about/company`; `""` oder `/` ist der Wurzelknoten des Siteaccess) |
 | `content` | einem Inhaltsobjekt an seinem Hauptort, nach genau einem von: seiner ID oder seiner Remote-ID |
 | `children` | den Inhalten unterhalb eines Orts (siehe [Listen](#listen-limit-und-offset-oder-cursor)) |
+| `search` | den Inhalten, die die Suchmaschine findet, nach Text und Filtern (siehe [Suche](#suche)) |
 | `currentUser` | `id`, `login`, `name`, `anonymous`, `signedInBy` des Benutzers, als der die Anfrage läuft |
 | `siteaccess` | `name`, `languages`, `rootNodeId`, `schemaHash` |
 | `translations` | den Inhaltssprachen der Installation: `code` und `name` |
@@ -436,6 +440,38 @@ teaser_intro { excerpt(length: 80) }   # der Anfang des reinen Texts, an einem W
 ```json
 "teaser_intro": { "excerpt": "This Cookie Policy explains what this website stores in your browser, why, and…" }
 ```
+
+### Suche
+
+`search` fragt die Suchmaschine der Installation (`site.ini [SearchSettings] SearchEngine`): die des Kernels oder Solr
+über ezfind. Die Suchmaschine wendet die Rechte des Benutzers an; nur Klassen des Schemas werden durchsucht und
+beantwortet.
+
+```graphql
+{
+  search(text: "pasta", classes: ["ng_article", "ng_recipe"], subtree: [2], publishedAfter: "2024-01-01", first: 10) {
+    totalCount
+    engine
+    nodes { name url ... on ng_article { intro { excerpt(length: 120) } } }
+    pageInfo { hasNextPage endCursor }
+  }
+}
+```
+
+| Argument | Filtert nach |
+|---|---|
+| `text` | den gesuchten Wörtern, in der Syntax der Suchmaschine |
+| `classes` | Klassenbezeichnern |
+| `subtree` | Knoten-IDs: nur Inhalte darunter |
+| `sections` | Sektions-IDs |
+| `publishedAfter`, `publishedBefore` | dem Veröffentlichungsdatum, ISO 8601 (`2026-10-30`, `2026-10-30T12:00:00+01:00`) |
+| `facets` | den zu zählenden Facetten (`class`, `section`, `author`, `keywords`, `year` ...); nur Solr hat Facetten, die Suchmaschine des Kernels antwortet mit einer leeren Liste |
+
+Eine Suche braucht einen Text oder einen Filter (sonst `BAD_USER_INPUT`); die Suchmaschine des Kernels findet nur nach
+Wörtern, braucht also einen Text, Solr findet auch nach Filtern allein. `limit`/`offset` und `first`/`after` wirken wie
+bei jeder Liste, `totalCount` ist, was die Suchmaschine zählt, `engine` nennt die Suchmaschine, die geantwortet hat,
+und `facets` liefert jede verlangte Facette mit ihren Werten: `{ field values { value name count } }`. Die Suche läuft
+einmal für alle ihre Felder, und die URL-Aliasse ihrer Seite entstehen zusammen, wie bei jeder Liste.
 
 ### Sprachen
 
@@ -859,21 +895,19 @@ seine Ansichten und Richtlinien stehen unter [Modulansichten](../../beispiele/mo
 
 ## Was als Nächstes kommt
 
-Phase 1 liest Inhalte. Spätere Phasen sollen hinzufügen, noch ohne Termine:
+Die API liest Inhalte: Abfragen, gespeicherte Abfragen mit ihrem Antwort-Cache, Suche und die Datentypen des Kernels und
+seiner Erweiterungen. Spätere Phasen sollen hinzufügen, noch ohne Termine:
 
-- **Caching und gespeicherte Abfragen**: Antworten je Benutzergruppe behalten und beim Veröffentlichen ungültig gemacht,
-  und Abfragen, die auf dem Server liegen und über eine ID aufgerufen werden.
 - **Mutationen**: Inhalte anlegen, bearbeiten, veröffentlichen und entfernen, mit denselben Richtlinien wie in der
   Administration.
-- **Suche**: Volltext- und gefilterte Suche über die Suchmaschine der Installation.
 - **Tags**: `eztags` als eigener Typ, und Listen nach Tag.
 - **Layouts**: die Layouts, Zonen und Blöcke des Seitenbaukastens.
 - **Webhooks**: ein Aufruf an ein anderes System, wenn sich Inhalte ändern.
 - **Subscriptions**: Änderungen, die einem Client gleich beim Geschehen zugestellt werden.
 - **Starter-Kits**: Frontend-Projekte, die die API von der ersten Minute an lesen.
 
-Nichts davon ist schon Teil von 6.0.15. Die in Phase 1 veröffentlichten Namen bleiben, wie sie sind; die späteren
-Phasen fügen nur hinzu.
+Nichts davon ist schon Teil von 6.0.15. Die veröffentlichten Namen bleiben, wie sie sind; die späteren Phasen fügen nur
+hinzu.
 
 ## Verwandte Seiten
 

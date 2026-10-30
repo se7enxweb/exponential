@@ -361,6 +361,137 @@ class expGraphQLRepository
     }
 
     /**
+     * Searches with the search engine of the installation (site.ini [SearchSettings] SearchEngine: the kernel's own,
+     * or Solr through ezfind), which applies the user's rights; only classes of the schema are asked for and answered.
+     *
+     * @param array $params text, classes (identifiers), subtree (node ids), sections (ids), publishedAfter (ISO 8601),
+     *                      facets (fields: class, section, author ...; engines with facets only), language, limit, offset
+     * @return array items (expGraphQLContent[]), count, engine (its class), facets (field, values: value, name, count)
+     */
+    public function search( array $params )
+    {
+        $empty = array( 'items' => array(), 'count' => 0, 'engine' => self::searchEngineName(), 'facets' => array() );
+        $classIds = $this->searchClassIds( isset( $params['classes'] ) ? (array)$params['classes'] : array() );
+        if ( $classIds === array() )
+            return $empty;
+        $search = array( 'SearchOffset' => isset( $params['offset'] ) ? max( 0, (int)$params['offset'] ) : 0,
+                         'SearchLimit' => isset( $params['limit'] ) ? max( 0, (int)$params['limit'] ) : 10,
+                         'SearchContentClassID' => $classIds );
+        if ( !empty( $params['subtree'] ) )
+            $search['SearchSubTreeArray'] = array_values( array_filter( array_map( 'intval', (array)$params['subtree'] ) ) );
+        if ( !empty( $params['sections'] ) )
+            $search['SearchSectionID'] = array_values( array_filter( array_map( 'intval', (array)$params['sections'] ) ) );
+        $after = self::searchTime( isset( $params['publishedAfter'] ) ? $params['publishedAfter'] : null, 'publishedAfter' );
+        $before = self::searchTime( isset( $params['publishedBefore'] ) ? $params['publishedBefore'] : null, 'publishedBefore' );
+        if ( $after !== null || $before !== null )
+        {
+            // the kernel's engine: SearchTimestamp, a time or array( from, to ); ezfind: a filter on the published date
+            $search['SearchDate'] = 5;
+            $search['SearchTimestamp'] = $before !== null ? array( $after !== null ? $after : 1, $before ) : $after;
+            $search['Filter'] = array( 'meta_published_dt:[' . ( $after !== null ? gmdate( 'Y-m-d\TH:i:s\Z', $after ) : '*' ) . ' TO '
+                                       . ( $before !== null ? gmdate( 'Y-m-d\TH:i:s\Z', $before ) : '*' ) . ']' );
+        }
+        if ( !empty( $params['facets'] ) )
+        {
+            $search['Facet'] = array();
+            foreach ( (array)$params['facets'] as $field )
+                $search['Facet'][] = array( 'field' => (string)$field, 'limit' => 20 );
+        }
+        if ( !empty( $params['language'] ) )
+            $search['SearchLanguages'] = array( (string)$params['language'] );
+        $result = eZSearch::search( isset( $params['text'] ) ? (string)$params['text'] : '', $search );
+        if ( !is_array( $result ) )
+            return $empty;
+        $items = array();
+        foreach ( isset( $result['SearchResult'] ) ? (array)$result['SearchResult'] : array() as $node )
+        {
+            if ( !$node instanceof eZContentObjectTreeNode )
+                continue;
+            $object = $node->object();
+            if ( $object instanceof eZContentObject && $this->isExposed( (string)$object->attribute( 'class_identifier' ) ) )
+                $items[] = new expGraphQLContent( $object, $node, isset( $params['language'] ) ? $params['language'] : false );
+        }
+        return array( 'items' => $items, 'count' => isset( $result['SearchCount'] ) ? (int)$result['SearchCount'] : count( $items ),
+                      'engine' => $empty['engine'],
+                      'facets' => self::searchFacets( isset( $result['SearchExtras'] ) ? $result['SearchExtras'] : null, (array)( isset( $params['facets'] ) ? $params['facets'] : array() ) ) );
+    }
+
+    /**
+     * @param string|null $value an ISO 8601 date or time
+     * @param string $argument the argument's name, for the error
+     * @return int|null a Unix time
+     */
+    protected static function searchTime( $value, $argument )
+    {
+        if ( $value === null || $value === '' )
+            return null;
+        $time = strtotime( (string)$value );
+        if ( $time === false )
+            throw new expGraphQLError( expGraphQLMessage::tr( '%argument is not a date (ISO 8601, 2026-10-30).', array( '%argument' => $argument ) ),
+                                       expGraphQLError::BAD_USER_INPUT );
+        return $time;
+    }
+
+    /**
+     * @param string[] $identifiers the classes a search asks for (none: every class of the schema)
+     * @return int[]|int the class ids to search, -1 for every class; an empty array: none of them is in the schema
+     */
+    protected function searchClassIds( array $identifiers )
+    {
+        $identifiers = array_values( array_filter( $identifiers, 'strlen' ) );
+        if ( !$identifiers )
+        {
+            // only when the schema leaves classes out: every class it has
+            if ( empty( $this->classSettings['ClassList'] ) && empty( $this->classSettings['ExcludedClassList'] ) )
+                return -1;
+            $identifiers = $this->catalogue->identifiers();
+        }
+        $ids = array();
+        foreach ( $identifiers as $identifier )
+        {
+            $class = $this->catalogue->classByIdentifier( $identifier );
+            if ( $class !== null && !empty( $class['id'] ) )
+                $ids[] = (int)$class['id'];
+        }
+        return $ids;
+    }
+
+    /**
+     * @return string the class of the search engine of the siteaccess
+     */
+    public static function searchEngineName()
+    {
+        $engine = eZSearch::getEngine();
+        return is_object( $engine ) ? get_class( $engine ) : '';
+    }
+
+    /**
+     * The facets of an engine that has them (ezfind's SearchExtras: facet_fields with nameList and countList).
+     *
+     * @param mixed $extras
+     * @param string[] $fields the facets asked for, in their order
+     * @return array[] field, values (value, name, count)
+     */
+    public static function searchFacets( $extras, array $fields )
+    {
+        if ( !is_object( $extras ) || !method_exists( $extras, 'attribute' ) )
+            return array();
+        $facets = array();
+        foreach ( array_values( (array)$extras->attribute( 'facet_fields' ) ) as $index => $facet )
+        {
+            if ( !is_array( $facet ) )
+                continue;
+            $values = array();
+            $names = isset( $facet['nameList'] ) ? (array)$facet['nameList'] : array();
+            foreach ( isset( $facet['countList'] ) ? (array)$facet['countList'] : array() as $value => $count )
+                $values[] = array( 'value' => (string)$value, 'name' => isset( $names[$value] ) ? (string)$names[$value] : (string)$value, 'count' => (int)$count );
+            $facets[] = array( 'field' => isset( $fields[$index] ) ? (string)$fields[$index] : (isset( $facet['field'] ) ? (string)$facet['field'] : ''),
+                               'values' => $values );
+        }
+        return $facets;
+    }
+
+    /**
      * Makes the URL aliases of a page of content in two queries, so that url and urlAlias of every item are read
      * from memory (eZURLAliasML::primePathsByActionLists()).
      *
