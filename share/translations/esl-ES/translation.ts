@@ -80232,7 +80232,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Use GET or POST.</source>
-        <translation>Utilice GET o POST.</translation>
+        <translation>Usa GET o POST.</translation>
     </message>
     <message>
         <source>The body is not a JSON object.</source>
@@ -80248,7 +80248,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Send the query with POST.</source>
-        <translation>Envíe la consulta con POST.</translation>
+        <translation>Envía la consulta con POST.</translation>
     </message>
     <message>
         <source>The request has no query.</source>
@@ -80280,7 +80280,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Only persisted queries are accepted here: send the id of a stored query.</source>
-        <translation>Aquí solo se aceptan consultas persistentes: envíe el id de una consulta almacenada.</translation>
+        <translation>Aquí solo se aceptan consultas persistentes: envía el id de una consulta almacenada.</translation>
     </message>
     <message>
         <source>The persisted query hash is not a SHA-256.</source>
@@ -80292,7 +80292,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Too many requests: at most %limit in %window seconds. Try again in %reset seconds.</source>
-        <translation>Demasiadas peticiones: como máximo %limit en %window segundos. Inténtelo de nuevo dentro de %reset segundos.</translation>
+        <translation>Demasiadas peticiones: como máximo %limit en %window segundos. Inténtalo de nuevo dentro de %reset segundos.</translation>
     </message>
     <message>
         <source>The query is %depth levels deep; at most %max are allowed.</source>
