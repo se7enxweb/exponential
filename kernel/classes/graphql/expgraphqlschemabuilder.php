@@ -155,7 +155,7 @@ class expGraphQLSchemaBuilder
                             $language = isset( $args['language'] ) ? (string)$args['language'] : false;
                             $given = array_intersect_key( $args, array( 'id' => 1, 'remoteId' => 1, 'path' => 1, 'urlAlias' => 1 ) );
                             if ( count( $given ) !== 1 )
-                                throw new expGraphQLError( 'node needs exactly one of id, remoteId, path and urlAlias.', expGraphQLError::BAD_USER_INPUT );
+                                throw new expGraphQLError( expGraphQLMessage::tr( 'node needs exactly one of id, remoteId, path and urlAlias.' ), expGraphQLError::BAD_USER_INPUT );
                             if ( isset( $args['id'] ) )
                                 return $ctx->repository->contentByNodeId( $args['id'], $language );
                             if ( isset( $args['remoteId'] ) )
@@ -173,7 +173,7 @@ class expGraphQLSchemaBuilder
                             $language = isset( $args['language'] ) ? (string)$args['language'] : false;
                             $given = array_intersect_key( $args, array( 'id' => 1, 'remoteId' => 1 ) );
                             if ( count( $given ) !== 1 )
-                                throw new expGraphQLError( 'content needs exactly one of id and remoteId.', expGraphQLError::BAD_USER_INPUT );
+                                throw new expGraphQLError( expGraphQLMessage::tr( 'content needs exactly one of id and remoteId.' ), expGraphQLError::BAD_USER_INPUT );
                             return isset( $args['id'] ) ? $ctx->repository->contentById( $args['id'], $language )
                                                         : $ctx->repository->contentByRemoteId( $args['remoteId'], $language );
                         },

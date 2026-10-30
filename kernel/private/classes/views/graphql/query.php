@@ -21,13 +21,15 @@ class Query extends \Exponential\Runnable\ModuleView
 {
     public function run( array $scope )
     {
+        // the messages in the language the browser asks for (every request anew: a persistent worker keeps statics)
+        \expGraphQLMessage::useLanguage( (string)\eZSys::serverVariable( 'HTTP_ACCEPT_LANGUAGE', true ) );
         if ( !\expGraphQL::isEnabled() )
-            self::send( 404, \expGraphQLServer::refusal( 'The GraphQL API is switched off in this siteaccess.', \expGraphQLError::DISABLED ) );
+            self::send( 404, \expGraphQLServer::refusal( \expGraphQLMessage::tr( 'The GraphQL API is switched off in this siteaccess.' ), \expGraphQLError::DISABLED ) );
         if ( !\expGraphQL::loadLibrary() )
-            self::send( 503, \expGraphQLServer::refusal( 'The GraphQL library is not installed.', \expGraphQLError::INTERNAL ) );
+            self::send( 503, \expGraphQLServer::refusal( \expGraphQLMessage::tr( 'The GraphQL library is not installed.' ), \expGraphQLError::INTERNAL ) );
         $method = strtoupper( (string)\eZSys::serverVariable( 'REQUEST_METHOD', true ) );
         if ( $method !== 'POST' )
-            self::send( 400, \expGraphQLServer::refusal( 'Send the query with POST.', \expGraphQLError::BAD_USER_INPUT ) );
+            self::send( 400, \expGraphQLServer::refusal( \expGraphQLMessage::tr( 'Send the query with POST.' ), \expGraphQLError::BAD_USER_INPUT ) );
 
         $request = \expGraphQLServer::parseHttpRequest( 'POST', (string)\eZSys::serverVariable( 'CONTENT_TYPE', true ),
                                                         (string)file_get_contents( 'php://input' ), array(), $_POST );

@@ -129,8 +129,9 @@ class expGraphQLRateLimiter
      */
     public static function refusal( array $hit )
     {
-        return expGraphQLServer::refusal( 'Too many requests: at most ' . (int)$hit['limit'] . ' in ' . (int)expGraphQL::intSetting( 'RateLimitWindow', 60 )
-                                          . ' seconds. Try again in ' . (int)$hit['reset'] . ' seconds.', expGraphQLError::RATE_LIMITED );
+        return expGraphQLServer::refusal( expGraphQLMessage::tr( 'Too many requests: at most %limit in %window seconds. Try again in %reset seconds.',
+                                                                 array( '%limit' => (int)$hit['limit'], '%window' => (int)expGraphQL::intSetting( 'RateLimitWindow', 60 ),
+                                                                        '%reset' => (int)$hit['reset'] ) ), expGraphQLError::RATE_LIMITED );
     }
 
     /**

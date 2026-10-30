@@ -70,7 +70,7 @@ class expGraphQLConnection
         {
             $position = self::decodeCursor( $args['after'] );
             if ( $position === null )
-                throw new expGraphQLError( 'The cursor of after is not one this API gave.', expGraphQLError::BAD_USER_INPUT );
+                throw new expGraphQLError( expGraphQLMessage::tr( 'The cursor of after is not one this API gave.' ), expGraphQLError::BAD_USER_INPUT );
             $offset = $position + 1;
         }
         else

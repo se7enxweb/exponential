@@ -39,7 +39,8 @@ class expGraphQLImage
         if ( !array_key_exists( $alias, $this->aliases ) )
         {
             if ( !eZImageManager::factory()->hasAlias( $alias ) )
-                throw new expGraphQLError( "There is no image alias $alias (image.ini [AliasSettings] AliasList[]).", expGraphQLError::BAD_USER_INPUT );
+                throw new expGraphQLError( expGraphQLMessage::tr( 'There is no image alias %alias (image.ini [AliasSettings] AliasList[]).', array( '%alias' => $alias ) ),
+                                           expGraphQLError::BAD_USER_INPUT );
             $handler = $this->attribute->content();
             $data = is_object( $handler ) ? $handler->imageAlias( $alias ) : null;
             $this->aliases[$alias] = is_array( $data ) && !empty( $data['url'] )

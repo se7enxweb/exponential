@@ -525,7 +525,7 @@ the server stores it when the request may store queries (`AutomaticPersistedQuer
 - **Limits, checked before a query runs.** `MaxDepth` (12): the deepest nesting of fields. `MaxComplexity` (1000):
   every field counts 1, a list field counts its `limit` or `first` (or `DefaultListLimit`) times the fields below it,
   so a list of 100 items with a list of 100 below it is refused at once:
-  `Max query complexity should be 1000 but got 20202.` (`COMPLEXITY_LIMIT`). `MaxListLimit` (100) caps every page, and a
+  `The query has a complexity of 20202; at most 1000 is allowed.` (`COMPLEXITY_LIMIT`). `MaxListLimit` (100) caps every page, and a
   query is at most `MaxQueryLength` bytes (100 000).
 - **Persisted queries only**, for anonymous requests or for all (`PersistedQueriesOnly`, [above](#persisted-queries)):
   a production front end that only ever sends its own stored queries leaves nothing else to try.
@@ -649,6 +649,20 @@ An error follows the GraphQL specification, with `extensions.code` and `extensio
 | `FORBIDDEN`, `NOT_FOUND` | reserved for later phases; not sent yet (content that cannot be read is `null`) |
 
 The codes are a stable contract: a code, once released, keeps its name and meaning, and new codes are only added.
+
+**The language of the messages.** A message is written in the language the request asks for with `Accept-Language`
+(`de-DE,de;q=0.9`: the first language, by its `q`, that has an administration catalogue, by its full code or its
+language), else in the language of the siteaccess (`site.ini [RegionalSettings] Locale`). The texts are in the
+context `kernel/graphql` of `share/translations/<language>/translation.ts`, in every catalogue of the administration.
+`extensions.code` never changes with the language: decide by the code, show the message. The messages of the GraphQL
+specification's validation (an unknown field, a syntax error) come from the library and stay in English, since they
+quote the query; `PersistedQueryNotFound` and `PersistedQueryNotSupported` stay as they are, since Apollo Client reads
+them.
+
+```bash
+curl -H 'Accept-Language: de' 'https://example.com/api/graphql?query=%7Bnode%7Bid%7D%7D'
+# {"errors":[{"message":"node braucht genau eines von id, remoteId, path und urlAlias.", ... "code":"BAD_USER_INPUT" ...
+```
 
 ## The playground and the session end point
 

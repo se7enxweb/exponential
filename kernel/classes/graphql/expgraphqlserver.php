@@ -72,14 +72,14 @@ class expGraphQLServer
         if ( $method === 'GET' )
             $input = $get;
         else if ( $method !== 'POST' )
-            return array( 'error' => 'Use GET or POST.' );
+            return array( 'error' => expGraphQLMessage::tr( 'Use GET or POST.' ) );
         else if ( $contentType === 'application/graphql' )
             $input = array( 'query' => (string)$body );
         else if ( $contentType === 'application/json' || ( $contentType === '' && $body !== '' && $body[0] === '{' ) )
         {
             $input = json_decode( (string)$body, true );
             if ( !is_array( $input ) )
-                return array( 'error' => 'The body is not a JSON object.' );
+                return array( 'error' => expGraphQLMessage::tr( 'The body is not a JSON object.' ) );
         }
         else
             $input = $post;
@@ -88,7 +88,7 @@ class expGraphQLServer
         {
             $variables = json_decode( $variables, true );
             if ( !is_array( $variables ) )
-                return array( 'error' => 'variables is not a JSON object.' );
+                return array( 'error' => expGraphQLMessage::tr( 'variables is not a JSON object.' ) );
         }
         // A persisted query: the id of the request (?id=articles), or Apollo's extensions.persistedQuery.sha256Hash
         $extensions = isset( $input['extensions'] ) ? $input['extensions'] : null;
@@ -96,7 +96,7 @@ class expGraphQLServer
         {
             $extensions = json_decode( $extensions, true );
             if ( !is_array( $extensions ) )
-                return array( 'error' => 'extensions is not a JSON object.' );
+                return array( 'error' => expGraphQLMessage::tr( 'extensions is not a JSON object.' ) );
         }
         $hash = is_array( $extensions ) && isset( $extensions['persistedQuery']['sha256Hash'] ) && is_string( $extensions['persistedQuery']['sha256Hash'] )
             ? strtolower( $extensions['persistedQuery']['sha256Hash'] ) : null;
@@ -251,7 +251,7 @@ class expGraphQLServer
         if ( $id === null && $hash === null )
         {
             if ( self::persistedOnly( $context ) )
-                return array( 'error' => array( 'Only persisted queries are accepted here: send the id of a stored query.', expGraphQLError::PERSISTED_QUERY_REQUIRED ) );
+                return array( 'error' => array( expGraphQLMessage::tr( 'Only persisted queries are accepted here: send the id of a stored query.' ), expGraphQLError::PERSISTED_QUERY_REQUIRED ) );
             return array( 'query' => $query, 'hash' => null );
         }
         if ( expGraphQL::setting( 'PersistedQueries', 'enabled' ) !== 'enabled' )
@@ -265,7 +265,7 @@ class expGraphQLServer
             return array( 'query' => $found, 'hash' => expGraphQLPersistedQueries::hash( $found ) );
         }
         if ( !expGraphQLPersistedQueries::isHash( $hash ) )
-            return array( 'error' => array( 'The persisted query hash is not a SHA-256.', expGraphQLError::BAD_USER_INPUT ) );
+            return array( 'error' => array( expGraphQLMessage::tr( 'The persisted query hash is not a SHA-256.' ), expGraphQLError::BAD_USER_INPUT ) );
         if ( trim( $query ) === '' )
         {
             $found = $store->find( $hash );
@@ -275,14 +275,14 @@ class expGraphQLServer
         }
         // An automatic persisted query: the text with its hash, stored when the client may store queries
         if ( expGraphQLPersistedQueries::hash( $query ) !== $hash )
-            return array( 'error' => array( 'The persisted query hash does not match the query.', expGraphQLError::BAD_USER_INPUT ) );
+            return array( 'error' => array( expGraphQLMessage::tr( 'The persisted query hash does not match the query.' ), expGraphQLError::BAD_USER_INPUT ) );
         if ( $store->find( $hash ) === null )
         {
             if ( !self::mayRegister( $context ) || $store->count() >= expGraphQL::intSetting( 'MaxPersistedQueries', 1000 ) )
             {
                 // not stored: the query still runs, but stays ad hoc
                 if ( self::persistedOnly( $context ) )
-                    return array( 'error' => array( 'Only persisted queries are accepted here: send the id of a stored query.', expGraphQLError::PERSISTED_QUERY_REQUIRED ) );
+                    return array( 'error' => array( expGraphQLMessage::tr( 'Only persisted queries are accepted here: send the id of a stored query.' ), expGraphQLError::PERSISTED_QUERY_REQUIRED ) );
                 return array( 'query' => $query, 'hash' => null );
             }
             $store->store( $query );
@@ -331,9 +331,9 @@ class expGraphQLServer
         $extensions = array( 'requestId' => $context->requestId, 'schemaHash' => $this->builder->schemaHash() );
         $query = (string)$query;
         if ( trim( $query ) === '' )
-            return array( 'errors' => array( self::error( 'The request has no query.', expGraphQLError::BAD_USER_INPUT, $context ) ), 'extensions' => $extensions );
+            return array( 'errors' => array( self::error( expGraphQLMessage::tr( 'The request has no query.' ), expGraphQLError::BAD_USER_INPUT, $context ) ), 'extensions' => $extensions );
         if ( strlen( $query ) > expGraphQL::intSetting( 'MaxQueryLength', self::MAX_QUERY_BYTES ) )
-            return array( 'errors' => array( self::error( 'The query is longer than ' . expGraphQL::intSetting( 'MaxQueryLength', self::MAX_QUERY_BYTES ) . ' bytes.', expGraphQLError::BAD_USER_INPUT, $context ) ),
+            return array( 'errors' => array( self::error( expGraphQLMessage::tr( 'The query is longer than %max bytes.', array( '%max' => expGraphQL::intSetting( 'MaxQueryLength', self::MAX_QUERY_BYTES ) ) ), expGraphQLError::BAD_USER_INPUT, $context ) ),
                           'extensions' => $extensions );
 
         $debug = expGraphQL::setting( 'Debug', 'disabled' ) === 'enabled';
@@ -351,7 +351,7 @@ class expGraphQLServer
         catch ( Exception $e )
         {
             eZDebug::writeError( get_class( $e ) . ': ' . $e->getMessage(), __METHOD__ );
-            return array( 'errors' => array( self::error( $debug ? $e->getMessage() : 'Internal server error', expGraphQLError::INTERNAL, $context ) ),
+            return array( 'errors' => array( self::error( $debug ? $e->getMessage() : expGraphQLMessage::tr( 'Internal server error' ), expGraphQLError::INTERNAL, $context ) ),
                           'extensions' => $extensions );
         }
         $result->setErrorFormatter( function ( \GraphQL\Error\Error $error ) use ( $context, $debug ) {
@@ -393,10 +393,34 @@ class expGraphQLServer
         // A resolver's own error is meant for the client: its message, not "Internal server error"
         if ( $previous instanceof expGraphQLError )
             $formatted['message'] = $previous->getMessage();
+        else
+            $formatted['message'] = self::translatedMessage( $code, (string)$formatted['message'] );
         $formatted['extensions'] = array( 'code' => $code, 'requestId' => $context->requestId ) + $extensions;
         if ( $debug && $debugInfo )
             $formatted['extensions']['debug'] = $debugInfo;
         return $formatted;
+    }
+
+    /**
+     * The message of an error of the library in the language of the request, where the kernel has its own words for
+     * it (the limits, introspection, an internal error); the messages of the specification's validation stay as the
+     * library writes them.
+     *
+     * @param string $code
+     * @param string $message
+     * @return string
+     */
+    public static function translatedMessage( $code, $message )
+    {
+        if ( $code === expGraphQLError::DEPTH_LIMIT && preg_match( '/should be (\d+) but got (\d+)/', $message, $m ) )
+            return expGraphQLMessage::tr( 'The query is %depth levels deep; at most %max are allowed.', array( '%depth' => $m[2], '%max' => $m[1] ) );
+        if ( $code === expGraphQLError::COMPLEXITY_LIMIT && preg_match( '/should be (\d+) but got (\d+)/', $message, $m ) )
+            return expGraphQLMessage::tr( 'The query has a complexity of %complexity; at most %max is allowed.', array( '%complexity' => $m[2], '%max' => $m[1] ) );
+        if ( $code === expGraphQLError::INTROSPECTION_DISABLED )
+            return expGraphQLMessage::tr( 'This request may not read the schema (introspection).' );
+        if ( $code === expGraphQLError::INTERNAL && $message === 'Internal server error' )
+            return expGraphQLMessage::tr( 'Internal server error' );
+        return $message;
     }
 
     /**

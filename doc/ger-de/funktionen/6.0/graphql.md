@@ -535,7 +535,7 @@ ausführen; `enabled` tut das für jede Anfrage an `/api/graphql`. Eine Ad-hoc-A
 - **Grenzen, geprüft, bevor eine Abfrage läuft.** `MaxDepth` (12): die tiefste Verschachtelung von Feldern.
   `MaxComplexity` (1000): Jedes Feld zählt 1, ein Listenfeld zählt sein `limit` oder `first` (oder `DefaultListLimit`)
   mal die Felder darunter, sodass eine Liste von 100 Einträgen mit einer Liste von 100 darunter sofort abgelehnt wird:
-  `Max query complexity should be 1000 but got 20202.` (`COMPLEXITY_LIMIT`). `MaxListLimit` (100) begrenzt jede Seite,
+  `Die Abfrage hat eine Komplexität von 20202; höchstens 1000 sind erlaubt.` (`COMPLEXITY_LIMIT`). `MaxListLimit` (100) begrenzt jede Seite,
   und eine Abfrage ist höchstens `MaxQueryLength` Bytes lang (100 000).
 - **Nur gespeicherte Abfragen**, für anonyme Anfragen oder für alle (`PersistedQueriesOnly`,
   [oben](#gespeicherte-abfragen)): Ein Frontend in Produktion, das immer nur seine eigenen gespeicherten Abfragen
@@ -665,6 +665,20 @@ Ein Fehler folgt der GraphQL-Spezifikation, mit `extensions.code` und `extension
 | `FORBIDDEN`, `NOT_FOUND` | für spätere Phasen reserviert; noch nicht gesendet (Inhalt, der sich nicht lesen lässt, ist `null`) |
 
 Die Codes sind ein stabiler Vertrag: Ein veröffentlichter Code behält Namen und Bedeutung, neue Codes kommen nur hinzu.
+
+**Die Sprache der Meldungen.** Eine Meldung steht in der Sprache, nach der die Anfrage mit `Accept-Language` fragt
+(`de-DE,de;q=0.9`: die erste Sprache, nach ihrem `q`, für die es einen Katalog der Administration gibt, nach ihrem
+vollen Code oder ihrer Sprache), sonst in der Sprache des Siteaccess (`site.ini [RegionalSettings] Locale`). Die Texte
+stehen im Kontext `kernel/graphql` von `share/translations/<sprache>/translation.ts`, in jedem Katalog der
+Administration. `extensions.code` ändert sich nie mit der Sprache: Entscheiden Sie nach dem Code, zeigen Sie die
+Meldung. Die Meldungen der Validierung der GraphQL-Spezifikation (ein unbekanntes Feld, ein Syntaxfehler) kommen aus
+der Bibliothek und bleiben Englisch, weil sie die Abfrage zitieren; `PersistedQueryNotFound` und
+`PersistedQueryNotSupported` bleiben, wie sie sind, weil Apollo Client sie liest.
+
+```bash
+curl -H 'Accept-Language: de' 'https://example.com/api/graphql?query=%7Bnode%7Bid%7D%7D'
+# {"errors":[{"message":"node braucht genau eines von id, remoteId, path und urlAlias.", ... "code":"BAD_USER_INPUT" ...
+```
 
 ## Der Playground und der Sitzungs-Endpunkt
 

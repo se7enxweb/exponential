@@ -1222,6 +1222,7 @@ return array(
       'expGraphQLFieldMapper'                                        => 'kernel/classes/graphql/expgraphqlfieldmapper.php',
       'expGraphQLImage'                                              => 'kernel/classes/graphql/expgraphqlimage.php',
       'expGraphQLLocation'                                           => 'kernel/classes/graphql/expgraphqllocation.php',
+      'expGraphQLMessage'                                            => 'kernel/classes/graphql/expgraphqlmessage.php',
       'expGraphQLNaming'                                             => 'kernel/classes/graphql/expgraphqlnaming.php',
       'expGraphQLPersistedQueries'                                   => 'kernel/classes/graphql/expgraphqlpersistedqueries.php',
       'expGraphQLRateLimiter'                                        => 'kernel/classes/graphql/expgraphqlratelimiter.php',

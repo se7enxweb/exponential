@@ -19,10 +19,12 @@ class expGraphQLRestController extends ezpRestMvcController
 {
     public function doQuery()
     {
+        // the messages in the language the client asks for (every request anew: a persistent worker keeps statics)
+        expGraphQLMessage::useLanguage( isset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) ? (string)$_SERVER['HTTP_ACCEPT_LANGUAGE'] : '' );
         if ( !expGraphQL::isEnabled() )
-            return self::answer( 404, expGraphQLServer::refusal( 'The GraphQL API is switched off in this siteaccess.', expGraphQLError::DISABLED ) );
+            return self::answer( 404, expGraphQLServer::refusal( expGraphQLMessage::tr( 'The GraphQL API is switched off in this siteaccess.' ), expGraphQLError::DISABLED ) );
         if ( !expGraphQL::loadLibrary() )
-            return self::answer( 503, expGraphQLServer::refusal( 'The GraphQL library is not installed.', expGraphQLError::INTERNAL ) );
+            return self::answer( 503, expGraphQLServer::refusal( expGraphQLMessage::tr( 'The GraphQL library is not installed.' ), expGraphQLError::INTERNAL ) );
 
         $request = expGraphQLServer::parseHttpRequest( $this->request->originalProtocol === 'http-get' ? 'GET' : 'POST',
                                                        isset( $_SERVER['CONTENT_TYPE'] ) ? (string)$_SERVER['CONTENT_TYPE'] : '',
@@ -56,7 +58,7 @@ class expGraphQLRestController extends ezpRestMvcController
     public function doPlayground()
     {
         if ( !expGraphQL::isEnabled() )
-            return self::answer( 404, expGraphQLServer::refusal( 'The GraphQL API is switched off in this siteaccess.', expGraphQLError::DISABLED ) );
+            return self::answer( 404, expGraphQLServer::refusal( expGraphQLMessage::tr( 'The GraphQL API is switched off in this siteaccess.' ), expGraphQLError::DISABLED ) );
         $url = '/graphql/playground';
         eZURI::transformURI( $url, false, 'full' );
         $result = new ezpRestMvcResult();
