@@ -68295,6 +68295,46 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>Share of page time</source>
         <translation>Udział w czasie strony</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>zażądano pełnego wygenerowania</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>pamięć podręczna stron nie miała tej strony (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>pamięć podręczna stron nie odpowiedziała</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Wygenerowane</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Wygenerowane przez jądro: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Obsłużone z pamięci podręcznej stron w %ms ms. Strona została zapisana o %stored przez generowanie trwające %render ms, %age s temu.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Wygenerować teraz</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Wrócić do widoku z pamięci podręcznej</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Z generowania o %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>To żądanie: obsłużone z pamięci podręcznej stron w %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

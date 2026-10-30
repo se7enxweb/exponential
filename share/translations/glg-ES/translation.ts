@@ -68540,6 +68540,46 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>Share of page time</source>
         <translation>Parte do tempo da páxina</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>pediuse unha xeración completa</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>a caché de páxinas non tiña a páxina (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>a caché de páxinas non respondeu</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Xerada</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Xerada polo núcleo: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Servida desde a caché de páxinas en %ms ms. A páxina gardouse ás %stored nunha xeración de %render ms, hai %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Xerar agora</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Volver á vista da caché</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Da xeración das %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Esta petición: servida desde a caché de páxinas en %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

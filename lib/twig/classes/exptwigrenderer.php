@@ -594,7 +594,7 @@ class expTwigRenderer
             $loader->addPath( $dir );
         $loader->addPath( $root );
         $twig = new expTwigEnvironment( $loader, array(
-            'cache' => $cacheDir,
+            'cache' => new expTwigFilesystemCache( $cacheDir ),
             'auto_reload' => $autoReload,
             'debug' => $debug,
             'strict_variables' => $strict,

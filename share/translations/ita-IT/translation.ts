@@ -68490,6 +68490,46 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>Share of page time</source>
         <translation>Quota del tempo di pagina</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>è stata richiesta una generazione completa</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>la cache delle pagine non aveva la pagina (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>la cache delle pagine non ha risposto</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Generata</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Generata dal kernel: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Servita dalla cache delle pagine in %ms ms. La pagina è stata salvata alle %stored da una generazione di %render ms, %age s fa.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Genera ora</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Torna alla vista in cache</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Dalla generazione delle %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Questa richiesta: servita dalla cache delle pagine in %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

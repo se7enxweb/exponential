@@ -68548,6 +68548,46 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>Share of page time</source>
         <translation>Share of di page time</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>dem ask for full render</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>di page cache no get di page (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>di page cache no answer</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Dem render am</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Di kernel render am: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Page cache serve am in %ms ms. Dem store di page for %stored from one render wey take %render ms, %age s ago.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Render am now</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Go back to di cached view</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>From di render for %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Dis request: page cache serve am in %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

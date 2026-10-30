@@ -167,6 +167,42 @@ die den Debug-Bericht ihrer Anfrage trägt (die Leiste Exp Debug oder der klassi
 `X-Exp-Cache: BYPASS (debug report)`): Ihre Zeiten, Abfragen, Meldungen und die eigene Panelhöhe des Betrachters gehören
 zu dieser Anfrage, und ein nach IP angezeigter Bericht würde sonst jeden erreichen, der den anonymen Kontext teilt.
 
+## Besucher, denen die Debug-Leiste gezeigt wird
+
+Ein Besucher, dem die Leiste Exp Debug nach Adresse gezeigt wird ([DebugSettings] `DebugByIP=enabled`,
+`DebugIPList[]`, mit `DebugOutput=enabled`), wird ebenfalls aus diesem Cache beantwortet, mit der Leiste der
+Ausgabe, die die Seite gespeichert hat:
+
+- Der Kernel speichert die Seite, die ein solcher Besucher sieht, **ohne** die Leiste, unter einem eigenen Kontext
+  dieses Besuchers (sein Rollenkontext und seine Benutzer-ID), und die Leiste daneben in einer Datei, die nur der
+  Eigentümer lesen darf (0600: Sie enthält SQL, Einstellungen und Meldungen). Die Leiste gehört zum Eintrag: Dieselben
+  Tags leeren sie, und die Aufräumroutine entfernt sie.
+- Bei der nächsten Anfrage setzen der frühe Ausstieg (Apache) oder der Worker von Velocity die Seite und diese Leiste
+  zusammen. Der erste Chip der Leiste zeigt **Aus dem Cache**, sein Titel, wann die Seite gespeichert wurde und wie
+  lange ihre Ausgabe dauerte, und der Link **Jetzt erzeugen** fordert eine vollständige Ausgabe an. Der Chip der
+  Seitenzeit zeigt die Zeit dieser Antwort; jeder Reiter beginnt mit „Aus der Ausgabe um 12:03:15 (41 ms)“, der
+  Reiter Zeiten mit der Zeit dieser Anfrage. Alle anderen Werte jedes Reiters sind die der Ausgabe, unverändert. Der
+  Datenblock (`#exp-debug-data`) sagt dasselbe: `served.by` ist `cache`, `served.render_time` und `served.stored_at`
+  beschreiben die Ausgabe, `summary.time` ist die Zeit dieser Antwort.
+- Eine Seite, die der Kernel erzeugt hat, zeigt **Erzeugt** und im Titel des Chips den Grund: noch keine Seite im
+  Cache, die Seite wurde geleert, oder eine vollständige Ausgabe wurde angefordert. Eine solche Seite wird wieder
+  gespeichert, mit ihrer Leiste.
+- Eine veraltete Seite bekommt ein solcher Besucher nie: Im Zeitfenster von stale-while-revalidate erhält er eine
+  frische Ausgabe.
+
+**Der Schalter für die vollständige Ausgabe** ist der View-Parameter `(exp_render)/full`, an jede Adresse angehängt:
+`/fitness/(exp_render)/full`, `/(exp_render)/full` für die Startseite, `/content/view/full/89/(exp_render)/full`.
+Der Kernel nimmt ihn aus der Adresse, bevor irgendetwas sie liest: Er erreicht nie einen URL-Alias, die
+View-Parameter, den Content-View-Cache, einen Schlüssel eines cache-block, ein Template oder einen Link der Seite, und
+der Schlüssel des HTTP-Caches enthält ihn nie. Er bedeutet nur für einen Besucher etwas, dem die Leiste gezeigt wird;
+für alle anderen ist die Adresse die Seite ohne ihn. Eine mit dem Schalter erzeugte Seite hat den Link
+**Zurück zur Ansicht aus dem Cache**.
+
+Der Serverprozess von Velocity, der diesen Cache vor einem Worker fragt, kennt die Adresse des Besuchers nicht: Für
+einen Benutzer, der Seiten mit der Leiste hat, überlässt er die Anfrage einem Worker, der mit der Adresse noch einmal
+fragt („debug viewer, address not known here“). Besucher, denen die Leiste nur nach Benutzer-ID gezeigt wird
+(`DebugByUser`), werden wie bisher erzeugt.
+
 ## Mit vorgeschaltetem request-shield
 
 [request-shield](https://github.com/cjw-network/request-shield) läuft vor `config.php` (`auto_prepend_file` oder die

@@ -68540,6 +68540,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>صفحي جي وقت جو حصو</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>مڪمل رينڊر جي گذارش ڪئي وئي هئي</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>صفحي ڪيش ۾ هي صفحو نه هو (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>صفحي ڪيش جواب نه ڏنو</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>رينڊر ٿيل</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>ڪرنل رينڊر ڪيو: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>صفحي ڪيش مان %ms ms ۾ فراهم ڪيو ويو. هي صفحو %stored تي %render ms جي هڪ رينڊر محفوظ ڪيو هو، %age s اڳ.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>هاڻي رينڊر ڪريو</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>ڪيش ٿيل منظر ڏانهن واپس</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored واري رينڊر مان (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>هيءَ گذارش: صفحي ڪيش مان %ms ms ۾ فراهم ڪئي وئي.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

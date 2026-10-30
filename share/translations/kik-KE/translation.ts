@@ -68540,6 +68540,46 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>Share of page time</source>
         <translation>Gĩcunjĩ kĩa ihinda rĩa ũrũa</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>kũonania guothe nĩ kwahooyirwo</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>kĩigĩro kĩa ihenya kĩa ũrũa gĩtiarĩ na ũrũa ũyũ (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>kĩigĩro kĩa ihenya kĩa ũrũa gĩtiacookirie</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Yonanirio</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Yonanirio nĩ mũthingi: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Yatungatirwo kuuma kĩigĩro kĩa ihenya kĩa ũrũa thĩinĩ wa %ms ms. Ũrũa ũigirwo %stored nĩ kũonania kwa %render ms, %age s ciathira.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Onania rĩu</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Cooka mwonekere-inĩ wa kĩigĩro</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Kuuma kũonania kwa %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Kũhooya gũkũ: yatungatirwo kuuma kĩigĩro kĩa ihenya kĩa ũrũa thĩinĩ wa %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

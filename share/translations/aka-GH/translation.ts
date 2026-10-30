@@ -68540,6 +68540,46 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>Share of page time</source>
         <translation>Krataafa bere fã</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>wɔsrɛɛ sɛ wɔnyɛ no nyinaa</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>na krataafa no nni krataafa ntɛmkora no mu (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>krataafa ntɛmkora no amma mmuaeɛ</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Wɔayɛ</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Mfitiaseɛ na ɛyɛe: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Wɔfi krataafa ntɛmkora mu de maa wɔ %ms ms mu. Adeyɛ a ɛdii %render ms na ɛkoraa krataafa no wɔ %stored, %age s a atwam.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Yɛ seesei</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>San kɔ nhwɛeɛ a ɛfi ntɛmkora mu</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Efi adeyɛ a ɛwɔ %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Asɛmpɛ yi: wɔfi krataafa ntɛmkora mu de maa wɔ %ms ms mu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

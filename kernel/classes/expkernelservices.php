@@ -259,6 +259,20 @@ class expKernelServices
     }
 
     /**
+     * Whether this request's settings files come from the worker store: the container booted with a compiled index
+     * and WorkerScope on. Then a setting changes only with an INI cache clear or a deploy, which starts another
+     * generation (expKernelServiceScope::sync()), and a value worked out from the settings may be kept as long
+     * (expKernelServiceScope::memo()).
+     *
+     * @return bool
+     */
+    public static function workerSettingsKept()
+    {
+        return self::$booted && self::$index !== null && !self::$compilerRecording && self::workerScopeEnabled()
+               && expKernelServiceScope::hasWorker() && expKernelServiceScope::worker()->generation === self::$index['generation'];
+    }
+
+    /**
      * Whether the web kernel booted the container for this request.
      *
      * @return bool

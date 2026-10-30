@@ -68136,6 +68136,46 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>Share of page time</source>
         <translation>Udio u vremenu stranice</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>zatraženo je potpuno generiranje</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>predmemorija stranica nije imala stranicu (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>predmemorija stranica nije odgovorila</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Generirano</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Generirala jezgra: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Posluženo iz predmemorije stranica za %ms ms. Stranica je spremljena u %stored nakon generiranja od %render ms, prije %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Generiraj sada</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Natrag na prikaz iz predmemorije</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Iz generiranja u %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Ovaj zahtjev: posluženo iz predmemorije stranica za %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

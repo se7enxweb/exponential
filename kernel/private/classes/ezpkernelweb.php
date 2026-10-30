@@ -136,6 +136,12 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             require_once __DIR__ . '/../../classes/expkernelservicescope.php';
         expKernelServiceScope::resetRequest();
 
+        // The debug bar's full-render switch, the view parameter (exp_render)/full: taken out of the address before
+        // anything reads it, so no URL alias, view parameter, cache key or link ever sees it (expRenderSwitch).
+        if ( !class_exists( 'expRenderSwitch' ) )
+            require_once __DIR__ . '/httpcache/exprenderswitch.php';
+        expRenderSwitch::apply();
+
         if ( isset( $settings['injected-settings'] ) )
         {
             $injectedSettings = array();

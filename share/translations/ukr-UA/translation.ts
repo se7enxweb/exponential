@@ -67029,6 +67029,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>Частка часу сторінки</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>запитано повне генерування</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>у кеші сторінок не було цієї сторінки (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>кеш сторінок не відповів</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Згенеровано</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Згенеровано ядром: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Віддано з кешу сторінок за %ms мс. Сторінку збережено о %stored після генерування тривалістю %render мс, %age с тому.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Згенерувати зараз</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Повернутися до сторінки з кешу</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>З генерування о %stored (%render мс)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Цей запит: віддано з кешу сторінок за %ms мс.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

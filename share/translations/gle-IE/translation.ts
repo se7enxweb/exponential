@@ -68479,6 +68479,46 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>Share of page time</source>
         <translation>Sciar d’am an leathanaigh</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>iarradh rindreáil iomlán</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>ní raibh an leathanach i dtaisce na leathanach (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>níor fhreagair taisce na leathanach</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Rindreáilte</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Rindreáilte ag an eithne: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Seirbheáilte ó thaisce na leathanach i %ms ms. Stóráladh an leathanach ag %stored le rindreáil %render ms, %age s ó shin.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Rindreáil anois</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Ar ais chuig an amharc ón taisce</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Ón rindreáil ag %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>An t-iarratas seo: seirbheáilte ó thaisce na leathanach i %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

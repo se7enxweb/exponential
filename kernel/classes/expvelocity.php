@@ -1450,6 +1450,54 @@ class expVelocity
         return $this->absolute( $setting );
     }
 
+    /** How many run copies of the engine archive are kept (engineRunArchive()): the current start and a few before. */
+    const ENGINE_RUN_COPIES = 4;
+
+    /**
+     * The archive a starting server runs from: a hard link (a copy where links are not possible) of $archive under
+     * its own name, ".<name>-run-<time>-<pid>.phar" beside it, which no build ever writes.
+     *
+     * A server started on dist/engine.phar itself read its classes from that path for its whole life. A deploy builds
+     * the new archive and renames it over that path before it restarts the server, so for the seconds in between
+     * (and for any worker of the old server that lived on after the restart) a worker that loaded a class it had not
+     * loaded yet read it out of the new archive, while everything loaded before came from the old one. On
+     * 2026-10-29 that mix left the content class attributes of :8080 without their datatypes for two and a half
+     * minutes ("Could not get instance of datatype: ezstring") and /site answered 500. With its own name, a server
+     * keeps the archive it started with until it stops, and only a new server sees a new build.
+     *
+     * The oldest run copies beyond ENGINE_RUN_COPIES are removed (a server still running from one keeps reading it:
+     * an open file stays readable after its name is gone). When neither a link nor a copy can be made, $archive is
+     * returned and the server runs from it as before.
+     *
+     * @param string $archive absolute path of the built archive
+     * @return string absolute path the server is started on
+     */
+    public function engineRunArchive( $archive )
+    {
+        $dir = dirname( $archive );
+        $base = basename( $archive, '.phar' );
+        $run = $dir . '/.' . $base . '-run-' . date( 'YmdHis' ) . '-' . getmypid() . '.phar';
+        clearstatcache( true, $archive );
+        // The instances of one start share the copy (same second, same process): a copy is never written over
+        if ( !is_file( $run ) && !@link( $archive, $run ) )
+        {
+            $tmp = $run . '.' . bin2hex( random_bytes( 4 ) ) . '.tmp';
+            if ( !@copy( $archive, $tmp ) || !@rename( $tmp, $run ) )
+            {
+                @unlink( $tmp );
+                return $archive;
+            }
+        }
+        $copies = glob( $dir . '/.' . $base . '-run-*.phar' ) ?: array();
+        sort( $copies );
+        foreach ( array_slice( $copies, 0, max( 0, count( $copies ) - self::ENGINE_RUN_COPIES ) ) as $old )
+        {
+            if ( $old !== $run )
+                @unlink( $old );
+        }
+        return $run;
+    }
+
     public function command( $instance = 0 )
     {
         $documentRoot = $this->absolute( $this->setting( 'ServerSettings', 'DocumentRoot', '' ) );
@@ -2728,7 +2776,7 @@ class expVelocity
             if ( $ready !== true )
                 return $this->result( false, $ready, $this->status() );
 
-            $environment = 'EXP_ENGINE_PHAR=' . escapeshellarg( $enginePhar ) . ' ';
+            $environment = 'EXP_ENGINE_PHAR=' . escapeshellarg( $this->engineRunArchive( $enginePhar ) ) . ' ';
         }
 
         // Started from cron, a systemd unit or a stripped container, PATH can

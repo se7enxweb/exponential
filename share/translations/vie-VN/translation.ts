@@ -68540,6 +68540,46 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>Share of page time</source>
         <translation>Tỷ lệ trong thời gian trang</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>đã yêu cầu hiển thị đầy đủ</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>bộ nhớ đệm trang không có trang này (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>bộ nhớ đệm trang không phản hồi</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Đã hiển thị</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Được lõi hiển thị: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Được phục vụ từ bộ nhớ đệm trang trong %ms ms. Trang được lưu lúc %stored bởi một lần hiển thị mất %render ms, cách đây %age giây.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Hiển thị ngay</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Quay lại chế độ xem từ bộ nhớ đệm</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Từ lần hiển thị lúc %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Yêu cầu này: được phục vụ từ bộ nhớ đệm trang trong %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

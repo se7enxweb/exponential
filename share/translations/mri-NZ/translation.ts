@@ -68540,6 +68540,46 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>Share of page time</source>
         <translation>Wāhanga o te wā whārangi</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>i tonoa he tānga katoa</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>kāore te whārangi i te keteroki whārangi (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>kāore te keteroki whārangi i whakautu</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Kua tāia</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>I tāia e te iho: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>I tukuna mai i te keteroki whārangi i roto i te %ms ms. I tiakina te whārangi i te %stored e tētahi tānga %render ms, %age hēkona i mua.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Tāia ināianei</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Hoki ki te tirohanga mai i te keteroki</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Nō te tānga i te %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Tēnei tono: i tukuna mai i te keteroki whārangi i roto i te %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

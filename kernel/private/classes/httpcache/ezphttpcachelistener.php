@@ -79,7 +79,16 @@ class ezpHttpCacheListener
             self::$contract = ezpHttpCacheContract::fromDir( $dir ) ?: false;
             return self::$contract ?: null;
         }
-        $config = self::buildConfig( $ini, $dir );
+        // Worked out from the settings (and the session settings of this process): the siteaccess settings of every
+        // cached siteaccess were loaded for it on every request, some 4 ms. A persistent worker keeps it while its
+        // settings are kept (expKernelServiceScope::memo()); the secret file is read each time and must still match.
+        $memoKey = 'httpcache-config|' . $siteaccess . '|' . $dir . '|' . ini_get( 'session.name' ) . '|'
+                   . ini_get( 'session.save_handler' ) . '|' . ini_get( 'session.save_path' );
+        $config = expKernelServiceScope::memo( $memoKey, function () use ( $ini, $dir ) { return self::buildConfig( $ini, $dir ); } );
+        if ( $config !== null && @file_get_contents( $dir . '/secret' ) !== $config['secret'] )
+            $config = self::buildConfig( $ini, $dir );
+        // a configuration that could not be made (no secret) is tried again by the next request
+        expKernelServiceScope::setMemo( $memoKey, $config );
         if ( $config === null )
             return null;
         $file = $dir . '/contract.php';
@@ -188,6 +197,18 @@ class ezpHttpCacheListener
             'apcu' => $ini->variable( 'HttpCacheSettings', 'APCu' ) === 'enabled',
             'maxBodySize' => (int)$ini->variable( 'HttpCacheSettings', 'MaxBodySize' ),
             'queryParameters' => array_values( array_filter( (array)$ini->variable( 'HttpCacheSettings', 'QueryStringParameters' ), 'strlen' ) ),
+            // Who sees the debug bar, as eZDebug decides it: answered from their own entries with the bar of the
+            // render that stored the page (ezpHttpCacheContract::debugViewer(), lookupDebug())
+            'debug' => array(
+                'output' => $site->variable( 'DebugSettings', 'DebugOutput' ) === 'enabled',
+                'byIP' => $site->variable( 'DebugSettings', 'DebugByIP' ) === 'enabled',
+                'ipList' => array_values( array_filter( (array)$site->variable( 'DebugSettings', 'DebugIPList' ), 'strlen' ) ),
+                'byUser' => $site->variable( 'DebugSettings', 'DebugByUser' ) === 'enabled',
+                'userIDs' => array_values( array_map( 'intval', array_filter( (array)( $site->hasVariable( 'DebugSettings', 'DebugUserIDList' )
+                                                                                         ? $site->variable( 'DebugSettings', 'DebugUserIDList' ) : array() ), 'strlen' ) ) ),
+                'clientIpHeader' => $site->hasVariable( 'HTTPHeaderSettings', 'ClientIpByCustomHTTPHeader' )
+                    ? (string)$site->variable( 'HTTPHeaderSettings', 'ClientIpByCustomHTTPHeader' ) : '',
+            ),
         );
     }
 
@@ -269,9 +290,51 @@ class ezpHttpCacheListener
         );
     }
 
+    /** Stands for the debug bar in a page while it is prepared for the cache (debugBarOf()) */
+    const DEBUG_BAR_MARK = "\0exp-debug-bar\0";
+
+    /**
+     * The debug bar of this response, when the page may be kept for a debug viewer with the bar beside it:
+     * array( offset, bar html, served block of the bar ), or null. Only the Exp Debug bar (it marks how the page came
+     * about), only for a visitor the contract knows as a debug viewer, and only once in the page, between the marks
+     * eZDisplayResult() puts around it (expDebugBarReport::BAR_START, BAR_END).
+     *
+     * @param string $html
+     * @param ezpHttpCacheContract $contract
+     * @return array|null
+     */
+    private static function debugBarOf( $html, ezpHttpCacheContract $contract )
+    {
+        if ( !eZDebug::isDebugEnabled() || empty( $contract->config['debug']['output'] ) || !class_exists( 'expDebugBarReport' ) )
+            return null;
+        $html = (string)$html;
+        $start = strpos( $html, expDebugBarReport::BAR_START );
+        $end = $start === false ? false : strpos( $html, expDebugBarReport::BAR_END, $start );
+        if ( $start === false || $end === false || strpos( $html, expDebugBarReport::BAR_START, $start + 1 ) !== false )
+            return null;
+        $bar = substr( $html, $start, $end + strlen( expDebugBarReport::BAR_END ) - $start );
+        if ( strpos( $bar, expDebugBarReport::SERVED_START ) === false )
+            return null;
+        if ( !preg_match( '#<script type="application/json" id="exp-debug-data">(.*?)</script>#s', $bar, $m ) )
+            return null;
+        $data = json_decode( $m[1], true );
+        if ( !is_array( $data ) || !isset( $data['served'] ) || !is_array( $data['served'] ) )
+            return null;
+        $served = $data['served'];
+        $served['render_ms'] = isset( $data['summary']['time'] ) ? round( (float)$data['summary']['time'] * 1000, 1 ) : null;
+        // the bar's forms (Cache tab) carry the form token of this session: put back as the visitor's when served
+        if ( class_exists( 'ezxFormToken' ) && ezxFormToken::isEnabled() && session_id() !== '' )
+            $served['form_token'] = ezxFormToken::getToken();
+        return array( $start, $bar, $served );
+    }
+
     private static function storeOrSay( $html )
     {
         $contract = self::contract();
+        // A page with the debug bar of a debug viewer: kept without the bar, the bar beside it (debugBarOf())
+        $debugBar = $contract ? self::debugBarOf( $html, $contract ) : null;
+        if ( $debugBar !== null )
+            $html = substr_replace( $html, self::DEBUG_BAR_MARK, $debugBar[0], strlen( $debugBar[1] ) );
         $reason = self::uncacheableReason( $html );
         if ( $reason !== null )
         {
@@ -335,8 +398,32 @@ class ezpHttpCacheListener
             $placeholders['form_token'] = ezxFormToken::getToken();
 
         list( $body, $offsets ) = ezpHttpCacheContract::extractPlaceholders( $html, $placeholders );
+        $entryContext = $context;
+        $barOffset = null;
+        if ( $debugBar !== null )
+        {
+            // the bar comes out of the body; the viewer's entries are their own
+            $barOffset = strpos( $body, self::DEBUG_BAR_MARK );
+            if ( $barOffset === false )
+            {
+                self::header( 'X-Exp-Cache', 'BYPASS (debug bar not found)' );
+                return;
+            }
+            $body = substr_replace( $body, '', $barOffset, strlen( self::DEBUG_BAR_MARK ) );
+            // a placeholder right before the bar and one right after it end up at the same offset: the report says
+            // how many come before it
+            $before = 0;
+            foreach ( $offsets as $i => $o )
+            {
+                if ( $o[0] > $barOffset )
+                    $offsets[$i][0] -= strlen( self::DEBUG_BAR_MARK );
+                else
+                    $before++;
+            }
+            $entryContext = $contract->debugContext( $context, $user->id() );
+        }
         $tags = array_values( array_unique( array_merge( self::tags( self::$view['result'] ), self::$extraTags ) ) );
-        $key = $contract->entryKey( $scheme, $host, $siteaccess, eZSys::serverVariable( 'REQUEST_URI' ), $context );
+        $key = $contract->entryKey( $scheme, $host, $siteaccess, eZSys::serverVariable( 'REQUEST_URI' ), $entryContext );
         $ttl = (int)( self::$view['result']['cache_ttl'] ?? -1 );
         // The security headers go with the page: an answer from this cache is
         // assembled without the kernel (Velocity asks the contract directly),
@@ -351,7 +438,9 @@ class ezpHttpCacheListener
         $filtered = ezpEvent::getInstance()->filter( 'httpcache/store/headers', $headers );
         if ( is_array( $filtered ) )
             $headers = $filtered;
-        $contract->storeEntry( $key, 200, $headers, $body, $tags, $offsets, $ttl > 0 ? $ttl : null );
+        $meta = $contract->storeEntry( $key, 200, $headers, $body, $tags, $offsets, $ttl > 0 ? $ttl : null );
+        if ( $debugBar !== null && is_array( $meta ) )
+            $contract->storeDebugReport( $key, $meta, $barOffset, $debugBar[1], $debugBar[2], $user->id(), $before );
         if ( $user->isRegistered() )
             $contract->storeRecord( $user->id(), $context );
 

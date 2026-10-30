@@ -68540,6 +68540,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>صفحے دے ویلے دا حصہ</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>پورے رینڈر دی درخواست کیتی گئی سی</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>صفحہ کیش وچ ایہہ صفحہ نہیں سی (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>صفحہ کیش نے جواب نہیں دتا</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>رینڈر کیتا گیا</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>کرنل نے رینڈر کیتا: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>صفحہ کیش توں %ms ms وچ مہیا کیتا گیا۔ ایہہ صفحہ %stored ویلے %render ms دے اک رینڈر نے محفوظ کیتا سی، %age s پہلاں۔</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>ہݨے رینڈر کرو</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>کیش کیتے منظر تے پچھے جاؤ</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored ویلے دے رینڈر توں (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>ایہہ درخواست: صفحہ کیش توں %ms ms وچ مہیا کیتی گئی۔</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68540,6 +68540,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>Vahe ʻo e taimi ʻo e peesi</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>naʻe kole ha faʻu kakato</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>naʻe ʻikai ʻi he kēsi peesi ʻa e peesi (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>naʻe ʻikai tali ʻa e kēsi peesi</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Kuo faʻu</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Faʻu ʻe he uho: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Naʻe tokoni mei he kēsi peesi ʻi he %ms ms. Naʻe tauhi ʻa e peesi ʻi he %stored ʻe ha faʻu ʻo e %render ms, sekoni ʻe %age kuo hili.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Faʻu leva</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Foki ki he vakai mei he kēsi</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Mei he faʻu ʻi he %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Kole ni: naʻe tokoni mei he kēsi peesi ʻi he %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

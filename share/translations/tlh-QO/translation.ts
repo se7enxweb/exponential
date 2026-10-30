@@ -67032,6 +67032,46 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Share of page time</source>
         <translation>nav poH &apos;ay&apos;</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>nav naQ chenmoHmeH tlhoblu'pu'</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>navvetlh ghajbe' nav De' polwI' (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>jangbe' nav De' polwI'</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>chenmoHlu'pu'</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>chenmoH ngoq botlh: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>%ms ms poHDaq nav jab nav De' polwI'. %stored poHDaq nav pol %render ms chenmoHghach; %age lup ret.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>DaH yIchenmoH</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>De' polwI' QorwaghDaq yIchegh</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored poHDaq chenmoHghachvo' (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>tlhobghachvam: %ms ms poHDaq nav jab nav De' polwI'.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

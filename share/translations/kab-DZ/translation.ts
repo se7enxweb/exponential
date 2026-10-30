@@ -68540,6 +68540,46 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>Share of page time</source>
         <translation>Aḥric n wakud n usebter</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>yettwasuter usebded ummid</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>asebter ulac-it deg tazarkatut n yisebtar (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>tazarkatut n yisebtar ur d-terri ara</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Yettwasebded</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Yettwasebded s uẓar: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Yettwasuffeɣ-d seg tazarkatut n yisebtar deg %ms ms. Asebter yettwaḥrez deg %stored s usebded n %render ms, send %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Sebded tura</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Uɣal ɣer timeẓri seg tazarkatut</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Seg usebded n %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Tuttra-a: tettwasuffeɣ-d seg tazarkatut n yisebtar deg %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

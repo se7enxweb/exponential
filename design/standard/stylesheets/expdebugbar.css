@@ -118,6 +118,19 @@ body.exp-debug-bar { padding-bottom: calc(var(--exp-debug-bar-h, 38px) + 8px); }
 #debug .exp-debug-chip[data-level="warn"] { background: var(--xd-warn-bg); color: var(--xd-warn); border-color: currentColor; }
 #debug .exp-debug-chip[data-level="high"] { background: var(--xd-high-bg); color: var(--xd-high); border-color: currentColor; font-weight: 700; }
 #debug .exp-debug-chip:hover { filter: brightness(.95); }
+/* How the page came about: "Rendered" by the kernel or "Cached" (served from the page cache with the bar of the
+   render that stored it), and the link to a full render or back to the cached view */
+#debug .exp-debug-served {
+  font: 600 12px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; padding: 3px 7px; border-radius: 10px;
+  border: 1px solid currentColor; background: var(--xd-bg-soft); color: var(--xd-fg); white-space: nowrap; margin-inline: 6px 2px;
+  text-transform: uppercase; letter-spacing: .03em;
+}
+#debug .exp-debug-served[data-served="cache"] { background: var(--xd-ok-bg); color: var(--xd-ok); }
+#debug .exp-debug-served-action { font-size: 12px; font-weight: 400; margin-inline-end: 6px; color: var(--xd-accent); white-space: nowrap; }
+/* not the bar's own "Exp Debug" link: no open/close arrow */
+#debug > h2 > a.exp-debug-served-action { flex: 0 0 auto; padding: 0 6px; color: var(--xd-accent); text-decoration: underline; }
+#debug > h2 > a.exp-debug-served-action::after { content: none; }
+#debug .exp-debug-from-render { margin: 0 0 8px; color: var(--xd-fg-soft); font-size: 12px; }
 /* OPcache, APCu, then the PHP and Exponential versions: the last chips, at the right end of the summary */
 #debug .exp-debug-chip.exp-debug-end { margin-inline-start: auto; }
 

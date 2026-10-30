@@ -68540,6 +68540,46 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>Share of page time</source>
         <translation>Omugabo gw'ekiseera ky'olupapula</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>okukola okujjuvu kwasabiddwa</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>kaasi y'empapula yali terina lupapula luno (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>kaasi y'empapula teyaddamu</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Kikoleddwa</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Kikoleddwa omusingi: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Kiweereddwa okuva mu kaasi y'empapula mu %ms ms. Olupapula lwaterekebwa ku %stored n'okukola okwatwala %render ms, %age s emabega.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Kola kati</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Ddayo ku ndabika eva mu kaasi</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Okuva mu kukola okwa %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Okusaba kuno: kiweereddwa okuva mu kaasi y'empapula mu %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

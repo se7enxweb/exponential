@@ -68540,6 +68540,46 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>Share of page time</source>
         <translation>Anjara amin'ny fotoanan'ny pejy</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>nisy nangataka fanamboarana feno</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>tsy nanana ilay pejy ny tahiry vonjimaikan'ny pejy (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>tsy namaly ny tahiry vonjimaikan'ny pejy</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Namboarina</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Namboarin'ny fototra: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Natolotra avy amin'ny tahiry vonjimaikan'ny pejy tao anatin'ny %ms ms. Notehirizina tamin'ny %stored ilay pejy tamin'ny fanamboarana %render ms, %age seg lasa izay.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Amboary izao</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Miverina amin'ny fijery avy amin'ny tahiry vonjimaika</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Avy amin'ny fanamboarana tamin'ny %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Ity fangatahana ity: natolotra avy amin'ny tahiry vonjimaikan'ny pejy tao anatin'ny %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

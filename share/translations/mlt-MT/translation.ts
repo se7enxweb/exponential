@@ -68479,6 +68479,46 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>Share of page time</source>
         <translation>Sehem mill-ħin tal-paġna</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>intalab għoti sħiħ</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>il-cache tal-paġni ma kellhiex il-paġna (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>il-cache tal-paġni ma wieġbitx</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Mogħti</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Mogħti mill-kernel: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Moqdija mill-cache tal-paġni fi %ms ms. Il-paġna ġiet maħżuna fi %stored minn għoti ta' %render ms, %age s ilu.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Agħti issa</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Lura għall-veduta mill-cache</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Mill-għoti fi %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Din it-talba: moqdija mill-cache tal-paġni fi %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

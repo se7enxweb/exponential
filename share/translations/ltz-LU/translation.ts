@@ -68540,6 +68540,46 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>Share of page time</source>
         <translation>Undeel un der Säitenzäit</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>eng komplett Erstellung gouf ugefrot</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>de Säitecache hat d'Säit net (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>de Säitecache huet net geäntwert</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Erstallt</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Vum Kär erstallt: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>An %ms ms aus dem Säitecache ausgeliwwert. D'Säit gouf um %stored vun enger Erstellung mat %render ms gespäichert, dat ass %age s hier.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Elo erstellen</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Zréck op d'Usiicht aus dem Cache</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Vun der Erstellung um %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Dës Ufro: an %ms ms aus dem Säitecache ausgeliwwert.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

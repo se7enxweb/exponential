@@ -68439,6 +68439,46 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Share of page time</source>
         <translation>Part du temps de la page</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>un rendu complet a été demandé</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>le cache de pages n'avait pas la page (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>le cache de pages n'a pas répondu</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Rendu</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Rendu par le noyau : %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Servi depuis le cache de pages en %ms ms. La page a été stockée à %stored par un rendu de %render ms, il y a %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Faire le rendu maintenant</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Retour à l'affichage en cache</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Issu du rendu de %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Cette requête : servie depuis le cache de pages en %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

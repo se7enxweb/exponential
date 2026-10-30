@@ -68479,6 +68479,46 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>Share of page time</source>
         <translation>Udio u vremenu stranice</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>zatraženo je potpuno generisanje</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>keš stranica nije imao stranicu (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>keš stranica nije odgovorio</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Generisano</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Generisalo jezgro sistema: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Isporučeno iz keša stranica za %ms ms. Stranica je sačuvana u %stored nakon generisanja od %render ms, prije %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Generiši sada</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Nazad na prikaz iz keš memorije</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Iz generisanja u %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Ovaj zahtjev: isporučeno iz keša stranica za %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

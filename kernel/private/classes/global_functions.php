@@ -78,6 +78,12 @@ function eZDebugReportNoStore( $report )
 function eZDisplayResult( $templateResult )
 {
     ob_start();
+    // The debug report goes between two marks, for the page cache to keep the page without it and the report beside
+    // it (ezpHttpCacheListener::debugBarOf()); filters of response/output change the page after this (form tokens).
+    $mark = function ( $report ) {
+        $report = (string)$report;
+        return $report === '' || !class_exists( 'expDebugBarReport' ) ? $report : expDebugBarReport::BAR_START . $report . expDebugBarReport::BAR_END;
+    };
     if ( $templateResult !== null )
     {
         $templateResult = ezpEvent::getInstance()->filter( 'response/preoutput', $templateResult );
@@ -87,12 +93,12 @@ function eZDisplayResult( $templateResult )
         {
             $debugMarkerLength = strlen( $debugMarker );
             echo substr( $templateResult, 0, $pos );
-            echo eZDisplayDebug();
+            echo $mark( eZDisplayDebug() );
             echo substr( $templateResult, $pos + $debugMarkerLength );
         }
         else
         {
-            echo $templateResult, eZDisplayDebug();
+            echo $templateResult, $mark( eZDisplayDebug() );
         }
     }
     else

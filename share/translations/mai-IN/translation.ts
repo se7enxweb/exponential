@@ -68548,6 +68548,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>पृष्ठ समय मे हिस्सा</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>पूर्ण रेंडरक अनुरोध कयल गेल छल</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>पृष्ठ कैश मे ई पृष्ठ नहि छल (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>पृष्ठ कैश उत्तर नहि देलक</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>रेंडर कयल गेल</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>कर्नेल द्वारा रेंडर कयल गेल: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>पृष्ठ कैश सँ %ms ms मे देल गेल। ई पृष्ठ %stored पर %render ms केर एकटा रेंडर द्वारा सहेजल गेल छल, %age s पहिने।</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>एखने रेंडर करू</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>कैश कयल दृश्य पर पाछाँ</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored केर रेंडर सँ (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>ई अनुरोध: पृष्ठ कैश सँ %ms ms मे देल गेल।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

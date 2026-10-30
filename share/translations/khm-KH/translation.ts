@@ -68540,6 +68540,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>ចំណែកនៃពេលវេលាទំព័រ</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>បានស្នើសុំការបង្ហាញពេញលេញ</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>ឃ្លាំងសម្ងាត់ទំព័រមិនមានទំព័រនេះទេ (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>ឃ្លាំងសម្ងាត់ទំព័រមិនបានឆ្លើយតបទេ</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>បានបង្ហាញ</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>បង្ហាញដោយស្នូល: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>បានបម្រើពីឃ្លាំងសម្ងាត់ទំព័រក្នុងរយៈពេល %ms ms។ ទំព័រត្រូវបានរក្សាទុកនៅ %stored ដោយការបង្ហាញដែលចំណាយ %render ms កាលពី %age វិនាទីមុន។</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>បង្ហាញឥឡូវ</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>ត្រឡប់ក្រោយទៅទិដ្ឋភាពពីឃ្លាំងសម្ងាត់</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>ពីការបង្ហាញនៅ %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>សំណើនេះ: បានបម្រើពីឃ្លាំងសម្ងាត់ទំព័រក្នុងរយៈពេល %ms ms។</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

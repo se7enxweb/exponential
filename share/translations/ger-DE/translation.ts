@@ -71453,6 +71453,46 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Share of page time</source>
         <translation>Anteil an der Seitenzeit</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>eine vollständige Ausgabe wurde angefordert</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>der Seiten-Cache hatte die Seite nicht (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>der Seiten-Cache hat nicht geantwortet</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Erzeugt</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Vom Kernel erzeugt: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>In %ms ms aus dem Seiten-Cache ausgeliefert. Die Seite wurde um %stored von einer Ausgabe mit %render ms gespeichert, vor %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Jetzt erzeugen</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Zurück zur Ansicht aus dem Cache</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Aus der Ausgabe um %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Diese Anfrage: in %ms ms aus dem Seiten-Cache ausgeliefert.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

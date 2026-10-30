@@ -68540,6 +68540,46 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>Share of page time</source>
         <translation>Orriaren denboraren zatia</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>sortze oso bat eskatu da</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>orri-cacheak ez zuen orria (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>orri-cacheak ez du erantzun</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Sortua</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Nukleoak sortua: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Orri-cachetik zerbitzatua, %ms ms-tan. %render ms-ko sortze batek gorde zuen orria %stored orduan, duela %age s.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Sortu orain</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Itzuli cacheko ikuspegira</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored orduko sortzetik (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Eskaera hau: orri-cachetik zerbitzatua, %ms ms-tan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68540,6 +68540,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>စာမျက်နှာအချိန်၏ အချိုး</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>အပြည့်အစုံ ပြသရန် တောင်းဆိုခဲ့သည်</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>စာမျက်နှာ ကက်ရှ်တွင် ဤစာမျက်နှာ မရှိခဲ့ပါ (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>စာမျက်နှာ ကက်ရှ်က မတုံ့ပြန်ခဲ့ပါ</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>ပြသပြီး</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>ကာနယ်က ပြသခဲ့သည်: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>စာမျက်နှာ ကက်ရှ်မှ %ms ms အတွင်း ပေးပို့ခဲ့သည်။ ဤစာမျက်နှာကို %stored တွင် %render ms ကြာသော ပြသမှုဖြင့် သိမ်းဆည်းခဲ့သည်၊ %age စက္ကန့်က ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>ယခု ပြသရန်</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>ကက်ရှ်မှ မြင်ကွင်းသို့ ပြန်သွားရန်</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored တွင် ပြသမှုမှ (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>ဤတောင်းဆိုမှု: စာမျက်နှာ ကက်ရှ်မှ %ms ms အတွင်း ပေးပို့ခဲ့သည်။</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

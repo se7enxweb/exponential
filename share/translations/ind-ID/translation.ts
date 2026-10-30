@@ -68540,6 +68540,46 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>Share of page time</source>
         <translation>Bagian dari waktu halaman</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>render penuh diminta</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>cache halaman tidak memiliki halaman ini (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>cache halaman tidak menjawab</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Dirender</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Dirender oleh inti: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Disajikan dari cache halaman dalam %ms ms. Halaman ini disimpan pada %stored oleh render selama %render ms, %age dtk yang lalu.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Render sekarang</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Kembali ke tampilan dari cache</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Dari render pada %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Permintaan ini: disajikan dari cache halaman dalam %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

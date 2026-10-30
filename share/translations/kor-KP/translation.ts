@@ -68540,6 +68540,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share of page time</source>
         <translation>페지 시간 중 비률</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>전체 렌더링이 요청되였습니다</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>페지 캐시에 이 페지가 없었습니다 (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>페지 캐시가 응답하지 않았습니다</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>렌더링됨</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>커널에서 렌더링됨: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>페지 캐시에서 %ms ms 만에 제공되였습니다. 이 페지는 %render ms 걸린 렌더링으로 저장되였습니다(저장 시각: %stored, %age 초 전).</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>지금 렌더링</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>캐시된 보기로 돌아가기</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>%stored 시점 렌더링의 결과 (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>이 요청: 페지 캐시에서 %ms ms 만에 제공되였습니다.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

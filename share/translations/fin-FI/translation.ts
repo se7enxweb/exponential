@@ -68479,6 +68479,46 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>Share of page time</source>
         <translation>Osuus sivun ajasta</translation>
     </message>
+    <message>
+        <source>a full render was asked for</source>
+        <translation>pyydettiin täydellistä muodostusta</translation>
+    </message>
+    <message>
+        <source>the page cache did not have the page (%reason)</source>
+        <translation>sivuvälimuistissa ei ollut sivua (%reason)</translation>
+    </message>
+    <message>
+        <source>the page cache did not answer</source>
+        <translation>sivuvälimuisti ei vastannut</translation>
+    </message>
+    <message>
+        <source>Rendered</source>
+        <translation>Muodostettu</translation>
+    </message>
+    <message>
+        <source>Rendered by the kernel: %why</source>
+        <translation>Järjestelmäytimen muodostama: %why</translation>
+    </message>
+    <message>
+        <source>Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.</source>
+        <translation>Toimitettu sivuvälimuistista ajassa %ms ms. Sivu tallennettiin %stored muodostuksella, joka kesti %render ms, %age s sitten.</translation>
+    </message>
+    <message>
+        <source>Render now</source>
+        <translation>Muodosta nyt</translation>
+    </message>
+    <message>
+        <source>Back to the cached view</source>
+        <translation>Takaisin välimuistissa olevaan näkymään</translation>
+    </message>
+    <message>
+        <source>From the render at %stored (%render ms)</source>
+        <translation>Muodostuksesta %stored (%render ms)</translation>
+    </message>
+    <message>
+        <source>This request: served from the page cache in %ms ms.</source>
+        <translation>Tämä pyyntö: toimitettu sivuvälimuistista ajassa %ms ms.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
