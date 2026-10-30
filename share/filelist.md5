@@ -25042,7 +25042,7 @@ b000afba47c3a090c5e775dd97d36498  lib/ezutils/classes/ezfiletransport.php
 bc562a9b40207fedd00c05e8e70c4fa6  lib/ezutils/classes/ezhttpfile.php
 e0d8ca296bb2d3d0968aa11679a8d064  lib/ezutils/classes/ezhttppersistence.php
 56a4ea5bb164d555e3b625eac92c3c7c  lib/ezutils/classes/ezhttptool.php
-5bbb1b1d33b211b3f1ff047d0c03d5b6  lib/ezutils/classes/ezini.php
+63b5e592b34b4283506221c200405874  lib/ezutils/classes/ezini.php
 6ee94ad4b0549a535ff40c1dc5e9326d  lib/ezutils/classes/ezinputvalidator.php
 081fb5c82a7fe6ec4e9f97d6fd96c3fa  lib/ezutils/classes/ezintegervalidator.php
 57ff374e2d96e092fc0cf908778c9dc9  lib/ezutils/classes/ezmail.php
@@ -26498,7 +26498,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-31f43d697d499fd6720dda0a6f4acbbd  tests/test-map.json
+38977efd44fb98663aad37d9615e100a  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 9e66dccfb84af9620c270342b88c7f84  tests/tests/bin/ConsoleExtensionAliasTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
@@ -28024,6 +28024,7 @@ eac43077ae5cd7f561145f492ceece2d  tests/tests/lib/ezutils/eZHTTPToolPostNullTest
 208adc421007bdc70e5de100efff76fb  tests/tests/lib/ezutils/eZINIIncludeTest.php
 e45dd6fcf44b971d6a9e2eac2bd4f1bc  tests/tests/lib/ezutils/eZINIParserAndAccessTest.php
 f23df022454c4a9eaa71300127b39d69  tests/tests/lib/ezutils/eZINISaveFilePermissionsTest.php
+4d2dd97fc3969f89ca1b55085ee1237b  tests/tests/lib/ezutils/eZINISiteAccessIniMemoTest.php
 1420df2b74cc255fd0139ce4f50ba3a0  tests/tests/lib/ezutils/eZINITest.php
 f7ef4361c347a658c05efcaafe4d7051  tests/tests/lib/ezutils/eZMailEzcTest.php
 b204ed291d2df3cf194e3ee78711bf67  tests/tests/lib/ezutils/eZMailTest.php

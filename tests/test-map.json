@@ -3022,7 +3022,8 @@
     ],
     "lib/ezutils/classes/ezini.php": [
       "tests/tests/kernel/classes/audit/expAuditHookTest.php",
-      "tests/tests/kernel/classes/engineindex/expPharCheckTest.php"
+      "tests/tests/kernel/classes/engineindex/expPharCheckTest.php",
+      "tests/tests/lib/ezutils/eZINISiteAccessIniMemoTest.php"
     ],
     "lib/ezutils/classes/ezmodule.php": [
       "tests/tests/kernel/classes/audit/expAuditHookTest.php"
