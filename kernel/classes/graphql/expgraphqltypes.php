@@ -24,12 +24,28 @@ class expGraphQLTypes
     /** @var callable class identifier => ObjectType|null (the schema builder's class types) */
     protected $classTypeResolver;
 
+    /** @var expGraphQLSchemaExtension[] */
+    protected $extensions;
+
     /**
      * @param callable $classTypeResolver function( string $classIdentifier ): ObjectType|null
+     * @param expGraphQLSchemaExtension[] $extensions the schema extensions (their fields of Location)
      */
-    public function __construct( callable $classTypeResolver )
+    public function __construct( callable $classTypeResolver, array $extensions = array() )
     {
         $this->classTypeResolver = $classTypeResolver;
+        $this->extensions = $extensions;
+    }
+
+    /**
+     * @return array the fields the schema extensions add to Location
+     */
+    public function extensionLocationFields()
+    {
+        $fields = array();
+        foreach ( $this->extensions as $extension )
+            $fields += (array)$extension->locationFields( $this );
+        return $fields;
     }
 
     /**
@@ -204,7 +220,7 @@ class expGraphQLTypes
                         'parent' => array( 'type' => function () use ( $types ) { return $types->content(); }, 'description' => 'The content of the parent location.',
                                            'resolve' => function ( expGraphQLLocation $l, $args, expGraphQLContext $ctx ) { return expGraphQLTypes::parentOf( $l, $ctx ); } ),
                         'children' => $types->childrenField( function ( expGraphQLLocation $l ) { return $l; }, 'The content below the location.' ),
-                    );
+                    ) + $types->extensionLocationFields();
                 },
             ) );
         } );
@@ -434,6 +450,131 @@ class expGraphQLTypes
         return $this->arrayType( 'Matrix', 'A matrix field: its column names and its rows.', array(
             'columns' => array( Type::nonNull( Type::listOf( Type::nonNull( Type::string() ) ) ), 'columns' ),
             'rows' => array( Type::nonNull( Type::listOf( Type::nonNull( Type::listOf( Type::string() ) ) ) ), 'rows' ) ) );
+    }
+
+    /** @return ObjectType */
+    public function geoLocation()
+    {
+        return $this->arrayType( 'GeoLocation', 'A map location field (ezgmaplocation).', array(
+            'latitude' => array( Type::float(), 'latitude' ), 'longitude' => array( Type::float(), 'longitude' ),
+            'address' => array( Type::string(), 'address' ) ) );
+    }
+
+    /** @return ObjectType */
+    public function rating()
+    {
+        return $this->arrayType( 'Rating', 'A star rating field (ezsrrating): the average of the votes and how many there are.', array(
+            'average' => array( Type::float(), 'average' ), 'count' => array( Type::nonNull( Type::int() ), 'count' ) ) );
+    }
+
+    /** @return ObjectType */
+    public function metadata()
+    {
+        return $this->arrayType( 'Metadata', 'A meta data field (xrowmetadata): what search engines and sitemaps read.', array(
+            'title' => array( Type::string(), 'title' ), 'description' => array( Type::string(), 'description' ),
+            'keywords' => array( Type::nonNull( Type::listOf( Type::nonNull( Type::string() ) ) ), 'keywords' ),
+            'priority' => array( Type::string(), 'priority' ), 'change' => array( Type::string(), 'change' ),
+            'sitemapUse' => array( Type::boolean(), 'sitemapUse' ), 'canonicalUrl' => array( Type::string(), 'canonicalUrl' ) ) );
+    }
+
+    /** @return ObjectType */
+    public function enhancedLink()
+    {
+        $types = $this;
+        return $this->once( 'EnhancedLink', function () use ( $types ) {
+            return new ObjectType( array(
+                'name' => 'EnhancedLink',
+                'description' => 'An enhanced link field (ngenhancedlink): a link to content of the site or to an address outside it.',
+                'fields' => function () use ( $types ) {
+                    $value = function ( $key ) { return function ( array $v ) use ( $key ) { return isset( $v[$key] ) ? $v[$key] : null; }; };
+                    return array(
+                        'type' => array( 'type' => Type::string(), 'description' => 'internal or external.', 'resolve' => $value( 'type' ) ),
+                        'url' => array( 'type' => Type::string(), 'description' => 'The address: of the content in this siteaccess, or the external one.',
+                                        'resolve' => function ( array $v, $args, expGraphQLContext $ctx ) {
+                                            if ( $v['type'] === 'external' )
+                                                return $v['reference'] !== '' ? (string)$v['reference'] : null;
+                                            $id = (int)$v['reference'];
+                                            if ( $id <= 0 )
+                                                return null;
+                                            return new \GraphQL\Deferred( function () use ( $ctx, $id, $v ) {
+                                                $content = $ctx->loader( 'content' )->value( $id );
+                                                $location = $content ? $content->location() : null;
+                                                return $location ? $ctx->siteUrl( $location->urlAlias() ) . (string)$v['suffix'] : null;
+                                            } );
+                                        } ),
+                        'label' => array( 'type' => Type::string(), 'resolve' => $value( 'label' ) ),
+                        'target' => array( 'type' => Type::string(), 'description' => 'How the link opens (link, link_new_tab, modal, embed).', 'resolve' => $value( 'target' ) ),
+                        'suffix' => array( 'type' => Type::string(), 'description' => 'What is added to the address of internal content (#part, ?query).', 'resolve' => $value( 'suffix' ) ),
+                        'rel' => array( 'type' => Type::string(), 'resolve' => $value( 'rel' ) ),
+                        'content' => array( 'type' => function () use ( $types ) { return $types->content(); },
+                                            'description' => 'The linked content (internal links), when the user may read it.',
+                                            'resolve' => function ( array $v, $args, expGraphQLContext $ctx ) {
+                                                return $v['type'] !== 'external' && (int)$v['reference'] > 0 ? $ctx->loader( 'content' )->load( (int)$v['reference'] ) : null;
+                                            } ),
+                    );
+                },
+            ) );
+        } );
+    }
+
+    /** @return ObjectType */
+    public function option()
+    {
+        return $this->arrayType( 'Option', 'A choice of an option field (ezoption).', array(
+            'id' => array( Type::int(), 'id' ), 'value' => array( Type::string(), 'value' ), 'additionalPrice' => array( Type::float(), 'additionalPrice' ) ) );
+    }
+
+    /** @return ObjectType */
+    public function optionList()
+    {
+        $types = $this;
+        return $this->arrayType( 'OptionList', 'An option field (ezoption): its name and its choices.', array(
+            'name' => array( Type::string(), 'name' ),
+            'options' => array( Type::nonNull( Type::listOf( Type::nonNull( $types->option() ) ) ), 'options' ) ) );
+    }
+
+    /** @return ObjectType */
+    public function optionGroup()
+    {
+        $types = $this;
+        return $this->arrayType( 'OptionGroup', 'A group of a multi-option field (ezmultioption).', array(
+            'name' => array( Type::string(), 'name' ),
+            'options' => array( Type::nonNull( Type::listOf( Type::nonNull( $types->option() ) ) ), 'options' ) ) );
+    }
+
+    /** @return ObjectType */
+    public function range()
+    {
+        return $this->arrayType( 'Range', 'A range option field (ezrangeoption).', array(
+            'name' => array( Type::string(), 'name' ), 'start' => array( Type::float(), 'start' ), 'stop' => array( Type::float(), 'stop' ),
+            'step' => array( Type::float(), 'step' ) ) );
+    }
+
+    /** @return ObjectType */
+    public function currencyPrice()
+    {
+        return $this->arrayType( 'CurrencyPrice', 'A price of a multi-price field (ezmultiprice) in one currency.', array(
+            'currency' => array( Type::nonNull( Type::string() ), 'currency' ), 'value' => array( Type::float(), 'value' ),
+            'type' => array( Type::int(), 'type' ) ) );
+    }
+
+    /** @return ObjectType */
+    public function enumValue()
+    {
+        return $this->arrayType( 'EnumValue', 'A chosen value of an enumeration field (ezenum).', array(
+            'element' => array( Type::string(), 'element' ), 'value' => array( Type::string(), 'value' ) ) );
+    }
+
+    /**
+     * A type made once per schema by a schema extension (expGraphQLSchemaExtension).
+     *
+     * @param string $name
+     * @param callable $factory function(): Type
+     * @return Type
+     */
+    public function register( $name, callable $factory )
+    {
+        return $this->once( $name, $factory );
     }
 
     /** @return ObjectType */

@@ -76,11 +76,14 @@ class expGraphQLContext
      *   content          object id => expGraphQLContent at its main location (relations)
      *   node             node id => expGraphQLContent at that location (parents)
      *
+     * A schema extension names a kind of its own and gives its batch function the first time it asks.
+     *
      * @param string $kind
      * @param string|false $language the translation content is read in (content, node)
+     * @param callable|null $batch function( array $keys ): array key => value, for a kind of a schema extension
      * @return expGraphQLBatchLoader
      */
-    public function loader( $kind, $language = false )
+    public function loader( $kind, $language = false, $batch = null )
     {
         $key = $kind . '|' . (string)$language;
         if ( !isset( $this->loaders[$key] ) )
@@ -98,7 +101,8 @@ class expGraphQLContext
                     $batch = function ( array $ids ) use ( $repository, $language ) { return $repository->contentByNodeIdList( $ids, $language ); };
                     break;
                 default:
-                    throw new InvalidArgumentException( "No GraphQL loader $kind" );
+                    if ( !is_callable( $batch ) )
+                        throw new InvalidArgumentException( "No GraphQL loader $kind" );
             }
             $this->loaders[$key] = new expGraphQLBatchLoader( $batch );
         }

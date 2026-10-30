@@ -1234,6 +1234,8 @@ return array(
       'expGraphQLRestViewController'                                 => 'kernel/classes/graphql/rest/expgraphqlrestviewcontroller.php',
       'expGraphQLRichText'                                           => 'kernel/classes/graphql/expgraphqlrichtext.php',
       'expGraphQLSchemaBuilder'                                      => 'kernel/classes/graphql/expgraphqlschemabuilder.php',
+      'expGraphQLSchemaExtension'                                    => 'kernel/classes/graphql/expgraphqlschemaextension.php',
+      'expGraphQLSchemaExtensions'                                   => 'kernel/classes/graphql/expgraphqlschemaextensions.php',
       'expGraphQLServer'                                             => 'kernel/classes/graphql/expgraphqlserver.php',
       'expGraphQLTypes'                                              => 'kernel/classes/graphql/expgraphqltypes.php',
       'expHandlerWizard'                                             => 'kernel/setup/exphandlerwizard.php',

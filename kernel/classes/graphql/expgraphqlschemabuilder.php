@@ -22,6 +22,9 @@ use GraphQL\Type\Schema;
 
 class expGraphQLSchemaBuilder
 {
+    /** The kernel's own schema: raised when its types or the mapping of a datatype change, so the hash does. */
+    const VERSION = 2;
+
     /** @var expGraphQLClassCatalogue */
     protected $catalogue;
 
@@ -43,17 +46,22 @@ class expGraphQLSchemaBuilder
     /** @var Schema|null */
     protected $schema = null;
 
+    /** @var expGraphQLSchemaExtension[] */
+    protected $extensions = array();
+
     /**
      * @param expGraphQLClassCatalogue $catalogue
      * @param expGraphQLNaming $naming
+     * @param expGraphQLSchemaExtension[] $extensions the schema extensions (graphql.ini SchemaExtensionList[])
      */
-    public function __construct( expGraphQLClassCatalogue $catalogue, expGraphQLNaming $naming )
+    public function __construct( expGraphQLClassCatalogue $catalogue, expGraphQLNaming $naming, array $extensions = array() )
     {
         $this->catalogue = $catalogue;
         $this->naming = $naming;
+        $this->extensions = $extensions;
         $builder = $this;
-        $this->types = new expGraphQLTypes( function ( $classIdentifier ) use ( $builder ) { return $builder->classType( $classIdentifier ); } );
-        $this->mapper = new expGraphQLFieldMapper( $this->types );
+        $this->types = new expGraphQLTypes( function ( $classIdentifier ) use ( $builder ) { return $builder->classType( $classIdentifier ); }, $extensions );
+        $this->mapper = new expGraphQLFieldMapper( $this->types, $extensions );
         // the type names first: two classes whose names come out the same get _2, _3 ... in the order of the catalogue
         foreach ( $catalogue->identifiers() as $identifier )
         {
@@ -72,7 +80,7 @@ class expGraphQLSchemaBuilder
      */
     public static function fromSettings()
     {
-        return new self( expGraphQLClassCatalogue::cached(), expGraphQLNaming::fromSettings() );
+        return new self( expGraphQLClassCatalogue::cached(), expGraphQLNaming::fromSettings(), expGraphQLSchemaExtensions::fromSettings() );
     }
 
     /** @return expGraphQLClassCatalogue */
@@ -86,7 +94,18 @@ class expGraphQLSchemaBuilder
      */
     public function schemaHash()
     {
-        return substr( sha1( $this->catalogue->hash() . '|' . $this->naming->style() . '|' . json_encode( $this->typeNames ) ), 0, 12 );
+        $hashed = self::VERSION . '|' . $this->catalogue->hash() . '|' . $this->naming->style() . '|' . json_encode( $this->typeNames );
+        if ( $this->extensions )
+            $hashed .= '|' . implode( ',', expGraphQLSchemaExtensions::names( $this->extensions ) );
+        return substr( sha1( $hashed ), 0, 12 );
+    }
+
+    /**
+     * @return expGraphQLSchemaExtension[] the schema extensions of this schema
+     */
+    public function extensions()
+    {
+        return $this->extensions;
     }
 
     /**
@@ -213,7 +232,7 @@ class expGraphQLSchemaBuilder
                         'description' => 'The content languages of the installation.',
                         'resolve' => function ( $root, $args, expGraphQLContext $ctx ) { return $ctx->repository->languages(); },
                     ),
-                );
+                ) + $builder->extensionQueryFields();
             },
         ) );
         $this->schema = new Schema( array(
@@ -230,6 +249,17 @@ class expGraphQLSchemaBuilder
             },
         ) );
         return $this->schema;
+    }
+
+    /**
+     * @return array the root queries of the schema extensions (a name the kernel uses is not replaced)
+     */
+    public function extensionQueryFields()
+    {
+        $fields = array();
+        foreach ( $this->extensions as $extension )
+            $fields += (array)$extension->queryFields( $this->types );
+        return $fields;
     }
 
     /**
@@ -263,11 +293,12 @@ class expGraphQLSchemaBuilder
                     $unique = $name . '_' . $n;
                 $used[$unique] = true;
                 $fields[] = array( 'attribute' => $attribute['identifier'], 'field' => $unique, 'datatype' => $attribute['datatype'],
-                                   'mapped' => expGraphQLFieldMapper::isMapped( $attribute['datatype'] ) );
+                                   'mapped' => $this->mapper->maps( $attribute['datatype'] ) );
             }
             $classes[] = array( 'identifier' => $identifier, 'type' => $typeName, 'fields' => $fields );
         }
-        return array( 'schemaHash' => $this->schemaHash(), 'naming' => $this->naming->style(), 'classes' => $classes );
+        return array( 'schemaHash' => $this->schemaHash(), 'naming' => $this->naming->style(),
+                      'extensions' => expGraphQLSchemaExtensions::names( $this->extensions ), 'classes' => $classes );
     }
 }
 

@@ -29,7 +29,10 @@ class expGraphQLNaming
     const RESERVED_TYPES = array( 'Query', 'Mutation', 'Subscription', 'Content', 'Location', 'ContentConnection', 'ContentEdge',
                                   'PageInfo', 'ContentSortField', 'SortOrder', 'Image', 'ImageVariation', 'RichText', 'BinaryFile',
                                   'Price', 'Link', 'SelectionOption', 'Country', 'Author', 'Matrix', 'User', 'SiteAccess', 'Language',
-                                  'Int', 'Float', 'String', 'Boolean', 'ID' );
+                                  'Int', 'Float', 'String', 'Boolean', 'ID',
+                                  'GeoLocation', 'Rating', 'Metadata', 'EnhancedLink', 'Option', 'OptionList', 'OptionGroup', 'Range',
+                                  'CurrencyPrice', 'EnumValue', 'SearchResult', 'SearchFacet', 'SearchFacetValue', 'Tag', 'Layout',
+                                  'LayoutZone', 'LayoutBlock', 'LayoutBlockParameter' );
 
     /** The fields every content type has (the interface Content): an attribute of the same name gets _field. */
     const CONTENT_FIELDS = array( 'id', 'remoteId', 'name', 'classIdentifier', 'className', 'published', 'modified', 'language',

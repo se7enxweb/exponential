@@ -33,10 +33,11 @@ This is phase 1: reading content. The API answers queries; it changes nothing. W
 8. [Speed](#speed)
 9. [Errors](#errors)
 10. [The playground and the session end point](#the-playground-and-the-session-end-point)
-11. [Console commands](#console-commands)
-12. [The library](#the-library)
-13. [Settings](#settings)
-14. [What comes next](#what-comes-next)
+11. [Schema extensions](#schema-extensions)
+12. [Console commands](#console-commands)
+13. [The library](#the-library)
+14. [Settings](#settings)
+15. [What comes next](#what-comes-next)
 
 ## Quick start in 60 seconds
 
@@ -261,12 +262,26 @@ Choose the style before clients depend on it: a client's queries name the types 
 | `ezmatrix` | `Matrix`: `columns`, `rows` |
 | `ezobjectrelation` | `Content` |
 | `ezobjectrelationlist` | `[Content!]!` |
+| `ezgmaplocation` | `GeoLocation`: `latitude`, `longitude`, `address` |
+| `ezsrrating` (star rating) | `Rating`: `average` (null without votes), `count` |
+| `xrowmetadata` | `Metadata`: `title`, `description`, `keywords`, `priority`, `change`, `sitemapUse`, `canonicalUrl` |
+| `ngenhancedlink` | `EnhancedLink`: `type` (`internal`, `external`), `url`, `label`, `target`, `suffix`, `rel`, `content` (the linked content, when readable) |
+| `sckenhancedselection` | `[String!]!`: the identifiers chosen |
+| `ngclasslist` | `[String!]!`: class identifiers |
+| `ezoption` | `OptionList`: `name`, `options` (`id`, `value`, `additionalPrice`) |
+| `ezmultioption` | `[OptionGroup!]!`: `name`, `options` |
+| `ezrangeoption` | `Range`: `name`, `start`, `stop`, `step` |
+| `ezmultiprice` | `[CurrencyPrice!]!`: `currency`, `value`, `type` |
+| `ezenum` | `[EnumValue!]!`: `element`, `value` |
+| `ezsubtreesubscription` | `Boolean` |
+| `ezproductcategory` | `String`: the category's name |
+| a datatype of a [schema extension](#schema-extensions) | the type the extension gives it |
 | every other datatype | `String`: the field's text form (`toString()`) |
 
-Every attribute is in the schema (unless hidden): a datatype without a mapping of its own, from the kernel or an
-extension (`eztags`, `ezgmaplocation`, `xrowmetadata` ...), is a `String` with the text the datatype gives for export.
-`exp:graphql:status` lists these datatypes under `string only`, and `exp:graphql:schema --format=summary` marks each
-such field with `"mapped": false`. `eztags` gets a type of its own in a later phase ([What comes next](#what-comes-next)).
+Every attribute is in the schema (unless hidden): a datatype without a mapping of its own, from the kernel or a schema
+extension, is a `String` with the text the datatype gives for export. `exp:graphql:status` lists these datatypes under
+`string only`, and `exp:graphql:schema --format=summary` marks each such field with `"mapped": false`. A datatype of an
+extension that is not active in the siteaccess has no content there, so its field is `null` (or an empty list).
 
 ## Queries, with examples
 
@@ -686,6 +701,44 @@ A page of the site may use it too, for the signed-in user of the browser.
 Neither policy has limitations; what a query reads is decided by the content policies, as always. `/api/graphql`
 needs no policy of its own: a token or key runs with its user's rights, and a key needs the scope `graphql:read`.
 
+## Schema extensions
+
+An extension adds to the schema with a class implementing `expGraphQLSchemaExtension`, listed in
+`[GraphQLSettings] SchemaExtensionList[]` of its `settings/graphql.ini.append.php`. It is asked only where its
+`isAvailable()` says it can answer (its extension active, its classes there), and it may add:
+
+- **root queries** (`queryFields()`), next to `node`, `content` and `children` (a name the kernel uses is kept);
+- **fields of `Location`** (`locationFields()`; the value is an `expGraphQLLocation`);
+- **the type of its datatypes** (`datatypes()` and `fieldMapping()`): a field of such an attribute gets the extension's
+  type instead of a `String`.
+
+```php
+class myColorGraphQLExtension implements expGraphQLSchemaExtension
+{
+    public function isAvailable() { return class_exists( 'myColorType' ); }
+    public function name() { return 'mycolor/1'; }
+    public function datatypes() { return array( 'mycolor' ); }
+    public function queryFields( expGraphQLTypes $types ) { return array(); }
+    public function locationFields( expGraphQLTypes $types ) { return array(); }
+    public function fieldMapping( array $attribute, expGraphQLTypes $types )
+    {
+        $type = $types->register( 'MyColor', function () {
+            return new GraphQL\Type\Definition\ObjectType( array( 'name' => 'MyColor', 'fields' => array(
+                'hex' => array( 'type' => GraphQL\Type\Definition\Type::string(), 'resolve' => function ( $c ) { return $c['hex']; } ) ) ) );
+        } );
+        return array( $type, function ( eZContentObjectAttribute $field, expGraphQLContext $ctx ) {
+            return $field->hasContent() ? array( 'hex' => (string)$field->attribute( 'data_text' ) ) : null;
+        } );
+    }
+}
+```
+
+A type is made once per schema with `$types->register( name, factory )`. A resolver reads with the user's rights, as
+the kernel's do, and asks a batch loader when a level of a list needs many values:
+`$ctx->loader( 'mycolor', false, function ( array $keys ) { ... } )->load( $key )`. The extension's `name()` is part
+of the schema hash, so clients see the schema change. `exp:graphql:status` and `exp:graphql:schema --format=summary`
+list the extensions that answer.
+
 ## Console commands
 
 | Command | Does |
@@ -771,7 +824,7 @@ The API keeps no state between requests (only the fact that the library is loade
 `HiddenFieldList[]`, `HiddenDatatypeList[]`, `Introspection`, `MaxDepth`, `MaxComplexity`, `MaxListLimit`,
 `DefaultListLimit`, `PersistedQueries`, `AutomaticPersistedQueries`, `MaxPersistedQueries`, `PersistedQueriesOnly`,
 `PersistedQueryDirectoryList[]`, `MaxQueryLength`, `ResponseCache`, `ResponseCacheTtl`, `CredentialCacheTtl`, `RateLimit`,
-`RateLimitAnonymous`, `RateLimitWindow`, `ImageAliasList[]`, `Debug`) and [[GraphQLNaming]](../../examples/ini-settings/graphql/GraphQLNaming.md)
+`RateLimitAnonymous`, `RateLimitWindow`, `SchemaExtensionList[]`, `ImageAliasList[]`, `Debug`) and [[GraphQLNaming]](../../examples/ini-settings/graphql/GraphQLNaming.md)
 (`TypeNames[]`, `FieldNames[]`). Never edit the shipped file: put changes in `settings/override/graphql.ini.append.php`
 or a siteaccess's `graphql.ini.append.php`.
 

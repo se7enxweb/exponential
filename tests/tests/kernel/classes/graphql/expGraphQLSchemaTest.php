@@ -356,7 +356,7 @@ class expGraphQLSchemaTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/name_field: String\b/', $sdl );
         $this->assertMatchesRegularExpression( '/short_name: String\b/', $sdl );
         foreach ( array( 'title: String', 'intro: RichText', 'image: Image', 'rating: Int', 'featured: Boolean', 'publish_date: String',
-                         'tags: [String!]!', 'kind: [SelectionOption!]!', 'related: [Content!]!', 'location_field: String' ) as $field )
+                         'tags: [String!]!', 'kind: [SelectionOption!]!', 'related: [Content!]!', 'location_field: GeoLocation' ) as $field )
             $this->assertStringContainsString( $field, $sdl );
         $this->assertStringNotContainsString( 'score:', $sdl );
         $flat = preg_replace( '/\s*"[^"\n]*"\s*|\s+/', ' ', $sdl );
@@ -371,7 +371,7 @@ class expGraphQLSchemaTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/^[0-9a-f]{12}$/', $summary['schemaHash'] );
         $fields = array_column( $summary['classes'][1]['fields'], 'mapped', 'attribute' );
         $this->assertTrue( $fields['title'] );
-        $this->assertFalse( $fields['location'], 'ezgmaplocation falls back to String' );
+        $this->assertTrue( $fields['location'], 'ezgmaplocation has a type of its own (GeoLocation)' );
         $this->assertNotSame( self::builder()->schemaHash(), self::builder( 'pascal' )->schemaHash() );
     }
 

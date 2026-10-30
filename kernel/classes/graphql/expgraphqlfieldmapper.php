@@ -11,6 +11,11 @@
  *   ezbinaryfile ezmedia BinaryFile, ezprice Price, ezurl Link, ezselection [SelectionOption], ezcountry [Country],
  *   ezkeyword [String], ezauthor [Author], ezmatrix Matrix
  *   ezobjectrelation Content, ezobjectrelationlist [Content] (only what the user may read)
+ *   ezgmaplocation GeoLocation, ezsrrating Rating, xrowmetadata Metadata, ngenhancedlink EnhancedLink,
+ *   sckenhancedselection [String] (the identifiers chosen), ngclasslist [String] (class identifiers),
+ *   ezoption OptionList, ezmultioption [OptionGroup], ezrangeoption Range, ezmultiprice [CurrencyPrice],
+ *   ezenum [EnumValue], ezsubtreesubscription Boolean, ezinisetting ezpackage ezproductcategory String
+ *   a datatype of a schema extension (graphql.ini SchemaExtensionList[]): its own type (eztags [Tag])
  *
  * Loaded only after webonyx/graphql-php.
  *
@@ -26,7 +31,13 @@ class expGraphQLFieldMapper
     /** The datatypes with a mapping of their own (the rest falls back to String). */
     const MAPPED = array( 'ezstring', 'eztext', 'ezemail', 'ezisbn', 'ezidentifier', 'ezinteger', 'ezfloat', 'ezboolean', 'ezdate',
                           'ezdatetime', 'eztime', 'ezxmltext', 'ezimage', 'ezbinaryfile', 'ezmedia', 'ezprice', 'ezurl', 'ezselection',
-                          'ezcountry', 'ezkeyword', 'ezauthor', 'ezmatrix', 'ezobjectrelation', 'ezobjectrelationlist' );
+                          'ezcountry', 'ezkeyword', 'ezauthor', 'ezmatrix', 'ezobjectrelation', 'ezobjectrelationlist',
+                          'ezgmaplocation', 'ezsrrating', 'xrowmetadata', 'ngenhancedlink', 'sckenhancedselection', 'ngclasslist',
+                          'ezoption', 'ezmultioption', 'ezrangeoption', 'ezmultiprice', 'ezenum', 'ezsubtreesubscription',
+                          'ezinisetting', 'ezpackage', 'ezproductcategory' );
+
+    /** @var expGraphQLSchemaExtension[] the schema extensions, asked first for a datatype they map */
+    protected $extensions = array();
 
     /** @var expGraphQLTypes */
     protected $types;
@@ -34,9 +45,26 @@ class expGraphQLFieldMapper
     /**
      * @param expGraphQLTypes $types
      */
-    public function __construct( expGraphQLTypes $types )
+    public function __construct( expGraphQLTypes $types, array $extensions = array() )
     {
         $this->types = $types;
+        $this->extensions = $extensions;
+    }
+
+    /**
+     * @param string $datatype
+     * @return bool the datatype has a mapping of its own here (the kernel's, or a schema extension's)
+     */
+    public function maps( $datatype )
+    {
+        if ( self::isMapped( $datatype ) )
+            return true;
+        foreach ( $this->extensions as $extension )
+        {
+            if ( in_array( $datatype, $extension->datatypes(), true ) )
+                return true;
+        }
+        return false;
     }
 
     /**
@@ -73,6 +101,23 @@ class expGraphQLFieldMapper
     }
 
     /**
+     * @param array $list the choices of an option field: id, value, additional_price
+     * @return array[] id, value, additionalPrice
+     */
+    public static function options( array $list )
+    {
+        $options = array();
+        foreach ( $list as $item )
+        {
+            if ( !is_array( $item ) )
+                continue;
+            $options[] = array( 'id' => isset( $item['id'] ) ? (int)$item['id'] : null, 'value' => isset( $item['value'] ) ? (string)$item['value'] : null,
+                                'additionalPrice' => isset( $item['additional_price'] ) && is_numeric( $item['additional_price'] ) ? (float)$item['additional_price'] : null );
+        }
+        return $options;
+    }
+
+    /**
      * The field config of an attribute.
      *
      * @param array $attribute an attribute of expGraphQLClassCatalogue
@@ -102,6 +147,15 @@ class expGraphQLFieldMapper
     {
         $types = $this->types;
         $text = function ( eZContentObjectAttribute $f ) { return $f->hasContent() ? (string)$f->toString() : null; };
+        foreach ( $this->extensions as $extension )
+        {
+            if ( in_array( $attribute['datatype'], $extension->datatypes(), true ) )
+            {
+                $mapping = $extension->fieldMapping( $attribute, $types );
+                if ( is_array( $mapping ) )
+                    return $mapping;
+            }
+        }
         switch ( $attribute['datatype'] )
         {
             case 'ezstring':
@@ -227,6 +281,110 @@ class expGraphQLFieldMapper
                     foreach ( isset( $content['relation_list'] ) ? (array)$content['relation_list'] : array() as $relation )
                         $ids[] = (int)$relation['contentobject_id'];
                     return expGraphQLFieldMapper::loadList( $ctx->loader( 'content', $f->attribute( 'language_code' ) ), $ids );
+                } );
+            case 'ezgmaplocation':
+                return array( $types->geoLocation(), function ( eZContentObjectAttribute $f ) {
+                    $location = $f->hasContent() ? $f->content() : null;
+                    if ( !is_object( $location ) )
+                        return null;
+                    return array( 'latitude' => is_numeric( $location->attribute( 'latitude' ) ) ? (float)$location->attribute( 'latitude' ) : null,
+                                  'longitude' => is_numeric( $location->attribute( 'longitude' ) ) ? (float)$location->attribute( 'longitude' ) : null,
+                                  'address' => (string)$location->attribute( 'address' ) );
+                } );
+            case 'ezsrrating':
+                return array( $types->rating(), function ( eZContentObjectAttribute $f ) {
+                    $rating = $f->content();
+                    if ( !is_object( $rating ) )
+                        return array( 'average' => null, 'count' => 0 );
+                    $count = (int)$rating->attribute( 'rating_count' );
+                    return array( 'average' => $count > 0 ? round( (float)$rating->attribute( 'rating_average' ), 2 ) : null, 'count' => $count );
+                } );
+            case 'xrowmetadata':
+                return array( $types->metadata(), function ( eZContentObjectAttribute $f ) {
+                    $meta = $f->content();
+                    if ( !is_object( $meta ) )
+                        return null;
+                    $read = function ( $name ) use ( $meta ) { return isset( $meta->$name ) && $meta->$name !== '' ? $meta->$name : null; };
+                    return array( 'title' => $read( 'title' ) === null ? null : (string)$read( 'title' ),
+                                  'description' => $read( 'description' ) === null ? null : (string)$read( 'description' ),
+                                  'keywords' => array_values( array_filter( array_map( 'strval', (array)$read( 'keywords' ) ), 'strlen' ) ),
+                                  'priority' => $read( 'priority' ) === null ? null : (string)$read( 'priority' ),
+                                  'change' => $read( 'change' ) === null ? null : (string)$read( 'change' ),
+                                  'sitemapUse' => $read( 'sitemap_use' ) === null ? null : (bool)$read( 'sitemap_use' ),
+                                  'canonicalUrl' => $read( 'canonical_url' ) === null ? null : (string)$read( 'canonical_url' ) );
+                } );
+            case 'ngenhancedlink':
+                return array( $types->enhancedLink(), function ( eZContentObjectAttribute $f ) {
+                    $link = $f->hasContent() ? $f->content() : null;
+                    if ( !is_object( $link ) || $link->reference === null || $link->reference === '' )
+                        return null;
+                    return array( 'type' => $link->type === 'external' ? 'external' : 'internal', 'reference' => $link->reference,
+                                  'label' => $link->label !== null && $link->label !== '' ? (string)$link->label : null,
+                                  'target' => $link->target !== null ? (string)$link->target : null,
+                                  'suffix' => $link->suffix !== null ? (string)$link->suffix : '', 'rel' => $link->relAttribute !== null ? (string)$link->relAttribute : null );
+                } );
+            case 'sckenhancedselection':
+                return array( Type::nonNull( Type::listOf( Type::nonNull( Type::string() ) ) ), function ( eZContentObjectAttribute $f ) {
+                    return array_values( array_filter( array_map( 'strval', (array)$f->content() ), 'strlen' ) );
+                } );
+            case 'ngclasslist':
+                return array( Type::nonNull( Type::listOf( Type::nonNull( Type::string() ) ) ), function ( eZContentObjectAttribute $f ) {
+                    $content = $f->content();
+                    return is_array( $content ) && isset( $content['class_identifiers'] ) ? array_values( array_map( 'strval', (array)$content['class_identifiers'] ) ) : array();
+                } );
+            case 'ezoption':
+                return array( $types->optionList(), function ( eZContentObjectAttribute $f ) {
+                    $option = $f->content();
+                    if ( !is_object( $option ) )
+                        return null;
+                    return array( 'name' => (string)$option->attribute( 'name' ), 'options' => expGraphQLFieldMapper::options( (array)$option->attribute( 'option_list' ) ) );
+                } );
+            case 'ezmultioption':
+                return array( Type::nonNull( Type::listOf( Type::nonNull( $types->optionGroup() ) ) ), function ( eZContentObjectAttribute $f ) {
+                    $multi = $f->content();
+                    $groups = array();
+                    foreach ( is_object( $multi ) ? (array)$multi->attribute( 'multioption_list' ) : array() as $group )
+                        $groups[] = array( 'name' => isset( $group['name'] ) ? (string)$group['name'] : null,
+                                           'options' => expGraphQLFieldMapper::options( isset( $group['optionlist'] ) ? (array)$group['optionlist'] : array() ) );
+                    return $groups;
+                } );
+            case 'ezrangeoption':
+                return array( $types->range(), function ( eZContentObjectAttribute $f ) {
+                    $range = $f->content();
+                    if ( !is_object( $range ) )
+                        return null;
+                    return array( 'name' => (string)$range->attribute( 'name' ), 'start' => (float)$range->attribute( 'start_value' ),
+                                  'stop' => (float)$range->attribute( 'stop_value' ), 'step' => (float)$range->attribute( 'step_value' ) );
+                } );
+            case 'ezmultiprice':
+                return array( Type::nonNull( Type::listOf( Type::nonNull( $types->currencyPrice() ) ) ), function ( eZContentObjectAttribute $f ) {
+                    $multi = $f->content();
+                    $prices = array();
+                    foreach ( is_object( $multi ) ? (array)$multi->attribute( 'price_list' ) : array() as $price )
+                    {
+                        if ( is_object( $price ) )
+                            $prices[] = array( 'currency' => (string)$price->attribute( 'currency_code' ), 'value' => (float)$price->attribute( 'value' ),
+                                               'type' => (int)$price->attribute( 'type' ) );
+                    }
+                    return $prices;
+                } );
+            case 'ezenum':
+                return array( Type::nonNull( Type::listOf( Type::nonNull( $types->enumValue() ) ) ), function ( eZContentObjectAttribute $f ) {
+                    $enum = $f->content();
+                    $values = array();
+                    foreach ( is_object( $enum ) ? (array)$enum->attribute( 'enumobject_list' ) : array() as $value )
+                    {
+                        if ( is_object( $value ) )
+                            $values[] = array( 'element' => (string)$value->attribute( 'enumelement' ), 'value' => (string)$value->attribute( 'enumvalue' ) );
+                    }
+                    return $values;
+                } );
+            case 'ezsubtreesubscription':
+                return array( Type::boolean(), function ( eZContentObjectAttribute $f ) { return (bool)$f->attribute( 'data_int' ); } );
+            case 'ezproductcategory':
+                return array( Type::string(), function ( eZContentObjectAttribute $f ) {
+                    $category = $f->hasContent() ? $f->content() : null;
+                    return is_object( $category ) ? (string)$category->attribute( 'name' ) : null;
                 } );
         }
         return array( Type::string(), $text );

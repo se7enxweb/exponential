@@ -3,13 +3,13 @@ title: graphql.ini [GraphQLSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [GraphQLSettings] in graphql.ini: Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList ..."
-keywords: graphql.ini, GraphQLSettings, INI, setting, Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList, Introspection, MaxDepth, MaxComplexity, MaxListLimit, DefaultListLimit, PersistedQueries, AutomaticPersistedQueries, MaxPersistedQueries, PersistedQueriesOnly, PersistedQueryDirectoryList, MaxQueryLength, ResponseCache, ResponseCacheTtl, CredentialCacheTtl, RateLimit, RateLimitAnonymous, RateLimitWindow, ImageAliasList, Debug
+keywords: graphql.ini, GraphQLSettings, INI, setting, Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList, Introspection, MaxDepth, MaxComplexity, MaxListLimit, DefaultListLimit, PersistedQueries, AutomaticPersistedQueries, MaxPersistedQueries, PersistedQueriesOnly, PersistedQueryDirectoryList, MaxQueryLength, ResponseCache, ResponseCacheTtl, CredentialCacheTtl, RateLimit, RateLimitAnonymous, RateLimitWindow, SchemaExtensionList, ImageAliasList, Debug
 type: generated
 generated: exp:help:examples
 ---
 # graphql.ini [GraphQLSettings]
 
-The block `[GraphQLSettings]` of `settings/graphql.ini`, with 27 setting(s).
+The block `[GraphQLSettings]` of `settings/graphql.ini`, with 28 setting(s).
 
 Never edit `settings/graphql.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -417,6 +417,23 @@ Default: `60`.
 # settings/override/graphql.ini.append.php
 [GraphQLSettings]
 RateLimitWindow=60
+*/ ?>
+```
+
+## SchemaExtensionList
+
+> Schema extensions: classes implementing expGraphQLSchemaExtension that add root queries, fields of Location and the  
+> types of their datatypes; each answers only where it is available (its extension active). An extension adds its own  
+> in its settings/graphql.ini.append.php.  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+# an empty "SchemaExtensionList[]" first replaces the shipped list; without it the items are added
+SchemaExtensionList[]
 */ ?>
 ```
 

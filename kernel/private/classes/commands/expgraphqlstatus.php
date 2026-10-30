@@ -66,6 +66,7 @@ class Expgraphqlstatus extends \Exponential\Runnable\Command
             if ( $status['schemaHash'] !== null )
             {
                 $out->output( sprintf( '%-14s %s, %d classes, %d fields', 'schema', $status['schemaHash'], $status['classes'], $status['fields'] ) );
+                $out->output( sprintf( '%-14s %s', 'extensions', $status['extensions'] ? implode( ' ', $status['extensions'] ) : '-' ) );
                 $out->output( sprintf( '%-14s %s', 'string only', $status['unmappedDatatypes'] ? implode( ' ', $status['unmappedDatatypes'] ) : '-' ) );
             }
             $out->output( $status['library'] ? 'PASS the GraphQL API can run' . ( $status['enabled'] ? '' : ' (switched off here)' ) : 'FAIL the library is missing' );
@@ -97,11 +98,12 @@ class Expgraphqlstatus extends \Exponential\Runnable\Command
                                                    'ttl' => (int)\expGraphQL::setting( 'ResponseCacheTtl', 86400 ) ),
                          'introspection' => (string)\expGraphQL::setting( 'Introspection', 'signed-in' ),
                          'naming' => \expGraphQLNaming::fromSettings()->style(),
-                         'schemaHash' => null, 'classes' => 0, 'fields' => 0, 'unmappedDatatypes' => array() );
+                         'schemaHash' => null, 'classes' => 0, 'fields' => 0, 'extensions' => array(), 'unmappedDatatypes' => array() );
         if ( $library )
         {
             $summary = \expGraphQLSchemaBuilder::fromSettings()->summary();
             $status['schemaHash'] = $summary['schemaHash'];
+            $status['extensions'] = $summary['extensions'];
             $status['classes'] = count( $summary['classes'] );
             $unmapped = array();
             foreach ( $summary['classes'] as $class )
