@@ -59,7 +59,7 @@ class expGraphQLRateLimiter
         $new = !is_file( $file );
         $handle = @fopen( $file, 'c+' );
         if ( $new && $handle !== false )
-            @chmod( $file, 0666 ); // counted by the site's PHP-FPM user and by Velocity's alike
+            @chmod( $file, self::fileMode( 0666 ) ); // counted by the site's PHP-FPM user and by Velocity's alike
         if ( $handle === false )
             return array( 'allowed' => true, 'limit' => $limit, 'remaining' => $limit, 'reset' => $window );
         flock( $handle, LOCK_EX );
@@ -88,6 +88,28 @@ class expGraphQLRateLimiter
     }
 
     /**
+     * @param int $mode
+     * @return int $mode within EZP_FILE_MODE_MAX (expGraphQLResponseCache::fileMode(), loaded with this class early)
+     */
+    protected static function fileMode( $mode )
+    {
+        if ( !class_exists( 'expGraphQLResponseCache', false ) )
+            require_once __DIR__ . '/expgraphqlresponsecache.php';
+        return expGraphQLResponseCache::fileMode( $mode );
+    }
+
+    /**
+     * @param int $mode
+     * @return int $mode within EZP_DIR_MODE_MAX (expGraphQLResponseCache::dirMode())
+     */
+    protected static function dirMode( $mode )
+    {
+        if ( !class_exists( 'expGraphQLResponseCache', false ) )
+            require_once __DIR__ . '/expgraphqlresponsecache.php';
+        return expGraphQLResponseCache::dirMode( $mode );
+    }
+
+    /**
      * Makes a directory (and its parents) every process of the site can write in (PHP-FPM and Velocity run as
      * different users).
      *
@@ -101,9 +123,9 @@ class expGraphQLRateLimiter
         $parent = dirname( $dir );
         if ( $parent !== $dir && !is_dir( $parent ) && !self::makeDirectory( $parent ) )
             return false;
-        if ( !@mkdir( $dir, 0777 ) && !is_dir( $dir ) )
+        if ( !@mkdir( $dir, self::dirMode( 0777 ) ) && !is_dir( $dir ) )
             return false;
-        @chmod( $dir, 0777 );
+        @chmod( $dir, self::dirMode( 0777 ) );
         return true;
     }
 

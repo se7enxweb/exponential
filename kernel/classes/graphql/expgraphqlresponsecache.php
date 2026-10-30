@@ -187,6 +187,67 @@ class expGraphQLResponseCache
     }
 
     /**
+     * $mode within EZP_FILE_MODE_MAX (config.php; doc/eng-us/bc/6.0/file-modes.md), as eZFile::fileMode(): eZFile
+     * answers when it is loaded; before the autoloader (the early answer of index_rest.php) the same rule is applied
+     * here, as ezpHttpCacheContract does.
+     *
+     * @param int $mode
+     * @return int
+     */
+    public static function fileMode( $mode )
+    {
+        if ( class_exists( 'eZFile', false ) )
+            return eZFile::fileMode( $mode );
+        $limit = self::modeLimit( 'EZP_FILE_MODE_MAX', 0600 );
+        if ( $limit === null )
+        {
+            $dirLimit = self::modeLimit( 'EZP_DIR_MODE_MAX', 0700 );
+            $limit = $dirLimit === null ? null : ( $dirLimit & 0666 );
+        }
+        return $limit === null ? (int)$mode : ( (int)$mode & $limit );
+    }
+
+    /**
+     * $mode within EZP_DIR_MODE_MAX, as eZDir::dirMode(); see fileMode().
+     *
+     * @param int $mode
+     * @return int
+     */
+    public static function dirMode( $mode )
+    {
+        if ( class_exists( 'eZDir', false ) && class_exists( 'eZFile', false ) )
+            return eZDir::dirMode( $mode );
+        $limit = self::modeLimit( 'EZP_DIR_MODE_MAX', 0700 );
+        if ( $limit === null )
+        {
+            $fileLimit = self::modeLimit( 'EZP_FILE_MODE_MAX', 0600 );
+            $limit = $fileLimit === null ? null : ( $fileLimit | ( ( $fileLimit & 0444 ) >> 2 ) );
+        }
+        return $limit === null ? (int)$mode : ( (int)$mode & $limit );
+    }
+
+    /**
+     * The limit the constant $name sets, as eZFile reads it: an integer mode or a string of octal digits that leaves
+     * the owner $ownerBits, else null (no limit).
+     *
+     * @param string $name
+     * @param int $ownerBits
+     * @return int|null
+     */
+    private static function modeLimit( $name, $ownerBits )
+    {
+        if ( !defined( $name ) )
+            return null;
+        $value = constant( $name );
+        $mode = null;
+        if ( is_int( $value ) )
+            $mode = $value >= 0 && $value <= 0777 ? $value : ( preg_match( '/^[0-7]{3}$/', (string)$value ) ? octdec( (string)$value ) : null );
+        else if ( is_string( $value ) && preg_match( '/^0*([0-7]{1,3})$/', trim( $value ), $match ) )
+            $mode = octdec( $match[1] );
+        return $mode !== null && ( $mode & $ownerBits ) === $ownerBits ? $mode : null;
+    }
+
+    /**
      * Makes a directory (and its parents) that every process of the site can write in: PHP-FPM runs as the site's
      * user and Velocity as another, and both write answers, counters and stamps here (as var/ is shared, 0777 like
      * site.ini [FileSettings] DirectoryPermissions).
@@ -201,9 +262,9 @@ class expGraphQLResponseCache
         $parent = dirname( $dir );
         if ( $parent !== $dir && !is_dir( $parent ) && !self::makeDirectory( $parent ) )
             return false;
-        if ( !@mkdir( $dir, 0777 ) && !is_dir( $dir ) )
+        if ( !@mkdir( $dir, self::dirMode( 0777 ) ) && !is_dir( $dir ) )
             return false;
-        @chmod( $dir, 0777 );
+        @chmod( $dir, self::dirMode( 0777 ) );
         return true;
     }
 
@@ -220,7 +281,7 @@ class expGraphQLResponseCache
         if ( !self::makeDirectory( $dir ) )
             return false;
         $tmp = $dir . '/.' . basename( $file ) . '.' . getmypid() . '.' . mt_rand() . '.tmp';
-        if ( @file_put_contents( $tmp, $content ) === false || !@chmod( $tmp, 0666 ) || !@rename( $tmp, $file ) )
+        if ( @file_put_contents( $tmp, $content ) === false || !@chmod( $tmp, self::fileMode( 0666 ) ) || !@rename( $tmp, $file ) )
         {
             @unlink( $tmp );
             return false;
@@ -296,7 +357,7 @@ class expGraphQLResponseCache
         if ( !self::makeDirectory( $dir ) )
             return false;
         $tmp = $dir . '/.' . $key . '.' . getmypid() . '.' . mt_rand() . '.tmp';
-        if ( @file_put_contents( $tmp, json_encode( $meta, JSON_UNESCAPED_SLASHES ) . "\n" . $body ) === false || !@chmod( $tmp, 0666 ) || !@rename( $tmp, $file ) )
+        if ( @file_put_contents( $tmp, json_encode( $meta, JSON_UNESCAPED_SLASHES ) . "\n" . $body ) === false || !@chmod( $tmp, self::fileMode( 0666 ) ) || !@rename( $tmp, $file ) )
         {
             @unlink( $tmp );
             return false;
@@ -323,7 +384,7 @@ class expGraphQLResponseCache
         if ( !self::makeDirectory( $this->dir ) )
             return false;
         $tmp = $this->dir . '/.expired.' . getmypid() . '.' . mt_rand() . '.tmp';
-        if ( @file_put_contents( $tmp, sprintf( '%.6F', microtime( true ) ) ) === false || !@chmod( $tmp, 0666 ) || !@rename( $tmp, $this->dir . '/expired' ) )
+        if ( @file_put_contents( $tmp, sprintf( '%.6F', microtime( true ) ) ) === false || !@chmod( $tmp, self::fileMode( 0666 ) ) || !@rename( $tmp, $this->dir . '/expired' ) )
         {
             @unlink( $tmp );
             return false;
