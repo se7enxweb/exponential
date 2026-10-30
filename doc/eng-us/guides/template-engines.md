@@ -10,7 +10,7 @@ can be mixed in one design and one page. What differs is the language, its tools
 | | `.tpl` | `.stpl` | `.twig` |
 |---|---|---|---|
 | Language | Exponential's own template language | Smarty 5 | Twig 3 |
-| Library | the kernel | Smarty 5 (`smarty/smarty`, `[SmartySettings] LibraryPath`) | Twig 3 (`twig/twig`, `[TwigSettings] LibraryPath`) |
+| Library | the kernel | Smarty 5 (`smarty/smarty`, `[SmartySettings] LibraryPath`) | Twig 3 (`twig/twig` on PHP 8.1 and later, `se7enxweb/twig` on 7.4 and 8.0, both through `se7enxweb/exponential-php-floor`; `[TwigSettings] LibraryPath`) |
 | Settings | `template.ini` | `smarty.ini` | `twig.ini` |
 | Compiled to | PHP (`<cache>/template/compiled`) | PHP (`<cache>/smarty/compile-secure`) | PHP classes (`<cache>/twig/compile-secure`) |
 | Operators | by name | as modifiers; `exp_<name>` where Smarty has the name | as filters and functions; `exp_<name>` where Twig has the name |

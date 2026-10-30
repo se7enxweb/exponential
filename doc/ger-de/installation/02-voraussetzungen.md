@@ -76,9 +76,11 @@ Jede Version bringt mehr Geschwindigkeit, und die älteren verlieren zuerst die 
 2022 keine Sicherheitskorrekturen des PHP-Projekts mehr; betreiben Sie es nur dort, wo Ihre Distribution oder Ihr
 Hoster es noch pflegt, und planen Sie den Umzug auf PHP 8.
 
-**Ein Metapaket pro PHP-Bereich.** Der Kernel verlangt außerdem `se7enxweb/exponential-php-floor` (`~1.0.2 || ~1.1.2 || ~1.2.2 || ~1.3.2`). Jede seiner
-Versionen gehört zu einem PHP-Bereich und verlangt die Erweiterungs-Releases, die dort laufen: 1.0.2 für PHP 7.4 (ohne Support nutzbar), 1.1.2
-für 8.0, 1.2.2 für 8.1 bis 8.3, 1.3.2 für 8.4 und neuer (die früheren 1.0.0, 1.0.1, 1.1.0, 1.1.1, 1.2.0, 1.2.1, 1.3.0 und 1.3.1 erlaubten ältere Erweiterungs-Releases und sind ausgeschlossen). Composer installiert die Version, die zum PHP passt, mit dem es
+**Ein Metapaket pro PHP-Bereich.** Der Kernel verlangt außerdem `se7enxweb/exponential-php-floor` (`~1.0.3 || ~1.1.3 || ~1.2.3 || ~1.3.3`). Jede seiner
+Versionen gehört zu einem PHP-Bereich und verlangt die Erweiterungs-Releases und das Twig-3-Release, die dort laufen: 1.0.3 für PHP 7.4 (ohne Support nutzbar,
+`se7enxweb/twig` ~3.11.4), 1.1.3 für 8.0 (`se7enxweb/twig` ~3.19.1), 1.2.3 für 8.1 bis 8.3 und 1.3.3 für 8.4 und neuer (`twig/twig` ^3.27).
+Die früheren Versionen (1.0.0 bis 1.0.2, 1.1.0 bis 1.1.2, 1.2.0 bis 1.2.2, 1.3.0 bis 1.3.2) erlaubten ältere Erweiterungs-Releases oder installieren
+kein Twig und sind ausgeschlossen. Der Kernel verlangt `twig/twig` nicht selbst: Das Upstream-Twig bis 3.26 ist durch Sicherheitshinweise gesperrt, und 3.27 verlangt PHP 8.1. Composer installiert die Version, die zum PHP passt, mit dem es
 läuft; dasselbe `composer require se7enxweb/exponential` ergibt so auf jedem unterstützten PHP eine vollständige
 Installation, mit eingeschalteten Sicherheitsprüfungen von Composer. Führen Sie Composer mit dem PHP aus, das die
 Website verwenden wird (siehe [PHP auf der Kommandozeile und im Web](#php-auf-der-kommandozeile-und-im-web)).

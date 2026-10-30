@@ -72,9 +72,11 @@ older ones lose security support first (see PHP's [supported versions](https://w
 PHP 7.4 itself has had no security support from the PHP project since November 2022; run it only where your
 distribution or host still patches it, and plan the move to PHP 8.
 
-**One metapackage per PHP range.** The kernel also requires `se7enxweb/exponential-php-floor` (`~1.0.2 || ~1.1.2 || ~1.2.2 || ~1.3.2`). Each of its
-versions belongs to one PHP range and requires the extension releases that run there: 1.0.2 for PHP 7.4 (usable without support), 1.1.2 for
-8.0, 1.2.2 for 8.1 to 8.3, 1.3.2 for 8.4 and later (the earlier 1.0.0, 1.0.1, 1.1.0, 1.1.1, 1.2.0, 1.2.1, 1.3.0 and 1.3.1 allowed older extension releases and are left out). Composer installs the version that matches the PHP it runs with,
+**One metapackage per PHP range.** The kernel also requires `se7enxweb/exponential-php-floor` (`~1.0.3 || ~1.1.3 || ~1.2.3 || ~1.3.3`). Each of its
+versions belongs to one PHP range and requires the extension releases and the Twig 3 release that run there: 1.0.3 for PHP 7.4 (usable without support,
+`se7enxweb/twig` ~3.11.4), 1.1.3 for 8.0 (`se7enxweb/twig` ~3.19.1), 1.2.3 for 8.1 to 8.3 and 1.3.3 for 8.4 and later (`twig/twig` ^3.27).
+The earlier versions (1.0.0 to 1.0.2, 1.1.0 to 1.1.2, 1.2.0 to 1.2.2, 1.3.0 to 1.3.2) allowed older extension releases or install no Twig and are
+left out. The kernel does not require `twig/twig` itself: upstream Twig up to 3.26 is blocked by security advisories and 3.27 needs PHP 8.1. Composer installs the version that matches the PHP it runs with,
 so the same `composer require se7enxweb/exponential` gives a complete installation on every supported PHP, with
 Composer's security checks left on. Run Composer with the PHP the site will use (see
 [Command line and web PHP](#command-line-and-web-php)).
