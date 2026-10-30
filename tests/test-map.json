@@ -2329,6 +2329,12 @@
     "kernel/private/classes/commands/exptemplateconverttwigtostpl.php": [
       "tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php",
       "tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php"
+    ],
+    "kernel/classes/expkernelservicescope.php": [
+      "tests/tests/kernel/classes/expKernelServiceScopeMemoTest.php"
+    ],
+    "kernel/classes/expkernelservices.php": [
+      "tests/tests/kernel/classes/expKernelServiceScopeMemoTest.php"
     ]
   },
   "generated": {

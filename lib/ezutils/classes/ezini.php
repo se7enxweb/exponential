@@ -3099,7 +3099,12 @@ class eZINI
     static function flushSharedStore()
     {
         if ( self::$sharedStore !== null )
+        {
             self::$sharedStore->ini = array();
+            // what was worked out from the settings goes with them (expKernelServiceScope::memo())
+            if ( isset( self::$sharedStore->memo ) )
+                self::$sharedStore->memo = array();
+        }
         self::detachSharedStore();
     }
 

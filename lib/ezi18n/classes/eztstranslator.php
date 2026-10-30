@@ -123,16 +123,29 @@ class eZTSTranslator extends eZTranslatorHandler
 
         if ( !$this->RootCache )
         {
-            $roots = array( $ini->variable( 'RegionalSettings', 'TranslationRepository' ) );
-            $translationExtensions = $ini->variable( 'RegionalSettings', 'TranslationExtensions' );
-            foreach ( eZExtension::expandedPathList( $translationExtensions, 'translations' ) as $extensionPath )
-            {
-                if ( !$checkMTime || file_exists( $extensionPath ) )
+            // The directories to look in, and (with TranslationCheckMTime) the newest time of the files of this
+            // locale and its fallbacks in them: worked out from the settings and the files, a few hundred file
+            // checks. A persistent worker keeps them while its settings are kept (expKernelServiceScope::memo());
+            // a deploy or an INI cache clear starts over.
+            $scanFiles = $checkMTime && $this->UseCache;
+            $build = function () use ( $ini, $checkMTime, $scanFiles, $locale, $charset, $filename )
                 {
-                    $roots[] = $extensionPath;
-                }
-            }
-            $this->RootCache = array( 'roots' => $roots );
+                    $roots = array( $ini->variable( 'RegionalSettings', 'TranslationRepository' ) );
+                    $translationExtensions = $ini->variable( 'RegionalSettings', 'TranslationExtensions' );
+                    foreach ( eZExtension::expandedPathList( $translationExtensions, 'translations' ) as $extensionPath )
+                    {
+                        if ( !$checkMTime || file_exists( $extensionPath ) )
+                        {
+                            $roots[] = $extensionPath;
+                        }
+                    }
+                    return array( 'roots' => $roots, 'files' => $scanFiles ? self::newestFileTime( $roots, $locale, $charset, $filename ) : 0 );
+                };
+            $memo = class_exists( 'expKernelServiceScope' )
+                ? expKernelServiceScope::memo( 'ts-roots|' . $locale . '|' . $filename . '|' . $charset . '|' . ( $checkMTime ? 1 : 0 ) . ( $scanFiles ? 1 : 0 ), $build )
+                : $build();
+            $roots = $memo['roots'];
+            $this->RootCache = array( 'roots' => $roots, 'files' => $memo['files'] );
         }
         else
         {
@@ -151,27 +164,9 @@ class eZTSTranslator extends eZTranslatorHandler
                 $globalTsTimeStamp = $expiry->getTimestamp( self::EXPIRY_KEY, 0 );
                 $localeTsTimeStamp = $expiry->getTimestamp( self::EXPIRY_KEY . '-' . $locale, 0 );
                 $tsTimeStamp = max( $globalTsTimeStamp, $localeTsTimeStamp );
-                if ( $checkMTime && $tsTimeStamp < time() )// no need if ts == time()
-                {
-                    // iterate over each known TS file, and get the highest timestamp
-                    // this value will be used to check for cache validity
-                    // the files of the fallbacks count too: a changed ger-DE file renews the cache of ger-AT
-                    foreach ( $roots as $root )
-                    {
-                        foreach ( array_merge( array( $locale ), self::fallbackChain( $locale ) ) as $timeLocale )
-                        {
-                            $path = eZDir::path( array( $root, $timeLocale, $charset, $filename ) );
-                            if ( !file_exists( $path ) )
-                                $path = eZDir::path( array( $root, $timeLocale, $filename ) );
-                            if ( file_exists( $path ) )
-                            {
-                                $timestamp = filemtime( $path );
-                                if ( $timestamp > $tsTimeStamp )
-                                    $tsTimeStamp = $timestamp;
-                            }
-                        }
-                    }
-                }
+                // the highest time of the TS files counts too: it decides whether the cache is valid
+                if ( $checkMTime && $this->RootCache['files'] > $tsTimeStamp )
+                    $tsTimeStamp = $this->RootCache['files'];
                 $this->RootCache['timestamp'] = $tsTimeStamp;
             }
 
@@ -366,6 +361,37 @@ class eZTSTranslator extends eZTranslatorHandler
      * @param string $locale
      * @return string[]
      */
+    /**
+     * The newest modification time of the TS files of $locale and of its fallbacks (a changed ger-DE file renews the
+     * cache of ger-AT) in the translation directories $roots, in the charset's directory first; 0 when there is none.
+     *
+     * @param string[] $roots
+     * @param string $locale
+     * @param string $charset
+     * @param string $filename
+     * @return int
+     */
+    static function newestFileTime( array $roots, $locale, $charset, $filename )
+    {
+        $newest = 0;
+        foreach ( $roots as $root )
+        {
+            foreach ( array_merge( array( $locale ), self::fallbackChain( $locale ) ) as $timeLocale )
+            {
+                $path = eZDir::path( array( $root, $timeLocale, $charset, $filename ) );
+                if ( !file_exists( $path ) )
+                    $path = eZDir::path( array( $root, $timeLocale, $filename ) );
+                if ( file_exists( $path ) )
+                {
+                    $timestamp = filemtime( $path );
+                    if ( $timestamp > $newest )
+                        $newest = $timestamp;
+                }
+            }
+        }
+        return $newest;
+    }
+
     static function fallbackChain( $locale )
     {
         if ( class_exists( 'expI18nFallbackResolver' ) )

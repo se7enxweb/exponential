@@ -79,7 +79,16 @@ class ezpHttpCacheListener
             self::$contract = ezpHttpCacheContract::fromDir( $dir ) ?: false;
             return self::$contract ?: null;
         }
-        $config = self::buildConfig( $ini, $dir );
+        // Worked out from the settings (and the session settings of this process): the siteaccess settings of every
+        // cached siteaccess were loaded for it on every request, some 4 ms. A persistent worker keeps it while its
+        // settings are kept (expKernelServiceScope::memo()); the secret file is read each time and must still match.
+        $memoKey = 'httpcache-config|' . $siteaccess . '|' . $dir . '|' . ini_get( 'session.name' ) . '|'
+                   . ini_get( 'session.save_handler' ) . '|' . ini_get( 'session.save_path' );
+        $config = expKernelServiceScope::memo( $memoKey, function () use ( $ini, $dir ) { return self::buildConfig( $ini, $dir ); } );
+        if ( $config !== null && @file_get_contents( $dir . '/secret' ) !== $config['secret'] )
+            $config = self::buildConfig( $ini, $dir );
+        // a configuration that could not be made (no secret) is tried again by the next request
+        expKernelServiceScope::setMemo( $memoKey, $config );
         if ( $config === null )
             return null;
         $file = $dir . '/contract.php';
