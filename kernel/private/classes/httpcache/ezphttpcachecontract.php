@@ -68,6 +68,9 @@ class ezpHttpCacheContract
             // A contract written before the setting existed trusts what the
             // kernel trusts without site.ini saying otherwise.
             'trustedProxies' => eZTrustedProxy::defaultList(),
+            // Who sees the debug bar (site.ini [DebugSettings]): such a visitor is answered from the cache with the
+            // bar of the render that stored the page (debugBar()); empty or not enabled: as before
+            'debug' => array(),
         );
     }
 
@@ -1137,6 +1140,11 @@ class ezpHttpCacheContract
         if ( !$this->cachesSiteAccess( $siteaccess ) )
             return $this->miss( 'siteaccess' );
         $uri = $request['uri'] ?? '/';
+        // The debug bar's full-render switch, the view parameter (exp_render)/full, is never part of a key: the
+        // kernel takes it out of the address too (expRenderSwitch). It only means something for a debug viewer.
+        if ( !class_exists( 'expRenderSwitch', false ) )
+            require_once __DIR__ . '/exprenderswitch.php';
+        list( $uri, $fullAsked ) = expRenderSwitch::strip( $uri );
         $viaShield = false;
         if ( !$this->queryAllowed( $uri ) )
         {
@@ -1184,6 +1192,21 @@ class ezpHttpCacheContract
             $context = $record['ctx'];
         }
 
+        // A visitor the debug bar is shown to has entries of their own, stored with the bar of their render
+        // (lookupDebug()). Asked without the visitor's address (the server process in front of the workers), a
+        // user who has such entries is never answered with a page without the bar: the worker asks again.
+        $debug = $this->debugViewer( $request, $userID );
+        if ( $debug === null && $userID !== 0 && is_file( $this->debugMarkerPath( $userID ) ) )
+            return $this->miss( 'debug viewer, address not known here' );
+        if ( $debug === true )
+        {
+            if ( $fullAsked )
+                return $this->miss( 'full render asked' );
+            if ( $viaShield )
+                return $this->miss( 'debug viewer, request-shield lookup' );
+            return $this->lookupDebug( $request, $scheme, $host, $siteaccess, $uri, $context, $userID, $sessionID );
+        }
+
         $key = $this->entryKey( $scheme, $host, $siteaccess, $uri, $context );
         $entry = $this->loadEntry( $key, !$viaShield );
         if ( !$entry )
@@ -1218,6 +1241,252 @@ class ezpHttpCacheContract
         $headers['Content-Length'] = (string)strlen( $out );
         $this->lastReason = 'hit';
         return array( (int)$meta['status'], $headers, ( $request['method'] ?? 'GET' ) === 'HEAD' ? '' : $out );
+    }
+
+    // ── The debug bar's visitors ─────────────────────────────────────────
+
+    /**
+     * The address of the client, as the kernel takes it (eZSys::clientIP(): REMOTE_ADDR, or the header of
+     * [HTTPHeaderSettings] ClientIpByCustomHTTPHeader through a trusted proxy), or null when the request does not
+     * carry it (the server process in front of the workers asks without it).
+     *
+     * @param array $request as serve() takes it, with 'server' ($_SERVER) or 'remoteAddr' and 'headers'
+     * @return string|null
+     */
+    public function clientAddress( array $request )
+    {
+        $server = isset( $request['server'] ) && is_array( $request['server'] ) ? $request['server'] : array();
+        $remote = isset( $request['remoteAddr'] ) ? (string)$request['remoteAddr'] : (string)( $server['REMOTE_ADDR'] ?? '' );
+        if ( $remote === '' )
+            return null;
+        $header = (string)( $this->config['debug']['clientIpHeader'] ?? '' );
+        if ( $header !== '' && $header !== 'false' )
+        {
+            $value = $server['HTTP_' . str_replace( '-', '_', strtoupper( $header ) )] ?? null;
+            if ( $value === null && isset( $request['headers'] ) && is_array( $request['headers'] ) )
+                $value = $request['headers'][strtolower( $header )] ?? null;
+            if ( is_string( $value ) && $value !== '' )
+                return (string)eZTrustedProxy::clientAddress( $remote, $value, (array)$this->config['trustedProxies'] );
+        }
+        return $remote;
+    }
+
+    /**
+     * Whether the debug bar is shown to this request, as the kernel decides it (eZDebug: DebugOutput, then
+     * DebugByIP with DebugIPList[] and DebugByUser with DebugUserIDList[]): true, false, or null when that depends
+     * on an address the request does not carry. Only with DebugByIP or DebugByUser on; with both off the bar is
+     * shown to everybody and nothing changes here.
+     *
+     * @param array $request
+     * @param int $userID
+     * @return bool|null
+     */
+    public function debugViewer( array $request, $userID )
+    {
+        $d = (array)( $this->config['debug'] ?? array() );
+        if ( empty( $d['output'] ) || ( empty( $d['byIP'] ) && empty( $d['byUser'] ) ) )
+            return false;
+        if ( !empty( $d['byUser'] ) && !in_array( (int)$userID, array_map( 'intval', (array)( $d['userIDs'] ?? array() ) ), true ) )
+            return false;
+        if ( empty( $d['byIP'] ) )
+            return true;
+        $ip = $this->clientAddress( $request );
+        if ( $ip === null )
+            return null;
+        if ( !class_exists( 'expDebugBarIPList', false ) )
+            require_once dirname( __DIR__, 4 ) . '/kernel/classes/debugbar/expdebugbariplist.php';
+        return expDebugBarIPList::match( $ip, (array)( $d['ipList'] ?? array() ) ) !== null;
+    }
+
+    /** The context of a debug viewer's entries: their own, beside the role context of their pages */
+    public function debugContext( $context, $userID )
+    {
+        return $context . '|debug|u' . (int)$userID;
+    }
+
+    /** The file that says a user has entries with the debug bar (debugViewer(), lookup()) */
+    public function debugMarkerPath( $userID )
+    {
+        $userID = (int)$userID;
+        return $this->config['dir'] . '/u/' . ( $userID % 100 ) . '/' . $userID . '.debug';
+    }
+
+    private function debugReportPath( $key, $etag )
+    {
+        return $this->entryPath( $key, substr( (string)$etag, 0, 16 ) . '.dbg' );
+    }
+
+    /**
+     * Keeps the debug bar of the render that stored the entry $key ($meta: what storeEntry() gave back), to be put
+     * back at $offset of the body when the entry is served to a debug viewer. Readable by the owner only (0600):
+     * the bar holds SQL, settings and messages of that render. A user's marker file says that they have such entries.
+     *
+     * @param string $key
+     * @param array $meta
+     * @param int $offset where the bar stood in the stored body
+     * @param string $html the bar
+     * @param array $served the bar's "served" block (expDebugBarReport::servedInfo()) with render_ms
+     * @param int $userID
+     * @param int|null $before how many of the entry's placeholders stand before the bar (a placeholder right before
+     *                         it and one right after it have the same offset); null: those before $offset
+     * @return bool
+     */
+    public function storeDebugReport( $key, array $meta, $offset, $html, array $served, $userID, $before = null )
+    {
+        $path = $this->debugReportPath( $key, $meta['etag'] );
+        if ( $before === null )
+        {
+            $before = 0;
+            foreach ( (array)$meta['placeholders'] as $p )
+                $before += $p[0] < $offset ? 1 : 0;
+        }
+        $data = json_encode( array( 'offset' => (int)$offset, 'before' => (int)$before, 'html' => (string)$html,
+                                    'served' => $served, 'stored' => (float)$meta['created'] ) );
+        if ( $data === false || !$this->atomicWrite( $path, $data ) )
+            return false;
+        @chmod( $path, 0600 );
+        $marker = $this->debugMarkerPath( $userID );
+        if ( (int)$userID !== 0 && !is_file( $marker ) )
+        {
+            $this->ensureDir( dirname( $marker ) );
+            $this->atomicWrite( $marker, (string)time() );
+        }
+        return true;
+    }
+
+    /**
+     * The answer for a debug viewer: their own entry for the page with the bar of the render that stored it, put back
+     * where it stood, its first chip saying "Cached" with a link to a full render, the page time chip and the data
+     * block giving this answer's time, and each tab saying which render its figures are from (debugBar()). A stale
+     * entry is not served: the viewer gets a fresh render.
+     */
+    private function lookupDebug( array $request, $scheme, $host, $siteaccess, $uri, $context, $userID, $sessionID )
+    {
+        $start = isset( $request['start'] ) ? (float)$request['start'] : microtime( true );
+        $key = $this->entryKey( $scheme, $host, $siteaccess, $uri, $this->debugContext( $context, $userID ) );
+        $entry = $this->loadEntry( $key, false );
+        if ( !$entry )
+            return null;
+        list( $meta, $body ) = $entry;
+        if ( !empty( $meta['stale'] ) )
+            return $this->miss( 'expired' );
+        $raw = @file_get_contents( $this->debugReportPath( $key, $meta['etag'] ) );
+        $report = $raw === false ? null : json_decode( $raw, true );
+        if ( !is_array( $report ) || !isset( $report['html'], $report['offset'], $report['served'] ) || $report['offset'] > strlen( $body ) )
+            return $this->miss( 'no debug report' );
+        $values = $this->placeholderValues( $meta['placeholders'], $sessionID );
+        if ( $values === null )
+            return $this->miss( 'placeholder' );
+
+        $created = (float)$meta['created'];
+        $bar = $this->debugBar( (string)$report['html'], (array)$report['served'], $created, $start, $uri );
+        $offset = (int)$report['offset'];
+        // the placeholders after the bar move with it
+        $before = isset( $report['before'] ) ? (int)$report['before'] : PHP_INT_MAX;
+        $placeholders = array();
+        foreach ( array_values( $meta['placeholders'] ) as $i => $p )
+        {
+            if ( $i >= $before )
+                $p[0] += strlen( $bar );
+            $placeholders[] = $p;
+        }
+        $out = self::substitute( substr_replace( $body, $bar, $offset, 0 ), $placeholders, $values );
+
+        $headers = $meta['headers'];
+        unset( $headers['xkey'], $headers['Surrogate-Key'], $headers['Cache-Tag'], $headers['ETag'] );
+        $headers['Age'] = (string)max( 0, (int)( microtime( true ) - $created ) );
+        $headers['X-Exp-Cache'] = 'HIT (debug viewer, bar of the render at ' . date( 'H:i:s', (int)$created ) . ')';
+        // the bar belongs to this viewer and this answer
+        $headers['Cache-Control'] = 'private, no-store';
+        $headers['Vary'] = 'Accept-Encoding, Cookie';
+        $headers['Content-Length'] = (string)strlen( $out );
+        $this->lastReason = 'hit';
+        return array( (int)$meta['status'], $headers, ( $request['method'] ?? 'GET' ) === 'HEAD' ? '' : $out );
+    }
+
+    /**
+     * The stored bar as the answer from the cache shows it: "Cached" (with the time of this answer, when the page
+     * was stored and the time of its render in the title) and "Render now" in place of "Rendered", this answer's time
+     * in the page time chip, "From the render at ..." at the head of every tab, a line on this request in the Timing
+     * tab, and the data block saying the same (served, summary.time, server_summary.time). Every other part of the bar
+     * is the render's, unchanged.
+     *
+     * @param string $html the stored bar
+     * @param array $served its "served" block (expDebugBarReport::servedInfo(), render_ms set when stored)
+     * @param float $created when the page was stored
+     * @param float $start when this request started
+     * @param string $uri the page's address (without the switch)
+     * @return string
+     */
+    public function debugBar( $html, array $served, $created, $start, $uri )
+    {
+        if ( !class_exists( 'expRenderSwitch', false ) )
+            require_once __DIR__ . '/exprenderswitch.php';
+        $e = function ( $value ) { return htmlspecialchars( (string)$value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ); };
+        $labels = (array)( $served['labels'] ?? array() );
+        $label = function ( $name, $default, array $values = array() ) use ( $labels ) {
+            return strtr( isset( $labels[$name] ) ? (string)$labels[$name] : $default, $values );
+        };
+        $now = microtime( true );
+        $ms = max( 0.0, ( $now - $start ) * 1000 );
+        $renderMs = isset( $served['render_ms'] ) ? (float)$served['render_ms'] : 0.0;
+        $values = array( '%ms' => number_format( $ms, 1, '.', '' ), '%stored' => date( 'H:i:s', (int)$created ),
+                         '%render' => number_format( $renderMs, 0, '.', '' ),
+                         '%age' => (string)max( 0, (int)( $now - $created ) ) );
+
+        $chip = '<span class="exp-debug-served" data-served="cache" title="'
+              . $e( $label( 'cache_title', 'Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.', $values ) ) . '">'
+              . $e( $label( 'cache', 'Cached' ) ) . '</span>'
+              . '<a class="exp-debug-served-action" href="' . $e( expRenderSwitch::add( $uri ) ) . '">' . $e( $label( 'render_now', 'Render now' ) ) . '</a>';
+        $html = self::replaceBetween( $html, '<!--exp-served-->', '<!--/exp-served-->', $chip );
+
+        // the page time chip gives this answer's time
+        $seconds = number_format( $ms / 1000, 3, '.', '' ) . ' s';
+        $html = self::replaceBetween( $html, '<!--exp-served-time-->', '<!--/exp-served-time-->', null,
+            function ( $chipHtml ) use ( $seconds ) { return preg_replace( '/\d+\.\d{3} s/', $seconds, $chipHtml ); } );
+
+        // every tab: whose figures these are; Timing: this request
+        $from = '<p class="exp-debug-hint exp-debug-from-render">' . $e( $label( 'from_render', 'From the render at %stored (%render ms)', $values ) ) . '</p>';
+        $thisRequest = '<p class="exp-debug-hint exp-debug-from-render" data-this-request="1">' . $e( $label( 'this_request', 'This request: served from the page cache in %ms ms.', $values ) ) . '</p>';
+        $html = preg_replace_callback( '#(<section class="exp-debug-panel"[^>]*id="exp-debug-panel-([a-z0-9_-]+)"[^>]*>\s*<h3 class="exp-debug-panel-title">.*?</h3>)#s',
+            function ( $m ) use ( $from, $thisRequest ) { return $m[1] . ( $m[2] === 'timing' ? $thisRequest : '' ) . $from; }, $html );
+
+        // the data block
+        $html = preg_replace_callback( '#(<script type="application/json" id="exp-debug-data">)(.*?)(</script>)#s',
+            function ( $m ) use ( $ms, $created, $renderMs, $now ) {
+                $data = json_decode( $m[2], true );
+                if ( !is_array( $data ) )
+                    return $m[0];
+                $data['served'] = array( 'by' => 'cache', 'render_time' => round( $renderMs / 1000, 4 ),
+                                         'stored_at' => date( 'c', (int)$created ), 'age' => max( 0, (int)( $now - $created ) ),
+                                         'time' => round( $ms / 1000, 4 ) )
+                                  + (array)( $data['served'] ?? array() );
+                if ( isset( $data['summary']['time'] ) )
+                    $data['summary']['time'] = round( $ms / 1000, 4 );
+                if ( isset( $data['summary']['served'] ) )
+                    $data['summary']['served'] = $data['served'];
+                if ( isset( $data['server_summary']['time']['total_ms'] ) )
+                    $data['server_summary']['time']['total_ms'] = round( $ms, 1 );
+                $json = json_encode( $data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE | JSON_PARTIAL_OUTPUT_ON_ERROR );
+                return $json === false ? $m[0] : $m[1] . $json . $m[3];
+            }, $html );
+        return $html;
+    }
+
+    /**
+     * $html with what stands between $start and $end (both kept) replaced by $with, or passed through $map.
+     */
+    private static function replaceBetween( $html, $start, $end, $with, $map = null )
+    {
+        $a = strpos( $html, $start );
+        if ( $a === false )
+            return $html;
+        $a += strlen( $start );
+        $b = strpos( $html, $end, $a );
+        if ( $b === false )
+            return $html;
+        $inner = $map !== null ? $map( substr( $html, $a, $b - $a ) ) : (string)$with;
+        return substr( $html, 0, $a ) . $inner . substr( $html, $b );
     }
 
     // ── Helpers ──────────────────────────────────────────────────────────
@@ -1350,6 +1619,12 @@ class ezpHttpCacheContract
             foreach ( glob( $shard . '/*.body' ) ?: array() as $bodyFile )
             {
                 if ( !isset( $live[basename( $bodyFile )] ) && $old( $bodyFile ) && @unlink( $bodyFile ) )
+                    $counts['bodies']++;
+            }
+            // the debug bars kept beside the bodies (storeDebugReport()) go with them
+            foreach ( glob( $shard . '/*.dbg' ) ?: array() as $dbgFile )
+            {
+                if ( !isset( $live[substr( basename( $dbgFile ), 0, -4 ) . '.body'] ) && $old( $dbgFile ) && @unlink( $dbgFile ) )
                     $counts['bodies']++;
             }
             foreach ( glob( $shard . '/*.tmp' ) ?: array() as $tmp )

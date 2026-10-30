@@ -261,8 +261,9 @@
       "tests/tests/lib/ezfile/expLogRotatorTest.php"
     ],
     "lib/ezutils/classes/expdebugbarreport.php": [
-      "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php",
+      "tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php",
       "tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php",
+      "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php",
       "tests/tests/lib/smarty/expSmartyDebugBarTest.php"
     ],
     "design/standard/stylesheets/expdebugbar-toolbar.css": [
@@ -2341,6 +2342,18 @@
     ],
     "kernel/classes/expvelocity.php": [
       "tests/tests/kernel/classes/expVelocityEngineRunArchiveTest.php"
+    ],
+    "kernel/private/classes/httpcache/exprenderswitch.php": [
+      "tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php"
+    ],
+    "kernel/private/classes/httpcache/ezphttpcachecontract.php": [
+      "tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php"
+    ],
+    "kernel/private/classes/httpcache/ezphttpcachelistener.php": [
+      "tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php"
+    ],
+    "kernel/private/classes/httpcache/ezphttpcacheworkerdebug.php": [
+      "tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php"
     ]
   },
   "generated": {

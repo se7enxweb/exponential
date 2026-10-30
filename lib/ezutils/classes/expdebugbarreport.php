@@ -336,6 +336,9 @@ class expDebugBarReport
             // rows of the Server tab, since the bar can show to anonymous visitors (DebugByIP)
             'runtime'   => self::runtimeFigures( $userInfo['can_setup'] || $userInfo['can_cache'] ),
         );
+        // how this page came about: rendered by the kernel (why), for the first chip of the bar; a page served from the
+        // page cache gets the same bar with "Cached" instead (ezpHttpCacheContract::debugBar())
+        $summary['served'] = self::servedInfo();
         $theme = self::theme();
         // the first block of the toolbar theme: the status the response has so far, the module and view
         if ( $theme === 'toolbar' )
@@ -561,6 +564,7 @@ class expDebugBarReport
             'velocity'   => defined( 'QBIX_SERVER_VERSION' ),
             'urls'       => array( 'call' => self::url( 'ezjscore/call' ),
                                    'cachetoolbar' => self::url( 'setup/cachetoolbar' ) ),
+            'served'     => $summary['served'],
             'strings'    => self::translatedScriptStrings(),
             'panels'     => array_filter( array_column( $panels, 'data', 'id' ), 'is_array' ),
             'panel'      => array( 'min' => self::PANEL_HEIGHT_MIN, 'max' => self::PANEL_HEIGHT_MAX ),
@@ -694,6 +698,7 @@ class expDebugBarReport
         $keep = self::t( 'Keep open on reload' );
         $html = '<h2><button type="button" class="exp-debug-logo" aria-label="' . $e( $minimise ) . '" title="' . $e( $minimise ) . '">' . self::symbolSvg() . '</button>'
               . '<a href="#debug-end" aria-controls="debug-details" aria-expanded="false">Exp Debug' . $e( $by ) . '</a>'
+              . self::servedHtml( isset( $summary['served'] ) ? $summary['served'] : null )
               . self::summaryHtml( $summary, $theme )
               . '<label class="debug-keep-open"' . ( $theme === 'toolbar' ? ' title="' . $e( $keep ) . '"' : '' ) . '><input type="checkbox"> ' . $e( $keep ) . '</label>'
               . '</h2>';
@@ -725,6 +730,9 @@ class expDebugBarReport
             list( $tab, $key, $lvl, $text, $title ) = $chip;
             $push = !empty( $chip[5] );
             $levelWord = $lvl === 'high' ? self::t( 'high' ) : ( $lvl === 'warn' ? self::t( 'raised' ) : self::t( 'normal' ) );
+            // the page time is marked, for the page cache to put the time of its own answer there (SERVED_TIME)
+            if ( $key === 'time' )
+                $html .= self::SERVED_TIME_START;
             $html .= '<button type="button" class="exp-debug-chip' . ( $push ? ' exp-debug-end' : '' ) . '" data-tab="' . $tab . '" data-key="' . $key . '" data-level="' . $lvl . '"'
                    // the toolbar theme shows the title in the block's popup, a tooltip of the browser would repeat it
                    . ( $toolbar ? '' : ' title="' . htmlspecialchars( $title . ' (' . $levelWord . ')', ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '"' )
@@ -732,8 +740,80 @@ class expDebugBarReport
                    . ( $toolbar ? self::chipInfoHtml( $text, $title, isset( $chip['rows'] ) ? (array)$chip['rows'] : array() )
                                 : htmlspecialchars( $text, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) )
                    . '</button>';
+            if ( $key === 'time' )
+                $html .= self::SERVED_TIME_END;
         }
         return $html . '</span>';
+    }
+
+    /** Marks around the "how this page came about" part of the bar (servedHtml()), replaced when served from cache */
+    const SERVED_START = '<!--exp-served-->';
+    const SERVED_END = '<!--/exp-served-->';
+
+    /** Marks around the page time chip */
+    const SERVED_TIME_START = '<!--exp-served-time-->';
+    const SERVED_TIME_END = '<!--/exp-served-time-->';
+
+    /**
+     * How this page came about, for the bar's first chip and the data block: rendered by the kernel, why (a full render
+     * asked for with the view parameter (exp_render)/full, or the page cache's answer to the lookup), the addresses
+     * of the cached view and of a full render, and the texts the page cache uses when it serves this bar with a page
+     * it kept (ezpHttpCacheContract::debugBar()), translated here since it runs before the kernel.
+     *
+     * @return array
+     */
+    public static function servedInfo()
+    {
+        if ( !class_exists( 'expRenderSwitch' ) && is_file( __DIR__ . '/../../../kernel/private/classes/httpcache/exprenderswitch.php' ) )
+            require_once __DIR__ . '/../../../kernel/private/classes/httpcache/exprenderswitch.php';
+        $switch = class_exists( 'expRenderSwitch' );
+        $full = $switch && expRenderSwitch::asked();
+        $lookup = isset( $GLOBALS['EXP_HTTPCACHE_LOOKUP'] ) ? (string)$GLOBALS['EXP_HTTPCACHE_LOOKUP'] : '';
+        $uri = isset( $_SERVER['REQUEST_URI'] ) ? (string)$_SERVER['REQUEST_URI'] : '/';
+        if ( $full )
+            $why = self::t( 'a full render was asked for' );
+        else if ( $lookup !== '' )
+            $why = self::t( 'the page cache did not have the page (%reason)', array( '%reason' => $lookup ) );
+        else
+            $why = self::t( 'the page cache did not answer' );
+        return array(
+            'by'         => 'render',
+            'full_asked' => $full,
+            'reason'     => $full ? 'full render asked' : ( $lookup !== '' ? $lookup : 'not looked up' ),
+            'render_ms'  => null,
+            'urls'       => array( 'cached' => $uri, 'full' => $switch ? expRenderSwitch::add( $uri ) : $uri ),
+            'labels'     => array(
+                'render'       => self::t( 'Rendered' ),
+                'render_title' => self::t( 'Rendered by the kernel: %why', array( '%why' => $why ) ),
+                'cache'        => self::t( 'Cached' ),
+                // %ms, %stored, %render and %age are filled in by the page cache when it serves the page
+                'cache_title'  => self::t( 'Served from the page cache in %ms ms. The page was stored at %stored by a render of %render ms, %age s ago.' ),
+                'render_now'   => self::t( 'Render now' ),
+                'back'         => self::t( 'Back to the cached view' ),
+                'from_render'  => self::t( 'From the render at %stored (%render ms)' ),
+                'this_request' => self::t( 'This request: served from the page cache in %ms ms.' ),
+            ),
+        );
+    }
+
+    /**
+     * The bar's first chip, "Rendered" with the reason in its title, and with a full render asked for, the link back
+     * to the cached view; between SERVED_START and SERVED_END, which the page cache replaces with "Cached" and a
+     * "Render now" link when it serves the page.
+     *
+     * @param array|null $served servedInfo()
+     * @return string
+     */
+    public static function servedHtml( $served )
+    {
+        if ( !is_array( $served ) )
+            return '';
+        $e = function ( $value ) { return htmlspecialchars( (string)$value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ); };
+        $html = '<span class="exp-debug-served" data-served="render" title="' . $e( $served['labels']['render_title'] ) . '">'
+              . $e( $served['labels']['render'] ) . '</span>';
+        if ( !empty( $served['full_asked'] ) )
+            $html .= '<a class="exp-debug-served-action" href="' . $e( $served['urls']['cached'] ) . '">' . $e( $served['labels']['back'] ) . '</a>';
+        return self::SERVED_START . $html . self::SERVED_END;
     }
 
     /**

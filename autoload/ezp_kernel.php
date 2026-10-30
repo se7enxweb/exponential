@@ -1415,6 +1415,7 @@ return array(
       'expReauthTotpCode'                                            => 'kernel/classes/reauth/expreauthtotpcode.php',
       'expRegistrationAdminAction'                                   => 'kernel/classes/user/expregistrationadminaction.php',
       'expRenderStats'                                               => 'kernel/classes/debugbar/exprenderstats.php',
+      'expRenderSwitch'                                              => 'kernel/private/classes/httpcache/exprenderswitch.php',
       'expRequestClassifier'                                         => 'kernel/classes/requestclassifier/exprequestclassifier.php',
       'expRequestContext'                                            => 'kernel/classes/requestclassifier/exprequestcontext.php',
       'expRequestLog'                                                => 'kernel/classes/requestlog/exprequestlog.php',
