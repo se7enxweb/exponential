@@ -40,6 +40,8 @@ from your content classes. `schema` names its hash and the number of classes and
 datatypes that have no type of their own (they answer their text). `FAIL GraphQL API unavailable: the library is missing` means `composer
 install --no-dev` left it out (the library is optional), or `[GraphQLSettings] LibraryPath` points nowhere; `the library is not webonyx/graphql-php 15` means a platform installed another version. See [The library](../features/6.0/graphql.md#the-library).
 
+![exp:graphql:status for a siteaccess where the API is off: the settings, the library, the schema with 88 classes, and PASS the GraphQL API can run (switched off here)](images/graphql-walkthrough/01-status.webp)
+
 ## 2. See what switching it on changes
 
 Name the siteaccess the front end reads, the address the front end will run at during development, and the user the
@@ -70,6 +72,8 @@ DRY RUN would make an API key for frontend with graphql:read
 - **`--origin`** is only needed when a browser calls the API directly (the plain HTML kit, a client-side app). The
   Next.js, Nuxt and Astro kits call it from the server.
 
+![The dry run of exp:graphql:enable: the schema builds, graphql.ini says so already, the diff it would write to rest.ini for CORS, the API key it would make, and DRY RUN nothing written](images/graphql-walkthrough/02-dry-run.webp)
+
 ## 3. Switch it on
 
 The same command with `--apply`:
@@ -94,6 +98,8 @@ PHP-FPM and Velocity read the new settings on their next request. Check:
 ./console exp:graphql:status --siteaccess=site      # enabled  yes
 ```
 
+![exp:graphql:status for the siteaccess site after switching on: enabled yes, mutations yes, and PASS the GraphQL API can run](images/graphql-walkthrough/03-switched-on.webp)
+
 ## 4. Look at Setup > GraphQL
 
 In the administration, **Setup > GraphQL** now shows the end point, the library, the schema, and a table of every
@@ -101,6 +107,13 @@ siteaccess with the API on in `site` and off elsewhere. Below it: the limits of 
 (empty so far), the persisted queries (none yet), the API keys with a GraphQL scope (the key of step 3, `active`, never
 used), and the playground. With the policy `graphql/administrate` the table has the buttons **Switch on**, **Switch
 off**, **Mutations on** and **Mutations off**: they write the same settings as the commands.
+
+![Setup > GraphQL: the end point, the library, the table of siteaccesses with the API and its mutations on in site and off elsewhere, and the buttons Switch off, Mutations off and Switch on](images/graphql-walkthrough/04-setup-graphql.webp)
+
+![The API keys with a GraphQL scope: the new key of frontend with graphql:read, active, next to two revoked keys](images/graphql-walkthrough/04-api-keys.webp)
+
+The playground is shown when the API is also switched on in the siteaccess of the administration; while it is off
+there, a notice at the top says so and the table shows where the API answers.
 
 Type a query into the playground and press **Run** (Ctrl+Enter):
 
@@ -128,6 +141,8 @@ curl -s https://www.example.com/api/graphql \
 `signedInBy` is `apikey`: the request ran as the key's owner. Without the header it runs as the anonymous user
 (`anonymous`), and the schema (introspection) is closed to it.
 
+![A query sent with curl and the key: currentUser answers frontend, signed in by apikey, and the page Fit & Healthy with its first three children](images/graphql-walkthrough/05-first-question.webp)
+
 ## 6. Generate the starter project
 
 ```bash
@@ -135,6 +150,8 @@ curl -s https://www.example.com/api/graphql \
 ./console exp:graphql:starter --kit=next --to=../shop-front                 # what it would write
 ./console exp:graphql:starter --kit=next --to=../shop-front --apply
 ```
+
+![exp:graphql:starter --list: the kits html, next, nuxt, astro and expo](images/graphql-walkthrough/06-starter-kits.webp)
 
 | Kit | For | Runs the queries |
 |---|---|---|
@@ -188,6 +205,10 @@ content expires the cache. With `PersistedQueriesOnly=anonymous` the site then r
 anonymous requests: a good setting for production once the front end only sends stored queries. Setup > GraphQL lists
 the stored queries and the size of the cache.
 
+![A stored query called by its name twice: x-graphql-cache MISS, then HIT](images/graphql-walkthrough/08-stored-query.webp)
+
+![The persisted queries on Setup > GraphQL: the name, the SHA-256, the size, where it is stored, and Remove](images/graphql-walkthrough/08-persisted-queries.webp)
+
 ## 9. Writing: a key with graphql:write
 
 The mutations came on with the API in step 3 (`MutationsEnabled=enabled` is the default), but nothing can write yet:
@@ -198,6 +219,8 @@ mutations on again, should they have been switched off for the siteaccess):
 ```bash
 ./console exp:graphql:enable --siteaccess=site --mutations --key-for=editor --apply
 ```
+
+![The dry run of exp:graphql:enable --mutations: the diff that switches the mutations on for site, and the key it would make for editor with graphql:read graphql:write](images/graphql-walkthrough/09-write-key-dry-run.webp)
 
 The key of `editor` gets `graphql:read graphql:write`, and still only does what the roles of `editor` allow.
 
@@ -227,6 +250,8 @@ Never put a key with `graphql:write` into a browser or an app that others instal
       --mutations --apply`), and `exp:graphql:keys` lists no key you do not know.
 - [ ] `Debug=disabled` on the production siteaccess.
 
+![The limits and the response cache on Setup > GraphQL: depth, complexity, items per list, the rate limits, introspection, persisted queries only, the largest query and upload, and the state of the cache](images/graphql-walkthrough/10-limits-and-cache.webp)
+
 ## 11. When something does not work
 
 | You see | Because | Do |
@@ -239,6 +264,8 @@ Never put a key with `graphql:write` into a browser or an app that others instal
 | `FORBIDDEN` on a mutation | signed out, no `graphql:write`, or the user's policies | the error message names which |
 
 The error codes are listed under [Errors](../features/6.0/graphql.md#errors).
+
+![A request that reaches a siteaccess where the API is off: the error DISABLED, The GraphQL API is switched off in this siteaccess, and HTTP 404](images/graphql-walkthrough/11-switched-off-here.webp)
 
 ## Related pages
 

@@ -1297,7 +1297,12 @@ An extension adds to the schema with a class implementing `expGraphQLSchemaExten
 - **root queries** (`queryFields()`), next to `node`, `content` and `children` (a name the kernel uses is kept);
 - **fields of `Location`** (`locationFields()`; the value is an `expGraphQLLocation`);
 - **the type of its datatypes** (`datatypes()` and `fieldMapping()`): a field of such an attribute gets the extension's
-  type instead of a `String`.
+  type instead of a `String`;
+- **mutations** (since 6.0.15): a class that also implements `expGraphQLMutationExtension` adds `mutationFields()` to
+  `Mutation`, after the kernel's own (a name the kernel uses is kept). Its resolver applies the rules of every mutation
+  first: it calls `expGraphQLMutations::refusal( $ctx )` and throws an `expGraphQLError` with what that answers (mutations
+  switched off, a GET, an anonymous user, an API key without `graphql:write`, a session without its CSRF token). The
+  website sidebar's `expwtWrite` is one ([the website sidebar](website-sidebar.md)).
 
 ```php
 class myColorGraphQLExtension implements expGraphQLSchemaExtension

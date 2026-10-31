@@ -171,5 +171,6 @@ div#maincontent-design { width: 100%; } /* This is needed to avoid width bug in 
 
 <!--DEBUG_REPORT-->
 
+{include uri='design:pagelayout/hooks/body_end.tpl'}
 </body>
 </html>

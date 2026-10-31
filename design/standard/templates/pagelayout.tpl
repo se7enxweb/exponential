@@ -80,5 +80,6 @@
 
 <!--DEBUG_REPORT-->
 
+{include uri='design:pagelayout/hooks/body_end.tpl'}
 </body>
 </html>
