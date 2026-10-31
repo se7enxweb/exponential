@@ -73724,7 +73724,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>%language: %count of %total pages</source>
-        <translation>%language: %count of %total pages</translation>
+        <translation>%language: %count for %total pages</translation>
     </message>
     <message>
         <source>About the help in other languages</source>
@@ -73876,11 +73876,11 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Hide section: %title</source>
-        <translation>Hide section: %title</translation>
+        <translation>Hide di section: %title</translation>
     </message>
     <message>
         <source>Show section: %title</source>
-        <translation>Show section: %title</translation>
+        <translation>Show di section: %title</translation>
     </message>
     <message>
         <source>"Saving an article with an image fails with a 500 error", not "Bug" or "Help".</source>
@@ -73888,7 +73888,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>%count min read</source>
-        <translation>%count min read</translation>
+        <translation>%count minute to read am</translation>
     </message>
     <message>
         <source>%count pages</source>
@@ -73896,7 +73896,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>%from–%to of %total</source>
-        <translation>%from–%to of %total</translation>
+        <translation>%from–%to for %total</translation>
     </message>
     <message>
         <source>(new issue on GitHub, opens in a new window)</source>
@@ -73964,7 +73964,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Browse by topic</source>
-        <translation>Browse by topic</translation>
+        <translation>Browse am by topic</translation>
     </message>
     <message>
         <source>Category:</source>
@@ -74160,7 +74160,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Previous and next page</source>
-        <translation>Previous and next page</translation>
+        <translation>Di page wey dey before and di one wey dey after</translation>
     </message>
     <message>
         <source>Read the security policy</source>
@@ -74188,11 +74188,11 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Results for “%query”</source>
-        <translation>Results for “%query”</translation>
+        <translation>Wetin we find for “%query”</translation>
     </message>
     <message>
         <source>Search guides, settings, commands…</source>
-        <translation>Search guides, settings, commands…</translation>
+        <translation>Search di guides, settings, commands…</translation>
     </message>
     <message>
         <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
@@ -74216,7 +74216,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Steps to reproduce</source>
-        <translation>Steps to reproduce</translation>
+        <translation>Steps to make am happen again</translation>
     </message>
     <message>
         <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
@@ -74500,7 +74500,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Contribute back</source>
-        <translation>Contribute back</translation>
+        <translation>Give back to di project</translation>
     </message>
     <message>
         <source>Fork, fix and open a pull request.</source>
@@ -74612,7 +74612,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Apply filters</source>
-        <translation>Apply filters</translation>
+        <translation>Use di filters</translation>
     </message>
     <message>
         <source>Browse</source>
@@ -74628,7 +74628,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Choose another audience, topic or type.</source>
-        <translation>Choose another audience, topic or type.</translation>
+        <translation>Choose anoda audience, topic or type.</translation>
     </message>
     <message>
         <source>Creating and changing content: the editor, fields, drafts and versions.</source>
@@ -74676,7 +74676,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Reference material: settings, commands and formats.</source>
-        <translation>Reference material: settings, commands and formats.</translation>
+        <translation>Reference material: di settings, di commands and di formats.</translation>
     </message>
     <message>
         <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
@@ -74704,11 +74704,11 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Your account: password, two-step sign-in and preferences.</source>
-        <translation>Your account: password, two-step sign-in and preferences.</translation>
+        <translation>Your account: password, two-step sign-in and wetin you prefer.</translation>
     </message>
     <message>
         <source>%count pages match</source>
-        <translation>%count pages match</translation>
+        <translation>%count pages match am</translation>
     </message>
     <message>
         <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
@@ -74792,7 +74792,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Page %number of %count</source>
-        <translation>Page %number of %count</translation>
+        <translation>Page %number for %count</translation>
     </message>
     <message>
         <source>Image: %alt</source>
@@ -74804,7 +74804,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>%count of %total entries</source>
-        <translation>%count of %total entries</translation>
+        <translation>%count for %total entries</translation>
     </message>
     <message>
         <source>Filter</source>
@@ -74812,7 +74812,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Sort by %title</source>
-        <translation>Sort by %title</translation>
+        <translation>Arrange am by %title</translation>
     </message>
     <message>
         <source>Version, name, year or revision</source>
@@ -74828,7 +74828,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Addresses and notes</source>
-        <translation>Addresses and notes</translation>
+        <translation>Addresses and di notes</translation>
     </message>
     <message>
         <source>Addresses on servers that are no longer online are kept as historical text.</source>
@@ -74944,7 +74944,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>From version %from</source>
-        <translation>From version %from</translation>
+        <translation>Start from version %from</translation>
     </message>
     <message>
         <source>Help topics</source>
@@ -74956,7 +74956,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Manuals and help topics</source>
-        <translation>Manuals and help topics</translation>
+        <translation>Manuals and di help topics</translation>
     </message>
     <message>
         <source>Platform:</source>
@@ -75224,7 +75224,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Open or close every folder</source>
-        <translation>Open or close every folder</translation>
+        <translation>Open or close all di folders</translation>
     </message>
     <message>
         <source>Every folder is open.</source>
@@ -75244,7 +75244,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>All pages for %audience</source>
-        <translation>All pages for %audience</translation>
+        <translation>All di pages for %audience</translation>
     </message>
     <message>
         <source>All audiences</source>
@@ -75260,7 +75260,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Search by topic</source>
-        <translation>Search by topic</translation>
+        <translation>Search am by topic</translation>
     </message>
     <message>
         <source>Each button lists the pages of one topic for %audience.</source>
@@ -75276,7 +75276,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Latest commits to Exponential</source>
-        <translation>Latest commits to Exponential</translation>
+        <translation>Di latest commits for Exponential</translation>
     </message>
     <message>
         <source>Full history on GitHub</source>
@@ -75440,7 +75440,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Two ways to build</source>
-        <translation>Two ways to build</translation>
+        <translation>Two ways to build am</translation>
     </message>
     <message>
         <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
@@ -75564,7 +75564,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Download all as DITA</source>
-        <translation>Download all as DITA</translation>
+        <translation>Download everytin as DITA</translation>
     </message>
     <message>
         <source>Help topics overdue for review</source>
@@ -75928,7 +75928,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Exponential for non-profits: members, volunteers, fundraising pages, accessibility and transparency.</source>
-        <translation>Exponential for non-profits: members, volunteers, fundraising pages, accessibility and transparency.</translation>
+        <translation>Exponential for non-profits: members, volunteers, pages to raise money, accessibility and openness.</translation>
     </message>
     <message>
         <source>Local businesses</source>
@@ -75972,7 +75972,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Plain-language help</source>
-        <translation>Plain-language help</translation>
+        <translation>Help for simple language</translation>
     </message>
     <message>
         <source>Exponential in plain language: how-tos without the command line, hosting choices and a glossary.</source>
@@ -75996,7 +75996,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Use and run Exponential</source>
-        <translation>Use and run Exponential</translation>
+        <translation>Use and run Exponential yourself</translation>
     </message>
     <message>
         <source>Editors, administrators, developers and users, and everyone with a site of their own.</source>
@@ -76052,11 +76052,11 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>More audiences</source>
-        <translation>More audiences</translation>
+        <translation>More audiences dey</translation>
     </message>
     <message>
         <source>Review and release</source>
-        <translation>Review and release</translation>
+        <translation>Check am and release am</translation>
     </message>
     <message>
         <source>The topic is in Review now.</source>
@@ -76080,7 +76080,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Review workflow</source>
-        <translation>Review workflow</translation>
+        <translation>How di review dey go</translation>
     </message>
     <message>
         <source>Draft</source>
@@ -76108,7 +76108,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Style guide check</source>
-        <translation>Style guide check</translation>
+        <translation>Check against di style guide</translation>
     </message>
     <message>
         <source>The style guide check found nothing.</source>
@@ -76188,7 +76188,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Another reason</source>
-        <translation>Another reason</translation>
+        <translation>Anoda reason</translation>
     </message>
     <message>
         <source>This topic is not Released; readers do not see it.</source>
@@ -79073,6 +79073,142 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>For di siteaccess %siteaccess, wey dey show dis page.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhooks</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Every event wey end point ask for (publish, update, trash, delete, move, hide, reveal, mutation), di cronjob part graphqlwebhooks dey send am go there, wit signature. ./console exp:graphql:webhooks dey do di same tin as dis section.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Events</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>all of dem</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>All siteaccess</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>don spoil</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>no get secret</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Dey wait</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count wey dem don leave</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Last delivery</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Send test</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Yes, comot dis webhook</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>No webhook yet.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Add webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Add</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Deliveries wey just happen</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Time</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Result</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Subscriptions</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Live updates for clients: event stream for /api/graphql/subscribe, and WebSocket (graphql-transport-ws) for Velocity. Each event dey go only to subscribers wey fit read di content.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Dey open now</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Di most wey fit open</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total for all, %user for each user, %address for each address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Subscriptions wey no get name</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>How long stream go last</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>We no fit add di webhook: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Dem don change di webhook %name; im signing secret still dey.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>We no fit keep di signing secret (Setup &gt; Secrets).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Dem don add di webhook %name. Im signing secret, wey we go show only dis one time: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>No webhook %name dey.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Di webhook %name no answer: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Di webhook %name answer %status inside %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Tick di box near di webhook to comot am.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Dem don comot di webhook %name.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79347,6 +79483,42 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>E no be scope of di GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Send subscriptions go /api/graphql/subscribe (event stream or WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Di request no name any operation for di document.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>One subscription dey ask for only one field.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Too many subscriptions dey open; try again later.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>You get %max subscriptions wey dey open, na di most wey dem allow.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Your address get %max subscriptions wey dey open, na di most wey dem allow.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Dem don off subscriptions for dis siteaccess.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Sign in to subscribe (token or your own API key).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Send mutations go /api/graphql.</translation>
     </message>
 </context>
 </TS>

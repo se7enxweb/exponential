@@ -6,7 +6,9 @@
    can_administrate, messages (kind, text), siteaccesses (name, enabled, mutations), siteaccess (the one showing this
    page), answers_elsewhere (the API answers in some siteaccess), mutations, limits (label, value),
    cache (entries, bytes, expiredAt, enabled, ttl), persisted (hash, names, bytes, shipped), keys (id, prefix, name,
-   owner, scopes, status, created, expires, lastUsed). *}
+   owner, scopes, status, created, expires, lastUsed), webhooks (name, url, events, siteaccesses, classes, enabled,
+   problem, secret_set, waiting, failed, last), deliveries (time, endpoint, event, result, status, error),
+   webhook_events, known_siteaccesses, subscriptions (enabled, endpoint, anonymous, open, settings). *}
 <div class="a4-page a4-graphql" id="exp-graphql-playground">
 
 <div class="a4-pagehead">
@@ -154,6 +156,120 @@
     {/if}
 </section>
 </form>
+
+<form method="post" action={'graphql/playground'|ezurl}>
+<section class="a4-card is-flush a4-section" aria-labelledby="graphql-webhooks">
+    <div class="a4-card-head"><h2 class="a4-h3 a4-card-title" id="graphql-webhooks">{'Webhooks'|i18n( 'design/admin/graphql' )}</h2>
+        <p class="a4-meta">{'Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.'|i18n( 'design/admin/graphql' )}</p></div>
+    {if $webhooks|count}
+    <div class="a4-table-wrap" role="region" aria-labelledby="graphql-webhooks" tabindex="0">
+    <table class="a4-table">
+        <thead><tr>
+            <th scope="col">{'Name'|i18n( 'design/admin/graphql' )}</th>
+            <th scope="col">URL</th>
+            <th scope="col">{'Events'|i18n( 'design/admin/graphql' )}</th>
+            <th scope="col">{'Siteaccess'|i18n( 'design/admin/graphql' )}</th>
+            <th scope="col">{'State'|i18n( 'design/admin/graphql' )}</th>
+            <th scope="col">{'Waiting'|i18n( 'design/admin/graphql' )}</th>
+            <th scope="col">{'Last delivery'|i18n( 'design/admin/graphql' )}</th>
+            {if $can_administrate}<th scope="col"><span class="a4-sr-only">{'Change'|i18n( 'design/admin/graphql' )}</span></th>{/if}
+        </tr></thead>
+        <tbody>
+        {foreach $webhooks as $w}
+        <tr>
+            <td><code class="a4-code">{$w.name|wash}</code></td>
+            <td><code class="a4-code">{$w.url|wash}</code></td>
+            <td>{if $w.events|count}{foreach $w.events as $event}<span class="a4-tag">{$event|wash}</span> {/foreach}{else}{'all'|i18n( 'design/admin/graphql' )}{/if}</td>
+            <td>{if $w.siteaccesses|count}{$w.siteaccesses|implode( ', ' )|wash}{else}{'Every siteaccess'|i18n( 'design/admin/graphql' )}{/if}</td>
+            <td>{if $w.problem}<span class="a4-badge is-bad" title="{$w.problem|wash}">{'broken'|i18n( 'design/admin/graphql' )}</span>
+                {elseif $w.secret_set|not}<span class="a4-badge is-warn">{'no secret'|i18n( 'design/admin/graphql' )}</span>
+                {elseif $w.enabled}<span class="a4-badge is-ok">{'on'|i18n( 'design/admin/graphql' )}</span>
+                {else}<span class="a4-badge">{'off'|i18n( 'design/admin/graphql' )}</span>{/if}</td>
+            <td>{$w.waiting|wash}{if $w.failed} <span class="a4-badge is-bad">{'%count given up'|i18n( 'design/admin/graphql',, hash( '%count', $w.failed ) )|wash}</span>{/if}</td>
+            <td>{if $w.last}{$w.last.time|l10n( 'shortdatetime' )} <span class="a4-badge{if eq( $w.last.result, 'sent' )} is-ok{elseif eq( $w.last.result, 'retry' )} is-warn{else} is-bad{/if}">{$w.last.result|wash}</span>{else}<span class="a4-muted">{'never'|i18n( 'design/admin/graphql' )}</span>{/if}</td>
+            {if $can_administrate}
+            <td class="a4-actions">
+                <button type="submit" class="a4-btn a4-btn-small" name="TestWebhookButton[{$w.name|wash}]" value="1">{'Send a test'|i18n( 'design/admin/graphql' )}<span class="a4-sr-only"> {$w.name|wash}</span></button>
+                <details class="a4-confirm">
+                    <summary>{'Remove'|i18n( 'design/admin/graphql' )}</summary>
+                    <div>
+                        <label class="a4-check"><input type="checkbox" name="ConfirmRemoveWebhook[{$w.name|wash}]" value="1" /> {'Yes, remove this webhook'|i18n( 'design/admin/graphql' )}</label>
+                        <button type="submit" class="a4-btn a4-btn-small a4-btn-danger" name="RemoveWebhookButton[{$w.name|wash}]" value="1">{'Remove'|i18n( 'design/admin/graphql' )}</button>
+                    </div>
+                </details>
+            </td>
+            {/if}
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    </div>
+    {else}
+    <div class="a4-card-body"><p class="a4-empty">{'No webhook yet.'|i18n( 'design/admin/graphql' )}</p></div>
+    {/if}
+    {if $can_administrate}
+    <div class="a4-card-body">
+        <h3 class="a4-h3">{'Add a webhook'|i18n( 'design/admin/graphql' )}</h3>
+        <div class="a4-formrow"><label class="a4-label" for="graphql-webhook-name">{'Name'|i18n( 'design/admin/graphql' )}</label>
+            <input class="a4-input" type="text" id="graphql-webhook-name" name="WebhookName" pattern="[a-z][a-z0-9_]{ldelim}0,39{rdelim}" autocomplete="off" /></div>
+        <div class="a4-formrow"><label class="a4-label" for="graphql-webhook-url">URL</label>
+            <input class="a4-input" type="url" id="graphql-webhook-url" name="WebhookURL" placeholder="https://" autocomplete="off" /></div>
+        <div class="a4-formrow"><span class="a4-label" id="graphql-webhook-events">{'Events'|i18n( 'design/admin/graphql' )}</span>
+            <ul class="a4-radios" aria-labelledby="graphql-webhook-events">
+            {foreach $webhook_events as $event}
+                <li><label><input type="checkbox" name="WebhookEvents[]" value="{$event|wash}" /> {$event|wash}</label></li>
+            {/foreach}
+            </ul></div>
+        <div class="a4-formrow"><label class="a4-label" for="graphql-webhook-siteaccess">{'Siteaccess'|i18n( 'design/admin/graphql' )}</label>
+            <select class="a4-input is-auto" id="graphql-webhook-siteaccess" name="WebhookSiteAccess">
+                <option value="">{'Every siteaccess'|i18n( 'design/admin/graphql' )}</option>
+                {foreach $known_siteaccesses as $s}<option value="{$s|wash}">{$s|wash}</option>{/foreach}
+            </select></div>
+        <div class="a4-actions"><button type="submit" class="a4-btn a4-btn-primary" name="AddWebhookButton" value="1">{'Add'|i18n( 'design/admin/graphql' )}</button></div>
+    </div>
+    {/if}
+    {if $deliveries|count}
+    <div class="a4-card-body"><h3 class="a4-h3" id="graphql-deliveries">{'Recent deliveries'|i18n( 'design/admin/graphql' )}</h3></div>
+    <div class="a4-table-wrap" role="region" aria-labelledby="graphql-deliveries" tabindex="0">
+    <table class="a4-table">
+        <thead><tr>
+            <th scope="col">{'Time'|i18n( 'design/admin/graphql' )}</th>
+            <th scope="col">{'Name'|i18n( 'design/admin/graphql' )}</th>
+            <th scope="col">{'Events'|i18n( 'design/admin/graphql' )}</th>
+            <th scope="col">{'Result'|i18n( 'design/admin/graphql' )}</th>
+            <th scope="col">HTTP</th>
+        </tr></thead>
+        <tbody>
+        {foreach $deliveries as $d}
+        <tr>
+            <td>{$d.time|l10n( 'shortdatetime' )}</td>
+            <td><code class="a4-code">{$d.endpoint|wash}</code></td>
+            <td><span class="a4-tag">{$d.event|wash}</span></td>
+            <td><span class="a4-badge{if eq( $d.result, 'sent' )} is-ok{elseif eq( $d.result, 'retry' )} is-warn{else} is-bad{/if}" title="{$d.error|wash}">{$d.result|wash}</span></td>
+            <td>{if $d.status}{$d.status|wash}{else}&ndash;{/if}</td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    </div>
+    {/if}
+</section>
+</form>
+
+<section class="a4-card a4-section" aria-labelledby="graphql-subscriptions">
+    <div class="a4-card-head"><h2 class="a4-h3 a4-card-title" id="graphql-subscriptions">{'Subscriptions'|i18n( 'design/admin/graphql' )}</h2>
+        <p class="a4-meta">{'Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.'|i18n( 'design/admin/graphql' )}</p></div>
+    <div class="a4-card-body">
+        <dl class="a4-facts is-rows">
+            <dt>{'State'|i18n( 'design/admin/graphql' )}</dt><dd>{if $subscriptions.enabled}<span class="a4-badge is-ok">{'on'|i18n( 'design/admin/graphql' )}</span>{else}<span class="a4-badge">{'off'|i18n( 'design/admin/graphql' )}</span>{/if}</dd>
+            <dt>{'End point'|i18n( 'design/admin/graphql' )}</dt><dd><code class="a4-code">{$subscriptions.endpoint|wash}</code></dd>
+            <dt>{'Open now'|i18n( 'design/admin/graphql' )}</dt><dd>{$subscriptions.open|wash}</dd>
+            <dt>{'Most open'|i18n( 'design/admin/graphql' )}</dt><dd>{'%total in all, %user per user, %address per address'|i18n( 'design/admin/graphql',, hash( '%total', $subscriptions.settings.max, '%user', $subscriptions.settings.perUser, '%address', $subscriptions.settings.perAddress ) )|wash}</dd>
+            <dt>{'Anonymous subscriptions'|i18n( 'design/admin/graphql' )}</dt><dd>{if $subscriptions.anonymous}<span class="a4-badge is-warn">{'on'|i18n( 'design/admin/graphql' )}</span>{else}<span class="a4-badge">{'off'|i18n( 'design/admin/graphql' )}</span>{/if}</dd>
+            <dt>{'Stream length'|i18n( 'design/admin/graphql' )}</dt><dd>{'%seconds s'|i18n( 'design/admin/graphql',, hash( '%seconds', $subscriptions.settings.maxDuration ) )|wash}</dd>
+        </dl>
+    </div>
+</section>
 
 <section class="a4-card is-flush a4-section" aria-labelledby="graphql-keys">
     <div class="a4-card-head"><h2 class="a4-h3 a4-card-title" id="graphql-keys">{'API keys'|i18n( 'design/admin/graphql' )}</h2>

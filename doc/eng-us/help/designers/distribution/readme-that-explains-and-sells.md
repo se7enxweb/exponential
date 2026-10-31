@@ -19,7 +19,7 @@ A visitor decides within the first screen. Put there:
 1. The name and one sentence of what it is.
 2. One screenshot of the front page (light mode), with a link to a dark-mode and a phone screenshot below.
 3. Three to five facts a buyer checks, each true and checkable:
-   - "Works with Exponential 6.0 (tested with 6.0.15) on PHP 8.1 to 8.5."
+   - "Works with Exponential 6.0 (tested with 6.0.15) on PHP 8.0 to 8.5."
    - "Passes axe with no serious issues at 1440 px and 375 px." (only if you ran it)
    - "Runs under a Content Security Policy without 'unsafe-inline'." (only if it does)
    - "GPL-2.0-or-later. Free to use, change and share."

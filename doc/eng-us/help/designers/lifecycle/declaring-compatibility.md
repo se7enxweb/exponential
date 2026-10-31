@@ -18,7 +18,7 @@ This page is for designers releasing a theme. Compatibility is stated in several
 | `composer.json` `require.php` | Composer, which refuses an install on another PHP | `"php": "^8.0"` |
 | `composer.json` `require` / `suggest` | Composer | Extensions the theme needs or works better with ([require and suggest](../extensions/composer-require-and-suggest.md)) |
 | `extension.xml` `<dependencies>` | The kernel's loading order | `<requires>` an extension ([Declaring dependencies](../extensions/dependencies-in-extension-xml.md)) |
-| README "Requirements" | People | "Exponential 6.0 (tested with 6.0.15), PHP 8.1 to 8.5" |
+| README "Requirements" | People | "Exponential 6.0 (tested with 6.0.15), PHP 8.0 to 8.5" |
 | Release notes | People updating | "Tested with ..." when it changed |
 | Compatibility matrix | People choosing a version | [A compatibility matrix](compatibility-matrix.md) |
 

@@ -1,0 +1,154 @@
+{
+    "command:expgraphqlwebhooks": {
+        "en": "The webhooks of the GraphQL API: list them, add or change one (with a new signing secret), remove one, send a test, deliver now, read the delivery log; a dry run unless --apply",
+        "de": "Die Webhooks der GraphQL-API: auflisten, einen hinzufügen oder ändern (mit einem neuen Signiergeheimnis), einen entfernen, einen Test senden, sofort zustellen, das Zustellprotokoll lesen; ein Probelauf ohne --apply"
+    },
+    "command:expgraphqlwebhooks --add": {
+        "en": "add the webhook of this name, or change it (lower case letters, digits and _)",
+        "de": "den Webhook dieses Namens hinzufügen oder ändern (Kleinbuchstaben, Ziffern und _)"
+    },
+    "command:expgraphqlwebhooks --apply": {
+        "en": "write and send; without it nothing is changed",
+        "de": "schreiben und senden; ohne die Option wird nichts geändert"
+    },
+    "command:expgraphqlwebhooks --as": {
+        "en": "the user the persisted query runs as (a login; default: anonymous)",
+        "de": "der Benutzer, als der die gespeicherte Abfrage läuft (ein Login; Standard: anonym)"
+    },
+    "command:expgraphqlwebhooks --classes": {
+        "en": "only these class identifiers, comma separated",
+        "de": "nur diese Klassenbezeichner, durch Kommas getrennt"
+    },
+    "command:expgraphqlwebhooks --deliver": {
+        "en": "read the journal and send the deliveries that are due, as the cronjob part does",
+        "de": "das Journal lesen und die fälligen Zustellungen senden, wie es der Cronjob-Teil tut"
+    },
+    "command:expgraphqlwebhooks --events": {
+        "en": "the events it wants (--add), comma separated: publish, update, trash, delete, move, hide, reveal, mutation; none: every event",
+        "de": "die Ereignisse, die er haben will (--add), durch Kommas getrennt: publish, update, trash, delete, move, hide, reveal, mutation; keine: jedes Ereignis"
+    },
+    "command:expgraphqlwebhooks --format": {
+        "en": "text (the default) or json (the list, --log)",
+        "de": "text (der Standard) oder json (die Liste, --log)"
+    },
+    "command:expgraphqlwebhooks --limit": {
+        "en": "lines of the delivery log (--log; default 20)",
+        "de": "Zeilen des Zustellprotokolls (--log; Standard 20)"
+    },
+    "command:expgraphqlwebhooks --list": {
+        "en": "list the webhooks (the default)",
+        "de": "die Webhooks auflisten (der Standard)"
+    },
+    "command:expgraphqlwebhooks --log": {
+        "en": "the last lines of the delivery log",
+        "de": "die letzten Zeilen des Zustellprotokolls"
+    },
+    "command:expgraphqlwebhooks --payload": {
+        "en": "event (the default): the event and its ids; query: the answer of a persisted query",
+        "de": "event (der Standard): das Ereignis und seine IDs; query: die Antwort einer gespeicherten Abfrage"
+    },
+    "command:expgraphqlwebhooks --query": {
+        "en": "the name or SHA-256 of the persisted query (--payload=query)",
+        "de": "der Name oder SHA-256 der gespeicherten Abfrage (--payload=query)"
+    },
+    "command:expgraphqlwebhooks --remove": {
+        "en": "remove the webhook of this name (and its signing secret)",
+        "de": "den Webhook dieses Namens entfernen (und sein Signiergeheimnis)"
+    },
+    "command:expgraphqlwebhooks --secret-name": {
+        "en": "the name of the signing secret in the secret store, or env:VARIABLE (default graphql.webhook.<name>)",
+        "de": "der Name des Signiergeheimnisses im Geheimnisspeicher oder env:VARIABLE (Standard graphql.webhook.<name>)"
+    },
+    "command:expgraphqlwebhooks --siteaccess": {
+        "en": "only content of these siteaccesses (their root node and languages), comma separated",
+        "de": "nur Inhalte dieser Siteaccesses (ihr Wurzelknoten und ihre Sprachen), durch Kommas getrennt"
+    },
+    "command:expgraphqlwebhooks --subtree": {
+        "en": "only content at or below these node ids, comma separated",
+        "de": "nur Inhalte an oder unter diesen Knoten-IDs, durch Kommas getrennt"
+    },
+    "command:expgraphqlwebhooks --test": {
+        "en": "send a test event (ping) to the webhook of this name",
+        "de": "ein Testereignis (ping) an den Webhook dieses Namens senden"
+    },
+    "command:expgraphqlwebhooks --url": {
+        "en": "the end point (--add): http:// or https://",
+        "de": "der Endpunkt (--add): http:// oder https://"
+    },
+    "cronjob:graphqlwebhooks.php": {
+        "en": "GraphQL webhooks: send the events of the journal to the end points that want them, with retries",
+        "de": "GraphQL-Webhooks: die Ereignisse des Journals an die Endpunkte senden, die sie haben wollen, mit Wiederholungen"
+    },
+    "cronjob:graphqlwebhooks.php docblock": {
+        "en": "The cronjob part graphqlwebhooks (cronjobs/graphqlwebhooks.php; [CronjobPart-graphqlwebhooks] and the frequent group\nin cronjob.ini; doc/eng-us/features/6.0/graphql.md, \"Webhooks\"): reads the GraphQL event journal from where the last\nrun stopped, puts a delivery in the outbox for every end point that wants an event, and sends the deliveries that\nare due (expGraphQLWebhooks). Does nothing while no end point is configured or the API is switched off.",
+        "de": "Der Cronjob-Teil graphqlwebhooks (cronjobs/graphqlwebhooks.php; [CronjobPart-graphqlwebhooks] und die Gruppe frequent\nin cronjob.ini; doc/ger-de/funktionen/6.0/graphql.md, „Webhooks“): liest das GraphQL-Ereignisjournal ab der Stelle, an\nder der letzte Lauf aufhörte, legt für jeden Endpunkt, der ein Ereignis haben will, eine Zustellung in den Ausgang und\nsendet die fälligen Zustellungen (expGraphQLWebhooks). Tut nichts, solange kein Endpunkt eingerichtet oder die API\nausgeschaltet ist."
+    },
+    "ini:settings/cronjob.ini [CronjobPart-graphqlwebhooks]": {
+        "en": "The GraphQL webhooks on their own, for a shorter interval than the frequent group's:\nphp runcronjobs.php graphqlwebhooks (doc/eng-us/features/6.0/graphql.md, \"Webhooks\")",
+        "de": "Die GraphQL-Webhooks allein, für einen kürzeren Abstand als den der Gruppe frequent:\nphp runcronjobs.php graphqlwebhooks (doc/ger-de/funktionen/6.0/graphql.md, „Webhooks“)"
+    },
+    "ini:settings/graphql.ini [GraphQLEvents] JournalMaxBytes": {
+        "en": "The event journal: what happens to content (publish, update, trash, delete, move, hide, reveal, and the GraphQL\nmutations), one JSON line per event in var/<site>/graphql/events/, written at the end of the request that changed\nit, and read by the webhooks and the subscriptions. Written only while the API is switched on and somebody listens\n(Subscriptions=enabled, or a webhook in [GraphQLWebhooks] EndpointList[]). A file grows to JournalMaxBytes (bytes,\nor with k, M, G), then the next one starts; the newest JournalKeep files stay. A subscription or a webhook further\nbehind than the files kept goes on from the oldest one.",
+        "de": "Das Ereignisjournal: was mit Inhalten geschieht (publish, update, trash, delete, move, hide, reveal und die\nGraphQL-Mutationen), eine JSON-Zeile je Ereignis in var/<site>/graphql/events/, geschrieben am Ende der Anfrage, die\nsie geändert hat, und gelesen von den Webhooks und den Subscriptions. Nur geschrieben, solange die API eingeschaltet\nist und jemand zuhört (Subscriptions=enabled oder ein Webhook in [GraphQLWebhooks] EndpointList[]). Eine Datei wächst\nbis JournalMaxBytes (Bytes oder mit k, M, G), dann beginnt die nächste; die neuesten JournalKeep Dateien bleiben. Eine\nSubscription oder ein Webhook, die weiter zurückliegen als die behaltenen Dateien, machen mit der ältesten weiter."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] AnonymousSubscriptions": {
+        "en": "Subscriptions of anonymous requests: disabled (the default) refuses them with FORBIDDEN; enabled lets a visitor\nsubscribe (a live page), within MaxSubscriptionsPerAddress and the Anonymous role's rights.",
+        "de": "Subscriptions anonymer Anfragen: disabled (der Standard) lehnt sie mit FORBIDDEN ab; enabled lässt einen Besucher\nabonnieren (eine Live-Seite), innerhalb von MaxSubscriptionsPerAddress und den Rechten der Rolle Anonymous."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] MaxSubscriptions": {
+        "en": "The most subscriptions open at once on the installation, for one signed-in user, and from one IP address; past a\nlimit a subscription is refused with SUBSCRIPTION_LIMIT (HTTP 429). 0: no limit. Each open stream holds a process:\nkeep MaxSubscriptions below what PHP-FPM's pool (pm.max_children) or Velocity's StreamShare leaves for pages.",
+        "de": "Die meisten gleichzeitig offenen Subscriptions in der Installation, für einen angemeldeten Benutzer und von einer\nIP-Adresse; über einer Grenze wird eine Subscription mit SUBSCRIPTION_LIMIT (HTTP 429) abgelehnt. 0: keine Grenze.\nJeder offene Stream hält einen Prozess: Halten Sie MaxSubscriptions unter dem, was der Pool von PHP-FPM\n(pm.max_children) oder StreamShare von Velocity für Seiten übrig lässt."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] SubscriptionHeartbeat": {
+        "en": "Seconds between two keep-alive comments of a stream; they keep proxies from closing it and find clients that left.",
+        "de": "Sekunden zwischen zwei Keep-alive-Kommentaren eines Streams; sie halten Proxys davon ab, ihn zu schließen, und finden Clients, die gegangen sind."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] SubscriptionIdleTimeout": {
+        "en": "Seconds a stream may go without sending an event before it ends the same way; 0 (the default): only\nSubscriptionMaxDuration ends it.",
+        "de": "Sekunden, die ein Stream ohne gesendetes Ereignis bleiben darf, bevor er auf dieselbe Weise endet; 0 (der Standard):\nnur SubscriptionMaxDuration beendet ihn."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] SubscriptionMaxDuration": {
+        "en": "Seconds a stream stays open; then it ends and the client opens it again with Last-Event-ID, missing no event the\njournal still has (EventSource and graphql-sse clients do so by themselves; Velocity's WebSocket bridge too). Keep it\nbelow Velocity's StreamTimeout (300 by default) and PHP's max_execution_time is raised to it.",
+        "de": "Sekunden, die ein Stream offen bleibt; dann endet er, und der Client öffnet ihn mit Last-Event-ID wieder, ohne ein\nEreignis zu verpassen, das das Journal noch hat (EventSource- und graphql-sse-Clients tun das selbst, die\nWebSocket-Brücke von Velocity auch). Halten Sie den Wert unter StreamTimeout von Velocity (standardmäßig 300);\nmax_execution_time von PHP wird darauf angehoben."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] SubscriptionPollInterval": {
+        "en": "Milliseconds between two looks at the journal while nothing happens.",
+        "de": "Millisekunden zwischen zwei Blicken in das Journal, solange nichts geschieht."
+    },
+    "ini:settings/graphql.ini [GraphQLSettings] Subscriptions": {
+        "en": "Subscriptions (subscription { contentPublished(classes: [\"article\"]) { objectId content { name } } }): enabled (the\ndefault) or disabled. They come on with the end point, at /api/graphql/subscribe: an event stream (SSE, the protocol\ngraphql-sse) with PHP-FPM and with Velocity, and a WebSocket (graphql-transport-ws) through Velocity. Every event is\nsent only when the subscriber may read its content (the rights of that moment). A stream holds one PHP process (or\nVelocity worker) while it is open, but never a database connection: it follows the event journal ([GraphQLEvents])\nand opens a connection for each event it sends. Disabled: the schema has no type Subscription and /subscribe answers\n404 with DISABLED.",
+        "de": "Subscriptions (subscription { contentPublished(classes: [\"article\"]) { objectId content { name } } }): enabled (der\nStandard) oder disabled. Sie kommen mit dem Endpunkt, unter /api/graphql/subscribe: ein Event-Stream (SSE, das\nProtokoll graphql-sse) mit PHP-FPM und mit Velocity und ein WebSocket (graphql-transport-ws) über Velocity. Jedes\nEreignis wird nur gesendet, wenn der Abonnent seinen Inhalt lesen darf (die Rechte dieses Moments). Ein Stream hält\neinen PHP-Prozess (oder Velocity-Worker), solange er offen ist, aber nie eine Datenbankverbindung: Er folgt dem\nEreignisjournal ([GraphQLEvents]) und öffnet für jedes Ereignis, das er sendet, eine Verbindung. Disabled: Das Schema\nhat keinen Typ Subscription, und /subscribe antwortet mit 404 und DISABLED."
+    },
+    "ini:settings/graphql.ini [GraphQLWebhooks] BatchSize": {
+        "en": "Deliveries sent per run at most.",
+        "de": "Höchstens so viele Zustellungen je Lauf."
+    },
+    "ini:settings/graphql.ini [GraphQLWebhooks] EndpointList": {
+        "en": "The webhooks: every event of the journal an end point asks for is POSTed to it as JSON, signed with HMAC-SHA-256\n(X-Exponential-Signature: sha256=<hex of HMAC(secret, X-Exponential-Timestamp + \".\" + body)>), by the cronjob part\ngraphqlwebhooks (also in the frequent group) or ./console exp:graphql:webhooks --deliver; never by the request that\nchanged the content. Add them with ./console exp:graphql:webhooks --add=<name> --url=<https://...> --apply, or in\nSetup > GraphQL: both write settings/override/graphql.ini.append.php and keep the signing secret in the secret store.\n\nThe end points, each with its block [GraphQLWebhook_<name>]:\n\n  [GraphQLWebhook_shop]\n  URL=https://shop.example.com/hooks/exponential\n  # the events it wants: publish, update, trash, delete, move, hide, reveal, mutation; none: every event\n  Events[]=publish\n  Events[]=update\n  # only content below the root node of these siteaccesses, in their languages; none: every siteaccess\n  SiteAccessList[]=eng\n  # only these classes; none: every class\n  ClassList[]=article\n  # only content at or below these nodes; none: the whole tree\n  SubtreeList[]=2\n  # the NAME of the signing secret in the secret store (Setup > Secrets), or env:VARIABLE; the value is never written\n  # into a settings file. Default: graphql.webhook.<name>\n  Secret=graphql.webhook.shop\n  # event (the default): the event and its ids; query: the answer of a persisted query (Query, its name or SHA-256)\n  # with the variables objectId, nodeId, version, language and event, run as QueryUser (a login; default anonymous)\n  Payload=event\n  Query=\n  QueryUser=\n  # disabled keeps the end point but sends it nothing\n  Enabled=enabled",
+        "de": "Die Webhooks: Jedes Ereignis des Journals, das ein Endpunkt haben will, wird ihm als JSON per POST gesendet, signiert\nmit HMAC-SHA-256 (X-Exponential-Signature: sha256=<Hex von HMAC(Geheimnis, X-Exponential-Timestamp + \".\" + Body)>),\nvom Cronjob-Teil graphqlwebhooks (auch in der Gruppe frequent) oder von ./console exp:graphql:webhooks --deliver; nie\nvon der Anfrage, die den Inhalt geändert hat. Fügen Sie sie mit ./console exp:graphql:webhooks --add=<name>\n--url=<https://...> --apply oder in Setup > GraphQL hinzu: Beides schreibt settings/override/graphql.ini.append.php\nund legt das Signiergeheimnis im Geheimnisspeicher ab.\n\nDie Endpunkte, jeder mit seinem Block [GraphQLWebhook_<name>]:\n\n  [GraphQLWebhook_shop]\n  URL=https://shop.example.com/hooks/exponential\n  # die Ereignisse, die er haben will: publish, update, trash, delete, move, hide, reveal, mutation; keine: jedes\n  Events[]=publish\n  Events[]=update\n  # nur Inhalte unter dem Wurzelknoten dieser Siteaccesses, in ihren Sprachen; keine: jeder Siteaccess\n  SiteAccessList[]=eng\n  # nur diese Klassen; keine: jede Klasse\n  ClassList[]=article\n  # nur Inhalte an oder unter diesen Knoten; keine: der ganze Baum\n  SubtreeList[]=2\n  # der NAME des Signiergeheimnisses im Geheimnisspeicher (Setup > Secrets) oder env:VARIABLE; der Wert steht nie\n  # in einer Einstellungsdatei. Standard: graphql.webhook.<name>\n  Secret=graphql.webhook.shop\n  # event (der Standard): das Ereignis und seine IDs; query: die Antwort einer gespeicherten Abfrage (Query, ihr Name\n  # oder SHA-256) mit den Variablen objectId, nodeId, version, language und event, ausgeführt als QueryUser (ein\n  # Login; standardmäßig anonym)\n  Payload=event\n  Query=\n  QueryUser=\n  # disabled behält den Endpunkt, sendet ihm aber nichts\n  Enabled=enabled"
+    },
+    "ini:settings/graphql.ini [GraphQLWebhooks] LogMaxBytes": {
+        "en": "The delivery log (var/<site>/graphql/webhooks/deliveries.jsonl) is kept as deliveries.1.jsonl past this size.",
+        "de": "Das Zustellprotokoll (var/<site>/graphql/webhooks/deliveries.jsonl) wird ab dieser Größe als deliveries.1.jsonl behalten."
+    },
+    "ini:settings/graphql.ini [GraphQLWebhooks] MaxAttempts": {
+        "en": "Tries per delivery; then it is kept in var/<site>/graphql/webhooks/failed/ and the delivery log says so.",
+        "de": "Versuche je Zustellung; dann bleibt sie in var/<site>/graphql/webhooks/failed/, und das Zustellprotokoll sagt es."
+    },
+    "ini:settings/graphql.ini [GraphQLWebhooks] RetryBackoff": {
+        "en": "Seconds before the second try, doubled for each try after it, at most MaxBackoff.",
+        "de": "Sekunden vor dem zweiten Versuch, für jeden weiteren Versuch verdoppelt, höchstens MaxBackoff."
+    },
+    "ini:settings/graphql.ini [GraphQLWebhooks] Timeout": {
+        "en": "Seconds an end point has to answer; a 2xx answer delivers, anything else is tried again.",
+        "de": "Sekunden, die ein Endpunkt zum Antworten hat; eine 2xx-Antwort stellt zu, alles andere wird erneut versucht."
+    },
+    "ini:settings/velocity.ini [ServerSettings] GraphQLWebSocketInitTimeout": {
+        "en": "Seconds a client has to send connection_init (empty: 10), a connection may\nstay open without a subscription (empty: 60), between two pings to the\nclient (empty: 30; 0: none), and the subscriptions one connection may hold\n(empty: 20).",
+        "de": "Sekunden, die ein Client hat, um connection_init zu senden (leer: 10), die eine\nVerbindung ohne Subscription offen bleiben darf (leer: 60), zwischen zwei Pings an\nden Client (leer: 30; 0: keine), und die Subscriptions, die eine Verbindung halten\ndarf (leer: 20)."
+    },
+    "ini:settings/velocity.ini [ServerSettings] GraphQLWebSocketPaths": {
+        "en": "GraphQL subscriptions over a WebSocket (the protocol graphql-transport-ws;\ndoc/eng-us/features/6.0/graphql.md, \"Subscriptions\"). On these paths the\nserver accepts the WebSocket itself and opens the kernel's event stream of\nthe same path for each subscription, through the workers: each open\nsubscription is one stream (StreamShare and StreamTimeout above hold for it;\nwhen a stream ends after graphql.ini SubscriptionMaxDuration the server\nopens it again where it stopped). No path: no WebSocket. Needs an engine with\nthe bridge (Velocity after v0.0.4.58); an older one ignores these settings.",
+        "de": "GraphQL-Subscriptions über einen WebSocket (das Protokoll graphql-transport-ws;\ndoc/ger-de/funktionen/6.0/graphql.md, „Subscriptions“). Auf diesen Pfaden nimmt\nder Server den WebSocket selbst an und öffnet für jede Subscription den Event-Stream\ndes Kernels auf demselben Pfad, über die Worker: Jede offene Subscription ist ein\nStream (StreamShare und StreamTimeout oben gelten für ihn; endet ein Stream nach\ngraphql.ini SubscriptionMaxDuration, öffnet der Server ihn dort wieder, wo er\naufhörte). Kein Pfad: kein WebSocket. Braucht eine Engine mit der Brücke (Velocity\nnach v0.0.4.58); eine ältere ignoriert diese Einstellungen."
+    }
+}

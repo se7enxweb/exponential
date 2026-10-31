@@ -370,6 +370,10 @@ class expGraphQLServer
             if ( $refusal !== null )
                 return array( 'errors' => array( self::error( $refusal[0], $refusal[1], $context ) ), 'extensions' => $extensions );
         }
+        // a subscription is a stream: /api/graphql/subscribe (expGraphQLSubscriptions) runs it once per event
+        if ( $context->operationType === 'subscription' )
+            return array( 'errors' => array( self::error( expGraphQLMessage::tr( 'Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).' ),
+                                                          expGraphQLError::BAD_USER_INPUT, $context ) ), 'extensions' => $extensions );
 
         try
         {

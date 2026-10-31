@@ -89,7 +89,7 @@ Netgen is a separate company; the sources do not describe any endorsement by Net
 | Question | Ask | Where |
 |---|---|---|
 | A demonstration, the roadmap of the suite | 7x | info@se7enx.com, or <https://exponential.earth/about/contact-us> |
-| Questions about Netgen Layouts itself | Netgen, not 7x | their own channels |
+| Questions about the upstream layouts packages themselves | Netgen, not 7x | their own channels |
 | How sites use it | the community, in public | <https://share.exponential.earth/forums> |
 
 ## Related pages

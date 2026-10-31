@@ -7,8 +7,10 @@
  *
  * With the policy graphql/administrate the page also changes things (POST, the form token of the session):
  * switching the API or its mutations on or off in a siteaccess (expGraphQLSetup, the settings of exp:graphql:enable
- * and exp:graphql:disable), clearing the response cache, removing a stored persisted query; and it lists the keys of
- * every user, not only the user's own.
+ * and exp:graphql:disable), clearing the response cache, removing a stored persisted query, adding, testing and
+ * removing a webhook (expGraphQLWebhooks, the settings of exp:graphql:webhooks; a new signing secret is shown once);
+ * and it lists the keys of every user, not only the user's own. The webhooks, their recent deliveries and the state of
+ * the subscriptions (open now, their limits) are shown to every user of the page.
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -80,6 +82,19 @@ class Playground extends \Exponential\Runnable\ModuleView
                                                                                                   'ttl' => (int)\expGraphQL::setting( 'ResponseCacheTtl', 86400 ) ) );
         $tpl->setVariable( 'persisted', $persisted );
         $tpl->setVariable( 'keys', $keys );
+        $webhooks = \expGraphQLWebhooks::fromSettings();
+        $tpl->setVariable( 'webhooks', self::webhooks( $webhooks ) );
+        $tpl->setVariable( 'deliveries', array_reverse( $webhooks->recent( 10 ) ) );
+        $tpl->setVariable( 'webhook_events', \expGraphQLEvents::ALL );
+        $tpl->setVariable( 'known_siteaccesses', \expIniEditor::knownSiteAccesses() );
+        $subscriptions = \expGraphQLSubscriptions::fromSettings();
+        $subscribeEndpoint = $endpoint . '/subscribe';
+        $tpl->setVariable( 'subscriptions', array(
+            'enabled' => $enabled && \expGraphQLSubscriptions::enabled(),
+            'endpoint' => $subscribeEndpoint,
+            'anonymous' => \expGraphQL::setting( 'AnonymousSubscriptions', 'disabled' ) === 'enabled',
+            'open' => count( $subscriptions->open() ),
+            'settings' => $subscriptions->settings() ) );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:graphql/playground.tpl' );
@@ -115,6 +130,99 @@ class Playground extends \Exponential\Runnable\ModuleView
     }
 
     /**
+     * The webhooks for the table of the page: their settings, whether their signing secret is set (never its value),
+     * and how their deliveries go.
+     *
+     * @param \expGraphQLWebhooks $webhooks
+     * @return array[]
+     */
+    protected static function webhooks( \expGraphQLWebhooks $webhooks )
+    {
+        $stats = $webhooks->stats();
+        $list = array();
+        foreach ( $webhooks->all() as $name => $endpoint )
+        {
+            $list[] = array( 'name' => $name, 'url' => $endpoint['url'], 'events' => $endpoint['events'], 'siteaccesses' => $endpoint['siteAccesses'],
+                             'classes' => $endpoint['classes'], 'enabled' => $endpoint['enabled'], 'problem' => $endpoint['problem'],
+                             'secret_set' => class_exists( '\expSecrets' ) && \expSecrets::has( $endpoint['secret'] ),
+                             'waiting' => isset( $stats[$name] ) ? (int)$stats[$name]['waiting'] : 0,
+                             'failed' => isset( $stats[$name] ) ? (int)$stats[$name]['failed'] : 0,
+                             'last' => isset( $stats[$name]['last'] ) ? $stats[$name]['last'] : null );
+        }
+        return $list;
+    }
+
+    /**
+     * The actions of the webhooks section (graphql/administrate): add one (the signing secret made and shown once),
+     * send one a test event now, remove one.
+     *
+     * @param \eZHTTPTool $http
+     * @param callable $t
+     * @param callable $first
+     * @return array[]|null the messages; null when no webhook button was pressed
+     */
+    protected static function webhookAction( \eZHTTPTool $http, $t, $first )
+    {
+        $webhooks = \expGraphQLWebhooks::fromSettings();
+        $all = $webhooks->all();
+        if ( $http->hasPostVariable( 'AddWebhookButton' ) )
+        {
+            $name = trim( (string)$http->postVariable( 'WebhookName' ) );
+            $siteAccess = trim( (string)$http->postVariable( 'WebhookSiteAccess' ) );
+            $events = array_values( array_intersect( \expGraphQLEvents::ALL, array_map( 'strval', (array)( $http->hasPostVariable( 'WebhookEvents' ) ? $http->postVariable( 'WebhookEvents' ) : array() ) ) ) );
+            $settings = array( 'URL' => trim( (string)$http->postVariable( 'WebhookURL' ) ), 'Events' => $events,
+                               'SiteAccessList' => $siteAccess !== '' && in_array( $siteAccess, \expIniEditor::knownSiteAccesses(), true ) ? array( $siteAccess ) : array() );
+            try
+            {
+                if ( !preg_match( \expGraphQLWebhooks::NAME_PATTERN, $name ) )
+                    throw new \expGraphQLError( 'the name must be lower case letters, digits and _, starting with a letter', \expGraphQLError::BAD_USER_INPUT );
+                $changes = \expGraphQLWebhooks::addChanges( $name, $settings );
+            }
+            catch ( \expGraphQLError $e )
+            {
+                return array( array( 'kind' => 'bad', 'text' => $t( 'The webhook could not be added: %error', array( '%error' => $e->getMessage() ) ) ) );
+            }
+            $result = \expGraphQLSetup::apply( $changes, false );
+            if ( !$result['ok'] )
+                return array( array( 'kind' => 'bad', 'text' => $t( 'The webhook could not be added: %error', array( '%error' => implode( '; ', array_filter( array_column( $result['files'], 'error' ) ) ) ) ) ) );
+            \expGraphQLWebhooks::fromSettings()->startCursor();
+            $endpoint = \expGraphQLWebhooks::endpoint( $name, $settings );
+            if ( \expSecrets::has( $endpoint['secret'] ) )
+                return array( array( 'kind' => 'ok', 'text' => $t( 'The webhook %name was changed; its signing secret stays.', array( '%name' => $name ) ) ) );
+            $secret = \expGraphQLWebhooks::newSecret();
+            if ( !\expGraphQLWebhooks::storeSecret( $endpoint, $secret ) )
+                return array( array( 'kind' => 'bad', 'text' => $t( 'The signing secret could not be stored (Setup > Secrets).' ) ) );
+            return array( array( 'kind' => 'ok', 'text' => $t( 'The webhook %name was added. Its signing secret, shown this once: %secret', array( '%name' => $name, '%secret' => $secret ) ) ) );
+        }
+        if ( $http->hasPostVariable( 'TestWebhookButton' ) )
+        {
+            $name = $first( 'TestWebhookButton' );
+            if ( !isset( $all[$name] ) )
+                return array( array( 'kind' => 'bad', 'text' => $t( 'There is no webhook %name.', array( '%name' => $name ) ) ) );
+            $result = $webhooks->sendTest( $name );
+            if ( $result['error'] !== null )
+                return array( array( 'kind' => 'bad', 'text' => $t( 'The webhook %name did not answer: %error', array( '%name' => $name, '%error' => $result['error'] ) ) ) );
+            return array( array( 'kind' => 'ok', 'text' => $t( 'The webhook %name answered %status in %ms ms.', array( '%name' => $name, '%status' => $result['status'], '%ms' => $result['ms'] ) ) ) );
+        }
+        if ( $http->hasPostVariable( 'RemoveWebhookButton' ) )
+        {
+            $name = $first( 'RemoveWebhookButton' );
+            $confirmed = $http->hasPostVariable( 'ConfirmRemoveWebhook' ) ? (array)$http->postVariable( 'ConfirmRemoveWebhook' ) : array();
+            if ( !isset( $all[$name] ) )
+                return array( array( 'kind' => 'bad', 'text' => $t( 'There is no webhook %name.', array( '%name' => $name ) ) ) );
+            if ( !isset( $confirmed[$name] ) )
+                return array( array( 'kind' => 'warn', 'text' => $t( 'Tick the box beside the webhook to remove it.' ) ) );
+            $result = \expGraphQLSetup::apply( \expGraphQLWebhooks::removeChanges( $name ), false );
+            if ( !$result['ok'] )
+                return array( array( 'kind' => 'bad', 'text' => $t( 'The settings could not be written: %error', array( '%error' => implode( '; ', array_filter( array_column( $result['files'], 'error' ) ) ) ) ) ) );
+            if ( $all[$name]['secret'] === \expGraphQLWebhooks::defaultSecretName( $name ) )
+                \expSecrets::remove( $all[$name]['secret'] );
+            return array( array( 'kind' => 'ok', 'text' => $t( 'The webhook %name was removed.', array( '%name' => $name ) ) ) );
+        }
+        return null;
+    }
+
+    /**
      * The actions of the page (graphql/administrate).
      *
      * @param \eZHTTPTool $http
@@ -128,6 +236,9 @@ class Playground extends \Exponential\Runnable\ModuleView
             $keys = array_keys( (array)$http->postVariable( $name ) );
             return isset( $keys[0] ) ? (string)$keys[0] : '';
         };
+        $webhookMessages = self::webhookAction( $http, $t, $first );
+        if ( $webhookMessages !== null )
+            return $webhookMessages;
         $changes = null;
         $done = '';
         foreach ( array( 'EnableButton' => array( false, true ), 'DisableButton' => array( false, false ),

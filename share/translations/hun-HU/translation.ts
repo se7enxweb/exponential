@@ -79095,6 +79095,142 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Az ezt az oldalt megjelenítő webhely-hozzáféréshez: %siteaccess.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhookok</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Minden eseményt, amelyet egy végpont kér (publish, update, trash, delete, move, hide, reveal, mutation), aláírva elküld neki a graphqlwebhooks cronjob-rész. A ./console exp:graphql:webhooks ugyanazt teszi, mint ez a szakasz.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Események</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>mind</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Minden webhely-hozzáférés</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>hibás</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>nincs titok</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Várakozik</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count feladva</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Utolsó kézbesítés</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Teszt küldése</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Igen, a webhook eltávolítása</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Még nincs webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Webhook hozzáadása</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Hozzáadás</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Legutóbbi kézbesítések</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Idő</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Eredmény</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Feliratkozások</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Élő frissítések az ügyfeleknek: eseményfolyam a /api/graphql/subscribe címen, és egy WebSocket (graphql-transport-ws) a Velocityn. Minden esemény csak azokhoz a feliratkozókhoz jut el, akik olvashatják a tartalmát.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Most nyitva</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Legfeljebb nyitva</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>összesen %total, felhasználónként %user, címenként %address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Névtelen feliratkozások</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Folyam hossza</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>A webhookot nem sikerült hozzáadni: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>A(z) %name webhook módosult; az aláírási titka megmarad.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Az aláírási titkot nem sikerült tárolni (Rendszer &gt; Titkok).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>A(z) %name webhook hozzáadva. Az aláírási titka, csak most az egyszer megjelenítve: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Nincs %name webhook.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>A(z) %name webhook nem válaszolt: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>A(z) %name webhook %status választ adott %ms ms alatt.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Jelölje be a webhook melletti négyzetet az eltávolításhoz.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>A(z) %name webhook eltávolítva.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79369,6 +79505,42 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Nem a GraphQL API hatóköre: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>A feliratkozásokat a /api/graphql/subscribe címre küldje (eseményfolyam vagy WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>A kérés nem nevezi meg a dokumentum egyetlen műveletét sem.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Egy feliratkozás pontosan egy mezőt kér.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Túl sok feliratkozás van nyitva; próbálja újra később.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>%max nyitott feliratkozása van, ez a megengedett legtöbb.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>A címének %max nyitott feliratkozása van, ez a megengedett legtöbb.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>A feliratkozások ki vannak kapcsolva ebben a webhely-hozzáférésben.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Jelentkezzen be a feliratkozáshoz (token vagy személyes API-kulcs).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>A mutációkat a /api/graphql címre küldje.</translation>
     </message>
 </context>
 </TS>

@@ -79063,6 +79063,142 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Ji bo gihîştina malperê %siteaccess, ku vê rûpelê nîşan dide.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Her bûyera ku xala dawî dixwaze (publish, update, trash, delete, move, hide, reveal, mutation), ji aliyê beşa cronjob graphqlwebhooks ve, bi îmze, jê re tê şandin. ./console exp:graphql:webhooks heman tiştî wek vê beşê dike.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Bûyer</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>hemû</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Her gihîştina malperê</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>xerabe</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>bê nepenî</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Li bendê</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count hatin berdan</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Gihandina dawî</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Ceribandinekê bişîne</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Erê, vê webhookê rake</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Hîn webhook tune ye.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Webhookekê lê zêde bike</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Lê zêde bike</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Gihandinên nû</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Dem</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Encam</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Abonetî</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Nûkirinên zindî ji bo xerîdaran: herikîneke bûyeran li /api/graphql/subscribe, û WebSocket (graphql-transport-ws) li ser Velocity. Her bûyer tenê diçe ba aboneyên ku dikarin naveroka wê bixwînin.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Niha vekirî</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Herî zêde vekirî</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>Bi tevahî %total, ji bo her bikarhênerekî %user, ji bo her navnîşanekê %address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Abonetiyên bênav</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Dirêjiya herikînê</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhook nehat lê zêdekirin: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhooka %name hat guhertin; nepeniya wê ya îmzeyê dimîne.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Nepeniya îmzeyê nehat tomarkirin (Sazkirin &gt; Nepenî).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhooka %name hat lê zêdekirin. Nepeniya wê ya îmzeyê, tenê vê carê tê nîşandan: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Webhooka %name tune ye.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhooka %name bersiv neda: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhooka %name di %ms ms de bersiva %status da.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Ji bo rakirina webhookê qutîka li kêleka wê nîşan bike.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhooka %name hat rakirin.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79337,6 +79473,42 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Ne qadeke API ya GraphQL e: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Abonetiyan bişîne /api/graphql/subscribe (herikîneke bûyeran an WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Daxwaz navê tu operasyoneke belgeyê nade.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Abonetiyek tam qadekê dixwaze.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Gelek abonetî vekirî ne; paşê dîsa biceribîne.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>%max abonetiyên te vekirî ne, ev herî zêde ye ku destûr heye.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Li ser navnîşana te %max abonetî vekirî ne, ev herî zêde ye ku destûr heye.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Abonetî di vê gihîştina malperê de girtî ne.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Ji bo abonebûnê têkeve (token an mifteyeke API ya kesane).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Guherandinan bişîne /api/graphql.</translation>
     </message>
 </context>
 </TS>

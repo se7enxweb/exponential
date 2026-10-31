@@ -2105,6 +2105,22 @@ class expVelocity
         if ( $streamShare !== '' && is_numeric( $streamShare ) )
             $webserver['streamShare'] = max( 0.0, min( 1.0, (float)$streamShare ) );
 
+        // [ServerSettings] GraphQLWebSocketPaths[] and GraphQLWebSocket* ->
+        // Q.webserver.graphqlWs: the paths where a WebSocket of the protocol
+        // graphql-transport-ws is accepted and bridged to the kernel's event
+        // stream of the same path (the GraphQL subscriptions). An engine
+        // without the bridge ignores them.
+        $graphqlWs = array( 'paths' => array_values( array_filter( array_map( 'trim', (array)$this->setting( 'ServerSettings', 'GraphQLWebSocketPaths', array() ) ),
+                                                                   function ( $path ) { return $path !== '' && $path[0] === '/'; } ) ) );
+        foreach ( array( 'GraphQLWebSocketInitTimeout' => 'initTimeout', 'GraphQLWebSocketIdleTimeout' => 'idleTimeout',
+                         'GraphQLWebSocketPingInterval' => 'pingInterval', 'GraphQLWebSocketMaxSubscriptions' => 'maxSubscriptions' ) as $iniName => $engineName )
+        {
+            $value = trim( (string)$this->setting( 'ServerSettings', $iniName, '' ) );
+            if ( $value !== '' && ctype_digit( $value ) )
+                $graphqlWs[$engineName] = (int)$value;
+        }
+        $webserver['graphqlWs'] = $graphqlWs;
+
         // [ServerSettings] Zygote -> Q.webserver.zygote: fork later workers
         // from a process that never held a client connection, so a worker
         // forked under load does not keep visitors' TLS connections open.

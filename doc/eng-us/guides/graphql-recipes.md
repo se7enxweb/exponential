@@ -1,7 +1,7 @@
 # GraphQL recipes: a blog, a mobile app, a static build, an AI agent
 
-Four common front ends on the [GraphQL API](../features/6.0/graphql.md), each with the queries that do the work and
-the settings that go with them. The queries were run against the demo content of the media site (Fit & Healthy) of
+Four common front ends on the [GraphQL API](../features/6.0/graphql.md), and live updates with webhooks and
+subscriptions, each with the queries that do the work and the settings that go with them. The queries were run against the demo content of the media site (Fit & Healthy) of
 6.0.15; the answers are shortened with `...`. Switch the API on first: [step by step](graphql-walkthrough.md), or
 `./console exp:graphql:enable --apply`.
 
@@ -14,6 +14,7 @@ the schema uses your admin's identifiers, so read yours from `./console exp:grap
 2. [A mobile app reading the menu and articles](#2-a-mobile-app-reading-the-menu-and-articles)
 3. [A static build](#3-a-static-build)
 4. [An AI agent reading content through GraphQL](#4-an-ai-agent-reading-content-through-graphql)
+5. [Live updates: a webhook for the shop, a live list in the browser](#5-live-updates-a-webhook-for-the-shop-a-live-list-in-the-browser)
 
 ## 1. A blog or news front end
 
@@ -220,6 +221,89 @@ query Read($path: String!) {
 user's roles allow, and every request is counted per key. `excerpt(length:)` keeps the text an agent puts in its
 prompt short. An agent that only answers questions never needs mutations; if one must write (drafts for an editor to
 review), give it `graphql:write` and let it send `publish: false`, so a person publishes.
+
+## 5. Live updates: a webhook for the shop, a live list in the browser
+
+Two listeners on the same changes: a shop server that refreshes its product teasers whenever an article is published,
+changed or trashed, and a page that shows new articles the moment an editor publishes them, without reloading.
+
+**The webhook.** One command makes the end point and its signing secret (shown once; give it to the shop):
+
+```bash
+./console exp:graphql:webhooks --add=shop --url=https://shop.example.com/hooks/exponential \
+    --events=publish,update,trash --classes=ng_article --siteaccess=site --apply
+./console exp:graphql:webhooks --test=shop --apply
+```
+
+The shop checks every request before it acts on it (the signature over the timestamp and the raw body, and a
+timestamp at most five minutes old), answers `204` quickly, and does the work afterwards; an answer that is not 2xx
+is sent again later, so the same delivery id can arrive twice:
+
+```php
+<?php
+$body = file_get_contents( 'php://input' );
+$ts = $_SERVER['HTTP_X_EXPONENTIAL_TIMESTAMP'] ?? '';
+$expected = 'sha256=' . hash_hmac( 'sha256', $ts . '.' . $body, getenv( 'EXPONENTIAL_WEBHOOK_SECRET' ) );
+if ( !ctype_digit( $ts ) || abs( time() - (int)$ts ) > 300
+     || !hash_equals( $expected, $_SERVER['HTTP_X_EXPONENTIAL_SIGNATURE'] ?? '' ) )
+{
+    http_response_code( 401 );
+    exit;
+}
+$event = json_decode( $body, true )['data']['contentEvent'];
+if ( !already_seen( $_SERVER['HTTP_X_EXPONENTIAL_DELIVERY'] ) )   // your own store of delivery ids
+    queue_refresh( $event['objectId'], $event['event'] );            // trash: drop the teaser
+http_response_code( 204 );
+```
+
+The shop needs the article's fields too? Let the webhook send the answer of a persisted query instead of the bare
+event: store the query once, and point the end point at it.
+
+```graphql
+# article-for-shop.graphql
+query ($objectId: Int) { content(id: $objectId) { name url ... on ng_article { teaser_intro { text } } } }
+```
+
+```bash
+./console exp:graphql:persist article-for-shop.graphql --name=article-for-shop --apply
+./console exp:graphql:webhooks --add=shop --url=https://shop.example.com/hooks/exponential \
+    --events=publish,update --classes=ng_article --payload=query --query=article-for-shop --apply
+```
+
+The body's `data` is then the query's answer, read as the anonymous user (or `--as=<login>`), and the event is in
+`extensions.event`.
+
+**The live list.** The page subscribes over SSE (any server) with the small `graphql-sse` client, signed in with a
+read-only key; on Velocity the same subscription works over a WebSocket with `graphql-ws`:
+
+```js
+import { createClient } from 'graphql-sse';
+
+const client = createClient({ url: 'https://example.com/api/graphql/subscribe',
+                              headers: { Authorization: 'Bearer ' + READ_ONLY_KEY } });
+const query = `subscription {
+  contentPublished(classes: ["ng_article"], parentId: 556) {
+    event
+    content { name url ... on ng_article { teaser_intro { text } } }
+  }
+}`;
+for await (const { data } of client.iterate({ query })) {
+  const item = data.contentPublished;
+  if (item.event === 'publish' && item.content) prependTeaser(item.content);   // your rendering
+}
+```
+
+```text
+event: next
+id: 4.182211
+data: {"data":{"contentPublished":{"event":"publish","content":{"name":"Ten minutes of mobility","url":"/Fit-Healthy/Ten-minutes-of-mobility","teaser_intro":{"text":"..."}}}}}
+```
+
+**Settings.** The key's user must be allowed to read the articles: an event the user may not read never arrives.
+For a public page without a key, switch on `AnonymousSubscriptions=enabled` on the siteaccess and keep
+`MaxSubscriptionsPerAddress` low; every open page holds one PHP process (or Velocity worker), so size
+`MaxSubscriptions` to what the server leaves for pages. The stream ends every 280 seconds and the client reopens it
+where it stopped, so a proxy in front must allow a request to stay open that long and must not buffer it.
 
 ## Related pages
 

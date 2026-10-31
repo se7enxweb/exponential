@@ -79065,6 +79065,142 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Per l'access a la website %siteaccess, che mussa questa pagina.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhooks</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Mintga eveniment ch'in punct final dumonda (publish, update, trash, delete, move, hide, reveal, mutation) al vegn tramess, suttascrit, da la part dal cronjob graphqlwebhooks. ./console exp:graphql:webhooks fa il medem sco questa secziun.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Eveniments</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>tuts</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Mintga access a la website</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>defect</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>nagin secret</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>En spetga</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count abandunadas</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Ultima furniziun</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Trametter in test</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Gea, allontanar quest webhook</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Anc nagin webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Agiuntar in webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Agiuntar</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Furniziuns recentas</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Temp</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Abunaments</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Actualisaziuns live per clients: in flux d'eveniments sin /api/graphql/subscribe ed in WebSocket (graphql-transport-ws) sin Velocity. Mintga eveniment va mo als abunents che dastgan leger ses cuntegn.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Avert ussa</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Il pli avert</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total en total, %user per utilisader, %address per adressa</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Abunaments anonims</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Durada dal flux</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Il webhook n'ha betg pudì vegnir agiuntà: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Il webhook %name è vegnì midà; ses secret da suttascripziun resta.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Il secret da suttascripziun n'ha betg pudì vegnir memorisà (Configuraziun &gt; Secrets).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Il webhook %name è vegnì agiuntà. Ses secret da suttascripziun, mussà mo questa giada: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>I na dat nagin webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Il webhook %name n'ha betg respundì: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Il webhook %name ha respundì %status en %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Marca la chascha sper il webhook per l'allontanar.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Il webhook %name è vegnì allontanà.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79339,6 +79475,42 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Betg ina sfera da l'API GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Trametta ils abunaments a /api/graphql/subscribe (in flux d'eveniments u in WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>La dumonda na numna nagina operaziun dal document.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>In abunament dumonda exactamain in champ.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Memia blers abunaments èn averts; emprova pli tard anc ina giada.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Ti has %max abunaments averts, il maximum permess.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Tia adressa ha %max abunaments averts, il maximum permess.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Ils abunaments èn deactivads en quest access a la website.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>S'annunzia per abunar (in token u ina clav d'API persunala).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Trametta las mutaziuns a /api/graphql.</translation>
     </message>
 </context>
 </TS>

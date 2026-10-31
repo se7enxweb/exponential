@@ -79065,6 +79065,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>פֿאַר דעם וועבזייַטל־צוטריט %siteaccess, וואָס ווייַזט דעם בלאַט.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>וועבהוקס</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>יעדע געשעעניש וואָס אַן ענדפּונקט בעט (publish, update, trash, delete, move, hide, reveal, mutation) ווערט אים געשיקט, אונטערגעשריבן, דורך דעם cronjob־טייל graphqlwebhooks. ./console exp:graphql:webhooks טוט דאָס זעלבע ווי דער אָפּטייל.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>געשעענישן</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>אַלע</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>יעדער וועבזייַטל־צוטריט</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>צעבראָכן</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>קיין סוד</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>וואַרטנדיק</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count אויפֿגעגעבן</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>לעצטע איבערגעבונג</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>שיקט אַ פּראָבע</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>יאָ, נעמט אַוועק דעם וועבהוק</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>נאָך קיין וועבהוק.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>לייגט צו אַ וועבהוק</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>צולייגן</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>לעצטע איבערגעבונגען</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>צייַט</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>רעזולטאַט</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>אַבאָנעמענטן</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>לעבעדיקע דערהייַנטיקונגען פֿאַר קליענטן: אַ שטראָם געשעענישן בייַ /api/graphql/subscribe, און אַ WebSocket (graphql-transport-ws) אויף Velocity. יעדע געשעעניש גייט נאָר צו אַבאָנענטן וואָס מעגן לייענען איר אינהאַלט.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>איצט אָפֿן</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>מאַקסימום אָפֿן</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total אין גאַנצן, %user פּער באַניצער, %address פּער אַדרעס</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>אַנאָנימע אַבאָנעמענטן</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>לענג פֿונעם שטראָם</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>מע האָט נישט געקענט צולייגן דעם וועבהוק: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>דער וועבהוק %name איז געענדערט; זייַן אונטערשרייב־סוד בלייבט.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>מע האָט נישט געקענט אָפּהיטן דעם אונטערשרייב־סוד (אייַנריכטונג &gt; סודות).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>דער וועבהוק %name איז צוגעלייגט. זייַן אונטערשרייב־סוד, געוויזן נאָר דאָס מאָל: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>עס איז נישטאָ קיין וועבהוק %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>דער וועבהוק %name האָט נישט געענטפֿערט: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>דער וועבהוק %name האָט געענטפֿערט %status אין %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>צייכנט אָן דאָס קעסטל לעבן דעם וועבהוק כּדי אים אַוועקצונעמען.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>דער וועבהוק %name איז אַוועקגענומען.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79339,6 +79475,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>נישט קיין פֿאַרנעם פֿון דער GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>שיקט אַבאָנעמענטן צו /api/graphql/subscribe (אַ שטראָם געשעענישן אָדער אַ WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>די בקשה נעמט נישט אָן קיין אָפּעראַציע פֿונעם דאָקומענט.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>אַן אַבאָנעמענט בעט פּונקט איין פֿעלד.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>צו פֿיל אַבאָנעמענטן זענען אָפֿן; פּרובירט ווידער שפּעטער.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>איר האָט %max אָפֿענע אַבאָנעמענטן, דער מאַקסימום וואָס איז דערלויבט.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>אייַער אַדרעס האָט %max אָפֿענע אַבאָנעמענטן, דער מאַקסימום וואָס איז דערלויבט.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>אַבאָנעמענטן זענען אויסגעלאָשן אין דעם וועבזייַטל־צוטריט.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>שרייבט זיך אייַן כּדי צו אַבאָנירן (אַ טאָקען אָדער אַ פּערזענלעכער API־שליסל).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>שיקט מוטאַציעס צו /api/graphql.</translation>
     </message>
 </context>
 </TS>
