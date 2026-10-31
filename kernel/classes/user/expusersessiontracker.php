@@ -840,7 +840,7 @@ class expUserSessionTracker
     {
         $url = 'user/sessions';
         eZURI::transformURI( $url, false, 'full' );
-        $secure = 'user/security';
+        $secure = 'user/security/(secure)/1';
         eZURI::transformURI( $secure, false, 'full' );
         $info = expUserSessionInfo::fetchForSessions( array( (int)$row->attribute( 'id' ) ) );
         $info = isset( $info[(int)$row->attribute( 'id' )] ) ? $info[(int)$row->attribute( 'id' )] : array( 'location' => '', 'host' => '', 'auth_detail' => '' );

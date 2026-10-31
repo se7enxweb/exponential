@@ -64,6 +64,137 @@ class expUserSecurityActivity
     /** The filters of the page */
     const FILTERS = array( 'all', 'signin', 'account', 'problems' );
 
+    /** "Was this you?": events of the last REVIEW_DAYS days that need attention ask the owner of the account */
+    const REVIEW_DAYS = 30;
+
+    /** The user preference with the ids of the events the owner answered "Yes, it was me" (comma separated) */
+    const CONFIRM_PREFERENCE = 'expsecurity_confirmed';
+
+    /** At most this many answered events are remembered (the newest); older ones are past REVIEW_DAYS anyway */
+    const CONFIRM_LIMIT = 200;
+
+    /** The event recorded when the owner answers "Yes, it was me" (not shown on the page: it changes nothing) */
+    const AUDIT_CONFIRM = 'access.user.activity.confirm';
+
+    /**
+     * Whether the page asks "Was this you?" about an event: one that needs attention (level warn or bad), of the last
+     * REVIEW_DAYS days, not made by an administrator (the owner did not do it, and it is recorded who did), and not
+     * answered yet.
+     *
+     * @param array $event describe()
+     * @param int[] $confirmed the ids answered "Yes, it was me"
+     * @param int $now
+     * @return bool
+     */
+    public static function needsReview( array $event, array $confirmed, $now )
+    {
+        if ( empty( $event['id'] ) || !isset( $event['level'] ) || ( $event['level'] !== 'warn' && $event['level'] !== 'bad' ) )
+            return false;
+        if ( isset( $event['by'] ) && $event['by'] === 'admin' )
+            return false;
+        if ( !isset( $event['time'] ) || (int)$event['time'] < (int)$now - self::REVIEW_DAYS * 86400 )
+            return false;
+        return !in_array( (int)$event['id'], $confirmed, true );
+    }
+
+    /**
+     * The ids of a CONFIRM_PREFERENCE value.
+     *
+     * @param mixed $value
+     * @return int[]
+     */
+    public static function parseConfirmed( $value )
+    {
+        $out = array();
+        foreach ( explode( ',', is_scalar( $value ) ? (string)$value : '' ) as $id )
+            if ( ctype_digit( trim( $id ) ) && (int)$id > 0 )
+                $out[(int)$id] = (int)$id;
+        return array_values( $out );
+    }
+
+    /**
+     * A CONFIRM_PREFERENCE value with one more id, the newest CONFIRM_LIMIT ids kept.
+     *
+     * @param mixed $value
+     * @param int $eventID
+     * @return string
+     */
+    public static function addConfirmed( $value, $eventID )
+    {
+        $ids = self::parseConfirmed( $value );
+        if ( (int)$eventID > 0 && !in_array( (int)$eventID, $ids, true ) )
+            $ids[] = (int)$eventID;
+        sort( $ids );
+        return implode( ',', array_slice( $ids, -self::CONFIRM_LIMIT ) );
+    }
+
+    /**
+     * The ids of the events the signed-in user answered "Yes, it was me".
+     *
+     * @param eZUser $user
+     * @return int[]
+     */
+    public static function confirmedIDs( eZUser $user )
+    {
+        try
+        {
+            return self::parseConfirmed( eZPreferences::value( self::CONFIRM_PREFERENCE, $user ) );
+        }
+        catch ( Throwable $e )
+        {
+            return array();
+        }
+    }
+
+    /**
+     * Marks the ids of the events the page asks "Was this you?" about.
+     *
+     * @param array[] $events describe()
+     * @param int[] $confirmed
+     * @param int|null $now
+     * @return array id => true
+     */
+    public static function reviewMap( array $events, array $confirmed, $now = null )
+    {
+        $now = $now === null ? time() : (int)$now;
+        $out = array();
+        foreach ( $events as $event )
+            if ( self::needsReview( $event, $confirmed, $now ) )
+                $out[(int)$event['id']] = true;
+        return $out;
+    }
+
+    /**
+     * "Yes, it was me": the owner of the account (the signed-in user) confirms an event of the own account. The event
+     * must be the account's own and one the page asks about; it is remembered in the user's preference and recorded
+     * as access.user.activity.confirm.
+     *
+     * @param eZUser $user the signed-in user
+     * @param int $eventID the row id of expuser_audit
+     * @return bool whether it was confirmed
+     */
+    public static function confirm( eZUser $user, $eventID )
+    {
+        $userID = (int)$user->attribute( 'contentobject_id' );
+        if ( (int)$eventID <= 0 || $userID <= 0 || !self::available() )
+            return false;
+        $db = eZDB::instance();
+        $rows = $db->arrayQuery( 'SELECT * FROM ' . expUserAudit::TABLE . ' WHERE id = ' . (int)$eventID . " AND target_type = 'user' AND target_id = " . $userID );
+        if ( !is_array( $rows ) || !isset( $rows[0] ) || !isset( self::KINDS[(string)$rows[0]['event_name']] ) )
+            return false;
+        $event = self::describe( $rows[0], $userID );
+        $confirmed = self::confirmedIDs( $user );
+        if ( !self::needsReview( $event, $confirmed, time() ) )
+            return false;
+        eZPreferences::setValue( self::CONFIRM_PREFERENCE, self::addConfirmed( implode( ',', $confirmed ), (int)$eventID ), $userID );
+        if ( class_exists( 'expAuditHook' ) )
+            expAuditHook::emit( self::AUDIT_CONFIRM, function () use ( $userID, $event ) {
+                return array( 'object' => expAuditHook::user( $userID ), 'reason' => 'user_request',
+                              'after' => array( 'event' => $event['id'], 'event_name' => $event['name'] ) );
+            } );
+        return true;
+    }
+
     /**
      * The event names a filter shows.
      *

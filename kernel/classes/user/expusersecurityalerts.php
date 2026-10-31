@@ -146,7 +146,7 @@ class expUserSecurityAlerts
         $after = isset( $row['value_after'] ) && is_string( $row['value_after'] ) && $row['value_after'] !== '' ? json_decode( $row['value_after'], true ) : array();
         $after = is_array( $after ) ? $after : array();
         $urls = array();
-        foreach ( array( 'security_url' => 'user/security', 'sessions_url' => 'user/sessions', 'password_url' => 'user/forgotpassword' ) as $key => $path )
+        foreach ( array( 'security_url' => 'user/security/(secure)/1', 'sessions_url' => 'user/sessions', 'password_url' => 'user/forgotpassword' ) as $key => $path )
         {
             $url = $path;
             eZURI::transformURI( $url, false, 'full' );

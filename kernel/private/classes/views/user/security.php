@@ -18,12 +18,52 @@ namespace Exponential\View\Kernel\User
  * days and links to "Your devices" (user/sessions) and the password page.
  *
  * user/security/<user id>: the same for another account, for a viewer with the policy user/sessions (the account page
- * and the sessions page link to it). Read only: nothing is changed here.
+ * and the sessions page link to it). Read only for another account.
+ *
+ * On the own account, like Google's "Recent security activity":
+ * - "Was this you?" on every event of the last 30 days that needs attention (expUserSecurityActivity::needsReview()):
+ *   "Yes, it was me" (ConfirmEventButton=<audit row id>) remembers the answer, "No, secure my account" is SecureButton;
+ * - "Secure your account" (SecureButton): every other session of the account is signed out
+ *   (expUserSessionTracker::revokeOthers(), also those kept by Remember me), then the page leads on to the password.
+ *   "Verify it's you" asks first ([ReauthGroup_account]). (secure)/1, the link of the security mails, shows that
+ *   card first and highlighted.
+ * Changes take a POST with the page's token (SecurityToken: an HMAC of this session's own token), besides the form token
+ * of ezformtoken, then redirect back here with the result in the session (shown once).
  * Guide: doc/eng-us/features/6.0/user-sessions.md
  */
 class Security extends \Exponential\Runnable\ModuleView
 {
     const LIMIT = 50;
+
+    /** The session variable of the result shown once after a change */
+    const MESSAGE_SESSION = 'expUserSecurityMessage';
+
+    /** @return string the token of the page's forms (an HMAC of this session's own token) */
+    protected static function formToken()
+    {
+        $token = \expUserSessionTracker::currentToken();
+        if ( $token === null )
+        {
+            $http = \eZHTTPTool::instance();
+            $token = $http->hasSessionVariable( 'expUserSessionsFormKey', false ) ? (string)$http->sessionVariable( 'expUserSessionsFormKey' ) : '';
+            if ( strlen( $token ) !== 64 )
+            {
+                $token = bin2hex( random_bytes( 32 ) );
+                $http->setSessionVariable( 'expUserSessionsFormKey', $token );
+            }
+        }
+        return hash_hmac( 'sha256', 'user/security', $token );
+    }
+
+    /**
+     * @param \eZHTTPTool $http
+     * @return bool the post carries this session's token
+     */
+    protected static function checkFormToken( $http )
+    {
+        $sent = $http->hasPostVariable( 'SecurityToken' ) ? $http->postVariable( 'SecurityToken' ) : '';
+        return is_string( $sent ) && $sent !== '' && hash_equals( self::formToken(), $sent );
+    }
 
     public function run( array $scope )
     {
@@ -44,8 +84,33 @@ class Security extends \Exponential\Runnable\ModuleView
 
         // "Download my sign-in data" (own account only, a POST with the form token of ezformtoken): the sessions with
         // their details and the security events, as JSON (the right of access)
-        if ( $own && \eZSys::serverVariable( 'REQUEST_METHOD', true ) === 'POST' && \eZHTTPTool::instance()->hasPostVariable( 'DownloadButton' ) )
+        $http = \eZHTTPTool::instance();
+        $isPost = \eZSys::serverVariable( 'REQUEST_METHOD', true ) === 'POST';
+        if ( $own && $isPost && $http->hasPostVariable( 'DownloadButton' ) )
             return $this->download( $account );
+
+        if ( $own && $isPost && ( $http->hasPostVariable( 'ConfirmEventButton' ) || $http->hasPostVariable( 'SecureButton' ) ) )
+        {
+            if ( !self::checkFormToken( $http ) )
+                $message = array( 'key' => 'token', 'level' => 'bad' );
+            elseif ( $http->hasPostVariable( 'SecureButton' ) )
+            {
+                $available = \expUserSessionTracker::enabled() && \expUserSessionTracker::available();
+                $count = $available ? \expUserSessionTracker::revokeOthers( $userID, $viewerID ) : 0;
+                $message = array( 'key' => 'secured', 'level' => 'ok', 'count' => $count, 'tracked' => $available );
+            }
+            else
+                $message = \expUserSecurityActivity::confirm( $account, (int)$http->postVariable( 'ConfirmEventButton' ) )
+                    ? array( 'key' => 'confirmed', 'level' => 'ok' ) : array( 'key' => 'not_found', 'level' => 'warn' );
+            $http->setSessionVariable( self::MESSAGE_SESSION, $message );
+            return $this->viewResult( null, $Module->redirectTo( 'user/security' ) );
+        }
+        $message = false;
+        if ( $http->hasSessionVariable( self::MESSAGE_SESSION, false ) )
+        {
+            $message = $http->sessionVariable( self::MESSAGE_SESSION );
+            $http->removeSessionVariable( self::MESSAGE_SESSION );
+        }
 
         $filter = isset( $_GET['filter'] ) && is_string( $_GET['filter'] ) && in_array( $_GET['filter'], \expUserSecurityActivity::FILTERS, true )
             ? $_GET['filter'] : 'all';
@@ -73,6 +138,11 @@ class Security extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'security_retention_days', (int)\expUserAudit::settings()['retention_days'] );
         $tpl->setVariable( 'security_action', $own ? 'user/security' : 'user/security/' . $userID );
         $tpl->setVariable( 'view_parameters', array( 'offset' => $offset ) );
+        $tpl->setVariable( 'security_review', $own ? \expUserSecurityActivity::reviewMap( $events, \expUserSecurityActivity::confirmedIDs( $account ) ) : array() );
+        $tpl->setVariable( 'security_review_days', \expUserSecurityActivity::REVIEW_DAYS );
+        $tpl->setVariable( 'security_secure', $own && !empty( $Params['Secure'] ) );
+        $tpl->setVariable( 'security_message', $message );
+        $tpl->setVariable( 'security_form_token', $own ? self::formToken() : '' );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:user/security.tpl' );

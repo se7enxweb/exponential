@@ -67,6 +67,19 @@ Anmeldungen** auf Ihre Geräte den Haken bei **Mir eine E-Mail schicken, wenn me
 oder Browser anmeldet** und klicken Sie **Speichern**. Die Seite E-Mail-Einstellungen verweist auf dieses Kästchen: Die
 E-Mail gehört zur Kontosicherheit und wird deshalb hier geschaltet.
 
+### Wenn Sie es nicht waren: Konto absichern
+
+**Sicherheitsaktivität** (verlinkt von Ihre Geräte und dem Benutzermenü) listet die Anmeldungen und Änderungen Ihres
+Kontos. Neben jedem Ereignis der letzten 30 Tage, das Aufmerksamkeit braucht, fragt sie **Waren Sie das?**:
+
+- **Ja, das war ich**: Die Frage verschwindet; das Ereignis bleibt in der Liste.
+- **Nein, mein Konto absichern**: öffnet die Karte **Konto absichern** oben auf der Seite.
+
+**Konto absichern** lässt Sie zuerst bestätigen, dass Sie es sind, und meldet dann jedes Gerät außer dem, das Sie gerade
+benutzen, ab, auch die mit „Angemeldet bleiben“. Danach sagt die Seite, wie viele abgemeldet wurden, und bietet
+**Passwort ändern** an: Wählen Sie sofort ein neues. Die Schaltfläche **Konto absichern** in jeder Sicherheits-E-Mail
+führt direkt zu dieser Karte.
+
 ## 4. Für Administratoren: die Sitzungen eines Benutzers
 
 Öffnen Sie die Kontoseite des Benutzers (`user/edit/<id>`, in der Benutzerliste **Bearbeiten** oder das Kontosymbol).
