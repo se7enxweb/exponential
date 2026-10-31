@@ -165,38 +165,20 @@ class expUpgradeRegistry
         } );
 
         // dependencies: a step waits for what it names in after(); stable otherwise
+        $requires = array();
         foreach ( $byId as $id => $step )
+        {
+            $requires[$id] = $step->after();
             foreach ( $step->after() as $dep )
                 if ( !isset( $byId[$dep] ) )
                     $errors[] = "the step $id runs after $dep, which is not registered";
-        $ordered = array();
-        $placed = array();
-        $remaining = $ids;
-        while ( $remaining )
-        {
-            $progress = false;
-            foreach ( $remaining as $k => $id )
-            {
-                $ready = true;
-                foreach ( $byId[$id]->after() as $dep )
-                    if ( isset( $byId[$dep] ) && !isset( $placed[$dep] ) )
-                        $ready = false;
-                if ( !$ready )
-                    continue;
-                $ordered[] = $byId[$id];
-                $placed[$id] = true;
-                unset( $remaining[$k] );
-                $progress = true;
-                break;
-            }
-            if ( !$progress )
-            {
-                $errors[] = 'the steps ' . implode( ', ', $remaining ) . ' wait for each other (a cycle in after())';
-                foreach ( $remaining as $id )
-                    $ordered[] = $byId[$id];
-                break;
-            }
         }
+        $blocked = array();
+        $ordered = array();
+        foreach ( expDependencyOrder::sort( $ids, $requires, $blocked ) as $id )
+            $ordered[] = $byId[$id];
+        if ( $blocked )
+            $errors[] = 'the steps ' . implode( ', ', $blocked ) . ' wait for each other (a cycle in after())';
         // a dependency may not sit in a later stage
         foreach ( $ordered as $step )
             foreach ( $step->after() as $dep )

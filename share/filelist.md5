@@ -23877,7 +23877,7 @@ f91fe6aa39ca39fba9157c3bffc757c5  kernel/classes/upgrade/expupgradecatalog.php
 821ed0718b15e66599c7fb368cd58ece  kernel/classes/upgrade/expupgradegit.php
 cd60a1a7128ac76ddcb850494710fac1  kernel/classes/upgrade/expupgradelock.php
 a0951f0d50385fde384eb19b4636eea7  kernel/classes/upgrade/expupgraderecord.php
-305760ac65274e26cb57a850d5fd244d  kernel/classes/upgrade/expupgraderegistry.php
+592334ca70a9d88447f7394d12ce433e  kernel/classes/upgrade/expupgraderegistry.php
 72bcc9f14082968a7d639d9c082e423c  kernel/classes/upgrade/expupgraderollback.php
 72a04b971ccb701ae0feb2e6abf797d8  kernel/classes/upgrade/expupgradeschemastep.php
 54d31dc79a5c6149193597e3b9cace46  kernel/classes/upgrade/expupgradescriptstep.php
