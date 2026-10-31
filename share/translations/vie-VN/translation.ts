@@ -25684,6 +25684,10 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
         <source>last purge</source>
         <translation>lần xóa gần nhất</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Các lần ghi không lấy được khóa trạng thái (lần cuối %date): mỗi lần đều làm mọi kết quả trong bộ nhớ đệm trở nên lỗi thời. %file phải ghi được bởi mọi người dùng mà trang chạy dưới danh nghĩa; trên NFS cần NFSv4 hoặc lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

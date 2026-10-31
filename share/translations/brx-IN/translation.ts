@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>आखुनि सिन्द्रायनाय</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>लिरनायफोरा थासारि लक लानो हाया (जोबनाय %date): मोनफ्रोमबो क्याश खालामनाय गासै फलाफोरखौ गोजाम खालामबाय। साइटआ जाय गासै बाहायगिरिनि मुङाव खामानि मावो, बेसोरनि थाखाय %file लिरनो हानाय जाथारनांगौ; NFS आव NFSv4 एबा lockd नांगौ।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

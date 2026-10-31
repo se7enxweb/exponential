@@ -27075,6 +27075,10 @@ Nota: Os pacotes não serão desinstalados.</translation>
         <source>last purge</source>
         <translation>última eliminação</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>As gravações não conseguiram obter o bloqueio do estado (última vez %date): cada uma tornou obsoletos todos os resultados em cache. %file deve ser gravável por todo usuário com o qual o site roda; no NFS, é preciso NFSv4 ou lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

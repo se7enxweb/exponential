@@ -25684,6 +25684,10 @@ Azen: ikemmusen ur ttwakksen ara asebded-nsen.</translation>
         <source>last purge</source>
         <translation>asfaḍ aneggaru</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Tira ur zmirent ara ad ṭṭfent asekkeṛ n waddad (taneggarut %date): yal yiwet terra akk igmaḍ yettwaḥerzen d iqburen. %file ilaq ad yili yettwaru i yal aseqdac s wacu iteddu usmel; ɣef NFS yesra NFSv4 neɣ lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

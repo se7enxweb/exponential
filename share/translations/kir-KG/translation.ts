@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>акыркы тазалоо</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Жазуулар абалдын кулпун ала алган жок (акыркы жолу %date): ар бири кэштеги бардык жыйынтыктарды эскиртти. %file сайт иштеген ар бир колдонуучу үчүн жазылуучу болушу керек; NFSте NFSv4 же lockd керек.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

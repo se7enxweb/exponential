@@ -25623,6 +25623,10 @@ Nóta: Ní dhíshuiteálfar na pacáistí.</translation>
         <source>last purge</source>
         <translation>an glanadh deireanach</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Níorbh fhéidir le scríbhinní glas an staid a fháil (an uair dheireanach %date): rinne gach ceann acu gach toradh i dtaisce as dáta. Ní mór %file a bheith inscríofa do gach úsáideoir a ritheann an suíomh mar; ar NFS teastaíonn NFSv4 nó lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

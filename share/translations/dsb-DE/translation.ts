@@ -25623,6 +25623,10 @@ Pokazka: pakety se njewótinstalěruju.</translation>
         <source>last purge</source>
         <translation>slědne wuprozněnje</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Pisanja njejsu mógli zastojnosćowu zawěru dostaś (slědny raz %date): kužde jo wšykne wuslědki w pufrowaku zestarjone cyniło. %file musy za kuždego wužywarja pisajobny byś, pód kótarymž sedło běžy; na NFS trjeba NFSv4 abo lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

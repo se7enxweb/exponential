@@ -25684,6 +25684,10 @@ Oharra: paketeak ez dira desinstalatuko.</translation>
         <source>last purge</source>
         <translation>azken garbiketa</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Idazketek ezin izan zuten egoeraren blokeoa hartu (azken aldiz %date): bakoitzak cachean gordetako emaitza guztiak zaharkitu zituen. %file idazgarria izan behar da gunea exekutatzen den erabiltzaile guztientzat; NFSn NFSv4 edo lockd behar du.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

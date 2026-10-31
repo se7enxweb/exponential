@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>ການລ້າງຄັ້ງລ່າສຸດ</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>ການຂຽນບໍ່ສາມາດເອົາລັອກສະຖານະໄດ້ (ຄັ້ງສຸດທ້າຍ %date): ແຕ່ລະຄັ້ງເຮັດໃຫ້ຜົນລັບທີ່ແຄຊໄວ້ທັງໝົດລ້າສະໄໝ. %file ຕ້ອງຂຽນໄດ້ໂດຍຜູ້ໃຊ້ທຸກຄົນທີ່ເວັບໄຊແລ່ນເປັນ; ໃນ NFS ຕ້ອງການ NFSv4 ຫຼື lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

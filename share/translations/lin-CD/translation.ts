@@ -25684,6 +25684,10 @@ Nkomba: Ba-paquet ekolongolama na système te.</translation>
         <source>last purge</source>
         <translation>kopɛtɔla ya nsuka</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Bokomi ekokaki kozwa fungola ya ezalela te (ya nsuka %date): mokomi na mokomi asalaki ete mbano nyonso ebombami ekoma ya kala. %file esengeli kokomama na mosaleli nyonso oyo site esalaka na nkombo na ye; na NFS esengeli NFSv4 to lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

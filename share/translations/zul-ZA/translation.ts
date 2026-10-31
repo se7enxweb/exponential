@@ -25682,6 +25682,10 @@ Isaziso: Amaphakheji ngeke akhishwe.</translation>
         <source>last purge</source>
         <translation>ukususa kokugcina</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Ukubhala akukwazanga ukuthatha ukhiye wesimo (okokugcina %date): ngakunye kwenza yonke imiphumela egcinwe kunqolobane ibe yindala. %file kumele ibhaleke yiwo wonke umsebenzisi isayithi elisebenza njengaye; ku-NFS idinga i-NFSv4 noma i-lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

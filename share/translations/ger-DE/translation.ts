@@ -28879,6 +28879,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Character set</source>
         <translation>Zeichensatz</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Schreibvorgänge konnten die Sperre des Zustands nicht nehmen (zuletzt %date): Jeder hat alle gecachten Ergebnisse veralten lassen. %file muss für jeden Benutzer beschreibbar sein, unter dem die Website läuft; auf NFS braucht sie NFSv4 oder lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

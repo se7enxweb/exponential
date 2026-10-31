@@ -25684,6 +25684,10 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
         <source>last purge</source>
         <translation>qulqulleessuu dhumaa</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Barreeffamoonni cufaa haalaa fudhachuu hin dandeenye (dhuma %date): tokkoon tokkoon isaanii bu&apos;aa kuufame hunda moofaa godhe. %file fayyadamaa marsariitiin maqaa isaatiin hojjetu hundaaf kan barreeffamu ta&apos;uu qaba; NFS irratti NFSv4 ykn lockd barbaachisa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

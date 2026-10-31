@@ -53,6 +53,11 @@
  *           functions
  *  QC-44 — PostgreSQL and SQLite writes: ONLY, TRUNCATE and DROP TABLE lists, CASCADE, INSERT OR REPLACE, RENAME TO;
  *           a name that cannot be read makes the write unreadable
+ *  QC-45 — A lock taken on a state.lock that was deleted meanwhile is taken again on the new file
+ *  QC-46 — A persistent worker (Velocity) starts every request from the state on disk: another process's write and a
+ *           replaced state file count at once, the memo is empty, a lock failure is logged once per request
+ *  QC-47 — A lock failure is shown to the admin: Setup > System information (any process), the debug output; a clear
+ *           forgets it
  *
  * No database: the driver is a stand-in object with the properties the cache
  * reads, and the state lives in a directory of its own under var/tmp.
@@ -1443,5 +1448,147 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
             "UPDATE a SET x = E'it\\'s', y = 'z'",
         ) as $sql )
             $this->assertNull( eZDBQueryCache::writtenTables( $sql, false ), $sql );
+    }
+
+    /** The state file as on disk, without this process's copy. */
+    private function stateOnDisk()
+    {
+        clearstatcache();
+        $raw = @file_get_contents( $this->dir . '/state.ser' );
+        return $raw === false ? null : unserialize( $raw, array( 'allowed_classes' => false ) );
+    }
+
+    /** QC-45 */
+    public function testALockOnAReplacedLockFileIsTakenAgain()
+    {
+        if ( !function_exists( 'pcntl_fork' ) || !function_exists( 'posix_kill' ) )
+            $this->markTestSkipped( 'needs pcntl and posix' );
+        $this->existingState();
+        $old = fopen( $this->dir . '/state.lock', 'c' );
+        $this->assertTrue( flock( $old, LOCK_EX ) );
+        $pid = pcntl_fork();
+        if ( $pid === 0 )
+        {
+            // the other process: waits for the lock, then notes its write; never back into PHPUnit
+            eZDBQueryCache::noteWrite( $this->db, 'UPDATE ezsection SET x = 1' );
+            posix_kill( getmypid(), SIGKILL );
+        }
+        $this->assertGreaterThan( 0, $pid );
+        try
+        {
+            usleep( 200000 );
+            // the cache directory's lock file is deleted while the other process waits for it; the next writer
+            // makes a new one and takes it
+            unlink( $this->dir . '/state.lock' );
+            $new = fopen( $this->dir . '/state.lock', 'c' );
+            $this->assertTrue( flock( $new, LOCK_EX ) );
+            flock( $old, LOCK_UN );
+            fclose( $old );
+            usleep( 300000 );
+            $this->assertArrayNotHasKey( 'ezsection', $this->stateOnDisk()['tables'], 'the lock on the deleted file is not taken as the lock: it waits for the new one' );
+            flock( $new, LOCK_UN );
+            fclose( $new );
+        }
+        finally
+        {
+            pcntl_waitpid( $pid, $status );
+        }
+        $this->assertArrayHasKey( 'ezsection', $this->stateOnDisk()['tables'], 'then it writes' );
+        $this->assertArrayNotHasKey( 'lockFailed', $this->stateOnDisk(), 'under the lock' );
+    }
+
+    /** QC-46 */
+    public function testAPersistentWorkerStartsEveryRequestFromTheStateOnDisk()
+    {
+        $shared = array( 'mode' => 'shared', 'storage' => 'file' );
+        $sql = 'SELECT * FROM ezcontentobject';
+        $this->newRequest( $shared );
+        $this->existingState();
+        $this->select( $sql );
+        // another process writes the table; this worker's next request sees it at once, not a second later
+        $state = $this->stateOnDisk();
+        $state['tables']['ezcontentobject'] = microtime( true );
+        file_put_contents( $this->dir . '/state.ser', serialize( $state ) );
+        usleep( 5 );
+        $this->newRequest( $shared );
+        $this->assertNull( $this->select( $sql ), 'the state is read again at the start of the request' );
+        $this->newRequest( $shared );
+        $this->assertNotNull( $this->select( $sql ), 'stored again' );
+
+        // another process deletes the state file and writes a new one while this request still holds the old state
+        $other = 'SELECT * FROM ezsection';
+        $this->newRequest( $shared );
+        $this->assertNotNull( $this->select( $sql ) );
+        unlink( $this->dir . '/state.ser' );
+        file_put_contents( $this->dir . '/state.ser', serialize( array( 'generation' => 1, 'genTime' => 0, 'tables' => array(), 'id' => 'another' ) ) );
+        $this->select( $other );
+        $this->newRequest( $shared );
+        $this->assertNull( $this->select( $sql ), 'kept under the old file: not answered' );
+        $this->assertNull( $this->select( $other ), 'stored under the old file in the second the request still held it: not answered either' );
+        $this->newRequest( $shared );
+        $this->assertNotNull( $this->select( $other ), 'what is stored under the new file is' );
+
+        // the memo starts empty in every request
+        $this->newRequest();
+        $this->select( $sql );
+        $this->assertNotNull( $this->select( $sql ) );
+        $this->newRequest();
+        $this->assertNull( $this->select( $sql ), 'no result from the request before' );
+
+        // a lock failure is logged once per request, and again in the next
+        unlink( $this->dir . '/state.lock' );
+        mkdir( $this->dir . '/state.lock' );
+        $log = ini_set( 'error_log', $this->dir . '/error.log' );
+        try
+        {
+            $this->write( 'UPDATE ezcontentobject SET x = 1' );
+            $this->write( 'UPDATE ezsection SET x = 1' );
+            $this->assertSame( 1, substr_count( file_get_contents( $this->dir . '/error.log' ), 'could not lock' ), 'once in a request' );
+            $this->newRequest();
+            $this->write( 'UPDATE ezsection SET x = 2' );
+            $this->assertSame( 2, substr_count( file_get_contents( $this->dir . '/error.log' ), 'could not lock' ), 'and once in the next' );
+        }
+        finally
+        {
+            ini_set( 'error_log', $log );
+        }
+    }
+
+    /** QC-47 */
+    public function testALockFailureIsShownToTheAdmin()
+    {
+        $this->existingState();
+        $this->assertSame( 0, eZDBQueryCache::status( false )['lock_failed'] );
+        $this->assertSame( $this->dir . '/state.lock', eZDBQueryCache::status( false )['lock_file'] );
+        unlink( $this->dir . '/state.lock' );
+        mkdir( $this->dir . '/state.lock' );
+        $log = ini_set( 'error_log', $this->dir . '/error.log' );
+        try
+        {
+            $this->withDebug( true, function ( $debug )
+            {
+                $this->newRequest();
+                $this->select( 'SELECT * FROM ezcontentobject' );
+                $this->assertFalse( eZDBQueryCache::debugSnapshot()['lock_failed'] );
+                $this->write( 'UPDATE ezcontentobject SET x = 1' );
+                $this->assertTrue( eZDBQueryCache::debugSnapshot()['lock_failed'], 'the debug bar' );
+                $this->assertStringContainsString( 'State lock', eZDBQueryCache::debugReport( false ) );
+                $this->assertStringContainsString( 'could not be taken', eZDBQueryCache::debugReport( true ) );
+            } );
+        }
+        finally
+        {
+            ini_set( 'error_log', $log );
+        }
+        // Setup > System information, for every process: the time is in the shared state
+        $this->newRequest();
+        $failed = eZDBQueryCache::status( false )['lock_failed'];
+        $this->assertGreaterThan( time() - 60, $failed );
+        // a later write under the lock keeps it; a clear under the lock forgets it
+        rmdir( $this->dir . '/state.lock' );
+        $this->write( 'UPDATE ezsection SET x = 1' );
+        $this->assertSame( $failed, eZDBQueryCache::status( false )['lock_failed'] );
+        eZDBQueryCache::clearAll();
+        $this->assertSame( 0, eZDBQueryCache::status( false )['lock_failed'] );
     }
 }

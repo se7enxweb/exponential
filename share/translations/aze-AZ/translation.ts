@@ -25684,6 +25684,10 @@ Qeyd: Paketlərin quraşdırılması silinməyəcək.</translation>
         <source>last purge</source>
         <translation>son təmizlənmə</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Yazmalar vəziyyət kilidini ala bilmədi (sonuncu %date): hər biri keşdəki bütün nəticələri köhnəltdi. %file saytın işlədiyi hər istifadəçi üçün yazıla bilən olmalıdır; NFS-də NFSv4 və ya lockd lazımdır.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

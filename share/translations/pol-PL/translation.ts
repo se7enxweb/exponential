@@ -24918,6 +24918,10 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
         <source>last purge</source>
         <translation>ostatnie czyszczenie</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Zapisy nie mogły uzyskać blokady stanu (ostatnio %date): każdy z nich unieważnił wszystkie wyniki w pamięci podręcznej. %file musi być zapisywalny dla każdego użytkownika, jako który działa witryna; na NFS wymaga NFSv4 lub lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/operatorcode</name>

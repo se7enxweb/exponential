@@ -25684,6 +25684,10 @@ Sylwer: ni fydd y pecynnau'n cael eu dadosod.</translation>
         <source>last purge</source>
         <translation>carthiad olaf</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Ni allai ysgrifeniadau gymryd clo&apos;r cyflwr (y tro diwethaf %date): gwnaeth pob un bob canlyniad yn y storfa yn hen. Rhaid i %file fod yn ysgrifenadwy i bob defnyddiwr y mae&apos;r wefan yn rhedeg fel; ar NFS mae angen NFSv4 neu lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

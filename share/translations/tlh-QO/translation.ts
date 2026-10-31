@@ -25626,6 +25626,10 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <source>last purge</source>
         <translation>Qav chImmoHghach</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>ghItlhmeH Dotlh ngaQHa&apos;moHwI&apos; lughaj ghItlhmey (Qav %date): Hoch pollu&apos;pu&apos;bogh ghot ngo&apos;moH Hoch ghItlh. Hoch lo&apos;wI&apos; %file ghItlhlaH net poQ; NFS Daq NFSv4 pagh lockd poQ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

@@ -25682,6 +25682,10 @@ Kumbuka: Usakinishaji wa vifurushi hautaondolewa.</translation>
         <source>last purge</source>
         <translation>uondoaji wa mwisho</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Maandishi hayakuweza kuchukua kufuli ya hali (mara ya mwisho %date): kila moja ilifanya matokeo yote yaliyohifadhiwa kuwa ya zamani. %file lazima iweze kuandikwa na kila mtumiaji ambaye tovuti inaendeshwa kama yeye; kwenye NFS inahitaji NFSv4 au lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

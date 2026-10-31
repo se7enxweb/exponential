@@ -25684,6 +25684,10 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
         <source>last purge</source>
         <translation>hoʻomaʻemaʻe hope loa</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>ʻAʻole hiki i nā kākau ke lawe i ka laka kūlana (hope loa %date): ua hoʻohala kēlā me kēia i nā hualoaʻa i mālama ʻia a pau. Pono e hiki i kēlā me kēia mea hoʻohana e holo ai ka pūnaewele ke kākau i %file; ma NFS pono ʻo NFSv4 a i ʻole lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

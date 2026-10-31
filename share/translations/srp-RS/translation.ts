@@ -25623,6 +25623,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>последње чишћење</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Уписи нису могли да преузму закључавање стања (последњи пут %date): сваки је учинио застарелим све кеширане резултате. %file мора бити уписив за сваког корисника под којим сајт ради; на NFS-у му треба NFSv4 или lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

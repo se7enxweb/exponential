@@ -25682,6 +25682,10 @@ Qaphela: Amapakethe akazi kukhutshwa.</translation>
         <source>last purge</source>
         <translation>ukucocwa kokugqibela</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Imibhalo ayikwazanga ukuthatha isitshixo semeko (okokugqibela %date): nganye yenza ukuba zonke iziphumo ezigcinweyo ziphelelwe lixesha. %file kufuneka ibhaleke ngumsebenzisi ngamnye isiza esisebenza njengaye; kwi-NFS ifuna i-NFSv4 okanye i-lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

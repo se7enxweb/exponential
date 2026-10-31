@@ -25684,6 +25684,10 @@ Makyerɛ: Wɔrenyi boa no afi mu a wɔde ahyɛ mu.</translation>
         <source>last purge</source>
         <translation>pepa a etwa to</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Nkyerɛwee antumi amfa tebea no krado no (etwa to %date): emu biara maa nsunsuanso a wɔakora no nyinaa bɛyɛɛ dada. Ɛsɛ sɛ %file yɛ nea ɔde biara a site no de di dwuma betumi akyerɛw mu; wɔ NFS so ɛhia NFSv4 anaa lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

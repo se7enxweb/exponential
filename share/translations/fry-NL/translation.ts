@@ -25684,6 +25684,10 @@ Let op: de pakketten wurde net de-ynstallearre.</translation>
         <source>last purge</source>
         <translation>lêste fuortsmiting</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Skriuwaksjes koene de steatsfergrendeling net krije (lêst %date): elk makke alle bewarre resultaten ferâldere. %file moat skriuwber wêze foar elke brûker dêr&apos;t de side ûnder draait; op NFS is NFSv4 of lockd nedich.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

@@ -25623,6 +25623,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>τελευταία εκκαθάριση</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Οι εγγραφές δεν μπόρεσαν να πάρουν το κλείδωμα της κατάστασης (τελευταία φορά %date): καθεμία έκανε παρωχημένα όλα τα αποθηκευμένα αποτελέσματα. Το %file πρέπει να είναι εγγράψιμο από κάθε χρήστη με τον οποίο εκτελείται ο ιστότοπος· σε NFS χρειάζεται NFSv4 ή lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

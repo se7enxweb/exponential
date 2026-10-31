@@ -25684,6 +25684,10 @@ Jjukira: Pakeeji tezijja kusimbulwa.</translation>
         <source>last purge</source>
         <translation>okusangulawo okwasembayo</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Okuwandiika tekwasobodde kukwata kkufulu y&apos;embeera (omulundi ogusembayo %date): buli kumu kwafuula ebivudde mu byonna ebyaterekebwa okuba eby&apos;edda. %file erina okuba nga buli mukozesa omukutu gwe gukozesa asobola okugiwandiikamu; ku NFS yeetaaga NFSv4 oba lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

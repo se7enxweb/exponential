@@ -25682,6 +25682,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>ଶେଷ ପରିଷ୍କାର</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>ଲେଖାଗୁଡ଼ିକ ସ୍ଥିତି ଲକ୍ ନେଇପାରିଲା ନାହିଁ (ଶେଷଥର %date): ପ୍ରତ୍ୟେକଟି ସମସ୍ତ କ୍ୟାଶ୍ ହୋଇଥିବା ଫଳାଫଳକୁ ପୁରୁଣା କରିଦେଲା। ସାଇଟ୍ ଯେଉଁ ପ୍ରତ୍ୟେକ ବ୍ୟବହାରକାରୀ ଭାବେ ଚାଲେ ସେମାନଙ୍କ ପାଇଁ %file ଲେଖିବାଯୋଗ୍ୟ ହେବା ଆବଶ୍ୟକ; NFS ରେ ଏହାକୁ NFSv4 କିମ୍ବା lockd ଦରକାର।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

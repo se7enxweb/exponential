@@ -25682,6 +25682,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>上次清除</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>写入无法获取状态锁（最近一次 %date）：每次写入都使所有缓存结果失效。%file 必须对运行站点的每个用户可写；在 NFS 上需要 NFSv4 或 lockd。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

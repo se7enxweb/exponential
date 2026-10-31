@@ -25684,6 +25684,10 @@ Nyabiala: Womaɖe agbawo ɖa le ɖoɖoɖi me o.</translation>
         <source>last purge</source>
         <translation>ŋɔŋlɔ ɖa mavɔ</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Nuŋɔŋlɔwo mete ŋu xɔ nɔnɔme ƒe safui o (mamlɛtɔ %date): wo dometɔ ɖe sia ɖe na be emetsonu siwo wodzra ɖo la katã nye xoxo. Ele be %file nanye nusi zãla ɖe sia ɖe si ŋkɔ me nyatakakadzraɖoƒe la wɔa dɔ le la nate ŋu aŋlɔ ɖe eme; le NFS dzi ehiã NFSv4 alo lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>နောက်ဆုံး ရှင်းလင်းချိန်</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>ရေးသားမှုများသည် အခြေအနေ သော့ကို မယူနိုင်ခဲ့ပါ (နောက်ဆုံး %date)- တစ်ခုစီက ကက်ရှ်လုပ်ထားသော ရလဒ်အားလုံးကို ဟောင်းစေခဲ့သည်။ ဆိုက်ကို လည်ပတ်စေသော အသုံးပြုသူတိုင်းအတွက် %file ကို ရေးနိုင်ရမည်; NFS တွင် NFSv4 သို့မဟုတ် lockd လိုအပ်သည်။</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

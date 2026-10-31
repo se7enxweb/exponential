@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>মখলগী ফাহনবা</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>ইরবশিংনা ফিভম্গী লোক লৌবা ঙমদ্রে (অরোইবা %date): মখোয় মমা মমানা কেশ তৌখিবা মহৈ পুম্নমক অরিবা ওহনখ্রে। সাইট অসি চলবা শিজিন্নরিবা মী খুদিংমক্না %file ইবা ঙমগদবনি; NFS দা NFSv4 নত্ত্রগা lockd মথৌ তাই।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

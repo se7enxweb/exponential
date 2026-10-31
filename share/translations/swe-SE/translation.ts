@@ -24938,6 +24938,10 @@ Obs: Paketen avinstalleras inte.</translation>
         <source>last purge</source>
         <translation>senaste rensning</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Skrivningar kunde inte ta tillståndslåset (senast %date): var och en gjorde alla cachade resultat inaktuella. %file måste vara skrivbar för varje användare som webbplatsen körs som; på NFS krävs NFSv4 eller lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/operatorcode</name>

@@ -24919,6 +24919,10 @@ Exponential verze</translation>
         <source>last purge</source>
         <translation>poslední vymazání</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Zápisy nemohly získat zámek stavu (naposledy %date): každý z nich zneplatnil všechny výsledky v mezipaměti. %file musí být zapisovatelný pro každého uživatele, pod kterým web běží; na NFS vyžaduje NFSv4 nebo lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/operatorcode</name>

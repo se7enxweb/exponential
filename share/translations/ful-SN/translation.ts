@@ -25684,6 +25684,10 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
         <source>last purge</source>
         <translation>ɓoorgol cakkitiire</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Binndi ngalɗi waawaa jogaade uddorde ngonka nde (sakket %date): kala gooto e majji waɗii jaabawuuji ndesaaɗi fof ɓooyɗi. %file ena haani winndeede kala huutoroowo mo lowre nde golloto e innde makko; e NFS ena soklii NFSv4 walla lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

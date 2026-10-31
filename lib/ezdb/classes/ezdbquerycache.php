@@ -30,7 +30,8 @@
  * makes everything stale. Writes inside a transaction count at COMMIT.
  *
  * Storage, under var/<site>/cache/querycache/: state.ser
- *   { generation, genTime, tables: { table => last write } }
+ *   { generation, genTime, tables: { table => last write }, id, lockFailed }
+ *   (id: see current(); lockFailed: when a write last could not take state.lock)
  *
  * See doc/eng-us/bc/6.0/sql-query-cache.md.
  */
@@ -921,7 +922,8 @@ class eZDBQueryCache
      *                    writes, hit_rate (percent, null without lookups), saved_ms,
      *                    request_ms (this request so far, see requestMs(); null when unknown),
      *                    saved_share (saved_ms in percent of request_ms, see savedShare()),
-     *                    hits_unmeasured, skipped (reason => count), stale (statements, literals masked), stale_more
+     *                    hits_unmeasured, skipped (reason => count), stale (statements, literals masked), stale_more,
+     *                    lock_failed (a write of this request could not take the state lock)
      */
     public static function debugSnapshot()
     {
@@ -948,6 +950,8 @@ class eZDBQueryCache
             'skipped' => $d['skipped'],
             'stale' => $d['stale'],
             'stale_more' => $d['stale_more'],
+            // a write of this request could not take state.lock and made everything stale
+            'lock_failed' => self::$lockLogged,
         );
     }
 
@@ -1063,6 +1067,9 @@ class eZDBQueryCache
         );
         foreach ( $d['skipped'] as $reason => $n )
             $rows['Not cached: ' . $reason] = $n;
+        if ( !empty( $d['lock_failed'] ) )
+            $rows['State lock'] = 'could not be taken: this request\'s writes made every cached result stale'
+                                . ' (state.lock must be writable by every user the site runs as; on NFS: NFSv4 or lockd)';
         $stale = $d['stale'];
         if ( $d['stale_more'] )
             $stale[] = '... and ' . $d['stale_more'] . ' more';
@@ -1386,14 +1393,16 @@ class eZDBQueryCache
     /** Everything stale at once (Setup > Caches, ezcache.php --clear-id=querycache). */
     public static function clearAll()
     {
-        self::bump( null );
+        // A clear also forgets the last lock failure (status() 'lock_failed'): an admin who fixed state.lock clears
+        // the cache to see whether the notice comes back.
+        self::bump( null, true );
         // Result files from before the new generation are never answered again: free their space now.
         if ( is_dir( self::entriesDir() ) )
             self::cleanupFiles();
     }
 
     /** Marks tables (null: all) written now, in the shared state and this request. */
-    protected static function bump( $tables )
+    protected static function bump( $tables, $forgetLockFailure = false )
     {
         $now = microtime( true );
         // The memo forgets what the write touched: it would otherwise answer
@@ -1403,7 +1412,9 @@ class eZDBQueryCache
             if ( $tables === null || array_intersect( $entry['tables'], $tables ) )
                 unset( self::$memo[$key] );
         }
-        self::updateState( function ( $s ) use ( $tables, $now ) {
+        self::updateState( function ( $s ) use ( $tables, $now, $forgetLockFailure ) {
+            if ( $forgetLockFailure )
+                unset( $s['lockFailed'] );
             if ( $tables === null )
             {
                 $s['generation'] = (int)$s['generation'] + 1;
@@ -1470,27 +1481,64 @@ class eZDBQueryCache
         return self::state();
     }
 
+    /** Makes the state directory; a root process (Velocity, a CLI script) hands it to the owner of its parent. */
+    protected static function makeStateDir( $dir, $asRoot )
+    {
+        if ( is_dir( $dir ) )
+            return;
+        @mkdir( $dir, eZDir::dirMode( 0770 ), true );
+        // A root-owned directory left behind would keep the site user's cron and FPM from writing in it.
+        if ( $asRoot && ( $parent = @stat( dirname( $dir ) ) ) && $parent['uid'] !== 0 )
+        {
+            @chown( $dir, $parent['uid'] );
+            @chgrp( $dir, $parent['gid'] );
+        }
+    }
+
+    /** How often lockState() opens state.lock again when the file it locked was replaced meanwhile. */
+    const LOCK_ATTEMPTS = 3;
+
+    /**
+     * Opens state.lock and takes it, or false. The lock must be on the file at the path: a process that waited for
+     * it while the cache directory was deleted (an rm -r, ezcache.php) gets it on a file that is gone, while the next
+     * process creates a new state.lock and takes that one -- both would write the state at once, and one's tables
+     * would be lost. So the file held is compared with the one at the path, and opened again when they differ.
+     *
+     * @param string $dir
+     * @param bool $asRoot
+     * @return resource|false
+     */
+    protected static function lockState( $dir, $asRoot )
+    {
+        $path = $dir . '/state.lock';
+        for ( $attempt = 0; $attempt < self::LOCK_ATTEMPTS; $attempt++ )
+        {
+            self::makeStateDir( $dir, $asRoot );
+            $lock = @fopen( $path, 'c' );
+            if ( !$lock )
+                return false;
+            if ( !flock( $lock, LOCK_EX ) )
+            {
+                fclose( $lock );
+                return false;
+            }
+            // Not from the stat cache: in a persistent worker (Velocity) it may hold the file before the deletion.
+            clearstatcache( true, $path );
+            $held = @fstat( $lock );
+            $there = @stat( $path );
+            if ( $held && $there && $held['ino'] === $there['ino'] && $held['dev'] === $there['dev'] )
+                return $lock;
+            flock( $lock, LOCK_UN );
+            fclose( $lock );
+        }
+        return false;
+    }
+
     protected static function updateState( $change )
     {
         $dir = self::stateDir();
         $asRoot = function_exists( 'posix_geteuid' ) && posix_geteuid() === 0;
-        if ( !is_dir( $dir ) )
-        {
-            @mkdir( $dir, eZDir::dirMode( 0770 ), true );
-            // A root process (Velocity, a CLI script) must not leave a root-owned
-            // directory behind: the site user's cron and FPM could no longer write in it.
-            if ( $asRoot && ( $parent = @stat( dirname( $dir ) ) ) && $parent['uid'] !== 0 )
-            {
-                @chown( $dir, $parent['uid'] );
-                @chgrp( $dir, $parent['gid'] );
-            }
-        }
-        $lock = @fopen( $dir . '/state.lock', 'c' );
-        if ( $lock && !flock( $lock, LOCK_EX ) )
-        {
-            fclose( $lock );
-            $lock = false;
-        }
+        $lock = self::lockState( $dir, $asRoot );
         self::$state = null;
         $state = call_user_func( $change, self::state() );
         if ( !$lock )
@@ -1506,6 +1554,9 @@ class eZDBQueryCache
             $state['generation'] = (int)$state['generation'] + 1;
             $state['genTime'] = microtime( true );
             $state['tables'] = array();
+            // Kept in the shared state, so Setup > System information shows it whichever process failed (a cronjob
+            // as another user, a Velocity worker); clearAll() forgets it.
+            $state['lockFailed'] = time();
         }
         // A new file (none before, or one that could not be read) gets an id of its own: see current()
         if ( empty( $state['id'] ) )
@@ -1622,8 +1673,11 @@ class eZDBQueryCache
             'exclude' => array_keys( $s['exclude'] ),
             'state_file' => self::stateDir() . '/state.ser',
             'state_exists' => is_file( self::stateDir() . '/state.ser' ),
+            'lock_file' => self::stateDir() . '/state.lock',
             'generation' => (int)( $state['generation'] ?? 1 ),
             'cleared' => (int)( $state['genTime'] ?? 0 ),
+            // when a write last could not take state.lock (any process; clearAll() forgets it), 0: never
+            'lock_failed' => (int)( $state['lockFailed'] ?? 0 ),
             'tables_tracked' => count( $tables ),
             'recent_writes' => array_slice( array_map( 'intval', $tables ), 0, 8, true ),
             'apcu' => function_exists( 'apcu_enabled' ) && apcu_enabled(),

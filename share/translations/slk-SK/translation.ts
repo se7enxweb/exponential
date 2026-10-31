@@ -25623,6 +25623,10 @@ Poznámka: Balíky sa neodinštalujú.</translation>
         <source>last purge</source>
         <translation>posledné vyprázdnenie</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Zápisy nemohli získať zámok stavu (naposledy %date): každý z nich zneplatnil všetky výsledky vo vyrovnávacej pamäti. %file musí byť zapisovateľný pre každého používateľa, pod ktorým lokalita beží; na NFS vyžaduje NFSv4 alebo lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

@@ -25684,6 +25684,10 @@ Catetan: Pakét moal dicabut pamasanganana.</translation>
         <source>last purge</source>
         <translation>beresihan panungtungan</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Tulisan teu bisa nyandak konci kaayaan (panungtungan %date): unggal tulisan ngajantenkeun sadaya hasil anu di-cache kolot. %file kedah tiasa diserat ku unggal pangguna anu ngajalankeun situs; dina NFS butuh NFSv4 atanapi lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>ការសម្អាតចុងក្រោយ</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>ការសរសេរមិនអាចយកសោស្ថានភាពបានទេ (ចុងក្រោយ %date)៖ ការសរសេរនីមួយៗបានធ្វើឲ្យលទ្ធផលក្នុងឃ្លាំងសម្ងាត់ទាំងអស់ហួសសម័យ។ %file ត្រូវតែអាចសរសេរបានដោយអ្នកប្រើគ្រប់រូបដែលគេហទំព័រដំណើរការជា; នៅលើ NFS វាត្រូវការ NFSv4 ឬ lockd។</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

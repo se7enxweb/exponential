@@ -25684,6 +25684,10 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
         <source>last purge</source>
         <translation>fandiovana farany</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Tsy afaka naka ny hidin&apos;ny toe-javatra ny fanoratana (farany %date): samy nahatonga ny valiny voatahiry rehetra ho lany andro izy ireo. Tsy maintsy azon&apos;ny mpampiasa rehetra iasan&apos;ny tranonkala soratana ny %file; amin&apos;ny NFS dia mila NFSv4 na lockd izy.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

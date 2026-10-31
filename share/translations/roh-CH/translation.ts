@@ -25684,6 +25684,10 @@ Avertiment: Ils pachets na vegnan betg deinstallads.</translation>
         <source>last purge</source>
         <translation>ultima stizzada</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Las scrittiras n&apos;han betg pudì prender la serrada dal stadi (l&apos;ultima giada %date): mintgina ha fatg veglias tut ils resultats en il cache. %file sto esser scrivibel per mintga utilisader sut il qual la website funcziuna; sin NFS dovra quai NFSv4 u lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

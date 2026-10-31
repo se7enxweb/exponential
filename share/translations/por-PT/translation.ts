@@ -25623,6 +25623,10 @@ Nota: os pacotes não serão desinstalados.</translation>
         <source>last purge</source>
         <translation>última purga</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>As escritas não conseguiram obter o bloqueio do estado (última vez %date): cada uma tornou obsoletos todos os resultados em cache. %file tem de poder ser escrito por cada utilizador com que o site é executado; em NFS, é necessário NFSv4 ou lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

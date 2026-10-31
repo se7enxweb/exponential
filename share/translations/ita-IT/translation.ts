@@ -25025,6 +25025,10 @@ Nota: I pacchetti non verranno disinstallati.</translation>
         <source>last purge</source>
         <translation>ultima eliminazione</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Le scritture non hanno potuto prendere il blocco dello stato (ultima volta %date): ognuna ha reso obsoleti tutti i risultati in cache. %file deve essere scrivibile da ogni utente con cui gira il sito; su NFS servono NFSv4 o lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/operatorcode</name>

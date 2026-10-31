@@ -25623,6 +25623,10 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
         <source>last purge</source>
         <translation>kingullermik salinneqarfia</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Allannerit killiffiup parnaarunnera tigusinnaasimanngilaat (kingullermik %date): tamarmik inernerit toqqortat tamaasa pisoqalisippai. %file atuisumit tamanit, nittartagaq atuuffigisaanit, allaffigineqarsinnaassaaq; NFS-imi NFSv4 imaluunniit lockd pisariaqarpoq.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

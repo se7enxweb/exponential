@@ -25684,6 +25684,10 @@ Kia mōhio: kāore e tangohia te tāutanga o ngā mōkihi.</translation>
         <source>last purge</source>
         <translation>tāhae whakamutunga</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Kāore i taea e ngā tuhinga te tango i te raka tūnga (te wā whakamutunga %date): nā ia tuhinga i tawhito ai ngā hua katoa kua keteroki. Me taea e ia kaiwhakamahi e rere ai te pae te tuhi ki %file; i runga NFS me whai NFSv4, lockd rānei.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

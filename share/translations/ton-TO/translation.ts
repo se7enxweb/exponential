@@ -25684,6 +25684,10 @@ Fakatokanga: ʻE ʻikai toʻo ʻa e fokotuʻu ʻo e ngaahi pēkeisi.</translatio
         <source>last purge</source>
         <translation>fakamaʻa fakamuimui</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Naʻe ʻikai lava ʻe he ngaahi tohi ʻo toʻo ʻa e loka ʻo e tuʻunga (fakamuimui %date): naʻe ngaohi ʻe he taha kotoa ʻa e ngaahi ola kotoa naʻe tauhi ke motuʻa. Kuo pau ke lava ʻo tohi ʻa %file ʻe he tokotaha ngāue kotoa pē ʻoku lele ʻa e uepisaiti ko ia; ʻi he NFS ʻoku fiemaʻu ʻa e NFSv4 pe lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

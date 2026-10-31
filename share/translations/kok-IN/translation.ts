@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>निमाणें काडून उडोवप</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>बरपांक स्थितीचें लॉक घेवंक मेळ्ळें ना (निमाणें %date): दरेकान सगळे कॅश केल्ले परिणाम पोरणे केले. सायट ज्या दरेक वापरप्याच्या नांवान चलता ताचे खातीर %file बरोवंक येता अशें आसूंक जाय; NFS चेर ताका NFSv4 वा lockd जाय.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

@@ -25685,6 +25685,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>סורקא אחריא</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>כתבתא לא מצלו לשקלא קפלא דמצבא (אחרייא %date): כל חדא עבדא כל פורענא דמטמרא עתיקא. %file לאזם הוי כתיבא לכל משמשנא דאתרא כאזל בשמה; ב NFS כאסניק NFSv4 יאן lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

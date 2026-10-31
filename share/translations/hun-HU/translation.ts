@@ -25623,6 +25623,10 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
         <source>last purge</source>
         <translation>utolsó törlés</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Az írások nem tudták megszerezni az állapot zárolását (legutóbb %date): mindegyik elavulttá tette az összes gyorsítótárazott eredményt. A(z) %file fájlnak írhatónak kell lennie minden felhasználó számára, akiként a webhely fut; NFS-en NFSv4 vagy lockd kell hozzá.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

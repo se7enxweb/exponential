@@ -25682,6 +25682,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>ìpaárẹ́ ìkẹyìn</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Àwọn ìkọ̀wé kò lè gba títì ipò (ìgbà ìkẹyìn %date): ọ̀kọ̀ọ̀kan sọ gbogbo àbájáde tí a fi pamọ́ di àtijọ́. %file gbọ́dọ̀ ṣeé kọ sí fún gbogbo olùlò tí ojúlé náà ń ṣiṣẹ́ bí; lórí NFS ó nílò NFSv4 tàbí lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

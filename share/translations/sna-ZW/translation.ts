@@ -25684,6 +25684,10 @@ Chenjerai: Mapakeji acho haazobviswi pakuiswa.</translation>
         <source>last purge</source>
         <translation>kubviswa kwekupedzisira</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Zvinyorwa hazvina kukwanisa kutora kiyi yemamiriro (kekupedzisira %date): chimwe nechimwe chakaita kuti zvibereko zvese zvakachengetwa zvive zvekare. %file inofanira kunyorwa nemushandisi wese saiti inoshanda saiye; paNFS inoda NFSv4 kana lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

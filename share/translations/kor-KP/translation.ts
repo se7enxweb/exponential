@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>마지막 삭제</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>쓰기가 상태 잠금을 얻지 못했습니다(마지막 %date): 쓰기마다 캐쉬된 모든 결과를 낡게 만들었습니다. %file 파일은 싸이트가 실행되는 모든 사용자가 쓸 수 있어야 합니다. NFS에서는 NFSv4 또는 lockd가 필요합니다.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

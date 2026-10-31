@@ -25903,6 +25903,10 @@ Navigeringsdel</translation>
 
 Exponential-version</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Skrivninger kunne ikke tage tilstandslåsen (senest %date): hver af dem gjorde alle cachelagrede resultater forældede. %file skal være skrivbar for hver bruger, webstedet kører som; på NFS kræver den NFSv4 eller lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

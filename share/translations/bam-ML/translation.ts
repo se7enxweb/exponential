@@ -25684,6 +25684,10 @@ Ko: pakew tɛna sigili bɔ.</translation>
         <source>last purge</source>
         <translation>jɔsili laban</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Sɛbɛnni tɛ se ka cogoya sɔgɔlan ta (laban %date): u kelen kelen bɛɛ ye jabi marali bɛɛ kɔrɔya. %file ka kan ka se ka sɛbɛn baarakɛla bɛɛ fɛ minnu tɔgɔ la site bɛ baara kɛ; NFS kan a mago bɛ NFSv4 walima lockd la.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

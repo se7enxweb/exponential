@@ -25623,6 +25623,10 @@ Shënim: paketat nuk do të çinstalohen.</translation>
         <source>last purge</source>
         <translation>spastrimi i fundit</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Shkrimet nuk mundën të merrnin kyçjen e gjendjes (herën e fundit %date): secili e bëri të vjetëruar çdo rezultat në fshehtinë. %file duhet të jetë i shkrueshëm për çdo përdorues me të cilin punon sajti; në NFS i duhet NFSv4 ose lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

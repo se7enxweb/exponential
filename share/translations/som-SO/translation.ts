@@ -25682,6 +25682,10 @@ Fiiro gaar ah: Xirmooyinka lama saari doono rakibaaddooda.</translation>
         <source>last purge</source>
         <translation>nadiifintii ugu dambeysay</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Qoraallada ma qaadan karin quful xaaladda (markii ugu dambeysay %date): mid kastaa wuxuu duugoobay dhammaan natiijooyinka la kaydiyay. %file waa inuu u qoran karaa isticmaale kasta oo goobta ay ku shaqeyso; NFS waxay u baahan tahay NFSv4 ama lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

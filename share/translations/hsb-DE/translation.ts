@@ -25684,6 +25684,10 @@ Pokazka: pakety so njewotinstaluja.</translation>
         <source>last purge</source>
         <translation>poslednje wuprózdnjenje</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Pisanja njemóžachu stawowu zawěru dóstać (posledni raz %date): kóžde je wšě wuslědki w pufrowaku zestarjene činiło. %file dyrbi za kóždeho wužiwarja pisajomny być, pod kotrymž sydło běži; na NFS trjeba NFSv4 abo lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

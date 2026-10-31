@@ -25684,6 +25684,10 @@ Ivasamt: Pakkarnir verða ikki avinnlagdir.</translation>
         <source>last purge</source>
         <translation>seinasta strikan</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Skrivingar fingu ikki tikið støðulásin (seinast %date): hvør teirra gjørdi øll goymd úrslit forelda. %file má vera skrivilig fyri hvønn brúkara, ið heimasíðan koyrir sum; á NFS krevur hon NFSv4 ella lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

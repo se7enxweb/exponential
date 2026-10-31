@@ -25623,6 +25623,10 @@ Märkus: pakette ei desinstallita.</translation>
         <source>last purge</source>
         <translation>viimane puhastus</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Kirjutused ei saanud olekulukku võtta (viimati %date): igaüks muutis kõik vahemälus olevad tulemused aegunuks. %file peab olema kirjutatav igale kasutajale, kellena sait töötab; NFS-il on vaja NFSv4 või lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

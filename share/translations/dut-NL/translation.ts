@@ -24906,6 +24906,10 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <source>last purge</source>
         <translation>laatste verwijdering</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Schrijfacties konden de statusvergrendeling niet krijgen (laatst %date): elke actie maakte alle gecachte resultaten verouderd. %file moet schrijfbaar zijn voor elke gebruiker waaronder de site draait; op NFS is NFSv4 of lockd nodig.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/operatorcode</name>

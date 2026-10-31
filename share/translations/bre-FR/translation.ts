@@ -25684,6 +25684,10 @@ Notenn: ne vo ket distaliet ar pakadoù.</translation>
         <source>last purge</source>
         <translation>skarzhadenn ziwezhañ</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>N&apos;eo ket bet gouest ar skrivadurioù da gemer prenn ar stad (ar wech diwezhañ %date): pep hini en deus lakaet an holl disoc&apos;hoù er grubuilh da vezañ diamzeret. %file a rank bezañ skrivus evit pep implijer a laka al lec&apos;hienn da dreiñ; war NFS ez eus ezhomm eus NFSv4 pe lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

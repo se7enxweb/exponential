@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>тозакунии охирин</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Навиштаҳо қулфи ҳолатро гирифта натавонистанд (охирин бор %date): ҳар яке ҳамаи натиҷаҳои кэшшударо кӯҳна кард. %file бояд барои ҳар корбаре, ки сомона аз номи ӯ кор мекунад, навиштанӣ бошад; дар NFS ба он NFSv4 ё lockd лозим аст.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

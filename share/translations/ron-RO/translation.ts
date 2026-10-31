@@ -25623,6 +25623,10 @@ Notă: pachetele nu vor fi dezinstalate.</translation>
         <source>last purge</source>
         <translation>ultima golire</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Scrierile nu au putut lua blocarea stării (ultima dată %date): fiecare a făcut învechite toate rezultatele din cache. %file trebuie să poată fi scris de fiecare utilizator sub care rulează site-ul; pe NFS are nevoie de NFSv4 sau lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

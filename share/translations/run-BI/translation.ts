@@ -25684,6 +25684,10 @@ Ikitonderwa: Amapaki ntazokurwamwo.</translation>
         <source>last purge</source>
         <translation>ifuta rya nyuma</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Ivyanditswe ntivyashoboye gufata ugufunga kw&apos;imimerere (ubwa nyuma %date): kimwe cose catumye inyishu zose zibitswe ziba izakera. %file itegerezwa kwandikwamwo na buri mukoresha urubuga rukorera mw&apos;izina ryiwe; kuri NFS ikenera NFSv4 canke lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

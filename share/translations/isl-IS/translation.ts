@@ -25623,6 +25623,10 @@ Athugaðu: uppsetning pakkanna verður ekki fjarlægð.</translation>
         <source>last purge</source>
         <translation>síðasta hreinsun</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Skrif gátu ekki tekið stöðulásinn (síðast %date): hvert þeirra gerði allar skyndiminnisniðurstöður úreltar. %file verður að vera skrifanleg fyrir hvern notanda sem vefurinn keyrir sem; á NFS þarf NFSv4 eða lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

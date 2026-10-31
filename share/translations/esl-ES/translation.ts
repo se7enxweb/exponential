@@ -26400,6 +26400,10 @@ Nota: los paquetes no serán desinstalados.</translation>
         <comment>Exponential version</comment>
         <translation type="obsolete">Revisión SVN</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Las escrituras no pudieron tomar el bloqueo del estado (última vez %date): cada una dejó obsoletos todos los resultados en caché. %file debe poder escribirse por cada usuario con el que se ejecuta el sitio; en NFS necesita NFSv4 o lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

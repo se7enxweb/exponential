@@ -25684,6 +25684,10 @@ An aire: Cha tèid na pacaidean a dhì-stàladh.</translation>
         <source>last purge</source>
         <translation>glanadh mu dheireadh</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Cha b&apos; urrainn do sgrìobhaidhean glas na staid a ghabhail (an turas mu dheireadh %date): rinn gach fear dhiubh a h-uile toradh san tasgadan seann-fhasanta. Feumaidh %file a bhith so-sgrìobhte do gach cleachdaiche fon ruith an làrach; air NFS feumaidh e NFSv4 no lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

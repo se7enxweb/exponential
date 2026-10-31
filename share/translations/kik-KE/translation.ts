@@ -25684,6 +25684,10 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
         <source>last purge</source>
         <translation>kũhũra kwa mũthia</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Maandĩko matiahotire kuoya kĩhingo kĩa ũrĩa maũndũ matariĩ (rĩa kũrigĩrĩria %date): o rĩmwe nĩrĩatũmire maciaro mothe marĩa maigĩtwo matuĩke ma tene. %file no nginya ĩandĩkĩke nĩ o mũhũthĩri ũrĩa site ĩrutaga wĩra ta we; kũrĩ NFS nĩĩbataraga NFSv4 kana lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

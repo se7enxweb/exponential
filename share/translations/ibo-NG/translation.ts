@@ -25682,6 +25682,10 @@ Nzòpụta: Agaghị ewepụ nwụnye mpakị ndị a.</translation>
         <source>last purge</source>
         <translation>nhichapụ ikpeazụ</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Ndekọ enweghị ike iwere mkpọchi ọnọdụ (nke ikpeazụ %date): nke ọ bụla mere ka nsonaazụ niile echekwara bụrụ ochie. %file ga-abụrịrị ihe onye ọrụ ọ bụla saịtị ahụ na-arụ ọrụ dị ka ya nwere ike ide; na NFS ọ chọrọ NFSv4 ma ọ bụ lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

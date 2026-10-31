@@ -24938,6 +24938,10 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
         <source>last purge</source>
         <translation>dernière purge</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Des écritures n&apos;ont pas pu prendre le verrou de l&apos;état (dernière fois %date) : chacune a rendu périmés tous les résultats en cache. %file doit être accessible en écriture à chaque utilisateur sous lequel le site s&apos;exécute ; sur NFS, il faut NFSv4 ou lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/operatorcode</name>

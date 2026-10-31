@@ -25684,6 +25684,10 @@ Cathetan: Paket ora bakal dicopot pasangane.</translation>
         <source>last purge</source>
         <translation>pangresik pungkasan</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Panulisan ora bisa njupuk kunci status (pungkasan %date): saben panulisan nggawe kabeh asil sing di-cache dadi lawas. %file kudu bisa ditulis dening saben pangguna sing nglakokake situs; ing NFS butuh NFSv4 utawa lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

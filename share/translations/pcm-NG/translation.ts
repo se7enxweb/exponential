@@ -25684,6 +25684,10 @@ Note: Dem no go uninstall di packages.</translation>
         <source>last purge</source>
         <translation>last purge</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Di writes no fit take di state lock (di last one %date): each one make all di cached result old. %file must dey writable for every user wey di site dey run as; for NFS e need NFSv4 or lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

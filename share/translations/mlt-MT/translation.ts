@@ -25623,6 +25623,10 @@ Nota: il-pakketti mhux se jiġu ddiżinstallati.</translation>
         <source>last purge</source>
         <translation>l-aħħar tneħħija</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Il-kitbiet ma setgħux jieħdu s-serratura tal-istat (l-aħħar darba %date): kull waħda għamlet skaduti r-riżultati kollha fil-cache. %file irid ikun jista&apos; jinkiteb minn kull utent li bih jaħdem is-sit; fuq NFS jeħtieġ NFSv4 jew lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

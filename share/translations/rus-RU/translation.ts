@@ -25623,6 +25623,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>последняя очистка</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Записи не смогли взять блокировку состояния (последний раз %date): каждая из них делала устаревшими все кэшированные результаты. %file должен быть доступен для записи каждому пользователю, от имени которого работает сайт; на NFS нужны NFSv4 или lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

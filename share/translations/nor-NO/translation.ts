@@ -26496,6 +26496,10 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <source>last purge</source>
         <translation>siste fjerning</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Skrivinger kunne ikke ta tilstandslåsen (sist %date): hver av dem gjorde alle hurtigbufrede resultater utdaterte. %file må være skrivbar for hver bruker nettstedet kjører som; på NFS trengs NFSv4 eller lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

@@ -31,6 +31,8 @@ class expDebugBarQueryCacheTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'high', expDebugBarSummary::queryCacheLevel( $this->snapshot( array( 'apcu' => false, 'storage' => null ) ), $limits ), 'Storage=apcu without APCu' );
         $this->assertSame( 'ok', expDebugBarSummary::queryCacheLevel( $this->snapshot( array( 'apcu' => false, 'storage' => 'file' ) ), $limits ), 'without APCu in files' );
         $this->assertSame( 'ok', expDebugBarSummary::queryCacheLevel( $this->snapshot( array( 'mode' => 'request', 'apcu' => false, 'storage' => null ) ), $limits ) );
+        $this->assertSame( 'high', expDebugBarSummary::queryCacheLevel( $this->snapshot( array( 'lock_failed' => true ) ), $limits ), 'a write could not take the state lock' );
+        $this->assertSame( 'ok', expDebugBarSummary::queryCacheLevel( $this->snapshot( array( 'lock_failed' => false ) ), $limits ) );
     }
 
     /** DQ-02 */

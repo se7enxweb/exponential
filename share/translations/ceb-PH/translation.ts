@@ -25684,6 +25684,10 @@ Hinumdomi: Dili i-uninstall ang mga pakete.</translation>
         <source>last purge</source>
         <translation>kataposang pagpapas</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Ang mga pagsulat wala makakuha sa lock sa kahimtang (katapusan %date): matag usa naghimo nga daan sa tanang na-cache nga resulta. Ang %file kinahanglang masulatan sa matag user nga gigamit sa site; sa NFS kinahanglan kini og NFSv4 o lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

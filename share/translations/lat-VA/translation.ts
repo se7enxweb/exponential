@@ -25626,6 +25626,10 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <source>last purge</source>
         <translation>ultima purgatio</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Scriptiones seram status capere non potuerunt (ultimum %date): quaeque omnes eventus in cella servatos obsoletos fecit. %file ab omni usore, sub quo situs currit, scribi debet; in NFS NFSv4 aut lockd requirit.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

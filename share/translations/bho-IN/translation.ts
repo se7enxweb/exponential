@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>अंतिम बेर साफ़ कइल गइल</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>लिखाई स्थिति के लॉक ना ले पवलस (आखिरी बेर %date): हर एक कैश कइल सगरी नतीजा के पुरान बना दिहलस। %file के हर ओह उपयोगकर्ता खातिर लिखे लायक होखे के चाहीं जेकरा नाँव से साइट चलेला; NFS पर एकरा NFSv4 भा lockd चाहीं।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

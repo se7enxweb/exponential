@@ -25684,6 +25684,10 @@ Hiweis: D'Packagen ginn net desinstalléiert.</translation>
         <source>last purge</source>
         <translation>lescht Eidelmaache</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Schreifvirgäng konnten d&apos;Spär vum Zoustand net huelen (lescht Kéier %date): jidderee vun hinnen huet all gecachte Resultater verännert. %file muss fir all Benotzer schreifbar sinn, ënner deem de Site leeft; op NFS brauch en NFSv4 oder lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

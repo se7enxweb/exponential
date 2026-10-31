@@ -25682,6 +25682,10 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <source>last purge</source>
         <translation>son temizleme</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Yazmalar durum kilidini alamadı (en son %date): her biri önbellekteki tüm sonuçları eskitti. %file, sitenin çalıştığı her kullanıcı için yazılabilir olmalıdır; NFS&apos;de NFSv4 veya lockd gerekir.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

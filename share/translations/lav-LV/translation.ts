@@ -25623,6 +25623,10 @@ Piezīme: pakotnes netiks atinstalētas.</translation>
         <source>last purge</source>
         <translation>pēdējā iztīrīšana</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Rakstīšanas darbības nevarēja iegūt stāvokļa slēdzeni (pēdējo reizi %date): katra no tām padarīja novecojušus visus kešatmiņas rezultātus. %file jābūt rakstāmam katram lietotājam, kā kuram darbojas vietne; NFS vajag NFSv4 vai lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

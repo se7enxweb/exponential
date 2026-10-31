@@ -25684,6 +25684,10 @@ bellik: Paketler gurnamadan aýrylmaz.</translation>
         <source>last purge</source>
         <translation>soňky arassalanyş</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Ýazgylar ýagdaý gulpuny alyp bilmedi (soňky gezek %date): olaryň her biri keşdäki ähli netijeleri köneltdi. %file saýtyň işleýän her bir ulanyjysy üçin ýazylýan bolmaly; NFS-de NFSv4 ýa-da lockd gerek.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

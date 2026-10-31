@@ -25684,6 +25684,10 @@ Paalala: Hindi ia-uninstall ang mga package.</translation>
         <source>last purge</source>
         <translation>huling purga</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Hindi nakuha ng mga pagsulat ang lock ng estado (huli %date): bawat isa ay ginawang luma ang lahat ng naka-cache na resulta. Ang %file ay dapat masulatan ng bawat user na pinapatakbo ang site; sa NFS kailangan nito ng NFSv4 o lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
