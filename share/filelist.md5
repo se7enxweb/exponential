@@ -27217,6 +27217,7 @@ a6f6894206dbc0dde7dae7dba8bf008a  tests/tests/kernel/classes/expContentLanguages
 6db0fecbb771dd2f8012e6fbb5185256  tests/tests/kernel/classes/expCronjobsCompactViewTest.php
 9e3a31da644e81a47ac51bcdee139a6c  tests/tests/kernel/classes/expCrontabSetupTest.php
 5af14849d1ff6a54b5fb1beb533ff42c  tests/tests/kernel/classes/expEditorPoliciesTest.php
+baf40d1e5571f3e0021edb6c2e9217a0  tests/tests/kernel/classes/expEntryScriptRenameRulesTest.php
 75d4909bce770c7bfceac5e3e99db3f5  tests/tests/kernel/classes/expImageUploadValidatorTest.php
 bd8d5281bb788338a12315d0bc4eeea3  tests/tests/kernel/classes/expInstallDefaultExtensionsTest.php
 59410c14cc7dd043faea8eabf885b694  tests/tests/kernel/classes/expKernelCallFixesTest.php
