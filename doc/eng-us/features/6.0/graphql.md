@@ -687,7 +687,9 @@ one item after the other:
   objects of every relation field of a page in one (their main locations with the objects, then their fields), and
   the URL aliases of a page in two, however long the page is. A value once read is answered from memory for the rest
   of the request. Measured on the demo content: 50 articles with their image, owner and address cost 11 SQL
-  statements, where reading them one by one cost 249.
+  statements, where reading them one by one cost 249. A test holds it there (`expGraphQLQueryBudgetTest`: at most 12
+  statements, and a page of 50 at most one more than a page of 3); it runs against a copy of a database named by
+  `GRAPHQL_BUDGET_DB`.
 - **The schema from a cache file.** The content classes the schema is made from are read from the database once and
   kept in `var/<site>/cache/graphql/catalogue-*.php`, one file per siteaccess, filter settings, languages and class
   change: storing a class (the expiry `class-identifier-cache`) makes the next request write a new file. OPcache keeps
@@ -703,14 +705,20 @@ queries](#persisted-queries), in `var/cache/graphql/responses/`:
   raw request (scheme, host, address, query string, `X-Siteaccess`, `Origin`), which is all that decides its answer. It
   still counts against the anonymous rate limit, and a CORS request gets the `Access-Control-*` headers
   `rest.ini [CorsSettings]` gave its origin when the answer was made.
-- A **signed-in `GET`** (an OAuth token or a personal API key) is answered there too once the kernel has checked its
+- A **`POST`** of a persisted query is answered there the same way when its JSON body names it (`{"id": "articles",
+  "variables": {...}}`, or Apollo's `extensions`): the key is the raw request and the persisted query, variables and
+  operation name of the body (at most 64 KB). A form, `application/graphql`, an ad-hoc query, or a query text whose
+  SHA-256 is not the hash it names goes on to the kernel.
+- A **signed-in `GET` or `POST`** (an OAuth token or a personal API key) is answered there too once the kernel has checked its
   credentials: the kernel remembers the rights of the credentials (a hash of the token, never the token) for
   `CredentialCacheTtl` seconds (60) in `var/cache/graphql/credentials/`, and forgets every one at once when an API key
   is revoked or removed, a role or policy changes, or the user caches are cleaned up. Within those seconds a token
   revoked any other way still reads the answers already cached for its rights; `CredentialCacheTtl=0` sends every
   signed-in request through the kernel. The request counts against the user's or key's rate limit.
-- Anything else (a `POST`, the first request of new credentials) is looked up by the kernel once the user is known, by
-  siteaccess, schema hash, user rights, query, variables and address.
+- Anything else (the first request of new credentials, a form `POST`) is looked up by the kernel once the user is
+  known, under the same key, so the early answer finds what the kernel stored. A token or an API key signs the request
+  in for itself only: no session, no cookie and no row in "Your devices" per request.
+- Only the answer of a **query** is kept: a mutation or a subscription runs every time, whatever the method.
 - **Expired** whenever content is published or the view caches are cleared (every path of
   `eZContentCacheManager` writes a time stamp in `var/cache/graphql/expired`; an answer made before it is stale), when
   a class changes, when persisted queries are stored or removed, after `ResponseCacheTtl` seconds (86400), and by
@@ -722,22 +730,38 @@ queries](#persisted-queries), in `var/cache/graphql/responses/`:
   it but must ask again), a signed-in one `private, no-cache`. The request id of a cached answer is in the header
   `X-Request-Id`, not in the body, so the body is the same for every request.
 
-Measured on alpha (PHP-FPM 8.5 with OPcache behind nginx, 4 workers, alpha's extensions active, the demo content: 50
-articles with image, owner and address, a 20 KB answer; 3 runs of 250 requests each (200 for the last two rows), one
-after the other, on a shared host with a load of 4 to 6):
+**Measure it** with [`exp:graphql:bench`](../../examples/commands/expgraphqlbench.md), against any end point:
+
+```bash
+./console exp:graphql:bench --url=https://example.com/api/graphql --id=articles --variables='{"limit":50}' \
+    --query-file=queries/articles.graphql --requests=200 --runs=3
+GRAPHQL_BENCH_TOKEN=<token or API key> ./console exp:graphql:bench --url=https://example.com/api/graphql --id=articles
+```
+
+It sends a cached `GET`, a `304`, a cached `POST`, a cached answer that starts the kernel (a form `POST`, which the early
+answer does not read: what the first request of new credentials costs) and the query as an uncached ad-hoc `POST`, and
+gives the median, p95 and max of each against decision 18: every cached answer within 33 ms (the max), the targets 20
+ms, then 13 ms, for the median and p95.
+
+Measured with it on alpha's code (PHP-FPM 8.5 with OPcache behind nginx, 4 workers, alpha's extensions active, a copy of
+alpha's database with SQLite; a list of up to 50 articles with image, owner and address; 3 runs of 200 requests each, one
+after the other, on a shared host with a load of 2.5 to 4.5):
 
 | Request | Median | p95 | Max |
 |---|---|---|---|
-| cached, anonymous `GET` | 1.6 ms | 3.0 ms | 6.6 ms |
-| cached, signed-in `GET` (credentials known) | 1.7 ms | 3.2 ms | 5.9 ms |
-| cached, CORS `GET` | 1.1 ms | 2.1 ms | 3.5 ms |
-| `304 Not Modified` | 1.2 ms | 2.3 ms | 4.2 ms |
-| cached, but through the kernel (a `POST`, new credentials) | 33.0 ms | 39.9 ms | 59.2 ms |
-| not cached (an ad-hoc query) | 93.0 ms | 111.7 ms | 153.4 ms |
+| cached `GET` | 1.0 ms | 2.0 ms | 5.6 ms |
+| `304 Not Modified` | 0.9 ms | 1.5 ms | 3.8 ms |
+| cached `POST` | 0.8 ms | 1.3 ms | 4.1 ms |
+| cached, signed in with an API key (`GET`, `POST`) | 0.8 to 1.0 ms | 1.5 to 2.2 ms | 7.4 to 16.5 ms |
+| cached, through the kernel (anonymous) | 15.0 ms | 19.1 ms | 27.0 ms |
+| cached, through the kernel (an API key the kernel checks) | 16.0 ms | 20.4 ms | 28.0 ms in a quiet run |
+| not cached (an ad-hoc query) | 53.8 ms | 67.2 ms | 103.7 ms |
 
-The early answer is under 33 ms on every request and under 13 ms at the median and p95. An answer that has to start
-the kernel costs its start on top (about 30 ms with alpha's extensions), so a front end sends its persisted queries with
-`GET`.
+Every early answer is under 33 ms on every request and under 13 ms at the median and p95. An answer that has to start
+the kernel costs about 15 ms: the kernel boots the compiled [kernel service container](../../examples/ini-settings/kernelservices/README.md)
+as the web kernel does (without it, alpha's 90 extensions cost another 14 ms), and about 6 ms of it is SQLite opening
+its schema for the connection. On a busy host a single request through the kernel can still pass 33 ms; the early
+answer is what keeps a front end within the limit, for `GET` and `POST` alike.
 
 Nothing of this is kept between requests: the loaders and their memory belong to one request, so a persistent worker
 ([Velocity](velocity-web-server.md)) never answers from another request's memory and keeps no database connection
@@ -862,6 +886,7 @@ list the extensions that answer.
 | [`exp:graphql:schema`](../../examples/commands/expgraphqlschema.md) | the schema: `--format=sdl` (the schema language, for code generators and editors), `json` (the introspection result), `summary` (classes, types, fields, datatypes, mapped or not); `--output=<file>` |
 | [`exp:graphql:query`](../../examples/commands/expgraphqlquery.md) | runs a query, given as the argument, a `.graphql` or `.gql` file, or `-` for standard input, or a persisted query with `--id=<name or sha256>`; `--variables`, `--operation`, `--as=<login>`, `--format=json\|table` |
 | [`exp:graphql:persist`](../../examples/commands/expgraphqlpersist.md) | stores `.graphql` files as [persisted queries](#persisted-queries) after checking them against the schema (`--apply`; `--name=`), `--list` (`--format=text\|json`), `--remove=<name or sha256> --apply` |
+| [`exp:graphql:bench`](../../examples/commands/expgraphqlbench.md) | measures the speed of an end point against decision 18 ([Speed](#speed)): cached `GET`, `304`, cached `POST`, a cached answer through the kernel, uncached (`--query-file`); median, p95 and max per row, PASS or FAIL against the 33 ms hard limit; `--format=text\|json` |
 
 ```bash
 ./console exp:graphql:status --format=json

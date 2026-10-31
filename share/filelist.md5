@@ -6558,7 +6558,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 9c48d98113bfd90aee4978edd5c7a7f2  doc/eng-us/features/6.0/ezpm-package-manager-cli.md
 55a6d37f6223a741370c84e36904131d  doc/eng-us/features/6.0/file-consistency-check.md
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
-609f717ed013cd71abe23482810cc472  doc/eng-us/features/6.0/graphql.md
+fd125d76de1b3a313b8e9564332d1cf3  doc/eng-us/features/6.0/graphql.md
 da954ebd145c3c58a98b5755235bb069  doc/eng-us/features/6.0/help-content.md
 c2e6afd557f166bbbd534db2b70a1de7  doc/eng-us/features/6.0/help-system.md
 decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
@@ -15803,7 +15803,7 @@ b1a17245ed04b8323c1b3acf66144d0c  doc/ger-de/funktionen/6.0/exp-debug-leiste.md
 b1f10199d3eaa2ca42f0dc2506b7daaa  doc/ger-de/funktionen/6.0/freigabe-von-redakteurskonten.md
 c86b628979e2e65666467fe3f589272a  doc/ger-de/funktionen/6.0/geheimnisspeicher.md
 eb3d2bb16f19518e5d5f40301852dfa7  doc/ger-de/funktionen/6.0/generator-fuer-den-statischen-cache.md
-d92bb9bafee6bc4cc7f8da0b1fe44072  doc/ger-de/funktionen/6.0/graphql.md
+142949dcc7dfe8c02cdd5eb2fb92d90a  doc/ger-de/funktionen/6.0/graphql.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
 4c817b16a8baa24ca229830f51b0b584  doc/ger-de/funktionen/6.0/hilfeinhalte.md
 922ccbd845d7b93b0067c797f9bf45f2  doc/ger-de/funktionen/6.0/hilfesystem.md
