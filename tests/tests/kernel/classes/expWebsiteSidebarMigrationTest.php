@@ -45,11 +45,48 @@ class expWebsiteSidebarMigrationTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'websitetoolbar/use', $plan[0]['why'] );
     }
 
-    public function testEditorGetsTheFourOnceEvenWithTheToolbar()
+    public function testEditorGetsExpwtWildcardWithoutLimitationsInPlaceOfNarrowerGrants()
     {
-        $roles = array( self::role( 3, 'Editor', array( 'websitetoolbar/use', 'content/edit' ) ) );
-        $this->assertSame( array( 'Editor:expwt/use', 'Editor:expwt/edit', 'Editor:expwt/create', 'Editor:expwt/structure' ),
-                           self::grants( expWebsiteSidebarMigration::policyPlan( $roles ) ) );
+        // F22: expwt/* without limitations, also where the toolbar was limited
+        $roles = array( self::role( 3, 'Editor', array( 'websitetoolbar/use' => array( 'Class' => array( '16' ) ), 'content/edit' ) ) );
+        $this->assertSame( array( 'Editor:expwt/*' ), self::grants( expWebsiteSidebarMigration::policyPlan( $roles ) ) );
+        // the limited grants of an earlier migration are replaced (taken away by their ids), once
+        $earlier = self::role( 3, 'Editor', array( 'expwt/use' => array( 'Class' => array( '16' ) ), 'expwt/edit', 'content/edit' ) );
+        $earlier['policies'][0]['id'] = 41;
+        $earlier['policies'][1]['id'] = 42;
+        $plan = expWebsiteSidebarMigration::policyPlan( array( $earlier ) );
+        $this->assertSame( array( 'Editor:expwt/*', 'Editor:expwt/use+Class', 'Editor:expwt/edit' ), self::grants( $plan ) );
+        $this->assertSame( array( 41, 42 ), array_column( array_slice( $plan, 1 ), 'remove' ) );
+        $this->assertArrayNotHasKey( 'remove', $plan[0] );
+        // idempotent: expwt/* without limitations (or everything) plans nothing
+        $this->assertSame( array(), expWebsiteSidebarMigration::policyPlan( array( self::role( 3, 'Editor', array( 'expwt/*', 'content/edit' ) ) ) ) );
+        $this->assertSame( array(), expWebsiteSidebarMigration::policyPlan( array( self::role( 3, 'Editor', array( '*/*' ) ) ) ) );
+        // expwt/* with limitations is not enough
+        $this->assertSame( array( 'Editor:expwt/*' ), self::grants( expWebsiteSidebarMigration::policyPlan(
+            array( self::role( 3, 'Editor', array( 'expwt/*' => array( 'Section' => array( '1' ) ) ) ) ) ) ) );
+    }
+
+    public function testTheAnonymousRoleNeverGetsAnything()
+    {
+        $this->assertSame( array(), expWebsiteSidebarMigration::policyPlan( array( self::role( 1, 'Anonymous', array( 'websitetoolbar/use', 'content/read' ) ) ) ) );
+        $assigned = self::role( 9, 'Visitors', array( 'websitetoolbar/use' ) );
+        $assigned['anonymous'] = true;
+        $this->assertSame( array(), expWebsiteSidebarMigration::policyPlan( array( $assigned ) ), 'a role of the anonymous user, whatever its name' );
+    }
+
+    public function testTheSidebarIsSwitchedOnWhereEzwtWasActive()
+    {
+        $site = array( '/i/settings/override/site.ini.append.php' => "[ExtensionSettings]\nActiveExtensions[]=ezwt\n",
+                       '/i/settings/siteaccess/smarty/site.ini.append.php' => "[ExtensionSettings]\nActiveAccessExtensions[]=ezwt\n",
+                       '/i/settings/siteaccess/admin/site.ini.append.php' => "[SiteSettings]\nSiteName=x\n" );
+        $plan = expWebsiteSidebarMigration::enablePlan( $site, array( '/i/settings/siteaccess/smarty/expwt.ini.append.php' => "<?php /*\n[ExpwtSettings]\nEnabled=disabled\n*/ ?>\n" ) );
+        $this->assertSame( array( '/i/settings/override/expwt.ini.append.php' ), array_keys( $plan ), 'F18; a file that sets Enabled keeps it' );
+        $this->assertStringContainsString( "[ExpwtSettings]\n# switched on where ezwt was active", $plan['/i/settings/override/expwt.ini.append.php'] );
+        $this->assertStringContainsString( "Enabled=enabled", $plan['/i/settings/override/expwt.ini.append.php'] );
+        $this->assertSame( array(), expWebsiteSidebarMigration::enablePlan( $site, $plan + array( '/i/settings/siteaccess/smarty/expwt.ini.append.php' => "Enabled=disabled\n" ) ), 'runs again: nothing' );
+        $merged = expWebsiteSidebarMigration::withEnabled( "<?php /* #?ini charset=\"utf-8\"?\n[CreateSettings]\nHiddenClassList[]=x\n*/ ?>\n" );
+        $this->assertStringContainsString( "HiddenClassList[]=x", $merged );
+        $this->assertStringContainsString( "[ExpwtSettings]\n# switched on", $merged );
     }
 
     public function testAdministratorGetsExpwtWildcardUnlessItHasEverything()
@@ -62,7 +99,7 @@ class expWebsiteSidebarMigrationTest extends PHPUnit\Framework\TestCase
 
     public function testRunsAgainWithoutGrantingTwice()
     {
-        $roles = array( self::role( 3, 'Editor', array( 'expwt/use', 'expwt/edit', 'expwt/create', 'expwt/structure', 'websitetoolbar/use' ) ),
+        $roles = array( self::role( 3, 'Editor', array( 'expwt/*', 'websitetoolbar/use' ) ),
                         self::role( 7, 'Partner', array( 'websitetoolbar/use' => array( 'Class' => array( '2', '16' ) ),
                                                          'expwt/use' => array( 'Class' => array( '16', '2' ) ),
                                                          'expwt/edit' => array( 'Class' => array( '2', '16' ) ),
@@ -83,19 +120,19 @@ class expWebsiteSidebarMigrationTest extends PHPUnit\Framework\TestCase
     public function testTwoIdenticalToolbarPoliciesGiveOneGrantPerFunction()
     {
         $class = array( 'Class' => array( '2', '16' ) );
-        $plan = expWebsiteSidebarMigration::policyPlan( array( self::roleWithToolbars( 3, 'Editor', array( $class, array( 'Class' => array( '16', '2' ) ) ) ) ) );
-        $this->assertSame( array( 'Editor:expwt/use+Class', 'Editor:expwt/edit+Class', 'Editor:expwt/create+Class', 'Editor:expwt/structure+Class' ),
+        $plan = expWebsiteSidebarMigration::policyPlan( array( self::roleWithToolbars( 3, 'Webmaster', array( $class, array( 'Class' => array( '16', '2' ) ) ) ) ) );
+        $this->assertSame( array( 'Webmaster:expwt/use+Class', 'Webmaster:expwt/edit+Class', 'Webmaster:expwt/create+Class', 'Webmaster:expwt/structure+Class' ),
                            self::grants( $plan ) );
         $this->assertSame( '2 websitetoolbar/use policies', $plan[0]['why'] );
     }
 
     public function testDifferentClassListsAreJoinedIntoOneGrant()
     {
-        $plan = expWebsiteSidebarMigration::policyPlan( array( self::roleWithToolbars( 3, 'Editor',
+        $plan = expWebsiteSidebarMigration::policyPlan( array( self::roleWithToolbars( 3, 'Webmaster',
             array( array( 'Class' => array( '1', '16', '2' ) ), array( 'Class' => array( '43', '2', '44' ) ) ) ) ) );
         $this->assertCount( 4, $plan );
         $this->assertSame( array( 'Class' => array( '1', '2', '16', '43', '44' ) ), $plan[0]['limitations'] );
-        $this->assertSame( 'expwt/use to Editor (3) limited to Class 1, 2, 16, 43, 44 (from 2 websitetoolbar/use policies)',
+        $this->assertSame( 'expwt/use to Webmaster (3) limited to Class 1, 2, 16, 43, 44 (from 2 websitetoolbar/use policies)',
                            expWebsiteSidebarMigration::grantText( $plan[0] ) );
     }
 
@@ -123,12 +160,12 @@ class expWebsiteSidebarMigrationTest extends PHPUnit\Framework\TestCase
     public function testRunAfterAJoinedGrantPlansNothing()
     {
         $sets = array( array( 'Class' => array( '1', '16', '2' ) ), array( 'Class' => array( '43', '2', '44' ) ) );
-        $role = self::roleWithToolbars( 3, 'Editor', $sets );
+        $role = self::roleWithToolbars( 3, 'Webmaster', $sets );
         foreach ( expWebsiteSidebarMigration::policyPlan( array( $role ) ) as $grant )
             $role['policies'][] = array( 'module' => 'expwt', 'function' => $grant['function'], 'limitations' => $grant['limitations'] );
         $this->assertSame( array(), expWebsiteSidebarMigration::policyPlan( array( $role ) ), 'the joined grant covers both' );
         // an unlimited grant the role holds covers any limited one
-        $held = self::roleWithToolbars( 3, 'Editor', $sets, array( 'expwt/use', 'expwt/edit', 'expwt/create', 'expwt/structure' ) );
+        $held = self::roleWithToolbars( 3, 'Webmaster', $sets, array( 'expwt/use', 'expwt/edit', 'expwt/create', 'expwt/structure' ) );
         $this->assertSame( array(), expWebsiteSidebarMigration::policyPlan( array( $held ) ) );
     }
 
