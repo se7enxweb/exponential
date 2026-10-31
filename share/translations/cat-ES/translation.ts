@@ -25623,6 +25623,10 @@ Nota: els paquets no es desinstal·laran.</translation>
         <source>last purge</source>
         <translation>última purga</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Les escriptures no han pogut prendre el bloqueig de l&apos;estat (darrera vegada %date): cadascuna ha deixat obsolets tots els resultats de la memòria cau. %file ha de ser escrivible per cada usuari amb què s&apos;executa el lloc; a NFS cal NFSv4 o lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78355,6 +78359,58 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Les teves sessions i esdeveniments de seguretat en un fitxer JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Aquest lloc no registra les sessions, així que no s'ha pogut tancar la sessió de cap altre dispositiu. Canvia la contrasenya ara.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>S'han tancat %count sessions més. Ara canvia la contrasenya.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>No hi havia cap altre dispositiu amb la sessió iniciada. Ara canvia la contrasenya.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Gràcies. L'esdeveniment s'ha marcat com a teu.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Aquest esdeveniment no necessita resposta.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La pàgina havia caducat. No s'ha canviat res; torna-ho a provar.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Protegeix el teu compte</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Si alguna cosa d'aquí no l'has fet tu, tanca la sessió de tots els altres dispositius i després tria una contrasenya nova. També es tanca la sessió dels dispositius que la mantenien oberta amb «Recorda'm».</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>La sessió de cada dispositiu excepte aquest es tanca a la seva propera sol·licitud. Després tries una contrasenya nova.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Sí, tanca la sessió dels altres dispositius</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Has estat tu?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Sí, he estat jo</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>No, protegeix el meu compte</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78537,6 +78593,58 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Les teves sessions i esdeveniments de seguretat en un fitxer JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Aquest lloc no registra les sessions, així que no s'ha pogut tancar la sessió de cap altre dispositiu. Canvia la contrasenya ara.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>S'han tancat %count sessions més. Ara canvia la contrasenya.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>No hi havia cap altre dispositiu amb la sessió iniciada. Ara canvia la contrasenya.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Gràcies. L'esdeveniment s'ha marcat com a teu.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Aquest esdeveniment no necessita resposta.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La pàgina havia caducat. No s'ha canviat res; torna-ho a provar.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Protegeix el teu compte</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Si alguna cosa d'aquí no l'has fet tu, tanca la sessió de tots els altres dispositius i després tria una contrasenya nova. També es tanca la sessió dels dispositius que la mantenien oberta amb «Recorda'm».</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>La sessió de cada dispositiu excepte aquest es tanca a la seva propera sol·licitud. Després tries una contrasenya nova.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Sí, tanca la sessió dels altres dispositius</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Has estat tu?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Sí, he estat jo</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>No, protegeix el meu compte</translation>
     </message>
 </context>
 <context>
@@ -78728,6 +78836,42 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Gestor de sessions: %handler. Les sessions es llegeixen de la taula expuser_session, de manera que l&apos;informe funciona amb qualsevol gestor.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Activitat sospitosa en les darreres %hours hores</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Una xarxa no ha pogut iniciar la sessió en %accounts comptes (%count intents)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Compte bloquejat després d'inicis de sessió fallits</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count inicis de sessió fallits en un compte</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Sessió iniciada des de %count països alhora</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitat de seguretat</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessions</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Els inicis de sessió fallits es llegeixen del registre d'auditoria d'usuaris, que no està disponible aquí.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Res sospitós: cap compte amb inicis de sessió fallits repetits, cap xarxa que provi diversos comptes, cap compte amb la sessió iniciada des de diversos països.</translation>
     </message>
 </context>
 <context>

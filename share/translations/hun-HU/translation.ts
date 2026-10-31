@@ -25623,6 +25623,10 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
         <source>last purge</source>
         <translation>utolsó törlés</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Az írások nem tudták megszerezni az állapot zárolását (legutóbb %date): mindegyik elavulttá tette az összes gyorsítótárazott eredményt. A(z) %file fájlnak írhatónak kell lennie minden felhasználó számára, akiként a webhely fut; NFS-en NFSv4 vagy lockd kell hozzá.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78355,6 +78359,58 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Munkamenetei és biztonsági eseményei JSON-fájlként.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Ez a webhely nem rögzíti a munkameneteket, így más eszközt nem lehetett kijelentkeztetni. Változtassa meg most a jelszavát.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count másik munkamenet kijelentkeztetve. Most változtassa meg a jelszavát.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Más eszköz nem volt bejelentkezve. Most változtassa meg a jelszavát.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Köszönjük. Az eseményt sajátjaként jelöltük meg.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ez az esemény nem igényel választ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Az oldal lejárt. Semmi sem változott; próbálja meg újra.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Fiók védelme</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ha valami itt nem Ön volt, jelentkeztessen ki minden más eszközt, majd válasszon új jelszót. Az Emlékezzen rám funkcióval bejelentkezve tartott eszközök is kijelentkeznek.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Ezen kívül minden eszköz a következő kérésénél kijelentkezik. Ezután új jelszót választ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Igen, a többi eszköz kijelentkeztetése</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ön volt az?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Igen, én voltam</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nem, védje a fiókomat</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78537,6 +78593,58 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Munkamenetei és biztonsági eseményei JSON-fájlként.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Ez a webhely nem rögzíti a munkameneteket, így más eszközt nem lehetett kijelentkeztetni. Változtassa meg most a jelszavát.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count másik munkamenet kijelentkeztetve. Most változtassa meg a jelszavát.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Más eszköz nem volt bejelentkezve. Most változtassa meg a jelszavát.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Köszönjük. Az eseményt sajátjaként jelöltük meg.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ez az esemény nem igényel választ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Az oldal lejárt. Semmi sem változott; próbálja meg újra.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Fiók védelme</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ha valami itt nem Ön volt, jelentkeztessen ki minden más eszközt, majd válasszon új jelszót. Az Emlékezzen rám funkcióval bejelentkezve tartott eszközök is kijelentkeznek.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Ezen kívül minden eszköz a következő kérésénél kijelentkezik. Ezután új jelszót választ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Igen, a többi eszköz kijelentkeztetése</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ön volt az?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Igen, én voltam</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nem, védje a fiókomat</translation>
     </message>
 </context>
 <context>
@@ -78728,6 +78836,42 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Munkamenet-kezelő: %handler. A munkamenetek az expuser_session táblából olvashatók ki, így a jelentés minden kezelővel működik.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Gyanús tevékenység az elmúlt %hours órában</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Egy hálózat nem tudott bejelentkezni %accounts fiókba (%count kísérlet)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Fiók zárolva sikertelen bejelentkezések után</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count sikertelen bejelentkezés egy fiókba</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Egyszerre %count országból bejelentkezve</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Biztonsági tevékenység</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Munkamenetek</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>A sikertelen bejelentkezések a felhasználói naplóból olvashatók ki, amely itt nem érhető el.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nincs semmi gyanús: nincs ismételten sikertelen bejelentkezésű fiók, nincs több fiókot próbálgató hálózat, nincs több országból bejelentkezett fiók.</translation>
     </message>
 </context>
 <context>

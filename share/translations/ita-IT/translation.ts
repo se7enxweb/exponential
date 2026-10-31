@@ -25025,6 +25025,10 @@ Nota: I pacchetti non verranno disinstallati.</translation>
         <source>last purge</source>
         <translation>ultima eliminazione</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Le scritture non hanno potuto prendere il blocco dello stato (ultima volta %date): ognuna ha reso obsoleti tutti i risultati in cache. %file deve essere scrivibile da ogni utente con cui gira il sito; su NFS servono NFSv4 o lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/operatorcode</name>
@@ -79732,6 +79736,58 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Le tue sessioni e i tuoi eventi di sicurezza in un file JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Le sessioni non vengono registrate su questo sito, quindi non è stato possibile disconnettere nessun altro dispositivo. Cambia subito la tua password.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count altre sessioni sono state disconnesse. Ora cambia la tua password.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nessun altro dispositivo era connesso. Ora cambia la tua password.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Grazie. L'evento è contrassegnato come tuo.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Quell'evento non richiede alcuna risposta.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La pagina era scaduta. Non è stato modificato nulla; riprova.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Proteggi il tuo account</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Se qualcosa qui non sei stato tu, disconnetti ogni altro dispositivo, poi scegli una nuova password. Vengono disconnessi anche i dispositivi rimasti connessi con Ricordami.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Ogni dispositivo tranne questo viene disconnesso alla sua richiesta successiva. Poi scegli una nuova password.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Sì, disconnetti gli altri dispositivi</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Eri tu?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Sì, ero io</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>No, proteggi il mio account</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -79914,6 +79970,58 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Le tue sessioni e i tuoi eventi di sicurezza in un file JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Le sessioni non vengono registrate su questo sito, quindi non è stato possibile disconnettere nessun altro dispositivo. Cambia subito la tua password.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count altre sessioni sono state disconnesse. Ora cambia la tua password.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nessun altro dispositivo era connesso. Ora cambia la tua password.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Grazie. L'evento è contrassegnato come tuo.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Quell'evento non richiede alcuna risposta.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La pagina era scaduta. Non è stato modificato nulla; riprova.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Proteggi il tuo account</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Se qualcosa qui non sei stato tu, disconnetti ogni altro dispositivo, poi scegli una nuova password. Vengono disconnessi anche i dispositivi rimasti connessi con Ricordami.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Ogni dispositivo tranne questo viene disconnesso alla sua richiesta successiva. Poi scegli una nuova password.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Sì, disconnetti gli altri dispositivi</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Eri tu?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Sì, ero io</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>No, proteggi il mio account</translation>
     </message>
 </context>
 <context>
@@ -80105,6 +80213,42 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Gestore di sessioni: %handler. Le sessioni vengono lette dalla tabella expuser_session, quindi il rapporto funziona con qualsiasi gestore.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Attività sospetta nelle ultime %hours ore</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Una rete non è riuscita ad accedere a %accounts account (%count tentativi)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Account bloccato dopo accessi non riusciti</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count accessi non riusciti su un account</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Connesso da %count paesi contemporaneamente</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Attività di sicurezza</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessioni</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Gli accessi non riusciti vengono letti dal registro di audit degli utenti, che qui non è disponibile.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Niente di sospetto: nessun account con accessi non riusciti ripetuti, nessuna rete che prova più account, nessun account connesso da più paesi.</translation>
     </message>
 </context>
 <context>

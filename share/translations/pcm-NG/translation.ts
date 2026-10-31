@@ -25684,6 +25684,10 @@ Note: Dem no go uninstall di packages.</translation>
         <source>last purge</source>
         <translation>last purge</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Di writes no fit take di state lock (di last one %date): each one make all di cached result old. %file must dey writable for every user wey di site dey run as; for NFS e need NFSv4 or lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78333,6 +78337,58 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Your sessions and security events as JSON file.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Dis site no dey record sessions, so we no fit sign out any oda device. Change your password now now.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>We don sign out %count oda sessions. Now change your password.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>No oda device bin dey signed in. Now change your password.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Tank you. We don mark di event say na you.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Dat event no need any ansa.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Di page don expire. Nothing change; abeg try again.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Make your account safe</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>If anytin for here no be you, sign out all di oda devices, den choose new password. Devices wey dey signed in wit “Remember me” go sign out too.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Every device apart from dis one go sign out wen e make im next request. Den you go choose new password.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Yes, sign out di oda devices</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Na you do am?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Yes, na me</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>No, make my account safe</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78515,6 +78571,58 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Your sessions and security events as JSON file.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Dis site no dey record sessions, so we no fit sign out any oda device. Change your password now now.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>We don sign out %count oda sessions. Now change your password.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>No oda device bin dey signed in. Now change your password.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Tank you. We don mark di event say na you.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Dat event no need any ansa.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Di page don expire. Nothing change; abeg try again.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Make your account safe</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>If anytin for here no be you, sign out all di oda devices, den choose new password. Devices wey dey signed in wit “Remember me” go sign out too.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Every device apart from dis one go sign out wen e make im next request. Den you go choose new password.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Yes, sign out di oda devices</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Na you do am?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Yes, na me</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>No, make my account safe</translation>
     </message>
 </context>
 <context>
@@ -78706,6 +78814,42 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Session handler: %handler. Dem dey read di sessions from di table expuser_session, so di report dey work wit every handler.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Tins wey no clear for di last %hours hours</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>One network no fit sign in to %accounts accounts (%count tries)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Dem lock di account afta sign-ins wey no work</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count sign-ins wey no work for one account</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>E sign in from %count kontris di same time</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Wetin happen for security</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessions</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>We dey read sign-ins wey no work from di user audit log, but e no dey here.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nothing wey no clear: no account wit plenti sign-ins wey no work, no network wey dey try plenti accounts, no account wey sign in from plenti kontris.</translation>
     </message>
 </context>
 <context>

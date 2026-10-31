@@ -25626,6 +25626,10 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <source>last purge</source>
         <translation>ultima purgatio</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Scriptiones seram status capere non potuerunt (ultimum %date): quaeque omnes eventus in cella servatos obsoletos fecit. %file ab omni usore, sub quo situs currit, scribi debet; in NFS NFSv4 aut lockd requirit.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78358,6 +78362,58 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sessiones et eventus securitatis tui ut fasciculus JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sessiones in hoc situ non notantur, itaque nullum aliud instrumentum exire cogi potuit. Tesseram tuam nunc muta.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count aliae sessiones finitae sunt. Nunc tesseram tuam muta.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nullum aliud instrumentum ingressum erat. Nunc tesseram tuam muta.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Gratias tibi. Eventus ut tuus notatus est.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ille eventus nullum responsum requirit.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Pagina exspiraverat. Nihil mutatum est; iterum, quaeso, conare.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Rationem tuam munire</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Si quid hic a te non factum est, omnia alia instrumenta exire iube, deinde novam tesseram elige. Instrumenta per “Memento mei” ingressa manentia quoque exeunt.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Omne instrumentum praeter hoc ad proximam petitionem suam exit. Deinde novam tesseram eligis.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ita, alia instrumenta exire iube</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Tune hoc fecisti?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ita, ego feci</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Minime, rationem meam muni</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78540,6 +78596,58 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sessiones et eventus securitatis tui ut fasciculus JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sessiones in hoc situ non notantur, itaque nullum aliud instrumentum exire cogi potuit. Tesseram tuam nunc muta.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count aliae sessiones finitae sunt. Nunc tesseram tuam muta.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nullum aliud instrumentum ingressum erat. Nunc tesseram tuam muta.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Gratias tibi. Eventus ut tuus notatus est.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ille eventus nullum responsum requirit.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Pagina exspiraverat. Nihil mutatum est; iterum, quaeso, conare.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Rationem tuam munire</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Si quid hic a te non factum est, omnia alia instrumenta exire iube, deinde novam tesseram elige. Instrumenta per “Memento mei” ingressa manentia quoque exeunt.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Omne instrumentum praeter hoc ad proximam petitionem suam exit. Deinde novam tesseram eligis.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ita, alia instrumenta exire iube</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Tune hoc fecisti?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ita, ego feci</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Minime, rationem meam muni</translation>
     </message>
 </context>
 <context>
@@ -78731,6 +78839,42 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Tractator sessionum: %handler. Sessiones e tabula expuser_session leguntur, itaque relatio cum quovis tractatore operatur.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Acta suspecta proximis %hours horis</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Una retis in %accounts rationes ingredi non potuit (%count conatus)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Ratio post ingressus irritos clausa</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count ingressus irriti in una ratione</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Ex %count civitatibus simul ingressus</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Acta securitatis</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessiones</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Ingressus irriti ex acto inspectionis usorum leguntur, qui hic praesto non est.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nihil suspectum: nulla ratio cum ingressibus irritis iteratis, nulla retis plures rationes temptans, nulla ratio ex pluribus civitatibus ingressa.</translation>
     </message>
 </context>
 <context>

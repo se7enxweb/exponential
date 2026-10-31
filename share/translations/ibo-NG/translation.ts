@@ -25682,6 +25682,10 @@ Nzòpụta: Agaghị ewepụ nwụnye mpakị ndị a.</translation>
         <source>last purge</source>
         <translation>nhichapụ ikpeazụ</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Ndekọ enweghị ike iwere mkpọchi ọnọdụ (nke ikpeazụ %date): nke ọ bụla mere ka nsonaazụ niile echekwara bụrụ ochie. %file ga-abụrịrị ihe onye ọrụ ọ bụla saịtị ahụ na-arụ ọrụ dị ka ya nwere ike ide; na NFS ọ chọrọ NFSv4 ma ọ bụ lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78323,6 +78327,58 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Oge nnọdụ gị na ihe omume nchekwa gị dị ka faịlụ JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>A naghị edekọ oge nnọdụ na saịtị a, ya mere enweghị ike ịpụpụ ngwaọrụ ọzọ ọ bụla. Gbanwee okwuntughe gị ugbu a.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Ewepụla oge nnọdụ %count ndị ọzọ. Ugbu a gbanwee okwuntughe gị.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ọ dịghị ngwaọrụ ọzọ banyere. Ugbu a gbanwee okwuntughe gị.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Daalụ. Akaala ihe omume ahụ dịka nke gị.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ihe omume ahụ achọghị azịza.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Oge ibe ahụ agafeela. Ọ dịghị ihe agbanwere; biko nwaa ọzọ.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Chekwaa akaụntụ gị</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ọ bụrụ na ihe ọ bụla ebe a abụghị gị, wepụ ngwaọrụ ọ bụla ọzọ, wee họrọ okwuntughe ọhụrụ. A na-ewepụkwa ngwaọrụ ndị a debere n'ime site na Cheta m.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>A na-ewepụ ngwaọrụ ọ bụla ewezuga nke a n'arịrịọ ya na-esote. Mgbe ahụ ị ga-ahọrọ okwuntughe ọhụrụ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ee, wepụ ngwaọrụ ndị ọzọ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ọ bụ gị?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ee, ọ bụ m</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Mba, chekwaa akaụntụ m</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78505,6 +78561,58 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Oge nnọdụ gị na ihe omume nchekwa gị dị ka faịlụ JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>A naghị edekọ oge nnọdụ na saịtị a, ya mere enweghị ike ịpụpụ ngwaọrụ ọzọ ọ bụla. Gbanwee okwuntughe gị ugbu a.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Ewepụla oge nnọdụ %count ndị ọzọ. Ugbu a gbanwee okwuntughe gị.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ọ dịghị ngwaọrụ ọzọ banyere. Ugbu a gbanwee okwuntughe gị.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Daalụ. Akaala ihe omume ahụ dịka nke gị.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ihe omume ahụ achọghị azịza.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Oge ibe ahụ agafeela. Ọ dịghị ihe agbanwere; biko nwaa ọzọ.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Chekwaa akaụntụ gị</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ọ bụrụ na ihe ọ bụla ebe a abụghị gị, wepụ ngwaọrụ ọ bụla ọzọ, wee họrọ okwuntughe ọhụrụ. A na-ewepụkwa ngwaọrụ ndị a debere n'ime site na Cheta m.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>A na-ewepụ ngwaọrụ ọ bụla ewezuga nke a n'arịrịọ ya na-esote. Mgbe ahụ ị ga-ahọrọ okwuntughe ọhụrụ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ee, wepụ ngwaọrụ ndị ọzọ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ọ bụ gị?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ee, ọ bụ m</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Mba, chekwaa akaụntụ m</translation>
     </message>
 </context>
 <context>
@@ -78696,6 +78804,42 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Onye njikwa oge nnọdụ: %handler. A na-agụ oge nnọdụ site na tebụl expuser_session, ya mere akụkọ ahụ na-arụ ọrụ na onye njikwa ọ bụla.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Omume a na-enyo enyo n'ime awa %hours gara aga</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Otu netwọk enweghị ike ịbanye na akaụntụ %accounts (mgbalị %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akpọchiri akaụntụ mgbe nbanye dara ada</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Nbanye %count dara ada n'otu akaụntụ</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Banyere site na mba %count n'otu oge</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Omume nchekwa</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Oge nnọdụ</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>A na-agụ nbanye dara ada site na ndekọ nyocha ndị ọrụ, nke na-adịghị ebe a.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Ọ dịghị ihe a na-enyo enyo: ọ dịghị akaụntụ nwere nbanye dara ada ugboro ugboro, ọ dịghị netwọk na-anwale ọtụtụ akaụntụ, ọ dịghị akaụntụ banyere site n'ọtụtụ mba.</translation>
     </message>
 </context>
 <context>

@@ -25623,6 +25623,10 @@ Shënim: paketat nuk do të çinstalohen.</translation>
         <source>last purge</source>
         <translation>spastrimi i fundit</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Shkrimet nuk mundën të merrnin kyçjen e gjendjes (herën e fundit %date): secili e bëri të vjetëruar çdo rezultat në fshehtinë. %file duhet të jetë i shkrueshëm për çdo përdorues me të cilin punon sajti; në NFS i duhet NFSv4 ose lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78355,6 +78359,58 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Seancat dhe ngjarjet tuaja të sigurisë si skedar JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Seancat nuk regjistrohen në këtë sajt, prandaj asnjë pajisje tjetër nuk mund të shkëputej. Ndryshoni fjalëkalimin tani.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>U mbyllën %count seanca të tjera. Tani ndryshoni fjalëkalimin.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Asnjë pajisje tjetër nuk ishte e lidhur. Tani ndryshoni fjalëkalimin.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Faleminderit. Ngjarja është shënuar si e juaja.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ajo ngjarje nuk ka nevojë për përgjigje.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Faqja kishte skaduar. Nuk u ndryshua asgjë; provoni sërish.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Siguroni llogarinë tuaj</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Nëse diçka këtu nuk ishit ju, shkëputni të gjitha pajisjet e tjera, pastaj zgjidhni një fjalëkalim të ri. Shkëputen edhe pajisjet që mbeten të lidhura me Më mbaj mend.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Çdo pajisje përveç kësaj shkëputet në kërkesën e saj të radhës. Pastaj zgjidhni një fjalëkalim të ri.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Po, shkëput pajisjet e tjera</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>A ishit ju?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Po, isha unë</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Jo, sigurojeni llogarinë time</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78537,6 +78593,58 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Seancat dhe ngjarjet tuaja të sigurisë si skedar JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Seancat nuk regjistrohen në këtë sajt, prandaj asnjë pajisje tjetër nuk mund të shkëputej. Ndryshoni fjalëkalimin tani.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>U mbyllën %count seanca të tjera. Tani ndryshoni fjalëkalimin.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Asnjë pajisje tjetër nuk ishte e lidhur. Tani ndryshoni fjalëkalimin.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Faleminderit. Ngjarja është shënuar si e juaja.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ajo ngjarje nuk ka nevojë për përgjigje.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Faqja kishte skaduar. Nuk u ndryshua asgjë; provoni sërish.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Siguroni llogarinë tuaj</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Nëse diçka këtu nuk ishit ju, shkëputni të gjitha pajisjet e tjera, pastaj zgjidhni një fjalëkalim të ri. Shkëputen edhe pajisjet që mbeten të lidhura me Më mbaj mend.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Çdo pajisje përveç kësaj shkëputet në kërkesën e saj të radhës. Pastaj zgjidhni një fjalëkalim të ri.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Po, shkëput pajisjet e tjera</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>A ishit ju?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Po, isha unë</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Jo, sigurojeni llogarinë time</translation>
     </message>
 </context>
 <context>
@@ -78728,6 +78836,42 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Trajtuesi i seancave: %handler. Seancat lexohen nga tabela expuser_session, prandaj raporti funksionon me çdo trajtues.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Aktivitet i dyshimtë në %hours orët e fundit</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Një rrjet nuk arriti të hyjë në %accounts llogari (%count përpjekje)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Llogaria u kyç pas hyrjeve të dështuara</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count hyrje të dështuara në një llogari</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Hyrje nga %count vende njëkohësisht</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktiviteti i sigurisë</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Seancat</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Hyrjet e dështuara lexohen nga regjistri i auditimit të përdoruesve, i cili nuk është i disponueshëm këtu.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Asgjë e dyshimtë: asnjë llogari me hyrje të dështuara të përsëritura, asnjë rrjet që provon disa llogari, asnjë llogari e hyrë nga disa vende.</translation>
     </message>
 </context>
 <context>

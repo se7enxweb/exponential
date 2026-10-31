@@ -11,6 +11,10 @@
  *  SA-04 - The counts of the last days; on a database: one account's events only, newest first, paged and filtered
  *  SA-05 - The module declares user/security; the templates exist in admin, admin4 and standard and admin = admin4;
  *          the sessions page and the account overview link to it
+ *  SA-06 - "Was this you?": asked about the events of the last 30 days that need attention, not about an
+ *          administrator's or an answered one; the answers kept in a preference (the newest 200), recorded in the audit
+ *  SA-07 - "Secure your account": the (secure) parameter, "Verify it's you" first, every other session signed out; the
+ *          templates of every design and the links of the security mails
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -142,6 +146,57 @@ class expUserSecurityActivityTest extends eZDatatypeTestCase
         $this->assertSame( array( 'signins' => 1, 'failures' => 1, 'changes' => 1, 'days' => 30 ), expUserSecurityActivity::summary( 14, 30, $now ) );
         $this->assertCount( 5, expUserSecurityActivity::exportForUser( 14 ), 'the export has every row of the account' );
         $this->assertSame( 0, expUserSecurityActivity::count( 0 ) );
+    }
+
+    /** SA-06 */
+    public function testWasThisYou()
+    {
+        $now = 1800000000;
+        $event = array( 'id' => 7, 'level' => 'warn', 'by' => 'self', 'time' => $now - 3600 );
+        $this->assertTrue( expUserSecurityActivity::needsReview( $event, array(), $now ) );
+        $this->assertTrue( expUserSecurityActivity::needsReview( array( 'level' => 'bad', 'by' => 'system' ) + $event, array(), $now ), 'a failed sign-in' );
+        $this->assertFalse( expUserSecurityActivity::needsReview( $event, array( 7 ), $now ), 'answered already' );
+        $this->assertFalse( expUserSecurityActivity::needsReview( array( 'level' => 'ok' ) + $event, array(), $now ), 'a plain sign-in' );
+        $this->assertFalse( expUserSecurityActivity::needsReview( array( 'by' => 'admin' ) + $event, array(), $now ), 'an administrator did it' );
+        $this->assertFalse( expUserSecurityActivity::needsReview( array( 'time' => $now - 31 * 86400 ) + $event, array(), $now ), 'too old' );
+        $this->assertFalse( expUserSecurityActivity::needsReview( array( 'id' => 0 ) + $event, array(), $now ) );
+        $this->assertSame( array( 7 => true ), expUserSecurityActivity::reviewMap( array( $event, array( 'id' => 8, 'level' => 'ok' ) + $event ), array(), $now ) );
+
+        $this->assertSame( array( 3, 5 ), expUserSecurityActivity::parseConfirmed( '3, 5,x,-1,3,0' ) );
+        $this->assertSame( array(), expUserSecurityActivity::parseConfirmed( null ) );
+        $this->assertSame( '3,5,9', expUserSecurityActivity::addConfirmed( '5,3', 9 ) );
+        $this->assertSame( '3,5', expUserSecurityActivity::addConfirmed( '5,3', 5 ) );
+        $many = implode( ',', range( 1, expUserSecurityActivity::CONFIRM_LIMIT ) );
+        $kept = expUserSecurityActivity::parseConfirmed( expUserSecurityActivity::addConfirmed( $many, 100000 ) );
+        $this->assertCount( expUserSecurityActivity::CONFIRM_LIMIT, $kept, 'the newest are kept' );
+        $this->assertSame( 100000, end( $kept ) );
+        $this->assertNotContains( 1, $kept );
+
+        $this->assertArrayHasKey( expUserSecurityActivity::AUDIT_CONFIRM, expAuditTaxonomy::catalogue() );
+        $this->assertTrue( expUserAudit::wantsName( expUserSecurityActivity::AUDIT_CONFIRM, expUserAudit::$defaultEvents ) );
+        $this->assertArrayNotHasKey( expUserSecurityActivity::AUDIT_CONFIRM, expUserSecurityActivity::KINDS, 'an answer is not shown as an event' );
+    }
+
+    /** SA-07 */
+    public function testSecureYourAccount()
+    {
+        $Module = $ViewList = $FunctionList = null;
+        include self::root() . '/kernel/user/module.php';
+        $this->assertSame( 'Secure', $ViewList['security']['unordered_params']['secure'] );
+        $this->assertContains( 'user/security self SecureButton', eZINI::instance()->variable( 'ReauthGroup_account', 'Rules' ),
+                               '"Secure your account" asks "Verify it\'s you" first' );
+        $view = self::read( 'kernel/private/classes/views/user/security.php' );
+        $this->assertStringContainsString( 'revokeOthers', $view );
+        $this->assertStringContainsString( 'SecurityToken', $view );
+        foreach ( array( 'design/admin4', 'design/admin', 'design/standard' ) as $design )
+        {
+            $tpl = self::read( "$design/templates/user/security.tpl" );
+            foreach ( array( 'SecureButton', 'ConfirmEventButton', 'SecurityToken', '$security_review', "'user/security/(secure)/1'" ) as $needle )
+                $this->assertStringContainsString( $needle, $tpl, "$design: $needle" );
+            $this->assertStringNotContainsString( 'style=', $tpl );
+        }
+        foreach ( array( 'kernel/classes/user/expusersecurityalerts.php', 'kernel/classes/user/expusersessiontracker.php' ) as $file )
+            $this->assertStringContainsString( "'user/security/(secure)/1'", self::read( $file ), "$file: the mails link to Secure your account" );
     }
 
     /** SA-05 */

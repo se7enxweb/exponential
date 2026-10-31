@@ -43,10 +43,16 @@ verwendet ihn nicht. Quelle: [Der SQL-Abfrage-Cache](../../bc/6.0/sql-abfrage-ca
 ## Was nie gecacht wird
 
 - Lesezugriffe innerhalb einer Transaktion;
-- Anweisungen, deren Tabellen sich nicht aus dem Text lesen lassen (Unterabfragen in `FROM`, alles, was kein einfaches
-  `SELECT` ist);
+- Anweisungen, deren Tabellen sich nicht alle aus dem Text lesen lassen: eine Unterabfrage, ein Hinweis oder
+  `PARTITION` in `FROM`, ein geklammerter Join, ein Kommentar, ein Anführungszeichen ohne Partner oder in einem Namen
+  in Anführungszeichen, die Literale `q''` von Oracle sowie `E''` und Dollar-Quoting von PostgreSQL, alles, was kein
+  einfaches `SELECT` ist. Jedes `SELECT` von `UNION`, `MINUS`, `INTERSECT` und `EXCEPT` wird gelesen. Ob ein Backslash
+  maskiert, hängt vom Treiber ab: in den Literalen von MySQL ja, in denen von PostgreSQL (mit
+  `standard_conforming_strings` an, der Voreinstellung; der Treiber liest die Einstellung aus der Verbindung), SQLite
+  und Oracle nicht;
 - Anweisungen, deren Ergebnis keine Funktion ihrer Tabellen ist: `NOW()`, `RAND()`, `UUID()`, `LAST_INSERT_ID()`, Sperren
-  (`FOR UPDATE`), Variablen, `SQL_NO_CACHE`;
+  (`FOR UPDATE`), Variablen, `SQL_NO_CACHE`; von PostgreSQL `clock_timestamp()`, `txid_current()`, die Funktionen
+  `pg_*()` und `FOR NO KEY UPDATE`; von SQLite `changes()`, `last_insert_rowid()` und `datetime('now')`;
 - Lesezugriffe auf temporäre Tabellen;
 - Ergebnisse mit mehr als `MaxRows` Zeilen und Lesezugriffe auf `ExcludeTables`.
 
@@ -59,6 +65,12 @@ markieren die Tabellen, die sie nennen, als beschrieben. Ein Schreibzugriff, des
 alles als veraltet. Innerhalb einer Transaktion werden die Tabellen beim äußersten `COMMIT` markiert; bei `ROLLBACK` wird nichts
 markiert. Andere Prozesse (Skripte, der Admin-Host, Velocity) sehen die Änderung über eine gemeinsame Zustandsdatei in
 `var/<site>/cache/querycache/`.
+Die Datei wird unter einer Sperre auf `state.lock` geschrieben, die für jeden Benutzer beschreibbar sein muss, unter dem die
+Site läuft (FPM, Velocity, Cron); auf NFS braucht sie NFSv4 oder `lockd`. Ein Schreibzugriff, der die Sperre nicht nehmen
+kann, markiert alle Ergebnisse als veraltet, und **Setup > Systeminformationen** meldet das in Rot. `TRUNCATE ... CASCADE`
+und `DROP ... CASCADE` von PostgreSQL erreichen Tabellen, die die Anweisung nicht nennt, daher markieren sie ebenfalls
+alles als veraltet. Das Cache-Verzeichnis zu löschen ist sicher: Ergebnisse, die unter der gelöschten Zustandsdatei
+gehalten wurden, werden nie wieder geantwortet.
 
 ## Schreibzugriffe außerhalb von Exponential
 
@@ -98,6 +110,7 @@ Um ihn auszuschalten, setzen Sie `Mode=off` und gehen genauso vor; nichts muss g
 | Viele Dateien in `entries/` | der Teil `cache_cleanup` läuft nicht |
 | APCu voll, andere Caches verdrängt | `ApcuReserve` über 0 halten, `MaxRows` oder `MaxAge` senken oder `apc.shm_size` erhöhen |
 | `state.ser` nicht schreibbar | `var/<site>/cache/querycache/` muss für jeden Benutzer schreibbar sein, unter dem die Website läuft |
+| „Schreibvorgänge konnten die Sperre des Zustands nicht nehmen“ in den Systeminformationen | machen Sie `state.lock` für jeden Benutzer schreibbar, unter dem die Website läuft (auf NFS: NFSv4 oder `lockd`), und leeren Sie danach den Query-Cache |
 
 Setzen Sie im Zweifel `Mode=off` und vergleichen Sie.
 

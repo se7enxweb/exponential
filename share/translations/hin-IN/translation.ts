@@ -25623,6 +25623,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>अंतिम बार साफ़ किया गया</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>लेखन स्थिति लॉक नहीं ले सके (अंतिम बार %date): हर एक ने सभी कैश किए गए परिणाम पुराने कर दिए। %file हर उस उपयोगकर्ता के लिए लिखने योग्य होना चाहिए जिसके रूप में साइट चलती है; NFS पर इसे NFSv4 या lockd चाहिए।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78355,6 +78359,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>आपके सत्र और सुरक्षा ईवेंट एक JSON फ़ाइल के रूप में।</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>इस साइट पर सत्र दर्ज नहीं किए जाते, इसलिए कोई अन्य डिवाइस साइन आउट नहीं किया जा सका। अभी अपना पासवर्ड बदलें।</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count अन्य सत्र साइन आउट किए गए। अब अपना पासवर्ड बदलें।</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>कोई अन्य डिवाइस साइन इन नहीं था। अब अपना पासवर्ड बदलें।</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>धन्यवाद। इस घटना को आपकी के रूप में चिह्नित किया गया है।</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>उस घटना को किसी उत्तर की आवश्यकता नहीं है।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>पृष्ठ की समय-सीमा समाप्त हो गई थी। कुछ भी नहीं बदला गया; कृपया फिर से प्रयास करें।</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>अपना खाता सुरक्षित करें</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>यदि यहाँ कुछ आपने नहीं किया था, तो अन्य सभी डिवाइस साइन आउट करें, फिर नया पासवर्ड चुनें। मुझे याद रखें से साइन इन रखे गए डिवाइस भी साइन आउट हो जाते हैं।</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>इसके अलावा हर डिवाइस अपने अगले अनुरोध पर साइन आउट हो जाता है। फिर आप नया पासवर्ड चुनते हैं।</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>हाँ, अन्य डिवाइस साइन आउट करें</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>क्या यह आप थे?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>हाँ, यह मैं था</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>नहीं, मेरा खाता सुरक्षित करें</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78537,6 +78593,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>आपके सत्र और सुरक्षा ईवेंट एक JSON फ़ाइल के रूप में।</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>इस साइट पर सत्र दर्ज नहीं किए जाते, इसलिए कोई अन्य डिवाइस साइन आउट नहीं किया जा सका। अभी अपना पासवर्ड बदलें।</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count अन्य सत्र साइन आउट किए गए। अब अपना पासवर्ड बदलें।</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>कोई अन्य डिवाइस साइन इन नहीं था। अब अपना पासवर्ड बदलें।</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>धन्यवाद। इस घटना को आपकी के रूप में चिह्नित किया गया है।</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>उस घटना को किसी उत्तर की आवश्यकता नहीं है।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>पृष्ठ की समय-सीमा समाप्त हो गई थी। कुछ भी नहीं बदला गया; कृपया फिर से प्रयास करें।</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>अपना खाता सुरक्षित करें</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>यदि यहाँ कुछ आपने नहीं किया था, तो अन्य सभी डिवाइस साइन आउट करें, फिर नया पासवर्ड चुनें। मुझे याद रखें से साइन इन रखे गए डिवाइस भी साइन आउट हो जाते हैं।</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>इसके अलावा हर डिवाइस अपने अगले अनुरोध पर साइन आउट हो जाता है। फिर आप नया पासवर्ड चुनते हैं।</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>हाँ, अन्य डिवाइस साइन आउट करें</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>क्या यह आप थे?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>हाँ, यह मैं था</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>नहीं, मेरा खाता सुरक्षित करें</translation>
     </message>
 </context>
 <context>
@@ -78728,6 +78836,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>सत्र हैंडलर: %handler। सत्र तालिका expuser_session से पढ़े जाते हैं, इसलिए रिपोर्ट हर हैंडलर के साथ काम करती है।</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>पिछले %hours घंटों में संदिग्ध गतिविधि</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>एक नेटवर्क %accounts खातों में साइन इन करने में विफल रहा (%count प्रयास)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>विफल साइन-इन के बाद खाता लॉक किया गया</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>एक खाते पर %count विफल साइन-इन</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>एक साथ %count देशों से साइन इन</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षा गतिविधि</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>सत्र</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>विफल साइन-इन उपयोगकर्ता ऑडिट लॉग से पढ़े जाते हैं, जो यहाँ उपलब्ध नहीं है।</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>कुछ भी संदिग्ध नहीं: बार-बार विफल साइन-इन वाला कोई खाता नहीं, कई खातों को आज़माने वाला कोई नेटवर्क नहीं, कई देशों से साइन इन किया गया कोई खाता नहीं।</translation>
     </message>
 </context>
 <context>

@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>לעצטע אויסליידיקונג</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>שרײַבונגען האָבן ניט געקענט נעמען דעם צושטאַנד־שלאָס (לעצטנס %date): יעדע האָט געמאַכט אַלע געקעשטע רעזולטאַטן פֿאַרעלטערט. %file מוז זײַן שרײַבלעך פֿאַר יעדן באַניצער אונטער וועמען דער זײַטל לויפֿט; אויף NFS דאַרף עס NFSv4 אָדער lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>אייַערע סעסיעס און זיכערהייט־געשעענישן ווי אַ JSON־טעקע.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>סעסיעס ווערן נישט רעקאָרדירט אויף דעם זייטל, דערפֿאַר האָט מען נישט געקענט אַרויסלאָגירן קיין אַנדער מכשיר. ענדערט אייַער פּאַראָל גלייך.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count אַנדערע סעסיעס זענען אַרויסלאָגירט געוואָרן. איצט ענדערט אייַער פּאַראָל.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>קיין אַנדער מכשיר איז נישט געווען אַרייַנלאָגירט. איצט ענדערט אייַער פּאַראָל.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>אַ דאַנק. די געשעעניש איז באַצייכנט ווי אייַערע.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>יענע געשעעניש דאַרף קיין ענטפֿער נישט.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>דער בלאַט איז אויסגעגאַנגען. גאָרנישט איז געענדערט געוואָרן; ביטע פּרוּווט נאָך אַ מאָל.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>פֿאַרזיכערן אייַער קאָנטע</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>אויב עפּעס דאָ זענט נישט געווען איר, לאָגירט אַרויס אַלע אַנדערע מכשירים, דערנאָך קלייַבט אויס אַ נייַע פּאַראָל. מכשירים וואָס בלייַבן אַרייַנלאָגירט מיט געדענקט מיך ווערן אויך אַרויסלאָגירט.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>יעדער מכשיר אַחוץ דעם ווערט אַרויסלאָגירט בייַ זייַן קומעדיקער בקשה. דערנאָך קלייַבט איר אויס אַ נייַע פּאַראָל.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>יאָ, לאָגירט אַרויס די אַנדערע מכשירים</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>זענט דאָס געווען איר?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>יאָ, דאָס בין איך געווען</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ניין, פֿאַרזיכערט מייַן קאָנטע</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>אייַערע סעסיעס און זיכערהייט־געשעענישן ווי אַ JSON־טעקע.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>סעסיעס ווערן נישט רעקאָרדירט אויף דעם זייטל, דערפֿאַר האָט מען נישט געקענט אַרויסלאָגירן קיין אַנדער מכשיר. ענדערט אייַער פּאַראָל גלייך.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count אַנדערע סעסיעס זענען אַרויסלאָגירט געוואָרן. איצט ענדערט אייַער פּאַראָל.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>קיין אַנדער מכשיר איז נישט געווען אַרייַנלאָגירט. איצט ענדערט אייַער פּאַראָל.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>אַ דאַנק. די געשעעניש איז באַצייכנט ווי אייַערע.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>יענע געשעעניש דאַרף קיין ענטפֿער נישט.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>דער בלאַט איז אויסגעגאַנגען. גאָרנישט איז געענדערט געוואָרן; ביטע פּרוּווט נאָך אַ מאָל.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>פֿאַרזיכערן אייַער קאָנטע</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>אויב עפּעס דאָ זענט נישט געווען איר, לאָגירט אַרויס אַלע אַנדערע מכשירים, דערנאָך קלייַבט אויס אַ נייַע פּאַראָל. מכשירים וואָס בלייַבן אַרייַנלאָגירט מיט געדענקט מיך ווערן אויך אַרויסלאָגירט.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>יעדער מכשיר אַחוץ דעם ווערט אַרויסלאָגירט בייַ זייַן קומעדיקער בקשה. דערנאָך קלייַבט איר אויס אַ נייַע פּאַראָל.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>יאָ, לאָגירט אַרויס די אַנדערע מכשירים</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>זענט דאָס געווען איר?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>יאָ, דאָס בין איך געווען</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ניין, פֿאַרזיכערט מייַן קאָנטע</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>סעסיע־באַהאַנדלער: %handler. די סעסיעס ווערן געלייענט פֿון דער טאַבעלע expuser_session, דערפֿאַר אַרבעט דער באַריכט מיט יעדן באַהאַנדלער.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>חשודע אַקטיוויטעט אין די לעצטע %hours שעה</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>איין נעץ האָט נישט געקענט אַרייַנלאָגירן אין %accounts קאָנטעס (%count פּרוּוון)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>קאָנטע פֿאַרשלאָסן נאָך דורכגעפֿאַלענע אַרייַנלאָגירונגען</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count דורכגעפֿאַלענע אַרייַנלאָגירונגען אויף איין קאָנטע</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>אַרייַנלאָגירט פֿון %count לענדער אין איינעם</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>זיכערהייט־אַקטיוויטעט</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>סעסיעס</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>דורכגעפֿאַלענע אַרייַנלאָגירונגען ווערן געלייענט פֿון דעם באַניצער־אויפֿזיכט־לאָג, וואָס איז דאָ נישט פֿאַראַן.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>גאָרנישט חשודיק: קיין קאָנטע מיט איבערגע׳חזרטע דורכגעפֿאַלענע אַרייַנלאָגירונגען, קיין נעץ וואָס פּרוּווט עטלעכע קאָנטעס, קיין קאָנטע אַרייַנלאָגירט פֿון עטלעכע לענדער.</translation>
     </message>
 </context>
 <context>

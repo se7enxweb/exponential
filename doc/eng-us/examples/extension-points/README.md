@@ -28,6 +28,7 @@ Where an extension plugs into the kernel through settings: INI settings that nam
 | [cronjob.ini](cronjob.md) | kernel | 1 | ExtensionDirectories |
 | [datatable.ini](datatable.md) | kernel | 1 | IgnoreClasses |
 | [dbschema.ini](dbschema.md) | kernel | 1 | SchemaHandlerClasses |
+| [editorpolicies.ini](editorpolicies.md) | kernel | 1 | Classes |
 | [error.ini](error.md) | kernel | 3 | DefaultErrorHandler, ErrorHandler, ErrorHandler |
 | [exphelp.ini](exphelp.md) | kernel | 2 | Providers, BookChecks |
 | [ezxml.ini](ezxml.md) | kernel | 4 | HandlerClass, AliasClasses, HandlerClass, AliasClasses |

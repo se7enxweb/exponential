@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>མཇུག་གི་གཙང་སྦྲ།</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>འབྲི་མི་ཚུ་གིས་ གནས་སྟངས་ཀྱི་ལྡེ་མིག་ལེན་མ་ཚུགས། (མཇུག་ %date)༔ རེ་རེ་གིས་ བསག་ཡོད་པའི་གྲུབ་འབྲས་ག་ར་ རྙིངམ་བཟོ་ཡི། %file འདི་ ཡིག་ཐོག་ལག་ལེན་འཐབ་མི་ལག་ལེན་པ་རེ་རེ་གིས་ འབྲི་ཚུགསཔ་དགོ། NFS གུ་ NFSv4 ཡང་ན་ lockd དགོ།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ཁྱོད་རང་གི་ལཱ་ཚོགས་དང་ཉེན་སྲུང་གི་བྱུང་ལས་ཚུ་ JSON ཡིག་སྣོད་སྦེ།</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ས་ཁོངས་འདི་ནང་ལཱ་ཚོགས་ཚུ་ཐོ་བཀོད་མི་འབད། དེ་འབདཝ་ལས་སྒྲིག་ཆས་གཞན་ག་ཅི་ཡང་ཕྱིར་འཐོན་འབད་མ་ཚུགས། ད་ལྟོ་ར་ཁྱོད་རང་གི་ཆོག་ཚིག་བསྒྱུར།</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>ལཱ་ཚོགས་གཞན་ %count ཕྱིར་འཐོན་འབད་ཡི། ད་ཁྱོད་རང་གི་ཆོག་ཚིག་བསྒྱུར།</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>སྒྲིག་ཆས་གཞན་ག་ཅི་ཡང་ནང་བསྐྱོད་འབད་དེ་མེད། ད་ཁྱོད་རང་གི་ཆོག་ཚིག་བསྒྱུར།</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>བཀའ་དྲིན་ཆེ། བྱུང་ལས་འདི་ཁྱོད་རང་གི་ཨིན་ཟེར་རྟགས་བཀལ་ཡི།</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>བྱུང་ལས་དེ་ལུ་ལན་དགོཔ་མེད།</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ཤོག་ལེབ་དེ་དུས་ཡོལ་སོངམ་ཨིན། ཅི་ཡང་བསྒྱུར་བཅོས་མ་འབད། ཡང་བསྐྱར་ཚོད་ལྟ་འབད་གནང་།</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ཁྱོད་རང་གི་རྩིས་ཐོ་ཉེན་སྲུང་འབད།</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ནཱ་ལུ་ག་ཅི་ཨིན་རུང་ཁྱོད་མེན་པ་ཅིན། སྒྲིག་ཆས་གཞན་ཆ་མཉམ་ཕྱིར་འཐོན་འབད་ཞིནམ་ལས་ཆོག་ཚིག་གསརཔ་ཅིག་གདམ་ཁ་རྐྱབ། ང་དྲན་འཛིན་འབད་བརྒྱུད་དེ་ནང་བསྐྱོད་འབད་སྡོད་མི་སྒྲིག་ཆས་ཚུ་ཡང་ཕྱིར་འཐོན་འགྱོཝ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>འདི་མ་གཏོགས་སྒྲིག་ཆས་རེ་རེ་བཞིན་དེ་གི་ཞུ་བ་ཤུལ་མམ་ནང་ཕྱིར་འཐོན་འགྱོཝ་ཨིན། དེ་ལས་ཁྱོད་ཀྱིས་ཆོག་ཚིག་གསརཔ་ཅིག་གདམ་ཁ་རྐྱབ་ནི་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ཨིན། སྒྲིག་ཆས་གཞན་ཚུ་ཕྱིར་འཐོན་འབད།</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>འདི་ཁྱོད་ཨིན་ན?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ཨིན། ང་ཨིན།</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>མེན། ངེ་གི་རྩིས་ཐོ་ཉེན་སྲུང་འབད།</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ཁྱོད་རང་གི་ལཱ་ཚོགས་དང་ཉེན་སྲུང་གི་བྱུང་ལས་ཚུ་ JSON ཡིག་སྣོད་སྦེ།</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ས་ཁོངས་འདི་ནང་ལཱ་ཚོགས་ཚུ་ཐོ་བཀོད་མི་འབད། དེ་འབདཝ་ལས་སྒྲིག་ཆས་གཞན་ག་ཅི་ཡང་ཕྱིར་འཐོན་འབད་མ་ཚུགས། ད་ལྟོ་ར་ཁྱོད་རང་གི་ཆོག་ཚིག་བསྒྱུར།</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>ལཱ་ཚོགས་གཞན་ %count ཕྱིར་འཐོན་འབད་ཡི། ད་ཁྱོད་རང་གི་ཆོག་ཚིག་བསྒྱུར།</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>སྒྲིག་ཆས་གཞན་ག་ཅི་ཡང་ནང་བསྐྱོད་འབད་དེ་མེད། ད་ཁྱོད་རང་གི་ཆོག་ཚིག་བསྒྱུར།</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>བཀའ་དྲིན་ཆེ། བྱུང་ལས་འདི་ཁྱོད་རང་གི་ཨིན་ཟེར་རྟགས་བཀལ་ཡི།</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>བྱུང་ལས་དེ་ལུ་ལན་དགོཔ་མེད།</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ཤོག་ལེབ་དེ་དུས་ཡོལ་སོངམ་ཨིན། ཅི་ཡང་བསྒྱུར་བཅོས་མ་འབད། ཡང་བསྐྱར་ཚོད་ལྟ་འབད་གནང་།</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ཁྱོད་རང་གི་རྩིས་ཐོ་ཉེན་སྲུང་འབད།</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ནཱ་ལུ་ག་ཅི་ཨིན་རུང་ཁྱོད་མེན་པ་ཅིན། སྒྲིག་ཆས་གཞན་ཆ་མཉམ་ཕྱིར་འཐོན་འབད་ཞིནམ་ལས་ཆོག་ཚིག་གསརཔ་ཅིག་གདམ་ཁ་རྐྱབ། ང་དྲན་འཛིན་འབད་བརྒྱུད་དེ་ནང་བསྐྱོད་འབད་སྡོད་མི་སྒྲིག་ཆས་ཚུ་ཡང་ཕྱིར་འཐོན་འགྱོཝ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>འདི་མ་གཏོགས་སྒྲིག་ཆས་རེ་རེ་བཞིན་དེ་གི་ཞུ་བ་ཤུལ་མམ་ནང་ཕྱིར་འཐོན་འགྱོཝ་ཨིན། དེ་ལས་ཁྱོད་ཀྱིས་ཆོག་ཚིག་གསརཔ་ཅིག་གདམ་ཁ་རྐྱབ་ནི་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ཨིན། སྒྲིག་ཆས་གཞན་ཚུ་ཕྱིར་འཐོན་འབད།</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>འདི་ཁྱོད་ཨིན་ན?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ཨིན། ང་ཨིན།</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>མེན། ངེ་གི་རྩིས་ཐོ་ཉེན་སྲུང་འབད།</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>ལཱ་ཚོགས་སྐྱོང་མཁན་: %handler། ལཱ་ཚོགས་ཚུ་ ཐིག་ཁྲམ་ expuser_session ལས་ལྷགཔ་ཨིན། དེ་འབདཝ་ལས་ སྙན་ཞུ་འདི་གིས་སྐྱོང་མཁན་ག་དང་གཅིག་ཁར་ཡང་ལཱ་འབདཝ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>ཆུ་ཚོད་མཇུག་མ་ %hours ནང་གི་དོགས་པ་ཅན་གྱི་བྱ་བ།</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>ཡོངས་འབྲེལ་གཅིག་གིས་རྩིས་ཐོ་ %accounts ནང་བསྐྱོད་འབད་མ་ཚུགས། (འབད་རྩོལ་ %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ནང་བསྐྱོད་འཐུས་ཤོར་བྱུང་ཞིནམ་ལས་རྩིས་ཐོ་ལྡེ་མིག་བརྐྱབ་ཡི།</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>རྩིས་ཐོ་གཅིག་གུ་ནང་བསྐྱོད་འཐུས་ཤོར་ %count</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>དུས་ཚོད་གཅིག་ནང་རྒྱལ་ཁབ་ %count ལས་ནང་བསྐྱོད་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ཉེན་སྲུང་གི་བྱ་བ།</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ལཱ་ཚོགས་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ནང་བསྐྱོད་འཐུས་ཤོར་ཚུ་ལག་ལེན་པའི་རྩིས་ཞིབ་དྲན་ཐོ་ལས་ལྷག་ཨིན། དེ་ནཱ་ལུ་མེད།</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>དོགས་པ་ཅན་ག་ཅི་ཡང་མེད། ནང་བསྐྱོད་འཐུས་ཤོར་ལོག་ལོག་བྱུང་མི་རྩིས་ཐོ་མེད། རྩིས་ཐོ་ལེ་ཤ་འབད་རྩོལ་འབད་མི་ཡོངས་འབྲེལ་མེད། རྒྱལ་ཁབ་ལེ་ཤ་ལས་ནང་བསྐྱོད་འབད་མི་རྩིས་ཐོ་མེད།</translation>
     </message>
 </context>
 <context>

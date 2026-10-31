@@ -25684,6 +25684,10 @@ Muitte: Páhkaid sajáiduhttin ii sihkkojuvvo.</translation>
         <source>last purge</source>
         <translation>maŋimuš sihkkun</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Čállimat eai sáhttán váldit dili lohkka (maŋimuš háve %date): juohke okta dagai buot gurrejuvvon bohtosiid boarásmuvvan. %file ferte leat čállinláhkái juohke geavaheaddjái geainna neahttabáiki doaibmá; NFS:s dárbbaša NFSv4 dahje lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Du sešuvnnat ja sihkarvuođadáhpáhusat JSON-fiilan.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sešuvnnat eai registrerejuvvo dán neahttabáikkis, nu ahte ii oktage eará neavvu sáhttán čálihuvvot olggos. Rievdat beassansáni dál.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count eará sešuvnna čálihuvvoje olggos. Rievdat dál beassansáni.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ii oktage eará neavvu lean sisačálihuvvon. Rievdat dál beassansáni.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Giitu. Dáhpáhus lea merkejuvvon du dáhpáhussan.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Dat dáhpáhus ii dárbbaš vástádusa.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Siidu lei nogaduvvon. Maidege ii rievdaduvvon; geahččal ođđasit.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Sihkkarastit konto</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Jos juoga dás ii lean don, čálit olggos buot eará neavvuid, ja vállje dasto ođđa beassansáni. Neavvut mat leat bisuhuvvon sisačálihuvvon Muitte mu bokte čálihuvvojit maid olggos.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Buot neavvut earret dán čálihuvvojit olggos boahtte gáibádusas. Dasto válljet ođđa beassansáni.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Juo, čálit olggos eará neavvuid</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Leigo dát don?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Juo, dat ledjen mun</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ii, sihkkarastte mu konto</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Du sešuvnnat ja sihkarvuođadáhpáhusat JSON-fiilan.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sešuvnnat eai registrerejuvvo dán neahttabáikkis, nu ahte ii oktage eará neavvu sáhttán čálihuvvot olggos. Rievdat beassansáni dál.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count eará sešuvnna čálihuvvoje olggos. Rievdat dál beassansáni.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ii oktage eará neavvu lean sisačálihuvvon. Rievdat dál beassansáni.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Giitu. Dáhpáhus lea merkejuvvon du dáhpáhussan.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Dat dáhpáhus ii dárbbaš vástádusa.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Siidu lei nogaduvvon. Maidege ii rievdaduvvon; geahččal ođđasit.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Sihkkarastit konto</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Jos juoga dás ii lean don, čálit olggos buot eará neavvuid, ja vállje dasto ođđa beassansáni. Neavvut mat leat bisuhuvvon sisačálihuvvon Muitte mu bokte čálihuvvojit maid olggos.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Buot neavvut earret dán čálihuvvojit olggos boahtte gáibádusas. Dasto válljet ođđa beassansáni.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Juo, čálit olggos eará neavvuid</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Leigo dát don?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Juo, dat ledjen mun</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ii, sihkkarastte mu konto</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Sešuvnnaid gieđahalli: %handler. Sešuvnnat lohkkojuvvojit tabeallas expuser_session, nu ahte raporta doaibmá buot gieđahalliiguin.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Eahpečilgasis doaimmat maŋimuš %hours diimmus</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Okta fierpmádat ii lihkostuvvan čálihit sisa %accounts kontui (%count geahččaleami)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto lohkkaduvvon eahpelihkostuvvan sisačálihemiid maŋŋá</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count eahpelihkostuvvan sisačálihemiid ovtta kontos</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Sisačálihuvvon %count riikkas oktanaga</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sihkarvuođadoaimmat</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sešuvnnat</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Eahpelihkostuvvan sisačálihemiid lohkkojuvvojit geavaheaddjiid dárkkistanloggas, mii ii leat olámuttos dás.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Ii mihkkege eahpečilgasis: ii oktage konto mas leat ollu eahpelihkostuvvan sisačálihemiid, ii oktage fierpmádat mii geahččala máŋga konto, ii oktage konto mii lea sisačálihuvvon máŋgga riikkas.</translation>
     </message>
 </context>
 <context>

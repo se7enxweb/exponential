@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>निमाणें काडून उडोवप</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>बरपांक स्थितीचें लॉक घेवंक मेळ्ळें ना (निमाणें %date): दरेकान सगळे कॅश केल्ले परिणाम पोरणे केले. सायट ज्या दरेक वापरप्याच्या नांवान चलता ताचे खातीर %file बरोवंक येता अशें आसूंक जाय; NFS चेर ताका NFSv4 वा lockd जाय.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>तुमचीं सत्रां आनी सुरक्षा घडणुको JSON फायल रुपान.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ह्या सायटीचेर सत्रां नोंद जायनात, देखून हेर खंयचेंच डिव्हायस साइन आउट करूंक जायना. आतांच तुमचो पासवर्ड बदलात.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count हेर सत्रां साइन आउट जालीं. आतां तुमचो पासवर्ड बदलात.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>हेर खंयचेंच डिव्हायस साइन इन नाशिल्लें. आतां तुमचो पासवर्ड बदलात.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>देव बरें करूं. ही घडणूक तुमची म्हूण खूण केल्या.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>त्या घडणुकेक जापेची गरज ना.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>पान कालबाह्य जालें. कांयच बदलना; कृपया परत यत्न करात.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>तुमचें खातें सुरक्षीत करात</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>हांगाचें कितेंय तुमी केल्लें नासल्यार, हेर सगळीं डिव्हायसां साइन आउट करात, मागीर नवो पासवर्ड वेंचात. “म्हाका याद दवरात” वरवीं साइन इन दवरिल्लीं डिव्हायसांय साइन आउट जातलीं.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>हें सोडून हेर सगळीं डिव्हायसां तांच्या फुडल्या विनंतीक साइन आउट जातलीं. मागीर तुमी नवो पासवर्ड वेंचतात.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>होय, हेर डिव्हायसां साइन आउट करात</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>हें तुमी केल्लें?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>होय, तें हांव आशिल्लों</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ना, म्हजें खातें सुरक्षीत करात</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>तुमचीं सत्रां आनी सुरक्षा घडणुको JSON फायल रुपान.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ह्या सायटीचेर सत्रां नोंद जायनात, देखून हेर खंयचेंच डिव्हायस साइन आउट करूंक जायना. आतांच तुमचो पासवर्ड बदलात.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count हेर सत्रां साइन आउट जालीं. आतां तुमचो पासवर्ड बदलात.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>हेर खंयचेंच डिव्हायस साइन इन नाशिल्लें. आतां तुमचो पासवर्ड बदलात.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>देव बरें करूं. ही घडणूक तुमची म्हूण खूण केल्या.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>त्या घडणुकेक जापेची गरज ना.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>पान कालबाह्य जालें. कांयच बदलना; कृपया परत यत्न करात.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>तुमचें खातें सुरक्षीत करात</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>हांगाचें कितेंय तुमी केल्लें नासल्यार, हेर सगळीं डिव्हायसां साइन आउट करात, मागीर नवो पासवर्ड वेंचात. “म्हाका याद दवरात” वरवीं साइन इन दवरिल्लीं डिव्हायसांय साइन आउट जातलीं.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>हें सोडून हेर सगळीं डिव्हायसां तांच्या फुडल्या विनंतीक साइन आउट जातलीं. मागीर तुमी नवो पासवर्ड वेंचतात.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>होय, हेर डिव्हायसां साइन आउट करात</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>हें तुमी केल्लें?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>होय, तें हांव आशिल्लों</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ना, म्हजें खातें सुरक्षीत करात</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>सत्र हँडलर: %handler. सत्रां expuser_session टेबलांतल्यान वाचतात, देखून अहवाल दरेक हँडलरा वांगडा काम करता.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>निमाण्या %hours वरांनी दुबावी कृती</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>एका नेटवर्कान %accounts खात्यांनी साइन इन करपाचो अपेशी यत्न केलो (%count यत्न)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>अपेशी साइन इन जाल्यार खातें कुलूपबंद केलें</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>एका खात्याचेर %count अपेशी साइन इन</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>एकाच वेळार %count देशांतल्यान साइन इन केलें</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षा कृती</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>सत्रां</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>अपेशी साइन इन वापरप्याच्या ऑडिट लॉगांतल्यान वाचतात, तो हांगा उपलब्ध ना.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>कांयच दुबावी ना: वारंवार अपेशी साइन इन जाल्लें खातें ना, जायत्या खात्यांचो यत्न करपी नेटवर्क ना, जायत्या देशांतल्यान साइन इन जाल्लें खातें ना.</translation>
     </message>
 </context>
 <context>

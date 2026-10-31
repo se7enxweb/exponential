@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>การล้างครั้งล่าสุด</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>การเขียนไม่สามารถรับล็อกสถานะได้ (ครั้งล่าสุด %date): แต่ละครั้งทำให้ผลลัพธ์ที่แคชไว้ทั้งหมดล้าสมัย %file ต้องเขียนได้โดยผู้ใช้ทุกคนที่ไซต์ทำงานในนาม บน NFS ต้องใช้ NFSv4 หรือ lockd</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>เซสชันและเหตุการณ์ด้านความปลอดภัยของคุณในรูปแบบไฟล์ JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>เว็บไซต์นี้ไม่ได้บันทึกเซสชัน จึงไม่สามารถนำอุปกรณ์อื่นออกจากระบบได้ เปลี่ยนรหัสผ่านของคุณตอนนี้เลย</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>ออกจากระบบเซสชันอื่นแล้ว %count เซสชัน ตอนนี้เปลี่ยนรหัสผ่านของคุณ</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ไม่มีอุปกรณ์อื่นที่ลงชื่อเข้าใช้อยู่ ตอนนี้เปลี่ยนรหัสผ่านของคุณ</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ขอบคุณ เหตุการณ์นี้ถูกทำเครื่องหมายว่าเป็นของคุณแล้ว</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>เหตุการณ์นั้นไม่จำเป็นต้องตอบ</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>หน้าหมดอายุแล้ว. ไม่มีการเปลี่ยนแปลงใด กรุณาลองอีกครั้ง.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ปกป้องบัญชีของคุณ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>หากมีสิ่งใดที่นี่ที่ไม่ใช่คุณ ให้ออกจากระบบอุปกรณ์อื่นทั้งหมด แล้วเลือกรหัสผ่านใหม่ อุปกรณ์ที่ยังคงลงชื่อเข้าใช้ด้วย จดจำฉัน จะถูกออกจากระบบด้วย</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>อุปกรณ์ทุกเครื่องยกเว้นเครื่องนี้จะถูกออกจากระบบเมื่อมีคำขอครั้งถัดไป จากนั้นคุณเลือกรหัสผ่านใหม่</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ใช่ ออกจากระบบอุปกรณ์อื่น</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>นี่คือคุณหรือไม่?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ใช่ นั่นคือฉัน</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ไม่ ปกป้องบัญชีของฉัน</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>เซสชันและเหตุการณ์ด้านความปลอดภัยของคุณในรูปแบบไฟล์ JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>เว็บไซต์นี้ไม่ได้บันทึกเซสชัน จึงไม่สามารถนำอุปกรณ์อื่นออกจากระบบได้ เปลี่ยนรหัสผ่านของคุณตอนนี้เลย</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>ออกจากระบบเซสชันอื่นแล้ว %count เซสชัน ตอนนี้เปลี่ยนรหัสผ่านของคุณ</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ไม่มีอุปกรณ์อื่นที่ลงชื่อเข้าใช้อยู่ ตอนนี้เปลี่ยนรหัสผ่านของคุณ</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ขอบคุณ เหตุการณ์นี้ถูกทำเครื่องหมายว่าเป็นของคุณแล้ว</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>เหตุการณ์นั้นไม่จำเป็นต้องตอบ</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>หน้าหมดอายุแล้ว. ไม่มีการเปลี่ยนแปลงใด กรุณาลองอีกครั้ง.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ปกป้องบัญชีของคุณ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>หากมีสิ่งใดที่นี่ที่ไม่ใช่คุณ ให้ออกจากระบบอุปกรณ์อื่นทั้งหมด แล้วเลือกรหัสผ่านใหม่ อุปกรณ์ที่ยังคงลงชื่อเข้าใช้ด้วย จดจำฉัน จะถูกออกจากระบบด้วย</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>อุปกรณ์ทุกเครื่องยกเว้นเครื่องนี้จะถูกออกจากระบบเมื่อมีคำขอครั้งถัดไป จากนั้นคุณเลือกรหัสผ่านใหม่</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ใช่ ออกจากระบบอุปกรณ์อื่น</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>นี่คือคุณหรือไม่?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ใช่ นั่นคือฉัน</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ไม่ ปกป้องบัญชีของฉัน</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>ตัวจัดการเซสชัน: %handler. เซสชันอ่านจากตาราง expuser_session ดังนั้นรายงานจึงทำงานกับตัวจัดการทุกแบบ.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>กิจกรรมที่น่าสงสัยใน %hours ชั่วโมงที่ผ่านมา</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>เครือข่ายหนึ่งลงชื่อเข้าใช้ %accounts บัญชีไม่สำเร็จ (%count ครั้ง)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>บัญชีถูกล็อกหลังจากลงชื่อเข้าใช้ไม่สำเร็จ</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>ลงชื่อเข้าใช้ไม่สำเร็จ %count ครั้งในบัญชีเดียว</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>ลงชื่อเข้าใช้จาก %count ประเทศพร้อมกัน</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>กิจกรรมด้านความปลอดภัย</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>เซสชัน</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>การลงชื่อเข้าใช้ที่ไม่สำเร็จอ่านจากบันทึกการตรวจสอบผู้ใช้ ซึ่งไม่มีให้ใช้งานที่นี่</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>ไม่มีสิ่งใดน่าสงสัย: ไม่มีบัญชีที่ลงชื่อเข้าใช้ไม่สำเร็จซ้ำๆ ไม่มีเครือข่ายที่พยายามเข้าหลายบัญชี ไม่มีบัญชีที่ลงชื่อเข้าใช้จากหลายประเทศ</translation>
     </message>
 </context>
 <context>

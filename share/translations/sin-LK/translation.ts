@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>අවසන් ඉවත් කිරීම</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>ලිවීම්වලට තත්ත්ව අගුල ගැනීමට නොහැකි විය (අවසන් වරට %date): එක් එක් ලිවීම හැඹිලිගත සියලු ප්‍රතිඵල යල් පැන ගිය ඒවා බවට පත් කළේය. අඩවිය ධාවනය වන සෑම පරිශීලකයෙකුටම %file ලිවිය හැකි විය යුතුය; NFS මත එයට NFSv4 හෝ lockd අවශ්‍ය වේ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ඔබේ සැසි සහ ආරක්ෂක සිදුවීම් JSON ගොනුවක් ලෙස.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>මෙම අඩවියේ සැසි සටහන් නොකරන බැවින් වෙනත් කිසිදු උපාංගයක් ඉවත් කළ නොහැකි විය. දැන්ම ඔබේ මුරපදය වෙනස් කරන්න.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>වෙනත් සැසි %count ක් ඉවත් කරන ලදී. දැන් ඔබේ මුරපදය වෙනස් කරන්න.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>වෙනත් කිසිදු උපාංගයක් පිවිසී නොතිබුණි. දැන් ඔබේ මුරපදය වෙනස් කරන්න.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ස්තූතියි. මෙම සිදුවීම ඔබේ ලෙස සලකුණු කර ඇත.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>එම සිදුවීමට පිළිතුරක් අවශ්‍ය නැත.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>පිටුව කල් ඉකුත් වී තිබුණි. කිසිවක් වෙනස් කළේ නැත; කරුණාකර නැවත උත්සාහ කරන්න.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ඔබේ ගිණුම සුරක්ෂිත කරන්න</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>මෙහි යමක් ඔබ නොකළේ නම්, අනෙකුත් සියලු උපාංග ඉවත් කර, ඉන්පසු නව මුරපදයක් තෝරන්න. මාව මතක තබාගන්න මගින් පිවිසී තිබූ උපාංග ද ඉවත් කෙරේ.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>මෙය හැර සියලු උපාංග ඊළඟ ඉල්ලීමේදී ඉවත් කෙරේ. ඉන්පසු ඔබ නව මුරපදයක් තෝරයි.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ඔව්, අනෙකුත් උපාංග ඉවත් කරන්න</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>මෙය ඔබද?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ඔව්, එය මම</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>නැත, මගේ ගිණුම සුරක්ෂිත කරන්න</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ඔබේ සැසි සහ ආරක්ෂක සිදුවීම් JSON ගොනුවක් ලෙස.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>මෙම අඩවියේ සැසි සටහන් නොකරන බැවින් වෙනත් කිසිදු උපාංගයක් ඉවත් කළ නොහැකි විය. දැන්ම ඔබේ මුරපදය වෙනස් කරන්න.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>වෙනත් සැසි %count ක් ඉවත් කරන ලදී. දැන් ඔබේ මුරපදය වෙනස් කරන්න.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>වෙනත් කිසිදු උපාංගයක් පිවිසී නොතිබුණි. දැන් ඔබේ මුරපදය වෙනස් කරන්න.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ස්තූතියි. මෙම සිදුවීම ඔබේ ලෙස සලකුණු කර ඇත.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>එම සිදුවීමට පිළිතුරක් අවශ්‍ය නැත.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>පිටුව කල් ඉකුත් වී තිබුණි. කිසිවක් වෙනස් කළේ නැත; කරුණාකර නැවත උත්සාහ කරන්න.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ඔබේ ගිණුම සුරක්ෂිත කරන්න</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>මෙහි යමක් ඔබ නොකළේ නම්, අනෙකුත් සියලු උපාංග ඉවත් කර, ඉන්පසු නව මුරපදයක් තෝරන්න. මාව මතක තබාගන්න මගින් පිවිසී තිබූ උපාංග ද ඉවත් කෙරේ.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>මෙය හැර සියලු උපාංග ඊළඟ ඉල්ලීමේදී ඉවත් කෙරේ. ඉන්පසු ඔබ නව මුරපදයක් තෝරයි.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ඔව්, අනෙකුත් උපාංග ඉවත් කරන්න</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>මෙය ඔබද?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ඔව්, එය මම</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>නැත, මගේ ගිණුම සුරක්ෂිත කරන්න</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>සැසි හසුරුවන්නා: %handler. සැසි කියවනු ලබන්නේ expuser_session වගුවෙන් බැවින්, වාර්තාව සෑම හසුරුවන්නක් සමඟම ක්‍රියා කරයි.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>පසුගිය පැය %hours තුළ සැක සහිත ක්‍රියාකාරකම්</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>එක් ජාලයක් ගිණුම් %accounts කට පිවිසීමට අසමත් විය (උත්සාහයන් %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>අසාර්ථක පිවිසීම් නිසා ගිණුම අගුළු දමා ඇත</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>එක් ගිණුමක අසාර්ථක පිවිසීම් %count</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>එකවර රටවල් %count කින් පිවිසී ඇත</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ආරක්ෂක ක්‍රියාකාරකම්</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>සැසි</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>අසාර්ථක පිවිසීම් පරිශීලක විගණන ලොගයෙන් කියවනු ලැබේ, එය මෙහි ලබා ගත නොහැක.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>සැක සහිත කිසිවක් නැත: නැවත නැවත අසාර්ථක පිවිසීම් ඇති ගිණුමක් නැත, ගිණුම් කිහිපයක් උත්සාහ කරන ජාලයක් නැත, රටවල් කිහිපයකින් පිවිසි ගිණුමක් නැත.</translation>
     </message>
 </context>
 <context>

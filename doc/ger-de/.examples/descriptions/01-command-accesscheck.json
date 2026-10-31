@@ -56,8 +56,8 @@
         "de": "Der Standard: auflisten, wie viele Objekte einen Standardzustand erhielten, nichts ändern"
     },
     "command:addeditorpolicies": {
-        "en": "Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account (dry run unless --apply)",
-        "de": "Gibt der Rolle Editor die alltäglichen Richtlinien, die ihr fehlen: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, den Bildeditor, das eigene Konto (Probelauf, außer mit --apply)"
+        "en": "Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account, the UI switch, the class sets of editorpolicies.ini, no duplicates (dry run unless --apply)",
+        "de": "Gibt der Rolle Editor die alltäglichen Richtlinien, die ihr fehlen: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, den Bildeditor, das eigene Konto, den UI-Umschalter, die Klassengruppen aus editorpolicies.ini, ohne doppelte Richtlinien (Probelauf, außer mit --apply)"
     },
     "command:addeditorpolicies --apply": {
         "en": "Write the changes (the default is a dry run that lists them and changes nothing)",

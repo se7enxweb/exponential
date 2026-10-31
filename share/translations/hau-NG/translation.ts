@@ -25682,6 +25682,10 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
         <source>last purge</source>
         <translation>sharewa ta ƙarshe</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Rubuce-rubuce sun kasa ɗaukar makullin yanayi (na ƙarshe %date): kowanne ya sa duk sakamakon da aka adana ya tsufa. Dole %file ya zama mai iya rubutawa ga kowane mai amfani da shafin ke aiki da shi; a kan NFS yana buƙatar NFSv4 ko lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78323,6 +78327,58 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Zaman aikinku da abubuwan tsaronku a matsayin fayil na JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Ba a yin rikodin zaman aiki a wannan shafin, don haka ba a iya fitar da wata na'ura ba. Canja kalmar sirrinku yanzu.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>An fitar da wasu zaman aiki %count. Yanzu canja kalmar sirrinku.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Babu wata na'ura da ta shiga. Yanzu canja kalmar sirrinku.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Na gode. An yi wa abin da ya faru alama a matsayin naku.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Wannan abin da ya faru ba ya bukatar amsa.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Shafin ya ƙare. Ba a canza komai ba; da fatan za a sake gwadawa.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Kare asusunku</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Idan wani abu a nan ba ku ba ne, fitar da duk sauran na'urori, sannan ku zaɓi sabuwar kalmar sirri. Ana kuma fitar da na'urorin da aka bari a ciki ta Tuna da ni.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Ana fitar da kowace na'ura banda wannan a buƙatarta ta gaba. Sannan ku zaɓi sabuwar kalmar sirri.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ee, fitar da sauran na'urorin</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ku ne wannan?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ee, ni ne</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>A'a, kare asusuna</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78505,6 +78561,58 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Zaman aikinku da abubuwan tsaronku a matsayin fayil na JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Ba a yin rikodin zaman aiki a wannan shafin, don haka ba a iya fitar da wata na'ura ba. Canja kalmar sirrinku yanzu.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>An fitar da wasu zaman aiki %count. Yanzu canja kalmar sirrinku.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Babu wata na'ura da ta shiga. Yanzu canja kalmar sirrinku.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Na gode. An yi wa abin da ya faru alama a matsayin naku.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Wannan abin da ya faru ba ya bukatar amsa.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Shafin ya ƙare. Ba a canza komai ba; da fatan za a sake gwadawa.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Kare asusunku</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Idan wani abu a nan ba ku ba ne, fitar da duk sauran na'urori, sannan ku zaɓi sabuwar kalmar sirri. Ana kuma fitar da na'urorin da aka bari a ciki ta Tuna da ni.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Ana fitar da kowace na'ura banda wannan a buƙatarta ta gaba. Sannan ku zaɓi sabuwar kalmar sirri.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ee, fitar da sauran na'urorin</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ku ne wannan?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ee, ni ne</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>A'a, kare asusuna</translation>
     </message>
 </context>
 <context>
@@ -78696,6 +78804,42 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Mai sarrafa zaman aiki: %handler. Ana karanta zaman aiki daga teburin expuser_session, don haka rahoton yana aiki da kowane mai sarrafawa.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Ayyukan da ake zargi a cikin awanni %hours da suka gabata</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Wata hanyar sadarwa ɗaya ta kasa shiga asusu %accounts (yunƙuri %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>An kulle asusu bayan shiga da suka gaza</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Shiga %count da suka gaza a kan asusu ɗaya</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>An shiga daga ƙasashe %count a lokaci guda</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ayyukan tsaro</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Zaman aiki</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Ana karanta shiga da suka gaza daga rajistar binciken masu amfani, wadda ba a samu a nan ba.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Babu abin da ake zargi: babu asusun da ke da maimaita shiga da suka gaza, babu hanyar sadarwa da ke gwada asusu da yawa, babu asusun da ya shiga daga ƙasashe da yawa.</translation>
     </message>
 </context>
 <context>

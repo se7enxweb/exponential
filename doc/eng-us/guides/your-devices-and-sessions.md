@@ -63,6 +63,19 @@ The very first sign-in of an account sends nothing. To stop the e-mails: untick 
 from a new device or browser** under **Sign-in alerts** on Your devices and click **Save**. The page E-mail preferences
 points to this box: the e-mail is part of account security, so it is switched here.
 
+### If it was not you: Secure your account
+
+**Security activity** (linked from Your devices and the user menu) lists the sign-ins and changes of your account.
+Next to each event of the last 30 days that needs attention it asks **Was this you?**:
+
+- **Yes, it was me**: the question goes away; the event stays in the list.
+- **No, secure my account**: opens the card **Secure your account** at the top of the page.
+
+**Secure your account** first asks you to confirm it is you, then signs out every device except the one you are using,
+also those that stay signed in with Remember me. The page then says how many were signed out and offers **Change
+password**: choose a new one at once. The button **Secure your account** in every security e-mail leads straight to
+this card.
+
 ## 4. For administrators: a user's sessions
 
 Open the user's account page (`user/edit/<id>`, in the user list **Edit** or the account icon). The card **Sessions**

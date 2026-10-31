@@ -1,0 +1,34 @@
+{
+    "command:addeditorpolicies --keep-duplicates": {
+        "en": "Leave a policy the role holds twice (the default removes the later one)",
+        "de": "Eine Richtlinie, die die Rolle zweimal hat, stehen lassen (Standard entfernt die spätere)"
+    },
+    "command:addeditorpolicies --skip-class-set": {
+        "en": "Never this class set of editorpolicies.ini (e.g. media_site), may be repeated",
+        "de": "Nie diese Klassengruppe aus editorpolicies.ini (z. B. media_site), kann wiederholt werden"
+    },
+    "ini:settings/editorpolicies.ini": {
+        "en": "The Editor role: the class-limited policies an editor needs on top of the everyday ones expEditorPolicies adds\n(doc/eng-us/bc/6.0/editor-role-policies.md). Read by the setup wizard and the kickstarter (a new installation), by\nbin/php/addeditorpolicies.php --apply and by the upgrade step 6.0.15-editor-policies (an installation that exists;\nwithout --apply the command only shows what it would change).\n\nAdd or change class sets in settings/override/editorpolicies.ini.append.php or in an extension's settings.",
+        "de": "Die Rolle Editor: die nach Klassen begrenzten Richtlinien, die ein Redakteur zusätzlich zu den alltäglichen braucht,\ndie expEditorPolicies hinzufügt (doc/ger-de/bc/6.0/redakteur-rolle-richtlinien.md). Gelesen vom Setup-Assistenten\nund vom Kickstarter (eine neue Installation), von bin/php/addeditorpolicies.php --apply und vom\nAktualisierungsschritt 6.0.15-editor-policies (eine bestehende Installation; ohne --apply zeigt der Befehl nur, was\ner ändern würde).\n\nKlassengruppen ergänzen oder ändern Sie in settings/override/editorpolicies.ini.append.php oder in den Einstellungen\neiner Erweiterung."
+    },
+    "ini:settings/editorpolicies.ini [ClassSet_media_site] Classes": {
+        "en": "The media site's content classes (ng_*): what an editor creates in the content tree and edits from the website\ntoolbar. Classes[] are class identifiers; * matches any text (fnmatch).",
+        "de": "Die Inhaltsklassen der Media-Site (ng_*): was ein Redakteur im Inhaltsbaum anlegt und über die\nWebsite-Werkzeugleiste bearbeitet. Classes[] sind Klassenbezeichner; * passt auf beliebigen Text (fnmatch)."
+    },
+    "ini:settings/editorpolicies.ini [ClassSet_media_site] Parents": {
+        "en": "The classes below which the classes of the set are created (content/create ParentClass). The container classes of\nClasses[] count as well when ContainersAreParents=true.",
+        "de": "Die Klassen, unter denen die Klassen der Gruppe angelegt werden (content/create ParentClass). Die Container-Klassen\nvon Classes[] zählen ebenfalls, wenn ContainersAreParents=true ist."
+    },
+    "ini:settings/editorpolicies.ini [ClassSet_media_site] WebsiteToolbar": {
+        "en": "true: the website toolbar (websitetoolbar/use, where ezwt is installed) for the classes of the set as well.",
+        "de": "true: auch die Website-Werkzeugleiste (websitetoolbar/use, wo ezwt installiert ist) für die Klassen der Gruppe."
+    },
+    "ini:settings/editorpolicies.ini [EditorPolicySettings] ClassSets": {
+        "en": "The class sets in use: a [ClassSet_<name>] group each. A set whose classes the installation does not have is\nskipped, so the same file fits every installation.",
+        "de": "Die verwendeten Klassengruppen: je eine Gruppe [ClassSet_<Name>]. Eine Gruppe, deren Klassen die Installation\nnicht hat, wird übersprungen, so passt dieselbe Datei zu jeder Installation."
+    },
+    "ini:settings/editorpolicies.ini [EditorPolicySettings] RemoveDuplicates": {
+        "en": "enabled | disabled. Enabled: a policy the role holds twice (the same module, function and limitations) is removed\nonce, keeping the oldest. A policy that differs only in its limitations is never a duplicate.",
+        "de": "enabled | disabled. Enabled: Eine Richtlinie, die die Rolle zweimal hat (dasselbe Modul, dieselbe Funktion und\ndieselben Begrenzungen), wird einmal entfernt, die älteste bleibt. Eine Richtlinie, die sich nur in ihren\nBegrenzungen unterscheidet, ist nie doppelt."
+    }
+}

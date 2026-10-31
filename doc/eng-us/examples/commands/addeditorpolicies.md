@@ -2,14 +2,14 @@
 title: exp:addeditorpolicies
 audience: developer, admin
 category: examples
-summary: "Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account (dry run unless --apply)."
+summary: "Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account, the UI switch, the class sets of editorpolicies.ini, no duplicates (dry run unless --apply)."
 keywords: exp:addeditorpolicies, addeditorpolicies, console, command, CLI, addeditorpolicies.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:addeditorpolicies
 
-Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account (dry run unless --apply).
+Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account, the UI switch, the class sets of editorpolicies.ini, no duplicates (dry run unless --apply).
 
 Script `bin/php/addeditorpolicies.php`, code in `kernel/private/classes/commands/addeditorpolicies.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -34,6 +34,11 @@ versionread, versionremove, remove, translate, bookmark, pendinglist, dashboard,
 restore, reverserelatedlist): it also grants emptying everybody's trash, the languages, the URL
 aliases and everybody's content jobs. --keep-content-wildcard leaves it. Lists what the role still
 holds that an editor role should not (WARN lines). Prints PASS or FAIL at the end.
+The UI switch's language and design choice (uiswitch/language, uiswitch/design) are added where
+the provider exists. Then the class sets of editorpolicies.ini (default: the media site's ng_*
+classes): one content/create limited to the set's classes the role cannot create yet and its parent
+classes, and one websitetoolbar/use for them. A policy the role holds twice (same module, function
+and limitations) is removed once (--keep-duplicates leaves it).
 Without --apply nothing is written: the script lists what it would remove and add. --dry-run is
 still accepted and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).
 
@@ -53,6 +58,8 @@ Example: php bin/php/addeditorpolicies.php
 | `--only` | required | Only this policy (module/function), may be repeated |
 | `--skip` | required | Never this policy (module/function), may be repeated; e.g. --skip=content/restore keeps the trash closed |
 | `--keep-content-wildcard` |  | Leave a content/* of the role as it is (not replaced by single functions) |
+| `--keep-duplicates` |  | Leave a policy the role holds twice (the default removes the later one) |
+| `--skip-class-set` | required | Never this class set of editorpolicies.ini (e.g. media_site), may be repeated |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

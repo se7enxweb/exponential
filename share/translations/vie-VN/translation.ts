@@ -25684,6 +25684,10 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
         <source>last purge</source>
         <translation>lần xóa gần nhất</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Các lần ghi không lấy được khóa trạng thái (lần cuối %date): mỗi lần đều làm mọi kết quả trong bộ nhớ đệm trở nên lỗi thời. %file phải ghi được bởi mọi người dùng mà trang chạy dưới danh nghĩa; trên NFS cần NFSv4 hoặc lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Các phiên và sự kiện bảo mật của bạn dưới dạng tệp JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Trang này không ghi lại các phiên, nên không thể đăng xuất thiết bị nào khác. Hãy đổi mật khẩu của bạn ngay bây giờ.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Đã đăng xuất %count phiên khác. Bây giờ hãy đổi mật khẩu của bạn.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Không có thiết bị nào khác đang đăng nhập. Bây giờ hãy đổi mật khẩu của bạn.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Cảm ơn bạn. Sự kiện đã được đánh dấu là của bạn.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Sự kiện đó không cần trả lời.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Trang đã hết hạn. Không có gì bị thay đổi; vui lòng thử lại.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Bảo vệ tài khoản của bạn</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Nếu có điều gì ở đây không phải là bạn, hãy đăng xuất mọi thiết bị khác, sau đó chọn mật khẩu mới. Các thiết bị được giữ đăng nhập bằng Ghi nhớ đăng nhập cũng bị đăng xuất.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Mọi thiết bị trừ thiết bị này sẽ bị đăng xuất ở yêu cầu tiếp theo. Sau đó bạn chọn mật khẩu mới.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Có, đăng xuất các thiết bị khác</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Đây có phải là bạn không?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Có, đó là tôi</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Không, bảo vệ tài khoản của tôi</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Các phiên và sự kiện bảo mật của bạn dưới dạng tệp JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Trang này không ghi lại các phiên, nên không thể đăng xuất thiết bị nào khác. Hãy đổi mật khẩu của bạn ngay bây giờ.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Đã đăng xuất %count phiên khác. Bây giờ hãy đổi mật khẩu của bạn.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Không có thiết bị nào khác đang đăng nhập. Bây giờ hãy đổi mật khẩu của bạn.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Cảm ơn bạn. Sự kiện đã được đánh dấu là của bạn.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Sự kiện đó không cần trả lời.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Trang đã hết hạn. Không có gì bị thay đổi; vui lòng thử lại.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Bảo vệ tài khoản của bạn</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Nếu có điều gì ở đây không phải là bạn, hãy đăng xuất mọi thiết bị khác, sau đó chọn mật khẩu mới. Các thiết bị được giữ đăng nhập bằng Ghi nhớ đăng nhập cũng bị đăng xuất.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Mọi thiết bị trừ thiết bị này sẽ bị đăng xuất ở yêu cầu tiếp theo. Sau đó bạn chọn mật khẩu mới.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Có, đăng xuất các thiết bị khác</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Đây có phải là bạn không?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Có, đó là tôi</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Không, bảo vệ tài khoản của tôi</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Trình xử lý phiên: %handler. Các phiên được đọc từ bảng expuser_session, vì vậy báo cáo hoạt động với mọi trình xử lý.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Hoạt động đáng ngờ trong %hours giờ qua</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Một mạng đã đăng nhập thất bại vào %accounts tài khoản (%count lần thử)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Tài khoản bị khóa sau các lần đăng nhập thất bại</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count lần đăng nhập thất bại trên một tài khoản</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Đăng nhập từ %count quốc gia cùng lúc</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Hoạt động bảo mật</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Phiên</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Các lần đăng nhập thất bại được đọc từ nhật ký kiểm tra người dùng, nhật ký này không có ở đây.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Không có gì đáng ngờ: không có tài khoản nào đăng nhập thất bại lặp lại, không có mạng nào thử nhiều tài khoản, không có tài khoản nào đăng nhập từ nhiều quốc gia.</translation>
     </message>
 </context>
 <context>

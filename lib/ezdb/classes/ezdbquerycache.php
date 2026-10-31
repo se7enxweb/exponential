@@ -30,7 +30,8 @@
  * makes everything stale. Writes inside a transaction count at COMMIT.
  *
  * Storage, under var/<site>/cache/querycache/: state.ser
- *   { generation, genTime, tables: { table => last write } }
+ *   { generation, genTime, tables: { table => last write }, id, lockFailed }
+ *   (id: see current(); lockFailed: when a write last could not take state.lock)
  *
  * See doc/eng-us/bc/6.0/sql-query-cache.md.
  */
@@ -55,6 +56,15 @@ class eZDBQueryCache
 
     /** @var array this request's memo: key => entry */
     protected static $memo = array();
+
+    /**
+     * At most this many results in the memo: a long script (an import, a cronjob) would otherwise keep every result
+     * it ever read, and every write walks the memo. The oldest goes first.
+     */
+    const MEMO_MAX = 1000;
+
+    /** @var bool whether this request logged that the state lock could not be taken (once per request) */
+    protected static $lockLogged = false;
 
     /**
      * @var array temporary tables this process created (name => true). Not
@@ -108,11 +118,11 @@ class eZDBQueryCache
      * Oracle's forms of the same, without parentheses: a sequence's NEXTVAL and
      * CURRVAL (the Oracle driver reads every new row's id with
      * "SELECT <sequence>.currval FROM DUAL"), the clock, the SCN, generated
-     * ids and the session context.
+     * ids and the session context; SAMPLE (n) reads a random share of a table.
      */
-    const ORACLE_VOLATILE = '/\.\s*(?:NEXTVAL|CURRVAL)\b|\b(?:SYSDATE|SYSTIMESTAMP|CURRENT_SCN|ORA_ROWSCN|SYS_GUID|SYS_CONTEXT|USERENV|DBMS_RANDOM|DBMS_LOCK)\b/i';
+    const ORACLE_VOLATILE = '/\.\s*(?:NEXTVAL|CURRVAL)\b|\b(?:SYSDATE|SYSTIMESTAMP|CURRENT_SCN|ORA_ROWSCN|SYS_GUID|SYS_CONTEXT|USERENV|DBMS_RANDOM|DBMS_LOCK)\b|\bSAMPLE\s*\(/i';
 
-    const VOLATILE = '/\bUNIX_TIMESTAMP\s*\(\s*\)|\b(?:CURRENT_DATE|CURRENT_TIME|CURRENT_TIMESTAMP|LOCALTIME|LOCALTIMESTAMP|CURRENT_USER)\b|\b(NOW|SYSDATE|CURDATE|CURTIME|CURRENT_DATE|CURRENT_TIME|CURRENT_TIMESTAMP|LOCALTIME|LOCALTIMESTAMP|UTC_DATE|UTC_TIME|UTC_TIMESTAMP|RAND|RANDOM|UUID|UUID_SHORT|LAST_INSERT_ID|LASTVAL|CURRVAL|NEXTVAL|FOUND_ROWS|ROW_COUNT|CONNECTION_ID|GET_LOCK|RELEASE_LOCK|IS_FREE_LOCK|SLEEP|BENCHMARK|DATABASE|USER|CURRENT_USER|SESSION_USER|SYSTEM_USER|VERSION)\s*\(|\bFOR\s+UPDATE\b|\bLOCK\s+IN\s+SHARE\s+MODE\b|\bFOR\s+SHARE\b|\bSQL_CALC_FOUND_ROWS\b|\bSQL_NO_CACHE\b|@@?\w|\bINTO\s+(OUTFILE|DUMPFILE|@)/i';
+    const VOLATILE = '/\bUNIX_TIMESTAMP\s*\(\s*\)|\b(?:CURRENT_DATE|CURRENT_TIME|CURRENT_TIMESTAMP|LOCALTIME|LOCALTIMESTAMP|CURRENT_USER)\b|\b(NOW|SYSDATE|CURDATE|CURTIME|CURRENT_DATE|CURRENT_TIME|CURRENT_TIMESTAMP|LOCALTIME|LOCALTIMESTAMP|UTC_DATE|UTC_TIME|UTC_TIMESTAMP|RAND|RANDOM|UUID|UUID_SHORT|LAST_INSERT_ID|LASTVAL|CURRVAL|NEXTVAL|FOUND_ROWS|ROW_COUNT|CONNECTION_ID|GET_LOCK|RELEASE_LOCK|IS_FREE_LOCK|SLEEP|BENCHMARK|DATABASE|USER|CURRENT_USER|SESSION_USER|SYSTEM_USER|VERSION|RANDOMBLOB|CHANGES|TOTAL_CHANGES|LAST_INSERT_ROWID|CLOCK_TIMESTAMP|STATEMENT_TIMESTAMP|TRANSACTION_TIMESTAMP|TIMEOFDAY|TXID_CURRENT\w*|PG_\w+|GEN_RANDOM_UUID|SETVAL|CURRENT_SETTING|SET_CONFIG|INET_CLIENT_ADDR|INET_CLIENT_PORT)\s*\(|\b(?:DATE|TIME|DATETIME|JULIANDAY|UNIXEPOCH)\s*\(\s*\)|\'(?:now|today|tomorrow|yesterday|localtime)\'|\bFOR\s+(?:NO\s+KEY\s+)?UPDATE\b|\bLOCK\s+IN\s+SHARE\s+MODE\b|\bFOR\s+(?:KEY\s+)?SHARE\b|\bSQL_CALC_FOUND_ROWS\b|\bSQL_NO_CACHE\b|@@?\w|\bINTO\s+(OUTFILE|DUMPFILE|@)/i';
 
     // ── Settings ─────────────────────────────────────────────────────────
 
@@ -587,7 +597,7 @@ class eZDBQueryCache
         // their tables excluded since, or temporary, is not answered from it.
         if ( $entry !== null && self::current( $entry ) && self::answerable( $entry['tables'] ) )
         {
-            self::$memo[$key] = $entry;
+            self::remember( $key, $entry );
             self::$stats['hits']++;
             $hit = $entry['rows'];
             if ( $debugStart !== null )
@@ -604,7 +614,7 @@ class eZDBQueryCache
         // deleted by its key): delete it.
         if ( $storage === 'apcu' && !self::apcuRoom() )
             @apcu_delete( 'ezqc:' . $key );
-        $tables = self::readTables( $sql );
+        $tables = self::readTables( $sql, self::backslashEscapes( $db ) );
         if ( $tables === null )
         {
             self::$stats['uncacheable']++;
@@ -633,11 +643,23 @@ class eZDBQueryCache
         self::$stats['misses']++;
         if ( $debugStart !== null )
             self::debugTime( 'miss', $debugStart );
-        return array( $key, $tables, microtime( true ) );
+        // The state as the statement starts: a result is only ever answered under the same state file (see current())
+        return array( $key, $tables, microtime( true ), self::state()['id'] ?? null );
+    }
+
+    /** Keeps an entry in the memo as the newest, dropping the least recently used beyond MEMO_MAX. */
+    protected static function remember( $key, array $entry )
+    {
+        unset( self::$memo[$key] );
+        self::$memo[$key] = $entry;
+        if ( count( self::$memo ) > self::MEMO_MAX )
+            unset( self::$memo[array_key_first( self::$memo )] );
     }
 
     /**
-     * The key of a statement: the connection, its session settings (Oracle,
+     * The key of a statement: the connection (driver, database, server, port,
+     * socket and user: two sites on one server and one APCu may share a
+     * database name but not its rows), its session settings (Oracle,
      * see noteSession()), the text and arrayQuery()'s parameters. xxh128
      * where PHP has it (8.1+), several times faster than
      * md5 on a long statement; the parameters (offset, limit, column) joined
@@ -651,7 +673,8 @@ class eZDBQueryCache
             foreach ( $params as $name => $value )
                 $p .= $name . '=' . ( is_scalar( $value ) || $value === null ? (string)$value : serialize( $value ) ) . ';';
         }
-        $raw = get_class( $db ) . "\0" . ( $db->DB ?? '' ) . "\0" . ( $db->Server ?? '' ) . "\0" . self::sessionKey( $db ) . "\0" . $sql . "\0" . $p;
+        $raw = get_class( $db ) . "\0" . ( $db->DB ?? '' ) . "\0" . ( $db->Server ?? '' ) . "\0" . ( $db->Port ?? '' ) . "\0" . ( $db->SocketPath ?? '' ) . "\0" . ( $db->User ?? '' )
+             . "\0" . self::sessionKey( $db ) . "\0" . $sql . "\0" . $p;
         static $xxh = null;
         if ( $xxh === null )
             $xxh = in_array( 'xxh128', hash_algos(), true );
@@ -684,6 +707,7 @@ class eZDBQueryCache
         if ( $ticket === null || !is_array( $rows ) )
             return;
         list( $key, $tables, $started ) = $ticket;
+        $stateId = $ticket[3] ?? null;
         $debugStart = empty( $GLOBALS['eZDebugEnabled'] ) ? null : self::debugStart();
         if ( count( $rows ) > self::settings()['maxRows'] )
         {
@@ -698,8 +722,8 @@ class eZDBQueryCache
         // 'ms': how long the database took for the statement and its rows, which
         // every later hit saves; the debug report adds them up.
         $entry = array( 'created' => $started, 'tables' => $tables, 'rows' => $copy,
-                        'ms' => round( ( microtime( true ) - $started ) * 1000, 3 ) );
-        self::$memo[$key] = $entry;
+                        'ms' => round( ( microtime( true ) - $started ) * 1000, 3 ), 'state' => $stateId );
+        self::remember( $key, $entry );
         if ( ( $storage = self::storage() ) === 'apcu' && !self::apcuRoom() )
         {
             // kept for this request only: APCu is short of room for the pool's other users
@@ -714,12 +738,18 @@ class eZDBQueryCache
             self::debugTime( 'store', $debugStart );
     }
 
-    /** Whether an entry is current: nothing it read was written since its query started. */
+    /**
+     * Whether an entry is current: nothing it read was written since its query started, under the same state file.
+     * A state file that is gone (deleted with the cache directory, unreadable) and written anew gets a new id, so the
+     * results kept in APCu before, whose writes it no longer knows, are not answered again.
+     */
     protected static function current( array $entry )
     {
         if ( microtime( true ) - $entry['created'] > self::settings()['maxAge'] )
             return false;
         $state = self::state();
+        if ( ( $entry['state'] ?? null ) !== ( $state['id'] ?? null ) )
+            return false;
         if ( $entry['created'] <= $state['genTime'] )
             return false;
         foreach ( $entry['tables'] as $t )
@@ -892,7 +922,8 @@ class eZDBQueryCache
      *                    writes, hit_rate (percent, null without lookups), saved_ms,
      *                    request_ms (this request so far, see requestMs(); null when unknown),
      *                    saved_share (saved_ms in percent of request_ms, see savedShare()),
-     *                    hits_unmeasured, skipped (reason => count), stale (statements, literals masked), stale_more
+     *                    hits_unmeasured, skipped (reason => count), stale (statements, literals masked), stale_more,
+     *                    lock_failed (a write of this request could not take the state lock)
      */
     public static function debugSnapshot()
     {
@@ -919,6 +950,8 @@ class eZDBQueryCache
             'skipped' => $d['skipped'],
             'stale' => $d['stale'],
             'stale_more' => $d['stale_more'],
+            // a write of this request could not take state.lock and made everything stale
+            'lock_failed' => self::$lockLogged,
         );
     }
 
@@ -1034,6 +1067,9 @@ class eZDBQueryCache
         );
         foreach ( $d['skipped'] as $reason => $n )
             $rows['Not cached: ' . $reason] = $n;
+        if ( !empty( $d['lock_failed'] ) )
+            $rows['State lock'] = 'could not be taken: this request\'s writes made every cached result stale'
+                                . ' (state.lock must be writable by every user the site runs as; on NFS: NFSv4 or lockd)';
         $stale = $d['stale'];
         if ( $d['stale_more'] )
             $stale[] = '... and ' . $d['stale_more'] . ' more';
@@ -1234,7 +1270,7 @@ class eZDBQueryCache
         if ( preg_match( '/^\s*DROP\s+TEMPORARY\s+TABLE\b/i', $sql ) )
             return;
         self::$stats['writes']++;
-        $tables = self::writtenTables( $sql );
+        $tables = self::writtenTables( $sql, self::backslashEscapes( $db ) );
         self::debugWrite( $sql, $tables === null );
         if ( $tables !== null )
         {
@@ -1357,14 +1393,16 @@ class eZDBQueryCache
     /** Everything stale at once (Setup > Caches, ezcache.php --clear-id=querycache). */
     public static function clearAll()
     {
-        self::bump( null );
+        // A clear also forgets the last lock failure (status() 'lock_failed'): an admin who fixed state.lock clears
+        // the cache to see whether the notice comes back.
+        self::bump( null, true );
         // Result files from before the new generation are never answered again: free their space now.
         if ( is_dir( self::entriesDir() ) )
             self::cleanupFiles();
     }
 
     /** Marks tables (null: all) written now, in the shared state and this request. */
-    protected static function bump( $tables )
+    protected static function bump( $tables, $forgetLockFailure = false )
     {
         $now = microtime( true );
         // The memo forgets what the write touched: it would otherwise answer
@@ -1374,7 +1412,9 @@ class eZDBQueryCache
             if ( $tables === null || array_intersect( $entry['tables'], $tables ) )
                 unset( self::$memo[$key] );
         }
-        self::updateState( function ( $s ) use ( $tables, $now ) {
+        self::updateState( function ( $s ) use ( $tables, $now, $forgetLockFailure ) {
+            if ( $forgetLockFailure )
+                unset( $s['lockFailed'] );
             if ( $tables === null )
             {
                 $s['generation'] = (int)$s['generation'] + 1;
@@ -1417,7 +1457,8 @@ class eZDBQueryCache
         {
             $raw = @file_get_contents( self::stateDir() . '/state.ser' );
             $s = $raw === false ? false : @unserialize( $raw, array( 'allowed_classes' => false ) );
-            self::$state = is_array( $s ) ? $s : array( 'generation' => 1, 'genTime' => 0, 'tables' => array() );
+            // No file, or one that cannot be read: no id, so no result kept under an earlier file is current
+            self::$state = is_array( $s ) ? $s : array( 'generation' => 1, 'genTime' => 0, 'tables' => array(), 'id' => null );
             self::$stateRead = $now;
         }
         // Once per debug report, where the request first looks at the state.
@@ -1440,30 +1481,108 @@ class eZDBQueryCache
         return self::state();
     }
 
+    /** Makes the state directory; a root process (Velocity, a CLI script) hands it to the owner of its parent. */
+    protected static function makeStateDir( $dir, $asRoot )
+    {
+        if ( is_dir( $dir ) )
+            return;
+        @mkdir( $dir, eZDir::dirMode( 0770 ), true );
+        // A root-owned directory left behind would keep the site user's cron and FPM from writing in it.
+        if ( $asRoot && ( $parent = @stat( dirname( $dir ) ) ) && $parent['uid'] !== 0 )
+        {
+            @chown( $dir, $parent['uid'] );
+            @chgrp( $dir, $parent['gid'] );
+        }
+    }
+
+    /** How often lockState() opens state.lock again when the file it locked was replaced meanwhile. */
+    const LOCK_ATTEMPTS = 3;
+
+    /**
+     * Opens state.lock and takes it, or false. The lock must be on the file at the path: a process that waited for
+     * it while the cache directory was deleted (an rm -r, ezcache.php) gets it on a file that is gone, while the next
+     * process creates a new state.lock and takes that one -- both would write the state at once, and one's tables
+     * would be lost. So the file held is compared with the one at the path, and opened again when they differ.
+     *
+     * @param string $dir
+     * @param bool $asRoot
+     * @return resource|false
+     */
+    protected static function lockState( $dir, $asRoot )
+    {
+        $path = $dir . '/state.lock';
+        for ( $attempt = 0; $attempt < self::LOCK_ATTEMPTS; $attempt++ )
+        {
+            self::makeStateDir( $dir, $asRoot );
+            $lock = @fopen( $path, 'c' );
+            if ( !$lock )
+                return false;
+            if ( !flock( $lock, LOCK_EX ) )
+            {
+                fclose( $lock );
+                return false;
+            }
+            // Not from the stat cache: in a persistent worker (Velocity) it may hold the file before the deletion.
+            clearstatcache( true, $path );
+            $held = @fstat( $lock );
+            $there = @stat( $path );
+            if ( $held && $there && $held['ino'] === $there['ino'] && $held['dev'] === $there['dev'] )
+                return $lock;
+            flock( $lock, LOCK_UN );
+            fclose( $lock );
+        }
+        return false;
+    }
+
     protected static function updateState( $change )
     {
         $dir = self::stateDir();
         $asRoot = function_exists( 'posix_geteuid' ) && posix_geteuid() === 0;
-        if ( !is_dir( $dir ) )
-        {
-            @mkdir( $dir, eZDir::dirMode( 0770 ), true );
-            // A root process (Velocity, a CLI script) must not leave a root-owned
-            // directory behind: the site user's cron and FPM could no longer write in it.
-            if ( $asRoot && ( $parent = @stat( dirname( $dir ) ) ) && $parent['uid'] !== 0 )
-            {
-                @chown( $dir, $parent['uid'] );
-                @chgrp( $dir, $parent['gid'] );
-            }
-        }
-        $lock = @fopen( $dir . '/state.lock', 'c' );
-        if ( $lock )
-            flock( $lock, LOCK_EX );
+        $lock = self::lockState( $dir, $asRoot );
         self::$state = null;
         $state = call_user_func( $change, self::state() );
+        if ( !$lock )
+        {
+            // Without the lock another process's change can be lost between reading and writing the state: a write
+            // it noted for its tables would vanish. Making everything stale narrows that to the moment between this
+            // read and this rename (a locked writer's change in between is still overwritten); it does not close
+            // it. The lock is what makes the state safe: state.lock must be writable by every user the site runs
+            // as, and on NFS needs NFSv4 or lockd.
+            if ( !self::$lockLogged )
+                error_log( 'eZDBQueryCache: could not lock ' . $dir . '/state.lock; writes make every cached result stale' );
+            self::$lockLogged = true;
+            $state['generation'] = (int)$state['generation'] + 1;
+            $state['genTime'] = microtime( true );
+            $state['tables'] = array();
+            // Kept in the shared state, so Setup > System information shows it whichever process failed (a cronjob
+            // as another user, a Velocity worker); clearAll() forgets it.
+            $state['lockFailed'] = time();
+        }
+        // A new file (none before, or one that could not be read) gets an id of its own: see current()
+        if ( empty( $state['id'] ) )
+        {
+            try
+            {
+                $state['id'] = bin2hex( random_bytes( 8 ) );
+            }
+            catch ( Exception $e )
+            {
+                $state['id'] = uniqid( '', true ) . mt_rand();
+            }
+        }
         $tmp = $dir . '/state.ser.' . getmypid() . '.' . mt_rand() . '.tmp';
-        $ok = @file_put_contents( $tmp, serialize( $state ) ) !== false && @chmod( $tmp, eZFile::fileMode( 0660 ) ) !== null && @rename( $tmp, $dir . '/state.ser' );
+        $ok = @file_put_contents( $tmp, serialize( $state ) ) !== false;
+        if ( $ok )
+        {
+            // the mode is a convenience for other users of the group; a failure does not stop the write
+            @chmod( $tmp, eZFile::fileMode( 0660 ) );
+            $ok = @rename( $tmp, $dir . '/state.ser' );
+        }
         if ( !$ok )
+        {
+            @unlink( $tmp );
             error_log( 'eZDBQueryCache: could not write ' . $dir . '/state.ser; cached results may be stale until MaxAge' );
+        }
         // A root process (a script, a server) leaves the files to the directory's owner.
         if ( $asRoot && ( $owner = @stat( $dir ) ) && $owner['uid'] !== 0 )
         {
@@ -1492,6 +1611,7 @@ class eZDBQueryCache
         self::$stats = array( 'hits' => 0, 'misses' => 0, 'stores' => 0, 'uncacheable' => 0, 'writes' => 0, 'reserve' => 0 );
         self::$debug = null;
         self::$requestEnd = null;
+        self::$lockLogged = false;
     }
 
     /** @var string|false eZExecution::requestKey() of the request flushStats() is registered to run at the end of */
@@ -1553,8 +1673,11 @@ class eZDBQueryCache
             'exclude' => array_keys( $s['exclude'] ),
             'state_file' => self::stateDir() . '/state.ser',
             'state_exists' => is_file( self::stateDir() . '/state.ser' ),
+            'lock_file' => self::stateDir() . '/state.lock',
             'generation' => (int)( $state['generation'] ?? 1 ),
             'cleared' => (int)( $state['genTime'] ?? 0 ),
+            // when a write last could not take state.lock (any process; clearAll() forgets it), 0: never
+            'lock_failed' => (int)( $state['lockFailed'] ?? 0 ),
             'tables_tracked' => count( $tables ),
             'recent_writes' => array_slice( array_map( 'intval', $tables ), 0, 8, true ),
             'apcu' => function_exists( 'apcu_enabled' ) && apcu_enabled(),
@@ -1615,71 +1738,120 @@ class eZDBQueryCache
 
     /**
      * The tables a SELECT reads (lower case), or null when it must not be
-     * cached: not a plain SELECT, volatile, or no table found.
+     * cached: not a plain SELECT, volatile, no table found, or an item of a
+     * FROM list that is not a table name (a derived table, TABLE(...)): its
+     * tables could not all be told, and a result kept for too few tables
+     * would outlive a write to the others.
+     *
+     * @param string $sql
+     * @param bool|null $backslash see withoutStrings()
+     * @return array|null
      */
-    public static function readTables( $sql )
+    public static function readTables( $sql, $backslash = null )
     {
         $sql = (string)$sql;
         if ( strncasecmp( ltrim( $sql ), 'select', 6 ) !== 0 )
             return null;
         if ( preg_match( self::VOLATILE, $sql ) || preg_match( self::ORACLE_VOLATILE, $sql ) )
             return null;
-        $text = self::withoutStrings( $sql );
+        $text = self::withoutStrings( $sql, $backslash );
         if ( $text === null )
             return null;
-        $tables = array();
-        // FROM a, b alias, c ... up to the next clause; subqueries have their own FROM.
-        if ( preg_match_all( '/\bFROM\s+(.+?)(?=\bWHERE\b|\bGROUP\s+BY\b|\bORDER\s+BY\b|\bLIMIT\b|\bHAVING\b|\bUNION\b|\b(?:INNER|LEFT|RIGHT|CROSS|FULL|STRAIGHT_JOIN|NATURAL|OUTER)\b|\bJOIN\b|\bON\b|\)|$)/is', $text, $m ) )
+        // A parenthesised join "JOIN ( b JOIN c ... )" or a derived table after JOIN: its tables are not all read
+        // below. A comma list after a join ("JOIN b ON a.i = b.i, c", "JOIN b USING ( i ), c", "JOIN b x, c") is
+        // never read either. Checked with every parenthesised group taken out (IN lists, functions, subqueries).
+        if ( preg_match( '/\bJOIN\s*\(/i', $text ) )
+            return null;
+        $flat = $text;
+        for ( $depth = 0; $depth < 32 && strpos( $flat, '(' ) !== false; $depth++ )
         {
-            foreach ( $m[1] as $list )
+            $next = preg_replace( '/\([^()]*+\)/', '', $flat );
+            if ( $next === null || $next === $flat )
+                return null;
+            $flat = $next;
+        }
+        if ( strpos( $flat, '(' ) !== false
+             || preg_match( '/\b(?:ON|JOIN)\b(?:(?!\b(?:WHERE|GROUP|ORDER|LIMIT|HAVING|UNION|MINUS|INTERSECT|EXCEPT|JOIN|STRAIGHT_JOIN|INNER|LEFT|RIGHT|CROSS|FULL|NATURAL|OUTER)\b)[^,])*+,/is', $flat ) )
+            return null;
+        $tables = array();
+        // FROM a, b alias, c ... up to the next clause; subqueries have their own FROM, and so has each
+        // SELECT of a set operation (UNION, Oracle's MINUS, INTERSECT, EXCEPT).
+        $found = preg_match_all( '/\bFROM\s+(.+?)(?=\bWHERE\b|\bGROUP\s+BY\b|\bORDER\s+BY\b|\bLIMIT\b|\bHAVING\b|\bUNION\b|\bMINUS\b|\bINTERSECT\b|\bEXCEPT\b|\b(?:INNER|LEFT|RIGHT|CROSS|FULL|STRAIGHT_JOIN|NATURAL|OUTER)\b|\bJOIN\b|\bON\b|\)|$)/is', $text, $m );
+        if ( $found === false )
+            return null;
+        foreach ( $m[1] as $list )
+        {
+            foreach ( explode( ',', $list ) as $item )
             {
-                foreach ( explode( ',', $list ) as $item )
-                {
-                    $name = self::tableName( $item );
-                    if ( $name !== null )
-                        $tables[$name] = true;
-                }
+                if ( trim( $item ) === '' )
+                    continue;
+                // A derived table "FROM ( SELECT ... ) x, b" ends the match at its first ")": the list after it is
+                // never read, nor is the subquery's own FROM. So does an index hint ("a FORCE INDEX (i), b"),
+                // PARTITION (p), TABLE( ... ) or LATERAL ( ... ). Not readable, so not cached.
+                if ( strpos( $item, '(' ) !== false || preg_match( '/^\s*(?:ONLY|LATERAL|TABLE)\b/i', $item ) )
+                    return null;
+                $name = self::tableName( $item );
+                if ( $name === null )
+                    return null;
+                $tables[$name] = true;
             }
         }
-        if ( preg_match_all( '/\bJOIN\s+([`"\w.]+)/i', $text, $m ) )
+        if ( preg_match_all( '/\b(?:STRAIGHT_)?JOIN\s+(\S+)/i', $text, $m ) === false )
+            return null;
+        foreach ( $m[1] as $item )
         {
-            foreach ( $m[1] as $item )
-            {
-                $name = self::tableName( $item );
-                if ( $name !== null )
-                    $tables[$name] = true;
-            }
+            if ( preg_match( '/^(?:ONLY|LATERAL|TABLE)$/i', $item ) )
+                return null;
+            $name = self::tableName( $item );
+            if ( $name === null )
+                return null;
+            $tables[$name] = true;
         }
         return $tables ? array_keys( $tables ) : null;
     }
 
-    /** The tables a write statement changes (lower case), or null when not readable. */
-    public static function writtenTables( $sql )
+    /**
+     * The tables a write statement changes (lower case), or null when not readable.
+     *
+     * @param string $sql
+     * @param bool|null $backslash see withoutStrings()
+     * @return array|null
+     */
+    public static function writtenTables( $sql, $backslash = null )
     {
-        $text = self::withoutStrings( (string)$sql );
+        $text = self::withoutStrings( (string)$sql, $backslash );
         if ( $text === null )
+            return null;
+        // PostgreSQL's TRUNCATE ... CASCADE empties every table that refers to the named ones, and DROP ... CASCADE
+        // drops the views on them: which, the text does not say.
+        if ( preg_match( '/^\s*(?:TRUNCATE|DROP)\b.*\bCASCADE\b/is', $text ) )
             return null;
         $patterns = array(
             '/^\s*(?:INSERT|REPLACE)\s+(?:LOW_PRIORITY\s+|DELAYED\s+|HIGH_PRIORITY\s+|IGNORE\s+|OR\s+\w+\s+)*INTO\s+([`"\w.]+)/i',
             '/^\s*UPDATE\s+(?:LOW_PRIORITY\s+|IGNORE\s+|OR\s+\w+\s+)*(.+?)\s+SET\b/is',
-            '/^\s*DELETE\s+(?:LOW_PRIORITY\s+|QUICK\s+|IGNORE\s+)*(?:[`"\w.,\s]*?\s)?FROM\s+(.+?)(?=\bWHERE\b|\bUSING\b|\bORDER\b|\bLIMIT\b|$)/is',
-            '/^\s*TRUNCATE\s+(?:TABLE\s+)?([`"\w.]+)/i',
-            '/^\s*(?:ALTER|DROP|CREATE)\s+(?:TEMPORARY\s+)?TABLE\s+(?:IF\s+(?:NOT\s+)?EXISTS\s+)?([`"\w.]+)/i',
-            '/^\s*(?:CREATE|DROP)\s+(?:UNIQUE\s+)?INDEX\s+[`"\w.]+\s+ON\s+([`"\w.]+)/i',
+            '/^\s*DELETE\s+(?:LOW_PRIORITY\s+|QUICK\s+|IGNORE\s+)*(?:[`"\w.,\s]*?\s)?FROM\s+(.+?)(?=\bWHERE\b|\bUSING\b|\bORDER\b|\bLIMIT\b|\bRETURNING\b|$)/is',
+            // a list (PostgreSQL: TRUNCATE a, b), with PostgreSQL's options at the end
+            '/^\s*TRUNCATE\s+(?:TABLE\s+)?(.+?)\s*(?:\b(?:RESTART|CONTINUE)\s+IDENTITY\b\s*)?(?:\bRESTRICT\b\s*)?;?\s*$/is',
+            '/^\s*DROP\s+(?:TEMPORARY\s+)?TABLE\s+(?:IF\s+EXISTS\s+)?(.+?)\s*(?:\bRESTRICT\b\s*)?;?\s*$/is',
+            '/^\s*(?:ALTER|CREATE)\s+(?:TEMPORARY\s+)?TABLE\s+(?:IF\s+(?:NOT\s+)?EXISTS\s+)?(?:ONLY\s+)?([`"\w.]+)/i',
+            '/^\s*(?:CREATE|DROP)\s+(?:UNIQUE\s+)?INDEX\s+[`"\w.]+\s+ON\s+(?:ONLY\s+)?([`"\w.]+)/i',
         );
         foreach ( $patterns as $p )
         {
             if ( !preg_match( $p, $text, $m ) )
                 continue;
             $tables = array();
-            // A multi-table UPDATE or DELETE names several, and may JOIN more.
+            // A multi-table UPDATE or DELETE names several, and may JOIN more; PostgreSQL's ONLY (no inheriting
+            // tables) names the table after it. A name that cannot be read makes the whole write unreadable: kept
+            // out, its table would never be stale.
             foreach ( preg_split( '/,|\bJOIN\b/i', $m[1] ) as $item )
             {
-                $name = self::tableName( $item );
-                if ( $name !== null )
-                    $tables[$name] = true;
+                $name = self::tableName( preg_replace( '/^\s*ONLY\s+/i', '', $item ) );
+                if ( $name === null )
+                    return null;
+                $tables[$name] = true;
             }
-            if ( preg_match_all( '/\bJOIN\s+([`"\w.]+)/i', $text, $j ) )
+            if ( preg_match_all( '/\bJOIN\s+(?:ONLY\s+)?([`"\w.]+)/i', $text, $j ) )
             {
                 foreach ( $j[1] as $item )
                 {
@@ -1688,6 +1860,9 @@ class eZDBQueryCache
                         $tables[$name] = true;
                 }
             }
+            // ALTER TABLE a RENAME TO b: both names
+            if ( preg_match( '/^\s*ALTER\s+TABLE\b.*?\bRENAME\s+TO\s+([`"\w.]+)/is', $text, $r ) && ( $name = self::tableName( $r[1] ) ) !== null )
+                $tables[$name] = true;
             return $tables ? array_keys( $tables ) : null;
         }
         // RENAME TABLE a TO b, and anything else: not readable.
@@ -1703,17 +1878,112 @@ class eZDBQueryCache
         if ( $item === '' || $item[0] === '(' )
             return null;
         $first = preg_split( '/\s+/', $item )[0];
+        // a quoted name with a space in it ("My Table") is split here: its quotes do not pair
+        if ( substr_count( $first, '`' ) % 2 || substr_count( $first, '"' ) % 2 )
+            return null;
         $first = str_replace( array( '`', '"' ), '', $first );
         if ( strpos( $first, '.' ) !== false )
             $first = substr( $first, strrpos( $first, '.' ) + 1 );
         return preg_match( '/^\w+$/', $first ) ? strtolower( $first ) : null;
     }
 
-    /** The SQL with string literals blanked, so a word in a value is not read as SQL. */
-    protected static function withoutStrings( $sql )
+    /**
+     * Whether a backslash escapes the next character in the string literals of $db's statements: true for
+     * MySQL and MariaDB, false for Oracle, PostgreSQL (standard_conforming_strings on, the default) and SQLite,
+     * null when the driver does not say (withoutStrings() then reads the statement both ways). A PostgreSQL
+     * connection with standard_conforming_strings off (the server's setting, or a SET in the session) escapes:
+     * the driver's standardConformingStrings() says so.
+     *
+     * @param object $db
+     * @return bool|null
+     */
+    public static function backslashEscapes( $db )
     {
-        // Unrolled: one step per escape or doubled quote rather than one per character, so a
-        // long literal (an attribute's XML) stays within PCRE's limits. Null when it fails.
-        return preg_replace( "/'[^'\\\\]*+(?:(?:\\\\.|'')[^'\\\\]*+)*+'/s", "''", $sql );
+        if ( !is_object( $db ) || !method_exists( $db, 'databaseName' ) )
+            return null;
+        switch ( $db->databaseName() )
+        {
+            case 'mysql':
+                return true;
+            case 'postgresql':
+                return method_exists( $db, 'standardConformingStrings' ) && $db->standardConformingStrings() === false;
+            case 'oracle':
+            case 'sqlite':
+                return false;
+        }
+        return null;
+    }
+
+    /**
+     * The SQL with string literals blanked, so a word in a value is not read as SQL. Null when the
+     * text cannot be read safely: the pattern failed, a quote is left unpaired (a literal that does
+     * not end), a quoted name holds a quote, a comment is left outside the literals, a literal ends
+     * elsewhere than a plain one (Oracle's q'', PostgreSQL's E'' and dollar quoting), or (with
+     * $backslash null) a backslash makes the literals end in different places depending on whether
+     * it escapes the next character, as in MySQL, or not, as in Oracle, PostgreSQL and SQLite
+     * ('C:\' is a whole literal there).
+     *
+     * @param string $sql
+     * @param bool|null $backslash whether a backslash escapes (backslashEscapes()); null: unknown
+     * @return string|null
+     */
+    protected static function withoutStrings( $sql, $backslash = null )
+    {
+        $text = self::blankLiterals( $sql, $backslash !== false );
+        if ( $text === null )
+            return null;
+        if ( $backslash === null && ( strpos( $sql, '\\' ) !== false || strpos( $sql, '"' ) !== false )
+             && self::blankLiterals( $sql, false ) !== $text )
+            return null;
+        // A quote left over opens a literal that never ends: what follows it cannot be told from SQL. (A name in
+        // brackets with an apostrophe, SQLite's [it's], leaves one too.)
+        if ( strpos( str_replace( "''", '', $text ), "'" ) !== false )
+            return null;
+        // Oracle's alternative quoting q'[...]' and PostgreSQL's escape strings E'...' end elsewhere than a plain
+        // literal: not read. Their first quote always opens a pair, so the prefix stays before a blanked ''.
+        if ( preg_match( "/(?<![\\w'])(?:[nN]?[qQ]|[eE])''/", $text ) )
+            return null;
+        // PostgreSQL's dollar quoting ($$...$$, $tag$...$tag$) holds apostrophes that would pair with a literal's
+        // quote. Not $1 (a parameter), nor a dollar inside a name (Oracle's V$SESSION).
+        if ( preg_match( '/(?<![\w$])\$(?:[A-Za-z_]\w*+)?\$/', $text ) )
+            return null;
+        // A comment can hide a table, and an apostrophe in it would pair with the next literal's
+        // quote. Its marker stays outside the literals, before any apostrophe it holds; MySQL also
+        // takes # as a comment (PostgreSQL: an operator).
+        if ( strpos( $text, '--' ) !== false || strpos( $text, '/*' ) !== false
+             || ( $backslash !== false && strpos( $text, '#' ) !== false ) )
+            return null;
+        return $text;
+    }
+
+    /**
+     * $sql with every string literal replaced by '', read from left to right, so a quote inside a
+     * quoted name ("it's", `it's`) does not open a literal. Where a backslash escapes ($escapes:
+     * MySQL), double quotes delimit strings as well; elsewhere they quote a name, which is kept.
+     * Null when the pattern failed or a quoted name holds a quote: a reading that does not know the
+     * name would pair that quote with a literal's.
+     *
+     * Unrolled: one step per escape or doubled quote rather than one per character, so a long
+     * literal (an attribute's XML) stays within PCRE's limits.
+     *
+     * @param string $sql
+     * @param bool $escapes
+     * @return string|null
+     */
+    protected static function blankLiterals( $sql, $escapes )
+    {
+        $pattern = $escapes
+            ? "/'[^'\\\\]*+(?:(?:\\\\.|'')[^'\\\\]*+)*+'|\"[^\"\\\\]*+(?:(?:\\\\.|\"\")[^\"\\\\]*+)*+\"|`[^`]*+(?:``[^`]*+)*+`/s"
+            : "/'[^']*+(?:''[^']*+)*+'|\"[^\"]*+(?:\"\"[^\"]*+)*+\"|`[^`]*+(?:``[^`]*+)*+`/s";
+        $quoteInName = false;
+        $text = preg_replace_callback( $pattern, function ( $m ) use ( $escapes, &$quoteInName ) {
+            $q = $m[0][0];
+            if ( $q === "'" || ( $q === '"' && $escapes ) )
+                return "''";
+            if ( strpbrk( $m[0], $q === '"' ? "'" : "'\"" ) !== false )
+                $quoteInName = true;
+            return $m[0];
+        }, (string)$sql );
+        return $text === null || $quoteInName ? null : $text;
     }
 }

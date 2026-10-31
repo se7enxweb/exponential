@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>акыркы тазалоо</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Жазуулар абалдын кулпун ала алган жок (акыркы жолу %date): ар бири кэштеги бардык жыйынтыктарды эскиртти. %file сайт иштеген ар бир колдонуучу үчүн жазылуучу болушу керек; NFSте NFSv4 же lockd керек.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Сеанстарыңыз жана коопсуздук окуялары JSON файлы катары.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Бул сайтта сеанстар катталбайт, ошондуктан башка түзмөктү чыгаруу мүмкүн болгон жок. Сырсөзүңүздү азыр өзгөртүңүз.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Башка %count сеанс чыгарылды. Эми сырсөзүңүздү өзгөртүңүз.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Башка түзмөк кирген эмес эле. Эми сырсөзүңүздү өзгөртүңүз.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Рахмат. Окуя сиздики катары белгиленди.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Бул окуяга жооп кереги жок.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Беттин мөөнөтү бүтүп калган. Эч нерсе өзгөртүлгөн жок; кайра аракет кылыңыз.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Каттоо эсебин коргоо</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Эгер бул жердеги бир нерсе сиз болбосоңуз, бардык башка түзмөктөрдү чыгарып, андан кийин жаңы сырсөз тандаңыз. Мени эстеп калуу аркылуу кирип турган түзмөктөр да чыгарылат.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Мундан башка ар бир түзмөк кийинки суранымында чыгарылат. Андан кийин сиз жаңы сырсөз тандайсыз.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ооба, башка түзмөктөрдү чыгаруу</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Бул сиз белеңиз?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ооба, бул мен элем</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Жок, каттоо эсебимди коргоо</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Сеанстарыңыз жана коопсуздук окуялары JSON файлы катары.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Бул сайтта сеанстар катталбайт, ошондуктан башка түзмөктү чыгаруу мүмкүн болгон жок. Сырсөзүңүздү азыр өзгөртүңүз.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Башка %count сеанс чыгарылды. Эми сырсөзүңүздү өзгөртүңүз.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Башка түзмөк кирген эмес эле. Эми сырсөзүңүздү өзгөртүңүз.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Рахмат. Окуя сиздики катары белгиленди.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Бул окуяга жооп кереги жок.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Беттин мөөнөтү бүтүп калган. Эч нерсе өзгөртүлгөн жок; кайра аракет кылыңыз.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Каттоо эсебин коргоо</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Эгер бул жердеги бир нерсе сиз болбосоңуз, бардык башка түзмөктөрдү чыгарып, андан кийин жаңы сырсөз тандаңыз. Мени эстеп калуу аркылуу кирип турган түзмөктөр да чыгарылат.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Мундан башка ар бир түзмөк кийинки суранымында чыгарылат. Андан кийин сиз жаңы сырсөз тандайсыз.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ооба, башка түзмөктөрдү чыгаруу</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Бул сиз белеңиз?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ооба, бул мен элем</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Жок, каттоо эсебимди коргоо</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Сеанс иштеткичи: %handler. Сеанстар expuser_session таблицасынан окулат, ошондуктан отчет каалаган иштеткич менен иштейт.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Акыркы %hours саатта шектүү аракеттер</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Бир тармак %accounts каттоо эсебине кире алган жок (%count аракет)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Ийгиликсиз кирүүлөрдөн кийин каттоо эсеби кулпуланды</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Бир каттоо эсебинде %count ийгиликсиз кирүү</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Бир убакта %count өлкөдөн кирген</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Коопсуздук аракеттери</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Сеанстар</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Ийгиликсиз кирүүлөр колдонуучулардын аудит журналынан окулат, ал бул жерде жеткиликсиз.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Шектүү эч нерсе жок: кайталанган ийгиликсиз кирүүлөрү бар каттоо эсеби жок, бир нече каттоо эсебин сынаган тармак жок, бир нече өлкөдөн кирген каттоо эсеби жок.</translation>
     </message>
 </context>
 <context>

@@ -25682,6 +25682,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>చివరి ప్రక్షాళన</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>రాతలు స్థితి లాక్‌ను పొందలేకపోయాయి (చివరిసారి %date): ప్రతి ఒక్కటీ కాష్ చేసిన అన్ని ఫలితాలను పాతవిగా చేసింది. సైట్ ఏ వినియోగదారులుగా నడుస్తుందో వారందరికీ %file రాయగలిగేలా ఉండాలి; NFS లో దీనికి NFSv4 లేదా lockd అవసరం.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78323,6 +78327,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>మీ సెషన్‌లు మరియు భద్రతా ఈవెంట్‌లు JSON ఫైల్‌గా.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ఈ సైట్‌లో సెషన్‌లు నమోదు చేయబడవు, కాబట్టి ఏ ఇతర పరికరాన్నీ సైన్ అవుట్ చేయలేకపోయాము. ఇప్పుడే మీ పాస్‌వర్డ్ మార్చండి.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>ఇతర %count సెషన్‌లు సైన్ అవుట్ చేయబడ్డాయి. ఇప్పుడు మీ పాస్‌వర్డ్ మార్చండి.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ఏ ఇతర పరికరం సైన్ ఇన్ అయి లేదు. ఇప్పుడు మీ పాస్‌వర్డ్ మార్చండి.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ధన్యవాదాలు. ఈ సంఘటన మీదిగా గుర్తించబడింది.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ఆ సంఘటనకు సమాధానం అవసరం లేదు.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>పేజీ గడువు ముగిసింది. ఏదీ మార్చబడలేదు; దయచేసి మళ్లీ ప్రయత్నించండి.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>మీ ఖాతాను సురక్షితం చేయండి</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ఇక్కడ ఏదైనా మీరు చేయకపోతే, అన్ని ఇతర పరికరాలను సైన్ అవుట్ చేసి, ఆపై కొత్త పాస్‌వర్డ్‌ను ఎంచుకోండి. నన్ను గుర్తుంచుకో ద్వారా సైన్ ఇన్‌లో ఉంచిన పరికరాలు కూడా సైన్ అవుట్ అవుతాయి.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ఇది తప్ప ప్రతి పరికరం దాని తదుపరి అభ్యర్థనలో సైన్ అవుట్ అవుతుంది. ఆపై మీరు కొత్త పాస్‌వర్డ్‌ను ఎంచుకుంటారు.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>అవును, ఇతర పరికరాలను సైన్ అవుట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ఇది మీరేనా?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>అవును, అది నేనే</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>కాదు, నా ఖాతాను సురక్షితం చేయండి</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78505,6 +78561,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>మీ సెషన్‌లు మరియు భద్రతా ఈవెంట్‌లు JSON ఫైల్‌గా.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ఈ సైట్‌లో సెషన్‌లు నమోదు చేయబడవు, కాబట్టి ఏ ఇతర పరికరాన్నీ సైన్ అవుట్ చేయలేకపోయాము. ఇప్పుడే మీ పాస్‌వర్డ్ మార్చండి.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>ఇతర %count సెషన్‌లు సైన్ అవుట్ చేయబడ్డాయి. ఇప్పుడు మీ పాస్‌వర్డ్ మార్చండి.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ఏ ఇతర పరికరం సైన్ ఇన్ అయి లేదు. ఇప్పుడు మీ పాస్‌వర్డ్ మార్చండి.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ధన్యవాదాలు. ఈ సంఘటన మీదిగా గుర్తించబడింది.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ఆ సంఘటనకు సమాధానం అవసరం లేదు.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>పేజీ గడువు ముగిసింది. ఏదీ మార్చబడలేదు; దయచేసి మళ్లీ ప్రయత్నించండి.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>మీ ఖాతాను సురక్షితం చేయండి</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ఇక్కడ ఏదైనా మీరు చేయకపోతే, అన్ని ఇతర పరికరాలను సైన్ అవుట్ చేసి, ఆపై కొత్త పాస్‌వర్డ్‌ను ఎంచుకోండి. నన్ను గుర్తుంచుకో ద్వారా సైన్ ఇన్‌లో ఉంచిన పరికరాలు కూడా సైన్ అవుట్ అవుతాయి.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ఇది తప్ప ప్రతి పరికరం దాని తదుపరి అభ్యర్థనలో సైన్ అవుట్ అవుతుంది. ఆపై మీరు కొత్త పాస్‌వర్డ్‌ను ఎంచుకుంటారు.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>అవును, ఇతర పరికరాలను సైన్ అవుట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ఇది మీరేనా?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>అవును, అది నేనే</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>కాదు, నా ఖాతాను సురక్షితం చేయండి</translation>
     </message>
 </context>
 <context>
@@ -78696,6 +78804,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>సెషన్ హ్యాండ్లర్: %handler. సెషన్‌లు expuser_session పట్టిక నుండి చదవబడతాయి, కాబట్టి నివేదిక ప్రతి హ్యాండ్లర్‌తో పనిచేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>గత %hours గంటల్లో అనుమానాస్పద కార్యకలాపం</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>ఒక నెట్‌వర్క్ %accounts ఖాతాల్లోకి సైన్ ఇన్ చేయడంలో విఫలమైంది (%count ప్రయత్నాలు)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>విఫలమైన సైన్ ఇన్‌ల తర్వాత ఖాతా లాక్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>ఒక ఖాతాలో %count విఫలమైన సైన్ ఇన్‌లు</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>ఒకేసారి %count దేశాల నుండి సైన్ ఇన్ అయింది</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>భద్రతా కార్యకలాపం</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>సెషన్‌లు</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>విఫలమైన సైన్ ఇన్‌లు వినియోగదారు ఆడిట్ లాగ్ నుండి చదవబడతాయి, అది ఇక్కడ అందుబాటులో లేదు.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>అనుమానాస్పదమైనది ఏదీ లేదు: పదే పదే విఫలమైన సైన్ ఇన్‌లు ఉన్న ఖాతా లేదు, అనేక ఖాతాలను ప్రయత్నిస్తున్న నెట్‌వర్క్ లేదు, అనేక దేశాల నుండి సైన్ ఇన్ అయిన ఖాతా లేదు.</translation>
     </message>
 </context>
 <context>

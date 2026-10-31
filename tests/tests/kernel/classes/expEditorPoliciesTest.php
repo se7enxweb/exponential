@@ -239,6 +239,138 @@ class expEditorPoliciesTest extends PHPUnit\Framework\TestCase
 
         self::assertWritesOnlyOutsideADryRun( $this, 'kernel/private/classes/commands/addeditorpolicies.php',
                                               array( '\\expEditorPolicies::apply(', '\\expEditorPolicies::narrow(' ) );
+        // the class sets and the duplicates write only when asked to, and the command asks only with --apply
+        $code = file_get_contents( 'kernel/private/classes/commands/addeditorpolicies.php' );
+        $this->assertStringContainsString( 'completeClassesAndDuplicates( $role, !$dryRun,', $code );
+        $this->assertStringNotContainsString( 'completeClassesAndDuplicates( $role, true', $code );
+    }
+
+    /** The UI switch's functions only where their provider exists (availableModules() names them uiswitch:<function>). */
+    public function testUiSwitchWhereTheProviderExists()
+    {
+        $base = self::policies( array( 'content/*', 'user/login', 'user/password', 'user/selfedit', 'notification/use' ) );
+        $this->assertSame( array(), self::granted( expEditorPolicies::plan( $base, array( 'uiswitch' ) ) ) );
+        $this->assertSame( array( 'uiswitch/language', 'uiswitch/design' ),
+                           self::granted( expEditorPolicies::plan( $base, array( 'uiswitch', 'uiswitch:language', 'uiswitch:design' ) ) ) );
+        $withLanguage = array_merge( $base, self::policies( array( 'uiswitch/language' ) ) );
+        $this->assertSame( array( 'uiswitch/design' ),
+                           self::granted( expEditorPolicies::plan( $withLanguage, array( 'uiswitch:language', 'uiswitch:design' ) ) ) );
+    }
+
+    /** The media site's classes and the classes around them, as installedClasses() returns them. */
+    private static function mediaSiteClasses()
+    {
+        return array(
+            array( 'id' => 1, 'identifier' => 'folder', 'is_container' => true ),
+            array( 'id' => 2, 'identifier' => 'article', 'is_container' => true ),
+            array( 'id' => 22, 'identifier' => 'frontpage', 'is_container' => true ),
+            array( 'id' => 43, 'identifier' => 'ng_frontpage', 'is_container' => true ),
+            array( 'id' => 46, 'identifier' => 'ng_container', 'is_container' => true ),
+            array( 'id' => 47, 'identifier' => 'ng_accordion_item', 'is_container' => false ),
+            array( 'id' => 53, 'identifier' => 'ng_recipe', 'is_container' => false ),
+        );
+    }
+
+    private static function mediaSiteSet()
+    {
+        return array( 'media_site' => array( 'classes' => array( 'ng_*' ), 'parents' => array( 'folder', 'frontpage' ),
+                                             'containers_are_parents' => true, 'toolbar' => true ) );
+    }
+
+    private static function grantedClassEntries( array $plan )
+    {
+        $out = array();
+        foreach ( $plan as $entry )
+            if ( $entry['action'] === 'grant' )
+                $out[] = $entry['module'] . '/' . $entry['function'] . ' ' . expEditorPolicies::describeLimitations( $entry['limitations'] );
+        return $out;
+    }
+
+    /** A class set resolves to its classes and parents (the set's containers and the named parents). */
+    public function testClassSetResolves()
+    {
+        $set = self::mediaSiteSet();
+        $resolved = expEditorPolicies::resolveClassSet( $set['media_site'], self::mediaSiteClasses() );
+        $this->assertSame( array( 43, 46, 47, 53 ), $resolved['class_ids'] );
+        $this->assertSame( array( 1, 22, 43, 46 ), $resolved['parent_ids'] );
+        $set['media_site']['containers_are_parents'] = false;
+        $resolved = expEditorPolicies::resolveClassSet( $set['media_site'], self::mediaSiteClasses() );
+        $this->assertSame( array( 1, 22 ), $resolved['parent_ids'] );
+    }
+
+    /** An Editor role whose create list predates the media site gets one create and one toolbar policy for it. */
+    public function testClassSetGrantsCreateAndToolbarForMissingClasses()
+    {
+        $role = array(
+            array( 'module' => 'content', 'function' => 'create', 'limitations' => array( 'Class' => array( '2' ), 'ParentClass' => array( '1' ) ) ),
+            array( 'module' => 'websitetoolbar', 'function' => 'use', 'limitations' => array( 'Class' => array( '2', '53' ) ) ),
+        );
+        $plan = expEditorPolicies::classPlan( $role, self::mediaSiteSet(), self::mediaSiteClasses(), array( 'websitetoolbar' ) );
+        $this->assertSame( array( 'content/create Class=43,46,47,53 ParentClass=1,22,43,46', 'websitetoolbar/use Class=43,46,47' ),
+                           self::grantedClassEntries( $plan ) );
+
+        // without ezwt, no toolbar policy; skipped on request, nothing
+        $plan = expEditorPolicies::classPlan( $role, self::mediaSiteSet(), self::mediaSiteClasses(), array() );
+        $this->assertSame( array( 'content/create Class=43,46,47,53 ParentClass=1,22,43,46' ), self::grantedClassEntries( $plan ) );
+        $plan = expEditorPolicies::classPlan( $role, self::mediaSiteSet(), self::mediaSiteClasses(), array( 'websitetoolbar' ), array( 'media_site' ) );
+        $this->assertSame( array(), self::grantedClassEntries( $plan ) );
+    }
+
+    /** A role that has the classes already (also through an unlimited create or content/*) gets nothing; a second run adds nothing. */
+    public function testClassSetIsLeftAloneWhenCovered()
+    {
+        $classes = self::mediaSiteClasses();
+        $this->assertSame( array(), self::grantedClassEntries( expEditorPolicies::classPlan(
+            self::policies( array( 'content/create', 'websitetoolbar/*' ) ), self::mediaSiteSet(), $classes, array( 'websitetoolbar' ) ) ) );
+        $this->assertSame( array(), self::grantedClassEntries( expEditorPolicies::classPlan(
+            self::policies( array( 'content/*', '*/*' ) ), self::mediaSiteSet(), $classes, array( 'websitetoolbar' ) ) ) );
+
+        $first = expEditorPolicies::classPlan( array(), self::mediaSiteSet(), $classes, array( 'websitetoolbar' ) );
+        $after = array();
+        foreach ( $first as $entry )
+            if ( $entry['action'] === 'grant' )
+                $after[] = array( 'module' => $entry['module'], 'function' => $entry['function'], 'limitations' => $entry['limitations'] );
+        $this->assertCount( 2, $after );
+        $this->assertSame( array(), self::grantedClassEntries( expEditorPolicies::classPlan( $after, self::mediaSiteSet(), $classes, array( 'websitetoolbar' ) ) ) );
+    }
+
+    /** An installation without the set's classes is not touched. */
+    public function testClassSetWithoutItsClasses()
+    {
+        $classes = array( array( 'id' => 1, 'identifier' => 'folder', 'is_container' => true ) );
+        $plan = expEditorPolicies::classPlan( array(), self::mediaSiteSet(), $classes, array( 'websitetoolbar' ) );
+        $this->assertSame( array(), self::grantedClassEntries( $plan ) );
+        $this->assertSame( 'no class of the set on this installation', $plan[0]['why'] );
+    }
+
+    /** The same policy twice (limitation values in any order) is a duplicate; other limitations are not. */
+    public function testDuplicates()
+    {
+        $policies = array(
+            array( 'id' => 330, 'module' => 'ezoe', 'function' => '*', 'limitations' => array() ),
+            array( 'id' => 12, 'module' => 'ezoe', 'function' => '*', 'limitations' => array() ),
+            array( 'id' => 40, 'module' => 'content', 'function' => 'read', 'limitations' => array( 'Section' => array( '1', '3' ) ) ),
+            array( 'id' => 41, 'module' => 'content', 'function' => 'read', 'limitations' => array( 'Section' => array( '3', '1' ) ) ),
+            array( 'id' => 42, 'module' => 'content', 'function' => 'read', 'limitations' => array( 'Section' => array( '6' ) ) ),
+            array( 'module' => 'content', 'function' => 'edit' ),
+            array( 'module' => 'content', 'function' => 'edit' ),
+        );
+        $found = expEditorPolicies::duplicates( $policies );
+        $this->assertSame( array( array( 'id' => 41, 'name' => 'content/read', 'keep' => 40 ),
+                                  array( 'id' => 330, 'name' => 'ezoe/*', 'keep' => 12 ) ), $found );
+    }
+
+    /** The shipped editorpolicies.ini names the media site set. */
+    public function testShippedClassSet()
+    {
+        $ini = eZINI::instance( 'editorpolicies.ini', 'settings', null, null, false, true );
+        $sets = expEditorPolicies::classSetDefinitions( $ini );
+        $this->assertArrayHasKey( 'media_site', $sets );
+        $this->assertSame( array( 'ng_*' ), $sets['media_site']['classes'] );
+        $this->assertSame( array( 'folder', 'frontpage' ), $sets['media_site']['parents'] );
+        $this->assertTrue( $sets['media_site']['containers_are_parents'] );
+        $this->assertTrue( $sets['media_site']['toolbar'] );
+        $this->assertTrue( expEditorPolicies::removeDuplicatesEnabled( $ini ) );
     }
 
     public function testCommandRefusesApplyTogetherWithDryRun()

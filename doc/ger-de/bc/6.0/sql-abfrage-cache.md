@@ -219,25 +219,67 @@ ausmachte):
 - `arrayQuery()` übergibt die Zeilen nach einer Anweisung, die zurückgekehrt ist, an `store()`;
 - `query()` teilt `noteWrite()` jede Anweisung mit, die erfolgreich war.
 
+Der Schlüssel einer Anweisung enthält die Verbindung (Treiberklasse, Datenbank, Server, Port, Socket und Benutzer,
+sodass zwei Sites auf einem Server mit einem APCu nie Zeilen teilen), die Oracle-Sitzungseinstellungen, den Text und
+die Parameter von `arrayQuery()`. Das Memo der Anfrage hält höchstens `eZDBQueryCache::MEMO_MAX` (1.000) Ergebnisse,
+das am längsten nicht benutzte geht zuerst: Ein langes Skript würde sonst jedes Ergebnis behalten, das es gelesen hat,
+und jeder Schreibvorgang durchläuft das Memo.
+
 `eZDBInterface::commit()` und `rollback()` rufen `afterCommit()` und `afterRollback()` auf. `ezpKernelWeb` ruft zu
 Beginn jeder Anfrage `resetRequest()` auf, sodass ein persistenter Worker (Velocity, Worker-Modus von FrankenPHP) jede
 mit einem leeren Memo beginnt.
+
+In einem persistenten Worker (geprüft mit Velocity, `ForkPerRequest=disabled`) verwirft das Zurücksetzen auch die
+Kopie des Zustands im Worker, sodass jede Anfrage die Zustandsdatei bei ihrem ersten Nachschlagen oder Schreiben neu
+liest: Das „einmal pro Sekunde“ unten gilt nur innerhalb einer Anfrage, und der Schreibvorgang eines anderen Prozesses
+oder eine ersetzte Zustandsdatei zählt ab der nächsten Anfrage des Workers (QC-46). Die Einstellungen, die Zähler und
+der Vermerk „Sperre fehlgeschlagen“ gelten ebenfalls pro Anfrage. Über Anfragen hinweg bleibt nur, was zu einer
+Verbindung gehört: die temporären Tabellen, die dieser Prozess angelegt hat, und die Oracle-Sitzungseinstellungen, nach
+dem Treiberobjekt geschlüsselt, sodass eine neue Verbindung pro Anfrage ohne sie beginnt. Für den Cache wird keine
+Verbindung gehalten. `MEMO_MAX` begrenzt eine Anfrage; eine gerenderte Seite schlägt etwa 550 Anweisungen nach, davon
+weit weniger verschiedene, daher erreicht eine Seite die Grenze nie, und ein Skript, das sie erreicht, liest die
+älteren Ergebnisse erneut aus APCu oder den Ergebnisdateien.
 
 ### Gültigkeit
 
 Eine gemeinsame Zustandsdatei, `var/<site>/cache/querycache/state.ser`, enthält
 
 ```
-{ generation, genTime, tables: { table => time of its last write } }
+{ generation, genTime, tables: { table => time of its last write }, id, lockFailed }
 ```
 
 Jeder Prozess liest und schreibt sie: Apache/php-fpm, Velocity, Skripte und Cronjobs haben jeweils ein eigenes APCu,
 daher kann der Zustand dort nicht liegen. Sie wird unter `flock` geschrieben und atomar ersetzt; ein Prozess liest sie
-erneut, wenn seine Kopie älter als eine Sekunde ist.
+erneut, wenn seine Kopie älter als eine Sekunde ist. Die Sperre ist es, die den Zustand richtig hält: `state.lock` muss
+für jeden Benutzer beschreibbar sein, unter dem die Site läuft, und auf NFS braucht sie NFSv4 oder `lockd`. Ein
+Schreibvorgang, der die Sperre nicht öffnen oder nehmen kann, lässt alles veralten und protokolliert das einmal pro
+Anfrage; das verkleinert das Fenster, in dem die Änderung eines anderen Prozesses zwischen Lesen und Schreiben der
+Datei verloren geht, schließt es aber nicht, und auf einem Server, auf dem die Sperre nie funktioniert, leert jeder
+Schreibvorgang den Cache. Eine Datei, die sich nicht schreiben lässt, wird protokolliert und ihre temporäre Datei
+entfernt; die Änderung gilt dann nur in diesem Prozess, andere sehen sie nach `MaxAge`.
+
+Ein Fehlschlag der Sperre wird außerdem in der Zustandsdatei vermerkt (`lockFailed`, der Zeitpunkt), sodass Setup >
+Systeminformationen ihn zeigt, gleich welcher Prozess gescheitert ist (ein Cronjob unter einem anderen Benutzer, ein
+Velocity-Worker), und die Debug-Ausgabe der Anfrage zeigt ihn ebenfalls (siehe unten). **Query-Cache leeren** vergisst
+ihn: Nachdem Sie die Rechte korrigiert haben, leeren Sie den Cache und prüfen, ob der Hinweis wiederkommt.
+
+Die Sperre wird auf der Datei unter dem Pfad genommen. Ein Prozess, der auf sie wartete, während das Cache-Verzeichnis
+gelöscht wurde, bekäme sonst die Sperre auf einer Datei, die es nicht mehr gibt, während der nächste Prozess ein neues
+`state.lock` anlegt und dieses sperrt, und beide schrieben den Zustand gleichzeitig. Nach `flock` wird die gehaltene
+Datei mit der unter dem Pfad verglichen (Inode und Gerät) und neu geöffnet, wenn sie sich unterscheiden, bis zu
+dreimal; danach zählt der Schreibvorgang als Fehlschlag der Sperre (QC-45).
+
+`id` wird gesetzt, wenn eine Datei geschrieben wird, wo keine war oder keine, die sich lesen ließ: beim ersten
+Schreibvorgang einer Installation und beim ersten, nachdem die Datei gelöscht wurde (ein `rm -r` des
+Cache-Verzeichnisses, das APCu und vielleicht die Ergebnisdateien zurücklässt). Ergebnisse tragen die id des Zustands,
+unter dem sie gespeichert wurden, und werden nur unter diesem geantwortet, sodass Ergebnisse, deren Schreibvorgänge die
+verlorene Datei kannte, nie wieder geantwortet werden. Der erste Schreibvorgang einer neuen Installation lässt daher
+alles vor ihm Gespeicherte einmal veralten. Ein Fehlschlag liest dafür den Zustand.
 
 Ein Eintrag wird mit dem Zeitpunkt gehalten, an dem seine Abfrage **begonnen** hat, den Tabellen, die sie gelesen hat,
-und ihren Zeilen. Er wird nur geantwortet, solange
+der id des Zustands und ihren Zeilen. Er wird nur geantwortet, solange
 
+- er unter der jetzt vorhandenen Zustandsdatei gespeichert wurde (gleiche `id`),
 - er nach `genTime` (dem letzten vollständigen Leeren) erzeugt wurde,
 - jede Tabelle, die er gelesen hat, zuletzt vor seiner Erzeugung beschrieben wurde, und
 - er jünger als `MaxAge` ist.
@@ -247,11 +289,40 @@ Ein Lesevorgang, der mit einem Schreibvorgang um die Wette lief, ist daher immer
 ### Was nie gecacht wird
 
 - Lesevorgänge innerhalb einer Transaktion (sie können die eigenen Schreibvorgänge der Transaktion sehen);
-- Anweisungen, deren Tabellen sich nicht aus dem Text lesen lassen (Unterabfragen in `FROM`, alles, was kein einfaches
-  `SELECT` ist);
+- Anweisungen, deren Tabellen sich nicht alle aus dem Text lesen lassen: alles mit einer Klammer in einer `FROM`-Liste
+  (eine abgeleitete Tabelle, ein Index-Hinweis, `PARTITION (p)`, `TABLE(...)`, `LATERAL (...)`), `ONLY`, ein
+  geklammerter Join (`JOIN ( b JOIN c ... )`), eine Kommaliste nach einem Join (`JOIN b ON ..., c`,
+  `JOIN b USING (i), c`), ein Name in Anführungszeichen mit einem Leerzeichen, ein Kommentar (`--`, `/* */` und `#`,
+  wo ein Backslash maskiert), die Literale `q'[...]'` von Oracle und `E'...'` von PostgreSQL, alles, was kein einfaches
+  `SELECT` ist. Jedes `SELECT` von `UNION`, `MINUS`, `INTERSECT` und `EXCEPT` wird gelesen, ebenso `STRAIGHT_JOIN`.
+  Wo ein Backslash in einem Literal das Literal je nach Datenbank an anderer Stelle enden ließe (in den Literalen von
+  MySQL maskiert er, und doppelte Anführungszeichen begrenzen dort Zeichenketten; nicht in denen von Oracle, SQLite
+  oder PostgreSQL mit `standard_conforming_strings` an, der Voreinstellung: `'C:\'`), entscheidet `databaseName()` des
+  Treibers (`eZDBQueryCache::backslashEscapes()`); bei einem Treiber, der es nicht sagt, wird die Anweisung auf beide
+  Arten gelesen, und wo sie sich unterscheiden, wird sie nicht gecacht. Für Schreibvorgänge gelten dieselben Regeln:
+  Ein Schreibvorgang, der sich nicht lesen lässt, lässt alles veralten;
+- auf jeder Datenbank ein Anführungszeichen, das ohne Partner bleibt (ein Literal, das nicht endet), und ein Name in
+  Anführungszeichen, der ein Anführungszeichen enthält (`"it's"`, `` `it's` ``, `[it's]` bei SQLite): Ohne den Namen
+  zu kennen, würde sein Apostroph mit dem Anführungszeichen des nächsten Literals ein Paar bilden und verbergen, was
+  dazwischen steht;
+- auf PostgreSQL und SQLite (QC-43): Ein Backslash maskiert nicht, daher ist `'C:\'` ein ganzes Literal und die
+  Anweisung wird gelesen; `"..."` setzt einen Namen in Anführungszeichen, der als Tabelle gelesen wird, wo er eine ist
+  (`"public"."ezuser"` ist `ezuser`). Nicht gecacht werden die Zeichenketten `E'...'` und das Dollar-Quoting von
+  PostgreSQL (`$$...$$`, `$tag$...$tag$`; `$1` ist ein Parameter und bleibt lesbar), `TABLESAMPLE` und eine Liste von
+  Spaltenaliasen (`FROM a x (c1, c2)`). `#` ist dort kein Kommentar (in PostgreSQL ein Operator). Eine
+  PostgreSQL-Verbindung mit `standard_conforming_strings` aus (die Einstellung des Servers oder ein `SET` in der
+  Sitzung) maskiert mit dem Backslash wie MySQL: Der Treiber liest die Einstellung aus der Verbindung
+  (`eZPostgreSQLDB::standardConformingStrings()`, das keine Anweisung kostet, der Server meldet jede Änderung), und
+  doppelte Anführungszeichen machen eine Anweisung dann nicht cachebar;
 - Anweisungen, deren Ergebnis keine Funktion ihrer Tabellen ist: `NOW()`, `UNIX_TIMESTAMP()` ohne Argument,
-  `CURRENT_DATE` und Verwandte, `RAND()`, `UUID()`, `LAST_INSERT_ID()`, `FOUND_ROWS()`, Sperren (`FOR UPDATE`,
-  `LOCK IN SHARE MODE`, `GET_LOCK()`), Variablen (`@x`, `@@x`), `SQL_NO_CACHE`, `INTO OUTFILE`;
+  `CURRENT_DATE` und Verwandte, `RAND()`, `UUID()`, `LAST_INSERT_ID()`, `FOUND_ROWS()`, `SAMPLE (n)` von Oracle,
+  Sperren (`FOR UPDATE`, `LOCK IN SHARE MODE`, `GET_LOCK()`), Variablen (`@x`, `@@x`), `SQL_NO_CACHE`, `INTO OUTFILE`;
+  von PostgreSQL `clock_timestamp()`, `statement_timestamp()`, `transaction_timestamp()`, `timeofday()`,
+  `txid_current()`, `setval()`, `gen_random_uuid()`, `current_setting()`, jede Funktion `pg_*()` (Advisory Locks,
+  `pg_sleep()` ...), `FOR NO KEY UPDATE`, `FOR KEY SHARE`; von SQLite `changes()`, `total_changes()`,
+  `last_insert_rowid()`, `randomblob()`, `date()`, `time()`, `datetime()`, `julianday()` und `unixepoch()` ohne
+  Argument; und das Literal `'now'` (auch `'today'`, `'tomorrow'`, `'yesterday'`, `'localtime'`), das die Casts von
+  PostgreSQL und die Datumsfunktionen von SQLite als die Uhr lesen;
 - Lesevorgänge temporärer Tabellen: der in diesem Prozess mit `CREATE TEMPORARY TABLE` angelegten und der so benannten,
   wie `eZDBInterface::generateUniqueTempTableName()` sie benennt (`ezsearch_tmp_12`, `ezproductcoll_tmp_972`,
   `eznode_count_3`). Eine temporäre Tabelle gehört zu einer Verbindung, und ihr Name wird wiederverwendet, daher dürfen
@@ -268,14 +339,22 @@ als jetzt beschrieben. Ein Schreibvorgang, dessen Tabellen sich nicht aus dem Te
 veralten (eine Erhöhung der Generation), was immer sicher ist. Innerhalb einer Transaktion werden die Tabellen
 gesammelt und beim äußersten `COMMIT` gekennzeichnet; bei `ROLLBACK` werden sie verworfen.
 
+Die Formen von PostgreSQL und SQLite (QC-44): `INSERT OR REPLACE`/`OR IGNORE`, `INSERT ... ON CONFLICT`,
+`UPDATE ONLY a` und `DELETE FROM ONLY a` (die Tabelle nach `ONLY`), `TRUNCATE a, b` und `DROP TABLE a, b` (jede
+Tabelle der Liste), `ALTER TABLE ONLY a` und `ALTER TABLE a RENAME TO b` (beide Namen). `TRUNCATE ... CASCADE` und
+`DROP ... CASCADE` erreichen Tabellen und Views, die der Text nicht nennt, daher lassen sie alles veralten; ebenso ein
+`WITH ... INSERT`, `COPY` und ein unbenanntes `CREATE INDEX ON a`. Ein Name in der Tabellenliste eines
+Schreibvorgangs, der sich nicht lesen lässt (ein Name in Anführungszeichen mit Leerzeichen, eine Unterabfrage), macht
+den ganzen Schreibvorgang unlesbar: Bisher wurde er ausgelassen, und seine Tabelle veraltete nie.
+
 ### Schlüssel
 
-`xxh128` (wo PHP es hat; sonst `md5`) aus der Treiberklasse, dem Datenbanknamen, dem Server, dem Text der Anweisung und
-den Parametern von `arrayQuery()` (Offset, Limit, Spalte). In APCu sind die Einträge `ezqc:<key>`, mit `MaxAge` als
-TTL, sodass APCu sie bei Speicherdruck verdrängen kann. Die Zähler sind `ezqcstat:*` (nur in APCu: Mit der
-Dateispeicherung und ohne APCu gibt es keine Zähler). Als Dateien sind die Einträge
-`entries/<first two characters of the key>/<key>`; eine Abfrage prüft ihr Alter und den Zustand wie bei einem
-APCu-Eintrag, der Cronjob entfernt die alten.
+`xxh128` (wo PHP es hat; sonst `md5`) aus der Treiberklasse, dem Datenbanknamen, dem Server, Port, Socket, dem
+Datenbankbenutzer, den Oracle-Sitzungseinstellungen, dem Text der Anweisung und den Parametern von `arrayQuery()`
+(Offset, Limit, Spalte). In APCu sind die Einträge `ezqc:<key>`, mit `MaxAge` als TTL, sodass APCu sie bei
+Speicherdruck verdrängen kann. Die Zähler sind `ezqcstat:*` (nur in APCu: Mit der Dateispeicherung und ohne APCu gibt
+es keine Zähler). Als Dateien sind die Einträge `entries/<first two characters of the key>/<key>`; eine Abfrage prüft
+ihr Alter und den Zustand wie bei einem APCu-Eintrag, der Cronjob entfernt die alten.
 
 
 ## In der Administrationsoberfläche
@@ -301,6 +380,9 @@ Der Kasten **Datenbankabfragen** zeigt für den Server, der die Seite beantworte
 - im Modus `shared`, wie viele Ergebnisse dieser Server in APCu hält und wie viel Speicher sie belegen, oder mit der
   Dateispeicherung, wie viele Ergebnisdateien es gibt, ihre Größe auf der Festplatte und ihr Verzeichnis;
 - die Generation, wann der Cache zuletzt geleert wurde und wie viele Tabellen die Zustandsdatei verfolgt;
+- in Rot, wenn ein Schreibvorgang die Sperre des Zustands nicht nehmen konnte, den Zeitpunkt des letzten Fehlschlags
+  und die zu prüfende Sperrdatei (aus der Zustandsdatei, daher erscheint der Fehlschlag jedes Prozesses;
+  **Query-Cache leeren** entfernt den Hinweis);
 - die Zähler dieses Servers seit ihrem letzten Zurücksetzen: Anfragen, Treffer, Fehlschläge, Trefferquote, Anweisungen,
   die nicht gecacht werden konnten, Schreibvorgänge;
 - die zuletzt beschriebenen Tabellen und wie lange das her ist;
@@ -346,6 +428,7 @@ mit dem ersten Blick darauf. Der Bericht selbst liest keinen Zustand und setzt k
 | Writes | Schreibvorgänge, die der Cache gesehen hat (jeder lässt die Tabellen veralten, die er nennt) |
 | Database time saved (estimated) | die Summe der Zeit, die jede Anweisung bei ihrem Speichern der Datenbank samt Abholen ihrer Zeilen gekostet hat, über die Treffer; eine obere Schätzung. Einträge, die gespeichert wurden, bevor das festgehalten wurde, fügen „+ n hits on entries without a duration“ hinzu. Dann ihr Anteil an der Seite: `186 ms = 186 % of the page so far (100 ms; without the cache about 286 ms, 3 times as long)`; der Faktor erst ab 100 %, wo ein Anteil allein wie ein Teil der Seite gelesen würde. Der Chip der Exp-Debug-Leiste gibt denselben Anteil an, `QC 83 % · -186 ms (186 %)`, und denselben Satz in seinem Titel |
 | Made everything stale | bis zu 20 Schreibvorgänge, deren Tabellen sich nicht lesen lassen (ein PL/SQL-Block, `CALL`, ein `ALTER SESSION`, das keine [Sitzungseinstellung](#sitzungseinstellungen-oracle-alter-session) ist ...), dann „... and n more“ |
+| State lock | nur wenn ein Schreibvorgang dieser Anfrage `state.lock` nicht nehmen konnte: „could not be taken“, mit dem, was zu prüfen ist. Jeder Schreibvorgang der Anfrage hat dann jedes gecachte Ergebnis veralten lassen, und der Chip der Exp Debug-Leiste wird rot |
 
 Der Bericht zählt, was seit seinem Beginn geschehen ist: ab der ersten Anweisung der Anfrage mit eingeschalteter
 Debug-Ausgabe oder erneut ab der ersten Anweisung nach `eZDebug::reset()`. Seine Zähler sind seine eigenen, daher
@@ -383,7 +466,7 @@ Aufruf, gemessen im Rauschen eines Abfragetreffers von ~2,7 µs); die mit jedem 
 
 In der **Exp-Debug-Leiste** sind dieselben Zahlen ein Chip in der angehefteten Leiste (Trefferquote und gesparte Zeit,
 die gesparte Zeit auch in Prozent der Zeit der Seite: `QC 83 % · -186 ms (186 %)` auf einer Seite von 100 ms bedeutet
-etwa 286 ms ohne den Cache; gelb unter 50 %, rot unter 10 % oder im Modus `shared` ohne Speicherung,
+etwa 286 ms ohne den Cache; gelb unter 50 %, rot unter 10 %, im Modus `shared` ohne Speicherung oder wenn ein Schreibvorgang die Sperre des Zustands nicht nehmen konnte,
 `debugbar.ini Thresholds[querycache_hit_rate]`), und der Bericht steht oben im Tab SQL, neben den Akkumulatoren der
 Datenbank. Der **Tab Cache** (setup/managecache) zeigt, was dieser Server hält: Einträge und Speicher in APCu (oder die
 Ergebnisdateien und ihre Größe auf der Festplatte; Dateien zählen keine Treffer), die Zähler seit dem letzten
@@ -444,6 +527,7 @@ APCu-Einträge laufen innerhalb von `MaxAge` ab und werden nie gelesen, solange 
 | APCu-Speicher voll, andere Caches verdrängt | Halten Sie `ApcuReserve` über 0, senken Sie `MaxRows` oder `MaxAge`, oder erhöhen Sie `apc.shm_size`. Setup > Systeminformationen zeigt, was der Abfrage-Cache hält. |
 | „results not kept in APCu“ im Kasten oder im Tab Cache | APCu hatte nicht mehr als `ApcuReserve` Prozent frei. Erhöhen Sie `apc.shm_size`, oder finden Sie die anderen Benutzer von APCu (Setup > Systeminformationen, Abschnitt PHP). |
 | `state.ser` nicht beschreibbar (Warnungen im Log) | `var/<site>/cache/querycache/` muss für jeden Benutzer beschreibbar sein, unter dem die Website läuft. Von root geschriebene Dateien werden dem Besitzer des Verzeichnisses übergeben. |
+| „Schreibvorgänge konnten die Sperre des Zustands nicht nehmen“ im Kasten, `could not lock ... state.lock` im Log, ein roter QC-Chip in der Exp Debug-Leiste | `state.lock` lässt sich nicht öffnen oder sperren: Jeder Schreibvorgang lässt jedes gecachte Ergebnis veralten, der Cache bringt also fast nichts. Machen Sie `var/<site>/cache/querycache/state.lock` für jeden Benutzer beschreibbar, unter dem die Website läuft (FPM, Velocity, Cron); auf NFS mit NFSv4 einhängen oder `lockd` betreiben. Leeren Sie danach den Query-Cache: Der Hinweis verschwindet und bleibt weg, solange die Sperre funktioniert. |
 | Ein Ergebnis sieht falsch aus, und Sie verdächtigen den Cache | Setzen Sie `Mode=off` und vergleichen Sie. Ist die Ausgabe dieselbe, ist es nicht der Cache. |
 
 ### Tests
@@ -491,10 +575,20 @@ APCu-Einträge laufen innerhalb von `MaxAge` ab und werden nie gelesen, solange 
 | QC-35 | In einer Webanfrage, einschließlich eines Velocity-Workers, läuft das Bereinigen am Ende der Anfrage und wird einmal registriert; ein Skript führt es sofort aus |
 | QC-36 | Eine Zeitbasis für den gesparten Anteil: der Skriptstart (ohne ihn `REQUEST_TIME_FLOAT`) bis zu dem Ende, das die Leiste setzt; ein veralteter oder späterer Start ergibt keinen Anteil; eine neue Anfrage misst wieder bis jetzt |
 | QC-37 | Die Berichtszeile sagt, wie viel länger die Seite ohne den Cache gedauert hätte, ab einem Anteil von 100 %, und enthält kein Inline-CSS |
+| QC-38 | Anweisungen, deren Tabellen sich nicht alle bestimmen lassen, werden nicht gecacht (eine abgeleitete Tabelle, ein Index-Hinweis, `PARTITION`, `LATERAL`, `ONLY` oder `TABLE()` in `FROM`, ein geklammerter Join, eine Kommaliste nach einem Join, ein Name in Anführungszeichen mit Leerzeichen, ein Kommentar mit oder ohne Apostroph, die Literale `q''` und `E''`, ein Backslash, der ein Literal je nach Datenbank anders enden lässt); jedes `SELECT` von `MINUS`, `INTERSECT`, `EXCEPT`, `UNION` und `STRAIGHT_JOIN` wird gelesen; `\'` und Zeichenketten in doppelten Anführungszeichen von MySQL bleiben ein Literal; ein Kernel-Join mit `IN ( ... )`-Listen bleibt cachebar; `SAMPLE` ist volatil |
+| QC-39 | Ergebnisse, die unter einer nicht mehr vorhandenen Zustandsdatei gehalten wurden (mit dem Cache-Verzeichnis gelöscht), werden nicht wieder geantwortet; was danach gespeichert wird, schon |
+| QC-40 | Ein Schreibvorgang, der die Sperre des Zustands nicht nehmen kann, lässt alles veralten und protokolliert es |
+| QC-41 | Das Memo hält höchstens `MEMO_MAX` Ergebnisse, das am längsten nicht benutzte geht zuerst |
+| QC-42 | Der Schlüssel enthält Datenbankbenutzer, Port und Socket: Die Zeilen eines anderen Benutzers werden nicht geantwortet |
+| QC-43 | Lesevorgänge auf PostgreSQL und SQLite: Ein Backslash maskiert nicht (`standard_conforming_strings` aus: er maskiert, aus der Verbindung gelesen), Namen in Anführungszeichen mit Apostroph und nicht endende Literale werden nicht gecacht, `E''` und Dollar-Quoting ebenso nicht, `$1` und `#` bleiben lesbar, ihre volatilen Funktionen und `'now'` |
+| QC-44 | Schreibvorgänge auf PostgreSQL und SQLite: `ONLY`, Listen bei `TRUNCATE` und `DROP TABLE`, `RENAME TO`, `INSERT OR REPLACE`, `ON CONFLICT`; `CASCADE`, `WITH`, `COPY` und ein Name, der sich nicht lesen lässt, lassen alles veralten |
+| QC-45 | Eine Sperre auf einem `state.lock`, das inzwischen gelöscht wurde, wird aufgegeben und auf der neuen Datei genommen (ein zweiter Prozess, `pcntl_fork()`; ohne pcntl übersprungen) |
+| QC-46 | Ein persistenter Worker beginnt jede Anfrage mit dem Zustand auf der Festplatte: Der Schreibvorgang eines anderen Prozesses zählt sofort, Ergebnisse unter einer ersetzten Zustandsdatei werden nicht geantwortet (auch nicht die, die in der Sekunde gespeichert wurden, in der die Anfrage noch den alten Zustand hielt), das Memo ist leer, ein Fehlschlag der Sperre wird einmal pro Anfrage protokolliert |
+| QC-47 | Ein Fehlschlag der Sperre erscheint in Setup > Systeminformationen (`status()` `lock_failed`, aus der Zustandsdatei) und in der Debug-Ausgabe; ein späterer Schreibvorgang unter der Sperre behält ihn, ein Leeren vergisst ihn |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
-# OK (37 tests; QC-24, QC-33, QC-34 and QC-35 need apc.enable_cli=1), about 7 s (QC-08, QC-12, QC-28 and QC-34 wait)
+# OK (47 tests; QC-24, QC-33, QC-34 and QC-35 need apc.enable_cli=1, QC-45 pcntl), about 8 s (QC-08, QC-12, QC-28, QC-34 and QC-45 wait)
 ```
 
 **Auf einer laufenden Website** (MySQL, die echten Treiber), jeweils geprüft auf einer Testinstallation am 2026-09-27:

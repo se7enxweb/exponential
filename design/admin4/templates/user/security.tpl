@@ -1,10 +1,12 @@
 {* user/security: "Security activity", the recent security events of one account (kernel/private/classes/views/user/security.php,
    expUserSecurityActivity over the user audit log): a timeline, newest first, filtered (all, sign-ins, account
    changes, problems) and paged, with the counts of the last 30 days on top and links to "Your devices" and the
-   password page. Read only.
+   password page. On the own account: "Was this you?" on the events that need attention, and "Secure your
+   account" (every other session signed out, then the password).
    Variables: security_user, security_user_name, security_user_id, security_own, security_available, security_filter,
    security_filters, security_events, security_count, security_limit, security_summary, security_retention_days,
-   security_action, view_parameters.
+   security_action, view_parameters, security_review, security_review_days,
+   security_secure, security_message, security_form_token.
    No inline CSS: shared components only (.a4-figures, .a4-tabs, .a4-timeline). The same file is in design/admin and
    design/admin4. Guide: doc/eng-us/features/6.0/user-sessions.md *}
 {def $kinds = hash(
@@ -64,6 +66,39 @@
     </div>
 </div>
 
+{if $security_message}
+<div class="a4-notice is-{$security_message.level|wash}" role="status">
+<p>{switch match=$security_message.key}
+{case match='secured'}{if $security_message.tracked|not}{'Sessions are not recorded on this site, so no other device could be signed out. Change your password now.'|i18n( 'design/admin/user/security' )}{elseif $security_message.count|gt( 0 )}{'%count other sessions were signed out. Now change your password.'|i18n( 'design/admin/user/security',, hash( '%count', $security_message.count ) )}{else}{'No other device was signed in. Now change your password.'|i18n( 'design/admin/user/security' )}{/if}{/case}
+{case match='confirmed'}{'Thank you. The event is marked as yours.'|i18n( 'design/admin/user/security' )}{/case}
+{case match='not_found'}{'That event needs no answer.'|i18n( 'design/admin/user/security' )}{/case}
+{case match='token'}{'The page had expired. Nothing was changed; please try again.'|i18n( 'design/admin/user/security' )}{/case}
+{case}{/case}
+{/switch}</p>
+{if eq( $security_message.key, 'secured' )}<p><a class="a4-btn a4-btn-primary" href={'user/password'|ezurl}><span class="a4-icon a4-bi-key" aria-hidden="true"></span> {'Change password'|i18n( 'design/admin/user/security' )}</a></p>{/if}
+</div>
+{/if}
+{if $security_own}
+<section class="a4-card a4-section{if $security_secure} is-attention{/if}" id="secure" aria-labelledby="security-secure-title">
+    <div class="a4-card-head">
+        <h2 class="a4-h3 a4-card-title" id="security-secure-title"><span class="a4-icon a4-bi-shield-fill-check is-large" aria-hidden="true"></span>{'Secure your account'|i18n( 'design/admin/user/security' )}</h2>
+    </div>
+    <div class="a4-card-body">
+        <p>{'If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.'|i18n( 'design/admin/user/security' )}</p>
+        <form method="post" action={'user/security'|ezurl}>
+            <input type="hidden" name="SecurityToken" value="{$security_form_token|wash}" />
+            <details class="a4-confirm"{if $security_secure} open="open"{/if}>
+                <summary class="a4-btn a4-btn-outline-danger">{'Secure your account'|i18n( 'design/admin/user/security' )}</summary>
+                <div class="a4-fold-body is-warn">
+                    <p>{'Every device except this one is signed out at its next request. Then you choose a new password.'|i18n( 'design/admin/user/security' )}</p>
+                    <button type="submit" class="a4-btn a4-btn-danger" name="SecureButton" value="1">{'Yes, sign out the other devices'|i18n( 'design/admin/user/security' )}</button>
+                </div>
+            </details>
+        </form>
+    </div>
+</section>
+{/if}
+
 {if $security_available|not}
 <div class="a4-notice is-warn" role="status">
     <p class="a4-notice-title">{'The security activity is not recorded'|i18n( 'design/admin/user/security' )}</p>
@@ -104,6 +139,14 @@
                 {if $e.host}<span class="a4-timeline-meta">{$e.host|wash}</span>{/if}
                 {foreach $e.details as $key => $value}<span class="a4-timeline-meta">{first_set( $detail_names[$key], $key )|wash}: {$value|wash}</span>{/foreach}
                 {if ne( $e.result, 'success' )}<span class="a4-badge {first_set( $level_class[$e.level], '' )}">{cond( eq( $e.result, 'failed' ), 'failed'|i18n( 'design/admin/user/security' ), eq( $e.result, 'refused' ), 'refused'|i18n( 'design/admin/user/security' ), $e.result )|wash}</span>{/if}
+                {if is_set( $security_review[$e.id] )}
+                <form class="a4-actions" method="post" action={'user/security'|ezurl}>
+                    <input type="hidden" name="SecurityToken" value="{$security_form_token|wash}" />
+                    <span class="a4-timeline-meta"><strong>{'Was this you?'|i18n( 'design/admin/user/security' )}</strong></span>
+                    <button type="submit" class="a4-btn a4-btn-small" name="ConfirmEventButton" value="{$e.id|wash}">{'Yes, it was me'|i18n( 'design/admin/user/security' )}</button>
+                    <a class="a4-btn a4-btn-small a4-btn-outline-danger" href={'user/security/(secure)/1'|ezurl}>{'No, secure my account'|i18n( 'design/admin/user/security' )}</a>
+                </form>
+                {/if}
             </div>
         </li>
     {/foreach}

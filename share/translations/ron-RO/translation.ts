@@ -25623,6 +25623,10 @@ Notă: pachetele nu vor fi dezinstalate.</translation>
         <source>last purge</source>
         <translation>ultima golire</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Scrierile nu au putut lua blocarea stării (ultima dată %date): fiecare a făcut învechite toate rezultatele din cache. %file trebuie să poată fi scris de fiecare utilizator sub care rulează site-ul; pe NFS are nevoie de NFSv4 sau lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78355,6 +78359,58 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sesiunile și evenimentele dumneavoastră de securitate, ca fișier JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sesiunile nu sunt înregistrate pe acest site, așa că niciun alt dispozitiv nu a putut fi deconectat. Schimbați-vă parola acum.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Au fost deconectate %count alte sesiuni. Acum schimbați-vă parola.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Niciun alt dispozitiv nu era conectat. Acum schimbați-vă parola.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Vă mulțumim. Evenimentul a fost marcat ca fiind al dumneavoastră.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Acest eveniment nu necesită niciun răspuns.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Pagina expirase. Nu s-a modificat nimic; încercați din nou.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Securizare cont</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Dacă ceva de aici nu a fost făcut de dumneavoastră, deconectați toate celelalte dispozitive, apoi alegeți o parolă nouă. Dispozitivele menținute conectate cu „Memorare date de conectare” sunt și ele deconectate.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Fiecare dispozitiv, cu excepția acestuia, este deconectat la următoarea sa solicitare. Apoi alegeți o parolă nouă.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Da, deconectați celelalte dispozitive</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ați fost dumneavoastră?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Da, am fost eu</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nu, securizați-mi contul</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78537,6 +78593,58 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sesiunile și evenimentele dumneavoastră de securitate, ca fișier JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sesiunile nu sunt înregistrate pe acest site, așa că niciun alt dispozitiv nu a putut fi deconectat. Schimbați-vă parola acum.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Au fost deconectate %count alte sesiuni. Acum schimbați-vă parola.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Niciun alt dispozitiv nu era conectat. Acum schimbați-vă parola.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Vă mulțumim. Evenimentul a fost marcat ca fiind al dumneavoastră.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Acest eveniment nu necesită niciun răspuns.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Pagina expirase. Nu s-a modificat nimic; încercați din nou.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Securizare cont</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Dacă ceva de aici nu a fost făcut de dumneavoastră, deconectați toate celelalte dispozitive, apoi alegeți o parolă nouă. Dispozitivele menținute conectate cu „Memorare date de conectare” sunt și ele deconectate.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Fiecare dispozitiv, cu excepția acestuia, este deconectat la următoarea sa solicitare. Apoi alegeți o parolă nouă.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Da, deconectați celelalte dispozitive</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ați fost dumneavoastră?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Da, am fost eu</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nu, securizați-mi contul</translation>
     </message>
 </context>
 <context>
@@ -78728,6 +78836,42 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Handler de sesiuni: %handler. Sesiunile sunt citite din tabelul expuser_session, astfel încât raportul funcționează cu orice handler.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Activitate suspectă în ultimele %hours ore</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>O rețea nu a reușit să se conecteze la %accounts conturi (%count încercări)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Cont blocat după autentificări eșuate</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count autentificări eșuate la un cont</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Conectat din %count țări simultan</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitate de securitate</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesiuni</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Autentificările eșuate sunt citite din jurnalul de audit al utilizatorilor, care nu este disponibil aici.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nimic suspect: niciun cont cu autentificări eșuate repetate, nicio rețea care încearcă mai multe conturi, niciun cont conectat din mai multe țări.</translation>
     </message>
 </context>
 <context>

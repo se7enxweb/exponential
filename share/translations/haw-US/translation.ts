@@ -25684,6 +25684,10 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
         <source>last purge</source>
         <translation>hoʻomaʻemaʻe hope loa</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>ʻAʻole hiki i nā kākau ke lawe i ka laka kūlana (hope loa %date): ua hoʻohala kēlā me kēia i nā hualoaʻa i mālama ʻia a pau. Pono e hiki i kēlā me kēia mea hoʻohana e holo ai ka pūnaewele ke kākau i %file; ma NFS pono ʻo NFSv4 a i ʻole lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Kāu mau hālāwai a me nā hanana palekana ma ke ʻano he waihona JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ʻAʻole i hoʻopaʻa ʻia nā wā noho ma kēia pūnaewele, no laila ʻaʻohe hāmeʻa ʻē aʻe i hoʻopau ʻia. E hoʻololi i kāu ʻōlelo huna i kēia manawa.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Ua hoʻopau ʻia nā wā noho ʻē aʻe he %count. I kēia manawa e hoʻololi i kāu ʻōlelo huna.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ʻAʻohe hāmeʻa ʻē aʻe i komo. I kēia manawa e hoʻololi i kāu ʻōlelo huna.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Mahalo. Ua kaha ʻia ka hanana he mea nāu.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ʻAʻole pono he pane no ia hanana.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Ua pau ka manawa o ka ʻaoʻao. ʻAʻohe mea i hoʻololi ʻia; e ʻoluʻolu, e hoʻāʻo hou.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>E hoʻopalekana i kāu moʻokāki</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Inā ʻaʻole ʻoe kekahi mea ma ʻaneʻi, e hoʻopau i nā hāmeʻa ʻē aʻe a pau, a laila e koho i ʻōlelo huna hou. Hoʻopau pū ʻia nā hāmeʻa i noho komo me E hoʻomanaʻo iaʻu.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Hoʻopau ʻia kēlā me kēia hāmeʻa koe kēia ma kāna noi aʻe. A laila koho ʻoe i ʻōlelo huna hou.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ʻAe, e hoʻopau i nā hāmeʻa ʻē aʻe</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ʻO ʻoe anei kēia?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ʻAe, ʻo wau nō</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ʻAʻole, e hoʻopalekana i kaʻu moʻokāki</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Kāu mau hālāwai a me nā hanana palekana ma ke ʻano he waihona JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ʻAʻole i hoʻopaʻa ʻia nā wā noho ma kēia pūnaewele, no laila ʻaʻohe hāmeʻa ʻē aʻe i hoʻopau ʻia. E hoʻololi i kāu ʻōlelo huna i kēia manawa.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Ua hoʻopau ʻia nā wā noho ʻē aʻe he %count. I kēia manawa e hoʻololi i kāu ʻōlelo huna.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ʻAʻohe hāmeʻa ʻē aʻe i komo. I kēia manawa e hoʻololi i kāu ʻōlelo huna.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Mahalo. Ua kaha ʻia ka hanana he mea nāu.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ʻAʻole pono he pane no ia hanana.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Ua pau ka manawa o ka ʻaoʻao. ʻAʻohe mea i hoʻololi ʻia; e ʻoluʻolu, e hoʻāʻo hou.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>E hoʻopalekana i kāu moʻokāki</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Inā ʻaʻole ʻoe kekahi mea ma ʻaneʻi, e hoʻopau i nā hāmeʻa ʻē aʻe a pau, a laila e koho i ʻōlelo huna hou. Hoʻopau pū ʻia nā hāmeʻa i noho komo me E hoʻomanaʻo iaʻu.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Hoʻopau ʻia kēlā me kēia hāmeʻa koe kēia ma kāna noi aʻe. A laila koho ʻoe i ʻōlelo huna hou.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ʻAe, e hoʻopau i nā hāmeʻa ʻē aʻe</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ʻO ʻoe anei kēia?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ʻAe, ʻo wau nō</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ʻAʻole, e hoʻopalekana i kaʻu moʻokāki</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Mea lawelawe hālāwai: %handler. Heluhelu ʻia nā hālāwai mai ka pakuhi expuser_session, no laila hana ka hōʻike me kēlā me kēia mea lawelawe.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Nā hana kānalua i nā hola %hours i hala</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Ua hāʻule hoʻokahi pūnaewele i ke komo ʻana i nā moʻokāki %accounts (%count hoʻāʻo)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Ua laka ʻia ka moʻokāki ma hope o nā komo ʻana i hāʻule</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count komo ʻana i hāʻule ma hoʻokahi moʻokāki</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Ua komo mai nā ʻāina %count i ka manawa hoʻokahi</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Nā hana palekana</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Nā wā noho</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Heluhelu ʻia nā komo ʻana i hāʻule mai ka moʻolelo loiloi o nā mea hoʻohana, ʻaʻole i loaʻa ma ʻaneʻi.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>ʻAʻohe mea kānalua: ʻaʻohe moʻokāki me nā komo ʻana i hāʻule pinepine, ʻaʻohe pūnaewele e hoʻāʻo ana i nā moʻokāki he nui, ʻaʻohe moʻokāki i komo mai nā ʻāina he nui.</translation>
     </message>
 </context>
 <context>

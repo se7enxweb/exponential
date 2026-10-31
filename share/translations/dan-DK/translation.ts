@@ -25903,6 +25903,10 @@ Navigeringsdel</translation>
 
 Exponential-version</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Skrivninger kunne ikke tage tilstandslåsen (senest %date): hver af dem gjorde alle cachelagrede resultater forældede. %file skal være skrivbar for hver bruger, webstedet kører som; på NFS kræver den NFSv4 eller lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -79005,6 +79009,58 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Dine sessioner og sikkerhedshændelser som en JSON-fil.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sessioner registreres ikke på dette websted, så ingen anden enhed kunne logges ud. Skift din adgangskode nu.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count andre sessioner blev logget ud. Skift nu din adgangskode.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ingen anden enhed var logget ind. Skift nu din adgangskode.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Tak. Hændelsen er markeret som din.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Den hændelse kræver intet svar.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Siden var udløbet. Intet blev ændret; prøv igen.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Beskyt din konto</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Hvis noget her ikke var dig, så log alle andre enheder ud, og vælg derefter en ny adgangskode. Enheder, der forblev logget ind med Husk mig, logges også ud.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Alle enheder undtagen denne logges ud ved deres næste anmodning. Derefter vælger du en ny adgangskode.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ja, log de andre enheder ud</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Var det dig?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ja, det var mig</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nej, beskyt min konto</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -79187,6 +79243,58 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Dine sessioner og sikkerhedshændelser som en JSON-fil.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sessioner registreres ikke på dette websted, så ingen anden enhed kunne logges ud. Skift din adgangskode nu.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count andre sessioner blev logget ud. Skift nu din adgangskode.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ingen anden enhed var logget ind. Skift nu din adgangskode.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Tak. Hændelsen er markeret som din.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Den hændelse kræver intet svar.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Siden var udløbet. Intet blev ændret; prøv igen.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Beskyt din konto</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Hvis noget her ikke var dig, så log alle andre enheder ud, og vælg derefter en ny adgangskode. Enheder, der forblev logget ind med Husk mig, logges også ud.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Alle enheder undtagen denne logges ud ved deres næste anmodning. Derefter vælger du en ny adgangskode.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ja, log de andre enheder ud</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Var det dig?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ja, det var mig</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nej, beskyt min konto</translation>
     </message>
 </context>
 <context>
@@ -79378,6 +79486,42 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Sessionshandler: %handler. Sessionerne læses fra tabellen expuser_session, så rapporten virker med enhver handler.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Mistænkelig aktivitet inden for de seneste %hours timer</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Ét netværk kunne ikke logge ind på %accounts konti (%count forsøg)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto låst efter mislykkede logins</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count mislykkede logins på én konto</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Logget ind fra %count lande på samme tid</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sikkerhedsaktivitet</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessioner</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Mislykkede logins læses fra brugernes revisionslog, som ikke er tilgængelig her.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Intet mistænkeligt: ingen konto med gentagne mislykkede logins, intet netværk, der prøver flere konti, ingen konto logget ind fra flere lande.</translation>
     </message>
 </context>
 <context>

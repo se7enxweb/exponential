@@ -24906,6 +24906,10 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <source>last purge</source>
         <translation>laatste verwijdering</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Schrijfacties konden de statusvergrendeling niet krijgen (laatst %date): elke actie maakte alle gecachte resultaten verouderd. %file moet schrijfbaar zijn voor elke gebruiker waaronder de site draait; op NFS is NFSv4 of lockd nodig.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/operatorcode</name>
@@ -79550,6 +79554,58 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Je sessies en beveiligingsgebeurtenissen als JSON-bestand.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sessies worden op deze site niet vastgelegd, dus er kon geen ander apparaat worden uitgelogd. Wijzig nu je wachtwoord.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count andere sessies zijn uitgelogd. Wijzig nu je wachtwoord.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Er was geen ander apparaat ingelogd. Wijzig nu je wachtwoord.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Bedankt. De gebeurtenis is gemarkeerd als de jouwe.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Die gebeurtenis hoeft niet beantwoord te worden.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>De pagina was verlopen. Er is niets gewijzigd; probeer het opnieuw.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Account beveiligen</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Als iets hier niet door jou is gedaan, log dan elk ander apparaat uit en kies daarna een nieuw wachtwoord. Apparaten die ingelogd bleven met Onthoud mij worden ook uitgelogd.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Elk apparaat behalve dit wordt bij zijn volgende verzoek uitgelogd. Daarna kies je een nieuw wachtwoord.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ja, log de andere apparaten uit</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Was jij dit?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ja, dat was ik</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nee, beveilig mijn account</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -79732,6 +79788,58 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Je sessies en beveiligingsgebeurtenissen als JSON-bestand.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sessies worden op deze site niet vastgelegd, dus er kon geen ander apparaat worden uitgelogd. Wijzig nu je wachtwoord.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count andere sessies zijn uitgelogd. Wijzig nu je wachtwoord.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Er was geen ander apparaat ingelogd. Wijzig nu je wachtwoord.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Bedankt. De gebeurtenis is gemarkeerd als de jouwe.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Die gebeurtenis hoeft niet beantwoord te worden.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>De pagina was verlopen. Er is niets gewijzigd; probeer het opnieuw.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Account beveiligen</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Als iets hier niet door jou is gedaan, log dan elk ander apparaat uit en kies daarna een nieuw wachtwoord. Apparaten die ingelogd bleven met Onthoud mij worden ook uitgelogd.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Elk apparaat behalve dit wordt bij zijn volgende verzoek uitgelogd. Daarna kies je een nieuw wachtwoord.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ja, log de andere apparaten uit</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Was jij dit?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ja, dat was ik</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nee, beveilig mijn account</translation>
     </message>
 </context>
 <context>
@@ -79923,6 +80031,42 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Sessiehandler: %handler. De sessies worden gelezen uit de tabel expuser_session, dus het rapport werkt met elke handler.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Verdachte activiteit in de afgelopen %hours uur</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Eén netwerk kon niet inloggen op %accounts accounts (%count pogingen)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Account vergrendeld na mislukte aanmeldingen</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count mislukte aanmeldingen op één account</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Tegelijk ingelogd vanuit %count landen</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Beveiligingsactiviteit</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessies</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Mislukte aanmeldingen worden gelezen uit het auditlogboek van gebruikers, dat hier niet beschikbaar is.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Niets verdachts: geen account met herhaalde mislukte aanmeldingen, geen netwerk dat meerdere accounts probeert, geen account dat vanuit meerdere landen is ingelogd.</translation>
     </message>
 </context>
 <context>
