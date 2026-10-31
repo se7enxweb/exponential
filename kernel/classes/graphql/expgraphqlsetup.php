@@ -297,7 +297,8 @@ class expGraphQLSetup
     /**
      * What exp:graphql:status and Setup > GraphQL show of the current siteaccess.
      *
-     * @return array siteaccess, enabled, mutations, siteaccessList, endpoint, library, libraryVersion, limits,
+     * @return array siteaccess, enabled, mutations, siteaccessList, endpoint, library, libraryVersion, libraryState
+     *               (available, missing, incompatible), libraryProblem (null when available), limits,
      *               rateLimits, persisted, responseCache, introspection, naming, schemaHash, classes, fields,
      *               extensions, unmappedDatatypes
      */
@@ -311,6 +312,8 @@ class expGraphQLSetup
                          'endpoint' => '/api/graphql',
                          'library' => $library,
                          'libraryVersion' => $library ? expGraphQL::libraryVersion() : null,
+                         'libraryState' => expGraphQL::libraryState(),
+                         'libraryProblem' => expGraphQL::libraryProblem(),
                          'limits' => array( 'maxDepth' => expGraphQL::intSetting( 'MaxDepth', 12 ), 'maxComplexity' => expGraphQL::intSetting( 'MaxComplexity', 1000 ),
                                             'maxListLimit' => expGraphQL::intSetting( 'MaxListLimit', 100 ), 'defaultListLimit' => expGraphQL::intSetting( 'DefaultListLimit', 25 ),
                                             'maxQueryLength' => expGraphQL::intSetting( 'MaxQueryLength', expGraphQLServer::MAX_QUERY_BYTES ),

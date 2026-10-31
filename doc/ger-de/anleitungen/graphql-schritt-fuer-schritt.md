@@ -14,7 +14,7 @@ Referenz für alles, was hier verwendet wird, ist [Die GraphQL-API](../funktione
 | | |
 |---|---|
 | Zeit | 20 Minuten, dazu `npm install` |
-| Sie brauchen | Exponential 6.0.15, `webonyx/graphql-php` 15 (verlangt von `composer.json`), eine Shell im Wurzelverzeichnis der Installation, Node.js 20 oder neuer für die JavaScript-Kits |
+| Sie brauchen | Exponential 6.0.15, `webonyx/graphql-php` 15 (optional; installiert von der eigenen Composer-Einrichtung des Kernels, siehe [Die Bibliothek](../funktionen/6.0/graphql.md#die-bibliothek)), eine Shell im Wurzelverzeichnis der Installation, Node.js 20 oder neuer für die JavaScript-Kits |
 | Sie bekommen | einen Endpunkt unter `https://<Ihre Site>/api/graphql`, einen persönlichen API-Schlüssel, ein Next.js-, Nuxt-, Astro-, HTML- oder Expo-Projekt, das die Site liest |
 
 ## Inhalt
@@ -39,8 +39,8 @@ Referenz für alles, was hier verwendet wird, ist [Die GraphQL-API](../funktione
 
 Die letzte Zeile lautet `PASS the GraphQL API can run (switched off here)`: Die Bibliothek ist installiert, und das
 Schema lässt sich aus Ihren Inhaltsklassen bauen. `schema` nennt seinen Hash und die Zahl der Klassen und Felder;
-`string only` listet die Datentypen ohne eigenen Typ (sie antworten mit ihrem Text). `FAIL the library is missing`
-heißt, dass `composer install` nicht lief oder `[GraphQLSettings] LibraryPath` ins Leere zeigt: siehe
+`string only` listet die Datentypen ohne eigenen Typ (sie antworten mit ihrem Text). `FAIL GraphQL API unavailable: the library is missing`
+heißt, dass `composer install --no-dev` sie ausließ (die Bibliothek ist optional) oder `[GraphQLSettings] LibraryPath` ins Leere zeigt; `the library is not webonyx/graphql-php 15` heißt, dass eine Plattform eine andere Version installiert hat. Siehe
 [Die Bibliothek](../funktionen/6.0/graphql.md#die-bibliothek).
 
 ## 2. Ansehen, was das Einschalten ändert
