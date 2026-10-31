@@ -299,6 +299,19 @@ HTTPS) und die Rewrite-Regeln, und testen Sie mit
 `curl -i -X PROPFIND -H 'Depth: 1' https://www.example.com/index_webdav.php/` (erwartet: `207 Multi-Status`):
 [Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](../bc/6.0/webdav-einstiegsskript-index-webdav.md).
 
+**Wenn SOAP eingeschaltet ist** (`soap.ini` `EnableSOAP=true`, zum Beispiel für die Erweiterung `syndication`): Seit
+6.0.15 heißt sein Einstiegsskript `index_soap.php`. `soap.php` leitet nur noch dorthin weiter und wird in einer späteren
+Hauptversion entfernt. Lassen Sie `index_soap.php` im HTTPS-Virtual-Host und in `.htaccess` durch, stellen Sie die
+SOAP-Clients darauf um, laden Sie den Webserver neu und testen Sie mit
+`curl -sS -i 'https://www.example.com/index_soap.php?wsdl'` (erwartet: `200` und
+`Error: this web page does only understand POST methods`; ein `404` oder eine Seite der Website bedeutet, dass die
+Regel fehlt): [Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../bc/6.0/soap-einstiegsskript-index-soap.md).
+
+**Das ist der Schritt, der am häufigsten vergessen wird.** Eine Aktualisierung ersetzt die Skripte, aber der virtuelle
+Host, die Rewrite-Regeln und die Direktiven im Control Panel gehören Ihnen: Keine Aktualisierung ändert sie. Ändern
+Sie sie im HTTPS-Host (`*:443`), nicht nur im HTTP-Host, und führen Sie den `curl`-Test nach dem Neuladen aus, bevor
+Sie die Aktualisierung für abgeschlossen erklären.
+
 Was sich Monat für Monat geändert hat, erzählt die [Chronik](../../eng-us/history/2026/); jede einzelne Änderung steht im
 [Verzeichnis des Root-Repositorys](../geschichte/aenderungsverzeichnis/exponential-root.md).
 
