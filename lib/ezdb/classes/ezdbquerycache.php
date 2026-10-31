@@ -108,9 +108,9 @@ class eZDBQueryCache
      * Oracle's forms of the same, without parentheses: a sequence's NEXTVAL and
      * CURRVAL (the Oracle driver reads every new row's id with
      * "SELECT <sequence>.currval FROM DUAL"), the clock, the SCN, generated
-     * ids and the session context.
+     * ids and the session context; SAMPLE (n) reads a random share of a table.
      */
-    const ORACLE_VOLATILE = '/\.\s*(?:NEXTVAL|CURRVAL)\b|\b(?:SYSDATE|SYSTIMESTAMP|CURRENT_SCN|ORA_ROWSCN|SYS_GUID|SYS_CONTEXT|USERENV|DBMS_RANDOM|DBMS_LOCK)\b/i';
+    const ORACLE_VOLATILE = '/\.\s*(?:NEXTVAL|CURRVAL)\b|\b(?:SYSDATE|SYSTIMESTAMP|CURRENT_SCN|ORA_ROWSCN|SYS_GUID|SYS_CONTEXT|USERENV|DBMS_RANDOM|DBMS_LOCK)\b|\bSAMPLE\s*\(/i';
 
     const VOLATILE = '/\bUNIX_TIMESTAMP\s*\(\s*\)|\b(?:CURRENT_DATE|CURRENT_TIME|CURRENT_TIMESTAMP|LOCALTIME|LOCALTIMESTAMP|CURRENT_USER)\b|\b(NOW|SYSDATE|CURDATE|CURTIME|CURRENT_DATE|CURRENT_TIME|CURRENT_TIMESTAMP|LOCALTIME|LOCALTIMESTAMP|UTC_DATE|UTC_TIME|UTC_TIMESTAMP|RAND|RANDOM|UUID|UUID_SHORT|LAST_INSERT_ID|LASTVAL|CURRVAL|NEXTVAL|FOUND_ROWS|ROW_COUNT|CONNECTION_ID|GET_LOCK|RELEASE_LOCK|IS_FREE_LOCK|SLEEP|BENCHMARK|DATABASE|USER|CURRENT_USER|SESSION_USER|SYSTEM_USER|VERSION)\s*\(|\bFOR\s+UPDATE\b|\bLOCK\s+IN\s+SHARE\s+MODE\b|\bFOR\s+SHARE\b|\bSQL_CALC_FOUND_ROWS\b|\bSQL_NO_CACHE\b|@@?\w|\bINTO\s+(OUTFILE|DUMPFILE|@)/i';
 
@@ -604,7 +604,7 @@ class eZDBQueryCache
         // deleted by its key): delete it.
         if ( $storage === 'apcu' && !self::apcuRoom() )
             @apcu_delete( 'ezqc:' . $key );
-        $tables = self::readTables( $sql );
+        $tables = self::readTables( $sql, self::backslashEscapes( $db ) );
         if ( $tables === null )
         {
             self::$stats['uncacheable']++;
@@ -1234,7 +1234,7 @@ class eZDBQueryCache
         if ( preg_match( '/^\s*DROP\s+TEMPORARY\s+TABLE\b/i', $sql ) )
             return;
         self::$stats['writes']++;
-        $tables = self::writtenTables( $sql );
+        $tables = self::writtenTables( $sql, self::backslashEscapes( $db ) );
         self::debugWrite( $sql, $tables === null );
         if ( $tables !== null )
         {
@@ -1615,48 +1615,88 @@ class eZDBQueryCache
 
     /**
      * The tables a SELECT reads (lower case), or null when it must not be
-     * cached: not a plain SELECT, volatile, or no table found.
+     * cached: not a plain SELECT, volatile, no table found, or an item of a
+     * FROM list that is not a table name (a derived table, TABLE(...)): its
+     * tables could not all be told, and a result kept for too few tables
+     * would outlive a write to the others.
+     *
+     * @param string $sql
+     * @param bool|null $backslash see withoutStrings()
+     * @return array|null
      */
-    public static function readTables( $sql )
+    public static function readTables( $sql, $backslash = null )
     {
         $sql = (string)$sql;
         if ( strncasecmp( ltrim( $sql ), 'select', 6 ) !== 0 )
             return null;
         if ( preg_match( self::VOLATILE, $sql ) || preg_match( self::ORACLE_VOLATILE, $sql ) )
             return null;
-        $text = self::withoutStrings( $sql );
+        $text = self::withoutStrings( $sql, $backslash );
         if ( $text === null )
             return null;
-        $tables = array();
-        // FROM a, b alias, c ... up to the next clause; subqueries have their own FROM.
-        if ( preg_match_all( '/\bFROM\s+(.+?)(?=\bWHERE\b|\bGROUP\s+BY\b|\bORDER\s+BY\b|\bLIMIT\b|\bHAVING\b|\bUNION\b|\b(?:INNER|LEFT|RIGHT|CROSS|FULL|STRAIGHT_JOIN|NATURAL|OUTER)\b|\bJOIN\b|\bON\b|\)|$)/is', $text, $m ) )
+        // A parenthesised join "JOIN ( b JOIN c ... )" or a derived table after JOIN: its tables are not all read
+        // below. A comma list after a join ("JOIN b ON a.i = b.i, c", "JOIN b USING ( i ), c", "JOIN b x, c") is
+        // never read either. Checked with every parenthesised group taken out (IN lists, functions, subqueries).
+        if ( preg_match( '/\bJOIN\s*\(/i', $text ) )
+            return null;
+        $flat = $text;
+        for ( $depth = 0; $depth < 32 && strpos( $flat, '(' ) !== false; $depth++ )
         {
-            foreach ( $m[1] as $list )
+            $next = preg_replace( '/\([^()]*+\)/', '', $flat );
+            if ( $next === null || $next === $flat )
+                return null;
+            $flat = $next;
+        }
+        if ( strpos( $flat, '(' ) !== false
+             || preg_match( '/\b(?:ON|JOIN)\b(?:(?!\b(?:WHERE|GROUP|ORDER|LIMIT|HAVING|UNION|MINUS|INTERSECT|EXCEPT|JOIN|STRAIGHT_JOIN|INNER|LEFT|RIGHT|CROSS|FULL|NATURAL|OUTER)\b)[^,])*+,/is', $flat ) )
+            return null;
+        $tables = array();
+        // FROM a, b alias, c ... up to the next clause; subqueries have their own FROM, and so has each
+        // SELECT of a set operation (UNION, Oracle's MINUS, INTERSECT, EXCEPT).
+        $found = preg_match_all( '/\bFROM\s+(.+?)(?=\bWHERE\b|\bGROUP\s+BY\b|\bORDER\s+BY\b|\bLIMIT\b|\bHAVING\b|\bUNION\b|\bMINUS\b|\bINTERSECT\b|\bEXCEPT\b|\b(?:INNER|LEFT|RIGHT|CROSS|FULL|STRAIGHT_JOIN|NATURAL|OUTER)\b|\bJOIN\b|\bON\b|\)|$)/is', $text, $m );
+        if ( $found === false )
+            return null;
+        foreach ( $m[1] as $list )
+        {
+            foreach ( explode( ',', $list ) as $item )
             {
-                foreach ( explode( ',', $list ) as $item )
-                {
-                    $name = self::tableName( $item );
-                    if ( $name !== null )
-                        $tables[$name] = true;
-                }
+                if ( trim( $item ) === '' )
+                    continue;
+                // A derived table "FROM ( SELECT ... ) x, b" ends the match at its first ")": the list after it is
+                // never read, nor is the subquery's own FROM. So does an index hint ("a FORCE INDEX (i), b"),
+                // PARTITION (p), TABLE( ... ) or LATERAL ( ... ). Not readable, so not cached.
+                if ( strpos( $item, '(' ) !== false || preg_match( '/^\s*(?:ONLY|LATERAL|TABLE)\b/i', $item ) )
+                    return null;
+                $name = self::tableName( $item );
+                if ( $name === null )
+                    return null;
+                $tables[$name] = true;
             }
         }
-        if ( preg_match_all( '/\bJOIN\s+([`"\w.]+)/i', $text, $m ) )
+        if ( preg_match_all( '/\b(?:STRAIGHT_)?JOIN\s+(\S+)/i', $text, $m ) === false )
+            return null;
+        foreach ( $m[1] as $item )
         {
-            foreach ( $m[1] as $item )
-            {
-                $name = self::tableName( $item );
-                if ( $name !== null )
-                    $tables[$name] = true;
-            }
+            if ( preg_match( '/^(?:ONLY|LATERAL|TABLE)$/i', $item ) )
+                return null;
+            $name = self::tableName( $item );
+            if ( $name === null )
+                return null;
+            $tables[$name] = true;
         }
         return $tables ? array_keys( $tables ) : null;
     }
 
-    /** The tables a write statement changes (lower case), or null when not readable. */
-    public static function writtenTables( $sql )
+    /**
+     * The tables a write statement changes (lower case), or null when not readable.
+     *
+     * @param string $sql
+     * @param bool|null $backslash see withoutStrings()
+     * @return array|null
+     */
+    public static function writtenTables( $sql, $backslash = null )
     {
-        $text = self::withoutStrings( (string)$sql );
+        $text = self::withoutStrings( (string)$sql, $backslash );
         if ( $text === null )
             return null;
         $patterns = array(
@@ -1703,17 +1743,73 @@ class eZDBQueryCache
         if ( $item === '' || $item[0] === '(' )
             return null;
         $first = preg_split( '/\s+/', $item )[0];
+        // a quoted name with a space in it ("My Table") is split here: its quotes do not pair
+        if ( substr_count( $first, '`' ) % 2 || substr_count( $first, '"' ) % 2 )
+            return null;
         $first = str_replace( array( '`', '"' ), '', $first );
         if ( strpos( $first, '.' ) !== false )
             $first = substr( $first, strrpos( $first, '.' ) + 1 );
         return preg_match( '/^\w+$/', $first ) ? strtolower( $first ) : null;
     }
 
-    /** The SQL with string literals blanked, so a word in a value is not read as SQL. */
-    protected static function withoutStrings( $sql )
+    /**
+     * Whether a backslash escapes the next character in the string literals of $db's statements: true for
+     * MySQL and MariaDB, false for Oracle, PostgreSQL (standard_conforming_strings) and SQLite, null when the
+     * driver does not say (withoutStrings() then reads the statement both ways).
+     *
+     * @param object $db
+     * @return bool|null
+     */
+    public static function backslashEscapes( $db )
+    {
+        if ( !is_object( $db ) || !method_exists( $db, 'databaseName' ) )
+            return null;
+        switch ( $db->databaseName() )
+        {
+            case 'mysql':
+                return true;
+            case 'oracle':
+            case 'postgresql':
+            case 'sqlite':
+                return false;
+        }
+        return null;
+    }
+
+    /**
+     * The SQL with string literals blanked, so a word in a value is not read as SQL. Null when the
+     * text cannot be read safely: the pattern failed, a comment is left outside the literals, or
+     * (with $backslash null) a backslash makes the literals end in different places depending on
+     * whether it escapes the next character, as in MySQL, or not, as in Oracle ('C:\' is a whole
+     * literal there).
+     *
+     * @param string $sql
+     * @param bool|null $backslash whether a backslash escapes (backslashEscapes()); null: unknown
+     * @return string|null
+     */
+    protected static function withoutStrings( $sql, $backslash = null )
     {
         // Unrolled: one step per escape or doubled quote rather than one per character, so a
-        // long literal (an attribute's XML) stays within PCRE's limits. Null when it fails.
-        return preg_replace( "/'[^'\\\\]*+(?:(?:\\\\.|'')[^'\\\\]*+)*+'/s", "''", $sql );
+        // long literal (an attribute's XML) stays within PCRE's limits. Where a backslash escapes
+        // (MySQL), double quotes delimit strings as well.
+        $escaped = "/'[^'\\\\]*+(?:(?:\\\\.|'')[^'\\\\]*+)*+'|\"[^\"\\\\]*+(?:(?:\\\\.|\"\")[^\"\\\\]*+)*+\"/s";
+        $plain = "/'[^']*+(?:''[^']*+)*+'/s";
+        $text = preg_replace( $backslash === false ? $plain : $escaped, "''", $sql );
+        if ( $text === null )
+            return null;
+        if ( $backslash === null && ( strpos( $sql, '\\' ) !== false || strpos( $sql, '"' ) !== false )
+             && preg_replace( $plain, "''", $sql ) !== $text )
+            return null;
+        // Oracle's alternative quoting q'[...]' and PostgreSQL's escape strings E'...' end elsewhere than a plain
+        // literal: not read. Their first quote always opens a pair, so the prefix stays before a blanked ''.
+        if ( preg_match( "/(?<![\\w'])(?:[nN]?[qQ]|[eE])''/", $text ) )
+            return null;
+        // A comment can hide a table, and an apostrophe in it would pair with the next literal's
+        // quote. Its marker stays outside the literals, before any apostrophe it holds; MySQL also
+        // takes # as a comment.
+        if ( strpos( $text, '--' ) !== false || strpos( $text, '/*' ) !== false
+             || ( $backslash !== false && strpos( $text, '#' ) !== false ) )
+            return null;
+        return $text;
     }
 }

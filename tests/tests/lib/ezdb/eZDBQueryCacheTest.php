@@ -39,6 +39,10 @@
  *  QC-35 — In a web request (a Velocity worker too) the purge runs at the end of the request, registered once
  *  QC-36 — One time base for the saved share: the script start (REQUEST_TIME_FLOAT without it) to the end the bar sets
  *  QC-37 — The report row says how many times as long the page would have taken without the cache
+ *  QC-38 — Statements whose tables cannot all be told are not cached: a derived table, an index hint, PARTITION,
+ *           LATERAL, ONLY or TABLE() in FROM, a parenthesised join, a comma list after ON, a quoted name with a
+ *           space, a comment, q'' and E'' literals, a backslash that ends a literal differently per database;
+ *           each SELECT of MINUS/INTERSECT/EXCEPT and STRAIGHT_JOIN are read
  *
  * No database: the driver is a stand-in object with the properties the cache
  * reads, and the state lives in a directory of its own under var/tmp.
@@ -143,6 +147,85 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
             'SELECT @@version',
         ) as $sql )
             $this->assertNull( eZDBQueryCache::readTables( $sql ), $sql );
+    }
+
+    /** QC-38 */
+    public function testReadTablesNotFooled()
+    {
+        // each SELECT of a set operation is read
+        foreach ( array( 'MINUS', 'INTERSECT', 'EXCEPT', 'UNION' ) as $op )
+        {
+            $got = eZDBQueryCache::readTables( "SELECT id FROM a $op SELECT id, name FROM b" );
+            sort( $got );
+            $this->assertSame( array( 'a', 'b' ), $got, $op );
+        }
+        // a derived table hid its own FROM and everything after it: before, only c was found
+        foreach ( array(
+            'SELECT * FROM ( SELECT id FROM a ) x, b JOIN c ON c.id = x.id',
+            'SELECT * FROM b, ( SELECT id FROM a ) x JOIN c ON c.id = x.id',
+            'SELECT * FROM TABLE( f() ) t JOIN c ON c.id = t.id',
+            // a comment, with and without an apostrophe that pairs with the next literal
+            "SELECT * FROM a -- it's\n JOIN b ON b.id = a.id WHERE a.x = 'y'",
+            'SELECT * FROM a /* JOIN b */ WHERE 1 = 1',
+        ) as $sql )
+            $this->assertNull( eZDBQueryCache::readTables( $sql ), $sql );
+        // forms that hid tables before, on MySQL (true) and Oracle (false)
+        foreach ( array(
+            array( 'SELECT * FROM a FORCE INDEX (i), b WHERE a.i = b.i', true ),
+            array( 'SELECT * FROM a PARTITION (p), b WHERE a.i = b.i', true ),
+            array( 'SELECT * FROM a LEFT JOIN ( b JOIN c ON b.i = c.i ) ON a.i = b.i', true ),
+            array( 'SELECT * FROM a JOIN b ON a.i = b.i, c WHERE 1 = 1', true ),
+            array( 'SELECT * FROM a JOIN b ON a.i IN ( 1, 2 ), c WHERE 1 = 1', true ),
+            array( 'SELECT * FROM a JOIN b USING ( i ), c WHERE c.x = 1', true ),
+            array( 'SELECT * FROM a JOIN b x, c WHERE 1 = 1', true ),
+            array( 'SELECT * FROM a CROSS JOIN b , c', true ),
+            array( 'SELECT * FROM a NATURAL JOIN b , c', false ),
+            array( 'SELECT * FROM t, LATERAL ( SELECT 1 FROM u ) x', false ),
+            array( 'SELECT * FROM ONLY a', false ),
+            array( 'SELECT * FROM `my table` x', true ),
+            array( 'SELECT * FROM "My Table" x', false ),
+            array( "SELECT * FROM a WHERE x = q'[it's]' AND y IN ( SELECT id FROM b WHERE z = '1' )", false ),
+            array( "SELECT * FROM a WHERE x = E'it\\'s' AND y IN ( SELECT id FROM b WHERE z = '1' )", false ),
+            array( "SELECT * FROM a # it's\n JOIN b ON 1 WHERE x = 'y'", true ),
+        ) as $case )
+            $this->assertNull( eZDBQueryCache::readTables( $case[0], $case[1] ), $case[0] );
+        $got = eZDBQueryCache::readTables( 'SELECT * FROM a STRAIGHT_JOIN b ON a.i = b.i', true );
+        sort( $got );
+        $this->assertSame( array( 'a', 'b' ), $got, 'STRAIGHT_JOIN' );
+        // a literal that ends in a lone e or q is a value, not an E'' or q'' literal
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE n = 'Plan e' AND m = 'x'", false ) );
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE n = 'Tom e''s'", false ) );
+        $this->assertSame( array( 'a' ), eZDBQueryCache::writtenTables( "UPDATE a SET n = 'Plan e' WHERE id = 1", true ) );
+        $this->assertSame( array( 'a' ), eZDBQueryCache::writtenTables( "INSERT INTO a (n) VALUES ('Nr. q')", false ) );
+        // MySQL's double-quoted string with an apostrophe
+        $got = eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = \"it's\" AND y IN ( SELECT id FROM b WHERE z = '1' )", true );
+        sort( $got );
+        $this->assertSame( array( 'a', 'b' ), $got, 'double-quoted string' );
+        // what the kernel sends stays cacheable: lists in IN (), a join with a subquery in WHERE
+        $got = eZDBQueryCache::readTables( 'SELECT * FROM ezcontentobject o LEFT JOIN ezcontentobject_name n ON o.id = n.contentobject_id AND n.content_version IN ( 1, 2 ) WHERE o.id IN ( SELECT contentobject_id FROM ezcontentobject_tree WHERE parent_node_id = 2 ) ORDER BY o.id, n.name', false );
+        sort( $got );
+        $this->assertSame( array( 'ezcontentobject', 'ezcontentobject_name', 'ezcontentobject_tree' ), $got );
+        // 'C:\' is a whole literal in Oracle, not in MySQL: the table in between depends on the database
+        $sql = "SELECT * FROM a WHERE x = 'C:\\' AND y IN ( SELECT id FROM b WHERE z = '1' )";
+        $this->assertNull( eZDBQueryCache::readTables( $sql ), 'unknown database' );
+        $got = eZDBQueryCache::readTables( $sql, false );
+        sort( $got );
+        $this->assertSame( array( 'a', 'b' ), $got, 'Oracle' );
+        $this->assertNull( eZDBQueryCache::writtenTables( "UPDATE a SET x = 'C:\\' WHERE y = '1'" ), 'write, unknown database' );
+        $this->assertSame( array( 'a' ), eZDBQueryCache::writtenTables( "UPDATE a SET x = 'C:\\' WHERE y = '1'", false ), 'write, Oracle' );
+        // MySQL's escaped quote stays one literal
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = 'it\\'s'", true ) );
+        $this->assertSame( array( 'a' ), eZDBQueryCache::writtenTables( "INSERT INTO a (x) VALUES ('it\\'s')", true ) );
+        // a backslash that ends no literal differently changes nothing
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = 'a\\nb'" ) );
+        // the database says how its literals end
+        $mysql = new class { function databaseName() { return 'mysql'; } };
+        $oracle = new class { function databaseName() { return 'oracle'; } };
+        $this->assertTrue( eZDBQueryCache::backslashEscapes( $mysql ) );
+        $this->assertFalse( eZDBQueryCache::backslashEscapes( $oracle ) );
+        $this->assertNull( eZDBQueryCache::backslashEscapes( $this->db ) );
+        // SAMPLE reads a random share
+        $this->assertNull( eZDBQueryCache::readTables( 'SELECT * FROM a SAMPLE (10)' ) );
     }
 
     /** QC-02 */
