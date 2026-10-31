@@ -357,6 +357,13 @@ class expKernelServicesTest extends PHPUnit\Framework\TestCase
         $enter = strpos( $ctor, 'expKernelServices::enterSiteAccess();' );
         $this->assertGreaterThan( $reset, $enter, 'the siteaccess is entered after the INI reset' );
 
+        // the REST kernel (index_rest.php: the GraphQL API, decision 18) boots the same way
+        $rest = file_get_contents( expKernelServices::installationRoot() . '/kernel/private/rest/classes/ezpkernelrest.php' );
+        $boot = strpos( $rest, 'expKernelServices::bootWeb( $this->settings );' );
+        $this->assertNotFalse( $boot );
+        $this->assertLessThan( strpos( $rest, "eZExtension::activateExtensions( 'default' );" ), $boot, 'booted before the extension passes' );
+        $this->assertGreaterThan( strpos( $rest, 'eZINI::resetAllInstances( false );' ), strpos( $rest, 'expKernelServices::enterSiteAccess();' ) );
+
         $ezcache = file_get_contents( expKernelServices::installationRoot() . '/kernel/classes/ezcache.php' );
         $this->assertMatchesRegularExpression( "/'id' => 'kernelservices',\s*'tag' => array\( 'ini' \)/", $ezcache );
         $this->assertStringContainsString( "array( 'expKernelServiceCompiler', 'clearCacheItem' )", $ezcache );

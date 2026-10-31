@@ -166,4 +166,32 @@ class expGraphQLPersistedQueriesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'abc', $post['persistedHash'] );
         $this->assertArrayHasKey( 'error', expGraphQLServer::parseHttpRequest( 'GET', '', '', array( 'extensions' => '{nope' ), array() ) );
     }
+
+    public function testAQueryIsStoredOnlyWithinTheLimitsOfARequest()
+    {
+        // exp:graphql:persist stored a query of complexity 1051 under MaxComplexity=1000: every call of it was then
+        // refused with COMPLEXITY_LIMIT. The check before storing applies the rules a request is checked against.
+        if ( !expGraphQL::loadLibrary() )
+            $this->markTestSkipped( 'webonyx/graphql-php is not installed; set GRAPHQL_LIBRARY_PATH' );
+        $catalogue = expGraphQLClassCatalogue::filtered( array( array( 'id' => 1, 'identifier' => 'folder', 'name' => 'Folder', 'description' => '',
+            'attributes' => array( array( 'id' => 1, 'identifier' => 'short_name', 'datatype' => 'ezstring', 'name' => 'Short name', 'description' => '',
+                                          'required' => false, 'options' => array() ) ) ) ), array() );
+        $schema = ( new expGraphQLSchemaBuilder( $catalogue, new expGraphQLNaming( 'identifier' ) ) )->schema();
+        $this->setting( 'MaxComplexity', '1000' );
+        $this->setting( 'MaxDepth', '12' );
+        $small = '{ children(parentId: 2, limit: 3) { nodes { name } } }';
+        $this->assertSame( array(), Exponential\Command\Kernel\Expgraphqlpersist::problems( $schema, $small ) );
+        $wide = '{ children(parentId: 2, limit: 100) { nodes { name children(limit: 100) { nodes { name url } } } } }';
+        $problems = Exponential\Command\Kernel\Expgraphqlpersist::problems( $schema, $wide );
+        $this->assertCount( 1, $problems );
+        $this->assertStringContainsString( 'Max query complexity should be 1000', $problems[0] );
+        $context = self::context( expGraphQLContext::AUTH_CONSOLE );
+        $this->assertSame( expGraphQLError::COMPLEXITY_LIMIT, ( new expGraphQLServer( new expGraphQLSchemaBuilder( $catalogue, new expGraphQLNaming( 'identifier' ) ) ) )
+            ->execute( $wide, null, null, $context )['errors'][0]['extensions']['code'], 'a request refuses what the check refuses' );
+        // introspection is decided when the query is called, by who calls it
+        $this->assertSame( array(), Exponential\Command\Kernel\Expgraphqlpersist::problems( $schema, '{ __schema { queryType { name } } }' ) );
+        $this->setting( 'MaxDepth', '1' );
+        $this->assertNotSame( array(), Exponential\Command\Kernel\Expgraphqlpersist::problems( $schema,
+            '{ children(parentId: 2, limit: 3) { nodes { children(limit: 2) { nodes { name } } } } }' ), 'deeper than MaxDepth' );
+    }
 }

@@ -1,0 +1,42 @@
+{
+    "command:expgraphqlbench": {
+        "en": "Measure the speed of the GraphQL API against decision 18: cached GET, 304, cached POST, a cached answer through the kernel and an uncached query, N requests each, with median, p95 and max",
+        "de": "Misst die Geschwindigkeit der GraphQL-API an Entscheidung 18: zwischengespeichertes GET, 304, zwischengespeichertes POST, eine zwischengespeicherte Antwort über den Kernel und eine nicht zwischengespeicherte Abfrage, je N Anfragen, mit Median, p95 und Maximum"
+    },
+    "command:expgraphqlbench --id": {
+        "en": "the name or SHA-256 of the persisted query to measure",
+        "de": "der Name oder SHA-256 der gespeicherten Abfrage, die gemessen wird"
+    },
+    "command:expgraphqlbench --insecure": {
+        "en": "do not check the TLS certificate (a test server of your own)",
+        "de": "das TLS-Zertifikat nicht prüfen (ein eigener Testserver)"
+    },
+    "command:expgraphqlbench --query-file": {
+        "en": "a .graphql file with the text of the query, for the uncached row",
+        "de": "eine .graphql-Datei mit dem Text der Abfrage, für die Zeile ohne Zwischenspeicher"
+    },
+    "command:expgraphqlbench --requests": {
+        "en": "requests per row and run (default 200)",
+        "de": "Anfragen je Zeile und Durchlauf (Standard 200)"
+    },
+    "command:expgraphqlbench --rows": {
+        "en": "the rows to run, comma separated: get,304,post,kernel,uncached (default all)",
+        "de": "die Zeilen, die laufen, durch Kommas getrennt: get,304,post,kernel,uncached (Standard alle)"
+    },
+    "command:expgraphqlbench --runs": {
+        "en": "how often every row runs (default 3)",
+        "de": "wie oft jede Zeile läuft (Standard 3)"
+    },
+    "command:expgraphqlbench --siteaccess-header": {
+        "en": "send X-Siteaccess with this siteaccess",
+        "de": "X-Siteaccess mit diesem Siteaccess senden"
+    },
+    "command:expgraphqlbench --url": {
+        "en": "the end point, e.g. https://example.com/api/graphql",
+        "de": "der Endpunkt, z. B. https://example.com/api/graphql"
+    },
+    "command:expgraphqlbench --variables": {
+        "en": "the variables of the query, as JSON",
+        "de": "die Variablen der Abfrage, als JSON"
+    }
+}

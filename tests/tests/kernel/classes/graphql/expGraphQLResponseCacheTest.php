@@ -76,6 +76,95 @@ class expGraphQLResponseCacheTest extends PHPUnit\Framework\TestCase
         $this->assertNotNull( expGraphQLResponseCache::anonymousKey( self::get( array( 'QUERY_STRING' => 'extensions=%7B%7D', 'REQUEST_URI' => '/site/api/graphql/?extensions=%7B%7D' ) ) ) );
     }
 
+    protected static function post( array $extra = array() )
+    {
+        return $extra + array( 'REQUEST_METHOD' => 'POST', 'REQUEST_URI' => '/api/graphql', 'QUERY_STRING' => '', 'CONTENT_TYPE' => 'application/json',
+                               'HTTP_HOST' => 'example.com', 'HTTPS' => 'on', 'REMOTE_ADDR' => '192.0.2.1' );
+    }
+
+    public function testTheKeyOfAPostComesFromThePersistedQueryOfItsBody()
+    {
+        $body = '{"id":"home","variables":{"n":5},"operationName":"Home"}';
+        $fields = expGraphQLResponseCache::persistedFields( 'application/json; charset=utf-8', $body );
+        $this->assertSame( array( 'id' => 'home', 'persistedHash' => null, 'variables' => array( 'n' => 5 ), 'operationName' => 'Home' ), $fields );
+        $key = expGraphQLResponseCache::anonymousKey( self::post(), $fields );
+        $this->assertMatchesRegularExpression( '/^[0-9a-f]{40}$/', $key );
+        // the kernel reads the same body with parseHttpRequest(): the same key, so the early answer finds its entries
+        $this->assertSame( $key, expGraphQLResponseCache::anonymousKey( self::post(), expGraphQLServer::parseHttpRequest( 'POST', 'application/json', $body, array(), array() ) ) );
+        $this->assertSame( $key, expGraphQLResponseCache::anonymousKey( self::post(), expGraphQLResponseCache::persistedFields( '', '{"variables":"{\"n\":5}","operationName":"Home","id":"home"}' ) ),
+                           'variables as a JSON string, no content type' );
+        foreach ( array( '{"id":"home","variables":{"n":6},"operationName":"Home"}', '{"id":"other","variables":{"n":5},"operationName":"Home"}',
+                         '{"id":"home","variables":{"n":5}}' ) as $other )
+            $this->assertNotSame( $key, expGraphQLResponseCache::anonymousKey( self::post(), expGraphQLResponseCache::persistedFields( 'application/json', $other ) ), $other );
+        $this->assertNotSame( $key, expGraphQLResponseCache::anonymousKey( self::post( array( 'HTTP_X_SITEACCESS' => 'admin' ) ), $fields ) );
+        $this->assertNotSame( expGraphQLResponseCache::anonymousKey( self::get() ), expGraphQLResponseCache::anonymousKey( self::post(), array( 'id' => 'home' ) ), 'a GET and a POST' );
+        $this->assertNull( expGraphQLResponseCache::anonymousKey( self::post() ), 'a POST without its body' );
+        $this->assertNull( expGraphQLResponseCache::anonymousKey( self::post(), array( 'query' => '{ a }' ) ), 'an ad-hoc query is never cached' );
+        $this->assertNull( expGraphQLResponseCache::anonymousKey( self::post( array( 'HTTP_AUTHORIZATION' => 'Bearer x' ) ), $fields ) );
+        $this->assertNotNull( expGraphQLResponseCache::signedInKey( self::post( array( 'HTTP_AUTHORIZATION' => 'Bearer x' ) ), 'r', $fields ) );
+
+        // Apollo's hash: with the text only when the text is what the hash says (else the kernel refuses it)
+        $query = '{ node(id: 2) { name } }';
+        $hash = hash( 'sha256', $query );
+        $apollo = array( 'extensions' => array( 'persistedQuery' => array( 'version' => 1, 'sha256Hash' => strtoupper( $hash ) ) ) );
+        $this->assertSame( $hash, expGraphQLResponseCache::persistedFields( 'application/json', json_encode( $apollo ) )['persistedHash'] );
+        $this->assertSame( $hash, expGraphQLResponseCache::persistedFields( 'application/json', json_encode( $apollo + array( 'query' => $query ) ) )['persistedHash'] );
+        $this->assertNull( expGraphQLResponseCache::persistedFields( 'application/json', json_encode( $apollo + array( 'query' => '{ other }' ) ) ) );
+        foreach ( array( array( 'application/json', '{"query":"{ a }"}' ), array( 'application/json', '{nope' ), array( 'application/json', '"home"' ),
+                         array( 'application/x-www-form-urlencoded', 'id=home' ), array( 'application/graphql', '{ a }' ),
+                         array( 'application/json', '{"id":"home","variables":"{nope"}' ) ) as $case )
+            $this->assertNull( expGraphQLResponseCache::persistedFields( $case[0], $case[1] ), json_encode( $case ) );
+    }
+
+    public function testTheEarlyAnswerServesACachedPost()
+    {
+        $root = $this->dir . '/root';
+        $cache = new expGraphQLResponseCache( expGraphQLResponseCache::directoryOf( $root ) );
+        $store = new expGraphQLPersistedQueries( $this->dir . '/store' );
+        $store->store( '{ node(id: 2) { name } }', 'home' );
+        $body = '{"id":"home"}';
+        $server = self::post( array( 'CONTENT_LENGTH' => (string)strlen( $body ) ) );
+        $this->assertFalse( expGraphQLResponseCache::serveEarly( $root, $server, $body ), 'nothing cached yet' );
+
+        $request = expGraphQLServer::parseHttpRequest( 'POST', 'application/json', $body, array(), array() );
+        $miss = self::respondWith( $cache, $store, expGraphQLContext::AUTH_ANONYMOUS, $request, $server );
+        $this->assertSame( 'MISS', $miss['headers']['X-GraphQL-Cache'] );
+        ob_start();
+        $served = expGraphQLResponseCache::serveEarly( $root, $server, $body );
+        $this->assertSame( $miss['body'], ob_get_clean() );
+        $this->assertTrue( $served );
+        $this->assertFalse( expGraphQLResponseCache::serveEarly( $root, $server, '{"id":"home","variables":{"n":1}}' ), 'other variables: the kernel answers' );
+        $this->assertFalse( expGraphQLResponseCache::serveEarly( $root, self::post( array( 'CONTENT_TYPE' => 'application/x-www-form-urlencoded' ) ), 'id=home' ),
+                            'a form is read by the kernel' );
+
+        // with credentials: once the kernel checked them, as for a GET
+        $signed = self::post( array( 'HTTP_AUTHORIZATION' => 'Bearer abc123' ) );
+        $this->assertFalse( expGraphQLResponseCache::serveEarly( $root, $signed, $body ) );
+        $token = self::respondWith( $cache, $store, expGraphQLContext::AUTH_TOKEN, $request, $signed );
+        $this->assertSame( 'MISS', $token['headers']['X-GraphQL-Cache'] );
+        ob_start();
+        $this->assertTrue( expGraphQLResponseCache::serveEarly( $root, $signed, $body ) );
+        $this->assertSame( $token['body'], ob_get_clean() );
+        $cache->forgetCredentials();
+        $this->assertFalse( expGraphQLResponseCache::serveEarly( $root, $signed, $body ), 'a key was revoked, a role changed' );
+    }
+
+    public function testAMutationIsNeverKept()
+    {
+        $data = array( 'data' => array( 'a' => 1 ) );
+        $this->assertTrue( expGraphQLResponseCache::storable( $data, '{ a }', false ) );
+        $this->assertTrue( expGraphQLResponseCache::storable( $data, 'query Home { a }', false ) );
+        $this->assertFalse( expGraphQLResponseCache::storable( $data, 'mutation { a }', false ), 'served from the cache, a mutation would not run' );
+        $this->assertFalse( expGraphQLResponseCache::storable( $data, 'subscription { a }', false ) );
+        $document = 'query Read { a } mutation Write { a }';
+        $this->assertTrue( expGraphQLResponseCache::storable( $data, $document, false, 'Read' ) );
+        $this->assertFalse( expGraphQLResponseCache::storable( $data, $document, false, 'Write' ) );
+        $this->assertFalse( expGraphQLResponseCache::storable( $data, $document, false ), 'no operation chosen among several' );
+        $this->assertFalse( expGraphQLResponseCache::storable( $data, '{ a', false ), 'a document that cannot be read' );
+        $this->assertFalse( expGraphQLResponseCache::storable( array( 'errors' => array( array( 'message' => 'x' ) ), 'data' => null ), '{ a }', false ) );
+        $this->assertFalse( expGraphQLResponseCache::storable( $data, '{ currentUser { id } }', true ) );
+    }
+
     public function testAnEntryHoldsUntilItIsExpiredOrOld()
     {
         $cache = new expGraphQLResponseCache( $this->dir );

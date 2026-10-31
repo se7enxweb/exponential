@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 e33a9db3cca23be2ced533902bff8c72  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-ae9744e5a3b7df00257e21286eaec22d  autoload/ezp_kernel.php
+32b7f30a4f90fdcccdc67c5d5d98f90c  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 a880afdeae4b5fa062bb38f5a26c322f  benchmarks/classes/ezbenchmarkclirunner.php
@@ -79,6 +79,7 @@ f9735ca09312da3f20f7e1b102d66af4  bin/php/console
 32ca6eecc2c80c0e339d8d611fe9b3a1  bin/php/expbackfillordersiteaccess.php
 4424d9e17a168a71e846dd76dfb950ed  bin/php/expcontentjob.php
 981486f27bd734a896726563509c4013  bin/php/expfetch.php
+9c7b1306681e9537290dd81b963da726  bin/php/expgraphqlbench.php
 1091c18fb7fabe249a297f0244a4fd98  bin/php/expgraphqlpersist.php
 5d1a1a428b9708fd0bbf26035bd8a502  bin/php/expgraphqlquery.php
 e7df8c1c1b899065c1ec5ac07809bf8c  bin/php/expgraphqlschema.php
@@ -3571,7 +3572,7 @@ d3cd9752d1bc4351a0ab0729a558843f  doc/eng-us/branch-overview.md
 9aad8564171ca8a3ebbdf24d0ac878f1  doc/eng-us/doxygen/Doxyfile
 96a0cec80eb773687ca28840ecc67ca1  doc/eng-us/doxygen/empty.html
 ca85100835c4c7bfd63a2a423d377af2  doc/eng-us/examples/README.md
-a4cfdc3970f3ea0170386741189a6d13  doc/eng-us/examples/commands/README.md
+3e5308a65cc51212ef268ddfb3b2f3ef  doc/eng-us/examples/commands/README.md
 0416e2e6ffd13c1ea43a337855961707  doc/eng-us/examples/commands/accesscheck.md
 47d52e658c8d83c44d5cb6fae172824e  doc/eng-us/examples/commands/addanonymouspublicpolicies.md
 6d35731551f1ea3e02af6513220b0122  doc/eng-us/examples/commands/adddefaultstates.md
@@ -3602,6 +3603,7 @@ f4587c65e9bc49f6da02850ae831874e  doc/eng-us/examples/commands/dfscleanup.md
 faeff6c3070aa0ffa84d48b14e1f11a2  doc/eng-us/examples/commands/expbackfillordersiteaccess.md
 60603e81fba7d938831cac2e66d93259  doc/eng-us/examples/commands/expcontentjob.md
 bf66b4b9145212157d8ce068d252ba37  doc/eng-us/examples/commands/expfetch.md
+dd8c099e9ba309af6f5534443c974716  doc/eng-us/examples/commands/expgraphqlbench.md
 7b5670f042252ad416ae684006f637d7  doc/eng-us/examples/commands/expgraphqlpersist.md
 b791538120cc3622e7d2268eee2a4ab9  doc/eng-us/examples/commands/expgraphqlquery.md
 405a8f4e53ef0b4123b3ae38b08b9ed8  doc/eng-us/examples/commands/expgraphqlschema.md
@@ -6556,7 +6558,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 9c48d98113bfd90aee4978edd5c7a7f2  doc/eng-us/features/6.0/ezpm-package-manager-cli.md
 55a6d37f6223a741370c84e36904131d  doc/eng-us/features/6.0/file-consistency-check.md
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
-609f717ed013cd71abe23482810cc472  doc/eng-us/features/6.0/graphql.md
+fd125d76de1b3a313b8e9564332d1cf3  doc/eng-us/features/6.0/graphql.md
 da954ebd145c3c58a98b5755235bb069  doc/eng-us/features/6.0/help-content.md
 c2e6afd557f166bbbd534db2b70a1de7  doc/eng-us/features/6.0/help-system.md
 decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
@@ -12819,10 +12821,11 @@ f16d86ab0286e7abf7b93b1e644bbb1f  doc/ger-de/.examples/descriptions/13-ini-setti
 f45a78a78b0190153b1ea14d27b8799c  doc/ger-de/.examples/descriptions/14-twig-ini-and-template-bridge-2026-10-29.json
 4a574500e24e9fdb063aecc63316d565  doc/ger-de/.examples/descriptions/15-graphql-api-2026-10-29.json
 9f1ddb9451b178bdb01507200a1cc934  doc/ger-de/.examples/descriptions/16-graphql-api-phase-2-2026-10-30.json
+11d317a9fffe4afd4e34805f014c6bd1  doc/ger-de/.examples/descriptions/17-graphql-bench-2026-10-30.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-43fe04814b8ac7dd06f09ed8bd542980  doc/ger-de/.paths.json
+522fa98ae89800a716a3c01e086475fa  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
@@ -13042,7 +13045,7 @@ a0a8364c2f555c71637fa962fe98910d  doc/ger-de/bc/6.0/vertrauenswuerdige-proxys.md
 1f6ee4c60a711526c9cd31416441a991  doc/ger-de/bc/6.0/zugriff-auf-entwuerfe.md
 87bcef5fa01d68c26dfd2cb9e2021c07  doc/ger-de/bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md
 a3dcf55e730c5618d14fc3750baee71e  doc/ger-de/beispiele/README.md
-76b2b6b571cdc794447524b4ad1d2ac0  doc/ger-de/beispiele/befehle/README.md
+94c5538e87d77e6b044778c038901764  doc/ger-de/beispiele/befehle/README.md
 fb78cc24f28e4e7e208a831fc04c7de3  doc/ger-de/beispiele/befehle/accesscheck.md
 e5b188fae769a1201a72f50d98683190  doc/ger-de/beispiele/befehle/addanonymouspublicpolicies.md
 1b32eaf6f85858eaa99ca055cddccb7a  doc/ger-de/beispiele/befehle/adddefaultstates.md
@@ -13073,6 +13076,7 @@ f2c126a2c289be7660f72b5d95fda8c0  doc/ger-de/beispiele/befehle/dfscleanup.md
 a836201005e9b849da7108e7f2c88974  doc/ger-de/beispiele/befehle/expbackfillordersiteaccess.md
 ac6f497c93798c6207650e60b424284d  doc/ger-de/beispiele/befehle/expcontentjob.md
 982242f96f8558a44a6a4d2693d04c4e  doc/ger-de/beispiele/befehle/expfetch.md
+3d67d4f3f1177b7c8f8a8f847c4f42de  doc/ger-de/beispiele/befehle/expgraphqlbench.md
 2bb7b2337b6f9876625ed10aa0c41dad  doc/ger-de/beispiele/befehle/expgraphqlpersist.md
 7b987e839cf87869c47fdd8fe7850ffb  doc/ger-de/beispiele/befehle/expgraphqlquery.md
 f57f59e5a76051a0e23e94efd9b4ab26  doc/ger-de/beispiele/befehle/expgraphqlschema.md
@@ -15799,7 +15803,7 @@ b1a17245ed04b8323c1b3acf66144d0c  doc/ger-de/funktionen/6.0/exp-debug-leiste.md
 b1f10199d3eaa2ca42f0dc2506b7daaa  doc/ger-de/funktionen/6.0/freigabe-von-redakteurskonten.md
 c86b628979e2e65666467fe3f589272a  doc/ger-de/funktionen/6.0/geheimnisspeicher.md
 eb3d2bb16f19518e5d5f40301852dfa7  doc/ger-de/funktionen/6.0/generator-fuer-den-statischen-cache.md
-d92bb9bafee6bc4cc7f8da0b1fe44072  doc/ger-de/funktionen/6.0/graphql.md
+142949dcc7dfe8c02cdd5eb2fb92d90a  doc/ger-de/funktionen/6.0/graphql.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
 4c817b16a8baa24ca229830f51b0b584  doc/ger-de/funktionen/6.0/hilfeinhalte.md
 922ccbd845d7b93b0067c797f9bf45f2  doc/ger-de/funktionen/6.0/hilfesystem.md
@@ -22999,7 +23003,7 @@ e65182a8e462ca0d7bd99f6011003023  extension/ezoe/translations/zul-ZA/translation
 1a9cc96f78b1080813efbd8d0208572d  index.js
 6a4841552b9bf6001ec6516ff49d500d  index.php
 b47a98ba7ad311d9071d794322135ef4  index_cluster.php
-b80f7223e3c9c50b413c66170ee4dbdd  index_rest.php
+aa6fdf4b7f8ff02491f654d4aa531bb5  index_rest.php
 fe9a9825788314f32e42c60b995687b9  index_soap.php
 cec7756e16e4606e5e1cb5155efe1b0c  index_treemenu.php
 8c508d40b455582eb1fdeac8475e6fee  index_webdav.php
@@ -23470,6 +23474,7 @@ b8ced85e17c04fa2e4827a6809ba3717  kernel/classes/ezworkflowprocess.php
 fb9c7d4f9c0774a210fd16acca67c9aa  kernel/classes/ezworkflowtype.php
 6beeb9657133058f0b3c6fee57509857  kernel/classes/graphql/expgraphql.php
 ee794c4550315c0bf3333bc7eefaec7f  kernel/classes/graphql/expgraphqlbatchloader.php
+ee5586d18800b2d582324e573be46f3a  kernel/classes/graphql/expgraphqlbench.php
 6aa294dd14ec0cc27f26fca4b5e4de01  kernel/classes/graphql/expgraphqlclasscatalogue.php
 d6832715e793ee79efd11e9d1564dea7  kernel/classes/graphql/expgraphqlconnection.php
 7391d0c48102059f543a199319e56ebc  kernel/classes/graphql/expgraphqlcontent.php
@@ -23483,13 +23488,13 @@ f2af73aa35a687a77032261a40aedcd6  kernel/classes/graphql/expgraphqllocation.php
 d3fab073a4b43baf544cac2101f882f7  kernel/classes/graphql/expgraphqlpersistedqueries.php
 74ce5ccc60b6bf2f7a743c8e3d762452  kernel/classes/graphql/expgraphqlratelimiter.php
 2df1bdd410ca012b398836dfe5752232  kernel/classes/graphql/expgraphqlrepository.php
-c0c06a0628c49500199391d7e76d3458  kernel/classes/graphql/expgraphqlresponsecache.php
+b547a1d274fdc4a4ab6a1e2720870ad7  kernel/classes/graphql/expgraphqlresponsecache.php
 69dfb788cf8d4b26ca7663cc3ba84491  kernel/classes/graphql/expgraphqlrichtext.php
 e8b7bba6105ae4b2a95fc7f264519417  kernel/classes/graphql/expgraphqlschemabuilder.php
 305ce7e0b9eecd874076e5ab87077f4a  kernel/classes/graphql/expgraphqlschemaextension.php
 992f1890fd8d062f8f6972a5420bc860  kernel/classes/graphql/expgraphqlschemaextensions.php
 ee737de095cd06ada95426ea6f1920e5  kernel/classes/graphql/expgraphqlsearchconnection.php
-58b74c5b76039e5945b4e5af4597c017  kernel/classes/graphql/expgraphqlserver.php
+d07997038f111f4109faa16b7d3beb2d  kernel/classes/graphql/expgraphqlserver.php
 b83b2df691ee18bc7e73260745b73903  kernel/classes/graphql/expgraphqltypes.php
 be5a6a40f949fada13d2044258e532d4  kernel/classes/graphql/extensions/expgraphqllayoutsextension.php
 973b808ce1fb22a8f8b35ae2796209eb  kernel/classes/graphql/extensions/expgraphqllayoutssource.php
@@ -24105,7 +24110,8 @@ fa7644c10f5abd5d2a57a468104fda64  kernel/private/classes/commands/clusterize.php
 845042909bb86e2a2700281b37c6d37a  kernel/private/classes/commands/dfscleanup.php
 c05ef905dde9822f2a3755518b4b579e  kernel/private/classes/commands/expbackfillordersiteaccess.php
 7dbced58b3e8c342fcf1ef95cb8f2f8b  kernel/private/classes/commands/expcontentjob.php
-4f19b9658c7fd5b6f3249680453c29cc  kernel/private/classes/commands/expgraphqlpersist.php
+ab2cbe636f4bd9a9e93cf053b435f3bc  kernel/private/classes/commands/expgraphqlbench.php
+6f5c4d74d26553be9c125a58e16e1a29  kernel/private/classes/commands/expgraphqlpersist.php
 fb02882bf0b0f68b95dbe2383effb80d  kernel/private/classes/commands/expgraphqlquery.php
 f9ec87d9fa40c93ba773db5c58c1a950  kernel/private/classes/commands/expgraphqlschema.php
 7c20c8fda33597471c6abc364be61b01  kernel/private/classes/commands/expgraphqlstatus.php
@@ -24650,7 +24656,7 @@ cd927c02a44dcfb6ece0b65e829b3927  kernel/private/options/ezpautoloadgeneratoropt
 71f88116fc87041f46755e3ea43be8b4  kernel/private/options/ezpextensionoptions.php
 8b5a21f10ae4a65b39ffc2cf1138d048  kernel/private/rest/classes/auth/apikey_auth_filter.php
 c268c18a2be5130cdc99d8336a339e80  kernel/private/rest/classes/auth/apikey_rest.php
-b3cc892e15285f30e5abc29fffcd749c  kernel/private/rest/classes/auth/auth_configuration.php
+4548233bf7c30f5db7e46d817319dd5a  kernel/private/rest/classes/auth/auth_configuration.php
 7327ff4e095d6737b9a9c5eddcee0f05  kernel/private/rest/classes/auth/auth_provider.php
 5782c0718698593fd0bd01d9bc4f6628  kernel/private/rest/classes/auth/auth_style.php
 12181672fd7b2bcead25f329e77b80b9  kernel/private/rest/classes/auth/content_permission.php
@@ -24697,7 +24703,7 @@ ac917a570f155f538c90bd69ee28a5a4  kernel/private/rest/classes/exceptions/rest_pr
 7102fb4cd55b1dcb553425c878f52345  kernel/private/rest/classes/exceptions/route_method_not_allowed.php
 4ef1516e747314749faff513f262ac70  kernel/private/rest/classes/exceptions/route_security_filter_not_found.php
 e6cf9146063965f631e6a733a03cfb8a  kernel/private/rest/classes/exceptions/user_not_found.php
-c6551c3633282d651efcc7680ca1317c  kernel/private/rest/classes/ezpkernelrest.php
+9c5cc33712723bb0069177ce3dabe223  kernel/private/rest/classes/ezpkernelrest.php
 da61d84862c64c2544344bfff518bd1f  kernel/private/rest/classes/http_response_codes.php
 445e43b4da32ae268d67eed88aac46f4  kernel/private/rest/classes/interfaces/content_renderer.php
 fa4efa1c7a0fcb9aac0bfb0904a9ea51  kernel/private/rest/classes/interfaces/prerouting_filter.php
@@ -27221,7 +27227,7 @@ a6f6894206dbc0dde7dae7dba8bf008a  tests/tests/kernel/classes/expContentLanguages
 bd8d5281bb788338a12315d0bc4eeea3  tests/tests/kernel/classes/expInstallDefaultExtensionsTest.php
 59410c14cc7dd043faea8eabf885b694  tests/tests/kernel/classes/expKernelCallFixesTest.php
 63560f7fcb44741dad70668afb867c2a  tests/tests/kernel/classes/expKernelServiceScopeMemoTest.php
-aca858cd29762ccc81683c986892b0ee  tests/tests/kernel/classes/expKernelServicesTest.php
+d32b95c53aa6c4d7db1e92129156c0fa  tests/tests/kernel/classes/expKernelServicesTest.php
 cdc3a84370d7973c391aa502601fc541  tests/tests/kernel/classes/expKernelTransferRegistryTest.php
 448f58b85fd061fe10776ed7828bb7f0  tests/tests/kernel/classes/expLinkCheckTest.php
 3e50c9be12a35dbb019b3378de3d7236  tests/tests/kernel/classes/expLoveStackCheckTest.php
@@ -27331,13 +27337,15 @@ f82f0bebaf684c7a0108f4c6d3630d7e  tests/tests/kernel/classes/ezurl_test.php
 296fda008eaafab59dfb309508b9058b  tests/tests/kernel/classes/ezuserdiscountrule_test.php
 8c63779905905b6159177e8ac1b0f73d  tests/tests/kernel/classes/ezworkflowevent_regression.php
 8fbd06bc9fc3e0274f15646615e9b085  tests/tests/kernel/classes/ezxFormTokenCompareTest.php
+4d3cd633c04afaebc51aad5d26962b2d  tests/tests/kernel/classes/graphql/expGraphQLBenchTest.php
 e88c80daf0e1f3b6f1d5227eaa20f455  tests/tests/kernel/classes/graphql/expGraphQLDatatypesTest.php
 503456ae45d2bd1622b37fbee480fb3e  tests/tests/kernel/classes/graphql/expGraphQLLayoutsExtensionTest.php
 68fcd50db55bcaa902b9504c5a32382a  tests/tests/kernel/classes/graphql/expGraphQLMessageTest.php
-e42ef39230613ab1a6ab58a671abf29c  tests/tests/kernel/classes/graphql/expGraphQLPersistedQueriesTest.php
+810d7d5131784b9ed119c58e27ba6d10  tests/tests/kernel/classes/graphql/expGraphQLPersistedQueriesTest.php
+69a76219fc9767d6d6e7c63828cc0ac4  tests/tests/kernel/classes/graphql/expGraphQLQueryBudgetTest.php
 4f86abcb3b18b08b07f75a8fcf46de5b  tests/tests/kernel/classes/graphql/expGraphQLRateLimiterTest.php
-b22728eb3f93bc4592f6514ba7adbe16  tests/tests/kernel/classes/graphql/expGraphQLResponseCacheTest.php
-bf9f228b64a5cd160ce3dea062694377  tests/tests/kernel/classes/graphql/expGraphQLRestTest.php
+3122d8127a5970f9ccfefd51632dedc8  tests/tests/kernel/classes/graphql/expGraphQLResponseCacheTest.php
+7c1f466027aaabca8106d97903db478f  tests/tests/kernel/classes/graphql/expGraphQLRestTest.php
 d5820128371e8652644a10c6933a6440  tests/tests/kernel/classes/graphql/expGraphQLSchemaTest.php
 90d50947f17f666964401c3e8aa21116  tests/tests/kernel/classes/graphql/expGraphQLSearchTest.php
 5e0f68dba8fc393591b831926f3ef5e1  tests/tests/kernel/classes/graphql/expGraphQLTagsExtensionTest.php
@@ -27804,7 +27812,7 @@ ecf7a1a9fb011c2c2feffeb8d3d7887e  tests/tests/kernel/private/classes/ContentSear
 a223fb366cd61276ad1139a9d49b72c3  tests/tests/kernel/private/classes/commands/expApplyFlagDeployCommandsTest.php
 98fce0bf50bff5882adfd8704505247b  tests/tests/kernel/private/classes/commands/expApplyFlagInstallerCommandsTest.php
 ccfcc06be1bf316d644f19c5925cf9f0  tests/tests/kernel/private/classes/commands/expApplyFlagMaintenanceCommandsTest.php
-10f25250893e0a1478a5f0ee2b3c21e4  tests/tests/kernel/private/classes/commands/expGraphQLCommandContractTest.php
+2a26323c3e1654d689d0b60b3788838c  tests/tests/kernel/private/classes/commands/expGraphQLCommandContractTest.php
 4913f557eeae47c8cb33ae0f59cdbe63  tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php
 0cbdde64f790a22aa5f73ad810749423  tests/tests/kernel/private/classes/commands/expTemplateCommandContractTest.php
 aa478c33142d596ad0a0df911f82ca66  tests/tests/kernel/private/classes/commands/expTemplateConvertCommandTest.php
