@@ -222,6 +222,7 @@
     "beispiele/befehle/expbackfillordersiteaccess.md": "examples/commands/expbackfillordersiteaccess.md",
     "beispiele/befehle/expcontentjob.md": "examples/commands/expcontentjob.md",
     "beispiele/befehle/expfetch.md": "examples/commands/expfetch.md",
+    "beispiele/befehle/expgraphqlbench.md": "examples/commands/expgraphqlbench.md",
     "beispiele/befehle/expgraphqlpersist.md": "examples/commands/expgraphqlpersist.md",
     "beispiele/befehle/expgraphqlquery.md": "examples/commands/expgraphqlquery.md",
     "beispiele/befehle/expgraphqlschema.md": "examples/commands/expgraphqlschema.md",

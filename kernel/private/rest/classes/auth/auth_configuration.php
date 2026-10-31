@@ -52,6 +52,8 @@ class ezpRestAuthConfiguration
         // Nor the password sign-in of an earlier request (signedInWithPassword())
         expRestPasswordAuthFilter::$user = null;
         expRestPasswordAuthFilter::$viaAppPassword = false;
+        // Nor the OAuth token (signsInForRequestOnly())
+        ezpOauthFilter::$tokenInfo = null;
 
         // 0. Check if the given route needs authentication.
         if ( !$this->shallAuthenticate() )
@@ -108,9 +110,10 @@ class ezpRestAuthConfiguration
                 return new ezcMvcInternalRedirect( $this->req );
             }
             $userID = $user->id();
-            if ( class_exists( 'expSignInSecondFactor' ) && expRestPasswordAuthFilter::$viaAppPassword )
+            if ( class_exists( 'expSignInSecondFactor' ) && ( expRestPasswordAuthFilter::$viaAppPassword || self::signsInForRequestOnly( $this->filter ) ) )
             {
-                // An app password signs in for this request only: no session, so no cookie comes of it
+                // An app password, an OAuth token and a personal API key sign in for this request only: no session,
+                // so no cookie comes of it, and no row in "Your devices" (expUserSessionTracker) for every request
                 expSignInSecondFactor::signInForRequest( $user );
             }
             else if ( $userID != eZUser::currentUserID() )
@@ -152,6 +155,22 @@ class ezpRestAuthConfiguration
         if ( class_exists( 'expApiKeyRest' ) && expApiKeyRest::current() !== null )
             return false;
         return expRestPasswordAuthFilter::$user instanceof eZUser && !expRestPasswordAuthFilter::$viaAppPassword;
+    }
+
+    /**
+     * Whether the credentials of a request are a bearer credential (an OAuth token or a personal API key): the client
+     * presents them with every request, so the request is signed in for itself only. A session would only give the
+     * client a cookie it does not use, and every request a new session and a new row in "Your devices"
+     * (expUserSessionTracker; with SQLite about 20 statements and 5 ms a request).
+     *
+     * @param ezpRestAuthenticationStyle|null $filter
+     * @return bool
+     */
+    public static function signsInForRequestOnly( $filter )
+    {
+        if ( class_exists( 'expApiKeyRest' ) && expApiKeyRest::current() !== null )
+            return true;
+        return $filter instanceof ezpRestOauthAuthenticationStyle && ezpOauthFilter::$tokenInfo !== null;
     }
 
     /**
