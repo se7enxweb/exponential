@@ -13,6 +13,15 @@
  * the batch's time and peak memory, the in-memory caches cleared (memory stays flat over any number of batches),
  * a cancel looked for, and the pause (BatchPause ms). The operations run as the requesting eZ user.
  *
+ * A busy database is waited out: a batch (or the type's prepare()) that fails with a temporary database error
+ * (isTemporaryError(): SQLite busy or locked, the transaction start that waited SQLiteTransactionWait in vain,
+ * MySQL's lock wait timeout and deadlock) is rolled back, the job read again from its last checkpoint, the type's
+ * prepare() run again (its in-memory state rebuilt, as on a resume) and the batch tried again after a pause that
+ * doubles each time up to BusyBackoffMax seconds, with the heartbeat written meanwhile; BusyRetries times. Then
+ * the job fails with temporary_error set, and the cronjob part resumes it on its own (MaxAttempts times in a row,
+ * counted again from 0 after every batch done). Any other error of the run fails the job with the reason, so the
+ * process never ends with the job 'running' and nobody saying why.
+ *
  * A worker that is killed (kill -9, a reboot) leaves the job 'running' with a free run lock: the cronjob part
  * resumes it, and the type's idempotent batches continue where the last checkpoint stopped. A job that is
  * resumed MaxAttempts times without a single batch done in between is failed rather than retried for ever.
@@ -38,6 +47,9 @@ class expContentJobWorker
 
     /** @var float when this run started (microtime) */
     protected $auditStarted = 0.0;
+
+    /** @var expContentJob|null the job being run (runLocked() fails it when the run throws) */
+    protected $job = null;
 
     /**
      * As root, becomes the site user: the owner of the installation's var/ directory (index.php may belong to
@@ -102,12 +114,62 @@ class expContentJobWorker
     }
 
     /**
-     * The run, with the run lock held.
+     * The run, with the run lock held. Whatever ends it, the job says why: an error nothing below caught (one
+     * thrown by the store, the audit or the type outside a batch) fails the job with that error instead of
+     * ending the process and leaving the job 'running' without a worker.
      *
      * @param string $id
      * @return int
      */
     protected function runLocked( $id )
+    {
+        $this->job = null;
+        try
+        {
+            return $this->runJob( $id );
+        }
+        catch ( Throwable $e )
+        {
+            try
+            {
+                $this->rollback();
+            }
+            catch ( Throwable $ignored )
+            {
+            }
+            $job = $this->job ? $this->job : expContentJob::fetch( $id );
+            if ( !$job )
+                throw $e;
+            if ( in_array( $job->state(), array( expContentJob::STATE_DONE, expContentJob::STATE_CANCELLED ), true ) )
+            {
+                // it ended before the error (an error while giving back its locks): the end stands
+                $this->say( 'job ' . $id . ' is ' . $job->state() . '; afterwards: ' . $e->getMessage() );
+                return 0;
+            }
+            try
+            {
+                return $this->fail( $job, 'the worker stopped: ' . $e->getMessage(), 0, self::isTemporaryError( $e ) );
+            }
+            catch ( Throwable $e2 )
+            {
+                // the store itself fails (a full disk): say so, the job stays as it is and the cronjob part finds it
+                $this->say( 'job ' . $id . ': the worker stopped: ' . $e->getMessage() . '; the job could not be saved: ' . $e2->getMessage() );
+                return 1;
+            }
+        }
+        finally
+        {
+            $this->job = null;
+        }
+    }
+
+    /**
+     * The run itself (runLocked() catches what it throws).
+     *
+     * @param string $id
+     * @return int
+     */
+    protected function runJob( $id )
     {
         $job = expContentJob::fetch( $id );
         if ( !$job )
@@ -118,6 +180,7 @@ class expContentJobWorker
             $this->say( "job $id is $state: nothing to run" );
             return 2;
         }
+        $this->job = $job;
         if ( $job->cancelRequested() )
             return $this->cancelled( $job );
 
@@ -145,6 +208,7 @@ class expContentJobWorker
         $job->set( 'worker', array( 'pid' => getmypid(), 'user' => self::processUser(), 'host' => php_uname( 'n' ) ) );
         $job->set( 'worker_pid', getmypid() );
         $job->set( 'error_node_id', 0 );
+        $job->set( 'temporary_error', false );
         $server = (array) $job->get( 'server' );
         $server['worker'] = expContentJob::serverInfo() + array( 'user' => self::processUser() );
         $job->set( 'server', $server );
@@ -157,16 +221,18 @@ class expContentJobWorker
             $this->switchUser( $job );
             $this->auditStart( $job, $state, $batchAtStart );
             $handler = expContentJob::handler( $job->type() );
-            $this->audited( function () use ( $handler, $job ) { $handler->prepare( $job ); } );
-            $job->save();
         }
         catch ( Throwable $e )
         {
-            return $this->fail( $job, $e->getMessage() );
+            return $this->fail( $job, $e->getMessage(), 0, self::isTemporaryError( $e ) );
         }
 
         $batchSize = max( 1, (int) expContentJob::setting( 'BatchSize' ) );
         $pause = max( 0, (int) expContentJob::setting( 'BatchPause' ) );
+        $busyRetries = max( 0, (int) expContentJob::setting( 'BusyRetries' ) );
+        // the tries of the current batch that met a busy database; prepare() runs again before the next one
+        $tries = 0;
+        $prepared = false;
         while ( true )
         {
             // a cancel asked for meanwhile (the page, the command)
@@ -180,9 +246,21 @@ class expContentJobWorker
             $t0 = microtime( true );
             if ( function_exists( 'memory_reset_peak_usage' ) )
                 memory_reset_peak_usage();
-            $this->begin();
             try
             {
+                if ( !$prepared )
+                {
+                    // after a busy try: the job as the last batch done left it (what the try changed in memory is
+                    // gone with its rollback), and the type builds its state from that checkpoint, as on a resume
+                    if ( $tries > 0 )
+                        $job->reload();
+                    $this->audited( function () use ( $handler, $job ) { $handler->prepare( $job ); } );
+                    $job->save();
+                    $prepared = true;
+                }
+                // begin() inside the try: on SQLite it waits SQLiteTransactionWait for the write lock and throws
+                // "database is busy" when another writer held it all that time
+                $this->begin();
                 $r = $this->audited( function () use ( $handler, $job, $batchSize ) { return $handler->runBatch( $job, $batchSize ); } );
                 if ( !$this->commit() )
                     throw new expContentJobException( 'the batch could not be committed (database error)' );
@@ -191,8 +269,22 @@ class expContentJobWorker
             {
                 $this->rollback();
                 $this->clearCaches();
-                return $this->fail( $job, $e->getMessage(), $e instanceof expContentJobException ? $e->nodeID : 0 );
+                $temporary = self::isTemporaryError( $e );
+                if ( $temporary && $tries < $busyRetries )
+                {
+                    $tries++;
+                    $prepared = false;
+                    $this->waitAfterBusy( $job, $tries, $busyRetries, $e );
+                    continue;
+                }
+                $error = $temporary && $tries > 0 ? 'the database stayed busy (' . ( $tries + 1 ) . ' tries): ' . $e->getMessage() : $e->getMessage();
+                // rolled back: the job keeps the checkpoint of the last batch done, not what the failed one changed in memory
+                $job->reload();
+                return $this->fail( $job, $error, $e instanceof expContentJobException ? $e->nodeID : 0, $temporary );
             }
+            if ( $tries > 0 )
+                $job->appendLog( 'batch ' . ( $job->progress()['batch'] + 1 ) . ': committed at try ' . ( $tries + 1 ) );
+            $tries = 0;
             try
             {
                 $this->audited( function () use ( $handler, $job ) { $handler->afterBatch( $job ); } );
@@ -200,7 +292,7 @@ class expContentJobWorker
             catch ( Throwable $e )
             {
                 // committed: the batch is done; the next run repairs the side files (idempotent batches)
-                return $this->fail( $job, $e->getMessage() );
+                return $this->fail( $job, $e->getMessage(), 0, self::isTemporaryError( $e ) );
             }
             $seconds = microtime( true ) - $t0;
             $peak = memory_get_peak_usage();
@@ -209,6 +301,7 @@ class expContentJobWorker
                                       'message' => isset( $r['message'] ) ? (string) $r['message'] : '' ) );
             $job->set( 'heartbeat', time() );
             $job->set( 'stalls', 0 );
+            $job->set( 'auto_resumes', 0 );
             $job->set( 'last_start_batch', null );
             $job->set( 'last_batch', array( 'seconds' => round( $seconds, 3 ), 'peak_mb' => round( $peak / 1048576, 2 ),
                                             'memory_mb' => round( memory_get_usage() / 1048576, 2 ), 'done' => (int) $r['done'] ) );
@@ -240,7 +333,8 @@ class expContentJobWorker
         }
         catch ( Throwable $e )
         {
-            return $this->fail( $job, $e->getMessage() );
+            $this->rollback();
+            return $this->fail( $job, $e->getMessage(), 0, self::isTemporaryError( $e ) );
         }
         $job->set( 'state', expContentJob::STATE_DONE );
         $job->set( 'finished', time() );
@@ -260,20 +354,113 @@ class expContentJobWorker
      * @param expContentJob $job
      * @param string $error
      * @param int $nodeID the node the error is about (error_node_id), 0 when none
+     * @param bool $temporary a temporary database error (busy, locked, a deadlock): the cronjob part resumes the job
+     *                        on its own (expContentJob::autoResumable())
      * @return int 1
      */
-    protected function fail( expContentJob $job, $error, $nodeID = 0 )
+    protected function fail( expContentJob $job, $error, $nodeID = 0, $temporary = false )
     {
         $job->set( 'state', expContentJob::STATE_FAILED );
         $job->set( 'error', (string) $error );
         $job->set( 'error_node_id', (int) $nodeID );
+        $job->set( 'temporary_error', (bool) $temporary );
         $job->set( 'finished', time() );
         $job->set( 'heartbeat', time() );
         $job->save();
-        $job->appendLog( 'failed: ' . $error );
+        $job->appendLog( 'failed' . ( $temporary ? ' (temporary error, the cronjob part resumes it)' : '' ) . ': ' . $error );
         $this->say( 'job ' . $job->id() . ' failed: ' . $error );
-        $this->auditEnd( $job, 'content.job.fail', 'failed', array( 'error' => (string) $error, 'node_id' => (int) $nodeID ) );
+        $this->auditEnd( $job, 'content.job.fail', 'failed', array( 'error' => (string) $error, 'node_id' => (int) $nodeID,
+                                                                      'temporary' => (bool) $temporary ) );
         return 1;
+    }
+
+    // ---- a busy database ---------------------------------------------------------------------
+
+    /**
+     * Whether an error is a temporary one of the database, which the same batch run again later gets past: SQLite
+     * busy or locked (codes 5 and 6, "database is locked", the driver's "database is busy" when a transaction could
+     * not start within SQLiteTransactionWait), MySQL's lock wait timeout (1205) and deadlock (1213). The previous
+     * errors of the chain count too.
+     *
+     * @param Throwable $e
+     * @return bool
+     */
+    public static function isTemporaryError( Throwable $e )
+    {
+        for ( $x = $e, $depth = 0; $x !== null && $depth < 10; $x = $x->getPrevious(), $depth++ )
+        {
+            if ( $x instanceof eZDBException && in_array( (int) $x->getCode(), array( 5, 6, 1205, 1213 ), true ) )
+                return true;
+            if ( preg_match( '/database is (?:locked|busy)|database table is locked|deadlock found|lock wait timeout exceeded/i', (string) $x->getMessage() ) )
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * The pause before the next try of a batch that met a busy database: 1, 2, 4 ... seconds, at most
+     * [ContentJobSettings] BusyBackoffMax.
+     *
+     * @param int $try 1 for the first retry
+     * @return int seconds
+     */
+    public static function busyPause( $try )
+    {
+        $max = max( 0, (int) expContentJob::setting( 'BusyBackoffMax' ) );
+        return (int) min( $max, 1 << min( 20, max( 0, (int) $try - 1 ) ) );
+    }
+
+    /**
+     * Says that the batch met a busy database and will be tried again, then waits.
+     */
+    protected function waitAfterBusy( expContentJob $job, $try, $of, Throwable $e )
+    {
+        $seconds = self::busyPause( $try );
+        $line = sprintf( 'batch %d: the database is busy (%s); rolled back, try %d of %d in %d s from the last checkpoint',
+                         $job->progress()['batch'] + 1, $e->getMessage(), $try + 1, $of + 1, $seconds );
+        $job->appendLog( $line );
+        $this->say( $line );
+        $this->sleepWithHeartbeat( $job, $seconds );
+    }
+
+    /**
+     * Waits, writing the heartbeat at least every 5 seconds, so the job never looks dead while it waits; a cancel
+     * asked for meanwhile ends the wait (the loop then cancels the job).
+     *
+     * @param expContentJob $job
+     * @param int $seconds
+     */
+    protected function sleepWithHeartbeat( expContentJob $job, $seconds )
+    {
+        $end = microtime( true ) + $seconds;
+        while ( true )
+        {
+            if ( $this->beat( $job ) )
+                return;
+            $left = $end - microtime( true );
+            if ( $left <= 0 )
+                return;
+            usleep( (int) ( min( 5, $left ) * 1000000 ) );
+        }
+    }
+
+    /**
+     * Writes the heartbeat, only that field of the job on disk.
+     *
+     * @param expContentJob $job
+     * @return bool whether a cancel was asked for
+     */
+    protected function beat( expContentJob $job )
+    {
+        $now = time();
+        $cancel = false;
+        expContentJobStore::update( $job->id(), function ( array &$d ) use ( $now, &$cancel ) {
+            $d['heartbeat'] = $now;
+            $cancel = !empty( $d['cancel_requested'] );
+            return true;
+        } );
+        $job->set( 'heartbeat', $now );
+        return $cancel;
     }
 
     /**

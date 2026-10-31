@@ -48,6 +48,8 @@ class expContentJob
         'QueuedGrace' => 60,
         'QueuedTimeout' => 600,
         'MaxAttempts' => 5,
+        'BusyRetries' => 8,
+        'BusyBackoffMax' => 60,
         'KeepDays' => 30,
         'PhpBinary' => '',
         'NowLimit' => 1000,
@@ -186,6 +188,8 @@ class expContentJob
             'cancelled_at' => 0,
             'resumed' => array(),
             'error_node_id' => 0,
+            'temporary_error' => false,
+            'auto_resumes' => 0,
             'locks' => $locks,
         );
         $id = $data['id'];
@@ -389,6 +393,12 @@ class expContentJob
     public function result() { return (array) $this->data['result']; }
     public function cancelRequested() { return !empty( $this->data['cancel_requested'] ); }
     public function isActive() { return in_array( $this->data['state'], array( self::STATE_QUEUED, self::STATE_RUNNING ), true ); }
+    /** @return bool whether the job failed for a temporary database error (busy, locked, a deadlock) after its retries */
+    public function temporaryError() { return !empty( $this->data['temporary_error'] ); }
+    /** @return int how often the cronjob part resumed it on its own since its last batch done */
+    public function autoResumes() { return isset( $this->data['auto_resumes'] ) ? (int) $this->data['auto_resumes'] : 0; }
+    /** @return int seconds since the worker last wrote the job (its heartbeat) */
+    public function heartbeatAge() { return max( 0, time() - $this->heartbeat() ); }
 
     /**
      * The progress: done, total, percent, batch (batches done), message, phase.
@@ -477,6 +487,37 @@ class expContentJob
     }
 
     /**
+     * Whether the cronjob part resumes this failed job on its own: it failed for a temporary database error once
+     * its worker's retries ran out, no worker holds it, it has been resumed so less than MaxAttempts times since
+     * its last batch done, and it failed at least QueuedGrace seconds ago (the database gets a moment).
+     *
+     * @return bool
+     */
+    public function autoResumable()
+    {
+        if ( $this->data['state'] !== self::STATE_FAILED || !$this->temporaryError() || $this->cancelRequested() )
+            return false;
+        if ( $this->autoResumes() >= max( 1, (int) self::setting( 'MaxAttempts' ) ) )
+            return false;
+        if ( $this->heartbeat() > time() - (int) self::setting( 'QueuedGrace' ) )
+            return false;
+        return !$this->workerAlive();
+    }
+
+    /**
+     * Whether the job waits for something without a worker to do it: queued or running without a worker (it died,
+     * or the start was lost), or failed for a temporary error. What "list" calls stalled.
+     *
+     * @return bool
+     */
+    public function isStalled()
+    {
+        if ( $this->isActive() )
+            return !$this->workerAlive();
+        return $this->data['state'] === self::STATE_FAILED && $this->temporaryError() && !$this->workerAlive();
+    }
+
+    /**
      * Everything for a JSON status answer (no checkpoint data).
      *
      * @param int $logLines
@@ -494,7 +535,8 @@ class expContentJob
         );
         // what part B's job pages show: where it runs, who did what, the batches
         foreach ( array( 'mode' => 'auto', 'created_by' => 0, 'server' => array(), 'worker_pid' => 0, 'batches' => array(),
-                         'cancelled_by' => null, 'cancelled_at' => 0, 'resumed' => array(), 'error_node_id' => 0, 'last_batch' => null ) as $key => $default )
+                         'cancelled_by' => null, 'cancelled_at' => 0, 'resumed' => array(), 'error_node_id' => 0, 'last_batch' => null,
+                         'temporary_error' => false, 'auto_resumes' => 0 ) as $key => $default )
             $a[$key] = isset( $this->data[$key] ) ? $this->data[$key] : $default;
         if ( $logLines > 0 )
             $a['log'] = $this->log( $logLines );
@@ -560,9 +602,11 @@ class expContentJob
      * Puts a failed job (or one whose worker died) back in the queue and starts a worker.
      *
      * @param bool $spawn false: only queue it (the caller runs the worker itself)
+     * @param bool $automatic true: the cronjob part resumes it on its own (a failed job is counted in auto_resumes,
+     *                        which a resume by a person sets back to 0)
      * @return bool whether the job was queued again
      */
-    public function resume( $spawn = true )
+    public function resume( $spawn = true, $automatic = false )
     {
         if ( !$this->canResume() )
             return false;
@@ -581,13 +625,17 @@ class expContentJob
         }
         $now = time();
         $by = self::currentUserID();
-        $data = expContentJobStore::update( $this->id(), function ( array &$d ) use ( $now, $by ) {
+        $data = expContentJobStore::update( $this->id(), function ( array &$d ) use ( $now, $by, $automatic ) {
             if ( $d['state'] === self::STATE_DONE || $d['state'] === self::STATE_CANCELLED )
                 return false;
             if ( $d['state'] === self::STATE_FAILED )
                 $d['stalls'] = 0;
+            // the cronjob part counts the failed jobs it resumes and keeps the count for a dead worker's; a person starts it again
+            $count = isset( $d['auto_resumes'] ) ? (int) $d['auto_resumes'] : 0;
+            $d['auto_resumes'] = $automatic ? ( $d['state'] === self::STATE_FAILED ? $count + 1 : $count ) : 0;
+            $d['temporary_error'] = false;
             $resumed = isset( $d['resumed'] ) ? (array) $d['resumed'] : array();
-            $resumed[] = array( 'by' => $by, 'at' => $now, 'was' => $d['state'] );
+            $resumed[] = array( 'by' => $by, 'at' => $now, 'was' => $d['state'] ) + ( $automatic ? array( 'auto' => true ) : array() );
             $d['resumed'] = array_slice( $resumed, -50 );
             $d['state'] = self::STATE_QUEUED;
             $d['error'] = '';
@@ -597,7 +645,7 @@ class expContentJob
         if ( !$data || $data['state'] !== self::STATE_QUEUED )
             return false;
         $this->data = $data;
-        $this->appendLog( 'resumed' );
+        $this->appendLog( $automatic && end( $data['resumed'] )['was'] === self::STATE_FAILED ? 'resumed automatically (' . $data['auto_resumes'] . ' of ' . max( 1, (int) self::setting( 'MaxAttempts' ) ) . ')' : 'resumed' );
         // Audit (doc/eng-us/bc/6.0/audit.md, content.job.resume)
         if ( class_exists( 'expAuditHook' ) )
         {

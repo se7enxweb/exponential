@@ -306,6 +306,28 @@ class expHelpManualSync
         }
     }
 
+    /**
+     * Drops the run after its transaction was rolled back by the caller (a content job's batch that met a busy
+     * database): nothing is committed, the writes counted as open are forgotten, what was read of the stored
+     * objects is forgotten (a new instance reads it again), and the run's settings are put back.
+     */
+    public function abandon()
+    {
+        $this->pending = 0;
+        $this->items = null;
+        $this->stored = array();
+        $this->objectIds = array();
+        $this->nodeIds = array();
+        $this->manualsNode = null;
+        if ( $this->savedSettings !== null )
+        {
+            $ini = eZINI::instance();
+            $ini->setVariable( 'SearchSettings', 'DelayedIndexing', $this->savedSettings['DelayedIndexing'] );
+            $ini->setVariable( 'ContentSettings', 'ViewCaching', $this->savedSettings['ViewCaching'] );
+            $this->savedSettings = null;
+        }
+    }
+
     // ---------------------------------------------------------------- what is stored
 
     protected function loadClasses()
