@@ -29,7 +29,7 @@ class expGraphQLRestController extends ezpRestMvcController
         $request = expGraphQLServer::parseHttpRequest( $this->request->originalProtocol === 'http-get' ? 'GET' : 'POST',
                                                        isset( $_SERVER['CONTENT_TYPE'] ) ? (string)$_SERVER['CONTENT_TYPE'] : '',
                                                        (string)$this->request->body, (array)$this->request->get, (array)$this->request->post,
-                                                       isset( $_FILES ) ? (array)$_FILES : array() );
+                                                       (array)$_FILES );
         if ( isset( $request['error'] ) )
             return self::answer( 400, expGraphQLServer::refusal( $request['error'], expGraphQLError::BAD_USER_INPUT ) );
 

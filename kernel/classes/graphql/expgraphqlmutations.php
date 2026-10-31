@@ -423,7 +423,7 @@ class expGraphQLMutations
             @unlink( $file );
             throw new expGraphQLError( expGraphQLMessage::tr( 'The file could not be fetched.' ), expGraphQLError::BAD_USER_INPUT );
         }
-        @chmod( $file, expGraphQLResponseCache::fileMode( 0666 ) );
+        @chmod( $file, eZFile::fileMode( 0666 ) );
         $path = (string)parse_url( (string)$url, PHP_URL_PATH );
         $upload = new expGraphQLUpload( basename( $path ) !== '' ? basename( $path ) : 'download', $type, $file, (int)filesize( $file ) );
         $upload->fetched = true;
@@ -568,7 +568,7 @@ class expGraphQLMutations
      */
     public static function previewTokenType( expGraphQLTypes $types )
     {
-        return $types->register( 'PreviewToken', function () use ( $types ) {
+        return $types->register( 'PreviewToken', function () {
             return new ObjectType( array(
                 'name' => 'PreviewToken',
                 'description' => 'A token to read one version with preview(token:) until it expires.',

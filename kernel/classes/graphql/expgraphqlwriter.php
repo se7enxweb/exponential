@@ -485,7 +485,7 @@ class expGraphQLWriter
                     $path = $dir . '/' . $field['upload']->safeName();
                     if ( !@copy( $field['upload']->tmpName, $path ) )
                         throw new expGraphQLError( expGraphQLMessage::tr( 'Internal server error' ), expGraphQLError::INTERNAL );
-                    @chmod( $path, expGraphQLResponseCache::fileMode( 0666 ) );
+                    @chmod( $path, eZFile::fileMode( 0666 ) );
                 }
                 if ( $attribute->fromString( expGraphQLFieldInput::stringOf( $field, $path, $objectId ) ) === false )
                     throw new expGraphQLError( expGraphQLMessage::tr( 'The value of the field %field could not be stored.', array( '%field' => $identifier ) ),

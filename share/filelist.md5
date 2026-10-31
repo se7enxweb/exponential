@@ -12808,7 +12808,7 @@ bad2519096e06e1dde4533665f591654  doc/eng-us/standards/php-and-composer.md
 2267325f3fa45dde68c5c77fc42be96c  doc/eng-us/standards/source-control-and-releases.md
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
-53f1ed18ca33d8442f56679f66073b31  doc/eng-us/translation-waves.md
+5b8f56021d72152e3cfa69cdef73f0a9  doc/eng-us/translation-waves.md
 fe7287e9e15faec9246eaa532ab45c7e  doc/ger-de/.dirnames.json
 5647e0a40e18862c9be14fe193209099  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
@@ -21864,7 +21864,7 @@ f5ff4f18d94e1c80ff309a29ec39ac4d  doc/ger-de/standards/sicherheit.md
 3e355cb14e5eefd2bf6bb2044c682f56  doc/ger-de/standards/tests-und-ci.md
 385c4d12f5d3e25efd6406b7a9338d2a  doc/ger-de/standards/versionsverwaltung-und-releases.md
 9e515575ffc50620e08b29cbb7a63894  doc/ger-de/standards/webplattform.md
-5eee27626d071577880e5f2afde7a5a6  doc/ger-de/uebersetzungswellen.md
+13c9fb20593e47c3c9f7427ced2ceb3f  doc/ger-de/uebersetzungswellen.md
 b6bb5b8684060dcf354d412da94f823e  doc/ger-de/ziele.md
 1147a04b0458d869f2da4e5c14256142  exponential.cron
 b09f1f23ad8851037391227378101eda  extension/exphelpsite/design/standard/override/templates/help/full_map.tpl
@@ -23505,7 +23505,7 @@ bcfb33a2d52f9f6b27538c40be97b4dd  kernel/classes/graphql/expgraphqlfieldmapper.p
 5e5b3a30bea672d907dda34b208dd5ff  kernel/classes/graphql/expgraphqlimage.php
 f2af73aa35a687a77032261a40aedcd6  kernel/classes/graphql/expgraphqllocation.php
 8053ce4cd0d886d546826a44b7d0d905  kernel/classes/graphql/expgraphqlmessage.php
-eec02a076ed678397c983c94279dd2e0  kernel/classes/graphql/expgraphqlmutations.php
+fbc33a9cdc0c8d01c57dd24803ca992e  kernel/classes/graphql/expgraphqlmutations.php
 65fafd844ade3b4fbd6f9e51cd59bcd2  kernel/classes/graphql/expgraphqlnaming.php
 d3fab073a4b43baf544cac2101f882f7  kernel/classes/graphql/expgraphqlpersistedqueries.php
 d1312053122f29634e639507f45b7216  kernel/classes/graphql/expgraphqlpreviewtoken.php
@@ -23523,12 +23523,12 @@ ee737de095cd06ada95426ea6f1920e5  kernel/classes/graphql/expgraphqlsearchconnect
 b83b2df691ee18bc7e73260745b73903  kernel/classes/graphql/expgraphqltypes.php
 750787a369fede82d4ec65b7c774a5e1  kernel/classes/graphql/expgraphqlupload.php
 842517eb48457c1e564e610b74e2b6dd  kernel/classes/graphql/expgraphqluploadcheck.php
-dc1340c99ceb4c7fc9cdd1fa23b0b08d  kernel/classes/graphql/expgraphqlwriter.php
+6f2087b565370afabd1aef87493f4222  kernel/classes/graphql/expgraphqlwriter.php
 be5a6a40f949fada13d2044258e532d4  kernel/classes/graphql/extensions/expgraphqllayoutsextension.php
 973b808ce1fb22a8f8b35ae2796209eb  kernel/classes/graphql/extensions/expgraphqllayoutssource.php
 24e55cbfb6a9a4ed0e2f10791aac7140  kernel/classes/graphql/extensions/expgraphqltagsextension.php
 f89992c0ed2689a9cd44279166214537  kernel/classes/graphql/extensions/expgraphqltagssource.php
-1e86f235071d2fbf8f8131d0bec10eef  kernel/classes/graphql/rest/expgraphqlrestcontroller.php
+b7ea754fd82fc4c4a257bb366df4ca0b  kernel/classes/graphql/rest/expgraphqlrestcontroller.php
 61847033cac83964fd281b7b8b439823  kernel/classes/graphql/rest/expgraphqlrestprovider.php
 0382a12edd4dfbe8a3a8f1d42519951f  kernel/classes/graphql/rest/expgraphqlrestresponse.php
 02b1bd17fe75b43536ba7cd6736b779a  kernel/classes/graphql/rest/expgraphqlrestviewcontroller.php
