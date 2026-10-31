@@ -3339,7 +3339,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-2357d3ef390ff831781d5b736885a11f  doc/changelogs/6.0/6.0.15.md
+4aed8b3be7bc6ad5e687259464742ac8  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -5526,7 +5526,7 @@ c5372c779493958fc20e53bc58a8da58  doc/eng-us/examples/ini-settings/velocity/Fran
 c7dbe99a7f67d43525df9c7a60c19d68  doc/eng-us/examples/ini-settings/velocity/PHPServerSettings.md
 4c6dd9db69ff7f0d6e60347aa4ed20f1  doc/eng-us/examples/ini-settings/velocity/PHPSettings.md
 2aa63cf8a133d0d534b06af8b22b52fa  doc/eng-us/examples/ini-settings/velocity/README.md
-4604a52a23556ba44666c5790574d514  doc/eng-us/examples/ini-settings/velocity/ServerSettings.md
+c3166a84cf43f25a2add2b1e520d34ea  doc/eng-us/examples/ini-settings/velocity/ServerSettings.md
 f724fedc8fdf2ba9feef32b164b09b00  doc/eng-us/examples/ini-settings/velocity/WatchdogSettings.md
 ec1cdb87f8214656c2a77f62113ce115  doc/eng-us/examples/ini-settings/viewcache/README.md
 9a7b605137a67685531a240eefdf9ddd  doc/eng-us/examples/ini-settings/viewcache/ViewCacheSettings.md
@@ -12842,7 +12842,7 @@ f45a78a78b0190153b1ea14d27b8799c  doc/ger-de/.examples/descriptions/14-twig-ini-
 11d317a9fffe4afd4e34805f014c6bd1  doc/ger-de/.examples/descriptions/17-graphql-bench-2026-10-30.json
 45c95355f2a63e43c2d843c62d7b0767  doc/ger-de/.examples/descriptions/18-graphql-api-setup-2026-10-30.json
 94bc98a826c7352b502724c0c179fb24  doc/ger-de/.examples/descriptions/19-graphql-api-starter-2026-10-30.json
-ff07fa1dd21e3686c2ce97ad059b0ff7  doc/ger-de/.examples/descriptions/20-graphql-api-realtime-2026-10-30.json
+3e5f3c6f2f15b756e23860af52d46bf0  doc/ger-de/.examples/descriptions/20-graphql-api-realtime-2026-10-30.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
@@ -14990,7 +14990,7 @@ bf10f12fc516feca9a11992c6d75a4d8  doc/ger-de/beispiele/ini-einstellungen/velocit
 eab9e17c12959202b31025245f5a34ab  doc/ger-de/beispiele/ini-einstellungen/velocity/PHPServerSettings.md
 9626c4e1434568769d1448a3ba860f82  doc/ger-de/beispiele/ini-einstellungen/velocity/PHPSettings.md
 06ab17a89c66a3f39506347d84c1a8ad  doc/ger-de/beispiele/ini-einstellungen/velocity/README.md
-76ce6079cdbd4fa0f0fb3e1072dd9223  doc/ger-de/beispiele/ini-einstellungen/velocity/ServerSettings.md
+6aa1d2064a9dbac3a85af5f483613aea  doc/ger-de/beispiele/ini-einstellungen/velocity/ServerSettings.md
 92ac3a843161d423b8e6c95172bf9707  doc/ger-de/beispiele/ini-einstellungen/velocity/WatchdogSettings.md
 a2451f1ad36f9fc3c3fd869121def955  doc/ger-de/beispiele/ini-einstellungen/viewcache/README.md
 c8d14c440047008c92cc1551c1f60664  doc/ger-de/beispiele/ini-einstellungen/viewcache/ViewCacheSettings.md
@@ -25434,7 +25434,7 @@ c80250dec48448bcda0865588dfc740c  settings/twig.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 17bfb96340acc7e7075122f3b353e6b3  settings/upgrade.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
-1d6fcccde3ac5e5e15768fca98801529  settings/velocity.ini
+53f363dfc5d11e88ff40763bed4b0471  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
 6b0d7027cd5f03b0b476e7b52023db28  settings/webdav.ini
 38b904d75d6c87157a8e9d252efccab2  settings/wordmatch.ini

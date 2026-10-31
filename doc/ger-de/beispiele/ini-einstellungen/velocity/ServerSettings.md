@@ -695,7 +695,7 @@ RetryWithin=
 > Stream (StreamShare und StreamTimeout oben gelten für ihn; endet ein Stream nach  
 > graphql.ini SubscriptionMaxDuration, öffnet der Server ihn dort wieder, wo er  
 > aufhörte). Kein Pfad: kein WebSocket. Braucht eine Engine mit der Brücke (Velocity  
-> nach v0.0.4.57); eine ältere ignoriert diese Einstellungen.  
+> nach v0.0.4.58); eine ältere ignoriert diese Einstellungen.  
 
 Standard: eine Liste mit 1: `/api/graphql/subscribe`.
 
