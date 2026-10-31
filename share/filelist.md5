@@ -3341,7 +3341,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-c86433b3b7489e36edf3059f54066576  doc/changelogs/6.0/6.0.15.md
+bc3b8674c1e88fa4b179dda88bfcd3da  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6685,7 +6685,7 @@ a6804237b42b490f18b7266b7f276e2a  doc/eng-us/features/6.0/velocity-uwebserver.md
 26ddd0cf40cd46bd777c6a6cd595c001  doc/eng-us/features/6.0/velocity-websockets-and-events.md
 732b0806269c31cc1c081b166d7a7662  doc/eng-us/features/6.0/version-preview-view-modes.md
 e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-commands.md
-3c13cf829c54e3db26d57b76bc6cc366  doc/eng-us/features/6.0/website-sidebar.md
+264d6d8a8c848667302b1e280e5cdd79  doc/eng-us/features/6.0/website-sidebar.md
 69cf415d178489c7ca9f2cf4bf7df884  doc/eng-us/glossary.md
 e3e117bf283a09a375595e52cb21f59d  doc/eng-us/goals.md
 5a472729017993e883a506d5dfbd346e  doc/eng-us/guides/README.md
@@ -15947,7 +15947,7 @@ b2ec6f7c415225178be44e5caeab8388  doc/ger-de/funktionen/6.0/velocity-zeitplaner.
 7b9d3ace84a70314eeb6b83a3949469a  doc/ger-de/funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md
 8a6387d0944cfcf12dbffe21cf8cf6f6  doc/ger-de/funktionen/6.0/vorabladen-des-zugriffsarrays.md
 5a82b84fa068555c248d17d1a6d4125f  doc/ger-de/funktionen/6.0/wartungsmodus.md
-2a1a90d1b74baba7578cd6b6b9299464  doc/ger-de/funktionen/6.0/website-seitenleiste.md
+83a7073751d32600c7ca9bdc1c3ebe1f  doc/ger-de/funktionen/6.0/website-seitenleiste.md
 bea8ea9f00dfc81102f6e376de1bea4e  doc/ger-de/funktionen/6.0/websiteuebergreifende-links-im-multisite.md
 3c2b3930490f58368df9a670f4cf0959  doc/ger-de/funktionen/6.0/zugriffs-und-cache-filter.md
 aba05fee1af76fb5cde206933fa6cb94  doc/ger-de/funktionen/6.0/zusaetzliche-extension-verzeichnisse.md
@@ -23384,7 +23384,7 @@ acae6bbb77fcc05695116d119c0879f5  kernel/classes/expvelocitywatchdog.php
 35ecc21bdffdb4e710505fdd826df48a  kernel/classes/expviewaccess.php
 60d22591b81ac4d724cf627f169f2aeb  kernel/classes/expviewparameters.php
 2476f9c0f8ba75823eb320fe33bc0ab5  kernel/classes/expweakpasswordlist.php
-2a0b5c7c407244a21e325c3152836f81  kernel/classes/expwebsitesidebarmigration.php
+5a64b151459e09235d99c2abcfa33c32  kernel/classes/expwebsitesidebarmigration.php
 19df831ef09fa7411d27bf3b6c4cfea4  kernel/classes/ezaudit.php
 2deb8dd5796ace6c5bb4c7b85ee06ea4  kernel/classes/ezbasket.php
 49db61a7999663c74b1b6cbe4b852d89  kernel/classes/ezbinaryfilehandler.php
@@ -27378,7 +27378,7 @@ d82f876705fd85722ea8409d0cd97fe7  tests/tests/kernel/classes/expVelocityStopRest
 805242b566e7eb9a4614ce5c30430c32  tests/tests/kernel/classes/expVelocityWatchdogTest.php
 343c0121d4e5e9a067c7b31b5e462c9c  tests/tests/kernel/classes/expViewAccessTest.php
 0745ffa213053f2a3bc03b9a9fbb664e  tests/tests/kernel/classes/expViewParametersTest.php
-980c5dfccd684d371ce113f846aa5c35  tests/tests/kernel/classes/expWebsiteSidebarMigrationTest.php
+27106a3ce3178f26b9e8b4c81c3a2100  tests/tests/kernel/classes/expWebsiteSidebarMigrationTest.php
 eb6e31ad5a2ad5e5836bdcb781fb7114  tests/tests/kernel/classes/extensions/cycle1/extension.xml
 b03633d619dfa27944eb552972d7f02d  tests/tests/kernel/classes/extensions/cycle2/extension.xml
 d471fa62de2a662dc597fb5efeadea08  tests/tests/kernel/classes/extensions/ezdepextends/extension.xml

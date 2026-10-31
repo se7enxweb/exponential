@@ -34,7 +34,19 @@ Was er tut:
 | die Rolle Editor | `expwt/use`, `expwt/edit`, `expwt/create`, `expwt/structure`, wo sie ihr fehlen |
 | die Rolle Administrator | `expwt/*`, außer sie hat `*/*` |
 | `websitetoolbar.ini [WebsiteToolbarSettings] HiddenContentClasses[]` (settings/override und jeder Siteaccess) | `expwt.ini [CreateSettings] HiddenClassList[]` daneben |
-| `ActiveExtensions[]=ezwt`, `ActiveAccessExtensions[]=ezwt` | `expwt` an derselben Stelle; ezwt wird nicht mehr geladen |
+| `ActiveExtensions[]=ezwt`, `ActiveAccessExtensions[]=ezwt` | `expwt` an derselben Stelle; ezwt wird nicht mehr geladen. Aktiviert die Datei expwt schon (vor oder nach ezwt), wird die ezwt-Zeile nur entfernt: „remove ezwt (expwt already active)“ |
+
+Eine Rolle mit mehreren Toolbar-Policies bekommt eine expwt-Policy je Funktion, nicht eine je Toolbar-Policy:
+Einschränkungen, die sich nur in den Werten einer einzigen Einschränkung unterscheiden, werden zusammengeführt (zwei
+`Class`-Listen werden eine mit den Klassen beider), denn das erlaubt genau, was die Toolbar-Policies zusammen erlaubten;
+Einschränkungen, die sich so nicht zusammenführen lassen (zwei Klassen in zwei verschiedenen Sektionen oder eine Policy
+mit `Node` und `Subtree`), ergeben je eine expwt-Policy. Eine Policy, die die Rolle schon hat, gleich oder weiter, wird
+nicht noch einmal vergeben. Jede Zeile nennt die Werte der Einschränkungen und die Quelle:
+
+```
+would remove ezwt (expwt already active) from ./settings/override/site.ini.append.php
+would grant expwt/use to Editor (3) limited to Class 1, 2, 5, 11, ... (from 2 websitetoolbar/use policies)
+```
 
 Eine Datei, die er ändert, bleibt als `<Datei>.before-expwt` erhalten. Die eZODF-Schaltflächen und die eigenen
 Toolbar-Templates von ezwt haben keine Entsprechung; sie werden als Hinweise aufgeführt, nicht kopiert. Ein zweiter Lauf

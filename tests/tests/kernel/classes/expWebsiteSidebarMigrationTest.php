@@ -71,6 +71,67 @@ class expWebsiteSidebarMigrationTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), expWebsiteSidebarMigration::policyPlan( $roles ), 'the same limitations in another order count' );
     }
 
+    /** Two policies under one key cannot be written with role(), so they are listed here */
+    private static function roleWithToolbars( $id, $name, array $limitationSets, array $more = array() )
+    {
+        $role = self::role( $id, $name, $more );
+        foreach ( $limitationSets as $limitations )
+            $role['policies'][] = array( 'module' => 'websitetoolbar', 'function' => 'use', 'limitations' => $limitations );
+        return $role;
+    }
+
+    public function testTwoIdenticalToolbarPoliciesGiveOneGrantPerFunction()
+    {
+        $class = array( 'Class' => array( '2', '16' ) );
+        $plan = expWebsiteSidebarMigration::policyPlan( array( self::roleWithToolbars( 3, 'Editor', array( $class, array( 'Class' => array( '16', '2' ) ) ) ) ) );
+        $this->assertSame( array( 'Editor:expwt/use+Class', 'Editor:expwt/edit+Class', 'Editor:expwt/create+Class', 'Editor:expwt/structure+Class' ),
+                           self::grants( $plan ) );
+        $this->assertSame( '2 websitetoolbar/use policies', $plan[0]['why'] );
+    }
+
+    public function testDifferentClassListsAreJoinedIntoOneGrant()
+    {
+        $plan = expWebsiteSidebarMigration::policyPlan( array( self::roleWithToolbars( 3, 'Editor',
+            array( array( 'Class' => array( '1', '16', '2' ) ), array( 'Class' => array( '43', '2', '44' ) ) ) ) ) );
+        $this->assertCount( 4, $plan );
+        $this->assertSame( array( 'Class' => array( '1', '2', '16', '43', '44' ) ), $plan[0]['limitations'] );
+        $this->assertSame( 'expwt/use to Editor (3) limited to Class 1, 2, 16, 43, 44 (from 2 websitetoolbar/use policies)',
+                           expWebsiteSidebarMigration::grantText( $plan[0] ) );
+    }
+
+    public function testLimitationSetsThatCannotBeJoinedStayApart()
+    {
+        // Class 2 in Section 1, or Class 16 in Section 3: joining both would also grant Class 2 in Section 3
+        $a = array( 'Class' => array( '2' ), 'Section' => array( '1' ) );
+        $b = array( 'Class' => array( '16' ), 'Section' => array( '3' ) );
+        $plan = expWebsiteSidebarMigration::policyPlan( array( self::roleWithToolbars( 7, 'Partner', array( $a, $b ) ) ) );
+        $this->assertSame( array( $a, $b ), array_slice( array_column( $plan, 'limitations' ), 0, 2 ) );
+        $this->assertCount( 8, $plan );
+        // the same Section: one grant; one without limitations: only that one; a narrower set: dropped
+        $this->assertSame( array( array( 'Class' => array( '2', '16' ), 'Section' => array( '1' ) ) ),
+                           expWebsiteSidebarMigration::mergeLimitations( array( $a, array( 'Class' => array( '16' ), 'Section' => array( '1' ) ) ) ) );
+        $this->assertSame( array( array() ), expWebsiteSidebarMigration::mergeLimitations( array( $a, array(), $b ) ) );
+        $this->assertSame( array( array( 'Class' => array( '2', '16' ) ) ),
+                           expWebsiteSidebarMigration::mergeLimitations( array( array( 'Class' => array( '2', '16' ) ), $a ) ) );
+        // Node and Subtree match when either does, so such sets are not joined
+        $ns1 = array( 'Node' => array( '2' ), 'Subtree' => array( '/1/2/' ) );
+        $ns2 = array( 'Node' => array( '5' ), 'Subtree' => array( '/1/2/' ) );
+        $this->assertSame( array( $ns1, $ns2 ), expWebsiteSidebarMigration::mergeLimitations( array( $ns1, $ns2 ) ) );
+        $this->assertFalse( expWebsiteSidebarMigration::subsumes( array( 'Node' => array( '2' ) ), $ns1 ) );
+    }
+
+    public function testRunAfterAJoinedGrantPlansNothing()
+    {
+        $sets = array( array( 'Class' => array( '1', '16', '2' ) ), array( 'Class' => array( '43', '2', '44' ) ) );
+        $role = self::roleWithToolbars( 3, 'Editor', $sets );
+        foreach ( expWebsiteSidebarMigration::policyPlan( array( $role ) ) as $grant )
+            $role['policies'][] = array( 'module' => 'expwt', 'function' => $grant['function'], 'limitations' => $grant['limitations'] );
+        $this->assertSame( array(), expWebsiteSidebarMigration::policyPlan( array( $role ) ), 'the joined grant covers both' );
+        // an unlimited grant the role holds covers any limited one
+        $held = self::roleWithToolbars( 3, 'Editor', $sets, array( 'expwt/use', 'expwt/edit', 'expwt/create', 'expwt/structure' ) );
+        $this->assertSame( array(), expWebsiteSidebarMigration::policyPlan( array( $held ) ) );
+    }
+
     public function testOtherRolesAreLeftAlone()
     {
         $this->assertSame( array(), expWebsiteSidebarMigration::policyPlan( array( self::role( 1, 'Anonymous', array( 'content/read', 'user/login' ) ) ) ) );
@@ -114,5 +175,25 @@ class expWebsiteSidebarMigrationTest extends PHPUnit\Framework\TestCase
         $this->assertSame( "ActiveAccessExtensions[]=expwt\n", expWebsiteSidebarMigration::activationPlan( $both ), 'no second expwt' );
         $this->assertNull( expWebsiteSidebarMigration::activationPlan( "ActiveExtensions[]=ezwtx\n#ActiveExtensions[]=ezwt\n" ) );
         $this->assertNull( expWebsiteSidebarMigration::activationPlan( "ActiveExtensions[]=expwt\n" ) );
+    }
+
+    public function testWithExpwtActiveEzwtIsOnlyRemoved()
+    {
+        $after = "[ExtensionSettings]\nActiveExtensions[]=ezjscore\nActiveExtensions[]=ezwt\n# the sidebar\nActiveExtensions[]=expwt\nActiveExtensions[]=ezoe\n";
+        $change = expWebsiteSidebarMigration::activationChange( $after );
+        $this->assertSame( 'remove', $change['action'] );
+        $this->assertSame( "[ExtensionSettings]\nActiveExtensions[]=ezjscore\n# the sidebar\nActiveExtensions[]=expwt\nActiveExtensions[]=ezoe\n", $change['text'] );
+        $this->assertNull( expWebsiteSidebarMigration::activationChange( $change['text'] ), 'a second run changes nothing' );
+
+        $before = "ActiveExtensions[]=expwt\r\nActiveExtensions[]=ezwt\r\nActiveExtensions[]=ezoe";
+        $change = expWebsiteSidebarMigration::activationChange( $before );
+        $this->assertSame( 'remove', $change['action'] );
+        $this->assertSame( "ActiveExtensions[]=expwt\r\nActiveExtensions[]=ezoe", $change['text'] );
+        $this->assertSame( 1, substr_count( $change['text'], 'expwt' ) );
+
+        $twice = "ActiveExtensions[]=ezwt\nActiveExtensions[]=ezoe\nActiveExtensions[]=ezwt\n";
+        $change = expWebsiteSidebarMigration::activationChange( $twice );
+        $this->assertSame( 'replace', $change['action'] );
+        $this->assertSame( "ActiveExtensions[]=expwt\nActiveExtensions[]=ezoe\n", $change['text'], 'one expwt for two ezwt' );
     }
 }

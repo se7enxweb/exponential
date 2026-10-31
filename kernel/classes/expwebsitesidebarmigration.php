@@ -11,13 +11,16 @@
  * From ezwt (the website toolbar) to expwt (the website sidebar, which replaces it; decision F7 of the expwt plan):
  *
  *   policies   every websitetoolbar/use and websitetoolbar/* becomes expwt/use, expwt/edit, expwt/create and
- *              expwt/structure in the same role, with the same limitations (the toolbar gave all of it); the Editor
- *              role gets those four and the Administrator role expwt/* where they do not hold them already
+ *              expwt/structure in the same role, with the same limitations (the toolbar gave all of it); several
+ *              toolbar policies of one role give one grant per function with the joined limitations where that grants
+ *              nothing more, and nothing the role holds already is granted again; the Editor role gets those four
+ *              and the Administrator role expwt/* where they do not hold them already
  *   settings   websitetoolbar.ini [WebsiteToolbarSettings] HiddenContentClasses[] of settings/override and of every
  *              siteaccess becomes expwt.ini [CreateSettings] HiddenClassList[] beside it; what has no counterpart
  *              (the eZODF buttons, the custom toolbar templates) is reported, not copied
  *   extension  ActiveExtensions[]=ezwt (settings/override/site.ini.append.php) and ActiveAccessExtensions[]=ezwt
- *              (siteaccesses) become expwt at the same place; ezwt is no longer loaded
+ *              (siteaccesses) become expwt at the same place, or are removed where the file activates expwt already;
+ *              ezwt is no longer loaded
  *
  * Whether the sidebar shows (expwt.ini [ExpwtSettings] Enabled) is left at expwt's default: off until expwt 1.0
  * (rollout behind a setting, F14); exp:wt:enable switches it on per siteaccess.
@@ -59,6 +62,10 @@ class expWebsiteSidebarMigration
 
     /**
      * @param array $roles each: id, name, policies (expEditorPolicies::policiesOf(): module, function, limitations)
+     * Several websitetoolbar policies of one role give one expwt grant per function where their limitations can be
+     * joined without granting more (see mergeLimitations()), else one grant per distinct limitation set. A grant
+     * that the role already holds, the same or broader (subsumes()), is not planned again.
+     *
      * @return array grants, each: role (id), name, function, limitations, why
      */
     public static function policyPlan( array $roles )
@@ -71,20 +78,46 @@ class expWebsiteSidebarMigration
                 foreach ( $policies as $p )
                 {
                     if ( $p['module'] === '*' || ( $p['module'] === 'expwt' && ( $p['function'] === '*' || ( $p['function'] === $function
-                         && self::sameLimitations( isset( $p['limitations'] ) ? $p['limitations'] : array(), $limitations ) ) ) ) )
+                         && self::subsumes( isset( $p['limitations'] ) ? (array)$p['limitations'] : array(), $limitations ) ) ) ) )
                         return;
                 }
                 $policies[] = array( 'module' => 'expwt', 'function' => $function, 'limitations' => $limitations );
                 $plan[] = array( 'role' => (int)$role['id'], 'name' => (string)$role['name'], 'function' => $function,
                                  'limitations' => $limitations, 'why' => $why );
             };
+            $sources = array();
+            $from = array();
             foreach ( $role['policies'] as $policy )
             {
                 if ( $policy['module'] !== 'websitetoolbar' || !in_array( $policy['function'], array( 'use', '*' ), true ) )
                     continue;
-                $limitations = isset( $policy['limitations'] ) ? (array)$policy['limitations'] : array();
-                foreach ( self::FROM_TOOLBAR as $function )
-                    $add( $function, $limitations, 'websitetoolbar/' . $policy['function'] );
+                $sources[] = isset( $policy['limitations'] ) ? (array)$policy['limitations'] : array();
+                $key = 'websitetoolbar/' . $policy['function'];
+                $from[$key] = isset( $from[$key] ) ? $from[$key] + 1 : 1;
+            }
+            $why = array();
+            foreach ( $from as $key => $count )
+                $why[] = $count > 1 ? "$count $key policies" : $key;
+            foreach ( self::FROM_TOOLBAR as $function )
+            {
+                // what the role (and this plan) does not already give, joined where that grants nothing more
+                $held = array();
+                foreach ( $policies as $p )
+                {
+                    if ( $p['module'] === 'expwt' && $p['function'] === $function )
+                        $held[] = isset( $p['limitations'] ) ? (array)$p['limitations'] : array();
+                }
+                $todo = array();
+                foreach ( $sources as $limitations )
+                {
+                    $covered = false;
+                    foreach ( $held as $h )
+                        $covered = $covered || self::subsumes( $h, $limitations );
+                    if ( !$covered )
+                        $todo[] = $limitations;
+                }
+                foreach ( self::mergeLimitations( $todo ) as $limitations )
+                    $add( $function, $limitations, implode( ', ', $why ) );
             }
             if ( $role['name'] === self::EDITOR_ROLE )
             {
@@ -120,6 +153,129 @@ class expWebsiteSidebarMigration
             return $l;
         };
         return $norm( $a ) === $norm( $b );
+    }
+
+    /**
+     * Whether a policy limited by $broad grants at least everything a policy limited by $narrow grants: each
+     * limitation of $broad is also one of $narrow, with the same values or more (no limitations: everything).
+     * Node and Subtree in one policy match when either does (eZContentObject::checkAccess()), so a $narrow with both
+     * is subsumed only by a $broad without either or with both.
+     *
+     * @return bool
+     */
+    public static function subsumes( array $broad, array $narrow )
+    {
+        if ( isset( $narrow['Node'] ) && isset( $narrow['Subtree'] ) && ( isset( $broad['Node'] ) xor isset( $broad['Subtree'] ) ) )
+            return false;
+        foreach ( $broad as $identifier => $values )
+        {
+            if ( !isset( $narrow[$identifier] ) )
+                return false;
+            if ( array_diff( array_map( 'strval', (array)$narrow[$identifier] ), array_map( 'strval', (array)$values ) ) )
+                return false;
+        }
+        return true;
+    }
+
+    /**
+     * The fewest limitation sets that grant exactly what the given ones grant together.
+     *
+     * The kernel grants a policy when every one of its limitations matches (AND) and a limitation matches when one of
+     * its values does (OR); two policies of a role give either one's rights (OR). So two sets with the same
+     * identifiers that differ in the values of at most one identifier are one set with the union of those values; a
+     * set that another one subsumes is dropped. Sets with both Node and Subtree are not joined, as the kernel lets
+     * either of those two match (eZContentObject::checkAccess()). Anything else stays one set each.
+     *
+     * @param array[] $sets each: identifier => values
+     * @return array[]
+     */
+    public static function mergeLimitations( array $sets )
+    {
+        $out = array();
+        foreach ( $sets as $set )
+        {
+            $set = (array)$set;
+            foreach ( $set as $k => $v )
+                $set[$k] = array_values( array_map( 'strval', (array)$v ) );
+            $out[] = $set;
+        }
+        do
+        {
+            $changed = false;
+            $count = count( $out );
+            for ( $i = 0; $i < $count && !$changed; ++$i )
+            {
+                for ( $j = 0; $j < $count && !$changed; ++$j )
+                {
+                    if ( $i === $j )
+                        continue;
+                    if ( self::subsumes( $out[$i], $out[$j] ) )
+                    {
+                        array_splice( $out, $j, 1 );
+                        $changed = true;
+                    }
+                    else if ( $j > $i && ( $merged = self::joined( $out[$i], $out[$j] ) ) !== null )
+                    {
+                        $out[$i] = $merged;
+                        array_splice( $out, $j, 1 );
+                        $changed = true;
+                    }
+                }
+            }
+        }
+        while ( $changed );
+        return $out;
+    }
+
+    /** @return array|null one set granting what $a and $b grant together, or null when there is none */
+    private static function joined( array $a, array $b )
+    {
+        $keys = array_keys( $a );
+        sort( $keys );
+        $bk = array_keys( $b );
+        sort( $bk );
+        if ( $keys !== $bk || ( isset( $a['Node'] ) && isset( $a['Subtree'] ) ) )
+            return null;
+        $differ = array();
+        foreach ( $keys as $k )
+        {
+            $x = $a[$k];
+            $y = $b[$k];
+            sort( $x );
+            sort( $y );
+            if ( $x !== $y )
+                $differ[] = $k;
+        }
+        if ( count( $differ ) > 1 )
+            return null;
+        if ( $differ )
+        {
+            $k = $differ[0];
+            $values = array_values( array_unique( array_merge( $a[$k], $b[$k] ) ) );
+            sort( $values, SORT_NATURAL );
+            $a[$k] = $values;
+        }
+        return $a;
+    }
+
+    /**
+     * @param array $limitations identifier => values
+     * @return string "Class 1, 2, 5; Section 1", or "" without limitations
+     */
+    public static function limitationText( array $limitations )
+    {
+        $parts = array();
+        foreach ( $limitations as $identifier => $values )
+            $parts[] = $identifier . ' ' . implode( ', ', array_map( 'strval', (array)$values ) );
+        return implode( '; ', $parts );
+    }
+
+    /** @return string a grant of policyPlan() as one line, without the verb */
+    public static function grantText( array $grant )
+    {
+        $limits = self::limitationText( $grant['limitations'] );
+        return sprintf( 'expwt/%s to %s (%d)%s (from %s)', $grant['function'], $grant['name'], $grant['role'],
+                        $limits !== '' ? ' limited to ' . $limits : '', $grant['why'] );
     }
 
     /**
@@ -186,12 +342,40 @@ class expWebsiteSidebarMigration
      */
     public static function activationPlan( $text )
     {
-        if ( !preg_match( '/^(\s*Active(?:Access)?Extensions\[\]=)ezwt\s*$/m', $text ) )
+        $change = self::activationChange( $text );
+        return $change === null ? null : $change['text'];
+    }
+
+    /**
+     * ezwt out of ActiveExtensions[] and ActiveAccessExtensions[]: where the file activates expwt already (before or
+     * after ezwt, in either list), every ezwt line is removed (action "remove"); else the first ezwt line of each list
+     * becomes expwt at the same place and any further one is removed (action "replace").
+     *
+     * @param string $text a site.ini.append(.php)
+     * @return array|null text (the new text), action ("replace" or "remove"); null when it has no ezwt
+     */
+    public static function activationChange( $text )
+    {
+        if ( !preg_match( '/^[ \t]*Active(?:Access)?Extensions\[\]=ezwt[ \t]*\r?$/m', $text ) )
             return null;
-        return preg_replace_callback( '/^(\s*)(Active(?:Access)?Extensions)\[\]=ezwt[ \t]*(\r?\n|$)/m', function ( $m ) use ( $text ) {
-            $has = preg_match( '/^\s*' . $m[2] . '\[\]=expwt\s*$/m', $text );
-            return $has ? '' : $m[1] . $m[2] . '[]=expwt' . $m[3];
-        }, $text );
+        $active = (bool)preg_match( '/^[ \t]*Active(?:Access)?Extensions\[\]=expwt[ \t]*\r?$/m', $text );
+        $placed = array();
+        $new = preg_replace_callback( '/^([ \t]*)(Active(?:Access)?Extensions)\[\]=ezwt[ \t]*(\r?\n|\r?$)/m',
+            function ( $m ) use ( $active, &$placed ) {
+                if ( $active || isset( $placed[$m[2]] ) )
+                    return '';
+                $placed[$m[2]] = true;
+                return $m[1] . $m[2] . '[]=expwt' . $m[3];
+            }, $text );
+        return array( 'text' => $new, 'action' => $active ? 'remove' : 'replace' );
+    }
+
+    /** @return string the line for an activation change of $path, as planned or as done */
+    private static function activationText( array $change, $path, $done )
+    {
+        if ( $change['action'] === 'remove' )
+            return ( $done ? 'removed' : 'remove' ) . " ezwt (expwt already active) from $path";
+        return ( $done ? 'replaced' : 'replace' ) . " ezwt by expwt in $path";
     }
 
     // ---------------------------------------------------------------------------------------------- installation
@@ -247,14 +431,16 @@ class expWebsiteSidebarMigration
         $files = self::collect( $root );
         $lines = array();
         foreach ( $files['site'] as $path => $text )
-            if ( self::activationPlan( $text ) !== null )
-                $lines[] = "replace ezwt by expwt in $path";
+        {
+            $change = self::activationChange( $text );
+            if ( $change !== null )
+                $lines[] = self::activationText( $change, $path, false );
+        }
         $settings = self::settingsPlan( $files['toolbar'], $files['expwt'] );
         foreach ( array_keys( $settings['writes'] ) as $path )
             $lines[] = "copy the hidden classes of ezwt to $path";
         foreach ( self::policyPlan( self::roles() ) as $grant )
-            $lines[] = sprintf( 'grant expwt/%s to %s (%d)%s: %s', $grant['function'], $grant['name'], $grant['role'],
-                                $grant['limitations'] ? ' with ' . implode( ', ', array_keys( $grant['limitations'] ) ) : '', $grant['why'] );
+            $lines[] = 'grant ' . self::grantText( $grant );
         return $lines;
     }
 
@@ -286,12 +472,12 @@ class expWebsiteSidebarMigration
         }
         foreach ( $files['site'] as $path => $text )
         {
-            $new = self::activationPlan( $text );
-            if ( $new === null )
+            $change = self::activationChange( $text );
+            if ( $change === null )
                 continue;
             copy( $path, $path . '.before-expwt' );
-            file_put_contents( $path, $new );
-            $done[] = "replaced ezwt by expwt in $path";
+            file_put_contents( $path, $change['text'] );
+            $done[] = self::activationText( $change, $path, true );
         }
         $byId = array();
         foreach ( eZRole::fetchList() as $role )
@@ -301,7 +487,7 @@ class expWebsiteSidebarMigration
             if ( !isset( $byId[$grant['role']] ) )
                 continue;
             $byId[$grant['role']]->appendPolicy( 'expwt', $grant['function'], $grant['limitations'] );
-            $done[] = sprintf( 'granted expwt/%s to %s (%d)', $grant['function'], $grant['name'], $grant['role'] );
+            $done[] = 'granted ' . self::grantText( $grant );
         }
         if ( $done )
         {

@@ -33,7 +33,18 @@ What it does:
 | the Editor role | `expwt/use`, `expwt/edit`, `expwt/create`, `expwt/structure` where it lacks them |
 | the Administrator role | `expwt/*`, unless it has `*/*` |
 | `websitetoolbar.ini [WebsiteToolbarSettings] HiddenContentClasses[]` (settings/override and every siteaccess) | `expwt.ini [CreateSettings] HiddenClassList[]` beside it |
-| `ActiveExtensions[]=ezwt`, `ActiveAccessExtensions[]=ezwt` | `expwt` at the same place; ezwt is no longer loaded |
+| `ActiveExtensions[]=ezwt`, `ActiveAccessExtensions[]=ezwt` | `expwt` at the same place; ezwt is no longer loaded. Where the file activates expwt already (before or after ezwt), the ezwt line is only removed: "remove ezwt (expwt already active)" |
+
+A role with several toolbar policies gets one expwt policy per function, not one per toolbar policy: limitations that
+differ in the values of one limitation only are joined (two `Class` lists become one with the classes of both), as
+that grants exactly what the toolbar policies granted together; limitation sets that cannot be joined that way (two
+classes in two different sections, or a policy with both `Node` and `Subtree`) give one expwt policy each. A policy the
+role holds already, the same or broader, is not granted again. Each line names the limitation values and the source:
+
+```
+would remove ezwt (expwt already active) from ./settings/override/site.ini.append.php
+would grant expwt/use to Editor (3) limited to Class 1, 2, 5, 11, ... (from 2 websitetoolbar/use policies)
+```
 
 A file it changes is kept as `<file>.before-expwt`. The eZODF buttons and the custom toolbar templates of ezwt have
 no counterpart and are listed as notes, not copied. Running it again changes nothing. The sidebar itself stays off
