@@ -870,7 +870,7 @@ d4fd04ff2e30c797b228adfc4f1486d8  design/admin/templates/user/password.tpl
 04c503c3fa0ae0adcfd3e5693b5fcb53  design/admin/templates/user/reauth.tpl
 d8ec449004bb5e219a602cf6ffa540f7  design/admin/templates/user/register.tpl
 3483a83d065f0806f2e0a43a2b4c4d35  design/admin/templates/user/security.tpl
-ebed41ef7a1c5f2c72b365e01b6e2bb3  design/admin/templates/user/sessionreport.tpl
+b5aacddf98705ecafa00c7a56f14bc36  design/admin/templates/user/sessionreport.tpl
 3badcf2678c549bee0543bfed0a7400a  design/admin/templates/user/sessions.tpl
 bd1b035ba64fbf2073d452b0f16c0c72  design/admin/templates/user/setting.tpl
 201d4d8ba785302b4e8abb1d2dc5275c  design/admin/templates/user/success.tpl
@@ -1682,7 +1682,7 @@ c95c10e6f71a175f38c500e1183a4286  design/admin4/templates/user/password.tpl
 04c503c3fa0ae0adcfd3e5693b5fcb53  design/admin4/templates/user/reauth.tpl
 d8ec449004bb5e219a602cf6ffa540f7  design/admin4/templates/user/register.tpl
 3483a83d065f0806f2e0a43a2b4c4d35  design/admin4/templates/user/security.tpl
-ebed41ef7a1c5f2c72b365e01b6e2bb3  design/admin4/templates/user/sessionreport.tpl
+b5aacddf98705ecafa00c7a56f14bc36  design/admin4/templates/user/sessionreport.tpl
 3badcf2678c549bee0543bfed0a7400a  design/admin4/templates/user/sessions.tpl
 08301adf55d7ea9d5985d6d76e3c4d62  design/admin4/templates/user/setting.tpl
 201d4d8ba785302b4e8abb1d2dc5275c  design/admin4/templates/user/success.tpl
@@ -6654,7 +6654,7 @@ d3145c14972f62fc3e55bd0ddb7339f3  doc/eng-us/features/6.0/twig-templates.md
 dddc25f5090a5e0f97d83e3714f992fd  doc/eng-us/features/6.0/ui-switch.md
 e4ef7f86ac46e99ef7922dd6e0715833  doc/eng-us/features/6.0/user-audit.md
 86e455aa2147f5763a183b396caab8c7  doc/eng-us/features/6.0/user-hygiene.md
-f813bd2ffac93c8a4a60542d522bbc00  doc/eng-us/features/6.0/user-sessions.md
+9749ecae563d5c9083aae9f62fef8635  doc/eng-us/features/6.0/user-sessions.md
 1c8d79710d70799c57b2d0ad69b30bd7  doc/eng-us/features/6.0/valkey-cache-hooks.md
 aeab614b104ddc5b03384aa3e24a56d5  doc/eng-us/features/6.0/velocity-control-panel.md
 40fc877ab6272ca916936ec4b376d6c9  doc/eng-us/features/6.0/velocity-discovery-federation-and-deploy.md
@@ -15742,7 +15742,7 @@ abb2b2111b6defef4f3bac9141768035  doc/ger-de/funktionen/6.0/befehle-fuer-htacces
 692555817d40569b86bb87ae26b6d746  doc/ger-de/funktionen/6.0/benutzer-auditprotokoll.md
 2cd14aa43f6df51b06e567996df18b8e  doc/ger-de/funktionen/6.0/benutzerpasswort-zuruecksetzen.md
 6acd0f6b0631a8ac42b4a3aa53b7d50e  doc/ger-de/funktionen/6.0/benutzerpflege.md
-ac341342e6d5c4f8d60b45e0f1b9de27  doc/ger-de/funktionen/6.0/benutzersitzungen.md
+8a1a62bed2113e8c2b2774cced0d1f62  doc/ger-de/funktionen/6.0/benutzersitzungen.md
 01bdf1a7b634a65d50398bd9afe37d36  doc/ger-de/funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md
 1bba785c9852e2e139030b7f31d9182a  doc/ger-de/funktionen/6.0/bestellbelege.md
 dcb3a9249b7895ce43a2fc239356fe22  doc/ger-de/funktionen/6.0/bestellungen-nach-siteaccess.md
@@ -23872,7 +23872,7 @@ f9ed25680a6043c533120206f2247998  kernel/classes/user/expusersecurityactivity.ph
 15efb4a07a7598ead00744a4051597cf  kernel/classes/user/expusersecurityalerts.php
 1050b547e3d53d82934805f8363462ac  kernel/classes/user/expusersession.php
 95b3f9022ffb78f706bbe2dd0606b9fe  kernel/classes/user/expusersessioninfo.php
-e05274e494b64bbc653a515495cad53e  kernel/classes/user/expusersessionreport.php
+daa99869e4d43dc153755b49f868a6af  kernel/classes/user/expusersessionreport.php
 097657e8510d38c8938a96c279e50cf6  kernel/classes/user/expusersessiontracker.php
 62368526329b7250c597d601ba335e53  kernel/classes/user/expusersettingrepair.php
 f30b09f0d9113200ff0cc925b2521b56  kernel/classes/vathandlers/ezdefaultvathandler.php
@@ -24624,7 +24624,7 @@ be9142823489819165896bad72f29e4d  kernel/private/classes/views/user/password.php
 b1cb5a29faf5b79aae39e3094cbb8e3f  kernel/private/classes/views/user/register.php
 12987bca5e555ee0af13a2ac2df380d2  kernel/private/classes/views/user/registration.php
 b3bef342be4397111d3f11e754b9b70a  kernel/private/classes/views/user/security.php
-6eccb2f752feab1966caa54065727b78  kernel/private/classes/views/user/sessionreport.php
+0bd6cdd1d5fb06f56d069b9abcc11c5d  kernel/private/classes/views/user/sessionreport.php
 4641121ea04766c67984ccee646d05d0  kernel/private/classes/views/user/sessions.php
 e84a54b77f09eb007806f6211fc2ae4e  kernel/private/classes/views/user/setting.php
 3b54ff520850f8a0a1053f1f3dabb1b3  kernel/private/classes/views/user/success.php
@@ -27731,7 +27731,7 @@ dfeee279c976782b24ced759868bf2f3  tests/tests/kernel/classes/user/expUserAccount
 c94480646557d629bc8ba0808b6532bb  tests/tests/kernel/classes/user/expUserSecurityActivityTest.php
 a13fe07be9f2c4058965f87ab6025111  tests/tests/kernel/classes/user/expUserSecurityAlertsTest.php
 1e44098be37a64bc2547bc04434dca14  tests/tests/kernel/classes/user/expUserSessionInfoTest.php
-eae0b6f6f7a4651d4fdf616987f65b87  tests/tests/kernel/classes/user/expUserSessionReportTest.php
+0297f56212bb48d7a01c691875d8914d  tests/tests/kernel/classes/user/expUserSessionReportTest.php
 5d4f260f6c8c2d408a493d27c7053e87  tests/tests/kernel/classes/user/expUserSessionTest.php
 e730f4ee1cdc1fcc71ff8d79cc6f2bbe  tests/tests/kernel/classes/user/expUserSettingRepairTest.php
 cce3cf4bfba21806d640eefb6b965c31  tests/tests/kernel/classes/user/expWeakPasswordListTest.php
