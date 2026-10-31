@@ -22,6 +22,14 @@ class ezpRestHttpResponseWriter extends ezcMvcHttpResponseWriter
     public $response;
 
     /**
+     * Whether the response went out already, as it was written (an event stream: expGraphQLRestStreamResponse);
+     * nothing more is sent for it.
+     *
+     * @var bool
+     */
+    public $streamed = false;
+
+    /**
      * Sends the response, with its status through http_response_code().
      *
      * The REST status objects put the status into the header list as a
@@ -51,6 +59,8 @@ class ezpRestHttpResponseWriter extends ezcMvcHttpResponseWriter
         {
             $this->response->status->process( $this );
         }
+        if ( $this->streamed )
+            return;
 
         $this->headers['Content-Length'] = strlen( (string)$this->response->body );
 

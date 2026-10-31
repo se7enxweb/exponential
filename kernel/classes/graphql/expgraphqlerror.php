@@ -26,6 +26,8 @@ class expGraphQLError extends Exception
     const PERSISTED_QUERY_NOT_FOUND = 'PERSISTED_QUERY_NOT_FOUND';
     const PERSISTED_QUERY_NOT_SUPPORTED = 'PERSISTED_QUERY_NOT_SUPPORTED';
     const PERSISTED_QUERY_REQUIRED = 'PERSISTED_QUERY_REQUIRED';
+    /** A subscription over MaxSubscriptions, MaxSubscriptionsPerUser or MaxSubscriptionsPerAddress (HTTP 429). */
+    const SUBSCRIPTION_LIMIT = 'SUBSCRIPTION_LIMIT';
 
     /** @var string */
     protected $errorCode;
