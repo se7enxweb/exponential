@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 46884c493a70f93699d00c996034fbf3  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-30aed35f19f48ea02e2c99bf6177c16b  autoload/ezp_kernel.php
+8dc75f72804b6cbbb089e09601899104  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 a880afdeae4b5fa062bb38f5a26c322f  benchmarks/classes/ezbenchmarkclirunner.php
@@ -107,6 +107,7 @@ db2c34ba4ef800cbfcc51c57e05140f6  bin/php/exptemplateconverttpltotwig.php
 b8889f13972e59ae4f545b60343e613f  bin/php/exptemplateconverttwigtostpl.php
 de8caa5d1733176bcb7ac09b190715ed  bin/php/exptemplateconverttwigtotpl.php
 e40098abc0bb9999b797056d2f7eb95b  bin/php/exptemplateengines.php
+2cedfdea71611595a41fbc4dda22d3f0  bin/php/expwtmigratefromezwt.php
 cd7e709ddd373b92570a4b8108f0844b  bin/php/ezapplytemplate.php
 5cc15c0bdc487530099644d781bd0e52  bin/php/ezasynchronouspublisher.php
 143f159813ab8806ae6b1651189fd1d9  bin/php/ezcache.php
@@ -233,7 +234,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-f9b816b05b06ec666480ff33fe141b08  composer.json
+6ec1ae51fd4bf96447b74b5a3d2c83d6  composer.json
 e9264ecfdf16598f8b69c0ec301251ac  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 b226014797143b612684b0aacc22d64c  config.php-RECOMMENDED
@@ -695,7 +696,7 @@ e564dcd60747102cd28699dc161aa579  design/admin/templates/page_header.tpl
 3ceb59d3584d417fdb51fe11e73f2729  design/admin/templates/page_topmenu.tpl
 7595633233e131b1b54c3d3e493c4568  design/admin/templates/page_topmenuitem.tpl
 def1e69baea2cb9d93a8d1af2bf5f692  design/admin/templates/page_toppath.tpl
-4b5ba1c1de004c8d6d36c6b1bc329257  design/admin/templates/pagelayout.tpl
+c4ae78e6ace08cdc0fb80f8aa9b4ffe6  design/admin/templates/pagelayout.tpl
 2891f454853f3b2f2cac2a94173e257a  design/admin/templates/parts/audit/menu.tpl
 806405f8a2d30391496982a5c36334cb  design/admin/templates/parts/content/menu.tpl
 440d25498d1044ac8599fc479c458323  design/admin/templates/parts/exp_demo_mode_banner.tpl
@@ -993,7 +994,7 @@ cb128a4645e891cd796919aad3ed36d1  design/admin3/templates/page_header.tpl
 68ef800e886d8f0bbe4c2216f50e0c18  design/admin3/templates/page_search.tpl
 e197b66c63a2bcf4e5d9777cd91f6300  design/admin3/templates/page_topmenu.tpl
 cf8663798cf45b3045efbc98b8d831c5  design/admin3/templates/page_topmenuitem.tpl
-066b4bf70df2aad0392b9f6d691a7101  design/admin3/templates/pagelayout.tpl
+f71b23340155f6953a9b8b8f8269ebe9  design/admin3/templates/pagelayout.tpl
 e32e963f4d25c52a7f8d3eb520c0b227  design/admin3/templates/parts/user/menu.tpl
 03bf0a50004b366a1cbe7f46bb57d6ce  design/admin3/templates/window_controls.tpl
 a41265a8c8cf4698837a304aae23bb6a  design/admin4/fonts/IcoMoon.eot
@@ -1483,7 +1484,7 @@ ad2b16b7e90d3d850e074f97acd807d4  design/admin4/templates/page_search.tpl
 3d4afea787dd6fc64ddbc5f6d7e973d6  design/admin4/templates/page_topmenu.tpl
 262c20c7eaf7f90d393c1872af532d33  design/admin4/templates/page_topmenuitem.tpl
 a502e42cfc314d22305306bf64fc6c58  design/admin4/templates/page_toppath.tpl
-24f1c4a5404bd1328d08b36077e66538  design/admin4/templates/pagelayout.tpl
+19bdc734dab9a5e86837b11048c0394d  design/admin4/templates/pagelayout.tpl
 435db8e2b723396436597f44d430a983  design/admin4/templates/parts/a4_environment_badge.tpl
 b4673e247c3d0aade999bd6f38e6e06d  design/admin4/templates/parts/a4_header_help.tpl
 32a2ced2131b7d1a0aed712e1147485a  design/admin4/templates/parts/a4_header_item.tpl
@@ -1739,7 +1740,7 @@ ac760fb7abe0c74c082db3e09d724006  design/admin4l/templates/explayouts/block/admi
 00dc6fc9a64cbb17ffcdd7be6133b9a8  design/admin4l/templates/explayouts/block/admin_toolbar_developer.tpl
 435fa478e336ab853226197df0b70fc2  design/admin4l/templates/explayouts/block/admin_toolbar_right.tpl
 006a94cb403062f61b9ed5592ea9f6ae  design/admin4l/templates/explayouts/block/admin_ui_switch.tpl
-0c2b09cdb94df5c9a094777d2a7e19ec  design/admin4l/templates/pagelayout.tpl
+73643cf2e5880f13d894a79f5f874f0c  design/admin4l/templates/pagelayout.tpl
 e07ee98bdbd9a6b7b1224004fff07513  design/base/images/bin.gif
 86fff651cfbbcf360ef78737c6523d64  design/base/images/button.gif
 7ae68b7e4d3ceed5ac652b11f20face6  design/base/images/quote-down.gif
@@ -1978,7 +1979,7 @@ f061dda57413217ff460b3a0f8c380e8  design/base/templates/notification/handler/ezs
 a128330043e94c860fd598b40f6d45ba  design/base/templates/notification/handler/ezsubtree/view/digest_plain.tpl
 8df67aa527bcb05032f59c071d6a8a91  design/base/templates/notification/handler/ezsubtree/view/plain.tpl
 dfab1213e6918f442ca7efd7a7e070a5  design/base/templates/notification/settings.tpl
-19d0a0b0c0b4162cf13fbf63f2016393  design/base/templates/pagelayout.tpl
+7810f22f45dc361150be52c97ae79231  design/base/templates/pagelayout.tpl
 bbd300cf889157d5f91c39d466641221  design/base/templates/parts/path.tpl
 4957716813c60f9a19cab755957257a5  design/base/templates/parts/treemenu.tpl
 5dff624e89375bf70860c42fd4521590  design/base/templates/shop/basket.tpl
@@ -2004,11 +2005,11 @@ ccdc374287e8a777daf8aa5b31d9d52f  design/mysite/override/templates/image.tpl
 bc0fc6e7b61f72089fba036777a8ae45  design/mysite/override/templates/info_page.tpl
 062f0763b16ecdc31ac4330ad1b13993  design/mysite/override/templates/line_article.tpl
 a54f494a211e13cc276ecebcfd7b9369  design/mysite/stylesheets/mysite.css
-c8a00dfe771025f5dbb90cb446c4896d  design/mysite/templates/pagelayout.tpl
+bd5547faec4f931fe10b13113b190396  design/mysite/templates/pagelayout.tpl
 9b8baacf78163b4f752b8534aadb5770  design/plain/images/plain.gif
 d741ff478d87f2f3a436856ff8c18a3d  design/plain/templates/left_menu.tpl
 6114354e50395469fdc5534db795cbb4  design/plain/templates/page_topbox.tpl
-b46a44ede01240b35cd785bba3762a39  design/plain/templates/pagelayout.tpl
+d66309ccb92e6aee77c567b2e4607eb1  design/plain/templates/pagelayout.tpl
 ae3733258257ccef2eee2b20c77ac79a  design/standard/fonts/1942.ttf
 13c60222f1f0fe4e35621ab7c0ec1a23  design/standard/fonts/1942/text.txt
 ba31fd1eebfb435d1fc33598d23fcd58  design/standard/fonts/a_d_mono.ttf
@@ -2878,7 +2879,8 @@ f061d1ccc56b10ebe5653c5e011329e1  design/standard/templates/page_mainarea.tpl
 7d82ae198f747f325945a9fe2acb8623  design/standard/templates/page_toppath.tpl
 6fc57af45a8986acee8b4514462fab15  design/standard/templates/page_toptoolbar.tpl
 4ebfe5c829563edc25060b55305538d1  design/standard/templates/page_warning.tpl
-ed88bfc13f66408033fd2646b731da8e  design/standard/templates/pagelayout.tpl
+cf0962351ff74ebfe70fbd7feeedd1b6  design/standard/templates/pagelayout.tpl
+3a6b816ea7602744a8e6a69a9a2147af  design/standard/templates/pagelayout/hooks/body_end.tpl
 61fb91bd0de24052c8877f0e8732b825  design/standard/templates/parts/exp_content_direction.tpl
 d0ba090df7ef9e13793d7802efb17c85  design/standard/templates/parts/sortheader.tpl
 7c79e04f55cd77d4e6c7caf11a8ce457  design/standard/templates/pdf/edit.tpl
@@ -3339,7 +3341,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-33462fd8877b045753df523ff07f6844  doc/changelogs/6.0/6.0.15.md
+43aa9ba8a0312938f801f7e10b8011fd  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3617,7 +3619,7 @@ eff1753adbe4a24a043adec860709825  doc/eng-us/examples/commands/expgraphqlkeys.md
 b791538120cc3622e7d2268eee2a4ab9  doc/eng-us/examples/commands/expgraphqlquery.md
 405a8f4e53ef0b4123b3ae38b08b9ed8  doc/eng-us/examples/commands/expgraphqlschema.md
 da3556f0306e10c9ebb391766a13b36c  doc/eng-us/examples/commands/expgraphqlstarter.md
-90eb8d2ff9aad871b41e2b138a52dd13  doc/eng-us/examples/commands/expgraphqlstatus.md
+c147eb81b588ba2ab38af6dde1cab996  doc/eng-us/examples/commands/expgraphqlstatus.md
 838861e8d88a23d984e3c85e8112310c  doc/eng-us/examples/commands/expgraphqlwebhooks.md
 379924437a3392f4f0015a1224c8d8b8  doc/eng-us/examples/commands/exphelp.md
 e8d9f6e06e1709a34a8e2b131e7a8b8a  doc/eng-us/examples/commands/exphelpcontent.md
@@ -6478,7 +6480,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-5ff2d8da522e1c2c403995df2909bbbb  doc/eng-us/features/6.0/README.md
+c2cfcb5ff8331cde915fdd3850a59e5f  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -6577,7 +6579,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 9c48d98113bfd90aee4978edd5c7a7f2  doc/eng-us/features/6.0/ezpm-package-manager-cli.md
 55a6d37f6223a741370c84e36904131d  doc/eng-us/features/6.0/file-consistency-check.md
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
-5b6fe2924e236da77515fbca3965524c  doc/eng-us/features/6.0/graphql.md
+fc6ebe78f6e6789c557f07de76f4dc7b  doc/eng-us/features/6.0/graphql.md
 da954ebd145c3c58a98b5755235bb069  doc/eng-us/features/6.0/help-content.md
 c2e6afd557f166bbbd534db2b70a1de7  doc/eng-us/features/6.0/help-system.md
 decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
@@ -6607,6 +6609,7 @@ e510905150884893d3af084b35ddf870  doc/eng-us/features/6.0/order-list-sorting.md
 c4a200c5702d75559c297c3520f503f9  doc/eng-us/features/6.0/package-installer-batching.md
 a965ba169b72f314b100976debf1caf2  doc/eng-us/features/6.0/package-licenses-and-versions.md
 48fd83a220c170e55d9d71045b4dc611  doc/eng-us/features/6.0/package-wizard.md
+a05225d17abf65b608e1de98d82edced  doc/eng-us/features/6.0/pagelayout-hooks.md
 e14272d00b63fa9eb5ae016d2fe21511  doc/eng-us/features/6.0/password-change-at-next-sign-in.md
 580586e719e07c4425de56df825af3e9  doc/eng-us/features/6.0/pdf-export.md
 8e2819456b4dc80af070fe35b03512fc  doc/eng-us/features/6.0/permission-checks-for-many-assignments.md
@@ -6682,6 +6685,7 @@ a6804237b42b490f18b7266b7f276e2a  doc/eng-us/features/6.0/velocity-uwebserver.md
 26ddd0cf40cd46bd777c6a6cd595c001  doc/eng-us/features/6.0/velocity-websockets-and-events.md
 732b0806269c31cc1c081b166d7a7662  doc/eng-us/features/6.0/version-preview-view-modes.md
 e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-commands.md
+264d6d8a8c848667302b1e280e5cdd79  doc/eng-us/features/6.0/website-sidebar.md
 69cf415d178489c7ca9f2cf4bf7df884  doc/eng-us/glossary.md
 e3e117bf283a09a375595e52cb21f59d  doc/eng-us/goals.md
 5a472729017993e883a506d5dfbd346e  doc/eng-us/guides/README.md
@@ -6706,7 +6710,7 @@ a518e62944d14435eac07c9fde4b2306  doc/eng-us/guides/extensions-page.md
 cdac22058aa72ebee655751b3f933e83  doc/eng-us/guides/finding-an-error-by-its-reference.md
 996ecbfce279c75c2c2fdfdd94d6a171  doc/eng-us/guides/getting-started.md
 6301c1c013d5581b176c0ec1a1dbf1ac  doc/eng-us/guides/graphql-recipes.md
-5327670ffd38c5c0efeb70f19641b033  doc/eng-us/guides/graphql-walkthrough.md
+d221902ce4ca3bb8776f12f9c07bd25f  doc/eng-us/guides/graphql-walkthrough.md
 fbcbc9cf7bbfb1f95906327d9513b2c6  doc/eng-us/guides/images/account-approval/approval-item.png
 8bcb3ac63cc2341e4ef7d3045867af4b  doc/eng-us/guides/images/account-approval/approved.png
 4a8739c9f2f5b65580e85608c8d2f948  doc/eng-us/guides/images/account-approval/section-workflow.png
@@ -6720,6 +6724,18 @@ c8c5bdc2d54d204317c345dd379be344  doc/eng-us/guides/images/cronjobs/overview.png
 619cffe8a71eb6f438756daad8a850d5  doc/eng-us/guides/images/cronjobs/part-card.png
 e26c3dad83aefe48c8ba595f00cfbd8c  doc/eng-us/guides/images/cronjobs/recent-runs.png
 639d135247aa8e0d9da7e694bad3455f  doc/eng-us/guides/images/cronjobs/status-and-overview.png
+c921856f9b07be771da43fd08234c6c3  doc/eng-us/guides/images/graphql-walkthrough/01-status.webp
+38c14cb6d0ec4de31ae0160fc89c1bbf  doc/eng-us/guides/images/graphql-walkthrough/02-dry-run.webp
+95649417399439ce7830e90821e31639  doc/eng-us/guides/images/graphql-walkthrough/03-switched-on.webp
+316426c7c96368f1c76655d2701e5800  doc/eng-us/guides/images/graphql-walkthrough/04-api-keys.webp
+ceb25f7cf63b0a281876406ba80f9753  doc/eng-us/guides/images/graphql-walkthrough/04-setup-graphql.webp
+85837d80e1d90fdd0d9301ef3aea4cc0  doc/eng-us/guides/images/graphql-walkthrough/05-first-question.webp
+f3b60a7ee01516f38abc26613532cc6b  doc/eng-us/guides/images/graphql-walkthrough/06-starter-kits.webp
+45b56366d11e42f52b4f7bb6b7d326fd  doc/eng-us/guides/images/graphql-walkthrough/08-persisted-queries.webp
+78055b29528606bac5d7adfa64369cad  doc/eng-us/guides/images/graphql-walkthrough/08-stored-query.webp
+efcfd3990eefc6de7ae94758f5a1f969  doc/eng-us/guides/images/graphql-walkthrough/09-write-key-dry-run.webp
+4bd4152807881194256e71d00035c446  doc/eng-us/guides/images/graphql-walkthrough/10-limits-and-cache.webp
+8eb6817a05a9686cf07a5fe017ea8ab9  doc/eng-us/guides/images/graphql-walkthrough/11-switched-off-here.webp
 b485dc9c4c9310c144be8b8ccdc1a6ec  doc/eng-us/guides/images/maintenance/how-it-works.png
 15480464cfe248909a735e15ea3bdc59  doc/eng-us/guides/images/maintenance/in-maintenance-details.png
 15688b75324c28f4a4d7bcc5ba383a22  doc/eng-us/guides/images/maintenance/in-maintenance.png
@@ -6778,7 +6794,7 @@ ab6bbf730a075904c4af88a430513e7d  doc/eng-us/guides/template-syntax-check.md
 9e4779ad88a9e6f97b461ce60bc4e584  doc/eng-us/guides/templates-and-design.md
 af191104f2cf6e5332c98ab91d6b2bd7  doc/eng-us/guides/test-language-lorem-ipsum.md
 ead5dd8f3a160fb61e4ad5298a29919a  doc/eng-us/guides/twig-templates-caching.md
-e37468334fb845fd2e5589017c0d83e7  doc/eng-us/guides/twig-templates-compatibility.md
+0a0c75654c302839ceeb97af0d159577  doc/eng-us/guides/twig-templates-compatibility.md
 9511508868f362a14ce9726488741a65  doc/eng-us/guides/twig-templates-converter.md
 7e1fae737168e6f10a298ad63c4165c2  doc/eng-us/guides/twig-templates-debugging.md
 563d7577a7bfbbd6951b72beecbd8282  doc/eng-us/guides/twig-templates-editors.md
@@ -12497,7 +12513,7 @@ cd0b6a85e34fba589a0baf3632bf2fc6  doc/eng-us/images/languages/coverage-map.svg
 cff5e250d6fd7deb062328fd2fac4734  doc/eng-us/images/languages/coverage-map.webp
 fa3733d7d5fa00676ab2bc74eafca985  doc/eng-us/images/languages/world-outline.svg
 b16642eb46fdf6b0f66058e77ff6628d  doc/eng-us/install/01-introduction.md
-67ac7bc99c55b4ec954aedf3e8c7be4b  doc/eng-us/install/02-requirements.md
+9c77abcde1b29dd1bfd4451aa8541525  doc/eng-us/install/02-requirements.md
 b8685d36a4916ba6615b11371203195b  doc/eng-us/install/03-getting-the-code.md
 d3248ba618a795e355b992750019bb49  doc/eng-us/install/04-choosing-an-install-method.md
 cbda8dec23b0413752f3eb9abfe7326d  doc/eng-us/install/05-setup-wizard.md
@@ -12851,7 +12867,7 @@ f45a78a78b0190153b1ea14d27b8799c  doc/ger-de/.examples/descriptions/14-twig-ini-
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-217511d9e2c8df80239f8efbfee0f88b  doc/ger-de/.paths.json
+043d007ba0f56c782007269bad4d5a34  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
@@ -12877,6 +12893,18 @@ bce46dbfde9e7cd9cb5f753a0e4aed4a  doc/ger-de/anleitungen/bilder/cronjobs/control
 f5b5d40c1c3d39d79f5bb8cd2c09257e  doc/ger-de/anleitungen/bilder/cronjobs/part-card-scripts-open.png
 5082af3710ede1174fa18b3e45b8ba87  doc/ger-de/anleitungen/bilder/cronjobs/recent-runs.png
 3b2ab8692a52b13be92d426154c578fb  doc/ger-de/anleitungen/bilder/cronjobs/status-and-overview.png
+c921856f9b07be771da43fd08234c6c3  doc/ger-de/anleitungen/bilder/graphql-walkthrough/01-status.webp
+38c14cb6d0ec4de31ae0160fc89c1bbf  doc/ger-de/anleitungen/bilder/graphql-walkthrough/02-dry-run.webp
+95649417399439ce7830e90821e31639  doc/ger-de/anleitungen/bilder/graphql-walkthrough/03-switched-on.webp
+6fb659bee8adeadf791854ad26d5549f  doc/ger-de/anleitungen/bilder/graphql-walkthrough/04-api-keys.webp
+5f248e31332dac284960f057ce9ca5fb  doc/ger-de/anleitungen/bilder/graphql-walkthrough/04-setup-graphql.webp
+85837d80e1d90fdd0d9301ef3aea4cc0  doc/ger-de/anleitungen/bilder/graphql-walkthrough/05-first-question.webp
+f3b60a7ee01516f38abc26613532cc6b  doc/ger-de/anleitungen/bilder/graphql-walkthrough/06-starter-kits.webp
+77c830bda2ff9ce5eac3c6850f38d1cf  doc/ger-de/anleitungen/bilder/graphql-walkthrough/08-persisted-queries.webp
+78055b29528606bac5d7adfa64369cad  doc/ger-de/anleitungen/bilder/graphql-walkthrough/08-stored-query.webp
+efcfd3990eefc6de7ae94758f5a1f969  doc/ger-de/anleitungen/bilder/graphql-walkthrough/09-write-key-dry-run.webp
+0e9d995d6aee7c6b9cca44b01f04e709  doc/ger-de/anleitungen/bilder/graphql-walkthrough/10-limits-and-cache.webp
+8eb6817a05a9686cf07a5fe017ea8ab9  doc/ger-de/anleitungen/bilder/graphql-walkthrough/11-switched-off-here.webp
 6006645b2243d70677361d2544dd2401  doc/ger-de/anleitungen/bilder/maintenance/in-maintenance-details.png
 707f244222e5d4df5adfd42497bdb5c1  doc/ger-de/anleitungen/bilder/maintenance/in-maintenance.png
 9d064909f11ee5dd5686d72b62c16e89  doc/ger-de/anleitungen/bilder/maintenance/installation-running.png
@@ -12906,7 +12934,7 @@ a18906c2d024747be98c7252b5dcdda6  doc/ger-de/anleitungen/extensions.md
 df3154102d4ccbaaf89b86f7fc6d13a7  doc/ger-de/anleitungen/fehler-anhand-der-referenz-finden.md
 01c462f0c79a43b1f70a945e62a60dd8  doc/ger-de/anleitungen/gesammelte-informationen.md
 6855141c8cffc122efbc45744a88ff75  doc/ger-de/anleitungen/graphql-rezepte.md
-b89b313044080b8b709b72c12aa46293  doc/ger-de/anleitungen/graphql-schritt-fuer-schritt.md
+073194411b40cf6fe4558c56fb8e1703  doc/ger-de/anleitungen/graphql-schritt-fuer-schritt.md
 f0277ca3c4b6176643fd82cfc07167c9  doc/ger-de/anleitungen/identitaet-bestaetigen.md
 8a97da925df433780705cabeabf781e4  doc/ger-de/anleitungen/ihre-geraete-und-sitzungen.md
 123235c41b3d61d22fc74809cdd57dc6  doc/ger-de/anleitungen/inhaltsmodell-und-bearbeitung.md
@@ -12942,7 +12970,7 @@ c8639029dd7b640cb74fb6702cafbc8e  doc/ger-de/anleitungen/twig-templates-im-edito
 e8572b617b8eddb34206464efe0a1880  doc/ger-de/anleitungen/twig-templates-leistung.md
 1ad570d35262225e0b6efaf700408cf4  doc/ger-de/anleitungen/twig-templates-nativ-schreiben.md
 d0f3ff1fc81771c32b16742e54f7ec95  doc/ger-de/anleitungen/twig-templates-rezepte.md
-f5916e2ac7afe0358291a98691f3569a  doc/ger-de/anleitungen/twig-templates-versionen-und-kompatibilitaet.md
+8e56318c8a193ff9ccadfa047ef933a8  doc/ger-de/anleitungen/twig-templates-versionen-und-kompatibilitaet.md
 74970ef5f9094334f55b89fa5c8185e3  doc/ger-de/anleitungen/ui-umschalter-design.md
 538acd610f602879df1d118d1a8104b3  doc/ger-de/anleitungen/ui-umschalter-einstellungen.md
 96c7e7570232e91c8971eb947b341ba1  doc/ger-de/anleitungen/umgebungsvariablen.md
@@ -13112,7 +13140,7 @@ e3afdbd74005a91be067f38955dc8cf5  doc/ger-de/beispiele/befehle/expgraphqlenable.
 7b987e839cf87869c47fdd8fe7850ffb  doc/ger-de/beispiele/befehle/expgraphqlquery.md
 f57f59e5a76051a0e23e94efd9b4ab26  doc/ger-de/beispiele/befehle/expgraphqlschema.md
 421bdc41e86c63e50124c2b0655fa258  doc/ger-de/beispiele/befehle/expgraphqlstarter.md
-64fd304302bdfa91423c25db361e6506  doc/ger-de/beispiele/befehle/expgraphqlstatus.md
+ae3cf5941fc4f3486455dc7a938250e3  doc/ger-de/beispiele/befehle/expgraphqlstatus.md
 0e9bade60b30f5af36d2e573552588a0  doc/ger-de/beispiele/befehle/expgraphqlwebhooks.md
 62e2f08e25f22b0cee2f6c2f811ad897  doc/ger-de/beispiele/befehle/exphelp.md
 cfae99e30e49125b83c0ec01171d96a8  doc/ger-de/beispiele/befehle/exphelpcontent.md
@@ -15744,7 +15772,7 @@ e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-06e14b57e742d8b583d40dc8effc73e4  doc/ger-de/funktionen/6.0/README.md
+051dc91792fcfdd19ccebde5ed19dc0d  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -15844,7 +15872,7 @@ b1a17245ed04b8323c1b3acf66144d0c  doc/ger-de/funktionen/6.0/exp-debug-leiste.md
 b1f10199d3eaa2ca42f0dc2506b7daaa  doc/ger-de/funktionen/6.0/freigabe-von-redakteurskonten.md
 c86b628979e2e65666467fe3f589272a  doc/ger-de/funktionen/6.0/geheimnisspeicher.md
 eb3d2bb16f19518e5d5f40301852dfa7  doc/ger-de/funktionen/6.0/generator-fuer-den-statischen-cache.md
-0a39db0358546052a2e41a16163b69f1  doc/ger-de/funktionen/6.0/graphql.md
+83f4838cdcb4137e6ad12c9f7ff0345e  doc/ger-de/funktionen/6.0/graphql.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
 4c817b16a8baa24ca229830f51b0b584  doc/ger-de/funktionen/6.0/hilfeinhalte.md
 922ccbd845d7b93b0067c797f9bf45f2  doc/ger-de/funktionen/6.0/hilfesystem.md
@@ -15900,6 +15928,7 @@ a122c0f92debf2b7f464a9ea1e43452f  doc/ger-de/funktionen/6.0/reparatur-im-browser
 a59b03c5f1bb37e29dd5e6528d455d6d  doc/ger-de/funktionen/6.0/rss-podcast-und-feed-liste.md
 6bc3cadc6f50ea4b8a82bd69816dffbc  doc/ger-de/funktionen/6.0/schaltflaechen-fuer-schnelle-platzierung.md
 bd98a387efd760a3fc1103edfd794708  doc/ger-de/funktionen/6.0/seite-abgelaufenes-formular.md
+73fee15ede03bd25402f65d9311e3b22  doc/ger-de/funktionen/6.0/seitenlayout-hooks.md
 03dad300451b8cbeabb109d4e41b1a7d  doc/ger-de/funktionen/6.0/seitenweise-listen-im-admin.md
 cb3e0b5cb1ea2825bc66bc2d92ea9ce7  doc/ger-de/funktionen/6.0/seitenweise-rollenzuweisungen.md
 3eb0430c6a58116d70ee6b782c34b5d0  doc/ger-de/funktionen/6.0/shop-dashboard.md
@@ -15942,6 +15971,7 @@ b2ec6f7c415225178be44e5caeab8388  doc/ger-de/funktionen/6.0/velocity-zeitplaner.
 7b9d3ace84a70314eeb6b83a3949469a  doc/ger-de/funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md
 8a6387d0944cfcf12dbffe21cf8cf6f6  doc/ger-de/funktionen/6.0/vorabladen-des-zugriffsarrays.md
 5a82b84fa068555c248d17d1a6d4125f  doc/ger-de/funktionen/6.0/wartungsmodus.md
+83a7073751d32600c7ca9bdc1c3ebe1f  doc/ger-de/funktionen/6.0/website-seitenleiste.md
 bea8ea9f00dfc81102f6e376de1bea4e  doc/ger-de/funktionen/6.0/websiteuebergreifende-links-im-multisite.md
 3c2b3930490f58368df9a670f4cf0959  doc/ger-de/funktionen/6.0/zugriffs-und-cache-filter.md
 aba05fee1af76fb5cde206933fa6cb94  doc/ger-de/funktionen/6.0/zusaetzliche-extension-verzeichnisse.md
@@ -21605,7 +21635,7 @@ e8f9765cd175a6159a4fd7691ad31898  doc/ger-de/hilfe/zwei-wege-zum-bauen/warum-ers
 3b542781e7b9593616e5ebe02ac6493e  doc/ger-de/hilfe/zwei-wege-zum-bauen/zuordnung-block-zu-template.md
 7b4de1d134e1317c82fbce40572f8ae4  doc/ger-de/hilfe/zwei-wege-zum-bauen/zwei-wege-zum-bauen.md
 523ad730334ca2fb2fad2726493b7a2d  doc/ger-de/installation/01-einfuehrung.md
-7341bc2f7a05b321f42701d350366a96  doc/ger-de/installation/02-voraussetzungen.md
+ed6f70c4fac8aa5765b6c425dd0e4551  doc/ger-de/installation/02-voraussetzungen.md
 adeb73cb2ec8cb9a95b495ee6ef781fb  doc/ger-de/installation/03-den-code-beschaffen.md
 431f04f389a37c1bf84bfb1e948c4a97  doc/ger-de/installation/04-installationsweg-waehlen.md
 bd55c455539242e9d2c29297f6356496  doc/ger-de/installation/05-setup-assistent.md
@@ -23378,6 +23408,7 @@ acae6bbb77fcc05695116d119c0879f5  kernel/classes/expvelocitywatchdog.php
 35ecc21bdffdb4e710505fdd826df48a  kernel/classes/expviewaccess.php
 60d22591b81ac4d724cf627f169f2aeb  kernel/classes/expviewparameters.php
 2476f9c0f8ba75823eb320fe33bc0ab5  kernel/classes/expweakpasswordlist.php
+5a64b151459e09235d99c2abcfa33c32  kernel/classes/expwebsitesidebarmigration.php
 19df831ef09fa7411d27bf3b6c4cfea4  kernel/classes/ezaudit.php
 2deb8dd5796ace6c5bb4c7b85ee06ea4  kernel/classes/ezbasket.php
 49db61a7999663c74b1b6cbe4b852d89  kernel/classes/ezbinaryfilehandler.php
@@ -23513,7 +23544,7 @@ a4a41f7fca89cf78fce49d285f7a38c9  kernel/classes/ezworkflowgrouplink.php
 5119f604fc138f7349ad79511128773f  kernel/classes/ezworkflowgrouptype.php
 b8ced85e17c04fa2e4827a6809ba3717  kernel/classes/ezworkflowprocess.php
 fb9c7d4f9c0774a210fd16acca67c9aa  kernel/classes/ezworkflowtype.php
-6beeb9657133058f0b3c6fee57509857  kernel/classes/graphql/expgraphql.php
+0e2ac354bc62a1a2ee8b57c94d5dc7c2  kernel/classes/graphql/expgraphql.php
 ee794c4550315c0bf3333bc7eefaec7f  kernel/classes/graphql/expgraphqlbatchloader.php
 ee5586d18800b2d582324e573be46f3a  kernel/classes/graphql/expgraphqlbench.php
 6aa294dd14ec0cc27f26fca4b5e4de01  kernel/classes/graphql/expgraphqlclasscatalogue.php
@@ -23529,7 +23560,8 @@ bcfb33a2d52f9f6b27538c40be97b4dd  kernel/classes/graphql/expgraphqlfieldmapper.p
 5e5b3a30bea672d907dda34b208dd5ff  kernel/classes/graphql/expgraphqlimage.php
 f2af73aa35a687a77032261a40aedcd6  kernel/classes/graphql/expgraphqllocation.php
 8053ce4cd0d886d546826a44b7d0d905  kernel/classes/graphql/expgraphqlmessage.php
-4e8fe84d2bc25f07f73c61da03dfd63e  kernel/classes/graphql/expgraphqlmutations.php
+77da3de0b5ea975195873aa9b39a83d9  kernel/classes/graphql/expgraphqlmutationextension.php
+86d967c108f85eec9c90b33ea8279a90  kernel/classes/graphql/expgraphqlmutations.php
 da03ed4e0a77f1dbe0b1bd92d319372c  kernel/classes/graphql/expgraphqlnaming.php
 d3fab073a4b43baf544cac2101f882f7  kernel/classes/graphql/expgraphqlpersistedqueries.php
 d1312053122f29634e639507f45b7216  kernel/classes/graphql/expgraphqlpreviewtoken.php
@@ -23542,10 +23574,10 @@ d1312053122f29634e639507f45b7216  kernel/classes/graphql/expgraphqlpreviewtoken.
 992f1890fd8d062f8f6972a5420bc860  kernel/classes/graphql/expgraphqlschemaextensions.php
 ee737de095cd06ada95426ea6f1920e5  kernel/classes/graphql/expgraphqlsearchconnection.php
 0f2a97aff70d4e3b3af6f5ec6ffacc25  kernel/classes/graphql/expgraphqlserver.php
-5cc8aa4259d8329cd65b3eeae983ee57  kernel/classes/graphql/expgraphqlsetup.php
+fb7bcfaca2bf3dd08a9d54563320006a  kernel/classes/graphql/expgraphqlsetup.php
 5d8c376ae4c7a7aa72aafbef6527c0e1  kernel/classes/graphql/expgraphqlstarter.php
 94b496b436653e6ad49e81671e28ad54  kernel/classes/graphql/expgraphqlsubscriptions.php
-b83b2df691ee18bc7e73260745b73903  kernel/classes/graphql/expgraphqltypes.php
+9629c3100221c87e358536c895796967  kernel/classes/graphql/expgraphqltypes.php
 750787a369fede82d4ec65b7c774a5e1  kernel/classes/graphql/expgraphqlupload.php
 842517eb48457c1e564e610b74e2b6dd  kernel/classes/graphql/expgraphqluploadcheck.php
 f061d4d177d8b6ad46a1d95e8887b06d  kernel/classes/graphql/expgraphqlwebhooks.php
@@ -23880,6 +23912,7 @@ d4882884cb8e11c2db92d3940177cd98  kernel/classes/upgrade/steps/expupgradestepsit
 87f6ba3903afebfb8610bc329921a159  kernel/classes/upgrade/steps/expupgradestepuseraudittable.php
 944d951983d88dd9c44de03285f14bc6  kernel/classes/upgrade/steps/expupgradestepuserloginuniqueindex.php
 eb5b19516b103fa6f771fa670e270485  kernel/classes/upgrade/steps/expupgradestepusersessiontable.php
+c6e6caf03b993e327788b0741029c374  kernel/classes/upgrade/steps/expupgradestepwebsitesidebar.php
 2b5af103863c5e0f0fb1b9979726a684  kernel/classes/user/exppasswordchangerequired.php
 f3af015f9e7fbdb82cad81d7cc2c87fa  kernel/classes/user/expregistrationadminaction.php
 f11fc49c3931622b3234870783fd957c  kernel/classes/user/expsigninsecondfactor.php
@@ -24175,7 +24208,7 @@ ab2cbe636f4bd9a9e93cf053b435f3bc  kernel/private/classes/commands/expgraphqlbenc
 fb02882bf0b0f68b95dbe2383effb80d  kernel/private/classes/commands/expgraphqlquery.php
 f9ec87d9fa40c93ba773db5c58c1a950  kernel/private/classes/commands/expgraphqlschema.php
 3d0ea1ad9df088b281556665cc1f08be  kernel/private/classes/commands/expgraphqlstarter.php
-937c099e76bf0abc0eb5da1c21b13eeb  kernel/private/classes/commands/expgraphqlstatus.php
+eb118ef2db669df16fdacf1e314c17b1  kernel/private/classes/commands/expgraphqlstatus.php
 4feaac0df7bc4b9dd4c016030182b5c1  kernel/private/classes/commands/expgraphqlwebhooks.php
 deb6a99c8fdc9edd3e16f0529c0ce114  kernel/private/classes/commands/exphelp.php
 708f0c28160cbb68a971dcc7c40dec44  kernel/private/classes/commands/exphelpcontent.php
@@ -24193,6 +24226,7 @@ c887ef0c09b4113ee9fc73b06d0e122b  kernel/private/classes/commands/exptemplatecon
 7f5dbf4392650d66bdded06094e13eae  kernel/private/classes/commands/exptemplateconverttwigtostpl.php
 240f5f08dba2a52329a725b885c587fe  kernel/private/classes/commands/exptemplateconverttwigtotpl.php
 81af78f376418b564013cd32306b4dfd  kernel/private/classes/commands/exptemplateengines.php
+c4ff3a09e33517fc28adebcdc82202d2  kernel/private/classes/commands/expwtmigratefromezwt.php
 0490ac4d5fa0fd55d517d73135c31db4  kernel/private/classes/commands/ezapplytemplate.php
 642175f631984db5adf5a4f5e3f2cb33  kernel/private/classes/commands/ezasynchronouspublisher.php
 f95b245cc74654bc2ea5af83705fcaa4  kernel/private/classes/commands/ezcache.php
@@ -25421,7 +25455,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 3d58b3c9abd483644a07965e143cb05f  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-197a8c3022b673925c0fcd50e3ad3bf4  settings/site.ini
+d8669a629304b37aa584a4c71d587da0  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -25442,7 +25476,7 @@ af0b62d748bba41c371d96991d3aea96  settings/transfer.ini
 c80250dec48448bcda0865588dfc740c  settings/twig.ini
 074de6a07b41cfcc25307f4e9156daa6  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
-17bfb96340acc7e7075122f3b353e6b3  settings/upgrade.ini
+556408256401c0a504f4c6583accea87  settings/upgrade.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
 53f363dfc5d11e88ff40763bed4b0471  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
@@ -26747,7 +26781,7 @@ bbf7725461035c86849d38862a196496  support/ezlupdate-qt4.5/shared/translatortools
 c4f7cef541445ce48194d36532f7d356  templates/classcreatelist.ctpl
 5b4b301a1e393f6412807579526ffd9e  templates/classlistfrompolicy.ctpl
 25e70e1788eace5f8699ebb1e3e3fb1d  tests/benchmark/baseline.json
-c8f0e3a40f1539fa2fa15cf7c505d935  tests/bin/bootsmoke.php
+001e46033eea372d45c2267572c09348  tests/bin/bootsmoke.php
 a08f3fc912ea0e876de1c21aabc43b5f  tests/bin/ezp_lint_patched.php
 7d0b9addf9f1510d4cab751fe1bc2011  tests/bin/ezptestrunner.php
 88c4286f77c95330396db2199b7e9253  tests/bin/ezptestrunner_all_tests.php
@@ -26879,6 +26913,7 @@ c0c0f5eb8bbcd4ba17e6dac25d579b6b  tests/tests/design/AdminTokenUsageTest.php
 0710fd0f4116c01a9a299beba675c049  tests/tests/design/FormSubmitButtonDisableTest.php
 8e8452be9fc384ea01e7f33ad8dc1183  tests/tests/design/LogViewerCopyMessagesTest.php
 6daf7c6280369c901a6b348253f70dae  tests/tests/design/LogViewerNavTest.php
+f3ce5764aa582b785855af3347c3ce7b  tests/tests/design/PageLayoutHooksTest.php
 295eaf509f785e62086efa8aa330141a  tests/tests/design/StandardClassAttributeNameEscapingTest.php
 85daef76e773824aa1ce1d4a83b8b72b  tests/tests/design/StandardContentEditAccessibleNamesTest.php
 ac1753103e03e6df70dc4322713064cd  tests/tests/design/StandardDatatypeEditNoStyleAttributeTest.php
@@ -27367,6 +27402,7 @@ d82f876705fd85722ea8409d0cd97fe7  tests/tests/kernel/classes/expVelocityStopRest
 805242b566e7eb9a4614ce5c30430c32  tests/tests/kernel/classes/expVelocityWatchdogTest.php
 343c0121d4e5e9a067c7b31b5e462c9c  tests/tests/kernel/classes/expViewAccessTest.php
 0745ffa213053f2a3bc03b9a9fbb664e  tests/tests/kernel/classes/expViewParametersTest.php
+27106a3ce3178f26b9e8b4c81c3a2100  tests/tests/kernel/classes/expWebsiteSidebarMigrationTest.php
 eb6e31ad5a2ad5e5836bdcb781fb7114  tests/tests/kernel/classes/extensions/cycle1/extension.xml
 b03633d619dfa27944eb552972d7f02d  tests/tests/kernel/classes/extensions/cycle2/extension.xml
 d471fa62de2a662dc597fb5efeadea08  tests/tests/kernel/classes/extensions/ezdepextends/extension.xml
@@ -27441,7 +27477,9 @@ f82f0bebaf684c7a0108f4c6d3630d7e  tests/tests/kernel/classes/ezurl_test.php
 4d3cd633c04afaebc51aad5d26962b2d  tests/tests/kernel/classes/graphql/expGraphQLBenchTest.php
 e88c80daf0e1f3b6f1d5227eaa20f455  tests/tests/kernel/classes/graphql/expGraphQLDatatypesTest.php
 503456ae45d2bd1622b37fbee480fb3e  tests/tests/kernel/classes/graphql/expGraphQLLayoutsExtensionTest.php
+296e7254f4f6a895621ec95d5a6a0384  tests/tests/kernel/classes/graphql/expGraphQLLibraryMissingTest.php
 68fcd50db55bcaa902b9504c5a32382a  tests/tests/kernel/classes/graphql/expGraphQLMessageTest.php
+bcaed168ecbeb292389d4e9f73586f70  tests/tests/kernel/classes/graphql/expGraphQLMutationExtensionTest.php
 9a1ef2e6e876142f60872dd9ae7e5a0e  tests/tests/kernel/classes/graphql/expGraphQLMutationsTest.php
 31aa64a367614f9fd99ad0d218642e3e  tests/tests/kernel/classes/graphql/expGraphQLPersistedQueriesTest.php
 69a76219fc9767d6d6e7c63828cc0ac4  tests/tests/kernel/classes/graphql/expGraphQLQueryBudgetTest.php

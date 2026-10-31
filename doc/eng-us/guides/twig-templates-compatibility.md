@@ -15,8 +15,8 @@ Twig 3 package for that PHP line:
 
 | PHP | Exponential | Floor release | Twig package | Twig installed on 29 October 2026 |
 |---|---|---|---|---|
-| 8.4 and later | supported | 1.3.3 | `twig/twig` `^3.27` | 3.30.0 |
-| 8.1 to 8.3 | supported | 1.2.3 | `twig/twig` `^3.27` | 3.30.0 |
+| 8.4 and later | supported | 1.3.5 (1.3.3 and later) | `twig/twig` `^3.27 \|\| ~3.19.1` (1.3.3 and 1.3.4: `^3.27`) | 3.30.0 |
+| 8.1 to 8.3 | supported | 1.2.5 (1.2.3 and later) | `twig/twig` `^3.27 \|\| ~3.19.1` (1.2.3 and 1.2.4: `^3.27`) | 3.30.0 |
 | 8.0 | supported | 1.1.4 | `se7enxweb/twig` `~3.19.1` | 3.19.1 |
 | 7.4 | usable without support | 1.0.3 | `se7enxweb/twig` `~3.11.4` | 3.11.4 |
 
@@ -57,6 +57,16 @@ Problem 1
 ```
 
 On PHP 8.1 and later, a `twig/twig` requirement of your own is harmless as long as it allows `^3.27`.
+
+**Platforms that keep the fork on PHP 8.1 and later.** Exponential Platform Legacy 3.x requires `se7enxweb/twig`
+`~3.19.1` on every PHP version, and 4.6.x allows it (`~3.11.4 || ~3.19.1`). Floor 1.2.3, 1.2.4, 1.3.3 and 1.3.4
+required `twig/twig` `^3.27` only, which the fork cannot meet, so Composer fell back to the kernel release v6.0.14 for
+3.x on PHP 8.1 to 8.3 and found no installable set for 3.x or 4.6.x on PHP 8.4 and later. Floor 1.2.5 and 1.3.5
+require `twig/twig` `^3.27 || ~3.19.1`: the fork, which replaces `twig/twig` 3.19.1, meets the second half; upstream
+`twig/twig` 3.19 never does, as its security advisories block it. Without such a platform Composer still installs
+`twig/twig` 3.27 or later. Checked with Composer 2.10.3, security blocking on, on 31 October 2026: the kernel alone on
+PHP 8.1 to 8.5 installs `twig/twig` 3.30.0; 3.x on PHP 8.1 installs the kernel's current code with `se7enxweb/twig`
+3.19.1.
 
 The bridge compiles templates in Twig's `use_yield` mode and marks its nodes as yield-ready, which Twig offers from
 3.9 on, so it needs Twig 3.9 or later; every Twig the floor installs is later than that.

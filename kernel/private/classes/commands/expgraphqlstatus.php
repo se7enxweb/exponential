@@ -32,7 +32,7 @@ class Expgraphqlstatus extends \Exponential\Runnable\Command
                                                "./console exp:graphql:status --siteaccess=site\n" .
                                                "./console exp:graphql:status --format=json\n" .
                                                "\n" .
-                                               "Exit code: 0 the library is available; 3 it is missing; 2 wrong options.",
+                                               "Exit code: 0 the library is available; 3 it is missing or not version 15; 2 wrong options.",
                               'use-session' => false,
                               'use-modules' => true,
                               'use-extensions' => true ) );
@@ -53,7 +53,11 @@ class Expgraphqlstatus extends \Exponential\Runnable\Command
             $out->output( sprintf( '%-14s %s', 'enabled', $status['enabled'] ? 'yes' : 'no (graphql.ini [GraphQLSettings] Enabled, SiteAccessList[])' ) );
             $out->output( sprintf( '%-14s %s', 'mutations', $status['mutations'] ? 'yes' : 'no (graphql.ini [GraphQLSettings] MutationsEnabled=disabled; enabled is the default)' ) );
             $out->output( sprintf( '%-14s %s', 'end point', $status['endpoint'] ) );
-            $out->output( sprintf( '%-14s %s', 'library', $status['library'] ? 'webonyx/graphql-php ' . $status['libraryVersion'] : 'not installed' ) );
+            if ( $status['library'] )
+                $library = 'webonyx/graphql-php ' . $status['libraryVersion'];
+            else
+                $library = ( $status['libraryState'] === \expGraphQL::LIBRARY_INCOMPATIBLE ? 'incompatible' : 'not installed' ) . ' (' . $status['libraryProblem'] . ')';
+            $out->output( sprintf( '%-14s %s', 'library', $library ) );
             $out->output( sprintf( '%-14s depth %d, complexity %d, list %d (default %d)', 'limits', $status['limits']['maxDepth'], $status['limits']['maxComplexity'],
                                    $status['limits']['maxListLimit'], $status['limits']['defaultListLimit'] ) );
             $out->output( sprintf( '%-14s %d per user or key, %d per anonymous address, in %d s', 'rate limits', $status['rateLimits']['user'],
@@ -70,7 +74,8 @@ class Expgraphqlstatus extends \Exponential\Runnable\Command
                 $out->output( sprintf( '%-14s %s', 'extensions', $status['extensions'] ? implode( ' ', $status['extensions'] ) : '-' ) );
                 $out->output( sprintf( '%-14s %s', 'string only', $status['unmappedDatatypes'] ? implode( ' ', $status['unmappedDatatypes'] ) : '-' ) );
             }
-            $out->output( $status['library'] ? 'PASS the GraphQL API can run' . ( $status['enabled'] ? '' : ' (switched off here)' ) : 'FAIL the library is missing' );
+            $out->output( $status['library'] ? 'PASS the GraphQL API can run' . ( $status['enabled'] ? '' : ' (switched off here)' )
+                                             : 'FAIL GraphQL API unavailable: ' . ( $status['libraryState'] === \expGraphQL::LIBRARY_INCOMPATIBLE ? 'the library is not webonyx/graphql-php 15' : 'the library is missing' ) );
         }
         $this->shutdown( $status['library'] ? self::EXIT_OK : self::EXIT_UNAVAILABLE );
     }

@@ -18,7 +18,7 @@ Phasen hinzufügen, steht unter [Was als Nächstes kommt](#was-als-nächstes-kom
 |---|---|
 | Endpunkt | `POST /api/graphql` (und `GET`) in jedem Siteaccess; der Sitzungs-Endpunkt `POST /graphql/query` |
 | Aus, bis | `settings/graphql.ini` `[GraphQLSettings] Enabled=enabled`, wahlweise nur für die Siteaccesses aus `SiteAccessList[]` |
-| Bibliothek | `webonyx/graphql-php` 15, verlangt von der `composer.json` im Wurzelverzeichnis |
+| Bibliothek | `webonyx/graphql-php` 15 (`^15.32.3`), optional: vom Kernel empfohlen, installiert von der eigenen Composer-Einrichtung des Kernels und von den Plattformen, die Version 15 verwenden; siehe [Die Bibliothek](#die-bibliothek) |
 | Anmeldung | ein OAuth-Token, ein persönlicher API-Schlüssel mit dem Bereich `graphql:read` (und `graphql:write` für Mutationen), die Sitzung (Playground) oder keine (anonym) |
 | Mutationen | zusammen mit dem Endpunkt eingeschaltet (`MutationsEnabled=enabled`, der Standard; `disabled` je Siteaccess für eine API, die nur liest); gegen Richtlinien geprüft, mit Workflows, im Audit, nur `POST`, nur angemeldet |
 | Echtzeit | Webhooks (signierte POSTs der Ereignisse publish, update, trash, delete, move, hide, reveal und mutation, mit Wiederholungen) und Subscriptions (`/api/graphql/subscribe`: SSE überall, ein WebSocket mit `graphql-transport-ws` mit Velocity), jedes Ereignis gegen die Rechte des Abonnenten geprüft |
@@ -1344,7 +1344,13 @@ hinzufügen:
   bleibt);
 - **Felder von `Location`** (`locationFields()`; der Wert ist ein `expGraphQLLocation`);
 - **den Typ ihrer Datentypen** (`datatypes()` und `fieldMapping()`): Ein Feld eines solchen Attributs bekommt den Typ
-  der Erweiterung statt eines `String`.
+  der Erweiterung statt eines `String`;
+- **Mutationen** (seit 6.0.15): Eine Klasse, die zusätzlich `expGraphQLMutationExtension` implementiert, ergänzt
+  `Mutation` um `mutationFields()`, nach denen des Kernels (ein Name, den der Kernel nutzt, bleibt). Ihr Resolver wendet
+  zuerst die Regeln jeder Mutation an: Er ruft `expGraphQLMutations::refusal( $ctx )` auf und wirft einen
+  `expGraphQLError` mit dessen Antwort (Mutationen ausgeschaltet, ein GET, ein anonymer Benutzer, ein API-Schlüssel ohne
+  `graphql:write`, eine Sitzung ohne ihr CSRF-Token). `expwtWrite` der Website-Seitenleiste ist eine davon
+  ([die Website-Seitenleiste](website-seitenleiste.md)).
 
 ```php
 class myColorGraphQLExtension implements expGraphQLSchemaExtension
@@ -1448,17 +1454,55 @@ im Kernel (`expGraphQLCommandContractTest`) hält das fest.
 
 ## Die Bibliothek
 
-Die API läuft auf [webonyx/graphql-php](https://github.com/webonyx/graphql-php) 15. Die `composer.json` im
-Wurzelverzeichnis verlangt `webonyx/graphql-php ^15`, das sich auf jeder PHP-Linie installieren lässt, die Exponential
-6.0.15 unterstützt, PHP 7.4 bis 8.5, mit eingeschalteter Sperre bei Sicherheitshinweisen in Composer; das wurde mit
-Composer auf jeder PHP-Linie geprüft. Eine Composer-Installation hat sie also.
+Die API läuft auf [webonyx/graphql-php](https://github.com/webonyx/graphql-php) 15, ab 15.32.3 (die Releases, die kein
+Sicherheitshinweis betrifft). Die Bibliothek ist **optional**: Die `composer.json` des Kernels führt sie unter `suggest`
+und `require-dev`, nicht unter `require`. Exponential installiert sich und läuft ohne sie; nur die GraphQL-API ist dann
+nicht verfügbar.
+
+**Warum sie keine Voraussetzung ist.** Den Kernel installieren auch Plattformen, die für ihr eigenes GraphQL-Bundle eine
+eigene GraphQL-Bibliothek mitbringen, in einer Version, mit der die API des Kernels nicht arbeiten kann und die sich nicht
+neben `webonyx/graphql-php` 15 installieren lässt. Eine feste Voraussetzung ließ diese Installationen scheitern (vom
+30. Oktober 2026, bis sie am 31. Oktober 2026 herausgenommen wurde):
+
+| Installation | GraphQL-Bibliothek, die sie installiert | Die GraphQL-API des Kernels |
+|---|---|---|
+| Der Kernel allein (`composer create-project`, oder ein Checkout und `composer install`), PHP 7.4 bis 8.5 | `webonyx/graphql-php` 15 (über `require-dev`) | verfügbar |
+| Der Kernel, installiert mit `--no-dev` | keine | nicht verfügbar, bis `composer require webonyx/graphql-php:^15.32.3` |
+| Exponential Platform Legacy 4.6.x ab PHP 8.0, Platform Legacy 5.x | `webonyx/graphql-php` 15 (die der Plattform) | verfügbar |
+| Exponential Platform Legacy 4.6.x auf PHP 7.4 | `se7enxweb/graphql-php` 14.11 (die der Plattform) | nicht verfügbar: eine andere Hauptversion |
+| Exponential Platform Legacy 3.x | `ibexa/graphql-php` 0.13 (die der Plattform) | nicht verfügbar: eine andere Hauptversion |
+
+Das Metapaket `se7enxweb/exponential-php-floor` installiert die Bibliothek aus demselben Grund auf keiner PHP-Linie:
+Platform Legacy 3.x läuft auf jeder PHP-Version ab 8.0 und Platform Legacy 4.6.x auf PHP 7.4, ein Floor-Release, das sie
+verlangte, scheiterte dort. Geprüft mit Composer 2.10.3 und eingeschalteter Sperre bei Sicherheitshinweisen am
+31. Oktober 2026.
+
+**Ohne die Bibliothek, oder mit einer anderen Hauptversion,** ist sonst nichts betroffen: Die Endpunkte antworten mit
+`503` und einem GraphQL-Fehler (`extensions.code` `INTERNAL`), Setup > GraphQL sagt, dass die Bibliothek nicht
+installiert ist, und `exp:graphql:status` nennt den Grund und endet mit 3:
+
+```text
+library        not installed (webonyx/graphql-php 15 is not installed: composer require webonyx/graphql-php:^15.32.3, or set [GraphQLSettings] LibraryPath in graphql.ini)
+...
+FAIL GraphQL API unavailable: the library is missing
+```
+
+Mit Version 0.13 oder 14 einer Plattform lautet die Zeile `incompatible (the GraphQL\ classes loaded are not
+webonyx/graphql-php 15 but ibexa/graphql-php 0.13.9 ...)`. Eine solche Installation kann Version 15 nicht zusätzlich
+laden (beide verwenden den Namensraum `GraphQL\`); ihre GraphQL-API ist die der Plattform.
+
+Eine Installation ohne die Bibliothek bekommt sie über ihre Composer-Einrichtung:
+
+```bash
+composer require webonyx/graphql-php:^15.32.3
+```
 
 Eine Installation, die die Bibliotheken des Kernels nicht mit Composer installiert, gibt der Bibliothek ein eigenes
 Verzeichnis:
 
 ```bash
 mkdir -p var/lib/graphql-vendor
-cd var/lib/graphql-vendor && composer require webonyx/graphql-php:^15
+cd var/lib/graphql-vendor && composer require webonyx/graphql-php:^15.32.3
 ```
 
 ```ini
@@ -1468,9 +1512,8 @@ LibraryPath=var/lib/graphql-vendor
 
 `LibraryPath` ist ein Verzeichnis mit `vendor/autoload.php` (ein Composer-Verzeichnis, das die Bibliothek verlangt) oder
 das Paket selbst (das Verzeichnis mit `src/GraphQL.php`), relativ zum Wurzelverzeichnis der Installation oder absolut.
-Die Umgebungsvariable `GRAPHQL_LIBRARY_PATH` wird genauso gelesen, wenn `LibraryPath` leer ist. Ohne die Bibliothek
-antworten die Endpunkte mit `503`, Setup > GraphQL sagt es, und `exp:graphql:status` endet mit 3; sonst hängt nichts in
-der Installation von ihr ab.
+Die Umgebungsvariable `GRAPHQL_LIBRARY_PATH` wird genauso gelesen, wenn `LibraryPath` leer ist; beide werden nur
+gelesen, wenn der eigene Composer-Autoload der Installation keine `GraphQL\`-Klassen hat.
 
 Die API behält zwischen Anfragen keinen Zustand (nur die Tatsache, dass die Bibliothek geladen ist), daher läuft sie
 unverändert in den dauerhaften Workern von [Velocity](velocity-webserver.md), die die Einstellungen jeder Anfrage neu

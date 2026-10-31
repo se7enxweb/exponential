@@ -49,6 +49,21 @@ class expGraphQLTypes
     }
 
     /**
+     * @return array the fields of Mutation the schema extensions add (those implementing expGraphQLMutationExtension);
+     *               a name the kernel's mutations have already is left to the kernel
+     */
+    public function extensionMutationFields()
+    {
+        $fields = array();
+        foreach ( $this->extensions as $extension )
+        {
+            if ( $extension instanceof expGraphQLMutationExtension )
+                $fields += (array)$extension->mutationFields( $this );
+        }
+        return $fields;
+    }
+
+    /**
      * @param string $name
      * @param callable $factory
      * @return Type

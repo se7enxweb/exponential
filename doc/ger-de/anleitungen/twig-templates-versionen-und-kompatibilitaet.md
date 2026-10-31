@@ -14,8 +14,8 @@ das zu der PHP-Version passt, mit der es läuft, und dieses Release verlangt das
 
 | PHP | Exponential | Floor-Release | Twig-Paket | Installiertes Twig am 29. Oktober 2026 |
 |---|---|---|---|---|
-| 8.4 und neuer | unterstützt | 1.3.3 | `twig/twig` `^3.27` | 3.30.0 |
-| 8.1 bis 8.3 | unterstützt | 1.2.3 | `twig/twig` `^3.27` | 3.30.0 |
+| 8.4 und neuer | unterstützt | 1.3.5 (1.3.3 und neuer) | `twig/twig` `^3.27 \|\| ~3.19.1` (1.3.3 und 1.3.4: `^3.27`) | 3.30.0 |
+| 8.1 bis 8.3 | unterstützt | 1.2.5 (1.2.3 und neuer) | `twig/twig` `^3.27 \|\| ~3.19.1` (1.2.3 und 1.2.4: `^3.27`) | 3.30.0 |
 | 8.0 | unterstützt | 1.1.4 | `se7enxweb/twig` `~3.19.1` | 3.19.1 |
 | 7.4 | nutzbar ohne Unterstützung | 1.0.3 | `se7enxweb/twig` `~3.11.4` | 3.11.4 |
 
@@ -57,6 +57,16 @@ Problem 1
 ```
 
 Auf PHP 8.1 und neuer schadet eine eigene Anforderung von `twig/twig` nicht, solange sie `^3.27` zulässt.
+
+**Plattformen, die den Fork auch auf PHP 8.1 und neuer behalten.** Exponential Platform Legacy 3.x verlangt
+`se7enxweb/twig` `~3.19.1` auf jeder PHP-Version, und 4.6.x lässt ihn zu (`~3.11.4 || ~3.19.1`). Floor 1.2.3, 1.2.4,
+1.3.3 und 1.3.4 verlangten nur `twig/twig` `^3.27`, was der Fork nicht erfüllen kann; Composer wich deshalb für 3.x auf
+PHP 8.1 bis 8.3 auf das Kernel-Release v6.0.14 aus und fand für 3.x und 4.6.x auf PHP 8.4 und neuer keine installierbare
+Menge. Floor 1.2.5 und 1.3.5 verlangen `twig/twig` `^3.27 || ~3.19.1`: Der Fork, der `twig/twig` 3.19.1 ersetzt,
+erfüllt die zweite Hälfte; `twig/twig` 3.19 von upstream nie, da seine Sicherheitshinweise es sperren. Ohne eine solche
+Plattform installiert Composer weiterhin `twig/twig` 3.27 oder neuer. Geprüft mit Composer 2.10.3 und eingeschalteter
+Sicherheitssperre am 31. Oktober 2026: Der Kernel allein installiert auf PHP 8.1 bis 8.5 `twig/twig` 3.30.0; 3.x auf
+PHP 8.1 installiert den aktuellen Code des Kernels mit `se7enxweb/twig` 3.19.1.
 
 Die Brücke kompiliert Templates im Modus `use_yield` von Twig und kennzeichnet ihre Knoten als yield-fähig, was Twig ab
 3.9 bietet; sie braucht also Twig 3.9 oder neuer, und jedes Twig, das der Floor installiert, ist neuer.
