@@ -79065,6 +79065,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>ဤစာမျက်နှာကို ပြသသည့် ဆိုက်ဝင်ရောက်မှု %siteaccess အတွက်။</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>ဝဘ်ဟုခ်များ</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>အဆုံးမှတ်တစ်ခု တောင်းဆိုသော ဖြစ်ရပ်တိုင်း (publish, update, trash, delete, move, hide, reveal, mutation) ကို cronjob အပိုင်း graphqlwebhooks က လက်မှတ်ထိုး၍ ၎င်းထံ ပို့သည်။ ./console exp:graphql:webhooks သည် ဤအပိုင်းနှင့် အလားတူ လုပ်ဆောင်သည်။</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ဖြစ်ရပ်များ</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>အားလုံး</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ဆိုက်ဝင်ရောက်မှုတိုင်း</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>ပျက်နေသည်</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>လျှို့ဝှက်ချက်မရှိ</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>စောင့်ဆိုင်းနေသည်</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count စွန့်လွှတ်ပြီး</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>နောက်ဆုံးပို့ဆောင်မှု</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>စမ်းသပ်မှု ပို့ပါ</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>ဟုတ်ကဲ့၊ ဤဝဘ်ဟုခ်ကို ဖယ်ရှားပါ</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>ဝဘ်ဟုခ် မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>ဝဘ်ဟုခ် ထည့်ပါ</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>ထည့်ရန်</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>မကြာသေးမီ ပို့ဆောင်မှုများ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>အချိန်</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ရလဒ်</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>စာရင်းသွင်းမှုများ</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>ကလိုင်းယင့်များအတွက် တိုက်ရိုက်အပ်ဒိတ်များ- /api/graphql/subscribe တွင် ဖြစ်ရပ်စီးကြောင်း၊ Velocity ပေါ်တွင် WebSocket (graphql-transport-ws)။ ဖြစ်ရပ်တစ်ခုစီသည် ၎င်း၏အကြောင်းအရာကို ဖတ်ခွင့်ရှိသော စာရင်းသွင်းသူများထံသာ ရောက်သည်။</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>ယခုဖွင့်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>အများဆုံးဖွင့်နိုင်သည်</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>စုစုပေါင်း %total၊ အသုံးပြုသူတစ်ဦးလျှင် %user၊ လိပ်စာတစ်ခုလျှင် %address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>အမည်မသိ စာရင်းသွင်းမှုများ</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>စီးကြောင်းကြာချိန်</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>ဝဘ်ဟုခ်ကို ထည့်၍ မရပါ- %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>ဝဘ်ဟုခ် %name ကို ပြောင်းလဲပြီးပါပြီ၊ ၎င်း၏ လက်မှတ်လျှို့ဝှက်ချက် ဆက်ရှိနေမည်။</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>လက်မှတ်လျှို့ဝှက်ချက်ကို သိမ်းဆည်း၍ မရပါ (စနစ်ထည့်သွင်းမှု &gt; လျှို့ဝှက်ချက်များ)။</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>ဝဘ်ဟုခ် %name ကို ထည့်ပြီးပါပြီ။ ၎င်း၏ လက်မှတ်လျှို့ဝှက်ချက်၊ ဤတစ်ကြိမ်သာ ပြသည်- %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>ဝဘ်ဟုခ် %name မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>ဝဘ်ဟုခ် %name မဖြေကြားပါ- %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>ဝဘ်ဟုခ် %name သည် %ms ms အတွင်း %status ဖြေကြားသည်။</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>ဝဘ်ဟုခ်ကို ဖယ်ရှားရန် ၎င်းဘေးရှိ အကွက်ကို အမှန်ခြစ်ပါ။</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>ဝဘ်ဟုခ် %name ကို ဖယ်ရှားပြီးပါပြီ။</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79339,6 +79475,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>GraphQL API ၏ နယ်ပယ် မဟုတ်ပါ- %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>စာရင်းသွင်းမှုများကို /api/graphql/subscribe သို့ ပို့ပါ (ဖြစ်ရပ်စီးကြောင်း သို့မဟုတ် WebSocket)။</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>တောင်းဆိုမှုသည် စာရွက်စာတမ်း၏ မည်သည့်လုပ်ဆောင်ချက်ကိုမျှ အမည်မဖော်ပါ။</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>စာရင်းသွင်းမှုတစ်ခုသည် အကွက်တစ်ခုတည်းကိုသာ တောင်းသည်။</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>စာရင်းသွင်းမှု အလွန်များစွာ ဖွင့်ထားသည်၊ နောက်မှ ထပ်ကြိုးစားပါ။</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>သင့်တွင် စာရင်းသွင်းမှု %max ခု ဖွင့်ထားပြီး ခွင့်ပြုထားသော အများဆုံးဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>သင့်လိပ်စာတွင် စာရင်းသွင်းမှု %max ခု ဖွင့်ထားပြီး ခွင့်ပြုထားသော အများဆုံးဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>ဤဆိုက်ဝင်ရောက်မှုတွင် စာရင်းသွင်းမှုများကို ပိတ်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>စာရင်းသွင်းရန် ဝင်ရောက်ပါ (တိုကင် သို့မဟုတ် ကိုယ်ပိုင် API ကီး)။</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>ပြောင်းလဲမှု (mutation) များကို /api/graphql သို့ ပို့ပါ။</translation>
     </message>
 </context>
 </TS>

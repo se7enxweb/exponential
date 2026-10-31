@@ -79745,6 +79745,142 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>For siteaccess %siteaccess, som viser denne side.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhooks</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Hver hændelse, et endepunkt beder om (publish, update, trash, delete, move, hide, reveal, mutation), sendes signeret til det af cronjob-delen graphqlwebhooks. ./console exp:graphql:webhooks gør det samme som dette afsnit.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Hændelser</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>alle</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Alle siteaccesses</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>defekt</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>ingen hemmelighed</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Venter</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count opgivet</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Seneste levering</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Send en test</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ja, fjern denne webhook</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Ingen webhook endnu.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Tilføj en webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Tilføj</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Seneste leveringer</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tidspunkt</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Abonnementer</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Liveopdateringer til klienter: en hændelsesstrøm på /api/graphql/subscribe og en WebSocket (graphql-transport-ws) på Velocity. Hver hændelse går kun til abonnenter, der må læse dens indhold.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Åbne nu</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Flest åbne</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total i alt, %user pr. bruger, %address pr. adresse</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Anonyme abonnementer</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Strømmens varighed</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhooken kunne ikke tilføjes: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhooken %name blev ændret; dens signeringshemmelighed bevares.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Signeringshemmeligheden kunne ikke gemmes (Opsætning &gt; Hemmeligheder).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhooken %name blev tilføjet. Dens signeringshemmelighed, vist kun denne ene gang: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Der er ingen webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhooken %name svarede ikke: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhooken %name svarede %status på %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Sæt flueben ved webhooken for at fjerne den.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhooken %name blev fjernet.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -80019,6 +80155,42 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Ikke et omfang i GraphQL-API'et: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Send abonnementer til /api/graphql/subscribe (en hændelsesstrøm eller en WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Anmodningen nævner ingen operation i dokumentet.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Et abonnement beder om præcis ét felt.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>For mange abonnementer er åbne; prøv igen senere.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Du har %max abonnementer åbne, det højeste tilladte.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Din adresse har %max abonnementer åbne, det højeste tilladte.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Abonnementer er slået fra i denne siteaccess.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Log ind for at abonnere (et token eller en personlig API-nøgle).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Send mutationer til /api/graphql.</translation>
     </message>
 </context>
 </TS>

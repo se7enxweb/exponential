@@ -19,7 +19,7 @@ Diese Seite ist für Designer, die ein Theme veröffentlichen. Die Kompatibilit�
 | `composer.json` `require.php` | Composer, das eine Installation auf einem anderen PHP verweigert | `"php": "^8.0"` |
 | `composer.json` `require` / `suggest` | Composer | Erweiterungen, die das Theme braucht oder mit denen es besser funktioniert ([require und suggest](../erweiterungen/composer-require-und-suggest.md)) |
 | `extension.xml` `<dependencies>` | Der Ladereihenfolge des Kernels | `<requires>` für eine Erweiterung ([Abhängigkeiten deklarieren](../erweiterungen/abhaengigkeiten-in-extension-xml.md)) |
-| „Voraussetzungen“ im README | Menschen | „Exponential 6.0 (getestet mit 6.0.15), PHP 8.1 bis 8.5“ |
+| „Voraussetzungen“ im README | Menschen | „Exponential 6.0 (getestet mit 6.0.15), PHP 8.0 bis 8.5“ |
 | Release Notes | Menschen, die aktualisieren | „Getestet mit ...“, wenn es sich geändert hat |
 | Kompatibilitätsmatrix | Menschen, die eine Version wählen | [Eine Kompatibilitätsmatrix](kompatibilitaetsmatrix.md) |
 

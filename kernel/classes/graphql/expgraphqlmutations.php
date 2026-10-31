@@ -331,6 +331,9 @@ class expGraphQLMutations
         }
         if ( $id !== null )
             $ctx->audit( 'end', self::AUDIT, array( 'result' => 'success', 'after' => $after ), $id );
+        // the GraphQL event journal (webhooks and subscriptions with the event mutation)
+        if ( $changes && $name !== null && class_exists( 'expGraphQLEventListener' ) && ( !isset( $answer['status'] ) || $answer['status'] !== expGraphQLWriter::CANCELLED ) )
+            expGraphQLEventListener::mutation( $name, $after );
         return $answer;
     }
 

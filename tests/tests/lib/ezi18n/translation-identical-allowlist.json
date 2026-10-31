@@ -655,7 +655,8 @@
         "Original": "spelled the same in Danish",
         "Sepia": "spelled the same in Danish",
         "Ellipse": "spelled the same in Danish",
-        "Zoom: %1 %": "zoom is the Danish word, spelled the same"
+        "Zoom: %1 %": "zoom is the Danish word, spelled the same",
+        "Webhooks": "the same word in Danish"
     },
     "dut-NL": {
         "#level1 - #level2": "code, file or setting name",
@@ -1020,7 +1021,8 @@
         "Query": "the loan word Dutch uses for a database query",
         "%count in %seconds s": "placeholders, the unit symbol and the word in, spelled the same",
         "%bytes bytes": "placeholders and the unit bytes, spelled the same",
-        "Siteaccesses": "the word the catalogue uses for this term, spelled as in English"
+        "Siteaccesses": "the word the catalogue uses for this term, spelled as in English",
+        "Webhooks": "the same word in Dutch"
     },
     "esl-ES": {
         "#level1 - #level2": "format placeholders only",
@@ -1199,7 +1201,8 @@
         "%size/h": "placeholder and the hour symbol h, the same in Spanish",
         "Original": "spelled the same in Spanish",
         "Variables (JSON)": "the same word in Spanish",
-        "%bytes bytes": "placeholders and the unit bytes, spelled the same"
+        "%bytes bytes": "placeholders and the unit bytes, spelled the same",
+        "Webhooks": "the same word in Spanish (established loanword)"
     },
     "esl-MX": {
         "#level1 - #level2": "PDF numbering placeholders only",
@@ -1375,7 +1378,8 @@
         "%size/h": "placeholder and the hour symbol h, the same in Spanish",
         "Original": "spelled the same in Spanish",
         "Variables (JSON)": "the same word in Spanish",
-        "%bytes bytes": "placeholders and the unit bytes, spelled the same"
+        "%bytes bytes": "placeholders and the unit bytes, spelled the same",
+        "Webhooks": "the same word in Spanish (established loanword)"
     },
     "fas-IR": {
         "#level1 - #level2": "format placeholders only",
@@ -1742,7 +1746,8 @@
         "Ellipse": "spelled the same in French",
         "Variables (JSON)": "the same word in French",
         "Mutations": "the word the catalogue uses for this term, spelled as in English",
-        "active": "the word the catalogue uses for this term, spelled as in English"
+        "active": "the word the catalogue uses for this term, spelled as in English",
+        "Webhooks": "the same word in French (established loanword)"
     },
     "ger-DE": {
         "Zoom: %1 %": "Zoom is the usual German term",
@@ -2007,7 +2012,8 @@
         "xmlUrl": "OPML attribute or value name, the same in every language",
         "Community": "established German term for an open source community, used throughout this catalogue (Exponential Community)",
         "Integration": "German word spelled the same",
-        "%count in %seconds s": "placeholders, the unit symbol and the word in, spelled the same"
+        "%count in %seconds s": "placeholders, the unit symbol and the word in, spelled the same",
+        "Webhooks": "the same word in German"
     },
     "heb-IL": {
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
@@ -2956,7 +2962,8 @@
         "WebDAV": "protocol name",
         "%1 × %2 pixels": "pixel is the Brazilian Portuguese word too, plural pixels",
         "Original": "spelled the same in Portuguese",
-        "%bytes bytes": "placeholders and the unit bytes, spelled the same"
+        "%bytes bytes": "placeholders and the unit bytes, spelled the same",
+        "Webhooks": "the English loanword is the standard term in Brazilian Portuguese"
     },
     "pus-AF": {
         "#level1 - #level2": "format placeholders only",
@@ -3326,7 +3333,8 @@
         "WebDAV": "protocol name",
         "Sepia": "spelled the same in Swedish",
         "Zoom: %1 %": "zoom is the Swedish noun, spelled the same",
-        "Schema": "the same word in Swedish"
+        "Schema": "the same word in Swedish",
+        "Webhooks": "the same word in Swedish (English loanword, plural -s)"
     },
     "tlh-QO": {
         "%ms ms": "SI unit symbol for milliseconds after a number placeholder",
@@ -4725,7 +4733,8 @@
         "xmlUrl": "OPML attribute name (code identifier)",
         "Tablet": "same word in Maltese (a tablet computer)",
         "Passkeys": "Maltese uses the loanword passkey (no Maltese term), like password",
-        "%max (default %default)": "placeholders and the loan word default the catalogue uses"
+        "%max (default %default)": "placeholders and the loan word default the catalogue uses",
+        "Webhooks": "the same loanword in Maltese"
     },
     "ron-RO": {
         "#level1 - #level2": "format placeholders only",
@@ -5467,7 +5476,8 @@
         "vertScrollState": "OPML attribute name (code identifier)",
         "xmlUrl": "OPML attribute name (code identifier)",
         "Tablet": "the tablet computer is written in Latin letters in Greek interfaces",
-        "%bytes bytes": "placeholders and the unit bytes, spelled the same"
+        "%bytes bytes": "placeholders and the unit bytes, spelled the same",
+        "Webhooks": "technical term kept in Latin script in Greek UIs"
     },
     "rus-RU": {
         "#levelIndex1:#levelIndex2": "placeholder pattern/code",
@@ -5772,7 +5782,8 @@
         "vertScrollState": "code identifier",
         "xmlUrl": "code identifier",
         "Variables (JSON)": "the same word in Catalan",
-        "%bytes bytes": "placeholders and the unit bytes, spelled the same"
+        "%bytes bytes": "placeholders and the unit bytes, spelled the same",
+        "Webhooks": "the same loanword in Catalan"
     },
     "srp-RS": {
         "#level1 - #level2": "placeholders only",
@@ -6410,7 +6421,8 @@
         "vertScrollState": "code identifier",
         "xmlUrl": "code identifier",
         "Tablet": "same word in European Portuguese (a tablet computer)",
-        "%bytes bytes": "placeholders and the unit bytes, spelled the same"
+        "%bytes bytes": "placeholders and the unit bytes, spelled the same",
+        "Webhooks": "the English loanword is the standard term in European Portuguese"
     },
     "afr-ZA": {
         "Sepia": "Afrikaans word spelled the same",
@@ -6583,7 +6595,8 @@
         "week": "same word in Afrikaans",
         "xmlUrl": "identifier",
         "Tablet": "same word in Afrikaans (a tablet computer)",
-        "%count in %seconds s": "placeholders, the unit symbol and the word in, spelled the same"
+        "%count in %seconds s": "placeholders, the unit symbol and the word in, spelled the same",
+        "Webhooks": "English loanword used as is in Afrikaans technical writing"
     },
     "ben-BD": {
         "#level1 - #level2": "template code",
@@ -15125,7 +15138,10 @@
         "shipped": "Nigerian Pidgin uses the English words",
         "stored": "Nigerian Pidgin uses the English words",
         "No persisted query yet.": "Nigerian Pidgin uses the English words",
-        "All keys": "Nigerian Pidgin uses the English words"
+        "All keys": "Nigerian Pidgin uses the English words",
+        "Webhooks": "Nigerian Pidgin uses the English technical word",
+        "Last delivery": "the same words in Nigerian Pidgin",
+        "No webhook yet.": "the same phrase in Nigerian Pidgin (the catalogue keeps \"No persisted query yet.\" likewise)"
     },
     "syr-IQ": {
         "ID %id": "abbreviation and placeholder only",
@@ -15296,7 +15312,8 @@
         "%Y-%m-%d": "date format code",
         "%H:%M:%S": "time format code",
         "Div": "HTML element name",
-        "%device, %width × %height px": "placeholders, the multiplication sign and the unit px only (the Syriac comma becomes a Latin comma in Hebrew script)"
+        "%device, %width × %height px": "placeholders, the multiplication sign and the unit px only (the Syriac comma becomes a Latin comma in Hebrew script)",
+        "Webhooks": "technical term kept in Latin script, as the catalogue keeps API and GraphQL"
     },
     "huy-IL": {
         "ID %id": "abbreviation and placeholder only",
@@ -17914,7 +17931,9 @@
         "Div": "HTML element name",
         "%max (default %default)": "placeholders and the loan word default the catalogue uses",
         "Mutations": "the word the catalogue uses for this term, spelled as in English",
-        "Scopes": "the word the catalogue uses for this term, spelled as in English"
+        "Scopes": "the word the catalogue uses for this term, spelled as in English",
+        "Webhooks": "technical term kept in English, as the catalogue keeps Mutations",
+        "Subscriptions": "GraphQL term kept in English, as the catalogue keeps Mutations"
     },
     "asm-IN": {
         "ID %id": "acronym and placeholder",
@@ -19814,7 +19833,8 @@
         "Literal": "same word in Galician",
         "Sepia": "spelled the same in Galician",
         "Variables (JSON)": "the same word in Galician",
-        "%bytes bytes": "placeholders and the unit bytes, spelled the same"
+        "%bytes bytes": "placeholders and the unit bytes, spelled the same",
+        "Webhooks": "the same word in Galician (established loanword)"
     },
     "eus-ES": {
         "iPhone": "product name",
@@ -20016,7 +20036,8 @@
         "Tag": "glossary term tag, same word in Welsh",
         "eznode": "link scheme identifier",
         "ezobject": "link scheme identifier",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "Webhooks": "the same loanword in Welsh"
     },
     "mkd-MK": {
         "ID %id": "acronym ID with placeholder",
@@ -20305,7 +20326,8 @@
         "ezobject": "code identifier",
         "Cool": "same word in Luxembourgish",
         "Div": "HTML element name",
-        "Plugin": "same word in Luxembourgish"
+        "Plugin": "same word in Luxembourgish",
+        "Webhooks": "the same loanword in Luxembourgish"
     },
     "run-BI": {
         "ID %id": "acronym ID with placeholder",
@@ -21690,7 +21712,8 @@
         "Div": "HTML element name",
         "Color": "same word in Asturian",
         "Variables (JSON)": "the same word in Asturian",
-        "%bytes bytes": "placeholders and the unit bytes, spelled the same"
+        "%bytes bytes": "placeholders and the unit bytes, spelled the same",
+        "Webhooks": "the same loanword in Asturian"
     },
     "bre-FR": {
         "ID %id": "acronym and placeholder",
@@ -21802,7 +21825,8 @@
         "Http": "protocol name",
         "Https": "protocol name",
         "Div": "HTML element name",
-        "Plugin": "technical term, same in Breton"
+        "Plugin": "technical term, same in Breton",
+        "Webhooks": "the same loanword in Breton"
     },
     "oci-FR": {
         "Rectangle": "Occitan word spelled the same",
@@ -21997,7 +22021,8 @@
         "Innocent": "word spelled the same in Occitan",
         "Div": "HTML element name",
         "Literal": "same word in Occitan",
-        "Color": "same word in Occitan"
+        "Color": "same word in Occitan",
+        "Webhooks": "the English loanword is used unchanged in Occitan technical UI"
     },
     "bam-ML": {
         "OK": "OK button label",
@@ -22629,7 +22654,8 @@
         "Https": "protocol name",
         "Div": "HTML element name",
         "%bytes bytes": "placeholders and the unit bytes, spelled the same",
-        "Limits": "the word the catalogue uses for this term, spelled as in English"
+        "Limits": "the word the catalogue uses for this term, spelled as in English",
+        "Webhooks": "the English loanword is used unchanged in Romansh technical UI"
     },
     "hsb-DE": {
         "ID %id": "acronym ID plus placeholder",
@@ -22918,7 +22944,8 @@
         "Div": "HTML element name",
         "Query": "the loan word West Frisian uses for a database query",
         "Items per list": "the word the catalogue uses for this term, spelled as in English",
-        "%bytes bytes": "placeholders and the unit bytes, spelled the same"
+        "%bytes bytes": "placeholders and the unit bytes, spelled the same",
+        "Webhooks": "the same word in Frisian/Dutch (established loanword)"
     },
     "fao-FO": {
         "ID %id": "acronym and placeholder",
@@ -23335,7 +23362,8 @@
         "Ftp": "protocol name",
         "Http": "protocol name",
         "Https": "protocol name",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "Webhooks": "technical loanword kept as in English; the catalogue has no Kabyle word for it"
     },
     "zgh-MA": {
         "ID %id": "acronym ID and placeholder",

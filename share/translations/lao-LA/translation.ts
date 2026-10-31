@@ -79065,6 +79065,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>ສຳລັບການເຂົ້າເຖິງໄຊ %siteaccess ທີ່ສະແດງໜ້ານີ້.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>ທຸກເຫດການທີ່ຈຸດປາຍທາງຮ້ອງຂໍ (publish, update, trash, delete, move, hide, reveal, mutation) ຈະຖືກສົ່ງໄປຫາມັນ ພ້ອມລາຍເຊັນ ໂດຍສ່ວນ cronjob graphqlwebhooks. ./console exp:graphql:webhooks ເຮັດຄືກັນກັບພາກສ່ວນນີ້.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ເຫດການ</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>ທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ທຸກການເຂົ້າເຖິງໄຊ</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>ເສຍ</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>ບໍ່ມີຂໍ້ມູນລັບ</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>ກຳລັງລໍຖ້າ</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>ຍົກເລີກ %count</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>ການສົ່ງຄັ້ງລ່າສຸດ</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>ສົ່ງການທົດສອບ</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>ແມ່ນ, ລຶບ Webhook ນີ້</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>ຍັງບໍ່ມີ Webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>ເພີ່ມ Webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>ເພີ່ມ</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>ການສົ່ງຫຼ້າສຸດ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ເວລາ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ຜົນລັບ</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>ການສະໝັກຮັບຂໍ້ມູນ</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>ການອັບເດດສົດສຳລັບລູກຂ່າຍ: ສະຕຣີມເຫດການທີ່ /api/graphql/subscribe ແລະ WebSocket (graphql-transport-ws) ເທິງ Velocity. ແຕ່ລະເຫດການຈະສົ່ງໄປຫາສະເພາະຜູ້ສະໝັກທີ່ອ່ານເນື້ອຫາຂອງມັນໄດ້.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>ເປີດຢູ່ຕອນນີ້</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>ເປີດໄດ້ສູງສຸດ</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>ທັງໝົດ %total, %user ຕໍ່ຜູ້ໃຊ້, %address ຕໍ່ທີ່ຢູ່</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>ການສະໝັກຮັບຂໍ້ມູນແບບບໍ່ລະບຸຊື່</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>ຄວາມຍາວຂອງສະຕຣີມ</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>ບໍ່ສາມາດເພີ່ມ Webhook ໄດ້: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name ຖືກປ່ຽນແລ້ວ; ຂໍ້ມູນລັບສຳລັບລາຍເຊັນຂອງມັນຍັງຄົງເດີມ.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>ບໍ່ສາມາດບັນທຶກຂໍ້ມູນລັບສຳລັບລາຍເຊັນໄດ້ (ຕັ້ງຄ່າລະບົບ &gt; ຂໍ້ມູນລັບ).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name ຖືກເພີ່ມແລ້ວ. ຂໍ້ມູນລັບສຳລັບລາຍເຊັນຂອງມັນ, ສະແດງພຽງຄັ້ງນີ້: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>ບໍ່ມີ Webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name ບໍ່ໄດ້ຕອບ: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name ຕອບ %status ໃນ %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>ໝາຍກ່ອງຂ້າງ Webhook ເພື່ອລຶບມັນ.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name ຖືກລຶບແລ້ວ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79339,6 +79475,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>ບໍ່ແມ່ນຂອບເຂດຂອງ GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>ສົ່ງການສະໝັກຮັບຂໍ້ມູນໄປທີ່ /api/graphql/subscribe (ສະຕຣີມເຫດການ ຫຼື WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>ຄຳຮ້ອງຂໍບໍ່ໄດ້ລະບຸຊື່ການດຳເນີນການໃດໆຂອງເອກະສານ.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>ການສະໝັກຮັບຂໍ້ມູນໜຶ່ງຮ້ອງຂໍຊ່ອງຂໍ້ມູນດຽວເທົ່ານັ້ນ.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>ມີການສະໝັກຮັບຂໍ້ມູນເປີດຢູ່ຫຼາຍເກີນໄປ; ກະລຸນາລອງໃໝ່ພາຍຫຼັງ.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>ທ່ານມີການສະໝັກຮັບຂໍ້ມູນເປີດຢູ່ %max ລາຍການ, ເຊິ່ງເປັນຈຳນວນສູງສຸດທີ່ອະນຸຍາດ.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>ທີ່ຢູ່ຂອງທ່ານມີການສະໝັກຮັບຂໍ້ມູນເປີດຢູ່ %max ລາຍການ, ເຊິ່ງເປັນຈຳນວນສູງສຸດທີ່ອະນຸຍາດ.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>ການສະໝັກຮັບຂໍ້ມູນຖືກປິດໃນການເຂົ້າເຖິງໄຊນີ້.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>ເຂົ້າສູ່ລະບົບເພື່ອສະໝັກຮັບຂໍ້ມູນ (ໂທເຄັນ ຫຼື ກະແຈ API ສ່ວນຕົວ).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>ສົ່ງການປ່ຽນແປງໄປທີ່ /api/graphql.</translation>
     </message>
 </context>
 </TS>

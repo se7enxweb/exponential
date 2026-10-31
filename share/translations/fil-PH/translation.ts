@@ -79065,6 +79065,142 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Para sa siteaccess na %siteaccess, na nagpapakita ng pahinang ito.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Mga webhook</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Bawat event na hinihingi ng isang end point (publish, update, trash, delete, move, hide, reveal, mutation) ay ipinapadala rito, naka-sign, ng cronjob part na graphqlwebhooks. Ang ./console exp:graphql:webhooks ay gumagawa ng parehong bagay gaya ng seksiyong ito.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Mga event</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>lahat</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Bawat siteaccess</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>sira</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>walang secret</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Naghihintay</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count sinukuan</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Huling paghahatid</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Magpadala ng test</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Oo, alisin ang webhook na ito</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Wala pang webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Magdagdag ng webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Idagdag</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Mga kamakailang paghahatid</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Oras</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resulta</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Mga subscription</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Live na update para sa mga client: isang event stream sa /api/graphql/subscribe, at isang WebSocket (graphql-transport-ws) sa Velocity. Ang bawat event ay napupunta lamang sa mga subscriber na may pahintulot na basahin ang nilalaman nito.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Bukas ngayon</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Pinakamaraming bukas</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total lahat-lahat, %user bawat user, %address bawat address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Mga anonymous na subscription</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Haba ng stream</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Hindi maidagdag ang webhook: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Binago ang webhook na %name; nananatili ang signing secret nito.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Hindi maiimbak ang signing secret (Setup &gt; Mga Secret).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Naidagdag ang webhook na %name. Ang signing secret nito, ipinapakita nang isang beses lamang: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Walang webhook na %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Hindi sumagot ang webhook na %name: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Sumagot ang webhook na %name ng %status sa loob ng %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Lagyan ng tsek ang kahon sa tabi ng webhook para alisin ito.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Inalis ang webhook na %name.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79339,6 +79475,42 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Hindi isang scope ng GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Ipadala ang mga subscription sa /api/graphql/subscribe (isang event stream o isang WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Walang pinangangalanang operation ng dokumento ang request.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Ang isang subscription ay humihingi ng eksaktong isang field.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Masyadong maraming subscription ang bukas; subukang muli mamaya.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>May %max kang bukas na subscription, ang pinakamaraming pinapayagan.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>May %max na bukas na subscription ang iyong address, ang pinakamaraming pinapayagan.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Naka-off ang mga subscription sa siteaccess na ito.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Mag-sign in para mag-subscribe (isang token o isang personal na API key).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Ipadala ang mga mutation sa /api/graphql.</translation>
     </message>
 </context>
 </TS>

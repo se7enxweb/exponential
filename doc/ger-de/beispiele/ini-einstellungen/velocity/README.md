@@ -10,11 +10,11 @@ generated: exp:help:examples
 ---
 # velocity.ini
 
-Die ausgelieferten Einstellungen von `settings/velocity.ini`: 13 Blöcke, 128 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/velocity.ini`: 13 Blöcke, 133 Einstellungen.
 
 | Block | Einstellungen |
 |---|---|
-| [ServerSettings](ServerSettings.md) | 43 |
+| [ServerSettings](ServerSettings.md) | 48 |
 | [LogSettings](LogSettings.md) | 7 |
 | [CacheSettings](CacheSettings.md) | 15 |
 | [LayoutSettings](LayoutSettings.md) | 3 |

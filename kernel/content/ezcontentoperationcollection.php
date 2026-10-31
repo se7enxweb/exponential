@@ -200,6 +200,8 @@ class eZContentOperationCollection
     {
         $object = eZContentObject::fetch( $objectID );
         $version = $object->version( $versionNum );
+        // the GraphQL event journal tells a new object (publish) from a new version (update)
+        $wasPublished = (int)$object->attribute( 'published' ) > 0 && (int)$object->attribute( 'status' ) == eZContentObject::STATUS_PUBLISHED;
 
         // Audit (doc/eng-us/bc/6.0/audit.md): the state before this version is published, for content.object.create,
         // content.object.publish and content.object.translate
@@ -277,6 +279,9 @@ class eZContentOperationCollection
         ezpEvent::getInstance()->notify( 'content/publish', array( (int)$objectID, (int)$versionNum ) );
         if ( class_exists( 'expDataSyncListener' ) )
             expDataSyncListener::published( (int)$objectID, (int)$versionNum );
+        // the GraphQL event journal (webhooks, subscriptions), written at the end of the request
+        if ( class_exists( 'expGraphQLEventListener' ) )
+            expGraphQLEventListener::published( (int)$objectID, (int)$versionNum, $wasPublished );
     }
 
     /**

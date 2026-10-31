@@ -156,7 +156,9 @@ class expGraphQLSetup
                 else if ( $change['op'] === 'clear' )
                     $editors[$key]->clearArray( $change['block'], $change['variable'] );
                 else if ( $change['op'] === 'remove' )
-                    $editors[$key]->remove( $change['block'], $change['variable'] );
+                    $editors[$key]->remove( $change['block'], $change['variable'], $change['value'] !== '' ? $change['value'] : null );
+                else if ( $change['op'] === 'removeBlock' )
+                    $editors[$key]->removeBlock( $change['block'] );
                 else
                     $editors[$key]->set( $change['block'], $change['variable'], $change['value'] );
             }

@@ -36,7 +36,7 @@ A responsive theme for Exponential 6 sites with articles, events and a blog.
 
 ## Requirements
 
-- Exponential 6.0 (tested with 6.0.15), PHP 8.1 to 8.5
+- Exponential 6.0 (tested with 6.0.15), PHP 8.0 to 8.5
 
 ## Install
 
