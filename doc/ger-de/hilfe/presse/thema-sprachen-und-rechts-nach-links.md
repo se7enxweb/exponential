@@ -40,7 +40,7 @@ Das meiste davon kam im Oktober 2026, in der Entwicklungslinie 6.0.15, die nicht
 | Vollständige englische und deutsche Kataloge, ein Übersetzungsstring für fast jeden sichtbaren Text | 27. und 28. September 2026 | [Übersetzungen und Sprachen](../../funktionen/6.0/uebersetzungen-und-sprachen.md) |
 | 89 neue Locales und eine Seite für jede Sprache | 15. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#15-october-2026-89-new-locales-and-one-page-for-every-language) |
 | Sprachen mit Schreibrichtung von rechts nach links, Hebräisch, Latein, Klingonisch und 81 weitere Locales | 16. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#16-october-2026-right-to-left-languages-hebrew-latin-klingon-and-81-more-locales) |
-| Die Administration auf Arabisch, maschinell unterstützt und noch von einem Muttersprachler zu prüfen | 18. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#18-october-2026-the-administration-in-arabic-and-hebrew-for-the-newest-strings) |
+| Die Administration auf Arabisch und Hebräisch für die neuesten Strings, maschinell unterstützt | 18. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#18-october-2026-the-administration-in-arabic-and-hebrew-for-the-newest-strings) |
 
 ## Fakten, die Sie drucken können
 
@@ -53,7 +53,6 @@ Das meiste davon kam im Oktober 2026, in der Entwicklungslinie 6.0.15, die nicht
 | Eine Seite mit Schreibrichtung von links nach rechts bleibt nach der Arbeit an rechts nach links „Byte für Byte dasselbe Markup“. | [Rechts nach links](../../funktionen/6.0/rechts-nach-links.md) |
 | Für die Sprachen ist zur Laufzeit keine PHP-Erweiterung nötig. | [Sprachen in Exponential, Abschnitt 10](../../sprachen.md#10-keine-php-extension-zur-laufzeit) |
 | Eine Installation kann auf 64-Bit-PHP höchstens 62 Inhaltssprachen enthalten. | [Sprachen in Exponential, Abschnitt 11](../../sprachen.md#11-die-grenze-von-62-inhaltssprachen) |
-| Mehrere vollständige Übersetzungen entstanden maschinell unterstützt; eine Prüfung durch Muttersprachler ist erwünscht. | [Sprachen in Exponential, Abschnitt 8](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen) |
 
 ## Wo die Quellen voneinander abweichen
 
@@ -72,12 +71,12 @@ Oktober in mehreren Schritten hinzu; verwenden Sie also die datierte Zahl der Sp
 
 - Regionaler Blickwinkel: Ist Ihre Sprache vollständig, teilweise oder nur für Inhalte vorhanden? Sehen Sie in
   Abschnitt 4 der Sprachenseite nach.
-- Blickwinkel Community: Muttersprachler sind eingeladen, maschinell unterstützte Übersetzungen zu prüfen.
+- Blickwinkel Community: wie jeder eine Übersetzung der Administration hinzufügen oder vervollständigen kann ([Sprachen in Exponential, Abschnitt 8](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)).
 
 ```text
 „Eine Administration, die von rechts nach links liest: Exponential ergänzt Hebräisch und Arabisch“
 „368 Locales, viele vollständige Übersetzungen: Sprachen ehrlich zählen“
-„Muttersprachler gesucht: ein mit maschineller Hilfe übersetztes CMS prüfen“
+„Mit maschineller Hilfe übersetzt, und offen gesagt: ein CMS in vielen Sprachen“
 ```
 
 ## Wen Sie fragen

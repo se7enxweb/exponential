@@ -11056,7 +11056,7 @@ dd73861187c6621e1334f938a041d2ef  doc/eng-us/help/press/story-engines-velocity-f
 9ebeb48195fc70a8b526fe664c8dcb38  doc/eng-us/help/press/story-every-pull-request-merged.md
 a4f31b9de86390d95d2e1edfe0056f70  doc/eng-us/help/press/story-exponential-basic.md
 26e56b7408d80cfe70242c556bf412ff  doc/eng-us/help/press/story-exponential-intelligence.md
-4802e2d705527dd071475b2b2c0d2f18  doc/eng-us/help/press/story-exponential-layouts.md
+b45c1287e95ca2f67bffb361d4dd9790  doc/eng-us/help/press/story-exponential-layouts.md
 c302be7ff67e7325582fe8fc49a78e55  doc/eng-us/help/press/story-exponential-platform-dxp.md
 44b8c015d2fa689a9840d64547d441f2  doc/eng-us/help/press/story-extension-ecosystem.md
 b4a106c87cef698ce531fe1b83897e16  doc/eng-us/help/press/story-free-documentation.md
@@ -11066,7 +11066,7 @@ b4a106c87cef698ce531fe1b83897e16  doc/eng-us/help/press/story-free-documentation
 a036f08a1a2448312c8432ffadfd7be2  doc/eng-us/help/press/story-how-velocity-figures-are-measured.md
 15c86d8c57c1ac26a46d5f77b88e2f57  doc/eng-us/help/press/story-install-in-one-command.md
 bb2bd8d825652f9db893a5997b9e5f00  doc/eng-us/help/press/story-jquery-4-and-the-end-of-yui.md
-fabd6767e816c0b825a9825407f105a4  doc/eng-us/help/press/story-languages-and-right-to-left.md
+0dc661964b4d1093ea2c172ff605af55  doc/eng-us/help/press/story-languages-and-right-to-left.md
 f4eac44d8dbc8fff09485a0897689d69  doc/eng-us/help/press/story-longevity.md
 fe22e159b50e0fb1f13a954213085195  doc/eng-us/help/press/story-maintenance-mode-and-operations.md
 030a4158752fe7c4e05a28eb1483a817  doc/eng-us/help/press/story-mongodb.md
@@ -19124,7 +19124,7 @@ bf3997e18780742f194e5deb934891d2  doc/ger-de/hilfe/presse/thema-eine-lebendig-ge
 7f6809e5a17400fec1cfb6e7359590a9  doc/ger-de/hilfe/presse/thema-engines-velocity-frankenphp-und-klassische-server.md
 95010964b84e5f87aea91c8426738f05  doc/ger-de/hilfe/presse/thema-exponential-basic.md
 6d1a364fd0aa444675a060d9a8335423  doc/ger-de/hilfe/presse/thema-exponential-intelligence.md
-198cd21cea78efdaa7dac8d64e2e637c  doc/ger-de/hilfe/presse/thema-exponential-layouts.md
+ef9b3c0b34349b69781218ed3d5f7246  doc/ger-de/hilfe/presse/thema-exponential-layouts.md
 71a473a9d636c2acbeaf90053f9b690d  doc/ger-de/hilfe/presse/thema-exponential-platform-dxp.md
 3132855d057baa9d5f5a7e939491d6e3  doc/ger-de/hilfe/presse/thema-exponential-platform-nexus-und-legacy.md
 3b694a1cca1984a18066360cacbf9ce5  doc/ger-de/hilfe/presse/thema-exponential-velocity.md
@@ -19142,7 +19142,7 @@ e694ef99f303780195bd0b5add20af7e  doc/ger-de/hilfe/presse/thema-multisite.md
 38c4e3de28ab70faf47b38bd3dd61216  doc/ger-de/hilfe/presse/thema-open-source-und-lizenzen.md
 5b53eda0f15334f0c539733a61a418a0  doc/ger-de/hilfe/presse/thema-sechs-datenbanken.md
 69ed4e3dd1e428764d508400c1bdec05  doc/ger-de/hilfe/presse/thema-sicherheit.md
-3fb38402d23d311cddc9f8980db7ce2a  doc/ger-de/hilfe/presse/thema-sprachen-und-rechts-nach-links.md
+dff8700894ee8eb21c03c9bb2e434b41  doc/ger-de/hilfe/presse/thema-sprachen-und-rechts-nach-links.md
 d5650bb9083d1db1377fc125120566da  doc/ger-de/hilfe/presse/thema-sqlite-als-standard.md
 155f0fd3e771a78c5f0a5460a25e1cfa  doc/ger-de/hilfe/presse/thema-suche.md
 27a816469b5754fcaab11b1d47a27ec8  doc/ger-de/hilfe/presse/thema-wie-die-velocity-zahlen-gemessen-werden.md
