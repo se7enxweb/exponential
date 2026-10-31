@@ -79057,6 +79057,14 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Ii vel API-čoavdda mas lea GraphQL-viidodat.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL-API lea jáddaduvvon neahttabáikebeassamis %siteaccess, mii čájeha dán siiddu; vuolábeale tabealla čájeha gos dat vástida.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Neahttabáikebeassama %siteaccess várás, mii čájeha dán siiddu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

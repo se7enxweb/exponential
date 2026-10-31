@@ -79090,6 +79090,14 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Nulla clavis API cum ambitu GraphQL adhuc.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>API GraphQL in aditu situs %siteaccess, qui hanc paginam ostendit, exstincta est; tabula infra ostendit ubi respondeat.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Pro aditu situs %siteaccess, qui hanc paginam ostendit.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

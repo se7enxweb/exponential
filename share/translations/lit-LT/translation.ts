@@ -79087,6 +79087,14 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>API raktų su GraphQL aprėptimi dar nėra.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API išjungta prieigoje prie svetainės %siteaccess, kuri rodo šį puslapį; toliau esanti lentelė rodo, kur ji atsako.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Prieigai prie svetainės %siteaccess, kuri rodo šį puslapį.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

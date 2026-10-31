@@ -79057,6 +79057,14 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Ur tella ara akka tura tsarut API s tmnaḍt GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API yensa deg unekcum ɣer usmel %siteaccess, i d-yeskanayen asebter-a; tafelwit ddaw-a tesskanay anda d-yettarra.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>I unekcum ɣer usmel %siteaccess, i d-yeskanayen asebter-a.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

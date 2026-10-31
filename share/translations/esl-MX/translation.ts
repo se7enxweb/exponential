@@ -82982,11 +82982,11 @@ Gracias por la retroalimentación</translation>
     </message>
     <message>
         <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
-        <translation>Pida al contenido de este sitio exactamente los campos que necesita una página, en una sola solicitud. El esquema sigue las clases de contenido; cada consulta se ejecuta con los permisos del usuario que la envía.</translation>
+        <translation>Pide al contenido de este sitio exactamente los campos que necesita una página, en una sola solicitud. El esquema sigue las clases de contenido; cada consulta se ejecuta con los permisos del usuario que la envía.</translation>
     </message>
     <message>
         <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
-        <translation>La API GraphQL está desactivada en este acceso al sitio. Actívela en graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+        <translation>La API GraphQL está desactivada en este acceso al sitio. Actívala en graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
     </message>
     <message>
         <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
@@ -83034,7 +83034,7 @@ Gracias por la retroalimentación</translation>
     </message>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
-        <translation>La consulta se ejecuta con sus permisos, con la sesión iniciada actual.</translation>
+        <translation>La consulta se ejecuta con tus permisos, con la sesión que tienes iniciada.</translation>
     </message>
     <message>
         <source>%count in %seconds s</source>
@@ -83315,6 +83315,14 @@ Gracias por la retroalimentación</translation>
     <message>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Aún no hay ninguna clave de API con un ámbito GraphQL.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>La API GraphQL está desactivada en el acceso al sitio %siteaccess, que muestra esta página; la tabla de abajo muestra dónde responde.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Para el acceso al sitio %siteaccess, que muestra esta página.</translation>
     </message>
 </context>
 <context>

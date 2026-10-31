@@ -79057,6 +79057,14 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Entá nun hai nenguna clave d'API con un ámbitu GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>L'API GraphQL ta desactivada nel accesu al sitiu %siteaccess, que amuesa esta páxina; la tabla d'abaxo amuesa ónde respuende.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Pal accesu al sitiu %siteaccess, que amuesa esta páxina.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

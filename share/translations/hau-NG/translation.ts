@@ -79055,6 +79055,14 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Babu maɓallin API mai iyakar GraphQL tukuna.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>An kashe GraphQL API a hanyar shiga shafi %siteaccess, wadda ke nuna wannan shafin; teburin da ke ƙasa yana nuna inda yake amsawa.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Don hanyar shiga shafi %siteaccess, wadda ke nuna wannan shafin.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

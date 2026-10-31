@@ -17,7 +17,7 @@ administration. What later phases add is listed under [What comes next](#what-co
 | Off until | `settings/graphql.ini` `[GraphQLSettings] Enabled=enabled`, optionally for the siteaccesses of `SiteAccessList[]` |
 | Library | `webonyx/graphql-php` 15, required by the root `composer.json` |
 | Sign-in | an OAuth token, a personal API key with the scope `graphql:read` (and `graphql:write` for mutations), the session (playground), or none (anonymous) |
-| Mutations | off until `MutationsEnabled=enabled`; then policy-checked, workflows run, audited, `POST` only |
+| Mutations | on together with the end point (`MutationsEnabled=enabled`, the default; `disabled` per siteaccess for a read-only API); policy-checked, workflows run, audited, `POST` only, signed in |
 | Rights | the user's roles and policies, always; the schema settings decide what can be asked at all |
 | Administration | Setup > GraphQL (policy `graphql/playground`): the end points, the schema, the siteaccesses, the limits, the response cache, the persisted queries, the keys and a playground; switches with `graphql/administrate` |
 | Console | `exp:graphql:enable`, `exp:graphql:disable`, `exp:graphql:status`, `exp:graphql:schema`, `exp:graphql:query`, `exp:graphql:persist`, `exp:graphql:keys`, `exp:graphql:starter`, `exp:graphql:bench` |
@@ -55,8 +55,9 @@ administration. What later phases add is listed under [What comes next](#what-co
    `settings/override/graphql.ini.append.php` (without `--siteaccess`: every siteaccess), lets the front end at
    `https://shop.example.com` call it from a browser (`rest.ini [CorsSettings]`), makes a personal API key for the user
    `frontend` with the scope `graphql:read` (the token is shown once), clears the INI cache, and prints the end point
-   and a `curl` line to try. `--mutations` switches the [mutations](#mutations) on as well and gives the key
-   `graphql:write`. Setup > GraphQL has the same switches per siteaccess. By hand it is one block in
+   and a `curl` line to try. The [mutations](#mutations) come on together with the API; `--mutations` gives the key
+   `graphql:write` as well (and switches the mutations on again where `exp:graphql:disable --mutations` switched them
+   off). Setup > GraphQL has the same switches per siteaccess. By hand it is one block in
    `settings/override/graphql.ini.append.php`:
 
    ```ini
@@ -611,16 +612,19 @@ The page has no German translation, so it is read in English, and `language` say
 ## Mutations
 
 Mutations change content: create it, write a new version, translate it, publish a draft, remove it, move it, hide and
-reveal it, give it another location, upload images. They are **off until switched on**, per siteaccess:
+reveal it, give it another location, upload images. They are **on together with the end point**
+(`MutationsEnabled=enabled` is the default). For a read-only API, switch them off per siteaccess, with
+`./console exp:graphql:disable --siteaccess=<name> --mutations --apply`, the button **Mutations off** of Setup >
+GraphQL, or by hand:
 
 ```ini
-# settings/siteaccess/<the siteaccess your front end writes through>/graphql.ini.append.php
+# settings/siteaccess/<the siteaccess that only reads>/graphql.ini.append.php
 [GraphQLSettings]
-MutationsEnabled=enabled
+MutationsEnabled=disabled
 ```
 
-While they are off, the schema has no type `Mutation` and a mutation is refused with `DISABLED`. Switched on, every
-mutation is held to the same rules as the administration:
+While they are off, the schema has no type `Mutation` and a mutation is refused with `DISABLED`. While they are on,
+every mutation is held to the same rules as the administration:
 
 - **The policies of the user.** Each mutation checks the rights of the user it runs as on the content it changes:
   `content/create` below the parent (for the class and the language), `content/edit` of the object (in the language),
@@ -816,8 +820,9 @@ the server stores it when the request may store queries (`AutomaticPersistedQuer
   [Velocity](velocity-web-server.md) worker counts the same requests, with no database connection. The playground
   counts per user; the console is not limited. A load test from one address needs `RateLimitAnonymous=0` (or a token)
   on the siteaccess it measures.
-- **Changes only where switched on.** A query never changes content. [Mutations](#mutations) are off until
-  `MutationsEnabled=enabled` in a siteaccess; then they are `POST` only, refused for anonymous requests
+- **Changes only through the guards.** A query never changes content. [Mutations](#mutations) are on together with
+  the end point (`MutationsEnabled=enabled`, the default; `disabled` in a siteaccess makes its API read-only); they
+  are `POST` only, refused for anonymous requests
   (`AnonymousMutations`), for a key without `graphql:write` and for a session without its form token, checked against
   the user's policies, run through the kernel's operations and their workflows, and recorded in the audit.
 - **No caching across rights.** An ad-hoc answer is `private, no-store`, never kept. The answer of a persisted query is
@@ -1058,8 +1063,8 @@ list the extensions that answer.
 | [`exp:graphql:schema`](../../examples/commands/expgraphqlschema.md) | the schema: `--format=sdl` (the schema language, for code generators and editors), `json` (the introspection result), `summary` (classes, types, fields, datatypes, mapped or not); `--output=<file>` |
 | [`exp:graphql:query`](../../examples/commands/expgraphqlquery.md) | runs a query, given as the argument, a `.graphql` or `.gql` file, or `-` for standard input, or a persisted query with `--id=<name or sha256>`; `--variables`, `--operation`, `--as=<login>`, `--format=json\|table` |
 | [`exp:graphql:persist`](../../examples/commands/expgraphqlpersist.md) | stores `.graphql` files as [persisted queries](#persisted-queries) after checking them against the schema (`--apply`; `--name=`), `--list` (`--format=text\|json`), `--remove=<name or sha256> --apply` |
-| [`exp:graphql:enable`](../../examples/commands/expgraphqlenable.md) | switches the API on in one command: `--siteaccess=`, `--mutations`, `--origin=` (CORS), `--key-for=<login>` with `--key-name=`, `--scope=`, `--days=`; checks the schema, prints the end point and a `curl` line; a dry run (a diff) unless `--apply` |
-| [`exp:graphql:disable`](../../examples/commands/expgraphqldisable.md) | switches it off, everywhere or for `--siteaccess=`; `--mutations` switches only the mutations off; a dry run unless `--apply` |
+| [`exp:graphql:enable`](../../examples/commands/expgraphqlenable.md) | switches the API on in one command, its mutations with it: `--siteaccess=`, `--mutations` (on again after `disable --mutations`; a key gets `graphql:write`), `--origin=` (CORS), `--key-for=<login>` with `--key-name=`, `--scope=`, `--days=`; checks the schema, prints the end point and a `curl` line; a dry run (a diff) unless `--apply` |
+| [`exp:graphql:disable`](../../examples/commands/expgraphqldisable.md) | switches it off, everywhere or for `--siteaccess=`; `--mutations` switches only the mutations off (a read-only API); a dry run unless `--apply` |
 | [`exp:graphql:starter`](../../examples/commands/expgraphqlstarter.md) | generates a starter front end into a new directory (`--kit=html\|next\|nuxt\|astro\|expo`, `--to=`, `--endpoint=`, `--list`): the kit's files and queries generated from the schema (the menu, a page by URL alias, every field of each class), each checked against the schema first; see [step by step](../../guides/graphql-walkthrough.md); a dry run unless `--apply` |
 | [`exp:graphql:keys`](../../examples/commands/expgraphqlkeys.md) | the personal API keys with a GraphQL scope: the list (`--format=text\|json`), `--create --for=<login>` (`--name`, `--scope`, `--days`; the token is shown once), `--revoke=<prefix or id>`; a dry run unless `--apply` |
 | [`exp:graphql:bench`](../../examples/commands/expgraphqlbench.md) | measures the speed of an end point against decision 18 ([Speed](#speed)): cached `GET`, `304`, cached `POST`, a cached answer through the kernel, uncached (`--query-file`); median, p95 and max per row, PASS or FAIL against the 33 ms hard limit; `--format=text\|json` |

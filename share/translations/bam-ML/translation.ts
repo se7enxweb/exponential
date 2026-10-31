@@ -79057,6 +79057,14 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>API kile si tɛ yen fɔlɔ min bɛ ni GraphQL scope ye.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API sogolen don siti donda %siteaccess kɔnɔ, min bɛ nin ɲɛ in jira; jiralan min bɛ duguma, o b'a jira a bɛ jaabi di yɔrɔ minnu na.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Siti donda %siteaccess kama, min bɛ nin ɲɛ in jira.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

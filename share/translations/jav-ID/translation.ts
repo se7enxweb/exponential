@@ -79065,6 +79065,14 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Durung ana kunci API kanthi cakupan GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>API GraphQL dipateni ing akses situs %siteaccess, sing nampilake kaca iki; tabel ing ngisor nuduhake panggonan API iki mangsuli.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Kanggo akses situs %siteaccess, sing nampilake kaca iki.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

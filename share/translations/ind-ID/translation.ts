@@ -79057,6 +79057,14 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Belum ada kunci API dengan cakupan GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>API GraphQL dimatikan di akses situs %siteaccess, yang menampilkan halaman ini; tabel di bawah menunjukkan tempat API ini menjawab.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Untuk akses situs %siteaccess, yang menampilkan halaman ini.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

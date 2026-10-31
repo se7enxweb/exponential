@@ -79057,6 +79057,14 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Ammaaf furtuun API daangaa GraphQL qabu hin jiru.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API seensa marsariitii %siteaccess, kan fuula kana agarsiisu keessatti dhaamsameera; gabateen armaan gadii bakka inni deebii kennu agarsiisa.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Seensa marsariitii %siteaccess, kan fuula kana agarsiisuuf.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

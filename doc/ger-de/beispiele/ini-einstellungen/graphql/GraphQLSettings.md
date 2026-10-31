@@ -465,21 +465,23 @@ ImageAliasList[]=large
 ## MutationsEnabled
 
 > Mutationen (createContent, updateContent, translateContent, publishDraft, deleteContent, moveContent, hideContent,  
-> revealContent, addLocation, uploadImage, uploadFromUrl, createPreviewToken): enabled oder disabled (der Standard).  
-> Disabled: Das Schema hat keinen Typ Mutation, und eine Mutation wird mit DISABLED abgelehnt. Enabled: Jede Mutation prüft  
-> die Richtlinien des Benutzers an dem Inhalt, den sie ändert, führt die Operationen des Kernels aus (samt den Workflows von  
-> content/publish, content/move ...), wird im Audit aufgezeichnet (content.graphql.mutation) und lässt den Antwort-Cache verfallen.  
-> Eine Mutation wird nur mit POST gesendet; mit einem persönlichen API-Schlüssel braucht sie den Bereich graphql:write; mit der  
-> Sitzung der Weboberfläche braucht sie das Formular-Token (Header X-CSRF-Token). Schalten Sie sie je Siteaccess ein, für den  
-> Siteaccess, über den ein Frontend schreibt.  
+> revealContent, addLocation, uploadImage, uploadFromUrl, createPreviewToken): enabled (der Standard) oder disabled.  
+> Sie werden zusammen mit dem Endpunkt eingeschaltet (Enabled oben). Enabled: Jede Mutation prüft die Richtlinien des  
+> Benutzers an dem Inhalt, den sie ändert, führt die Operationen des Kernels aus (samt den Workflows von content/publish,  
+> content/move ...), wird im Audit aufgezeichnet (content.graphql.mutation) und lässt den Antwort-Cache verfallen. Eine  
+> Mutation wird nur mit POST gesendet, von einem angemeldeten Benutzer (AnonymousMutations unten); mit einem persönlichen  
+> API-Schlüssel braucht sie den Bereich graphql:write; mit der Sitzung der Weboberfläche braucht sie das Formular-Token  
+> (Header X-CSRF-Token). Disabled: Das Schema hat keinen Typ Mutation, und eine Mutation wird mit DISABLED abgelehnt. Für  
+> eine API, die nur liest, schalten Sie sie je Siteaccess aus  
+> (./console exp:graphql:disable --siteaccess=<name> --mutations).  
 
-Standard: `disabled`.
+Standard: `enabled`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/graphql.ini.append.php
 [GraphQLSettings]
-MutationsEnabled=disabled
+MutationsEnabled=enabled
 */ ?>
 ```
 

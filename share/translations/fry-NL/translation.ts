@@ -79057,6 +79057,14 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Noch gjin API-kaai mei in GraphQL-berik.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>De GraphQL-API is útskeakele yn de websidetagong %siteaccess, dy't dizze side toant; de tabel hjirûnder toant wêr't er antwurdet.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Foar de websidetagong %siteaccess, dy't dizze side toant.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

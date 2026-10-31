@@ -80282,6 +80282,14 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Nog geen API-sleutel met een GraphQL-scope.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>De GraphQL-API is uitgeschakeld in de siteaccess %siteaccess, die deze pagina toont; de tabel hieronder toont waar hij antwoordt.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Voor de siteaccess %siteaccess, die deze pagina toont.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

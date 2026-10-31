@@ -79057,6 +79057,14 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Alc'hwez API ebet gant un dachenn GraphQL c'hoazh.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>Diweredekaet eo an API GraphQL en haeziñ lec'hienn %siteaccess, a ziskouez ar bajenn-mañ; an daolenn a-is a ziskouez e-lec'h ma respont.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Evit an haeziñ lec'hienn %siteaccess, a ziskouez ar bajenn-mañ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

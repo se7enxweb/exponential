@@ -79087,6 +79087,14 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Ainda não há chaves de API com âmbito GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>A API GraphQL está desligada no acesso ao site %siteaccess, que mostra esta página; a tabela abaixo mostra onde responde.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Para o acesso ao site %siteaccess, que mostra esta página.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

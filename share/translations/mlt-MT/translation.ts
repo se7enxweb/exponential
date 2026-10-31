@@ -79087,6 +79087,14 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Għad m'hemm l-ebda ċavetta API b'ambitu GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>L-API GraphQL hija mitfija fl-aċċess għas-sit %siteaccess, li juri din il-paġna; it-tabella hawn taħt turi fejn twieġeb.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Għall-aċċess għas-sit %siteaccess, li juri din il-paġna.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

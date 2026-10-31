@@ -79057,6 +79057,14 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Oraindik ez dago GraphQL esparrua duen API gakorik.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL APIa desaktibatuta dago orri hau erakusten duen %siteaccess gune-sarbidean; beheko taulak non erantzuten duen erakusten du.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Orri hau erakusten duen %siteaccess gune-sarbiderako.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

@@ -79057,6 +79057,14 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Nach keen API-Schlëssel mat engem GraphQL-Beräich.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>D'GraphQL-API ass am Site-Zougang %siteaccess ausgeschalt, deen dës Säit weist; d'Tabell hei ënnen weist, wou se äntwert.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Fir de Site-Zougang %siteaccess, deen dës Säit weist.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

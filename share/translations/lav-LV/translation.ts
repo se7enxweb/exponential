@@ -79087,6 +79087,14 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Vēl nav nevienas API atslēgas ar GraphQL tvērumu.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API ir izslēgts vietnes piekļuvē %siteaccess, kas rāda šo lapu; tabula zemāk rāda, kur tas atbild.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Vietnes piekļuvei %siteaccess, kas rāda šo lapu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

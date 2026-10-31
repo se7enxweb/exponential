@@ -79057,6 +79057,14 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Belum ada kunci API dengan skop GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>API GraphQL dimatikan dalam akses laman %siteaccess, yang memaparkan halaman ini; jadual di bawah menunjukkan tempat API ini menjawab.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Bagi akses laman %siteaccess, yang memaparkan halaman ini.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

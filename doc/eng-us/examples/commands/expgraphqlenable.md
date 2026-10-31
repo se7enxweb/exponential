@@ -24,12 +24,13 @@ php bin/php/expgraphqlenable.php --help
 ```text
 Switch the GraphQL API on
 Sets graphql.ini [GraphQLSettings] Enabled=enabled in settings/override, adds the siteaccesses of
---siteaccess to SiteAccessList[] (without it the API answers in every siteaccess), switches the
-mutations on with --mutations, lets a front end's origin call it with --origin (rest.ini
-[CorsSettings]), makes a personal API key for a user with --key-for (the token is shown once), checks
-that the schema builds, and prints the end point, a curl example and the playground. Shows the
-changes as a diff and writes nothing without --apply; with --apply each file is backed up first and
-the INI caches are cleared.
+--siteaccess to SiteAccessList[] (without it the API answers in every siteaccess); the mutations
+come on with it (MutationsEnabled=enabled, the default), and --mutations writes that too, where
+exp:graphql:disable --mutations switched them off. Lets a front end's origin call it with
+--origin (rest.ini [CorsSettings]), makes a personal API key for a user with --key-for (the token
+is shown once), checks that the schema builds, and prints the end point, a curl example and the
+playground. Shows the changes as a diff and writes nothing without --apply; with --apply each file
+is backed up first and the INI caches are cleared.
 
 ./console exp:graphql:enable                                        what would change
 ./console exp:graphql:enable --siteaccess=site --apply
@@ -46,7 +47,7 @@ missing; 2 wrong options (an unknown siteaccess or user, an origin that is not o
 |---|---|---|
 | `--siteaccess` | required | the siteaccesses it answers in, comma separated (default: every siteaccess) |
 | `--origin` | required | the origin of a front end allowed to call it from a browser (CORS), comma separated |
-| `--mutations` |  | switch the mutations on too (in the siteaccesses of --siteaccess) |
+| `--mutations` |  | switch the mutations on again (in the siteaccesses of --siteaccess); they are on by default |
 | `--key-for` | required | make a personal API key for this user (a login) |
 | `--key-name` | required | the name of the key (default: GraphQL front end) |
 | `--scope` | required | the scopes of the key: graphql:read (the default), graphql:write (the default with --mutations) |

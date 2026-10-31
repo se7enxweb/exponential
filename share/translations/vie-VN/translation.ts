@@ -79057,6 +79057,14 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Chưa có khóa API nào có phạm vi GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>API GraphQL đang tắt ở điểm truy cập trang %siteaccess, nơi hiển thị trang này; bảng bên dưới cho biết API trả lời ở đâu.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Cho điểm truy cập trang %siteaccess, nơi hiển thị trang này.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

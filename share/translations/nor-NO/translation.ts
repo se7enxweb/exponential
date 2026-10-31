@@ -80315,6 +80315,14 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Ingen API-nøkkel med et GraphQL-omfang ennå.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL-API-et er slått av i nettstedstilgangen %siteaccess, som viser denne siden; tabellen nedenfor viser hvor det svarer.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>For nettstedstilgangen %siteaccess, som viser denne siden.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

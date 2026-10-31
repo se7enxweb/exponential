@@ -80360,6 +80360,14 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Ingen API-nyckel med ett GraphQL-omfång ännu.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL-API:t är avstängt i webbplatsingången %siteaccess, som visar den här sidan; tabellen nedan visar var det svarar.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>För webbplatsingången %siteaccess, som visar den här sidan.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

@@ -79062,6 +79062,14 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Henüz GraphQL kapsamlı API anahtarı yok.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API, bu sayfayı gösteren %siteaccess site erişiminde kapalı; aşağıdaki tablo nerede yanıt verdiğini gösterir.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Bu sayfayı gösteren %siteaccess site erişimi için.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

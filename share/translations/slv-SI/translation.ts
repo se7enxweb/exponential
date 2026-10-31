@@ -79087,6 +79087,14 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Še ni ključa API z obsegom GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API je izklopljen v dostopu do spletnega mesta %siteaccess, ki prikazuje to stran; spodnja tabela kaže, kje odgovarja.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Za dostop do spletnega mesta %siteaccess, ki prikazuje to stran.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

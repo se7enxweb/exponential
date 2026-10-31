@@ -79055,6 +79055,14 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Akukho API key enomda we-GraphQL okwangoku.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>I-GraphQL API icinyiwe kufikelelo kwisayithi %siteaccess, olubonisa eli phepha; itheyibhile engezantsi ibonisa apho iphendula khona.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Ngokufikelela kwisayithi %siteaccess, olubonisa eli phepha.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
