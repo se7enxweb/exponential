@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>মখলগী ফাহনবা</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>ইরবশিংনা ফিভম্গী লোক লৌবা ঙমদ্রে (অরোইবা %date): মখোয় মমা মমানা কেশ তৌখিবা মহৈ পুম্নমক অরিবা ওহনখ্রে। সাইট অসি চলবা শিজিন্নরিবা মী খুদিংমক্না %file ইবা ঙমগদবনি; NFS দা NFSv4 নত্ত্রগা lockd মথৌ তাই।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>নঙ্গী সেসনশিং অমসুং সুরক্ষাগী থৌদোকশিং JSON ফাইল ওইনা.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>সাইত অসিদা সেসনশিং রেকর্দ তৌদে, মরম অদুনা অতোপ্পা ডিভাইস অমত্তা লগআউট তৌবা ঙমদ্রে. হৌজিক নঙ্গী পাসওয়র্দ সুধরবিয়ু.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>অতোপ্পা সেসন %count লগআউট তৌরে. হৌজিক নঙ্গী পাসওয়র্দ সুধরবিয়ু.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>অতোপ্পা ডিভাইস অমত্তা লগইন তৌরম্দে. হৌজিক নঙ্গী পাসওয়র্দ সুধরবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>থাগৎচরি. থৌদোক অসি নঙগীনি হায়না মখোল থম্লে.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>থৌদোক অদুগী পাউখুম অমত্তা মথৌ তাদে.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>পেজ অদুগী মতম ফাওরে. করিসু সুধরদ্রে; অনুগ্রহ তৌরগা অমুক চেষ্টা তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>নঙ্গী একাউন্ট ঙাক্তবা</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>মফম অসিদা লৈবা করিগুম্বা অমা নঙনা তৌদ্রবদি, অতোপ্পা ডিভাইস পুম্নমক লগআউট তৌবিয়ু, মতুংদা অনৌবা পাসওয়র্দ অমা খনবিয়ু. “ঐ মনুংদা থম্বা” শিজিন্নদুনা লগইন তৌরিবা ডিভাইসশিংসু লগআউট তৌগনি.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>অসি নত্তবা ডিভাইস খুদিংমক মখোয়গী মতুংদা লাকপা হাইজবদা লগআউট তৌগনি. মতুংদা নঙনা অনৌবা পাসওয়র্দ অমা খনগনি.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>হোয়, অতোপ্পা ডিভাইসশিং লগআউট তৌবিয়ু</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>মসি নঙা?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>হোয়, মসি ঐনি</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>নত্তে, ঐগী একাউন্ট ঙাক্তবিয়ু</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>নঙ্গী সেসনশিং অমসুং সুরক্ষাগী থৌদোকশিং JSON ফাইল ওইনা.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>সাইত অসিদা সেসনশিং রেকর্দ তৌদে, মরম অদুনা অতোপ্পা ডিভাইস অমত্তা লগআউট তৌবা ঙমদ্রে. হৌজিক নঙ্গী পাসওয়র্দ সুধরবিয়ু.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>অতোপ্পা সেসন %count লগআউট তৌরে. হৌজিক নঙ্গী পাসওয়র্দ সুধরবিয়ু.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>অতোপ্পা ডিভাইস অমত্তা লগইন তৌরম্দে. হৌজিক নঙ্গী পাসওয়র্দ সুধরবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>থাগৎচরি. থৌদোক অসি নঙগীনি হায়না মখোল থম্লে.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>থৌদোক অদুগী পাউখুম অমত্তা মথৌ তাদে.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>পেজ অদুগী মতম ফাওরে. করিসু সুধরদ্রে; অনুগ্রহ তৌরগা অমুক চেষ্টা তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>নঙ্গী একাউন্ট ঙাক্তবা</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>মফম অসিদা লৈবা করিগুম্বা অমা নঙনা তৌদ্রবদি, অতোপ্পা ডিভাইস পুম্নমক লগআউট তৌবিয়ু, মতুংদা অনৌবা পাসওয়র্দ অমা খনবিয়ু. “ঐ মনুংদা থম্বা” শিজিন্নদুনা লগইন তৌরিবা ডিভাইসশিংসু লগআউট তৌগনি.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>অসি নত্তবা ডিভাইস খুদিংমক মখোয়গী মতুংদা লাকপা হাইজবদা লগআউট তৌগনি. মতুংদা নঙনা অনৌবা পাসওয়র্দ অমা খনগনি.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>হোয়, অতোপ্পা ডিভাইসশিং লগআউট তৌবিয়ু</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>মসি নঙা?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>হোয়, মসি ঐনি</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>নত্তে, ঐগী একাউন্ট ঙাক্তবিয়ু</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>সেসন হেন্দলর: %handler. সেসনশিং তেবল expuser_session দগী পাই, মরম অদুনা রিপোর্ট অসিনা হেন্দলর খুদিংমকগা থবক তৌই.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>অরোইবা পুং %hours দা থোকখিবা চিন্নিংঙাই থবকশিং</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>নেটৱর্ক অমনা একাউন্ট %accounts দা লগইন তৌবা ঙমখিদে (হোৎনবা %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>লগইন ঙমদবা মতুংদা একাউন্ট লোক তৌখ্রে</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>একাউন্ট অমদা লগইন ঙমদবা %count</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>মতম অমদা দেশ %count দগী লগইন তৌখি</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>সুরক্ষাগী থবকশিং</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>সেসনশিং</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>লগইন ঙমদবাশিং অসি শিজিন্নবগী অডিত লোগতগী পাই, মসি মফম অসিদা ফংদে.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>চিন্নিংঙাই অমত্তা লৈতে: হন্না হন্না লগইন ঙমদবা একাউন্ট অমত্তা লৈতে, একাউন্ট কয়া হোৎনবা নেটৱর্ক অমত্তা লৈতে, দেশ কয়াদগী লগইন তৌবা একাউন্ট অমত্তা লৈতে.</translation>
     </message>
 </context>
 <context>

@@ -25684,6 +25684,10 @@ Nòta: los paquets seràn pas desinstallats.</translation>
         <source>last purge</source>
         <translation>darrièra purga</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Las escrituras an pas pogut prene lo varrolh de l&apos;estat (darrièra còp %date) : cadun a rendut obsolets totes los resultats en cache. %file deu èsser escrivible per cada utilizaire jos lo qual lo site s&apos;executa ; sus NFS, cal NFSv4 o lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Vòstras sessions e vòstres eveniments de seguretat dins un fichièr JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Las sessions son pas enregistradas sus aqueste site, doncas cap d'autre aparelh a pas pogut èsser desconnectat. Modificatz vòstre senhal ara.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count autras sessions son estadas desconnectadas. Ara modificatz vòstre senhal.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Cap d'autre aparelh èra pas connectat. Ara modificatz vòstre senhal.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Mercés. L'eveniment es marcat coma vòstre.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Aquel eveniment demanda pas cap de responsa.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La pagina aviá expirat. Pas res es estat modificat; ensajatz tornarmai.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Securizar vòstre compte</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Se quicòm aicí èra pas vos, desconnectatz totes los autres aparelhs, puèi causissètz un senhal novèl. Los aparelhs que demòran connectats amb « Me rapelar » son tanben desconnectats.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Cada aparelh levat aqueste es desconnectat a sa requèsta seguenta. Puèi causissètz un senhal novèl.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Òc, desconnectar los autres aparelhs</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Èra vos?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Òc, èra ieu</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Non, securizar mon compte</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Vòstras sessions e vòstres eveniments de seguretat dins un fichièr JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Las sessions son pas enregistradas sus aqueste site, doncas cap d'autre aparelh a pas pogut èsser desconnectat. Modificatz vòstre senhal ara.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count autras sessions son estadas desconnectadas. Ara modificatz vòstre senhal.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Cap d'autre aparelh èra pas connectat. Ara modificatz vòstre senhal.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Mercés. L'eveniment es marcat coma vòstre.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Aquel eveniment demanda pas cap de responsa.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La pagina aviá expirat. Pas res es estat modificat; ensajatz tornarmai.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Securizar vòstre compte</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Se quicòm aicí èra pas vos, desconnectatz totes los autres aparelhs, puèi causissètz un senhal novèl. Los aparelhs que demòran connectats amb « Me rapelar » son tanben desconnectats.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Cada aparelh levat aqueste es desconnectat a sa requèsta seguenta. Puèi causissètz un senhal novèl.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Òc, desconnectar los autres aparelhs</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Èra vos?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Òc, èra ieu</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Non, securizar mon compte</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Gestionari de sessions: %handler. Las sessions son legidas dins la taula expuser_session, doncas lo rapòrt fonciona amb quin gestionari que siá.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Activitat suspècta dins las darrièras %hours oras</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Un ret a pas capitat de se connectar a %accounts comptes (%count ensages)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Compte blocat aprèp de connexions fracassadas</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count connexions fracassadas sus un compte</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Connectat dempuèi %count païses a l'encòp</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitat de seguretat</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessions</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Las connexions fracassadas son legidas dins lo jornal d'auditoria dels utilizaires, que es pas disponible aicí.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Pas res de suspècte: cap de compte amb de connexions fracassadas repetidas, cap de ret qu'ensaja mantun compte, cap de compte connectat dempuèi mantun país.</translation>
     </message>
 </context>
 <context>

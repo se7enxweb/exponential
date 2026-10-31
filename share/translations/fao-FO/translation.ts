@@ -25684,6 +25684,10 @@ Ivasamt: Pakkarnir verða ikki avinnlagdir.</translation>
         <source>last purge</source>
         <translation>seinasta strikan</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Skrivingar fingu ikki tikið støðulásin (seinast %date): hvør teirra gjørdi øll goymd úrslit forelda. %file má vera skrivilig fyri hvønn brúkara, ið heimasíðan koyrir sum; á NFS krevur hon NFSv4 ella lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Setur tínar og trygdarhendingar sum JSON-fíla.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Setur verða ikki skrásettar á hesi síðuni, so einki annað tól kundi ritast út. Broyt loyniorðið nú.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count aðrar setur vórðu ritaðar út. Broyt nú loyniorðið.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Einki annað tól var innritað. Broyt nú loyniorðið.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Takk fyri. Hendingin er merkt sum tín.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Henda hendingin krevur einki svar.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Síðan var útgingin. Einki varð broytt; royn aftur.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Trygga kontuna</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Um nakað her ikki var tú, rita so øll onnur tól út og vel síðan nýtt loyniorð. Tól, sum eru hildin innritað við Minst til mín, verða eisini ritað út.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Øll tól uttan hetta verða ritað út við næstu fyrispurning. Síðan velur tú nýtt loyniorð.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ja, rita hini tólini út</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Var hetta tú?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ja, tað var eg</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nei, trygga mína kontu</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Setur tínar og trygdarhendingar sum JSON-fíla.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Setur verða ikki skrásettar á hesi síðuni, so einki annað tól kundi ritast út. Broyt loyniorðið nú.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count aðrar setur vórðu ritaðar út. Broyt nú loyniorðið.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Einki annað tól var innritað. Broyt nú loyniorðið.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Takk fyri. Hendingin er merkt sum tín.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Henda hendingin krevur einki svar.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Síðan var útgingin. Einki varð broytt; royn aftur.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Trygga kontuna</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Um nakað her ikki var tú, rita so øll onnur tól út og vel síðan nýtt loyniorð. Tól, sum eru hildin innritað við Minst til mín, verða eisini ritað út.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Øll tól uttan hetta verða ritað út við næstu fyrispurning. Síðan velur tú nýtt loyniorð.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ja, rita hini tólini út</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Var hetta tú?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ja, tað var eg</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nei, trygga mína kontu</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Setuviðgerðari: %handler. Seturnar verða lisnar úr talvuni expuser_session, so frágreiðingin virkar við øllum viðgerðarum.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Grunsom virksemi seinastu %hours tímarnar</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Eitt net megnaði ikki at rita inn á %accounts kontur (%count royndir)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konta læst eftir miseydnaðar innritanir</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count miseydnaðar innritanir á eina kontu</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Innritað úr %count londum samstundis</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Trygdarvirksemi</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Setur</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Miseydnaðar innritanir verða lisnar úr brúkaraeftirlitsloggini, sum ikki er tøk her.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Einki grunsamt: eingin konta við endurtiknum miseydnaðum innritanum, einki net, sum roynir fleiri kontur, eingin konta innritað úr fleiri londum.</translation>
     </message>
 </context>
 <context>

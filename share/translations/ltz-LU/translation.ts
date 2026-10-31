@@ -25684,6 +25684,10 @@ Hiweis: D'Packagen ginn net desinstalléiert.</translation>
         <source>last purge</source>
         <translation>lescht Eidelmaache</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Schreifvirgäng konnten d&apos;Spär vum Zoustand net huelen (lescht Kéier %date): jidderee vun hinnen huet all gecachte Resultater verännert. %file muss fir all Benotzer schreifbar sinn, ënner deem de Site leeft; op NFS brauch en NFSv4 oder lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Är Sessiounen a Sécherheetsevenementer als JSON-Fichier.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Op dësem Site ginn Sessiounen net opgezeechent, dofir konnt keen anert Gerät ofgemellt ginn. Ännert elo Äert Passwuert.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count aner Sessioune goufen ofgemellt. Ännert elo Äert Passwuert.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Keen anert Gerät war ugemellt. Ännert elo Äert Passwuert.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Merci. D'Evenement ass als Äert markéiert.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Dëst Evenement brauch keng Äntwert.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>D'Säit war ofgelaf. Et gouf näischt geännert; probéiert w.e.g. nach eng Kéier.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Kont ofsécheren</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Wann eppes hei net vun Iech war, mellt all aner Geräter of a wielt duerno en neit Passwuert. Geräter, déi mat „Ugemellt bleiwen“ ugemellt bliwwe sinn, ginn och ofgemellt.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>All Gerät ausser dësem gëtt bei senger nächster Ufro ofgemellt. Duerno wielt Dir en neit Passwuert.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Jo, déi aner Geräter ofmellen</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Waart Dir dat?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Jo, dat war ech</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Neen, mäi Kont ofsécheren</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Är Sessiounen a Sécherheetsevenementer als JSON-Fichier.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Op dësem Site ginn Sessiounen net opgezeechent, dofir konnt keen anert Gerät ofgemellt ginn. Ännert elo Äert Passwuert.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count aner Sessioune goufen ofgemellt. Ännert elo Äert Passwuert.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Keen anert Gerät war ugemellt. Ännert elo Äert Passwuert.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Merci. D'Evenement ass als Äert markéiert.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Dëst Evenement brauch keng Äntwert.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>D'Säit war ofgelaf. Et gouf näischt geännert; probéiert w.e.g. nach eng Kéier.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Kont ofsécheren</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Wann eppes hei net vun Iech war, mellt all aner Geräter of a wielt duerno en neit Passwuert. Geräter, déi mat „Ugemellt bleiwen“ ugemellt bliwwe sinn, ginn och ofgemellt.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>All Gerät ausser dësem gëtt bei senger nächster Ufro ofgemellt. Duerno wielt Dir en neit Passwuert.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Jo, déi aner Geräter ofmellen</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Waart Dir dat?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Jo, dat war ech</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Neen, mäi Kont ofsécheren</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Sessiouns-Handler: %handler. D&apos;Sessioune ginn aus der Tabell expuser_session gelies, dofir funktionéiert de Bericht mat all Handler.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Verdächteg Aktivitéit an de leschten %hours Stonnen</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Een Netzwierk konnt sech net bei %accounts Konten umellen (%count Versich)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kont no net erfollegräichen Umeldunge gespaart</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count net erfollegräich Umeldungen op engem Kont</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Gläichzäiteg aus %count Länner ugemellt</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sécherheetsaktivitéit</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessiounen</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Net erfollegräich Umeldunge ginn aus dem Audit-Log vun de Benotzer gelies, deen hei net verfügbar ass.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Näischt Verdächteges: kee Kont mat widderholt net erfollegräichen Umeldungen, keen Netzwierk, dat verschidde Konte probéiert, kee Kont, deen aus verschiddene Länner ugemellt ass.</translation>
     </message>
 </context>
 <context>

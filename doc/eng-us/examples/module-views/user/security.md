@@ -14,12 +14,12 @@ A view of the `user` module, defined in `kernel/user/module.php` and run by `ker
 ## Address
 
 ```text
-/user/security/<UserID>/(offset)/<Offset>
+/user/security/<UserID>/(offset)/<Offset>/(secure)/<Secure>
 ```
 
 Ordered parameters, in this order after the view name: `UserID`.
 
-Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`.
+Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`, `(secure)` sets `Secure`.
 
 ## Who may open it
 

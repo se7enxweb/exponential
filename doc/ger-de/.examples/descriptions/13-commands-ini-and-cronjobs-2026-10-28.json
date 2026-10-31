@@ -420,8 +420,8 @@
         "de": "Die Sicherheitseinstellungen des eigenen Kontos."
     },
     "ini:settings/site.ini [ReauthGroup_account] Rules": {
-        "en": "\"Sign out all other sessions\" asks first too: someone at an unattended screen must not lock the owner out",
-        "de": "\"Alle anderen Sitzungen abmelden\" fragt ebenfalls zuerst: jemand an einem unbeaufsichtigten Bildschirm darf den Eigentümer nicht aussperren"
+        "en": "\"Sign out all other sessions\" asks first too: someone at an unattended screen must not lock the owner out\n\"Secure your account\" on the security activity signs every other session out, the same as above",
+        "de": "„Alle anderen Sitzungen abmelden“ fragt ebenfalls zuerst: Jemand an einem unbeaufsichtigten Bildschirm darf den Inhaber nicht aussperren\n„Konto absichern“ in der Sicherheitsaktivität meldet jede andere Sitzung ab, wie oben"
     },
     "ini:settings/site.ini [ReauthGroup_content] Enabled": {
         "en": "Removing content (also to the trash) and publishing. Off by default; switched on setup/reauth.",

@@ -2,7 +2,9 @@
    The figures (sessions running, users signed in, today's sign-ins and failed attempts), the last 14 days as a table
    with bars, "Sign a user out everywhere", and the running sessions of every user with a button to sign one out.
    Variables: report_enabled, report_available, report_audit, report_sessions, report_total, report_users,
-   report_limit, report_days, report_today, report_message, report_form_token, report_handler.
+   report_limit, report_days, report_today, report_message, report_form_token, report_handler, report_patterns
+   (expUserSessionReport::patterns(): repeated failures, one network on several accounts, locks, several countries),
+   report_pattern_hours.
    No inline CSS: shared components only (.a4-figures, .a4-meter with .a4-pct-*, .a4-table). The same file is in
    design/admin and design/admin4. Guide: doc/eng-us/features/6.0/user-sessions.md *}
 {def $methods = hash( 'password', 'Password'|i18n( 'design/admin/user/sessionreport' ),
@@ -50,6 +52,36 @@
     <li class="a4-figure"><strong>{if $report_audit}{$report_today.signins}{else}{$report_today.sessions}{/if}</strong> <span>{'Sign-ins today'|i18n( 'design/admin/user/sessionreport' )}</span></li>
     {if $report_audit}<li class="a4-figure{if $report_today.failures|gt( 0 )} is-attention{/if}"><strong>{$report_today.failures}</strong> <span>{'Failed attempts today'|i18n( 'design/admin/user/sessionreport' )}</span></li>{/if}
 </ul>
+</section>
+
+<section class="a4-card a4-section{if $report_patterns|count} is-attention{/if}" aria-labelledby="report-patterns-title">
+    <div class="a4-card-head"><h2 class="a4-h3 a4-card-title" id="report-patterns-title"><span class="a4-icon a4-bi-exclamation-triangle is-large" aria-hidden="true"></span>{'Suspicious activity in the last %hours hours'|i18n( 'design/admin/user/sessionreport',, hash( '%hours', $report_pattern_hours ) )} <span class="a4-badge">{$report_patterns|count}</span></h2></div>
+    <div class="a4-card-body">
+    {if $report_patterns|count}
+    <ol class="a4-timeline" role="list">
+    {foreach $report_patterns as $p}
+        <li class="{cond( or( eq( $p.kind, 'network' ), eq( $p.kind, 'locked' ) ), 'is-bad', 'is-warn' )}"><div class="a4-timeline-body">
+            {switch match=$p.kind}
+            {case match='network'}<strong>{'One network failed to sign in to %accounts accounts (%count attempts)'|i18n( 'design/admin/user/sessionreport',, hash( '%accounts', $p.accounts, '%count', $p.count ) )|wash}</strong> <span class="a4-meta" translate="no">{$p.network|wash}</span>{/case}
+            {case match='locked'}<strong>{'Account locked after failed sign-ins'|i18n( 'design/admin/user/sessionreport' )}</strong>{/case}
+            {case match='failures'}<strong>{'%count failed sign-ins on one account'|i18n( 'design/admin/user/sessionreport',, hash( '%count', $p.count ) )|wash}</strong>{/case}
+            {case match='countries'}<strong>{'Signed in from %count countries at once'|i18n( 'design/admin/user/sessionreport',, hash( '%count', $p.count ) )|wash}</strong> <span class="a4-meta" translate="no">{$p.countries|implode( ', ' )|wash}</span>{/case}
+            {case}{/case}
+            {/switch}
+            {if $p.user_id|gt( 0 )}
+            <span class="a4-meta">{if $p.name}{$p.name|wash}{else}{$p.login|wash}{/if}</span>
+            <a href={concat( 'user/security/', $p.user_id )|ezurl}>{'Security activity'|i18n( 'design/admin/user/sessionreport' )}</a>
+            <a href={concat( 'user/sessions/', $p.user_id )|ezurl}>{'Sessions'|i18n( 'design/admin/user/sessionreport' )}</a>
+            {/if}
+        </div></li>
+    {/foreach}
+    </ol>
+    {elseif $report_audit|not}
+    <p class="a4-empty">{'Failed sign-ins are read from the user audit log, which is not available here.'|i18n( 'design/admin/user/sessionreport' )}</p>
+    {else}
+    <p class="a4-empty">{'Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.'|i18n( 'design/admin/user/sessionreport' )}</p>
+    {/if}
+    </div>
 </section>
 
 <form method="post" action={'user/sessionreport'|ezurl}>

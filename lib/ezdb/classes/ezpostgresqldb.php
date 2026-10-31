@@ -189,6 +189,22 @@ class eZPostgreSQLDB extends eZDBInterface
         return 'postgresql';
     }
 
+    /**
+     * Whether this connection's string literals take a backslash literally (standard_conforming_strings, on by
+     * default since PostgreSQL 9.1). Read from the connection: the server reports every change of the setting,
+     * a SET in this session included, so asking costs no statement. Null without a connection.
+     * eZDBQueryCache::backslashEscapes() asks it to tell where a literal ends.
+     *
+     * @return bool|null
+     */
+    function standardConformingStrings()
+    {
+        if ( !$this->DBConnection || !function_exists( 'pg_parameter_status' ) )
+            return null;
+        $value = @pg_parameter_status( $this->DBConnection, 'standard_conforming_strings' );
+        return $value === false ? null : $value === 'on';
+    }
+
     function bindingType( )
     {
         return eZDBInterface::BINDING_NO;

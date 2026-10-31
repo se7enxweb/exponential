@@ -25682,6 +25682,10 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <source>last purge</source>
         <translation>son temizleme</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Yazmalar durum kilidini alamadı (en son %date): her biri önbellekteki tüm sonuçları eskitti. %file, sitenin çalıştığı her kullanıcı için yazılabilir olmalıdır; NFS&apos;de NFSv4 veya lockd gerekir.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78330,6 +78334,58 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Oturumlarınız ve güvenlik olaylarınız bir JSON dosyası olarak.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Bu sitede oturumlar kaydedilmiyor, bu yüzden başka hiçbir cihazın oturumu kapatılamadı. Parolanızı hemen değiştirin.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Diğer %count oturum kapatıldı. Şimdi parolanızı değiştirin.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Başka hiçbir cihazda oturum açık değildi. Şimdi parolanızı değiştirin.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Teşekkürler. Olay sizin olarak işaretlendi.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Bu olay yanıt gerektirmiyor.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sayfanın süresi dolmuştu. Hiçbir şey değiştirilmedi; lütfen yeniden deneyin.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Hesabı güvenceye al</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Buradaki bir şey siz değilseniz, diğer tüm cihazlarda oturumu kapatın, ardından yeni bir parola seçin. Beni hatırla ile oturumu açık tutulan cihazların oturumu da kapatılır.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Bu cihaz dışındaki her cihazın oturumu bir sonraki isteğinde kapatılır. Ardından yeni bir parola seçersiniz.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Evet, diğer cihazların oturumunu kapat</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Bu siz miydiniz?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Evet, bendim</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Hayır, hesabımı güvenceye al</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78512,6 +78568,58 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Oturumlarınız ve güvenlik olaylarınız bir JSON dosyası olarak.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Bu sitede oturumlar kaydedilmiyor, bu yüzden başka hiçbir cihazın oturumu kapatılamadı. Parolanızı hemen değiştirin.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Diğer %count oturum kapatıldı. Şimdi parolanızı değiştirin.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Başka hiçbir cihazda oturum açık değildi. Şimdi parolanızı değiştirin.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Teşekkürler. Olay sizin olarak işaretlendi.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Bu olay yanıt gerektirmiyor.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sayfanın süresi dolmuştu. Hiçbir şey değiştirilmedi; lütfen yeniden deneyin.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Hesabı güvenceye al</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Buradaki bir şey siz değilseniz, diğer tüm cihazlarda oturumu kapatın, ardından yeni bir parola seçin. Beni hatırla ile oturumu açık tutulan cihazların oturumu da kapatılır.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Bu cihaz dışındaki her cihazın oturumu bir sonraki isteğinde kapatılır. Ardından yeni bir parola seçersiniz.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Evet, diğer cihazların oturumunu kapat</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Bu siz miydiniz?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Evet, bendim</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Hayır, hesabımı güvenceye al</translation>
     </message>
 </context>
 <context>
@@ -78703,6 +78811,42 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Oturum işleyicisi: %handler. Oturumlar expuser_session tablosundan okunur, bu nedenle rapor her işleyiciyle çalışır.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Son %hours saatteki şüpheli etkinlik</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Bir ağ %accounts hesapta oturum açamadı (%count deneme)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Başarısız oturum açma denemelerinden sonra hesap kilitlendi</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Tek bir hesapta %count başarısız oturum açma</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Aynı anda %count ülkeden oturum açıldı</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Güvenlik etkinliği</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Oturumlar</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Başarısız oturum açma denemeleri kullanıcı denetim günlüğünden okunur; bu günlük burada kullanılamıyor.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Şüpheli bir şey yok: tekrarlanan başarısız oturum açma denemesi olan hesap yok, birden çok hesabı deneyen ağ yok, birden çok ülkeden oturum açılan hesap yok.</translation>
     </message>
 </context>
 <context>

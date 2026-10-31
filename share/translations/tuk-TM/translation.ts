@@ -25684,6 +25684,10 @@ bellik: Paketler gurnamadan aýrylmaz.</translation>
         <source>last purge</source>
         <translation>soňky arassalanyş</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Ýazgylar ýagdaý gulpuny alyp bilmedi (soňky gezek %date): olaryň her biri keşdäki ähli netijeleri köneltdi. %file saýtyň işleýän her bir ulanyjysy üçin ýazylýan bolmaly; NFS-de NFSv4 ýa-da lockd gerek.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sessiýalaryňyz we howpsuzlyk wakalary JSON faýly görnüşinde.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Bu saýtda sessiýalar ýazga alynmaýar, şonuň üçin başga hiç bir enjamy çykaryp bolmady. Açar sözüňizi häzir üýtgediň.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Beýleki %count sessiýa çykaryldy. Indi açar sözüňizi üýtgediň.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Başga hiç bir enjam girmändi. Indi açar sözüňizi üýtgediň.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Sag boluň. Waka siziňki hökmünde bellendi.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Bu waka jogap talap etmeýär.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sahypanyň möhleti gutarypdy. Hiç zat üýtgedilmedi; täzeden synanyşyp görüň.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Hasaby gora</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Bu ýerde bir zat siz bolmadyk bolsa, beýleki ähli enjamlary çykaryň, soňra täze açar söz saýlaň. Meni ýatda sakla arkaly girilen ýagdaýda galan enjamlar hem çykarylýar.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Şundan başga her bir enjam indiki haýyşynda çykarylýar. Soňra siz täze açar söz saýlaýarsyňyz.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Hawa, beýleki enjamlary çykar</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Bu sizmidiňiz?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Hawa, bu mendim</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ýok, hasabymy gora</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sessiýalaryňyz we howpsuzlyk wakalary JSON faýly görnüşinde.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Bu saýtda sessiýalar ýazga alynmaýar, şonuň üçin başga hiç bir enjamy çykaryp bolmady. Açar sözüňizi häzir üýtgediň.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Beýleki %count sessiýa çykaryldy. Indi açar sözüňizi üýtgediň.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Başga hiç bir enjam girmändi. Indi açar sözüňizi üýtgediň.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Sag boluň. Waka siziňki hökmünde bellendi.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Bu waka jogap talap etmeýär.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sahypanyň möhleti gutarypdy. Hiç zat üýtgedilmedi; täzeden synanyşyp görüň.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Hasaby gora</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Bu ýerde bir zat siz bolmadyk bolsa, beýleki ähli enjamlary çykaryň, soňra täze açar söz saýlaň. Meni ýatda sakla arkaly girilen ýagdaýda galan enjamlar hem çykarylýar.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Şundan başga her bir enjam indiki haýyşynda çykarylýar. Soňra siz täze açar söz saýlaýarsyňyz.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Hawa, beýleki enjamlary çykar</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Bu sizmidiňiz?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Hawa, bu mendim</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ýok, hasabymy gora</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Sessiýa işleýjisi: %handler. Sessiýalar expuser_session tablisasyndan okalýar, şonuň üçin hasabat islendik işleýji bilen işleýär.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Soňky %hours sagatda şübheli işjeňlik</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Bir tor %accounts hasaba girip bilmedi (%count synanyşyk)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Şowsuz girişlerden soň hasap gulplandy</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Bir hasapda %count şowsuz giriş</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Bir wagtda %count ýurtdan girildi</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Howpsuzlyk işjeňligi</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessiýalar</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Şowsuz girişler ulanyjylaryň audit žurnalyndan okalýar, ol bu ýerde elýeterli däl.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Şübheli hiç zat ýok: gaýtalanýan şowsuz girişli hasap ýok, birnäçe hasaby synaýan tor ýok, birnäçe ýurtdan girilen hasap ýok.</translation>
     </message>
 </context>
 <context>

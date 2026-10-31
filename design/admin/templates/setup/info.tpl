@@ -569,6 +569,9 @@
                 &middot; {'%tables tables written since'|i18n( 'design/admin/setup/info',, hash( '%tables', concat( '<strong>', $query_cache.tables_tracked|wash, '</strong>' ) ) )}
                 {if $query_cache.state_exists|not}({'no state file yet'|i18n( 'design/admin/setup/info' )}){/if}
             </p>
+            {if $query_cache.lock_failed}
+            <p class="a4-notice is-bad">{'Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.'|i18n( 'design/admin/setup/info',, hash( '%date', $query_cache.lock_failed|l10n( shortdatetime ), '%file', concat( '<code>', $query_cache.lock_file|wash, '</code>' ) ) )}</p>
+            {/if}
             {if $query_cache.counters}
             <p class="a4-help">
                 {'This server since %date: %requests requests, %hits hits, %misses misses'|i18n( 'design/admin/setup/info',, hash( '%date', cond( $query_cache.counters.since, $query_cache.counters.since|l10n( shortdatetime ), '-' ), '%requests', concat( '<strong>', $query_cache.counters.requests|wash, '</strong>' ), '%hits', concat( '<strong>', $query_cache.counters.hits|wash, '</strong>' ), '%misses', concat( '<strong>', $query_cache.counters.misses|wash, '</strong>' ) ) )}{if $query_cache.counters.hit_rate|ne( '' )} ({'%rate hit rate'|i18n( 'design/admin/setup/info',, hash( '%rate', concat( '<strong>', $query_cache.counters.hit_rate|wash, '&nbsp;%</strong>' ) ) )}){/if},

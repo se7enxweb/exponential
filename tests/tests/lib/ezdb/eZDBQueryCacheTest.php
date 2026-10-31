@@ -39,6 +39,25 @@
  *  QC-35 — In a web request (a Velocity worker too) the purge runs at the end of the request, registered once
  *  QC-36 — One time base for the saved share: the script start (REQUEST_TIME_FLOAT without it) to the end the bar sets
  *  QC-37 — The report row says how many times as long the page would have taken without the cache
+ *  QC-38 — Statements whose tables cannot all be told are not cached: a derived table, an index hint, PARTITION,
+ *           LATERAL, ONLY or TABLE() in FROM, a parenthesised join, a comma list after ON, a quoted name with a
+ *           space, a comment, q'' and E'' literals, a backslash that ends a literal differently per database;
+ *           each SELECT of MINUS/INTERSECT/EXCEPT and STRAIGHT_JOIN are read
+ *  QC-39 — Results kept under a state file that is gone are not answered again (the file deleted with the cache
+ *           directory, APCu or the result files still there)
+ *  QC-40 — A write that cannot take the state lock makes everything stale
+ *  QC-41 — The memo keeps at most MEMO_MAX results, the least recently used goes first
+ *  QC-42 — The key carries the database user, port and socket: two sites on one server do not share results
+ *  QC-43 — PostgreSQL and SQLite: a backslash does not escape (standard_conforming_strings off: it does), quoted
+ *           names with an apostrophe, unterminated literals, E'' and dollar quoting, # is no comment, their volatile
+ *           functions
+ *  QC-44 — PostgreSQL and SQLite writes: ONLY, TRUNCATE and DROP TABLE lists, CASCADE, INSERT OR REPLACE, RENAME TO;
+ *           a name that cannot be read makes the write unreadable
+ *  QC-45 — A lock taken on a state.lock that was deleted meanwhile is taken again on the new file
+ *  QC-46 — A persistent worker (Velocity) starts every request from the state on disk: another process's write and a
+ *           replaced state file count at once, the memo is empty, a lock failure is logged once per request
+ *  QC-47 — A lock failure is shown to the admin: Setup > System information (any process), the debug output; a clear
+ *           forgets it
  *
  * No database: the driver is a stand-in object with the properties the cache
  * reads, and the state lives in a directory of its own under var/tmp.
@@ -106,6 +125,16 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         return null;
     }
 
+    /**
+     * An installation that has run before: its state file exists. The first file written gets an id of its own, and
+     * results kept before it (under no file) are not answered under it.
+     */
+    private function existingState()
+    {
+        eZDBQueryCache::clearAll();
+        usleep( 5 );
+    }
+
     private function write( $sql )
     {
         // Entries and writes carry microtime(): keep them from sharing one.
@@ -143,6 +172,85 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
             'SELECT @@version',
         ) as $sql )
             $this->assertNull( eZDBQueryCache::readTables( $sql ), $sql );
+    }
+
+    /** QC-38 */
+    public function testReadTablesNotFooled()
+    {
+        // each SELECT of a set operation is read
+        foreach ( array( 'MINUS', 'INTERSECT', 'EXCEPT', 'UNION' ) as $op )
+        {
+            $got = eZDBQueryCache::readTables( "SELECT id FROM a $op SELECT id, name FROM b" );
+            sort( $got );
+            $this->assertSame( array( 'a', 'b' ), $got, $op );
+        }
+        // a derived table hid its own FROM and everything after it: before, only c was found
+        foreach ( array(
+            'SELECT * FROM ( SELECT id FROM a ) x, b JOIN c ON c.id = x.id',
+            'SELECT * FROM b, ( SELECT id FROM a ) x JOIN c ON c.id = x.id',
+            'SELECT * FROM TABLE( f() ) t JOIN c ON c.id = t.id',
+            // a comment, with and without an apostrophe that pairs with the next literal
+            "SELECT * FROM a -- it's\n JOIN b ON b.id = a.id WHERE a.x = 'y'",
+            'SELECT * FROM a /* JOIN b */ WHERE 1 = 1',
+        ) as $sql )
+            $this->assertNull( eZDBQueryCache::readTables( $sql ), $sql );
+        // forms that hid tables before, on MySQL (true) and Oracle (false)
+        foreach ( array(
+            array( 'SELECT * FROM a FORCE INDEX (i), b WHERE a.i = b.i', true ),
+            array( 'SELECT * FROM a PARTITION (p), b WHERE a.i = b.i', true ),
+            array( 'SELECT * FROM a LEFT JOIN ( b JOIN c ON b.i = c.i ) ON a.i = b.i', true ),
+            array( 'SELECT * FROM a JOIN b ON a.i = b.i, c WHERE 1 = 1', true ),
+            array( 'SELECT * FROM a JOIN b ON a.i IN ( 1, 2 ), c WHERE 1 = 1', true ),
+            array( 'SELECT * FROM a JOIN b USING ( i ), c WHERE c.x = 1', true ),
+            array( 'SELECT * FROM a JOIN b x, c WHERE 1 = 1', true ),
+            array( 'SELECT * FROM a CROSS JOIN b , c', true ),
+            array( 'SELECT * FROM a NATURAL JOIN b , c', false ),
+            array( 'SELECT * FROM t, LATERAL ( SELECT 1 FROM u ) x', false ),
+            array( 'SELECT * FROM ONLY a', false ),
+            array( 'SELECT * FROM `my table` x', true ),
+            array( 'SELECT * FROM "My Table" x', false ),
+            array( "SELECT * FROM a WHERE x = q'[it's]' AND y IN ( SELECT id FROM b WHERE z = '1' )", false ),
+            array( "SELECT * FROM a WHERE x = E'it\\'s' AND y IN ( SELECT id FROM b WHERE z = '1' )", false ),
+            array( "SELECT * FROM a # it's\n JOIN b ON 1 WHERE x = 'y'", true ),
+        ) as $case )
+            $this->assertNull( eZDBQueryCache::readTables( $case[0], $case[1] ), $case[0] );
+        $got = eZDBQueryCache::readTables( 'SELECT * FROM a STRAIGHT_JOIN b ON a.i = b.i', true );
+        sort( $got );
+        $this->assertSame( array( 'a', 'b' ), $got, 'STRAIGHT_JOIN' );
+        // a literal that ends in a lone e or q is a value, not an E'' or q'' literal
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE n = 'Plan e' AND m = 'x'", false ) );
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE n = 'Tom e''s'", false ) );
+        $this->assertSame( array( 'a' ), eZDBQueryCache::writtenTables( "UPDATE a SET n = 'Plan e' WHERE id = 1", true ) );
+        $this->assertSame( array( 'a' ), eZDBQueryCache::writtenTables( "INSERT INTO a (n) VALUES ('Nr. q')", false ) );
+        // MySQL's double-quoted string with an apostrophe
+        $got = eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = \"it's\" AND y IN ( SELECT id FROM b WHERE z = '1' )", true );
+        sort( $got );
+        $this->assertSame( array( 'a', 'b' ), $got, 'double-quoted string' );
+        // what the kernel sends stays cacheable: lists in IN (), a join with a subquery in WHERE
+        $got = eZDBQueryCache::readTables( 'SELECT * FROM ezcontentobject o LEFT JOIN ezcontentobject_name n ON o.id = n.contentobject_id AND n.content_version IN ( 1, 2 ) WHERE o.id IN ( SELECT contentobject_id FROM ezcontentobject_tree WHERE parent_node_id = 2 ) ORDER BY o.id, n.name', false );
+        sort( $got );
+        $this->assertSame( array( 'ezcontentobject', 'ezcontentobject_name', 'ezcontentobject_tree' ), $got );
+        // 'C:\' is a whole literal in Oracle, not in MySQL: the table in between depends on the database
+        $sql = "SELECT * FROM a WHERE x = 'C:\\' AND y IN ( SELECT id FROM b WHERE z = '1' )";
+        $this->assertNull( eZDBQueryCache::readTables( $sql ), 'unknown database' );
+        $got = eZDBQueryCache::readTables( $sql, false );
+        sort( $got );
+        $this->assertSame( array( 'a', 'b' ), $got, 'Oracle' );
+        $this->assertNull( eZDBQueryCache::writtenTables( "UPDATE a SET x = 'C:\\' WHERE y = '1'" ), 'write, unknown database' );
+        $this->assertSame( array( 'a' ), eZDBQueryCache::writtenTables( "UPDATE a SET x = 'C:\\' WHERE y = '1'", false ), 'write, Oracle' );
+        // MySQL's escaped quote stays one literal
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = 'it\\'s'", true ) );
+        $this->assertSame( array( 'a' ), eZDBQueryCache::writtenTables( "INSERT INTO a (x) VALUES ('it\\'s')", true ) );
+        // a backslash that ends no literal differently changes nothing
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = 'a\\nb'" ) );
+        // the database says how its literals end
+        $mysql = new class { function databaseName() { return 'mysql'; } };
+        $oracle = new class { function databaseName() { return 'oracle'; } };
+        $this->assertTrue( eZDBQueryCache::backslashEscapes( $mysql ) );
+        $this->assertFalse( eZDBQueryCache::backslashEscapes( $oracle ) );
+        $this->assertNull( eZDBQueryCache::backslashEscapes( $this->db ) );
+        // SAMPLE reads a random share
+        $this->assertNull( eZDBQueryCache::readTables( 'SELECT * FROM a SAMPLE (10)' ) );
     }
 
     /** QC-02 */
@@ -189,6 +297,7 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
     public function testWriteToAReadTableMakesItStale()
     {
         $sql = 'SELECT * FROM ezcontentobject o, ezcontentobject_name n WHERE o.id = n.contentobject_id';
+        $this->existingState();
         $this->select( $sql );
         $this->write( 'UPDATE ezsection SET name = 1' );
         $this->assertNotNull( $this->select( $sql ), 'a write to another table leaves it current' );
@@ -642,6 +751,7 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
                 return count( preg_grep( '/^Query cache: state read \(generation \d+\)$/', array_column( $debug->TimePoints, 'Description' ) ) );
             };
             $sql = 'SELECT * FROM ezcontentobject';
+            $this->existingState();
             $this->newRequest();
             $this->select( $sql );
             $this->assertNotNull( $this->select( $sql ) );
@@ -676,14 +786,17 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
 
             // the next request of a persistent worker: nothing carried over; the report reads no state itself
             $this->newRequest();
+            eZDBQueryCache::debugReport( false );
+            $this->assertSame( 3, $points(), 'no state read yet, no timing point, also not from the report' );
+            // a miss reads the state: the result it stores belongs to that state file
             $this->select( $sql );
             $text = eZDBQueryCache::debugReport( false );
             $this->assertMatchesRegularExpression( '/^Hits +0$/m', $text );
             $this->assertMatchesRegularExpression( '/^Misses +1$/m', $text );
-            $this->assertMatchesRegularExpression( '/^Generation +not read$/m', $text );
-            $this->assertSame( 3, $points(), 'no state read yet, no timing point, also not from the report' );
-            $this->assertNotNull( $this->select( $sql ) );
+            $this->assertMatchesRegularExpression( '/^Generation +\\d+$/m', $text );
             $this->assertSame( 4, $points(), 'the first look at the state' );
+            $this->assertNotNull( $this->select( $sql ) );
+            $this->assertSame( 4, $points(), 'once per report' );
 
             // the debug output switched off, then a reset: nothing registered, no accumulator half made
             $GLOBALS['eZDebugEnabled'] = false;
@@ -1142,5 +1255,340 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
                 eZDBQueryCache::setRequestEnd( null );
             }
         } );
+    }
+
+    /** QC-39 */
+    public function testResultsUnderAStateFileThatIsGoneAreNotAnswered()
+    {
+        $sql = 'SELECT * FROM ezcontentobject';
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $this->existingState();
+        $this->select( $sql );
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $this->assertNotNull( $this->select( $sql ), 'kept across requests' );
+        // the cache directory's state file is deleted (rm -r of the cache), the result files are not
+        unlink( $this->dir . '/state.ser' );
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $this->assertNull( $this->select( $sql ), 'the writes the deleted file knew are gone: not answered' );
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $this->assertNotNull( $this->select( $sql ), 'what was stored after it is' );
+    }
+
+    /** QC-40 */
+    public function testAWriteWithoutTheLockMakesEverythingStale()
+    {
+        $this->existingState();
+        $read = 'SELECT * FROM ezcontentobject';
+        $other = 'SELECT * FROM ezsection';
+        $this->select( $read );
+        $this->select( $other );
+        // the lock cannot be opened (here: a directory in its place)
+        unlink( $this->dir . '/state.lock' );
+        mkdir( $this->dir . '/state.lock' );
+        $log = ini_set( 'error_log', $this->dir . '/error.log' );
+        try
+        {
+            $this->write( 'UPDATE ezcontentobject SET x = 1' );
+        }
+        finally
+        {
+            ini_set( 'error_log', $log );
+        }
+        $this->assertNull( $this->select( $other ), 'another process\'s write could have been lost: stale too' );
+        $this->assertStringContainsString( 'could not lock', file_get_contents( $this->dir . '/error.log' ) );
+    }
+
+    /** QC-41 */
+    public function testTheMemoKeepsAtMostMemoMaxResults()
+    {
+        for ( $i = 0; $i <= eZDBQueryCache::MEMO_MAX; $i++ )
+            $this->select( 'SELECT * FROM ezcontentobject WHERE id = ' . $i );
+        $this->assertNotNull( $this->select( 'SELECT * FROM ezcontentobject WHERE id = ' . eZDBQueryCache::MEMO_MAX ), 'the newest is kept' );
+        $this->assertNull( $this->select( 'SELECT * FROM ezcontentobject WHERE id = 0' ), 'the oldest went first' );
+        // a hit makes a result the newest: it outlives the ones read after it
+        $this->assertNotNull( $this->select( 'SELECT * FROM ezcontentobject WHERE id = 2' ) );
+        for ( $i = 0; $i < eZDBQueryCache::MEMO_MAX - 1; $i++ )
+            $this->select( 'SELECT * FROM ezsection WHERE id = ' . $i );
+        $this->assertNotNull( $this->select( 'SELECT * FROM ezcontentobject WHERE id = 2' ), 'used recently: kept' );
+        $this->assertNull( $this->select( 'SELECT * FROM ezcontentobject WHERE id = 3' ), 'not used since: dropped' );
+    }
+
+    /** QC-42 */
+    public function testTheKeyCarriesTheDatabaseUserAndPort()
+    {
+        $a = $this->driver();
+        $a->User = 'site_a';
+        $a->Port = 1521;
+        $b = clone $a;
+        $b->User = 'site_b';
+        $c = clone $a;
+        $c->Port = 1522;
+        $d = clone $a;
+        $d->SocketPath = '/run/mysqld/other.sock';
+        $this->assertNotSame( eZDBQueryCache::key( $a, 'SELECT 1 FROM x', array() ), eZDBQueryCache::key( $d, 'SELECT 1 FROM x', array() ) );
+        $sql = 'SELECT * FROM ezcontentobject';
+        $this->assertNotSame( eZDBQueryCache::key( $a, $sql, array() ), eZDBQueryCache::key( $b, $sql, array() ) );
+        $this->assertNotSame( eZDBQueryCache::key( $a, $sql, array() ), eZDBQueryCache::key( $c, $sql, array() ) );
+        $this->assertSame( eZDBQueryCache::key( $a, $sql, array() ), eZDBQueryCache::key( clone $a, $sql, array() ) );
+        $this->select( $sql, array( array( 'id' => 1 ) ), array(), $a );
+        $this->assertNull( $this->select( $sql, array( array( 'id' => 2 ) ), array(), $b ), 'another user\'s rows are not answered' );
+    }
+
+    /** A sorted readTables() or writtenTables() result, or null. */
+    private function sortedTables( $tables )
+    {
+        if ( is_array( $tables ) )
+            sort( $tables );
+        return $tables;
+    }
+
+    /** QC-43 */
+    public function testReadTablesOnPostgreSQLAndSQLite()
+    {
+        $postgresql = new class { function databaseName() { return 'postgresql'; } };
+        $sqlite = new class { function databaseName() { return 'sqlite'; } };
+        $this->assertFalse( eZDBQueryCache::backslashEscapes( $postgresql ), 'PostgreSQL: standard_conforming_strings on' );
+        $this->assertFalse( eZDBQueryCache::backslashEscapes( $sqlite ) );
+        // a server or session with standard_conforming_strings off escapes with a backslash, as MySQL does
+        $legacy = new class { function databaseName() { return 'postgresql'; } function standardConformingStrings() { return false; } };
+        $this->assertTrue( eZDBQueryCache::backslashEscapes( $legacy ), 'PostgreSQL: standard_conforming_strings off' );
+        $modern = new class { function databaseName() { return 'postgresql'; } function standardConformingStrings() { return true; } };
+        $this->assertFalse( eZDBQueryCache::backslashEscapes( $modern ) );
+
+        foreach ( array( 'PostgreSQL' => false, 'SQLite' => false ) as $engine => $bs )
+        {
+            // a backslash does not escape: 'C:\' is a whole literal, the table after it is read
+            $this->assertSame( array( 'a', 'b' ), $this->sortedTables( eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = 'C:\\' AND y IN ( SELECT id FROM b WHERE z = '1' )", $bs ) ), $engine . ": 'C:\\'" );
+            // a doubled quote stays in the literal
+            $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = 'it''s' AND y = 'z'", $bs ), $engine . ': doubled quote' );
+            // quoted identifiers, with a doubled quote, with a schema
+            $this->assertSame( array( 'ezcontentobject', 'ezuser' ), $this->sortedTables( eZDBQueryCache::readTables( 'SELECT * FROM "ezcontentobject" o JOIN "public"."ezuser" u ON u.contentobject_id = o.id', $bs ) ), $engine . ': quoted identifiers' );
+            // an apostrophe in a quoted identifier is not a literal: it would pair with the next quote and hide b
+            $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM \"it's\" x, b WHERE b.y = 'z'", $bs ), $engine . ': apostrophe in an identifier' );
+            $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM a WHERE \"it's\" = 1 UNION SELECT * FROM b WHERE y = 'z'", $bs ), $engine . ': apostrophe in a column' );
+            // an unterminated literal leaves the end unread
+            $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = 'y", $bs ), $engine . ': unterminated literal' );
+            // # is no comment here (PostgreSQL: XOR): the statement stays readable
+            $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( 'SELECT x # 3 FROM a', $bs ), $engine . ': # is an operator' );
+            // comments still hide tables
+            $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM a -- it's\n JOIN b ON b.id = a.id WHERE a.x = 'y'", $bs ), $engine . ': -- comment' );
+            $this->assertNull( eZDBQueryCache::readTables( 'SELECT * FROM a /* JOIN b */', $bs ), $engine . ': /* */ comment' );
+        }
+        // SQLite: brackets and backticks around a name with an apostrophe
+        $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM [it's] x, b WHERE b.y = 'z'", false ), 'SQLite: [name]' );
+        $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM `it's` x, b WHERE b.y = 'z'", false ), 'SQLite: `name`' );
+        $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM `it's` x, b WHERE b.y = 'z'", true ), 'MySQL: `name`' );
+        // PostgreSQL: E'' strings, where a backslash escapes, are not read; neither are dollar-quoted strings
+        $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = E'it\\'s' UNION SELECT * FROM b WHERE y = 'z'", false ), "E''" );
+        $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = e'C:\\\\' UNION SELECT * FROM b WHERE y = 'z'", false ), "e''" );
+        $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = \$\$O'Brien\$\$ UNION SELECT * FROM b WHERE y = 'z'", false ), '$$' );
+        $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = \$q\$O'Brien\$q\$ UNION SELECT * FROM b WHERE y = 'z'", false ), '$tag$' );
+        // ... but a positional parameter, a dollar in a literal or in a name is no dollar quote
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( 'SELECT * FROM a WHERE x = $1 AND y = $2', false ), '$1' );
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = 'costs \$\$'", false ), 'dollar in a literal' );
+        $this->assertSame( array( 'ab' ), eZDBQueryCache::readTables( 'SELECT * FROM ab WHERE x$y$z = 1', false ), 'dollar in a name' );
+        // U&'' and B'' / X'' literals end like plain ones
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = U&'d\\0061t' AND y = B'101' AND z = X'1F'", false ), "U&''" );
+        // standard_conforming_strings off: a backslash escapes as in MySQL, and a name in double quotes is not read
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = 'it\\'s'", true ), 'backslash escapes' );
+        $this->assertNull( eZDBQueryCache::readTables( 'SELECT * FROM "a"', true ), 'quoted name with escaping on' );
+        // PostgreSQL forms: TABLESAMPLE, a column alias list and ONLY are not readable; FETCH FIRST and OFFSET are
+        $this->assertNull( eZDBQueryCache::readTables( 'SELECT * FROM a TABLESAMPLE BERNOULLI (10)', false ), 'TABLESAMPLE' );
+        $this->assertNull( eZDBQueryCache::readTables( 'SELECT * FROM a x (c1, c2), b', false ), 'column alias list' );
+        $this->assertNull( eZDBQueryCache::readTables( 'SELECT * FROM b, ONLY a', false ), 'ONLY in a list' );
+        $this->assertSame( array( 'a', 'b' ), $this->sortedTables( eZDBQueryCache::readTables( 'SELECT * FROM a, b WHERE a.i = b.i ORDER BY a.i OFFSET 5 ROWS FETCH FIRST 10 ROWS ONLY', false ) ), 'FETCH FIRST' );
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE x::text ILIKE 'y%'", false ), 'cast and ILIKE' );
+        // SQLite: INDEXED BY names an index, not a table
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( 'SELECT * FROM a INDEXED BY i WHERE x = 1', false ), 'INDEXED BY' );
+        // functions that are not the same every time
+        foreach ( array( 'SELECT nextval(\'s\') FROM a', 'SELECT * FROM a WHERE t > now()', 'SELECT random() FROM a', 'SELECT * FROM a WHERE d = CURRENT_DATE',
+                         "SELECT * FROM a WHERE t > datetime('now')", "SELECT * FROM a WHERE t > strftime('%s','now')", 'SELECT * FROM a ORDER BY random()',
+                         'SELECT changes() FROM a', 'SELECT last_insert_rowid() FROM a', 'SELECT * FROM a WHERE t > clock_timestamp()', 'SELECT txid_current() FROM a',
+                         'SELECT gen_random_uuid() FROM a', 'SELECT pg_try_advisory_lock(1) FROM a', 'SELECT * FROM a FOR NO KEY UPDATE', 'SELECT * FROM a FOR KEY SHARE' ) as $sql )
+            $this->assertNull( eZDBQueryCache::readTables( $sql, false ), 'volatile: ' . $sql );
+    }
+
+    /** QC-44 */
+    public function testWrittenTablesOnPostgreSQLAndSQLite()
+    {
+        $cases = array(
+            'INSERT OR REPLACE INTO ezpreferences (a) VALUES (1)' => array( 'ezpreferences' ),
+            'INSERT OR IGNORE INTO "ezurl" (id) VALUES (1)' => array( 'ezurl' ),
+            'INSERT INTO a (x) VALUES (1) ON CONFLICT (x) DO UPDATE SET y = 2' => array( 'a' ),
+            'INSERT INTO a (x) SELECT x FROM b' => array( 'a' ),
+            'UPDATE ONLY a SET x = 1' => array( 'a' ),
+            'UPDATE a AS t SET x = b.x FROM b WHERE b.id = t.id' => array( 'a' ),
+            'DELETE FROM ONLY a WHERE x = 1' => array( 'a' ),
+            'DELETE FROM a USING b WHERE a.id = b.id' => array( 'a' ),
+            'TRUNCATE a' => array( 'a' ),
+            'TRUNCATE TABLE ONLY a' => array( 'a' ),
+            'TRUNCATE a, b' => array( 'a', 'b' ),
+            'TRUNCATE TABLE a, ONLY b RESTART IDENTITY' => array( 'a', 'b' ),
+            'TRUNCATE "public"."a" CONTINUE IDENTITY RESTRICT' => array( 'a' ),
+            'DROP TABLE a, b' => array( 'a', 'b' ),
+            'DROP TABLE IF EXISTS a, "b" RESTRICT' => array( 'a', 'b' ),
+            'ALTER TABLE ONLY a ADD COLUMN x int' => array( 'a' ),
+            'ALTER TABLE IF EXISTS ONLY a ADD COLUMN x int' => array( 'a' ),
+            'ALTER TABLE a RENAME TO b' => array( 'a', 'b' ),
+            "UPDATE a SET x = 'C:\\' WHERE y = '1'" => array( 'a' ),
+        );
+        foreach ( $cases as $sql => $want )
+            $this->assertSame( $want, $this->sortedTables( eZDBQueryCache::writtenTables( $sql, false ) ), $sql );
+        // what cannot be told makes everything stale
+        foreach ( array(
+            'TRUNCATE a, b CASCADE',
+            'TRUNCATE TABLE a CASCADE',
+            'DROP TABLE a CASCADE',
+            'WITH x AS ( DELETE FROM a RETURNING * ) INSERT INTO b SELECT * FROM x',
+            'COPY a FROM STDIN',
+            'CREATE INDEX ON a (x)',
+            "UPDATE \"it's\" SET x = 1 WHERE y = 'z'",
+            'UPDATE "My Table" x, b SET b.y = 1',
+            "UPDATE a SET x = \$\$it's\$\$, y = 'z'",
+            "UPDATE a SET x = E'it\\'s', y = 'z'",
+        ) as $sql )
+            $this->assertNull( eZDBQueryCache::writtenTables( $sql, false ), $sql );
+    }
+
+    /** The state file as on disk, without this process's copy. */
+    private function stateOnDisk()
+    {
+        clearstatcache();
+        $raw = @file_get_contents( $this->dir . '/state.ser' );
+        return $raw === false ? null : unserialize( $raw, array( 'allowed_classes' => false ) );
+    }
+
+    /** QC-45 */
+    public function testALockOnAReplacedLockFileIsTakenAgain()
+    {
+        if ( !function_exists( 'pcntl_fork' ) || !function_exists( 'posix_kill' ) )
+            $this->markTestSkipped( 'needs pcntl and posix' );
+        $this->existingState();
+        $old = fopen( $this->dir . '/state.lock', 'c' );
+        $this->assertTrue( flock( $old, LOCK_EX ) );
+        $pid = pcntl_fork();
+        if ( $pid === 0 )
+        {
+            // the other process: waits for the lock, then notes its write; never back into PHPUnit
+            eZDBQueryCache::noteWrite( $this->db, 'UPDATE ezsection SET x = 1' );
+            posix_kill( getmypid(), SIGKILL );
+        }
+        $this->assertGreaterThan( 0, $pid );
+        try
+        {
+            usleep( 200000 );
+            // the cache directory's lock file is deleted while the other process waits for it; the next writer
+            // makes a new one and takes it
+            unlink( $this->dir . '/state.lock' );
+            $new = fopen( $this->dir . '/state.lock', 'c' );
+            $this->assertTrue( flock( $new, LOCK_EX ) );
+            flock( $old, LOCK_UN );
+            fclose( $old );
+            usleep( 300000 );
+            $this->assertArrayNotHasKey( 'ezsection', $this->stateOnDisk()['tables'], 'the lock on the deleted file is not taken as the lock: it waits for the new one' );
+            flock( $new, LOCK_UN );
+            fclose( $new );
+        }
+        finally
+        {
+            pcntl_waitpid( $pid, $status );
+        }
+        $this->assertArrayHasKey( 'ezsection', $this->stateOnDisk()['tables'], 'then it writes' );
+        $this->assertArrayNotHasKey( 'lockFailed', $this->stateOnDisk(), 'under the lock' );
+    }
+
+    /** QC-46 */
+    public function testAPersistentWorkerStartsEveryRequestFromTheStateOnDisk()
+    {
+        $shared = array( 'mode' => 'shared', 'storage' => 'file' );
+        $sql = 'SELECT * FROM ezcontentobject';
+        $this->newRequest( $shared );
+        $this->existingState();
+        $this->select( $sql );
+        // another process writes the table; this worker's next request sees it at once, not a second later
+        $state = $this->stateOnDisk();
+        $state['tables']['ezcontentobject'] = microtime( true );
+        file_put_contents( $this->dir . '/state.ser', serialize( $state ) );
+        usleep( 5 );
+        $this->newRequest( $shared );
+        $this->assertNull( $this->select( $sql ), 'the state is read again at the start of the request' );
+        $this->newRequest( $shared );
+        $this->assertNotNull( $this->select( $sql ), 'stored again' );
+
+        // another process deletes the state file and writes a new one while this request still holds the old state
+        $other = 'SELECT * FROM ezsection';
+        $this->newRequest( $shared );
+        $this->assertNotNull( $this->select( $sql ) );
+        unlink( $this->dir . '/state.ser' );
+        file_put_contents( $this->dir . '/state.ser', serialize( array( 'generation' => 1, 'genTime' => 0, 'tables' => array(), 'id' => 'another' ) ) );
+        $this->select( $other );
+        $this->newRequest( $shared );
+        $this->assertNull( $this->select( $sql ), 'kept under the old file: not answered' );
+        $this->assertNull( $this->select( $other ), 'stored under the old file in the second the request still held it: not answered either' );
+        $this->newRequest( $shared );
+        $this->assertNotNull( $this->select( $other ), 'what is stored under the new file is' );
+
+        // the memo starts empty in every request
+        $this->newRequest();
+        $this->select( $sql );
+        $this->assertNotNull( $this->select( $sql ) );
+        $this->newRequest();
+        $this->assertNull( $this->select( $sql ), 'no result from the request before' );
+
+        // a lock failure is logged once per request, and again in the next
+        unlink( $this->dir . '/state.lock' );
+        mkdir( $this->dir . '/state.lock' );
+        $log = ini_set( 'error_log', $this->dir . '/error.log' );
+        try
+        {
+            $this->write( 'UPDATE ezcontentobject SET x = 1' );
+            $this->write( 'UPDATE ezsection SET x = 1' );
+            $this->assertSame( 1, substr_count( file_get_contents( $this->dir . '/error.log' ), 'could not lock' ), 'once in a request' );
+            $this->newRequest();
+            $this->write( 'UPDATE ezsection SET x = 2' );
+            $this->assertSame( 2, substr_count( file_get_contents( $this->dir . '/error.log' ), 'could not lock' ), 'and once in the next' );
+        }
+        finally
+        {
+            ini_set( 'error_log', $log );
+        }
+    }
+
+    /** QC-47 */
+    public function testALockFailureIsShownToTheAdmin()
+    {
+        $this->existingState();
+        $this->assertSame( 0, eZDBQueryCache::status( false )['lock_failed'] );
+        $this->assertSame( $this->dir . '/state.lock', eZDBQueryCache::status( false )['lock_file'] );
+        unlink( $this->dir . '/state.lock' );
+        mkdir( $this->dir . '/state.lock' );
+        $log = ini_set( 'error_log', $this->dir . '/error.log' );
+        try
+        {
+            $this->withDebug( true, function ( $debug )
+            {
+                $this->newRequest();
+                $this->select( 'SELECT * FROM ezcontentobject' );
+                $this->assertFalse( eZDBQueryCache::debugSnapshot()['lock_failed'] );
+                $this->write( 'UPDATE ezcontentobject SET x = 1' );
+                $this->assertTrue( eZDBQueryCache::debugSnapshot()['lock_failed'], 'the debug bar' );
+                $this->assertStringContainsString( 'State lock', eZDBQueryCache::debugReport( false ) );
+                $this->assertStringContainsString( 'could not be taken', eZDBQueryCache::debugReport( true ) );
+            } );
+        }
+        finally
+        {
+            ini_set( 'error_log', $log );
+        }
+        // Setup > System information, for every process: the time is in the shared state
+        $this->newRequest();
+        $failed = eZDBQueryCache::status( false )['lock_failed'];
+        $this->assertGreaterThan( time() - 60, $failed );
+        // a later write under the lock keeps it; a clear under the lock forgets it
+        rmdir( $this->dir . '/state.lock' );
+        $this->write( 'UPDATE ezsection SET x = 1' );
+        $this->assertSame( $failed, eZDBQueryCache::status( false )['lock_failed'] );
+        eZDBQueryCache::clearAll();
+        $this->assertSame( 0, eZDBQueryCache::status( false )['lock_failed'] );
     }
 }

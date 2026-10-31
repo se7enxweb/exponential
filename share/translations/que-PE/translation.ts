@@ -25684,6 +25684,10 @@ Yuyay: q'ipikunaqa manam churasqata hurqusqa kanqachu.</translation>
         <source>last purge</source>
         <translation>qhipa pichay</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Qillqaykuna mana atirqankuchu kaq hark&apos;ayta hap&apos;iyta (qhipa kuti %date): sapankanmi llapan waqaychasqa lluqsiykunata mawk&apos;ayachirqan. %file qillqanapaq kanan tiyan sapa ruraqpaq, pikunawanmi kitiqa purin; NFS-pi NFSv4 utaq lockd necesitan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Tinkuykunayki amachay pasakuykunaykipas JSON willañiqi hina.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Kay sitiopiqa tinkuykunaqa mana qillqasqachu, chayrayku mana ima huk aparatutapas lluqsichiyta atikurqanchu. Kunanpacha pakasqa simiykita t'ikray.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count huk tinkuykuna lluqsichisqa karqan. Kunan pakasqa simiykita t'ikray.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Mana ima huk aparatupas yaykusqachu karqan. Kunan pakasqa simiykita t'ikray.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Sulpayki. Kay ruwasqaqa qampa hina markasqa.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Chay ruwasqaqa mana kutichiyta munanchu.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Raphiqa pachanta pasarqan. Manam imapas hukchasqachu; huktawan yachapay.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Kuwintaykita amachay</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Kaypi imapas mana qamchu karqan chayqa, llapa huk aparatukunata lluqsichiy, chaymanta musuq pakasqa simita akllay. “Yuyaykuway” nisqawan yaykusqa qhipaq aparatukunapas lluqsichisqa kanqaku.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Kay aparatumanta hawa, llapa aparatukuna qatiq mañakuyninpi lluqsichisqa kanqa. Chaymanta musuq pakasqa simita akllanki.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Arí, huk aparatukunata lluqsichiy</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Qamchu karqanki?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Arí, ñuqam karqani</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Mana, kuwintayta amachay</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Tinkuykunayki amachay pasakuykunaykipas JSON willañiqi hina.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Kay sitiopiqa tinkuykunaqa mana qillqasqachu, chayrayku mana ima huk aparatutapas lluqsichiyta atikurqanchu. Kunanpacha pakasqa simiykita t'ikray.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count huk tinkuykuna lluqsichisqa karqan. Kunan pakasqa simiykita t'ikray.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Mana ima huk aparatupas yaykusqachu karqan. Kunan pakasqa simiykita t'ikray.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Sulpayki. Kay ruwasqaqa qampa hina markasqa.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Chay ruwasqaqa mana kutichiyta munanchu.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Raphiqa pachanta pasarqan. Manam imapas hukchasqachu; huktawan yachapay.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Kuwintaykita amachay</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Kaypi imapas mana qamchu karqan chayqa, llapa huk aparatukunata lluqsichiy, chaymanta musuq pakasqa simita akllay. “Yuyaykuway” nisqawan yaykusqa qhipaq aparatukunapas lluqsichisqa kanqaku.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Kay aparatumanta hawa, llapa aparatukuna qatiq mañakuyninpi lluqsichisqa kanqa. Chaymanta musuq pakasqa simita akllanki.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Arí, huk aparatukunata lluqsichiy</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Qamchu karqanki?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Arí, ñuqam karqani</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Mana, kuwintayta amachay</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Tinkuy ruraq: %handler. Tinkuykunaqa expuser_session tablamanta ñawinchasqa, chaymi willakuyqa sapa ruraqwan llamk&apos;an.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Tukukuq %hours horakunapi iskayrayana ruraykuna</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Huk llika mana atirqanchu %accounts kuwintakunaman yaykuyta (%count kallpachakuy)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kuwinta wichqasqa mana atipasqa yaykuykunamanta</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Huk kuwintapi %count mana atipasqa yaykuykuna</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>%count suyukunamanta kuskalla yaykusqa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Amachay ruraykuna</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Tinkuykuna</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Mana atipasqa yaykuykunaqa ruraqkunap qhawarina qillqanmanta ñawinchasqa, chayqa mana kaypichu.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Mana imapas iskayranapaqchu: mana kanchu kuwinta mana atipasqa yaykuykunawan kutin kutin, mana kanchu llika achka kuwintakunata yachapaq, mana kanchu kuwinta achka suyukunamanta yaykusqa.</translation>
     </message>
 </context>
 <context>

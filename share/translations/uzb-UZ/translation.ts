@@ -25684,6 +25684,10 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
         <source>last purge</source>
         <translation>oxirgi tozalash</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Yozuvlar holat qulfini ola olmadi (oxirgi marta %date): har biri keshdagi barcha natijalarni eskirtirdi. %file sayt ishlaydigan har bir foydalanuvchi uchun yoziladigan bo‘lishi kerak; NFS da NFSv4 yoki lockd kerak.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Seanslaringiz va xavfsizlik hodisalari JSON fayli sifatida.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Bu saytda seanslar qayd etilmaydi, shuning uchun boshqa hech bir qurilmani chiqarib boʻlmadi. Parolingizni hoziroq oʻzgartiring.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Boshqa %count ta seans yakunlandi. Endi parolingizni oʻzgartiring.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Boshqa hech bir qurilma tizimga kirmagan edi. Endi parolingizni oʻzgartiring.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Rahmat. Hodisa sizniki deb belgilandi.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Bu hodisa javob talab qilmaydi.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sahifa muddati tugagan edi. Hech narsa oʻzgartirilmadi; iltimos, qayta urinib koʻring.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Hisobingizni himoyalash</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Agar bu yerdagi biror narsa siz boʻlmasangiz, boshqa barcha qurilmalardan chiqing, soʻngra yangi parol tanlang. Meni eslab qol orqali tizimda qolgan qurilmalar ham chiqariladi.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Bundan boshqa har bir qurilma keyingi soʻrovida tizimdan chiqariladi. Soʻngra siz yangi parol tanlaysiz.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ha, boshqa qurilmalardan chiqish</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Bu siz edingizmi?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ha, bu men edim</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Yoʻq, hisobimni himoyalash</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Seanslaringiz va xavfsizlik hodisalari JSON fayli sifatida.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Bu saytda seanslar qayd etilmaydi, shuning uchun boshqa hech bir qurilmani chiqarib boʻlmadi. Parolingizni hoziroq oʻzgartiring.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Boshqa %count ta seans yakunlandi. Endi parolingizni oʻzgartiring.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Boshqa hech bir qurilma tizimga kirmagan edi. Endi parolingizni oʻzgartiring.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Rahmat. Hodisa sizniki deb belgilandi.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Bu hodisa javob talab qilmaydi.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sahifa muddati tugagan edi. Hech narsa oʻzgartirilmadi; iltimos, qayta urinib koʻring.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Hisobingizni himoyalash</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Agar bu yerdagi biror narsa siz boʻlmasangiz, boshqa barcha qurilmalardan chiqing, soʻngra yangi parol tanlang. Meni eslab qol orqali tizimda qolgan qurilmalar ham chiqariladi.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Bundan boshqa har bir qurilma keyingi soʻrovida tizimdan chiqariladi. Soʻngra siz yangi parol tanlaysiz.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ha, boshqa qurilmalardan chiqish</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Bu siz edingizmi?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ha, bu men edim</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Yoʻq, hisobimni himoyalash</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Seans ishlovchisi: %handler. Seanslar expuser_session jadvalidan oʻqiladi, shuning uchun hisobot har qanday ishlovchi bilan ishlaydi.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Soʻnggi %hours soatdagi shubhali faollik</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Bitta tarmoq %accounts ta hisobga kira olmadi (%count ta urinish)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Muvaffaqiyatsiz kirishlardan soʻng hisob bloklandi</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Bitta hisobda %count ta muvaffaqiyatsiz kirish</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Bir vaqtning oʻzida %count ta mamlakatdan kirilgan</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Xavfsizlik faolligi</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Seanslar</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Muvaffaqiyatsiz kirishlar foydalanuvchilar audit jurnalidan oʻqiladi, u bu yerda mavjud emas.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Shubhali hech narsa yoʻq: takroriy muvaffaqiyatsiz kirishlari bor hisob yoʻq, bir nechta hisobni sinayotgan tarmoq yoʻq, bir nechta mamlakatdan kirilgan hisob yoʻq.</translation>
     </message>
 </context>
 <context>

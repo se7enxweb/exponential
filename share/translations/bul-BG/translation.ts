@@ -25623,6 +25623,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>последно изчистване</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Записите не успяха да вземат заключването на състоянието (последно %date): всеки от тях направи остарели всички кеширани резултати. %file трябва да е достъпен за запис за всеки потребител, под който работи сайтът; на NFS са нужни NFSv4 или lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78355,6 +78359,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Вашите сесии и събития по сигурността като JSON файл.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Сесиите не се записват на този сайт, затова нито едно друго устройство не можа да бъде отписано. Сменете паролата си сега.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Отписани бяха други сесии: %count. Сега сменете паролата си.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Нямаше друго вписано устройство. Сега сменете паролата си.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Благодарим ви. Събитието е отбелязано като ваше.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Това събитие не изисква отговор.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Страницата беше изтекла. Нищо не е променено; опитайте отново.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Защити акаунта</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ако нещо тук не сте били вие, отпишете всички други устройства, след което изберете нова парола. Устройствата, останали вписани чрез „Запомни ме“, също се отписват.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Всяко устройство освен това се отписва при следващата си заявка. След това избирате нова парола.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Да, отпиши другите устройства</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Вие ли бяхте това?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Да, бях аз</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Не, защити акаунта ми</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78537,6 +78593,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Вашите сесии и събития по сигурността като JSON файл.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Сесиите не се записват на този сайт, затова нито едно друго устройство не можа да бъде отписано. Сменете паролата си сега.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Отписани бяха други сесии: %count. Сега сменете паролата си.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Нямаше друго вписано устройство. Сега сменете паролата си.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Благодарим ви. Събитието е отбелязано като ваше.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Това събитие не изисква отговор.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Страницата беше изтекла. Нищо не е променено; опитайте отново.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Защити акаунта</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ако нещо тук не сте били вие, отпишете всички други устройства, след което изберете нова парола. Устройствата, останали вписани чрез „Запомни ме“, също се отписват.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Всяко устройство освен това се отписва при следващата си заявка. След това избирате нова парола.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Да, отпиши другите устройства</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Вие ли бяхте това?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Да, бях аз</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Не, защити акаунта ми</translation>
     </message>
 </context>
 <context>
@@ -78728,6 +78836,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Обработчик на сесии: %handler. Сесиите се четат от таблицата expuser_session, затова отчетът работи с всеки обработчик.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Подозрителна активност през последните %hours часа</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Една мрежа не успя да се впише в %accounts акаунта (%count опита)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Акаунтът е заключен след неуспешни вписвания</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count неуспешни вписвания в един акаунт</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Вписване от %count държави едновременно</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Активност по сигурността</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Сесии</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Неуспешните вписвания се четат от одитния журнал на потребителите, който не е наличен тук.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Нищо подозрително: няма акаунт с повтарящи се неуспешни вписвания, няма мрежа, която опитва няколко акаунта, няма акаунт, вписан от няколко държави.</translation>
     </message>
 </context>
 <context>

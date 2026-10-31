@@ -24938,6 +24938,10 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
         <source>last purge</source>
         <translation>dernière purge</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Des écritures n&apos;ont pas pu prendre le verrou de l&apos;état (dernière fois %date) : chacune a rendu périmés tous les résultats en cache. %file doit être accessible en écriture à chaque utilisateur sous lequel le site s&apos;exécute ; sur NFS, il faut NFSv4 ou lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/operatorcode</name>
@@ -79765,6 +79769,58 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Vos sessions et évènements de sécurité sous forme de fichier JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Les sessions ne sont pas enregistrées sur ce site, aucun autre appareil n'a donc pu être déconnecté. Changez votre mot de passe maintenant.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count autres sessions ont été déconnectées. Changez maintenant votre mot de passe.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Aucun autre appareil n'était connecté. Changez maintenant votre mot de passe.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Merci. L'événement est marqué comme étant le vôtre.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Cet événement ne nécessite aucune réponse.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La page avait expiré. Rien n'a été modifié ; veuillez réessayer.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Sécuriser votre compte</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Si quelque chose ici ne vient pas de vous, déconnectez tous les autres appareils, puis choisissez un nouveau mot de passe. Les appareils restés connectés grâce à « Me rappeler » sont également déconnectés.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Tous les appareils sauf celui-ci sont déconnectés lors de leur prochaine requête. Vous choisissez ensuite un nouveau mot de passe.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Oui, déconnecter les autres appareils</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Était-ce vous ?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Oui, c'était moi</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Non, sécuriser mon compte</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -79947,6 +80003,58 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Vos sessions et évènements de sécurité sous forme de fichier JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Les sessions ne sont pas enregistrées sur ce site, aucun autre appareil n'a donc pu être déconnecté. Changez votre mot de passe maintenant.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count autres sessions ont été déconnectées. Changez maintenant votre mot de passe.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Aucun autre appareil n'était connecté. Changez maintenant votre mot de passe.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Merci. L'événement est marqué comme étant le vôtre.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Cet événement ne nécessite aucune réponse.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La page avait expiré. Rien n'a été modifié ; veuillez réessayer.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Sécuriser votre compte</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Si quelque chose ici ne vient pas de vous, déconnectez tous les autres appareils, puis choisissez un nouveau mot de passe. Les appareils restés connectés grâce à « Me rappeler » sont également déconnectés.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Tous les appareils sauf celui-ci sont déconnectés lors de leur prochaine requête. Vous choisissez ensuite un nouveau mot de passe.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Oui, déconnecter les autres appareils</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Était-ce vous ?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Oui, c'était moi</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Non, sécuriser mon compte</translation>
     </message>
 </context>
 <context>
@@ -80138,6 +80246,42 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Gestionnaire de sessions : %handler. Les sessions sont lues dans la table expuser_session, le rapport fonctionne donc avec tous les gestionnaires.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Activité suspecte au cours des %hours dernières heures</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Un réseau n'a pas réussi à se connecter à %accounts comptes (%count tentatives)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Compte verrouillé après des échecs de connexion</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count échecs de connexion sur un compte</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Connecté depuis %count pays en même temps</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activité de sécurité</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessions</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Les échecs de connexion sont lus dans le journal d'audit des utilisateurs, qui n'est pas disponible ici.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Rien de suspect : aucun compte avec des échecs de connexion répétés, aucun réseau essayant plusieurs comptes, aucun compte connecté depuis plusieurs pays.</translation>
     </message>
 </context>
 <context>

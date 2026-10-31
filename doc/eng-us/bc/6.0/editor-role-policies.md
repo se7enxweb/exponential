@@ -31,8 +31,10 @@ password (`user/password`), edit the own account (`user/edit`, function *selfedi
 ## What changes
 
 - **The setup wizard and the kickstarter** check, after the site package's roles, that the Editor role has
-  `content/hide`, `content/restore`, `content/reverserelatedlist`, `ezmultiupload/*` and `expimageeditor/edit` (each
-  when the installation has the extension), and `user/password`, `user/selfedit` and `notification/use` unless another role of the Editors group
+  `content/hide`, `content/restore`, `content/reverserelatedlist`, `ezmultiupload/*`, `expimageeditor/edit` and,
+  where the site package keeps ezie, `ezie/*` (each when the new installation activates the extension; since
+  30 October 2026 an extension that is only installed no longer counts, so `ezie/*` is not granted where
+  expimageeditor takes its place), and `user/password`, `user/selfedit` and `notification/use` unless another role of the Editors group
   (the Member role of the site packages) has them; whatever is missing is added
   (`expEditorPolicies::ensure()`, in `kernel/setup/steps/ezstep_create_sites.php`). This holds for every site
   package and every base data, on every database engine.
@@ -103,6 +105,16 @@ WebsiteToolbar=true
 - **The Git manager and the Updates dashboard** stay with administrators: their modules check their own policies
   (`git_manager/git_manager`, `update/ezupdate`), the dashboard shows their "Stay secure" card only to a user who can
   open them (`fetch( 'user', 'can_open', ... )`), and the editor siteaccess switches the Git manager off besides.
+
+## ezie answers "module not found"
+
+A site that activates expimageeditor in place of ezie (the setup wizard and the kickstarter do since October 2026)
+answers every `ezie/...` address with kernel error 20, "module not found", for every user including administrators.
+That is intended, not a fault of the role: ezie stays installed (`composer.json` requires it), but its `module.ini`
+(`ExtensionRepositories[]=ezie`) is read only while the extension is in `ActiveExtensions[]`, so the module is not on
+the module path. No page of such a site asks for ezie: admin4's image edit template opens ezie only when
+`ezmodule( 'ezie/prepare' )` allows it, and expimageeditor replaces that template. To use ezie again, activate it in
+place of expimageeditor and run `php bin/php/addeditorpolicies.php --apply --only=ezie/*` for the editors.
 
 ## Over-broad grants the script reports
 

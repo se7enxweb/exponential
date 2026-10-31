@@ -1025,7 +1025,7 @@ class expDebugBarReport
     /**
      * ok, warn or high for a query cache snapshot (or the figures made from one): high in shared mode without a storage
      * (Storage=apcu without APCu: it works as request then; Storage=auto falls back to the files) or below the second
-     * hit rate of $limits; warn below the first, or when a write made
+     * hit rate of $limits, or when a write could not take the state lock (lock_failed); warn below the first, or when a write made
      * every result stale. Without a lookup the hit rate says nothing: ok, unless one of the others holds.
      *
      * @param array $snapshot
@@ -1038,6 +1038,9 @@ class expDebugBarReport
         // 'storage' since the file storage; a snapshot without it (older figures, tests) has only 'apcu'
         $storage = array_key_exists( 'storage', $snapshot ) ? $snapshot['storage'] : ( empty( $snapshot['apcu'] ) ? null : 'apcu' );
         if ( ( $snapshot['mode'] ?? '' ) === 'shared' && empty( $storage ) )
+            return 'high';
+        // a write could not take the state lock: every write of the request emptied the cache (the SQL tab says why)
+        if ( !empty( $snapshot['lock_failed'] ) )
             return 'high';
         $rate = $snapshot['hit_rate'] ?? null;
         if ( $rate !== null && $rate < $high )

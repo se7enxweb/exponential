@@ -25684,6 +25684,10 @@ Qeyd: Paketlərin quraşdırılması silinməyəcək.</translation>
         <source>last purge</source>
         <translation>son təmizlənmə</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Yazmalar vəziyyət kilidini ala bilmədi (sonuncu %date): hər biri keşdəki bütün nəticələri köhnəltdi. %file saytın işlədiyi hər istifadəçi üçün yazıla bilən olmalıdır; NFS-də NFSv4 və ya lockd lazımdır.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sessiyalarınız və təhlükəsizlik hadisələriniz JSON faylı kimi.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Bu saytda sessiyalar qeydə alınmır, buna görə də heç bir başqa cihazdan çıxış etmək mümkün olmadı. Şifrənizi indi dəyişin.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count digər sessiyadan çıxış edildi. İndi şifrənizi dəyişin.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Heç bir başqa cihaz daxil olmamışdı. İndi şifrənizi dəyişin.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Təşəkkür edirik. Hadisə sizinki kimi işarələndi.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Həmin hadisə cavab tələb etmir.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Səhifənin müddəti bitmişdi. Heç nə dəyişdirilmədi; zəhmət olmasa yenidən cəhd edin.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Hesabı qoru</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Burada nəsə sizin tərəfinizdən deyilsə, bütün digər cihazlardan çıxış edin, sonra yeni şifrə seçin. «Məni xatırla» ilə daxil olmuş qalan cihazlardan da çıxış edilir.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Bu cihazdan başqa hər cihazdan növbəti sorğusunda çıxış edilir. Sonra yeni şifrə seçirsiniz.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Bəli, digər cihazlardan çıxış et</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Bu siz idiniz?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Bəli, bu mən idim</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Xeyr, hesabımı qoru</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sessiyalarınız və təhlükəsizlik hadisələriniz JSON faylı kimi.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Bu saytda sessiyalar qeydə alınmır, buna görə də heç bir başqa cihazdan çıxış etmək mümkün olmadı. Şifrənizi indi dəyişin.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count digər sessiyadan çıxış edildi. İndi şifrənizi dəyişin.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Heç bir başqa cihaz daxil olmamışdı. İndi şifrənizi dəyişin.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Təşəkkür edirik. Hadisə sizinki kimi işarələndi.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Həmin hadisə cavab tələb etmir.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Səhifənin müddəti bitmişdi. Heç nə dəyişdirilmədi; zəhmət olmasa yenidən cəhd edin.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Hesabı qoru</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Burada nəsə sizin tərəfinizdən deyilsə, bütün digər cihazlardan çıxış edin, sonra yeni şifrə seçin. «Məni xatırla» ilə daxil olmuş qalan cihazlardan da çıxış edilir.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Bu cihazdan başqa hər cihazdan növbəti sorğusunda çıxış edilir. Sonra yeni şifrə seçirsiniz.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Bəli, digər cihazlardan çıxış et</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Bu siz idiniz?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Bəli, bu mən idim</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Xeyr, hesabımı qoru</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Sessiya işləyicisi: %handler. Sessiyalar expuser_session cədvəlindən oxunur, ona görə də hesabat istənilən işləyici ilə işləyir.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Son %hours saatda şübhəli fəaliyyət</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Bir şəbəkə %accounts hesaba daxil ola bilmədi (%count cəhd)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Uğursuz girişlərdən sonra hesab kilidləndi</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Bir hesabda %count uğursuz giriş</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Eyni anda %count ölkədən daxil olunub</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Təhlükəsizlik fəaliyyəti</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessiyalar</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Uğursuz girişlər istifadəçi audit jurnalından oxunur, o isə burada mövcud deyil.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Şübhəli heç nə yoxdur: təkrarlanan uğursuz girişləri olan hesab yoxdur, bir neçə hesabı yoxlayan şəbəkə yoxdur, bir neçə ölkədən daxil olunmuş hesab yoxdur.</translation>
     </message>
 </context>
 <context>

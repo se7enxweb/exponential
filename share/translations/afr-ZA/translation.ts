@@ -25623,6 +25623,10 @@ Let wel: Die pakkette sal nie gedeïnstalleer word nie.</translation>
         <source>last purge</source>
         <translation>laaste suiwering</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Skryfwerk kon nie die toestandslot kry nie (laaste %date): elkeen het elke gekasde resultaat verouderd gemaak. %file moet skryfbaar wees vir elke gebruiker waaronder die werf loop; op NFS het dit NFSv4 of lockd nodig.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78355,6 +78359,58 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>U sessies en sekuriteitsgebeurtenisse as &apos;n JSON-lêer.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sessies word nie op hierdie werf aangeteken nie, so geen ander toestel kon afgemeld word nie. Verander nou u wagwoord.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count ander sessies is afgemeld. Verander nou u wagwoord.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Geen ander toestel was aangemeld nie. Verander nou u wagwoord.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Dankie. Die gebeurtenis is as u s'n gemerk.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Daardie gebeurtenis vereis geen antwoord nie.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Die bladsy het verval. Niks is verander nie; probeer asseblief weer.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Beveilig u rekening</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>As iets hier nie u was nie, meld elke ander toestel af en kies dan 'n nuwe wagwoord. Toestelle wat met „Onthou my” aangemeld gebly het, word ook afgemeld.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Elke toestel behalwe hierdie een word by sy volgende versoek afgemeld. Daarna kies u 'n nuwe wagwoord.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ja, meld die ander toestelle af</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Was dit u?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ja, dit was ek</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nee, beveilig my rekening</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78537,6 +78593,58 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>U sessies en sekuriteitsgebeurtenisse as &apos;n JSON-lêer.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sessies word nie op hierdie werf aangeteken nie, so geen ander toestel kon afgemeld word nie. Verander nou u wagwoord.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count ander sessies is afgemeld. Verander nou u wagwoord.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Geen ander toestel was aangemeld nie. Verander nou u wagwoord.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Dankie. Die gebeurtenis is as u s'n gemerk.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Daardie gebeurtenis vereis geen antwoord nie.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Die bladsy het verval. Niks is verander nie; probeer asseblief weer.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Beveilig u rekening</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>As iets hier nie u was nie, meld elke ander toestel af en kies dan 'n nuwe wagwoord. Toestelle wat met „Onthou my” aangemeld gebly het, word ook afgemeld.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Elke toestel behalwe hierdie een word by sy volgende versoek afgemeld. Daarna kies u 'n nuwe wagwoord.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ja, meld die ander toestelle af</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Was dit u?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ja, dit was ek</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nee, beveilig my rekening</translation>
     </message>
 </context>
 <context>
@@ -78728,6 +78836,42 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Sessiehanteerder: %handler. Die sessies word uit die tabel expuser_session gelees, dus werk die verslag met elke hanteerder.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Verdagte aktiwiteit in die afgelope %hours uur</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Een netwerk kon nie by %accounts rekeninge aanmeld nie (%count pogings)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Rekening gesluit ná mislukte aanmeldings</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count mislukte aanmeldings op een rekening</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Gelyktydig vanuit %count lande aangemeld</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sekuriteitsaktiwiteit</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessies</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Mislukte aanmeldings word uit die gebruikersouditlog gelees, wat nie hier beskikbaar is nie.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Niks verdag nie: geen rekening met herhaalde mislukte aanmeldings nie, geen netwerk wat verskeie rekeninge probeer nie, geen rekening wat vanuit verskeie lande aangemeld is nie.</translation>
     </message>
 </context>
 <context>

@@ -114,6 +114,7 @@ class expAuditTaxonomy
         'access.session.revoke' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access' ),
         'access.session.new_device' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access', 'label' => 'Sign-in from a new device' ),
         'access.session.new_location' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access', 'label' => 'Sign-in from a new location' ),
+        'access.user.activity.confirm' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'access', 'label' => 'Security event confirmed by the account owner' ),
         'access.user.two_factor.enroll' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access', 'label' => 'Two-step sign-in turned on' ),
         'access.user.two_factor.remove' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'access', 'label' => 'Two-step sign-in turned off' ),
         'access.user.two_factor.recovery_used' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'access', 'label' => 'Recovery code used' ),

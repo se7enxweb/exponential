@@ -25684,6 +25684,10 @@ Fakatokanga: ʻE ʻikai toʻo ʻa e fokotuʻu ʻo e ngaahi pēkeisi.</translatio
         <source>last purge</source>
         <translation>fakamaʻa fakamuimui</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Naʻe ʻikai lava ʻe he ngaahi tohi ʻo toʻo ʻa e loka ʻo e tuʻunga (fakamuimui %date): naʻe ngaohi ʻe he taha kotoa ʻa e ngaahi ola kotoa naʻe tauhi ke motuʻa. Kuo pau ke lava ʻo tohi ʻa %file ʻe he tokotaha ngāue kotoa pē ʻoku lele ʻa e uepisaiti ko ia; ʻi he NFS ʻoku fiemaʻu ʻa e NFSv4 pe lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ho ngaahi sēsini mo e ngaahi meʻa hoko fakamalu ko ha faile JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ʻOku ʻikai lēkooti ʻa e ngaahi sēsini ʻi he saiti ko ʻeni, ko ia naʻe ʻikai lava ke ʻave ki tuʻa ha meʻangāue kehe. Liliu ho lea fufū he taimí ni.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Naʻe ʻave ki tuʻa ʻa e ngaahi sēsini kehe ʻe %count. Liliu ho lea fufū he taimí ni.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Naʻe ʻikai hū mai ha meʻangāue kehe. Liliu ho lea fufū he taimí ni.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Mālō. Kuo fakaʻilongaʻi ʻa e meʻa ni ko hoʻo.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ʻOku ʻikai fie maʻu ha tali ki he meʻa ko iá.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Kuo ʻosi taimi ʻa e peesi. Naʻe ʻikai liliu ha meʻa; kātaki ʻo toe feinga.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Fakamalu hoʻo ʻakauni</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Kapau naʻe ʻikai ko koe ha meʻa ʻi heni, ʻave ki tuʻa ʻa e ngaahi meʻangāue kehe kotoa, pea fili leva ha lea fufū foʻou. ʻOku ʻave foki ki tuʻa ʻa e ngaahi meʻangāue naʻe tauhi hū mai ʻaki ʻa e Manatuʻi au.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ʻOku ʻave ki tuʻa ʻa e meʻangāue kotoa pē tukukehe ʻa e meʻa ni ʻi heʻene kole hono hoko. Pea te ke fili leva ha lea fufū foʻou.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ʻIo, ʻave ki tuʻa ʻa e ngaahi meʻangāue kehe</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ko koe ʻeni?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ʻIo, ko au ia</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ʻIkai, fakamalu ʻeku ʻakauni</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ho ngaahi sēsini mo e ngaahi meʻa hoko fakamalu ko ha faile JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ʻOku ʻikai lēkooti ʻa e ngaahi sēsini ʻi he saiti ko ʻeni, ko ia naʻe ʻikai lava ke ʻave ki tuʻa ha meʻangāue kehe. Liliu ho lea fufū he taimí ni.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Naʻe ʻave ki tuʻa ʻa e ngaahi sēsini kehe ʻe %count. Liliu ho lea fufū he taimí ni.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Naʻe ʻikai hū mai ha meʻangāue kehe. Liliu ho lea fufū he taimí ni.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Mālō. Kuo fakaʻilongaʻi ʻa e meʻa ni ko hoʻo.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ʻOku ʻikai fie maʻu ha tali ki he meʻa ko iá.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Kuo ʻosi taimi ʻa e peesi. Naʻe ʻikai liliu ha meʻa; kātaki ʻo toe feinga.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Fakamalu hoʻo ʻakauni</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Kapau naʻe ʻikai ko koe ha meʻa ʻi heni, ʻave ki tuʻa ʻa e ngaahi meʻangāue kehe kotoa, pea fili leva ha lea fufū foʻou. ʻOku ʻave foki ki tuʻa ʻa e ngaahi meʻangāue naʻe tauhi hū mai ʻaki ʻa e Manatuʻi au.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ʻOku ʻave ki tuʻa ʻa e meʻangāue kotoa pē tukukehe ʻa e meʻa ni ʻi heʻene kole hono hoko. Pea te ke fili leva ha lea fufū foʻou.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ʻIo, ʻave ki tuʻa ʻa e ngaahi meʻangāue kehe</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ko koe ʻeni?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ʻIo, ko au ia</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ʻIkai, fakamalu ʻeku ʻakauni</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Tokotaha fakahoko sēsini: %handler. ʻOku lau ʻa e ngaahi sēsini mei he tēpile expuser_session, ko ia ʻoku ngāue ai ʻa e lipooti mo e tokotaha fakahoko kotoa pē.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Ngāue fakamāhalohalo ʻi he houa ʻe %hours kuo ʻosi</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Naʻe ʻikai lava ʻe ha netiueka ʻe taha ke hū ki he ʻakauni ʻe %accounts (feinga ʻe %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kuo loka ʻa e ʻakauni hili ha ngaahi hū naʻe ʻikai lavameʻa</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Hū naʻe ʻikai lavameʻa ʻe %count ʻi he ʻakauni ʻe taha</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Hū mai mei he fonua ʻe %count ʻi he taimi tatau</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ngāue fakamalu</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Ngaahi sēsini</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ʻOku lau ʻa e ngaahi hū naʻe ʻikai lavameʻa mei he lēkooti siviʻi ʻo e kau fakaʻaongaʻi, ʻa ia ʻoku ʻikai maʻu ʻi heni.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>ʻIkai ha meʻa fakamāhalohalo: ʻikai ha ʻakauni mo ha ngaahi hū naʻe ʻikai lavameʻa naʻe toutou fai, ʻikai ha netiueka ʻoku feinga ki ha ngaahi ʻakauni lahi, ʻikai ha ʻakauni naʻe hū mai mei ha ngaahi fonua lahi.</translation>
     </message>
 </context>
 <context>

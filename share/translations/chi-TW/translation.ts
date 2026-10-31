@@ -25682,6 +25682,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>上次清除</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>寫入無法取得狀態鎖（最近一次 %date）：每次寫入都使所有快取結果失效。%file 必須對執行網站的每個使用者可寫；在 NFS 上需要 NFSv4 或 lockd。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78323,6 +78327,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>您的工作階段和安全性事件，以 JSON 檔案形式提供。</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>本網站不記錄工作階段，因此無法將任何其他裝置登出。請立即變更您的密碼。</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>已登出 %count 個其他工作階段。現在請變更您的密碼。</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>沒有其他已登入的裝置。現在請變更您的密碼。</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>謝謝。此事件已標記為您本人的操作。</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>此事件不需要回覆。</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>頁面已過期。未變更任何內容；請再試一次。</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>保護您的帳號</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>如果這裡有任何操作不是您本人所為，請登出所有其他裝置，然後選擇新密碼。透過「記住我」保持登入的裝置也會被登出。</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>除了這台裝置以外，每台裝置都會在其下一次請求時被登出。接著您選擇新密碼。</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>是，登出其他裝置</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>這是您本人嗎？</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>是，是我本人</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>不是，保護我的帳號</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78505,6 +78561,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>您的工作階段和安全性事件，以 JSON 檔案形式提供。</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>本網站不記錄工作階段，因此無法將任何其他裝置登出。請立即變更您的密碼。</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>已登出 %count 個其他工作階段。現在請變更您的密碼。</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>沒有其他已登入的裝置。現在請變更您的密碼。</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>謝謝。此事件已標記為您本人的操作。</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>此事件不需要回覆。</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>頁面已過期。未變更任何內容；請再試一次。</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>保護您的帳號</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>如果這裡有任何操作不是您本人所為，請登出所有其他裝置，然後選擇新密碼。透過「記住我」保持登入的裝置也會被登出。</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>除了這台裝置以外，每台裝置都會在其下一次請求時被登出。接著您選擇新密碼。</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>是，登出其他裝置</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>這是您本人嗎？</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>是，是我本人</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>不是，保護我的帳號</translation>
     </message>
 </context>
 <context>
@@ -78696,6 +78804,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>工作階段處理常式：%handler。工作階段是從資料表 expuser_session 讀取的，因此該報告適用於任何處理常式。</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>過去 %hours 小時內的可疑活動</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>一個網路登入 %accounts 個帳號失敗（%count 次嘗試）</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>帳號因登入失敗而遭鎖定</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>一個帳號登入失敗 %count 次</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>同時從 %count 個國家/地區登入</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>安全性活動</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>工作階段</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>登入失敗記錄讀取自使用者稽核日誌，而此處無法使用該日誌。</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>沒有可疑情況：沒有重複登入失敗的帳號，沒有嘗試多個帳號的網路，也沒有從多個國家/地區登入的帳號。</translation>
     </message>
 </context>
 <context>

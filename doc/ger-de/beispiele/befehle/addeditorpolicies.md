@@ -25,8 +25,8 @@ Was `--help` ausgibt, so wie der Befehl es schreibt:
 ```text
 Give the Editor role the policies an editor needs for everyday work and it lacks: hiding and
 revealing (content/hide), the trash (content/restore), the list of what uses an object
-(content/reverserelatedlist), where the modules exist ezmultiupload and the image editor
-(expimageeditor/edit), and the own account
+(content/reverserelatedlist), where the modules are active ezmultiupload and the image editors
+(expimageeditor/edit, ezie/*), and the own account
 (user/password, user/selfedit, notification/use) when no other role of the editors has it.
 A policy the role, or another role of the same users or groups, has in any form (also limited, or
 module/*) is left alone, so the script can run again.

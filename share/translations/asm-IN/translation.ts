@@ -25684,6 +25684,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>শেষ পৰিষ্কাৰ</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>লিখনিসমূহে অৱস্থাৰ লক ল&apos;ব নোৱাৰিলে (শেষবাৰ %date): প্ৰতিটোৱে কেশ্বকৃত সকলো ফলাফল পুৰণি কৰিলে। চাইটটো চলা প্ৰতিজন ব্যৱহাৰকাৰীৰ বাবে %file লিখিব পৰা হ&apos;ব লাগিব; NFS ত ইয়াক NFSv4 বা lockd লাগে।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78325,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>JSON ফাইল হিচাপে আপোনাৰ ছেছন আৰু সুৰক্ষা ঘটনা।</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>এই ছাইটত ছেছন ৰেকৰ্ড কৰা নহয়, গতিকে আন কোনো ডিভাইচ লগ আউট কৰিব পৰা নগ'ল। এতিয়াই আপোনাৰ পাছৱৰ্ড সলনি কৰক।</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>আন %count টা ছেছন লগ আউট কৰা হ'ল। এতিয়া আপোনাৰ পাছৱৰ্ড সলনি কৰক।</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>আন কোনো ডিভাইচ লগ ইন হৈ থকা নাছিল। এতিয়া আপোনাৰ পাছৱৰ্ড সলনি কৰক।</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ধন্যবাদ। ঘটনাটো আপোনাৰ বুলি চিহ্নিত কৰা হ'ল।</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>সেই ঘটনাটোৰ কোনো উত্তৰৰ প্ৰয়োজন নাই।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>পৃষ্ঠাটো ম্যাদ উকলি গৈছিল। একো সলনি কৰা হোৱা নাই; অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>আপোনাৰ একাউণ্ট সুৰক্ষিত কৰক</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ইয়াত কিবা আপুনি কৰা নহয় যদি, আন সকলো ডিভাইচ লগ আউট কৰক, তাৰ পিছত এটা নতুন পাছৱৰ্ড বাছক। মোক মনত ৰাখক-ৰ সৈতে লগ ইন হৈ থকা ডিভাইচবোৰো লগ আউট কৰা হয়।</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>এইটোৰ বাহিৰে প্ৰতিটো ডিভাইচ ইয়াৰ পৰৱৰ্তী অনুৰোধত লগ আউট কৰা হয়। তাৰ পিছত আপুনি এটা নতুন পাছৱৰ্ড বাছে।</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>হয়, আন ডিভাইচবোৰ লগ আউট কৰক</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>এইটো আপুনি আছিল নেকি?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>হয়, মই আছিলোঁ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>নহয়, মোৰ একাউণ্ট সুৰক্ষিত কৰক</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>JSON ফাইল হিচাপে আপোনাৰ ছেছন আৰু সুৰক্ষা ঘটনা।</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>এই ছাইটত ছেছন ৰেকৰ্ড কৰা নহয়, গতিকে আন কোনো ডিভাইচ লগ আউট কৰিব পৰা নগ'ল। এতিয়াই আপোনাৰ পাছৱৰ্ড সলনি কৰক।</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>আন %count টা ছেছন লগ আউট কৰা হ'ল। এতিয়া আপোনাৰ পাছৱৰ্ড সলনি কৰক।</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>আন কোনো ডিভাইচ লগ ইন হৈ থকা নাছিল। এতিয়া আপোনাৰ পাছৱৰ্ড সলনি কৰক।</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ধন্যবাদ। ঘটনাটো আপোনাৰ বুলি চিহ্নিত কৰা হ'ল।</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>সেই ঘটনাটোৰ কোনো উত্তৰৰ প্ৰয়োজন নাই।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>পৃষ্ঠাটো ম্যাদ উকলি গৈছিল। একো সলনি কৰা হোৱা নাই; অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>আপোনাৰ একাউণ্ট সুৰক্ষিত কৰক</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ইয়াত কিবা আপুনি কৰা নহয় যদি, আন সকলো ডিভাইচ লগ আউট কৰক, তাৰ পিছত এটা নতুন পাছৱৰ্ড বাছক। মোক মনত ৰাখক-ৰ সৈতে লগ ইন হৈ থকা ডিভাইচবোৰো লগ আউট কৰা হয়।</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>এইটোৰ বাহিৰে প্ৰতিটো ডিভাইচ ইয়াৰ পৰৱৰ্তী অনুৰোধত লগ আউট কৰা হয়। তাৰ পিছত আপুনি এটা নতুন পাছৱৰ্ড বাছে।</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>হয়, আন ডিভাইচবোৰ লগ আউট কৰক</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>এইটো আপুনি আছিল নেকি?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>হয়, মই আছিলোঁ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>নহয়, মোৰ একাউণ্ট সুৰক্ষিত কৰক</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>ছেছন হেণ্ডলাৰ: %handler। ছেছনবোৰ expuser_session টেবুলৰ পৰা পঢ়া হয়, সেয়েহে প্ৰতিবেদনটোৱে সকলো হেণ্ডলাৰৰ সৈতে কাম কৰে।</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>যোৱা %hours ঘণ্টাত সন্দেহজনক কাৰ্যকলাপ</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>এটা নেটৱৰ্কে %accounts টা একাউণ্টত লগ ইন কৰাত বিফল হ'ল (%count টা প্ৰচেষ্টা)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>বিফল লগ ইনৰ পিছত একাউণ্ট লক কৰা হ'ল</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>এটা একাউণ্টত %count টা বিফল লগ ইন</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>একেলগে %count খন দেশৰ পৰা লগ ইন কৰা হৈছে</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>সুৰক্ষা কাৰ্যকলাপ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ছেছন</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>বিফল লগ ইনসমূহ ব্যৱহাৰকাৰী অডিট লগৰ পৰা পঢ়া হয়, যিটো ইয়াত উপলব্ধ নহয়।</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>একো সন্দেহজনক নাই: বাৰে বাৰে বিফল লগ ইন থকা কোনো একাউণ্ট নাই, কেইবাটাও একাউণ্ট চেষ্টা কৰা কোনো নেটৱৰ্ক নাই, কেইবাখনো দেশৰ পৰা লগ ইন কৰা কোনো একাউণ্ট নাই।</translation>
     </message>
 </context>
 <context>

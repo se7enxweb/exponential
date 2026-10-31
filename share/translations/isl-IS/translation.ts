@@ -25623,6 +25623,10 @@ Athugaðu: uppsetning pakkanna verður ekki fjarlægð.</translation>
         <source>last purge</source>
         <translation>síðasta hreinsun</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>Skrif gátu ekki tekið stöðulásinn (síðast %date): hvert þeirra gerði allar skyndiminnisniðurstöður úreltar. %file verður að vera skrifanleg fyrir hvern notanda sem vefurinn keyrir sem; á NFS þarf NFSv4 eða lockd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78355,6 +78359,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Seturnar þínar og öryggisatburðir sem JSON-skrá.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Setur eru ekki skráðar á þessum vef, svo ekki var hægt að skrá neitt annað tæki út. Breyttu aðgangsorðinu þínu núna.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count aðrar setur voru skráðar út. Breyttu nú aðgangsorðinu þínu.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ekkert annað tæki var innskráð. Breyttu nú aðgangsorðinu þínu.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Takk fyrir. Atburðurinn er merktur sem þinn.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Þessi atburður þarfnast ekki svars.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Síðan var útrunnin. Engu var breytt; reyndu aftur.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Tryggja reikninginn</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ef eitthvað hér varst ekki þú, skráðu þá öll önnur tæki út og veldu síðan nýtt aðgangsorð. Tæki sem haldið er innskráðum með Muna eftir mér eru líka skráð út.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Öll tæki nema þetta eru skráð út við næstu beiðni sína. Síðan velur þú nýtt aðgangsorð.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Já, skrá hin tækin út</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Varst þetta þú?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Já, þetta var ég</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nei, tryggja reikninginn minn</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78537,6 +78593,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Seturnar þínar og öryggisatburðir sem JSON-skrá.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Setur eru ekki skráðar á þessum vef, svo ekki var hægt að skrá neitt annað tæki út. Breyttu aðgangsorðinu þínu núna.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count aðrar setur voru skráðar út. Breyttu nú aðgangsorðinu þínu.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ekkert annað tæki var innskráð. Breyttu nú aðgangsorðinu þínu.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Takk fyrir. Atburðurinn er merktur sem þinn.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Þessi atburður þarfnast ekki svars.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Síðan var útrunnin. Engu var breytt; reyndu aftur.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Tryggja reikninginn</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ef eitthvað hér varst ekki þú, skráðu þá öll önnur tæki út og veldu síðan nýtt aðgangsorð. Tæki sem haldið er innskráðum með Muna eftir mér eru líka skráð út.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Öll tæki nema þetta eru skráð út við næstu beiðni sína. Síðan velur þú nýtt aðgangsorð.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Já, skrá hin tækin út</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Varst þetta þú?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Já, þetta var ég</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nei, tryggja reikninginn minn</translation>
     </message>
 </context>
 <context>
@@ -78728,6 +78836,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Setumeðhöndlari: %handler. Seturnar eru lesnar úr töflunni expuser_session, svo skýrslan virkar með öllum meðhöndlurum.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Grunsamleg virkni síðustu %hours klukkustundir</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Eitt net gat ekki skráð sig inn á %accounts reikninga (%count tilraunir)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Reikningi læst eftir misheppnaðar innskráningar</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count misheppnaðar innskráningar á einn reikning</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Innskráð frá %count löndum samtímis</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Öryggisvirkni</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Setur</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Misheppnaðar innskráningar eru lesnar úr endurskoðunarskrá notenda, sem er ekki tiltæk hér.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Ekkert grunsamlegt: enginn reikningur með endurteknar misheppnaðar innskráningar, ekkert net sem reynir nokkra reikninga, enginn reikningur innskráður frá nokkrum löndum.</translation>
     </message>
 </context>
 <context>

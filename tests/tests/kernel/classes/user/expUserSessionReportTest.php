@@ -10,6 +10,8 @@
  *          counted once, the most recently used first
  *  SR-04 - The module declares user/sessionreport with the new policy function sessions_manage; the menu, the
  *          templates (admin = admin4), "Verify it's you" before signing out, and the link from setup/session
+ *  SR-05 - Suspicious patterns: an account with repeated failures, one network failing on several accounts, a locked
+ *          account, an account signed in from several countries; worst first, nothing below the thresholds
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -95,6 +97,41 @@ class expUserSessionReportTest extends eZDatatypeTestCase
         $this->assertSame( array( 15, 14, 14, 18 ), array_column( $report['sessions'], 'user_id' ), 'the most recently used first' );
         $this->assertSame( 2, count( expUserSessionReport::activeSessions( 2, $now )['sessions'] ) );
         $this->assertNull( expUserSessionReport::findUser( '' ) );
+    }
+
+    /** SR-05 */
+    public function testFindPatterns()
+    {
+        $failures = array();
+        for ( $i = 0; $i < 6; $i++ )
+            $failures[] = array( 'user_id' => 14, 'ip' => '198.51.100.' . ( 10 + $i ) );
+        foreach ( array( 20, 21, 22 ) as $userID )
+            $failures[] = array( 'user_id' => $userID, 'ip' => '203.0.113.7' );
+        $failures[] = array( 'user_id' => 23, 'ip' => '192.0.2.1' );
+        $patterns = expUserSessionReport::findPatterns( $failures, array( 30 ), array( 40 => array( 'DE', 'US', 'DE' ), 41 => array( 'DE' ) ), 5, 3 );
+        $kinds = array();
+        foreach ( $patterns as $p )
+            $kinds[] = $p['kind'] . ':' . $p['user_id'];
+        $this->assertSame( array( 'network:0', 'locked:30', 'failures:14', 'countries:40' ), $kinds, 'worst first; below the thresholds nothing' );
+        $this->assertSame( '203.0.113.x', $patterns[0]['network'], 'the network, never the full address' );
+        $this->assertSame( 3, $patterns[0]['accounts'] );
+        $this->assertSame( 6, $patterns[2]['count'] );
+        $this->assertSame( array( 'DE', 'US' ), $patterns[3]['countries'] );
+        // six failures of 14 come from one /24: one network, but only one account, so not a "network" pattern
+        $this->assertSame( array(), expUserSessionReport::findPatterns( array(), array(), array() ) );
+        $this->assertSame( array(), expUserSessionReport::findPatterns( $failures, array(), array(), 0, 99 ), 'threshold 0: no failures pattern' );
+    }
+
+    /** SR-05 */
+    public function testPatternsInTheTemplates()
+    {
+        foreach ( array( 'admin', 'admin4' ) as $design )
+        {
+            $tpl = self::read( "design/$design/templates/user/sessionreport.tpl" );
+            $this->assertStringContainsString( '$report_patterns', $tpl );
+            $this->assertStringNotContainsString( 'style=', $tpl );
+        }
+        $this->assertStringContainsString( "'report_patterns'", self::read( 'kernel/private/classes/views/user/sessionreport.php' ) );
     }
 
     /** SR-04 */

@@ -47,8 +47,9 @@ Enabled=true
 ## Rules
 
 > "Sign out all other sessions" asks first too: someone at an unattended screen must not lock the owner out  
+> "Secure your account" on the security activity signs every other session out, the same as above  
 
-Default: a list of 6: `user/password self`, `user/passkeys *`, `user2fa/setup`, `apikey/list`, `content/edit self credentials`, `user/sessions self SaveMailButton RevokeOthersButton`.
+Default: a list of 7: `user/password self`, `user/passkeys *`, `user2fa/setup`, `apikey/list`, `content/edit self credentials`, `user/sessions self SaveMailButton RevokeOthersButton`, `user/security self SecureButton`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -62,6 +63,7 @@ Rules[]=user2fa/setup
 Rules[]=apikey/list
 Rules[]=content/edit self credentials
 Rules[]=user/sessions self SaveMailButton RevokeOthersButton
+Rules[]=user/security self SecureButton
 */ ?>
 ```
 

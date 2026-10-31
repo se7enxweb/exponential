@@ -25682,6 +25682,10 @@ Note: The packages will not be uninstalled.</source>
         <source>last purge</source>
         <translation>അവസാന ശുദ്ധീകരണം</translation>
     </message>
+    <message>
+        <source>Writes could not take the state lock (last %date): each one made every cached result stale. %file must be writable by every user the site runs as; on NFS it needs NFSv4 or lockd.</source>
+        <translation>എഴുത്തുകൾക്ക് സ്റ്റേറ്റ് ലോക്ക് എടുക്കാനായില്ല (അവസാനം %date): ഓരോന്നും എല്ലാ കാഷ് ചെയ്ത ഫലങ്ങളെയും പഴയതാക്കി. സൈറ്റ് പ്രവർത്തിക്കുന്ന ഓരോ ഉപയോക്താവിനും %file എഴുതാവുന്നതായിരിക്കണം; NFS-ൽ ഇതിന് NFSv4 അല്ലെങ്കിൽ lockd വേണം.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -78323,6 +78327,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>നിങ്ങളുടെ സെഷനുകളും സുരക്ഷാ ഇവന്റുകളും ഒരു JSON ഫയലായി.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ഈ സൈറ്റിൽ സെഷനുകൾ രേഖപ്പെടുത്തുന്നില്ല, അതിനാൽ മറ്റൊരു ഉപകരണവും സൈൻ ഔട്ട് ചെയ്യാൻ കഴിഞ്ഞില്ല. ഇപ്പോൾ തന്നെ നിങ്ങളുടെ പാസ്‌വേഡ് മാറ്റുക.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>മറ്റ് %count സെഷനുകൾ സൈൻ ഔട്ട് ചെയ്തു. ഇനി നിങ്ങളുടെ പാസ്‌വേഡ് മാറ്റുക.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>മറ്റൊരു ഉപകരണവും സൈൻ ഇൻ ചെയ്തിരുന്നില്ല. ഇനി നിങ്ങളുടെ പാസ്‌വേഡ് മാറ്റുക.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>നന്ദി. ഈ സംഭവം നിങ്ങളുടേതായി അടയാളപ്പെടുത്തി.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ആ സംഭവത്തിന് മറുപടി ആവശ്യമില്ല.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>പേജ് കാലഹരണപ്പെട്ടിരുന്നു. ഒന്നും മാറ്റിയിട്ടില്ല; ദയവായി വീണ്ടും ശ്രമിക്കുക.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ട് സുരക്ഷിതമാക്കുക</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ഇവിടെയുള്ള എന്തെങ്കിലും നിങ്ങളല്ലെങ്കിൽ, മറ്റെല്ലാ ഉപകരണങ്ങളും സൈൻ ഔട്ട് ചെയ്യുക, തുടർന്ന് പുതിയ പാസ്‌വേഡ് തിരഞ്ഞെടുക്കുക. “എന്നെ ഓർക്കുക” ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്ത നിലയിൽ നിർത്തിയ ഉപകരണങ്ങളും സൈൻ ഔട്ട് ചെയ്യപ്പെടും.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ഇതൊഴികെയുള്ള എല്ലാ ഉപകരണങ്ങളും അവയുടെ അടുത്ത അഭ്യർത്ഥനയിൽ സൈൻ ഔട്ട് ചെയ്യപ്പെടും. തുടർന്ന് നിങ്ങൾ പുതിയ പാസ്‌വേഡ് തിരഞ്ഞെടുക്കും.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>അതെ, മറ്റ് ഉപകരണങ്ങൾ സൈൻ ഔട്ട് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ഇത് നിങ്ങളായിരുന്നോ?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>അതെ, ഇത് ഞാനായിരുന്നു</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ഇല്ല, എന്റെ അക്കൗണ്ട് സുരക്ഷിതമാക്കുക</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78505,6 +78561,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>നിങ്ങളുടെ സെഷനുകളും സുരക്ഷാ ഇവന്റുകളും ഒരു JSON ഫയലായി.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ഈ സൈറ്റിൽ സെഷനുകൾ രേഖപ്പെടുത്തുന്നില്ല, അതിനാൽ മറ്റൊരു ഉപകരണവും സൈൻ ഔട്ട് ചെയ്യാൻ കഴിഞ്ഞില്ല. ഇപ്പോൾ തന്നെ നിങ്ങളുടെ പാസ്‌വേഡ് മാറ്റുക.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>മറ്റ് %count സെഷനുകൾ സൈൻ ഔട്ട് ചെയ്തു. ഇനി നിങ്ങളുടെ പാസ്‌വേഡ് മാറ്റുക.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>മറ്റൊരു ഉപകരണവും സൈൻ ഇൻ ചെയ്തിരുന്നില്ല. ഇനി നിങ്ങളുടെ പാസ്‌വേഡ് മാറ്റുക.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>നന്ദി. ഈ സംഭവം നിങ്ങളുടേതായി അടയാളപ്പെടുത്തി.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ആ സംഭവത്തിന് മറുപടി ആവശ്യമില്ല.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>പേജ് കാലഹരണപ്പെട്ടിരുന്നു. ഒന്നും മാറ്റിയിട്ടില്ല; ദയവായി വീണ്ടും ശ്രമിക്കുക.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ട് സുരക്ഷിതമാക്കുക</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ഇവിടെയുള്ള എന്തെങ്കിലും നിങ്ങളല്ലെങ്കിൽ, മറ്റെല്ലാ ഉപകരണങ്ങളും സൈൻ ഔട്ട് ചെയ്യുക, തുടർന്ന് പുതിയ പാസ്‌വേഡ് തിരഞ്ഞെടുക്കുക. “എന്നെ ഓർക്കുക” ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്ത നിലയിൽ നിർത്തിയ ഉപകരണങ്ങളും സൈൻ ഔട്ട് ചെയ്യപ്പെടും.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ഇതൊഴികെയുള്ള എല്ലാ ഉപകരണങ്ങളും അവയുടെ അടുത്ത അഭ്യർത്ഥനയിൽ സൈൻ ഔട്ട് ചെയ്യപ്പെടും. തുടർന്ന് നിങ്ങൾ പുതിയ പാസ്‌വേഡ് തിരഞ്ഞെടുക്കും.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>അതെ, മറ്റ് ഉപകരണങ്ങൾ സൈൻ ഔട്ട് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ഇത് നിങ്ങളായിരുന്നോ?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>അതെ, ഇത് ഞാനായിരുന്നു</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ഇല്ല, എന്റെ അക്കൗണ്ട് സുരക്ഷിതമാക്കുക</translation>
     </message>
 </context>
 <context>
@@ -78696,6 +78804,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>സെഷൻ ഹാൻഡ്‌ലർ: %handler. സെഷനുകൾ expuser_session പട്ടികയിൽനിന്നാണ് വായിക്കുന്നത്, അതിനാൽ റിപ്പോർട്ട് എല്ലാ ഹാൻഡ്‌ലറുമായും പ്രവർത്തിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>കഴിഞ്ഞ %hours മണിക്കൂറിലെ സംശയാസ്പദമായ പ്രവർത്തനം</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>ഒരു നെറ്റ്‌വർക്ക് %accounts അക്കൗണ്ടുകളിൽ സൈൻ ഇൻ ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു (%count ശ്രമങ്ങൾ)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>പരാജയപ്പെട്ട സൈൻ ഇന്നുകൾക്ക് ശേഷം അക്കൗണ്ട് ലോക്ക് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>ഒരു അക്കൗണ്ടിൽ %count പരാജയപ്പെട്ട സൈൻ ഇന്നുകൾ</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>ഒരേ സമയം %count രാജ്യങ്ങളിൽ നിന്ന് സൈൻ ഇൻ ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>സുരക്ഷാ പ്രവർത്തനം</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>സെഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>പരാജയപ്പെട്ട സൈൻ ഇന്നുകൾ ഉപയോക്തൃ ഓഡിറ്റ് ലോഗിൽ നിന്നാണ് വായിക്കുന്നത്, അത് ഇവിടെ ലഭ്യമല്ല.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>സംശയാസ്പദമായി ഒന്നുമില്ല: ആവർത്തിച്ച് സൈൻ ഇൻ പരാജയപ്പെട്ട അക്കൗണ്ടില്ല, നിരവധി അക്കൗണ്ടുകൾ ശ്രമിക്കുന്ന നെറ്റ്‌വർക്കില്ല, നിരവധി രാജ്യങ്ങളിൽ നിന്ന് സൈൻ ഇൻ ചെയ്ത അക്കൗണ്ടില്ല.</translation>
     </message>
 </context>
 <context>
