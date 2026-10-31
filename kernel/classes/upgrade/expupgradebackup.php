@@ -203,10 +203,32 @@ class expUpgradeBackup
             $stderr = 'cannot start the command';
             return 127;
         }
-        stream_get_contents( $pipes[1] );
-        $stderr = (string)stream_get_contents( $pipes[2] );
-        fclose( $pipes[1] );
-        fclose( $pipes[2] );
+        // both pipes drained together: a tool that writes much to stderr (mongorestore's progress) would block on a
+        // full pipe while stdout is read to its end
+        $stderr = '';
+        $open = array( 1 => $pipes[1], 2 => $pipes[2] );
+        foreach ( $open as $pipe )
+            stream_set_blocking( $pipe, false );
+        while ( $open )
+        {
+            $read = array_values( $open );
+            $write = $except = null;
+            if ( @stream_select( $read, $write, $except, 5 ) === false )
+                break;
+            foreach ( $open as $n => $pipe )
+            {
+                $chunk = fread( $pipe, 65536 );
+                if ( $chunk !== false && $chunk !== '' && $n === 2 && strlen( $stderr ) < 1048576 )
+                    $stderr .= $chunk;
+                if ( feof( $pipe ) )
+                {
+                    fclose( $pipe );
+                    unset( $open[$n] );
+                }
+            }
+        }
+        foreach ( $open as $pipe )
+            fclose( $pipe );
         return proc_close( $process );
     }
 
@@ -237,12 +259,7 @@ class expUpgradeBackup
     protected static function mongodb( $db, $target, array &$result )
     {
         $dir = $target . '/mongodb';
-        $uri = 'mongodb://' . ( $db->User !== '' && $db->User !== null ? rawurlencode( $db->User ) . ':' . rawurlencode( (string)$db->Password ) . '@' : '' )
-             . ( $db->Server ?: 'localhost' ) . ( $db->Port ? ':' . (int)$db->Port : '' ) . '/' . rawurlencode( (string)$db->DB );
-        $cnf = $target . '/.mongo.yaml';
-        file_put_contents( $cnf, '' );
-        chmod( $cnf, eZFile::fileMode( 0600 ) );
-        file_put_contents( $cnf, 'uri: "' . str_replace( '"', '\\"', $uri ) . "\"\n" );
+        $cnf = self::mongoConfigFile( $db, $target . '/.mongo.yaml' );
         exec( 'mongodump --config=' . escapeshellarg( $cnf ) . ' --out=' . escapeshellarg( $dir ) . ' 2>&1', $out, $code );
         @unlink( $cnf );
         if ( $code !== 0 || !is_dir( $dir ) )
@@ -252,6 +269,24 @@ class expUpgradeBackup
         }
         $result['files'][] = 'mongodb/';
         return true;
+    }
+
+    /**
+     * A configuration file for mongodump and mongorestore (--config) with the connection string of the connection, so
+     * the password is never on a command line. Readable by its owner only; the caller removes it.
+     *
+     * @param eZDBInterface $db
+     * @param string $path
+     * @return string the file
+     */
+    public static function mongoConfigFile( $db, $path )
+    {
+        $uri = 'mongodb://' . ( $db->User !== '' && $db->User !== null ? rawurlencode( $db->User ) . ':' . rawurlencode( (string)$db->Password ) . '@' : '' )
+             . ( $db->Server ?: 'localhost' ) . ( $db->Port ? ':' . (int)$db->Port : '' ) . '/' . rawurlencode( (string)$db->DB );
+        file_put_contents( $path, '' );
+        chmod( $path, eZFile::fileMode( 0600 ) );
+        file_put_contents( $path, 'uri: "' . str_replace( '"', '\\"', $uri ) . "\"\n" );
+        return $path;
     }
 
     protected static function finish( $file, $code, $tool, array &$result )

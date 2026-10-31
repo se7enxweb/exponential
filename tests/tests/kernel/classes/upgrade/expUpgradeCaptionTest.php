@@ -86,7 +86,7 @@ class expUpgradeCaptionTest extends PHPUnit\Framework\TestCase
         @mkdir( $this->dir . '/2026-10-29_10-15-00' );
         $this->assertSame( $this->dir . '/2026-10-29_10-15-00', expUpgradeCaption::find( '2026-10-29_10-15-00', $this->dir ) );
         @rmdir( $this->dir . '/2026-10-29_10-15-00' );
-        $this->assertSame( array( 'pre', 'post', 'safety', 'manual' ), expUpgradeCaption::KINDS );
+        $this->assertSame( array( 'pre', 'post', 'safety', 'manual', 'migration-pre', 'migration-post', 'migration-failure' ), expUpgradeCaption::KINDS );
     }
 
     /** UK-04 */

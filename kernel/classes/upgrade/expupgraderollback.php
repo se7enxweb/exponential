@@ -12,8 +12,9 @@
  * part:
  *
  *   database   SQLite: the copy written back through SQLite's backup API; MySQL/MariaDB: the dump through mysql;
- *              PostgreSQL: the dump through psql. Tables made after the caption (not in its list) are dropped.
- *              MongoDB and Oracle: by hand (mongorestore --drop, impdp).
+ *              PostgreSQL: the dump through psql; MongoDB: the mongodump folder through mongorestore --drop. Tables
+ *              (collections) made after the caption (not in its list) are dropped. Oracle has no built-in dump or
+ *              restore: the part stops with the exact steps to restore by hand (manualSteps()).
  *   storage    var/ from git_manager's archive (var_<caption>.tar.gz), unpacked over the installation's (files added
  *              since stay)
  *   settings   settings/override copied back (files added since stay)
@@ -32,6 +33,9 @@ class expUpgradeRollback
 {
     /** The parts, in the order they are restored. */
     const PARTS = array( 'database', 'storage', 'settings', 'libraries', 'code' );
+
+    /** The engines whose database part is restored here; the others stop with manualSteps(). */
+    const RESTORE_ENGINES = array( 'sqlite', 'mysql', 'postgresql', 'mongodb' );
 
     /**
      * Restores (with apply) or lists what would be restored from a caption.
@@ -151,6 +155,80 @@ class expUpgradeRollback
         return $report;
     }
 
+    /**
+     * The steps to restore a database by hand, for an engine without a built-in restore (Oracle): the exact commands
+     * with the connection's account and service, never its password (the tool asks for it).
+     *
+     * @param string $engine
+     * @param eZDBInterface|object|null $db the connection (its User, Server, Port, DB)
+     * @param string|null $dir the caption, when there is one
+     * @param string[] $tablesBefore the tables at the time of the export (caption.json), to name the ones to drop
+     * @return string[] numbered lines
+     */
+    public static function manualSteps( $engine, $db = null, $dir = null, array $tablesBefore = array() )
+    {
+        $user = $db && isset( $db->User ) && (string)$db->User !== '' ? (string)$db->User : '<user>';
+        $service = $db && isset( $db->DB ) && (string)$db->DB !== '' ? (string)$db->DB : '<service>';
+        $server = $db && isset( $db->Server ) ? (string)$db->Server : '';
+        $port = $db && !empty( $db->Port ) ? (int)$db->Port : 0;
+        $extra = array();
+        if ( $tablesBefore && $db instanceof eZDBInterface )
+        {
+            try
+            {
+                $extra = array_values( array_diff( array_map( 'strtolower', (array)expKernelTableSchema::tables( $db ) ), array_map( 'strtolower', $tablesBefore ) ) );
+            }
+            catch ( Throwable $e )
+            {
+            }
+        }
+        $steps = array( '1. Switch the site to maintenance mode and stop its cronjobs, so nothing writes while the database is restored: '
+                        . './console exp:maintenance on' );
+        if ( $engine === 'oracle' )
+        {
+            $connect = $server !== '' ? '//' . $server . ':' . ( $port ?: 1521 ) . '/' . $service : $service;
+            $schema = strtoupper( $user );
+            $steps[] = '2. Restore the schema ' . $schema . ' from the Data Pump export (expdp) taken before the change; impdp asks for the password: '
+                     . 'impdp ' . $user . '@' . $connect . ' SCHEMAS=' . $schema . ' DIRECTORY=DATA_PUMP_DIR DUMPFILE=<the export>.dmp '
+                     . 'TABLE_EXISTS_ACTION=REPLACE LOGFILE=restore-' . date( 'Ymd-His' ) . '.log';
+            $steps[] = '3. Drop the tables made after the export (impdp leaves them): '
+                     . ( $extra ? implode( ' ', array_map( function ( $t ) { return 'DROP TABLE ' . strtoupper( $t ) . ' PURGE;'; }, $extra ) )
+                                : 'DROP TABLE <name> PURGE; for each table the export does not have' );
+        }
+        else
+        {
+            $steps[] = "2. Restore the database $service with $engine's own tool from a dump taken before the change";
+            $steps[] = '3. Drop the tables made after the dump' . ( $extra ? ': ' . implode( ', ', $extra ) : '' );
+        }
+        if ( $dir !== null && $dir !== '' )
+            $steps[] = '4. Put back what else the caption holds (settings/override, var/ storage): ./console exp:upgrade:rollback '
+                     . basename( $dir ) . ' --parts=settings,storage --apply';
+        else
+            $steps[] = '4. Put back settings/override and var/ storage from your own copy if the change wrote them';
+        $steps[] = '5. Clear the caches and reload the site: ./console exp:velocity deploy';
+        $steps[] = '6. Check the result: ./console exp:upgrade:verify --after';
+        $steps[] = '7. Switch maintenance mode off: ./console exp:maintenance off';
+        return $steps;
+    }
+
+    /**
+     * The database a mongodump folder holds (its one subfolder; mongodump --out writes <out>/<database>/).
+     *
+     * @param string $dir
+     * @return string
+     * @throws RuntimeException when it holds none or more than one
+     */
+    public static function mongoDumpDatabase( $dir )
+    {
+        $names = array();
+        foreach ( glob( rtrim( $dir, '/' ) . '/*', GLOB_ONLYDIR ) ?: array() as $sub )
+            if ( basename( $sub ) !== 'admin' && preg_match( '/^[A-Za-z0-9_-]{1,64}$/', basename( $sub ) ) )
+                $names[] = basename( $sub );
+        if ( count( $names ) !== 1 )
+            throw new RuntimeException( 'the MongoDB dump holds ' . ( $names ? 'more than one database: ' . implode( ', ', $names ) : 'no database' ) );
+        return $names[0];
+    }
+
     /** @return array caption.json, or manifest.json of an older backup, or an empty array */
     protected static function meta( $dir )
     {
@@ -177,10 +255,16 @@ class expUpgradeRollback
         $engine = expKernelTableSchema::type( $db );
         if ( !empty( $meta['engine'] ) && $meta['engine'] !== $engine )
             throw new RuntimeException( "the caption is of a {$meta['engine']} database, this one is $engine" );
+        if ( !in_array( $engine, self::RESTORE_ENGINES, true ) )
+            throw new RuntimeException( "no built-in restore for $engine; restore it by hand:\n"
+                                        . implode( "\n", self::manualSteps( $engine, $db, $dir, isset( $meta['tables'] ) ? (array)$meta['tables'] : array() ) ) );
         $tmp = "$root/var/tmp/rollback-" . getmypid();
         try
         {
             $dump = expUpgradeCaption::extractDump( $dir, $tmp );
+            // the folder for the client's option file: extractDump() makes it only for a dump in an archive
+            if ( !is_dir( $tmp ) )
+                eZDir::mkdir( $tmp, 0700, true );
             $extra = array();
             if ( isset( $meta['tables'] ) && is_array( $meta['tables'] ) && $engine !== 'sqlite' )
                 $extra = array_values( array_diff( array_map( 'strtolower', (array)expKernelTableSchema::tables( $db ) ), array_map( 'strtolower', $meta['tables'] ) ) );
@@ -231,12 +315,27 @@ class expUpgradeRollback
                     }
                     break;
                 case 'mongodb':
-                    $lines[] = 'mongorestore --drop from ' . $dump['path'];
+                    $from = self::mongoDumpDatabase( $dump['path'] );
+                    $lines[] = 'mongorestore --drop ' . $from . ' from ' . basename( $dump['path'] ) . ' into ' . $db->DB;
+                    foreach ( $extra as $t )
+                        $lines[] = "drop the collection $t (made after the caption)";
                     if ( $apply )
-                        throw new RuntimeException( 'restore MongoDB by hand: mongorestore --drop --dir=' . $dump['path'] );
+                    {
+                        $cnf = expUpgradeBackup::mongoConfigFile( $db, "$tmp/.restore.yaml" );
+                        // the connection string names the database, so mongorestore takes the dump's database folder
+                        // (given the whole --out folder it skips the subfolder and restores nothing, with exit 0)
+                        $err = '';
+                        $code = expUpgradeBackup::runWithEnv( 'mongorestore --config=' . escapeshellarg( $cnf ) . ' --drop --dir='
+                                                              . escapeshellarg( rtrim( $dump['path'], '/' ) . '/' . $from ), array(), $err );
+                        @unlink( $cnf );
+                        if ( $code !== 0 )
+                            throw new RuntimeException( 'mongorestore failed (exit ' . $code . '): ' . preg_replace( '/\s+/', ' ', mb_substr( trim( $err ), -400 ) ) );
+                        foreach ( $extra as $t )
+                            if ( preg_match( '/^[a-z_][a-z0-9_]*$/', $t ) )
+                                expUpgradeCatalog::execute( $db, "DROP TABLE $t;\n" );
+                        expKernelTableSchema::reset();
+                    }
                     break;
-                default:
-                    throw new RuntimeException( "no built-in restore for $engine: restore with the engine's own tool (Oracle: impdp)" );
             }
             return $lines;
         }

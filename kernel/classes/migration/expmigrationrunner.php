@@ -25,6 +25,11 @@
  * [RunSettings] RunAsUser) and is framed by the events migration/run/before and migration/run/after and the audit event
  * system.migration.run. A dry run (a context that does not write) changes nothing and takes no lock.
  *
+ * With a caption flow (option flow, expMigrationRunFlow; migrate() builds it from migration.ini): before the first
+ * migration the code trees are checked and the caption migration-pre is taken; after a failure the state is captioned
+ * (migration-failure) and the pre caption restored; after the run the caption migration-post is taken (a success) and
+ * the record is committed, tagged and pushed in the migrations repository.
+ *
  * The checksum guard: a migration recorded as done whose file has changed since (another checksum) is refused, and
  * the run with it, unless the run is forced with a reason (options force and reason, --force --reason=<text>); the
  * new checksum is then recorded and the override audited (system.migration.apply, verb accept-change). The migration
@@ -56,12 +61,19 @@ class expMigrationRunner
     /**
      * @param expMigrationContext $context
      * @param array $options 'force' => bool, 'reason' => string (both for the checksum guard),
-     *                       'stop-on-failure' => bool (default true)
+     *                       'stop-on-failure' => bool (default true),
+     *                       'flow' => expMigrationRunFlow|null (captions, restore on failure, commit, tag, push)
      */
     public function __construct( expMigrationContext $context, array $options = array() )
     {
         $this->context = $context;
-        $this->options = $options + array( 'force' => false, 'reason' => '', 'stop-on-failure' => true );
+        $this->options = $options + array( 'force' => false, 'reason' => '', 'stop-on-failure' => true, 'flow' => null );
+    }
+
+    /** @return expMigrationRunFlow|null */
+    public function flow()
+    {
+        return $this->options['flow'] instanceof expMigrationRunFlow ? $this->options['flow'] : null;
     }
 
     /**
@@ -83,15 +95,21 @@ class expMigrationRunner
      * Finds, orders, loads and runs the installation's migrations on its database (the entry point the console
      * commands and the administration build on). A dry run unless $options['apply'].
      *
-     * @param array $options apply, force, reason, login, environment, and the options of expMigrationContext
+     * @param array $options apply, force, reason, login, environment, the options of expMigrationContext and those of
+     *                       expMigrationRunFlow::fromSettings() (no-caption, no-restore, no-commit, no-push, no-tag,
+     *                       include-uncommitted)
      * @return array the report; the problems of finding and loading are its errors
      */
     public static function migrate( array $options = array() )
     {
+        if ( !isset( $options['repository'] ) )
+            $options['repository'] = expMigrationRepository::fromSettings( $options )->directory();
         $context = new expMigrationContext( isset( $options['db'] ) ? $options['db'] : null, !empty( $options['apply'] ), $options );
         $errors = array();
         $migrations = self::migrations( $context->environment(), $errors );
-        $runner = new self( $context, self::settingsOptions( array_intersect_key( $options, array_flip( array( 'force', 'reason', 'stop-on-failure' ) ) ) ) );
+        $runnerOptions = self::settingsOptions( array_intersect_key( $options, array_flip( array( 'force', 'reason', 'stop-on-failure' ) ) ) );
+        $runnerOptions['flow'] = expMigrationRunFlow::fromSettings( $context, $options );
+        $runner = new self( $context, $runnerOptions );
         if ( $errors )
         {
             // nothing runs while a migration cannot be found, ordered or loaded: the order would not be the one written
@@ -254,6 +272,8 @@ class expMigrationRunner
                     }
                     unset( $entry );
                 }
+                if ( $pending && $this->flow() )
+                    $this->flow()->plan( $report );
                 $this->summarize( $report );
                 return $report;
             }
@@ -291,15 +311,28 @@ class expMigrationRunner
                 return $report;
             }
 
+            $ids = array();
+            foreach ( $pending as $i )
+                $ids[] = $report['migrations'][$i]['id'];
+            $flow = $this->flow();
+            // the caption flow: the code trees checked, the caption taken (a run without one goes on with a warning)
+            if ( $flow && !$flow->before( $report, $ids ) )
+            {
+                if ( $report['exit'] === expUpgrade::EXIT_OK )
+                    $report['exit'] = expUpgrade::EXIT_FAILED;
+                $this->summarize( $report );
+                if ( !$heldBefore )
+                    $lock->release();
+                return $report;
+            }
+
             $started = time();
             $report['started_at'] = $started;
             $runStarted = true;
             $context->writeRun( $this->runRow( 'running', $started, 0, '' ) );
             $context->log( 'info', 'run ' . $context->runId() . ' by ' . $context->userLogin() . ' on ' . $context->engine()
-                                   . ( $context->environment() !== '' ? ' in ' . $context->environment() : '' ) . ': ' . count( $pending ) . ' to apply' );
-            $ids = array();
-            foreach ( $pending as $i )
-                $ids[] = $report['migrations'][$i]['id'];
+                                   . ( $context->environment() !== '' ? ' in ' . $context->environment() : '' ) . ': ' . count( $pending ) . ' to apply'
+                                   . ( $context->runField( 'caption_pre' ) !== '' ? ', caption ' . $context->runField( 'caption_pre' ) : '' ) );
             $context->notify( 'migration/run/before', array( $context->runId(), $ids, $context ) );
             $context->becomeUser();
             try
@@ -344,6 +377,9 @@ class expMigrationRunner
             {
                 $context->restoreUser();
             }
+            // after a failure: the pre caption restored, before the run's record is written
+            if ( $flow )
+                $flow->afterMigrations( $report );
         }
         catch ( Throwable $e )
         {
@@ -353,7 +389,22 @@ class expMigrationRunner
 
         $this->summarize( $report );
         if ( $runStarted )
+        {
             $this->finishRun( $report );
+            // the caption after the run, then the commit, tag and push of the migrations repository
+            $flow = $this->flow();
+            if ( $flow )
+            {
+                try
+                {
+                    $flow->afterRun( $report );
+                }
+                catch ( Throwable $e )
+                {
+                    $report['warnings'][] = 'after the run: ' . $e->getMessage();
+                }
+            }
+        }
         if ( $lock && !$heldBefore )
             $lock->release();
         return $report;
@@ -551,6 +602,7 @@ class expMigrationRunner
             'finished_at' => time(),
             'duration_ms' => $entry['duration_ms'],
             'run_by' => $context->runBy(),
+            'caption_id' => $context->runField( 'caption_pre' ),
             'engine' => $context->engine(),
             'message' => implode( "\n", $entry['messages'] ),
         ) );
@@ -635,9 +687,9 @@ class expMigrationRunner
     protected function runRow( $state, $started, $finished, $message )
     {
         $context = $this->context;
-        return array( 'run_id' => $context->runId(), 'state' => $state, 'started_at' => $started, 'finished_at' => $finished,
-                      'run_by' => $context->runBy(), 'environment' => $context->environment(), 'log_file' => $context->logFile(),
-                      'message' => $message );
+        return array_merge( array( 'run_id' => $context->runId(), 'state' => $state, 'started_at' => $started, 'finished_at' => $finished,
+                                   'run_by' => $context->runBy(), 'environment' => $context->environment(), 'log_file' => $context->logFile(),
+                                   'message' => $message ), $context->runFields() );
     }
 
     /**
@@ -776,7 +828,7 @@ class expMigrationRunner
     {
         // states (done, pending, not-needed, failed, unknown) and actions (applied ...); "failed" is the state
         $states = array( expMigration::DONE, expMigration::PENDING, expMigration::NOT_NEEDED, expMigration::FAILED, expMigration::UNKNOWN );
-        $actions = array( 'applied', 'would-apply', 'not-run', 'blocked', 'refused', 'accepted', 'would-accept', 'undone', 'would-undo' );
+        $actions = array( 'applied', 'would-apply', 'not-run', 'blocked', 'refused', 'accepted', 'would-accept', 'undone', 'would-undo', 'restored' );
         $summary = array( 'total' => count( $report['migrations'] ) ) + array_fill_keys( array_merge( $states, $actions ), 0 );
         foreach ( $report['migrations'] as $entry )
         {

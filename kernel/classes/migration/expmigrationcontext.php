@@ -24,6 +24,8 @@
  *   repository   the migrations repository the run log and status mirror are written to (<root>/migrations)
  *   lock-file    another lock file (a test's)
  *   no-mirror    true: no status mirror and no run log are written
+ *   backup-dir   the folder of captions made without git_manager (expUpgradeCaption)
+ *   storage-dir  the var/ storage the caption reuse check compares (eZSys::storageDirectory() when not given)
  *
  * @since 6.0.15
  * @package kernel
@@ -63,6 +65,9 @@ class expMigrationContext extends expUpgradeContext
 
     /** @var int|null the error handling of the connection before a migration */
     protected $previousErrorHandling;
+
+    /** @var array column => value of exp_migration_run that the caption flow sets (caption_pre ...) */
+    protected $runFields = array();
 
     /**
      * @param eZDBInterface|null $db the connection (eZDB::instance() when null)
@@ -269,6 +274,46 @@ class expMigrationContext extends expUpgradeContext
     public function writeRun( array $run )
     {
         return expMigrationRecord::writeRun( $this->db(), $run );
+    }
+
+    /**
+     * The row of this run in exp_migration_run, or null before it is written.
+     *
+     * @return array|null
+     */
+    public function runRecord()
+    {
+        return expMigrationRecord::run( $this->db(), $this->runId );
+    }
+
+    /**
+     * Sets a column of this run's row that the runner does not know itself (caption_pre, caption_post, commit_id,
+     * tag_name, push_state): every row of the run written after this carries it.
+     *
+     * @param string $name a column of expMigrationRecord::RUN_COLUMNS
+     * @param string $value
+     * @throws InvalidArgumentException for another name
+     */
+    public function setRunField( $name, $value )
+    {
+        if ( !array_key_exists( (string)$name, expMigrationRecord::RUN_COLUMNS ) || in_array( $name, array( 'run_id', 'state', 'started_at', 'finished_at' ), true ) )
+            throw new InvalidArgumentException( 'not a column the caption flow sets: ' . $name );
+        $this->runFields[$name] = (string)$value;
+    }
+
+    /**
+     * @param string $name
+     * @return string the value set with setRunField(), '' when none
+     */
+    public function runField( $name )
+    {
+        return isset( $this->runFields[$name] ) ? $this->runFields[$name] : '';
+    }
+
+    /** @return array column => value set with setRunField() */
+    public function runFields()
+    {
+        return $this->runFields;
     }
 
     /**

@@ -12,7 +12,7 @@
  * the database dump, var/ storage, its licenses) in git_manager's backup folder, with what exp:upgrade adds in its
  * upgrade/ folder:
  *
- *   upgrade/caption.json        id, label, kind (pre, post, safety, manual), upgrade from/to, versions, engine, source
+ *   upgrade/caption.json        id, label, kind (KINDS), upgrade from/to, versions, engine, source
  *   upgrade/settings/override   the settings overrides
  *   upgrade/libraries/          composer.json, composer.lock, vendor/composer/installed.json
  *   upgrade/code.json           the commit of the root checkout and of every checkout of the run (--repos)
@@ -31,8 +31,13 @@
  */
 class expUpgradeCaption
 {
-    /** The kinds of a caption (permanent). */
-    const KINDS = array( 'pre', 'post', 'safety', 'manual' );
+    /**
+     * The kinds of a caption (permanent). pre, post, safety and manual are exp:upgrade's; migration-pre (before a
+     * migration run), migration-post (after a run that succeeded, labelled with the migrations that ran) and
+     * migration-failure (the state a failed run left, taken before it is restored) are migration runs'
+     * (expMigrationCaption).
+     */
+    const KINDS = array( 'pre', 'post', 'safety', 'manual', 'migration-pre', 'migration-post', 'migration-failure' );
 
     /** @return BackupManager|null git_manager's backup manager, when git_manager is there */
     public static function manager()
