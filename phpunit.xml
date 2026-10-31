@@ -115,6 +115,7 @@
         <testsuite name="mongodb-live">
             <file>tests/tests/lib/ezdb/mongodb/expMongoDBIntegrationTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationRecordMongoDBTest.php</file>
+            <file>tests/tests/lib/ezdb/mongodb/expMigrationRunnerMongoDBTest.php</file>
         </testsuite>
 
         <!--

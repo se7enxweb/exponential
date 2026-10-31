@@ -11,18 +11,25 @@
  * One upgrade at a time: an exclusive lock on var/<site>/upgrade.lock, held by a run that writes (a dry run takes
  * none). The lock goes with the process, so a run that dies leaves nothing to clean up.
  *
+ * It is the installation lock of expMigrationLock (expMigrationLock::installation()), which migration runs take
+ * too: an upgrade and a migration run never write at the same time. The holder file next to the lock
+ * (upgrade.lock.holder) says who holds it.
+ *
  * @since 6.0.15
  * @package kernel
  */
 class expUpgradeLock
 {
-    /** @var resource|null */
-    protected static $handle;
+    /** @var expMigrationLock|null the lock this process holds through this class */
+    protected static $lock;
+
+    /** @var bool whether acquire() took the lock (false: this process held it already) */
+    protected static $owned = false;
 
     /** @return string */
     public static function file()
     {
-        return rtrim( eZSys::varDirectory(), '/' ) . '/upgrade.lock';
+        return expMigrationLock::defaultFile( expMigrationLock::INSTALLATION );
     }
 
     /**
@@ -33,32 +40,49 @@ class expUpgradeLock
      */
     public static function acquire( $file = null )
     {
-        if ( self::$handle )
+        if ( self::$lock )
             return true;
-        $file = $file ?: self::file();
-        if ( !is_dir( dirname( $file ) ) )
-            @mkdir( dirname( $file ), eZDir::dirMode( 0775 ), true );
-        $handle = @fopen( $file, 'c' );
-        if ( !$handle )
+        $lock = expMigrationLock::installation( $file ?: self::file() );
+        // held already by this process (a migration run that runs upgrade steps): used, and left to its holder
+        $heldBefore = $lock->isHeld();
+        if ( !$lock->acquire( array( 'purpose' => 'exp:upgrade', 'user' => self::user() ) ) )
             return false;
-        if ( !flock( $handle, LOCK_EX | LOCK_NB ) )
-        {
-            fclose( $handle );
-            return false;
-        }
-        ftruncate( $handle, 0 );
-        fwrite( $handle, getmypid() . "\n" );
-        self::$handle = $handle;
+        self::$lock = $lock;
+        self::$owned = !$heldBefore;
         return true;
     }
 
-    /** Lets go of the lock. */
+    /** Lets go of the lock (not one this process held before acquire() was called). */
     public static function release()
     {
-        if ( !self::$handle )
+        if ( !self::$lock )
             return;
-        flock( self::$handle, LOCK_UN );
-        fclose( self::$handle );
-        self::$handle = null;
+        if ( self::$owned )
+            self::$lock->release();
+        self::$lock = null;
+        self::$owned = false;
+    }
+
+    /**
+     * Who holds the lock (expMigrationLock::holder()), or null.
+     *
+     * @param string|null $file
+     * @return array|null
+     */
+    public static function holder( $file = null )
+    {
+        return expMigrationLock::installation( $file ?: self::file() )->holder();
+    }
+
+    /** @return string the system user of the process */
+    protected static function user()
+    {
+        if ( function_exists( 'posix_geteuid' ) && function_exists( 'posix_getpwuid' ) )
+        {
+            $info = @posix_getpwuid( posix_geteuid() );
+            if ( is_array( $info ) && isset( $info['name'] ) )
+                return 'system user ' . $info['name'];
+        }
+        return '';
     }
 }

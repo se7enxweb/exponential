@@ -1279,7 +1279,8 @@
     "kernel/classes/audit/expaudittaxonomy.php": [
       "tests/tests/kernel/classes/audit/expAuditRecordTest.php",
       "tests/tests/kernel/classes/audit/expAuditHookTest.php",
-      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+      "tests/tests/kernel/classes/user/expDemoModeTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRunnerTest.php"
     ],
     "kernel/classes/uiswitch/expuiswitchdesignprovider.php": [
       "tests/tests/kernel/classes/uiswitch/expUISwitchDesignProviderTest.php"
@@ -2456,10 +2457,23 @@
       "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php"
     ],
     "settings/migration.ini": [
-      "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php"
+      "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRunnerTest.php"
     ],
     "tests/tests/kernel/classes/migration/fixtures/*": [
-      "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php"
+      "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRunnerTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRunnerSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRunnerDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationRunnerMongoDBTest.php"
+    ],
+    "tests/tests/kernel/classes/migration/expMigrationRunnerFakes.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRunnerTest.php"
+    ],
+    "tests/tests/kernel/classes/migration/expMigrationRunnerEngineChecks.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRunnerSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRunnerDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationRunnerMongoDBTest.php"
     ],
     "kernel/classes/migration/*": [
       "tests/tests/kernel/classes/migration/expMigrationDefinitionTest.php",
@@ -2467,7 +2481,15 @@
       "tests/tests/kernel/classes/migration/expMigrationRecordTest.php",
       "tests/tests/kernel/classes/migration/expMigrationStatusMirrorTest.php",
       "tests/tests/kernel/classes/migration/expMigrationRecordDatabaseTest.php",
-      "tests/tests/lib/ezdb/mongodb/expMigrationRecordMongoDBTest.php"
+      "tests/tests/lib/ezdb/mongodb/expMigrationRecordMongoDBTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRunnerTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRunnerSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRunnerDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationRunnerMongoDBTest.php"
+    ],
+    "kernel/classes/upgrade/expupgradelock.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRunnerTest.php",
+      "tests/tests/kernel/classes/upgrade/expUpgradeStagesTest.php"
     ],
     "share/migration/schema/exp-migration-status-1.json": [
       "tests/tests/kernel/classes/migration/expMigrationStatusMirrorTest.php"
@@ -3224,6 +3246,7 @@
       "tests/tests/lib/ezversion/ExponentialSDKAndPhpCompatTest.php"
     ],
     "settings/audit.ini": [
+      "tests/tests/kernel/classes/migration/expMigrationRunnerTest.php",
       "tests/tests/kernel/classes/audit/expAuditHookTest.php",
       "tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php",
       "tests/tests/kernel/content/eZAuditLocationTest.php"

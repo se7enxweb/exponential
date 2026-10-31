@@ -208,6 +208,14 @@ class expAuditTaxonomy
         'system.upgrade.rollback' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system', 'label' => 'Upgrade rolled back' ),
         'system.upgrade.caption' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Upgrade caption taken, checked or pruned' ),
         'system.upgrade.verify' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Upgrade verified' ),
+        // migrations (expMigrationRunner): a run, each migration applied (or a changed file accepted with --force
+        // --reason) or failed, a migration undone, a caption taken and a push of the migrations repository
+        'system.migration.run' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration run' ),
+        'system.migration.apply' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration applied' ),
+        'system.migration.fail' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration failed' ),
+        'system.migration.rollback' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration rolled back' ),
+        'system.migration.caption' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration caption taken' ),
+        'system.migration.push' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migrations pushed' ),
         'system.velocity.deploy' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         // the Velocity watchdog (doc/eng-us/bc/6.0/velocity-engines.md, "The watchdog"): only a run that acts or decides
         // something notable; a run that finds the engine running records nothing (not even system.command.run)
