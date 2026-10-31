@@ -164,12 +164,12 @@ class expGraphQLServer
         {
             $cache = $this->responseCache !== null ? $this->responseCache : expGraphQLResponseCache::forInstallation();
             if ( $anonymous )
-                $key = expGraphQLResponseCache::anonymousKey( $server );
+                $key = expGraphQLResponseCache::anonymousKey( $server, $request );
             else
             {
-                // a GET with a token or a key: kept under the raw request and the rights, and the early answer of
+                // a GET or a POST with a token or a key: kept under the raw request and the rights, and the early answer of
                 // index_rest.php learns the rights of these credentials for CredentialCacheTtl seconds
-                $key = expGraphQLResponseCache::signedInKey( $server, $context->roleHash() );
+                $key = expGraphQLResponseCache::signedInKey( $server, $context->roleHash(), $request );
                 $credential = expGraphQLResponseCache::credential( $server );
                 if ( $key !== null && $credential !== null && $cache->readCredential( $credential ) === null
                      && ( $context->authMode === expGraphQLContext::AUTH_TOKEN || $context->authMode === expGraphQLContext::AUTH_API_KEY ) )
@@ -195,7 +195,7 @@ class expGraphQLServer
                              'extensions' => array( 'requestId' => $context->requestId, 'schemaHash' => $this->builder->schemaHash() ) );
         else
             $answer = $this->execute( $resolved['query'], $request['variables'], $request['operationName'], $context );
-        if ( $cache !== null && expGraphQLResponseCache::storable( $answer, $resolved['query'], !$anonymous, $context->operationType ) )
+        if ( $cache !== null && expGraphQLResponseCache::storable( $answer, $resolved['query'], !$anonymous, $request['operationName'] ) )
         {
             // the same body for every request it answers: the request id is in the header X-Request-Id only
             unset( $answer['extensions']['requestId'] );
@@ -348,12 +348,7 @@ class expGraphQLServer
                           'extensions' => $extensions );
 
         $debug = expGraphQL::setting( 'Debug', 'disabled' ) === 'enabled';
-        // The rules of the specification, with the limits of graphql.ini in place of the library's (switched off) ones
-        $rules = \GraphQL\Validator\DocumentValidator::allRules();
-        $rules[\GraphQL\Validator\Rules\QueryDepth::class] = new \GraphQL\Validator\Rules\QueryDepth( expGraphQL::intSetting( 'MaxDepth', 12 ) );
-        $rules[\GraphQL\Validator\Rules\QueryComplexity::class] = new \GraphQL\Validator\Rules\QueryComplexity( expGraphQL::intSetting( 'MaxComplexity', 1000 ) );
-        $rules[\GraphQL\Validator\Rules\DisableIntrospection::class] = new \GraphQL\Validator\Rules\DisableIntrospection(
-            $context->allowsIntrospection() ? \GraphQL\Validator\Rules\DisableIntrospection::DISABLED : \GraphQL\Validator\Rules\DisableIntrospection::ENABLED );
+        $rules = self::validationRules( $context->allowsIntrospection() );
 
         // The operation it runs: a mutation is checked before anything runs (expGraphQLMutations::refusal()). A query
         // that cannot be parsed goes to the library as text, which answers its syntax error.
@@ -392,6 +387,24 @@ class expGraphQLServer
         $answer = $result->toArray();
         $answer['extensions'] = $extensions;
         return $answer;
+    }
+
+    /**
+     * The rules a query is checked against before it runs: those of the specification, with the limits of graphql.ini
+     * (MaxDepth, MaxComplexity) in place of the library's (switched off) ones. exp:graphql:persist checks a query
+     * against the same rules, so a stored query never fails a limit when it is called.
+     *
+     * @param bool $allowIntrospection
+     * @return array
+     */
+    public static function validationRules( $allowIntrospection )
+    {
+        $rules = \GraphQL\Validator\DocumentValidator::allRules();
+        $rules[\GraphQL\Validator\Rules\QueryDepth::class] = new \GraphQL\Validator\Rules\QueryDepth( expGraphQL::intSetting( 'MaxDepth', 12 ) );
+        $rules[\GraphQL\Validator\Rules\QueryComplexity::class] = new \GraphQL\Validator\Rules\QueryComplexity( expGraphQL::intSetting( 'MaxComplexity', 1000 ) );
+        $rules[\GraphQL\Validator\Rules\DisableIntrospection::class] = new \GraphQL\Validator\Rules\DisableIntrospection(
+            $allowIntrospection ? \GraphQL\Validator\Rules\DisableIntrospection::DISABLED : \GraphQL\Validator\Rules\DisableIntrospection::ENABLED );
+        return $rules;
     }
 
     /**

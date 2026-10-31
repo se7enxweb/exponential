@@ -123,6 +123,14 @@ class ezpKernelRest implements ezpKernelHandler
         $_SERVER['SCRIPT_FILENAME'] = str_replace( '/index_rest.php', '/index.php', $_SERVER['SCRIPT_FILENAME'] );
         $_SERVER['PHP_SELF'] = str_replace( '/index_rest.php', '/index.php', $_SERVER['PHP_SELF'] );
 
+        // The kernel service container (settings/kernelservices.ini), booted as the web kernel boots it: with a
+        // compiled container the two extension activation passes below apply what was recorded for this installation
+        // instead of reading the settings directory of every extension on every request (most of the start of a
+        // request: about 14 of 26 ms with alpha's 90 extensions). Without a compiled container, with another Mode, or
+        // when this request does not start from exactly the recorded state, the passes run as they always did.
+        if ( class_exists( 'expKernelServices' ) )
+            expKernelServices::bootWeb( $this->settings );
+
         $ini = eZINI::instance();
         $timezone = $ini->variable( 'TimeZoneSettings', 'TimeZone' );
         if ( $timezone )
@@ -162,6 +170,10 @@ class ezpKernelRest implements ezpKernelHandler
         // Now that all extensions are activated and siteaccess has been changed, reset
         // all eZINI instances as they may not take into account siteaccess specific settings.
         eZINI::resetAllInstances( false );
+        // With the compiled container applied: the container of the request has the compiled definitions, and the
+        // settings files of this siteaccess come from the worker scope, as in the web kernel
+        if ( class_exists( 'expKernelServices', false ) )
+            expKernelServices::enterSiteAccess();
 
         if( ezpRestDebug::isDebugEnabled() )
         {

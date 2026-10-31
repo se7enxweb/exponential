@@ -541,9 +541,12 @@ class expGraphQLMutationsTest extends PHPUnit\Framework\TestCase
     public function testMutationAnswersAreNeverCached()
     {
         $answer = array( 'data' => array( 'createContent' => array( 'status' => 'PUBLISHED' ) ) );
-        $this->assertFalse( expGraphQLResponseCache::storable( $answer, 'mutation { x }', false, 'mutation' ) );
+        // only query operations are kept (expGraphQLResponseCache::isQueryOperation())
+        $this->assertFalse( expGraphQLResponseCache::storable( $answer, 'mutation { x }', false ) );
         $this->assertFalse( expGraphQLResponseCache::storable( $answer, "# a stored one\nmutation M { x }", false ) );
-        $this->assertTrue( expGraphQLResponseCache::storable( $answer, '{ x }', false, 'query' ) );
+        $this->assertFalse( expGraphQLResponseCache::storable( $answer, "query Q { x }\nmutation M { x }", false, 'M' ) );
+        $this->assertTrue( expGraphQLResponseCache::storable( $answer, "query Q { x }\nmutation M { x }", false, 'Q' ) );
+        $this->assertTrue( expGraphQLResponseCache::storable( $answer, '{ x }', false ) );
     }
 
     public function testFormTokenOfASession()

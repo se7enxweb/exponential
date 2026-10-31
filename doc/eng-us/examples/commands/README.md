@@ -44,6 +44,7 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:expbackfillordersiteaccess](expbackfillordersiteaccess.md) |  | Infer the siteaccess of orders placed before ezorder.siteaccess was recorded (dry run unless --apply) |
 | [exp:expcontentjob](expcontentjob.md) |  | Run, list, resume and cancel content jobs: large subtree removes and copies in batches |
 | [exp:expfetch](expfetch.md) | exp:info, exp:about | The system card: the Exponential "e" next to the facts of this installation, its engine and its machine, with health hints (exp:info adds an inventory, exp:about the project) |
+| [exp:expgraphqlbench](expgraphqlbench.md) | exp:graphql:bench | Measure the speed of the GraphQL API against decision 18: cached GET, 304, cached POST, a cached answer through the kernel and an uncached query, N requests each, with median, p95 and max |
 | [exp:expgraphqldisable](expgraphqldisable.md) | exp:graphql:disable | Switch the GraphQL API, or only its mutations, off for every siteaccess or for some; a dry run unless --apply |
 | [exp:expgraphqlenable](expgraphqlenable.md) | exp:graphql:enable | Switch the GraphQL API on in one command: the siteaccesses, the mutations, CORS for a front end, an API key, the schema, a curl example; a dry run unless --apply |
 | [exp:expgraphqlkeys](expgraphqlkeys.md) | exp:graphql:keys | The personal API keys of the GraphQL API: list them, make one for a user (the token is shown once) or revoke one; a dry run unless --apply |

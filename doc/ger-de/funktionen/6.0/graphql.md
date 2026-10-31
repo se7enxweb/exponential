@@ -21,7 +21,7 @@ Administration. Was spätere Phasen hinzufügen, steht unter [Was als Nächstes 
 | Mutationen | aus, bis `MutationsEnabled=enabled`; dann gegen Richtlinien geprüft, mit Workflows, im Audit, nur `POST` |
 | Rechte | immer die Rollen und Richtlinien des Benutzers; die Schema-Einstellungen entscheiden, was überhaupt gefragt werden kann |
 | Administration | Setup > GraphQL (Richtlinie `graphql/playground`): die Endpunkte, das Schema, die Siteaccesses, die Grenzen, der Antwort-Cache, die gespeicherten Abfragen, die Schlüssel und ein Playground; Schalter mit `graphql/administrate` |
-| Konsole | `exp:graphql:enable`, `exp:graphql:disable`, `exp:graphql:status`, `exp:graphql:schema`, `exp:graphql:query`, `exp:graphql:persist`, `exp:graphql:keys`, `exp:graphql:starter` |
+| Konsole | `exp:graphql:enable`, `exp:graphql:disable`, `exp:graphql:status`, `exp:graphql:schema`, `exp:graphql:query`, `exp:graphql:persist`, `exp:graphql:keys`, `exp:graphql:starter`, `exp:graphql:bench` |
 | Einstellungen | [graphql.ini [GraphQLSettings]](../../beispiele/ini-einstellungen/graphql/GraphQLSettings.md), [[GraphQLNaming]](../../beispiele/ini-einstellungen/graphql/GraphQLNaming.md) |
 
 ## Inhalt
@@ -863,7 +863,9 @@ wird: in Gruppen, nicht ein Element nach dem anderen.
   einer, die verknüpften Objekte aller Beziehungsfelder einer Seite mit einer (ihre Hauptorte mit den Objekten, dann
   ihre Felder) und die URL-Aliasse einer Seite mit zwei, wie lang die Seite auch ist. Ein einmal gelesener Wert wird für
   den Rest der Anfrage aus dem Speicher beantwortet. Gemessen am Demo-Inhalt: 50 Artikel mit Bild, Eigentümer und
-  Adresse kosten 11 SQL-Anweisungen, einzeln gelesen waren es 249.
+  Adresse kosten 11 SQL-Anweisungen, einzeln gelesen waren es 249. Ein Test hält das fest
+  (`expGraphQLQueryBudgetTest`: höchstens 12 Anweisungen, und eine Seite mit 50 höchstens eine mehr als eine Seite mit
+  3); er läuft gegen eine Kopie einer Datenbank, die `GRAPHQL_BUDGET_DB` nennt.
 - **Das Schema aus einer Cache-Datei.** Die Inhaltsklassen, aus denen das Schema entsteht, werden einmal aus der
   Datenbank gelesen und in `var/<site>/cache/graphql/catalogue-*.php` gehalten, eine Datei je Siteaccess,
   Filtereinstellungen, Sprachen und Klassenänderung: Das Speichern einer Klasse (der Ablauf `class-identifier-cache`)
@@ -880,15 +882,24 @@ Abfragen](#gespeicherte-abfragen) in `var/cache/graphql/responses/`:
   Schlüssel entsteht aus der rohen Anfrage (Schema, Host, Adresse, Query-String, `X-Siteaccess`, `Origin`), und nur das
   entscheidet seine Antwort. Es zählt trotzdem gegen die anonyme Ratenbegrenzung, und eine CORS-Anfrage bekommt die
   `Access-Control-*`-Header, die `rest.ini [CorsSettings]` ihrem Origin gab, als die Antwort entstand.
-- Ein **angemeldetes `GET`** (ein OAuth-Token oder ein persönlicher API-Schlüssel) wird dort ebenfalls beantwortet,
+- Ein **`POST`** einer gespeicherten Abfrage wird dort genauso beantwortet, wenn sein JSON-Body sie nennt
+  (`{"id": "articles", "variables": {...}}` oder die `extensions` von Apollo): Der Schlüssel ist die rohe Anfrage mit der
+  gespeicherten Abfrage, den Variablen und dem Operationsnamen des Bodys (höchstens 64 KB). Ein Formular,
+  `application/graphql`, eine Ad-hoc-Abfrage oder ein Abfragetext, dessen SHA-256 nicht der genannte Hash ist, geht
+  weiter an den Kernel.
+- Ein **angemeldetes `GET` oder `POST`** (ein OAuth-Token oder ein persönlicher API-Schlüssel) wird dort ebenfalls beantwortet,
   sobald der Kernel seine Anmeldedaten geprüft hat: Der Kernel merkt sich die Rechte der Anmeldedaten (einen Hash des
   Tokens, nie das Token) für `CredentialCacheTtl` Sekunden (60) in `var/cache/graphql/credentials/` und vergisst alle
   auf einmal, wenn ein API-Schlüssel widerrufen oder entfernt wird, sich eine Rolle oder Richtlinie ändert oder die
   Benutzer-Caches aufgeräumt werden. Innerhalb dieser Sekunden liest ein auf anderem Weg widerrufenes Token noch die
   Antworten, die für seine Rechte schon gecacht sind; `CredentialCacheTtl=0` schickt jede angemeldete Anfrage durch den
   Kernel. Die Anfrage zählt gegen die Ratenbegrenzung des Benutzers oder Schlüssels.
-- Alles andere (ein `POST`, die erste Anfrage neuer Anmeldedaten) schlägt der Kernel nach, sobald der Benutzer bekannt
-  ist: nach Siteaccess, Schema-Hash, Benutzerrechten, Abfrage, Variablen und Adresse.
+- Alles andere (die erste Anfrage neuer Anmeldedaten, ein Formular-`POST`) schlägt der Kernel nach, sobald der
+  Benutzer bekannt ist, unter demselben Schlüssel, also findet die frühe Antwort, was der Kernel gespeichert hat. Ein
+  Token oder API-Schlüssel meldet die Anfrage nur für sich selbst an: keine Sitzung, kein Cookie und keine Zeile in
+  „Ihre Geräte“ je Anfrage.
+- Nur die Antwort einer **Abfrage** (query) wird behalten: Eine Mutation oder eine Subscription läuft jedes Mal, mit
+  welcher Methode auch immer.
 - **Abgelaufen** ist alles, sobald Inhalt veröffentlicht oder die View-Caches geleert werden (jeder Weg von
   `eZContentCacheManager` schreibt einen Zeitstempel in `var/cache/graphql/expired`; eine Antwort von davor ist
   veraltet), wenn sich eine Klasse ändert, wenn gespeicherte Abfragen gespeichert oder entfernt werden, nach
@@ -902,22 +913,40 @@ Abfragen](#gespeicherte-abfragen) in `var/cache/graphql/responses/`:
   `private, no-cache`. Die Anfrage-Id einer gecachten Antwort steht im Header `X-Request-Id`, nicht im Body, also ist
   der Body für jede Anfrage derselbe.
 
-Gemessen auf alpha (PHP-FPM 8.5 mit OPcache hinter nginx, 4 Worker, die Erweiterungen von alpha aktiv, der Demo-Inhalt: 50
-Artikel mit Bild, Eigentümer und Adresse, eine Antwort von 20 KB; 3 Läufe zu je 250 Anfragen (200 für die letzten zwei
-Zeilen) nacheinander, auf einem geteilten Host mit einer Last von 4 bis 6):
+**Messen Sie es** mit [`exp:graphql:bench`](../../beispiele/befehle/expgraphqlbench.md), gegen jeden Endpunkt:
+
+```bash
+./console exp:graphql:bench --url=https://example.com/api/graphql --id=articles --variables='{"limit":50}' \
+    --query-file=queries/articles.graphql --requests=200 --runs=3
+GRAPHQL_BENCH_TOKEN=<Token oder API-Schlüssel> ./console exp:graphql:bench --url=https://example.com/api/graphql --id=articles
+```
+
+Er sendet ein zwischengespeichertes `GET`, ein `304`, ein zwischengespeichertes `POST`, eine zwischengespeicherte
+Antwort, die den Kernel startet (ein Formular-`POST`, das die frühe Antwort nicht liest: was die erste Anfrage neuer
+Anmeldedaten kostet), und die Abfrage als Ad-hoc-`POST` ohne Zwischenspeicher, und gibt Median, p95 und Maximum jeder
+Zeile gegen Entscheidung 18 aus: jede zwischengespeicherte Antwort innerhalb von 33 ms (das Maximum), die Ziele 20 ms,
+dann 13 ms, für Median und p95.
+
+Damit gemessen auf dem Code von alpha (PHP-FPM 8.5 mit OPcache hinter nginx, 4 Worker, die Erweiterungen von alpha
+aktiv, eine Kopie der Datenbank von alpha mit SQLite; eine Liste von bis zu 50 Artikeln mit Bild, Eigentümer und
+Adresse; 3 Läufe zu je 200 Anfragen nacheinander, auf einem geteilten Host mit einer Last von 2,5 bis 4,5):
 
 | Anfrage | Median | p95 | Maximum |
 |---|---|---|---|
-| gecacht, anonymes `GET` | 1,6 ms | 3,0 ms | 6,6 ms |
-| gecacht, angemeldetes `GET` (Anmeldedaten bekannt) | 1,7 ms | 3,2 ms | 5,9 ms |
-| gecacht, CORS-`GET` | 1,1 ms | 2,1 ms | 3,5 ms |
-| `304 Not Modified` | 1,2 ms | 2,3 ms | 4,2 ms |
-| gecacht, aber durch den Kernel (ein `POST`, neue Anmeldedaten) | 33,0 ms | 39,9 ms | 59,2 ms |
-| nicht gecacht (eine Ad-hoc-Abfrage) | 93,0 ms | 111,7 ms | 153,4 ms |
+| gecacht, `GET` | 1,0 ms | 2,0 ms | 5,6 ms |
+| `304 Not Modified` | 0,9 ms | 1,5 ms | 3,8 ms |
+| gecacht, `POST` | 0,8 ms | 1,3 ms | 4,1 ms |
+| gecacht, angemeldet mit einem API-Schlüssel (`GET`, `POST`) | 0,8 bis 1,0 ms | 1,5 bis 2,2 ms | 7,4 bis 16,5 ms |
+| gecacht, durch den Kernel (anonym) | 15,0 ms | 19,1 ms | 27,0 ms |
+| gecacht, durch den Kernel (ein API-Schlüssel, den der Kernel prüft) | 16,0 ms | 20,4 ms | 28,0 ms in einem ruhigen Lauf |
+| nicht gecacht (eine Ad-hoc-Abfrage) | 53,8 ms | 67,2 ms | 103,7 ms |
 
-Die frühe Antwort liegt bei jeder Anfrage unter 33 ms und im Median und p95 unter 13 ms. Eine Antwort, die den Kernel
-starten muss, kostet dessen Start obendrauf (etwa 30 ms mit den Erweiterungen von alpha), also sendet ein Frontend seine
-gespeicherten Abfragen mit `GET`.
+Jede frühe Antwort liegt bei jeder Anfrage unter 33 ms und im Median und p95 unter 13 ms. Eine Antwort, die den Kernel
+starten muss, kostet etwa 15 ms: Der Kernel startet den kompilierten
+[Kernel-Service-Container](../../beispiele/ini-einstellungen/kernelservices/README.md) wie der Web-Kernel (ohne ihn
+kosten die 90 Erweiterungen von alpha weitere 14 ms), und etwa 6 ms davon braucht SQLite, um für die Verbindung sein
+Schema zu öffnen. Auf einem ausgelasteten Host kann eine einzelne Anfrage durch den Kernel noch über 33 ms kommen; die
+frühe Antwort hält ein Frontend innerhalb der Grenze, für `GET` und `POST` gleichermaßen.
 
 Nichts davon wird zwischen Anfragen behalten: Die Loader und ihr Speicher gehören zu einer Anfrage, also antwortet ein
 dauerhafter Worker ([Velocity](velocity-webserver.md)) nie aus dem Speicher einer anderen Anfrage und hält keine eigene
@@ -1070,6 +1099,7 @@ zum Schema-Hash, also sehen Clients, dass sich das Schema ändert. `exp:graphql:
 | [`exp:graphql:disable`](../../beispiele/befehle/expgraphqldisable.md) | schaltet sie aus, überall oder für `--siteaccess=`; `--mutations` schaltet nur die Mutationen aus; ein Probelauf ohne `--apply` |
 | [`exp:graphql:starter`](../../beispiele/befehle/expgraphqlstarter.md) | erzeugt ein Starter-Frontend in ein neues Verzeichnis (`--kit=html\|next\|nuxt\|astro\|expo`, `--to=`, `--endpoint=`, `--list`): die Dateien des Kits und aus dem Schema erzeugte Abfragen (das Menü, eine Seite nach URL-Alias, jedes Feld jeder Klasse), jede vorher gegen das Schema geprüft; siehe [Schritt für Schritt](../../anleitungen/graphql-schritt-fuer-schritt.md); ein Probelauf ohne `--apply` |
 | [`exp:graphql:keys`](../../beispiele/befehle/expgraphqlkeys.md) | die persönlichen API-Schlüssel mit einem GraphQL-Bereich: die Liste (`--format=text\|json`), `--create --for=<login>` (`--name`, `--scope`, `--days`; das Token wird einmal gezeigt), `--revoke=<Präfix oder ID>`; ein Probelauf ohne `--apply` |
+| [`exp:graphql:bench`](../../beispiele/befehle/expgraphqlbench.md) | misst die Geschwindigkeit eines Endpunkts an Entscheidung 18 ([Geschwindigkeit](#geschwindigkeit)): zwischengespeichertes `GET`, `304`, zwischengespeichertes `POST`, eine zwischengespeicherte Antwort über den Kernel, ohne Zwischenspeicher (`--query-file`); Median, p95 und Maximum je Zeile, PASS oder FAIL gegen die harte Grenze von 33 ms; `--format=text\|json` |
 
 ```bash
 ./console exp:graphql:status --format=json

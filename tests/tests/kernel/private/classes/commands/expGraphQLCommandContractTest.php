@@ -28,6 +28,7 @@ class expGraphQLCommandContractTest extends PHPUnit\Framework\TestCase
         'expgraphqldisable' => array( 'exp:graphql:disable' ),
         'expgraphqlkeys' => array( 'exp:graphql:keys' ),
         'expgraphqlstarter' => array( 'exp:graphql:starter' ),
+        'expgraphqlbench' => array( 'exp:graphql:bench' ),
     );
 
     /** command => its option names */
@@ -40,6 +41,7 @@ class expGraphQLCommandContractTest extends PHPUnit\Framework\TestCase
         'expgraphqldisable' => array( 'siteaccess', 'mutations', 'apply' ),
         'expgraphqlkeys' => array( 'list', 'create', 'for', 'name', 'scope', 'days', 'revoke', 'format', 'apply' ),
         'expgraphqlstarter' => array( 'kit', 'to', 'endpoint', 'list', 'apply' ),
+        'expgraphqlbench' => array( 'url', 'id', 'variables', 'query-file', 'requests', 'runs', 'rows', 'siteaccess-header', 'insecure', 'format' ),
     );
 
     /** command class => exit code constants */
@@ -52,6 +54,7 @@ class expGraphQLCommandContractTest extends PHPUnit\Framework\TestCase
         'Expgraphqldisable' => array( 'EXIT_OK' => 0, 'EXIT_ERRORS' => 1, 'EXIT_USAGE' => 2 ),
         'Expgraphqlkeys' => array( 'EXIT_OK' => 0, 'EXIT_ERRORS' => 1, 'EXIT_USAGE' => 2 ),
         'Expgraphqlstarter' => array( 'EXIT_OK' => 0, 'EXIT_ERRORS' => 1, 'EXIT_USAGE' => 2, 'EXIT_UNAVAILABLE' => 3 ),
+        'Expgraphqlbench' => array( 'EXIT_OK' => 0, 'EXIT_LIMIT' => 1, 'EXIT_USAGE' => 2, 'EXIT_UNAVAILABLE' => 3 ),
     );
 
     const ERROR_CODES = array( 'FORBIDDEN', 'NOT_FOUND', 'VALIDATION', 'PARSE', 'BAD_USER_INPUT', 'DEPTH_LIMIT', 'COMPLEXITY_LIMIT',
@@ -126,6 +129,8 @@ class expGraphQLCommandContractTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'exp-graphql-status/1', Exponential\Command\Kernel\Expgraphqlstatus::SCHEMA );
         $this->assertSame( 'exp-graphql-persisted/1', Exponential\Command\Kernel\Expgraphqlpersist::SCHEMA );
         $this->assertSame( 'exp-graphql-keys/1', Exponential\Command\Kernel\Expgraphqlkeys::SCHEMA );
+        $this->assertSame( 'exp-graphql-bench/1', Exponential\Command\Kernel\Expgraphqlbench::SCHEMA );
+        self::sameSet( array( 'get', '304', 'post', 'kernel', 'uncached' ), expGraphQLBench::ROWS, 'a row of exp:graphql:bench' );
         self::sameSet( array( 'sdl', 'json', 'summary' ), Exponential\Command\Kernel\Expgraphqlschema::FORMATS, 'a format of exp:graphql:schema' );
         self::sameSet( array( 'html', 'next', 'nuxt', 'astro', 'expo' ), expGraphQLStarter::kits(), 'a kit of exp:graphql:starter' );
         $this->assertSame( array( array( 'data.a.0', '1' ), array( 'data.a.1', 'true' ), array( 'data.b', 'null' ), array( 'data.c', '[]' ) ),

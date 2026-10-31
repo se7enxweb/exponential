@@ -56,6 +56,35 @@ class expGraphQLRestTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( ezpRestAuthConfiguration::presentsCredentials( $request ) );
     }
 
+    public function testATokenOrAKeySignsInForTheRequestOnly()
+    {
+        // no session, no cookie and no row in "Your devices" for every request of a client with a bearer credential
+        $oauth = ( new ReflectionClass( 'ezpRestOauthAuthenticationStyle' ) )->newInstanceWithoutConstructor();
+        $basic = ( new ReflectionClass( 'ezpRestBasicAuthStyle' ) )->newInstanceWithoutConstructor();
+        $before = array( ezpOauthFilter::$tokenInfo, expApiKeyAuthFilter::$key );
+        try
+        {
+            expApiKeyRest::reset();
+            ezpOauthFilter::$tokenInfo = null;
+            $this->assertFalse( ezpRestAuthConfiguration::signsInForRequestOnly( $oauth ), 'no token: the anonymous user' );
+            $this->assertFalse( ezpRestAuthConfiguration::signsInForRequestOnly( $basic ) );
+            $this->assertFalse( ezpRestAuthConfiguration::signsInForRequestOnly( null ) );
+            ezpOauthFilter::$tokenInfo = ( new ReflectionClass( 'ezpRestToken' ) )->newInstanceWithoutConstructor();
+            $this->assertTrue( ezpRestAuthConfiguration::signsInForRequestOnly( $oauth ), 'an OAuth token' );
+            $this->assertFalse( ezpRestAuthConfiguration::signsInForRequestOnly( $basic ), 'a password keeps its session' );
+            ezpOauthFilter::$tokenInfo = null;
+            expApiKeyAuthFilter::$key = new expApiKey( array( 'id' => 1, 'user_id' => 14, 'scopes' => 'graphql:read' ) );
+            $this->assertTrue( ezpRestAuthConfiguration::signsInForRequestOnly( $oauth ), 'a personal API key' );
+        }
+        finally
+        {
+            list( ezpOauthFilter::$tokenInfo, expApiKeyAuthFilter::$key ) = $before;
+        }
+        $config = file_get_contents( dirname( __DIR__, 5 ) . '/kernel/private/rest/classes/auth/auth_configuration.php' );
+        $this->assertStringContainsString( 'ezpOauthFilter::$tokenInfo = null;', $config, 'reset per request: a worker keeps statics' );
+        $this->assertStringContainsString( 'self::signsInForRequestOnly( $this->filter )', $config );
+    }
+
     public function testAKeyNeedsTheScopeGraphqlRead()
     {
         $ini = eZINI::instance( 'rest.ini' );
