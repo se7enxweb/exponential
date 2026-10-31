@@ -191,6 +191,10 @@ verschoben.
   alles Übrige. Der Baum des Kastens Lesezeichen und des Auswahldialogs (`content/bookmark_tree.tpl`) ist unverändert.
 - Das Aussehen steht im Lesezeichen-Abschnitt von `stylesheets/modules/content.css` (design/admin und design/admin4),
   in der Gestaltungssprache der Seiten für Sektionen, Linklisten und Sitzungen.
+- Ein Lesezeichen einer Systemseite behält seine Adresse (`expbookmark_view.module_uri`) und dieselbe Adresse zerlegt:
+  `module_name`, `view_name` und `view_parameters` (`expBookmarkView::parse()`). Wird ein Modul oder eine Ansicht
+  umbenannt, verschiebt `php update/common/scripts/6.0/createbookmarkviewtable.php --rename=<alt>=<neu>` die
+  Lesezeichen aller Benutzer ([Einzelheiten](../funktionen/6.0/lesezeichen-fuer-systemseiten.md#ein-modul-oder-eine-ansicht-umbenennen)).
 
 Tests, ohne Datenbank: `php vendor/bin/phpunit tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php`.
 Mit einer Installation: `php vendor/bin/phpunit tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php --filter 'testShift|testSetOrderAndMoveToPosition'`.

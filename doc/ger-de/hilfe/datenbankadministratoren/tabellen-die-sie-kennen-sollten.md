@@ -98,7 +98,7 @@ einem Objekt, mit Nachbarn und `integer_value`), `ezsearch_search_phrase` (Suchs
 | `expaudit_cursor`, `expaudit_event`, `expaudit_file` | der Audit-Index (6.0.15) |
 | `expmail_*` | E-Mail-Einstellungen, Einwilligungsprotokoll, Sperrliste (6.0.15) |
 | `expbookmark_folder` | Lesezeichenordner (6.0.15) |
-| `expbookmark_view` | die Adressen der Lesezeichen von Systemseiten (6.0.15) |
+| `expbookmark_view` | die Adressen der Lesezeichen von Systemseiten, auch zerlegt in `module_name`, `view_name` und `view_parameters` (6.0.15) |
 | `expapikey`, `ezprest_*` | persönliche API-Schlüssel, OAuth-Clients und -Tokens: Zugangsdaten, als Geheimnisse behandeln |
 | `ezrss_*`, `ezpdf_export`, `ezpackage`, `ezinfocollection*`, `ezcollab_*`, `eznotification*` | Feeds, Exporte, Pakete, Formulareinsendungen, Zusammenarbeit, Benachrichtigungen |
 
