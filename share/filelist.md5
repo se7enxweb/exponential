@@ -3844,7 +3844,7 @@ b6d8c2f2aadc2c4bcd1b4334a65ebc0f  doc/eng-us/examples/extension-points/uiswitch.
 739353e0e206c0c99411e02339e0056a  doc/eng-us/examples/extension-points/upload.md
 43ef1efbc446af32c0815832790ffe48  doc/eng-us/examples/extension-points/webdav.md
 c697443b2cb0beaf349fdd5c4e59da40  doc/eng-us/examples/extension-points/workflow.md
-b1c024bc7461eff2ad2af8072dd4966a  doc/eng-us/examples/ezpublish.conf
+ab9aa2703a744da1de0d178a2c75ae39  doc/eng-us/examples/ezpublish.conf
 477b5f2d211e002826ed1635ec5bf52c  doc/eng-us/examples/fetch-functions/README.md
 25ce910ea7fcb5532f1594686358fc71  doc/eng-us/examples/fetch-functions/apikey/README.md
 8b5bdf584f6096ee3ec75ebfddb5f5e4  doc/eng-us/examples/fetch-functions/apikey/can_create.md
@@ -6223,9 +6223,9 @@ af29e4ffd5960d68074274316272dc94  doc/eng-us/examples/web-servers/frankenphp.md
 4403ba257109fbcb658116c8f5ddb4a1  doc/eng-us/examples/web-servers/iis.md
 b712d16f225d0bbc9983833eb14ff511  doc/eng-us/examples/web-servers/litespeed-page-cache.conf
 b7d67163a6fb3a06a67ac01c6c4132e1  doc/eng-us/examples/web-servers/litespeed.md
-ed5e5903cdf2d7b808797b61ec57ffa6  doc/eng-us/examples/web-servers/nginx.conf
+8d8c41bc3658eef09a64b8f894db5d1c  doc/eng-us/examples/web-servers/nginx.conf
 05a0d3036ba605e52d5646c0eafc0183  doc/eng-us/examples/web-servers/nginx.md
-612be445e6e1b3b464241fee371b0903  doc/eng-us/examples/web-servers/openlitespeed-vhost.conf
+70cbadf16252e9234b701e9ab2346c57  doc/eng-us/examples/web-servers/openlitespeed-vhost.conf
 b463f3d46879593889bc6491f01d197e  doc/eng-us/examples/web-servers/php-fpm-pool.conf
 3f8e838591eece5a108f0cb1efcc5324  doc/eng-us/examples/web-servers/php-fpm.md
 6233301948ec4ffb5f6f988dbfbd3db9  doc/eng-us/examples/web-servers/velocity.ini.append.php.example
