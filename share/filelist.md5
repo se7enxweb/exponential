@@ -3576,11 +3576,11 @@ d3cd9752d1bc4351a0ab0729a558843f  doc/eng-us/branch-overview.md
 9aad8564171ca8a3ebbdf24d0ac878f1  doc/eng-us/doxygen/Doxyfile
 96a0cec80eb773687ca28840ecc67ca1  doc/eng-us/doxygen/empty.html
 ca85100835c4c7bfd63a2a423d377af2  doc/eng-us/examples/README.md
-f8a97040db21c805ac7e132b103eba4b  doc/eng-us/examples/commands/README.md
+66182931824ad53ecc03121cda37b1f4  doc/eng-us/examples/commands/README.md
 0416e2e6ffd13c1ea43a337855961707  doc/eng-us/examples/commands/accesscheck.md
 47d52e658c8d83c44d5cb6fae172824e  doc/eng-us/examples/commands/addanonymouspublicpolicies.md
 6d35731551f1ea3e02af6513220b0122  doc/eng-us/examples/commands/adddefaultstates.md
-199788d0ada0cebf6bbe9a8e8919ac19  doc/eng-us/examples/commands/addeditorpolicies.md
+ec84e77aab2bd873c73060b86594e0fb  doc/eng-us/examples/commands/addeditorpolicies.md
 a353eb84238c613d05c6f4b6aa2ffe81  doc/eng-us/examples/commands/addexphelpreadpolicy.md
 4187f8ffe6d0812bd77ad8d040853aef  doc/eng-us/examples/commands/addmembermanagement.md
 aec6ec05c75b20f6a4da9f1ac36f0ac3  doc/eng-us/examples/commands/addoauthauthorizepolicy.md
@@ -3809,7 +3809,7 @@ b6655c97e0f3a74544da58844180cc7e  doc/eng-us/examples/demo-mode/install-demo-sql
 cca5d7ab779676279104a95fbfe62288  doc/eng-us/examples/demo-mode/nginx-fastcgi-demo.conf
 85231412f69ddf5584dc88af3b27095c  doc/eng-us/examples/demo-mode/php-fpm-pool-demo.conf
 b8b3d6b9a764ca22e43f9f52beb3610d  doc/eng-us/examples/demo-mode/velocity-demo-mode.conf
-dce41adeef1a5e6c9933d2a2fa14361c  doc/eng-us/examples/extension-points/README.md
+ce564603fe160fdaf01c13207386368c  doc/eng-us/examples/extension-points/README.md
 7f5c75fe36346ae0f6daa7de74fb143d  doc/eng-us/examples/extension-points/audit.md
 c2cafe9e2e4dc86fd5103ebc3fca26e9  doc/eng-us/examples/extension-points/binaryfile.md
 1b96f43cb4223bfc1de6851f90da4945  doc/eng-us/examples/extension-points/bookmark.md
@@ -3821,6 +3821,7 @@ d9ce67f59a1067ed37c4428388720442  doc/eng-us/examples/extension-points/contentch
 d74acd097bb17baeb20d6a0ced1ece65  doc/eng-us/examples/extension-points/cronjob.md
 2d6263f4c2f4eafe63179df54d1936f2  doc/eng-us/examples/extension-points/datatable.md
 545cf1376bad2965568355525587de6a  doc/eng-us/examples/extension-points/dbschema.md
+23555d0c09e638f946617e39058f9d59  doc/eng-us/examples/extension-points/editorpolicies.md
 890e9e952deb4fc6c6f45b4ebe06974c  doc/eng-us/examples/extension-points/error.md
 a090f7621b9765b48b6641c19b12e370  doc/eng-us/examples/extension-points/exphelp.md
 2e8437ad41c78c73860de850ce28637f  doc/eng-us/examples/extension-points/expservices-expservices.md
@@ -4065,7 +4066,7 @@ d8ecf8a36f51610f9879784a8776ab80  doc/eng-us/examples/fetch-functions/user/membe
 e2a0d933b995c654fb8d0b0d61460b08  doc/eng-us/examples/fetch-functions/workflow/workflow_type_statuses.md
 afabb952a48810ef8ebb35f166d11f22  doc/eng-us/examples/hooks/template-check-pre-commit.sh
 5fd72660cc5c80f159ea936f0d72133b  doc/eng-us/examples/htaccess
-e75a032cd4c6639d6caf5db674ff0d36  doc/eng-us/examples/ini-settings/README.md
+b67acbb4bcf1bbe50989488e71208256  doc/eng-us/examples/ini-settings/README.md
 6522da4a85b1b6fbd3b3c71c41603590  doc/eng-us/examples/ini-settings/admininterface/AdditionalMenuSettings.md
 00dd82562f4f4fcb17497b31e0f32f2f  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_audit.md
 1982ccc2ae500e3049741b22912053c6  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_datatable.md
@@ -4588,6 +4589,9 @@ aeaa8789f4b7c0334307601785d5b464  doc/eng-us/examples/ini-settings/design/Extens
 76864c5430ea93e6860596b1b2cce0d4  doc/eng-us/examples/ini-settings/design/JavaScriptSettings.md
 5d254afce9afd8773528f2c2785bd85c  doc/eng-us/examples/ini-settings/design/README.md
 ca80bc9f7f3588e5a96db2a49823efa3  doc/eng-us/examples/ini-settings/design/StylesheetSettings.md
+cebd1ec6ad7b76a34d83e514012432ad  doc/eng-us/examples/ini-settings/editorpolicies/ClassSet_media_site.md
+d483e7a0f8cd239df09334d74157fde1  doc/eng-us/examples/ini-settings/editorpolicies/EditorPolicySettings.md
+1498db026d2a5af9819719acfaeadbd8  doc/eng-us/examples/ini-settings/editorpolicies/README.md
 bc98cafa5bf61e8c587d94f1df7a1f22  doc/eng-us/examples/ini-settings/error/ErrorSettings-kernel.md
 a36780fe13ae992b963bc3601cd8bb86  doc/eng-us/examples/ini-settings/error/ErrorSettings-shop.md
 e45536cc3c8050a57d8ce40eadd271c9  doc/eng-us/examples/ini-settings/error/ErrorSettings.md
@@ -12810,7 +12814,7 @@ bad2519096e06e1dde4533665f591654  doc/eng-us/standards/php-and-composer.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 c236d7bae15abdc10e2882296b38e818  doc/eng-us/translation-waves.md
 fe7287e9e15faec9246eaa532ab45c7e  doc/ger-de/.dirnames.json
-e674a6b7b0baba552e23cf76a23c1eb3  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
+25867792cc1baa4f05cba3bbd13a860f  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
 de686b8d700cc7766d927e28537101f7  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
 12320733ddd4b1155b033ddcff05c221  doc/ger-de/.examples/descriptions/04-ini-settings-admininterface-ini-additionalmenusettings-.json
@@ -12835,10 +12839,11 @@ f45a78a78b0190153b1ea14d27b8799c  doc/ger-de/.examples/descriptions/14-twig-ini-
 11d317a9fffe4afd4e34805f014c6bd1  doc/ger-de/.examples/descriptions/17-graphql-bench-2026-10-30.json
 45c95355f2a63e43c2d843c62d7b0767  doc/ger-de/.examples/descriptions/18-graphql-api-setup-2026-10-30.json
 94bc98a826c7352b502724c0c179fb24  doc/ger-de/.examples/descriptions/19-graphql-api-starter-2026-10-30.json
+4b3123282c26437cef7e45cb65269a22  doc/ger-de/.examples/descriptions/20-editor-role-class-sets-2026-10-30.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-20a6295f30eb88a8d488fddd7e6aac99  doc/ger-de/.paths.json
+11b523b2fa4cb72ba170a66848302f80  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
@@ -13060,11 +13065,11 @@ a0a8364c2f555c71637fa962fe98910d  doc/ger-de/bc/6.0/vertrauenswuerdige-proxys.md
 1f6ee4c60a711526c9cd31416441a991  doc/ger-de/bc/6.0/zugriff-auf-entwuerfe.md
 87bcef5fa01d68c26dfd2cb9e2021c07  doc/ger-de/bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md
 a3dcf55e730c5618d14fc3750baee71e  doc/ger-de/beispiele/README.md
-aa27d0326fd8f9d77e5b6660a705a70a  doc/ger-de/beispiele/befehle/README.md
+2dbf59f11bb0ce30a330e3f9a2b870bd  doc/ger-de/beispiele/befehle/README.md
 fb78cc24f28e4e7e208a831fc04c7de3  doc/ger-de/beispiele/befehle/accesscheck.md
 e5b188fae769a1201a72f50d98683190  doc/ger-de/beispiele/befehle/addanonymouspublicpolicies.md
 1b32eaf6f85858eaa99ca055cddccb7a  doc/ger-de/beispiele/befehle/adddefaultstates.md
-ca97cf06d2d49392060cee5055c8f447  doc/ger-de/beispiele/befehle/addeditorpolicies.md
+b69d89779cbdaeef87b96a5b78cfc26b  doc/ger-de/beispiele/befehle/addeditorpolicies.md
 ba6f6c82e2400fa767f852bb2fb37bb5  doc/ger-de/beispiele/befehle/addexphelpreadpolicy.md
 e33d80436822bf5ec26da303cc28a959  doc/ger-de/beispiele/befehle/addmembermanagement.md
 a75abe4b8741d1747503fc0e0155b2fc  doc/ger-de/beispiele/befehle/addoauthauthorizepolicy.md
@@ -13270,7 +13275,7 @@ b029afb37c9ff1b5c013628114d1d7b6  doc/ger-de/beispiele/datentypen/ezurl.md
 740888a57dd1953e7c47aad0aa957ea0  doc/ger-de/beispiele/datentypen/ezuser.md
 506914e9196030f94b7e99a7d94b5133  doc/ger-de/beispiele/datentypen/ezxmltext.md
 216d0c35472bc8341413a1f9a10b48dd  doc/ger-de/beispiele/demomodus/README.md
-f96d7bd80036575c0a6735268d735037  doc/ger-de/beispiele/erweiterungspunkte/README.md
+25cd18c66360fb85cd33616a45aa5cf0  doc/ger-de/beispiele/erweiterungspunkte/README.md
 04c376153257da53903a202daf6c8ad0  doc/ger-de/beispiele/erweiterungspunkte/audit.md
 e34329194560e142b7bd6d21a0cbb109  doc/ger-de/beispiele/erweiterungspunkte/binaryfile.md
 796effd13e93fc30735b2d7b626710e3  doc/ger-de/beispiele/erweiterungspunkte/bookmark.md
@@ -13282,6 +13287,7 @@ a170c3d915c719e93bdeccacc5055a4b  doc/ger-de/beispiele/erweiterungspunkte/conten
 89d1f0a705dcd77f3a638617b31ee809  doc/ger-de/beispiele/erweiterungspunkte/cronjob.md
 d124e93bf8abde17733d97f42306254d  doc/ger-de/beispiele/erweiterungspunkte/datatable.md
 67c2285633897ea34be703ee2370dc3f  doc/ger-de/beispiele/erweiterungspunkte/dbschema.md
+f1f734879bf0215b8885a4c69ce52233  doc/ger-de/beispiele/erweiterungspunkte/editorpolicies.md
 8a05dc4fbfd1d30f5795d8975e131b91  doc/ger-de/beispiele/erweiterungspunkte/error.md
 389eec56bf0badeb0bc123770d3f2b0c  doc/ger-de/beispiele/erweiterungspunkte/exphelp.md
 119653f7f4832fe22ed306e913a16cd0  doc/ger-de/beispiele/erweiterungspunkte/expservices-expservices.md
@@ -13523,7 +13529,7 @@ f6cef0867c4076eae774a91ce3f812cb  doc/ger-de/beispiele/fetch-funktionen/user/use
 8383861c182b6605aac7f6f6d7819b37  doc/ger-de/beispiele/fetch-funktionen/workflow/README.md
 c747569ce52d239c1f42255fd4fd9d7a  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_statuses.md
 410651a2685ea7f1a673cc9a58b14277  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_type_statuses.md
-f5ee0f8f62ab8519e610d7ad6ff2f982  doc/ger-de/beispiele/ini-einstellungen/README.md
+49bdeccca6cbd2c35a8a571f1379b1a6  doc/ger-de/beispiele/ini-einstellungen/README.md
 88a9e6f3da744f06b838a30f640c9750  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalMenuSettings.md
 61b7500c6da46b1684d61841b2c0b331  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_audit.md
 da8522f9eb603cff06146203b11e3431  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_datatable.md
@@ -14046,6 +14052,9 @@ e3940b0d2f5f13795815d47aa4cce528  doc/ger-de/beispiele/ini-einstellungen/design/
 5fbcf73f41e3ce99de73cc5b2a0cc826  doc/ger-de/beispiele/ini-einstellungen/design/JavaScriptSettings.md
 dc90116c2e342986eb885ad4636bff8d  doc/ger-de/beispiele/ini-einstellungen/design/README.md
 2c07506150593d1d23f4c40fc57dab16  doc/ger-de/beispiele/ini-einstellungen/design/StylesheetSettings.md
+3b893092ee121d4d6751f823e79de62d  doc/ger-de/beispiele/ini-einstellungen/editorpolicies/ClassSet_media_site.md
+52840842dc6fbd2521c2dd1953ead042  doc/ger-de/beispiele/ini-einstellungen/editorpolicies/EditorPolicySettings.md
+2f874c6e2e086cf67eb2ad6f77456e98  doc/ger-de/beispiele/ini-einstellungen/editorpolicies/README.md
 7f8cd85622b4751f97f1fb60a3e5d062  doc/ger-de/beispiele/ini-einstellungen/error/ErrorSettings-kernel.md
 60bc7b7ad819e69c0c0af6df3bd688d3  doc/ger-de/beispiele/ini-einstellungen/error/ErrorSettings-shop.md
 d8357a4c11a7b9acd83d26fe18b3342d  doc/ger-de/beispiele/ini-einstellungen/error/ErrorSettings.md

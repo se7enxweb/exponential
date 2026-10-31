@@ -42,6 +42,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [debug.ini](debug/README.md) | Kernel | 2 |
 | [debugbar.ini](debugbar/README.md) | Kernel | 42 |
 | [design.ini](design/README.md) | Kernel | 5 |
+| [editorpolicies.ini](editorpolicies/README.md) | Kernel | 2 |
 | [error.ini](error/README.md) | Kernel | 7 |
 | [exphelp.ini](exphelp/README.md) | Kernel | 69 |
 | [extendedattributefilter.ini](extendedattributefilter/README.md) | Kernel | 0 |
