@@ -4,7 +4,7 @@ audience: ecosystem, developer, partner, advocate
 category: ecosystem
 order: 35
 summary: The PHP projects the Exponential ecosystem stands on and gives back to - PHP, Composer, Zeta Components, Symfony, Twig, Doctrine, Netgen's projects, the Qbix web server, AdminNeo and the front-end libraries - what each is used for, the forks 7x maintains, and how to treat upstream projects respectfully.
-keywords: upstream, forks, Zeta Components, Symfony, Twig, Doctrine, Netgen Layouts, Media Site, Qbix, AdminNeo, jQuery, TinyMCE, give back, pull requests upstream
+keywords: upstream, forks, Zeta Components, Symfony, Twig, Doctrine, Media Site, Qbix, AdminNeo, jQuery, TinyMCE, give back, pull requests upstream
 type: help
 ---
 # Upstream projects and forks
@@ -23,7 +23,7 @@ type: help
 | Composer and Packagist | Installation of the kernel and every extension | 219 packages published by se7enxweb | `composer.json`, Packagist |
 | Zeta Components | The kernel's libraries (cache, database, feed, image conversion ...) | "Forked and patched 47+ Zeta Components repos"; "14 security PRs submitted upstream to zetacomponents" | se7enxweb profile README |
 | Symfony, Twig, Doctrine | The platform line | Maintained forks for PHP 8.4 and 8.5 | [The Exponential platform ecosystem](../../../history/ecosystem.md) |
-| Netgen Layouts, Media Site, Site API | Exponential Layouts and Nexus | Ports to the Exponential kernel; a fork of layouts-core | `README.md` |
+| Upstream layouts packages, Media Site, Site API | Exponential Layouts and Nexus | Ports to the Exponential kernel; a fork of layouts-core | `README.md` |
 | Qbix web server | The engine of Velocity | A production server built on it | Velocity README |
 | AdminNeo | The database source editor | | [sevenx_dse](../../../features/6.0/extensions/sevenx_dse.md) |
 | jQuery, TinyMCE, Bootstrap Icons | The administration's scripts, editor and icons | | [October 2026](../../../history/2026/2026-10.md) |

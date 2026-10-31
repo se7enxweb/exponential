@@ -295,7 +295,7 @@ publishing, media portals, intranets, e-commerce and extranets" (<https://expone
 | Multisite | Several sites from one installation, each a siteaccess with its own host, path, language and design | [Siteaccess host and language matching](../features/6.0/siteaccess-host-and-language-matching.md), [Multi-site settings](../features/6.0/multi-site-ini-overrides.md) |
 | Multilingual | 368 locale files (361 languages and countries) as content languages; administration translations (the current totals are at the top of the languages page) in `share/translations`, English included | [Languages in Exponential](../languages.md) |
 | Right to left | `dir="rtl"` in content and in the administration for right-to-left languages | [Right to left](../features/6.0/right-to-left.md) |
-| Page building | Exponential Layouts: layouts, zones, blocks and rules, a port of the Netgen Layouts concept | README, "Exponential Layouts"; [The layouts editor](layouts-editor.md) |
+| Page building | Exponential Layouts: layouts, zones, blocks and rules, a port of the concept of the upstream layouts packages | README, "Exponential Layouts"; [The layouts editor](layouts-editor.md) |
 | Writing assistance | Exponential Intelligence (`expai`): writes drafts, never publishes on its own, hosted providers in the US or the EU or a local model | [Exponential Intelligence](../features/6.0/extensions/expai.md) |
 | Security | A Content Security Policy in the administration, two-step sign-in, a tamper-evident audit trail, hardening guides | [Content Security Policy](../features/6.0/content-security-policy.md), [Audit trail](../features/6.0/audit-trail.md), [Security hardening](security-hardening.md) |
 | Help | This help system: the repository's own documentation, searchable, by audience, with context help on every page | [Help system](../features/6.0/help-system.md) |
@@ -367,7 +367,7 @@ feature lists.
 | **Exponential Platform Legacy** (`exponential-platform-legacy`) | "eZ Platform (+Legacy) distribution": the Symfony platform plus the legacy bridge and `se7enxweb/exponential` | Yes |
 | **Exponential Platform Nexus** (`exponential-platform-nexus`) | "Platform v2/v3/v4/v5 + Exponential v6.x (Legacy) + Netgen Media Site + NG Layouts", with a demo site; requires `netgen/layouts-ui` and `se7enxweb/exponential` | Yes |
 | **Exponential Platform DXP** (`exponential-platform-dxp`) | "A meta package for installing 7x Exponential Platform DXP": Symfony only, with the admin UI, content forms, REST, GraphQL and GraphiQL, HTTP cache, Solr and core search, rich text, matrix and query field types, notifications, messenger, cron and JWT; of the layouts packages it requires only `se7enxweb/layouts-core` | No |
-| **Nexus starter** (`exponential-platform-nexus-starter`) | A ready-to-run Nexus installation built on the DXP package, with Netgen Layouts and the media site data | No |
+| **Nexus starter** (`exponential-platform-nexus-starter`) | A ready-to-run Nexus installation built on the DXP package, with Exponential Layouts and the media site data | No |
 
 The DXP does not ship a layouts editor, an approval workflow, a scheduler or the legacy kernel: its requirements
 contain none of them. When an existing Exponential site has to move forward step by step, the dual-kernel
@@ -434,8 +434,8 @@ come from se7enxweb, [ekked](https://github.com/ekked), [fwoldt](https://github.
 
 Exponential names the companies whose open source work it builds on:
 
-- **Netgen**: Exponential Layouts brings "the Netgen Layouts concept to the Exponential kernel" (README); the Nexus
-  distribution is built on Netgen Media Site and Netgen Layouts; the `se7enxweb/exponential` repository is a GitHub
+- **Netgen**: Exponential Layouts brings "the concept of the upstream layouts packages to the Exponential kernel" (README); the Nexus
+  distribution is built on Netgen Media Site and the upstream layouts packages; the `se7enxweb/exponential` repository is a GitHub
   fork of `netgen/ezpublish-legacy`.
 - **Mugo Web**: their LoveStack improvements were rebuilt in 6.0.15 "with full credit to Mugo Web" (README,
   "Exponential Distribution Integration: LoveStack").

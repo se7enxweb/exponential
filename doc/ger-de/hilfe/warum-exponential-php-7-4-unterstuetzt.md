@@ -40,7 +40,7 @@ PHP 7.4 kommt darunter hinzu und ersetzt nichts.
 |---|---|
 | Welche PHP-Versionen? | Unterstützt: 8.0 bis 8.5. Ohne Support nutzbar: 7.4. `composer.json` deklariert `"php": "^7.4 \|\| ^8.0 \|\| ... \|\| ^8.8"`; Versionen nach 8.5 gibt es noch nicht, sie sind nicht getestet. |
 | Was ist unter 7.4 ohne Support nutzbar? | Der ganze Kernel: Inhalte, die Administrations- und Redaktionsoberfläche, Templates, die REST-API, SOAP, WebDAV, Cronjobs, die Suche, der Setup-Assistent und `exp:install` sowie die mit dem Kernel ausgelieferten Erweiterungen. |
-| Was braucht PHP 8? | Exponential Velocity (8.0), Netgen Layouts und die Mediensite (8.1) sowie einige Erweiterungen, deren Releases 8.0 brauchen. Die [Tabelle](#was-unter-php-74-funktioniert-und-was-php-8-braucht) nennt jede einzeln. |
+| Was braucht PHP 8? | Exponential Velocity (8.0), Exponential Layouts und die Mediensite (8.1) sowie einige Erweiterungen, deren Releases 8.0 brauchen. Die [Tabelle](#was-unter-php-74-funktioniert-und-was-php-8-braucht) nennt jede einzeln. |
 | Muss ich Pakete von Hand wählen? | Nein. Der Kernel verlangt das Metapaket `se7enxweb/exponential-php-floor`; Composer installiert die Version, die zu Ihrem PHP passt, und mit ihr die richtigen Pakete. |
 | Ist PHP 7.4 sicher? | PHP 7.4 erhält seit dem 28. November 2022 keine Sicherheitskorrekturen des PHP-Projekts mehr. Es ist nur dort sicher, wo Ihr Betriebssystemhersteller oder Hoster es weiter pflegt. Siehe [Wie die Sicherheit gewahrt bleibt](#wie-die-sicherheit-gewahrt-bleibt). |
 | Was heißt „ohne Support“? | Keine Zusage für Fehler- oder Sicherheitskorrekturen, die nur PHP 7.4 betreffen; ein Problem, das nur unter 7.4 auftritt, kann unbehoben bleiben. Sie nutzen es auf eigenes Risiko. |
@@ -86,7 +86,7 @@ unter PHP 7.4 das letzte Release derselben Linie, das dort noch läuft; unter PH
 | Der eingebaute Server von PHP (`exp:velocity start --engine=php`) | ja | ja | ja | ja |
 | Exponential Velocity, der Anwendungsserver (`--engine=qbix`) | nein: `exp:velocity start` lehnt mit einer Meldung ab | ja | ja | ja |
 | FrankenPHP-Engine | bringt ihr eigenes PHP 8 mit | ja | ja | ja |
-| Netgen Layouts (`explayouts` und seine Pakete), die expsite-Pakete, das Theme der Mediensite | nein | nein | ja | ja |
+| Exponential Layouts (`explayouts` und seine Pakete), die expsite-Pakete, das Theme der Mediensite | nein | nein | ja | ja |
 | Zwei-Faktor-Authentifizierung (`sevenx_authentication_2fa`) | nein | ja | ja | ja |
 | `exp_adminui`, `expai`, `expqueue`, `exp_enhanced_link`, `expchangeclass`, `cjw_themes_jumper`, `cjw_tmv` | nein | ja | ja | ja |
 | `sqliimport` 2.x, `ezodf` 7.x, `ezownerchange` 1.4 | nein | ja | ja | ja |
@@ -138,7 +138,7 @@ wenigen ab, die der Kernel darüber hinaus braucht.
 |---|---|---|
 | 1.0.1 | 7.4 (ohne Support nutzbar) | die letzten Releases für PHP 7.4 der Linien, die zu PHP 8 gewechselt sind (eztags ~2.4.23, cjw_newsletter ~4.2.14, syndication ~1.3.10, bccie ~1.1.18, git_manager ~2.0.22) und google/recaptcha ~1.2.4; 1.0.0 verlangte auch xrowextract und sevenx_dse, deren Code unter 7.4 nicht läuft |
 | 1.1.0 | 8.0 | die Erweiterungen, die PHP 8.0 brauchen, einschließlich Velocity, und google/recaptcha ~1.3.1 |
-| 1.2.0 | 8.1 bis 8.3 | alles aus 1.1.0, dazu Netgen Layouts, die expsite-Pakete und das Theme der Mediensite; google/recaptcha ~1.3.1 |
+| 1.2.0 | 8.1 bis 8.3 | alles aus 1.1.0, dazu Exponential Layouts, die expsite-Pakete und das Theme der Mediensite; google/recaptcha ~1.3.1 |
 | 1.3.0 | 8.4 und neuer | dieselbe Auswahl mit dem aktuellen google/recaptcha 2.x |
 
 Composer installiert immer die höchste Version, deren PHP-Anforderung das laufende PHP erfüllt. Das Ergebnis: Dasselbe

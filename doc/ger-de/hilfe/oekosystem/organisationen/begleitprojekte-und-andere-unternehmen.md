@@ -21,7 +21,7 @@ Aus [Mitwirkende und Freunde des Projekts](../../wer-ist-7x.md#mitwirkende-und-f
 
 | Unternehmen | Seine Arbeit im Ökosystem |
 |---|---|
-| Netgen | Exponential Layouts bringt "the Netgen Layouts concept to the Exponential kernel", das Konzept von Netgen Layouts in den Kernel; Nexus baut auf Netgen Media Site und Netgen Layouts auf; das Repository `se7enxweb/exponential` ist ein GitHub-Fork von `netgen/ezpublish-legacy` |
+| Netgen | Exponential Layouts bringt "the concept of the upstream layouts packages to the Exponential kernel", das Konzept der Upstream-Layouts-Pakete in den Kernel; Nexus baut auf Netgen Media Site und den Upstream-Layouts-Paketen auf; das Repository `se7enxweb/exponential` ist ein GitHub-Fork von `netgen/ezpublish-legacy` |
 | Mugo Web | Ihre LoveStack-Verbesserungen wurden in 6.0.15 neu gebaut, "with full credit to Mugo Web", mit voller Nennung von Mugo Web |
 | CJW Network | `cjw_newsletter`, die CJW-Variante von Nexus und request-shield |
 | eZ Systems | Der ursprüngliche Hersteller, dessen Copyright von 1999 bis 2014 im Code bleibt; Exponential "is not associated with", ist also nicht mit ihm verbunden (`README.md`) |

@@ -94,7 +94,7 @@ Schemaschritte, kostet aber das Schreiben des Importers und den Verlust der Vers
 | TPL-Templates, Overrides | Twig-Templates, Konfiguration der Inhaltsansichten in YAML (von Hand neu geschrieben, [17.5](../17-migrationsreferenz.md#175-templates-tpl-und-twig)) |
 | INI-Einstellungen | YAML-Konfiguration ([17.4](../17-migrationsreferenz.md#174-einstellungen-ini-und-yaml)) |
 | Extensions, Module | Symfony-Bundles, Controller |
-| Exponential Layouts | in DXP nicht vorhanden; bauen Sie die Seiten neu auf oder nutzen Sie Nexus für Netgen Layouts |
+| Exponential Layouts | in DXP nicht vorhanden; bauen Sie die Seiten neu auf oder nutzen Sie Nexus für Exponential Layouts auf Symfony |
 | URL-Aliase | dieselben Aliase, neu erzeugt durch den Plattform-Befehl (`ibexa:urls:regenerate-aliases` beim Hersteller, [17.9](../17-migrationsreferenz.md#179-werkzeuge-für-migration-und-upgrade)) |
 | REST v1/v2 von `ezprestapi` | REST v2 der Plattform (andere Routen und Medientypen); Clients müssen angepasst werden |
 | Velocity, SQLite, MongoDB, Oracle | ein Webserver mit PHP-FPM; MySQL/MariaDB oder PostgreSQL (SQLite in den Startern) |

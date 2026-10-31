@@ -78,7 +78,7 @@ are (`ibexa/rest`, `ibexa/graphql` and more).
 |---|---|---|
 | **Exponential Platform DXP** | Platform v5 only, Symfony 7.4 | A new Symfony project, no Exponential 6 kernel |
 | Exponential Platform Legacy | Symfony platform plus the Exponential 6 kernel (dual kernel) | You keep an Exponential 6 site and add Symfony beside it |
-| Exponential Platform Nexus | A finished site with Netgen Layouts; the v5 lines without the legacy kernel, the earlier lines with it | You want a complete demo site fast |
+| Exponential Platform Nexus | A finished site with Exponential Layouts; the v5 lines without the legacy kernel, the earlier lines with it | You want a complete demo site fast |
 | Exponential 6 | The PHP CMS kernel itself, no Symfony | A CMS on PHP only |
 
 The full comparison is on [Choosing DXP, Legacy, Nexus or Exponential 6](choosing-dxp-legacy-nexus-or-exponential-6.md).

@@ -165,7 +165,7 @@ Die Quellen erwähnen andere Unternehmen sachlich. Behalten Sie diesen Ton bei.
 |---|---|---|
 | eZ Systems | Entwickler von eZ Publish; sein Copyright von 1999 bis 2014 bleibt im Code | Nur als Geschichte und in Copyright-Vermerken nennen |
 | Ibexa, eZ Platform, Ibexa DXP OSS | Die auf Symfony basierenden Nachfolger von eZ Publish; das Produkt wurde „At the specific request of Ibexa“ umbenannt, auf ausdrücklichen Wunsch von Ibexa | Nur sachliche Aussagen; keine Vergleiche über das hinaus, was die Quellen sagen ([Exponential sachlich vergleichen](exponential-sachlich-vergleichen.md)) |
-| Netgen | Exponential Layouts bringt „the Netgen Layouts concept to the Exponential kernel“, also das Konzept von Netgen Layouts in den Kernel von Exponential | Nennen Sie sie, wo ihre Arbeit verwendet wird |
+| Netgen | Exponential Layouts bringt „the concept of the upstream layouts packages to the Exponential kernel“, also das Konzept der Upstream-Layouts-Pakete in den Kernel von Exponential | Nennen Sie sie, wo ihre Arbeit verwendet wird |
 | Mugo Web | Funktionen von LoveStack wurden „with full credit to Mugo Web“ nachgebaut, unter voller Nennung von Mugo Web | Nennen Sie sie |
 | CJW Network | `cjw_newsletter`, request-shield | Nennen Sie sie; request-shield ist „a project of CJW Network ... not of the Foundation“, ein Projekt von CJW Network und nicht der Foundation |
 

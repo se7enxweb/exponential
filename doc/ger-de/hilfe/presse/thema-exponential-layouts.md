@@ -3,8 +3,8 @@ title: "Thema: Exponential Layouts, der Seitenbaukasten"
 audience: press
 category: press-media
 order: 53
-summary: Ein Themenbeitrag über Exponential Layouts, den visuellen Seitenbaukasten, der das Konzept von Netgen Layouts in den Exponential-Kernel bringt - Layouts, Zonen, Blöcke, Regeln und gemeinsame Layouts - mit druckbaren Fakten, der Nennung von Netgen, was Sie nicht behaupten sollten und Ideen für Überschriften.
-keywords: Thema, Exponential Layouts, explayouts, Seitenbaukasten, Layouts, Zonen, Blöcke, Regeln, gemeinsame Layouts, Netgen Layouts, Presse, story, page builder, layouts, zones, blocks, rules, shared layouts, press
+summary: Ein Themenbeitrag über Exponential Layouts, den visuellen Seitenbaukasten, der das Konzept der Upstream-Layouts-Pakete in den Exponential-Kernel bringt - Layouts, Zonen, Blöcke, Regeln und gemeinsame Layouts - mit druckbaren Fakten, der Nennung von Netgen, was Sie nicht behaupten sollten und Ideen für Überschriften.
+keywords: Thema, Exponential Layouts, explayouts, Seitenbaukasten, Layouts, Zonen, Blöcke, Regeln, gemeinsame Layouts, Presse, story, page builder, layouts, zones, blocks, rules, shared layouts, press
 type: help
 ---
 # Thema: Exponential Layouts, der Seitenbaukasten
@@ -26,7 +26,7 @@ Aussagen, die Sie vermeiden sollten.
 
 ## Das Thema in einem Absatz
 
-„Exponential Layouts ist ein visueller Seitenbaukasten für Exponential. Er bringt das Konzept von Netgen Layouts in den
+„Exponential Layouts ist ein visueller Seitenbaukasten für Exponential. Er bringt das Konzept der Upstream-Layouts-Pakete in den
 Exponential-Kernel: Ein **Layout** ist eine gespeicherte Anordnung von **Blöcken** in **Zonen**, und eine **Regel**
 entscheidet, welche Seiten es bekommen, sodass Redakteure Seiten umstellen, ohne Templates anzufassen“
 ([README, Exponential Layouts](https://github.com/se7enxweb/exponential/blob/main/README.md#exponential-layouts-revolutionary)).
@@ -62,8 +62,8 @@ Die Linie 6.0.15 ist in Entwicklung und nicht veröffentlicht.
 
 ## Ehre, wem Ehre gebührt
 
-Exponential Layouts überträgt das **Konzept** von Netgen Layouts auf den Exponential-Kernel. Nennen Sie Netgen, wenn
-Sie es beschreiben: „Es bringt das Konzept von Netgen Layouts zu Exponential.“ Nennen Sie das Produkt nicht „Netgen
+Exponential Layouts überträgt das **Konzept** der Upstream-Layouts-Pakete auf den Exponential-Kernel. Nennen Sie die Upstream-Pakete, wenn
+Sie es beschreiben: „Es bringt das Konzept der Upstream-Layouts-Pakete zu Exponential.“ Nennen Sie das Produkt nicht „Netgen
 Layouts für Exponential“; es hat seinen eigenen Namen
 ([Gesprächspunkte: Exponential Layouts](../fuersprecher/gespraechspunkte-exponential-layouts.md#ehre-wem-ehre-gebührt)).
 Netgen ist ein eigenständiges Unternehmen; die Quellen beschreiben keine Unterstützung durch Netgen, also deuten Sie

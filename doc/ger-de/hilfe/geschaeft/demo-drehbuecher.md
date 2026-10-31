@@ -91,7 +91,7 @@ und dass die Hilfe eingebaut ist.
 | 0:40 | Einen Ordner im Baum öffnen, **Bearbeiten** drücken | „Jede Bearbeitung beginnt mit einem Entwurf. Die Site zeigt weiter die veröffentlichte Version, bis Sie veröffentlichen.“ |
 | 1:20 | Den **Short name** ändern, **Vorschau** drücken, die Schaltfläche für die Telefonbreite drücken | „Vor dem Veröffentlichen sehen Sie die Seite in der Breite eines Telefons, eines Tablets und eines Desktops.“ |
 | 2:00 | **Zurück zur Bearbeitung**, **Zur Veröffentlichung schicken** | „Beim Veröffentlichen bleibt die frühere Version erhalten. Sie können jederzeit zurück.“ |
-| 2:30 | Tab **Layouts**, **Layouts**, **Öffnen** bei einem Layout | „Hier ordnen Redakteure Seiten an: Zonen und darin Blöcke. Exponential Layouts bringt das Konzept von Netgen Layouts zu Exponential.“ (`README.md`) |
+| 2:30 | Tab **Layouts**, **Layouts**, **Öffnen** bei einem Layout | „Hier ordnen Redakteure Seiten an: Zonen und darin Blöcke. Exponential Layouts bringt das Konzept der Upstream-Layouts-Pakete zu Exponential.“ (`README.md`) |
 | 3:10 | Einen Block anklicken | „Seine Einstellungen stehen rechts: was er zeigt und wie er aussieht.“ |
 | 3:40 | **Discard**, bestätigen | „Das war ein Entwurf. Wenn Sie ihn verwerfen, bleibt die veröffentlichte Seite genau so, wie sie war.“ |
 | 4:10 | Die Schaltfläche **Hilfe** in der Kopfzeile drücken | „Die Hilfe ist eingebaut. Die Schaltfläche Hilfe öffnet die Seite, die zu dem Bildschirm gehört, auf dem Sie gerade sind.“ ([Hilfesystem](../../funktionen/6.0/hilfesystem.md)) |

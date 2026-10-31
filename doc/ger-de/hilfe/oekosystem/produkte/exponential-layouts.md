@@ -3,15 +3,15 @@ title: Exponential Layouts im Ökosystem
 audience: ecosystem, editor, designer, developer
 category: ecosystem
 order: 13
-summary: Der Platz von Exponential Layouts im Ökosystem - der visuelle Seitenbaukasten, der das Konzept von Netgen Layouts in den Kernel von Exponential bringt, seine Pakete, für wen er ist, wie er sich zu Nexus und der DXP verhält und wo Sie mehr lesen.
-keywords: Exponential Layouts, Seitenbaukasten, Layouts, Zonen, Blöcke, Regeln, Netgen Layouts, explayouts, Nexus, DXP, Redakteure, Designer, page builder, zones, blocks, rules, editors, designers
+summary: Der Platz von Exponential Layouts im Ökosystem - der visuelle Seitenbaukasten, der das Konzept der Upstream-Layouts-Pakete in den Kernel von Exponential bringt, seine Pakete, für wen er ist, wie er sich zu Nexus und der DXP verhält und wo Sie mehr lesen.
+keywords: Exponential Layouts, Seitenbaukasten, Layouts, Zonen, Blöcke, Regeln, explayouts, Nexus, DXP, Redakteure, Designer, page builder, zones, blocks, rules, editors, designers
 type: help
 ---
 # Exponential Layouts im Ökosystem
 
-**"A visual page builder for Exponential. It brings the Netgen Layouts concept to the Exponential kernel: a layout is
+**"A visual page builder for Exponential. It brings the concept of the upstream layouts packages to the Exponential kernel: a layout is
 a saved arrangement of blocks in zones, and a rule decides which pages get it"**, ein visueller Seitenbaukasten, der
-das Konzept von Netgen Layouts in den Kernel bringt: Ein Layout ist eine gespeicherte Anordnung von Blöcken in Zonen,
+das Konzept der Upstream-Layouts-Pakete in den Kernel bringt: Ein Layout ist eine gespeicherte Anordnung von Blöcken in Zonen,
 und eine Regel entscheidet, welche Seiten es bekommen (`README.md`).
 
 ## Inhalt
@@ -25,7 +25,7 @@ und eine Regel entscheidet, welche Seiten es bekommen (`README.md`).
 
 - Seit 6.0.15 in `composer.json` verlangt
   ([Die Produktfamilie im Überblick](../../wer-ist-die-exponential-foundation.md#die-produktfamilie-im-überblick)).
-- Er portiert ein Konzept aus einem anderen PHP-Projekt, Netgen Layouts, mit Nennung
+- Er portiert ein Konzept aus anderen PHP-Paketen, den Upstream-Layouts-Paketen, mit Nennung
   ([Wie das Projekt wächst](../../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst)).
 - Er ist für "Editors who rearrange pages without template work, and designers", Redakteure, die Seiten ohne Arbeit an
   Templates umstellen, und Designer ([Exponential Layouts](../../wer-ist-die-exponential-foundation.md#exponential-layouts)).

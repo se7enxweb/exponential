@@ -3,8 +3,8 @@ title: "Story: Exponential Layouts, the page builder"
 audience: press
 category: press-media
 order: 53
-summary: A feature story about Exponential Layouts, the visual page builder that brings the Netgen Layouts concept to the Exponential kernel - layouts, zones, blocks, rules and shared layouts - with printable facts, credit to Netgen, what not to claim and headline ideas.
-keywords: story, Exponential Layouts, explayouts, page builder, layouts, zones, blocks, rules, shared layouts, Netgen Layouts, press
+summary: A feature story about Exponential Layouts, the visual page builder that brings the concept of the upstream layouts packages to the Exponential kernel - layouts, zones, blocks, rules and shared layouts - with printable facts, credit to Netgen, what not to claim and headline ideas.
+keywords: story, Exponential Layouts, explayouts, page builder, layouts, zones, blocks, rules, shared layouts, press
 type: help
 ---
 # Story: Exponential Layouts, the page builder
@@ -25,7 +25,7 @@ template work. It gives the story, the dates, facts with sources, the credit you
 
 ## The story in one paragraph
 
-"Exponential Layouts is a visual page builder for Exponential. It brings the Netgen Layouts concept to the
+"Exponential Layouts is a visual page builder for Exponential. It brings the concept of the upstream layouts packages to the
 Exponential kernel: a **layout** is a saved arrangement of **blocks** in **zones**, and a **rule** decides which pages
 get it, so editors rearrange pages without touching templates" ([README, Exponential Layouts](https://github.com/se7enxweb/exponential/blob/main/README.md#exponential-layouts-revolutionary)).
 Layouts have drafts like content does, a header or footer can be built once in a shared layout and linked from every
@@ -60,8 +60,8 @@ The 6.0.15 line is in development and not released.
 
 ## Credit where it is due
 
-Exponential Layouts ports the Netgen Layouts **concept** to the Exponential kernel. Name Netgen when you describe it:
-"It brings the Netgen Layouts concept to Exponential." Do not call the product "Netgen Layouts for Exponential"; it has
+Exponential Layouts ports the **concept** of the upstream layouts packages to the Exponential kernel. Credit the upstream packages when you describe it:
+"It brings the concept of the upstream layouts packages to Exponential." Do not call the product "Netgen Layouts for Exponential"; it has
 its own name ([Talking points: Exponential Layouts](../advocates/talking-points-exponential-layouts.md#credit-where-it-is-due)).
 Netgen is a separate company; the sources do not describe any endorsement by Netgen, so do not imply one.
 

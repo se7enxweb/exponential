@@ -1,7 +1,7 @@
 # Twig templates: recipes
 
 This page is for template developers who want a working starting point for the templates a site needs most, written
-in Twig for Exponential: a page layout, a line view, a block of Netgen Layouts, a mail template, cache blocks per role
+in Twig for Exponential: a page layout, a line view, a block of Exponential Layouts, a mail template, cache blocks per role
 and per user, a form with the form token, texts with a count, and images in an image alias. Each recipe says where the
 file goes, shows the template, and shows what it printed on a development installation with the media demo content
 (node 98 is the article "Why Track Your Workouts?"). Host names in output are shown as `www.example.com`.
@@ -115,7 +115,7 @@ Match[class_identifier]=ng_article
 A list renders each child with it: `{{ node_view_gui({content_node: child, view: 'line'}) }}`. The image is decorative
 next to a linked title, hence `alt=""`.
 
-## A block of Netgen Layouts
+## A block of Exponential Layouts
 
 **File**: the block's view template in your design, for example `templates/explayouts/block/button.twig`. The layouts
 extension asks the design resource for `explayouts/block/button.tpl`, so an override rule points it at the `.twig`,

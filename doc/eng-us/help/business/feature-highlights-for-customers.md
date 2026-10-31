@@ -96,7 +96,7 @@ customer asks for more than a page says, the honest answer is "the documentation
 
 ## Editors build pages themselves
 
-**What to say.** Exponential Layouts is "a visual page builder for Exponential. It brings the Netgen Layouts concept to
+**What to say.** Exponential Layouts is "a visual page builder for Exponential. It brings the concept of the upstream layouts packages to
 the Exponential kernel: a layout is a saved arrangement of blocks in zones, and a rule decides which pages get it"
 (`README.md`, "Exponential Layouts"). Editors drag blocks into zones, change them in a **Content** and a **Design**
 tab, and work on a draft that the site does not show until they publish

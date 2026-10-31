@@ -131,7 +131,7 @@ Die Spalte „Stand“ gibt den Stand vom 18. Oktober 2026 mit seiner Quelle an.
 | [Exponential Basic](#exponential-basic) | Das einfache CMS der Linie eZ Publish 2 | Bildung, private Nutzung, kleine Sites | v2.4.0.3 (Beschreibung des Repositorys) |
 | [Exponential Platform 3.2.9](#exponential-platform-329) | Reines Symfony-CMS aus der letzten freien eZ Platform | Teams auf dem Stack von eZ Platform 3 | 3.2.9 (Beschreibung des Repositorys) |
 | [Exponential Platform Legacy](#exponential-platform-legacy) | Symfony-Plattform plus Exponential 6 (Dual-Kernel) | Sites, die Exponential 6 behalten und Symfony ergänzen | Linien 2.5.x bis 5.0.x (README) |
-| [Exponential Platform Nexus](#exponential-platform-nexus) | Plattform plus Exponential 6, Netgen Layouts und Media Site, mit Demo-Inhalten | Agenturen und Teams, die schnell eine vollständige Site wollen | Linien 1.0.0.x bis 1.3.0.x (README) |
+| [Exponential Platform Nexus](#exponential-platform-nexus) | Plattform plus Exponential 6, Exponential Layouts und Media Site, mit Demo-Inhalten | Agenturen und Teams, die schnell eine vollständige Site wollen | Linien 1.0.0.x bis 1.3.0.x (README) |
 | [Exponential Platform DXP](#exponential-platform-dxp) | Reines Symfony-DXP-Metapaket, die freiheitlich weitergeführte Fortsetzung von Ibexa DXP OSS | Neue Symfony-Projekte | „Stable; Open Source“ (seine composer.json) |
 | [Exponential Velocity](#exponential-velocity) | Ein in PHP geschriebener Web- und Anwendungsserver | Alle, die Exponential und andere PHP-Anwendungen ausliefern | Erforderlich als `~0.0.4.57` (README; seit dem Release 0.0.4.54 läuft es unter PHP 8.0) |
 | [Exponential Intelligence](#exponential-intelligence) | Ein Schreibassistent in der Administration | Redakteure und ihre Vorgesetzten | Seit 6.0.15 Pflicht, `~0.0.1.18` in composer.json |
@@ -260,7 +260,7 @@ Beschreibung des Repositorys).
 
 ### Exponential Layouts
 
-**Was es ist.** „A visual page builder for Exponential. It brings the Netgen Layouts concept to the Exponential
+**Was es ist.** „A visual page builder for Exponential. It brings the concept of the upstream layouts packages to the Exponential
 kernel: a layout is a saved arrangement of blocks in zones, and a rule decides which pages get it“ (README). Pakete
 `se7enxweb/explayouts` und die Familie `explayouts-*`.
 
@@ -396,7 +396,7 @@ clones with their full history“ (README, „Installation“; [Mit Git entwicke
   [mugoweb](https://github.com/mugoweb) und anderen (`git log --grep="Merge pull request"`). Davor haben Hunderte von
   Menschen eZ Publish gebaut ([Wer ist 7x?](wer-ist-7x.md#mitwirkende-und-freunde-des-projekts)).
 - **Die Arbeit anderer Projekte, mit Nennung.** Die LoveStack-Verbesserungen von Mugo Web wurden „with full credit to
-  Mugo Web“ nachgebaut (README); Exponential Layouts portiert das Konzept von Netgen Layouts (README).
+  Mugo Web“ nachgebaut (README); Exponential Layouts portiert das Konzept der Upstream-Layouts-Pakete (README).
 
 ### Orte der Community
 
@@ -420,7 +420,7 @@ In den für diese Seite verwendeten Quellen sind keine Veranstaltungen (Konferen
 | Composer und Packagist | Installation des Kernels und jeder Erweiterung | 219 von se7enxweb veröffentlichte Pakete | composer.json, Packagist |
 | Zeta Components | Die Bibliotheken des Kernels (Cache, Datenbank, Feeds, Bildkonvertierung ...) | „Forked and patched 47+ Zeta Components repos“; „14 security PRs submitted upstream to zetacomponents“ | composer.json, se7enxweb-Profil-README |
 | Symfony, Twig, Doctrine | Die Plattform-Linie | Gepflegte Forks für PHP 8.4 und 8.5 | [Ökosystem](../geschichte/oekosystem.md) |
-| Netgen Layouts, Media Site, Site API | Exponential Layouts und Nexus | Portierungen auf den Exponential-Kernel; ein Fork von layouts-core | README, [Ökosystem](../geschichte/oekosystem.md) |
+| Upstream-Layouts-Pakete, Media Site, Site API | Exponential Layouts und Nexus | Portierungen auf den Exponential-Kernel; ein Fork von layouts-core | README, [Ökosystem](../geschichte/oekosystem.md) |
 | Qbix-Webserver | Die Engine von Velocity | Ein darauf gebauter Produktionsserver | Velocity-README |
 | AdminNeo | Der Datenbank-Quelltexteditor | | [sevenx_dse](../funktionen/6.0/erweiterungen/sevenx_dse.md) |
 | jQuery, TinyMCE, Bootstrap Icons | Skripte, Editor und Symbole der Administration | | [Oktober 2026](../geschichte/2026/2026-10.md) |
@@ -471,7 +471,7 @@ In den für diese Seite verwendeten Quellen sind keine Veranstaltungen (Konferen
 | **Legacy** | Der Exponential-6-Kernel, wenn er neben einer Symfony-Plattform läuft („Referred to as `legacy` in Exponential Platform 5.x and Ibexa OSS“, README) |
 | **Exponential Platform** | Die Symfony-basierte Linie, die von eZ Platform abstammt |
 | **Dual-Kernel** | Eine Distribution, die die Symfony-Plattform und Exponential 6 zusammen betreibt (Legacy, Nexus) |
-| **Nexus** | Die Distribution von Exponential Platform mit Netgen Layouts, Media Site und Exponential 6 |
+| **Nexus** | Die Distribution von Exponential Platform mit Exponential Layouts, Media Site und Exponential 6 |
 | **DXP** | Digital Experience Platform; hier das reine Symfony-Produkt Exponential Platform DXP |
 | **Exponential Basic** | Das einfache CMS der Linie eZ Publish 2 |
 | **Velocity** | Der eigene PHP-Web- und Anwendungsserver von Exponential (`vc`) |

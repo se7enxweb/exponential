@@ -4,7 +4,7 @@ audience: hosting
 category: hosting
 order: 40
 summary: For hosts whose customers run eZ Platform or Ibexa DXP/OSS: the two Exponential destinations (Exponential Platform Nexus and the Exponential 6.0 legacy kernel), what each means for the hosting stack, how to assess the effort, and where chapter 16 of the installation book has the steps.
-keywords: migration, eZ Platform, Ibexa, DXP, OSS, Symfony, Exponential Platform Nexus, Exponential Platform Legacy, Exponential 6.0, legacy kernel, RichText, Page Builder, Netgen Layouts, path A, path B, hosting stack
+keywords: migration, eZ Platform, Ibexa, DXP, OSS, Symfony, Exponential Platform Nexus, Exponential Platform Legacy, Exponential 6.0, legacy kernel, RichText, Page Builder, path A, path B, hosting stack
 type: help
 ---
 # Migrating customers from eZ Platform and Ibexa
@@ -58,7 +58,7 @@ Questions that decide the path, from chapter 16's table:
 1. Does the site have custom Symfony bundles, Twig templates, REST or GraphQL clients the customer wants to keep?
    Then path A.
 2. Does it use RichText content or Page Builder landing pages? Path A keeps RichText; Page Builder has no equivalent
-   in either path and is rebuilt with Netgen Layouts (A) or Exponential Layouts (B).
+   in either path and is rebuilt with Exponential Layouts, on Nexus (A) or in the legacy kernel (B).
 3. Does the customer's team know INI, TPL and legacy extensions? Then path B is familiar ground.
 4. Is lowest risk for a live site the priority? Then path A, same generation.
 

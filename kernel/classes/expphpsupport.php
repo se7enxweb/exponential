@@ -14,7 +14,7 @@
  *
  * "Usable without support" means: the software is designed to run on PHP 7.4, Composer installs the packages that
  * run there, but there is no bug-fix or security commitment specific to PHP 7.4, and the features that need PHP 8
- * (Velocity, Netgen Layouts and a few extensions) are not available. See
+ * (Velocity, Exponential Layouts and a few extensions) are not available. See
  * doc/eng-us/help/why-exponential-supports-php-7-4.md.
  */
 class expPhpSupport
@@ -62,7 +62,7 @@ class expPhpSupport
             case 'unsupported':
                 return 'PHP ' . $version . ' is not supported: Exponential is usable on it without support (no bug-fix or security'
                     . ' commitment for this PHP version; use it at your own risk), and the features that need PHP 8 (Velocity,'
-                    . ' Netgen Layouts and a few extensions) are not available. ' . self::STATEMENT;
+                    . ' Exponential Layouts and a few extensions) are not available. ' . self::STATEMENT;
         }
         return '';
     }

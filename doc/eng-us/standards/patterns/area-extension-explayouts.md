@@ -44,7 +44,7 @@ Every class, interface and trait of `extension/explayouts` with the patterns it 
 | `expLayoutsContentComponentBlockHandler` | class implements expLayoutsBlockHandlerInterface | [INI plugin point (extension point)](ini-plugin-point.md), [Strategy / handler](strategy-handler.md) | `extension/explayouts/classes/explayoutscontentcomponentblockhandler.php:17` | Handler for the content-backed component blocks (hero, features, about, logos, quote, lead). |
 | `expLayoutsDebugBarPanel` | class implements expDebugBarPanelInterface | [INI plugin point (extension point)](ini-plugin-point.md) | `extension/explayouts/classes/explayoutsdebugbarpanel.php:16` | The Exp Layouts panel of the Exp Debug bar: which layout built the page, which rule chose it, its zones and blocks with links to edit them in the adm… |
 | `expLayoutsDividerBlockHandler` | class implements expLayoutsBlockHandlerInterface | [INI plugin point (extension point)](ini-plugin-point.md), [Strategy / handler](strategy-handler.md) | `extension/explayouts/classes/explayoutsdividerblockhandler.php:2` | – |
-| `expLayoutsDynamicCollection` | class | [Utility (static helper)](utility.md) | `extension/explayouts/classes/explayoutsdynamiccollection.php:15` | Executes 'dynamic' collections (collection queries imported from Netgen Layouts). |
+| `expLayoutsDynamicCollection` | class | [Utility (static helper)](utility.md) | `extension/explayouts/classes/explayoutsdynamiccollection.php:15` | Executes 'dynamic' collections (collection queries imported from the Nexus reference). |
 | `expLayoutsExpAdminUI` | class | – | `extension/explayouts/classes/explayoutsexpadminui.php:4` | – |
 | `expLayoutsExpBlock` | class | – | `extension/explayouts/classes/explayoutsexpblock.php:4` | – |
 | `expLayoutsExpCollection` | class | – | `extension/explayouts/classes/explayoutsexpcollection.php:4` | – |
@@ -59,13 +59,13 @@ Every class, interface and trait of `extension/explayouts` with the patterns it 
 | `expLayoutsExponentialContentSearchQueryHandler` | class implements expLayoutsQueryHandlerInterface | [INI plugin point (extension point)](ini-plugin-point.md), [Strategy / handler](strategy-handler.md) | `extension/explayouts/classes/explayoutsexponentialcontentsearchqueryhandler.php:3` | – |
 | `expLayoutsExporter` | class | [Utility (static helper)](utility.md) | `extension/explayouts/classes/explayoutsexporter.php:7` | The export of a layout (version 1). |
 | `expLayoutsExpParameters` | class | – | `extension/explayouts/classes/explayoutsexpparameters.php:4` | – |
-| `expLayoutsExpRelationListQuery` | class | [Utility (static helper)](utility.md) | `extension/explayouts/classes/explayoutsexprelationlistquery.php:6` | Exponential 4 port of Netgen Layouts Exp RelationListQuery handler. |
-| `expLayoutsExpReverseRelationListQuery` | class | [Utility (static helper)](utility.md) | `extension/explayouts/classes/explayoutsexpreverserelationlistquery.php:6` | Exponential 4 port of Netgen Layouts Exp ReverseRelationListQuery handler. |
+| `expLayoutsExpRelationListQuery` | class | [Utility (static helper)](utility.md) | `extension/explayouts/classes/explayoutsexprelationlistquery.php:6` | Exponential Layouts port of the upstream RelationListQuery handler. |
+| `expLayoutsExpReverseRelationListQuery` | class | [Utility (static helper)](utility.md) | `extension/explayouts/classes/explayoutsexpreverserelationlistquery.php:6` | Exponential Layouts port of the upstream ReverseRelationListQuery handler. |
 | `expLayoutsExpSearch` | class | – | `extension/explayouts/classes/explayoutsexpsearch.php:4` | – |
 | `expLayoutsExpSecurity` | class | – | `extension/explayouts/classes/explayoutsexpsecurity.php:4` | – |
 | `expLayoutsExpSiteApi` | class | [Facade / service](facade.md), [Utility (static helper)](utility.md) | `extension/explayouts/classes/explayoutsexpsiteapi.php:3` | – |
 | `expLayoutsExpSiteApiContentProvider` | class | [Strategy / handler](strategy-handler.md) | `extension/explayouts/classes/explayoutsexpsiteapicontentprovider.php:3` | – |
-| `expLayoutsExpTagsQuery` | class | [Utility (static helper)](utility.md) | `extension/explayouts/classes/explayoutsexptagsquery.php:6` | Exponential 4 port of Netgen Layouts Exp TagsQuery handler. |
+| `expLayoutsExpTagsQuery` | class | [Utility (static helper)](utility.md) | `extension/explayouts/classes/explayoutsexptagsquery.php:6` | Exponential Layouts port of the upstream TagsQuery handler. |
 | `expLayoutsExpUtils` | class | [Utility (static helper)](utility.md) | `extension/explayouts/classes/explayoutsexputils.php:4` | – |
 | `expLayoutsExpValidator` | class | – | `extension/explayouts/classes/explayoutsexpvalidator.php:4` | – |
 | `expLayoutsFeaturesBlockHandler` | class extends expLayoutsComponentBlockHandler | [INI plugin point (extension point)](ini-plugin-point.md), [Strategy / handler](strategy-handler.md) | `extension/explayouts/classes/explayoutsfeaturesblockhandler.php:8` | The features block: the fields of the other component blocks (title, text, image, link) and a list of features, one per line as "Title\|Text", which t… |

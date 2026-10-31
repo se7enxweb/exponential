@@ -73,9 +73,9 @@ dieselbe Arbeit ist [Kunden von eZ Platform und Ibexa migrieren](../hosting/migr
 
 ## Was keine direkte Entsprechung hat
 
-- **Landingpages des Page Builder**: Mit der DXP wird keine Entsprechung ausgeliefert; Kapitel 16 baut sie mit Netgen
+- **Landingpages des Page Builder**: Mit der DXP wird keine Entsprechung ausgeliefert; Kapitel 16 baut sie mit Exponential
   Layouts auf Nexus neu
-  ([16.5.9](../../installation/16-migration-von-ez-platform-und-ibexa.md#1659-seitenaufbau-page-builder-gegenüber-netgen-layouts)).
+  ([16.5.9](../../installation/16-migration-von-ez-platform-und-ibexa.md#1659-seitenaufbau-page-builder-gegenüber-exponential-layouts)).
 - **Funktionen kommerzieller Editionen** der Quelle: Die DXP ist nur aus Open-Source-Paketen gebaut; listen Sie auf, was
   Sie verwenden, und prüfen Sie jedes gegen [Was die DXP mitliefert](was-die-dxp-mitliefert-und-was-nicht.md).
 

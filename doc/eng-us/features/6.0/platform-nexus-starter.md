@@ -9,7 +9,7 @@ plus the `v2.5.0.x` tags), `se7enxweb/exponential-platform-nexus-starter` (Platf
 
 ## What it is
 
-Nexus is a ready-made website project. You run Composer once, run one install command, and you have a site with demo content, the Netgen Layouts page builder, a Twig front end, an administration interface, a REST API and a GraphQL API. You change the content model and the design afterwards instead of assembling bundles first.
+Nexus is a ready-made website project. You run Composer once, run one install command, and you have a site with demo content, the Exponential Layouts page builder, a Twig front end, an administration interface, a REST API and a GraphQL API. You change the content model and the design afterwards instead of assembling bundles first.
 
 There is one line per platform generation, and you pick by the platform you want to run. Read from the
 `composer.json` and `composer.lock` of each branch and tag:
@@ -39,9 +39,9 @@ Two things about versions to know before you install:
 From the repository README:
 
 - the Ibexa DXP v5 open source content repository (content classes, versions, translations, locations);
-- Netgen Layouts 2.0.x as the page builder, with Netgen Content Browser and the Ibexa Site API;
+- Exponential Layouts 2.0.x as the page builder, with Netgen Content Browser and the Ibexa Site API;
 - Netgen Information Collection for contact forms, Netgen Tags for taxonomy;
-- the Platform v5 admin interface at `/adminui/`, the Netgen Layouts admin at `/nglayouts/admin`;
+- the Platform v5 admin interface at `/adminui/`, the Exponential Layouts admin at `/nglayouts/admin`;
 - REST API v2 with JWT login, a GraphQL endpoint at `/graphql`;
 - a Webpack Encore 5 build for the site assets, multi-siteaccess support, optional Solr, Varnish and Redis;
 - SQLite with no configuration, so a laptop or a demo server needs no database server.
@@ -74,7 +74,7 @@ symfony server:start
 
 Notes about the commands:
 
-- Two install types exist. `exponential-media` installs the Nexus demo (layouts, content, tags and Netgen Layouts configuration); it is provided by `ExponentialMediaInstaller` in the `se7enxweb/exponential-platform-dxp-core` package and is a cross-database alternative to the MySQL-only `netgen-media` type: it loads `media_schema.sql` and `media_data.sql` for MySQL / MariaDB, PostgreSQL or SQLite, whichever your `DATABASE_URL` uses. `exponential-oss` installs the clean platform content only (the starter registers its own `App\Installer\ExponentialOssInstaller` for it). `php bin/console help exponential:install` shows the types of your checkout.
+- Two install types exist. `exponential-media` installs the Nexus demo (layouts, content, tags and Exponential Layouts configuration); it is provided by `ExponentialMediaInstaller` in the `se7enxweb/exponential-platform-dxp-core` package and is a cross-database alternative to the MySQL-only `netgen-media` type: it loads `media_schema.sql` and `media_data.sql` for MySQL / MariaDB, PostgreSQL or SQLite, whichever your `DATABASE_URL` uses. `exponential-oss` installs the clean platform content only (the starter registers its own `App\Installer\ExponentialOssInstaller` for it). `php bin/console help exponential:install` shows the types of your checkout.
 - The README of the starter repository clones `exponential-platform-nexus` too; whichever you clone, check that
   `composer.json` requires `se7enxweb/exponential-platform-dxp` and PHP `>=8.4` before you run `composer install`.
 - The 1.1.0.x and 1.2.0.x branches install the same way (`exponential:install exponential-media`) on their own
@@ -93,7 +93,7 @@ After the install these addresses answer:
 | `https://127.0.0.1:8000/adminui/` | Platform v5 admin interface |
 | `https://127.0.0.1:8000/api/ibexa/v2/` | REST API v2, JWT authenticated (`ibexa.rest.path_prefix`; `/api/ezp/v2` was the prefix before 4.0) |
 | `https://127.0.0.1:8000/graphql` | GraphQL endpoint |
-| `https://127.0.0.1:8000/nglayouts/admin` | Netgen Layouts admin |
+| `https://127.0.0.1:8000/nglayouts/admin` | Exponential Layouts admin |
 
 The complete step by step guide (web server configuration, permissions, production checklist, cron, Solr, Varnish, troubleshooting, database conversion) is `doc/sevenx/INSTALL.md` inside the starter repository.
 

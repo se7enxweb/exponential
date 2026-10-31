@@ -27,7 +27,7 @@ stattdessen [Exponential 6 als Basis](exponential-6-als-basis.md).
 
 | | Legacy | Nexus |
 |---|---|---|
-| Was | "Dual Kernel Symfony CMS which also includes a full copy of Exponential 6": ein Symfony-CMS mit zwei Kerneln, das eine vollständige Kopie von Exponential 6 enthält | ein fertiges Website-Projekt mit Demo-Inhalten, Netgen Layouts, einem Twig-Frontend, einer Administration, REST und GraphQL |
+| Was | "Dual Kernel Symfony CMS which also includes a full copy of Exponential 6": ein Symfony-CMS mit zwei Kerneln, das eine vollständige Kopie von Exponential 6 enthält | ein fertiges Website-Projekt mit Demo-Inhalten, Exponential Layouts, einem Twig-Frontend, einer Administration, REST und GraphQL |
 | Erfordert | `se7enxweb/exponential` und `se7enxweb/legacy-bridge` | je Linie; siehe unten |
 | Für | bestehende Exponential-Websites, die Symfony daneben wollen | Agenturen und Teams, die schnell eine vollständige Website wollen |
 | Quelle | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#exponential-platform-legacy) | [Exponential Platform Nexus](../../funktionen/6.0/plattform-nexus-starter.md) |

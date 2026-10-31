@@ -30,7 +30,7 @@ the Nexus lines from [Exponential Platform Nexus: a finished site in minutes](..
 |---|---|---|
 | Exponential Platform 3.2.9 | "CMS / DXP based on the last free versions of eZ Platform. Symfony / New Stack Only" | No ("No Exponential 6.x Legacy Support") |
 | Exponential Platform Legacy | A distribution of Exponential Platform "with Exponential (Legacy) Included"; "Dual Kernel" | Yes |
-| Exponential Platform Nexus | Platform plus Exponential 6, Netgen Media Site and Netgen Layouts, one line per platform generation | In the lines 1.0.0.x to 1.2.0.x and 2.5; not in 1.3.0.x (Platform v5) |
+| Exponential Platform Nexus | Platform plus Exponential 6, Netgen Media Site and Exponential Layouts, one line per platform generation | In the lines 1.0.0.x to 1.2.0.x and 2.5; not in 1.3.0.x (Platform v5) |
 | Nexus starter | The v5 Nexus site as a separate repository, "Currently In Public Beta" in its description | No |
 | Exponential Platform DXP | "a free, open-source Digital Experience Platform built on the Symfony framework" | No |
 
@@ -66,7 +66,7 @@ Some tags carry a `v`, some do not (`1.0.0.6`); print the number without it in r
 |---|---|---|
 | "DXP includes the Exponential Layouts editor" | DXP ships no layouts editor, no approval workflow, no scheduler and no legacy kernel; "For Exponential 6 beside Symfony, choose Legacy or Nexus" | [Exponential Platform DXP](../who-is-the-exponential-foundation.md#exponential-platform-dxp) |
 | "A Platform release is an Exponential 6 release" | The kernel has its own versions (6.0.x); the platform packages count separately | [Where changelogs and release notes live](where-changelogs-and-release-notes-live.md) |
-| "Nexus is the same as DXP" | Nexus is a complete site with demo content and Netgen Layouts, and most of its lines include Exponential 6; DXP is a Symfony-only platform | [Exponential Platform Nexus](../who-is-the-exponential-foundation.md#exponential-platform-nexus), [Nexus starter](../../features/6.0/platform-nexus-starter.md) |
+| "Nexus is the same as DXP" | Nexus is a complete site with demo content and Exponential Layouts, and most of its lines include Exponential 6; DXP is a Symfony-only platform | [Exponential Platform Nexus](../who-is-the-exponential-foundation.md#exponential-platform-nexus), [Nexus starter](../../features/6.0/platform-nexus-starter.md) |
 | "Every Nexus release includes Exponential 6" | The 1.3.0.x line and the v5 starter have no legacy kernel | [Nexus starter](../../features/6.0/platform-nexus-starter.md) |
 | "The starter is final" | Its description says "Currently In Public Beta" | Same section |
 | "DXP is licensed GPL only" | Its `composer.json` says "GPL-2.0-or-later or proprietary" | [Exponential Platform DXP](../who-is-the-exponential-foundation.md#exponential-platform-dxp) |

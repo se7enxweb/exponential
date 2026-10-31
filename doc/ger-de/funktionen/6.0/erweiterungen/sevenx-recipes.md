@@ -146,12 +146,12 @@ Werkzeug, das Sie neben dem Klon pflegen), bis das Skript hinzugefügt ist.
     der Bridge ist);
   - Kompatibilität der Konfiguration mit Symfony 7 und Ibexa 5 (`storage_factory_id` statt `storage_id`), die
     bereinigten `1.x`-Slots, Encore-Konfiguration für die React-Builds, `tsconfig.json` und `controllers.json`, der
-    Installationsbefehl, der während `exponential:install` das Schema von Netgen Layouts lädt, und INI-Einstellungen
+    Installationsbefehl, der während `exponential:install` das Schema von Exponential Layouts lädt, und INI-Einstellungen
     der Legacy-Siteaccesses.
 - **13. bis 17. April, kleinere Korrekturen mit für Benutzer sichtbarer Wirkung:**
   - die registrierten Rezeptversionen wurden neu geordnet, damit Flex' `version_compare` `5.0` korrekt auswählt (die
     Reihenfolge der Liste `recipes` in der `index.json` ist für Flex wichtig);
-  - die Routendatei von Netgen Layouts im Slot `5.0` ist `routing.yaml`, nicht `routing.yml`;
+  - die Routendatei von Exponential Layouts im Slot `5.0` ist `routing.yaml`, nicht `routing.yml`;
   - `imagemagick.pre_parameters` und `imagemagick.post_parameters` sind als Container-Parameter deklariert (ein
     undefinierter Parameter stoppt sonst den Aufbau des Containers);
   - das Manifest von `4.6.x-dev` wurde neu erzeugt, nachdem die Dateien der Legacy Bridge daraus entfernt worden waren,

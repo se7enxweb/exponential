@@ -181,7 +181,7 @@ Exponential 6.0.15 wird unter PHP 8.0 bis 8.5 unterstützt, ab seinem Release 0.
 ### Kann ich Exponential unter PHP 7.4 betreiben?
 
 Ja, ab 6.0.15, für Websites, die das PHP ihres Servers noch nicht ändern können. Der Kernel und die mitgelieferten
-Erweiterungen laufen unter PHP 7.4; Velocity, Netgen Layouts, die Zwei-Faktor-Authentifizierung und einige andere
+Erweiterungen laufen unter PHP 7.4; Velocity, Exponential Layouts, die Zwei-Faktor-Authentifizierung und einige andere
 Erweiterungen brauchen PHP 8 und werden dort nicht installiert. Composer wählt die passenden Pakete selbst, über das
 Metapaket `se7enxweb/exponential-php-floor`. PHP 7.4 erhält keine Sicherheitskorrekturen des PHP-Projekts mehr;
 betreiben Sie es daher nur dort, wo Ihr Betriebssystemhersteller oder Hoster es noch pflegt, und planen Sie den

@@ -24,7 +24,7 @@ Speaking well of others is not only polite; it is how the project itself behaves
 
 - Exponential's code base carries the work of eZ Systems and hundreds of contributors
   ([Contributors and friends of the project](../who-is-7x.md#contributors-and-friends-of-the-project)).
-- Its features build on other projects: Netgen Layouts, Mugo Web's LoveStack, CJW Network's newsletter, Zeta
+- Its features build on other projects: the upstream layouts packages, Mugo Web's LoveStack, CJW Network's newsletter, Zeta
   Components, Symfony, PHP itself ([The PHP stack it stands on](../who-is-the-exponential-foundation.md#the-php-stack-it-stands-on-and-gives-back-to)).
 - People you insult today may be contributors tomorrow.
 - A reader who sees an attack on another product trusts every other claim less.
@@ -33,7 +33,7 @@ Speaking well of others is not only polite; it is how the project itself behaves
 
 | Whom | How the sources say it |
 |---|---|
-| Netgen | Exponential Layouts brings "the Netgen Layouts concept to the Exponential kernel" |
+| Netgen | Exponential Layouts brings "the concept of the upstream layouts packages to the Exponential kernel" |
 | Mugo Web | LoveStack improvements rebuilt "with full credit to Mugo Web" |
 | CJW Network | `cjw_newsletter`; request-shield is "a project of CJW Network ... not of the Foundation" |
 | eZ Systems | Its copyright 1999 to 2014 stays in the code |
@@ -65,7 +65,7 @@ Sources: [Brand and naming rules, Other companies and products](../business/bran
 |---|---|
 | "X is bloated." | "Exponential's install is one command on SQLite." |
 | "Ibexa abandoned you." | "If you are on eZ Platform or Ibexa, there is a documented migration path" ([chapter 16](../../install/16-migrating-from-ez-platform-and-ibexa.md)) |
-| "Our layouts editor is better than Netgen's." | "Exponential Layouts brings the Netgen Layouts concept to Exponential." |
+| "Our layouts editor is better than Netgen's." | "Exponential Layouts brings the concept of the upstream layouts packages to Exponential." |
 | "Nobody serious uses X." | Say nothing. |
 
 ## Related pages

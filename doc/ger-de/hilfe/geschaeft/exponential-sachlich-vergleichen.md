@@ -190,7 +190,7 @@ Manche Käufer kennen die Geschichte. Wählen Sie den Ton der Seiten zur Geschic
   18 Jahren eingestellt hat ([Wer ist 7x?, Die Jahre von eZ Publish](../wer-ist-7x.md#die-jahre-von-ez-publish-1999-bis-2021)).
 - **Keine Verbindung.** „Dieses Projekt steht in keiner Verbindung zur ursprünglichen Software eZ Publish oder zu ihrem
   ursprünglichen Entwickler, eZ Systems oder Ibexa“ (`README.md`, „Exponential Project Notice : 2025.08.12“).
-- **Anerkennung, wo sie hingehört.** Exponential Layouts bringt das Konzept von Netgen Layouts in den Kernel; die
+- **Anerkennung, wo sie hingehört.** Exponential Layouts bringt das Konzept der Upstream-Layouts-Pakete in den Kernel; die
   LoveStack-Verbesserungen von Mugo Web wurden „mit voller Anerkennung für Mugo Web“ neu umgesetzt; `cjw_newsletter`
   stammt vom CJW Network ([Wer ist 7x?, Mitwirkende und Freunde des Projekts](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts)).
 - **Kunden auf eZ Platform oder Ibexa.** Streiten Sie nicht über ihre aktuelle Plattform. Verweisen Sie auf die

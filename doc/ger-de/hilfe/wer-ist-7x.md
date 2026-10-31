@@ -301,7 +301,7 @@ publishing, media portals, intranets, e-commerce and extranets“ (<https://expo
 | Multisite | Mehrere Sites aus einer Installation, jede ein Siteaccess mit eigenem Host, Pfad, eigener Sprache und eigenem Design | [Zuordnung von Siteaccesses nach Host und Sprache](../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md), [Multisite-Einstellungen](../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md) |
 | Mehrsprachig | 368 Locale-Dateien (361 Sprachen und Länder) als Inhaltssprachen; Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite Sprachen) in `share/translations`, Englisch eingeschlossen | [Sprachen in Exponential](../sprachen.md) |
 | Rechts nach links | `dir="rtl"` in Inhalten und in der Administration für Sprachen, die von rechts nach links geschrieben werden | [Rechts nach links](../funktionen/6.0/rechts-nach-links.md) |
-| Seitenaufbau | Exponential Layouts: Layouts, Zonen, Blöcke und Regeln, eine Portierung des Konzepts von Netgen Layouts | README, „Exponential Layouts“; [Der Layout-Editor](layout-editor.md) |
+| Seitenaufbau | Exponential Layouts: Layouts, Zonen, Blöcke und Regeln, eine Portierung des Konzepts der Upstream-Layouts-Pakete | README, „Exponential Layouts“; [Der Layout-Editor](layout-editor.md) |
 | Schreibhilfe | Exponential Intelligence (`expai`): schreibt Entwürfe, veröffentlicht nie selbstständig, gehostete Anbieter in den USA oder der EU oder ein lokales Modell | [Exponential Intelligence](../funktionen/6.0/erweiterungen/expai.md) |
 | Sicherheit | Eine Content Security Policy in der Administration, Anmeldung in zwei Schritten, ein manipulationssicheres Audit-Protokoll, Anleitungen zur Sicherheitshärtung | [Content Security Policy](../funktionen/6.0/content-security-policy.md), [Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md), [Sicherheitshärtung](sicherheitshaertung.md) |
 | Hilfe | Dieses Hilfesystem: die eigene Dokumentation des Repositorys, durchsuchbar, nach Zielgruppe gegliedert, mit Kontexthilfe auf jeder Seite | [Hilfesystem](../funktionen/6.0/hilfesystem.md) |
@@ -373,7 +373,7 @@ discontinued by Ibexa“ (README, „What is Exponential Platform?“). Die folg
 | **Exponential Platform Legacy** (`exponential-platform-legacy`) | „eZ Platform (+Legacy) distribution“: die Symfony-Platform plus die Legacy-Bridge und `se7enxweb/exponential` | Ja |
 | **Exponential Platform Nexus** (`exponential-platform-nexus`) | „Platform v2/v3/v4/v5 + Exponential v6.x (Legacy) + Netgen Media Site + NG Layouts“, mit einer Demo-Site; setzt `netgen/layouts-ui` und `se7enxweb/exponential` voraus | Ja |
 | **Exponential Platform DXP** (`exponential-platform-dxp`) | „A meta package for installing 7x Exponential Platform DXP“: nur Symfony, mit Admin-UI, Content-Formularen, REST, GraphQL und GraphiQL, HTTP-Cache, Solr- und Core-Suche, Rich Text, den Feldtypen Matrix und Query, Benachrichtigungen, Messenger, Cron und JWT; von den Layouts-Paketen setzt sie nur `se7enxweb/layouts-core` voraus | Nein |
-| **Nexus-Starter** (`exponential-platform-nexus-starter`) | Eine sofort lauffähige Nexus-Installation auf Basis des DXP-Pakets, mit Netgen Layouts und den Daten der Media-Site | Nein |
+| **Nexus-Starter** (`exponential-platform-nexus-starter`) | Eine sofort lauffähige Nexus-Installation auf Basis des DXP-Pakets, mit Exponential Layouts und den Daten der Media-Site | Nein |
 
 Die DXP liefert keinen Layout-Editor, keinen Freigabe-Workflow, keinen Scheduler und keinen Legacy-Kernel mit: Ihre
 Anforderungen enthalten nichts davon. Wenn eine bestehende Exponential-Site Schritt für Schritt weiterentwickelt werden
@@ -441,8 +441,8 @@ Pull-Requests von se7enxweb, [ekked](https://github.com/ekked), [fwoldt](https:/
 
 Exponential nennt die Unternehmen, auf deren Open-Source-Arbeit es aufbaut:
 
-- **Netgen**: Exponential Layouts bringt „the Netgen Layouts concept to the Exponential kernel“ (README); die
-  Distribution Nexus baut auf Netgen Media Site und Netgen Layouts auf; das Repository `se7enxweb/exponential` ist ein
+- **Netgen**: Exponential Layouts bringt „the concept of the upstream layouts packages to the Exponential kernel“ (README); die
+  Distribution Nexus baut auf Netgen Media Site und den Upstream-Layouts-Paketen auf; das Repository `se7enxweb/exponential` ist ein
   GitHub-Fork von `netgen/ezpublish-legacy`.
 - **Mugo Web**: Ihre LoveStack-Verbesserungen wurden in 6.0.15 „with full credit to Mugo Web“ neu aufgebaut (README,
   „Exponential Distribution Integration: LoveStack“).

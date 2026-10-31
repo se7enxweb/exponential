@@ -54,7 +54,7 @@ Eine sofort lauffähige Variante der Linie v5 ist `se7enxweb/exponential-platfor
 | Symfony-Controller, Twig, REST v2, GraphQL **neben** der Legacy-Administration und den TPL-Seiten | Ja |
 | Die öffentliche Site Seite für Seite auf Twig portieren, ohne einen Komplettumstieg auf einen Schlag | Ja |
 | Nur den Legacy-Kernel, ausgeliefert von Velocity oder PHP-FPM | Nein: Bleiben Sie bei Exponential 6 allein. Das Handbuch des Produkts sagt, der Hybrid „lohnt sich nur, wenn Sie Symfony-Controller, REST v2, GraphQL oder die Plattform-Administration wollen“ |
-| Einen visuellen Seitenbaukasten auf der Symfony-Seite | Sehen Sie sich [Nexus](exponential-platform-nexus.md) an, das Netgen Layouts mitbringt |
+| Einen visuellen Seitenbaukasten auf der Symfony-Seite | Sehen Sie sich [Nexus](exponential-platform-nexus.md) an, das Exponential Layouts mitbringt |
 | Ein reines Symfony-Projekt ohne den Legacy-Kernel | [DXP](exponential-platform-dxp.md) |
 
 Was sich für die Site ändert, wenn der Symfony-Stack sie ausliefert:
@@ -137,7 +137,7 @@ Die Legacy-Hälfte ist eine vollständige Exponential-6-Installation; zurückzug
 ausliefern zu lassen.
 
 1. **Sichern Sie** die gemeinsame Datenbank und den Speicher.
-2. **Entscheiden Sie, was mit reinen Symfony-Inhalten geschieht.** RichText-Felder, Netgen Layouts oder andere reine
+2. **Entscheiden Sie, was mit reinen Symfony-Inhalten geschieht.** RichText-Felder, Exponential Layouts oder andere reine
    Plattformdaten haben keine eigene Darstellung auf der Legacy-Seite: Listen Sie die verwendeten Feldtypen auf und
    prüfen Sie sie anhand von [Kapitel 16.6.3](../16-migration-von-ez-platform-und-ibexa.md#1663-feldtypen).
 3. **Bei einer v5-Datenbank** machen Sie die Umbenennungen in `ibexa_*` rückgängig (oder lassen die

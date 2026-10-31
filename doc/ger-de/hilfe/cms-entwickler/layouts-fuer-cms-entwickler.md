@@ -10,7 +10,7 @@ type: help
 # Layouts für CMS-Entwickler
 
 Diese Seite richtet sich an Entwickler, die entscheiden, welche Teile einer Website Redakteure selbst zusammenstellen.
-**Exponential Layouts** (die Erweiterungen `explayouts`, eine Portierung von Netgen Layouts auf diesen Kernel) lässt
+**Exponential Layouts** (die Erweiterungen `explayouts`, eine Portierung der Upstream-Layouts-Pakete auf diesen Kernel) lässt
 Redakteure Seiten ohne Code aus Blöcken in Zonen bauen, während Ihre Templates und Ihr Inhaltsmodell bestimmen, wie
 jeder Block aussieht.
 

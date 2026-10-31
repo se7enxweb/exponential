@@ -28,7 +28,7 @@ Update-Weg, daher prägt die Wahl jede spätere Seite Ihres Bundles.
 |---|---|---|
 | **Exponential 6** | Der CMS-Kernel, seine erforderlichen Erweiterungen und Designs; installiert mit dem Einrichtungsassistenten, dem Kickstarter oder `exp:install` | `composer.json` von `se7enxweb/exponential`; [Exponential 6 als Basis](exponential-6-als-basis.md) |
 | **Exponential Platform Legacy** | "Dual Kernel Symfony CMS which also includes a full copy of Exponential 6" (README), also ein Symfony-CMS mit zwei Kerneln und einer vollständigen Kopie von Exponential 6; Linien 2.5.x bis 5.0.x | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#exponential-platform-legacy) |
-| **Exponential Platform Nexus** | Ein fertiges Website-Projekt: Platform, Netgen Layouts, Demo-Inhalte; die Linien 1.0.0.x bis 1.2.0.x und die 2.5-Tags enthalten den Legacy-Kernel, die Linie 1.3.0.x (Platform v5) nicht | [Exponential Platform Nexus](../../funktionen/6.0/plattform-nexus-starter.md) |
+| **Exponential Platform Nexus** | Ein fertiges Website-Projekt: Platform, Exponential Layouts, Demo-Inhalte; die Linien 1.0.0.x bis 1.2.0.x und die 2.5-Tags enthalten den Legacy-Kernel, die Linie 1.3.0.x (Platform v5) nicht | [Exponential Platform Nexus](../../funktionen/6.0/plattform-nexus-starter.md) |
 
 ## Die entscheidenden Fakten
 
@@ -39,7 +39,7 @@ Update-Weg, daher prägt die Wahl jede spätere Seite Ihres Bundles.
 | Installer | Einrichtungsassistent, Kickstarter, `exp:install` | der eigene der Distribution; siehe deren README | `exponential:install` (Typen wie `exponential-media`) |
 | PHP | 8.0 bis 8.5 für 6.0.15 (`composer.json`) | je Linie, siehe deren README | je Linie: 1.3.0.x braucht PHP 8.4 oder neuer |
 | Datenbanken | SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | je Linie | der v5-Starter: SQLite, MySQL, MariaDB, PostgreSQL |
-| Seitenbaukasten für Layouts | Exponential Layouts (seit 6.0.15 erforderlich) | je Linie | Netgen Layouts |
+| Seitenbaukasten für Layouts | Exponential Layouts (seit 6.0.15 erforderlich) | je Linie | Exponential Layouts |
 | Demo-Inhalte | Seitenpakete mit oder ohne Demo-Inhalte | je Linie | die Nexus-Demo (`exponential-media`) |
 
 Fakten zu Nexus: [Exponential Platform Nexus](../../funktionen/6.0/plattform-nexus-starter.md). Fakten zu Exponential 6:

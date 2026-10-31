@@ -68,7 +68,7 @@ From [16.6.2](../../install/16-migrating-from-ez-platform-and-ibexa.md#1662-what
 - **APIs.** The legacy REST layer (`ezprestapi`, v1 and v2) and `ezjscore` server functions, instead of REST v2 and
   GraphQL of the Symfony stack ([The REST API](the-rest-api.md)).
 - **Features you gain.** Workflow events, information collection, the shop, RSS import and export, newsletters,
-  Exponential Layouts (the port of Netgen Layouts), Velocity as the web server, and SQLite, MongoDB and Oracle
+  Exponential Layouts (ported from the upstream layouts packages), Velocity as the web server, and SQLite, MongoDB and Oracle
   drivers.
 
 ## Field types and datatypes

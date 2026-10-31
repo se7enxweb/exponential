@@ -3,8 +3,8 @@ title: "Story: Exponential Platform Nexus and Legacy"
 audience: press
 category: press-media
 order: 83
-summary: A feature story about the two dual-kernel distributions of the Exponential family - Legacy, the Symfony platform with Exponential 6 included, and Nexus, which adds Netgen Layouts, Media Site and demo content - who they are for and how they let older sites move forward step by step.
-keywords: story, Exponential Platform Nexus, Exponential Platform Legacy, dual kernel, Symfony, legacy bridge, Netgen Layouts, Media Site, migration, CJW, starter
+summary: A feature story about the two dual-kernel distributions of the Exponential family - Legacy, the Symfony platform with Exponential 6 included, and Nexus, which adds Exponential Layouts, Media Site and demo content - who they are for and how they let older sites move forward step by step.
+keywords: story, Exponential Platform Nexus, Exponential Platform Legacy, dual kernel, Symfony, legacy bridge, Media Site, migration, CJW, starter
 type: help
 ---
 # Story: Exponential Platform Nexus and Legacy
@@ -23,7 +23,7 @@ Symfony platform, so a site can adopt the newer stack without starting over.
 
 **Exponential Platform Legacy** "provides a clean distribution of Exponential Platform ... with Exponential (Legacy)
 Included (now with SQLite support)": the Symfony platform and the legacy bridge with Exponential 6, a "dual kernel".
-**Exponential Platform Nexus** adds Netgen Media Site and Netgen Layouts with demo content: "Platform v2/v3/v4/v5 +
+**Exponential Platform Nexus** adds Netgen Media Site and Exponential Layouts with demo content: "Platform v2/v3/v4/v5 +
 Exponential v6.x (Legacy) + Netgen Media Site + NG Layouts" ([Exponential Platform Legacy](../who-is-the-exponential-foundation.md#exponential-platform-legacy),
 [Exponential Platform Nexus](../who-is-the-exponential-foundation.md#exponential-platform-nexus)). They are meant for
 sites that keep Exponential 6, including sites built in the eZ Publish years, and want to move forward step by step.

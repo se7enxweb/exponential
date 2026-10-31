@@ -66,7 +66,7 @@ from the extension's release notes page and link it.
 - Many extensions began in the eZ Publish years and keep historic names such as `eztags` or `ezjscore`. These are
   code identifiers and are never renamed ([Brand and naming rules](../business/brand-and-naming-rules.md#code-identifiers-stay-as-they-are)).
 - Credit the origin where the sources name it: `cjw_newsletter` comes from CJW Network; Exponential Layouts brings
-  "the Netgen Layouts concept to the Exponential kernel" ([Who is 7x?, Contributors and friends](../who-is-7x.md#contributors-and-friends-of-the-project)).
+  "the concept of the upstream layouts packages to the Exponential kernel" ([Who is 7x?, Contributors and friends](../who-is-7x.md#contributors-and-friends-of-the-project)).
 - Do not name an individual developer unless they agreed; name the project or organization
   ([Attributing statements](attributing-statements.md)).
 

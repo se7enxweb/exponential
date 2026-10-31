@@ -313,7 +313,7 @@ Please use the latest version of PHP available on your OS.
 
 PHP 8.0 is supported so that the stock PHP of Red Hat Enterprise Linux 9 (and AlmaLinux / Rocky Linux 9) runs Exponential under Apache or PHP-FPM and under Exponential Velocity, the built-in application server, which runs on PHP 8.0 to 8.5 from its release 0.0.4.54 (until then it needed 8.1). See [PHP 8.0 support](doc/eng-us/bc/6.0/php-8.0-support.md) and the engine's [PHP 8.0 and Red Hat Enterprise Linux](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/rhel.md) page.
 
-PHP 7.4 is usable again from 6.0.15, without support, as a bridge for organizations that cannot change the PHP of their servers yet. The kernel and the bundled extensions run on it; Velocity, Netgen Layouts and a few extensions that need PHP 8 are left out. Composer chooses the right packages for each PHP version through the metapackage [se7enxweb/exponential-php-floor](https://github.com/se7enxweb/exponential-php-floor). Why the project does this, what works on PHP 7.4, how security is kept and the end-of-life stance: [Why Exponential supports PHP 7.4](doc/eng-us/help/why-exponential-supports-php-7-4.md). PHP 7.4 itself has had no security fixes from the PHP project since November 2022, so run it only where your operating system vendor or host still patches it, and plan the move to PHP 8.
+PHP 7.4 is usable again from 6.0.15, without support, as a bridge for organizations that cannot change the PHP of their servers yet. The kernel and the bundled extensions run on it; Velocity, Exponential Layouts and a few extensions that need PHP 8 are left out. Composer chooses the right packages for each PHP version through the metapackage [se7enxweb/exponential-php-floor](https://github.com/se7enxweb/exponential-php-floor). Why the project does this, what works on PHP 7.4, how security is kept and the end-of-life stance: [Why Exponential supports PHP 7.4](doc/eng-us/help/why-exponential-supports-php-7-4.md). PHP 7.4 itself has had no security fixes from the PHP project since November 2022, so run it only where your operating system vendor or host still patches it, and plan the move to PHP 8.
 
 # Main Exponential features
 
@@ -449,7 +449,7 @@ security, configuration). A summary is in [doc/eng-us/features/6.0/extensions/ex
 
 # Exponential Layouts (Revolutionary)
 
-**Exponential Layouts is a visual page builder for Exponential.** It brings the Netgen Layouts concept to the
+**Exponential Layouts is a visual page builder for Exponential.** It brings the concept of the upstream layouts packages to the
 Exponential kernel: a **layout** is a saved arrangement of **blocks** in **zones**, and a **rule** decides which
 pages get it, so editors rearrange pages without touching templates.
 

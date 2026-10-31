@@ -84,7 +84,7 @@ request ([Contributing to the documentation](../../README-LICENSE.md#contributin
 
 ## Crediting people and projects
 
-- Credit work as the project does: "brings the Netgen Layouts concept to the Exponential kernel", "with full credit
+- Credit work as the project does: "brings the concept of the upstream layouts packages to the Exponential kernel", "with full credit
   to Mugo Web" ([How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows)).
 - Name contributors only as public sources name them, and only with what is public.
 - Keep copyright notices exactly as written: "Exponential Foundation and 7x"

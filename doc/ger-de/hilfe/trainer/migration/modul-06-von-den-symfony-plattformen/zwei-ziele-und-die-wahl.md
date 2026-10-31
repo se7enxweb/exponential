@@ -64,7 +64,7 @@ Quellen: [Kapitel 16.1](../../../../installation/16-migration-von-ez-platform-un
 Paketwechsel (16.2).
 
 **Wir verwenden den kommerziellen Page Builder. Was passiert?** In Nexus gibt es keinen Page Builder; Landing Pages
-werden auf Weg A mit Netgen Layouts neu aufgebaut, auf Weg B mit Exponential Layouts (16.2, 16.5.9).
+werden auf beiden Wegen mit Exponential Layouts neu aufgebaut, auf Nexus (Weg A) oder im Legacy-Kernel (Weg B) (16.2, 16.5.9).
 
 **Müssen wir Fallen bei Composer-Versionen kennen?** Ja, für Weg A: Nennen Sie für Nexus immer eine Version, weil das
 Repository die Upstream-Tags behält (16.1). Lektion 6.2 behandelt das.
@@ -127,7 +127,7 @@ Eine Entscheidungsübung zu zweit, mit geöffnetem Kapitel 16.
 3. Von der Darstellung und dem eigenen Code, nicht von den Inhalten; die Inhaltstabellen werden gemeinsam genutzt
    ([Kapitel 16.2](../../../../installation/16-migration-von-ez-platform-und-ibexa.md#162-einen-weg-wählen)).
 4. Zuerst dieselbe Generation: Nexus `1.2.0.x` (oder das 4.6-Skeleton), danach die Generation wechseln (Kapitel 16.2).
-5. **Falsch.** Nexus baut Seiten mit Netgen Layouts; der Page Builder hat keine Entsprechung (Kapitel 16.1, 16.5.9).
+5. **Falsch.** Nexus baut Seiten mit Exponential Layouts; der Page Builder hat keine Entsprechung (Kapitel 16.1, 16.5.9).
 
 </details>
 

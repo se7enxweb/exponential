@@ -44,7 +44,7 @@ the project maintain servers, extensions and tools"
 | Exponential Basic | A simple CMS for learning and small sites | `se7enxweb/exponentialbasic` |
 | Exponential Platform 3.2.9 | Symfony-only CMS from the last free eZ Platform | `se7enxweb/exponential-platform` |
 | Exponential Platform Legacy | Symfony platform plus Exponential 6 | `se7enxweb/exponential-platform-legacy` |
-| Exponential Platform Nexus | Platform plus Exponential 6, Netgen Layouts and Media Site | `se7enxweb/exponential-platform-nexus` |
+| Exponential Platform Nexus | Platform plus Exponential 6, Exponential Layouts and Media Site | `se7enxweb/exponential-platform-nexus` |
 | Exponential Platform DXP | Symfony-only DXP meta package | `se7enxweb/exponential-platform-dxp` |
 
 Source: [The product family at a glance](../../who-is-the-exponential-foundation.md#the-product-family-at-a-glance).

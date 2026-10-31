@@ -4,13 +4,13 @@ audience: press
 category: press-media
 order: 157
 summary: An eight-minute video script for the page builder, Exponential Layouts - the Layouts Dashboard, a new layout, adding, configuring, moving and duplicating blocks, linked zones of shared layouts, publishing or discarding, and mappings - with exact button names, credit to Netgen, and what not to claim.
-keywords: demo script, Exponential Layouts, page builder, layouts editor, zones, blocks, shared layout, linked zone, mappings, rules, Netgen Layouts, video, creator
+keywords: demo script, Exponential Layouts, page builder, layouts editor, zones, blocks, shared layout, linked zone, mappings, rules, video, creator
 type: help
 ---
 # Demo script: Exponential Layouts
 
-This page is for creators who show the page builder of Exponential. Exponential Layouts brings "the Netgen Layouts
-concept to the Exponential kernel" (`README.md`, quoted in
+This page is for creators who show the page builder of Exponential. Exponential Layouts brings "the concept of the upstream layouts
+packages to the Exponential kernel" (`README.md`, quoted in
 [Brand and naming rules](../business/brand-and-naming-rules.md#other-companies-and-products)); credit Netgen when you
 show it. The script runs about eight minutes and works on a copy of a layout, so nothing on your demo site changes
 unless you publish. Every click comes from [The layouts editor](../layouts-editor.md) and
@@ -91,14 +91,14 @@ If you publish on camera and the editor asks whether to clear caches, choose **C
 | Do not say | Say instead |
 |---|---|
 | "Every Exponential product has this editor." | "Exponential Platform DXP does not ship a layouts editor." ([Knowing the product family](../advocates/knowing-the-product-family.md#common-mix-ups)) |
-| "It's Netgen Layouts." | "It brings the Netgen Layouts concept to the Exponential kernel." |
+| "It's Netgen Layouts." | "It brings the concept of the upstream layouts packages to the Exponential kernel." |
 | "Netgen made this for Exponential." | Credit the concept only; the sources do not say Netgen built the port |
 | "Anyone can change any page." | "Roles decide who sees the Layouts tab; mappings decide whole parts of the site." |
 
 ```text
 DESCRIPTION BLOCK
 Shows Exponential Layouts in Exponential <version>, on my own test installation.
-Exponential Layouts brings the Netgen Layouts concept to the Exponential kernel.
+Exponential Layouts brings the concept of the upstream layouts packages to the Exponential kernel.
 The layouts editor: <link to "The layouts editor">
 Walk-through with screenshots: <link to "A tour of the administration, In action: the layouts editor">
 ```

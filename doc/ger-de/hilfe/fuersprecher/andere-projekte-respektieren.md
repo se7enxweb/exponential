@@ -25,7 +25,7 @@ Sie glaubwürdig.
 
 - Die Codebasis von Exponential trägt die Arbeit von eZ Systems und Hunderten Beitragenden
   ([Beitragende und Freunde des Projekts](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts)).
-- Seine Funktionen bauen auf anderen Projekten auf: Netgen Layouts, LoveStack von Mugo Web, der Newsletter von CJW
+- Seine Funktionen bauen auf anderen Projekten auf: den Upstream-Layouts-Paketen, LoveStack von Mugo Web, der Newsletter von CJW
   Network, Zeta Components, Symfony, PHP selbst ([Der PHP-Stack, auf dem es steht](../wer-ist-die-exponential-foundation.md#der-php-stack-auf-dem-es-steht-und-dem-es-etwas-zurückgibt)).
 - Menschen, die Sie heute beleidigen, könnten morgen Beitragende sein.
 - Wer einen Angriff auf ein anderes Produkt liest, traut jeder anderen Aussage weniger.
@@ -34,7 +34,7 @@ Sie glaubwürdig.
 
 | Wen | Wie die Quellen es sagen |
 |---|---|
-| Netgen | Exponential Layouts bringt „das Konzept von Netgen Layouts in den Kernel von Exponential“ |
+| Netgen | Exponential Layouts bringt „das Konzept der Upstream-Layouts-Pakete in den Kernel von Exponential“ |
 | Mugo Web | Die LoveStack-Verbesserungen wurden „unter voller Nennung von Mugo Web“ neu gebaut |
 | CJW Network | `cjw_newsletter`; request-shield ist „ein Projekt von CJW Network ... nicht der Foundation“ |
 | eZ Systems | Sein Copyright von 1999 bis 2014 bleibt im Code |
@@ -68,7 +68,7 @@ Quellen: [Marken- und Namensregeln, Andere Unternehmen und Produkte](../geschaef
 |---|---|
 | „X ist aufgebläht.“ | „Die Installation von Exponential ist ein Befehl auf SQLite.“ |
 | „Ibexa hat Sie im Stich gelassen.“ | „Wenn Sie eZ Platform oder Ibexa nutzen, gibt es einen dokumentierten Migrationsweg“ ([Kapitel 16](../../installation/16-migration-von-ez-platform-und-ibexa.md)) |
-| „Unser Layouts-Editor ist besser als der von Netgen.“ | „Exponential Layouts bringt das Konzept von Netgen Layouts zu Exponential.“ |
+| „Unser Layouts-Editor ist besser als der von Netgen.“ | „Exponential Layouts bringt das Konzept der Upstream-Layouts-Pakete zu Exponential.“ |
 | „Niemand, der ernst zu nehmen ist, nutzt X.“ | Sagen Sie nichts. |
 
 ## Verwandte Seiten

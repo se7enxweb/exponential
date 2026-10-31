@@ -86,7 +86,7 @@ One command installs a complete site on SQLite, with no database server, in `eng
 | 0:40 | Open a folder from the tree, press **Edit** | "Every edit starts a draft. The site keeps showing the published version until you publish." |
 | 1:20 | Change the **Short name**, press **Preview**, press the phone width button | "Before publishing you see the page at phone, tablet and desktop width." |
 | 2:00 | **Back to edit**, **Send for publishing** | "Publishing keeps the earlier version. You can always go back." |
-| 2:30 | **Layouts** tab, **Layouts**, **Open** on a layout | "Pages are arranged here by editors: zones, and blocks inside them. Exponential Layouts brings the Netgen Layouts concept to Exponential." (`README.md`) |
+| 2:30 | **Layouts** tab, **Layouts**, **Open** on a layout | "Pages are arranged here by editors: zones, and blocks inside them. Exponential Layouts brings the concept of the upstream layouts packages to Exponential." (`README.md`) |
 | 3:10 | Click a block | "Its settings are on the right: what it shows, and how it looks." |
 | 3:40 | **Discard**, confirm | "This was a draft. Discarding it leaves the published page exactly as it was." |
 | 4:10 | Press the **Help** button in the header | "The help is built in. The Help button opens the page that belongs to the screen you are on." ([Help system](../../features/6.0/help-system.md)) |

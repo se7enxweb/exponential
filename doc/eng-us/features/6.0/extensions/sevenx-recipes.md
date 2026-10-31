@@ -141,11 +141,11 @@ script is added.
     `src/LegacySettings` and `src/LegacyRoot`, so do not assume it is bridge-free);
   - Symfony 7 and Ibexa 5 configuration compatibility (`storage_factory_id` instead of `storage_id`), the clean `1.x`
     slots, Encore configuration for the React builds, `tsconfig.json` and `controllers.json`, the install command
-    loading the Netgen Layouts schema during `exponential:install`, and legacy siteaccess INI settings.
+    loading the Exponential Layouts schema during `exponential:install`, and legacy siteaccess INI settings.
 - **13 to 17 April, smaller fixes with a user-visible effect:**
   - the registered recipe versions were reordered so that Flex's `version_compare` selects `5.0` correctly (the order
     of the `recipes` list in `index.json` matters to Flex);
-  - the Netgen Layouts route file of the `5.0` slot is `routing.yaml`, not `routing.yml`;
+  - the Exponential Layouts route file of the `5.0` slot is `routing.yaml`, not `routing.yml`;
   - `imagemagick.pre_parameters` and `imagemagick.post_parameters` are declared as container parameters (an undefined
     parameter otherwise stops the container build);
   - the `4.6.x-dev` manifest was regenerated after the legacy bridge files were removed from it, and points to the

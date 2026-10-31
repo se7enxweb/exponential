@@ -1,7 +1,7 @@
 # Exponential Layouts
 
 Lesen Sie diese Seite, wenn Sie in Exponential 6.0 Seitenlayouts bauen oder bearbeiten oder Blocktypen, View-Typen oder
-Abfragetypen dafür entwickeln. Exponential Layouts bringt das Konzept von Netgen Layouts auf den Legacy-Stack von
+Abfragetypen dafür entwickeln. Exponential Layouts bringt das Konzept der Upstream-Layouts-Pakete auf den Legacy-Stack von
 Exponential: Ein Layout ist eine gespeicherte Anordnung von Blöcken in Zonen, und eine Regel entscheidet, welche Seiten
 es erhalten, sodass Redakteure Seiten umgestalten, ohne Templates anzufassen. Die erste Hälfte dieser Seite erklärt die
 Ideen und den Editor; die zweite Hälfte ist Referenzmaterial und Erweiterungsarbeit. Kennen Sie das System bereits,
@@ -625,7 +625,7 @@ beschreibt. Der **Import** nimmt dieses Dokument und legt daraus ein Layout an.
 
 Das ist der unterstützte Weg, ein Layout zwischen Umgebungen zu bewegen — auf Staging bauen, exportieren, auf der
 Produktion importieren — und der vernünftige Weg, vor einer großen Umstrukturierung eine Sicherung zu behalten. So
-funktioniert auch die Portierung von Netgen Layouts, da die Form der Daten absichtlich nah gehalten wurde.
+funktioniert auch die Portierung aus den Upstream-Layouts-Paketen, da die Form der Daten absichtlich nah gehalten wurde.
 
 Kennungen reisen mit dem Export, daher braucht ein Import in eine Umgebung, die diese Kennung bereits hat, Sorgfalt.
 
@@ -994,7 +994,7 @@ implementiert.)
 
 ### Migration und Gleichwertigkeit
 
-Die Portierung folgt der Datenform von Netgen Layouts, daher lässt sich ein XML/JSON-Export von Netgen mit minimaler
+Die Portierung folgt der Datenform der Upstream-Layouts-Pakete, daher lässt sich ein XML/JSON-Export aus ihnen mit minimaler
 Umwandlung importieren. Die Unterschiede beschränken sich auf die Exponential-spezifischen Abfrage-Handler und die
 Rendering-Schicht der Legacy-Templates.
 

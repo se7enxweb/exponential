@@ -4,7 +4,7 @@ The history of `exponential-platform-nexus`, one of the platform repositories ar
 
 ## What it is
 
-Exponential Platform Nexus: Netgen Layouts + Media Site + tags + platform and legacy.
+Exponential Platform Nexus: Exponential Layouts + Media Site + tags + platform and legacy.
 
 ## How it relates to Exponential
 

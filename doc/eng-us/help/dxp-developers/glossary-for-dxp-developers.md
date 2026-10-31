@@ -49,7 +49,7 @@ alphabetical order.
 
 | Term | Meaning | Exponential 6 | Page |
 |---|---|---|---|
-| Nexus | The Exponential Platform distribution with Netgen Layouts and a demo site | | [Choosing](choosing-dxp-legacy-nexus-or-exponential-6.md) |
+| Nexus | The Exponential Platform distribution with Exponential Layouts and a demo site | | [Choosing](choosing-dxp-legacy-nexus-or-exponential-6.md) |
 | Recipe | Configuration a Flex package writes into your project | | [Project layout](the-project-directory-layout.md#what-flex-writes) |
 | Replace | A Composer declaration that a package provides another | | [The forks](the-se7enxweb-forks-and-replace.md#how-replace-works) |
 | Repository | The content storage and its PHP services | the kernel's content classes | [Content](content-types-and-locations.md) |

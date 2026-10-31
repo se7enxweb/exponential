@@ -4,7 +4,7 @@ Die Geschichte von `layouts-core`, einem der Plattform-Repositorys rund um Expon
 
 ## Was es ist
 
-Der Kern von Netgen Layouts (Page-Builder-Engine in PHP/Symfony), Fork se7enxweb/layouts-core.
+Der Kern von Exponential Layouts (Page-Builder-Engine in PHP/Symfony), Fork se7enxweb/layouts-core.
 
 ## Wie es mit Exponential zusammenhängt
 

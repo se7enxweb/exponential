@@ -30,7 +30,7 @@ package install, found half-way through an install it costs a restart of the ins
 | Need | Minimum | Recommended | Checked by |
 |---|---|---|---|
 | PHP | 8.0 supported; 7.4 usable without support | the newest 8.x your system offers (8.5 is supported) | Composer (`composer.json`, `require.php`, and the metapackage `se7enxweb/exponential-php-floor`); the setup wizard (`settings/setup.ini`, `[phpversion] MinimumVersion=7.4.0`) |
-| PHP for Netgen Layouts and the media site | 8.1 | as above | Composer (the `explayouts` packages and `sevenx-themes-media`; the metapackage installs them from PHP 8.1 on) |
+| PHP for Exponential Layouts and the media site | 8.1 | as above | Composer (the `explayouts` packages and `sevenx-themes-media`; the metapackage installs them from PHP 8.1 on) |
 | PHP for Exponential Velocity | 8.0, with `sockets` (from release 0.0.4.54; until then 8.1) | as above, with `pcntl` and `openssl` | Composer (`se7enxweb/exponential-velocity`: `"php": ">=8.0"`, `"ext-sockets": "*"`) |
 | PHP extensions | see [2.3](#23-php-extensions) | plus the recommended ones | Composer (`ext-*`), the setup wizard's system check |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` set, `file_uploads` on, `allow_url_fopen` on | | the setup wizard's system check |
@@ -54,8 +54,8 @@ good check (for the command line PHP).
 
 | PHP | Status |
 |---|---|
-| 7.4 | Usable without support from 6.0.15, for sites that cannot move to PHP 8 yet (no bug-fix or security commitment). The kernel and the bundled extensions run on it; Velocity, Netgen Layouts and a few extensions that need PHP 8 are not installed (see [Why Exponential supports PHP 7.4](../help/why-exponential-supports-php-7-4.md) for the full table). |
-| 8.0 | Supported. The kernel and the shipped extensions run on it under Apache with mod_php or PHP-FPM. It is the stock PHP of Red Hat Enterprise Linux 9, AlmaLinux 9 and Rocky Linux 9. Velocity runs on it from its release 0.0.4.54 (see [2.9](#php-80-and-red-hat-enterprise-linux) for what differs); Netgen Layouts needs 8.1. |
+| 7.4 | Usable without support from 6.0.15, for sites that cannot move to PHP 8 yet (no bug-fix or security commitment). The kernel and the bundled extensions run on it; Velocity, Exponential Layouts and a few extensions that need PHP 8 are not installed (see [Why Exponential supports PHP 7.4](../help/why-exponential-supports-php-7-4.md) for the full table). |
+| 8.0 | Supported. The kernel and the shipped extensions run on it under Apache with mod_php or PHP-FPM. It is the stock PHP of Red Hat Enterprise Linux 9, AlmaLinux 9 and Rocky Linux 9. Velocity runs on it from its release 0.0.4.54 (see [2.9](#php-80-and-red-hat-enterprise-linux) for what differs); Exponential Layouts needs 8.1. |
 | 8.1 to 8.4 | Supported, Velocity and Layouts included. |
 | 8.5 | Supported; the newest version tested. |
 | 7.3 and older | Not supported. A site that must stay on PHP 7.3 or older stays on 6.0.7 or earlier. |

@@ -21,7 +21,7 @@ Die Geschichte umfasst 6556 Änderungen des Änderungsverzeichnisses in 53 Repos
 |---|---|---|---|
 | [exponential-platform-nexus-starter](oekosystem/exponential-platform-nexus-starter.md) | Nexus für Platform v5 (Symfony 7.4, PHP 8.4+, SQLite-Starter). | Composer und ein Installationsbefehl ergeben eine v5-Website mit Layouts, REST, GraphQL und Administration. | 16 / 248 |
 | [exponential-platform-dxp](oekosystem/exponential-platform-dxp.md) | Metapaket se7enxweb/exponential-platform-dxp für Platform v5. | Ein Paketname für eine vollständige v5-Installation. | 20 / 112 |
-| [exponential-platform-nexus](oekosystem/exponential-platform-nexus.md) | Exponential Platform Nexus: Netgen Layouts + Media Site + Tags + Plattform und Legacy. | Eine funktionierende Website mit Demo-Inhalten, Layouts und Administration, in Minuten installiert. | 97 / 97 |
+| [exponential-platform-nexus](oekosystem/exponential-platform-nexus.md) | Exponential Platform Nexus: Exponential Layouts + Media Site + Tags + Plattform und Legacy. | Eine funktionierende Website mit Demo-Inhalten, Layouts und Administration, in Minuten installiert. | 97 / 97 |
 | [cjw-exponential-platform-nexus](oekosystem/cjw-exponential-platform-nexus.md) | Die CJW-Variante von Nexus (se7enxweb/cjw-exponential-platform-nexus). | Nexus mit den Startinhalten von CJW. | 89 / 89 |
 | [exponential-platform-legacy](oekosystem/exponential-platform-legacy.md) | Distribution Exponential Platform Legacy 2.5 (Plattform plus Legacy). | Composer-Projekt für die LTS-Linie 2.5 auf PHP 8.1 und 8.2. | 46 / 46 |
 | [exponential-platform-v4x-dxp-skeleton](oekosystem/exponential-platform-v4x-dxp-skeleton.md) | Projekt-Skeleton für Platform 4.6.x DXP. | create-project für 4.6. | 19 / 25 |
@@ -94,7 +94,7 @@ Die Geschichte umfasst 6556 Änderungen des Änderungsverzeichnisses in 53 Repos
 
 | Repository | Was es ist | Was Anwender davon haben | Änderungen (eigene / gesamt) |
 |---|---|---|---|
-| [layouts-core](oekosystem/layouts-core.md) | Der Kern von Netgen Layouts (Page-Builder-Engine in PHP/Symfony), Fork se7enxweb/layouts-core. | Layout-Page-Builder unter PHP 8.4: Getter-Shims lassen Twig die Parameter lesen. | 1 / 450 |
+| [layouts-core](oekosystem/layouts-core.md) | Der Kern von Exponential Layouts (Page-Builder-Engine in PHP/Symfony), Fork se7enxweb/layouts-core. | Layout-Page-Builder unter PHP 8.4: Getter-Shims lassen Twig die Parameter lesen. | 1 / 450 |
 | [ibexa-recipes](oekosystem/ibexa-recipes.md) | Symfony-Flex-Rezepte der Plattform-Pakete. | Flex konfiguriert Bundles bei composer require. | 1 / 142 |
 
 ## Framework-Forks

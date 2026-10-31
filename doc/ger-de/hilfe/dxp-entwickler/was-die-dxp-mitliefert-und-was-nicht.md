@@ -56,7 +56,7 @@ Anforderungen des Metapakets selbst: `"php": ">=8.3"`, `ext-ctype`, `ext-iconv`;
 
 | Nicht enthalten | Warum es wichtig ist | Quelle |
 |---|---|---|
-| Ein Layout-Editor | Verlangt wird nur `se7enxweb/layouts-core`: keine Layouts-Oberfläche, keine Standardblöcke, kein Ibexa-Integrationspaket von Netgen Layouts | Anforderungen des Metapakets |
+| Ein Layout-Editor | Verlangt wird nur `se7enxweb/layouts-core`: keine Layouts-Oberfläche, keine Standardblöcke, kein Ibexa-Integrationspaket für Layouts | Anforderungen des Metapakets |
 | Ein Freigabe-Workflow | Kein Workflow-Paket wird verlangt | Anforderungen des Metapakets |
 | Ein Scheduler für das Veröffentlichen | Kein Scheduler-Paket wird verlangt | Anforderungen des Metapakets |
 | Der Kernel von Exponential 6 | Keine Legacy Bridge, kein `se7enxweb/exponential` | README des Skeletons: "No LegacyBridge, no classic legacy kernel" |

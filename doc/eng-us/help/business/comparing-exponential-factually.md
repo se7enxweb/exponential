@@ -186,7 +186,7 @@ Some buyers know the history. Use the tone of the history pages: factual, source
   18 years ([Who is 7x?, The eZ Publish years](../who-is-7x.md#the-ez-publish-years-1999-to-2021)).
 - **No association.** "This project is not associated with the original eZ Publish software or its original developer,
   eZ Systems or Ibexa" (`README.md`, "Exponential Project Notice : 2025.08.12").
-- **Credit where it is due.** Exponential Layouts brings the Netgen Layouts concept to the kernel; the LoveStack
+- **Credit where it is due.** Exponential Layouts brings the concept of the upstream layouts packages to the kernel; the LoveStack
   improvements of Mugo Web were rebuilt "with full credit to Mugo Web"; `cjw_newsletter` comes from CJW Network
   ([Who is 7x?, Contributors and friends of the project](../who-is-7x.md#contributors-and-friends-of-the-project)).
 - **Customers on eZ Platform or Ibexa.** Do not argue about their current platform. Point to the documented migration
