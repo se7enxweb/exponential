@@ -1,0 +1,22 @@
+{
+    "command:expgraphqlstarter": {
+        "en": "Generate a starter front end (Next.js, Nuxt, Astro, plain HTML or Expo) that reads the site through the GraphQL API, with queries from the live schema; a dry run unless --apply",
+        "de": "Erzeugt ein Starter-Frontend (Next.js, Nuxt, Astro, reines HTML oder Expo), das die Site über die GraphQL-API liest, mit Abfragen aus dem aktuellen Schema; ein Probelauf ohne --apply"
+    },
+    "command:expgraphqlstarter --endpoint": {
+        "en": "the address of the end point (default: site.ini [SiteSettings] SiteURL and /api/graphql)",
+        "de": "die Adresse des Endpunkts (Standard: site.ini [SiteSettings] SiteURL und /api/graphql)"
+    },
+    "command:expgraphqlstarter --kit": {
+        "en": "the kit: html, next, nuxt, astro or expo",
+        "de": "das Kit: html, next, nuxt, astro oder expo"
+    },
+    "command:expgraphqlstarter --list": {
+        "en": "list the kits",
+        "de": "die Kits auflisten"
+    },
+    "command:expgraphqlstarter --to": {
+        "en": "the directory to write the project to (new or empty)",
+        "de": "das Verzeichnis, in das das Projekt geschrieben wird (neu oder leer)"
+    }
+}

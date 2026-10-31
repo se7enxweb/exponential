@@ -1,0 +1,4 @@
+# The GraphQL end point of the site, and an optional personal API key (scope graphql:read). The key is read on the
+# server only (no NEXT_PUBLIC_ prefix): it never reaches a browser.
+EXP_GRAPHQL_ENDPOINT=__EXP_ENDPOINT__
+EXP_GRAPHQL_KEY=

@@ -21,7 +21,7 @@ Administration. Was spätere Phasen hinzufügen, steht unter [Was als Nächstes 
 | Mutationen | aus, bis `MutationsEnabled=enabled`; dann gegen Richtlinien geprüft, mit Workflows, im Audit, nur `POST` |
 | Rechte | immer die Rollen und Richtlinien des Benutzers; die Schema-Einstellungen entscheiden, was überhaupt gefragt werden kann |
 | Administration | Setup > GraphQL (Richtlinie `graphql/playground`): die Endpunkte, das Schema, die Siteaccesses, die Grenzen, der Antwort-Cache, die gespeicherten Abfragen, die Schlüssel und ein Playground; Schalter mit `graphql/administrate` |
-| Konsole | `exp:graphql:enable`, `exp:graphql:disable`, `exp:graphql:status`, `exp:graphql:schema`, `exp:graphql:query`, `exp:graphql:persist`, `exp:graphql:keys` |
+| Konsole | `exp:graphql:enable`, `exp:graphql:disable`, `exp:graphql:status`, `exp:graphql:schema`, `exp:graphql:query`, `exp:graphql:persist`, `exp:graphql:keys`, `exp:graphql:starter` |
 | Einstellungen | [graphql.ini [GraphQLSettings]](../../beispiele/ini-einstellungen/graphql/GraphQLSettings.md), [[GraphQLNaming]](../../beispiele/ini-einstellungen/graphql/GraphQLNaming.md) |
 
 ## Inhalt
@@ -1068,6 +1068,7 @@ zum Schema-Hash, also sehen Clients, dass sich das Schema ändert. `exp:graphql:
 | [`exp:graphql:persist`](../../beispiele/befehle/expgraphqlpersist.md) | speichert `.graphql`-Dateien als [gespeicherte Abfragen](#gespeicherte-abfragen), nachdem sie gegen das Schema geprüft wurden (`--apply`; `--name=`), `--list` (`--format=text\|json`), `--remove=<Name oder sha256> --apply` |
 | [`exp:graphql:enable`](../../beispiele/befehle/expgraphqlenable.md) | schaltet die API mit einem Befehl ein: `--siteaccess=`, `--mutations`, `--origin=` (CORS), `--key-for=<login>` mit `--key-name=`, `--scope=`, `--days=`; prüft das Schema, gibt den Endpunkt und eine `curl`-Zeile aus; ein Probelauf (ein Diff) ohne `--apply` |
 | [`exp:graphql:disable`](../../beispiele/befehle/expgraphqldisable.md) | schaltet sie aus, überall oder für `--siteaccess=`; `--mutations` schaltet nur die Mutationen aus; ein Probelauf ohne `--apply` |
+| [`exp:graphql:starter`](../../beispiele/befehle/expgraphqlstarter.md) | erzeugt ein Starter-Frontend in ein neues Verzeichnis (`--kit=html\|next\|nuxt\|astro\|expo`, `--to=`, `--endpoint=`, `--list`): die Dateien des Kits und aus dem Schema erzeugte Abfragen (das Menü, eine Seite nach URL-Alias, jedes Feld jeder Klasse), jede vorher gegen das Schema geprüft; siehe [Schritt für Schritt](../../anleitungen/graphql-schritt-fuer-schritt.md); ein Probelauf ohne `--apply` |
 | [`exp:graphql:keys`](../../beispiele/befehle/expgraphqlkeys.md) | die persönlichen API-Schlüssel mit einem GraphQL-Bereich: die Liste (`--format=text\|json`), `--create --for=<login>` (`--name`, `--scope`, `--days`; das Token wird einmal gezeigt), `--revoke=<Präfix oder ID>`; ein Probelauf ohne `--apply` |
 
 ```bash
@@ -1185,13 +1186,15 @@ ohne Termine:
 - **Dynamische Sammlungen**: die Einträge der Abfrage eines Blocks, so wie die Seite sie rendert.
 - **Webhooks**: ein Aufruf an ein anderes System, wenn sich Inhalte ändern.
 - **Subscriptions**: Änderungen, die einem Client gleich beim Geschehen zugestellt werden.
-- **Starter-Kits**: Frontend-Projekte, die die API von der ersten Minute an lesen.
 
 Nichts davon ist schon Teil von 6.0.15. Die veröffentlichten Namen bleiben, wie sie sind; die späteren Phasen fügen nur
 hinzu.
 
 ## Verwandte Seiten
 
+- [Ein Frontend auf der GraphQL-API, Schritt für Schritt](../../anleitungen/graphql-schritt-fuer-schritt.md): von
+  ausgeschaltet bis zum laufenden Starter-Projekt
+- [GraphQL-Rezepte](../../anleitungen/graphql-rezepte.md): ein Blog, eine mobile App, ein statischer Build, ein KI-Agent
 - [API-Schlüssel](../../anleitungen/api-schluessel.md): persönliche Schlüssel, ihre Bereiche und wie die REST-Schicht sie auflöst
 - [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md): die REST-Schnittstelle und ihre OAuth-Token
 - [Entfernte Dienste: die ganze Administration als HTTP-API (expservices)](entfernte-dienste-expservices.md)

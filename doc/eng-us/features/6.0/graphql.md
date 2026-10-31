@@ -20,7 +20,7 @@ administration. What later phases add is listed under [What comes next](#what-co
 | Mutations | off until `MutationsEnabled=enabled`; then policy-checked, workflows run, audited, `POST` only |
 | Rights | the user's roles and policies, always; the schema settings decide what can be asked at all |
 | Administration | Setup > GraphQL (policy `graphql/playground`): the end points, the schema, the siteaccesses, the limits, the response cache, the persisted queries, the keys and a playground; switches with `graphql/administrate` |
-| Console | `exp:graphql:enable`, `exp:graphql:disable`, `exp:graphql:status`, `exp:graphql:schema`, `exp:graphql:query`, `exp:graphql:persist`, `exp:graphql:keys` |
+| Console | `exp:graphql:enable`, `exp:graphql:disable`, `exp:graphql:status`, `exp:graphql:schema`, `exp:graphql:query`, `exp:graphql:persist`, `exp:graphql:keys`, `exp:graphql:starter` |
 | Settings | [graphql.ini [GraphQLSettings]](../../examples/ini-settings/graphql/GraphQLSettings.md), [[GraphQLNaming]](../../examples/ini-settings/graphql/GraphQLNaming.md) |
 
 ## Contents
@@ -1036,6 +1036,7 @@ list the extensions that answer.
 | [`exp:graphql:persist`](../../examples/commands/expgraphqlpersist.md) | stores `.graphql` files as [persisted queries](#persisted-queries) after checking them against the schema (`--apply`; `--name=`), `--list` (`--format=text\|json`), `--remove=<name or sha256> --apply` |
 | [`exp:graphql:enable`](../../examples/commands/expgraphqlenable.md) | switches the API on in one command: `--siteaccess=`, `--mutations`, `--origin=` (CORS), `--key-for=<login>` with `--key-name=`, `--scope=`, `--days=`; checks the schema, prints the end point and a `curl` line; a dry run (a diff) unless `--apply` |
 | [`exp:graphql:disable`](../../examples/commands/expgraphqldisable.md) | switches it off, everywhere or for `--siteaccess=`; `--mutations` switches only the mutations off; a dry run unless `--apply` |
+| [`exp:graphql:starter`](../../examples/commands/expgraphqlstarter.md) | generates a starter front end into a new directory (`--kit=html\|next\|nuxt\|astro\|expo`, `--to=`, `--endpoint=`, `--list`): the kit's files and queries generated from the schema (the menu, a page by URL alias, every field of each class), each checked against the schema first; see [step by step](../../guides/graphql-walkthrough.md); a dry run unless `--apply` |
 | [`exp:graphql:keys`](../../examples/commands/expgraphqlkeys.md) | the personal API keys with a GraphQL scope: the list (`--format=text\|json`), `--create --for=<login>` (`--name`, `--scope`, `--days`; the token is shown once), `--revoke=<prefix or id>`; a dry run unless `--apply` |
 
 ```bash
@@ -1149,12 +1150,14 @@ of the kernel and its extensions) and changes it with mutations. Later phases ar
 - **Dynamic collections**: the items of a block's query, as the page renders them.
 - **Webhooks**: a call to another system when content changes.
 - **Subscriptions**: changes pushed to a client as they happen.
-- **Starter kits**: front-end projects that read the API from the first minute.
 
 None of this is part of 6.0.15 yet. The names released stay as they are; the later phases only add.
 
 ## Related pages
 
+- [A front end on the GraphQL API, step by step](../../guides/graphql-walkthrough.md): from switched off to a running
+  starter project
+- [GraphQL recipes](../../guides/graphql-recipes.md): a blog, a mobile app, a static build, an AI agent
 - [API keys](../../guides/api-keys.md): personal keys, their scopes and how the REST layer resolves them
 - [REST API v1 and v2](../../guides/rest-api-v1-and-v2.md): the REST interface and its OAuth tokens
 - [Remote services: the whole admin as an HTTP API (expservices)](remote-services-expservices.md)
