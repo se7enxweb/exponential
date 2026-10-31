@@ -448,7 +448,7 @@ class expGraphQLEvents
             return true;
         if ( class_exists( 'expAuditWriter' ) )
             return expAuditWriter::ensureDirectory( $dir );
-        return @mkdir( $dir, 0770, true ) || is_dir( $dir );
+        return @mkdir( $dir, eZDir::dirMode( 0770 ), true ) || is_dir( $dir );
     }
 
     /**
@@ -463,7 +463,7 @@ class expGraphQLEvents
         if ( class_exists( 'expAuditWriter' ) )
             expAuditWriter::ownLikeParent( $path, $mode );
         else
-            @chmod( $path, $mode );
+            @chmod( $path, eZFile::fileMode( $mode ) );
     }
 }
 
