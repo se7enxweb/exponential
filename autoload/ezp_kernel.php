@@ -1149,6 +1149,7 @@ return array(
       'expContentCheckUnreferenced'                                  => 'kernel/classes/contentcheck/expcontentcheckunreferenced.php',
       'expContentDraftList'                                          => 'kernel/classes/expcontentdraftlist.php',
       'expContentExtensionWizard'                                    => 'kernel/setup/expcontentextensionwizard.php',
+      'expContentFieldMarker'                                        => 'kernel/classes/expcontentfieldmarker.php',
       'expContentFinder'                                             => 'kernel/classes/contentfinder/expcontentfinder.php',
       'expContentFinderAction'                                       => 'kernel/classes/contentfinder/expcontentfinderaction.php',
       'expContentFinderInput'                                        => 'kernel/classes/contentfinder/expcontentfinderinput.php',

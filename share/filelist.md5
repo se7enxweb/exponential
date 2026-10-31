@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 46884c493a70f93699d00c996034fbf3  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-8dc75f72804b6cbbb089e09601899104  autoload/ezp_kernel.php
+00443e8dfeaf00fa01b3eb531bc1d824  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 a880afdeae4b5fa062bb38f5a26c322f  benchmarks/classes/ezbenchmarkclirunner.php
@@ -23341,6 +23341,7 @@ f5e00741cb1d97fbbc64c34dfcb77a92  kernel/classes/expcollaborationsampledata.php
 9a58b12aedb5c4e78d42cf9899ff4904  kernel/classes/expconfigphpcatalogue.php
 4bd779e1c3561afe7b9213da3d124d4a  kernel/classes/expconfigphpeditor.php
 2e40030c083c7510590264d154258abc  kernel/classes/expcontentdraftlist.php
+26da118252fca37607c78f9db84c2edf  kernel/classes/expcontentfieldmarker.php
 2b8c5aba431eb7022455b5e77253d8aa  kernel/classes/expcontenthistorylist.php
 d8df80e6f7684b3a57b83865cb18d6df  kernel/classes/expcontentlanguagestates.php
 ceb8038b13ca2723d475c854688ff1f8  kernel/classes/expcontentpendinglist.php
@@ -23975,7 +23976,7 @@ f6e44aaf98a9635651362eca6f8d550b  kernel/common/ezalphabetoperator.php
 2dfd848995d000a676978201e26178ac  kernel/common/ezkerneloperator.php
 5ae7db794523dca9302eea1d093b29cd  kernel/common/ezmoduleoperator.php
 d265bb0731e337920520328441fca31e  kernel/common/ezmoduleparamsoperator.php
-2c2c45b88f80a5cf21ad973d2038d75a  kernel/common/ezobjectforwarder.php
+bc7e3c48554e59f865f100036bd00b92  kernel/common/ezobjectforwarder.php
 4874b0121b6fce08f54bca9ba7a65249  kernel/common/ezpackageoperator.php
 aef2f5c3c7107baa33f484b7c8fcfe01  kernel/common/ezpi18n.php
 c00985701847ba36c6ca4e6ef206c3c6  kernel/common/ezpsiteaccessmenuoperator.php
@@ -25457,7 +25458,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 3d58b3c9abd483644a07965e143cb05f  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-d8669a629304b37aa584a4c71d587da0  settings/site.ini
+258708924b44e608599bfe9d0616b01d  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -27349,6 +27350,7 @@ fd99ee63872ec9c32a1300315f761f24  tests/tests/kernel/classes/expCacheCatalogueTe
 e3cef9e4e4454bc5476c8e1d8da2b6e5  tests/tests/kernel/classes/expCacheManagerTest.php
 34305629bb01ea1e68c5fed9cb094d7d  tests/tests/kernel/classes/expContentDraftListTest.php
 70271a4803463b362c2373b29aaa8106  tests/tests/kernel/classes/expContentExportEntryTest.php
+b5c23cd29414f9b4fc63e63845ce9fb3  tests/tests/kernel/classes/expContentFieldMarkerTest.php
 0003ae74609fa96f7f06556231e2be64  tests/tests/kernel/classes/expContentHideReturnTest.php
 3a9bd915cd127bc821aad8744db3ae92  tests/tests/kernel/classes/expContentHistoryListTest.php
 a6f6894206dbc0dde7dae7dba8bf008a  tests/tests/kernel/classes/expContentLanguagesCountsLiveTest.php

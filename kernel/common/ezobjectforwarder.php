@@ -136,6 +136,22 @@ class eZObjectForwarder
         $templateRoot = $rule["template_root"];
         $matchFileArray = eZTemplateDesignResource::overrideArray();
 
+        // The markers of a rendered attribute (expContentFieldMarker): empty unless a handler wants them for this
+        // request. A stack, as an attribute's template can render attributes itself (inlined into this code).
+        $fieldMarkers = $functionName === 'attribute_view_gui';
+        if ( $fieldMarkers )
+        {
+            $newNodes[] = eZTemplateNodeTool::createVariableNode( false,
+                                                                  array( eZTemplateNodeTool::createVariableElement( $outputName, $namespaceValue, eZTemplate::NAMESPACE_SCOPE_RELATIVE ) ),
+                                                                  false, array( 'spacing' => 0 ), 'expFieldMarkerAttribute' );
+            $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$expFieldMarkerPair = expContentFieldMarker::pair( \$expFieldMarkerAttribute );\n" .
+                                                                   "\$expFieldMarkerOpen = \$expFieldMarkerPair[0];\n" .
+                                                                   "if ( !isset( \$expFieldMarkerStack ) ) \$expFieldMarkerStack = array();\n" .
+                                                                   "\$expFieldMarkerStack[] = \$expFieldMarkerPair[1];\n" .
+                                                                   "unset( \$expFieldMarkerAttribute, \$expFieldMarkerPair );" );
+            $newNodes[] = eZTemplateNodeTool::createWriteToOutputVariableNode( 'expFieldMarkerOpen' );
+        }
+
         if ( is_string( $templateRoot ) )
         {
             $resourceNodes = $this->resourceAcquisitionTransformation( $functionName, $node, $rule, $inputData,
@@ -202,6 +218,12 @@ class eZObjectForwarder
 
                 $newNodes[] = eZTemplateNodeTool::createVariableUnsetNode( 'templateRootMatch' );
             }
+        }
+
+        if ( $fieldMarkers )
+        {
+            $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$expFieldMarkerClose = array_pop( \$expFieldMarkerStack );" );
+            $newNodes[] = eZTemplateNodeTool::createWriteToOutputVariableNode( 'expFieldMarkerClose' );
         }
 
         foreach ( $variableList as $variableName )
@@ -778,6 +800,10 @@ class eZObjectForwarder
                 }
             }
 
+            // the markers of a rendered attribute, as templateNodeTransformation() writes them for compiled templates
+            $fieldMarkers = $functionName === 'attribute_view_gui' ? expContentFieldMarker::pair( $input_var ) : array( '', '' );
+            if ( $fieldMarkers[0] !== '' )
+                $textElements[] = $fieldMarkers[0];
             $templateCompilationUsed = false;
             if ( $resourceData['compiled-template'] )
             {
@@ -792,6 +818,8 @@ class eZObjectForwarder
 
                 $textElements[] = $sub_text;
             }
+            if ( $fieldMarkers[1] !== '' )
+                $textElements[] = $fieldMarkers[1];
             foreach ( $setVariableArray as $setVariableName )
             {
                 $tpl->unsetVariable( $setVariableName, $outCurrentNamespace );
