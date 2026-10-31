@@ -78325,6 +78325,58 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ny fotoam-pidiranao sy ny zava-mitranga momba ny fiarovana ho rakitra JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Tsy voarakitra amin'ity tranokala ity ny fotoam-pidirana, ka tsy nisy fitaovana hafa azo navoaka. Ovay izao ny teny miafinao.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Fotoam-pidirana hafa %count no navoaka. Ovay izao ny teny miafinao.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Tsy nisy fitaovana hafa niditra. Ovay izao ny teny miafinao.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Misaotra. Voamarika ho anao ilay zava-nitranga.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Tsy mila valiny io zava-nitranga io.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Lany andro ny pejy. Tsy nisy novaina; azafady andramo indray.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Arovy ny kaontinao</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Raha misy zavatra eto tsy nataonao, avoahy ny fitaovana hafa rehetra, avy eo misafidiana teny miafina vaovao. Avoaka koa ireo fitaovana mbola niditra tamin'ny “Tadidio aho”.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Avoaka amin'ny fangatahana manaraka azy ny fitaovana rehetra afa-tsy ity. Avy eo ianao no misafidy teny miafina vaovao.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Eny, avoahy ny fitaovana hafa</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ianao ve ity?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Eny, izaho io</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Tsia, arovy ny kaontiko</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ny fotoam-pidiranao sy ny zava-mitranga momba ny fiarovana ho rakitra JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Tsy voarakitra amin'ity tranokala ity ny fotoam-pidirana, ka tsy nisy fitaovana hafa azo navoaka. Ovay izao ny teny miafinao.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Fotoam-pidirana hafa %count no navoaka. Ovay izao ny teny miafinao.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Tsy nisy fitaovana hafa niditra. Ovay izao ny teny miafinao.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Misaotra. Voamarika ho anao ilay zava-nitranga.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Tsy mila valiny io zava-nitranga io.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Lany andro ny pejy. Tsy nisy novaina; azafady andramo indray.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Arovy ny kaontinao</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Raha misy zavatra eto tsy nataonao, avoahy ny fitaovana hafa rehetra, avy eo misafidiana teny miafina vaovao. Avoaka koa ireo fitaovana mbola niditra tamin'ny “Tadidio aho”.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Avoaka amin'ny fangatahana manaraka azy ny fitaovana rehetra afa-tsy ity. Avy eo ianao no misafidy teny miafina vaovao.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Eny, avoahy ny fitaovana hafa</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ianao ve ity?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Eny, izaho io</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Tsia, arovy ny kaontiko</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Mpitantana fotoam-pidirana: %handler. Vakiana avy amin&apos;ny tabilao expuser_session ny fotoam-pidirana, ka miasa amin&apos;ny mpitantana rehetra ny tatitra.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Asa mampiahiahy tao anatin'ny %hours ora farany</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Tambajotra iray no tsy nahomby niditra tamin'ny kaonty %accounts (andrana %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Nohidiana ny kaonty taorian'ny fidirana tsy nahomby</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Fidirana tsy nahomby %count amin'ny kaonty iray</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Niditra avy amin'ny firenena %count niaraka</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Asa momba ny fiarovana</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Fotoam-pidirana</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Ny fidirana tsy nahomby dia vakiana ao amin'ny rakitry ny fanaraha-maso ny mpampiasa, izay tsy misy eto.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Tsy misy mampiahiahy: tsy misy kaonty misy fidirana tsy nahomby miverimberina, tsy misy tambajotra manandrana kaonty maromaro, tsy misy kaonty niditra avy amin'ny firenena maromaro.</translation>
     </message>
 </context>
 <context>

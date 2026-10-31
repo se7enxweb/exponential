@@ -78325,6 +78325,58 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Masesheni enyu nezviitiko zvekuchengeteka sefaira re JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Masesheni haanyorwi pasaiti iyi, saka hapana imwe midziyo yakabuditswa. Chinjai pasiwedhi yenyu izvozvi.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Mamwe masesheni %count akabuditswa. Zvino chinjai pasiwedhi yenyu.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Hapana imwe midziyo yakanga yapinda. Zvino chinjai pasiwedhi yenyu.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Tatenda. Chiitiko ichi chaiswa chiratidzo sechenyu.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Chiitiko ichocho hachidi mhinduro.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Peji yakanga yapera nguva. Hapana chakachinjwa; edzai zvakare.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Chengetedzai akaundi yenyu</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Kana chimwe chinhu pano chisina kuitwa nemi, budisai midziyo yese imwe, wobva masarudza pasiwedhi itsva. Midziyo yakaramba yakapinda kuburikidza ne Ndirangarire inobuditswawo.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Midziyo yese kunze kweuyu inobuditswa pakukumbira kunotevera. Mobva masarudza pasiwedhi itsva.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Hongu, budisai imwe midziyo</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ndimi here?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Hongu, ndini</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Kwete, chengetedzai akaundi yangu</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Masesheni enyu nezviitiko zvekuchengeteka sefaira re JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Masesheni haanyorwi pasaiti iyi, saka hapana imwe midziyo yakabuditswa. Chinjai pasiwedhi yenyu izvozvi.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Mamwe masesheni %count akabuditswa. Zvino chinjai pasiwedhi yenyu.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Hapana imwe midziyo yakanga yapinda. Zvino chinjai pasiwedhi yenyu.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Tatenda. Chiitiko ichi chaiswa chiratidzo sechenyu.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Chiitiko ichocho hachidi mhinduro.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Peji yakanga yapera nguva. Hapana chakachinjwa; edzai zvakare.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Chengetedzai akaundi yenyu</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Kana chimwe chinhu pano chisina kuitwa nemi, budisai midziyo yese imwe, wobva masarudza pasiwedhi itsva. Midziyo yakaramba yakapinda kuburikidza ne Ndirangarire inobuditswawo.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Midziyo yese kunze kweuyu inobuditswa pakukumbira kunotevera. Mobva masarudza pasiwedhi itsva.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Hongu, budisai imwe midziyo</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ndimi here?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Hongu, ndini</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Kwete, chengetedzai akaundi yangu</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Mubati wesesheni: %handler. Masesheni anoverengwa kubva mutafura expuser_session, saka mushumo unoshanda nemubati upi noupi.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Zviitiko zvinofungirwa mumaawa %hours apfuura</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Netiweki imwe yakakundikana kupinda muma akaundi %accounts (kuedza %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akaundi yakavharwa mushure mekukundikana kupinda</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Kukundikana kupinda %count paakaundi imwe</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Yakapinda kubva kunyika %count panguva imwe chete</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Zviitiko zvekuchengeteka</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Masesheni</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Kukundikana kupinda kunoverengwa kubva mubhuku rekuongorora revashandisi, iro risingawanikwe pano.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Hapana chinofungirwa: hapana akaundi ine kukundikana kupinda kunodzokororwa, hapana netiweki inoedza maakaundi akawanda, hapana akaundi yakapinda kubva kunyika dzakawanda.</translation>
     </message>
 </context>
 <context>

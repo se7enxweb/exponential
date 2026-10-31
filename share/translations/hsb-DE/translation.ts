@@ -78325,6 +78325,58 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Waše posedźenja a wěstotne podawki jako JSON-dataja.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Posedźenja so na tutym sydle njezapisuja, tohodla njeda so žadyn druhi grat wotzjewić. Změńće nětko swoje hesło.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count druhich posedźenjow bu wotzjewjenych. Změńće nětko swoje hesło.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Žadyn druhi grat njebě přizjewjeny. Změńće nětko swoje hesło.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Wulki dźak. Podawk je jako waš markěrowany.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Tutón podawk wotmołwu njetrjeba.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Strona bě spadnyła. Nic njeje so změniło; prošu spytajće hišće raz.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Konto zawěsćić</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Jeli něšto tu njejsće wy byli, wotzjewće wšě druhe graty a wubjerće potom nowe hesło. Graty, kotrež su z Wostać přizjewjeny přizjewjene wostali, so tež wotzjewja.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Kóždy grat chibazo tutón so při swojim přichodnym naprašowanju wotzjewi. Potom wuběrać nowe hesło.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Haj, druhe graty wotzjewić</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Sće to wy byli?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Haj, to sym ja był</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ně, moje konto zawěsćić</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Waše posedźenja a wěstotne podawki jako JSON-dataja.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Posedźenja so na tutym sydle njezapisuja, tohodla njeda so žadyn druhi grat wotzjewić. Změńće nětko swoje hesło.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count druhich posedźenjow bu wotzjewjenych. Změńće nětko swoje hesło.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Žadyn druhi grat njebě přizjewjeny. Změńće nětko swoje hesło.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Wulki dźak. Podawk je jako waš markěrowany.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Tutón podawk wotmołwu njetrjeba.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Strona bě spadnyła. Nic njeje so změniło; prošu spytajće hišće raz.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Konto zawěsćić</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Jeli něšto tu njejsće wy byli, wotzjewće wšě druhe graty a wubjerće potom nowe hesło. Graty, kotrež su z Wostać přizjewjeny přizjewjene wostali, so tež wotzjewja.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Kóždy grat chibazo tutón so při swojim přichodnym naprašowanju wotzjewi. Potom wuběrać nowe hesło.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Haj, druhe graty wotzjewić</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Sće to wy byli?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Haj, to sym ja był</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ně, moje konto zawěsćić</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Wobdźěłowak posedźenjow: %handler. Posedźenja so z tabele expuser_session čitaja, tohodla rozprawa z kóždym wobdźěłowakom dźěła.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Podhladna aktiwita w zańdźenych %hours hodźinach</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Jedna syć njemóžeše so pola %accounts kontow přizjewić (%count pospytow)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto po njewuspěšnych přizjewjenjach zawrjene</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count njewuspěšnych přizjewjenjow na jednym konće</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Runočasnje z %count krajow přizjewjeny</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Wěstotna aktiwita</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Posedźenja</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Njewuspěšne přizjewjenja so z auditoweho protokola wužiwarjow čitaja, kotryž tu k dispoziciji njeje.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Ničo podhladne: žane konto z wospjetnymi njewuspěšnymi přizjewjenjemi, žana syć, kotraž wjacore konta spytuje, žane konto přizjewjene z wjacorych krajow.</translation>
     </message>
 </context>
 <context>

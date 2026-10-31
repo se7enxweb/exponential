@@ -78325,6 +78325,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ཁྱེད་ཀྱི་ཐེངས་ཚན་དང་བདེ་འཇགས་དོན་རྐྱེན་ JSON ཡིག་ཆའི་རྣམ་པར།</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>དྲ་ཚིགས་འདིའི་ཐོག་ཐེངས་ཚན་ཐོ་འགོད་མི་བྱེད། དེར་བརྟེན་སྒྲིག་ཆས་གཞན་གང་ཡང་ཕྱིར་ཐོན་ཐུབ་མེད། ད་ལྟ་རང་ཉིད་ཀྱི་གསང་གྲངས་བརྗེ་རོགས།</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>ཐེངས་ཚན་གཞན་ %count ཕྱིར་ཐོན་བྱས་ཟིན། ད་ཁྱེད་ཀྱི་གསང་གྲངས་བརྗེ་རོགས།</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>སྒྲིག་ཆས་གཞན་གང་ཡང་ནང་འཛུལ་བྱས་མེད། ད་ཁྱེད་ཀྱི་གསང་གྲངས་བརྗེ་རོགས།</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ཐུགས་རྗེ་ཆེ། དོན་རྐྱེན་དེ་ཁྱེད་ཀྱི་ཡིན་པར་རྟགས་བཀོད་ཟིན།</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>དོན་རྐྱེན་དེར་ལན་དགོས་མེད།</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ཤོག་ངོས་ཀྱི་དུས་ཚོད་ཡོལ་ཟིན། ཅི་ཡང་བསྒྱུར་བཅོས་བྱས་མེད། ཡང་བསྐྱར་ཚོད་ལྟ་བྱེད་རོགས།</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ཁྱེད་ཀྱི་ཐོ་ཁོངས་བདེ་འཇགས་སུ་གཏོང་།</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>གལ་ཏེ་འདིའི་ནང་གི་ཅི་ཞིག་ཁྱེད་མ་ཡིན་ན། སྒྲིག་ཆས་གཞན་ཚང་མ་ཕྱིར་ཐོན་བྱས་རྗེས་གསང་གྲངས་གསར་པ་ཞིག་འདེམས་རོགས། ང་ཡིད་ལ་འཛིན་བརྒྱུད་ནང་འཛུལ་བྱས་ནས་བཞག་པའི་སྒྲིག་ཆས་རྣམས་ཀྱང་ཕྱིར་ཐོན་འགྱུར།</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>འདི་མ་གཏོགས་སྒྲིག་ཆས་རེ་རེ་དེའི་རེ་ཞུ་རྗེས་མར་ཕྱིར་ཐོན་འགྱུར། དེ་རྗེས་ཁྱེད་ཀྱིས་གསང་གྲངས་གསར་པ་ཞིག་འདེམས།</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ལགས་སོ། སྒྲིག་ཆས་གཞན་རྣམས་ཕྱིར་ཐོན།</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>འདི་ཁྱེད་ཡིན་ནམ།</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ལགས་སོ། ང་ཡིན།</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>མིན། ངའི་ཐོ་ཁོངས་བདེ་འཇགས་སུ་གཏོང་།</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ཁྱེད་ཀྱི་ཐེངས་ཚན་དང་བདེ་འཇགས་དོན་རྐྱེན་ JSON ཡིག་ཆའི་རྣམ་པར།</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>དྲ་ཚིགས་འདིའི་ཐོག་ཐེངས་ཚན་ཐོ་འགོད་མི་བྱེད། དེར་བརྟེན་སྒྲིག་ཆས་གཞན་གང་ཡང་ཕྱིར་ཐོན་ཐུབ་མེད། ད་ལྟ་རང་ཉིད་ཀྱི་གསང་གྲངས་བརྗེ་རོགས།</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>ཐེངས་ཚན་གཞན་ %count ཕྱིར་ཐོན་བྱས་ཟིན། ད་ཁྱེད་ཀྱི་གསང་གྲངས་བརྗེ་རོགས།</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>སྒྲིག་ཆས་གཞན་གང་ཡང་ནང་འཛུལ་བྱས་མེད། ད་ཁྱེད་ཀྱི་གསང་གྲངས་བརྗེ་རོགས།</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ཐུགས་རྗེ་ཆེ། དོན་རྐྱེན་དེ་ཁྱེད་ཀྱི་ཡིན་པར་རྟགས་བཀོད་ཟིན།</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>དོན་རྐྱེན་དེར་ལན་དགོས་མེད།</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ཤོག་ངོས་ཀྱི་དུས་ཚོད་ཡོལ་ཟིན། ཅི་ཡང་བསྒྱུར་བཅོས་བྱས་མེད། ཡང་བསྐྱར་ཚོད་ལྟ་བྱེད་རོགས།</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ཁྱེད་ཀྱི་ཐོ་ཁོངས་བདེ་འཇགས་སུ་གཏོང་།</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>གལ་ཏེ་འདིའི་ནང་གི་ཅི་ཞིག་ཁྱེད་མ་ཡིན་ན། སྒྲིག་ཆས་གཞན་ཚང་མ་ཕྱིར་ཐོན་བྱས་རྗེས་གསང་གྲངས་གསར་པ་ཞིག་འདེམས་རོགས། ང་ཡིད་ལ་འཛིན་བརྒྱུད་ནང་འཛུལ་བྱས་ནས་བཞག་པའི་སྒྲིག་ཆས་རྣམས་ཀྱང་ཕྱིར་ཐོན་འགྱུར།</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>འདི་མ་གཏོགས་སྒྲིག་ཆས་རེ་རེ་དེའི་རེ་ཞུ་རྗེས་མར་ཕྱིར་ཐོན་འགྱུར། དེ་རྗེས་ཁྱེད་ཀྱིས་གསང་གྲངས་གསར་པ་ཞིག་འདེམས།</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ལགས་སོ། སྒྲིག་ཆས་གཞན་རྣམས་ཕྱིར་ཐོན།</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>འདི་ཁྱེད་ཡིན་ནམ།</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ལགས་སོ། ང་ཡིན།</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>མིན། ངའི་ཐོ་ཁོངས་བདེ་འཇགས་སུ་གཏོང་།</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>ཐེངས་ཚན་སྐྱོང་ཆས་: %handler། ཐེངས་ཚན་རྣམས་རེའུ་མིག expuser_session ནས་ཀློག་པས་ སྙན་ཞུ་འདིས་སྐྱོང་ཆས་གང་དང་ཡང་མཉམ་དུ་ལས་ཀ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>ཆུ་ཚོད་མཐའ་མ་ %hours ནང་གི་དོགས་པ་ཅན་གྱི་བྱ་འགུལ།</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>དྲ་བ་གཅིག་གིས་ཐོ་ཁོངས་ %accounts ནང་འཛུལ་བྱེད་མ་ཐུབ། (ཚོད་ལྟ་ %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ནང་འཛུལ་ཕམ་རྗེས་ཐོ་ཁོངས་ཟྭ་བརྒྱབ་ཟིན།</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>ཐོ་ཁོངས་གཅིག་ཐོག་ནང་འཛུལ་ཕམ་པ་ %count</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>དུས་མཚུངས་སུ་རྒྱལ་ཁབ་ %count ནས་ནང་འཛུལ་བྱས།</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>བདེ་འཇགས་ཀྱི་བྱ་འགུལ།</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ཐེངས་ཚན་ཁག</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ནང་འཛུལ་ཕམ་པ་རྣམས་སྤྱོད་མཁན་གྱི་ཞིབ་བཤེར་ཉིན་ཐོ་ནས་ཀློག་གི་ཡོད། དེ་འདིར་མེད།</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>དོགས་པ་ཅན་གང་ཡང་མེད། ནང་འཛུལ་ཕམ་པ་ཡང་ཡང་བྱུང་བའི་ཐོ་ཁོངས་མེད། ཐོ་ཁོངས་མང་པོར་ཚོད་ལྟ་བྱེད་པའི་དྲ་བ་མེད། རྒྱལ་ཁབ་མང་པོ་ནས་ནང་འཛུལ་བྱས་པའི་ཐོ་ཁོངས་མེད།</translation>
     </message>
 </context>
 <context>

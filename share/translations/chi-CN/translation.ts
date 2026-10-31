@@ -78323,6 +78323,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>您的会话和安全事件，以 JSON 文件形式提供。</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>本站不记录会话，因此无法让任何其他设备退出登录。请立即更改您的密码。</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>已让 %count 个其他会话退出登录。现在请更改您的密码。</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>没有其他已登录的设备。现在请更改您的密码。</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>谢谢。该事件已标记为您本人的操作。</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>该事件无需回复。</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>页面已过期。未做任何更改；请重试。</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>保护您的帐户</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>如果这里有任何操作不是您本人所为，请让所有其他设备退出登录，然后选择新密码。通过“记住我”保持登录的设备也会退出登录。</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>除本设备外，每台设备都会在其下一次请求时退出登录。然后您选择新密码。</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>是，让其他设备退出登录</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>这是您本人吗？</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>是，是我本人</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>不是，保护我的帐户</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78505,6 +78557,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>您的会话和安全事件，以 JSON 文件形式提供。</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>本站不记录会话，因此无法让任何其他设备退出登录。请立即更改您的密码。</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>已让 %count 个其他会话退出登录。现在请更改您的密码。</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>没有其他已登录的设备。现在请更改您的密码。</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>谢谢。该事件已标记为您本人的操作。</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>该事件无需回复。</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>页面已过期。未做任何更改；请重试。</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>保护您的帐户</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>如果这里有任何操作不是您本人所为，请让所有其他设备退出登录，然后选择新密码。通过“记住我”保持登录的设备也会退出登录。</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>除本设备外，每台设备都会在其下一次请求时退出登录。然后您选择新密码。</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>是，让其他设备退出登录</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>这是您本人吗？</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>是，是我本人</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>不是，保护我的帐户</translation>
     </message>
 </context>
 <context>
@@ -78696,6 +78800,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>会话处理程序：%handler。会话从数据表 expuser_session 中读取，因此该报告适用于任何处理程序。</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>过去 %hours 小时内的可疑活动</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>一个网络登录 %accounts 个帐户失败（%count 次尝试）</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>帐户因登录失败而被锁定</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>一个帐户登录失败 %count 次</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>同时从 %count 个国家/地区登录</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>安全活动</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>会话</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>登录失败记录读取自用户审计日志，而此处无法使用该日志。</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>没有可疑情况：没有反复登录失败的帐户，没有尝试多个帐户的网络，也没有从多个国家/地区登录的帐户。</translation>
     </message>
 </context>
 <context>

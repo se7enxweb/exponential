@@ -78333,6 +78333,58 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sesi lan kedadeyan keamanan panjenengan minangka berkas JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sesi ora dicathet ing situs iki, mula ora ana piranti liya sing bisa dimetokake. Ganti tembung sandhi panjenengan saiki.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count sesi liyane wis dimetokake. Saiki ganti tembung sandhi panjenengan.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ora ana piranti liya sing mlebu. Saiki ganti tembung sandhi panjenengan.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Matur nuwun. Kedadeyan iki ditandhani minangka duweke panjenengan.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Kedadeyan kuwi ora mbutuhake wangsulan.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Kaca wis kadaluwarsa. Ora ana sing diganti; mangga jajal maneh.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Amanake akun panjenengan</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Yen ana sing ing kene dudu panjenengan, metokake kabeh piranti liyane, banjur pilih tembung sandhi anyar. Piranti sing tetep mlebu nganggo Elinga aku uga dimetokake.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Saben piranti kajaba iki dimetokake ing panjalukan sabanjure. Banjur panjenengan milih tembung sandhi anyar.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Inggih, metokake piranti liyane</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Apa iki panjenengan?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Inggih, kuwi aku</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ora, amanake akunku</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78515,6 +78567,58 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sesi lan kedadeyan keamanan panjenengan minangka berkas JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sesi ora dicathet ing situs iki, mula ora ana piranti liya sing bisa dimetokake. Ganti tembung sandhi panjenengan saiki.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count sesi liyane wis dimetokake. Saiki ganti tembung sandhi panjenengan.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ora ana piranti liya sing mlebu. Saiki ganti tembung sandhi panjenengan.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Matur nuwun. Kedadeyan iki ditandhani minangka duweke panjenengan.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Kedadeyan kuwi ora mbutuhake wangsulan.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Kaca wis kadaluwarsa. Ora ana sing diganti; mangga jajal maneh.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Amanake akun panjenengan</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Yen ana sing ing kene dudu panjenengan, metokake kabeh piranti liyane, banjur pilih tembung sandhi anyar. Piranti sing tetep mlebu nganggo Elinga aku uga dimetokake.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Saben piranti kajaba iki dimetokake ing panjalukan sabanjure. Banjur panjenengan milih tembung sandhi anyar.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Inggih, metokake piranti liyane</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Apa iki panjenengan?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Inggih, kuwi aku</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ora, amanake akunku</translation>
     </message>
 </context>
 <context>
@@ -78706,6 +78810,42 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Penangan sesi: %handler. Sesi diwaca saka tabel expuser_session, mula laporan iki bisa mlaku karo saben penangan.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Aktivitas curiga ing %hours jam pungkasan</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Siji jaringan gagal mlebu menyang %accounts akun (%count upaya)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akun dikunci sawise gagal mlebu</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count gagal mlebu ing siji akun</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Mlebu saka %count negara bebarengan</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivitas keamanan</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesi</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Gagal mlebu diwaca saka log audit pangguna, sing ora kasedhiya ing kene.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Ora ana sing curiga: ora ana akun kanthi gagal mlebu bola-bali, ora ana jaringan sing nyoba sawetara akun, ora ana akun sing mlebu saka sawetara negara.</translation>
     </message>
 </context>
 <context>

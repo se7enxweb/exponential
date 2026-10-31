@@ -78355,6 +78355,58 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Is-sessjonijiet u l-avvenimenti tas-sigurtà tiegħek bħala fajl JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Is-sessjonijiet ma jiġux irreġistrati f'dan is-sit, għalhekk l-ebda apparat ieħor ma seta' joħroġ. Ibdel il-password tiegħek issa.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count sessjonijiet oħra ngħalqu. Issa ibdel il-password tiegħek.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>L-ebda apparat ieħor ma kien dieħel. Issa ibdel il-password tiegħek.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Grazzi. L-avveniment ġie mmarkat bħala tiegħek.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Dak l-avveniment ma jeħtieġ l-ebda tweġiba.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Il-paġna kienet skadiet. Ma nbidel xejn; erġa' pprova, jekk jogħġbok.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Assigura l-kont tiegħek</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Jekk xi ħaġa hawn ma kontx int, oħroġ mill-apparati l-oħra kollha, imbagħad agħżel password ġdida. L-apparati li baqgħu dieħla bi “Ftakar fija” joħorġu wkoll.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Kull apparat ħlief dan joħroġ fit-talba li jmiss tiegħu. Imbagħad tagħżel password ġdida.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Iva, oħroġ mill-apparati l-oħra</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Kont int?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Iva, kont jien</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Le, assigura l-kont tiegħi</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78537,6 +78589,58 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Is-sessjonijiet u l-avvenimenti tas-sigurtà tiegħek bħala fajl JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Is-sessjonijiet ma jiġux irreġistrati f'dan is-sit, għalhekk l-ebda apparat ieħor ma seta' joħroġ. Ibdel il-password tiegħek issa.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count sessjonijiet oħra ngħalqu. Issa ibdel il-password tiegħek.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>L-ebda apparat ieħor ma kien dieħel. Issa ibdel il-password tiegħek.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Grazzi. L-avveniment ġie mmarkat bħala tiegħek.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Dak l-avveniment ma jeħtieġ l-ebda tweġiba.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Il-paġna kienet skadiet. Ma nbidel xejn; erġa' pprova, jekk jogħġbok.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Assigura l-kont tiegħek</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Jekk xi ħaġa hawn ma kontx int, oħroġ mill-apparati l-oħra kollha, imbagħad agħżel password ġdida. L-apparati li baqgħu dieħla bi “Ftakar fija” joħorġu wkoll.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Kull apparat ħlief dan joħroġ fit-talba li jmiss tiegħu. Imbagħad tagħżel password ġdida.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Iva, oħroġ mill-apparati l-oħra</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Kont int?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Iva, kont jien</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Le, assigura l-kont tiegħi</translation>
     </message>
 </context>
 <context>
@@ -78728,6 +78832,42 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Ġestur tas-sessjonijiet: %handler. Is-sessjonijiet jinqraw mit-tabella expuser_session, għalhekk ir-rapport jaħdem ma&apos; kull ġestur.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Attività suspettuża fl-aħħar %hours siegħa</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Netwerk wieħed ma rnexxilux jidħol f'%accounts kont (%count tentattiv)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kont imsakkar wara dħul li ma rnexxiex</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count dħul li ma rnexxiex fuq kont wieħed</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Dieħel minn %count pajjiż fl-istess ħin</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Attività tas-sigurtà</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessjonijiet</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Id-dħul li ma rnexxiex jinqara mir-reġistru tal-verifika tal-utenti, li mhuwiex disponibbli hawn.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Xejn suspettuż: l-ebda kont b'dħul ripetut li ma rnexxiex, l-ebda netwerk li jipprova diversi kontijiet, l-ebda kont dieħel minn diversi pajjiżi.</translation>
     </message>
 </context>
 <context>

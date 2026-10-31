@@ -78323,6 +78323,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ክፍለ ጊዜዎችዎ እና የደህንነት ክስተቶችዎ እንደ JSON ፋይል።</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>በዚህ ጣቢያ ላይ ክፍለ ጊዜዎች አይመዘገቡም፣ ስለዚህ ማንኛውንም ሌላ መሣሪያ ማስወጣት አልተቻለም። አሁኑኑ የይለፍ ቃልዎን ይቀይሩ።</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count ሌሎች ክፍለ ጊዜዎች ወጥተዋል። አሁን የይለፍ ቃልዎን ይቀይሩ።</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ሌላ የገባ መሣሪያ አልነበረም። አሁን የይለፍ ቃልዎን ይቀይሩ።</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>እናመሰግናለን። ክስተቱ የእርስዎ እንደሆነ ምልክት ተደርጎበታል።</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ያ ክስተት መልስ አያስፈልገውም።</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>የገጹ ጊዜ አልፎ ነበር። ምንም አልተለወጠም፤ እባክዎ እንደገና ይሞክሩ።</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>መለያዎን ይጠብቁ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>እዚህ ያለ ነገር እርስዎ ካልሆኑ፣ ሁሉንም ሌሎች መሣሪያዎች ያስወጡ፣ ከዚያም አዲስ የይለፍ ቃል ይምረጡ። በ«አስታውሰኝ» እንደገቡ የቆዩ መሣሪያዎችም ይወጣሉ።</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ከዚህኛው በስተቀር እያንዳንዱ መሣሪያ በሚቀጥለው ጥያቄው ይወጣል። ከዚያም አዲስ የይለፍ ቃል ይመርጣሉ።</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>አዎ፣ ሌሎቹን መሣሪያዎች አስወጣ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ይህ እርስዎ ነበሩ?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>አዎ፣ እኔ ነበርኩ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>አይ፣ መለያዬን ጠብቅ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78505,6 +78557,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ክፍለ ጊዜዎችዎ እና የደህንነት ክስተቶችዎ እንደ JSON ፋይል።</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>በዚህ ጣቢያ ላይ ክፍለ ጊዜዎች አይመዘገቡም፣ ስለዚህ ማንኛውንም ሌላ መሣሪያ ማስወጣት አልተቻለም። አሁኑኑ የይለፍ ቃልዎን ይቀይሩ።</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count ሌሎች ክፍለ ጊዜዎች ወጥተዋል። አሁን የይለፍ ቃልዎን ይቀይሩ።</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ሌላ የገባ መሣሪያ አልነበረም። አሁን የይለፍ ቃልዎን ይቀይሩ።</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>እናመሰግናለን። ክስተቱ የእርስዎ እንደሆነ ምልክት ተደርጎበታል።</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ያ ክስተት መልስ አያስፈልገውም።</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>የገጹ ጊዜ አልፎ ነበር። ምንም አልተለወጠም፤ እባክዎ እንደገና ይሞክሩ።</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>መለያዎን ይጠብቁ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>እዚህ ያለ ነገር እርስዎ ካልሆኑ፣ ሁሉንም ሌሎች መሣሪያዎች ያስወጡ፣ ከዚያም አዲስ የይለፍ ቃል ይምረጡ። በ«አስታውሰኝ» እንደገቡ የቆዩ መሣሪያዎችም ይወጣሉ።</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ከዚህኛው በስተቀር እያንዳንዱ መሣሪያ በሚቀጥለው ጥያቄው ይወጣል። ከዚያም አዲስ የይለፍ ቃል ይመርጣሉ።</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>አዎ፣ ሌሎቹን መሣሪያዎች አስወጣ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ይህ እርስዎ ነበሩ?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>አዎ፣ እኔ ነበርኩ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>አይ፣ መለያዬን ጠብቅ</translation>
     </message>
 </context>
 <context>
@@ -78696,6 +78800,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>የክፍለ ጊዜ ተቆጣጣሪ፦ %handler። ክፍለ ጊዜዎቹ የሚነበቡት ከሠንጠረዡ expuser_session ስለሆነ ሪፖርቱ ከማንኛውም ተቆጣጣሪ ጋር ይሠራል።</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>ባለፉት %hours ሰዓታት ውስጥ አጠራጣሪ እንቅስቃሴ</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>አንድ አውታረ መረብ ወደ %accounts መለያዎች መግባት አልቻለም (%count ሙከራዎች)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ካልተሳኩ መግቢያዎች በኋላ መለያው ተቆልፏል</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>በአንድ መለያ ላይ %count ያልተሳኩ መግቢያዎች</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>በአንድ ጊዜ ከ%count አገሮች ገብቷል</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>የደህንነት እንቅስቃሴ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ክፍለ ጊዜዎች</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ያልተሳኩ መግቢያዎች የሚነበቡት ከተጠቃሚ ኦዲት ምዝግብ ነው፣ ይህም እዚህ አይገኝም።</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>ምንም አጠራጣሪ ነገር የለም፦ ተደጋጋሚ ያልተሳኩ መግቢያዎች ያሉት መለያ የለም፣ ብዙ መለያዎችን የሚሞክር አውታረ መረብ የለም፣ ከብዙ አገሮች የገባ መለያ የለም።</translation>
     </message>
 </context>
 <context>

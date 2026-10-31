@@ -78323,6 +78323,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ನಿಮ್ಮ ಸೆಷನ್‌ಗಳು ಮತ್ತು ಭದ್ರತಾ ಘಟನೆಗಳು JSON ಫೈಲ್ ಆಗಿ.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ಈ ಸೈಟ್‌ನಲ್ಲಿ ಸೆಷನ್‌ಗಳನ್ನು ದಾಖಲಿಸಲಾಗುವುದಿಲ್ಲ, ಆದ್ದರಿಂದ ಬೇರೆ ಯಾವುದೇ ಸಾಧನವನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಲಿಲ್ಲ. ಈಗಲೇ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count ಇತರ ಸೆಷನ್‌ಗಳನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ. ಈಗ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ಬೇರೆ ಯಾವುದೇ ಸಾಧನ ಸೈನ್ ಇನ್ ಆಗಿರಲಿಲ್ಲ. ಈಗ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ಧನ್ಯವಾದಗಳು. ಈ ಘಟನೆಯನ್ನು ನಿಮ್ಮದೆಂದು ಗುರುತಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ಆ ಘಟನೆಗೆ ಯಾವುದೇ ಉತ್ತರದ ಅಗತ್ಯವಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ಪುಟದ ಅವಧಿ ಮುಗಿದಿತ್ತು. ಏನನ್ನೂ ಬದಲಾಯಿಸಲಾಗಿಲ್ಲ; ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಸುರಕ್ಷಿತಗೊಳಿಸಿ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ಇಲ್ಲಿರುವ ಏನಾದರೂ ನೀವಲ್ಲದಿದ್ದರೆ, ಇತರ ಪ್ರತಿಯೊಂದು ಸಾಧನವನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಿ, ನಂತರ ಹೊಸ ಪಾಸ್‌ವರ್ಡ್ ಆಯ್ಕೆಮಾಡಿ. ನನ್ನನ್ನು ನೆನಪಿಡಿ ಮೂಲಕ ಸೈನ್ ಇನ್ ಆಗಿ ಉಳಿದ ಸಾಧನಗಳನ್ನೂ ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ಇದನ್ನು ಹೊರತುಪಡಿಸಿ ಪ್ರತಿಯೊಂದು ಸಾಧನವನ್ನು ಅದರ ಮುಂದಿನ ವಿನಂತಿಯಲ್ಲಿ ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗುತ್ತದೆ. ನಂತರ ನೀವು ಹೊಸ ಪಾಸ್‌ವರ್ಡ್ ಆಯ್ಕೆಮಾಡುತ್ತೀರಿ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ಹೌದು, ಇತರ ಸಾಧನಗಳನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ಇದು ನೀವೇ ಆಗಿದ್ದಿರಾ?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ಹೌದು, ಅದು ನಾನೇ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ಇಲ್ಲ, ನನ್ನ ಖಾತೆಯನ್ನು ಸುರಕ್ಷಿತಗೊಳಿಸಿ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78505,6 +78557,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ನಿಮ್ಮ ಸೆಷನ್‌ಗಳು ಮತ್ತು ಭದ್ರತಾ ಘಟನೆಗಳು JSON ಫೈಲ್ ಆಗಿ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ಈ ಸೈಟ್‌ನಲ್ಲಿ ಸೆಷನ್‌ಗಳನ್ನು ದಾಖಲಿಸಲಾಗುವುದಿಲ್ಲ, ಆದ್ದರಿಂದ ಬೇರೆ ಯಾವುದೇ ಸಾಧನವನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಲಿಲ್ಲ. ಈಗಲೇ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count ಇತರ ಸೆಷನ್‌ಗಳನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ. ಈಗ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ಬೇರೆ ಯಾವುದೇ ಸಾಧನ ಸೈನ್ ಇನ್ ಆಗಿರಲಿಲ್ಲ. ಈಗ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ಧನ್ಯವಾದಗಳು. ಈ ಘಟನೆಯನ್ನು ನಿಮ್ಮದೆಂದು ಗುರುತಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ಆ ಘಟನೆಗೆ ಯಾವುದೇ ಉತ್ತರದ ಅಗತ್ಯವಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ಪುಟದ ಅವಧಿ ಮುಗಿದಿತ್ತು. ಏನನ್ನೂ ಬದಲಾಯಿಸಲಾಗಿಲ್ಲ; ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಸುರಕ್ಷಿತಗೊಳಿಸಿ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ಇಲ್ಲಿರುವ ಏನಾದರೂ ನೀವಲ್ಲದಿದ್ದರೆ, ಇತರ ಪ್ರತಿಯೊಂದು ಸಾಧನವನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಿ, ನಂತರ ಹೊಸ ಪಾಸ್‌ವರ್ಡ್ ಆಯ್ಕೆಮಾಡಿ. ನನ್ನನ್ನು ನೆನಪಿಡಿ ಮೂಲಕ ಸೈನ್ ಇನ್ ಆಗಿ ಉಳಿದ ಸಾಧನಗಳನ್ನೂ ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ಇದನ್ನು ಹೊರತುಪಡಿಸಿ ಪ್ರತಿಯೊಂದು ಸಾಧನವನ್ನು ಅದರ ಮುಂದಿನ ವಿನಂತಿಯಲ್ಲಿ ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗುತ್ತದೆ. ನಂತರ ನೀವು ಹೊಸ ಪಾಸ್‌ವರ್ಡ್ ಆಯ್ಕೆಮಾಡುತ್ತೀರಿ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ಹೌದು, ಇತರ ಸಾಧನಗಳನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ಇದು ನೀವೇ ಆಗಿದ್ದಿರಾ?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ಹೌದು, ಅದು ನಾನೇ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ಇಲ್ಲ, ನನ್ನ ಖಾತೆಯನ್ನು ಸುರಕ್ಷಿತಗೊಳಿಸಿ</translation>
     </message>
 </context>
 <context>
@@ -78696,6 +78800,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>ಸೆಷನ್ ಹ್ಯಾಂಡ್ಲರ್: %handler. ಸೆಷನ್‌ಗಳನ್ನು expuser_session ಟೇಬಲ್‌ನಿಂದ ಓದಲಾಗುತ್ತದೆ, ಆದ್ದರಿಂದ ವರದಿ ಪ್ರತಿಯೊಂದು ಹ್ಯಾಂಡ್ಲರ್‌ನೊಂದಿಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>ಕಳೆದ %hours ಗಂಟೆಗಳಲ್ಲಿ ಸಂಶಯಾಸ್ಪದ ಚಟುವಟಿಕೆ</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>ಒಂದು ನೆಟ್‌ವರ್ಕ್ %accounts ಖಾತೆಗಳಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಲು ವಿಫಲವಾಯಿತು (%count ಪ್ರಯತ್ನಗಳು)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ವಿಫಲ ಸೈನ್-ಇನ್‌ಗಳ ನಂತರ ಖಾತೆ ಲಾಕ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>ಒಂದು ಖಾತೆಯಲ್ಲಿ %count ವಿಫಲ ಸೈನ್-ಇನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>ಏಕಕಾಲದಲ್ಲಿ %count ದೇಶಗಳಿಂದ ಸೈನ್ ಇನ್</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ಭದ್ರತಾ ಚಟುವಟಿಕೆ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ಸೆಷನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ವಿಫಲ ಸೈನ್-ಇನ್‌ಗಳನ್ನು ಬಳಕೆದಾರ ಆಡಿಟ್ ಲಾಗ್‌ನಿಂದ ಓದಲಾಗುತ್ತದೆ, ಅದು ಇಲ್ಲಿ ಲಭ್ಯವಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>ಸಂಶಯಾಸ್ಪದ ಏನೂ ಇಲ್ಲ: ಪುನರಾವರ್ತಿತ ವಿಫಲ ಸೈನ್-ಇನ್‌ಗಳಿರುವ ಖಾತೆ ಇಲ್ಲ, ಹಲವು ಖಾತೆಗಳನ್ನು ಪ್ರಯತ್ನಿಸುವ ನೆಟ್‌ವರ್ಕ್ ಇಲ್ಲ, ಹಲವು ದೇಶಗಳಿಂದ ಸೈನ್ ಇನ್ ಆದ ಖಾತೆ ಇಲ್ಲ.</translation>
     </message>
 </context>
 <context>

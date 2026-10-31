@@ -78323,6 +78323,58 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Danişîn û bûyerên ewlehiyê yên we wek pelekî JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Li vê malperê danişîn nayên tomarkirin, ji ber vê yekê tu cîhazeke din nehat derxistin. Niha şîfreya xwe biguherînin.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count danişînên din hatin derxistin. Niha şîfreya xwe biguherînin.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Tu cîhazeke din têketî nebû. Niha şîfreya xwe biguherînin.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Spas. Bûyer wekî ya we hat nîşankirin.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ew bûyer bersivekê naxwaze.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Dema rûpelê derbas bûbû. Tiştek nehat guhertin; ji kerema xwe dîsa biceribînin.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Hesabê xwe biparêzin</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Heke tiştek li vir ne ji aliyê we ve bû, hemû cîhazên din derxînin, paşê şîfreyeke nû hilbijêrin. Cîhazên ku bi “Min bi bîr bînin” têketî mane jî tên derxistin.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Her cîhaz ji bilî vê yekê di daxwaza xwe ya din de tê derxistin. Paşê hûn şîfreyeke nû hildibijêrin.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Erê, cîhazên din derxînin</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ev hûn bûn?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Erê, ez bûm</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Na, hesabê min biparêzin</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78505,6 +78557,58 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Danişîn û bûyerên ewlehiyê yên we wek pelekî JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Li vê malperê danişîn nayên tomarkirin, ji ber vê yekê tu cîhazeke din nehat derxistin. Niha şîfreya xwe biguherînin.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count danişînên din hatin derxistin. Niha şîfreya xwe biguherînin.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Tu cîhazeke din têketî nebû. Niha şîfreya xwe biguherînin.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Spas. Bûyer wekî ya we hat nîşankirin.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ew bûyer bersivekê naxwaze.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Dema rûpelê derbas bûbû. Tiştek nehat guhertin; ji kerema xwe dîsa biceribînin.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Hesabê xwe biparêzin</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Heke tiştek li vir ne ji aliyê we ve bû, hemû cîhazên din derxînin, paşê şîfreyeke nû hilbijêrin. Cîhazên ku bi “Min bi bîr bînin” têketî mane jî tên derxistin.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Her cîhaz ji bilî vê yekê di daxwaza xwe ya din de tê derxistin. Paşê hûn şîfreyeke nû hildibijêrin.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Erê, cîhazên din derxînin</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ev hûn bûn?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Erê, ez bûm</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Na, hesabê min biparêzin</translation>
     </message>
 </context>
 <context>
@@ -78696,6 +78800,42 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Birêvebirê danişînê: %handler. Danişîn ji tabloya expuser_session tên xwendin, ji ber vê yekê rapor bi her birêvebirî re dixebite.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Çalakiya gumanbar di %hours demjimêrên dawî de</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Torek nekarî têkeve %accounts hesaban (%count hewldan)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Hesab piştî têketinên bi ser neketî hat kilîtkirin</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count têketinên bi ser neketî li ser hesabekî</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Di heman demê de ji %count welatan têketin</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Çalakiya ewlehiyê</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Danişîn</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Têketinên bi ser neketî ji qeyda kontrolê ya bikarhêneran tên xwendin, ku li vir ne berdest e.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Tiştekî gumanbar tune: ne hesabek bi têketinên bi ser neketî yên dubare, ne torek ku çend hesaban diceribîne, ne jî hesabek ku ji çend welatan têketiye.</translation>
     </message>
 </context>
 <context>

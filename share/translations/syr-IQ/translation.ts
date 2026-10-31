@@ -78333,6 +78333,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ܡܘܬ̈ܒܐ ܘܓܕ̈ܫܐ ܕܫܠܡܘܬܐ ܕܝܠܘܟܘܢ ܐܝܟ ܦܢܩܝܬܐ ܕ JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ܡܘ̈ܬܒܐ ܠܐ ܡܬܟܬܒܝܢ ܒܐܬܪܐ ܗܢܐ، ܡܛܠ ܗܢܐ ܡܐܢܐ ܐܚܪܢܐ ܠܐ ܐܫܟܚ ܠܡܦܠܛ. ܫܚܠܦܘ ܡܠܬܐ ܕܥܒܪܐ ܕܝܠܟܘܢ ܗܫܐ.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count ܡܘ̈ܬܒܐ ܐܚܪ̈ܢܐ ܐܬܦܠܛܘ. ܗܫܐ ܫܚܠܦܘ ܡܠܬܐ ܕܥܒܪܐ ܕܝܠܟܘܢ.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ܡܐܢܐ ܐܚܪܢܐ ܠܐ ܗܘܐ ܥܠܝܠ. ܗܫܐ ܫܚܠܦܘ ܡܠܬܐ ܕܥܒܪܐ ܕܝܠܟܘܢ.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ܬܘܕܝ. ܓܕܫܐ ܐܬܪܫܡ ܐܝܟ ܕܝܠܟܘܢ.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ܓܕܫܐ ܗܘ ܠܐ ܣܢܝܩ ܠܦܘܢܝ ܦܬܓܡܐ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ܦܐܬܐ ܥܒܪ ܙܒܢܗ. ܡܕܡ ܠܐ ܐܫܬܚܠܦ؛ ܒܒܥܘܬܐ ܢܣܘ ܬܘܒ.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ܚܡܝܐ ܕܚܘܫܒܢܐ ܕܝܠܘܟܘܢ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ܐܢ ܡܕܡ ܗܪܟܐ ܠܐ ܗܘܐ ܐܢܬܘܢ، ܦܠܛܘ ܟܠ ܡܐܢ̈ܐ ܐܚܪ̈ܢܐ، ܘܒܬܪܟܢ ܓܒܘ ܡܠܬܐ ܕܥܒܪܐ ܚܕܬܐ. ܡܐܢ̈ܐ ܕܦܝܫܝܢ ܥܠܝܠܝܢ ܒܝܕ ܕܟܪܘܢܝ ܐܦ ܗܢܘܢ ܡܬܦܠܛܝܢ.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ܟܠ ܡܐܢܐ ܣܛܪ ܡܢ ܗܢܐ ܡܬܦܠܛ ܒܒܥܬܐ ܕܐܬܝܐ. ܒܬܪܟܢ ܓܒܝܬܘܢ ܡܠܬܐ ܕܥܒܪܐ ܚܕܬܐ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ܐܝܢ، ܦܠܛܘ ܡܐܢ̈ܐ ܐܚܪ̈ܢܐ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ܐܢܬܘܢ ܗܘܝܬܘܢ ܗܢܐ؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ܐܝܢ، ܐܢܐ ܗܘܝܬ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ܠܐ، ܚܡܘ ܚܘܫܒܢܐ ܕܝܠܝ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78515,6 +78567,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ܡܘܬ̈ܒܐ ܘܓܕ̈ܫܐ ܕܫܠܡܘܬܐ ܕܝܠܘܟܘܢ ܐܝܟ ܦܢܩܝܬܐ ܕ JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ܡܘ̈ܬܒܐ ܠܐ ܡܬܟܬܒܝܢ ܒܐܬܪܐ ܗܢܐ، ܡܛܠ ܗܢܐ ܡܐܢܐ ܐܚܪܢܐ ܠܐ ܐܫܟܚ ܠܡܦܠܛ. ܫܚܠܦܘ ܡܠܬܐ ܕܥܒܪܐ ܕܝܠܟܘܢ ܗܫܐ.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count ܡܘ̈ܬܒܐ ܐܚܪ̈ܢܐ ܐܬܦܠܛܘ. ܗܫܐ ܫܚܠܦܘ ܡܠܬܐ ܕܥܒܪܐ ܕܝܠܟܘܢ.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ܡܐܢܐ ܐܚܪܢܐ ܠܐ ܗܘܐ ܥܠܝܠ. ܗܫܐ ܫܚܠܦܘ ܡܠܬܐ ܕܥܒܪܐ ܕܝܠܟܘܢ.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ܬܘܕܝ. ܓܕܫܐ ܐܬܪܫܡ ܐܝܟ ܕܝܠܟܘܢ.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ܓܕܫܐ ܗܘ ܠܐ ܣܢܝܩ ܠܦܘܢܝ ܦܬܓܡܐ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ܦܐܬܐ ܥܒܪ ܙܒܢܗ. ܡܕܡ ܠܐ ܐܫܬܚܠܦ؛ ܒܒܥܘܬܐ ܢܣܘ ܬܘܒ.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ܚܡܝܐ ܕܚܘܫܒܢܐ ܕܝܠܘܟܘܢ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ܐܢ ܡܕܡ ܗܪܟܐ ܠܐ ܗܘܐ ܐܢܬܘܢ، ܦܠܛܘ ܟܠ ܡܐܢ̈ܐ ܐܚܪ̈ܢܐ، ܘܒܬܪܟܢ ܓܒܘ ܡܠܬܐ ܕܥܒܪܐ ܚܕܬܐ. ܡܐܢ̈ܐ ܕܦܝܫܝܢ ܥܠܝܠܝܢ ܒܝܕ ܕܟܪܘܢܝ ܐܦ ܗܢܘܢ ܡܬܦܠܛܝܢ.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ܟܠ ܡܐܢܐ ܣܛܪ ܡܢ ܗܢܐ ܡܬܦܠܛ ܒܒܥܬܐ ܕܐܬܝܐ. ܒܬܪܟܢ ܓܒܝܬܘܢ ܡܠܬܐ ܕܥܒܪܐ ܚܕܬܐ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ܐܝܢ، ܦܠܛܘ ܡܐܢ̈ܐ ܐܚܪ̈ܢܐ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ܐܢܬܘܢ ܗܘܝܬܘܢ ܗܢܐ؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ܐܝܢ، ܐܢܐ ܗܘܝܬ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ܠܐ، ܚܡܘ ܚܘܫܒܢܐ ܕܝܠܝ</translation>
     </message>
 </context>
 <context>
@@ -78706,6 +78810,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>ܡܥܒܕܢܐ ܕܡܘܬ̈ܒܐ: %handler. ܡܘܬ̈ܒܐ ܡܬܩܪܝܢ ܡܢ ܦܬܘܪܐ expuser_session، ܡܛܠ ܗܢܐ ܡܘܕܥܢܘܬܐ ܦܠܚܐ ܥܡ ܟܠ ܡܥܒܕܢܐ.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>ܥܒܕܢܘܬܐ ܚܫܝܕܬܐ ܒ%hours ܫܥ̈ܐ ܐܚܪ̈ܝܐ</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>ܫܒܟܬܐ ܚܕܐ ܠܐ ܐܨܠܚܬ ܠܡܥܠ ܠ%accounts ܚܘܫܒܢ̈ܐ (%count ܢܣܝܘܢ̈ܐ)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ܚܘܫܒܢܐ ܐܬܚܪܡ ܒܬܪ ܡܥܠܢ̈ܐ ܕܠܐ ܐܨܠܚܘ</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count ܡܥܠܢ̈ܐ ܕܠܐ ܐܨܠܚܘ ܥܠ ܚܘܫܒܢܐ ܚܕ</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>ܥܠܝܠ ܡܢ %count ܐܬܪ̈ܘܬܐ ܒܚܕ ܙܒܢܐ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ܥܒܕܢܘܬܐ ܕܫܠܡܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ܡܘܬ̈ܒܐ</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ܡܥܠܢ̈ܐ ܕܠܐ ܐܨܠܚܘ ܡܬܩܪܝܢ ܡܢ ܟܬܒܐ ܕܒܘܚܢܐ ܕܡܦܠܚܢ̈ܐ، ܕܠܐ ܐܝܬܘܗܝ ܡܫܟܚܢܐ ܗܪܟܐ.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>ܠܝܬ ܡܕܡ ܚܫܝܕܐ: ܠܝܬ ܚܘܫܒܢܐ ܥܡ ܡܥܠܢ̈ܐ ܕܠܐ ܐܨܠܚܘ ܡܬܢܝܢ̈ܐ، ܠܝܬ ܫܒܟܬܐ ܕܡܢܣܝܐ ܚܘܫܒܢ̈ܐ ܣܓܝܐ̈ܐ، ܠܝܬ ܚܘܫܒܢܐ ܕܥܠ ܡܢ ܐܬܪ̈ܘܬܐ ܣܓܝܐ̈ܬܐ.</translation>
     </message>
 </context>
 <context>

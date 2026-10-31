@@ -78325,6 +78325,58 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ho talc&apos;hioù hag hoc&apos;h darvoudoù surentez evel ur restr JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>N'eo ket enrollet an dalc'hioù war al lec'hienn-mañ, setu n'eus ket bet gallet digevreañ ardivink all ebet. Kemmit ho ker-tremen bremañ.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count dalc'h all a zo bet digevreet. Kemmit ho ker-tremen bremañ.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>N'edo ardivink all ebet kevreet. Kemmit ho ker-tremen bremañ.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Trugarez. Merket eo bet an darvoud evel hini deoc'h.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>N'eus ket ezhomm da respont d'an darvoud-se.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Diamzeret e oa ar bajenn. N'eus bet kemmet netra; klaskit en-dro.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Surentezañ ho kont</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ma n'eo ket bet graet un dra bennak amañ ganeoc'h, digevreit an holl ardivinkoù all, ha dibabit ur ger-tremen nevez goude. An ardivinkoù a chome kevreet gant «Derc'hel soñj ac'hanon» a vez digevreet ivez.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Pep ardivink nemet hemañ a vez digevreet en e goulenn da-heul. Goude e tibabit ur ger-tremen nevez.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ya, digevreañ an ardivinkoù all</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>C'hwi an hini e oa?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ya, me an hini e oa</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ket, surentezañ ma c'hont</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ho talc&apos;hioù hag hoc&apos;h darvoudoù surentez evel ur restr JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>N'eo ket enrollet an dalc'hioù war al lec'hienn-mañ, setu n'eus ket bet gallet digevreañ ardivink all ebet. Kemmit ho ker-tremen bremañ.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count dalc'h all a zo bet digevreet. Kemmit ho ker-tremen bremañ.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>N'edo ardivink all ebet kevreet. Kemmit ho ker-tremen bremañ.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Trugarez. Merket eo bet an darvoud evel hini deoc'h.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>N'eus ket ezhomm da respont d'an darvoud-se.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Diamzeret e oa ar bajenn. N'eus bet kemmet netra; klaskit en-dro.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Surentezañ ho kont</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ma n'eo ket bet graet un dra bennak amañ ganeoc'h, digevreit an holl ardivinkoù all, ha dibabit ur ger-tremen nevez goude. An ardivinkoù a chome kevreet gant «Derc'hel soñj ac'hanon» a vez digevreet ivez.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Pep ardivink nemet hemañ a vez digevreet en e goulenn da-heul. Goude e tibabit ur ger-tremen nevez.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ya, digevreañ an ardivinkoù all</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>C'hwi an hini e oa?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ya, me an hini e oa</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ket, surentezañ ma c'hont</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Dornier dalc&apos;hoù: %handler. Lennet e vez an dalc&apos;hioù eus an daolenn expuser_session, setu ez a en-dro an danevell gant pep dornier.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Obererezh arvarus e-pad an %hours eurvezh diwezhañ</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Ur rouedad n'he deus ket gallet kevreañ ouzh %accounts kont (%count taol-esae)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kont prennet goude kevreadennoù c'hwitet</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count kevreadenn c'hwitet war ur gont</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Kevreet eus %count bro war un dro</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Obererezh surentez</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Dalc'hioù</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Lennet e vez ar c'hevreadennoù c'hwitet e marilh evezhiañ an implijerien, ha n'eo ket hegerz amañ.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Netra arvarus: kont ebet gant kevreadennoù c'hwitet a-repetadoù, rouedad ebet o klask meur a gont, kont ebet kevreet eus meur a vro.</translation>
     </message>
 </context>
 <context>

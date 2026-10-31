@@ -78355,6 +78355,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ваші сеанси та події безпеки у вигляді файлу JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>На цьому сайті сеанси не записуються, тому не вдалося завершити сеанс на жодному іншому пристрої. Негайно змініть пароль.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Завершено інших сеансів: %count. Тепер змініть пароль.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Жоден інший пристрій не був у системі. Тепер змініть пароль.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Дякуємо. Подію позначено як вашу.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ця подія не потребує відповіді.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Термін дії сторінки минув. Нічого не змінено; спробуйте ще раз.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Захистити обліковий запис</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Якщо щось тут робили не ви, вийдіть на всіх інших пристроях, а потім виберіть новий пароль. Пристрої, на яких вхід збережено за допомогою Запам'ятати мене, теж буде відключено.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>На всіх пристроях, крім цього, вихід відбудеться під час наступного запиту. Потім ви виберете новий пароль.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Так, вийти на інших пристроях</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Це були ви?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Так, це був я</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ні, захистити мій обліковий запис</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78537,6 +78589,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ваші сеанси та події безпеки у вигляді файлу JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>На цьому сайті сеанси не записуються, тому не вдалося завершити сеанс на жодному іншому пристрої. Негайно змініть пароль.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Завершено інших сеансів: %count. Тепер змініть пароль.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Жоден інший пристрій не був у системі. Тепер змініть пароль.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Дякуємо. Подію позначено як вашу.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ця подія не потребує відповіді.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Термін дії сторінки минув. Нічого не змінено; спробуйте ще раз.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Захистити обліковий запис</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Якщо щось тут робили не ви, вийдіть на всіх інших пристроях, а потім виберіть новий пароль. Пристрої, на яких вхід збережено за допомогою Запам'ятати мене, теж буде відключено.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>На всіх пристроях, крім цього, вихід відбудеться під час наступного запиту. Потім ви виберете новий пароль.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Так, вийти на інших пристроях</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Це були ви?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Так, це був я</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ні, захистити мій обліковий запис</translation>
     </message>
 </context>
 <context>
@@ -78728,6 +78832,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Обробник сеансів: %handler. Сеанси зчитуються з таблиці expuser_session, тому звіт працює з будь-яким обробником.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Підозріла активність за останні %hours год.</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Одна мережа не змогла увійти до облікових записів (%accounts) (спроб: %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Обліковий запис заблоковано після невдалих входів</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Невдалих входів до одного облікового запису: %count</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Вхід одночасно з країн: %count</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Дії з безпеки</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Сесії</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Невдалі входи зчитуються з журналу аудиту користувачів, який тут недоступний.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Нічого підозрілого: немає облікових записів із повторними невдалими входами, немає мереж, що пробують кілька облікових записів, немає облікових записів із входом з кількох країн.</translation>
     </message>
 </context>
 <context>

@@ -78325,6 +78325,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Вашы сеансы і падзеі бяспекі ў выглядзе файла JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Сеансы на гэтым сайце не запісваюцца, таму ніводную іншую прыладу не ўдалося вывесці з сістэмы. Змяніце пароль зараз.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Іншых сеансаў завершана: %count. Цяпер змяніце пароль.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>На іншых прыладах уваход не быў выкананы. Цяпер змяніце пароль.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Дзякуй. Падзея пазначана як ваша.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Гэтая падзея не патрабуе адказу.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Тэрмін дзеяння старонкі скончыўся. Нічога не зменена; паспрабуйце яшчэ раз.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Абараніць уліковы запіс</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Калі нешта тут рабілі не вы, выйдзіце з сістэмы на ўсіх іншых прыладах, а потым выберыце новы пароль. Прылады, якія заставаліся ў сістэме дзякуючы «Запомніць мяне», таксама выходзяць з сістэмы.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Кожная прылада, акрамя гэтай, выходзіць з сістэмы пры наступным запыце. Потым вы выбіраеце новы пароль.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Так, выйсці на іншых прыладах</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Гэта былі вы?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Так, гэта быў я</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Не, абараніць мой уліковы запіс</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Вашы сеансы і падзеі бяспекі ў выглядзе файла JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Сеансы на гэтым сайце не запісваюцца, таму ніводную іншую прыладу не ўдалося вывесці з сістэмы. Змяніце пароль зараз.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Іншых сеансаў завершана: %count. Цяпер змяніце пароль.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>На іншых прыладах уваход не быў выкананы. Цяпер змяніце пароль.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Дзякуй. Падзея пазначана як ваша.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Гэтая падзея не патрабуе адказу.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Тэрмін дзеяння старонкі скончыўся. Нічога не зменена; паспрабуйце яшчэ раз.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Абараніць уліковы запіс</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Калі нешта тут рабілі не вы, выйдзіце з сістэмы на ўсіх іншых прыладах, а потым выберыце новы пароль. Прылады, якія заставаліся ў сістэме дзякуючы «Запомніць мяне», таксама выходзяць з сістэмы.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Кожная прылада, акрамя гэтай, выходзіць з сістэмы пры наступным запыце. Потым вы выбіраеце новы пароль.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Так, выйсці на іншых прыладах</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Гэта былі вы?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Так, гэта быў я</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Не, абараніць мой уліковы запіс</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Апрацоўшчык сеансаў: %handler. Сеансы чытаюцца з табліцы expuser_session, таму справаздача працуе з любым апрацоўшчыкам.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Падазроная актыўнасць за апошнія %hours гадз.</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Адна сетка не змагла ўвайсці ў %accounts уліковых запісаў (спроб: %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Уліковы запіс заблакаваны пасля няўдалых уваходаў</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Няўдалых уваходаў у адзін уліковы запіс: %count</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Уваход адначасова з %count краін</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Дзеянні па бяспецы</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Сеансы</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Няўдалыя ўваходы чытаюцца з журнала аўдыту карыстальнікаў, які тут недаступны.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Нічога падазронага: няма ўліковых запісаў з паўторнымі няўдалымі ўваходамі, няма сетак, якія спрабуюць некалькі ўліковых запісаў, няма ўліковых запісаў з уваходам з некалькіх краін.</translation>
     </message>
 </context>
 <context>

@@ -78325,6 +78325,58 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Viaj seancoj kaj sekurecaj eventoj kiel JSON-dosiero.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Seancoj ne estas registrataj en ĉi tiu retejo, do neniu alia aparato povis esti elsalutigita. Ŝanĝu vian pasvorton nun.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count aliaj seancoj estis elsalutigitaj. Nun ŝanĝu vian pasvorton.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Neniu alia aparato estis ensalutinta. Nun ŝanĝu vian pasvorton.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Dankon. La evento estas markita kiel via.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Tiu evento bezonas neniun respondon.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La paĝo eksvalidiĝis. Nenio estis ŝanĝita; bonvolu provi denove.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Sekurigi vian konton</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Se io ĉi tie ne estis vi, elsalutigu ĉiun alian aparaton, poste elektu novan pasvorton. Aparatoj, kiuj restis ensalutintaj per «Memori min», ankaŭ estas elsalutigitaj.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Ĉiu aparato krom ĉi tiu estas elsalutigita ĉe sia sekva peto. Poste vi elektas novan pasvorton.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Jes, elsalutigi la aliajn aparatojn</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ĉu tio estis vi?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Jes, tio estis mi</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ne, sekurigi mian konton</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Viaj seancoj kaj sekurecaj eventoj kiel JSON-dosiero.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Seancoj ne estas registrataj en ĉi tiu retejo, do neniu alia aparato povis esti elsalutigita. Ŝanĝu vian pasvorton nun.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count aliaj seancoj estis elsalutigitaj. Nun ŝanĝu vian pasvorton.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Neniu alia aparato estis ensalutinta. Nun ŝanĝu vian pasvorton.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Dankon. La evento estas markita kiel via.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Tiu evento bezonas neniun respondon.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La paĝo eksvalidiĝis. Nenio estis ŝanĝita; bonvolu provi denove.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Sekurigi vian konton</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Se io ĉi tie ne estis vi, elsalutigu ĉiun alian aparaton, poste elektu novan pasvorton. Aparatoj, kiuj restis ensalutintaj per «Memori min», ankaŭ estas elsalutigitaj.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Ĉiu aparato krom ĉi tiu estas elsalutigita ĉe sia sekva peto. Poste vi elektas novan pasvorton.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Jes, elsalutigi la aliajn aparatojn</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ĉu tio estis vi?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Jes, tio estis mi</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ne, sekurigi mian konton</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Traktilo de seancoj: %handler. La seancoj estas legataj el la tabelo expuser_session, do la raporto funkcias kun ĉiu traktilo.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Suspektinda agado en la lastaj %hours horoj</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Unu reto malsukcesis ensaluti en %accounts kontojn (%count provoj)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto ŝlosita post malsukcesaj ensalutoj</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count malsukcesaj ensalutoj en unu konto</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Ensalutinta el %count landoj samtempe</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sekureca agado</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Seancoj</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Malsukcesaj ensalutoj estas legataj el la kontrola protokolo de uzantoj, kiu ne disponeblas ĉi tie.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nenio suspektinda: neniu konto kun ripetaj malsukcesaj ensalutoj, neniu reto provanta plurajn kontojn, neniu konto ensalutinta el pluraj landoj.</translation>
     </message>
 </context>
 <context>

@@ -78325,6 +78325,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>سۆزلىشىشلىرىڭىز ۋە بىخەتەرلىك ھادىسىلىرىڭىز JSON ھۆججىتى سۈپىتىدە.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>بۇ تور بېكەتتە سۆزلىشىشلەر خاتىرىلەنمەيدۇ، شۇڭا باشقا ھېچقانداق ئۈسكۈنىنى چىقىرىۋەتكىلى بولمىدى. ئىمىڭىزنى ھازىرلا ئۆزگەرتىڭ.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>باشقا %count سۆزلىشىش چىقىرىۋېتىلدى. ئەمدى ئىمىڭىزنى ئۆزگەرتىڭ.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>باشقا ھېچقانداق ئۈسكۈنە كىرمىگەن ئىدى. ئەمدى ئىمىڭىزنى ئۆزگەرتىڭ.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>رەھمەت. بۇ ھادىسە سىزنىڭ دەپ بەلگە قويۇلدى.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>بۇ ھادىسىگە جاۋاب كېرەك ئەمەس.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>بەتنىڭ ۋاقتى ئۆتۈپ كەتكەن ئىدى. ھېچنېمە ئۆزگەرتىلمىدى؛ قايتا سىناڭ.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ھېساباتىڭىزنى قوغداڭ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ئەگەر بۇ يەردىكى بىرەر ئىش سىز بولمىسىڭىز، باشقا بارلىق ئۈسكۈنىلەرنى چىقىرىۋېتىڭ، ئاندىن يېڭى ئىم تاللاڭ. مېنى ئەستە ساقلا ئارقىلىق كىرگەن پېتى تۇرغان ئۈسكۈنىلەرمۇ چىقىرىۋېتىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>بۇنىڭدىن باشقا ھەر بىر ئۈسكۈنە كېيىنكى تەلىپىدە چىقىرىۋېتىلىدۇ. ئاندىن سىز يېڭى ئىم تاللايسىز.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ھەئە، باشقا ئۈسكۈنىلەرنى چىقىرىۋەت</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>بۇ سىزمۇ؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ھەئە، بۇ مەن</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ياق، ھېساباتىمنى قوغدا</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>سۆزلىشىشلىرىڭىز ۋە بىخەتەرلىك ھادىسىلىرىڭىز JSON ھۆججىتى سۈپىتىدە.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>بۇ تور بېكەتتە سۆزلىشىشلەر خاتىرىلەنمەيدۇ، شۇڭا باشقا ھېچقانداق ئۈسكۈنىنى چىقىرىۋەتكىلى بولمىدى. ئىمىڭىزنى ھازىرلا ئۆزگەرتىڭ.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>باشقا %count سۆزلىشىش چىقىرىۋېتىلدى. ئەمدى ئىمىڭىزنى ئۆزگەرتىڭ.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>باشقا ھېچقانداق ئۈسكۈنە كىرمىگەن ئىدى. ئەمدى ئىمىڭىزنى ئۆزگەرتىڭ.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>رەھمەت. بۇ ھادىسە سىزنىڭ دەپ بەلگە قويۇلدى.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>بۇ ھادىسىگە جاۋاب كېرەك ئەمەس.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>بەتنىڭ ۋاقتى ئۆتۈپ كەتكەن ئىدى. ھېچنېمە ئۆزگەرتىلمىدى؛ قايتا سىناڭ.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ھېساباتىڭىزنى قوغداڭ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ئەگەر بۇ يەردىكى بىرەر ئىش سىز بولمىسىڭىز، باشقا بارلىق ئۈسكۈنىلەرنى چىقىرىۋېتىڭ، ئاندىن يېڭى ئىم تاللاڭ. مېنى ئەستە ساقلا ئارقىلىق كىرگەن پېتى تۇرغان ئۈسكۈنىلەرمۇ چىقىرىۋېتىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>بۇنىڭدىن باشقا ھەر بىر ئۈسكۈنە كېيىنكى تەلىپىدە چىقىرىۋېتىلىدۇ. ئاندىن سىز يېڭى ئىم تاللايسىز.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ھەئە، باشقا ئۈسكۈنىلەرنى چىقىرىۋەت</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>بۇ سىزمۇ؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ھەئە، بۇ مەن</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ياق، ھېساباتىمنى قوغدا</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>سۆزلىشىش بىر تەرەپ قىلغۇچى: %handler. سۆزلىشىشلەر expuser_session جەدۋىلىدىن ئوقۇلىدۇ، شۇڭا دوكلات ھەر قانداق بىر تەرەپ قىلغۇچى بىلەن ئىشلەيدۇ.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>ئاخىرقى %hours سائەتتىكى گۇمانلىق پائالىيەت</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>بىر تور %accounts ھېساباتقا كىرەلمىدى (%count قېتىم سىناق)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>مەغلۇپ بولغان كىرىشلەردىن كېيىن ھېسابات قۇلۇپلاندى</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>بىر ھېساباتتا %count قېتىم مەغلۇپ بولغان كىرىش</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>بىرلا ۋاقىتتا %count دۆلەتتىن كىرىلگەن</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>بىخەتەرلىك پائالىيىتى</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>سۆزلىشىشلەر</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>مەغلۇپ بولغان كىرىشلەر ئىشلەتكۈچى تەكشۈرۈش خاتىرىسىدىن ئوقۇلىدۇ، ئۇ بۇ يەردە يوق.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>گۇمانلىق ھېچنېمە يوق: قايتا-قايتا مەغلۇپ بولغان كىرىشى بار ھېسابات يوق، بىر نەچچە ھېساباتنى سىنايدىغان تور يوق، بىر نەچچە دۆلەتتىن كىرىلگەن ھېسابات يوق.</translation>
     </message>
 </context>
 <context>

@@ -80321,6 +80321,58 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Suas sessões e eventos de segurança como um arquivo JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>As sessões não são registradas neste site, então nenhum outro dispositivo pôde ser desconectado. Mude sua senha agora.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count outras sessões foram encerradas. Agora mude sua senha.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nenhum outro dispositivo estava conectado. Agora mude sua senha.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Obrigado. O evento foi marcado como seu.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Esse evento não precisa de resposta.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>A página tinha expirado. Nada foi alterado; tente novamente.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Proteger sua conta</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Se algo aqui não foi você, desconecte todos os outros dispositivos e depois escolha uma nova senha. Dispositivos mantidos conectados com “Lembre-me” também são desconectados.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Todos os dispositivos, exceto este, são desconectados na próxima solicitação. Depois você escolhe uma nova senha.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Sim, desconectar os outros dispositivos</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Foi você?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Sim, fui eu</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Não, proteger minha conta</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -80503,6 +80555,58 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Suas sessões e eventos de segurança como um arquivo JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>As sessões não são registradas neste site, então nenhum outro dispositivo pôde ser desconectado. Mude sua senha agora.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count outras sessões foram encerradas. Agora mude sua senha.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nenhum outro dispositivo estava conectado. Agora mude sua senha.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Obrigado. O evento foi marcado como seu.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Esse evento não precisa de resposta.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>A página tinha expirado. Nada foi alterado; tente novamente.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Proteger sua conta</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Se algo aqui não foi você, desconecte todos os outros dispositivos e depois escolha uma nova senha. Dispositivos mantidos conectados com “Lembre-me” também são desconectados.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Todos os dispositivos, exceto este, são desconectados na próxima solicitação. Depois você escolhe uma nova senha.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Sim, desconectar os outros dispositivos</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Foi você?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Sim, fui eu</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Não, proteger minha conta</translation>
     </message>
 </context>
 <context>
@@ -80694,6 +80798,42 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Manipulador de sessões: %handler. As sessões são lidas da tabela expuser_session, por isso o relatório funciona com qualquer manipulador.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Atividade suspeita nas últimas %hours horas</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Uma rede não conseguiu entrar em %accounts contas (%count tentativas)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Conta bloqueada após falhas de login</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count falhas de login em uma conta</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Conectado de %count países ao mesmo tempo</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Atividade de segurança</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessões</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>As falhas de login são lidas do log de auditoria de usuários, que não está disponível aqui.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nada suspeito: nenhuma conta com falhas de login repetidas, nenhuma rede tentando várias contas, nenhuma conta conectada de vários países.</translation>
     </message>
 </context>
 <context>

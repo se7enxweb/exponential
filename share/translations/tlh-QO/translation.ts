@@ -78358,6 +78358,58 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>poHmeylIj Hung wanI&apos;meylIj je, JSON ghItlh mol.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>naDev poHmey qonlu'be', vaj latlh jan mejmoHlaHbe'lu'. DaH pegh mu'lIj yIchoH.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>latlh poHmey %count mejmoHlu'pu'. DaH pegh mu'lIj yIchoH.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>latlh jan 'elpu'be'. DaH pegh mu'lIj yIchoH.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>qatlho'. wanI' Daghaj neH 'oH 'e' ghItlhlu'pu'.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>wanI'vam jang'e' poQbe'.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>nav Heghpu'. pagh choHlu'pu'; yInIDqa'.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>lo'wI' De'lIj yIQan</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>naDev vay' DaruchHa'chugh, Hoch janmey latlh tImejmoH, ghIq pegh mu' chu' yIwIv. HIqaw lo'meH 'elmeH ratlhbogh janmey mejmoHlu' je.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Hoch jan 'ach janvam mejmoHlu' tlhobmeH ghItlh veb. ghIq pegh mu' chu' DawIv.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>HIja', janmey latlh tImejmoH</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>SoH'a' DaH?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>HIja', jIH</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ghobe', lo'wI' De'wIj yIQan</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78540,6 +78592,58 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>poHmeylIj Hung wanI&apos;meylIj je, JSON ghItlh mol.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>naDev poHmey qonlu'be', vaj latlh jan mejmoHlaHbe'lu'. DaH pegh mu'lIj yIchoH.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>latlh poHmey %count mejmoHlu'pu'. DaH pegh mu'lIj yIchoH.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>latlh jan 'elpu'be'. DaH pegh mu'lIj yIchoH.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>qatlho'. wanI' Daghaj neH 'oH 'e' ghItlhlu'pu'.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>wanI'vam jang'e' poQbe'.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>nav Heghpu'. pagh choHlu'pu'; yInIDqa'.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>lo'wI' De'lIj yIQan</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>naDev vay' DaruchHa'chugh, Hoch janmey latlh tImejmoH, ghIq pegh mu' chu' yIwIv. HIqaw lo'meH 'elmeH ratlhbogh janmey mejmoHlu' je.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Hoch jan 'ach janvam mejmoHlu' tlhobmeH ghItlh veb. ghIq pegh mu' chu' DawIv.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>HIja', janmey latlh tImejmoH</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>SoH'a' DaH?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>HIja', jIH</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ghobe', lo'wI' De'wIj yIQan</translation>
     </message>
 </context>
 <context>
@@ -78731,6 +78835,42 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>poH SeHwI&apos;: %handler. expuser_session SomraDvo&apos; poHmey laDlu&apos;, vaj Hoch SeHwI&apos; lo&apos;taHvIS Qap ja&apos;ghach.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>rIntaHbogh %hours rep Daq vI'Hu'bogh ta'mey</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>%accounts lo'wI' De'mey 'elmeH Qapbe' De'wI' QIn wa' (%count nIDmey)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Qapbe'bogh 'elmeH nIDmey ghIq lo'wI' De' ngaQlu'</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>lo'wI' De' wa'Daq %count Qapbe'bogh 'elmeH nIDmey</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>rap poHDaq %count Sepmey vo' 'elpu'</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Hung ta'mey</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>poHmey</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Qapbe'bogh 'elmeH nIDmey laDlu' lo'wI'pu' nuDmeH ghItlh vo', 'ach naDev tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>pagh vI'Hu'be': 'elmeH nIDmey Qapbe'bogh luqa'bogh lo'wI' De' tu'lu'be', lo'wI' De'mey law' nIDbogh De'wI' QIn tu'lu'be', Sepmey law' vo' 'elpu'bogh lo'wI' De' tu'lu'be'.</translation>
     </message>
 </context>
 <context>

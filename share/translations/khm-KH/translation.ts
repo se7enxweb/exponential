@@ -78325,6 +78325,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>វគ្គ និងព្រឹត្តិការណ៍សុវត្ថិភាពរបស់អ្នកជាឯកសារ JSON ។</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>វគ្គមិនត្រូវបានកត់ត្រានៅលើគេហទំព័រនេះទេ ដូច្នេះមិនអាចចាកចេញពីឧបករណ៍ផ្សេងទៀតបានទេ។ សូមប្តូរពាក្យសម្ងាត់របស់អ្នកឥឡូវនេះ។</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>វគ្គផ្សេងទៀតចំនួន %count ត្រូវបានចាកចេញ។ ឥឡូវនេះសូមប្តូរពាក្យសម្ងាត់របស់អ្នក។</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>គ្មានឧបករណ៍ផ្សេងទៀតបានចូលទេ។ ឥឡូវនេះសូមប្តូរពាក្យសម្ងាត់របស់អ្នក។</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>សូមអរគុណ។ ព្រឹត្តិការណ៍នេះត្រូវបានសម្គាល់ថាជារបស់អ្នក។</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ព្រឹត្តិការណ៍នោះមិនត្រូវការចម្លើយទេ។</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ទំព័របានផុតកំណត់។ គ្មានអ្វីត្រូវបានផ្លាស់ប្តូរទេ សូមព្យាយាមម្តងទៀត។</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ការពារគណនីរបស់អ្នក</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ប្រសិនបើមានអ្វីមួយនៅទីនេះមិនមែនជាអ្នក សូមចាកចេញពីឧបករណ៍ផ្សេងទៀតទាំងអស់ បន្ទាប់មកជ្រើសរើសពាក្យសម្ងាត់ថ្មី។ ឧបករណ៍ដែលនៅតែចូលដោយចងចាំខ្ញុំក៏ត្រូវបានចាកចេញដែរ។</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ឧបករណ៍នីមួយៗលើកលែងតែឧបករណ៍នេះត្រូវបានចាកចេញនៅសំណើបន្ទាប់របស់វា។ បន្ទាប់មកអ្នកជ្រើសរើសពាក្យសម្ងាត់ថ្មី។</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>បាទ/ចាស ចាកចេញពីឧបករណ៍ផ្សេងទៀត</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>តើនេះជាអ្នកឬ?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>បាទ/ចាស គឺខ្ញុំ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ទេ ការពារគណនីរបស់ខ្ញុំ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>វគ្គ និងព្រឹត្តិការណ៍សុវត្ថិភាពរបស់អ្នកជាឯកសារ JSON ។</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>វគ្គមិនត្រូវបានកត់ត្រានៅលើគេហទំព័រនេះទេ ដូច្នេះមិនអាចចាកចេញពីឧបករណ៍ផ្សេងទៀតបានទេ។ សូមប្តូរពាក្យសម្ងាត់របស់អ្នកឥឡូវនេះ។</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>វគ្គផ្សេងទៀតចំនួន %count ត្រូវបានចាកចេញ។ ឥឡូវនេះសូមប្តូរពាក្យសម្ងាត់របស់អ្នក។</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>គ្មានឧបករណ៍ផ្សេងទៀតបានចូលទេ។ ឥឡូវនេះសូមប្តូរពាក្យសម្ងាត់របស់អ្នក។</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>សូមអរគុណ។ ព្រឹត្តិការណ៍នេះត្រូវបានសម្គាល់ថាជារបស់អ្នក។</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ព្រឹត្តិការណ៍នោះមិនត្រូវការចម្លើយទេ។</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ទំព័របានផុតកំណត់។ គ្មានអ្វីត្រូវបានផ្លាស់ប្តូរទេ សូមព្យាយាមម្តងទៀត។</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ការពារគណនីរបស់អ្នក</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ប្រសិនបើមានអ្វីមួយនៅទីនេះមិនមែនជាអ្នក សូមចាកចេញពីឧបករណ៍ផ្សេងទៀតទាំងអស់ បន្ទាប់មកជ្រើសរើសពាក្យសម្ងាត់ថ្មី។ ឧបករណ៍ដែលនៅតែចូលដោយចងចាំខ្ញុំក៏ត្រូវបានចាកចេញដែរ។</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ឧបករណ៍នីមួយៗលើកលែងតែឧបករណ៍នេះត្រូវបានចាកចេញនៅសំណើបន្ទាប់របស់វា។ បន្ទាប់មកអ្នកជ្រើសរើសពាក្យសម្ងាត់ថ្មី។</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>បាទ/ចាស ចាកចេញពីឧបករណ៍ផ្សេងទៀត</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>តើនេះជាអ្នកឬ?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>បាទ/ចាស គឺខ្ញុំ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ទេ ការពារគណនីរបស់ខ្ញុំ</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>ឧបករណ៍គ្រប់គ្រងវគ្គ: %handler ។ វគ្គត្រូវបានអានពីតារាង expuser_session ដូច្នេះរបាយការណ៍ដំណើរការជាមួយឧបករណ៍គ្រប់គ្រងគ្រប់ប្រភេទ។</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>សកម្មភាពគួរឱ្យសង្ស័យក្នុងរយៈពេល %hours ម៉ោងចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>បណ្តាញមួយបានបរាជ័យក្នុងការចូលគណនីចំនួន %accounts (ការប៉ុនប៉ង %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>គណនីត្រូវបានចាក់សោបន្ទាប់ពីការចូលបរាជ័យ</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>ការចូលបរាជ័យ %count ដងលើគណនីមួយ</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>បានចូលពី %count ប្រទេសក្នុងពេលតែមួយ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>សកម្មភាពសុវត្ថិភាព</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>វគ្គ</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ការចូលដែលបរាជ័យត្រូវបានអានពីកំណត់ហេតុសវនកម្មអ្នកប្រើ ដែលមិនមាននៅទីនេះទេ។</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>គ្មានអ្វីគួរឱ្យសង្ស័យទេ៖ គ្មានគណនីដែលមានការចូលបរាជ័យដដែលៗ គ្មានបណ្តាញដែលសាកល្បងគណនីច្រើន គ្មានគណនីដែលបានចូលពីប្រទេសច្រើន។</translation>
     </message>
 </context>
 <context>

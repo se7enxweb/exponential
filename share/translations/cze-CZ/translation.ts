@@ -79611,6 +79611,58 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Vaše relace a události zabezpečení jako soubor JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Relace se na tomto webu nezaznamenávají, takže nebylo možné odhlásit žádné jiné zařízení. Změňte si heslo hned teď.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Odhlášeno ostatních relací: %count. Nyní si změňte heslo.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Žádné jiné zařízení nebylo přihlášeno. Nyní si změňte heslo.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Děkujeme. Událost je označena jako vaše.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Tato událost nevyžaduje odpověď.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Platnost stránky vypršela. Nic nebylo změněno; zkuste to prosím znovu.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Zabezpečit účet</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Pokud něco z toho nebyli vy, odhlaste všechna ostatní zařízení a pak zvolte nové heslo. Odhlášena budou i zařízení, která zůstala přihlášena díky volbě „Zapamatovat si mě“.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Každé zařízení kromě tohoto bude odhlášeno při svém dalším požadavku. Poté zvolíte nové heslo.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ano, odhlásit ostatní zařízení</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Byli jste to vy?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ano, byl jsem to já</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ne, zabezpečit můj účet</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -79793,6 +79845,58 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Vaše relace a události zabezpečení jako soubor JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Relace se na tomto webu nezaznamenávají, takže nebylo možné odhlásit žádné jiné zařízení. Změňte si heslo hned teď.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Odhlášeno ostatních relací: %count. Nyní si změňte heslo.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Žádné jiné zařízení nebylo přihlášeno. Nyní si změňte heslo.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Děkujeme. Událost je označena jako vaše.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Tato událost nevyžaduje odpověď.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Platnost stránky vypršela. Nic nebylo změněno; zkuste to prosím znovu.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Zabezpečit účet</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Pokud něco z toho nebyli vy, odhlaste všechna ostatní zařízení a pak zvolte nové heslo. Odhlášena budou i zařízení, která zůstala přihlášena díky volbě „Zapamatovat si mě“.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Každé zařízení kromě tohoto bude odhlášeno při svém dalším požadavku. Poté zvolíte nové heslo.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ano, odhlásit ostatní zařízení</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Byli jste to vy?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ano, byl jsem to já</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ne, zabezpečit můj účet</translation>
     </message>
 </context>
 <context>
@@ -79984,6 +80088,42 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Obsluha relací: %handler. Relace se načítají z tabulky expuser_session, proto přehled funguje s každou obsluhou.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Podezřelá aktivita za posledních %hours hodin</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Jedné síti se nepodařilo přihlásit k %accounts účtům (%count pokusů)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Účet uzamčen po neúspěšných přihlášeních</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count neúspěšných přihlášení k jednomu účtu</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Přihlášení z %count zemí současně</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivita zabezpečení</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Relace</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Neúspěšná přihlášení se čtou z auditního protokolu uživatelů, který zde není k dispozici.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nic podezřelého: žádný účet s opakovanými neúspěšnými přihlášeními, žádná síť zkoušející více účtů, žádný účet přihlášený z více zemí.</translation>
     </message>
 </context>
 <context>

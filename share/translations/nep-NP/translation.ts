@@ -78333,6 +78333,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>तपाईंका सत्रहरू र सुरक्षा घटनाहरू JSON फाइलको रूपमा।</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>यो साइटमा सत्रहरू रेकर्ड गरिँदैनन्, त्यसैले अन्य कुनै पनि उपकरण लग आउट गर्न सकिएन। अहिले नै आफ्नो पासवर्ड परिवर्तन गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>अन्य %count सत्रहरू लग आउट गरिए। अब आफ्नो पासवर्ड परिवर्तन गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>अन्य कुनै पनि उपकरण साइन इन थिएन। अब आफ्नो पासवर्ड परिवर्तन गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>धन्यवाद। यो घटना तपाईंको भनी चिन्ह लगाइयो।</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>त्यो घटनालाई कुनै जवाफ आवश्यक छैन।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>पृष्ठको समय सकिएको थियो। केही परिवर्तन गरिएन; कृपया फेरि प्रयास गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>आफ्नो खाता सुरक्षित गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>यहाँ केही तपाईंले गर्नुभएको होइन भने, अन्य सबै उपकरणहरू लग आउट गर्नुहोस्, त्यसपछि नयाँ पासवर्ड छान्नुहोस्। “मलाई सम्झनुहोस्” मार्फत साइन इन रहेका उपकरणहरू पनि लग आउट हुन्छन्।</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>यो बाहेक प्रत्येक उपकरण आफ्नो अर्को अनुरोधमा लग आउट हुन्छ। त्यसपछि तपाईं नयाँ पासवर्ड छान्नुहुन्छ।</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>हो, अन्य उपकरणहरू लग आउट गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>के यो तपाईं हुनुहुन्थ्यो?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>हो, यो म नै थिएँ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>होइन, मेरो खाता सुरक्षित गर्नुहोस्</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78515,6 +78567,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>तपाईंका सत्रहरू र सुरक्षा घटनाहरू JSON फाइलको रूपमा।</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>यो साइटमा सत्रहरू रेकर्ड गरिँदैनन्, त्यसैले अन्य कुनै पनि उपकरण लग आउट गर्न सकिएन। अहिले नै आफ्नो पासवर्ड परिवर्तन गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>अन्य %count सत्रहरू लग आउट गरिए। अब आफ्नो पासवर्ड परिवर्तन गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>अन्य कुनै पनि उपकरण साइन इन थिएन। अब आफ्नो पासवर्ड परिवर्तन गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>धन्यवाद। यो घटना तपाईंको भनी चिन्ह लगाइयो।</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>त्यो घटनालाई कुनै जवाफ आवश्यक छैन।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>पृष्ठको समय सकिएको थियो। केही परिवर्तन गरिएन; कृपया फेरि प्रयास गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>आफ्नो खाता सुरक्षित गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>यहाँ केही तपाईंले गर्नुभएको होइन भने, अन्य सबै उपकरणहरू लग आउट गर्नुहोस्, त्यसपछि नयाँ पासवर्ड छान्नुहोस्। “मलाई सम्झनुहोस्” मार्फत साइन इन रहेका उपकरणहरू पनि लग आउट हुन्छन्।</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>यो बाहेक प्रत्येक उपकरण आफ्नो अर्को अनुरोधमा लग आउट हुन्छ। त्यसपछि तपाईं नयाँ पासवर्ड छान्नुहुन्छ।</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>हो, अन्य उपकरणहरू लग आउट गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>के यो तपाईं हुनुहुन्थ्यो?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>हो, यो म नै थिएँ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>होइन, मेरो खाता सुरक्षित गर्नुहोस्</translation>
     </message>
 </context>
 <context>
@@ -78706,6 +78810,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>सत्र ह्यान्डलर: %handler। सत्रहरू तालिका expuser_session बाट पढिन्छन्, त्यसैले प्रतिवेदन हरेक ह्यान्डलरसँग काम गर्छ।</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>पछिल्ला %hours घण्टामा शङ्कास्पद गतिविधि</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>एउटा नेटवर्क %accounts खाताहरूमा साइन इन गर्न असफल भयो (%count प्रयास)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>असफल साइन इनपछि खाता लक गरियो</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>एउटा खातामा %count असफल साइन इन</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>एकै पटक %count देशबाट साइन इन गरियो</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षा गतिविधि</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>सत्रहरू</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>असफल साइन इनहरू प्रयोगकर्ता अडिट लगबाट पढिन्छन्, जुन यहाँ उपलब्ध छैन।</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>केही शङ्कास्पद छैन: बारम्बार असफल साइन इन भएको कुनै खाता छैन, धेरै खाताहरू प्रयास गर्ने कुनै नेटवर्क छैन, धेरै देशबाट साइन इन गरिएको कुनै खाता छैन।</translation>
     </message>
 </context>
 <context>

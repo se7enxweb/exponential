@@ -78325,6 +78325,58 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ang iyong mga session at security event bilang isang JSON file.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Hindi itinatala ang mga session sa site na ito, kaya walang ibang device na na-sign out. Palitan ang iyong password ngayon.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Na-sign out ang %count iba pang session. Ngayon, palitan ang iyong password.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Walang ibang device na naka-sign in. Ngayon, palitan ang iyong password.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Salamat. Minarkahan ang pangyayari bilang iyo.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Hindi kailangan ng sagot ang pangyayaring iyon.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Nag-expire na ang page. Walang binago; pakisubukang muli.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>I-secure ang iyong account</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Kung may hindi ikaw rito, i-sign out ang bawat iba pang device, pagkatapos ay pumili ng bagong password. Na-sign out din ang mga device na nanatiling naka-sign in gamit ang Alalahanin ako.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Ang bawat device maliban dito ay ma-sign out sa susunod nitong request. Pagkatapos ay pipili ka ng bagong password.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Oo, i-sign out ang iba pang device</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ikaw ba ito?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Oo, ako iyon</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Hindi, i-secure ang aking account</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ang iyong mga session at security event bilang isang JSON file.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Hindi itinatala ang mga session sa site na ito, kaya walang ibang device na na-sign out. Palitan ang iyong password ngayon.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Na-sign out ang %count iba pang session. Ngayon, palitan ang iyong password.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Walang ibang device na naka-sign in. Ngayon, palitan ang iyong password.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Salamat. Minarkahan ang pangyayari bilang iyo.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Hindi kailangan ng sagot ang pangyayaring iyon.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Nag-expire na ang page. Walang binago; pakisubukang muli.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>I-secure ang iyong account</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Kung may hindi ikaw rito, i-sign out ang bawat iba pang device, pagkatapos ay pumili ng bagong password. Na-sign out din ang mga device na nanatiling naka-sign in gamit ang Alalahanin ako.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Ang bawat device maliban dito ay ma-sign out sa susunod nitong request. Pagkatapos ay pipili ka ng bagong password.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Oo, i-sign out ang iba pang device</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ikaw ba ito?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Oo, ako iyon</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Hindi, i-secure ang aking account</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Session handler: %handler. Binabasa ang mga session mula sa table na expuser_session, kaya gumagana ang ulat sa bawat handler.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Kahina-hinalang aktibidad sa nakalipas na %hours oras</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Isang network ang nabigong mag-sign in sa %accounts account (%count pagtatangka)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Na-lock ang account matapos ang mga nabigong pag-sign in</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count nabigong pag-sign in sa isang account</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Naka-sign in mula sa %count bansa nang sabay-sabay</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktibidad sa seguridad</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Mga session</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Binabasa ang mga nabigong pag-sign in mula sa audit log ng user, na hindi available dito.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Walang kahina-hinala: walang account na may paulit-ulit na nabigong pag-sign in, walang network na sumusubok sa ilang account, walang account na naka-sign in mula sa ilang bansa.</translation>
     </message>
 </context>
 <context>

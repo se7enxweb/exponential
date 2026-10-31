@@ -78355,6 +78355,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>セッションとセキュリティイベントを JSON ファイルとして取得します。</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>このサイトではセッションが記録されないため、他のデバイスをログアウトできませんでした。今すぐパスワードを変更してください。</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>他の %count 件のセッションをログアウトしました。次にパスワードを変更してください。</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>他にログインしているデバイスはありませんでした。次にパスワードを変更してください。</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ありがとうございます。このイベントはご本人によるものとして記録されました。</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>このイベントに回答は不要です。</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ページの有効期限が切れていました。何も変更されていません。もう一度お試しください。</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>アカウントの保護</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ここにご自身によるものではない操作がある場合は、他のすべてのデバイスをログアウトしてから、新しいパスワードを設定してください。ログイン状態を保持するでログインしたままのデバイスもログアウトされます。</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>このデバイス以外のすべてのデバイスは、次のリクエスト時にログアウトされます。その後、新しいパスワードを設定します。</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>はい、他のデバイスをログアウトします</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>これはご本人ですか？</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>はい、私です</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>いいえ、アカウントを保護します</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78537,6 +78589,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>セッションとセキュリティイベントを JSON ファイルとして取得します。</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>このサイトではセッションが記録されないため、他のデバイスをログアウトできませんでした。今すぐパスワードを変更してください。</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>他の %count 件のセッションをログアウトしました。次にパスワードを変更してください。</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>他にログインしているデバイスはありませんでした。次にパスワードを変更してください。</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ありがとうございます。このイベントはご本人によるものとして記録されました。</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>このイベントに回答は不要です。</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ページの有効期限が切れていました。何も変更されていません。もう一度お試しください。</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>アカウントの保護</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ここにご自身によるものではない操作がある場合は、他のすべてのデバイスをログアウトしてから、新しいパスワードを設定してください。ログイン状態を保持するでログインしたままのデバイスもログアウトされます。</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>このデバイス以外のすべてのデバイスは、次のリクエスト時にログアウトされます。その後、新しいパスワードを設定します。</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>はい、他のデバイスをログアウトします</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>これはご本人ですか？</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>はい、私です</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>いいえ、アカウントを保護します</translation>
     </message>
 </context>
 <context>
@@ -78728,6 +78832,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>セッションハンドラー: %handler。セッションはテーブル expuser_session から読み取られるため、このレポートはどのハンドラーでも動作します。</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>過去 %hours 時間の不審なアクティビティ</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>1 つのネットワークが %accounts 件のアカウントへのログインに失敗しました（%count 回の試行）</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ログイン失敗によりアカウントがロックされました</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>1 つのアカウントで %count 回のログイン失敗</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>%count か国から同時にログイン</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>セキュリティアクティビティ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>セッション</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ログインの失敗はユーザー監査ログから読み取られますが、ここでは利用できません。</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>不審な点はありません。ログイン失敗を繰り返すアカウント、複数のアカウントを試すネットワーク、複数の国からログインしているアカウントはありません。</translation>
     </message>
 </context>
 <context>

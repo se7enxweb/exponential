@@ -78355,6 +78355,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ваши сеансы и события безопасности в виде файла JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>На этом сайте сеансы не записываются, поэтому выйти на других устройствах не удалось. Смените пароль прямо сейчас.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Завершено других сеансов: %count. Теперь смените пароль.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>На других устройствах вход не был выполнен. Теперь смените пароль.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Спасибо. Событие отмечено как ваше.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Это событие не требует ответа.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Срок действия страницы истек. Ничего не изменено; повторите попытку.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Защитить учетную запись</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Если что-то здесь сделали не вы, выйдите на всех остальных устройствах, а затем выберите новый пароль. Устройства, на которых вход сохранен с помощью функции Запомнить меня, тоже будут отключены.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>На всех устройствах, кроме этого, выход произойдет при следующем запросе. Затем вы выберете новый пароль.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Да, выйти на других устройствах</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Это были вы?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Да, это был я</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Нет, защитить мою учетную запись</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78537,6 +78589,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ваши сеансы и события безопасности в виде файла JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>На этом сайте сеансы не записываются, поэтому выйти на других устройствах не удалось. Смените пароль прямо сейчас.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Завершено других сеансов: %count. Теперь смените пароль.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>На других устройствах вход не был выполнен. Теперь смените пароль.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Спасибо. Событие отмечено как ваше.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Это событие не требует ответа.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Срок действия страницы истек. Ничего не изменено; повторите попытку.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Защитить учетную запись</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Если что-то здесь сделали не вы, выйдите на всех остальных устройствах, а затем выберите новый пароль. Устройства, на которых вход сохранен с помощью функции Запомнить меня, тоже будут отключены.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>На всех устройствах, кроме этого, выход произойдет при следующем запросе. Затем вы выберете новый пароль.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Да, выйти на других устройствах</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Это были вы?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Да, это был я</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Нет, защитить мою учетную запись</translation>
     </message>
 </context>
 <context>
@@ -78728,6 +78832,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Обработчик сеансов: %handler. Сеансы читаются из таблицы expuser_session, поэтому отчет работает с любым обработчиком.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Подозрительная активность за последние %hours ч.</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Одна сеть не смогла войти в учетные записи (%accounts) (попыток: %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Учетная запись заблокирована после неудачных попыток входа</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Неудачных попыток входа в одну учетную запись: %count</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Вход одновременно из стран: %count</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Действия по безопасности</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Сеансы</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Неудачные попытки входа берутся из журнала аудита пользователей, который здесь недоступен.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Ничего подозрительного: нет учетных записей с повторными неудачными попытками входа, нет сетей, пробующих несколько учетных записей, нет учетных записей со входом из нескольких стран.</translation>
     </message>
 </context>
 <context>

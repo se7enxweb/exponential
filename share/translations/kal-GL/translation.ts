@@ -78355,6 +78355,58 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Isersimanitit isumannaallisaanermullu tunngasut pisut JSON-fiilitut.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Nittartagaq manna isersimanernik nalunaarsuisanngilaq, taamaattumik atortut allat anitsinneqarsinnaanngillat. Isissutissat massakkut allanngortiguk.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Isersimanerit allat %count anitsinneqarput. Massakkut isissutissat allanngortiguk.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Atortut allat iserfiusimanngillat. Massakkut isissutissat allanngortiguk.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Qujanaq. Pisoq illit pigisatit nalunaaqutserneqarpoq.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Pisoq taanna akissuteqarfigineqartariaqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Quppernerup piffissaa qaangiuppoq. Allanngortitsisoqanngilaq; misileqqiguk.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Kontut isumannaallisaruk</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Maani suna illiuunngippat, atortut allat tamaasa anitsikkit, taava isissutissamik nutaamik toqqaagit. Atortut Eqqaamallanga atorlugu isersimatinneqartut aamma anitsinneqartarput.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Atortut tamarmik una pinnagu tullianik qinnuteqarnerminni anitsinneqartarput. Taava isissutissamik nutaamik toqqaassaatit.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Aap, atortut allat anitsikkit</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Illiuvit?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Aap, uangaavunga</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Naamik, kontora isumannaallisaruk</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78537,6 +78589,58 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Isersimanitit isumannaallisaanermullu tunngasut pisut JSON-fiilitut.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Nittartagaq manna isersimanernik nalunaarsuisanngilaq, taamaattumik atortut allat anitsinneqarsinnaanngillat. Isissutissat massakkut allanngortiguk.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Isersimanerit allat %count anitsinneqarput. Massakkut isissutissat allanngortiguk.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Atortut allat iserfiusimanngillat. Massakkut isissutissat allanngortiguk.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Qujanaq. Pisoq illit pigisatit nalunaaqutserneqarpoq.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Pisoq taanna akissuteqarfigineqartariaqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Quppernerup piffissaa qaangiuppoq. Allanngortitsisoqanngilaq; misileqqiguk.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Kontut isumannaallisaruk</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Maani suna illiuunngippat, atortut allat tamaasa anitsikkit, taava isissutissamik nutaamik toqqaagit. Atortut Eqqaamallanga atorlugu isersimatinneqartut aamma anitsinneqartarput.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Atortut tamarmik una pinnagu tullianik qinnuteqarnerminni anitsinneqartarput. Taava isissutissamik nutaamik toqqaassaatit.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Aap, atortut allat anitsikkit</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Illiuvit?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Aap, uangaavunga</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Naamik, kontora isumannaallisaruk</translation>
     </message>
 </context>
 <context>
@@ -78728,6 +78832,42 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Isersimanermik suliarinnittoq: %handler. Isersimanerit tabelimit expuser_session atuarneqartarput, taamaattumik nalunaarusiaq suliarinnittut tamaasa atorlugit atuuppoq.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Iliuusit pasinartut nalunaaquttap akunnerini %hours kingulliit</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Attaveqaat ataaseq kontunut %accounts isersinnaasimanngilaq (%count misileerneq)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto iserniarnerit kukkusut kingorna parnaarsarneqarpoq</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Konto ataatsimut iserniarnerit kukkusut %count</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Nunanit %count ataatsikkut iserfiusoq</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Isumannaallisaanermi iliuusit</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Isersimanerit</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Iserniarnerit kukkusut atuisut misissuinermi nalunaarsuutaannit atuarneqartarput, maani pissarsiarineqarsinnaanngitsumit.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Pasinartoqanngilaq: kontoqanngilaq iserniarnernik kukkusunik uteqattaartunik, attaveqaateqanngilaq kontunik arlalinnik misileraasumik, kontoqanngilaq nunanit arlalinnit iserfiusumik.</translation>
     </message>
 </context>
 <context>

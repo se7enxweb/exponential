@@ -78355,6 +78355,58 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Waše pósejźenja a wěstotne tšojenja ako JSON-dataja.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Pósejźenja se na toś tom sedle njezapisuju, togodla njejo było móžno žeden drugi rěd wótzjawiś. Změńśo něnto swójo gronidło.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count drugich pósejźenjow jo se wótzjawiło. Změńśo něnto swójo gronidło.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Žeden drugi rěd njejo był pśizjawjony. Změńśo něnto swójo gronidło.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Źěkujomy se. Tšojenje jo se ako wašo markěrowało.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Na to tšojenje njetrjeba se wótegroniś.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Bok jo był pśepadnjony. Nic njejo se změniło; pšosym wopytajśo hyšći raz.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Konto zawěsćiś</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Jolic něco how njejsćo wy byli, wótzjawśo wšykne druge rědy a wubjeŕśo pótom nowe gronidło. Rědy, kótarež su z „Spomnjeś se na mnjo“ pśizjawjone wóstali, se teke wótzjawiju.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Kuždy rěd mimo toś togo se pśi swójom pśiducem napšašowanju wótzjawijo. Pótom wubjerjośo nowe gronidło.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Jo, druge rědy wótzjawiś</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Sćo to wy byli?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Jo, to som ja był</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ně, moje konto zawěsćiś</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78537,6 +78589,58 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Waše pósejźenja a wěstotne tšojenja ako JSON-dataja.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Pósejźenja se na toś tom sedle njezapisuju, togodla njejo było móžno žeden drugi rěd wótzjawiś. Změńśo něnto swójo gronidło.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count drugich pósejźenjow jo se wótzjawiło. Změńśo něnto swójo gronidło.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Žeden drugi rěd njejo był pśizjawjony. Změńśo něnto swójo gronidło.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Źěkujomy se. Tšojenje jo se ako wašo markěrowało.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Na to tšojenje njetrjeba se wótegroniś.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Bok jo był pśepadnjony. Nic njejo se změniło; pšosym wopytajśo hyšći raz.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Konto zawěsćiś</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Jolic něco how njejsćo wy byli, wótzjawśo wšykne druge rědy a wubjeŕśo pótom nowe gronidło. Rědy, kótarež su z „Spomnjeś se na mnjo“ pśizjawjone wóstali, se teke wótzjawiju.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Kuždy rěd mimo toś togo se pśi swójom pśiducem napšašowanju wótzjawijo. Pótom wubjerjośo nowe gronidło.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Jo, druge rědy wótzjawiś</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Sćo to wy byli?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Jo, to som ja był</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ně, moje konto zawěsćiś</translation>
     </message>
 </context>
 <context>
@@ -78728,6 +78832,42 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Wobźěłowak pósejźenjow: %handler. Pósejźenja se z tabele expuser_session cytaju, togodla rozpšawa z kuždym wobźěłowakom źěła.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Pódglědne aktiwity w slědnych %hours góźinach</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Jadna seś njejo se mógła pla %accounts kontow pśizjawiś (%count wopytow)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto zastajone pó njewuspěšnych pśizjawjenjach</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count njewuspěšnych pśizjawjenjow na jadnom konśe</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Rownocasnje z %count krajow pśizjawjony</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Wěstotna aktiwita</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Pósejźenja</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Njewuspěšne pśizjawjenja se z rewizijnego protokola wužywarjow cytaju, kótaryž how k dispoziciji njejo.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nic pódglědnego: žedno konto z wóspjetowanymi njewuspěšnymi pśizjawjenjami, žedna seś, kótaraž wopytujo wjele kontow, žedno konto, kótarež jo z wjele krajow pśizjawjone.</translation>
     </message>
 </context>
 <context>

@@ -78325,6 +78325,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Вашите сесии и безбедносни настани како JSON-датотека.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>На ова мрежно место сесиите не се евидентираат, па ниту еден друг уред не можеше да се одјави. Сменете ја лозинката сега.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count други сесии беа одјавени. Сега сменете ја лозинката.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ниту еден друг уред не беше најавен. Сега сменете ја лозинката.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Ви благодариме. Настанот е означен како ваш.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Тој настан не бара одговор.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Страницата истече. Ништо не е изменето; обидете се повторно.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Заштити ја сметката</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ако нешто тука не сте го направиле вие, одјавете ги сите други уреди, а потоа изберете нова лозинка. Се одјавуваат и уредите што останале најавени со „Запомни ме“.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Секој уред освен овој се одјавува при своето следно барање. Потоа избирате нова лозинка.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Да, одјави ги другите уреди</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Дали ова бевте вие?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Да, тоа бев јас</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Не, заштити ја мојата сметка</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Вашите сесии и безбедносни настани како JSON-датотека.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>На ова мрежно место сесиите не се евидентираат, па ниту еден друг уред не можеше да се одјави. Сменете ја лозинката сега.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count други сесии беа одјавени. Сега сменете ја лозинката.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ниту еден друг уред не беше најавен. Сега сменете ја лозинката.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Ви благодариме. Настанот е означен како ваш.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Тој настан не бара одговор.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Страницата истече. Ништо не е изменето; обидете се повторно.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Заштити ја сметката</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ако нешто тука не сте го направиле вие, одјавете ги сите други уреди, а потоа изберете нова лозинка. Се одјавуваат и уредите што останале најавени со „Запомни ме“.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Секој уред освен овој се одјавува при своето следно барање. Потоа избирате нова лозинка.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Да, одјави ги другите уреди</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Дали ова бевте вие?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Да, тоа бев јас</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Не, заштити ја мојата сметка</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Ракувач со сесии: %handler. Сесиите се читаат од табелата expuser_session, па извештајот работи со секој ракувач.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Сомнителна активност во последните %hours часа</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Една мрежа не успеа да се најави на %accounts сметки (%count обиди)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Сметката е заклучена по неуспешни најавувања</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count неуспешни најавувања на една сметка</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Најавено од %count земји истовремено</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Безбедносна активност</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Сесии</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Неуспешните најавувања се читаат од ревизорскиот дневник на корисниците, кој не е достапен тука.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Ништо сомнително: нема сметка со повторени неуспешни најавувања, нема мрежа што пробува повеќе сметки, нема сметка најавена од повеќе земји.</translation>
     </message>
 </context>
 <context>

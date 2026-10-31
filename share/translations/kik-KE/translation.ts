@@ -78325,6 +78325,58 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ihinda ciaku na maũndũ ma ũgitĩri ta faili ya JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Ihinda cia gũtoonya itiandĩkagwo kũrĩ thaiti ĩno, nĩ ũndũ ũcio gũtirĩ kĩfaa kĩngĩ kĩngĩehirio. Cenjia kiugo gĩaku kĩa hitho rĩu.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Ihinda cia gũtoonya %count iria ingĩ nĩ ciaumirio. Rĩu cenjia kiugo gĩaku kĩa hitho.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Gũtirĩ kĩfaa kĩngĩ kĩarĩ gĩtoonyete. Rĩu cenjia kiugo gĩaku kĩa hitho.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Nĩ ngatho. Ũndũ ũyũ nĩ wamenyithanio ta waku.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ũndũ ũcio ndũbataire icookio.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Ihinda rĩa ũrathi rĩrĩ rĩathira. Gũtirĩ ũndũ wacenjirio; ndagũthaitha geria rĩngĩ.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Gitĩra akaunti yaku</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Angĩkorwo kũrĩ ũndũ haha ũtaarĩ wee, umia ikĩfaa ciothe iria ingĩ, ningĩ ũthuure kiugo kĩa hitho kĩerũ. Ikĩfaa iria ciatigwo itoonyete na Ririkana niĩ o nacio nĩ ciumagio.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>O kĩfaa kĩrĩa kĩngĩ tiga gĩkĩ nĩ kĩumagio hĩndĩ ya ũhoro wakĩo ũrĩa ũrũmĩrĩire. Thuutha ũcio ũgathuura kiugo kĩa hitho kĩerũ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ĩĩ, umia ikĩfaa iria ingĩ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Nĩ wee warĩ?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ĩĩ, nĩ niĩ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Aca, gitĩra akaunti yakwa</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ihinda ciaku na maũndũ ma ũgitĩri ta faili ya JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Ihinda cia gũtoonya itiandĩkagwo kũrĩ thaiti ĩno, nĩ ũndũ ũcio gũtirĩ kĩfaa kĩngĩ kĩngĩehirio. Cenjia kiugo gĩaku kĩa hitho rĩu.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Ihinda cia gũtoonya %count iria ingĩ nĩ ciaumirio. Rĩu cenjia kiugo gĩaku kĩa hitho.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Gũtirĩ kĩfaa kĩngĩ kĩarĩ gĩtoonyete. Rĩu cenjia kiugo gĩaku kĩa hitho.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Nĩ ngatho. Ũndũ ũyũ nĩ wamenyithanio ta waku.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ũndũ ũcio ndũbataire icookio.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Ihinda rĩa ũrathi rĩrĩ rĩathira. Gũtirĩ ũndũ wacenjirio; ndagũthaitha geria rĩngĩ.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Gitĩra akaunti yaku</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Angĩkorwo kũrĩ ũndũ haha ũtaarĩ wee, umia ikĩfaa ciothe iria ingĩ, ningĩ ũthuure kiugo kĩa hitho kĩerũ. Ikĩfaa iria ciatigwo itoonyete na Ririkana niĩ o nacio nĩ ciumagio.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>O kĩfaa kĩrĩa kĩngĩ tiga gĩkĩ nĩ kĩumagio hĩndĩ ya ũhoro wakĩo ũrĩa ũrũmĩrĩire. Thuutha ũcio ũgathuura kiugo kĩa hitho kĩerũ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ĩĩ, umia ikĩfaa iria ingĩ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Nĩ wee warĩ?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ĩĩ, nĩ niĩ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Aca, gitĩra akaunti yakwa</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Mũhũthĩrĩria wa ikĩhinda: %handler. Ihinda ithomagwo kuuma thanduku-inĩ ya data expuser_session, nĩ ũndũ ũcio ripoti ĩrutaga wĩra na mũhũthĩrĩria o wothe.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Mawĩra ma gwĩkĩrwo nganja mathaa-inĩ %hours marĩa mathirĩte</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Mũtandao ũmwe nĩ waremirwo nĩ gũtoonya akaunti %accounts (kũgeria %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akaunti nĩ yahingĩrwo thuutha wa gũtoonya kũrĩa kwaremirwo</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Gũtoonya %count kũrĩa kwaremirwo akaunti-inĩ ĩmwe</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Nĩ ĩtoonyete kuuma mabũrũri %count hĩndĩ ĩmwe</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Mawĩra ma ũgitĩri</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Ihinda cia gũtoonya</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Gũtoonya kũrĩa kwaremirwo nĩ gũthomagwo kuuma rekondi ya ũthuthuria ya arĩa marahũthĩra, ĩrĩa ĩtarĩ haha.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Gũtirĩ ũndũ wa nganja: gũtirĩ akaunti ĩrĩ na gũtoonya kwaremirwo kaingĩ, gũtirĩ mũtandao ũrageria akaunti nyingĩ, gũtirĩ akaunti ĩtoonyete kuuma mabũrũri maingĩ.</translation>
     </message>
 </context>
 <context>

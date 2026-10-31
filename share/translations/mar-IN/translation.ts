@@ -78323,6 +78323,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>आपली सत्रे आणि सुरक्षा इव्हेंट JSON फाइलच्या स्वरूपात.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>या साइटवर सत्रे नोंदवली जात नाहीत, त्यामुळे इतर कोणतेही डिव्हाइस साइन आउट करता आले नाही. आपला पासवर्ड आताच बदला.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>इतर %count सत्रे साइन आउट केली गेली. आता आपला पासवर्ड बदला.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>इतर कोणतेही डिव्हाइस साइन इन नव्हते. आता आपला पासवर्ड बदला.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>धन्यवाद. ही घटना आपली म्हणून चिन्हांकित केली आहे.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>त्या घटनेला उत्तराची आवश्यकता नाही.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>पृष्ठ कालबाह्य झाले होते. काहीही बदलले नाही; कृपया पुन्हा प्रयत्न करा.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>आपले खाते सुरक्षित करा</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>येथील काही आपण केले नसल्यास, इतर सर्व डिव्हाइसेस साइन आउट करा, नंतर नवीन पासवर्ड निवडा. “मला लक्षात ठेवा” वापरून साइन इन ठेवलेली डिव्हाइसेसही साइन आउट होतात.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>हे सोडून प्रत्येक डिव्हाइस त्याच्या पुढील विनंतीवेळी साइन आउट होते. त्यानंतर आपण नवीन पासवर्ड निवडता.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>होय, इतर डिव्हाइसेस साइन आउट करा</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>हे आपण होता का?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>होय, तो मीच होतो</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>नाही, माझे खाते सुरक्षित करा</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78505,6 +78557,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>आपली सत्रे आणि सुरक्षा इव्हेंट JSON फाइलच्या स्वरूपात.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>या साइटवर सत्रे नोंदवली जात नाहीत, त्यामुळे इतर कोणतेही डिव्हाइस साइन आउट करता आले नाही. आपला पासवर्ड आताच बदला.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>इतर %count सत्रे साइन आउट केली गेली. आता आपला पासवर्ड बदला.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>इतर कोणतेही डिव्हाइस साइन इन नव्हते. आता आपला पासवर्ड बदला.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>धन्यवाद. ही घटना आपली म्हणून चिन्हांकित केली आहे.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>त्या घटनेला उत्तराची आवश्यकता नाही.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>पृष्ठ कालबाह्य झाले होते. काहीही बदलले नाही; कृपया पुन्हा प्रयत्न करा.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>आपले खाते सुरक्षित करा</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>येथील काही आपण केले नसल्यास, इतर सर्व डिव्हाइसेस साइन आउट करा, नंतर नवीन पासवर्ड निवडा. “मला लक्षात ठेवा” वापरून साइन इन ठेवलेली डिव्हाइसेसही साइन आउट होतात.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>हे सोडून प्रत्येक डिव्हाइस त्याच्या पुढील विनंतीवेळी साइन आउट होते. त्यानंतर आपण नवीन पासवर्ड निवडता.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>होय, इतर डिव्हाइसेस साइन आउट करा</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>हे आपण होता का?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>होय, तो मीच होतो</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>नाही, माझे खाते सुरक्षित करा</translation>
     </message>
 </context>
 <context>
@@ -78696,6 +78800,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>सत्र हँडलर: %handler. सत्रे expuser_session टेबलमधून वाचली जातात, त्यामुळे अहवाल प्रत्येक हँडलरसह काम करतो.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>गेल्या %hours तासांतील संशयास्पद क्रियाकलाप</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>एका नेटवर्कला %accounts खात्यांमध्ये साइन इन करता आले नाही (%count प्रयत्न)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>अयशस्वी साइन इननंतर खाते लॉक केले</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>एका खात्यावर %count अयशस्वी साइन इन</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>एकाच वेळी %count देशांमधून साइन इन केले</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षा क्रियाकलाप</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>सत्रे</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>अयशस्वी साइन इन वापरकर्ता ऑडिट लॉगमधून वाचले जातात, जो येथे उपलब्ध नाही.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>काहीही संशयास्पद नाही: वारंवार अयशस्वी साइन इन असलेले कोणतेही खाते नाही, अनेक खाती वापरून पाहणारे कोणतेही नेटवर्क नाही, अनेक देशांमधून साइन इन केलेले कोणतेही खाते नाही.</translation>
     </message>
 </context>
 <context>

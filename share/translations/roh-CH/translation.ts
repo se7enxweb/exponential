@@ -78325,6 +78325,58 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Vossas sesidas e Voss eveniments da segirezza sco datoteca JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sin questa website na vegnan las sesidas betg registradas, perquai n'ha nagin auter apparat pudì vegnir deconnectà. Midai ussa Voss pled-clav.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count autras sesidas èn vegnidas deconnectadas. Midai ussa Voss pled-clav.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nagin auter apparat n'era connectà. Midai ussa Voss pled-clav.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Grazia fitg. L'eveniment è vegnì marcà sco Voss.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Quest eveniment na dovra nagina resposta.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La pagina era scadida. Nagut n'è vegnì midà; empruvai danovamain.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Proteger Voss conto</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Sche insatge qua n'è betg stà Vus, deconnectai tut ils auters apparats e tschernai lura in nov pled-clav. Er ils apparats che restan connectads cun «Ma regurdar» vegnan deconnectads.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Mintga apparat, cun excepziun da quest, vegn deconnectà tar sia proxima dumonda. Lura tschernis Vus in nov pled-clav.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Gea, deconnectar ils auters apparats</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Èsas quai stads Vus?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Gea, quai sun jau stà</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Na, proteger mes conto</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Vossas sesidas e Voss eveniments da segirezza sco datoteca JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sin questa website na vegnan las sesidas betg registradas, perquai n'ha nagin auter apparat pudì vegnir deconnectà. Midai ussa Voss pled-clav.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count autras sesidas èn vegnidas deconnectadas. Midai ussa Voss pled-clav.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nagin auter apparat n'era connectà. Midai ussa Voss pled-clav.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Grazia fitg. L'eveniment è vegnì marcà sco Voss.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Quest eveniment na dovra nagina resposta.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La pagina era scadida. Nagut n'è vegnì midà; empruvai danovamain.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Proteger Voss conto</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Sche insatge qua n'è betg stà Vus, deconnectai tut ils auters apparats e tschernai lura in nov pled-clav. Er ils apparats che restan connectads cun «Ma regurdar» vegnan deconnectads.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Mintga apparat, cun excepziun da quest, vegn deconnectà tar sia proxima dumonda. Lura tschernis Vus in nov pled-clav.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Gea, deconnectar ils auters apparats</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Èsas quai stads Vus?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Gea, quai sun jau stà</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Na, proteger mes conto</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Tractader da sesidas: %handler. Las sesidas vegnan legidas da la tabella expuser_session, perquai funcziuna il rapport cun mintga tractader.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Activitad suspectusa durant las ultimas %hours uras</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Ina rait n'ha betg pudì s'annunziar tar %accounts contos (%count emprovas)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Conto bloccà suenter annunzias betg reussidas</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count annunzias betg reussidas sin in conto</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Annunzià da %count pajais il medem mument</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitad da segirezza</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesidas</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Las annunzias betg reussidas vegnan legidas dal protocol da revisiun dals utilisaders che n'è betg disponibel qua.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nagut suspectus: nagin conto cun annunzias betg reussidas repetidas, nagina rait che emprova plirs contos, nagin conto annunzià da plirs pajais.</translation>
     </message>
 </context>
 <context>

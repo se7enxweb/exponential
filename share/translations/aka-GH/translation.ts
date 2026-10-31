@@ -78325,6 +78325,58 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Wo sɛhyen ne wo ahobammɔ nsɛm sɛ JSON fael.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Wɔnkyerɛw sɛhyen ahodoɔ wɔ saa wɛbsaet yi so, enti wɔantumi anyi nnwinnadeɛ foforɔ biara mfiri mu. Sesa wo ahintasɛm seesei.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Wɔayi sɛhyen ahodoɔ %count afoforɔ afiri mu. Afei sesa wo ahintasɛm.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nnwinnadeɛ foforɔ biara nni mu. Afei sesa wo ahintasɛm.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Meda wo ase. Wɔahyɛ asɛm a ɛsiiɛ no agyirae sɛ ɛyɛ wo deɛ.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Saa asɛm a ɛsiiɛ no nhia mmuaeɛ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Krataafa no bere atwam. Wɔansesa biribiara; mesrɛ wo, san bɔ mmɔden.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Bɔ wo akawnt ho ban</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Sɛ biribi wɔ ha a ɛnyɛ wo a, yi nnwinnadeɛ foforɔ biara firi mu, na afei paw ahintasɛm foforɔ. Wɔbɛyi nnwinnadeɛ a wɔde Kae me ama wɔakɔ so awɔ mu no nso afiri mu.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Wɔbɛyi nnwinnadeɛ biara gye deɛ yi afiri mu wɔ n'abisadeɛ a ɛdi hɔ no mu. Afei wopaw ahintasɛm foforɔ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Aane, yi nnwinnadeɛ afoforɔ no firi mu</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Wo na woyɛeɛ anaa?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Aane, ɛyɛ me</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Daabi, bɔ me akawnt ho ban</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Wo sɛhyen ne wo ahobammɔ nsɛm sɛ JSON fael.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Wɔnkyerɛw sɛhyen ahodoɔ wɔ saa wɛbsaet yi so, enti wɔantumi anyi nnwinnadeɛ foforɔ biara mfiri mu. Sesa wo ahintasɛm seesei.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Wɔayi sɛhyen ahodoɔ %count afoforɔ afiri mu. Afei sesa wo ahintasɛm.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nnwinnadeɛ foforɔ biara nni mu. Afei sesa wo ahintasɛm.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Meda wo ase. Wɔahyɛ asɛm a ɛsiiɛ no agyirae sɛ ɛyɛ wo deɛ.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Saa asɛm a ɛsiiɛ no nhia mmuaeɛ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Krataafa no bere atwam. Wɔansesa biribiara; mesrɛ wo, san bɔ mmɔden.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Bɔ wo akawnt ho ban</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Sɛ biribi wɔ ha a ɛnyɛ wo a, yi nnwinnadeɛ foforɔ biara firi mu, na afei paw ahintasɛm foforɔ. Wɔbɛyi nnwinnadeɛ a wɔde Kae me ama wɔakɔ so awɔ mu no nso afiri mu.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Wɔbɛyi nnwinnadeɛ biara gye deɛ yi afiri mu wɔ n'abisadeɛ a ɛdi hɔ no mu. Afei wopaw ahintasɛm foforɔ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Aane, yi nnwinnadeɛ afoforɔ no firi mu</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Wo na woyɛeɛ anaa?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Aane, ɛyɛ me</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Daabi, bɔ me akawnt ho ban</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Sɛhyen nhwɛfoɔ: %handler. Wɔkenkan sɛhyen fi pon expuser_session mu, enti amaneɛbɔ no ne nhwɛfoɔ biara yɛ adwuma.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Nneyɛeɛ a ɛho yɛ hu wɔ nnɔnhwerew %hours a atwam mu</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Nɛtwɛk baako antumi ankɔ akawnt %accounts mu (mmɔdenbɔ %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Wɔato akawnt no mu wɔ kɔ-mu a ɛnyɛɛ yie akyi</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Kɔ-mu %count a ɛnyɛɛ yie wɔ akawnt baako so</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Wɔkɔɔ mu firii aman %count mu bere koro mu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ahobammɔ nneyɛeɛ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sɛhyen ahodoɔ</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Wɔkenkan kɔ-mu a ɛnyɛɛ yie firi dwumadifoɔ nhwehwɛmu nkrataa mu, na ɛnni ha.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Biribiara ho nyɛ hu: akawnt biara nni hɔ a kɔ-mu nyɛɛ yie mpɛn pii, nɛtwɛk biara nsɔ akawnt pii nhwɛ, akawnt biara nkɔɔ mu mfirii aman pii mu.</translation>
     </message>
 </context>
 <context>

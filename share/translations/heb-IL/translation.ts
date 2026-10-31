@@ -78357,6 +78357,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ההפעלות ואירועי האבטחה שלך כקובץ JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>באתר זה לא נרשמות הפעלות, ולכן לא ניתן היה לנתק אף מכשיר אחר. שנו את הסיסמה שלכם עכשיו.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count הפעלות אחרות נותקו. עכשיו שנו את הסיסמה שלכם.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>אף מכשיר אחר לא היה מחובר. עכשיו שנו את הסיסמה שלכם.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>תודה. האירוע סומן כשלכם.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>אירוע זה אינו דורש תשובה.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>תוקף הדף פג. דבר לא שונה; נא לנסות שוב.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>אבטחת החשבון</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>אם משהו כאן לא היה אתם, נתקו כל מכשיר אחר ולאחר מכן בחרו סיסמה חדשה. גם מכשירים שנשארו מחוברים באמצעות זכור אותי מנותקים.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>כל מכשיר מלבד זה מנותק בבקשה הבאה שלו. לאחר מכן תבחרו סיסמה חדשה.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>כן, לנתק את המכשירים האחרים</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>האם זה הייתם אתם?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>כן, זה הייתי אני</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>לא, לאבטח את החשבון שלי</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78539,6 +78591,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ההפעלות ואירועי האבטחה שלך כקובץ JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>באתר זה לא נרשמות הפעלות, ולכן לא ניתן היה לנתק אף מכשיר אחר. שנו את הסיסמה שלכם עכשיו.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count הפעלות אחרות נותקו. עכשיו שנו את הסיסמה שלכם.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>אף מכשיר אחר לא היה מחובר. עכשיו שנו את הסיסמה שלכם.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>תודה. האירוע סומן כשלכם.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>אירוע זה אינו דורש תשובה.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>תוקף הדף פג. דבר לא שונה; נא לנסות שוב.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>אבטחת החשבון</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>אם משהו כאן לא היה אתם, נתקו כל מכשיר אחר ולאחר מכן בחרו סיסמה חדשה. גם מכשירים שנשארו מחוברים באמצעות זכור אותי מנותקים.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>כל מכשיר מלבד זה מנותק בבקשה הבאה שלו. לאחר מכן תבחרו סיסמה חדשה.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>כן, לנתק את המכשירים האחרים</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>האם זה הייתם אתם?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>כן, זה הייתי אני</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>לא, לאבטח את החשבון שלי</translation>
     </message>
 </context>
 <context>
@@ -78730,6 +78834,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>מטפל הפעלות: %handler. ההפעלות נקראות מהטבלה expuser_session, ולכן הדוח פועל עם כל מטפל.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>פעילות חשודה ב-%hours השעות האחרונות</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>רשת אחת לא הצליחה להתחבר ל-%accounts חשבונות (%count ניסיונות)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>החשבון ננעל לאחר כניסות שנכשלו</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count כניסות שנכשלו בחשבון אחד</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>מחובר מ-%count מדינות בו-זמנית</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>פעילות אבטחה</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>הפעלות</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>כניסות שנכשלו נקראות מיומן הביקורת של המשתמשים, שאינו זמין כאן.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>אין שום דבר חשוד: אין חשבון עם כניסות חוזרות שנכשלו, אין רשת שמנסה כמה חשבונות, אין חשבון שמחובר מכמה מדינות.</translation>
     </message>
 </context>
 <context>

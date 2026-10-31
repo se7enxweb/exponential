@@ -78325,6 +78325,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ҷаласаҳо ва рӯйдодҳои амниятии шумо ҳамчун файли JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Дар ин сомона ҷаласаҳо сабт намешаванд, бинобар ин ягон дастгоҳи дигарро баровардан мумкин набуд. Ҳозир пароли худро иваз кунед.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count ҷаласаи дигар бароварда шуд. Акнун пароли худро иваз кунед.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ягон дастгоҳи дигар ворид нашуда буд. Акнун пароли худро иваз кунед.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Ташаккур. Ҳодиса ҳамчун ҳодисаи шумо қайд карда шуд.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ин ҳодиса ҷавобро талаб намекунад.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Мӯҳлати саҳифа гузашта буд. Чизе тағйир дода нашуд; лутфан бори дигар кӯшиш кунед.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Ҳифз кардани ҳисоб</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Агар чизе дар ин ҷо аз ҷониби шумо набошад, ҳамаи дастгоҳҳои дигарро бароред ва баъд пароли навро интихоб кунед. Дастгоҳҳое, ки тавассути Маро дар хотир нигоҳ дор воридшуда мондаанд, низ бароварда мешаванд.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Ҳар дастгоҳ ба ҷуз ҳамин дар дархости навбатии худ бароварда мешавад. Баъд шумо пароли навро интихоб мекунед.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ҳа, дастгоҳҳои дигарро бароред</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ин шумо будед?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ҳа, ин ман будам</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Не, ҳисоби маро ҳифз кунед</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ҷаласаҳо ва рӯйдодҳои амниятии шумо ҳамчун файли JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Дар ин сомона ҷаласаҳо сабт намешаванд, бинобар ин ягон дастгоҳи дигарро баровардан мумкин набуд. Ҳозир пароли худро иваз кунед.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count ҷаласаи дигар бароварда шуд. Акнун пароли худро иваз кунед.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ягон дастгоҳи дигар ворид нашуда буд. Акнун пароли худро иваз кунед.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Ташаккур. Ҳодиса ҳамчун ҳодисаи шумо қайд карда шуд.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ин ҳодиса ҷавобро талаб намекунад.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Мӯҳлати саҳифа гузашта буд. Чизе тағйир дода нашуд; лутфан бори дигар кӯшиш кунед.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Ҳифз кардани ҳисоб</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Агар чизе дар ин ҷо аз ҷониби шумо набошад, ҳамаи дастгоҳҳои дигарро бароред ва баъд пароли навро интихоб кунед. Дастгоҳҳое, ки тавассути Маро дар хотир нигоҳ дор воридшуда мондаанд, низ бароварда мешаванд.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Ҳар дастгоҳ ба ҷуз ҳамин дар дархости навбатии худ бароварда мешавад. Баъд шумо пароли навро интихоб мекунед.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ҳа, дастгоҳҳои дигарро бароред</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ин шумо будед?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ҳа, ин ман будам</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Не, ҳисоби маро ҳифз кунед</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Коркардкунандаи ҷаласа: %handler. Ҷаласаҳо аз ҷадвали expuser_session хонда мешаванд, бинобар ин ҳисобот бо ҳар коркардкунанда кор мекунад.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Фаъолияти шубҳанок дар %hours соати охир</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Як шабака ба %accounts ҳисоб ворид шуда натавонист (%count кӯшиш)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Ҳисоб пас аз воридшавиҳои ноком баста шуд</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count воридшавии ноком ба як ҳисоб</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Ҳамзамон аз %count кишвар ворид шудааст</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Фаъолияти амниятӣ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Ҷаласаҳо</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Воридшавиҳои ноком аз маҷаллаи аудити корбарон хонда мешаванд, ки дар ин ҷо дастрас нест.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Ҳеҷ чизи шубҳанок нест: ҳисобе бо воридшавиҳои такрории ноком нест, шабакае, ки якчанд ҳисобро меозмояд, нест, ҳисобе, ки аз якчанд кишвар ворид шудааст, нест.</translation>
     </message>
 </context>
 <context>

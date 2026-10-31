@@ -78323,6 +78323,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>JSON ফাইল হিসেবে আপনার সেশন ও নিরাপত্তা ইভেন্ট।</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>এই সাইটে সেশন রেকর্ড করা হয় না, তাই অন্য কোনো ডিভাইস সাইন আউট করা যায়নি। এখনই আপনার পাসওয়ার্ড পরিবর্তন করুন।</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>অন্য %countটি সেশন সাইন আউট করা হয়েছে। এখন আপনার পাসওয়ার্ড পরিবর্তন করুন।</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>অন্য কোনো ডিভাইস সাইন ইন করা ছিল না। এখন আপনার পাসওয়ার্ড পরিবর্তন করুন।</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ধন্যবাদ। ঘটনাটি আপনার হিসেবে চিহ্নিত করা হয়েছে।</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ওই ঘটনার কোনো উত্তরের প্রয়োজন নেই।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>পৃষ্ঠাটির মেয়াদ শেষ হয়ে গিয়েছিল। কিছুই পরিবর্তন করা হয়নি; অনুগ্রহ করে আবার চেষ্টা করুন।</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>আপনার অ্যাকাউন্ট সুরক্ষিত করুন</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>এখানে কোনো কিছু যদি আপনি না করে থাকেন, তাহলে অন্য সব ডিভাইস সাইন আউট করুন, তারপর একটি নতুন পাসওয়ার্ড বেছে নিন। আমাকে মনে রাখুন দিয়ে সাইন ইন থাকা ডিভাইসগুলোও সাইন আউট হয়ে যায়।</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>এটি ছাড়া প্রতিটি ডিভাইস তার পরবর্তী অনুরোধে সাইন আউট হয়ে যায়। তারপর আপনি একটি নতুন পাসওয়ার্ড বেছে নেবেন।</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>হ্যাঁ, অন্য ডিভাইসগুলো সাইন আউট করুন</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>এটি কি আপনি ছিলেন?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>হ্যাঁ, এটি আমি ছিলাম</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>না, আমার অ্যাকাউন্ট সুরক্ষিত করুন</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78505,6 +78557,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>JSON ফাইল হিসেবে আপনার সেশন ও নিরাপত্তা ইভেন্ট।</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>এই সাইটে সেশন রেকর্ড করা হয় না, তাই অন্য কোনো ডিভাইস সাইন আউট করা যায়নি। এখনই আপনার পাসওয়ার্ড পরিবর্তন করুন।</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>অন্য %countটি সেশন সাইন আউট করা হয়েছে। এখন আপনার পাসওয়ার্ড পরিবর্তন করুন।</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>অন্য কোনো ডিভাইস সাইন ইন করা ছিল না। এখন আপনার পাসওয়ার্ড পরিবর্তন করুন।</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ধন্যবাদ। ঘটনাটি আপনার হিসেবে চিহ্নিত করা হয়েছে।</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ওই ঘটনার কোনো উত্তরের প্রয়োজন নেই।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>পৃষ্ঠাটির মেয়াদ শেষ হয়ে গিয়েছিল। কিছুই পরিবর্তন করা হয়নি; অনুগ্রহ করে আবার চেষ্টা করুন।</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>আপনার অ্যাকাউন্ট সুরক্ষিত করুন</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>এখানে কোনো কিছু যদি আপনি না করে থাকেন, তাহলে অন্য সব ডিভাইস সাইন আউট করুন, তারপর একটি নতুন পাসওয়ার্ড বেছে নিন। আমাকে মনে রাখুন দিয়ে সাইন ইন থাকা ডিভাইসগুলোও সাইন আউট হয়ে যায়।</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>এটি ছাড়া প্রতিটি ডিভাইস তার পরবর্তী অনুরোধে সাইন আউট হয়ে যায়। তারপর আপনি একটি নতুন পাসওয়ার্ড বেছে নেবেন।</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>হ্যাঁ, অন্য ডিভাইসগুলো সাইন আউট করুন</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>এটি কি আপনি ছিলেন?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>হ্যাঁ, এটি আমি ছিলাম</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>না, আমার অ্যাকাউন্ট সুরক্ষিত করুন</translation>
     </message>
 </context>
 <context>
@@ -78696,6 +78800,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>সেশন হ্যান্ডলার: %handler। সেশনগুলো expuser_session টেবিল থেকে পড়া হয়, তাই প্রতিবেদনটি যেকোনো হ্যান্ডলারের সাথে কাজ করে।</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>গত %hours ঘণ্টায় সন্দেহজনক কার্যকলাপ</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>একটি নেটওয়ার্ক %accountsটি অ্যাকাউন্টে সাইন ইন করতে ব্যর্থ হয়েছে (%countটি প্রচেষ্টা)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ব্যর্থ সাইন-ইনের পরে অ্যাকাউন্ট লক করা হয়েছে</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>একটি অ্যাকাউন্টে %countটি ব্যর্থ সাইন-ইন</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>একই সময়ে %countটি দেশ থেকে সাইন ইন করা হয়েছে</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>নিরাপত্তা কার্যকলাপ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>সেশন</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ব্যর্থ সাইন-ইনগুলো ব্যবহারকারী অডিট লগ থেকে পড়া হয়, যা এখানে উপলব্ধ নয়।</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>সন্দেহজনক কিছু নেই: বারবার ব্যর্থ সাইন-ইন সহ কোনো অ্যাকাউন্ট নেই, একাধিক অ্যাকাউন্ট চেষ্টা করা কোনো নেটওয়ার্ক নেই, একাধিক দেশ থেকে সাইন ইন করা কোনো অ্যাকাউন্ট নেই।</translation>
     </message>
 </context>
 <context>

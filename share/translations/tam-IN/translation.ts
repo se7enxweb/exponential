@@ -78323,6 +78323,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>உங்கள் அமர்வுகளும் பாதுகாப்பு நிகழ்வுகளும் JSON கோப்பாக.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>இந்தத் தளத்தில் அமர்வுகள் பதிவு செய்யப்படுவதில்லை, எனவே வேறு எந்தச் சாதனத்தையும் வெளியேற்ற முடியவில்லை. உடனே உங்கள் கடவுச்சொல்லை மாற்றவும்.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>பிற %count அமர்வுகள் வெளியேற்றப்பட்டன. இப்போது உங்கள் கடவுச்சொல்லை மாற்றவும்.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>வேறு எந்தச் சாதனமும் உள்நுழைந்திருக்கவில்லை. இப்போது உங்கள் கடவுச்சொல்லை மாற்றவும்.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>நன்றி. இந்த நிகழ்வு உங்களுடையது எனக் குறிக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>அந்த நிகழ்வுக்குப் பதில் தேவையில்லை.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>பக்கம் காலாவதியானது. எதுவும் மாற்றப்படவில்லை; மீண்டும் முயற்சிக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>உங்கள் கணக்கைப் பாதுகாக்கவும்</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>இங்குள்ள ஏதாவது நீங்கள் செய்யவில்லை என்றால், பிற எல்லாச் சாதனங்களையும் வெளியேற்றி, பிறகு புதிய கடவுச்சொல்லைத் தேர்ந்தெடுக்கவும். என்னை நினைவில் வைத்துக்கொள் மூலம் உள்நுழைந்தே இருக்கும் சாதனங்களும் வெளியேற்றப்படும்.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>இதைத் தவிர ஒவ்வொரு சாதனமும் அதன் அடுத்த கோரிக்கையில் வெளியேற்றப்படும். பிறகு நீங்கள் புதிய கடவுச்சொல்லைத் தேர்ந்தெடுக்கிறீர்கள்.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ஆம், பிற சாதனங்களை வெளியேற்று</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>இது நீங்களா?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ஆம், அது நான்தான்</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>இல்லை, என் கணக்கைப் பாதுகாக்கவும்</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78505,6 +78557,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>உங்கள் அமர்வுகளும் பாதுகாப்பு நிகழ்வுகளும் JSON கோப்பாக.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>இந்தத் தளத்தில் அமர்வுகள் பதிவு செய்யப்படுவதில்லை, எனவே வேறு எந்தச் சாதனத்தையும் வெளியேற்ற முடியவில்லை. உடனே உங்கள் கடவுச்சொல்லை மாற்றவும்.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>பிற %count அமர்வுகள் வெளியேற்றப்பட்டன. இப்போது உங்கள் கடவுச்சொல்லை மாற்றவும்.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>வேறு எந்தச் சாதனமும் உள்நுழைந்திருக்கவில்லை. இப்போது உங்கள் கடவுச்சொல்லை மாற்றவும்.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>நன்றி. இந்த நிகழ்வு உங்களுடையது எனக் குறிக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>அந்த நிகழ்வுக்குப் பதில் தேவையில்லை.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>பக்கம் காலாவதியானது. எதுவும் மாற்றப்படவில்லை; மீண்டும் முயற்சிக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>உங்கள் கணக்கைப் பாதுகாக்கவும்</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>இங்குள்ள ஏதாவது நீங்கள் செய்யவில்லை என்றால், பிற எல்லாச் சாதனங்களையும் வெளியேற்றி, பிறகு புதிய கடவுச்சொல்லைத் தேர்ந்தெடுக்கவும். என்னை நினைவில் வைத்துக்கொள் மூலம் உள்நுழைந்தே இருக்கும் சாதனங்களும் வெளியேற்றப்படும்.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>இதைத் தவிர ஒவ்வொரு சாதனமும் அதன் அடுத்த கோரிக்கையில் வெளியேற்றப்படும். பிறகு நீங்கள் புதிய கடவுச்சொல்லைத் தேர்ந்தெடுக்கிறீர்கள்.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ஆம், பிற சாதனங்களை வெளியேற்று</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>இது நீங்களா?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ஆம், அது நான்தான்</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>இல்லை, என் கணக்கைப் பாதுகாக்கவும்</translation>
     </message>
 </context>
 <context>
@@ -78696,6 +78800,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>அமர்வு கையாளி: %handler. அமர்வுகள் expuser_session அட்டவணையிலிருந்து படிக்கப்படுகின்றன, எனவே அறிக்கை எந்தக் கையாளியுடனும் வேலை செய்யும்.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>கடந்த %hours மணிநேரத்தில் சந்தேகத்திற்குரிய செயல்பாடு</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>ஒரு பிணையம் %accounts கணக்குகளில் உள்நுழையத் தவறியது (%count முயற்சிகள்)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>தோல்வியடைந்த உள்நுழைவுகளுக்குப் பிறகு கணக்கு பூட்டப்பட்டது</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>ஒரு கணக்கில் %count தோல்வியடைந்த உள்நுழைவுகள்</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>ஒரே நேரத்தில் %count நாடுகளிலிருந்து உள்நுழைந்தது</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>பாதுகாப்புச் செயல்பாடு</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>அமர்வுகள்</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>தோல்வியடைந்த உள்நுழைவுகள் பயனர் தணிக்கைப் பதிவிலிருந்து படிக்கப்படுகின்றன, அது இங்கு கிடைக்கவில்லை.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>சந்தேகத்திற்குரியது எதுவும் இல்லை: மீண்டும் மீண்டும் தோல்வியடைந்த உள்நுழைவுகள் கொண்ட கணக்கு இல்லை, பல கணக்குகளை முயற்சிக்கும் பிணையம் இல்லை, பல நாடுகளிலிருந்து உள்நுழைந்த கணக்கு இல்லை.</translation>
     </message>
 </context>
 <context>

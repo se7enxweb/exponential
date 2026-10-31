@@ -78323,6 +78323,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>તમારાં સત્રો અને સુરક્ષા ઇવેન્ટ JSON ફાઇલ તરીકે.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>આ સાઇટ પર સત્રો નોંધાતા નથી, તેથી બીજું કોઈ ઉપકરણ સાઇન આઉટ કરી શકાયું નથી. હમણાં જ તમારો પાસવર્ડ બદલો.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>બીજાં %count સત્રો સાઇન આઉટ કરવામાં આવ્યાં. હવે તમારો પાસવર્ડ બદલો.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>બીજું કોઈ ઉપકરણ સાઇન ઇન નહોતું. હવે તમારો પાસવર્ડ બદલો.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>આભાર. આ ઘટનાને તમારી તરીકે ચિહ્નિત કરવામાં આવી છે.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>તે ઘટનાને કોઈ જવાબની જરૂર નથી.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>પૃષ્ઠની સમય મર્યાદા સમાપ્ત થઈ ગઈ હતી. કંઈ બદલાયું નથી; કૃપા કરીને ફરી પ્રયાસ કરો.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>તમારું ખાતું સુરક્ષિત કરો</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>જો અહીં કંઈક તમે ન હતા, તો બીજાં બધાં ઉપકરણો સાઇન આઉટ કરો, પછી નવો પાસવર્ડ પસંદ કરો. મને યાદ રાખો વડે સાઇન ઇન રાખેલાં ઉપકરણો પણ સાઇન આઉટ થાય છે.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>આ સિવાયનું દરેક ઉપકરણ તેની આગલી વિનંતી વખતે સાઇન આઉટ થાય છે. પછી તમે નવો પાસવર્ડ પસંદ કરો છો.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>હા, બીજાં ઉપકરણો સાઇન આઉટ કરો</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>શું આ તમે હતા?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>હા, તે હું હતો</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ના, મારું ખાતું સુરક્ષિત કરો</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78505,6 +78557,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>તમારાં સત્રો અને સુરક્ષા ઇવેન્ટ JSON ફાઇલ તરીકે.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>આ સાઇટ પર સત્રો નોંધાતા નથી, તેથી બીજું કોઈ ઉપકરણ સાઇન આઉટ કરી શકાયું નથી. હમણાં જ તમારો પાસવર્ડ બદલો.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>બીજાં %count સત્રો સાઇન આઉટ કરવામાં આવ્યાં. હવે તમારો પાસવર્ડ બદલો.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>બીજું કોઈ ઉપકરણ સાઇન ઇન નહોતું. હવે તમારો પાસવર્ડ બદલો.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>આભાર. આ ઘટનાને તમારી તરીકે ચિહ્નિત કરવામાં આવી છે.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>તે ઘટનાને કોઈ જવાબની જરૂર નથી.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>પૃષ્ઠની સમય મર્યાદા સમાપ્ત થઈ ગઈ હતી. કંઈ બદલાયું નથી; કૃપા કરીને ફરી પ્રયાસ કરો.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>તમારું ખાતું સુરક્ષિત કરો</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>જો અહીં કંઈક તમે ન હતા, તો બીજાં બધાં ઉપકરણો સાઇન આઉટ કરો, પછી નવો પાસવર્ડ પસંદ કરો. મને યાદ રાખો વડે સાઇન ઇન રાખેલાં ઉપકરણો પણ સાઇન આઉટ થાય છે.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>આ સિવાયનું દરેક ઉપકરણ તેની આગલી વિનંતી વખતે સાઇન આઉટ થાય છે. પછી તમે નવો પાસવર્ડ પસંદ કરો છો.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>હા, બીજાં ઉપકરણો સાઇન આઉટ કરો</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>શું આ તમે હતા?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>હા, તે હું હતો</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ના, મારું ખાતું સુરક્ષિત કરો</translation>
     </message>
 </context>
 <context>
@@ -78696,6 +78800,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>સત્ર હેન્ડલર: %handler. સત્રો expuser_session કોષ્ટકમાંથી વંચાય છે, તેથી અહેવાલ દરેક હેન્ડલર સાથે કામ કરે છે.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>છેલ્લા %hours કલાકમાં શંકાસ્પદ પ્રવૃત્તિ</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>એક નેટવર્ક %accounts ખાતાંમાં સાઇન ઇન કરવામાં નિષ્ફળ ગયું (%count પ્રયાસો)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>નિષ્ફળ સાઇન-ઇન પછી ખાતું લૉક થયું</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>એક ખાતા પર %count નિષ્ફળ સાઇન-ઇન</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>એકસાથે %count દેશોમાંથી સાઇન ઇન</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>સુરક્ષા પ્રવૃત્તિ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>સત્રો</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>નિષ્ફળ સાઇન-ઇન વપરાશકર્તા ઑડિટ લૉગમાંથી વાંચવામાં આવે છે, જે અહીં ઉપલબ્ધ નથી.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>કંઈ શંકાસ્પદ નથી: વારંવાર નિષ્ફળ સાઇન-ઇનવાળું કોઈ ખાતું નથી, ઘણાં ખાતાં અજમાવતું કોઈ નેટવર્ક નથી, ઘણા દેશોમાંથી સાઇન ઇન થયેલું કોઈ ખાતું નથી.</translation>
     </message>
 </context>
 <context>

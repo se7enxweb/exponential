@@ -78325,6 +78325,58 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ba-session na yo mpe makambo ya libateli lokola fichier JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Ba-session ekomamaka te na site oyo, yango wana appareil mosusu ekokaki kobimisama te. Bongolá liloba ya sekele na yo sikoyo.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Ba-session mosusu %count ebimisami. Sikoyo bongolá liloba ya sekele na yo.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Appareil mosusu ekɔtaki te. Sikoyo bongolá liloba ya sekele na yo.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Matɔndi. Likambo oyo etyami lokola ya yo.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Likambo wana esengi eyano te.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Lokasa eleki ntango. Eloko moko ebongolami te; meká lisusu.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Batelá compte na yo</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Soki eloko moko awa ezalaki yo te, bimisá ba-appareil mosusu nyɔnsɔ, sima pona liloba ya sekele ya sika. Ba-appareil oyo etikalaki kokɔta na “Kanisá ngai” ekobimisama mpe.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Ba-appareil nyɔnsɔ longola oyo ekobimisama na bosenga na yango oyo ekolanda. Sima okopona liloba ya sekele ya sika.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ɛɛ, bimisá ba-appareil mosusu</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ezalaki yo?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ɛɛ, ezalaki ngai</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Te, batelá compte na ngai</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ba-session na yo mpe makambo ya libateli lokola fichier JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Ba-session ekomamaka te na site oyo, yango wana appareil mosusu ekokaki kobimisama te. Bongolá liloba ya sekele na yo sikoyo.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Ba-session mosusu %count ebimisami. Sikoyo bongolá liloba ya sekele na yo.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Appareil mosusu ekɔtaki te. Sikoyo bongolá liloba ya sekele na yo.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Matɔndi. Likambo oyo etyami lokola ya yo.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Likambo wana esengi eyano te.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Lokasa eleki ntango. Eloko moko ebongolami te; meká lisusu.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Batelá compte na yo</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Soki eloko moko awa ezalaki yo te, bimisá ba-appareil mosusu nyɔnsɔ, sima pona liloba ya sekele ya sika. Ba-appareil oyo etikalaki kokɔta na “Kanisá ngai” ekobimisama mpe.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Ba-appareil nyɔnsɔ longola oyo ekobimisama na bosenga na yango oyo ekolanda. Sima okopona liloba ya sekele ya sika.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ɛɛ, bimisá ba-appareil mosusu</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ezalaki yo?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ɛɛ, ezalaki ngai</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Te, batelá compte na ngai</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Handler ya session: %handler. Ba-session etángamaka na tableau expuser_session, yango wana rapport esalaka na handler nyɔ́nsɔ.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Misala ya ntembe na ngonga %hours ya nsuka</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Réseau moko elongaki te kokɔta na ba-compte %accounts (ba-meko %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Compte ekangami sima ya bokɔti oyo elongaki te</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Bokɔti %count oyo elongaki te na compte moko</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Akɔtaki uta na mikili %count na mbala moko</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Misala ya libateli</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Ba-session</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Bokɔti oyo elongaki te etángami na buku ya botaleli ya basaleli, oyo ezali awa te.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Eloko ya ntembe ezali te: compte moko te na bokɔti oyo elongaki te mbala na mbala, réseau moko te oyo emeki ba-compte ebele, compte moko te oyo ekɔtaki uta na mikili ebele.</translation>
     </message>
 </context>
 <context>

@@ -78325,6 +78325,58 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>As súas sesións e eventos de seguridade nun ficheiro JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Neste sitio non se rexistran as sesións, polo que non se puido pechar a sesión de ningún outro dispositivo. Cambie o seu contrasinal agora.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Pecháronse %count sesións máis. Agora cambie o seu contrasinal.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Non había ningún outro dispositivo coa sesión iniciada. Agora cambie o seu contrasinal.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Grazas. O evento está marcado como seu.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ese evento non precisa resposta.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>A páxina caducara. Non se cambiou nada; ténteo de novo.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Protexer a súa conta</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Se algo de aquí non foi vostede, peche a sesión de todos os outros dispositivos e despois escolla un contrasinal novo. Tamén se pecha a sesión dos dispositivos que a mantiñan aberta con Lembrarme.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Péchase a sesión de todos os dispositivos agás este na súa seguinte solicitude. Despois escolle un contrasinal novo.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Si, pechar a sesión dos outros dispositivos</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Foi vostede?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Si, fun eu</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Non, protexer a miña conta</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>As súas sesións e eventos de seguridade nun ficheiro JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Neste sitio non se rexistran as sesións, polo que non se puido pechar a sesión de ningún outro dispositivo. Cambie o seu contrasinal agora.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Pecháronse %count sesións máis. Agora cambie o seu contrasinal.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Non había ningún outro dispositivo coa sesión iniciada. Agora cambie o seu contrasinal.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Grazas. O evento está marcado como seu.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ese evento non precisa resposta.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>A páxina caducara. Non se cambiou nada; ténteo de novo.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Protexer a súa conta</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Se algo de aquí non foi vostede, peche a sesión de todos os outros dispositivos e despois escolla un contrasinal novo. Tamén se pecha a sesión dos dispositivos que a mantiñan aberta con Lembrarme.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Péchase a sesión de todos os dispositivos agás este na súa seguinte solicitude. Despois escolle un contrasinal novo.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Si, pechar a sesión dos outros dispositivos</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Foi vostede?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Si, fun eu</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Non, protexer a miña conta</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Xestor de sesións: %handler. As sesións lense da táboa expuser_session, polo que o informe funciona con calquera xestor.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Actividade sospeitosa nas últimas %hours horas</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Unha rede non puido iniciar sesión en %accounts contas (%count intentos)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Conta bloqueada tras inicios de sesión fallidos</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count inicios de sesión fallidos nunha conta</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Sesión iniciada desde %count países á vez</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Actividade de seguridade</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesións</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Os inicios de sesión fallidos lense do rexistro de auditoría de usuarios, que non está dispoñible aquí.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nada sospeitoso: ningunha conta con inicios de sesión fallidos repetidos, ningunha rede probando varias contas, ningunha conta con sesión iniciada desde varios países.</translation>
     </message>
 </context>
 <context>

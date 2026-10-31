@@ -78325,6 +78325,58 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Jo sesjes en befeiligingsbarren as JSON-bestân.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sesjes wurde op dizze side net opslein, dus koe gjin oar apparaat ôfmeld wurde. Wizigje no jo wachtwurd.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count oare sesjes binne ôfmeld. Wizigje no jo wachtwurd.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Der wie gjin oar apparaat oanmeld. Wizigje no jo wachtwurd.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Tankewol. It barren is as fan jo markearre.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Dat barren hat gjin antwurd nedich.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>De side wie ferrûn. Der is neat wizige; besykje it opnij.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Account befeiligje</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>As hjir wat net troch jo dien is, meld dan alle oare apparaten ôf en kies dêrnei in nij wachtwurd. Apparaten dy't mei Ûnthâld my oanmeld bleaun binne, wurde ek ôfmeld.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Alle apparaten útsein dit ien wurde by harren folgjende fersyk ôfmeld. Dêrnei kieze jo in nij wachtwurd.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ja, de oare apparaten ôfmelde</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Wiene jo dit?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ja, dat wie ik</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nee, myn account befeiligje</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Jo sesjes en befeiligingsbarren as JSON-bestân.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sesjes wurde op dizze side net opslein, dus koe gjin oar apparaat ôfmeld wurde. Wizigje no jo wachtwurd.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count oare sesjes binne ôfmeld. Wizigje no jo wachtwurd.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Der wie gjin oar apparaat oanmeld. Wizigje no jo wachtwurd.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Tankewol. It barren is as fan jo markearre.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Dat barren hat gjin antwurd nedich.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>De side wie ferrûn. Der is neat wizige; besykje it opnij.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Account befeiligje</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>As hjir wat net troch jo dien is, meld dan alle oare apparaten ôf en kies dêrnei in nij wachtwurd. Apparaten dy't mei Ûnthâld my oanmeld bleaun binne, wurde ek ôfmeld.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Alle apparaten útsein dit ien wurde by harren folgjende fersyk ôfmeld. Dêrnei kieze jo in nij wachtwurd.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ja, de oare apparaten ôfmelde</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Wiene jo dit?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ja, dat wie ik</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nee, myn account befeiligje</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Sesjebehanneler: %handler. De sesjes wurde lêzen út de tabel expuser_session, dus it rapport wurket mei elke behanneler.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Fertochte aktiviteit yn de ôfrûne %hours oeren</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Ien netwurk koe net oanmelde by %accounts accounts (%count besykjen)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Account beskoattele nei mislearre oanmeldingen</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count mislearre oanmeldingen op ien account</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Tagelyk oanmeld út %count lannen</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Befeiligingsaktiviteit</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesjes</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Mislearre oanmeldingen wurde út it audit-log fan de brûkers lêzen, dat hjir net beskikber is.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Neat fertochts: gjin account mei werhelle mislearre oanmeldingen, gjin netwurk dat ferskate accounts besiket, gjin account dat út ferskate lannen oanmeld is.</translation>
     </message>
 </context>
 <context>

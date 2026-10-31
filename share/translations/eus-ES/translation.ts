@@ -78325,6 +78325,58 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Zure saioak eta segurtasun-gertaerak JSON fitxategi gisa.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Gune honetan ez dira saioak erregistratzen, beraz ezin izan da beste gailurik saiotik atera. Aldatu pasahitza orain.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Beste %count saio amaitu dira. Orain aldatu pasahitza.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ez zegoen beste gailurik saioa hasita. Orain aldatu pasahitza.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Eskerrik asko. Gertaera zuretzat markatu da.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Gertaera horrek ez du erantzunik behar.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Orria iraungita zegoen. Ez da ezer aldatu; saiatu berriro.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Babestu zure kontua</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Hemengo zerbait zu izan ez bazara, amaitu beste gailu guztietako saioak eta aukeratu pasahitz berri bat. Gogoratu nazazu aukerarekin saioa irekita mantendutako gailuetako saioak ere amaitzen dira.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Gailu honetaz gain beste gailu guztien saioa amaitzen da hurrengo eskaeran. Ondoren pasahitz berri bat aukeratuko duzu.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Bai, amaitu beste gailuetako saioak</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Zu izan zinen?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Bai, ni izan nintzen</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ez, babestu nire kontua</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78507,6 +78559,58 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Zure saioak eta segurtasun-gertaerak JSON fitxategi gisa.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Gune honetan ez dira saioak erregistratzen, beraz ezin izan da beste gailurik saiotik atera. Aldatu pasahitza orain.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Beste %count saio amaitu dira. Orain aldatu pasahitza.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ez zegoen beste gailurik saioa hasita. Orain aldatu pasahitza.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Eskerrik asko. Gertaera zuretzat markatu da.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Gertaera horrek ez du erantzunik behar.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Orria iraungita zegoen. Ez da ezer aldatu; saiatu berriro.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Babestu zure kontua</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Hemengo zerbait zu izan ez bazara, amaitu beste gailu guztietako saioak eta aukeratu pasahitz berri bat. Gogoratu nazazu aukerarekin saioa irekita mantendutako gailuetako saioak ere amaitzen dira.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Gailu honetaz gain beste gailu guztien saioa amaitzen da hurrengo eskaeran. Ondoren pasahitz berri bat aukeratuko duzu.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Bai, amaitu beste gailuetako saioak</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Zu izan zinen?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Bai, ni izan nintzen</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ez, babestu nire kontua</translation>
     </message>
 </context>
 <context>
@@ -78698,6 +78802,42 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Saio-kudeatzailea: %handler. Saioak expuser_session taulatik irakurtzen dira; beraz, txostenak edozein kudeatzailerekin funtzionatzen du.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Jarduera susmagarria azken %hours orduetan</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Sare batek huts egin du %accounts kontutan saioa hasten (%count saiakera)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kontua blokeatuta saio-hasiera hutsen ondoren</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count saio-hasiera huts kontu batean</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>%count herrialdetatik aldi berean saioa hasita</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Segurtasun-jarduera</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Saioak</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Huts egindako saio-hasierak erabiltzaileen auditoria-erregistrotik irakurtzen dira, eta hori ez dago erabilgarri hemen.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Ez dago ezer susmagarririk: ez dago saio-hasiera huts errepikatuak dituen konturik, ez kontu batzuk probatzen dituen sarerik, ez herrialde batzuetatik saioa hasita duen konturik.</translation>
     </message>
 </context>
 <context>
