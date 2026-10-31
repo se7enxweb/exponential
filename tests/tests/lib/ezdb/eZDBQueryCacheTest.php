@@ -48,6 +48,11 @@
  *  QC-40 — A write that cannot take the state lock makes everything stale
  *  QC-41 — The memo keeps at most MEMO_MAX results, the least recently used goes first
  *  QC-42 — The key carries the database user, port and socket: two sites on one server do not share results
+ *  QC-43 — PostgreSQL and SQLite: a backslash does not escape (standard_conforming_strings off: it does), quoted
+ *           names with an apostrophe, unterminated literals, E'' and dollar quoting, # is no comment, their volatile
+ *           functions
+ *  QC-44 — PostgreSQL and SQLite writes: ONLY, TRUNCATE and DROP TABLE lists, CASCADE, INSERT OR REPLACE, RENAME TO;
+ *           a name that cannot be read makes the write unreadable
  *
  * No database: the driver is a stand-in object with the properties the cache
  * reads, and the state lives in a directory of its own under var/tmp.
@@ -1322,5 +1327,121 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         $this->assertSame( eZDBQueryCache::key( $a, $sql, array() ), eZDBQueryCache::key( clone $a, $sql, array() ) );
         $this->select( $sql, array( array( 'id' => 1 ) ), array(), $a );
         $this->assertNull( $this->select( $sql, array( array( 'id' => 2 ) ), array(), $b ), 'another user\'s rows are not answered' );
+    }
+
+    /** A sorted readTables() or writtenTables() result, or null. */
+    private function sortedTables( $tables )
+    {
+        if ( is_array( $tables ) )
+            sort( $tables );
+        return $tables;
+    }
+
+    /** QC-43 */
+    public function testReadTablesOnPostgreSQLAndSQLite()
+    {
+        $postgresql = new class { function databaseName() { return 'postgresql'; } };
+        $sqlite = new class { function databaseName() { return 'sqlite'; } };
+        $this->assertFalse( eZDBQueryCache::backslashEscapes( $postgresql ), 'PostgreSQL: standard_conforming_strings on' );
+        $this->assertFalse( eZDBQueryCache::backslashEscapes( $sqlite ) );
+        // a server or session with standard_conforming_strings off escapes with a backslash, as MySQL does
+        $legacy = new class { function databaseName() { return 'postgresql'; } function standardConformingStrings() { return false; } };
+        $this->assertTrue( eZDBQueryCache::backslashEscapes( $legacy ), 'PostgreSQL: standard_conforming_strings off' );
+        $modern = new class { function databaseName() { return 'postgresql'; } function standardConformingStrings() { return true; } };
+        $this->assertFalse( eZDBQueryCache::backslashEscapes( $modern ) );
+
+        foreach ( array( 'PostgreSQL' => false, 'SQLite' => false ) as $engine => $bs )
+        {
+            // a backslash does not escape: 'C:\' is a whole literal, the table after it is read
+            $this->assertSame( array( 'a', 'b' ), $this->sortedTables( eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = 'C:\\' AND y IN ( SELECT id FROM b WHERE z = '1' )", $bs ) ), $engine . ": 'C:\\'" );
+            // a doubled quote stays in the literal
+            $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = 'it''s' AND y = 'z'", $bs ), $engine . ': doubled quote' );
+            // quoted identifiers, with a doubled quote, with a schema
+            $this->assertSame( array( 'ezcontentobject', 'ezuser' ), $this->sortedTables( eZDBQueryCache::readTables( 'SELECT * FROM "ezcontentobject" o JOIN "public"."ezuser" u ON u.contentobject_id = o.id', $bs ) ), $engine . ': quoted identifiers' );
+            // an apostrophe in a quoted identifier is not a literal: it would pair with the next quote and hide b
+            $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM \"it's\" x, b WHERE b.y = 'z'", $bs ), $engine . ': apostrophe in an identifier' );
+            $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM a WHERE \"it's\" = 1 UNION SELECT * FROM b WHERE y = 'z'", $bs ), $engine . ': apostrophe in a column' );
+            // an unterminated literal leaves the end unread
+            $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = 'y", $bs ), $engine . ': unterminated literal' );
+            // # is no comment here (PostgreSQL: XOR): the statement stays readable
+            $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( 'SELECT x # 3 FROM a', $bs ), $engine . ': # is an operator' );
+            // comments still hide tables
+            $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM a -- it's\n JOIN b ON b.id = a.id WHERE a.x = 'y'", $bs ), $engine . ': -- comment' );
+            $this->assertNull( eZDBQueryCache::readTables( 'SELECT * FROM a /* JOIN b */', $bs ), $engine . ': /* */ comment' );
+        }
+        // SQLite: brackets and backticks around a name with an apostrophe
+        $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM [it's] x, b WHERE b.y = 'z'", false ), 'SQLite: [name]' );
+        $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM `it's` x, b WHERE b.y = 'z'", false ), 'SQLite: `name`' );
+        $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM `it's` x, b WHERE b.y = 'z'", true ), 'MySQL: `name`' );
+        // PostgreSQL: E'' strings, where a backslash escapes, are not read; neither are dollar-quoted strings
+        $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = E'it\\'s' UNION SELECT * FROM b WHERE y = 'z'", false ), "E''" );
+        $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = e'C:\\\\' UNION SELECT * FROM b WHERE y = 'z'", false ), "e''" );
+        $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = \$\$O'Brien\$\$ UNION SELECT * FROM b WHERE y = 'z'", false ), '$$' );
+        $this->assertNull( eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = \$q\$O'Brien\$q\$ UNION SELECT * FROM b WHERE y = 'z'", false ), '$tag$' );
+        // ... but a positional parameter, a dollar in a literal or in a name is no dollar quote
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( 'SELECT * FROM a WHERE x = $1 AND y = $2', false ), '$1' );
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = 'costs \$\$'", false ), 'dollar in a literal' );
+        $this->assertSame( array( 'ab' ), eZDBQueryCache::readTables( 'SELECT * FROM ab WHERE x$y$z = 1', false ), 'dollar in a name' );
+        // U&'' and B'' / X'' literals end like plain ones
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = U&'d\\0061t' AND y = B'101' AND z = X'1F'", false ), "U&''" );
+        // standard_conforming_strings off: a backslash escapes as in MySQL, and a name in double quotes is not read
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE x = 'it\\'s'", true ), 'backslash escapes' );
+        $this->assertNull( eZDBQueryCache::readTables( 'SELECT * FROM "a"', true ), 'quoted name with escaping on' );
+        // PostgreSQL forms: TABLESAMPLE, a column alias list and ONLY are not readable; FETCH FIRST and OFFSET are
+        $this->assertNull( eZDBQueryCache::readTables( 'SELECT * FROM a TABLESAMPLE BERNOULLI (10)', false ), 'TABLESAMPLE' );
+        $this->assertNull( eZDBQueryCache::readTables( 'SELECT * FROM a x (c1, c2), b', false ), 'column alias list' );
+        $this->assertNull( eZDBQueryCache::readTables( 'SELECT * FROM b, ONLY a', false ), 'ONLY in a list' );
+        $this->assertSame( array( 'a', 'b' ), $this->sortedTables( eZDBQueryCache::readTables( 'SELECT * FROM a, b WHERE a.i = b.i ORDER BY a.i OFFSET 5 ROWS FETCH FIRST 10 ROWS ONLY', false ) ), 'FETCH FIRST' );
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( "SELECT * FROM a WHERE x::text ILIKE 'y%'", false ), 'cast and ILIKE' );
+        // SQLite: INDEXED BY names an index, not a table
+        $this->assertSame( array( 'a' ), eZDBQueryCache::readTables( 'SELECT * FROM a INDEXED BY i WHERE x = 1', false ), 'INDEXED BY' );
+        // functions that are not the same every time
+        foreach ( array( 'SELECT nextval(\'s\') FROM a', 'SELECT * FROM a WHERE t > now()', 'SELECT random() FROM a', 'SELECT * FROM a WHERE d = CURRENT_DATE',
+                         "SELECT * FROM a WHERE t > datetime('now')", "SELECT * FROM a WHERE t > strftime('%s','now')", 'SELECT * FROM a ORDER BY random()',
+                         'SELECT changes() FROM a', 'SELECT last_insert_rowid() FROM a', 'SELECT * FROM a WHERE t > clock_timestamp()', 'SELECT txid_current() FROM a',
+                         'SELECT gen_random_uuid() FROM a', 'SELECT pg_try_advisory_lock(1) FROM a', 'SELECT * FROM a FOR NO KEY UPDATE', 'SELECT * FROM a FOR KEY SHARE' ) as $sql )
+            $this->assertNull( eZDBQueryCache::readTables( $sql, false ), 'volatile: ' . $sql );
+    }
+
+    /** QC-44 */
+    public function testWrittenTablesOnPostgreSQLAndSQLite()
+    {
+        $cases = array(
+            'INSERT OR REPLACE INTO ezpreferences (a) VALUES (1)' => array( 'ezpreferences' ),
+            'INSERT OR IGNORE INTO "ezurl" (id) VALUES (1)' => array( 'ezurl' ),
+            'INSERT INTO a (x) VALUES (1) ON CONFLICT (x) DO UPDATE SET y = 2' => array( 'a' ),
+            'INSERT INTO a (x) SELECT x FROM b' => array( 'a' ),
+            'UPDATE ONLY a SET x = 1' => array( 'a' ),
+            'UPDATE a AS t SET x = b.x FROM b WHERE b.id = t.id' => array( 'a' ),
+            'DELETE FROM ONLY a WHERE x = 1' => array( 'a' ),
+            'DELETE FROM a USING b WHERE a.id = b.id' => array( 'a' ),
+            'TRUNCATE a' => array( 'a' ),
+            'TRUNCATE TABLE ONLY a' => array( 'a' ),
+            'TRUNCATE a, b' => array( 'a', 'b' ),
+            'TRUNCATE TABLE a, ONLY b RESTART IDENTITY' => array( 'a', 'b' ),
+            'TRUNCATE "public"."a" CONTINUE IDENTITY RESTRICT' => array( 'a' ),
+            'DROP TABLE a, b' => array( 'a', 'b' ),
+            'DROP TABLE IF EXISTS a, "b" RESTRICT' => array( 'a', 'b' ),
+            'ALTER TABLE ONLY a ADD COLUMN x int' => array( 'a' ),
+            'ALTER TABLE IF EXISTS ONLY a ADD COLUMN x int' => array( 'a' ),
+            'ALTER TABLE a RENAME TO b' => array( 'a', 'b' ),
+            "UPDATE a SET x = 'C:\\' WHERE y = '1'" => array( 'a' ),
+        );
+        foreach ( $cases as $sql => $want )
+            $this->assertSame( $want, $this->sortedTables( eZDBQueryCache::writtenTables( $sql, false ) ), $sql );
+        // what cannot be told makes everything stale
+        foreach ( array(
+            'TRUNCATE a, b CASCADE',
+            'TRUNCATE TABLE a CASCADE',
+            'DROP TABLE a CASCADE',
+            'WITH x AS ( DELETE FROM a RETURNING * ) INSERT INTO b SELECT * FROM x',
+            'COPY a FROM STDIN',
+            'CREATE INDEX ON a (x)',
+            "UPDATE \"it's\" SET x = 1 WHERE y = 'z'",
+            'UPDATE "My Table" x, b SET b.y = 1',
+            "UPDATE a SET x = \$\$it's\$\$, y = 'z'",
+            "UPDATE a SET x = E'it\\'s', y = 'z'",
+        ) as $sql )
+            $this->assertNull( eZDBQueryCache::writtenTables( $sql, false ), $sql );
     }
 }

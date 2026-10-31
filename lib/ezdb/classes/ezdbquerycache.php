@@ -121,7 +121,7 @@ class eZDBQueryCache
      */
     const ORACLE_VOLATILE = '/\.\s*(?:NEXTVAL|CURRVAL)\b|\b(?:SYSDATE|SYSTIMESTAMP|CURRENT_SCN|ORA_ROWSCN|SYS_GUID|SYS_CONTEXT|USERENV|DBMS_RANDOM|DBMS_LOCK)\b|\bSAMPLE\s*\(/i';
 
-    const VOLATILE = '/\bUNIX_TIMESTAMP\s*\(\s*\)|\b(?:CURRENT_DATE|CURRENT_TIME|CURRENT_TIMESTAMP|LOCALTIME|LOCALTIMESTAMP|CURRENT_USER)\b|\b(NOW|SYSDATE|CURDATE|CURTIME|CURRENT_DATE|CURRENT_TIME|CURRENT_TIMESTAMP|LOCALTIME|LOCALTIMESTAMP|UTC_DATE|UTC_TIME|UTC_TIMESTAMP|RAND|RANDOM|UUID|UUID_SHORT|LAST_INSERT_ID|LASTVAL|CURRVAL|NEXTVAL|FOUND_ROWS|ROW_COUNT|CONNECTION_ID|GET_LOCK|RELEASE_LOCK|IS_FREE_LOCK|SLEEP|BENCHMARK|DATABASE|USER|CURRENT_USER|SESSION_USER|SYSTEM_USER|VERSION)\s*\(|\bFOR\s+UPDATE\b|\bLOCK\s+IN\s+SHARE\s+MODE\b|\bFOR\s+SHARE\b|\bSQL_CALC_FOUND_ROWS\b|\bSQL_NO_CACHE\b|@@?\w|\bINTO\s+(OUTFILE|DUMPFILE|@)/i';
+    const VOLATILE = '/\bUNIX_TIMESTAMP\s*\(\s*\)|\b(?:CURRENT_DATE|CURRENT_TIME|CURRENT_TIMESTAMP|LOCALTIME|LOCALTIMESTAMP|CURRENT_USER)\b|\b(NOW|SYSDATE|CURDATE|CURTIME|CURRENT_DATE|CURRENT_TIME|CURRENT_TIMESTAMP|LOCALTIME|LOCALTIMESTAMP|UTC_DATE|UTC_TIME|UTC_TIMESTAMP|RAND|RANDOM|UUID|UUID_SHORT|LAST_INSERT_ID|LASTVAL|CURRVAL|NEXTVAL|FOUND_ROWS|ROW_COUNT|CONNECTION_ID|GET_LOCK|RELEASE_LOCK|IS_FREE_LOCK|SLEEP|BENCHMARK|DATABASE|USER|CURRENT_USER|SESSION_USER|SYSTEM_USER|VERSION|RANDOMBLOB|CHANGES|TOTAL_CHANGES|LAST_INSERT_ROWID|CLOCK_TIMESTAMP|STATEMENT_TIMESTAMP|TRANSACTION_TIMESTAMP|TIMEOFDAY|TXID_CURRENT\w*|PG_\w+|GEN_RANDOM_UUID|SETVAL|CURRENT_SETTING|SET_CONFIG|INET_CLIENT_ADDR|INET_CLIENT_PORT)\s*\(|\b(?:DATE|TIME|DATETIME|JULIANDAY|UNIXEPOCH)\s*\(\s*\)|\'(?:now|today|tomorrow|yesterday|localtime)\'|\bFOR\s+(?:NO\s+KEY\s+)?UPDATE\b|\bLOCK\s+IN\s+SHARE\s+MODE\b|\bFOR\s+(?:KEY\s+)?SHARE\b|\bSQL_CALC_FOUND_ROWS\b|\bSQL_NO_CACHE\b|@@?\w|\bINTO\s+(OUTFILE|DUMPFILE|@)/i';
 
     // ── Settings ─────────────────────────────────────────────────────────
 
@@ -1768,27 +1768,36 @@ class eZDBQueryCache
         $text = self::withoutStrings( (string)$sql, $backslash );
         if ( $text === null )
             return null;
+        // PostgreSQL's TRUNCATE ... CASCADE empties every table that refers to the named ones, and DROP ... CASCADE
+        // drops the views on them: which, the text does not say.
+        if ( preg_match( '/^\s*(?:TRUNCATE|DROP)\b.*\bCASCADE\b/is', $text ) )
+            return null;
         $patterns = array(
             '/^\s*(?:INSERT|REPLACE)\s+(?:LOW_PRIORITY\s+|DELAYED\s+|HIGH_PRIORITY\s+|IGNORE\s+|OR\s+\w+\s+)*INTO\s+([`"\w.]+)/i',
             '/^\s*UPDATE\s+(?:LOW_PRIORITY\s+|IGNORE\s+|OR\s+\w+\s+)*(.+?)\s+SET\b/is',
-            '/^\s*DELETE\s+(?:LOW_PRIORITY\s+|QUICK\s+|IGNORE\s+)*(?:[`"\w.,\s]*?\s)?FROM\s+(.+?)(?=\bWHERE\b|\bUSING\b|\bORDER\b|\bLIMIT\b|$)/is',
-            '/^\s*TRUNCATE\s+(?:TABLE\s+)?([`"\w.]+)/i',
-            '/^\s*(?:ALTER|DROP|CREATE)\s+(?:TEMPORARY\s+)?TABLE\s+(?:IF\s+(?:NOT\s+)?EXISTS\s+)?([`"\w.]+)/i',
-            '/^\s*(?:CREATE|DROP)\s+(?:UNIQUE\s+)?INDEX\s+[`"\w.]+\s+ON\s+([`"\w.]+)/i',
+            '/^\s*DELETE\s+(?:LOW_PRIORITY\s+|QUICK\s+|IGNORE\s+)*(?:[`"\w.,\s]*?\s)?FROM\s+(.+?)(?=\bWHERE\b|\bUSING\b|\bORDER\b|\bLIMIT\b|\bRETURNING\b|$)/is',
+            // a list (PostgreSQL: TRUNCATE a, b), with PostgreSQL's options at the end
+            '/^\s*TRUNCATE\s+(?:TABLE\s+)?(.+?)\s*(?:\b(?:RESTART|CONTINUE)\s+IDENTITY\b\s*)?(?:\bRESTRICT\b\s*)?;?\s*$/is',
+            '/^\s*DROP\s+(?:TEMPORARY\s+)?TABLE\s+(?:IF\s+EXISTS\s+)?(.+?)\s*(?:\bRESTRICT\b\s*)?;?\s*$/is',
+            '/^\s*(?:ALTER|CREATE)\s+(?:TEMPORARY\s+)?TABLE\s+(?:IF\s+(?:NOT\s+)?EXISTS\s+)?(?:ONLY\s+)?([`"\w.]+)/i',
+            '/^\s*(?:CREATE|DROP)\s+(?:UNIQUE\s+)?INDEX\s+[`"\w.]+\s+ON\s+(?:ONLY\s+)?([`"\w.]+)/i',
         );
         foreach ( $patterns as $p )
         {
             if ( !preg_match( $p, $text, $m ) )
                 continue;
             $tables = array();
-            // A multi-table UPDATE or DELETE names several, and may JOIN more.
+            // A multi-table UPDATE or DELETE names several, and may JOIN more; PostgreSQL's ONLY (no inheriting
+            // tables) names the table after it. A name that cannot be read makes the whole write unreadable: kept
+            // out, its table would never be stale.
             foreach ( preg_split( '/,|\bJOIN\b/i', $m[1] ) as $item )
             {
-                $name = self::tableName( $item );
-                if ( $name !== null )
-                    $tables[$name] = true;
+                $name = self::tableName( preg_replace( '/^\s*ONLY\s+/i', '', $item ) );
+                if ( $name === null )
+                    return null;
+                $tables[$name] = true;
             }
-            if ( preg_match_all( '/\bJOIN\s+([`"\w.]+)/i', $text, $j ) )
+            if ( preg_match_all( '/\bJOIN\s+(?:ONLY\s+)?([`"\w.]+)/i', $text, $j ) )
             {
                 foreach ( $j[1] as $item )
                 {
@@ -1797,6 +1806,9 @@ class eZDBQueryCache
                         $tables[$name] = true;
                 }
             }
+            // ALTER TABLE a RENAME TO b: both names
+            if ( preg_match( '/^\s*ALTER\s+TABLE\b.*?\bRENAME\s+TO\s+([`"\w.]+)/is', $text, $r ) && ( $name = self::tableName( $r[1] ) ) !== null )
+                $tables[$name] = true;
             return $tables ? array_keys( $tables ) : null;
         }
         // RENAME TABLE a TO b, and anything else: not readable.
@@ -1823,8 +1835,10 @@ class eZDBQueryCache
 
     /**
      * Whether a backslash escapes the next character in the string literals of $db's statements: true for
-     * MySQL and MariaDB, false for Oracle, PostgreSQL (standard_conforming_strings) and SQLite, null when the
-     * driver does not say (withoutStrings() then reads the statement both ways).
+     * MySQL and MariaDB, false for Oracle, PostgreSQL (standard_conforming_strings on, the default) and SQLite,
+     * null when the driver does not say (withoutStrings() then reads the statement both ways). A PostgreSQL
+     * connection with standard_conforming_strings off (the server's setting, or a SET in the session) escapes:
+     * the driver's standardConformingStrings() says so.
      *
      * @param object $db
      * @return bool|null
@@ -1837,8 +1851,9 @@ class eZDBQueryCache
         {
             case 'mysql':
                 return true;
-            case 'oracle':
             case 'postgresql':
+                return method_exists( $db, 'standardConformingStrings' ) && $db->standardConformingStrings() === false;
+            case 'oracle':
             case 'sqlite':
                 return false;
         }
@@ -1847,10 +1862,12 @@ class eZDBQueryCache
 
     /**
      * The SQL with string literals blanked, so a word in a value is not read as SQL. Null when the
-     * text cannot be read safely: the pattern failed, a comment is left outside the literals, or
-     * (with $backslash null) a backslash makes the literals end in different places depending on
-     * whether it escapes the next character, as in MySQL, or not, as in Oracle ('C:\' is a whole
-     * literal there).
+     * text cannot be read safely: the pattern failed, a quote is left unpaired (a literal that does
+     * not end), a quoted name holds a quote, a comment is left outside the literals, a literal ends
+     * elsewhere than a plain one (Oracle's q'', PostgreSQL's E'' and dollar quoting), or (with
+     * $backslash null) a backslash makes the literals end in different places depending on whether
+     * it escapes the next character, as in MySQL, or not, as in Oracle, PostgreSQL and SQLite
+     * ('C:\' is a whole literal there).
      *
      * @param string $sql
      * @param bool|null $backslash whether a backslash escapes (backslashEscapes()); null: unknown
@@ -1858,27 +1875,61 @@ class eZDBQueryCache
      */
     protected static function withoutStrings( $sql, $backslash = null )
     {
-        // Unrolled: one step per escape or doubled quote rather than one per character, so a
-        // long literal (an attribute's XML) stays within PCRE's limits. Where a backslash escapes
-        // (MySQL), double quotes delimit strings as well.
-        $escaped = "/'[^'\\\\]*+(?:(?:\\\\.|'')[^'\\\\]*+)*+'|\"[^\"\\\\]*+(?:(?:\\\\.|\"\")[^\"\\\\]*+)*+\"/s";
-        $plain = "/'[^']*+(?:''[^']*+)*+'/s";
-        $text = preg_replace( $backslash === false ? $plain : $escaped, "''", $sql );
+        $text = self::blankLiterals( $sql, $backslash !== false );
         if ( $text === null )
             return null;
         if ( $backslash === null && ( strpos( $sql, '\\' ) !== false || strpos( $sql, '"' ) !== false )
-             && preg_replace( $plain, "''", $sql ) !== $text )
+             && self::blankLiterals( $sql, false ) !== $text )
+            return null;
+        // A quote left over opens a literal that never ends: what follows it cannot be told from SQL. (A name in
+        // brackets with an apostrophe, SQLite's [it's], leaves one too.)
+        if ( strpos( str_replace( "''", '', $text ), "'" ) !== false )
             return null;
         // Oracle's alternative quoting q'[...]' and PostgreSQL's escape strings E'...' end elsewhere than a plain
         // literal: not read. Their first quote always opens a pair, so the prefix stays before a blanked ''.
         if ( preg_match( "/(?<![\\w'])(?:[nN]?[qQ]|[eE])''/", $text ) )
             return null;
+        // PostgreSQL's dollar quoting ($$...$$, $tag$...$tag$) holds apostrophes that would pair with a literal's
+        // quote. Not $1 (a parameter), nor a dollar inside a name (Oracle's V$SESSION).
+        if ( preg_match( '/(?<![\w$])\$(?:[A-Za-z_]\w*+)?\$/', $text ) )
+            return null;
         // A comment can hide a table, and an apostrophe in it would pair with the next literal's
         // quote. Its marker stays outside the literals, before any apostrophe it holds; MySQL also
-        // takes # as a comment.
+        // takes # as a comment (PostgreSQL: an operator).
         if ( strpos( $text, '--' ) !== false || strpos( $text, '/*' ) !== false
              || ( $backslash !== false && strpos( $text, '#' ) !== false ) )
             return null;
         return $text;
+    }
+
+    /**
+     * $sql with every string literal replaced by '', read from left to right, so a quote inside a
+     * quoted name ("it's", `it's`) does not open a literal. Where a backslash escapes ($escapes:
+     * MySQL), double quotes delimit strings as well; elsewhere they quote a name, which is kept.
+     * Null when the pattern failed or a quoted name holds a quote: a reading that does not know the
+     * name would pair that quote with a literal's.
+     *
+     * Unrolled: one step per escape or doubled quote rather than one per character, so a long
+     * literal (an attribute's XML) stays within PCRE's limits.
+     *
+     * @param string $sql
+     * @param bool $escapes
+     * @return string|null
+     */
+    protected static function blankLiterals( $sql, $escapes )
+    {
+        $pattern = $escapes
+            ? "/'[^'\\\\]*+(?:(?:\\\\.|'')[^'\\\\]*+)*+'|\"[^\"\\\\]*+(?:(?:\\\\.|\"\")[^\"\\\\]*+)*+\"|`[^`]*+(?:``[^`]*+)*+`/s"
+            : "/'[^']*+(?:''[^']*+)*+'|\"[^\"]*+(?:\"\"[^\"]*+)*+\"|`[^`]*+(?:``[^`]*+)*+`/s";
+        $quoteInName = false;
+        $text = preg_replace_callback( $pattern, function ( $m ) use ( $escapes, &$quoteInName ) {
+            $q = $m[0][0];
+            if ( $q === "'" || ( $q === '"' && $escapes ) )
+                return "''";
+            if ( strpbrk( $m[0], $q === '"' ? "'" : "'\"" ) !== false )
+                $quoteInName = true;
+            return $m[0];
+        }, (string)$sql );
+        return $text === null || $quoteInName ? null : $text;
     }
 }
