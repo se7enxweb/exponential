@@ -78910,5 +78910,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout þarf nákvæmlega eitt af id, identifier og urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Reiturinn operations í multipart-beiðni er ekki ein JSON-beiðni.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Reiturinn map í multipart-beiðni er ekki JSON-hlutur.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Multipart-beiðnin hefur enga skrá %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Slóð í reitavörpuninni verður að byrja á variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Skráin %name barst ekki heil (upphleðsluvilla %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Skráin %name er stærri en %max bæti.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Ekki tókst að athuga skrána %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Breytingaaðgerðir eru óvirkar í þessum vefaðgangi (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Sendu breytingaaðgerð með POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Skráðu þig inn til að breyta efni.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API-lykillinn hefur ekki umfangið %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Breytingaaðgerð með lotu þarf eyðublaðstóka lotunnar (haus X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl er óvirkt: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] tilgreinir engan hýsil.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Vistfangið verður að vera https-vistfang.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Hýsillinn %host er ekki í graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Ekki tókst að sækja skrána.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload er aðeins inntakstegund.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Breyta af tegundinni Upload tekur við skrá úr multipart-beiðni.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Fjarauðkennið %remoteId er þegar í notkun.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Efnið hefur þegar þýðingu á %language: notaðu updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Gefðu upp að minnsta kosti einn reit.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Ekki tókst að búa til nýja útgáfu (efnið hefur of mörg drög).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Útgáfa %version er ekki drög.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent þarf nákvæmlega eitt af id og nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Ekki er hægt að færa staðsetningu undir sjálfa sig.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Efnið hefur þegar staðsetningu undir %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Ekki tókst að vista gildi reitsins %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Ekkert efnistungumál %language er til.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Enginn efnisflokkur %class er í skemanu.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Efnið er ekki til, eða þú mátt ekki lesa það.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Þú mátt ekki gera þetta við þetta efni.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Flokkurinn %class hefur engan skrifanlegan reit %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Reiturinn %field er gefinn tvisvar.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Reiturinn %field tekur við skrá: sendu hana sem upphleðslu (multipart-beiðni).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Reiturinn %field tekur ekki við skrá.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Reiturinn %field þarf gildi.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Sniðið %format er aðeins fyrir sniðinn texta; %field tekur gildið eins og það er (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Reiturinn %field er nauðsynlegur.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Ekki tókst að lesa HTML-ið.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content tekur aðeins við version ásamt id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Forskoðunartókinn er ógildur eða útrunninn.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ekki uppruni (https://host eða https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ekki umfang GraphQL-forritaskilanna: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

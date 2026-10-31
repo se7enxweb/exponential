@@ -78880,5 +78880,177 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout ena haani gooto tan e id, identifier e urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Diiwaan operations ɗaɓɓaande multipart wonaa ɗaɓɓaande JSON wootere.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Diiwaan map ɗaɓɓaande multipart wonaa huunde JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Ɗaɓɓaande multipart ndee alaa fiilde %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Laawol karte diiwaanuuji ngol foti fuɗɗoreede variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fiilde %name nde yettaaki timmunde (juumre yollugol %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fiilde %name ɓurii bytes %max mawnude.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Fiilde %name waawaa ƴeewteede.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Waylooji (mutations) ñifaa e ndee siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Neldu wayloo e POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Naatu ngam waylude loowdi.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Coktirgal API ngal alaa diidol %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Wayloo e jokkondiral ena haani tokosol fiilannde jokkondiral ngal (hoore X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ñifaa: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] innaani hay jaŋgoowo gooto.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Ñiiɓirde nde foti wonde ñiiɓirde https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Jaŋgoowo %host woodaani e graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Fiilde nde waawaa addeede.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ko fannu naatnugol tan.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Wayliindo fannu Upload ena ƴetta fiilde ɗaɓɓaande multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>id goɗɗungo %remoteId ƴettaama gila.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Loowdi ndi ena jogii gila firo e %language: huutoro updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Hokku diiwaan gootal tal.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Yamre hesere waawaa waɗeede (loowdi ndi ena jogii ɓoggi ɗuuɗɗi).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Yamre %version wonaa ɓoggol.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent ena haani gooto tan e id e nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Nokku waawaa dirtineede les mum hoore.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Loowdi ndi ena jogii gila nokku les %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Keɓe diiwaan %field waawaa danndeede.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Ɗemngal loowdi %language woodaani.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Kalaas loowdi %class woodaani e Schema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Loowdi ndi woodaani, walla a yamiraaka janngude ndi.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>A yamiraaka waɗde ɗum e ndii loowdi.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Kalaas %class alaa diiwaan %field mo waawi winndeede.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Diiwaan %field hokkaama laabi ɗiɗi.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Diiwaan %field ena ƴetta fiilde: neldu nde no yollugol (ɗaɓɓaande multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Diiwaan %field ƴettataa fiilde.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Diiwaan %field ena haani keɓe.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Mbaydi %format ko ngam diiwaanuuji binndi ndimɗi tan; %field ena ƴetta keɓe mum no o woniri (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Diiwaan %field ko waajibi.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML waawaa janngeede.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content ena jaɓa version e id tan.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Tokosol yiytude ngol moƴƴaani walla ngol gasii.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Wonaa iwdi (https://host walla https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Wonaa diidol GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

@@ -78880,5 +78880,177 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout üçin id, identifier we urlAlias-dan takyk biri gerek.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Köp bölekli ýüzlenmäniň operations meýdany bir JSON ýüzlenmesi däl.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Köp bölekli ýüzlenmäniň map meýdany JSON obýekti däl.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Köp bölekli ýüzlenmede %field faýly ýok.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map meýdanyndaky ýol variables. bilen başlamaly: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name faýly doly gelmedi (ýükleme ýalňyşlygy %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name faýly %max baýtdan uly.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name faýlyny barlap bolmady.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutasiýalar bu saýta giriş nokadynda öçürilen (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Mutasiýany POST bilen iberiň.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Mazmuny üýtgetmek üçin giriň.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API açarynyň %scope gerimi ýok.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Sessiýa bilen iberilýän mutasiýa sessiýanyň forma tokenini talap edýär (X-CSRF-Token sözbaşysy).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl öçürilen: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] hiç bir hosty görkezmeýär.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Salgy https salgysy bolmaly.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host hosty graphql.ini [GraphQLSettings] UploadFromUrlHostList[] sanawynda ýok.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Faýly alyp bolmady.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload diňe giriş görnüşi.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload görnüşli üýtgeýän köp bölekli ýüzlenmäniň faýlyny kabul edýär.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>%remoteId uzak identifikatory eýýäm eýelenen.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Mazmunyň %language dilinde terjimesi eýýäm bar: updateContent ulanyň.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Iň bolmanda bir meýdan beriň.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Täze wersiýa döredip bolmady (mazmunyň garalamalary gaty köp).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>%version wersiýasy garalama däl.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent üçin id we nodeId-den takyk biri gerek.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Ýerleşişi öz aşagyna geçirip bolmaýar.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Mazmunyň %parentId aşagynda eýýäm ýerleşişi bar.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field meýdanynyň bahasyny saklap bolmady.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language mazmun dili ýok.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Shemada %class mazmun synpy ýok.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Mazmun ýok ýa-da ony okamaga rugsadyňyz ýok.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Bu mazmun bilen muny etmäge rugsadyňyz ýok.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class synpynda ýazyp bolýan %field meýdany ýok.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field meýdany iki gezek berlen.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field meýdany faýl kabul edýär: ony upload hökmünde iberiň (köp bölekli ýüzlenme).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field meýdany faýl kabul etmeýär.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field meýdanyna baha gerek.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format formaty diňe baý tekst meýdanlary üçin; %field bahasyny bolşy ýaly kabul edýär (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field meýdany hökmany.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-i okap bolmady.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content version-y diňe id bilen kabul edýär.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Öňünden görkeziş tokeni nädogry ýa-da möhleti gutardy.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Gelip çykyş (origin) däl (https://host ýa-da https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API-niň gerimi däl: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

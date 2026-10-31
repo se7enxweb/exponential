@@ -78878,5 +78878,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout 需要 id、identifier 和 urlAlias 其中恰好一個。</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart 請求的 operations 欄位不是一個 JSON 請求。</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart 請求的 map 欄位不是 JSON 物件。</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart 請求中沒有檔案 %field。</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map 欄位中的路徑必須以 variables. 開頭：%path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>檔案 %name 未完整送達（上傳錯誤 %error）。</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>檔案 %name 大於 %max 位元組。</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>無法檢查檔案 %name。</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>此網站存取已關閉變更（graphql.ini [GraphQLSettings] MutationsEnabled）。</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>請用 POST 送出變更。</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>請登入後再修改內容。</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>此 API 金鑰沒有範圍 %scope。</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>使用工作階段的變更需要該工作階段的表單權杖（標頭 X-CSRF-Token）。</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl 已關閉：graphql.ini [GraphQLSettings] UploadFromUrlHostList[] 未列出任何主機。</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>位址必須是 https 位址。</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>主機 %host 不在 graphql.ini [GraphQLSettings] UploadFromUrlHostList[] 中。</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>無法取得該檔案。</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload 只能作為輸入型別。</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>型別為 Upload 的變數接收 multipart 請求中的檔案。</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>遠端 id %remoteId 已被使用。</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>此內容已有 %language 翻譯：請使用 updateContent。</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>請至少提供一個欄位。</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>無法建立新版本（此內容的草稿過多）。</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>版本 %version 不是草稿。</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent 需要 id 和 nodeId 中的恰好一個。</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>位置不能移到其自身之下。</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>此內容在 %parentId 之下已有位置。</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>無法儲存欄位 %field 的值。</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>不存在內容語言 %language。</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>結構描述中不存在內容類別 %class。</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>此內容不存在，或您無權讀取。</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>您無權對此內容執行此操作。</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>類別 %class 沒有可寫入的欄位 %field。</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>欄位 %field 被提供了兩次。</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>欄位 %field 接收檔案：請以上傳方式送出（multipart 請求）。</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>欄位 %field 不接收檔案。</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>欄位 %field 需要一個值。</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>格式 %format 僅適用於 RTF 欄位；%field 依原樣接收其值(RAW)。</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>欄位 %field 為必填。</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>無法讀取此 HTML。</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content 只有在提供 id 時才接受 version。</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>預覽權杖無效或已過期。</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>不是有效的來源（https://host 或 https://host:port）：%origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>不是 GraphQL API 的範圍：%scope（graphql:read、graphql:write）</translation>
+    </message>
 </context>
 </TS>

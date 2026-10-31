@@ -78910,5 +78910,177 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>Teastaíonn go díreach ceann amháin de id, identifier agus urlAlias ó layout.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Ní éileamh JSON amháin é réimse operations an éilimh multipart.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Ní réad JSON é réimse map an éilimh multipart.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Níl comhad %field san éileamh multipart.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Ní mór do chonair de léarscáil na réimsí tosú le variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Níor tháinig an comhad %name go hiomlán (earráid uaslódála %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Tá an comhad %name níos mó ná %max beart.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Níorbh fhéidir an comhad %name a sheiceáil.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Tá na sócháin múchta sa rochtain suímh seo (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Seol sóchán le POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Sínigh isteach chun ábhar a athrú.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Níl an raon %scope ag an eochair API.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Teastaíonn comhartha foirme an tseisiúin ó shóchán le seisiún (ceanntásc X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>Tá uploadFromUrl múchta: ní ainmníonn graphql.ini [GraphQLSettings] UploadFromUrlHostList[] aon óstach.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Ní mór gur seoladh https an seoladh.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Níl an t-óstach %host in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Níorbh fhéidir an comhad a fháil.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Cineál ionchuir amháin is ea Upload.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Glacann athróg den chineál Upload comhad as éileamh multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Tá an id cianda %remoteId in úsáid cheana.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Tá aistriúchán go %language ag an ábhar cheana: úsáid updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Tabhair réimse amháin ar a laghad.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Níorbh fhéidir leagan nua a dhéanamh (tá an iomarca dréachtaí ag an ábhar).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Ní dréacht é leagan %version.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>Teastaíonn díreach ceann amháin de id agus nodeId ó deleteContent.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Ní féidir suíomh a bhogadh faoina bhun féin.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Tá suíomh faoi %parentId ag an ábhar cheana.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Níorbh fhéidir luach an réimse %field a stóráil.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Níl teanga ábhair %language ann.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Níl aicme ábhair %class sa scéimre.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Níl an t-ábhar ann, nó níl cead agat é a léamh.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Níl cead agat é seo a dhéanamh leis an ábhar seo.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Níl réimse inscríofa %field ag an aicme %class.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Tugtar an réimse %field faoi dhó.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Glacann an réimse %field comhad: seol é mar uaslódáil (éileamh multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Ní ghlacann an réimse %field comhad.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Teastaíonn luach ón réimse %field.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Is do réimsí téacs shaibhir amháin an formáid %format; glacann %field a luach mar atá (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Tá an réimse %field riachtanach.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Níorbh fhéidir an HTML a léamh.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>Ní ghlacann content le version ach in éineacht le id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Níl an comhartha réamhamhairc bailí nó tá sé as feidhm.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ní bunús é (https://host nó https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ní raon den API GraphQL é: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

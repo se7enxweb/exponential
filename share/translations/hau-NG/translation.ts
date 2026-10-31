@@ -78878,5 +78878,177 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout yana buƙatar ɗaya kawai daga id, identifier da urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Filin operations na buƙatar multipart ba buƙatar JSON ɗaya ba ce.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Filin map na buƙatar multipart ba abin JSON ba ne.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Buƙatar multipart ba ta da fayil %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Hanyar taswirar filaye dole ta fara da variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fayil %name bai iso cikakke ba (kuskuren lodawa %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fayil %name ya fi bytes %max girma.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Ba a iya duba fayil %name ba.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>An kashe sauye-sauye (mutations) a wannan hanyar shiga shafi (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Aika sauyi da POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Shiga don canza abun ciki.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Maɓallin API ba shi da iyakar %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Sauyi tare da zama yana buƙatar alamar fom na zaman (kan X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>An kashe uploadFromUrl: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] bai ambaci wani mai masauki ba.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adireshin dole ya zama adireshin https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Mai masauki %host ba ya cikin graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Ba a iya ɗauko fayil ɗin ba.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload nau'in shigarwa ne kawai.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Mai canzawa na nau'in Upload yana karɓar fayil na buƙatar multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>An riga an ɗauki id na nesa %remoteId.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Abun ciki ya riga ya sami fassara a %language: yi amfani da updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Ba da aƙalla fili ɗaya.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Ba a iya yin sabon sigar ba (abun ciki yana da daftarori da yawa).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Sigar %version ba daftari ba ce.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent yana buƙatar ɗaya kawai daga id da nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Ba za a iya matsar da wuri ƙarƙashin kansa ba.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Abun ciki ya riga ya sami wuri ƙarƙashin %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Ba a iya adana ƙimar filin %field ba.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Babu harshen abun ciki %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Babu ajin abun ciki %class a cikin tsarin.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Abun ciki ba ya nan, ko ba a yarda ka karanta shi ba.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Ba a yarda ka yi wannan ga wannan abun ciki ba.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Ajin %class ba shi da filin %field da za a iya rubutawa.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>An ba da filin %field sau biyu.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Filin %field yana karɓar fayil: aika shi a matsayin lodawa (buƙatar multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Filin %field ba ya karɓar fayil.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Filin %field yana buƙatar ƙima.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Tsarin %format na filayen rubutu mai arziki ne kawai; %field yana karɓar ƙimarsa kamar yadda take (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Filin %field dole ne.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Ba a iya karanta HTML ba.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content yana karɓar version tare da id kawai.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Alamar samfoti ba ta da inganci ko ta ƙare.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ba tushe ba ne (https://host ko https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ba iyakar GraphQL API ba ce: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

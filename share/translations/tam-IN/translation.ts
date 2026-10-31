@@ -78878,5 +78878,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout க்கு id, identifier, urlAlias ஆகியவற்றில் சரியாக ஒன்று தேவை.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart கோரிக்கையின் operations புலம் ஒரு JSON கோரிக்கை அல்ல.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart கோரிக்கையின் map புலம் ஒரு JSON பொருள் அல்ல.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart கோரிக்கையில் %field கோப்பு இல்லை.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map புலத்தின் பாதை variables. உடன் தொடங்க வேண்டும்: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name கோப்பு முழுமையாக வந்து சேரவில்லை (பதிவேற்றப் பிழை %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name கோப்பு %max பைட்டுகளை விடப் பெரியது.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name கோப்பைச் சரிபார்க்க முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>இந்தத் தள அணுகலில் மாற்றங்கள் (mutations) முடக்கப்பட்டுள்ளன (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>மாற்றத்தை POST மூலம் அனுப்பவும்.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>உள்ளடக்கத்தை மாற்ற உள்நுழையவும்.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API விசைக்கு %scope வரம்பு இல்லை.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>அமர்வுடன் கூடிய மாற்றத்திற்கு அமர்வின் படிவ டோக்கன் தேவை (தலைப்பு X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl முடக்கப்பட்டுள்ளது: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] எந்த ஹோஸ்ட்டையும் குறிப்பிடவில்லை.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>முகவரி ஒரு https முகவரியாக இருக்க வேண்டும்.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host ஹோஸ்ட் graphql.ini [GraphQLSettings] UploadFromUrlHostList[] இல் இல்லை.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>கோப்பைப் பெற முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ஒரு உள்ளீட்டு வகை மட்டுமே.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload வகை மாறி ஒரு multipart கோரிக்கையின் கோப்பை ஏற்கிறது.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>%remoteId என்ற remote id ஏற்கனவே பயன்பாட்டில் உள்ளது.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>உள்ளடக்கத்திற்கு ஏற்கனவே %language மொழிபெயர்ப்பு உள்ளது: updateContent ஐப் பயன்படுத்தவும்.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>குறைந்தது ஒரு புலத்தைக் கொடுக்கவும்.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>புதிய பதிப்பை உருவாக்க முடியவில்லை (உள்ளடக்கத்திற்கு அதிகமான வரைவுகள் உள்ளன).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>பதிப்பு %version ஒரு வரைவு அல்ல.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent க்கு id மற்றும் nodeId இல் சரியாக ஒன்று தேவை.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ஒரு இருப்பிடத்தை அதற்குக் கீழேயே நகர்த்த முடியாது.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>உள்ளடக்கத்திற்கு ஏற்கனவே %parentId இன் கீழ் ஒரு இருப்பிடம் உள்ளது.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field புலத்தின் மதிப்பைச் சேமிக்க முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language என்ற உள்ளடக்க மொழி இல்லை.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>ஸ்கீமாவில் %class என்ற உள்ளடக்க வகுப்பு இல்லை.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>உள்ளடக்கம் இல்லை, அல்லது அதைப் படிக்க உங்களுக்கு அனுமதி இல்லை.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>இந்த உள்ளடக்கத்தில் இதைச் செய்ய உங்களுக்கு அனுமதி இல்லை.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class வகுப்பில் எழுதக்கூடிய %field புலம் இல்லை.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field புலம் இரண்டு முறை கொடுக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field புலம் ஒரு கோப்பை ஏற்கிறது: அதைப் பதிவேற்றமாக அனுப்பவும் (multipart கோரிக்கை).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field புலம் கோப்பை ஏற்காது.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field புலத்திற்கு ஒரு மதிப்பு தேவை.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format வடிவம் செறிவான உரைப் புலங்களுக்கு மட்டுமே; %field தன் மதிப்பை உள்ளபடியே ஏற்கிறது (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field புலம் கட்டாயம்.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML ஐப் படிக்க முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content, version ஐ id உடன் மட்டுமே ஏற்கிறது.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>முன்னோட்ட டோக்கன் செல்லாது அல்லது காலாவதியாகிவிட்டது.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>இது ஒரு origin அல்ல (https://host அல்லது https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API இன் வரம்பு அல்ல: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

@@ -78878,5 +78878,177 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout waxay u baahan tahay mid keliya oo ka mid ah id, identifier iyo urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Goobta operations ee codsiga multipart ma aha hal codsi JSON ah.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Goobta map ee codsiga multipart ma aha shay JSON ah.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Codsiga multipart ma laha fayl %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Waddo ka mid ah goobta map waa inay ku bilaabataa variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Faylka %name si dhammaystiran uma iman (khalad soo-gelin %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Faylka %name wuu ka weyn yahay %max beyt.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Faylka %name lama hubin karin.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Isbeddellada (mutations) waa ka demsan yihiin gelitaankan goobta (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Isbeddelka ku dir POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Gal si aad u beddesho nuxurka.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Furaha API ma laha baaxadda %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Isbeddel leh fadhi wuxuu u baahan yahay calaamadda foomka ee fadhiga (madaxa X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl waa demsan yahay: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ma magacaabo wax martigeliye ah.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Cinwaanku waa inuu noqdaa cinwaan https ah.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Martigeliyaha %host kuma jiro graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Faylka lama soo qaadi karin.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload waa nooc gelin oo keliya.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Doorsoome nooca Upload ah wuxuu qaataa fayl ka mid ah codsi multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Aqoonsiga fog %remoteId waa la qaatay.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Nuxurku horey ayuu u leeyahay tarjumaad %language: isticmaal updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Bixi ugu yaraan hal goob.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nooc cusub lama samayn karin (nuxurku wuxuu leeyahay qabyo aad u badan).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Nooca %version ma aha qabyo.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent wuxuu u baahan yahay mid keliya oo ka mid ah id iyo nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Goob lama dhigi karo hoosteeda.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Nuxurku horey ayuu u leeyahay goob ka hoosaysa %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Qiimaha goobta %field lama kaydin karin.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Ma jiro luqad nuxur %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Ma jiro fasal nuxur %class oo ku jira schema-da.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Nuxurku ma jiro, ama looma oggola inaad akhrido.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Looma oggola inaad tan ku samayso nuxurkan.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Fasalka %class ma laha goob %field oo la qori karo.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Goobta %field laba jeer ayaa la bixiyay.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Goobta %field waxay qaadataa fayl: u dir soo-gelin ahaan (codsi multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Goobta %field ma qaadato fayl.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Goobta %field waxay u baahan tahay qiime.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Qaabka %format waxaa loogu talagalay goobaha qoraalka hodanka ah oo keliya; %field wuxuu qaataa qiimihiisa sida uu yahay (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Goobta %field waa qasab.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-ka lama akhrin karin.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content wuxuu qaataa version oo keliya marka la raaciyo id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Calaamadda horudhaca ma ansax aha ama way dhacday.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ma aha asal (https://host ama https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ma aha baaxad ka mid ah GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

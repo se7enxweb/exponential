@@ -78885,5 +78885,177 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout için id, identifier ve urlAlias değerlerinden tam olarak biri gerekir.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Çok parçalı isteğin operations alanı tek bir JSON isteği değil.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Çok parçalı isteğin map alanı bir JSON nesnesi değil.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Çok parçalı istekte %field dosyası yok.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map alanındaki bir yol variables. ile başlamalıdır: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name dosyası eksiksiz ulaşmadı (yükleme hatası %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name dosyası %max bayttan büyük.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name dosyası denetlenemedi.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutasyonlar bu site erişiminde kapalı (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Mutasyonu POST ile gönderin.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>İçeriği değiştirmek için giriş yapın.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API anahtarının %scope kapsamı yok.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Oturumla gönderilen bir mutasyon, oturumun form belirtecini gerektirir (X-CSRF-Token başlığı).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl kapalı: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] hiçbir sunucu adı içermiyor.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adres bir https adresi olmalıdır.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host sunucusu graphql.ini [GraphQLSettings] UploadFromUrlHostList[] içinde yok.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Dosya alınamadı.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload yalnızca bir girdi türüdür.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload türündeki bir değişken, çok parçalı bir isteğin dosyasını alır.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>%remoteId uzak kimliği zaten kullanılıyor.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>İçeriğin zaten %language dilinde bir çevirisi var: updateContent kullanın.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>En az bir alan verin.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Yeni sürüm oluşturulamadı (içeriğin çok fazla taslağı var).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>%version sürümü bir taslak değil.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent için id ve nodeId değerlerinden tam olarak biri gerekir.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Bir konum kendi altına taşınamaz.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>İçeriğin zaten %parentId altında bir konumu var.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field alanının değeri kaydedilemedi.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language adında bir içerik dili yok.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Şemada %class adında bir içerik sınıfı yok.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>İçerik yok ya da onu okuma yetkiniz yok.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Bu içerikte bunu yapma yetkiniz yok.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class sınıfının yazılabilir bir %field alanı yok.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field alanı iki kez verilmiş.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field alanı bir dosya alır: onu upload olarak gönderin (çok parçalı bir istek).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field alanı dosya almaz.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field alanı bir değer gerektirir.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format biçimi yalnızca zengin metin alanları içindir; %field değerini olduğu gibi alır (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field alanı zorunludur.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML okunamadı.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content, version değerini yalnızca id ile alır.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Önizleme belirteci geçersiz ya da süresi dolmuş.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Bir köken değil (https://host veya https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API kapsamı değil: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

@@ -80166,5 +80166,177 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout potřebuje právě jedno z id, identifier a urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Pole operations vícedílného požadavku není jeden požadavek JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Pole map vícedílného požadavku není objekt JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Vícedílný požadavek neobsahuje soubor %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Cesta v poli map musí začínat variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Soubor %name nedorazil celý (chyba nahrávání %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Soubor %name je větší než %max bajtů.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Soubor %name nelze zkontrolovat.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutace jsou v tomto přístupu k webu vypnuté (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Odešlete mutaci metodou POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Chcete-li měnit obsah, přihlaste se.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Klíč API nemá rozsah %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutace s relací potřebuje token formuláře této relace (hlavička X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl je vypnuté: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] neuvádí žádného hostitele.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adresa musí být adresa https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Hostitel %host není v graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Soubor nelze stáhnout.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload je pouze vstupní typ.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Proměnná typu Upload přijímá soubor vícedílného požadavku.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Vzdálené id %remoteId je již obsazené.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Obsah již má překlad v jazyce %language: použijte updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Zadejte alespoň jedno pole.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Novou verzi nelze vytvořit (obsah má příliš mnoho konceptů).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Verze %version není koncept.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent potřebuje právě jedno z id a nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Umístění nelze přesunout pod sebe samo.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Obsah již má umístění pod %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Hodnotu pole %field nelze uložit.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Jazyk obsahu %language neexistuje.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Třída obsahu %class ve schématu neexistuje.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Obsah neexistuje, nebo jej nesmíte číst.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>S tímto obsahem toto dělat nesmíte.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Třída %class nemá pole %field, do kterého lze zapisovat.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Pole %field je zadáno dvakrát.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Pole %field přijímá soubor: odešlete jej jako upload (vícedílný požadavek).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Pole %field nepřijímá soubor.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Pole %field potřebuje hodnotu.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Formát %format je jen pro pole formátovaného textu; %field přijímá hodnotu tak, jak je (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Pole %field je povinné.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML nelze přečíst.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content přijímá version jen spolu s id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Token náhledu není platný nebo vypršel.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Není to původ (https://host nebo https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Není to rozsah GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

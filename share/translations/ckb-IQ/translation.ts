@@ -78880,5 +78880,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout پێویستی بە ڕێک یەکێک لە id، identifier و urlAlias هەیە.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>خانەی operations ی داواکارییەکی multipart یەک داواکاری JSON نییە.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>خانەی map ی داواکارییەکی multipart ئۆبجێکتێکی JSON نییە.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>داواکارییە multipart ەکە هیچ فایلێکی %field ی تێدا نییە.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>ڕێڕەوێکی خانەی map دەبێت بە variables. دەست پێ بکات: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>فایلی %name بە تەواوی نەگەیشت (هەڵەی بارکردن %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>فایلی %name لە %max بایت گەورەترە.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>فایلی %name نەپشکنرا.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>گۆڕینەکان (mutations) لەم دەستگەیشتنی ماڵپەڕەدا کوژاونەتەوە (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>گۆڕینێک بە POST بنێرە.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>بۆ گۆڕینی ناوەڕۆک بچۆ ژوورەوە.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>کلیلی API ەکە بواری %scope ی نییە.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>گۆڕینێک بە دانیشتنەوە پێویستی بە نیشانەی فۆرمی دانیشتنەکە هەیە (سەردێڕی X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl کوژاوەتەوە: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] هیچ میوانخانەیەک ناو نابات.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>ناونیشانەکە دەبێت ناونیشانێکی https بێت.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>میوانخانەی %host لە graphql.ini [GraphQLSettings] UploadFromUrlHostList[] دا نییە.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>فایلەکە نەهێنرا.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload تەنها جۆرێکی تێخستنە.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>گۆڕاوێکی جۆری Upload فایلێکی داواکارییەکی multipart وەردەگرێت.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>id ی دوور %remoteId پێشتر گیراوە.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>ناوەڕۆکەکە پێشتر وەرگێڕانێکی بە %language هەیە: updateContent بەکاربهێنە.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>لانیکەم یەک خانە بدە.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>هیچ وەشانێکی نوێ دروست نەکرا (ناوەڕۆکەکە ڕەشنووسی زۆری هەیە).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>وەشانی %version ڕەشنووس نییە.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent پێویستی بە ڕێک یەکێک لە id و nodeId هەیە.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>شوێنێک ناتوانرێت بخرێتە ژێر خۆیەوە.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>ناوەڕۆکەکە پێشتر شوێنێکی لە ژێر %parentId هەیە.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>بەهای خانەی %field پاشەکەوت نەکرا.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>هیچ زمانی ناوەڕۆکی %language نییە.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>هیچ پۆلی ناوەڕۆکی %class لە سکیماکەدا نییە.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>ناوەڕۆکەکە بوونی نییە، یان ڕێگەت پێ نادرێت بیخوێنیتەوە.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>ڕێگەت پێ نادرێت ئەمە بەم ناوەڕۆکە بکەیت.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>پۆلی %class هیچ خانەیەکی %field ی نییە کە بتوانرێت بنووسرێت.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>خانەی %field دوو جار دراوە.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>خانەی %field فایل وەردەگرێت: وەک بارکردن بینێرە (داواکارییەکی multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>خانەی %field فایل وەرناگرێت.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>خانەی %field پێویستی بە بەهایەک هەیە.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>فۆرماتی %format تەنها بۆ خانەکانی دەقی دەوڵەمەندە؛ %field بەهاکەی وەک خۆی وەردەگرێت (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>خانەی %field پێویستە.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML ەکە نەخوێنرایەوە.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content تەنها لەگەڵ id دا version وەردەگرێت.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>نیشانەی پێشبینین دروست نییە یان بەسەرچووە.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>سەرچاوەیەک نییە (https://host یان https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>بوارێکی API ی GraphQL نییە: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

@@ -78888,5 +78888,177 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout need only one from id, identifier and urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Di operations field for di multipart request no be one JSON request.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Di map field for di multipart request no be JSON object.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Di multipart request no get file %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>One path for di field map must start wit variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Di file %name no reach complete (upload error %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Di file %name big pass %max bytes.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>We no fit check di file %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Dem don off mutations for dis siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Send mutation wit POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Sign in first before you fit change content.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Di API key no get di scope %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutation wey get session need di form token of di session (header X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>Dem don off uploadFromUrl: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] no name any host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Di address must be https address.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Di host %host no dey for graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>We no fit fetch di file.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload na input type only.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Variable of type Upload dey take file from multipart request.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Somebody don already take di remote id %remoteId.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Di content don already get translation for %language: use updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Put at least one field.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>We no fit make new version (di content get too many drafts).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Version %version no be draft.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent need exactly one of id and nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>You no fit move location go under itself.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Di content don already get location under %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>We no fit store di value of di field %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Content language %language no dey.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Content class %class no dey for di schema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Di content no dey, or you no fit read am.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>You no fit do dis one to dis content.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Di class %class no get field %field wey person fit write.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Dem give di field %field two times.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Di field %field dey take file: send am as upload (multipart request).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Di field %field no dey take file.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Di field %field need value.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Di format %format na only for rich text fields; %field dey take im value as e be (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Di field %field dey required.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>We no fit read di HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content dey take version wit id only.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Di preview token no valid or e don expire.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>E no be origin (https://host or https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>E no be scope of di GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

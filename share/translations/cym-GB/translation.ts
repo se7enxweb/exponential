@@ -78880,5 +78880,177 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>Mae layout angen union un o id, identifier ac urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Nid yw maes operations cais amlran yn un cais JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Nid yw maes map cais amlran yn wrthrych JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Nid oes ffeil %field yn y cais amlran.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Rhaid i lwybr yn y maes map ddechrau gyda variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Ni chyrhaeddodd y ffeil %name yn gyfan (gwall llwytho i fyny %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Mae'r ffeil %name yn fwy na %max beit.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Nid oedd modd gwirio'r ffeil %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mae mwtaniadau wedi'u diffodd yn y mynediad i'r wefan hwn (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Anfonwch fwtaniad gyda POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Mewngofnodwch i newid cynnwys.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Nid oes gan yr allwedd API y cwmpas %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mae mwtaniad gyda sesiwn angen tocyn ffurflen y sesiwn (pennyn X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>Mae uploadFromUrl wedi'i ddiffodd: nid yw graphql.ini [GraphQLSettings] UploadFromUrlHostList[] yn enwi unrhyw westeiwr.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Rhaid i'r cyfeiriad fod yn gyfeiriad https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Nid yw'r gwesteiwr %host yn graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Nid oedd modd nôl y ffeil.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Math mewnbwn yn unig yw Upload.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Mae newidyn o'r math Upload yn derbyn ffeil o gais amlran.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Mae'r id pell %remoteId wedi'i gymryd.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Mae gan y cynnwys gyfieithiad yn %language eisoes: defnyddiwch updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Rhowch o leiaf un maes.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nid oedd modd creu fersiwn newydd (mae gan y cynnwys ormod o ddrafftiau).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Nid yw fersiwn %version yn ddrafft.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>Mae deleteContent angen union un o id a nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Ni ellir symud lleoliad o dan ei hun.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Mae gan y cynnwys leoliad o dan %parentId eisoes.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Nid oedd modd storio gwerth y maes %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Nid oes iaith cynnwys %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Nid oes dosbarth cynnwys %class yn y sgema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Nid yw'r cynnwys yno, neu ni chewch ei ddarllen.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Ni chewch wneud hyn i'r cynnwys hwn.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Nid oes gan y dosbarth %class faes %field y caniateir ysgrifennu iddo.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Mae'r maes %field wedi'i roi ddwywaith.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Mae'r maes %field yn derbyn ffeil: anfonwch hi fel upload (cais amlran).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Nid yw'r maes %field yn derbyn ffeil.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Mae'r maes %field angen gwerth.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Mae'r fformat %format ar gyfer meysydd testun cyfoethog yn unig; mae %field yn derbyn ei werth fel y mae (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Mae angen y maes %field.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Nid oedd modd darllen yr HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>Mae content yn derbyn version gydag id yn unig.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Nid yw'r tocyn rhagolwg yn ddilys neu mae wedi dod i ben.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Nid yw'n darddiad (https://host neu https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Nid yw'n gwmpas yr API GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

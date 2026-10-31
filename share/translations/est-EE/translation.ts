@@ -78910,5 +78910,177 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout vajab täpselt ühte järgmistest: id, identifier ja urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Multipart-taotluse väli operations ei ole üks JSON-taotlus.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Multipart-taotluse väli map ei ole JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Multipart-taotluses pole faili %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Välja map tee peab algama sõnaga variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fail %name ei saabunud tervikuna (üleslaadimise viga %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fail %name on suurem kui %max baiti.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Faili %name ei õnnestunud kontrollida.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutatsioonid on selles saidi juurdepääsus välja lülitatud (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Saada mutatsioon POST-iga.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Sisu muutmiseks logi sisse.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API-võtmel pole ulatust %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Seansiga mutatsioon vajab seansi vormitõendit (päis X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl on välja lülitatud: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ei nimeta ühtegi hosti.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Aadress peab olema https-aadress.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Host %host pole loendis graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Faili ei õnnestunud tuua.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload on ainult sisendtüüp.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Tüüpi Upload muutuja võtab vastu multipart-taotluse faili.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Kaug-id %remoteId on juba kasutusel.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Sisul on juba tõlge keeles %language: kasuta updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Anna vähemalt üks väli.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Uut versiooni ei õnnestunud luua (sisul on liiga palju mustandeid).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Versioon %version ei ole mustand.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent vajab täpselt ühte järgmistest: id ja nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Asukohta ei saa teisaldada iseenda alla.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Sisul on juba asukoht %parentId all.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Välja %field väärtust ei õnnestunud salvestada.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Sisukeelt %language pole olemas.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Skeemis pole sisuklassi %class.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Sisu pole olemas või sul pole õigust seda lugeda.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Sul pole õigust seda selle sisuga teha.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Klassil %class pole kirjutatavat välja %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Väli %field on antud kaks korda.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Väli %field võtab vastu faili: saada see üleslaadimisena (multipart-taotlus).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Väli %field ei võta faili vastu.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Väli %field vajab väärtust.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Vorming %format on ainult rikasteksti väljadele; %field võtab väärtuse sellisena, nagu see on (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Väli %field on kohustuslik.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-i ei õnnestunud lugeda.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content võtab version vastu ainult koos id-ga.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Eelvaate tõend ei kehti või on aegunud.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ei ole päritolu (https://host või https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ei ole GraphQL API ulatus: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

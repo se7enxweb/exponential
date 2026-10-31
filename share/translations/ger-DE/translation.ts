@@ -85850,5 +85850,177 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout braucht genau eines von id, identifier und urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Das Feld operations einer Multipart-Anfrage ist keine JSON-Anfrage.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Das Feld map einer Multipart-Anfrage ist kein JSON-Objekt.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Die Multipart-Anfrage enthält keine Datei %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Ein Pfad der Feldzuordnung muss mit variables. beginnen: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Die Datei %name ist nicht vollständig angekommen (Upload-Fehler %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Die Datei %name ist größer als %max Bytes.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Die Datei %name konnte nicht geprüft werden.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutationen sind in diesem Siteaccess ausgeschaltet (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Senden Sie eine Mutation mit POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Melden Sie sich an, um Inhalte zu ändern.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Der API-Schlüssel hat den Bereich %scope nicht.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Eine Mutation mit einer Sitzung braucht das Formular-Token der Sitzung (Header X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ist ausgeschaltet: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nennt keinen Host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Die Adresse muss eine https-Adresse sein.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Der Host %host steht nicht in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Die Datei konnte nicht abgerufen werden.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ist nur ein Eingabetyp.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Eine Variable vom Typ Upload nimmt eine Datei einer Multipart-Anfrage auf.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Die Remote-ID %remoteId ist bereits vergeben.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Der Inhalt hat bereits eine Übersetzung in %language: Verwenden Sie updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Geben Sie mindestens ein Feld an.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Es konnte keine neue Version angelegt werden (der Inhalt hat zu viele Entwürfe).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Version %version ist kein Entwurf.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent braucht genau eines von id und nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Ein Ort kann nicht unter sich selbst verschoben werden.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Der Inhalt hat bereits einen Ort unter %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Der Wert des Feldes %field konnte nicht gespeichert werden.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Es gibt keine Inhaltssprache %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Es gibt keine Inhaltsklasse %class im Schema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Der Inhalt ist nicht vorhanden, oder Sie dürfen ihn nicht lesen.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Sie dürfen dies mit diesem Inhalt nicht tun.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Die Klasse %class hat kein beschreibbares Feld %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Das Feld %field ist doppelt angegeben.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Das Feld %field nimmt eine Datei auf: Senden Sie sie als Upload (eine Multipart-Anfrage).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Das Feld %field nimmt keine Datei auf.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Das Feld %field braucht einen Wert.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Das Format %format gilt nur für Rich-Text-Felder; %field nimmt seinen Wert unverändert auf (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Das Feld %field ist ein Pflichtfeld.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Das HTML konnte nicht gelesen werden.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content nimmt version nur zusammen mit id an.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Das Vorschau-Token ist ungültig oder abgelaufen.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Kein Origin (https://host oder https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Kein Bereich der GraphQL-API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

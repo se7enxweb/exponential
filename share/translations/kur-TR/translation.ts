@@ -78878,5 +78878,177 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout tam yek ji id, identifier û urlAlias hewce dike.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Qada operations ya daxwazeke multipart ne yek daxwaza JSON e.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Qada map ya daxwazeke multipart ne objekteke JSON e.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Di daxwaza multipart de pela %field tune ye.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Rêyeke qada map divê bi variables. dest pê bike: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Pela %name bi tevahî negihîşt (çewtiya barkirinê %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Pela %name ji %max baytan mezintir e.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Pela %name nehate kontrolkirin.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Guherandin (mutation) di vê gihîştina malperê de girtî ne (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Guherandinê bi POST bişîne.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Ji bo guhertina naverokê têkeve.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Mifteya API xwedî qada %scope nîne.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Guherandineke bi danişînê re tokena formê ya danişînê dixwaze (sernivîsa X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl girtî ye: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] tu mêvandar nav nade.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Navnîşan divê navnîşaneke https be.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Mêvandar %host ne di graphql.ini [GraphQLSettings] UploadFromUrlHostList[] de ye.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Pel nehate anîn.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload tenê cureyekî têketinê ye.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Guherbareke ji cureya Upload pelekî daxwazeke multipart digire.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Id ya dûr %remoteId jixwe hatiye girtin.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Naverok jixwe wergereke bi %language heye: updateContent bi kar bîne.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Herî kêm qadekê bide.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Guhertoyeke nû nehate çêkirin (naverok gelek zêde reşnivîs hene).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Guhertoya %version ne reşnivîs e.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent tam yek ji id û nodeId dixwaze.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Cihek nikare bin xwe de were guhastin.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Naverok jixwe cihekî di bin %parentId de heye.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Nirxa qada %field nehate tomarkirin.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Zimanê naverokê %language tune ye.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Di şemayê de çîna naverokê %class tune ye.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Naverok tune ye, an tu nikarî wê bixwînî.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Tu nikarî vê bi vê naverokê bikî.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Çîna %class qadeke %field ya ku were nivîsandin tune ye.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Qada %field du caran hatiye dayîn.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Qada %field pelekî digire: wê wek barkirin bişîne (daxwazeke multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Qada %field pel nagire.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Qada %field nirxekê dixwaze.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Forma %format tenê ji bo qadên nivîsa dewlemend e; %field nirxa xwe wekî xwe digire (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Qada %field pêwîst e.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML nehate xwendin.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content version tenê bi id re digire.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Tokena pêşdîtinê ne derbasdar e an jî qediyaye.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ne origin e (https://host an https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ne qadeke API ya GraphQL e: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

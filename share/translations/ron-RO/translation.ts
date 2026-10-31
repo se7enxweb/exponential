@@ -78910,5 +78910,177 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout necesită exact unul dintre id, identifier și urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Câmpul operations al cererii multipart nu este o singură cerere JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Câmpul map al cererii multipart nu este un obiect JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Cererea multipart nu conține fișierul %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>O cale din harta câmpurilor trebuie să înceapă cu variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fișierul %name nu a sosit complet (eroare de încărcare %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fișierul %name depășește %max octeți.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Fișierul %name nu a putut fi verificat.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutațiile sunt dezactivate în acest acces la site (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Trimiteți o mutație cu POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Autentificați-vă pentru a modifica conținutul.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Cheia API nu are domeniul %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>O mutație cu sesiune are nevoie de tokenul de formular al sesiunii (antetul X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl este dezactivat: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nu numește niciun host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adresa trebuie să fie o adresă https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Hostul %host nu este în graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Fișierul nu a putut fi preluat.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload este doar un tip de intrare.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>O variabilă de tip Upload primește un fișier dintr-o cerere multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>ID-ul la distanță %remoteId este deja folosit.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Conținutul are deja o traducere în %language: folosiți updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Indicați cel puțin un câmp.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nu s-a putut crea o versiune nouă (conținutul are prea multe ciorne).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Versiunea %version nu este o ciornă.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent are nevoie de exact unul dintre id și nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>O locație nu poate fi mutată sub ea însăși.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Conținutul are deja o locație sub %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Valoarea câmpului %field nu a putut fi stocată.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Nu există limba de conținut %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Nu există clasa de conținut %class în schemă.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Conținutul nu există sau nu aveți voie să îl citiți.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Nu aveți voie să faceți asta cu acest conținut.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Clasa %class nu are un câmp %field care poate fi scris.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Câmpul %field este dat de două ori.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Câmpul %field primește un fișier: trimiteți-l ca încărcare (o cerere multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Câmpul %field nu primește fișier.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Câmpul %field are nevoie de o valoare.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Formatul %format este doar pentru câmpurile de text îmbogățit; %field primește valoarea așa cum este (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Câmpul %field este obligatoriu.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-ul nu a putut fi citit.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content acceptă version doar împreună cu id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Tokenul de previzualizare nu este valid sau a expirat.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Nu este o origine (https://host sau https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Nu este un domeniu al API-ului GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

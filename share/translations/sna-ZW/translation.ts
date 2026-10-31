@@ -78880,5 +78880,177 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout inoda chimwe chete pa id, identifier ne urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Munda operations wechikumbiro che multipart hachisi chikumbiro chimwe cheJSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Munda map wechikumbiro che multipart hausi chinhu cheJSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Chikumbiro che multipart hachina faira %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Nzira yemunda map inofanira kutanga ne variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Faira %name haina kusvika yakakwana (kukanganisa kwekuisa %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Faira %name yakakura kupfuura mabhaiti %max.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Faira %name haina kukwanisa kuongororwa.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Shanduko (mutations) dzakadzimwa munzira yekupinda pasaiti iyi (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Tumira shanduko nePOST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Pinda kuti uchinje zviri mukati.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Kiyi yeAPI haina chikamu chemvumo %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Shanduko ine chikamu inoda chiratidzo chefomu chechikamu (musoro X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl yakadzimwa: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] haidomi muenzi upi zvake.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Kero inofanira kuva kero ye https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Muenzi %host haasi mu graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Faira haina kukwanisa kutorwa.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload imhando yekuisa chete.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Chinoshanduka chemhando Upload chinotora faira rechikumbiro che multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Id yekure %remoteId yatotorwa.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Zviri mukati zvatova neshanduro mu %language: shandisa updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Ipa munda mumwe chete zvishoma.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Hapana shanduro itsva yakakwanisa kugadzirwa (zviri mukati zvine zvinyorwa zvekutanga zvakawandisa).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Shanduro %version haisi chinyorwa chekutanga.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent inoda chimwe chete chaicho che id ne nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Nzvimbo haigoni kuendeswa pasi payo pachayo.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Zviri mukati zvatova nenzvimbo pasi pe %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Kukosha kwemunda %field hakuna kukwanisa kuchengetwa.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Hapana mutauro wezviri mukati %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Hapana kirasi yezviri mukati %class muchirongwa.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Zviri mukati hazvipo, kana kuti haubvumirwe kuzviverenga.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Haubvumirwe kuita izvi kuzviri mukati izvi.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Kirasi %class haina munda %field unogona kunyorwa.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Munda %field wapihwa kaviri.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Munda %field unotora faira: itumire sekuisa (chikumbiro che multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Munda %field hautore faira.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Munda %field unoda kukosha.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Chimiro %format ndecheminda yemavara akapfuma chete; %field unotora kukosha kwawo sezvakaita (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Munda %field unodiwa.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML haina kukwanisa kuverengwa.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content inotora version ne id chete.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Chiratidzo chekuona pamberi hachishande kana kuti chapera.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Haisi mavambo (https://host kana https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Hachisi chikamu chemvumo che GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

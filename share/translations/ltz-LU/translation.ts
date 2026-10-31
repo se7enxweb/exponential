@@ -78880,5 +78880,177 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout brauch genee eent vun id, identifier an urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>D'Feld operations vun enger Multipart-Ufro ass keng eenzeg JSON-Ufro.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>D'Feld map vun enger Multipart-Ufro ass keen JSON-Objet.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>D'Multipart-Ufro huet keen Fichier %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>E Wee vum Feld map muss mat variables. ufänken: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>De Fichier %name ass net komplett ukomm (Eropluedfeeler %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>De Fichier %name ass méi grouss wéi %max Bytes.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>De Fichier %name konnt net gepréift ginn.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutatiounen sinn an dësem Site-Zougang ausgeschalt (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Schéckt eng Mutatioun mat POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Mellt Iech un, fir Inhalt z'änneren.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>De API-Schlëssel huet de Beräich %scope net.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Eng Mutatioun mat enger Sessioun brauch de Formulaire-Token vun der Sessioun (Header X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ass ausgeschalt: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nennt keen Host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>D'Adress muss eng https-Adress sinn.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Den Host %host steet net an graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>De Fichier konnt net ofgeruff ginn.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ass nëmmen en Input-Typ.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Eng Variabel vum Typ Upload hëlt e Fichier vun enger Multipart-Ufro.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>D'Remote-id %remoteId ass scho vergi.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Den Inhalt huet schonn eng Iwwersetzung op %language: benotzt updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Gitt mindestens ee Feld un.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Et konnt keng nei Versioun erstallt ginn (den Inhalt huet ze vill Entwërf).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>D'Versioun %version ass keen Entworf.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent brauch genee eent vun id an nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Eng Plaz kann net ënner sech selwer geréckelt ginn.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Den Inhalt huet schonn eng Plaz ënner %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>De Wäert vum Feld %field konnt net gespäichert ginn.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Et gëtt keng Inhaltssprooch %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Et gëtt keng Inhaltsklass %class am Schema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Den Inhalt ass net do, oder Dir däerft en net liesen.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Dir däerft dat net mat dësem Inhalt maachen.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>D'Klass %class huet keen Feld %field, dat geschriwwe ka ginn.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>D'Feld %field ass zweemol uginn.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>D'Feld %field hëlt e Fichier: schéckt en als Eroplueden (eng Multipart-Ufro).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>D'Feld %field hëlt keen Fichier.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>D'Feld %field brauch e Wäert.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>De Format %format ass nëmme fir Rich-Text-Felder; %field hëlt säi Wäert, wéi e ass (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>D'Feld %field ass obligatoresch.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Den HTML konnt net gelies ginn.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content hëlt version nëmme mat id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>De Virschau-Token ass net gëlteg oder ass ofgelaf.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Keen Origin (https://host oder https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Kee Beräich vun der GraphQL-API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

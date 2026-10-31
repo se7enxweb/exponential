@@ -78880,5 +78880,177 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout dovra exactamain in da id, identifier ed urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Il champ operations da la dumonda multipart n'è betg ina suletta dumonda JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Il champ map da la dumonda multipart n'è betg in object JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>La dumonda multipart n'ha nagina datoteca %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>In percurs da la charta dals champs sto cumenzar cun variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>La datoteca %name n'è betg arrivada cumplettamain (errur da chargiar si %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>La datoteca %name è pli gronda che %max bytes.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>La datoteca %name n'ha betg pudì vegnir controllada.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Las mutaziuns èn deactivadas en quest access a la website (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Trametta ina mutaziun cun POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>S'annunzia per midar il cuntegn.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>La clav d'API n'ha betg la sfera %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Ina mutaziun cun ina sessiun basegna il token dal formular da la sessiun (header X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl è deactivà: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] na numna nagin host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>L'adressa sto esser in'adressa https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Il host %host n'è betg en graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>La datoteca n'ha betg pudì vegnir prendida.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload è mo in tip d'endataziun.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Ina variabla dal tip Upload prenda ina datoteca d'ina dumonda multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>L'ID distanta %remoteId è gia occupada.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Il cuntegn ha gia ina translaziun en %language: utilisescha updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Inditgescha almain in champ.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>I n'ha betg pudì vegnir creà ina nova versiun (il cuntegn ha memia blers sbozs).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>La versiun %version n'è betg in sboz.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent basegna exactamain in da id e nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>In lieu na po betg vegnir spustà sut sasez.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Il cuntegn ha gia in lieu sut %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>La valur dal champ %field n'ha betg pudì vegnir memorisada.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>I na dat nagina lingua da cuntegn %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>I na dat nagina classa da cuntegn %class en la schema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Il cuntegn n'exista betg, u ti na das betg al leger.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Ti na das betg far quai cun quest cuntegn.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>La classa %class n'ha nagin champ %field che po vegnir scrit.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Il champ %field è indicà duas giadas.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Il champ %field prenda ina datoteca: trametta la sco upload (ina dumonda multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Il champ %field na prenda nagina datoteca.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Il champ %field basegna ina valur.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Il format %format è mo per champs da text formatà; %field prenda sia valur sco ch'ella è (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Il champ %field è obligatoric.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Il HTML n'ha betg pudì vegnir legì.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content prenda version mo cun id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Il token da prevista n'è betg valid u è scadì.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Betg in origin (https://host u https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Betg ina sfera da l'API GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

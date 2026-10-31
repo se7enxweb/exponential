@@ -78910,5 +78910,177 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout nepieciešams tieši viens no id, identifier un urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Daudzdaļīga pieprasījuma lauks operations nav viens JSON pieprasījums.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Daudzdaļīga pieprasījuma lauks map nav JSON objekts.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Daudzdaļīgajā pieprasījumā nav faila %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Lauka map ceļam jāsākas ar variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fails %name nav saņemts pilnībā (augšupielādes kļūda %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fails %name ir lielāks par %max baitiem.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Failu %name neizdevās pārbaudīt.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutācijas šajā vietnes piekļuvē ir izslēgtas (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Sūtiet mutāciju ar POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Piesakieties, lai mainītu saturu.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API atslēgai nav tvēruma %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutācijai ar sesiju vajadzīgs sesijas veidlapas marķieris (galvene X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ir izslēgts: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nenosauc nevienu resursdatoru.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adresei jābūt https adresei.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Resursdators %host nav norādīts graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Failu neizdevās iegūt.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ir tikai ievades tips.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Tipa Upload mainīgais saņem daudzdaļīga pieprasījuma failu.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Attālais id %remoteId jau ir aizņemts.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Saturam jau ir tulkojums valodā %language: izmantojiet updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Norādiet vismaz vienu lauku.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Jaunu versiju neizdevās izveidot (saturam ir pārāk daudz melnrakstu).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Versija %version nav melnraksts.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent vajag tieši vienu no id un nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Atrašanās vietu nevar pārvietot zem tās pašas.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Saturam jau ir atrašanās vieta zem %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Lauka %field vērtību neizdevās saglabāt.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Nav satura valodas %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Shēmā nav satura klases %class.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Satura nav, vai jums nav atļauts to lasīt.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Jums nav atļauts to darīt ar šo saturu.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Klasei %class nav rakstāma lauka %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Lauks %field ir norādīts divreiz.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Lauks %field pieņem failu: sūtiet to kā augšupielādi (daudzdaļīgs pieprasījums).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Lauks %field nepieņem failu.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Laukam %field vajadzīga vērtība.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Formāts %format ir tikai bagātinātā teksta laukiem; %field pieņem vērtību tādu, kāda tā ir (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Lauks %field ir obligāts.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML neizdevās nolasīt.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content pieņem version tikai kopā ar id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Priekšskatījuma marķieris nav derīgs vai ir beidzies.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Nav izcelsme (https://host vai https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Nav GraphQL API tvērums: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

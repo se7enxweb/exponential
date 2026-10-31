@@ -78910,5 +78910,177 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout precisa de exatamente um de id, identifier e urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>O campo operations do pedido multipart não é um único pedido JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>O campo map do pedido multipart não é um objeto JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>O pedido multipart não tem o ficheiro %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Um caminho do mapa de campos tem de começar por variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>O ficheiro %name não chegou completo (erro de carregamento %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>O ficheiro %name tem mais de %max bytes.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Não foi possível verificar o ficheiro %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>As mutações estão desligadas neste acesso ao site (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Envie uma mutação com POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Inicie sessão para alterar conteúdo.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>A chave de API não tem o âmbito %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Uma mutação com sessão precisa do token de formulário da sessão (cabeçalho X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl está desligado: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] não indica nenhum anfitrião.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>O endereço tem de ser um endereço https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>O anfitrião %host não está em graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Não foi possível obter o ficheiro.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload é apenas um tipo de entrada.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Uma variável do tipo Upload recebe um ficheiro de um pedido multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>O id remoto %remoteId já está a ser utilizado.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>O conteúdo já tem uma tradução em %language: utilize updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Indique pelo menos um campo.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Não foi possível criar uma nova versão (o conteúdo tem demasiados rascunhos).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>A versão %version não é um rascunho.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent precisa de exatamente um de id e nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Uma localização não pode ser movida para baixo de si própria.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>O conteúdo já tem uma localização abaixo de %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Não foi possível guardar o valor do campo %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Não existe o idioma de conteúdo %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Não existe a classe de conteúdo %class no esquema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>O conteúdo não existe, ou não tem permissão para o ler.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Não tem permissão para fazer isto a este conteúdo.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>A classe %class não tem um campo %field que possa ser escrito.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>O campo %field foi indicado duas vezes.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>O campo %field recebe um ficheiro: envie-o como carregamento (um pedido multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>O campo %field não recebe ficheiros.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>O campo %field precisa de um valor.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>O formato %format é só para campos de texto formatado; %field recebe o valor tal como está (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>O campo %field é obrigatório.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Não foi possível ler o HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content aceita version apenas com id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>O token de pré-visualização não é válido ou expirou.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Não é uma origem (https://host ou https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Não é um âmbito da API GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

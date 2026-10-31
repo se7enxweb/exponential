@@ -78878,5 +78878,177 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout inahitaji kimoja tu kati ya id, identifier na urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Sehemu operations ya ombi la multipart si ombi moja la JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Sehemu map ya ombi la multipart si kitu cha JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Ombi la multipart halina faili %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Njia ya sehemu map lazima ianze na variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Faili %name haikufika kamili (hitilafu ya kupakia %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Faili %name ni kubwa kuliko baiti %max.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Faili %name haikuweza kukaguliwa.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mabadiliko (mutations) yamezimwa katika siteaccess hii (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Tuma badiliko (mutation) kwa POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Ingia ili kubadilisha maudhui.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Ufunguo wa API hauna wigo %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Badiliko lenye kipindi linahitaji tokeni ya fomu ya kipindi hicho (kichwa X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl imezimwa: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] haitaji seva yoyote.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Anwani lazima iwe anwani ya https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Seva %host haimo katika graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Faili haikuweza kuletwa.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ni aina ya ingizo pekee.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Kigezo cha aina Upload kinapokea faili ya ombi la multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Remote id %remoteId tayari imechukuliwa.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Maudhui tayari yana tafsiri katika %language: tumia updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Toa angalau sehemu moja.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Toleo jipya halikuweza kuundwa (maudhui yana rasimu nyingi mno).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Toleo %version si rasimu.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent inahitaji hasa kimoja kati ya id na nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Eneo haliwezi kuhamishwa chini yake lenyewe.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Maudhui tayari yana eneo chini ya %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Thamani ya sehemu %field haikuweza kuhifadhiwa.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Hakuna lugha ya maudhui %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Hakuna darasa la maudhui %class katika skima.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Maudhui hayapo, au huruhusiwi kuyasoma.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Huruhusiwi kufanya hivi kwa maudhui haya.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Darasa %class halina sehemu %field inayoruhusiwa kuandikwa.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Sehemu %field imetolewa mara mbili.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Sehemu %field inapokea faili: itume kama upakiaji (ombi la multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Sehemu %field haipokei faili.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Sehemu %field inahitaji thamani.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Muundo %format ni kwa sehemu za maandishi tajiri pekee; %field inapokea thamani yake kama ilivyo (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Sehemu %field inahitajika.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML haikuweza kusomwa.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content inapokea version pamoja na id pekee.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Tokeni ya onyesho la awali si halali au imekwisha muda.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Si asili (https://host au https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Si wigo wa GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

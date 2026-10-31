@@ -78878,5 +78878,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout-ന് id, identifier, urlAlias എന്നിവയിൽ കൃത്യമായി ഒന്ന് ആവശ്യമാണ്.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>മൾട്ടിപാർട്ട് അഭ്യർത്ഥനയുടെ operations ഫീൽഡ് ഒരൊറ്റ JSON അഭ്യർത്ഥനയല്ല.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>മൾട്ടിപാർട്ട് അഭ്യർത്ഥനയുടെ map ഫീൽഡ് ഒരു JSON ഒബ്ജക്റ്റല്ല.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>മൾട്ടിപാർട്ട് അഭ്യർത്ഥനയിൽ %field എന്ന ഫയൽ ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map ഫീൽഡിലെ ഒരു പാത്ത് variables. എന്നതിൽ ആരംഭിക്കണം: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name എന്ന ഫയൽ പൂർണ്ണമായി എത്തിയില്ല (അപ്‌ലോഡ് പിശക് %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name എന്ന ഫയൽ %max ബൈറ്റിനേക്കാൾ വലുതാണ്.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name എന്ന ഫയൽ പരിശോധിക്കാൻ കഴിഞ്ഞില്ല.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>ഈ സൈറ്റ്ആക്സസിൽ മ്യൂട്ടേഷനുകൾ ഓഫാണ് (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>മ്യൂട്ടേഷൻ POST ഉപയോഗിച്ച് അയയ്ക്കുക.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>ഉള്ളടക്കം മാറ്റാൻ സൈൻ ഇൻ ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API കീയ്ക്ക് %scope എന്ന സ്കോപ്പ് ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>സെഷനുള്ള മ്യൂട്ടേഷന് സെഷന്റെ ഫോം ടോക്കൺ ആവശ്യമാണ് (ഹെഡർ X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ഓഫാണ്: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ഒരു ഹോസ്റ്റും പറയുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>വിലാസം ഒരു https വിലാസമായിരിക്കണം.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host എന്ന ഹോസ്റ്റ് graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ൽ ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ഫയൽ കൊണ്ടുവരാൻ കഴിഞ്ഞില്ല.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ഒരു ഇൻപുട്ട് തരം മാത്രമാണ്.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload തരത്തിലുള്ള ഒരു വേരിയബിൾ മൾട്ടിപാർട്ട് അഭ്യർത്ഥനയുടെ ഒരു ഫയൽ സ്വീകരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>റിമോട്ട് id %remoteId ഇതിനകം എടുത്തിട്ടുണ്ട്.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>ഉള്ളടക്കത്തിന് ഇതിനകം %language ൽ ഒരു വിവർത്തനമുണ്ട്: updateContent ഉപയോഗിക്കുക.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>കുറഞ്ഞത് ഒരു ഫീൽഡ് നൽകുക.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>പുതിയ പതിപ്പ് ഉണ്ടാക്കാൻ കഴിഞ്ഞില്ല (ഉള്ളടക്കത്തിന് വളരെയധികം ഡ്രാഫ്റ്റുകളുണ്ട്).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>പതിപ്പ് %version ഒരു ഡ്രാഫ്റ്റല്ല.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent ന് id, nodeId എന്നിവയിൽ കൃത്യമായി ഒന്ന് ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ഒരു ലൊക്കേഷൻ അതിന് താഴേക്ക് തന്നെ നീക്കാൻ കഴിയില്ല.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>ഉള്ളടക്കത്തിന് ഇതിനകം %parentId ന് താഴെ ഒരു ലൊക്കേഷനുണ്ട്.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field എന്ന ഫീൽഡിന്റെ മൂല്യം സംഭരിക്കാൻ കഴിഞ്ഞില്ല.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language എന്ന ഉള്ളടക്ക ഭാഷ ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>സ്കീമയിൽ %class എന്ന ഉള്ളടക്ക ക്ലാസ് ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>ഉള്ളടക്കം നിലവിലില്ല, അല്ലെങ്കിൽ അത് വായിക്കാൻ നിങ്ങൾക്ക് അനുവാദമില്ല.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>ഈ ഉള്ളടക്കത്തോട് ഇത് ചെയ്യാൻ നിങ്ങൾക്ക് അനുവാദമില്ല.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class എന്ന ക്ലാസിന് എഴുതാവുന്ന %field എന്ന ഫീൽഡ് ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field എന്ന ഫീൽഡ് രണ്ടുതവണ നൽകിയിരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field എന്ന ഫീൽഡ് ഒരു ഫയൽ സ്വീകരിക്കുന്നു: അത് അപ്‌ലോഡായി അയയ്ക്കുക (മൾട്ടിപാർട്ട് അഭ്യർത്ഥന).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field എന്ന ഫീൽഡ് ഫയൽ സ്വീകരിക്കുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field എന്ന ഫീൽഡിന് ഒരു മൂല്യം ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format എന്ന ഫോർമാറ്റ് റിച്ച് ടെക്സ്റ്റ് ഫീൽഡുകൾക്ക് മാത്രമാണ്; %field അതിന്റെ മൂല്യം അതേപടി സ്വീകരിക്കുന്നു (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field എന്ന ഫീൽഡ് നിർബന്ധമാണ്.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML വായിക്കാൻ കഴിഞ്ഞില്ല.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content, version നെ id യോടൊപ്പം മാത്രം സ്വീകരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>പ്രിവ്യൂ ടോക്കൺ സാധുവല്ല അല്ലെങ്കിൽ കാലഹരണപ്പെട്ടു.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>ഒരു ഒറിജിൻ അല്ല (https://host അല്ലെങ്കിൽ https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API യുടെ ഒരു സ്കോപ്പ് അല്ല: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

@@ -78880,5 +78880,177 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout-ek zehazki hauetako bat behar du: id, identifier eta urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Multipart eskaera baten operations eremua ez da JSON eskaera bakar bat.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Multipart eskaera baten map eremua ez da JSON objektu bat.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Multipart eskaerak ez du %field fitxategirik.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map eremuaren bide batek variables.-ekin hasi behar du: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name fitxategia ez da osorik iritsi (igoera-errorea %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name fitxategia %max byte baino handiagoa da.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Ezin izan da %name fitxategia egiaztatu.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutazioak desaktibatuta daude gune-sarbide honetan (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Bidali mutazioa POST bidez.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Hasi saioa edukia aldatzeko.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API gakoak ez du %scope esparrua.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Saioa duen mutazio batek saioaren inprimaki-tokena behar du (X-CSRF-Token goiburua).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl desaktibatuta dago: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ez du ostalaririk izendatzen.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Helbideak https helbide bat izan behar du.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host ostalaria ez dago graphql.ini [GraphQLSettings] UploadFromUrlHostList[] zerrendan.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Ezin izan da fitxategia eskuratu.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload sarrera-mota bat besterik ez da.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload motako aldagai batek multipart eskaera bateko fitxategi bat hartzen du.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>%remoteId urruneko id-a dagoeneko erabilita dago.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Edukiak badu dagoeneko %language itzulpena: erabili updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Eman gutxienez eremu bat.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Ezin izan da bertsio berririk sortu (edukiak zirriborro gehiegi ditu).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>%version bertsioa ez da zirriborro bat.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent-ek zehazki hauetako bat behar du: id eta nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Kokapen bat ezin da bere azpira mugitu.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Edukiak badu dagoeneko kokapen bat %parentId azpian.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Ezin izan da %field eremuaren balioa gorde.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Ez dago %language eduki-hizkuntzarik.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Eskeman ez dago %class eduki-klaserik.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Edukia ez dago, edo ezin duzu irakurri.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Ezin duzu hau egin eduki honekin.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class klaseak ez du idatz daitekeen %field eremurik.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field eremua bi aldiz eman da.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field eremuak fitxategi bat hartzen du: bidali igoera gisa (multipart eskaera bat).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field eremuak ez du fitxategirik hartzen.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field eremuak balio bat behar du.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format formatua testu aberastuko eremuetarako soilik da; %field eremuak bere balioa dagoen bezala hartzen du (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field eremua derrigorrezkoa da.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Ezin izan da HTMLa irakurri.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content-ek version id-arekin batera soilik onartzen du.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Aurrebista-tokena ez da baliozkoa edo iraungi egin da.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ez da jatorri bat (https://host edo https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ez da GraphQL APIaren esparru bat: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

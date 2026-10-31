@@ -78880,5 +78880,177 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout dárbbaša juste ovtta dáin: id, identifier ja urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Multipart-gáibádusa gieddi operations ii leat okta JSON-gáibádus.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Multipart-gáibádusa gieddi map ii leat JSON-objeakta.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Multipart-gáibádusas ii leat fiila %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Gieddi map bálggis ferte álgit variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fiila %name ii boahtán ollislaččat (sáddenmeattáhus %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fiila %name lea stuorát go %max byte.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Fiilla %name ii sáhttán dárkkistit.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutašuvnnat leat jáddaduvvon dán neahttabáikebeassanis (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Sádde mutašuvnna POST:in.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Čálit sisa rievdadan dihte sisdoalu.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API-čoavddas ii leat viidodat %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutašuvdna mas lea session dárbbaša session skovvatoken (bajilčála X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl lea jáddaduvvon: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ii namut ii ovttage guossohasa.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Čujuhus ferte leat https-čujuhus.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Guossoheaddji %host ii leat graphql.ini [GraphQLSettings] UploadFromUrlHostList[]:as.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Fiilla ii sáhttán viežžat.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload lea dušše sisaboahtošládja.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload-šlája variábel váldá multipart-gáibádusa fiilla.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Gáiddus id %remoteId lea juo geavahusas.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Sisdoalus lea juo jorgalus gillii %language: geavat updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Atte unnimusat ovtta gietti.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Ođđa veršuvnna ii sáhttán ráhkadit (sisdoalus leat menddo ollu konseavttat).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Veršuvdna %version ii leat konseapta.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent dárbbaša juste ovtta dain id ja nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Báikki ii sáhte sirdit iežas vuollái.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Sisdoalus lea juo báiki %parentId vuolde.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Gietti %field árvvu ii sáhttán vurket.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Sisdoallogiella %language ii gávdno.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Sisdoalloluohkká %class ii gávdno hámis.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Sisdoallu ii gávdno, dahje don it oaččo lohkat dan.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Don it oaččo dahkat dán dán sisdoallui.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Luohkás %class ii leat gieddi %field man sáhttá čállit.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Gieddi %field lea addojuvvon guktii.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Gieddi %field váldá fiilla: sádde dan upload:an (multipart-gáibádus).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Gieddi %field ii váldde fiilla.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Gieddi %field dárbbaša árvvu.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Formáhtta %format lea dušše hábmejuvvon teakstagieddiide; %field váldá árvvus nu go dat lea (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Gieddi %field lea bákkolaš.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML ii sáhttán lohkat.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content váldá version dušše id:in.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Ovdačájehantoken ii leat gustovaš dahje lea nohkan.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ii leat álgu (https://host dahje https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ii leat GraphQL-API viidodat: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

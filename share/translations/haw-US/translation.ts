@@ -78880,5 +78880,177 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>Pono ʻo layout i hoʻokahi wale nō o id, identifier a me urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>ʻAʻole he noi JSON hoʻokahi ke kahua operations o kekahi noi multipart.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>ʻAʻole he mea JSON ke kahua map o kekahi noi multipart.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>ʻAʻohe faila %field i loko o ka noi multipart.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Pono e hoʻomaka kekahi ala o ka palapala kahua me variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>ʻAʻole i hōʻea piha mai ka faila %name (hewa hoʻouka %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Ua ʻoi aku ka nui o ka faila %name ma mua o %max paita.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>ʻAʻole hiki ke nānā ʻia ka faila %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Ua hoʻopio ʻia nā hoʻololi (mutation) ma kēia Siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>E hoʻouna i ka hoʻololi me ka POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>E komo i mea e hoʻololi ai i ka ʻike.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>ʻAʻohe ʻano %scope o ke kī API.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Pono ka hoʻololi me kekahi kau i ka hōʻailona palapala o ke kau (poʻo X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>Ua hoʻopio ʻia ʻo uploadFromUrl: ʻaʻohe hoʻokipa i helu ʻia ma graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Pono ka helu wahi he helu wahi https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>ʻAʻole ka hoʻokipa %host i loko o graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ʻAʻole hiki ke kiʻi ʻia ka faila.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>He ʻano hoʻokomo wale nō ʻo Upload.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Lawe ka hoʻololi ʻano Upload i kekahi faila o ka noi multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Ua lawe ʻia ka id mamao %remoteId.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Aia nō ka unuhi ma %language o ka ʻike: e hoʻohana i ka updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>E hāʻawi i hoʻokahi kahua ma ka liʻiliʻi loa.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>ʻAʻole hiki ke hana ʻia kekahi mana hou (nui loa nā kāmua o ka ʻike).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>ʻAʻole he kāmua ka mana %version.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>Pono ʻo deleteContent i hoʻokahi wale nō o id a me nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ʻAʻole hiki ke hoʻoneʻe ʻia kekahi wahi ma lalo ona iho.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Aia nō kekahi wahi o ka ʻike ma lalo o %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>ʻAʻole hiki ke mālama ʻia ka waiwai o ke kahua %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>ʻAʻohe ʻōlelo ʻike %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>ʻAʻohe papa ʻike %class i loko o ka papahana.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>ʻAʻole i laila ka ʻike, a i ʻole ʻaʻole ʻae ʻia ʻoe e heluhelu.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>ʻAʻole ʻae ʻia ʻoe e hana i kēia i kēia ʻike.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>ʻAʻohe kahua %field hiki ke kākau ʻia o ka papa %class.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Ua hāʻawi ʻia ke kahua %field ʻelua manawa.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Lawe ke kahua %field i faila: e hoʻouna iā ia ma ke ʻano he hoʻouka (he noi multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>ʻAʻole lawe ke kahua %field i faila.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Pono ke kahua %field i kekahi waiwai.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>No nā kahua kikokikona waiwai wale nō ke ʻano %format; lawe ʻo %field i kona waiwai e like me ia (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Koi ʻia ke kahua %field.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>ʻAʻole hiki ke heluhelu ʻia ka HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>Lawe ʻo content i ka version me ka id wale nō.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>ʻAʻole kūpono ka hōʻailona nāmua a i ʻole ua pau kona manawa.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>ʻAʻole he kumu (https://host a i ʻole https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>ʻAʻole he ʻano o ka GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

@@ -78910,5 +78910,177 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout potrebuje natanko eno od: id, identifier in urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Polje operations zahteve multipart ni ena zahteva JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Polje map zahteve multipart ni objekt JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Zahteva multipart nima datoteke %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Pot v polju map se mora začeti z variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Datoteka %name ni prispela v celoti (napaka pri nalaganju %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Datoteka %name je večja od %max bajtov.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Datoteke %name ni bilo mogoče preveriti.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutacije so v tem dostopu do spletnega mesta izklopljene (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Mutacijo pošljite z metodo POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Za spreminjanje vsebine se prijavite.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Ključ API nima obsega %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutacija s sejo potrebuje žeton obrazca te seje (glava X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl je izklopljen: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ne navaja nobenega gostitelja.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Naslov mora biti naslov https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Gostitelja %host ni v graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Datoteke ni bilo mogoče pridobiti.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload je samo vhodni tip.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Spremenljivka tipa Upload sprejme datoteko iz zahteve multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Oddaljeni id %remoteId je že zaseden.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Vsebina že ima prevod v jeziku %language: uporabite updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Navedite vsaj eno polje.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nove različice ni bilo mogoče ustvariti (vsebina ima preveč osnutkov).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Različica %version ni osnutek.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent potrebuje natanko eno od id in nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Lokacije ni mogoče premakniti pod samo sebe.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Vsebina že ima lokacijo pod %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Vrednosti polja %field ni bilo mogoče shraniti.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Jezik vsebine %language ne obstaja.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Razred vsebine %class v shemi ne obstaja.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Vsebina ne obstaja ali je ne smete brati.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Tega s to vsebino ne smete narediti.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Razred %class nima zapisljivega polja %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Polje %field je navedeno dvakrat.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Polje %field sprejme datoteko: pošljite jo kot upload (zahteva multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Polje %field ne sprejme datoteke.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Polje %field potrebuje vrednost.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Format %format je samo za polja z obogatenim besedilom; %field sprejme vrednost takšno, kot je (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Polje %field je obvezno.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML ni bilo mogoče prebrati.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content sprejme version samo z id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Žeton predogleda ni veljaven ali je potekel.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ni izvor (https://host ali https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ni obseg GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

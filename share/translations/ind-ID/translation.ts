@@ -78880,5 +78880,177 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout memerlukan tepat satu dari id, identifier, dan urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Field operations pada permintaan multipart bukan satu permintaan JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Field map pada permintaan multipart bukan objek JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Permintaan multipart tidak memiliki file %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Path pada peta field harus diawali dengan variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>File %name tidak tiba secara utuh (galat unggah %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>File %name lebih besar dari %max byte.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>File %name tidak dapat diperiksa.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutasi dimatikan di akses situs ini (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Kirim mutasi dengan POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Masuk untuk mengubah konten.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Kunci API tidak memiliki cakupan %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutasi dengan sesi memerlukan token formulir dari sesi tersebut (header X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl dimatikan: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] tidak menyebut host apa pun.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Alamat harus berupa alamat https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Host %host tidak ada di graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>File tidak dapat diambil.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload hanya merupakan tipe input.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Variabel bertipe Upload menerima file dari permintaan multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Remote id %remoteId sudah dipakai.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Konten sudah memiliki terjemahan dalam %language: gunakan updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Berikan setidaknya satu field.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Versi baru tidak dapat dibuat (konten memiliki terlalu banyak draf).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Versi %version bukan draf.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent memerlukan tepat satu dari id dan nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Lokasi tidak dapat dipindahkan ke bawah dirinya sendiri.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Konten sudah memiliki lokasi di bawah %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Nilai field %field tidak dapat disimpan.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Tidak ada bahasa konten %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Tidak ada kelas konten %class di skema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Konten tidak ada, atau Anda tidak boleh membacanya.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Anda tidak boleh melakukan ini pada konten ini.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Kelas %class tidak memiliki field %field yang boleh ditulis.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Field %field diberikan dua kali.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Field %field menerima file: kirim sebagai unggahan (permintaan multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Field %field tidak menerima file.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Field %field memerlukan nilai.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Format %format hanya untuk field teks kaya; %field menerima nilainya apa adanya (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Field %field wajib diisi.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML tidak dapat dibaca.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content hanya menerima version bersama id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Token pratinjau tidak valid atau sudah kedaluwarsa.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Bukan origin (https://host atau https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Bukan cakupan API GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

@@ -80183,5 +80183,177 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout behöver exakt ett av id, identifier och urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Fältet operations i en multipart-förfrågan är inte en enda JSON-förfrågan.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Fältet map i en multipart-förfrågan är inte ett JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Multipart-förfrågan har ingen fil %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>En sökväg i fältet map måste börja med variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Filen %name kom inte fram hel (uppladdningsfel %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Filen %name är större än %max byte.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Filen %name kunde inte kontrolleras.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutationer är avstängda i den här webbplatsingången (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Skicka en mutation med POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Logga in för att ändra innehåll.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API-nyckeln har inte omfånget %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>En mutation med en session behöver sessionens formulärtoken (huvudet X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl är avstängt: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] anger ingen värd.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adressen måste vara en https-adress.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Värden %host finns inte i graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Filen kunde inte hämtas.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload är endast en indatatyp.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>En variabel av typen Upload tar emot en fil från en multipart-förfrågan.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Fjärr-id %remoteId är redan upptaget.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Innehållet har redan en översättning till %language: använd updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Ange minst ett fält.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Ingen ny version kunde skapas (innehållet har för många utkast).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Version %version är inte ett utkast.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent behöver exakt ett av id och nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>En placering kan inte flyttas under sig själv.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Innehållet har redan en placering under %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Värdet i fältet %field kunde inte sparas.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Det finns inget innehållsspråk %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Det finns ingen innehållsklass %class i schemat.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Innehållet finns inte, eller så får du inte läsa det.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Du får inte göra detta med det här innehållet.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Klassen %class har inget skrivbart fält %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Fältet %field anges två gånger.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Fältet %field tar emot en fil: skicka den som uppladdning (en multipart-förfrågan).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Fältet %field tar inte emot någon fil.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Fältet %field behöver ett värde.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Formatet %format gäller endast formaterade textfält; %field tar emot sitt värde som det är (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Fältet %field är obligatoriskt.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-koden kunde inte läsas.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content tar emot version endast tillsammans med id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Förhandsgranskningstoken är ogiltig eller har gått ut.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Inte ett ursprung (https://host eller https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Inte ett omfång för GraphQL-API:t: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

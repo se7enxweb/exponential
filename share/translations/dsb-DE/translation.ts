@@ -78910,5 +78910,177 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout trjeba rowno jadno z id, identifier a urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Pólo operations multipart-póžedanja njejo jadno JSON-póžedanje.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Pólo map multipart-póžedanja njejo JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Multipart-póžedanje njewopśimujo dataju %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Sćažka póla map musy se z variables. zachopiś: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Dataja %name njejo dopołnje dojšła (zmólka nagraśa %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Dataja %name jo wětša ako %max bajtow.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Dataja %name njedajo se pśeglědowaś.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutacije su w toś tom pśistupje k sedłu wótšaltowane (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Pósćelśo mutaciju z POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Pśizjawśo se, aby wopśimjeśe změnił.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API-kluc njama wobceŕk %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutacija ze sesiju trjeba formularowy token sesije (głowa X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl jo wótšaltowane: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] njemjenijo žeden host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adresa musy https-adresa byś.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Host %host njejo w graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Dataja njedajo se wobstaraś.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload jo jano typ zapódaśa.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Wariabla typa Upload pśiwzejo dataju multipart-póžedanja.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Zdalny id %remoteId jo južo wužyty.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Wopśimjeśe ma južo pśełožk do %language: wužywajśo updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Pódajśo nanejmjenjej jadno pólo.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nowa wersija njedajo se napóraś (wopśimjeśe ma pśewjele naćiskow).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Wersija %version njejo naćisk.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent trjeba rowno jadno z id a nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Městno njedajo se pód samo se pśesunuś.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Wopśimjeśe ma južo městno pód %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Gódnota póla %field njedajo se składowaś.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Njejo rěc wopśimjeśa %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>W šemje njejo klasa wopśimjeśa %class.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Wopśimjeśe njeeksistěrujo abo njesmějośo jo cytaś.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>To njesmějośo z toś tym wopśimjeśim cyniś.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Klasa %class njama pisajobne pólo %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Pólo %field jo dwójcy pódane.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Pólo %field pśiwzejo dataju: pósćelśo ju ako nagraśe (multipart-póžedanje).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Pólo %field njepśiwzejo žednu dataju.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Pólo %field trjeba gódnotu.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Format %format jo jano za póla z formatěrowanym tekstom; %field pśiwzejo swóju gódnotu tak, kaž jo (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Pólo %field jo trěbne.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML njedajo se cytaś.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content pśiwzejo version jano z id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Token pśeglěda njejo płaśiwy abo jo spadnuł.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Žeden origin (https://host abo https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Žeden wobceŕk GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

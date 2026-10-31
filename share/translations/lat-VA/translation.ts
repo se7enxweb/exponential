@@ -78913,5 +78913,177 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout unum tantum ex id, identifier et urlAlias requirit.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Campus operations petitionis multipartitae non est una petitio JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Campus map petitionis multipartitae non est obiectum JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Petitio multipartita fasciculum %field non habet.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Via campi map a variables. incipere debet: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fasciculus %name non integer advenit (error impositionis %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fasciculus %name maior est quam %max octeti.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Fasciculus %name examinari non potuit.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutationes in hoc aditu situs exstinctae sunt (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Mitte mutationem per POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Inscribe te ut contentum mutes.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Clavis API ambitum %scope non habet.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutatio cum sessione signum formae sessionis requirit (caput X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl exstinctum est: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nullum hospitem nominat.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Inscriptio debet esse inscriptio https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Hospes %host non est in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Fasciculus afferri non potuit.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload genus inputi tantum est.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Variabilis generis Upload fasciculum petitionis multipartitae accipit.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Id remotum %remoteId iam occupatum est.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Contentum iam translationem in %language habet: utere updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Da saltem unum campum.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nulla nova versio fieri potuit (contentum nimis multa adumbrata habet).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Versio %version non est adumbratio.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent requirit unum ex id et nodeId, neque plura.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Locus sub se ipsum moveri non potest.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Contentum iam locum sub %parentId habet.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Valor campi %field servari non potuit.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Nulla est lingua contenti %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Nulla est classis contenti %class in schemate.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Contentum non adest, aut tibi legere non licet.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Hoc huic contento facere tibi non licet.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Classis %class nullum campum %field habet qui scribi possit.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Campus %field bis datus est.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Campus %field fasciculum accipit: mitte eum ut impositionem (petitio multipartita).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Campus %field nullum fasciculum accipit.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Campus %field valorem requirit.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Forma %format tantum ad campos textus ditioris pertinet; %field valorem suum ut est accipit (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Campus %field necessarius est.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML legi non potuit.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content version tantum cum id accipit.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Signum praevisionis non valet aut exspiravit.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Non est origo (https://host aut https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Non est ambitus API GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

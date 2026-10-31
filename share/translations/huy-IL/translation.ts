@@ -78889,5 +78889,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout סניק לחד בלחוד מן id, identifier ו urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>חקלא operations דבעותא multipart לאו בעותא חדא JSON הוא.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>חקלא map דבעותא multipart לאו מדעם JSON הוא.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>לית בבעותא multipart פנקיתא %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>שבילא דמפת חקלי צריך למשרי ב variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>פנקיתא %name לא אתת שלמא (טעותא דמסקא %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>פנקיתא %name רבא מן %max בייטין.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>לא אפשר למבדק פנקיתא %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>מוטציי בטילין בהנא מעלנא דאתרא (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>שדר מוטציא ב POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>עול למשחלפא מליותא.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>לקלידא ד API לית היקפא %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>מוטציא עם מותבא סניקא לסימנא דטופסא דמותבא (כותרתא X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl בטילא: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] לא מדכר שום מארחא.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>כתובתא צריכא למהוי כתובתא https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>מארחא %host ליתוהי ב graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>לא אפשר לאיתאה פנקיתא.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload זנא דמיעלנא בלחוד הוא.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>משתניא דזנא Upload נסיב פנקיתא מן בעותא multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>id רחיקא %remoteId כבר נסיב.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>למליותא כבר אית תורגמא ב %language: אשתמש ב updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>הב לפחות חקלא חד.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>לא אפשר למעבד מפקתא חדתא (למליותא אית סורטי סגיאי).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>מפקתא %version לאו סורטא היא.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent סניק לחד בלחוד מן id ו nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>דוכתא לא מצי לאשתנאה תחות נפשה.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>למליותא כבר אית דוכתא תחות %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>טימא דחקלא %field לא אפשר לנטרא.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>לית לשנא דמליותא %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>לית זנא דמליותא %class בסכמא.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>מליותא ליתה, או לא שרי לך למקריה.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>לא שרי לך למעבד הדא להנא מליותא.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>לזנא %class לית חקלא %field דשרי למכתב.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>חקלא %field יהיב תרתין זמנין.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>חקלא %field נסיב פנקיתא: שדריה כמסקא (בעותא multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>חקלא %field לא נסיב פנקיתא.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>חקלא %field סניק לטימא.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>פורמאט %format לחקלי כתבא עתירא בלחוד; %field נסיב טימיה כמה דאיתוהי (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>חקלא %field מחויב.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>לא אפשר למקרא HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content נסיב version עם id בלחוד.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>סימנא דחזותא קדמיתא לא תקין או זבנה גמר.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>לאו מקורא (https://host או https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>לאו היקפא ד API ד GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

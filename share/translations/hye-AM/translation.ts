@@ -78880,5 +78880,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout-ին անհրաժեշտ է ճիշտ մեկը id, identifier և urlAlias արժեքներից։</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart դիմումի operations դաշտը մեկ JSON դիմում չէ։</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart դիմումի map դաշտը JSON օբյեկտ չէ։</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart դիմումում %field ֆայլ չկա։</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Դաշտերի քարտեզի ուղին պետք է սկսվի variables.-ով՝ %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name ֆայլն ամբողջությամբ չի հասել (վերբեռնման սխալ %error)։</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name ֆայլը %max բայթից մեծ է։</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name ֆայլը հնարավոր չեղավ ստուգել։</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Մուտացիաներն անջատված են կայքի այս մուտքի կետում (graphql.ini [GraphQLSettings] MutationsEnabled)։</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Ուղարկեք մուտացիան POST-ով։</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Մուտք գործեք՝ բովանդակությունը փոխելու համար։</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API բանալին %scope շրջանակ չունի։</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Սեսիայով մուտացիային անհրաժեշտ է սեսիայի ձևի թոքենը (X-CSRF-Token վերնագիր)։</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl-ն անջատված է՝ graphql.ini [GraphQLSettings] UploadFromUrlHostList[]-ում ոչ մի հոսթ նշված չէ։</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Հասցեն պետք է լինի https հասցե։</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host հոսթը graphql.ini [GraphQLSettings] UploadFromUrlHostList[]-ում չէ։</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Ֆայլը հնարավոր չեղավ ստանալ։</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload-ը միայն մուտքային տիպ է։</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload տիպի փոփոխականն ընդունում է multipart դիմումի ֆայլ։</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>%remoteId հեռավոր id-ն արդեն զբաղված է։</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Բովանդակությունն արդեն ունի %language թարգմանություն՝ օգտագործեք updateContent։</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Տվեք առնվազն մեկ դաշտ։</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Նոր տարբերակ հնարավոր չեղավ ստեղծել (բովանդակությունը չափազանց շատ սևագրեր ունի)։</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>%version տարբերակը սևագիր չէ։</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent-ին անհրաժեշտ է ճիշտ մեկը id և nodeId արժեքներից։</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Տեղադրությունը չի կարող տեղափոխվել իր իսկ տակ։</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Բովանդակությունն արդեն ունի տեղադրություն %parentId-ի տակ։</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field դաշտի արժեքը հնարավոր չեղավ պահպանել։</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language բովանդակության լեզու չկա։</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Սխեմայում %class բովանդակության դաս չկա։</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Բովանդակությունը չկա, կամ դուք չեք կարող այն կարդալ։</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Դուք չեք կարող դա անել այս բովանդակության հետ։</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class դասը չունի %field դաշտ, որը կարելի է գրել։</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field դաշտը տրված է երկու անգամ։</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field դաշտն ընդունում է ֆայլ՝ ուղարկեք այն որպես վերբեռնում (multipart դիմում)։</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field դաշտը ֆայլ չի ընդունում։</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field դաշտին արժեք է անհրաժեշտ։</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format ձևաչափը միայն ձևաչափված տեքստի դաշտերի համար է, %field-ն ընդունում է արժեքն այնպես, ինչպես կա (RAW)։</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field դաշտը պարտադիր է։</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-ը հնարավոր չեղավ կարդալ։</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content-ն ընդունում է version միայն id-ի հետ։</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Նախադիտման թոքենն անվավեր է կամ ժամկետանց։</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ծագում չէ (https://host կամ https://host:port)՝ %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API-ի շրջանակ չէ՝ %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

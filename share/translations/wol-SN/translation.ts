@@ -78880,5 +78880,177 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout soxla na benn rekk ci id, identifier ak urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Toolu operations bu ñaan bu am ay pàcc du benn ñaan JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Toolu map bu ñaan bu am ay pàcc du ab objet JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Ñaan bu am ay pàcc bi amul dencukaay %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Yoonu toolu map war na tàmbalee ak variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Dencukaay %name agsiwul mu mat (njuumtey yebal %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Dencukaay %name gën na rëy %max byte.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Mënuñu woon a saytu dencukaay %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Soppi yi (mutation) dañu leen fay ci buntu sit bii (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Yónneel soppi bi ak POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Duggal ngir soppi li ci biir.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Caabi API bi amul wàll %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Soppi bu am jamono soxla na token bu formulaire bu jamono ji (bopp X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl dañu ko fay: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] tuddul benn host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adrees bi war na doon adrees https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Host %host nekkul ci graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Mënuñu woon a jël dencukaay bi.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload xeetu dugal rekk la.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Soppiku bu xeetu Upload dafay jël dencukaay bu ñaan bu am ay pàcc.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Remote id %remoteId jël nañu ko ba noppi.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Li ci biir am na ba noppi ab tekki ci %language: jëfandikool updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Joxal benn tool lu mu néew-néew.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Mënuñu woon a def sumb bu bees (li ci biir am na ay brouillon yu bari lool).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Sumb %version du brouillon.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent soxla na benn rekk ci id ak nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Mënuñu dem ak ab bérëb ci suufam ci boppam.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Li ci biir am na ba noppi ab bérëb ci suufu %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Mënuñu woon a denc njëgu toolu %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Amul làkku biir %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Amul xeetu biir %class ci tekki bi.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Li ci biir nekkul fi, walla sañuloo ko jàng.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Sañuloo def lii ci li ci biir.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Xeet %class amul toolu %field bu ñu mën a bind.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Tool %field dañu ko jox ñaari yoon.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Tool %field dafay jël dencukaay: yónneel ko niki upload (ñaan bu am ay pàcc).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Tool %field du jël dencukaay.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Tool %field soxla na ab njëg.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Formaa %format mu ngi jëm ci tooli mbind mu taaru rekk; %field dafay jël njëgam ni mu mel (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Tool %field war na am.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Mënuñu woon a jàng HTML bi.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content dafay jël version ak id rekk.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Token bu seetlu bi baaxul walla jeex na.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Du ab origin (https://host walla https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Du wàllu GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

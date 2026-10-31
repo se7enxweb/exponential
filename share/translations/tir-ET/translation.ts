@@ -78880,5 +78880,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout ካብ id፣ identifier ከምኡ&apos;ውን urlAlias ልክዕ ሓደ የድልዮ።</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>ዓውዲ operations ናይ multipart ጠለብ ሓደ JSON ጠለብ ኣይኮነን።</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>ዓውዲ map ናይ multipart ጠለብ JSON ኦብጀክት ኣይኮነን።</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>እቲ multipart ጠለብ ፋይል %field የብሉን።</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>መንገዲ ናይ ዓውዲ map ብ variables. ክጅምር ኣለዎ፦ %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>እቲ ፋይል %name ምሉእ ኮይኑ ኣይበጽሐን (ጌጋ ምጽዓን %error)።</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>እቲ ፋይል %name ካብ %max ባይት ይዓቢ።</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>እቲ ፋይል %name ክምርመር ኣይከኣለን።</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>ምቕያራት ኣብዚ ምእታው መርበብ ጠፊኦም ኣለው (graphql.ini [GraphQLSettings] MutationsEnabled)።</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>ምቕያር ብ POST ስደድ።</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>ትሕዝቶ ንምቕያር እቶ።</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>እቲ API መፍትሕ ወሰን %scope የብሉን።</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>ምቕያር ምስ ክፍለ ግዜ ናይቲ ክፍለ ግዜ ቶከን ቅጥዒ የድልዮ (ርእሲ X-CSRF-Token)።</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ጠፊኡ ኣሎ፦ graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ዝኾነ ሆስት ኣይጠቐሰን።</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>እቲ ኣድራሻ https ኣድራሻ ክኸውን ኣለዎ።</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>እቲ ሆስት %host ኣብ graphql.ini [GraphQLSettings] UploadFromUrlHostList[] የለን።</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>እቲ ፋይል ክመጽእ ኣይከኣለን።</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ዓይነት ኣእታዊ ጥራይ እዩ።</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>ተለዋዋጢ ናይ ዓይነት Upload ካብ multipart ጠለብ ፋይል ይቕበል።</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>እቲ ርሑቕ id %remoteId ተታሒዙ ኣሎ።</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>እቲ ትሕዝቶ ድሮ ብ %language ትርጉም ኣለዎ፦ updateContent ተጠቐም።</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>እንተወሓደ ሓደ ዓውዲ ሃብ።</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>ሓድሽ ሕታም ክስራሕ ኣይከኣለን (እቲ ትሕዝቶ ብዙሓት ንድፍታት ኣለውዎ)።</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>ሕታም %version ንድፊ ኣይኮነን።</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent ካብ id ከምኡ'ውን nodeId ልክዕ ሓደ የድልዮ።</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ቦታ ኣብ ትሕቲ ባዕሉ ክግዕዝ ኣይክእልን።</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>እቲ ትሕዝቶ ድሮ ኣብ ትሕቲ %parentId ቦታ ኣለዎ።</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>ዋጋ ናይቲ ዓውዲ %field ክዕቀብ ኣይከኣለን።</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>ቋንቋ ትሕዝቶ %language የለን።</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>ኣብቲ ኣወዳድባ ክፍሊ ትሕዝቶ %class የለን።</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>እቲ ትሕዝቶ የለን፣ ወይ ከተንብቦ ኣይፍቀደልካን።</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>ነዚ ኣብዚ ትሕዝቶ ክትገብሮ ኣይፍቀደልካን።</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>እቲ ክፍሊ %class ክጽሓፍ ዝኽእል ዓውዲ %field የብሉን።</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>እቲ ዓውዲ %field ክልተ ግዜ ተዋሂቡ።</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>እቲ ዓውዲ %field ፋይል ይቕበል፦ ከም ምጽዓን ስደዶ (multipart ጠለብ)።</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>እቲ ዓውዲ %field ፋይል ኣይቕበልን።</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>እቲ ዓውዲ %field ዋጋ የድልዮ።</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>እቲ ቅርጺ %format ንዓውድታት ሃብታም ጽሑፍ ጥራይ እዩ፤ %field ዋጋኡ ከም ዘለዎ ይቕበል (RAW)።</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>እቲ ዓውዲ %field ግዴታ እዩ።</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>እቲ HTML ክንበብ ኣይከኣለን።</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content ንversion ምስ id ጥራይ ይቕበል።</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>ቶከን ቅድመ ምርኣይ ቅቡል ኣይኮነን ወይ ግዜኡ ኣኺሉ።</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>መበቆል ኣይኮነን (https://host ወይ https://host:port)፦ %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>ወሰን ናይ GraphQL API ኣይኮነን፦ %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

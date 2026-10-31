@@ -78910,5 +78910,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout потребує рівно одного з id, identifier і urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Поле operations багаточастинного звернення не є одним запитом JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Поле map багаточастинного звернення не є об’єктом JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Багаточастинне звернення не має файлу %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Шлях у полі map має починатися з variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Файл %name надійшов не повністю (помилка завантаження %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Файл %name більший за %max байтів.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Не вдалося перевірити файл %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Мутації вимкнено в цьому доступі до сайту (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Надішліть мутацію методом POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Увійдіть, щоб змінювати вміст.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Ключ API не має області доступу %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Мутації із сеансом потрібен токен форми цього сеансу (заголовок X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl вимкнено: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] не називає жодного хоста.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Адреса має бути адресою https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Хоста %host немає в graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Не вдалося отримати файл.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload — лише вхідний тип.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Змінна типу Upload приймає файл багаточастинного звернення.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Віддалений ідентифікатор %remoteId уже зайнятий.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Вміст уже має переклад мовою %language: використовуйте updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Укажіть принаймні одне поле.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Не вдалося створити нову версію (у вмісту забагато чернеток).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Версія %version не є чернеткою.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent потребує рівно одного з id і nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Розташування не можна перемістити під саме себе.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Вміст уже має розташування під %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Не вдалося зберегти значення поля %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Мови вмісту %language немає.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>У схемі немає класу вмісту %class.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Вмісту немає, або вам заборонено його читати.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Вам заборонено робити це з цим вмістом.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Клас %class не має поля %field, у яке можна записувати.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Поле %field указано двічі.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Поле %field приймає файл: надішліть його як upload (багаточастинне звернення).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Поле %field не приймає файлів.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Поле %field потребує значення.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Формат %format лише для полів форматованого тексту; %field приймає значення як є (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Поле %field обов’язкове.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Не вдалося прочитати HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content приймає version лише разом з id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Токен попереднього перегляду недійсний або його строк минув.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Не є джерелом (https://host або https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Не є областю доступу GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

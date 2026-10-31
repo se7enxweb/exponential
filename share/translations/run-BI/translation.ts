@@ -78880,5 +78880,177 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout ikeneye kimwe gusa muri id, identifier na urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Umwanya operations w'icifuzo ca multipart si icifuzo kimwe ca JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Umwanya map w'icifuzo ca multipart si ikintu ca JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Icifuzo ca multipart nta dosiye %field gifise.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Inzira yo mu ikarata y'imyanya itegerezwa gutangurwa na variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Dosiye %name ntiyashitse yuzuye (ikosa ryo kurungika %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Dosiye %name irarenza bayiti %max.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Dosiye %name ntiyashoboye gusuzumwa.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Ihinduka (mutations) rirazimije muri iyi siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Rungika ihinduka ukoresheje POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Injira kugira uhindure ibirimwo.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Urufunguzo rwa API nta karere %scope rufise.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Ihinduka rifise isesiyo rikenera ikimenyetso c'urupapuro c'isesiyo (umutwe X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl irazimije: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nta host ivuga.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Aderesi itegerezwa kuba aderesi ya https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Host %host ntiri muri graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Dosiye ntiyashoboye kuzanwa.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ni ubwoko bwo kwinjiza gusa.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Igihinduka c'ubwoko Upload gifata dosiye y'icifuzo ca multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Id ya kure %remoteId yaramaze gufatwa.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Ibirimwo bifise ubuhinduzi muri %language: koresha updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Tanga byibuze umwanya umwe.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nta verisiyo nshasha yashoboye gukorwa (ibirimwo bifise imishinga myinshi cane).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Verisiyo %version si umushinga.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent ikenera kimwe gusa muri id na nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Ikibanza ntigishobora kwimurirwa munsi yaco ubwaco.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Ibirimwo bifise ikibanza munsi ya %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Agaciro k'umwanya %field ntikashoboye kubikwa.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Nta rurimi rw'ibirimwo %language ruriho.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Nta mugwi w'ibirimwo %class uri mu iskema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Ibirimwo ntibiriho, canke ntiwemerewe kubisoma.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Ntiwemerewe gukora ivyo kuri ibi birimwo.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Umugwi %class nta mwanya %field ushobora kwandikwamwo ufise.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Umwanya %field watanzwe kabiri.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Umwanya %field ufata dosiye: yirungike nk'ukurungika (icifuzo ca multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Umwanya %field ntufata dosiye.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Umwanya %field ukeneye agaciro.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Imiterere %format ni iy'imyanya y'inyandiko ikungahaye gusa; %field ifata agaciro kayo uko kari (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Umwanya %field urakenewe.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML ntiyashoboye gusomwa.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content ifata version hamwe na id gusa.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Ikimenyetso co kuraba imbere si co canke carahejeje igihe.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Si inkomoko (https://host canke https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Si akarere ka GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

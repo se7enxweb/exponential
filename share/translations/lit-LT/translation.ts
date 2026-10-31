@@ -78910,5 +78910,177 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout reikia lygiai vieno iš id, identifier ir urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Daugiadalio užklausimo laukas operations nėra vienas JSON užklausimas.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Daugiadalio užklausimo laukas map nėra JSON objektas.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Daugiadaliame užklausime nėra failo %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Lauko map kelias turi prasidėti variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Failas %name atkeliavo ne visas (įkėlimo klaida %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Failas %name didesnis nei %max baitų.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Failo %name nepavyko patikrinti.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutacijos šioje prieigoje prie svetainės (siteaccess) išjungtos (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Siųskite mutaciją POST metodu.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Prisijunkite, kad galėtumėte keisti turinį.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API raktas neturi aprėpties %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutacijai su sesija reikia sesijos formos žetono (antraštė X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl išjungta: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nenurodo jokio serverio.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adresas turi būti https adresas.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Serverio %host nėra graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Failo nepavyko gauti.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload yra tik įvesties tipas.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Tipo Upload kintamasis priima daugiadalio užklausimo failą.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Nuotolinis id %remoteId jau užimtas.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Turinys jau turi vertimą į %language: naudokite updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Nurodykite bent vieną lauką.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nepavyko sukurti naujos versijos (turinys turi per daug juodraščių).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Versija %version nėra juodraštis.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent reikia lygiai vieno iš id ir nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Vietos negalima perkelti po ja pačia.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Turinys jau turi vietą po %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Lauko %field reikšmės nepavyko išsaugoti.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Nėra turinio kalbos %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Schemoje nėra turinio klasės %class.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Turinio nėra arba jums neleidžiama jo skaityti.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Jums neleidžiama to daryti su šiuo turiniu.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Klasė %class neturi įrašomo lauko %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Laukas %field nurodytas du kartus.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Laukas %field priima failą: siųskite jį kaip įkėlimą (daugiadalis užklausimas).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Laukas %field nepriima failo.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Laukui %field reikia reikšmės.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Formatas %format skirtas tik raiškiojo teksto laukams; %field priima reikšmę tokią, kokia ji yra (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Laukas %field privalomas.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML nepavyko perskaityti.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content priima version tik su id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Peržiūros žetonas negalioja arba baigė galioti.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ne kilmė (https://host arba https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ne GraphQL API aprėptis: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

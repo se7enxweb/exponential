@@ -78880,5 +78880,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout ⵉⵅⵚⵚⴰ ⵢⴰⵏ ⵙ ⵜⵉⴷⵜ ⴳ id, identifier ⴷ urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>ⴰⵏⵙⴰ operations ⵏ ⵓⵙⵓⵜⵔ ⵙ ⵡⴰⵟⵟⴰⵙ ⵏ ⵉⵃⵔⵉⵛⵏ ⵓⵔ ⵉⴳⵉ ⵢⴰⵏ ⵓⵙⵓⵜⵔ ⵏ JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>ⴰⵏⵙⴰ map ⵏ ⵓⵙⵓⵜⵔ ⵙ ⵡⴰⵟⵟⴰⵙ ⵏ ⵉⵃⵔⵉⵛⵏ ⵓⵔ ⵉⴳⵉ ⵜⴰⵖⴰⵡⵙⴰ ⵏ JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>ⴰⵙⵓⵜⵔ ⵙ ⵡⴰⵟⵟⴰⵙ ⵏ ⵉⵃⵔⵉⵛⵏ ⵓⵔ ⴷⴰⵔⵙ ⴰⴼⴰⵢⵍⵓ %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>ⴰⴱⵔⵉⴷ ⴳ ⵓⵏⵙⴰ map ⵉⵇⵇⴰⵏ ⴰⴷ ⵉⴱⴷⵓ ⵙ variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>ⴰⴼⴰⵢⵍⵓ %name ⵓⵔ ⴷ ⵉⵍⴽⵉⵎ ⵎⴰⵕⵕⴰ (ⵜⴰⵣⴳⵍⵜ ⵏ ⵓⵙⴰⵍⵉ %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>ⴰⴼⴰⵢⵍⵓ %name ⵉⵎⵇⵇⵓⵔ ⵓⴳⴳⴰⵔ ⵏ %max ⵏ ⴱⴰⵢⵜ.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>ⵓⵔ ⵉⵥⴹⵉⵕ ⵓⵙⵍⴽⵏ ⵏ ⵓⴼⴰⵢⵍⵓ %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>ⵉⵙⵏⴼⴰⵍ (mutations) ⵜⵜⵓⵙⵅⵙⵉⵏ ⴳ ⵓⴽⵛⵛⵓⵎ ⴰⴷ ⵖⵔ ⵓⵙⵎⵍ (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>ⴰⵣⵏ ⴰⵙⵏⴼⵍ ⵙ POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>ⴽⵛⵎ ⴰⴷ ⵜⵙⵏⴼⵍⴷ ⴰⴳⴱⵓⵔ.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>ⵜⴰⵙⴰⵔⵓⵜ ⵏ API ⵓⵔ ⴷⴰⵔⵙ ⵜⴰⵎⵏⴰⴹⵜ %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>ⴰⵙⵏⴼⵍ ⵙ ⵜⵖⵉⵎⵉⵜ ⵉⵃⵜⴰⵊ ⵜⴰⵎⴰⵜⴰⵔⵜ ⵏ ⵜⴰⴼⵔⵎⵓⵜ ⵏ ⵜⵖⵉⵎⵉⵜ (ⴰⵣⵡⵍ X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ⵉⵜⵜⵓⵙⵅⵙⵉ: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ⵓⵔ ⵉⵙⵎⵎⴰ ⴰⵎⵙⵏⴰⵖ.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>ⵜⴰⵏⵙⴰ ⵉⵇⵇⴰⵏ ⴰⴷ ⵜⵉⴳ ⵜⴰⵏⵙⴰ ⵏ https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>ⴰⵎⵙⵏⴰⵖ %host ⵓⵔ ⵉⵍⵍⵉ ⴳ graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ⵓⵔ ⵉⵥⴹⵉⵕ ⵓⵙⵖⵉ ⵏ ⵓⴼⴰⵢⵍⵓ.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ⵖⴰⵙ ⴰⵏⴰⵡ ⵏ ⵓⵙⴽⵛⵎ.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>ⴰⵎⵙⵏⴼⵍ ⵏ ⵓⵏⴰⵡ Upload ⵉⵟⵟⴰⴼ ⴰⴼⴰⵢⵍⵓ ⵏ ⵓⵙⵓⵜⵔ ⵙ ⵡⴰⵟⵟⴰⵙ ⵏ ⵉⵃⵔⵉⵛⵏ.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>remote id %remoteId ⵉⵜⵜⵓⵙⵎⵔⵙ ⵢⴰⴷⵍⵍⵉ.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>ⴰⴳⴱⵓⵔ ⴷⴰⵔⵙ ⵢⴰⴷⵍⵍⵉ ⵜⴰⵙⵓⵖⵍⵜ ⵙ %language: ⵙⵙⵎⵔⵙ updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>ⴰⴽⴽ ⵎⴰⵏⵉⵎⵉⵍ ⵢⴰⵏ ⵓⵏⵙⴰ.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>ⵓⵔ ⵉⵥⴹⵉⵕ ⵓⵙⴽⵔ ⵏ ⵜⵓⵏⵖⵉⵍⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ (ⴰⴳⴱⵓⵔ ⴷⴰⵔⵙ ⵉⵔⵡⵡⴰⵢⵏ ⴳⴰⵏ ⴰⵟⵟⴰⵙ).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>ⵜⵓⵏⵖⵉⵍⵜ %version ⵓⵔ ⵜⴳⵉ ⴰⵔⵡⵡⴰⵢ.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent ⵉⵃⵜⴰⵊ ⵢⴰⵏ ⵖⴰⵙ ⴳ id ⴷ nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ⴰⴷⵖⴰⵔ ⵓⵔ ⵉⵥⴹⴰⵕ ⴰⴷ ⵉⵎⵎⴰⵜⵜⵉ ⴷⴷⴰⵡ ⵉⵅⴼ ⵏⵏⵙ.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>ⴰⴳⴱⵓⵔ ⴷⴰⵔⵙ ⵢⴰⴷⵍⵍⵉ ⴰⴷⵖⴰⵔ ⴷⴷⴰⵡ %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>ⵓⵔ ⵉⵥⴹⵉⵕ ⵓⵃⵔⵣ ⵏ ⵡⴰⵣⴰⵍ ⵏ ⵓⵏⵙⴰ %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>ⵓⵔ ⵜⵍⵍⵉ ⵜⵓⵜⵍⴰⵢⵜ ⵏ ⵓⴳⴱⵓⵔ %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>ⵓⵔ ⵉⵍⵍⵉ ⵓⵙⵎⵉⵍ ⵏ ⵓⴳⴱⵓⵔ %class ⴳ ⵓⵙⴽⵉⵎⴰ.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>ⴰⴳⴱⵓⵔ ⵓⵔ ⵉⵍⵍⵉ, ⵏⵖ ⵓⵔ ⵜⵥⴹⴰⵕⴷ ⴰⴷ ⵜⵖⵔⴷ.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>ⵓⵔ ⵜⵥⴹⴰⵕⴷ ⴰⴷ ⵜⴳⴷ ⴰⵢⴰ ⵉ ⵓⴳⴱⵓⵔ ⴰⴷ.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>ⴰⵙⵎⵉⵍ %class ⵓⵔ ⴷⴰⵔⵙ ⴰⵏⵙⴰ %field ⵍⵍⵉ ⵉⵥⴹⴰⵕⵏ ⴰⴷ ⵉⵜⵜⵓⵔⴰ.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>ⴰⵏⵙⴰ %field ⵉⵜⵜⵓⴼⴽⴰ ⵙⵉⵏ ⵜⵉⴽⴽⴰⵍ.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>ⴰⵏⵙⴰ %field ⵉⵟⵟⴰⴼ ⴰⴼⴰⵢⵍⵓ: ⴰⵣⵏ ⵜ ⵣⵓⵏⴷ upload (ⴰⵙⵓⵜⵔ ⵙ ⵡⴰⵟⵟⴰⵙ ⵏ ⵉⵃⵔⵉⵛⵏ).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>ⴰⵏⵙⴰ %field ⵓⵔ ⵉⵟⵟⴰⴼ ⴰⴼⴰⵢⵍⵓ.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>ⴰⵏⵙⴰ %field ⵉⵃⵜⴰⵊ ⴰⵣⴰⵍ.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>ⵜⴰⵍⵖⴰ %format ⵖⴰⵙ ⵉ ⵉⵏⵙⴰ ⵏ ⵓⴹⵔⵉⵙ ⴰⵎⵓⵔⴰⵏ; %field ⵉⵟⵟⴰⴼ ⴰⵣⴰⵍ ⵏⵏⵙ ⵣⵓⵏⴷ ⵎⴰⴷ ⵉⴳⴰ (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>ⴰⵏⵙⴰ %field ⵉⵇⵇⴰⵏ.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>ⵓⵔ ⵉⵥⴹⵉⵕ ⵓⵖⵔⵉ ⵏ HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content ⵉⵟⵟⴰⴼ version ⵙ id ⵖⴰⵙ.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>ⵜⴰⵎⴰⵜⴰⵔⵜ ⵏ ⵓⵙⴽⴰⵏ ⵓⵔ ⵜⵚⵃⵉ ⵏⵖ ⵜⴽⵎⵎⵍ.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>ⵓⵔ ⵉⴳⵉ ⴰⵏⴱⴹⵓ (origin) (https://host ⵏⵖ https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>ⵓⵔ ⵜⴳⵉ ⵜⴰⵎⵏⴰⴹⵜ ⵏ GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

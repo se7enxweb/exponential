@@ -78880,5 +78880,177 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>Mila iray monja amin&apos;ny id, identifier sy urlAlias ny layout.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Tsy fangatahana JSON tokana ny saha operations an'ny fangatahana multipart.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Tsy zavatra JSON ny saha map an'ny fangatahana multipart.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Tsy misy rakitra %field ny fangatahana multipart.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Tsy maintsy manomboka amin'ny variables. ny lalana ao amin'ny saha map: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Tsy tonga feno ny rakitra %name (hadisoana fampakarana %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Lehibe mihoatra ny %max oktety ny rakitra %name.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Tsy voamarina ny rakitra %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Maty ny fanovana (mutation) amin'ity fidirana amin'ny tranonkala ity (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Alefaso amin'ny POST ny fanovana.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Midira mba hanova votoaty.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Tsy manana sehatra %scope ny fanalahidy API.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mila ny famantarana taratasy an'ny session ny fanovana misy session (lohateny X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>Maty ny uploadFromUrl: tsy manonona mpampiantrano na iray aza ny graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Tsy maintsy adiresy https ny adiresy.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Tsy ao amin'ny graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ny mpampiantrano %host.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Tsy voaray ny rakitra.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Karazana fampidirana ihany ny Upload.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Ny miova karazana Upload dia mandray rakitra avy amin'ny fangatahana multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Efa voaray ny id lavitra %remoteId.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Efa manana dikanteny amin'ny %language ny votoaty: ampiasao ny updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Omeo saha iray farafahakeliny.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Tsy afaka namorona dika vaovao (be loatra ny drafitra ananan'ny votoaty).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Tsy drafitra ny dika %version.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>Mila iray monja amin'ny id sy nodeId ny deleteContent.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Tsy azo afindra ao ambanin'ny tenany ny toerana iray.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Efa manana toerana ao ambanin'ny %parentId ny votoaty.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Tsy voatahiry ny sandan'ny saha %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Tsy misy fiteny votoaty %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Tsy misy kilasy votoaty %class ao amin'ny rafitra.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Tsy eo ny votoaty, na tsy azonao vakiana.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Tsy azonao atao amin'ity votoaty ity izany.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Tsy manana saha %field azo soratana ny kilasy %class.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Indroa no nomena ny saha %field.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Mandray rakitra ny saha %field: alefaso ho fampakarana (fangatahana multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Tsy mandray rakitra ny saha %field.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Mila sanda ny saha %field.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Ho an'ny saha lahatsoratra manankarena ihany ny endrika %format; raisin'ny %field araka izay misy ny sandany (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Ilaina ny saha %field.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Tsy voavaky ny HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content dia mandray version miaraka amin'ny id ihany.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Tsy manan-kery na lany daty ny famantarana topi-maso.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Tsy origin (https://host na https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Tsy sehatry ny GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

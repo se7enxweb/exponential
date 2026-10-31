@@ -78880,5 +78880,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout маҳз яке аз id, identifier ва urlAlias-ро талаб мекунад.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Майдони operations-и муроҷиати multipart як муроҷиати JSON нест.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Майдони map-и муроҷиати multipart объекти JSON нест.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Дар муроҷиати multipart файли %field нест.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Роҳи майдони map бояд бо variables. оғоз шавад: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Файли %name пурра нарасид (хатои боркунӣ %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Файли %name аз %max байт калонтар аст.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Файли %name-ро санҷидан имконнопазир шуд.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Мутатсияҳо дар ин дастрасии сомона хомӯшанд (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Мутатсияро бо POST фиристед.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Барои тағйир додани мундариҷа ворид шавед.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Калиди API доираи %scope надорад.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Мутатсия бо ҷаласа токени шакли ҷаласаро талаб мекунад (сарлавҳаи X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl хомӯш аст: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ягон хостро номбар намекунад.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Нишонӣ бояд нишонии https бошад.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Хости %host дар graphql.ini [GraphQLSettings] UploadFromUrlHostList[] нест.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Файлро гирифтан имконнопазир шуд.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload танҳо навъи воридотӣ аст.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Тағйирёбандаи навъи Upload файли муроҷиати multipart-ро мегирад.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>remote id-и %remoteId аллакай банд аст.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Мундариҷа аллакай тарҷума ба %language дорад: updateContent-ро истифода баред.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Ақаллан як майдон диҳед.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Версияи нав сохтан имконнопазир шуд (мундариҷа аз ҳад зиёд сиёҳнавис дорад).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Версияи %version сиёҳнавис нест.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent маҳз яке аз id ва nodeId-ро талаб мекунад.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Ҷойгиршавиро ба зери худаш интиқол додан мумкин нест.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Мундариҷа аллакай дар зери %parentId ҷойгиршавӣ дорад.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Қимати майдони %field-ро захира кардан имконнопазир шуд.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Забони мундариҷаи %language вуҷуд надорад.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Дар схема синфи мундариҷаи %class нест.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Мундариҷа вуҷуд надорад, ё шумо онро хонда наметавонед.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Шумо ин амалро бо ин мундариҷа карда наметавонед.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Синфи %class майдони навиштании %field надорад.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Майдони %field ду бор дода шудааст.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Майдони %field файл мегирад: онро ҳамчун боркунӣ фиристед (муроҷиати multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Майдони %field файл намегирад.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Майдони %field қимат талаб мекунад.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Формати %format танҳо барои майдонҳои матни ғанӣ аст; %field қиматашро ҳамон тавре ки ҳаст мегирад (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Майдони %field ҳатмӣ аст.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-ро хондан имконнопазир шуд.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content version-ро танҳо бо id мегирад.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Токени пешнамоиш нодуруст аст ё мӯҳлаташ гузаштааст.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ин origin нест (https://host ё https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Доираи GraphQL API нест: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

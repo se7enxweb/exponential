@@ -78880,5 +78880,177 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout bezonas ekzakte unu el id, identifier kaj urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>La kampo operations de multparta peto ne estas unu JSON-peto.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>La kampo map de multparta peto ne estas JSON-objekto.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>La multparta peto ne enhavas la dosieron %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Vojo de la kampo map devas komenciĝi per variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>La dosiero %name ne alvenis tuta (alŝuta eraro %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>La dosiero %name estas pli granda ol %max bajtoj.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Ne eblis kontroli la dosieron %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutacioj estas malŝaltitaj en ĉi tiu retejaliro (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Sendu mutacion per POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Ensalutu por ŝanĝi enhavon.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>La API-ŝlosilo ne havas la amplekson %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutacio kun seanco bezonas la formularan ĵetonon de la seanco (kapo X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl estas malŝaltita: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nomas neniun gastiganton.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>La adreso devas esti https-adreso.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>La gastiganto %host ne estas en graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Ne eblis elŝuti la dosieron.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload estas nur enigtipo.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Variablo de tipo Upload prenas dosieron de multparta peto.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>La fora identigilo %remoteId jam estas uzata.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>La enhavo jam havas tradukon en %language: uzu updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Donu almenaŭ unu kampon.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Ne eblis krei novan version (la enhavo havas tro da malnetoj).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Versio %version ne estas malneto.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent bezonas ekzakte unu el id kaj nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Loko ne povas esti movita sub sin mem.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>La enhavo jam havas lokon sub %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Ne eblis konservi la valoron de la kampo %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Ne ekzistas enhavlingvo %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Ne ekzistas enhavklaso %class en la skemo.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>La enhavo ne ekzistas, aŭ vi ne rajtas legi ĝin.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Vi ne rajtas fari tion al ĉi tiu enhavo.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>La klaso %class ne havas skribeblan kampon %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>La kampo %field estas donita dufoje.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>La kampo %field prenas dosieron: sendu ĝin kiel alŝuton (multparta peto).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>La kampo %field prenas neniun dosieron.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>La kampo %field bezonas valoron.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>La formato %format estas nur por riĉtekstaj kampoj; %field prenas sian valoron tia, kia ĝi estas (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>La kampo %field estas deviga.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Ne eblis legi la HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content akceptas version nur kun id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>La antaŭrigarda ĵetono ne validas aŭ eksvalidiĝis.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ne estas origino (https://host aŭ https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ne estas amplekso de la GraphQL-API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

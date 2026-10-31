@@ -78880,5 +78880,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout না id, identifier অমসুং urlAlias দগী অমখক্তমক মথৌ তাই।</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>মল্তিপার্ত হায়জবা অমগী operations ফিল্দ অসি JSON হায়জবা অমা নত্তে।</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>মল্তিপার্ত হায়জবা অমগী map ফিল্দ অসি JSON ওবজেক্ত অমা নত্তে।</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>মল্তিপার্ত হায়জবা অসিদা ফাইল %field লৈতে।</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map ফিল্দকী পাথ অমা variables. দগী হৌগদবনি: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>ফাইল %name অসি মপুংফানা লাক্তে (অপলোদ অশোয়বা %error)।</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>ফাইল %name অসি %max বাইততগী হেন্না চাউই।</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>ফাইল %name অসি য়েংশিনবা ঙম্দ্রে।</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>সাইট একসেস অসিদা মিউতেসনশিং থোংজিনখ্রে (graphql.ini [GraphQLSettings] MutationsEnabled)।</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>মিউতেসন অমা POST চানবিদুনা থাবিয়ু।</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>কন্তেন্ত হোংদোকনবগীদমক সাইন ইন তৌবিয়ু।</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API কী অসিদা স্কোপ %scope লৈতে।</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>সেসন লৈবা মিউতেসন অমগীদমক সেসনগী ফোর্ম তোকেন মথৌ তাই (হেদর X-CSRF-Token)।</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl থোংজিনখ্রে: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] না হোস্ত অমত্তা মমিং লৌদ্রে।</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>এদ্রেস অসি https এদ্রেস অমা ওইগদবনি।</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>হোস্ত %host অসি graphql.ini [GraphQLSettings] UploadFromUrlHostList[] দা লৈতে।</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ফাইল অসি পুরকপা ঙম্দ্রে।</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload অসি ইনপুত মখল খক্তনি।</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload মখলগী ভেরিএবল অমনা মল্তিপার্ত হায়জবা অমগী ফাইল অমা লৌই।</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>রিমোত id %remoteId অসি হান্নদগী লৌখ্রে।</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>কন্তেন্ত অসিদা হান্নদগী %language দা হন্দোকপা লৈরে: updateContent শিজিন্নবিয়ু।</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>খ্বাইদগী নপীবদা ফিল্দ অমা পীবিয়ু।</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>অনৌবা ভর্সন অমা শেমগৎপা ঙম্দ্রে (কন্তেন্ত অসিদা দ্রাফ্ত য়াম্না য়াম্লে)।</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>ভর্সন %version অসি দ্রাফ্ত নত্তে।</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent না id অমসুং nodeId গী মনুংদগী অমখক্তা মথৌ তাই।</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>মফম অমা মশাগী মখাদা লেংদোকপা ঙমদে।</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>কন্তেন্ত অসিদা হান্নদগী %parentId গী মখাদা মফম অমা লৈরে।</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>ফিল্দ %field গী ভেল্যু অসি থম্বা ঙম্দ্রে।</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>কন্তেন্ত লোন %language লৈতে।</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>স্কিমাদা কন্তেন্ত ক্লাস %class লৈতে।</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>কন্তেন্ত অসি লৈতে, নত্রগা নহাক্না পাবা য়াদে।</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>নহাক্না কন্তেন্ত অসিদা মসি তৌবা য়াদে।</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>ক্লাস %class দা ইবা য়াবা ফিল্দ %field লৈতে।</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>ফিল্দ %field অসি অনিরক পীখ্রে।</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>ফিল্দ %field না ফাইল অমা লৌই: মদু অপলোদ ওইনা থাবিয়ু (মল্তিপার্ত হায়জবা)।</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>ফিল্দ %field না ফাইল লৌদে।</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>ফিল্দ %field দা ভেল্যু অমা মথৌ তাই।</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>ফোর্মেত %format অসি রিচ তেক্সত ফিল্দশিংগীদমক খক্তনি; %field না মগী ভেল্যু লৈবা মতৌ অদুম লৌই (RAW)।</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>ফিল্দ %field অসি মথৌ তাই।</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML অসি পাবা ঙম্দ্রে।</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content না version অসি id গা লোয়ননা খক্তা লৌই।</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>প্রিভিউ তোকেন অসি চৎনবা ঙমদে নত্রগা মতম লোইখ্রে।</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>অরিজিন অমা নত্তে (https://host নত্রগা https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API গী স্কোপ অমা নত্তে: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

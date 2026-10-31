@@ -78910,5 +78910,177 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout benodig presies een van id, identifier en urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Die veld operations van 'n multipart-versoek is nie een JSON-versoek nie.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Die veld map van 'n multipart-versoek is nie 'n JSON-objek nie.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Die multipart-versoek bevat geen lêer %field nie.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>'n Pad van die veld map moet met variables. begin: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Die lêer %name het nie volledig aangekom nie (oplaaifout %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Die lêer %name is groter as %max grepe.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Die lêer %name kon nie nagegaan word nie.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutasies is in hierdie werftoegang afgeskakel (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Stuur 'n mutasie met POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Meld aan om inhoud te verander.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Die API-sleutel het nie die bestek %scope nie.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>'n Mutasie met 'n sessie benodig die vormtoken van die sessie (kopreël X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl is afgeskakel: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] noem geen gasheer nie.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Die adres moet 'n https-adres wees.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Die gasheer %host is nie in graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nie.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Die lêer kon nie gehaal word nie.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload is slegs 'n invoertipe.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>'n Veranderlike van die tipe Upload neem 'n lêer van 'n multipart-versoek.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Die remote id %remoteId is reeds in gebruik.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Die inhoud het reeds 'n vertaling in %language: gebruik updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Gee ten minste een veld.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Geen nuwe weergawe kon gemaak word nie (die inhoud het te veel konsepte).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Weergawe %version is nie 'n konsep nie.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent benodig presies een van id en nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>'n Ligging kan nie onder homself geskuif word nie.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Die inhoud het reeds 'n ligging onder %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Die waarde van die veld %field kon nie gestoor word nie.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Daar is geen inhoudstaal %language nie.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Daar is geen inhoudsklas %class in die skema nie.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Die inhoud bestaan nie, of jy mag dit nie lees nie.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Jy mag dit nie aan hierdie inhoud doen nie.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Die klas %class het geen veld %field wat geskryf mag word nie.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Die veld %field is twee keer gegee.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Die veld %field neem 'n lêer: stuur dit as oplaai ('n multipart-versoek).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Die veld %field neem geen lêer nie.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Die veld %field benodig 'n waarde.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Die formaat %format is slegs vir ryk-teksvelde; %field neem sy waarde soos dit is (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Die veld %field is verpligtend.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Die HTML kon nie gelees word nie.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content neem version slegs saam met id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Die voorskoutoken is ongeldig of het verval.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Nie 'n oorsprong nie (https://host of https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Nie 'n bestek van die GraphQL-API nie: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

@@ -78880,5 +78880,177 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout id, identifier fi urlAlias keessaa tokkicha qofa barbaada.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Dirreen operations iyyannoo multipart iyyannoo JSON tokko miti.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Dirreen map iyyannoo multipart wanta JSON miti.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Iyyannoon multipart faayilii %field hin qabu.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Daandiin kaartaa dirreewwanii variables. jalqabuu qaba: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Faayiliin %name guutummaatti hin geenye (dogoggora olkaa'insaa %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Faayiliin %name baayitii %max caala guddaadha.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Faayilii %name mirkaneessuun hin danda'amne.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Jijjiiramoonni (mutation) seensa marsariitii kana keessatti dhaamsamaniiru (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Jijjiirama POST'n ergi.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Qabiyyee jijjiiruuf seeni.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Furtuun API daangaa %scope hin qabu.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Jijjiiramni yeroo seensaa wajjin jiru mallattoo unka yeroo sanaa barbaada (mataduree X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl dhaamsameera: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] keessatti keessummeessaan tokkollee hin jiru.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Teessoon teessoo https ta'uu qaba.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Keessummeessaan %host graphql.ini [GraphQLSettings] UploadFromUrlHostList[] keessa hin jiru.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Faayilii fiduun hin danda'amne.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload gosa galtee qofa.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Jijjiiraman gosa Upload faayilii iyyannoo multipart fudhata.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Eenyummaan fagoo %remoteId duraanuu qabameera.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Qabiyyeen duraanuu %language'n hiika qaba: updateContent fayyadami.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Yoo xiqqaate dirree tokko kenni.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Gulaalli haaraan hojjetamuu hin dandeenye (qabiyyeen wixineewwan baay'ee qaba).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Gulaalli %version wixinee miti.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent id fi nodeId keessaa tokko qofa barbaada.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Bakki ofii isaa jala hin socho'u.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Qabiyyeen duraanuu %parentId jala bakka qaba.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Gatii dirree %field kuusuun hin danda'amne.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Afaan qabiyyee %language hin jiru.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Caasaa keessa kutaan qabiyyee %class hin jiru.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Qabiyyeen hin jiru, ykn dubbisuu hin dandeessu.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Qabiyyee kana irratti kana gochuu hin dandeessu.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Kutaan %class dirree %field barreeffamuu danda'u hin qabu.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Dirreen %field si'a lama kennameera.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Dirreen %field faayilii fudhata: akka olkaa'iinsaatti ergi (iyyannoo multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Dirreen %field faayilii hin fudhatu.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Dirreen %field gatii barbaada.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Bifni %format dirreewwan barruu badhaadhaa qofaaf; %field gatii isaa akkuma jirutti fudhata (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Dirreen %field barbaachisaadha.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML dubbisuun hin danda'amne.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content version id wajjin qofa fudhata.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Mallattoon duraaltee mul'isuu sirrii miti ykn yeroon isaa darbeera.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Origin miti (https://host ykn https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Daangaa GraphQL API miti: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

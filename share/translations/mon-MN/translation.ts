@@ -78880,5 +78880,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout нь id, identifier болон urlAlias-ын яг нэгийг шаардана.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Олон хэсэгт хүсэлтийн operations талбар нь нэг JSON хүсэлт биш байна.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Олон хэсэгт хүсэлтийн map талбар нь JSON объект биш байна.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Олон хэсэгт хүсэлтэд %field файл алга.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map талбарын зам variables.-аар эхлэх ёстой: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name файл бүтэн ирсэнгүй (байршуулалтын алдаа %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name файл %max байтаас том байна.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name файлыг шалгаж чадсангүй.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Энэ сайтын хандалтад мутаци унтраалттай байна (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Мутацийг POST-оор илгээнэ үү.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Агуулгыг өөрчлөхийн тулд нэвтэрнэ үү.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API түлхүүрт %scope хамрах хүрээ алга.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Сесстэй мутацид сессийн маягтын токен шаардлагатай (толгой X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl унтраалттай: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ямар ч хост заагаагүй.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Хаяг нь https хаяг байх ёстой.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host хост graphql.ini [GraphQLSettings] UploadFromUrlHostList[]-д байхгүй.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Файлыг татаж чадсангүй.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload нь зөвхөн оролтын төрөл.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload төрлийн хувьсагч олон хэсэгт хүсэлтийн файлыг авна.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Алсын id %remoteId аль хэдийн ашиглагдсан.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Агуулга %language хэл дээр аль хэдийн орчуулгатай: updateContent ашиглана уу.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Дор хаяж нэг талбар өгнө үү.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Шинэ хувилбар үүсгэж чадсангүй (агуулга хэт олон ноорогтой).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>%version хувилбар ноорог биш.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent-д id ба nodeId-ийн яг нэг нь шаардлагатай.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Байршлыг өөрийнх нь доор зөөх боломжгүй.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Агуулга %parentId-ийн доор аль хэдийн байршилтай.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field талбарын утгыг хадгалж чадсангүй.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language агуулгын хэл байхгүй.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Схемд %class агуулгын анги байхгүй.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Агуулга байхгүй, эсвэл та үүнийг унших эрхгүй.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Та энэ агуулгад ийм үйлдэл хийх эрхгүй.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class ангид бичиж болох %field талбар байхгүй.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field талбарыг хоёр удаа өгсөн байна.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field талбар файл авна: үүнийг байршуулалт болгон илгээнэ үү (олон хэсэгт хүсэлт).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field талбар файл авахгүй.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field талбарт утга шаардлагатай.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format формат нь зөвхөн баян текстийн талбарт зориулагдсан; %field утгаа байгаагаар нь авна (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field талбар заавал шаардлагатай.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-ийг уншиж чадсангүй.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content нь version-ийг зөвхөн id-тэй хамт авна.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Урьдчилан харах токен хүчингүй эсвэл хугацаа нь дууссан.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Эх үүсвэр биш (https://host эсвэл https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API-ийн хамрах хүрээ биш: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

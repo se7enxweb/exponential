@@ -78880,5 +78880,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout ត្រូវការតែមួយគត់ក្នុងចំណោម id, identifier និង urlAlias។</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>វាល operations នៃសំណើ multipart មិនមែនជាសំណើ JSON តែមួយទេ។</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>វាល map នៃសំណើ multipart មិនមែនជាវត្ថុ JSON ទេ។</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>សំណើ multipart មិនមានឯកសារ %field ទេ។</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>ផ្លូវមួយនៃផែនទីវាលត្រូវតែចាប់ផ្ដើមដោយ variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>ឯកសារ %name មកមិនពេញលេញទេ (កំហុសផ្ទុកឡើង %error)។</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>ឯកសារ %name ធំជាង %max បៃ។</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>មិនអាចពិនិត្យឯកសារ %name បានទេ។</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>ម្យូតេសិនត្រូវបានបិទនៅក្នុងការចូលគេហទំព័រនេះ (graphql.ini [GraphQLSettings] MutationsEnabled)។</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>សូមផ្ញើម្យូតេសិនដោយ POST។</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>សូមចូលដើម្បីផ្លាស់ប្ដូរមាតិកា។</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>កូនសោ API មិនមានវិសាលភាព %scope ទេ។</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>ម្យូតេសិនដែលមានវគ្គ ត្រូវការតូខឹនទម្រង់របស់វគ្គនោះ (header X-CSRF-Token)។</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ត្រូវបានបិទ៖ graphql.ini [GraphQLSettings] UploadFromUrlHostList[] មិនបានដាក់ឈ្មោះម៉ាស៊ីនណាមួយទេ។</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>អាសយដ្ឋានត្រូវតែជាអាសយដ្ឋាន https។</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>ម៉ាស៊ីន %host មិនមាននៅក្នុង graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ទេ។</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>មិនអាចទាញយកឯកសារបានទេ។</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload គឺជាប្រភេទបញ្ចូលតែប៉ុណ្ណោះ។</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>អថេរប្រភេទ Upload ទទួលឯកសារនៃសំណើ multipart។</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>remote id %remoteId ត្រូវបានប្រើរួចហើយ។</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>មាតិកាមានការបកប្រែជា %language រួចហើយ៖ សូមប្រើ updateContent។</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>សូមផ្ដល់វាលយ៉ាងហោចណាស់មួយ។</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>មិនអាចបង្កើតកំណែថ្មីបានទេ (មាតិកាមានសេចក្ដីព្រាងច្រើនពេក)។</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>កំណែ %version មិនមែនជាសេចក្ដីព្រាងទេ។</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent ត្រូវការតែមួយគត់ក្នុងចំណោម id និង nodeId។</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ទីតាំងមិនអាចផ្លាស់ទីទៅក្រោមខ្លួនឯងបានទេ។</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>មាតិកាមានទីតាំងនៅក្រោម %parentId រួចហើយ។</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>មិនអាចរក្សាទុកតម្លៃនៃវាល %field បានទេ។</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>គ្មានភាសាមាតិកា %language ទេ។</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>គ្មានថ្នាក់មាតិកា %class នៅក្នុងគ្រោងការណ៍ទេ។</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>មាតិកាមិនមានទេ ឬអ្នកមិនអាចអានវាបានទេ។</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>អ្នកមិនអាចធ្វើការនេះលើមាតិកានេះបានទេ។</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>ថ្នាក់ %class មិនមានវាល %field ដែលអាចសរសេរបានទេ។</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>វាល %field ត្រូវបានផ្ដល់ពីរដង។</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>វាល %field ទទួលឯកសារ៖ សូមផ្ញើវាជាការផ្ទុកឡើង (សំណើ multipart)។</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>វាល %field មិនទទួលឯកសារទេ។</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>វាល %field ត្រូវការតម្លៃ។</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>ទម្រង់ %format សម្រាប់តែវាលអត្ថបទសម្បូរបែបប៉ុណ្ណោះ; %field ទទួលតម្លៃរបស់វាដដែល (RAW)។</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>វាល %field ត្រូវតែមាន។</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>មិនអាចអាន HTML បានទេ។</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content ទទួល version តែជាមួយ id ប៉ុណ្ណោះ។</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>តូខឹនមើលជាមុនមិនត្រឹមត្រូវ ឬផុតកំណត់ហើយ។</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>មិនមែនជា origin ទេ (https://host ឬ https://host:port)៖ %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>មិនមែនជាវិសាលភាពនៃ GraphQL API ទេ៖ %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

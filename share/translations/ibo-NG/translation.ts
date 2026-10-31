@@ -78878,5 +78878,177 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout chọrọ otu n&apos;ime id, identifier na urlAlias, naanị otu.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Ubi operations nke arịrịọ multipart abụghị otu arịrịọ JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Ubi map nke arịrịọ multipart abụghị ihe JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Arịrịọ multipart enweghị faịlụ %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Ụzọ nke maapụ ubi ga-amalite na variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Faịlụ %name erughị ebe a n'ozuzu (njehie mbulite %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Faịlụ %name karịrị baịtị %max.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Enweghị ike ịlele faịlụ %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Agbanyụrụ mmegharị na Nnweta saịtị a (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Ziga mmegharị site na POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Banye ka ịgbanwee ọdịnaya.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Igodo API enweghị mpaghara %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mmegharị nwere nnọkọ chọrọ tokin fọm nke nnọkọ ahụ (isi X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl agbanyụrụ: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] akpọghị aha sava ọ bụla.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adreesị ga-abụrịrị adreesị https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Sava %host adịghị na graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Enweghị ike iweta faịlụ ahụ.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload bụ naanị ụdị ntinye.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Ihe agbanwe nke ụdị Upload na-anabata faịlụ nke arịrịọ multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>E werela remote id %remoteId.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Ọdịnaya ahụ enweelarị ntụgharị na %language: jiri updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Nye opekata mpe otu ubi.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Enweghị ike ịme ụdị ọhụrụ (ọdịnaya ahụ nwere ndepụta mbụ karịrị akarị).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Ụdị %version abụghị ndepụta mbụ.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent chọrọ otu n'ime id na nodeId, naanị otu.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Enweghị ike ibuga ebe n'okpuru onwe ya.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Ọdịnaya ahụ enweelarị ebe n'okpuru %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Enweghị ike ichekwa uru nke ubi %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Asụsụ ọdịnaya %language adịghị.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Klasị ọdịnaya %class adịghị na schema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Ọdịnaya ahụ adịghị, ma ọ bụ na ị nweghị ike ịgụ ya.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Ị nweghị ike ime nke a n'ọdịnaya a.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Klasị %class enweghị ubi %field enwere ike ide.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>E nyere ubi %field ugboro abụọ.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Ubi %field na-anabata faịlụ: ziga ya dị ka mbulite (arịrịọ multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Ubi %field anaghị anabata faịlụ.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Ubi %field chọrọ uru.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Usoro %format bụ naanị maka ubi ederede bara ụba; %field na-anabata uru ya otú ọ dị (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Ubi %field dị mkpa.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Enweghị ike ịgụ HTML ahụ.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content na-anabata version naanị ya na id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Tokin nlele adịghị mma ma ọ bụ agwụla.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ọ bụghị origin (https://host ma ọ bụ https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ọ bụghị mpaghara nke GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

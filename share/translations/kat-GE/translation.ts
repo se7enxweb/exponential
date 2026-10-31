@@ -78880,5 +78880,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout-ს სჭირდება ზუსტად ერთი შემდეგთაგან: id, identifier ან urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart მოთხოვნის ველი operations არ არის ერთი JSON მოთხოვნა.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart მოთხოვნის ველი map არ არის JSON ობიექტი.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart მოთხოვნას არ აქვს ფაილი %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>ველების რუკის გზა უნდა იწყებოდეს variables.-ით: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>ფაილი %name სრულად არ მოვიდა (ატვირთვის შეცდომა %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>ფაილი %name %max ბაიტზე დიდია.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>ფაილის %name შემოწმება ვერ მოხერხდა.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>მუტაციები გამორთულია ამ საიტზე წვდომაში (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>მუტაცია გაგზავნეთ POST-ით.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>შედით სისტემაში შიგთავსის შესაცვლელად.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API გასაღებს არ აქვს მოქმედების არე %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>სესიით გაგზავნილ მუტაციას სჭირდება სესიის ფორმის ტოკენი (სათაური X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl გამორთულია: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] არც ერთ ჰოსტს არ ასახელებს.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>მისამართი უნდა იყოს https მისამართი.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>ჰოსტი %host არ არის graphql.ini [GraphQLSettings] UploadFromUrlHostList[]-ში.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ფაილის მიღება ვერ მოხერხდა.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload მხოლოდ შეყვანის ტიპია.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload ტიპის ცვლადი იღებს multipart მოთხოვნის ფაილს.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>დისტანციური id %remoteId უკვე დაკავებულია.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>შიგთავსს უკვე აქვს თარგმანი %language ენაზე: გამოიყენეთ updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>მიუთითეთ მინიმუმ ერთი ველი.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>ახალი ვერსიის შექმნა ვერ მოხერხდა (შიგთავსს ძალიან ბევრი მონახაზი აქვს).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>ვერსია %version არ არის მონახაზი.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent-ს სჭირდება ზუსტად ერთი შემდეგთაგან: id ან nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>მდებარეობის გადატანა საკუთარი თავის ქვეშ შეუძლებელია.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>შიგთავსს უკვე აქვს მდებარეობა %parentId-ის ქვეშ.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>ველის %field მნიშვნელობის შენახვა ვერ მოხერხდა.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>შიგთავსის ენა %language არ არსებობს.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>შიგთავსის კლასი %class სქემაში არ არსებობს.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>შიგთავსი არ არსებობს, ან მისი წაკითხვის უფლება არ გაქვთ.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>ამ შიგთავსზე ამის გაკეთების უფლება არ გაქვთ.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>კლასს %class არ აქვს ჩასაწერად ნებადართული ველი %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>ველი %field ორჯერ არის მითითებული.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>ველი %field იღებს ფაილს: გაგზავნეთ ატვირთვად (multipart მოთხოვნა).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>ველი %field ფაილს არ იღებს.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>ველს %field სჭირდება მნიშვნელობა.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>ფორმატი %format მხოლოდ ფორმატირებული ტექსტის ველებისთვისაა; %field იღებს მნიშვნელობას როგორც არის (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>ველი %field სავალდებულოა.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-ის წაკითხვა ვერ მოხერხდა.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content იღებს version-ს მხოლოდ id-სთან ერთად.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>გადახედვის ტოკენი არასწორია ან ვადაგასულია.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>არ არის წყარო (https://host ან https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>არ არის GraphQL API-ის მოქმედების არე: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

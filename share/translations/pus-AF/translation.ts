@@ -78878,5 +78878,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout له id, identifier او urlAlias څخه دقیقاً یو ته اړتیا لري.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>د multipart غوښتنې operations ډګر یوه JSON غوښتنه نه ده.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>د multipart غوښتنې map ډګر JSON څیز نه دی.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>په multipart غوښتنه کې %field فایل نشته.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>د ډګرونو د نقشې یوه لار باید په variables. پیل شي: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>فایل %name بشپړ ونه رسېد (د پورته کولو تېروتنه %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>فایل %name له %max بایټه لوی دی.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>فایل %name ونه شو کتل کېدای.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>په دې سایټ لاسرسي کې میوټېشنونه بند دي (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>میوټېشن د POST سره ولېږئ.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>د منځپانګې د بدلولو لپاره ننوځئ.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>د API کیلي %scope ساحه نه لري.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>د ناستې سره میوټېشن د ناستې فورم ټوکن ته اړتیا لري (سرلیک X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl بند دی: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] هېڅ کوربه نه یادوي.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>پته باید https پته وي.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>کوربه %host په graphql.ini [GraphQLSettings] UploadFromUrlHostList[] کې نشته.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>فایل ونه شو راوړل کېدای.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload یوازې د ننوتو ډول دی.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>د Upload ډول متغیر د multipart غوښتنې فایل اخلي.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>لرې پېژند %remoteId دمخه نیول شوی.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>منځپانګه دمخه په %language کې ژباړه لري: updateContent وکاروئ.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>لږ تر لږه یو ډګر ورکړئ.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>نوې نسخه ونه شوه جوړېدای (منځپانګه ډېرې مسودې لري).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>نسخه %version مسوده نه ده.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent د id او nodeId څخه یوازې یوه ته اړتیا لري.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>یو ځای د ځان لاندې نه شي لېږدول کېدای.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>منځپانګه دمخه د %parentId لاندې ځای لري.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>د %field ډګر ارزښت ونه شو ساتل کېدای.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>د منځپانګې ژبه %language نشته.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>په سکیما کې د منځپانګې ټولګی %class نشته.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>منځپانګه نشته، یا تاسو یې نه شئ لوستلای.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>تاسو له دې منځپانګې سره دا کار نه شئ کولای.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>ټولګی %class د لیکلو وړ ډګر %field نه لري.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>ډګر %field دوه ځله ورکړل شوی.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>ډګر %field فایل اخلي: د پورته کولو په توګه یې ولېږئ (multipart غوښتنه).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>ډګر %field فایل نه اخلي.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>ډګر %field ارزښت ته اړتیا لري.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>بڼه %format یوازې د بډایه متن ډګرونو لپاره ده؛ %field خپل ارزښت هماغسې اخلي (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>ډګر %field اړین دی.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML ونه شو لوستل کېدای.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content یوازې د id سره version اخلي.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>د مخکتنې ټوکن سم نه دی یا یې موده پای ته رسېدلې.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>origin نه دی (https://host یا https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>د GraphQL API ساحه نه ده: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

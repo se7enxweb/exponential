@@ -78880,5 +78880,177 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>Feumaidh layout dìreach aon de id, identifier agus urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Chan e aon iarrtas JSON a th' ann an raon operations iarrtais multipart.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Chan e oibseact JSON a th' ann an raon map iarrtais multipart.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Chan eil faidhle %field san iarrtas multipart.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Feumaidh slighe de mhapa nan raointean tòiseachadh le variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Cha do ràinig am faidhle %name slàn (mearachd luchdaidh suas %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Tha am faidhle %name nas motha na %max baidht.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Cha b' urrainn dhuinn am faidhle %name a sgrùdadh.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Tha na mùthaidhean dheth san inntrigeadh làraich seo (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Cuir mùthadh le POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Clàraich a-steach gus susbaint atharrachadh.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Chan eil an sgòp %scope aig an iuchair API.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Feumaidh mùthadh le seisean tòcan foirm an t-seisein (bann-cinn X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>Tha uploadFromUrl dheth: chan ainmich graphql.ini [GraphQLSettings] UploadFromUrlHostList[] òstair sam bith.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Feumaidh an seòladh a bhith na sheòladh https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Chan eil an t-òstair %host ann an graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Cha b' urrainn dhuinn am faidhle fhaighinn.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Chan eil ann an Upload ach seòrsa ion-chuir.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Gabhaidh caochladair dhen t-seòrsa Upload ri faidhle iarrtais multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Tha an id cèin %remoteId ga chleachdadh mu thràth.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Tha eadar-theangachadh gu %language aig an t-susbaint mu thràth: cleachd updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Thoir seachad co-dhiù aon raon.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Cha b' urrainn dhuinn tionndadh ùr a dhèanamh (tha cus dreachdan aig an t-susbaint).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Chan e dreachd a th' ann an tionndadh %version.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>Feumaidh deleteContent dìreach aon de id agus nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Chan urrainn dhut ionad a ghluasad fodha fhèin.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Tha ionad fo %parentId aig an t-susbaint mu thràth.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Cha b' urrainn dhuinn luach an raoin %field a stòradh.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Chan eil cànan susbainte %language ann.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Chan eil clas susbainte %class san sgema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Chan eil an t-susbaint ann, no chan fhaod thu a leughadh.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Chan fhaod thu seo a dhèanamh ris an t-susbaint seo.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Chan eil raon %field as urrainnear sgrìobhadh ann aig a' chlas %class.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Chaidh an raon %field a thoirt seachad dà thuras.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Gabhaidh an raon %field ri faidhle: cuir e mar luchdadh suas (iarrtas multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Cha ghabh an raon %field ri faidhle.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Feumaidh an raon %field luach.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Tha am fòrmat %format do raointean teacsa bheairtich a-mhàin; gabhaidh %field ri a luach mar a tha e (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Tha an raon %field riatanach.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Cha b' urrainn dhuinn an HTML a leughadh.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>Cha ghabh content ri version ach còmhla ri id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Chan eil tòcan an ro-shealladh dligheach no dh'fhalbh an ùine air.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Chan e tùs a th' ann (https://host no https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Chan e sgòp an API GraphQL a th' ann: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

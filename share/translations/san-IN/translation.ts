@@ -78880,5 +78880,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout कृते id, identifier, urlAlias इत्येषु एकम् एव आवश्यकम्।</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart-अनुरोधस्य operations-क्षेत्रम् एकः JSON-अनुरोधः नास्ति।</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart-अनुरोधस्य map-क्षेत्रम् JSON-वस्तु नास्ति।</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart-अनुरोधे %field सञ्चिका नास्ति।</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>क्षेत्रमानचित्रस्य मार्गः variables. इत्यनेन आरभेत: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>सञ्चिका %name सम्पूर्णा न प्राप्ता (उपारोपणदोषः %error)।</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>सञ्चिका %name %max बाइट्-परिमाणात् बृहत्तरा अस्ति।</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>सञ्चिका %name परीक्षितुं न शक्ता।</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>अस्मिन् जालस्थलप्रवेशे म्यूटेशन्-क्रियाः निष्क्रियाः सन्ति (graphql.ini [GraphQLSettings] MutationsEnabled)।</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>म्यूटेशन्-क्रियां POST द्वारा प्रेषयतु।</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>विषयवस्तु परिवर्तयितुं प्रविशतु।</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API-कुञ्चिकायाः %scope व्याप्तिः नास्ति।</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>सत्रयुक्तायाः म्यूटेशन्-क्रियायाः सत्रस्य प्रपत्र-टोकन् आवश्यकम् (शीर्षकम् X-CSRF-Token)।</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl निष्क्रियम् अस्ति: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] इत्यत्र कोऽपि होस्ट् नास्ति।</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>सङ्केतः https-सङ्केतः भवेत्।</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>होस्ट् %host graphql.ini [GraphQLSettings] UploadFromUrlHostList[] इत्यत्र नास्ति।</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>सञ्चिका आनेतुं न शक्ता।</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload केवलम् आगत-प्रकारः अस्ति।</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload-प्रकारस्य चरः multipart-अनुरोधस्य सञ्चिकां गृह्णाति।</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>दूरस्थ-परिचयः %remoteId पूर्वमेव प्रयुक्तः।</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>विषयवस्तुनः %language भाषायाम् अनुवादः पूर्वमेव अस्ति: updateContent प्रयुज्यताम्।</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>न्यूनातिन्यूनम् एकं क्षेत्रं ददातु।</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>नूतनं संस्करणं कर्तुं न शक्तम् (विषयवस्तुनः अत्यधिकानि प्रारूपाणि सन्ति)।</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>संस्करणम् %version प्रारूपं नास्ति।</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent इत्यस्य id nodeId इत्यनयोः यथार्थम् एकम् आवश्यकम्।</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>स्थानं स्वस्य अधः चालयितुं न शक्यते।</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>विषयवस्तुनः %parentId अधः पूर्वमेव स्थानम् अस्ति।</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>क्षेत्रस्य %field मूल्यं संग्रहीतुं न शक्तम्।</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>विषयवस्तुभाषा %language नास्ति।</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>स्कीमायां विषयवस्तुवर्गः %class नास्ति।</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>विषयवस्तु नास्ति, अथवा भवान् तत् पठितुं न अर्हति।</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>भवान् अस्मिन् विषयवस्तुनि एतत् कर्तुं न अर्हति।</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>वर्गे %class लेखनीयं क्षेत्रं %field नास्ति।</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>क्षेत्रम् %field द्विवारं दत्तम्।</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>क्षेत्रम् %field सञ्चिकां गृह्णाति: ताम् उपारोपणरूपेण प्रेषयतु (multipart-अनुरोधः)।</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>क्षेत्रम् %field सञ्चिकां न गृह्णाति।</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>क्षेत्रस्य %field मूल्यम् आवश्यकम्।</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>प्रारूपः %format केवलं समृद्धपाठक्षेत्रेभ्यः; %field स्वमूल्यं यथावत् गृह्णाति (RAW)।</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>क्षेत्रम् %field अनिवार्यम्।</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML पठितुं न शक्तम्।</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content केवलं id सह version गृह्णाति।</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>पूर्वावलोकन-टोकन् अमान्यम् अथवा कालातीतम्।</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>origin नास्ति (https://host अथवा https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API इत्यस्य व्याप्तिः नास्ति: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

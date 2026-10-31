@@ -78912,5 +78912,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout דורש בדיוק אחד מבין id, identifier ו־urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>השדה operations של בקשת multipart אינו בקשת JSON אחת.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>השדה map של בקשת multipart אינו אובייקט JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>בבקשת ה־multipart אין קובץ %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>נתיב במיפוי השדות חייב להתחיל ב־variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>הקובץ %name לא הגיע בשלמותו (שגיאת העלאה %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>הקובץ %name גדול מ־%max בתים.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>לא ניתן היה לבדוק את הקובץ %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>המוטציות כבויות בגישת אתר זו (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>שלחו מוטציה עם POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>היכנסו כדי לשנות תוכן.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>למפתח ה־API אין את התחום %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>מוטציה עם סשן צריכה את אסימון הטופס של הסשן (כותרת X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl כבוי: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] אינו מציין אף מארח.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>הכתובת חייבת להיות כתובת https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>המארח %host אינו נמצא ב־graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>לא ניתן היה להביא את הקובץ.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload הוא סוג קלט בלבד.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>משתנה מסוג Upload מקבל קובץ של בקשת multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>המזהה המרוחק %remoteId כבר תפוס.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>לתוכן כבר יש תרגום ל־%language: השתמשו ב־updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>ציינו לפחות שדה אחד.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>לא ניתן היה ליצור גרסה חדשה (לתוכן יש יותר מדי טיוטות).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>גרסה %version אינה טיוטה.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent צריך בדיוק אחד מבין id ו־nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>אי אפשר להעביר מיקום אל מתחת לעצמו.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>לתוכן כבר יש מיקום מתחת ל־%parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>לא ניתן היה לשמור את הערך של השדה %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>אין שפת תוכן %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>אין מחלקת תוכן %class בסכמה.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>התוכן אינו קיים, או שאינכם רשאים לקרוא אותו.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>אינכם רשאים לעשות זאת לתוכן הזה.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>למחלקה %class אין שדה %field שניתן לכתוב בו.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>השדה %field ניתן פעמיים.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>השדה %field מקבל קובץ: שלחו אותו כהעלאה (בקשת multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>השדה %field אינו מקבל קובץ.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>השדה %field צריך ערך.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>הפורמט %format מיועד רק לשדות טקסט עשיר; %field מקבל את ערכו כמות שהוא (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>השדה %field הוא שדה חובה.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>לא ניתן היה לקרוא את ה־HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content מקבל version רק יחד עם id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>אסימון התצוגה המקדימה אינו תקף או שפג תוקפו.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>אינו מקור (https://host או https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>אינו תחום של ה־API של GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

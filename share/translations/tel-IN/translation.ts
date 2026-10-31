@@ -78878,5 +78878,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout కి id, identifier, urlAlias లలో సరిగ్గా ఒకటి అవసరం.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart అభ్యర్థనలోని operations ఫీల్డ్ ఒక JSON అభ్యర్థన కాదు.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart అభ్యర్థనలోని map ఫీల్డ్ ఒక JSON ఆబ్జెక్ట్ కాదు.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart అభ్యర్థనలో %field ఫైల్ లేదు.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map ఫీల్డ్‌లోని మార్గం variables. తో ప్రారంభం కావాలి: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name ఫైల్ పూర్తిగా అందలేదు (అప్‌లోడ్ లోపం %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name ఫైల్ %max బైట్‌ల కంటే పెద్దది.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name ఫైల్‌ను తనిఖీ చేయలేకపోయాము.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>ఈ సైట్‌యాక్సెస్‌లో మ్యుటేషన్‌లు ఆఫ్‌లో ఉన్నాయి (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>మ్యుటేషన్‌ను POST తో పంపండి.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>కంటెంట్ మార్చడానికి సైన్ ఇన్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API కీకి %scope స్కోప్ లేదు.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>సెషన్‌తో కూడిన మ్యుటేషన్‌కు ఆ సెషన్ ఫారమ్ టోకెన్ అవసరం (హెడర్ X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ఆఫ్‌లో ఉంది: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ఏ హోస్ట్‌నూ పేర్కొనలేదు.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>చిరునామా https చిరునామా అయి ఉండాలి.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host హోస్ట్ graphql.ini [GraphQLSettings] UploadFromUrlHostList[] లో లేదు.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ఫైల్‌ను పొందలేకపోయాము.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload కేవలం ఇన్‌పుట్ టైప్ మాత్రమే.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload టైప్ వేరియబుల్ ఒక multipart అభ్యర్థనలోని ఫైల్‌ను తీసుకుంటుంది.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>remote id %remoteId ఇప్పటికే వాడుకలో ఉంది.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>కంటెంట్‌కు ఇప్పటికే %language లో అనువాదం ఉంది: updateContent ఉపయోగించండి.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>కనీసం ఒక ఫీల్డ్ ఇవ్వండి.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>కొత్త వెర్షన్ సృష్టించలేకపోయాము (కంటెంట్‌కు చాలా ఎక్కువ డ్రాఫ్ట్‌లు ఉన్నాయి).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>వెర్షన్ %version డ్రాఫ్ట్ కాదు.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent కు id మరియు nodeId లలో సరిగ్గా ఒకటి అవసరం.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ఒక స్థానాన్ని దాని కిందికే తరలించలేము.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>కంటెంట్‌కు ఇప్పటికే %parentId కింద ఒక స్థానం ఉంది.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field ఫీల్డ్ విలువను నిల్వ చేయలేకపోయాము.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language అనే కంటెంట్ భాష లేదు.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>స్కీమాలో %class అనే కంటెంట్ క్లాస్ లేదు.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>కంటెంట్ లేదు, లేదా దాన్ని చదవడానికి మీకు అనుమతి లేదు.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>ఈ కంటెంట్‌పై దీన్ని చేయడానికి మీకు అనుమతి లేదు.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class క్లాస్‌లో రాయదగిన %field ఫీల్డ్ లేదు.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field ఫీల్డ్ రెండుసార్లు ఇవ్వబడింది.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field ఫీల్డ్ ఒక ఫైల్‌ను తీసుకుంటుంది: దాన్ని అప్‌లోడ్‌గా పంపండి (multipart అభ్యర్థన).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field ఫీల్డ్ ఫైల్‌ను తీసుకోదు.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field ఫీల్డ్‌కు ఒక విలువ అవసరం.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format ఫార్మాట్ రిచ్ టెక్స్ట్ ఫీల్డ్‌లకు మాత్రమే; %field తన విలువను ఉన్నది ఉన్నట్లుగా తీసుకుంటుంది (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field ఫీల్డ్ తప్పనిసరి.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML ను చదవలేకపోయాము.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content, version ను id తో మాత్రమే తీసుకుంటుంది.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>ప్రివ్యూ టోకెన్ చెల్లదు లేదా గడువు ముగిసింది.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>ఇది origin కాదు (https://host లేదా https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API స్కోప్ కాదు: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

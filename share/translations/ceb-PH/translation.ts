@@ -78880,5 +78880,177 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>Ang layout nagkinahanglan og eksakto nga usa sa id, identifier ug urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Ang field nga operations sa multipart nga hangyo dili usa ka JSON nga hangyo.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Ang field nga map sa multipart nga hangyo dili usa ka JSON object.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Walay file nga %field ang multipart nga hangyo.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Ang usa ka path sa field nga map kinahanglan magsugod sa variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Wala moabot nga kompleto ang file nga %name (sayop sa pag-upload %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Ang file nga %name mas dako kaysa %max ka byte.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Dili masusi ang file nga %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Gipalong ang mga mutation niining access sa site (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Ipadala ang mutation pinaagi sa POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Pag-sign in aron mausab ang sulod.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Ang API key walay scope nga %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Ang mutation nga adunay session nagkinahanglan sa form token sa session (header X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>Gipalong ang uploadFromUrl: walay host nga gingalan sa graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Ang address kinahanglan usa ka https nga address.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Ang host nga %host wala sa graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Dili makuha ang file.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Ang Upload usa lamang ka input type.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Ang variable nga type Upload modawat og file gikan sa multipart nga hangyo.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Gigamit na ang remote id nga %remoteId.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Aduna nay hubad sa %language ang sulod: gamita ang updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Paghatag og labing menos usa ka field.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Dili makahimo og bag-ong bersyon (daghan kaayong draft ang sulod).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Ang bersyon %version dili draft.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>Ang deleteContent nagkinahanglan og eksakto nga usa sa id ug nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Ang usa ka lokasyon dili mabalhin ubos sa iyang kaugalingon.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Aduna nay lokasyon ang sulod ubos sa %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Dili matipigan ang bili sa field nga %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Walay pinulongan sa sulod nga %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Walay klase sa sulod nga %class sa eskema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Wala ang sulod, o dili ka tugotan nga mobasa niini.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Dili ka tugotan nga buhaton kini niining sulod.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Ang klase nga %class walay field nga %field nga mahimong sulatan.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Kaduha nga gihatag ang field nga %field.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Ang field nga %field modawat og file: ipadala kini isip upload (multipart nga hangyo).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Ang field nga %field dili modawat og file.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Ang field nga %field nagkinahanglan og bili.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Ang format nga %format para lamang sa mga rich text field; ang %field modawat sa iyang bili sama sa kung unsa kini (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Gikinahanglan ang field nga %field.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Dili mabasa ang HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>Ang content modawat lamang og version uban sa id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Dili balido o natapos na ang preview token.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Dili usa ka origin (https://host o https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Dili scope sa GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

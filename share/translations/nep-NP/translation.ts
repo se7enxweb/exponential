@@ -78888,5 +78888,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout लाई id, identifier र urlAlias मध्ये ठीक एउटा चाहिन्छ।</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart अनुरोधको operations फिल्ड एउटा JSON अनुरोध होइन।</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart अनुरोधको map फिल्ड JSON वस्तु होइन।</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart अनुरोधमा %field फाइल छैन।</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>फिल्ड नक्साको मार्ग variables. बाट सुरु हुनुपर्छ: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>फाइल %name पूरा आइपुगेन (अपलोड त्रुटि %error)।</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>फाइल %name %max बाइटभन्दा ठूलो छ।</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>फाइल %name जाँच गर्न सकिएन।</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>यस साइट पहुँचमा म्युटेसनहरू बन्द छन् (graphql.ini [GraphQLSettings] MutationsEnabled)।</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>म्युटेसन POST सँग पठाउनुहोस्।</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>सामग्री परिवर्तन गर्न साइन इन गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API कुञ्जीसँग %scope दायरा छैन।</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>सत्रसहितको म्युटेसनलाई त्यस सत्रको फारम टोकन चाहिन्छ (हेडर X-CSRF-Token)।</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl बन्द छ: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] मा कुनै होस्ट छैन।</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>ठेगाना https ठेगाना हुनुपर्छ।</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>होस्ट %host graphql.ini [GraphQLSettings] UploadFromUrlHostList[] मा छैन।</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>फाइल ल्याउन सकिएन।</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload केवल इनपुट प्रकार हो।</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload प्रकारको चरले multipart अनुरोधको फाइल लिन्छ।</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>रिमोट आईडी %remoteId पहिले नै प्रयोगमा छ।</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>सामग्रीको %language मा अनुवाद पहिले नै छ: updateContent प्रयोग गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>कम्तीमा एउटा फिल्ड दिनुहोस्।</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>नयाँ संस्करण बनाउन सकिएन (सामग्रीमा धेरै मस्यौदाहरू छन्)।</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>संस्करण %version मस्यौदा होइन।</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent लाई id र nodeId मध्ये ठ्याक्कै एउटा चाहिन्छ।</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>स्थानलाई आफैंमुनि सार्न सकिँदैन।</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>सामग्रीको %parentId मुनि पहिले नै स्थान छ।</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>फिल्ड %field को मान भण्डारण गर्न सकिएन।</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>सामग्री भाषा %language छैन।</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>स्किमामा सामग्री वर्ग %class छैन।</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>सामग्री छैन, वा तपाईं यसलाई पढ्न पाउनुहुन्न।</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>तपाईं यस सामग्रीमा यो गर्न पाउनुहुन्न।</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>वर्ग %class मा लेख्न मिल्ने फिल्ड %field छैन।</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>फिल्ड %field दुई पटक दिइएको छ।</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>फिल्ड %field ले फाइल लिन्छ: यसलाई अपलोडको रूपमा पठाउनुहोस् (multipart अनुरोध)।</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>फिल्ड %field ले फाइल लिँदैन।</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>फिल्ड %field लाई मान चाहिन्छ।</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>ढाँचा %format रिच टेक्स्ट फिल्डका लागि मात्र हो; %field ले आफ्नो मान जस्ताको तस्तै लिन्छ (RAW)।</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>फिल्ड %field आवश्यक छ।</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML पढ्न सकिएन।</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content ले version केवल id सँग लिन्छ।</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>पूर्वावलोकन टोकन मान्य छैन वा म्याद सकिएको छ।</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>origin होइन (https://host वा https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API को दायरा होइन: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

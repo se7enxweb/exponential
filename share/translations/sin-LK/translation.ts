@@ -78880,5 +78880,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout සඳහා id, identifier සහ urlAlias අතරින් හරියටම එකක් අවශ්‍යයි.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart ඉල්ලීමේ operations ක්ෂේත්‍රය එක් JSON ඉල්ලීමක් නොවේ.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart ඉල්ලීමේ map ක්ෂේත්‍රය JSON වස්තුවක් නොවේ.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart ඉල්ලීමේ %field ගොනුවක් නැත.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map ක්ෂේත්‍රයේ මාර්ගයක් variables. වලින් ආරම්භ විය යුතුය: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name ගොනුව සම්පූර්ණයෙන් ලැබුණේ නැත (උඩුගත කිරීමේ දෝෂය %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name ගොනුව බයිට %max ට වඩා විශාලය.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name ගොනුව පරීක්ෂා කළ නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>මෙම අඩවි ප්‍රවේශයේ mutations අක්‍රිය කර ඇත (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>mutation එක POST මඟින් යවන්න.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>අන්තර්ගතය වෙනස් කිරීමට පුරනය වන්න.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API යතුරට %scope විෂය පථය නැත.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>සැසියක් සහිත mutation එකකට එම සැසියේ පෝරම ටෝකනය අවශ්‍යයි (ශීර්ෂය X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl අක්‍රිය කර ඇත: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] හි කිසිදු ධාරකයක් සඳහන් නොවේ.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>ලිපිනය https ලිපිනයක් විය යුතුය.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host ධාරකය graphql.ini [GraphQLSettings] UploadFromUrlHostList[] හි නැත.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ගොනුව ලබා ගත නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload යනු ආදාන වර්ගයක් පමණි.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload වර්ගයේ විචල්‍යයක් multipart ඉල්ලීමක ගොනුවක් ගනී.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>%remoteId දුරස්ථ id දැනටමත් භාවිතයේ ඇත.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>අන්තර්ගතයට දැනටමත් %language පරිවර්තනයක් ඇත: updateContent භාවිතා කරන්න.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>අවම වශයෙන් එක් ක්ෂේත්‍රයක් ලබා දෙන්න.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>නව අනුවාදයක් සෑදිය නොහැකි විය (අන්තර්ගතයට කෙටුම්පත් ඕනෑවට වඩා ඇත).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>%version අනුවාදය කෙටුම්පතක් නොවේ.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent සඳහා id සහ nodeId වලින් හරියටම එකක් අවශ්‍යයි.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ස්ථානයක් එයටම යටින් ගෙන යා නොහැක.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>අන්තර්ගතයට දැනටමත් %parentId යටතේ ස්ථානයක් ඇත.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field ක්ෂේත්‍රයේ අගය ගබඩා කළ නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language අන්තර්ගත භාෂාවක් නැත.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>ස්කීමාවේ %class අන්තර්ගත පන්තියක් නැත.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>අන්තර්ගතය නොමැත, නැතහොත් ඔබට එය කියවීමට අවසර නැත.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>මෙම අන්තර්ගතයට මෙය කිරීමට ඔබට අවසර නැත.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class පන්තියේ ලිවිය හැකි %field ක්ෂේත්‍රයක් නැත.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field ක්ෂේත්‍රය දෙවරක් ලබා දී ඇත.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field ක්ෂේත්‍රය ගොනුවක් ගනී: එය upload ලෙස යවන්න (multipart ඉල්ලීමක්).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field ක්ෂේත්‍රය ගොනුවක් නොගනී.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field ක්ෂේත්‍රයට අගයක් අවශ්‍යයි.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format ආකෘතිය පොහොසත් පෙළ ක්ෂේත්‍ර සඳහා පමණි; %field එහි අගය එලෙසම ගනී (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field ක්ෂේත්‍රය අනිවාර්යයි.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML කියවිය නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content විසින් version ගන්නේ id සමඟ පමණි.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>පෙරදසුන් ටෝකනය වලංගු නැත හෝ කල් ඉකුත් වී ඇත.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>මූලාරම්භයක් නොවේ (https://host හෝ https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API හි විෂය පථයක් නොවේ: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

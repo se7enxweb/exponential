@@ -78910,5 +78910,177 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>A layout pontosan egyet igényel ezek közül: id, identifier és urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>A multipart kérés operations mezője nem egyetlen JSON-kérés.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>A multipart kérés map mezője nem JSON-objektum.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>A multipart kérésben nincs %field fájl.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>A mezőleképezés egy útvonalának variables. előtaggal kell kezdődnie: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>A(z) %name fájl nem érkezett meg hiánytalanul (feltöltési hiba: %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>A(z) %name fájl nagyobb, mint %max bájt.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>A(z) %name fájlt nem sikerült ellenőrizni.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>A mutációk ki vannak kapcsolva ebben a webhely-hozzáférésben (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>A mutációt POST kéréssel küldje.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Jelentkezzen be a tartalom módosításához.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Az API-kulcsnak nincs %scope hatóköre.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>A munkamenettel küldött mutációhoz a munkamenet űrlaptokenje szükséges (X-CSRF-Token fejléc).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>Az uploadFromUrl ki van kapcsolva: a graphql.ini [GraphQLSettings] UploadFromUrlHostList[] egyetlen gazdagépet sem nevez meg.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>A címnek https címnek kell lennie.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>A(z) %host gazdagép nem szerepel a graphql.ini [GraphQLSettings] UploadFromUrlHostList[] listájában.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>A fájlt nem sikerült letölteni.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Az Upload csak bemeneti típus.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Az Upload típusú változó egy multipart kérés fájlját veszi át.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>A(z) %remoteId távoli azonosító már foglalt.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>A tartalomnak már van %language fordítása: használja az updateContent mutációt.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Adjon meg legalább egy mezőt.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nem sikerült új verziót létrehozni (a tartalomnak túl sok piszkozata van).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>A(z) %version verzió nem piszkozat.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>A deleteContent pontosan egyet kér az id és a nodeId közül.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Egy hely nem helyezhető át önmaga alá.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>A tartalomnak már van helye a(z) %parentId alatt.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>A(z) %field mező értékét nem sikerült tárolni.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Nincs %language tartalomnyelv.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>A sémában nincs %class tartalomosztály.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>A tartalom nem létezik, vagy nem olvashatja.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Ezt nem teheti meg ezzel a tartalommal.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>A(z) %class osztálynak nincs írható %field mezője.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>A(z) %field mező kétszer van megadva.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>A(z) %field mező fájlt fogad: küldje feltöltésként (multipart kéréssel).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>A(z) %field mező nem fogad fájlt.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>A(z) %field mezőnek érték kell.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>A(z) %format formátum csak formázott szöveges mezőkhöz való; a(z) %field az értékét változatlanul veszi át (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>A(z) %field mező kötelező.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>A HTML-t nem sikerült beolvasni.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>A content csak az id mellett fogadja el a version argumentumot.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Az előnézeti token érvénytelen vagy lejárt.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Nem origin (https://host vagy https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Nem a GraphQL API hatóköre: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

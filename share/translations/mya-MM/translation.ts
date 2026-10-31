@@ -78880,5 +78880,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout သည် id, identifier နှင့် urlAlias ထဲမှ တစ်ခုတည်းကိုသာ လိုအပ်သည်။</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart တောင်းဆိုမှု၏ operations အကွက်သည် JSON တောင်းဆိုမှု တစ်ခုတည်း မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart တောင်းဆိုမှု၏ map အကွက်သည် JSON အရာဝတ္ထု မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart တောင်းဆိုမှုတွင် ဖိုင် %field မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map အကွက်၏ လမ်းကြောင်းသည် variables. ဖြင့် စရမည်- %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>ဖိုင် %name သည် အပြည့်အစုံ မရောက်ပါ (တင်ခြင်း အမှား %error)။</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>ဖိုင် %name သည် %max ဘိုက်ထက် ကြီးနေသည်။</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>ဖိုင် %name ကို စစ်ဆေး၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>ဤဆိုက်ဝင်ရောက်မှုတွင် ပြောင်းလဲမှု (mutation) များကို ပိတ်ထားသည် (graphql.ini [GraphQLSettings] MutationsEnabled)။</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>ပြောင်းလဲမှုကို POST ဖြင့် ပို့ပါ။</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>အကြောင်းအရာ ပြောင်းရန် ဝင်ရောက်ပါ။</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API ကီးတွင် နယ်ပယ် %scope မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>ဆက်ရှင်ပါသော ပြောင်းလဲမှုသည် ဆက်ရှင်၏ ဖောင်တိုကင် လိုအပ်သည် (ခေါင်းစီး X-CSRF-Token)။</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ကို ပိတ်ထားသည်- graphql.ini [GraphQLSettings] UploadFromUrlHostList[] တွင် ဟို့စ် တစ်ခုမျှ မဖော်ပြထားပါ။</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>လိပ်စာသည် https လိပ်စာ ဖြစ်ရမည်။</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>ဟို့စ် %host သည် graphql.ini [GraphQLSettings] UploadFromUrlHostList[] တွင် မပါပါ။</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ဖိုင်ကို ရယူ၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload သည် ထည့်သွင်းမှု အမျိုးအစား သာ ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload အမျိုးအစား ကိန်းရှင်သည် multipart တောင်းဆိုမှု၏ ဖိုင်ကို လက်ခံသည်။</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>အဝေး id %remoteId ကို အသုံးပြုပြီး ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>အကြောင်းအရာတွင် %language ဘာသာပြန် ရှိပြီးဖြစ်သည်- updateContent ကို သုံးပါ။</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>အနည်းဆုံး အကွက် တစ်ခု ပေးပါ။</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>ဗားရှင်းအသစ် ဖန်တီး၍ မရပါ (အကြောင်းအရာတွင် မူကြမ်း များလွန်းသည်)။</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>ဗားရှင်း %version သည် မူကြမ်း မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent သည် id နှင့် nodeId အနက် တစ်ခုတည်းကိုသာ လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>တည်နေရာကို ၎င်း၏အောက်သို့ ရွှေ့၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>အကြောင်းအရာတွင် %parentId အောက်၌ တည်နေရာ ရှိပြီးဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>အကွက် %field ၏ တန်ဖိုးကို သိမ်း၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>အကြောင်းအရာ ဘာသာစကား %language မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>ဇယားဖွဲ့စည်းပုံတွင် အကြောင်းအရာ အတန်းအစား %class မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>အကြောင်းအရာ မရှိပါ၊ သို့မဟုတ် သင် ဖတ်ခွင့် မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>ဤအကြောင်းအရာကို ဤသို့ ပြုလုပ်ခွင့် သင့်တွင် မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>အတန်းအစား %class တွင် ရေးနိုင်သော အကွက် %field မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>အကွက် %field ကို နှစ်ကြိမ် ပေးထားသည်။</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>အကွက် %field သည် ဖိုင်ကို လက်ခံသည်- ၎င်းကို တင်ခြင်းအဖြစ် ပို့ပါ (multipart တောင်းဆိုမှု)။</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>အကွက် %field သည် ဖိုင် မလက်ခံပါ။</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>အကွက် %field တွင် တန်ဖိုး လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>ပုံစံ %format သည် rich text အကွက်များအတွက်သာ ဖြစ်သည်; %field သည် ၎င်း၏တန်ဖိုးကို ရှိသည့်အတိုင်း လက်ခံသည် (RAW)။</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>အကွက် %field သည် မဖြစ်မနေ လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML ကို ဖတ်၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content သည် version ကို id နှင့်သာ လက်ခံသည်။</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>အစမ်းကြည့် တိုကင်သည် မမှန်ကန်ပါ သို့မဟုတ် သက်တမ်းကုန်သွားပြီ။</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>origin မဟုတ်ပါ (https://host သို့မဟုတ် https://host:port)- %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API ၏ နယ်ပယ် မဟုတ်ပါ- %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

@@ -78910,5 +78910,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>Το layout χρειάζεται ακριβώς ένα από τα id, identifier και urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Το πεδίο operations ενός αιτήματος multipart δεν είναι ένα αίτημα JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Το πεδίο map ενός αιτήματος multipart δεν είναι αντικείμενο JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Το αίτημα multipart δεν περιέχει το αρχείο %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Μια διαδρομή του πεδίου map πρέπει να ξεκινά με variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Το αρχείο %name δεν έφτασε ολόκληρο (σφάλμα μεταφόρτωσης %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Το αρχείο %name είναι μεγαλύτερο από %max bytes.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Δεν ήταν δυνατός ο έλεγχος του αρχείου %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Οι μεταλλάξεις (mutations) είναι απενεργοποιημένες σε αυτή την πρόσβαση ιστότοπου (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Στείλτε τη μετάλλαξη με POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Συνδεθείτε για να αλλάξετε περιεχόμενο.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Το κλειδί API δεν έχει το εύρος %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Μια μετάλλαξη με συνεδρία χρειάζεται το διακριτικό φόρμας της συνεδρίας (κεφαλίδα X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>Το uploadFromUrl είναι απενεργοποιημένο: το graphql.ini [GraphQLSettings] UploadFromUrlHostList[] δεν ορίζει κανέναν host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Η διεύθυνση πρέπει να είναι διεύθυνση https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Ο host %host δεν υπάρχει στο graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Δεν ήταν δυνατή η λήψη του αρχείου.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Το Upload είναι μόνο τύπος εισόδου.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Μια μεταβλητή τύπου Upload δέχεται ένα αρχείο από αίτημα multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Το απομακρυσμένο id %remoteId χρησιμοποιείται ήδη.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Το περιεχόμενο έχει ήδη μετάφραση σε %language: χρησιμοποιήστε το updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Δώστε τουλάχιστον ένα πεδίο.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Δεν ήταν δυνατή η δημιουργία νέας έκδοσης (το περιεχόμενο έχει πάρα πολλά πρόχειρα).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Η έκδοση %version δεν είναι πρόχειρο.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>Το deleteContent χρειάζεται ακριβώς ένα από τα id και nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Μια θέση δεν μπορεί να μετακινηθεί κάτω από τον εαυτό της.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Το περιεχόμενο έχει ήδη θέση κάτω από το %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Δεν ήταν δυνατή η αποθήκευση της τιμής του πεδίου %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Δεν υπάρχει γλώσσα περιεχομένου %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Δεν υπάρχει κλάση περιεχομένου %class στο σχήμα.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Το περιεχόμενο δεν υπάρχει ή δεν έχετε δικαίωμα ανάγνωσής του.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Δεν έχετε δικαίωμα να το κάνετε αυτό σε αυτό το περιεχόμενο.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Η κλάση %class δεν έχει εγγράψιμο πεδίο %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Το πεδίο %field δόθηκε δύο φορές.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Το πεδίο %field δέχεται αρχείο: στείλτε το ως μεταφόρτωση (αίτημα multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Το πεδίο %field δεν δέχεται αρχείο.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Το πεδίο %field χρειάζεται τιμή.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Η μορφή %format είναι μόνο για πεδία εμπλουτισμένου κειμένου· το %field δέχεται την τιμή του ως έχει (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Το πεδίο %field είναι υποχρεωτικό.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Δεν ήταν δυνατή η ανάγνωση του HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>Το content δέχεται version μόνο μαζί με id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Το διακριτικό προεπισκόπησης δεν είναι έγκυρο ή έχει λήξει.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Δεν είναι προέλευση (https://host ή https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Δεν είναι εύρος του GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

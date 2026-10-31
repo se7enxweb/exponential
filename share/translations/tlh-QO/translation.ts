@@ -78913,5 +78913,177 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout poQ wa&apos; neH: id, identifier pagh urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>tlhobghach law' 'ay' tlhegh operations wa' JSON tlhobghach 'oHbe'.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>tlhobghach law' 'ay' tlhegh map JSON Doch 'oHbe'.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>%field ghItlh ghajbe' tlhobghach law' 'ay'.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>tlhegh map He variables. DaH tagh net poQ: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>naQ paQDI'be' %name ghItlh (lab Qagh %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%max byte tIn law' %name ghItlh tIn puS.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name ghItlh nuDlaHbe'lu'.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>yoS lojmIt vam Daq choHmoHghachmey chu'Ha'lu' (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>POST lo'taHvIS choHmoHghach yIngeH.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>De' DachoHmeH yI'el.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>%scope chaw' veH ghajbe' API ngaQHa'moHwI'.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>ghom ghajbogh choHmoHghach ghom mutlhghach Degh poQ (nach X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl chu'Ha'lu': jabwI' pagh pong graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>https URL Daq 'oH URL Daq'e' net poQ.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>graphql.ini [GraphQLSettings] UploadFromUrlHostList[] Daq tu'lu'be' %host jabwI'.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ghItlh Suqlu'laHbe'.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>'el Segh neH 'oH Upload'e'.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>tlhobghach law' 'ay' ghItlh lajmeH Upload Segh choHwI' lo'lu'.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>remote id %remoteId lo'lu'pu'.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>%language mughmoHghach ghaj De' DaH: updateContent yIlo'.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>wa' tlhegh yInob, puSqu'.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>chovnatlh chu' chenmoHlaHbe'lu' (nab law'qu' ghaj De').</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>nab 'oHbe' %version chovnatlh.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>id nodeId ghap wa' neH poQ deleteContent.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Daq'e' Daq bIng vIHmoHlaHbe'lu'.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>%parentId bIng Daq ghaj De' DaH.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field tlhegh ngoD pollaHbe'lu'.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language De' Hol tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>qach nab Daq %class De' buv tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>naDev De' tu'lu'be', pagh bIlaDlaHbe'.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>De' vam Daq Dochvam DaruchlaHbe'.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>ghItlhlu'laHbogh %field tlhegh ghajbe' %class buv.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>cha'logh nobpu'lu' %field tlhegh.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>ghItlh laj %field tlhegh: upload rur yIngeH (tlhobghach law' 'ay').</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>ghItlh lajbe' %field tlhegh.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>ngoD poQ %field tlhegh.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>mu'mey Sar tlhegh neH ghItlh Segh %format; ngoD laj %field rur ghu'Daj (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field tlhegh poQlu'.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML laDlaHbe'lu'.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>id tlhej version neH laj content.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>nungbogh mIllogh Degh lo'laHbe' pagh Heghpu'.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>mung 'oHbe' (https://host pagh https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API chaw' veH 'oHbe': %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

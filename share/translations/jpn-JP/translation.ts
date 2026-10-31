@@ -78910,5 +78910,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout には id、identifier、urlAlias のいずれか1つだけが必要です。</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart リクエストの operations フィールドが 1 つの JSON リクエストではありません。</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart リクエストの map フィールドが JSON オブジェクトではありません。</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart リクエストにファイル %field がありません。</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>フィールドマップのパスは variables. で始まる必要があります: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>ファイル %name が完全に届きませんでした (アップロードエラー %error)。</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>ファイル %name が %max バイトを超えています。</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>ファイル %name を検査できませんでした。</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>このサイトアクセスではミューテーションが無効になっています (graphql.ini [GraphQLSettings] MutationsEnabled)。</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>ミューテーションは POST で送信してください。</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>コンテンツを変更するにはサインインしてください。</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API キーにスコープ %scope がありません。</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>セッションを使うミューテーションには、そのセッションのフォームトークン (ヘッダー X-CSRF-Token) が必要です。</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl は無効です: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] にホストが指定されていません。</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>アドレスは https のアドレスである必要があります。</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>ホスト %host は graphql.ini [GraphQLSettings] UploadFromUrlHostList[] にありません。</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ファイルを取得できませんでした。</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload は入力型専用です。</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload 型の変数は multipart リクエストのファイルを受け取ります。</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>リモート ID %remoteId は既に使われています。</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>このコンテンツには既に %language の翻訳があります: updateContent を使ってください。</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>少なくとも 1 つのフィールドを指定してください。</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>新しいバージョンを作成できませんでした (コンテンツの下書きが多すぎます)。</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>バージョン %version は下書きではありません。</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent には id と nodeId のいずれか 1 つだけが必要です。</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ロケーションを自分自身の下に移動することはできません。</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>このコンテンツには既に %parentId の下にロケーションがあります。</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>フィールド %field の値を保存できませんでした。</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>コンテンツ言語 %language は存在しません。</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>スキーマにコンテンツクラス %class はありません。</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>コンテンツが存在しないか、読み取る権限がありません。</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>このコンテンツに対してこの操作を行う権限がありません。</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>クラス %class には書き込み可能なフィールド %field がありません。</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>フィールド %field が 2 回指定されています。</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>フィールド %field はファイルを受け取ります: アップロードとして送信してください (multipart リクエスト)。</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>フィールド %field はファイルを受け取りません。</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>フィールド %field には値が必要です。</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>フォーマット %format はリッチテキストフィールド専用です。%field は値をそのまま受け取ります (RAW)。</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>フィールド %field は必須です。</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML を読み取れませんでした。</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content は id とともにのみ version を受け取ります。</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>プレビュートークンが無効か、期限切れです。</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>オリジンではありません (https://host または https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API のスコープではありません: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

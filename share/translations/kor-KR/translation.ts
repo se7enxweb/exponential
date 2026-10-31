@@ -78910,5 +78910,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout에는 id, identifier, urlAlias 중 정확히 하나가 필요합니다.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>멀티파트 요청의 operations 필드가 하나의 JSON 요청이 아닙니다.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>멀티파트 요청의 map 필드가 JSON 객체가 아닙니다.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>멀티파트 요청에 파일 %field이(가) 없습니다.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map 필드의 경로는 variables.로 시작해야 합니다: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>파일 %name이(가) 완전히 전송되지 않았습니다(업로드 오류 %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>파일 %name이(가) %max바이트보다 큽니다.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>파일 %name을(를) 검사할 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>이 사이트 액세스에서는 뮤테이션이 꺼져 있습니다(graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>뮤테이션은 POST로 보내십시오.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>콘텐츠를 변경하려면 로그인하십시오.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API 키에 범위 %scope이(가) 없습니다.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>세션을 사용하는 뮤테이션에는 세션의 폼 토큰이 필요합니다(헤더 X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl이 꺼져 있습니다: graphql.ini [GraphQLSettings] UploadFromUrlHostList[]에 호스트가 없습니다.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>주소는 https 주소여야 합니다.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>호스트 %host이(가) graphql.ini [GraphQLSettings] UploadFromUrlHostList[]에 없습니다.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>파일을 가져올 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload는 입력 타입 전용입니다.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload 타입의 변수는 멀티파트 요청의 파일을 받습니다.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>원격 id %remoteId은(는) 이미 사용 중입니다.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>콘텐츠에 이미 %language 번역이 있습니다: updateContent를 사용하십시오.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>필드를 하나 이상 지정하십시오.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>새 버전을 만들 수 없습니다(콘텐츠의 초안이 너무 많습니다).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>버전 %version은(는) 초안이 아닙니다.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent에는 id, nodeId 중 정확히 하나가 필요합니다.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>위치를 자기 자신 아래로 이동할 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>콘텐츠에 이미 %parentId 아래의 위치가 있습니다.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>필드 %field의 값을 저장할 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>콘텐츠 언어 %language이(가) 없습니다.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>스키마에 콘텐츠 클래스 %class이(가) 없습니다.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>콘텐츠가 없거나 읽을 권한이 없습니다.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>이 콘텐츠에 이 작업을 할 권한이 없습니다.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>클래스 %class에 쓸 수 있는 필드 %field이(가) 없습니다.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>필드 %field이(가) 두 번 지정되었습니다.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>필드 %field은(는) 파일을 받습니다: 업로드로 보내십시오(멀티파트 요청).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>필드 %field은(는) 파일을 받지 않습니다.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>필드 %field에 값이 필요합니다.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>형식 %format은(는) 서식 있는 텍스트 필드 전용입니다. %field은(는) 값을 그대로 받습니다(RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>필드 %field은(는) 필수입니다.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML을 읽을 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content는 version을 id와 함께만 받습니다.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>미리 보기 토큰이 유효하지 않거나 만료되었습니다.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>오리진이 아닙니다(https://host 또는 https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API의 범위가 아닙니다: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

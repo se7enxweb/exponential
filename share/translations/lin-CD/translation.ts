@@ -78880,5 +78880,177 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout esengeli kaka moko kati na id, identifier mpe urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Esika operations ya demande multipart ezali demande moko ya JSON te.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Esika map ya demande multipart ezali objet JSON te.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Demande multipart ezali na fisyé %field te.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Nzela ya esika map esengeli kobanda na variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fisyé %name ekómaki mobimba te (libunga ya kotinda %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fisyé %name eleki octets %max na bonene.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Fisyé %name ekokaki kotalelama te.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mbongwana (mutation) ekangami na siteaccess oyo (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Tindá mbongwana na POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Kótá mpo na kobongola makambo.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Fungola ya API ezali na etando %scope te.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mbongwana na session esengeli na jeton ya formulaire ya session (en-tête X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ekangami: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] epesi kombo ya hôte moko te.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adresi esengeli kozala adresi https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Hôte %host ezali na graphql.ini [GraphQLSettings] UploadFromUrlHostList[] te.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Fisyé ekokaki kozwama te.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ezali kaka lolenge ya kokotisa.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Variable ya lolenge Upload ezwaka fisyé ya demande multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Id ya mosika %remoteId esili kozwama.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Makambo esili kozala na libongoli na %language: salelá updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Pesá ata esika moko.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Version ya sika ekokaki kosalema te (makambo ezali na ba brouillon ebele mingi).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Version %version ezali brouillon te.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent esengeli kaka na moko ya id mpe nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Esika ekoki kotiama na nse na yango moko te.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Makambo esili kozala na esika na nse ya %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Motuya ya esika %field ekokaki kobombama te.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Monoko ya makambo %language ezali te.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Classe ya makambo %class ezali na schéma te.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Makambo ezali te, to ozali na ndingisa ya kotánga yango te.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Ozali na ndingisa ya kosala likambo oyo na makambo oyo te.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Classe %class ezali na esika %field oyo ekoki kokomama te.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Esika %field epesami mbala mibale.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Esika %field ezwaka fisyé: tindá yango lokola upload (demande multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Esika %field ezwaka fisyé te.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Esika %field esengeli na motuya.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Format %format ezali kaka mpo na bisika ya texte riche; %field ezwaka motuya na yango ndenge ezali (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Esika %field ezali na ntina.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML ekokaki kotángama te.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content ezwaka version kaka na id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Jeton ya kotala liboso ezali malamu te to esili ntango.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ezali origine te (https://host to https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ezali etando ya GraphQL API te: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

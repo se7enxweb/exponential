@@ -78910,5 +78910,177 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout necessita exactament un de id, identifier i urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>El camp operations d'una petició multipart no és una sola petició JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>El camp map d'una petició multipart no és un objecte JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>La petició multipart no conté cap fitxer %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Un camí del camp map ha de començar per variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>El fitxer %name no ha arribat sencer (error de pujada %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>El fitxer %name és més gran de %max bytes.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>No s'ha pogut comprovar el fitxer %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Les mutacions estan desactivades en aquest accés al lloc (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Envieu la mutació amb POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Inicieu la sessió per canviar contingut.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>La clau d'API no té l'abast %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Una mutació amb sessió necessita el testimoni de formulari de la sessió (capçalera X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl està desactivat: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] no indica cap amfitrió.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>L'adreça ha de ser una adreça https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>L'amfitrió %host no és a graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>No s'ha pogut obtenir el fitxer.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload només és un tipus d'entrada.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Una variable de tipus Upload pren un fitxer d'una petició multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>L'identificador remot %remoteId ja està en ús.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>El contingut ja té una traducció en %language: feu servir updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Indiqueu almenys un camp.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>No s'ha pogut crear cap versió nova (el contingut té massa esborranys).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>La versió %version no és un esborrany.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent necessita exactament un de id i nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Una ubicació no es pot moure a sota d'ella mateixa.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>El contingut ja té una ubicació a sota de %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>No s'ha pogut desar el valor del camp %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>No hi ha cap idioma de contingut %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>No hi ha cap classe de contingut %class a l'esquema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>El contingut no existeix o no el podeu llegir.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>No podeu fer això amb aquest contingut.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>La classe %class no té cap camp %field que es pugui escriure.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>El camp %field s'ha indicat dues vegades.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>El camp %field pren un fitxer: envieu-lo com a pujada (una petició multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>El camp %field no pren cap fitxer.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>El camp %field necessita un valor.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>El format %format només és per a camps de text enriquit; %field pren el valor tal com és (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>El camp %field és obligatori.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>No s'ha pogut llegir l'HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content només pren version amb id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>El testimoni de previsualització no és vàlid o ha caducat.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>No és un origen (https://host o https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>No és un abast de l'API GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

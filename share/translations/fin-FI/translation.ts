@@ -78910,5 +78910,177 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout tarvitsee täsmälleen yhden seuraavista: id, identifier ja urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Multipart-pyynnön kenttä operations ei ole yksi JSON-pyyntö.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Multipart-pyynnön kenttä map ei ole JSON-objekti.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Multipart-pyynnössä ei ole tiedostoa %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Kenttäkartan polun on alettava merkkijonolla variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Tiedosto %name ei saapunut kokonaisena (latausvirhe %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Tiedosto %name on suurempi kuin %max tavua.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Tiedostoa %name ei voitu tarkistaa.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutaatiot on poistettu käytöstä tässä sivustoyhteydessä (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Lähetä mutaatio POST-menetelmällä.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Kirjaudu sisään muuttaaksesi sisältöä.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API-avaimella ei ole laajuutta %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Istunnon kanssa lähetetty mutaatio tarvitsee istunnon lomaketunnisteen (otsake X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl on poistettu käytöstä: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ei nimeä yhtään isäntää.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Osoitteen on oltava https-osoite.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Isäntä %host ei ole asetuksessa graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Tiedostoa ei voitu noutaa.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload on pelkkä syötetyyppi.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload-tyyppinen muuttuja ottaa tiedoston multipart-pyynnöstä.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Etätunniste %remoteId on jo käytössä.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Sisällöllä on jo käännös kielellä %language: käytä updateContent-mutaatiota.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Anna vähintään yksi kenttä.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Uutta versiota ei voitu luoda (sisällöllä on liian monta luonnosta).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Versio %version ei ole luonnos.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent tarvitsee täsmälleen yhden arvoista id ja nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Sijaintia ei voi siirtää itsensä alle.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Sisällöllä on jo sijainti kohteen %parentId alla.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Kentän %field arvoa ei voitu tallentaa.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Sisältökieltä %language ei ole.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Skeemassa ei ole sisältöluokkaa %class.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Sisältöä ei ole, tai sinulla ei ole oikeutta lukea sitä.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Sinulla ei ole oikeutta tehdä tätä tälle sisällölle.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Luokalla %class ei ole kirjoitettavaa kenttää %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Kenttä %field on annettu kahdesti.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Kenttä %field ottaa tiedoston: lähetä se latauksena (multipart-pyyntö).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Kenttä %field ei ota tiedostoa.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Kenttä %field tarvitsee arvon.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Muoto %format on vain rikastekstikentille; %field ottaa arvonsa sellaisenaan (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Kenttä %field on pakollinen.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML:ää ei voitu lukea.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content hyväksyy version vain yhdessä id:n kanssa.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Esikatselutunniste ei ole kelvollinen tai se on vanhentunut.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ei alkuperä (https://host tai https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ei GraphQL API:n laajuus: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

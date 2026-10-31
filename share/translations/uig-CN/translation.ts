@@ -78880,5 +78880,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout ئۈچۈن id، identifier ۋە urlAlias دىن دەل بىرى كېرەك.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>كۆپ بۆلەكلىك ئىلتىماسنىڭ operations بۆلىكى بىر JSON ئىلتىماسى ئەمەس.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>كۆپ بۆلەكلىك ئىلتىماسنىڭ map بۆلىكى JSON ئوبيېكتى ئەمەس.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>كۆپ بۆلەكلىك ئىلتىماستا %field ھۆججىتى يوق.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map بۆلىكىدىكى يول چوقۇم variables. بىلەن باشلىنىشى كېرەك: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name ھۆججىتى تولۇق يېتىپ كەلمىدى (يۈكلەش خاتالىقى %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name ھۆججىتى %max بايتتىن چوڭ.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name ھۆججىتىنى تەكشۈرگىلى بولمىدى.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>بۇ تور بېكەت زىيارىتىدە ئۆزگەرتىشلەر (mutation) تاقالغان (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>ئۆزگەرتىشنى POST بىلەن ئەۋەتىڭ.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>مەزمۇننى ئۆزگەرتىش ئۈچۈن كىرىڭ.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API ئاچقۇچىدا %scope دائىرىسى يوق.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>ئەڭگىمە بىلەن ئەۋەتىلگەن ئۆزگەرتىشكە ئەڭگىمىنىڭ جەدۋەل بەلگىسى كېرەك (X-CSRF-Token بېشى).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl تاقالغان: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ھېچقانداق ساھىبجاي كۆرسەتمەيدۇ.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>ئادرېس چوقۇم https ئادرېسى بولۇشى كېرەك.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host ساھىبجايى graphql.ini [GraphQLSettings] UploadFromUrlHostList[] دا يوق.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ھۆججەتنى ئالغىلى بولمىدى.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload پەقەت كىرگۈزۈش تىپى.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload تىپىدىكى ئۆزگەرگۈچى كۆپ بۆلەكلىك ئىلتىماسنىڭ ھۆججىتىنى قوبۇل قىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>%remoteId يىراق كىملىكى ئىشلىتىلگەن.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>مەزمۇننىڭ %language تەرجىمىسى ئاللىبۇرۇن بار: updateContent ئىشلىتىڭ.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>ئاز دېگەندە بىر بۆلەك بېرىڭ.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>يېڭى نەشر قۇرغىلى بولمىدى (مەزمۇننىڭ ئارگىنالى بەك كۆپ).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>%version نەشرى ئارگىنال ئەمەس.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent ئۈچۈن id ۋە nodeId نىڭ دەل بىرى كېرەك.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ئورۇننى ئۆزىنىڭ ئاستىغا يۆتكىگىلى بولمايدۇ.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>مەزمۇننىڭ %parentId ئاستىدا ئاللىبۇرۇن ئورنى بار.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field بۆلىكىنىڭ قىممىتىنى ساقلىغىلى بولمىدى.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language مەزمۇن تىلى يوق.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>شېمادا %class مەزمۇن تۈرى يوق.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>مەزمۇن يوق، ياكى سىز ئۇنى ئوقۇيالمايسىز.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>سىز بۇ مەزمۇنغا بۇنى قىلالمايسىز.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class تۈرىدە يازغىلى بولىدىغان %field بۆلىكى يوق.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field بۆلىكى ئىككى قېتىم بېرىلگەن.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field بۆلىكى ھۆججەت قوبۇل قىلىدۇ: ئۇنى upload سۈپىتىدە ئەۋەتىڭ (كۆپ بۆلەكلىك ئىلتىماس).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field بۆلىكى ھۆججەت قوبۇل قىلمايدۇ.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field بۆلىكىگە قىممەت كېرەك.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format فورماتى پەقەت مول تېكىست بۆلەكلىرى ئۈچۈن؛ %field قىممىتىنى ئەينەن قوبۇل قىلىدۇ (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field بۆلىكى زۆرۈر.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML نى ئوقۇغىلى بولمىدى.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content پەقەت id بىلەن بىللە version نى قوبۇل قىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>ئالدىن كۆرۈش بەلگىسى ئىناۋەتسىز ياكى ۋاقتى توشقان.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>مەنبە (origin) ئەمەس (https://host ياكى https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API نىڭ دائىرىسى ئەمەس: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

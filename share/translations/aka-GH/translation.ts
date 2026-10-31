@@ -78880,5 +78880,177 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout hia baako pɛ wɔ id, identifier ne urlAlias mu.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart abisa no mu field operations nyɛ JSON abisa baako.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart abisa no mu field map nyɛ JSON adeɛ.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart abisa no nni fael %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Ɛsɛ sɛ field map no kwan biara fi ase de variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fael %name no amma ne nyinaa (upload mfomsoɔ %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fael %name no so sen bytes %max.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Wɔntumi anhwɛ fael %name no mu.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Wɔadum mutations wɔ wɛbsaet kwan yi mu (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Fa POST soma mutation.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Kɔ mu na woasesa nsɛm no.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API safoa no nni scope %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutation a ɛwɔ session hia session no form token (header X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>Wɔadum uploadFromUrl: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] mmɔ host biara din.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Ɛsɛ sɛ address no yɛ https address.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Host %host nni graphql.ini [GraphQLSettings] UploadFromUrlHostList[] mu.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Wɔntumi ankɔfa fael no.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload yɛ input type nkutoo.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Nsakraeɛ a ne type yɛ Upload gye fael a ɛfi multipart abisa mu.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Obi afa remote id %remoteId dada.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Nsɛm no wɔ nkyerɛaseɛ wɔ %language mu dada: fa updateContent di dwuma.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Fa field baako pɛ fa so ma.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Wɔntumi anyɛ version foforɔ (nsɛm no wɔ drafts pii dodo).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Version %version nyɛ draft.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent hia baako pɛ wɔ id ne nodeId mu.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Wɔntumi mfa beaeɛ bi nkɔ ɛno ankasa ase.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Nsɛm no wɔ beaeɛ bi wɔ %parentId ase dada.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Wɔntumi ankora field %field no bo.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Nsɛm kasa %language biara nni hɔ.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Nsɛm kuo %class biara nni schema no mu.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Nsɛm no nni hɔ, anaa wɔmma wo kwan sɛ wokenkan.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Wɔmma wo kwan sɛ woyɛ yei wɔ nsɛm yi ho.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Kuo %class nni field %field a wɔtumi kyerɛw gu mu.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Wɔde field %field ama mprenu.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Field %field gye fael: fa soma sɛ upload (multipart abisa).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Field %field nnye fael biara.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Field %field hia bo bi.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Format %format yɛ rich text fields nkutoo de; %field gye ne bo sɛdeɛ ɛteɛ (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Ɛhia field %field.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Wɔntumi ankenkan HTML no.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content gye version ka id ho nkutoo.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Preview token no nteɛ anaa ne bere atwam.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ɛnyɛ origin (https://host anaa https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ɛnyɛ GraphQL API no scope: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>

@@ -78878,5 +78878,177 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout idinga okukodwa ncamashi kokuthi id, identifier kanye ne-urlAlias.</translation>
     </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Inkambu ethi operations yesicelo esinezingxenye eziningi akusona isicelo esisodwa se-JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Inkambu ethi map yesicelo esinezingxenye eziningi akuyona into ye-JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Isicelo esinezingxenye eziningi asinalo ifayela %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Indlela enkambini ethi map kumele iqale nge-variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Ifayela %name alifikanga liphelele (iphutha lokulayisha %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Ifayela %name likhulu kunamabhayithi angu-%max.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Ifayela %name alikwazanga ukuhlolwa.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Izinguquko (mutations) zivaliwe kulokhu kufinyelela isayithi (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Thumela inguquko nge-POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Ngena ukuze ushintshe okuqukethwe.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Ukhiye we-API awunaso isikhundla %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Inguquko eneseshini idinga ithokheni yefomu yeseshini (unhlokweni X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>I-uploadFromUrl ivaliwe: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ayishoyo nhlobo umsingathi.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Ikheli kumele libe yikheli le-https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Umsingathi %host akekho ku-graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Ifayela alikwazanga ukulandwa.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload wuhlobo lokufaka kuphela.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Okuguquguqukayo kohlobo Upload kuthatha ifayela lesicelo esinezingxenye eziningi.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>I-remote id %remoteId isivele isetshenziswa.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Okuqukethwe sekunokuhumusha ngo-%language: sebenzisa i-updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Nikeza okungenani inkambu eyodwa.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Ayikwazanga ukwenziwa inguqulo entsha (okuqukethwe kunezinhlaka eziningi kakhulu).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Inguqulo %version akusiyo uhlaka.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>I-deleteContent idinga ncamashi eyodwa ku-id ne-nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Indawo ayikwazi ukuhanjiswa ngaphansi kwayo uqobo.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Okuqukethwe sekunendawo ngaphansi kuka-%parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Inani lenkambu %field alikwazanga ukugcinwa.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Alukho ulimi lokuqukethwe %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Asikho isigaba sokuqukethwe %class ku-schema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Okuqukethwe akukho, noma awuvunyelwe ukukufunda.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Awuvunyelwe ukwenza lokhu kulokhu okuqukethwe.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Isigaba %class asinayo inkambu %field engabhalwa.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Inkambu %field inikezwe kabili.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Inkambu %field ithatha ifayela: lithumele njenge-upload (isicelo esinezingxenye eziningi).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Inkambu %field ayithathi fayela.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Inkambu %field idinga inani.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Ifomethi %format ingeyezinkambu zombhalo onothile kuphela; %field ithatha inani layo njengoba linjalo (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Inkambu %field iyadingeka.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>I-HTML ayikwazanga ukufundwa.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>I-content ithatha i-version kanye ne-id kuphela.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Ithokheni yokubuka kuqala ayivumelekile noma iphelelwe yisikhathi.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Akuyona i-origin (https://host noma https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Akusona isikhundla se-GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
 </context>
 </TS>
