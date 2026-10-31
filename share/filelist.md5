@@ -23881,7 +23881,7 @@ b175ddfcd284ec585d4e3839b9e02b39  kernel/classes/uiswitch/expuiswitchprovider.ph
 13969a076edaaa84b29819ea99744bda  kernel/classes/upgrade/expupgrade.php
 c828134811fc4170f48d0bd8beec4042  kernel/classes/upgrade/expupgradebackup.php
 285a5f8e3fba34675fed5ae3bf7e0f23  kernel/classes/upgrade/expupgradebasestep.php
-7004db0b4c63e4c5281e3b647be09a2a  kernel/classes/upgrade/expupgradecaption.php
+ad0a6ff22355600a5587132e8a5b95dd  kernel/classes/upgrade/expupgradecaption.php
 f91fe6aa39ca39fba9157c3bffc757c5  kernel/classes/upgrade/expupgradecatalog.php
 56f82ab5bb9265d64219d5040041ecfa  kernel/classes/upgrade/expupgradecomposer.php
 6143d98b54e943e83defb3d3e25841e1  kernel/classes/upgrade/expupgradecontext.php
@@ -27610,7 +27610,7 @@ d2b791059f44637db1e31999f7272737  tests/tests/kernel/classes/mailpreferences/fix
 6d92b09c5030f6b28f986d8f94dcb3fb  tests/tests/kernel/classes/mailpreferences/fixtures/listeners/dsn-hard-listener.eml
 fa2880c02db43fdfac79048ad61cba89  tests/tests/kernel/classes/mailpreferences/fixtures/listeners/plain-subscribe.eml
 70eab23bf54f0f0f014a67515dcfb1e6  tests/tests/kernel/classes/migration/expMigrationCaptionDatabaseTest.php
-1189da1def060c816288b55b57ca8b6d  tests/tests/kernel/classes/migration/expMigrationCaptionEngineChecks.php
+160a6d2f5f3662a3a8df88fab8b3f904  tests/tests/kernel/classes/migration/expMigrationCaptionEngineChecks.php
 df2891775fbe7ed2454048f98673e152  tests/tests/kernel/classes/migration/expMigrationCaptionFakes.php
 73d1596bcf3555216d9f028f3da14351  tests/tests/kernel/classes/migration/expMigrationCaptionSqliteTest.php
 b26cb90fb3ad88b78984f4203bf64d86  tests/tests/kernel/classes/migration/expMigrationCaptionTest.php

@@ -76,7 +76,9 @@ class expUpgradeCaption
      *
      * @param string $kind pre, post, safety, manual
      * @param string $label e.g. "upgrade 6.0.14→6.0.15 20261029-101500 pre"
-     * @param expUpgradeContext $context the connection, root, options (repos, to, backup-dir)
+     * @param expUpgradeContext $context the connection, root, options (repos, to, backup-dir; own-dump: always
+     *                                   exp:upgrade's own dump of the context's connection, never git_manager's
+     *                                   caption of the installation's database, as for a test's database)
      * @return array ok, id, dir, source (git_manager or exp:upgrade), label, kind, messages
      */
     public static function take( $kind, $label, expUpgradeContext $context )
@@ -85,7 +87,7 @@ class expUpgradeCaption
         $root = rtrim( (string)$context->option( 'root' ), '/' );
         $engine = $context->engine();
         $result = array( 'ok' => false, 'id' => '', 'dir' => '', 'source' => '', 'label' => $label, 'kind' => $kind, 'messages' => array() );
-        $manager = self::managerDumps( $engine ) ? self::manager() : null;
+        $manager = !$context->option( 'own-dump' ) && self::managerDumps( $engine ) ? self::manager() : null;
         if ( $manager )
         {
             $made = $manager->createFullCaption( $label );
@@ -100,7 +102,8 @@ class expUpgradeCaption
         }
         else
         {
-            $why = class_exists( 'BackupManager' ) ? "git_manager does not dump $engine (update git_manager)" : 'git_manager is not active';
+            $why = $context->option( 'own-dump' ) ? 'a dump of the connection given (own-dump)'
+                 : ( class_exists( 'BackupManager' ) ? "git_manager does not dump $engine (update git_manager)" : 'git_manager is not active' );
             $backup = expUpgradeBackup::create( $db, $context->option( 'backup-dir' ), $root );
             $result['dir'] = $backup['dir'];
             $result['source'] = 'exp:upgrade';

@@ -56,7 +56,9 @@ trait expMigrationCaptionEngineChecks
     {
         return new expMigrationContext( $db, true, array( 'lock-file' => $this->runnerDir() . '/upgrade.lock', 'repository' => $this->runnerDir() . '/migrations',
                                                           'environment' => 'testing', 'root' => self::runnerRoot(), 'run-id' => $runId,
-                                                          'backup-dir' => $this->runnerDir() . '/captions', 'storage-dir' => '',
+                                                          // the test's connection dumped, never the installation's
+                                                          // database through git_manager
+                                                          'backup-dir' => $this->runnerDir() . '/captions', 'storage-dir' => '', 'own-dump' => true,
                                                           'user' => eZUser::fetchByName( 'admin' ) ) );
     }
 
@@ -108,6 +110,7 @@ trait expMigrationCaptionEngineChecks
 
         $this->assertSame( 1, $report['exit'] );
         $this->assertTrue( $report['captions']['pre']['ok'], "$engine: the pre caption: " . implode( '; ', $report['captions']['pre']['messages'] ) );
+        $this->assertSame( 'exp:upgrade', $report['captions']['pre']['source'], 'a dump of the test\'s connection' );
         $this->assertSame( 'restored', $report['restore']['state'], "$engine: " . implode( '; ', $report['errors'] ) . ' ' . json_encode( $report['restore'] ) );
         $this->assertTrue( $report['captions']['failure']['ok'], "$engine: the failure caption" );
         $this->assertSame( array( 'restored', 'failed' ), array_column( $report['migrations'], 'action' ) );
