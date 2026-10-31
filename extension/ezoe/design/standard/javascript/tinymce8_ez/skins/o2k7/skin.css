@@ -38,15 +38,40 @@
     box-shadow: 1px 0 0 #FFF;
 }
 
-/* Buttons: 22x22 with the o2k7 button background (normal / hover / active) */
+/*
+ * Buttons: 22x22 with the o2k7 button background (normal / hover / active)
+ *
+ * The editor sits inside the page's own edit form, so a design's rule for the buttons of that form
+ * (e.g. ".content-edit-attribute button { display: inline-block; padding: ... }", more specific than
+ * the oxide skin's ".tox .tox-tbtn") reaches the toolbar too. The box model of the buttons and icons
+ * is therefore set here and not left to oxide: with an inline-block button the .tox-icon span stays
+ * inline, its width and height do not apply, and the sprite is drawn into a 0px wide box.
+ */
 .tox.ezoe-skin-o2k7 .tox-tbtn,
 .tox.ezoe-skin-o2k7 .tox-split-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
     width: 22px !important;
+    min-width: 0;
+    max-width: none;
     height: 22px;
     margin: 2px 0;
+    padding: 0;
     border: 0;
     border-radius: 0;
     background: url(../../../../stylesheets/skins/o2k7/img/button_bg.png) no-repeat 0 0;
+    color: #222;
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    line-height: normal;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.tox.ezoe-skin-o2k7 .tox-tbtn .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-tbtn .tox-tbtn__select-chevron {
+    display: block;
+    flex: none;
 }
 .tox.ezoe-skin-o2k7 .tox-tbtn:hover,
 .tox.ezoe-skin-o2k7 .tox-tbtn:focus,
@@ -85,6 +110,7 @@
 
 /* Block format select like the TinyMCE 3 list box */
 .tox.ezoe-skin-o2k7 .tox-tbtn--bespoke {
+    justify-content: space-between;
     width: 92px !important;
     height: 22px;
     margin: 2px 2px 2px 0;
