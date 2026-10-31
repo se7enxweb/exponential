@@ -147,11 +147,11 @@ curl -s https://www.example.com/api/graphql \
 
 ```bash
 ./console exp:graphql:starter --list
-./console exp:graphql:starter --kit=next --to=../shop-front                 # what it would write
-./console exp:graphql:starter --kit=next --to=../shop-front --apply
+./console exp:graphql:starter --kit=next --siteaccess=site --to=../shop-front   # what it would write
+./console exp:graphql:starter --kit=next --siteaccess=site --to=../shop-front --apply
 ```
 
-![exp:graphql:starter --list: the kits html, next, nuxt, astro and expo](images/graphql-walkthrough/06-starter-kits.webp)
+![exp:graphql:starter --list with the kits html, next, nuxt, astro and expo, then the dry run of the kit next: the files it would write (the queries per content class shortened), and DRY RUN 99 files of the kit next, run again with --apply](images/graphql-walkthrough/06-starter-kits.webp)
 
 | Kit | For | Runs the queries |
 |---|---|---|
@@ -176,6 +176,10 @@ hash), generate the kit again into a new directory and copy `lib/queries.ts` and
 
 ## 7. Run it
 
+The `--apply` of step 6 writes the project and ends with the commands that start it:
+
+![exp:graphql:starter --apply: PASS for every file written to ../shop-front (the queries per content class shortened), and PASS 99 files of the kit next, Next: cd ../shop-front && npm install && npm run dev](images/graphql-walkthrough/07-starter-written.webp)
+
 ```bash
 cd ../shop-front
 echo "EXP_GRAPHQL_KEY=$EXP_API_KEY" >> .env.local
@@ -194,8 +198,8 @@ the only kind the [response cache](../features/6.0/graphql.md#speed) keeps:
 
 ```bash
 cd -                                                   # back to the installation
-./console exp:graphql:persist ../shop-front/graphql/                  # check: 90 queries fit the schema
-./console exp:graphql:persist ../shop-front/graphql/ --apply          # store them
+./console exp:graphql:persist ../shop-front/graphql/ --siteaccess=site           # check: 90 queries fit the schema
+./console exp:graphql:persist ../shop-front/graphql/ --siteaccess=site --apply   # store them
 curl -s 'https://www.example.com/api/graphql?id=menu'                 # a GET by name
 curl -sI 'https://www.example.com/api/graphql?id=menu' | grep -i x-graphql-cache    # MISS, then HIT
 ```
@@ -205,7 +209,7 @@ content expires the cache. With `PersistedQueriesOnly=anonymous` the site then r
 anonymous requests: a good setting for production once the front end only sends stored queries. Setup > GraphQL lists
 the stored queries and the size of the cache.
 
-![A stored query called by its name twice: x-graphql-cache MISS, then HIT](images/graphql-walkthrough/08-stored-query.webp)
+![The check of exp:graphql:persist without --apply: the SHA-256 and the name each query would be stored under, menu and node among them, and DRY RUN 90 queries fit the schema](images/graphql-walkthrough/08-persist-check.webp)
 
 ![The persisted queries on Setup > GraphQL: the name, the SHA-256, the size, where it is stored, and Remove](images/graphql-walkthrough/08-persisted-queries.webp)
 
