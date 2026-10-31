@@ -92,13 +92,13 @@ The file endings of all engines and the class that renders each are in `settings
 ## Installing Twig
 
 Twig 3 comes with a Composer installation, through the metapackage `se7enxweb/exponential-php-floor` that the
-kernel requires (`~1.0.3 || ~1.1.3 || ~1.2.3 || ~1.3.3`). It installs the Twig 3 release that matches the PHP
+kernel requires (`~1.0.3 || ~1.1.4 || ~1.2.3 || ~1.3.3`). It installs the Twig 3 release that matches the PHP
 version Composer runs with:
 
 | PHP | Floor version | Twig package |
 |---|---|---|
 | 7.4 | 1.0.3 | `se7enxweb/twig` `~3.11.4` |
-| 8.0 | 1.1.3 | `se7enxweb/twig` `~3.19.1` |
+| 8.0 | 1.1.4 | `se7enxweb/twig` `~3.19.1` |
 | 8.1 to 8.3 | 1.2.3 | `twig/twig` `^3.27` |
 | 8.4 and later | 1.3.3 | `twig/twig` `^3.27` |
 

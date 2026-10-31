@@ -3337,7 +3337,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-3eaecadcc7d7706374d03d1b8731410a  doc/changelogs/6.0/6.0.15.md
+5936c969bc97604b043cb1fae2b73f5d  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6648,7 +6648,7 @@ c1d35c36ad8001ff08accbbb4dcb4b7f  doc/eng-us/features/6.0/transfer-registry.md
 80fae419ced337dd1d77773ae1695e64  doc/eng-us/features/6.0/transfer-runs.md
 57c4106059d194a44e5f1db41823a12d  doc/eng-us/features/6.0/translations-and-languages.md
 52655ccd8d99de4f991040e3be60a92a  doc/eng-us/features/6.0/trash-who-and-where.md
-b08854da494619e907bf7180b4a97659  doc/eng-us/features/6.0/twig-templates.md
+d3145c14972f62fc3e55bd0ddb7339f3  doc/eng-us/features/6.0/twig-templates.md
 01c1af354bf09f4fd77c533d051b7106  doc/eng-us/features/6.0/ui-switch-design.md
 5ef33046e1d4d1024b83856954e4a4d6  doc/eng-us/features/6.0/ui-switch-languages.md
 dddc25f5090a5e0f97d83e3714f992fd  doc/eng-us/features/6.0/ui-switch.md
@@ -6767,7 +6767,7 @@ ab6bbf730a075904c4af88a430513e7d  doc/eng-us/guides/template-syntax-check.md
 9e4779ad88a9e6f97b461ce60bc4e584  doc/eng-us/guides/templates-and-design.md
 af191104f2cf6e5332c98ab91d6b2bd7  doc/eng-us/guides/test-language-lorem-ipsum.md
 ead5dd8f3a160fb61e4ad5298a29919a  doc/eng-us/guides/twig-templates-caching.md
-72ea5bb50967deaab2d9b09eab117796  doc/eng-us/guides/twig-templates-compatibility.md
+e37468334fb845fd2e5589017c0d83e7  doc/eng-us/guides/twig-templates-compatibility.md
 9511508868f362a14ce9726488741a65  doc/eng-us/guides/twig-templates-converter.md
 7e1fae737168e6f10a298ad63c4165c2  doc/eng-us/guides/twig-templates-debugging.md
 563d7577a7bfbbd6951b72beecbd8282  doc/eng-us/guides/twig-templates-editors.md
@@ -6780,7 +6780,7 @@ dff87f2e8004e1f4b76e00c8086cb374  doc/eng-us/guides/twig-templates-operator-refe
 6ec5bc2051db42ce01721e6335235821  doc/eng-us/guides/twig-templates-plugins.md
 994de219bff3d6ef3f4d2f934a738918  doc/eng-us/guides/twig-templates-recipes.md
 62117a0ad93562739a1e7458cadb75c4  doc/eng-us/guides/twig-templates-security.md
-31a3ea91f0819467fbf7f33bfb69cf9e  doc/eng-us/guides/twig-templates-troubleshooting.md
+37c1bb1e159dfbf15fef82d68f616559  doc/eng-us/guides/twig-templates-troubleshooting.md
 4d4adecb57be6ea91e18ddc12590900c  doc/eng-us/guides/twig-templates-tutorial.md
 a654fb5699b48dc94e77a30171739d7a  doc/eng-us/guides/twig-templates.md
 ece15ec77c80cf6be557056386321c5a  doc/eng-us/guides/two-factor-login.md
@@ -7766,7 +7766,7 @@ a71683a6bcd4ac2fcedce9c868617e40  doc/eng-us/help/creators/website-creators/desi
 b54db57dfc0aa5f4f8112cf240a81dc8  doc/eng-us/help/creators/website-creators/forms-with-the-information-collector.md
 eebc339844bc63b62c2e85350a777395  doc/eng-us/help/creators/website-creators/going-live-hosts-https.md
 f4027ef898472fbdf5e4ac446ed15a6c  doc/eng-us/help/creators/website-creators/handing-over-to-editors.md
-0e845ff8412aace68429b4d28e47a7e4  doc/eng-us/help/creators/website-creators/hosting-for-a-website.md
+ac758d4b60291441be3a30e07bd675f9  doc/eng-us/help/creators/website-creators/hosting-for-a-website.md
 5f2451587e17f2fdd3edd24156ddf601  doc/eng-us/help/creators/website-creators/http-caching-and-cdns.md
 0b76be5810acac6f1d8c9597081b5be7  doc/eng-us/help/creators/website-creators/images-and-image-variations.md
 8031d9b88413cd0799655ec633d0947b  doc/eng-us/help/creators/website-creators/landing-pages-with-layouts.md
@@ -9628,7 +9628,7 @@ f088e27383e27d949cdec8c67fbd2105  doc/eng-us/help/hosting/basics/oracle-for-host
 40fbd679715b1517102b90f5f89c8c9a  doc/eng-us/help/hosting/basics/php-settings-for-exponential.md
 997e8d96f26eb9a47c3906ecad0a69bb  doc/eng-us/help/hosting/basics/php-versions-and-extensions.md
 2bfc5adc6599e831b3ec6e9c59279caa  doc/eng-us/help/hosting/basics/postgresql-for-hosts.md
-28ed632f47bea4cf49ade26ed155596c  doc/eng-us/help/hosting/basics/requirements-at-a-glance.md
+4e2cfb73c1d7bfd1d6b5046e982ff15e  doc/eng-us/help/hosting/basics/requirements-at-a-glance.md
 da61ae9375332086e56fdc5f086bd961  doc/eng-us/help/hosting/basics/search-backends.md
 7d78a1a9212e5545d93127e7d8c177c3  doc/eng-us/help/hosting/basics/sizing-memory-cpu-and-disk.md
 7b41d0cd246043419d2f10392b60dd29  doc/eng-us/help/hosting/basics/sqlite-for-hosts.md
@@ -11152,7 +11152,7 @@ ff96ad5384df1cae13ae9c0e1d333690  doc/eng-us/help/resellers/models/support-contr
 f57f40496a224692da4dfd9c7df83b01  doc/eng-us/help/resellers/models/white-label-reseller.md
 2049bd58bc5bef4269fb417d744fdb32  doc/eng-us/help/resellers/offers/demo-sites.md
 abdb871776f2e6f820b70fd0b2cea2ec  doc/eng-us/help/resellers/offers/e-commerce-offers.md
-866465aa4ca1975a00d832eedbaa61eb  doc/eng-us/help/resellers/offers/hosting-requirements-for-offers.md
+eeb78b1ab00ddffd1e086035343ff745  doc/eng-us/help/resellers/offers/hosting-requirements-for-offers.md
 0bb25e78726da41c93df6418b7d00b0d  doc/eng-us/help/resellers/offers/margin-and-cost-worksheet.md
 06e89c6bb850a3798784d9bb051915bf  doc/eng-us/help/resellers/offers/multi-site-offers.md
 f3dd10a4e326cffdf621415a8537de99  doc/eng-us/help/resellers/offers/multilingual-offers.md
@@ -12146,7 +12146,7 @@ b2d5d75778dd42e9008b5bbb1d929515  doc/eng-us/help/web-framework-developers/url-a
 bc999ddbb0a6d30bfcbdc220860a092b  doc/eng-us/help/when-something-goes-wrong.md
 a717363a052606cf44f08126926ff7bc  doc/eng-us/help/who-is-7x.md
 199c499171c6b9269547226708aedae1  doc/eng-us/help/who-is-the-exponential-foundation.md
-5d2d2a3d0cd9f0d3f196d2dd5630370f  doc/eng-us/help/why-exponential-supports-php-7-4.md
+dcb23d8ca796f65deeaac7a6ff124a5f  doc/eng-us/help/why-exponential-supports-php-7-4.md
 bd70793577c80633bb67f709e2477c2a  doc/eng-us/history/2023/2023-12.md
 0f932eab80fbad58781a85f0fb860254  doc/eng-us/history/2024/2024-01a.md
 e748ea9172de1d2d18d693d54be46594  doc/eng-us/history/2024/2024-01b.md
@@ -12486,7 +12486,7 @@ cd0b6a85e34fba589a0baf3632bf2fc6  doc/eng-us/images/languages/coverage-map.svg
 cff5e250d6fd7deb062328fd2fac4734  doc/eng-us/images/languages/coverage-map.webp
 fa3733d7d5fa00676ab2bc74eafca985  doc/eng-us/images/languages/world-outline.svg
 b16642eb46fdf6b0f66058e77ff6628d  doc/eng-us/install/01-introduction.md
-c0977776501e24025d77f05b209f8056  doc/eng-us/install/02-requirements.md
+85d246a42a7081778deeecde29d296b4  doc/eng-us/install/02-requirements.md
 b8685d36a4916ba6615b11371203195b  doc/eng-us/install/03-getting-the-code.md
 d3248ba618a795e355b992750019bb49  doc/eng-us/install/04-choosing-an-install-method.md
 cbda8dec23b0413752f3eb9abfe7326d  doc/eng-us/install/05-setup-wizard.md
@@ -12929,7 +12929,7 @@ c8639029dd7b640cb74fb6702cafbc8e  doc/ger-de/anleitungen/twig-templates-im-edito
 e8572b617b8eddb34206464efe0a1880  doc/ger-de/anleitungen/twig-templates-leistung.md
 1ad570d35262225e0b6efaf700408cf4  doc/ger-de/anleitungen/twig-templates-nativ-schreiben.md
 9c9eac055a66942f61a5b18622810564  doc/ger-de/anleitungen/twig-templates-rezepte.md
-857938e1d35afb35e1848fffd49f7f8d  doc/ger-de/anleitungen/twig-templates-versionen-und-kompatibilitaet.md
+f5916e2ac7afe0358291a98691f3569a  doc/ger-de/anleitungen/twig-templates-versionen-und-kompatibilitaet.md
 74970ef5f9094334f55b89fa5c8185e3  doc/ger-de/anleitungen/ui-umschalter-design.md
 538acd610f602879df1d118d1a8104b3  doc/ger-de/anleitungen/ui-umschalter-einstellungen.md
 96c7e7570232e91c8971eb947b341ba1  doc/ger-de/anleitungen/umgebungsvariablen.md
@@ -17512,7 +17512,7 @@ b0dd97530b87ccfe1e6e67a37bfc1119  doc/ger-de/hilfe/ersteller/website-ersteller/e
 e5b82fc18dcb2a0a5f763c97a7975970  doc/ger-de/hilfe/ersteller/website-ersteller/formulare-mit-dem-informationssammler.md
 3c6a05d7d23e2a69925148cdd0feaefb  doc/ger-de/hilfe/ersteller/website-ersteller/formulareinsendungen.md
 701693f6c14a7c4514f8d110f63e59e0  doc/ger-de/hilfe/ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md
-b1b1b52b005c957676dacb150ae2d736  doc/ger-de/hilfe/ersteller/website-ersteller/hosting-fuer-eine-website.md
+12db9a1170b60ea265d4699150431a79  doc/ger-de/hilfe/ersteller/website-ersteller/hosting-fuer-eine-website.md
 d174e4a5604d65326bdeec2100488ea1  doc/ger-de/hilfe/ersteller/website-ersteller/http-caching-und-cdns.md
 430e4e244b61154e76ae9da82754c294  doc/ger-de/hilfe/ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md
 4b85bf1b7876d3d8abc91d71817cc4c0  doc/ger-de/hilfe/ersteller/website-ersteller/ihre-erste-website-schritt-fuer-schritt.md
@@ -18135,7 +18135,7 @@ dfd82e61d68230f00798373d62a77ed4  doc/ger-de/hilfe/hosting/geschaeft/sla-optione
 f3964b985eb54e35cf61ffdc8b2fdea3  doc/ger-de/hilfe/hosting/geschaeft/support-stufen-fuer-exponential-hosting.md
 9a4be9571882ca019dd1baaaccd865b5  doc/ger-de/hilfe/hosting/glossar-fuer-hoster.md
 17c5162fb78ac2e3d099efee366ae70d  doc/ger-de/hilfe/hosting/grundlagen/README.md
-f6051fa24aa703a9e6d4e95574e61263  doc/ger-de/hilfe/hosting/grundlagen/anforderungen-auf-einen-blick.md
+bad35be04460011bb7c91335bc0b9e66  doc/ger-de/hilfe/hosting/grundlagen/anforderungen-auf-einen-blick.md
 abc97d12076180f435c1b9b29f904bde  doc/ger-de/hilfe/hosting/grundlagen/beschreibbare-verzeichnisse-und-berechtigungen.md
 4fb7850400792c4271f4ddd7db7015d4  doc/ger-de/hilfe/hosting/grundlagen/betriebssysteme-fuer-hoster.md
 6ed833d5e3b960b768ae54d749b71680  doc/ger-de/hilfe/hosting/grundlagen/bildverarbeitung-und-medien.md
@@ -21184,7 +21184,7 @@ a28a10d226bb20950b2d89e932a006ab  doc/ger-de/hilfe/verwaltung/transparenz-und-in
 b0538d6e09eff9b217f1ea5a6e82fae5  doc/ger-de/hilfe/verwaltung/transparenz-und-informationsfreiheit/versionsgeschichte-als-rechenschaft.md
 da6a75154dccea7f8c8ae10f6b4aebf0  doc/ger-de/hilfe/verwaltung/transparenz-und-informationsfreiheit/zeitgesteuertes-veroeffentlichen-und-sperrfristen.md
 0fe97e515606ebdf0332027c749a8839  doc/ger-de/hilfe/verwaltung/verwaltungen-hier-beginnen.md
-f73ecb87f3dfdfd1058b9101f665e92a  doc/ger-de/hilfe/warum-exponential-php-7-4-unterstuetzt.md
+b151b852e2c3f500fa46ac6e5325884a  doc/ger-de/hilfe/warum-exponential-php-7-4-unterstuetzt.md
 eaf218cf108fef60292e0cfb369a6a16  doc/ger-de/hilfe/was-die-redakteursrolle-erlaubt.md
 bcefb0645cf813c8c539267f26ce550d  doc/ger-de/hilfe/web-framework-entwickler/authentifizierung-und-sitzungen.md
 4dabc94e5cc21ff125e998c68822cb75  doc/ger-de/hilfe/web-framework-entwickler/autorisierung-rollen-und-richtlinien.md
@@ -21248,7 +21248,7 @@ c078c1cb8787042b897167a041561300  doc/ger-de/hilfe/wer-ist-die-exponential-found
 a85711f6e21881ed1d2e13f7981ff1e2  doc/ger-de/hilfe/wiederverkaeufer/angebote/arbeitsblatt-zur-preisgestaltung.md
 04bd206a0a9d99da6fa6047141b25b0b  doc/ger-de/hilfe/wiederverkaeufer/angebote/demo-websites.md
 bd9637062620f60ab3df6b691b2eb0ec  doc/ger-de/hilfe/wiederverkaeufer/angebote/e-commerce-angebote.md
-cbaafbf8dcecc965459d226c3e2d00d0  doc/ger-de/hilfe/wiederverkaeufer/angebote/hosting-anforderungen-fuer-angebote.md
+04ae8a3ece86fada4fc6b65fb7a4df9b  doc/ger-de/hilfe/wiederverkaeufer/angebote/hosting-anforderungen-fuer-angebote.md
 9f57562e460f18ce5d7da6f5cb7c3526  doc/ger-de/hilfe/wiederverkaeufer/angebote/mehrsprachige-angebote.md
 97000c9edbb5a01892440c173609640d  doc/ger-de/hilfe/wiederverkaeufer/angebote/multisite-angebote.md
 949a39126e529166a2830c3483a9f9a3  doc/ger-de/hilfe/wiederverkaeufer/angebote/preisgestaltung-ihres-angebots.md
@@ -21583,7 +21583,7 @@ e8f9765cd175a6159a4fd7691ad31898  doc/ger-de/hilfe/zwei-wege-zum-bauen/warum-ers
 3b542781e7b9593616e5ebe02ac6493e  doc/ger-de/hilfe/zwei-wege-zum-bauen/zuordnung-block-zu-template.md
 7b4de1d134e1317c82fbce40572f8ae4  doc/ger-de/hilfe/zwei-wege-zum-bauen/zwei-wege-zum-bauen.md
 523ad730334ca2fb2fad2726493b7a2d  doc/ger-de/installation/01-einfuehrung.md
-9cc2af61621b1b775cac5913be5990db  doc/ger-de/installation/02-voraussetzungen.md
+63a1383db2c3c247c3f75248d2c74344  doc/ger-de/installation/02-voraussetzungen.md
 adeb73cb2ec8cb9a95b495ee6ef781fb  doc/ger-de/installation/03-den-code-beschaffen.md
 431f04f389a37c1bf84bfb1e948c4a97  doc/ger-de/installation/04-installationsweg-waehlen.md
 bd55c455539242e9d2c29297f6356496  doc/ger-de/installation/05-setup-assistent.md

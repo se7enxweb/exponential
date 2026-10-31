@@ -56,7 +56,7 @@ Twig 3 not found: install twig/twig with Composer or set [TwigSettings] LibraryP
 ```
 
 The installation's Composer autoload has no Twig 3. Run `composer update` with the installation's
-`composer.json`: it requires `se7enxweb/exponential-php-floor` `~1.0.3 || ~1.1.3 || ~1.2.3 || ~1.3.3`, which
+`composer.json`: it requires `se7enxweb/exponential-php-floor` `~1.0.3 || ~1.1.4 || ~1.2.3 || ~1.3.3`, which
 installs `twig/twig` `^3.27` on PHP 8.1 and later and `se7enxweb/twig` on PHP 7.4 and 8.0 (a floor older than
 x.y.3 installs no Twig). Or install Twig in a directory of its own and set `LibraryPath`
 ([Installing Twig](../features/6.0/twig-templates.md#installing-twig)). `./console exp:template:engines` shows whether
