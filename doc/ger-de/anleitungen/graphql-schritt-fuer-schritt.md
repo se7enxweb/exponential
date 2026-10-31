@@ -151,11 +151,11 @@ Benutzer (`anonymous`), und das Schema (Introspection) bleibt ihr verschlossen.
 
 ```bash
 ./console exp:graphql:starter --list
-./console exp:graphql:starter --kit=next --to=../shop-front                 # was er schreiben würde
-./console exp:graphql:starter --kit=next --to=../shop-front --apply
+./console exp:graphql:starter --kit=next --siteaccess=site --to=../shop-front   # was er schreiben würde
+./console exp:graphql:starter --kit=next --siteaccess=site --to=../shop-front --apply
 ```
 
-![exp:graphql:starter --list: die Kits html, next, nuxt, astro und expo](bilder/graphql-walkthrough/06-starter-kits.webp)
+![exp:graphql:starter --list mit den Kits html, next, nuxt, astro und expo, danach der Probelauf des Kits next: die Dateien, die er schreiben würde (die Abfragen je Inhaltsklasse gekürzt), und DRY RUN 99 Dateien des Kits next, erneut mit --apply ausführen](bilder/graphql-walkthrough/06-starter-kits.webp)
 
 | Kit | Für | Führt die Abfragen aus |
 |---|---|---|
@@ -181,6 +181,10 @@ zeigt einen neuen Schema-Hash), erzeugen Sie das Kit erneut in ein neues Verzeic
 
 ## 7. Starten
 
+Das `--apply` aus Schritt 6 schreibt das Projekt und endet mit den Befehlen, die es starten:
+
+![exp:graphql:starter --apply: PASS für jede nach ../shop-front geschriebene Datei (die Abfragen je Inhaltsklasse gekürzt) und PASS 99 Dateien des Kits next, als Nächstes cd ../shop-front && npm install && npm run dev](bilder/graphql-walkthrough/07-starter-written.webp)
+
 ```bash
 cd ../shop-front
 echo "EXP_GRAPHQL_KEY=$EXP_API_KEY" >> .env.local
@@ -200,8 +204,8 @@ behält:
 
 ```bash
 cd -                                                   # zurück in die Installation
-./console exp:graphql:persist ../shop-front/graphql/                  # prüfen: 90 Abfragen passen zum Schema
-./console exp:graphql:persist ../shop-front/graphql/ --apply          # speichern
+./console exp:graphql:persist ../shop-front/graphql/ --siteaccess=site           # prüfen: 90 Abfragen passen zum Schema
+./console exp:graphql:persist ../shop-front/graphql/ --siteaccess=site --apply   # speichern
 curl -s 'https://www.example.com/api/graphql?id=menu'                 # ein GET nach Name
 curl -sI 'https://www.example.com/api/graphql?id=menu' | grep -i x-graphql-cache    # MISS, dann HIT
 ```
@@ -211,7 +215,7 @@ das Veröffentlichen von Inhalten lässt den Cache verfallen. Mit `PersistedQuer
 jede Ad-hoc-Abfrage anonymer Anfragen ab: eine gute Einstellung für den Betrieb, sobald das Frontend nur noch
 gespeicherte Abfragen sendet. Setup > GraphQL listet die gespeicherten Abfragen und die Größe des Caches.
 
-![Eine gespeicherte Abfrage zweimal über ihren Namen aufgerufen: x-graphql-cache MISS, dann HIT](bilder/graphql-walkthrough/08-stored-query.webp)
+![Die Prüfung von exp:graphql:persist ohne --apply: SHA-256 und Name, unter denen jede Abfrage gespeichert würde, darunter menu und node, und DRY RUN 90 Abfragen passen zum Schema](bilder/graphql-walkthrough/08-persist-check.webp)
 
 ![Die gespeicherten Abfragen unter Setup > GraphQL: Name, SHA-256, Größe, Speicherort und Entfernen](bilder/graphql-walkthrough/08-persisted-queries.webp)
 

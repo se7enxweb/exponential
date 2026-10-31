@@ -6710,7 +6710,7 @@ a518e62944d14435eac07c9fde4b2306  doc/eng-us/guides/extensions-page.md
 cdac22058aa72ebee655751b3f933e83  doc/eng-us/guides/finding-an-error-by-its-reference.md
 996ecbfce279c75c2c2fdfdd94d6a171  doc/eng-us/guides/getting-started.md
 6301c1c013d5581b176c0ec1a1dbf1ac  doc/eng-us/guides/graphql-recipes.md
-d221902ce4ca3bb8776f12f9c07bd25f  doc/eng-us/guides/graphql-walkthrough.md
+39b2ec78e026ac8f19a5466682cc008a  doc/eng-us/guides/graphql-walkthrough.md
 fbcbc9cf7bbfb1f95906327d9513b2c6  doc/eng-us/guides/images/account-approval/approval-item.png
 8bcb3ac63cc2341e4ef7d3045867af4b  doc/eng-us/guides/images/account-approval/approved.png
 4a8739c9f2f5b65580e85608c8d2f948  doc/eng-us/guides/images/account-approval/section-workflow.png
@@ -6730,9 +6730,10 @@ c921856f9b07be771da43fd08234c6c3  doc/eng-us/guides/images/graphql-walkthrough/0
 316426c7c96368f1c76655d2701e5800  doc/eng-us/guides/images/graphql-walkthrough/04-api-keys.webp
 ceb25f7cf63b0a281876406ba80f9753  doc/eng-us/guides/images/graphql-walkthrough/04-setup-graphql.webp
 85837d80e1d90fdd0d9301ef3aea4cc0  doc/eng-us/guides/images/graphql-walkthrough/05-first-question.webp
-f3b60a7ee01516f38abc26613532cc6b  doc/eng-us/guides/images/graphql-walkthrough/06-starter-kits.webp
+12c5fecb09668b4d0cf7daecfe320978  doc/eng-us/guides/images/graphql-walkthrough/06-starter-kits.webp
+e08d78ef4af01aa5f9b967a9bdf5c612  doc/eng-us/guides/images/graphql-walkthrough/07-starter-written.webp
+c391dbea0b67d1cd5b635cc990987cf2  doc/eng-us/guides/images/graphql-walkthrough/08-persist-check.webp
 45b56366d11e42f52b4f7bb6b7d326fd  doc/eng-us/guides/images/graphql-walkthrough/08-persisted-queries.webp
-78055b29528606bac5d7adfa64369cad  doc/eng-us/guides/images/graphql-walkthrough/08-stored-query.webp
 efcfd3990eefc6de7ae94758f5a1f969  doc/eng-us/guides/images/graphql-walkthrough/09-write-key-dry-run.webp
 4bd4152807881194256e71d00035c446  doc/eng-us/guides/images/graphql-walkthrough/10-limits-and-cache.webp
 8eb6817a05a9686cf07a5fe017ea8ab9  doc/eng-us/guides/images/graphql-walkthrough/11-switched-off-here.webp
@@ -12899,9 +12900,10 @@ c921856f9b07be771da43fd08234c6c3  doc/ger-de/anleitungen/bilder/graphql-walkthro
 6fb659bee8adeadf791854ad26d5549f  doc/ger-de/anleitungen/bilder/graphql-walkthrough/04-api-keys.webp
 5f248e31332dac284960f057ce9ca5fb  doc/ger-de/anleitungen/bilder/graphql-walkthrough/04-setup-graphql.webp
 85837d80e1d90fdd0d9301ef3aea4cc0  doc/ger-de/anleitungen/bilder/graphql-walkthrough/05-first-question.webp
-f3b60a7ee01516f38abc26613532cc6b  doc/ger-de/anleitungen/bilder/graphql-walkthrough/06-starter-kits.webp
+12c5fecb09668b4d0cf7daecfe320978  doc/ger-de/anleitungen/bilder/graphql-walkthrough/06-starter-kits.webp
+e08d78ef4af01aa5f9b967a9bdf5c612  doc/ger-de/anleitungen/bilder/graphql-walkthrough/07-starter-written.webp
+c391dbea0b67d1cd5b635cc990987cf2  doc/ger-de/anleitungen/bilder/graphql-walkthrough/08-persist-check.webp
 77c830bda2ff9ce5eac3c6850f38d1cf  doc/ger-de/anleitungen/bilder/graphql-walkthrough/08-persisted-queries.webp
-78055b29528606bac5d7adfa64369cad  doc/ger-de/anleitungen/bilder/graphql-walkthrough/08-stored-query.webp
 efcfd3990eefc6de7ae94758f5a1f969  doc/ger-de/anleitungen/bilder/graphql-walkthrough/09-write-key-dry-run.webp
 0e9d995d6aee7c6b9cca44b01f04e709  doc/ger-de/anleitungen/bilder/graphql-walkthrough/10-limits-and-cache.webp
 8eb6817a05a9686cf07a5fe017ea8ab9  doc/ger-de/anleitungen/bilder/graphql-walkthrough/11-switched-off-here.webp
@@ -12934,7 +12936,7 @@ a18906c2d024747be98c7252b5dcdda6  doc/ger-de/anleitungen/extensions.md
 df3154102d4ccbaaf89b86f7fc6d13a7  doc/ger-de/anleitungen/fehler-anhand-der-referenz-finden.md
 01c462f0c79a43b1f70a945e62a60dd8  doc/ger-de/anleitungen/gesammelte-informationen.md
 6855141c8cffc122efbc45744a88ff75  doc/ger-de/anleitungen/graphql-rezepte.md
-073194411b40cf6fe4558c56fb8e1703  doc/ger-de/anleitungen/graphql-schritt-fuer-schritt.md
+f237d7f079e85e2a79062ff79b40ca29  doc/ger-de/anleitungen/graphql-schritt-fuer-schritt.md
 f0277ca3c4b6176643fd82cfc07167c9  doc/ger-de/anleitungen/identitaet-bestaetigen.md
 79aac653572eeb930b4393d072ec1e84  doc/ger-de/anleitungen/ihre-geraete-und-sitzungen.md
 123235c41b3d61d22fc74809cdd57dc6  doc/ger-de/anleitungen/inhaltsmodell-und-bearbeitung.md
