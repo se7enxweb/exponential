@@ -19,8 +19,8 @@ administration. What later phases add is listed under [What comes next](#what-co
 | Sign-in | an OAuth token, a personal API key with the scope `graphql:read` (and `graphql:write` for mutations), the session (playground), or none (anonymous) |
 | Mutations | off until `MutationsEnabled=enabled`; then policy-checked, workflows run, audited, `POST` only |
 | Rights | the user's roles and policies, always; the schema settings decide what can be asked at all |
-| Administration | Setup > GraphQL (policy `graphql/playground`): the end points, the schema and a playground |
-| Console | `exp:graphql:status`, `exp:graphql:schema`, `exp:graphql:query` |
+| Administration | Setup > GraphQL (policy `graphql/playground`): the end points, the schema, the siteaccesses, the limits, the response cache, the persisted queries, the keys and a playground; switches with `graphql/administrate` |
+| Console | `exp:graphql:enable`, `exp:graphql:disable`, `exp:graphql:status`, `exp:graphql:schema`, `exp:graphql:query`, `exp:graphql:persist`, `exp:graphql:keys` |
 | Settings | [graphql.ini [GraphQLSettings]](../../examples/ini-settings/graphql/GraphQLSettings.md), [[GraphQLNaming]](../../examples/ini-settings/graphql/GraphQLNaming.md) |
 
 ## Contents
@@ -44,7 +44,20 @@ administration. What later phases add is listed under [What comes next](#what-co
 
 ## Quick start in 60 seconds
 
-1. **Switch it on.** For every siteaccess, in `settings/override/graphql.ini.append.php`:
+1. **Switch it on**, in one command. Without `--apply` it shows what it would change and writes nothing:
+
+   ```bash
+   ./console exp:graphql:enable --siteaccess=site --origin=https://shop.example.com --key-for=frontend
+   ./console exp:graphql:enable --siteaccess=site --origin=https://shop.example.com --key-for=frontend --apply
+   ```
+
+   It checks that the schema builds, sets `Enabled=enabled` and `SiteAccessList[]=site` in
+   `settings/override/graphql.ini.append.php` (without `--siteaccess`: every siteaccess), lets the front end at
+   `https://shop.example.com` call it from a browser (`rest.ini [CorsSettings]`), makes a personal API key for the user
+   `frontend` with the scope `graphql:read` (the token is shown once), clears the INI cache, and prints the end point
+   and a `curl` line to try. `--mutations` switches the [mutations](#mutations) on as well and gives the key
+   `graphql:write`. Setup > GraphQL has the same switches per siteaccess. By hand it is one block in
+   `settings/override/graphql.ini.append.php`:
 
    ```ini
    <?php /* #?ini charset="utf-8"?
@@ -53,8 +66,8 @@ administration. What later phases add is listed under [What comes next](#what-co
    */ ?>
    ```
 
-   For one siteaccess only, put the same block in `settings/siteaccess/<siteaccess>/graphql.ini.append.php`, or list
-   the siteaccesses that answer in `SiteAccessList[]`. Clear the INI cache (`php bin/php/ezcache.php --clear-tag=ini`).
+   with `SiteAccessList[]` for the siteaccesses that answer (settings/override wins over a siteaccess's own file), and
+   the INI cache cleared (`php bin/php/ezcache.php --clear-tag=ini`).
 
 2. **Check it.**
 
@@ -939,9 +952,26 @@ curl -H 'Accept-Language: de' 'https://example.com/api/graphql?query=%7Bnode%7Bi
 
 **Setup > GraphQL** (`graphql/playground`, in the group of the data tables and the secret store) shows whether the API
 answers in the siteaccess, the end point address, the library and its version, the schema hash and the number of
-classes, and a playground: a query, its variables (JSON) and **Run** (or Ctrl+Enter, Cmd+Enter). The query runs with
-your rights, signed in with the session of the administration, and introspection is allowed since the request is
-signed in. `/api/graphql/playground` redirects to it.
+classes, and whether mutations are on; then:
+
+- **Siteaccesses**: whether the API and its mutations answer in each siteaccess, with **Switch on**, **Switch off**,
+  **Mutations on** and **Mutations off** (the changes of `exp:graphql:enable` and `exp:graphql:disable`: written to
+  `settings/override` and the siteaccess's `graphql.ini.append.php`, a backup first, recorded as `system.setting.write`,
+  the INI cache cleared);
+- **Limits**: depth, complexity, items per list, the rate limits, introspection, persisted queries only, the largest
+  query and upload of the siteaccess;
+- **Response cache**: on or off, the answers kept and their bytes, how long, when it was last expired, and **Clear the
+  response cache**;
+- **Persisted queries**: their names, SHA-256, size and whether they are stored or shipped, with **Remove** for a
+  stored one;
+- **API keys**: the personal API keys with `graphql:read` or `graphql:write`, their owner, state and last use (yours, or
+  every user's with `graphql/administrate`), with links to the page API access and to every key;
+- a playground: a query, its variables (JSON) and **Run** (or Ctrl+Enter, Cmd+Enter). The query runs with your rights,
+  signed in with the session of the administration, and introspection is allowed since the request is signed in.
+  `/api/graphql/playground` redirects to it.
+
+The buttons need the policy `graphql/administrate`; without it the page shows the same facts and changes nothing. It
+follows the admin4 design in light and dark mode, with the shared components and tokens only.
 
 The playground posts to the **session end point** `graphql/query`: `POST /graphql/query` (in the siteaccess's address,
 for example `/admin/graphql/query`), with the same JSON body as `/api/graphql`, the session cookie, and the form token
@@ -953,6 +983,7 @@ A page of the site may use it too, for the signed-in user of the browser.
 |---|---|
 | `graphql/playground` | opening Setup > GraphQL |
 | `graphql/query` | running queries through the session end point (the playground needs it as well) |
+| `graphql/administrate` | the buttons of Setup > GraphQL: switching the API and its mutations on and off, clearing the response cache, removing persisted queries; seeing every user's GraphQL keys |
 
 Neither policy has limitations; what a query reads is decided by the content policies, as always. `/api/graphql`
 needs no policy of its own: a token or key runs with its user's rights, and a key needs the scope `graphql:read`.
@@ -1003,6 +1034,9 @@ list the extensions that answer.
 | [`exp:graphql:schema`](../../examples/commands/expgraphqlschema.md) | the schema: `--format=sdl` (the schema language, for code generators and editors), `json` (the introspection result), `summary` (classes, types, fields, datatypes, mapped or not); `--output=<file>` |
 | [`exp:graphql:query`](../../examples/commands/expgraphqlquery.md) | runs a query, given as the argument, a `.graphql` or `.gql` file, or `-` for standard input, or a persisted query with `--id=<name or sha256>`; `--variables`, `--operation`, `--as=<login>`, `--format=json\|table` |
 | [`exp:graphql:persist`](../../examples/commands/expgraphqlpersist.md) | stores `.graphql` files as [persisted queries](#persisted-queries) after checking them against the schema (`--apply`; `--name=`), `--list` (`--format=text\|json`), `--remove=<name or sha256> --apply` |
+| [`exp:graphql:enable`](../../examples/commands/expgraphqlenable.md) | switches the API on in one command: `--siteaccess=`, `--mutations`, `--origin=` (CORS), `--key-for=<login>` with `--key-name=`, `--scope=`, `--days=`; checks the schema, prints the end point and a `curl` line; a dry run (a diff) unless `--apply` |
+| [`exp:graphql:disable`](../../examples/commands/expgraphqldisable.md) | switches it off, everywhere or for `--siteaccess=`; `--mutations` switches only the mutations off; a dry run unless `--apply` |
+| [`exp:graphql:keys`](../../examples/commands/expgraphqlkeys.md) | the personal API keys with a GraphQL scope: the list (`--format=text\|json`), `--create --for=<login>` (`--name`, `--scope`, `--days`; the token is shown once), `--revoke=<prefix or id>`; a dry run unless `--apply` |
 
 ```bash
 ./console exp:graphql:status --format=json
@@ -1035,8 +1069,22 @@ names a login.
 | 2 | wrong options | wrong options | wrong options: no query, variables not JSON, an unknown user |
 | 3 | the library is missing | the library is missing | the library is missing |
 
-The machine output is versioned: `exp-graphql-status/1` (`status --format=json`) and `exp-graphql-schema-summary/1`
-(`schema --format=summary`) name themselves in their `schema` field.
+`exp:graphql:enable` answers 0 when done or shown, 1 when a file could not be written or the key not made, 2 for wrong
+options (an unknown siteaccess or user, an origin that is not one, a scope the user may not have), 3 when the library
+is missing; `exp:graphql:disable` and `exp:graphql:keys` answer 0, 1 and 2 the same way. The settings commands write
+through the kernel's INI editor, as `exp:ini` does: line by line, a backup in `var/backup/ini/` first, recorded in the
+audit, refused where the configuration is managed.
+
+```bash
+./console exp:graphql:enable --siteaccess=site --mutations --key-for=editor --apply
+./console exp:graphql:disable --siteaccess=site --mutations --apply
+./console exp:graphql:keys --create --for=frontend --name='Shop front end' --days=90 --apply
+./console exp:graphql:keys --revoke=expk_qkjdsz3uznp8 --apply
+```
+
+The machine output is versioned: `exp-graphql-status/1` (`status --format=json`), `exp-graphql-schema-summary/1`
+(`schema --format=summary`) and `exp-graphql-keys/1` (`keys --format=json`) name themselves in their `schema` field.
+`exp:graphql:status` also tells whether the mutations are on (`mutations`).
 
 **A stable contract.** Like the [`exp:template:*` commands](../../guides/template-syntax-check.md#compatibility-promise),
 the `exp:graphql:*` commands are a public interface meant to hold for decades: command names and aliases, option names,

@@ -1,0 +1,78 @@
+{
+    "command:expgraphqldisable": {
+        "en": "Switch the GraphQL API, or only its mutations, off for every siteaccess or for some; a dry run unless --apply",
+        "de": "Schaltet die GraphQL-API oder nur ihre Mutationen für jeden Siteaccess oder für einige aus; ein Probelauf ohne --apply"
+    },
+    "command:expgraphqldisable --mutations": {
+        "en": "switch only the mutations off",
+        "de": "nur die Mutationen ausschalten"
+    },
+    "command:expgraphqldisable --siteaccess": {
+        "en": "only these siteaccesses, comma separated (default: every siteaccess)",
+        "de": "nur diese Siteaccesses, durch Kommas getrennt (Standard: jeder Siteaccess)"
+    },
+    "command:expgraphqlenable": {
+        "en": "Switch the GraphQL API on in one command: the siteaccesses, the mutations, CORS for a front end, an API key, the schema, a curl example; a dry run unless --apply",
+        "de": "Schaltet die GraphQL-API mit einem Befehl ein: die Siteaccesses, die Mutationen, CORS für ein Frontend, ein API-Schlüssel, das Schema, ein curl-Beispiel; ein Probelauf ohne --apply"
+    },
+    "command:expgraphqlenable --days": {
+        "en": "the lifetime of the key in days (rest.ini [ApiKeySettings] ExpiryChoices[]; default 90)",
+        "de": "die Lebensdauer des Schlüssels in Tagen (rest.ini [ApiKeySettings] ExpiryChoices[]; Standard 90)"
+    },
+    "command:expgraphqlenable --key-for": {
+        "en": "make a personal API key for this user (a login)",
+        "de": "einen persönlichen API-Schlüssel für diesen Benutzer erzeugen (ein Login)"
+    },
+    "command:expgraphqlenable --key-name": {
+        "en": "the name of the key (default: GraphQL front end)",
+        "de": "der Name des Schlüssels (Standard: GraphQL front end)"
+    },
+    "command:expgraphqlenable --mutations": {
+        "en": "switch the mutations on too (in the siteaccesses of --siteaccess)",
+        "de": "auch die Mutationen einschalten (in den Siteaccesses aus --siteaccess)"
+    },
+    "command:expgraphqlenable --origin": {
+        "en": "the origin of a front end allowed to call it from a browser (CORS), comma separated",
+        "de": "der Origin eines Frontends, das sie aus einem Browser aufrufen darf (CORS), durch Kommas getrennt"
+    },
+    "command:expgraphqlenable --scope": {
+        "en": "the scopes of the key: graphql:read (the default), graphql:write (the default with --mutations)",
+        "de": "die Bereiche des Schlüssels: graphql:read (der Standard), graphql:write (der Standard mit --mutations)"
+    },
+    "command:expgraphqlenable --siteaccess": {
+        "en": "the siteaccesses it answers in, comma separated (default: every siteaccess)",
+        "de": "die Siteaccesses, in denen sie antwortet, durch Kommas getrennt (Standard: jeder Siteaccess)"
+    },
+    "command:expgraphqlkeys": {
+        "en": "The personal API keys of the GraphQL API: list them, make one for a user (the token is shown once) or revoke one; a dry run unless --apply",
+        "de": "Die persönlichen API-Schlüssel der GraphQL-API: auflisten, einen für einen Benutzer erzeugen (das Token wird einmal gezeigt) oder einen widerrufen; ein Probelauf ohne --apply"
+    },
+    "command:expgraphqlkeys --create": {
+        "en": "make a key (with --for)",
+        "de": "einen Schlüssel erzeugen (mit --for)"
+    },
+    "command:expgraphqlkeys --days": {
+        "en": "the lifetime of the new key in days (rest.ini [ApiKeySettings] ExpiryChoices[]; default 90)",
+        "de": "die Lebensdauer des neuen Schlüssels in Tagen (rest.ini [ApiKeySettings] ExpiryChoices[]; Standard 90)"
+    },
+    "command:expgraphqlkeys --for": {
+        "en": "the owner of the new key (a login)",
+        "de": "der Eigentümer des neuen Schlüssels (ein Login)"
+    },
+    "command:expgraphqlkeys --list": {
+        "en": "list the keys (the default)",
+        "de": "die Schlüssel auflisten (der Standard)"
+    },
+    "command:expgraphqlkeys --name": {
+        "en": "the name of the new key (default: GraphQL)",
+        "de": "der Name des neuen Schlüssels (Standard: GraphQL)"
+    },
+    "command:expgraphqlkeys --revoke": {
+        "en": "revoke the key of this prefix (expk_...) or id",
+        "de": "den Schlüssel mit diesem Präfix (expk_...) oder dieser ID widerrufen"
+    },
+    "command:expgraphqlkeys --scope": {
+        "en": "the scopes of the new key, comma separated: graphql:read (the default), graphql:write",
+        "de": "die Bereiche des neuen Schlüssels, durch Kommas getrennt: graphql:read (der Standard), graphql:write"
+    }
+}

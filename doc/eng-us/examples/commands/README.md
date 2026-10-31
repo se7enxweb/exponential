@@ -44,6 +44,9 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:expbackfillordersiteaccess](expbackfillordersiteaccess.md) |  | Infer the siteaccess of orders placed before ezorder.siteaccess was recorded (dry run unless --apply) |
 | [exp:expcontentjob](expcontentjob.md) |  | Run, list, resume and cancel content jobs: large subtree removes and copies in batches |
 | [exp:expfetch](expfetch.md) | exp:info, exp:about | The system card: the Exponential "e" next to the facts of this installation, its engine and its machine, with health hints (exp:info adds an inventory, exp:about the project) |
+| [exp:expgraphqldisable](expgraphqldisable.md) | exp:graphql:disable | Switch the GraphQL API, or only its mutations, off for every siteaccess or for some; a dry run unless --apply |
+| [exp:expgraphqlenable](expgraphqlenable.md) | exp:graphql:enable | Switch the GraphQL API on in one command: the siteaccesses, the mutations, CORS for a front end, an API key, the schema, a curl example; a dry run unless --apply |
+| [exp:expgraphqlkeys](expgraphqlkeys.md) | exp:graphql:keys | The personal API keys of the GraphQL API: list them, make one for a user (the token is shown once) or revoke one; a dry run unless --apply |
 | [exp:expgraphqlpersist](expgraphqlpersist.md) | exp:graphql:persist | Store GraphQL queries on the server as persisted queries (called by name or SHA-256), list them or remove them; a dry run unless --apply |
 | [exp:expgraphqlquery](expgraphqlquery.md) | exp:graphql:query | Run a GraphQL query from the console, as a user of the installation (anonymous unless --as names one), and print the answer |
 | [exp:expgraphqlschema](expgraphqlschema.md) | exp:graphql:schema | Print or write the GraphQL schema of a siteaccess: the schema language (sdl), the introspection result (json) or the classes and their fields (summary) |

@@ -2,7 +2,7 @@
 title: Richtlinien des Moduls graphql
 audience: developer, admin
 category: examples
-summary: Die Richtlinienfunktionen des Moduls graphql (2) und ihre Einschränkungen.
+summary: Die Richtlinienfunktionen des Moduls graphql (3) und ihre Einschränkungen.
 keywords: Richtlinie, Richtlinien, Rolle, Einschränkung, Berechtigung, graphql, policy, policies, role, limitation, permission
 type: generated
 generated: exp:help:examples
@@ -10,6 +10,24 @@ generated: exp:help:examples
 # Richtlinien des Moduls graphql
 
 Die Richtlinienfunktionen von `graphql` und ihre Einschränkungen, aus `$FunctionList` in `kernel/graphql/module.php`. In der Administration werden sie unter Rollen und Richtlinien gewählt; eine Richtlinie auf `graphql/*` erlaubt jede Funktion.
+
+## administrate
+
+Keine Ansicht des Moduls nennt sie; Code prüft sie (`eZUser::hasAccessTo( 'graphql', 'administrate' )` oder der Fetch `user/has_access_to`).
+
+Keine Einschränkungen: Die Richtlinie gilt ganz oder gar nicht.
+
+```php
+// Einer Rolle die Richtlinie geben (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'graphql', 'administrate' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'graphql', 'function', 'administrate' ) )}
+    ...
+{/if}
+```
 
 ## playground
 

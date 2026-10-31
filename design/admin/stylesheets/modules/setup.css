@@ -1441,3 +1441,8 @@ label.a4-package-option-label {
 .a4-graphql-query { min-height: 18em; }
 .a4-graphql-variables { min-height: 5em; }
 .a4-graphql-answer { min-height: 18em; }
+/* The limits beside the response cache; one column on a narrow screen */
+.a4-graphql-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--a4-space-4); align-items: start; }
+@media (max-width: 960px) {
+  .a4-graphql-grid { grid-template-columns: minmax(0, 1fr); }
+}

@@ -405,6 +405,26 @@ class expGraphQLResponseCache
     }
 
     /**
+     * What the cache holds now (Setup > GraphQL): the entries, their bytes, and when it was last expired.
+     *
+     * @return array entries, bytes, expiredAt (a Unix time, 0: never)
+     */
+    public function stats()
+    {
+        $entries = 0;
+        $bytes = 0;
+        foreach ( is_dir( $this->dir . '/responses' ) ? (array)glob( $this->dir . '/responses/*', GLOB_ONLYDIR ) : array() as $sub )
+        {
+            foreach ( (array)glob( $sub . '/*' ) as $file )
+            {
+                $entries++;
+                $bytes += (int)@filesize( $file );
+            }
+        }
+        return array( 'entries' => $entries, 'bytes' => $bytes, 'expiredAt' => (int)$this->expiredAt() );
+    }
+
+    /**
      * Removes every entry (ezcache --clear-id=graphql) and expires what a worker may still be writing.
      *
      * @return int how many entries were removed
