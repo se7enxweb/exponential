@@ -71,6 +71,33 @@ class expEditorPoliciesTest extends PHPUnit\Framework\TestCase
         $this->assertNotContains( 'expimageeditor/edit', self::granted( $plan ) );
     }
 
+    /** ezie/* only where ezie's module is active (a site that kept ezie); never next to expimageeditor alone. */
+    public function testEzieOnlyWhereItsModuleIsActive()
+    {
+        $plan = expEditorPolicies::plan( self::packageEditor(), array( 'ezie' ), array(), array(), self::packageMember() );
+        $this->assertContains( 'ezie/*', self::granted( $plan ) );
+        $plan = expEditorPolicies::plan( self::packageEditor(), array( 'expimageeditor' ), array(), array(), self::packageMember() );
+        $this->assertNotContains( 'ezie/*', self::granted( $plan ) );
+        $plan = expEditorPolicies::plan( array_merge( self::packageEditor(), self::policies( array( 'ezie/*' ) ) ), array( 'ezie' ),
+                                         array(), array(), self::packageMember() );
+        $this->assertNotContains( 'ezie/*', self::granted( $plan ) );
+    }
+
+    /** The setup step counts an extension's module only when the new installation activates the extension. */
+    public function testSetupModulesFollowTheActivatedExtensions()
+    {
+        $root = dirname( __DIR__, 4 ) . '/extension';
+        $this->assertFileExists( $root . '/expimageeditor/modules/expimageeditor/module.php' );
+        // no list given: the extension directory decides, as before
+        $this->assertContains( 'expimageeditor', expEditorPolicies::setupModules( array(), $root ) );
+        $this->assertContains( 'expimageeditor', expEditorPolicies::setupModules( array(), $root, array() ) );
+        // activated: counted; installed but not activated: not counted
+        $this->assertContains( 'expimageeditor', expEditorPolicies::setupModules( array(), $root, array( 'ezjscore', 'expimageeditor' ) ) );
+        $this->assertNotContains( 'expimageeditor', expEditorPolicies::setupModules( array(), $root, array( 'ezjscore', 'ezie' ) ) );
+        // a module of the running installation stays, and a missing directory adds nothing
+        $this->assertSame( array( 'content', 'ezie' ), expEditorPolicies::setupModules( array( 'content', 'ezie' ), $root . '/missing', array( 'ezie' ) ) );
+    }
+
     /** Without the Member role alongside (plain_site), the own account policies are added to the Editor role too. */
     public function testOwnAccountPoliciesWhenNoOtherRoleHasThem()
     {

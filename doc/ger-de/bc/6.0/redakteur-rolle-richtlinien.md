@@ -32,8 +32,10 @@ Einstellungen der Benachrichtigungen nicht öffnen (`notification/use`).
 ## Was sich ändert
 
 - **Der Setup-Assistent und der Kickstarter** prüfen nach den Rollen des Website-Pakets, dass die Rolle Editor
-  `content/hide`, `content/restore`, `content/reverserelatedlist`, `ezmultiupload/*` und `expimageeditor/edit` hat
-  (jeweils, wenn die Installation die Erweiterung hat), und `user/password`, `user/selfedit` und `notification/use`,
+  `content/hide`, `content/restore`, `content/reverserelatedlist`, `ezmultiupload/*`, `expimageeditor/edit` und,
+  wo das Website-Paket ezie behält, `ezie/*` hat (jeweils, wenn die neue Installation die Erweiterung aktiviert; seit
+  dem 30. Oktober 2026 zählt eine nur installierte Erweiterung nicht mehr, `ezie/*` wird also nicht vergeben, wo
+  expimageeditor an seine Stelle tritt), und `user/password`, `user/selfedit` und `notification/use`,
   sofern keine andere Rolle der Gruppe Editors (die Rolle Member der Website-Pakete) sie hat; was fehlt, wird
   hinzugefügt (`expEditorPolicies::ensure()` in `kernel/setup/steps/ezstep_create_sites.php`). Das gilt für jedes
   Website-Paket und alle Grunddaten, auf jeder Datenbank-Engine.
@@ -73,6 +75,17 @@ Editors auf die Teilbäume Content und Media. Ausblenden und die Liste der verwe
 - **Der Git-Manager und das Update-Dashboard** bleiben bei den Administratoren: Ihre Module prüfen eigene Richtlinien
   (`git_manager/git_manager`, `update/ezupdate`), das Dashboard zeigt seine Karte "Stay secure" nur einem Benutzer, der
   sie öffnen kann (`fetch( 'user', 'can_open', ... )`), und der Editor-Siteaccess schaltet den Git-Manager außerdem ab.
+
+## ezie antwortet "Modul nicht gefunden"
+
+Eine Website, die expimageeditor an Stelle von ezie aktiviert (der Setup-Assistent und der Kickstarter tun das seit
+Oktober 2026), beantwortet jede Adresse `ezie/...` mit dem Kernel-Fehler 20, "Modul nicht gefunden", für jeden
+Benutzer, auch für Administratoren. Das ist so gewollt und kein Fehler der Rolle: ezie bleibt installiert
+(`composer.json` verlangt es), aber seine `module.ini` (`ExtensionRepositories[]=ezie`) wird nur gelesen, solange die
+Erweiterung in `ActiveExtensions[]` steht, das Modul liegt also nicht auf dem Modulpfad. Keine Seite einer solchen
+Website fragt nach ezie: Die Bildbearbeitungsvorlage von admin4 öffnet ezie nur, wenn `ezmodule( 'ezie/prepare' )` es
+erlaubt, und expimageeditor ersetzt diese Vorlage. Um ezie wieder zu verwenden, aktivieren Sie es an Stelle von
+expimageeditor und führen für die Redakteure `php bin/php/addeditorpolicies.php --apply --only=ezie/*` aus.
 
 ## Zu weite Rechte, die das Skript meldet
 

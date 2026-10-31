@@ -62,6 +62,10 @@ class expEditorPolicies
                    'reason' => 'uploading several files at once into the media library (ezmultiupload)' ),
             array( 'module' => 'expimageeditor', 'function' => 'edit', 'needs' => 'expimageeditor',
                    'reason' => 'the image editor beside an image in the edit form (expimageeditor; its save view still checks the draft and content/edit)' ),
+            // ezie's module.php has no policy functions, so every view asks for ezie/*; each view still checks that
+            // the user may edit the object's draft in its language. Only where ezie is active (a site that kept it).
+            array( 'module' => 'ezie', 'function' => '*', 'needs' => 'ezie',
+                   'reason' => 'the older image editor beside an image in the edit form (ezie, where a site keeps it active; every view still checks the draft)' ),
             array( 'module' => 'user', 'function' => 'password', 'needs' => '',
                    'reason' => 'changing the own password (user/password)' ),
             array( 'module' => 'user', 'function' => 'selfedit', 'needs' => '',
@@ -345,12 +349,15 @@ class expEditorPolicies
      * The setup step's guarantee: the Editor role of a new installation has every policy of definitions() that it
      * and the roles held alongside it lack, whatever the base data and the site package gave it. An extension's policy
      * is added when the extension's module is in the installation's extension directory, since the new site's
-     * extensions are not active yet in the setup wizard.
+     * extensions are not active yet in the setup wizard, and, when $activeExtensions is given, the new installation
+     * activates it: ezie is installed with every installation but activated only by the site packages that keep it,
+     * so its policy is not added where expimageeditor takes its place.
      *
      * @param string $extensionRoot the extension directory of the installation
+     * @param string[]|null $activeExtensions the extensions the new installation activates; null or empty: not checked
      * @return string what happened, for the setup log
      */
-    public static function ensure( $extensionRoot = 'extension' )
+    public static function ensure( $extensionRoot = 'extension', $activeExtensions = null )
     {
         $role = eZRole::fetchByName( self::ROLE_NAME );
         if ( !is_object( $role ) )
@@ -361,12 +368,7 @@ class expEditorPolicies
         $narrowPlan = self::narrowPlan( self::policiesOf( $role ) );
         if ( self::narrow( $role, $narrowPlan ) )
             $narrowed = 'content/* replaced by content/' . implode( ', content/', $narrowPlan['add'] ) . '; ';
-        $modules = self::availableModules();
-        foreach ( self::definitions() as $definition )
-        {
-            if ( $definition['needs'] !== '' && is_file( rtrim( $extensionRoot, '/' ) . '/' . $definition['needs'] . '/modules/' . $definition['needs'] . '/module.php' ) )
-                $modules[] = $definition['needs'];
-        }
+        $modules = self::setupModules( self::availableModules(), $extensionRoot, $activeExtensions );
         $added = array();
         foreach ( self::plan( self::policiesOf( $role ), $modules, array(), array(), self::heldAlongside( $role ) ) as $entry )
         {
@@ -377,6 +379,32 @@ class expEditorPolicies
             eZRole::expireCache();
         return $narrowed . ( $added ? 'added to the role ' . self::ROLE_NAME . ': ' . implode( ', ', $added )
                                     : 'the role ' . self::ROLE_NAME . ' has every editor policy' );
+    }
+
+    /**
+     * The policy modules ensure() plans with: those of the running installation, and the module of each definition's
+     * extension that is in the extension directory and, when $activeExtensions is given (not empty), activated by the
+     * new installation.
+     *
+     * @param string[] $modules the modules of the running installation (availableModules())
+     * @param string $extensionRoot the extension directory of the installation
+     * @param string[]|null $activeExtensions the extensions the new installation activates; null or empty: not checked
+     * @return string[]
+     */
+    public static function setupModules( array $modules, $extensionRoot, $activeExtensions = null )
+    {
+        $checkActive = is_array( $activeExtensions ) && count( $activeExtensions ) > 0;
+        foreach ( self::definitions() as $definition )
+        {
+            $needs = $definition['needs'];
+            if ( $needs === '' || in_array( $needs, $modules, true ) )
+                continue;
+            if ( $checkActive && !in_array( $needs, $activeExtensions, true ) )
+                continue;
+            if ( is_file( rtrim( $extensionRoot, '/' ) . '/' . $needs . '/modules/' . $needs . '/module.php' ) )
+                $modules[] = $needs;
+        }
+        return $modules;
     }
 
     /**

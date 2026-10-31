@@ -2146,7 +2146,9 @@ language_locale='eng-GB'";
         // (doc/eng-us/bc/6.0/editor-role-policies.md).
         if ( class_exists( 'expEditorPolicies' ) )
         {
-            eZDebug::writeNotice( expEditorPolicies::ensure( eZExtension::baseDirectory() ), __METHOD__ );
+            // an extension's policy only for an extension the new installation activates (ezie is installed everywhere,
+            // activated only by the site packages that keep it)
+            eZDebug::writeNotice( expEditorPolicies::ensure( eZExtension::baseDirectory(), $installActiveExtensions ), __METHOD__ );
         }
 
         // Member management (membermanagement.ini): by default the Editors group manages the accounts below Members

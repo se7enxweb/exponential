@@ -21,8 +21,8 @@ class Addeditorpolicies extends \Exponential\Runnable\Command
             array(
                 'description' => "Give the Editor role the policies an editor needs for everyday work and it lacks: hiding and\n"
                     . "revealing (content/hide), the trash (content/restore), the list of what uses an object\n"
-                    . "(content/reverserelatedlist), where the modules exist ezmultiupload and the image editor\n"
-                    . "(expimageeditor/edit), and the own account\n"
+                    . "(content/reverserelatedlist), where the modules are active ezmultiupload and the image editors\n"
+                    . "(expimageeditor/edit, ezie/*), and the own account\n"
                     . "(user/password, user/selfedit, notification/use) when no other role of the editors has it.\n"
                     . "A policy the role, or another role of the same users or groups, has in any form (also limited, or\n"
                     . "module/*) is left alone, so the script can run again.\n"
